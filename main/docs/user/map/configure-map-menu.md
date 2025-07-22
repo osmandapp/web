@@ -16,7 +16,7 @@ import Translate from '@site/src/components/Translate.js';
 
 The **Configure map** menu is an important item in the OsmAnd *Main Menu*, where you can customize the map display to suit your needs. You can highlight favorite points, navigation markers, or special points of interest on the map, display specific routes or third-party GPX files, overlay terrain information, satellite images, or any other available raster images, display public transportation information, and change the map style.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

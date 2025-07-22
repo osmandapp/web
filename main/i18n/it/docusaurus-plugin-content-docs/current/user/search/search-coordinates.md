@@ -27,7 +27,7 @@ OsmAnd offre diversi modi per accedere allo *strumento di ricerca → [scheda Ri
 
 ## Come usare {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

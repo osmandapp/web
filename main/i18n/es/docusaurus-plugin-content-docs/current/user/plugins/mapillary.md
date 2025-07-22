@@ -27,7 +27,7 @@ Para mostrar imágenes a nivel de calle en el mapa de OsmAnd, debe realizar las 
 
 ## Capa de mapa {#map-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ La capa de mapa con imágenes de calles se muestra en el mapa de OsmAnd como fil
 
 ### Habilitar capa {#enable-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Para mostrar las imágenes a nivel de calle de Mapillary en el mapa, debe habili
 
 ### Filtrado de datos {#data-filtering}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -106,7 +106,7 @@ Si las imágenes seleccionadas no se muestran, use **Recargar** para la **Caché
 
 ## Menú contextual del mapa {#map-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -126,7 +126,7 @@ Si el complemento Mapillary está habilitado, puede ver fotos de calles disponib
 
 ## Añadir fotos {#add-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -146,7 +146,7 @@ Para añadir fotos, debe registrarse en la [aplicación Mapillary](https://www.m
 
 ## Widget de Mapillary {#mapillary-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

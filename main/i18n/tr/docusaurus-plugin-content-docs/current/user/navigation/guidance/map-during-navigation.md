@@ -23,7 +23,7 @@ Bu makale, navigasyon sırasında haritanın görünümünü nasıl yapılandır
 
 ## Navigasyon Sırasında Harita {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline g�
 
 ### Noktaları Görüntüleme ve Seçme {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 ## Ekran Uyarıları {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 ## Rota Çizgisi Görünümü {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

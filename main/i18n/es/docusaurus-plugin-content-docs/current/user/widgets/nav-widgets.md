@@ -113,7 +113,7 @@ El rumbo es la dirección a un objetivo fuera de su vehículo, como un destino o
 
 ![Widget de grabación de viaje](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ El widget muestra la distancia al primer punto intermedio a lo largo de la ruta 
 
 ### Tiempo al punto intermedio {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ El widget muestra la *hora de llegada* o el *tiempo restante* hasta el primer pu
 
 ### Tiempo al destino {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -426,7 +426,7 @@ El widget de nombre de calle muestra **el nombre de la calle actual** con una fl
 
 ## PDI / Favoritos de aproximación {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

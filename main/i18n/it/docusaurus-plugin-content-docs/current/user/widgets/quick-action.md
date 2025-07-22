@@ -26,7 +26,7 @@ Il widget Azioni rapide è un elemento interattivo dell'interfaccia utente che f
 
 ## Widget Azioni rapide {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Per utilizzare il pulsante Azioni rapide, devi prima abilitare questo widget.
 
 ### Aggiungere ed eliminare azioni {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Puoi assegnare una o più [azioni](#action-types) al pulsante Azioni rapide. Ci 
 
 ### Parametri dell'azione {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ Il widget *Azioni rapide* appare nell'angolo inferiore della schermata della map
 
 ### Pulsanti personalizzati {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

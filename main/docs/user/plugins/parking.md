@@ -25,7 +25,7 @@ This plugin is free and works offline with downloaded OsmAnd maps. You can quick
 
 The marker is temporary and easy to remove once no longer needed.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ When you mark a parking spot, OsmAnd saves its geographic coordinates along with
 
 To set a Parking spot on the map, zoom-in to the required level, then long tap the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ The start time is always set automatically. If you need to change the end time, 
 
 ### Stay Informed {#stay-informed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -126,7 +126,7 @@ Additional details are shown when tapping the parking marker:
 
 ### Navigating to a Waypoint {#navigating-to-a-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ You can use the parking spot as a navigation target to easily return to your veh
 
 ### Remove a Spot {#remove-a-spot}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -188,7 +188,7 @@ If a calendar reminder was set, it will also be removed automatically.
 
 ## Parking Widget {#parking-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

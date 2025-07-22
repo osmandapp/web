@@ -26,7 +26,7 @@ O widget Ação Rápida é um elemento interativo da interface do usuário que f
 
 ## Widget de Ação Rápida {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Para usar o botão Ação Rápida, você deve primeiro habilitar este widget.
 
 ### Adicionar e Excluir Ações {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Você pode atribuir uma ou mais [ações](#action-types) ao botão de ação rá
 
 ### Parâmetros de Ação {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ O widget *Ação Rápida* aparece no canto inferior da tela do mapa quando você
 
 ### Botões personalizados {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

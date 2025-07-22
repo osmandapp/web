@@ -32,7 +32,7 @@ Bu yönlendirme türü, arazide bulunabilecek dağlar, nehirler veya yoğun orma
 Doğrudan noktaya ve Tekne navigasyon türlerini kullanırken, *Haritayı yapılandır*'da etkinleştirilebilen ve ayarlanabilen [Derinlik kontur verilerine](../../plugins/nautical-charts.md#nautical-map-style) ihtiyacınız olacaktır.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

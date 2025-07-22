@@ -58,7 +58,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 2. **iOS**. Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 3. Виберіть потрібний регіон. Після відкриття регіону дані Вікіпедії будуть серед інших пакетів.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 2. Виберіть Профіль та знайдіть розділ налаштувань *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* у меню.
 3. Увімкніть *<Translate android="true" ids="poi_osmwiki"/>* **для Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **для iOS**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - У версії **iOS**, щоб відкрити [Пошук](../search/index.md), іконка Пошуку знаходиться у верхньому лівому куті екрана.
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 - Щоб шукати за [категорією](../search/search-poi.md#poi-search) Вікіпедії, виберіть: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 3. Вимкніть опцію *<Translate android="true" ids="shared_string_all_languages"/>*.
 4. Виберіть конкретну мову(-и) у списку, що відкрився.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Якщо *стаття Вікіпедії* доступна різними мовами, ви можете перемикати мову під час читання. Після натискання відповідної іконки у верхньому правому куті екрана вам будуть запропоновані варіанти на вибір.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - **Android**. Відкрийте *[статтю Вікіпедії](#display-wikipedia-on-the-map) → &#8942; → Опції*
 - **iOS**. Відкрийте *[статтю Вікіпедії](#display-wikipedia-on-the-map) → Іконка зображення*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

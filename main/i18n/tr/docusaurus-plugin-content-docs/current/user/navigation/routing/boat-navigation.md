@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Tekne rotası, kanallar, nehirler veya suyolları ile tekne gezintisi veya yelken yapmaktan hoşlanan herkes için değerli bir araç olabilir. OpenStreetMap verilerinde çoğu suyolunun bulunmaması nedeniyle, tekne rotası **açık su navigasyonu** için *önerilmez*, bunun yerine **[Noktaya doğrudan](#direct-to-point-routing-for-boat)** kullanılması önerilir. Derinlik kontur çizgileri etkinleştirildiğinde, sığ sular, kayalar veya diğer engeller gibi tehlikelerden kaçınarak suda güvende kalmanıza yardımcı olabilir.
 OsmAnd Tekne rotası motoru ayrıca suyollarının ve teknelerin özelliklerini de dikkate alır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Tekne rotası, Navigasyon ayarlarının [Rota parametreleri bölümünde](../../
 Genellikle, *Tekne rotası* tekne profiliyle ( [Denizcilik eklentisi](../../plugins/nautical-charts.md) ile birlikte etkinleştirilen son profil) kullanılır. Ancak, tekne rotasını diğer profillerle de kullanmak mümkündür ve tekne profilinde farklı [rota türleri](#other-routing-types-for-boat) de kullanılabilir.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

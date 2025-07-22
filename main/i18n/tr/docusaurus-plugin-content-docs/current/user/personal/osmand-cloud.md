@@ -53,7 +53,7 @@ OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iO
 
 ## Giriş {#login}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ Kayıt sırasında sorun yaşıyorsanız:
 
 ## OsmAnd Başlangıç {#osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ OsmAnd Başlangıç'a dahil olan özellikler:
 
 ### OsmAnd Başlangıç Nasıl Etkinleştirilir {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Zaten bir **OsmAnd Pro** aboneliğiniz veya **aktif bir OsmAnd Cloud hesabınız
 
 ## Son Senkronizasyon {#last-sync}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Çöp Kutusu {#trash}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ To use this feature:
 
 ## Ayarlar {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Bu bölüm, OsmAnd Cloud'unuzu düzenlemek ve yönetmek içindir.
 
 ### Yedeklenecek Verileri Seçin {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ Tüm [haritalar](../start-with/download-maps.md) daha önce indirildikleri cihaz
 
 ### Depolamayı Yönet {#manage-storage}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Bu bölüm, hangi hesaplarınızın OsmAnd Cloud'a bağlı olduğu hakkında bil
 
 ### Silme Seçeneği {#deletion-option}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 ## Değişiklik Listesi {#list-of-changes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ Açılır menünün [Son Senkronizasyon](#last-sync) bölümünde, Değişiklikl
 
 ### Yerel ve Bulut {#local-and-cloud}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Açılır menünün [Son Senkronizasyon](#last-sync) bölümünde, Değişiklikl
 
 ### Çakışmalar {#conflicts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

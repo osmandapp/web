@@ -36,7 +36,7 @@ O roteamento em linha reta está vinculado ao *perfil da aeronave*. Por padrão,
 
 O roteamento *em linha reta* pode ser configurado de acordo com suas necessidades na seção [Parâmetros da rota](../guidance/navigation-settings.md#route-parameters) das configurações de navegação.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

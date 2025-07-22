@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd ermöglicht es Ihnen, die beste Route zu finden und ihre Details zu erkunden. Die App liefert detaillierte Informationen über die Route, wie z. B. Entfernung, [Fahrzeit](#distance--time--co2), [Oberflächenart](#road-attributes), [Höhenunterschiede](#elevation-info), [CO2-Fußabdruckdaten](#distance--time--co2) und [Abbiegeanweisungen](#turn-by-turn-information). Sie können die Route auch auf der Karte [analysieren](#analyze-on-map), Informationen über Streckenabschnitte erhalten, den Routenplan [ausdrucken](#print), die Route [speichern](#share--export-actions) und sie mit anderen teilen. Mit dieser Funktionalität kennen Sie stets die Routendetails und können Ihre Reise effizienter planen.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 ## Entfernung / Zeit / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 ## Höheninformationen {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad s
 
 ### Höhenprofil {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Die [Graphen](../../map/tracks/track-context-menu.md#altitude--speed-graphs) zei
 
 ## Auf Karte analysieren {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Wenn Daten vorhanden sind, können Sie einen der folgenden Typen auswählen:
 
 ## Straßenattribute {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Straßenattribute sind in den [Routendetails](#how-to-access) zugänglich und ze
 
 ## Abbiegeanweisungen {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Tippen Sie in der Liste auf einen bestimmten Abschnitt der Route, um detailliert
 
 ### Anweisungen {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ Die Möglichkeit, Abbiege-Informationen **auszudrucken** oder **im PDF-Format zu
 
 ## Teilen / Exportieren (Aktionen) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Markers are special points marked on the map as flags that could be quickly created as a single tap without specifying name and other information in contrast with [Favorite points](./favorites.md). Also markers provide additional functionality with [widgets](../widgets/markers.md), **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -38,7 +38,7 @@ Markers are special points marked on the map as flags that could be quickly crea
 
 ### Add / Edit Markers {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Markers can be added and deleted as a whole group from Favorite group or GPX fil
 
 ### History {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ History is a list of all deactivated (passed) markers. From this list it's possi
 
 ## Appearance on the Map {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

@@ -23,7 +23,7 @@ The Audio/Video Notes plugin extends OsmAnd's functionality by allowing you to c
 
 All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 
 ## Plugin Settings {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -101,7 +101,7 @@ You can create a photo, video, and audio note in any of the following ways:
 
 #### 1. Create and Tie to your Current Position {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ The functions provided by the <Translate android="true" ids="map_widget_av_notes
 
 #### 2. Create and Tie to Selected Geolocation {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -142,7 +142,7 @@ To create a note tied to a selected point on the map, use the [Context menu](../
 
 #### Recorder Dialog {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 
 ### View in My Places {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -184,7 +184,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 
 ### Show on the Map {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ To show a specific note on the map, use the list of notes in My Places, find the
 
 ### Play {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ The [Details](../map/map-context-menu#-audiovideo-note-android) section provides
 
 ### Rename, Delete, Share {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 ## Recording Widget {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -279,7 +279,7 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 
 ### Manage in My Places {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -294,7 +294,7 @@ The options on the bottom bar can be used to manage the list of notes in [My Pla
 
 ### Share with GPX Waypoints {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -314,7 +314,7 @@ Supported file formats: audio - **3gp**, video - **mp4**, photo -**jpg**.
 
 ### Show All on the Map {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -335,7 +335,7 @@ Use the [Recording](../map/point-layers-on-map#-audio--video-points-android) map
 
 ## Waypoints Created from Notes {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -355,7 +355,7 @@ If a track is exported, the waypoints cannot be viewed, or played, because audio
 
 ### Create Waypoints {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

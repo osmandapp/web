@@ -29,7 +29,7 @@ Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme
 *Bu, Popüler Yerler özelliğinin ilk sürümüdür. [GitHub](https://github.com/osmandapp/OsmAnd) adresinden geri bildirimler memnuniyetle karşılanır*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Arama tabanlı Keşif Modu, ücretsiz sürümde **yalnızca çevrimiçi** çalı
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Haritadaki bir POI'ye dokunmak, [POI bağlam menüsünü](./map-context-menu.md)
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -195,7 +195,7 @@ Harita Bağlam menüsünde Nasıl erişilir:
 
 ### Galeri {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -231,7 +231,7 @@ Her fotoğraf üzerinde aşağıdaki eylemleri de gerçekleştirebilirsiniz:
   Görüntüyü cihazınızın depolama alanına kaydedin. İndirilen görüntü, cihazınızın varsayılan İndirilenler klasöründe bulunabilir ve çevrimdışı erişilebilir.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -259,7 +259,7 @@ Android sürümü, fotoğraf eylemleri için ek bir menü içermez.
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -292,7 +292,7 @@ Android sürümü, fotoğraf eylemleri için ek bir menü içermez.
 <!--
 ### Online Photos 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -322,7 +322,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 
 #### Gallery Menu 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -342,7 +342,7 @@ In the **Online photos** section of the map context menu, you can access photos 
 The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -365,7 +365,7 @@ Buttons:
 - The **Share** button allows you to share the selected item.  
 - The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

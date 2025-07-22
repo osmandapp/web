@@ -35,7 +35,7 @@ Varsayılan olarak, *Kayak profili* devre dışıdır. Bu profili yönlendirme i
 
 *Kayak rotası* ayarları, kullanıcıların istedikleri zorluk seviyesini ve keşfetmek istedikleri arazi türünü seçerek rotalarını planlamalarına olanak tanır. Pistlerde veya serbest sürüş sırasında güvenli, konforlu ve keyifli hareket için çeşitli seçenekler mevcuttur.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

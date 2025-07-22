@@ -30,7 +30,7 @@ You can:
 All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -53,7 +53,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ## Widget Panels {#widget-panels}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -89,7 +89,7 @@ Each panel supports different layout behaviors:
 
 ### Widgets Catalog {#widgets-catalog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -224,7 +224,7 @@ Each panel supports different layout behaviors:
 ### Rows {#rows}
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ The mode allows you to add **more than one widget in a single row** on the top a
 
 ### Pages {#pages}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -333,7 +333,7 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 ### Widget Context Menu {#widget-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ OsmAnd allows you to add multiple instances of the same widget to different pane
 
 *OsmAnd menu → Configure screen → Widgets → Panel*  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -434,7 +434,7 @@ You can rearrange or remove widgets from the application screen using the **Edit
 
 ### Custom Buttons {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -458,7 +458,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 ### Default Buttons {#default-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -523,7 +523,7 @@ The *Button appearance* feature enables you to fully customize the look of butto
 
 ## Other {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -550,7 +550,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 ### Display Position (Location position on screen) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -577,7 +577,7 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 
 ## Actions {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -610,7 +610,7 @@ Available actions:
 
 ## Switch Profile {#switch-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

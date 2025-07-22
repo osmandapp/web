@@ -27,7 +27,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 الخرائط البحرية مهمة للبحارة المحترفين والهواة الذين يستأجرون قاربًا للتجول في قنوات المدينة. وتوفر لهم الخرائط معلومات متنوعة مثل مسارات الإبحار، وأضواء الملاحة، ومناطق الخطر، والمناطق المسموح أو المحظور فيها الإبحار أو الرسو، وما إلى ذلك.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -62,7 +62,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### تعيين نمط الخريطة البحرية {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -93,7 +93,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### تنزيل الخرائط البحرية {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -145,7 +145,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## ملف التعريف البحري {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -175,7 +175,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### نقاط العمق {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -196,7 +196,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### خطوط كونتور العمق {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -228,7 +228,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### تفاصيل قاع البحر {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

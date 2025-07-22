@@ -35,7 +35,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 تسمح إعدادات *توجيه التزلج* للمستخدمين بتخطيط مساراتهم عن طريق تحديد مستوى الصعوبة المطلوب ونوع التضاريس التي يرغبون في استكشافها. هناك خيارات متنوعة للحركة الآمنة والمريحة والممتعة على المنحدرات أو أثناء التزلج الحر.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

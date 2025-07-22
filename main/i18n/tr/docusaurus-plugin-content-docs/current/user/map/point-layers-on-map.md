@@ -20,7 +20,7 @@ Harita, [Favoriler](#favorites), [İlgi Çekici Noktalar](#points-of-interest-po
 
 ## Favoriler {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ OsmAnd'ın Android sürümünde, haritada ve arama sırasında yalnızca belirli
 
 ## Favori ve İÇN Adları {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ Varsayılan olarak, Favoriler ve ilgi çekici noktalar (İÇN) adları olmadan g
 
 ## İlgi Çekici Noktalar (İÇN'ler) {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -112,7 +112,7 @@ Standart OsmAnd İÇN türlerinden birini veya birkaçını seçebilir veya kend
 
 ### Harita Stili İÇN {#map-style-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ OsmAnd'daki her İÇN türüne belirli bir simge ve renk atanmıştır. İÇN'ni
 
 ## İşaretleyiciler {#markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -186,7 +186,7 @@ Arama sonuçları, özel bir İÇN katmanı olarak haritada görüntülenebilir.
 
 ## * Sokak Seviyesi Görüntüleme {#-street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -222,7 +222,7 @@ Arama sonuçları, özel bir İÇN katmanı olarak haritada görüntülenebilir.
 
 ## * Wikipedia {#-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -249,7 +249,7 @@ OsmAnd'da Wikipedia özelliğini nasıl indireceğinizi ve kullanacağınızı [
 
 ## * Sesli / Görüntülü Noktalar (Android) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ Sesli / Görüntülü notlar, kullanıcılar tarafından harita üzerinde ses, f
 
 ## * OSM Düzenleme Noktaları {#-osm-edit-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -295,7 +295,7 @@ OSM düzenleme noktaları, [OpenStreetMap projesine](https://www.openstreetmap.o
 
 ## * OSM Notları {#-osm-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

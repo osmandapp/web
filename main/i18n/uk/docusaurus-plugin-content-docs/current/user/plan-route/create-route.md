@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Маршрут складається з набору сегментів між вказаними точками. Сегменти можуть бути прямими лініями або маршрутами, адаптованими до обраного профілю. Маршрут можна зберегти як GPX для подальшого імпорту, редагування та [навігації](../navigation/setup/gpx-navigation.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Основні випадки використання {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Змінити існуючий GPX-трек {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Прив'язати трек до доріг {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Додавання точок {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ To generate navigation instructions:
 2. Торкніться *піктограми профілю* в нижньому лівому куті екрана мапи. Не торкайтеся верхньої піктограми, це відкриє меню Налаштування мапи.
 3. У *[Контекстному меню точки](#point-context-menu) → Змінити тип маршруту до/після*.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ To generate navigation instructions:
 
 ### Контекстне меню точки {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ To generate navigation instructions:
 
 ### Мультимодальні маршрути {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ To generate navigation instructions:
 
 ### Зберегти маршрут {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ To generate navigation instructions:
 
 ### Параметри {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ To generate navigation instructions:
 
 ### Графік {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

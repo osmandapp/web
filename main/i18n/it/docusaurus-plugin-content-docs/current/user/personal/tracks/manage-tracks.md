@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd elabora il file della traccia in [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ma [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) e [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) possono essere importati e convertiti in GPX. Per saperne di più sui diversi tipi di tracce, consultare l'articolo [Tracce sulla mappa](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 
 ## Creare una traccia {#create-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 
 ## Gestire le tracce {#manage-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Tutte le tracce mai registrate, create o importate vengono visualizzate automati
 
 ### Menu Traccia {#track-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ Il menu offre le seguenti azioni:
 
 ### Cerca {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Disponibile:
 
 ### Modalità di selezione {#selection-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 ### Ordina per {#sort-by}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd offre un modo semplice per ordinare le tue tracce, aiutandoti a gestire u
 
 #### Ordinamento delle sottocartelle {#sorting-subfolders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ L'opzione di ordinamento selezionata viene applicata non solo alla sottocartella
 
 ## Cartella Tracce {#track-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Come aprire il menu della cartella:
 
 ### Statistiche cartella {#folder-statistics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Nella parte inferiore dell'elenco nella scheda *Tracce*, e sotto l'elenco delle 
 
 ### Azioni cartella {#folder-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Come aprire le azioni della cartella:
 
 ### Elimina cartella {#delete-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ Lo strumento di importazione consente di aggiungere tracce da file esterni per l
 
 ### Esporta {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

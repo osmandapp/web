@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 İşaretleyiciler, harita üzerinde bayrak olarak işaretlenmiş özel noktalardır ve [Favori noktaların](./favorites.md) aksine isim ve diğer bilgiler belirtilmeden hızlı bir şekilde tek dokunuşla oluşturulabilirler. İşaretleyiciler ayrıca [widget'lar](../widgets/markers.md), **oklar** (<Translate android="true" ids="show_arrows_on_the_map"/>) ve **mesafe göstergesi** (<Translate android="true" ids="show_direction"/>) ile ek işlevsellik sağlar.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### İşaretleyicileri Ekle / Düzenle {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Güzergah listesi, widget'larda navigasyon için kullanılan ilk 1. işaretleyic
 
 ### Geçmiş {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Geçmiş, devre dışı bırakılmış (geçilmiş) tüm işaretleyicilerin bir 
 
 ## Haritada Görünüm {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

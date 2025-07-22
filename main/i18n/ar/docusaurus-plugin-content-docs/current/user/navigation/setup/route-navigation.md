@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *الاتجاه إلى/من* في [قائمة سياق الخريطة](../../map/map-context-menu.md#directions-to--from).
 - قسم الملاحة في [القائمة الرئيسية](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -128,7 +128,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تعيين نقطة الهدف {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -155,7 +155,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الوجهات الوسيطة {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إذا اخترت **فرز** (*أندرويد*) أو **خيارات** (*iOS*) في قائمة الوجهات، ستصل إلى خيارات خاصة لضبط ترتيب التنقل إلى النقاط الوسيطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -210,7 +210,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### استخدام نقاط المنزل أو العمل {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -230,7 +230,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### سجل المسارات السابقة {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -258,7 +258,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## بدء / إيقاف الملاحة {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -302,7 +302,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - استخدم الرسالة من OsmAnd في شريط الإشعارات.
 - استخدم *قائمة الإجراءات السريعة* أو مربع الحوار الذي يظهر عند النقر على *[زر الملاحة](../../widgets/map-buttons.md#directions)* (انظر لقطة الشاشة).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -348,7 +348,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لا توجد إعدادات ملاحة في ملف تعريف *تصفح الخريطة*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -378,7 +378,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### بدء / إيقاف المحاكاة {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -404,7 +404,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### وضع السرعة {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -437,7 +437,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لبناء مسار، يجب تنزيل جميع **الخرائط الضرورية** وأن يكون لها نفس تاريخ الإصدار. يرجى ملاحظة أنه في بعض الحالات، قد تكون رسالة الخرائط المفقودة مخفية في قائمة إعداد المسار. إذا سحبت قائمة الملاحة لأعلى، فسترى الأسباب المحتملة لعدم إمكانية حساب مسارك.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -456,7 +456,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في مربع حوار الخرائط المطلوبة، سترى اقتراحات للخرائط التي يجب تنزيلها أو تحديثها. قد لا تكون قائمة الخرائط المستخدمة دقيقة لأنها تحسب مسارًا أساسيًا جدًا، للحصول على قائمة دقيقة للخرائط، يمكنك النقر على **حساب عبر الإنترنت**. إذا اخترت **استخدام الخرائط التي تم تنزيلها**، فستحاول عملية حساب التوجيه استخدام الخرائط التي تم تنزيلها بالفعل وتجاوز رسالة التحذير.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

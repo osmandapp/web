@@ -31,7 +31,7 @@ Per utilizzare il plugin *Modifica OpenStreetMap*, devi effettuare le seguenti i
 
 ## Impostazioni {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -70,7 +70,7 @@ Se hai un abbonamento [OsmAnd Pro](../purchases/android.md#pro-features), le mod
 
 ### Autorizzazione {#authorization}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Accedi per contribuire con modifiche e file GPX.
 
 ### Aggiornamenti gratuiti delle mappe per i mappatori {#free-map-updates-for-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ L'impostazione <Translate android="true" ids="map_updates_for_mappers"/> ti cons
 
 ### Livello di modifica OSM {#osm-editing-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ Il plugin di modifica OpenStreetMap ti consente di creare nuovi oggetti sulla ma
 
 ### Aggiungi tag {#add-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -189,7 +189,7 @@ Ricorda che quando aggiungi tipi di POI non supportati, è importante assicurars
 
 ## Crea / Modifica nota OSM {#create--modify-osm-note}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Le tue tracce verranno aggiunte a [OSM traces](https://www.openstreetmap.org/tra
 ### Carica traccia GPS {#upload-gps-track}
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

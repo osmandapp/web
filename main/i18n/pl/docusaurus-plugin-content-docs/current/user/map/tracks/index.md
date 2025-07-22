@@ -38,7 +38,7 @@ Możesz zarządzać widocznością śladów, wybierając, które z nich mają by
 
 ### Konfiguruj mapę {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Opcja *Konfiguruj mapę* umożliwia szybkie zarządzanie wyświetlaniem wszystki
 
 ### Moje miejsca {#my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ W [Moje miejsca *→* zakładka Ślady](../../personal/tracks/manage-tracks.md#m
 
 ### Menu kontekstowe śladu {#track-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Po wybraniu śladu na mapie lub otwarciu [menu kontekstowego śladu](./track-con
 
 ## Analizuj ślad na mapie {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/
 
 ### Śledź moją lokalizację {#follow-my-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

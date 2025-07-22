@@ -31,7 +31,7 @@ Domyślnie *Profil jazdy konnej* jest dezaktywowany. Aby użyć tego profilu do 
 
 Wyznaczanie trasy dla koni ma na celu dostarczenie jeźdźcom informacji o ścieżkach przyjaznych koniom, ścieżkach konnych i szlakach jeździeckich.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

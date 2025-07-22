@@ -22,7 +22,7 @@ La mappa sciistica di OsmAnd fa parte delle mappe vettoriali e non richiede down
 
 Di seguito sono mostrati due profili: quello a sinistra è per lo sci e quello a destra è per la guida. Il profilo Sci evidenzia sentieri, vie aeree, colori invernali e tutti gli oggetti della mappa utili per navigare nell'area sciistica.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ La seguente impostazione fa apparire la Mappa Sciistica di OsmAnd sullo schermo:
 
 ### Imposta lo stile mappa Inverno e Sci {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ Il profilo Sci è progettato per essere utilizzato in combinazione con gli stili
 
 ### Combina Mappe {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Il plugin Visualizzatore Mappa Sci è un'applicazione separata e la disabilitazi
 
 ## Profilo Sci {#skiing-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Tipi di piste come *Sentieri escursionistici* o *Piste da slittino* possono esse
 
 ### Sentieri battuti {#grooming-trails}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Macchine speciali battono le piste per prepararle all'attività appropriata, com
 
 ### Percorsi delle piste da sci {#ski-slope-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Con il profilo Sci, la navigazione sciistica e lo stile mappa [Inverno e Sci](..
 
 ### Notte e illuminazione {#night-and-lighting}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -33,7 +33,7 @@ Ce type de navigation ne prend pas en compte les obstacles ou les barrières qui
 Lorsque vous utilisez les types de navigation Direct vers un point et Bateau, vous aurez besoin des [données de courbes de profondeur](../../plugins/nautical-charts.md#nautical-map-style), qui peuvent être activées et définies dans *Configurer la carte*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

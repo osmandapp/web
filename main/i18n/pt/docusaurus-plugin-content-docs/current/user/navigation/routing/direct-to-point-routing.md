@@ -32,7 +32,7 @@ Esse tipo de navegação não considera quaisquer obstáculos ou barreiras que p
 Ao usar os tipos de navegação Direta para um ponto e Barco, você precisará de [dados de contornos de profundidade](../../plugins/nautical-charts.md#nautical-map-style), que podem ser ativados e configurados em *Configurar mapa*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

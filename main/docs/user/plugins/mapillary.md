@@ -30,7 +30,7 @@ To display street-level images on the OsmAnd map, you need to make the following
 
 ## Map Layer {#map-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ The map layer with street images is displayed on the OsmAnd map as rows of conne
 
 ### Enable Layer {#enable-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ To display Mapillary street-level imagery on the map, you need to enable this la
 
 ### Data Filtering {#data-filtering}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -112,7 +112,7 @@ If the selected images are not displayed, use **Reload** for the **Tile cache**.
 
 ## Map Context Menu {#map-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ If the Mapillary plugin is enabled, you can view photos of streets available wit
 
 ## Add Photos {#add-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ To add photos, you need to register in the [Mapillary app](https://www.mapillary
 
 ## Mapillary Widget {#mapillary-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -22,7 +22,7 @@ Les [marqueurs cartographiques](../../personal/markers.md) sont des points sur l
 
 Ils peuvent être particulièrement utiles pour les randonneurs, les cyclistes ou toute personne explorant une nouvelle zone qui souhaite marquer des lieux ou des points de référence intéressants sur la carte. La principale différence avec les [points favoris](../../personal/favorites.md) est que les marqueurs sont plus rapides à créer car ils ne nécessitent pas de nom.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -41,7 +41,7 @@ Ils peuvent être particulièrement utiles pour les randonneurs, les cyclistes o
 
 ## Utiliser les marqueurs dans la navigation {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ Lorsque les options **Flèches sur la carte** et **Ligne de direction** sont act
 
 ## Liste d'itinéraires {#itinerary-list}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Seules les traces avec points de passage peuvent être ajoutées à la *liste de
 
 ## Trier les marqueurs {#sort-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -164,7 +164,7 @@ Dans la version Android de l'application OsmAnd, il existe d'autres options de t
 
 ### Trier par attributs {#sort-by-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la list
 
 ## Passer les marqueurs {#pass-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

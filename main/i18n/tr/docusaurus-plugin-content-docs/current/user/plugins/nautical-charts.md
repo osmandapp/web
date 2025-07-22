@@ -27,7 +27,7 @@ Bir deniz haritası, kaptanların su üzerinde seçilen bir rota üzerinde bir g
 
 Deniz haritaları, profesyonel denizciler ve şehrin kanallarında seyir yapmak için tekne kiralayan amatörler için önemlidir. Haritalar onlara seyir rotaları, seyir ışıkları, tehlike bölgeleri, yelken açmaya veya demirlemeye izin verilen veya yasaklanan bölgeler vb. gibi çeşitli bilgiler sağlar.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Aşağıdaki kurulum, Deniz haritasının ekranda görünmesini sağlar:
 
 ### Deniz Haritası Stilini Ayarla {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Mevcut harita stilini Deniz olarak değiştirmek için aşağıdaki ayarları ya
 
 ### Deniz Haritalarını İndir {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ Deniz eklentisini devre dışı bırakmak, yüklenen deniz verilerini kaldırmaz
 
 ## Deniz Profili {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ OsmAnd'daki Deniz eklentisi, vektör katman harita stillerini Deniz haritası st
 
 ### Derinlik Noktaları {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Derinlik noktası [paketleri](../start-with/download-maps.md#type-of-maps) Avrup
 
 ### Derinlik Konturları {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Ekranda bir Deniz haritası görüntülendiğinde, gördüğünüzü ayarlayabil
 
 ### Deniz Yatağı Detayları {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

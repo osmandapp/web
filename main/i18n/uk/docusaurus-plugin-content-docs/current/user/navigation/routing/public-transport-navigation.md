@@ -25,7 +25,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Маршрутизація громадським транспортом знаходиться на стадії тестування. Наразі ви можете будувати та переглядати свій маршрут без повної функції навігації.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **1.** Вам потрібно вибрати *Профіль навігації громадським транспортом*, початкову та кінцеву точки.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **2.** OsmAnd пропонує варіанти маршрутів з часом пішої ходи та маршрути громадського транспорту з інформацією про маршрут: час, відстань, пересадки та маршрути громадського транспорту. Вам потрібно прокрутити екран навігації, щоб вибрати потрібний варіант.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **3.** Ви можете переглянути всі можливі варіанти маршрутів на мапі за допомогою кнопки *Показати на мапі*. Проведіть пальцем по екранах, щоб переглянути наступний варіант маршруту.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 **4.** Натисніть кнопку "Деталі", щоб відкрити опис вибраного маршруту з усіма зупинками та пересадками.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -27,7 +27,7 @@ Você pode configurar o *Roteamento de bicicleta* na seção [Parâmetros de rot
 
 Os recursos de roteamento de bicicleta do OsmAnd permitem que os ciclistas insiram um ponto de partida e um ponto final e, em seguida, gerem uma rota que leva em consideração suas preferências e a geografia local.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

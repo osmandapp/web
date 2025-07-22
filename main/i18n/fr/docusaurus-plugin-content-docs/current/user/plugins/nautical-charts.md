@@ -27,7 +27,7 @@ Une carte nautique est une carte topographique très détaillée pour aider les 
 
 Les cartes nautiques sont importantes pour les marins professionnels et les amateurs qui louent un bateau pour naviguer sur les canaux de la ville. Les cartes leur fournissent diverses informations telles que les routes de navigation, les feux de navigation, les zones dangereuses, les zones où il est autorisé ou interdit de naviguer ou de s'amarrer, etc.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ La configuration suivante permet d'afficher la carte nautique à l'écran :
 
 ### Définir le style de carte nautique {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Pour changer le style de carte actuel en Nautique, vous devez effectuer les rég
 
 ### Télécharger les cartes nautiques {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ La désactivation du plugin Nautique ne supprime pas les données nautiques char
 
 ## Profil nautique {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ Le plugin Nautique dans OsmAnd étend les styles de carte de la couche vectoriel
 
 ### Points de profondeur {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Les [paquets](../start-with/download-maps.md#type-of-maps) de points de profonde
 
 ### Courbes de niveau de profondeur {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Vous pouvez aider l'application OsmAnd à augmenter la base de données des cour
 
 ### Détails du fond marin {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

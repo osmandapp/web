@@ -38,7 +38,7 @@ Las funciones de *Importar* y *Exportar* te permiten guardar datos de **archivos
 
 ### Exportar {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Todos los datos que hayas configurado y creado pueden exportarse usando el ***me
 
 ### Importar {#import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

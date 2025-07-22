@@ -26,7 +26,7 @@ Das Schnellaktions-Widget ist ein interaktives Benutzeroberflächenelement, das 
 
 ## Schnellaktions-Widget {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Um die Schnellaktions-Schaltfläche zu verwenden, müssen Sie dieses Widget zuer
 
 ### Aktionen hinzufügen und löschen {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Sie können der Schnellaktions-Schaltfläche eine oder mehrere [Aktionen](#actio
 
 ### Aktionsparameter {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ Das *Schnellaktions*-Widget erscheint in der unteren Ecke des Kartenbildschirms,
 
 ### Benutzerdefinierte Schaltflächen {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

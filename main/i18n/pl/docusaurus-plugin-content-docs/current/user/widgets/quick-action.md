@@ -26,7 +26,7 @@ Widżet Szybka akcja to interaktywny element interfejsu użytkownika, który zap
 
 ## Widżet Szybka akcja {#quick-action-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Aby użyć przycisku Szybka akcja, musisz najpierw włączyć ten widżet.
 
 ### Dodawanie i usuwanie akcji {#add-and-delete-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Możesz przypisać jedną lub więcej [akcji](#action-types) do przycisku szybki
 
 ### Parametry akcji {#action-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -163,7 +163,7 @@ Widżet *Szybka akcja* pojawia się w dolnym rogu ekranu mapy po pierwszym włą
 
 ### Przyciski niestandardowe {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

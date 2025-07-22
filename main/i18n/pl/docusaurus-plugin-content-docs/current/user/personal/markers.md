@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko utworzyć jednym dotknięciem, bez podawania nazwy i innych informacji, w przeciwieństwie do [ulubionych punktów](./favorites.md). Markery zapewniają również dodatkową funkcjonalność dzięki [widżetom](../widgets/markers.md), **strzałkom** (<Translate android="true" ids="show_arrows_on_the_map"/>) i **wskazaniu odległości** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko 
 
 ### Dodawanie / Edycja Markerów {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Markery mogą być dodawane i usuwane jako cała grupa z grupy Ulubionych lub pl
 
 ### Historia {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Historia to lista wszystkich dezaktywowanych (przekroczonych) markerów. Z tej l
 
 ## Wygląd na mapie {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

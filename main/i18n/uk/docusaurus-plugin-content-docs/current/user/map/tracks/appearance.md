@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Функція **Вигляд треку** дозволяє користувачам налаштовувати відображення треків на мапі. Це включає налаштування кольору, ширини, індикаторів напрямку та інших візуальних елементів. Налаштування вигляду треку допомагає розрізняти кілька треків, виділяти певні маршрути та покращувати читабельність мапи.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **3D Трек** — це платна функція **OsmAnd Pro** для [iOS](../../purchases/ios.md#pro-features) та [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Змінити вигляд для кількох треків {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

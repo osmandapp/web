@@ -27,7 +27,7 @@ OsmAnd'deki **Rota hazırlığı** özelliği, [sürüş](./../routing/car-based
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -92,7 +92,7 @@ Navigasyon menüsüne ulaşmanın 3 yolu vardır:
 - Bir [*harita bağlam menüsünde*](../../map/map-context-menu.md#directions-to--from) *Hedefe/Hedeften*.  
 - [*Ana Menüdeki*](../../start-with/main-menu.md) Navigasyon bölümü *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Başlangıç noktası olarak mevcut konumunuzu, bir [Favori noktanın](../../map
 
 ### Hedef Noktası Ayarla {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. 
 
 ### Ara Hedefler {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. 
 
 Hedefler listesinde **Sırala** (*Android*) veya **Seçenekler** (*iOS*) seçeneğini belirlerseniz, ara noktalara navigasyon sırasını ayarlamak için özel seçeneklere ulaşırsınız.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Bu menüde hedef noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 ### Ev veya İş Noktalarını Kullan {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ Bu menüde hedef noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 ### Önceki Rotaların Geçmişi {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -260,7 +260,7 @@ Bu menüde hedef noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 ## Navigasyonu Başlat / Durdur {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ Navigasyonu devam ettirmek için:
 - Bildirim çubuğundaki OsmAnd mesajını kullanın.
 - *Hızlı eylemler menüsünü* veya *[Navigasyon düğmesine](../../widgets/map-buttons.md#directions)* dokunduğunuzda görünen iletişim kutusunu kullanın (ekran görüntüsüne bakın).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ Navigasyon ayarlarına erişmek için aşağıdaki adımlardan birini izleyin:
 *Haritaya Göz At* profilinde navigasyon ayarları yoktur.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ Lütfen ilgili navigasyon türü için rota parametreleri hakkında bilgi edinin
 
 #### Simülasyonu Başlat / Durdur {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -407,7 +407,7 @@ Bir navigasyon rotası oluşturulduğunda, **<Translate android="true" ids="simu
 
 #### Hız Modu {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -440,7 +440,7 @@ Bir navigasyon rotası oluşturulduğunda, **<Translate android="true" ids="simu
 
 Bir rota oluşturmak için **gerekli tüm haritaların** indirilmiş ve aynı yayın tarihine sahip olması gerekir. Bazı durumlarda eksik haritalar mesajının rota hazırlık menüsünde gizlenebileceğini lütfen unutmayın. Navigasyon menüsünü yukarı çekerseniz, rotanızın neden hesaplanamadığına dair olası nedenleri göreceksiniz.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Bir rota oluşturmak için **gerekli tüm haritaların** indirilmiş ve aynı ya
 
 Gerekli haritalar iletişim kutusunda, indirilecek veya güncellenecek haritaların önerilerini göreceksiniz. Kullanılan haritaların listesi tam olmayabilir, çünkü çok temel bir rota hesaplar; haritaların tam listesini almak için **Çevrimiçi hesapla**'ya tıklayabilirsiniz. **İndirilen haritaları kullan**'ı seçerseniz, rota hesaplaması zaten indirilmiş haritaları kullanmaya çalışacak ve uyarı mesajını atlayacaktır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

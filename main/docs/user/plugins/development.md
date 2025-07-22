@@ -42,7 +42,7 @@ Use one of the following paths to open the plugin settings:
 - *Main Menu → Plugins → OsmAnd development → Settings*.
 - *Main Menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -137,7 +137,7 @@ Use one of the following paths to open the plugin settings:
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -166,7 +166,7 @@ The [FPS Widget](../widgets/info-widgets.md#map-rendering-fps) shows how fast th
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -191,7 +191,7 @@ You can use [Camera position widgets](../widgets/info-widgets.md#camera-widgets)
 
 ### Camera tilt {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -217,7 +217,7 @@ At the same time, due to the imaginary movement of the viewer, the distance from
 
 ### Camera Elevation {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -238,7 +238,7 @@ The Camera Elevation widget shows the camera elevation above the surface level. 
 
 ### Zoom Level {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ The widget has two views that are switched by tapping it:
 
 ### Distance to Target {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -331,7 +331,7 @@ OsmAnd provides an opportunity to simulate the location and movement of your dev
 - Select movement simulation speed.
 - Tap Start buton.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

@@ -29,7 +29,7 @@ OsmAnd пропонує різноманітні профілі за замов�
      - Щоб отримати доступ до цих профілів та використовувати їх, потрібно вручну увімкнути їх у *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - Цей метод допомагає підтримувати організований та актуальний список профілів, активуючи лише ті, що необхідні для конкретних видів діяльності.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ OsmAnd пропонує різноманітні профілі за замов�
 Усі налаштування застосовуються виключно до поточного вибраного профілю програми.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ OsmAnd пропонує різноманітні профілі за замов�
 
 ### Безкоштовне хмарне резервне копіювання {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ### Вигляд {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ### Одиниці та формати {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ### Інше {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ## Налаштування навігації {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ## Налаштувати карту {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ## Налаштувати екран {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ## Вигляд профілю {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ### Вигляд мого місцезнаходження {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 Щоб отримати доступ до налаштувань плагіна, ви повинні спочатку [**увімкнути плагін**](../plugins/index.md#enable--disable) у розділі *Плагіни головного меню*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ OsmAnd дозволяє [створювати резервні копії](../pe
 
 ## Дії {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

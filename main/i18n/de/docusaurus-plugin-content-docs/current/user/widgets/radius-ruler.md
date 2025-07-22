@@ -32,7 +32,7 @@ Diese Werkzeuge sind nützlich für die Routenplanung, die Schätzung der Entfer
 
 ## Lineal {#ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Dieses Werkzeug ist hilfreich, wenn Sie schnell die Größe von Objekten oder En
 
 ## Radius-Lineal Widget {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Das [Radius-Lineal-Widget](../widgets/info-widgets.md#radius-ruler) zeigt die En
 
 Verwenden Sie dieses Widget, um die Entfernung zu interessanten Orten abzuschätzen oder eine Planung um ein definiertes Gebiet herum vorzunehmen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Verwenden Sie dieses Widget, um die Entfernung zu interessanten Orten abzuschät
 
 ## Kompass für Radius-Lineal {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Diese Überlagerung ist hilfreich für die Navigation im Freien, da Sie die [Kar
 
 ## Mitte / Unten Position {#center--bottom-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Weitere Informationen zur *Position auf dem Bildschirm* finden Sie im Artikel [B
 
 ## 3D-Ansicht {#3d-view}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Es gibt zwei Anwendungsfälle:
 
 Sehen Sie sich diese kurzen Tutorials an, um zu erfahren, wie Sie das Radius-Lineal und verwandte Werkzeuge in OsmAnd verwenden:
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

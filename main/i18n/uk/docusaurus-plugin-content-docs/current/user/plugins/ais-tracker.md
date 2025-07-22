@@ -47,7 +47,7 @@ AIS працює на *УКХ-частотах* (161.975 МГц та 162.025 М�
 
 ***Відображення AIS на карті:***
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ AIS працює на *УКХ-частотах* (161.975 МГц та 162.025 М�
 
 ### Інформація про судно AIS {#ais-vessel-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ AIS працює на *УКХ-частотах* (161.975 МГц та 162.025 М�
 
 ## Налаштування плагіна {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

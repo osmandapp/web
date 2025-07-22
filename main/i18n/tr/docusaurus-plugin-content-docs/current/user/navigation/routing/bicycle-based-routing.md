@@ -27,7 +27,7 @@ Bisiklet rotası [dağ bisikleti](#mtb-routing-particularities) için de faydal�
 
 OsmAnd'ın bisiklet rotası özellikleri, bisikletçilerin bir başlangıç ve bitiş noktası girmesine ve ardından tercihlerini ve yerel coğrafyayı dikkate alan bir rota oluşturmasına olanak tanır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

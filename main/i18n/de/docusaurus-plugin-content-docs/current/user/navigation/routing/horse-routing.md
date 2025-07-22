@@ -31,7 +31,7 @@ Standardmäßig ist das *Pferdereitprofil* deaktiviert. Um dieses Profil für di
 
 Die Pferderoutenplanung wurde entwickelt, um Reitern Informationen über pferdefreundliche Wege, Reitwege und Reitpfade zu liefern.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

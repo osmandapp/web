@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Marker sind spezielle Punkte, die auf der Karte als Flaggen markiert sind und schnell mit einem einzigen Tippen erstellt werden können, ohne Namen und andere Informationen anzugeben, im Gegensatz zu [Favoritenpunkten](./favorites.md). Marker bieten auch zusätzliche Funktionalität mit [Widgets](../widgets/markers.md), **Pfeilen** (<Translate android="true" ids="show_arrows_on_the_map"/>) und **Entfernungsanzeige** (<Translate android="true" ids="show_direction"/>).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Marker sind spezielle Punkte, die auf der Karte als Flaggen markiert sind und sc
 
 ### Marker hinzufügen / bearbeiten {#add--edit-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Marker können als ganze Gruppe aus einer Favoritengruppe oder einer GPX-Datei m
 
 ### Verlauf {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Der Verlauf ist eine Liste aller deaktivierten (passierten) Marker. Aus dieser L
 
 ## Darstellung auf der Karte {#appearance-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

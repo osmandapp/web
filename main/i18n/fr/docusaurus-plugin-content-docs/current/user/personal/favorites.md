@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La fonction **Favoris** d'OsmAnd vous permet de créer des signets (notes) sur la carte. Ces points favoris sont affichés par défaut sous forme d'étoiles jaunes, mais vous pouvez les personnaliser entièrement avec différentes couleurs, formes et icônes. Les favoris sont regroupés dans une couche de carte dédiée, qui devient visible à partir du *6ème niveau de zoom*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -36,7 +36,7 @@ La fonction **Favoris** d'OsmAnd vous permet de créer des signets (notes) sur l
 
 ## Point favori {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Les favoris font partie d'une couche de carte spéciale, et vous pouvez les [aff
 
 ### Créer {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ Lors de l'ajout d'un point à partir de données OSM, les informations POI perti
 
 ### Modifier / Remplacer / Supprimer {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Pour modifier un point favori :
 
 ### Icônes de favoris {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -149,7 +149,7 @@ Le *dossier Personnel* contient des points spéciaux comme **<Translate android=
 
 ## Gérer les favoris {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ La section **Mes favoris** vous permet de :
 
 ### Ordre / Tri / Recherche {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -197,7 +197,7 @@ La section **Mes favoris** vous permet de :
 
 ### Modifier / Supprimer en bloc {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Actions de groupe de favoris {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -272,7 +272,7 @@ Plus de détails dans l'article [Mes lieux](../personal/myplaces.md#favorites).
 
 ### Changer l'apparence du groupe {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ OsmAnd fournit plusieurs méthodes pour [sauvegarder](./import-export.md) et [re
 
 ### Sauvegarde gratuite dans le cloud {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ La *sauvegarde gratuite des favoris* offre ces avantages :
 
 #### Comment créer une sauvegarde {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -364,7 +364,7 @@ Vous avez besoin d'un compte OsmAnd Cloud pour utiliser la fonction *Sauvegarde 
 
 ### Tous les favoris {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -387,7 +387,7 @@ Vous pouvez exporter et importer vos favoris à l'aide des boutons spéciaux sit
 
 ### Groupe de favoris {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -408,7 +408,7 @@ Vous pouvez exporter et importer vos favoris à l'aide des boutons spéciaux sit
 
 ### Sauvegarde automatique des favoris {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -27,7 +27,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 
 ## Full text search {#full-text-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -81,7 +81,7 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 
 ## Select City {#select-city}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ This way of searching makes it easy to find specific locations within a selected
 
 ## Select Street {#select-street}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -152,7 +152,7 @@ Street search is performed in the locality where you are, or where you searched 
 
 ## Postcode Search {#postcode-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -187,7 +187,7 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 
 ## Coordinates Search {#coordinates-search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

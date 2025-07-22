@@ -53,7 +53,7 @@ OsmAnd admite el **uso multiplataforma** entre *([Android](../purchases/android.
 
 ## Iniciar sesión {#login}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -99,7 +99,7 @@ Si experimentas problemas durante el registro:
 
 ## OsmAnd Start {#osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Funciones incluidas en OsmAnd Start:
 
 ### Cómo activar OsmAnd Start {#how-to-activate-osmand-start}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Si ya tienes una suscripción a **OsmAnd Pro** o una **cuenta activa de OsmAnd C
 
 ## Última sincronización {#last-sync}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ To use this feature:
 
 ## Papelera {#trash}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ La función **Papelera** te permite ver y gestionar los archivos que se han elim
 
 ## Ajustes {#settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -281,7 +281,7 @@ Esta sección es para editar y gestionar tu OsmAnd Cloud.
 
 ### Seleccionar datos para la copia de seguridad {#select-data-to-back-up}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -314,7 +314,7 @@ Todos los [mapas](../start-with/download-maps.md) se almacenan en el dispositivo
 
 ### Gestionar almacenamiento {#manage-storage}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Esta sección contiene información sobre cuál de tus cuentas está conectada a
 
 ### Opción de eliminación {#deletion-option}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -382,7 +382,7 @@ Las acciones que puedes realizar en la sección **Zona de peligro** del menú Aj
 
 ## Lista de cambios {#list-of-changes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -409,7 +409,7 @@ En la sección [Última sincronización](#last-sync) del menú desplegable, toca
 
 ### Local y Nube {#local-and-cloud}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +438,7 @@ Ve a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osma
 
 ### Conflictos {#conflicts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

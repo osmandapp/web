@@ -44,7 +44,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 ### Voice Settings {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -116,7 +116,7 @@ In some countries or regions, using speed camera warning applications is illegal
 
 ### Speed Limit {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -240,7 +240,7 @@ For troubleshooting, refer to:
 
 ### Voice Prompt Language {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

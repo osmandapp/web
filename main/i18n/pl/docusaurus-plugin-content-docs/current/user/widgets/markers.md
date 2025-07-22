@@ -32,7 +32,7 @@ Możesz również wybrać wyświetlanie jednego lub dwóch znaczników. Więcej 
 *Odległość do znacznika* to długość linii prostej między Twoją pozycją (lub środkowym punktem mapy / początkowym punktem dotykowym mapy, gdy lokalizacja jest wyłączona) a znacznikiem.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -82,7 +82,7 @@ Możesz również wybrać wyświetlanie jednego lub dwóch znaczników. Więcej 
 :::
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ Widżet pokazuje odległość lub szacowany czas przybycia (ETA) dla pierwszego 
 
 Konfiguracja wyglądu znaczników mapy jest dostępna zarówno w wersji OsmAnd na Androida, jak i na iOS. Menu „Wygląd na mapie” to ogólne ustawienie dla znaczników mapy i ma zastosowanie niezależnie od tego, czy widżety są włączone, czy nie. Szczegółowe informacje można znaleźć na tej [stronie](../personal/markers.md#appearance-on-the-map).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

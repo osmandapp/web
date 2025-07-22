@@ -27,7 +27,7 @@ Una mappa nautica è una mappa topografica altamente dettagliata per aiutare gli
 
 Le mappe nautiche sono importanti per i marinai professionisti e gli amatori che noleggiano una barca per navigare nei canali della città. Le mappe forniscono loro varie informazioni come rotte di navigazione, luci di navigazione, zone di pericolo, zone in cui è consentito o vietato navigare o attraccare, ecc.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ La seguente configurazione fa sì che la mappa nautica venga visualizzata sullo 
 
 ### Imposta lo stile mappa nautica {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Per cambiare lo stile della mappa corrente in Nautica, devi effettuare le seguen
 
 ### Scarica mappe nautiche {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ La disabilitazione del plugin Nautica non rimuove i dati nautici caricati, quind
 
 ## Profilo nautico {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ Il plugin Nautica in OsmAnd estende gli stili di mappa a livello vettoriale con 
 
 ### Punti di profondità {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ I [pacchetti](../start-with/download-maps.md#type-of-maps) di punti di profondit
 
 ### Contorni di profondità {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Puoi aiutare l'app OsmAnd ad aumentare il database dei contorni di profondità a
 
 ### Dettagli del fondale marino {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

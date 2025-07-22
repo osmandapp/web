@@ -31,7 +31,7 @@ Por padrão, o *perfil de cavalgada* está desativado. Para usar este perfil par
 
 O roteamento para cavalgada foi projetado para fornecer aos cavaleiros informações sobre caminhos, trilhas e rotas de equitação que são adequados para cavalos.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

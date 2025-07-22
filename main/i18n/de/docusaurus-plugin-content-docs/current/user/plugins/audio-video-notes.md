@@ -24,7 +24,7 @@ Das Plugin Audio-/Video-Notizen erweitert die Funktionalität von OsmAnd, indem 
 
 Alle erstellten Audio- und Video-Notizen bilden die Aufnahme-Ebene. Wenn diese auf der Karte aktiviert ist, ändert sich die Ansicht der aufgezeichneten Daten und es gibt mehr Einstellungen zur Verwaltung der Aufnahmen. In der Aufnahme-Ebene werden Audio- und Video-Notizen als POIs auf der Karte platziert, wodurch eine nur für den Gerätebesitzer sichtbare Nutzerhistorie entsteht.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Die Audio-/Video-Notizen werden mit dem Plugin Audio-/Video-Notizen bereitgestel
 
 ## Plugin-Einstellungen {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Sie können eine Foto-, Video- und Audio-Notiz auf eine der folgenden Arten erst
 
 #### 1. Erstellen und an Ihre aktuelle Position binden {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Die Funktionen, die das Widget <Translate android="true" ids="map_widget_av_note
 
 #### 2. Erstellen und an ausgewählte Geolocation binden {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Um eine Notiz zu erstellen, die an einen ausgewählten Punkt auf der Karte gebun
 
 #### Recorder-Dialog {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -168,7 +168,7 @@ Automatisch werden alle Foto-, Audio- und Videoaufnahmen gespeichert unter: <Tra
 
 ### In Meine Orte anzeigen {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Automatisch werden alle Foto-, Audio- und Videoaufnahmen gespeichert unter: <Tra
 
 ### Auf der Karte anzeigen {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -200,7 +200,7 @@ Um eine bestimmte Notiz auf der Karte anzuzeigen, verwenden Sie die Liste der No
 
 ### Abspielen {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ Der Abschnitt [Details](../map/map-context-menu#-audiovideo-note-android) enthä
 
 ### Umbenennen, Löschen, Teilen {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Um eine Notiz in Meine Orte zu verwalten, tippen Sie auf die vertikalen drei Pun
 
 ## Aufnahme-Widget {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie die Suche n
 
 ### In Meine Orte verwalten {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -295,7 +295,7 @@ Die Optionen in der unteren Leiste können verwendet werden, um die Liste der No
 
 ### Mit GPX-Wegpunkten teilen {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -315,7 +315,7 @@ Unterstützte Dateiformate: Audio - **3gp**, Video - **mp4**, Foto - **jpg**.
 
 ### Alle auf der Karte anzeigen {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -336,7 +336,7 @@ Verwenden Sie die Kartenebene [Aufnahme](../map/point-layers-on-map#-audio--vide
 
 ## Aus Notizen erstellte Wegpunkte {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Wenn ein Track exportiert wird, können die Wegpunkte nicht angezeigt oder abges
 
 ### Wegpunkte erstellen {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -31,7 +31,7 @@ OsmAnd haritasında sokak düzeyindeki görüntüleri görüntülemek için aşa
 
 ## Harita Katmanı {#map-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Sokak görüntülerini içeren harita katmanı, OsmAnd haritasında birbirine ba
 
 ### Katmanı Etkinleştir {#enable-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Mapillary sokak düzeyindeki görüntüleri haritada görüntülemek için, bu k
 
 ### Veri Filtreleme {#data-filtering}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -113,7 +113,7 @@ Seçilen görüntüler görüntülenmezse, **Döşeme önbelleği** için **Yeni
 
 ## Harita Bağlam Menüsü {#map-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ Mapillary eklentisi etkinleştirilirse, haritada seçilen noktanın 40 metre yar
 
 ## Fotoğraf Ekle {#add-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Fotoğraf eklemek için [Mapillary uygulamasına](https://www.mapillary.com/mobi
 
 ## Mapillary Pencere Öğesi {#mapillary-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

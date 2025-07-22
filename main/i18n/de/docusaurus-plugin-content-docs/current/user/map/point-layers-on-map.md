@@ -20,7 +20,7 @@ Auf der Karte können Punkte wie [Favoriten](#favorites), [Points of Interest (P
 
 ## Favoriten {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ In der Android-Version von OsmAnd können Sie nur bestimmte Gruppenfavoriten auf
 
 ## Namen von Favoriten und POIs {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ Standardmäßig werden Favoriten und Points of Interest (POIs) ohne Namen angeze
 
 ## Points of Interest (POIs) {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -112,7 +112,7 @@ Sie können einen oder mehrere aus den Standard-OsmAnd-POI-Typen auswählen oder
 
 ### Kartenstil-POI {#map-style-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -139,7 +139,7 @@ Jedem POI-Typ in OsmAnd wird ein bestimmtes Symbol und eine bestimmte Farbe zuge
 
 ## Markierungen {#markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -186,7 +186,7 @@ Mehr über die [Suche](../search/index.md) erfahren Sie hier.
 
 ## * Street-Level Imagery {#-street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -222,7 +222,7 @@ Erfordert das [Parkplatz-Plugin](../plugins/parking.md).
 
 ## * Wikipedia {#-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -249,7 +249,7 @@ OsmAnd verfügt über spezielle Points of Interest, die mit einem „W“-Logo g
 
 ## * Audio-/Video-Punkte (Android) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -268,7 +268,7 @@ Erfordert das [Audio-/Video-Notizen-Plugin](../plugins/audio-video-notes.md).
 
 ## * OSM-Bearbeitungspunkte {#-osm-edit-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -295,7 +295,7 @@ Erfordert das [OSM-Bearbeitungs-Plugin](../plugins/osm-editing.md).
 
 ## * OSM-Notizen {#-osm-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

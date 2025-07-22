@@ -29,7 +29,7 @@ OsmAnd propose une variété de profils par défaut adaptés à différentes act
      - Pour accéder et utiliser ces profils, vous devez les activer manuellement dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - Cette méthode permet de maintenir une liste de profils organisée et pertinente en n'activant que ceux requis pour des activités spécifiques.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 Tous les paramètres s'appliquent exclusivement au profil d'application actuellement sélectionné.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Cette section contient tous les paramètres liés à l'apparence, aux options de
 
 ### Sauvegarde gratuite dans le cloud {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Cette section contient les paramètres du thème de l'application et du bouton d
 
 ### Apparence {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 ### Unités et formats {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 
 ### Autres {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ La section **Autres** fournit des paramètres de profil supplémentaires pour pe
 
 ## Paramètres de navigation {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ Il n'y a pas de paramètres de navigation dans le profil *Parcourir la carte*.
 
 ## Configurer la carte {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Avec ce menu, vous pouvez :
 
 ## Configurer l'écran {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -397,7 +397,7 @@ Le [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-sc
 
 ## Apparence du profil {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Les paramètres d'**apparence du profil** vous permettent de personnaliser le no
 
 ### Apparence de ma position {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Avec la fonction de personnalisation de l'interface utilisateur, vous pouvez aju
 Pour accéder aux paramètres du plugin, vous devez d'abord [**activer le plugin**](../plugins/index.md#enable--disable) dans la *section Plugins du menu principal*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ Les plugins débloquent des fonctionnalités supplémentaires de l'application e
 
 ## Actions {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

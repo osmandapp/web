@@ -24,7 +24,7 @@ Le plugin Notes audio/vidéo étend les fonctionnalités d'OsmAnd en vous permet
 
 Toutes les notes audio et vidéo créées composent la couche d'enregistrement. Lorsqu'elle est activée sur la carte, elle modifie la vue des données enregistrées et il y a plus de paramètres pour gérer les enregistrements. Dans la couche d'enregistrement, les notes audio et vidéo sont placées comme des POI sur la carte, créant ainsi un récit utilisateur visible uniquement par le propriétaire de l'appareil.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ Les notes audio/vidéo sont fournies avec le plugin Notes audio/vidéo et néces
 
 ## Paramètres du plugin {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ Vous pouvez créer une note photo, vidéo et audio de l'une des manières suivan
 
 #### 1. Créer et lier à votre position actuelle {#1-create-and-tie-to-your-current-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Les fonctions fournies par le widget <Translate android="true" ids="map_widget_a
 
 #### 2. Créer et lier à la géolocalisation sélectionnée {#2-create-and-tie-to-selected-geolocation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Pour créer une note liée à un point sélectionné sur la carte, utilisez le [
 
 #### Boîte de dialogue d'enregistrement {#recorder-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -168,7 +168,7 @@ Automatiquement, tous les enregistrements photo, audio et vidéo sont enregistr�
 
 ### Afficher dans Mes lieux {#view-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Automatiquement, tous les enregistrements photo, audio et vidéo sont enregistr�
 
 ### Afficher sur la carte {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -200,7 +200,7 @@ Pour afficher une note spécifique sur la carte, utilisez la liste des notes dan
 
 ### Lire {#play}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -221,7 +221,7 @@ La section [Détails](../map/map-context-menu#-audiovideo-note-android) fournit 
 
 ### Renommer, supprimer, partager {#rename-delete-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -242,7 +242,7 @@ Pour gérer une note dans Mes lieux, appuyez sur les trois points verticaux de l
 
 ## Widget d'enregistrement {#recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -280,7 +280,7 @@ L'ajout d'un widget à l'écran est nécessaire si vous préférez éviter de re
 
 ### Gérer dans Mes lieux {#manage-in-my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -295,7 +295,7 @@ Les options de la barre inférieure peuvent être utilisées pour gérer la list
 
 ### Partager avec des points de passage GPX {#share-with-gpx-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -315,7 +315,7 @@ Formats de fichiers pris en charge : audio - **3gp**, vidéo - **mp4**, photo - 
 
 ### Afficher tout sur la carte {#show-all-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -336,7 +336,7 @@ Utilisez la couche de carte [Enregistrement](../map/point-layers-on-map#-audio--
 
 ## Points de passage créés à partir de notes {#waypoints-created-from-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -356,7 +356,7 @@ Si un itinéraire est exporté, les points de passage ne peuvent pas être visua
 
 ### Créer des points de passage {#create-waypoints}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

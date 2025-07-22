@@ -130,7 +130,7 @@ Algunos problemas de fuentes relacionados han sido documentados en GitHub: [3911
 
 ## * Líneas de contorno {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Las líneas de contorno son compatibles con todos los estilos de mapa y se puede
 
 ## * Profundidad náutica {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Para más detalles sobre la vista de mapa náutico, visita la [página del plugi
 
 ## Mostrar bordes {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ En Android, los mapas archivados se muestran en **naranja**. En iOS, los mapas q
 Ir a: *Menú → Configurar mapa → Mostrar → Cuadrícula de coordenadas*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd admite múltiples **proyecciones base** para mostrar líneas de cuadrícu
 
 ### Modo de mapa {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ El mapa se puede mostrar en un tema claro u oscuro según el modo seleccionado d
 
 ### Detalles {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widge
 
 ### Rutas {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Una ruta es un camino predeterminado que debe seguirse para llegar a un destino 
 
 ### Transporte {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Al navegar por ciudades, necesitas una vista más contrastada del transporte pú
 
 ### Ocultar {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Para mejorar la visibilidad del mapa, es posible que necesites ocultar ciertos o
 
 ### Estilo de carretera {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Configuraciones especiales para carreteras, donde puedes cambiar los colores par
 
 ### Tamaño del texto {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_re
 
 ### Lupa de mapa {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ La opción **Idioma del mapa** configura la ortografía de los nombres en el map
 
 Si los nombres en el mapa no están traducidos al idioma requerido por la comunidad OSM, puedes usar [nombres transliterados](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) o *<Translate ios="true" ids="translit_names"/>* (iOS).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

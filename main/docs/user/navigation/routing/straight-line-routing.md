@@ -35,7 +35,7 @@ Straight line routing is linked to *Aircraft profile*. By default, this profile 
 
 *Straight line* routing can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Pour une navigation réussie, il est important de configurer correctement les paramètres appropriés en fonction de vos besoins et de votre mode de déplacement (en voiture, à pied, à cheval ou à ski). Cet article décrit les paramètres de base de l'itinéraire, les [invites vocales](#voice-prompts), les [alertes d'écran](#screen-alerts), le [comportement de la carte pendant la navigation](#map-during-navigation) et l'[apparence des lignes d'itinéraire](#customize-route-line). Il détaille également les paramètres du véhicule tels que la [vitesse par défaut](#default-speed) et la [vitesse maximale/minimale](#road-speeds), le [type de moteur](#fuel-used-by-motor) pour le calcul du CO2, la [capacité du réservoir de carburant](#fuel-tank-capacity) et la [taille/le poids](#size-parameters), qui peuvent affecter l'itinéraire. L'ajustement de ces paramètres vous aidera à tirer le meilleur parti d'OsmAnd et à atteindre votre objectif sans délai inutile.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Le profil par défaut *Parcourir la carte* n'a pas de paramètres de navigation.
 
 ## Type de navigation {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Le type de navigation détermine les règles utilisées pour calculer les itiné
 
 ## Paramètres d'itinéraire {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ Tous les paramètres d'itinéraire sont décrits en détail dans les sections co
 
 ### Recalculer l'itinéraire {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Le paramètre **Calcul d'itinéraire** modifie automatiquement l'itinéraire cal
 
 ### Paramètres de développement {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Les paramètres de la section **Développement** sont principalement destinés a
 
 ## Invites vocales {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Les *invites vocales* vous permettent de vous concentrer sur la route et de ne p
 
 ## Alertes d'écran {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Les types d'avertissements ont une apparence visuelle différente, qui dépend d
 
 ## Carte pendant la navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -277,7 +277,7 @@ Vous pouvez apprendre comment le comportement de la carte change pendant la navi
 
 ## Personnaliser la ligne d'itinéraire {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Avec le paramètre **Personnaliser la ligne d'itinéraire**, vous pouvez choisir
 
 ## Paramètres du véhicule {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ La configuration correcte des paramètres dans l'application OsmAnd vous aidera 
 
 ### Paramètres de taille {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -396,7 +396,7 @@ Ces restrictions peuvent être importantes pour la navigation et doivent être p
 
 #### Carburant utilisé par le moteur {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Le paramètre **Carburant utilisé par le moteur** n'est disponible que dans les
 
 #### Capacité du réservoir de carburant {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -457,7 +457,7 @@ En saisissant la capacité exacte de votre réservoir de carburant, l'applicatio
 
 ### Vitesse par défaut / Vitesses routières {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -496,7 +496,7 @@ La **vitesse par défaut** est la vitesse de déplacement prédéfinie. Elle est
 
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -526,7 +526,7 @@ Le paramètre définit la vitesse de conduite maximale et diminue la priorité p
 
 ## Guidage détaillé de la trace {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

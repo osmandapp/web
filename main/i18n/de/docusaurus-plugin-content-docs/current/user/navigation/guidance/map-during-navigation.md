@@ -23,7 +23,7 @@ In diesem Artikel wird beschrieben, wie Sie die Darstellung der Karte während d
 
 ## Karte während der Navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Die Einstellung *Entlang der Route anzeigen* ermöglicht Ihnen, zusätzliche Rou
 
 ### Punkte anzeigen und auswählen {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Die Liste enthält alle zuvor hinzugefügten [Favoriten](../../personal/favorite
 
 ## Bildschirmwarnungen {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 ## Darstellung der Routenlinie {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

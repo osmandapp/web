@@ -37,7 +37,7 @@ The *Import* and *Export* allow you to save data from generated `.osf` **files**
 
 ### Export {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ All the data you have configured and created can be exported using the ***Export
 
 ### Import {#import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

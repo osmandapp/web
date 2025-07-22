@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 A navegação de barco pode ser uma ferramenta valiosa para quem gosta de passear de barco ou velejar por canais, rios ou vias navegáveis. Devido à falta da maioria das vias navegáveis nos dados do OpenStreetMap, a navegação de barco *não é recomendada* para **navegação em águas abertas**, sugere-se usar **[Direto ao ponto](#direct-to-point-routing-for-boat)** em vez disso. Com as linhas de contorno de profundidade ativadas, pode ajudar a manter-se seguro na água, evitando perigos como águas rasas, rochas ou outros obstáculos.
 O motor de navegação de barco do OsmAnd também leva em consideração as características das vias navegáveis e dos próprios barcos.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -46,7 +46,7 @@ A navegação de barco pode ser configurada de acordo com suas necessidades na s
 Normalmente, a *navegação de barco* é usada com o perfil de barco (o último ativado junto com o [plugin Náutico](../../plugins/nautical-charts.md)). No entanto, é possível usar a navegação de barco com outros perfis também, e diferentes [tipos de navegação](#other-routing-types-for-boat) também podem ser empregados no perfil de barco.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

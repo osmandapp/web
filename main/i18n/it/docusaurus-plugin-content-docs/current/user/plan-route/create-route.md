@@ -21,7 +21,7 @@ Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una
 
 Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per un'importazione, una modifica e una [navigazione](../navigation/setup/gpx-navigation.md) successive.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Un percorso è costituito da un insieme di segmenti tra punti specificati. I seg
 
 ## Principali casi d'uso {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Puoi **ingrandire e rimpicciolire** per posizionare facilmente i punti durante l
 
 ### Modifica traccia GPX esistente {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Se i [dati di elevazione](../map/tracks/track-context-menu.md#calculating-missin
 
 ### Collega traccia alle strade {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Aggiunta di punti {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ I punti aggiunti nell'editor possono essere collegati come una linea retta o com
 2. Tocca l'*icona del profilo* nell'angolo in basso a sinistra della schermata della mappa. Non sull'icona in alto, si aprirà il menu Configura mappa.
 3. Nel *[menu contestuale del punto](#point-context-menu) → Cambia tipo di percorso prima/dopo*.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Un segmento di traccia è una raccolta di punti collegati senza **interruzioni**
 
 ### Menu contestuale del punto {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Ogni punto del tuo percorso ha il suo menu contestuale. Mostra il *numero di seq
 
 ### Percorsi multimodali {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ Utilizzando lo strumento *Pianifica un percorso* e l'opzione [Percorso tra punti
 
 ### Salva percorso {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ Quando salvi una nuova traccia, puoi selezionare l'opzione traccia ***Semplifica
 
 ### Opzioni {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -360,7 +360,7 @@ Quando salvi una nuova traccia, puoi selezionare l'opzione traccia ***Semplifica
 
 ### Grafico {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

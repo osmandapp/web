@@ -70,7 +70,7 @@ Les cartes en ligne dans OsmAnd sont composées de données raster, qui consiste
 
 ## Sélectionner les cartes Raster {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Vous pouvez également ajuster la transparence de la carte de base pour la méla
 
 ### Principale {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Vous pouvez choisir un style de carte dans la liste ou [ajouter](#add-new-online
 
 ### Couche de superposition {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -148,7 +148,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 
 ### Couche de sous-couche {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ La différence d'affichage du relief sur la carte lors de l'application de ces p
 
 ### Configurer les options d'affichage {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -256,7 +256,7 @@ Voici les principales méthodes pour ajouter une nouvelle source de carte raster
 
 ### Ajouter une nouvelle source de carte Raster en ligne {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ Si vous souhaitez accéder aux cartes raster hors ligne, vous devrez peut-être 
 
 Pour que les cartes mettent automatiquement à jour les tuiles après un certain temps, vous pouvez définir un [Temps d'expiration](#add-new-online-raster-map-source), puis OsmAnd rechargera les tuiles dès qu'elles seront affichées.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Pour que les cartes mettent automatiquement à jour les tuiles après un certain
 
 ### Modifier les paramètres de la carte Raster {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

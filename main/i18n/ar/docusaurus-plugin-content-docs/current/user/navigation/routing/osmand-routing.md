@@ -85,7 +85,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### قائمة تجنب الطرق {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عند تحديد طريق لتجنبه باستخدام *قائمة سياق الخريطة* أو *قائمة تجنب الطرق*، ستظهر قائمة الطرق فوق شاشة الخريطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تصدير / استيراد {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك [استيراد](../../personal/import-export.md#import) الطرق التي يجب تجنبها أثناء حساب المسار من مصادر أخرى بتنسيق ملف `.osf`. كما يمكن القيام بذلك باستخدام خيار *استيراد* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). يمكنك اختيار استيراد جميع البيانات أو عدد قليل فقط من الطرق التي يجب تجنبها (تحديد طريق بعلامة صح في القائمة).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

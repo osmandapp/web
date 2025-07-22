@@ -38,7 +38,7 @@ Auf einigen Android-Geräten kann die Höhenanzeige ungenau sein. Um dieses Prob
 - Weitere Informationen finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -69,7 +69,7 @@ Auf einigen Android-Geräten kann die Höhenanzeige ungenau sein. Um dieses Prob
 &nbsp;<ProFeature/> Um Zugriff auf das Widget *Höhe: Kartenzentrum* zu erhalten, abonnieren Sie OsmAnd Pro für [Android](../purchases/android.md#pro-features) oder [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Das Widget zeigt die aktuelle Geschwindigkeit an, die vom GPS-Sensor ermittelt w
 
 ## Durchschnittsgeschwindigkeit {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -170,7 +170,7 @@ Das Widget **Average Speed** berechnet und zeigt Ihre Durchschnittsgeschwindigke
 
 Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-Daten neu berechnet. Diese Funktion ist nützlich für die Geschwindigkeitsüberwachung in Echtzeit, z. B. zur Verfolgung der Geschwindigkeit in Bereichen mit **Durchfahrtskontrollen**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-D
 
 ## Gleitverhältnis {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ Das Widget **Akkustand** zeigt den Akkustand Ihres Geräts direkt auf dem Karten
 
 ## Koordinaten-Widget {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ Sie können den aktuellen GPS-Cache zurücksetzen über:
 
 ## Sonnenposition {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ Sonnenpositions-Widgets zeigen die Zeiten des nächsten Sonnenaufgangs und Sonne
 Eine detailliertere Beschreibung finden Sie hier: **[Radius-Lineal und Lineal](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -414,7 +414,7 @@ Das Radius-Lineal-Widget zeigt die Entfernung zwischen Ihrem Standort und dem Mi
 
 ## Tachometer {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Diese Widgets werden in Verbindung mit ihren entsprechenden Plugins aktiviert un
 Eine detailliertere Beschreibung finden Sie hier: **[<Translate android="true" ids="record_plugin_name"/> Plugin](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -492,7 +492,7 @@ Trip-Aufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids=
 Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Plugin für externe Sensoren](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ Die Widgets gehören zum [Plugin für Fahrzeugmetriken](../plugins/vehicle-metri
 Um Wetter-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Wetter-Plugin](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -690,7 +690,7 @@ Um Entwickler-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das Osm
 
 #### Karten-Rendering FPS {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -718,7 +718,7 @@ Das [Karten-Rendering-FPS-Widget](../plugins/development.md#map-rendering-fps-wi
 
 #### Kamera-Widgets {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

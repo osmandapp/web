@@ -80,7 +80,7 @@ Istnieją dwa możliwe sposoby wyboru dróg do uniknięcia podczas obliczania tr
 
 ### Menu Unikaj Dróg {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -106,7 +106,7 @@ Używając opcji *Wybierz na mapie*, możesz kontynuować oznaczanie dróg jako 
 
 Po wybraniu drogi do uniknięcia za pomocą *menu kontekstowego mapy* lub *menu Unikaj dróg*, lista dróg zostanie wyświetlona nad ekranem mapy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Po wybraniu drogi do uniknięcia za pomocą *menu kontekstowego mapy* lub *menu 
 
 ## Eksport / Import {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -148,7 +148,7 @@ W zależności od ustawień urządzenia i dostępnych aplikacji, cała lista dr�
 
 Możesz [importować](../../personal/import-export.md#import) drogi do uniknięcia podczas obliczania trasy z innych źródeł w formacie pliku `.osf`. Można to również zrobić za pomocą opcji *Importuj* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Możesz wybrać importowanie wszystkich danych lub tylko kilku dróg do uniknięcia (zaznaczając drogę na liście).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

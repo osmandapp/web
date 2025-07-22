@@ -45,7 +45,7 @@ Para obter mais informações sobre como e quando os comandos de voz são aciona
 
 ### Configurações de Voz {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ Em alguns países ou regiões, o uso de aplicativos de aviso de câmeras de velo
 
 ### Limite de Velocidade {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Para solução de problemas, consulte:
 
 ### Idioma do Comando de Voz {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -28,7 +28,7 @@ Los esquemas de color se utilizan en la [coloración de rutas](#routes), el [ter
 
 Los datos de la paleta de colores están disponibles en el menú [*Mapas y recursos*](../personal/maps-resources.md#local).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 ## Tipos de esquemas {#scheme-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Después de mover este archivo TXT a *..Android/data/net.osmand/files/color-pale
 
 ### Acciones rápidas {#quick-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 ### Importar / Exportar colores {#import--export-colors}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

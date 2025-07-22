@@ -54,7 +54,7 @@ Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../persona
 
 ### Wettervorhersagebildschirm {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Am unteren Bildschirmrand befindet sich die *Wetter-Symbolleiste*. Mit den Tages
 
 ### Wetter-Layer anpassen {#customize-weather-layers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -107,7 +107,7 @@ In diesem Menü können Sie die **Sichtbarkeit** und [Einstellungen](#weather-se
 
 ### Wetter-Einstellungen {#weather-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Alle Wetterdaten werden als separate Karten-Layer dargestellt. Um die Wetter-Lay
 
 ### Karten kombinieren {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Auf Android-Geräten können Sie überprüfen, wann Wetterdaten heruntergeladen 
 
 ### Vorhersage herunterladen {#download-forecast}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ OsmAnd generiert alle 6 Stunden eine neue Vorhersage.
 
 ## Wetter-Widgets {#weather-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

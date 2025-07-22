@@ -25,7 +25,7 @@ Diese Funktion ermöglicht es Ihnen, schnell bestimmte Tracks zu finden, die Ihr
 
 ## Suchfilter {#search-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 ### Verfügbare Filter {#available-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 ## Smart-Ordner {#smart-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -160,7 +160,7 @@ Der neu erstellte **Smart-Ordner** aktualisiert seinen Inhalt automatisch mit Tr
 
 ### Smart-Ordner verwalten {#managing-smart-folders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -52,7 +52,7 @@ To start using data from external sensors, follow these steps:
 
 ### Pair New Sensor {#pair-new-sensor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ To pair a new sensor, follow these steps:
 
 ## Sensor Settings {#sensor-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Each paired external sensor listed in OsmAnd has its own configuration screen wi
 
 ## Trip Recording {#trip-recording}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -172,7 +172,7 @@ OsmAnd uses [track recording](../plugins/trip-recording.md#recorded-gpx-file) to
 
 ### Data Analyze {#data-analyze}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -203,7 +203,7 @@ This will display graphs for your recorded data: *Heart rate*, *Speed*, *Cadence
 
 ## Widgets {#widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Supported widget types:
 
 ### Widget Settings {#widget-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

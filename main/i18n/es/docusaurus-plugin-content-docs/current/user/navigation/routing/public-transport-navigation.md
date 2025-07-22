@@ -25,7 +25,7 @@ Los datos sobre las rutas de transporte público se toman del proyecto [OpenStre
 La ruta de transporte público está en fase de prueba. Por ahora, puedes construir y ver tu ruta sin la función de navegación completa.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -48,7 +48,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 **1.** Debes elegir el *perfil de navegación de transporte público*, los puntos de inicio y destino.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 **2.** OsmAnd ofrece opciones de ruta con tiempos de caminata y rutas de transporte público con información de ruta: tiempo, distancia, transbordo y rutas públicas. Debes desplazarte por la pantalla de navegación para seleccionar la opción requerida.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 **3.** Puedes ver todas las sugerencias de ruta posibles en el mapa usando el botón *Mostrar en el mapa*. Desliza las pantallas para ver la siguiente opción de ruta.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 **4.** Toca el botón "Detalles" para abrir una descripción de la ruta seleccionada con todas las paradas y transbordos.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

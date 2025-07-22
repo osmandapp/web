@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## المفضلة {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -49,7 +49,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## أسماء المفضلة ونقاط الاهتمام {#favorite-and-poi-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -74,7 +74,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## نقاط الاهتمام (POIs) {#points-of-interest-pois}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -112,7 +112,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### نقاط الاهتمام بنمط الخريطة {#map-style-poi}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -139,7 +139,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## العلامات {#markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -186,7 +186,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * صور مستوى الشارع {#-street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -222,7 +222,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * ويكيبيديا {#-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -249,7 +249,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * نقاط الصوت / الفيديو (أندرويد) {#-audio--video-points-android}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -268,7 +268,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * نقاط تحرير OSM {#-osm-edit-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -295,7 +295,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## * ملاحظات OSM {#-osm-notes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 

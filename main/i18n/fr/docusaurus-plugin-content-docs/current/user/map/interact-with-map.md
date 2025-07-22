@@ -74,7 +74,7 @@ La *Loupe de carte* est un outil qui améliore la visibilité de la carte, simil
 
 ## Modes d'orientation de la carte {#map-orientation-modes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Les *modes d'orientation de la carte* vous permettent de choisir comment la cart
 
 ## Boussole {#compass}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ Vous pouvez activer cette fonctionnalité via *Menu → Paramètres → Profils 
 
 ## Inclinaison et horizon de la carte {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ Vous ne pouvez pas modifier l'inclinaison de la caméra lorsque l'ancien [moteur
 
 ## Verrouillage de l'écran tactile {#touch-screen-lock}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Le clavier reste fonctionnel même lorsque l'option *Périphériques d'entrée e
 
 ### Périphérique d'entrée préconfiguré {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

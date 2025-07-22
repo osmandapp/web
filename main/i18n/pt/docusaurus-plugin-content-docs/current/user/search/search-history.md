@@ -28,7 +28,7 @@ O OsmAnd oferece várias maneiras de visualizar seu histórico de pesquisa.
 
 ## Como Usar {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ O histórico de pesquisa serve para fornecer informações relevantes sobre suas
 
 ## Itens do Histórico {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Você pode **desativar ou ativar** a exibição de todo o histórico de pesquisa
 
 ### Excluir {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Você precisa **tocar e segurar qualquer um dos itens de consulta na lista** par
 
 ### Exportar e Compartilhar {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

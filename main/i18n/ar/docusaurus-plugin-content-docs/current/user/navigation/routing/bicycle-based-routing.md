@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تتيح ميزات توجيه الدراجات في OsmAnd لراكبي الدراجات إدخال نقطة بداية ونهاية، ثم إنشاء مسار يأخذ في الاعتبار تفضيلاتهم والجغرافيا المحلية.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

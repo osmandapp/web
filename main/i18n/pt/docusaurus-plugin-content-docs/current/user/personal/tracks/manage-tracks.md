@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Todas as trilhas no OsmAnd são armazenadas em uma aba em *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. O OsmAnd processa o arquivo de trilha no [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), mas [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) e [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) podem ser importados e convertidos para GPX. Leia mais sobre os diferentes tipos de trilhas no artigo [Trilhas no mapa](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Todas as trilhas no OsmAnd são armazenadas em uma aba em *<Translate android="t
 
 ## Criar uma Trilha {#create-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Você pode adicionar trilhas no OsmAnd das seguintes maneiras:
 
 ## Gerenciar Trilhas {#manage-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Todas as trilhas já gravadas, criadas ou importadas são exibidas automaticamen
 
 ### Menu de Trilha {#track-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ O menu oferece as seguintes ações:
 
 ### Pesquisar {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Disponível:
 
 ### Modo de Seleção {#selection-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Depois de fazer sua escolha, as seguintes etapas são fornecidas:
 
 ### Classificar por {#sort-by}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ O OsmAnd oferece uma maneira fácil de classificar suas trilhas, ajudando você 
 
 #### Classificando Subpastas {#sorting-subfolders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ A opção de classificação selecionada é aplicada não apenas à subpasta atu
 
 ## Pasta de Trilhas {#track-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ Como abrir o menu da pasta:
 
 ### Estatísticas da Pasta {#folder-statistics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Na parte inferior da lista na aba *Trilhas*, e abaixo da lista de trilhas **em c
 
 ### Ações da Pasta {#folder-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ Como abrir as ações da pasta:
 
 ### Excluir Pasta {#delete-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
 ### Exportar {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

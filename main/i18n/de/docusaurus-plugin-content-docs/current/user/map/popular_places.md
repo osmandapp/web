@@ -29,7 +29,7 @@ Derzeit umfasst die kuratierte Datenbank weltweit etwa **50.000 bis 150.000 erst
 *Dies ist die erste Version der Funktion „Beliebte Orte“. Rückmeldungen sind auf [GitHub](https://github.com/osmandapp/OsmAnd) willkommen*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Es gibt zwei Hauptwege, um auf diese Funktion zuzugreifen:
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Um ihn **offline** zu nutzen, benötigen Sie ein [Maps+- oder OsmAnd Pro-Abonnem
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Durch Tippen auf einen POI auf der Karte wird das [POI-Kontextmenü](./map-conte
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -195,7 +195,7 @@ Im Kartenkontextmenü Zugriff:
 
 ### Galerie {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Sie können auch die folgenden Aktionen für jedes Foto ausführen:
   Speichern Sie das Bild im Speicher Ihres Geräts. Das heruntergeladene Bild befindet sich im Standard-Download-Ordner Ihres Geräts und kann offline aufgerufen werden.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -259,7 +259,7 @@ Unter **iOS** öffnet ein langes Drücken auf ein Foto ein Kontextmenü mit zus�
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -292,7 +292,7 @@ Der Bildschirm **Details** bietet vollständige Metadaten für das ausgewählte 
 <!--
 ### Online Photos 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ Im Abschnitt **Online-Fotos** des Kartenkontextmenüs können Sie auf Fotos von 
 
 #### Galerie-Menü 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ Im Abschnitt **Online-Fotos** des Kartenkontextmenüs können Sie auf Fotos von 
 Die Galerie kann bis zu 100 Elemente anzeigen. Sie können durch alle Fotos blättern, und ein kurzes Antippen eines Fotos öffnet es, um zusätzliche Details (*Name*, *Datum*, *Autor*, *Lizenz*) anzuzeigen und verschiedene Aktionen (*Teilen*, *Details*, *Im Browser öffnen* und *Herunterladen*) auszuführen.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -365,7 +365,7 @@ Schaltflächen:
 - Die Schaltfläche **Teilen** ermöglicht es Ihnen, das ausgewählte Element zu teilen.
 - Die Schaltfläche **Drei Punkte** öffnet ein Menü mit Optionen wie *Details*, *Im Browser öffnen* und *Herunterladen*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Özellikle yürüyüşçüler, bisikletçiler veya yeni bir alanı keşfeden ve harita üzerinde ilginç yerleri veya referans noktalarını işaretlemek isteyen herkes için faydalı olabilirler. [Favori noktalardan](../../personal/favorites.md) temel farkı, İşaretleyicilerin ad gerektirmemesi nedeniyle daha hızlı oluşturulabilmesidir.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -41,7 +41,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Navigasyonda İşaretleyicileri Kullanma {#use-markers-in-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -81,7 +81,7 @@ Düz çizgiler olarak görüntülenen basit bir noktadan noktaya navigasyona iht
 
 ## Güzergah Listesi {#itinerary-list}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -141,7 +141,7 @@ Yalnızca ara noktaları olan izler *Harita işaretleyicileri listesine* ekleneb
 
 ## İşaretleyicileri Sırala {#sort-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -164,7 +164,7 @@ OsmAnd uygulamasının Android sürümünde, *Harita işaretleyicileri* için ba
 
 ### Niteliklere Göre Sırala {#sort-by-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -198,7 +198,7 @@ OsmAnd uygulamasının Android sürümünde, *Harita işaretleyicileri* için ba
 
 ## İşaretleyicileri Geç {#pass-markers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

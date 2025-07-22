@@ -130,7 +130,7 @@ Certains problèmes de police connexes ont été documentés sur GitHub : [3911]
 
 ## * Courbes de niveau {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Les courbes de niveau sont compatibles avec tous les styles de carte et peuvent 
 
 ## * Profondeur nautique {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ Pour plus de détails sur la vue de carte nautique, visitez la [page du plugin N
 
 ## Afficher les bordures {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ Sur Android, les cartes archivées sont affichées en **orange**. Sous iOS, les 
 Aller à : *Menu → Configurer la carte → Afficher → Grille de coordonnées*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd prend en charge plusieurs **projections de base** pour l'affichage des li
 
 ### Mode carte {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ La carte peut être affichée dans un thème clair ou sombre en fonction du mode
 
 ### Détails {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
 
 ### Itinéraires {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre
 
 ### Transport {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ Lorsque vous naviguez en ville, vous avez besoin d'une vue plus contrastée des 
 
 ### Masquer {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ Pour améliorer la visibilité de la carte, vous pourriez avoir besoin de masque
 
 ### Style de route {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour
 
 ### Taille du texte {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 ### Loupe de carte {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ L'option **Langue de la carte** configure l'orthographe des noms sur la carte Os
 
 Si les noms sur la carte ne sont pas traduits dans la langue requise par la communauté OSM, vous pouvez utiliser les [noms translittérés](https://en.wikipedia.org/wiki/Transliteration) : *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

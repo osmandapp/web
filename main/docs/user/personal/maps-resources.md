@@ -21,7 +21,7 @@ In the **Maps and Resources** section, you can manage *Online* and *Offline* map
 
 OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -44,7 +44,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ## Map Types {#map-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -103,7 +103,7 @@ Please note that monthly map updates are considered another map download and are
 
 ### Downloads {#downloads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -165,7 +165,7 @@ Information about *maps menu* and *actions* can be found in the article [Downloa
 
 #### Multiple Map Loading {#multiple-map-loading}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -186,7 +186,7 @@ For countries consisting of **multiple region maps**, you can use bulk loading o
 
 ### Local {#local}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -290,7 +290,7 @@ Use sorting options to organize map data:
 
 ### Updates {#updates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ Read more in the [**Custom package**](../plugins/custom) article.
 :::tip Purchase
 OsmAnd Live is a paid feature.  
 :::
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -389,7 +389,7 @@ Deleted or altered route references may still appear incorrectly.
 
 ### Free for OSM Mappers {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

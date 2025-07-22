@@ -69,7 +69,7 @@ La *Lupa del mapa* es una herramienta que mejora la visibilidad del mapa, simila
 
 ## Modos de orientación del mapa {#map-orientation-modes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Los *modos de orientación del mapa* te permiten elegir cómo se muestra el mapa
 
 ## Brújula {#compass}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -123,7 +123,7 @@ Puedes activar esta función a través de *Menú → Ajustes → Perfiles → Aj
 
 ## Inclinación del mapa y horizonte {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ No puedes cambiar la inclinación de la cámara cuando el antiguo [motor de rend
 
 ## Bloqueo de pantalla táctil {#touch-screen-lock}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -214,7 +214,7 @@ El teclado sigue funcionando incluso cuando la opción *Dispositivos de entrada 
 
 ### Dispositivo de entrada preconfigurado {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

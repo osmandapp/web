@@ -34,7 +34,7 @@ Puede administrar la visibilidad de las pistas eligiendo cuáles mostrar u ocult
 
 ### Configurar mapa {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -58,7 +58,7 @@ La opción *Configurar mapa* le permite administrar rápidamente la visualizaci�
 
 ### Mis lugares {#my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ En la pestaña [Mis lugares *→* Pistas](../../personal/tracks/manage-tracks.md
 
 ### Menú contextual de pista {#track-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Cuando selecciona una pista en el mapa o abre el [menú contextual de pista](./t
 
 ## Analizar pista en el mapa {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -134,7 +134,7 @@ Esta herramienta proporciona un análisis detallado de los datos de [pista](../.
 
 ### Seguir mi ubicación {#follow-my-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

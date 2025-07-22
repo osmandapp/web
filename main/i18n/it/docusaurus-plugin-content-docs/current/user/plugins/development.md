@@ -43,7 +43,7 @@ Utilizza uno dei seguenti percorsi per aprire le impostazioni del plugin:
 - *Menu principale → Plugin → Sviluppo OsmAnd → Impostazioni*.
 - *Menu principale → [Impostazioni globali](../personal/global-settings.md) → Profilo → Impostazioni plugin di sviluppo OsmAnd*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Utilizza uno dei seguenti percorsi per aprire le impostazioni del plugin:
 I widget per sviluppatori di OsmAnd possono essere aggiunti allo schermo solo quando il plugin di sviluppo di OsmAnd è abilitato.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -167,7 +167,7 @@ Il [Widget FPS](../widgets/info-widgets.md#map-rendering-fps) mostra la velocit�
 I widget per sviluppatori di OsmAnd possono essere aggiunti allo schermo solo quando il plugin di sviluppo di OsmAnd è abilitato.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -192,7 +192,7 @@ Puoi utilizzare i [widget posizione fotocamera](../widgets/info-widgets.md#camer
 
 ### Inclinazione fotocamera {#camera-tilt}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -218,7 +218,7 @@ Allo stesso tempo, a causa del movimento immaginario dello spettatore, la distan
 
 ### Elevazione fotocamera {#camera-elevation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -239,7 +239,7 @@ Il widget Elevazione fotocamera mostra l'elevazione della fotocamera sopra il li
 
 ### Livello di zoom {#zoom-level}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ Il widget ha due visualizzazioni che vengono cambiate toccandolo:
 
 ### Distanza dal bersaglio {#distance-to-target}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -332,7 +332,7 @@ OsmAnd offre l'opportunità di simulare la posizione e il movimento del tuo disp
 - Seleziona la velocità di simulazione del movimento.
 - Tocca il pulsante Avvia.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

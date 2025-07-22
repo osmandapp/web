@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 يمكن أن يكون توجيه القوارب أداة قيمة لأي شخص يستمتع بركوب القوارب أو الإبحار عبر القنوات أو الأنهار أو الممرات المائية. نظرًا لعدم وجود معظم الممرات المائية في بيانات OpenStreetMap، فإن توجيه القوارب *لا يوصى به* لـ **الملاحة في المياه المفتوحة**، ويُقترح استخدام **[التوجيه المباشر إلى نقطة](#direct-to-point-routing-for-boat)** بدلاً من ذلك. مع تمكين خطوط الكنتور العمق، يمكن أن يساعدك على البقاء آمنًا على الماء من خلال تجنب المخاطر مثل المياه الضحلة أو الصخور أو العوائق الأخرى.
 يأخذ محرك توجيه القوارب في OsmAnd أيضًا في الاعتبار خصائص الممرات المائية والقوارب نفسها.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -45,7 +45,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 عادةً، يتم استخدام *توجيه القوارب* مع ملف تعريف القارب (آخر ملف تم تمكينه مع [المكون الإضافي البحري](../../plugins/nautical-charts.md)). ومع ذلك، من الممكن استخدام توجيه القوارب مع ملفات تعريف أخرى أيضًا، ويمكن أيضًا استخدام [أنواع توجيه مختلفة](#other-routing-types-for-boat) في ملف تعريف القارب.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

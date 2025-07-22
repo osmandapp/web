@@ -28,7 +28,7 @@ Les schémas de couleurs sont utilisés pour la [colorisation des itinéraires](
 
 Les données de la palette de couleurs sont disponibles dans le menu [*Cartes & Ressources*](../personal/maps-resources.md#local).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -51,7 +51,7 @@ Aller à : *Menu → Cartes & Ressources → Local → Couleurs*
 
 ## Types de schémas {#scheme-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/colo
 
 ### Actions rapides {#quick-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 ### Importer / Exporter les couleurs {#import--export-colors}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -22,7 +22,7 @@ Die OsmAnd Skikarte ist Teil der Vektorkarten und erfordert keine zusätzlichen 
 
 Zwei Profile sind unten dargestellt: das linke ist zum Skifahren und das rechte zum Autofahren. Das Skiprofil hebt Loipen, Luftwege, Winterfarben und alle Kartenobjekte hervor, die für die Navigation im Skigebiet nützlich sind.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -50,7 +50,7 @@ Die folgende Einstellung lässt die OsmAnd Skikarte auf dem Bildschirm erscheine
 
 ### Winter- und Ski-Kartenstil einstellen {#set-winter-and-ski-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ Das Skiprofil ist für die Verwendung in Kombination mit den Stilen Winter und S
 
 ### Karten kombinieren {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Das Ski Map Viewer Plugin ist eine separate Anwendung, und das Deaktivieren sein
 
 ## Skiprofil {#skiing-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -191,7 +191,7 @@ Pistentypen wie *Wanderwege* oder *Rodelbahnen* können für Ski- oder Wanderpro
 
 ### Präparierte Loipen {#grooming-trails}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -216,7 +216,7 @@ Spezielle Maschinen präparieren die Loipen, um sie für die entsprechende Aktiv
 
 ### Skipistenrouten {#ski-slope-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Mit aktiviertem Skiprofil, Skifahr-Navigation und [Winter- und Ski-Kartenstil](.
 
 ### Nacht und Beleuchtung {#night-and-lighting}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

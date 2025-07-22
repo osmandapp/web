@@ -23,7 +23,7 @@ Ten artykuł opisuje, jak skonfigurować wygląd mapy podczas nawigacji. Obejmuj
 
 ## Mapa podczas nawigacji {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Ustawienie *Pokaż wzdłuż trasy* pozwala skonfigurować dodatkowe parametry tr
 
 ### Wyświetl i wybierz punkty {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ Lista zawiera wszystkie wcześniej dodane punkty [Ulubione](../../personal/favor
 
 ## Alerty ekranowe {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Wygląd linii trasy {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

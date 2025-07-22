@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Funkcja **Wygląd śladu** umożliwia użytkownikom dostosowanie sposobu wyświetlania śladów na mapie. Obejmuje to dostosowanie koloru, szerokości, wskaźników kierunku i innych elementów wizualnych. Dostosowanie wyglądu śladu pomaga odróżnić wiele śladów, wyróżnić określone trasy i poprawić czytelność mapy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -122,7 +122,7 @@ Przywraca wszystkie **ustawienia wyglądu śladu** do wartości domyślnych.
 **Ślad 3D** to płatna funkcja **OsmAnd Pro** dla [iOS](../../purchases/ios.md#pro-features) i [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ Funkcja śladu 3D jest bardzo korzystna w przypadku aktywności takich jak paral
 
 ## Zmień wygląd wielu śladów {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

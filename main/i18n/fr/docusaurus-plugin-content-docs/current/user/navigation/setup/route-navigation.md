@@ -27,7 +27,7 @@ La fonctionnalité **Préparation d'itinéraire** dans OsmAnd fournit des instru
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Il y a 3 façons d'accéder au menu de navigation :
 - *Direction vers/depuis* dans un [*menu contextuel de la carte*](../../map/map-context-menu.md#directions-to--from).
 - Section Navigation dans le [*Menu principal*](../../start-with/main-menu.md) (*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Quant au point de départ, vous pouvez choisir votre position actuelle, la posit
 
 ### Définir le point cible {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ La chose la plus importante pour commencer la navigation est de déterminer votr
 
 ### Destinations intermédiaires {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ La chose la plus importante pour commencer la navigation est de déterminer votr
 
 Si vous choisissez **Trier** (*Android*) ou **Options** (*iOS*) dans la liste des destinations, vous accéderez à des options spéciales pour ajuster l'ordre de navigation vers les points intermédiaires.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Dans ce menu, vous trouverez des options supplémentaires pour gérer les points
 
 ### Utiliser les points Domicile ou Travail {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ Les onglets **Domicile** et **Travail** (ou [Points spéciaux](../../personal/fa
 
 ### Historique des itinéraires précédents {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -260,7 +260,7 @@ Si l'enregistrement de l'[Historique de navigation](../../personal/global-settin
 
 ## Démarrer / Arrêter la navigation {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ Pour reprendre la navigation :
 - Utilisez le message d'OsmAnd dans la barre de notification.
 - Utilisez le *Menu d'actions rapides* ou la boîte de dialogue qui apparaît lorsque vous appuyez sur le *[bouton Navigation](../../widgets/map-buttons.md#directions)* (voir capture d'écran).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ Pour accéder aux paramètres de navigation, suivez l'une des étapes ci-dessous
 Il n'y a pas de paramètres de navigation dans le profil *Parcourir la carte*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ L'outil **Navigation simulée** vous permet de prévisualiser un itinéraire ava
 
 #### Démarrer / Arrêter la simulation {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -407,7 +407,7 @@ Lorsqu'un itinéraire de navigation est construit, vous pouvez commencer à simu
 
 #### Mode vitesse {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -440,7 +440,7 @@ Allez dans : *<Translate android="true" ids="shared_string_navigation,shared_str
 
 Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être téléchargées et avoir la même date de publication. Veuillez noter que dans certaines situations, le message de cartes manquantes peut être masqué dans le menu de préparation de l'itinéraire. Si vous faites glisser le menu de navigation vers le haut, vous verrez les raisons possibles pour lesquelles votre itinéraire n'a pas pu être calculé.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être
 
 Dans la boîte de dialogue des cartes requises, vous verrez des suggestions de cartes à télécharger ou à mettre à jour. La liste des cartes utilisées peut ne pas être précise car elle calcule un itinéraire très basique. Pour obtenir la liste précise des cartes, vous pouvez cliquer sur **Calculer en ligne**. Si vous sélectionnez **Utiliser les cartes téléchargées**, le calcul de l'itinéraire essaiera d'utiliser les cartes déjà téléchargées et ignorera le message d'avertissement.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

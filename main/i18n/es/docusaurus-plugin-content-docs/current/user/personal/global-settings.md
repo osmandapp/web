@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Los **ajustes globales** son [ajustes](../personal/profiles.md) generales para todos los perfiles de la aplicación OsmAnd. Son los ajustes básicos del sistema OsmAnd, y cualquier cambio que se realice afectará a toda la aplicación.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -44,7 +44,7 @@ Esta sección contiene los ajustes básicos de OsmAnd, como la selección de un 
 
 ### Perfil predeterminado {#default-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ El [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md
 
 ### Carpeta de almacenamiento de datos {#data-storage-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -162,7 +162,7 @@ Puede encontrar más información en la [*Política de privacidad y seguridad de
 
 ### Análisis {#analytics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -205,7 +205,7 @@ Se genera un **UUID** (*Identificador único de usuario*) para cada instalación
 
 ### Historial {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ La aplicación registra el historial de datos introducidos previamente (historia
 
 **Compartir y eliminar historial.**
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -269,7 +269,7 @@ En esta sección de los ajustes de OsmAnd, puede configurar las notificaciones q
 
 ### Diálogos y notificaciones {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ OsmAnd puede [advertirle sobre radares de velocidad](../navigation/guidance/navi
 
 ### Desinstalar radares de velocidad {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

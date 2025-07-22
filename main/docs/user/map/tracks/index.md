@@ -37,7 +37,7 @@ You can manage track visibility by choosing which ones to display or hide from s
 
 ### Configure Map {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ The *Configure Map* option enables you to quickly manage the display of all rece
 
 ### My Places {#my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tr
 
 ### Track Context Menu {#track-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 ## Analyze Track on Map {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -140,7 +140,7 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 
 ### Follow My Location {#follow-my-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

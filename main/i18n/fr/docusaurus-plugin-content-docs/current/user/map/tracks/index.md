@@ -38,7 +38,7 @@ Vous pouvez gérer la visibilité des tracés en choisissant ceux à afficher ou
 
 ### Configurer la carte {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ L'option *Configurer la carte* vous permet de gérer rapidement l'affichage de t
 
 ### Mes lieux {#my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Dans l'onglet [Mes lieux *→* Tracés](../../personal/tracks/manage-tracks.md#m
 
 ### Menu contextuel du tracé {#track-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Lorsque vous sélectionnez un tracé sur la carte ou ouvrez le [menu contextuel 
 
 ## Analyser le tracé sur la carte {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Cet outil fournit une analyse détaillée des données du [tracé](../../map/tra
 
 ### Suivre ma position {#follow-my-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

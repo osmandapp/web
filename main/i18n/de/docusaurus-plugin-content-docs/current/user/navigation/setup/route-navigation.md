@@ -27,7 +27,7 @@ Die Funktion **Routenplanung** in OsmAnd bietet Schritt-für-Schritt-Navigations
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Es gibt 3 Möglichkeiten, das Navigationsmenü zu erreichen:
 - *Richtung zu/von* in einem [*Kartenkontextmenü*](../../map/map-context-menu.md#directions-to--from).
 - Navigationsbereich im [*Hauptmenü*](../../start-with/main-menu.md) (*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Als Startpunkt können Sie Ihren aktuellen Standort, den Standort eines [Favorit
 
 ### Zielpunkt festlegen {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ Das Wichtigste, um die Navigation zu starten, ist die Bestimmung Ihres Ziels. De
 
 ### Zwischenziele {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -180,7 +180,7 @@ Das Wichtigste, um die Navigation zu starten, ist die Bestimmung Ihres Ziels. De
 
 Wenn Sie in der Zielliste **Sortieren** (*Android*) oder **Optionen** (*iOS*) auswählen, gelangen Sie zu speziellen Optionen zur Anpassung der Reihenfolge der Navigation zu Zwischenzielen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -210,7 +210,7 @@ In diesem Menü finden Sie zusätzliche Optionen zur Verwaltung der Zielpunkte:
 
 ### Zuhause- oder Arbeitspunkte verwenden {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Die Registerkarten **Zuhause** und **Arbeit** (oder [Spezielle Punkte](../../per
 
 ### Verlauf früherer Routen {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -258,7 +258,7 @@ Wenn die Aufzeichnung des [Navigationsverlaufs](../../personal/global-settings.m
 
 ## Navigation starten / stoppen {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Um die Navigation fortzusetzen:
 - Verwenden Sie die Nachricht von OsmAnd in der Benachrichtigungsleiste.
 - Verwenden Sie das *Schnellaktionen-Menü* oder den Dialog, der erscheint, wenn Sie auf die *[Navigationstaste](../../widgets/map-buttons.md#directions)* tippen (siehe Screenshot).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -346,7 +346,7 @@ Um auf die Navigationseinstellungen zuzugreifen, folgen Sie einem der folgenden 
 Im Profil *Karte durchsuchen* gibt es keine Navigationseinstellungen.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -376,7 +376,7 @@ Das Werkzeug **Simulierte Navigation** ermöglicht es Ihnen, eine Route vor der 
 
 #### Simulation starten / stoppen {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -401,7 +401,7 @@ Wenn eine Navigationsroute erstellt wurde, können Sie die Navigation mit der Op
 
 #### Geschwindigkeitsmodus {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -434,7 +434,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_navigation,shared_st
 
 Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen sein und das gleiche Veröffentlichungsdatum haben. Bitte beachten Sie, dass in einigen Situationen die Meldung über fehlende Karten im Routenplanungsmenü verborgen sein kann. Wenn Sie das Navigationsmenü nach oben ziehen, sehen Sie mögliche Gründe, warum Ihre Route nicht berechnet werden konnte.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -453,7 +453,7 @@ Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen 
 
 Im Dialogfeld für erforderliche Karten sehen Sie Vorschläge für Karten, die heruntergeladen oder aktualisiert werden müssen. Die Liste der verwendeten Karten ist möglicherweise nicht genau, da sie eine sehr einfache Route berechnet. Um die genaue Liste der Karten zu erhalten, können Sie auf **Online berechnen** klicken. Wenn Sie **Heruntergeladene Karten verwenden** auswählen, versucht die Routenberechnung, bereits heruntergeladene Karten zu verwenden und die Warnmeldung zu überspringen.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

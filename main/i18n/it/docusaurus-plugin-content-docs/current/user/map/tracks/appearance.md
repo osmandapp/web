@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La funzione **Aspetto della traccia** consente agli utenti di personalizzare la visualizzazione delle tracce sulla mappa. Ciò include la regolazione del colore, della larghezza, degli indicatori di direzione e di altri elementi visivi. La personalizzazione dell'aspetto della traccia aiuta a differenziare più tracce, evidenziare percorsi specifici e migliorare la leggibilità della mappa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ Ripristina tutte le **impostazioni dell'aspetto della traccia** ai valori predef
 **Traccia 3D** è una funzione a pagamento di **OsmAnd Pro** per [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -185,7 +185,7 @@ La funzione traccia 3D è molto utile per attività come il parapendio, dove la 
 
 ## Modifica aspetto per più tracce {#change-appearance-for-multiple-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

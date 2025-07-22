@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Die **Favoriten**-Funktion von OsmAnd ermöglicht es Ihnen, Lesezeichen (Notizen) auf der Karte zu erstellen. Diese Favoritenpunkte werden standardmäßig als gelbe Sterne angezeigt, können aber vollständig mit verschiedenen Farben, Formen und Symbolen angepasst werden. Favoriten werden in einer speziellen Kartenebene gruppiert, die ab der *6. Zoomstufe* sichtbar wird.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Die **Favoriten**-Funktion von OsmAnd ermöglicht es Ihnen, Lesezeichen (Notizen
 
 ## Favoritenpunkt {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Favoriten sind Teil einer speziellen Kartenebene, und Sie können sie zusammen m
 
 ### Erstellen {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Beim Hinzufügen eines Punktes aus OSM-Daten werden die relevanten POI-Informati
 
 ### Bearbeiten / Ersetzen / Löschen {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ So ändern Sie einen Favoritenpunkt:
 
 ### Favoriten-Symbole {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ Der *Persönliche Ordner* enthält spezielle Punkte wie **<Translate android="tr
 
 ## Favoriten verwalten {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -184,7 +184,7 @@ Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 ### Reihenfolge / Sortierung / Suche {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -205,7 +205,7 @@ Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 ### Massenbearbeitung / Löschen {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Favoritengruppen-Aktionen {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ Weitere Details im Artikel [Meine Orte](../personal/myplaces.md#favorites).
 
 ### Gruppen-Aussehen ändern {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -317,7 +317,7 @@ OsmAnd bietet verschiedene Methoden zum [Sichern](./import-export.md) und [Wiede
 
 ### Kostenlose Cloud-Sicherung {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -348,7 +348,7 @@ Die [Kostenlose Favoriten-Sicherung](../personal/osmand-cloud.md#osmand-start) i
 
 #### Wie man ein Backup erstellt {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenlose Einstellungen
 
 ### Alle Favoriten {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -403,7 +403,7 @@ Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand d
 
 ### Favoritengruppe {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand d
 
 ### Automatische Favoriten-Sicherung {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

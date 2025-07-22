@@ -24,7 +24,7 @@ Data on public transport routes is taken from the [OpenStreetMap](http://openstr
 Public transport routing is in the testing phase. For now, you can build and view your route without the full navigation function.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -47,7 +47,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 **1.** You need to choose *Public transport navigation profile*, start and destination points.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -65,7 +65,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 **2.** OsmAnd offers route options with walking times and public transport routes with route information: time, distance, transfer, and public routes. You need to scroll through the navigation screen to select the required option.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -83,7 +83,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 **3.** You can view all possible route suggestions on the map using the *Show on map* button. Swipe through the screens to view the next route option.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 **4.** Tap the "Details" button to open a description of the selected route with all stops and transfers.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

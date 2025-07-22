@@ -28,7 +28,7 @@ OsmAnd ofrece varias formas de ver tu historial de búsqueda.
 
 ## Cómo Usar {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ El historial de búsqueda sirve para proporcionar información relevante sobre t
 
 ## Elementos del Historial {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -105,7 +105,7 @@ Puedes **desactivar o activar** la visualización de todo el historial de búsqu
 
 ### Eliminar {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Necesitas **mantener pulsado cualquiera de los elementos de consulta en la lista
 
 ### Exportar y Compartir {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

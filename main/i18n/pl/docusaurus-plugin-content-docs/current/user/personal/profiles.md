@@ -29,7 +29,7 @@ OsmAnd oferuje różnorodne domyślne profile dostosowane do różnych aktywnoś
      - Aby uzyskać dostęp do tych profili i korzystać z nich, należy je ręcznie włączyć w *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
      - Ta metoda pomaga utrzymać uporządkowaną i odpowiednią listę profili, aktywując tylko te, które są wymagane dla określonych aktywności.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -57,7 +57,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 Wszystkie ustawienia mają zastosowanie wyłącznie do aktualnie wybranego profilu aplikacji.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Ta sekcja zawiera wszystkie ustawienia związane z wyglądem, opcjami nawigacji,
 
 ### Darmowa kopia zapasowa w chmurze {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -109,7 +109,7 @@ Ta sekcja zawiera ustawienia motywu aplikacji i przycisku kompasu, jednostek i f
 
 ### Wygląd {#appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ### Jednostki i formaty {#units--formats}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -249,7 +249,7 @@ W sekcji **Jednostki i formaty** możesz dostosować jednostki miary i formaty, 
 
 ### Inne {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ Sekcja **Inne** zawiera dodatkowe ustawienia profilu, aby dostosować interfejs 
 
 ## Ustawienia nawigacji {#navigation-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -333,7 +333,7 @@ W profilu *Przeglądaj mapę* nie ma ustawień nawigacji.
 
 ## Konfiguracja mapy {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -371,7 +371,7 @@ Za pomocą tego menu możesz:
 
 ## Konfiguracja ekranu {#configure-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -397,7 +397,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 ## Wygląd profilu {#profile-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Ustawienia **Wyglądu profilu** umożliwiają dostosowanie nazwy i wizualnej rep
 
 ### Wygląd mojej lokalizacji {#my-location-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ Dzięki funkcji dostosowywania interfejsu użytkownika możesz dostosować liczb
 Aby uzyskać dostęp do ustawień wtyczki, należy najpierw [**włączyć wtyczkę**](../plugins/index.md#enable--disable) w *sekcji Wtyczki w menu głównym*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -575,7 +575,7 @@ Wtyczki odblokowują dodatkowe funkcje aplikacji i mogą być [płatne lub bezp�
 
 ## Akcje {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -27,7 +27,7 @@ Funkcja **Przygotowanie trasy** w OsmAnd zapewnia szczegółowe wskazówki nawig
 
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -92,7 +92,7 @@ Istnieją 3 sposoby dotarcia do menu nawigacji:
 - *Kierunek do/z* w [*menu kontekstowym mapy*](../../map/map-context-menu.md#directions-to--from).
 - Sekcja nawigacji w [*Menu głównym*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -129,7 +129,7 @@ Jako punkt początkowy możesz wybrać swoją bieżącą lokalizację, lokalizac
 
 ### Ustaw punkt docelowy {#set-target-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Najważniejszą rzeczą do rozpoczęcia nawigacji jest określenie miejsca docel
 
 ### Miejsca pośrednie {#intermediate-destinations}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -181,7 +181,7 @@ Najważniejszą rzeczą do rozpoczęcia nawigacji jest określenie miejsca docel
 
 Jeśli wybierzesz **Sortuj** (*Android*) lub **Opcje** (*iOS*) na liście miejsc docelowych, uzyskasz dostęp do specjalnych opcji dostosowywania kolejności nawigacji do punktów pośrednich.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ W tym menu znajdziesz dodatkowe opcje zarządzania punktami docelowymi:
 
 ### Użyj punktów domowych lub służbowych {#use-home-or-work-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -232,7 +232,7 @@ Zakładki **Dom** i **Praca** (lub [Punkty specjalne](../../personal/favorites.m
 
 ### Historia poprzednich tras {#history-of-previous-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -260,7 +260,7 @@ Jeśli włączono rejestrowanie [Historii nawigacji](../../personal/global-setti
 
 ## Rozpocznij / Zatrzymaj nawigację {#start--stop-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ Aby wznowić nawigację:
 - Użyj wiadomości z OsmAnd na pasku powiadomień.
 - Użyj *Menu szybkich działań* lub okna dialogowego, które pojawia się po dotknięciu *[Przycisku nawigacji](../../widgets/map-buttons.md#directions)* (patrz zrzut ekranu).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -350,7 +350,7 @@ Aby uzyskać dostęp do ustawień nawigacji, wykonaj jedną z poniższych czynno
 W profilu *Przeglądaj mapę* nie ma ustawień nawigacji.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -381,7 +381,7 @@ Narzędzie **Symulowana nawigacja** pozwala na podgląd trasy przed podróżą. 
 
 #### Rozpocznij / Zatrzymaj symulację {#start--stop-simulation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -407,7 +407,7 @@ Gdy trasa nawigacji zostanie zbudowana, możesz rozpocząć symulację nawigacji
 
 #### Tryb prędkości {#speed-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -440,7 +440,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_navigation,shared_str
 
 Aby zbudować trasę, wszystkie **niezbędne mapy** muszą być pobrane i mieć tę samą datę wydania. Należy pamiętać, że w niektórych sytuacjach komunikat o brakujących mapach może być ukryty w menu przygotowania trasy. Jeśli wysuniesz menu nawigacji w górę, zobaczysz możliwe przyczyny, dla których Twoja trasa nie mogła zostać obliczona.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Aby zbudować trasę, wszystkie **niezbędne mapy** muszą być pobrane i mieć 
 
 W oknie dialogowym wymaganych map zobaczysz sugestie map do pobrania lub aktualizacji. Lista używanych map może nie być precyzyjna, ponieważ oblicza bardzo podstawową trasę, aby uzyskać precyzyjną listę map, możesz kliknąć **Oblicz online**. Jeśli wybierzesz **Użyj pobranych map**, obliczanie trasy spróbuje użyć już pobranych map i pominie komunikat ostrzegawczy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

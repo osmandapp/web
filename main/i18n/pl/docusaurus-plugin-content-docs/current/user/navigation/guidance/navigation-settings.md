@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Aby nawigacja była udana, ważne jest prawidłowe skonfigurowanie odpowiednich ustawień zgodnie z potrzebami i sposobem podróżowania - samochodem, pieszo, konno lub na nartach. Ten artykuł opisuje podstawowe parametry trasy, [komunikaty głosowe](#voice-prompts), [alertów ekranowych](#screen-alerts), [zachowanie mapy podczas nawigacji](#map-during-navigation) oraz [wygląd linii trasy](#customize-route-line). Zawiera również szczegółowe informacje na temat ustawień pojazdu, takich jak [prędkość domyślna](#default-speed) i [prędkość maksymalna/minimalna](#road-speeds), [typ silnika](#fuel-used-by-motor) do obliczania CO2, [pojemność zbiornika paliwa](#fuel-tank-capacity) oraz [rozmiar/waga](#size-parameters), które mogą wpływać na trasę. Dostosowanie tych ustawień pomoże Ci w pełni wykorzystać OsmAnd i osiągnąć cel bez zbędnych opóźnień.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Domyślny profil *Przeglądaj mapę* nie ma ustawień nawigacji.
 
 ## Typ nawigacji {#navigation-type}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -84,7 +84,7 @@ Typ nawigacji określa, które zasady są używane do obliczania tras. Jeśli po
 
 ## Parametry trasy {#route-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -110,7 +110,7 @@ Wszystkie parametry trasy są szczegółowo opisane w odpowiednich sekcjach doku
 
 ### Przeliczanie trasy {#recalculate-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ Parametr **Obliczanie trasy** automatycznie zmienia obliczoną trasę, gdy z nie
 
 ### Ustawienia deweloperskie {#development-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -178,7 +178,7 @@ Parametry w sekcji **Rozwój** są przeznaczone głównie dla zaawansowanych uż
 
 ## Komunikaty głosowe {#voice-prompts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Jeśli wybierzesz ścieżkę jako punkt docelowy, musisz użyć opcji [Dołącz 
 
 ## Alerty ekranowe {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Typy ostrzeżeń mają różny wygląd wizualny, który zależy od regionu podr�
 
 ## Mapa podczas nawigacji {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -277,7 +277,7 @@ Możesz dowiedzieć się, jak zmienia się zachowanie mapy podczas nawigacji w a
 
 ## Dostosuj linię trasy {#customize-route-line}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -302,7 +302,7 @@ Dzięki ustawieniu **Dostosuj linię trasy** możesz wybrać wygląd linii trasy
 
 ## Parametry pojazdu {#vehicle-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -334,7 +334,7 @@ Prawidłowe ustawienie parametrów w aplikacji OsmAnd pomoże uniknąć problem�
 
 ### Parametry rozmiaru {#size-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -396,7 +396,7 @@ Te ograniczenia mogą być ważne dla nawigacji i należy je wziąć pod uwagę 
 
 #### Paliwo używane przez silnik {#fuel-used-by-motor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -422,7 +422,7 @@ Ustawienie **Paliwo używane przez silnik** jest dostępne tylko w nawigacji opa
 
 #### Pojemność zbiornika paliwa {#fuel-tank-capacity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -462,7 +462,7 @@ Aby zapewnić dokładne obliczenia i sugestie nawigacyjne, sprawdź, czy wybrana
 
 ### Prędkość domyślna / Prędkości drogowe {#default-speed--road-speeds}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -501,7 +501,7 @@ Te parametry są używane jako prędkość do oszacowania [czasu przybycia](../.
 
 
 <!--
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -531,7 +531,7 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 ## Szczegółowe wskazówki dotyczące ścieżki {#detailed-track-guidance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

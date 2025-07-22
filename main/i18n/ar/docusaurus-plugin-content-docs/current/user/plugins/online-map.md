@@ -45,7 +45,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
     - [تغيير](../map/raster-maps.md#change-raster-map-parameters) معلمات خريطة Raster.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 

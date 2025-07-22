@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Le routage bateau peut être un outil précieux pour tous ceux qui aiment naviguer en bateau ou à la voile dans les chenaux, les rivières ou les voies navigables. En raison du manque de la plupart des voies navigables dans les données OpenStreetMap, le routage bateau n'est *pas recommandé* pour la **navigation en eaux libres**. Il est suggéré d'utiliser plutôt le **[routage direct vers un point](#direct-to-point-routing-for-boat)**. Avec les lignes de contour de profondeur activées, il peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.
 Le moteur de routage bateau d'OsmAnd prend également en compte les caractéristiques des voies navigables et du bateau lui-même.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -45,7 +45,7 @@ Le routage bateau peut être configuré selon vos besoins dans la section [Param
 
 Généralement, le *routage bateau* est utilisé avec le profil bateau (le dernier activé avec le [plugin Nautique](../../plugins/nautical-charts.md)). Cependant, il est possible d'utiliser le routage bateau avec d'autres profils également, et différents [types de routage](#other-routing-types-for-boat) peuvent également être utilisés dans le profil bateau.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -21,7 +21,7 @@ Das Werkzeug **Route planen** (*Menü → Route planen*) ist eine leistungsstark
 
 Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Die Segmente können gerade Linien oder an das ausgewählte Profil angepasste Routen sein. Die Route kann als GPX-Datei zur späteren Verwendung, Bearbeitung und [Navigation](../navigation/setup/gpx-navigation.md) gespeichert werden.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -40,7 +40,7 @@ Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Di
 
 ## Hauptanwendungsfälle {#main-use-cases}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -72,7 +72,7 @@ Sie können zum einfachen Platzieren von Punkten beim Erstellen oder Bearbeiten 
 
 ### Vorhandenen GPX-Track ändern {#modify-existing-gpx-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -120,7 +120,7 @@ Wenn in einem vorhandenen Track [Höhendaten](../map/tracks/track-context-menu.m
 
 ### Track an Straßen anpassen {#attach-track-to-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -169,7 +169,7 @@ To generate navigation instructions:
 
 ### Punkte hinzufügen {#adding-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -199,7 +199,7 @@ Hinzugefügte Punkte im Editor können als gerade Linie oder als Route zwischen 
 2. Tippen Sie auf das *Profilsymbol* in der unteren linken Ecke des Kartenbildschirms. Nicht auf das Symbol oben, das öffnet das Menü "Karte konfigurieren".
 3. Im *[Punktkontextmenü](#point-context-menu) → Routentyp vor/nach ändern*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Ein Tracksegment ist eine Sammlung von Punkten, die ohne **Lücken** verbunden s
 
 ### Punktkontextmenü {#point-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -275,7 +275,7 @@ Jeder Punkt auf Ihrer Route hat sein Kontextmenü. Es zeigt die *Sequenznummer* 
 
 ### Multimodale Routen {#multimodal-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -298,7 +298,7 @@ Mit dem Werkzeug *Route planen* und der Option [Route zwischen Punkten](#route-b
 
 ### Route speichern {#save-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -329,7 +329,7 @@ Beim Speichern eines neuen Tracks können Sie die Option ***Vereinfachter*** Tra
 
 ### Optionen {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -359,7 +359,7 @@ Beim Speichern eines neuen Tracks können Sie die Option ***Vereinfachter*** Tra
 
 ### Graph {#graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

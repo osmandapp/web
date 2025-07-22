@@ -20,7 +20,7 @@ Il **Menu principale** è un elenco primario di opzioni disponibili per l'utiliz
 
 L'icona del [Menu principale](../widgets/map-buttons.md#main-menu) '&#8801;' si trova nell'angolo inferiore sinistro della schermata della mappa. In modalità navigazione questo pulsante non è visibile per impostazione predefinita. Appare dopo un breve tocco sulla mappa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

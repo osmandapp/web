@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Funkcja **Ulubione** w OsmAnd pozwala tworzyć zakładki (notatki) na mapie. Te ulubione punkty są domyślnie wyświetlane jako żółte gwiazdki, ale można je w pełni dostosować, zmieniając kolory, kształty i ikony. Ulubione są grupowane w dedykowaną warstwę mapy, która staje się widoczna od *6. poziomu powiększenia*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Funkcja **Ulubione** w OsmAnd pozwala tworzyć zakładki (notatki) na mapie. Te 
 
 ## Punkt ulubiony {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Ulubione są częścią specjalnej warstwy mapy i można je [pokazywać lub ukry
 
 ### Tworzenie {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ Podczas dodawania punktu z danych OSM, odpowiednie informacje POI są automatycz
 
 ### Edytuj / Zastąp / Usuń {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Aby zmodyfikować punkt ulubiony:
 
 ### Ikony ulubionych {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true
 
 ## Zarządzanie ulubionymi {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -184,7 +184,7 @@ Sekcja **Moje Ulubione** pozwala na:
 
 ### Kolejność / Sortowanie / Wyszukiwanie {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -205,7 +205,7 @@ Sekcja **Moje Ulubione** pozwala na:
 
 ### Edycja / Usuwanie zbiorcze {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Akcje grup ulubionych {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ Więcej szczegółów w artykule [Moje miejsca](../personal/myplaces.md#favorite
 
 ### Zmień wygląd grupy {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -317,7 +317,7 @@ OsmAnd oferuje kilka metod [tworzenia kopii zapasowych](./import-export.md) i [p
 
 ### Darmowa kopia zapasowa w chmurze {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -348,7 +348,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 #### Jak utworzyć kopię zapasową {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ Aby korzystać z funkcji *Darmowa kopia zapasowa ustawień*, potrzebujesz konta 
 
 ### Wszystkie ulubione {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -403,7 +403,7 @@ Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycis
 
 ### Grupa ulubionych {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycis
 
 ### Automatyczna kopia zapasowa ulubionych {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

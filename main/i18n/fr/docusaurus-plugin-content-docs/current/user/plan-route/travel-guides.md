@@ -26,7 +26,7 @@ Les guides de voyage virtuels dans OsmAnd offrent aux utilisateurs des informati
 Les guides de voyage OsmAnd sont basés sur les données de [Wikivoyage](https://www.wikivoyage.org/), un projet communautaire similaire à Wikipédia, où des auteurs bénévoles créent des articles à jour.
 Les informations de Wikivoyage comprennent les faits principaux sur un lieu, les transports, les attractions, le shopping, et plus encore.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -61,7 +61,7 @@ Les articles des *Guides de voyage* sont stockés dans OsmAnd sous forme de trac
 
 ### Télécharger des articles {#download-articles}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -96,7 +96,7 @@ Lorsque vous ouvrez *Guides de voyage* (*<Translate android="true" ids="shared_s
 
 ### Explorer et enregistrer {#explore-and-bookmark}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -121,7 +121,7 @@ Si vous touchez le *bouton Signet*, l'article sera enregistré pour une lecture 
 
 ### Recherche {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Le champ de recherche est situé en haut de l'écran <Translate android="true" i
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -176,7 +176,7 @@ Dans le menu Options, vous pouvez choisir si vous souhaitez enregistrer les imag
 
 ## Article de voyage {#travel-article}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -209,7 +209,7 @@ En bas de l'écran se trouvent des boutons tels que :
 
 ### Menu de navigation {#navigation-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ Si vous tapez sur la flèche dans le coin supérieur gauche de l'écran, vous ir
 
 ### Table des matières {#table-of-contents}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -261,7 +261,7 @@ La plupart des *articles de Guide de voyage* ont la même structure de contenu :
 
 ### Points {#points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -331,7 +331,7 @@ Dans le *[menu contextuel de la trace](../map/tracks/track-context-menu.md)* du 
 
 ## Combiner avec Wikipédia {#combine-with-wikipedia}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

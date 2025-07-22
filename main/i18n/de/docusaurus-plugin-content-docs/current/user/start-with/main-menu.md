@@ -20,7 +20,7 @@ Das **Hauptmenü** ist eine primäre Liste von Optionen, die in der Anwendung ve
 
 Das Symbol für das [Hauptmenü](../widgets/map-buttons.md#main-menu) '&#8801;' befindet sich in der linken unteren Ecke des Kartenbildschirms. Im Navigationsmodus ist diese Schaltfläche standardmäßig nicht sichtbar. Sie erscheint nach einem kurzen Tippen auf die Karte.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

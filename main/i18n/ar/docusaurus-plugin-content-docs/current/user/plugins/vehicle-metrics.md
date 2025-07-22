@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تُعد ماسحات OBD-II جزءًا لا يتجزأ من تشخيصات السيارات الحديثة. مع تدفق البيانات في الوقت الفعلي، يكتسب المستخدمون رؤى فورية في أنظمة المركبة، مما يسهل الصيانة الوقائية ويقلل تكاليف الإصلاح. هذه الأدوات حيوية للاستخدام الشخصي وخدمات السيارات الاحترافية.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

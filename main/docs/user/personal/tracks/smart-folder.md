@@ -24,7 +24,7 @@ This feature allows you to quickly find specific tracks that match your requirem
 
 ## Search Filter {#search-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -59,7 +59,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 ### Available Filters {#available-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -108,7 +108,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 ## Smart Folder {#smart-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 ### Managing Smart Folders {#managing-smart-folders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

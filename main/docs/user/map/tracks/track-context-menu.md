@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit, and perform various other actions with the track. You can access the *track context menu* by simply tapping the needed track on the map or using menu *[My places](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open the track folder and select the desired track by tapping it.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -47,7 +47,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Info Panel {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -77,7 +77,7 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 ### Track Actions {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -102,7 +102,7 @@ In case your track was created in OsmAnd or any other tracking app (so its point
 
 ### Options {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 
 ### Description and Info {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 
 ### Track Information Activity {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -265,7 +265,7 @@ Interaction with the graph:
 
 ### Overview Information {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -304,7 +304,7 @@ The active **buttons** give access to actions such as:
 This tab can only be visible only on recorded tracks. Points on this type of track have **[`speed`](../../plugins/trip-recording#recorded-gpx-file)** tags.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -330,7 +330,7 @@ The **Speed** graph displays metrics such as:
 
 ### Altitude {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -386,7 +386,7 @@ This feature allows you to calculate the elevation profile for GPX track offline
 
 Waypoints are one of the types of points available on the map. In general, they can be track points that are part of GPX files. A detailed description is available in the [points on the map](../../map/point-layers-on-map.md) article.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -423,7 +423,7 @@ Waypoints can be added to the currently recorded track or to any track from [*My
 
 #### Create Waypoint {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Tap the *Add Waypoint* button to open waypoint creation screen (this screen is f
 
 ### Actions with Groups {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -490,7 +490,7 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 
 ### Waypoint Groups {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -512,7 +512,7 @@ You can switch group waypoints on or off on the map using the button in the uppe
 
 ### Display Custom GPX Tags {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

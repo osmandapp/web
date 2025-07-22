@@ -23,7 +23,7 @@ Menu kontekstowe mapy zawiera informacje o wybranym obiekcie na mapie. Można go
 
 ### Wybierz obiekt (pojedyncze dotknięcie) {#select-an-object-single-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -52,7 +52,7 @@ Wybrane obiekty mapy odpowiadają [**węzłom**](https://wiki.openstreetmap.org/
 
 ### Wybierz dowolny punkt (długie dotknięcie) {#select-any-point-long-tap}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -75,7 +75,7 @@ Gdy **długo dotkniesz** dowolnego miejsca na mapie, pojawi się **menu kontekst
 
 ### Wybierz trasę {#select-route}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -104,7 +104,7 @@ Aby zamknąć **menu kontekstowe**:
 
 ## Szczegóły {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -150,7 +150,7 @@ Dodatkowo, panel może zawierać [Szczegóły OpenStreetMap](https://wiki.openst
 
 ### Nazwy alternatywne {#alternative-names}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -181,7 +181,7 @@ Funkcje wyświetlania nazw alternatywnych:
 
 ### Informacje o wielokącie {#polygon-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -242,7 +242,7 @@ Dotknięcie *Pobliskie POI / artykuły Wikipedii* otwiera listę punktów (POI l
 
 ### Trasy transportu publicznego {#public-transport-routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -297,7 +297,7 @@ Użyj stylów mapy [Zima i narty](../map/vector-maps.md#winter-and-ski) lub [Off
 
 ### Opis artykułu {#article-description}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -326,7 +326,7 @@ Link OpenStreetMap zapewnia bezpośredni link do obiektu OpenStreetMap, gdzie mo
 
 ### Zdjęcia online {#online-photos}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -359,7 +359,7 @@ Więcej informacji: [Zdjęcia online](https://osmand.net/docs/user/map/popular_p
 
 ### Obrazy na poziomie ulicy {#street-level-imagery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -398,7 +398,7 @@ Informacje o [notatkach audio/wideo](../plugins/audio-video-notes.md), takie jak
 
 ## Działania {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -419,7 +419,7 @@ Jest to zestaw specyficznych manipulacji, które można wykonać na punkcie lub 
 
 ### Dodaj / Edytuj ulubione {#add--edit-favorite}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -446,7 +446,7 @@ W menu kontekstowym dostępne są opcje **dodania** lub **edycji** wybranego pun
 
 ### Dodaj / Edytuj znacznik {#add--edit-marker}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -475,7 +475,7 @@ Więcej o [znacznikach tutaj](../personal/markers.md).
 
 ### Udostępnij {#share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -514,7 +514,7 @@ Dostępne opcje udostępniania lokalizacji:
 
 ### Wskazówki do / z {#directions-to--from}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -545,7 +545,7 @@ Jeśli dotkniesz **Rozpocznij nawigację** - punkt *Od* zostanie odrzucony, gdy 
 
 ### Szukaj w pobliżu {#search-nearby}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -568,7 +568,7 @@ Więcej o [funkcji wyszukiwania](../search/index.md).
 
 ### Unikaj drogi {#avoid-road}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -594,7 +594,7 @@ Funkcja unikania dróg jest globalna i dotyczy wszystkich *[typów trasowania](.
 
 ### Zmień pozycję obiektu {#change-object-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -628,7 +628,7 @@ Więcej o narzędziu [Planuj trasę](../plan-route/create-route.md).
 
 ### Aktualizuj / Pobierz mapy online {#update--download-online-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -654,7 +654,7 @@ Proszę przeczytać [pełną instrukcję](../map/raster-maps.md#download--update
 
 ### Aktualizuj / Pobierz mapy wektorowe {#update--download-vector-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -687,7 +687,7 @@ W przypadku braku mapy offline w wybranej lokalizacji, na przykład gdy menu obi
 Aby dodać/usunąć punkty parkingowe, włącz wtyczkę OsmAnd [**Pozycja parkowania**](../plugins/parking.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -716,7 +716,7 @@ Każda wybrana lokalizacja na mapie może zostać oznaczona jako [pozycja parkin
 Aby dodać/edytować punkty trasy, włącz wtyczkę OsmAnd [**Nagrywanie podróży**](../plugins/trip-recording.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -752,7 +752,7 @@ Możesz dodawać punkty trasy do nagranego śladu lub do bieżącego nagrania ś
 Aby tworzyć/modyfikować POI, włącz wtyczkę OsmAnd [**Edycja OSM**](../plugins/osm-editing.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -780,7 +780,7 @@ Dzięki wtyczce do edycji OSM możesz tworzyć i modyfikować większość POI o
 Aby otworzyć notatkę OSM, włącz wtyczkę OsmAnd [**Edycja OSM**](../plugins/osm-editing.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

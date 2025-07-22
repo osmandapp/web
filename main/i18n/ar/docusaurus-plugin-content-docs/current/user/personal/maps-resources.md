@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يعمل OsmAnd بنوعين من الخرائط: [خرائط المتجهات](../map/vector-maps.md) و[خرائط الرسوم النقطية](../map/raster-maps.md). يخزن تبويب [المحلية](#local) جميع الخرائط والموارد. يمكن تنزيل أنواع الخرائط المتاحة من تبويب [التنزيلات](#downloads). في تبويب [التحديثات](#updates)، يمكنك تنزيل الخرائط المتاحة للتحديثات واستخدام [التحديثات المباشرة](#osmand-live). يمكنك أيضًا الوصول إلى ميزة [الخرائط الإضافية](#extra-maps) لإنشاء أنواع الخرائط الخاصة بك.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -45,7 +45,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## أنواع الخرائط {#map-types}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التنزيلات {#downloads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -166,7 +166,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### تحميل خرائط متعددة {#multiple-map-loading}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -187,7 +187,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المحلية {#local}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">  
 
@@ -291,7 +291,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التحديثات {#updates}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -333,7 +333,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 :::tip شراء
 OsmAnd Live هي ميزة مدفوعة.  
 :::
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -390,7 +390,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 
 ### مجاني لمساهمي OSM {#free-for-osm-mappers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

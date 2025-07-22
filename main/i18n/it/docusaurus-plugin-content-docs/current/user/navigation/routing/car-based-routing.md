@@ -29,7 +29,7 @@ Il percorso può essere configurato in base alle tue esigenze nella sezione [Par
 
 Il percorso per auto è progettato per aiutare i conducenti a trovare i percorsi più efficienti e diretti verso le loro destinazioni. Tiene conto delle restrizioni di guida comuni, come strade a senso unico, divieti di svolta, zone pedonali, e aiuta anche a evitare strade non adatte alle auto, come strade strette o strade con limitazioni di peso.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Per impostazione predefinita, il *profilo Camion* è disattivato. Per utilizzare
 
 Il percorso per camion è simile al percorso per auto, ma è progettato specificamente per i conducenti di veicoli commerciali di grandi dimensioni. Considera fattori aggiuntivi come le [restrizioni di altezza, peso e larghezza del veicolo](../guidance/navigation-settings.md#size-parameters) e la possibilità di trasportare materiali pericolosi (controlla la tabella seguente). Tutte le altre impostazioni di percorso sono identiche al [percorso per auto](#route-parameters---car).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

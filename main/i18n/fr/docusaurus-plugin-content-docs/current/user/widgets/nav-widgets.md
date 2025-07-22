@@ -120,7 +120,7 @@ Le relèvement est la direction vers une cible en dehors de votre véhicule, tel
 
 ![Widget d'enregistrement de trajet](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Le widget affiche la distance jusqu'au premier point intermédiaire le long de l
 
 ### Temps jusqu'à l'intermédiaire {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Le widget affiche l'*heure d'arrivée* ou le *temps restant* jusqu'au premier po
 
 ### Temps jusqu'à la destination {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Le widget Nom de la rue affiche **le nom de la rue actuelle** avec une flèche d
 
 ## Approche POI / Favoris {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

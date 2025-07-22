@@ -120,7 +120,7 @@ Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie einem Zie
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -229,7 +229,7 @@ Das Widget zeigt die Entfernung zum ersten Zwischenpunkt entlang der berechneten
 
 ### Zeit bis zum Zwischenziel {#time-to-intermediate}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -257,7 +257,7 @@ Das Widget zeigt die *Ankunftszeit* oder *verbleibende Zeit* bis zum ersten Zwis
 
 ### Zeit bis zum Ziel {#time-to-destination}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -447,7 +447,7 @@ Das Widget "Straßenname" zeigt **den aktuellen Straßennamen** mit einem gerade
 
 ## POIs / Favoriten annähern {#approach-pois--favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

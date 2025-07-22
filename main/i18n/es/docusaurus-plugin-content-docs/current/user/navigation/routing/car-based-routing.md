@@ -28,7 +28,7 @@ El enrutamiento se puede configurar según sus necesidades en la sección [Pará
 
 El enrutamiento de automóviles está diseñado para ayudar a los conductores a encontrar las rutas más eficientes y directas a sus destinos. Tiene en cuenta las restricciones de conducción comunes, como calles de sentido único, prohibición de giros, zonas peatonales, y también ayuda a evitar carreteras que no son adecuadas para automóviles, como carreteras estrechas o carreteras con limitaciones de peso.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -64,7 +64,7 @@ Por defecto, el *perfil de Camión* está desactivado. Para utilizar este perfil
 
 El enrutamiento de camiones es similar al enrutamiento de automóviles, pero está diseñado específicamente para conductores de vehículos comerciales grandes. Considera factores adicionales como la [altura, el peso y las restricciones de ancho](../guidance/navigation-settings.md#size-parameters) del vehículo y la posibilidad de transportar materiales peligrosos (consulte la tabla a continuación). Todas las demás configuraciones de enrutamiento son idénticas al [enrutamiento de automóviles](#route-parameters---car).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

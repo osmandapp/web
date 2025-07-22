@@ -29,7 +29,7 @@ Actualmente, la base de datos curada incluye aproximadamente entre **50.000 y 15
 *Esta es la primera versión de la función Lugares Populares. Los comentarios son bienvenidos en [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -76,7 +76,7 @@ Hay dos formas principales de acceder a esta función:
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Para usarlo **sin conexión**, necesitas una suscripción a [Maps+ o OsmAnd Pro]
 
 <InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -151,7 +151,7 @@ Al tocar un PDI en el mapa, se abre el [menú contextual de PDI](./map-context-m
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -195,7 +195,7 @@ En el menú contextual del mapa Cómo acceder:
 
 ### Galería {#gallery}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -231,7 +231,7 @@ También puedes realizar las siguientes acciones en cada foto:
   Guarda la imagen en el almacenamiento de tu dispositivo. La imagen descargada se puede encontrar en la carpeta de Descargas predeterminada de tu dispositivo y se puede acceder a ella sin conexión.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -259,7 +259,7 @@ En **iOS**, al mantener pulsada una foto, se abre un menú contextual con accion
 </Tabs>
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -292,7 +292,7 @@ La pantalla de **Detalles** proporciona metadatos completos para la foto selecci
 <!--
 ### Fotos en línea 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -322,7 +322,7 @@ En la sección **Fotos en línea** del menú contextual del mapa, puedes acceder
 
 #### Menú de la galería 2
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ En la sección **Fotos en línea** del menú contextual del mapa, puedes acceder
 La galería puede mostrar hasta 100 elementos. Puedes navegar por todas las fotos, y al tocar brevemente cualquier foto, se abrirá para ver detalles adicionales (*Nombre*, *Fecha*, *Autor*, *Licencia*) y realizar varias acciones (*Compartir*, *Detalles*, *Abrir en el navegador* y opciones de *Descarga*).
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -365,7 +365,7 @@ Botones:
 - El botón **Compartir** te permite compartir el elemento seleccionado.
 - El botón de **Tres puntos** abre un menú con opciones como *Detalles*, *Abrir en el navegador* y *Descargar*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -27,7 +27,7 @@ Eine nautische Karte ist eine sehr detaillierte topografische Karte, die Skipper
 
 Nautische Karten sind wichtig für professionelle Segler und Amateure, die ein Boot mieten, um durch die Kanäle der Stadt zu fahren. Die Karten liefern ihnen verschiedene Informationen wie Segelrouten, Navigationslichter, Gefahrenzonen, Zonen, in denen das Segeln oder Anlegen erlaubt oder verboten ist, usw.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ Die folgende Einrichtung sorgt dafür, dass die Nautische Karte auf dem Bildschi
 
 ### Nautischen Kartenstil einstellen {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Um den aktuellen Kartenstil auf Nautisch zu ändern, müssen Sie die folgenden E
 
 ### Nautische Karten herunterladen {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ Das Deaktivieren des Nautischen Plugins entfernt nicht die geladenen nautischen 
 
 ## Nautisches Profil {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ Das Nautische Plugin in OsmAnd erweitert die Vektor-Layer-Kartenstile um den Nau
 
 ### Tiefenpunkte {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Tiefenpunkt-[Pakete](../start-with/download-maps.md#type-of-maps) sind für Euro
 
 ### Tiefenlinien {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Sie können der OsmAnd-App helfen, die Tiefenlinien-Datenbank zu erweitern, inde
 
 ### Details zum Meeresboden {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

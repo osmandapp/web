@@ -53,7 +53,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 
 ### Yeni Sensör Eşleştir {#pair-new-sensor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Yeni bir sensör eşleştirmek için şu adımları izleyin:
 
 ## Sensör Ayarları {#sensor-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçene
 
 ## Yolculuk Kaydı {#trip-recording}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ OsmAnd, sensör verilerini GPX dosyalarına yerleştirmek için [iz kaydını](.
 
 ### Veri Analizi {#data-analyze}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*,
 
 ## Widget'lar {#widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -244,7 +244,7 @@ Desteklenen widget türleri:
 
 ### Widget Ayarları {#widget-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

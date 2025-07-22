@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Сканери OBD-II є невід'ємною частиною сучасної автомобільної діагностики. Завдяки потоковій передачі даних у режимі реального часу користувачі отримують миттєве уявлення про системи автомобіля, що сприяє профілактичному обслуговуванню та зменшенню витрат на ремонт. Ці інструменти є життєво важливими як для особистого користування, так і для професійних автомобільних послуг.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

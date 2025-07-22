@@ -22,7 +22,7 @@ This article describes how to configure the appearance of the map during navigat
 
 ## Map During Navigation {#map-during-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -65,7 +65,7 @@ The *Show along the route* setting allows you to configure additional route para
 
 ### View and Select Points {#view-and-select-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ The list contains all previously added [Favorite](../../personal/favorites.md#fa
 
 ## Screen Alerts {#screen-alerts}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ## Route Line Appearance {#route-line-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

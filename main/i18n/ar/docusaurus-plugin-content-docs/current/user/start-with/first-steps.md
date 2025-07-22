@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 استكشف كيفية تنزيل الخرائط، وكيفية تهيئة التطبيق، وكيفية استخدام الخريطة وبناء مسار، وكيفية بدء الملاحة، وكيفية البحث عن نقاط الاهتمام. تعرف على النقاط الرئيسية لسياسة خصوصية أوزماند والأذونات المطلوبة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -72,7 +72,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إذن الوصول إلى الموقع {#permission-to-access-the-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -93,7 +93,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### كيفية تنزيل الخرائط {#how-to-download-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -132,7 +132,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يُستخدم خيار *لغة العرض* لتغيير لغة التطبيق بالكامل، بما في ذلك المطالبات المنبثقة، والنصوص الداخلية، والرسائل، والمزيد. حتى أندرويد 12، يسمح لك أوزماند بتخصيص لغة العرض وفقًا لتفضيلاتك مباشرة في التطبيق. بدءًا من أندرويد 13 وعلى أجهزة iOS، لا يمكن تغيير لغة العرض إلا في إعدادات النظام (راجع كيفية تغيير تفضيلات اللغة لكل تطبيق في [أندرويد](https://developer.android.com/guide/topics/resources/app-languages) و [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -161,7 +161,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك إدارة إعدادات التطبيق كـ [إعدادات عامة](../personal/global-settings.md) أو كـ [تهيئة ملف تعريف](../personal/profiles.md) عبر [القائمة الرئيسية](../start-with/main-menu.md). يأتي التطبيق بقائمة محددة مسبقًا من الملفات الشخصية التي يمكن تعديلها لاحقًا. يمكن اعتبار كل ملف تعريف كتطبيق خرائط مخصص لأغراض محددة. افتراضيًا، تُستخدم الملفات الشخصية فقط كأوضاع ملاحة مختلفة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -187,7 +187,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك تمكين / تعطيل المكونات الإضافية عبر [القائمة الرئيسية](../start-with/main-menu.md) ← [المكونات الإضافية](../plugins/index.md#configure-plugin).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -216,7 +216,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 الخريطة هي عنصر أساسي في أوزماند، ومن المهم معرفة [كيفية استخدامها](../map/interact-with-map.md) (الإيماءات، الأزرار، إلخ). يمكنك [تهيئة الخريطة](../map/configure-map-menu.md) لاحتياجاتك: [تغيير نمط الخريطة](../map/configure-map-menu.md#map-style-parameters)، تهيئة [طبقات الخريطة](../map/configure-map-menu.md#map-layers) المختلفة مثل المفضلة، نقاط الاهتمام، النقل العام، المسارات، خطوط الكنتور، تظليل التلال وغيرها.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -239,7 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [تهيئة الشاشة](../widgets/configure-screen.md) تسمح لك بتمكين الأدوات [المعلوماتية](../widgets/info-widgets.md) (الارتفاع، السرعة، الوقت الحالي، إلخ) و [الملاحية](../widgets/nav-widgets.md) (الوجهة، الاتجاه، وقت الوصول، إلخ)، [الإجراء السريع](../widgets/quick-action.md) وعناصر أخرى سيتم عرضها فوق الخريطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -262,7 +262,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يسمح لك أوزماند بوضع علامات مختلفة على الخريطة لاحتياجاتك الشخصية. على سبيل المثال، [النقاط المفضلة](../personal/favorites.md) - نقاط شخصية مع اسم وأيقونة وفئة، [العلامات](../personal/markers.md) - نقاط مضافة بسرعة كهدف، [ملاحظات صوتية/فيديو](../plugins/audio-video-notes.md) - ملاحظات وسائط مسجلة في نقطة محددة، [المسارات](../personal/tracks/manage-tracks.md) - مسارات وجولات مسجلة ومستوردة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -285,7 +285,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [نقاط الاهتمام (POI)](../map/point-layers-on-map.md#points-of-interest-pois) هي مرافق يمكن البحث عنها أو تمييزها على الخريطة. وهي تمثل أماكن مثيرة للاهتمام أو مفيدة ويتم توزيعها كجزء من [خرائط المتجهات](../map/vector-maps.md). يمكنك استخدامها [للعرض على الخريطة](../map/point-layers-on-map.md#points-of-interest-pois)، [التنقل](../navigation/index.md) و [البحث](../search/search-poi.md) عن نقاط الاهتمام على الخريطة.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -308,7 +308,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [تخطيط المسار](../plan-route/create-route.md) هو أداة قوية تتيح لك إنشاء رحلة، وتعديل مسار موجود، وقياس المسافة على الفور. يمكنك وضع نقاط وسيطة بسرعة وربطها بخطوط ملاحة مختلفة (دراجة، مشاة، خط مستقيم، إلخ). يمكن حفظ النتائج في ملف GPX، بحيث يمكن [مشاركتها](../personal/tracks/index.md) أو [استخدامها للملاحة](../navigation/setup/gpx-navigation.md) لاحقًا.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -331,7 +331,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يوفر أوزماند العديد من إمكانيات البحث، بما في ذلك البحث عن العناوين. افتراضيًا، يستخدم [بيانات OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) ويجب أن يكون قادرًا على العثور على جميع العناوين باستخدام إدخال البحث السريع. كما يمكنك [البحث](../search/search-address.md) حسب المدينة، الشارع، الرمز البريدي، والإحداثيات.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -358,7 +358,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [الملاحة](../navigation/index.md) توفر لك إرشادات خطوة بخطوة إلى وجهتك عن طريق عرض المسار، وتقديم تعليمات منعطف بمنعطف، ومعلومات إضافية عن الطريق مثل السطح، والنعومة، وما إلى ذلك، وإرشادات صوتية اختيارية.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -381,7 +381,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [تسجيل الرحلة](../plugins/trip-recording.md) هو أداة خاصة مدمجة كمكون إضافي في أوزماند تتيح لك تسجيل جميع الحركات على المسار باستخدام نظام تحديد المواقع العالمي (GPS) للجهاز.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -404,7 +404,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يعتمد أوزماند على بيانات [OpenStreetMap](https://www.openstreetmap.org/). يتم إنشاء الخرائط بواسطة مساهمين متطوعين، لذلك يمكن أن تحتوي على تفاصيل أكثر أو أقل اعتمادًا على مقدار العمل الذي تم إنجازه في جزء معين من الخريطة. يمكن لأي شخص التسجيل كمساهم وإضافة أو تعديل خرائط OSM. يوفر أوزماند مكونًا إضافيًا للتحرير يساعد على تحسين OpenStreetMap.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -425,7 +425,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### كيفية إغلاق التطبيق {#how-to-close-the-app}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -474,7 +474,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المساعدة دون اتصال بالإنترنت {#offline-help}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -496,7 +496,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### القائمة {#menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -520,7 +520,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الأكثر مشاهدة {#most-viewed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -541,7 +541,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### دليل المستخدم {#user-guide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -562,7 +562,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### استكشاف الأخطاء وإصلاحها {#troubleshooting}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -590,7 +590,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### اتصل بنا {#contact-us}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -610,7 +610,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الإبلاغ عن المشكلات {#report-issues}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -632,7 +632,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### حول أوزماند {#about-osmand}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

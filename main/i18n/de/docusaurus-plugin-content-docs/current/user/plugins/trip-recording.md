@@ -21,7 +21,7 @@ Das **Routenaufzeichnungs-Plugin** ist ein unverzichtbares Werkzeug zum Erfassen
 
 Mit dem *Routenaufzeichnungs-Plugin* können Sie neue Routen erstellen, aufgezeichnete Routen direkt auf der Karte anzeigen und bestehende Aufzeichnungen verwalten. Es bietet wertvolle Einblicke in Ihre Routen, wie z. B. Geschwindigkeit, Höhenunterschiede, Geländedetails und Daten von externen Sensoren. Das Plugin zeichnet Ihre Route auf und ermöglicht so eine detaillierte Analyse und Freigabe nach Ihrer Reise.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Mit dem Routenaufzeichnungs-Plugin in OsmAnd können Sie Ihre Route ganz einfach
 
 ### Startdialog {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Zum *Stoppen / Speichern / Pausieren*:
 
 ### Übersichts-Bildschirm {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Für weitere Details können Sie das [**Routen-Kontextmenü**](../map/tracks/tra
 
 ### Auf der Karte anzeigen {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Bevor Sie Ihre Routen verfolgen, müssen Sie das **Routenaufzeichnungs-Plugin** 
 - **Globale Einstellungen**. Die Routenaufzeichnungseinstellungen werden pro Profil konfiguriert, die Sie in den globalen [Einstellungen](../personal/global-settings.md) der App verwalten können. Bevor Sie das Routenaufzeichnungs-Plugin anpassen, wählen Sie das Profil, das Sie konfigurieren möchten, aus dem Abschnitt [Profile](../personal/profiles.md) aus. Von dort aus navigieren Sie zu den Einstellungen des Profils, um auf die Routenaufzeichnungsoptionen zuzugreifen.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Um *Routenaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Einste
 
 ### Aufzeichnungs-Widget hinzufügen {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Um Ihre Benutzeroberfläche anzupassen, können Sie das Routenaufzeichnungs-Widg
 
 ### Distanz (Start-Stopp) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ Zusätzlich zum *Distanz-/Start-Stopp*-Widget enthält das **Routenaufzeichnungs
 
 ### Dauer, Bergauf, Bergab {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

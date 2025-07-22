@@ -38,7 +38,7 @@ Sur certains appareils Android, l'altitude peut s'afficher de manière imprécis
 - Pour plus de détails, consultez [Cartes et ressources](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -69,7 +69,7 @@ Sur certains appareils Android, l'altitude peut s'afficher de manière imprécis
 &nbsp;<ProFeature/> Pour avoir accès au widget *Élévation : centre de la carte*, abonnez-vous à OsmAnd Pro pour [Android](../purchases/android.md#pro-features) ou [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Le widget affiche la vitesse actuelle détectée par le capteur GPS.
 
 ## Vitesse moyenne {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -170,7 +170,7 @@ Le widget **Vitesse moyenne** calcule et affiche votre vitesse moyenne sur un in
 
 Après la réinitialisation, la vitesse moyenne est recalculée à partir des nouvelles données GPS. Cette fonctionnalité est utile pour la surveillance de la vitesse en temps réel, par exemple pour suivre la vitesse dans les zones avec des **radars de vitesse moyenne**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Après la réinitialisation, la vitesse moyenne est recalculée à partir des no
 
 ## Taux de plané {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ Le widget **Niveau de batterie** affiche le pourcentage de batterie de votre app
 
 ## Widget Coordonnées {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ Vous pouvez réinitialiser le cache GPS actuel via :
 
 ## Position du soleil {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ Les widgets de position du soleil affichent les heures du prochain lever et couc
 Vous pouvez lire une description plus détaillée ici : **[Règle de rayon et Règle](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -414,7 +414,7 @@ Le widget Règle de rayon affiche la distance entre votre position et le point c
 
 ## Compteur de vitesse {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Ces widgets sont activés et fonctionnent en combinaison avec leurs plugins corr
 Vous pouvez lire une description plus détaillée ici : **[Plugin <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -492,7 +492,7 @@ Les widgets d'enregistrement de trajet font référence aux [plugins <Translate 
 Pour ajouter des widgets de capteurs externes à l'écran de la carte, activez le [plugin Capteurs externes](../plugins/external-sensors.md) d'OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -562,7 +562,7 @@ Les widgets appartiennent au [plugin Métriques de véhicule](../plugins/vehicle
 Pour ajouter des widgets météo à l'écran de la carte, activez le [plugin Météo](../plugins/weather.md) d'OsmAnd.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -690,7 +690,7 @@ Les **widgets développeur** fournissent des informations sur la [vitesse de ren
 
 #### FPS de rendu de la carte {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -718,7 +718,7 @@ Le [widget FPS de rendu de la carte](../plugins/development.md#map-rendering-fps
 
 #### Widgets de caméra {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

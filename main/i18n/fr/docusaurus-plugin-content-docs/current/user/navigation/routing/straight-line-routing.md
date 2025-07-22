@@ -36,7 +36,7 @@ Le routage en ligne droite est lié au *profil Avion*. Par défaut, ce profil es
 
 Le routage *en ligne droite* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de navigation.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

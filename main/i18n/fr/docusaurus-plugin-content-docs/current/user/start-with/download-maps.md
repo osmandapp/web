@@ -33,7 +33,7 @@ Commencez à charger des cartes à partir de l'[écran de configuration initiale
 
 ### Écran de configuration initiale {#initial-setup-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -56,7 +56,7 @@ Si vous utilisez un VPN, OsmAnd peut suggérer une carte basée sur la localisat
 
 #### Menu à trois points {#three-dot-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -85,7 +85,7 @@ Si vous utilisez un VPN, OsmAnd peut suggérer une carte basée sur la localisat
 
 ### Cartes et ressources {#maps-and-resources}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -138,7 +138,7 @@ OsmAnd inclut deux options de carte du monde :
 
 ### Sélectionner sur la carte {#select-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -162,7 +162,7 @@ Sur le petit écran, la carte sélectionnée pour le téléchargement sera surli
 
 ### Recherche {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

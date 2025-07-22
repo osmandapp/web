@@ -74,7 +74,7 @@ Profil görünüm ayarlarını kullanarak **Konumum** düğme simgelerini özell
 
 ## Harita Yönlendirme Modları {#map-orientation-modes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Profil görünüm ayarlarını kullanarak **Konumum** düğme simgelerini özell
 
 ## Pusula {#compass}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ Bu özelliği *Menü → Ayarlar → Profiller → Genel ayarlar → Görünüm 
 
 ## Harita Eğimi ve Ufuk {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-eng
 
 ## Dokunmatik Ekran Kilidi {#touch-screen-lock}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Klavye, *Harici giriş cihazları* seçeneği kapalıyken ve *Yok* seçiliyken b
 
 ### Önceden Yapılandırılmış Giriş Cihazı {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

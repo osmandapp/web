@@ -74,7 +74,7 @@ La *Lente d'ingrandimento della mappa* è uno strumento che migliora la visibili
 
 ## Modalità di orientamento della mappa {#map-orientation-modes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -99,7 +99,7 @@ Le *modalità di orientamento della mappa* ti consentono di scegliere come viene
 
 ## Bussola {#compass}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -131,7 +131,7 @@ Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Imp
 
 ## Inclinazione e orizzonte della mappa {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -159,7 +159,7 @@ Non puoi cambiare l'inclinazione della telecamera quando è attivo il vecchio [m
 
 ## Blocco schermo tattile {#touch-screen-lock}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ La tastiera rimane funzionale anche quando l'opzione *Dispositivi di input ester
 
 ### Dispositivo di input preconfigurato {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

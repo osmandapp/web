@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Menu **Konfiguruj mapę** jest ważnym elementem *Menu Głównego* OsmAnd, gdzie można dostosować wyświetlanie mapy do własnych potrzeb. Możesz wyróżnić ulubione punkty, znaczniki nawigacyjne lub specjalne punkty zainteresowania na mapie, wyświetlić konkretne trasy lub pliki GPX innych firm, nałożyć informacje o terenie, obrazy satelitarne lub inne dostępne obrazy rastrowe, wyświetlić informacje o transporcie publicznym i zmienić styl mapy.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

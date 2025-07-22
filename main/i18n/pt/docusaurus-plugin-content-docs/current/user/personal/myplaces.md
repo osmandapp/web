@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Meus Lugares** é o centro no aplicativo OsmAnd para gerenciar e personalizar todos os dados pessoais. Você pode usar esta seção para organizar [Pontos Favoritos](#favorites) marcados como importantes ou frequentemente visitados. A guia [Rotas](#tracks) permite visualizar, importar, gravar e criar arquivos GPX para ajudar você a manter um histórico detalhado de suas rotas e viagens. Você também pode gerenciar suas [Edições do OpenStreetMap](#openstreetmap-edits), facilitando a contribuição para melhorias e atualizações do mapa. O plugin e os widgets [Notas de Áudio/Vídeo](#audiovideo-notes) permitem que usuários Android criem e salvem notas multimídia relacionadas a locais específicos, adicionando contexto às suas viagens.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -55,7 +55,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu"/> → Meus Lugares
 
 ## Favoritos {#favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu"/> → Meus Lugares
 
 2. ***Menu de três pontos*** (*Android*) e ***toque longo*** (*iOS*). Use o menu de *três pontos* ao lado de cada pasta ou *toque longo* na pasta para gerenciar grupos de favoritos:
 
-    <Tabs groupId="operating-systems">
+    <Tabs groupId="operating-systems" queryString="operating-systems">
 
     <TabItem value="android" label="Android">
 
@@ -119,7 +119,7 @@ Para instruções mais detalhadas, consulte o artigo [Favoritos](../personal/fav
 
 ## Rotas {#tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Para orientação abrangente, consulte o artigo [Gerenciar Rotas](../personal/tr
 
 ## Edições do OpenStreetMap {#openstreetmap-edits}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

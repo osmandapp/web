@@ -101,7 +101,7 @@ The compass button provides multiple actions to control map orientation:
 
 ### Display Options {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -130,7 +130,7 @@ The compass icon on the button always points to the North. You can select how th
 
 ## 3D Mode {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

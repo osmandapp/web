@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Ustawienia globalne** to ogólne [ustawienia](../personal/profiles.md) dla wszystkich profili w aplikacji OsmAnd. Są to podstawowe ustawienia systemu OsmAnd, a wszelkie wprowadzone zmiany będą miały wpływ na całą aplikację.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#defa
 
 ### Profil domyślny {#default-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Ta funkcja jest dostępna w wersji aplikacji OsmAnd na iOS.
 
 ### Folder przechowywania danych {#data-storage-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Więcej informacji można znaleźć w [Polityce prywatności i bezpieczeństwa O
 
 ### Analityka {#analytics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -217,7 +217,7 @@ Dane o Twojej lokalizacji lub miejscach, które przeglądasz na mapie, nie są z
 
 ### Historia {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ Aplikacja rejestruje historię wcześniej wprowadzonych danych (historię) w nas
 
 **Udostępnianie i usuwanie historii.**
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ W tej sekcji ustawień OsmAnd możesz skonfigurować otrzymywane powiadomienia, 
 
 ### Okna dialogowe i powiadomienia {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -351,7 +351,7 @@ OsmAnd może [ostrzegać o fotoradarach](../navigation/guidance/navigation-setti
 
 ### Odinstaluj fotoradary {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

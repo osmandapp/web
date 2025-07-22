@@ -31,7 +31,7 @@ Puedes:
 Todos los widgets dependen del [perfil](../personal/profiles.md) — cada perfil tiene su propio diseño, orden, visibilidad y configuración.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -54,7 +54,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ## Paneles de Widgets {#widget-panels}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -90,7 +90,7 @@ Cada panel admite diferentes comportamientos de diseño:
 
 ### Catálogo de Widgets {#widgets-catalog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -253,7 +253,7 @@ El modo te permite añadir **más de un widget en una sola fila** en los paneles
 
 ### Páginas {#pages}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -315,7 +315,7 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
 
 ### Menú contextual del widget {#widget-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -400,7 +400,7 @@ Puedes reorganizar o eliminar widgets de la pantalla de la aplicación utilizand
 
 ### Botones personalizados {#custom-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -424,7 +424,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 ### Botones predeterminados {#default-buttons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -489,7 +489,7 @@ La función *Apariencia del botón* te permite personalizar completamente el asp
 
 ## Otros {#other}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -516,7 +516,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *�
 
 ### Posición de visualización (Posición de la ubicación en pantalla) {#display-position-location-position-on-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -543,7 +543,7 @@ Te permite establecer la ubicación del cursor en *[Mi ubicación](../map/intera
 
 ## Acciones {#actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -576,7 +576,7 @@ Acciones disponibles:
 
 ## Cambiar perfil {#switch-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

@@ -30,7 +30,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تمكين / تعطيل {#enable--disable}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -100,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *القائمة الرئيسية ← البرامج المساعدة ← اسم البرنامج المساعد ← الإعدادات (⚙️ لنظام iOS)* أو
 - *القائمة الرئيسية ← الإعدادات ← الملف الشخصي ← [إعدادات البرنامج المساعد](../personal/profiles.md#plugin-settings)*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

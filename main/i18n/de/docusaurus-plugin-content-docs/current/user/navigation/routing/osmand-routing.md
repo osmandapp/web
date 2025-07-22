@@ -85,7 +85,7 @@ Es gibt zwei mögliche Wege, um auszuwählen, welche Straßen bei der Routenbere
 
 ### Menü "Straßen vermeiden" {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Mit der Option *Auf Karte auswählen* können Sie weiterhin Straßen auf der Osm
 
 Wenn Sie eine zu vermeidende Straße über das *Kartenkontextmenü* oder das *Menü "Straßen vermeiden"* auswählen, wird die Liste der Straßen über dem Kartenbildschirm angezeigt.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Wenn Sie eine zu vermeidende Straße über das *Kartenkontextmenü* oder das *Me
 
 ## Exportieren / Importieren {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ Abhängig von den Einstellungen Ihres Geräts und den verfügbaren Anwendungen k
 
 Sie können Straßen, die bei der Routenberechnung vermieden werden sollen, aus anderen Quellen im `.osf`-Dateiformat [importieren](../../personal/import-export.md#importieren). Dies kann auch über die Option *Importieren* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*) erfolgen. Sie können wählen, ob Sie alle Daten oder nur wenige zu vermeidende Straßen importieren möchten (indem Sie eine Straße in der Liste mit einem Häkchen markieren).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

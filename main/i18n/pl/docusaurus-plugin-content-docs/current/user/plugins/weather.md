@@ -54,7 +54,7 @@ Wtyczka Pogoda jest dostępna tylko z silnikiem renderowania map [Wersja 2](../p
 
 ### Ekran prognozy pogody {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -80,7 +80,7 @@ Na dole ekranu znajduje się *pasek narzędzi pogodowych*. Możesz użyć przyci
 
 ### Dostosuj warstwy pogodowe {#customize-weather-layers}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -107,7 +107,7 @@ W tym menu możesz zmienić **widoczność** i [ustawienia](#weather-settings) d
 
 ### Ustawienia pogody {#weather-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -156,7 +156,7 @@ Wszystkie dane pogodowe są przedstawione jako oddzielne warstwy mapy. Aby zobac
 
 ### Łączenie map {#combine-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -198,7 +198,7 @@ Na urządzeniach z systemem Android możesz sprawdzić, kiedy dane pogodowe zost
 
 ### Pobierz prognozę {#download-forecast}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -234,7 +234,7 @@ OsmAnd generuje nową prognozę co 6 godzin.
 
 ## Widżety pogodowe {#weather-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

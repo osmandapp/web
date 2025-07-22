@@ -75,7 +75,7 @@ OsmAnd'daki çevrimiçi haritalar, piksellerden (aynı zamanda ızgara hücreler
 
 ## Raster Haritaları Seçin {#select-raster-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -100,7 +100,7 @@ Temel haritanın şeffaflığını katmanlarınızla harmanlamak için de ayarla
 
 ### Ana {#main}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -125,7 +125,7 @@ Listeden bir harita stili seçebilir veya kendi harita stilinizi [ekleyebilirsin
 
 ### Katman Üstü Katman {#overlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -156,7 +156,7 @@ Listeden bir harita stili seçebilir veya kendi harita stilinizi [ekleyebilirsin
 
 ### Alt Katman {#underlay-layer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -215,7 +215,7 @@ Bu ayarlar uygulandığında harita üzerindeki kabartma gösteriminin farkı, *
 
 ### Görüntüleme Seçeneklerini Yapılandırın {#configure-display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -271,7 +271,7 @@ OsmAnd'da henüz tanımlanmamış yeni bir raster harita kaynağı eklemek için
 
 ### Yeni Çevrimiçi Raster Harita Kaynağı Ekle {#add-new-online-raster-map-source}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -354,7 +354,7 @@ Raster haritalara çevrimdışı erişmek istiyorsanız, döşemeleri önceden y
 
 Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bir [Son kullanma süresi](#add-new-online-raster-map-source) ayarlayabilirsiniz, böylece OsmAnd döşemeleri görüntülendiği anda yeniden yükleyecektir.  
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -393,7 +393,7 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
 
 ### Raster Harita Parametrelerini Değiştirin {#change-raster-map-parameters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

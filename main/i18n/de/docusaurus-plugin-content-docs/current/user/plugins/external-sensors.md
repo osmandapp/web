@@ -53,7 +53,7 @@ Um Daten von externen Sensoren nutzen zu können, befolgen Sie diese Schritte:
 
 ### Neuen Sensor koppeln {#pair-new-sensor}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -92,7 +92,7 @@ Um einen neuen Sensor zu koppeln, gehen Sie wie folgt vor:
 
 ## Sensoreinstellungen {#sensor-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -133,7 +133,7 @@ Jeder in OsmAnd aufgelistete gekoppelte externe Sensor verfügt über einen eige
 
 ## Tourenaufzeichnung {#trip-recording}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ OsmAnd verwendet die [Trackaufzeichnung](../plugins/trip-recording.md#recorded-g
 
 ### Datenanalyse {#data-analyze}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -204,7 +204,7 @@ Dies zeigt Diagramme für Ihre aufgezeichneten Daten an: *Herzfrequenz*, *Geschw
 
 ## Widgets {#widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -244,7 +244,7 @@ Unterstützte Widget-Typen:
 
 ### Widget-Einstellungen {#widget-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

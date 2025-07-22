@@ -40,7 +40,7 @@ Puoi trovare informazioni dettagliate sulla visualizzazione e personalizzazione 
 - [Scarica/aggiorna tessere](../map/raster-maps.md#download--update-tiles).
 - [Modifica](../map/raster-maps.md#change-raster-map-parameters) i parametri della mappa raster.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

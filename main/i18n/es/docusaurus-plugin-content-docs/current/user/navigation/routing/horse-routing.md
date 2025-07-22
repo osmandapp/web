@@ -31,7 +31,7 @@ Por defecto, el *perfil de equitación* está desactivado. Para usar este perfil
 
 El enrutamiento a caballo está diseñado para proporcionar a los jinetes información sobre caminos aptos para caballos, senderos y rutas de equitación.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

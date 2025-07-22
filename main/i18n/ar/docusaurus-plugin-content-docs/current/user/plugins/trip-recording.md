@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 باستخدام *مكوّن تسجيل الرحلات الإضافي*، يمكنك إنشاء مسارات جديدة، وعرض المسارات المسجلة مباشرة على الخريطة، وإدارة السجلات الموجودة. يوفر رؤى قيمة حول رحلاتك، مثل السرعة، وتغيرات الارتفاع، وتفاصيل التضاريس، والبيانات من المستشعرات الخارجية. يسجل المكوّن الإضافي مسارك، مما يتيح تحليلًا مفصلًا ومشاركة بعد رحلتك.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### بدء حوار {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -139,7 +139,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### شاشة النظرة العامة {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -191,7 +191,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إظهار على الخريطة {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -264,7 +264,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **الإعدادات العامة**. يتم تكوين إعدادات تسجيل الرحلات لكل ملف شخصي، والتي يمكنك إدارتها في [الإعدادات](../personal/global-settings.md) العامة للتطبيق. قبل تخصيص مكوّن تسجيل الرحلات الإضافي، حدد الملف الشخصي الذي تريد تكوينه من قسم [الملفات الشخصية](../personal/profiles.md). من هناك، انتقل إلى إعدادات الملف الشخصي للوصول إلى خيارات تسجيل الرحلات.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -367,7 +367,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إضافة أداة تسجيل {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -394,7 +394,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المسافة (بدء-إيقاف) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 
@@ -428,7 +428,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المدة، الصعود، النزول {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="أندرويد">
 

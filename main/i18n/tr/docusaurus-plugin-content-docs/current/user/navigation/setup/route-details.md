@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygulama, mesafe, [seyahat süresi](#distance--time--co2), [yüzey tipi](#road-attributes), [yükseklik farkları](#elevation-info), [CO2 ayak izi verileri](#distance--time--co2) ve [dönüş bilgileri](#turn-by-turn-information) gibi rota hakkında detaylı bilgi sağlar. Ayrıca rotayı harita üzerinde [analiz edebilir](#analyze-on-map), parkur segmentleri hakkında bilgi edinebilir, rota planını [yazdırabilir](#print), rotayı [kaydedebilir](#share--export-actions) ve başkalarıyla paylaşabilirsiniz. Bu işlevsellik sayesinde, rota detaylarını her zaman bilecek ve seyahatinizi daha verimli planlayabileceksiniz.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota tür
 
 ## Mesafe / Süre / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota tür
 
 ## Yükseklik Bilgisi {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ Haritadaki rakım verileri (70 derece kuzey enlemi ile 70 derece güney enlemi a
 
 ### Yükseklik Grafiği {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ Haritadaki rakım verileri (70 derece kuzey enlemi ile 70 derece güney enlemi a
 
 ## Haritada Analiz Et {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ Veri mevcutsa, aşağıdaki türlerden birini seçebilirsiniz:
 
 ## Yol Nitelikleri {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ Yol nitelikleri [Rota Detayları](#how-to-access) bölümünde erişilebilir ve 
 
 ## Adım Adım Bilgiler {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ Ayrıntılı bilgileri görüntülemek veya gerektiği gibi değişiklik yapmak 
 
 ### Talimatlar {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ Adım adım bilgileri **PDF formatında** **yazdırma** veya **kaydetme** yetene
 
 ## Paylaş / Dışa Aktar (Eylemler) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

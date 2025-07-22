@@ -45,7 +45,7 @@ Per maggiori informazioni su come e quando vengono attivati i suggerimenti vocal
 
 ### Impostazioni vocali {#voice-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -117,7 +117,7 @@ In alcuni paesi o regioni, l'uso di applicazioni di avviso autovelox è illegale
 
 ### Limite di velocità {#speed-limit}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -241,7 +241,7 @@ Per la risoluzione dei problemi, consulta:
 
 ### Lingua suggerimenti vocali {#voice-prompt-language}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

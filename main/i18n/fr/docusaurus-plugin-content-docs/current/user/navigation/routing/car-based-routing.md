@@ -29,7 +29,7 @@ Le calcul d'itinéraire peut être configuré selon vos besoins dans la section 
 
 Le calcul d'itinéraire en voiture est conçu pour aider les conducteurs à trouver les itinéraires les plus efficaces et les plus directs vers leurs destinations. Il prend en compte les restrictions de conduite courantes, telles que les rues à sens unique, les interdictions de virage, les zones piétonnes, et aide également à éviter les routes qui ne conviennent pas aux voitures, telles que les routes étroites ou les routes avec des limitations de poids.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Par défaut, le *profil Camion* est désactivé. Pour utiliser ce profil pour le
 
 Le calcul d'itinéraire pour les camions est similaire au calcul d'itinéraire pour les voitures, mais il est conçu spécifiquement pour les conducteurs de gros véhicules commerciaux. Il prend en compte des facteurs supplémentaires tels que les [restrictions de hauteur, de poids et de largeur](../guidance/navigation-settings.md#size-parameters) du véhicule et la possibilité de transporter des matières dangereuses (voir le tableau ci-dessous). Tous les autres paramètres de calcul d'itinéraire sont identiques à ceux du [calcul d'itinéraire pour les voitures](#route-parameters---car).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

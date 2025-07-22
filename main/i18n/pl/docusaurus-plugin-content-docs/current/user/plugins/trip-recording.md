@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Dzięki *wtyczce Nagrywanie trasy* możesz tworzyć nowe ślady, wyświetlać nagrane bezpośrednio na mapie i zarządzać istniejącymi nagraniami. Oferuje ona cenne informacje o Twoich podróżach, takie jak prędkość, zmiany wysokości, szczegóły terenu i dane z zewnętrznych czujników. Wtyczka rejestruje Twoją trasę, umożliwiając szczegółową analizę i udostępnianie po podróży.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -78,7 +78,7 @@ Dzięki wtyczce Nagrywanie trasy w OsmAnd możesz łatwo rozpocząć nagrywanie 
 
 ### Rozpocznij dialog {#start-a-dialog}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -139,7 +139,7 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 ### Ekran przeglądu {#overview-screen}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -191,7 +191,7 @@ Aby uzyskać więcej szczegółów, możesz zapoznać się z [**Menu kontekstowy
 
 ### Pokaż na mapie {#show-on-the-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -264,7 +264,7 @@ Zanim zaczniesz śledzić swoje podróże, musisz odpowiednio skonfigurować **w
 - **Ustawienia globalne**. Ustawienia nagrywania trasy są konfigurowane dla każdego profilu, którymi możesz zarządzać w globalnych [ustawieniach](../personal/global-settings.md) aplikacji. Zanim dostosujesz wtyczkę Nagrywanie trasy, wybierz profil, który chcesz skonfigurować z sekcji [profile](../personal/profiles.md). Stamtąd przejdź do ustawień profilu, aby uzyskać dostęp do opcji nagrywania trasy.
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -367,7 +367,7 @@ Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, musisz dokonać wsz
 
 ### Dodaj widżet nagrywania {#add-recording-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -394,7 +394,7 @@ Aby dostosować interfejs, możesz dodawać lub usuwać widżet Nagrywanie trasy
 
 ### Dystans (Start-Stop) {#distance-start-stop}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -428,7 +428,7 @@ Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera trzy
 
 ### Czas trwania, podjazd, zjazd {#duration-uphill-downhill}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

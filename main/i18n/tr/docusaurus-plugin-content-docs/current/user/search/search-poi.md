@@ -35,7 +35,7 @@ OsmAnd, **Kategoriler araması** bölümünün bulunduğu Arama aracına ulaşma
 
 ## Nasıl Kullanılır {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -89,7 +89,7 @@ Bu görevlerden bazılarını (adresleri, POI'leri bulma) gerçekleştirmek içi
 
 ## Kategoriye Göre POI Arama {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Listedeki seçilen POI'ye dokunmak, POI'nin [Harita Bağlam menüsünü](../map/
 
 ### Filtre Türleri {#types-of-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Bir filtre oldukça fazla sayıda öğeden oluşabilir, bunların varlığı se�
 
 ### Kategorileri Yeniden Düzenle {#rearrange-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -310,7 +310,7 @@ Bu işlevsellik çeşitli durumlarda özellikle kullanışlıdır:
 
 ### Özel POI Filtresi {#custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -401,7 +401,7 @@ Aranabilir:
 
 ### Yeni Özel Filtreleri Kaydet {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -430,7 +430,7 @@ Başka bir **kaydetme** yolu:
 
 ### Mevcut Bir Filtreyi Düzenle {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -460,7 +460,7 @@ Ana ekrandan:
 
 ### Özel POI Filtresini Sil {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

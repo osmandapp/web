@@ -19,7 +19,7 @@ L'option *Navigation par trace* (GPX) vous permet de suivre un itinéraire ou un
 
 L'option *Navigation par trace* peut également être utilisée dans la vie de tous les jours. Vous pouvez utiliser une [trace précédemment enregistrée](../../plugins/trip-recording.md) ou [créer une trace](../../personal/tracks/manage-tracks.md#create-a-track) et la partager avec votre famille ou vos amis au lieu de leur expliquer l'itinéraire. Vous pouvez également utiliser les [itinéraires sur la carte OsmAnd](../../../../blog/routes/) pour la navigation. La manière de les mettre en évidence sur la carte et la signification de leurs couleurs sont décrites dans la section [Itinéraires](../../map/vector-maps.md#routes) de l'article *Cartes vectorielles*.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -47,7 +47,7 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 ### Démarrer la navigation GPX {#start-gpx-navigation}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -71,7 +71,7 @@ La navigation sur une trace peut être démarrée à l'aide du bouton d'action r
 
 ### Choisir les segments {#choose-segments}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Pour la navigation, si la trace sélectionnée se compose de plusieurs segments 
 
 ### Options de suivi de trace {#follow-track-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -122,7 +122,7 @@ vers le *<Translate android="true" ids="start_of_the_track"/>* ou vers le *<Tran
 
 ### Attacher aux routes {#attach-to-the-roads}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

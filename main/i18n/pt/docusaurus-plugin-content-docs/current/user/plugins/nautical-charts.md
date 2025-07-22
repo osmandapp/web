@@ -27,7 +27,7 @@ Um mapa náutico é um mapa topográfico altamente detalhado para ajudar os capi
 
 Os mapas náuticos são importantes para marinheiros profissionais e amadores que alugam um barco para navegar pelos canais da cidade. Os mapas fornecem várias informações, como rotas de navegação, luzes de navegação, zonas de perigo, zonas onde é permitido ou proibido navegar ou atracar, etc.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ A seguinte configuração faz com que o mapa náutico apareça na tela:
 
 ### Definir Estilo de Mapa Náutico {#set-nautical-map-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -93,7 +93,7 @@ Para alterar o estilo de mapa atual para Náutico, você precisa fazer as seguin
 
 ### Baixar Mapas Náuticos {#download-nautical-maps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -145,7 +145,7 @@ Desativar o plugin Náutico não remove os dados náuticos carregados, então me
 
 ## Perfil Náutico {#nautical-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -175,7 +175,7 @@ O plugin Náutico no OsmAnd estende os estilos de mapa da camada vetorial com o 
 
 ### Pontos de Profundidade {#depth-points}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ Os [pacotes](../start-with/download-maps.md#type-of-maps) de pontos de profundid
 
 ### Contornos de Profundidade {#depth-contours}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -228,7 +228,7 @@ Você pode ajudar o aplicativo OsmAnd a aumentar o banco de dados de Contornos d
 
 ### Detalhes do Fundo do Mar {#seabed-details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

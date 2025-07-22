@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le **impostazioni globali** sono [impostazioni](../personal/profiles.md) generali per tutti i profili nell'applicazione OsmAnd. Queste sono le impostazioni di base per il sistema OsmAnd e qualsiasi modifica apportata influenzerà l'intera applicazione.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -49,7 +49,7 @@ Questa sezione contiene le impostazioni di base di OsmAnd, come la selezione di 
 
 ### Profilo predefinito {#default-profile}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -86,7 +86,7 @@ Il [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md
 
 ### Cartella di archiviazione dati {#data-storage-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -173,7 +173,7 @@ Maggiori informazioni sono disponibili nell'[*Informativa sulla privacy e sulla 
 
 ### Analisi {#analytics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -217,7 +217,7 @@ Un **UUID** (*Unique User Identifier*) viene generato per ogni installazione del
 
 ### Cronologia {#history}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -246,7 +246,7 @@ L'applicazione registra la cronologia dei dati precedentemente inseriti (cronolo
 
 **Condividi ed elimina cronologia.**
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ In questa sezione delle impostazioni di OsmAnd, puoi configurare le notifiche ch
 
 ### Finestre di dialogo e notifiche {#dialogs-and-notifications}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -351,7 +351,7 @@ OsmAnd può [avvisarti degli autovelox](../navigation/guidance/navigation-settin
 
 ### Disinstalla autovelox {#uninstall-speed-cameras}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

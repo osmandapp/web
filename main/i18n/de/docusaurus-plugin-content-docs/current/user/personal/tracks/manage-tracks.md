@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* gespeichert. OsmAnd verarbeitet die Track-Datei im [GPX-Format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), aber [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) können importiert und in GPX konvertiert werden. Lesen Sie mehr über verschiedene Arten von Tracks im Artikel [Tracks auf der Karte](../../map/tracks/index.md#types-of-tracks).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="
 
 ## Track erstellen {#create-a-track}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Sie können Tracks in OsmAnd auf folgende Weisen hinzufügen:
 
 ## Tracks verwalten {#manage-tracks}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -91,7 +91,7 @@ Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automati
 
 ### Track-Menü {#track-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -147,7 +147,7 @@ Das Menü bietet folgende Aktionen:
 
 ### Suchen {#search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -174,7 +174,7 @@ Verfügbar:
 
 ### Auswahlmodus {#selection-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -211,7 +211,7 @@ Sobald Sie Ihre Wahl getroffen haben, werden die folgenden Schritte angeboten:
 
 ### Sortieren nach {#sort-by}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd bietet eine einfache Möglichkeit, Ihre Tracks zu sortieren, was Ihnen hi
 
 #### Unterordner sortieren {#sorting-subfolders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -276,7 +276,7 @@ Die ausgewählte Sortieroption wird nicht nur auf den aktuellen Unterordner ange
 
 ## Track-Ordner {#track-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -320,7 +320,7 @@ So öffnen Sie das Ordner-Menü:
 
 ### Ordnerstatistik {#folder-statistics}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -357,7 +357,7 @@ Am unteren Ende der Liste im Tab *Tracks* und unterhalb der Trackliste **in jede
 
 ### Ordneraktionen {#folder-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -400,7 +400,7 @@ So öffnen Sie die Ordneraktionen:
 
 ### Ordner löschen {#delete-folder}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -455,7 +455,7 @@ Das Import-Tool ermöglicht es Ihnen, Tracks aus externen Dateien für die Offli
 
 ### Exportieren {#export}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

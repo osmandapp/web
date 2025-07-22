@@ -27,7 +27,7 @@ OsmAnd provides several ways to view your search history.
 
 ## How to Use {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -58,7 +58,7 @@ The search history serves to provide relevant information about your previous ac
 
 ## History Items {#history-items}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -104,7 +104,7 @@ You can **disable or enable** the display of the entire search history. In this 
 
 ### Delete {#delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -132,7 +132,7 @@ You need to **long tap any of the query items in the list** to open the Delete s
 
 ### Export and Share {#export-and-share}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

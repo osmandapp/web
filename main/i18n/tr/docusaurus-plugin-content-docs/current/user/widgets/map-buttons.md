@@ -102,7 +102,7 @@ Pusula düğmesi, harita yönünü kontrol etmek için birden fazla eylem sağla
 
 ### Görüntüleme Seçenekleri {#display-options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 
@@ -131,7 +131,7 @@ Düğmedeki pusula simgesi her zaman Kuzey'i gösterir. Pusula düğmesinin ekra
 
 ## 3B Modu {#3d-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">  
 

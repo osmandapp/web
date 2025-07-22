@@ -130,7 +130,7 @@ OsmAnd пропонує вам багато стилів мапи та шарі�
 
 ## * Горизонталі {#-contour-lines}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -155,7 +155,7 @@ OsmAnd пропонує вам багато стилів мапи та шарі�
 
 ## * Морська глибина {#-nautical-depth}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -182,7 +182,7 @@ OsmAnd пропонує вам багато стилів мапи та шарі�
 
 ## Показати межі {#show-borders}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -219,7 +219,7 @@ OsmAnd пропонує вам багато стилів мапи та шарі�
 Перейдіть до: *Меню → Налаштувати мапу → Показати → Сітка координат*
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -288,7 +288,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Режим мапи {#map-mode}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -323,7 +323,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Деталі {#details}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -390,7 +390,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Маршрути {#routes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Транспорт {#transport}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -445,7 +445,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Приховати {#hide}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -476,7 +476,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Стиль дороги {#road-style}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -514,7 +514,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Розмір тексту {#text-size}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -539,7 +539,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 ### Збільшувач мапи {#map-magnifier}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -572,7 +572,7 @@ OsmAnd підтримує кілька **базових проекцій** дл�
 
 Якщо назви на мапі не перекладені на потрібну мову спільнотою OSM, ви можете використовувати [транслітеровані назви](https://uk.wikipedia.org/wiki/Транслітерація): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) або *<Translate ios="true" ids="translit_names"/>* (iOS) перемикач.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

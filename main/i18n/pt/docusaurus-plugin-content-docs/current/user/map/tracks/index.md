@@ -38,7 +38,7 @@ Você pode gerenciar a visibilidade das trilhas escolhendo quais exibir ou ocult
 
 ### Configurar Mapa {#configure-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -62,7 +62,7 @@ A opção *Configurar Mapa* permite gerenciar rapidamente a exibição de todas 
 
 ### Meus Lugares {#my-places}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Na aba [Meus Lugares *→* Trilhas](../../personal/tracks/manage-tracks.md#manag
 
 ### Menu de Contexto da Trilha {#track-context-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Ao selecionar uma trilha no mapa ou abrir o [menu de contexto da trilha](./track
 
 ## Analisar Trilha no Mapa {#analyze-track-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -141,7 +141,7 @@ Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/t
 
 ### Seguir Minha Localização {#follow-my-location}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Favoriler** OsmAnd'ın bir özelliğidir ve harita üzerinde yer imleri (notlar) oluşturmanıza olanak tanır. Bu favori noktalar varsayılan olarak sarı yıldızlar olarak görüntülenir, ancak bunları farklı renkler, şekiller ve simgelerle tamamen özelleştirebilirsiniz. Favoriler, *6. yakınlaştırma seviyesinden* itibaren görünür hale gelen özel bir harita katmanında gruplandırılır.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Favori Nokta {#favorite-point}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -60,7 +60,7 @@ Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerin
 
 ### Oluştur {#create}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -94,7 +94,7 @@ OSM verilerinden bir nokta eklerken, ilgili İÇN bilgileri otomatik olarak dahi
 
 ### Düzenle / Değiştir / Sil {#edit--replace--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -124,7 +124,7 @@ Favori bir noktayı değiştirmek için:
 
 ### Favori Simgeleri {#favorite-icons}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -157,7 +157,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 ## Favorileri Yönet {#manage-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -184,7 +184,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 ### Sıralama / Arama {#order--sorting--search}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -205,7 +205,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 ### Toplu Düzenle / Sil {#bulk-edit--delete}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -243,7 +243,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Favori Grup Eylemleri {#favorite-group-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -283,7 +283,7 @@ Daha fazla ayrıntı için [Yerlerim](../personal/myplaces.md#favorites) makales
 
 ### Grup Görünümünü Değiştir {#change-group-appearance}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -317,7 +317,7 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 ### Ücretsiz Bulut Yedekleme {#free-cloud-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -348,7 +348,7 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 #### Yedekleme Nasıl Oluşturulur {#how-to-create-a-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -379,7 +379,7 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 ### Tüm Favoriler {#all-favorites}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -403,7 +403,7 @@ Favorilerinizi Favoriler ekranının altındaki özel düğmeleri kullanarak dı
 
 ### Favori Grup {#favorite-group}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -425,7 +425,7 @@ Favorilerinizi Favoriler ekranının altındaki özel düğmeleri kullanarak dı
 
 ### Otomatik Favori Yedekleme {#automatic-favorites-backup}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

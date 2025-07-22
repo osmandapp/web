@@ -47,7 +47,7 @@ El AIS opera en *frecuencias VHF* (161.975 MHz y 162.025 MHz) y tiene un rango d
 
 ***Visualización AIS en el mapa:***
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -66,7 +66,7 @@ Cuando se configura correctamente, las posiciones de los buques aparecerán en e
 
 ### Información del buque AIS {#ais-vessel-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Los buques AIS transmiten tres tipos de datos:
 
 ## Configuración del complemento {#plugin-settings}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

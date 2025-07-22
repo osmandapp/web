@@ -85,7 +85,7 @@ Ci sono due modi possibili per scegliere quali strade evitare durante il calcolo
 
 ### Menu Evita strade {#avoid-roads-menu}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -111,7 +111,7 @@ Utilizzando l'opzione *Seleziona sulla mappa* puoi continuare a contrassegnare l
 
 Quando selezioni una strada da evitare utilizzando il *menu contestuale della mappa* o il *menu Evita strade*, l'elenco delle strade verrà mostrato sopra la schermata della mappa.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ Quando selezioni una strada da evitare utilizzando il *menu contestuale della ma
 
 ## Esporta / Importa {#export--import}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -154,7 +154,7 @@ A seconda delle impostazioni del tuo dispositivo e delle applicazioni disponibil
 
 Puoi [importare](../../personal/import-export.md#import) strade da evitare durante il calcolo del percorso da altre fonti in formato file `.osf`. Inoltre, puoi farlo utilizzando l'opzione *Importa* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). Puoi scegliere di importare tutti i dati o solo alcune strade da evitare (contrassegnando una strada con un segno di spunta nell'elenco).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

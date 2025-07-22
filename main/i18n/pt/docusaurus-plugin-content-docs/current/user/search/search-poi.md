@@ -34,7 +34,7 @@ O OsmAnd oferece várias maneiras de acessar a ferramenta de Pesquisa, onde a se
 
 ## Como Usar {#how-to-use}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -87,7 +87,7 @@ Para realizar algumas dessas tarefas (localizar endereços, POI), você precisar
 
 ## Pesquisa de POI por Categorias {#poi-search-by-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ Tocar no POI escolhido na lista abre o [menu de contexto do mapa](../map/map-con
 
 ### Tipos de Filtros {#types-of-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -226,7 +226,7 @@ Um filtro pode consistir em um grande número de itens, cuja presença depende d
 
 ### Reorganizar Categorias {#rearrange-categories}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -308,7 +308,7 @@ Essa funcionalidade é especialmente útil em vários casos:
 
 ### Filtro de POI Personalizado {#custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -399,7 +399,7 @@ Available for search:
 
 ### Salvar Novos Filtros Personalizados {#save-new-custom-filters}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -429,7 +429,7 @@ Outra forma de **salvar**:
 
 ### Editar um Filtro Existente {#edit-an-existing-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ Na tela principal:
 
 ### Excluir Filtro de POI Personalizado {#delete-custom-poi-filter}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

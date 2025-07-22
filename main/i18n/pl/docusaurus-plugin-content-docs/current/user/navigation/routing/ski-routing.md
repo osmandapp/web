@@ -35,7 +35,7 @@ Domyślnie *profil narciarski* jest dezaktywowany. Aby użyć tego profilu do wy
 
 Ustawienia *wyznaczania tras narciarskich* pozwalają użytkownikom planować trasy, wybierając pożądany poziom trudności i rodzaj terenu, który chcą eksplorować. Istnieją różne opcje bezpiecznego, wygodnego i przyjemnego poruszania się po stokach lub podczas freeride'u.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

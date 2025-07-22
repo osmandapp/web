@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Для отримання додаткової інформації відвідайте [Карти та ресурси](../personal/maps-resources.md#downloads).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 &nbsp;<ProFeature/> Щоб отримати доступ до використання віджета *Висота: центр карти*, підпишіться на OsmAnd Pro для [Android](../purchases/android.md#pro-features) або [iOS](../purchases/ios.md#pro-features).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -128,7 +128,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Середня швидкість {#average-speed}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -170,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Після скидання середня швидкість перераховується з нових даних GPS. Ця функція корисна для моніторингу швидкості в реальному часі, наприклад, для відстеження швидкості в зонах з **камерами контролю середньої швидкості**.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -196,7 +196,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Коефіцієнт ковзання {#glide-ratio}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -291,7 +291,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджет координат {#coordinates-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -342,7 +342,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 ## Положення Сонця {#sun-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -378,7 +378,7 @@ OsmAnd пропонує два типи віджетів координат:
 Більш детальний опис можна прочитати тут: **[Лінійка радіуса та Лінійка](../widgets/radius-ruler)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -413,7 +413,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 ## Спідометр {#speedometer}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -459,7 +459,7 @@ OsmAnd пропонує два типи віджетів координат:
 Більш детальний опис можна прочитати тут: **[Плагін <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -491,7 +491,7 @@ OsmAnd пропонує два типи віджетів координат:
 Щоб додати віджети зовнішніх датчиків на екран карти, увімкніть плагін OsmAnd [Зовнішні датчики](../plugins/external-sensors.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -561,7 +561,7 @@ OsmAnd пропонує два типи віджетів координат:
 Щоб додати віджети погоди на екран карти, увімкніть плагін OsmAnd [Погода](../plugins/weather.md).
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -689,7 +689,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 #### FPS рендерингу карти {#map-rendering-fps}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -717,7 +717,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 #### Віджети камери {#camera-widgets}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

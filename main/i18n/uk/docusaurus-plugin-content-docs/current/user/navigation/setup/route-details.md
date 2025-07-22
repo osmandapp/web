@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd дозволяє знайти найкращий маршрут та дослідити його деталі. Додаток надає детальну інформацію про маршрут, таку як відстань, [час у дорозі](#distance--time--co2), [тип покриття](#road-attributes), [різниця висот](#elevation-info), дані про [викиди CO2](#distance--time--co2) та [інформацію про повороти](#turn-by-turn-information). Ви також можете [аналізувати](#analyze-on-map) маршрут на карті, дізнаватися інформацію про сегменти треку, [друкувати](#print) план маршруту, [зберігати](#share--export-actions) маршрут та ділитися ним з іншими. Завдяки цій функціональності ви завжди знатимете деталі маршруту та зможете ефективніше планувати свою подорож.  
 
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -52,7 +52,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Відстань / Час / CO2 {#distance--time--co2}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -79,7 +79,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Інформація про висоту {#elevation-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -118,7 +118,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ### Графік висот {#elevation-graph}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +143,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Аналіз на карті {#analyze-on-map}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -183,7 +183,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Атрибути дороги {#road-attributes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -230,7 +230,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Покрокова інформація {#turn-by-turn-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -253,7 +253,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ### Інструкції {#instructions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -313,7 +313,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 ## Поділитися / Експортувати (Дії) {#share--export-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

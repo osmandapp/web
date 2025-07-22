@@ -36,7 +36,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Прямолінійне прокладання маршруту* можна налаштувати відповідно до ваших потреб у розділі [Параметри маршруту](../guidance/navigation-settings.md#route-parameters) налаштувань навігації.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

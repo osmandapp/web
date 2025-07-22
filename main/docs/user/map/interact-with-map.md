@@ -73,7 +73,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 ## Map Orientation Modes {#map-orientation-modes}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -98,7 +98,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,sha
 
 ## Compass {#compass}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -130,7 +130,7 @@ You can activate this feature via *Menu → Settings → Profiles → General se
 
 ## Map Tilt and Horizon {#map-tilt-and-horizon}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -158,7 +158,7 @@ You can not change the Camera tilt when the old [map rendering engine](../person
 
 ## Touch Screen Lock {#touch-screen-lock}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -225,7 +225,7 @@ The keyboard remains functional even when the *External input devices* option is
 
 ### Preconfigured Input Device {#preconfigured-input-device}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

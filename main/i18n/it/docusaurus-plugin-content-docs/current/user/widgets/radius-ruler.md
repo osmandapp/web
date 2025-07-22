@@ -32,7 +32,7 @@ Questi strumenti sono utili per pianificare percorsi, stimare la vicinanza a pun
 
 ## Righello {#ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -63,7 +63,7 @@ Questo strumento è utile quando hai bisogno di una rapida comprensione delle di
 
 ## Widget Righello raggio {#radius-ruler-widget}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -90,7 +90,7 @@ Il [Widget Righello raggio](../widgets/info-widgets.md#radius-ruler) mostra la d
 
 Usa questo widget per stimare la vicinanza a punti di interesse o pianificare intorno a un'area definita.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -115,7 +115,7 @@ Usa questo widget per stimare la vicinanza a punti di interesse o pianificare in
 
 ## Bussola per Righello raggio {#compass-for-radius-ruler}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ Questa sovrapposizione è utile per la navigazione all'aperto, consentendoti di 
 
 ## Posizione Centrale / Inferiore {#center--bottom-position}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -177,7 +177,7 @@ Per maggiori informazioni sulla *posizione sullo schermo*, consulta l'articolo [
 
 ## Vista 3D {#3d-view}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -227,7 +227,7 @@ Ci sono due casi d'uso:
 
 Guarda questi brevi tutorial per imparare come utilizzare il Righello raggio e gli strumenti correlati in OsmAnd:
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

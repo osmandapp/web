@@ -27,7 +27,7 @@ Sie können das *Fahrrad-Routing* im Abschnitt [Routenparameter](../guidance/nav
 
 Mit den Fahrrad-Routing-Funktionen von OsmAnd können Radfahrer einen Start- und Endpunkt eingeben und dann eine Route erstellen, die ihre Vorlieben und die lokale Geografie berücksichtigt.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

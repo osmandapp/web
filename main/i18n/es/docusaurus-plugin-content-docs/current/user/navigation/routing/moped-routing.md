@@ -30,7 +30,7 @@ El *enrutamiento de ciclomotores* se puede configurar según sus necesidades en 
 
 La configuración de enrutamiento del ciclomotor es muy sencilla y consta de unas pocas opciones.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 El *menú contextual de la pista* proporciona información sobre la *[Pista](../../personal/tracks/index.md)* tanto en formato de texto como [gráfico](#altitude--speed-graphs). Permite añadir información, realizar cambios, editar y llevar a cabo otras acciones con la pista. Puedes acceder al *menú contextual de la pista* simplemente tocando la pista deseada en el mapa o utilizando el menú *[Mis lugares](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Es posible que necesites abrir la carpeta de la pista y seleccionar la pista deseada tocándola.
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -44,7 +44,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Panel de información {#info-panel}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -74,7 +74,7 @@ En caso de que tu pista haya sido creada en OsmAnd o cualquier otra aplicación 
 
 ### Acciones de la pista {#track-actions}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -98,7 +98,7 @@ En caso de que tu pista haya sido creada en OsmAnd o cualquier otra aplicación 
 
 ### Opciones {#options}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -150,7 +150,7 @@ El menú **Opciones** te permite gestionar y modificar la pista seleccionada con
 
 ### Descripción e información {#description-and-info}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -220,7 +220,7 @@ Esta sección de la pestaña *Resumen* muestra ***datos de etiquetas*** y ***tod
 
 ### Actividad de información de la pista {#track-information-activity}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -255,7 +255,7 @@ Interacción con el gráfico:
 
 ### Información general {#overview-information}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -293,7 +293,7 @@ Los **botones** activos dan acceso a acciones como:
 Esta pestaña solo puede ser visible en pistas grabadas. Los puntos en este tipo de pista tienen etiquetas **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -318,7 +318,7 @@ El gráfico de **Velocidad** muestra métricas como:
 
 ### Altitud {#altitude}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -372,7 +372,7 @@ Esta función te permite calcular el perfil de elevación para pistas GPX sin co
 
 Los puntos de ruta son uno de los tipos de puntos disponibles en el mapa. En general, pueden ser puntos de pista que forman parte de archivos GPX. Una descripción detallada está disponible en el artículo [puntos en el mapa](../../map/point-layers-on-map.md).
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -408,7 +408,7 @@ Los puntos de ruta se pueden añadir a la pista que se está grabando actualment
 
 #### Crear punto de ruta {#create-waypoint}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -443,7 +443,7 @@ Toca el botón *Añadir punto de ruta* para abrir la pantalla de creación de pu
 
 ### Acciones con grupos {#actions-with-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -473,7 +473,7 @@ El *menú de tres puntos* ( &#8285; ) abre el *menú de grupo* de puntos de ruta
 
 ### Grupos de puntos de ruta {#waypoint-groups}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -495,7 +495,7 @@ Puedes activar o desactivar los puntos de ruta del grupo en el mapa usando el bo
 
 ### Mostrar etiquetas GPX personalizadas {#display-custom-gpx-tags}
 
-<Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems" queryString="operating-systems">
 
 <TabItem value="android" label="Android">
 
