@@ -11,3 +11,12 @@ export function getVisibleBbox(map, ctx) {
 
     return L.latLngBounds(topLeft, bottomRight);
 }
+
+export function addLayerToMap(map, layer, id) {
+    if (layer && !map.hasLayer(layer)) {
+        layer.options = { ...layer.options, id };
+        map.addLayer(layer);
+    } else {
+        console.debug('avoid adding map layer', id);
+    }
+}

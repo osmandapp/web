@@ -11,6 +11,7 @@ import { processMarkers } from './FavoriteLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { isEmpty } from 'lodash';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
+import { addLayerToMap } from '../util/MapManager';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
@@ -26,6 +27,7 @@ function clickHandler({ ctx, file, layer }) {
 }
 
 export function addTrackToMap({ ctx, file, map, fit = false } = {}) {
+    const ID = 'add-cloud-track-to-map';
     let layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
         return null;
@@ -34,8 +36,8 @@ export function addTrackToMap({ ctx, file, map, fit = false } = {}) {
 
     if (fit || file.zoomToTrack) {
         map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
-        if (!(file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD)) {
-            layer.addTo(map);
+        if (file.wpts?.length < WPT_SIMPLIFY_THRESHOLD) {
+            addLayerToMap(map, layer, ID);
             // otherwise, layer is added after zoom
         }
     } else {
@@ -49,7 +51,7 @@ export function addTrackToMap({ ctx, file, map, fit = false } = {}) {
                 useMapBounds: true,
             });
         }
-        layer.addTo(map);
+        addLayerToMap(map, layer, ID);
     }
     return layer;
 }
@@ -136,7 +138,6 @@ const CloudTrackLayer = () => {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
-    const [alreadyUpdate, setAlreadyUpdate] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -157,7 +158,7 @@ const CloudTrackLayer = () => {
                         });
                         layer.on('click', () => clickHandler({ ctx, file, layer }));
                         file.gpx = layer;
-                        file.gpx.addTo(map);
+                        addLayerToMap(map, file.gpx, 'add-cloud-track-to-map-zoom-move');
                         processed++;
                     }
                 }
@@ -165,7 +166,6 @@ const CloudTrackLayer = () => {
             setPrevZoom(zoom);
             setMove(false);
             if (processed > 0) {
-                setAlreadyUpdate(true);
                 ctx.setGpxFiles(newGpxFiles);
             }
         }
