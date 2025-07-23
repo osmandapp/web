@@ -430,7 +430,7 @@ async function getMapCoords(lat, lon) {
 
     const [px, py] = await driver.executeScript(
         `
-      const p = window.map.latLngToContainerPoint([arguments[0], arguments[1]]);
+      const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);
       return [Math.round(p.x), Math.round(p.y)];
       `,
         lat,
@@ -464,9 +464,7 @@ export async function rightClickBy(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait();
 
-        const container = await driver.findElement(By.className('leaflet-container'));
-
-        const { xAbs, yAbs } = await getMapCoords(lat, lon);
+        const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
 
         await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).contextClick().perform();
 
@@ -482,8 +480,6 @@ export async function rightClickBy(lat, lon, { optional = false } = {}) {
 }
 
 /**
- * Lib: leftClickBy(lat, lon, { optional })
- *
  * Uses the Leaflet map instance exposed on window to convert
  * geographic coordinates into container pixel coordinates,
  * then performs a left-click at that position.
@@ -497,9 +493,7 @@ export async function leftClickBy(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait();
 
-        const container = await driver.findElement(By.className('leaflet-container'));
-
-        const { xAbs, yAbs } = await getMapCoords(lat, lon);
+        const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
 
         await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).click().perform();
 
