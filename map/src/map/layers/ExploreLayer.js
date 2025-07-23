@@ -85,11 +85,9 @@ export default function ExploreLayer() {
                 map.removeLayer(layer);
             }
         });
+
         removeTooltip(map, ctx.searchTooltipRef);
 
-        if (ctx.searchSettings.showOnMainSearch) {
-            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
-        }
         if (ctx.searchPointerRef && ctx.searchPointerRef.current) {
             ctx.searchPointerRef.current.remove();
         }
@@ -134,6 +132,9 @@ export default function ExploreLayer() {
 
         if (skippedObjectType()) {
             removeLayers();
+            if (ctx.searchSettings.showOnMainSearch) {
+                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            }
             ctx.setWikiPlaces(null);
             return;
         }
@@ -229,6 +230,8 @@ export default function ExploreLayer() {
             if (response?.data) {
                 let jsonData = response.data.features;
                 ctx.setWikiPlaces(jsonData);
+            } else {
+                ctx.setWikiPlaces(null);
             }
             setLoadingContextMenu(false);
             removeTooltip(map, ctx.searchTooltipRef);
