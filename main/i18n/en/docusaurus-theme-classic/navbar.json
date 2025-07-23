@@ -1,0 +1,74 @@
+{
+  "title": {
+    "message": "OsmAnd",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "OsmAnd Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.💳 Pricing": {
+    "message": "💳 Pricing",
+    "description": "Navbar item with label 💳 Pricing"
+  },
+  "item.label.🌍 Map": {
+    "message": "🌍 Map",
+    "description": "Navbar item with label 🌍 Map"
+  },
+  "item.label.🚵‍♂️ Join us": {
+    "message": "🚵‍♂️ Join us",
+    "description": "Navbar item with label 🚵‍♂️ Join us"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "localeDropdown.label.en": {
+    "message": "English",
+    "description": "Locale dropdown label for English"
+  },
+  "localeDropdown.label.fr": {
+    "message": "Français",
+    "description": "Locale dropdown label for French"
+  },
+  "localeDropdown.label.uk": {
+    "message": "Українська",
+    "description": "Locale dropdown label for Ukrainian"
+  },
+  "localeDropdown.label.de": {
+    "message": "Deutsch",
+    "description": "Locale dropdown label for German"
+  },
+  "localeDropdown.label.it": {
+    "message": "Italiano",
+    "description": "Locale dropdown label for Italian"
+  },
+  "localeDropdown.label.pl": {
+    "message": "Polski",
+    "description": "Locale dropdown label for Polish"
+  },
+  "localeDropdown.label.es": {
+    "message": "Español",
+    "description": "Locale dropdown label for Spanish"
+  },
+  "localeDropdown.label.pt": {
+    "message": "Português",
+    "description": "Locale dropdown label for Portuguese"
+  },
+  "localeDropdown.label.tr": {
+    "message": "Türkçe",
+    "description": "Locale dropdown label for Turkish"
+  },
+  "localeDropdown.label.ar": {
+    "message": "العربية",
+    "description": "Locale dropdown label for Arabic"
+  }
+}
