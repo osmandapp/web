@@ -429,19 +429,14 @@ async function getMapCoords(lat, lon) {
     const container = await driver.findElement(By.className('leaflet-container'));
 
     const [px, py] = await driver.executeScript(
-        `
-      const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);
-      return [Math.round(p.x), Math.round(p.y)];
-      `,
+        'const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
+            'return [Math.round(p.x), Math.round(p.y)];',
         lat,
         lon
     );
 
     const { left, top } = await driver.executeScript(
-        `
-      const r = arguments[0].getBoundingClientRect();
-      return { left: r.left, top: r.top };
-      `,
+        'const r = arguments[0].getBoundingClientRect(); return { left: r.left, top: r.top };',
         container
     );
 
