@@ -424,3 +424,81 @@ export async function fillLoginData(login, password) {
 
     await clickBy(By.id('se-submit-login'));
 }
+
+async function getMapCoords(lat, lon) {
+    const container = await driver.findElement(By.className('leaflet-container'));
+
+    const [px, py] = await driver.executeScript(
+        'const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
+            'return [Math.round(p.x), Math.round(p.y)];',
+        lat,
+        lon
+    );
+
+    const { left, top } = await driver.executeScript(
+        'const r = arguments[0].getBoundingClientRect(); return { left: r.left, top: r.top };',
+        container
+    );
+
+    const xAbs = Math.round(left + px);
+    const yAbs = Math.round(top + py);
+
+    return { container, xAbs, yAbs };
+}
+
+/**
+ * Converts geographic coordinates to pixel coordinates within the Leaflet map container
+ * and performs a right‑click at that position.
+ *
+ * @param {number} lat             - latitude
+ * @param {number} lon             - longitude
+ * @param {Object} opts
+ * @param {boolean} opts.optional  - if true, returns null instead of throwing
+ */
+export async function rightClickBy(lat, lon, { optional = false } = {}) {
+    const fn = async () => {
+        await actionIdleWait();
+
+        const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
+
+        await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).contextClick().perform();
+
+        return container;
+    };
+
+    try {
+        return await enclose(fn, { tag: 'rightClickBy', optional });
+    } catch (e) {
+        if (optional) return null;
+        throw e;
+    }
+}
+
+/**
+ * Uses the Leaflet map instance exposed on window to convert
+ * geographic coordinates into container pixel coordinates,
+ * then performs a left-click at that position.
+ *
+ * @param {number} lat            – latitude
+ * @param {number} lon            – longitude
+ * @param {Object} opts
+ * @param {boolean} opts.optional – if true, returns null instead of throwing
+ */
+export async function leftClickBy(lat, lon, { optional = false } = {}) {
+    const fn = async () => {
+        await actionIdleWait();
+
+        const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
+
+        await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).click().perform();
+
+        return container;
+    };
+
+    try {
+        return await enclose(fn, { tag: 'leftClickBy', optional });
+    } catch (e) {
+        if (optional) return null;
+        throw e;
+    }
+}
