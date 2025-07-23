@@ -182,7 +182,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     ))}
                 </Box>
                 <Box sx={{ flexGrow: 1 }} />
-                {location.pathname === '/pricing' && (
+                {(location.pathname === '/pricing' || location.pathname === '/pricing/') && (
                     <Button
                         ref={anchorRef}
                         onClick={() => setOpenLang(true)}
