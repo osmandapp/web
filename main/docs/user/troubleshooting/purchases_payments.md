@@ -72,12 +72,12 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Amazon store is closing - what to do {#amazon-store-is-closing---what-to-do}
 
-On August 20, 2025, Amazon will close the Amazon Appstore for Android devices — details [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
+On **August 20, 2025**, Amazon will shut down the Amazon Appstore for Android devices. You can read the official announcement [here](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
 
-You need to transfer purchases made through Amazon to other platforms.  
-Currently, [it is possible to transfer subscriptions, in-app purchases amd OsmAnd+ app](../purchases/cross.md).  
+If you have made purchases via Amazon, you will need to **transfer your subscriptions (Pro, Maps+) or in-app (Maps+) purchases** to another platform.
 
-
+➡️ Currently, [cross-platform transfer is possible for subscriptions and in-app purchases](../purchases/cross.md).  
+❗ **OsmAnd+** (standalone app) cannot be transferred between platforms via OsmAnd Cloud account. For assistance, please contact **support@osmand.net**.
 
 ## How to restore the Topography (formerly Contour lines) plugin purchase {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
