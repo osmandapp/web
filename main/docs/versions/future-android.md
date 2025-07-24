@@ -38,6 +38,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 ## Bug fixes {#bug-fixes}
 
 - [Add information about Downhills / Uphills to Analyze by intervals.](https://github.com/osmandapp/OsmAnd-Issues/issues/2878)
+- [Total Uphill/Downhill isn't calculated using roads elevation data](https://github.com/osmandapp/OsmAnd/issues/22381)
 - [Resume button does not work as expected.](https://github.com/osmandapp/OsmAnd/issues/21842)
 - [Missing outline for GPS coordinates Widget with transparent widgets option enabled.](https://github.com/osmandapp/OsmAnd/issues/22258)
 - [Use default value for track folder of all internal levels - Track sorting NAME_ASCENDING.](https://github.com/osmandapp/OsmAnd/issues/22256)
