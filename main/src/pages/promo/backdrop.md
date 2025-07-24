@@ -29,7 +29,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='backdrop5'/>
+<RegisterUserPromoBlock  promoKey='backdrop6'/>
 
 <p> </p>
 

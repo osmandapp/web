@@ -14,38 +14,46 @@ import Translate from '@site/src/components/Translate.js';
 
 Solutions and hints for common problems.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Setup](./setup.md) {#setup}
 
-The most typical issues related to Android Auto.
-
-### [Crash Logs](./crash-logs.md) {#crash-logs}
-
-Description of how to send crash logs to the OsmAnd team.
+Typical issues encountered when setting up the application.
 
 ### [General](./general.md) {#general}
 
 General issues related to various OsmAnd features.
 
-### [Maps & Data](./maps-data.md) {#maps--data}
+### [Purchases & Payments](./purchases_payments.md) {#purchases-and-payments}
 
-Issues related to maps, search, and other data.
+Issues related to purchases, subscriptions, and payments.
 
 ### [Navigation](./navigation.md) {#navigation}
 
-The most common problems encountered in navigation mode.
+Common problems encountered in navigation mode.
 
-### [Resources and Customizations](./resources) {#resources-and-customizations}
+### [Maps & Data](./maps-data.md) {#maps-and-data}
 
-Resources created by the community.
+Issues related to maps, search functionality, and other data.
 
-### [Setup](./setup.md) {#setup}
+### [Crash Logs](./crash-logs.md) {#crash-logs}
 
-The most typical issues encountered when setting up the application.
+How to collect and send crash logs to the OsmAnd team.
 
 ### [Track Recording](./track-recording-issues.md) {#track-recording}
 
-Common issues with track recording, such as noise, gaps, or inaccuracies.
+Issues with track recording such as noise, gaps, or inaccuracies.
+
+### [Android Auto](./android_auto.md) {#android-auto}
+
+Typical problems when using OsmAnd with Android Auto.
+
+### [Website](./web.md) {#website}
+
+Common issues with OsmAnd Web services and features.
+
+### [Resources and Customizations](./resources.md) {#resources-and-customizations}
+
+Guides and help with community-created resources and customizations.
 
 ### [Video Tutorials and Guides](./video-tutorials.md) {#video-tutorials-and-guides}
 
-Collection of video tutorials and guides.
+A collection of helpful video tutorials and step-by-step guides.

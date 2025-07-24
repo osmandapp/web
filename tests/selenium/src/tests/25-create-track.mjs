@@ -4,7 +4,7 @@ import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy, leftClickBy, matchInnerTextBy, rightClickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
-const strings = ['Points: 3 (253)', 'Distance: 5.9 km'];
+const strings = ['Points: 3', 'Distance: 5.9 km'];
 
 export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');

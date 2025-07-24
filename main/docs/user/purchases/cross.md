@@ -27,17 +27,17 @@ Starting with **OsmAnd version 5.1**, released in celebration of our **15th anni
 To activate cross-platform access, purchases must be linked to your [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.  
 You can compare all OsmAnd products here: [difference between purchases](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
-| Product Type                | Cross-Platform | Notes |
-|-----------------------------|----------------|-------|
-| OsmAnd Pro (subscription)   | ✔              | Works across Android, iOS, and Web via Cloud |
-| Maps+ (subscription)        | ✔              | Requires version 5.0+ and Cloud account |
-| Maps+ (one-time purchase)   | ✔              | Must be activated through OsmAnd Cloud on purchase device |
-| OsmAnd+ (standalone app)    | ✔     | Must be activated through OsmAnd Cloud on purchase device |
+| **Product Type**               | **Cross-Platform** | **Notes**                                                                 |
+|-------------------------------|--------------------|--------------------------------------------------------------------------|
+| **OsmAnd Pro** (subscription) | ✔                  | Fully cross-platform. Works on Android, iOS, and Web when linked to Cloud. |
+| **Maps+** (subscription)      | ✔                  | Usable on all platforms, but must be activated via OsmAnd Cloud **on the purchase device**.     |
+| **Maps+** (one-time purchase) | ✔                  | Usable on all platforms, but must be activated via OsmAnd Cloud **on the purchase device**. |
+| **OsmAnd+** (standalone app)  | ✘                  | Not transferable between platforms. For assistance, contact support@osmand.net. |
 
 
 ## How It Works {#how-it-works}
 
-To use your **OsmAnd Pro**, **OsmAnd+** or **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
+To use your **OsmAnd Pro**, **Maps+** purchase across different platforms (Android, iOS, or Web), you need to **link it to your OsmAnd Cloud account**.
 
 ### Link Your Purchase {#link-your-purchase}
 
