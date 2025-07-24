@@ -10,7 +10,6 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
-    hidePoiMarker,
     selectPoiMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
@@ -20,7 +19,6 @@ import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
-    POI_ID,
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
@@ -178,25 +176,9 @@ export default function PoiLayer() {
         ctx,
         ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
         POI_LAYER_ID,
-        map
+        map,
+        prevSelectedPoi.current
     );
-
-    useEffect(() => {
-        if (ctx.selectedPoiId?.show === false && prevSelectedPoi.current) {
-            hidePoiMarker(prevSelectedPoi.current);
-            return;
-        }
-        poiList?.layer?.getLayers().forEach((layer) => {
-            if (layer.options.idObj === ctx.selectedPoiId?.id) {
-                if (ctx.selectedPoiId?.show === false) {
-                    hidePoiMarker(layer);
-                } else if (ctx.selectedPoiId?.id && ctx.selectedWpt?.poi?.options[POI_ID] === ctx.selectedPoiId?.id) {
-                    selectPoiMarker(layer, prevSelectedPoi.current);
-                    prevSelectedPoi.current = layer;
-                }
-            }
-        });
-    }, [ctx.selectedPoiId, ctx.selectedWpt]);
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
@@ -408,8 +390,7 @@ export default function PoiLayer() {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
 
-        selectPoiMarker(e.sourceTarget, prevSelectedPoi.current);
-        prevSelectedPoi.current = e.sourceTarget;
+        prevSelectedPoi.current = selectPoiMarker(e.sourceTarget, prevSelectedPoi.current);
 
         const poi = {
             options: e.sourceTarget.options,

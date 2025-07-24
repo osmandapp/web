@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { createSecondaryMarker } from '../../map/util/Clusterizer';
+import { hidePoiMarker, selectPoiMarker } from '../../manager/PoiManager';
+import { POI_ID } from '../../infoblock/components/wpt/WptTagsProvider';
 
 const COLOR_POINTER = '#237bff';
 
-export function useSelectedPoiMarker(ctx, layers, type, map) {
+export function useSelectedPoiMarker(ctx, layers, type, map, prevSelectedMarker) {
     useEffect(() => {
         if (layers && ctx.selectedPoiId?.id && ctx.selectedPoiId?.type === type) {
             hideOldMarker();
@@ -13,7 +15,7 @@ export function useSelectedPoiMarker(ctx, layers, type, map) {
                     foundMarker = layer;
                 }
             });
-            if (foundMarker) {
+            if (foundMarker && ctx.selectedWpt?.poi?.options[POI_ID] !== ctx.selectedPoiId.id) {
                 removeOldPointer();
                 if (ctx.selectedPoiId.show) {
                     foundMarker.fire('selectMarker'); // Show the selected marker
@@ -35,6 +37,28 @@ export function useSelectedPoiMarker(ctx, layers, type, map) {
             }
         }
     }, [ctx.selectedPoiId, layers, type]);
+
+    useEffect(() => {
+        if (ctx.selectedPoiId?.show === false && ctx.selectedPoiId?.id === -1 && prevSelectedMarker) {
+            // hide marker after closing left info
+            hidePoiMarker(prevSelectedMarker);
+            prevSelectedMarker = null;
+            return;
+        }
+        if (ctx.selectedPoiId?.id && ctx.selectedPoiId.id !== 1) {
+            // get marker from layers
+            layers?.forEach((layer) => {
+                if (layer.options.idObj === ctx.selectedPoiId.id) {
+                    if (ctx.selectedPoiId.show === false) {
+                        hidePoiMarker(layer);
+                        prevSelectedMarker = null;
+                    } else if (ctx.selectedWpt?.poi?.options[POI_ID] === ctx.selectedPoiId?.id) {
+                        prevSelectedMarker = selectPoiMarker(layer, prevSelectedMarker);
+                    }
+                }
+            });
+        }
+    }, [ctx.selectedWpt]);
 
     function hideOldMarker() {
         if (ctx.selectedPoiId.prev && ctx.selectedPoiId.prev.id !== ctx.selectedPoiId.id) {

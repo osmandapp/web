@@ -326,6 +326,7 @@ export function selectPoiMarker(target, prevMarker) {
     if (prevMarker && prevMarker !== marker) {
         hidePoiMarker(prevMarker);
     }
+    return marker;
 }
 
 export function hidePoiMarker(target) {

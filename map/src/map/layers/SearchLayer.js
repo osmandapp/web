@@ -1,11 +1,12 @@
 import { apiGet } from '../../util/HttpApi';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
+    selectPoiMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
@@ -87,6 +88,8 @@ export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
+    const prevSelectedRes = useRef(null);
+
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
 
@@ -98,7 +101,8 @@ export default function SearchLayer() {
         ctx,
         ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
         SEARCH_LAYER_ID,
-        map
+        map,
+        prevSelectedRes.current
     );
 
     useEffect(() => {
@@ -214,6 +218,9 @@ export default function SearchLayer() {
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
+
+        prevSelectedRes.current = selectPoiMarker(e.sourceTarget, prevSelectedRes.current);
+
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
@@ -261,7 +268,8 @@ export default function SearchLayer() {
                     ...obj.properties,
                     idObj: getObjIdSearch(obj),
                     title: title,
-                    icon: icon,
+                    icon,
+                    svg: icon.options.svg,
                     [FINAL_POI_ICON_NAME]: finalIconName,
                 });
             })
@@ -333,7 +341,7 @@ export default function SearchLayer() {
             background: DEFAULT_POI_SHAPE,
             svgIcon: coloredSvg,
         }).options.html;
-        return L.divIcon({ html: iconHtml });
+        return L.divIcon({ html: iconHtml, svg: coloredSvg });
     }
 
     function searchByCategory(category, key, catLang) {
