@@ -10,6 +10,8 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
+    hidePoiMarker,
+    selectPoiMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
@@ -18,6 +20,7 @@ import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
+    POI_ID,
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
@@ -65,7 +68,8 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
                 ...poi.properties,
                 idObj: getObjIdSearch(poi),
                 name: poi.properties[POI_NAME],
-                icon: icon,
+                icon,
+                svg: icon.options.svg,
                 [FINAL_POI_ICON_NAME]: finalIconName,
             });
 
@@ -139,7 +143,7 @@ export async function getPoiIcon(poi, cache, finalIconName) {
                 background: DEFAULT_POI_SHAPE,
                 svgIcon: coloredSvg,
             }).options.html;
-            return L.divIcon({ html: iconHtml });
+            return L.divIcon({ html: iconHtml, svg: coloredSvg });
         }
     }
 }
@@ -159,6 +163,8 @@ export default function PoiLayer() {
         prevLayer: null,
         listFeatures: null,
     });
+    const prevSelectedPoi = useRef(null);
+
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
     const [bbox, setBbox] = useState(null);
@@ -174,6 +180,23 @@ export default function PoiLayer() {
         POI_LAYER_ID,
         map
     );
+
+    useEffect(() => {
+        if (ctx.selectedPoiId?.show === false && prevSelectedPoi.current) {
+            hidePoiMarker(prevSelectedPoi.current);
+            return;
+        }
+        poiList?.layer?.getLayers().forEach((layer) => {
+            if (layer.options.idObj === ctx.selectedPoiId?.id) {
+                if (ctx.selectedPoiId?.show === false) {
+                    hidePoiMarker(layer);
+                } else if (ctx.selectedPoiId?.id && ctx.selectedWpt?.poi?.options[POI_ID] === ctx.selectedPoiId?.id) {
+                    selectPoiMarker(layer, prevSelectedPoi.current);
+                    prevSelectedPoi.current = layer;
+                }
+            }
+        });
+    }, [ctx.selectedPoiId, ctx.selectedWpt]);
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
@@ -384,6 +407,10 @@ export default function PoiLayer() {
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+
+        selectPoiMarker(e.sourceTarget, prevSelectedPoi.current);
+        prevSelectedPoi.current = e.sourceTarget;
+
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,

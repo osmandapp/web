@@ -10,6 +10,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
     SEPARATOR,
+    FINAL_POI_ICON_NAME,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -22,11 +23,13 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
+import L from 'leaflet';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
 export const DEFAULT_POI_ICON = 'craft_default';
 export const DEFAULT_POI_COLOR = '#f8931d';
+const SELECTED_POI_COLOR = '#237bff';
 export const DEFAULT_ICON_COLOR = '#ffffff';
 export const DEFAULT_POI_SHAPE = 'circle';
 
@@ -316,6 +319,40 @@ export function translateWithSplit(t, string) {
         translatedString = translatedString.split(SEPARATOR)[0];
     }
     return translatedString;
+}
+
+export function selectPoiMarker(target, prevMarker) {
+    const marker = updateSelectedMarkerOnMap(target);
+    if (prevMarker && prevMarker !== marker) {
+        hidePoiMarker(prevMarker);
+    }
+}
+
+export function hidePoiMarker(target) {
+    updateSelectedMarkerOnMap(target, true);
+}
+
+export function updateSelectedMarkerOnMap(marker, updatePrev = false) {
+    const newBackgroundColor = updatePrev ? DEFAULT_POI_COLOR : SELECTED_POI_COLOR;
+    if (marker.options?.simple) {
+        marker.setStyle({
+            fillColor: newBackgroundColor,
+            selected: !updatePrev,
+        });
+    } else {
+        const newHtml = createPoiIcon({
+            color: newBackgroundColor,
+            background: DEFAULT_POI_SHAPE,
+            svgIcon: marker.options.svg,
+        }).options.html;
+
+        marker.setIcon(
+            L.divIcon({
+                html: newHtml,
+            })
+        );
+    }
+    return marker;
 }
 
 const PoiManager = {
