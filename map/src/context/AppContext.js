@@ -444,6 +444,8 @@ export const AppContextProvider = (props) => {
 
     const [dateLocale, setDateLocale] = useState(null);
 
+    const [openInfoDrawer, setOpenInfoDrawer] = useState(true);
+
     useEffect(() => {
         const currentLanguage = i18n.language;
         const locale = locales[currentLanguage] || locales.enUS;
@@ -816,6 +818,8 @@ export const AppContextProvider = (props) => {
                 setNotification,
                 dateLocale,
                 setDateLocale,
+                openInfoDrawer,
+                setOpenInfoDrawer,
             }}
         >
             {props.children}

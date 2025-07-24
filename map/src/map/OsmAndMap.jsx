@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
-import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
+import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl, useMap } from 'react-leaflet';
 import AppContext from '../context/AppContext';
 import RouteLayer from './layers/RouteLayer';
 import WeatherLayer from './layers/WeatherLayer';
@@ -38,6 +38,58 @@ const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
         ctx.setGraphHighlightedPoint(null);
     }
 };
+
+function MapClickHandler() {
+    const map = useMap();
+    const ctx = useContext(AppContext);
+    useEffect(() => {
+        let tapTimeout;
+        const onClick = () => {
+            clearTimeout(tapTimeout);
+            tapTimeout = setTimeout(() => {
+                ctx.setOpenInfoDrawer((open) => !open);
+            }, 200);
+        };
+        map.on('click', onClick);
+        return () => map.off('click', onClick);
+    }, [map, ctx.currentObjectType]);
+    return null;
+}
+
+function AttachClickHandlers() {
+    const map = useMap();
+    const { setOpenInfoDrawer } = useContext(AppContext);
+
+    useEffect(() => {
+        const handler = () => {
+            setOpenInfoDrawer(true);
+        };
+
+        map.eachLayer((layer) => {
+            if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                layer.on('click', handler);
+            }
+        });
+
+        map.on('layeradd', (e) => {
+            const layer = e.layer;
+            if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                layer.on('click', handler);
+            }
+        });
+
+        return () => {
+            map.eachLayer((layer) => {
+                if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+                    layer.off('click', handler);
+                }
+            });
+            map.off('layeradd');
+        };
+    }, [map, setOpenInfoDrawer]);
+
+    return null;
+}
 
 const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mapRef = useRef(null);
@@ -175,6 +227,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 {routersReady && <CloudTrackLayer />}
                 {routersReady && <LocalClientTrackLayer />}
                 {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
+                <MapClickHandler />
+                <AttachClickHandlers />
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
                 <TravelLayer />
