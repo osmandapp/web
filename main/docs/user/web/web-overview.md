@@ -51,12 +51,12 @@ The table below outlines what is available in each version:
 | Feature | Available In |
 |--------|--------------|
 | [Navigation Route](./planner.md) | Free |
-| [Create Track](./planner.md) | Free |
+| [Route Planner](./planner.md) | Free |
 | [Weather Overlays](./web-map.md) | Free |
 | [Favorites](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [OsmAnd Cloud Sync](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Web Search](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Tracks Layer](./web-map.md) | <ProFeature/> |
+| [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Tracks folders and Layer](./web-map.md) | <ProFeature/> |
 
 
 ## How to Start {#how-to-start}
