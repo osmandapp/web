@@ -99,13 +99,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Тип [прокладання маршруту прямо до точки](./direct-to-point-routing.md) можна використовувати з профілем човна, коли ви хочете керувати своїм човном у відкритій воді, не дотримуючись певного маршруту чи водного шляху. Цей тип прокладання маршруту дозволяє встановити точку призначення, і OsmAnd розрахує прямий шлях до цієї точки від вашого поточного місцезнаходження. Цей тип прокладання маршруту не враховує характеристики вашого човна, такі як мінімальна та максимальна швидкості, висота та ширина. Ваш маршрут не буде перерахований у разі відхилення.
 
-![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android_ua.png)
+![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 ### Прокладання маршруту по прямій лінії для човна {#straight-line-routing-for-boat}
 
 Тип [прокладання маршруту по прямій лінії](./straight-line-routing) можна використовувати з профілем човна, коли ви хочете керувати своїм човном у відкритій воді, але віддаєте перевагу прямій лінії, а не вигнутому маршруту до точки призначення. Це може бути корисно при навігації до віддаленої точки, яка, наприклад, видно на горизонті.
 
-![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android_ua.png)
+![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
 ## Інші налаштування прокладання маршруту {#other-routing-settings}
 

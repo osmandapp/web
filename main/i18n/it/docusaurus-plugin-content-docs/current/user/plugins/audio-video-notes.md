@@ -340,7 +340,7 @@ Usa il livello mappa [Registrazione](../map/point-layers-on-map#-audio--video-po
 
 <TabItem value="android" label="Android">
 
-![Note e waypoint sulla mappa](@site/static/plugins/audio-video-notes/note_waypoint_on_map.png)
+![Note e waypoint sulla mappa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
 ![Waypoint sulla traccia](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>

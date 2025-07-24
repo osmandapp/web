@@ -61,7 +61,7 @@ Vai a: *Menu → Mappe e Risorse → Locale → Colori*
 
 <TabItem value="ios" label="iOS">
 
-![Tavolozza dei colori](@site/static/img/personal/color-schemes/color_altitude_ios.png)
+![Tavolozza dei colori](@site/static/img/personal/color-schemes/color_altitude.png)
 
 </TabItem>
 
