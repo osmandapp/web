@@ -1,7 +1,7 @@
 ---
-source-hash: 3c0537caba10d048fc41eb1aafbf2fad61dfc855cb8b7c403db89f081990b44f
+source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
 sidebar_position: 5
-title:  Farbschemata
+title: Farbschemata
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,15 +18,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Überblick {#overview}
 
-:::info Bezahlte Funktion
+:::info Kostenpflichtige Funktion
 
-Farbschemata sind Teil der kostenpflichtigen Funktionen [Maps+](../purchases/index.md) und Pro <ProFeature />.
+Farbschemata werden als Teil der kostenpflichtigen [Karten+](../purchases/index.md) und Pro <ProFeature /> Funktionen verwendet.
 
 :::
 
-Farbschemata werden bei der [Routenfärbung](#routes), beim [Kartenterrain](#terrain) und bei der [Wetterkarte](#weather) verwendet. Sie sind als separater Teil der Informationen dargestellt, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
+Farbschemata werden bei der [Routenfärbung](#routes), dem [Kartengelände](#terrain) und der [Wetterkarte](#weather) verwendet und stellen einen separaten Teil der Informationen dar, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
 
-Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local) verfügbar.
+Farbpalettendaten sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local) verfügbar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -49,7 +49,7 @@ Gehe zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 </Tabs>
 
 
-## Schema-Typen {#scheme-types}
+## Schematypen {#scheme-types}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -68,16 +68,16 @@ Gehe zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 </Tabs>
 
 
-### Terrain {#terrain}
+### Gelände {#terrain}
 
-Terrain-Dateien (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definieren 3 [Terrain-Visualisierungen](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schummerung, Hangneigung* und *Höhe*. Für jeden Typ können Sie mehrere Paletten haben, z.B. *Lawinenhang* wird standardmäßig bereitgestellt.
+Geländedateien (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definieren 3 [Geländevisualisierungen](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schummerung, Neigung* und *Höhe*. Für jeden Typ können Sie mehrere Paletten haben, z.B. ist *Lawinenhang* standardmäßig vorhanden.
 
 ### Routen {#routes}
 
-Linienverlauf-Visualisierungen verwenden Palettendateien (`route_<type_name>_<palette_name>.txt`), um GPX-Tracks und Routen einzufärben:
+Linienverlaufsvisualisierungen verwenden Palettendateien (`route_<type_name>_<palette_name>.txt`), um GPX-Tracks und Routen zu färben:
 
-- Für [Routen](../navigation/guidance/map-during-navigation.md#color): *Geschwindigkeit, Steigung* und *Höhe*.
-- Für [GPX-Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Geschwindigkeit, Steigung,* und *Höhe, oder Infos von externen Sensoren*.
+- Für [Routen](../navigation/guidance/map-during-navigation.md#color): *Geschwindigkeit, Neigung* und *Höhe*.
+- Für [GPX-Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Geschwindigkeit, Neigung* und *Höhe oder Informationen von externen Sensoren*.
 
 ### Wetter {#weather}
 
@@ -88,7 +88,7 @@ Wetterpalettendateien (`weather_<type_name>.txt`) definieren die Visualisierung 
 Die Farbpalette (`user_palette_default.txt`) wird einfach für vordefinierte Farben verwendet, die [Favoriten](./favorites.md) und [Tracks](./tracks/) zugewiesen werden können.
 
 
-## Paletten-Legende {#palette-legend}
+## Palettenlegende {#palette-legend}
 
 <table class="image">
     <tr>
@@ -99,45 +99,45 @@ Die Farbpalette (`user_palette_default.txt`) wird einfach für vordefinierte Far
 </table>
 
 
-Die Legende bietet eine einfache Möglichkeit, die verschiedenen Markierungen auf der Karte anzuzeigen und zu verstehen. Neue Farbpaletten wurden hinzugefügt, um die [**Geschwindigkeit** für Tracks](../map/tracks/appearance#track-colors-in-gpx-files), den [**Linientyp** für Routen](../navigation/guidance/map-during-navigation.md#color), [**Höhe und Neigung** für Terrain](../plugins/topography.md#default-color-scheme) und alle [**Wetterschicht**](../plugins/weather.md#weather-layers) Farbpaletten anzuzeigen.
+Die Legende bietet eine einfache Möglichkeit, die verschiedenen Markierungen auf der Karte anzuzeigen und zu verstehen. Neue Farbpaletten wurden hinzugefügt, um die [**Geschwindigkeit** für Tracks](../map/tracks/appearance#track-colors-in-gpx-files), den [**Linientyp** für Routen](../navigation/guidance/map-during-navigation.md#color), die [**Höhe und Neigung** für das Gelände](../plugins/topography.md#default-color-scheme) und alle [**Wetterschicht**](../plugins/weather.md#weather-layers) Farbpaletten anzuzeigen.
 
 
 ## Palettendatei bearbeiten {#edit-palette-file}
 
-Sie können Paletten bearbeiten, um das Aussehen von Karten und Routen zu personalisieren. Eigene Farbpalettendateien können OsmAnd mit dem [Import/Export-Tool](./import-export.md) hinzugefügt werden.
+Sie können Paletten bearbeiten, um das Aussehen von Karten und Routen zu personalisieren. Eigene Farbpalettendateien können mit dem [Import-/Export-Tool](./import-export.md) zu OsmAnd hinzugefügt werden.
 
 - *Routen*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
-- *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
+- *Gelände*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Wetter*: `weather_<type_name>.txt`.
 - *Farbe*: `user_palette_default.txt`.
 
 Jede Zeile stellt einen numerischen Wert (für die Farbpalette ist es ein Index) und eine RGB-Farbe dar. Zum Beispiel:
 
 ```xml
-# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 degree RGBA {#0---90-degree-rgba}
+# TXT-Datei namens *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 Grad RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# yellow  {#yellow-}
+# gelb  {#yellow-}
 100,255,222,2,227
-# red {#red}
+# rot {#red}
 200,255,1,1,255
-# violet {#violet}
+# violett {#violet}
 220,130,1,255,255
 
 ```
 
-Nachdem diese TXT-Datei nach *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt* verschoben wurde, erscheint im Farbschema-Menü eine neue Palette.
+Nachdem diese TXT-Datei nach *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt* verschoben wurde, erscheint eine neue Palette im Farbschema-Menü.
 
 
-## Weitere Informationen {#read-more}
+## Mehr lesen {#read-more}
 
-### Schnelle Aktionen {#quick-actions}
+### Schnellaktionen {#quick-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aktion hinzufügen → Topographie → Terrain Farbschema ändern*
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aktion hinzufügen → Topographie → Geländefarbschema ändern*
 
 ![Farbschema](@site/static/img/widgets/color_scheme.png)
 
@@ -145,7 +145,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 <TabItem value="ios" label="iOS">
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aktion hinzufügen → Topographie → Terrain Farbschema ändern*
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aktion hinzufügen → Topographie → Geländefarbschema ändern*
 
 ![Farbpalette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
@@ -153,8 +153,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 </Tabs>
 
-**Schnelle Aktion** zum Ändern der Palette für Terrain. Es wurde die Möglichkeit hinzugefügt, zwischen Terrain-Farbschemata zu wechseln, ähnlich wie beim Wechseln zwischen Ebenen. Dies kann mit dem Tool [Schnelle Aktionen](../widgets/quick-action.md#configure-map) erfolgen.
-
+**Schnellaktion** zum Ändern der Palette für das Gelände. Es wurde die Möglichkeit hinzugefügt, zwischen Geländefarbschemata zu wechseln, ähnlich dem Wechsel zwischen Ebenen. Dies kann mit dem Tool [Schnellaktionen](../widgets/quick-action.md#configure-map) erfolgen.
 
 ### Farben importieren / exportieren {#import--export-colors}
 
@@ -164,7 +163,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Profile Aktionen Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Lokale Sicherung Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profile Aktionen Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup lokal Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -178,14 +177,13 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,l
 
 </Tabs>
 
-Sie können alle verfügbaren Standard- und benutzerdefinierten Farbpaletten mit dem Werkzeug zum Wiederherstellen und Sichern von Dateien von OsmAnd importieren und exportieren.
+Sie können alle verfügbaren Standard- und benutzerdefinierten Farbpaletten mit dem Wiederherstellungs- und Sicherungstool von OsmAnd importieren und exportieren.
 
-- Öffnen Sie das Haupt-*Menü*, *Einstellungen*, scrollen Sie zum Abschnitt **Import/Export** (*Android*) oder **Lokale Sicherung** (*iOS*) und wählen Sie die gewünschte Aktion aus.
+- Öffnen Sie das Haupt-*Menü*, *Einstellungen*, scrollen Sie zum Abschnitt **Import/Export** (*Android*) oder **Lokales Backup** (*iOS*) und wählen Sie die gewünschte Aktion aus.
 - Wählen Sie ein oder mehrere Elemente aus der Liste *Farbe* oder die Option *Alle auswählen*.
-- Alle exportierten Dateien werden im Format `.osf` gespeichert.
-- Wenn die Größe der von Ihnen ausgewählten Daten erheblich ist, dauert es einige Zeit, bis die Anwendung die `.osf`-Datei vorbereitet hat.
-- Weitere Informationen finden Sie im Artikel [*Import / Export*](../personal/import-export.md).
-
+- Alle exportierten Dateien werden im `.osf`-Format gespeichert.
+- Wenn die Größe Ihrer ausgewählten Daten erheblich ist, benötigt die Anwendung einige Zeit, um die `.osf`-Datei vorzubereiten.
+- Weitere detaillierte Informationen finden Sie im Artikel [*Import / Export*](../personal/import-export.md).
 
 ## Verwandte Artikel {#related-articles}
 

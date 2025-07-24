@@ -1,7 +1,7 @@
 ---
-source-hash: 9157ad0f0a716d1c05272f2fefedef4131754bbfda33b5fd36124e58bb0e2ce1
+source-hash: e35d8bb8c463024a373522c4e8114cf2ea9c85d3dca5ea142e9e2507d2330c58
 sidebar_position: 3
-title: Menu principale
+title:  Menu Principale
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,9 +16,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Panoramica {#overview}
 
-Il **Menu principale** è un elenco primario di opzioni disponibili per l'utilizzo nell'applicazione. Fornisce un accesso rapido alla configurazione del profilo, alle impostazioni globali, alla ricerca, ai dati personali, alla navigazione e ad altre funzionalità.
+Il **Menu Principale** è un elenco primario di opzioni disponibili per l'utilizzo nell'applicazione. Fornisce un accesso rapido alla configurazione del profilo, alle impostazioni globali, alla ricerca, ai dati personali, alla navigazione e ad altre funzionalità.
 
-L'icona del [Menu principale](../widgets/map-buttons.md#main-menu) '&#8801;' si trova nell'angolo inferiore sinistro della schermata della mappa. In modalità navigazione questo pulsante non è visibile per impostazione predefinita. Appare dopo un breve tocco sulla mappa.
+L'icona del [Menu Principale](../widgets/map-buttons.md#main-menu) '&#8801;' si trova nell'angolo in basso a sinistra della schermata della Mappa. In modalità di navigazione questo pulsante non è visibile per impostazione predefinita. Appare dopo un breve tocco sulla mappa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -37,13 +37,13 @@ L'icona del [Menu principale](../widgets/map-buttons.md#main-menu) '&#8801;' si 
 </Tabs>
 
 
-## Menu principale (Menu laterale) {#main-menu-side-menu}
+## Menu Principale (Menu Laterale) {#main-menu-side-menu}
 
 ### Funzionalità {#features}
 
-- [Segnalibri mappa](../personal/markers.md) è uno strumento che consente di contrassegnare un luogo sulla mappa.
-- [I miei luoghi](../personal/myplaces.md) è un menu che include per impostazione predefinita Preferiti e tracce e inoltre può includere [Note A/V](../plugins/audio-video-notes.md) e [Modifiche OSM](../plugins/osm-editing.md) (se tali plugin sono attivati).
-- [Cerca](../search/index.md) (Android) è uno strumento che consente di trovare il luogo o l'oggetto che esiste sulla mappa.
+- [Marcatori mappa](../personal/markers.md) è uno strumento che consente di contrassegnare un luogo sulla mappa.
+- [I miei luoghi](../personal/myplaces.md) è un menu che include per impostazione predefinita Preferiti e tracce e, inoltre, può includere [Note A/V](../plugins/audio-video-notes.md) e [Modifiche OSM](../plugins/osm-editing.md) (se tali plugin sono attivati).
+- [Cerca](../search/index.md) (Android) è uno strumento che consente di trovare il luogo o l'oggetto esistente sulla mappa.
 - Il pulsante [Indicazioni](../widgets/map-buttons.md#directions) consente di creare un percorso e avviare la navigazione.
 - [Configura mappa](../map/configure-map-menu.md) è un menu che consente di configurare la visualizzazione della mappa.
 - [Scarica mappe](../start-with/download-maps.md) è un menu che contiene tutti i file che possono essere scaricati.
@@ -53,31 +53,31 @@ L'icona del [Menu principale](../widgets/map-buttons.md#main-menu) '&#8801;' si 
 
 ### Impostazioni {#settings}
 
-- [Configura schermata](../widgets/configure-screen.md) è un menu che consente di configurare la visualizzazione dei widget sulla mappa.
+- [Configura schermata](../widgets/configure-screen.md) è un menu che consente di configurare la visualizzazione dei widget sulla Mappa.
 - [Plugin](../plugins/index.md#configure-plugin) è un elenco di funzionalità aggiuntive e impostazioni avanzate.
 - [Impostazioni](../personal/global-settings.md) è un menu che consente di configurare i parametri principali dell'app.
 - [Aiuto](./first-steps.md#offline-help) fornisce un accesso rapido alla guida, informazioni sulla versione dell'app e consente di contattare rapidamente il team di sviluppo.
 
-### Profilo attivo (Android) {#active-profile-android}
+### Profilo Attivo (Android) {#active-profile-android}
 
-Il *Menu principale* fornisce un accesso rapido per cambiare e [personalizzare il profilo](../personal/profiles.md). Lo scopo principale dei profili è avere un aspetto e una sensazione diversi per la navigazione. Tuttavia, è possibile utilizzarlo per personalizzare schermata e widget e cambiare profilo per diversi scopi di visualizzazione. Tutte le [impostazioni](../personal/profiles.md) sono configurate separatamente per ogni profilo.
+Il *Menu Principale* fornisce un accesso rapido per cambiare e [personalizzare il profilo](../personal/profiles.md). Lo scopo principale dei profili è avere un aspetto e una sensazione diversi dell'applicazione per la navigazione. Tuttavia, è possibile utilizzarlo per personalizzare la schermata e i widget e cambiare i profili per scopi di visualizzazione diversi. Tutte le [impostazioni](../personal/profiles.md) sono configurate separatamente per ogni profilo.
 
-![menu_profilo](@site/static/img/menu/profile_menu.png)
+![profile_menu](@site/static/img/menu/profile_menu.png)
 
 In questo menu è possibile **cambiare** il profilo attivo, **configurare** (modificare le impostazioni) per il profilo attivo o **gestire** tutti i profili dell'applicazione.
 
 
-### Personalizza (Uso avanzato di Android) {#customize-advanced-use-of-android}
+### Personalizza (Uso Avanzato di Android) {#customize-advanced-use-of-android}
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Abilita*.  
 
-![Voci del menu a scomparsa ](@site/static/img/settings/drawer_menu_correct.png)  
+![Elementi del menu del cassetto ](@site/static/img/settings/drawer_menu_correct.png)  
 
-- Questo menu consente di modificare l'ordine, nascondere o mostrare elementi dal [Menu a scomparsa](../personal/profiles.md#drawer), copiare un elenco di elementi da un altro profilo e reimpostare le impostazioni predefinite.  
+- Questo menu consente di modificare l'ordine, nascondere o mostrare elementi dal [Cassetto](../personal/profiles.md#drawer), copiare un elenco di elementi da un altro profilo e ripristinare le impostazioni predefinite.  
 
-- Il pulsante *Meno* elimina un elemento dal *Menu principale* nel menu a scomparsa e lo sposta nella sezione *Nascosti*. Il pulsante *Sposta* modifica la posizione dell'elemento selezionato nell'elenco.  
+- Il pulsante *Meno* elimina un elemento dal *Menu Principale* nel cassetto e lo sposta nella sezione *Nascosti*. Il pulsante *Sposta* cambia la posizione dell'elemento selezionato nell'elenco.  
 
-- Gli elementi spostati nella sezione *Nascosti* non vengono visualizzati nel menu a scomparsa, ma tutte le opzioni, le impostazioni o i plugin di questo elenco continuano a funzionare. È possibile ripristinare gli elementi toccando il pulsante verde a sinistra dei loro nomi.  
-    ![Voci nascoste del menu a scomparsa ](@site/static/img/settings/drawer_menu_hidden_items.png)
+- Gli elementi spostati nella sezione *Nascosti* non vengono visualizzati nel menu del Cassetto, ma tutte le opzioni, le impostazioni o i plugin di questo elenco continuano a funzionare. È possibile ripristinare gli elementi toccando il pulsante verde a sinistra dei loro nomi.  
+    ![Elementi nascosti del menu del cassetto ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
-> *Ultimo aggiornamento: luglio 2022*
+> *Ultimo aggiornamento: Luglio 2022*

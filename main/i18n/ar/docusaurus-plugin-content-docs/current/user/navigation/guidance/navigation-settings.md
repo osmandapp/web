@@ -1,5 +1,5 @@
 ---
-source-hash: c8d86e0d815539ea1395efc415de2d8d02dbf19117cd20b4d4915ea3473d7023
+source-hash: 9dfdc23272c2395a2fe157264de05cb42ea6de2b1b0d9d756c1c1bf66f78f6d3
 sidebar_position: 7
 title:  إعدادات الملاحة
 ---
@@ -24,13 +24,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
 
 </TabItem>
 
@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### كيفية الفتح {#how-to-open}
 
-يقدم هذا القسم إعدادات الملاحة الضرورية لحساب ورسم المسار، والتي يمكنك تعيينها للملف الشخصي المحدد. تتضمن هذه القائمة إعدادات [إعداد المسار](../setup/route-navigation.md)، [شاشة الخريطة أثناء الملاحة](../guidance/map-during-navigation.md)، وما تقوم بتعيينه في *إعدادات الملاحة* يؤثر بشكل مباشر على عرض البيانات في [تفاصيل المسار](../setup/route-details.md).
+يقدم هذا القسم إعدادات الملاحة الضرورية لحساب ورسم المسار، والتي يمكنك تعيينها للملف الشخصي المحدد. تتضمن هذه القائمة إعدادات [إعداد المسار](../setup/route-navigation.md)، [شاشة الخريطة أثناء الملاحة](../guidance/map-during-navigation.md)، وما تقوم بتعيينه في *إعدادات الملاحة* يؤثر مباشرة على عرض البيانات في [تفاصيل المسار](../setup/route-details.md).
 
 هناك ثلاث طرق للوصول إلى قائمة إعدادات الملاحة.
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - انتقل إلى *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>* الرئيسية.
 
 :::info
-ملف تعريف *تصفح الخريطة* الافتراضي لا يحتوي على إعدادات ملاحة.
+ملف *تصفح الخريطة* الافتراضي لا يحتوي على إعدادات ملاحة.
 :::
 
 
@@ -59,13 +59,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png) ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_type_offline_andr.png) ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_type_online_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_type_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_type_ios.png)
 
 </TabItem>
 
@@ -74,12 +74,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 الملاحة جزء مهم من الرحلة، واختيار *النوع الصحيح* من الملاحة يمكن أن يجعل رحلتك أسهل بكثير. يمكن أن يعتمد نوع الملاحة الذي تختاره على كيفية سفرك وما إذا كان لديك اتصال بالإنترنت.
 
 - **الملاحة عبر الإنترنت**
-تستخدم بشكل أساسي نظام توجيه خاص أو موقع ويب يسمح لتطبيق OsmAnd برسم مسار بناءً على المعلومات الحالية وعوامل أخرى. يمكنك قراءة المزيد حول اختيار أفضل مسار عبر الإنترنت في مقالة [التوجيه عبر الإنترنت](../routing/online-routing.md). هذا النوع من الملاحة متاح فقط لـ *إصدار Android* من التطبيق.
+    تستخدم بشكل أساسي نظام توجيه خاص أو موقع ويب يسمح لتطبيق OsmAnd برسم مسار بناءً على المعلومات الحالية وعوامل أخرى. يمكنك قراءة المزيد عن اختيار أفضل مسار عبر الإنترنت في مقالة [التوجيه عبر الإنترنت](../routing/online-routing.md). هذا النوع من الملاحة متاح فقط لـ *نسخة أندرويد* من التطبيق.
 
 - **الملاحة دون اتصال**
 لا تتطلب الوصول إلى الإنترنت وتوفر مجموعة أوسع من [أنواع الملاحة](../routing/osmand-routing.md#routing-types) التي يمكن استخدامها لحساب المسار. من بينها *الدراجة، القارب، السيارة، سيرًا على الأقدام، التزلج*، و*الخط المستقيم*. يوجد حاليًا 13 نوعًا أساسيًا من التوجيه، بالإضافة إلى نوع توجيه خارجي [BRouter](../routing/brouter.md) يوفر فرص توجيه إضافية.
 
-يحدد نوع الملاحة القواعد المستخدمة لحساب المسارات. إذا كنت بحاجة إلى نوع معين من الملاحة، يمكنك **استيراد ملف توجيه *XML* المعدل الخاص بك**. اقرأ المزيد حول قواعد التوجيه على [صفحتنا على GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). وهناك مقالة منفصلة حول تنسيق XML وكيفية استخدامه، [نمط عرض الخريطة](../../../technical/osmand-file-formats/osmand-rendering-style.md)، والتي يمكن أن تساعدك في إنشاء ملف مسار.
+يحدد نوع الملاحة القواعد المستخدمة لحساب المسارات. إذا كنت بحاجة إلى نوع معين من الملاحة، يمكنك **استيراد ملف توجيه *XML* المعدل الخاص بك**. اقرأ المزيد عن قواعد التوجيه على [صفحتنا على GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). وهناك مقالة منفصلة حول تنسيق XML وكيفية استخدامه، [نمط عرض الخريطة](../../../technical/osmand-file-formats/osmand-rendering-style.md)، والتي يمكن أن تساعدك في إنشاء ملف مسار.
 
 
 ## معلمات المسار {#route-parameters}
@@ -88,24 +88,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route_parameters_1_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_route_parameters_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route_parameters_1_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_route_parameters_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**<Translate android="true" ids="route_parameters"/>** هي إعدادات تحدد كيفية قيام التطبيق بحساب مسار للوصول إلى وجهة، مع الأخذ في الاعتبار عوامل مثل نوع النقل، أولويات التوجيه، ظروف المسار، تعقيد المسار، وتفضيلات المستخدم.
+**<Translate android="true" ids="route_parameters"/>** هي إعدادات تحدد كيفية حساب التطبيق للمسار للوصول إلى وجهة، مع الأخذ في الاعتبار عوامل مثل نوع النقل، أولويات التوجيه، ظروف المسار، تعقيد المسار، وتفضيلات المستخدم.
 
-لكل [ملف شخصي](../../personal/global-settings.md#default-profile)، باستثناء *تصفح الخريطة*، يختار OsmAnd افتراضيًا [نوع الملاحة](#navigation-type) الأمثل و[معلمات المسار](../routing/osmand-routing.md#routing-types) ذات الصلة. ومع ذلك، يمكنك اختيار أي نوع تريده وتغيير المعلمات اعتمادًا على تفضيلاتك والظروف الخارجية للرحلة القادمة.
+لكل [ملف شخصي](../../personal/global-settings.md#default-profile)، باستثناء *تصفح الخريطة*، يختار OsmAnd افتراضيًا [نوع الملاحة](#navigation-type) الأمثل و[معلمات المسار](../routing/osmand-routing.md#routing-types) ذات الصلة. ومع ذلك، يمكنك اختيار أي نوع تريده وتغيير المعلمات حسب تفضيلاتك والظروف الخارجية للرحلة القادمة.
 
-تم وصف جميع معلمات المسار بالتفصيل في الأقسام المقابلة من الوثائق:
-*[توجيه السيارة (الشاحنة، الدراجة النارية)](../routing/car-based-routing.md)، [توجيه الدراجة (MTB)](../routing/bicycle-based-routing.md)، [توجيه الدراجة النارية](../routing/moped-routing.md)، [توجيه المشاة](../routing/pedestrian-routing.md)، [توجيه النقل العام](../routing/public-transport-navigation.md)، [توجيه ركوب الخيل](../routing/horse-routing.md)، [توجيه التزلج](../routing/ski-routing.md)، [توجيه القطار](../routing/train-routing.md)، [توجيه القوارب](../routing/boat-navigation.md)، [توجيه مباشر إلى نقطة](../routing/direct-to-point-routing.md)، [توجيه الخط المستقيم](../routing/straight-line-routing.md)، [توجيه عبر الإنترنت](../routing/online-routing.md)، [توجيه BRouter](../routing/brouter.md)*.
+يتم وصف جميع معلمات المسار بالتفصيل في الأقسام المقابلة من الوثائق:
+*[توجيه السيارة (الشاحنة، الدراجة النارية)](../routing/car-based-routing.md)، [توجيه الدراجة (MTB)](../routing/bicycle-based-routing.md)، [توجيه الدراجة النارية](../routing/moped-routing.md)، [توجيه المشاة](../routing/pedestrian-routing.md)، [توجيه النقل العام](../routing/public-transport-navigation.md)، [توجيه ركوب الخيل](../routing/horse-routing.md)، [توجيه التزلج](../routing/ski-routing.md)، [توجيه القطار](../routing/train-routing.md)، [توجيه القارب](../routing/boat-navigation.md)، [توجيه مباشر إلى نقطة](../routing/direct-to-point-routing.md)، [توجيه الخط المستقيم](../routing/straight-line-routing.md)، [توجيه عبر الإنترنت](../routing/online-routing.md)، [توجيه BRouter](../routing/brouter.md)*.
 
 
 ### إعادة حساب المسار {#recalculate-route}
@@ -114,25 +114,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation1_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation2_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_route-recalculation1_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_route-recalculation2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation1_ios.png)
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation2_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_route-recalculation1_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_route-recalculation2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يغير معلم **حساب المسار** المسار المحسوب تلقائيًا عندما تنحرف عنه أو تقود في الاتجاه المعاكس. في كلتا الحالتين، يساعدك هذا الإعداد على الحفاظ على اتجاه سفرك والوصول إلى وجهتك دون إضاعة الوقت في البحث يدويًا عن مسار جديد.
+يغير معلم **حساب المسار** المسار المحسوب تلقائيًا عند الانحراف عنه أو القيادة في الاتجاه المعاكس. في كلتا الحالتين، يساعدك هذا الإعداد على الحفاظ على اتجاه سفرك والوصول إلى وجهتك دون إضاعة الوقت في البحث يدويًا عن مسار جديد.
 
 | المعلم | الوصف | ملاحظة |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> في حالة الانحراف* | <Translate android="true" ids="recalculate_route_distance_promo"/> | إذا تم تشغيل [المطالبات الصوتية](../guidance/voice-navigation.md#voice-settings)، يعلن OsmAnd أنه يتم إعادة حساب المسار. |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> في حالة الانحراف* | <Translate android="true" ids="recalculate_route_distance_promo"/> | إذا تم تشغيل [المطالبات الصوتية](../guidance/voice-navigation.md#voice-settings)، يعلن OsmAnd أن المسار يتم إعادة حسابه. |
 | *إعادة حساب المسار في حالة الاتجاه المعاكس* | سيتم إعادة حساب مسارك إذا تحركت إلى نقطة البداية. | مع إيقاف تشغيل هذا الإعداد، لا يعتبر التحرك إلى نقطة البداية انحرافًا عن المسار (طالما أنه يتبع المسار المحسوب). |
 
 
@@ -144,7 +144,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *القائمة ← الإعدادات ← ملف تعريف التطبيق ← إعدادات الملاحة ← معلمات المسار ← التطوير*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *القائمة ← الإعدادات ← ملف تعريف التطبيق ← إعدادات الملاحة ← معلمات المسار ← التطوير*
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
 </TabItem>
 
@@ -162,9 +162,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | المعلم | الوصف |
 |:------------|:---------------|
-| *نوع التوجيه* (*أندرويد*) / *خوارزمية التوجيه* (*iOS*) | <ul><li>**A*** مرحلتان (*أندرويد*) / **A*** (*iOS*) يضيف مرحلة إضافية إلى الخوارزمية الافتراضية لتحسين جودة المسار المحسوب. يمكن أن يكون هذا الخيار مفيدًا لإيجاد المسارات في شبكات الطرق الكبيرة والمعقدة، ولكن قد يستغرق حساب المسار وقتًا أطول.</li><li>**A* كلاسيكي** (*أندرويد*) / **تسلسلات هرمية للطرق السريعة** (*iOS*) يحسن تخطيط المسار عن طريق تفضيل الطرق الرئيسية والطرق السريعة، مما يقلل من عدد المنعطفات والتقاطعات على المسار. فعال بشكل خاص على المسافات الطويلة.</li><li>**HH (تسلسلات هرمية للطرق السريعة) x Java** (*أندرويد فقط*) يعتمد على تنفيذ هياكل البيانات الهرمية لتحسين إيجاد المسار على الخريطة، مع الأخذ في الاعتبار قيود وقت التشغيل واستهلاك موارد الجهاز، ويتم تحقيقه على منصة Java.</li><li>**HH (تسلسلات هرمية للطرق السريعة) x C++** (*أندرويد فقط*) هي خوارزمية تستخدم لغة البرمجة C++ لمعالجة بيانات شبكة الطرق بكفاءة وبناء مسارات مثالية باستخدام هياكل البيانات الهرمية. وهي محسّنة للمعالجة السريعة لكميات كبيرة من البيانات وهي فعالة بشكل خاص للتنقل في الخرائط التي تحتوي على العديد من شبكات الطرق.</li></ul> |
-| *تقريب GPX* (*أندرويد فقط*) | <ul><li>يستخدم تقريب GPX **المعتمد على التوجيه** في **C++ و Java** بيانات المسار لتقريب مسارات GPS مع مسارات الطرق الموجودة، مما يحسن دقة المسار ويقلل من حجم المسار.</li><li>تعمل تقريبات GPX **المعتمدة على الهندسة** في **C++ و Java** بناءً على المبادئ الهندسية لتقريب مسارات GPS بسرعة ودقة، مما يسمح بالمعالجة الفعالة لكميات كبيرة من البيانات.</li></ul> |
-| *التكبير التلقائي* | <ul><li>**المتقطع** يسمح لك بتكبير الخريطة إلى مستوى تفصيلي محدد يقاس في بضع خطوات متقطعة.</li><li>**السلس** يوفر تغييرًا تدريجيًا في مقياس الخريطة مع تأثيرات رسوم متحركة سلسة بدون اهتزازات أو قفزات.</li></ul> |
+| *نوع التوجيه* (*أندرويد*) / *خوارزمية التوجيه* (*iOS*) | <ul><li>**A*** مرحلتين (*أندرويد*) / **A*** (*iOS*) يضيف مرحلة إضافية إلى الخوارزمية الافتراضية لتحسين جودة المسار المحسوب. يمكن أن يكون هذا الخيار مفيدًا للعثور على المسارات في شبكات الطرق الكبيرة والمعقدة، ولكن قد يستغرق حساب المسار وقتًا أطول.</li><li>**A* كلاسيكي** (*أندرويد*) / **تسلسلات الطرق السريعة** (*iOS*) يحسن تخطيط المسار من خلال تفضيل الطرق الرئيسية والطرق السريعة، مما يقلل من عدد المنعطفات والتقاطعات على المسار. فعال بشكل خاص على المسافات الطويلة.</li><li>**HH (تسلسلات الطرق السريعة) x Java** (*أندرويد فقط*) يعتمد على تنفيذ هياكل البيانات الهرمية لتحسين تحديد المسار على الخريطة، مع الأخذ في الاعتبار قيود وقت التشغيل واستهلاك موارد الجهاز، ويتم تحقيقه على منصة Java.</li><li>**HH (تسلسلات الطرق السريعة) x C++** (*أندرويد فقط*) هي خوارزمية تستخدم لغة البرمجة C++ لمعالجة بيانات شبكة الطرق بكفاءة وبناء مسارات مثالية باستخدام هياكل البيانات الهرمية. تم تحسينها للمعالجة السريعة لكميات كبيرة من البيانات وهي فعالة بشكل خاص للملاحة في الخرائط التي تحتوي على العديد من شبكات الطرق.</li></ul> |
+| *تقريب GPX* (*أندرويد فقط*) | <ul><li>يستخدم تقريب GPX **المعتمد على التوجيه** في **C++ و Java** بيانات المسار لتقريب مسارات GPS بمسارات الطرق الموجودة، مما يحسن دقة المسار ويقلل من حجم المسار.</li><li>تعمل تقريبات GPX **المعتمدة على الهندسة** في **C++ و Java** بناءً على المبادئ الهندسية لتقريب مسارات GPS بسرعة ودقة، مما يسمح بالمعالجة الفعالة لكميات كبيرة من البيانات.</li></ul> |
+| *التكبير التلقائي* | <ul><li>**منفصل** يسمح لك بالتكبير على الخريطة إلى مستوى تفصيلي محدد يتم قياسه في بضع خطوات منفصلة.</li><li>**ناعم** يوفر تغييرًا تدريجيًا في مقياس الخريطة مع تأثيرات رسوم متحركة سلسة دون اهتزازات أو قفزات.</li></ul> |
 | *<Translate android="true" ids="use_live_routing"/>* (*أندرويد فقط*) | استخدم [تحديثات OsmAnd Live](../../personal/maps-resources.md#osmand-live) أثناء التوجيه. لاحظ أننا نوصي باستخدام هذا الخيار لأغراض الاختبار فقط. |
 
 <!--
@@ -185,16 +185,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *زر <Translate ios="true" ids="routing_settings"/>* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختر الملف الشخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *زر <Translate ios="true" ids="routing_settings"/>* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختر ملفًا شخصيًا ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![إعدادات الملاحة الصوتية iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -204,9 +204,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تساعدك التعليمات الصوتية أثناء الملاحة كسائق أو مشاة على الوصول إلى وجهتك أثناء [التنقل في مسار محدد](../setup/route-navigation.md). تحتوي على معلومات حول المنعطفات، اتجاهات القيادة، علامات الطريق، المسافات إلى وجهتك، وعوامل أخرى قد تؤثر على ملاحتك.
 
-إذا اخترت مسارًا كنقطة وجهتك، فستحتاج إلى استخدام خيار [الربط بالطرق](../setup/gpx-navigation.md#attach-to-the-roads) لكي تعمل المطالبات الصوتية بشكل صحيح.
+إذا اخترت مسارًا كنقطة وجهة، فستحتاج إلى استخدام خيار [الربط بالطرق](../setup/gpx-navigation.md#attach-to-the-roads) لكي تعمل المطالبات الصوتية بشكل صحيح.
 
-تسمح لك *المطالبات الصوتية* بالتركيز على الطريق وعدم التشتت بالخريطة أو جهاز الملاحة. كما أنها تحسن سلامة القيادة، وتقلل الوقت المستغرق للتنقل في تضاريس غير مألوفة، ويمكن أن تكون مفيدة لأنواع مختلفة من [المسارات](../routing/osmand-routing.md#routing-types).
+تسمح لك *المطالبات الصوتية* بالتركيز على الطريق وعدم التشتت بالخريطة أو جهاز الملاحة. كما أنها تحسن سلامة القيادة، وتقلل الوقت المستغرق للتنقل في التضاريس غير المألوفة، ويمكن أن تكون مفيدة لأنواع مختلفة من [المسارات](../routing/osmand-routing.md#routing-types).
 
 
 ## تنبيهات الشاشة {#screen-alerts}
@@ -217,7 +217,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
 </TabItem>
 
@@ -225,29 +225,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يُمكّن إعداد الملاحة **تنبيه الشاشة** [**أداة التنبيهات**](../../widgets/nav-widgets.md#alert-widget). *التفاصيل:*
+تتيح إعدادات الملاحة **تنبيهات الشاشة** [**أداة التنبيهات**](../../widgets/nav-widgets.md#alert-widget). *التفاصيل:*
 
-- عند اقترابك من أحد العوائق المدعومة على الطريق، تظهر الإشعارات في الزاوية السفلية اليسرى من الخريطة.
+- عند اقترابك من إحدى العوائق المدعومة على الطريق، تظهر إشعارات في الزاوية السفلية اليسرى من الخريطة.
 - إذا قمت بتكوين [*المطالبات الصوتية والنصية*](../../navigation/guidance/voice-navigation.md) المتاحة في تطبيق OsmAnd، فستحظى برحلة أكثر راحة وأمانًا.
-- يعتمد مظهر وتوقيت المطالبات على إعدادات السرعة لديك. يمكنك العثور عليها [في المقالة](../../../technical/algorithms/voice-prompt-triggering.md).
+- يعتمد ظهور وتوقيت المطالبات على إعدادات السرعة لديك. يمكنك العثور عليها [في المقالة](../../../technical/algorithms/voice-prompt-triggering.md).
 - يتأثر سلوك *تنبيهات الشاشة* أيضًا بإعداد [إظهار النقاط على طول المسار](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route).
 
-يمكنك ***تحديد التنبيهات التي تريد رؤيتها*** على شاشة التطبيق أثناء التنقل:
+يمكنك ***تحديد التنبيهات*** التي تريد رؤيتها على شاشة التطبيق أثناء التنقل:
 
-- **حد السرعة** ([معلومات OSM Wiki](https://wiki.openstreetmap.org/wiki/Speed_limits)). في إعداد تنبيهات الشاشة، يتم عرض *حد السرعة* فقط على الشاشة مع تشغيل *تحذيرات المرور*. إذا كنت ترغب في رؤية حدود السرعة أثناء التنقل بدون تحذيرات أخرى، استخدم [الأداة](../../widgets/nav-widgets.md#speed-limit).
-- **تحذيرات المرور** ([معلومات OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). يمكن العثور على معلومات إضافية في مقالة [شاشة الخريطة أثناء التنقل](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
-- **معابر المشاة** ([معلومات OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **كاميرات السرعة** ([معلومات OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). لمزيد من المعلومات حول إعداد كاميرا السرعة في OsmAnd، اقرأ [أنواع التنبيهات](../../widgets/nav-widgets.md#alert-types) ومقالة *الإعدادات العامة*، قسم [القانونية](../../personal/global-settings.md#legal).
-- **الأنفاق** ([معلومات OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
+- **حد السرعة** ([معلومات ويكي OSM](https://wiki.openstreetmap.org/wiki/Speed_limits)). في إعداد تنبيهات الشاشة، يتم عرض *حد السرعة* فقط على الشاشة مع تشغيل *تحذيرات المرور*. إذا كنت ترغب في رؤية حدود السرعة أثناء التنقل بدون تحذيرات أخرى، استخدم [الأداة](../../widgets/nav-widgets.md#speed-limit).
+- **تحذيرات المرور** ([معلومات ويكي OSM](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). يمكن العثور على معلومات إضافية في مقالة [شاشة الخريطة أثناء التنقل](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **معابر المشاة** ([معلومات ويكي OSM](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **كاميرات السرعة** ([معلومات ويكي OSM](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). لمزيد من المعلومات حول إعداد كاميرا السرعة في OsmAnd، اقرأ [أنواع التنبيهات](../../widgets/nav-widgets.md#alert-types) ومقالة *الإعدادات العامة*، قسم [القانوني](../../personal/global-settings.md#legal).
+- **الأنفاق** ([معلومات ويكي OSM](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
-تختلف أنواع التحذيرات في مظهرها البصري، والذي يعتمد على منطقة السفر. لا يهدف OsmAnd إلى تقديم علامات طرق متطابقة بنسبة 100% ولكنه يشير إلى بعض أوجه التشابه.
+تختلف أنواع التحذيرات في مظهرها البصري، والذي يعتمد على منطقة السفر. لا يهدف OsmAnd إلى تقديم علامات طريق متطابقة بنسبة 100% ولكنه يشير إلى بعض أوجه التشابه.
 :::
 
 
@@ -269,11 +269,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-تُستخدم **الخريطة أثناء الملاحة** لتحديد موقعك، وتخطيط مسارك، وتوجيهك على الأرض. أثناء الملاحة، يمكنك عرض الخريطة مع *التوسيط التلقائي*، وتحريكها، و*التكبير والتصغير* لرؤية المنطقة المطلوبة. يمكن للخريطة أيضًا عرض علامات تشير إلى نقاط الاهتمام، والمسارات، والظروف الجوية، وعلامات الطريق، وغيرها من الكائنات لمساعدتك في التنقل. يمكن تحديث الخريطة في *الوقت الفعلي* وتعرض *معلومات محدثة* يمكن أن تؤثر على تخطيط المسار.
+تُستخدم **الخريطة أثناء الملاحة** لتحديد موقعك، وتخطيط مسارك، وتوجيهك. أثناء الملاحة، يمكنك عرض الخريطة مع *التمركز التلقائي*، وتحريكها، و*التكبير والتصغير* لرؤية المنطقة المطلوبة. يمكن للخريطة أيضًا عرض علامات تشير إلى نقاط الاهتمام، والمسارات، وظروف الطقس، وعلامات الطريق، وغيرها من الكائنات لمساعدتك في التنقل. يمكن تحديث الخريطة في *الوقت الفعلي* وتعرض *معلومات محدثة* يمكن أن تؤثر على تخطيط المسار.
 
-يمكنك معرفة كيفية تغيير سلوك الخريطة أثناء الملاحة في مقالة [شاشة الخريطة أثناء الملاحة](../guidance/map-during-navigation.md).
+يمكنك معرفة كيفية تغير سلوك الخريطة أثناء الملاحة في مقالة [شاشة الخريطة أثناء الملاحة](../guidance/map-during-navigation.md).
+
 
 ## تخصيص خط المسار {#customize-route-line}
 
@@ -283,7 +284,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
 </TabItem>
 
@@ -291,13 +292,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-باستخدام إعداد **تخصيص خط المسار**، يمكنك اختيار مظهر خط المسار الذي سيكون مرئيًا على الخريطة أثناء الملاحة. يمكنك تحديد *اللون*، و*عرض الخط*، وعرض *أسهم الانعطاف* عليه. لكل ملف شخصي، يمكنك اختيار عرض خط مختلف. تم وصف جميع هذه المعلمات بالتفصيل في مقالة *شاشة الخريطة أثناء الملاحة* في قسم [مظهر خط المسار](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+باستخدام إعداد **تخصيص خط المسار**، يمكنك اختيار مظهر خط المسار الذي سيكون مرئيًا على الخريطة أثناء الملاحة. يمكنك تحديد *اللون*، و*عرض الخط*، وعرض *أسهم الانعطاف* عليه. لكل ملف تعريف، يمكنك اختيار عرض خط مختلف. يتم وصف جميع هذه المعلمات بالتفصيل في مقالة *شاشة الخريطة أثناء الملاحة* في قسم [مظهر خط المسار](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## معلمات المركبة {#vehicle-parameters}
@@ -308,7 +309,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -316,7 +317,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -324,12 +325,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لحساب المسار الأمثل في OsmAnd، يجب أن تأخذ في الاعتبار معلمات المركبة التالية:
 
-1. اضبط [*السرعة الافتراضية* أو *سرعات الطريق*](#default-speed--road-speeds)، كـ [الحد الأدنى والأقصى للسرعة](#road-speeds) للمركبة. سيساعد هذا التطبيق على تحديد الوقت المطلوب لإكمال المسار ويسمح له باختيار أفضل مسار، مع الأخذ في الاعتبار حدود السرعة على أجزاء الطريق المختلفة.
+1. قم بتعيين [*السرعة الافتراضية* أو *سرعات الطريق*](#default-speed--road-speeds)، كـ [الحد الأدنى والأقصى للسرعة](#road-speeds) للمركبة. سيساعد هذا التطبيق على تحديد الوقت المطلوب لإكمال المسار ويسمح له باختيار أفضل مسار، مع الأخذ في الاعتبار حدود السرعة على أجزاء الطريق المختلفة.
 2. حدد [*نوع*](#fuel-used-by-motor) الوقود المستخدم بواسطة المحرك. سيسمح هذا للتطبيق بتقدير انبعاثات ثاني أكسيد الكربون.
 3. أدخل [*سعة خزان الوقود*](#fuel-tank-capacity) لتتبع مستوى الوقود واستهلاكه بدقة.
 4. حدد [*معلمات الحجم والوزن*](#size-parameters) لمركبتك، والتي يمكن أن تساعد التطبيق في حساب المسار الأمثل وتجنب العوائق على الطريق بسبب القيود.
 
-سيساعدك ضبط المعلمات بشكل صحيح في تطبيق OsmAnd على تجنب المشاكل عند التنقل في مسار، واختيار الأنسب وفقًا لنوع المركبة وقيود الطريق، وحساب وقت رحلتك.
+سيساعدك تعيين المعلمات بشكل صحيح في تطبيق OsmAnd على تجنب المشاكل عند التنقل في مسار، واختيار الأنسب وفقًا لنوع المركبة وقيود الطريق، وحساب وقت رحلتك.
 
 
 ### معلمات الحجم {#size-parameters}
@@ -340,7 +341,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -348,48 +349,48 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تؤثر معلمات المركبة على الملاحة وإنشاء المسار لأنها تحدد توفر الطرق والجسور والعبّارات والسدود وغيرها من البنى التحتية. إذا تجاوز ارتفاع أو عرض أو طول أو وزن المركبة القيم المسموح بها لأقسام معينة من الطريق، فسيقوم نظام الملاحة OsmAnd بإيجاد مسار بديل لتجنب العوائق على طول الطريق.
+تؤثر معلمات المركبة على الملاحة وبناء المسار لأنها تحدد توفر الطرق، والجسور، والعبّارات، والسدود، وغيرها من البنى التحتية. إذا تجاوز ارتفاع، أو عرض، أو طول، أو وزن المركبة القيم المسموح بها لأقسام معينة من الطريق، فسيجد نظام الملاحة OsmAnd مسارًا بديلاً لتجنب العوائق على طول الطريق.
 
 - ستتوافق وحدات القياس مع الإعدادات المختارة في *الإعدادات العامة ← [الوحدات والتنسيقات](../../personal/profiles.md#units--formats)*.
 - يمكن تعيين معلمات المركبة يدويًا.
-- إذا قمت بتحديد معلم قياس المركبة يدويًا، فسوف يقدم لك التطبيق أقرب قيمة من القائمة الجاهزة. هذا ضروري لتجنب الأخطاء وبناء المسار بشكل أكثر صحة.
+- إذا قمت بتحديد معلم قياس المركبة يدويًا، فسيعرض لك التطبيق أقرب قيمة من القائمة الجاهزة. هذا ضروري لتجنب الأخطاء وبناء المسار بشكل أكثر صحة.
 - يمكنك اختيار معلمات المركبة من قائمة جاهزة من الأحجام.
-- لا تضبط الحجم، *لا شيء*، مما يعني أنه لن يتم تطبيق أي قيود على المعلم المحدد.
+- لا تقم بتعيين الحجم، *لا شيء*، مما يعني أنه لن يتم تطبيق أي قيود على المعلم المحدد.
 
 #### الحدود {#limits}
 
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> حد الوزن**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> معلم الوزن متاح فقط في أنواع الملاحة مثل [*السيارة، الشاحنة، والدراجة النارية*](../../navigation/routing/car-based-routing.md).
+**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> حد**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> معلم الوزن متاح فقط في أنواع الملاحة مثل [*السيارة، الشاحنة، والدراجة النارية*](../../navigation/routing/car-based-routing.md).
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
-**2.** [**<Translate android="true" ids="routing_attr_height_name"/> حد الارتفاع**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> معلم الارتفاع متاح فقط في أنواع الملاحة مثل *[السيارة، الشاحنة، الدراجة النارية](../../navigation/routing/car-based-routing.md)*، و*[القارب](../../navigation/routing/boat-navigation.md)*.
+**2.** [**<Translate android="true" ids="routing_attr_height_name"/> حد**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> معلم الارتفاع متاح فقط في أنواع الملاحة مثل *[السيارة، الشاحنة، الدراجة النارية](../../navigation/routing/car-based-routing.md)*، و*[القارب](../../navigation/routing/boat-navigation.md)*.
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_height_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_height_boat_andr.png)
 
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> حد الطول**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> معلم الطول متاح فقط في أنواع الملاحة مثل [*السيارة، الشاحنة، والدراجة النارية*](../../navigation/routing/car-based-routing.md).
+**3.** [**<Translate android="true" ids="routing_attr_length_name"/> حد**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> معلم الطول متاح فقط في أنواع الملاحة مثل [*السيارة، الشاحنة، والدراجة النارية*](../../navigation/routing/car-based-routing.md).
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_length_andr.png)
 
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> حد العرض**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> معلم العرض متاح فقط في أنواع الملاحة مثل *[السيارة، الشاحنة، الدراجة النارية](../../navigation/routing/car-based-routing.md)*، و*[القارب](../../navigation/routing/boat-navigation.md)*.
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> حد**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> معلم العرض متاح فقط في أنواع الملاحة مثل *[السيارة، الشاحنة، الدراجة النارية](../../navigation/routing/car-based-routing.md)*، و*[القارب](../../navigation/routing/boat-navigation.md)*.
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 يمكن أن تكون حدود معلمات المركبة مهمة للملاحة وسلامة الطرق. قد تتضمن بعض هذه القيود ما يلي:
 
 1. قيود على المركبات التي تتحرك في مناطق حضرية معينة.
-2. قيود على حركة المركبات في أقسام معينة من الطريق، مثل حيث توجد جسور، أنفاق ذات مساحة محدودة، جسور علوية منخفضة الارتفاع، منعطفات معقدة، أو هياكل أخرى.
+2. قيود على حركة المركبات في أقسام معينة من الطريق، مثل حيث توجد جسور، أو أنفاق ذات مساحة محدودة، أو جسور علوية منخفضة الارتفاع، أو منعطفات معقدة، أو هياكل أخرى.
 3. حدود الوزن لكل محور مركبة يمكن أن تكون مهمة بشكل خاص للشاحنات.
-4. قيود على المركبات التي تتحرك في ظروف معينة، مثل درجات الحرارة العالية، الطرق الرطبة أو الثلجية، في الليل، أو في الظروف الجوية ذات الرؤية المحدودة.
+4. قيود على المركبات التي تتحرك في ظروف معينة، مثل درجات الحرارة المرتفعة، أو الطرق الرطبة أو الثلجية، أو في الليل، أو في ظروف جوية ذات رؤية محدودة.
 
-يمكن أن تكون هذه القيود مهمة للملاحة ويجب أخذها في الاعتبار عند تخطيط المسار. إذا تجاوزت المركبة الحدود، فقد يؤدي ذلك إلى مشاكل في سلامة الطرق، وتلف البنية التحتية، وغرامات الحوادث، وعواقب قانونية أخرى. لذلك، يجب على السائقين فحص المسار بعناية والتأكد من أن ارتفاع مركبتهم يفي بالحدود.
+يمكن أن تكون هذه القيود مهمة للملاحة ويجب أخذها في الاعتبار عند تخطيط المسار. إذا تجاوزت المركبة الحدود، فقد يؤدي ذلك إلى سلامة الطرق، وتلف البنية التحتية، وغرامات الحوادث، وعواقب قانونية أخرى. لذلك، يجب على السائقين فحص المسار بعناية والتأكد من أن ارتفاع مركبتهم يفي بالحدود.
 
 
 ### معلمات الوقود {#fuel-parameters}
@@ -400,20 +401,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 إذا اخترت نوع المحرك في معلمات المركبة، فسيتم عرض [***بيانات بصمة ثاني أكسيد الكربون***](../../navigation/setup/route-details.md#elevation-info) فوق الرسم البياني في [تفاصيل المسار](../setup/route-details.md).
-تتوفر ستة أنواع وقود: ***البنزين، الديزل، غاز البترول المسال، الغاز الطبيعي المضغوط، الكهرباء،*** و***الهجين***.
+تتوفر ستة أنواع وقود: ***بنزين، ديزل، غاز البترول المسال، غاز طبيعي مضغوط، كهربائي،*** و***هجين***.
 
 **قابلية التطبيق:**
 
@@ -426,24 +427,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يسمح لك معلم **سعة خزان الوقود** بتتبع مستوى الوقود واستهلاكه في مركبتك بدقة أكبر من خلال توفير الحجم الكلي لخزان الوقود. يتم تحديد وحدة قياس سعة الوقود من خلال الإعدادات المكونة في *القائمة ← تكوين الملف الشخصي ← الإعدادات العامة ← الوحدات والتنسيقات ← وحدة الحجم*. للحصول على إرشادات مفصلة حول إعداد الوحدات والتنسيقات، ارجع إلى مقالة [الملف الشخصي (الإعدادات)](https://osmand.net/docs/user/personal/profiles#units--formats).
+يسمح لك معلم **سعة خزان الوقود** بتتبع مستوى الوقود واستهلاك مركبتك بدقة أكبر من خلال توفير الحجم الكلي لخزان الوقود الخاص بك. يتم تحديد وحدة قياس سعة الوقود بواسطة الإعدادات المكونة في *القائمة ← تكوين الملف الشخصي ← الإعدادات العامة ← الوحدات والتنسيقات ← وحدة الحجم*. للحصول على إرشادات مفصلة حول إعداد الوحدات والتنسيقات، ارجع إلى مقالة [الملف الشخصي (الإعدادات)](https://osmand.net/docs/user/personal/profiles#units--formats).
 
 يدعم OsmAnd الوحدات التالية للسعة:
 
-- غالون - **gal**. يستخدم هذا الاختصار لتمثيل كل من **الغالون الإمبراطوري** و**الغالون الأمريكي**، اعتمادًا على تفضيلات الوحدة المختارة.
-- لتر - **l**. الوحدة المترية للسعة.
+- جالونات - **gal**. تُستخدم هذه الاختصار لتمثيل كل من **الجالونات الإمبراطورية** و**الجالونات الأمريكية**، اعتمادًا على تفضيلات الوحدة المحددة.
+- لترات - **l**. الوحدة المترية للسعة.
 
 **قابلية التطبيق:**
 
@@ -452,9 +453,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 من خلال إدخال السعة الدقيقة لخزان الوقود الخاص بك، يمكن للتطبيق توفير تجربة أكثر تخصيصًا، بما في ذلك:
 
 - تتبع دقيق للوقود المتبقي بناءً على استهلاكك.
-- تخطيط مسار محسّن مع محطات وقود محسّنة وفقًا لحجم خزان الوقود الخاص بك.
+- تخطيط مسار محسن مع توقفات وقود محسنة وفقًا لحجم خزان الوقود الخاص بك.
 
-لضمان حسابات واقتراحات ملاحة دقيقة، تحقق من أن الوحدة المختارة تتطابق مع معيار قياس خزان الوقود الخاص بك.
+لضمان دقة الحسابات واقتراحات الملاحة، تحقق من أن الوحدة المختارة تتطابق مع معيار قياس خزان الوقود الخاص بك.
 
 
 ### السرعة الافتراضية / سرعات الطريق {#default-speed--road-speeds}
@@ -463,26 +464,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_speeds_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-لجميع أنواع الملاحة، يمكن أن تختلف السرعة الدنيا والقصوى المسموح بها، سواء افتراضيًا أو حسب الطريق، وفقًا لقيم معينة ([حدود السرعة الافتراضية](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) والقيود المفروضة على المركبات. يتم تعيين السرعة أيضًا بزيادات معينة لجعل إعدادات التطبيق قابلة للاستخدام إلى أقصى حد. بالنسبة لملفات تعريف *المشي* و*ركوب الخيل* و*ركوب الدراجات*، بزيادات صغيرة تعادل 0.1 كم/ساعة ([الوحدات والتنسيقات](https://osmand.net/docs/user/personal/profiles#units--formats))، وبالنسبة للملفات الأخرى، بزيادات تعادل 1 كم/ساعة.
+لجميع أنواع الملاحة، يمكن أن تختلف السرعة الدنيا والقصوى المسموح بها، سواء افتراضيًا أو حسب الطريق، وفقًا لقيم معينة ([حدود السرعة الافتراضية](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) والقيود المفروضة على المركبات. يتم تعيين السرعة أيضًا بزيادات معينة لجعل إعدادات التطبيق قابلة للاستخدام إلى أقصى حد. بالنسبة لملفات *المشي*، و*ركوب الخيل*، و*ركوب الدراجات*، بزيادات صغيرة تعادل 0.1 كم/ساعة ([الوحدات والتنسيقات](https://osmand.net/docs/user/personal/profiles#units--formats))، وبالنسبة للملفات الشخصية الأخرى، بزيادات تعادل 1 كم/ساعة.
 تحدد إعدادات السرعة متى يتم تفعيل [الإعلانات الصوتية](../guidance/voice-navigation.md).
 
 تُستخدم هذه المعلمات كسرعة لتقدير [وقت الوصول](../../widgets/nav-widgets.md#time-to-intermediate) عندما لا يمكن تحديد السرعة من بيانات الخريطة:
 
 - للملف الشخصي المحدد؛
 - إذا كانت الطرق المستخدمة لا تحتوي على حدود سرعة، مما قد يؤثر أيضًا على التوجيه؛
-- إذا تم تحديد مسارات أنشأها المستخدم أو تم استيرادها.
+- إذا تم تحديد مسارات تم إنشاؤها بواسطة المستخدم أو مستوردة.
 
 
 #### السرعة الافتراضية {#default-speed}
@@ -494,7 +495,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+![إعدادات الملاحة](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 
 <!--
@@ -521,12 +522,12 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 -->
 
 - **السرعة الدنيا**
-يحدد الإعداد الحد الأدنى لسرعة القيادة لجميع أنواع الطرق على المسار. يزيد من الأولوية للطرق ذات السرعة الموصى بها الأقل من السرعة الدنيا.
+    يحدد الإعداد الحد الأدنى لسرعة القيادة لجميع أنواع الطرق على المسار. يزيد من الأولوية للطرق ذات السرعة الموصى بها الأقل من السرعة الدنيا.
 - **السرعة القصوى**
-يحدد الإعداد الحد الأقصى لسرعة القيادة ويقلل من الأولوية للطرق ذات السرعة المحتملة الأعلى من السرعة القصوى.
+    يحدد الإعداد الحد الأقصى لسرعة القيادة ويقلل من الأولوية للطرق ذات السرعة الممكنة الأعلى من السرعة القصوى.
 
 
-## إرشادات المسار التفصيلية {#detailed-track-guidance}
+## توجيه المسار المفصل {#detailed-track-guidance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -534,27 +535,27 @@ These settings in iOS are available in *Menu → Settings → app profile → Na
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
-![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
+![الربط بالطرق 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![إعدادات الملاحة أندرويد](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* ← *إرشادات المسار التفصيلية*
+انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *توجيه المسار المفصل*
 
-![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png) ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
+![إعدادات الملاحة](@site/static/img/navigation/detailed_track_guidance_1_ios.png) ![إعدادات الملاحة](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تعمل ميزة **إرشادات المسار التفصيلية** على تحسين دقة التنقل في المسار عند استخدام **المسارات المستندة إلى المسار**. عند تحديد مسار كوجهة، يمكنك تمكين إعداد [الربط بالطرق](../setup/gpx-navigation.md#attach-to-the-roads) من قائمة [متابعة المسار](../setup/gpx-navigation.md#follow-track-options). يضمن هذا محاذاة المسار مع الطرق الموجودة لتنقل أكثر سلاسة ودقة.
+تعمل ميزة **توجيه المسار المفصل** على تحسين دقة الملاحة في المسار عند استخدام **المسارات المستندة إلى المسار**. عند تحديد مسار كوجهة، يمكنك تمكين إعداد [الربط بالطرق](../setup/gpx-navigation.md#attach-to-the-roads) من قائمة [متابعة المسار](../setup/gpx-navigation.md#follow-track-options). يضمن ذلك محاذاة المسار مع الطرق الموجودة لملاحة أكثر سلاسة ودقة.
 
-هناك خياران لاستخدام *إرشادات المسار التفصيلية*:
+هناك خياران لاستخدام *توجيه المسار المفصل*:
 
-- **<Translate android="true" ids="ask_every_time"/>** (*الإعدادات الافتراضية*) – سيظهر خيار *الربط بالطرق* في قسم [تفاصيل المسار](../setup/route-details.md) في كل مرة يتم فيها حساب مسار مستند إلى المسار. يتيح لك هذا تحديد ما إذا كنت تريد تطبيق ربط الطريق لكل جلسة ملاحة.
+- **<Translate android="true" ids="ask_every_time"/>** (*الإعدادات الافتراضية*) – سيظهر خيار *الربط بالطرق* في قسم [تفاصيل المسار](../setup/route-details.md) في كل مرة يتم فيها حساب مسار مستند إلى المسار. يتيح لك ذلك تحديد ما إذا كنت تريد تطبيق ربط الطرق لكل جلسة ملاحة.
 
-- **<Translate android="true" ids="shared_string_always"/>** – سيتم تطبيق عملية ربط الطريق تلقائيًا لكل مسار *ملاحة بالمسار* دون الحاجة إلى تأكيد يدوي.
+- **<Translate android="true" ids="shared_string_always"/>** – سيتم تطبيق عملية ربط الطرق تلقائيًا لكل مسار *ملاحة بالمسار* دون الحاجة إلى تأكيد يدوي.
 
 لمزيد من المعلومات حول استخدام الملاحة المستندة إلى المسار، قم بزيارة [الملاحة بالمسار](../setup/gpx-navigation.md).
 

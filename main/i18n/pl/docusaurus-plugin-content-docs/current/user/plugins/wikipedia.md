@@ -1,5 +1,5 @@
 ---
-source-hash: 9e8ffc4e9ad66f08b7e397dce821b6b3045def307beb315cd2a5eb994c70479b
+source-hash: 12e72d10b1449ce58c5fb653cdfb0cfc1c20daeb3be3887c57878bc922044d85
 sidebar_position: 18
 title: Wikipedia
 ---
@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ## Przegląd {#overview}
 
 :::info Funkcja płatna
-Wtyczka Wikipedia jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd.
+Wtyczka Wikipedia jest [funkcją płatną](../purchases/index.md) aplikacji OsmAnd.
 :::
 
 Posiadanie Wikipedii podczas podróży pomaga dowiedzieć się więcej o odwiedzanych miejscach. Jest dostępna offline i pokazuje Popularne Miejsca (Android) / artykuły z Wikipedii (iOS) związane z punktami zainteresowania bezpośrednio na mapie.
@@ -27,10 +27,10 @@ Posiadanie Wikipedii podczas podróży pomaga dowiedzieć się więcej o odwiedz
 Wtyczka Wikipedia to oddzielna funkcja, którą można włączać/wyłączać w zależności od potrzeb. Po włączeniu umożliwia przesyłanie danych z Wikipedii [pobranych](../personal/maps-resources.md#download-maps-maps) dla każdego regionu geograficznego. Mapa zawiera dwa rodzaje przesłanej wiedzy z Wikipedii: krótkie informacje i pełny artykuł.
 
 
-Krótkie informacje są dostarczane przez POI Wikipedii (skrót od „[punktu zainteresowania](../map/point-layers-on-map.md)”). Jeśli opcja Wikipedia jest włączona w menu, POI Wikipedii pojawia się na mapie. Po dotknięciu punktu zainteresowania, rozszerza się on, aby wyświetlić krótkie informacje z Wikipedii, a także możliwość otwarcia pełnego artykułu. POI Wikipedii, a także powiązane artykuły, są dostępne offline. Możesz je czytać w miarę potrzeb, zmieniać języki i wyszukiwać inne informacje w Wikipedii.
+Krótkie informacje są dostarczane przez POI Wikipedii (skrót od „[punkt zainteresowania](../map/point-layers-on-map.md)”). Jeśli opcja Wikipedia jest włączona w menu, na mapie pojawia się POI Wikipedii. Po dotknięciu punktu zainteresowania, rozszerza się on, aby wyświetlić krótkie informacje z Wikipedii, a także możliwość otwarcia pełnego artykułu. POI Wikipedii, a także powiązane artykuły, są dostępne offline. Możesz je czytać w razie potrzeby, przełączać języki i wyszukiwać inne informacje w Wikipedii.
 
 
-[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) to bezpłatna, wielojęzyczna, otwarta encyklopedia internetowa, tworzona i utrzymywana przez społeczność redaktorów-wolontariuszy za pomocą systemu edycji opartego na wiki.
+[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) to bezpłatna, wielojęzyczna, otwarta encyklopedia internetowa tworzona i utrzymywana przez społeczność edytorów-wolontariuszy, korzystających z systemu edycji opartego na wiki.
 
 &nbsp;
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
@@ -38,9 +38,9 @@ Krótkie informacje są dostarczane przez POI Wikipedii (skrót od „[punktu za
 
 ## Wymagane parametry konfiguracji {#required-setup-parameters}
 
-Aby wyświetlić dane Wikipedii na mapie, należy dokonać następujących ustawień:
+Aby wyświetlić dane z Wikipedii na mapie, należy dokonać następujących ustawień:
 
-1. [Kup](../plugins/index.md#purchase) i [Włącz](../plugins/index.md#enable--disable) wtyczkę Wikipedia w sekcji Wtyczki w *Menu głównym*.
+1. [Kup](../plugins/index.md#purchase) i [Włącz](../plugins/index.md#enable--disable) wtyczkę Wikipedia w sekcji Wtyczki w *Menu Głównym*.
 2. Pobierz [pakiety Wikipedii](#download-wikipedia-packages) dla wymaganych regionów.
 3. Wyświetl [POI Wikipedii](#display-wikipedia-on-the-map) na mapie dla wymaganego profilu.
 4. Skonfiguruj preferowane [języki](#set-preferred-language) do czytania artykułów.
@@ -48,15 +48,15 @@ Aby wyświetlić dane Wikipedii na mapie, należy dokonać następujących ustaw
 
 ## Pobierz pakiety Wikipedii {#download-wikipedia-packages}
 
-Dane Wikipedii są dostępne dla każdego regionu geograficznego. Jeśli są załadowane dla jednego regionu, a nie załadowane dla innego, w pierwszym przypadku możesz pracować z informacjami z Wikipedii podczas przeglądania regionu na mapie, a w drugim przypadku region nie będzie miał żadnych informacji z Wikipedii. Po załadowaniu dane Wikipedii stają się dostępne ogólnie, a także offline.
+Dane z Wikipedii są dostępne dla każdego regionu geograficznego. Jeśli są załadowane dla jednego regionu, a nie załadowane dla innego, w pierwszym przypadku możesz pracować z informacjami z Wikipedii podczas przeglądania regionu na mapie, a w drugim przypadku region nie będzie miał żadnych informacji z Wikipedii. Po załadowaniu dane z Wikipedii stają się dostępne ogólnie, a także offline.
 
-Aby pobrać dane Wikipedii dla regionu, przejdź do [dostępnych pakietów do pobrania w *Menu głównym*](../start-with/download-maps.md#download---main-menu), znajdź potrzebny region i otwórz go. Dane Wikipedii będą wśród innych pakietów.
+Aby pobrać dane z Wikipedii dla regionu, przejdź do [dostępnych pakietów do pobrania w *Menu Głównym*](../start-with/download-maps.md#download---main-menu), znajdź potrzebny region i otwórz go. Dane z Wikipedii będą wśród innych pakietów.
 
-Dane Wikipedii do pobrania według regionu można otworzyć w następujący sposób:
+Możesz otworzyć dane z Wikipedii do pobrania według regionu w następujący sposób:
 
 1. **Android**. Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 2. **iOS**. Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
-3. Wybierz wymagany region. Po otwarciu regionu dane Wikipedii będą wśród innych pakietów.
+3. Wybierz wymagany region. Po otwarciu regionu dane z Wikipedii będą wśród innych pakietów.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -64,7 +64,7 @@ Dane Wikipedii do pobrania według regionu można otworzyć w następujący spos
 
 Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*
 
-![Pobierz Wikipedię na Androidzie](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
+![Pobierz Wikipedię w Androidzie](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
 </TabItem>
 
@@ -72,7 +72,7 @@ Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate andr
 
 Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
-![Pobierz Wikipedię na iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
+![Pobierz Wikipedię w iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
 </TabItem>
 
@@ -81,7 +81,7 @@ Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate ios=
 
 ## Wyświetl Wikipedię na mapie {#display-wikipedia-on-the-map}
 
-Ładując dane Wikipedii dla wymaganych regionów, możesz kontrolować widoczność tych danych na mapie. Widoczność jest kontrolowana przez [Popularne Miejsca (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **dla Androida** / [POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) **dla iOS**, które mogą być pokazywane lub ukrywane dla wszystkich przesłanych regionów przez określony [profil](../personal/profiles.md), na przykład profil do jazdy samochodem, profil do jazdy na rowerze, inny profil do pokazywania transportu publicznego i inne.
+Ładując dane z Wikipedii dla wymaganych regionów, możesz kontrolować widoczność tych danych na mapie. Widoczność jest kontrolowana przez [Popularne Miejsca (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **dla Androida** / [POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) **dla iOS**, które można pokazać lub ukryć dla wszystkich przesłanych regionów przez określony [profil](../personal/profiles.md), na przykład profil do jazdy samochodem, profil do jazdy na rowerze, inny profil do pokazywania transportu publicznego i inne.
 
 Aby pokazać lub ukryć POI Wikipedii, najpierw wybierz profil, a następnie włącz/wyłącz opcję **Wikipedia**.
 
@@ -113,13 +113,13 @@ Aby pokazać/ukryć POI Wikipedii, wykonaj następujące czynności:
 </Tabs>
 
 
-## Szukaj w Wikipedii {#search-wikipedia}
+## Wyszukaj w Wikipedii {#search-wikipedia}
 
 Dzięki przesłanym danym z Wikipedii, niezależnie od trybu widoczności [POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) na mapie, możliwe jest [wyszukiwanie](../search/search-poi.md) wszelkich informacji z Wikipedii.
 
 Po dotknięciu przycisku Szukaj, pojawia się dodatkowy panel umożliwiający [wyszukiwanie](../search/index.md) całego tekstu i/lub konkretnej kategorii. W pierwszym przypadku wyniki wyszukiwania pokażą POI Wikipedii z odpowiadającymi artykułami Wikipedii wśród innych typów informacji. W przypadku [wyszukiwania kategorii Wikipedii](../search/search-poi.md#poi-search), wyniki wyszukiwania pokażą tylko informacje z Wikipedii, posortowane według najbliższej lokalizacji do obszaru mapy, który jest aktualnie wyświetlany na ekranie.
 
-- W wersji **Android** możesz otworzyć [Wyszukiwanie](../search/index.md), dotykając *ikony wyszukiwania* w lewym górnym rogu ekranu i/lub dotykając *opcji wyszukiwania* w menu.
+- W wersji **Android** możesz otworzyć [Wyszukiwanie](../search/index.md), dotykając *ikony wyszukiwania* w lewym górnym rogu ekranu i/lub dotykając *opcji Wyszukaj* w menu.
 - W wersji **iOS**, aby otworzyć [Wyszukiwanie](../search/index.md), ikona wyszukiwania znajduje się w lewym górnym rogu ekranu.
 
 <!--
@@ -168,7 +168,7 @@ Aby otworzyć artykuł z Wikipedii:
 
 1. Włącz [warstwę POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) dla określonego profilu.
 2. Dotknij POI na mapie.
-3. W [menu kontekstowym](../map/map-context-menu.md) POI dotknij *Szczegóły* (lub po prostu przeciągnij *menu kontekstowe* w górę), aby wyświetlić streszczenie wybranego artykułu z Wikipedii.
+3. W [menu kontekstowym](../map/map-context-menu.md) POI dotknij *Szczegóły* (lub po prostu przesuń *menu kontekstowe* w górę), aby wyświetlić abstrakt wybranego artykułu z Wikipedii.
 4. Jeśli dotkniesz tego tekstu (w wersji iOS), zostaniesz przekierowany do artykułu z Wikipedii offline.
 5. Użyj przycisku *Czytaj artykuł* lub *Czytaj pełny artykuł*, aby otworzyć pełną wersję artykułu z Wikipedii.
 
@@ -184,7 +184,7 @@ Aby otworzyć artykuł z Wikipedii:
 
 <TabItem value="ios" label="iOS">
 
-![Francuski POI Wikipedii w języku angielskim na iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
+![Francuski POI Wikipedii w języku angielskim w iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
@@ -197,7 +197,7 @@ Możesz [ustawić język(-i)](#set-preferred-language), w którym wolisz czytać
 
 ### Ustaw preferowany język {#set-preferred-language}
 
-W wersjach **Android** i **iOS** aplikacji OsmAnd możesz ustawić preferowany język (lub języki) do wyświetlania artykułów z Wikipedii za pomocą *menu Konfiguruj mapę*. Jeśli wybierzesz więcej niż jeden język, artykuły *Wikipedii* na mapie będą wyświetlane w dowolnym z nich. Przejdź do:
+W wersjach **Android** i **iOS** aplikacji OsmAnd możesz ustawić preferowany język (lub języki) do wyświetlania artykułów z Wikipedii za pomocą *menu Konfiguruj mapę*. Jeśli wybierzesz więcej niż jeden język, artykuły z *Wikipedii* na mapie będą wyświetlane w dowolnym z nich. Przejdź do:
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
 2. Wybierz potrzebny profil i w sekcji *<Translate android="true" ids="shared_string_show"/>* wybierz *<Translate android="true" ids="poi_osmwiki"/>* dla Androida / *<Translate ios="true" ids="download_wikipedia_maps"/>* dla iOS.
@@ -228,9 +228,9 @@ W wersji **iOS** możesz również ustawić preferowany język dla artykułów z
 
 :::
 
-### Zmień języki w artykule {#switch-languages-inside-the-article}
+### Przełączanie języków w artykule {#switch-languages-inside-the-article}
 
-W przypadku, gdy *artykuł z Wikipedii* jest dostępny w różnych językach, możesz zmienić język podczas czytania. Po dotknięciu odpowiedniej ikony w prawym górnym rogu ekranu zostaną wyświetlone opcje do wyboru.
+W przypadku, gdy *artykuł z Wikipedii* jest dostępny w różnych językach, możesz przełączyć język podczas czytania. Po dotknięciu odpowiedniej ikony w prawym górnym rogu ekranu zostaną wyświetlone opcje do wyboru.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -254,7 +254,7 @@ W przypadku, gdy *artykuł z Wikipedii* jest dostępny w różnych językach, mo
 Możesz wybrać, czy pobierać obrazy z Wikipedii na swoje urządzenie, czy nie, wewnątrz *artykułu z Wikipedii*:
 
 - **Android**. Otwórz *[artykuł z Wikipedii](#display-wikipedia-on-the-map) → &#8942; → Opcje*
-- **iOS**. Otwórz *[artykuł z Wikipedii](#display-wikipedia-on-the-map) → Ikona obrazu*
+- **iOS**. Otwórz *[artykuł z Wikipedii](#display-wikipedia-on-the-map) → ikona obrazu*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -272,7 +272,7 @@ Możesz wybrać, czy pobierać obrazy z Wikipedii na swoje urządzenie, czy nie,
 
 </Tabs>
 
-W wersji **iOS** aplikacji możesz również uzyskać dostęp do opcji pobierania obrazów za pomocą *ustawień wtyczki Wikipedia*:
+W wersji **iOS** aplikacji możesz również uzyskać dostęp do opcji pobierania obrazów, korzystając z *ustawień wtyczki Wikipedia*:
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*

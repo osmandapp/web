@@ -1,5 +1,5 @@
 ---
-source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
+source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
 title:  الإعداد
 ---
@@ -18,13 +18,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### كيفية استعادة البيانات {#how-to-recover-data}
 
-لمنع فقدان البيانات، تأكد من أن بياناتك الشخصية ومساراتك وخرائطك مدعومة. يقدم OsmAnd خيارات لتصدير بياناتك إلى تنسيقات مختلفة. في حالة فقدان البيانات أو تغيير الجهاز، اتبع [هذه الخطوات](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) لاستعادة بياناتك من نسخة احتياطية.
+لمنع فقدان البيانات، تأكد من أن بياناتك الشخصية ومساراتك وخرائطك مدعومة. يوفر OsmAnd خيارات لتصدير بياناتك إلى تنسيقات مختلفة. في حالة فقدان البيانات أو تغيير الجهاز، اتبع [هذه الخطوات](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) لاستعادة بياناتك من نسخة احتياطية.
 
 
 ### كيفية نقل المفضلة والمسارات إلى جهاز جديد {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
-- أبسط طريقة هي تصدير ملف تعريف بالبيانات الضرورية: *القائمة ← الإعدادات ← تصدير ←* حدد البيانات التي تريد تصديرها.
-- بدلاً من ذلك، يمكنك عمل نسخة احتياطية لجميع بياناتك من الجهاز السابق عن طريق نسخ المجلد الموجود في *الإعدادات ← إعدادات OsmAnd ← مجلد تخزين البيانات* (المسار الافتراضي: `Android/data/net.osmand.plus`). ثم، الصق محتويات هذا المجلد في مجلد تخزين البيانات على جهازك الجديد.
+- أبسط طريقة هي تصدير ملف شخصي بالبيانات الضرورية: *القائمة ← الإعدادات ← تصدير ←* حدد البيانات التي تريد تصديرها.
+- بدلاً من ذلك، يمكنك عمل نسخة احتياطية لجميع بياناتك من الجهاز السابق عن طريق نسخ المجلد الموجود في *الإعدادات ← إعدادات OsmAnd ← مجلد تخزين البيانات* (المسار الافتراضي: `Android/data/net.osmand.plus`). ثم الصق محتويات هذا المجلد في مجلد تخزين البيانات على جهازك الجديد.
 
 
 ## استيراد الملفات {#import-files}
@@ -48,7 +48,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 بدءًا من الإصدار 4.9 من أندرويد، يدمج OsmAnd خط نظام جهازك في واجهة التطبيق، مما يحسن تصميمه عن طريق التخلص من استخدام الخطوط المختلطة. يتم تطبيق خط النظام تلقائيًا على جميع عناصر واجهة المستخدم.
 
 - يستخدم OsmAnd خط النظام الافتراضي لجهازك في جميع عناصر واجهة المستخدم.
-- يتم التبديل إلى خط النظام تلقائيًا. لا تحتاج إلى تكوين أي إعدادات في التطبيق لهذه الميزة.
+- يتم التبديل إلى خط النظام تلقائيًا. لا تحتاج إلى تهيئة أي إعدادات في التطبيق لهذه الميزة.
 - لا تؤثر هذه الميزة على الخطوط المعروضة على الخريطة.
 
 
@@ -79,7 +79,7 @@ When you *turn on a USB drive to share files* with a computer or disconnect the 
     connecting the device to a computer as external storage and performing the move from there.
 
 
-### How do I use my SD card with OsmAnd under Android 4.4+ and 5 {#how-do-i-use-my-sd-card-with-osmand-under-android-44-and-5}
+### How do I use my SD card with OsmAnd under Android 4.4+ and 5 {#how-do-i-use-my-sd-card-with-osmand-under-android-44-and 5}
 
 If you update your Android to version 4.4.x, you will experience a known
 Android issue with the `WRITE_EXTERNAL_STORAGE` permission: Android has
@@ -131,6 +131,6 @@ errors (e.g. if the SD card is too full).
 
 يمكن حفظ حزم الخرائط بتنسيقين: [SQLite و Metainfo](https://osmand.net/docs/user/map/raster-maps). بعد إنشاء حزمة الخرائط الخاصة بك، اتبع هذه الخطوات لنقلها إلى OsmAnd:
 
-- **لأندرويد**. قم بالوصول إلى التخزين على جهازك وانسخ الملف (الملفات) من جهاز الكمبيوتر الخاص بك إلى المجلد `BASE_OSMAND_STORAGE/tiles_`. بدلاً من ذلك، يمكنك تنزيل الملف من بريدك الإلكتروني، أو السحابة، أو برنامج المراسلة، وفتحه باستخدام تطبيق OsmAnd. ستتم إضافة حزمة الخرائط تلقائيًا إلى قائمة خرائطك عبر الإنترنت.
+- **لأندرويد**. قم بالوصول إلى التخزين على جهازك وانسخ الملف (الملفات) من جهاز الكمبيوتر الخاص بك إلى المجلد `BASE_OSMAND_STORAGE/tiles_`. بدلاً من ذلك، يمكنك تنزيل الملف من بريدك الإلكتروني أو السحابة أو برنامج المراسلة، وفتحه باستخدام تطبيق OsmAnd. ستتم إضافة حزمة الخرائط تلقائيًا إلى قائمة خرائطك عبر الإنترنت.
 
 - **لـ iOS**. قم بتنزيل الملف من iTunes أو برنامج مراسلة، ثم افتحه باستخدام تطبيق OsmAnd. ستتم إضافة حزمة الخرائط تلقائيًا إلى قائمة خرائطك عبر الإنترنت.

@@ -1,5 +1,5 @@
 ---
-source-hash: 283b1a10b933b84495c848bb63483ec3d45f08c0f3f61e1a3329b1deae7cd6c3
+source-hash: 0cd7fc222e201abda3ee41c3278fe75817181ab14d975d85f25fdb51e7498eae
 sidebar_position: 1
 title: Premiers pas
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Bienvenue dans OsmAnd (OpenStreetMap Automated Navigation Directions) !
+Bienvenue sur OsmAnd (OpenStreetMap Automated Navigation Directions) !
 
 Découvrez comment télécharger des cartes, configurer l'application, utiliser la carte et créer un itinéraire, démarrer la navigation et rechercher des points d'intérêt. Familiarisez-vous avec les points clés de la politique de confidentialité d'OsmAnd et les autorisations requises.
 
@@ -53,17 +53,17 @@ OsmAnd est une application mobile de cartes et de navigation disponible pour **A
 [En savoir plus](../purchases/index.md) sur les versions et les achats d'OsmAnd.
 
 
-## Bienvenue dans OsmAnd {#welcome-to-osmand}
+## Bienvenue sur OsmAnd {#welcome-to-osmand}
 
-Notre objectif est de créer une application cartographique entièrement fonctionnelle qui peut être utilisée à diverses fins hors ligne et en ligne. L'application possède de nombreuses fonctionnalités, vous n'aurez donc pas à basculer entre différentes applications, et tout sera à portée de main.
+Nous visons à créer une application cartographique entièrement fonctionnelle qui peut être utilisée à diverses fins, hors ligne et en ligne. L'application possède de nombreuses fonctionnalités, vous n'aurez donc pas à basculer entre différentes applications, et tout sera à portée de main.
 
 - Visualisez une carte mondiale avec de nombreux détails affichés dans [différents styles de carte](../map/vector-maps.md).
 - Affichez, [recherchez](../search/search-poi.md) et enregistrez divers [points d'intérêt](../map/point-layers-on-map.md).
 - [Planifiez un itinéraire](../plan-route/create-route.md) en voiture, à vélo, à pied et combinez-les en itinéraires multimodaux.
-- Démarrez la [navigation vocale guidée](../navigation/guidance/voice-navigation.md) lorsque vous allumez et éteignez l'écran.
-- Enrichissez votre voyage touristique avec [Wikipedia](../plugins/wikipedia.md) et [Wikivoyage](../plan-route/travel-guides.md) hors ligne.
+- Démarrez la [navigation vocale](../navigation/guidance/voice-navigation.md) lorsque vous allumez et éteignez l'écran.
+- Rendez votre voyage touristique riche avec [Wikipédia](../plugins/wikipedia.md) et [Wikivoyage](../plan-route/travel-guides.md) hors ligne.
 - Personnalisez entièrement la façon dont [la carte est affichée](../map/configure-map-menu.md) et quels [widgets](../widgets/index.md) y sont affichés.
-- Naviguez [par itinéraire](../navigation/setup/route-navigation.md), [par trace donnée](../navigation/setup/gpx-navigation.md), [par transports en commun](../navigation/routing/public-transport-navigation.md) et [hors route](../navigation/setup/markers-navigation.md).
+- Naviguez [par itinéraire](../navigation/setup/route-navigation.md), [par une trace donnée](../navigation/setup/gpx-navigation.md), [par transports en commun](../navigation/routing/public-transport-navigation.md) et [hors-piste](../navigation/setup/markers-navigation.md).
 - Tout fonctionne **hors ligne**.
 - Et n'oubliez pas de contribuer à [OpenStreetMap](https://www.openstreetmap.org/) avec le [plugin d'édition OSM](../plugins/osm-editing.md).
 
@@ -88,7 +88,7 @@ Notre objectif est de créer une application cartographique entièrement fonctio
 
 </Tabs>
 
-Nous vous recommandons d'accorder à OsmAnd l'autorisation de recevoir des informations sur la localisation précise de votre appareil. Nous ne collectons, n'utilisons ni ne partageons vos informations privées, l'accès à la géolocalisation précise est donc nécessaire pour le bon fonctionnement hors ligne de la recherche, de la navigation et d'autres fonctions d'OsmAnd.
+Nous vous recommandons d'accorder à OsmAnd l'autorisation de recevoir des informations sur la localisation précise de votre appareil. Nous ne collectons, n'utilisons ni ne partageons vos informations privées, l'accès à la géolocalisation précise est donc nécessaire pour le bon fonctionnement hors ligne de la recherche, de la navigation et des autres fonctions d'OsmAnd.
 
 
 ### Comment télécharger des cartes {#how-to-download-maps}
@@ -113,7 +113,7 @@ L'application OsmAnd fonctionne avec différents types de cartes, mais elle ne p
 Pour les autres options de téléchargement de cartes disponibles, consultez l'[article Télécharger des cartes](../start-with/download-maps.md).
 
 :::note Commencer à travailler avec des cartes hors ligne
-OsmAnd ne peut pas fonctionner correctement sans cartes hors ligne téléchargées. Bien que l'application prenne en charge les cartes [vectorielles](../map/vector-maps.md) et [raster](../map/raster-maps.md), il est fortement recommandé de commencer à travailler avec des cartes vectorielles hors ligne pour que toutes les fonctions telles que la [recherche](../search/index.md), la [navigation](../navigation/index.md) et le [menu contextuel](../map/map-context-menu.md) fonctionnent correctement.
+OsmAnd ne peut pas fonctionner correctement sans cartes hors ligne téléchargées. Bien que l'application prenne en charge les cartes [Vectorielles](../map/vector-maps.md) et [Raster](../map/raster-maps.md), il est fortement recommandé de commencer à travailler avec des cartes vectorielles hors ligne pour que toutes les fonctions telles que la [Recherche](../search/index.md), la [Navigation](../navigation/index.md) et le [Menu contextuel](../map/map-context-menu.md) fonctionnent correctement.
 :::
 
 
@@ -125,12 +125,12 @@ Bien qu'OsmAnd vous permette de télécharger des cartes pour toutes les région
 
 - **OsmAnd Pro** et **Maps+** offrent des **téléchargements de cartes illimités**, mais vous devez toujours télécharger les cartes une région à la fois.
 - **Limitations de stockage.** Assurez-vous que votre appareil dispose de suffisamment d'espace avant de télécharger plusieurs régions.
-- **Mises à jour automatiques.** Une fois téléchargées, les cartes peuvent être mises à jour via *Menu → Cartes et ressources → Mises à jour.*
+- **Mises à jour automatiques.** Une fois téléchargées, les cartes peuvent être mises à jour via *Menu → Cartes & Ressources → Mises à jour.*
 
 
 ### Comment changer la langue de l'application {#how-to-change-app-language}
 
-L'option *Langue d'affichage* est utilisée pour changer la langue de toute l'application, y compris les invites contextuelles, le texte interne, les messages, etc. Jusqu'à Android 12, OsmAnd vous permet de personnaliser la langue d'affichage selon vos préférences directement dans l'application. À partir d'Android 13 et sur les appareils iOS, la langue d'affichage ne peut être modifiée que dans les paramètres système (voir comment modifier les préférences linguistiques par application dans [Android](https://developer.android.com/guide/topics/resources/app-languages) et [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
+L'option *Langue d'affichage* est utilisée pour changer la langue de toute l'application, y compris les invites contextuelles, le texte interne, les messages, et plus encore. Jusqu'à Android 12, OsmAnd vous permet de personnaliser la langue d'affichage selon vos préférences directement dans l'application. À partir d'Android 13 et sur les appareils iOS, la langue d'affichage ne peut être modifiée que dans les paramètres système (voir comment modifier les préférences linguistiques par application dans [Android](https://developer.android.com/guide/topics/resources/app-languages) et [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -153,7 +153,7 @@ Allez dans : *Paramètres → OsmAnd Maps → Langue*
 </Tabs>
 
 :::note Pas d'option pour définir les langues de l'application
-Sur certains appareils Android (Xiaomi avec Muiu 14), il n'y a pas d'option pour définir les langues de l'application individuellement dans les paramètres système, de sorte que la langue d'OsmAnd ne peut être modifiée qu'avec la langue de l'ensemble du système. Vous pouvez consulter la discussion sur [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) pour plus d'informations.
+Sur certains appareils Android (Xiaomi avec MIUI 14), il n'y a pas d'option pour définir les langues de l'application individuellement dans les paramètres système, de sorte que la langue d'OsmAnd ne peut être modifiée qu'avec la langue de l'ensemble du système. Vous pouvez consulter la discussion sur [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) pour plus d'informations.
 :::
 
 
@@ -185,7 +185,7 @@ Vous pouvez gérer les paramètres de l'application en tant que [paramètres glo
 
 Les [plugins](../plugins/index.md#configure-plugin) étendent considérablement les fonctionnalités de l'application. Presque tous les plugins ont leurs propres [actions de carte](../map/map-context-menu.md), [couches de carte](../map/configure-map-menu.md), [téléchargements de carte](../start-with/download-maps.md) et [paramètres](../plugins/#plugin-settings).
 
-Vous pouvez activer/désactiver les plugins via le [menu principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).
+Vous pouvez activer/désactiver les plugins via [Menu principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -237,7 +237,7 @@ La carte est un élément central d'OsmAnd, et il est important de savoir [comme
 
 ### Comment configurer l'écran {#how-to-configure-screen}
 
-[Configurer l'écran](../widgets/configure-screen.md) vous permet d'activer les widgets [d'information](../widgets/info-widgets.md) (altitude, vitesse, heure actuelle, etc.) et [de navigation](../widgets/nav-widgets.md) (destination, cap, heure d'arrivée, etc.), les [actions rapides](../widgets/quick-action.md) et d'autres éléments qui seront affichés sur la carte.
+[Configurer l'écran](../widgets/configure-screen.md) vous permet d'activer les widgets [d'information](../widgets/info-widgets.md) (altitude, vitesse, heure actuelle, etc.) et [de navigation](../widgets/nav-widgets.md) (destination, cap, heure d'arrivée, etc.), l'[action rapide](../widgets/quick-action.md) et d'autres éléments qui seront affichés sur la carte.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -260,7 +260,7 @@ La carte est un élément central d'OsmAnd, et il est important de savoir [comme
 
 ### Comment ajouter des données personnelles aux cartes {#how-to-add-personal-data-to-maps}
 
-OsmAnd vous permet de faire diverses marques sur la carte pour vos besoins personnels. Par exemple, les [points favoris](../personal/favorites.md) - points personnels avec nom, icône et catégorie, les [marqueurs](../personal/markers.md) - points rapidement ajoutés comme cible, les [notes audio/vidéo](../plugins/audio-video-notes.md) - notes multimédias enregistrées à un point spécifique, les [traces](../personal/tracks/manage-tracks.md) - traces et circuits enregistrés et importés.
+OsmAnd vous permet de faire diverses marques sur la carte pour vos besoins personnels. Par exemple, les [points favoris](../personal/favorites.md) - points personnels avec nom, icône et catégorie, les [marqueurs](../personal/markers.md) - points rapidement ajoutés comme cible, les [notes audio/vidéo](../plugins/audio-video-notes.md) - notes multimédia enregistrées à un point spécifique, les [traces](../personal/tracks/manage-tracks.md) - traces et circuits enregistrés et importés.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -283,7 +283,7 @@ OsmAnd vous permet de faire diverses marques sur la carte pour vos besoins perso
 
 ### Comment parcourir et trouver un point d'intérêt {#how-to-browse--find-point-of-interest}
 
-Les [points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) sont des commodités qui peuvent être recherchées ou mises en évidence sur la carte. Ils représentent des lieux intéressants ou utiles et sont distribués dans le cadre des [cartes vectorielles](../map/vector-maps.md). Vous pouvez les utiliser pour [les afficher sur la carte](../map/point-layers-on-map.md#points-of-interest-pois), [naviguer](../navigation/index.md) et [rechercher](../search/search-poi.md) les points d'intérêt sur la carte.
+Les [points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) sont des commodités qui peuvent être recherchées ou mises en évidence sur la carte. Ils représentent des lieux intéressants ou utiles et sont distribués dans le cadre des [cartes vectorielles](../map/vector-maps.md). Vous pouvez les utiliser pour [afficher sur la carte](../map/point-layers-on-map.md#points-of-interest-pois), [naviguer](../navigation/index.md) et [rechercher](../search/search-poi.md) les points d'intérêt sur la carte.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -306,19 +306,19 @@ Les [points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-
 
 ### Comment planifier un itinéraire {#how-to-plan-a-route}
 
-[Planifier un itinéraire](../plan-route/create-route.md) est un outil puissant qui vous permet de créer un voyage, de modifier une trace existante et de mesurer la distance sur place. Vous pouvez rapidement placer des points intermédiaires et les relier par diverses lignes de navigation (vélo, piéton, ligne droite, etc.). Les résultats peuvent être enregistrés dans un fichier GPX, afin de pouvoir être [partagés](../personal/tracks/index.md) ou [utilisés par la navigation](../navigation/setup/gpx-navigation.md) ultérieurement.
+[Planifier un itinéraire](../plan-route/create-route.md) est un outil puissant qui vous permet de créer un voyage, de modifier une trace existante et de mesurer une distance sur place. Vous pouvez rapidement placer des points intermédiaires et les relier par diverses lignes de navigation (vélo, piéton, ligne droite, etc.). Les résultats peuvent être enregistrés dans un fichier GPX, afin de pouvoir être [partagés](../personal/tracks/index.md) ou [utilisés par la navigation](../navigation/setup/gpx-navigation.md) ultérieurement.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Planifier l'itinéraire Android](@site/static/img/settings/plan_route_android.png) ![Graphique de planification d'itinéraire Android](@site/static/img/settings/plan_route_graph_android.png)
+![Planifier un itinéraire Android](@site/static/img/settings/plan_route_android.png) ![Graphique de planification d'itinéraire Android](@site/static/img/settings/plan_route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planifier l'itinéraire iOS](@site/static/img/settings/plan_route_ios.png)
+![Planifier un itinéraire iOS](@site/static/img/settings/plan_route_ios.png)
 
 </TabItem>
 
@@ -329,7 +329,7 @@ Les [points d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-
 
 ### Comment rechercher par adresse {#how-to-search-by-address}
 
-OsmAnd offre de nombreuses capacités de recherche, y compris la recherche d'adresse. Par défaut, il utilise les [données OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) et devrait être capable de trouver toutes les adresses à l'aide de l'entrée de recherche rapide. Vous pouvez également [rechercher](../search/search-address.md) par ville, rue, code postal et coordonnées.
+OsmAnd offre de nombreuses capacités de recherche, y compris la recherche d'adresses. Par défaut, il utilise les [données OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) et devrait être capable de trouver toutes les adresses à l'aide de la saisie de recherche rapide. Vous pouvez également [rechercher](../search/search-address.md) par ville, rue, code postal et coordonnées.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -348,15 +348,15 @@ OsmAnd offre de nombreuses capacités de recherche, y compris la recherche d'adr
 </Tabs>
 
 :::note
-Vous devez télécharger la carte avant d'y rechercher une adresse. De plus, si votre position actuelle est trop éloignée de l'adresse que vous recherchez, vous devrez peut-être augmenter le rayon de recherche.
+Vous devez télécharger la carte avant de rechercher une adresse. De plus, si votre position actuelle est trop éloignée de l'adresse que vous recherchez, vous devrez peut-être augmenter le rayon de recherche.
 :::
 
-[En savoir plus](../search/search-address.md) sur la recherche d'adresse.
+[En savoir plus](../search/search-address.md) sur la recherche d'adresses.
 
 
 ### Comment démarrer la navigation {#how-to-start-navigation}
 
-La [navigation](../navigation/index.md) vous fournit des instructions étape par étape pour atteindre votre destination en affichant l'itinéraire, en offrant des instructions virage par virage, des informations routières supplémentaires sur la surface, la fluidité, etc., et une guidance vocale facultative.
+La [navigation](../navigation/index.md) vous fournit un guidage étape par étape vers votre destination en affichant l'itinéraire, en offrant des instructions virage par virage, des informations routières supplémentaires sur la surface, la fluidité, etc., et un guidage vocal facultatif.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -379,7 +379,7 @@ La [navigation](../navigation/index.md) vous fournit des instructions étape par
 
 ### Comment enregistrer votre voyage {#how-to-record-your-trip}
 
-L'[enregistrement de voyage](../plugins/trip-recording.md) est un outil spécial empaqueté en tant que plugin OsmAnd qui vous permet d'enregistrer tous les mouvements sur la trace à l'aide du GPS de l'appareil.
+L'[enregistrement de voyage](../plugins/trip-recording.md) est un outil spécial, intégré sous forme de plugin OsmAnd, qui vous permet d'enregistrer tous les mouvements sur une trace à l'aide du GPS de l'appareil.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -402,7 +402,7 @@ L'[enregistrement de voyage](../plugins/trip-recording.md) est un outil spécial
 
 ### Comment modifier les cartes {#how-to-edit-maps}
 
-OsmAnd est alimenté par les données [OpenStreetMap](https://www.openstreetmap.org/). Les cartes sont créées par des contributeurs bénévoles, elles peuvent donc avoir plus ou moins de détails selon la quantité de travail effectuée dans une certaine partie de la carte. N'importe qui peut s'inscrire en tant que contributeur et ajouter ou modifier des cartes OSM. OsmAnd fournit un plugin d'édition qui aide à améliorer OpenStreetMap.
+OsmAnd est alimenté par les données [OpenStreetMap](https://www.openstreetmap.org/). Les cartes sont créées par des contributeurs bénévoles, elles peuvent donc avoir plus ou moins de détails selon le travail effectué sur une certaine partie de la carte. Tout le monde peut s'inscrire en tant que contributeur et ajouter ou modifier des cartes OSM. OsmAnd fournit un plugin d'édition qui aide à améliorer OpenStreetMap.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -431,29 +431,29 @@ OsmAnd est alimenté par les données [OpenStreetMap](https://www.openstreetmap.
 
 Il existe deux variantes disponibles pour fermer OsmAnd.
 
-1. Fermez une application en balayant vers le haut et hors de l'écran. Pour une liste verticale d'applications, balayez vers la gauche ou la droite.
+1. Fermez une application en la faisant glisser vers le haut et hors de l'écran. Pour une liste verticale d'applications, faites glisser vers la gauche ou la droite.
 
-2. Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon OsmAnd s'exécutera en arrière-plan :
+2. Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon OsmAnd continuera à s'exécuter en arrière-plan :
     - [Annuler la navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Arrêter le téléchargement et la mise à jour des cartes](../start-with/download-maps.md)
-    - [Arrêter l'enregistrement de voyage](../plugins/trip-recording.md#create-new-track)
+    - [Arrêter l'enregistrement du trajet](../plugins/trip-recording.md#create-new-track)
     - [Arrêter l'enregistrement de notes audio/vidéo](../plugins/audio-video-notes.md)
 
 3. Fonction *Forcer l'arrêt* :
-    - Appuyez longuement sur l'*icône OsmAnd → bouton **i** → Forcer l'arrêt*.
-    - Ouvrez les paramètres et appuyez sur *Applications et notifications → OsmAnd → Forcer l'arrêt*.
+    - Appuyez longuement sur l'icône *OsmAnd → bouton **i** → Forcer l'arrêt*.
+    - Ouvrez les paramètres et appuyez sur *Applications & notifications → OsmAnd → Forcer l'arrêt*.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Fermez une application en balayant vers le haut et hors de l'écran. Pour une liste verticale d'applications, balayez vers la gauche ou la droite.
+Fermez une application en la faisant glisser vers le haut et hors de l'écran. Pour une liste verticale d'applications, faites glisser vers la gauche ou la droite.
 
-Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon, OsmAnd s'exécutera en arrière-plan :
+Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon OsmAnd continuera à s'exécuter en arrière-plan :
 
 - [Annuler la navigation](../navigation/setup/route-navigation.md)
 - [Arrêter le téléchargement et la mise à jour des cartes](../start-with/download-maps.md)
-- [Arrêter l'enregistrement de voyage](../plugins/trip-recording.md#create-new-track)
+- [Arrêter l'enregistrement du trajet](../plugins/trip-recording.md#create-new-track)
 - [Arrêter l'enregistrement de notes audio/vidéo](../plugins/audio-video-notes.md)
 
 </TabItem>
@@ -465,7 +465,7 @@ Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon,
 
 <InfoAndroidOnly/>
 
-Les [raccourcis d'application](https://support.google.com/android/answer/9450271) sont disponibles pour l'icône OsmAnd. Appuyez simplement longuement sur l'icône OsmAnd sur l'écran de votre appareil pour ouvrir le menu des raccourcis d'application. Ici, vous pouvez appuyer brièvement pour sélectionner les actions suivantes : *Naviguer vers la maison*, *Naviguer vers le travail*, *Démarrer l'enregistrement*, *Rechercher*, *Mes lieux*, *Naviguer vers*. Un appui long sur une action vous permet d'ajouter une nouvelle icône d'action à l'écran de votre appareil.
+Les [raccourcis d'application](https://support.google.com/android/answer/9450271) sont disponibles pour l'icône OsmAnd. Il suffit d'appuyer longuement sur l'icône OsmAnd sur l'écran de votre appareil pour ouvrir le menu des raccourcis d'application. Ici, vous pouvez appuyer brièvement pour sélectionner les actions suivantes : *Naviguer vers la maison*, *Naviguer vers le travail*, *Démarrer l'enregistrement*, *Rechercher*, *Mes lieux*, *Naviguer vers*. Un appui long sur une action vous permet d'ajouter une nouvelle icône d'action à l'écran de votre appareil.
 
 Appuyez sur une icône d'action pour démarrer immédiatement l'application avec l'action sélectionnée.
 
@@ -490,9 +490,9 @@ Appuyez sur une icône d'action pour démarrer immédiatement l'application avec
 
 </Tabs>
 
-Dans le *menu Aide*, vous pouvez trouver des articles de notre site [www.osmand.net/docs](https://osmand.net/docs/intro/). Après le téléchargement initial (connexion Internet requise), les articles d'aide sont disponibles hors ligne.
-La première sous-section, *Aide hors ligne*, contient les articles **Les plus consultés** (ou populaires) parmi nos utilisateurs. Les sections **Guide de l'utilisateur** et **Dépannage** ont la même structure que sur le site Web.
-Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les réseaux sociaux d'OsmAnd, des informations sur la version de votre application, les notes de version et les contacts d'assistance. Via l'aide, vous pouvez également envoyer des [journaux logcat et de plantage](../troubleshooting/crash-logs.md#crash-and-logcat-logs).
+Dans le *menu Aide*, vous trouverez des articles de notre site [www.osmand.net/docs](https://osmand.net/docs/intro/). Après le téléchargement initial (connexion Internet requise), les articles d'aide sont disponibles hors ligne.
+La première sous-section, *Aide hors ligne*, contient les articles les **plus consultés** (ou populaires) parmi nos utilisateurs. Les sections **Guide de l'utilisateur** et **Dépannage** ont la même structure que sur le site Web.
+Dans le *menu Aide*, vous trouverez également des liens utiles vers les réseaux sociaux d'OsmAnd, des informations sur la version de votre application, les notes de version et les contacts d'assistance. Via l'aide, vous pouvez également envoyer des [journaux logcat et de plantage](../troubleshooting/crash-logs.md#crash-and-logcat-logs).
 
 ### Menu {#menu}
 
@@ -513,8 +513,8 @@ Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les r�
 </Tabs>
 
 - **Envoyer le journal de plantage** (*pour Android*). Permet aux utilisateurs d'envoyer des rapports de plantage d'application aux développeurs, aidant à l'identification et à la résolution des problèmes.
-- **Envoyer le journal logcat** (*pour Android*). Offre aux utilisateurs la possibilité d'envoyer des journaux détaillés des plantages d'application aux développeurs, facilitant une analyse et un dépannage plus approfondis.
-- **Envoyer le journal** (*pour iOS*). Effectue une fonction similaire à la fonction *Envoyer le journal de plantage* pour Android, permettant aux utilisateurs sur les appareils iOS de signaler les plantages d'application aux développeurs à des fins de débogage.
+- **Envoyer le journal logcat** (*pour Android*). Offre aux utilisateurs la possibilité d'envoyer des journaux détaillés de plantage d'application aux développeurs, facilitant une analyse et un dépannage plus approfondis.
+- **Envoyer le journal** (*pour iOS*). Remplit une fonction similaire à la fonction *Envoyer le journal de plantage* pour Android, permettant aux utilisateurs d'appareils iOS de signaler les plantages d'application aux développeurs à des fins de débogage.
 - **Copier la version de build**. Permet aux utilisateurs de communiquer rapidement et précisément la version actuelle de l'application aux développeurs lors du signalement de problèmes, simplifiant le processus de diagnostic et de résolution.
 
 
@@ -536,7 +536,7 @@ Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les r�
 
 </Tabs>
 
-Les articles les plus consultés par nos utilisateurs font référence aux articles de l'application ou du site qui ont recueilli le plus de vues ou d'interactions d'utilisateurs. Cette métrique permet d'identifier le contenu particulièrement intéressant ou utile pour vos utilisateurs. Elle peut fournir des informations précieuses sur les préférences et les intérêts des utilisateurs, permettant aux développeurs et aux créateurs de contenu d'adapter le contenu futur pour mieux répondre aux besoins du public. De plus, la mise en évidence des articles populaires peut aider les nouveaux utilisateurs à trouver des ressources précieuses dans l'application.
+Les articles les plus consultés par nos utilisateurs font référence aux articles de l'application ou du site qui ont généré le plus de vues ou d'interactions utilisateur. Cette métrique permet d'identifier le contenu particulièrement intéressant ou utile pour vos utilisateurs. Elle peut fournir des informations précieuses sur les préférences et les intérêts des utilisateurs, permettant aux développeurs et aux créateurs de contenu d'adapter le contenu futur pour mieux répondre aux besoins du public. De plus, la mise en évidence des articles populaires peut aider les nouveaux utilisateurs à trouver des ressources précieuses au sein de l'application.
 
 
 ### Guide de l'utilisateur {#user-guide}
@@ -557,7 +557,7 @@ Les articles les plus consultés par nos utilisateurs font référence aux artic
 
 </Tabs>
 
-La section **Guide de l'utilisateur** du menu Aide est un manuel complet qui suit la structure du site Web OsmAnd, garantissant la cohérence des informations et la facilité de navigation entre les plateformes. En utilisant l'aide, vous pouvez facilement naviguer de l'application au site Web, en trouvant le même contenu organisé de manière familière. Cette cohérence améliore la convivialité en fournissant une seule ressource d'assistance pour trouver rapidement des réponses aux questions et résoudre les problèmes.
+La section **Guide de l'utilisateur** du menu Aide est un manuel complet qui suit la structure du site Web OsmAnd, garantissant la cohérence des informations et la facilité de navigation entre les plateformes. Grâce à l'aide, vous pouvez facilement naviguer de l'application vers le site Web, en trouvant le même contenu organisé de manière familière. Cette cohérence améliore la convivialité en fournissant une ressource d'assistance unique pour trouver rapidement des réponses aux questions et résoudre les problèmes.
 
 
 ### Dépannage {#troubleshooting}
@@ -578,17 +578,17 @@ La section **Guide de l'utilisateur** du menu Aide est un manuel complet qui sui
 
 </Tabs>
 
-Solutions et astuces pour résoudre les problèmes courants. Si vous avez une question spécifique, veuillez consulter [Dépannage](../troubleshooting/index.md) pour y trouver une réponse.
+Solutions et astuces pour résoudre les problèmes courants. Si vous avez une question spécifique, veuillez consulter le [Dépannage](../troubleshooting/index.md) pour obtenir une réponse.
 
 - [Configuration](../troubleshooting/setup.md). Lors de la configuration d'une application, ce sont les problèmes qui surviennent le plus souvent.
 - [Cartes et données](../troubleshooting/maps-data.md). Problèmes liés aux cartes, à la recherche et au reste des données.
 - [Navigation](../troubleshooting/navigation.md). Les problèmes les plus courants qui surviennent en mode navigation.
 - [Enregistrement de trace](../troubleshooting/track-recording-issues.md). Problèmes courants liés à l'enregistrement de trace tels que les bruits, les lacunes et les inexactitudes.
-- [Général](../troubleshooting/general.md). Problèmes courants associés à diverses fonctionnalités d'OsmAnd.
+- [Général](../troubleshooting/general.md). Problèmes courants associés aux diverses fonctionnalités d'OsmAnd.
 - [Journaux de plantage](../troubleshooting/crash-logs.md). Comment envoyer les journaux de plantage à l'équipe OsmAnd.
 - [Android Auto](../troubleshooting/android_auto.md) (*uniquement pour Android*). Problèmes de navigation automatique.
 
-### Nous contacter {#contact-us}
+### Contactez-nous {#contact-us}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -648,12 +648,12 @@ Vous permet de poser des questions ou de faire des suggestions.
 
 </Tabs>
 
-Vous pouvez en savoir plus sur notre équipe, voir la version actuelle de l'application et les nouveautés, et télécharger la version bêta de l'application.
+Vous pouvez en apprendre davantage sur notre équipe, voir la version actuelle de l'application et les nouveautés, et télécharger la version bêta de l'application.
 
 
 ## Confidentialité {#privacy}
 
-Il s'agit d'une application [open source](https://github.com/osmandapp/osmand), sans publicité ni suivi, axée sur la confidentialité. Pour préserver au maximum la confidentialité, OsmAnd propose les cartes hors ligne en premier lieu, de sorte qu'aucune interaction ou information géographique ne soit divulguée depuis votre appareil. Nous sommes très attentifs aux données collectées et aux données transférées par le réseau, vous pouvez en savoir plus dans notre [politique de confidentialité](https://osmand.net/help-online/privacy-policy).
+Il s'agit d'une application [open source](https://github.com/osmandapp/osmand), sans publicité ni traqueurs, axée sur la confidentialité. Pour préserver au maximum la confidentialité, OsmAnd propose des cartes hors ligne en premier lieu, de sorte qu'aucune interaction ou information géographique ne soit divulguée depuis votre appareil. Nous sommes très attentifs aux données collectées et aux données transférées par le réseau, vous pouvez en savoir plus dans notre [politique de confidentialité](https://osmand.net/help-online/privacy-policy).
 
 
 ## Autorisations {#permissions}
@@ -662,12 +662,12 @@ OsmAnd n'a aucune autorisation requise sur la version iOS / Android.
 
 **Essentiel** :
 
-- **Internet**. Téléchargement initial / mise à jour des cartes hors ligne. De plus, il peut être nécessaire d'accéder à des fonctionnalités en ligne telles que [l'imagerie au niveau de la rue](../map/point-layers-on-map.md#-street-level-imagery), les [photos en ligne](../map/map-context-menu.md#online-photos) ou les [cartes en ligne](../map/raster-maps.md).
-- **GPS** / **Réseau GSM**. Déterminer votre position, vous suivre en mode navigation et enregistrer votre voyage (facultatif). Cette autorisation est demandée lorsque vous cliquez sur le [bouton ma position](../widgets/map-buttons.md#my-location-and-zoom) ou lorsque vous [démarrez la navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **Internet**. Téléchargement initial / mise à jour des cartes hors ligne. Peut également être nécessaire pour accéder aux fonctionnalités en ligne telles que [Imagerie au niveau de la rue](../map/point-layers-on-map.md#-street-level-imagery), [Photos en ligne](../map/map-context-menu.md#online-photos) ou [Cartes en ligne](../map/raster-maps.md).
+- **GPS** / **Réseau GSM**. Déterminez votre position, suivez-vous en mode navigation et enregistrez votre trajet (facultatif). Cette autorisation est demandée lorsque vous cliquez sur le [bouton ma position](../widgets/map-buttons.md#my-location-and-zoom) ou lorsque vous [démarrez la navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Facultatif** :
 
-- **Enregistrement caméra/voix** (*Android*). Uniquement utilisé par les [notes audio/vidéo](../plugins/audio-video-notes.md). Cette fonctionnalité est empaquetée en tant que plugin et désactivée par défaut. Elle vous permet de créer rapidement des notes audio/vidéo liées à la localisation pendant un voyage.
+- **Enregistrement appareil photo/voix** (*Android*). Uniquement utilisé par les [notes audio/vidéo](../plugins/audio-video-notes.md). Cette fonctionnalité est intégrée sous forme de plugin et est désactivée par défaut. Elle vous permet de créer rapidement des notes audio/vidéo liées à la position pendant un voyage.
 
 
 > *Dernière mise à jour : janvier 2025*

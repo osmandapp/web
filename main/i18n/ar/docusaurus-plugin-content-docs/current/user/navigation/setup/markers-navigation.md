@@ -1,7 +1,7 @@
 ---
-source-hash: 840895be86a2bc170c5cc62b0abac17afda6a3dcd33c15c2d2b335a1a52fa27e
+source-hash: f1b6ce88c16188825c1c750fdab6393efc13e796dac9b76318385c1908db3134
 sidebar_position: 3
-title:  التنقل بواسطة العلامات
+title:  التنقل باستخدام العلامات
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [علامات الخريطة](../../personal/markers.md) هي نقاط على الخريطة مميزة بالأعلام. يمكن استخدامها لمجموعة متنوعة من الأغراض، مثل الإشارة إلى موقع تريد زيارته، أو نقطة اهتمام تريد تذكرها، أو لإنشاء مسار مخصص.
 
-يمكن أن تكون مفيدة بشكل خاص للمتنزهين، أو راكبي الدراجات، أو أي شخص يستكشف منطقة جديدة ويرغب في تحديد مواقع أو نقاط مرجعية مثيرة للاهتمام على الخريطة. الفرق الرئيسي عن [نقاط المفضلة](../../personal/favorites.md)، العلامات أسرع في الإنشاء لأنها لا تتطلب اسمًا.
+يمكن أن تكون مفيدة بشكل خاص للمتنزهين، راكبي الدراجات، أو أي شخص يستكشف منطقة جديدة ويرغب في وضع علامات على مواقع أو نقاط مرجعية مثيرة للاهتمام على الخريطة. الفرق الرئيسي عن [نقاط المفضلة](../../personal/favorites.md)، العلامات أسرع في الإنشاء لأنها لا تتطلب اسمًا.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -59,20 +59,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن أن تعمل *علامات الخريطة* كـ [وجهات](./route-navigation#set-destinations) أثناء بناء المسار. وهي مريحة بشكل خاص عندما تحتاج إلى تعيين مسار بنقاط وسيطة.
 
-ومع ذلك، توفر *علامات الخريطة* أيضًا وظائف متنوعة مثل [الأدوات](../../widgets/markers.md)، واتجاهات الحركة، والخطوط على الخريطة، بحيث يمكنك استخدام هذه الأدوات للتنقل دون بناء خط مسار وإدخال توجيه صوتي كامل.
+ومع ذلك، توفر *علامات الخريطة* أيضًا وظائف متنوعة مثل [الأدوات](../../widgets/markers.md)، واتجاهات الحركة، والخطوط على الخريطة، بحيث يمكنك استخدام هذه الأدوات للتنقل دون بناء خط مسار ودخول التنقل الصوتي الكامل.
 
-في حال كنت بحاجة إلى تنقل بسيط من نقطة إلى نقطة يظهر كخطوط مستقيمة، يمكنك بناء وفرز ***قائمة المسار*** المكونة من العلامات كنقاط وسيطة واستخدام الأدوات للتنقل البسيط.
+في حال كنت بحاجة إلى تنقل بسيط من نقطة إلى نقطة معروض كخطوط مستقيمة، يمكنك بناء وفرز ***قائمة المسار*** المكونة من علامات كنقاط وسيطة واستخدام الأدوات للتنقل البسيط.
 
 
-#### توصيات {#recommendations}
+#### التوصيات {#recommendations}
 
-إليك خطوات التوصية البسيطة لـ *التنقل بواسطة العلامات*:
+فيما يلي خطوات توصية بسيطة لـ *التنقل باستخدام العلامات*:
 
-1. إنشاء العلامات. ابحث عن الكائن (الكائنات) المطلوب على الخريطة، وانقر عليه، واختر *[زر العلامة](../../personal/markers.md#add--edit-markers)* في *[قائمة سياق الخريطة](../../map/map-context-menu.md#add--edit-marker)*. يمكنك أيضًا إنشاء علامات من [المفضلة](#add-group-of-favorite) أو [مسارات GPX](#add-group-of-track-waypoints).
-2. [*فرز العلامات*](#sort-markers) بالطريقة المفضلة التي تريد المرور بها
+1. إنشاء علامات. ابحث عن الكائن (الكائنات) المطلوب على الخريطة، انقر عليه، واختر *[زر العلامة](../../personal/markers.md#add--edit-markers)* في *[قائمة سياق الخريطة](../../map/map-context-menu.md#add--edit-marker)*. يمكنك أيضًا إنشاء علامات من [المفضلة](#add-group-of-favorite) أو [مسارات GPX](#add-group-of-track-waypoints).
+2. [*فرز العلامات*](#sort-markers) بالطريقة المفضلة التي تريد أن تمر بها
 3. تخصيص *عرض علامات الخريطة* إذا كنت ترغب في استخدام العلامات دون بدء التنقل. قم بتمكين خياري **الأسهم على الخريطة** و **خط الاتجاه** في قسم *[المظهر](../../personal/markers.md#appearance-on-the-map)* من *[قائمة علامات الخريطة](../../personal/markers.md#actions)*.
 4. أضف *[أدوات العلامات](../../personal/markers.md#markers)* في *[قائمة تكوين الشاشة](../../widgets/configure-screen.md)* (اختياري).
-5. [*وضع علامة كـ "تم المرور"*](#pass-markers) على العلامات التي تمت زيارتها بالفعل أو استعادتها من السجل إذا كنت ترغب في المرور بها مرة أخرى.
+5. [*وضع علامة "تم المرور"*](#pass-markers) على العلامات التي تمت زيارتها بالفعل أو استعادتها من السجل إذا كنت ترغب في المرور بها مرة أخرى.
 
 :::note
 عند تمكين خياري **الأسهم على الخريطة** و **خط الاتجاه** في قسم *المظهر* من [قائمة علامات الخريطة](../../personal/markers.md#appearance-on-the-map)، سترى سهمًا أو خطًا متقطعًا على الخريطة. يشير السهم إلى الاتجاه إلى العلامة النشطة عندما تكون خارج شاشة الخريطة الحالية. يتم رسم خط الاتجاه عندما تكون موقعك الجغرافي والعلامة كلاهما على نفس الشاشة.
@@ -103,7 +103,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إضافة علامات فردية {#add-single-markers}
 
-يمكن إضافة أو حذف *العلامات* من الخريطة بنقرة واحدة على الشاشة في الموقع المطلوب. ثم تحتاج إلى اتباع التعليمات من مقال *[قائمة سياق الخريطة](../../map/map-context-menu.md#add--edit-marker)*.
+يمكن إضافة أو حذف *العلامات* من الخريطة بنقرة واحدة على الشاشة في الموقع المطلوب. ثم تحتاج إلى اتباع التعليمات من مقالة *[قائمة سياق الخريطة](../../map/map-context-menu.md#add--edit-marker)*.
 
 
 ### إضافة مجموعة من المفضلة {#add-group-of-favorite}
@@ -114,12 +114,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك إنشاء *علامات الخريطة* من *[المفضلة](../../personal/favorites.md)* باستخدام:
 
-- *[قائمة مجموعات المفضلة](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→المفضلة لدي)*.
-- أيقونة &#128681; في قائمة المفضلة داخل الصفحة *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→المفضلة لدي→&#128681;)*.
-- خيار **'+'** (إضافة) في *[علامة تبويب المجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- *[قائمة مجموعات المفضلة](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→المفضلة الخاصة بي)*.
+- أيقونة &#128681; في قائمة المفضلة داخل الصفحة *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→المفضلة الخاصة بي→&#128681;)*.
+- خيار **'+'** (إضافة) في *[علامات التبويب للمجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
-### إضافة مجموعة من نقاط مسار {#add-group-of-track-waypoints}
+### إضافة مجموعة من نقاط مسار التتبع {#add-group-of-track-waypoints}
 
 <InfoAndroidOnly />
 
@@ -127,8 +127,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن استخدام مسارات GPX مع نقاط الطريق كـ *علامات خريطة* وإيقاف تشغيلها بسرعة:
 
-- استخدم خيار **'+'** (إضافة) في *[علامة تبويب المجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- قم بتشغيل المفتاح بالقرب من المسار في *[علامة تبويب المجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- استخدم خيار **'+'** (إضافة) في *[علامات التبويب للمجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- قم بتشغيل المفتاح بالقرب من المسار في *[علامات التبويب للمجموعات](../../personal/markers.md#marker-groups)* في قائمة علامات الخريطة *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
 يمكن إضافة المسارات التي تحتوي على نقاط طريق فقط إلى *قائمة علامات الخريطة*. يجب أن يكون المسار الذي تنوي إضافته مرئيًا (نشطًا) على الخريطة أيضًا.
@@ -136,7 +136,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- يمكنك أيضًا إنشاء *علامات* من مسار بنقاط طريق باستخدام *[قائمة سياق المسار](../../map/tracks/track-context-menu.md#points--waypoints)*: *انقر على مسار مرئي على الخريطة ← في قائمة سياق المسار اختر النقاط ← '&#8942;' ← <Translate android="true" ids="add_group_to_markers"/>*
+- يمكنك أيضًا إنشاء *علامات* من مسار يحتوي على نقاط طريق باستخدام *[قائمة سياق المسار](../../map/tracks/track-context-menu.md#points--waypoints)*: *انقر على مسار مرئي على الخريطة ← في قائمة سياق المسار اختر نقاط ← '&#8942;' ← <Translate android="true" ids="add_group_to_markers"/>*
 
 
 ## فرز العلامات {#sort-markers}
@@ -182,9 +182,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك فرز *العلامات* حسب:
 
-- **الاسم** (*أبجديًا*) — إذا كانت العلامات تحتوي على أسماء وصفية، فقد تكون هذه طريقة مفيدة للعثور بسرعة على العلامة التي تبحث عنها.
+- **الاسم** (*أبجديًا*) — إذا كانت العلامات تحمل أسماء وصفية، يمكن أن تكون هذه طريقة مفيدة للعثور بسرعة على العلامة التي تبحث عنها.
 - **المسافة** (*الأقرب أو الأبعد أولاً*) - سيقوم هذا الخيار بفرز العلامات حسب المسافة من موقعك الحالي.
-- **التاريخ** (*مؤخرًا أو منذ فترة طويلة*) - سيقوم هذا بفرز العلامات حسب تاريخ إضافتها. إذا قمت بإضافة العديد من العلامات بمرور الوقت، فقد تكون هذه طريقة مفيدة لمعرفة أي منها هو الأحدث.
+- **التاريخ** (*مؤخرًا أو منذ فترة طويلة*) - سيقوم هذا بفرز العلامات حسب تاريخ إضافتها. إذا قمت بإضافة العديد من العلامات بمرور الوقت، يمكن أن تكون هذه طريقة مفيدة لمعرفة أي منها هو الأحدث.
 
 
 ### إعادة الترتيب باستخدام أداة تخطيط المسار {#reorder-with-a-plan-route-tool}
@@ -193,7 +193,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
 
-باستخدام وظيفة تخطيط المسار في أداة قائمة العلامات، يمكنك فرز *العلامات* *من الباب إلى الباب*، أو وضعها بترتيب عكسي، أو إنشاء *رحلة ذهاب وعودة*. إذا نقرت على خيار *التنقل*، فسيتم استخدام *العلامات* كـ [وجهات وسيطة](../setup/route-navigation.md#intermediate-destinations).
+باستخدام وظيفة "تخطيط مسار" في أداة قائمة العلامات، يمكنك فرز *العلامات* "من الباب إلى الباب"، أو وضعها بترتيب عكسي، أو إنشاء "رحلة ذهاب وعودة". إذا نقرت على خيار "التنقل"، فسيتم استخدام *العلامات* كـ [وجهات وسيطة](../setup/route-navigation.md#intermediate-destinations).
 
 
 ## تجاوز العلامات {#pass-markers}
@@ -214,10 +214,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكن وضع علامة على *علامة* كـ "تم المرور" (*أندرويد*) أو "تم تجاهلها" (*iOS*).
+يمكن وضع علامة على *علامة* على أنها تم المرور بها (*أندرويد*) أو تم تجاهلها (*iOS*).
 
 - من خلال *[قائمة سياق الخريطة](../../map/map-context-menu.md#add--edit-marker)*.
-- عندما تقترب من *علامة* بمسافة أقرب من 40 مترًا (*أندرويد*) أو 50 مترًا (*iOS*)، يصبح المفتاح في شريط *[أدوات العلامات](../../widgets/markers.md#top-bar-widget)* نشطًا.
+- عندما تقترب من *علامة* على مسافة أقرب من 40 مترًا (*أندرويد*) أو 50 مترًا (*iOS*)، يصبح مفتاح في شريط *[أدوات العلامات](../../widgets/markers.md#top-bar-widget)* نشطًا.
 
 بعد تجاوز *علامة*، تنتقل إلى مجلد [السجل](../../personal/markers.md#history)، حيث يمكن استعادتها إذا لزم الأمر. تصبح العلامة التالية في [القائمة](#itinerary-list) نشطة. اعتمادًا على [إعداداتك](#use-markers-in-navigation)، قد يتم توجيهك إليها بسهم أو خط متقطع.
 
@@ -230,7 +230,7 @@ __
 - [معلمات المسار](../routing/osmand-routing.md#routing-types)
 - [إعداد المسار](./route-navigation.md)
 - [تفاصيل المسار](./route-details.md)
-- [التنقل بواسطة المسار](./gpx-navigation.md)
+- [التنقل بالمسار](./gpx-navigation.md)
 - [إعدادات التنقل](../guidance/navigation-settings.md)
 - [شاشة الخريطة أثناء التنقل](../guidance/map-during-navigation.md)
 - [المطالبات الصوتية / الإشعارات](../guidance/voice-navigation.md)

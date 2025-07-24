@@ -1,7 +1,7 @@
 ---
-source-hash: 27722eb18550cf9d93cb885bccf878c6d53e33daba1748a270790fa1cca1066e
+source-hash: 60b188c51e17690f3a3d5d8e4970eb6bd2391e27d4fafaddb68b30a36313f979
 sidebar_position: 3
-title: Notas de Áudio / Vídeo
+title: Notas de Áudio/Vídeo
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -28,7 +28,7 @@ Todas as notas de áudio e vídeo criadas compõem a camada de Gravação. Quand
 
 <TabItem value="android" label="Android">
 
-![Audio video notes intro](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+![Introdução às notas de áudio e vídeo](@site/static/img/plugins/audio-video-notes/widgets_view.png)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ As notas de áudio/vídeo são fornecidas com o plugin Notas de áudio/vídeo e 
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
 
-![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
+![Configurações do plugin de áudio e vídeo Foto Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
 </TabItem>
 
@@ -64,16 +64,16 @@ Para cada perfil, você pode configurar as *opções de gravação de áudio e v
 | --- | --- |
 | **<Translate android="true" ids="camera_app"/>** | Você pode escolher se deseja usar o aplicativo do sistema ou a câmera do OsmAnd para tirar <Translate android="true" ids="photo_notes"/>. |
 | **<Translate android="true" ids="av_camera_pic_size"/>** | Define o tamanho das fotos a serem tiradas. As capacidades da câmera do dispositivo determinam o número de opções disponíveis. Se nenhuma opção for selecionada, o aplicativo usa o tamanho das configurações do sistema da câmera do dispositivo. |
-| **<Translate android="true" ids="av_camera_focus"/>** | Estabelece o método de como o foco da câmera é definido. O número de opções disponíveis é determinado pelas capacidades da câmera do dispositivo. Basicamente, existem as três opções a seguir: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; e *<Translate android="true" ids="av_camera_focus_infinity"/>*. O **Autofoco** é o mais popular e estabelece o modo automático para a câmera; o **contínuo** faz com que a câmera detecte movimentos e refoque de acordo; e a opção **infinito** faz com que a lente foque em uma distância e, assim, mantenha os objetos em foco, não importa a distância. |
+| **<Translate android="true" ids="av_camera_focus"/>** | Estabelece o método de como o foco da câmera é definido. O número de opções disponíveis é determinado pelas capacidades da câmera do dispositivo. Basicamente, existem as três opções a seguir: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; e *<Translate android="true" ids="av_camera_focus_infinity"/>*. O **Autofoco** é o mais popular e estabelece o modo automático para a câmera; o **contínuo** faz com que a câmera detecte movimentos e foque novamente de acordo; e a opção **infinito** faz com que a lente foque em uma distância e, assim, mantenha os objetos em foco, não importa a distância. |
 | **<Translate android="true" ids="multimedia_photo_play_sound"/>** | Se ativado, um som é produzido quando a câmera tira uma foto. Observe que, conforme exigido pela lei de privacidade, **em alguns países os dispositivos não terão um botão de mudo do obturador da câmera**. Se você usar o aplicativo do sistema, o som deve ser desativado no aplicativo da câmera. |
 | **<Translate android="true" ids="av_audio_format"/>** | Fornece uma escolha de formatos para um arquivo de áudio. O número de opções disponíveis e qual delas é usada por padrão é determinado pelos parâmetros de um dispositivo específico. |
-| **<Translate android="true" ids="av_audio_bitrate"/>** | Esta opção fornece uma escolha de opções de taxa de bits para um arquivo de áudio a ser criado. As opções de taxa de bits disponíveis variam de 16kbps a 128 kbps, ou a opção Padrão. O parâmetro Padrão é determinado pelas configurações de microfone "padrão" do seu dispositivo. |
+| **<Translate android="true" ids="av_audio_bitrate"/>** | Esta opção oferece uma escolha de opções de taxa de bits para um arquivo de áudio a ser criado. As opções de taxa de bits disponíveis variam de 16kbps a 128kbps, ou a opção Padrão. O parâmetro Padrão é determinado pelas configurações de microfone "padrão" do seu dispositivo. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | Se ativado, o OsmAnd usa o aplicativo do sistema para gravar vídeo em <Translate android="true" ids="video_notes"/>. |
-| **<Translate android="true" ids="av_video_quality"/>** | Isso fornece uma escolha de opções que determinam o formato da imagem de saída. O intervalo de opções disponíveis é determinado pelos parâmetros de um dispositivo específico. A opção padrão é a opção de *Maior qualidade*. |
+| **<Translate android="true" ids="av_video_quality"/>** | Isso fornece uma escolha de opções que determinam o formato da imagem de saída. O intervalo de opções disponíveis é determinado pelos parâmetros de um dispositivo específico. A opção padrão é a opção *Qualidade mais alta*. |
 | **<Translate android="true" ids="multimedia_rec_split_title"/>** | Se ativado, as gravações de vídeo antigas serão automaticamente reescritas e substituídas por novas gravações de vídeo se o tamanho do armazenamento atingir o limite de tamanho. |
 | **<Translate android="true" ids="rec_split_clip_length"/>** | Isso determina o limite de tempo superior para clipes de vídeo gravados. Existem opções com um intervalo de 1 minuto a 30 minutos. |
-| **<Translate android="true" ids="rec_split_storage_size"/>** | Isso estabelece o tamanho do armazenamento destinado a vídeos gravados. Existem opções com o intervalo de 1024 MB a 62 GB. Um intervalo específico de opções e a opção padrão são determinados pelos parâmetros de um dispositivo específico. Uma mensagem do sistema lembrará você de que o tamanho do armazenamento está atingindo o limite estabelecido. |
-| **<Translate android="true" ids="notes"/>** | Esta opção redireciona você para as [Notas de áudio/vídeo em Meus Locais](../personal/myplaces.md) - armazenamento central de todas as notas de áudio/vídeo já feitas no aplicativo. |
+| **<Translate android="true" ids="rec_split_storage_size"/>** | Isso estabelece o tamanho do armazenamento destinado ao vídeo gravado. Existem opções com o intervalo de 1024 MB a 62 GB. Um intervalo específico de opções e a opção padrão são determinados pelos parâmetros de um dispositivo específico. Uma mensagem do sistema o lembrará de que o tamanho do armazenamento está atingindo o limite estabelecido. |
+| **<Translate android="true" ids="notes"/>** | Esta opção o redireciona para as [Notas de áudio/vídeo em Meus Locais](../personal/myplaces.md) - armazenamento central de todas as notas de áudio/vídeo já feitas no aplicativo. |
 | **<Translate android="true" ids="reset_plugin_to_default"/>** | Você pode estabelecer os valores padrão para todas as configurações de notas A/V. |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Abre uma caixa de diálogo para selecionar um perfil para copiar a configuração de gravação de notas de áudio/vídeo e estabelecê-la para o perfil atual. |
 
@@ -97,7 +97,7 @@ Você pode gerenciar suas informações, pensamentos, ideias, etc. vinculados a 
 Você pode criar uma nota de foto, vídeo e áudio de qualquer uma das seguintes maneiras:
 
 - Com o [Widget](../widgets/info-widgets.md#-audio-video-notes-widget-android). Se a nota deve ser vinculada à sua posição geográfica atual.
-- Com o [menu de contexto](../map/map-context-menu.md#-record-av-note-android) de um ponto no mapa. Se a nota deve ser vinculada ao ponto selecionado no mapa.
+- Com o [Menu de contexto](../map/map-context-menu.md#-record-av-note-android) de um ponto no mapa. Se a nota deve ser vinculada ao ponto selecionado no mapa.
 
 
 #### 1. Criar e Vincular à sua Posição Atual {#1-create-and-tie-to-your-current-position}
@@ -106,7 +106,7 @@ Você pode criar uma nota de foto, vídeo e áudio de qualquer uma das seguintes
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
+![Widget do plugin de áudio e vídeo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 </TabItem>
 
@@ -117,37 +117,37 @@ O widget <Translate android="true" ids="map_widget_av_notes"/> é usado para cri
 As funções fornecidas pelo widget <Translate android="true" ids="map_widget_av_notes"/> dependem de como ele está configurado no menu [Configurar tela](../widgets/info-widgets.md#-audio-video-notes-widget-android). O widget abre imediatamente a câmera para fazer uma nota, de acordo com as configurações estabelecidas, ou pergunta primeiro em que formato criar uma nota e, em seguida, abre a caixa de diálogo do gravador respectivo.
 
 
-#### 2. Criar e Vincular à Geolocation Selecionada {#2-create-and-tie-to-selected-geolocation}
+#### 2. Criar e Vincular à Geolocalização Selecionada {#2-create-and-tie-to-selected-geolocation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin Context menu take a note](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
+![Plugin de áudio e vídeo Menu de contexto tirar uma nota](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
 
 </TabItem>
 
 </Tabs>
 
-Para criar uma nota vinculada a um ponto selecionado no mapa, use o [Menu de Contexto](../map/map-context-menu.md#-record-av-note-android) do ponto:
+Para criar uma nota vinculada a um ponto selecionado no mapa, use o [Menu de contexto](../map/map-context-menu.md#-record-av-note-android) do ponto:
 
-1. Toque e segure um ponto no mapa, e o [Menu de Contexto](../map/map-context-menu.md) será aberto.
+1. Toque e segure um ponto no mapa, e o [Menu de contexto](../map/map-context-menu.md) será aberto.
 2. Toque em **Ações** e selecione uma das opções disponíveis na lista:
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - para fazer uma nota de áudio e vinculá-la ao ponto selecionado no mapa;
     - **<Translate android="true" ids="recording_context_menu_vrecord"/>** - para fazer uma nota de vídeo e vinculá-la ao ponto selecionado no mapa;
     - **<Translate android="true" ids="recording_context_menu_precord"/>** - para fazer uma nota de foto e vinculá-la ao ponto selecionado no mapa.
 
-3. Dependendo do formato selecionado da nota, a caixa de diálogo do gravador respectivo será aberta.
+3. Dependendo do formato selecionado da nota, a caixa de diálogo do gravador respectivo é aberta.
 
 
-#### Diálogo do Gravador {#recorder-dialog}
+#### Caixa de Diálogo do Gravador {#recorder-dialog}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Video note recorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png)
+![Gravador de notas de vídeo](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png)
 
 </TabItem>
 
@@ -159,10 +159,10 @@ Para *notas de áudio e vídeo*, o gravador de áudio ou vídeo é exibido, resp
 - Visualizar a duração da gravação.
 - Mostrar ou ocultar a tela de vídeo.
 
-É possível parar a gravação com um toque no widget <Translate android="true" ids="map_widget_av_notes"/>, independentemente de o Menu de Contexto ou o widget terem iniciado a gravação. Para *uma nota de foto*, a funcionalidade da câmera aparece, e você pode tirar uma foto, visualizar o resultado, aceitar e salvá-la, ou tirar uma nova foto.
+É possível parar a gravação com um toque no widget <Translate android="true" ids="map_widget_av_notes"/>, independentemente de o menu de contexto ou o widget terem iniciado a gravação. Para *uma nota de foto*, a funcionalidade da câmera aparece, e você pode tirar uma foto, visualizar o resultado, aceitar e salvá-lo, ou tirar uma nova foto.
 
-:::info note
-Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: guia <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+:::info nota
+Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> guia.
 :::
 
 
@@ -174,7 +174,7 @@ Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: gui
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
+![Menu Meus locais do plugin de áudio e vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 </TabItem>
 
@@ -189,7 +189,7 @@ Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: gui
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin My places menu Context](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
+![Menu de contexto do plugin de áudio e vídeo Meus locais](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 </TabItem>
 
@@ -204,14 +204,14 @@ Para mostrar uma nota específica no mapa, use a lista de notas em Meus Locais, 
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
-![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Menu de contexto do plugin de áudio e vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Ações do menu Meus locais do plugin de áudio e vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
 </Tabs>
 
-Para reproduzir uma nota, use a opção respectiva no [Menu de Contexto](../map/map-context-menu#-audiovideo-note-android) aberto para a nota:
+Para reproduzir uma nota, use a opção respectiva no [Menu de contexto](../map/map-context-menu#-audiovideo-note-android) aberto para a nota:
 
 - no mapa;
 - em Meus Locais.
@@ -225,7 +225,7 @@ A seção [Detalhes](../map/map-context-menu#-audiovideo-note-android) fornece m
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Ações do menu Meus locais do plugin de áudio e vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -234,8 +234,8 @@ A seção [Detalhes](../map/map-context-menu#-audiovideo-note-android) fornece m
 Para gerenciar uma nota em Meus Locais, toque nos três pontos verticais da nota na lista, e as opções disponíveis aparecerão, da seguinte forma:
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Abrir e visualizar o vídeo selecionado ou reproduzir a nota de áudio.
-- **<Translate android="true" ids="shared_string_share"/>**. Compartilhe facilmente a nota selecionada com outras pessoas através de várias plataformas.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Mostra a localização exata e o [Menu de Contexto](../plugins/audio-video-notes#actions-in-map-context-menu) da nota no mapa.
+- **<Translate android="true" ids="shared_string_share"/>**. Compartilhe facilmente a nota selecionada com outras pessoas por meio de várias plataformas.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Mostra a localização exata e o [Menu de contexto](../plugins/audio-video-notes#actions-in-map-context-menu) da nota no mapa.
 - **<Translate android="true" ids="shared_string_rename"/>**. Altere o nome da nota para facilitar a identificação.
 - **<Translate android="true" ids="shared_string_delete"/>**. Remove notas permanentemente do aplicativo.
 
@@ -246,7 +246,7 @@ Para gerenciar uma nota em Meus Locais, toque nos três pontos verticais da nota
 
 <TabItem value="android" label="Android">
 
-![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![O widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
 
 </TabItem>
 
@@ -271,12 +271,12 @@ Adicionar um widget à tela é necessário se você preferir evitar a busca por 
 
     - **<Translate android="true" ids="av_def_action_video"/>** - iniciar a gravação de vídeo.
 
-    - **<Translate android="true" ids="av_def_action_picture"/>** - começar a tirar fotos.
+    - **<Translate android="true" ids="av_def_action_picture"/>** - iniciar a captura de fotos.
 
-    ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![O widget](@site/static/img/plugins/audio-video-notes/widget.png)
 
 
-## Gerenciar Múltiplas Notas {#manage-multiple-notes}
+## Gerenciar Várias Notas {#manage-multiple-notes}
 
 ### Gerenciar em Meus Locais {#manage-in-my-places}
 
@@ -284,7 +284,7 @@ Adicionar um widget à tela é necessário se você preferir evitar a busca por 
 
 <TabItem value="android" label="Android">
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+![Menu Meus locais do plugin de áudio e vídeo Três ações](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
 </TabItem>
 
@@ -301,13 +301,13 @@ As opções na barra inferior podem ser usadas para gerenciar a lista de notas n
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+![Compartilhar](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
 </TabItem>
 
 </Tabs>
 
-Você pode compartilhar todas as Notas, incluindo [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) que possui notas selecionadas como pontos de passagem na tela [Meus Locais](../personal/myplaces.md#audiovideo-notes), clicando no botão de menu inferior "compartilhar". Uma caixa de seleção aparecerá ao lado de cada nota para selecionar notas específicas. Existem duas caixas de seleção acima das notas: *Notas A/V por data* para selecionar todas as notas e a caixa de seleção *Locais*. A caixa de seleção *Locais* permite adicionar um arquivo GPX separado com coordenadas e dados.
+Você pode compartilhar todas as Notas, incluindo [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes), que possui notas selecionadas como pontos de passagem na tela [Meus Locais](../personal/myplaces.md#audiovideo-notes), clicando no botão de compartilhamento do menu inferior. Uma caixa de seleção aparecerá ao lado de cada nota para selecionar notas específicas. Existem duas caixas de seleção acima das notas: *Notas A/V por data* para selecionar todas as notas e a caixa de seleção *Locais*. A caixa de seleção *Locais* permite adicionar um arquivo GPX separado com coordenadas e dados.
 
 Cada nota contém a hora em que foi criada, a quantidade de dados e, se for um registro, a hora da gravação e os dados de localização, você pode adicionar dados GPX.
 Formatos de arquivo suportados: áudio - **3gp**, vídeo - **mp4**, foto -**jpg**.
@@ -321,17 +321,17 @@ Formatos de arquivo suportados: áudio - **3gp**, vídeo - **mp4**, foto -**jpg*
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
+![Mostrar notas no mapa](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
 </TabItem>
 
 </Tabs>
 
-As notas exibidas no mapa podem contar sua história, onde você avistou sinais, qual porta precisava abrir, onde fica a saída, o caminho ideal e muito mais. Você pode mostrar as notas [uma de cada vez](#show-on-the-map) ou todas de uma vez.
+As notas exibidas no mapa podem contar sua história, onde você avistou sinais, qual porta precisava abrir, onde fica a saída, o caminho ideal e muito mais. Você pode mostrar as notas [uma por uma](#show-on-the-map) ou todas de uma vez.
 
-Use a camada de mapa [Gravação](../map/point-layers-on-map#-audio--video-points-android) para mostrar ou ocultar todas as notas. Se você ativá-la no menu [Configurar mapa](../map/configure-map-menu), a camada Gravação mostrará todas as notas no mapa.
+Use a camada de mapa [Gravação](../map/point-layers-on-map#-audio--video-points-android) para mostrar ou ocultar todas as notas. Se você ativá-la no menu [Configurar mapa](../map/configure-map-menu), a camada de Gravação mostra todas as notas no mapa.
 
-![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
+![Sem notas no mapa](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notas estão no mapa](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
 ## Pontos de Passagem Criados a Partir de Notas {#waypoints-created-from-notes}
@@ -340,8 +340,8 @@ Use a camada de mapa [Gravação](../map/point-layers-on-map#-audio--video-point
 
 <TabItem value="android" label="Android">
 
-![Notes and waypoints on the map](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
-![Waypoints on the track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
+![Notas e pontos de passagem no mapa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
+![Pontos de passagem na trilha](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
 
@@ -360,7 +360,7 @@ Se uma trilha for exportada, os pontos de passagem não podem ser visualizados o
 
 <TabItem value="android" label="Android">
 
-![Manually adding a waypoint to track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
+![Adicionando manualmente um ponto de passagem à trilha](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
 
 </TabItem>
 
@@ -368,18 +368,18 @@ Se uma trilha for exportada, os pontos de passagem não podem ser visualizados o
 
 Existem duas maneiras de criar um ponto de passagem: automaticamente e manualmente.
 
-1. **Automaticamente**, um ponto de passagem é criado, caso você faça uma nota de áudio/vídeo/foto quando a [gravação de viagem](../plugins/trip-recording) estiver em andamento, independentemente da geolocalização se estiver vinculada à posição atual ou a qualquer lugar, e assim, independentemente dos meios utilizados para isso: se for o [Widget](../widgets/info-widgets#-audio-video-notes-widget-android), ou o [Menu de Contexto](../map/map-context-menu#-audiovideo-note-android).
+1. **Automaticamente**, um ponto de passagem é criado, caso você faça uma nota de áudio/vídeo/foto quando a [gravação de viagem](../plugins/trip-recording) estiver em andamento, independentemente da geolocalização se estiver vinculada à posição atual ou a qualquer lugar, e, portanto, independentemente dos meios utilizados para isso: se for o [Widget](../widgets/info-widgets#-audio-video-notes-widget-android), ou o [Menu de contexto](../map/map-context-menu#-audiovideo-note-android).
 
-    Todos os pontos de passagem adicionados automaticamente recebem um nome atribuído automaticamente. O nome é criado, de acordo com o formato especificado abaixo para um arquivo de áudio/vídeo/foto, e possui um [shortlink](https://wiki.openstreetmap.org/wiki/Shortlink). O exemplo dos pontos de passagem na figura acima mostra pontos de passagem criados automaticamente e manualmente, onde os quatro primeiros foram criados automaticamente e o último - manualmente.
+    Todos os pontos de passagem adicionados automaticamente recebem um nome atribuído automaticamente. O nome é criado de acordo com o formato especificado abaixo para um arquivo de áudio/vídeo/foto e possui um [shortlink](https://wiki.openstreetmap.org/wiki/Shortlink). O exemplo dos pontos de passagem na figura acima mostra pontos de passagem criados automaticamente e manualmente, onde os quatro primeiros foram criados automaticamente e o último - manualmente.
 
-2. **Manualmente**, um ponto de passagem é criado via [Menu de Contexto](../map/map-context-menu#-audiovideo-note-android), da seguinte forma:
+2. **Manualmente**, um ponto de passagem é criado através do [Menu de contexto](../map/map-context-menu#-audiovideo-note-android), da seguinte forma:
 
-    - Selecione a nota de áudio/vídeo/foto desejada no mapa.
+    - Selecione a nota de áudio/vídeo/foto necessária no mapa.
     - Toque em **Ações** e, em seguida, toque em **Adicionar trilha**.
     - Selecione a trilha à qual você pretende adicionar um ponto de passagem.
-    - A caixa de diálogo *<Translate android="true" ids="quick_action_add_gpx"/>* é aberta e permite definir algumas propriedades, como o nome do ponto de passagem, um ícone, cor e outros. Uma vez feito, toque em **Salvar**.
+    - A caixa de diálogo *<Translate android="true" ids="quick_action_add_gpx"/>* é aberta e permite que você defina algumas propriedades, como o nome do ponto de passagem, um ícone, cor e outros. Depois de feito, toque em **Salvar**.
 
-:::info note
+:::info nota
 Você pode especificar nomes para cada ponto de passagem criado manualmente.
 :::
 
@@ -392,21 +392,21 @@ Você pode especificar nomes para cada ponto de passagem criado manualmente.
 
 - No mapa, um ponto de passagem e uma nota de áudio, vídeo ou foto podem ou não estar visíveis no mapa. Isso é determinado por qual camada está atualmente ativada para o perfil.
 
-- Quando nem a camada de Trilhas nem a de Gravação estão ativadas, ambos os pontos de passagem e as notas podem ser mostrados tocando neles em Meus Locais. Neste caso, o mapa mostra as localizações da nota tocada, ou, respectivamente, as localizações de todos os pontos de passagem da trilha tocada.
+- Quando nem a camada de Trilhas nem a de Gravação estão ativadas, tanto os pontos de passagem quanto as notas podem ser mostrados tocando neles em Meus Locais. Nesse caso, o mapa mostra as localizações da nota tocada ou, respectivamente, as localizações de todos os pontos de passagem da trilha tocada.
 
 | Visível | Camada ativada |
 | --- | --- |
 | Apenas pontos de passagem | Camada de Trilhas |
 | Pontos de passagem e notas | Camada de Trilhas e Gravação |
 | Apenas notas | Camada de Gravação |
-| Nenhum | Nem a camada de Trilhas, nem a de Gravação. |
+| Nenhum | Nem Trilhas, nem camada de Gravação. |
 
 
 ### Arquivo GPX com Pontos de Passagem {#gpx-file-with-waypoints}
 
-![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Ponto de passagem em um arquivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
-Se você visualizar o arquivo GPX da trilha adicionada com um ponto de passagem de uma nota de áudio/vídeo/foto, o ponto de passagem será como no exemplo abaixo, contendo as coordenadas, o carimbo de data/hora, o nome da nota respectiva e o shortlink.
+Se você visualizar o arquivo GPX da trilha adicionada com um ponto de passagem de uma nota de áudio/vídeo/foto, o ponto de passagem será como no exemplo abaixo, tendo as coordenadas, o carimbo de data/hora, o nome da nota respectiva e o shortlink.
 
 
 ## Diversos {#miscellaneous}
@@ -422,9 +422,9 @@ onde `SHORTLINK_LOCATION` especifica a latitude e longitude do local ao qual o a
 
 ### Exportar para JOSM {#export-to-josm}
 
-![Audio video notes in Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Notas de áudio e vídeo no Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
 
-Para visualizar tudo mais tarde, você pode exportar a trilha junto com todos os arquivos de mídia e visualizá-los no [editor JOSM](https://josm.openstreetmap.de/). Observe que os arquivos de mídia devem ser colocados na pasta apropriada. Você pode descobrir qual é clicando no vídeo. Uma notificação aparecerá mostrando que não há arquivo disponível, coloque o arquivo correto na pasta especificada.
+Para visualizar tudo mais tarde, você pode exportar a trilha junto com todos os arquivos de mídia e visualizá-los no [editor JOSM](https://josm.openstreetmap.de/). Observe que os arquivos de mídia devem ser colocados na pasta apropriada. Você pode descobrir qual clicando no vídeo. Uma notificação aparecerá mostrando que não há arquivo disponível, coloque o arquivo correto na pasta especificada.
 
 
 ## Artigos Relacionados {#related-articles}

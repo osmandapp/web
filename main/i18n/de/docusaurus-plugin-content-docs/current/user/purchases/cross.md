@@ -1,7 +1,7 @@
 ---
-source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
+source-hash: 67b62b612a4376b25626dd16941f9e9cff28a766c7bdc73cda828e3abcfe9ca4
 sidebar_position: 4
-title: Plattformübergreifende Käufe
+title:  Plattformübergreifende Käufe
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,13 +17,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Unterstützte plattformübergreifende Käufe {#supported-cross-platform-purchases}
 
-Die folgenden OsmAnd-Produkte unterstützen derzeit die Nutzung auf mehreren Plattformen (Android, iOS und Web):
+Die folgenden OsmAnd-Produkte unterstützen derzeit die Nutzung über mehrere Plattformen (Android, iOS und Web) hinweg:
 
 - **OsmAnd Pro** Abonnement
 - **Maps+** Abonnement
 - **Maps+** einmaliger In-App-Kauf
 
-Ab **OsmAnd Version 5.1**, die anlässlich unseres **15-jährigen Jubiläums** veröffentlicht wurde, wurde der plattformübergreifende Zugriff auf **Maps+** (früher bekannt als *Unlimited*) erweitert. Zuvor war nur das [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform)-Abonnement plattformübergreifend.
+Beginnend mit **OsmAnd Version 5.1**, die anlässlich unseres **15-jährigen Jubiläums** veröffentlicht wurde, wurde der plattformübergreifende Zugriff auf **Maps+** (früher bekannt als *Unlimited*) erweitert. Zuvor war nur das [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) Abonnement plattformübergreifend.
 
 Um den plattformübergreifenden Zugriff zu aktivieren, müssen Käufe mit Ihrem [OsmAnd Cloud](../personal/osmand-cloud.md#login)-Konto verknüpft werden.
 Sie können alle OsmAnd-Produkte hier vergleichen: [Unterschied zwischen Käufen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
@@ -33,30 +33,30 @@ Sie können alle OsmAnd-Produkte hier vergleichen: [Unterschied zwischen Käufen
 | OsmAnd Pro (Abonnement)     | ✔                     | Funktioniert auf Android, iOS und Web über die Cloud           |
 | Maps+ (Abonnement)          | ✔                     | Erfordert Version 5.0+ und Cloud-Konto                         |
 | Maps+ (einmaliger Kauf)     | ✔                     | Muss über OsmAnd Cloud auf dem Kaufgerät aktiviert werden      |
-| OsmAnd+ (eigenständige App) | Demnächst              | Nicht zwischen Stores oder Plattformen übertragbar             |
+| OsmAnd+ (eigenständige App) | ✔                     | Muss über OsmAnd Cloud auf dem Kaufgerät aktiviert werden      |
 
 
-## Funktionsweise {#how-it-works}
+## So funktioniert's {#how-it-works}
 
-Um Ihren **OsmAnd Pro**- oder **Maps+**-Kauf auf verschiedenen Plattformen (Android, iOS oder Web) zu nutzen, müssen Sie ihn **mit Ihrem OsmAnd Cloud-Konto verknüpfen**.
+Um Ihren **OsmAnd Pro**-, **OsmAnd+**- oder **Maps+**-Kauf über verschiedene Plattformen (Android, iOS oder Web) hinweg zu nutzen, müssen Sie ihn **mit Ihrem OsmAnd Cloud-Konto verknüpfen**.
 
 ### Ihren Kauf verknüpfen {#link-your-purchase}
 
-![Cloud link](@site/static/img/purchases/cloud_activation.png)
+![Cloud-Link](@site/static/img/purchases/cloud_activation.png)
 
 Führen Sie diesen Schritt auf dem **Gerät aus, auf dem Sie den Kauf getätigt haben** (Android oder iOS, Version 5.0 oder höher):
 
 1. Gehen Sie zu Ihrem [OsmAnd Cloud-Konto](../personal/osmand-cloud.md#login):
    _Menü → Einstellungen → OsmAnd Cloud → Neues Konto erstellen / Ich habe bereits ein Konto_
 
-2. Nach der Anmeldung wird Ihr **Pro**- oder **Maps+**-Kauf automatisch mit Ihrem **Cloud-Konto** verknüpft und als **plattformübergreifend** markiert, *sofern er nicht zuvor mit einem anderen Konto verknüpft war.*
+2. Nach dem Einloggen wird Ihr **Pro**- oder **Maps+**-Kauf automatisch mit Ihrem **Cloud-Konto** verknüpft und als **plattformübergreifend** markiert, *sofern er nicht zuvor mit einem anderen Konto verknüpft war.*
 
 
 
 ### Auf einem anderen Gerät oder einer anderen Plattform aktivieren {#activate-on-another-device-or-platform}
 
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
+![Maps+ Cross](@site/static/img/purchases/cross_purchase.png)
+![Maps+ Cross](@site/static/img/purchases/cross_purchase_1.png)
 
 1. Gehen Sie zu Ihrem [OsmAnd Cloud-Konto](../personal/osmand-cloud.md#login):
    *Menü → Einstellungen → OsmAnd Cloud →* ***Mit demselben Konto anmelden***
@@ -83,9 +83,9 @@ Wenn das Problem weiterhin besteht, wenden Sie sich an **support@osmand.net** un
 ## Beispiel {#example}
 
 Sie haben **Maps+** als einmaligen In-App-Kauf in der kostenlosen Version von OsmAnd aus dem [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) erworben.
-Später entscheiden Sie sich für ein iPhone und möchten **Maps+** mit der [OsmAnd iOS-Version](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257) verwenden.
+Später entscheiden Sie sich, zu einem iPhone zu wechseln und möchten **Maps+** mit der [OsmAnd iOS-Version](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257) verwenden.
 
-So aktivieren Sie Ihren Maps+-Kauf unter iOS:
+So aktivieren Sie Ihren Maps+-Kauf auf iOS:
 
 1. Öffnen Sie die **Amazon-Version** der OsmAnd-App auf Ihrem ursprünglichen Gerät.
 2. Melden Sie sich bei Ihrem [OsmAnd Cloud-Konto](../personal/osmand-cloud.md#login) an:
@@ -96,7 +96,7 @@ So aktivieren Sie Ihren Maps+-Kauf unter iOS:
 
 Damit ist die plattformübergreifende Aktivierung Ihres Kaufs abgeschlossen. Sie können **Maps+** nun auf Ihrem neuen Gerät weiter nutzen.
 
-Viel Spaß mit Maps+/Pro auf allen Plattformen!
+Viel Spaß beim plattformübergreifenden Einsatz von Maps+/Pro!
 
 
 ## Verwandte Artikel {#related-articles}

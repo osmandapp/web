@@ -1,7 +1,7 @@
 ---
-source-hash: 3c0537caba10d048fc41eb1aafbf2fad61dfc855cb8b7c403db89f081990b44f
+source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
 sidebar_position: 5
-title:  أنظمة الألوان
+title:  Color Schemes
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-تُستخدم أنظمة الألوان في [تلوين المسارات](#routes) و[تضاريس الخريطة](#terrain) و[خريطة الطقس](#weather)، ويتم تمثيلها كجزء منفصل من المعلومات التي يمكن تصديرها واستيرادها وتعديلها لتغيير نظام ألوان الخريطة وتصور البيانات.
+تُستخدم أنظمة الألوان في [تلوين المسارات](#routes)، و[تضاريس الخريطة](#terrain)، و[خريطة الطقس](#weather)، ويتم تمثيلها كجزء منفصل من المعلومات التي يمكن تصديرها واستيرادها وتعديلها لتغيير نظام ألوان الخريطة وتصور البيانات.
 
 تتوفر بيانات لوحة الألوان في قائمة [*الخرائط والموارد*](../personal/maps-resources.md#local).
 
@@ -70,22 +70,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التضاريس {#terrain}
 
-تحدد ملفات التضاريس (`height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`) 3 [تصورات للتضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers): *تظليل التلال، المنحدر، والارتفاع*. لكل نوع يمكنك الحصول على لوحات ألوان متعددة، على سبيل المثال، يتم توفير *منحدر الانهيار الجليدي* افتراضيًا.
+تحدد ملفات التضاريس (`height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`) 3 [تصورات للتضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers): *تظليل التلال، المنحدر*، و*الارتفاع*. لكل نوع، يمكنك الحصول على لوحات ألوان متعددة، على سبيل المثال، يتم توفير *منحدر الانهيار الجليدي* افتراضيًا.
 
 ### المسارات {#routes}
 
-تستخدم تصورات تدرج الخطوط ملفات لوحة الألوان (`route_<type_name>_<palette_name>.txt`) لتلوين مسارات GPX والمسارات:
+تستخدم تصورات تدرج الخط ملفات لوحة الألوان (`route_<type_name>_<palette_name>.txt`) لتلوين مسارات GPX والمسارات:
 
-- بالنسبة [للمسارات](../navigation/guidance/map-during-navigation.md#color): *السرعة، المنحدر، والارتفاع*.
-- بالنسبة [لمسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، المنحدر، والارتفاع، أو معلومات من أجهزة استشعار خارجية*.
+- لـ [المسارات](../navigation/guidance/map-during-navigation.md#color): *السرعة، المنحدر،* و*الارتفاع*.
+- لـ [مسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، المنحدر،* و*الارتفاع، أو معلومات من مستشعرات خارجية*.
 
 ### الطقس {#weather}
 
-تحدد ملفات لوحة ألوان الطقس (`weather_<type_name>.txt`) تصور [طبقات الطقس](../plugins/weather.md#weather-layers).
+تحدد ملفات لوحة ألوان الطقس (`weather_<type_name>.txt`) تصورًا لـ [طبقات الطقس](../plugins/weather.md#weather-layers).
 
 ### الألوان {#colors}
 
-تُستخدم لوحة الألوان (`user_palette_default.txt`) ببساطة للألوان المحددة مسبقًا لتعيينها إلى [المفضلة](./favorites.md)، [المسارات](./tracks/).
+تُستخدم لوحة الألوان (`user_palette_default.txt`) ببساطة للألوان المحددة مسبقًا لتعيينها لـ [المفضلة](./favorites.md)، [المسارات](./tracks/).
 
 
 ## وسيلة إيضاح لوحة الألوان {#palette-legend}
@@ -102,22 +102,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 توفر وسيلة الإيضاح طريقة سهلة لعرض وفهم العلامات المختلفة على الخريطة. تمت إضافة لوحات ألوان جديدة لعرض [**السرعة** للمسارات](../map/tracks/appearance#track-colors-in-gpx-files)، [**نوع الخط** للمسارات](../navigation/guidance/map-during-navigation.md#color)، [**الارتفاع والمنحدر** للتضاريس](../plugins/topography.md#default-color-scheme)، وجميع لوحات ألوان [**طبقة الطقس**](../plugins/weather.md#weather-layers).
 
 
-## تحرير ملف لوحة الألوان {#edit-palette-file}
+## تعديل ملف لوحة الألوان {#edit-palette-file}
 
-يمكنك تحرير لوحات الألوان لتخصيص مظهر الخرائط والمسارات. يمكن إضافة ملفات لوحة الألوان الخاصة بك إلى OsmAnd باستخدام [أداة الاستيراد/التصدير](./import-export.md).
+يمكنك تعديل لوحات الألوان لتخصيص مظهر الخرائط والمسارات. يمكن إضافة ملفات لوحة الألوان الخاصة بك إلى OsmAnd باستخدام [أداة الاستيراد/التصدير](./import-export.md).
 
 - *المسارات*: `route_speed_<type_name>.txt`، `route_slope_<type_name>.txt`، `route_elevation_<type_name>.txt`.
 - *التضاريس*: `height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`.
 - *الطقس*: `weather_<type_name>.txt`.
 - *اللون*: `user_palette_default.txt`.
 
-يمثل كل سطر قيمة رقمية (بالنسبة للوحة الألوان، إنه فهرس) ولون RGB. على سبيل المثال:
+يمثل كل سطر قيمة رقمية (للوحة الألوان، إنه فهرس) ولون RGB. على سبيل المثال:
 
 ```xml
 # ملف TXT باسم *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 درجة RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# أصفر {#yellow-}
+# أصفر  {#yellow-}
 100,255,222,2,227
 # أحمر {#red}
 200,255,1,1,255
@@ -153,7 +153,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-**إجراء سريع** لتغيير لوحة الألوان للتضاريس. تمت إضافة القدرة على التبديل بين أنظمة ألوان التضاريس، على غرار التبديل بين الطبقات. يمكن القيام بذلك باستخدام أداة [الإجراءات السريعة](../widgets/quick-action.md#configure-map).
+**إجراء سريع** لتغيير لوحة ألوان التضاريس. تمت إضافة القدرة على التبديل بين أنظمة ألوان التضاريس، على غرار التبديل بين الطبقات. يمكن القيام بذلك باستخدام أداة [الإجراءات السريعة](../widgets/quick-action.md#configure-map).
 
 
 ### استيراد / تصدير الألوان {#import--export-colors}
@@ -164,7 +164,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![تصدير إجراءات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![نسخ احتياطي محلي أندرويد](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![تصدير إجراءات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![نسخ احتياطي محلي أندرويد](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -172,7 +172,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك استيراد وتصدير جميع لوحات الألوان الافتراضية والمخصصة المتاحة باستخدام أداة استعادة ونسخ احتياطي ملفات OsmAnd.
 
-- افتح *القائمة* الرئيسية، *الإعدادات*، ثم انتقل إلى قسم **الاستيراد/التصدير** (*أندرويد*) أو **النسخ الاحتياطي المحلي** (*iOS*)، وحدد الإجراء المطلوب.
+- افتح *القائمة* الرئيسية، *الإعدادات*، ثم قم بالتمرير لأسفل إلى قسم **الاستيراد/التصدير** (*أندرويد*) أو **النسخ الاحتياطي المحلي** (*iOS*)، وحدد الإجراء المطلوب.
 - حدد عنصرًا واحدًا أو أكثر من قائمة *الألوان* أو خيار *تحديد الكل*.
 - يتم حفظ جميع الملفات المصدرة بتنسيق `.osf`.
 - إذا كان حجم البيانات المحددة كبيرًا، فسيستغرق التطبيق بعض الوقت لإعداد ملف `.osf`.

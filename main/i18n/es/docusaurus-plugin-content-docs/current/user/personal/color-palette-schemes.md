@@ -1,7 +1,7 @@
 ---
-source-hash: 3c0537caba10d048fc41eb1aafbf2fad61dfc855cb8b7c403db89f081990b44f
+source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
 sidebar_position: 5
-title: Esquemas de color
+title:  Esquemas de color
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Resumen {#overview}
+## Descripción general {#overview}
 
 :::info Función de pago
 
@@ -61,7 +61,7 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 <TabItem value="ios" label="iOS">
 
-![Paleta de colores](@site/static/img/personal/color-schemes/color_altitude.png)
+![Paleta de colores](@site/static/img/personal/color-schemes/color_altitude_ios.png)
 
 </TabItem>
 
@@ -70,7 +70,7 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 ### Terreno {#terrain}
 
-Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relieve, Pendiente* y *Altitud*. Para cada tipo puede tener varias paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
+Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Sombreado, Pendiente* y *Altitud*. Para cada tipo, puede tener varias paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
 
 ### Rutas {#routes}
 
@@ -85,7 +85,7 @@ Los archivos de paleta meteorológica (`weather_<type_name>.txt`) definen la vis
 
 ### Colores {#colors}
 
-La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para colores predefinidos para asignar a [Favoritos](./favorites.md), [Pistas](./tracks/).
+La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para asignar colores predefinidos a [Favoritos](./favorites.md) y [Pistas](./tracks/).
 
 
 ## Leyenda de la paleta {#palette-legend}
@@ -99,12 +99,12 @@ La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para co
 </table>
 
 
-La leyenda proporciona una forma sencilla de ver y comprender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** de las pistas](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** de las rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y la pendiente** del terreno](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
+La leyenda proporciona una forma sencilla de ver y comprender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** de las pistas](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** de las rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y la pendiente** del terreno](../plugins/topography.md#default-color-scheme) y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
 
 
 ## Editar archivo de paleta {#edit-palette-file}
 
-Puede editar las paletas para personalizar el aspecto de los mapas y las rutas. Se pueden añadir archivos de paleta de colores propios a OsmAnd utilizando la [herramienta de importación/exportación](./import-export.md).
+Puedes editar las paletas para personalizar el aspecto de los mapas y las rutas. Se pueden añadir archivos de paleta de colores propios a OsmAnd utilizando la [herramienta de importación/exportación](./import-export.md).
 
 - *Rutas*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
 - *Terreno*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
@@ -153,8 +153,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 </Tabs>
 
-**Acción rápida** para cambiar la paleta del Terreno. Se añadió la capacidad de cambiar entre esquemas de color del terreno, similar a cambiar entre capas. Esto se puede hacer usando la herramienta [Acciones rápidas](../widgets/quick-action.md#configure-map).
-
+**Acción rápida** para cambiar la paleta del Terreno. Se añadió la capacidad de alternar entre esquemas de color de terreno, similar a alternar entre capas. Esto se puede hacer usando la herramienta [Acciones rápidas](../widgets/quick-action.md#configure-map).
 
 ### Importar / Exportar colores {#import--export-colors}
 
@@ -178,13 +177,13 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loca
 
 </Tabs>
 
-Puede importar y exportar todas las paletas de colores predeterminadas y personalizadas disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
+Puedes importar y exportar todas las paletas de colores predeterminadas y personalizadas disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
 
-- Abra el *Menú* principal, *Ajustes*, desplácese hasta la sección **Importar/exportar** (*Android*) o **Copia de seguridad local** (*iOS*), y seleccione la acción requerida.
-- Seleccione uno o más elementos de la lista *Color* o la opción *Seleccionar todo*.
+- Abre el *Menú* principal, *Ajustes*, desplázate hasta la sección **Importar/exportar** (*Android*) o **Copia de seguridad local** (*iOS*), y selecciona la acción requerida.
+- Selecciona uno o más elementos de la lista *Color* o la opción *Seleccionar todo*.
 - Todos los archivos exportados se guardan en formato `.osf`.
-- Si el tamaño de los datos seleccionados es significativo, la aplicación tardará algún tiempo en preparar el archivo `.osf`.
-- Consulte el artículo [*Importar / Exportar*](../personal/import-export.md) para obtener información más detallada.
+- Si el tamaño de los datos seleccionados es significativo, la aplicación tardará un tiempo en preparar el archivo `.osf`.
+- Consulta el artículo [*Importar/Exportar*](../personal/import-export.md) para obtener información más detallada.
 
 
 ## Artículos relacionados {#related-articles}

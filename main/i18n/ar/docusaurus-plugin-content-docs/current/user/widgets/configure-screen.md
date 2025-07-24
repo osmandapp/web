@@ -1,5 +1,5 @@
 ---
-source-hash: c8ab58e76333d6bb43b100fbf37d1adb3abf342632d71272ce2ebe8566c5ffc3
+source-hash: cbfcf0aa9a07f3ab40e670385d79d1a04431696bcbef518decc18f41ef282921
 sidebar_position: 1
 title:  شاشة التهيئة
 ---
@@ -18,22 +18,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-تسمح لك قائمة **شاشة التهيئة** في OsmAnd بتخصيص واجهة الخريطة عن طريق إضافة وترتيب الأدوات المصغّرة (widgets) والأزرار والإجراءات السريعة عبر لوحات متعددة.
+تسمح لك قائمة **شاشة التهيئة** في OsmAnd بتخصيص واجهة الخريطة عن طريق إضافة وترتيب الأدوات المصغّرة والأزرار والإجراءات السريعة عبر لوحات متعددة.
 
 يمكنك:
 
 - إضافة أدوات مصغّرة [معلوماتية](../widgets/info-widgets.md)، [ملاحية](../widgets/nav-widgets.md)، و[متعلقة بالعلامات](../widgets/markers.md).
-- إضافة [إجراءات سريعة](../widgets/quick-action.md) و[أزرار الخريطة](../widgets/map-buttons.md).
+- إضافة أو تعديل [الإجراءات السريعة](../widgets/quick-action.md)، [الأزرار المخصصة](../widgets/quick-action.md#custom-buttons) و[الأزرار الافتراضية](../widgets/map-buttons.md).
 - تنظيم الأدوات المصغّرة في لوحات (أعلى، أسفل، يسار، يمين، وسط).
-- إنشاء [صفحات](#pages) متعددة داخل اللوحات الجانبية.
+- إنشاء **صفحات** متعددة داخل اللوحات الجانبية، واختيار حجم الأدوات المصغّرة.
 - اختيار ارتفاع الصف وتبديل أيقونات الأدوات المصغّرة.
 
-جميع الأدوات المصغّرة [تعتمد على الملف الشخصي](../personal/profiles.md) — لكل ملف شخصي تخطيطه الخاص وترتيبه ومرئيته وإعداداته.
+جميع الأدوات المصغّرة [تعتمد على الملف الشخصي](../personal/profiles.md) — كل ملف شخصي له تخطيطه الخاص وترتيبه ومرئيته وإعداداته.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
@@ -45,7 +45,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
@@ -56,7 +56,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
@@ -74,7 +74,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يسمح لك OsmAnd بتنظيم واجهة الخريطة باستخدام لوحات الأدوات المصغّرة القابلة للتخصيص.
+يتيح لك OsmAnd تنظيم واجهة الخريطة باستخدام لوحات الأدوات المصغّرة القابلة للتخصيص.
 يمكنك إضافة الأدوات المصغّرة وإعادة ترتيبها وتجميعها وإزالتها في اللوحات التالية:
 
 - **اللوحة العلوية**
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تدعم كل لوحة سلوكيات تخطيط مختلفة:
 
-- تعرض **اللوحات العلوية والسفلية** الأدوات المصغّرة في صفوف. يمكنك وضع أداة مصغّرة واحدة أو اثنتين لكل صف وإضافة صفوف متعددة إذا لزم الأمر.
+- تعرض **اللوحات العلوية والسفلية** الأدوات المصغّرة في صفوف. يمكنك وضع أداة مصغّرة واحدة أو اثنتين في كل صف وإضافة صفوف متعددة إذا لزم الأمر.
 - تدعم **اللوحات اليسرى واليمنى** صفحات متعددة. يمكنك تجميع الأدوات المصغّرة في صفحات منفصلة والتبديل بينها.
 
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
@@ -106,29 +106,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-***أدوات مصغّرة ملاحية:***  
+***أدوات الملاحة المصغّرة:***
 
 - [الاتجاه](../widgets/nav-widgets.md#bearing).
-    تعرض هذه المجموعة الاتجاه المطلق أو النسبي إلى هدف بوحدات زاوية.
+    تُظهر هذه المجموعة الاتجاه المطلق أو النسبي إلى هدف بوحدات زاوية.
     تتضمن 3 أدوات مصغّرة: *الاتجاه النسبي*، *الاتجاه المغناطيسي*، *الاتجاه الحقيقي*.
 
-- [ملف الارتفاع](../widgets/nav-widgets#elevation-widget) (*العلوي/السفلي فقط*، *أندرويد فقط*).
-    يعرض ارتفاع المسار وانحداره.
+- [ملف الارتفاع](../widgets/nav-widgets#elevation-widget) (*أعلى/أسفل فقط*، *أندرويد فقط*).
+    يعرض ارتفاع المسار وميله.
 
-- [المسارات](../widgets/nav-widgets#lanes) (*العلوي/السفلي فقط*).
-    إرشادات المسار المرئية.
+- [المسارات](../widgets/nav-widgets#lanes) (*أعلى/أسفل فقط*).
+    إرشاد بصري للمسار.
 
-- [شريط علامات الخريطة](../widgets/markers.md#configure-marker-widgets-android) (*العلوي/السفلي فقط*).
+- [شريط علامات الخريطة](../widgets/markers.md#configure-marker-widgets-android) (*أعلى/أسفل فقط*).
     يعرض المسافة/الاتجاه إلى العلامات المحفوظة.
-    قابل للتهيئة لعلامة واحدة أو اثنتين.
+    قابل للتهيئة لعلامة واحدة أو علامتين.
 
 - [نقطة الملاحة](../widgets/nav-widgets.md#navigation-points).
-    تعرض هذه المجموعة المسافة المتبقية إلى الوجهة، أو نقطة وسيطة، أو وقت الوصول إلى نقطة وسيطة، أو وقت السفر لمسار محسوب.
+    تُظهر المجموعة المسافة المتبقية إلى وجهة، أو نقطة وسيطة، أو وقت الوصول إلى نقطة وسيطة، أو وقت السفر لمسار محسوب.
     تتضمن 4 أدوات مصغّرة: [المسافة إلى الوجهة](../widgets/nav-widgets.md#distance-to-destination)، [المسافة إلى نقطة وسيطة](../widgets/nav-widgets.md#distance-to-intermediate)، [الوقت إلى نقطة وسيطة](../widgets/nav-widgets.md#time-to-intermediate)، [الوقت إلى الوجهة](../widgets/nav-widgets.md#time-to-destination).
 
 - [مناورات المسار](../widgets/nav-widgets.md#next-turn) (*اللوحة اليسرى/اليمنى فقط*).
-    يتم تنشيط هذه المجموعة أثناء الملاحة وتعرض المسافة والسهم إلى المناورة التالية.
-    تتضمن 3 أدوات مصغّرة: *المنعطف التالي*، *المنعطف التالي (صغير)*، *المنعطف التالي الثاني*.
+    يتم تنشيط هذه المجموعة أثناء التنقل وتُظهر المسافة والسهم إلى المناورة التالية.
+    تتضمن 3 أدوات مصغّرة: *المنعطف التالي*، *المنعطف التالي (صغير)*، *المنعطف الثاني التالي*.
 
 - [حد السرعة](../widgets/nav-widgets.md#speed-limit).
     يعرض حد السرعة الحالي للطريق.
@@ -136,16 +136,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [عداد السرعة](../widgets/info-widgets.md#speedometer).
     يعرض السرعة الحالية بناءً على بيانات GPS والسرعة المحدودة بناءً على [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
-- [اسم الشارع](../widgets/nav-widgets#street-name) (*العلوي/السفلي فقط*).
+- [اسم الشارع](../widgets/nav-widgets#street-name) (*أعلى/أسفل فقط*).
     يعرض الشارع الحالي أو القادم.
 
 <br/>
 
-***أدوات مصغّرة معلوماتية:***
+***أدوات معلوماتية مصغّرة:***
 
 - [الارتفاع](../widgets/info-widgets.md#altitude-widgets).
-    تعرض هذه المجموعة الارتفاع فوق مستوى سطح البحر للموقع الحالي أو لمركز الخريطة الحالي.
-    تتضمن 2 أدوات مصغّرة: *الارتفاع: الموقع الحالي*، *الارتفاع: مركز الخريطة*.
+    تُظهر المجموعة الارتفاع فوق مستوى سطح البحر للموقع الحالي أو لمركز الخريطة الحالي.
+    تتضمن أداتين مصغّرتين: *الارتفاع: الموقع الحالي*، *الارتفاع: مركز الخريطة*.
 
 - [متوسط السرعة](../widgets/info-widgets.md#average-speed-widget).
     يعرض متوسط سرعة الرحلة الحالية.
@@ -153,9 +153,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [مستوى البطارية](../widgets/info-widgets.md#battery-level).
     يعرض مستوى بطارية الجهاز.
 
-- [أدوات إحداثيات مصغّرة](../widgets/info-widgets#coordinates-widget) (*العلوي/السفلي فقط*).
-    تعرض هذه المجموعة الإحداثيات الجغرافية للموقع الجغرافي الحالي.
-    تتضمن 2 أدوات مصغّرة: *الإحداثيات: مركز الخريطة*، *الإحداثيات: الموقع الحالي*.
+- [أدوات الإحداثيات المصغّرة](../widgets/info-widgets#coordinates-widget) (*أعلى/أسفل فقط*).
+    تُظهر هذه المجموعة الإحداثيات الجغرافية للموقع الجغرافي الحالي.
+    تتضمن أداتين مصغّرتين: *الإحداثيات: مركز الخريطة*، *الإحداثيات: الموقع الحالي*.
 
 - [السرعة الحالية](../widgets/info-widgets.md#speed).
     تعرض السرعة من مستشعر GPS.
@@ -164,51 +164,51 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     يعرض وقت النظام الحالي.
 
 - [نسبة الانزلاق](../widgets/info-widgets.md#glide-ratio).
-    تعرض الأدوات المصغّرة نسبة الانزلاق إلى الهدف ومتوسط نسبة الانزلاق للرحلة الحالية.
-    تتضمن 2 أدوات مصغّرة: *نسبة الانزلاق إلى الهدف*، *متوسط نسبة الانزلاق*.
+    تُظهر الأدوات المصغّرة نسبة الانزلاق إلى الهدف ومتوسط نسبة الانزلاق للرحلة الحالية.
+    تتضمن أداتين مصغّرتين: *نسبة الانزلاق إلى الهدف*، *متوسط نسبة الانزلاق*.
 
 - [معلومات GPS](../widgets/info-widgets.md#gps-info) (*أندرويد فقط*).
     يعرض عدد الأقمار الصناعية المكتشفة.
 
 - [علامات الخريطة](../widgets/markers.md).
-    تعرض هذه المجموعة المسافة أو الوقت المقدر للوصول (ETA) لأول علامتين في [القائمة](https://osmand.net/docs/user/personal/markers#itinerary-list).
-    تتضمن 2 أدوات مصغّرة: *العلامة الأولى*، *العلامة الثانية*.
+    تُظهر المجموعة المسافة أو الوقت المقدر للوصول (ETA) لأول علامتين في [القائمة](https://osmand.net/docs/user/personal/markers#itinerary-list).
+    تتضمن أداتين مصغّرتين: *العلامة الأولى*، *العلامة الثانية*.
 
 - [مسطرة نصف القطر](../widgets/info-widgets.md#radius-ruler).
-    تعرض المسافة بين موقعك ونقطة على الخريطة، محاطة بـ [أداة مسطرة نصف القطر](../widgets/radius-ruler.md).
+    تُظهر المسافة بين موقعك ونقطة على الخريطة، محاطة بـ [أداة مسطرة نصف القطر](../widgets/radius-ruler.md).
 
 - [شروق الشمس، غروب الشمس](../widgets/info-widgets.md#sunset-and-sunrise).
-    يعرض وقت الشروق أو الغروب التالي لمركز الخريطة.
-    تتضمن 2 أدوات مصغّرة: *شروق الشمس*، *غروب الشمس*.
+    يعرض وقت شروق الشمس أو غروبها التالي لمركز الخريطة.
+    تتضمن أداتين مصغّرتين: *شروق الشمس*، *غروب الشمس*.
 
 <br/>
 
-***أدوات مصغّرة قائمة على المكونات الإضافية:***  
+***أدوات مصغّرة قائمة على المكونات الإضافية:***
 
 - [ملاحظات صوتية/فيديو](../widgets/info-widgets.md#audiovideo-notes-widget).
     وصول سريع لالتقاط الوسائط.
-    تتضمن 4 أدوات مصغّرة: *عند الطلب*، *تسجيل صوت*، *تسجيل فيديو*، *التقاط صورة*.
+    تتضمن 4 أدوات مصغّرة: *حسب الطلب*، *تسجيل صوت*، *تسجيل فيديو*، *التقاط صورة*.
 
 - [أدوات المطور المصغّرة](../widgets/info-widgets.md#developer-widgets).
-    تعرض معلومات اختيارية.
+    يعرض معلومات اختيارية.
     تتضمن 5 أدوات مصغّرة: *معدل إطارات عرض الخريطة*، *ميل الكاميرا*، *ارتفاع الكاميرا*، *مستوى التكبير*، *المسافة من الكاميرا إلى الهدف*، *ذاكرة الوصول العشوائي المتاحة*.
 
 - [أدوات المستشعرات الخارجية المصغّرة](../widgets/info-widgets.md#external-sensors-widgets).
-    تساعد هذه المجموعة في تتبع البيانات من مستشعرات BLE/ANT+ في الوقت الفعلي.
+    تساعد المجموعة في تتبع البيانات من مستشعرات BLE/ANT+ في الوقت الفعلي.
     تتضمن 6 أدوات مصغّرة: *معدل ضربات القلب*، *قوة الدراجة* (*أندرويد فقط*)، *إيقاع الدراجة*، *سرعة الدراجة*، *مسافة الدراجة*، *درجة الحرارة*.
 
-- [Mapillary](../widgets/info-widgets.md#mapillary-widget).
+- [مابيلاري](../widgets/info-widgets.md#mapillary-widget).
     يفتح تطبيق Mapillary لصور مستوى الشارع.
 
-- [حالة OsmAnd Tracker](../widgets/info-widgets.md#tracker-widget).
+- [حالة متتبع OsmAnd](../widgets/info-widgets.md#tracker-widget).
     وصول سريع إلى [تطبيق OsmAnd Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram).
 
-- [أداة وقوف السيارات المصغّرة](../widgets/info-widgets.md#parking-widget).
-    المسافة من مركز الشاشة إلى موقع وقوف السيارات المحفوظ.
+- [أداة ركن السيارة المصغّرة](../widgets/info-widgets.md#parking-widget).
+    المسافة من مركز الشاشة إلى موقع ركن السيارة المحفوظ.
 
 - [تسجيل الرحلة](../widgets/info-widgets.md#trip-recording-widgets).
     يبدأ ويوقف تسجيل المسار، ويعرض بيانات تسجيل المسار.
-    تتضمن 4 أدوات مصغّرة: *المسافة*، *المدة*، *صعودًا*، *هبوطًا*.
+    تتضمن 4 أدوات مصغّرة: *المسافة*، *المدة*، *صعود*، *نزول*.
 
 - [الطقس](../widgets/info-widgets.md#weather-widgets).
     يعرض معلومات الطقس التفصيلية.
@@ -222,25 +222,44 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 :::
 
 
-### صفوف {#rows}
+### الصفوف {#rows}
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
-تسمح لك ميزة **وضع الصفوف** بإضافة العديد من الصفوف حسب الحاجة إلى اللوحات العلوية والسفلية. يمكنك عرض أدوات مصغّرة متعددة لكل صف، مما يعزز كمية المعلومات المرئية.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
+تسمح لك ميزة **وضع الصفوف** بإضافة العديد من الصفوف حسب الحاجة إلى اللوحات العلوية والسفلية. يمكنك عرض أدوات مصغّرة متعددة في كل صف، مما يعزز كمية المعلومات المرئية.
 
 ***كيفية تهيئة الصفوف:***
 
-- **إضافة أدوات مصغّرة**. اختر من قائمة *الأدوات المصغّرة المتاحة*.
-- **تغيير الترتيب**. اضغط على زر *تغيير الترتيب* لترتيب الأدوات المصغّرة.
-- **إضافة صفوف**. استخدم زر *إضافة صف* لإنشاء صفوف جديدة للأدوات المصغّرة.
-- **نقل الأدوات المصغّرة**. انقل الأدوات المصغّرة بين الصفوف.
-- **تطبيق التغييرات**. اضغط على زر *تطبيق* لحفظ التهيئة.
+- **إضافة أدوات مصغّرة**: اضغط على زر *زائد* (أندرويد) أو *إضافة أداة مصغّرة* (iOS)، ثم اختر من قائمة الأدوات المصغّرة المتاحة.
+- **إعادة ترتيب الأدوات المصغّرة**: اضغط على زر *قلم رصاص* (أندرويد) أو *تعديل* (iOS) لإعادة ترتيب الأدوات المصغّرة.
+- **إضافة صفوف**: اضغط على زر *إضافة صف* لإنشاء صفوف جديدة لأدواتك المصغّرة.
+- **نقل الأدوات المصغّرة**: اسحب الأدوات المصغّرة بين الصفوف المختلفة.
+- **الوصول إلى إعدادات الأداة المصغّرة**: اضغط على أيقونة *"i"* (أندرويد) أو السهم *">"* (iOS) لفتح إعدادات الأداة المصغّرة.
+- **حفظ التغييرات**: اضغط على *تطبيق* (أندرويد) أو *تم* (iOS) لحفظ التخطيط.
+
 
 #### أنواع الأدوات المصغّرة والقيود {#widget-types-and-restrictions}
 
-يسمح الوضع بإضافة **أكثر من أداة مصغّرة واحدة في صف واحد** على اللوحات العلوية والسفلية لعرض أكبر قدر ممكن من المعلومات.
+يسمح لك الوضع بإضافة **أكثر من أداة مصغّرة واحدة في صف واحد** على اللوحات العلوية والسفلية لعرض أكبر قدر ممكن من المعلومات.
 
-- **أدوات مصغّرة معقدة**. يمكن إضافة أداة مصغّرة معقدة واحدة فقط لكل صف. وتشمل هذه:
+- **الأدوات المصغّرة المعقدة**. يمكن إضافة أداة مصغّرة معقدة واحدة فقط لكل صف. وتشمل هذه:
     - [شريط علامات الخريطة (*أندرويد فقط*)](../widgets/markers.md#configure-marker-widgets-android)
     - [اسم الشارع](../widgets/nav-widgets#street-name)
     - [أدوات الإحداثيات المصغّرة](../widgets/info-widgets#coordinates-widget)
@@ -248,14 +267,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - [ملف الارتفاع (*أندرويد فقط*)](../widgets/nav-widgets#elevation-widget)
     - [مناورات المسار](../widgets/nav-widgets.md#next-turn)
 
-- **أدوات مصغّرة بسيطة**. يمكن إضافة أدوات مصغّرة بسيطة متعددة إلى صف واحد. يمكن لهذه الأدوات المصغّرة عرض *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*.
+- **الأدوات المصغّرة البسيطة**. يمكن إضافة أدوات مصغّرة بسيطة متعددة إلى صف واحد. يمكن لهذه الأدوات المصغّرة عرض *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*.
 
 
-### صفحات {#pages}
+### الصفحات {#pages}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> ← تعديل ← إضافة صفحة*  
 
@@ -273,13 +292,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكن تجميع الأدوات المصغّرة في اللوحات اليمنى واليسرى في **صفحات**. تسمح لك ميزة **وضع الصفحات** بإضافة 5 صفحات إلى اللوحات اليسرى واليمنى.
+يمكن تجميع الأدوات المصغّرة في اللوحات اليمنى واليسرى في **صفحات**. تسمح لك ميزة **وضع الصفحات** بإضافة 5 صفحات إلى اللوحات اليمنى واليسرى.
 
 ***كيفية تهيئة الصفوف:***
 
 - **إضافة صفحة**. انتقل إلى إعدادات اللوحة اليسرى/اليمنى واضغط على *تعديل ← إضافة صفحة*.
 - **تنظيم الأدوات المصغّرة حسب الصفحة**. هذه الميزة مفيدة عندما تكون هناك حاجة إلى مجموعات مختلفة من الأدوات المصغّرة لمهام مختلفة، مثل التنقل مقابل تصفح الخريطة.
-- تسمح لك الصفحات بإنشاء **مجموعات أدوات مصغّرة** لسيناريوهات محددة، مما يحسن سير العمل ويقلل الفوضى.
+- تسمح لك الصفحات بإنشاء **مجموعات أدوات مصغّرة** لسيناريوهات محددة، مما يحسن سير العمل ويقلل من الفوضى.
 
 
 ## إعدادات الأداة المصغّرة {#widget-settings}
@@ -295,12 +314,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. **إخفاء أيقونات الأداة المصغّرة** (*للوحات العلوية والسفلية*):
 
-    - يحسن الوضوح ويزيد المساحة المخصصة للبيانات الهامة.
+    - يحسن الوضوح ويزيد المساحة المخصصة للبيانات المهمة.
     - مفيد بشكل خاص عند عرض العديد من الأدوات المصغّرة في نفس **الصف**.
 
 3. **حجم فردي لصفوف مختلفة** (*لجميع اللوحات*):
 
-    - يمكن تحديد حجم الأدوات المصغّرة بشكل فردي عن طريق تعديل حجم الصف والعمود.
+    - يمكن تغيير حجم الأدوات المصغّرة بشكل فردي عن طريق ضبط حجم الصف والعمود.
     - **ملاحظة:** سيؤدي تغيير حجم أداة مصغّرة واحدة في صف/عمود إلى تغيير حجم جميع الأدوات المصغّرة في ذلك الصف/العمود.
 
 4. **لتغيير حجم الأداة المصغّرة ومرئية الأيقونة:**
@@ -308,7 +327,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - حدد أداة مصغّرة قمت بإضافتها بالفعل إلى اللوحة.
     - اضغط على أيقونة *الإعدادات* على الجانب الأيمن من حقل الأداة المصغّرة.
     - اضغط على إعداد *الحجم* وحدد أحد الأحجام المتاحة.
-    - قم بالتبديل إلى وضع الإيقاف، في حقل *إظهار الأيقونة*.
+    - قم بالتبديل إلى وضع إيقاف التشغيل، في حقل *إظهار الأيقونة*.
 
 
 ## تخصيص اللوحات {#panels-customization}
@@ -317,37 +336,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
-![تكرار الأداة المصغّرة](@site/static/img/widgets/widget_context_menu_andr.png)
+![نسخة الأداة المصغّرة](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![تكرار الأداة المصغّرة](@site/static/img/widgets/widget_context_menu_ios.png)
+![نسخة الأداة المصغّرة](@site/static/img/widgets/widget_context_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر **قائمة سياق الأداة المصغّرة** طريقة سريعة لإدارة وتهيئة الأدوات المصغّرة مباشرة من شاشة الخريطة. يمكنك الوصول إليها عن طريق ***الضغط المطول*** على أي أداة مصغّرة لتخصيص تخطيط الأدوات المصغّرة دون مغادرة الخريطة.
+توفر **قائمة سياق الأداة المصغّرة** طريقة سريعة لإدارة وتهيئة الأدوات المصغّرة مباشرة من شاشة الخريطة. يمكنك الوصول إليها عن طريق ***الضغط مطولاً*** على أي أداة مصغّرة لتخصيص تخطيط الأدوات المصغّرة دون مغادرة الخريطة.
 
-**للوحات العلوية والسفلية**  
+**للوحات العلوية والسفلية**
 
 - *إضافة أداة مصغّرة إلى اليمين/اليسار:*
 
     - حدد موضعًا للأداة المصغّرة الجديدة بالنسبة إلى الأداة الحالية.
     - اختر الأداة المصغّرة من قائمة [الأدوات المصغّرة المتاحة](#widgets-for-all-panels).
 
-**للوحات اليسرى واليمنى**  
+**للوحات اليسرى واليمنى**
 
-- *إضافة أداة مصغّرة فوق/تحت:*
+- *إضافة أداة مصغّرة أعلى/أسفل:*
 
-    - حدد ما إذا كنت تريد وضع الأداة المصغّرة الجديدة فوق أو تحت الأداة المصغّرة الحالية.
+    - حدد ما إذا كنت تريد وضع الأداة المصغّرة الجديدة أعلى أو أسفل الأداة المصغّرة الحالية.
     - اضغط على الأداة المصغّرة المطلوبة في القائمة لإضافتها إلى الموضع المحدد.
 
-**إجراءات عامة لجميع اللوحات**  
+**إجراءات عامة لجميع اللوحات**
 
 - *الإعدادات*.
     - الوصول إلى إعدادات الأداة المصغّرة (إذا كانت متاحة) لتخصيص مظهرها أو سلوكها.
@@ -358,30 +377,46 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - *حذف*.
     - إزالة الأداة المصغّرة من اللوحة.
-    - يضمن موجه التأكيد أن الإجراء مقصود.
+    - يضمن طلب التأكيد أن الإجراء مقصود.
 
 ### نسخ الأدوات المصغّرة {#copies-of-widgets}
 
-*قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة*  
+*قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة*
 
-![تكرار الأداة المصغّرة](@site/static/img/widgets/widget_dublicate.png)  
+![نسخة الأداة المصغّرة](@site/static/img/widgets/widget_dublicate.png)
 
 يسمح لك OsmAnd بإضافة نسخ متعددة من نفس الأداة المصغّرة إلى لوحات أو صفحات مختلفة. هذه الميزة مفيدة بشكل خاص عندما تحتاج إلى معلومات متسقة عبر طرق عرض أو ملفات تعريف مختلفة.
 
 ***كيفية تكرار الأدوات المصغّرة:***
 
-- **إضافة الأداة المصغّرة**. انتقل إلى: *قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة ←* **إضافة** *أداة مصغّرة*.
+- **أضف الأداة المصغّرة**. انتقل إلى: *قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة ←* **إضافة** *أداة مصغّرة*.
 - **تكرار باستخدام قائمة السياق**. اضغط على الأداة المصغّرة وحدد **تكرار** من قائمة الإجراءات.
 - **طريقة بديلة**. حدد نفس الأداة المصغّرة من قائمة *الأدوات المصغّرة المتاحة* واضغط على *إضافة*.
 
 
 ### نقل أو حذف {#move-or-delete}
 
-*قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة*  
+*قائمة OsmAnd ← تهيئة الشاشة ← الأدوات المصغّرة ← اللوحة*
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_remove_andr.png)
 
-يمكنك إعادة ترتيب أو إزالة الأدوات المصغّرة من شاشة التطبيق باستخدام وضع **التحرير**.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_remove_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
+يمكنك إعادة ترتيب الأدوات المصغّرة أو إزالتها من شاشة التطبيق باستخدام وضع **التحرير**.
 
 ***كيفية نقل أداة مصغّرة:***
 
@@ -389,20 +424,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - اضغط مطولاً على **الأيقونة الموجودة على يمين** الأداة المصغّرة.
 - اسحبها إلى الموضع المطلوب في قائمة الأدوات المصغّرة.
 
-***كيفية حذف أداة مصغّرة:***  
+***كيفية حذف أداة مصغّرة:***
 
 - اتبع نفس الخطوات المذكورة أعلاه.
 - اضغط على **أيقونة الناقص** على يسار اسم الأداة المصغّرة.
-- أكد الحذف عند المطالبة.
+- أكد الحذف عند المطالبة بذلك.
 
 
 ## الأزرار {#buttons}
 
-### أزرار مخصصة {#custom-buttons}
+### الأزرار المخصصة {#custom-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -426,7 +461,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -444,9 +479,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-1. تسمح لك **الأزرار الافتراضية** بتخصيص الأزرار المسبقة الإعداد التي تظهر على شاشة الخريطة. يمكنك اختيار إخفاء أو إظهار الأزرار التالية:
+1. تسمح لك **الأزرار الافتراضية** بتخصيص أزرار الخريطة المحددة مسبقًا التي تظهر على شاشة الخريطة. يمكنك اختيار إخفاء أو إظهار الأزرار التالية:
 
-    - [وضع ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). بالنسبة لنظام iOS، الزر متاح دائمًا. بالنسبة لنظام أندرويد، يظهر في القائمة ويكون متاحًا للإعداد إذا تم تحديد محرك عرض الخريطة [الإصدار 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
+    - [وضع ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). بالنسبة لنظام iOS، الزر متاح دائمًا. بالنسبة لنظام Android، يظهر في القائمة ويكون متاحًا للإعداد إذا تم تحديد [محرك عرض الخريطة الإصدار 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
     - [البوصلة](../widgets/map-buttons.md#display-options). تشير إلى كيفية توجيه الخريطة على الجهاز.
     3 طرق عرض: *مرئي دائمًا*، *مخفي دائمًا*، *مرئي إذا كانت الخريطة مدورة*.
@@ -457,18 +492,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - [موقعي](../widgets/map-buttons.md#my-location-and-zoom). يركز الخريطة على موقعك الحالي.
 
-    - [التنقل](../widgets/map-buttons.md#directions). ضروري لتخطيط المسار وبدء التنقل.
+    - [الملاحة](../widgets/map-buttons.md#directions). ضروري لتخطيط المسار وبدء الملاحة.
 
     - [البحث](../widgets/map-buttons.md#search). يفتح أداة البحث عن المواقع.
 
     - [تكبير / تصغير](../widgets/map-buttons.md#my-location-and-zoom). يضبط مستوى تكبير الخريطة لإظهار المزيد أو أقل من التفاصيل.
 
-2. تحتوي **قائمة النقاط الثلاث** على شاشة الأزرار الافتراضية على إجراءات مثل:
+2. تحتوي **قائمة النقاط الثلاث** في شاشة الأزرار الافتراضية على إجراءات مثل:
 
     - *إعادة تعيين إلى الافتراضي*. يسمح لك بإعادة إعدادات الزر إلى مظهرها الأصلي.
-    - *نسخ من ملف تعريف آخر*. اختر من أي ملف تعريف من القائمة المعروضة تريد نسخ إعدادات الزر.
+    - *نسخ من ملف تعريف آخر*. حدد من أي ملف تعريف من القائمة المعروضة تريد نسخ إعدادات الزر.
 
-3. يوفر **مظهر الزر الافتراضي** (*أندرويد فقط*) مجموعة متنوعة من خيارات التخصيص لهذه الأنواع من الأزرار. لتعديل مظهر الزر، اضغط على الزر المطلوب من القائمة وحدد خيار [المظهر](#button-appearance).
+3. يوفر **مظهر الزر الافتراضي** (*أندرويد فقط*) مجموعة متنوعة من خيارات التخصيص لهذا النوع من الأزرار. لتعديل مظهر الزر، اضغط على الزر المطلوب من القائمة وحدد خيار [المظهر](#button-appearance).
 
 
 ### مظهر الزر {#button-appearance}
@@ -477,11 +512,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![مظهر الزر](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-تتيح لك ميزة *مظهر الزر* تخصيص مظهر الأزرار على واجهة الخريطة بالكامل. تتوفر خيارات التخصيص هذه لكل من *الإجراءات السريعة (الأزرار المخصصة)* و*الأزرار الافتراضية*، مما يوفر تحكمًا شاملاً في مظهر واجهة الخريطة ويسمح بإجراء تعديلات دقيقة على تصميم الزر.
+تتيح لك ميزة *مظهر الزر* تخصيص مظهر الأزرار على واجهة الخريطة بالكامل. تتوفر خيارات التخصيص هذه لكل من *الإجراء السريع (الأزرار المخصصة)* و*الأزرار الافتراضية*، مما يوفر تحكمًا شاملاً في مظهر واجهة الخريطة ويسمح بإجراء تعديلات دقيقة على تصميم الزر.
 
 ***خيارات التخصيص***:
 
-- **الأيقونة**. اختر من قائمة الأيقونات التي تمثل الإجراءات التي أضفتها بالفعل، مما يسهل تحديد الوظائف بلمحة.
+- **الأيقونة**. اختر من قائمة الأيقونات التي تمثل الإجراءات التي أضفتها بالفعل، مما يسهل تحديد الوظائف بنظرة سريعة.
 - **نصف قطر الزاوية**. اضبط هذا الإعداد لتغيير شكل الزر، بدءًا من الزوايا الحادة والمربعة إلى الحواف الناعمة والمستديرة.
 - **الحجم**. اختر حجم الزر الذي يناسب شاشتك ويبرز حسب الحاجة. بالنسبة لـ *الأزرار الافتراضية*، الأحجام محددة مسبقًا ولا يمكن تعديلها.
 - **شفافية الخلفية**. تحكم في رؤية خلفية الزر. يمكنك ضبطها لتكون مرئية بالكامل أو شفافة جزئيًا، أو عرض ظل الإطار والأيقونة فقط.
@@ -491,7 +526,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
@@ -510,15 +545,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [المسافة بالنقر](../widgets/radius-ruler.md#distance-by-tap). تتيح لك القدرة على قياس المسافة من موقعك إلى النقطة المحددة.
+- [المسافة بالنقر](../widgets/radius-ruler.md#distance-by-tap). يمنح القدرة على قياس المسافة من موقعك إلى النقطة المحددة.
 - [عداد السرعة](../widgets/info-widgets.md#speedometer). يعرض السرعة الحالية بناءً على بيانات GPS والسرعة المحدودة بناءً على [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). تعتمد البيانات المعروضة أيضًا على إعداد [تسامح حد السرعة](../navigation/guidance/voice-navigation.md#speed-limit) في OsmAnd.
 
 
-### عرض الموضع (موضع الموقع على الشاشة) {#display-position-location-position-on-screen}
+### موضع العرض (موضع الموقع على الشاشة) {#display-position-location-position-on-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 ![صفحة الأداة المصغّرة](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
@@ -534,18 +569,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 > *موضع الموقع على الشاشة* هو اسم هذا الإعداد في إصدار iOS من OsmAnd.
 
-يسمح لك بتعيين موضع المؤشر لـ *[موقعي](../map/interact-with-map.md#my-location-and-zoom)* على خريطة OsmAnd. تتوفر ثلاثة خيارات:
+يسمح لك بتعيين موضع المؤشر إلى *[موقعي](../map/interact-with-map.md#my-location-and-zoom)* على خريطة OsmAnd. هناك ثلاثة خيارات متاحة:
 
 - **<Translate android="true" ids="position_on_map_center"/>**. يتم وضع المؤشر دائمًا في منتصف الشاشة.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. يتم وضع *موقعي* أسفل منتصف الشاشة بقليل. يسمح لك هذا الوضع برؤية المزيد من معلومات الخريطة أمام حركتك، وهو مفيد أثناء التنقل.
-- **<Translate android="true" ids="shared_string_automatic"/>**. يضع *موقعي* اعتمادًا على *[اتجاه الخريطة](../map/interact-with-map.md#map-orientation-modes)* (*الأسفل* - لاتجاه الحركة، *الوسط* - لجميع الاتجاهات الأخرى).
+- **<Translate android="true" ids="shared_string_automatic"/>**. يضع *موقعي* اعتمادًا على *[اتجاه الخريطة](../map/interact-with-map.md#map-orientation-modes)* (*أسفل* - لاتجاه الحركة، *مركز* - لجميع الاتجاهات الأخرى).
 
 
 ## الإجراءات {#actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
@@ -563,22 +598,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-الوصول إلى إجراءات إضافية في شاشة التهيئة هي:
+الوصول إلى إجراءات إضافية في شاشة التهيئة:
 
-- *أندرويد*. تقع في شاشة التهيئة في أسفل الشاشة في قسم *الإجراءات*: *القائمة ← شاشة التهيئة ← الإجراءات*.
+- *أندرويد*. تقع في شاشة التهيئة في أسفل الشاشة في قسم *الإجراءات*: *القائمة ← تهيئة الشاشة ← الإجراءات*.
 - *أندرويد / iOS*. تقع على شاشات كل لوحة في *قائمة النقاط الثلاث* في الزاوية العلوية اليمنى من الشاشة.
 
 الإجراءات المتاحة:
 
 - **إعادة تعيين إلى الافتراضي**. تتيح لك هذه الميزة إعادة تعيين جميع الإعدادات إلى القيم الافتراضية إذا كنت ترغب في البدء من جديد، أو استخدام الإعدادات المسبقة فقط عند بدء تشغيل OsmAnd.
-- **نسخ من ملف تعريف آخر**. تتيح لك هذه الميزة استيراد الإعدادات بسرعة من ملف تعريف آخر، وتحديد الإعدادات المطلوبة من القائمة، ونسخها.
+- **نسخ من ملف تعريف آخر**. تتيح لك هذه الميزة استيراد الإعدادات بسرعة من ملف تعريف آخر، وتحديد الملفات المطلوبة من القائمة، ونسخها.
 
 
 ## تبديل الملف الشخصي {#switch-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 ![قائمة شاشة التهيئة](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
@@ -607,4 +642,4 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [أدوات علامات مصغّرة](./markers.md)
 - [إجراء سريع](./quick-action.md)
 
-> *آخر تحديث: مايو 2025*
+> *آخر تحديث: يوليو 2025*

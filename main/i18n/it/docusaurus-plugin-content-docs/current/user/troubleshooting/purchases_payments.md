@@ -1,5 +1,5 @@
 ---
-source-hash: 212ac4c80976038c3369ba42db713fb837385f1080dd80dd1129601cbee0ccec
+source-hash: 7c4671ddc27bfd8d4ca740b871d3d605e6d6fb13c5bf804282724603b5068740
 sidebar_position: 2
 title: Acquisti e Pagamenti
 ---
@@ -15,17 +15,17 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Acquisti multipiattaforma {#cross-platform-purchases}
 
-**OsmAnd Pro** e **Maps+** (*All World Maps* per iOS) sono **abbonamenti multipiattaforma** disponibili per Android e iOS a partire da OsmAnd 5.0. Multipiattaforma significa che se acquisti un abbonamento, ad esempio, in uno degli store Android (Google Play, Huawei AppGallery), puoi utilizzarlo anche su iOS e nella versione web.
+**OsmAnd Pro** e **Maps+** (*Mappe di tutto il mondo* per iOS) sono **abbonamenti multipiattaforma** disponibili per Android e iOS a partire da OsmAnd 5.0. Multipiattaforma significa che se acquisti un abbonamento, ad esempio, in uno degli store Android (Google Play, Huawei AppGallery), puoi usarlo anche su iOS e nella versione web.
 
 - L'abbonamento multipiattaforma può essere utilizzato su più dispositivi e piattaforme **se collegato allo stesso account OsmAnd Cloud**.
 
-- Gli acquisti una tantum come **OsmAnd+** (Android) e gli acquisti specifici dello store non sono trasferibili tra le piattaforme.
+- Gli acquisti una tantum come **OsmAnd+** (Android) e gli acquisti specifici dello store non sono trasferibili tra piattaforme.
 
 - Puoi utilizzare OsmAnd Pro su un massimo di 6 dispositivi, anche se utilizzano sistemi operativi diversi.
 
 - Assicurati sempre di utilizzare lo stesso account OsmAnd Cloud su tutti i dispositivi per accedere ai tuoi acquisti.
 
-- Per maggiori dettagli, consulta: [Acquisti Android](../purchases/android.md), [Acquisti iOS](../purchases/ios.md) e [Portale mappe OsmAnd](https://www.osmand.net/map).
+- Per maggiori dettagli, vedi: [Acquisti Android](../purchases/android.md), [Acquisti iOS](../purchases/ios.md) e [Portale mappe OsmAnd](https://www.osmand.net/map).
 
 
 ### Come collegare il tuo acquisto all'account OsmAnd Cloud {#how-to-link-your-purchase-to-osmand-cloud-account}
@@ -41,7 +41,7 @@ import Translate from '@site/src/components/Translate.js';
 2. Se **hai già** un account OsmAnd Cloud:
 
     - Assicurati di aver effettuato l'accesso all'account OsmAnd Cloud sul dispositivo in cui hai effettuato l'acquisto.
-    - Naviga su *Menu OsmAnd → Impostazioni → OsmAnd Cloud → Ho già un account*
+    - Vai su *Menu OsmAnd → Impostazioni → OsmAnd Cloud → Ho già un account*
     - Dopo aver effettuato l'accesso al tuo account, vai su *Menu OsmAnd → Impostazioni → Acquisti*.
     - Tocca **Ripristina acquisti** per sincronizzare l'acquisto con il tuo account.
 
@@ -49,21 +49,21 @@ import Translate from '@site/src/components/Translate.js';
 > Per maggiori informazioni, leggi l'articolo [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 
-## Come acquistare e ripristinare OsmAnd nell'Huawei AppGallery senza Huawei Mobile Services {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
+## Come acquistare e ripristinare OsmAnd nell'AppGallery di Huawei senza i servizi mobili di Huawei {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
 
 1. **Acquista OsmAnd**:
-   - Innanzitutto, abilita *Installa da fonti sconosciute* nelle impostazioni del tuo dispositivo. Di solito puoi trovare questa opzione in **Impostazioni → Sicurezza**.
-   - Installa gli [Huawei Mobile Services (HMS Core)](https://consumer.huawei.com/za/community/details/Download-the-latest-Huawei-HMS-Core-APK-5-3-0-312/topicId-142217/), che sono essenziali per la compatibilità delle app.
+   - Innanzitutto, abilita *Installa da origini sconosciute* nelle impostazioni del tuo dispositivo. Di solito puoi trovare questa opzione in **Impostazioni → Sicurezza**.
+   - Installa i [Servizi mobili Huawei (HMS Core)](https://consumer.huawei.com/za/community/details/Download-the-latest-Huawei-HMS-Core-APK-5-3-0-312/topicId-142217/), essenziali per la compatibilità delle app.
    - Successivamente, apri *Huawei AppGallery* sulla pagina [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) e scarica l'app.
    - Inizialmente è disponibile solo la versione gratuita per il download. Per effettuare un acquisto, vai su OsmAnd *Menu → Impostazioni → Acquisti* e seleziona il tipo richiesto.
    - Per ulteriori dettagli, visita [questa pagina](https://osmand.net/docs/user/purchases/android#install-application).
 
 2. **Ripristina acquisto**:
    - Per ripristinare il tuo acquisto, accedi a *Huawei AppGallery* utilizzando lo stesso account associato al tuo acquisto OsmAnd.
-   - Controlla la cronologia delle transazioni nella [cronologia ordini di Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
+   - Controlla la cronologia delle transazioni nella [cronologia degli ordini di Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
    - Potrebbe essere necessario aggiornare *Huawei AppGallery* e cancellare la cache per evitare problemi.
    - Per ripristinare i tuoi acquisti, segui *Menu → Impostazioni → Acquisti → Ripristina acquisti* in OsmAnd.
-   - Per maggiori informazioni, consulta l'articolo [Acquisti Android](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
+   - Per maggiori informazioni, vedi l'articolo [Acquisti Android](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
 
 <!--
 - Instructions for setting up Huawei Mobile Services.
@@ -71,13 +71,13 @@ import Translate from '@site/src/components/Translate.js';
 - Restore purchases in the Huawei AppGallery.
 -->
 
-## Lo store Amazon sta chiudendo - cosa fare {#amazon-store-is-closing---what-to-do}
+## Il negozio Amazon sta chiudendo - cosa fare {#amazon-store-is-closing---what-to-do}
 
-Stiamo lavorando a una soluzione per trasferire gli acquisti effettuati tramite Amazon ad altre piattaforme.
-Attualmente, [è possibile trasferire abbonamenti e acquisti in-app](../purchases/cross.md).
-L'opzione per trasferire l'app OsmAnd+ è ancora in fase di sviluppo.
+Il 20 agosto 2025, Amazon chiuderà l'Amazon Appstore per i dispositivi Android — dettagli [qui](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
 
-Il 20 agosto 2025, Amazon chiuderà l'Amazon Appstore per dispositivi Android — dettagli [qui](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program).
+È necessario trasferire gli acquisti effettuati tramite Amazon ad altre piattaforme.
+Attualmente, [è possibile trasferire abbonamenti, acquisti in-app e l'app OsmAnd+](../purchases/cross.md).
+
 
 
 ## Come ripristinare l'acquisto del plugin Topografia (precedentemente Curve di livello) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
@@ -85,23 +85,23 @@ Il 20 agosto 2025, Amazon chiuderà l'Amazon Appstore per dispositivi Android �
 Per ripristinare il [plugin Topografia](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
 
 1. Accedi allo stesso account Google Play utilizzato per acquistare il plugin Topografia e installa [l'app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
-2. Se il pulsante *Installa* è inattivo, assicurati che sia Google Play che l'app OsmAnd siano aggiornate. Cancella la cache, riavvia il dispositivo e prova a installare nuovamente il plugin.
-3. Dopo l'installazione, abilita il plugin Topografia nel *[Menu OsmAnd → Plugin](../plugins/topography.md)*, scarica i file necessari in *[Mappe e risorse](../start-with/download-maps.md#maps-and-resources)* e attivalo tramite il *[Menu Configura mappa](../map/configure-map-menu.md)*.
+2. Se il pulsante *Installa* è inattivo, assicurati che sia Google Play che le app OsmAnd siano aggiornate. Cancella la loro cache, riavvia il dispositivo e prova a installare nuovamente il plugin.
+3. Dopo l'installazione, abilita il plugin Topografia nel *[Menu OsmAnd → Plugin](../plugins/topography.md)*, scarica i file richiesti in *[Mappe e risorse](../start-with/download-maps.md#maps-and-resources)* e attivalo tramite il *[Menu Configura mappa](../map/configure-map-menu.md)*.
 
 
 ## Come identificare se OsmAnd Unlimited è attivo {#how-to-identify-if-osmand-unlimited-is-active}
 
-Naviga su *Menu → Scarica mappe* e tocca il contatore delle mappe (il campo etichettato *Versione gratuita. X download rimanenti*). Se OsmAnd Unlimited è attivo, la visualizzazione mostrerà lo spazio di archiviazione rimanente del dispositivo invece del numero di download gratuiti.
+Vai su *Menu → Scarica mappe* e tocca il contatore delle mappe (il campo etichettato *Versione gratuita. X download rimanenti*). Se OsmAnd Unlimited è attivo, il display mostrerà lo spazio di archiviazione rimanente del dispositivo invece del numero di download gratuiti.
 
 
 ## Posso ottenere la versione completa di OsmAnd come app separata per iOS? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
 
-Per iOS, è disponibile una sola versione di OsmAnd. Per accedere alla versione completa, devi sbloccare funzioni aggiuntive tramite acquisti in-app.
+Per iOS, è disponibile solo una versione di OsmAnd. Per accedere alla versione completa, è necessario sbloccare funzioni aggiuntive tramite acquisti in-app.
 
 
 ## Cosa significano 5 o 7 download gratuiti? {#what-do-5-or-7-free-downloads-mean}
 
-Sono consentiti 5 download gratuiti su iOS o 7 su Android. Ogni download, che si tratti di una mappa, un aggiornamento (gli aggiornamenti delle mappe contano come download), pacchetti vocali o altri elementi, riduce il conteggio disponibile. Tieni presente che la rimozione di elementi dai tuoi download non ripristina il conteggio dei download gratuiti.
+Ti sono consentiti 5 download gratuiti su iOS o 7 su Android. Ogni download, che si tratti di una mappa, un aggiornamento (gli aggiornamenti delle mappe contano come download), pacchetti vocali o altri elementi, riduce il conteggio disponibile. Si prega di notare che la rimozione di elementi dai download non ripristina il conteggio dei download gratuiti.
 
 
 ## Come posso ottenere download di mappe aggiuntivi in OsmAnd Free? {#how-can-i-get-additional-map-downloads-in-osmand-free}
@@ -114,19 +114,19 @@ Se hai utilizzato tutti i 5 (iOS) o 7 (Android) download gratuiti, puoi ricevere
 Se non ricevi il **codice di verifica** durante la creazione di un account **OsmAnd Cloud**, segui questi passaggi per risolvere il problema:
 
 1. Controlla il tuo indirizzo email.
-    Assicurati di aver inserito l'**indirizzo email corretto**. L'email deve corrispondere a quella utilizzata per l'acquisto di **OsmAnd Pro** o per la registrazione del tuo account **OsmAnd Cloud**.
+    Assicurati di aver inserito l'**indirizzo email corretto**. L'email deve corrispondere a quella utilizzata per l'acquisto di **OsmAnd Pro** o la registrazione del tuo account **OsmAnd Cloud**.
 
 2. Controlla le cartelle spam.
     A volte, l'email di verifica potrebbe essere filtrata come spam. Cerca un'email da **OsmAnd** nelle tue cartelle **Spam**, **Posta indesiderata** o **Promozioni**.
 
 3. Attendi l'arrivo del codice.
-    In alcuni casi, l'email con il codice di attivazione potrebbe essere **ritardata**. Evita **tentativi di attivazione multipli** in un breve periodo, poiché ciò può causare ulteriori ritardi.
+    In alcuni casi, l'email del codice di attivazione potrebbe essere **ritardata**. Evita **tentativi di attivazione multipli** in un breve periodo, poiché ciò può causare ulteriori ritardi.
 
 4. Prova a inviare nuovamente il codice.
-    Torna alla **schermata di accesso a OsmAnd Cloud** e seleziona **Invia nuovamente codice** se disponibile. Attendi qualche minuto prima di richiedere un altro codice.
+    Torna alla **schermata di accesso di OsmAnd Cloud** e seleziona **Invia nuovamente codice** se disponibile. Attendi qualche minuto prima di richiedere un altro codice.
 
-5. Verifica le restrizioni del server email.
-    Se stai utilizzando un **dominio email aziendale o personalizzato**, verifica con il tuo **provider email** per assicurarti che l'email non venga bloccata. Considera l'utilizzo di un servizio email diverso (ad esempio, Gmail, Outlook) se i problemi persistono.
+5. Verifica le restrizioni del server di posta elettronica.
+    Se stai utilizzando un **dominio email aziendale o personalizzato**, verifica con il tuo **provider di posta elettronica** per assicurarti che l'email non venga bloccata. Considera l'utilizzo di un servizio email diverso (ad esempio, Gmail, Outlook) se i problemi persistono.
 
 <!--
 ## Purchases & Payments {#purchases--payments}

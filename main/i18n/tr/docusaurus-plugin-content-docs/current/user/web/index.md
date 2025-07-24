@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Web Rota Planlayıcı
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Web Harita Görüntüleyici
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,22 +18,22 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Bu bölümde [Web Harita hizmetimizin](https://osmand.net/map) açıklamalarını bulabilirsiniz.
 
-### [OsmAnd Bulut](./web-cloud.md) {#osmand-cloud}
+### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-Bu bölüm, [www.osmand.net/map](https://osmand.net/map/) adresine nasıl giriş yapılacağını ve kaydolunacağını açıklamakta ve kayıt olduktan sonra kullanıcıların elde ettiği faydaları vurgulamaktadır.
+Bu bölüm, [www.osmand.net/map](https://osmand.net/map/) adresinde nasıl oturum açılacağını ve kaydolunacağını açıklamakta ve kullanıcıların kaydolduktan sonra elde ettikleri faydaları vurgulamaktadır.
 
 ### [Harita](./web-map.md) {#map}
 
-Bu bölüm, Sık Kullanılanlar, Kişisel İzler ve Hava Durumu Katmanları gibi ek harita verilerini detaylandırmaktadır.
+Bu bölüm, Sık Kullanılanlar, Kişisel Rotalar ve Hava Durumu Katmanları gibi ek harita verilerini detaylandırmaktadır.
 
-### [Kullanıcı Verileri](./web-userdata.mdx) {#user-data}
+### [Kullanıcı Verileri](../web/web-userdata.mdx) {#user-data}
 
-Kullanıcının haritadaki GPX izleri ve Sık Kullanılanları.
+Haritadaki kullanıcının GPX rotaları ve Sık Kullanılanları.
 
 ### [Rota Planla](./planner.md) {#plan-route}
 
-Bu bölüm, farklı profiller kullanarak rota planlama veya navigasyon oluşturma hakkında bilgi sağlar.
+Bu bölüm, farklı profiller kullanarak rotaları planlama veya navigasyon oluşturma hakkında bilgi sağlar.
 
 ### [Ara](./web-search.md) {#search}
 
-Bu bölüm, harita üzerinde farklı kategorilerden ilgi çekici noktaların (POI'ler) nasıl bulunacağını, klasik bir arama yapılacağını ve kategori simgelerinin harita üzerinde nasıl görüntüleneceğini açıklamaktadır.
+Bu bölüm, harita üzerinde farklı kategorilerdeki ilgi çekici yerleri (POI'ler) nasıl bulacağınızı, klasik bir arama yapacağınızı ve kategori simgelerini haritada nasıl görüntüleyeceğinizi açıklar.

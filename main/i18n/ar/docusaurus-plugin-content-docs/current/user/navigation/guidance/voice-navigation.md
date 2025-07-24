@@ -1,7 +1,7 @@
 ---
-source-hash: 23fa8491d55d8126a921b95c8d650a5b5c13376f6c4a630b3c3446e35d19d2c0
+source-hash: f70d6c0f6fdfe641f005afd95ec912d5aa5a23f369e009635f62de9e506c5529
 sidebar_position: 6
-title:  المطالبات/الإشعارات الصوتية
+title:  المطالبات الصوتية / الإشعارات
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,16 +18,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-توفر ميزة الملاحة الصوتية في OsmAnd تعليمات وتنبيهات منطوقة في الوقت الفعلي تساعدك على البقاء على اطلاع وآمن أثناء التنقل. يمكنك تخصيص الإرشادات لتناسب تفضيلاتك واحتياجاتك. للقيام بذلك، حدد ملف تعريف صوتي مناسب، إما [محرك تحويل النص إلى كلام (TTS)](#tts-text-to-speech) الذي يمكنه الإعلان ديناميكيًا عن أسماء الشوارع والمسافات وحدود السرعة، أو [صوت مسجل مسبقًا](#recorded-voice-prompts) يقدم تعليمات موجزة.
+توفر ميزة الملاحة الصوتية في OsmAnd تعليمات وتنبيهات منطوقة في الوقت الفعلي تساعدك على البقاء على اطلاع وآمن أثناء التنقل. يمكنك تخصيص التوجيهات حسب تفضيلاتك واحتياجاتك. للقيام بذلك، حدد ملف تعريف صوتي مناسب، إما [محرك تحويل النص إلى كلام (TTS)](#tts-text-to-speech) يمكنه الإعلان ديناميكيًا عن أسماء الشوارع والمسافات وحدود السرعة، أو [صوت مسجل مسبقًا](#recorded-voice-prompts) يقدم تعليمات موجزة.
 
-بالإضافة إلى توجيهات الانعطاف، يمكن للملاحة الصوتية في OsmAnd إخطارك بنقاط الاهتمام القادمة، والتغيرات في ظروف حركة المرور، وعندما تتجاوز حد سرعة محدد مسبقًا. لمعرفة المزيد حول تخصيص هذه التنبيهات، راجع [إعدادات وقت الإعلان](#announcement-time) و [تحذيرات حد السرعة](#speed-limit).
+بالإضافة إلى توجيهات الانعطاف خطوة بخطوة، يمكن للملاحة الصوتية في OsmAnd إخطارك بنقاط الاهتمام القادمة، والتغيرات في ظروف حركة المرور، وعندما تتجاوز حد سرعة محدد مسبقًا. لمعرفة المزيد حول تخصيص هذه التنبيهات، راجع [إعدادات وقت الإعلان](#announcement-time) و[تحذيرات حد السرعة](#speed-limit).
 
 مع المجموعة الصحيحة من خيارات الصوت، وإعدادات التنبيه، وتعديلات صوت الجهاز، ستتلقى معلومات ملاحة واضحة وفي الوقت المناسب طوال مسارك.
 
 :::note
 
 - <Translate android="true" ids="voice_announces_info"/>
-- تعكس الإشعارات النصية تمامًا وقت التشغيل ورسائل المطالبات الصوتية.
+- تعكس الإشعارات النصية بالكامل وقت التشغيل ورسائل المطالبات الصوتية.
 
 :::
 
@@ -35,9 +35,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يوفر OsmAnd خيارات متنوعة للتحكم في المطالبات الصوتية حتى تتمكن من متابعة مسارك بسهولة. لتكوين هذه الإعدادات، ابدأ في أقسام التطبيق المناسبة.
 
-- قم بتنشيط المطالبات الصوتية من قسم [الملاحة](../guidance/navigation-settings.md) بالنقر على **الإعدادات**. يمكنك أيضًا تمكين وتكوين المطالبات الصوتية من خلال *تكوين الملف الشخصي*، و *إعدادات الملاحة*.
+- قم بتنشيط المطالبات الصوتية من قسم [الملاحة](../guidance/navigation-settings.md) بالنقر على **الإعدادات**. يمكنك أيضًا تمكين وتكوين المطالبات الصوتية من خلال *تكوين الملف الشخصي*، و*إعدادات الملاحة*.
 - قم بتشغيل أو إيقاف تشغيل المطالبات الصوتية باستخدام *القائمة ← الملاحة ←* انقر على *زر الصوت*،
-أو *القائمة ← الملاحة ←* زر الإعدادات *← الصوت ←* تبديل تشغيل/إيقاف.
+    أو *القائمة ← الملاحة ←* زر الإعدادات *← الصوت ←* تبديل التشغيل/الإيقاف.
 
 لمزيد من المعلومات حول كيفية ومتى يتم تشغيل المطالبات الصوتية، راجع وثائق [تشغيل المطالبات الصوتية للملاحة](../../../technical/algorithms/voice-prompt-triggering.md).
 
@@ -45,19 +45,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-settings.png)
+![إعدادات الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/> زر* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختيار ملف شخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> زر* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختيار الملف الشخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![إعدادات الملاحة الصوتية iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -65,22 +65,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-**[اللغة](#voice-prompt-language)**. اختر لغتك ونوعك المفضلين.
+**[اللغة](#voice-prompt-language)**. حدد لغتك ونوعك المفضلين.
 
 **الإعلان**. يسمح لك بتكوين الأنواع التالية من المطالبات:
 
-- *أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، معابر المشاة* و *الأنفاق.*
+- *أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، معابر المشاة* و*الأنفاق.*
 - *[كاميرات السرعة](#speed-cameras)*.
-- قم أيضًا بتكوين [**عنصر واجهة المستخدم للتنبيه**](../../widgets/nav-widgets.md#alert-widget) لاستخدامه مع الإعلانات.
+- قم أيضًا بتكوين **[عنصر التنبيه](../../widgets/nav-widgets.md#alert-widget)** لاستخدامه مع الإعلانات.
 
 **نقاط المستخدم**:
 
 - تمكين المطالبات الصوتية لـ [نقاط الطريق](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) المحددة مسبقًا والمضافة، [المفضلة](../../personal/favorites.md) أو [نقاط الاهتمام (POIs)](../../map/point-layers-on-map.md#points-of-interest-pois). أثناء القيادة، سيتم الإعلان عن النقاط المحددة عند الاقتراب منها أو المرور بها.
 
-| نوع المطالبة | وقت البدء [ثانية]:<br/>المسافة المقابلة<br/>@ السرعة الافتراضية [متر] | الحد الأقصى |
+| نوع المطالبة | وقت البدء [ثانية]:<br/>المسافة المقابلة<br/>@ السرعة الافتراضية [م] | الحد |
 | :- | :- | :- |
-| الاقتراب | **60 ثانية:**<br/>القيادة: 750 متر<br/>ركوب الدراجات: 167 متر<br/>المشي: 67 متر | لا يزيد عن نقطة واحدة في كل مرة |
-| المرور | **15 ثانية:**<br/>القيادة: 188 متر<br/>ركوب الدراجات: 42 متر<br/>المشي: 17 متر | لا يزيد عن 3 نقاط في كل مرة |
+| الاقتراب | **60 ثانية:**<br/>القيادة: 750 م<br/>ركوب الدراجات: 167 م<br/>المشي: 67 م | لا يزيد عن نقطة واحدة في المرة الواحدة |
+| المرور | **15 ثانية:**<br/>القيادة: 188 م<br/>ركوب الدراجات: 42 م<br/>المشي: 17 م | لا يزيد عن 3 نقاط في المرة الواحدة |
 
 [**حد السرعة**](#speed-limit):
 
@@ -98,24 +98,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *تكرار تعليمات الملاحة*. يسمح لك بتكرار تعليمات الملاحة على فترات منتظمة من دقيقة واحدة إلى 30 دقيقة. أو يدويًا - إذا فاتتك مطالبة صوتية، يمكنك الاستماع إليها مرة أخرى بمجرد النقر على [سهم الانعطاف الحالي](../../widgets/nav-widgets.md#next-turn) على شاشة التطبيق.
 - *[وقت الإعلان](#announcement-time)*.
 
-**الإخراج** (*أندرويد فقط*):
+**الإخراج** (*Android فقط*):
 
 - *[إخراج التوجيه الصوتي](#voice-guidance-output)*.
 - *إيقاف الموسيقى مؤقتًا*. توقف المطالبات الصوتية تشغيل الموسيقى مؤقتًا.
 
 ### كاميرات السرعة {#speed-cameras}
 
-![توقيت إعلان الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+![توقيت إعلان الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 تسمح لك [تنبيهات كاميرات السرعة](../../personal/global-settings.md#uninstall-speed-cameras) بتنشيط أو إلغاء تنشيط نقاط الاهتمام (POIs) التي تحتوي على كاميرات سرعة. ستحتاج إلى إعادة تشغيل تطبيق OsmAnd لتطبيق التغييرات.
 
-في بعض البلدان أو المناطق، يعتبر استخدام تطبيقات تحذير كاميرات السرعة غير قانوني. يجب عليك اتخاذ قرار بناءً على القوانين في بلدك. حدد **إبقاء نشطًا**، وستتلقى تنبيهات وإشعارات كاميرات السرعة. حدد **إلغاء التثبيت** وسيتم حذف جميع البيانات المتعلقة بكاميرات السرعة، مثل التحذيرات والإشعارات ونقاط الاهتمام، حتى تقوم بإعادة تثبيت OsmAnd بالكامل.
+في بعض البلدان أو المناطق، يكون استخدام تطبيقات تحذير كاميرات السرعة غير قانوني. يجب عليك اتخاذ قرار بناءً على القوانين في بلدك. حدد **إبقاء نشطًا**، وستتلقى تنبيهات وإشعارات كاميرات السرعة. حدد **إلغاء التثبيت** وسيتم حذف جميع البيانات المتعلقة بكاميرات السرعة، مثل التحذيرات والإشعارات ونقاط الاهتمام (POIs)، حتى تقوم بإعادة تثبيت OsmAnd بالكامل.
 
 ### حد السرعة {#speed-limit}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![الملاحة الصوتية](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
 
@@ -129,7 +129,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يسمح خيار **حد السرعة** لـ OsmAnd بإبلاغك عندما تتجاوز سرعتك الحالية عتبة محددة. يتم الحصول على بيانات حدود السرعة القانونية القصوى من OpenStreetMap.
+يسمح خيار **حد السرعة** لـ OsmAnd بإبلاغك عندما تتجاوز سرعتك الحالية حدًا معينًا. يتم الحصول على بيانات حدود السرعة القانونية القصوى من OpenStreetMap.
 
 **الإعلان عند التجاوز**
 يتيح لك *تسامح حد السرعة* تحديد انحراف مسموح به (على سبيل المثال، -10 كم/ساعة إلى +20 كم/ساعة) عن [حد السرعة القانوني الأقصى](https://wiki.openstreetmap.org/wiki/Key:maxspeed) على الطريق الحالي. عندما تتجاوز سرعتك هذا التسامح، يصدر OsmAnd مطالبة صوتية.
@@ -137,30 +137,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *قواعد تفعيل المطالبات الصوتية* عند تجاوز حد السرعة:
 
 - *تحذير أولي*. عند اكتشاف تجاوزك لحد السرعة، ينتظر OsmAnd 5 ثوانٍ قبل إصدار التحذير الصوتي الأول.
-- *تأخير تكرار الإعلان*. إذا واصلت السرعة، يتأخر التحذير التالي لمدة 120 ثانية لمنع الإشعارات المتكررة بشكل مفرط.
-- *إعادة ضبط المؤقت*. يعاد ضبط المؤقت إذا بقيت ضمن الحد القانوني لمدة 30 ثانية. أي سرعة إضافية ستنتظر 5 ثوانٍ مرة أخرى قبل صدور التحذير التالي.
+- *تأخير تكرار الإعلان*. إذا واصلت تجاوز السرعة، يتم تأخير التحذير التالي لمدة 120 ثانية لمنع الإشعارات المتكررة بشكل مفرط.
+- *إعادة ضبط المؤقت*. يتم إعادة ضبط المؤقت إذا بقيت ضمن الحد القانوني لمدة 30 ثانية. أي تجاوز إضافي للسرعة سينتظر 5 ثوانٍ مرة أخرى قبل صدور التحذير التالي.
 
-يؤثر إعداد **تسامح حد السرعة** هذا على السرعة المعروضة في جزء *التحذير* من [عنصر واجهة المستخدم لعداد السرعة](../../widgets/info-widgets.md#speedometer) في تطبيق OsmAnd، و [Android Auto](../../navigation/auto-car.md#speedometer)، و [CarPlay](../../navigation/car-play.md#speedometer).
+يؤثر إعداد **تسامح حد السرعة** هذا على السرعة المعروضة في جزء *التحذير* من [عنصر عداد السرعة](../../widgets/info-widgets.md#speedometer) في تطبيق OsmAnd، و[Android Auto](../../navigation/auto-car.md#speedometer)، و[CarPlay](../../navigation/car-play.md#speedometer).
 
 ### وقت الإعلان {#announcement-time}
 
-![توقيت إعلان الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-announ-time.png)
+![توقيت إعلان الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)
 
-يعتمد وقت الإعلان للمطالبات الصوتية المختلفة على الملف الشخصي المحدد، ونوع المطالبة، وسرعة الملاحة الحالية، وسرعة الملاحة الافتراضية. باستخدام هذا الإعداد، يمكنك تغيير المسافة قبل تنشيط المطالبات الصوتية عن طريق تطبيق مضاعف للمسافة: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0، *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5، *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5، *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
+يعتمد وقت الإعلان عن المطالبات الصوتية المختلفة على الملف الشخصي المحدد، ونوع المطالبة، وسرعة الملاحة الحالية، وسرعة الملاحة الافتراضية. باستخدام هذا الإعداد، يمكنك تغيير المسافة قبل تفعيل المطالبات الصوتية عن طريق تطبيق مضاعف للمسافة: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0، *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5، *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5، *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
 
-في القائمة المنسدلة *فترات الوقت والمسافة*، يمكنك عرض معلومات مفصلة حول تنشيط المطالبات لمضاعفات المسافة المختلفة. لمزيد من المعلومات، راجع [تشغيل المطالبات الصوتية للملاحة](../../../technical/algorithms/voice-prompt-triggering.md).
+في القائمة المنسدلة *فترات الوقت والمسافة*، يمكنك عرض معلومات مفصلة حول تفعيل المطالبات لمضاعفات المسافة المختلفة. لمزيد من المعلومات، راجع [تشغيل المطالبات الصوتية للملاحة](../../../technical/algorithms/voice-prompt-triggering.md).
 
 ### إخراج التوجيه الصوتي {#voice-guidance-output}
 
 <InfoAndroidOnly/>
 
-![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-1.png)
+![الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
-لتجنب تشغيل الصوت في نفس تيار الإخراج في نفس الوقت، يتم تنفيذ تركيز الصوت في Android. سيستخدم OsmAnd مكبر الصوت المحدد من القائمة في هذا الإعداد لإخراج الصوت. ستوقف التطبيقات الأخرى التشغيل مؤقتًا أو تخفض مستوى الصوت لتسهيل سماع مطالبات OsmAnd الصوتية.
+لتجنب تشغيل الصوت في نفس تيار الإخراج في نفس الوقت، يتم تنفيذ تركيز الصوت في Android. سيستخدم OsmAnd مكبر الصوت المحدد من القائمة في هذا الإعداد لإخراج الصوت. ستوقف التطبيقات الأخرى التشغيل مؤقتًا أو تخفض مستوى الصوت لتسهيل سماعك لمطالبات OsmAnd الصوتية.
 
 - صوت الوسائط/الملاحة.
 - صوت الإشعارات.
-- صوت مكالمة هاتفية (لإيقاف [أنظمة صوت السيارة] عبر البلوتوث مؤقتًا](../auto-car.md)).
+- صوت مكالمة هاتفية (لإيقاف [أنظمة صوت السيارة](../auto-car.md) عبر البلوتوث).
 
 ### اختبار المطالبات الصوتية {#testing-of-voice-prompts}
 
@@ -168,7 +168,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [محاكاة الملاحة](../../navigation//setup/route-navigation.md#simulated-navigation). قم بتعيين مسار وابدأ المحاكاة: *قائمة الملاحة ← الإعدادات ← محاكاة الملاحة*.
 
-- [اختبار المطالبات الصوتية](../../plugins/development.md#application-testing) (*أندرويد فقط*). استخدم *المكون الإضافي للتطوير* لاختبار المطالبات الصوتية:
+- [اختبار المطالبات الصوتية](../../plugins/development.md#application-testing) (*Android فقط*). استخدم *مكون التطوير الإضافي* لاختبار المطالبات الصوتية:
     - انتقل إلى *القائمة ← المكونات الإضافية ← تمكين تطوير OsmAnd*.
     - انتقل إلى *الإعدادات ← اختبار المطالبات الصوتية*.
     - حدد لغة وتحقق مما إذا كان النظام يقوم بتشغيل المطالبات بشكل صحيح.
@@ -177,7 +177,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إذا لم تسمع **المطالبات الصوتية** أو [تحذيرات حد السرعة](#speed-limit):
 
-- تأكد من أن صوت جهازك قيد التشغيل ومرفوع.
+- تأكد من تشغيل صوت جهازك ورفعه.
 - تأكد من تمكين الصوت أثناء التنقل: *القائمة ← الملاحة ← زر تشغيل/إيقاف الصوت* أو *القائمة ← الملاحة ← زر الإعدادات ← الصوت* لتكوين الصوت المفصل.
 - حدد [مكبرات الصوت](#voice-guidance-output) التي تريد استخدامها.
 - تحقق من [التوجيه الصوتي](#voice-prompt-language) المحدد، وتأكد من أن لديك TTS أو صوت مسجل قادر على الإعلان عن تحذيرات حد السرعة.
@@ -187,7 +187,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## TTS (تحويل النص إلى كلام) {#tts-text-to-speech}
 
-يدعم OsmAnd أصوات **تحويل النص إلى كلام (TTS)**، والتي توفر توجيهًا صوتيًا ديناميكيًا ومفصلاً، بما في ذلك تعليمات الانعطاف، وأسماء الشوارع، وإعلانات نقاط الاهتمام (POI). يتم تضمين أصوات TTS في التطبيق ولكنها تتطلب [محرك تحويل النص إلى كلام](https://en.wikipedia.org/wiki/Speech_synthesis) مثبتًا على الجهاز.
+يدعم OsmAnd أصوات **تحويل النص إلى كلام (TTS)**، والتي توفر توجيهًا صوتيًا ديناميكيًا ومفصلاً، بما في ذلك تعليمات الانعطاف وأسماء الشوارع وإعلانات نقاط الاهتمام. يتم تضمين أصوات TTS في التطبيق ولكنها تتطلب [محرك تحويل النص إلى كلام](https://en.wikipedia.org/wiki/Speech_synthesis) مثبتًا على الجهاز.
 
 تتضمن معظم أجهزة Android و iOS الحديثة محرك TTS افتراضيًا، ولكن يمكن تثبيت محركات ولغات إضافية بشكل منفصل.
 
@@ -196,14 +196,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ***تكوين TTS على جهازك:***
 
-**أندرويد:**
+**Android:**
 
 1. افتح الإعدادات.
 2. انتقل إلى *إمكانية الوصول ← إخراج تحويل النص إلى كلام*.
 3. حدد **محرك TTS** (Google TTS أو محرك آخر مثبت).
-4. اختر **لغة مفضلة** (قد تتطلب بعضها تنزيلات إضافية).
+4. اختر **لغة مفضلة** (قد تتطلب بعض اللغات تنزيلات إضافية).
 5. اضبط معدل الكلام، ودرجة الصوت، وسرعة التشغيل حسب الحاجة.
-6. انقر على **استمع إلى مثال** لاختبار إخراج الصوت.
+6. انقر على **الاستماع إلى مثال** لاختبار إخراج الصوت.
 
 لمزيد من التفاصيل، راجع:
 [دعم Google – إعدادات تحويل النص إلى كلام في Android](https://support.google.com/accessibility/android/answer/6006983).
@@ -213,7 +213,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 1. افتح الإعدادات.
 2. انتقل إلى *إمكانية الوصول ← المحتوى المنطوق*.
 3. انقر على **الأصوات** لتحديد صوت مفضل.
-4. اضبط **معدل التحدث**، و **النطق**، والإعدادات الأخرى.
+4. اضبط **معدل التحدث**، و**النطق**، والإعدادات الأخرى.
 5. اختبر الصوت باستخدام **تحديد التحدث** أو **تحدث الشاشة**.
 
 لمزيد من التفاصيل، راجع:
@@ -223,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 للتحقق مما إذا كان TTS يعمل بشكل صحيح داخل OsmAnd:
 
-- قم بتمكين **المكون الإضافي للتطوير**: *القائمة ← الإعدادات ← المكونات الإضافية ← تطوير OsmAnd*.
+- تمكين **مكون التطوير الإضافي**: *القائمة ← الإعدادات ← المكونات الإضافية ← تطوير OsmAnd*.
 - افتح [اختبار المطالبات الصوتية](../../plugins/development.md#application-testing): *القائمة ← الإعدادات ← المكونات الإضافية ← تطوير OsmAnd ← اختبار المطالبات الصوتية*.
 
 لاستكشاف الأخطاء وإصلاحها، راجع:
@@ -233,11 +233,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-tts.png) ![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-recorded.png)
+![الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-tts.png) ![الملاحة الصوتية Android](@site/static/img/navigation/voice/voice_promt-recorded.png)
 
 </TabItem>
 
@@ -254,24 +254,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يوفر OsmAnd نوعين من المطالبات الصوتية:
 
 - **<Translate android="true" ids="tts_title"/>**
-    - يستخدم محرك TTS الخاص بالجهاز لإنشاء مطالبات صوتية ديناميكيًا.
-    - يقرأ أسماء الشوارع، تعليمات الانعطاف، أسماء نقاط الاهتمام (POI)، وتفاصيل أخرى.
+    - يستخدم محرك TTS الخاص بالجهاز لتوليد مطالبات صوتية ديناميكيًا.
+    - يقرأ أسماء الشوارع، تعليمات الانعطاف، أسماء نقاط الاهتمام، وتفاصيل أخرى.
     - يدعم لغات متعددة وإعدادات النطق.
     - يمكن تخصيصه بمعدل الكلام، ودرجة الصوت، وإعدادات النطق.
 
-- **<Translate android="true" ids="shared_string_recorded"/>** (*أندرويد فقط*)
+- **<Translate android="true" ids="shared_string_recorded"/>** (*Android فقط*)
     - يستخدم مطالبات صوتية مسجلة مسبقًا للملاحة.
     - يبدو أكثر طبيعية من TTS ولكنه يحتوي على قيود.
-    - لا يقرأ أسماء الشوارع أو أسماء نقاط الاهتمام (POI).
+    - لا يقرأ أسماء الشوارع أو أسماء نقاط الاهتمام.
     - يوفر فقط تعليمات الانعطاف الأساسية.
 
-> *يوصى باستخدام TTS للحصول على توجيه ملاحة مفصل.*
+> *يوصى باستخدام TTS للحصول على توجيهات ملاحة مفصلة.*
 
 #### إعدادات المطالبات الصوتية على مستوى النظام {#system-level-voice-prompt-settings}
 
-يمكن تعديل سلوك المطالبة الصوتية، بما في ذلك *سرعة التشغيل، ودرجة الصوت، والتوقفات المؤقتة*، فقط في إعدادات نظام الجهاز.
+يمكن تعديل سلوك المطالبات الصوتية، بما في ذلك *سرعة التشغيل، ودرجة الصوت، والتوقفات المؤقتة*، فقط في إعدادات نظام الجهاز.
 
-**أندرويد:**
+**Android:**
 
 1. افتح *إعدادات الجهاز ← إمكانية الوصول ← إخراج تحويل النص إلى كلام*.
 2. اختر محرك TTS واللغة المفضلة لديك.
@@ -286,31 +286,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 #### لغات TTS المتاحة {#available-tts-languages}
 
-يوجد حاليًا ما مجموعه 45 لغة. قد لا تكون جميع اللغات المذكورة أدناه مدعومة من قبل كل محرك TTS. انظر [هنا](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+يوجد حاليًا ما مجموعه 45 لغة. قد لا تدعم جميع اللغات المذكورة أدناه كل محرك TTS. انظر [هنا](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
 | | |
 | :--- | :--- |
 | **أ** | العربية |
 | **ب** | البيلاروسية، البلغارية |
-| **ت** | التشيكية |
+| **ت** | التشيكية، الصينية، الصينية (هونغ كونغ)، الصينية (التقليدية) |
 | **د** | الدنماركية، الهولندية |
-| **ر** | الروسية، الرومانية |
-| **س** | السلوفاكية، السلوفينية، السواحلية، السويدية، الصربية (السيريلية)، الصينية، الصينية (هونغ كونغ)، الصينية (التقليدية) |
-| **ع** | العبرية |
-| **ف** | الفارسية، الفرنسية، الفنلندية |
-| **ك** | الكورية، الكرواتية، الكاتالونية |
+| **ر** | الرومانية، الروسية |
+| **س** | السلوفاكية، السلوفينية، السواحيلية، السويدية، الصربية (السيريلية)، السردينية، الإسبانية، الإسبانية (الأرجنتين) |
+| **ف** | الفارسية، الفنلندية، الفرنسية |
+| **ك** | الكرواتية، الكورية، الكاتالونية |
 | **ل** | اللاتفية |
 | **م** | المجرية، المجرية (الرسمية) |
-| **ن** | النرويجية بوكمال |
-| **هـ** | الهندية |
+| **ن** | النرويجية البوكمالية |
+| **هـ** | الهندية، العبرية |
 | **و** | الفيتنامية |
 | **ي** | اليابانية، اليونانية |
-| **إ** | الإنجليزية، الإنجليزية (المملكة المتحدة)، الإستونية، الإسبانية، الإسبانية (الأرجنتين)، الإيطالية، الإندونيسية |
+| **إ** | الإنجليزية، الإنجليزية (المملكة المتحدة)، الإستونية، الإندونيسية، الإيطالية |
 | **ب** | البولندية، البرتغالية، البرتغالية (البرازيل) |
-| **غ** | الغوارانية، الألمانية، الألمانية (غير الرسمية) |
+| **أ** | الألمانية، الألمانية (غير الرسمية) |
+| **غ** | الغوارانية |
 | **أ** | الأوكرانية |
 | **ت** | التركية |
-| **س** | السردينية |
 
 ## المطالبات الصوتية المسجلة {#recorded-voice-prompts}
 
@@ -318,38 +317,38 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-يجب أن يكون استخدام الأصوات المسجلة في OsmAnd هو الخيار الاحتياطي فقط. فهي محدودة نوعًا ما، ولا يمكنها نطق أسماء الشوارع، وأسماء الأماكن، وما إلى ذلك. يمكنك تنزيل المطالبات الصوتية من مجموعتين مختلفتين من القائمة.
+يجب أن يكون استخدام الأصوات المسجلة في OsmAnd بمثابة حل بديل فقط. فهي محدودة للغاية، ولا يمكنها نطق أسماء الشوارع، وأسماء الأماكن، وما إلى ذلك. يمكنك تنزيل المطالبات الصوتية من مجموعتين مختلفتين من القائمة.
 
 - النوع الأول، وهي الموصى بها:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-preferred-1.png) ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-preferred-2.png)
+    ![إعدادات الملاحة الصوتية Android](@site/static/img/navigation/voice/TTS-preferred-1.png) ![إعدادات الملاحة الصوتية Android](@site/static/img/navigation/voice/TTS-preferred-2.png)
 
-- النوع الثاني هو المطالبات الصوتية المسجلة، مع مجموعة غير مكتملة من الميزات:
+- النوع الثاني هي المطالبات الصوتية المسجلة، مع مجموعة غير مكتملة من الميزات:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*
 
-    ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-recorded.png)
+    ![إعدادات الملاحة الصوتية Android](@site/static/img/navigation/voice/TTS-recorded.png)
 
-### أوضاع التنبيه الصوتي (Beep Modes) {#beep-modes}
+### أوضاع التنبيه {#beep-modes}
 
 <InfoAndroidOnly />
 
-يمكنك تهيئة ملف تعريف OsmAnd لإصدار صوت تنبيه بدلاً من التحدث، بطريقة مشابهة لجهاز كمبيوتر الدراجة. توجد ثلاثة أنماط أساسية: *الحد الأدنى*، و *البسيط*، و *المعقد*. تحتوي الأنماط البسيطة والمعقدة على متغيرات *عالية الصوت*، والتي ستكون أسهل بكثير في السمع في بيئة صاخبة ولكن قد تبدو قاسية بشكل غير سار.
+يمكنك تكوين ملف تعريف OsmAnd لإصدار أصوات تنبيه بدلاً من التحدث، بطريقة مماثلة لجهاز كمبيوتر الدراجة. هناك ثلاثة أنماط أساسية: *الحد الأدنى*، و*البسيط*، و*المعقد*. تحتوي الأنماط البسيطة والمعقدة على متغيرات *صاخبة*، والتي ستكون أسهل بكثير في السمع في بيئة صاخبة ولكن قد تبدو قاسية بشكل غير سار.
 
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*
 
-- **الحد الأدنى**. مناسب لمتابعة مسار معروف سيرًا على الأقدام بأقل قدر من التشتيت، سينبهك هذا النمط عند المرور بالوجهات الوسيطة، والمفضلة ونقاط الاهتمام، وعندما تنحرف عن المسار أو تعود إليه. لن يوفر أي تحذيرات صوتية للانعطافات.
-- **بسيط**. بالإضافة إلى التنبيهات للوجهات، والمفضلة، ونقاط الاهتمام، وغيرها، ينبهك النمط البسيط بصوت تنبيه أطول عندما تحتاج إلى الانعطاف.
+- **الحد الأدنى**. مناسب لاتباع مسار معروف سيرًا على الأقدام مع الحد الأدنى من التشتت، سينبهك هذا النمط عند المرور بالوجهات الوسيطة، والمفضلة، ونقاط الاهتمام (POIs)، وعندما تكون قد انحرفت عن المسار أو عدت إليه. لن يوفر أي تحذيرات صوتية للانعطافات.
+- **بسيط**. بالإضافة إلى التنبيهات للوجهات، والمفضلة، ونقاط الاهتمام (POIs)، وغيرها، ينبهك النمط البسيط بصوت تنبيه أطول عندما تحتاج إلى الانعطاف.
 - **معقد**. مناسب لركوب الدراجات على الطرق، يستخدم النمط المعقد أصوات تنبيه بأطوال ودرجات مختلفة لإبلاغك بالانعطافات القادمة.
-    - يعني صوت تنبيه منخفض انعطافًا يسارًا، بينما يعني صوت تنبيه عالٍ انعطافًا يمينًا. تمثل سلسلة من أصوات التنبيه متوسطة النبرة المخرج الذي يجب اتخاذه في الدوار (دائرة المرور). تمثل جميع النبرات الثلاث بالتسلسل انعطافًا على شكل حرف U. في جميع هذه الحالات، تعني أصوات التنبيه القصيرة الاستعداد للقيام بشيء ما، بينما تعني أصوات التنبيه الطويلة القيام بشيء ما الآن.
+    - صوت تنبيه منخفض يعني انعطاف يسار، بينما صوت تنبيه مرتفع يعني انعطاف يمين. تمثل سلسلة من أصوات التنبيه متوسطة الدرجة المخرج الذي يجب اتخاذه في دوار (دائرة مرورية). تمثل جميع الدرجات الثلاث بالتسلسل انعطافًا على شكل حرف U. في جميع هذه الحالات، تعني أصوات التنبيه القصيرة الاستعداد للقيام بشيء ما، بينما تعني أصوات التنبيه الطويلة القيام بشيء ما الآن.
 
 ## الإشعارات النصية {#text-notifications}
 
-بمجرد بدء المسار، يمكنك عرض المعلومات في قائمة النظام المنسدلة في قائمة الإشعارات. تحتوي إشعارات OsmAnd الصامتة على معلومات مثل تعليمات الانعطاف، وأسهم اتجاهات الانعطاف، ووقت الوصول والوقت المتبقي، والسرعة الحالية والمسافة إلى الوجهة.
+بمجرد بدء مسار، يمكنك عرض المعلومات في قائمة النظام المنسدلة في قائمة الإشعارات. تحتوي الإشعارات الصامتة في OsmAnd على معلومات مثل تعليمات الانعطاف خطوة بخطوة، وأسهم اتجاهات الانعطاف، ووقت الوصول والوقت المتبقي، والسرعة الحالية والمسافة إلى الوجهة.
 
-![إشعار مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_notifications_android.png)
+![إشعار مسار الملاحة Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
 الأزرار النشطة في قائمة النظام المنسدلة للملاحة الخاصة بك:
 
@@ -361,7 +360,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك تغيير إعدادات الإشعارات لتطبيق OsmAnd في إعدادات نظام جهازك. يمكن عرض الإشعارات على شاشة القفل، الشاشة الرئيسية، في القائمة المنسدلة، أو في الجزء العلوي من التطبيق.
 
-اقرأ عن كيفية تنفيذ التحكم في الإشعارات على Android في هذه [المقالة](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). لنظام iOS - [هنا](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
+اقرأ عن كيفية تنفيذ التحكم في الإشعارات على Android في هذه [المقالة](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). بالنسبة لنظام iOS - [هنا](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 ## التحكم في الشاشة {#screen-control}
 
@@ -369,25 +368,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![قائمة التحكم في الشاشة أندرويد](@site/static/img/navigation/route/screen_control_android.png)
+![قائمة التحكم في الشاشة Android](@site/static/img/navigation/route/screen_control_android.png)
 
 يمكنك التحكم في شاشة جهازك لتوفير الطاقة. يحتوي هذا الوضع على إعدادين عامين: *<Translate android="true" ids="screen_timeout"/>* و *<Translate android="true" ids="turn_screen_on"/>*.
 
 ### مهلة الشاشة {#screen-timeout}
 
-1. **<Translate android="true" ids="system_screen_timeout"/>**. تنطفئ الشاشة حسب إعدادات نظام جهازك. يوفر زر *تغيير الإعدادات* وصولاً سريعًا إلى قائمة النظام مثل *الشاشة والسطوع* حيث يمكنك ضبط مهلة الشاشة.
+1. **<Translate android="true" ids="system_screen_timeout"/>**. تنطفئ الشاشة حسب إعدادات نظام جهازك. يوفر زر *تغيير الإعدادات* وصولاً سريعًا إلى قائمة النظام مثل *العرض والسطوع* حيث يمكنك ضبط مهلة الشاشة.
 
-    ![التحكم في شاشة مهلة النظام أندرويد](@site/static/img/navigation/route/system_timeout_android.png)
+    ![التحكم في شاشة مهلة النظام Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. إذا كان *إبقاء الشاشة قيد التشغيل* ممكّنًا، فإن شاشة الجهاز لا تطبق مهلة بعد الاستيقاظ. إذا تم تعطيله، يمكنك تعيين الوقت الذي ستنطفئ فيه شاشة الجهاز إذا لم تتفاعل معها، من 5 إلى 60 ثانية.
+2. **<Translate android="true" ids="wake_time"/>**. إذا تم تشغيل *إبقاء الشاشة قيد التشغيل*، فإن شاشة الجهاز لا تطبق مهلة بعد الاستيقاظ. إذا تم تعطيلها، يمكنك تعيين الوقت الذي ستنطفئ بعده شاشة الجهاز إذا لم تتفاعل معها، من 5 إلى 60 ثانية.
 
-    ![مهلة بعد الاستيقاظ أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![مهلة بعد الاستيقاظ أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+    ![مهلة بعد الاستيقاظ Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![مهلة بعد الاستيقاظ Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### تشغيل الشاشة {#turn-screen-on}
 
-![تشغيل الشاشة أندرويد](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![تشغيل الشاشة Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-حدد خيارات إيقاظ الشاشة وتأكد من بقاء OsmAnd في المقدمة عند قفل الجهاز.
+حدد خيارات تنبيه الشاشة وتأكد من بقاء OsmAnd في المقدمة عند قفل الجهاز.
 
 - *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
@@ -397,15 +396,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [معلمات المسار](../routing/osmand-routing.md#routing-types)
 - [إعداد المسار](../setup/route-navigation.md)
-- [الملاحة بالمسار](../setup/gpx-navigation.md)
-- [الملاحة بالعلامات](../setup/markers-navigation.md)
+- [الملاحة حسب المسار](../setup/gpx-navigation.md)
+- [الملاحة حسب العلامات](../setup/markers-navigation.md)
 - [تفاصيل المسار](../setup/route-details.md)
 - [إعدادات الملاحة](./navigation-settings.md)
 - [شاشة الخريطة أثناء الملاحة](./map-during-navigation.md)
-- [أندرويد أوتو](../auto-car.md)
-- [كار بلاي](../car-play.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
 
-### المشاكل والحلول الشائعة {#common-issues-and-solutions}
+### المشاكل الشائعة والحلول {#common-issues-and-solutions}
 
 1. [مشاكل الصوت.](#solving-audio-issues)
 2. [اختبار المطالبات الصوتية.](#testing-of-voice-prompts)

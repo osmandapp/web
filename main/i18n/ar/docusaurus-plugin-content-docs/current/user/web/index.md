@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: مخطط مسار الويب
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: عارض خريطة الويب
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,21 +12,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-
-
 ### نظرة عامة {#overview}
 
-في هذا القسم، تجد وصفًا لـ [خدمة خرائط الويب](https://osmand.net/map) الخاصة بنا.
+في هذا القسم، ستجد وصفًا لـ [خدمة خرائط الويب](https://osmand.net/map) الخاصة بنا.
 
-### [أوزماند كلاود (OsmAnd Cloud)](./web-cloud.md) {#osmand-cloud}
+### [أوسماند كلاود](./web-cloud.md) {#osmand-cloud}
 
 يشرح هذا القسم كيفية تسجيل الدخول والاشتراك في [www.osmand.net/map](https://osmand.net/map/) ويسلط الضوء على الفوائد التي يحصل عليها المستخدمون بعد التسجيل.
 
 ### [الخريطة](./web-map.md) {#map}
 
-يفصل هذا القسم بيانات الخريطة الإضافية مثل المفضلة، والمسارات الشخصية، وطبقات الطقس.
+يفصل هذا القسم بيانات الخرائط الإضافية مثل المفضلة والمسارات الشخصية وطبقات الطقس.
 
-### [بيانات المستخدم](./web-userdata.mdx) {#user-data}
+### [بيانات المستخدم](../web/web-userdata.mdx) {#user-data}
 
 مسارات GPX ومفضلة المستخدم على الخريطة.
 

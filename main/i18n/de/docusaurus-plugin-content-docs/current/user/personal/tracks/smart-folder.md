@@ -1,5 +1,5 @@
 ---
-source-hash: f590f02934d3bbad431f346fc5f01207a37246d4320a4a5025973bb5ff373b63
+source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
 sidebar_position: 3
 title: Smart-Ordner (Filter)
 ---
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
 Die Funktion **Smart-Ordner** bietet leistungsstarke Werkzeuge zum Organisieren und Verwalten Ihrer Tracks. Eine der Hauptfunktionen ist die Möglichkeit, Dateien in der Registerkarte *Tracks* des Menüs *Meine Orte* nach Kriterien wie Dauer, Länge oder Geschwindigkeit zu filtern.
 
@@ -53,9 +53,9 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 - Tippen Sie unten rechts auf **Anzeigen**, um die gefilterten Ergebnisse anzuzeigen. Die Anzahl der übereinstimmenden Tracks wird in Klammern angezeigt.
 
-- Um alle aktiven Filter zu **löschen**, tippen Sie auf **Alle zurücksetzen**.
+- **Um alle aktiven Filter zu löschen**, tippen Sie auf **Alle zurücksetzen**.
 
-- Um den aktuellen Filtersatz als neuen **Smart-Ordner** zu **speichern**, tippen Sie auf das Speichersymbol in der oberen rechten Ecke des Bildschirms.
+- **Um den aktuellen Filtersatz als neuen Smart-Ordner zu speichern**, tippen Sie auf das Speichern-Symbol in der oberen rechten Ecke des Bildschirms.
 
 
 ### Verfügbare Filter {#available-filters}
@@ -84,25 +84,25 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 - **Durchschnittsgeschwindigkeit** — Filtern Sie Tracks nach [Durchschnittsgeschwindigkeit](../../widgets/info-widgets.md#average-speed).
 - **Sensordaten-Gruppe.**
     Wenden Sie Filter basierend auf externen Sensordaten an, einschließlich:
-    - Sensorgeschwindigkeit, Durchschnitt.
-    - Sensorgeschwindigkeit, Max.
+    - Sensor-Geschwindigkeit, Durchschnitt.
+    - Sensor-Geschwindigkeit, Maximum.
     - Herzfrequenz, Durchschnitt.
-    - Herzfrequenz, Max.
+    - Herzfrequenz, Maximum.
     - Fahrradtrittfrequenz, Durchschnitt.
-    - Fahrradtrittfrequenz, Max.
+    - Fahrradtrittfrequenz, Maximum.
     - Fahrradleistung, Durchschnitt.
-    - Fahrradleistung, Max.
+    - Fahrradleistung, Maximum.
     - Temperatur, Durchschnitt.
-    - Temperatur, Max.
+    - Temperatur, Maximum.
 - **Max. Geschwindigkeit** — Wählen Sie Tracks mit bestimmten maximalen Geschwindigkeitsbereichen aus.
 - **Bergauf** und **Bergab** — Filtern Sie Tracks basierend auf positiven oder negativen Höhenänderungen.
 - **Durchschnittliche Höhe** und **Max. Höhe** — Finden Sie Tracks mit spezifischen durchschnittlichen oder maximalen Höhendaten.
 - **Erstellungsdatum** — Filtern Sie Tracks, die innerhalb eines bestimmten Datumsbereichs erstellt wurden.
-- **Nächstgelegene Städte** — Zeigen Sie Tracks an, die in der Nähe ausgewählter Städte oder Orte verlaufen.
+- **Nächste Städte** — Zeigen Sie Tracks an, die in der Nähe ausgewählter Städte oder Orte verlaufen.
 - **Aktivitätstyp** — Filtern Sie Tracks basierend auf dem in der GPX-Datei aufgezeichneten [Aktivitätstyp](../../map/tracks/track-context-menu.md#track-information-activity) (z. B. Radfahren, Wandern).
 - **Land** — Filtern Sie Tracks nach dem Land oder der Region, in der sie aufgezeichnet wurden.
 - **Farbe** und **Breite** — Wählen Sie Tracks nach zugewiesener Farbe oder Linienbreite aus.
-- **Andere** — Zusätzliche Filter für besondere Merkmale:
+- **Sonstiges** — Zusätzliche Filter für besondere Merkmale:
     - *Auf Karte sichtbar*. Zeigt nur Tracks an, die auf der Karte angezeigt werden.
     - *Mit Wegpunkten*. Zeigt Tracks an, die bestimmte Wegpunkte enthalten.
 
@@ -125,12 +125,12 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Ein **Smart-Ordner** ist eine dynamische Sammlung von Tracks, die automatisch basierend auf spezifischen Filterkriterien aktualisiert wird. Er bietet erweiterte Werkzeuge zum effizienten Organisieren, Suchen und Verwalten von Tracks.
+Ein **Smart-Ordner** ist eine dynamische Sammlung von Tracks, die automatisch basierend auf bestimmten Filterkriterien aktualisiert wird. Er bietet erweiterte Werkzeuge zum effizienten Organisieren, Suchen und Verwalten von Tracks.
 
 ***Vorteile von Smart-Ordnern:***
 
 1. **Automatisierte Organisation.**
-    Schließt automatisch Tracks ein, die vordefinierten Regeln entsprechen, wie z. B. Erstellungsdatum oder Dauerbereich.
+    Automatische Aufnahme von Tracks, die vordefinierten Regeln entsprechen, wie z. B. Erstellungsdatum oder Dauerbereich.
 2. **Filtern und Suchen.**
     Ermöglicht schnelle Suchen innerhalb von Tracks mithilfe erweiterter Filter und Schlüsselwörter.
 3. **Dynamische Aktualisierung.**
@@ -153,7 +153,7 @@ Um einen **Smart-Ordner** zu erstellen, folgen Sie diesen Schritten:
 
 4. **Speichern** Sie die Einstellungen.
     - Tippen Sie auf **Anzeigen**, um eine Vorschau der Tracks anzuzeigen.
-    - Wählen Sie die Schaltfläche **Speichern**, um den *Smart-Ordner* abzuschließen.
+    - Wählen Sie die Schaltfläche **Speichern**, um den *Smart-Ordner* zu finalisieren.
 
 Der neu erstellte **Smart-Ordner** aktualisiert seinen Inhalt automatisch mit Tracks, die den ausgewählten Kriterien entsprechen.
 
@@ -180,29 +180,29 @@ Der neu erstellte **Smart-Ordner** aktualisiert seinen Inhalt automatisch mit Tr
 
 </Tabs>
 
-Der **Smart-Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste auf der Registerkarte Tracks angezeigt. Um den Ordner zu verwalten, tippen Sie auf das *Drei-Punkte-Menü* daneben (Android) und *langes Tippen* (iOS) oder öffnen Sie den Ordner und verwenden Sie das Symbol in der oberen rechten Ecke.
+Der **Smart-Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste in der Registerkarte "Tracks" angezeigt. Um den Ordner zu verwalten, tippen Sie auf das *Drei-Punkte-Menü* daneben (*Android*) und *langes Tippen* (*iOS*) oder öffnen Sie den Ordner und verwenden Sie das Symbol in der oberen rechten Ecke.
 
 ***Verfügbare Aktionen:***
 
 - **Details** — Zeigen Sie die vollständige Liste der im Ordner enthaltenen Tracks an.
 
-- **Alle Tracks auf der Karte anzeigen** (nur Android) — Zeigen Sie alle Ordner-Tracks auf der Karte an.
+- **Alle Tracks auf der Karte anzeigen** (*nur Android*) — Zeigen Sie alle Ordner-Tracks auf der Karte an.
     *HINWEIS: Das Laden vieler Tracks kann die Leistung beeinträchtigen.*
 
-- **Namen bearbeiten** (Android) / **Umbenennen** (iOS) — Ändern Sie den Ordnernamen zur leichteren Identifizierung.
+- **Namen bearbeiten** (*Android*) / **Umbenennen** (*iOS*) — Ändern Sie den Ordnernamen zur einfacheren Identifizierung.
 
 - **Aktualisieren** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
 
-- **Standardanzeige ändern** (Android) — Ändert die Anzeige aller Tracks im Ordner.
+- **Standardaussehen ändern** (*Android*) — Ändert das Anzeigeaussehen aller Tracks im Ordner.
 
-- **Filter bearbeiten** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Smart-Ordner. Siehe [Suchfilter](#search-filter) für Details.
+- **Filter bearbeiten** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Smart-Ordner. Details finden Sie unter [Suchfilter](#search-filter).
 
-- **Exportieren** — Exportieren Sie alle Tracks im Smart-Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Tab* weitergeleitet.
+- **Exportieren** — Exportieren Sie alle Tracks im Smart-Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Registerkarte* weitergeleitet.
 
 - **Ordner löschen** — Entfernen Sie den Smart-Ordner, ohne seine Tracks zu löschen.
-    *WARNUNG: Diese Aktion ist irreversibel und löst eine Bestätigungsnachricht aus.*
+    *WARNUNG: Diese Aktion ist irreversibel und fordert eine Bestätigungsmeldung an.*
 
-- **Verschieben** (iOS) — Ermöglicht das Verschieben des Ordners in einen anderen vorhandenen Ordner oder das Erstellen eines neuen.
+- **Verschieben** (*iOS*) — Ermöglicht das Verschieben des Ordners in einen anderen vorhandenen Ordner oder das Erstellen eines neuen Ordners.
 
 - **Auswählen** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
 
@@ -213,6 +213,6 @@ Der **Smart-Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste auf 
 - [Auf Karte analysieren](../../map/tracks/index.md#analyze-track-on-map)
 - [Track-Kontextmenü](../../map/tracks/track-context-menu.md)
 - [Navigation nach Track](../../navigation/setup/gpx-navigation.md)
-- [Reiseaufzeichnung](../../plugins/trip-recording.md)
+- [Fahrtaufzeichnung](../../plugins/trip-recording.md)
 
 > *Zuletzt aktualisiert: März 2025*

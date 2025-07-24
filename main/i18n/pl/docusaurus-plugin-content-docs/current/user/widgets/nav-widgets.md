@@ -1,5 +1,5 @@
 ---
-source-hash: 128d77aba82249d6c7c6f4680929168a77c9a1b7b68d147ef9ee216321970557
+source-hash: cf00228b0959bc2aae53ebe181345d3b69c04b3d0d42a49a8ed5ebc376ca2673
 sidebar_position: 4
 title: Widżety nawigacyjne
 ---
@@ -24,7 +24,7 @@ Widżety nawigacyjne są włączane podczas nawigacji w celu wyświetlania infor
 
 ## Nawigacja aktywna i pasywna {#active-and-passive-navigation}
 
-Widżety nawigacyjne w OsmAnd zostały zaprojektowane w celu ulepszenia zarówno trybu nawigacji **aktywnej**, jak i **pasywnej**. Widżety te dostarczają cennych informacji, takich jak wskazówki dotyczące trasy, szczegóły dotyczące drogi i ograniczenia prędkości, w zależności od wybranego **profilu nawigacyjnego**.
+Widżety nawigacyjne w OsmAnd są zaprojektowane tak, aby ulepszyć zarówno **aktywny**, jak i **pasywny** tryb nawigacji. Widżety te dostarczają cennych informacji, takich jak wskazówki dotyczące trasy, szczegóły drogi i ograniczenia prędkości, w zależności od wybranego **profilu nawigacyjnego**.
 
 #### Nawigacja aktywna {#active-navigation}
 
@@ -38,7 +38,7 @@ Widżety nawigacyjne w OsmAnd zostały zaprojektowane w celu ulepszenia zarówno
   - Dostępne są wszystkie **widżety nawigacyjne**.
 
 - **Kluczowe korzyści:**
-  - Zapewnia **wskazówki zakręt po zakręcie**, **wskazówki dotyczące pasów ruchu** i **ETA**.
+  - Zapewnia **wskazówki krok po kroku**, **wskazówki dotyczące pasów ruchu** i **ETA**.
   - Zapewnia dokładne i dynamiczne aktualizacje podczas podróży.
 
 #### Nawigacja pasywna {#passive-navigation}
@@ -48,7 +48,7 @@ Widżety nawigacyjne w OsmAnd zostały zaprojektowane w celu ulepszenia zarówno
   - Działa automatycznie po wybraniu **profilu nawigacyjnego** (np. *Jazda samochodem*, *Jazda na rowerze*).
 
 - **Funkcjonalność:**
-  - Próbuje określić drogę, którą podążasz, korzystając z danych GPS.
+  - Próbuje określić drogę, którą podążasz, używając danych GPS.
   - Wyświetla **podstawowe informacje o drodze**, takie jak [nazwa ulicy](#street-name), [informacje o pasach ruchu](#lanes), [maksymalna prędkość](#speed-limit).
 
 - **Ograniczenia:**
@@ -76,7 +76,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 :::
 
-Widżet wysokości pokazuje wykres z wysokością i nachyleniem trasy nawigacyjnej oraz Twoją aktualną lokalizacją na tym wykresie z aktualną wysokością i nachyleniem. Wykres jest wykreślony na dwóch osiach. Oś X to odległość Twojej trasy. Oś Y to wysokość, wartość zależy od ukształtowania terenu, a nachylenie jest wyświetlane w procentach.
+Widżet wysokości pokazuje wykres z wysokością i nachyleniem trasy nawigacyjnej oraz Twoją aktualną lokalizację na tym wykresie z aktualną wysokością i nachyleniem. Wykres jest wykreślony na dwóch osiach. Oś X to odległość Twojej trasy. Oś Y to wysokość, wartość zależy od ukształtowania terenu, a nachylenie jest wyświetlane w procentach.
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
@@ -85,32 +85,32 @@ Widżet wysokości pokazuje wykres z wysokością i nachyleniem trasy nawigacyjn
 
 #### Interakcje z wykresem {#interactions-with-the-graph}
 
-- *Powiększanie/pomniejszanie*. Domyślnie wykres pokazuje trasę od bieżącej lokalizacji do 10 km do przodu. Możesz użyć [ruchu dwoma palcami](../map/interact-with-map#gestures), aby powiększyć i pomniejszyć, aby uzyskać bardziej szczegółowy widok zmian wysokości na trasie. Możesz również przesunąć wykres w prawo, do przodu na trasie i do tyłu do bieżącej lokalizacji.
+- *Powiększ/pomniejsz*. Domyślnie wykres pokazuje trasę od bieżącej lokalizacji do 10 km do przodu. Możesz użyć [ruchu dwoma palcami](../map/interact-with-map#gestures), aby powiększyć i pomniejszyć, aby uzyskać bardziej szczegółowy widok zmian wysokości na trasie. Możesz również przesunąć wykres w prawo, do przodu na trasie i do tyłu do bieżącej lokalizacji.
 - *Umieść punkt na wykresie*. Jeśli chcesz zobaczyć wartość wysokości i stopnia w określonym punkcie na trasie, możesz dotknąć dowolnego miejsca na wykresie, a pojawi się wskaźnik z wartościami.
 
 
 #### Co zawiera {#whats-in}
 
-Po wybraniu trasy i naciśnięciu przycisku **Start** otworzy się mapa z Twoją aktualną lokalizacją, trasą i widżetem na dole ekranu. Widżet zawiera wykres i informacje o *podjazdach*, *zjazdach*, *nachyleniu*, odległości, wysokości i kącie nachylenia. Możesz wybrać *optymalną skalę* i zobaczyć wszystkie możliwe przeszkody na trasie.
+Po wybraniu trasy i naciśnięciu przycisku **Start** otwiera się mapa z Twoją aktualną lokalizacją, trasą i widżetem na dole ekranu. Widżet zawiera wykres i informacje o *podjazdach*, *zjazdach*, *nachyleniu*, odległości, wysokości i kącie nachylenia. Możesz wybrać *optymalną skalę* i zobaczyć wszystkie możliwe przeszkody na trasie.
 
-- Wszystkie wartości są podane albo dla całej trasy, albo tylko dla wybranego interwału poprzez skalowanie wykresu.
+- Wszystkie wartości są wskazywane albo dla całej trasy, albo tylko dla wybranego interwału poprzez skalowanie wykresu.
 - Przeczytaj o [licencji na dane DEM](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) używane przez OsmAnd do wykrywania terenu.
 
 | |
 |:------------|
 | ***Wskaźnik lokalizacji*** |
-| Twoja ***bieżąca lokalizacja*** na wykresie obejmuje ikonę lokalizacji, wysokość i wartość procentową nachylenia. Prawa strona widżetu zawiera najwyższą wysokość i gradient, ich średnią wartość oraz najniższą wartość na wybranym odcinku trasy widocznym na wykresie. |
+| Twoja ***bieżąca lokalizacja*** na wykresie zawiera ikonę lokalizacji, wysokość i wartość procentową nachylenia. Prawa strona widżetu zawiera najwyższą wysokość i gradient, ich średnią wartość oraz najniższą wartość na wybranym odcinku trasy widocznym na wykresie. |
 | ![punkt](@site/static/img/widgets/sch_1-1.png)|
 | ***Dodatkowe informacje*** |
-| Prawa strona widżetu zawiera dane o najwyższej wysokości i nachyleniu, ich średniej wartości oraz najniższej wysokości i nachyleniu na wybranym odcinku trasy widocznym na wykresie. |
+| Prawa strona widżetu zawiera dane o najwyższej wysokości i nachyleniu, ich średnią wartość oraz najniższą wysokość i nachylenie na wybranym odcinku trasy widocznym na wykresie. |
 | ![dane](@site/static/img/widgets/sch_1-2.png)|
-|Wartości ***podjazdów*** i ***zjazdów*** to sumy odległości od Twojej lokalizacji do końca widocznego wykresu. Jeśli na wykresie nie ma punktu lokalizacji, jest to suma całego widocznego wykresu na ekranie (może się to zdarzyć, gdy zmienisz skalę, a lokalizacja wyjdzie poza wykres).|
-| **Podjazd** – pokazuje sumę wszystkich odległości ze wzrostem wysokości od Twojej lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie. |
+|Wartości ***podjazdu*** i ***zjazdu*** to sumy odległości od Twojego punktu lokalizacji do końca widocznego wykresu. Jeśli na wykresie nie ma punktu lokalizacji, to jest to suma całego widocznego wykresu na ekranie (może się to zdarzyć, gdy zmienisz skalę, a lokalizacja wyjdzie poza wykres).|
+| **Podjazd** – pokazuje sumę wszystkich odległości ze zwiększającą się wysokością od Twojego punktu lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie. |
 | ![schemat podjazdu](@site/static/img/widgets/sch_uphill_1.png) ![schemat podjazdu](@site/static/img/widgets/sch_uphill_2.png)|
-| **Zjazd** – pokazuje sumę wszystkich odległości ze spadkiem wysokości od Twojej lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie.|
+| **Zjazd** – pokazuje sumę wszystkich odległości ze zmniejszającą się wysokością od Twojego punktu lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie.|
 | ![schemat zjazdu](@site/static/img/widgets/sch_downhill_1.png) ![schemat zjazdu](@site/static/img/widgets/sch_downhill_2.png)|
-|***Nachylenie*** to stosunek ścieżki do poziomu, gdzie zero oznacza poziom, a liczba stopni wskazuje na wyższy lub bardziej stromy stopień nachylenia.|
-| **Nachylenie** – pokazuje maksymalne nachylenie drogi w procentach od Twojej lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie. |
+|***Nachylenie*** to stosunek ścieżki do poziomu, gdzie zero oznacza poziom, a liczba stopni wskazuje na większe lub bardziej strome nachylenie.|
+| **Nachylenie** – pokazuje maksymalne nachylenie drogi w procentach od Twojego punktu lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez punktu lokalizacji widocznego na ekranie. |
 |![schemat nachylenia](@site/static/img/widgets/sch_grade_1.png) ![schemat nachylenia](@site/static/img/widgets/sch_grade_2.png)|
 
 
@@ -147,18 +147,18 @@ Namiar to kierunek do celu poza pojazdem, takiego jak cel podróży lub punkt po
 
 #### Jak to działa {#how-it-works}
 
-Aby wyświetlić namiar, należy wybrać **punkt docelowy**. Jeśli dla nawigacji wybrano punkt **docelowy** (lub **pierwszy punkt pośredni**, jeśli taki istnieje), zostanie on użyty jako punkt docelowy. W przeciwnym razie zostanie użyty **najwyżej wybrany znacznik**.
+Aby wyświetlić namiar, należy wybrać **punkt docelowy**. Jeśli dla nawigacji wybrano **punkt docelowy** (lub **pierwszy punkt pośredni**, jeśli taki istnieje), zostanie on użyty jako punkt docelowy. W przeciwnym razie zostanie użyty **najwyżej wybrany znacznik**.
 
-- [Namiar względny](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) to kąt między kierunkiem Twojego ruchu do przodu a punktem docelowym. **Kierunek ruchu do przodu** to albo **kierunek Twojego ruchu** uzyskany z czujników GPS, albo jeśli stoisz **tam, gdzie skierowałeś swoje urządzenie** (tj. orientacja Twojego urządzenia zgodnie z jego kompasem magnetycznym). Przykład: Obiekt z namiarem względnym 0° znajduje się bezpośrednio przed Tobą, a obiekt z namiarem względnym 180° znajduje się bezpośrednio za Tobą. **Namiar względny** to kąt między Twoim kierunkiem do przodu a punktem docelowym.
+- [Namiar względny](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) to kąt między kierunkiem Twojego ruchu do przodu a punktem docelowym. **Kierunek ruchu do przodu** to albo **kierunek Twojego ruchu** uzyskany z czujników GPS, albo jeśli stoisz **tam, gdzie skierowałeś swoje urządzenie** (tj. orientacja Twojego urządzenia zgodnie z jego kompasem magnetycznym). Przykład: Obiekt o namiarze względnym 0° znajduje się bezpośrednio przed Tobą, a obiekt o namiarze względnym 180° znajduje się bezpośrednio za Tobą. **Namiar względny** to kąt między Twoim kierunkiem do przodu a punktem docelowym.
 
 - [Namiar magnetyczny](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) to kąt zgodny z ruchem wskazówek zegara (poziomy) między północą magnetyczną a punktem docelowym obserwowanym z Twojej lokalizacji. Musisz podążać za tą wartością kompasu magnetycznego, aby dotrzeć do celu. Przykład: Jeśli **namiar magnetyczny** jest pokazany jako 0° M, musisz poruszać się ściśle w kierunku północy magnetycznej, aby dotrzeć do punktu docelowego.
 
-- [Namiar rzeczywisty](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) jest wyrażony jako kąt poziomy między południkiem geograficznym a linią na Ziemi. W szczególności, **rzeczywisty namiar punktowy** to kąt mierzony w stopniach zgodnie z ruchem wskazówek zegara od linii Prawdziwej Północy. Oprogramowanie OsmAnd pokaże Ci rzeczywisty namiar i kurs w naszym przyjaznym dla użytkownika interfejsie, ułatwiając podjęcie właściwej decyzji na wczesnym etapie.
+- [Namiar rzeczywisty](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) jest wyrażony jako kąt poziomy między południkiem geograficznym a linią na Ziemi. W szczególności, **rzeczywisty namiar punktowy** to kąt mierzony w stopniach zgodnie z ruchem wskazówek zegara od linii Północy Rzeczywistej. Oprogramowanie OsmAnd pokaże Ci rzeczywisty namiar i kurs w naszym przyjaznym dla użytkownika interfejsie, ułatwiając Ci podjęcie właściwej decyzji na wczesnym etapie.
 
 ### Nawigacja wzdłuż linii loksodromy {#navigation-along-the-rhumb-line}
 
 - **Namiar względny**. Jeśli będziesz trzymać się namiaru względnego 0 stopni i poruszać się do przodu, dotrzesz do punktu docelowego, ale nie najkrótszą drogą ([loksodroma](https://en.wikipedia.org/wiki/Rhumb_line)).
-- **Namiar magnetyczny**. Jeśli wyrównasz kompas na swojej łodzi/pojeździe z wartością widżetu i będziesz kierować się do przodu, dotrzesz do celu, ale nie najkrótszą drogą ([loksodroma](https://en.wikipedia.org/wiki/Rhumb_line)).
+- **Namiar magnetyczny**. Jeśli ustawisz kompas na swojej łodzi/pojeździe zgodnie z wartością widżetu i będziesz poruszać się do przodu, dotrzesz do celu, ale nie najkrótszą drogą ([loksodroma](https://en.wikipedia.org/wiki/Rhumb_line)).
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
@@ -178,18 +178,18 @@ Grupa widżetów *Punkt nawigacyjny* pokazuje pozostałą odległość do celu, 
 
 ![Widżet celu podróży](@site/static/img/widgets/route_information_widget.png)
 
-Widżet *Informacje o trasie* dostarcza danych w czasie rzeczywistym o bieżącej trasie nawigacyjnej i szybki sposób [zarządzania aktywną trasą](../navigation/setup/route-navigation.md#start--stop-navigation). Pomaga śledzić kluczowe szczegóły trasy i pozwala zatrzymać lub wznowić bieżącą sesję nawigacyjną z minimalną interakcją.
+Widżet *Informacje o trasie* dostarcza danych w czasie rzeczywistym o bieżącej trasie nawigacyjnej oraz szybki sposób [zarządzania aktywną trasą](../navigation/setup/route-navigation.md#start--stop-navigation). Pomaga śledzić kluczowe szczegóły trasy i pozwala zatrzymać lub wznowić bieżącą sesję nawigacyjną z minimalną interakcją.
 
 **Wyświetlane informacje:**
 
 - **Szacowany czas przybycia (ETA)**. Pokazuje przewidywany czas przybycia do celu końcowego.
 - **Pozostały czas podróży**. Wyświetla szacowany czas pozostały do osiągnięcia celu.
-- **Odległość do celu**. Wskazuje całkowitą pozostałą odległość do celu końcowego i odległości do punktów pośrednich.
+- **Odległość do celu**. Wskazuje całkowitą pozostałą odległość do celu końcowego oraz odległości do punktów pośrednich.
 
 **Menu ustawień**:
 
-- Wybierz **Widok domyślny**, aby nadać priorytet jednej z następujących wartości: *Szacowany czas przybycia*, *Czas dojazdu*, *Odległość*.
-- W **Priorytecie wyświetlania** wybierz między *Najpierw cel podróży (domyślnie)* lub *Najpierw punkt pośredni*, aby nadać priorytet najbardziej istotnym informacjom o trasie.
+- Wybierz **Widok domyślny**, aby nadać priorytet jednej z następujących wartości: *Szacowany czas przybycia*, *Czas do celu*, *Odległość*.
+- W **Priorytecie wyświetlania** wybierz między *Najpierw cel (domyślnie)* lub *Najpierw pośredni*, aby nadać priorytet najbardziej istotnym informacjom o trasie.
 
 > UWAGA: Widżet jest widoczny tylko podczas nawigacji.
 
@@ -197,7 +197,7 @@ Widżet *Informacje o trasie* dostarcza danych w czasie rzeczywistym o bieżące
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet →<Translate android="true" ids="map_widget_route_information"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Dodaj widżet →Informacje o trasie* |
-| Dotknięcie | Dotknij przycisku ze strzałką, aby otworzyć [panel Start/Stop nawigacji](../navigation/setup/route-navigation.md#start--stop-navigation) |
+| Po dotknięciu | Dotknij przycisku ze strzałką, aby otworzyć [panel Start/Stop nawigacji](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
 
@@ -211,20 +211,20 @@ Widżet wyświetla pozostałą odległość do ostatniego punktu docelowego podc
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
-| Dotknięcie | Przenosi mapę do punktu docelowego. |
+| Po dotknięciu | Przesuwa mapę do punktu docelowego. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Odległość do punktu pośredniego {#distance-to-intermediate}
 
 ![Widżet celu pośredniego](@site/static/img/widgets/intermediate_destination_widget.png)
 
-Widżet pokazuje odległość do pierwszego punktu pośredniego wzdłuż obliczonej trasy. Po przejściu punktów pośrednich, przestrzeń zostanie zaktualizowana do następnego punktu pośredniego. Jeśli nie ma punktów pośrednich, widżet nie jest wyświetlany.
+Widżet pokazuje odległość do pierwszego punktu pośredniego wzdłuż obliczonej trasy. Po minięciu punktów pośrednich, przestrzeń zostanie zaktualizowana do następnego punktu pośredniego. Jeśli nie ma punktów pośrednich, widżet nie jest wyświetlany.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
-| Dotknięcie | **Jeden punkt pośredni** - przenosi mapę do punktu pośredniego. <br /> **Dwa lub więcej punktów pośrednich** - otwiera menu listy celów podróży. |
+| Po dotknięciu | **Jeden punkt pośredni** - przesuń mapę do punktu pośredniego. <br /> **Dwa lub więcej punktów pośrednich** - otwiera menu listy celów. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Czas do punktu pośredniego {#time-to-intermediate}
@@ -233,25 +233,25 @@ Widżet pokazuje odległość do pierwszego punktu pośredniego wzdłuż obliczo
 
 <TabItem value="android" label="Android">
 
-![Widżet czasu przybycia Czas dojazdu](@site/static/img/widgets/arrival_time_widget_android.png) ![Widżet czasu przybycia Czas dojazdu](@site/static/img/widgets/time_to_go_widget_android.png)
+![Widżet czasu przybycia Czas do celu](@site/static/img/widgets/arrival_time_widget_android.png) ![Widżet czasu przybycia Czas do celu](@site/static/img/widgets/time_to_go_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widżet czasu przybycia Czas dojazdu](@site/static/img/widgets/arrival_time_widget_ios.png) ![Widżet czasu przybycia Czas dojazdu](@site/static/img/widgets/time_to_go_widget_ios.png)
+![Widżet czasu przybycia Czas do celu](@site/static/img/widgets/arrival_time_widget_ios.png) ![Widżet czasu przybycia Czas do celu](@site/static/img/widgets/time_to_go_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Widżet pokazuje *czas przybycia* lub *czas dojazdu* do pierwszego punktu pośredniego. Podczas nawigacji czas jest stale aktualizowany, a gdy tylko punkt pośredni zostanie minięty, czas zostanie zaktualizowany do następnego punktu trasy. Na przykład, jeśli zatrzymasz nawigację, *czas dojazdu* pozostanie niezmieniony, a *czas przybycia* będzie równy *czasowi dojazdu* plus *bieżący czas*.
+Widżet pokazuje *czas przybycia* lub *czas do celu* do pierwszego punktu pośredniego. Podczas nawigacji czas jest stale aktualizowany, a gdy tylko punkt pośredni zostanie minięty, czas zostanie zaktualizowany do następnego punktu trasy. Na przykład, jeśli zatrzymasz nawigację, *czas do celu* pozostanie niezmieniony, a *czas przybycia* będzie równy *czasowi do celu* plus *aktualny czas*.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Dotknięcie | Zmienia się między *czasem przybycia* a *czasem dojazdu* i odwrotnie. |
+| Po dotknięciu | Zmienia się między *czasem przybycia* a *czasem do celu* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -273,13 +273,13 @@ Widżet pokazuje *czas przybycia* lub *czas dojazdu* do pierwszego punktu pośre
 
 </Tabs>
 
-Widżet wyświetla *czas przybycia* lub *czas dojazdu* do ostatniego punktu docelowego. Czas jest stale aktualizowany podczas nawigacji i jest równy czasowi trasy od Twojej bieżącej lokalizacji.
+Widżet wyświetla *czas przybycia* lub *czas do celu* do ostatniego punktu docelowego. Czas jest stale aktualizowany podczas nawigacji i jest równy czasowi trasy od Twojej bieżącej lokalizacji.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Dotknięcie | Zmienia się między *czasem przybycia* a *czasem dojazdu* i odwrotnie. |
+| Po dotknięciu | Zmienia się między *czasem przybycia* a *czasem do celu* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -289,9 +289,9 @@ Widżet wyświetla *czas przybycia* lub *czas dojazdu* do ostatniego punktu doce
 
 Widżet *Ograniczenie prędkości* wyświetla aktualne ograniczenie prędkości na podstawie danych mapy dla Twojej trasy.
 
-- Dane pochodzą z [projektu OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+- Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 - Widżet działa w trybach nawigacji pasywnej i aktywnej.
-- Jeśli dane o ograniczeniu prędkości są niedostępne dla konkretnej drogi lub obszaru, *widżet nie pojawi się*.
+- Jeśli dane o ograniczeniu prędkości są niedostępne dla określonej drogi lub obszaru, *widżet nie pojawi się*.
 
 > UWAGA: Upewnij się, że Twoje [mapy są aktualne](../personal/maps-resources.md#updates) i że pobrałeś wszystkie niezbędne dane regionalne, aby uzyskać dostęp do najnowszych informacji o ograniczeniach prędkości.
 
@@ -299,7 +299,7 @@ Widżet *Ograniczenie prędkości* wyświetla aktualne ograniczenie prędkości 
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_max_speed"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_max_speed"/>* |
-| Dotknięcie | Brak zmian |
+| Po dotknięciu | Brak zmian |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -313,7 +313,7 @@ Ten zestaw widżetów nawigacyjnych jest aktywowany podczas nawigacji i wyświet
 |:------------|:------------|
 | Włącz | **Android:** *Menu → Konfiguruj ekran → Lewy / Prawy panel → Dodaj widżet → Manewry na trasie → Następny zakręt, Następny zakręt (mały), Drugi następny zakręt* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Lewy / Prawy panel → Dodaj widżet → Manewry na trasie → Następny zakręt, Następny zakręt (mały), Drugi następny zakręt* |
-| Dotknięcie | Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), odtwarzany jest następny manewr i odległość do niego. |
+| Po dotknięciu | Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), następny manewr i odległość do niego są wypowiadane. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -323,23 +323,23 @@ Ten zestaw widżetów nawigacyjnych jest aktywowany podczas nawigacji i wyświet
 
 Widżety *Manewry na trasie* zawierają informacje o:
 
-- **Następny zakręt** - następny zakręt z dużą strzałką przedstawiającą manewr i z danymi o odległości do niego.
-- **Następny zakręt (mały)** - następny zakręt z małą strzałką przedstawiającą manewr i z danymi o odległości obok strzałki.
-- **Drugi następny zakręt** - następny zakręt po pierwszym zakręcie, który jest aktywowany, jeśli znajduje się w odległości podejścia.
+- **Następny zakręt** - następny zakręt z dużą strzałką przedstawiającą manewr i danymi o odległości do niego.
+- **Następny zakręt (mały)** - następny zakręt z małą strzałką przedstawiającą manewr i danymi o odległości obok strzałki.
+- **Drugi następny zakręt** - następny zakręt po pierwszym zakręcie, który jest aktywowany, jeśli znajduje się w zasięgu podejścia.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *Menu → Konfiguruj ekran → Lewy / Prawy panel → Dodaj widżet → Następny zakręt, Następny zakręt (mały), Drugi następny zakręt* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Lewy / Prawy panel → Dodaj widżet → Następny zakręt, Następny zakręt (mały), Drugi następny zakręt* |
-| Dotknięcie | Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), odtwarzany jest następny manewr i odległość do niego. |
+| Po dotknięciu | Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), następny manewr i odległość do niego są wypowiadane. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Kolorowe komunikaty dla następnego zakrętu {#color-prompts-for-next-turn}
+### Kolorowe podpowiedzi dla następnego zakrętu {#color-prompts-for-next-turn}
 
-Ta tabela przedstawia przybliżony czas do aktywacji komunikatów i odpowiadające im kolorowe wskazania strzałek do wykonania manewru. Więcej informacji można znaleźć w [dokumentacji technicznej](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) lub w artykule [Komunikaty głosowe](../navigation/guidance/voice-navigation.md).
+Ta tabela przedstawia przybliżony czas do aktywacji podpowiedzi i odpowiadające im kolorowe wskazania strzałek do wykonania manewru. Więcej informacji można znaleźć w [dokumentacji technicznej](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) lub w artykule [Komunikaty głosowe](../navigation/guidance/voice-navigation.md).
 
-| Kolor | ~ Czas wyzwolenia | Odległość | Typ komunikatu |
+| Kolor | ~ Czas wyzwolenia | Odległość | Typ podpowiedzi |
 | :-------- | :------------- | :--------- | :-------------- |
 | 🟢 Zielony | 5 sekund | Blisko | Skręć teraz |
 | 🟡 Żółty | 20 sekund | Zbliżanie się | Skręć za `x` m |
@@ -350,19 +350,19 @@ Ta tabela przedstawia przybliżony czas do aktywacji komunikatów i odpowiadają
 
 ![Widżety pasów ruchu](@site/static/img/widgets/lanes_widget.png)
 
-Widżet **Pasy ruchu** podświetla aktualny pas ruchu, gdy nawigacja jest aktywna, i wyświetla układ pasów ruchu dla rzeczywistej drogi, gdy nawigacja jest pasywna. Dane pochodzą z [projektu OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+Widżet **Pasy ruchu** podświetla bieżący pas ruchu, gdy nawigacja jest aktywna i wyświetla układ pasów ruchu dla rzeczywistej drogi, gdy nawigacja jest pasywna. Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Dodaj widżet → <Translate android="true" ids="show_lanes"/>* |
 | | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="show_lanes"/>* |
-| Dotknięcie | Brak zmian |
+| Po dotknięciu | Brak zmian |
 
-### Kolorowe komunikaty dla pasów ruchu {#color-prompts-for-lanes}
+### Kolorowe podpowiedzi dla pasów ruchu {#color-prompts-for-lanes}
 
 Wyświetla widżet według ustawień czasu podejścia. Kolor pasa jest powiązany z [komunikatami głosowymi](../navigation/guidance/voice-navigation.md) i czasem pozostałym do wykonania manewru.
 
-| Kolor | ~ Czas wyzwolenia | Odległość | Typ komunikatu |
+| Kolor | ~ Czas wyzwolenia | Odległość | Typ podpowiedzi |
 | :-------- | :------------- | :---------- | :---------- |
 | 🟢 Zielony | 5 sekund | Blisko | [Skręć teraz](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
 | 🟡 Żółty | 20 sekund | Zbliżanie się | [Skręć za X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
@@ -379,13 +379,13 @@ Zapewnia wskazówki dotyczące trasy w czasie rzeczywistym, w tym odległość d
 Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 
 - [Pasy ruchu](#lanes) - pokazuje aktualne położenie pasów ruchu i podświetla te, po których należy jechać.
-- **Następny zakręt** - następny zakręt z dużą strzałką przedstawiającą manewr i z danymi o odległości do niego.
-- **Drugi następny zakręt** to następny zakręt po pierwszym zakręcie, który jest aktywowany, jeśli znajduje się w odległości podejścia.
+- **Następny zakręt** - następny zakręt z dużą strzałką przedstawiającą manewr i danymi o odległości do niego.
+- **Drugi następny zakręt** to następny zakręt po pierwszym zakręcie, który jest aktywowany, jeśli znajduje się w zasięgu podejścia.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *Menu → Konfiguruj ekran → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → Pas ruchu, Następny zakręt, Drugi następny zakręt* |
-| Dotknięcie | **Następny zakręt**: Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), odtwarzany jest następny manewr i odległość do niego. <br/> **Pas ruchu**: Brak zmian. |
+| Po dotknięciu | **Następny zakręt**: Jeśli włączone są [komunikaty głosowe](../navigation/guidance/voice-navigation.md), następny manewr i odległość do niego są wypowiadane. <br/> **Pas ruchu**: Brak zmian. |
 | Długie naciśnięcie | **Następny zakręt**: Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) <br/> **Pas ruchu**: Brak zmian. |
 
 
@@ -395,11 +395,11 @@ Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 
 **Widżet alertów** łączy kilka typów alertów, które są wyświetlane w lewym dolnym rogu podczas nawigacji.
 
-- Masz możliwość włączania i wyłączania alertów, takich jak *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>* i *<Translate android="true" ids="show_tunnels"/>*. Inne alerty są aktywne domyślnie, jeśli widżet jest włączony.
+- Masz możliwość włączania i wyłączania alertów, takich jak *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* i *<Translate android="true" ids="show_tunnels"/>*. Inne alerty są aktywne domyślnie, jeśli widżet jest włączony.
 
-- Dla typu alertu *Ograniczenie prędkości* możesz dostosować wartość <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) w ustawieniach komunikatów głosowych, aby lepiej dopasować ją do prędkości pojazdu i prędkości GPS.
+- Dla typu alertu *Ograniczenie prędkości* możesz dostosować wartość <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) w ustawieniach komunikatów głosowych, aby lepiej dopasować prędkość pojazdu i prędkość GPS.
 
-- Większość alertów jest wyświetlana na ekranie i ogłaszana komunikatem głosowym przez 15 sekund, a także czas wyzwolenia dla przejścia punktu trasy, ulubionego punktu lub POI. Przeczytaj więcej [tutaj](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+- Większość alertów jest wyświetlana na ekranie i ogłaszana komunikatem głosowym przez 15 sekund, a także czas wyzwolenia dla przejazdu przez punkt trasy, ulubiony punkt lub POI. Przeczytaj więcej [tutaj](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 | | |
 |:------------|:------------|
@@ -409,32 +409,32 @@ Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 
 ### Typy alertów {#alert-types}
 
-Typy alertów mają inny wygląd wizualny, który zależy od **<Translate android="true" ids="driving_region"/>** i można go skonfigurować za pomocą *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd nie ma na celu reprezentowania w 100% identycznych znaków drogowych, ale wskazuje na pewne podobieństwa.
+Typy alertów mają inny wygląd wizualny, który zależy od **<Translate android="true" ids="driving_region"/>** i można go skonfigurować za pomocą *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd nie ma na celu przedstawiania w 100% identycznych znaków drogowych, ale wskazuje na pewne podobieństwa.
 
 | | | |
 |:------------|:------------|:------------|
 | Nazwa | Opis | Ikona |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | [Uspokojenie ruchu](https://en.wikipedia.org/wiki/Traffic_calming) wykorzystuje fizyczne rozwiązania i inne środki w celu poprawy bezpieczeństwa kierowców, pieszych i rowerzystów. | ![Alert uspokojenie ruchu](@site/static/img/widgets/warnings_traffic_calming.png) ![Alert uspokojenie ruchu w USA](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Przejście dla pieszych](https://en.wikipedia.org/wiki/Pedestrian_crossing) (głównie w języku angielskim brytyjskim) lub pasy dla pieszych to miejsce przeznaczone dla pieszych do przekraczania drogi, ulicy lub alei. OsmAnd wyświetla alert o niekontrolowanym przejściu dla pieszych. | ![Alert uspokojenie ruchu](@site/static/img/widgets/warnings_pedestrian.png) ![Alert uspokojenie ruchu w USA](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | W większości krajów [ograniczenia prędkości na drogach](https://en.wikipedia.org/wiki/Speed_limit) ustalają prawną maksymalną, średnią lub minimalną prędkość, z jaką pojazdy drogowe mogą poruszać się na danym odcinku drogi. W OsmAnd alert jest wyświetlany, gdy przekroczysz prędkość. Możesz ustawić parametry przekroczenia prędkości (0, 5, 10.. km/h). ![Alert przekroczenie prędkości](@site/static/img/widgets/ex_warning_speed.png) | ![Alert ograniczenie prędkości](@site/static/img/widgets/warnings_limit.png) ![Alert ograniczenie prędkości w Kanadzie](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert ograniczenie prędkości w USA](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Tunel to podziemne przejście, biegnące pod górą, rzeką lub zatłoczonym obszarem miejskim. W OsmAnd alert *Tunele* zawiera informacje o długości tunelu. Jeśli jesteś w tunelu, pokazuje odległość do końca tunelu. ![Alert tunel](@site/static/img/widgets/ex_warning_tunnel.png) | ![Alert tunele](@site/static/img/widgets/warnings_tunnel.png) ![Alert tunele w USA](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | [Kamery do egzekwowania przepisów ruchu drogowego](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) i [radary prędkości](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) rejestrują wykroczenia drogowe, w tym przekraczanie prędkości, przejeżdżanie na czerwonym świetle i inne rodzaje nielegalnych zachowań. <br />**UWAGA:** Alerty o radarach prędkości są zabronione lub nielegalne w niektórych krajach. Aby całkowicie [usunąć radary prędkości](../personal/global-settings.md#legal) z OsmAnd, przejdź do głównego *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Alert uspokojenie ruchu](@site/static/img/widgets/warnings_speed_camera.png) |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | [Znak stopu](https://en.wikipedia.org/wiki/Stop_sign) to znak drogowy, który informuje kierowców, że muszą się całkowicie zatrzymać i upewnić się, że skrzyżowanie jest bezpiecznie wolne od pojazdów i pieszych, zanim przejadą obok znaku. | ![Alert stop](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |To ostrzeżenie oznacza, że przed nami znajduje się [przejazd kolejowy](https://en.wikipedia.org/wiki/Crossbuck). | ![Alert ostrzeżenia kolejowe](@site/static/img/widgets/warnings_railways.png) ![Alert ostrzeżenia kolejowe w Kanadzie](@site/static/img/widgets/warnings_railways_ca.png) ![Alert ostrzeżenia kolejowe w USA](@site/static/img/widgets/warnings_railways_us.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |To ostrzeżenie wskazuje, że przed nami znajduje się kontrola graniczna.| ![Alert kontrola graniczna](@site/static/img/widgets/warnings_border_control.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Symbole zagrożenia lub symbole ostrzegawcze](https://en.wikipedia.org/wiki/Hazard_symbol) to rozpoznawalne symbole zaprojektowane w celu ostrzegania o niebezpiecznych materiałach, miejscach lub obiektach, w tym prądach elektrycznych, truciznach i radioaktywności. | ![Alert ostrzeżenia o zagrożeniu](@site/static/img/widgets/warnings_hazard.png) ![Alert ostrzeżenia o zagrożeniu w USA](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | To ostrzeżenie wskazuje, że przed nami znajduje się punkt poboru opłat za drogę płatną. ![Alert punkt poboru opłat](@site/static/img/widgets/ex_toll_booth.png) | ![Alert ograniczenie prędkości](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | [Uspokojenie ruchu](https://en.wikipedia.org/wiki/Traffic_calming) wykorzystuje fizyczne rozwiązania i inne środki w celu poprawy bezpieczeństwa kierowców, pieszych i rowerzystów. | ![Widżety uspokajania ruchu](@site/static/img/widgets/warnings_traffic_calming.png) ![Widżety uspokajania ruchu w USA](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Przejście dla pieszych](https://en.wikipedia.org/wiki/Pedestrian_crossing) (głównie brytyjski angielski) lub przejście to miejsce wyznaczone dla pieszych do przekraczania drogi, ulicy lub alei. OsmAnd pokazuje alert o niekontrolowanym przejściu dla pieszych. | ![Widżety uspokajania ruchu](@site/static/img/widgets/warnings_pedestrian.png) ![Widżety uspokajania ruchu w USA](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | W większości krajów [ograniczenia prędkości](https://en.wikipedia.org/wiki/Speed_limit) określają prawnie maksymalną, średnią lub minimalną prędkość, z jaką pojazdy drogowe mogą poruszać się na danym odcinku drogi. W OsmAnd alert jest wyświetlany, gdy przekroczysz prędkość. Możesz ustawić parametry przekroczenia prędkości (0, 5, 10.. km/h). ![Widżety alertów przekroczenia prędkości](@site/static/img/widgets/ex_warning_speed.png) | ![Widżety ograniczenia prędkości](@site/static/img/widgets/warnings_limit.png) ![Widżety ograniczenia prędkości w CA](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Widżety ograniczenia prędkości w USA](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Tunel to podziemne przejście, prowadzące pod górą, rzeką lub zatłoczonym obszarem miejskim. W OsmAnd alert *Tunele* zawiera informacje o długości tunelu. Jeśli jesteś w tunelu, pokazuje odległość do końca tunelu. ![Widżety alertów tunelu](@site/static/img/widgets/ex_warning_tunnel.png) | ![Widżety ostrzeżeń tunelu](@site/static/img/widgets/warnings_tunnel.png) ![Widżety ostrzeżeń tunelu w USA](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [Kamery do egzekwowania przepisów ruchu drogowego](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) i [fotoradary](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) rejestrują wykroczenia drogowe, w tym przekraczanie prędkości, przejeżdżanie na czerwonym świetle i inne rodzaje nielegalnych zachowań. <br />**UWAGA:** Alerty o fotoradarach są zabronione lub nielegalne w niektórych krajach. Aby całkowicie [usunąć fotoradary](../personal/global-settings.md#legal) z OsmAnd, przejdź do głównego *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Widżety uspokajania ruchu](@site/static/img/widgets/warnings_speed_camera.png) |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | [Znak stopu](https://en.wikipedia.org/wiki/Stop_sign) to znak drogowy zaprojektowany w celu powiadamiania kierowców, że muszą się całkowicie zatrzymać i upewnić się, że skrzyżowanie jest bezpiecznie wolne od pojazdów i pieszych, zanim przejadą obok znaku. | ![Widżety stopu](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |To ostrzeżenie oznacza, że przed nami znajduje się [przejazd kolejowy](https://en.wikipedia.org/wiki/Crossbuck). | ![Widżety ostrzeżeń kolejowych](@site/static/img/widgets/warnings_railways.png) ![Widżety ostrzeżeń kolejowych w CA](@site/static/img/widgets/warnings_railways_ca.png) ![Widżety ostrzeżeń kolejowych w USA](@site/static/img/widgets/warnings_railways_us.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |To ostrzeżenie wskazuje, że przed nami znajduje się kontrola graniczna.| ![Widżety kontroli granicznej](@site/static/img/widgets/warnings_border_control.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Symbole zagrożenia lub symbole ostrzegawcze](https://en.wikipedia.org/wiki/Hazard_symbol) to rozpoznawalne symbole zaprojektowane w celu ostrzegania o niebezpiecznych materiałach, miejscach lub obiektach, w tym prądach elektrycznych, truciznach i radioaktywności. | ![Widżety ostrzeżeń o zagrożeniach](@site/static/img/widgets/warnings_hazard.png) ![Widżety ostrzeżeń o zagrożeniach w USA](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | To ostrzeżenie wskazuje, że przed nami znajduje się punkt poboru opłat za drogę płatną. ![Widżety punktu poboru opłat](@site/static/img/widgets/ex_toll_booth.png) | ![Widżety ograniczenia prędkości](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## Nazwa ulicy {#street-name}
 
-Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** ze strzałką prostą lub **nazwę następnej ulicy** z manewrem do wykonania. Nazwa ulicy zazwyczaj składa się z tarczy autostrady, [nazwy](https://wiki.openstreetmap.org/wiki/Key:name), [ref](https://wiki.openstreetmap.org/wiki/Key:ref), [ref. międzynarodowego](https://wiki.openstreetmap.org/wiki/Key:int_ref) i [celu](https://wiki.openstreetmap.org/wiki/Key:destination). Przełączanie między nazwą bieżącej ulicy a nazwą następnej ulicy następuje, gdy zbliżasz się do miejsca, w którym chcesz wykonać manewr (~20 sekund), podobnie jak komunikat głosowy [Skręć za X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** z prostą strzałką lub **nazwę następnej ulicy** z manewrem do wykonania. Nazwa ulicy zazwyczaj składa się z tarczy autostradowej, [nazwy](https://wiki.openstreetmap.org/wiki/Key:name), [referencji](https://wiki.openstreetmap.org/wiki/Key:ref), [referencji międzynarodowej](https://wiki.openstreetmap.org/wiki/Key:int_ref) i [celu](https://wiki.openstreetmap.org/wiki/Key:destination). Przełączanie między nazwą bieżącej ulicy a nazwą następnej ulicy następuje, gdy zbliżasz się do miejsca, w którym chcesz wykonać manewr (~20 sekund), podobnie jak komunikat głosowy [Skręć za X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - Podczas jazdy ulicą lub autostradą widżet pokazuje nazwę lub oznaczenie bieżącej ulicy (drogi) z niebieską strzałką.
 
-  ![Widżet POI nazwy ulicy_2](@site/static/img/widgets/street_name_widget_2.png)
+  ![Widżet POI nazwy ulicy_2](@site/static/img/widgets/street_name_poi_widget_2.png)
 
-- Gdy zmienisz kierunek, widżet pokazuje schemat manewru i nazwę (oznaczenie) ulicy (drogi), w którą musisz skręcić.
+- Po zmianie kierunku widżet pokazuje schemat manewru i nazwę (oznaczenie) ulicy (drogi), w którą należy skręcić.
 
   ![Widżet POI nazwy ulicy](@site/static/img/widgets/street_name_widget.png)
 
@@ -442,7 +442,7 @@ Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** ze strzałką prostą l
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
 | | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
-| Dotknięcie | Brak zmian |
+| Po dotknięciu | Brak zmian |
 
 
 ## Zbliżanie się do POI / Ulubionych {#approach-pois--favorites}
@@ -463,11 +463,11 @@ Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** ze strzałką prostą l
 
 </Tabs>
 
-Widżet **Zbliżanie się do POI/Ulubionych/Punktów trasy** jest połączony z [Nazwą ulicy](#street-name) i wyświetla zbliżające się i mijane punkty zainteresowania, punkty trasy śledzonej trasy oraz ulubione punkty wzdłuż trasy.
+Widżet **Zbliżanie się do POI/Ulubionych/Punktów trasy** jest połączony z [Nazwą ulicy](#street-name) i wyświetla zbliżające się i mijane punkty zainteresowania, punkty trasy śledzonej trasy oraz ulubione wzdłuż trasy.
 
 Wyświetla **nazwę**, **ikonę punktu** i 2 **odległości**:
 
-- **Odległość na trasie** (góra) wyświetla, ile odległości należy pokonać, podążając trasą.
+- **Odległość na trasie** (góra) pokazuje, jaką odległość należy pokonać, podążając trasą.
 - **Odległość odchylenia** to prosta odległość od najbliższego punktu trasy do samego punktu.
 
 **iOS** - Oprócz odległości do najbliższego punktu trasy, wyświetlana jest również strona (lewa lub prawa) trasy, na której znajduje się punkt trasy.
@@ -476,7 +476,7 @@ Wyświetla **nazwę**, **ikonę punktu** i 2 **odległości**:
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Rozpocznij nawigację → przycisk ołówka* |
-| Dotknięcie | Brak zmian |
+| Po dotknięciu | Brak zmian |
 
 
 ## Powiązane artykuły {#related-articles}
@@ -485,7 +485,7 @@ Wyświetla **nazwę**, **ikonę punktu** i 2 **odległości**:
 - [Przyciski mapy](./map-buttons.md)
 - [Widżety informacyjne](./info-widgets.md)
 - [Widżety nawigacyjne](./nav-widgets.md)
-- [Linijka promieniowa i linijka](./radius-ruler.md)
+- [Linijka promienia i linijka](./radius-ruler.md)
 - [Widżety znaczników](./markers.md)
 - [Szybka akcja](./quick-action.md)
 

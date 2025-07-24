@@ -1,7 +1,7 @@
 ---
-source-hash: 14db1ff378f43e871dddc04366518dc17627a2aeb32b40272132b8334b11f558
+source-hash: 338468efc137a0618ed472d99c99d808cd6f3df5d30650e5054eabd75c599d06
 sidebar_position: 5
-title:  المسطرة ومسطرة نصف القطر
+title:  مسطرة نصف القطر والمسطرة
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -48,11 +48,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تعرض **المسطرة** مقياس الخريطة الحالي كقطعة خطية مُعنونة بطولها الحقيقي (على سبيل المثال، 100 متر أو 500 قدم)، في أسفل الشاشة. الخصائص:
+تعرض **المسطرة** مقياس الخريطة الحالي كقطعة خطية مُعنونة بطولها الحقيقي (مثل 100 متر أو 500 قدم)، في أسفل الشاشة. الخصائص:
 
 - يتكيف المقياس ديناميكيًا عند التكبير أو التصغير.
-- يوفر مرجعًا بصريًا لتقدير المسافات الحقيقية بين الكائنات على الخريطة.
-- يتم تقريب طول القطعة إلى وحدات مناسبة (مثل 100 متر)، تتوافق تقريبًا مع عرض الإبهام للاستخدام البديهي.
+- يوفر مرجعًا مرئيًا لتقدير المسافات الحقيقية بين الكائنات على الخريطة.
+- يتم تقريب طول القطعة إلى وحدات مناسبة (مثل 100 متر)، تتطابق تقريبًا مع عرض الإبهام للاستخدام البديهي.
 
 تُعد هذه الأداة مفيدة عندما تحتاج إلى فهم سريع لأحجام الكائنات أو المسافات دون وضع علامات أو مسارات.
 
@@ -67,14 +67,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف أداة ← <Translate android="true" ids="radius_ruler_item"/>*
+انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة أداة ← <Translate android="true" ids="radius_ruler_item"/>*
 
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف أداة ← <Translate android="true" ids="radius_ruler_item"/>*
+انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة أداة ← <Translate android="true" ids="radius_ruler_item"/>*
 
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
 
@@ -82,10 +82,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تعرض [أداة مسطرة نصف القطر](../widgets/info-widgets.md#radius-ruler) المسافة بين موقعك الحالي (موقعي) ومركز الخريطة. يمكنك أيضًا تحريك الخريطة لتعيين أي نقطة مركز مخصصة. الخصائص:
+تعرض [أداة مسطرة نصف القطر](../widgets/info-widgets.md#radius-ruler) المسافة بين موقعك الحالي (*موقعي*) ومركز الخريطة. يمكنك أيضًا تحريك الخريطة لتعيين أي نقطة مركز مخصصة. الخصائص:
 
 - عرض دوائر متحدة المركز تتمركز حول النقطة المحددة.
-- تعكس الدائرة الأولى [مقياس الخريطة](#ruler) الحالي للرجوع البصري السريع.
+- تعكس الدائرة الأولى [مقياس الخريطة](#ruler) الحالي لمرجع بصري سريع.
 - تتكيف تلقائيًا عند التكبير للحفاظ على قيم نصف القطر الدقيقة.
 
 استخدم هذه الأداة لتقدير القرب من نقاط الاهتمام أو التخطيط حول منطقة محددة.
@@ -133,18 +133,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عندما تكون **مسطرة نصف القطر** نشطة، تعرض الخريطة تراكب بوصلة للمساعدة في توجيه نفسك في الفضاء. يُظهر التراكب كيفية محاذاة الخريطة بالنسبة للشمال الحقيقي، وقد يتضمن مثلثًا أزرق يشير إلى الاتجاه الحالي للجهاز.
 
-- تُظهر حلقة البوصلة اتجاه الخريطة — سواء كان الشمال لأعلى أو مُدارًا.
+- تُظهر حلقة البوصلة اتجاه الخريطة — سواء كان الشمال للأعلى أو مُدارًا.
 - يشير **مثلث أزرق** إلى الاتجاه الذي يواجهه جهازك.
 - لاستخدام هذه الميزة، يجب أن يدعم الجهاز ويُمكّن **مستشعر البوصلة** (بوصلة GPS، مغناطيسية).
 - يؤدي إمساك الجهاز أفقيًا إلى تحسين الدقة والتصور.
-- إذا أشار كل من **المثلث الأزرق** و**السهم الأحمر** (الشمال) إلى الأعلى، فإن الجهاز مُحاذٍ للشمال الحقيقي.
+- إذا كان **المثلث الأزرق** و**السهم الأحمر** (الشمال) يشيران كلاهما إلى الأعلى، فإن الجهاز مُحاذٍ للشمال الحقيقي.
 
 يُعد هذا التراكب مفيدًا للملاحة الخارجية، مما يتيح لك مطابقة [اتجاه الخريطة](../map/interact-with-map.md#map-orientation--compass) مع البيئة الحقيقية.
 
 | | |
 |------------|------------|
-| تمكين | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف أداة ← <Translate android="true" ids="radius_ruler_item"/>* |
-|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف أداة ← <Translate android="true" ids="radius_ruler_item"/>* |
+| تمكين | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة أداة ← <Translate android="true" ids="radius_ruler_item"/>* |
+|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة أداة ← <Translate android="true" ids="radius_ruler_item"/>* |
 | التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (أندرويد)* ← *<Translate ios="true" ids="angular_units"/> (iOS)* |
 
 
@@ -156,7 +156,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,display_position"/>*
 
-![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![مسطرة نصف القطر لأسفل](@site/static/img/widgets/radius_ruler_view_andr.png)
+![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![مسطرة نصف القطر للأسفل](@site/static/img/widgets/radius_ruler_view_andr.png)
 
 </TabItem>
 
@@ -164,7 +164,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *← أخرى ← موضع الموقع على الشاشة*
 
-![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![مسطرة نصف القطر لأسفل](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![مسطرة نصف القطر للأسفل](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
@@ -193,7 +193,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكنك التبديل إلى **العرض ثلاثي الأبعاد** لتصور المسافات والتضاريس المحيطة بشكل أفضل عند استخدام مسطرة نصف القطر. يُميل هذا العرض الخريطة ويوفر تأثيرًا منظورًا يوسع نصف القطر المرئي.
+يمكنك التبديل إلى **العرض ثلاثي الأبعاد** لتصور المسافات والتضاريس المحيطة بشكل أفضل عند استخدام مسطرة نصف القطر. يؤدي هذا العرض إلى إمالة الخريطة ويوفر تأثيرًا منظورًا يوسع نصف القطر المرئي.
 
 - انقر على [زر الموقع](../map/interact-with-map.md#my-location-and-zoom) للتركيز على موقعك.
 - استخدم إيماءة [السحب بإصبعين لأعلى](../map/interact-with-map.md#gestures) لإمالة الخريطة إلى وضع ثلاثي الأبعاد.
@@ -213,7 +213,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
   انقر في أي مكان على الخريطة وسيظهر خط مستقيم من موقعك الحالي إلى النقطة التي تم النقر عليها، بالإضافة إلى تسمية المسافة. يبقى الخط على الشاشة حتى إذا نقرت في مكان آخر.
 
 - **المسافة بين أي نقطتين**
-  انقر على نقطتين على الخريطة في وقت واحد (لمس متعدد). يربط خط النقطتين، وتُعرض المسافة المقاسة.
+  انقر على نقطتين على الخريطة في وقت واحد (لمس متعدد). يربط خط النقطتين، ويتم عرض المسافة المقاسة.
 
 | | |
 |------------|------------|

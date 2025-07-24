@@ -1,5 +1,5 @@
 ---
-source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
+source-hash: 67b62b612a4376b25626dd16941f9e9cff28a766c7bdc73cda828e3abcfe9ca4
 sidebar_position: 4
 title: Zakupy międzyplatformowe
 ---
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Obsługiwane zakupy międzyplatformowe {#supported-cross-platform-purchases}
 
-Następujące produkty OsmAnd obsługują obecnie użytkowanie na wielu platformach (Android, iOS i Web):
+Następujące produkty OsmAnd obsługują obecnie użycie na wielu platformach (Android, iOS i Web):
 
 - Subskrypcja **OsmAnd Pro**
 - Subskrypcja **Maps+**
@@ -26,19 +26,19 @@ Następujące produkty OsmAnd obsługują obecnie użytkowanie na wielu platform
 Począwszy od **wersji OsmAnd 5.1**, wydanej z okazji naszej **15. rocznicy**, dostęp międzyplatformowy został rozszerzony na **Maps+** (wcześniej znany jako *Unlimited*). Wcześniej tylko subskrypcja [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) była międzyplatformowa.
 
 Aby aktywować dostęp międzyplatformowy, zakupy muszą być powiązane z Twoim kontem [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-Możesz porównać wszystkie produkty OsmAnd tutaj: [różnica między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Wszystkie produkty OsmAnd możesz porównać tutaj: [różnica między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
 | Typ produktu | Międzyplatformowy | Uwagi |
 |-----------------------------|----------------|-------|
 | OsmAnd Pro (subskrypcja) | ✔ | Działa na Androidzie, iOS i w sieci przez chmurę |
 | Maps+ (subskrypcja) | ✔ | Wymaga wersji 5.0+ i konta w chmurze |
 | Maps+ (zakup jednorazowy) | ✔ | Musi być aktywowany przez OsmAnd Cloud na urządzeniu, na którym dokonano zakupu |
-| OsmAnd+ (samodzielna aplikacja) | Wkrótce | Nieprzenoszalne między sklepami lub platformami |
+| OsmAnd+ (samodzielna aplikacja) | ✔ | Musi być aktywowany przez OsmAnd Cloud na urządzeniu, na którym dokonano zakupu |
 
 
 ## Jak to działa {#how-it-works}
 
-Aby używać zakupów **OsmAnd Pro** lub **Maps+** na różnych platformach (Android, iOS lub Web), musisz **powiązać je ze swoim kontem OsmAnd Cloud**.
+Aby korzystać z zakupu **OsmAnd Pro**, **OsmAnd+** lub **Maps+** na różnych platformach (Android, iOS lub Web), musisz **powiązać go z kontem OsmAnd Cloud**.
 
 ### Powiąż swój zakup {#link-your-purchase}
 
@@ -83,18 +83,18 @@ Jeśli problem nadal występuje, skontaktuj się z **support@osmand.net** i poda
 ## Przykład {#example}
 
 Zakupiłeś **Maps+** jako jednorazowy zakup w aplikacji w darmowej wersji OsmAnd ze [sklepu Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
-Później decydujesz się na przejście na iPhone'a i chcesz używać **Maps+** z [wersją OsmAnd na iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
+Później decydujesz się na iPhone'a i chcesz używać **Maps+** z [wersją OsmAnd na iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Aby aktywować zakup Maps+ na iOS:
 
 1. Otwórz **wersję Amazon** aplikacji OsmAnd na swoim oryginalnym urządzeniu.
 2. Zaloguj się do swojego konta [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *Menu → Ustawienia → OsmAnd Cloud → Utwórz nowe konto / Mam już konto*
-3. Zainstaluj OsmAnd na swoim iPhonie ze [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+3. Zainstaluj OsmAnd na swoim iPhonie ze [sklepu App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
 4. Zaloguj się na **to samo konto OsmAnd Cloud** na swoim iPhonie.
 5. Przejdź do *Menu → Ustawienia → Zakupy* i potwierdź, że **Maps+** jest wymieniony jako aktywny.
 
-To kończy aktywację zakupu międzyplatformowego. Możesz teraz kontynuować korzystanie z **Maps+** na swoim nowym urządzeniu.
+To kończy międzyplatformową aktywację Twojego zakupu. Możesz teraz kontynuować korzystanie z **Maps+** na swoim nowym urządzeniu.
 
 Ciesz się korzystaniem z Maps+/Pro na różnych platformach!
 

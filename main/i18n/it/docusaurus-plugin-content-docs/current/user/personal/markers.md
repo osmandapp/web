@@ -1,7 +1,7 @@
 ---
-source-hash: 0353071eeb4cc978c117068bf19a65442825b1d24cf586249b32ac62e28c929f
+source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
 sidebar_position: 8
-title:  Segnalini
+title: Marcatori
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,27 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-I segnalini sono punti speciali contrassegnati sulla mappa come bandierine che possono essere creati rapidamente con un solo tocco senza specificare nome e altre informazioni, a differenza dei [Punti preferiti](./favorites.md). I segnalini forniscono anche funzionalità aggiuntive con i [widget](../widgets/markers.md), le **frecce** (<Translate android="true" ids="show_arrows_on_the_map"/>) e l'**indicazione della distanza** (<Translate android="true" ids="show_direction"/>).
+I marcatori sono punti speciali contrassegnati sulla mappa come bandierine che possono essere creati rapidamente con un solo tocco senza specificare nome e altre informazioni, a differenza dei [punti preferiti](./favorites.md). I marcatori offrono anche funzionalità aggiuntive con i [widget](../widgets/markers.md), le **frecce** (<Translate android="true" ids="show_arrows_on_the_map"/>) e l'**indicazione della distanza** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Segnalini mappa Android](@site/static/img/map/map_markers_android.png)
+![Marcatori mappa Android](@site/static/img/map/map_markers_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Segnalini mappa iOS](@site/static/img/map/map_markers_ios.png)
+![Marcatori mappa iOS](@site/static/img/map/map_markers_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-## Segnalini {#markers}
+## Marcatori {#markers}
 
-### Aggiungi / Modifica segnalini {#add--edit-markers}
+### Aggiungi/Modifica Marcatori {#add--edit-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -45,7 +45,7 @@ I segnalini sono punti speciali contrassegnati sulla mappa come bandierine che p
 
 Tocca brevemente o a lungo la mappa e seleziona l'azione richiesta dal [menu contestuale della mappa](../map/map-context-menu.md#add--edit-marker).
 
-![Azione Aggiungi/Modifica segnalino Android](@site/static/img/map/add_marker_android.png) ![Azione Passa segnalino Android](@site/static/img/map/action_pass_marker_android.png)
+![Azione aggiungi modifica marcatore Android](@site/static/img/map/add_marker_android.png) ![Azione passa marcatore Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
@@ -53,23 +53,23 @@ Tocca brevemente o a lungo la mappa e seleziona l'azione richiesta dal [menu con
 
 Tocca brevemente o a lungo la mappa e scegli l'azione necessaria nel [menu contestuale della mappa](../map/map-context-menu.md#add--edit-marker).
 
-![Azione Aggiungi/Modifica segnalino iOS](@site/static/img/map/add_marker_ios.png) ![Azione Ripristina segnalino Android](@site/static/img/map/action_restore_marker_android.png)
+![Azione aggiungi modifica marcatore iOS](@site/static/img/map/add_marker_ios.png) ![Azione ripristina marcatore Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-È possibile contrassegnare un punto o un oggetto per facilitare la pianificazione della navigazione. Devi solo toccare l'icona *bandiera* (*Android*) o *freccia* (*iOS*) nel menu per visualizzare la direzione e la distanza dal punto selezionato dalla tua posizione attuale (o dal punto centrale della mappa / dal punto iniziale toccato sulla mappa quando la posizione è disattivata).
+È possibile contrassegnare un punto o un oggetto per facilitare la pianificazione della navigazione. Basta toccare l'icona della *bandierina* (*Android*) o della *freccia* (*iOS*) nel menu per visualizzare la direzione e la distanza dal punto selezionato rispetto alla posizione corrente (o al punto centrale della mappa/al punto iniziale di tocco della mappa quando la posizione è disattivata).
 
 ***Azioni***:
 
-- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Posiziona un nuovo segnalino sul punto selezionato.
-- **Contrassegna come passato** (*Android*) / Ignora (iOS). Disattiva il segnalino e lo inserisce nella Cronologia.
-- **Rendi attivo** (*Android*). Sposta il segnalino nella posizione superiore (nel pannello superiore).
-- **Ripristina segnalino** (*Android*). Sposta il segnalino dalla Cronologia all'elenco attivo.
+- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Inserisce un nuovo marcatore sul punto selezionato.
+- **Marca passato** (*Android*) / Ignora (iOS). Disattiva il marcatore e lo sposta nella Cronologia.
+- **Rendi attivo** (*Android*). Sposta il marcatore nella posizione superiore (sul pannello superiore).
+- **Ripristina marcatore** (*Android*). Sposta il marcatore dalla Cronologia all'elenco attivo.
 
 :::note
-Non puoi eliminare un segnalino immediatamente, devi prima disattivarlo (contrassegnarlo come passato), in modo che venga spostato nella [Cronologia](#history) e quindi puoi eliminarlo definitivamente dalla cronologia. Una volta disattivato, il segnalino verrà rimosso dalla mappa e dall'elenco degli itinerari.
+Non è possibile eliminare immediatamente un marcatore; è necessario prima disattivarlo (contrassegnarlo come passato), in modo che venga spostato nella [Cronologia](#history), e quindi è possibile eliminarlo definitivamente dalla cronologia. Una volta disattivato, il marcatore verrà rimosso dalla mappa e dall'elenco degli itinerari.
 :::
 
 
@@ -89,17 +89,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Elenco itinerari {#itinerary-list}
+### Elenco Itinerari {#itinerary-list}
 
-L'elenco itinerari rappresenta un elenco ordinato di segnalini in cui il primo segnalino in alto viene utilizzato nei widget per la navigazione. Leggi di più in merito nell'articolo [Naviga per segnalini](../navigation/setup/markers-navigation.md#itinerary-list).
+L'elenco degli itinerari rappresenta un elenco ordinato di marcatori, dove il primo marcatore viene utilizzato nei widget per la navigazione. Per maggiori informazioni, consulta l'articolo [Naviga per marcatori](../navigation/setup/markers-navigation.md#itinerary-list).
 
-### Gruppi di segnalini {#marker-groups}
+### Gruppi di Marcatori {#marker-groups}
 
 <InfoAndroidOnly />
 
-![Gruppi di segnalini mappa Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
+![Gruppi di marcatori mappa Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-I segnalini possono essere aggiunti ed eliminati come un intero gruppo da un gruppo di Preferiti o da un file GPX con waypoint. Ciò lo rende molto comodo da utilizzare in una modalità di navigazione speciale: [Naviga per segnalini](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+I marcatori possono essere aggiunti ed eliminati come un intero gruppo da un gruppo di Preferiti o da un file GPX con waypoint. Ciò rende molto comodo il loro utilizzo in una modalità di navigazione speciale: [Naviga per marcatori](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Cronologia {#history}
 
@@ -107,22 +107,22 @@ I segnalini possono essere aggiunti ed eliminati come un intero gruppo da un gru
 
 <TabItem value="android" label="Android">
 
-![Cronologia segnalini mappa Android](@site/static/img/personal/markers/map_markers_history_android.png)
+![Cronologia marcatori mappa Android](@site/static/img/personal/markers/map_markers_history_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Cronologia segnalini mappa iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
+![Cronologia marcatori mappa iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La cronologia è un elenco di tutti i segnalini disattivati (passati). Da questo elenco è possibile eliminare definitivamente un segnalino o ripristinarlo.
+La cronologia è un elenco di tutti i marcatori disattivati (passati). Da questo elenco è possibile eliminare definitivamente un marcatore o ripristinarlo.
 
 
-## Aspetto sulla mappa {#appearance-on-the-map}
+## Aspetto sulla Mappa {#appearance-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -138,51 +138,51 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_markers_item,share
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
-![Aspetto segnalini mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Aspetto segnalini mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Aspetto marcatori mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Aspetto marcatori mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 </TabItem>
 
 </Tabs>
 
-Il menu *Aspetto sulla mappa* è un'impostazione generale per la visualizzazione dei segnalini e dei puntatori aggiuntivi ad essi.
-Nella versione iOS di OsmAnd, *Aspetto sulla mappa* è anche un'impostazione per la visualizzazione dei widget. Ci sono anche impostazioni aggiuntive per [configurare i widget con i segnalini](../widgets/markers.md#configure-marker-widgets).
+Il menu *Aspetto sulla Mappa* è un'impostazione generale per la visualizzazione dei marcatori e dei puntatori aggiuntivi ad essi.
+Nella versione iOS di OsmAnd, *Aspetto sulla Mappa* è anche un'impostazione per la visualizzazione dei widget. Ci sono anche impostazioni aggiuntive per [configurare i widget con i marcatori](../widgets/markers.md#configure-marker-widgets).
 
-- **Segnalini attivi**. Mostra informazioni sul primo o sui primi due segnalini nell'elenco dei segnalini mappa.
-- **Indicazione della distanza** *(per iOS)*. Consente di scegliere se visualizzare o meno i widget e come appariranno: sopra la mappa (barra superiore) o sul lato destro dello schermo (widget).
-- **Frecce sulla mappa**. Indica la direzione verso il segnalino tracciato (uno o due) come una freccia sulla mappa. Se il segnalino si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia.
-- **Linea di direzione**. Mostra la direzione, come una linea tratteggiata, da un punto particolare sulla mappa al segnalino tracciato in linea retta.
-- ***Un tocco*** attivo (*per Android*). Con un solo tocco sul segnalino richiesto sulla mappa, questo segnalino si sposta in cima all'elenco dei segnalini mappa attivi senza aprire il menu contestuale.
-- **Mantieni i segnalini passati sulla mappa** *(per Android)*. I segnalini aggiunti come gruppo di Preferiti o waypoint GPX contrassegnati come Passati rimarranno sulla mappa. Se il gruppo non è attivo, i segnalini scompariranno dalla mappa.
+- **Marcatori attivi**. Mostra informazioni sul primo o sui primi due marcatori nell'elenco dei marcatori della mappa.
+- **Indicazione della distanza** *(per iOS)*. Consente di scegliere se visualizzare i widget e come appariranno: sopra la mappa (Barra superiore) o sul lato destro dello schermo (Widget).
+- **Frecce sulla mappa**. Indica la direzione verso il marcatore tracciato (uno o due) come una freccia sulla mappa. Se il marcatore si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia.
+- **Linea di direzione**. Mostra la direzione, come una linea tratteggiata, da un punto particolare sulla mappa al marcatore tracciato in linea retta.
+- ***Un tocco*** attivo (*per Android*). Con un solo tocco sul marcatore richiesto sulla mappa, questo marcatore si sposta in cima all'elenco dei marcatori attivi della mappa senza aprire il menu contestuale.
+- **Mantieni i marcatori passati sulla mappa** *(per Android)*. I marcatori aggiunti come gruppo di Preferiti o waypoint GPX contrassegnati come Passati rimarranno sulla mappa. Se il gruppo non è attivo, i marcatori scompariranno dalla mappa.
 
 
-## Pianifica percorso per segnalini {#plan-route-for-markers}
+## Pianifica Percorso per Marcatori {#plan-route-for-markers}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Segnalini mappa Punti percorso pianificato Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Segnalini mappa Opzioni percorso pianificato Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Punti di pianificazione percorso marcatori mappa Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Opzioni di pianificazione percorso marcatori mappa Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Utilizzando la funzionalità dello strumento Pianifica un percorso nell'elenco Segnalini, puoi ordinare i *Segnalini* *Porta a porta*, metterli in ordine inverso o creare un *Viaggio di andata e ritorno*. Se tocchi l'opzione *Navigazione*, i *Segnalini* verranno utilizzati come [destinazioni intermedie](../navigation/setup/route-navigation.md#intermediate-destinations).
+Utilizzando la funzionalità di pianificazione di un percorso nello strumento Elenco marcatori, è possibile ordinare i *Marcatori* *Porta a porta*, metterli in ordine inverso o creare un *Viaggio di andata e ritorno*. Se si tocca l'opzione *Navigazione*, i *Marcatori* verranno utilizzati come [destinazioni intermedie](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Azioni {#actions}
 
 <InfoAndroidOnly />
 
-![Segnalini mappa Altro Android](@site/static/img/personal/markers/map_markers_more_android.png)
+![Marcatori mappa Altro Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. I segnalini possono essere ordinati nell'elenco per nome, prossimità, tempo di aggiunta.
-- **<Translate android="true" ids="appearance_on_the_map"/>** o **<Translate ios="true" ids="shared_string_appearance"/>**. [Impostazioni per i segnalini mappa](#appearance-on-the-map).
-- **<Translate android="true" ids="coordinate_input"/>**. Aggiunge segnalini tramite [input coordinate](../plan-route/coordinate-input.md).
-- **<Translate android="true" ids="plan_route"/>**. Costruisce il percorso [per la navigazione](../navigation/setup/markers-navigation.md) utilizzando i segnalini scelti.
-- **<Translate android="true" ids="marker_save_as_track"/>**. Salva i segnalini attivi in un file GPX.
-- **<Translate android="true" ids="move_all_to_history"/>**. Disattiva tutti i segnalini e li sposta nella [Cronologia](#history).
+- **<Translate android="true" ids="sort_by"/>**. I marcatori possono essere ordinati nell'elenco per nome, prossimità, tempo di aggiunta.
+- **<Translate android="true" ids="appearance_on_the_map"/>** o **<Translate ios="true" ids="shared_string_appearance"/>**. [Impostazioni per i marcatori della mappa](#appearance-on-the-map).
+- **<Translate android="true" ids="coordinate_input"/>**. Aggiunge marcatori tramite [input coordinate](../plan-route/coordinate-input.md).
+- **<Translate android="true" ids="plan_route"/>**. Costruisce un percorso [per la navigazione](../navigation/setup/markers-navigation.md) utilizzando i marcatori scelti.
+- **<Translate android="true" ids="marker_save_as_track"/>**. Salva i marcatori attivi in un file GPX.
+- **<Translate android="true" ids="move_all_to_history"/>**. Disattiva tutti i marcatori e li sposta nella [Cronologia](#history).
 
 
-## Articoli correlati {#related-articles}
+## Articoli Correlati {#related-articles}
 
-- [Navigazione per segnalini](../navigation/setup/markers-navigation.md)
-- [Widget segnalini](../widgets/markers.md)
+- [Navigazione per marcatori](../navigation/setup/markers-navigation.md)
+- [Widget marcatori](../widgets/markers.md)
 
 > *Ultimo aggiornamento: agosto 2024*

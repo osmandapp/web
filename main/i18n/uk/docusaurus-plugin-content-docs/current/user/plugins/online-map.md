@@ -1,7 +1,7 @@
 ---
-source-hash: 1b9d749ebb8730c64d4b1fceddc86003dfc6c14c7f5e556129e21a75f245cdc3
+source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
 sidebar_position: 8
-title:  Онлайн-карти
+title:  Онлайн-мапи
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,91 +16,91 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-Онлайн-карти OsmAnd є значним доповненням до бази даних OpenStreetMap, яка вже присутня в застосунку. За допомогою цього плагіна ви можете додавати шари до своєї карти з інформацією з іншого джерела, починаючи з супутникового зображення або туристичних маршрутів і закінчуючи дуже специфічними даними, такими як розташування пожежних гідрантів. Ви також можете змінити основне джерело карти з векторних карт на онлайн-тайли.
+Онлайн-мапи OsmAnd є значним доповненням до бази даних OpenStreetMap, яка вже присутня в застосунку. За допомогою цього плагіна ви можете додавати шари до своєї мапи з інформацією з іншого джерела, починаючи з супутникового вигляду або туристичних маршрутів і закінчуючи дуже специфічними даними, такими як розташування пожежних гідрантів. Ви також можете змінити основне джерело мапи з векторних мап на онлайн-тайли.
 
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Можливість використання онлайн-карт автоматично ввімкнена у версії OsmAnd для iOS. Щоб відображати онлайн-карти в Android, потрібно зробити наступні налаштування:
+Можливість використання онлайн-мап автоматично вмикається у версії OsmAnd для iOS. Щоб відобразити онлайн-мапи в Android, потрібно зробити такі налаштування:
 
-1. [Увімкніть](../plugins/index.md#enable--disable) плагін **Онлайн-карти** в *Головному меню → Плагіни → Онлайн-карти*.
-2. Зробіть необхідні налаштування в розділі [Джерело карти](../map/raster-maps.md#select-raster-maps) меню Налаштувати карту.
-3. Встановіть *Джерело карти*, *Накладання* та *Підкладку*. Виберіть бажаного постачальника супутникових карт.
-4. Завантажте вибрану [Онлайн-карту](#how-to-prepare-raster-maps), якщо потрібно.
+1. [Увімкнути](../plugins/index.md#enable--disable) плагін **Онлайн-мапи** у *Головному меню → Плагіни → Онлайн-мапи*.
+2. Зробити необхідні налаштування в розділі [Джерело мапи](../map/raster-maps.md#select-raster-maps) меню Налаштувати мапу.
+3. Встановити *Джерело мапи*, *Накладання* та *Підкладку* мапи. Вибрати бажаного постачальника супутникових мап.
+4. Завантажити вибрану [Онлайн-мапу](#how-to-prepare-raster-maps) за потреби.
 
 
-## Використання растрових карт на пристрої {#use-raster-maps-on-device}
+## Використання растрових мап на пристрої {#use-raster-maps-on-device}
 
-Детальну інформацію про візуалізацію та налаштування растрових карт можна знайти в статті [Растрові карти](../map/raster-maps.md). Як використовувати:
+Детальну інформацію про візуалізацію та налаштування растрових мап можна знайти в статті [Растрові мапи](../map/raster-maps.md). Як використовувати:
 
-1. [Виберіть](../map/raster-maps.md#select-raster-maps) растрову карту як *Основний*, *Підкладковий* або *Накладений* шар.
-    - [Змініть](../map/raster-maps.md#how-to-use-raster-maps) параметри шару (прозорість).
+1. [Вибрати](../map/raster-maps.md#select-raster-maps) растрову мапу як *Основний*, *Підкладковий* або *Накладний* шар.
+    - [Змінити](../map/raster-maps.md#how-to-use-raster-maps) параметри шару (прозорість).
 
-2. [Підготуйте / скопіюйте](../map/raster-maps.md#prepare--copy-raster-maps-to-device) растрові карти на пристрій.
-    - [Додайте нове джерело онлайн-растрових карт](../map/raster-maps.md#add-new-online-raster-map-source)
-    - [Додайте Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) для встановлення джерела карти.
+2. [Підготувати / скопіювати](../map/raster-maps.md#prepare--copy-raster-maps-to-device) растрові мапи на пристрій.
+    - [Додати нове джерело онлайн-растрових мап](../map/raster-maps.md#add-new-online-raster-map-source)
+    - [Додати Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) для встановлення джерела мапи.
 
-3. [Керуйте](../map/raster-maps.md#manage-raster-maps) растровими картами.
-    - [Завантажте / оновіть тайли](../map/raster-maps.md#download--update-tiles).
-    - [Змініть](../map/raster-maps.md#change-raster-map-parameters) параметри растрової карти.
+3. [Керувати](../map/raster-maps.md#manage-raster-maps) растровими мапами.
+    - [Завантажити / оновити тайли](../map/raster-maps.md#download--update-tiles).
+    - [Змінити](../map/raster-maps.md#change-raster-map-parameters) параметри растрової мапи.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
+Перейти до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Налаштування підкладки / накладання Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Налаштувати підкладку / накладання Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
+Перейти до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Налаштування підкладки / накладання iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Налаштувати підкладку / накладання iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Як підготувати растрові карти {#how-to-prepare-raster-maps}
+## Як підготувати растрові мапи {#how-to-prepare-raster-maps}
 
 :::info
-Основна стаття про підготовку карт [читайте тут](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Основна стаття для підготовки мап [читайте тут](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Незважаючи на те, що плагін називається *Онлайн-карти*, ви можете використовувати карти і без підключення до Інтернету. Вам просто потрібно зберегти частини карт (часто називаються тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
+Незважаючи на те, що плагін називається *Онлайн-мапи*, ви можете використовувати мапи без підключення до інтернету. Вам просто потрібно зберегти частини мап (часто звані тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
 
 Виберіть область, яку потрібно завантажити, натисніть на Preload area, потім встановіть найменший і найбільший рівні масштабу, які ви хочете відобразити, і завантажте тайли.
-Для <b>версії Android</b> ви можете скопіювати їх до папки <i>osmand/tiles/*тип тайлів*</i> на своєму телефоні. Вам також потрібно буде відкрити <i>Налаштувати карту - Накладена карта</i> та вибрати онлайн-тайли OsmAnd.
+Для <b>версії Android</b> ви можете скопіювати їх у папку <i>osmand/tiles/*тип тайлів*</i> на вашому телефоні. Вам також потрібно буде відкрити <i>Налаштувати мапу –. Накладання мапи</i> та вибрати онлайн-тайли OsmAnd.
 
-Для <b>версії iOS</b> ви можете вибрати файл SQ Lite на своєму телефоні (будь-який месенджер або dropbox), OsmAnd запропонує його додати. Вам також потрібно буде відкрити <i>Карта → Накладання / Підкладка або Тип карти</i> та вибрати нове джерело карти.
+Для <b>версії iOS</b> ви можете вибрати файл SQ Lite на своєму телефоні (будь-який месенджер або Dropbox), OsmAnd запропонує його додати. Вам також потрібно буде відкрити <i>Мапа → Накладання / Підкладка або Тип мапи</i> та вибрати нове джерело мапи.
 
 Як додати файл SQ Lite у версіях OsmAnd для Android та iOS, ви можете прочитати в <a href="https://anygis.ru/Web/Html/Osmand_en"><b>проєкті Anygis</b></a>.
 
 
-Онлайн-тайли можуть бути корисними, коли вам потрібна лише невелика частина карти або її специфічний тип для використання в обмеженій області, але ви не хочете завантажувати весь регіон. Вони можуть стати в нагоді в нескінченних ситуаціях.
+Онлайн-тайли можуть бути корисними, коли вам потрібна лише невелика ділянка мапи або її певний тип для використання в обмеженій області, але ви не хочете завантажувати весь регіон. Вони можуть стати в нагоді в безлічі ситуацій.
 
-![Онлайн-карти](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Онлайн-мапи](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Онлайн-карти](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Онлайн-мапи](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Взаємодія з картою](../../user/map/interact-with-map.md)
+- [Взаємодія з мапою](../../user/map/interact-with-map.md)
 - [Глобальні налаштування](../../user/personal/global-settings.md)
-- [Векторні карти (стилі карт)](../../user/map/vector-maps.md)
+- [Векторні мапи (Стилі мап)](../../user/map/vector-maps.md)
 
 ### Поширені проблеми та рішення {#common-issues-and-solutions}
 
-1. Онлайн-карти не відображаються в меню Джерело карти:  
+1. Онлайн-мапи не відображаються в меню Джерело мапи:  
   
-    - Переконайтеся, що плагін Онлайн-карти ввімкнено: *Меню → Плагіни → Онлайн-карти*.  
-    - Переконайтеся, що у вас є активне підключення до Інтернету для доступу до супутникових зображень.  
-    - Перевірте, чи завантажено вибрану Онлайн-карту або чи потрібні [додаткові налаштування](../map/raster-maps.md#select-raster-maps).
+    - Перевірте, чи увімкнено плагін Онлайн-мапи: *Меню → Плагіни → Онлайн-мапи*.  
+    - Переконайтеся, що у вас є активне підключення до Інтернету для доступу до супутникових знімків.  
+    - Перевірте, чи завантажено вибрану Онлайн-мапу або чи потрібні [додаткові налаштування](../map/raster-maps.md#select-raster-maps).
 
 > *Останнє оновлення: січень 2025*
