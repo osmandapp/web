@@ -13,7 +13,7 @@ import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';

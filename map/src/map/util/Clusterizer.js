@@ -361,6 +361,8 @@ export function createSecondaryMarker(obj) {
         color: '#ffffff',
         fillColor: '#fe8800',
         weight: 1,
+        simple: true,
+        renderer: L.svg(),
     });
 }
 
@@ -410,6 +412,9 @@ export function createHoverMarker({
 
     const onMouseOut = (event) => {
         if (event.originalEvent) {
+            if (!mainStyle && marker.options.selected) {
+                return;
+            }
             removeTooltip(map, tooltipRef);
             if (setSelectedId) {
                 setSelectedId({ id: -1 });

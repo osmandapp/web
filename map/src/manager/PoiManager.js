@@ -22,6 +22,8 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
+import L from 'leaflet';
+import { SELECTED_POI_COLOR } from '../util/hooks/map/useSelectMarkerOnMap';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -316,6 +318,43 @@ export function translateWithSplit(t, string) {
         translatedString = translatedString.split(SEPARATOR)[0];
     }
     return translatedString;
+}
+
+export function selectMarker(target, prevMarker) {
+    const marker = updateSelectedMarkerOnMap(target);
+    if (prevMarker && prevMarker !== marker) {
+        hideSelectedMarker(prevMarker);
+    }
+    return marker;
+}
+
+export function hideSelectedMarker(target) {
+    updateSelectedMarkerOnMap(target, true);
+}
+
+export function updateSelectedMarkerOnMap(marker, updatePrev = false) {
+    const newBackgroundColor = updatePrev ? DEFAULT_POI_COLOR : SELECTED_POI_COLOR;
+    if (marker.options?.simple) {
+        // simple marker
+        marker.setStyle({
+            fillColor: newBackgroundColor,
+            selected: !updatePrev,
+        });
+    } else {
+        // marker with icon
+        const newHtml = createPoiIcon({
+            color: newBackgroundColor,
+            background: DEFAULT_POI_SHAPE,
+            svgIcon: marker.options.svg,
+        }).options.html;
+
+        marker.setIcon(
+            L.divIcon({
+                html: newHtml,
+            })
+        );
+    }
+    return marker;
 }
 
 const PoiManager = {

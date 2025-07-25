@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import { clusterMarkers, createHoverMarker, EXPLORE_BIG_ICON_SIZE, removeTooltip } from '../util/Clusterizer';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
 
@@ -59,14 +59,15 @@ export default function ExploreLayer() {
         }
     }, [zoom]);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        mainIconsLayerRef.current && otherIconsLayerRef.current
-            ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
-            : null,
-        EXPLORE_LAYER_ID,
-        map
-    );
+        layers:
+            mainIconsLayerRef.current && otherIconsLayerRef.current
+                ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
+                : null,
+        type: EXPLORE_LAYER_ID,
+        map,
+    });
 
     function closeModal() {
         setModalIsOpen(false);
