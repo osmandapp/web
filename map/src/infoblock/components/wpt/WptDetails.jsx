@@ -35,6 +35,7 @@ import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direct
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
+import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -166,6 +167,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
             const wikiObj = ctx.searchSettings.getPoi;
+            const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
             const poiType = getCategory(wikiObj.properties);
             return {
@@ -184,6 +186,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 osmUrl: currentPoi?.properties[POI_OSM_URL],
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
+                wikidata: wikidataId,
             };
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
@@ -238,6 +241,19 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
         setLoading(true);
         fetchTagsAndData().then((tags) => {
+            if (!tags || !tags.res) {
+                tags = { res: [] };
+            }
+            if (newWpt?.wikidata && !tags.res.some(t => t.key === 'wikidata')) {
+                tags.res.push({
+                    key: 'wikidata',
+                    value: 'Q' + newWpt.wikidata,
+                    url: 'https://www.wikidata.org/wiki/Q' + newWpt.wikidata,
+                    isUrl: true,
+                    icon: <WikidataIcon />,
+                    textPrefix: 'Wikidata',
+                });
+            }
             setWpt({ ...newWpt, tags });
             setIsAddressAdded(false);
             setIsPhotosAdded(false);
