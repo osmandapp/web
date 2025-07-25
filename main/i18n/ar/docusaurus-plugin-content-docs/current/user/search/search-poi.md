@@ -1,5 +1,4 @@
 ---
-source-hash: 7371416328fd739b31ec178647a97d46782b548fb574f29facc0559cdd279011
 sidebar_position: 4
 title:  البحث عن نقاط الاهتمام (POI)
 ---
