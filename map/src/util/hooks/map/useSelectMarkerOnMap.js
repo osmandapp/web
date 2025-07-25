@@ -70,7 +70,7 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
                 }
             }
         });
-    }, [ctx.selectedWpt]);
+    }, [ctx.selectedWpt, prevSelectedMarker.current]);
 
     function hideOldMarker() {
         if (ctx.selectedPoiId.prev && ctx.selectedPoiId.prev.id !== ctx.selectedPoiId.id) {

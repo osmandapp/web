@@ -380,6 +380,7 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
+                prevSelectedPoi.current = null;
             }
             addToSearchRes(poiList);
             setMove(false);

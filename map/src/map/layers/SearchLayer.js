@@ -136,7 +136,10 @@ export default function SearchLayer() {
                     objList: ctx.searchResult?.features,
                 });
                 searchLayers.current.clearLayers();
-                searchLayers.current.addLayer(newLayers);
+                newLayers.eachLayer((l) => {
+                    searchLayers.current.addLayer(l);
+                });
+                prevSelectedRes.current = null;
             }
         };
 
