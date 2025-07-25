@@ -1,5 +1,5 @@
 ---
-source-hash: 67b62b612a4376b25626dd16941f9e9cff28a766c7bdc73cda828e3abcfe9ca4
+source-hash: 312a9f0bef4e4c80ffe9040157d89d4986b31e2d975b67baab520769f30facdb
 sidebar_position: 4
 title:  Compras multiplataforma
 ---
@@ -13,8 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-
-
 ## Compras multiplataforma compatibles {#supported-cross-platform-purchases}
 
 Los siguientes productos de OsmAnd actualmente son compatibles con el uso en múltiples plataformas (Android, iOS y Web):
@@ -23,35 +21,32 @@ Los siguientes productos de OsmAnd actualmente son compatibles con el uso en mú
 - Suscripción a **Maps+**
 - Compra única en la aplicación de **Maps+**
 
-A partir de la **versión 5.1 de OsmAnd**, lanzada en conmemoración de nuestro **15.º aniversario**, el acceso multiplataforma se ha extendido a **Maps+** (anteriormente conocido como *Ilimitado*). Anteriormente, solo la suscripción a [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
+A partir de la **versión 5.1 de OsmAnd**, lanzada en celebración de nuestro **15.º aniversario**, el acceso multiplataforma se ha extendido a **Maps+** (anteriormente conocido como *Unlimited*). Anteriormente, solo la suscripción [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multiplataforma.
 
 Para activar el acceso multiplataforma, las compras deben vincularse a su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login).
 Puede comparar todos los productos de OsmAnd aquí: [diferencia entre compras](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
-| Tipo de producto                | Multiplataforma | Notas |
-|-----------------------------|----------------|-------|
-| OsmAnd Pro (suscripción)   | ✔              | Funciona en Android, iOS y Web a través de la Nube |
-| Maps+ (suscripción)        | ✔              | Requiere la versión 5.0+ y una cuenta en la Nube |
-| Maps+ (compra única)   | ✔              | Debe activarse a través de OsmAnd Cloud en el dispositivo de compra |
-| OsmAnd+ (aplicación independiente)    | ✔     | Debe activarse a través de OsmAnd Cloud en el dispositivo de compra |
-
+| **Tipo de producto** | **Multiplataforma** | **Notas** |
+|:-------------------------------|:--------------------|:--------------------------------------------------------------------------|
+| **OsmAnd Pro** (suscripción) | ✔ | Totalmente multiplataforma. Funciona en Android, iOS y Web cuando se vincula a la Nube. |
+| **Maps+** (suscripción) | ✔ | Se puede usar en todas las plataformas, pero debe activarse a través de OsmAnd Cloud **en el dispositivo de compra**. |
+| **Maps+** (compra única) | ✔ | Se puede usar en todas las plataformas, pero debe activarse a través de OsmAnd Cloud **en el dispositivo de compra**. |
+| **OsmAnd+** (aplicación independiente) | ✘ | No se puede transferir entre plataformas. Para obtener ayuda, póngase en contacto con support@osmand.net. |
 
 ## Cómo funciona {#how-it-works}
 
-Para usar su compra de **OsmAnd Pro**, **OsmAnd+** o **Maps+** en diferentes plataformas (Android, iOS o Web), debe **vincularla a su cuenta de OsmAnd Cloud**.
+Para usar su compra de **OsmAnd Pro** o **Maps+** en diferentes plataformas (Android, iOS o Web), debe **vincularla a su cuenta de OsmAnd Cloud**.
 
-### Vincule su compra {#link-your-purchase}
+### Vincular su compra {#link-your-purchase}
 
-![Vínculo a la Nube](@site/static/img/purchases/cloud_activation.png)
+![Vincular a la nube](@site/static/img/purchases/cloud_activation.png)
 
 Realice este paso en el **dispositivo donde realizó la compra** (Android o iOS, versión 5.0 o posterior):
 
 1. Vaya a su cuenta de [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    _Menú → Ajustes → OsmAnd Cloud → Crear nueva cuenta / Ya tengo una cuenta_
 
-2. Una vez iniciada la sesión, su compra de **Pro** o **Maps+** se vinculará automáticamente a su **cuenta de la Nube** y se marcará como **multiplataforma**, *si no estaba vinculada previamente a otra cuenta.*
-
-
+2. Una vez iniciada la sesión, su compra de **Pro** o **Maps+** se vinculará automáticamente a su **cuenta de Cloud** y se marcará como **multiplataforma**, *si no estaba vinculada previamente a otra cuenta.*
 
 ### Activar en otro dispositivo o plataforma {#activate-on-another-device-or-platform}
 
@@ -63,8 +58,7 @@ Realice este paso en el **dispositivo donde realizó la compra** (Android o iOS,
 
 2. Luego vaya a:
    *Menú → Ajustes → Compras*
-   Su compra de **Pro o Maps+** vinculada debería estar disponible ahora.
-
+   Su compra vinculada de **Pro o Maps+** ahora debería estar disponible.
 
 ### Solución de problemas {#troubleshooting}
 
@@ -77,8 +71,7 @@ Si el problema persiste, póngase en contacto con **support@osmand.net** e inclu
 
 - Su correo electrónico de OsmAnd Cloud.
 - Plataforma(s) y tienda(s) de aplicaciones utilizadas.
-- Tipo de compra (Pro / Maps+ única / Maps+ suscripción).
-
+- Tipo de compra (Pro / Maps+ única / suscripción a Maps+).
 
 ## Ejemplo {#example}
 
@@ -98,7 +91,6 @@ Esto completa la activación multiplataforma de su compra. Ahora puede seguir us
 
 ¡Disfrute usando Maps+/Pro en todas las plataformas!
 
-
 ## Artículos relacionados {#related-articles}
 
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
@@ -106,4 +98,4 @@ Esto completa la activación multiplataforma de su compra. Ahora puede seguir us
 - [Diferencia entre compras Android](./android.md#difference-between-purchases-android)
 - [Diferencia entre compras iOS](./ios.md#difference-between-purchases-ios)
 
-> *Última actualización: Mayo de 2025*
+> *Última actualización: mayo de 2025*

@@ -1,5 +1,5 @@
 ---
-source-hash: fc360655e98d871bf1acdca2a317913ed6e638036154cb305a6b4c74fd518f33
+source-hash: 5d832465941870703a27d7bcf3e7a52806533527f1a691bbbdf879cf6b4e0def
 sidebar_position: 1
 sidebar_label: Introdução
 title: Introdução ao Site
@@ -24,7 +24,7 @@ O [**Portal de Mapas OsmAnd**](https://osmand.net/map) — também conhecido com
 
 Projetado como um companheiro multiplataforma para o OsmAnd para Android e iOS, o Visualizador de Mapas Web ajuda os usuários a planejar viagens, analisar trilhas, visualizar terrenos e gerenciar arquivos usando qualquer navegador de desktop ou tablet — sem instalar um aplicativo.
 
-O OsmAnd Web integra-se perfeitamente com o serviço **OsmAnd Cloud**, que permite a sincronização de favoritos, trilhas e backups entre dispositivos e plataformas. Usuários com contas **OsmAnd Start** (gratuita) ou **OsmAnd Pro** (paga) podem aproveitar ao máximo este ecossistema sincronizando dados entre dispositivos móveis e a web.
+O OsmAnd Web integra-se perfeitamente com o serviço **OsmAnd Cloud**, que permite a sincronização de favoritos, trilhas e backups entre dispositivos e plataformas. Usuários com contas **OsmAnd Start** (gratuita) ou **OsmAnd Pro** (paga) podem aproveitar ao máximo este ecossistema sincronizando dados entre o celular e a web.
 
 
 
@@ -36,7 +36,7 @@ O OsmAnd Web integra-se perfeitamente com o serviço **OsmAnd Cloud**, que permi
 - Pesquise e explore lugares populares próximos
 - Exibição de Favoritos, Trilhas e POIs no mapa
 - Camadas de clima: vento, temperatura e pressão
-- Camadas de terreno: relevo sombreado, declives e vista de altitude
+- Camadas de terreno: sombreamento de colinas, declives e vista de altitude
 - Analisador de Trilhas para perfis de elevação e velocidade
 - Acesso total a dados sincronizados via OsmAnd Cloud
 - Suporte para importação/exportação de arquivos (GPX: trilhas, favoritos)
@@ -44,20 +44,20 @@ O OsmAnd Web integra-se perfeitamente com o serviço **OsmAnd Cloud**, que permi
 
 
 
-### Acesso por Assinatura {#subscription-accesses}
+### Acesso à Assinatura {#subscription-accesses}
 
-Muitos recursos são gratuitos, mas alguns exigem uma conta registrada.
+Muitos recursos são de uso gratuito, mas alguns exigem uma conta registrada.
 A tabela abaixo descreve o que está disponível em cada versão:
 
-| Recurso | Disponível Em |
+| Recurso | Disponível em |
 |--------|--------------|
 | [Rota de Navegação](./planner.md) | Gratuito |
-| [Criar Trilha](./planner.md) | Gratuito |
+| [Planejador de Rotas](./planner.md) | Gratuito |
 | [Camadas de Clima](./web-map.md) | Gratuito |
 | [Favoritos](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Sincronização OsmAnd Cloud](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Pesquisa Web](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Camada de Trilhas](./web-map.md) | <ProFeature/> |
+| [Sincronização com OsmAnd Cloud](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Pesquisa Web, Lugares Populares](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Pastas e Camadas de Trilhas](./web-map.md) | <ProFeature/> |
 
 
 ## Como Começar {#how-to-start}
@@ -68,8 +68,8 @@ Para acessar todos os recursos do Visualizador de Mapas Web do OsmAnd, você pre
 
 1. Vá para o [**Portal de Mapas OsmAnd**](https://osmand.net/map).
 2. Abra o menu **Conta**:
-   - **Fazer login**: Digite o endereço de e-mail vinculado à sua assinatura Pro ou Start.
-   - **Criar conta**: Registre-se para uma conta OsmAnd Start gratuita.
+   - **Fazer login**: Insira o endereço de e-mail vinculado à sua assinatura Pro ou Start.
+   - **Criar conta**: Registre-se para uma conta gratuita do OsmAnd Start.
 
 ![Web Account](@site/static/img/web/web_account.png)
 

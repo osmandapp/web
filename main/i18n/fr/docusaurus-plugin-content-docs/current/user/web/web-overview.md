@@ -1,8 +1,8 @@
 ---
-source-hash: fc360655e98d871bf1acdca2a317913ed6e638036154cb305a6b4c74fd518f33
+source-hash: 5d832465941870703a27d7bcf3e7a52806533527f1a691bbbdf879cf6b4e0def
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction au visualiseur de carte Web
+title: Introduction au site web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,33 +18,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Qu'est-ce que le visualiseur de carte Web OsmAnd ?
+## Qu'est-ce que la visionneuse de cartes web OsmAnd ?
 
-Le [**Portail de carte OsmAnd**](https://osmand.net/map) — également appelé **Visualiseur de carte Web** — est une extension de l'application mobile OsmAnd basée sur un navigateur. Il permet aux utilisateurs de visualiser des cartes mondiales, de planifier des itinéraires, de simuler la navigation, de gérer des données personnelles et d'accéder au contenu synchronisé de leurs appareils via le cloud.
+Le [**Portail cartographique OsmAnd**](https://osmand.net/map) — également appelé **Visionneuse de cartes web** — est une extension de l'application mobile OsmAnd basée sur un navigateur. Il permet aux utilisateurs de visualiser des cartes mondiales, de planifier des itinéraires, de simuler la navigation, de gérer des données personnelles et d'accéder au contenu synchronisé depuis leurs appareils via le cloud.
 
-Conçu comme un compagnon multiplateforme d'OsmAnd pour Android et iOS, le Visualiseur de carte Web aide les utilisateurs à planifier des voyages, à analyser des tracés, à visualiser le terrain et à gérer des fichiers à l'aide de n'importe quel navigateur de bureau ou de tablette — sans installer d'application.
+Conçue comme un compagnon multiplateforme d'OsmAnd pour Android et iOS, la visionneuse de cartes web aide les utilisateurs à planifier des voyages, à analyser des traces, à visualiser le terrain et à gérer des fichiers à l'aide de n'importe quel navigateur de bureau ou de tablette — sans installer d'application.
 
-OsmAnd Web s'intègre étroitement au service **OsmAnd Cloud**, qui permet de synchroniser les favoris, les tracés et les sauvegardes entre les appareils et les plateformes. Les utilisateurs disposant de comptes **OsmAnd Start** (gratuit) ou **OsmAnd Pro** (payant) peuvent profiter pleinement de cet écosystème en synchronisant les données entre le mobile et le Web.
+OsmAnd Web s'intègre étroitement au service **OsmAnd Cloud**, qui permet de synchroniser les favoris, les traces et les sauvegardes entre les appareils et les plateformes. Les utilisateurs disposant d'un compte **OsmAnd Start** (gratuit) ou **OsmAnd Pro** (payant) peuvent profiter pleinement de cet écosystème en synchronisant les données entre le mobile et le web.
 
 
 
-## Fonctionnalités clés
+## Caractéristiques principales
 
 - Carte avec couverture mondiale et données vectorielles de haute qualité
 - Planification d'itinéraires à pied, en voiture, à vélo et autres profils
 - Aperçu de la navigation avec instructions virage par virage
 - Recherche et exploration des lieux populaires à proximité
-- Affichage des favoris, des tracés et des POI sur la carte
+- Affichage des favoris, des traces et des POI sur la carte
 - Superpositions météorologiques : vent, température et pression
 - Couches de terrain : ombrage, pentes et vue en altitude
-- Analyseur de tracé pour les profils d'élévation et de vitesse
+- Analyseur de traces pour les profils d'élévation et de vitesse
 - Accès complet aux données synchronisées via OsmAnd Cloud
-- Prise en charge de l'importation/exportation de fichiers (GPX : tracés, favoris)
+- Prise en charge de l'importation/exportation de fichiers (GPX : traces, favoris)
 - Intégration transparente avec **OsmAnd Pro** et **OsmAnd Start**
 
 
 
-### Accès à l'abonnement {#subscription-accesses}
+### Accès par abonnement {#subscription-accesses}
 
 De nombreuses fonctionnalités sont gratuites, mais certaines nécessitent un compte enregistré.
 Le tableau ci-dessous décrit ce qui est disponible dans chaque version :
@@ -52,23 +52,23 @@ Le tableau ci-dessous décrit ce qui est disponible dans chaque version :
 | Fonctionnalité | Disponible dans |
 |--------|--------------|
 | [Itinéraire de navigation](./planner.md) | Gratuit |
-| [Créer un tracé](./planner.md) | Gratuit |
+| [Planificateur d'itinéraire](./planner.md) | Gratuit |
 | [Superpositions météorologiques](./web-map.md) | Gratuit |
 | [Favoris](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
 | [Synchronisation OsmAnd Cloud](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Recherche Web](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Couche de tracés](./web-map.md) | <ProFeature/> |
+| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
+| [Dossiers et couche de traces](./web-map.md) | <ProFeature/> |
 
 
-## Comment démarrer {#how-to-start}
+## Comment commencer {#how-to-start}
 
-Pour accéder à toutes les fonctionnalités du visualiseur de carte Web OsmAnd, vous devez vous connecter avec un compte OsmAnd Cloud.
+Pour accéder à toutes les fonctionnalités de la visionneuse de cartes web OsmAnd, vous devez vous connecter avec un compte OsmAnd Cloud.
 
-- Si vous avez déjà un abonnement [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gratuit, suivez ces étapes :
+- Si vous avez déjà un abonnement [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte gratuit [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), suivez ces étapes :
 
-1. Accédez au [**Portail de carte OsmAnd**](https://osmand.net/map).
+1. Accédez au [**Portail cartographique OsmAnd**](https://osmand.net/map).
 2. Ouvrez le menu **Compte** :
-   - **Se connecter** : Saisissez l'adresse e-mail associée à votre abonnement Pro ou Start.
+   - **Se connecter** : Saisissez l'adresse e-mail liée à votre abonnement Pro ou Start.
    - **Créer un compte** : Enregistrez-vous pour un compte OsmAnd Start gratuit.
 
 ![Compte Web](@site/static/img/web/web_account.png)
