@@ -50,7 +50,7 @@ export default function LocalGpxUploader({ children }) {
 
     return (
         <label htmlFor="se-upload-gpx">
-            <HiddenInput id="se-upload-gpx" accept=".gpx" multiple type="file" onChange={fileSelected} />
+            <HiddenInput id="se-upload-gpx" accept=".gpx, .kmz, .kml" multiple type="file" onChange={fileSelected} />
             {children}
         </label>
     );
