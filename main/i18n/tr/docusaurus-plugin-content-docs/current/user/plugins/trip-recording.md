@@ -201,7 +201,7 @@ Daha fazla ayrıntı için, parkurla ilgili çeşitli seçenekleri (yeniden adla
 
 <TabItem value="ios" label="iOS">
 
-![haritada_göster_tr_ios_1](@site/static/img/plugins/trip-recording/sshow_tr_onmap_ios_1.png) ![Harita parkurlarını yapılandır iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![haritada_göster_tr_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Harita parkurlarını yapılandır iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>

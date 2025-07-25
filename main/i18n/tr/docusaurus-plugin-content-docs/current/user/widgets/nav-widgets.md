@@ -410,7 +410,7 @@ Sokak adı widget'ı, düz bir okla **mevcut sokak adını** veya yapılacak man
 
 - Bir cadde veya otoyol boyunca sürerken, widget mevcut cadde (yol) adını veya tanımını mavi bir okla gösterir.
 
-  ![Sokak adı POI'ler widget'ı_2](@site/static/img/widgets/street_name_poi_widget_2.png)
+  ![Sokak adı POI'ler widget'ı_2](@site/static/img/widgets/street_name_widget_2.png)
 
 - Yön değiştirdiğinizde, widget manevra şemasını ve dönmeniz gereken caddenin (yolun) adını (tanımını) gösterir.
 

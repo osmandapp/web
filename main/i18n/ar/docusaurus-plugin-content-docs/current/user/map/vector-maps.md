@@ -501,7 +501,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 ![نمط الطريق الألماني على الخريطة](@site/static/img/map/map-road-style-german.png)
 
 - **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. نمط أطلس الطرق الأمريكي.
-![نمط الطريق الأمريكي على الخريطة](@site/static/map/map-road-style-american.png)
+![نمط الطريق الأمريكي على الخريطة](@site/static/img/map/map-road-style-american.png)
 
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. تباين عالٍ للطرق.
 ![نمط الطريق عالي التباين على الخريطة](@site/static/img/map/map-road-style-high-contrast.png)

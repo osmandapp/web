@@ -432,7 +432,7 @@ Widżet nazwy ulicy pokazuje **nazwę bieżącej ulicy** z prostą strzałką lu
 
 - Podczas jazdy ulicą lub autostradą widżet pokazuje nazwę lub oznaczenie bieżącej ulicy (drogi) z niebieską strzałką.
 
-  ![Widżet POI nazwy ulicy_2](@site/static/img/widgets/street_name_poi_widget_2.png)
+  ![Widżet POI nazwy ulicy_2](@site/static/img/widgets/street_name_widget_2.png)
 
 - Po zmianie kierunku widżet pokazuje schemat manewru i nazwę (oznaczenie) ulicy (drogi), w którą należy skręcić.
 

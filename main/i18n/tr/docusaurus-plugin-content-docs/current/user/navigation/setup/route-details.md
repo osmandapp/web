@@ -109,7 +109,7 @@ Haritadaki rakım verileri (70 derece kuzey enlemi ile 70 derece güney enlemi a
 <details>
 <summary>DEM (DSM) verileri</summary>
  - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Bu ürün için kullanılan orijinal veriler JAXA'nın AW3D'sinden alınmıştır.<br/>
- - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM.</a><br/>
+ - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
  - <a href="https://sonny.4lima.de">Sonny's LiDAR Avrupa Dijital Arazi Modelleri</a> (DTM).
 
