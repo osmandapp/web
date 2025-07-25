@@ -1,11 +1,17 @@
 import { useEffect } from 'react';
-import { createSecondaryMarker } from '../../map/util/Clusterizer';
-import { hidePoiMarker, selectPoiMarker } from '../../manager/PoiManager';
-import { POI_ID } from '../../infoblock/components/wpt/WptTagsProvider';
+import { createSecondaryMarker } from '../../../map/util/Clusterizer';
+import { hideSelectedMarker, selectMarker } from '../../../manager/PoiManager';
+import { POI_ID } from '../../../infoblock/components/wpt/WptTagsProvider';
 
 const COLOR_POINTER = '#237bff';
+export const SELECTED_POI_COLOR = '#237bff';
 
-export function useSelectedPoiMarker(ctx, layers, type, map, prevSelectedMarker) {
+// The marker has two selection states:
+// 1. On hover, a COLOR_POINTER circular outline appears around the marker. (ctx.selectedPoiId)
+// 2. On click, the marker’s color changes to COLOR_POINTER to indicate it’s selected. (ctx.selectedWpt.poi)
+
+export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarker = { current: null } }) {
+    // add hover marker
     useEffect(() => {
         if (layers && ctx.selectedPoiId?.id && ctx.selectedPoiId?.type === type) {
             hideOldMarker();
@@ -15,7 +21,7 @@ export function useSelectedPoiMarker(ctx, layers, type, map, prevSelectedMarker)
                     foundMarker = layer;
                 }
             });
-            if (foundMarker && ctx.selectedWpt?.poi?.options[POI_ID] !== ctx.selectedPoiId.id) {
+            if (foundMarker) {
                 removeOldPointer();
                 if (ctx.selectedPoiId.show) {
                     foundMarker.fire('selectMarker'); // Show the selected marker
@@ -38,26 +44,32 @@ export function useSelectedPoiMarker(ctx, layers, type, map, prevSelectedMarker)
         }
     }, [ctx.selectedPoiId, layers, type]);
 
+    // Change the marker’s color to COLOR_POINTER
     useEffect(() => {
-        if (ctx.selectedPoiId?.show === false && ctx.selectedPoiId?.id === -1 && prevSelectedMarker) {
-            // hide marker after closing left info
-            hidePoiMarker(prevSelectedMarker);
-            prevSelectedMarker = null;
+        if (ctx.selectedWpt?.wikidata) {
+            // skip wikidata markers
             return;
         }
-        if (ctx.selectedPoiId?.id && ctx.selectedPoiId.id !== 1) {
-            // get marker from layers
-            layers?.forEach((layer) => {
-                if (layer.options.idObj === ctx.selectedPoiId.id) {
-                    if (ctx.selectedPoiId.show === false) {
-                        hidePoiMarker(layer);
-                        prevSelectedMarker = null;
-                    } else if (ctx.selectedWpt?.poi?.options[POI_ID] === ctx.selectedPoiId?.id) {
-                        prevSelectedMarker = selectPoiMarker(layer, prevSelectedMarker);
-                    }
-                }
-            });
+        if (!ctx.selectedWpt && prevSelectedMarker?.current) {
+            // hide old marker after closing left info
+            hideSelectedMarker(prevSelectedMarker.current);
+            prevSelectedMarker.current = null;
+            return;
         }
+        layers?.forEach((layer) => {
+            if (layer.options.idObj === ctx.selectedWpt?.poi?.options[POI_ID]) {
+                if (ctx.selectedPoiId.show === false) {
+                    hideSelectedMarker(layer);
+                    prevSelectedMarker.current = null;
+                } else {
+                    if (prevSelectedMarker.current && prevSelectedMarker.current === layer) {
+                        // If the marker is already selected, do nothing
+                        return;
+                    }
+                    prevSelectedMarker.current = selectMarker(layer, prevSelectedMarker.current);
+                }
+            }
+        });
     }, [ctx.selectedWpt]);
 
     function hideOldMarker() {

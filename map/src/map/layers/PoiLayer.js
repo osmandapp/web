@@ -10,7 +10,7 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
-    selectPoiMarker,
+    selectMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
@@ -28,9 +28,9 @@ import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchL
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 
@@ -172,13 +172,13 @@ export default function PoiLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
-        POI_LAYER_ID,
+        layers: poiList?.layer?.getLayers(),
+        type: POI_LAYER_ID,
         map,
-        prevSelectedPoi.current
-    );
+        prevSelectedMarker: prevSelectedPoi,
+    });
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
@@ -390,7 +390,7 @@ export default function PoiLayer() {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
 
-        prevSelectedPoi.current = selectPoiMarker(e.sourceTarget, prevSelectedPoi.current);
+        prevSelectedPoi.current = selectMarker(e.sourceTarget, prevSelectedPoi.current);
 
         const poi = {
             options: e.sourceTarget.options,

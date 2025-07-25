@@ -6,7 +6,7 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
-    selectPoiMarker,
+    selectMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
@@ -27,8 +27,8 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
@@ -95,15 +95,17 @@ export default function SearchLayer() {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    const searchLayers = useRef(null);
+
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
-        SEARCH_LAYER_ID,
+        layers: searchLayers.current?.getLayers(),
+        type: SEARCH_LAYER_ID,
         map,
-        prevSelectedRes.current
-    );
+        prevSelectedMarker: prevSelectedRes,
+    });
 
     useEffect(() => {
         if (ctx.searchQuery?.search) {
@@ -129,14 +131,12 @@ export default function SearchLayer() {
 
     useEffect(() => {
         const updateAsyncLayers = async () => {
-            const searchLayer = findFeatureGroupById(map, SEARCH_LAYER_ID);
-
-            if (searchLayer) {
+            if (searchLayers.current) {
                 const newLayers = await createSearchLayer({
                     objList: ctx.searchResult?.features,
                 });
-                searchLayer.clearLayers();
-                searchLayer.addLayer(newLayers);
+                searchLayers.current.clearLayers();
+                searchLayers.current.addLayer(newLayers);
             }
         };
 
@@ -209,6 +209,7 @@ export default function SearchLayer() {
                     const layers = await createSearchLayer({
                         objList: ctx.searchResult?.features,
                     });
+                    searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
                 }
             }
@@ -219,7 +220,7 @@ export default function SearchLayer() {
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
-        prevSelectedRes.current = selectPoiMarker(e.sourceTarget, prevSelectedRes.current);
+        prevSelectedRes.current = selectMarker(e.sourceTarget, prevSelectedRes.current);
 
         const poi = {
             options: e.sourceTarget.options,
