@@ -8,7 +8,7 @@ import { DEFAULT_BIG_HOVER_SIZE, DEFAULT_BIG_HOVER_STYLES } from '../../../map/m
 export const COLOR_POINTER = '#237bff';
 export const SELECTED_POI_COLOR = '#237bff';
 
-// Class creates hover markers for main explore map markers.
+// Hover markers for main explore map markers
 export default class HoverMarker {
     constructor(
         marker,
@@ -29,6 +29,7 @@ export default class HoverMarker {
             icon: L.divIcon({
                 className: this.styles,
                 iconSize: this.size,
+                bigExplore: true,
             }),
         });
         hoverMarker.options.icon.options.className = this.styles;
@@ -41,6 +42,8 @@ export default class HoverMarker {
 // 2. On click, the marker’s color changes to COLOR_POINTER to indicate it’s selected. (ctx.selectedWpt.poi)
 
 export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarker = { current: null } }) {
+    const selectedObjId = ctx.selectedWpt?.wikidata?.properties?.id ?? ctx.selectedWpt?.poi?.options[POI_ID];
+
     // add hover marker
     useEffect(() => {
         if (layers && ctx.selectedPoiId?.id && ctx.selectedPoiId?.type === type) {
@@ -51,7 +54,7 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
                     foundMarker = layer;
                 }
             });
-            if (foundMarker) {
+            if (foundMarker && foundMarker.options.idObj !== selectedObjId) {
                 removeOldPointer();
                 if (ctx.selectedPoiId.show) {
                     foundMarker.fire('selectMarker'); // Show the selected marker
@@ -76,7 +79,6 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
 
     // Change the marker’s color to COLOR_POINTER
     useEffect(() => {
-        const objId = ctx.selectedWpt?.wikidata?.properties?.id ?? ctx.selectedWpt?.poi?.options[POI_ID];
         if (!ctx.selectedWpt && prevSelectedMarker?.current) {
             // hide old marker after closing left info
             hideSelectedMarker(prevSelectedMarker.current, type);
@@ -84,7 +86,7 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
             return;
         }
         layers?.forEach((layer) => {
-            if (layer.options.idObj === objId) {
+            if (layer.options.idObj === selectedObjId) {
                 if (ctx.selectedPoiId.show === false) {
                     hideSelectedMarker(prevSelectedMarker.current, type);
                     prevSelectedMarker.current = null;
