@@ -23,7 +23,8 @@ import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import L from 'leaflet';
-import { SELECTED_POI_COLOR } from '../util/hooks/map/useSelectMarkerOnMap';
+import HoverMarker, { SELECTED_POI_COLOR } from '../util/hooks/map/useSelectMarkerOnMap';
+import { EXPLORE_LAYER_ID } from '../map/layers/ExploreLayer';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -320,20 +321,26 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function selectMarker(target, prevMarker) {
-    const marker = updateSelectedMarkerOnMap(target);
+export function selectMarker(target, prevMarker, type = null) {
+    const marker = updateSelectedMarkerOnMap({ marker: target, type });
     if (prevMarker && prevMarker !== marker) {
-        hideSelectedMarker(prevMarker);
+        hideSelectedMarker(prevMarker, type);
     }
     return marker;
 }
 
-export function hideSelectedMarker(target) {
-    updateSelectedMarkerOnMap(target, true);
+export function hideSelectedMarker(target, type = null) {
+    if (type && type === EXPLORE_LAYER_ID && !target.options?.simple) {
+        // remove hover marker for explore layer
+        target.remove();
+        return;
+    }
+    updateSelectedMarkerOnMap({ marker: target, type, updatePrev: true });
 }
 
-export function updateSelectedMarkerOnMap(marker, updatePrev = false) {
+export function updateSelectedMarkerOnMap({ marker, type = null, updatePrev = false }) {
     const newBackgroundColor = updatePrev ? DEFAULT_POI_COLOR : SELECTED_POI_COLOR;
+
     if (marker.options?.simple) {
         // simple marker
         marker.setStyle({
@@ -341,6 +348,9 @@ export function updateSelectedMarkerOnMap(marker, updatePrev = false) {
             selected: !updatePrev,
         });
     } else {
+        if (type && type === EXPLORE_LAYER_ID) {
+            return new HoverMarker(marker).build();
+        }
         // marker with icon
         const newHtml = createPoiIcon({
             color: newBackgroundColor,

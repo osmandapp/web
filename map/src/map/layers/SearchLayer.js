@@ -295,7 +295,7 @@ export default function SearchLayer() {
                 mainStyle: true,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
-                iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                iconSize: DEFAULT_ICON_SIZE,
                 map,
                 ctx,
                 pointerStyle: styles.hoverPointer,

@@ -2,9 +2,39 @@ import { useEffect } from 'react';
 import { createSecondaryMarker } from '../../../map/util/Clusterizer';
 import { hideSelectedMarker, selectMarker } from '../../../manager/PoiManager';
 import { POI_ID } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { EXPLORE_LAYER_ID } from '../../../map/layers/ExploreLayer';
+import { DEFAULT_BIG_HOVER_SIZE, DEFAULT_BIG_HOVER_STYLES } from '../../../map/markers/MarkerOptions';
 
-const COLOR_POINTER = '#237bff';
+export const COLOR_POINTER = '#237bff';
 export const SELECTED_POI_COLOR = '#237bff';
+
+// Class creates hover markers for main explore map markers.
+export default class HoverMarker {
+    constructor(
+        marker,
+        size = DEFAULT_BIG_HOVER_SIZE,
+        className = `${DEFAULT_BIG_HOVER_STYLES.hover} ${DEFAULT_BIG_HOVER_STYLES.large}`
+    ) {
+        this.marker = marker;
+        this.size = [size, size];
+        this.styles = className;
+    }
+
+    /**
+     * Builds and returns a hover marker
+     * @returns {L.Marker}
+     */
+    build() {
+        const hoverMarker = new L.Marker(this.marker.getLatLng(), {
+            icon: L.divIcon({
+                className: this.styles,
+                iconSize: this.size,
+            }),
+        });
+        hoverMarker.options.icon.options.className = this.styles;
+        return hoverMarker;
+    }
+}
 
 // The marker has two selection states:
 // 1. On hover, a COLOR_POINTER circular outline appears around the marker. (ctx.selectedPoiId)
@@ -46,27 +76,27 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
 
     // Change the marker’s color to COLOR_POINTER
     useEffect(() => {
-        if (ctx.selectedWpt?.wikidata) {
-            // skip wikidata markers
-            return;
-        }
+        const objId = ctx.selectedWpt?.wikidata?.properties?.id ?? ctx.selectedWpt?.poi?.options[POI_ID];
         if (!ctx.selectedWpt && prevSelectedMarker?.current) {
             // hide old marker after closing left info
-            hideSelectedMarker(prevSelectedMarker.current);
+            hideSelectedMarker(prevSelectedMarker.current, type);
             prevSelectedMarker.current = null;
             return;
         }
         layers?.forEach((layer) => {
-            if (layer.options.idObj === ctx.selectedWpt?.poi?.options[POI_ID]) {
+            if (layer.options.idObj === objId) {
                 if (ctx.selectedPoiId.show === false) {
-                    hideSelectedMarker(layer);
+                    hideSelectedMarker(prevSelectedMarker.current, type);
                     prevSelectedMarker.current = null;
                 } else {
                     if (prevSelectedMarker.current && prevSelectedMarker.current === layer) {
                         // If the marker is already selected, do nothing
                         return;
                     }
-                    prevSelectedMarker.current = selectMarker(layer, prevSelectedMarker.current);
+                    prevSelectedMarker.current = selectMarker(layer, prevSelectedMarker.current, type);
+                    if (type && type === EXPLORE_LAYER_ID && layer !== prevSelectedMarker.current) {
+                        prevSelectedMarker.current.addTo(map);
+                    }
                 }
             }
         });

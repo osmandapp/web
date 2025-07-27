@@ -204,7 +204,7 @@ const FavoriteLayer = () => {
                         mainStyle: true,
                         text: marker.options['name'],
                         latlng: marker._latlng,
-                        iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                        iconSize: DEFAULT_ICON_SIZE,
                         map,
                         ctx,
                     });

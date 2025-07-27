@@ -13,10 +13,12 @@ import {
 import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
-import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { DEFAULT_ICON_SIZE, DEFAULT_POI_COLOR, SimpleCircleMarker } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
+import HoverMarker, { COLOR_POINTER } from '../../util/hooks/map/useSelectMarkerOnMap';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
+export const SIMPLE_ICON_SIZE = 10;
 
 // Cluster markers based on zoom and coordinates
 export function clusterMarkers({
@@ -24,7 +26,7 @@ export function clusterMarkers({
     zoom,
     latitude,
     iconSize = EXPLORE_BIG_ICON_SIZE,
-    secondaryIconSize = 10,
+    secondaryIconSize = SIMPLE_ICON_SIZE,
     isPoi = false,
     isFavorites = false,
     isExplore = false,
@@ -351,19 +353,11 @@ export function createSecondaryMarker(obj) {
         }
     }
 
-    return L.circleMarker(latlng, {
-        ...obj.properties,
+    return new SimpleCircleMarker(latlng, obj, {
         id: obj.properties.id,
         idObj: getObjIdSearch(obj),
         [FINAL_POI_ICON_NAME]: finalIconName,
-        fillOpacity: 0.9,
-        radius: 5,
-        color: '#ffffff',
-        fillColor: '#fe8800',
-        weight: 1,
-        simple: true,
-        renderer: L.svg(),
-    });
+    }).build();
 }
 
 export function createHoverMarker({
@@ -372,7 +366,7 @@ export function createHoverMarker({
     mainStyle = false,
     text,
     latlng,
-    iconSize = [10, 10],
+    iconSize = SIMPLE_ICON_SIZE,
     map,
     ctx,
     pointerStyle = `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
@@ -391,11 +385,11 @@ export function createHoverMarker({
         }
         if (!mainStyle) {
             marker.setStyle({
-                fillColor: '#237bff',
+                fillColor: COLOR_POINTER,
             });
         }
         if (text) {
-            const offset = mainStyle ? [5, iconSize[1] * 0.8] : [0, iconSize[1] * 0.8];
+            const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
             const title = text;
             const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
             tooltipRef.current = L.tooltip({
@@ -421,7 +415,7 @@ export function createHoverMarker({
             }
             if (!mainStyle) {
                 marker.setStyle({
-                    fillColor: '#fe8800',
+                    fillColor: DEFAULT_POI_COLOR,
                 });
             }
         }
@@ -444,23 +438,12 @@ export function createHoverMarker({
         }
         let newMarker;
         if (mainStyle) {
-            newMarker = new L.Marker(latlng, {
-                icon: L.divIcon({
-                    className: pointerStyle,
-                    iconSize,
-                }),
-            });
-            newMarker.options.icon.options.className = pointerStyle;
+            newMarker = new HoverMarker(marker, iconSize, pointerStyle).build();
             pointerRef.current = newMarker.addTo(map);
         } else {
-            newMarker = L.circleMarker(latlng, {
-                fillOpacity: 0.9,
-                radius: 5,
-                color: '#ffffff',
-                fillColor: '#237bff',
-                weight: 1,
-                zIndex: 1000,
-            });
+            newMarker = new SimpleCircleMarker(latlng, marker, {
+                fillColor: COLOR_POINTER,
+            }).build();
         }
         pointerRef.current = newMarker.addTo(map);
     };
@@ -514,7 +497,7 @@ export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryM
             mainStyle: true,
             text: marker.options['name'] ?? marker.options['title'],
             latlng: marker._latlng,
-            iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+            iconSize: DEFAULT_ICON_SIZE,
             map,
             ctx,
         });
