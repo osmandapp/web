@@ -10,7 +10,6 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
-    selectMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
@@ -33,6 +32,7 @@ import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/G
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
+import { selectMarker } from '../util/MarkerSelectionService';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.

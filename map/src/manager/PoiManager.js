@@ -22,9 +22,6 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
-import L from 'leaflet';
-import HoverMarker, { SELECTED_POI_COLOR } from '../util/hooks/map/useSelectMarkerOnMap';
-import { EXPLORE_LAYER_ID } from '../map/layers/ExploreLayer';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -319,55 +316,6 @@ export function translateWithSplit(t, string) {
         translatedString = translatedString.split(SEPARATOR)[0];
     }
     return translatedString;
-}
-
-export function selectMarker(target, prevMarker, type = null) {
-    const marker = updateSelectedMarkerOnMap({ marker: target, type });
-    if (prevMarker && prevMarker !== marker) {
-        hideSelectedMarker(prevMarker, type);
-    }
-    return marker;
-}
-
-export function hideSelectedMarker(target, type = null) {
-    if (type && type === EXPLORE_LAYER_ID && !target.options?.simple) {
-        // remove hover marker for explore layer
-        target.remove();
-        return;
-    }
-    updateSelectedMarkerOnMap({ marker: target, type, updatePrev: true });
-}
-
-export function updateSelectedMarkerOnMap({ marker, type = null, updatePrev = false }) {
-    const newBackgroundColor = updatePrev ? DEFAULT_POI_COLOR : SELECTED_POI_COLOR;
-    if (!marker) {
-        console.debug('Marker is null or undefined');
-        return null;
-    }
-    if (marker.options?.simple) {
-        // simple marker
-        marker.setStyle({
-            fillColor: newBackgroundColor,
-            selected: !updatePrev,
-        });
-    } else {
-        if (type && type === EXPLORE_LAYER_ID) {
-            return new HoverMarker(marker).build();
-        }
-        // marker with icon
-        const newHtml = createPoiIcon({
-            color: newBackgroundColor,
-            background: DEFAULT_POI_SHAPE,
-            svgIcon: marker.options.svg,
-        }).options.html;
-
-        marker.setIcon(
-            L.divIcon({
-                html: newHtml,
-            })
-        );
-    }
-    return marker;
 }
 
 const PoiManager = {

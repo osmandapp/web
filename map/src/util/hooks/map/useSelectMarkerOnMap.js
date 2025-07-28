@@ -1,47 +1,28 @@
 import { useEffect } from 'react';
 import { createSecondaryMarker } from '../../../map/util/Clusterizer';
-import { hideSelectedMarker, selectMarker } from '../../../manager/PoiManager';
 import { POI_ID } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { EXPLORE_LAYER_ID } from '../../../map/layers/ExploreLayer';
-import { DEFAULT_BIG_HOVER_SIZE, DEFAULT_BIG_HOVER_STYLES } from '../../../map/markers/MarkerOptions';
+import HoverMarker, {
+    hideSelectedMarker,
+    isNewSelectedExploreMarker,
+    selectMarker,
+} from '../../../map/util/MarkerSelectionService';
 
 export const COLOR_POINTER = '#237bff';
 export const SELECTED_POI_COLOR = '#237bff';
-
-// Hover markers for main explore map markers
-export default class HoverMarker {
-    constructor(
-        marker,
-        size = DEFAULT_BIG_HOVER_SIZE,
-        className = `${DEFAULT_BIG_HOVER_STYLES.hover} ${DEFAULT_BIG_HOVER_STYLES.large}`
-    ) {
-        this.marker = marker;
-        this.size = [size, size];
-        this.styles = className;
-    }
-
-    /**
-     * Builds and returns a hover marker
-     * @returns {L.Marker}
-     */
-    build() {
-        const hoverMarker = new L.Marker(this.marker.getLatLng(), {
-            icon: L.divIcon({
-                className: this.styles,
-                iconSize: this.size,
-                bigExplore: true,
-            }),
-        });
-        hoverMarker.options.icon.options.className = this.styles;
-        return hoverMarker;
-    }
-}
 
 // The marker has two selection states:
 // 1. On hover, a COLOR_POINTER circular outline appears around the marker. (ctx.selectedPoiId)
 // 2. On click, the marker’s color changes to COLOR_POINTER to indicate it’s selected. (ctx.selectedWpt.poi)
 
-export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarker = { current: null } }) {
+export function useSelectMarkerOnMap({
+    ctx,
+    layers,
+    type,
+    map,
+    prevSelectedMarker = { current: null },
+    mainIconsLayerRef = null,
+    otherIconsLayerRef = null,
+}) {
     const selectedObjId = ctx.selectedWpt?.wikidata?.properties?.id ?? ctx.selectedWpt?.poi?.options[POI_ID];
 
     // add hover marker
@@ -91,18 +72,47 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
                     hideSelectedMarker(prevSelectedMarker.current, type);
                     prevSelectedMarker.current = null;
                 } else {
-                    if (prevSelectedMarker.current && prevSelectedMarker.current === layer) {
+                    if (
+                        prevSelectedMarker.current &&
+                        prevSelectedMarker.current.options.idObj === layer.options.idObj
+                    ) {
                         // If the marker is already selected, do nothing
                         return;
                     }
                     prevSelectedMarker.current = selectMarker(layer, prevSelectedMarker.current, type);
-                    if (type && type === EXPLORE_LAYER_ID && layer !== prevSelectedMarker.current) {
-                        prevSelectedMarker.current.addTo(map);
+                    if (isNewSelectedExploreMarker(selectedObjId, prevSelectedMarker.current.options.hover, map)) {
+                        prevSelectedMarker.current.options.hover.addTo(map);
                     }
                 }
             }
         });
-    }, [ctx.selectedWpt, prevSelectedMarker.current]);
+    }, [ctx.selectedWpt, layers]);
+
+    useEffect(() => {
+        const onLayersUpdated = () => {
+            mainIconsLayerRef?.current?.getLayers().forEach((layer) => {
+                if (layer.options.idObj === selectedObjId) {
+                    if (!prevSelectedMarker.current.options.hover) {
+                        prevSelectedMarker.current.options.hover = new HoverMarker(layer).build();
+                        prevSelectedMarker.current.options.hover.addTo(map);
+                    }
+                }
+            });
+            otherIconsLayerRef?.current?.getLayers().forEach((layer) => {
+                if (layer.options.idObj === selectedObjId) {
+                    if (prevSelectedMarker.current.options?.hover) {
+                        prevSelectedMarker.current.options.hover.remove();
+                        prevSelectedMarker.current.options.hover = null;
+                        layer.setStyle({
+                            fillColor: SELECTED_POI_COLOR,
+                        });
+                    }
+                }
+            });
+        };
+        map.on('explore-layers-updated', onLayersUpdated);
+        return () => map.off('explore-layers-updated', onLayersUpdated);
+    }, [layers]);
 
     function hideOldMarker() {
         if (ctx.selectedPoiId.prev && ctx.selectedPoiId.prev.id !== ctx.selectedPoiId.id) {

@@ -21,8 +21,8 @@ import {
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
-import { selectMarker } from '../../manager/PoiManager';
-import { SimpleCircleMarker } from '../markers/MarkerOptions';
+import { selectMarker } from '../util/MarkerSelectionService';
+import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -77,6 +77,8 @@ export default function ExploreLayer() {
         type: EXPLORE_LAYER_ID,
         map,
         prevSelectedMarker: selectedObjRef,
+        mainIconsLayerRef,
+        otherIconsLayerRef,
     });
 
     function closeModal() {
@@ -253,16 +255,21 @@ export default function ExploreLayer() {
         if (ctx.searchSettings.useWikiImages) {
             setSelectedObj(feature);
             setModalIsOpen(true);
-        } else {
-            if (openedPoiRef.current !== feature) {
-                openedPoiRef.current = feature;
-                ctx.setLoadingContextMenu(true);
-                map.spin(true, { color: '#1976d2' });
-                ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
-            }
+        } else if (openedPoiRef.current !== feature) {
+            openedPoiRef.current = feature;
+            ctx.setLoadingContextMenu(true);
+            map.spin(true, { color: '#1976d2' });
+            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
-        selectedObjRef.current = selectMarker(e.sourceTarget, selectedObjRef.current, EXPLORE_LAYER_ID);
+
         ctx.setPhotoGallery(null);
+
+        if (
+            !selectedObjRef.current?.options.hover ||
+            selectedObjRef.current?.options.hover?.options.idObj !== ctx.selectedWpt?.wikidata?.properties?.id
+        ) {
+            selectedObjRef.current = selectMarker(e.sourceTarget, selectedObjRef.current, EXPLORE_LAYER_ID);
+        }
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
@@ -284,6 +291,7 @@ export default function ExploreLayer() {
             }
             return L.divIcon({
                 className: 'dot-icon',
+                simple: true,
                 iconSize: [8, 8],
                 html: '<div class="dot"></div>',
             });
@@ -396,7 +404,7 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
-                        const circle = new SimpleCircleMarker(latlng, place, {
+                        const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
@@ -411,7 +419,7 @@ export default function ExploreLayer() {
                 .then(() => {
                     for (const place of secondaryMarkers) {
                         const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-                        const circle = new SimpleCircleMarker(latlng, place, {
+                        const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
@@ -422,6 +430,7 @@ export default function ExploreLayer() {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                        map.fire('explore-layers-updated');
                     }
                 })
                 .catch((error) => {

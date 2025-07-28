@@ -6,7 +6,6 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
-    selectMarker,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
@@ -32,6 +31,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
+import { selectMarker } from '../util/MarkerSelectionService';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';

@@ -13,9 +13,11 @@ import {
 import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
-import { DEFAULT_ICON_SIZE, DEFAULT_POI_COLOR, SimpleCircleMarker } from '../markers/MarkerOptions';
+import { DEFAULT_ICON_SIZE, DEFAULT_POI_COLOR } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
-import HoverMarker, { COLOR_POINTER } from '../../util/hooks/map/useSelectMarkerOnMap';
+import { COLOR_POINTER } from '../../util/hooks/map/useSelectMarkerOnMap';
+import HoverMarker from './MarkerSelectionService';
+import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const SIMPLE_ICON_SIZE = 10;
@@ -353,7 +355,7 @@ export function createSecondaryMarker(obj) {
         }
     }
 
-    return new SimpleCircleMarker(latlng, obj, {
+    return new SimpleDotMarker(latlng, obj, {
         id: obj.properties.id,
         idObj: getObjIdSearch(obj),
         [FINAL_POI_ICON_NAME]: finalIconName,
@@ -441,7 +443,7 @@ export function createHoverMarker({
             newMarker = new HoverMarker(marker, iconSize, pointerStyle).build();
             pointerRef.current = newMarker.addTo(map);
         } else {
-            newMarker = new SimpleCircleMarker(latlng, marker, {
+            newMarker = new SimpleDotMarker(latlng, marker, {
                 fillColor: COLOR_POINTER,
             }).build();
         }
