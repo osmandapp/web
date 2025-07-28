@@ -340,7 +340,10 @@ export function hideSelectedMarker(target, type = null) {
 
 export function updateSelectedMarkerOnMap({ marker, type = null, updatePrev = false }) {
     const newBackgroundColor = updatePrev ? DEFAULT_POI_COLOR : SELECTED_POI_COLOR;
-
+    if (!marker) {
+        console.debug('Marker is null or undefined');
+        return null;
+    }
     if (marker.options?.simple) {
         // simple marker
         marker.setStyle({

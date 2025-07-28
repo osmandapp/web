@@ -87,7 +87,7 @@ export function useSelectMarkerOnMap({ ctx, layers, type, map, prevSelectedMarke
         }
         layers?.forEach((layer) => {
             if (layer.options.idObj === selectedObjId) {
-                if (ctx.selectedPoiId.show === false) {
+                if (ctx.selectedPoiId?.show === false) {
                     hideSelectedMarker(prevSelectedMarker.current, type);
                     prevSelectedMarker.current = null;
                 } else {
