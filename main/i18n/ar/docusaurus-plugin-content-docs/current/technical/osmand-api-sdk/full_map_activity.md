@@ -4,7 +4,7 @@ sidebar_position: 5
 ---
 
 # نشاط الخريطة الكاملة {#full-map-activity}
-من الممكن توسيع OsmAnd MapActivity وإضافة ميزات إضافية إليه
+من الممكن توسيع MapActivity في OsmAnd وإضافة ميزات إضافية إليه
 
 ```
 public class FullMapActivity extends MapActivity {

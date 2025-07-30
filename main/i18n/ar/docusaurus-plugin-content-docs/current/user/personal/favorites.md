@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-## نقطة المفضلة {#favorite-point}
+## نقطة مفضلة {#favorite-point}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-المفضلة هي جزء من طبقة خريطة خاصة، ويمكنك [إظهارها أو إخفائها](../map/point-layers-on-map.md#favorites) مع [أسمائها](../map/point-layers-on-map.md#favorite-and-poi-names) على الخريطة. يؤدي النقر على نقطة مفضلة إلى فتح [قائمة السياق](../map/map-context-menu.md#favorites--track-points-from-the-group)، مما يتيح لك عرض التفاصيل و[تعديل أو حذف](../map/map-context-menu.md#add--edit-favorite) النقطة.
+تُعد المفضلة جزءًا من طبقة خريطة خاصة، ويمكنك [إظهارها أو إخفائها](../map/point-layers-on-map.md#favorites) مع [أسمائها](../map/point-layers-on-map.md#favorite-and-poi-names) على الخريطة. يؤدي النقر على نقطة مفضلة إلى فتح [قائمة السياق](../map/map-context-menu.md#favorites--track-points-from-the-group)، مما يتيح لك عرض التفاصيل و[تعديل أو حذف](../map/map-context-menu.md#add--edit-favorite) النقطة.
 
 
 ### إنشاء {#create}
@@ -79,17 +79,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة نقطة مفضلة:
 
 1. حدد [نقطة اهتمام (POI)](../map/point-layers-on-map.md#points-of-interest-pois) أو بنية على الخريطة.
-   نقرة قصيرة لنقطة اهتمام أو نقرة طويلة لنقطة خريطة عامة.
+   نقر قصير لنقطة اهتمام أو نقر طويل لنقطة خريطة عامة.
 2. حدد [إضافة (☆)](../map/map-context-menu.md#add--edit-favorite) من قائمة سياق الخريطة.
 
-عند إضافة نقطة من بيانات OSM، يتم تضمين معلومات نقطة الاهتمام ذات الصلة تلقائيًا. يمكنك أيضًا إنشاء مفضلة عن طريق [النقر المطول](../map/map-context-menu.md#select-any-point-long-tap) على أي موقع على الخريطة.
+عند إضافة نقطة من بيانات OSM، يتم تضمين معلومات نقطة الاهتمام ذات الصلة تلقائيًا. يمكنك أيضًا إنشاء مفضلة عن طريق [النقر الطويل](../map/map-context-menu.md#select-any-point-long-tap) على أي موقع على الخريطة.
 
 ***الحقول لنقطة مفضلة:***
 
 - **الاسم** — اسم فريد داخل المجموعة (*مطلوب*).
-- **العنوان** و**الوصف** (*اختياري*).
+- **العنوان** و **الوصف** (*اختياري*).
 - **المجموعة** — اختر من [مجموعة مفضلة](#manage-favorites) موجودة أو أنشئ مجموعة جديدة.
-- **التخصيص البصري** — يمكن أن تتطابق الأيقونة واللون والشكل مع [مظهر المجموعة](#change-group-appearance) الافتراضي أو يتم تخصيصها بشكل فردي.
+- **التخصيص المرئي** — يمكن أن تتطابق الأيقونة واللون والشكل مع [مظهر المجموعة الافتراضي](#change-group-appearance) أو يتم تخصيصها بشكل فردي.
 
 
 ### تعديل / استبدال / حذف {#edit--replace--delete}
@@ -112,14 +112,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لتعديل نقطة مفضلة:
 
-1. [انقر](../map/map-context-menu.md#select-an-object-single-tap) على المفضلة على الخريطة أو انتقل إلى [المفضلة الخاصة بي](#manage-favorites).
+1. [انقر](../map/map-context-menu.md#select-an-object-single-tap) على المفضلة على الخريطة أو انتقل إلى [مفضلاتي](#manage-favorites).
 2. اختر **تعديل المفضلة** من [*قائمة سياق الخريطة*](../map/map-context-menu.md#add--edit-favorite).
 
 ***الخيارات المتاحة:***
 
 - **تعديل التفاصيل** — الاسم، الأيقونة، المجموعة، العنوان، والوصف.
 - **استبدال الموقع** — استبدال نقطة أخرى بهذه النقطة. مفيد لتحديث نقطة معينة (مثل *سيارتي المتوقفة*) أو إنشاء نقطة جديدة.
-- **حذف** — إزالة المفضلة باستخدام خيار الحذف، المتاح من خلال قائمة التعديل أو عبر زر الحذف على أندرويد.
+- **حذف** — إزالة المفضلة باستخدام خيار الحذف، والذي يمكن الوصول إليه من قائمة التعديل أو عبر زر الحذف على أندرويد.
 
 
 ### أيقونات المفضلة {#favorite-icons}
@@ -147,12 +147,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 تتوفر مجموعة واسعة من الأيقونات لنقاط الاهتمام ونقاط الطريق في OsmAnd. يمكنك:
 
 - تحديد أيقونة من قائمة [فئات نقاط الاهتمام](../search/search-poi.md#categories-and-their-filters).
-- العثور على أيقونة مناسبة باستخدام [خيار البحث](../search/search-all.md#how-to-use).
+- البحث عن أيقونة مناسبة باستخدام [خيار البحث](../search/search-all.md#how-to-use).
 
 
-### المفضلة الخاصة (شخصية) {#special-favorites-personal}
+### المفضلة الخاصة (شخصي) {#special-favorites-personal}
 
-يحتوي *المجلد الشخصي* على نقاط خاصة مثل **<Translate android="true" ids="favorite_home_category"/>** و**<Translate android="true" ids="work_button"/>**، والتي تُستخدم غالبًا في [التنقل](../navigation/setup/route-navigation.md#select-starting-point). لا يحتوي هذا المجلد على *قائمة ثلاث نقاط*، ولا يمكن تغيير معلماته.
+يحتوي *المجلد الشخصي* على نقاط خاصة مثل **<Translate android="true" ids="favorite_home_category"/>** و **<Translate android="true" ids="work_button"/>**، والتي تُستخدم غالبًا في [التنقل](../navigation/setup/route-navigation.md#select-starting-point). لا يحتوي هذا المجلد على *قائمة ثلاث نقاط*، ولا يمكن تغيير معلماته.
 
 
 ## إدارة المفضلة {#manage-favorites}
@@ -177,10 +177,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يتيح لك قسم **المفضلة الخاصة بي** ما يلي:
+يتيح لك قسم **مفضلاتي**:
 
-- [البحث](#order--sorting--search) عن مفضلة أو مجموعات محددة.
-- [العمليات الجماعية](#bulk-edit--delete) — إعادة تسمية أو نقل أو حذف عدة مفضلة في وقت واحد.
+- [البحث](#order--sorting--search) عن مفضلات أو مجموعات محددة.
+- [العمليات الجماعية](#bulk-edit--delete) — إعادة تسمية، نقل، أو حذف مفضلات متعددة دفعة واحدة.
 
 ### الترتيب / الفرز / البحث {#order--sorting--search}
 
@@ -200,10 +200,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 - **الفرز** — يتم فرز مجلدات ونقاط المفضلة أبجديًا، مع وجود [المجلد الشخصي](../personal/favorites.md#special-favorites-personal) في الأعلى.
-- **البحث** — استخدم [البحث العام](../search/search-all.md) للعثور على المفضلة بالاسم. يتم فرز المفضلة حسب المسافة من مركز الخريطة.
+- **البحث** — استخدم [البحث الشامل](../search/search-all.md) للعثور على المفضلة بالاسم. يتم فرز المفضلة حسب المسافة من مركز الخريطة.
 
 
-### التعديل / الحذف بالجملة {#bulk-edit--delete}
+### التعديل / الحذف الجماعي {#bulk-edit--delete}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -221,8 +221,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-1. لإدارة عدة مفضلة، انقر على أيقونة **الحذف** (*أيقونة سلة المهملات على أندرويد*) أو زر **التعديل** (*أيقونة القلم الرصاص على iOS*).
-2. حدد مفضلة فردية أو مجلدات كاملة للعمليات الجماعية.
+1. لإدارة مفضلات متعددة، انقر على أيقونة **الحذف** (*أيقونة سلة المهملات على أندرويد*) أو زر **التعديل** (*أيقونة القلم على iOS*).
+2. حدد مفضلات فردية أو مجلدات كاملة للعمليات الجماعية.
 3. **الخيارات المتاحة** — *حذف* لأندرويد وiOS، *نقل إلى مجموعة مفضلة*، *مشاركة*، و*تغيير اللون* لـ iOS.
 
 <!--
@@ -255,7 +255,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *النقر المطول على المجلد ← المظهر الافتراضي*
+انتقل إلى: *نقر طويل على المجلد ← المظهر الافتراضي*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -263,21 +263,21 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 </Tabs>
 
-استخدم ***قائمة الثلاث نقاط*** (*أندرويد*) بجانب كل مجلد و***النقر المطول*** (*iOS*) على المجلد لإدارة مجموعات المفضلة:
+استخدم ***قائمة الثلاث نقاط*** (*أندرويد*) بجانب كل مجلد و***النقر الطويل*** (*iOS*) على المجلد لإدارة مجموعات المفضلة:
 
 - **<Translate android="true" ids="shared_string_rename"/>** — استخدم هذا الخيار لتغيير اسم المجلد المحدد.
 
 - **<Translate android="true" ids="change_default_appearance"/>** — خصص كيفية ظهور نقاط المفضلة في المجلد على الخريطة عن طريق تغيير أيقوناتها أو ألوانها أو تسمياتها.
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** أو **إخفاء على الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء نقاط المفضلة من المجلد على الخريطة.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** أو **إخفاء على الخريطة** — تبديل هذا الخيار لعرض أو إخفاء نقاط المفضلة من المجلد على الخريطة.
 
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** أو **إزالة من علامات الخريطة** (*أندرويد فقط*) — أضف جميع نقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو أزلها حسب الحاجة للرجوع إليها بسهولة.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** أو **إزالة من علامات الخريطة** (*أندرويد فقط*) — إضافة جميع نقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو إزالتها حسب الحاجة لسهولة الرجوع إليها.
 
 - **<Translate android="true" ids="shared_string_share"/>** — شارك نقاط المفضلة في المجلد عن طريق تصديرها كملف *Favorites.gpx*، مما يسهل نقل بياناتك أو نسخها احتياطيًا.
 
-- **<Translate android="true" ids="shared_string_delete"/>** — احذف مجلد المفضلة المحدد وجميع النقاط الموجودة فيه بشكل دائم.
+- **<Translate android="true" ids="shared_string_delete"/>** — حذف مجلد المفضلة المحدد وجميع النقاط الموجودة فيه بشكل دائم.
 
-مزيد من التفاصيل في مقالة [أماكني](../personal/myplaces.md#favorites).
+مزيد من التفاصيل في مقال [أماكني](../personal/myplaces.md#favorites).
 
 
 
@@ -301,16 +301,16 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 إعدادات *تغيير مظهر المجموعة*:
 
-- **الأيقونة، اللون، الشكل** — تعيين نمط افتراضي لجميع المفضلة في مجموعة.
-- **التناسق** — المفضلة الجديدة المضافة إلى المجموعة ترث المظهر الافتراضي تلقائيًا.
-- **التخصيص** — تجاوز الإعدادات الافتراضية للنقاط الموجودة في المجلد، المفضلة الجديدة فقط، أو تطبيقها على الكل.
+- **الأيقونة، اللون، الشكل** — تعيين نمط افتراضي لجميع المفضلة في المجموعة.
+- **التناسق** — ترث المفضلة الجديدة المضافة إلى المجموعة المظهر الافتراضي تلقائيًا.
+- **التخصيص** — تجاوز الإعدادات الافتراضية للنقاط الموجودة في المجلد، أو المفضلة الجديدة فقط، أو تطبيقها على الجميع.
 
 
 ## تصدير / استيراد {#export--import}
 
 يوفر OsmAnd عدة طرق [لعمل نسخة احتياطية](./import-export.md) و[استعادة](./import-export.md#import) المفضلة:
 
-- **مواقع النسخ الاحتياطي** — التخزين المحلي، [OsmAnd Cloud](../personal/osmand-cloud.md) (فقط مع [اشتراك OsmAnd Pro أو OsmAnd Start](../purchases/index.md))، أو تطبيقات المراسلة الفورية.
+- **مواقع النسخ الاحتياطي** — التخزين المحلي، [سحابة OsmAnd](../personal/osmand-cloud.md) (فقط مع [اشتراك OsmAnd Pro أو OsmAnd Start](../purchases/index.md))، أو تطبيقات المراسلة الفورية.
 
 - **تنسيق الملف** — يتم حفظ المفضلة كملفات `.gpx` (favorites.gpx).
 
@@ -337,9 +337,9 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 </Tabs>
 
-[النسخ الاحتياطي المجاني للمفضلة](../personal/osmand-cloud.md#osmand-start) هو خطة شراء خاصة تتيح لك عمل نسخة احتياطية من نقاط المفضلة (المواقع) لإصدارات **أندرويد، iOS**، أو **الويب** في تطبيق OsmAnd واستعادتها من OsmAnd Cloud. هذه الخطة متاحة لمستخدمي [OsmAnd Free أو Maps+](../purchases/index.md).
+يُعد [النسخ الاحتياطي المجاني للمفضلة](../personal/osmand-cloud.md#osmand-start) خطة شراء خاصة تتيح لك عمل نسخة احتياطية من نقاط المفضلة (المواقع) لإصدارات **أندرويد، iOS**، أو **الويب** في تطبيق OsmAnd واستعادتها من سحابة OsmAnd. هذه الخطة متاحة لمستخدمي [OsmAnd Free أو Maps+](../purchases/index.md).
 
-يقدم *النسخ الاحتياطي المجاني للمفضلة* هذه المزايا:
+يقدم *النسخ الاحتياطي المجاني للمفضلة* هذه الفوائد:
 
 - **لا يلزم الدفع**. استخدم ميزة النسخ الاحتياطي دون شراء اشتراكات مدفوعة.
 - **حفظ نقاط المفضلة**. احفظ نقاط المفضلة الخاصة بك بانتظام في OsmAnd لتجنب فقدانها في حالة تعطل جهازك أو حذف التطبيق.
@@ -374,7 +374,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 - *أكمل خطوة التسجيل* إذا لم يكن لديك حساب OsmAnd Cloud باتباع التعليمات في [دليل التسجيل](../personal/osmand-cloud.md#login).
 - *انتقل إلى قائمة مشتريات OsmAnd* (*القائمة ← الإعدادات ← المشتريات*).
 - *[حزمة OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. حدد هذا الخيار للوصول إلى ميزة النسخ الاحتياطي المجاني للإعدادات.
-- *إنشاء نسخة احتياطية* من إعداداتك.
+- *أنشئ نسخة احتياطية* من إعداداتك.
 
 
 ### جميع المفضلة {#all-favorites}
@@ -395,10 +395,10 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 </Tabs>
 
-يمكنك تصدير واستيراد مفضلتك باستخدام الأزرار الخاصة في أسفل شاشة المفضلة. يمكن إرسال ملف [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) إلى Dropbox، البريد الإلكتروني، برامج المراسلة، والتطبيقات الأخرى المثبتة على جهازك والتي تدعم هذه الميزة.
+يمكنك تصدير واستيراد مفضلاتك باستخدام الأزرار الخاصة في أسفل شاشة المفضلة. يمكن إرسال ملف [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) إلى Dropbox، البريد الإلكتروني، برامج المراسلة، والتطبيقات الأخرى المثبتة على جهازك التي تدعم هذه الميزة.
 
 - زر **استيراد** (*أندرويد*) / **استيراد مفضلة** (*iOS*). يتيح لك استيراد نقاط المفضلة (*favorites.gpx*) كنقاط طريق من ملف *GPX* (تنسيق بيانات GPS شائع) من تخزين جهازك.
-- زر **مشاركة** (*أندرويد*) / **تصدير مفضلة** (*iOS*). يتيح لك تصدير (مشاركة) جميع مفضلتك كملف *favorites.gpx*.
+- زر **مشاركة** (*أندرويد*) / **تصدير مفضلة** (*iOS*). يتيح لك تصدير (مشاركة) جميع مفضلاتك كملف *favorites.gpx*.
 
 
 ### مجموعة المفضلة {#favorite-group}
@@ -419,7 +419,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 </Tabs>
 
-- انقر على **قائمة الثلاث نقاط** (*أندرويد*) أو زر **التعديل** (*أيقونة القلم الرصاص على iOS*) أو **النقر المطول** على المجلد (*iOS*) لمجلد المفضلة المحدد.
+- انقر على **قائمة الثلاث نقاط** (*أندرويد*) أو زر **التعديل** (*أيقونة القلم على iOS*) أو **النقر الطويل** على المجلد (*iOS*) لمجلد المفضلة المحدد.
 - اختر زر **المشاركة** لإرسال ملف *Favorites.gpx* إلى ذاكرة جهازك أو مشاركته عبر تطبيقات المراسلة.
 
 
@@ -447,7 +447,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ينشئ OsmAnd **ملف نسخ احتياطي** في كل مرة يتم فيها تعديل المفضلة.
 
-- **أندرويد**: يتم تخزين النسخ الاحتياطية في *أندرويد ← بيانات ← net.osmand ← ملفات ← نسخ احتياطي*. استخدم مدير ملفات خارجي للوصول إليها.
+- **أندرويد**: يتم تخزين النسخ الاحتياطية في *أندرويد ← بيانات ← net.osmand ← ملفات ← نسخ احتياطي*. استخدم مدير ملفات تابع لجهة خارجية للوصول إليها.
 
 - **iOS**: توجد الملفات في *الملفات ← على جهاز iPhone الخاص بي ← خرائط OsmAnd ← favourites_backup*.
 

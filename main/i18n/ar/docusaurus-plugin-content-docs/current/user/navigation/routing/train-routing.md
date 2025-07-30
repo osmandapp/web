@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يوفر *توجيه القطار* في OsmAnd للمستخدمين إمكانية استخدام خطوط السكك الحديدية للملاحة كما لو كانوا يقودون قطارًا مثل السيارة. يمكن أن يكون هذا الخيار مفيدًا، على سبيل المثال، للمشي لمسافات طويلة عندما لا تتوفر طرق أخرى. في حالات أخرى، من الأفضل استخدام *[توجيه النقل العام](./public-transport-navigation.md)*.
 
-![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
+![خريطة ترام النقل](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
 ## معلمات المسار - القطار {#route-parameters---train}
@@ -33,13 +33,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Train routing settings Android](@site/static/img/navigation/routing/train_routing_andr.png)
+![إعدادات توجيه القطار أندرويد](@site/static/img/navigation/routing/train_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Train routing settings iOS](@site/static/img/navigation/routing/train_routing_ios.png)
+![إعدادات توجيه القطار iOS](@site/static/img/navigation/routing/train_routing_ios.png)
 
 </TabItem>
 
@@ -52,11 +52,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - يمكن لخوارزمية التوجيه أيضًا أن تأخذ في الاعتبار القيود المؤقتة المحددة في OpenStreetMap. يمكن القيام بذلك باستخدام خيار *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. لاحظ أنه في بعض الحالات، قد تكون المعلومات من OSM قديمة.
 
-- في [*قسم إعادة حساب المسار*](../../navigation/guidance/navigation-settings.md#recalculate-route) من *معلمات المسار*، يمكنك تمكين وتعديل خيارات إعادة حساب المسار.
+- في قسم [*إعادة حساب المسار*](../../navigation/guidance/navigation-settings.md#recalculate-route) في *معلمات المسار*، يمكنك تمكين وتعديل خيارات إعادة حساب المسار.
 
-- في [*قسم التطوير*](../guidance/navigation-settings.md#development-settings) من *معلمات المسار*، يمكنك تجربة ميزات توجيه جديدة قيد الاختبار حاليًا. لاحظ أن هذه الإعدادات متاحة فقط عند تمكين [مكون OsmAnd الإضافي للتطوير](../../plugins/development.md).
+- في قسم [*التطوير*](../guidance/navigation-settings.md#development-settings) في *معلمات المسار*، يمكنك تجربة ميزات توجيه جديدة قيد الاختبار حاليًا. لاحظ أن هذه الإعدادات متاحة فقط عند تمكين [المكون الإضافي لتطوير OsmAnd](../../plugins/development.md).
 
-- يوجد إعداد *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* في إصدار *iOS* من OsmAnd في *إعدادات الملاحة ← معلمات المسار* (بالنسبة لـ *Android*، في *معلمات المركبة ← [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). يمكن أيضًا تعيين هذه الإعدادات لتوجيه *مباشر إلى نقطة*. يتم استخدامه لحساب الوقت المقدر للوصول.
+- يوجد إعداد *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* في إصدار *iOS* من OsmAnd في *إعدادات الملاحة ← معلمات المسار* (بالنسبة لـ *أندرويد*، في *معلمات المركبة ← [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). يمكن أيضًا تعيين هذه الإعدادات لتوجيه *مباشر إلى نقطة*. يتم استخدامه لحساب الوقت المقدر للوصول.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. سيساعدك التكوين الصحيح للإعدادات على تجنب المشاكل عند إنشاء مسار. يمكنك تحديد المسار الأنسب اعتمادًا على نوع المركبة وقيود الطريق، بالإضافة إلى حساب وقت السفر.
 

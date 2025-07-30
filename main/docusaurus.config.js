@@ -23,7 +23,7 @@ async function createConfig(){
       defaultLocale: 'en',
       locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'pl', 'pt', 'tr', 'uk'],
       localeConfigs: {
-                                                                                                        en: { label: 'English' },
+                                                                                                                en: { label: 'English' },
         ar: { label: 'العربية' },
         de: { label: 'Deutsch' },
         es: { label: 'Español' },

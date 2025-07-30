@@ -15,9 +15,9 @@ import Translate from '@site/src/components/Translate.js';
 ## العوامات والمنارات {#buyos-and-beacons}
 <img src={require('@site/static/img/map-legend/nautical-buyos-and-beacons.png').default} alt="العوامات والمنارات" />
 
-## الموضع الإلكتروني {#electronic-position}
-أنظمة تحديد الموضع الإلكتروني، إشارات الضباب
-<img src={require('@site/static/img/map-legend/nautical-electronic-position.png').default} alt="أنظمة تحديد الموضع الإلكتروني، إشارات الضباب" />
+## الموقع الإلكتروني {#electronic-position}
+أنظمة تحديد المواقع الإلكترونية، إشارات الضباب
+<img src={require('@site/static/img/map-legend/nautical-electronic-position.png').default} alt="أنظمة تحديد المواقع الإلكترونية، إشارات الضباب" />
 
 ## الأضواء {#lights}
 
@@ -47,8 +47,8 @@ import Translate from '@site/src/components/Translate.js';
 ## مرفق الحرف البحرية الصغيرة {#nautical-small-craft-facility}
 <img src={require('@site/static/img/map-legend/nautical-small-craft-facility.png').default} alt="مرفق الحرف البحرية الصغيرة" />
 
-## بحرية أخرى {#nautical-others}
-<img src={require('@site/static/img/map-legend/nautical-others.png').default} alt="بحرية أخرى" />
+## أخرى بحرية {#nautical-others}
+<img src={require('@site/static/img/map-legend/nautical-others.png').default} alt="أخرى بحرية" />
 
 ## مزرعة بحرية، صيد الأسماك {#marine-farm-fishing}
 <img src={require('@site/static/img/map-legend/nautical-marine-farm-fishing.png').default} alt="مزرعة بحرية، صيد الأسماك" />
@@ -59,20 +59,20 @@ import Translate from '@site/src/components/Translate.js';
 ## الكابلات وخطوط الأنابيب {#cables-and-pipelines}
 <img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="الكابلات وخطوط الأنابيب" />
 
-## عائق {#obstruction}
-<img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="عائق" />
+## العوائق {#obstruction}
+<img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="العوائق" />
 
-## منطقة محظورة {#restricted-area}
-<img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="منطقة محظورة" />
+## المنطقة المحظورة {#restricted-area}
+<img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="المنطقة المحظورة" />
 
-## منطقة احترازية {#precautionary-area}
-<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="منطقة احترازية" />
+## المنطقة الاحترازية {#precautionary-area}
+<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="المنطقة الاحترازية" />
 
-## منطقة احترازية {#precautionary-area}
-<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="منطقة احترازية" />
+## المنطقة الاحترازية {#precautionary-area}
+<img src={require('@site/static/img/map-legend/nautical-precautionary-area.png').default} alt="المنطقة الاحترازية" />
 
 ## إشعار {#notice}
-<img src={require('@site/static/img/map-legend/nautical-notice.png').default} alt="منطقة احترازية" />
+<img src={require('@site/static/img/map-legend/nautical-notice.png').default} alt="المنطقة الاحترازية" />
 
 ### إشعار: حظر {#notice-prohibition}
 <img src={require('@site/static/img/map-legend/nautical-notice-prohibition.png').default} alt="إشعار: حظر" />

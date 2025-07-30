@@ -1,6 +1,6 @@
 ---
 source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
-title: عارض خريطة الويب
+title: عارض خرائط الويب
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -14,9 +14,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### نظرة عامة {#overview}
 
-في هذا القسم، ستجد وصفًا لـ [خدمة خرائط الويب](https://osmand.net/map) الخاصة بنا.
+في هذا القسم، ستجد وصفًا لخدمة [خرائط الويب](https://osmand.net/map) الخاصة بنا.
 
-### [أوسماند كلاود](./web-cloud.md) {#osmand-cloud}
+### [أوزماند كلاود (OsmAnd Cloud)](./web-cloud.md) {#osmand-cloud}
 
 يشرح هذا القسم كيفية تسجيل الدخول والاشتراك في [www.osmand.net/map](https://osmand.net/map/) ويسلط الضوء على الفوائد التي يحصل عليها المستخدمون بعد التسجيل.
 
@@ -30,7 +30,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### [تخطيط المسار](./planner.md) {#plan-route}
 
-يوفر هذا القسم معلومات حول تخطيط المسارات أو إنشاء التنقل باستخدام ملفات تعريف مختلفة.
+يقدم هذا القسم معلومات حول تخطيط المسارات أو إنشاء التنقل باستخدام ملفات تعريف مختلفة.
 
 ### [البحث](./web-search.md) {#search}
 

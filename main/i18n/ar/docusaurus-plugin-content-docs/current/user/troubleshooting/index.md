@@ -17,11 +17,11 @@ import Translate from '@site/src/components/Translate.js';
 
 ### [الإعداد](./setup.md) {#setup}
 
-المشاكل الشائعة التي تواجهك عند إعداد التطبيق.
+المشاكل الشائعة التي تواجه عند إعداد التطبيق.
 
 ### [عام](./general.md) {#general}
 
-المشاكل العامة المتعلقة بميزات OsmAnd المختلفة.
+مشاكل عامة تتعلق بميزات OsmAnd المختلفة.
 
 ### [المشتريات والمدفوعات](./purchases_payments.md) {#purchases-and-payments}
 
@@ -29,11 +29,11 @@ import Translate from '@site/src/components/Translate.js';
 
 ### [التنقل](./navigation.md) {#navigation}
 
-المشاكل الشائعة التي تواجهك في وضع التنقل.
+المشاكل الشائعة التي تواجه في وضع التنقل.
 
 ### [الخرائط والبيانات](./maps-data.md) {#maps-and-data}
 
-المشاكل المتعلقة بالخرائط ووظائف البحث والبيانات الأخرى.
+المشاكل المتعلقة بالخرائط ووظيفة البحث والبيانات الأخرى.
 
 ### [سجلات الأعطال](./crash-logs.md) {#crash-logs}
 
@@ -43,17 +43,17 @@ import Translate from '@site/src/components/Translate.js';
 
 مشاكل في تسجيل المسار مثل الضوضاء أو الفجوات أو عدم الدقة.
 
-### [أندرويد أوتو](./android_auto.md) {#android-auto}
+### [Android Auto](./android_auto.md) {#android-auto}
 
-المشاكل الشائعة عند استخدام OsmAnd مع أندرويد أوتو.
+المشاكل الشائعة عند استخدام OsmAnd مع Android Auto.
 
 ### [الموقع الإلكتروني](./web.md) {#website}
 
-المشاكل الشائعة في خدمات وميزات OsmAnd Web.
+المشاكل الشائعة مع خدمات وميزات OsmAnd Web.
 
 ### [الموارد والتخصيصات](./resources.md) {#resources-and-customizations}
 
-أدلة ومساعدة في الموارد والتخصيصات التي أنشأها المجتمع.
+أدلة ومساعدة مع الموارد والتخصيصات التي أنشأها المجتمع.
 
 ### [دروس الفيديو والأدلة](./video-tutorials.md) {#video-tutorials-and-guides}
 
