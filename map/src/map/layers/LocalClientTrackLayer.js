@@ -21,7 +21,7 @@ import TracksRoutingCache, {
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
