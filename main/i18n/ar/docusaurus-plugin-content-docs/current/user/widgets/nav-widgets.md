@@ -1,5 +1,4 @@
 ---
-source-hash: cf00228b0959bc2aae53ebe181345d3b69c04b3d0d42a49a8ed5ebc376ca2673
 sidebar_position: 4
 title:  عناصر واجهة المستخدم الملاحية
 ---

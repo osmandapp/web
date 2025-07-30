@@ -116,7 +116,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![تجنب الطريق على قائمة الخريطة iOS](@site/static/navigation/routing/avoid_route_ios_2.png)
+![تجنب الطريق على قائمة الخريطة iOS](@site/static/img/navigation/routing/avoid_route_ios_2.png)
 
 </TabItem>
 
