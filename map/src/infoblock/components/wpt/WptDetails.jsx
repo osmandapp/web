@@ -60,6 +60,7 @@ import WptTagsProvider, {
     POI_OSM_URL,
     WIKIDATA,
     WIKIPEDIA,
+    addWikidataTags,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -234,26 +235,26 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 }
             } else if (type?.isSearch || type?.isPoi || type?.isWikiPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
-                tags = currentPoi ? await WptTagsProvider.getWptTags(currentPoi, type, ctx) : null;
+                if (currentPoi) {
+                    tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                } else {
+                    const fallbackTags = [];
+                    if (newWpt?.wikidata) {
+                        const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {
+                            key: 'wikidata',
+                            value: 'Q' + newWpt.wikidata,
+                            textPrefix: 'Wikidata',
+                        });
+                        fallbackTags.push(wikidataTag);
+                    }
+                    tags = { res: fallbackTags };
+                }
             }
             return tags;
         };
 
         setLoading(true);
         fetchTagsAndData().then((tags) => {
-            if (!tags || !tags.res) {
-                tags = { res: [] };
-            }
-            if (newWpt?.wikidata && !tags.res.some(t => t.key === 'wikidata')) {
-                tags.res.push({
-                    key: 'wikidata',
-                    value: 'Q' + newWpt.wikidata,
-                    url: 'https://www.wikidata.org/wiki/Q' + newWpt.wikidata,
-                    isUrl: true,
-                    icon: <WikidataIcon />,
-                    textPrefix: 'Wikidata',
-                });
-            }
             setWpt({ ...newWpt, tags });
             setIsAddressAdded(false);
             setIsPhotosAdded(false);
