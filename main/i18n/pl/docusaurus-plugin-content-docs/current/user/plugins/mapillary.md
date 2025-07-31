@@ -1,5 +1,5 @@
 ---
-source-hash: e46e862bf3423da156a08ba066e94f7d2262dcd693d6bfcdfd87d3e6f3328253
+source-hash: aedd55d826014d3cfaaa5918963baf22bd911b20a8772409d2eb09fa220d9c67
 sidebar_position: 6
 title: Mapillary
 ---
@@ -14,16 +14,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Aby szybciej poruszać się po okolicy, w OsmAnd możesz korzystać z widoków ulicznych swoich tras lub interesujących miejsc, dostarczanych przez [Mapillary](https://www.mapillary.com/) (wymagane jest połączenie z Internetem).
+Aby szybciej poruszać się po okolicy, w OsmAnd możesz korzystać z widoków ulic swoich tras lub interesujących miejsc, dostarczanych przez [Mapillary](https://www.mapillary.com/) (wymagane jest połączenie z Internetem).
 
-[Warstwa Mapillary](https://www.mapillary.com/) przenosi obrazy na poziomie ulicy bezpośrednio do aplikacji OsmAnd, dzięki czemu możesz łatwo przeglądać otoczenie dowolnego interesującego miejsca lub wzdłuż zaplanowanej trasy. Jeśli brakuje obrazów, możesz je dodać samodzielnie, a inni będą mogli z nich korzystać. Ta funkcja powstała w wyniku naszej współpracy z [zespołem Mapillary](https://www.mapillary.com/about), łącząc korzyści obu aplikacji.
+[Warstwa Mapillary](https://www.mapillary.com/) przenosi obrazy na poziomie ulicy bezpośrednio do aplikacji OsmAnd, dzięki czemu możesz łatwo przeglądać otoczenie dowolnego interesującego miejsca lub wzdłuż zaplanowanej trasy. Jeśli brakuje zdjęć, możesz je dodać samodzielnie, a inni będą mogli z nich korzystać. Ta funkcja powstała w wyniku naszej współpracy z [zespołem Mapillary](https://www.mapillary.com/about), łącząc korzyści obu aplikacji.
 
 ## Wymagane parametry konfiguracji {#required-setup-parameters}
 
 Aby wyświetlić obrazy na poziomie ulicy na mapie OsmAnd, należy dokonać następujących ustawień:
 
 1. Włącz [wtyczkę Mapillary](../plugins/#enable--disable) w sekcji *Wtyczki* w *Menu głównym*.
-2. Wyświetl [obrazy na poziomie ulicy](#enable-layer) na mapie dla wymaganego profilu w menu Konfiguruj mapę.
+2. Wyświetl [zdjęcia na poziomie ulicy](#enable-layer) na mapie dla wymaganego profilu w menu Konfiguruj mapę.
 
 ## Warstwa mapy {#map-layer}
 
@@ -43,11 +43,11 @@ Aby wyświetlić obrazy na poziomie ulicy na mapie OsmAnd, należy dokonać nast
 
 </Tabs>
 
-Warstwa mapy z obrazami ulic jest wyświetlana na mapie OsmAnd jako rzędy połączonych zielonych kropek.
+Warstwa mapy ze zdjęciami ulic jest wyświetlana na mapie OsmAnd jako rzędy połączonych zielonych kropek.
 
 - Zdjęcia użytkowników Mapillary są dołączone do tych zielonych kropek.
 - Stuknij zieloną kropkę na mapie, aby otworzyć zdjęcie widoku ulicy. Zdjęcia można również wybrać z listy w [menu kontekstowym mapy](#map-context-menu), jeśli są dostępne.
-- Po wybraniu ekran aplikacji jest podzielony na mapę OsmAnd i obrazy uliczne Mapillary.
+- Po wybraniu ekran aplikacji jest podzielony na mapę OsmAnd i zdjęcia ulic na poziomie ulicy Mapillary.
 - Możesz zastosować [filtry](#data-filtering), aby wybrać zdjęcia, które chcesz wyświetlić na mapie.
 
 ### Włącz warstwę {#enable-layer}
@@ -68,14 +68,14 @@ Warstwa mapy z obrazami ulic jest wyświetlana na mapie OsmAnd jako rzędy poł�
 
 </Tabs>
 
-Aby wyświetlić obrazy Mapillary na poziomie ulicy na mapie, należy włączyć tę warstwę w menu [Konfiguruj mapę](../map/configure-map-menu.md) w sekcji *Pokaż*.
+Aby wyświetlić zdjęcia ulic na poziomie ulicy Mapillary na mapie, musisz włączyć tę warstwę w menu [Konfiguruj mapę](../map/configure-map-menu.md) w sekcji *Pokaż*.
 
 *Aby uzyskać dostęp: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
 
 :::note Przeglądarka zdjęć Mapillary
 
 - Stuknij przycisk *menu z trzema kropkami* (&#8285;), aby otworzyć wybrane zdjęcie w aplikacji [**Mapillary**](https://www.mapillary.com/mobile-apps).
-- Stuknij strzałkę, aby przechodzić od obrazu do obrazu.
+- Stuknij strzałkę, aby przechodzić między zdjęciami.
 :::
 
 ### Filtrowanie danych {#data-filtering}
@@ -96,7 +96,7 @@ Aby wyświetlić obrazy Mapillary na poziomie ulicy na mapie, należy włączyć
 
 </Tabs>
 
-Możesz utworzyć filtr i wybrać, które zdjęcia mają być wyświetlane na mapie. Na przykład, wybierz, aby wyświetlać tylko ostatnie zdjęcia lub tylko zdjęcia 360 stopni.
+Możesz utworzyć filtr i wybrać zdjęcia do wyświetlenia na mapie. Na przykład, wybierz, aby wyświetlać tylko ostatnie zdjęcia lub tylko zdjęcia 360 stopni.
 
 *Aby uzyskać dostęp: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -142,7 +142,7 @@ Jeśli wtyczka Mapillary jest włączona, możesz przeglądać zdjęcia ulic dos
 
 </Tabs>
 
-Aby dodać zdjęcia, musisz zarejestrować się w [aplikacji Mapillary](https://www.mapillary.com/mobile-apps). Możesz również dodać zdjęcia do menu kontekstowego mapy, stukając przycisk *Dodaj zdjęcia* w sekcji [Zdjęcia online](../map/map-context-menu.md#online-photos) w menu kontekstowym mapy. Następnie otworzy się aplikacja Mapillary.
+Aby dodać zdjęcia, musisz zarejestrować się w [aplikacji Mapillary](https://www.mapillary.com/mobile-apps). Możesz również dodać zdjęcia do menu kontekstowego mapy, stukając przycisk *Dodaj zdjęcia* w sekcji [Zdjęcia online](../map/map-context-menu.md#online-photos) menu kontekstowego mapy. Następnie otworzy się aplikacja Mapillary.
 
 ## Widżet Mapillary {#mapillary-widget}
 
@@ -166,7 +166,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-[Widżet Mapillary](../widgets/info-widgets.md#mapillary-widget) służy do szybkiego dostępu do aplikacji Mapillary. Widżet jest dodawany do ekranu głównego automatycznie po włączeniu wtyczki Mapillary. Możesz włączyć lub wyłączyć widżet Mapillary i inne widżety w menu [Konfiguruj ekran](../widgets/configure-screen.md).
+[Widżet Mapillary](../widgets/info-widgets.md#mapillary-widget) służy do szybkiego dostępu do aplikacji Mapillary. Widżet jest automatycznie dodawany do ekranu głównego po włączeniu wtyczki Mapillary. Możesz włączyć lub wyłączyć widżet Mapillary i inne widżety w menu [Konfiguruj ekran](../widgets/configure-screen.md).
 
 ## Powiązane artykuły {#related-articles}
 

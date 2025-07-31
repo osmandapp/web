@@ -1,5 +1,5 @@
 ---
-source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
+source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
 sidebar_position: 4
 title: Configurar Mapa
 ---
@@ -10,8 +10,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
-
 
 ## Visão Geral {#overview}
 
@@ -33,7 +31,7 @@ Seção **OpenStreetMap**:
 
 ![Configurar mapa android](@site/static/img/map/configure_map_osm_andr.png)
 
-Seções **Rotas e Renderização do Mapa**:
+Seções **Rotas e Renderização do mapa**:
 
 ![Configurar mapa android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -47,11 +45,10 @@ Seções **Rotas e Renderização do Mapa**:
 
 </Tabs>
 
-
 O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas categorias:
 
-- [Parâmetros de estilo do mapa](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) é um grupo de configurações que permite alterar a forma como o mapa principal é exibido.
-- [Camadas do mapa](#map-layers). Essas camadas permitem que você coloque informações em cima (ou embaixo) da camada principal do mapa, mas não alteram a exibição do próprio mapa.
+- [Parâmetros de estilo do mapa](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) é um grupo de configurações que permitem alterar a forma como o mapa principal é exibido.
+- [Camadas do mapa](#map-layers). Essas camadas permitem que você coloque informações sobre (ou sob) a camada principal do mapa, mas não alteram a exibição do próprio mapa.
 
 **Notas:**
 
@@ -61,9 +58,9 @@ O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas c
 
 ## Camadas do Mapa {#map-layers}
 
-- [Camada de Mapa Vetorial](../map/vector-maps.md) - exibe todas as informações do mapa vetorial, incluindo OpenStreetMap, Curvas de Nível e dados Náuticos.
-- [Fontes Raster do Mapa](../map/raster-maps.md#select-raster-maps) - permite selecionar mapa de sobreposição / fonte principal / mapa de sobreposição com níveis de transparência.
-- [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - exibe informações de declive / sombreamento, Relevo 3D.
+- [Camada de Mapa Vetorial](../map/vector-maps.md) - exibe todas as informações do mapa vetorial, incluindo OpenStreetMap, Linhas de Contorno e dados Náuticos.
+- [Fontes Raster do Mapa](../map/raster-maps.md#select-raster-maps) - permite selecionar mapa de sobreposição / fonte principal / sobreposição com níveis de transparência.
+- [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - exibe informações de inclinação / sombreamento, Relevo 3D.
 - [Bordas de mapas baixados](../map/vector-maps.md#show-borders) - exibe todas as bordas de mapas baixados na camada principal do mapa.
 - [Grade de coordenadas](../map/vector-maps.md#coordinates-grid) - controla a visibilidade da grade de coordenadas no mapa.
 
@@ -78,7 +75,7 @@ O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas c
 - [Imagens de nível de rua](../plugins/mapillary.md#map-layer) - exibe pontos com imagens de nível de rua disponíveis.
 - [Guias de viagem](../plan-route/travel-guides.md) - exibe guias de viagem no mapa.
 - [Wikipedia](../plugins/wikipedia.md) - destaca artigos da Wikipedia vinculados ao mapa.
-- [Outras camadas de plugin](../plugins/index.md#configure-plugin) - muitos plugins adicionam suas camadas com informações extras.
+- [Outras camadas de plugins](../plugins/index.md#configure-plugin) - muitos plugins adicionam suas camadas com informações extras.
 
 ## Parâmetros de estilo do mapa {#map-style-parameters}
 
@@ -86,7 +83,7 @@ As configurações de estilo do mapa dependem do estilo principal do mapa exibid
 
 - [Estilo do mapa](../map/vector-maps.md#default-map-styles) - inclui OsmAnd (Cidade), Topo, Náutico e outros.
 - [Modo do mapa](../map/vector-maps.md#map-mode) - permite selecionar a visualização do mapa e a navegação dependendo da hora do dia.
-- [Lupa do mapa](../map/vector-maps.md#map-magnifier) - permite alterar a ampliação do mapa.
+- [Ampliação do mapa](../map/vector-maps.md#map-magnifier) - permite alterar a ampliação do mapa.
 - [Tamanho do texto](../map/vector-maps.md#text-size) - permite aumentar ou diminuir o tamanho do texto no mapa.
 - [Idioma do mapa](../map/vector-maps.md#map-language) - permite selecionar o idioma preferido exibido no mapa.
 - [Detalhes](../map/vector-maps.md#details) - mostra objetos específicos.
@@ -95,11 +92,10 @@ As configurações de estilo do mapa dependem do estilo principal do mapa exibid
 
 ## Personalização da UI (Android) {#ui-customization-android}
 
-Para cada perfil selecionado no sistema Android, você pode alterar a ordem dos itens do menu <Translate android="true" ids="configure_map"/>, ocultar os itens, redefinir as configurações padrão ou copiá-los de outro perfil. Isso ajudará a melhorar sua interação com o aplicativo OsmAnd.
+Para cada perfil selecionado no sistema Android, você pode alterar a ordem dos itens do menu <Translate android="true" ids="configure_map"/>, ocultar os itens, redefinir as configurações padrão ou copiá-las de outro perfil. Isso ajudará a melhorar sua interação com o aplicativo OsmAnd.
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 
 ![Itens de configuração do mapa](@site/static/img/settings/configure-screen-ui-customization.png)
 
-
-> *Última atualização: Fevereiro de 2025*
+> *Última atualização: fevereiro de 2025*

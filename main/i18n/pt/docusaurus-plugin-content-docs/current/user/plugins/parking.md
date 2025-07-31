@@ -1,5 +1,5 @@
 ---
-source-hash: 72e0583c731b9fa6013d0075ece872e622be90160d3358a8216e374293cf5f00
+source-hash: 500ba2b5b26271c7c71fe60664983abc42fa4483e3831b67196c41ebe60e8fd4
 sidebar_position: 12
 title: Posição de Estacionamento
 ---
@@ -20,8 +20,8 @@ O plugin **Posição de Estacionamento** ajuda você a salvar e gerenciar o loca
 Este plugin é gratuito e funciona offline com mapas OsmAnd baixados. Você pode localizar rapidamente seu veículo estacionado, estimar a distância a pé de volta a ele e compartilhar o local de estacionamento, se necessário.
 
 - Você pode adicionar um local de estacionamento manualmente através do menu de contexto.
-- Se for por tempo limitado, o plugin registra tanto a hora de início quanto a de término.
-- A hora de término pode acionar um lembrete no calendário do seu dispositivo.
+- Se for limitado por tempo, o plugin registra o horário de início e de término.
+- O horário de término pode acionar um lembrete no calendário do seu dispositivo.
 - Os detalhes do estacionamento podem ser visualizados posteriormente ou usados para navegação.
 
 O marcador é temporário e fácil de remover quando não for mais necessário.
@@ -47,19 +47,19 @@ O marcador é temporário e fácil de remover quando não for mais necessário.
 
 Para usar um local de estacionamento no mapa, você precisa fazer as seguintes configurações:
 
-1. Ative o [plugin Posição de estacionamento](../plugins/index.md#enable--disable) em *Menu Principal → Plugins*.
+1. Habilite o [plugin Posição de estacionamento](../plugins/index.md#enable--disable) em *Menu Principal → Plugins*.
 2. Defina um [local de estacionamento](#set-a-spot) no mapa através do menu de contexto.
 3. (Opcional) Adicione o [widget de Estacionamento](#parking-widget) à tela para acesso mais rápido.
 
 
 ## Local de Estacionamento no Mapa {#parking-spot-on-the-map}
 
-Quando você marca um local de estacionamento, o OsmAnd salva suas coordenadas geográficas junto com um carimbo de data/hora. Se necessário, um limite de tempo e um lembrete no calendário também podem ser adicionados.
+Quando você marca um local de estacionamento, o OsmAnd salva suas coordenadas geográficas junto com um carimbo de data/hora. Se necessário, um limite de tempo e um lembrete de calendário também podem ser adicionados.
 
 
 ### Definir um Local {#set-a-spot}
 
-Para definir um local de estacionamento no mapa, amplie para o nível desejado, toque e segure o local no mapa e, no [Menu de Contexto](../map/map-context-menu.md) que se abre, faça as configurações.
+Para definir um local de estacionamento no mapa, amplie até o nível desejado, toque e segure o local no mapa e, no [menu de contexto](../map/map-context-menu.md) que se abre, faça as configurações.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -84,10 +84,10 @@ Para colocar um marcador de estacionamento, amplie o mapa, toque e segure o loca
 3. Escolha uma das opções disponíveis:
    - **Tempo ilimitado** – adiciona um marcador básico sem contagem regressiva.
    - **Estacionamento com tempo limitado** – permite definir um horário de término e, opcionalmente, criar um lembrete no calendário do seu dispositivo.
-4. Confirme para colocar o marcador. A hora de início é salva automaticamente.
+4. Confirme para colocar o marcador. O horário de início é salvo automaticamente.
 
-:::info Hora de Início
-A hora de início é sempre definida automaticamente. Se você precisar alterar a hora de término, deverá excluir e recriar o local de estacionamento. Os lembretes só são adicionados ao seu calendário se você selecionou esta opção durante a configuração.
+:::info Horário de Início
+O horário de início é sempre definido automaticamente. Se você precisar alterar o horário de término, deverá excluir e recriar o local de estacionamento. Os lembretes são adicionados ao seu calendário apenas se você selecionou esta opção durante a configuração.
 :::
 
 
@@ -120,9 +120,9 @@ Você pode visualizar o marcador de estacionamento ampliando o mapa ou tocando n
 
 Detalhes adicionais são mostrados ao tocar no marcador de estacionamento:
 
-- **Hora de início** – o momento em que o marcador foi colocado.
-- **Tempo restante** ou **Tempo excedido** – se um limite de tempo foi definido, isso mostra quanto tempo resta ou passou desde a expiração.
-- Se você ativou o lembrete do calendário, ele aparecerá no aplicativo de calendário do seu dispositivo.
+- **Horário de início** – o momento em que o marcador foi colocado.
+- **Tempo restante** ou **Tempo excedido** – se um limite de tempo foi definido, isso mostra quanto tempo resta ou passou desde o vencimento.
+- Se você ativou o lembrete de calendário, ele aparecerá no aplicativo de calendário do seu dispositivo.
 
 
 ### Navegando para um Ponto de Referência {#navigating-to-a-waypoint}
@@ -209,9 +209,9 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>
 
 </Tabs>
 
-O [widget de Estacionamento](../widgets/info-widgets.md#parking-widget) mostra a distância do centro da tela até o local de estacionamento salvo e permite que você centralize rapidamente o mapa nesse local.
+O [widget de Estacionamento](../widgets/info-widgets.md#parking-widget) mostra a distância do centro da tela até o local de estacionamento salvo e permite centralizar rapidamente o mapa nesse local.
 
-- O widget é visível apenas depois que uma posição de estacionamento é definida.
+- O widget fica visível somente depois que uma posição de estacionamento é definida.
 - Se ainda não estiver na tela, você pode adicioná-lo através do menu [Configurar Tela](../widgets/configure-screen.md).
 
 Para saber mais, consulte: [Widgets Informativos – Widget de Estacionamento](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
@@ -223,4 +223,4 @@ Para saber mais, consulte: [Widgets Informativos – Widget de Estacionamento](h
 - [Configurações Globais](../../user/personal/global-settings.md)
 - [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
 
-> *Última atualização: Maio de 2025*
+> *Última atualização: maio de 2025*

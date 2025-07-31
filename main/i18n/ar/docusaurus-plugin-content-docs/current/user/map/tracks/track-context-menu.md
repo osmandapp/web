@@ -1,5 +1,5 @@
 ---
-source-hash: 8897fb3aebb172bbef2674a2dea9f5e516873f9949d5d72db7b3e2032bea15b3
+source-hash: 3010d587c123ef963a233b0b6205168ae7e8d4f377766e5140cb45e5c54f1d00
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -14,33 +14,29 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
-
 ## نظرة عامة {#overview}
 
-توفر *قائمة سياق المسار* معلومات حول *[المسار](../../personal/tracks/index.md)* في شكل نصي و[رسومي](#altitude--speed-graphs). تتيح لك إضافة معلومات وإجراء تغييرات وتحرير وتنفيذ العديد من الإجراءات الأخرى باستخدام المسار. يمكنك الوصول إلى *قائمة سياق المسار* ببساطة عن طريق النقر على المسار المطلوب على الخريطة أو باستخدام قائمة *[أماكني](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). قد تحتاج إلى فتح مجلد المسار وتحديد المسار المطلوب عن طريق النقر عليه.
+توفر *قائمة سياق المسار* معلومات حول *[المسار](../../personal/tracks/index.md)* في شكل نصي و[رسومي](#altitude--speed-graphs). تتيح لك إضافة معلومات وإجراء تغييرات وتحرير وتنفيذ العديد من الإجراءات الأخرى مع المسار. يمكنك الوصول إلى *قائمة سياق المسار* ببساطة عن طريق النقر على المسار المطلوب على الخريطة أو باستخدام قائمة *[أماكني](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). قد تحتاج إلى فتح مجلد المسار وتحديد المسار المطلوب بالنقر عليه.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار نظرة عامة أندرويد](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
+![نظرة عامة على قائمة سياق المسار أندرويد](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار نظرة عامة iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
+![نظرة عامة على قائمة سياق المسار iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-
 ## نظرة عامة على المسار {#track-overview}
 
-عند النقر على مسار، تفتح الشاشة الأولى من *قائمة سياق المسار* - *علامة تبويب النظرة العامة*. في هذه العلامة التبويب، يمكنك العثور على ملخص حول المسار المختار (*[لوحة المعلومات](#info-panel)*) وتنفيذ الإجراءات الأكثر شيوعًا مع المسار باستخدام *[قائمة إجراءات المسار](#track-actions)*. يمكنك رؤية [الوصف ومعلومات الخدمة](#description-and-info) حول مسارك إذا سحبت علامة تبويب النظرة العامة لأعلى.
+عند النقر على مسار، تفتح الشاشة الأولى من *قائمة سياق المسار* - *علامة تبويب النظرة العامة*. في هذه العلامة التبويب، يمكنك العثور على ملخص حول المسار المختار (*[لوحة المعلومات](#info-panel)*) وإجراء الإجراءات الأكثر شيوعًا مع المسار باستخدام *[قائمة إجراءات المسار](#track-actions)*. يمكنك رؤية [الوصف ومعلومات الخدمة](#description-and-info) حول مسارك إذا سحبت علامة تبويب النظرة العامة للأعلى.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
@@ -52,28 +48,28 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![لوحة معلومات نظرة عامة أندرويد](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
+![نظرة عامة على لوحة المعلومات أندرويد](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![لوحة معلومات نظرة عامة iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
+![نظرة عامة على لوحة المعلومات iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-في الجزء العلوي من لوحة المعلومات، يمكنك رؤية اسم المسار والرمز المستخدم لتمييزه (*أندرويد فقط*). يمكن تغيير اسم المسار باستخدام وظيفة إعادة التسمية في [قائمة الخيارات](#options). قد تحتوي بعض المسارات (معظمها *[أدلة السفر](../../plan-route/travel-guides.md#manage-as-gpx-track)*) على *[وصف](#description-and-info)* قصير و(أو) صورة أسفل *اسم المسار*. يظهر سهم *الاتجاه إلى أقرب نقطة من المسار* من [موقعي](../../map/interact-with-map#my-location-and-zoom).
+في الجزء العلوي من لوحة المعلومات، يمكنك رؤية اسم المسار والرمز المستخدم لتمييزه (*أندرويد فقط*). يمكن تغيير اسم المسار باستخدام وظيفة إعادة التسمية في [قائمة الخيارات](#options). قد تحتوي بعض المسارات (معظمها *[أدلة السفر](../../plan-route/travel-guides.md#manage-as-gpx-track)*) على *[وصف](#description-and-info)* قصير و(أو) صورة أسفل *اسم المسار*. يشير سهم إلى *الاتجاه إلى أقرب نقطة من المسار* من [موقعي](../../map/interact-with-map#my-location-and-zoom).
 
 توفر لوحة المعلومات أيضًا معلومات حول ما يلي:
 
-- *<Translate android="true" ids="distance"/>*. يظهر طول المسار.
+- *<Translate android="true" ids="distance"/>*. يعرض طول المسار.
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. يعرض المجموع الكلي للصعود والهبوط أثناء الرحلة.
 - *<Translate android="true" ids="altitude_range"/>*. يشير إلى الحد الأدنى والأقصى للارتفاع على المسار.
 
 :::note
-في حال تم إنشاء مسارك في OsmAnd أو أي تطبيق تتبع آخر (بحيث تحتوي نقاطه على علامات [`time` و `speed`](../../plugins/trip-recording#recorded-gpx-file))، فإن لوحة المعلومات ستحتوي أيضًا على معلومات حول *<Translate android="true" ids="average_speed"/>*، *<Translate android="true" ids="max_speed"/>*، *<Translate android="true" ids="shared_string_time_span"/>* (*أندرويد*) أو *<Translate ios="true" ids="total_time"/>* (*iOS*) (مدة الوقت بين نقطتي البداية والنهاية للمسار)، *<Translate android="true" ids="shared_string_time_moving"/>* (مجموع الوقت أثناء القيادة).
+في حال تم إنشاء مسارك في OsmAnd أو أي تطبيق تتبع آخر (بحيث تحتوي نقاطه على علامات [`time` و `speed`](../../plugins/trip-recording#recorded-gpx-file))، ستحتوي لوحة المعلومات أيضًا على معلومات حول *<Translate android="true" ids="average_speed"/>*، *<Translate android="true" ids="max_speed"/>*، *<Translate android="true" ids="shared_string_time_span"/>* (*أندرويد*) أو *<Translate ios="true" ids="total_time"/>* (*iOS*) (مدة الوقت بين نقطتي البداية والنهاية للمسار)، *<Translate android="true" ids="shared_string_time_moving"/>* (مجموع الوقت أثناء القيادة).
 :::
 
 ### إجراءات المسار {#track-actions}
@@ -100,7 +96,6 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - **تصدير** (*iOS*). يسمح لك [بتصدير مسار](../../personal/tracks/manage-tracks.md#export).
 - **الاتجاهات**. يفتح المسار في وضع *[الملاحة](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)*.
 
-
 ### الخيارات {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -123,7 +118,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – تتحكم في رؤية المسار على الخريطة.
 - **<Translate android="true" ids="shared_string_appearance"/>** – تفتح [قائمة المظهر](../tracks/appearance.md) لتخصيص لون المسار وعرضه وشفافيته.
-- **<Translate android="true" ids="follow_track"/>** (*أندرويد*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – تبدأ [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)، مع محاذاة مسارك مع المسار المحدد.
+- **<Translate android="true" ids="follow_track"/>** (*أندرويد*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – تبدأ [الملاحة بالمسار](../../navigation/setup/gpx-navigation.md).، محاذاة مسارك مع المسار المحدد.
 
 <br/>
 
@@ -134,7 +129,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 <br/>
 
 - **<Translate android="true" ids="shared_string_share"/>** – تصدر المسار المحدد بتنسيق GPX.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [تحميل](../../plugins/osm-editing.md#upload-gps-track) المسار المحدد إلى OpenStreetMap.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [ترفع](../../plugins/osm-editing.md#upload-gps-track) المسار المحدد إلى OpenStreetMap.
 
 <br/>
 
@@ -145,14 +140,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_gps_filter"/>** (*أندرويد فقط*) - يسمح [بتصفية نقاط المسار](#gps-filter) لتحسين الدقة.
-- **<Translate android="true" ids="altitude_correction"/>** (*أندرويد فقط*) - [لاستقبال بيانات الارتفاع](#calculate-missing-elevation)، [ربط مسارك بالطرق](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) أو حسابها دون اتصال (مطلوب [خرائط التضاريس](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*أندرويد فقط*) - [يحاكي موقعك](../../plugins/development.md#gpx-track-simulation) باستخدام مسار GPX.
+- **<Translate android="true" ids="shared_string_gps_filter"/>** (*أندرويد فقط*) - تسمح [بتصفية نقاط المسار](#gps-filter) لتحسين الدقة.
+- **<Translate android="true" ids="altitude_correction"/>** (*أندرويد فقط*) - [لاستقبال بيانات الارتفاع](#calculate-missing-elevation)، [إرفاق مسارك بالطرق](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) أو حسابها دون اتصال (تحتاج إلى [خرائط التضاريس](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="simulate_your_location"/>** (*أندرويد فقط*) - [تحاكي موقعك](../../plugins/development.md#gpx-track-simulation) باستخدام مسار GPX.
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_delete"/>**. يحذف المسار.
-
+- **<Translate android="true" ids="shared_string_delete"/>**. تحذف المسار.
 
 ### الوصف والمعلومات {#description-and-info}
 
@@ -172,9 +166,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-يعرض هذا القسم من علامة التبويب *نظرة عامة* ***بيانات العلامات*** و***جميع المعلومات العامة***.
+يعرض هذا القسم من علامة تبويب *نظرة عامة* ***بيانات العلامة*** و***جميع المعلومات العامة***.
 
-- **الوصف**. زر *<Translate android="true" ids="shared_string_edit"/>* (*أندرويد*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) يستخدم لتحرير وصف المسار. علامة `desc`.
+- **الوصف**. يستخدم زر *<Translate android="true" ids="shared_string_edit"/>* (*أندرويد*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) لتحرير وصف المسار. علامة `desc`.
 
 - **عام**. يحتوي على معلومات حول *حجم ملف GPX*، و*مجلد الملف*، و*تاريخ الإنشاء* مع علامة `time`.
 
@@ -185,7 +179,6 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - **حقوق النشر**. العلامات: *حقوق النشر* - `copyright`، &nbsp;*المؤلف* - `author`، &nbsp;*السنة* - `year`، &nbsp;*الترخيص* - `license`.
 
 - **إضافي**. جميع العلامات من قسم ***الإضافات***:&nbsp; `address`،&nbsp; `icon`،&nbsp; `background`،&nbsp; `color`،&nbsp; `country`،&nbsp; `state`،&nbsp; `telephone`،&nbsp; `postcode`،&nbsp; `start_date`،&nbsp; `desc`.
-
 
 <details>
 
@@ -225,7 +218,6 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </details>
 
-
 ### نشاط معلومات المسار {#track-information-activity}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -244,14 +236,12 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-
 تتيح لك ميزة *النشاط* في OsmAnd وضع علامات على مسارات GPX المسجلة بأنشطة محددة لمزيد من التحليل والتنظيم في المجلدات.
 
-- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). عند تسجيل مسار GPX، يمكنك تعيين نوع نشاط. يساعد هذا الوسم على تصنيف المسارات مبدئيًا.
-- [مرشح النشاط](../../personal/tracks/smart-folder.md#search-filter). يمكنك تصفية مسارات GPX المسجلة حسب النشاط، مما يتيح لك التركيز على العثور على أنواع محددة من التسجيلات، مثل جميع مسارات ركوب الدراجات أو المشي لمسافات طويلة.
+- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). عند تسجيل مسار GPX، يمكنك تعيين نوع نشاط. يساعد هذا التصنيف النشاط في تصنيف المسارات مبدئيًا.
+- [فلتر النشاط](../../personal/tracks/smart-folder.md#search-filter). يمكنك تصفية مسارات GPX المسجلة حسب النشاط، مما يتيح لك التركيز على العثور على أنواع محددة من التسجيلات، مثل جميع مسارات ركوب الدراجات أو المشي لمسافات طويلة.
 - [إدارة أنواع الأنشطة](../../personal/tracks/manage-tracks.md#selection-mode). يمكنك تغيير نوع النشاط للمجلدات أو المسارات المحددة باستخدام وضع التحديد في علامة تبويب المسارات في قائمة أماكني.
-- **قائمة الأنشطة**. يتم تحديد فئات ومجموعات الأنشطة في موارد OsmAnd. للمطورين والمساهمين، يتم الاحتفاظ بقائمة الأنشطة بتنسيق منظم في [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)، والذي يوضح تفاصيل مجموعات وأنواع الأنشطة المتاحة.
-
+- **قائمة الأنشطة**. يتم تعريف فئات ومجموعات الأنشطة في موارد OsmAnd. للمطورين والمساهمين، يتم الاحتفاظ بقائمة الأنشطة بتنسيق منظم في [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)، والذي يوضح بالتفصيل مجموعات وأنواع الأنشطة المتاحة.
 
 ## رسوم بيانية للارتفاع / السرعة {#altitude--speed-graphs}
 
@@ -259,10 +249,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 التفاعل مع الرسم البياني:
 
-- ***وضع نقطة على الرسم البياني***. إذا كنت ترغب في رؤية المعلومات عند نقطة معينة من المسار، يمكنك النقر في أي مكان على الرسم البياني وسيظهر مؤشر مع القيم. في نفس الوقت، ستظهر علامة زرقاء على الخريطة، تشير إلى هذا الموقع على المسار.
-- ***التكبير/التصغير***. يمكنك استخدام [حركات الإصبعين](../../map/interact-with-map.md#gestures) للتكبير والتصغير للحصول على عرض أكثر تفصيلاً. بعد التكبير، يمكنك تحريك الرسم البياني إلى اليمين واليسار، بما يتوافق مع التحرك للأمام والخلف على طول المسار.
-- ***معلومات إضافية***. يحتوي الجانب الأيمن من الرسم البياني على بيانات حول أدنى وأعلى ومتوسط الارتفاع والانحدار والسرعة. في الجزء السفلي من الرسم البياني، يمكنك رؤية علامات المسافة.
-
+- ***وضع نقطة على الرسم البياني***. إذا كنت ترغب في رؤية المعلومات عند نقطة معينة من المسار، يمكنك النقر في أي مكان على الرسم البياني وسيظهر مؤشر بالقيم. في الوقت نفسه، سيظهر علامة زرقاء على الخريطة، تشير إلى هذا الموقع على المسار.
+- ***التكبير / التصغير***. يمكنك استخدام [حركات الإصبعين](../../map/interact-with-map.md#gestures) للتكبير والتصغير للحصول على عرض أكثر تفصيلاً. بعد التكبير، يمكنك تحريك الرسم البياني إلى اليمين واليسار، بما يتوافق مع التحرك للأمام والخلف على طول المسار.
+- ***معلومات إضافية***. يحتوي الجانب الأيمن من الرسم البياني على بيانات حول أدنى وأعلى ومتوسط الارتفاع، والميل، والسرعة. في الجزء السفلي من الرسم البياني، يمكنك رؤية علامات المسافة.
 
 ### معلومات عامة {#overview-information}
 
@@ -270,13 +259,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار رسوم بيانية أندرويد](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![قائمة سياق المسار الرسوم البيانية أندرويد](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار رسوم بيانية iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![قائمة سياق المسار الرسوم البيانية iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
 
 </TabItem>
 
@@ -284,7 +273,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 في علامة التبويب **نظرة عامة**، يمكنك رؤية معلمات مثل:
 
-- *<Translate android="true" ids="distance"/>*. مجموع المسافة الإجمالية المقطوعة على المسار، أو طول المسار نفسه.
+- *<Translate android="true" ids="distance"/>*. مجموع المسافة الكلية المقطوعة على المسار، أو طول المسار نفسه.
 - *<Translate android="true" ids="shared_string_time_span"/>*. الفاصل الزمني بين نقطتي البداية والنهاية للمسار.
 - *<Translate android="true" ids="shared_string_start_time"/>* الوقت المحدد الذي يبدأ فيه تسجيل المسار.
 - *<Translate android="true" ids="shared_string_end_time"/>*. وقت انتهاء تسجيل المسار.
@@ -295,14 +284,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - زر **<Translate android="true" ids="shared_string_options"/>** يفتح قائمة تحتوي على:
 
   - *تحرير* يفتح المسار في [أداة تخطيط المسار](../../plan-route/index.md).
-  - *حذف* يسمح لك بإزالة العنصر المحدد من المسار.
+  - *حذف* يسمح لك بإزالة عنصر المسار المحدد.
   - *تقسيم الفاصل الزمني* يفتح [وظيفة تقسيم الفاصل الزمني](#split-interval) للمسار.
-
 
 ### السرعة {#speed}
 
 :::note المسارات المسجلة فقط
-يمكن أن تكون علامة التبويب هذه مرئية فقط على المسارات المسجلة. تحتوي النقاط في هذا النوع من المسارات على علامات **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
+يمكن رؤية علامة التبويب هذه فقط في المسارات المسجلة. تحتوي النقاط في هذا النوع من المسارات على علامات **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -324,10 +312,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 يعرض الرسم البياني **السرعة** مقاييس مثل:
 
 - *<Translate android="true" ids="average_speed"/>*. يشير إلى متوسط السرعة أثناء الرحلة.
-- *<Translate android="true" ids="max_speed"/>*. يظهر أقصى سرعة أثناء الرحلة.
-- *<Translate android="true" ids="moving_time"/>*. يظهر إجمالي الوقت أثناء الرحلة في الحركة فقط.
+- *<Translate android="true" ids="max_speed"/>*. يعرض أقصى سرعة أثناء الرحلة.
+- *<Translate android="true" ids="moving_time"/>*. يعرض إجمالي الوقت أثناء الرحلة في الحركة فقط.
 - *<Translate android="true" ids="distance_moving"/>*. يشير إلى المسافة المعدلة للرحلة.
-
 
 ### الارتفاع {#altitude}
 
@@ -350,16 +337,15 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 يعرض الرسم البياني **الارتفاع** مقاييس مثل:
 
 - *<Translate android="true" ids="average_altitude"/>*. يشير إلى متوسط الارتفاع فوق مستوى سطح البحر على المسار.
-- *<Translate android="true" ids="altitude_range"/>*. أعلى وأدنى ارتفاع مسجل على المسار.
+- *<Translate android="true" ids="altitude_range"/>*. أعلى وأدنى ارتفاع تم تسجيله على المسار.
 - *<Translate android="true" ids="altitude_ascent"/>*. الارتفاع التراكمي فوق مستوى سطح البحر على طول المسار.
 - *<Translate android="true" ids="altitude_descent"/>*. الانخفاض التراكمي في الارتفاع على طول المسار.
 
 **الحصول على بيانات الارتفاع.**
-إذا لم تكن هناك *معلومات عن الارتفاع* على المسار، يمكنك إضافتها بالطرق التالية:
+إذا لم تكن هناك *معلومات ارتفاع* على المسار، يمكنك إضافتها بالطرق التالية:
 
 - *زر حساب الارتفاع ← [استخدام الطرق القريبة](../../plan-route/create-route.md#get-elevation-data)*. يستخدم خريطة غير متصلة بالإنترنت للعثور على الطرق القريبة وبيانات الارتفاع. يسمح لك بتخصيص هندسة المسار.
-- [استخدام خرائط التضاريس](#calculate-missing-elevation). يستخدم خرائط التضاريس للحصول على بيانات الارتفاع. تظل هندسة المسار دون تغيير.
-
+- [استخدام خرائط التضاريس](#calculate-missing-elevation). يستخدم خرائط التضاريس للحصول على بيانات الارتفاع. تبقى هندسة المسار دون تغيير.
 
 ### حساب الارتفاع المفقود {#calculate-missing-elevation}
 
@@ -372,32 +358,31 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 تتيح لك هذه الميزة حساب ملف تعريف الارتفاع لمسار GPX دون اتصال لأي تضاريس بين 70 درجة شمال خط العرض و 70 درجة جنوب خط العرض، بناءً على [بيانات خرائط التضاريس](../../plugins/topography.md#download-maps). *يجب تنزيل خرائط التضاريس (ثلاثية الأبعاد) مسبقًا*.
 
 1. قم بتنزيل [خرائط التضاريس (ثلاثية الأبعاد)](../../plugins/topography.md#download-maps) للمنطقة المطلوبة.
-2. إذا لم يحتوي المسار على أي بيانات ارتفاع، فانتقل إلى قائمة سياق المسار (*قائمة سياق المسار ← <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*)، وحدد *استخدام خرائط التضاريس*، وبعد الحساب ستحصل على رسم بياني للمسار بناءً على بيانات التضاريس.
+2. إذا لم يحتوي المسار على أي بيانات ارتفاع، فانتقل إلى قائمة سياق المسار (*قائمة سياق المسار ← <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*)، حدد *استخدام خرائط التضاريس*، وبعد الحساب ستحصل على رسم بياني للمسار بناءً على بيانات التضاريس.
 
     ![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_2.png) ![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_10.png) <!--![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_4.png) ![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
 
-3. إذا كنت تنشئ مسارًا باستخدام أداة [تخطيط مسار](../../plan-route/create-route.md#graph) باستخدام طريقة *الخط المستقيم* ولا توجد بيانات ارتفاع على الرسم البياني، فستحتاج إلى:
+3. إذا كنت تقوم بإنشاء مسار باستخدام أداة [تخطيط المسار](../../plan-route/create-route.md#graph) باستخدام طريقة *الخط المستقيم* ولا توجد بيانات ارتفاع على الرسم البياني، فستحتاج إلى:
     - انقر على *الحصول على بيانات الارتفاع*، ثم حدد *استخدام خرائط التضاريس*.
-    - بعد الحساب، ستحصل على رسم بياني كامل للارتفاع/الانحدار لمسارك بناءً على بيانات التضاريس.
+    - بعد الحساب، ستحصل على رسم بياني كامل للارتفاع/الميل لمسارك بناءً على بيانات التضاريس.
 
   ![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_9.png) ![رسم بياني لارتفاع المسار أندرويد](@site/static/img/personal/tracks/calculate_elevation_5.png)
 
-
 ## النقاط / نقاط الطريق {#points--waypoints}
 
-نقاط الطريق هي أحد أنواع النقاط المتاحة على الخريطة. بشكل عام، يمكن أن تكون نقاط مسار جزءًا من ملفات GPX. يتوفر وصف مفصل في مقالة [النقاط على الخريطة](../../map/point-layers-on-map.md).
+نقاط الطريق هي أحد أنواع النقاط المتاحة على الخريطة. بشكل عام، يمكن أن تكون نقاط مسار جزءًا من ملفات GPX. يتوفر وصف تفصيلي في مقالة [النقاط على الخريطة](../../map/point-layers-on-map.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار نقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android.png)
+![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار نقاط iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -405,17 +390,16 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 في علامة التبويب *النقاط* هذه:
 
-- [عرض بيانات نقاط المسار](#display-custom-gpx-tags) وتعديل نقاط المسار الخاصة بك (نقاط الطريق ونقاط المسار)، [حذفها وإضافة](#points--waypoints) نقاط طريق إلى مسار.
+- [عرض بيانات نقاط المسار](#display-custom-gpx-tags) وتعديل نقاط المسار الخاصة بك (نقاط الطريق ونقاط المسار)، [حذفها وإضافة](#points--waypoints) نقاط الطريق إلى مسار.
 - إنشاء وتعديل [مجموعة (مجلد) من النقاط](#waypoint-groups).
-
 
 ### إضافة نقطة طريق إلى مسار {#add-waypoint-to-a-track}
 
-يمكن إضافة نقاط الطريق إلى المسار المسجل حاليًا أو إلى أي مسار من [*أماكني ← قائمة المسارات*](../../personal/tracks/manage-tracks.md):
+يمكن إضافة نقاط الطريق إلى المسار المسجل حاليًا أو إلى أي مسار من قائمة [*أماكني ← قائمة المسارات*](../../personal/tracks/manage-tracks.md):
 
 - استخدم [قائمة سياق الخريطة](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
-  - تظهر نقاط الطريق تلقائيًا إذا تم تمكين المسار المحدد على الخريطة.
-  - [انقر مطولاً](../../map/map-context-menu.md#select-any-point-long-tap) على الخريطة في أي موقع مختار لإنشاء نقطة طريق.
+  - يتم عرض نقاط الطريق تلقائيًا إذا تم تمكين المسار المحدد على الخريطة.
+  - [اضغط مطولاً](../../map/map-context-menu.md#select-any-point-long-tap) على الخريطة في أي موقع مختار لإنشاء نقطة طريق.
   - يمكنك تعيين معلومات حول نقطة الطريق في [قائمة سياق الخريطة](../../map/map-context-menu.md#-add--edit-track-waypoint) المفتوحة.
 
 - استخدم زر [إضافة نقطة طريق](#points--waypoints) في قائمة سياق المسار.
@@ -440,54 +424,52 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-انقر على زر *إضافة نقطة طريق* لفتح شاشة إنشاء نقطة الطريق (هذه الشاشة مألوفة مع [قائمة سياق المفضلة](../../personal/favorites.md#create)).
+انقر على زر *إضافة نقطة طريق* لفتح شاشة إنشاء نقطة طريق (هذه الشاشة مألوفة مع [قائمة سياق المفضلة](../../personal/favorites.md#create)).
 
-1. **أضف** *اسم* نقطة الطريق، *عنوان* الموقع المحدد و*وصف* له (اختياري).
-2. **اختر** المجموعة.
+1. **أضف** *اسم* نقطة الطريق، و*عنوان* الموقع المحدد، و*وصف* له (اختياري).
+2. **حدد** المجموعة.
 
-    - اختر فئات المجموعات التي تم إنشاؤها مسبقًا أو أنشئ واحدة جديدة.
+    - حدد فئات المجموعات التي تم إنشاؤها مسبقًا أو أنشئ فئة جديدة.
     - أنشئ اسمًا ومظهرًا لمجموعة نقاط الطريق الجديدة. يسمى هذا أيضًا *فئة جديدة* في التطبيق.
     - سيتم استخدام **الرمز** و**لون الرمز** و**الشكل** لجميع نقاط الطريق الجديدة المضافة إلى المجموعة.
 
 3. إعداد **المظهر**:
 
-    - اختر [**رمزًا**](../../personal/favorites.md#favorite-icons) من قائمة جميع رموز فئات نقاط الاهتمام.
-    - اختر **لون** الرمز.
-    - ثم اختر **شكل** الرمز: *دائرة، مثمن، مربع*.
+    - حدد [**رمزًا**](../../personal/favorites.md#favorite-icons) من قائمة رموز فئات نقاط الاهتمام (POI) كلها.
+    - حدد **لون** الرمز.
+    - ثم حدد **شكل** الرمز: *دائرة، مثمن، مربع*.
 
 4. **استبدل** نقطة أخرى بهذه، إذا كنت بحاجة إلى ذلك.
 
-
-### إجراءات مع المجموعات {#actions-with-groups}
+### الإجراءات مع المجموعات {#actions-with-groups}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة المسار قائمة المجموعة أندرويد](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![قائمة مجموعة المسار أندرويد](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة المسار قائمة المجموعة iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![قائمة مجموعة المسار iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تفتح *قائمة النقاط الثلاث* ( &#8285; ) *قائمة مجموعة* نقطة الطريق.
+تفتح *قائمة النقاط الثلاث* ( &#8285; ) *قائمة مجموعة* نقاط الطريق.
 
 **الإجراءات:**
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** - يسمح لك بعرض أو عدم عرض نقاط طريق المجموعة على الخريطة. أو يمكنك استخدام [زر الشاشة](#points--waypoints) لعرض أو حذف نقاط طريق المجموعة على الخريطة.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - يسمح لك بعرض أو عدم عرض نقاط الطريق للمجموعة على الخريطة. أو يمكنك استخدام [زر الشاشة](#points--waypoints) لعرض أو حذف نقاط الطريق للمجموعة على الخريطة.
 - **<Translate android="true" ids="shared_string_rename"/>** - تغيير اسم المجموعة.
 - **<Translate android="true" ids="change_default_appearance"/>** - تغيير خيارات العرض لمجموعة من نقاط الطريق.
-- **<Translate android="true" ids="add_group_to_markers"/>** أو **إزالة** (*أندرويد فقط*) - نقل نقاط طريق المجموعة إلى قائمة [علامات الخريطة](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*أندرويد فقط*) - نقل نقاط طريق المجموعة إلى [المفضلة](../../personal/favorites.md).
+- **<Translate android="true" ids="add_group_to_markers"/>** أو **إزالة** (*أندرويد فقط*) - نقل نقاط الطريق للمجموعة إلى قائمة [علامات الخريطة](../../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*أندرويد فقط*) - نقل نقاط الطريق للمجموعة إلى [المفضلة](../../personal/favorites.md).
 - **<Translate android="true" ids="add_to_navigation"/>** (*أندرويد فقط*) - ينشئ مسارًا بين نقاط الطريق. تصبح النقطتان الأولى والأخيرة بداية ونهاية المسار، ويتم تحويل الباقي إلى نقاط وسيطة.
 - **<Translate android="true" ids="shared_string_delete"/>** - حذف مجموعة من نقاط الطريق.
-
 
 ### مجموعات نقاط الطريق {#waypoint-groups}
 
@@ -495,13 +477,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة المسار مجموعة الخريطة أندرويد](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![قائمة المسار مجموعة الخريطة أندرويد](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![قائمة مجموعة المسار أندرويد](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![قائمة مجموعة المسار أندرويد](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة المسار مجموعة الخريطة iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![قائمة المسار مجموعة الخريطة iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![قائمة مجموعة المسار iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![قائمة مجموعة المسار iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
@@ -509,7 +491,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 إدارة رؤية المجموعات على الخريطة: إذا أخفيت مسارًا واحدًا، فسيتم إخفاء المجموعة بأكملها أيضًا.
 
-يمكنك تشغيل أو إيقاف نقاط طريق المجموعة على الخريطة باستخدام الزر في الزاوية العلوية اليمنى من قائمة سياق المسار على الخريطة. انقر عليه وحدد الإجراء المطلوب.
+يمكنك تشغيل أو إيقاف تشغيل نقاط الطريق للمجموعة على الخريطة باستخدام الزر في الزاوية العلوية اليمنى من قائمة سياق المسار على الخريطة. انقر عليه وحدد الإجراء المطلوب.
 
 ### عرض علامات GPX المخصصة {#display-custom-gpx-tags}
 
@@ -528,7 +510,6 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 </TabItem>
 
 </Tabs>
-
 
 <details>
 
@@ -592,24 +573,23 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 | المعلمة | الوصف |
 | --- | --- |
-| `lat` | **خط العرض** هو أحد الإحداثيات الجغرافية التي يمكنك من خلالها تحديد موقع. |
-| `lon` | **خط الطول** هو إحداثي جغرافي آخر يمكنك من خلاله تحديد موقع. |
+| `lat` | **خط العرض** هو أحد الإحداثيات الجغرافية التي يمكنك من خلالها تحديد الموقع. |
+| `lon` | **خط الطول** هو إحداثي جغرافي آخر يمكنك من خلاله تحديد الموقع. |
 | `time` | **الطابع الزمني** هو التاريخ والوقت الذي تم فيه تسجيل النقطة. |
-| `name` | **الاسم** هو اسم النقطة. يُسمح بأي أحرف. |
+| `name` | **الاسم** هو اسم النقطة. يسمح بأي أحرف. |
 | `desc` | **الوصف** يحتوي على معلومات إضافية حول النقطة. |
 | `type` | **تحديد المجموعة** هو اسم مجلد OsmAnd الذي تم حفظ نقطة الطريق هذه فيه. |
 | `cmt` | **التعليق** هو تعليق قصير على نقطة. |
 | `link` | **الرابط** هو رابط لأي مصادر. |
 | `ele` | **الارتفاع** هو ارتفاع النقطة. |
 
-
 **الإضافات:**
 
 | الإضافة | الوصف |
 | --- | --- |
-| `osmand:icon` | **الرمز** هو اسم الرمز الذي اخترته. |
+| `osmand:icon` | **الرمز** هو اسم الرمز الذي حددته. |
 | `osmand:color` | **اللون** هو اللون بتنسيق HEX. |
-| `osmand:background` | **الخلفية** هي شكل الرمز، مثل دائرة، مثمن، أو مربع. |
+| `osmand:background` | **الخلفية** هي شكل الرمز، مثل دائرة أو مثمن أو مربع. |
 | `osmand:country` | **البلد** هو اسم البلد. |
 | `osmand:address` | **العنوان** هو العنوان. |
 | `osmand:postcode` | **الرمز البريدي** هو الرمز البريدي. |
@@ -617,7 +597,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 | `osmand:state` | **الولاية** هو اسم الولاية. |
 | `osmand:start_date` | **تاريخ البدء** هو بيانات الجدول الزمني لنقطة. |
 
-يتم تسجيل نقاط الطريق مع المسار في [ملف GPX](../../../technical/osmand-file-formats/osmand-gpx.md). تحتوي كل نقطة من هذه النقاط على مجموعة خاصة بها من العلامات للوصف. يتم سرد جميع العلامات المتعلقة مباشرة بوصف نقاط الطريق التي يمكن تحريرها مباشرة في تطبيق OsmAnd في هذا القسم.
+يتم تسجيل نقاط الطريق مع المسار في [ملف GPX](../../../technical/osmand-file-formats/osmand-gpx.md). تحتوي كل من نقاط الطريق هذه على مجموعة خاصة بها من العلامات للوصف. يتم سرد جميع العلامات المتعلقة مباشرة بوصف نقاط الطريق التي يمكن تحريرها مباشرة في تطبيق OsmAnd في هذا القسم.
 لتغيير وصف نقطة الطريق، يمكنك اتباع إحدى الطرق التالية:
 
 1. ابحث عن المسار المطلوب في قائمة علامة التبويب *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
@@ -626,32 +606,30 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
     ثم في [قائمة سياق المسارات](./track-context-menu.md) انقر على *النقاط*، وحقل المجلد المطلوب مع نقاط الطريق المتاحة ونقطة الطريق التي تبحث عنها. حدد قائمة *الإجراءات ←* **تحرير نقطة طريق GPX** وقم بإجراء التغييرات. لا يمكنك تغيير تاريخ إنشاء نقطة، *الطابع الزمني*، في التطبيق.
 
-**علامات المرافق** التي تصف معلومات إضافية، مثل ساعات العمل أو رقم الهاتف، خاصة بنقطة الاهتمام، تأخذ تلك المعلومات من بيانات OpenStreetMap أو البيانات التي أدخلتها عند إنشاء نقطة الاهتمام. يمكنك تحرير هذه العلامات و[العلامات المخصصة](#display-custom-gpx-tags) فقط في رمز ملف GPX، والذي يمكنك فتحه بأي محرر نصوص على جهازك.
-
+**علامات المرافق** التي تصف معلومات إضافية، مثل ساعات العمل أو رقم الهاتف، خاصة بنقطة الاهتمام (POI) تأخذ تلك المعلومات من بيانات OpenStreetMap أو البيانات التي أدخلتها عند إنشاء نقطة الاهتمام. يمكنك تحرير هذه العلامات و[العلامات المخصصة](#display-custom-gpx-tags) فقط في رمز ملف GPX، والذي يمكنك فتحه بأي محرر نصوص على جهازك.
 
 ## تقسيم الفاصل الزمني {#split-interval}
 
 <InfoAndroidOnly />
 
-يمكنك تقسيم المسار إلى فواصل زمنية، مثل المسافة والوقت، وتحليله.
+يمكنك تقسيم المسار إلى فترات، مثل المسافة والوقت، وتحليله.
 
 قسّم المسار حسب المسافة أو الفاصل الزمني.
 *<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
 
 ![شاشة تقسيم فاصل المسار أندرويد](@site/static/img/personal/tracks/track_split_interval_android.png) ![شاشة تقسيم فاصل المسار الوقت أندرويد](@site/static/img/personal/tracks/track_split_interval_time_android.png)
 
-
-## مرشح GPS {#gps-filter}
+## فلتر GPS {#gps-filter}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>*
 
-![شاشة مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_android.png)
+![شاشة فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_android.png)
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-يسمح لك هذا المرشح بتحسين إحصائيات مسارك عن طريق استبعاد البيانات غير الضرورية أو غير الصحيحة. يمكنك تصفية نقاط المسار التي لا تتناسب مع معلمات مسارك، ونتيجة لذلك، الحصول على رسم بياني أكثر دقة وخط مسار مرئي بدون تشويه أو ضوضاء تسجيل. يمكنك إجراء تغييرات باستخدام مرشحات مثل *التنعيم* و*السرعة* و*الارتفاع* و*دقة GPS*، والتي تخفي النقاط المصفاة من المسار الحالي. بالإضافة إلى ذلك، في قائمة *الإحصائيات*، يمكنك التحقق من كيفية عرض تغييراتك على الرسم البياني قبل حفظها. يمكنك أيضًا *إعادة التعيين إلى الأصل* و*الحفظ كنسخة* من مسارك في هذا المرشح دون حفظ المسار الأصلي.
+يسمح لك هذا الفلتر بتحسين إحصائيات مسارك عن طريق استبعاد البيانات غير الضرورية أو غير الصحيحة. يمكنك تصفية نقاط المسار التي لا تتناسب مع معلمات مسارك، ونتيجة لذلك، الحصول على رسم بياني وخط مسار مرئي أكثر دقة دون تشويه أو ضوضاء تسجيل. يمكنك إجراء تغييرات باستخدام فلاتر مثل *التنعيم*، *السرعة*، *الارتفاع*، و*دقة GPS*، والتي تخفي النقاط المفلترة من المسار الحالي. بالإضافة إلى ذلك، في قائمة *الإحصائيات*، يمكنك التحقق من كيفية عرض تغييراتك على الرسم البياني قبل حفظها. يمكنك أيضًا *إعادة التعيين إلى الأصل* و*الحفظ كنسخة* من مسارك في هذا الفلتر دون حفظ المسار الأصلي.
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -659,59 +637,56 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-تتضمن صفحة تطبيق مرشح GPS لنظام أندرويد ما يلي:
+تتضمن صفحة تطبيق فلتر GPS لنظام أندرويد ما يلي:
 
 - خريطة مع مسار محفوظ وزر إضافي، *موقع مساري* (يقوم بمحاذاة المسار إلى مركز الخريطة).
 - زري *تحديث* و*قائمة* في الأعلى (*تفتح القائمة* حقل *الإجراء* في أسفل الصفحة).
-- كتل *المرشح*، *الإحصائيات*، *الإجراء*.
+- كتل *فلتر*، *إحصائيات*، *إجراء*.
 
+### قائمة الفلتر {#filter-menu}
 
-### قائمة المرشح {#filter-menu}
-
-في هذه القائمة، يمكنك تغيير بعض معلمات مسارك مثل *التنعيم*، *السرعة*، *الارتفاع*، أو *دقة GPS* باستخدام المرشحات. تنقسم القائمة إلى *جزء النقاط* و*جزء الإجراءات*.
+في هذه القائمة، يمكنك تغيير بعض معلمات مسارك مثل *التنعيم*، *السرعة*، *الارتفاع*، أو *دقة GPS* باستخدام الفلاتر. تنقسم القائمة إلى *جزء النقاط* و*جزء الإجراءات*.
 
 | ***النقاط*** |
 |:------------|
-|يعرض هذا الجزء عدد النقاط بعد التصفية والعدد الإجمالي للنقاط على المسار المحدد قبل استخدام المرشحات.|
-|![أرقام نقاط شاشة مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
+|يعرض هذا الجزء عدد النقاط بعد التصفية والعدد الإجمالي للنقاط في المسار المحدد قبل استخدام الفلاتر.|
+|![أرقام نقاط شاشة فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***الإجراءات*** |
-|*التنعيم*. يحدد مسافة العتبة بين النقاط. يتم إخفاء نقاط المسار التي تبعد على الأقل هذه المسافة عن آخر نقطة مرئية. سيتم إخفاء جميع النقاط على المسار، التي تبعد عن بعضها البعض مسافة أقل من المسافة المحددة بواسطة المرشح. يتم حساب نقاط المسار من آخر نقطة مرئية. لاحظ أن العتبات العالية يمكن أن تبسط هندسة المسار بشكل مفرط.|
-|![أرقام تنعيم مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
-|*السرعة*. يتم عرض نقاط المسار التي تتوافق مع فاصل السرعة المحدد فقط على الرسم البياني والخريطة، ويتم إخفاء الأخرى.|
-|![أرقام سرعة مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
-|*الارتفاع*. يتم عرض نقاط المسار التي تتوافق مع فاصل الارتفاع المحدد فقط على الرسم البياني والخريطة، ويتم إخفاء الأخرى.|
-|![أرقام ارتفاع مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
+|*التنعيم*. يحدد مسافة العتبة بين النقاط. يتم إخفاء نقاط المسار التي تبعد هذه المسافة على الأقل عن آخر نقطة مرئية. سيتم إخفاء جميع النقاط على المسار، التي تبعد عن بعضها البعض مسافة أقل من المسافة المحددة بواسطة الفلتر. يتم حساب نقاط المسار من آخر نقطة مرئية. لاحظ أن العتبات العالية يمكن أن تبسط هندسة المسار بشكل مفرط.|
+|![أرقام تنعيم فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
+|*السرعة*. يتم عرض نقاط المسار التي تتوافق مع فاصل السرعة المحدد فقط على الرسم البياني والخريطة، ويتم إخفاء النقاط الأخرى.|
+|![أرقام سرعة فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
+|*الارتفاع*. يتم عرض نقاط المسار التي تتوافق مع فاصل الارتفاع المحدد فقط على الرسم البياني والخريطة، ويتم إخفاء النقاط الأخرى.|
+|![أرقام ارتفاع فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*دقة GPS*. يحدد القيمة القصوى المسموح بها لـ HDOP. يتم إخفاء النقاط ذات القيمة الأعلى.|
-|![أرقام دقة مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
-
+|![أرقام دقة فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
 
 ### الإحصائيات {#statistics}
 
-![رسم بياني لمرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![رسم بياني لفلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
-تعرض علامة تبويب الإحصائيات معلومات حول المسار **المعدّل**، أي المسار بدون القيم المصفاة. يتم عرضها في كتل الإحصائيات وبيانات الرسم البياني.
+تعرض علامة تبويب الإحصائيات معلومات حول المسار **المعدل**، أي المسار بدون القيم المفلترة. يتم عرضها في كتل الإحصائيات وبيانات الرسم البياني.
 
-- يعرض جزء *البيانات* إحصائيات مشابهة [لقائمة المرشح](#filter-menu).
+- يعرض جزء *البيانات* إحصائيات مماثلة [لقائمة الفلتر](#filter-menu).
 - يعرض جزء *الرسم البياني* ثلاثة أنواع من الرسوم البيانية حسب المعلمات: نظرة عامة، ارتفاع، وسرعة. هذه الوظيفة هي نسخة من [رسم بياني للمسار](#altitude--speed-graphs).
 
 ### الإجراءات {#actions}
 
-![إجراء مرشح GPS أندرويد](@site/static/img/personal/tracks/gps_filter_action_android.png)
+![إجراء فلتر GPS أندرويد](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
-تتوفر قائمة الإجراءات في الجزء السفلي من علامة التبويب **المرشح** أو **الإحصائيات**. يطبق OsmAnd جميع التغييرات التي تم إجراؤها على المسار دون تحديث الملف، ولكن يمكنك حفظ التغييرات يدويًا.
+تتوفر قائمة الإجراءات في أسفل علامة التبويب **فلتر** أو **إحصائيات**. يطبق OsmAnd جميع التغييرات التي تم إجراؤها على المسار دون تحديث الملف، ولكن يمكنك حفظ التغييرات يدويًا.
 
 - *<Translate android="true" ids="reset_to_original"/>*. يسمح لك بإعادة المعلمات إلى حالتها الأصلية.
 - *<Translate android="true" ids="save_as_copy"/>*. يسمح لك بحفظ المسار كمسار جديد.
 - *<Translate android="true" ids="save_changes_into_file"/>*. يسمح لك بإعادة كتابة المسار بالمعلمات الجديدة.
 
-
 ## مقالات ذات صلة {#related-articles}
 
 - [مسارات GPX](../../personal/tracks/manage-tracks.md)
 - [المسارات على الخريطة](./track-context-menu.md)
-- [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)
+- [الملاحة بالمسار](../../navigation/setup/gpx-navigation.md)
 - [تخطيط المسار](../../plan-route/index.md)
-- [مكون Trip Recording الإضافي](../../plugins/trip-recording.md)
-- [تحليل على الخريطة](../index.md#analyze-track-on-map)
+- [إضافة تسجيل الرحلة](../../plugins/trip-recording.md)
+- [التحليل على الخريطة](../index.md#analyze-track-on-map)
 
 > *آخر تحديث: نوفمبر 2024*

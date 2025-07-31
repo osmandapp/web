@@ -4,9 +4,9 @@ sidebar_position: 3
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# وسيلة إيضاح الخريطة {#map-legend}
+# مفتاح الخريطة {#map-legend}
 
-وسيلة إيضاح خريطة OsmAnd لأي أنماط
+مفتاح خريطة OsmAnd لأي أنماط
 
 ### [نمط خريطة OsmAnd](./osmand.md) {#osmand-map-style}
 <Translate android="yes" id="default_render_descr" />

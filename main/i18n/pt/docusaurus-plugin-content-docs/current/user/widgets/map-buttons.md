@@ -1,5 +1,5 @@
 ---
-source-hash: 27c365e2cc23607b9c9893a7baf13d93386a9e23a925c712b829dec94e7a4355
+source-hash: 974c5e9164a6ee5cc7bedfde90040453285674465b0de9b2b63e46efeb2cc4d4
 sidebar_position: 2
 title: Botões do Mapa
 ---
@@ -16,16 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Visão geral {#overview}
+## Visão Geral {#overview}
 
-Os botões do mapa, incluindo *Zoom*, *Pesquisar*, *Direções*, *Bússola*, *Minha Localização*, *Modo 3D* e *Menu*, são os principais controles para interagir com o mapa. Cada botão oferece funcionalidades específicas para aprimorar sua experiência de navegação e uso do mapa.
+Os botões do mapa, incluindo *Zoom*, *Pesquisar*, *Direções*, *Bússola*, *Minha Localização*, *Modo 3D* e *Menu*, são os controles primários para interagir com o mapa. Cada botão oferece funcionalidades específicas para aprimorar sua navegação e experiência de uso do mapa.
 
 
 ## Minha Localização e Zoom {#my-location-and-zoom}
 
 ![Menu da tela de configuração](@site/static/img/widgets/location_zoom_buttons.png)
 
-Use estes botões para controlar como o mapa é exibido na tela do seu dispositivo:
+Use esses botões para controlar como o mapa é exibido na tela do seu dispositivo:
 
 - **Minha Localização**. Mostra se o centro do mapa está sincronizado com a geolocalização atual do seu dispositivo.
 - **Zoom**. Permite ajustar o nível de zoom do mapa para fornecer mais ou menos detalhes.
@@ -34,13 +34,13 @@ Se você quiser mais informações sobre como usar esses botões, consulte o art
 
 ## Direções {#directions}
 
-![Botão de direções permite](@site/static/img/widgets/directions_button_allows.png)
+![O botão Direções permite](@site/static/img/widgets/directions_button_allows.png)
 
 O botão **Direções** é essencial para o planejamento de rotas e navegação:
 
 - [Construir uma rota](../navigation/index.md). Use este botão para criar uma rota.
-- [Iniciar navegação](../navigation/index.md). Inicie a navegação curva a curva.
-- No modo de navegação, o botão *Direções* não fica visível por padrão, mas aparece após um breve toque no mapa.
+- [Iniciar navegação](../navigation/index.md). Iniciar navegação curva a curva.
+- No modo de navegação, o botão *Direções* não é visível por padrão, mas aparece após um breve toque no mapa.
 
 Estados indicativos do botão *Direções*:
 
@@ -78,16 +78,16 @@ O botão Bússola indica a orientação do mapa na tela do seu dispositivo. Para
 ### Modos de Orientação do Mapa {#map-orientation-modes}
 
 - ![Bússola](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Rotacionado manualmente**. Neste modo, você pode girar manualmente o mapa com um [gesto de dois ponteiros (toque e rotação com dois dedos)](../map/interact-with-map.md#gestures) de acordo com sua preferência. A orientação do mapa não depende da direção da viagem ou da bússola do dispositivo, mas é determinada por você. O modo de rotação manual é definido por padrão.
+**Rotacionado manualmente**. Neste modo, você pode girar manualmente o mapa com um [gesto de dois dedos (toque e gire com dois dedos)](../map/interact-with-map.md#gestures) de acordo com sua preferência. A orientação do mapa não depende da direção da viagem ou da bússola do dispositivo, mas é determinada por você. O modo de rotação manual é definido por padrão.
 
 - ![Bússola](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
-**Direção do movimento**. Neste modo, o mapa é orientado de acordo com a direção do seu movimento conhecida a partir dos dados GPS. Por exemplo, se você virar à direita, o mapa também gira para que o lado direito da tela corresponda à direção do movimento. Para detalhes, vá para [Girar mapa por rumo](../map/interact-with-map#rotate-map-by-bearing).
+**Direção do movimento**. Neste modo, o mapa é orientado de acordo com a direção do seu movimento conhecida a partir dos dados do GPS. Por exemplo, se você virar para a direita, o mapa também gira para que o lado direito da tela corresponda à direção do movimento. Para detalhes, vá para [Girar mapa por rumo](../map/interact-with-map#rotate-map-by-bearing).
 
 - ![Bússola](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
 **Direção da bússola**. O ícone no botão aponta para o Norte real, e o mapa se move de acordo com a orientação da bússola do seu dispositivo. Dessa forma, o norte do mapa corresponde ao norte real, e você pode ver a orientação do mapa em relação ao terreno circundante. Seu dispositivo deve estar na posição mais horizontal possível. Se o seu dispositivo não tiver um sensor de bússola, a orientação do mapa permanece inalterada.
 
 - ![Bússola](@site/static/img/widgets/map_butt_north_up_ios.png)  
-**Norte para cima**. Neste modo, o mapa é fixado (com um bloqueio rígido) na direção Norte, que é a borda superior do seu dispositivo. Independentemente da direção em que o dispositivo está se movendo, o mapa permanece estático, e você pode ver sua posição em relação ao seu entorno. O mapa não possui rotação automática ou manual.
+**Norte para cima**. Neste modo, o mapa é fixado (com um bloqueio rígido) na direção Norte, que é a borda superior do seu dispositivo. Independentemente da direção em que o dispositivo está se movendo, o mapa permanece estático, e você pode ver sua posição em relação ao seu entorno. O mapa não tem rotação automática ou manual.
 
 ### Comportamento de Toque da Bússola {#compass-tapping-behavior}
 
@@ -97,7 +97,7 @@ O botão da bússola oferece várias ações para controlar a orientação do ma
 
 - **Toque duplo**. Para alternar rapidamente entre os modos de orientação do mapa, como seguir a direção do GPS ou girar com o dispositivo, *toque duas vezes* no [botão Bússola](../widgets/map-buttons.md#compass) (quando [visível](../widgets/map-buttons.md#display-options)).
 
-- **Toque longo**. Com um *toque longo* no [botão Bússola](../widgets/map-buttons.md#compass) (quando [visível](../widgets/map-buttons.md#display-options)), você pode abrir uma lista de todos os modos de orientação do mapa e selecionar o desejado. Esta lista também pode ser aberta nas [Configurações de perfil](../personal/profiles.md#appearance).
+- **Toque longo**. Com um *toque longo* no [botão Bússola](../widgets/map-buttons.md#compass) (quando [visível](../widgets/map-buttons.md#display-options)), você pode abrir uma lista de todos os modos de orientação do mapa e selecionar o desejado. Esta lista também pode ser aberta nas [Configurações do perfil](../personal/profiles.md#appearance).
 
 
 ### Opções de Exibição {#display-options}
@@ -126,7 +126,7 @@ O ícone da bússola no botão sempre aponta para o Norte. Você pode selecionar
 
 - **Sempre visível**. O botão não desaparece da tela.
 - **Sempre oculto**. Neste caso, você não pode alterar rapidamente a orientação do mapa, mas o botão não ocupará espaço na tela.
-- **Visível se o mapa for girado**. O botão não fica visível enquanto a bússola aponta para o Norte na borda superior do seu dispositivo.  
+- **Visível se o mapa for girado**. O botão não é visível enquanto a bússola aponta para o Norte na borda superior do seu dispositivo.
 
 
 ## Modo 3D {#3d-mode}
@@ -135,7 +135,7 @@ O ícone da bússola no botão sempre aponta para o Norte. Você pode selecionar
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*
 
 ![Modo 3D](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 
@@ -143,21 +143,21 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
+Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*
 
 ![Modo 3D](@site/static/img/widgets/map_butt_3D_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-- *<Translate android="true" ids="shared_string_hidden"/>*. Se este modo for selecionado para um botão, você precisará usar um gesto para alterar a visualização do mapa. Toque no mapa com dois dedos e mova-os para cima e para baixo para ajustar a inclinação do mapa.  
+- *<Translate android="true" ids="shared_string_hidden"/>*. Se este modo for selecionado para um botão, você precisará usar um gesto para alterar a visualização do mapa. Toque no mapa com dois dedos e mova-os para cima e para baixo para ajustar a inclinação do mapa.
 - *<Translate android="true" ids="shared_string_visible"/>*. O botão é sempre exibido na tela do mapa.
-- *<Translate android="true" ids="visible_in_3d_mode"/>*. O botão é exibido na tela do mapa quando você altera a visualização do mapa com um gesto de [*dois dedos e mover*](../map/interact-with-map.md#gestures).  
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. O botão é exibido na tela do mapa quando você altera a visualização do mapa com um gesto de [*dois dedos e mover*](../map/interact-with-map.md#gestures).
 
 ### Configurações Adicionais {#additional-settings}
 
-1. **Exibir o botão**. (*Para Android*) A configuração para o botão *Modo 3D* aparece na lista da tela de Configuração somente se o motor de renderização do mapa [Versão 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) estiver selecionado.
+1. **Exibir o botão**. (Para Android) A configuração para o botão *Modo 3D* aparece na lista da tela de Configuração apenas se o mecanismo de renderização do mapa [Versão 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) estiver selecionado.
 
 2. **Salva o ângulo**. Após mudar para o modo 3D e alterar o ângulo manualmente com um gesto, o ângulo é salvo e usado na próxima vez que o modo 3D for ativado. Esta opção é salva apenas para o perfil selecionado no momento.
 
@@ -165,12 +165,12 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 4. **Posição do botão**. A posição do botão no mapa na tela do aplicativo é salva separadamente para cada perfil.
 
-5. **Recomendação**. Recomenda-se baixar e ativar o [mapa de Relevo](../plugins/topography.md#hillshade-slope-and-altitude-layers) para a região selecionada.
+5. **Recomendação**. Recomenda-se baixar e habilitar o [mapa de Relevo](../plugins/topography.md#hillshade-slope-and-altitude-layers) para a região selecionada.
 
 
 ## Botões Personalizados {#custom-buttons}
 
-[Widget de ação rápida](./quick-action.md) é um botão configurável com vários tipos de ação que podem ser atribuídos. Também é possível ter vários [botões personalizados](./quick-action.md#custom-buttons).
+[O widget de ação rápida](./quick-action.md) é um botão configurável com vários tipos de ação que podem ser atribuídos. Também é possível ter vários [botões personalizados](./quick-action.md#custom-buttons).
 
 
 ## Aparência do Botão do Mapa {#map-button-appearance}

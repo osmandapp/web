@@ -1,7 +1,7 @@
 ---
 source-hash: e6ee24d43a2fa6f42228f49a1b9ee52256cc054f09d4a2d54de79b76e5bec373
 sidebar_position: 10
-title:  مقاطع فيديو تعليمية وأدلة
+title:  دروس ومقاطع فيديو تعليمية
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,12 +12,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+## مصادر فيديوهات OsmAnd {#osmand-video-resources}
 
-
-## موارد فيديو OsmAnd {#osmand-video-resources}
-
-لقد قمنا بتنظيم مجموعة واسعة من مقاطع الفيديو التعليمية والأدلة على [قناة OsmAnd الرسمية على YouTube](https://www.youtube.com/@OsmAndMapsNavigation/playlists)، المصممة خصيصًا لقاعدة مستخدمينا العالمية. يتم تنظيم قوائم التشغيل بشكل ملائم حسب اللغة، مما يسهل العثور على البرامج التعليمية ونظرات عامة على الميزات والمحتوى الذي أنشأه المستخدمون بلغتك المفضلة. سواء كنت ترغب في تعميق فهمك لـ OsmAnd، أو تعلم ميزات جديدة، أو اكتشاف كيفية استخدام المجتمع لـ OsmAnd، ستجد شيئًا مفيدًا. توفر الأقسام التالية روابط مباشرة لقوائم التشغيل المتاحة بلغات مختلفة.
-
+لقد قمنا بتجميع مجموعة واسعة من دروس الفيديو والأدلة على [قناة OsmAnd الرسمية على YouTube](https://www.youtube.com/@OsmAndMapsNavigation/playlists)، المصممة خصيصًا لقاعدة مستخدمينا العالمية. يتم تنظيم قوائم التشغيل بشكل ملائم حسب اللغة، مما يسهل العثور على البرامج التعليمية ونظرات عامة على الميزات والمحتوى الذي أنشأه المستخدمون بلغتك المفضلة. سواء كنت ترغب في تعميق فهمك لـ OsmAnd، أو تعلم ميزات جديدة، أو اكتشاف كيفية استخدام المجتمع لـ OsmAnd، ستجد شيئًا مفيدًا. توفر الأقسام التالية روابط مباشرة لقوائم التشغيل المتاحة بلغات مختلفة.
 
 ### قوائم التشغيل حسب اللغة {#playlists-by-language}
 
@@ -35,40 +32,39 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 نقوم بتحديث قوائم التشغيل هذه بشكل متكرر لضمان حصولك على أحدث المعلومات حول ميزات وأدوات OsmAnd.
 
-## البرامج التعليمية المميزة {#featured-tutorials}
+## دروس مميزة {#featured-tutorials}
 
-فيما يلي بعض الأمثلة المميزة من مجموعة مقاطع الفيديو الخاصة بنا. توفر هذه المقاطع نظرة متعمقة على ميزات OsmAnd المحددة عبر لغات مختلفة، مما يسهل على المستخدمين فهم التطبيق وتحسينه لتلبية احتياجاتهم.
+فيما يلي بعض الأمثلة المميزة من مجموعة مقاطع الفيديو الخاصة بنا. توفر هذه المقاطع نظرة متعمقة على ميزات OsmAnd محددة بلغات مختلفة، مما يسهل على المستخدمين فهم التطبيق وتحسينه لتلبية احتياجاتهم.
 
 ### الإنجليزية: معاينة الارتفاع لنظامي Android و iOS {#english-elevation-preview-for-android--ios}
 
-- **الفيديو**: _معاينة الارتفاع: OsmAnd لنظامي Android و iOS (الإصدارات 4.5)_
+- **الفيديو**: _معاينة الارتفاع: OsmAnd لنظامي Android و iOS (الإصدار 4.5)_
 - من [بارت أيزنبرغ](https://www.youtube.com/@barteisenberg)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/QXEnPR-oQSE" title="Previewing Elevation: OsmAnd for Android &amp; iOS (versions 4.5)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### الإنجليزية: برنامج تعليمي كامل {#english-full-tutorial}
 
-- **الفيديو**: _OsmAnd Trekking، السفر عبر المسارات غير المتصلة بالإنترنت 📱_
+- **الفيديو**: _OsmAnd Trekking، السفر بمسارات غير متصلة بالإنترنت 📱_
 - من [LoHike](https://www.youtube.com/@lohike4083)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/U1g0A5ZyVHQ" title="⛰️ Best Hiking App❗️OsmAnd Trekking, travel Offline Trails📱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
 ### الفرنسية: إنشاء مسارات GPX {#french-creating-gpx-tracks}
 
-- **الفيديو**: _برنامج Osmand التعليمي: كيفية إنشاء مسار GPX مباشرة باستخدام Osmand_
-- من [عالم واحد للاكتشاف](https://www.youtube.com/@oneworldtodiscover9962)
+- **الفيديو**: _برنامج تعليمي Osmand: كيفية إنشاء مسار GPX مباشرة باستخدام Osmand_
+- من [One World To Discover](https://www.youtube.com/@oneworldtodiscover9962)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/3YKlAX5ocH4?list=PL2sj0drrh65F41lmfqtPcWep5pJBkKmX_" title="Tutoriel Osmand : Comment créer directement une trace GPX avec Osmand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### الألمانية: نصائح للملاحة في المخيمات {#german-camper-navigation-tips}
+### الألمانية: نصائح للملاحة في المركبات الترفيهية {#german-camper-navigation-tips}
 
-- **الفيديو**: _تطبيق ملاحة الكرفانات - نصيحتي السرية_
+- **الفيديو**: _تطبيق الملاحة للمركبات الترفيهية - نصيحتي السرية_
 - من [Fan 4 Van](https://www.youtube.com/@fan4van)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/dCGD6NmcnMI?list=PL2sj0drrh65FEyB4KzntPa5bVKq6RVS7q" title="Wohnmobil Navigation App - Mein Geheimtipp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### الإيطالية: دليل السفر بالدراجة النارية {#italian-motorcycle-travel-guide}
+### الإيطالية: دليل السفر بالدراجات النارية {#italian-motorcycle-travel-guide}
 
 - **الفيديو**: _برنامج تعليمي: Osmand للمسافرين بالدراجات النارية وكل ما تحتاج لمعرفته للاستفادة القصوى منه!_
 - من [PARTIREper - Gionata Nencini](https://www.youtube.com/@partire_per)
@@ -78,14 +74,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### الإسبانية: قيادة على الطرق الوعرة بالدراجة النارية {#spanish-off-road-ride-on-the-motorcycle}
 
 - **الفيديو**: _TRK502X على منحدر الجحيم_
-- من [بيدرو على دراجة تريل](https://www.youtube.com/@pedroenmototrail)
+- من [Pedro on a Trail Bike](https://www.youtube.com/@pedroenmototrail)
 
 <iframe width="770" height="433" src="https://www.youtube.com/embed/1Q_JFDeMEZA?list=PL2sj0drrh65FNIJ7WS58CAgCnJOb0-rTf" title="THE TRK502X ON HELL&#39;S SLOPE/🤘✌️🫣 #benellitrk502x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
 ## تفاعل مع OsmAnd: شارك، اقترح، وتواصل {#engage-with-osmand-share-suggest-and-connect}
 
-إذا كان لديك اقتراحات للمحتوى أو ترغب في عرض الفيديو الخاص بك على قناتنا، فلا تتردد في التواصل معنا. نحن نبحث دائمًا عن مساهمات جديدة وعالية الجودة لتوسيع مكتبة فيديو OsmAnd الخاصة بنا.
+إذا كان لديك اقتراحات لمحتوى أو ترغب في عرض الفيديو الخاص بك على قناتنا، فلا تتردد في التواصل معنا. نحن نبحث دائمًا عن مساهمات جديدة وعالية الجودة لتوسيع مكتبة فيديوهات OsmAnd الخاصة بنا.
 
 - **تابع**: <LinksSocial/>
 

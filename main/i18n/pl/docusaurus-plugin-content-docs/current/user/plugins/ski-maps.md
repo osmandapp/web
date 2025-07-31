@@ -1,5 +1,5 @@
 ---
-source-hash: f14066ee1c93315ba000b7389de0d0c6a42230c90308779a1b3a10e9a16d1fc7
+source-hash: 75b343dc56914a3acab72cd3b0a8c476b5b8c888a2b3d0ebf1e06e1edbfdfd2f
 sidebar_position: 13
 title: Widok mapy narciarskiej
 ---
@@ -16,11 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Wtyczka Widok mapy narciarskiej OsmAnd pokazuje słynne i popularne stoki, oficjalnie zatwierdzone tereny narciarskie oraz mapy tras większości ośrodków narciarskich. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) mapy tras są źródłem danych dla map narciarskich OsmAnd. Połączone mapy wektorowe z mapami rastrowymi, mapa narciarska OsmAnd jest bardzo dokładna i będzie przydatna dla instruktorów, wspinaczy i entuzjastów sportów zimowych.
+Wtyczka Widok mapy narciarskiej OsmAnd pokazuje słynne i popularne stoki, oficjalnie zatwierdzone obszary narciarskie oraz mapy tras większości ośrodków narciarskich. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) mapy tras są źródłem danych dla map narciarskich OsmAnd. Połączenie map wektorowych z mapami rastrowymi sprawia, że mapa narciarska OsmAnd jest bardzo dokładna i będzie przydatna dla instruktorów, wspinaczy i entuzjastów sportów zimowych.
 
-Mapa narciarska OsmAnd jest częścią map wektorowych i nie wymaga dodatkowych pobrań. Jest domyślnie wyłączona. Mapa narciarska OsmAnd jest jednym ze [Stylów mapy](../map/vector-maps.md), który zapewnia dodatkowe funkcje poprzez podświetlanie niektórych obiektów i uczynienie innych mniej widocznymi.
+Mapa narciarska OsmAnd jest częścią map wektorowych i nie wymaga dodatkowych pobrań. Jest domyślnie wyłączona. Mapa narciarska OsmAnd jest jednym ze [Stylów mapy](../map/vector-maps.md), który zapewnia dodatkowe funkcje poprzez podświetlanie niektórych obiektów i zmniejszanie widoczności innych.
 
-Poniżej przedstawiono dwa profile: ten po lewej stronie jest do jazdy na nartach, a ten po prawej do jazdy samochodem. Profil narciarski podświetla szlaki, drogi powietrzne, zimowe kolory i wszystkie obiekty mapy przydatne do nawigacji po terenie narciarskim.
+Poniżej przedstawiono dwa profile: ten po lewej stronie jest przeznaczony do jazdy na nartach, a ten po prawej do jazdy samochodem. Profil narciarski podświetla trasy, drogi powietrzne, zimowe kolory i wszystkie obiekty mapy przydatne do nawigacji po obszarze narciarskim.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,11 +70,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 </Tabs>
 
-Styl mapy Zima i Narty podświetla szlaki, trasy narciarskie, trasy saneczkowe oraz informacje związane z zimą i narciarstwem. Aby wyświetlić styl na mapie, należy dokonać następujących ustawień:
+Styl mapy Zima i Narty podświetla trasy, trasy narciarskie, trasy saneczkowe oraz informacje związane z zimą i narciarstwem. Aby wyświetlić styl na mapie, należy dokonać następujących ustawień:
 
 1. Wybierz wymagany [profil](../personal/profiles.md).
 2. Otwórz [Konfiguruj mapę](../map/configure-map-menu.md).
-3. Przewiń w dół do Styl mapy/Typ mapy, otwórz go i zaznacz **Zima i Narty**.
+3. Przewiń w dół do Styl mapy/Typ mapy, otwórz i zaznacz **Zima i Narty**.
 
 :::tip konfiguracje
 Profil narciarski jest przeznaczony do użytku w połączeniu ze stylami Zima i Narty. Jednakże typ nawigacji dla każdego konkretnego profilu może być zmieniany i ustawiany indywidualnie, więc ostateczna konfiguracja profilu, stylu mapy i nawigacji całkowicie zależy od Twoich ustawień.
@@ -99,12 +99,12 @@ Profil narciarski jest przeznaczony do użytku w połączeniu ze stylami Zima i 
 
 </Tabs>
 
-[Mapa wektorowa](../map/vector-maps.md) ze stylem mapy [Zima i Narty](../map/vector-maps.md#winter-and-ski) może być uzupełniona o [Linie konturowe](../plugins/topography.md#show-contour-linesterrain) i [Cieniowanie wzgórz](../plugins/topography.md#hillshade-map). Poniżej przedstawiono dwa przykłady. Ścieżki na domyślnej mapie wektorowej są pokazane po lewej stronie, a ścieżki na mapie wektorowej połączonej z rastrową mapą *Linii konturowych* i *Cieniowania wzgórz* są pokazane po prawej stronie. W drugim przypadku mapa pokazuje więcej danych wysokościowych, aby pomóc w ocenie trudności, ryzyka i odległości.
+[Mapa wektorowa](../map/vector-maps.md) z dołączonym [stylem mapy Zima i Narty](../map/vector-maps.md#winter-and-ski) może być uzupełniona o [linie konturowe](../plugins/topography.md#show-contour-linesterrain) i [cieniowanie wzgórz](../plugins/topography.md#hillshade-map). Poniżej znajdują się dwa przykłady. Trasy na domyślnej mapie wektorowej są pokazane po lewej stronie, a trasy na mapie wektorowej połączonej z mapą rastrową *Linie konturowe* i *Cieniowanie wzgórz* są pokazane po prawej stronie. W drugim przypadku mapa pokazuje więcej danych wysokościowych, aby pomóc w oszacowaniu trudności, ryzyka i odległości.
 
 
 ### Wyłącz styl mapy narciarskiej {#disable-ski-map-style}
 
-Jeśli preferowane jest usunięcie szlaków i zimowych kolorów z mapy, lub sezon narciarski się skończył, wykonaj jedną z następujących czynności:
+Jeśli preferowane jest usunięcie tras i zimowych kolorów z mapy, lub sezon narciarski się skończył, wykonaj jedną z poniższych czynności:
 
 - Odznacz styl mapy [Zima i Narty](#set-winter-and-ski-map-style) dla wymaganego profilu.
 - Zmień [profil narciarski](../personal/profiles.md) na dowolny inny profil.
@@ -112,7 +112,7 @@ Jeśli preferowane jest usunięcie szlaków i zimowych kolorów z mapy, lub sezo
 
 
 :::info odinstaluj wtyczkę
-Wtyczka Przeglądarka map narciarskich jest osobną aplikacją, a wyłączenie jej wyświetlania nie usuwa jej. Jeśli chcesz ją odinstalować, przejdź do ustawień Androida, używając *Otwórz ustawienia* w menu wtyczki.
+Wtyczka Przeglądarka map narciarskich jest osobną aplikacją, a wyłączenie jej wyświetlania nie powoduje jej usunięcia. Jeśli chcesz ją odinstalować, przejdź do ustawień Androida, używając opcji *Otwórz ustawienia* w menu wtyczki.
 :::
 
 
@@ -124,7 +124,7 @@ Wtyczka Przeglądarka map narciarskich jest osobną aplikacją, a wyłączenie j
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Kontury głębokości morskiej w Androidzie](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![Morskie kontury głębokości w Androidzie](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
@@ -138,20 +138,20 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Style map Zima i Narty można włączyć w dowolnym profilu. Ale jest to najbardziej wartościowe w [profilu narciarskim](../personal/profiles.md), gdzie jest domyślnie ustawione. Profil narciarski jest bardzo wygodny do [nawigacji narciarskiej](../navigation/routing/ski-routing.md).
+Style map zimowych i narciarskich można włączyć w dowolnym profilu. Jednak najbardziej wartościowe są one w [profilu narciarskim](../personal/profiles.md), gdzie są domyślnie ustawione. Profil narciarski jest bardzo wygodny do [nawigacji narciarskiej](../navigation/routing/ski-routing.md).
 
 
 ## Styl mapy narciarskiej {#ski-map-style}
 
-Użyj [legendy mapy narciarskiej](../../user/map-legend/ski-map.md) jako odniesienia. Pomaga ona zidentyfikować typy tras na mapie, a także typy dróg powietrznych i inne cechy, które można odczytać z mapy.
+Skorzystaj z [legendy mapy narciarskiej](../../user/map-legend/ski-map.md) w celu uzyskania wszelkich informacji. Pomaga ona zidentyfikować typy tras na mapie, a także typy dróg powietrznych i inne cechy, które można odczytać z mapy.
 
-Czytając mapę, możesz dowiedzieć się o szczegółach, które są dla Ciebie ważne, takich jak trudność danej trasy, typ trasy, czy jest ona przygotowywana, i czy trasa jest oświetlona w nocy.
+Odczytując mapę, możesz dowiedzieć się o ważnych dla Ciebie szczegółach, takich jak trudność danej trasy, typ trasy, czy jest ona przygotowywana, i czy jest oświetlona w nocy.
 
-Opcje opisane tutaj są dostępne w [Nawigacji narciarskiej](../navigation/setup/route-navigation.md). **Nawigacja narciarska** ustawia indywidualne opcje trasy, które dotyczą tylko jazdy na nartach.
+Opisane tutaj opcje są dostępne w [Nawigacji narciarskiej](../navigation/setup/route-navigation.md). **Nawigacja narciarska** ustawia indywidualne opcje trasy, które dotyczą tylko jazdy na nartach.
 
 
 :::info styl renderowania
-Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który określa, które obiekty mają być wyświetlane na mapie i ich wygląd. Wszystkie style renderowania są opisane w pliku [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml). Zasady definiujące wewnętrzną strukturę pliku XML znajdują się w [dokumentacji renderowania](../../technical/osmand-file-formats/osmand-rendering-style.md).
+Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który określa, które obiekty mają być wyświetlane na mapie i ich wygląd. Wszystkie style renderowania są opisane w pliku [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml). Zasady definiujące wewnętrzną strukturę pliku XML można znaleźć w [dokumentacji renderowania](../../technical/osmand-file-formats/osmand-rendering-style.md).
 :::
 
 
@@ -160,36 +160,36 @@ Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który
 | Kolor | Opis |
 | --- | --- |
 | ![Trasa dla początkujących](@site/static/img/plugins/ski-maps/1c_green_1.png) | Zielony - Trasa dla początkujących |
-| ![Łatwe wzniesienia](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Niebieski - Łatwe wzniesienia |
+| ![Łatwe wzgórza](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Niebieski - Łatwe wzgórza |
 | ![Stoki średniozaawansowane](@site/static/img/plugins/ski-maps/3c_red_1.png) | Czerwony - Stoki średniozaawansowane |
-| ![Zaawansowany poziom trudności](@site/static/img/plugins/ski-maps/4c_black_1.png) | Szary - Stoki o zaawansowanym poziomie trudności |
-| ![Ekspert poziom trudności](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Żółty - Stoki o eksperckim poziomie trudności |
+| ![Trudność zaawansowana](@site/static/img/plugins/ski-maps/4c_black_1.png) | Szary - Stoki o zaawansowanej trudności |
+| ![Trudność ekspercka](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Żółty - Stoki o trudności eksperckiej |
 
 Trudność tras jest zazwyczaj oznaczana konkretnymi kolorami. Kolory mogą się różnić w zależności od kraju i ośrodka. Poniżej przedstawiono kilka praktycznych wskazówek.
 
 :::tip wskazówki
-Więcej szczegółowych wskazówek dotyczących każdego typu trudności trasy można znaleźć w [referencjach trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również stoki, przeszkody i zagrożenia.
+Bardziej szczegółowe wskazówki dotyczące każdego typu trudności trasy można znaleźć w [referencji trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również nachylenie, przeszkody i zagrożenia.
 :::
 
 
 ### Trasa według typów {#piste-by-types}
 
-Trasy różnią się typem. Typ reprezentuje różne cechy trasy, aby spełnić wymagania różnych aktywności zimowych: narciarstwa alpejskiego, klasycznego łyżwiarstwa, snowboardingu, jazdy na sankach, narciarstwa biegowego, skitouringu, narciarstwa na muldach, narciarstwa nocnego itp. Zrozumienie [typu trasy](https://wiki.openstreetmap.org/wiki/Key:piste:type) na mapie pomaga zbudować optymalną trasę nawigacyjną.
+Trasy różnią się typem. Typ reprezentuje różne cechy trasy, aby spełnić wymagania różnych aktywności zimowych: narciarstwo alpejskie, narciarstwo klasyczne, snowboarding, jazda na sankach, narciarstwo backcountry, skitouring, narciarstwo po muldach, narciarstwo nocne itp. Zrozumienie [typu trasy](https://wiki.openstreetmap.org/wiki/Key:piste:type) na mapie pomaga zbudować optymalną trasę nawigacyjną.
 
 - **Trasa zjazdowa/alpejska.**
-Używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) ma kierunek i trudność, i najczęściej jest otoczony granicami ośrodka narciarskiego. Gdy trasa zjazdowa jest wybrana do nawigacji narciarskiej, uwzględniany jest kierunek trasy. Jeśli punkty początkowy i docelowy są ustalone przeciwnie do kierunku trasy, nawigacja odbywa się wzdłuż najbliższej drogi powietrznej.
+Używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) ma kierunek i trudność, a najczęściej jest otoczony granicami ośrodka narciarskiego. Gdy trasa zjazdowa jest wybrana do nawigacji narciarskiej, kierunek trasy jest brany pod uwagę. Jeśli punkty początkowy i docelowy są ustawione przeciwnie do kierunku trasy, nawigacja odbywa się wzdłuż najbliższej drogi powietrznej.
 
 - **Trasa narciarstwa biegowego/backcountry.**
-Również używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) nie ma trudności, może mieć lub nie mieć kierunku, i najczęściej wykracza poza granice ośrodka narciarskiego. Podczas nawigacji wzdłuż tego typu tras, punkty początkowy i docelowy często mogą być zamienione.
+Również używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) nie ma trudności, może, ale nie musi mieć kierunku, i najczęściej wykracza poza granice ośrodka narciarskiego. Podczas nawigacji wzdłuż tego typu tras, punkty początkowy i docelowy często mogą być zamienione.
 
-- **Trasa skitouringu.**
-Często używana przez narciarzy do podejścia nordyckiego i zjazdu. Trudność trasy skitouringu jest często oznaczana odpowiednim kolorem. Nawigacja narciarska może zbudować trasę wzdłuż tego typu trasy, co pozwala na łączenie typów tras.
+- **Trasa skitouringowa.**
+Często używana przez narciarzy do podejścia nordyckiego i zjazdu. Trudność trasy skitouringowej jest często oznaczona odpowiednim kolorem. Nawigacja narciarska może zbudować trasę wzdłuż tego typu trasy, co pozwala na łączenie typów tras.
 
-- **Inna trasa narciarska.**
+- **Inne trasy narciarskie.**
 Typy tras, takie jak *Szlaki turystyczne* lub *Szlaki saneczkowe*, mogą być używane do profili narciarskich lub turystycznych.
 
 
-### Trasy przygotowane {#grooming-trails}
+### Trasy przygotowywane ratrakiem {#grooming-trails}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -197,7 +197,7 @@ Typy tras, takie jak *Szlaki turystyczne* lub *Szlaki saneczkowe*, mogą być u�
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
-![Włącz przygotowanie w Androidzie](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Przygotowanie wyświetlone w Androidzie](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
+![Włącz przygotowanie ratrakiem w Androidzie](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Przygotowanie ratrakiem wyświetlane w Androidzie](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
 
 </TabItem>
 
@@ -205,13 +205,14 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,ma
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_details,rendering_attr_pisteGrooming_name"/>*
 
-![Włącz przygotowanie w iOS](@site/static/img/plugins/ski-maps/ios_details_grooming.png) ![Przygotowanie wyświetlone w iOS](@site/static/img/plugins/ski-maps/ios_grooming_enabled.png)
+![Włącz przygotowanie ratrakiem w iOS](@site/static/img/plugins/ski-maps/ios_details_grooming.png) ![Przygotowanie ratrakiem wyświetlane w iOS](@site/static/img/plugins/ski-maps/ios_grooming_enabled.png)
 
 </TabItem>
 
 </Tabs>
 
-Aby sprawdzić na mapie, czy dana trasa jest przygotowana, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na liście **<Translate android="true" ids="rendering_category_details"/>** otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md). Specjalne maszyny przygotowują trasy, aby były odpowiednie do danej aktywności, takiej jak klasyczne łyżwiarstwo, łyżwiarstwo figurowe i inne. Ta sama trasa może być przygotowywana inaczej w różnych obszarach.
+Aby sprawdzić na mapie, czy dana trasa jest przygotowywana ratrakiem, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na liście **<Translate android="true" ids="rendering_category_details"/>** otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).
+Specjalne maszyny przygotowują trasy, aby były odpowiednie do danej aktywności, takiej jak jazda klasyczna, jazda na łyżwach i inne. Ta sama trasa może być różnie przygotowywana w różnych obszarach.
 
 ### Trasy narciarskie {#ski-slope-routes}
 
@@ -235,9 +236,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 </Tabs>
 
-Aby dowiedzieć się, które trasy poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** na liście **<Translate android="true" ids="rendering_category_routes"/>**, otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).
+Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** na liście **<Translate android="true" ids="rendering_category_routes"/>**, otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).
 
-Z włączonym profilem narciarskim, nawigacją narciarską i stylem mapy [Zima i Narty](../map/vector-maps.md#winter-and-ski), trasy [Stoków narciarskich](../map/vector-maps.md#routes) pokazują wszystkie typy tras, które nawigacja narciarska może wykorzystać do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są obrysowane kolorem fioletowym, głównie poza granicami ośrodka narciarskiego.
+Przy włączonym profilu narciarskim, nawigacji narciarskiej i [stylu mapy Zima i Narty](../map/vector-maps.md#winter-and-ski), trasy [Stoków narciarskich](../map/vector-maps.md#routes) pokazują wszystkie typy tras, które nawigacja narciarska może wykorzystać do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone kolorem fioletowym, głównie poza granicami ośrodka narciarskiego.
 
 
 ### Noc i oświetlenie {#night-and-lighting}
@@ -258,7 +259,7 @@ Z włączonym profilem narciarskim, nawigacją narciarską i stylem mapy [Zima i
 
 </Tabs>
 
-Styl **Zima i narty** może być używany z [trybem nocnym lub wschodu/zachodu słońca](../map/vector-maps.md#map-mode). Wygodny wybór dla tych, którzy preferują ciemne kolory lub przyciemnianie ekranu w nocy, a także dla tych, którzy uprawiają narciarstwo nocne. Wraz z trybem nocnym, mapy narciarskie OsmAnd mogą również pokazywać, które trasy mają oświetlenie, za pomocą opcji [Oświetlenie uliczne](../map/vector-maps.md#details).
+Styl **Zima i narty** może być używany z [trybem Nocnym lub Wschód/zachód słońca](../map/vector-maps.md#map-mode). Wygodny wybór dla tych, którzy preferują ciemne kolory lub przyciemnianie ekranu w nocy, a także dla tych, którzy uprawiają narciarstwo nocne. Wraz z trybem nocnym, mapy narciarskie OsmAnd mogą również pokazywać, które trasy mają oświetlenie, za pomocą opcji [Oświetlenie uliczne](../map/vector-maps.md#details).
 
 Obie opcje znajdują się w menu [Konfiguruj mapę](../map/configure-map-menu.md).
 
@@ -273,6 +274,6 @@ Obie opcje znajdują się w menu [Konfiguruj mapę](../map/configure-map-menu.md
 
 - [Interakcja z mapą](../../user/map/interact-with-map.md)
 - [Ustawienia globalne](../../user/personal/global-settings.md)
-- [Mapy wektorowe (Style map)](../../user/map/vector-maps.md)
+- [Mapy wektorowe (style map)](../../user/map/vector-maps.md)
 
 > *Ostatnia aktualizacja: grudzień 2024*

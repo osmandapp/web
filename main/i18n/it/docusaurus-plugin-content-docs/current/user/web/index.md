@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Pianificatore di percorsi web
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Visualizzatore Mappa Web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,21 +16,21 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Panoramica {#overview}
 
-In questa sezione trovi la descrizione del nostro [servizio Mappa web](https://osmand.net/map).
+In questa sezione trovi la descrizione del nostro [servizio Mappa Web](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-Questa sezione spiega come accedere e registrarsi su [www.osmand.net/map](https://osmand.net/map/) e mette in evidenza i vantaggi che gli utenti ricevono dopo la registrazione.
+Questa sezione spiega come accedere e registrarsi su [www.osmand.net/map](https://osmand.net/map/) ed evidenzia i vantaggi che gli utenti ricevono dopo la registrazione.
 
 ### [Mappa](./web-map.md) {#map}
 
-Questa sezione descrive in dettaglio dati aggiuntivi della mappa come Preferiti, Tracce personali e Livelli meteo.
+Questa sezione descrive in dettaglio i dati aggiuntivi della mappa come Preferiti, Tracce Personali e Livelli Meteo.
 
-### [Dati utente](./web-userdata.mdx) {#user-data}
+### [Dati Utente](../web/web-userdata.mdx) {#user-data}
 
 Tracce GPX e Preferiti dell'utente sulla mappa.
 
-### [Pianifica percorso](./planner.md) {#plan-route}
+### [Pianifica Percorso](./planner.md) {#plan-route}
 
 Questa sezione fornisce informazioni sulla pianificazione di percorsi o sulla creazione di navigazione utilizzando diversi profili.
 

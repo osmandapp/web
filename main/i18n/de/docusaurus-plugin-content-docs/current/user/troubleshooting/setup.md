@@ -1,5 +1,5 @@
 ---
-source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
+source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
 title:  Einrichtung
 ---
@@ -14,17 +14,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Erstmalige Einrichtung {#initial-setup}
+## Erste Einrichtung {#initial-setup}
 
-### Wie Sie Daten wiederherstellen {#how-to-recover-data}
+### Daten wiederherstellen {#how-to-recover-data}
 
-Um Datenverlust zu vermeiden, stellen Sie sicher, dass Ihre persönlichen Daten, Routen und Karten gesichert sind. OsmAnd bietet Optionen zum Exportieren Ihrer Daten in verschiedene Formate. Im Falle von Datenverlust oder Geräteänderung befolgen Sie [diese Schritte](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss), um Ihre Daten aus einem Backup wiederherzustellen.
+Um Datenverlust zu vermeiden, stellen Sie sicher, dass Ihre persönlichen Daten, Routen und Karten gesichert sind. OsmAnd bietet Optionen zum Exportieren Ihrer Daten in verschiedene Formate. Im Falle eines Datenverlusts oder Gerätewechsels befolgen Sie [diese Schritte](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss), um Ihre Daten aus einem Backup wiederherzustellen.
 
 
-### Wie Sie Favoriten und Tracks auf ein neues Gerät übertragen {#how-to-transfer-favorites-and-tracks-to-a-new-device}
+### Favoriten und Tracks auf ein neues Gerät übertragen {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
 - Die einfachste Methode ist der Export eines Profils mit den notwendigen Daten: *Menü → Einstellungen → Exportieren →* wählen Sie die Daten aus, die Sie exportieren möchten.
-- Alternativ können Sie alle Ihre Daten vom vorherigen Gerät sichern, indem Sie den Ordner kopieren, der sich in *Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner* befindet (Standardpfad: `Android/data/net.osmand.plus`). Fügen Sie dann den Inhalt dieses Ordners in den Datenspeicherordner auf Ihrem neuen Gerät ein.
+- Alternativ können Sie alle Ihre Daten vom vorherigen Gerät sichern, indem Sie den Ordner kopieren, der sich unter *Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner* befindet (Standardpfad: `Android/data/net.osmand.plus`). Fügen Sie dann den Inhalt dieses Ordners in den Datenspeicherordner auf Ihrem neuen Gerät ein.
 
 
 ## Dateien importieren {#import-files}
@@ -32,29 +32,29 @@ Um Datenverlust zu vermeiden, stellen Sie sicher, dass Ihre persönlichen Daten,
 ### Ich habe eine GPX-Datei, wie importiere ich sie in OsmAnd? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
 
 - **Android**
-    - Sie können [die Datei herunterladen und öffnen](../navigation/setup/gpx-navigation.md) mit einem Dateibrowser oder einem Cloud-Dienst wie Dropbox und OsmAnd als Zielanwendung auswählen.
-    - Alternativ legen Sie die Datei in den OsmAnd-Home-Ordner: `osmand/tracks/(optional_sub-folder)/your_file.gpx`.
+    - Sie können die Datei mit einem Dateibrowser oder einem Cloud-Dienst wie Dropbox [herunterladen und öffnen](../navigation/setup/gpx-navigation.md) und OsmAnd als Zielanwendung auswählen.
+    - Alternativ legen Sie die Datei im OsmAnd-Home-Ordner ab: `osmand/tracks/(optionaler_Unterordner)/Ihre_Datei.gpx`.
 
 - **iOS**
-    - Um [eine GPX-Datei in OsmAnd zu öffnen](../navigation/setup/gpx-navigation.md), laden Sie sie einfach herunter und wählen Sie OsmAnd als App zum Öffnen aus. Die Datei steht dann in der App zur Verfügung.
+    - Um [eine GPX-Datei in OsmAnd](../navigation/setup/gpx-navigation.md) zu öffnen, laden Sie sie einfach herunter und wählen Sie OsmAnd als App zum Öffnen aus. Die Datei steht dann zur Verwendung in der App zur Verfügung.
 
 ### Höhenlinien oder Schummerungen werden nicht angezeigt {#contour-lines-or-hillshades-do-not-show-up}
 
-Lesen Sie mehr über das [Topographie-Plugin](../plugins/topography.md).
+Lesen Sie mehr über das [Topografie-Plugin](../plugins/topography.md).
 
 
-## Wie Sie Systemschriften aktivieren (Android) {#how-to-enable-system-fonts-android}
+## Systemschriftarten aktivieren (Android) {#how-to-enable-system-fonts-android}
 
-Ab Android Version 4.9 integriert OsmAnd die Systemschrift Ihres Geräts in die Anwendungsoberfläche, optimiert so das Design und vermeidet die Verwendung gemischter Schriften. Die Systemschrift wird automatisch auf alle UI-Elemente angewendet.
+Ab Android-Version 4.9 integriert OsmAnd die Systemschriftart Ihres Geräts in die Anwendungsoberfläche und optimiert so das Design durch die Vermeidung gemischter Schriftarten. Die Systemschriftart wird automatisch auf alle UI-Elemente angewendet.
 
-- OsmAnd verwendet die Standard-Systemschrift Ihres Geräts in allen Elementen der Benutzeroberfläche.
-- Die Umstellung auf die Systemschrift erfolgt automatisch. Sie müssen in der Anwendung keine Einstellungen für diese Funktion konfigurieren.
-- Diese Funktion beeinflusst nicht die auf der Karte angezeigten Schriften.
+- OsmAnd verwendet die Standardsystemschriftart Ihres Geräts in allen Benutzeroberflächenelementen.
+- Die Umstellung auf die Systemschriftart erfolgt automatisch. Sie müssen keine Einstellungen in der Anwendung für diese Funktion konfigurieren.
+- Diese Funktion hat keine Auswirkungen auf die auf der Karte angezeigten Schriftarten.
 
 
 ## OsmAnd 4.4 (iOS) {#osmand-44-ios}
 
-OsmAnd 4.4 für iOS-Geräte ist nicht für iOS-Versionen älter als iOS 15 verfügbar.
+OsmAnd 4.4 für iOS-Geräte ist für iOS-Versionen älter als iOS 15 nicht verfügbar.
 
 Das bedeutet, dass Sie zum Installieren von OsmAnd 4.4 Ihr Betriebssystem auf mindestens iOS 15 oder neuer aktualisieren müssen.
 
@@ -131,6 +131,6 @@ errors (e.g. if the SD card is too full).
 
 Kartenpakete können in zwei Formaten gespeichert werden: [SQLite und Metainfo](https://osmand.net/docs/user/map/raster-maps). Nachdem Sie Ihr Kartenpaket erstellt haben, befolgen Sie diese Schritte, um es nach OsmAnd zu verschieben:
 
-- **Für Android**. Greifen Sie auf den Speicher Ihres Geräts zu und kopieren Sie die Datei(en) von Ihrem PC in den Ordner `BASE_OSMAND_STORAGE/tiles_`. Alternativ können Sie die Datei von Ihrer E-Mail, Cloud oder Messenger herunterladen und mit der OsmAnd-App öffnen. Das Kartenpaket wird automatisch zu Ihrer Online-Kartenliste hinzugefügt.
+- **Für Android**. Greifen Sie auf den Speicher Ihres Geräts zu und kopieren Sie die Datei(en) von Ihrem PC in den Ordner `BASE_OSMAND_STORAGE/tiles_`. Alternativ können Sie die Datei von Ihrer E-Mail, Cloud oder einem Messenger herunterladen und mit der OsmAnd-App öffnen. Das Kartenpaket wird automatisch zu Ihrer Online-Kartenliste hinzugefügt.
 
 - **Für iOS**. Laden Sie die Datei von iTunes oder einem Messenger herunter und öffnen Sie sie dann mit der OsmAnd-App. Das Kartenpaket wird automatisch zu Ihrer Online-Kartenliste hinzugefügt.

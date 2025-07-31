@@ -1,5 +1,5 @@
 ---
-source-hash: 4555734ace3e7132cbe343a64b51b8a14b9f7d50262e566f5b87185e156e7f36
+source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
 sidebar_position: 5
 title: Toplu Taşıma Yönlendirmesi
 ---
@@ -44,7 +44,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 ## Nasıl Kullanılır {#how-to-use}
 
-Şehir içinde toplu taşıma ile navigasyona başlamak için harita ekranındaki [navigasyon düğmesini](../../widgets/map-buttons.md#directions) kullanın veya *Ana Menü*'den navigasyon seçeneğini seçin.  
+Şehir içinde toplu taşıma ile navigasyona başlamak için, harita ekranındaki [navigasyon düğmesini](../../widgets/map-buttons.md#directions) kullanın veya *Ana Menü*'den navigasyon seçeneğini belirleyin.  
 
 **1.** *Toplu taşıma navigasyon profilini*, başlangıç ve varış noktalarını seçmeniz gerekir.  
 
@@ -64,7 +64,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 </Tabs>
 
-**2.** OsmAnd, yürüme süreleri ve toplu taşıma rotaları ile rota seçenekleri sunar: süre, mesafe, aktarma ve toplu taşıma rotaları. Gerekli seçeneği belirlemek için navigasyon ekranında kaydırmanız gerekir.  
+**2.** OsmAnd, yürüme süreleri ve toplu taşıma rotaları ile rota seçenekleri sunar; bu rotalarda süre, mesafe, aktarma ve toplu taşıma rotaları hakkında bilgiler bulunur. Gerekli seçeneği belirlemek için navigasyon ekranını kaydırmanız gerekir.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -82,7 +82,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 
 </Tabs>
 
-**3.** *Haritada göster* düğmesini kullanarak tüm olası rota önerilerini haritada görüntüleyebilirsiniz. Bir sonraki rota seçeneğini görüntülemek için ekranlar arasında kaydırın.
+**3.** *Haritada göster* düğmesini kullanarak tüm olası rota önerilerini harita üzerinde görüntüleyebilirsiniz. Bir sonraki rota seçeneğini görüntülemek için ekranlar arasında kaydırın.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -101,7 +101,7 @@ Toplu taşıma yönlendirmesi test aşamasındadır. Şimdilik, tam navigasyon i
 </Tabs>
 
 
-**4.** Seçilen rotanın tüm durakları ve aktarmaları ile açıklamasını açmak için "Detaylar" düğmesine dokunun.  
+**4.** Seçilen rotanın tüm durakları ve aktarmalarıyla birlikte bir açıklamasını açmak için "Detaylar" düğmesine dokunun.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -126,6 +126,6 @@ OsmAnd, OsmAnd Toplu Taşıma navigasyon algoritması için Toplu Taşıma Sür�
 
 - Toplu taşımanızı [buradan](http://tools.geofabrik.de/osmi/) kontrol edebilirsiniz.
 - Toplu taşıma rotalarını oluşturma veya ayarlama kılavuzu [blogumuzda](https://osmand.net/blog/guideline-pt) mevcuttur.
-- [2019: OpenStreetMap ile OsmAnd Kullanarak Toplu Taşıma Navigasyonu](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap) sunumu.
+- [2019: OsmAnd ile OpenStreetMap kullanarak Toplu Taşıma Navigasyonu](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap) sunumu.
 
 > *Son güncelleme: Haziran 2024.*

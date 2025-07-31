@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Planejador de Rotas Web
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Visualizador de Mapa Web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ Esta seção explica como fazer login e se registrar em [www.osmand.net/map](htt
 
 Esta seção detalha dados adicionais do mapa, como Favoritos, Trilhas Pessoais e Camadas Climáticas.
 
-### [Dados do Usuário](./web-userdata.mdx) {#user-data}
+### [Dados do Usuário](../web/web-userdata.mdx) {#user-data}
 
 Trilhas GPX e Favoritos do usuário no mapa.
 

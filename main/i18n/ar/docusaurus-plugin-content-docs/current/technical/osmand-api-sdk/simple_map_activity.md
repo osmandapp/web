@@ -5,7 +5,7 @@ sidebar_position: 2
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # نشاط الخريطة البسيط {#simple-map-activity}
-لا توجد سوى الخريطة ومفتاح لتقديم OpenGL
+لا توجد سوى خريطة ومفتاح لتقديم OpenGL
 
   ```
 public class SimpleMapActivity extends AppCompatActivity {

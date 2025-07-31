@@ -1,7 +1,7 @@
 ---
-source-hash: ae22b6cd7849daf3b25f0a644bcdf63cfd6f3e48185e0d277a59873ba978a352
+source-hash: 5614ff96c05b150dc149ccfc7296cdeb953b69993517dcf326e81979e07d4a0f
 sidebar_position: 1
-title:  Preparazione del percorso
+title: Preparazione del percorso
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,19 +17,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-La funzione **Preparazione del percorso** in OsmAnd fornisce una guida passo-passo per vari [tipi di percorso](./../routing/osmand-routing.md#routing-types), tra cui [guida](./../routing/car-based-routing.md), [camminata](./../routing/pedestrian-routing.md), ciclismo, [equitazione](./../routing/horse-routing.md) e [sci](./../routing/ski-routing.md). Gli utenti possono personalizzare le impostazioni di navigazione, aggiungere destinazioni e ottimizzare i percorsi per l'efficienza.
+La funzione **Preparazione del percorso** in OsmAnd fornisce una guida di navigazione passo-passo per vari [tipi di percorso](./../routing/osmand-routing.md#routing-types), inclusi [guida](./../routing/car-based-routing.md), [camminata](./../routing/pedestrian-routing.md), ciclismo, [equitazione](./../routing/horse-routing.md) e [sci](./../routing/ski-routing.md). Gli utenti possono personalizzare le impostazioni di navigazione, aggiungere destinazioni e ottimizzare i percorsi per l'efficienza.
 
 :::tip
 
-- La **navigazione offline** è abilitata per impostazione predefinita. Tuttavia, puoi anche utilizzare [motori di routing online](./../routing/online-routing.md).
+- La **navigazione offline** è abilitata per impostazione predefinita. Tuttavia, è possibile utilizzare anche [motori di routing online](./../routing/online-routing.md).
 
-- **OsmAnd richiede l'autorizzazione** per accedere alla [posizione precisa](../../start-with/first-steps.md#permission-to-access-the-location) per una navigazione accurata. Abilitala nelle impostazioni del dispositivo, se necessario.
+- **OsmAnd richiede l'autorizzazione** per accedere alla [posizione precisa](../../start-with/first-steps.md#permission-to-access-the-location) per una navigazione accurata. Abilitare questa opzione nelle impostazioni del dispositivo, se necessario.
 
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Schermata di navigazione Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png) ![Schermata di navigazione Android 3](@site/static/img/navigation/route/navigation_by_route_andr_3.png)
 
@@ -58,19 +58,19 @@ Prima di utilizzare la navigazione offline, assicurati che le [mappe richieste s
 
 - Configura l'[aspetto della linea del percorso](../guidance/map-during-navigation#route-line-appearance) (*opzionale*, disponibile per gli utenti Pro ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
 
-- Configura i [comandi vocali](../guidance/voice-navigation.md).
+- Configura i [messaggi vocali](../guidance/voice-navigation.md).
 
 **Passaggio 3: Imposta le destinazioni.**
 
-1. Apri il [*Menu di navigazione*](#navigation-menu):
+1. Apri il [*menu di navigazione*](#navigation-menu):
 
     - Specifica il [punto di destinazione](#set-target-point).
-    - Attendi che il percorso venga calcolato. Successivamente, potrai ottenere ulteriori informazioni sul tuo percorso nella *[sezione Dettagli](./route-details.md#overview)*.
-    - Puoi passare da un [tipo di percorso](./../routing/osmand-routing.md#routing-types) (profili) all'altro per ottenere il risultato migliore.
+    - Attendi che il percorso sia calcolato. Dopodiché, potrai ottenere informazioni aggiuntive sul tuo percorso nella sezione *[Dettagli](./route-details.md#overview)*.
+    - Puoi passare tra diversi [tipi di routing](./../routing/osmand-routing.md#routing-types) (profili) per ottenere il miglior risultato.
     - Aggiungi [destinazioni intermedie](#intermediate-destinations) (opzionale).
-    - Puoi anche cambiare il punto di partenza dalla [posizione attuale](../../map/interact-with-map#my-location-and-zoom) a quella richiesta.
+    - Puoi anche cambiare il punto di partenza dalla [posizione corrente](../../map/interact-with-map#my-location-and-zoom) a quella richiesta.
 
-2. Ulteriori [*Impostazioni di navigazione*](#settings) possono essere utilizzate a seconda dei tuoi scopi (puoi configurare quali strade evitare o preferire, risparmiare carburante o scegliere il percorso più veloce, ecc.).
+2. Ulteriori [*impostazioni di navigazione*](#settings) possono essere utilizzate a seconda dei tuoi scopi (puoi configurare quali strade evitare o preferire, risparmiare carburante o scegliere il percorso più veloce, ecc.).
 
 3. [Avvia](#start--stop-navigation) la navigazione o prima [simula la navigazione](#simulated-navigation) (con questa funzione puoi testare il tuo percorso prima di percorrerlo effettivamente).
 
@@ -88,9 +88,9 @@ Prima di utilizzare la navigazione offline, assicurati che le [mappe richieste s
 
 Ci sono 3 modi per raggiungere il menu di navigazione:
 
-- Il [*pulsante Navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.  
-- *Direzione da/a* in un [*menu contestuale della mappa*](../../map/map-context-menu.md#directions-to--from).  
-- Sezione Navigazione nel [*Menu principale*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- Il [*pulsante di navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.
+- *Direzione da/a* in un [*menu contestuale della mappa*](../../map/map-context-menu.md#directions-to--from).
+- Sezione Navigazione nel [*Menu principale*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -102,32 +102,31 @@ Ci sono 3 modi per raggiungere il menu di navigazione:
 
 <TabItem value="ios" label="iOS">
 
-![Menu di navigazione iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)  
+![Menu di navigazione iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Imposta la posizione di partenza (predefinito: [*La mia posizione attuale*](../../map/interact-with-map.md#my-location-and-zoom)).
-- **<Translate android="true" ids="add_destination_point"/>** - Utilizza per [impostare il tuo punto di destinazione](#set-target-point).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Imposta la posizione di partenza (predefinita: [*La mia posizione attuale*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="add_destination_point"/>** - Utilizza per [impostare il punto di destinazione](#set-target-point).
 - **Aggiungi** &nbsp;&#43; - Inserisci [punti intermedi](../../widgets/nav-widgets.md#distance-to-intermediate) lungo il percorso.
 - **Scambia** &nbsp;&#8595;&#8593; - Inverti i punti di *Partenza* e *Arrivo*.
-- **Pulsante audio** - Disattiva i [comandi vocali](../guidance/voice-navigation.md).
+- **Pulsante audio** - Disattiva i [messaggi vocali](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Regola](#settings) le preferenze del percorso e le restrizioni stradali.
 
-Imposta la tua destinazione nel *Menu di navigazione* utilizzando:
+Imposta la tua destinazione nel *menu Navigazione* usando:
 
 - Punti preferiti speciali [Casa / Lavoro](#use-home-or-work-points).
 - Percorso precedente o [Cronologia](../../personal/global-settings.md#history).
 - Il pulsante **Annulla** riporta alla schermata principale.
 - Il [pulsante Avvia](#start--stop-navigation) avvia la navigazione dopo che il calcolo del percorso è terminato.
-  
-### Seleziona punto di partenza {#select-starting-point}
 
-Per quanto riguarda il punto di partenza, puoi scegliere la tua posizione attuale, la posizione di un [punto preferito](../../map/point-layers-on-map.md#favorites), selezionare un punto sulla mappa o utilizzare la [Ricerca](../../search/index.md). Puoi anche impostare un punto di partenza nel [menu contestuale della mappa](../../map/map-context-menu.md) selezionando la funzione [Indicazioni da](../../map/map-context-menu.md#directions-to--from).  
+### Seleziona il punto di partenza {#select-starting-point}
 
+Per quanto riguarda il punto di partenza, puoi scegliere la tua posizione attuale, la posizione di un [punto preferito](../../map/point-layers-on-map.md#favorites), selezionare un punto sulla mappa o utilizzare la [Ricerca](../../search/index.md). Puoi anche impostare un punto di partenza nel [menu contestuale della mappa](../../map/map-context-menu.md) selezionando la funzione [Indicazioni da](../../map/map-context-menu.md#directions-to--from).
 
-### Imposta punto di destinazione {#set-target-point}
+### Imposta il punto di destinazione {#set-target-point}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -144,13 +143,13 @@ Per quanto riguarda il punto di partenza, puoi scegliere la tua posizione attual
 
 </Tabs>
 
-La cosa più importante per iniziare la navigazione è determinare la tua destinazione. Il punto di destinazione può essere trovato utilizzando una funzione di [*Ricerca*](../../search/index.md#overview), o semplicemente su una mappa. Puoi anche impostare il punto di destinazione nel [*Menu di navigazione*](#navigation-menu):  
+La cosa più importante per avviare la navigazione è determinare la tua destinazione. Il punto di destinazione può essere trovato utilizzando una funzione di [*Ricerca*](../../search/index.md#overview), o semplicemente su una mappa. Puoi anche impostare il punto di destinazione nel [*menu di navigazione*](#navigation-menu):
 
-- **<Translate android="true" ids="search_button"/>** - Apre [il menu di ricerca](../../search/index.md).
-- **<Translate android="true" ids="shared_string_address"/>** - Apre [il menu di ricerca indirizzo](../../search/search-address.md).
+- **<Translate android="true" ids="search_button"/>** - Apre il [menu di ricerca](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Apre il [menu di ricerca indirizzi](../../search/search-address.md).
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Apre la mappa per scegliere un punto di destinazione toccando sulla mappa.
-- **<Translate android="true" ids="shared_string_favorites"/>** - Permette di utilizzare [Preferiti](../../personal/favorites.md) come destinazione.
-- **<Translate android="true" ids="shared_string_markers"/>** - Permette di scegliere uno dei [Segnalibri della mappa](../../personal/markers.md) come punto di destinazione.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Permette di usare i [Preferiti](../../personal/favorites.md) come destinazione.
+- **<Translate android="true" ids="shared_string_markers"/>** - Permette di scegliere uno dei [Segnaposto della mappa](../../personal/markers.md) come punto di destinazione.
 - **Scambia punto di partenza e destinazione** &nbsp;&#8595;&#8593; - Permette di scambiare i punti di *Partenza* e *Arrivo*.
 
 
@@ -172,14 +171,14 @@ La cosa più importante per iniziare la navigazione è determinare la tua destin
 
 </Tabs>
 
-- **&nbsp;&#x1F589;** - permette di aprire l'elenco dei punti di destinazione per apportare modifiche.
+- **&nbsp;&#x1F589;** - consente di aprire l'elenco dei punti di destinazione per apportare modifiche.
 - **&nbsp;&#8592;** - torna alla schermata del menu di navigazione.
-- **&nbsp;&#10005;** - permette di eliminare un punto di destinazione dall'elenco dei punti.
-- **&nbsp;&#61;** - permette di cambiare l'ordine dei punti nell'elenco dei punti.
+- **&nbsp;&#10005;** - consente di eliminare il punto di destinazione dall'elenco dei punti.
+- **&nbsp;&#61;** - consente di modificare l'ordine dei punti nell'elenco dei punti.
 - *&nbsp;&#43; Aggiungi* - apre il menu contestuale *Aggiungi intermedio*.
-- *&nbsp;&#9776; Cancella tutto* - permette di cancellare tutti i punti intermedi.
+- *&nbsp;&#9776; Cancella tutto* - consente di cancellare tutti i punti intermedi.
 
-Se scegli **Ordina** (*Android*) o **Opzioni** (*iOS*) nell'elenco delle destinazioni, raggiungerai opzioni speciali per regolare l'ordine di navigazione verso i punti intermedi.
+Se scegli **Ordina** (*Android*) o **Opzioni** (*iOS*) nell'elenco delle destinazioni, raggiungerai opzioni speciali per regolare l'ordine di visita dei punti intermedi.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -197,9 +196,9 @@ Se scegli **Ordina** (*Android*) o **Opzioni** (*iOS*) nell'elenco delle destina
 
 </Tabs>
 
-In questo menu puoi trovare opzioni aggiuntive per gestire i punti di destinazione:
+In questo menu puoi trovare opzioni aggiuntive per la gestione dei punti di destinazione:
 
-- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd offrirà il percorso più breve tra tutte le tue destinazioni, tuttavia, l'ordine della visita può essere modificato. Il punto di partenza e la destinazione finale non verranno modificati.
+- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd offrirà il percorso più breve tra tutte le tue destinazioni, tuttavia, l'ordine di visita può essere modificato. Il punto di partenza e la destinazione finale non verranno modificati.
 
 - **<Translate android="true" ids="switch_start_finish"/>** - Il punto di partenza e la destinazione finale verranno scambiati.
 
@@ -209,7 +208,7 @@ In questo menu puoi trovare opzioni aggiuntive per gestire i punti di destinazio
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Tutte le destinazioni intermedie verranno rimosse dalla mappa.
 
-### Usa punti Casa o Lavoro {#use-home-or-work-points}
+### Usa i punti Casa o Lavoro {#use-home-or-work-points}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -227,28 +226,27 @@ In questo menu puoi trovare opzioni aggiuntive per gestire i punti di destinazio
 
 </Tabs>
 
-Le schede **Casa** e **Lavoro** (o [Punti speciali](../../personal/favorites.md#special-favorites-personal) per i Preferiti) possono essere utilizzate per impostare rapidamente i punti di destinazione nel menu di navigazione. Se non hai inserito gli indirizzi dei Preferiti speciali, queste celle rimarranno vuote. Se tocchi questo campo, ti verrà chiesto di creare questi POI.  
-
+Le schede **Casa** e **Lavoro** (o [Punti speciali](../../personal/favorites.md#special-favorites-personal) per i Preferiti) possono essere utilizzate per impostare rapidamente i punti di destinazione nel menu di navigazione. Se non hai inserito gli indirizzi dei Preferiti speciali, queste celle rimarranno vuote. Se tocchi questo campo, ti verrà chiesto di creare questi POI.
 
 ### Cronologia dei percorsi precedenti {#history-of-previous-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Percorso precedente Android](@site/static/img/navigation/route/previous_andr.png)  
+![Percorso precedente Android](@site/static/img/navigation/route/previous_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Percorso precedente iOS](@site/static/img/navigation/route/previous_ios.png)  
+![Percorso precedente iOS](@site/static/img/navigation/route/previous_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Se la registrazione della [Cronologia di navigazione](../../personal/global-settings.md#history) è abilitata, puoi utilizzare i percorsi o le destinazioni precedenti dall'elenco della cronologia per la navigazione. Questa opzione può essere utile per un accesso rapido ai percorsi utilizzati frequentemente. Gli elementi nell'elenco della cronologia sono ordinati per utilizzo più recente, a partire dal più nuovo.  
+Se la registrazione della [Cronologia di navigazione](../../personal/global-settings.md#history) è abilitata, è possibile utilizzare i percorsi o le destinazioni precedenti dall'elenco della cronologia per la navigazione. Questa opzione può essere utile per un accesso rapido ai percorsi usati frequentemente. Gli elementi nell'elenco della cronologia sono ordinati per utilizzo più recente, a partire dal più nuovo.
 
 :::note
 
@@ -258,13 +256,13 @@ Se la registrazione della [Cronologia di navigazione](../../personal/global-sett
 :::
 
 
-## Avvia / Interrompi navigazione {#start--stop-navigation}
+## Avvia / Ferma la navigazione {#start--stop-navigation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Schermata di navigazione avvio Android](@site/static/img/navigation/route/navigation_start_andr.png)  
+![Avvio schermata di navigazione Android](@site/static/img/navigation/route/navigation_start_andr.png)
 
 </TabItem>
 
@@ -276,33 +274,33 @@ Se la registrazione della [Cronologia di navigazione](../../personal/global-sett
 
 </Tabs>
 
-Una volta selezionati i punti di inizio e fine, l'app creerà un percorso tra di essi utilizzando un profilo attivo. [Il profilo dell'app](../../personal/profiles.md) e il set di [widget](../../widgets/index.md) cambieranno solo dopo aver toccato il pulsante *Avvia* della navigazione.
+Una volta selezionati i punti di inizio e fine, l'app creerà un percorso tra di essi utilizzando un profilo attivo. Il [profilo dell'app](../../personal/profiles.md) e il set di [widget](../../widgets/index.md) cambieranno solo una volta che si tocca il pulsante *Avvia* della navigazione.
 
 - **Tocca Avvia** per iniziare la navigazione.
 - [Metti in pausa](#pause--resume-navigation) la navigazione quando fai una pausa. (*Solo Android*)
-- **Interrompi** la navigazione selezionando **Interrompi** (*Android*) o **Annulla** (*iOS*).
+- **Ferma** la navigazione selezionando **Ferma** (*Android*) o **Annulla** (*iOS*).
 
 :::note Dettagli del percorso
-Ulteriori informazioni sul percorso creato, come altitudine, indicazioni svolta per svolta, strumento di analisi e altri, possono essere trovate nella sezione [**Dettagli**](../setup/route-details.md).
+Informazioni aggiuntive sul percorso creato, come altitudine, istruzioni passo-passo, strumento di analisi e altro, possono essere trovate nella sezione [**Dettagli**](../setup/route-details.md).
 :::
 
 ### Ricalcolo del percorso {#route-recalculation}
 
-Il percorso può essere ricalcolato automaticamente in caso di deviazione da esso. È possibile modificare i parametri del ricalcolo nelle [Impostazioni di navigazione](../guidance/navigation-settings.md#recalculate-route). È inoltre possibile disabilitare la notifica sul ricalcolo del percorso nelle impostazioni dei [Comandi vocali](../guidance/voice-navigation.md#voice-settings).
+Il percorso può essere ricalcolato automaticamente in caso di deviazione da esso. È possibile modificare i parametri del ricalcolo nelle [Impostazioni di navigazione](../guidance/navigation-settings.md#recalculate-route). È inoltre possibile disabilitare la notifica sul ricalcolo del percorso nelle impostazioni dei [Messaggi vocali](../guidance/voice-navigation.md#voice-settings).
 
-### Metti in pausa / Riprendi navigazione {#pause--resume-navigation}
+### Metti in pausa / Riprendi la navigazione {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
-Se vuoi fermarti per una pausa e deviare dal percorso per un breve periodo, puoi utilizzare la funzione *Metti in pausa/Riprendi* navigazione per mettere in pausa i comandi vocali e interrompere il ricalcolo del percorso.  
-Questa opzione è disponibile nella versione Android dell'app nell'*[elenco Notifiche](../guidance/voice-navigation.md#text-notifications)* o dal *[menu Azioni rapide](../../widgets/quick-action.md)*.
+Se vuoi fermarti per una pausa e deviare dal percorso per un breve periodo, puoi utilizzare la funzione *Metti in pausa/Riprendi* la navigazione per mettere in pausa i messaggi vocali e interrompere il ricalcolo del percorso.
+Questa opzione è disponibile nella versione Android dell'app nell'*[Elenco notifiche](../guidance/voice-navigation.md#text-notifications)* o dal *[Menu azioni rapide](../../widgets/quick-action.md)*.
 
 ![Schermata di notifica Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
 Per riprendere la navigazione:
 
-- Utilizza il messaggio di OsmAnd nella barra delle notifiche.
-- Utilizza il *menu Azioni rapide* o la finestra di dialogo che appare quando tocchi il *[pulsante Navigazione](../../widgets/map-buttons.md#directions)* (vedi screenshot).
+- Usa il messaggio di OsmAnd nella barra delle notifiche.
+- Usa il *Menu azioni rapide* o la finestra di dialogo che appare quando tocchi il *[pulsante Navigazione](../../widgets/map-buttons.md#directions)* (vedi screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -314,23 +312,23 @@ Per riprendere la navigazione:
 
 <TabItem value="ios" label="iOS">
 
-![Riprendi navigazione ios](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
+![Riprendi navigazione iOS](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-Quando **tocchi il pulsante Navigazione** mentre sei sul tuo percorso, la navigazione **non si interrompe e i comandi vocali continuano a essere pronunciati**, anche se le opzioni proposte Riprendi o Avvia possono essere confuse.
+Quando **tocchi il pulsante Navigazione** mentre sei sul tuo percorso, la navigazione **non si ferma e i messaggi vocali continuano a essere riprodotti**, anche se le opzioni proposte Riprendi o Avvia potrebbero essere fuorvianti.
 :::
 
 
-### Consigli per il risparmio energetico {#power-saving-tips}
+### Suggerimenti per il risparmio energetico {#power-saving-tips}
 
-La navigazione utilizza il GPS e l'elaborazione in background, che possono scaricare la batteria. Per ottimizzare l'utilizzo dell'energia:
+La navigazione utilizza il GPS e l'elaborazione in background, il che può scaricare la batteria. Per ottimizzare l'utilizzo dell'energia:
 
-- **Spegni lo schermo** mentre ti affidi ai comandi vocali.  
-- Abilita [Controllo schermo](../guidance/voice-navigation.md#screen-control) (*Solo Android*) in *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
+- **Spegni lo schermo** affidandoti ai messaggi vocali.
+- Abilita il [Controllo schermo](../guidance/voice-navigation.md#screen-control) (*solo Android*) in *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
 
 
 ## Impostazioni {#settings}
@@ -342,12 +340,12 @@ La navigazione utilizza il GPS e l'elaborazione in background, che possono scari
 
 Per accedere alle impostazioni di navigazione, segui uno dei passaggi seguenti:
 
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.  
-- *Pulsante Navigazione → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.
+- *Pulsante Navigazione → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
 
 :::info
-Non ci sono impostazioni di navigazione nel profilo *Sfoglia mappa*.  
+Non ci sono impostazioni di navigazione nel profilo *Sfoglia mappa*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -360,26 +358,25 @@ Non ci sono impostazioni di navigazione nel profilo *Sfoglia mappa*.
 
 <TabItem value="ios" label="iOS">
 
-![Profili Impostazioni di navigazione iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+![Impostazioni di navigazione dei profili iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determina come vengono calcolati i percorsi. Ad esempio, il tuo profilo bicicletta ha un tipo di navigazione Ciclismo, che imposta le regole di routing. Puoi importare queste regole (come file routing.xml) in OsmAnd. Puoi leggere di più sul routing sulla nostra pagina [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;  
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determina come vengono calcolati i percorsi. Ad esempio, il tuo profilo bici ha un tipo di navigazione Ciclismo, che imposta le regole di routing. Puoi importare queste regole (come file routing.xml) in OsmAnd. Maggiori informazioni sul routing puoi leggere sulla nostra pagina [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;
 
 - &nbsp;**<Translate android="true" ids="route_parameters"/>** controlla quali parametri verranno utilizzati durante il routing (questo è il processo di selezione di un percorso per la navigazione).
 
 Si prega di leggere i parametri del percorso per il tipo di navigazione corrispondente.
 
-Come configurare il [tipo di routing](../routing/osmand-routing.md#routing-types) e i [parametri del percorso](../guidance/navigation-settings.md#route-parameters) puoi leggere nell'[articolo Impostazioni di navigazione](../guidance/navigation-settings.md) o negli articoli sui tipi specifici di routing nella [sezione Parametri del percorso](../routing/osmand-routing.md#routing-types).  
-
+Come configurare il [tipo di routing](../routing/osmand-routing.md#routing-types) e i [parametri del percorso](../guidance/navigation-settings.md#route-parameters) puoi leggere nell'[articolo sulle impostazioni di navigazione](../guidance/navigation-settings.md) o negli articoli sui tipi specifici di routing nella [sezione Parametri del percorso](../routing/osmand-routing.md#routing-types).
 
 ### Navigazione simulata {#simulated-navigation}
 
-Lo strumento **Navigazione simulata** ti consente di visualizzare in anteprima un percorso prima di viaggiare. Questo aiuta con la pianificazione, la familiarizzazione e il test del sistema di navigazione di OsmAnd.
+Lo strumento **Navigazione simulata** ti consente di visualizzare in anteprima un percorso prima di percorrerlo. Questo aiuta nella pianificazione, nella familiarizzazione e nel test del sistema di navigazione di OsmAnd.
 
-#### Avvia / Interrompi simulazione {#start--stop-simulation}
+#### Avvia / Ferma la simulazione {#start--stop-simulation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -391,17 +388,17 @@ Lo strumento **Navigazione simulata** ti consente di visualizzare in anteprima u
 
 <TabItem value="ios" label="iOS">
 
-![Simula navigazione ios](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
+![Simula navigazione iOS](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-Quando viene costruito un percorso di navigazione, puoi iniziare a simulare la navigazione utilizzando l'opzione **<Translate android="true" ids="simulate_navigation"/>**.  
+Quando viene costruito un percorso di navigazione, puoi iniziare a simulare la navigazione utilizzando l'opzione **<Translate android="true" ids="simulate_navigation"/>**.
 
 - Nel [menu Navigazione](#navigation-menu) vai su *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
 - Attiva l'interruttore per abilitare l'opzione.
-- Tocca il pulsante [Avvia](#start--stop-navigation) navigazione per avviare la simulazione.
+- Tocca il pulsante [Avvia](#start--stop-navigation) navigazione per iniziare la simulazione.
 - Per [Interrompere](#start--stop-navigation) la simulazione di navigazione, tocca **Interrompi** (*Android*) o **Annulla** (*iOS*).
 
 
@@ -411,7 +408,7 @@ Quando viene costruito un percorso di navigazione, puoi iniziare a simulare la n
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
+Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
 
 ![Simula navigazione Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
@@ -419,32 +416,32 @@ Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
+Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
 
-![Simula navigazione ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+![Simula navigazione iOS](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-- **<Translate android="true" ids="simulation_preview_mode_title"/>** - Aumenta la velocità della simulazione sui tratti rettilinei, rallentando agli incroci.
+- **<Translate android="true" ids="simulation_preview_mode_title"/>** - Accelera la simulazione su percorsi rettilinei, rallentando agli incroci.
 
 - **<Translate android="true" ids="simulation_constant_mode_title"/>** - Funziona a velocità fissa.
 - **<Translate android="true" ids="simulation_real_mode_title"/>**:
     - **Sui tratti rettilinei** della strada, la velocità sarà vicina alla velocità massima consentita.
     - **Agli incroci**, il simulatore ridurrà la velocità.
-    - **Penalità aggiuntive** verranno applicate ai semafori, ai segnali di stop e ad altri ostacoli simili.
+    - **Ulteriori penalità** verranno applicate a semafori, segnali di stop e altri ostacoli simili.
 
 
 ## Mappe mancanti o non sincronizzate {#maps-missing-or-not-synchronized}
 
-Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate e avere la stessa data di rilascio. Si prega di notare che in alcune situazioni il messaggio di mappe mancanti potrebbe essere nascosto nel menu di preparazione del percorso. Se trascini il menu di navigazione verso l'alto, vedrai i possibili motivi per cui il tuo percorso non è stato calcolato.
+Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate e avere la stessa data di rilascio. Si prega di notare che in alcune situazioni il messaggio di mappe mancanti potrebbe essere nascosto nel menu di preparazione del percorso. Se si trascina il menu di navigazione verso l'alto, si vedranno i possibili motivi per cui il percorso non è stato calcolato.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Messaggio nessuna mappa durante la costruzione della navigazione Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Messaggio nessuna mappa durante la costruzione della navigazione Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
 
 </TabItem>
 
@@ -457,7 +454,7 @@ Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate
 
 #### Mappe richieste {#required-maps}
 
-Nella finestra di dialogo delle mappe richieste vedrai suggerimenti di mappe da scaricare o aggiornare. L'elenco delle mappe utilizzate potrebbe non essere preciso poiché calcola un percorso molto semplice; per ottenere l'elenco preciso delle mappe puoi fare clic su **Calcola online**. Se selezioni **Usa mappe scaricate**, il calcolo del percorso cercherà di utilizzare le mappe già scaricate e salterà il messaggio di avviso.
+Nella finestra di dialogo delle mappe richieste vedrai suggerimenti di mappe da scaricare o aggiornare. L'elenco delle mappe utilizzate potrebbe non essere preciso in quanto calcola un percorso molto basilare; per ottenere l'elenco preciso delle mappe puoi fare clic su **Calcola online**. Se selezioni **Usa mappe scaricate**, il calcolo del percorso tenterà di utilizzare le mappe già scaricate e salterà il messaggio di avviso.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -476,14 +473,14 @@ Nella finestra di dialogo delle mappe richieste vedrai suggerimenti di mappe da 
 </Tabs>
 
 
-## Problemi comuni e soluzioni {#common-issues-and-solutions}
+## Problemi e soluzioni comuni {#common-issues-and-solutions}
 
-1. [Le possibili cause del calcolo lento del percorso.](../../troubleshooting/navigation.md#route-calculation-is-slow)
+1. [Le possibili cause di un calcolo del percorso lento.](../../troubleshooting/navigation.md#route-calculation-is-slow)
 2. [Cosa fare se la lunghezza del percorso supera i 250 chilometri.](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)
 3. [Cosa fare se il percorso suggerito sembra errato.](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)
 4. [Come risolvere la situazione in cui la navigazione non è possibile a causa della mancanza delle mappe necessarie.](#maps-missing-or-not-synchronized)
 
-Per ulteriori passaggi di risoluzione dei problemi, consulta [problemi di navigazione](../../troubleshooting/navigation.md).
+Per ulteriori passaggi di risoluzione dei problemi, vedere [problemi di navigazione](../../troubleshooting/navigation.md).
 
 
 ## Articoli correlati {#related-articles}
@@ -491,10 +488,10 @@ Per ulteriori passaggi di risoluzione dei problemi, consulta [problemi di naviga
 - [Parametri del percorso](../routing/osmand-routing.md#routing-types)
 - [Dettagli del percorso](./route-details.md)
 - [Navigazione per traccia](./gpx-navigation.md)
-- [Navigazione per segnalibri](./markers-navigation.md)
+- [Navigazione per marcatori](./markers-navigation.md)
 - [Impostazioni di navigazione](../guidance/navigation-settings.md)
-- [Schermata mappa durante la navigazione](../guidance/map-during-navigation.md)
-- [Comandi vocali / Notifiche](../guidance/voice-navigation.md)
+- [Schermata della mappa durante la navigazione](../guidance/map-during-navigation.md)
+- [Messaggi vocali / Notifiche](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 

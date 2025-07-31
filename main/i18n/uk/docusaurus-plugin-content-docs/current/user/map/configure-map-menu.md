@@ -1,7 +1,7 @@
 ---
-source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
+source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
 sidebar_position: 4
-title:  Налаштувати мапу
+title: Налаштувати карту
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Огляд {#overview}
 
-Меню **Налаштувати мапу** є важливим пунктом у *Головному меню* OsmAnd, де ви можете налаштувати відображення мапи відповідно до ваших потреб. Ви можете виділити улюблені точки, навігаційні маркери або спеціальні точки інтересу на мапі, відобразити певні маршрути або сторонні файли GPX, накласти інформацію про рельєф, супутникові знімки або будь-які інші доступні растрові зображення, відобразити інформацію про громадський транспорт та змінити стиль мапи.
+Меню **Налаштувати карту** є важливим пунктом у *Головному меню* OsmAnd, де ви можете налаштувати відображення карти відповідно до ваших потреб. Ви можете виділити улюблені точки, навігаційні маркери або спеціальні точки інтересу на карті, відобразити певні маршрути або сторонні файли GPX, накласти інформацію про рельєф, супутникові знімки або будь-які інші доступні растрові зображення, відобразити інформацію про громадський транспорт та змінити стиль карти.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -23,25 +23,25 @@ import Translate from '@site/src/components/Translate.js';
 
 Розділ **Показати**:
 
-![Налаштувати мапу android](@site/static/img/map/configure_map_show1_andr.png) ![Налаштувати мапу android](@site/static/img/map/configure_map_show2_andr.png)
+![Configure map android](@site/static/img/map/configure_map_show1_andr.png) ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)
 
 Розділ **Топографія**:
 
-![Налаштувати мапу android](@site/static/img/map/configure_map_topography_andr.png)
+![Configure map android](@site/static/img/map/configure_map_topography_andr.png)
 
 Розділ **OpenStreetMap**:
 
-![Налаштувати мапу android](@site/static/img/map/configure_map_osm_andr.png)
+![Configure map android](@site/static/img/map/configure_map_osm_andr.png)
 
-Розділи **Маршрути та Відображення мапи**:
+Розділи **Маршрути та Рендеринг карти**:
 
-![Налаштувати мапу android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштувати мапу ios](@site/static/img/map/configure-map-ios.png)
+![Configure map ios](@site/static/img/map/configure-map-ios.png)
 
 </TabItem>
 
@@ -50,57 +50,56 @@ import Translate from '@site/src/components/Translate.js';
 
 Меню **<Translate android="true" ids="configure_map"/>** поділяється на дві категорії:
 
-- [Параметри стилю мапи](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (або **<Translate ios="true" ids="map_widget_renderer"/>**) — це група налаштувань, які дозволяють змінити спосіб відображення основної мапи.
-- [Шари мапи](#map-layers). Ці шари дозволяють розміщувати інформацію поверх (або під) основним шаром мапи, але не змінюють відображення самої мапи.
+- [Параметри стилю карти](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (або **<Translate ios="true" ids="map_widget_renderer"/>**) – це група налаштувань, які дозволяють змінювати спосіб відображення основної карти.
+- [Шари карти](#map-layers). Ці шари дозволяють розміщувати інформацію поверх (або під) основним шаром карти, але не змінюють відображення самої карти.
 
 **Примітки:**
 
 - Щоб змінити інформацію на екрані (віджети, іконки), ви можете зробити налаштування в [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
-- Налаштування Налаштувати мапу залежать від вашого [профілю](../personal/profiles.md).
-- Зверніть увагу — меню Налаштувати мапу **закривається**, коли ви торкаєтеся поля мапи.
+- Налаштування меню "Налаштувати карту" залежать від вашого [профілю](../personal/profiles.md).
+- Зверніть увагу – меню "Налаштувати карту" **закривається**, коли ви торкаєтеся поля карти.
 
-## Шари мапи {#map-layers}
+## Шари карти {#map-layers}
 
-- [Шар векторної мапи](../map/vector-maps.md) - відображає всю інформацію векторної мапи, включаючи OpenStreetMap, контурні лінії та морські дані.
-- [Джерела растрових мап](../map/raster-maps.md#select-raster-maps) - дозволяє вибирати підкладку / основне джерело / накладену мапу з рівнями прозорості.
-- [Рельєф](../plugins/topography.md#hillshade-slope-and-altitude-layers) - відображає інформацію про схили / тіні, 3D рельєф.
-- [Межі завантажених мап](../map/vector-maps.md#show-borders) - відображає всі межі завантажених мап на основному шарі мапи.
-- [Сітка координат](../map/vector-maps.md#coordinates-grid) - керує видимістю сітки координат на мапі.
+- [Шар векторної карти](../map/vector-maps.md) – відображає всю інформацію векторної карти, включаючи OpenStreetMap, контурні лінії та морські дані.
+- [Растрові джерела карти](../map/raster-maps.md#select-raster-maps) – дозволяє вибирати підкладку / основне джерело / накладення карти з рівнями прозорості.
+- [Рельєф](../plugins/topography.md#hillshade-slope-and-altitude-layers) – відображає інформацію про схили / тіні від пагорбів, 3D-рельєф.
+- [Межі завантажених карт](../map/vector-maps.md#show-borders) – відображає всі межі завантажених карт на основному шарі карти.
+- [Сітка координат](../map/vector-maps.md#coordinates-grid) – керує видимістю сітки координат на карті.
 
-## Шари даних мапи {#map-data-layers}
+## Шари даних карти {#map-data-layers}
 
-   - [Вибране](../map/point-layers-on-map.md) - відображає вибрані точки.
-   - [POI](../map/point-layers-on-map.md) - відображає точки інтересу вибраних категорій.
-   - [Маркери мапи](../map/point-layers-on-map.md) - відображає маркери мапи.
-   - [Накладені мітки](../map/point-layers-on-map.md) - показує назви точок та вибраного на мапі.
-   - [Транспорт](../map/vector-maps.md#transport) - показує зупинки громадського транспорту.
-   - [Треки](../map/tracks/index.md) - відображає імпортовані, заплановані або записані треки поверх мапи.
-   - [Зображення рівня вулиць](../plugins/mapillary.md#map-layer) - відображає точки з доступними зображеннями рівня вулиць.
-   - [Путівники](../plan-route/travel-guides.md) - відображає путівники на мапі.
-   - [Wikipedia](../plugins/wikipedia.md) - виділяє статті Wikipedia, пов'язані з мапою.
-   - [Інші шари плагінів](../plugins/index.md#configure-plugin) - багато плагінів додають свої шари з додатковою інформацією.
+- [Вибране](../map/point-layers-on-map.md) – відображає вибрані точки.
+- [POI](../map/point-layers-on-map.md) – відображає точки інтересу вибраних категорій.
+- [Маркери карти](../map/point-layers-on-map.md) – відображає маркери карти.
+- [Накладені мітки](../map/point-layers-on-map.md) – показує назви точок та вибраного на карті.
+- [Транспорт](../map/vector-maps.md#transport) – показує зупинки громадського транспорту.
+- [Треки](../map/tracks/index.md) – відображає імпортовані, заплановані або записані треки поверх карти.
+- [Знімки рівня вулиць](../plugins/mapillary.md#map-layer) – відображає точки з доступними знімками рівня вулиць.
+- [Путівники](../plan-route/travel-guides.md) – відображає путівники на карті.
+- [Вікіпедія](../plugins/wikipedia.md) – виділяє статті Вікіпедії, пов'язані з картою.
+- [Інші шари плагінів](../plugins/index.md#configure-plugin) – багато плагінів додають свої шари з додатковою інформацією.
 
-## Параметри стилю мапи {#map-style-parameters}
+## Параметри стилю карти {#map-style-parameters}
 
-Налаштування стилю мапи залежать від основного відображеного стилю мапи. Ви можете прочитати більше про це в статті [Стилі мапи](../map/vector-maps).
+Налаштування стилю карти залежать від основного відображуваного стилю карти. Детальніше про це можна прочитати у статті [Стилі карти](../map/vector-maps).
 
-   - [Стиль мапи](../map/vector-maps.md#default-map-styles) - включає OsmAnd (Місто), Топо, Морський та інші.
-   - [Режим мапи](../map/vector-maps.md#map-mode) - дозволяє вибрати вигляд мапи та навігацію залежно від часу доби.
-   - [Збільшення мапи](../map/vector-maps.md#map-magnifier) - дозволяє змінювати збільшення мапи.
-   - [Розмір тексту](../map/vector-maps.md#text-size) - дозволяє збільшувати або зменшувати розмір тексту на мапі.
-   - [Мова мапи](../map/vector-maps.md#map-language) - дозволяє вибрати бажану мову, що відображається на мапі.
-   - [Деталі](../map/vector-maps.md#details) - показує конкретні об'єкти.
-   - [Приховати](../map/vector-maps.md#hide) - приховує конкретні об'єкти.
-   - [Маршрути](../map/vector-maps.md#routes) - дозволяє виділяти маршрути та їх символи.
-
+- [Стиль карти](../map/vector-maps.md#default-map-styles) – включає OsmAnd (Місто), Топо, Морський та інші.
+- [Режим карти](../map/vector-maps.md#map-mode) – дозволяє вибрати вигляд карти та навігації залежно від часу доби.
+- [Збільшувач карти](../map/vector-maps.md#map-magnifier) – дозволяє змінювати збільшення карти.
+- [Розмір тексту](../map/vector-maps.md#text-size) – дозволяє збільшувати або зменшувати розмір тексту на карті.
+- [Мова карти](../map/vector-maps.md#map-language) – дозволяє вибрати бажану мову, що відображається на карті.
+- [Деталі](../map/vector-maps.md#details) – показує конкретні об'єкти.
+- [Приховати](../map/vector-maps.md#hide) – приховує конкретні об'єкти.
+- [Маршрути](../map/vector-maps.md#routes) – дозволяє виділяти маршрути та їхні символи.
 
 ## Налаштування інтерфейсу користувача (Android) {#ui-customization-android}
 
-Для кожного вибраного профілю в системі Android ви можете змінити порядок пунктів меню <Translate android="true" ids="configure_map"/>, приховати пункти, скинути налаштування за замовчуванням або скопіювати їх з іншого профілю. Це допоможе покращити вашу взаємодію з додатком OsmAnd.
+Для кожного вибраного профілю в системі Android ви можете змінити порядок елементів меню <Translate android="true" ids="configure_map"/>, приховати елементи, скинути налаштування за замовчуванням або скопіювати їх з іншого профілю. Це допоможе покращити вашу взаємодію з програмою OsmAnd.
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 
-![Пункти Налаштувати мапу](@site/static/img/settings/configure-screen-ui-customization.png)
+![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-> *Останнє оновлення: Лютий 2025*
+> *Останнє оновлення: лютий 2025*

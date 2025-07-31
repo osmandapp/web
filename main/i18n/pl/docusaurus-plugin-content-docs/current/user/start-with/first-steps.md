@@ -1,5 +1,5 @@
 ---
-source-hash: 283b1a10b933b84495c848bb63483ec3d45f08c0f3f61e1a3329b1deae7cd6c3
+source-hash: 0cd7fc222e201abda3ee41c3278fe75817181ab14d975d85f25fdb51e7498eae
 sidebar_position: 1
 title: Pierwsze kroki
 ---
@@ -17,9 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Witamy w OsmAnd (Automatyczne Wskazówki Nawigacyjne OpenStreetMap)!
+Witamy w OsmAnd (OpenStreetMap Automated Navigation Directions)!
 
-Dowiedz się, jak pobierać mapy, jak konfigurować aplikację, jak korzystać z mapy i budować trasę, jak uruchamiać nawigację oraz jak wyszukiwać punkty POI. Zapoznaj się z kluczowymi punktami polityki prywatności OsmAnd i wymaganymi uprawnieniami.
+Dowiedz się, jak pobierać mapy, jak konfigurować aplikację, jak korzystać z mapy i budować trasę, jak rozpocząć nawigację i jak wyszukiwać interesujące miejsca. Zapoznaj się z kluczowymi punktami polityki prywatności OsmAnd i wymaganymi uprawnieniami.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -40,7 +40,7 @@ Dowiedz się, jak pobierać mapy, jak konfigurować aplikację, jak korzystać z
 
 ## Zainstaluj OsmAnd {#install-osmand}
 
-OsmAnd to aplikacja mobilna do map i nawigacji dostępna na systemy **Android** i **iOS**. Możesz ją pobrać z najpopularniejszych sklepów.
+OsmAnd to mobilna aplikacja do map i nawigacji dostępna na **Androida** i **iOS**. Możesz ją pobrać z najpopularniejszych sklepów.
 
 **Sklepy Android**: [Google Play Store](https://play.google.com/store/apps/details?id=net.osmand) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
@@ -50,19 +50,19 @@ OsmAnd to aplikacja mobilna do map i nawigacji dostępna na systemy **Android** 
 
 <AppleStore/>
 
-[Przeczytaj więcej](../purchases/index.md) o wersjach i zakupach OsmAnd.
+[Przeczytaj więcej](../purchases/index.md) o wersjach OsmAnd i zakupach.
 
 
 ## Witamy w OsmAnd {#welcome-to-osmand}
 
-Naszym celem jest stworzenie w pełni funkcjonalnej aplikacji zorientowanej na mapy, która może być używana do różnych celów offline i online. Aplikacja posiada wiele funkcji, dzięki czemu nie będziesz musiał przełączać się między różnymi aplikacjami, a wszystko będzie na wyciągnięcie ręki.
+Naszym celem jest stworzenie w pełni funkcjonalnej aplikacji zorientowanej na mapy, którą można wykorzystywać do różnych celów offline i online. Aplikacja posiada wiele funkcji, dzięki czemu nie będziesz musiał przełączać się między różnymi aplikacjami, a wszystko będzie na wyciągnięcie ręki.
 
-- Przeglądaj mapę świata z dużą ilością szczegółów wyświetlanych w [różnych stylach mapy](../map/vector-maps.md).
+- Wyświetlaj mapę świata z dużą ilością szczegółów, wyświetlaną w [różnych stylach mapy](../map/vector-maps.md).
 - Wyświetlaj, [wyszukuj](../search/search-poi.md) i zapisuj różne [punkty POI](../map/point-layers-on-map.md).
 - [Planuj trasę](../plan-route/create-route.md) samochodem, rowerem, pieszo i łącz w trasy multimodalne.
-- Rozpocznij [nawigację głosową](../navigation/guidance/voice-navigation.md), gdy włączasz i wyłączasz ekran.
+- Rozpocznij [nawigację głosową](../navigation/guidance/voice-navigation.md) po włączeniu i wyłączeniu ekranu.
 - Wzbogać swoją podróż turystyczną o offline [Wikipedię](../plugins/wikipedia.md) i [Wikivoyage](../plan-route/travel-guides.md).
-- W pełni dostosuj sposób [wyświetlania mapy](../map/configure-map-menu.md) i jakie [widżety](../widgets/index.md) są na niej wyświetlane.
+- W pełni dostosuj sposób [wyświetlania mapy](../map/configure-map-menu.md) i [widżetów](../widgets/index.md) wyświetlanych na niej.
 - Nawiguj [po trasie](../navigation/setup/route-navigation.md), [po danym śladzie](../navigation/setup/gpx-navigation.md), [transportem publicznym](../navigation/routing/public-transport-navigation.md) i [poza drogami](../navigation/setup/markers-navigation.md).
 - Wszystko działa **offline**.
 - I nie zapomnij przyczynić się do [OpenStreetMap](https://www.openstreetmap.org/) za pomocą [wtyczki do edycji OSM](../plugins/osm-editing.md).
@@ -76,22 +76,22 @@ Naszym celem jest stworzenie w pełni funkcjonalnej aplikacji zorientowanej na m
 
 <TabItem value="android" label="Android">
 
-![Dokładna lokalizacja Android](@site/static/img/steps/first_start_andr.png)
+![Precyzyjna lokalizacja Android](@site/static/img/steps/first_start_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dokładna lokalizacja iOS](@site/static/img/steps/first_start_ios.png) ![Dokładna lokalizacja iOS](@site/static/img/steps/first_start_ios_1.png)
+![Precyzyjna lokalizacja iOS](@site/static/img/steps/first_start_ios.png) ![Precyzyjna lokalizacja iOS](@site/static/img/steps/first_start_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-Zalecamy udzielenie OsmAnd pozwolenia na otrzymywanie informacji o dokładnej lokalizacji Twojego urządzenia. Nie zbieramy, nie używamy ani nie udostępniamy Twoich prywatnych informacji, dlatego dostęp do precyzyjnej geolokalizacji jest potrzebny do prawidłowego działania wyszukiwania, nawigacji i innych funkcji OsmAnd w trybie offline.
+Zalecamy udzielenie OsmAnd pozwolenia na otrzymywanie informacji o dokładnej lokalizacji Twojego urządzenia. Nie zbieramy, nie używamy ani nie udostępniamy Twoich prywatnych informacji, dlatego dostęp do dokładnej geolokalizacji jest potrzebny do prawidłowego działania offline wyszukiwania, nawigacji i innych funkcji OsmAnd.
 
 
-### Jak pobrać mapy {#how-to-download-maps}
+### Jak pobierać mapy {#how-to-download-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -109,11 +109,11 @@ Zalecamy udzielenie OsmAnd pozwolenia na otrzymywanie informacji o dokładnej lo
 
 </Tabs>
 
-Aplikacja OsmAnd działa z różnymi typami map, ale może w pełni funkcjonować tylko z pobranymi mapami offline, dlatego po ekranie *<Translate android="true" ids="get_started"/>* zostaniesz poproszony o [*pobranie mapy*](../start-with/download-maps.md#initial-setup-screen) Twojego regionu. Możesz wybrać inny region, przywrócić z [OsmAnd Cloud](../personal/osmand-cloud.md) lub pominąć ten krok i pobrać mapy później.
+Aplikacja OsmAnd działa z różnymi typami map, ale może w pełni funkcjonować tylko z pobranymi mapami offline, więc po ekranie *<Translate android="true" ids="get_started"/>* zostaniesz poproszony o [*pobranie mapy*](../start-with/download-maps.md#initial-setup-screen) swojego regionu. Możesz wybrać inny region, przywrócić z [OsmAnd Cloud](../personal/osmand-cloud.md) lub pominąć ten krok i pobrać mapy później.
 Inne dostępne opcje pobierania map znajdziesz w [artykule Pobieranie map](../start-with/download-maps.md).
 
 :::note Rozpocznij pracę z mapami offline
-OsmAnd nie może działać poprawnie bez pobranych map offline. Chociaż aplikacja obsługuje mapy [wektorowe](../map/vector-maps.md) i [rastrowe](../map/raster-maps.md), zdecydowanie zaleca się rozpoczęcie pracy z wektorowymi mapami offline, aby wszystkie funkcje, takie jak [Wyszukiwanie](../search/index.md), [Nawigacja](../navigation/index.md) i [Menu kontekstowe](../map/map-context-menu.md), działały poprawnie.
+OsmAnd nie może działać prawidłowo bez pobranych map offline. Chociaż aplikacja obsługuje mapy [wektorowe](../map/vector-maps.md) i [rastrowe](../map/raster-maps.md), zdecydowanie zaleca się rozpoczęcie pracy z wektorowymi mapami offline, aby wszystkie funkcje, takie jak [Wyszukiwanie](../search/index.md), [Nawigacja](../navigation/index.md) i [Menu kontekstowe](../map/map-context-menu.md) działały prawidłowo.
 :::
 
 
@@ -125,12 +125,12 @@ Chociaż OsmAnd pozwala pobierać mapy dla wszystkich dostępnych regionów, nie
 
 - **OsmAnd Pro** i **Maps+** zapewniają **nieograniczone pobieranie map**, ale nadal musisz pobierać mapy region po regionie.
 - **Ograniczenia pamięci.** Upewnij się, że Twoje urządzenie ma wystarczająco dużo miejsca przed pobraniem wielu regionów.
-- **Automatyczne aktualizacje.** Po pobraniu mapy można aktualizować za pomocą *Menu → Mapy i zasoby → Aktualizacje.*
+- **Automatyczne aktualizacje.** Po pobraniu mapy można aktualizować poprzez *Menu → Mapy i zasoby → Aktualizacje.*
 
 
 ### Jak zmienić język aplikacji {#how-to-change-app-language}
 
-Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym komunikatów wyskakujących, tekstu wewnętrznego, wiadomości i innych. Do Androida 12 OsmAnd pozwala dostosować język wyświetlania zgodnie z preferencjami bezpośrednio w aplikacji. Począwszy od Androida 13 i na urządzeniach iOS, język wyświetlania można zmienić tylko w ustawieniach systemowych (zobacz, jak zmienić preferencje języka dla poszczególnych aplikacji w [Androidzie](https://developer.android.com/guide/topics/resources/app-languages) i [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
+Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym komunikatów wyskakujących, tekstu wewnętrznego, wiadomości i innych. Do Androida 12, OsmAnd pozwala dostosować język wyświetlania bezpośrednio w aplikacji. Od Androida 13 i na urządzeniach iOS, język wyświetlania można zmienić tylko w ustawieniach systemowych (zobacz, jak zmienić preferencje języka dla poszczególnych aplikacji w [Androidzie](https://developer.android.com/guide/topics/resources/app-languages) i [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -138,22 +138,22 @@ Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym k
 
 Przejdź do: *Ustawienia → Aplikacje → OsmAnd → Język*
 
-![Język ustawień ogólnych Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
+![Ustawienia ogólne Język Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *Ustawienia → Mapy OsmAnd → Język*
+Przejdź do: *Ustawienia → OsmAnd Maps → Język*
 
-![Język ustawień ogólnych iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Ustawienia ogólne Język iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Brak opcji ustawienia języków aplikacji
-Na niektórych urządzeniach z Androidem (Xiaomi z Muiu 14) nie ma opcji indywidualnego ustawiania języków aplikacji w ustawieniach systemowych, więc język OsmAnd można zmienić tylko wraz z językiem całego systemu. Dodatkowe informacje można znaleźć w dyskusji na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990).
+Na niektórych urządzeniach z systemem Android (Xiaomi z Muiu 14) nie ma możliwości indywidualnego ustawienia języków aplikacji w ustawieniach systemowych, więc język OsmAnd można zmienić tylko wraz z językiem całego systemu. Dodatkowe informacje można znaleźć w dyskusji na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990).
 :::
 
 
@@ -185,7 +185,7 @@ Możesz zarządzać ustawieniami aplikacji jako [Ustawienia globalne](../persona
 
 [Wtyczki](../plugins/index.md#configure-plugin) znacznie rozszerzają funkcjonalność aplikacji. Prawie wszystkie wtyczki mają własne [Akcje mapy](../map/map-context-menu.md), [Warstwy mapy](../map/configure-map-menu.md), [Pobieranie map](../start-with/download-maps.md) i [Ustawienia](../plugins/#plugin-settings).
 
-Możesz włączyć/wyłączyć wtyczki za pomocą [Menu głównego](../start-with/main-menu.md) → [Wtyczki](../plugins/index.md#configure-plugin).
+Możesz włączyć/wyłączyć wtyczki za pośrednictwem [Menu głównego](../start-with/main-menu.md) → [Wtyczki](../plugins/index.md#configure-plugin).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -193,7 +193,7 @@ Możesz włączyć/wyłączyć wtyczki za pomocą [Menu głównego](../start-wit
 
 ![Włącz wtyczki Android](@site/static/img/settings/plugins_enable_android.png) ![Przykład wtyczki Android](@site/static/img/settings/plugin_example_android.png)
 
-Aby włączyć/wyłączyć wtyczki, przejdź do:
+Aby włączyć / wyłączyć wtyczki, przejdź do:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Włącz
 
 </TabItem>
@@ -202,7 +202,7 @@ Aby włączyć/wyłączyć wtyczki, przejdź do:
 
 ![Włącz wtyczki iOS](@site/static/img/settings/plugins_enable_ios.png) ![Przykład wtyczki iOS](@site/static/img/settings/plugin_example_ios.png)
 
-Aby włączyć/wyłączyć wtyczki, przejdź do:
+Aby włączyć / wyłączyć wtyczki, przejdź do:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
 
 </TabItem>
@@ -214,19 +214,19 @@ Aby włączyć/wyłączyć wtyczki, przejdź do:
 
 ### Jak korzystać z mapy {#how-to-use-a-map}
 
-Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej korzystać](../map/interact-with-map.md) (gesty, przyciski itp.). Możesz [skonfigurować mapę](../map/configure-map-menu.md) do swoich potrzeb: [zmienić styl mapy](../map/configure-map-menu.md#map-style-parameters), skonfigurować różne [warstwy mapy](../map/configure-map-menu.md#map-layers), takie jak ulubione, POI, transport publiczny, ślady, linie konturowe, cieniowanie terenu i inne.
+Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak jej używać](../map/interact-with-map.md) (gesty, przyciski itp.). Możesz [skonfigurować mapę](../map/configure-map-menu.md) do swoich potrzeb: [zmienić styl mapy](../map/configure-map-menu.md#map-style-parameters), skonfigurować różne [warstwy mapy](../map/configure-map-menu.md#map-layers), takie jak ulubione, POI, transport publiczny, ślady, linie konturowe, cieniowanie terenu i inne.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Konfiguruj mapę Android](@site/static/img/settings/configure_map_menu_android.png) ![Konfiguruj mapę przykład Android](@site/static/img/settings/configure_map_example_android.png)
+![Konfiguruj mapę Android](@site/static/img/settings/configure_map_menu_android.png) ![Przykład konfiguracji mapy Android](@site/static/img/settings/configure_map_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguruj mapę iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Konfiguruj mapę przykład iOS](@site/static/img/settings/configure_map_example_ios.png)
+![Konfiguruj mapę iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Przykład konfiguracji mapy iOS](@site/static/img/settings/configure_map_example_ios.png)
 
 </TabItem>
 
@@ -237,19 +237,19 @@ Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej
 
 ### Jak skonfigurować ekran {#how-to-configure-screen}
 
-[Konfiguracja ekranu](../widgets/configure-screen.md) pozwala włączyć widżety [informacyjne](../widgets/info-widgets.md) (wysokość, prędkość, aktualny czas itp.) i [nawigacyjne](../widgets/nav-widgets.md) (cel, kierunek, czas przybycia itp.), [szybką akcję](../widgets/quick-action.md) i inne elementy, które będą wyświetlane na mapie.
+[Konfiguracja ekranu](../widgets/configure-screen.md) pozwala włączyć widżety [informacyjne](../widgets/info-widgets.md) (wysokość, prędkość, aktualny czas itp.) i [nawigacyjne](../widgets/nav-widgets.md) (cel, kierunek, czas przybycia itp.), [szybkie akcje](../widgets/quick-action.md) i inne elementy, które będą wyświetlane na mapie.
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-os" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Konfiguruj ekran Android](@site/static/img/widgets/configure_screen_android.png) ![Konfiguruj ekran przykład Android](@site/static/img/settings/configure_screen_example_android.png)
+![Konfiguruj ekran Android](@site/static/img/widgets/configure_screen_android.png) ![Przykład konfiguracji ekranu Android](@site/static/img/settings/configure_screen_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguruj ekran iOS](@site/static/img/settings/configure_screen_ios.png) ![Konfiguruj ekran przykład iOS](@site/static/img/settings/configure_screen_example_ios.png)
+![Konfiguruj ekran iOS](@site/static/img/settings/configure_screen_ios.png) ![Przykład konfiguracji ekranu iOS](@site/static/img/settings/configure_screen_example_ios.png)
 
 </TabItem>
 
@@ -258,9 +258,9 @@ Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej
 [Przeczytaj więcej](../widgets/configure-screen.md) o konfiguracji ekranu.
 
 
-### Jak dodać dane osobowe do map {#how-to-add-personal-data-to-maps}
+### Jak dodawać dane osobowe do map {#how-to-add-personal-data-to-maps}
 
-OsmAnd pozwala na tworzenie różnych oznaczeń na mapie dla Twoich osobistych potrzeb. Na przykład, [Ulubione punkty](../personal/favorites.md) - osobiste punkty z nazwą, ikoną i kategorią, [Markery](../personal/markers.md) - szybko dodane punkty jako cel, [Notatki audio/wideo](../plugins/audio-video-notes.md) - notatki multimedialne nagrane w określonym punkcie, [Ślady](../personal/tracks/manage-tracks.md) - nagrane i zaimportowane ślady i trasy.
+OsmAnd pozwala na tworzenie różnych oznaczeń na mapie dla Twoich osobistych potrzeb. Na przykład, [Punkty ulubione](../personal/favorites.md) - osobiste punkty z nazwą, ikoną i kategorią, [Markery](../personal/markers.md) - szybko dodane punkty jako cel, [Notatki audio/wideo](../plugins/audio-video-notes.md) - notatki multimedialne nagrane w określonym punkcie, [Ślady](../personal/tracks/manage-tracks.md) - nagrane i zaimportowane ślady i wycieczki.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -281,9 +281,9 @@ OsmAnd pozwala na tworzenie różnych oznaczeń na mapie dla Twoich osobistych p
 [Przeczytaj więcej](../map/point-layers-on-map.md) o punktach na mapie.
 
 
-### Jak przeglądać i znajdować punkty POI {#how-to-browse--find-point-of-interest}
+### Jak przeglądać i wyszukiwać interesujące miejsca {#how-to-browse--find-point-of-interest}
 
-[Punkty POI (Points of Interest)](../map/point-layers-on-map.md#points-of-interest-pois) to udogodnienia, które można wyszukiwać lub wyróżniać na mapie. Reprezentują one interesujące lub użyteczne miejsca i są dystrybuowane jako część [map wektorowych](../map/vector-maps.md). Możesz ich używać do [wyświetlania na mapie](../map/point-layers-on-map.md#points-of-interest-pois), [nawigacji](../navigation/index.md) i [wyszukiwania](../search/search-poi.md) punktów POI na mapie.
+[Punkty POI (Points of Interest)](../map/point-layers-on-map.md#points-of-interest-pois) to udogodnienia, które można wyszukiwać lub podświetlać na mapie. Reprezentują one interesujące lub użyteczne miejsca i są rozpowszechniane jako część [map wektorowych](../map/vector-maps.md). Możesz ich używać do [wyświetlania na mapie](../map/point-layers-on-map.md#points-of-interest-pois), [nawigowania](../navigation/index.md) i [wyszukiwania](../search/search-poi.md) punktów POI na mapie.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -306,7 +306,7 @@ OsmAnd pozwala na tworzenie różnych oznaczeń na mapie dla Twoich osobistych p
 
 ### Jak zaplanować trasę {#how-to-plan-a-route}
 
-[Planowanie trasy](../plan-route/create-route.md) to potężne narzędzie, które pozwala tworzyć podróże, edytować istniejące ślady i mierzyć odległości na miejscu. Możesz szybko umieścić punkty pośrednie i połączyć je różnymi liniami nawigacyjnymi (rower, pieszy, linia prosta itp.). Wyniki można zapisać w pliku GPX, dzięki czemu można je [udostępnić](../personal/tracks/index.md) lub [użyć do nawigacji](../navigation/setup/gpx-navigation.md) później.
+[Planowanie trasy](../plan-route/create-route.md) to potężne narzędzie, które pozwala tworzyć wycieczki, edytować istniejące ślady i mierzyć odległości na miejscu. Możesz szybko umieszczać punkty pośrednie i łączyć je różnymi liniami nawigacyjnymi (rower, pieszy, linia prosta itp.). Wyniki można zapisać w pliku GPX, aby można je było [udostępnić](../personal/tracks/index.md) lub [wykorzystać w nawigacji](../navigation/setup/gpx-navigation.md) później.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -329,7 +329,7 @@ OsmAnd pozwala na tworzenie różnych oznaczeń na mapie dla Twoich osobistych p
 
 ### Jak wyszukiwać według adresu {#how-to-search-by-address}
 
-OsmAnd oferuje wiele możliwości wyszukiwania, w tym wyszukiwanie adresów. Domyślnie korzysta z [danych OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) i powinien być w stanie znaleźć wszystkie adresy za pomocą szybkiego wyszukiwania. Możesz także [wyszukiwać](../search/search-address.md) według miasta, ulicy, kodu pocztowego i współrzędnych.
+OsmAnd oferuje wiele możliwości wyszukiwania, w tym wyszukiwanie adresów. Domyślnie korzysta z [danych OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) i powinien być w stanie znaleźć wszystkie adresy za pomocą szybkiego wyszukiwania. Możesz również [wyszukiwać](../search/search-address.md) według miasta, ulicy, kodu pocztowego i współrzędnych.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -348,7 +348,7 @@ OsmAnd oferuje wiele możliwości wyszukiwania, w tym wyszukiwanie adresów. Dom
 </Tabs>
 
 :::note
-Musisz pobrać mapę, zanim zaczniesz wyszukiwać adresy. Ponadto, jeśli Twoja aktualna lokalizacja jest zbyt daleko od wyszukiwanego adresu, może być konieczne zwiększenie promienia wyszukiwania.
+Musisz pobrać mapę, zanim będziesz mógł wyszukać na niej adres. Ponadto, jeśli Twoja aktualna lokalizacja jest zbyt daleko od wyszukiwanego adresu, może być konieczne zwiększenie promienia wyszukiwania.
 :::
 
 [Przeczytaj więcej](../search/search-address.md) o wyszukiwaniu adresów.
@@ -356,7 +356,7 @@ Musisz pobrać mapę, zanim zaczniesz wyszukiwać adresy. Ponadto, jeśli Twoja 
 
 ### Jak rozpocząć nawigację {#how-to-start-navigation}
 
-[Nawigacja](../navigation/index.md) zapewnia wskazówki krok po kroku do celu, wyświetlając trasę, oferując instrukcje zakręt po zakręcie, dodatkowe informacje o drodze dotyczące nawierzchni, płynności itp. oraz opcjonalne wskazówki głosowe.
+[Nawigacja](../navigation/index.md) zapewnia wskazówki krok po kroku do celu, wyświetlając trasę, oferując instrukcje zakręt po zakręcie, dodatkowe informacje o drodze, takie jak nawierzchnia, gładkość itp., oraz opcjonalne wskazówki głosowe.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -377,9 +377,9 @@ Musisz pobrać mapę, zanim zaczniesz wyszukiwać adresy. Ponadto, jeśli Twoja 
 [Przeczytaj więcej](../navigation/index.md) o nawigacji.
 
 
-### Jak nagrać swoją podróż {#how-to-record-your-trip}
+### Jak nagrywać swoją podróż {#how-to-record-your-trip}
 
-[Nagrywanie podróży](../plugins/trip-recording.md) to specjalne narzędzie, zapakowane jako wtyczka OsmAnd, które pozwala nagrywać wszystkie ruchy na śladzie za pomocą GPS urządzenia.
+[Nagrywanie podróży](../plugins/trip-recording.md) to specjalne narzędzie spakowane jako wtyczka OsmAnd, które pozwala nagrywać wszystkie ruchy na ścieżce za pomocą GPS urządzenia.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -402,7 +402,7 @@ Musisz pobrać mapę, zanim zaczniesz wyszukiwać adresy. Ponadto, jeśli Twoja 
 
 ### Jak edytować mapy {#how-to-edit-maps}
 
-OsmAnd jest zasilany danymi [OpenStreetMap](https://www.openstreetmap.org/). Mapy są tworzone przez wolontariuszy, więc mogą mieć więcej lub mniej szczegółów w zależności od tego, ile pracy zostało wykonane w danej części mapy. Każdy może zarejestrować się jako współtwórca i dodawać lub edytować mapy OSM. OsmAnd udostępnia wtyczkę do edycji, która pomaga ulepszyć OpenStreetMap.
+OsmAnd jest zasilany danymi [OpenStreetMap](https://www.openstreetmap.org/). Mapy są tworzone przez wolontariuszy, więc mogą mieć więcej lub mniej szczegółów w zależności od tego, ile pracy zostało wykonane w danej części mapy. Każdy może zarejestrować się jako współtwórca i dodawać lub edytować mapy OSM. OsmAnd udostępnia wtyczkę do edycji, która pomaga ulepszać OpenStreetMap.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -465,7 +465,7 @@ Przed wykonaniem tej czynności może być konieczne wykonanie następujących k
 
 <InfoAndroidOnly/>
 
-[Skróty aplikacji](https://support.google.com/android/answer/9450271) są dostępne dla ikony OsmAnd. Wystarczy długo nacisnąć ikonę OsmAnd na ekranie urządzenia, aby otworzyć menu skrótów aplikacji. Tutaj można krótko nacisnąć, aby wybrać następujące akcje: *Nawiguj do domu*, *Nawiguj do pracy*, *Rozpocznij nagrywanie*, *Szukaj*, *Moje miejsca*, *Nawiguj do*. Długie naciśnięcie akcji pozwala dodać nową ikonę akcji do ekranu urządzenia.
+[Skróty aplikacji](https://support.google.com/android/answer/9450271) są dostępne dla ikony OsmAnd. Wystarczy długo nacisnąć ikonę OsmAnd na ekranie urządzenia, aby otworzyć menu skrótów aplikacji. Tutaj możesz krótko nacisnąć, aby wybrać następujące akcje: *Nawiguj do domu*, *Nawiguj do pracy*, *Rozpocznij nagrywanie*, *Szukaj*, *Moje miejsca*, *Nawiguj do*. Długie naciśnięcie akcji pozwala dodać nową ikonę akcji do ekranu urządzenia.
 
 Naciśnij ikonę akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 
@@ -490,9 +490,9 @@ Naciśnij ikonę akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 
 </Tabs>
 
-W *menu Pomoc* znajdziesz artykuły z naszej strony [www.osmand.net/docs](https://osmand.net/docs/intro/). Po początkowym pobraniu (wymagane połączenie z Internetem) artykuły pomocy są dostępne offline.
-Pierwsza podsekcja, *Pomoc offline*, zawiera **najczęściej oglądane** (lub popularne) artykuły wśród naszych użytkowników. Sekcje **Podręcznik użytkownika** i **Rozwiązywanie problemów** mają taką samą strukturę jak na stronie internetowej.
-W *menu Pomoc* znajdziesz również przydatne linki do sieci społecznościowych OsmAnd, informacje o wersji Twojej aplikacji, uwagi do wydania i kontakty do wsparcia. Za pośrednictwem Pomocy możesz również wysyłać [logcat i dzienniki awarii](../troubleshooting/crash-logs.md#crash-and-logcat-logs).
+W *Menu pomocy* znajdziesz artykuły z naszej strony [www.osmand.net/docs](https://osmand.net/docs/intro/). Po początkowym pobraniu (wymagane połączenie z Internetem) artykuły pomocy są dostępne offline.
+Pierwsza podsekcja, *Pomoc offline*, zawiera **Najczęściej oglądane** (lub popularne) artykuły wśród naszych użytkowników. Sekcje **Podręcznik użytkownika** i **Rozwiązywanie problemów** mają taką samą strukturę jak na stronie internetowej.
+W *Menu pomocy* znajdziesz również przydatne linki do sieci społecznościowych OsmAnd, informacje o wersji Twojej aplikacji, uwagi do wydania i kontakty do wsparcia. Za pośrednictwem Pomocy możesz również wysłać [logcat i dzienniki awarii](../troubleshooting/crash-logs.md#crash-and-logcat-logs).
 
 ### Menu {#menu}
 
@@ -512,10 +512,10 @@ W *menu Pomoc* znajdziesz również przydatne linki do sieci społecznościowych
 
 </Tabs>
 
-- **Wyślij dziennik awarii** (*dla Androida*). Pozwala użytkownikom wysyłać raporty o awariach aplikacji do programistów, pomagając w identyfikacji i rozwiązywaniu problemów.
+- **Wyślij dziennik awarii** (*dla Androida*). Umożliwia użytkownikom wysyłanie raportów o awariach aplikacji do programistów, pomagając w identyfikacji i rozwiązywaniu problemów.
 - **Wyślij dziennik logcat** (*dla Androida*). Zapewnia użytkownikom możliwość wysyłania szczegółowych dzienników awarii aplikacji do programistów, ułatwiając głębszą analizę i rozwiązywanie problemów.
 - **Wyślij dziennik** (*dla iOS*). Pełni podobną funkcję do funkcji *Wyślij dziennik awarii* dla Androida, umożliwiając użytkownikom urządzeń iOS zgłaszanie awarii aplikacji programistom w celu debugowania.
-- **Kopiuj wersję kompilacji**. Umożliwia użytkownikom szybkie i dokładne przekazywanie programistom aktualnej wersji aplikacji podczas zgłaszania problemów, upraszczając proces diagnostyki i rozwiązywania problemów.
+- **Kopiuj wersję kompilacji**. Umożliwia użytkownikom szybkie i dokładne przekazywanie programistom aktualnej wersji aplikacji podczas zgłaszania problemów, upraszczając proces diagnostyki i rozwiązywania.
 
 
 ### Najczęściej oglądane {#most-viewed}
@@ -536,7 +536,7 @@ W *menu Pomoc* znajdziesz również przydatne linki do sieci społecznościowych
 
 </Tabs>
 
-Najczęściej oglądane artykuły wśród naszych użytkowników odnoszą się do artykułów w aplikacji lub na stronie, które uzyskały najwięcej wyświetleń lub interakcji użytkowników. Ta metryka pomaga zidentyfikować treści, które są szczególnie interesujące lub użyteczne dla Twoich użytkowników. Może dostarczyć cennych informacji na temat preferencji i zainteresowań użytkowników, umożliwiając programistom i twórcom treści dostosowanie przyszłych treści do potrzeb odbiorców. Dodatkowo, wyróżnianie popularnych artykułów może pomóc nowym użytkownikom znaleźć cenne zasoby w aplikacji.
+Najczęściej oglądane artykuły wśród naszych użytkowników odnoszą się do artykułów w aplikacji lub na stronie, które zdobyły najwięcej wyświetleń lub interakcji użytkowników. Ta metryka pomaga zidentyfikować treści, które są szczególnie interesujące lub użyteczne dla Twoich użytkowników. Może dostarczyć cennych informacji na temat preferencji i zainteresowań użytkowników, umożliwiając programistom i twórcom treści dostosowanie przyszłych treści do potrzeb odbiorców. Dodatkowo, wyróżnianie popularnych artykułów może pomóc nowym użytkownikom znaleźć cenne zasoby w aplikacji.
 
 
 ### Podręcznik użytkownika {#user-guide}
@@ -557,7 +557,7 @@ Najczęściej oglądane artykuły wśród naszych użytkowników odnoszą się d
 
 </Tabs>
 
-Sekcja **Podręcznik użytkownika** w menu Pomoc to kompletny podręcznik, który jest zgodny ze strukturą strony internetowej OsmAnd, zapewniając spójność informacji i łatwość nawigacji między platformami. Korzystając z Pomocy, możesz łatwo nawigować z aplikacji do strony internetowej, znajdując te same treści zorganizowane w znajomy sposób. Ta spójność zwiększa użyteczność, zapewniając jedno źródło wsparcia do szybkiego znajdowania odpowiedzi na pytania i rozwiązywania problemów.
+Sekcja **Podręcznik użytkownika** w menu Pomoc to kompletna instrukcja, która jest zgodna ze strukturą strony internetowej OsmAnd, zapewniając spójność informacji i łatwość nawigacji między platformami. Korzystając z Pomocy, możesz łatwo przechodzić z aplikacji na stronę internetową, znajdując te same treści zorganizowane w znajomy sposób. Ta spójność zwiększa użyteczność, zapewniając jedno źródło wsparcia do szybkiego znajdowania odpowiedzi na pytania i rozwiązywania problemów.
 
 
 ### Rozwiązywanie problemów {#troubleshooting}
@@ -580,8 +580,8 @@ Sekcja **Podręcznik użytkownika** w menu Pomoc to kompletny podręcznik, któr
 
 Rozwiązania i wskazówki dotyczące rozwiązywania typowych problemów. Jeśli masz konkretne pytanie, sprawdź [Rozwiązywanie problemów](../troubleshooting/index.md), aby uzyskać odpowiedź.
 
-- [Ustawienia](../troubleshooting/setup.md). Podczas konfiguracji aplikacji najczęściej pojawiają się te problemy.
-- [Mapy i dane](../troubleshooting/maps-data.md). Problemy związane z mapami, wyszukiwaniem i pozostałymi danymi.
+- [Ustawienia](../troubleshooting/setup.md). Podczas konfigurowania aplikacji najczęściej pojawiają się te problemy.
+- [Mapy i dane](../troubleshooting/maps-data.md). Problemy związane z mapami, wyszukiwaniem i resztą danych.
 - [Nawigacja](../troubleshooting/navigation.md). Najczęstsze problemy występujące w trybie nawigacji.
 - [Nagrywanie śladu](../troubleshooting/track-recording-issues.md). Typowe problemy związane z nagrywaniem śladu, takie jak szumy, luki i niedokładności.
 - [Ogólne](../troubleshooting/general.md). Typowe problemy związane z różnymi funkcjami OsmAnd.
@@ -653,12 +653,12 @@ Możesz dowiedzieć się o naszym zespole, zobaczyć aktualną wersję aplikacji
 
 ## Prywatność {#privacy}
 
-Jest to [aplikacja open source](https://github.com/osmandapp/osmand), bez reklam / bez śledzenia, skoncentrowana na prywatności. Aby zachować maksymalną prywatność, OsmAnd oferuje mapy offline jako pierwsze miejsce, więc żadne interakcje ani informacje geograficzne nie wyciekają z Twojego urządzenia. Jesteśmy bardzo uważni na to, jakie dane są zbierane i jakie dane są przesyłane przez sieć, możesz przeczytać więcej w naszej [Polityce prywatności](https://osmand.net/help-online/privacy-policy).
+Jest to [otwarte źródło](https://github.com/osmandapp/osmand), aplikacja bez reklam/śledzenia, zorientowana na prywatność. Aby zachować maksymalną prywatność, OsmAnd oferuje mapy offline jako pierwsze miejsce, dzięki czemu żadne interakcje ani informacje geograficzne nie wyciekają z Twojego urządzenia. Jesteśmy bardzo uważni na to, jakie dane są zbierane i jakie dane są przesyłane przez sieć, możesz przeczytać więcej w naszej [Polityce prywatności](https://osmand.net/help-online/privacy-policy).
 
 
 ## Uprawnienia {#permissions}
 
-OsmAnd nie wymaga żadnych specjalnych uprawnień w wersji na iOS / Androida.
+OsmAnd nie wymaga żadnych specjalnych uprawnień w wersji iOS / Android.
 
 **Niezbędne**:
 
@@ -667,7 +667,7 @@ OsmAnd nie wymaga żadnych specjalnych uprawnień w wersji na iOS / Androida.
 
 **Opcjonalne**:
 
-- **Kamera/nagrywanie głosu** (*Android*). Używane tylko przez [notatki audio/wideo](../plugins/audio-video-notes.md). Ta funkcja jest zapakowana jako wtyczka i domyślnie wyłączona. Pozwala szybko tworzyć notatki audio/wideo związane z lokalizacją podczas podróży.
+- **Nagrywanie kamerą/głosem** (*Android*). Używane tylko przez [notatki audio/wideo](../plugins/audio-video-notes.md). Ta funkcja jest spakowana jako wtyczka i domyślnie wyłączona. Pozwala szybko tworzyć notatki audio/wideo związane z lokalizacją podczas podróży.
 
 
 > *Ostatnia aktualizacja: styczeń 2025*

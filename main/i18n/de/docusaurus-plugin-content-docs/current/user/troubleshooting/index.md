@@ -1,5 +1,5 @@
 ---
-source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
+source-hash: d8ecad2b589fe6b03fafc80bbd07389dac12a24a068d3fdd0ed26cb3959de697
 sidebar_position: 10
 ---
 import Tabs from '@theme/Tabs';
@@ -10,42 +10,51 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+
 # Fehlerbehebung {#troubleshooting}
 
 Lösungen und Hinweise für häufige Probleme.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Einrichtung](./setup.md) {#setup}
 
-Die typischsten Probleme im Zusammenhang mit Android Auto.
-
-### [Absturzberichte](./crash-logs.md) {#crash-logs}
-
-Beschreibung, wie Absturzberichte an das OsmAnd Team gesendet werden können.
+Typische Probleme, die bei der Einrichtung der Anwendung auftreten.
 
 ### [Allgemein](./general.md) {#general}
 
 Allgemeine Probleme im Zusammenhang mit verschiedenen OsmAnd-Funktionen.
 
-### [Karten & Daten](./maps-data.md) {#maps--data}
+### [Käufe & Zahlungen](./purchases_payments.md) {#purchases-and-payments}
 
-Probleme im Zusammenhang mit Karten, Suche und anderen Daten.
+Probleme im Zusammenhang mit Käufen, Abonnements und Zahlungen.
 
 ### [Navigation](./navigation.md) {#navigation}
 
-Die häufigsten Probleme im Navigationsmodus.
+Häufige Probleme im Navigationsmodus.
 
-### [Ressourcen und Anpassungen](./resources) {#resources-and-customizations}
+### [Karten & Daten](./maps-data.md) {#maps-and-data}
 
-Von der Community erstellte Ressourcen.
+Probleme im Zusammenhang mit Karten, Suchfunktionen und anderen Daten.
 
-### [Einrichtung](./setup.md) {#setup}
+### [Absturzprotokolle](./crash-logs.md) {#crash-logs}
 
-Die typischsten Probleme bei der Einrichtung der Anwendung.
+So sammeln und senden Sie Absturzprotokolle an das OsmAnd-Team.
 
 ### [Aufzeichnung von Tracks](./track-recording-issues.md) {#track-recording}
 
-Häufige Probleme bei der Aufzeichnung von Tracks, wie z. B. Rauschen, Lücken oder Ungenauigkeiten.
+Probleme bei der Aufzeichnung von Tracks wie Rauschen, Lücken oder Ungenauigkeiten.
+
+### [Android Auto](./android_auto.md) {#android-auto}
+
+Typische Probleme bei der Verwendung von OsmAnd mit Android Auto.
+
+### [Webseite](./web.md) {#website}
+
+Häufige Probleme mit OsmAnd-Webdiensten und -Funktionen.
+
+### [Ressourcen und Anpassungen](./resources.md) {#resources-and-customizations}
+
+Anleitungen und Hilfe zu von der Community erstellten Ressourcen und Anpassungen.
 
 ### [Video-Tutorials und Anleitungen](./video-tutorials.md) {#video-tutorials-and-guides}
 
-Sammlung von Video-Tutorials und Anleitungen.
+Eine Sammlung hilfreicher Video-Tutorials und Schritt-für-Schritt-Anleitungen.

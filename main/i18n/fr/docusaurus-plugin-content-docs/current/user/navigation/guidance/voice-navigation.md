@@ -1,5 +1,5 @@
 ---
-source-hash: 23fa8491d55d8126a921b95c8d650a5b5c13376f6c4a630b3c3446e35d19d2c0
+source-hash: f70d6c0f6fdfe641f005afd95ec912d5aa5a23f369e009635f62de9e506c5529
 sidebar_position: 6
 title:  Invites vocales / Notifications
 ---
@@ -18,11 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Vue d'ensemble {#overview}
 
-La fonction de navigation vocale d'OsmAnd fournit des instructions et des alertes vocales en temps réel qui vous aident à rester informé et en sécurité pendant vos déplacements. Vous pouvez adapter les instructions à vos préférences et à vos besoins. Pour ce faire, sélectionnez un profil vocal approprié, soit un [moteur de synthèse vocale (TTS)](#tts-text-to-speech) qui peut annoncer dynamiquement les noms de rues, les distances et les limites de vitesse, soit une [voix préenregistrée](#recorded-voice-prompts) offrant des instructions concises.
+La fonction de navigation vocale d'OsmAnd fournit des instructions et des alertes vocales en temps réel qui vous aident à rester informé et en sécurité lors de vos déplacements. Vous pouvez adapter les conseils à vos préférences et à vos besoins. Pour ce faire, sélectionnez un profil vocal approprié, soit un [moteur de synthèse vocale (TTS)](#tts-text-to-speech) qui peut annoncer dynamiquement les noms de rues, les distances et les limites de vitesse, soit une [voix préenregistrée](#recorded-voice-prompts) offrant des instructions concises.
 
-En plus des instructions virage par virage, la navigation vocale d'OsmAnd peut vous avertir des points d'intérêt à venir, des changements dans les conditions de circulation et lorsque vous dépassez une limite de vitesse prédéfinie. Pour en savoir plus sur la personnalisation de ces alertes, consultez les sections [Paramètres de temps d'annonce](#announcement-time) et [Avertissements de limite de vitesse](#speed-limit).
+En plus des instructions de virage par virage, la navigation vocale d'OsmAnd peut vous avertir des points d'intérêt à venir, des changements dans les conditions de circulation et lorsque vous dépassez une limite de vitesse prédéfinie. Pour en savoir plus sur la personnalisation de ces alertes, consultez [Paramètres de l'heure d'annonce](#announcement-time) et [Avertissements de limite de vitesse](#speed-limit).
 
-Avec la bonne combinaison d'options vocales, de paramètres d'alerte et de réglages sonores de l'appareil, vous recevrez des informations de navigation claires et opportunes tout au long de votre itinéraire.
+Avec la bonne combinaison d'options vocales, de paramètres d'alerte et de réglages sonores de l'appareil, vous recevrez des informations de navigation claires et opportunes tout au long de votre parcours.
 
 :::note
 
@@ -36,11 +36,11 @@ Avec la bonne combinaison d'options vocales, de paramètres d'alerte et de régl
 
 OsmAnd offre diverses options pour contrôler les invites vocales afin que vous puissiez suivre votre itinéraire en toute commodité. Pour configurer ces paramètres, commencez par les sections appropriées de l'application.
 
-- Activez les invites vocales depuis la section [Navigation](../guidance/navigation-settings.md) en appuyant sur **Paramètres**. Vous pouvez également activer et configurer les invites vocales via *Configurer le profil*, et *Paramètres de navigation*.
+- Activez les invites vocales depuis la section [Navigation](../guidance/navigation-settings.md) en appuyant sur **Paramètres**. Vous pouvez également activer et configurer les invites vocales via *Configurer le profil* et *Paramètres de navigation*.
 - Activez ou désactivez les invites vocales à l'aide de *Menu → Navigation →* appuyez sur le *bouton Son*,
-    ou *Menu → Navigation →* bouton Paramètres *→ Son →* basculez sur on/off.
+    ou *Menu → Navigation →* bouton Paramètres *→ Son →* activer/désactiver.
 
-Pour plus d'informations sur la manière et le moment où les invites vocales sont déclenchées, consultez la documentation [Déclenchement des invites vocales de navigation](../../../technical/algorithms/voice-prompt-triggering.md).
+Pour plus d'informations sur la façon et le moment où les invites vocales sont déclenchées, consultez la documentation [Déclenchement des invites vocales de navigation](../../../technical/algorithms/voice-prompt-triggering.md).
 
 
 ### Paramètres vocaux {#voice-settings}
@@ -59,7 +59,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> bouton* *(ou <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choisir le profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Paramètres de navigation vocale iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -71,38 +71,38 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 **Annonce**. Vous permet de configurer les types d'invites suivants :
 
-- *Noms de rues (TTS), numéros de sortie, avertissements de circulation, passages piétons* et *tunnels*.
+- *Noms de rues (TTS), numéros de sortie, avertissements de circulation, passages piétons* et *tunnels.*
 - *[Radars](#speed-cameras)*.
 - Configurez également le **[widget d'alerte](../../widgets/nav-widgets.md#alert-widget)** à utiliser avec les annonces.
 
 **Points utilisateur** :
 
-- Activez les invites vocales pour les [points de passage](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), les [favoris](../../personal/favorites.md) ou les [POI](../../map/point-layers-on-map.md#points-of-interest-pois) prédéfinis et ajoutés. Pendant la conduite, les points sélectionnés seront annoncés lorsque vous les approcherez ou les dépasserez.
+- Activez les invites vocales pour les [points de cheminement](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), les [favoris](../../personal/favorites.md) ou les [POI](../../map/point-layers-on-map.md#points-of-interest-pois) prédéfinis et ajoutés. En conduisant, les points sélectionnés seront annoncés lorsque vous les approcherez ou les dépasserez.
 
-| Type d'invite | Délai [s] :<br/>Distance correspondante<br/>Délai @ Vitesse par défaut [m] | Limite |
+| Type d'invite | Délai [s] :<br/>Distance d'avance correspondante @ Vitesse par défaut [m] | Limite |
 | :- | :- | :- |
 | Approche | **60 s :**<br/>Conduite : 750 m<br/>Cyclisme : 167 m<br/>Marche : 67 m | Pas plus de 1 point à la fois |
 | Passage | **15 s :**<br/>Conduite : 188 m<br/>Cyclisme : 42 m<br/>Marche : 17 m | Pas plus de 3 points à la fois |
 
 [**Limite de vitesse**](#speed-limit) :
 
-- *Annoncer en cas de dépassement*.
-- *Tolérance de limite de vitesse*.
+- *Annoncer quand dépassé*.
+- *Tolérance de la limite de vitesse*.
 
 **Autres** :
 
-- *Annoncer la perte et la récupération du signal GPS*. OsmAnd annonce si le signal GPS de l'appareil est perdu.
+- *Annoncer la perte et la récupération du signal GPS*. OsmAnd annonce si le signal GPS sur l'appareil est perdu.
 - *Annoncer le recalcul de l'itinéraire*. OsmAnd signale le recalcul de l'itinéraire en cas de [déviation ou de mouvement en sens inverse](./navigation-settings.md#recalculate-route).
 - *Annoncer la déviation de l'itinéraire*. Vous recevez des informations sur les déviations de l'itinéraire selon les [paramètres définis](./navigation-settings.md#recalculate-route).
 
 **Options** :
 
 - *Répéter les instructions de navigation*. Vous permet de répéter les instructions de navigation à intervalles réguliers de 1 min à 30 min. Ou manuellement - si vous manquez une invite vocale, vous pouvez l'écouter à nouveau en appuyant simplement sur [la flèche de virage actuelle](../../widgets/nav-widgets.md#next-turn) sur l'écran de l'application.
-- *[Temps d'annonce](#announcement-time)*.
+- *[Heure d'annonce](#announcement-time)*.
 
 **Sortie** (*Android uniquement*) :
 
-- *[Sortie des instructions vocales](#voice-guidance-output)*.
+- *[Sortie de guidage vocal](#voice-guidance-output)*.
 - *Mettre la musique en pause*. Les invites vocales arrêtent temporairement la lecture de la musique.
 
 
@@ -110,7 +110,7 @@ Pour plus d'informations sur la manière et le moment où les invites vocales so
 
 ![Synchronisation des annonces de navigation vocale Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
-Les [alertes radars](../../personal/global-settings.md#uninstall-speed-cameras) vous permettent d'activer ou de désactiver les POI avec radars. Vous devrez redémarrer l'application OsmAnd pour appliquer les modifications.
+Les [alertes radars](../../personal/global-settings.md#uninstall-speed-cameras) vous permettent d'activer ou de désactiver les POI avec des radars. Vous devrez redémarrer l'application OsmAnd pour appliquer les modifications.
 
 Dans certains pays ou régions, l'utilisation d'applications d'avertissement de radars est illégale. Vous devez faire un choix en fonction des lois de votre pays. Sélectionnez **Garder actif**, et vous recevrez des alertes et des notifications de radars. Sélectionnez **Désinstaller** et toutes les données relatives aux radars, telles que les avertissements, les notifications et les POI, seront supprimées jusqu'à ce que vous réinstalliez complètement OsmAnd.
 
@@ -135,8 +135,8 @@ Dans certains pays ou régions, l'utilisation d'applications d'avertissement de 
 
 L'option **Limite de vitesse** permet à OsmAnd de vous informer lorsque votre vitesse actuelle dépasse un seuil spécifié. Les données sur les limites de vitesse légales maximales proviennent d'OpenStreetMap.
 
-**Annoncer en cas de dépassement**
-*Tolérance de limite de vitesse* vous permet de sélectionner une déviation autorisée (par exemple, -10 km/h à +20 km/h) par rapport à la [limite de vitesse légale maximale](https://wiki.openstreetmap.org/wiki/Key:maxspeed) sur la route actuelle. Lorsque votre vitesse dépasse cette tolérance, OsmAnd émet une invite vocale.
+**Annoncer quand dépassé**
+La *tolérance de la limite de vitesse* vous permet de sélectionner une déviation autorisée (par exemple, de -10 km/h à +20 km/h) par rapport à la [limite de vitesse légale maximale](https://wiki.openstreetmap.org/wiki/Key:maxspeed) sur la route actuelle. Lorsque votre vitesse dépasse cette tolérance, OsmAnd émet une invite vocale.
 
 *Règles d'activation des invites vocales* lorsque la limite de vitesse est dépassée :
 
@@ -144,38 +144,38 @@ L'option **Limite de vitesse** permet à OsmAnd de vous informer lorsque votre v
 - *Délai de répétition de l'annonce*. Si vous continuez à rouler trop vite, l'avertissement suivant est retardé de 120 secondes pour éviter des notifications trop fréquentes.
 - *Réinitialisation du minuteur*. Le minuteur se réinitialise si vous restez dans la limite légale pendant 30 secondes. Tout excès de vitesse ultérieur attendra à nouveau 5 secondes avant que l'avertissement suivant ne retentisse.
 
-Ce paramètre de **Tolérance de limite de vitesse** affecte la vitesse affichée dans la partie *avertissement* du [widget Compteur de vitesse](../../widgets/info-widgets.md#speedometer) dans l'application OsmAnd, [Android Auto](../../navigation/auto-car.md#speedometer) et [CarPlay](../../navigation/car-play.md#speedometer).
+Ce paramètre de **tolérance de la limite de vitesse** affecte la vitesse affichée dans la partie *avertissement* du [widget Compteur de vitesse](../../widgets/info-widgets.md#speedometer) dans l'application OsmAnd, [Android Auto](../../navigation/auto-car.md#speedometer) et [CarPlay](../../navigation/car-play.md#speedometer).
 
 
-### Temps d'annonce {#announcement-time}
+### Heure d'annonce {#announcement-time}
 
 ![Synchronisation des annonces de navigation vocale Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)
 
-Le temps d'annonce des différentes invites vocales dépend du profil sélectionné, du type d'invite, de la vitesse de navigation actuelle et de la vitesse de navigation par défaut. Avec ce paramètre, vous pouvez modifier la distance avant que les invites vocales ne soient activées en appliquant un multiplicateur de distance : *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
+L'heure d'annonce des différentes invites vocales dépend du profil sélectionné, du type d'invite, de la vitesse de navigation actuelle et de la vitesse de navigation par défaut. Avec ce paramètre, vous pouvez modifier la distance avant que les invites vocales ne soient activées en appliquant un multiplicateur de distance : *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
 
-Dans la liste déroulante *Intervalles de temps et de distance*, vous pouvez afficher des informations détaillées sur l'activation des invites pour les différents multiplicateurs de distance. Pour plus d'informations, consultez la section [Déclenchement des invites vocales de navigation](../../../technical/algorithms/voice-prompt-triggering.md).
+Dans la liste déroulante *Intervalles de temps et de distance*, vous pouvez consulter des informations détaillées sur l'activation des invites pour les différents multiplicateurs de distance. Pour plus d'informations, consultez le [Déclenchement des invites vocales de navigation](../../../technical/algorithms/voice-prompt-triggering.md).
 
 
-### Sortie des instructions vocales {#voice-guidance-output}
+### Sortie du guidage vocal {#voice-guidance-output}
 
 <InfoAndroidOnly/>
 
 ![Navigation vocale Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
-Pour éviter de lire de l'audio dans le même flux de sortie en même temps, la focalisation audio est implémentée dans Android. OsmAnd utilisera le haut-parleur sélectionné dans la liste de ce paramètre pour la sortie audio. Les autres applications mettront la lecture en pause ou baisseront le volume pour vous permettre d'entendre plus facilement les invites vocales d'OsmAnd.
+Pour éviter de lire de l'audio dans le même flux de sortie en même temps, la mise au point audio est implémentée dans Android. OsmAnd utilisera le haut-parleur sélectionné dans la liste de ce paramètre pour la sortie audio. Les autres applications mettront la lecture en pause ou baisseront le volume pour vous permettre d'entendre plus facilement les invites vocales d'OsmAnd.
 
-- Audio multimédia/navigation.
+- Audio média/navigation.
 - Audio de notification.
-- Audio d'appel téléphonique (pour interrompre les [autoradios](../auto-car.md) Bluetooth).
+- Audio d'appel téléphonique (pour interrompre les [autoradios Bluetooth](../auto-car.md)).
 
 
 ### Test des invites vocales {#testing-of-voice-prompts}
 
 Vous pouvez tester les invites vocales avec :
 
-- [Simuler la navigation](../../navigation//setup/route-navigation.md#simulated-navigation). Définissez un itinéraire et lancez la simulation : *Menu Navigation → Paramètres → Simuler la navigation*.
+- [Simuler la navigation](../../navigation//setup/route-navigation.md#simulated-navigation). Définissez un itinéraire et démarrez la simulation : *Menu Navigation → Paramètres → Simuler la navigation*.
 
-- [Tester les invites vocales](../../plugins/development.md#application-testing) (*Android uniquement*). Utilisez le *plugin Développement* pour tester les invites vocales :
+- [Tester les invites vocales](../../plugins/development.md#application-testing) (*Android uniquement*). Utilisez le *plugin de développement* pour tester les invites vocales :
     - Allez dans *Menu → Plugins → Activer le développement OsmAnd*.
     - Allez dans *Paramètres → Tester les invites vocales*.
     - Sélectionnez une langue et vérifiez si le système lit correctement les invites.
@@ -188,7 +188,7 @@ Si vous n'entendez pas les **invites vocales** ou les [avertissements de limite 
 - Assurez-vous que le volume de votre appareil est activé et augmenté.
 - Confirmez que le son est activé pendant la navigation : *Menu → Navigation → Bouton Son On/Off* ou *Menu → Navigation → Bouton Paramètres → Son* pour une configuration audio détaillée.
 - Sélectionnez les [haut-parleurs](#voice-guidance-output) à utiliser.
-- Vérifiez quelle [instruction vocale](#voice-prompt-language) est sélectionnée et assurez-vous que vous disposez d'une voix TTS ou enregistrée capable d'annoncer les avertissements de limite de vitesse.
+- Vérifiez quel [guidage vocal](#voice-prompt-language) est sélectionné, et assurez-vous que vous avez une voix TTS ou enregistrée capable d'annoncer les avertissements de limite de vitesse.
 - Vérifiez que l'audio n'est pas acheminé vers un périphérique de sortie non intentionnel (par exemple, un casque Bluetooth déconnecté).
 
 Pour des étapes de dépannage supplémentaires, consultez le [guide de dépannage de la navigation](../../troubleshooting/navigation.md#voice-navigation).
@@ -196,43 +196,43 @@ Pour des étapes de dépannage supplémentaires, consultez le [guide de dépanna
 
 ## TTS (Text-to-Speech) {#tts-text-to-speech}
 
-OsmAnd prend en charge les voix **Text-to-Speech (TTS)**, qui fournissent des instructions vocales dynamiques et détaillées, y compris les instructions de virage, les noms de rues et les annonces de POI. Les voix TTS sont incluses dans l'application mais nécessitent un [moteur de synthèse vocale](https://en.wikipedia.org/wiki/Speech_synthesis) installé sur l'appareil.
+OsmAnd prend en charge les voix **Text-to-Speech (TTS)**, qui fournissent un guidage vocal dynamique et détaillé, y compris les instructions de virage, les noms de rues et les annonces de POI. Les voix TTS sont incluses dans l'application mais nécessitent un [moteur de synthèse vocale](https://en.wikipedia.org/wiki/Speech_synthesis) installé sur l'appareil.
 
 La plupart des appareils Android et iOS modernes incluent un moteur TTS par défaut, mais des moteurs et des langues supplémentaires peuvent être installés séparément.
 
 Pour une liste des **moteurs TTS disponibles et des langues prises en charge** sur Android, consultez :
-[Liste des langues avec moteurs TTS disponibles sur Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+[Liste des langues avec les moteurs TTS disponibles sur Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-***Configuration de TTS sur votre appareil :***
+***Configuration de la synthèse vocale sur votre appareil :***
 
 **Android :**
 
 1. Ouvrez les paramètres.
-2. Naviguez vers *Accessibilité → Sortie Text-to-Speech*.
+2. Accédez à *Accessibilité → Sortie de synthèse vocale*.
 3. Sélectionnez un **moteur TTS** (Google TTS ou un autre moteur installé).
 4. Choisissez une **langue préférée** (certaines peuvent nécessiter des téléchargements supplémentaires).
-5. Ajustez le débit vocal, la hauteur et la vitesse de lecture si nécessaire.
+5. Ajustez le débit vocal, la hauteur et la vitesse de lecture selon vos besoins.
 6. Appuyez sur **Écouter un exemple** pour tester la sortie vocale.
 
 Pour plus de détails, consultez :
-[Assistance Google – Paramètres Text-to-Speech Android](https://support.google.com/accessibility/android/answer/6006983).
+[Assistance Google – Paramètres de synthèse vocale Android](https://support.google.com/accessibility/android/answer/6006983).
 
 **iOS :**
 
 1. Ouvrez les paramètres.
-2. Allez dans *Accessibilité → Contenu parlé*.
+2. Accédez à *Accessibilité → Contenu énoncé*.
 3. Appuyez sur **Voix** pour sélectionner une voix préférée.
 4. Ajustez le **Débit vocal**, les **Prononciations** et d'autres paramètres.
-5. Testez la voix à l'aide de **Parler la sélection** ou **Parler l'écran**.
+5. Testez la voix à l'aide de **Énoncer la sélection** ou **Énoncer l'écran**.
 
 Pour plus de détails, consultez :
-[Assistance Apple – Paramètres vocaux iPhone](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
+[Assistance Apple – Paramètres vocaux de l'iPhone](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
 
 ***Test des invites vocales :***
 
-Pour vérifier si TTS fonctionne correctement dans OsmAnd :
+Pour vérifier si la synthèse vocale fonctionne correctement dans OsmAnd :
 
-- Activez le **Plugin Développement** : *Menu → Paramètres → Plugins → Développement OsmAnd*.
+- Activez le **Plugin de développement** : *Menu → Paramètres → Plugins → Développement OsmAnd*.
 - Ouvrez [Tester les invites vocales](../../plugins/development.md#application-testing) : *Menu → Paramètres → Plugins → Développement OsmAnd → Tester les invites vocales*.
 
 Pour le dépannage, consultez :
@@ -245,7 +245,7 @@ Pour le dépannage, consultez :
 
 <TabItem value="android" label="Android">
 
-Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Navigation vocale Android](@site/static/img/navigation/voice/voice_promt-tts.png) ![Navigation vocale Android](@site/static/img/navigation/voice/voice_promt-recorded.png)
 
@@ -253,7 +253,7 @@ Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profil
 
 <TabItem value="ios" label="iOS">
 
-Allez dans : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Paramètres de navigation vocale iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
@@ -267,37 +267,37 @@ OsmAnd propose deux types d'invites vocales :
     - Utilise le moteur TTS de l'appareil pour générer dynamiquement des invites vocales.
     - Lit les noms de rues, les instructions de virage, les noms de POI et d'autres détails.
     - Prend en charge plusieurs langues et paramètres de prononciation.
-    - Peut être personnalisé avec le débit vocal, la hauteur et les paramètres de prononciation.
+    - Peut être personnalisé avec des paramètres de débit vocal, de hauteur et de prononciation.
 
 - **<Translate android="true" ids="shared_string_recorded"/>** (*Android uniquement*)
     - Utilise des invites vocales préenregistrées pour la navigation.
-    - Semble plus naturel que TTS mais présente des limitations.
-    - Ne lit pas les noms de rues ou les noms de POI.
-    - Fournit uniquement des instructions de virage de base.
+    - Semble plus naturel que le TTS mais présente des limitations.
+    - Ne lit pas les noms de rues ni les noms de POI.
+    - Ne fournit que des instructions de virage de base.
 
-> *TTS est recommandé pour des instructions de navigation détaillées.*
+> *Le TTS est recommandé pour un guidage de navigation détaillé.*
 
-#### Paramètres d'invite vocale au niveau du système {#system-level-voice-prompt-settings}
+#### Paramètres des invites vocales au niveau du système {#system-level-voice-prompt-settings}
 
 Le comportement des invites vocales, y compris la *vitesse de lecture, la hauteur et les pauses*, ne peut être ajusté que dans les paramètres système de l'appareil.
 
 **Android :**
 
-1. Ouvrez les *Paramètres* de l'appareil *→ Accessibilité → Sortie Text-to-speech*.
+1. Ouvrez les *Paramètres* de l'appareil *→ Accessibilité → Sortie de synthèse vocale*.
 2. Choisissez votre moteur TTS et votre langue préférés.
 3. Ajustez le débit vocal, la hauteur et la vitesse de lecture.
 
 **iOS :**
 
-1. Ouvrez les *Paramètres* de l'appareil *→ Accessibilité → Contenu parlé*.
+1. Ouvrez les *Paramètres* de l'appareil *→ Accessibilité → Contenu énoncé*.
 2. Ajustez : langue, voix, débit vocal, prononciations.
 
-> *Pour des voix supplémentaires, téléchargez des packs de langue à partir des paramètres système.*
+> *Pour des voix supplémentaires, téléchargez des packs de langues à partir des paramètres système.*
 
 
 #### Langues TTS disponibles {#available-tts-languages}
 
-Il existe actuellement un total de 45 langues. Toutes les langues listées ci-dessous ne sont pas nécessairement prises en charge par tous les moteurs TTS. Voir [ici](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+Il y a actuellement un total de 45 langues. Toutes les langues listées ci-dessous ne sont pas forcément prises en charge par tous les moteurs TTS. Voir [ici](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
 | | |
 | :--- | :--- |
@@ -324,41 +324,41 @@ Il existe actuellement un total de 45 langues. Toutes les langues listées ci-de
 
 ## Invites vocales enregistrées {#recorded-voice-prompts}
 
-### Télécharger des packs vocaux {#download-voice-packages}
+### Télécharger les packs vocaux {#download-voice-packages}
 
 <InfoAndroidOnly />
 
-L'utilisation de voix enregistrées dans OsmAnd ne devrait être qu'un recours. Elles sont assez limitées et ne peuvent pas prononcer les noms de rues, les noms de lieux, etc. Vous pouvez télécharger des invites vocales à partir de deux ensembles différents de la liste.
+L'utilisation de voix enregistrées dans OsmAnd ne devrait être qu'une solution de repli. Elles sont plutôt limitées et ne peuvent pas prononcer les noms de rues, les noms de lieux, etc. Vous pouvez télécharger des invites vocales à partir de deux ensembles différents de la liste.
 
-- Le premier type, ce sont les recommandés :
+- Le premier type, ce sont les plus recommandés :
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
     ![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/TTS-preferred-1.png) ![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/TTS-preferred-2.png)
 
-- Le deuxième type sont des invites vocales enregistrées, avec un ensemble de fonctionnalités incomplet :
+- Le second type sont des invites vocales enregistrées, avec un ensemble de fonctionnalités incomplet :
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*
 
     ![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/TTS-recorded.png)
 
-### Modes Bip {#beep-modes}
+### Modes de bip {#beep-modes}
 
 <InfoAndroidOnly />
 
-Vous pouvez configurer un profil OsmAnd pour émettre des bips au lieu de parler, de manière similaire à un compteur de vélo. Il existe trois modèles de base : *minimal*, *simple* et *complexe*. Les modèles simple et complexe ont des variantes *fortes*, qui seront considérablement plus faciles à entendre dans un environnement bruyant mais peuvent sembler désagréablement dures.
+Vous pouvez configurer un profil OsmAnd pour qu'il émette des bips au lieu de parler, de la même manière qu'un compteur de vélo. Il existe trois modèles de base : *minimal*, *simple* et *complexe*. Les modèles simple et complexe ont des variantes *fortes*, qui seront considérablement plus faciles à entendre dans un environnement bruyant mais peuvent sembler désagréablement dures.
 
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*
 
-- **Minimal**. Adapté pour suivre un itinéraire connu à pied avec un minimum de distractions, ce modèle vous alertera lorsque vous passerez des destinations intermédiaires, des favoris et des POI, et lorsque vous vous serez écarté de l'itinéraire ou que vous y serez revenu. Il ne fournira aucun avertissement audio pour les virages.
-- **Simple**. En plus des alertes pour les destinations, les favoris, les POI et autres, le modèle simple vous alerte par un bip plus long lorsque vous devez tourner.
-- **Complexe**. Adapté au cyclisme sur route, le modèle complexe utilise des bips de différentes longueurs et hauteurs pour vous informer des virages à venir.
-    - Un bip bas signifie un virage à gauche, tandis qu'un bip haut signifie un virage à droite. Une série de bips de hauteur moyenne représente la sortie à prendre sur un rond-point (carrefour giratoire). Les trois hauteurs en séquence représentent un demi-tour. Dans tous ces cas, les bips courts signifient qu'il faut se préparer à faire quelque chose, tandis que les bips longs signifient qu'il faut faire quelque chose maintenant.
+- **Minimal**. Convient pour suivre un itinéraire connu à pied avec un minimum de distractions, ce modèle vous alertera lorsque vous passerez des destinations intermédiaires, des favoris et des POI, et lorsque vous vous serez dévié ou que vous serez revenu sur l'itinéraire. Il ne fournira aucun avertissement audio pour les virages.
+- **Simple**. En plus des alertes pour les destinations, les favoris, les POI et autres, le modèle simple vous avertit par un bip plus long lorsque vous devez tourner.
+- **Complexe**. Convient pour le cyclisme sur route, le modèle complexe utilise des bips de différentes longueurs et hauteurs pour vous informer des virages à venir.
+    - Un bip grave signifie un virage à gauche, tandis qu'un bip aigu signifie un virage à droite. Une série de bips de hauteur moyenne représente la sortie à prendre dans un rond-point. Dans tous ces cas, des bips courts signifient qu'il faut se préparer à faire quelque chose, tandis que des bips longs signifient qu'il faut faire quelque chose maintenant.
 
 
 ## Notifications textuelles {#text-notifications}
 
-Une fois que vous avez démarré un itinéraire, vous pouvez afficher les informations dans le menu déroulant du système dans la liste des notifications. Les notifications silencieuses d'OsmAnd contiennent des informations telles que les instructions virage par virage, les flèches de direction de virage, l'heure d'arrivée et le temps restant, la vitesse actuelle et la distance jusqu'à la destination.
+Une fois que vous avez démarré un itinéraire, vous pouvez consulter les informations dans le menu déroulant du système, dans la liste des notifications. Les notifications silencieuses d'OsmAnd contiennent des informations telles que les instructions virage par virage, les flèches de direction de virage, l'heure d'arrivée et le temps restant, la vitesse actuelle et la distance jusqu'à la destination.
 
 ![Notification d'itinéraire de navigation Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
@@ -383,21 +383,21 @@ Lisez comment le contrôle des notifications est implémenté sur Android dans c
 
 ![Menu de contrôle de l'écran Android](@site/static/img/navigation/route/screen_control_android.png)
 
-Vous pouvez contrôler l'écran de votre appareil pour économiser de l'énergie. Ce mode dispose de deux paramètres généraux : *<Translate android="true" ids="screen_timeout"/>* et *<Translate android="true" ids="turn_screen_on"/>*.
+Vous pouvez contrôler l'écran de votre appareil pour économiser de l'énergie. Ce mode dispose de deux réglages généraux : *<Translate android="true" ids="screen_timeout"/>* et *<Translate android="true" ids="turn_screen_on"/>*.
 
 ### Délai d'expiration de l'écran {#screen-timeout}
 
-1. **<Translate android="true" ids="system_screen_timeout"/>**. L'écran s'éteint en fonction des paramètres système de votre appareil. Le bouton *Modifier les paramètres* permet un accès rapide au menu système tel que *Affichage et luminosité* où vous pouvez régler le délai d'expiration de l'écran.
+1. **<Translate android="true" ids="system_screen_timeout"/>**. L'écran s'éteint en fonction des paramètres système de votre appareil. Le bouton *Modifier les paramètres* permet un accès rapide au menu système tel que *Affichage et luminosité* où vous pouvez ajuster le délai d'expiration de l'écran.
 
-    ![Contrôle de l'écran du délai d'expiration du système Android](@site/static/img/navigation/route/system_timeout_android.png)
+    ![Contrôle de l'écran de temporisation du système Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Si *Garder l'écran allumé* est activé, l'écran de l'appareil n'applique pas de délai d'expiration après le réveil. S'il est désactivé, vous pouvez définir le temps après lequel l'écran de l'appareil s'éteindra si vous n'interagissez pas avec lui, de 5 à 60 secondes.
+2. **<Translate android="true" ids="wake_time"/>**. Si *Garder l'écran allumé* est activé, l'écran de l'appareil ne s'éteint pas après le réveil. S'il est désactivé, vous pouvez définir le temps après lequel l'écran de l'appareil s'éteindra si vous n'interagissez pas avec lui, de 5 à 60 secondes.
 
     ![Délai d'expiration après le réveil Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Délai d'expiration après le réveil Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
-### Allumer l'écran {#turn-screen-on}
+### Activer l'écran {#turn-screen-on}
 
-![allumer l'écran Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![activer l'écran Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
 Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste au premier plan lorsque l'appareil est verrouillé.
 
@@ -409,7 +409,7 @@ Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste
 ## Articles connexes {#related-articles}
 
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
-- [Préparation de l'itinéraire](../setup/route-navigation.md)
+- [Préparation d'itinéraire](../setup/route-navigation.md)
 - [Navigation par trace](../setup/gpx-navigation.md)
 - [Navigation par marqueurs](../setup/markers-navigation.md)
 - [Détails de l'itinéraire](../setup/route-details.md)
@@ -423,6 +423,6 @@ Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste
 1. [Problèmes audio.](#solving-audio-issues)
 2. [Test des invites vocales.](#testing-of-voice-prompts)
 3. [Pourquoi devrais-je utiliser une voix TTS au lieu d'une voix enregistrée ?](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
-4. [TTS ne fonctionne pas correctement ? Suivez ces étapes pour le réparer.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
+4. [Le TTS ne fonctionne pas correctement ? Suivez ces étapes pour le réparer.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
 
-> *Dernière mise à jour : mars 2025*
+> *Dernière mise à jour : Mars 2025*

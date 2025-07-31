@@ -1,7 +1,7 @@
 ---
-source-hash: f5ae16407762521ec4aa196b206ad374ecb06bfd7b394248db04784c9100bc68
+source-hash: 5622b3c06a619b7597895ee507b9910943c93a7d5ec31ddecd00215481e51e29
 sidebar_position: 7
-title:  Rotas de trem
+title: Roteamento de trem
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,12 +19,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Visão geral {#overview}
 
 :::note
-Por padrão, o *perfil de trem* é desativado. Para usar este perfil para roteamento, você precisa ativá-lo em *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Por padrão, o *perfil de Trem* é desativado. Para usar este perfil para roteamento, você precisa ativá-lo em *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
 O *roteamento de trem* no OsmAnd oferece aos usuários a possibilidade de usar linhas ferroviárias para navegação como se estivessem dirigindo um trem como um carro. Esta opção pode ser útil, por exemplo, para caminhadas quando não há outras estradas disponíveis. Em outros casos, é melhor usar o *[roteamento de transporte público](./public-transport-navigation.md)*.
 
-![Mapa de transporte de bonde](@site/static/img/navigation/routing/train_routing_overview.png)
+![Mapa transporte bonde](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
 ## Parâmetros de rota - Trem {#route-parameters---train}
@@ -52,7 +52,7 @@ O *roteamento de trem* pode ser configurado de acordo com suas necessidades na s
 
 - O algoritmo de roteamento também pode considerar limitações temporárias especificadas no OpenStreetMap. Isso pode ser feito usando a opção *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Observe que, em alguns casos, as informações do OSM podem estar desatualizadas.
 
-- Na seção [*Recalcular rota*](../../navigation/guidance/navigation-settings.md#recalculate-route) dos *Parâmetros de rota*, você pode ativar e ajustar as opções de recálculo de rota.
+- Na seção [*Recalcular rota*](../../navigation/guidance/navigation-settings.md#recalculate-route) dos *Parâmetros de rota*, você pode habilitar e ajustar as opções de recálculo de rota.
 
 - Na seção [*Desenvolvimento*](../guidance/navigation-settings.md#development-settings) dos *Parâmetros de rota*, você pode experimentar novos recursos de roteamento que estão atualmente em fase de teste. Observe que essas configurações só estão disponíveis quando o [plugin de desenvolvimento do OsmAnd](../../plugins/development.md) está ativado.
 

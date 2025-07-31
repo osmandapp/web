@@ -7,13 +7,13 @@ sidebar_position: 1
 
 تصف هذه الوثائق الملفات التي يدعمها تطبيق OsmAnd.
 
-### [مسارات GPX، مسارات - .gpx](./osmand-gpx.md) {#gpx-routes-tracks---gpx}
+### [مسارات ومسارات GPX - .gpx](./osmand-gpx.md) {#gpx-routes-tracks---gpx}
 
 يستخدم OsmAnd ملفات GPX لتسجيل المسارات، وحفظ المسارات المحسوبة مسبقًا، ويمكنه استيراد ملفات GPX المُعدة من مصادر أخرى للعرض أو الملاحة.
 
-### [مسارات KML - .kml، .kmz](./osmand-kml.md) {#kml-tracks---kml-kmz}
+### [مسارات KML - .kml, .kmz](./osmand-kml.md) {#kml-tracks---kml-kmz}
 
-يمكن لتطبيق OsmAnd استيراد أو تحويل معلومات الموقع بتنسيق KML.
+يمكن لـ OsmAnd استيراد أو تحويل معلومات الموقع بصيغة KML.
 
 ### [حزمة OsmAnd - .osf](./osmand-osf.md) {#osmand-package---osf}
 
@@ -25,7 +25,7 @@ sidebar_position: 1
 
 ### [نمط عرض الخريطة - .render.xml](./osmand-rendering-style.md) {#map-rendering-style---renderxml}
 
-نمط عرض OsmAnd هو ملف XML خاص يصف كيفية عرض كائنات الخريطة المتجهة على الخريطة. وكقاعدة عامة، يحتوي على عدد كبير من أسطر التعليمات البرمجية وهو قابل للتخصيص بشكل جيد.
+نمط عرض OsmAnd هو ملف XML خاص يصف كيفية عرض كائنات الخريطة المتجهة على الخريطة. كقاعدة عامة، يحتوي على عدد كبير من أسطر التعليمات البرمجية وهو قابل للتخصيص بشكل جيد.
 
 ### [خرائط OsmAnd الثنائية - .obf](./osmand-obf.md) {#osmand-binary-maps---obf}
 
@@ -33,12 +33,12 @@ sidebar_position: 1
 
 ### [صيغة دليل المربعات - .metainfo](./osmand-metainfo.md) {#tiles-directory-format---metainfo}
 
-مواصفات صيغة Metainfo لتطبيق OsmAnd.
+مواصفات صيغة Metainfo الخاصة بـ OsmAnd.
 
 ### [صيغة مربعات SQLite - .sqlite](./osmand-sqlite.md) {#tiles-sqlite-format---sqlite}
 
-مواصفات صيغة SQLite لتطبيق OsmAnd.
+مواصفات صيغة SQLite الخاصة بـ OsmAnd.
 
 ### [حزم الصوت](./osmand-voice-package.mdx) {#voice-packages}
 
-حزم صوتية مسجلة ومُركبة بنظام تحويل النص إلى كلام (TTS) تنشئ مطالبات صوتية للملاحة.
+حزم صوتية مسجلة ومُركبة بالنص إلى كلام (TTS) تنشئ مطالبات صوتية للملاحة.

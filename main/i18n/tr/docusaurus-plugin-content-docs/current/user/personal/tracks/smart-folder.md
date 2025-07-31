@@ -1,5 +1,5 @@
 ---
-source-hash: f590f02934d3bbad431f346fc5f01207a37246d4320a4a5025973bb5ff373b63
+source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
 sidebar_position: 3
 title: Akıllı Klasör (Filtre)
 ---
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Akıllı Klasör** özelliği, parkurlarınızı düzenlemek ve yönetmek için güçlü araçlar sunar. Temel özelliklerden biri, *Yerlerim* menüsünün *Parkurlar sekmesinde* dosyaları süre, uzunluk veya hıza göre filtreleme yeteneğidir.
+**Akıllı Klasör** özelliği, parkurlarınızı düzenlemek ve yönetmek için güçlü araçlar sunar. Temel özelliklerden biri, *Yerlerim* menüsünün *Parkurlar sekmesinde* dosyaları süre, uzunluk veya hız gibi kriterlere göre filtreleme yeteneğidir.
 
-Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sağlar. Filtrelenmiş sonuçlar, dinamik olarak güncellenen parkur koleksiyonlarına kolay erişim sağlayan bir **Akıllı Klasör** olarak kaydedilebilir.
+Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde bulmanızı sağlar. Filtrelenmiş sonuçlar, dinamik olarak güncellenen parkur koleksiyonlarına kolay erişim sağlayan bir **Akıllı Klasör** olarak kaydedilebilir.
 
 
 ## Arama Filtresi {#search-filter}
@@ -29,7 +29,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi*
 
 ![Yerlerim parkurları](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
@@ -37,7 +37,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
 
 ![Yerlerim parkurları](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
@@ -47,7 +47,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 ***Filtre nasıl uygulanır:***
 
-- *Ara* simgesine dokunun, ardından [*Sıralama ölçütü*](./manage-tracks.md#sort-by) satırında *Filtrele*'ye dokunun.
+- *Ara* simgesine, ardından [*Sıralama ölçütü*](./manage-tracks.md#sort-by) satırındaki *Filtre* seçeneğine dokunun.
 
 - Parkur aramanızı hassaslaştırmak için **gerekli filtre ayarlarını seçin**.
 
@@ -55,7 +55,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 - Tüm etkin filtreleri **temizlemek için** **Tümünü sıfırla**'ya dokunun.
 
-- Mevcut filtre setini yeni bir **Akıllı Klasör** olarak **kaydetmek için** ekranın sağ üst köşesindeki kaydet simgesine dokunun.
+- Mevcut filtre setini yeni bir **Akıllı Klasör** olarak **kaydetmek için**, ekranın sağ üst köşesindeki kaydet simgesine dokunun.
 
 
 ### Mevcut Filtreler {#available-filters}
@@ -78,29 +78,29 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 - **Ad** — Parkurları başlığa göre arayın. Eşleşen parkurları görüntülemek için tam veya kısmi bir ad girin.
 - **Klasör** — Parkurları depolama konumlarına göre filtrelemek için bir veya daha fazla klasör seçin.
-- **Süre** — Parkurları kaydedilen sürelerine göre filtreleyin, saat ve dakika cinsinden bir aralık ayarlayın.
-- **Hareket süresi** — Kayıt sırasında hareket halinde geçirilen zaman aralığını belirtin.
+- **Süre** — Parkurları kaydedilen sürelerine göre, saat ve dakika cinsinden bir aralık belirleyerek filtreleyin.
+- **Hareket halindeki süre** — Kayıt sırasında hareket halinde geçirilen zaman aralığını belirtin.
 - **Uzunluk** — Belirli bir uzunluktaki parkurları bulmak için kilometre veya mil cinsinden belirli bir aralık ayarlayın.
 - **Ortalama hız** — Parkurları [ortalama hıza](../../widgets/info-widgets.md#average-speed) göre filtreleyin.
 - **Sensör veri grubu.**
-    Aşağıdakiler dahil olmak üzere harici sensör verilerine göre filtreler uygulayın:
+    Harici sensör verilerine göre filtreler uygulayın, bunlar şunları içerir:
     - Sensör hızı, ortalama.
-    - Sensör hızı, maks.
+    - Sensör hızı, maksimum.
     - Kalp atış hızı, ortalama.
-    - Kalp atış hızı, maks.
+    - Kalp atış hızı, maksimum.
     - Bisiklet Kadansı, ortalama.
-    - Bisiklet Kadansı, maks.
+    - Bisiklet Kadansı, maksimum.
     - Bisiklet Gücü, ortalama.
-    - Bisiklet Gücü, maks.
+    - Bisiklet Gücü, maksimum.
     - Sıcaklık, ortalama.
-    - Sıcaklık, maks.
-- **Maks Hız** — Belirli maksimum hız aralıklarına sahip parkurları seçin.
+    - Sıcaklık, maksimum.
+- **Maksimum Hız** — Belirli maksimum hız aralıklarına sahip parkurları seçin.
 - **Yokuş yukarı** ve **Yokuş aşağı** — Parkurları pozitif veya negatif yükseklik değişikliklerine göre filtreleyin.
-- **Ortalama yükseklik** ve **Maks yükseklik** — Belirli ortalama veya maksimum yükseklik verilerine sahip parkurları bulun.
-- **Oluşturma tarihi** — Parkurları belirli bir tarih aralığında oluşturulma tarihlerine göre filtreleyin.
+- **Ortalama yükseklik** ve **Maksimum yükseklik** — Belirli ortalama veya maksimum yükseklik verilerine sahip parkurları bulun.
+- **Oluşturma tarihi** — Belirli bir tarih aralığında oluşturulan parkurları filtreleyin.
 - **En yakın şehirler** — Seçilen şehirlerin veya yerleşim yerlerinin yakınından geçen parkurları görüntüleyin.
-- **Etkinlik türü** — Parkurları GPX dosyasında kaydedilen [etkinlik](../../map/tracks/track-context-menu.md#track-information-activity) türüne göre filtreleyin (örn. bisiklet, yürüyüş).
-- **Ülke** — Parkurları kaydedildikleri ülkeye veya bölgeye göre filtreleyin.
+- **Etkinlik türü** — Parkurları GPX dosyasında kaydedilen [etkinlik](../../map/tracks/track-context-menu.md#track-information-activity) türüne göre filtreleyin (örn. bisiklet sürme, yürüyüş).
+- **Ülke** — Parkurları kaydedildikleri ülke veya bölgeye göre filtreleyin.
 - **Renk** ve **Genişlik** — Atanan renge veya çizgi genişliğine göre parkurları seçin.
 - **Diğer** — Özel özellikler için ek filtreler:
     - *Haritada Görünür*. Yalnızca haritada görüntülenen parkurları gösterir.
@@ -113,13 +113,13 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızla bulmanızı sa�
 
 <TabItem value="android" label="Android">
 
-![Yerlerim parkurları sıralama işlevi Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+Yerlerim parkurları sıralama işlevi Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim parkurları](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+Yerlerim parkurları](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Bir **Akıllı Klasör**, belirli filtre kriterlerine göre otomatik olarak gün
 1. **Otomatik düzenleme.**
     Oluşturma tarihi veya süre aralığı gibi önceden tanımlanmış kurallara uyan parkurları otomatik olarak içerir.
 2. **Filtreleme ve arama.**
-    Gelişmiş filtreler ve anahtar kelimeler kullanarak parkurlar içinde hızlı aramalar yapılmasına olanak tanır.
+    Gelişmiş filtreler ve anahtar kelimeler kullanarak parkurlar içinde hızlı aramalar yapmaya olanak tanır.
 3. **Dinamik yenileme.**
     Kriterlere uyan en son parkurları görüntülemek için içeriği otomatik olarak yeniler.
 4. **Kuralları özelleştirin.**
@@ -151,9 +151,9 @@ Bir **Akıllı Klasör** oluşturmak için şu adımları izleyin:
    - **Klasöre ad verin**. Klasörü tanımlamak için bir ad girin.
    - **Parkur filtre parametrelerini** belirtin. Mevcut [Filtre](#available-filters) seçeneklerini kullanarak gerekli filtreleri uygulayın.
 
-4. Ayarları **kaydedin**.
+4. Ayarları **Kaydet**.
     - Parkurları önizlemek için **Göster**'e dokunun.
-    - *Akıllı Klasörü* sonlandırmak için **Kaydet** düğmesini seçin.
+    - *Akıllı Klasörü* tamamlamak için **Kaydet** düğmesini seçin.
 
 Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla içeriğini otomatik olarak güncelleyecektir.
 
@@ -164,45 +164,45 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 
 <TabItem value="android" label="Android">
 
-![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için (*Android*) yanındaki *üç nokta menüye* dokunun ve (*iOS*) *uzun dokunun* veya klasörü açın ve sağ üst köşedeki simgeyi kullanın.
+**Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için yanındaki *üç nokta menüsüne* (*Android*) dokunun ve *uzun dokunun* (*iOS*) veya klasörü açın ve sağ üst köşedeki simgeyi kullanın.
 
 ***Mevcut Eylemler:***
 
 - **Ayrıntılar** — Klasörde bulunan parkurların tam listesini görüntüleyin.
 
 - **Tüm parkurları haritada göster** (*Yalnızca Android*) — Tüm klasör parkurlarını haritada görüntüleyin.
-    *NOT: Çok sayıda parkur yüklemek performansı etkileyebilir.*
+    *NOT: Çok sayıda parkurun yüklenmesi performansı etkileyebilir.*
 
-- **Adı düzenle** (*Android*) / **Yeniden adlandır** (*iOS*) — Daha kolay tanımlama için klasör adını değiştirin.
+- **Adı düzenle** (*Android*) / **Yeniden adlandır** (*iOS*) — Klasörü daha kolay tanımlamak için adını değiştirin.
 
-- **Yenile** — Klasörün içeriğini manuel olarak güncelleyerek en son parkurları içerdiğinden emin olun.
+- **Yenile** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
 
-- **Varsayılan görünümü değiştir** (*Android*) — Klasördeki tüm parkurların görüntüleme görünümünü değiştirir.
+- **Varsayılan görünümü değiştir** (*Android*) — Klasördeki tüm parkurların görüntü görünümünü değiştirir.
 
 - **Filtreyi düzenle** — Mevcut Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
 
 - **Dışa Aktar** — Akıllı Klasördeki tüm parkurları [İçe/Dışa Aktar](../../personal/import-export.md) özelliği aracılığıyla dışa aktarın. *Menü → Ayarlar → Eylemler sekmesine* yönlendirileceksiniz.
 
-- **Klasörü sil** — Parkurları silmeden Akıllı Klasörü kaldırın.
-    *UYARI: Bu eylem geri alınamaz ve bir onay mesajı istenecektir.*
+- **Klasörü sil** — Parkurlarını silmeden Akıllı Klasörü kaldırın.
+    *UYARI: Bu eylem geri alınamaz ve bir onay mesajı isteyecektir.*
 
-- **Taşı** (*iOS*) — Klasörü başka bir mevcut klasöre taşımanıza veya yeni bir klasör oluşturmanıza olanak tanır.
+- **Taşı** (*iOS*) — Klasörü başka bir mevcut klasöre taşımaya veya yeni bir klasör oluşturmaya olanak tanır.
 
 - **Seç** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
 
@@ -212,7 +212,7 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 - [Parkuru Haritada Göster](../../map/tracks/index.md)
 - [Haritada Analiz Et](../../map/tracks/index.md#analyze-track-on-map)
 - [Parkur Bağlam Menüsü](../../map/tracks/track-context-menu.md)
-- [Parkura göre navigasyon](../../navigation/setup/gpx-navigation.md)
-- [Yolculuk kaydı](../../plugins/trip-recording.md)
+- [Parkura Göre Navigasyon](../../navigation/setup/gpx-navigation.md)
+- [Gezi Kaydı](../../plugins/trip-recording.md)
 
 > *Son güncelleme: Mart 2025*

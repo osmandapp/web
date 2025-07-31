@@ -1,7 +1,7 @@
 ---
-source-hash: 11ccd7dd12c26392daa1886c0a0736ecbb759c2d6277a6807c7a313134cd6080
+source-hash: 5518fc70081b20221258351fc52ceac84a6e4c65f687401c6f1e219d9057dfed
 sidebar_position: 3
-title:  Велосипедний маршрут (MTB)
+title: Велосипедна маршрутизація (MTB)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,31 +13,28 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
 ## Огляд {#overview}
 
-Велосипедний маршрут враховує такі фактори, як наявність велосипедних доріжок, стежок та доріг, які є безпечними та законними для велосипедистів. OsmAnd завжди використовує дані про висоту при розрахунку очікуваного часу прибуття (час для подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). За замовчуванням надається найшвидший маршрут.
-Велосипедний маршрут також може бути корисним для [гірського велосипеда](#mtb-routing-particularities).
+Велосипедна маршрутизація враховує такі фактори, як наявність велосипедних доріжок, стежок та доріг, які є безпечними та дозволеними для велосипедистів. OsmAnd завжди використовує дані про висоту при розрахунку очікуваного часу прибуття (час для подолання відстані) відповідно до [правила Нейсміта](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). За замовчуванням надається найшвидший маршрут.
+Велосипедна маршрутизація також може бути корисною для [гірського велосипеда](#mtb-routing-particularities).
 
-Ви можете налаштувати *Велосипедний маршрут* у розділі [Параметри маршруту](../guidance/navigation-settings#route-parameters) Налаштувань навігації.
-
+Ви можете налаштувати *Велосипедну маршрутизацію* в розділі [Параметри маршруту](../guidance/navigation-settings#route-parameters) налаштувань навігації.
 
 ## Параметри маршруту - Велосипед {#route-parameters---bicycle}
 
-Функції велосипедного маршруту OsmAnd дозволяють велосипедистам вводити початкову та кінцеву точки, а потім генерувати маршрут, який враховує їхні переваги та місцеву географію.
+Функції велосипедної маршрутизації OsmAnd дозволяють велосипедистам вводити початкову та кінцеву точки, а потім генерувати маршрут, який враховує їхні вподобання та місцеву географію.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Налаштування велосипедного маршруту](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Налаштування велосипедної маршрутизації](@site/static/img/navigation/routing/cycling_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування велосипедного маршруту iOS](@site/static/img/navigation/routing/cycling_routing_ios.png)
+![Налаштування велосипедної маршрутизації iOS](@site/static/img/navigation/routing/cycling_routing_ios.png)
 
 </TabItem>
 
@@ -45,28 +42,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="fast_route_mode"/>*  |  Механізм маршрутизації вибиратиме більш прямі та, відповідно, швидші дороги.  | Незважаючи на збільшення швидкості руху, відстань, що долається, також одночасно збільшується. Це призводить до збільшення м'язових зусиль. |
-| *<Translate android="true" ids="routing_attr_driving_style_name"/>* (Android) *Стиль&nbsp;їзди* (iOS) | <details><summary> Ви можете вибрати свій стиль їзди для кращої маршрутизації. </summary> ![Стиль їзди на велосипеді Android](@site/static/img/navigation/routing/style_cycling_andr.png)  </details>  | <ul><li> *<Translate android="true" ids="routing_attr_driving_style_safety_name"/>* (будуть переважно менш завантажені дороги з тегами [secondary](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary) та [residential](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential)) </li><li> *Віддавати перевагу [неасфальтованим дорогам](https://wiki.openstreetmap.org/wiki/Key:surface#Unpaved)* </li><li>  *<Translate android="true" ids="routing_attr_driving_style_balance_name"/>* (цей варіант є чимось середнім між *віддавати перевагу другорядним дорогам* та *найкоротшим маршрутом*) </li><li>  *<Translate android="true" ids="routing_attr_driving_style_speed_name"/>* (для маршрутизації будуть переважно ширші та зазвичай більш завантажені дороги, що забезпечують швидші маршрути) </li></ul>  |
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Виберіть дороги, яких ви хочете уникнути під час навігації.  </summary>![Уникати доріг Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | Ви можете [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road) або вибрати тип(и) дороги зі списку:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Уникати перетину кордону в іншу країну)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, що перевозить транспортні засоби через водойми)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Уникати бруківки](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (ділянки дороги, де через неї протікає водотік) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Без бруківки](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Обмеження приватного доступу будуть ігноруватися при розрахунку маршруту.  | Тег *[private](https://wiki.openstreetmap.org/wiki/Key:access)* використовується в OSM для опису обмежень на використання доріг та інших транспортних шляхів, а також будівель, входів, зручностей та об'єктів дозвілля.   |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Бажаний&nbsp;рельєф* (iOS) | <details><summary> Дані про висоту будуть використовуватися при розрахунку маршруту: будуть встановлені [штрафи для доріг](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) з іншим профілем висоти. </summary> ![Використовувати дані про висоту Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Ця перевага може допомогти уникнути крутих пагорбів або навпаки, віддати їм перевагу. Якщо ви виберете *горбистий* маршрут, перевага буде надана пагорбам та горам. Якщо *рівнинний* - рівнинам, пагорби будуть уникатися. Менш горбиста перевага є чимось середнім між цими двома варіантами. Без даних про висоту буде розраховано найшвидший маршрут, як на рівнинній місцевості. |
-
+|*<Translate android="true" ids="fast_route_mode"/>* | Механізм маршрутизації вибере більш прямі та, відповідно, швидші дороги. | Незважаючи на збільшення швидкості руху, одночасно збільшується і пройдена відстань. Це призводить до збільшення м'язових зусиль. |
+| *<Translate android="true" ids="routing_attr_driving_style_name"/>* (Android) *Стиль&nbsp;їзди* (iOS) | <details><summary> Ви можете вибрати свій стиль їзди для кращої маршрутизації. </summary> ![Стиль їзди на велосипеді Android](@site/static/img/navigation/routing/style_cycling_andr.png) </details> | <ul><li> *<Translate android="true" ids="routing_attr_driving_style_safety_name"/>* (будуть переважно менш завантажені дороги з тегами [secondary](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary) та [residential](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential)) </li><li> *Перевага [ґрунтових доріг](https://wiki.openstreetmap.org/wiki/Key:surface#Unpaved)* </li><li> *<Translate android="true" ids="routing_attr_driving_style_balance_name"/>* (цей варіант є чимось середнім між *перевагою другорядних доріг* та *найкоротшим маршрутом*) </li><li> *<Translate android="true" ids="routing_attr_driving_style_speed_name"/>* (для маршрутизації будуть переважно ширші та зазвичай більш завантажені дороги, що забезпечують швидші маршрути) </li></ul> |
+| *<Translate android="true" ids="impassable_road"/>* | <details><summary> Виберіть дороги, які ви хочете уникнути під час навігації. </summary>![Уникнення доріг Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details> | Ви можете або [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road), або вибрати тип(и) доріг зі списку: <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Уникнути перетину кордону в іншу країну)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, що перевозить транспортні засоби через водойми)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Уникнути бруківки](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (ділянки дороги, де через неї протікає водний потік) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Без бруківки](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* | Обмеження приватного доступу будуть ігноруватися при розрахунку маршруту. | Тег *[private](https://wiki.openstreetmap.org/wiki/Key:access)* використовується в OSM для опису обмежень на використання доріг та інших транспортних шляхів, а також будівель, входів, зручностей та об'єктів дозвілля. |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Переважний&nbsp;рельєф* (iOS) | <details><summary> Дані про висоту будуть використовуватися при розрахунку маршруту: [штрафи для доріг](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) з іншим профілем висот будуть встановлені. </summary> ![Використання даних про висоту Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png) </details> | Ця перевага може допомогти уникнути крутих пагорбів або, навпаки, віддати їм перевагу. Якщо ви виберете *горбистий* маршрут, перевага буде надана пагорбам та горам. Якщо *рівнинний* - рівнинам, пагорби будуть уникатися. Менш горбиста перевага є чимось середнім між цими двома варіантами. Без даних про висоту буде розраховано найшвидший маршрут, як на рівнинній місцевості. |
 
 ## Особливості маршрутизації MTB {#mtb-routing-particularities}
 
-Механізм маршрутизації MTB (гірський велосипед) такий самий, як і велосипедний маршрут. Зауважте, що існують деякі штрафи за використання [маршрутів MTB](../../map/vector-maps.md#routes), і тому вони менш імовірно будуть пропонуватися для поїздок на велосипеді додому або на роботу.
-
+Механізм маршрутизації MTB (гірський велосипед) такий самий, як і велосипедна маршрутизація. Зверніть увагу, що існують деякі штрафи за використання [маршрутів MTB](../../map/vector-maps.md#routes), і тому вони рідше пропонуються для поїздок на велосипеді додому або на роботу.
 
 ## Інші налаштування маршрутизації {#other-routing-settings}
 
-- Алгоритм маршрутизації також може враховувати тимчасові обмеження, зазначені в OpenStreetMap. Це можна зробити за допомогою опції *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Зауважте, що в деяких випадках інформація з OSM може бути застарілою.
+- Алгоритм маршрутизації також може враховувати тимчасові обмеження, вказані в OpenStreetMap. Це можна зробити за допомогою опції *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Зверніть увагу, що в деяких випадках інформація з OSM може бути застарілою.
 
 - У розділі [*Перерахувати маршрут*](../../navigation/guidance/navigation-settings.md#recalculate-route) *Параметрів маршруту* ви можете увімкнути та налаштувати параметри перерахунку маршруту.
 
-- У розділі [*Розробка*](../guidance/navigation-settings.md#development-settings) *Параметрів маршруту* ви можете спробувати нові функції маршрутизації, які наразі перебувають на етапі тестування. Зауважте, що ці налаштування доступні лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md).
+- У розділі [*Розробка*](../guidance/navigation-settings.md#development-settings) *Параметрів маршруту* ви можете спробувати нові функції маршрутизації, які наразі знаходяться на етапі тестування. Зверніть увагу, що ці налаштування доступні лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md).
 
-- Налаштування *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* у версії OsmAnd для *iOS* знаходиться в *Налаштуваннях навігації → Параметри маршруту* (для *Android*, в *Параметрах транспортного засобу → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Це налаштування використовується на невідомих дорогах без обмежень швидкості. Це найчастіше трапляється при навігації за треком або онлайн-маршрутом. Його необхідно встановити відповідно до параметрів вашого транспортного засобу.
+- Налаштування *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* у версії OsmAnd для *iOS* знаходиться в *Налаштуваннях навігації → Параметри маршруту* (для *Android* – у *Параметрах транспортного засобу → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Це налаштування використовується на невідомих дорогах без обмежень швидкості. Це найчастіше трапляється при навігації по треку або онлайн-маршруту. Його необхідно встановити відповідно до параметрів вашого транспортного засобу.
 
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Правильне налаштування параметрів допоможе уникнути проблем при створенні маршруту. Ви можете вибрати найбільш відповідний маршрут залежно від типу транспортного засобу та дорожніх обмежень, а також розрахувати час у дорозі.
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Правильне налаштування параметрів допоможе вам уникнути проблем при створенні маршруту. Ви можете вибрати найбільш підходящий маршрут залежно від типу транспортного засобу та дорожніх обмежень, а також розрахувати час у дорозі.
 
 > *Останнє оновлення: Червень 2024*

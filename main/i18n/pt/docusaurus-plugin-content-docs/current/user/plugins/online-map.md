@@ -1,5 +1,5 @@
 ---
-source-hash: 1b9d749ebb8730c64d4b1fceddc86003dfc6c14c7f5e556129e21a75f245cdc3
+source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
 sidebar_position: 8
 title: Mapas Online
 ---
@@ -16,32 +16,32 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-Os mapas online do OsmAnd são uma adição extensa ao banco de dados OpenStreetMap já presente no aplicativo. Com este plugin, você pode adicionar camadas ao seu mapa com informações de uma fonte diferente, começando com a visualização de satélite ou rotas de caminhada e terminando com dados muito específicos, como a localização de hidrantes. Você também pode alterar a fonte principal do mapa de mapas vetoriais para blocos online.
+Os mapas online do OsmAnd são um complemento extenso ao banco de dados OpenStreetMap já presente no aplicativo. Com este plugin, você pode adicionar camadas ao seu mapa com informações de uma fonte diferente, começando com a visualização de satélite ou rotas de caminhada e terminando com dados muito específicos, como a localização de hidrantes. Você também pode alterar a fonte principal do mapa de mapas vetoriais para blocos online.
 
 
 ## Parâmetros de Configuração Necessários {#required-setup-parameters}
 
 A capacidade de usar mapas online é ativada automaticamente na versão iOS do OsmAnd. Para exibir mapas online no Android, você precisa fazer as seguintes configurações:
 
-1. [Ative](../plugins/index.md#enable--disable) o plugin **Mapas Online** em *Menu Principal → Plugins → Mapas Online*.
+1. [Habilitar](../plugins/index.md#enable--disable) o plugin **Mapas Online** no *Menu Principal → Plugins → Mapas Online*.
 2. Faça as configurações necessárias na seção [Fonte do mapa](../map/raster-maps.md#select-raster-maps) do menu Configurar mapa.
-3. Defina a *Fonte do Mapa*, *Sobreposição* e *Camada Inferior* do mapa. Selecione seu provedor de mapa de satélite preferido.
-4. Baixe o [Mapa Online](#how-to-prepare-raster-maps) selecionado, se necessário.
+3. Defina a *Fonte do Mapa*, *Sobreposição* e *Subposição* do mapa. Selecione seu provedor de mapa de satélite preferido.
+4. Baixe o [mapa online](#how-to-prepare-raster-maps) selecionado, se necessário.
 
 
 ## Usar Mapas Raster no Dispositivo {#use-raster-maps-on-device}
 
 Você pode encontrar informações detalhadas sobre a visualização e personalização de mapas raster no artigo [Mapas Raster](../map/raster-maps.md). Como usar:
 
-1. [Selecione](../map/raster-maps.md#select-raster-maps) o mapa raster como camada *Principal*, *Camada Inferior* ou *Sobreposição*.
+1. [Selecione](../map/raster-maps.md#select-raster-maps) o mapa raster como camada *Principal*, *Subposição* ou *Sobreposição*.
     - [Altere](../map/raster-maps.md#how-to-use-raster-maps) os parâmetros da camada (transparência).
 
-2. [Prepare / copie](../map/raster-maps.md#prepare--copy-raster-maps-to-device) mapas raster para o dispositivo.
+2. [Prepare/copie](../map/raster-maps.md#prepare--copy-raster-maps-to-device) mapas raster para o dispositivo.
     - [Adicione uma nova fonte de mapa raster online](../map/raster-maps.md#add-new-online-raster-map-source)
     - [Adicione URL Mágica](../map/raster-maps.md#magic-url-to-install-map-source) para instalar a fonte do mapa.
 
 3. [Gerencie](../map/raster-maps.md#manage-raster-maps) mapas raster.
-    - [Baixe / atualize blocos](../map/raster-maps.md#download--update-tiles).
+    - [Baixe/atualize blocos](../map/raster-maps.md#download--update-tiles).
     - [Altere](../map/raster-maps.md#change-raster-map-parameters) os parâmetros do mapa raster.
 
 
@@ -51,7 +51,7 @@ Você pode encontrar informações detalhadas sobre a visualização e personali
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configurar camada inferior / sobreposição Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configurar subposição/sobreposição Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configurar camada inferior / sobreposição iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configurar subposição/sobreposição iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -72,14 +72,14 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 Artigo principal para preparar mapas [leia aqui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Apesar do plugin ser chamado *Mapas Online*, você também pode usar os mapas sem conexão com a internet. Você só precisa salvar as partes dos mapas (muitas vezes chamadas de blocos) para usá-las mais tarde. Para fazer isso, baixe uma [ferramenta específica de Criação de Mapas](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desenvolvida pela equipe OsmAnd.
+Apesar de o plugin se chamar *Mapas Online*, você também pode usar os mapas sem conexão com a internet. Você só precisa salvar as partes dos mapas (muitas vezes chamadas de blocos) para usá-las mais tarde. Para fazer isso, baixe uma [ferramenta específica de Criação de Mapas](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desenvolvida pela equipe do OsmAnd.
 
-Selecione a área que você precisa baixar, clique em Pré-carregar área, então defina os níveis de zoom menor e maior que você deseja exibir e baixe os blocos.
-Para a <b>versão Android</b> você pode copiá-los para a pasta <i>osmand/tiles/*tipo de bloco*</i> do seu telefone. Você também precisará abrir o <i>Configurar mapa-. Mapa de sobreposição</i> e escolher os blocos online do OsmAnd.
+Selecione a área que você precisa baixar, clique em Preload area (Pré-carregar área), defina os níveis de zoom menor e maior que você deseja exibir e baixe os blocos.
+Para a <b>versão Android</b>, você pode copiá-los para a pasta <i>osmand/tiles/*tipo de bloco*</i> do seu telefone. Você também precisará abrir o <i>Configurar mapa - Mapa de sobreposição</i> e escolher os blocos online do OsmAnd.
 
-Para a <b>versão iOS</b> você pode escolher o arquivo SQ Lite em seu telefone (qualquer mensageiro ou dropbox), o OsmAnd sugerirá adicioná-lo. Você também precisará abrir <i>Mapa → Sobreposição / Camada Inferior ou Tipo de Mapa</i> e escolher a nova fonte do mapa.
+Para a <b>versão iOS</b>, você pode escolher o arquivo SQ Lite em seu telefone (qualquer mensageiro ou dropbox), o OsmAnd sugerirá adicioná-lo. Você também precisará abrir <i>Mapa → Sobreposição / Subposição ou Tipo de mapa</i> e escolher uma nova fonte de mapa.
 
-Como adicionar um arquivo SQ Lite nas versões Android e iOS do OsmAnd você pode ler no projeto <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis</b></a>.
+Como adicionar o arquivo SQ Lite nas versões Android e iOS do OsmAnd, você pode ler no projeto <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis</b></a>.
 
 
 Os blocos online podem ser úteis quando você precisa apenas de uma pequena seção do mapa ou de um tipo específico dele para usar em uma área limitada, mas não quer baixar a região inteira. Eles podem ser úteis em inúmeras situações.
@@ -103,4 +103,4 @@ Os blocos online podem ser úteis quando você precisa apenas de uma pequena se�
     - Certifique-se de ter uma conexão ativa com a internet para acessar imagens de satélite.  
     - Verifique se o Mapa Online selecionado foi baixado ou requer [configurações adicionais](../map/raster-maps.md#select-raster-maps).
 
-> *Última atualização: janeiro de 2025*
+> *Última atualização: Janeiro de 2025*

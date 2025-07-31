@@ -1,5 +1,5 @@
 ---
-source-hash: 27c365e2cc23607b9c9893a7baf13d93386a9e23a925c712b829dec94e7a4355
+source-hash: 974c5e9164a6ee5cc7bedfde90040453285674465b0de9b2b63e46efeb2cc4d4
 sidebar_position: 2
 title: Botones del mapa
 ---
@@ -16,35 +16,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Descripción general {#overview}
+## Resumen {#overview}
 
 Los botones del mapa, incluidos *Zoom*, *Buscar*, *Direcciones*, *Brújula*, *Mi ubicación*, *Modo 3D* y *Menú*, son los controles principales para interactuar con el mapa. Cada botón ofrece funcionalidades específicas para mejorar su experiencia de navegación y uso del mapa.
 
 
-## Mi ubicación y zoom {#my-location-and-zoom}
+## Mi ubicación y Zoom {#my-location-and-zoom}
 
-![Menú de la pantalla de configuración](@site/static/img/widgets/location_zoom_buttons.png)
+![Menú de configuración de pantalla](@site/static/img/widgets/location_zoom_buttons.png)
 
 Utilice estos botones para controlar cómo se muestra el mapa en la pantalla de su dispositivo:
 
 - **Mi ubicación**. Muestra si el centro del mapa está sincronizado con la geolocalización actual de su dispositivo.
 - **Zoom**. Le permite ajustar el nivel de zoom del mapa para proporcionar más o menos detalles.
-Si desea más información sobre el uso de estos botones, puede consultar el artículo [Interactuar con el mapa](../map/interact-with-map.md#my-location-and-zoom).
+Si desea obtener más información sobre el uso de estos botones, consulte el artículo [Interactuar con el mapa](../map/interact-with-map.md#my-location-and-zoom).
 
 
 ## Direcciones {#directions}
 
-![El botón de direcciones permite](@site/static/img/widgets/directions_button_allows.png)
+![El botón Direcciones permite](@site/static/img/widgets/directions_button_allows.png)
 
 El botón **Direcciones** es esencial para la planificación de rutas y la navegación:
 
-- [Construir una ruta](../navigation/index.md). Utilice este botón para crear una ruta.
+- [Crear una ruta](../navigation/index.md). Utilice este botón para crear una ruta.
 - [Iniciar navegación](../navigation/index.md). Inicie la navegación paso a paso.
 - En el modo de navegación, el botón *Direcciones* no es visible por defecto, pero aparece después de un toque corto en el mapa.
 
 Estados indicativos del botón *Direcciones*:
 
-- El *icono gris por defecto* indica que la ruta aún no ha sido creada. Al tocar este icono se abre la funcionalidad de [configuración de ruta](../navigation/setup/route-navigation.md).
+- El *icono gris por defecto* indica que la ruta aún no se ha creado. Al tocar este icono se abre la funcionalidad de [configuración de ruta](../navigation/setup/route-navigation.md).
 - El *icono azul por defecto* indica que la ruta está construida, pero la navegación aún no ha comenzado. Al tocar este icono se abre la funcionalidad de [configuración de ruta](../navigation/setup/route-navigation.md#start--stop-navigation).
 - El *icono de flecha azul* indica que la navegación está activa. Al tocar este icono se abren los [detalles de la ruta actual](../navigation/setup/route-details.md).
 
@@ -78,24 +78,24 @@ El botón Brújula indica la orientación del mapa en la pantalla de su disposit
 ### Modos de orientación del mapa {#map-orientation-modes}
 
 - ![Brújula](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Rotado manualmente**. En este modo, puede rotar manualmente el mapa con un [gesto de dos punteros (tocar y rotar con dos dedos)](../map/interact-with-map.md#gestures) según sus preferencias. La orientación del mapa no depende de la dirección de viaje ni de la brújula del dispositivo, sino que la determina usted. El modo de rotación manual está configurado por defecto.
+**Rotación manual**. En este modo, puede girar manualmente el mapa con un [gesto de dos punteros (tocar con dos dedos y girar)](../map/interact-with-map.md#gestures) según sus preferencias. La orientación del mapa no depende de la dirección del viaje o de la brújula del dispositivo, sino que la determina usted. El modo de rotación manual está configurado por defecto.
 
 - ![Brújula](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
-**Dirección de movimiento**. En este modo, el mapa se orienta según la dirección de su movimiento conocida a partir de los datos GPS. Por ejemplo, si gira a la derecha, el mapa también gira para que el lado derecho de la pantalla corresponda a la dirección de movimiento. Para obtener más detalles, vaya a [Rotar mapa por rumbo](../map/interact-with-map#rotate-map-by-bearing).
+**Dirección de movimiento**. En este modo, el mapa se orienta según la dirección de su movimiento conocida a partir de los datos GPS. Por ejemplo, si gira a la derecha, el mapa también gira para que el lado derecho de la pantalla corresponda a la dirección del movimiento. Para obtener más detalles, vaya a [Rotar mapa por rumbo](../map/interact-with-map#rotate-map-by-bearing).
 
 - ![Brújula](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
 **Dirección de la brújula**. El icono del botón apunta al Norte real, y el mapa se mueve según la orientación de la brújula de su dispositivo. De esta manera, el norte del mapa corresponde al norte real, y puede ver la orientación del mapa en relación con el terreno circundante. Su dispositivo debe estar en la posición más horizontal posible. Si su dispositivo no tiene un sensor de brújula, la orientación del mapa permanece sin cambios.
 
 - ![Brújula](@site/static/img/widgets/map_butt_north_up_ios.png)  
-**Norte arriba**. En este modo, el mapa está fijo (con un bloqueo fuerte) en la dirección Norte, que es el borde superior de su dispositivo. Independientemente de la dirección en que se mueva el dispositivo, el mapa permanece estático, y puede ver su posición en relación con su entorno. El mapa no tiene rotación automática ni manual.
+**Norte arriba**. En este modo, el mapa está fijo (con un bloqueo duro) en la dirección Norte, que es el borde superior de su dispositivo. Independientemente de la dirección en la que se mueva el dispositivo, el mapa permanece estático y puede ver su posición en relación con su entorno. El mapa no tiene rotación automática ni manual.
 
-### Comportamiento de toque de la brújula {#compass-tapping-behavior}
+### Comportamiento de pulsación de la brújula {#compass-tapping-behavior}
 
 El botón de la brújula proporciona múltiples acciones para controlar la orientación del mapa:
 
 - **Un solo toque**. Un *solo toque* del [botón Brújula](../widgets/map-buttons.md#compass) (ubicado en la esquina superior izquierda de la pantalla cuando está [visible](../widgets/map-buttons.md#display-options)) reorienta instantáneamente la orientación del mapa *hacia el Norte* en todos los modos de orientación del mapa. Incluso si el mapa está en el modo *Dirección de la brújula*, aún gira por un momento y luego vuelve a la orientación dinámica de ese modo.
 
-- **Doble toque**. Para cambiar rápidamente entre los modos de orientación del mapa, como seguir la dirección del GPS o rotar con el dispositivo, *toque dos veces* el [botón Brújula](../widgets/map-buttons.md#compass) (cuando esté [visible](../widgets/map-buttons.md#display-options)).
+- **Doble toque**. Para cambiar rápidamente entre los modos de orientación del mapa, como seguir la dirección GPS o girar con el dispositivo, *toque dos veces* el [botón Brújula](../widgets/map-buttons.md#compass) (cuando esté [visible](../widgets/map-buttons.md#display-options)).
 
 - **Toque largo**. Con un *toque largo* en el [botón Brújula](../widgets/map-buttons.md#compass) (cuando esté [visible](../widgets/map-buttons.md#display-options)) puede abrir una lista de todos los modos de orientación del mapa y seleccionar el requerido. Esta lista también se puede abrir en la [configuración del perfil](../personal/profiles.md#appearance).
 
@@ -126,7 +126,7 @@ El icono de la brújula en el botón siempre apunta al Norte. Puede seleccionar 
 
 - **Siempre visible**. El botón no desaparece de la pantalla.
 - **Siempre oculto**. En este caso, no puede cambiar rápidamente la orientación del mapa, pero el botón no ocupará espacio en la pantalla.
-- **Visible si el mapa está rotado**. El botón no es visible mientras la brújula apunta al Norte en el borde superior de su dispositivo.  
+- **Visible si el mapa está girado**. El botón no es visible mientras la brújula apunta al Norte en el borde superior de su dispositivo.  
 
 
 ## Modo 3D {#3d-mode}
@@ -157,7 +157,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,share
 
 ### Ajustes adicionales {#additional-settings}
 
-1. **Mostrar el botón**. (Para Android) La configuración del botón *Modo 3D* aparece en la lista de la pantalla de configuración solo si se selecciona el motor de renderizado de mapas [Versión 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
+1. **Mostrar el botón**. (*Para Android*) La configuración del botón *Modo 3D* aparece en la lista de la pantalla de configuración solo si se selecciona el motor de renderizado de mapas [Versión 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
 2. **Guarda el ángulo**. Después de cambiar al modo 3D y cambiar el ángulo manualmente con un gesto, el ángulo se guarda y se usa la próxima vez que se activa el modo 3D. Esta opción solo se guarda para el perfil seleccionado en ese momento.
 
@@ -186,7 +186,7 @@ La configuración de la apariencia del botón del mapa está disponible a travé
 - *Menú → Configurar pantalla → Botones → Botones predeterminados*
 - *Menú → Configurar pantalla → Botones personalizados → Acción rápida → menú de tres puntos → Apariencia*
 
-La personalización de la apariencia de los botones le permite ajustar el tamaño, la forma, el icono y la opacidad del fondo tanto para la [Acción rápida (botones personalizados)](../widgets/quick-action.md#button-appearance) como para los [botones predeterminados](../widgets/configure-screen.md#button-appearance). Esta flexibilidad le permite personalizar la interfaz para adaptarla a sus preferencias y mejorar la usabilidad.
+La personalización de la apariencia de los botones le permite ajustar el tamaño, la forma, el icono y la opacidad del fondo tanto para [Acción rápida (botones personalizados)](../widgets/quick-action.md#button-appearance) como para [botones predeterminados](../widgets/configure-screen.md#button-appearance). Esta flexibilidad le permite personalizar la interfaz para adaptarla a sus preferencias y mejorar la usabilidad.
 
 
 ## Artículos relacionados {#related-articles}

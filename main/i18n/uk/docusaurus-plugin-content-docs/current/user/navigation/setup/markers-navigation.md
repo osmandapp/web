@@ -1,7 +1,7 @@
 ---
-source-hash: 840895be86a2bc170c5cc62b0abac17afda6a3dcd33c15c2d2b335a1a52fa27e
+source-hash: f1b6ce88c16188825c1c750fdab6393efc13e796dac9b76318385c1908db3134
 sidebar_position: 3
-title:  Навігація за маркерами
+title: Навігація за маркерами
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,21 +18,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-[Маркери на карті](../../personal/markers.md) — це точки на карті, позначені прапорцями. Їх можна використовувати для різних цілей, наприклад, для позначення місця, яке ви хочете відвідати, визначної пам'ятки, яку ви хочете запам'ятати, або для створення власного маршруту.
+[Маркери на карті](../../personal/markers.md) — це точки на карті, позначені прапорцями. Їх можна використовувати для різних цілей, наприклад, для позначення місця, яке ви хочете відвідати, цікавого місця, яке ви хочете запам'ятати, або для створення власного маршруту.
 
-Вони можуть бути особливо корисними для туристів, велосипедистів або тих, хто досліджує нову місцевість і хоче позначити цікаві місця або орієнтири на карті. Основна відмінність від [Обраних точок](../../personal/favorites.md) полягає в тому, що маркери створюються швидше, оскільки не вимагають назви.
+Вони можуть бути особливо корисними для туристів, велосипедистів або тих, хто досліджує нову місцевість і хоче позначити цікаві місця або орієнтири на карті. Основна відмінність від [Вибраних точок](../../personal/favorites.md) полягає в тому, що маркери швидше створюються, оскільки не вимагають назви.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Навігаційний маркер Android](@site/static/img/navigation/marker/navigation_marker_android.png)
+![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Навігаційний маркер iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
+![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
 
 </TabItem>
 
@@ -45,13 +45,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Відмінність навігації за маркерами Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Відмінність навігації за маркерами Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
+ ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Відмінність навігації за маркерами iOS 2](@site/static/img/navigation/marker/markers_ex_ios_2.png) ![Відмінність навігації за маркерами iOS 1](@site/static/img/navigation/marker/markers_ex_ios_1.png)
+![Difference marker navigation iOS 2](@site/static/img/navigation/marker/markers_ex_ios_2.png) ![Difference marker navigation iOS 1](@site/static/img/navigation/marker/markers_ex_ios_1.png)
 
 </TabItem>
 
@@ -59,116 +59,116 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Маркери на карті* можуть слугувати [пунктами призначення](./route-navigation#set-destinations) під час побудови маршруту. Вони особливо зручні, коли потрібно прокласти маршрут з проміжними точками.
 
-Однак *Маркери на карті* також надають різноманітну функціональність, таку як [віджети](../../widgets/markers.md), напрямок руху, лінії на карті, тож ви можете використовувати ці інструменти для навігації без побудови лінії маршруту та повного голосового супроводу.
+Однак *Маркери на карті* також надають різні функції, такі як [віджети](../../widgets/markers.md), напрямок руху, лінії на карті, тому ви можете використовувати ці інструменти для навігації без побудови лінії маршруту та повного голосового супроводу.
 
-Якщо вам потрібна проста навігація від точки до точки, що відображається прямими лініями, ви можете створити та відсортувати ***Список маршруту***, що складається з маркерів як проміжних точок, і використовувати віджети для простої навігації.
+Якщо вам потрібна проста навігація від точки до точки, що відображається прямими лініями, ви можете створити та відсортувати ***Список маршрутів***, що складається з маркерів як проміжних точок, і використовувати віджети для простої навігації.
 
 
 #### Рекомендації {#recommendations}
 
-Ось прості рекомендаційні кроки для *Навігації за маркерами*:
+Ось прості рекомендації щодо *навігації за маркерами*:
 
-1. Створіть маркери. Знайдіть потрібний об'єкт(и) на карті, торкніться його та виберіть кнопку *[Маркер](../../personal/markers.md#add--edit-markers)* у *[контекстному меню карти](../../map/map-context-menu.md#add--edit-marker)*. Ви також можете створити маркери з [обраних точок](#add-group-of-favorite) або [треків GPX](#add-group-of-track-waypoints).
+1. Створіть маркери. Знайдіть потрібний об'єкт(и) на карті, торкніться його та виберіть *[кнопку Маркер](../../personal/markers.md#add--edit-markers)* у *[контекстному меню карти](../../map/map-context-menu.md#add--edit-marker)*. Ви також можете створити маркери з [вибраних](#add-group-of-favorite) або [GPX-треків](#add-group-of-track-waypoints).
 2. [*Відсортуйте маркери*](#sort-markers) у бажаному порядку, в якому ви хочете їх пройти.
-3. Налаштуйте *Вигляд маркерів на карті*, якщо ви хочете використовувати маркери без запуску навігації. Увімкніть опції **Стрілки на карті** та **Лінія напрямку** в розділі *[Вигляд](../../personal/markers.md#appearance-on-the-map)* *[Меню маркерів на карті](../../personal/markers.md#actions)*.
-4. Додайте *[Віджети маркерів](../../personal/markers.md#markers)* у *[Меню налаштування екрана](../../widgets/configure-screen.md)* (необов'язково).
-5. [*Позначте як пройдені*](#pass-markers) вже відвідані маркери або відновіть їх з історії, якщо хочете пройти їх знову.
+3. Налаштуйте *вигляд маркерів на карті*, якщо ви хочете використовувати маркери без запуску навігації. Увімкніть опції **Стрілки на карті** та **Лінія напрямку** в розділі *[Вигляд](../../personal/markers.md#appearance-on-the-map)* *[меню маркерів на карті](../../personal/markers.md#actions)*.
+4. Додайте *[віджети маркерів](../../personal/markers.md#markers)* у *[меню налаштування екрана](../../widgets/configure-screen.md)* (необов'язково).
+5. [*Позначте як пройдені*](#pass-markers) вже відвідані маркери або відновіть їх з історії, якщо ви хочете пройти їх знову.
 
 :::note
-Коли опції **Стрілки на карті** та **Лінія напрямку** увімкнені в розділі *Вигляд* [Меню маркерів на карті](../../personal/markers.md#appearance-on-the-map), ви побачите стрілку або пунктирну лінію на карті. Стрілка показує напрямок до активного маркера, коли він знаходиться за межами поточного екрана карти. Лінія напрямку малюється, коли ваше місцезнаходження та маркер знаходяться на одному екрані.
+Коли опції **Стрілки на карті** та **Лінія напрямку** увімкнені в розділі *Вигляд* [меню маркерів на карті](../../personal/markers.md#appearance-on-the-map), ви побачите стрілку або пунктирну лінію на карті. Стрілка показує напрямок до активного маркера, коли він знаходиться за межами поточного екрана карти. Лінія напрямку малюється, коли ваше місцезнаходження та маркер знаходяться на одному екрані.
 :::
 
 
-## Список маршруту {#itinerary-list}
+## Список маршрутів {#itinerary-list}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Список маркерів Android](@site/static/img/navigation/marker/markers_list_andr.png)
+![Markers list Android](@site/static/img/navigation/marker/markers_list_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Список маркерів iOS](@site/static/img/navigation/marker/markers_list_ios.png)
+![Markers list iOS](@site/static/img/navigation/marker/markers_list_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Список маршруту представляє впорядкований перелік *прохідних* маркерів, які видно на карті. Ви можете додавати та видаляти точки по одній або робити це пакетно, використовуючи заздалегідь підготовлений [файл GPX](#add-group-of-track-waypoints) або [групу обраних](#add-group-of-favorite). Для місцевих змагань або пригод може бути корисно створити список точок за координатами, використовуючи [Інструмент введення координат](../../plan-route/coordinate-input.md).
+Список маршрутів представляє впорядкований список *прохідних* маркерів, які видно на карті. Ви можете додавати та видаляти точки по одній або робити це пакетом, використовуючи заздалегідь підготовлений [файл GPX](#add-group-of-track-waypoints) або [групу вибраних](#add-group-of-favorite). Для місцевих змагань або пригод може бути корисно створити список точок за координатами за допомогою [інструмента введення координат](../../plan-route/coordinate-input.md).
 
 
 ### Додати окремі маркери {#add-single-markers}
 
-*Маркери* можна додавати або видаляти з карти одним дотиком до екрана в потрібному місці. Потім потрібно дотримуватися інструкцій зі статті *[Контекстне меню карти](../../map/map-context-menu.md#add--edit-marker)*.
+*Маркери* можна додавати або видаляти з карти одним дотиком до екрана в потрібному місці. Потім вам потрібно дотримуватися інструкцій зі статті *[контекстне меню карти](../../map/map-context-menu.md#add--edit-marker)*.
 
 
-### Додати групу обраних {#add-group-of-favorite}
+### Додати групу вибраних {#add-group-of-favorite}
 
 <InfoAndroidOnly />
 
-![Обрані до маркерів 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Обрані до маркерів 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
+![Favorites to markers 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Favorites to markers 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
 
-Ви можете створити *Маркери на карті* з *[Обраних](../../personal/favorites.md)*, використовуючи:
+Ви можете створювати *Маркери на карті* з *[Вибраних](../../personal/favorites.md)* за допомогою:
 
-- *[Меню груп обраних](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої обрані)*.
-- Значок &#128681; у меню "Обрані" на сторінці *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої обрані→&#128681;)*.
-- Опцію **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркери на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- *[Меню груп вибраних](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої вибрані)*.
+- &#128681; значка в меню сторінки Вибраних *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Мої вибрані→&#128681;)*.
+- Опції **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
 
 
 ### Додати групу точок треку {#add-group-of-track-waypoints}
 
 <InfoAndroidOnly />
 
-![GPX до маркерів 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
+![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
 
-Треки GPX з точками маршруту можна використовувати як *Маркери на карті* та швидко вимикати:
+GPX-треки з точками можуть використовуватися як *Маркери на карті* та швидко вимикатися:
 
-- Використовуйте опцію **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркери на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Увімкніть перемикач біля треку у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркери на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Використовуйте опцію **'+'** (додати) у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Увімкніть перемикач біля треку у *[вкладці Групи](../../personal/markers.md#marker-groups)* в меню Маркерів на карті *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
-До *Списку маркерів на карті* можна додавати лише треки з точками маршруту. Трек, який ви маєте намір додати, також має бути видимим (активним) на карті.
+До *списку маркерів на карті* можна додавати лише треки з точками. Трек, який ви збираєтеся додати, також має бути видимим (активним) на карті.
 :::
 
-![GPX до маркерів 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX до маркерів 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
+![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- Ви також можете створити *Маркери* з треку з точками маршруту, використовуючи *[контекстне меню треку](../../map/tracks/track-context-menu.md#points--waypoints)*: *Торкніться видимого треку на карті → у контекстному меню треку виберіть Точки → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Ви також можете створити *Маркери* з треку з точками за допомогою *[контекстного меню треку](../../map/tracks/track-context-menu.md#points--waypoints)*: *Торкніться видимого треку на карті → у контекстному меню треку виберіть Точки → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
-## Сортування маркерів {#sort-markers}
+## Сортувати маркери {#sort-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Сортування маркерів у списку Android](@site/static/img/navigation/marker/sort_markers_andr.png)
+![Sort Markers in a list Android](@site/static/img/navigation/marker/sort_markers_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Сортування маркерів у списку iOS](@site/static/img/navigation/marker/sort_markers_ios.png)
+![Sort Markers in a list iOS](@site/static/img/navigation/marker/sort_markers_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Натискаючи на лівий кут (*Android*) або правий кут (*iOS*) вкладки *Маркера на карті* у *[Списку маркерів на карті](../../personal/markers.md#itinerary-list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *Списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
+Натискаючи на лівий кут (*Android*) або правий кут (*iOS*) вкладки *Маркер на карті* у *[списку маркерів на карті](../../personal/markers.md#itinerary-list)* та переміщуючи її вгору або вниз, ви можете змінити її порядок у *списку навігації* (під час переміщення картки маркера ви побачите лінію, що вказує, куди буде розміщено маркер).
 
-В Android-версії додатка OsmAnd є інші опції сортування для *Маркерів на карті* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Сортувати за* або *Планувати маршрут*).
+В Android-версії програми OsmAnd є інші параметри сортування для *Маркерів на карті* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Сортувати за* або *Спланувати маршрут*).
 
 
-### Сортування за атрибутами {#sort-by-attributes}
+### Сортувати за атрибутами {#sort-by-attributes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Альтернативне сортування маркерів Android 1](@site/static/img/navigation/marker/sorting_markers_andr_1.png) ![Альтернативне сортування маркерів Android 2](@site/static/img/navigation/marker/sorting_markers_andr_2.png)
+![Alternative Markers sorting Android 1](@site/static/img/navigation/marker/sorting_markers_andr_1.png) ![Alternative Markers sorting Android 2](@site/static/img/navigation/marker/sorting_markers_andr_2.png)
 
 </TabItem>
 
@@ -183,32 +183,32 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Ви можете сортувати *Маркери* за:
 
 - **Назвою** (*за алфавітом*) — Якщо маркери мають описові назви, це може бути корисним способом швидко знайти потрібний маркер.
-- **Відстанню** (*найближчі або найдальші першими*) - Ця опція відсортує маркери за їх відстанню від вашого поточного місцезнаходження.
-- **Датою** (*нещодавно або давно*) - Це відсортує маркери за датою їх додавання. Якщо ви додали багато маркерів з часом, це може бути корисним способом побачити, які з них є найновішими.
+- **Відстанню** (*найближчі або найвіддаленіші спочатку*) — Ця опція відсортує маркери за їхньою відстанню від вашого поточного місцезнаходження.
+- **Датою** (*нещодавно або давно*) — Це відсортує маркери за датою їх додавання. Якщо ви додали багато маркерів з часом, це може бути корисним способом побачити, які з них є найновішими.
 
 
-### Зміна порядку за допомогою інструменту Планування маршруту {#reorder-with-a-plan-route-tool}
+### Змінити порядок за допомогою інструмента планування маршруту {#reorder-with-a-plan-route-tool}
 
 <InfoAndroidOnly />
 
-![Альтернативне сортування маркерів Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Альтернативне сортування маркерів Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
+![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
 
-Використовуючи функціональність інструменту Планування маршруту в Списку маркерів, ви можете сортувати *Маркери* *Від дверей до дверей*, розмістити їх у зворотному порядку або створити *Круговий маршрут*. Якщо ви торкнетеся опції *Навігація*, *Маркери* будуть використані як [проміжні пункти призначення](../setup/route-navigation.md#intermediate-destinations).
+Використовуючи функціонал інструмента "Планування маршруту" у списку маркерів, ви можете сортувати *Маркери* *від дверей до дверей*, розміщувати їх у зворотному порядку або створювати *Круговий маршрут*. Якщо ви торкнетеся опції *Навігація*, *Маркери* будуть використовуватися як [проміжні пункти призначення](../setup/route-navigation.md#intermediate-destinations).
 
 
-## Проходження маркерів {#pass-markers}
+## Пройти маркери {#pass-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Проходження маркера Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Проходження маркера Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png)
+![Pass Marker Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Pass Marker Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Проходження маркера iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) ![Проходження маркера iOS 2](@site/static/img/navigation/marker/pass_markers_ios_2.png)
+![Pass Marker iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) ![Pass Marker iOS 2](@site/static/img/navigation/marker/pass_markers_ios_2.png)
 
 </TabItem>
 
@@ -217,15 +217,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *Маркер* можна позначити як пройдений (*Android*) або відхилений (*iOS*).
 
 - Через *[контекстне меню карти](../../map/map-context-menu.md#add--edit-marker)*.
-- Коли ви наближаєтеся до *Маркера* на відстань ближче 40 метрів (*Android*) або 50 метрів (*iOS*), перемикач у панелі *[Віджетів маркерів](../../widgets/markers.md#top-bar-widget)* стає активним.
+- Коли ви наближаєтеся до *Маркера* на відстань ближче 40 метрів (*Android*) або 50 метрів (*iOS*), перемикач у панелі *[віджетів маркерів](../../widgets/markers.md#top-bar-widget)* стає активним.
 
-Після проходження *Маркера*, він переміщується до папки [Історія](../../personal/markers.md#history), звідки його можна відновити за потреби. Наступний маркер у [списку](#itinerary-list) стає активним. Залежно від ваших [налаштувань](#use-markers-in-navigation), вас можуть спрямовувати до нього стрілкою або пунктирною лінією.
+Після проходження *Маркера* він переміщується до папки [Історія](../../personal/markers.md#history), звідки його можна відновити за потреби. Наступний маркер у [списку](#itinerary-list) стає активним. Залежно від ваших [налаштувань](#use-markers-in-navigation), вас можуть направити до нього за допомогою стрілки або пунктирної лінії.
 
 
 ## Пов'язані статті {#related-articles}
 
 - [Про маркери на карті](../../personal/markers.md).
-- [Віджет маркерів](../../widgets/markers.md).
+- [Віджет маркера](../../widgets/markers.md).
 __
 - [Параметри маршруту](../routing/osmand-routing.md#routing-types)
 - [Підготовка маршруту](./route-navigation.md)
@@ -237,4 +237,4 @@ __
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Останнє оновлення: Червень 2025*
+> *Останнє оновлення: червень 2025*

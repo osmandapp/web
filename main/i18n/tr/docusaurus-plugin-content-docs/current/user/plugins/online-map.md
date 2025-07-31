@@ -1,5 +1,5 @@
 ---
-source-hash: 1b9d749ebb8730c64d4b1fceddc86003dfc6c14c7f5e556129e21a75f245cdc3
+source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
 sidebar_position: 8
 title: Çevrimiçi Haritalar
 ---
@@ -16,14 +16,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Genel Bakış {#overview}
 
-OsmAnd Çevrimiçi haritalar, uygulamada zaten bulunan OpenStreetMap veritabanına kapsamlı bir ektir. Bu eklentiyle, uydu veya yürüyüş rotaları görünümünden başlayıp yangın musluklarının konumu gibi çok özel verilere kadar farklı bir kaynaktan gelen bilgilerle haritanıza katmanlar ekleyebilirsiniz. Ayrıca haritanın ana kaynağını vektör haritalardan çevrimiçi döşemelere değiştirebilirsiniz.
+OsmAnd Çevrimiçi haritalar, uygulamada zaten bulunan OpenStreetMap veritabanına kapsamlı bir ektir. Bu eklentiyle, haritanıza uydu veya yürüyüş rotaları görünümünden başlayıp yangın musluklarının konumu gibi çok özel verilere kadar farklı bir kaynaktan bilgi içeren katmanlar ekleyebilirsiniz. Ayrıca haritanın ana kaynağını vektör haritalardan çevrimiçi döşemelere değiştirebilirsiniz.
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
-Çevrimiçi haritaları kullanma yeteneği OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilir. Android'de Çevrimiçi haritaları görüntülemek için aşağıdaki ayarları yapmanız gerekir:
+Çevrimiçi haritaları kullanma yeteneği OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilmiştir. Android'de Çevrimiçi haritaları görüntülemek için aşağıdaki ayarları yapmanız gerekir:
 
-1. **Çevrimiçi Haritalar** eklentisini *Ana Menü → Eklentiler → Çevrimiçi Haritalar*'da [etkinleştirin](../plugins/index.md#enable--disable).
+1. *Ana Menü → Eklentiler → Çevrimiçi Haritalar*'da **Çevrimiçi Haritalar** eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 2. Haritayı Yapılandır menüsünün [Harita kaynağı](../map/raster-maps.md#select-raster-maps) bölümünde gerekli ayarları yapın.
 3. *Harita Kaynağı*, *Katman* ve *Alt Katman* haritasını ayarlayın. Tercih ettiğiniz uydu harita sağlayıcısını seçin.
 4. Gerekirse seçilen [Çevrimiçi haritayı](#how-to-prepare-raster-maps) indirin.
@@ -31,10 +31,10 @@ OsmAnd Çevrimiçi haritalar, uygulamada zaten bulunan OpenStreetMap veritabanı
 
 ## Cihazda Raster Haritaları Kullanma {#use-raster-maps-on-device}
 
-Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bilgiyi [Raster Haritalar](../map/raster-maps.md) makalesinde bulabilirsiniz. Nasıl kullanılır:
+Raster haritaları görselleştirme ve özelleştirme hakkında detaylı bilgiyi [Raster Haritalar](../map/raster-maps.md) makalesinde bulabilirsiniz. Nasıl kullanılır:
 
 1. Raster haritayı *Ana*, *Alt Katman* veya *Katman* olarak [seçin](../map/raster-maps.md#select-raster-maps).
-    - Katman parametrelerini (şeffaflık) [değiştirin](../map/raster-maps.md#how-to-use-raster-maps).
+    - Katman parametrelerini [değiştirin](../map/raster-maps.md#how-to-use-raster-maps) (şeffaflık).
 
 2. Raster haritaları cihaza [hazırlayın / kopyalayın](../map/raster-maps.md#prepare--copy-raster-maps-to-device).
     - [Yeni çevrimiçi raster harita kaynağı ekleyin](../map/raster-maps.md#add-new-online-raster-map-source)
@@ -51,7 +51,7 @@ Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bil
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Android'de alt katmanı / üst katmanı yapılandırın](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Katman / Alt Katman Android'i yapılandırın](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bil
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![iOS'ta alt katmanı / üst katmanı yapılandırın](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Katman / Alt Katman iOS'u yapılandırın](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -69,20 +69,20 @@ Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bil
 ## Raster Haritalar Nasıl Hazırlanır {#how-to-prepare-raster-maps}
 
 :::info
-Haritaları hazırlamak için ana makaleyi [buradan okuyun](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Haritaları hazırlamak için ana makale [buradan okuyun](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Eklenti *Çevrimiçi Haritalar* olarak adlandırılsa da, haritaları internet bağlantısı olmadan da kullanabilirsiniz. Sadece haritaların parçalarını (genellikle döşemeler olarak adlandırılır) daha sonra kullanmak üzere kaydetmeniz gerekir. Bunu yapmak için, OsmAnd ekibi tarafından geliştirilen belirli bir [Harita Oluşturucu aracını](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirin.
+Eklenti *Çevrimiçi Haritalar* olarak adlandırılsa da, haritaları internet bağlantısı olmadan da kullanabilirsiniz. Daha sonra kullanmak üzere haritaların parçalarını (genellikle döşemeler olarak adlandırılır) kaydetmeniz yeterlidir. Bunu yapmak için, OsmAnd ekibi tarafından geliştirilen belirli bir [Harita Oluşturucu aracını](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirin.
 
-İndirmek istediğiniz alanı seçin, Ön yükleme alanına tıklayın, ardından görüntülemek istediğiniz en küçük ve en büyük yakınlaştırma seviyelerini ayarlayın ve döşemeleri indirin.
-<b>Android sürümü</b> için bunları telefonunuzun <i>osmand/tiles/*döşeme türü*</i> klasörüne kopyalayabilirsiniz. Ayrıca <i>Haritayı Yapılandır-. Katman haritası</i>nı açmanız ve OsmAnd çevrimiçi döşemelerini seçmeniz gerekecektir.
+İndirmek istediğiniz alanı seçin, Alanı Ön Yükle'ye tıklayın, ardından görüntülemek istediğiniz en küçük ve en büyük yakınlaştırma seviyelerini ayarlayın ve döşemeleri indirin.
+<b>Android sürümü</b> için bunları telefonunuzun <i>osmand/tiles/*döşeme türü*</i> klasörüne kopyalayabilirsiniz. Ayrıca <i>Haritayı Yapılandır - Katman haritası</i>nı açmanız ve OsmAnd çevrimiçi döşemelerini seçmeniz gerekecektir.
 
-<b>iOS sürümü</b> için telefonunuzda (herhangi bir mesajlaşma veya dropbox) SQ Lite dosyasını seçebilirsiniz, OsmAnd eklemeyi önerecektir. Ayrıca <i>Harita → Katman / Alt Katman veya Harita türü</i>nü açmanız ve yeni harita kaynağını seçmeniz gerekecektir.
+<b>iOS sürümü</b> için telefonunuzda bir SQ Lite dosyası seçebilirsiniz (herhangi bir mesajlaşma veya dropbox), OsmAnd bunu eklemenizi önerecektir. Ayrıca <i>Harita → Katman / Alt Katman veya Harita türü</i>nü açmanız ve yeni harita kaynağını seçmeniz gerekecektir.
 
-Android ve iOS OsmAnd sürümlerinde SQ Lite dosyasının nasıl ekleneceğini <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis projesi</b></a>nde okuyabilirsiniz.
+Android ve iOS OsmAnd sürümlerinde SQ Lite dosyası nasıl eklenir, <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis projesinde</b></a> okuyabilirsiniz.
 
 
-Çevrimiçi döşemeler, haritanın sadece küçük bir bölümüne veya belirli bir türüne sınırlı bir alanda ihtiyaç duyduğunuzda, ancak tüm bölgeyi indirmek istemediğinizde faydalı olabilir. Sonsuz durumlarda işe yarayabilirler.
+Çevrimiçi döşemeler, haritanın sadece küçük bir bölümüne veya belirli bir türüne sınırlı bir alanda ihtiyaç duyduğunuzda, ancak tüm bölgeyi indirmek istemediğinizde yardımcı olabilir. Sonsuz durumlarda işe yarayabilirler.
 
 ![Çevrimiçi Haritalar](@site/static/img/plugins/online-maps/map_creator.jpg)
 
@@ -92,15 +92,15 @@ Android ve iOS OsmAnd sürümlerinde SQ Lite dosyasının nasıl ekleneceğini <
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Küresel Ayarlar](../../user/personal/global-settings.md)
+- [Genel Ayarlar](../../user/personal/global-settings.md)
 - [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
 
-### Yaygın Sorunlar ve Çözümler {#common-issues-and-solutions}
+### Sık Karşılaşılan Sorunlar ve Çözümleri {#common-issues-and-solutions}
 
 1. Çevrimiçi Haritalar Harita Kaynağı menüsünde görünmüyor:  
   
     - Çevrimiçi Haritalar eklentisinin etkinleştirildiğini doğrulayın: *Menü → Eklentiler → Çevrimiçi Haritalar*.  
-    - Uydu görüntülerini erişmek için etkin bir internet bağlantınız olduğundan emin olun.  
-    - Seçilen Çevrimiçi Haritanın indirildiğini veya [ek ayarlar](../map/raster-maps.md#select-raster-maps) gerektirip gerektirmediğini kontrol edin.
+    - Uydu görüntülerine erişmek için etkin bir internet bağlantınız olduğundan emin olun.  
+    - Seçilen Çevrimiçi Haritanın indirilip indirilmediğini veya [ek ayarlar](../map/raster-maps.md#select-raster-maps) gerektirip gerektirmediğini kontrol edin.
 
 > *Son güncelleme: Ocak 2025*

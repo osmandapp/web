@@ -1,7 +1,7 @@
 ---
-source-hash: 7f81c110562bd27c6dfc6fe07b890ebf5cb1758a6fee93796173d681f752db77
+source-hash: 27acdc622e2e460a91c82997ca3c6a46ddff094dce1fb89a1f2d05a529a31216
 sidebar_position: 6
-title: Wyznaczanie tras narciarskich
+title:  Wyznaczanie tras narciarskich
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,14 +17,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Przegląd {#overview}
 
 :::note
-Wyznaczanie tras narciarskich i profil narciarski są dostępne tylko po aktywowaniu [wtyczki widoku mapy narciarskiej](../../plugins/ski-maps.md).
+Wyznaczanie tras narciarskich i profil narciarski są dostępne tylko po aktywacji [wtyczki widoku mapy narciarskiej](../../plugins/ski-maps.md).
 :::
 
-*Wyznaczanie tras narciarskich* może być szczególnie przydatne dla narciarzy backcountry, skialpinistów i innych entuzjastów sportów zimowych, którzy chcą odkrywać nowe obszary i planować swoje wycieczki z wyprzedzeniem. Dzięki *wyznaczaniu tras narciarskich* użytkownicy OsmAnd mogą planować trasy i bezpiecznie nawigować, ciesząc się pięknem zimowych krajobrazów.
+*Wyznaczanie tras narciarskich* może być szczególnie przydatne dla narciarzy backcountry, narciarzy wysokogórskich i innych entuzjastów sportów zimowych, którzy chcą odkrywać nowe obszary i planować swoje wycieczki z wyprzedzeniem. Dzięki *wyznaczaniu tras narciarskich* użytkownicy OsmAnd mogą planować trasy i bezpiecznie nawigować, ciesząc się pięknem zimowych krajobrazów.
 
-*Wyznaczanie tras narciarskich* można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji.
+*Wyznaczanie tras narciarskich* można skonfigurować zgodnie z potrzebami w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji.
 
-![Trasy map - stoki narciarskie](@site/static/img/navigation/routing/ski_routing_overview.png)
+![Mapy tras - stoki narciarskie](@site/static/img/navigation/routing/ski_routing_overview.png)
 
 
 ## Parametry trasy - narty {#route-parameters---ski}
@@ -33,7 +33,7 @@ Wyznaczanie tras narciarskich i profil narciarski są dostępne tylko po aktywow
 Domyślnie *profil narciarski* jest dezaktywowany. Aby użyć tego profilu do wyznaczania tras, należy go włączyć w *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Ustawienia *wyznaczania tras narciarskich* pozwalają użytkownikom planować trasy, wybierając pożądany poziom trudności i rodzaj terenu, który chcą eksplorować. Istnieją różne opcje bezpiecznego, wygodnego i przyjemnego poruszania się po stokach lub podczas freeride'u.
+Ustawienia *wyznaczania tras narciarskich* pozwalają użytkownikom planować trasy, wybierając pożądany poziom trudności i rodzaj terenu, który chcą eksplorować. Istnieją różne opcje bezpiecznego, komfortowego i przyjemnego poruszania się po stokach lub podczas freeride'u.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -54,10 +54,10 @@ Ustawienia *wyznaczania tras narciarskich* pozwalają użytkownikom planować tr
 | Parametr | Pozwala używać do wyznaczania tras | Uwaga |
 |:------------|:---------------|:---------------|
 |*<Translate android="true" ids="routing_attr_allow_skating_only_name"/>* | <Translate android="true" ids="routing_attr_allow_skating_only_description"/> | `https://wiki.openstreetmap.org/wiki/Piste_Maps#Type` |
-|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Zalecana [trasa skiturowa](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) lub obszar, który jest ogólnie używany przez wielu narciarzy w sezonie w celu nordyckiego podejścia i zjazdu w backcountry. |
+|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Zalecana [trasa narciarska](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) lub obszar, który jest ogólnie używany przez wielu narciarzy w sezonie do celów wspinaczki nordyckiej i zjazdu w terenie. |
 |*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* | <Translate android="true" ids="routing_attr_allow_advanced_description"/> | Bardziej [trudne trasy](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) będą dozwolone do wyznaczania tras. |
 |*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* | <details><summary> Wybierz jedną z opcji dla narciarstwa freeride. </summary>![Poza trasą Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
-|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | Używanie [wyciągów narciarskich](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) zostanie włączone |
+|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | Użycie [wyciągów narciarskich](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) zostanie włączone |
 |*<Translate android="true" ids="routing_attr_piste_type_nordic_name"/>*&nbsp;(Android) *<Translate ios="true" ids="routeInfo_piste_type_name"/>*&nbsp;(iOS) | <Translate android="true" ids="routing_attr_piste_type_nordic_description"/>| |
 |*<Translate android="true" ids="routing_attr_allow_classic_only_name"/>* | <Translate android="true" ids="routing_attr_allow_classic_only_description"/>| |
 |*<Translate android="true" ids="routing_attr_allow_expert_name"/>* | <Translate android="true" ids="routing_attr_allow_expert_description"/>| |
@@ -74,7 +74,7 @@ Ustawienia *wyznaczania tras narciarskich* pozwalają użytkownikom planować tr
 
 - W sekcji [*Rozwój*](../guidance/navigation-settings.md#development-settings) w *Parametrach trasy* można wypróbować nowe funkcje wyznaczania tras, które są obecnie w fazie testów. Należy pamiętać, że te ustawienia są dostępne tylko wtedy, gdy włączona jest [wtyczka deweloperska OsmAnd](../../plugins/development.md).
 
-- Ustawienie *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* w wersji OsmAnd na *iOS* znajduje się w *Ustawieniach nawigacji → Parametry trasy* (dla *Androida*, w *Parametrach pojazdu → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). To ustawienie jest używane na nieznanych drogach bez ograniczeń prędkości. Najczęściej ma to miejsce podczas nawigacji po ścieżce lub trasie online. Musi być ustawione zgodnie z parametrami Twojego pojazdu.
+- Ustawienie *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* w wersji OsmAnd na *iOS* znajduje się w *Ustawieniach nawigacji → Parametry trasy* (dla *Androida*, w *Parametrach pojazdu → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). To ustawienie jest używane na nieznanych drogach bez ograniczeń prędkości. Najczęściej ma to miejsce podczas nawigacji po ścieżce lub trasie online. Musi być ustawione zgodnie z parametrami pojazdu.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Prawidłowe skonfigurowanie ustawień pomoże uniknąć problemów podczas tworzenia trasy. Możesz wybrać najbardziej odpowiednią trasę w zależności od typu pojazdu i ograniczeń drogowych, a także obliczyć czas podróży.
 

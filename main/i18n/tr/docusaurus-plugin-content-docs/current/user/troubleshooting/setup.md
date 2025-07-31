@@ -1,5 +1,5 @@
 ---
-source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
+source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
 title:  Kurulum
 ---
@@ -16,36 +16,36 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## İlk Kurulum {#initial-setup}
 
-### Veriler nasıl kurtarılır? {#how-to-recover-data}
+### Veriler nasıl kurtarılır {#how-to-recover-data}
 
 Veri kaybını önlemek için kişisel verilerinizin, rotalarınızın ve haritalarınızın yedeklendiğinden emin olun. OsmAnd, verilerinizi çeşitli formatlara aktarma seçenekleri sunar. Veri kaybı veya cihaz değişikliği durumunda, verilerinizi bir yedekten geri yüklemek için [bu adımları](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) izleyin.
 
 
-### Favoriler ve İzler yeni bir cihaza nasıl aktarılır? {#how-to-transfer-favorites-and-tracks-to-a-new-device}
+### Sık Kullanılanlar ve İzler yeni bir cihaza nasıl aktarılır {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
-- En basit yöntem, gerekli verileri içeren bir profili dışa aktarmaktır: *Menü → Ayarlar → Dışa Aktar →* dışa aktarmak istediğiniz verileri seçin.
-- Alternatif olarak, önceki cihazınızdaki tüm verilerinizi *Ayarlar → OsmAnd Ayarları → Veri depolama klasörü* (varsayılan yol: `Android/data/net.osmand.plus`) içinde bulunan klasörü kopyalayarak yedekleyebilirsiniz. Ardından, bu klasörün içeriğini yeni cihazınızdaki Veri depolama klasörüne yapıştırın.
+- En basit yöntem, gerekli verilerle bir profili dışa aktarmaktır: *Menü → Ayarlar → Dışa Aktar →* dışa aktarmak istediğiniz verileri seçin.
+- Alternatif olarak, önceki cihazınızdaki tüm verilerinizi *Ayarlar → OsmAnd Ayarları → Veri depolama klasörü* (varsayılan yol: `Android/data/net.osmand.plus`) konumundaki klasörü kopyalayarak yedekleyebilirsiniz. Ardından, bu klasörün içeriğini yeni cihazınızdaki Veri depolama klasörüne yapıştırın.
 
 
 ## Dosyaları İçe Aktar {#import-files}
 
-### Bir GPX dosyam var, OsmAnd'a nasıl aktarırım? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
+### Bir GPX dosyam var, OsmAnd'a nasıl aktarabilirim? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
 
 - **Android**
-    - Bir dosya tarayıcısı veya Dropbox gibi bir bulut hizmeti kullanarak [dosyayı indirebilir ve açabilir](..//navigation/setup/gpx-navigation.md) ve hedef uygulama olarak OsmAnd'ı seçebilirsiniz.
+    - Bir dosya tarayıcısı veya Dropbox gibi bir bulut hizmeti kullanarak [dosyayı indirebilir ve açabilir](../navigation/setup/gpx-navigation.md) ve hedef uygulama olarak OsmAnd'ı seçebilirsiniz.
     - Alternatif olarak, dosyayı OsmAnd ana klasörüne yerleştirin: `osmand/tracks/(isteğe bağlı_alt-klasör)/dosyanız.gpx`.
 
 - **iOS**
-    - [Bir GPX dosyasını OsmAnd'da açmak](..//navigation/setup/gpx-navigation.md) için, dosyayı indirin ve açmak için OsmAnd uygulamasını seçin. Dosya daha sonra uygulama içinde kullanılabilir olacaktır.
+    - [Bir GPX dosyasını OsmAnd'da açmak](../navigation/setup/gpx-navigation.md) için, dosyayı indirmeniz ve açmak için OsmAnd'ı seçmeniz yeterlidir. Dosya daha sonra uygulama içinde kullanıma sunulacaktır.
 
-### Kontur çizgileri veya gölgeler görünmüyor {#contour-lines-or-hillshades-do-not-show-up}
+### Kontur çizgileri veya tepe gölgeleri görünmüyor {#contour-lines-or-hillshades-do-not-show-up}
 
-[Topografi eklentisi](../plugins/topography.md) hakkında daha fazla bilgi edinin.
+[Topografya eklentisi](../plugins/topography.md) hakkında daha fazla bilgi edinin.
 
 
 ## Sistem yazı tipleri nasıl etkinleştirilir (Android) {#how-to-enable-system-fonts-android}
 
-Android 4.9 sürümünden itibaren OsmAnd, cihazınızın sistem yazı tipini uygulama arayüzüne entegre ederek, karışık yazı tipi kullanımını ortadan kaldırarak tasarımını optimize eder. Sistem yazı tipi tüm UI öğelerine otomatik olarak uygulanır.
+Android 4.9 sürümünden itibaren OsmAnd, cihazınızın sistem yazı tipini uygulama arayüzüne entegre ederek, karışık yazı tipi kullanımını ortadan kaldırarak tasarımını optimize eder. Sistem yazı tipi tüm kullanıcı arayüzü öğelerine otomatik olarak uygulanır.
 
 - OsmAnd, tüm kullanıcı arayüzü öğelerinde cihazınızın varsayılan sistem yazı tipini kullanır.
 - Sistem yazı tipine geçiş otomatiktir. Bu özellik için uygulamada herhangi bir ayar yapılandırmanıza gerek yoktur.
@@ -54,9 +54,9 @@ Android 4.9 sürümünden itibaren OsmAnd, cihazınızın sistem yazı tipini uy
 
 ## OsmAnd 4.4 (iOS) {#osmand-44-ios}
 
-iOS 15'ten eski iOS sürümleri için OsmAnd 4.4 mevcut değildir.
+iOS cihazlar için OsmAnd 4.4, iOS 15'ten eski iOS sürümleri için mevcut değildir.
 
-Bu, OsmAnd 4.4'ü yüklemek için işletim sisteminizi en az iOS 15 veya daha yeni bir sürüme yükseltmeniz gerektiği anlamına gelir.
+Bu, OsmAnd 4.4'ü yüklemek için işletim sisteminizi en az iOS 15 veya daha yenisine yükseltmeniz gerektiği anlamına gelir.
 
 
 <!--
@@ -133,4 +133,4 @@ Harita paketleri iki formatta kaydedilebilir: [SQLite ve Metainfo](https://osman
 
 - **Android için**. Cihazınızdaki depolama alanına erişin ve dosyaları PC'nizden `BASE_OSMAND_STORAGE/tiles_` klasörüne kopyalayın. Alternatif olarak, dosyayı e-postanızdan, bulutunuzdan veya mesajlaşma uygulamanızdan indirebilir ve OsmAnd uygulamasıyla açabilirsiniz. Harita paketi otomatik olarak çevrimiçi haritalar listenize eklenecektir.
 
-- **iOS için**. Dosyayı iTunes'tan veya bir mesajlaşma uygulamasından indirin, ardından OsmAnd uygulamasıyla açın. Harita paketi otomatik olarak çevrimiçi haritalar listenize eklenecektir.
+- **iOS için**. Dosyayı iTunes'dan veya bir mesajlaşma uygulamasından indirin, ardından OsmAnd uygulamasıyla açın. Harita paketi otomatik olarak çevrimiçi haritalar listenize eklenecektir.

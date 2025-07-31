@@ -1,7 +1,7 @@
 ---
-source-hash: 580c8fbd0c79564b0976cee07d1bc9d431e8f4533df5daa052bc1202ccd84564
+source-hash: 32e4659b9165cb30c26907433bd60d7e450043c64b5dd1d074dd139baf41e938
 sidebar_position: 10
-title: OsmAnd Geliştirme
+title:  OsmAnd Geliştirme
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -27,7 +27,7 @@ OsmAnd geliştirme eklentisi, uygulamanın yeni özelliklerini denemenize veya O
 
 Geliştiriciler ve test kullanıcıları için özel özellikleri etkinleştirmek için:
 
-1. Ana Menü'nün Eklentiler bölümünde OsmAnd geliştirme eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
+1. *Ana Menü*'nün Eklentiler bölümünde OsmAnd geliştirme eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 2. Eklentinin [Ayarlar menüsünde](#plugin-settings) gerekli ayarları yapın.
 3. Gerekirse **geliştirici widget'larını** etkinleştirin.
 
@@ -68,14 +68,14 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 ### Sorun Giderme {#troubleshotting}
 
 - **Konumunuzu simüle edin** (*Android* / *iOS*). Bir GPX parkuru kullanarak konumu ve hareketi [simüle edin](#gpx-track-simulation).
-- **Pil tasarruf modu** (*Android* / *iOS*). Bu ayar, uygulamaları kullanırken pil gücünden tasarruf etmeye yardımcı olmak için [ekran yenileme hızını](#map-rendering-fps-widget) saniyede 20 kare azaltır.
-- **3B konum konum simgelerini kullanın** (*iOS*). [Konumum simgesi](../personal/profiles.md#my-location-appearance) için bir 3B simge seçmenize olanak tanır.
+- **Pil tasarrufu modu** (*Android* / *iOS*). Bu ayar, uygulamaları kullanırken pil gücünden tasarruf etmeye yardımcı olmak için [ekran yenileme hızını](#map-rendering-fps-widget) saniyede 20 kare azaltır.
+- **3D konum simgelerini kullanın** (*iOS*). [Konumum simgesi](../personal/profiles.md#my-location-appearance) için bir 3D simge seçmenize olanak tanır.
 - **Obd verilerini simüle edin** (*Android*). [OBD tarayıcı](./vehicle-metrics.md) kullanımının simülasyonuna olanak tanır.
 - **Performans hata ayıklama bilgisi** (*Android*). Oluşturma ve navigasyon performansını görüntüler.
 - **Harita katmanlarını devre dışı bırak** (*Android*). Vektör haritası üzerindeki tüm harita katmanlarını devre dışı bırakır (yeniden başlatma gereklidir).
 - **Logcat arabelleği** (*Android*). Uygulamanın ayrıntılı günlüklerini kontrol edin ve paylaşın.
-- **Basılan tuş hakkında bildirim göster** (*Android*). Tuş hakkında bir mesaj görüntüler.
-- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Kerteriz, mevcut konumunuzdan hedeflenen varış noktanıza olan pusula yönüdür. *[Parkur kaydını](../plugins/trip-recording.md)* etkiler.
+- **Basılan tuş hakkında tost göster** (*Android*). Tuş hakkında bir mesaj görüntüler.
+- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Yön, mevcut konumunuzdan hedeflenen varış noktanıza olan pusula yönüdür. *[Parkur kaydını](../plugins/trip-recording.md)* etkiler.
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Başlık, mevcut konumunuzdan gerçek kuzeye doğru olan pusula yönüdür. Bu seçenek varsayılan olarak etkindir. *[Parkur kaydını](../plugins/trip-recording.md)* etkiler.
 
 
@@ -85,11 +85,11 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 :::
 
 - **İlk uygulama başlangıcını simüle et**. İlk uygulama başlangıcını gösteren bayrağı ayarlar, diğer tüm ayarları değişmeden bırakır.
-- **Sesli komutları test et**. Bir ses seçin ve duyuruları oynatarak test edin.
+- **Sesli komutları test et**. Bir ses seçin ve duyuruları çalarak test edin.
 - **Şeffaf durum çubuğu**. Harita durum çubuğunun altında görünür hale gelir.
 - **Ücretsiz sürüm banner'ını göster**. Ücretli sürümde bile ücretsiz sürüm banner'ını göster.
 - **Hata ayıklama bilgilerini göster**. Haritadaki her metnin yerleşimi hakkında grafiksel bilgi görüntüler.
-- **Üstte görüntülemeye izin ver**. Harita metinlerinin üst üste görüntülenmesine izin verir.
+- **Üstte görüntülemeye izin ver**. Harita metinlerinin birbirinin üstünde görüntülenmesine izin verir.
 
 
 ### Dahili Algoritmalar {#internal-algorithms}
@@ -119,10 +119,10 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 :::
 
 - **Ayrılan bellek**. OsmAnd uygulaması için ayrılan sistem belleğini görüntüler.
-- **Toplam yerel bellek**. Orantılı bellek dahil olmak üzere uygulamaya ayrılan toplam yerel bellek miktarını görüntüler.
+- **Toplam yerel bellek**. Uygulamaya ayrılan toplam yerel bellek miktarını, orantılı bellek dahil olmak üzere görüntüler.
 - **A-GPS bilgisi**. A-GPS verilerinin en son ne zaman indirildiğini gösterir.
 - **Gündüz/gece bilgisi**. Bugünün gün doğumu ve gün batımı saatlerini gösterir.
-- **Enerji istatistikleri (ortalama 1 / 5 / 15 dakika)**. Pil seviyesini dakika başına (%) ve 1, 5 ve 15 dakikalık aralıklarla ortalama enerji tüketimini (mAh) görüntüler.
+- **Enerji istatistikleri (ortalama 1 / 5 / 15 dakika)**. Pil seviyesini dakika başına (%) ve ortalama enerji tüketimini (mAh) 1, 5 ve 15 dakikalık aralıklarla görüntüler.
 - **Oluşturma istatistikleri (ortalama 1 / 5 / 15 dakika)**. Son 1k karedeki FPS, CPU (döşemeler), CPU (boşta kalma süresi) ve CPU (bekleme) ortalamalarını 1, 5 ve 15 dakikalık aralıklarla içeren oluşturma istatistiklerini gösterir.
 
 **Düğme:**
@@ -196,22 +196,22 @@ OsmAnd haritasına gerçekçi bir görünüm kazandırmak ve hem yukarıdan hem 
 
 <TabItem value="android" label="Android">
 
-![Kamera eğimi widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Kamera eğimi widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
+![Kamera eğim widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Kamera eğim widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kamera eğimi widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Kamera eğimi widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
+![Kamera eğim widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Kamera eğim widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Kamera eğimi widget'ı, kameranın (izleyici) merkezi görüş vektörü ile Dünya'nın hayali düz zemini arasındaki eğimi gösterir. Varsayılan değer 90 derecedir (eğim yok).
+Kamera eğim widget'ı, kameranın (izleyicinin) merkezi görüş vektörü ile dünyanın hayali düz zemini arasındaki eğimi gösterir. Varsayılan değer 90 derecedir (eğim yok).
 
 :::note
-Kamera eğimi, kamera (izleyici) hareket ettirilerek değiştirilirken, haritadaki merkez noktası (baktığımız yer) aynı kalır. Ona olan mesafe (aslında yakınlaştırma) değişmez.
+Kamera eğimi, kamera (izleyici) hareket ettirilerek değiştirilirken, haritadaki merkez nokta (baktığımız yer) aynı kalır. Ona olan mesafe (aslında yakınlaştırma) değişmez.
 Aynı zamanda, izleyicinin hayali hareketi nedeniyle, kameradan yüzeye olan mesafe değişir.
 :::
 
@@ -222,19 +222,19 @@ Aynı zamanda, izleyicinin hayali hareketi nedeniyle, kameradan yüzeye olan mes
 
 <TabItem value="android" label="Android">
 
-![Kamera yüksekliği widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Kamera yüksekliği widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
+![Kamera yükseklik widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Kamera yükseklik widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kamera yüksekliği widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Kamera yüksekliği widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
+![Kamera yükseklik widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Kamera yükseklik widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Kamera Yüksekliği widget'ı, kameranın yüzey seviyesinin üzerindeki yüksekliğini gösterir. Kamera yüksekliği metre / kilometre cinsinden belirtilir.
+Kamera Yüksekliği widget'ı, kameranın yüzey seviyesinden yüksekliğini gösterir. Kamera yüksekliği metre / kilometre cinsinden belirtilir.
 
 
 ### Yakınlaştırma Seviyesi {#zoom-level}
@@ -255,14 +255,14 @@ Kamera Yüksekliği widget'ı, kameranın yüzey seviyesinin üzerindeki yüksek
 
 </Tabs>
 
-Widget'ın üzerine dokunarak değiştirilen iki görünümü vardır:
+Widget'ın, üzerine dokunarak değiştirilen iki görünümü vardır:
 
-- **<Translate android="true" ids="map_widget_zoom_level"/>**. Geçerli harita yakınlaştırma seviyesini gösterir.
-- **<Translate android="true" ids="map_widget_map_scale"/>**. Bir haritadaki mesafe ile Dünya'daki karşılık gelen mesafe arasındaki geçerli oranı gösterir. Örnekler: "1 : 3 000", "1 : 3,3 M" "1: 340 K".
+- **<Translate android="true" ids="map_widget_zoom_level"/>**. Mevcut harita yakınlaştırma seviyesini gösterir.
+- **<Translate android="true" ids="map_widget_map_scale"/>**. Haritadaki bir mesafe ile dünyadaki karşılık gelen mesafe arasındaki mevcut oranı gösterir. Örnekler: "1 : 3 000", "1 : 3,3 M" "1: 340 K".
 
 :::note
 
-- Başlangıç yakınlaştırma seviyesi (0), Dünya'nın tüm yüzeyinin (tam harita) ekranda görüntülendiği ve boyutunun 256'ya 256 piksel olduğu seviyedir.
+- Başlangıç yakınlaştırma seviyesi (0), dünyanın tüm yüzeyinin (tam harita) ekranda görüntülendiği ve boyutunun 256'ya 256 piksel olduğu seviyedir.
 - Her bir sonraki yakınlaştırma seviyesi, yere olan hayali mesafeyi yaklaşık 2 kat azaltır.
 
 :::
@@ -291,43 +291,43 @@ Kameradan hedefe uzaklık widget'ı, kamera (izleyici) ile haritanın merkezi ar
 
 ![Karşılaştırma](@site/static/img/plugins/development/comparison.png)
 
-OsmAnd haritası ile Dünya yüzeyinin karşılaştırılması aşağıdaki modelleri ortaya koymaktadır:
+OsmAnd haritası ile dünya yüzeyi arasındaki karşılaştırma aşağıdaki modelleri ortaya koymaktadır:
 
 - Maksimum bozulma, büyük yakınlaştırmalarda (kamera eğimi 90 derece için 6-7 yakınlaştırma) gözlenir.
-- Kamera eğimi azaldıkça (90 dereceden 10 dereceye), haritanın bozulması artar.
+- Kamera eğimi azaldıkça (90'dan 10 dereceye), haritanın bozulması artar.
 - Bozulmalar yüksek enlemlerde daha erken gözlenmeye başlar.
 
-Aşağıdaki tablo, OsmAnd haritası bozulmalarının görünür hale geldiği kamera eğimi ve hedefe olan mesafe ve yakınlaştırma seviyesi hakkında bilgi içermektedir. Kamera hedeften uzaklaşmaya devam ederse, gözlemlenen OsmAnd haritası bozulması artacaktır.
+Aşağıdaki tablo, kamera eğimi ve hedefe olan mesafe ile OsmAnd harita bozulmalarının görünür hale geldiği yakınlaştırma seviyesi hakkında bilgi içermektedir. Kamera hedeften uzaklaşmaya devam ederse, OsmAnd haritasının gözlemlenen bozulması artacaktır.
 
-|Eğim (90) |Enlem |Maks. Yakınlaştırma |Yükseklik, km |Bozulma|
+|Eğim (90) |Enlem |Maks Yakınlaştırma |Yükseklik, km |Bozulma|
 |-----|-----|-----|-----|-----|
-|90|26|6|5500|%5|
-|90|50|6|2500|%5|
-|90|66|7|1300|%5|
-|**Eğim (60)** |**Enlem** |**Maks. Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
-|65|26|8|1100|%6.5|
-|65|50|8|800|%6.5|
-|65|66|9|630|%6.5|
-|**Eğim (45)** |**Enlem** |**Maks. Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
-|45|26|9|350|%7.5|
-|45|50|9|320|%7.5|
-|45|66|8|210|%7.5|
-|**Eğim (20)** |**Enlem** |**Maks. Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
-|20| 26|12|30|%10|
-|20| 50|11|30|%10|
-|20| 66|11|30|%10|
+|90|26|6|5500|5%|
+|90|50|6|2500|5%|
+|90|66|7|1300|5%|
+|**Eğim (60)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|65|26|8|1100|6.5%|
+|65|50|8|800|6.5%|
+|65|66|9|630|6.5%|
+|**Eğim (45)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|45|26|9|350|7.5%|
+|45|50|9|320|7.5%|
+|45|66|8|210|7.5%|
+|**Eğim (20)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|20| 26|12|30|10%|
+|20| 50|11|30|10%|
+|20| 66|11|30|10%|
 
 
 ## Kullanılabilir RAM Widget'ı {#available-ram-widget}
 
-Bu widget, OsmAnd'ı kullanırken cihazınızdaki kullanılabilir RAM ile daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. Kullanılabilir RAM'i kolayca ve hızlı bir şekilde izlemenizi sağlar, bu da OsmAnd'ı navigasyon için kullanırken özellikle kullanışlıdır. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#available-ram) makalesinde okuyun.
+Bu widget, OsmAnd'ı kullanırken cihazınızdaki kullanılabilir RAM ile daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. Kullanılabilir RAM'i kolayca ve hızlı bir şekilde izlemenizi sağlar, bu da OsmAnd'ı navigasyon için kullanırken özellikle faydalıdır. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#available-ram) makalesinde okuyun.
 
 
 ## GPX-Parkur Simülasyonu {#gpx-track-simulation}
 
-OsmAnd, GPX parkuru kullanarak cihazınızın konumunu ve hareketini simüle etme olanağı sunar. Bu amaçlar için, OsmAnd geliştirme eklentisi [ayarlarında](#plugin-settings) *<Translate android="true" ids="simulate_location_by_gpx"/>* seçeneğini kullanın:
+OsmAnd, bir GPX parkuru kullanarak cihazınızın konumunu ve hareketini simüle etme fırsatı sunar. Bu amaçlar için, OsmAnd geliştirme eklentisi [ayarlarında](#plugin-settings) *<Translate android="true" ids="simulate_location_by_gpx"/>* seçeneğini kullanın:
 
-- *<Translate android="true" ids="simulate_location_by_gpx"/>* üzerine dokunun.
+- *<Translate android="true" ids="simulate_location_by_gpx"/>*'a dokunun.
 - Cihazın konumunu ve hareketini simüle etmek için bir parkur seçin.
 - Hareket simülasyon hızını seçin.
 - Başlat düğmesine dokunun.
@@ -348,12 +348,12 @@ OsmAnd, GPX parkuru kullanarak cihazınızın konumunu ve hareketini simüle etm
 
 </Tabs>
 
-Simülasyonu çalıştırdıktan sonra, uygulamanın ana ekranında navigasyon işaretinin GPX parkuruna göre hareket ettiğini göreceksiniz. *Konumum*u (cihazın simüle edilmiş coğrafi konumu) haritanın merkeziyle senkronize etmek için [konumum düğmesine](../map/interact-with-map#my-location-and-zoom) dokunun.
+Simülasyonu çalıştırdıktan sonra, uygulamanın ana ekranında navigasyon işaretinin GPX parkuruna göre hareket ettiğini göreceksiniz. [Konumum düğmesine](../map/interact-with-map#my-location-and-zoom) dokunarak *Konumum*'u (cihazın simüle edilmiş coğrafi konumu) haritanın merkeziyle senkronize edin.
 Cihazınızın hareket simülasyonunu durdurmak için OsmAnd geliştirme [ayarlarına](#plugin-settings) geri dönün ve **konumunuzu simüle et** seçeneğinde **durdur**'a dokunun.
 
-- *<Translate android="true" ids="simulate_location_by_gpx"/>* seçeneğine **[Hızlı eylem menüsü](../widgets/quick-action.md#navigation)** aracılığıyla da erişilebilir.
-- Simülasyon sırasındaki konum hareket hızı, kaydedilen hıza (1) veya daha hızlıya (x2, x3, x4) ayarlanabilir.
-- OsmAnd geliştirme eklentisini etkinleştirmeden de [navigasyon menüsünden](../navigation/setup/route-navigation.md#simulated-navigation) bir GPX parkuru boyunca hareketi simüle edebilirsiniz. Bu durumda, konumunuz parkurla senkronize edilmeyecektir.
+- *<Translate android="true" ids="simulate_location_by_gpx"/>* ayrıca **[Hızlı eylem menüsü](../widgets/quick-action.md#navigation)** aracılığıyla da erişilebilir.
+- Simülasyon sırasında konum hareket hızı, kaydedilen hıza (1) eşit veya daha hızlı (x2, x3, x4) ayarlanabilir.
+- OsmAnd geliştirme eklentisini etkinleştirmeden [navigasyon menüsünden](../navigation/setup/route-navigation.md#simulated-navigation) bir GPX parkuru boyunca hareketi de simüle edebilirsiniz. Bu durumda, konumunuz parkurla senkronize edilmeyecektir.
 
 
 ## İlgili Makaleler {#related-articles}

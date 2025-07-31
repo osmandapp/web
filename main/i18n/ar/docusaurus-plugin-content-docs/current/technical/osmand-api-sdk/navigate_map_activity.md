@@ -5,9 +5,9 @@ sidebar_position: 4
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # نشاط خريطة التنقل {#navigate-map-activity}
-توجد خريطة ومفتاح لتقديم OpenGL، وتحتوي على مستمع نقرة طويلة على عرض الخريطة (mapView)، بعد النقر الأول يتم تحديد نقطة البداية، وبعد النقر الثاني يتم تحديد نقطة النهاية وبدء حساب المسار.
+توجد خريطة ومفتاح لتقديم OpenGL، وتحتوي على LongClickListener على mapView، بعد النقر الأول يتم تحديد نقطة البداية، وبعد النقر الثاني يتم تحديد نقطة النهاية ويبدأ حساب المسار.
 
-  ```
+```
   public class NavigateMapActivity extends AppCompatActivity  {
 
 	private OsmandApplication app;

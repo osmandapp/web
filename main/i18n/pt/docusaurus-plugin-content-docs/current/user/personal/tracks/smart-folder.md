@@ -1,5 +1,5 @@
 ---
-source-hash: f590f02934d3bbad431f346fc5f01207a37246d4320a4a5025973bb5ff373b63
+source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
 sidebar_position: 3
 title: Pasta Inteligente (Filtro)
 ---
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O recurso **Pasta Inteligente** oferece ferramentas poderosas para organizar e gerenciar suas trilhas. Uma das principais funcionalidades é a capacidade de filtrar arquivos na *guia Trilhas* do menu *Meus Lugares* com base em critérios como duração, comprimento ou velocidade.
+O recurso **Pasta Inteligente** oferece ferramentas poderosas para organizar e gerenciar suas trilhas. Uma das principais características é a capacidade de filtrar arquivos na guia *Trilhas* do menu *Meus Lugares* com base em critérios como duração, comprimento ou velocidade.
 
-Esse recurso permite que você encontre rapidamente trilhas específicas que correspondam aos seus requisitos. Os resultados filtrados podem ser salvos como uma **Pasta Inteligente**, oferecendo acesso conveniente a coleções de trilhas atualizadas dinamicamente.
+Este recurso permite que você encontre rapidamente trilhas específicas que correspondam aos seus requisitos. Os resultados filtrados podem ser salvos como uma **Pasta Inteligente**, oferecendo acesso conveniente a coleções de trilhas atualizadas dinamicamente.
 
 
 ## Filtro de Busca {#search-filter}
@@ -29,17 +29,17 @@ Esse recurso permite que você encontre rapidamente trilhas específicas que cor
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> guia*
+Vá para: guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Trilhas dos meus lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
+![Minhas trilhas de lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> guia*
+Vá para: guia *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Trilhas dos meus lugares](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
+![Minhas trilhas de lugares](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
 </TabItem>
 
@@ -47,7 +47,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 ***Como aplicar um filtro:***
 
-- Toque no ícone *Pesquisar*, depois toque em *Filtrar* na linha [*Ordenar por*](./manage-tracks.md#sort-by).
+- Toque no ícone *Pesquisar*, depois toque em *Filtro* na linha [*Ordenar por*](./manage-tracks.md#sort-by).
 
 - **Escolha as configurações de filtro necessárias** para refinar sua pesquisa de trilhas.
 
@@ -64,13 +64,13 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 <TabItem value="android" label="Android">
 
-![Trilhas dos meus lugares](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
+![Minhas trilhas de lugares](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trilhas dos meus lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
+![Minhas trilhas de lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
 
 </TabItem>
 
@@ -78,9 +78,9 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 - **Nome** — Pesquise trilhas por título. Digite um nome completo ou parcial para exibir as trilhas correspondentes.
 - **Pasta** — Selecione uma ou mais pastas para filtrar trilhas por seu local de armazenamento.
-- **Duração** — Filtre trilhas pela duração registrada, definindo um intervalo em horas e minutos.
+- **Duração** — Filtre trilhas por sua duração registrada, definindo um intervalo em horas e minutos.
 - **Tempo em movimento** — Especifique o intervalo de tempo gasto em movimento durante a gravação.
-- **Comprimento** — Defina um intervalo específico em quilômetros ou milhas para encontrar trilhas de um comprimento específico.
+- **Comprimento** — Defina um intervalo específico em quilômetros ou milhas para encontrar trilhas de um determinado comprimento.
 - **Velocidade média** — Filtre trilhas por [velocidade média](../../widgets/info-widgets.md#average-speed).
 - **Grupo de dados do sensor.**
     Aplique filtros com base em dados de sensores externos, incluindo:
@@ -101,7 +101,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 - **Cidades mais próximas** — Exiba trilhas que passam perto de cidades ou localidades selecionadas.
 - **Tipo de atividade** — Filtre trilhas com base no tipo de [atividades](../../map/tracks/track-context-menu.md#track-information-activity) registradas no arquivo GPX (por exemplo, ciclismo, caminhada).
 - **País** — Filtre trilhas pelo país ou região onde foram gravadas.
-- **Cor** e **Largura** — Selecione trilhas pela cor ou largura da linha atribuída.
+- **Cor** e **Largura** — Selecione trilhas por cor atribuída ou largura da linha.
 - **Outros** — Filtros adicionais para características especiais:
     - *Visível no Mapa*. Mostra apenas as trilhas exibidas no mapa.
     - *Com Pontos de Referência*. Exibe trilhas contendo pontos de referência específicos.
@@ -119,20 +119,20 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 <TabItem value="ios" label="iOS">
 
-![Trilhas dos meus lugares](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+![Minhas trilhas de lugares](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Uma **Pasta Inteligente** é uma coleção dinâmica de trilhas atualizada automaticamente com base em critérios de filtro específicos. Ela oferece ferramentas avançadas para organizar, pesquisar e gerenciar trilhas de forma eficiente.
+Uma **Pasta Inteligente** é uma coleção dinâmica de trilhas atualizadas automaticamente com base em critérios de filtro específicos. Ela oferece ferramentas avançadas para organizar, pesquisar e gerenciar trilhas de forma eficiente.
 
 ***Benefícios das Pastas Inteligentes:***
 
 1. **Organização automatizada.**
     Inclui automaticamente trilhas que correspondem a regras predefinidas, como data de criação ou intervalo de duração.
 2. **Filtragem e pesquisa.**
-    Permite pesquisas rápidas dentro das trilhas usando filtros avançados e palavras-chave.
+    Permite pesquisas rápidas dentro de trilhas usando filtros avançados e palavras-chave.
 3. **Atualização dinâmica.**
     Atualiza automaticamente o conteúdo para exibir as trilhas mais recentes que correspondem aos critérios.
 4. **Personalizar regras.**
@@ -141,18 +141,18 @@ Uma **Pasta Inteligente** é uma coleção dinâmica de trilhas atualizada autom
 
 ### Como Criar uma Pasta Inteligente {#how-to-create-smart-folder}
 
-Para criar uma **Pasta Inteligente**, siga estes passos:
+Para criar uma **Pasta Inteligente**, siga estas etapas:
 
 1. Toque no ícone do ***menu de três pontos*** na guia *Trilhas* do menu *Meus Lugares*.
 
 2. Selecione **Adicionar pasta inteligente** no menu suspenso.
 
-3. Configure as definições:
-   - **Nomeie a pasta**. Insira um nome para identificar a pasta.
-   - Especifique os **parâmetros de filtro de trilha**. Aplique os filtros necessários usando as opções de [Filtro](#available-filters) disponíveis.
+3. Configure as configurações:
+   - **Nomeie a pasta**. Digite um nome para identificar a pasta.
+   - Especifique **parâmetros de filtro de trilha**. Aplique os filtros necessários usando as opções de [Filtro](#available-filters) disponíveis.
 
 4. **Salve** as configurações.
-    - Toque em **Mostrar** para visualizar as trilhas.
+    - Toque em **Mostrar** para pré-visualizar as trilhas.
     - Selecione o botão **Salvar** para finalizar a *Pasta Inteligente*.
 
 A **Pasta Inteligente** recém-criada atualizará automaticamente seu conteúdo com as trilhas que correspondem aos critérios selecionados.
@@ -200,18 +200,18 @@ A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na
 - **Exportar** — Exporte todas as trilhas na Pasta Inteligente através do recurso [Importar/Exportar](../../personal/import-export.md). Você será redirecionado para *Menu → Configurações → guia Ações*.
 
 - **Excluir pasta** — Remova a Pasta Inteligente sem excluir suas trilhas.
-    *AVISO: Esta ação é irreversível e exibirá uma mensagem de confirmação.*
+    *AVISO: Esta ação é irreversível e solicitará uma mensagem de confirmação.*
 
 - **Mover** (*iOS*) — Permite mover a pasta para outra pasta existente ou criar uma nova.
 
-- **Selecionar** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
+- **Selecionar** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações de trilha específicas dentro da pasta.
 
 
 ## Artigos Relacionados {#related-articles}
 
 - [Mostrar trilha no Mapa](../../map/tracks/index.md)
 - [Analisar no Mapa](../../map/tracks/index.md#analyze-track-on-map)
-- [Menu de contexto da trilha](../../map/tracks/track-context-menu.md)
+- [Menu de Contexto da Trilha](../../map/tracks/track-context-menu.md)
 - [Navegação por trilha](../../navigation/setup/gpx-navigation.md)
 - [Gravação de viagem](../../plugins/trip-recording.md)
 

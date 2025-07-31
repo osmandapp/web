@@ -1,5 +1,5 @@
 ---
-source-hash: a1d35656711a4d2803b5867ef4417c01911d4220b4edb0e5bbacbfaf0c57d72e
+source-hash: a7bb3ecdf328625e1adb07077688db45d3cb52c8d57fb60192db3381c3b3b0cf
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,32 +19,32 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-:::tip subskrybuj  
-&nbsp;<ProFeature/> Aby uzyskać dostęp do wszystkich funkcji OsmAnd Cloud, zasubskrybuj **OsmAnd Pro** dla [Androida](../purchases/android.md#osmand-pro) lub [iOS](../purchases/ios.md#osmand-pro).  
+:::tip subscribe  
+&nbsp;<ProFeature/> Aby uzyskać dostęp do wszystkich funkcji OsmAnd Cloud, zasubskrybuj **OsmAnd Pro** dla [systemu Android](../purchases/android.md#osmand-pro) lub [systemu iOS](../purchases/ios.md#osmand-pro).  
 :::  
 
 :::note cross-platform  
-OsmAnd Cloud to niezależna usługa przechowywania w chmurze i *nie jest powiązana* z konkretną wersją platformy Android, iOS lub web.  
+OsmAnd Cloud to niezależna usługa przechowywania danych w chmurze i *nie jest powiązana* z konkretną wersją platformy Android, iOS ani internetowej.  
 :::  
 
-OsmAnd Cloud umożliwia **przechowywanie i synchronizowanie osobistych ustawień i danych aplikacji** na wielu urządzeniach. Możesz uzyskać dostęp do tych danych na dowolnym urządzeniu, na którym zainstalowany jest OsmAnd, w tym na aplikacji desktopowej. Wszystkie zmiany dokonane w aplikacji mogą być **synchronizowane między platformami**, zapewniając płynny dostęp do zapisanych danych.
+OsmAnd Cloud umożliwia **przechowywanie i synchronizowanie osobistych ustawień i danych aplikacji** na wielu urządzeniach. Możesz uzyskać dostęp do tych danych na dowolnym urządzeniu, na którym zainstalowano OsmAnd, w tym na aplikacji komputerowej. Wszystkie zmiany dokonane w aplikacji mogą być **synchronizowane między platformami**, zapewniając płynny dostęp do zapisanych danych.
 
 
 ## Międzyplatformowość {#cross-platform}
 
 OsmAnd Cloud umożliwia tworzenie kopii zapasowych, przywracanie i synchronizowanie danych między systemami Android, iOS i [wersją internetową](../web/index.md). Dzięki możliwościom międzyplatformowym możesz przenosić **ustawienia profilu**, **trasy**, **ulubione**, **edycje/notatki OSM** i inne elementy między urządzeniami. Dodatkowo, **wersja internetowa** umożliwia planowanie tras i zapisywanie ich do późniejszego wykorzystania na podłączonych urządzeniach.  
 
-OsmAnd obsługuje **użycie międzyplatformowe** ([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)) z następującymi krokami:
+OsmAnd obsługuje **użycie międzyplatformowe** w *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* z następującymi krokami:
 
 1. **Zarejestruj [konto](#login) w OsmAnd Cloud**:
  
-    1.1 **Zasubskrybuj OsmAnd Pro, aby uzyskać pełny dostęp do Chmury.**  
-   Dowiedz się więcej o zakupie dla [Androida](../purchases/android.md#how-to-buy) lub [iOS](../purchases/ios.md#how-to-buy).
+    1.1 **Zasubskrybuj OsmAnd Pro, aby uzyskać pełny dostęp do chmury.**  
+   Dowiedz się więcej o zakupie dla [systemu Android](../purchases/android.md#how-to-buy) lub [systemu iOS](../purchases/ios.md#how-to-buy).
 
     2.1 **Użyj darmowego planu OsmAnd Start** do tworzenia kopii zapasowych ulubionych, ustawień i edycji/notatek OSM w chmurze.  
-   Limit darmowego miejsca to **5 MB**.
+   Limit darmowej przestrzeni to **5 MB**.
 
-2. **Użyj zarejestrowanego adresu e-mail** jako loginu do aktywacji [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) lub OsmAnd Start na innych platformach.
+2. **Użyj zarejestrowanego adresu e-mail** jako loginu, aby aktywować [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) lub OsmAnd Start na innych platformach.
 
 :::note  
 **OsmAnd Pro** to subskrypcja międzyplatformowa, która obejmuje wszystkie funkcje OsmAnd. Możesz ją kupić w jednym sklepie (np. Google Play, Huawei AppGallery) i używać również na **iOS**. Twój **[zarejestrowany adres e-mail](#login)** jest Twoim loginem do aktywacji OsmAnd Pro [na różnych platformach](../purchases/cross.md). 
@@ -59,7 +59,7 @@ OsmAnd obsługuje **użycie międzyplatformowe** ([Android](../purchases/android
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
-![Logowanie do OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Logowanie do OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
 </TabItem>
 
@@ -67,18 +67,18 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="register_opr_have_account"/>*
 
-![Logowanie do OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png)  ![Logowanie do OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Aby tworzyć kopie zapasowe i przywracać dane, musisz być zalogowany na swoje konto OsmAnd Cloud.  
+Aby utworzyć kopię zapasową i przywrócić dane, musisz być zalogowany na swoje konto OsmAnd Cloud.  
 
 - Aby się zarejestrować lub zalogować, potrzebujesz aktywnej subskrypcji [OsmAnd Pro](#cross-platform) lub [OsmAnd Start](#osmand-start). Status swojej subskrypcji możesz sprawdzić w aplikacji OsmAnd:  
   *Menu → Ustawienia → Zakupy*.
 
-- Twoje konto w chmurze **musi być zarejestrowane na urządzeniu, na którym dokonano pierwotnego zakupu**.
+- Twoje konto Cloud **musi być zarejestrowane na urządzeniu, na którym dokonano pierwotnego zakupu**.
 
 - *Proces logowania*:  
   - Wprowadź swój adres e-mail i dotknij **Kontynuuj**.  
@@ -119,13 +119,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-Plan **OsmAnd Start** zapewnia bezpłatny dostęp do **OsmAnd Cloud** z ograniczonymi podstawowymi funkcjami i 5 MB miejsca na przechowywanie i synchronizowanie **ulubionych, ustawień oraz edycji i notatek OpenStreetMap (OSM)**. Ten plan jest dostępny dla użytkowników [OsmAnd Free lub Maps+](../purchases/index.md).  
+Plan **OsmAnd Start** zapewnia bezpłatny dostęp do **OsmAnd Cloud** z ograniczonymi podstawowymi funkcjami i 5 MB pamięci do przechowywania i synchronizowania **Ulubionych, Ustawień oraz edycji i notatek OpenStreetMap (OSM)**. Ten plan jest dostępny dla użytkowników [OsmAnd Free lub Maps+](../purchases/index.md).  
 
 Funkcje zawarte w OsmAnd Start:
 
-- [Darmowa kopia zapasowa ulubionych](../personal/favorites.md#free-cloud-backup) – Przechowuj ważne lokalizacje i trasy w ulubionych i uzyskuj do nich dostęp z dowolnego urządzenia podłączonego do OsmAnd Cloud.  
+- [Darmowa kopia zapasowa ulubionych](../personal/favorites.md#free-cloud-backup) – Przechowuj ważne lokalizacje i trasy w Ulubionych i uzyskuj do nich dostęp z dowolnego urządzenia podłączonego do OsmAnd Cloud.  
 - [Darmowa kopia zapasowa ustawień](../personal/profiles.md#free-cloud-backup) – Zapisz ustawienia aplikacji OsmAnd w OsmAnd Cloud i przywróć je na innych urządzeniach, aby zapewnić płynne działanie.  
-- [Edycje/notatki OSM](../plugins/osm-editing.md) – Przyczyniaj się do OpenStreetMap, tworząc i edytując dane mapy, dodając notatki i zapisując zmiany bezpośrednio w OsmAnd Cloud.
+- [Edycje/notatki OSM](../plugins/osm-editing.md) – Wprowadź swój wkład w OpenStreetMap, tworząc i edytując dane mapy, dodając notatki i zapisując zmiany bezpośrednio w OsmAnd Cloud.
 
 ### Jak aktywować OsmAnd Start {#how-to-activate-osmand-start}
 
@@ -135,7 +135,7 @@ Funkcje zawarte w OsmAnd Start:
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Funkcje folderu ulubionych Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Funkcje folderu Ulubione Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -143,15 +143,15 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Akcje ulubionych iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Akcje Ulubione iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Aby korzystać z OsmAnd Start, potrzebujesz konta OsmAnd Cloud**.
+**Potrzebujesz konta OsmAnd Cloud, aby korzystać z OsmAnd Start**.
 
-Aby użyć OsmAnd Start, wykonaj następujące kroki:
+Aby korzystać z OsmAnd Start, wykonaj następujące kroki:
 
 - **Zarejestruj konto OsmAnd Cloud** - Instrukcje znajdziesz w sekcji [Logowanie](#login).
 - Otwórz *Menu → Ustawienia → Zakupy*.
@@ -185,12 +185,12 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-**Ostatnia synchronizacja** to rozwijane menu, które pokazuje, ile czasu minęło od ostatniej synchronizacji danych między tym urządzeniem a chmurą.
+**Ostatnia synchronizacja** to rozwijane menu, które pokazuje, jak dawno dane były ostatnio synchronizowane między tym urządzeniem a chmurą.
 
 - *Zmiany lokalne*. Pokazuje całkowitą liczbę zmian lokalnych, które nie zostały przesłane do chmury.
 - *Zmiany w chmurze*. Całkowita liczba zmian przesłanych do chmury z innych urządzeń od ostatniej synchronizacji.
 - *Konflikty*. Całkowita liczba niespójności między zmianami lokalnymi a zmianami w chmurze.
-- *Synchronizuj teraz*. Wybierz tę opcję, aby zsynchronizować wszystkie wybrane sekcje danych w menu [ustawień](#settings), które zostały zmienione na tym urządzeniu i w chmurze.  
+- *Synchronizuj teraz*. Wybierz tę opcję, aby zsynchronizować wszystkie wybrane sekcje danych w menu [ustawień](#settings), które zmieniłeś na tym urządzeniu i w chmurze.  
 
 **Synchronizuj teraz** łączy przyciski *Prześlij wszystko* i *Pobierz wszystko* w menu Zmiany, w sekcjach [Lokalne i Chmura](#local-and-cloud). **Konflikty** nie są w ten sposób synchronizowane.
 
@@ -236,9 +236,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-Funkcja **Kosz** umożliwia przeglądanie i zarządzanie plikami, które zostały usunięte z OsmAnd Cloud. Została zaprojektowana, aby zapobiegać przypadkowemu usunięciu plików i nieodwracalnej utracie danych.
+Funkcja **Kosz** umożliwia przeglądanie i zarządzanie plikami, które zostały usunięte z OsmAnd Cloud. Została zaprojektowana, aby zapobiec przypadkowemu usunięciu plików i nieodwracalnej utracie danych.
 
-- **Wyświetl pliki**. *Kosz* wyświetla listę wszystkich wcześniej usuniętych plików z folderu *Zmiany w chmurze*. Wszystkie pliki zawierają informacje o dacie i godzinie ich usunięcia. Są pogrupowane według miesiąca i posortowane od najnowszych do najstarszych plików pozostających w Koszu.
+- **Wyświetl pliki**. *Kosz* wyświetla listę wszystkich wcześniej usuniętych plików z folderu *Zmiany w chmurze*. Wszystkie pliki zawierają informacje o dacie i godzinie ich usunięcia. Są one pogrupowane według miesiąca i posortowane od najnowszych do najstarszych plików pozostających w Koszu.
 - **Opróżnij Kosz**.  
 
     ![Kosz OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
@@ -250,7 +250,7 @@ Funkcja **Kosz** umożliwia przeglądanie i zarządzanie plikami, które został
     ![Kosz OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
     - *<Translate ios="true" ids="restore_from_trash"/>*. Dzięki tej funkcji możesz przywrócić pliki do OsmAnd Cloud. Po dotknięciu wybrany plik jest przenoszony z Kosza w sekcji *Zmiany* do folderu *Chmura*.
-    - *<Translate ios="true" ids="download_to_device"/>*. Ta funkcja umożliwia pobranie pliku na urządzenie. Jeśli wybrany plik o tej samej nazwie jest obecny w folderze, wyświetlone zostanie okno dialogowe *Plik już istnieje*, w którym można wybrać opcję działania: *Zastąp* lub *Zachowaj oba*.
+    - *<Translate ios="true" ids="download_to_device"/>*. Ta funkcja umożliwia pobranie pliku na urządzenie. Jeśli wybrany plik o tej samej nazwie znajduje się w folderze, wyświetlone zostanie okno dialogowe *Plik już istnieje*, w którym można wybrać opcję działania: *Zastąp* lub *Zachowaj oba*.
     - *<Translate ios="true" ids="shared_string_delete_immediately"/>*. Ta funkcja umożliwia trwałe usunięcie wybranego pliku bez możliwości jego przywrócenia. Zachowaj ostrożność podczas korzystania z tej funkcji, ponieważ operacja jest nieodwracalna.
 
 
@@ -279,7 +279,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 Ta sekcja służy do edycji i zarządzania Twoim OsmAnd Cloud.  
 
 
-### Wybierz dane do kopii zapasowej {#select-data-to-back-up}
+### Wybierz dane do utworzenia kopii zapasowej {#select-data-to-back-up}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -305,11 +305,11 @@ W tym menu możesz wybrać, które dane i foldery mają zostać przesłane do Ch
 
 1. **Ustawienia**. Ta zakładka zawiera wszystkie Twoje ustawienia, takie jak ogólne preferencje, konkretne profile, szybkie akcje, POI i ustawienia unikania dróg.
 
-2. **Moje miejsca**. Ta zakładka zawiera dane z [menu Moje miejsca](../personal/myplaces), w tym ulubione, trasy, notatki OSM, znaczniki i inne elementy.
+2. **Moje miejsca**. Ta zakładka zawiera listę danych z [menu Moje miejsca](../personal/myplaces), w tym ulubione, trasy, notatki OSM, znaczniki i inne elementy.
 
 3. **Zasoby**. Tutaj możesz wybrać tworzenie kopii zapasowych zasobów, takich jak ulubione, informacje o trasowaniu, komunikaty głosowe i dodatkowe elementy.
 
-Wszystkie [mapy](../start-with/download-maps.md) są przechowywane na urządzeniu, na którym zostały wcześniej pobrane. OsmAnd Cloud przechowuje jedynie informacje o tym, jakie mapy posiadasz i datę ich ostatniej modyfikacji.
+Wszystkie [mapy](../start-with/download-maps.md) są przechowywane na urządzeniu, na którym zostały wcześniej pobrane. OsmAnd Cloud przechowuje tylko informacje o tym, jakie mapy posiadasz i datę ich ostatniej modyfikacji.
 
 
 ### Zarządzaj pamięcią {#manage-storage}
@@ -334,7 +334,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-Sekcja menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) wyświetla informacje o tym, ile z 3,15 gigabajtów pamięci w *Ustawieniach*, *Moich miejscach* i *Zasobach* jest używane. Możesz usunąć zmiany poszczególnych typów danych z OsmAnd Cloud, ale w tym przypadku akcji nie można cofnąć.  
+Sekcja menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) wyświetla informacje o tym, ile z 3,15 gigabajtów pamięci w *Ustawieniach*, *Moich miejscach* i *Zasobach* jest używanych. Możesz usunąć zmiany w poszczególnych typach danych z OsmAnd Cloud, ale w tym przypadku akcja nie może zostać cofnięta.  
 
 
 ### Konto {#account}
@@ -398,16 +398,16 @@ Działania, które można wykonać w sekcji **Strefa zagrożenia** w menu Ustawi
 
 </Tabs>  
 
-W sekcji [Ostatnia synchronizacja](#last-sync) rozwijanego menu dotknij dowolnego elementu, aby otworzyć sekcję Zmiany. Ta sekcja zawiera trzy zakładki wyświetlające wszystkie dostępne zmiany do edycji. Jeśli lista jest pusta, od ostatniej synchronizacji nie nastąpiły żadne zmiany.
+W sekcji [Ostatnia synchronizacja](#last-sync) w rozwijanym menu dotknij dowolnego elementu, aby otworzyć sekcję Zmiany. Ta sekcja zawiera trzy zakładki wyświetlające wszystkie dostępne zmiany do edycji. Jeśli lista jest pusta, od ostatniej synchronizacji nie nastąpiły żadne zmiany.
 
-- Każdy element na liście **Zmian** zawiera **datę i dokładną godzinę** ostatniej synchronizacji, a także opcje natychmiastowego pobrania lub przesłania odpowiedniej wersji.
+- Każdy element na liście **Zmiany** zawiera **datę i dokładną godzinę** ostatniej synchronizacji, wraz z opcjami natychmiastowego pobrania lub przesłania odpowiedniej wersji.
 
-- **Pobieranie zmian z pamięci w chmurze spowoduje nadpisanie zmian lokalnych**. Podobnie, przesłanie danych lokalnych usuwa odpowiednie zmiany z wersji w chmurze.
+- **Pobieranie zmian z pamięci w chmurze spowoduje nadpisanie zmian lokalnych**. Podobnie, przesyłanie danych lokalnych usuwa odpowiednie zmiany z wersji w chmurze.
 
 - W każdej zakładce dane są **sortowane według typu i alfabetycznie**, aby pomóc Ci szybko znaleźć konkretne elementy, zwłaszcza podczas zarządzania wieloma plikami w OsmAnd Cloud.
 
 
-### Lokalnie i w chmurze {#local-and-cloud}
+### Lokalne i Chmura {#local-and-cloud}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -429,11 +429,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-- **Lokalnie** - Możesz zsynchronizować wszystkie lokalne zmiany, które nie są jeszcze w chmurze, dotykając **Prześlij wszystko**. Alternatywnie, możesz przesłać konkretne zmiany, wybierając je z listy i wybierając **Prześlij wersję lokalną**.  
+- **Lokalne** - Możesz zsynchronizować wszystkie zmiany lokalne, które nie są jeszcze w chmurze, dotykając **Prześlij wszystko**. Alternatywnie, możesz przesłać konkretne zmiany, wybierając je z listy i wybierając **Prześlij wersję lokalną**.  
 
-    Zmiany, które zostały pomyślnie przesłane do chmury, są automatycznie usuwane z *Zmiany → zakładka Lokalnie* po określonym czasie.  
+    Zmiany, które zostały pomyślnie przesłane do chmury, są automatycznie usuwane z zakładki *Zmiany → Lokalne* po określonym czasie.  
 
-- **Chmura** - Zakładka **Chmura** wyświetla listę zmian dostępnych do pobrania z pamięci w chmurze. Możesz pobrać wszystkie zmiany naraz za pomocą przycisku na dole ekranu lub pobrać je pojedynczo.  
+- **Chmura** - Zakładka **Chmura** wyświetla listę zmian dostępnych do pobrania z pamięci w chmurze. Możesz pobrać wszystkie zmiany jednocześnie, używając przycisku na dole ekranu, lub pobrać je pojedynczo.  
 
 
 ### Konflikty {#conflicts}
@@ -462,13 +462,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 - Możesz albo **zastąpić wersję w chmurze** zmianami lokalnymi, albo **pobrać wersję w chmurze** na swoje urządzenie.
 
-- Po rozwiązaniu konfliktu jest on automatycznie usuwany z listy. Przetwarzanie zazwyczaj trwa tylko kilka chwil.
+- Po rozwiązaniu konfliktu jest on automatycznie usuwany z listy. Przetwarzanie trwa zazwyczaj tylko kilka chwil.
 
-- Dotknięcie pliku w folderze **Konflikty** wyświetla szczegóły dotyczące wersji **Lokalnej** i **Chmurowej**, w tym czasy ostatniej modyfikacji i przesłania.
+- Dotknięcie pliku w folderze **Konflikty** wyświetla szczegóły dotyczące wersji **Lokalnej** i **Chmurowej**, w tym daty ostatniej modyfikacji i przesłania.
 
 - Możesz wybrać jedną z następujących akcji:  
   - **Prześlij wersję lokalną** – Zastępuje wersję w chmurze plikiem lokalnym.  
-  - **Pobierz wersję w chmurze** – Zastępuje plik lokalny wersją w chmurze.
+  - **Pobierz wersję z chmury** – Zastępuje plik lokalny wersją z chmury.
 
 
 <!--

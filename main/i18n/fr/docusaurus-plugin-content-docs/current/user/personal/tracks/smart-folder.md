@@ -1,5 +1,5 @@
 ---
-source-hash: f590f02934d3bbad431f346fc5f01207a37246d4320a4a5025973bb5ff373b63
+source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -14,11 +14,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+
 ## Aperçu {#overview}
 
-La fonction **Dossier intelligent** offre des outils puissants pour organiser et gérer vos traces. L'une des principales caractéristiques est la possibilité de filtrer les fichiers dans l'onglet *Traces* du menu *Mes lieux* en fonction de critères tels que la durée, la longueur ou la vitesse.
+La fonctionnalité **Dossier intelligent** offre des outils puissants pour organiser et gérer vos traces. L'une des principales fonctionnalités est la possibilité de filtrer les fichiers dans l'onglet *Traces* du menu *Mes lieux* en fonction de critères tels que la durée, la longueur ou la vitesse.
 
-Cette fonction vous permet de trouver rapidement des traces spécifiques qui correspondent à vos besoins. Les résultats filtrés peuvent être enregistrés en tant que **Dossier intelligent**, offrant un accès pratique à des collections de traces mises à jour dynamiquement.
+Cette fonctionnalité vous permet de trouver rapidement des traces spécifiques qui correspondent à vos besoins. Les résultats filtrés peuvent être enregistrés en tant que **Dossier intelligent**, offrant un accès pratique à des collections de traces mises à jour dynamiquement.
+
 
 ## Filtre de recherche {#search-filter}
 
@@ -44,7 +47,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 ***Comment appliquer un filtre :***
 
-- Appuyez sur l'icône *Rechercher*, puis sur *Filtrer* dans la ligne [*Trier par*](./manage-tracks.md#sort-by).
+- Appuyez sur l'icône *Rechercher*, puis sur *Filtre* dans la ligne [*Trier par*](./manage-tracks.md#sort-by).
 
 - **Choisissez les paramètres de filtre requis** pour affiner votre recherche de traces.
 
@@ -53,6 +56,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 - **Pour effacer** tous les filtres actifs, appuyez sur **Réinitialiser tout**.
 
 - **Pour enregistrer** l'ensemble de filtres actuel en tant que nouveau **Dossier intelligent**, appuyez sur l'icône d'enregistrement dans le coin supérieur droit de l'écran.
+
 
 ### Filtres disponibles {#available-filters}
 
@@ -72,35 +76,36 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-- **Nom** — Rechercher des traces par titre. Entrez un nom complet ou partiel pour afficher les traces correspondantes.
+- **Nom** — Rechercher des traces par titre. Saisissez un nom complet ou partiel pour afficher les traces correspondantes.
 - **Dossier** — Sélectionnez un ou plusieurs dossiers pour filtrer les traces par leur emplacement de stockage.
 - **Durée** — Filtrer les traces par leur durée enregistrée, en définissant une plage en heures et minutes.
 - **Temps en mouvement** — Spécifiez la plage de temps passée en mouvement pendant l'enregistrement.
 - **Longueur** — Définissez une plage spécifique en kilomètres ou en miles pour trouver des traces d'une longueur particulière.
 - **Vitesse moyenne** — Filtrer les traces par [vitesse moyenne](../../widgets/info-widgets.md#average-speed).
 - **Groupe de données de capteur.**
-    Appliquer des filtres basés sur des données de capteurs externes, y compris :
+    Appliquer des filtres basés sur les données de capteurs externes, y compris :
     - Vitesse du capteur, moyenne.
     - Vitesse du capteur, max.
     - Fréquence cardiaque, moyenne.
     - Fréquence cardiaque, max.
-    - Cadence vélo, moyenne.
-    - Cadence vélo, max.
-    - Puissance vélo, moyenne.
-    - Puissance vélo, max.
+    - Cadence de vélo, moyenne.
+    - Cadence de vélo, max.
+    - Puissance de vélo, moyenne.
+    - Puissance de vélo, max.
     - Température, moyenne.
     - Température, max.
 - **Vitesse maximale** — Sélectionnez les traces avec des plages de vitesse maximale spécifiques.
-- **Montée** et **Descente** — Filtrer les traces en fonction des changements d'élévation positifs ou négatifs.
+- **Montée** et **Descente** — Filtrer les traces en fonction des changements d'altitude positifs ou négatifs.
 - **Altitude moyenne** et **Altitude maximale** — Trouver des traces avec des données d'altitude moyenne ou maximale spécifiques.
 - **Date de création** — Filtrer les traces créées dans une plage de dates particulière.
 - **Villes les plus proches** — Afficher les traces passant près des villes ou localités sélectionnées.
-- **Type d'activité** — Filtrer les traces en fonction du type d'[activités](../../map/tracks/track-context-menu.md#track-information-activity) enregistré dans le fichier GPX (par exemple, cyclisme, randonnée).
+- **Type d'activité** — Filtrer les traces en fonction du type d'[activités](../../map/tracks/track-context-menu.md#track-information-activity) enregistrées dans le fichier GPX (par exemple, cyclisme, randonnée).
 - **Pays** — Filtrer les traces par le pays ou la région où elles ont été enregistrées.
-- **Couleur** et **Largeur** — Sélectionnez les traces par couleur ou largeur de ligne attribuée.
+- **Couleur** et **Largeur** — Sélectionnez les traces par couleur attribuée ou largeur de ligne.
 - **Autre** — Filtres supplémentaires pour des caractéristiques spéciales :
-    - *Visible sur la carte*. Affiche uniquement les traces affichées sur la carte.
+    - *Visible sur la carte*. N'affiche que les traces affichées sur la carte.
     - *Avec points de passage*. Affiche les traces contenant des points de passage spécifiques.
+
 
 ## Dossier intelligent {#smart-folder}
 
@@ -108,7 +113,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="android" label="Android">
 
-![Fonction de tri des traces de mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![Fonction de tri des traces Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
@@ -133,6 +138,7 @@ Un **Dossier intelligent** est une collection dynamique de traces automatiquemen
 4. **Personnaliser les règles.**
     Créez des collections de traces personnalisées en définissant des règles de filtre personnalisées.
 
+
 ### Comment créer un Dossier intelligent {#how-to-create-smart-folder}
 
 Pour créer un **Dossier intelligent**, suivez ces étapes :
@@ -141,15 +147,16 @@ Pour créer un **Dossier intelligent**, suivez ces étapes :
 
 2. Sélectionnez **Ajouter un dossier intelligent** dans le menu déroulant.
 
-3. Configurez les paramètres :
-   - **Nommez le dossier**. Entrez un nom pour identifier le dossier.
-   - Spécifiez les **paramètres de filtre de trace**. Appliquez les filtres requis à l'aide des options de [Filtre](#available-filters) disponibles.
+3. Configurer les paramètres :
+   - **Nommez le dossier**. Saisissez un nom pour identifier le dossier.
+   - Spécifiez les **paramètres du filtre de traces**. Appliquez les filtres requis à l'aide des options de [Filtre](#available-filters) disponibles.
 
 4. **Enregistrez** les paramètres.
     - Appuyez sur **Afficher** pour prévisualiser les traces.
     - Sélectionnez le bouton **Enregistrer** pour finaliser le *Dossier intelligent*.
 
 Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour son contenu avec les traces qui correspondent aux critères sélectionnés.
+
 
 ### Gestion des Dossiers intelligents {#managing-smart-folders}
 
@@ -188,16 +195,17 @@ Le **Dossier intelligent** est affiché avec une icône unique dans la liste des
 
 - **Modifier l'apparence par défaut** (*Android*) — Modifie l'apparence d'affichage de toutes les traces du dossier.
 
-- **Modifier le filtre** — Modifiez les paramètres du filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **Modifier le filtre** — Modifiez les paramètres du filtre de traces pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
 
 - **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonction [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → Onglet Actions*.
 
 - **Supprimer le dossier** — Supprimez le Dossier intelligent sans supprimer ses traces.
-    *AVERTISSEMENT : Cette action est irréversible et entraînera un message de confirmation.*
+    *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
 
 - **Déplacer** (*iOS*) — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
 
-- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions de trace spécifiques dans le dossier.
+- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
+
 
 ## Articles connexes {#related-articles}
 
@@ -207,4 +215,4 @@ Le **Dossier intelligent** est affiché avec une icône unique dans la liste des
 - [Navigation par trace](../../navigation/setup/gpx-navigation.md)
 - [Enregistrement de trajet](../../plugins/trip-recording.md)
 
-> *Dernière mise à jour : Mars 2025*
+> *Dernière mise à jour : mars 2025*

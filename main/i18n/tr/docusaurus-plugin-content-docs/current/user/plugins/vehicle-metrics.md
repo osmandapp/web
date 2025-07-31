@@ -1,5 +1,5 @@
 ---
-source-hash: 3285f0c719a8255c35a044a6bccdc05206d01216a9c0d4f8c30f58b3a9122f36
+source-hash: bf8498069a6041e804c4eedf6c801ea107273f7c61d7843af9fb0326f93c493d
 sidebar_position: 16
 title: Araç Metrikleri
 ---
@@ -25,9 +25,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).
 :::
 
-**Araç Metrikleri eklentisi**, OBD-II protokolü aracılığıyla gerçek zamanlı araç verisi izlemeyi sağlar. Kullanıcılar motor performansı, yakıt verimliliği ve hız gibi temel metrikleri takip ederek proaktif araç bakımı ve sorun giderme yapabilirler.
+**Araç Metrikleri eklentisi**, OBD-II protokolü aracılığıyla gerçek zamanlı araç verilerini izlemeyi sağlar. Kullanıcılar, motor performansı, yakıt verimliliği ve hız gibi temel metrikleri takip ederek proaktif araç bakımı ve sorun giderme yapabilirler.
 
-OBD-II tarayıcıları, modern otomotiv teşhislerinin ayrılmaz bir parçasıdır. Gerçek zamanlı veri akışı ile kullanıcılar, araç sistemleri hakkında anlık bilgiler edinerek önleyici bakımı kolaylaştırır ve onarım maliyetlerini düşürür. Bu araçlar hem kişisel kullanım hem de profesyonel otomotiv hizmetleri için hayati öneme sahiptir.
+OBD-II tarayıcıları, modern otomotiv teşhislerinin ayrılmaz bir parçasıdır. Gerçek zamanlı veri akışı ile kullanıcılar, araç sistemleri hakkında anında bilgi edinerek önleyici bakımı kolaylaştırır ve onarım maliyetlerini düşürür. Bu araçlar hem kişisel kullanım hem de profesyonel otomotiv hizmetleri için hayati öneme sahiptir.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -44,25 +44,25 @@ OBD-II tarayıcıları, modern otomotiv teşhislerinin ayrılmaz bir parçasıd�
 
 Bir OBD-II tarayıcısından veri kullanmak için:
 
-1. Bir **OsmAnd Pro aboneliği** [satın alın](../purchases/). (*Araç hızı* ve *Motor devri* ücretsizdir.)
-2. *Ana Menü*'nün Eklentiler bölümünde Araç Metrikleri eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
+1. Bir **OsmAnd Pro aboneliği** [satın alın](../purchases/). (*Araç hızı* ve *Motor hızı* ücretsizdir.)
+2. Ana Menü'nün Eklentiler bölümünde Araç Metrikleri eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 3. Cihazınızda Bluetooth'u **açın**.
-4. OBD-II tarayıcısını aracınızın portuna [bağlayın](#pair-odb-ii-scanner).
+4. OBD-II tarayıcıyı aracınızın portuna [bağlayın](#pair-odb-ii-scanner).
 5. **Tarayıcı ayarlarını** [yapılandırın](#scanner-settings).
-6. Ekran verileri için [Araç Metrikleri widget'larını](#widgets) **ekleyin** (isteğe bağlı).
-7. Araç verilerini kaydetmek için [Yolculuk kaydı eklentisini](#trip-recording) kullanın.
+6. Ekran verileri için **Araç Metrikleri widget'larını** [ekleyin](#widgets) (isteğe bağlı).
+7. Araç verilerini kaydetmek için **Yolculuk kaydı eklentisini** [kullanın](#trip-recording).
 
 
-### ODB-II Tarayıcısını Eşleştirme {#pair-odb-ii-scanner}
+### OBD-II Tarayıcıyı Eşleştirme {#pair-odb-ii-scanner}
 
 | | |
 |--|--|
 |![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect.png)|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_2.png)|
 
-Tarayıcıyı aracınızın portuna bağlayın ve uygulama üzerinden eşleştirin:
+Tarayıcıyı aracınızın portuna bağlayın ve uygulama aracılığıyla eşleştirin:
 
 - *Menü → Eklentiler → Araç Metrikleri → Ayarlar → Bağlan* veya **+**'ya gidin.
-- Araç Metrikleri *Ana Menü*'de ise: *Menü → Araç Metrikleri → Ayarlar → Bağlan* veya **+**.
+- Araç Metrikleri *Ana Menü*'deyse: *Menü → Araç Metrikleri → Ayarlar → Bağlan* veya **+**'ya gidin.
 
 Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
@@ -77,24 +77,24 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
 - **Bağlan / Bağlantıyı Kes**. OBD-II sensörüyle bağlantıyı kurar veya sonlandırır.
 - **Ayarlar**. OBD-II ayarları ekranını açar, bağlantı yönetimini ve mevcut araç parametrelerine erişimi sağlar.
-- **Yeniden Adlandır**. Daha kolay tanımlama için sensöre özel bir ad atamanızı sağlar.
+- **Yeniden Adlandır**. Sensöre daha kolay tanımlama için özel bir ad atamanızı sağlar.
 - **Unut**. Daha önce eşleştirilmiş OBD-II sensörünü listeden kaldırır, daha sonra ihtiyaç duyulursa yeniden eşleştirme gerektirir.
 
 
 ## Metrik Listesi {#metrics-list}
 
-Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu parametreleri yorumlayarak önleyici bakımı sağlar:
+Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu parametreleri yorumlayarak önleyici bakımı mümkün kılar:
 
 *Sıcaklık:*
 
 - **Emme Sıcaklığı**. Emme manifolduna giren havanın sıcaklığını gösterir.
 - **Ortam Sıcaklığı**. Dış koşulları izler.
 - **Soğutma Suyu Sıcaklığı**. Motor soğutma verimliliğini takip eder.
-- **Motor Yağı Sıcaklığı**. Çalışma sırasındaki yağ durumunu gösterir.
+- **Motor Yağı Sıcaklığı**. Çalışma sırasında yağ durumunu gösterir.
 
 *Motor:*
 
-- **Motor Devri**. Dakikadaki motor devrini (RPM) izler.
+- **Motor Hızı**. Dakikadaki motor devirlerini (RPM) izler.
 - **Motor Çalışma Süresi**. Motorun çalışma süresini takip eder.
 - **Hesaplanan Motor Yükü**. Motor iş yükü yüzdesini gösterir.
 
@@ -106,7 +106,7 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 
 *Diğer:*
 
-- **Akü Seviyesi**. Aracın aküsünün voltaj seviyesini gösterir.
+- **Batarya Seviyesi**. Aracın aküsünün voltaj seviyesini gösterir.
 - **Araç Hızı**. Araç Hız Sensörü (VSS) verilerini gösterir.
 - **Gaz Kelebeği Konumu**. Gaz kelebeği plakası açısı aracılığıyla motor hava girişini belirler.
   **VIN**. Aracın 17 karakterli kimlik numarasını gösterir.
@@ -128,7 +128,7 @@ OsmAnd, [GPX dosyasındaki](../plugins/trip-recording.md#recorded-gpx-file) ara�
 
 - `vm_eotemp`: Motor Yağı Sıcaklığı.
 - `vm_fpress`: Yakıt Basıncı.
-- `vm_espeed`: Motor Devri.
+- `vm_espeed`: Motor Hızı.
 
 Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tanımlamayı ve kullanmayı kolaylaştırır.
 
@@ -145,7 +145,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 ### Widget Ayarları {#widget-settings}
 
-Widget'lar, bağlı OBD-II cihazınızdan hız, motor metrikleri ve yakıt tüketimi gibi temel verileri gerçek zamanlı olarak görüntüler. Metrikleri sorunsuz bir şekilde takip etmek için yolculuğunuza başlamadan önce görünür olduklarından emin olun.
+Widget'lar, bağlı OBD-II cihazınızdan hız, motor metrikleri ve yakıt tüketimi gibi önemli verileri gerçek zamanlı olarak görüntüler. Metrikleri sorunsuz bir şekilde takip etmek için yolculuğunuza başlamadan önce görünür olduklarından emin olun.
 
 Bazı widget'lar görüntüleme modu seçenekleri sunar:
 
@@ -156,7 +156,7 @@ Bazı widget'lar görüntüleme modu seçenekleri sunar:
 ## İlgili makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Genel Ayarlar](../../user/personal/global-settings.md)
-- [Vektör Haritaları (Harita Stilleri)](../../user/map/vector-maps.md)
+- [Küresel Ayarlar](../../user/personal/global-settings.md)
+- [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
 
 > *Son güncelleme: Aralık 2024*

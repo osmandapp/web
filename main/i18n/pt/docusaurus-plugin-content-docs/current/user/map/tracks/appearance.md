@@ -1,5 +1,5 @@
 ---
-source-hash: 90a0b74b4490473745395b99a2752c49185e30cca6fc93a62ca20659393e7eed
+source-hash: c714e52890d474392987e42babe6eed754ad1dbbaa5e4c8fe091171e272426fe
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -24,13 +24,13 @@ O recurso **Aparência da Trilha** permite aos usuários personalizar como as tr
 
 <TabItem value="android" label="Android">  
 
-![Visão geral da Aparência da Trilha Android](@site/static/img/map/track-appear-and-1.png)  ![Menu da Trilha Aparência Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Visão geral da Aparência da Trilha Android](@site/static/img/map/track-appear-and-1.png)  ![Menu Aparência da Trilha Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu da Trilha Aparência iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu da Trilha Aparência iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Menu Aparência da Trilha iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu Aparência da Trilha iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -41,9 +41,9 @@ O recurso **Aparência da Trilha** permite aos usuários personalizar como as tr
 
 Você pode modificar a aparência da trilha usando um dos seguintes métodos:
 
-- **De Meus Lugares**. Abra *Menu → Meus Lugares → Trilhas*, selecione uma trilha, toque no *ícone de Aparência* no [menu de contexto da trilha](../../map/tracks/track-context-menu.md#overview).
-- **Do mapa**. Toque em uma trilha diretamente no mapa, depois toque no *ícone de Aparência* na seção *Visão Geral*.
-- **Da gravação da trilha**. Modifique a aparência da trilha atualmente gravada através do [menu de contexto de gravação da trilha](../../plugins/trip-recording.md#сurrent-track-recording).  
+- **De Meus Lugares**. Abra *Menu → Meus Lugares → Trilhas*, selecione uma trilha, toque no *ícone Aparência* no [menu de contexto da trilha](../../map/tracks/track-context-menu.md#overview).
+- **Do mapa**. Toque em uma trilha diretamente no mapa, depois toque no *ícone Aparência* na seção *Visão Geral*.
+- **Da gravação de trilha**. Modifique a aparência da trilha atualmente gravada através do [menu de contexto de gravação de trilha](../../plugins/trip-recording.md#сurrent-track-recording).  
 - **Do menu Configurar Mapa**. Vá para *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* para as trilhas exibidas.
 
 
@@ -57,13 +57,13 @@ Algumas configurações você pode usar apenas com *OsmAnd Pro*. <a href="https:
 
 ![Aparência](@site/static/img/map/appearance_color_andr.png)
 
-Você pode definir a cor da trilha manualmente ou usar a **visualização de dados baseada em cores** (por exemplo, velocidade, altitude, inclinação). Se uma trilha não tiver certos dados, o OsmAnd exibirá as seções ausentes em cinza.
+Você pode definir a cor da trilha manualmente ou usar a **visualização de dados baseada em cores** (por exemplo, velocidade, altitude, inclinação). Se uma trilha não tiver certos dados, o OsmAnd exibe as seções ausentes em cinza.
 
 **Opções de Cor Disponíveis:**
 
 - **Configurações gratuitas**: *<Translate android="true" ids="track_coloring_solid"/> cor*, *<Translate android="true" ids="shared_string_speed"/>* (se gravado) e *<Translate android="true" ids="altitude"/>* (se gravado).
 
-    ![Menu da Trilha Aparência Cor da Trilha Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aparência Cor da Trilha Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+    ![Menu Aparência da Trilha Cor da Trilha Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aparência Cor da Trilha Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
 
 - [Recurso Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
@@ -72,38 +72,38 @@ Para mais detalhes sobre a personalização da aparência da linha de rota, cons
 
 ### Largura {#width}
 
-![Menu da Trilha Aparência Espessura da Trilha Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Aparência da Trilha](@site/static/img/map/track_appearance_width_andr.png)  
+![Menu Aparência da Trilha Espessura da Trilha Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Aparência da Trilha](@site/static/img/map/track_appearance_width_andr.png)  
 
 Você pode personalizar a aparência da trilha em vários menus do aplicativo:
 
 - [*Trilha → Aparência*](../../personal/tracks/manage-tracks.md#track-folder).
-- [*Configurações de navegação → Personalizar linha de rota*](../../navigation/guidance/navigation-settings.md#customize-route-line).
+- [*Configurações de Navegação → Personalizar linha de rota*](../../navigation/guidance/navigation-settings.md#customize-route-line).
 - [*Meus Lugares → Aba Trilhas → qualquer pasta → Aparência padrão*](../../personal/tracks/manage-tracks.md#track-folder).
 
 Ajuste a largura da trilha para melhorar a visibilidade no mapa.
 
-- **Opções predefinidas**: **Fina, Média** e **Grossa**.
+- **Opções predefinidas**: **Fina, Média** e **Negrito**.
 
 - **Largura personalizada**: Ajustável de 1 a 24 px usando um controle deslizante.
 
-- **Largura baseada no perfil**: Pode ser definida via *Configurações de navegação → [Personalizar Linha de Rota](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
+- **Largura baseada em perfil**: Pode ser definida via *Configurações de Navegação → [Personalizar Linha de Rota](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
 
 
 ### Intervalo de Divisão {#split-interval}
 
-![Menu da Trilha Aparência Intervalo de divisão](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de divisão](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+![Menu Aparência da Trilha Intervalo de divisão](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de divisão](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
 Selecione se deseja dividir o intervalo na trilha **por distância ou por tempo**.
 
 ### Setas de Direção {#direction-arrows}
 
-![Menu da Trilha Aparência setas de direção Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Menu Aparência da Trilha setas de direção Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Adiciona **marcadores de seta** ao longo da trilha para indicar a direção do movimento.
 
 ### Ícones de Início e Fim {#start-and-finish-icons}
 
-![Menu da Trilha Aparência ícones de início e fim Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Menu Aparência da Trilha ícones de início e fim Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Permite selecionar se deseja mostrar os **ícones de início e fim** para segmentos de trilha.
 
@@ -118,7 +118,7 @@ Restaura todas as **configurações de aparência da trilha** para seus valores 
 
 ## Trilha 3D {#3d-track}
 
-:::info Paid feature
+:::info Recurso Pago
 **Trilha 3D** é um recurso pago do **OsmAnd Pro** para [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
@@ -126,30 +126,30 @@ Restaura todas as **configurações de aparência da trilha** para seus valores 
 
 <TabItem value="android" label="Android">
 
-![Menu da Trilha Aparência visualização 3D](@site/static/img/map/3d_track_appearance_android.png)
+![Menu Aparência da Trilha Visualização 3D](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu da Trilha Aparência visualização 3D](@site/static/img/map/3d_track_appearance_ios.png)
+![Menu Aparência da Trilha Visualização 3D](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-O recurso **Trilha 3D** gera uma visualização tridimensional integrando dados de elevação em trilhas 2D padrão. Essa funcionalidade cria uma representação aprimorada em profundidade, permitindo uma análise precisa da trilha em relação ao terreno. Ao incorporar detalhes de elevação, a trilha 3D oferece uma visão mais abrangente da topografia e do contexto geográfico da rota.
+O recurso **Trilha 3D** gera uma visualização tridimensional integrando dados de elevação em trilhas 2D padrão. Essa funcionalidade cria uma representação com profundidade aprimorada, permitindo uma análise precisa da trilha em relação ao terreno. Ao incorporar detalhes de elevação, a trilha 3D oferece uma visão mais abrangente da topografia e do contexto geográfico da rota.
 
 ### Configurações da Trilha 3D {#3d-track-settings}
 
-**Altura da parede**  
+**Altura da Parede**  
 Você pode visualizar uma trilha 3D por altitude e outros dados disponíveis dentro da trilha, ou por altitude fixa.
 
-- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitude*, &nbsp;*Velocidade*, &nbsp;*Altura Fixa*. Dados do sensor 3D: &nbsp;*Frequência Cardíaca*, &nbsp;*Cadência da Bicicleta*, &nbsp;*Potência da Bicicleta*, &nbsp;*Temperatura*, &nbsp;*Velocidade da Bicicleta*.
+- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitude*, &nbsp;*Velocidade*, &nbsp;*Altura Fixa*. Dados do Sensor 3D: &nbsp;*Frequência Cardíaca*, &nbsp;*Cadência da Bicicleta*, &nbsp;*Potência da Bicicleta*, &nbsp;*Temperatura*, &nbsp;*Velocidade da Bicicleta*.
 
-- **<Translate android="true" ids="vertical_exaggeration"/>**. Se visualizado por *Altitude* ou *Velocidade*, você pode escalar dados 3D para obter uma visualização mais proeminente para a trilha 3D na faixa de *Nenhum* a *x3.0*.
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Se visualizado por *Altitude* ou *Velocidade*, você pode escalar os dados 3D para obter uma visualização mais proeminente para a trilha 3D no intervalo de *Nenhum* a *x3.0*.
 
-- **<Translate android="true" ids="wall_height"/>**. Se visualizado por *Altura Fixa*, defina a altura fixa para a trilha 3D definindo sua elevação no mapa na faixa de *Nenhum* a *2000 m*.
+- **<Translate android="true" ids="wall_height"/>**. Se visualizado por *Altura Fixa*, defina a altura fixa para a trilha 3D, definindo sua elevação no mapa no intervalo de *Nenhum* a *2000 m*.
 
 - Você pode combiná-lo com [Relevo 3D](../../plugins/topography.md#3d-relief). Se a fonte dos dados 3D não for altitude, a representação 3D será uma combinação da altitude do relevo e dos dados selecionados, como velocidade ou frequência cardíaca.
 
@@ -161,7 +161,7 @@ As opções incluem: *Nenhum*, &nbsp;*Sólido*, &nbsp;*Gradiente para Baixo*, &n
 Adiciona uma [linha destacada](#color) na parte superior ou inferior da trilha 3D.  
 As opções incluem: *Superior*, &nbsp;*Inferior*, &nbsp;*Superior e inferior*.
 
-> **NOTA**: *A **versão Android** do aplicativo requer que o motor de renderização do mapa [Versão 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) esteja habilitado para usar a visualização de trilha 3D.*
+> **NOTA**: *A **versão Android** do aplicativo requer que o motor de renderização de mapa [Versão 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) esteja habilitado para usar a visualização de trilha 3D.*
 
 
 ### Casos de Uso {#use-cases}
@@ -169,19 +169,19 @@ As opções incluem: *Superior*, &nbsp;*Inferior*, &nbsp;*Superior e inferior*.
 O recurso de trilha 3D é altamente benéfico para atividades como parapente, onde a visualização do seu caminho de voo pode oferecer insights mais profundos. Ao renderizar a trilha em 3D, você pode aproveitar recursos como **Altura da Parede** e **Cor da Parede** para extrair informações visuais valiosas para análise.
 
 1. **Visualizar por Velocidade com 3D**.  
-    Um caso de uso comum é utilizar trilhas 3D para visualizar variações de velocidade. Isso permite que você identifique seções específicas da trilha onde você diminuiu ou aumentou a velocidade.  
+    Um caso de uso comum é a utilização de trilhas 3D para visualizar variações de velocidade. Isso permite que você identifique seções específicas da trilha onde você diminuiu ou aumentou a velocidade.  
 
     Com a Cor da Parede baseada na Inclinação, você pode observar como o terreno, particularmente colinas e inclinações, impactou sua velocidade. Essa combinação de visualização de velocidade e inclinação fornece uma compreensão detalhada do desempenho ao longo da atividade.
 
-2. **Visualizar por sensor de Coração com Relevo 3D**.  
-    Outra aplicação perspicaz é combinar dados do sensor de frequência cardíaca com mapas de relevo 3D. Isso permite mapear flutuações da frequência cardíaca diretamente no terreno, dando uma visão abrangente de como as mudanças de altitude podem ter influenciado seu esforço físico.  
+2. **Visualizar por Sensor Cardíaco com Relevo 3D**.  
+    Outra aplicação perspicaz é combinar dados do sensor de frequência cardíaca com mapas de relevo 3D. Isso permite mapear flutuações da frequência cardíaca diretamente no terreno, dando a você uma visão abrangente de como as mudanças de altitude podem ter influenciado seu esforço físico.  
 
     O recurso de relevo 3D, que exagera a altitude, funciona independentemente da visualização da trilha 3D. Dois parâmetros de exagero vertical podem ser ajustados para melhor entender a correlação entre a frequência cardíaca e a elevação do terreno.
 
-3. **Visualizar a altura da trilha e a linha de cor da inclinação em uma vista de terra plana.**  
-    Ao visualizar dados de altitude, é recomendável usar uma vista de terra plana para evitar problemas como erros de GPS, que podem fazer com que seções da trilha apareçam subterrâneas.  
+3. **Visualizar altura da trilha e linha de cor da inclinação em uma vista de terra plana.**  
+    Ao visualizar dados de altitude, é recomendado usar uma vista de terra plana para evitar problemas como erros de GPS, que podem fazer com que seções da trilha apareçam subterrâneas.  
 
-    Nesse cenário, as mudanças de inclinação podem ser visualizadas separadamente ao longo da linha da trilha, enquanto a Cor da Parede é utilizada para representar a altitude. Esse método garante que, mesmo com potenciais imprecisões de dados, você ainda receba uma visualização clara e precisa da inclinação e elevação.
+    Nesse cenário, as mudanças de inclinação podem ser visualizadas separadamente ao longo da linha da trilha, enquanto a Cor da Parede é utilizada para representar a altitude. Esse método garante que, mesmo com possíveis imprecisões de dados, você ainda receba uma visualização clara e precisa da inclinação e elevação.
 
 ## Alterar Aparência para Múltiplas Trilhas {#change-appearance-for-multiple-tracks}
 
@@ -203,7 +203,7 @@ O recurso de trilha 3D é altamente benéfico para atividades como parapente, on
 
 A aba [Trilhas](../../personal/tracks/manage-tracks.md) exibe automaticamente todas as trilhas já gravadas, criadas ou importadas. Elas são organizadas por pasta ou exibidas como uma lista abaixo delas.  
 
-Modifique a aparência de várias trilhas em *Meus Lugares → Trilhas*:
+Modifique a aparência de múltiplas trilhas em *Meus Lugares → Trilhas*:
 
 - **Alterar aparência padrão** - Aplica configurações a todas as trilhas em uma [pasta](../../personal/tracks/manage-tracks.md#track-folder).
 - **Redefinir para original** - Restaura as configurações de trilha individuais.
@@ -217,7 +217,7 @@ Opções de personalização de aparência em massa:
 - **Setas de direção** - Adiciona [indicadores de movimento](#direction-arrows).  
     Estados: *Inalterado*, &nbsp;*Original*, &nbsp;*Ligado*, &nbsp;*Desligado*.
 
-- **Mostrar ícones de início e fim** - [Exibe marcadores](#start-and-finish-icons) para pontos de início e fim da trilha.  
+- **Mostrar ícones de início e fim** - [Exibe marcadores](#start-and-finish-icons) para os pontos de início e fim da trilha.  
     Estados: *Inalterado*, &nbsp;*Original*, &nbsp;*Ligado*, &nbsp;*Desligado*.
 
 - **Cor** – Aplica [coloração](#color) manual ou baseada em dados.
@@ -236,13 +236,13 @@ Original e inalterado:
 
 ## Cores da Trilha em Arquivos GPX {#track-colors-in-gpx-files}
 
-O OsmAnd suporta **cores de trilha personalizadas** em arquivos GPX usando a tag `<osmand:color>` dentro da seção `<extensions>` de um elemento `<trk>`. Isso permite que os usuários definam cores para trilhas individuais, melhorando a diferenciação visual quando várias trilhas são exibidas no mapa.
+O OsmAnd suporta **cores de trilha personalizadas** em arquivos GPX usando a tag `<osmand:color>` dentro da seção `<extensions>` de um elemento `<trk>`. Isso permite que os usuários definam cores para trilhas individuais, aprimorando a diferenciação visual quando múltiplas trilhas são exibidas no mapa.
 
 Para especificar uma cor para uma trilha, use o seguinte formato:  
 
 ```xml
 <trk>
-  <name>Example Track</name>
+  <name>Exemplo de Trilha</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>
@@ -250,7 +250,7 @@ Para especificar uma cor para uma trilha, use o seguinte formato:
 ```
 
 - A tag `<osmand:color>` aceita **códigos de cores hexadecimais** (por exemplo, `#FF0000` para vermelho).
-- Se existirem várias trilhas em um arquivo GPX, cada trilha pode ter sua própria tag `<osmand:color>`.
+- Se existirem múltiplas trilhas em um arquivo GPX, cada trilha pode ter sua própria tag `<osmand:color>`.
 
 
 **Comportamento no OsmAnd:**
@@ -258,13 +258,13 @@ Para especificar uma cor para uma trilha, use o seguinte formato:
 1. **Atribuição de cor padrão**:  
 
     - Quando uma **trilha GPX é importada como uma única trilha** (opção ***Importar como uma trilha***), a trilha inteira recebe a **cor GPX padrão** (vermelho).  
-    - No OsmAnd **4.9.10 e posterior**, esse problema foi resolvido — as cores das trilhas individuais agora são preservadas na importação.
+    - No OsmAnd **4.9.10 e posterior**, esse problema foi resolvido — as cores individuais das trilhas agora são preservadas na importação.
 
 2. **Exibição de cor única para trilhas mescladas:**  
 
     - Se as trilhas forem **mescladas** usando ***Juntar Segmentos***, a trilha resultante é tratada como **uma trilha contínua com um único segmento**.
     - A representação multicolorida **não é suportada** para trilhas mescladas.
-    - A trilha mesclada será exibida usando a **cor GPX principal** (padrão: vermelho), mesmo que os segmentos de trilha individuais tivessem cores diferentes originalmente.
+    - A trilha mesclada será exibida usando a **cor principal do GPX** (padrão: vermelho), mesmo que os segmentos de trilha individuais tivessem originalmente cores diferentes.
 
 3. **Prioridade das configurações de aparência:**  
 
@@ -274,16 +274,16 @@ Para especificar uma cor para uma trilha, use o seguinte formato:
 
 **Solução para Trilhas Multicoloridas:**
 
-- Para preservar **cores individuais para várias trilhas**, **importe as trilhas separadamente** em vez de mesclá-las.
+- Para preservar **cores individuais para múltiplas trilhas**, **importe as trilhas separadamente** em vez de mesclá-las.
 
-- Ajuste as cores da trilha manualmente nas **Configurações de Aparência da Trilha**:
+- Ajuste as cores da trilha manualmente em **Configurações de Aparência da Trilha**:
 
   - Abra a trilha no OsmAnd.
   - Toque na trilha para abrir o **Menu de Contexto**.
   - Selecione **Aparência**.
   - Escolha a cor preferida.
 
-- Isso garante que cada trilha mantenha sua **representação de cor pretendida**, mesmo que o arquivo GPX originalmente contivesse vários segmentos com cores diferentes.
+- Isso garante que cada trilha mantenha sua **representação de cor pretendida**, mesmo que o arquivo GPX contivesse originalmente múltiplos segmentos com cores diferentes.
 
 
 ## Artigos Relacionados {#related-articles}

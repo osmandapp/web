@@ -15,5 +15,5 @@ import Translate from '@site/src/components/Translate.js';
 ## خصائص المنحدر {#piste-characteristics}
 <img src={require('@site/static/img/map-legend/ski-map-piste-characteristics.png').default} alt="نمط خريطة التزلج: خصائص المنحدر" />
 
-## الممرات الهوائية {#aerialways}
-<img src={require('@site/static/img/map-legend/ski-map-aerialways.png').default} alt="نمط خريطة التزلج: الممرات الهوائية" />
+## المصاعد الهوائية {#aerialways}
+<img src={require('@site/static/img/map-legend/ski-map-aerialways.png').default} alt="نمط خريطة التزلج: المصاعد الهوائية" />

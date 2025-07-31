@@ -1,5 +1,5 @@
 ---
-source-hash: 61247292af1aa1532bdbb133f67761a221b4967bdccb328e710358ccdfd2084c
+source-hash: ccc92258ad1865c820ecfed771b07e1d48a441845c435a996fe12367c3ecf9df
 sidebar_position: 2
 title:  Parçaları Yönet
 ---
@@ -18,19 +18,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd'deki tüm parçalar *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* içindeki bir sekmede saklanır. OsmAnd, parça dosyasını [GPX formatında](https://en.wikipedia.org/wiki/GPS_Exchange_Format) işler, ancak [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) ve [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) içe aktarılabilir ve GPX'e dönüştürülebilir. Farklı parça türleri hakkında daha fazla bilgiyi [Haritadaki Parçalar](../../map/tracks/index.md#types-of-tracks) makalesinde okuyun.
+OsmAnd'deki tüm parçalar *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* sekmesinde saklanır. OsmAnd, parça dosyasını [GPX formatında](https://en.wikipedia.org/wiki/GPS_Exchange_Format) işler, ancak [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) ve [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) içe aktarılabilir ve GPX'e dönüştürülebilir. Farklı parça türleri hakkında daha fazla bilgiyi [Haritadaki Parçalar](../../map/tracks/index.md#types-of-tracks) makalesinde okuyun.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Parçayı Yönet Genel Bakış Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Parça Genel Bakış Android'i Yönet](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Parçayı Yönet Genel Bakış iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Parça Genel Bakış iOS'u Yönet](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -43,25 +43,25 @@ OsmAnd'deki tüm parçalar *<Translate android="true" ids="shared_string_menu"/>
 
 <TabItem value="android" label="Android">
 
-![Bir rotayı planla rotayı değiştir-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Bir rotayı planla-parçayı-değiştir-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bir rotayı planla rotayı değiştir-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Bir rotayı planla-parçayı-değiştir-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd'de aşağıdaki yollarla parça ekleyebilirsiniz:
+OsmAnd'e aşağıdaki yollarla parça ekleyebilirsiniz:
 
 1. Harici bir kaynaktan bir parçayı **[İçe Aktar](./manage-tracks.md#import--export-track)**.
-2. Uygulamada **[Rota Planla](../../plan-route/create-route.md)** aracını kullanarak yeni bir parça oluşturun.
-3. Uygulamada **[Seyahat kaydı](../../plugins/trip-recording.md)** eklentisini kullanarak parça kaydedin.
-4. Koordinatlarla birden fazla nokta girin ve **[Koordinat girişi](../../plan-route/coordinate-input.md)** aracını kullanarak bunları bir parça olarak kaydedin.
-5. Ayrıca **Ara Noktaları** yeni bir parçaya **[Bağlam menüsü](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)** aracılığıyla ekleyebilirsiniz.
+2. Uygulamada **[Rota planla](../../plan-route/create-route.md)** aracını kullanarak yeni bir parça oluşturun.
+3. Uygulamada **[Gezi kaydı](../../plugins/trip-recording.md)** eklentisini kullanarak parça kaydedin.
+4. Koordinatlara göre birden fazla nokta girin ve **[Koordinat girişi](../../plan-route/coordinate-input.md)** aracını kullanarak bunları bir parça olarak kaydedin.
+5. Ayrıca **[Bağlam menüsü](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)** aracılığıyla yeni bir parçaya **Ara Noktalar** ekleyebilirsiniz.
 
 
 ## Parçaları Yönet {#manage-tracks}
@@ -86,7 +86,7 @@ OsmAnd'de aşağıdaki yollarla parça ekleyebilirsiniz:
 
 </Tabs>
 
-Şimdiye kadar kaydedilen, oluşturulan veya içe aktarılan tüm parçalar, [Yerlerim](../../personal/myplaces.md) klasöründeki *Parçalar* sekmesinde otomatik olarak görüntülenir. Bunlar klasöre göre düzenlenir veya altlarında bir listede görüntülenir.
+Kaydedilen, oluşturulan veya içe aktarılan tüm parçalar, [Yerlerim](../../personal/myplaces.md) klasöründe *Parçalar* sekmesinde otomatik olarak görüntülenir. Bunlar klasöre göre düzenlenir veya altlarında bir listede görüntülenir.
 
 
 ### Parça Menüsü {#track-menu}
@@ -111,7 +111,7 @@ OsmAnd'de aşağıdaki yollarla parça ekleyebilirsiniz:
 
 </Tabs>  
 
-Her parça, klasörler gibi, parçaları verimli bir şekilde yönetmenizi sağlayan bir menüye sahiptir. Buradan erişebilirsiniz:
+Her parça, klasörler gibi, parçaları verimli bir şekilde yönetmenizi sağlayan bir menüye sahiptir. İşte buna nasıl erişileceği:
 
 - *Android* - parça alanındaki *üç nokta menüsüne* dokunun.
 - *iOS* - listedeki gerekli parçaya uzun dokunun.
@@ -120,7 +120,7 @@ Menü aşağıdaki eylemleri sağlar:
 
 - **Haritada Göster/Gizle** — Seçilen parçaları haritada görüntüler veya gizler, konumlarını görsel olarak temsil eder.
 
-- [Aç](../../map/tracks/index.md#configure-map) (*iOS*) — Bu ayar Haritayı Yapılandır menüsünde mevcuttur. *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>* içinde yer alır, dokunulduğunda [seçilen parçanın bağlam menüsüne](../../map/tracks/track-context-menu.md) erişmenizi sağlar.
+- [Aç](../../map/tracks/index.md#configure-map) (*iOS*) — Bu ayar Haritayı Yapılandır menüsünde mevcuttur. *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>* içinde bulunur, dokunulduğunda seçilen parçanın [bağlam menüsüne](../../map/tracks/track-context-menu.md) erişmenizi sağlar.
 
 - **Görünüm** (*iOS*) — [Parçaların görünümünü](../../map/tracks/appearance.md) tercihlerinize göre özelleştirin.
 
@@ -130,13 +130,13 @@ Menü aşağıdaki eylemleri sağlar:
 
 - **Paylaş** — Seçilen parçayı başkalarıyla paylaşmayı sağlar.
 
-- **Değişiklikleri OSM'ye Yükle** (*iOS*) — Parçada yaptığınız [değişiklikleri](../../plugins/osm-editing.md#gps-track) doğrudan *OpenStreetMap*'e yükleyin.
+- **Değişiklikleri OSM'ye Yükle** (*iOS*) — Parçada yaptığınız değişiklikleri doğrudan *OpenStreetMap*'e [yükleyin](../../plugins/osm-editing.md#gps-track).
 
-- **Düzenle** (*iOS*) — Parçaları değiştirmek için [Rota Planla](../../plan-route/create-route.md#modify-gpx-track) aracını kullanın.
+- **Düzenle** (*iOS*) — Parçaları değiştirmek için [Rota planla](../../plan-route/create-route.md#modify-gpx-track) aracını kullanın.
 
 - **Çoğalt** (*iOS*) — Seçilen parçanın bir kopyasını oluşturur.
 
-- **Yeniden Adlandır** — Daha iyi düzenleme için seçilen parçanın adını değiştirin.
+- **Yeniden Adlandır** — Daha iyi organizasyon için seçilen parçanın adını değiştirin.
 
 - **Taşı** — Seçilen parçayı farklı bir klasöre taşımanıza olanak tanır.
 
@@ -151,25 +151,25 @@ Menü aşağıdaki eylemleri sağlar:
 
 <TabItem value="android" label="Android">
 
-![Yerlerim parçaları arama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![Yerlerim parçaları arama işlevi Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim parçaları arama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Yerlerim parçaları arama işlevi iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Parça listesi sıralama menüsünü açmak için cihaz ekranının üst kısmındaki &#x1F50D; düğmesine dokunun.  
+Cihaz ekranının üst kısmındaki &#x1F50D; düğmesine dokunarak parça listesi sıralama menüsünü açın.  
 
 Mevcut:
 
 - Parça adına göre ara.
-- Başlığı hatırlayamıyorsanız daha iyi arama için [Şuna göre sırala](#sort-by).
-- Parçanın belirli özelliklerine ihtiyacınız varsa [Filtrele](./smart-folder.md#search-filter) (*yalnızca Android*).
+- Başlığı hatırlayamıyorsanız daha iyi arama için [Sırala](#sort-by).
+- Parçanın belirli özelliklerine ihtiyacınız varsa [Filtrele](./smart-folder.md#search-filter) (*Yalnızca Android*).
 
 
 ### Seçim Modu {#selection-mode}
@@ -178,7 +178,7 @@ Mevcut:
 
 <TabItem value="android" label="Android">
 
-![Yerlerim parçaları sıralama fonksiyonu Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![Yerlerim parçaları sıralama işlevi Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
@@ -190,66 +190,66 @@ Mevcut:
 
 </Tabs>  
 
-**Seç** menü öğesi, klasörleri ve parçaları yönetmek için seçenekler sunar. Bu özellik, birden fazla parça veya parça klasörü seçmenize olanak tanır. Ayrıca özel **Tümünü Seç** düğmesine dokunarak tüm parçaları ve klasörleri seçebilirsiniz.
+**Seç** menü öğesi, klasörleri ve parçaları yönetmek için seçenekler sunar. Bu özellik, birden çok parça veya parça klasörü seçmenize olanak tanır. Ayrıca özel **Tümünü Seç** düğmesine dokunarak tüm parçaları ve klasörleri seçebilirsiniz.
 
 Seçiminizi yaptıktan sonra aşağıdaki adımlar sağlanır:  
 
-- **Haritada göster** — Bu özellik ile, seçilen parçaları haritada görüntüleyerek konumlarını ve birbirleriyle olan ilişkilerini daha iyi anlayabilirsiniz.
+- **Haritada göster** — Bu özellik ile seçilen parçaları haritada görüntüleyerek konumlarını ve birbirleriyle olan ilişkilerini daha iyi anlayabilirsiniz.
 
 - **Paylaş** (*Android*) / **Dışa Aktar** (*iOS*) — Seçilen verileri diğer kullanıcılarla paylaşmak veya bir bulut hizmetine kaydetmek isterseniz, *Paylaş/Dışa Aktar* özelliği, farklı paylaşım yöntemlerini kullanarak parçaları ve klasörleri göndermenizi sağlar.
 
 - **OpenStreetMap'e yükle** — Seçilen parçaları OpenStreetMap'e göndererek verilerin geliştirilmesine ve iyileştirilmesine katkıda bulunabilirsiniz.
 
-- **Taşı** — Seçilen parçaları ve klasörleri başka klasörlere taşıyarak verilerinizi düzenleyebilirsiniz.
+- **Taşı** — Seçilen parçaları ve klasörleri diğer klasörlere taşıyarak verilerinizi düzenleyebilirsiniz.
 
-- [Etkinliği değiştir](../../map/tracks/track-context-menu.md#track-information-activity) — Bu eylem, seçilen parça için etkinlik türünü, örneğin *Araba*, *Macera Motorsporları*, *Sırt Çantasıyla Seyahat* veya diğerleri olarak değiştirmenize olanak tanır.
+- [Etkinliği değiştir](../../map/tracks/track-context-menu.md#track-information-activity) — Bu eylem, seçilen parça için etkinlik türünü, örneğin *Araba*, *Macera Motor Sporları*, *Sırt Çantasıyla Seyahat* veya diğerleri olarak değiştirmenize olanak tanır.
 
-- [Görünümü değiştir](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Bu seçenek, seçilen parçaların görünümünü özelleştirmenize olanak tanır, böylece haritada daha görünür ve tanınabilir hale gelirler.
+- [Görünümü değiştir](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Bu seçenek, seçilen parçaların görünümünü özelleştirmenize olanak tanır, böylece haritada daha görünür ve tanınabilir olurlar.
 
 - **Sil** — Seçilen parçalar veya klasörler artık gerekli değilse, Sil işlevi bunları silmenize olanak tanır ve uygulama, yanlışlıkla silmeyi önlemek için onay seçenekleri sunar.
 
 
-### Şuna Göre Sırala {#sort-by}
+### Sırala {#sort-by}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Yerlerim parçaları sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Yerlerim parçaları sıralama işlevi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim parçaları sıralama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Yerlerim parçaları sıralama işlevi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-OsmAnd, parçalarınızı sıralamanın kolay bir yolunu sunar, bu da büyük bir koleksiyonu yönetmenize veya belirli özellikleri hızlı bir şekilde bulmanıza yardımcı olur. Sıralama menüsüne erişmek için, parçalar listesinin üst kısmındaki **Şuna göre sırala**'ya dokunun.
+OsmAnd, parçalarınızı sıralamanın kolay bir yolunu sunar, bu da büyük bir koleksiyonu yönetmenize veya belirli özellikleri hızla bulmanıza yardımcı olur. Sıralama menüsüne erişmek için parça listesinin üst kısmındaki **Sırala**'ya dokunun.
 
 ***Sıralama seçenekleri:***
 
 - **En Yakın** — Mevcut konumunuza en yakın parçaları gösterir.
 
-- **Son Değiştirilen** — Parçaları en son değiştirme tarihlerine göre sıralanmış olarak görüntüler.
+- **Son Değiştirilen** — Parçaları en son değiştirilme tarihlerine göre sıralar.
 
 - **Ad: A - Z** — Parçaları A'dan Z'ye alfabetik olarak düzenler.
 
 - **Ad: Z - A** — Parçaları Z'den A'ya alfabetik olarak düzenler.
 
-- **En Yeni Tarih İlk** — Parçaları oluşturma tarihine göre listeler, en yenisi en üstte.
+- **En Yeni Tarih Önce** — Parçaları oluşturulma tarihlerine göre listeler, en yenisi en üstte.
 
-- **En Eski Tarih İlk** — Parçaları oluşturma tarihine göre listeler, en eskisi en üstte.
+- **En Eski Tarih Önce** — Parçaları oluşturulma tarihlerine göre listeler, en eskisi en üstte.
 
-- **En Uzun Mesafe İlk** — Parçaları uzunluğa göre sıralanmış olarak görüntüler, en uzunu en üstte.
+- **En Uzun Mesafe Önce** — Parçaları uzunluklarına göre sıralar, en uzunu en üstte.
 
-- **En Kısa Mesafe İlk** — Parçaları uzunluğa göre sıralanmış olarak görüntüler, en kısası en üstte.
+- **En Kısa Mesafe Önce** — Parçaları uzunluklarına göre sıralar, en kısası en üstte.
 
-- **En Uzun Süre İlk** — Parçaları süreye göre sıralar, en uzunu en üstte.
+- **En Uzun Süre Önce** — Parçaları sürelerine göre sıralar, en uzunu en üstte.
 
-- **En Kısa Süre İlk** — Parçaları süreye göre sıralar, en kısası en üstte.
+- **En Kısa Süre Önce** — Parçaları sürelerine göre sıralar, en kısası en üstte.
 
 #### Alt Klasörleri Sıralama {#sorting-subfolders}
 
@@ -257,13 +257,13 @@ OsmAnd, parçalarınızı sıralamanın kolay bir yolunu sunar, bu da büyük bi
 
 <TabItem value="android" label="Android">
 
-![Yerlerim parçaları sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![Yerlerim parçaları sıralama işlevi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim parçaları sıralama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Yerlerim parçaları sıralama işlevi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
 
 </TabItem>
 
@@ -299,22 +299,22 @@ Klasör menüsü nasıl açılır:
 - *Android* - klasör alanındaki *üç nokta menüsüne* dokunun.
 - *iOS* - klasör alanına uzun dokunun.
 
-***Bir klasörle yapılan eylemler:***
+***Bir klasörle ilgili eylemler:***
 
 - **Ad** — Klasör adını, oluşturma tarihini ve içerdiği parça sayısını görüntüler.
 
-- **Tüm parçaları haritada göster** (*yalnızca Android*) — Klasördeki tüm parçaları haritada görüntüler —  
+- **Tüm parçaları haritada göster** (*Yalnızca Android*) — Klasördeki tüm parçaları haritada görüntüler —  
     *NOT: Çok sayıda parça varsa, bu cihazın donmasına neden olabilir.*
 
-- **Adı düzenle** (*Android*) / **Yeniden adlandır** (*iOS*) — Klasörü yeniden adlandırmanıza olanak tanır.
+- **Adı düzenle** (*Android*) / **Yeniden Adlandır** (*iOS*) — Klasörü yeniden adlandırmanıza olanak tanır.
 
 - [Varsayılan görünümü değiştir](../../map/tracks/appearance.md) (*Android*) / **Görünüm** (*iOS*) — Klasördeki tüm parçaların görüntü görünümünü değiştirir.
 
 - [Dışa Aktar](../../personal/import-export.md) — Klasördeki tüm parçaları bir [`.osf` dosyası](../../personal/import-export.md#export) olarak dışa aktarmak için *Menü → Ayarlar → Eylemler* sekmesini açar.
 
-- [Taşı](#track-folder) — Klasörü başka bir mevcut klasöre taşımaya veya yeni bir tane oluşturmaya olanak tanır.
+- [Taşı](#track-folder) — Klasörü başka bir mevcut klasöre taşımanıza veya yeni bir klasör oluşturmanıza olanak tanır.
 
-- [Klasörü sil](#delete-folder) — Onaydan sonra klasörü siler.  
+- [Klasörü Sil](#delete-folder) — Onaydan sonra klasörü siler.  
     ***NOT: Bu eylem geri alınamaz.***
 
 
@@ -340,19 +340,19 @@ Klasör menüsü nasıl açılır:
 
 </Tabs>
 
-*Parçalar* sekmesindeki listenin altında ve **her klasörünüzdeki** parça listesinin altında, seçilen klasördeki parçalar için genel özet istatistiklerini görüntülemenizi sağlayan bir bilgi bölümü bulunur. Tüm değerler seçtiğiniz [birimlerde](../../personal/profiles.md#units--formats) görüntülenir.
+*Parçalar* sekmesindeki listenin altında ve **her bir klasörünüzdeki** parça listesinin altında, seçilen klasördeki parçalar için genel özet istatistiklerini görüntülemenizi sağlayan bir bilgi bölümü bulunur. Tüm değerler seçtiğiniz [birimlerde](../../personal/profiles.md#units--formats) görüntülenir.
 
 - Klasördeki **Parça** sayısı — Seçilen klasörde bulunan parça sayısını görüntüler.
 
-- Toplam **Mesafeler** toplamı — Seçilen klasördeki tüm parçaların toplam uzunluğu, seçtiğiniz birimlerde ölçülerek görüntülenir.
+- **Mesafelerin** toplamı — Seçilen klasördeki tüm parçaların toplam uzunluğu, seçtiğiniz birimlerde ölçülerek görüntülenir.
 
-- **Yokuşlar** toplamı — Veriler, seçilen klasördeki tüm parçalardaki toplam dikey yükselişi gösterir.
+- **Yokuşların** toplamı — Veriler, seçilen klasördeki tüm parçalardaki toplam dikey yükselişi gösterir.
 
-- **Yokuş Aşağılar** toplamı — Bu parametre, seçilen klasördeki tüm parçalardaki dikey inişlerin toplamıdır.
+- **İnişlerin** toplamı — Bu parametre, seçilen klasördeki tüm parçalardaki dikey inişlerin toplamıdır.
 
 - **Süre** zamanının toplamı — Bu, seçilen klasördeki tüm parçaları tamamlamak için geçen toplam süreyi görüntüler.
 
-- İndirilen dosyaların toplam **Boyutu** MB cinsinden — Megabayt cinsinden toplam indirilen dosya boyutu, seçilen klasördeki tüm parçaların cihazınızda ne kadar yer kapladığını gösterir.
+- İndirilen dosyaların toplam **Boyutu** MB cinsinden — Toplam indirilen dosya boyutu megabayt cinsinden, seçilen klasördeki tüm parçaların cihazınızda ne kadar yer kapladığını gösterir.
 
 
 ### Klasör Eylemleri {#folder-actions}
@@ -363,7 +363,7 @@ Klasör menüsü nasıl açılır:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Yerlerim parçaları sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![Yerlerim parçaları sıralama işlevi Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -393,9 +393,9 @@ Klasör eylemleri nasıl açılır:
 
 - [Akıllı klasör ekle](../tracks/smart-folder.md#how-to-create-smart-folder) — Belirlediğiniz kriterlere göre rotaları ve parçaları otomatik olarak sıralayın.
 
-- [İçe Aktar](#import) — Çevrimdışı kullanım için GPX veya diğer parça dosyalarını cihazınızdan OsmAnd'e yükleyin.
+- [İçe Aktar](#import) — Çevrimdışı kullanım için cihazınızdan OsmAnd'e GPX veya diğer parça dosyalarını yükleyin.
 
-- **Yeni klasör ekle** — Rotalarınızı ve parçalarınızı mantıksal kategorilere ayırmak için farklı klasörlere koyun. Bu, navigasyon bilgilerini yapılandırmaya yardımcı olur.
+- **Yeni klasör ekle** — Rotalarınızı ve parçalarınızı mantıksal kategorilere ayırmak için bunları farklı klasörlere koyun. Bu, navigasyon bilgilerinizi yapılandırmaya yardımcı olur.
 
 
 ### Klasörü Sil {#delete-folder}
@@ -420,14 +420,14 @@ Klasör eylemleri nasıl açılır:
 
 </Tabs>  
 
-Bir klasörü içerdiği tüm parçalarla birlikte silebilirsiniz. Bunu yapmak için:
+İçerdiği tüm parçalarla birlikte bir klasörü silebilirsiniz. Bunu yapmak için:
 
 - Silmek istediğiniz klasör alanındaki *üç nokta menüsüne* dokunun.
-- Menünün alt kısmında **Klasörü Sil** seçeneğini bulun.
+- Menünün altında **Klasörü Sil** seçeneğini bulun.
 - ***NOT: Bu eylem geri alınamaz.***
 
 
-## Parça İçe Aktar / Dışa Aktar {#import--export-track}
+## Parçayı İçe / Dışa Aktar {#import--export-track}
 
 ### İçe Aktar {#import}
 
@@ -448,7 +448,7 @@ Bir klasörü içerdiği tüm parçalarla birlikte silebilirsiniz. Bunu yapmak i
     *Ek seçenekler:*
 
     - **Tek parçalı GPX dosyaları** - tüm parçayı doğrudan içe aktarın.
-    - **Çok parçalı GPX dosyaları** - tek GPX dosyasını içe aktarmayı veya belirli parçaları seçmeyi seçin.
+    - **Çok parçalı GPX dosyaları** - tek GPX dosyasını içe aktarmayı seçin veya belirli parçaları seçin.
 
 ***NOT:*** *Cihazınızdaki OsmAnd klasörüne manuel olarak eklenen parçalar, uygulamayı yeniden başlatmaya gerek kalmadan otomatik olarak içe aktarılır.*  
 
@@ -491,14 +491,14 @@ Bir klasörü içerdiği tüm parçalarla birlikte silebilirsiniz. Bunu yapmak i
 
 Bir veya daha fazla parça dosyasını herhangi bir mesajlaşma uygulamasına, e-postaya, dosya yöneticisine veya uygulamaya dışa aktarmanın birkaç yolu vardır.  
 
-1. [*Parça bağlam menüsü → Paylaş*](../../map/tracks/track-context-menu.md#options) ile.
+1. [*Parça bağlam menüsü → Paylaş*](../../map/tracks/track-context-menu.md#options) aracılığıyla.
 
-2. *Yerlerim menüsü → Parçalar → Klasör / Parça menüsü* ile:
+2. *Yerlerim menüsü → Parçalar → Klasör / Parça menüsü* aracılığıyla:
 
-    - [**Tek bir parçayı dışa aktarmak**](#track-menu) için, parçanın menüsünü seçin.
-    - [**Çoklu parça dışa aktarmak**](#track-folder) için, gerekli klasörün menüsünü seçin.
+    - [**Tek bir parçayı dışa aktarmak**](#track-menu) için parçanın menüsünü seçin.
+    - [**Çoklu parça dışa aktarmak**](#track-folder) için gerekli klasörün menüsünü seçin.
 
-3. [Yerel yedekleme dosyası](../../personal/import-export.md#export-to-file) ile. GPX parçalarını `.osf` dosyaları olarak dışa aktarma.
+3. [Yerel yedekleme dosyası](../../personal/import-export.md#export-to-file) aracılığıyla. GPX parçalarını `.osf` dosyaları olarak dışa aktarma.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -507,6 +507,6 @@ Bir veya daha fazla parça dosyasını herhangi bir mesajlaşma uygulamasına, e
 - [Haritada analiz et](../../map/tracks/index.md#analyze-track-on-map)
 - [Parça Bağlam menüsü](../../map/tracks/track-context-menu.md)
 - [Parça ile navigasyon](../../navigation/setup/gpx-navigation.md)
-- [Seyahat kaydı](../../plugins/trip-recording.md)
+- [Gezi kaydı](../../plugins/trip-recording.md)
 
 > *Son güncelleme: Nisan 2025*

@@ -1,7 +1,7 @@
 ---
-source-hash: 27722eb18550cf9d93cb885bccf878c6d53e33daba1748a270790fa1cca1066e
+source-hash: 60b188c51e17690f3a3d5d8e4970eb6bd2391e27d4fafaddb68b30a36313f979
 sidebar_position: 3
-title: Notatki audio/wideo
+title: Notatki audio / wideo
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,25 +13,27 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoAndroidOnly />
 
 ## Przegląd {#overview}
 
-Twoje nagrania audio i wideo mogą być przydatne w przyszłości, np. jako wspomnienia z miejsc, w których byłeś. Są one dostępne w menu [Moje miejsca](../personal/myplaces.md) i są widoczne, gdy włączona jest wtyczka Notatki audio/wideo.
+Twoje nagrania audio i wideo mogą być przydatne w przyszłości, na przykład jako wspomnienia miejsc, w których byłeś. Są one dostępne w menu [Moje miejsca](../personal/myplaces.md) i są widoczne, gdy włączona jest wtyczka Notatki audio/wideo.
 
-Wtyczka Notatki audio/wideo rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie własnych notatek w różnych formatach, takich jak zdjęcia, wideo lub audio, i kojarzenie ich z ich położeniem geograficznym lub bieżącą lokalizacją. Nagrania można wykonywać tylko wtedy, gdy wtyczka jest włączona, za pomocą [widżetu Notatki audio/wideo](../widgets/info-widgets.md#-audio-video-notes-widget) i/lub [menu kontekstowego mapy](../map/map-context-menu.md#-audiovideo-note). Otrzymane dane są automatycznie zapisywane w [Moich miejscach](../personal/myplaces.md), skąd można nimi wygodnie zarządzać i udostępniać je.
+Wtyczka Notatki audio/wideo rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie własnych notatek w różnych formatach, takich jak zdjęcia, wideo lub audio, i kojarzenie ich z ich położeniem geograficznym lub bieżącą lokalizacją. Nagrania można wykonywać tylko wtedy, gdy wtyczka jest włączona, za pomocą [widżetu Notatki audio/wideo](../widgets/info-widgets.md#-audio-video-notes-widget) i/lub [menu kontekstowego mapy](../map/map-context-menu.md#-audiovideo-note). Otrzymane dane są automatycznie zapisywane w [Moich miejscach](../personal/myplaces.md), skąd można je wygodnie zarządzać i udostępniać.
 
-Wszystkie utworzone notatki audio i wideo tworzą warstwę Nagrania. Po włączeniu na mapie zmienia ona widok nagranych danych i pojawia się więcej ustawień do zarządzania nagraniami. W warstwie Nagrania notatki audio i wideo są umieszczane jako POI na mapie, tworząc w ten sposób narrację użytkownika widoczną tylko dla właściciela urządzenia.
+Wszystkie utworzone notatki audio i wideo tworzą warstwę Nagrywanie. Po włączeniu na mapie zmienia ona widok nagranych danych i pojawia się więcej ustawień do zarządzania nagraniami. W warstwie Nagrywanie notatki audio i wideo są umieszczane jako POI na mapie, tworząc w ten sposób narrację użytkownika widoczną tylko dla właściciela urządzenia.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wprowadzenie do notatek audio-wideo](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+![Wprowadzenie do notatek audio wideo](@site/static/img/plugins/audio-video-notes/widgets_view.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## Wymagane parametry konfiguracji {#required-setup-parameters}
 
@@ -41,6 +43,7 @@ Notatki audio/wideo są dostarczane z wtyczką Notatki audio/wideo i wymagają n
 2. Dodaj [widżet](../widgets/info-widgets.md#-audio-video-notes-widget) do ekranu mapy, aby zapewnić najwygodniejsze użytkowanie.
 3. W razie potrzeby dostosuj [ustawienia nagrywania](#plugin-settings) dla każdego profilu.
 
+
 ## Ustawienia wtyczki {#plugin-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -49,7 +52,7 @@ Notatki audio/wideo są dostarczane z wtyczką Notatki audio/wideo i wymagają n
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
 
-![Ustawienia wtyczki audio-wideo Zdjęcie Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
+![Ustawienia wtyczki audio wideo Zdjęcie Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
 </TabItem>
 
@@ -59,20 +62,21 @@ Dla każdego profilu można skonfigurować *opcje nagrywania audio i wideo*.
 
 | Parametr | Opis |
 | --- | --- |
-| **<Translate android="true" ids="camera_app"/>** | Możesz wybrać, czy do robienia <Translate android="true" ids="photo_notes"/> używać aplikacji systemowej, czy aparatu OsmAnd. |
-| **<Translate android="true" ids="av_camera_pic_size"/>** | Ustawia rozmiar zdjęć do wykonania. Możliwości aparatu urządzenia określają liczbę dostępnych opcji. Jeśli nie wybrano żadnej opcji, aplikacja używa rozmiaru z ustawień systemowych aparatu urządzenia. |
-| **<Translate android="true" ids="av_camera_focus"/>** | Określa metodę ustawiania ostrości aparatu. Liczba dostępnych opcji jest określana przez możliwości aparatu urządzenia. Zasadniczo istnieją trzy następujące opcje: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; i *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofokus** jest najpopularniejszy i ustawia tryb automatyczny dla aparatu; **ciągły** sprawia, że aparat wykrywa ruchy i odpowiednio ponownie ustawia ostrość; a opcja **nieskończoność** sprawia, że obiektyw ustawia ostrość na odległość i w ten sposób utrzymuje obiekty w ostrości niezależnie od odległości. |
+| **<Translate android="true" ids="camera_app"/>** | Możesz wybrać, czy do robienia <Translate android="true" ids="photo_notes"/> użyć aplikacji systemowej, czy aparatu OsmAnd. |
+| **<Translate android="true" ids="av_camera_pic_size"/>** | Ustawia rozmiar zdjęć do wykonania. Możliwości aparatu urządzenia określają liczbę dostępnych opcji. Jeśli żadna opcja nie jest wybrana, aplikacja używa rozmiaru z ustawień systemowych aparatu urządzenia. |
+| **<Translate android="true" ids="av_camera_focus"/>** | Określa metodę ustawiania ostrości aparatu. Liczba dostępnych opcji jest określana przez możliwości aparatu urządzenia. Zasadniczo istnieją trzy następujące opcje: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; i *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofokus** jest najbardziej popularny i ustala tryb automatyczny dla aparatu; **ciągły** sprawia, że aparat wykrywa ruchy i odpowiednio ponownie ustawia ostrość; a opcja **nieskończoność** sprawia, że obiektyw ustawia ostrość na odległość i w ten sposób utrzymuje obiekty w ostrości niezależnie od tego, jak daleko się znajdują. |
 | **<Translate android="true" ids="multimedia_photo_play_sound"/>** | Jeśli włączone, dźwięk jest odtwarzany, gdy aparat robi zdjęcie. Należy pamiętać, że zgodnie z wymogami prawa o ochronie prywatności, **w niektórych krajach urządzenia nie będą miały przełącznika wyciszania migawki aparatu**. Jeśli używasz aplikacji systemowej, dźwięk powinien być wyłączony w aplikacji aparatu. |
 | **<Translate android="true" ids="av_audio_format"/>** | Zapewnia wybór formatów dla pliku audio. Liczba dostępnych opcji i która z nich jest używana domyślnie, jest określana przez parametry konkretnego urządzenia. |
-| **<Translate android="true" ids="av_audio_bitrate"/>** | Ta opcja zapewnia wybór opcji bitrate dla tworzonego pliku audio. Dostępne opcje bitrate wahają się od 16 kbps do 128 kbps lub opcja Domyślna. Parametr Domyślny jest określany przez "domyślne" ustawienia mikrofonu urządzenia. |
+| **<Translate android="true" ids="av_audio_bitrate"/>** | Ta opcja zapewnia wybór opcji bitrate dla pliku audio do utworzenia. Dostępne opcje bitrate wahają się od 16 kbps do 128 kbps lub opcji Domyślne. Parametr Domyślne jest określany przez "domyślne" ustawienia mikrofonu urządzenia. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | Jeśli włączone, OsmAnd używa aplikacji systemowej do nagrywania wideo w <Translate android="true" ids="video_notes"/>. |
-| **<Translate android="true" ids="av_video_quality"/>** | Zapewnia wybór opcji, które określają format obrazu wyjściowego. Zakres dostępnych opcji jest określany przez parametry konkretnego urządzenia. Domyślną opcją jest opcja *Najwyższa jakość*. |
+| **<Translate android="true" ids="av_video_quality"/>** | Zapewnia wybór opcji, które określają format obrazu wyjściowego. Zakres dostępnych opcji jest określany przez parametry konkretnego urządzenia. Opcją domyślną jest opcja *Najwyższa jakość*. |
 | **<Translate android="true" ids="multimedia_rec_split_title"/>** | Jeśli włączone, stare nagrania wideo będą automatycznie nadpisywane i zastępowane nowymi nagraniami wideo, jeśli rozmiar pamięci osiągnie limit rozmiaru. |
 | **<Translate android="true" ids="rec_split_clip_length"/>** | Określa górny limit czasu dla nagranych klipów wideo. Dostępne są opcje z zakresu od 1 minuty do 30 minut. |
 | **<Translate android="true" ids="rec_split_storage_size"/>** | Określa rozmiar pamięci przeznaczonej na nagrane wideo. Dostępne są opcje z zakresu od 1024 MB do 62 GB. Konkretny zakres opcji i opcja domyślna są określane przez parametry konkretnego urządzenia. Komunikat systemowy przypomni o osiągnięciu ustalonego limitu rozmiaru pamięci. |
-| **<Translate android="true" ids="notes"/>** | Ta opcja przekierowuje do [Notatek audio/wideo w Moich miejscach](../personal/myplaces.md) - centralnego magazynu wszystkich notatek audio/wideo kiedykolwiek wykonanych w aplikacji. |
+| **<Translate android="true" ids="notes"/>** | Ta opcja przekierowuje Cię do [Notatek audio/wideo w Moich miejscach](../personal/myplaces.md) - centralnego magazynu wszystkich notatek audio/wideo kiedykolwiek utworzonych w aplikacji. |
 | **<Translate android="true" ids="reset_plugin_to_default"/>** | Możesz ustawić wartości domyślne dla wszystkich ustawień notatek A/V. |
-| **<Translate android="true" ids="copy_from_other_profile"/>** | Otwiera okno dialogowe, aby wybrać profil, z którego ma zostać skopiowana konfiguracja nagrywania notatek audio/wideo, i zastosować ją dla bieżącego profilu. |
+| **<Translate android="true" ids="copy_from_other_profile"/>** | Otwiera okno dialogowe, aby wybrać profil, z którego ma zostać skopiowana konfiguracja nagrywania notatek audio/wideo, i ustawić ją dla bieżącego profilu. |
+
 
 ## Zarządzanie pojedynczą notatką {#manage-a-single-note}
 
@@ -87,36 +91,39 @@ Możesz zarządzać swoimi informacjami, myślami, pomysłami itp. związanymi z
 - Utwórz punkty trasy w [śladzie](../plugins/trip-recording.md#gpx-file-details).
 - Eksportuj do [JOSM](https://josm.openstreetmap.de/).
 
-### Tworzenie {#create}
+
+### Utwórz {#create}
 
 Możesz utworzyć notatkę zdjęciową, wideo i audio w jeden z następujących sposobów:
 
 - Za pomocą [widżetu](../widgets/info-widgets.md#-audio-video-notes-widget-android). Jeśli notatka ma być powiązana z Twoją bieżącą pozycją geograficzną.
 - Za pomocą [menu kontekstowego](../map/map-context-menu.md#-record-av-note-android) punktu na mapie. Jeśli notatka ma być powiązana z wybranym punktem na mapie.
 
-#### 1. Tworzenie i powiązanie z bieżącą pozycją {#1-create-and-tie-to-your-current-position}
+
+#### 1. Utwórz i powiąż z bieżącą pozycją {#1-create-and-tie-to-your-current-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Widżet wtyczki audio-wideo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
+![Widżet wtyczki audio wideo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Widżet <Translate android="true" ids="map_widget_av_notes"/> służy do tworzenia notatki powiązanej z Twoją bieżącą pozycją, a tym samym do uniknięcia wyszukiwania odpowiedniego punktu dla notatki na mapie. Wystarczy dotknąć widżetu i utworzyć notatkę.
+Widżet <Translate android="true" ids="map_widget_av_notes"/> służy do tworzenia notatki powiązanej z Twoją bieżącą pozycją, a tym samym do unikania wyszukiwania odpowiedniego punktu dla notatki na mapie. Po prostu dotknij widżetu i utwórz notatkę.
 
-Funkcje udostępniane przez widżet <Translate android="true" ids="map_widget_av_notes"/> zależą od tego, jak jest on skonfigurowany w menu [Konfiguruj ekran](../widgets/info-widgets.md#-audio-video-notes-widget-android). Widżet albo natychmiast otwiera aparat, aby utworzyć notatkę, zgodnie z ustalonymi ustawieniami, albo najpierw pyta, w jakim formacie utworzyć notatkę, a następnie otwiera odpowiednie okno dialogowe rejestratora.
+Funkcje udostępniane przez widżet <Translate android="true" ids="map_widget_av_notes"/> zależą od tego, jak jest on skonfigurowany w menu [Konfiguruj ekran](../widgets/info-widgets.md#-audio-video-notes-widget-android). Widżet natychmiast otwiera aparat, aby zrobić notatkę, zgodnie z ustalonymi ustawieniami, lub najpierw pyta, w jakim formacie utworzyć notatkę, a następnie otwiera odpowiednie okno dialogowe nagrywania.
 
-#### 2. Tworzenie i powiązanie z wybraną geolokalizacją {#2-create-and-tie-to-selected-geolocation}
+
+#### 2. Utwórz i powiąż z wybraną geolokalizacją {#2-create-and-tie-to-selected-geolocation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wtyczka audio-wideo Menu kontekstowe zrób notatkę](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
+![Wtyczka audio wideo Menu kontekstowe zrób notatkę](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
 
 </TabItem>
 
@@ -131,9 +138,10 @@ Aby utworzyć notatkę powiązaną z wybranym punktem na mapie, użyj [menu kont
     - **<Translate android="true" ids="recording_context_menu_vrecord"/>** - aby utworzyć notatkę wideo i powiązać ją z wybranym punktem na mapie;
     - **<Translate android="true" ids="recording_context_menu_precord"/>** - aby utworzyć notatkę zdjęciową i powiązać ją z wybranym punktem na mapie.
 
-3. W zależności od wybranego formatu notatki otwiera się odpowiednie okno dialogowe rejestratora.
+3. W zależności od wybranego formatu notatki, otworzy się odpowiednie okno dialogowe nagrywania.
 
-#### Okno dialogowe rejestratora {#recorder-dialog}
+
+#### Okno dialogowe nagrywania {#recorder-dialog}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -145,17 +153,18 @@ Aby utworzyć notatkę powiązaną z wybranym punktem na mapie, użyj [menu kont
 
 </Tabs>
 
-Dla *notatek audio i wideo* wyświetlany jest odpowiednio rejestrator audio lub wideo. Możesz:
+W przypadku *notatek audio i wideo* wyświetlany jest odpowiednio rejestrator audio lub wideo. Możesz:
 
-- Zatrzymać nagrywanie ikoną *Stop*.
-- Wyświetlić czas trwania nagrania.
-- Pokazać lub ukryć ekran wideo.
+- Zatrzymaj nagrywanie za pomocą ikony *Stop*.
+- Wyświetl czas trwania nagrania.
+- Pokaż lub ukryj ekran wideo.
 
-Możliwe jest zatrzymanie nagrywania dotknięciem widżetu <Translate android="true" ids="map_widget_av_notes"/>, niezależnie od tego, czy nagrywanie zostało rozpoczęte z menu kontekstowego, czy z widżetu. Dla *notatki zdjęciowej* pojawia się funkcja aparatu, i możesz zrobić zdjęcie, wyświetlić wynik, zaakceptować i zapisać go, lub zrobić nowe zdjęcie.
+Możliwe jest zatrzymanie nagrywania dotknięciem widżetu <Translate android="true" ids="map_widget_av_notes"/>, niezależnie od tego, czy nagrywanie zostało rozpoczęte z menu kontekstowego, czy z widżetu. W przypadku *notatki zdjęciowej* pojawia się funkcja aparatu, i możesz zrobić zdjęcie, wyświetlić wynik, zaakceptować i zapisać go, lub zrobić nowe zdjęcie.
 
-:::info Uwaga
+:::info note
 Automatycznie wszystkie nagrania zdjęć, audio i wideo są zapisywane w: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> zakładka.
 :::
+
 
 ### Wyświetl w Moich miejscach {#view-in-my-places}
 
@@ -165,7 +174,7 @@ Automatycznie wszystkie nagrania zdjęć, audio i wideo są zapisywane w: <Trans
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Menu Moje miejsca wtyczki audio-wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
+![Menu Moje miejsca wtyczki audio wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 </TabItem>
 
@@ -173,19 +182,21 @@ Automatycznie wszystkie nagrania zdjęć, audio i wideo są zapisywane w: <Trans
 
 [Moje miejsca](../personal/myplaces.md) to centralne repozytorium wszystkich Twoich notatek. Umożliwia ono przeglądanie wszystkich notatek w posortowanej liście, wyświetlanie konkretnej notatki na mapie oraz zarządzanie całą listą notatek.
 
+
 ### Pokaż na mapie {#show-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Menu Moje miejsca wtyczki audio-wideo Kontekst](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
+![Menu kontekstowe Moje miejsca wtyczki audio wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 </TabItem>
 
 </Tabs>
 
-Aby wyświetlić konkretną notatkę na mapie, użyj listy notatek w Moich miejscach, znajdź potrzebną i dotknij jej. W rezultacie pojawi się mapa, podświetli lokalizację notatki i otworzy [menu kontekstowe](../plugins/audio-video-notes.md#actions-in-map-context-menu). Możliwa jest praca z notatką poprzez wybieranie opcji w menu kontekstowym.
+Aby wyświetlić konkretną notatkę na mapie, użyj listy notatek w Moich miejscach, znajdź potrzebną i dotknij jej. W rezultacie pojawi się mapa, podświetli lokalizację notatki i otworzy [menu kontekstowe](../plugins/audio-video-notes.md#actions-in-map-context-menu). Możliwe jest praca z notatką, wybierając opcje w menu kontekstowym.
+
 
 ### Odtwórz {#play}
 
@@ -193,8 +204,8 @@ Aby wyświetlić konkretną notatkę na mapie, użyj listy notatek w Moich miejs
 
 <TabItem value="android" label="Android">
 
-![Wtyczka audio-wideo Menu kontekstowe](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
-![Wtyczka audio-wideo Akcje menu Moje miejsca](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Menu kontekstowe wtyczki audio wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Akcje menu Moje miejsca wtyczki audio wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -207,13 +218,14 @@ Aby odtworzyć notatkę, użyj odpowiedniej opcji w [menu kontekstowym](../map/m
 
 Sekcja [Szczegóły](../map/map-context-menu#-audiovideo-note-android) zawiera więcej danych o notatkach, takich jak szerokość i długość geograficzna, data i godzina notatki oraz zdjęcia.
 
+
 ### Zmień nazwę, usuń, udostępnij {#rename-delete-share}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wtyczka audio-wideo Akcje menu Moje miejsca](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Akcje menu Moje miejsca wtyczki audio wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -221,11 +233,12 @@ Sekcja [Szczegóły](../map/map-context-menu#-audiovideo-note-android) zawiera w
 
 Aby zarządzać notatką w Moich miejscach, dotknij pionowych trzech kropek notatki na liście, a pojawią się dostępne opcje, takie jak:
 
-- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Otwórz i wyświetl wybrane wideo lub odtwórz notatkę audio.
-- **<Translate android="true" ids="shared_string_share"/>**. Łatwo udostępniaj wybraną notatkę innym za pośrednictwem różnych platform.
+- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Otwórz i wyświetl wybrany film lub odtwórz notatkę audio.
+- **<Translate android="true" ids="shared_string_share"/>**. Łatwo udostępniaj wybraną notatkę innym osobom za pośrednictwem różnych platform.
 - **<Translate android="true" ids="shared_string_show_on_map"/>**. Pokazuje dokładną lokalizację i [menu kontekstowe](../plugins/audio-video-notes#actions-in-map-context-menu) notatki na mapie.
-- **<Translate android="true" ids="shared_string_rename"/>**. Zmień nazwę notatki w celu łatwiejszej identyfikacji.
+- **<Translate android="true" ids="shared_string_rename"/>**. Zmień nazwę notatki dla łatwiejszej identyfikacji.
 - **<Translate android="true" ids="shared_string_delete"/>**. Trwale usuwa notatki z aplikacji.
+
 
 ## Widżet nagrywania {#recording-widget}
 
@@ -241,7 +254,7 @@ Aby zarządzać notatką w Moich miejscach, dotknij pionowych trzech kropek nota
 
 [Widżet Notatki audio/wideo](../widgets/info-widgets.md#audiovideo-notes-widget) tworzy notatki, zdjęcia, pliki audio i wideo oraz łączy je z Twoją bieżącą pozycją. Widżet ma kilka opcji, które można ustawić jako domyślną akcję wykonywaną przez widżet po dotknięciu ekranu.
 
-Dodanie widżetu do ekranu jest konieczne, jeśli wolisz uniknąć wyszukiwania geolokalizacji na mapie i łączenia notatek z Twoją bieżącą domyślną lokalizacją. Aby dodać lub dostosować widżet, wykonaj poniższe kroki:
+Dodanie widżetu do ekranu jest konieczne, jeśli wolisz unikać wyszukiwania geolokalizacji na mapie i łączyć notatki z Twoją bieżącą domyślną lokalizacją. Aby dodać lub dostosować widżet, wykonaj poniższe kroki:
 
 1. Przejdź do:
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
@@ -262,15 +275,16 @@ Dodanie widżetu do ekranu jest konieczne, jeśli wolisz uniknąć wyszukiwania 
 
     ![Widżet](@site/static/img/plugins/audio-video-notes/widget.png)
 
+
 ## Zarządzanie wieloma notatkami {#manage-multiple-notes}
 
-### Zarządzanie w Moich miejscach {#manage-in-my-places}
+### Zarządzaj w Moich miejscach {#manage-in-my-places}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wtyczka audio-wideo Menu Moje miejsca Trzy akcje](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+![Menu Moje miejsca wtyczki audio wideo Trzy akcje](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
 </TabItem>
 
@@ -278,7 +292,8 @@ Dodanie widżetu do ekranu jest konieczne, jeśli wolisz uniknąć wyszukiwania 
 
 Opcje na dolnym pasku mogą być używane do zarządzania listą notatek w menu [Moje miejsca](../personal/myplaces.md#audiovideo-notes).
 
-### Udostępnianie z punktami trasy GPX {#share-with-gpx-waypoints}
+
+### Udostępnij z punktami trasy GPX {#share-with-gpx-waypoints}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -294,8 +309,9 @@ Opcje na dolnym pasku mogą być używane do zarządzania listą notatek w menu 
 
 Możesz udostępnić wszystkie notatki, w tym [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes), które mają wybrane notatki jako punkty trasy na ekranie [Moje miejsca](../personal/myplaces.md#audiovideo-notes), klikając przycisk udostępniania w dolnym menu. Obok każdej notatki pojawi się pole wyboru, aby wybrać konkretne notatki. Nad notatkami znajdują się dwa pola wyboru: *Notatki A/V według daty*, aby wybrać wszystkie notatki, oraz pole wyboru *Lokalizacje*. Pole wyboru *Lokalizacje* umożliwia dodanie oddzielnego pliku GPX z współrzędnymi i danymi.
 
-Każda notatka zawiera czas jej utworzenia, ilość danych, a jeśli jest to nagranie, czas nagrania i dane lokalizacji, możesz dodać dane GPX.
-Obsługiwane formaty plików: audio - **3gp**, wideo - **mp4**, zdjęcie - **jpg**.
+Każda notatka zawiera czas jej utworzenia, ilość danych, a jeśli jest to nagranie, czas nagrania i dane lokalizacyjne, możesz dodać dane GPX.
+Obsługiwane formaty plików: audio - **3gp**, wideo - **mp4**, zdjęcie -**jpg**.
+
 
 ### Pokaż wszystko na mapie {#show-all-on-the-map}
 
@@ -317,6 +333,7 @@ Użyj warstwy mapy [Nagrywanie](../map/point-layers-on-map#-audio--video-points-
 
 ![Brak notatek na mapie](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notatki są na mapie](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
+
 ## Punkty trasy utworzone z notatek {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -324,7 +341,7 @@ Użyj warstwy mapy [Nagrywanie](../map/point-layers-on-map#-audio--video-points-
 <TabItem value="android" label="Android">
 
 ![Notatki i punkty trasy na mapie](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
-![Punkty trasy na śladzie](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
+![Punkty trasy na ścieżce](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
 
@@ -333,8 +350,9 @@ Użyj warstwy mapy [Nagrywanie](../map/point-layers-on-map#-audio--video-points-
 Punkt trasy jest tworzony, gdy notatka audio, wideo lub zdjęciowa jest dodawana do śladu. Punkty trasy istnieją w ramach śladu. Jeśli ślad jest widoczny, jego punkty trasy są również widoczne. W ten sposób te notatki mogą być widoczne na mapie wszystkie naraz lub tylko na konkretnym widocznym śladzie. W tym drugim przypadku notatki są wyświetlane jako punkty trasy śladu.
 
 :::note
-Jeśli ślad zostanie wyeksportowany, punkty trasy nie mogą być przeglądane ani odtwarzane, ponieważ notatki audio/wideo/zdjęciowe są przechowywane tylko na urządzeniu i dostępne tylko dla Ciebie na tym urządzeniu.
+Jeśli ślad jest eksportowany, punkty trasy nie mogą być przeglądane ani odtwarzane, ponieważ notatki audio/wideo/zdjęciowe są przechowywane tylko na urządzeniu i dostępne tylko dla Ciebie na tym urządzeniu.
 :::
+
 
 ### Tworzenie punktów trasy {#create-waypoints}
 
@@ -350,9 +368,9 @@ Jeśli ślad zostanie wyeksportowany, punkty trasy nie mogą być przeglądane a
 
 Istnieją dwa sposoby tworzenia punktu trasy: automatycznie i ręcznie.
 
-1. **Automatycznie**, punkt trasy jest tworzony, w przypadku gdy robisz notatkę audio/wideo/zdjęciową, gdy trwa [nagrywanie podróży](../plugins/trip-recording), niezależnie od geolokalizacji, jeśli jest ona powiązana z bieżącą pozycją lub dowolnym miejscem, a zatem niezależnie od użytych do tego środków: czy jest to [widżet](../widgets/info-widgets#-audio-video-notes-widget-android), czy [menu kontekstowe](../map/map-context-menu#-audiovideo-note-android).
+1. **Automatycznie**, punkt trasy jest tworzony, w przypadku, gdy robisz notatkę audio/wideo/zdjęciową, gdy [nagrywanie podróży](../plugins/trip-recording) jest w toku, niezależnie od geolokalizacji, jeśli jest ona powiązana z bieżącą pozycją lub dowolnym miejscem, a tym samym, niezależnie od użytych do tego środków: czy jest to [widżet](../widgets/info-widgets#-audio-video-notes-widget-android), czy [menu kontekstowe](../map/map-context-menu#-audiovideo-note-android).
 
-    Wszystkie punkty trasy dodane automatycznie otrzymują automatycznie przypisaną nazwę. Nazwa jest tworzona zgodnie z formatem określonym poniżej dla pliku audio/wideo/zdjęciowego i ma [krótki link](https://wiki.openstreetmap.org/wiki/Shortlink). Przykład punktów trasy na powyższym rysunku pokazuje punkty trasy utworzone automatycznie i ręcznie, gdzie pierwsze cztery zostały utworzone automatycznie, a ostatni - ręcznie.
+    Wszystkie automatycznie dodane punkty trasy otrzymują automatycznie przypisaną nazwę. Nazwa jest tworzona zgodnie z formatem określonym poniżej dla pliku audio/wideo/zdjęciowego i ma [krótki link](https://wiki.openstreetmap.org/wiki/Shortlink). Przykład punktów trasy na powyższym rysunku pokazuje punkty trasy utworzone automatycznie i ręcznie, gdzie pierwsze cztery zostały utworzone automatycznie, a ostatni - ręcznie.
 
 2. **Ręcznie**, punkt trasy jest tworzony za pomocą [menu kontekstowego](../map/map-context-menu#-audiovideo-note-android), w następujący sposób:
 
@@ -361,15 +379,16 @@ Istnieją dwa sposoby tworzenia punktu trasy: automatycznie i ręcznie.
     - Wybierz ślad, do którego zamierzasz dodać punkt trasy.
     - Otworzy się okno dialogowe *<Translate android="true" ids="quick_action_add_gpx"/>*, które umożliwia ustawienie niektórych właściwości, takich jak nazwa punktu trasy, ikona, kolor i inne. Po zakończeniu dotknij **Zapisz**.
 
-:::info Uwaga
+:::info note
 Możesz określić nazwy dla każdego punktu trasy utworzonego ręcznie.
 :::
 
-### Wyświetlanie punktów trasy {#view-waypoints}
 
-- Punkt trasy jest dostępny do przeglądania jako punkt trasy na mapie i na liście [punktów trasy konkretnego śladu](../map/tracks/track-context-menu.md#points--waypoints). Usunięcie punktu trasy nie usuwa odpowiedniej notatki audio/wideo/zdjęciowej.
+### Wyświetl punkty trasy {#view-waypoints}
 
-- Notatka audio, wideo lub zdjęciowa jest dostępna do przeglądania na mapie i na liście notatek A/V w [Moich miejscach](../plugins/audio-video-notes#view-in-my-places). Usunięcie notatki audio, wideo lub zdjęciowej nie usuwa odpowiedniego punktu trasy.
+- Punkt trasy jest dostępny do przeglądania jako punkt trasy na mapie i na liście [punktów trasy konkretnego śladu](../map/tracks/track-context-menu.md#points--waypoints). Usunięcie punktu trasy nie powoduje usunięcia odpowiedniej notatki audio/wideo/zdjęciowej.
+
+- Notatka audio, wideo lub zdjęciowa jest dostępna do przeglądania na mapie i na liście notatek A/V w [Moich miejscach](../plugins/audio-video-notes#view-in-my-places). Usunięcie notatki audio, wideo lub zdjęciowej nie powoduje usunięcia odpowiedniego punktu trasy.
 
 - Na mapie punkt trasy i notatka audio, wideo lub zdjęciowa mogą być widoczne lub niewidoczne na mapie. Jest to określane przez to, która warstwa jest aktualnie włączona dla profilu.
 
@@ -377,16 +396,18 @@ Możesz określić nazwy dla każdego punktu trasy utworzonego ręcznie.
 
 | Widoczne | Warstwa włączona |
 | --- | --- |
-| Tylko punkty trasy | Warstwa Ślady |
-| Punkty trasy i notatki | Warstwa Ślady i Nagrywanie |
-| Tylko notatki | Warstwa Nagrywanie |
-| Brak | Ani warstwa Ślady, ani warstwa Nagrywanie. |
+| Tylko punkty trasy | Warstwa śladów |
+| Punkty trasy i notatki | Warstwa śladów i nagrywania |
+| Tylko notatki | Warstwa nagrywania |
+| Brak | Ani warstwa śladów, ani warstwa nagrywania. |
+
 
 ### Plik GPX z punktami trasy {#gpx-file-with-waypoints}
 
 ![Punkt trasy w pliku GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
 Jeśli przeglądasz plik GPX śladu dodanego z punktem trasy z notatki audio/wideo/zdjęciowej, punkt trasy będzie wyglądał jak w poniższym przykładzie, zawierając współrzędne, znacznik czasu, nazwę odpowiedniej notatki i krótki link.
+
 
 ## Różne {#miscellaneous}
 
@@ -396,13 +417,15 @@ Wtyczka <Translate android="true" ids="audionotes_plugin_name"/> generuje pliki 
 
     `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
-gdzie `SHORTLINK_LOCATION` określa szerokość i długość geograficzną lokalizacji, z którą plik jest powiązany. `SHORTLINK_LOCATION` jest kodowany zgodnie ze specyfikacją [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+gdzie `SHORTLINK_LOCATION` określa szerokość i długość geograficzną lokalizacji, z którą plik jest powiązany. `SHORTLINK_LOCATION` jest zakodowany zgodnie ze specyfikacją [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+
 
 ### Eksport do JOSM {#export-to-josm}
 
-![Notatki audio-wideo w Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Notatki audio wideo w Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
 
-Aby później wszystko przeglądać, możesz wyeksportować ślad wraz ze wszystkimi plikami multimedialnymi i przeglądać je w [edytorze JOSM](https://josm.openstreetmap.de/). Należy pamiętać, że pliki multimedialne muszą być umieszczone w odpowiednim folderze. Możesz dowiedzieć się, który to folder, klikając wideo. Pojawi się powiadomienie, że plik jest niedostępny, umieść poprawny plik w określonym folderze.
+Aby później wszystko przeglądać, możesz wyeksportować ślad wraz ze wszystkimi plikami multimedialnymi i przeglądać je w [edytorze JOSM](https://josm.openstreetmap.de/). Pamiętaj, że pliki multimedialne muszą być umieszczone w odpowiednim folderze. Możesz dowiedzieć się, który to folder, klikając na wideo. Pojawi się powiadomienie, że plik jest niedostępny, umieść prawidłowy plik w określonym folderze.
+
 
 ## Powiązane artykuły {#related-articles}
 

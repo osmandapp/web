@@ -1,7 +1,7 @@
 ---
-source-hash: 5920278abcfe315d7fbfdbeb177097e48bdb3e0b7a6127b1def7c80cbfc2a59a
+source-hash: 0c3b5e8e7cf6ef6e151b2af4c26f3e274170841399bcaf73871ab607bf13fd43
 sidebar_position: 8
-title: Luoghi popolari
+title: Luoghi Popolari
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,14 +19,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-La funzione **Luoghi popolari** di OsmAnd evidenzia punti di riferimento e attrazioni notevoli utilizzando dati strutturati aperti da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/). Aiuta gli utenti a esplorare destinazioni ben note con descrizioni multilingue e foto.
+La funzione **Luoghi Popolari** in OsmAnd evidenzia punti di riferimento e attrazioni notevoli utilizzando dati strutturati aperti da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/). Aiuta gli utenti a esplorare destinazioni ben note con descrizioni multilingue e foto.
 
-Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti di OpenStreetMap (OSM). È limitato ai POI con riferimenti Wikidata.
+Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti OpenStreetMap (OSM). È limitato ai POI con riferimenti Wikidata.
 
 Attualmente, il database curato include circa **50.000-150.000 luoghi più votati** a livello globale, selezionati da oltre **1 milione** di oggetti Wikidata + OSM.
 
 :::note
-*Questa è la prima versione della funzione Luoghi popolari. Il feedback è ben accetto su [GitHub](https://github.com/osmandapp/OsmAnd)*.
+*Questa è la prima versione della funzione Luoghi Popolari. Il feedback è benvenuto su [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -42,7 +42,7 @@ Attualmente, il database curato include circa **50.000-150.000 luoghi più votat
 
 ### Fonti di dati
 
-I **Luoghi popolari** si basano su contenuti strutturati di [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/).
+I **Luoghi Popolari** si basano su contenuti strutturati da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/).
 
 Vengono visualizzati solo i POI con un **ID Wikidata** collegato. Questi ID collegano gli oggetti della mappa a nomi, descrizioni e immagini verificati.
 
@@ -51,16 +51,16 @@ Vengono visualizzati solo i POI con un **ID Wikidata** collegato. Questi ID coll
 Scopri come trovare un ID Wikidata: [Wikipedia: Trovare un ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
-## Come usare {#how-to-use}
+## Come si usa {#how-to-use}
 
 <InfoAndroidOnly/>
 
-La funzione **Luoghi popolari** include sia un elenco curato di punti di riferimento vicini sia un livello di POI basati su Wikipedia sulla mappa.
+La funzione **Luoghi Popolari** include sia un elenco curato di punti di riferimento vicini sia un livello di POI basati su Wikipedia sulla mappa.
 
-Esistono due modi principali per accedere a questa funzione:
+Ci sono due modi principali per accedere a questa funzione:
 
 - **Versione gratuita**  
-  Accesso tramite [Ricerca](#explore-in-search) per esplorare i luoghi vicini in visualizzazione elenco.  
+  Accedi tramite [Cerca](#explore-in-search) per esplorare i luoghi vicini in visualizzazione elenco.  
   *<Translate android="true" ids="android_button_seq"/>*. Vai a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
 - **Versioni a pagamento** *(Maps+ e OsmAnd Pro)*  
@@ -89,7 +89,7 @@ Vai a: *<Translate android="true" ids="map_widget_search,shared_string_explore,p
 
 </Tabs>
 
-La sezione **<Translate android="true" ids="popular_places_nearby"/>** visualizza un elenco scorrevole di punti di riferimento più votati vicino alla tua posizione attuale. Ogni elemento include:
+La sezione **<Translate android="true" ids="popular_places_nearby"/>** visualizza un elenco scorrevole dei punti di riferimento più votati vicino alla tua posizione attuale. Ogni elemento include:
 
 - Nome del luogo.
 - Breve descrizione.
@@ -117,26 +117,26 @@ Per usarla **offline**, è necessario un abbonamento [Maps+ o OsmAnd Pro](../pur
 
 **<Translate android="true" ids="android_button_seq"/>**. Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Menu Luoghi popolari](@site/static/img/map/popular_places/popular_places_menu.png)
+![Menu luoghi popolari](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
 </Tabs>
 
-La funzione **Luoghi popolari (Wikipedia)** è disponibile nel [menu Configura mappa](./configure-map-menu.md). Per visualizzare i luoghi popolari direttamente sulla mappa, abilita il livello POI con dati da Wikipedia utilizzando le immagini di Wikidata.
+La funzione **Luoghi Popolari (Wikipedia)** è disponibile nel [menu Configura mappa](./configure-map-menu.md). Per visualizzare i luoghi popolari direttamente sulla mappa, abilita il livello POI con i dati di Wikipedia utilizzando le immagini di Wikidata.
 
 Prima di utilizzare questa funzione:
 
-- Assicurati che il [Plugin Wikipedia](../plugins/wikipedia.md) sia abilitato.
+- Assicurati che il [plugin Wikipedia](../plugins/wikipedia.md) sia abilitato.
 - Scarica i dati di Wikipedia per la tua regione se desideri utilizzarli offline.
 
 ### Opzioni livello
 
-Una volta abilitate, diventano disponibili le seguenti opzioni:
+Una volta abilitate, le seguenti opzioni diventano disponibili:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Attiva/disattiva i POI di Wikipedia sulla mappa.
 
-- **Fonte POI** – Passa tra:
+- **Sorgente POI** – Passa tra:
   - *Modalità offline* (gli articoli di Wikipedia devono essere scaricati).
   - *Modalità solo online* (utilizza dati e immagini in tempo reale).
 
@@ -167,9 +167,9 @@ Toccando un POI sulla mappa si apre il [menu contestuale POI](./map-context-menu
 
 </Tabs>
 
-Questa è una sezione all'interno del [menu contestuale POI](./map-context-menu.md) che visualizza un'anteprima fotografica del Luogo popolare (Wikipedia) selezionato. È possibile scorrere orizzontalmente per sfogliare le foto disponibili, oppure toccare un'immagine qualsiasi per aprirla in [modalità a schermo intero](#gallery).
+Questa è una sezione all'interno del [menu contestuale POI](./map-context-menu.md) che visualizza un'anteprima fotografica del Luogo Popolare (Wikipedia) selezionato. È possibile scorrere orizzontalmente per sfogliare le foto disponibili, o toccare un'immagine per aprirla in [modalità a schermo intero](#gallery).
 
-Scopri di più sulle opzioni aggiuntive nella sezione [Azioni](#actions) e [Galleria](#gallery).
+Scopri di più sulle opzioni aggiuntive nelle sezioni [Azioni](#actions) e [Galleria](#gallery).
 
 
 <!-- 
@@ -189,7 +189,7 @@ Nel menu contestuale della mappa Come accedere:
 
 - Tocca il pulsante **Mostra tutto** (Android) / **Visualizza tutto** (iOS) per aprire la [galleria](#gallery) in modalità a schermo intero, dove puoi scorrere tutte le foto disponibili per la posizione selezionata.
 
-- Tocca una foto qualsiasi per visualizzarla a [schermo intero](#gallery) e accedere alle azioni disponibili:  
+- Tocca una foto per visualizzarla a [schermo intero](#gallery) e accedere alle azioni disponibili:  
   **Condividi**, **Dettagli**, **Apri nel browser** e **Scarica**.
 
 
@@ -214,18 +214,18 @@ Nel menu contestuale della mappa Come accedere:
 </Tabs>
 
 
-Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. È possibile scorrere tutte le foto disponibili. Toccando una foto si apre brevemente una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*  
+Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. Puoi scorrere tutte le foto disponibili. Toccando una foto si apre brevemente una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*  
 
-È inoltre possibile eseguire le seguenti azioni su ogni foto:
+È inoltre possibile eseguire le seguenti azioni su ciascuna foto:
 
 - **Condividi**  
-  Condividi l'immagine selezionata utilizzando qualsiasi app compatibile installata sul tuo dispositivo (ad esempio, messaggistica, e-mail o social media). Il contenuto condiviso include l'immagine e il suo link di origine (se disponibile).
+  Condividi l'immagine selezionata utilizzando qualsiasi app compatibile installata sul tuo dispositivo (ad esempio, messaggistica, e-mail o social media). Il contenuto condiviso include l'immagine e il suo link sorgente (se disponibile).
 
 - **Dettagli**  
-  Apri una vista dettagliata che mostra i metadati sull'immagine, inclusi: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Fonte* e *Link diretto*
+  Apri una vista dettagliata che mostra i metadati dell'immagine, inclusi: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Sorgente* e *Link diretto*
 
 - **Apri nel browser**  
-  Avvia la pagina di origine dell'immagine (solitamente su [Wikimedia Commons](https://commons.wikimedia.org/)) nel tuo browser predefinito. Ciò ti consente di visualizzare l'immagine completa, le informazioni sulla licenza e i contenuti correlati.
+  Avvia la pagina sorgente dell'immagine (solitamente su [Wikimedia Commons](https://commons.wikimedia.org/)) nel tuo browser predefinito. Ciò ti consente di visualizzare l'immagine completa, le informazioni sulla licenza e i contenuti correlati.
 
 - **Scarica**  
   Salva l'immagine nella memoria del tuo dispositivo. L'immagine scaricata può essere trovata nella cartella Download predefinita del tuo dispositivo e accessibile offline.
@@ -275,7 +275,7 @@ Su **iOS**, una pressione prolungata su una foto apre un menu contestuale con az
 
 </Tabs>
 
-La schermata **Dettagli** fornisce i metadati completi per la foto selezionata, inclusi: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Fonte* e *Link diretto*
+La schermata **Dettagli** fornisce i metadati completi per la foto selezionata, inclusi: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Sorgente* e *Link diretto*
 
 
 ## Articoli correlati

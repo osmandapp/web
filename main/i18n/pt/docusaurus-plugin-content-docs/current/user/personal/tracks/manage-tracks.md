@@ -1,5 +1,5 @@
 ---
-source-hash: 61247292af1aa1532bdbb133f67761a221b4967bdccb328e710358ccdfd2084c
+source-hash: ccc92258ad1865c820ecfed771b07e1d48a441845c435a996fe12367c3ecf9df
 sidebar_position: 2
 title: Gerenciar Trilhas
 ---
@@ -59,9 +59,9 @@ Você pode adicionar trilhas no OsmAnd das seguintes maneiras:
 
 1. **[Importar](./manage-tracks.md#import--export-track)** uma trilha de uma fonte externa.
 2. Criar uma nova trilha no aplicativo usando a ferramenta **[Planejar uma rota](../../plan-route/create-route.md)**.
-3. Gravar trilha no aplicativo usando o plugin **[Gravação de viagem](../../plugins/trip-recording.md)**.
+3. Gravar trilha no aplicativo usando o plugin **[Gravação de Viagem](../../plugins/trip-recording.md)**.
 4. Inserir múltiplos pontos por coordenadas e salvá-los como uma trilha usando a ferramenta **[Entrada de coordenadas](../../plan-route/coordinate-input.md)**.
-5. Você também pode adicionar **Pontos de passagem** a uma nova trilha via **[Menu de contexto](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+5. Você também pode adicionar **Pontos de Referência** a uma nova trilha via **[Menu de Contexto](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
 
 
 ## Gerenciar Trilhas {#manage-tracks}
@@ -70,7 +70,7 @@ Você pode adicionar trilhas no OsmAnd das seguintes maneiras:
 
 <TabItem value="android" label="Android">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> aba*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> aba*
 
 ![Meus Lugares com trilhas no Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,7 +78,7 @@ Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Meus Lugares com trilhas no iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -86,16 +86,16 @@ Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Todas as trilhas já gravadas, criadas ou importadas são exibidas automaticamente na pasta [Meus Lugares](../../personal/myplaces.md) na aba *Trilhas*. Elas são organizadas por pasta ou exibidas em uma lista abaixo delas.
+Todas as trilhas já gravadas, criadas ou importadas são automaticamente exibidas na pasta [Meus Lugares](../../personal/myplaces.md) na aba *Trilhas*. Elas são organizadas por pasta ou exibidas em uma lista abaixo delas.
 
 
-### Menu de Trilha {#track-menu}
+### Menu da Trilha {#track-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Meus Lugares com trilhas no Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -103,7 +103,7 @@ Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Menu de contexto de uma trilha no iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -111,7 +111,7 @@ Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>  
 
-Cada trilha, como as pastas, tem um menu, permitindo que você gerencie as trilhas de forma eficiente. Veja como acessá-lo:
+Cada trilha, assim como as pastas, possui um menu, permitindo que você gerencie as trilhas de forma eficiente. Veja como acessá-lo:
 
 - *Android* - toque no *menu de três pontos* no campo da trilha.
 - *iOS* - toque e segure a trilha desejada na lista.
@@ -130,7 +130,7 @@ O menu oferece as seguintes ações:
 
 - **Compartilhar** — Permite compartilhar a trilha selecionada com outras pessoas.
 
-- **Carregar modificações para o OSM** (*iOS*) — [Carrega as alterações](../../plugins/osm-editing.md#gps-track) que você fez na trilha diretamente para o *OpenStreetMap*.
+- **Carregar modificações para OSM** (*iOS*) — [Carregue as alterações](../../plugins/osm-editing.md#gps-track) que você fez na trilha diretamente para o *OpenStreetMap*.
 
 - **Editar** (*iOS*) — Use a ferramenta [Planejar uma rota](../../plan-route/create-route.md#modify-gpx-track) para modificar trilhas.
 
@@ -151,13 +151,13 @@ O menu oferece as seguintes ações:
 
 <TabItem value="android" label="Android">
 
-![Função de pesquisa de trilhas dos meus lugares Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![Função de busca de trilhas em Meus Lugares Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Função de pesquisa de trilhas dos meus lugares iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Função de busca de trilhas em Meus Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
 
 </TabItem>
 
@@ -168,7 +168,7 @@ Toque no botão &#x1F50D; na parte superior da tela do dispositivo para abrir o 
 Disponível:
 
 - Pesquisar por nome da trilha.
-- [Classificar por](#sort-by) para uma pesquisa melhor se você não conseguir lembrar o título.
+- [Classificar por](#sort-by) para uma melhor pesquisa, caso você não se lembre do título.
 - [Filtrar](./smart-folder.md#search-filter) (*apenas Android*) se você precisar das características específicas da trilha.
 
 
@@ -178,13 +178,13 @@ Disponível:
 
 <TabItem value="android" label="Android">
 
-![Função de classificação de trilhas dos meus lugares Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![Função de classificação de trilhas em Meus Lugares Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trilhas dos meus lugares iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Trilhas em Meus Lugares iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
 
 </TabItem>
 
@@ -198,11 +198,11 @@ Depois de fazer sua escolha, as seguintes etapas são fornecidas:
 
 - **Compartilhar** (*Android*) / **Exportar** (*iOS*) — Se você deseja compartilhar dados selecionados com outros usuários ou salvá-los em um serviço de nuvem, o recurso *Compartilhar/Exportar* permite enviar trilhas e pastas usando diferentes métodos de compartilhamento.
 
-- **Carregar para o OpenStreetMap** — Você pode enviar trilhas selecionadas para o OpenStreetMap, contribuindo para o desenvolvimento e melhoria dos dados.
+- **Carregar para OpenStreetMap** — Você pode enviar trilhas selecionadas para o OpenStreetMap, contribuindo para o desenvolvimento e melhoria dos dados.
 
 - **Mover** — Você pode organizar seus dados movendo trilhas e pastas selecionadas para outras pastas.
 
-- [Alterar atividade](../../map/tracks/track-context-menu.md#track-information-activity) — Esta ação permite alterar o tipo de atividade, por exemplo, para *Carro*, *Esporte Motorizado de Aventura*, *Mochilão* ou outros, para a trilha selecionada.
+- [Alterar atividade](../../map/tracks/track-context-menu.md#track-information-activity) — Esta ação permite alterar o tipo de atividade, por exemplo, para *Carro*, *Esportes a Motor de Aventura*, *Mochilão* ou outros, para a trilha selecionada.
 
 - [Alterar aparência](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Esta opção permite personalizar a aparência das trilhas selecionadas, tornando-as mais visíveis e reconhecíveis no mapa.
 
@@ -215,13 +215,13 @@ Depois de fazer sua escolha, as seguintes etapas são fornecidas:
 
 <TabItem value="android" label="Android">
 
-![Função de classificação de trilhas dos meus lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Função de classificação de trilhas em Meus Lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Função de classificação de trilhas dos meus lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Função de classificação de trilhas em Meus Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
 
 </TabItem>
 
@@ -257,19 +257,19 @@ O OsmAnd oferece uma maneira fácil de classificar suas trilhas, ajudando você 
 
 <TabItem value="android" label="Android">
 
-![Função de classificação de trilhas dos meus lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![Função de classificação de trilhas em Meus Lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Função de classificação de trilhas dos meus lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Função de classificação de trilhas em Meus Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Se você quiser classificar [subpastas](#folder-actions), vá para o menu de três pontos dentro da pasta selecionada e selecione as [opções](#sort-by) necessárias.  
+Se você deseja classificar [subpastas](#folder-actions), vá para o menu de três pontos dentro da pasta selecionada e selecione as [opções](#sort-by) necessárias.  
 
 A opção de classificação selecionada é aplicada não apenas à subpasta atual, mas também a todas as pastas aninhadas e trilhas em todos os níveis. Isso garante uma estrutura consistente em seus dados salvos.
 
@@ -310,7 +310,7 @@ Como abrir o menu da pasta:
 
 - [Alterar aparência padrão](../../map/tracks/appearance.md) (*Android*) / **Aparência** (*iOS*) — Altera a aparência de exibição de todas as trilhas na pasta.
 
-- [Exportar](../../personal/import-export.md) — Abre a aba *Menu → Configurações → Ações* para exportar todas as trilhas da pasta como um arquivo [`.osf`](../../personal/import-export.md#export).
+- [Exportar](../../personal/import-export.md) — Abre a *Aba Menu → Configurações → Ações* para exportar todas as trilhas da pasta como um [arquivo `.osf`](../../personal/import-export.md#export).
 
 - [Mover](#track-folder) — Permite mover a pasta para outra pasta existente ou criar uma nova.
 
@@ -324,7 +324,7 @@ Como abrir o menu da pasta:
 
 <TabItem value="android" label="Android">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> aba*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> aba*
 
 ![Meus Lugares com trilhas no Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -332,7 +332,7 @@ Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Meus Lugares com trilhas no iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
@@ -340,17 +340,17 @@ Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Na parte inferior da lista na aba *Trilhas*, e abaixo da lista de trilhas **em cada uma de suas pastas**, há uma seção de informações que permite visualizar as estatísticas de resumo geral para as trilhas na pasta selecionada. Todos os valores são exibidos nas [unidades](../../personal/profiles.md#units--formats) que você selecionou.
+Na parte inferior da lista na aba *Trilhas*, e abaixo da lista de trilhas **em cada uma de suas pastas**, há uma seção de informações que permite visualizar as estatísticas resumidas gerais das trilhas na pasta selecionada. Todos os valores são exibidos nas [unidades](../../personal/profiles.md#units--formats) que você selecionou.
 
 - *Número de **Trilhas** na pasta* — Exibe o número de trilhas contidas na pasta selecionada.
 
-- *Soma total de* **Distâncias** — O comprimento total de todas as trilhas na pasta selecionada, medido nas unidades que você selecionou, é exibido.
+- *Soma total das* **Distâncias** — O comprimento total de todas as trilhas na pasta selecionada, medido nas unidades que você selecionou, é exibido.
 
-- *Soma de* **Subidas** — Os dados indicam a elevação vertical total em todas as trilhas na pasta selecionada.
+- *Soma das* **Subidas** — Os dados indicam a elevação vertical total em todas as trilhas na pasta selecionada.
 
-- *Soma de* **Descidas** — Este parâmetro é a soma das descidas verticais em todas as trilhas na pasta selecionada.
+- *Soma das* **Descidas** — Este parâmetro é a soma das descidas verticais em todas as trilhas na pasta selecionada.
 
-- *Soma do tempo de* **Duração** — Isso exibe o tempo total gasto para completar todas as trilhas na pasta selecionada.
+- *Soma do tempo de* **Duração** — Isso exibe o tempo total levado para completar todas as trilhas na pasta selecionada.
 
 - *Tamanho total dos arquivos baixados em MB* — O tamanho total dos arquivos baixados em megabytes mostra quanto espaço todas as trilhas na pasta selecionada ocupam em seu dispositivo.
 
@@ -361,17 +361,17 @@ Na parte inferior da lista na aba *Trilhas*, e abaixo da lista de trilhas **em c
 
 <TabItem value="android" label="Android">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Função de classificação de trilhas dos meus lugares Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![Função de classificação de trilhas em Meus Lugares Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Trilhas dos meus lugares iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Trilhas em Meus Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
 
 </TabItem>
 
@@ -393,7 +393,7 @@ Como abrir as ações da pasta:
 
 - [Adicionar pasta inteligente](../tracks/smart-folder.md#how-to-create-smart-folder) — Classifique automaticamente rotas e trilhas com base nos critérios que você definir.
 
-- [Importar](#import) — Carregue arquivos GPX ou outras trilhas do seu dispositivo para o OsmAnd para uso offline.
+- [Importar](#import) — Carregue arquivos GPX ou outros arquivos de trilha do seu dispositivo para o OsmAnd para uso offline.
 
 - **Adicionar nova pasta** — Para organizar suas rotas e trilhas em categorias lógicas, coloque-as em pastas diferentes. Isso ajuda a estruturar suas informações de navegação.
 
@@ -404,7 +404,7 @@ Como abrir as ações da pasta:
 
 <TabItem value="android" label="Android">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Meus Lugares com trilhas no Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -412,7 +412,7 @@ Ir para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
 
 ![Menu de contexto de uma trilha no iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
@@ -422,7 +422,7 @@ Ir para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 Você pode excluir uma pasta com todas as trilhas que ela contém. Para fazer isso:
 
-- Toque no *menu de três pontos* no campo da pasta para excluir.
+- Toque no *menu de três pontos* no campo da pasta a ser excluída.
 - Na parte inferior do menu, encontre a opção **Excluir Pasta**.
 - ***NOTA: Esta ação é irreversível.***
 
@@ -447,8 +447,8 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
     *Opções adicionais:*
 
-    - **Arquivos GPX de trilha única** - importe a trilha inteira diretamente.
-    - **Arquivos GPX de várias trilhas** - escolha importar o arquivo GPX único ou selecione trilhas específicas.
+    - **Arquivos GPX de trilha única** - importam a trilha inteira diretamente.
+    - **Arquivos GPX de múltiplas trilhas** - escolha importar o arquivo GPX único ou selecionar trilhas específicas.
 
 ***NOTA:*** *As trilhas adicionadas manualmente à pasta OsmAnd em seu dispositivo são importadas automaticamente sem reiniciar o aplicativo.*  
 
@@ -496,7 +496,7 @@ Existem várias maneiras de exportar um ou mais arquivos de trilha para qualquer
 2. Pelo *Menu Meus Lugares → Trilhas → Menu da Pasta / Trilha*:
 
     - Para [**exportar uma única trilha**](#track-menu), selecione o menu da trilha.
-    - Para [**exportação de várias trilhas**](#track-folder), selecione o menu da pasta desejada.
+    - Para [**exportar múltiplas trilhas**](#track-folder), selecione o menu da pasta desejada.
 
 3. Pelo [arquivo de backup local](../../personal/import-export.md#export-to-file). Exportando trilhas GPX como arquivos `.osf`.
 

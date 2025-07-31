@@ -1,5 +1,5 @@
 ---
-source-hash: 0353071eeb4cc978c117068bf19a65442825b1d24cf586249b32ac62e28c929f
+source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
 sidebar_position: 8
 title:  Маркери
 ---
@@ -23,13 +23,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Маркери на карті Android](@site/static/img/map/map_markers_android.png)
+![Map markers Android](@site/static/img/map/map_markers_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Маркери на карті iOS](@site/static/img/map/map_markers_ios.png)
+![Map markers iOS](@site/static/img/map/map_markers_ios.png)
 
 </TabItem>
 
@@ -37,39 +37,39 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Маркери {#markers}
 
-### Додати / Редагувати маркери {#add--edit-markers}
+### Додати/редагувати маркери {#add--edit-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Коротко або довго натисніть на карту та виберіть потрібну дію з [контекстного меню карти](../map/map-context-menu.md#add--edit-marker).
+Коротко або довго торкніться карти та виберіть потрібну дію з [контекстного меню карти](../map/map-context-menu.md#add--edit-marker).
 
-![Дія Додати/Редагувати маркер Android](@site/static/img/map/add_marker_android.png) ![Дія Позначити пройденим маркер Android](@site/static/img/map/action_pass_marker_android.png)
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Коротко або довго натисніть на карту та виберіть потрібну дію в [контекстному меню карти](../map/map-context-menu.md#add--edit-marker).
+Коротко або довго торкніться карти та виберіть потрібну дію в [контекстному меню карти](../map/map-context-menu.md#add--edit-marker).
 
-![Дія Додати/Редагувати маркер iOS](@site/static/img/map/add_marker_ios.png) ![Дія Відновити маркер Android](@site/static/img/map/action_restore_marker_android.png)
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png) ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Можна позначити точку або об'єкт, щоб полегшити планування навігації. Вам просто потрібно натиснути на іконку *прапорця* (*Android*) або *стрілки* (*iOS*) в меню, щоб відобразити напрямок та відстань до вибраної точки від вашого поточного місцезнаходження (або центральної точки карти / початкової точки дотику до карти, коли місцезнаходження вимкнено).
+Можна позначити точку або об'єкт, щоб спростити планування навігації. Вам просто потрібно торкнутися значка *прапорця* (*Android*) або *стрілки* (*iOS*) у меню, щоб відобразити напрямок та відстань до вибраної точки від вашого поточного місцезнаходження (або центральної точки карти / початкової точки дотику до карти, коли місцезнаходження вимкнено).
 
 ***Дії***:
 
-- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Розміщує новий маркер на вибраній точці.
-- **Позначити пройденим** (*Android*) / Відхилити (iOS). Деактивує маркер і переміщує його в Історію.
-- **Зробити активним** (*Android*). Переміщує маркер на верхню позицію (на верхній панелі).
+- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Розміщує новий маркер у вибраній точці.
+- **Позначити пройденим** (*Android*) / Відхилити (iOS). Деактивує маркер і поміщає його в Історію.
+- **Зробити активним** (*Android*). Переміщує маркер у верхню позицію (на верхній панелі).
 - **Відновити маркер** (*Android*). Переміщує маркер з Історії до активного списку.
 
 :::note
-Ви не можете видалити маркер негайно, спочатку потрібно його деактивувати (позначити як пройдений), щоб він перемістився в [Історію](#history), а потім ви можете остаточно видалити його з історії. Після деактивації маркер буде видалено з карти та списку маршруту.
+Ви не можете видалити маркер негайно, спочатку потрібно деактивувати (позначити як пройдений) його, щоб він перемістився до [Історії](#history), а потім ви можете остаточно видалити його з історії. Після деактивації маркер буде видалено з карти та списку маршрутів.
 :::
 
 
@@ -89,17 +89,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Список маршруту {#itinerary-list}
+### Список маршрутів {#itinerary-list}
 
-Список маршруту представляє собою впорядкований список маркерів, де перший маркер використовується у віджетах для навігації. Детальніше про це читайте у статті [Навігація за маркерами](../navigation/setup/markers-navigation.md#itinerary-list).
+Список маршрутів являє собою впорядкований список маркерів, де перший маркер використовується у віджетах для навігації. Докладніше про це читайте у статті [Навігація за маркерами](../navigation/setup/markers-navigation.md#itinerary-list).
 
 ### Групи маркерів {#marker-groups}
 
 <InfoAndroidOnly />
 
-![Групи маркерів на карті Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
+![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Маркери можна додавати та видаляти як цілу групу з групи Обраних або файлу GPX з точками маршруту. Це робить їх дуже зручними для використання в спеціальному режимі навігації - [Навігація за маркерами](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Маркери можна додавати та видаляти як цілу групу з групи Обраних або файлу GPX з маршрутними точками. Це робить їх дуже зручними для використання в спеціальному режимі навігації — [Навігація за маркерами](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Історія {#history}
 
@@ -107,13 +107,13 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Історія маркерів на карті Android](@site/static/img/personal/markers/map_markers_history_android.png)
+![Map markers History Android](@site/static/img/personal/markers/map_markers_history_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Історія маркерів на карті iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
+![Map markers History iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
 
 </TabItem>
 
@@ -122,7 +122,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Історія — це список усіх деактивованих (пройдених) маркерів. З цього списку можна остаточно видалити маркер або відновити його.
 
 
-## Вигляд на карті {#appearance-on-the-map}
+## Відображення на карті {#appearance-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -138,21 +138,21 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 Перейти до: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
-![Вигляд маркерів на карті iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Вигляд маркерів на карті iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 </TabItem>
 
 </Tabs>
 
-Меню *Вигляд на карті* — це загальне налаштування для відображення маркерів та додаткових покажчиків до них.
-У версії OsmAnd для iOS *Вигляд на карті* також є налаштуванням для відображення віджетів. Також є додаткові налаштування для [налаштування віджетів з маркерами](../widgets/markers.md#configure-marker-widgets).
+Меню *Відображення на карті* — це загальна настройка для відображення маркерів та додаткових покажчиків до них.
+У версії OsmAnd для iOS *Відображення на карті* також є налаштуванням для відображення віджетів. Також є додаткові налаштування для [конфігурації віджетів з маркерами](../widgets/markers.md#configure-marker-widgets).
 
-- **Активні маркери**. Показує інформацію про перший або два маркери у списку маркерів на карті.
+- **Активні маркери**. Показує інформацію про один або два перші маркери у списку маркерів карти.
 - **Індикація відстані** *(для iOS)*. Дозволяє вибрати, чи відображати віджети та як вони будуть відображатися: над картою (Верхня панель) або з правого боку екрана (Віджети).
-- **Стрілки на карті**. Вказує напрямок до відстежуваного маркера (одного або двох) як стрілка на карті. Якщо маркер знаходиться у видимій частині карти, стрілка не відображається.
-- **Лінія напрямку**. Показує напрямок, як пунктирна лінія, від певної точки на карті до відстежуваного маркера по прямій лінії.
-- ***Один дотик*** активний (*для Android*). Одним дотиком до потрібного маркера на карті цей маркер переміщується на верх списку активних маркерів на карті без відкриття контекстного меню.
-- **Залишати пройдені маркери на карті** *(для Android)*. Маркери, додані як група Обраних або точки маршруту GPX, позначені як Пройдені, залишаться на карті. Якщо група не активна, маркери зникнуть з карти.
+- **Стрілки на карті**. Вказує напрямок до відстежуваного маркера (одного або двох) у вигляді стрілки на карті. Якщо маркер знаходиться у видимій частині карти, стрілка не відображається.
+- **Лінія напрямку**. Показує напрямок, у вигляді пунктирної лінії, від певної точки на карті до відстежуваного маркера по прямій.
+- ***Один дотик*** активний (*для Android*). Одним дотиком до потрібного маркера на карті цей маркер переміщується на початок списку активних маркерів карти без відкриття контекстного меню.
+- **Зберігати пройдені маркери на карті** *(для Android)*. Маркери, додані як група Обраних або маршрутні точки GPX, позначені як "Пройдені", залишаться на карті. Якщо група неактивна, маркери зникнуть з карти.
 
 
 ## Планування маршруту для маркерів {#plan-route-for-markers}
@@ -161,22 +161,22 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Планування маршруту для маркерів на карті Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Параметри планування маршруту для маркерів на карті Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Map markers Plan Route points Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Map markers Plan Route Options Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Використовуючи функціонал інструменту Планування маршруту в списку Маркерів, ви можете сортувати *Маркери* *Від дверей до дверей*, розміщувати їх у зворотному порядку або створювати *Круговий маршрут*. Якщо ви натиснете опцію *Навігація*, *Маркери* будуть використовуватися як [проміжні пункти призначення](../navigation/setup/route-navigation.md#intermediate-destinations).
+Використовуючи функціонал інструменту "Планування маршруту" у списку маркерів, ви можете сортувати *Маркери* *від дверей до дверей*, розміщувати їх у зворотному порядку або створювати *круговий маршрут*. Якщо ви торкнетеся опції *Навігація*, *Маркери* будуть використовуватися як [проміжні пункти призначення](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Дії {#actions}
 
 <InfoAndroidOnly />
 
-![Більше маркерів на карті Android](@site/static/img/personal/markers/map_markers_more_android.png)
+![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
 - **<Translate android="true" ids="sort_by"/>**. Маркери можна сортувати у списку за назвою, близькістю, часом додавання.
-- **<Translate android="true" ids="appearance_on_the_map"/>** або **<Translate ios="true" ids="shared_string_appearance"/>**. [Налаштування маркерів на карті](#appearance-on-the-map).
+- **<Translate android="true" ids="appearance_on_the_map"/>** або **<Translate ios="true" ids="shared_string_appearance"/>**. [Налаштування для маркерів карти](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Додає маркери за [введенням координат](../plan-route/coordinate-input.md).
 - **<Translate android="true" ids="plan_route"/>**. Будує маршрут [для навігації](../navigation/setup/markers-navigation.md) за допомогою вибраних маркерів.
-- **<Translate android="true" ids="marker_save_as_track"/>**. Зберігає активні маркери у файл GPX.
+- **<Translate android="true" ids="marker_save_as_track"/>**. Зберігає активні маркери у файлі GPX.
 - **<Translate android="true" ids="move_all_to_history"/>**. Деактивує всі маркери та переміщує їх до [Історії](#history).
 
 

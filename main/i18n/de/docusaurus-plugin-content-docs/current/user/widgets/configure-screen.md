@@ -1,5 +1,5 @@
 ---
-source-hash: c8ab58e76333d6bb43b100fbf37d1adb3abf342632d71272ce2ebe8566c5ffc3
+source-hash: cbfcf0aa9a07f3ab40e670385d79d1a04431696bcbef518decc18f41ef282921
 sidebar_position: 1
 title: Bildschirm konfigurieren
 ---
@@ -23,9 +23,9 @@ Das Menü **Bildschirm konfigurieren** in OsmAnd ermöglicht es Ihnen, die Karte
 Sie können:
 
 - [Informations-](../widgets/info-widgets.md), [Navigations-](../widgets/nav-widgets.md) und [Marker-bezogene](../widgets/markers.md) Widgets hinzufügen.
-- [Schnellaktionen](../widgets/quick-action.md) und [Kartenschaltflächen](../widgets/map-buttons.md) hinzufügen.
+- [Schnellaktionen](../widgets/quick-action.md), [Benutzerdefinierte Schaltflächen](../widgets/quick-action.md#custom-buttons) und [Standardschaltflächen](../widgets/map-buttons.md) hinzufügen oder bearbeiten.
 - Widgets in Panels (oben, unten, links, rechts, Mitte) organisieren.
-- Mehrere **Seiten** innerhalb der Seitenpanels erstellen.
+- Mehrere **Seiten** innerhalb von Seitenpanels erstellen, Größe der Widgets wählen.
 - Zeilenhöhe wählen und Widget-Symbole umschalten.
 
 Alle Widgets sind [profilabhängig](../personal/profiles.md) – jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
@@ -33,19 +33,19 @@ Alle Widgets sind [profilabhängig](../personal/profiles.md) – jedes Profil ha
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png) ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png) ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
@@ -56,17 +56,17 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
@@ -85,20 +85,20 @@ Sie können Widgets in den folgenden Panels hinzufügen, neu anordnen, gruppiere
 Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 
 - **Obere und untere Panels** zeigen Widgets in Zeilen an. Sie können ein oder zwei Widgets pro Zeile platzieren und bei Bedarf mehrere Zeilen hinzufügen.
-- **Linke und rechte Panels** unterstützen mehrere Seiten. Sie können Widgets auf separaten Seiten gruppieren und zwischen ihnen wechseln.
+- **Linke und rechte Panels** unterstützen mehrere Seiten. Sie können Widgets in separate Seiten gruppieren und zwischen diesen wechseln.
 
 
 ### Widget-Katalog {#widgets-catalog}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
 
@@ -106,32 +106,32 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 
 </Tabs>
 
-***Navigations-Widgets:***
+***Navigations-Widgets:***  
 
 - [Peilung](../widgets/nav-widgets.md#bearing).
-    Dieser Satz zeigt die absolute oder relative Peilung zu einem Ziel in Winkeleinheiten an.
+    Diese Gruppe zeigt die absolute oder relative Peilung zu einem Ziel in Winkeleinheiten an.
     3 Widgets sind enthalten: *Relative Peilung*, *Magnetische Peilung*, *Wahre Peilung*.
 
 - [Höhenprofil](../widgets/nav-widgets#elevation-widget) (*Nur oben/unten*, *Nur Android*).
-    Zeigt Routenhöhe und -neigung an.
+    Zeigt Routenhöhe und Steigung an.
 
 - [Spuren](../widgets/nav-widgets#lanes) (*Nur oben/unten*).
-    Visuelle Spuranleitung.
+    Visuelle Spurenführung.
 
 - [Kartenmarkerleiste](../widgets/markers.md#configure-marker-widgets-android) (*Nur oben/unten*).
     Zeigt Entfernung/Richtung zu gespeicherten Markern an.
     Konfigurierbar für 1 oder 2 Marker.
 
 - [Navigationspunkt](../widgets/nav-widgets.md#navigation-points).
-    Der Satz zeigt die verbleibende Entfernung zu einem Ziel, einem Zwischenpunkt, die Ankunftszeit an einem Zwischenpunkt oder die Reisezeit für eine berechnete Route an.
+    Diese Gruppe zeigt die verbleibende Entfernung zu einem Ziel, einem Zwischenpunkt, die Ankunftszeit an einem Zwischenpunkt oder die Reisezeit für eine berechnete Route an.
     4 Widgets sind enthalten: [Entfernung zum Ziel](../widgets/nav-widgets.md#distance-to-destination), [Entfernung zum Zwischenpunkt](../widgets/nav-widgets.md#distance-to-intermediate), [Zeit zum Zwischenpunkt](../widgets/nav-widgets.md#time-to-intermediate), [Zeit zum Ziel](../widgets/nav-widgets.md#time-to-destination).
 
 - [Routenmanöver](../widgets/nav-widgets.md#next-turn) (*Nur linkes/rechtes Panel*).
-    Dieser Satz wird während der Navigation aktiviert und zeigt die Entfernung und den Pfeil zum nächsten Manöver an.
+    Diese Gruppe wird während der Navigation aktiviert und zeigt die Entfernung und den Pfeil zum nächsten Manöver an.
     3 Widgets sind enthalten: *Nächste Abbiegung*, *Nächste Abbiegung (klein)*, *Zweitnächste Abbiegung*.
 
 - [Geschwindigkeitsbegrenzung](../widgets/nav-widgets.md#speed-limit).
-    Zeigt die aktuelle Geschwindigkeitsbegrenzung für die Straße an.
+    Anzeige der aktuellen Geschwindigkeitsbegrenzung für die Straße.
 
 - [Tachometer](../widgets/info-widgets.md#speedometer).
     Zeigt die aktuelle Geschwindigkeit basierend auf GPS-Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an.
@@ -144,7 +144,7 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 ***Informations-Widgets:***
 
 - [Höhe](../widgets/info-widgets.md#altitude-widgets).
-    Der Satz zeigt die Höhe über dem Meeresspiegel für den aktuellen Standort oder für den aktuellen Kartenausschnitt an.
+    Diese Gruppe zeigt die Höhe über dem Meeresspiegel für den aktuellen Standort oder für den aktuellen Kartenausschnitt an.
     2 Widgets sind enthalten: *Höhe: aktueller Standort*, *Höhe: Kartenausschnitt*.
 
 - [Durchschnittsgeschwindigkeit](../widgets/info-widgets.md#average-speed-widget).
@@ -154,7 +154,7 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
     Zeigt den Batteriestand des Geräts an.
 
 - [Koordinaten-Widgets](../widgets/info-widgets#coordinates-widget) (*Nur oben/unten*).
-    Dieser Satz zeigt die geografischen Koordinaten des aktuellen Standorts an.
+    Diese Gruppe zeigt die geografischen Koordinaten des aktuellen Standorts an.
     2 Widgets sind enthalten: *Koordinaten: Kartenausschnitt*, *Koordinaten: aktueller Standort*.
 
 - [Aktuelle Geschwindigkeit](../widgets/info-widgets.md#speed).
@@ -171,7 +171,7 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
     Zeigt die Anzahl der erkannten Satelliten an.
 
 - [Kartenmarker](../widgets/markers.md).
-    Der Satz zeigt die Entfernung oder die geschätzte Ankunftszeit (ETA) für die ersten beiden Marker in [der Liste](https://osmand.net/docs/user/personal/markers#itinerary-list) an.
+    Diese Gruppe zeigt die Entfernung oder die geschätzte Ankunftszeit (ETA) für die ersten beiden Marker in [der Liste](https://osmand.net/docs/user/personal/markers#itinerary-list) an.
     2 Widgets sind enthalten: *Erster Marker*, *Zweiter Marker*.
 
 - [Radius-Lineal](../widgets/info-widgets.md#radius-ruler).
@@ -183,18 +183,18 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 
 <br/>
 
-***Plugin-basierte Widgets:***
+***Plugin-basierte Widgets:***  
 
 - [Audio-/Video-Notizen](../widgets/info-widgets.md#audiovideo-notes-widget).
     Schneller Zugriff zum Aufnehmen von Medien.
-    4 Widgets sind enthalten: *Auf Anfrage*, *Audio aufnehmen*, *Video aufnehmen*, *Foto machen*.
+    4 Widgets sind enthalten: *Auf Anfrage*, *Audio aufnehmen*, *Video aufnehmen*, *Foto aufnehmen*.
 
 - [Entwickler-Widgets](../widgets/info-widgets.md#developer-widgets).
     Zeigt optionale Informationen an.
-    5 Widgets sind enthalten: *Karten-Rendering-FPS*, *Kameraneigung*, *Kamera-Höhe*, *Zoomstufe*, *Entfernung von Kamera zu Ziel*, *Verfügbarer RAM*.
+    5 Widgets sind enthalten: *Karten-Rendering FPS*, *Kamera-Neigung*, *Kamera-Höhe*, *Zoomstufe*, *Entfernung von Kamera zum Ziel*, *Verfügbarer RAM*.
 
 - [Widgets für externe Sensoren](../widgets/info-widgets.md#external-sensors-widgets).
-    Der Satz hilft, Daten von BLE/ANT+-Sensoren in Echtzeit zu verfolgen.
+    Diese Gruppe hilft, Daten von BLE/ANT+-Sensoren in Echtzeit zu verfolgen.
     6 Widgets sind enthalten: *Herzfrequenz*, *Fahrradleistung* (*Nur Android*), *Fahrradtrittfrequenz*, *Fahrradgeschwindigkeit*, *Fahrradentfernung*, *Temperatur*.
 
 - [Mapillary](../widgets/info-widgets.md#mapillary-widget).
@@ -206,8 +206,8 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 - [Park-Widget](../widgets/info-widgets.md#parking-widget).
     Entfernung von der Bildschirmmitte zum gespeicherten Parkplatz.
 
-- [Reiseaufzeichnung](../widgets/info-widgets.md#trip-recording-widgets).
-    Startet und stoppt die Track-Aufzeichnung und zeigt Track-Aufzeichnungsdaten an.
+- [Fahrtaufzeichnung](../widgets/info-widgets.md#trip-recording-widgets).
+    Startet und stoppt die Streckenaufzeichnung und zeigt Streckenaufzeichnungsdaten an.
     4 Widgets sind enthalten: *Entfernung*, *Dauer*, *Bergauf*, *Bergab*.
 
 - [Wetter](../widgets/info-widgets.md#weather-widgets).
@@ -224,23 +224,42 @@ Jedes Panel unterstützt unterschiedliche Layout-Verhaltensweisen:
 
 ### Zeilen {#rows}
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png) ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
 
 Die Funktion **Zeilenmodus** ermöglicht es Ihnen, so viele Zeilen wie nötig zu den oberen und unteren Panels hinzuzufügen. Sie können mehrere Widgets pro Zeile anzeigen, wodurch die Menge der sichtbaren Informationen erhöht wird.
 
 ***So konfigurieren Sie Zeilen:***
 
-- **Widgets hinzufügen**. Wählen Sie aus der Liste der *Verfügbaren Widgets*.
-- **Reihenfolge ändern.** Tippen Sie auf die Schaltfläche *Reihenfolge ändern*, um Widgets anzuordnen.
-- **Zeilen hinzufügen.** Verwenden Sie die Schaltfläche *Zeile hinzufügen*, um neue Zeilen für Widgets zu erstellen.
-- **Widgets verschieben**. Verschieben Sie Widgets zwischen Zeilen.
-- **Änderungen anwenden.** Tippen Sie auf die Schaltfläche *Anwenden*, um die Konfiguration zu speichern.
+- **Widgets hinzufügen**: Tippen Sie auf die Schaltfläche *Plus* (Android) oder *Widget hinzufügen* (iOS) und wählen Sie dann aus der Liste der verfügbaren Widgets.
+- **Widgets neu anordnen**: Tippen Sie auf die Schaltfläche *Bleistift* (Android) oder *Bearbeiten* (iOS), um die Widgets neu anzuordnen.
+- **Zeilen hinzufügen**: Tippen Sie auf die Schaltfläche *Zeile hinzufügen*, um neue Zeilen für Ihre Widgets zu erstellen.
+- **Widgets verschieben**: Ziehen Sie Widgets zwischen verschiedenen Zeilen.
+- **Widget-Einstellungen aufrufen**: Tippen Sie auf das *"i"-Symbol* (Android) oder den *">"-Pfeil* (iOS), um die Widget-Einstellungen zu öffnen.
+- **Änderungen speichern**: Tippen Sie auf *Anwenden* (Android) oder *Fertig* (iOS), um das Layout zu speichern.
+
 
 #### Widget-Typen und Einschränkungen {#widget-types-and-restrictions}
 
-Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** auf den oberen und unteren Panels hinzuzufügen, um so viele Informationen wie nötig anzuzeigen.
+Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** in den oberen und unteren Panels hinzuzufügen, um so viele Informationen wie nötig anzuzeigen.
 
-- **Komplexe Widgets**. Nur ein komplexes Widget kann pro Zeile hinzugefügt werden. Dazu gehören:
+- **Komplexe Widgets**. Pro Zeile kann nur ein komplexes Widget hinzugefügt werden. Dazu gehören:
     - [Kartenmarkerleiste (*Nur Android*)](../widgets/markers.md#configure-marker-widgets-android)
     - [Straßenname](../widgets/nav-widgets#street-name)
     - [Koordinaten-Widgets](../widgets/info-widgets#coordinates-widget)
@@ -255,19 +274,19 @@ Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Bearbeiten → Seite hinzufügen*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Bearbeiten → Seite hinzufügen*  
 
 ![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Bearbeiten → Seite hinzufügen*
 
-![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
 </TabItem>
 
@@ -277,20 +296,20 @@ Widgets in den rechten und linken Panels können in **Seiten** gruppiert werden.
 
 ***So konfigurieren Sie Zeilen:***
 
-- **Seite hinzufügen**. Navigieren Sie zu den Einstellungen des linken/rechten Panels und tippen Sie auf *Bearbeiten → Seite hinzufügen*.
-- **Widgets nach Seite organisieren**. Diese Funktion ist hilfreich, wenn unterschiedliche Widget-Sätze für verschiedene Aufgaben benötigt werden, z. B. zum Navigieren oder zum Durchsuchen der Karte.
-- Seiten ermöglichen es Ihnen, **Widget-Sätze** für bestimmte Szenarien zu erstellen, wodurch der Arbeitsablauf verbessert und die Unordnung reduziert wird.
+- **Eine Seite hinzufügen**. Navigieren Sie zu den Einstellungen des linken/rechten Panels und tippen Sie auf *Bearbeiten → Seite hinzufügen*.
+- **Widgets nach Seite organisieren**. Diese Funktion ist hilfreich, wenn verschiedene Sätze von Widgets für unterschiedliche Aufgaben benötigt werden, z. B. für die Navigation im Gegensatz zum Durchsuchen der Karte.
+- Seiten ermöglichen es Ihnen, **Widget-Sets** für bestimmte Szenarien zu erstellen, wodurch der Arbeitsablauf verbessert und die Unordnung reduziert wird.
 
 
 ## Widget-Einstellungen {#widget-settings}
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png) ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
 1. **Widget-Größenoptionen** (*für alle Panels*):
     Sie können die Größe von **einfachen Widgets** in den **oberen, unteren, linken und rechten Panels** anpassen:
 
     - **Klein**. Ideal für kompakte Displays, spart mehr Bildschirmplatz für Karten.
-    - **Mittel** (*Standard-Widget-Größe*). Balanciert Sichtbarkeit und Platzverbrauch.
+    - **Mittel** (*Standard-Widget-Größe*). Gleicht Sichtbarkeit und Platzverbrauch aus.
     - **Groß**. Bietet größere, besser sichtbare Widget-Informationen.
 
 2. **Ausblenden von Widget-Symbolen** (*für obere und untere Panels*):
@@ -307,7 +326,7 @@ Widgets in den rechten und linken Panels können in **Seiten** gruppiert werden.
 
     - Wählen Sie ein Widget aus, das Sie bereits zum Panel hinzugefügt haben.
     - Tippen Sie auf das *Einstellungen*-Symbol auf der rechten Seite des Widget-Feldes.
-    - Tippen Sie auf die Einstellung *Größe* und wählen Sie eine der verfügbaren Größen aus.
+    - Tippen Sie auf die Einstellung *Größe* und wählen Sie eine der verfügbaren Größen.
     - Schalten Sie im Feld *Symbol anzeigen* auf die Position Aus.
 
 
@@ -317,13 +336,13 @@ Widgets in den rechten und linken Panels können in **Seiten** gruppiert werden.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Widget dublicate](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Widget dublicate](@site/static/img/widgets/widget_context_menu_ios.png)
 
@@ -333,27 +352,27 @@ Widgets in den rechten und linken Panels können in **Seiten** gruppiert werden.
 
 Das **Widget-Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vom Kartenbildschirm aus zu verwalten und zu konfigurieren. Sie können es durch ***langes Tippen*** auf ein beliebiges Widget aufrufen, um das Layout der Widgets anzupassen, ohne die Karte zu verlassen.
 
-**Für obere und untere Panels**
+**Für obere und untere Panels**  
 
 - *Widget nach rechts/links hinzufügen:*
 
     - Wählen Sie eine Position für das neue Widget relativ zum aktuellen.
-    - Wählen Sie das Widget aus der Liste der [Verfügbaren Widgets](#widgets-for-all-panels) aus.
+    - Wählen Sie das Widget aus der Liste der [verfügbaren Widgets](#widgets-for-all-panels).
 
-**Für linke und rechte Panels**
+**Für linke und rechte Panels**  
 
 - *Widget oben/unten hinzufügen:*
 
     - Wählen Sie, ob das neue Widget über oder unter dem aktuellen Widget positioniert werden soll.
     - Tippen Sie auf das gewünschte Widget in der Liste, um es an der angegebenen Position hinzuzufügen.
 
-**Allgemeine Aktionen für alle Panels**
+**Allgemeine Aktionen für alle Panels**  
 
 - *Einstellungen*.
     - Greifen Sie auf die Einstellungen des Widgets zu (falls verfügbar), um dessen Aussehen oder Verhalten anzupassen.
 
 - *Durchschnittsgeschwindigkeit zurücksetzen*.
-    - Verfügbar für das Widget [Durchschnittsgeschwindigkeit](../widgets/info-widgets.md#average-speed).
+    - Verfügbar für das [Durchschnittsgeschwindigkeits-Widget](../widgets/info-widgets.md#average-speed).
     - Langes Tippen, um den Geschwindigkeitswert während einer Fahrt sofort zurückzusetzen.
 
 - *Löschen*.
@@ -362,9 +381,9 @@ Das **Widget-Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vo
 
 ### Kopien von Widgets {#copies-of-widgets}
 
-*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Panel*
+*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Panel*  
 
-![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
 OsmAnd ermöglicht es Ihnen, mehrere Instanzen desselben Widgets zu verschiedenen Panels oder Seiten hinzuzufügen. Diese Funktion ist besonders nützlich, wenn Sie konsistente Informationen über verschiedene Ansichten oder Profile hinweg benötigen.
 
@@ -372,16 +391,32 @@ OsmAnd ermöglicht es Ihnen, mehrere Instanzen desselben Widgets zu verschiedene
 
 - **Widget hinzufügen**. Navigieren Sie zu: *OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Panel →* **Widget hinzufügen**.
 - **Duplizieren über das Kontextmenü**. Tippen Sie auf das Widget und wählen Sie **Duplizieren** aus der Liste der Aktionen.
-- **Alternative Methode**. Wählen Sie dasselbe Widget aus der Liste der *Verfügbaren Widgets* und tippen Sie auf *Hinzufügen*.
+- **Alternative Methode**. Wählen Sie dasselbe Widget aus der Liste der *verfügbaren Widgets* und tippen Sie auf *Hinzufügen*.
 
 
 ### Verschieben oder Löschen {#move-or-delete}
 
-*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Panel*
+*OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Panel*  
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
-Sie können Widgets im **Bearbeitungsmodus** vom Anwendungsbildschirm neu anordnen oder entfernen.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
+Sie können Widgets vom Anwendungsbildschirm aus mithilfe des **Bearbeitungsmodus** neu anordnen oder entfernen.
 
 ***So verschieben Sie ein Widget:***
 
@@ -389,11 +424,11 @@ Sie können Widgets im **Bearbeitungsmodus** vom Anwendungsbildschirm neu anordn
 - Tippen Sie lange auf das **Symbol rechts** neben dem Widget.
 - Ziehen Sie es an die gewünschte Position in der Widget-Liste.
 
-***So löschen Sie ein Widget:***
+***So löschen Sie ein Widget:***  
 
 - Befolgen Sie die gleichen Schritte wie oben.
 - Tippen Sie auf das **Minus-Symbol** links neben dem Widget-Namen.
-- Bestätigen Sie die Löschung, wenn Sie dazu aufgefordert werden.
+- Bestätigen Sie das Löschen, wenn Sie dazu aufgefordert werden.
 
 
 ## Schaltflächen {#buttons}
@@ -402,7 +437,7 @@ Sie können Widgets im **Bearbeitungsmodus** vom Anwendungsbildschirm neu anordn
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -410,7 +445,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -420,13 +455,13 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 </Tabs>
 
-**Schnellaktion (Benutzerdefinierte Schaltflächen)** ermöglicht es Ihnen, eine Liste von Einzelaktionen aus allen verfügbaren [Schnellaktionen](../widgets/quick-action.md#custom-buttons) hinzuzufügen. Diese Aktionen können einer oder mehreren Widget-Schaltflächen auf dem Kartenbildschirm zugewiesen werden. Benutzerdefinierte Schaltflächen bieten schnellen Zugriff auf häufig verwendete Aktionen.
+**Schnellaktion (Benutzerdefinierte Schaltflächen)** ermöglicht es Ihnen, eine Liste einzelner Aktionen aus allen verfügbaren [Schnellaktionen](../widgets/quick-action.md#custom-buttons) hinzuzufügen. Diese Aktionen können einer oder mehreren Widget-Schaltflächen auf dem Kartenbildschirm zugewiesen werden. Benutzerdefinierte Schaltflächen bieten schnellen Zugriff auf häufig verwendete Aktionen.
 
 ### Standardschaltflächen {#default-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -434,7 +469,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
@@ -451,7 +486,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
     - [Kompass](../widgets/map-buttons.md#display-options). Zeigt an, wie die Karte auf dem Gerät ausgerichtet ist.
     3 Ansichten: *Immer sichtbar*, *Immer ausgeblendet*, *Sichtbar, wenn Karte gedreht ist*.
 
-    - [Karte konfigurieren](../map/configure-map-menu.md). Zugriff auf Optionen zur Änderung des Kartenstils, der Ebenen und zusätzlicher Einstellungen.
+    - [Karte konfigurieren](../map/configure-map-menu.md). Zugriff auf Optionen zum Ändern des Kartenstils, der Ebenen und zusätzlicher Einstellungen.
 
     - [Menü](../widgets/map-buttons.md#main-menu). Öffnet das Hauptanwendungsmenü für den Zugriff auf alle Funktionen.
 
@@ -459,25 +494,25 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
     - [Navigation](../widgets/map-buttons.md#directions). Wesentlich für die Routenplanung und den Start der Navigation.
 
-    - [Suche](../widgets/map-buttons.md#search). Öffnet das Suchwerkzeug zum Auffinden von Orten.
+    - [Suchen](../widgets/map-buttons.md#search). Öffnet das Suchwerkzeug zum Auffinden von Orten.
 
     - [Vergrößern / Verkleinern](../widgets/map-buttons.md#my-location-and-zoom). Passt den Zoomfaktor der Karte an, um mehr oder weniger Details anzuzeigen.
 
 2. Das **Drei-Punkte-Menü** auf dem Bildschirm der Standardschaltflächen enthält Aktionen wie:
 
-    - *Auf Standard zurücksetzen*. Ermöglicht es Ihnen, die Schaltflächeneinstellungen auf ihre ursprüngliche Darstellung zurückzusetzen.
-    - *Von anderem Profil kopieren*. Wählen Sie aus, von welchem Profil aus der angebotenen Liste Sie die Schaltflächeneinstellungen kopieren möchten.
+    - *Auf Standard zurücksetzen*. Ermöglicht es Ihnen, alle Schaltflächeneinstellungen auf ihr ursprüngliches Aussehen zurückzusetzen.
+    - *Von einem anderen Profil kopieren*. Wählen Sie aus der angebotenen Liste, aus welchem Profil Sie die Schaltflächeneinstellungen kopieren möchten.
 
-3. **Das Standard-Schaltflächenaussehen** (*Nur Android*) bietet eine Vielzahl von Anpassungsoptionen für diese Art von Schaltflächen. Um das Aussehen einer Schaltfläche zu ändern, tippen Sie auf die gewünschte Schaltfläche aus der Liste und wählen Sie die Option [Aussehen](#button-appearance).
+3. **Das Standard-Schaltflächen-Erscheinungsbild** (*Nur Android*) bietet eine Vielzahl von Anpassungsoptionen für diese Art von Schaltflächen. Um das Erscheinungsbild einer Schaltfläche zu ändern, tippen Sie auf die gewünschte Schaltfläche in der Liste und wählen Sie die Option [Erscheinungsbild](#button-appearance).
 
 
-### Schaltflächen-Aussehen {#button-appearance}
+### Schaltflächen-Erscheinungsbild {#button-appearance}
 
 <InfoAndroidOnly/>
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-Die Funktion *Schaltflächen-Aussehen* ermöglicht es Ihnen, das Aussehen der Schaltflächen auf Ihrer Kartenoberfläche vollständig anzupassen. Diese Anpassungsoptionen sind sowohl für *Schnellaktionen (Benutzerdefinierte Schaltflächen)* als auch für *Standardschaltflächen* verfügbar und bieten eine umfassende Kontrolle über das Erscheinungsbild der Kartenoberfläche sowie präzise Anpassungen des Schaltflächendesigns.
+Die Funktion *Schaltflächen-Erscheinungsbild* ermöglicht es Ihnen, das Aussehen der Schaltflächen auf Ihrer Kartenoberfläche vollständig anzupassen. Diese Anpassungsoptionen sind sowohl für *Schnellaktionen (Benutzerdefinierte Schaltflächen)* als auch für *Standardschaltflächen* verfügbar und bieten umfassende Kontrolle über das Erscheinungsbild der Kartenoberfläche sowie präzise Anpassungen des Schaltflächendesigns.
 
 ***Anpassungsoptionen***:
 
@@ -491,15 +526,15 @@ Die Funktion *Schaltflächen-Aussehen* ermöglicht es Ihnen, das Aussehen der Sc
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Sonstiges*
 
@@ -510,7 +545,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Entfernung per Tippen](../widgets/radius-ruler.md#distance-by-tap). Bietet die Möglichkeit, die Entfernung von Ihrer Position zum ausgewählten Punkt zu messen.
+- [Entfernung durch Tippen](../widgets/radius-ruler.md#distance-by-tap). Bietet die Möglichkeit, die Entfernung von Ihrer Position zum ausgewählten Punkt zu messen.
 - [Tachometer](../widgets/info-widgets.md#speedometer). Zeigt die aktuelle Geschwindigkeit basierend auf GPS-Daten und die begrenzte Geschwindigkeit basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an. Die angezeigten Daten hängen auch von der OsmAnd-Einstellung [Geschwindigkeitsbegrenzungstoleranz](../navigation/guidance/voice-navigation.md#speed-limit) ab.
 
 
@@ -518,13 +553,13 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png)
 
@@ -538,53 +573,53 @@ Ermöglicht es Ihnen, die Platzierung des Cursors auf *[Mein Standort](../map/in
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Der Cursor ist immer in der Mitte des Bildschirms positioniert.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mein Standort* wird leicht unterhalb der Bildschirmmitte platziert. Dieser Modus ermöglicht es Ihnen, mehr Karteninformationen vor Ihrer Bewegung zu sehen, was während der Navigation nützlich ist.
-- **<Translate android="true" ids="shared_string_automatic"/>**. Platziert *Mein Standort* abhängig von der *[Kartenausrichtung](../map/interact-with-map.md#map-orientation-modes)* (Unten - für die Bewegungsrichtung, Mitte - für alle anderen).
+- **<Translate android="true" ids="shared_string_automatic"/>**. Platziert *Mein Standort* abhängig von der *[Kartenorientierung](../map/interact-with-map.md#map-orientation-modes)* (*Unten* - für die Bewegungsrichtung, *Mitte* - für alle anderen).
 
 
 ## Aktionen {#actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
 ![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Beliebiges Panel*
 
-![Widget page](@site/static/img/widgets/widget_actions_ios.png)
+![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Zugriff auf zusätzliche Aktionen im Bildschirm "Konfigurieren" sind:
+Zugriff auf zusätzliche Aktionen im Bildschirm konfigurieren sind:
 
-- *Android*. Befindet sich im Bildschirm "Konfigurieren" am unteren Rand des Bildschirms im Abschnitt *Aktionen*: *Menü → Bildschirm konfigurieren → Aktionen*.
+- *Android*. Befindet sich im Bildschirm Konfigurieren am unteren Bildschirmrand im Abschnitt *Aktionen*: *Menü → Bildschirm konfigurieren → Aktionen*.
 - *Android / iOS*. Befindet sich auf den Bildschirmen jedes Panels im *Drei-Punkte-Menü* in der oberen rechten Ecke des Bildschirms.
 
 Verfügbare Aktionen:
 
-- **Auf Standard zurücksetzen**. Diese Funktion ermöglicht es Ihnen, alle Einstellungen auf die Standardwerte zurückzusetzen, wenn Sie neu beginnen möchten oder nur die voreingestellten Werte beim Starten von OsmAnd verwenden möchten.
-- **Von anderem Profil kopieren**. Diese Funktion ermöglicht es Ihnen, Einstellungen schnell von einem anderen Profil zu importieren, die gewünschten aus der Liste auszuwählen und zu kopieren.
+- **Auf Standard zurücksetzen**. Diese Funktion ermöglicht es Ihnen, alle Einstellungen auf die Standardwerte zurückzusetzen, wenn Sie neu beginnen oder nur die voreingestellten Werte beim Starten von OsmAnd verwenden möchten.
+- **Von einem anderen Profil kopieren**. Diese Funktion ermöglicht es Ihnen, schnell Einstellungen von einem anderen Profil zu importieren, die gewünschten aus der Liste auszuwählen und zu kopieren.
 
 
 ## Profil wechseln {#switch-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_switch_ios.png)
 
@@ -592,7 +627,7 @@ Verfügbare Aktionen:
 
 </Tabs>
 
-- Für **Android**-Geräte können Sie Profile oben auf dem Startbildschirm "Bildschirm konfigurieren" mithilfe der verfügbaren Profilsymbole ändern.
+- Für **Android**-Geräte können Sie Profile oben auf dem Startbildschirm "Bildschirm konfigurieren" mithilfe der verfügbaren Profilsymbole wechseln.
 - Wenn Sie ein **iOS**-Gerät verwenden, tippen Sie auf das Profilsymbol in der oberen Ecke des Startbildschirms "Bildschirm konfigurieren" und wählen Sie das gewünschte Profil aus der Liste aus, um es zu aktivieren.
 
 **Beachten Sie**. Die Option *Profil wechseln* zeigt nicht alle vorhandenen Profile an, sondern nur diejenigen, die im Einstellungsmenü *aktiviert* wurden.
@@ -607,4 +642,4 @@ Verfügbare Aktionen:
 - [Marker-Widgets](./markers.md)
 - [Schnellaktion](./quick-action.md)
 
-> *Zuletzt aktualisiert: Mai 2025*
+> *Zuletzt aktualisiert: Juli 2025*

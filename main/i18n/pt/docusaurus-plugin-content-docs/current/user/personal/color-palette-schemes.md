@@ -1,5 +1,5 @@
 ---
-source-hash: 3c0537caba10d048fc41eb1aafbf2fad61dfc855cb8b7c403db89f081990b44f
+source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
 sidebar_position: 5
 title: Esquemas de Cores
 ---
@@ -20,11 +20,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Recurso pago
 
-Os esquemas de cores são usados como parte dos recursos pagos [Mapas+](../purchases/index.md) e Pro <ProFeature />.
+Os esquemas de cores são usados como parte dos recursos pagos [Maps+](../purchases/index.md) e Pro <ProFeature />.
 
 :::
 
-Os esquemas de cores são usados na [colorização de rotas](#routes), [terreno do mapa](#terrain) e [mapa meteorológico](#weather), e são representados como uma parte separada das informações que podem ser exportadas, importadas e editadas para alterar o esquema de cores do mapa e a visualização dos dados.
+Os esquemas de cores são usados na [colorização de rotas](#routes), [terreno do mapa](#terrain) e [mapa meteorológico](#weather), e são representados como uma parte separada das informações que podem ser exportadas, importadas e editadas para alterar o esquema de cores do mapa e a visualização de dados.
 
 Os dados da paleta de cores estão disponíveis no menu [*Mapas e Recursos*](../personal/maps-resources.md#local).
 
@@ -70,14 +70,14 @@ Vá para: *Menu → Mapas e Recursos → Local → Cores*
 
 ### Terreno {#terrain}
 
-Os arquivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definem 3 [visualizações de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Declive* e *Altitude*. Para cada tipo, você pode ter várias paletas, por exemplo, *declive de avalanche* é fornecido por padrão.
+Os arquivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definem 3 [visualizações de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relevo, Inclinação* e *Altitude*. Para cada tipo, você pode ter várias paletas, por exemplo, *inclinação de avalanche* é fornecida por padrão.
 
 ### Rotas {#routes}
 
 As visualizações de gradiente de linha usam arquivos de paleta (`route_<type_name>_<palette_name>.txt`) para colorir trilhas GPX e Rotas:
 
-- Para [Rotas](../navigation/guidance/map-during-navigation.md#color): *Velocidade, Declive* e *Elevação (Altitude)*.
-- Para [Trilhas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidade, Declive* e *Elevação (Altitude), ou informações de sensores externos*.
+- Para [Rotas](../navigation/guidance/map-during-navigation.md#color): *Velocidade, Inclinação* e *Elevação (Altitude)*.
+- Para [Trilhas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidade, Inclinação* e *Elevação (Altitude), ou informações de sensores externos*.
 
 ### Clima {#weather}
 
@@ -92,19 +92,19 @@ A paleta de cores (`user_palette_default.txt`) é simplesmente usada para cores 
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="cor"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="cor"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="cor"/></td>
     </tr>
 </table>
 
 
-A legenda fornece uma maneira fácil de visualizar e entender as diferentes marcações no mapa. Novas paletas de cores foram adicionadas para exibir [**velocidade** para trilhas](../map/tracks/appearance#track-colors-in-gpx-files), [**tipo de linha** para rotas](../navigation/guidance/map-during-navigation.md#color), [**altitude e declive** para terreno](../plugins/topography.md#default-color-scheme) e todas as paletas de cores da [**camada de clima**](../plugins/weather.md#weather-layers).
+A legenda oferece uma maneira fácil de visualizar e entender as diferentes marcações no mapa. Novas paletas de cores foram adicionadas para exibir a [**velocidade** para trilhas](../map/tracks/appearance#track-colors-in-gpx-files), o [**tipo de linha** para rotas](../navigation/guidance/map-during-navigation.md#color), a [**altitude e inclinação** para terreno](../plugins/topography.md#default-color-scheme) e todas as paletas de cores da [**camada de clima**](../plugins/weather.md#weather-layers).
 
 
-## Editar arquivo de Paleta {#edit-palette-file}
+## Editar arquivo de paleta {#edit-palette-file}
 
-Você pode editar paletas para personalizar a aparência de mapas e rotas. Arquivos de paleta de cores próprios podem ser adicionados ao OsmAnd usando a [ferramenta de importação/exportação](./import-export.md).
+Você pode editar paletas para personalizar a aparência de mapas e rotas. Seus próprios arquivos de paleta de cores podem ser adicionados ao OsmAnd usando a [ferramenta de importação/exportação](./import-export.md).
 
 - *Rotas*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
 - *Terreno*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
@@ -114,7 +114,7 @@ Você pode editar paletas para personalizar a aparência de mapas e rotas. Arqui
 Cada linha representa um valor numérico (para a paleta de cores, é um índice) e a cor RGB. Por exemplo:
 
 ```xml
-# Arquivo TXT nomeado *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# Arquivo TXT chamado *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 graus RGBA {#0---90-degree-rgba}
 0,46,185,0,191
 # amarelo {#yellow-}
@@ -126,7 +126,7 @@ Cada linha representa um valor numérico (para a paleta de cores, é um índice)
 
 ```
 
-Depois de mover este arquivo TXT para *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, uma nova paleta aparecerá no menu Esquema de Cores.
+Após mover este arquivo TXT para *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, uma nova paleta aparecerá no menu Esquema de Cores.
 
 
 ## Leia mais {#read-more}
@@ -153,8 +153,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 </Tabs>
 
-**Ação Rápida** para alterar a paleta do Terreno. Adicionada a capacidade de alternar entre esquemas de cores de terreno, semelhante a alternar entre camadas. Isso pode ser feito usando a ferramenta [Ações Rápidas](../widgets/quick-action.md#configure-map).
-
+**Ação Rápida** para alterar a paleta do Terreno. Adicionada a capacidade de alternar entre esquemas de cores de terreno, semelhante à alternância entre camadas. Isso pode ser feito usando a ferramenta [Ações Rápidas](../widgets/quick-action.md#configure-map).
 
 ### Importar / Exportar Cores {#import--export-colors}
 
@@ -164,7 +163,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Ações de Perfil Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Ações de Perfis Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -172,7 +171,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Ações de Perfil Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Ações de Perfil Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -193,4 +192,4 @@ Você pode importar e exportar todas as paletas de cores padrão e personalizada
 - [Configurações Globais](../../user/personal/global-settings.md)
 - [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
 
-> *Última atualização: janeiro de 2025*
+> *Última atualização: Janeiro de 2025*

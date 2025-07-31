@@ -9,24 +9,24 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 <IncompleteArticle/>
 
 يدعم OsmAnd نوعين من حزم الصوت:
-- **تحويل النص إلى كلام** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) متاح في متاجر التطبيقات أو مثبت مسبقًا.
+- **تحويل النص إلى كلام** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) متوفرة في متاجر التطبيقات أو مثبتة مسبقًا.
 - **حزم الصوت المسجلة**، والتي تتضمن أصواتًا مسجلة.
 
-إذا لم تتمكن من العثور على حزمة الصوت التي تحتاجها، فيرجى اتباع الأمثلة التالية وإنشاء حزمة الصوت الخاصة بك. أمثلة - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice، الحزمة الألمانية [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip)، الحزمة الإنجليزية [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+إذا لم تتمكن من العثور على حزمة الصوت التي تحتاجها، يرجى اتباع الأمثلة التالية وإنشاء حزمة الصوت الخاصة بك. أمثلة - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice، حزمة الألمانية [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip)، حزمة الإنجليزية [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
 
-### الفرق بين حزم تحويل النص إلى كلام والحزم المسجلة {#difference-between-tts-and-recorded-packages}
+### الفرق بين TTS والحزم المسجلة {#difference-between-tts-and-recorded-packages}
 
-- يدعم محرك تحويل النص إلى كلام نطق أسماء الشوارع، والمراجع، وأسماء نقاط الاهتمام.
-- يتم تجميع جميع حزم تحويل النص إلى كلام المدعومة وتحديثها مع التطبيق.
+- يدعم محرك تحويل النص إلى كلام (Text-To-Speech) نطق أسماء الشوارع، والمراجع، وأسماء نقاط الاهتمام (POI).
+- يتم تجميع وتحديث جميع الحزم المدعومة بتحويل النص إلى كلام مع التطبيق.
 - يجب تثبيت وتحديث الحزمة المسجلة يدويًا (على الرغم من إمكانية تحديث ملف التكوين مع تحديث التطبيق).
-- قد لا تدعم الحزمة المسجلة بعض الأشكال الصحيحة، ودعمها محدود.
-- لا تتطلب الحزمة المسجلة تثبيت أي محرك تحويل نص إلى كلام خاص.
+- قد لا تدعم الحزمة المسجلة بعض الأشكال الصحيحة، والدعم محدود.
+- لا تتطلب الحزمة المسجلة تثبيت أي محرك TTS خاص.
 
 ### هيكل الحزمة {#package-structure}
 
-عادة ما يتم توزيع حزمة الصوت كملف .voice.zip، حيث يحتوي ملف zip على مجلد واحد به [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (ملف **التكوين** الرئيسي)، وملفات الصوت إذا كانت موجودة.
+عادة ما يتم توزيع حزمة الصوت كملف .voice.zip، حيث يحتوي الملف المضغوط على مجلد واحد به [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (ملف **التكوين** الرئيسي)، وملفات الصوت إذا كانت موجودة.
 
-ملفات التكوين مكتوبة بلغة JavaScript. جميع ملفات التكوين هي افتراضيًا حزم تحويل نص إلى كلام، حتى لو لم يكن هناك تحويل نص إلى كلام موجود بعد لدعم اللغة. ولاحقًا يتم توسيع التكوين عن طريق ربط "عبارات القاموس" بـ "أسماء الملفات المسجلة".
+ملفات التكوين مكتوبة بلغة JavaScript. جميع ملفات التكوين هي افتراضيًا حزم TTS، حتى لو لم يكن هناك TTS موجود بعد لدعم اللغة. ولاحقًا يتم توسيع التكوين عن طريق تعيين "عبارات القاموس" إلى "أسماء الملفات المسجلة".
 
 ```
 function populateDictionary(tts) {
@@ -49,10 +49,9 @@ function route_recalc(dist, seconds) {
 }
 ```
 
-
 ### إنشاء حزمة مخصصة {#generation-custom-package}
 
-يرجى التحقق من [موارد المشروع](https://github.com/osmandapp/OsmAnd-resources/) واستخدام نفس هيكل المجلد مثل [الحزمة الألمانية](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - ببساطة قم بالنسخ. بمجرد الانتهاء، يمكنك التغيير، وتشغيل [برنامج الإنشاء النصي](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) وتحديد الوسائط المطلوبة. المساعدة موجودة داخل البرنامج النصي.
+يرجى التحقق من [موارد المشروع](https://github.com/osmandapp/OsmAnd-resources/) واستخدام نفس هيكل المجلد مثل [الحزمة الألمانية](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - ببساطة قم بالنسخ. بمجرد الانتهاء، يمكنك التغيير، تشغيل [برنامج الإنشاء النصي](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) وتحديد الوسائط المطلوبة. المساعدة موجودة داخل البرنامج النصي.
 
 ### اختبار حزمة الصوت (أندرويد) {#testing-voice-package-android}
 

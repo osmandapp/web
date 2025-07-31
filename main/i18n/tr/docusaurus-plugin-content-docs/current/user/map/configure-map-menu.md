@@ -1,5 +1,5 @@
 ---
-source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
+source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
 sidebar_position: 4
 title: Haritayı Yapılandır
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Genel Bakış {#overview}
 
-**Haritayı Yapılandır** menüsü, OsmAnd *Ana Menüsünde* önemli bir öğedir ve harita görünümünü ihtiyaçlarınıza göre özelleştirmenizi sağlar. Favori noktaları, navigasyon işaretlerini veya özel ilgi çekici noktaları haritada vurgulayabilir, belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir, arazi bilgilerini, uydu görüntülerini veya mevcut diğer raster görüntüleri üst üste bindirebilir, toplu taşıma bilgilerini görüntüleyebilir ve harita stilini değiştirebilirsiniz.
+**Haritayı Yapılandır** menüsü, OsmAnd *Ana Menüsünde* önemli bir öğedir ve harita görüntüsünü ihtiyaçlarınıza göre özelleştirmenizi sağlar. Favori noktaları, navigasyon işaretlerini veya özel ilgi çekici noktaları haritada vurgulayabilir, belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir, arazi bilgilerini, uydu görüntülerini veya diğer mevcut raster görüntüleri üst üste bindirebilir, toplu taşıma bilgilerini görüntüleyebilir ve harita stilini değiştirebilirsiniz.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -50,52 +50,52 @@ import Translate from '@site/src/components/Translate.js';
 
 **<Translate android="true" ids="configure_map"/>** menüsü iki kategoriye ayrılmıştır:
 
-- [Harita stili parametreleri](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (veya **<Translate ios="true" ids="map_widget_renderer"/>**) ana haritanın görüntülenme şeklini değiştirmenizi sağlayan bir ayarlar grubudur.
-- [Harita katmanları](#map-layers). Bu katmanlar, bilgileri ana harita katmanının üzerine (veya altına) yerleştirmenize olanak tanır, ancak haritanın kendisinin görünümünü değiştirmez.
+- [Harita stili parametreleri](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (veya **<Translate ios="true" ids="map_widget_renderer"/>**) ana haritanın görüntülenme şeklini değiştirmenizi sağlayan bir ayar grubudur.
+- [Harita katmanları](#map-layers). Bu katmanlar, ana harita katmanının üzerine (veya altına) bilgi yerleştirmenize olanak tanır, ancak haritanın kendisinin görüntüsünü değiştirmez.
 
 **Notlar:**
 
-- Ekrandaki bilgileri (widget'lar, simgeler) değiştirmek için [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md) bölümünde ayarları yapabilirsiniz.
+- Ekrandaki bilgileri (widget'lar, simgeler) değiştirmek için [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md) bölümündeki ayarları yapabilirsiniz.
 - Haritayı Yapılandır ayarları [profilinize](../personal/profiles.md) bağlıdır.
 - Dikkat edin - Haritayı Yapılandır menüsü harita alanına dokunduğunuzda **kapanır**.
 
 ## Harita Katmanları {#map-layers}
 
 - [Vektör Harita Katmanı](../map/vector-maps.md) - OpenStreetMap, Kontur çizgileri ve Denizcilik verileri dahil tüm vektör harita bilgilerini görüntüler.
-- [Harita Raster kaynakları](../map/raster-maps.md#select-raster-maps) - şeffaflık seviyeleri ile altlık / ana kaynak / bindirme haritası seçimine izin verir.
-- [Arazi](../plugins/topography.md#hillshade-slope-and-altitude-layers) - eğim / tepe gölgelendirme bilgilerini, 3D Rölyefi görüntüler.
+- [Harita Raster kaynakları](../map/raster-maps.md#select-raster-maps) - şeffaflık seviyeleri ile altlık / ana kaynak / üst üste bindirme haritası seçmeye olanak tanır.
+- [Arazi](../plugins/topography.md#hillshade-slope-and-altitude-layers) - eğim / gölgelendirme bilgilerini, 3D Rölyefi görüntüler.
 - [İndirilen haritaların sınırları](../map/vector-maps.md#show-borders) - indirilen tüm haritaların sınırlarını ana harita katmanında görüntüler.
 - [Koordinat ızgarası](../map/vector-maps.md#coordinates-grid) - harita üzerindeki koordinat ızgarasının görünürlüğünü kontrol eder.
 
 ## Harita Veri Katmanları {#map-data-layers}
 
 - [Favoriler](../map/point-layers-on-map.md) - favori noktaları görüntüler.
-- [İÇN](../map/point-layers-on-map.md) - seçilen kategorilerdeki ilgi çekici noktaları görüntüler.
+- [POI](../map/point-layers-on-map.md) - seçilen kategorilerdeki ilgi çekici noktaları görüntüler.
 - [Harita işaretleri](../map/point-layers-on-map.md) - harita işaretlerini görüntüler.
-- [Bindirme etiketleri](../map/point-layers-on-map.md) - harita üzerindeki noktaların ve favorilerin adlarını gösterir.
+- [Üst üste bindirme etiketleri](../map/point-layers-on-map.md) - harita üzerindeki noktaların ve favorilerin adlarını gösterir.
 - [Ulaşım](../map/vector-maps.md#transport) - toplu taşıma duraklarını gösterir.
 - [İzler](../map/tracks/index.md) - içe aktarılan, planlanan veya kaydedilen izleri harita üzerinde görüntüler.
 - [Sokak seviyesi görüntüleri](../plugins/mapillary.md#map-layer) - mevcut sokak seviyesi görüntüleri olan noktaları görüntüler.
 - [Seyahat rehberleri](../plan-route/travel-guides.md) - harita üzerinde seyahat rehberlerini görüntüler.
 - [Wikipedia](../plugins/wikipedia.md) - haritaya bağlı Wikipedia makalelerini vurgular.
-- [Diğer eklenti katmanları](../plugins/index.md#configure-plugin) - birçok eklenti, ek bilgilerle kendi katmanlarını ekler.
+- [Diğer eklenti katmanları](../plugins/index.md#configure-plugin) - birçok eklenti ek bilgilerle kendi katmanlarını ekler.
 
 ## Harita stili parametreleri {#map-style-parameters}
 
-Harita stili ayarları, görüntülenen ana harita stiline bağlıdır. Bu konuda daha fazla bilgiyi [Harita Stilleri makalesinde](../map/vector-maps) okuyabilirsiniz.
+Harita stili ayarları, görüntülenen ana harita stiline bağlıdır. Bu konuda daha fazla bilgiyi [Harita Stilleri makalesinde](../map/vector-maps) bulabilirsiniz.
 
 - [Harita stili](../map/vector-maps.md#default-map-styles) - OsmAnd (Şehir), Topo, Denizcilik ve diğerlerini içerir.
 - [Harita modu](../map/vector-maps.md#map-mode) - günün saatine bağlı olarak harita görünümünü ve navigasyonu seçmenizi sağlar.
-- [Harita büyüteci](../map/vector-maps.md#map-magnifier) - haritanın büyütmesini değiştirmenizi sağlar.
-- [Metin boyutu](../map/vector-maps.md#text-size) - haritadaki metin boyutunu artırmanıza veya azaltmanıza olanak tanır.
-- [Harita dili](../map/vector-maps.md#map-language) - haritada görüntülenen tercih edilen dili seçmenizi sağlar.
+- [Harita büyüteci](../map/vector-maps.md#map-magnifier) - haritanın büyütmesini değiştirmeye olanak tanır.
+- [Metin boyutu](../map/vector-maps.md#text-size) - harita üzerindeki metin boyutunu artırmaya veya azaltmaya olanak tanır.
+- [Harita dili](../map/vector-maps.md#map-language) - haritada görüntülenen tercih edilen dili seçmeye olanak tanır.
 - [Detaylar](../map/vector-maps.md#details) - belirli nesneleri gösterir.
 - [Gizle](../map/vector-maps.md#hide) - belirli nesneleri gizler.
-- [Rotalar](../map/vector-maps.md#routes) - rotaları ve sembollerini vurgulamanızı sağlar.
+- [Rotalar](../map/vector-maps.md#routes) - rotaları ve sembollerini vurgulamaya olanak tanır.
 
 ## Kullanıcı Arayüzü Özelleştirme (Android) {#ui-customization-android}
 
-Android sisteminde seçilen her profil için, <Translate android="true" ids="configure_map"/> menü öğelerinin sırasını değiştirebilir, öğeleri gizleyebilir, varsayılan ayarları sıfırlayabilir veya başka bir profilden kopyalayabilirsiniz. Bu, OsmAnd uygulamasıyla etkileşiminizi geliştirmeye yardımcı olacaktır.
+Android sisteminde seçilen her profil için <Translate android="true" ids="configure_map"/> menü öğelerinin sırasını değiştirebilir, öğeleri gizleyebilir, varsayılan ayarları sıfırlayabilir veya başka bir profilden kopyalayabilirsiniz. Bu, OsmAnd uygulamasıyla etkileşiminizi geliştirmeye yardımcı olacaktır.
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 

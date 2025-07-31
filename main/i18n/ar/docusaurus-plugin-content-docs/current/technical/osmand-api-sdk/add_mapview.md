@@ -31,7 +31,7 @@ public class SimpleMapActivity extends AppCompatActivity {
 }
 ```
 
-افتح ملف تخطيط XML للنشاط وأضف ما يلي:
+افتح ملف تخطيط XML الخاص بالنشاط وأضف ما يلي:
 
 ```
 	<net.osmand.plus.views.MapViewWithLayers
@@ -41,7 +41,7 @@ public class SimpleMapActivity extends AppCompatActivity {
 		android:orientation="vertical" />		
 ```
 
-يحتوي MapViewWithLayers على طرق دورة الحياة الخاصة به. لكي يتمكن تطبيقك من استدعاء طرق دورة حياة MapView بشكل صحيح، يجب عليك تجاوز طرق دورة الحياة التالية في النشاط الذي يحتوي على MapViewWithLayers واستدعاء هذه الطرق.
+يحتوي MapViewWithLayers على طرق دورة حياته الخاصة. لكي يتمكن تطبيقك من استدعاء طرق دورة حياة MapView بشكل صحيح، يجب عليك تجاوز طرق دورة الحياة التالية في النشاط الذي يحتوي على MapViewWithLayers واستدعاء هذه الطرق.
 
 ```
 

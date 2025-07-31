@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Веб-планувальник маршрутів
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Переглядач веб-карт
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,19 +12,21 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+
+
 ### Огляд {#overview}
 
-У цьому розділі ви знайдете опис нашого [сервісу Веб-карти](https://osmand.net/map).
+У цьому розділі ви знайдете опис нашого [сервісу Веб-карт](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-У цьому розділі пояснюється, як увійти та зареєструватися на [www.osmand.net/map](https://osmand.net/map/) та висвітлюються переваги, які отримують користувачі після реєстрації.
+У цьому розділі пояснюється, як увійти та зареєструватися на [www.osmand.net/map](https://osmand.net/map/), а також висвітлюються переваги, які користувачі отримують після реєстрації.
 
 ### [Карта](./web-map.md) {#map}
 
 У цьому розділі детально описано додаткові дані карти, такі як Вибране, Особисті треки та Шари погоди.
 
-### [Дані користувача](./web-userdata.mdx) {#user-data}
+### [Дані користувача](../web/web-userdata.mdx) {#user-data}
 
 GPX-треки та Вибране користувача на карті.
 
@@ -34,4 +36,4 @@ GPX-треки та Вибране користувача на карті.
 
 ### [Пошук](./web-search.md) {#search}
 
-У цьому розділі пояснюється, як знайти точки інтересу (POI) з різних категорій на карті, виконати класичний пошук та відобразити іконки категорій на карті.
+У цьому розділі пояснюється, як знаходити на карті цікаві місця (POI) з різних категорій, виконувати класичний пошук та відображати значки категорій на карті.

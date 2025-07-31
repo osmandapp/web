@@ -1,5 +1,5 @@
 ---
-source-hash: 6b2c4fa700522da26fcad9168c57a7b9f010154747f3253c53cdd3c3067262a8
+source-hash: 0b4ccedbab00f7e1bbfb641e2f35ec9e1e8bfde4a863b05a99381d9223043012
 sidebar_position: 7
 title:  Favoritos
 ---
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Descripción general {#overview}
+## Generalidades {#overview}
 
 La función **Favoritos** de OsmAnd te permite crear marcadores (notas) en el mapa. Estos puntos favoritos se muestran como estrellas amarillas por defecto, pero puedes personalizarlos completamente con diferentes colores, formas e iconos. Los favoritos se agrupan en una capa de mapa dedicada, que se hace visible a partir del *nivel de zoom 6*.
 
@@ -82,14 +82,14 @@ Para añadir un punto favorito:
     Pulsa brevemente para un PDI o pulsa prolongadamente para un punto de mapa general.
 2. Selecciona [Añadir (☆)](../map/map-context-menu.md#add--edit-favorite) en el menú contextual del mapa.
 
-Al añadir un punto de datos de OSM, la información relevante del PDI se incluye automáticamente. También puedes crear un favorito [pulsando prolongadamente](../map/map-context-menu.md#select-any-point-long-tap) cualquier ubicación del mapa.
+Al añadir un punto a partir de datos de OSM, la información relevante del PDI se incluye automáticamente. También puedes crear un favorito [pulsando prolongadamente](../map/map-context-menu.md#select-any-point-long-tap) cualquier ubicación del mapa.
 
 ***Campos para un punto favorito:***
 
 - **Nombre** — Un nombre único dentro del grupo (*Obligatorio*).
 - **Dirección** y **Descripción** (*Opcional*).
 - **Grupo** — Selecciona de un [grupo de favoritos](#manage-favorites) existente o crea uno nuevo.
-- **Personalización visual** — Icono, color, forma pueden coincidir con la [apariencia predeterminada del grupo](#change-group-appearance) o personalizarse individualmente.
+- **Personalización visual** — El icono, el color y la forma pueden coincidir con la [apariencia predeterminada del grupo](#change-group-appearance) o personalizarse individualmente.
 
 
 ### Editar / Reemplazar / Eliminar {#edit--replace--delete}
@@ -112,14 +112,14 @@ Al añadir un punto de datos de OSM, la información relevante del PDI se incluy
 
 Para modificar un punto favorito:
 
-1. [Pulsa](../map/map-context-menu.md#select-an-object-single-tap) el favorito en el mapa o ve a [Mis favoritos](#manage-favorites).
+1. [Toca](../map/map-context-menu.md#select-an-object-single-tap) el favorito en el mapa o ve a [Mis favoritos](#manage-favorites).
 2. Elige **Editar favorito** en el [*menú contextual del mapa*](../map/map-context-menu.md#add--edit-favorite).
 
 ***Opciones disponibles:***
 
 - **Editar detalles** — Nombre, icono, grupo, dirección y descripción.
-- **Reemplazar ubicación** — Reemplazar otro punto con este. Útil para actualizar un punto específico (por ejemplo, *Mi coche aparcado*) o crear uno nuevo.
-- **Eliminar** — Eliminar el favorito usando la opción de eliminar, accesible a través del menú Editar o mediante el botón de eliminar en Android.
+- **Reemplazar ubicación** — Reemplaza otro punto con este. Útil para actualizar un punto específico (por ejemplo, *Mi coche aparcado*) o crear uno nuevo.
+- **Eliminar** — Elimina el favorito usando la opción de eliminar, accesible a través del menú Editar o mediante el botón de eliminar en Android.
 
 
 ### Iconos de favoritos {#favorite-icons}
@@ -144,18 +144,18 @@ Ve a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_
 
 </Tabs>
 
-Una amplia gama de iconos para PDI y puntos de ruta está disponible en OsmAnd. Puedes:
+En OsmAnd hay una amplia gama de iconos para PDI y puntos de referencia. Puedes:
 
 - Seleccionar un icono de la lista de [categorías de PDI](../search/search-poi.md#categories-and-their-filters).
-- Encontrar un icono adecuado usando la [opción de búsqueda](../search/search-all.md#how-to-use).
+- Encontrar un icono adecuado utilizando la [opción de búsqueda](../search/search-all.md#how-to-use).
 
 
 ### Favoritos especiales (personales) {#special-favorites-personal}
 
-La *carpeta Personal* contiene puntos especiales como **<Translate android="true" ids="favorite_home_category"/>** y **<Translate android="true" ids="work_button"/>**, a menudo utilizados en la [navegación](../navigation/setup/route-navigation.md#select-starting-point). Esta carpeta no tiene un *menú de tres puntos*, y sus parámetros no se pueden cambiar.
+La *carpeta personal* contiene puntos especiales como **<Translate android="true" ids="favorite_home_category"/>** y **<Translate android="true" ids="work_button"/>**, que se utilizan a menudo en la [navegación](../navigation/setup/route-navigation.md#select-starting-point). Esta carpeta no tiene un *menú de tres puntos*, y sus parámetros no se pueden cambiar.
 
 
-## Administrar favoritos {#manage-favorites}
+## Gestionar favoritos {#manage-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +182,7 @@ La sección **Mis favoritos** te permite:
 - [Buscar](#order--sorting--search) favoritos o grupos específicos.
 - [Operaciones masivas](#bulk-edit--delete) — Renombrar, mover o eliminar varios favoritos a la vez.
 
-### Ordenar / Clasificar / Buscar {#order--sorting--search}
+### Orden / Clasificación / Búsqueda {#order--sorting--search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -203,7 +203,7 @@ La sección **Mis favoritos** te permite:
 - **Búsqueda** — Utiliza la [búsqueda global](../search/search-all.md) para encontrar favoritos por nombre. Los favoritos se clasifican por distancia desde el centro del mapa.
 
 
-### Edición/eliminación masiva {#bulk-edit--delete}
+### Edición/Eliminación masiva {#bulk-edit--delete}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,7 +255,7 @@ Ve a: *Menú de tres puntos → Cambiar apariencia predeterminada*
 
 <TabItem value="ios" label="iOS">
 
-Ve a: *Mantén pulsada la carpeta → Apariencia predeterminada*
+Ve a: *Mantener pulsada la carpeta → Apariencia predeterminada*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -263,13 +263,13 @@ Ve a: *Mantén pulsada la carpeta → Apariencia predeterminada*
 
 </Tabs>
 
-Usa el ***Menú de tres puntos*** (*Android*) junto a cada carpeta y la ***pulsación prolongada*** (*iOS*) en la carpeta para gestionar grupos de favoritos:
+Utiliza el ***menú de tres puntos*** (*Android*) junto a cada carpeta y ***pulsa prolongadamente*** (*iOS*) la carpeta para gestionar grupos de favoritos:
 
-- **<Translate android="true" ids="shared_string_rename"/>** — Usa esta opción para cambiar el nombre de la carpeta seleccionada.
+- **<Translate android="true" ids="shared_string_rename"/>** — Utiliza esta opción para cambiar el nombre de la carpeta seleccionada.
 
 - **<Translate android="true" ids="change_default_appearance"/>** — Personaliza cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** o **Ocultar en el mapa** — Alterna esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** o **Ocultar en el mapa** — Activa o desactiva esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
 
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** o **Eliminar de los marcadores del mapa** (*solo Android*) — Añade todos los puntos favoritos de una carpeta a la *lista de marcadores del mapa* o elimínalos según sea necesario para una fácil referencia.
 
@@ -303,14 +303,14 @@ Configuración de *Cambiar apariencia del grupo*:
 
 - **Icono, color, forma** — Establece un estilo predeterminado para todos los favoritos de un grupo.
 - **Coherencia** — Los nuevos favoritos añadidos al grupo heredan automáticamente la apariencia predeterminada.
-- **Personalización** — Anula la configuración predeterminada para los puntos existentes en la carpeta, solo para los nuevos favoritos o aplica a todos.
+- **Personalización** — Anula la configuración predeterminada para los puntos existentes en la carpeta, solo para los nuevos favoritos o aplícala a todos.
 
 
 ## Exportar / Importar {#export--import}
 
-OsmAnd proporciona varios métodos para [hacer copias de seguridad](./import-export.md) y [restaurar](./import-export.md#import) favoritos:
+OsmAnd ofrece varios métodos para [hacer copias de seguridad](./import-export.md) y [restaurar](./import-export.md#import) favoritos:
 
-- **Ubicaciones de copia de seguridad** — Almacenamiento local, [OsmAnd Cloud](../personal/osmand-cloud.md) (solo con [suscripción a OsmAnd Pro o OsmAnd Start](../purchases/index.md)), o aplicaciones de mensajería instantánea.
+- **Ubicaciones de copia de seguridad** — Almacenamiento local, [OsmAnd Cloud](../personal/osmand-cloud.md) (solo con [suscripción a OsmAnd Pro o OsmAnd Start](../purchases/index.md)) o aplicaciones de mensajería instantánea.
 
 - **Formato de archivo** — Los favoritos se guardan como archivos `.gpx` (favorites.gpx).
 
@@ -337,13 +337,13 @@ Ve a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_
 
 </Tabs>
 
-La [Copia de seguridad gratuita de favoritos](../personal/osmand-cloud.md#osmand-start) es un plan de compra especial que te permite hacer una copia de seguridad de tus puntos favoritos (ubicaciones) para las versiones de **Android, iOS** o **Web** en la aplicación OsmAnd y restaurarlos desde OsmAnd Cloud. Este plan está disponible para usuarios de [OsmAnd Free o Maps+](../purchases/index.md).
+La [Copia de seguridad gratuita de favoritos](../personal/osmand-cloud.md#osmand-start) es un plan de compra especial que te permite hacer una copia de seguridad de tus puntos favoritos (ubicaciones) para las versiones de **Android, iOS** o **Web** en la aplicación OsmAnd y restaurarlos desde OsmAnd Cloud. Este plan está disponible para los usuarios de [OsmAnd Free o Maps+](../purchases/index.md).
 
 La *Copia de seguridad gratuita de favoritos* ofrece estos beneficios:
 
-- **No se requiere pago**. Usa la función de copia de seguridad sin comprar suscripciones de pago.
-- **Guarda puntos favoritos**. Guarda regularmente tus puntos favoritos en OsmAnd para evitar perderlos si tu dispositivo falla o la aplicación se elimina.
-- **Transfiere puntos favoritos**. Importa tus puntos favoritos a un nuevo dispositivo con la función *Copia de seguridad gratuita de favoritos* si usas OsmAnd en varios dispositivos.
+- **No se requiere pago**. Utiliza la función de copia de seguridad sin necesidad de adquirir suscripciones de pago.
+- **Guardar puntos favoritos**. Guarda regularmente tus puntos favoritos en OsmAnd para evitar perderlos si tu dispositivo falla o la aplicación se elimina.
+- **Transferir puntos favoritos**. Importa tus puntos favoritos a un nuevo dispositivo con la función *Copia de seguridad gratuita de favoritos* si utilizas OsmAnd en varios dispositivos.
 
 
 #### Cómo crear una copia de seguridad {#how-to-create-a-backup}
@@ -395,9 +395,9 @@ Necesitas una cuenta de OsmAnd Cloud para usar la función *Copia de seguridad g
 
 </Tabs>
 
-Puedes exportar e importar tus favoritos usando los botones especiales en la parte inferior de la pantalla de Favoritos. Un [archivo .gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) se puede enviar a Dropbox, correo electrónico, mensajeros y otras aplicaciones instaladas en tu dispositivo que admitan esta función.
+Puedes exportar e importar tus favoritos utilizando los botones especiales en la parte inferior de la pantalla de Favoritos. Un [archivo .gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) se puede enviar a Dropbox, correo electrónico, mensajeros y otras aplicaciones instaladas en tu dispositivo que admitan esta función.
 
-- Botón **Importar** (*Android*) / **Importar favorito** (*iOS*). Te permite importar puntos favoritos (*favorites.gpx*) como puntos de ruta desde un archivo *GPX* (un formato común de datos GPS) desde el almacenamiento de tu dispositivo.
+- Botón **Importar** (*Android*) / **Importar favorito** (*iOS*). Te permite importar puntos favoritos (*favorites.gpx*) como puntos de referencia desde un archivo *GPX* (un formato de datos GPS común) desde el almacenamiento de tu dispositivo.
 - Botón **Compartir** (*Android*) / **Exportar favorito** (*iOS*). Te permite exportar (compartir) todos tus favoritos como un archivo *favorites.gpx*.
 
 
@@ -419,7 +419,7 @@ Puedes exportar e importar tus favoritos usando los botones especiales en la par
 
 </Tabs>
 
-- Toca el **Menú de tres puntos** (*Android*) o el botón **Editar** (*icono de lápiz en iOS*) o **mantén pulsada** la carpeta (*iOS*) de la carpeta de favoritos seleccionada.
+- Toca el **menú de tres puntos** (*Android*) o el botón **Editar** (*icono de lápiz en iOS*) o **mantén pulsada** la carpeta (*iOS*) de la carpeta de favoritos seleccionada.
 - Elige el botón **Compartir** para enviar el archivo *Favorites.gpx* a la memoria de tu dispositivo o compartirlo a través de aplicaciones de mensajería.
 
 
@@ -447,7 +447,7 @@ Ve a: *Archivos → En mi iPhone → Mapas de OsmAnd → favourites_backup*
 
 OsmAnd crea un **archivo de copia de seguridad** cada vez que se editan los favoritos.
 
-- **Android**: Las copias de seguridad se almacenan en *Android → data → net.osmand → files → backup*. Usa un gestor de archivos de terceros para acceder a ellas.
+- **Android**: Las copias de seguridad se almacenan en *Android → data → net.osmand → files → backup*. Utiliza un administrador de archivos de terceros para acceder a ellas.
 
 - **iOS**: Los archivos se encuentran en *Archivos → En mi iPhone → Mapas de OsmAnd → favourites_backup*.
 
@@ -463,7 +463,7 @@ En las últimas versiones de ***Android***, el acceso a los directorios del sist
 
 ### Favoritos en archivo GPX {#favorites-in-gpx-file}
 
-Toda la información sobre un Favorito se almacena y describe mediante etiquetas. Al crear un punto Favorito, puedes escribir tu propia [descripción](#favorite-point) o usar información de los datos de [punto de interés (PDI)](../map/point-layers-on-map.md#points-of-interest-pois) de OSM a partir de los cuales se creó tu punto. Los puntos favoritos, los PDI y los puntos de ruta utilizan las mismas **etiquetas** para almacenar información y se guardan en **formato de archivo GPX**.
+Toda la información sobre un Favorito se almacena y describe mediante etiquetas. Al crear un punto Favorito, puedes escribir tu propia [descripción](#favorite-point) o utilizar información de los datos de [puntos de interés (PDI)](../map/point-layers-on-map.md#points-of-interest-pois) de OSM a partir de los cuales se creó tu punto. Los puntos Favoritos, PDI y Puntos de referencia utilizan las mismas **etiquetas** para almacenar información y se guardan en **formato de archivo GPX**.
 
 ```xml
 <gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -488,7 +488,7 @@ Toda la información sobre un Favorito se almacena y describe mediante etiquetas
 
 ## Artículos relacionados {#related-articles}
 
-- [Administrar pistas](../personal/tracks/manage-tracks.md#import--export-track)
+- [Gestionar rutas](../personal/tracks/manage-tracks.md#import--export-track)
 - [Historial de búsqueda](../search/search-history.md#export-and-share)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
 

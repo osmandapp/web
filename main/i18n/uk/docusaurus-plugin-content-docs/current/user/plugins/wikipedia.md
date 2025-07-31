@@ -1,7 +1,7 @@
 ---
-source-hash: 9e8ffc4e9ad66f08b7e397dce821b6b3045def307beb315cd2a5eb994c70479b
+source-hash: 12e72d10b1449ce58c5fb653cdfb0cfc1c20daeb3be3887c57878bc922044d85
 sidebar_position: 18
-title:  Вікіпедія
+title:  Wikipedia
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,18 +19,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ## Огляд {#overview}
 
 :::info Платна функція
-Плагін Вікіпедія є [платною функцією](../purchases/index.md) застосунку OsmAnd.
+Плагін Wikipedia є [платною функцією](../purchases/index.md) застосунку OsmAnd.
 :::
 
-Наявність Вікіпедії під час подорожі допоможе вам дізнатися більше про місця, які ви відвідуєте. Вона доступна в автономному режимі та показує Популярні місця (Android) / статті Вікіпедії (iOS), пов'язані з визначними місцями, безпосередньо на мапі.
+Наявність Вікіпедії під час подорожі допоможе вам дізнатися більше про місця, які ви відвідуєте. Вона доступна в автономному режимі та показує популярні місця (Android) / статті Вікіпедії (iOS), пов'язані з цікавими місцями, безпосередньо на карті.
 
-Плагін Вікіпедія є окремою функцією, яку можна вмикати/вимикати за потреби. Після ввімкнення він дозволяє завантажувати дані Вікіпедії, [завантажені](../personal/maps-resources.md#download-maps-maps) для кожного географічного регіону. Мапа містить два види завантажених знань з Вікіпедії: коротку інформацію та повну статтю.
+Плагін Wikipedia — це окрема функція, яку можна вмикати/вимикати за потреби. Після ввімкнення вона дозволяє завантажувати дані Вікіпедії, [завантажені](../personal/maps-resources.md#download-maps-maps) для кожного географічного регіону. Карта має два види завантажених знань з Вікіпедії: коротку інформацію та повну статтю.
 
+Коротка інформація надається POI Вікіпедії (скорочення від "[точки інтересу](../map/point-layers-on-map.md)"). Якщо опція Wikipedia увімкнена в меню, POI Вікіпедії з'являється на карті. Коли ви торкаєтеся точки інтересу, вона розширюється, щоб надати коротку інформацію з Вікіпедії, а також можливість відкрити повну статтю. POI Вікіпедії, а також пов'язані статті, доступні в автономному режимі. Ви можете читати їх за потреби, перемикати мови та шукати іншу інформацію у Вікіпедії.
 
-Коротка інформація надається POI Вікіпедії (скорочення від "[точки інтересу](../map/point-layers-on-map.md)"). Якщо опція Вікіпедії увімкнена в меню, на мапі з'являється POI Вікіпедії. Коли ви торкаєтеся точки інтересу, вона розгортається, надаючи коротку інформацію з Вікіпедії, а також можливість відкрити повну статтю. POI Вікіпедії, а також пов'язані статті, доступні в автономному режимі. Ви можете читати їх за потреби, перемикати мови та шукати іншу інформацію у Вікіпедії.
-
-
-[Вікіпедія](https://en.wikipedia.org/wiki/Wikipedia) — це безкоштовна, багатомовна, відкрита онлайн-енциклопедія, створена та підтримувана спільнотою редакторів-волонтерів за допомогою системи редагування на основі вікі.
+[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) — це безкоштовна, багатомовна, відкрита онлайн-енциклопедія, створена та підтримувана спільнотою редакторів-волонтерів за допомогою системи редагування на основі вікі.
 
 &nbsp;
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
@@ -38,19 +36,19 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Щоб відобразити дані Вікіпедії на мапі, потрібно зробити наступні налаштування:
+Щоб відобразити дані Вікіпедії на карті, необхідно зробити наступні налаштування:
 
-1. [Придбайте](../plugins/index.md#purchase) та [увімкніть](../plugins/index.md#enable--disable) плагін Вікіпедія у розділі Плагіни *Головного меню*.
-2. Завантажте [пакети Вікіпедії](#download-wikipedia-packages) для потрібних регіонів.
-3. Відобразіть [POI Вікіпедії](#display-wikipedia-on-the-map) на мапі для потрібного профілю.
+1. [Придбайте](../plugins/index.md#purchase) та [увімкніть](../plugins/index.md#enable--disable) плагін Wikipedia у розділі Плагіни *Головного меню*.
+2. Завантажте [пакети Wikipedia](#download-wikipedia-packages) для необхідних регіонів.
+3. Відобразіть [POI Wikipedia](#display-wikipedia-on-the-map) на карті для потрібного профілю.
 4. Налаштуйте бажані [мови](#set-preferred-language) для читання статей.
 
 
-## Завантажити пакети Вікіпедії {#download-wikipedia-packages}
+## Завантажити пакети Wikipedia {#download-wikipedia-packages}
 
-Дані Вікіпедії доступні для кожного географічного регіону. Якщо вони завантажені для одного регіону, але не завантажені для іншого, у першому випадку ви можете працювати з інформацією Вікіпедії під час перегляду регіону на мапі, а в іншому випадку регіон не матиме жодної інформації Вікіпедії. Після завантаження дані Вікіпедії стають доступними загалом, а також в автономному режимі.
+Дані Вікіпедії доступні для кожного географічного регіону. Якщо вони завантажені для одного регіону, але не завантажені для іншого, у першому випадку ви можете працювати з інформацією Вікіпедії під час перегляду регіону на карті, а в іншому випадку регіон не матиме жодної інформації Вікіпедії. Після завантаження дані Вікіпедії стають доступними загалом, а також в автономному режимі.
 
-Щоб завантажити дані Вікіпедії для регіону, перейдіть до [доступних пакетів для завантаження в *Головному меню*](../start-with/download-maps.md#download---main-menu), знайдіть потрібний регіон та відкрийте його. Дані Вікіпедії будуть серед інших пакетів.
+Щоб завантажити дані Вікіпедії для регіону, перейдіть до [доступних пакетів для завантаження в *Головному меню*](../start-with/download-maps.md#download---main-menu), знайдіть потрібний регіон і відкрийте його. Дані Вікіпедії будуть серед інших пакетів.
 
 Ви можете відкрити дані Вікіпедії для завантаження за регіонами наступним чином:
 
@@ -64,7 +62,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Щоб побачити, які дані вже завантажено, перейдіть до *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*
 
-![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
+![Завантажити Вікіпедію в Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
 </TabItem>
 
@@ -72,20 +70,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Щоб побачити, які дані вже завантажено, перейдіть до *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
-![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
+![Завантажити Вікіпедію в iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Відображення Вікіпедії на мапі {#display-wikipedia-on-the-map}
+## Відображення Вікіпедії на карті {#display-wikipedia-on-the-map}
 
-Завантаживши дані Вікіпедії для потрібних регіонів, ви можете контролювати видимість цих даних на мапі. Видимість контролюється [Популярними місцями (Вікіпедія)](../map/point-layers-on-map.md#-wikipedia) **для Android** / [POI Вікіпедії](../map/point-layers-on-map.md#-wikipedia) **для iOS**, які можна показувати або приховувати для всіх завантажених регіонів певним [профілем](../personal/profiles.md), наприклад, профілем для водіння, профілем для їзди на велосипеді, іншим профілем для відображення громадського транспорту та іншими.
+Завантаживши дані Вікіпедії для потрібних регіонів, ви можете керувати видимістю цих даних на карті. Видимість контролюється [Популярними місцями (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **для Android** / [POI Wikipedia](../map/point-layers-on-map.md#-wikipedia) **для iOS**, які можна показати або приховати для всіх завантажених регіонів за певним [профілем](../personal/profiles.md), наприклад, профілем для водіння, профілем для їзди на велосипеді, іншим профілем для відображення громадського транспорту та іншими.
 
-Щоб показати або приховати POI Вікіпедії, спочатку виберіть профіль, а потім увімкніть/вимкніть опцію **Вікіпедія**.
+Щоб показати або приховати POI Wikipedia, спочатку виберіть профіль, а потім увімкніть/вимкніть опцію **Wikipedia**.
 
-Щоб показати/приховати POI Вікіпедії, зробіть наступне:
+Щоб показати/приховати POI Wikipedia, виконайте наступне:
 
 1. Перейдіть до:
 
@@ -93,20 +91,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-2. Виберіть Профіль та знайдіть розділ налаштувань *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* у меню.
+2. Виберіть Профіль і знайдіть розділ налаштувань *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* у меню.
 3. Увімкніть *<Translate android="true" ids="poi_osmwiki"/>* **для Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **для iOS**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wikipedia POIs on Android](@site/static/img/map/map-wikipedia-on-map.png)
+![POI Wikipedia на Android](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
+![POI Wikipedia на iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
 
 </TabItem>
 
@@ -115,11 +113,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Пошук у Вікіпедії {#search-wikipedia}
 
-За наявності завантажених даних Вікіпедії, незалежно від режиму видимості [POI Вікіпедії](../map/point-layers-on-map.md#-wikipedia) на мапі, можна [шукати](../search/search-poi.md) будь-яку інформацію з Вікіпедії.
+Завдяки завантаженим даним Вікіпедії, незалежно від режиму видимості [POI Вікіпедії](../map/point-layers-on-map.md#-wikipedia) на карті, можна [шукати](../search/search-poi.md) будь-яку інформацію з Вікіпедії.
 
-Коли ви натискаєте кнопку Пошук, з'являється додаткова панель, що дозволяє [шукати](../search/index.md) у всьому тексті та/або в певній категорії. У першому випадку результати пошуку покажуть POI Вікіпедії з відповідними статтями Вікіпедії серед інших типів інформації. У випадку [пошуку за категорією Вікіпедії](../search/search-poi.md#poi-search), результати пошуку покажуть лише інформацію Вікіпедії, відсортовану за найближчим розташуванням до області мапи, яка зараз відображається на екрані.
+Коли ви торкаєтеся кнопки "Пошук", з'являється додаткова панель, що дозволяє [шукати](../search/index.md) весь текст та/або певну категорію. У першому випадку результати пошуку покажуть POI Вікіпедії з відповідними статтями Вікіпедії серед інших типів інформації. У випадку [пошуку за категорією Вікіпедії](../search/search-poi.md#poi-search) результати пошуку покажуть лише інформацію Вікіпедії, відсортовану за найближчим розташуванням до області карти, яка зараз відображається на екрані.
 
-- У версії **Android** ви можете відкрити [Пошук](../search/index.md), натиснувши *іконку Пошуку* у верхньому лівому куті екрана та/або натиснувши *опцію Пошук* у меню.
+- У версії **Android** ви можете відкрити [Пошук](../search/index.md), торкнувшись *іконки Пошуку* у верхньому лівому куті екрана та/або торкнувшись *опції Пошук* у меню.
 - У версії **iOS**, щоб відкрити [Пошук](../search/index.md), іконка Пошуку знаходиться у верхньому лівому куті екрана.
 
 <!--
@@ -127,13 +125,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="android" label="Android">
 
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
+![Пошук у Вікіпедії на Android](@site/static/img/map/map-wikipedia-search.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
+![Пошук у Вікіпедії на iOS](@site/static/img/map/map-wikipedia-search_ios.png)
 
 </TabItem>
 
@@ -147,19 +145,19 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="android" label="Android">
 
-![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png)
+![Категорія Wikipedia на Android](@site/static/img/map/map-wikipedia-search-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
+![Категорія Wikipedia на iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- За необхідності натисніть опцію **Показати Вікіпедію на мапі** у верхній частині панелі пошуку, і результати пошуку з категорії Вікіпедії з'являться на мапі.
+- За потреби торкніться опції **Показати Вікіпедію на карті** у верхній частині панелі пошуку, і результати пошуку з категорії Вікіпедії з'являться на карті.
 
 
 ## Стаття Вікіпедії {#wikipedia-article}
@@ -167,9 +165,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Щоб відкрити статтю Вікіпедії:
 
 1. Увімкніть [шар POI Вікіпедії](../map/point-layers-on-map.md#-wikipedia) для вказаного профілю.
-2. Натисніть POI на мапі.
-3. У [контекстному меню](../map/map-context-menu.md) POI натисніть *Деталі* (або просто потягніть *контекстне меню* вгору), щоб переглянути анотацію обраної статті Вікіпедії.
-4. Якщо ви натиснете на цей текст (для версії iOS), ви будете перенаправлені до офлайн-статті Вікіпедії.
+2. Торкніться POI на карті.
+3. У [контекстному меню](../map/map-context-menu.md) POI торкніться *Деталі* (або просто потягніть *контекстне меню* вгору), щоб переглянути анотацію вибраної статті Вікіпедії.
+4. Якщо ви торкнетеся цього тексту (для версії iOS), вас буде перенаправлено до офлайн-статті Вікіпедії.
 5. Використовуйте кнопку *Читати статтю* або *Читати повну статтю*, щоб відкрити повну версію статті Вікіпедії.
 
 
@@ -178,13 +176,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="android" label="Android">
 
-![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+![Французький POI Вікіпедії англійською мовою](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
+![Французький POI Вікіпедії англійською мовою в iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
@@ -197,24 +195,24 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Встановити бажану мову {#set-preferred-language}
 
-У версіях застосунку OsmAnd для **Android** та **iOS** ви можете встановити бажану мову (або мови) для відображення статей Вікіпедії за допомогою меню *Налаштувати мапу*. Якщо ви виберете більше однієї мови, статті *Вікіпедії* на мапі будуть відображатися будь-якою з них. Перейдіть до:
+У версіях OsmAnd для **Android** та **iOS** ви можете встановити бажану мову (або мови) для відображення статей Вікіпедії за допомогою *меню Налаштування карти*. Якщо ви виберете більше однієї мови, статті *Wikipedia* на карті будуть відображатися будь-якою з них. Перейдіть до:
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
-2. Виберіть потрібний профіль та у розділі *<Translate android="true" ids="shared_string_show"/>* виберіть *<Translate android="true" ids="poi_osmwiki"/>* для Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* для iOS.
+2. Виберіть потрібний профіль і в розділі *<Translate android="true" ids="shared_string_show"/>* виберіть *<Translate android="true" ids="poi_osmwiki"/>* для Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* для iOS.
 3. Вимкніть опцію *<Translate android="true" ids="shared_string_all_languages"/>*.
-4. Виберіть конкретну мову(-и) у списку, що відкрився.
+4. Виберіть конкретну мову(-и) у відкритому списку.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
+![Встановлення бажаної мови на Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
+![Встановлення бажаної мови на iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
@@ -228,21 +226,21 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 :::
 
-### Перемикання мов у статті {#switch-languages-inside-the-article}
+### Перемикання мов усередині статті {#switch-languages-inside-the-article}
 
-Якщо *стаття Вікіпедії* доступна різними мовами, ви можете перемикати мову під час читання. Після натискання відповідної іконки у верхньому правому куті екрана вам будуть запропоновані варіанти на вибір.
+Якщо *стаття Вікіпедії* доступна різними мовами, ви можете перемкнути мову під час читання. Після натискання відповідної іконки у верхньому правому куті екрана вам будуть запропоновані варіанти на вибір.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
+![Перемикання мов для конкретної статті](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
+![Перемикання мов для конкретної статті](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
@@ -254,36 +252,36 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Ви можете вибрати, чи завантажувати зображення з Вікіпедії на свій пристрій, чи ні, у *статті Вікіпедії*:
 
 - **Android**. Відкрийте *[статтю Вікіпедії](#display-wikipedia-on-the-map) → &#8942; → Опції*
-- **iOS**. Відкрийте *[статтю Вікіпедії](#display-wikipedia-on-the-map) → Іконка зображення*
+- **iOS**. Відкрийте *[статтю Вікіпедії](#display-wikipedia-on-the-map) → іконка Зображення*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_android.png)
+![Перемикання зображень](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+![Перемикання зображень](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-У версії застосунку **iOS** ви також можете отримати доступ до параметрів завантаження зображень за допомогою *налаштувань плагіна Вікіпедії*:
+У версії застосунку для **iOS** ви також можете отримати доступ до параметрів завантаження зображень за допомогою *налаштувань плагіна Wikipedia*:
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+![Перемикання зображень](@site/static/img/plugins/wikipedia/images_menu_ios.png)
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Взаємодія з мапою](../../user/map/interact-with-map.md)
+- [Взаємодія з картою](../../user/map/interact-with-map.md)
 - [Глобальні налаштування](../../user/personal/global-settings.md)
-- [Векторні мапи (Стилі мап)](../../user/map/vector-maps.md)
+- [Векторні карти (Стилі карт)](../../user/map/vector-maps.md)
 
-> *Останнє оновлення: Травень 2025*
+> *Останнє оновлення: травень 2025*

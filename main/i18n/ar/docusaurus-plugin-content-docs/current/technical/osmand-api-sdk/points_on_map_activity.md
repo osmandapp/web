@@ -7,7 +7,7 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 # النقاط على نشاط الخريطة {#points-on-map-activity}
 تُعرض النقاط المفضلة على الخريطة
 
-  ```
+```
  public class PointsOnMapActivity extends AppCompatActivity {
 
 	private OsmandApplication app;

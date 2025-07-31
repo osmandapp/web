@@ -1,5 +1,5 @@
 ---
-source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
+source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
 sidebar_position: 4
 title:  تكوين الخريطة
 ---
@@ -11,17 +11,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## نظرة عامة {#overview}
 
-تُعد قائمة **تكوين الخريطة** عنصرًا مهمًا في *القائمة الرئيسية* لتطبيق OsmAnd، حيث يمكنك تخصيص عرض الخريطة ليناسب احتياجاتك. يمكنك إبراز النقاط المفضلة، علامات التنقل، أو نقاط الاهتمام الخاصة على الخريطة، عرض مسارات محددة أو ملفات GPX من طرف ثالث، تراكب معلومات التضاريس، صور الأقمار الصناعية، أو أي صور نقطية أخرى متاحة، عرض معلومات النقل العام، وتغيير نمط الخريطة.
+تُعد قائمة **تكوين الخريطة** عنصرًا مهمًا في **القائمة الرئيسية** لتطبيق OsmAnd، حيث يمكنك تخصيص عرض الخريطة ليناسب احتياجاتك. يمكنك إبراز النقاط المفضلة، علامات التنقل، أو نقاط الاهتمام الخاصة على الخريطة، عرض مسارات محددة أو ملفات GPX من جهات خارجية، تراكب معلومات التضاريس، صور الأقمار الصناعية، أو أي صور نقطية أخرى متاحة، عرض معلومات النقل العام، وتغيير نمط الخريطة.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-قسم **عرض**:
+قسم **إظهار**:
 
 ![تكوين الخريطة أندرويد](@site/static/img/map/configure_map_show1_andr.png) ![تكوين الخريطة أندرويد](@site/static/img/map/configure_map_show2_andr.png)
 
@@ -33,7 +31,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ![تكوين الخريطة أندرويد](@site/static/img/map/configure_map_osm_andr.png)
 
-قسمي **المسارات وعرض الخريطة**:
+قسما **المسارات وعرض الخريطة**:
 
 ![تكوين الخريطة أندرويد](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -46,7 +44,6 @@ import Translate from '@site/src/components/Translate.js';
 </TabItem>
 
 </Tabs>
-
 
 تنقسم قائمة **<Translate android="true" ids="configure_map"/>** إلى فئتين:
 
@@ -65,24 +62,24 @@ import Translate from '@site/src/components/Translate.js';
 - [مصادر الخريطة النقطية](../map/raster-maps.md#select-raster-maps) - تسمح باختيار خريطة أساسية / مصدر رئيسي / تراكب مع مستويات شفافية.
 - [التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers) - تعرض معلومات المنحدر / تظليل التلال، الإغاثة ثلاثية الأبعاد.
 - [حدود الخرائط المحملة](../map/vector-maps.md#show-borders) - تعرض جميع حدود الخرائط المحملة على طبقة الخريطة الرئيسية.
-- [شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid) - التحكم في رؤية شبكة الإحداثيات على الخريطة.
+- [شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid) - تتحكم في رؤية شبكة الإحداثيات على الخريطة.
 
 ## طبقات بيانات الخريطة {#map-data-layers}
 
 - [المفضلة](../map/point-layers-on-map.md) - تعرض النقاط المفضلة.
-- [نقاط الاهتمام (POI)](../map/point-layers-on-map.md) - تعرض نقاط الاهتمام للفئات المختارة.
+- [نقاط الاهتمام](../map/point-layers-on-map.md) - تعرض نقاط الاهتمام للفئات المختارة.
 - [علامات الخريطة](../map/point-layers-on-map.md) - تعرض علامات الخريطة.
 - [تسميات التراكب](../map/point-layers-on-map.md) - تعرض أسماء النقاط والمفضلة على الخريطة.
 - [النقل](../map/vector-maps.md#transport) - تعرض محطات النقل العام.
 - [المسارات](../map/tracks/index.md) - تعرض المسارات المستوردة، المخطط لها، أو المسجلة فوق الخريطة.
-- [صور مستوى الشارع](../plugins/mapillary.md#map-layer) - تعرض النقاط مع صور مستوى الشارع المتاحة.
+- [صور مستوى الشارع](../plugins/mapillary.md#map-layer) - تعرض النقاط التي تتوفر بها صور مستوى الشارع.
 - [أدلة السفر](../plan-route/travel-guides.md) - تعرض أدلة السفر على الخريطة.
 - [ويكيبيديا](../plugins/wikipedia.md) - تبرز مقالات ويكيبيديا المرتبطة بالخريطة.
 - [طبقات المكونات الإضافية الأخرى](../plugins/index.md#configure-plugin) - تضيف العديد من المكونات الإضافية طبقاتها بمعلومات إضافية.
 
 ## معلمات نمط الخريطة {#map-style-parameters}
 
-تعتمد إعدادات نمط الخريطة على نمط الخريطة الرئيسي المعروض. يمكنك قراءة المزيد عنها في مقال [أنماط الخريطة](../map/vector-maps).
+تعتمد إعدادات نمط الخريطة على نمط الخريطة الرئيسي المعروض. يمكنك قراءة المزيد حول هذا في مقال [أنماط الخريطة](../map/vector-maps).
 
 - [نمط الخريطة](../map/vector-maps.md#default-map-styles) - يتضمن OsmAnd (المدينة)، الطبوغرافية، البحرية، وغيرها.
 - [وضع الخريطة](../map/vector-maps.md#map-mode) - يسمح لك باختيار عرض الخريطة والتنقل حسب وقت اليوم.
@@ -99,7 +96,6 @@ import Translate from '@site/src/components/Translate.js';
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 
-![عناصر تكوين الخريطة](@site/static/img/settings/configure-screen-ui-customization.png)
-
+![عناصر تكوين الخريطة ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 > *آخر تحديث: فبراير 2025*

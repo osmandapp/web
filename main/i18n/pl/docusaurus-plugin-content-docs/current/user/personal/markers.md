@@ -1,5 +1,5 @@
 ---
-source-hash: 0353071eeb4cc978c117068bf19a65442825b1d24cf586249b32ac62e28c929f
+source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
 sidebar_position: 8
 title: Markery
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko utworzyć jednym dotknięciem, bez podawania nazwy i innych informacji, w przeciwieństwie do [ulubionych punktów](./favorites.md). Markery zapewniają również dodatkową funkcjonalność dzięki [widżetom](../widgets/markers.md), **strzałkom** (<Translate android="true" ids="show_arrows_on_the_map"/>) i **wskazaniu odległości** (<Translate android="true" ids="show_direction"/>).
+Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko utworzyć jednym dotknięciem bez podawania nazwy i innych informacji, w przeciwieństwie do [punktów ulubionych](./favorites.md). Markery zapewniają również dodatkową funkcjonalność dzięki [widżetom](../widgets/markers.md), **strzałkom** (<Translate android="true" ids="show_arrows_on_the_map"/>) i **wskazaniu odległości** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -37,7 +37,7 @@ Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko 
 
 ## Markery {#markers}
 
-### Dodawanie / Edycja Markerów {#add--edit-markers}
+### Dodawanie / Edytowanie markerów {#add--edit-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -59,17 +59,17 @@ Krótko lub długo dotknij mapy i wybierz wymaganą akcję z [menu kontekstowego
 
 </Tabs>
 
-Możliwe jest oznaczenie punktu lub obiektu, aby ułatwić planowanie nawigacji. Wystarczy dotknąć ikony *flagi* (*Android*) lub *strzałki* (*iOS*) w menu, aby wyświetlić kierunek i odległość do wybranego punktu od bieżącej lokalizacji (lub środkowego punktu mapy / początkowego punktu dotknięcia mapy, gdy lokalizacja jest wyłączona).
+Możliwe jest oznaczenie punktu lub obiektu, aby ułatwić planowanie nawigacji. Wystarczy dotknąć ikonę *flagi* (*Android*) lub *strzałki* (*iOS*) w menu, aby wyświetlić kierunek i odległość do wybranego punktu od bieżącej lokalizacji (lub centralnego punktu mapy / początkowego punktu dotknięcia mapy, gdy lokalizacja jest wyłączona).
 
 ***Akcje***:
 
 - **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Umieszcza nowy marker w wybranym punkcie.
-- **Oznacz jako przekroczony** (*Android*) / Odrzuć (iOS). Dezaktywuje marker i przenosi go do Historii.
-- **Ustaw jako aktywny** (*Android*). Przenosi marker na najwyższą pozycję (na górnym panelu).
-- **Przywróć marker** (*Android*). Przenosi marker z Historii do listy aktywnych.
+- **Oznacz jako przekroczony** (*Android*) / Odrzuć (iOS). Dezaktywuje marker i umieszcza go w Historii.
+- **Ustaw jako aktywny** (*Android*). Przenosi marker na górną pozycję (na górnym panelu).
+- **Przywróć marker** (*Android*). Przenosi marker z Historii do aktywnej listy.
 
 :::note
-Nie można od razu usunąć markera, należy go najpierw dezaktywować (oznaczyć jako przekroczony), aby został przeniesiony do [Historii](#history), a następnie można go trwale usunąć z historii. Po dezaktywacji marker zostanie usunięty z mapy i listy trasy.
+Nie można od razu usunąć markera, należy go najpierw dezaktywować (oznaczyć jako przekroczony), aby został przeniesiony do [Historii](#history), a następnie można go trwale usunąć z historii. Po dezaktywacji marker zostanie usunięty z mapy i listy tras.
 :::
 
 
@@ -89,9 +89,9 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Lista trasy {#itinerary-list}
+### Lista tras {#itinerary-list}
 
-Lista trasy przedstawia uporządkowaną listę markerów, gdzie pierwszy marker jest używany w widżetach do nawigacji. Więcej na ten temat można przeczytać w artykule [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#itinerary-list).
+Lista tras przedstawia uporządkowaną listę markerów, gdzie pierwszy marker jest używany w widżetach do nawigacji. Więcej informacji na ten temat można znaleźć w artykule [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#itinerary-list).
 
 ### Grupy markerów {#marker-groups}
 
@@ -99,7 +99,7 @@ Lista trasy przedstawia uporządkowaną listę markerów, gdzie pierwszy marker 
 
 ![Grupy markerów mapy Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Markery mogą być dodawane i usuwane jako cała grupa z grupy Ulubionych lub pliku GPX z punktami trasy. To sprawia, że są bardzo wygodne w użyciu w specjalnym trybie nawigacji - [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Markery mogą być dodawane i usuwane jako cała grupa z grupy Ulubionych lub pliku GPX z punktami trasy. Dzięki temu są bardzo wygodne w użyciu w specjalnym trybie nawigacji - [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Historia {#history}
 
@@ -147,12 +147,12 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,map_markers,appearan
 Menu *Wygląd na mapie* to ogólne ustawienie wyświetlania markerów i dodatkowych wskaźników do nich.
 W wersji OsmAnd na iOS, *Wygląd na mapie* jest również ustawieniem wyświetlania widżetów. Istnieją również dodatkowe ustawienia do [konfiguracji widżetów z markerami](../widgets/markers.md#configure-marker-widgets).
 
-- **Aktywne markery**. Pokazuje informacje o jednym lub dwóch pierwszych markerach na liście markerów mapy.
+- **Aktywne markery**. Pokazuje informacje o pierwszym lub dwóch markerach na liście markerów mapy.
 - **Wskazanie odległości** *(dla iOS)*. Pozwala wybrać, czy widżety mają być wyświetlane i jak będą się pojawiać: nad mapą (Górny pasek) czy po prawej stronie ekranu (Widżety).
 - **Strzałki na mapie**. Wskazuje kierunek do śledzonego markera (jednego lub dwóch) jako strzałka na mapie. Jeśli marker znajduje się w widocznej części mapy, strzałka nie jest wyświetlana.
 - **Linia kierunku**. Pokazuje kierunek, jako przerywaną linię, od konkretnego punktu na mapie do śledzonego markera w linii prostej.
-- ***Jedno dotknięcie*** aktywne (*dla Androida*). Jednym dotknięciem wymaganego markera na mapie, ten marker przenosi się na początek listy aktywnych markerów mapy bez otwierania menu kontekstowego.
-- **Zachowaj przekroczone markery na mapie** *(dla Androida)*. Markery dodane jako grupa Ulubionych lub punkty trasy GPX oznaczone jako przekroczone pozostaną na mapie. Jeśli grupa nie jest aktywna, markery znikną z mapy.
+- ***Jedno dotknięcie*** aktywne (*dla Androida*). Jedno dotknięcie wymaganego markera na mapie przenosi ten marker na górę listy aktywnych markerów mapy bez otwierania menu kontekstowego.
+- **Zachowaj przekroczone markery na mapie** *(dla Androida)*. Markery dodane jako grupa Ulubionych lub punkty trasy GPX oznaczone jako Przekroczone pozostaną na mapie. Jeśli grupa nie jest aktywna, markery znikną z mapy.
 
 
 ## Planowanie trasy dla markerów {#plan-route-for-markers}
@@ -161,18 +161,18 @@ W wersji OsmAnd na iOS, *Wygląd na mapie* jest również ustawieniem wyświetla
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Markery mapy Punkty planowania trasy Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Markery mapy Opcje planowania trasy Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Markery mapy Planowanie punktów trasy Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Markery mapy Opcje planowania trasy Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Korzystając z funkcji Planowania trasy w narzędziu listy markerów, możesz sortować *Markery* *od drzwi do drzwi*, ustawiać je w odwrotnej kolejności lub tworzyć *podróż w obie strony*. Jeśli wybierzesz opcję *Nawigacja*, *Markery* zostaną użyte jako [punkty pośrednie](../navigation/setup/route-navigation.md#intermediate-destinations).
+Korzystając z funkcji Planowanie trasy w narzędziu listy markerów, możesz sortować *Markery* *od drzwi do drzwi*, ustawiać je w odwrotnej kolejności lub tworzyć *podróż w obie strony*. Jeśli dotkniesz opcji *Nawigacja*, *Markery* zostaną użyte jako [punkty pośrednie](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Akcje {#actions}
 
 <InfoAndroidOnly />
 
-![Więcej markerów mapy Android](@site/static/img/personal/markers/map_markers_more_android.png)
+![Markery mapy Więcej Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. Markery można sortować na liście według nazwy, odległości, czasu dodania.
+- **<Translate android="true" ids="sort_by"/>**. Markery można sortować na liście według nazwy, bliskości, czasu dodania.
 - **<Translate android="true" ids="appearance_on_the_map"/>** lub **<Translate ios="true" ids="shared_string_appearance"/>**. [Ustawienia dla markerów mapy](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Dodaje markery poprzez [wprowadzanie współrzędnych](../plan-route/coordinate-input.md).
 - **<Translate android="true" ids="plan_route"/>**. Tworzy trasę [do nawigacji](../navigation/setup/markers-navigation.md) przy użyciu wybranych markerów.

@@ -1,5 +1,5 @@
 ---
-source-hash: afd8d811e22a04d300b6aceb6838f774b297758d02f07d66e5b085e41519527d
+source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
 sidebar_position: 4
 title: Configurer la carte
 ---
@@ -11,11 +11,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+## Vue d'ensemble {#overview}
 
-
-## Aperçu {#overview}
-
-Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations sur le terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports publics et modifier le style de la carte.
+Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte selon vos besoins. Vous pouvez mettre en évidence les points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations sur le terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports en commun et modifier le style de la carte.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -23,66 +21,65 @@ Le menu **Configurer la carte** est un élément important du *Menu principal* d
 
 Section **Afficher** :
 
-![Configurer la carte android](@site/static/img/map/configure_map_show1_andr.png) ![Configurer la carte android](@site/static/img/map/configure_map_show2_andr.png)
+![Configurer la carte Android](@site/static/img/map/configure_map_show1_andr.png) ![Configurer la carte Android](@site/static/img/map/configure_map_show2_andr.png)
 
 Section **Topographie** :
 
-![Configurer la carte android](@site/static/img/map/configure_map_topography_andr.png)
+![Configurer la carte Android](@site/static/img/map/configure_map_topography_andr.png)
 
 Section **OpenStreetMap** :
 
-![Configurer la carte android](@site/static/img/map/configure_map_osm_andr.png)
+![Configurer la carte Android](@site/static/img/map/configure_map_osm_andr.png)
 
-Sections **Itinéraires et rendu de la carte** :
+Sections **Itinéraires et Rendu de la carte** :
 
-![Configurer la carte android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configurer la carte Android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configurer la carte ios](@site/static/img/map/configure-map-ios.png)
+![Configurer la carte iOS](@site/static/img/map/configure-map-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-
 Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux catégories :
 
-- [Paramètres de style de carte](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) est un groupe de paramètres qui vous permettent de modifier la façon dont la carte principale est affichée.
-- [Couches de carte](#map-layers). Ces couches vous permettent de placer des informations au-dessus (ou en dessous) de la couche de carte principale, mais ne modifient pas l'affichage de la carte elle-même.
+- [Paramètres du style de carte](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) est un groupe de paramètres qui vous permettent de modifier la façon dont la carte principale est affichée.
+- [Calques de carte](#map-layers). Ces calques vous permettent de placer des informations au-dessus (ou en dessous) du calque de carte principal, mais ne modifient pas l'affichage de la carte elle-même.
 
-**Notes :**
+**Remarques** :
 
-- Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
+- Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans le [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
 - Les paramètres de configuration de la carte dépendent de votre [profil](../personal/profiles.md).
-- Attention : le menu Configurer la carte **se ferme** lorsque vous appuyez sur le champ de la carte.
+- Attention, le menu Configurer la carte **se ferme** lorsque vous touchez le champ de la carte.
 
-## Couches de carte {#map-layers}
+## Calques de carte {#map-layers}
 
-- [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
-- [Sources raster de carte](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de fond / source principale / superposition avec des niveaux de transparence.
+- [Calque de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de carte vectorielle, y compris OpenStreetMap, les courbes de niveau et les données nautiques.
+- [Sources raster de la carte](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de fond / source principale / de superposition avec des niveaux de transparence.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - affiche les informations de pente / ombrage, le relief 3D.
-- [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de carte principale.
+- [Limites des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les limites des cartes téléchargées sur le calque de carte principal.
 - [Grille de coordonnées](../map/vector-maps.md#coordinates-grid) - contrôle la visibilité de la grille de coordonnées sur la carte.
 
-## Couches de données de carte {#map-data-layers}
+## Calques de données cartographiques {#map-data-layers}
 
 - [Favoris](../map/point-layers-on-map.md) - affiche les points favoris.
 - [POI](../map/point-layers-on-map.md) - affiche les points d'intérêt des catégories sélectionnées.
 - [Marqueurs de carte](../map/point-layers-on-map.md) - affiche les marqueurs de carte.
 - [Étiquettes de superposition](../map/point-layers-on-map.md) - affiche les noms des points et des favoris sur la carte.
-- [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport public.
+- [Transport](../map/vector-maps.md#transport) - affiche les arrêts de transport en commun.
 - [Tracés](../map/tracks/index.md) - affiche les tracés importés, planifiés ou enregistrés sur la carte.
 - [Imagerie au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec l'imagerie au niveau de la rue disponible.
 - [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
-- [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
-- [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
+- [Wikipédia](../plugins/wikipedia.md) - met en évidence les articles Wikipédia liés à la carte.
+- [Autres calques de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs calques avec des informations supplémentaires.
 
-## Paramètres de style de carte {#map-style-parameters}
+## Paramètres du style de carte {#map-style-parameters}
 
-Les paramètres de style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'[article Styles de carte](../map/vector-maps).
+Les paramètres du style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'article [Styles de carte](../map/vector-maps).
 
 - [Style de carte](../map/vector-maps.md#default-map-styles) - comprend OsmAnd (Ville), Topo, Nautique et autres.
 - [Mode carte](../map/vector-maps.md#map-mode) - vous permet de sélectionner la vue de la carte et la navigation en fonction de l'heure de la journée.
@@ -97,9 +94,8 @@ Les paramètres de style de carte dépendent du style de carte principal affich�
 
 Pour chaque profil sélectionné dans le système Android, vous pouvez modifier l'ordre des éléments du menu <Translate android="true" ids="configure_map"/>, masquer les éléments, réinitialiser les paramètres par défaut ou les copier à partir d'un autre profil. Cela vous aidera à améliorer votre interaction avec l'application OsmAnd.
 
-Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 
 ![Éléments de configuration de la carte](@site/static/img/settings/configure-screen-ui-customization.png)
-
 
 > *Dernière mise à jour : Février 2025*
