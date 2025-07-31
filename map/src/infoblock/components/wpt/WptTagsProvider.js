@@ -520,7 +520,7 @@ function addWikipediaTags(key, value, tagObj) {
     return tagObj;
 }
 
-function addWikidataTags(key, value, tagObj) {
+export function addWikidataTags(key, value, tagObj) {
     tagObj.value = value;
     tagObj.url = 'https://www.wikidata.org/wiki/' + value;
     tagObj.isUrl = true;
