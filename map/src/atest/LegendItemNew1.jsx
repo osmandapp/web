@@ -9,10 +9,11 @@ import {Tabs,TabItem } from './Tabs';
 import { use } from 'react';
 
 
-export default function LegendItemNew({ columns = 3 }) {
+export default function LegendItemNew({componentProps = {}, columns = 3 }) {
   // {'Access Private' : 'access/access_PrivateColor' }
   // const [svgString, setSvgString] = useState('');
   const [splitSvgs, setSplitSvgs] = useState([]);
+  const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const svgRef = useRef(null);
                         
@@ -59,7 +60,7 @@ export default function LegendItemNew({ columns = 3 }) {
         'Cutline',
         'Water-slide'
         ]
-  let items = [];
+  let itemsTmp = [];
   let arr = [];
 
     //       Object.entries(itemsName).forEach((entry) => {
@@ -100,67 +101,57 @@ export default function LegendItemNew({ columns = 3 }) {
   // 2. The useEffect hook now has an empty dependency array [].
   // This is because `Waterways` is a static import and not a prop,
   // so the effect only needs to run once after the initial render.
-  useEffect(() => {
-  fetch('/images/waterways.svg') // or './assets/icon.svg' if hosted inside /public
-    .then(res => res.text())
-    .then(svgText => {
-      console.log(svgText); // Raw SVG string
-      // Optional: parse it into a DOM
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(svgText, "image/svg+xml");
-      console.log(doc);
-    });
+
+
+   useEffect(() => {
+
+    if (svgRef.current) {
+  //   svgRef.current = Waterways;
+     const svgString = svgRef.current.outerHTML;
+        Object.entries(itemsName).forEach((entry) => {
+        arr.push(entry[1]);
+        if (arr.length == 3) {
+          itemsTmp.push(arr);
+          arr = [];
+        }
+        });
+    if (arr.length > 0) {
+      itemsTmp.push(arr);
+    }
+    setItems(itemsTmp)
+
+      try {
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgString, "image/svg+xml");
+        const originalSvgElement = svgDoc.documentElement;
+
+        if (originalSvgElement.querySelector('parsererror')) {
+          throw new Error("Failed to parse the Waterways SVG markup.");
+        }
+
+        const groupElements = originalSvgElement.querySelectorAll('g');
+        const svgArray = [];
+
+        groupElements.forEach(groupElement => {
+          const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          for (const attr of originalSvgElement.attributes) {
+            newSvg.setAttribute(attr.name, attr.value);
+          }
+          newSvg.appendChild(groupElement.cloneNode(true));
+          const serializer = new XMLSerializer();
+          svgArray.push(serializer.serializeToString(newSvg));
+        });
+
+        setSplitSvgs(svgArray);
+        setError(null);
+
+      } catch (e) {
+        setError(e.message);
+        setSplitSvgs([]);
+      }
+    }
   }, []);
-
-
-//   useMemo(() => {
-
-//     if (true) {
-//      svgRef.current = Waterways;
-//      const svgString = svgRef.current.outerHTML;
-//         Object.entries(itemsName).forEach((entry) => {
-//         arr.push(entry[1]);
-//         if (arr.length == 3) {
-//           items.push(arr);
-//           arr = [];
-//         }
-//         });
-//     if (arr.length > 0) {
-//       items.push(arr);
-//     }
-
-//       try {
-//         const parser = new DOMParser();
-//         const svgDoc = parser.parseFromString(svgString, "image/svg+xml");
-//         const originalSvgElement = svgDoc.documentElement;
-
-//         if (originalSvgElement.querySelector('parsererror')) {
-//           throw new Error("Failed to parse the Waterways SVG markup.");
-//         }
-
-//         const groupElements = originalSvgElement.querySelectorAll('g');
-//         const svgArray = [];
-
-//         groupElements.forEach(groupElement => {
-//           const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-//           for (const attr of originalSvgElement.attributes) {
-//             newSvg.setAttribute(attr.name, attr.value);
-//           }
-//           newSvg.appendChild(groupElement.cloneNode(true));
-//           const serializer = new XMLSerializer();
-//           svgArray.push(serializer.serializeToString(newSvg));
-//         });
-
-//         setSplitSvgs(svgArray);
-//         setError(null);
-
-//       } catch (e) {
-//         setError(e.message);
-//         setSplitSvgs([]);
-//       }
-//     }
-//   });
-// //}
+//}
 function useBaseUrl(relativePath){
     return relativePath;
 }
@@ -202,7 +193,17 @@ function useBaseUrl(relativePath){
               </>
 
             })}
-            </table>
+          </table>
+      <div>
+        {splitSvgs.map((svg, index) => (
+          <div
+            key={index}
+            style={{ border: '1px solid #ccc', margin: '10px', display: 'inline-block', verticalAlign: 'top' }}
+            dangerouslySetInnerHTML={{ __html: svg }}
+          />
+        ))}
+        {splitSvgs.length === 0 && !error && <p>No groups found in the SVG.</p>}
+      </div>
        {/* </TabItem>
         {/*<TabItem value="nightMode" label="Night mode">
           <table className={styles.table}>
@@ -241,4 +242,3 @@ function useBaseUrl(relativePath){
   );
 }
 
-;
