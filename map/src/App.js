@@ -4,6 +4,7 @@ import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
+// import { ReactComponent as Waterways } from './assets/waterways.svg';
 import './variables.css';
 import './i18n';
 import {
@@ -26,6 +27,7 @@ import {
     SHARE_MENU_URL,
     PURCHASES_URL,
     PRICING_URL,
+    TEST_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -46,6 +48,7 @@ import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
 import PricingPage from './shop/PricingPage';
+import LegendItemNew2 from './atest/LegendItemNew1';
 
 export let globalNavigate = () => null;
 
@@ -95,6 +98,7 @@ const App = () => {
                             <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
                         </Route>
                         <Route path={PRICING_URL} element={<PricingPage />}></Route>
+                        <Route path={TEST_URL} element={<LegendItemNew2 />}></Route>
                     </Routes>
                 </BrowserRouter>
             </AppContextProvider>
