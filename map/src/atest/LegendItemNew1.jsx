@@ -9,7 +9,7 @@ import {Tabs,TabItem } from './Tabs';
 import { use } from 'react';
 
 
-export default function LegendItemNew({componentProps = {}, columns = 3 }) {
+export default function LegendItemNew(props, {columns = 3}) {
   // {'Access Private' : 'access/access_PrivateColor' }
   // const [svgString, setSvgString] = useState('');
   const [splitSvgs, setSplitSvgs] = useState([]);
@@ -106,7 +106,6 @@ export default function LegendItemNew({componentProps = {}, columns = 3 }) {
    useEffect(() => {
 
     if (svgRef.current) {
-  //   svgRef.current = Waterways;
      const svgString = svgRef.current.outerHTML;
         Object.entries(itemsName).forEach((entry) => {
         arr.push(entry[1]);
@@ -162,7 +161,7 @@ function useBaseUrl(relativePath){
 
     <div className="container row">
        <div style={{ display: 'none' }}>
-        <Waterways ref={svgRef} {...componentProps} />
+        <Waterways ref={svgRef} {...props} />
       </div>
      {// <Tabs groupId="map-legend">
        // <TabItem value="dayMode" label="Day mode"> 
@@ -175,6 +174,7 @@ function useBaseUrl(relativePath){
                 <th className="col-3" style={{ display: 'none' }} />
               </tr>
             </thead>
+            <tbody>
             {items.map((itemArray, ind) => {
               return <>
                 <tr key={ind * 2}>
@@ -193,14 +193,26 @@ function useBaseUrl(relativePath){
               </>
 
             })}
+            </tbody>
           </table>
+          End table
       <div>
         {splitSvgs.map((svg, index) => (
-          <div
-            key={index}
-            style={{ border: '1px solid #ccc', margin: '10px', display: 'inline-block', verticalAlign: 'top' }}
+    <div
+                      key={index}
+            style={{ 
+              border: '1px solid #ccc', 
+              margin: '10px', 
+              display: 'inline-block', 
+              verticalAlign: 'top',
+              backgroundColor: '#f9f9f9', // Added a subtle background for contrast
+              minWidth: '150px', // Ensure a minimum size
+              minHeight: '100px',// Ensure a minimum size
+              boxSizing: 'border-box' // Include padding/border in width/height
+            }}
             dangerouslySetInnerHTML={{ __html: svg }}
           />
+
         ))}
         {splitSvgs.length === 0 && !error && <p>No groups found in the SVG.</p>}
       </div>
