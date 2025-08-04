@@ -9,98 +9,14 @@ import {Tabs,TabItem } from './Tabs';
 import { use } from 'react';
 
 
-export default function LegendItemNew(props, {columns = 3}) {
-  // {'Access Private' : 'access/access_PrivateColor' }
-  // const [svgString, setSvgString] = useState('');
+export default function LegendItemNew({itemsName, props}) {
+
   const [splitSvgs, setSplitSvgs] = useState([]);
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const svgRef = useRef(null);
-                        
-                        const itemsMap={
-        'Regular Building' : 'buildigns/building_RegularColor',
-        'Industrianl, garagaes etc.' : 'buildigns/building_IndustrialColor',
-        'Residential' : 'buildigns/building_ResidentialColor',
-        'Hospital, civic, educational' : 'buildigns/building_HospitalColor',
-        'Commercial, retail' : 'buildigns/building_CommercialColor',
-        'Place of worship, historic tower' : 'buildigns/building_churchColor',
-        'Abandoned, damaged, collapsed' : 'buildigns/building_AbandonedColor',
-        'Construction' : 'buildigns/building_ConstructionColor',
-        'Proposed' : 'buildigns/building_ProposedColor',
-        'Military: barraks' : 'buildigns/building_MilitaryColor',
-        'Bunker' : 'buildigns/building_bunker',
-        'Railway station' : 'buildigns/building_railway_station',
-        'Aerialway station' : 'buildigns/building_aerialway_station',
-        'Public transport platform' : 'buildigns/building_public_transport_platform',
-        'Aerodrome' : 'buildigns/building_aerodromeColor',
-        'Aeroway terminal' : 'buildigns/building_aerowayTerminalColor',
-        'Apron' : 'buildigns/building_apronColor',
-        'Helipad' : 'buildigns/building_aeroway_helipad',
-        }
-        const imageFilePath="built-up-areas/built-up_waterways_day"
-        const itemsName=[
-        'River',
-        'Canal',
-        'Stream',
-        'Drain',
-        'Ditch',
-        'Intermittent stream',
-        'Dam',
-        'Weir',
-        'Groyne',
-        'Breakwater',
-        'Pier',
-        'Cliff',
-        'Slope',
-        'Earth bank',
-        'Ridge, arete',
-        'Valley',
-        'Waterfall',
-        'Tree row',
-        'Cutline',
-        'Water-slide'
-        ]
   let itemsTmp = [];
   let arr = [];
-
-    //       Object.entries(itemsName).forEach((entry) => {
-    //     arr.push(entry[1]);
-    //     if (arr.length == 3) {
-    //       items.push(arr);
-    //       arr = [];
-    //     }
-    //     });
-    // if (arr.length > 0) {
-    //   items.push(arr);
-    // }
-  
-   // const fetchSvg = () => {
-     // try {
-     //   const imageFilePath = '/map/assets/waterways.svg';
-        // const response = await fetch(imageFilePath);
-        //const response = await fetch(imageFilePath);
-        // if (!response.ok) {
-          // throw new Error(`HTTP error! status: ${response.status}`);
-        // }
-        // const text = await response.text();
-        // setSvgString(svgRef.current.outerHTML);
-        // setError(null); // Clear any previous errors
-      // } catch (e) {
-      //   console.error("Failed to fetch SVG:", e);
-      //   setError(`Could not load SVG from path: ${imageFilePath}`);
-      //   setSvgString(''); // Clear any previous SVG data
-      //   setSplitSvgs([]);
-      // }
-   // };
-  //fetchSvg();
-
-
- // const SvgSplitter = ({ filePath }) => {
-
-
-  // 2. The useEffect hook now has an empty dependency array [].
-  // This is because `Waterways` is a static import and not a prop,
-  // so the effect only needs to run once after the initial render.
 
 
    useEffect(() => {
@@ -117,7 +33,7 @@ export default function LegendItemNew(props, {columns = 3}) {
     if (arr.length > 0) {
       itemsTmp.push(arr);
     }
-    setItems(itemsTmp)
+   
 
       try {
         const parser = new DOMParser();
@@ -131,16 +47,44 @@ export default function LegendItemNew(props, {columns = 3}) {
         const groupElements = originalSvgElement.querySelectorAll('g');
         const svgArray = [];
 
+        const originalDefs = originalSvgElement.querySelector('defs');
+        const originalStyles = originalSvgElement.querySelectorAll('style');
+
         groupElements.forEach(groupElement => {
           const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          // Copy attributes (like viewBox, width, height, xmlns) from original SVG
+
+          const attributesToExclude = ['width', 'height', 'viewBox'];
           for (const attr of originalSvgElement.attributes) {
-            newSvg.setAttribute(attr.name, attr.value);
+            if (!attributesToExclude.includes(attr.name)) {
+              newSvg.setAttribute(attr.name, attr.value);
+            }
           }
-          newSvg.appendChild(groupElement.cloneNode(true));
+          // Append cloned <defs> and <style> to the new SVG
+          if (originalDefs) {
+            newSvg.appendChild(originalDefs.cloneNode(true));
+          }
+          originalStyles.forEach(styleNode => {
+              newSvg.appendChild(styleNode.cloneNode(true));
+          });
+          
+          // --- START OF NEW LOGIC FOR TRANSFORM REMOVAL ---
+          const clonedGroupElement = groupElement.cloneNode(true); // Clone the group
+          
+          // Check if the cloned group has a 'transform' attribute
+          if (clonedGroupElement.hasAttribute('transform')) {
+            console.log(`Removing 'transform' attribute from group with ID: ${clonedGroupElement.id || 'N/A'}`);
+            clonedGroupElement.removeAttribute('transform'); // Remove it
+          }
+          // --- END OF NEW LOGIC ---
+
+          // Append the (potentially modified) cloned group element to the new SVG
+          newSvg.appendChild(clonedGroupElement);
           const serializer = new XMLSerializer();
           svgArray.push(serializer.serializeToString(newSvg));
         });
 
+        setItems(itemsTmp)
         setSplitSvgs(svgArray);
         setError(null);
 
@@ -157,7 +101,7 @@ function useBaseUrl(relativePath){
 
 
   return (
-    <Box>
+
 
     <div className="container row">
        <div style={{ display: 'none' }}>
@@ -196,26 +140,34 @@ function useBaseUrl(relativePath){
             </tbody>
           </table>
           End table
-      <div>
+          
         {splitSvgs.map((svg, index) => (
-    <div
-                      key={index}
+        <div style={{ 
+        display: 'block', 
+        lineHeight: '50px', // Crucial: give the parent line box height
+        lineWidth: '350px',
+        border: '1px dashed blue', // Visualize the line box
+        fontSize: '0' // Prevents extra space from font-size affecting baseline
+        }}>
+        <div
+            key={index}
             style={{ 
               border: '1px solid #ccc', 
               margin: '10px', 
-              display: 'inline-block', 
-              verticalAlign: 'top',
+              display: 'flex', 
+              verticalAlign: 'middle',
+              width: '300px',
+                        height: '30px',
               backgroundColor: '#f9f9f9', // Added a subtle background for contrast
-              minWidth: '150px', // Ensure a minimum size
-              minHeight: '100px',// Ensure a minimum size
               boxSizing: 'border-box' // Include padding/border in width/height
             }}
             dangerouslySetInnerHTML={{ __html: svg }}
-          />
+         />
 
+      </div>
         ))}
         {splitSvgs.length === 0 && !error && <p>No groups found in the SVG.</p>}
-      </div>
+ 
        {/* </TabItem>
         {/*<TabItem value="nightMode" label="Night mode">
           <table className={styles.table}>
@@ -249,8 +201,6 @@ function useBaseUrl(relativePath){
 
       </Tabs>*/}
     </div>
-    </Box>
-
   );
 }
 
