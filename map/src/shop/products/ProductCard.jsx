@@ -38,7 +38,7 @@ export default function ProductCard({
 
     const product = products.find((p) => p.id === productId);
 
-    const [btnText, setBtnText] = useState('web:action_compete_purchase');
+    const [btnText, setBtnText] = useState('web:action_complete_purchase');
 
     useEffect(() => {
         if (ltx.completePurchase) {
@@ -55,9 +55,9 @@ export default function ProductCard({
         } else if (type === 'annual') {
             setBtnText('web:action_subscribe_annual');
         } else if (type === 'one-time') {
-            setBtnText('web:action_compete_purchase');
+            setBtnText('web:action_complete_purchase');
         } else {
-            setBtnText('web:action_compete_purchase');
+            setBtnText('web:action_complete_purchase');
         }
     }, [type]);
 
