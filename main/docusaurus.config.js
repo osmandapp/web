@@ -9,13 +9,6 @@ async function createConfig(){
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
   return {
-    future: {
-      experimental_faster: true,
-      experimental_faster: {
-        rspackBundler: true, // required flag
-        rspackPersistentCache: true, // new flag
-      }
-    },
     title: 'OsmAnd',
     tagline: 'Offline Maps and Navigation',
     url: 'https://osmand.net',
