@@ -446,8 +446,8 @@ export function createHoverMarker({
             newMarker = new SimpleDotMarker(latlng, marker, {
                 fillColor: COLOR_POINTER,
             }).build();
+            pointerRef.current = newMarker.addTo(map);
         }
-        pointerRef.current = newMarker.addTo(map);
     };
 
     map.on('zoomend', onZoomEnd);

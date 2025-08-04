@@ -60,6 +60,7 @@ export function selectMarker(target, prevMarker, type = null) {
 export function hideSelectedMarker(target, type = null) {
     if (type && type === EXPLORE_LAYER_ID && target.options?.hover) {
         target.options.hover.remove();
+        target.options.hovered = null;
         return;
     }
     updateSelectedMarkerOnMap({ marker: target, type, updatePrev: true });
@@ -80,6 +81,7 @@ export function updateSelectedMarkerOnMap({ marker, type = null, updatePrev = fa
     } else {
         if (type && type === EXPLORE_LAYER_ID) {
             marker.options.hover = new HoverMarker(marker).build();
+            marker.options.hovered = !!marker.options.hover;
             return marker;
         }
         // marker with icon

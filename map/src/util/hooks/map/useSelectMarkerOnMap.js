@@ -43,7 +43,11 @@ export function useSelectMarkerOnMap({
                     foundMarker.fire('mouseout'); // Hide the marker
                 }
             } else {
-                if (ctx.selectedPoiId.show && !ctx.selectedSearchMarker) {
+                if (
+                    ctx.selectedPoiId.show &&
+                    !ctx.selectedSearchMarker &&
+                    foundMarker?.options.idObj !== selectedObjId
+                ) {
                     const circle = createSecondaryMarker(ctx.selectedPoiId.obj);
                     if (circle) {
                         ctx.setSelectedSearchMarker(circle);
