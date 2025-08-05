@@ -573,7 +573,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
 - **Vehicle Metrics**. This menu opens *[Vehicle metrics plugin settings](../plugins/vehicle-metrics.md#scanner-settings)*. It allows you to connect OBD-II scanner to OsmAnd.
 
-- **AIS vessel tracker** (Android only). This menu opens *[AIS vessel tracker plugin settings](../plugins/ais-tracke.md#plugin-settings)*. This plugin allows you to connect AIS tracker to OsmAnd.
+- **AIS vessel tracker** (Android only). This menu opens *[AIS vessel tracker plugin settings](../plugins/ais-tracker.md#plugin-settings)*. This plugin allows you to connect AIS tracker to OsmAnd.
 
 
 
