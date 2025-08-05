@@ -50,9 +50,9 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         if (sharedFile) {
-                            ctx.setOpenGroups((prevState) => [...prevState, { group, type: smartf?.type }]);
+                            ctx.setOpenFavGroups((prevState) => [...prevState, { group, type: smartf?.type }]);
                         } else {
-                            ctx.setOpenGroups((prevState) => [...prevState, group]);
+                            ctx.setOpenFavGroups((prevState) => [...prevState, group]);
                         }
                         ctx.setZoomToFavGroup(group.id);
                     }

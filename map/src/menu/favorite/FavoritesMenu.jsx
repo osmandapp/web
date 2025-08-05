@@ -12,6 +12,9 @@ import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
+import { SHARE_TYPE } from '../share/shareConstants';
+import TrackGroupFolder from '../tracks/TrackGroupFolder';
+import FavoriteGroupFolder from './FavoriteGroupFolder';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -62,6 +65,18 @@ export default function FavoritesMenu() {
             });
         }
     }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
+
+    // open favorite group
+    if (ctx.openFavGroups && ctx.openFavGroups.length > 0) {
+        const lastGroup = ctx.openFavGroups[ctx.openFavGroups.length - 1];
+        if (lastGroup?.type === SHARE_TYPE) {
+            if (lastGroup?.files) {
+                return <FavoriteGroupFolder smartf={lastGroup} />;
+            }
+            return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
+        }
+        return <FavoriteGroupFolder folder={lastGroup} />;
+    }
 
     return (
         <>

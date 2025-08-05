@@ -45,10 +45,7 @@ import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_d
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
-import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _, { isEmpty } from 'lodash';
-import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
-import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
@@ -85,12 +82,9 @@ import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
-import { SHARE_TYPE } from './share/shareConstants';
 import { saveSortToDB } from '../context/FavoriteStorage';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
-    ctx.setOpenGroups([]);
-    ctx.setOpenVisibleMenu(false);
     ctx.setOpenProFeatures(null);
     if (wptDetails) {
         ctx.setSelectedWpt(null);
@@ -121,6 +115,8 @@ export default function MainMenu({
     const location = useLocation();
     const [, height] = useWindowSize();
     const { filename } = useParams();
+
+    const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
 
     const timerRef = useRef(null);
 
@@ -352,12 +348,6 @@ export default function MainMenu({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        if (ctx.openVisibleMenu) {
-            ctx.setOpenVisibleMenu(false);
-        }
-    }, [menuInfo]);
-
-    useEffect(() => {
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
         }
@@ -433,30 +423,6 @@ export default function MainMenu({
         isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
-    }
-
-    function getGroup() {
-        if (ctx.openGroups?.length > 0) {
-            let type = selectedType;
-            if (!type) {
-                type = selectMenuByUrl();
-            }
-            const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-            if (type === OBJECT_TYPE_FAVORITE) {
-                if (lastGroup?.type === SHARE_TYPE) {
-                    if (lastGroup?.files) {
-                        return <FavoriteGroupFolder smartf={lastGroup} />;
-                    }
-                    return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
-                }
-                return <FavoriteGroupFolder folder={lastGroup} />;
-            } else if (type === OBJECT_TYPE_CLOUD_TRACK) {
-                if (lastGroup?.type === SHARE_TYPE) {
-                    return <TrackGroupFolder smartf={lastGroup} />;
-                }
-                return <TrackGroupFolder folder={lastGroup} />;
-            }
-        }
     }
 
     function selectMenu({ item }) {
@@ -741,15 +707,24 @@ export default function MainMenu({
                 <Toolbar sx={{ mb: '-3px' }} />
                 {!isOpenSubMenu() && (
                     <>
-                        {/*add pro features*/}
-                        {ctx.openProFeatures && <ProFeatures />}
-                        {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openProFeatures && <Outlet />}
-                        {/*add track groups*/}
-                        {ctx.openGroups.length > 0 && getGroup()}
-                        {ctx.openVisibleMenu && (
-                            <VisibleTracks setMenuInfo={setMenuInfo} setSelectedType={setSelectedType} />
-                        )}
+                        {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen ? <Outlet /> : null}
+                        <div
+                            style={{
+                                display: isAccountOpen || ctx.openProFeatures ? 'none' : 'block',
+                            }}
+                        >
+                            {items.map(
+                                (item) =>
+                                    item.show && (
+                                        <div
+                                            key={item.type}
+                                            style={{ display: selectedType === item.type ? 'block' : 'none' }}
+                                        >
+                                            {item.component}
+                                        </div>
+                                    )
+                            )}
+                        </div>
                     </>
                 )}
                 <InformationBlock
