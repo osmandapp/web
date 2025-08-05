@@ -237,17 +237,17 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const currentPoi = ctx.selectedWpt.poi;
                 if (currentPoi) {
                     tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
-                } else {
+                } else if (newWpt?.wikidata) {
                     const fallbackTags = [];
-                    if (newWpt?.wikidata) {
-                        const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {
-                            key: 'wikidata',
-                            value: 'Q' + newWpt.wikidata,
-                            textPrefix: 'Wikidata',
-                        });
-                        fallbackTags.push(wikidataTag);
-                    }
+                    const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {
+                        key: 'wikidata',
+                        value: 'Q' + newWpt.wikidata,
+                        textPrefix: 'Wikidata',
+                    });
+                    fallbackTags.push(wikidataTag);
                     tags = { res: fallbackTags };
+                } else {
+                    tags = null;
                 }
             }
             return tags;
