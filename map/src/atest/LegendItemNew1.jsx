@@ -23,17 +23,6 @@ export default function LegendItemNew({itemsName, props}) {
 
     if (svgRef.current) {
      const svgString = svgRef.current.outerHTML;
-        Object.entries(itemsName).forEach((entry) => {
-        arr.push(entry[1]);
-        if (arr.length == 3) {
-          itemsTmp.push(arr);
-          arr = [];
-        }
-        });
-    if (arr.length > 0) {
-      itemsTmp.push(arr);
-    }
-   
 
       try {
         const parser = new DOMParser();
@@ -52,7 +41,6 @@ export default function LegendItemNew({itemsName, props}) {
 
         groupElements.forEach(groupElement => {
           const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-          // Copy attributes (like viewBox, width, height, xmlns) from original SVG
 
           const attributesToExclude = ['width', 'height', 'viewBox'];
           for (const attr of originalSvgElement.attributes) {
@@ -60,15 +48,12 @@ export default function LegendItemNew({itemsName, props}) {
               newSvg.setAttribute(attr.name, attr.value);
             }
           }
-          // Append cloned <defs> and <style> to the new SVG
           if (originalDefs) {
             newSvg.appendChild(originalDefs.cloneNode(true));
           }
           originalStyles.forEach(styleNode => {
               newSvg.appendChild(styleNode.cloneNode(true));
           });
-          
-          // --- START OF NEW LOGIC FOR TRANSFORM REMOVAL ---
           const clonedGroupElement = groupElement.cloneNode(true); // Clone the group
           
           // Check if the cloned group has a 'transform' attribute
@@ -76,13 +61,29 @@ export default function LegendItemNew({itemsName, props}) {
             console.log(`Removing 'transform' attribute from group with ID: ${clonedGroupElement.id || 'N/A'}`);
             clonedGroupElement.removeAttribute('transform'); // Remove it
           }
-          // --- END OF NEW LOGIC ---
-
-          // Append the (potentially modified) cloned group element to the new SVG
           newSvg.appendChild(clonedGroupElement);
+          const toRemove = document.body.insertAdjacentElement("beforeend", newSvg);
+          let bbox = newSvg.getBBox();
+          toRemove?.remove();
+          console.log(bbox);
+          newSvg.setAttribute('width', bbox.width.toFixed(2));
+          newSvg.setAttribute('height', bbox.height.toFixed(2));
+          newSvg.setAttribute('viewBox', `0 0 ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`);
           const serializer = new XMLSerializer();
-          svgArray.push(serializer.serializeToString(newSvg));
+          const serializedGroup = serializer.serializeToString(newSvg);
+          svgArray.push({id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup});
         });
+
+          Object.entries(itemsName).forEach((entry) => {
+            arr.push(entry[1]);
+            if (arr.length == 3) {
+              itemsTmp.push(arr);
+              arr = [];
+            }
+          });
+          if (arr.length > 0) {
+            itemsTmp.push(arr);
+          }
 
         setItems(itemsTmp)
         setSplitSvgs(svgArray);
@@ -93,8 +94,19 @@ export default function LegendItemNew({itemsName, props}) {
         setSplitSvgs([]);
       }
     }
-  }, []);
-//}
+    }, []);
+
+
+  const chunkArray = (arr, chunkSize) => {
+    const R = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
+    }
+    return R;
+  };
+
+const rows = chunkArray(splitSvgs, 3);
+
 function useBaseUrl(relativePath){
     return relativePath;
 }
@@ -140,33 +152,34 @@ function useBaseUrl(relativePath){
             </tbody>
           </table>
           End table
-          
-        {splitSvgs.map((svg, index) => (
-        <div style={{ 
-        display: 'block', 
-        lineHeight: '50px', // Crucial: give the parent line box height
-        lineWidth: '350px',
-        border: '1px dashed blue', // Visualize the line box
-        fontSize: '0' // Prevents extra space from font-size affecting baseline
-        }}>
-        <div
-            key={index}
-            style={{ 
-              border: '1px solid #ccc', 
-              margin: '10px', 
-              display: 'flex', 
-              verticalAlign: 'middle',
-              width: '300px',
-                        height: '30px',
-              backgroundColor: '#f9f9f9', // Added a subtle background for contrast
-              boxSizing: 'border-box' // Include padding/border in width/height
-            }}
-            dangerouslySetInnerHTML={{ __html: svg }}
-         />
+      {splitSvgs.length > 0 ? (
+        <table className={styles.table}>
+          <tbody>
+            {rows.map((itemArray, rowIndex) => {
+               return <>
+              <tr key={rowIndex *2}>
 
-      </div>
-        ))}
-        {splitSvgs.length === 0 && !error && <p>No groups found in the SVG.</p>}
+                  {itemArray.length > 0 && <td className='text--center'>{itemArray[0].id}</td>}
+                  {itemArray.length > 1 && <td className='text--center'>{itemArray[1].id}</td>}
+                  {itemArray.length > 2 && <td className='text--center'>{itemArray[2].id}</td>}
+              </tr>
+              <tr key={rowIndex * 2 + 1} className={styles.legendDay}>
+                {itemArray.length > 0 &&<td> <div className={styles.img}> <div dangerouslySetInnerHTML={{ __html: itemArray[0].svgString }}/></div></td>}
+                {itemArray.length > 1 &&<td> <div className={styles.img}> <div dangerouslySetInnerHTML={{ __html: itemArray[1].svgString }}/></div></td>}
+                {itemArray.length > 2 &&<td> <div className={styles.img}> <div dangerouslySetInnerHTML={{ __html: itemArray[2].svgString }}/></div></td>}
+
+                 {/* Fill remaining columns if the last row is not full */}
+                {itemArray.length < 3 && Array.from({ length: 3 - itemArray.length }).map((_, i) => (
+                  <td key={`empty-${rowIndex}-${i}`} style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f9f9f9', height: '35px' }}></td>
+                ))}
+              </tr>
+              </>
+            })}
+          </tbody>
+        </table>
+      ) : (
+        !error && <p>No groups found in the SVG (after processing).</p>
+      )}
  
        {/* </TabItem>
         {/*<TabItem value="nightMode" label="Night mode">
