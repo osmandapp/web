@@ -404,8 +404,8 @@ export default function TrackAnalyzerMenu() {
                         </Grid>
 
                         {analyseResult === null && !processing && !emptySegResult && <TrackAnalyzerTips />}
+                        <ThickDivider />
                     </Box>
-                    <ThickDivider />
                     {showProcessing && (
                         <ErrorBlock
                             icon={<CircularProgress size={20} />}

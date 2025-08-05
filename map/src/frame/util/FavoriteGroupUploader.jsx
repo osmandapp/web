@@ -118,7 +118,7 @@ export default function FavoriteGroupUploader({ children }) {
     return (
         <>
             <label htmlFor="se-upload-fav-group">
-                <HiddenInput id="se-upload-fav-group" accept=".gpx" multiple type="file" onChange={fileSelected} />
+                <HiddenInput id="se-upload-fav-group" accept=".gpx, .kmz, .kml" multiple type="file" onChange={fileSelected} />
                 {children}
             </label>
             {openDialog && importFile && (
