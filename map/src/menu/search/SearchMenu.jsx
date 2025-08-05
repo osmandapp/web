@@ -248,6 +248,7 @@ export default function SearchMenu() {
                                         .slice(0, 6)
                                         .map((item, key) => {
                                             const catName = translatePoi({ key, ctx, t });
+                                            const catNameId = catName.split(' ').join('_');
                                             return (
                                                 <Grid
                                                     item
@@ -257,7 +258,7 @@ export default function SearchMenu() {
                                                     id={'se-default-search-categories'}
                                                 >
                                                     <ListItemButton
-                                                        id={'se-default-search-categories-item-' + catName}
+                                                        id={'se-default-search-categories-item-' + catNameId}
                                                         key={key}
                                                         onClick={(e) => {
                                                             searchByCategory(catName);

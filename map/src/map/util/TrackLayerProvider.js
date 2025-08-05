@@ -447,7 +447,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                     mainStyle: true,
                     text: marker.options['name'],
                     latlng: marker._latlng,
-                    iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                    iconSize: DEFAULT_ICON_SIZE,
                     map,
                     ctx,
                 });
@@ -656,7 +656,6 @@ const TrackLayerProvider = {
     parsePoints,
     parseWpt,
     getPolylineOpt,
-    getPolylineByPoints,
     getPointByPolyline,
     createTempPolyline,
     getPolylines,

@@ -8,7 +8,7 @@ import { addClusteredMarkersToMap, clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { filterPointsInBounds } from './FavoriteLayer';
 import useHashParams from '../../util/hooks/useHashParams';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { addShareFavoriteToMap } from '../../manager/FavoritesManager';
 
 export default function ShareFileLayer() {

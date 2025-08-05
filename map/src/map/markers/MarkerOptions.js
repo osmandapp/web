@@ -5,12 +5,15 @@ import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
 import PoiManager from '../../manager/PoiManager';
 import backgrounds from '../../resources/generated/poiBackgroundIcons.json';
+import { EXPLORE_BIG_ICON_SIZE } from '../util/Clusterizer';
+import styles from '../../menu/search/search.module.css';
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
 const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 export const DEFAULT_WPT_COLOR = '#eecc22';
+export const DEFAULT_POI_COLOR = '#fe8800';
 
 export const DEFAULT_ICON_SIZE = 24;
 
@@ -21,6 +24,12 @@ export const ICONS_PREFIX = 'mx_';
 export const COLORED_ICONS_PREFIX = 'c_mx_';
 export const SHADERS_PREFIX = 'h_';
 export const COLORED_SHADERS_PREFIX = 'c_h_';
+
+export const DEFAULT_BIG_HOVER_SIZE = EXPLORE_BIG_ICON_SIZE;
+export const DEFAULT_BIG_HOVER_STYLES = {
+    hover: styles.wikiIconHover,
+    large: styles.wikiIconLarge,
+};
 
 // startIcon, interIcon, endIcon, pointerIcons
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
