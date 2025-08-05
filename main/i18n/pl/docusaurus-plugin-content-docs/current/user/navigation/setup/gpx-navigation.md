@@ -1,5 +1,5 @@
 ---
-source-hash: 5b1f516001588d13044bc97b434ef0d12f0f32e20295902b3d61ccfb9d49d0f5
+source-hash: ae9687e6f1f23d70428677a5ebd5a73f6a67a71286137aec6ff175aad5589758
 sidebar_position: 2
 title: Nawigacja po śladzie
 ---
@@ -17,9 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Opcja *Nawigacja po śladzie* (GPX) pozwala podążać po wcześniej zdefiniowanej trasie lub śladzie na mapie. Może to być szczególnie przydatne podczas aktywności na świeżym powietrzu, takich jak wędrówki, jazda na rowerze czy jazda terenowa, gdzie zaplanowana trasa poprawia bezpieczeństwo i efektywność. Jeśli podróżujesz w zorganizowanej grupie, ta funkcja pomaga Tobie i każdemu członkowi grupy mieć te same informacje o trasie, co inni.
+Opcja *Nawigacja po śladzie* (GPX) pozwala na podążanie po wcześniej zdefiniowanej trasie lub śladzie na mapie. Może być szczególnie przydatna podczas aktywności na świeżym powietrzu, takich jak wędrówki, jazda na rowerze czy jazda terenowa, gdzie zaplanowana trasa poprawia bezpieczeństwo i efektywność. Jeśli podróżujesz w zorganizowanej grupie, ta funkcja pomaga Tobie i każdemu członkowi grupy mieć te same informacje o trasie, co inni.
 
-Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym. Możesz użyć wcześniej [nagranego śladu](../../plugins/trip-recording.md) lub [utworzyć ślad](../../personal/tracks/manage-tracks.md#create-a-track) i udostępnić go rodzinie lub znajomym, zamiast wyjaśniać im trasę. Możesz również użyć [tras na mapie OsmAnd](../../../../blog/routes/) do nawigacji. Jak je wyróżnić na mapie i co oznaczają ich kolory, opisano w sekcji [Trasy](../../map/vector-maps.md#routes) artykułu *Mapy wektorowe*.
+Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym. Możesz użyć wcześniej [nagranego śladu](../../plugins/trip-recording.md) lub [utworzyć ślad](../../personal/tracks/manage-tracks.md#create-a-track) i udostępnić go rodzinie lub znajomym zamiast wyjaśniać im trasę. Możesz również użyć [tras na mapie OsmAnd](../../../../blog/routes/) do nawigacji. Sposób ich wyróżniania na mapie i znaczenie ich kolorów opisano w sekcji [Trasy](../../map/vector-maps.md#routes) artykułu *Mapy wektorowe*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -40,14 +40,14 @@ Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym.
 
 ## Wybierz ślad {#select-the-track}
 
-Przed użyciem opcji *Nawigacja po śladzie* musisz [wyświetlić ślad na mapie](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd obsługuje ślad jako linię (**Geometria**) i ślad jako trasę (**Trasa**) lub ich kombinację (**OsmAnd** przez [Planowanie trasy](../../plan-route/create-route.md)). Jeśli masz ślad jako kolekcję **Punktów**, możesz użyć [Nawigacji po znacznikach](./markers-navigation.md).
+Przed użyciem opcji *Nawigacja po śladzie* należy [wyświetlić ślad na mapie](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd obsługuje ślad jako linię (**Geometria**) i ślad jako trasę (**Trasa**) lub ich kombinację (**OsmAnd** przez [Planuj trasę](../../plan-route/create-route.md)). Jeśli masz ślad jako kolekcję **Punktów**, możesz użyć [Nawigacji po znacznikach](./markers-navigation.gpx).
 
 
-- Ślad **Geometrii** będzie domyślnie miał bardzo podstawową nawigację i nie zapewni dokładnych zakrętów, nazw ulic i pasów ruchu. Aby uzyskać brakujące informacje, należy użyć narzędzia [Dołącz do dróg](#attach-to-the-roads).
+- Ślad **Geometria** będzie domyślnie miał bardzo podstawową nawigację i nie będzie dostarczał dokładnych informacji o zakrętach, nazwach ulic i pasach ruchu. Aby uzyskać brakujące informacje, należy użyć narzędzia [Dołącz do dróg](#attach-to-the-roads).
 
-- Ślad **Trasy** obliczy trasę między punktami trasy według wybranego profilu. Zasadniczo wszystkie punkty trasy będą traktowane jako punkty pośrednie. Jeśli trasa składa się z ponad 50 punktów, bardzo prawdopodobne jest, że jest to źle skonfigurowany ślad **Geometrii**.
+- Ślad **Trasa** obliczy trasę między punktami trasy według wybranego profilu. Zasadniczo wszystkie punkty trasy będą traktowane jako punkty pośrednie. Jeśli Twoja trasa składa się z ponad 50 punktów, bardzo prawdopodobne jest, że jest to źle skonfigurowany ślad **Geometria**.
 
-- Ślad **OsmAnd** składa się zarówno z części geometrycznej, jak i trasowej, i nadaje się do zapewnienia dokładnie takich samych wskazówek, jak nawigacja domyślna. Te ślady są tworzone przez [Planowanie trasy](../../plan-route/create-route.md) lub [Wersję internetową](../../web/index.md). Możliwe jest ponowne zapisanie tego śladu do śladu tylko **Geometrii** jako [**Uproszczony**](../../plan-route/create-route.md#save-route) do użycia w programach innych firm.
+- Ślad **OsmAnd** składa się zarówno z części geometrycznej, jak i trasowej, i nadaje się do zapewnienia dokładnie takich samych wskazówek, jak nawigacja domyślna. Te ślady są tworzone przez [Planuj trasę](../../plan-route/create-route.md) lub [Wersję internetową](../../web/index.md). Możliwe jest ponowne zapisanie tego śladu do śladu tylko **Geometria** jako [**Uproszczony**](../../plan-route/create-route.md#save-route) do użycia w programach innych firm.
 
 
 ### Rozpocznij nawigację GPX {#start-gpx-navigation}
@@ -68,11 +68,11 @@ Przed użyciem opcji *Nawigacja po śladzie* musisz [wyświetlić ślad na mapie
 
 </Tabs>
 
-Nawigację po śladzie można rozpocząć za pomocą przycisku szybkiej akcji w [menu kontekstowym śladu](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (otwieranego poprzez wybranie jednego z [podświetlonych śladów](./route-navigation.md#history-of-previous-routes) na mapie lub poprzez dotknięcie pliku śladu w sekcji [Moje miejsca](../../personal/myplaces.md) w *Menu głównym*) lub z menu nawigacji, które otwiera się poprzez dotknięcie:
+Nawigację po śladzie można rozpocząć za pomocą przycisku szybkiej akcji w [menu kontekstowym śladu](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (otwieranego przez wybranie jednego z [podświetlonych śladów](./route-navigation.md#history-of-previous-routes) na mapie lub przez dotknięcie pliku śladu w sekcji [Moje miejsca](../../personal/myplaces.md) w *Menu głównym*) lub z menu nawigacji, które otwiera się poprzez dotknięcie:
 
 - [*Przycisku nawigacji*](../../widgets/map-buttons.md#directions) na ekranie mapy.
 - *Sekcji nawigacji* w *Menu głównym* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- W [*menu nawigacji*](./route-navigation.md#navigation-menu) przejdź do *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
+- W [*Menu nawigacji*](./route-navigation.md#navigation-menu) przejdź do *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
 
 ### Wybierz segmenty {#choose-segments}
 
@@ -119,11 +119,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_navigation,shared_string_
 
 </Tabs>
 
-- **Edytuj** (*ikona ołówka* obok nazwy śladu) — Otwiera ślad w narzędziu [*Planowanie trasy*](../../plan-route/create-route.md).
+- **Edytuj** (*ikona ołówka* obok nazwy śladu) — Otwiera ślad w narzędziu [*Planuj trasę*](../../plan-route/create-route.md).
 - **<Translate android="true" ids="select_another_track"/>** — Wybierz inny plik GPX do nawigacji.
 - **<Translate android="true" ids="gpx_option_reverse_route"/>** — Jeśli to ustawienie jest włączone, kierunek ruchu wzdłuż śladu jest odwrócony.
 - **<Translate android="true" ids="attach_to_the_roads"/>** — Konfiguruje [dołączanie śladu do dróg](#attach-to-the-roads).
-- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — Możesz wybrać sposób nawigacji z mojej lokalizacji do śladu:
+- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — Możesz wybrać, jak nawigować z mojej lokalizacji do śladu:
 do *<Translate android="true" ids="start_of_the_track"/>* lub do *<Translate android="true" ids="nearest_point"/>* na śladzie.
 - Wybierz **Typ nawigacji** dla pierwszego i ostatniego segmentu: zbuduj [*linię prostą*](../routing/straight-line-routing.md) lub użyj [*typu routingu*](../routing/osmand-routing.md#routing-types) z bieżącego profilu.
 
@@ -151,29 +151,29 @@ Funkcja **Dołącz do dróg** dopasowuje Twój ślad do najbliższej drogi, zape
 ***Jak to działa:***
 
 - OsmAnd dopasowuje każdy punkt śladu do **najbliższej drogi** w ramach ustawionej **odległości progowej** (domyślnie: **50 metrów**).
-- **Odległość progowa** definiuje maksymalną dopuszczalną odległość między punktem śladu GPS a drogą dla dołączenia.
-- **Automatyczne ponowne dołączanie** — Podczas przełączania **profili nawigacji**, OsmAnd automatycznie ponownie dołącza ślad do dróg, które są odpowiednie dla nowego profilu.
-- W przypadku dużych śladów z wieloma punktami, proces dołączania może potrwać nieco dłużej. Zobaczysz **wskaźnik postępu** (*pomarańczowa linia statusu*) pokazujący status dołączania.
-- Po zakończeniu dołączania dotknij **Zastosuj**, aby użyć zmodyfikowanego śladu do nawigacji.
+- **Odległość progowa** definiuje maksymalną dopuszczalną odległość między punktem śladu GPS a drogą do przypięcia.
+- **Automatyczne ponowne przypięcie** — Podczas zmiany **profili nawigacji**, OsmAnd automatycznie ponownie przypina ślad do dróg, które są odpowiednie dla nowego profilu.
+- W przypadku dużych śladów z wieloma punktami, proces przypinania może potrwać nieco dłużej. Zobaczysz **wskaźnik postępu** (*pomarańczową linię statusu*) pokazujący status przypinania.
+- Po zakończeniu przypinania dotknij **Zastosuj**, aby użyć zmodyfikowanego śladu do nawigacji.
 
-#### Automatyczne dołączanie do dróg {#automatic-attachment-to-the-roads}
+#### Automatyczne przypinanie do dróg {#automatic-attachment-to-the-roads}
 
 OsmAnd automatycznie dopasowuje trasy do dróg podczas korzystania z narzędzia **Planuj trasę**:
 
 - **Punkty trasy** automatycznie dopasowują się do najbliższej dostępnej drogi (*z wyjątkiem [Routing po linii prostej](../../navigation/routing/straight-line-routing.md) i [Routing bezpośrednio do punktu](../../navigation/routing/direct-to-point-routing.md)*).
-- Jeśli nie wykryto żadnych dróg (np. w środowiskach terenowych), trasa będzie podążać **segmentami linii prostych**.
-- Możesz **ręcznie dostosować** trasę, przeciągając punkty trasy do różnych lokalizacji.
+- Jeśli nie zostaną wykryte żadne drogi (np. w środowiskach terenowych), trasa będzie podążać za **segmentami linii prostej**.
+- Możesz **ręcznie dostosować** trasę, przeciągając punkty trasy w inne miejsca.
 
-Domyślnie funkcja **Dołącz do dróg** działa **automatycznie** po wybraniu śladu do nawigacji. Możesz zmienić to ustawienie w zależności od potrzeb. Aby uzyskać więcej szczegółów, zapoznaj się z [Szczegółowymi wskazówkami dotyczącymi śladu](../guidance/navigation-settings.md#detailed-track-guidance) w artykule *Ustawienia nawigacji*.
+Domyślnie funkcja **Dołącz do dróg** uruchamia się **automatycznie** po wybraniu śladu do nawigacji. Możesz zmienić to ustawienie w razie potrzeby. Więcej szczegółów znajdziesz w [Szczegółowe wskazówki dotyczące śladu](../guidance/navigation-settings.md#detailed-track-guidance) w artykule *Ustawienia nawigacji*.
 
 
 ## Punkty {#points}
 
 ### Punkt początkowy / końcowy {#start--finish-point}
 
-Możesz określić punkt początkowy i końcowy dla trasy inny niż początek/koniec określony w pliku GPX. Wystarczy zmienić go tak samo, jak w przypadku [Nawigacji](../setup/route-navigation.md#select-starting-point).
+Możesz określić punkt początkowy i końcowy trasy inny niż początkowy/końcowy określony w pliku GPX. Zmień go tak samo, jak w przypadku [Nawigacji](../setup/route-navigation.md#select-starting-point).
 
-W [menu Śledź trasę](#follow-track-options) możesz wybrać, czy chcesz nawigować z bieżącej lokalizacji do punktu początkowego śladu, czy do najbliższego punktu na śladzie GPX. Możesz również wybrać [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types), który zostanie użyty dla początkowego i końcowego segmentu Twojej trasy.
+W menu [Śledź trasę](#follow-track-options) możesz wybrać, czy chcesz nawigować z bieżącej lokalizacji do punktu początkowego śladu, czy do najbliższego punktu na śladzie GPX. Możesz również wybrać [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types), który będzie używany dla początkowego i końcowego segmentu Twojej trasy.
 
 ### Punkty trasy {#waypoints}
 
@@ -181,13 +181,13 @@ Jeśli ślad ma punkty trasy, możesz użyć [Pokaż wzdłuż trasy](../guidance
 
 ### Punkty pośrednie {#intermediate-points}
 
-Podczas przygotowywania lub nawigowania po śladzie GPX nie można dodawać pośrednich miejsc, przez które planujesz przejechać w ramach tego śladu. Możesz jedynie przypisać punkty początkowy i końcowy oprócz śladu lub segmentu, który planujesz śledzić.
+Przygotowując lub nawigując po śladzie GPX, nie można dodawać pośrednich miejsc, przez które planujesz przejechać w ramach tego śladu. Możesz jedynie przypisać punkty początkowe i końcowe oprócz śladu lub segmentu, który planujesz śledzić.
 
 ## Wskazówki {#guidance}
 
-*Nawigacja po śladzie GPX* zawiera te same [instrukcje głosowe](../guidance/voice-navigation.md), co nawigacja po trasie. Jednak niektóre zakręty lub ronda mogą nie być poprawnie interpretowane, ponieważ w plikach GPX nie ma informacji o skrzyżowaniach dróg, z wyjątkiem plików GPX utworzonych przez OsmAnd. Aby wyeliminować te problemy, należy użyć funkcji [Dołącz do dróg](#attach-to-the-roads).
+*Nawigacja po śladzie GPX* zawiera te same [instrukcje głosowe](../guidance/voice-navigation.md) co nawigacja po trasie. Jednak niektóre zakręty lub ronda mogą nie być poprawnie interpretowane, ponieważ w GPX nie ma informacji o skrzyżowaniach dróg, z wyjątkiem plików GPX utworzonych przez OsmAnd. Aby wyeliminować te problemy, należy użyć funkcji [Dołącz do dróg](#attach-to-the-roads).
 
-Podczas nawigacji możesz korzystać z różnych opcji, takich jak powiększanie lub pomniejszanie, przesuwanie mapy lub przełączanie na inny styl mapy. Jeśli zboczysz ze śladu, OsmAnd automatycznie przeliczy trasę, aby sprowadzić Cię z powrotem na właściwą drogę. Możesz również dostosować prędkość śladu i ustawić alarmy dźwiękowe dla zbliżających się punktów lub odchyleń od trasy.
+Podczas nawigacji możesz korzystać z różnych opcji, takich jak powiększanie lub pomniejszanie, przesuwanie mapy lub przełączanie na inny styl mapy. Jeśli zboczysz ze śladu, OsmAnd automatycznie przeliczy trasę, aby sprowadzić Cię z powrotem na ślad. Możesz również dostosować prędkość śladu i ustawić alarmy dźwiękowe dla zbliżających się punktów lub odchyleń od trasy.
 
 
 ## Powiązane artykuły {#related-articles}

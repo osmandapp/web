@@ -1,5 +1,5 @@
 ---
-source-hash: 61247292af1aa1532bdbb133f67761a221b4967bdccb328e710358ccdfd2084c
+source-hash: ccc92258ad1865c820ecfed771b07e1d48a441845c435a996fe12367c3ecf9df
 sidebar_position: 2
 title: Gestire le tracce
 ---
@@ -57,11 +57,11 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 
 È possibile aggiungere tracce in OsmAnd nei seguenti modi:
 
-1. **[Importare](./manage-tracks.md#import--export-track)** una traccia da una fonte esterna.
+1. **[Importare](./manage-tracks.md#import--export-track)** una traccia da una sorgente esterna.
 2. Creare una nuova traccia nell'applicazione utilizzando lo strumento **[Pianifica un percorso](../../plan-route/create-route.md)**.
 3. Registrare una traccia nell'applicazione utilizzando il plugin **[Registrazione viaggio](../../plugins/trip-recording.md)**.
-4. Inserire più punti per coordinate e salvarli come traccia utilizzando lo strumento **[Input coordinate](../../plan-route/coordinate-input.md)**.
-5. È inoltre possibile aggiungere **Waypoint** a una nuova traccia tramite **[Menu contestuale](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+4. Inserire più punti tramite coordinate e salvarli come traccia utilizzando lo strumento **[Input coordinate](../../plan-route/coordinate-input.md)**.
+5. È inoltre possibile aggiungere **Waypoint** a una nuova traccia tramite il **[Menu contestuale](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
 
 
 ## Gestire le tracce {#manage-tracks}
@@ -70,17 +70,17 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> scheda*
 
-![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![I miei luoghi con le tracce in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
-![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![I miei luoghi con le tracce in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
 </TabItem>
 
@@ -89,21 +89,21 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 Tutte le tracce mai registrate, create o importate vengono visualizzate automaticamente nella cartella [I miei luoghi](../../personal/myplaces.md) nella scheda *Tracce*. Sono organizzate per cartella o visualizzate in un elenco sotto di esse.
 
 
-### Menu Traccia {#track-menu}
+### Menu della traccia {#track-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
-![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![I miei luoghi con le tracce in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
 ![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -118,9 +118,9 @@ Ogni traccia, come le cartelle, ha un menu che consente di gestire le tracce in 
 
 Il menu offre le seguenti azioni:
 
-- **Mostra/Nascondi sulla mappa** — Visualizza o nasconde le tracce selezionate sulla mappa, rappresentando visivamente la loro posizione.
+- **Mostra/Nascondi sulla mappa** — Visualizza o nasconde le tracce selezionate sulla mappa, rappresentandone visivamente la posizione.
 
-- [Apri](../../map/tracks/index.md#configure-map) (*iOS*) — Questa impostazione è disponibile nel menu Configura mappa. Situato in *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, consente di accedere al [menu contestuale della traccia selezionata](../../map/tracks/track-context-menu.md) quando viene toccato.
+- [Apri](../../map/tracks/index.md#configure-map) (*iOS*) — Questa impostazione è disponibile nel menu Configura mappa. Situata in *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, consente di accedere al [menu contestuale della traccia selezionata](../../map/tracks/track-context-menu.md) quando toccata.
 
 - **Aspetto** (*iOS*) — Personalizza l'[aspetto delle tracce](../../map/tracks/appearance.md) in base alle tue preferenze.
 
@@ -151,13 +151,13 @@ Il menu offre le seguenti azioni:
 
 <TabItem value="android" label="Android">
 
-![Funzione di ricerca delle tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![Funzione di ricerca delle tracce dei miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ricerca delle tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Funzione di ricerca delle tracce dei miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
 
 </TabItem>
 
@@ -167,7 +167,7 @@ Tocca il pulsante &#x1F50D; nella parte superiore dello schermo del dispositivo 
 
 Disponibile:
 
-- Cerca per nome della traccia.
+- Ricerca per nome della traccia.
 - [Ordina per](#sort-by) per una migliore ricerca se non riesci a ricordare il titolo.
 - [Filtra](./smart-folder.md#search-filter) (*solo Android*) se hai bisogno delle caratteristiche specifiche della traccia.
 
@@ -178,13 +178,13 @@ Disponibile:
 
 <TabItem value="android" label="Android">
 
-![Funzione di ordinamento delle tracce I miei luoghi Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![Funzione di ordinamento delle tracce dei miei luoghi Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Le mie tracce dei luoghi iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
 
 </TabItem>
 
@@ -194,19 +194,19 @@ La voce di menu **Seleziona** offre opzioni per la gestione di cartelle e tracce
 
 Una volta effettuata la scelta, vengono forniti i seguenti passaggi:  
 
-- **Mostra sulla mappa** — Con questa funzione, puoi visualizzare le tracce selezionate sulla mappa per comprendere meglio la loro posizione e relazione reciproca.
+- **Mostra sulla mappa** — Con questa funzione, è possibile visualizzare le tracce selezionate sulla mappa per comprendere meglio la loro posizione e la relazione tra loro.
 
-- **Condividi** (*Android*) / **Esporta** (*iOS*) — Se desideri condividere i dati selezionati con altri utenti o salvarli su un servizio cloud, la funzione *Condividi/Esporta* ti consente di inviare tracce e cartelle utilizzando diversi metodi di condivisione.
+- **Condividi** (*Android*) / **Esporta** (*iOS*) — Se si desidera condividere i dati selezionati con altri utenti o salvarli su un servizio cloud, la funzione *Condividi/Esporta* consente di inviare tracce e cartelle utilizzando diversi metodi di condivisione.
 
-- **Carica su OpenStreetMap** — Puoi inviare le tracce selezionate a OpenStreetMap, contribuendo allo sviluppo e al miglioramento dei dati.
+- **Carica su OpenStreetMap** — È possibile inviare le tracce selezionate a OpenStreetMap, contribuendo allo sviluppo e al miglioramento dei dati.
 
-- **Sposta** — Puoi organizzare i tuoi dati spostando le tracce e le cartelle selezionate in altre cartelle.
+- **Sposta** — È possibile organizzare i dati spostando le tracce e le cartelle selezionate in altre cartelle.
 
-- [Cambia attività](../../map/tracks/track-context-menu.md#track-information-activity) — Questa azione ti consente di cambiare il tipo di attività, ad esempio in *Auto*, *Motorsport avventura*, *Escursionismo* o altro, per la traccia selezionata.
+- [Cambia attività](../../map/tracks/track-context-menu.md#track-information-activity) — Questa azione consente di modificare il tipo di attività, ad esempio in *Auto*, *Motorsport avventura*, *Escursionismo* o altro, per la traccia selezionata.
 
-- [Cambia aspetto](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Questa opzione ti consente di personalizzare l'aspetto delle tracce selezionate, rendendole più visibili e riconoscibili sulla mappa.
+- [Cambia aspetto](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Questa opzione consente di personalizzare l'aspetto delle tracce selezionate, rendendole più visibili e riconoscibili sulla mappa.
 
-- **Elimina** — Se le tracce o le cartelle selezionate non sono più necessarie, la funzione Elimina ti consente di eliminarle, con l'app che fornisce opzioni di conferma per evitare cancellazioni accidentali.
+- **Elimina** — Se le tracce o le cartelle selezionate non sono più necessarie, la funzione Elimina consente di eliminarle, con l'app che fornisce opzioni di conferma per evitare l'eliminazione accidentale.
 
 
 ### Ordina per {#sort-by}
@@ -215,41 +215,41 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 <TabItem value="android" label="Android">
 
-![Funzione di ordinamento delle tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Funzione di ordinamento delle tracce dei miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ordinamento delle tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Funzione di ordinamento delle tracce dei miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-OsmAnd offre un modo semplice per ordinare le tue tracce, aiutandoti a gestire una vasta collezione o a trovare rapidamente caratteristiche specifiche. Per accedere al menu di ordinamento, tocca **Ordina per** nella parte superiore dell'elenco delle tracce.
+OsmAnd offre un modo semplice per ordinare le tracce, aiutandoti a gestire una vasta collezione o a trovare rapidamente caratteristiche specifiche. Per accedere al menu di ordinamento, tocca **Ordina per** nella parte superiore dell'elenco delle tracce.
 
 ***Opzioni di ordinamento:***
 
-- **Più vicino** — Mostra le tracce più vicine alla tua posizione attuale.
+- **Più vicina** — Mostra le tracce più vicine alla tua posizione attuale.
 
-- **Ultima modifica** — Visualizza le tracce ordinate per data di modifica più recente.
+- **Ultima modifica** — Visualizza le tracce ordinate in base alla data di modifica più recente.
 
 - **Nome: A - Z** — Ordina le tracce alfabeticamente dalla A alla Z.
 
 - **Nome: Z - A** — Ordina le tracce alfabeticamente dalla Z alla A.
 
-- **Data più recente prima** — Elenca le tracce per data di creazione, con la più recente in cima.
+- **Data più recente per prima** — Elenca le tracce per data di creazione, con la più recente in cima.
 
-- **Data più vecchia prima** — Elenca le tracce per data di creazione, con la più vecchia in cima.
+- **Data meno recente per prima** — Elenca le tracce per data di creazione, con la meno recente in cima.
 
-- **Distanza più lunga prima** — Visualizza le tracce ordinate per lunghezza, con la più lunga in cima.
+- **Distanza più lunga per prima** — Visualizza le tracce ordinate per lunghezza, con la più lunga in cima.
 
-- **Distanza più corta prima** — Visualizza le tracce ordinate per lunghezza, con la più corta in cima.
+- **Distanza più breve per prima** — Visualizza le tracce ordinate per lunghezza, con la più breve in cima.
 
-- **Durata più lunga prima** — Ordina le tracce per durata, posizionando la più lunga in cima.
+- **Durata più lunga per prima** — Ordina le tracce per durata, posizionando la più lunga in cima.
 
-- **Durata più corta prima** — Ordina le tracce per durata, posizionando la più corta in cima.
+- **Durata più breve per prima** — Ordina le tracce per durata, posizionando la più breve in cima.
 
 #### Ordinamento delle sottocartelle {#sorting-subfolders}
 
@@ -257,24 +257,24 @@ OsmAnd offre un modo semplice per ordinare le tue tracce, aiutandoti a gestire u
 
 <TabItem value="android" label="Android">
 
-![Funzione di ordinamento delle tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![Funzione di ordinamento delle tracce dei miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ordinamento delle tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Funzione di ordinamento delle tracce dei miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Se desideri ordinare le [sottocartelle](#folder-actions), vai al menu a tre punti all'interno della cartella selezionata e seleziona le [opzioni](#sort-by) richieste.  
+Se desideri ordinare le [sottocartelle](#folder-actions), vai al menu a tre punti all'interno della cartella selezionata e scegli le [opzioni](#sort-by) desiderate.  
 
-L'opzione di ordinamento selezionata viene applicata non solo alla sottocartella corrente ma anche a tutte le cartelle e tracce nidificate a tutti i livelli. Ciò garantisce una struttura coerente tra i dati salvati.
+L'opzione di ordinamento selezionata viene applicata non solo alla sottocartella corrente ma anche a tutte le cartelle e tracce nidificate a tutti i livelli. Ciò garantisce una struttura coerente in tutti i dati salvati.
 
 
-## Cartella Tracce {#track-folder}
+## Cartella delle tracce {#track-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -296,8 +296,8 @@ Il menu della cartella delle tracce consente di visualizzare, rinominare, esport
 
 Come aprire il menu della cartella:
 
-- *Android* - tocca il *menu a tre punti* nel campo della cartella.
-- *iOS* - tocca a lungo il campo della cartella.
+- *Android* - toccare il *menu a tre punti* nel campo della cartella.
+- *iOS* - toccare a lungo il campo della cartella.
 
 ***Azioni con una cartella:***
 
@@ -310,7 +310,7 @@ Come aprire il menu della cartella:
 
 - [Cambia aspetto predefinito](../../map/tracks/appearance.md) (*Android*) / **Aspetto** (*iOS*) — Cambia l'aspetto di visualizzazione di tutte le tracce nella cartella.
 
-- [Esporta](../../personal/import-export.md) — Apre la *scheda Menu → Impostazioni → Azioni* per esportare tutte le tracce nella cartella come file [`.osf`](../../personal/import-export.md#export).
+- [Esporta](../../personal/import-export.md) — Apre la scheda *Menu → Impostazioni → Azioni* per esportare tutte le tracce nella cartella come file [`.osf`](../../personal/import-export.md#export).
 
 - [Sposta](#track-folder) — Consente di spostare la cartella in un'altra cartella esistente o di crearne una nuova.
 
@@ -324,17 +324,17 @@ Come aprire il menu della cartella:
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> scheda*
 
-![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![I miei luoghi con le tracce in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
-![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![I miei luoghi con le tracce in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
 </TabItem>
 
@@ -346,13 +346,13 @@ Nella parte inferiore dell'elenco nella scheda *Tracce*, e sotto l'elenco delle 
 
 - *Somma totale delle* **Distanze** — Viene visualizzata la lunghezza totale di tutte le tracce nella cartella selezionata, misurata nelle unità selezionate.
 
-- *Somma delle* **Salite** — I dati indicano il dislivello verticale totale su tutte le tracce nella cartella selezionata.
+- *Somma dei* **Dislivelli in salita** — I dati indicano il dislivello verticale totale su tutte le tracce nella cartella selezionata.
 
-- *Somma delle* **Discese** — Questo parametro è la somma delle discese verticali su tutte le tracce nella cartella selezionata.
+- *Somma dei* **Dislivelli in discesa** — Questo parametro è la somma delle discese verticali su tutte le tracce nella cartella selezionata.
 
-- *Somma del* **Tempo di durata** — Questo visualizza il tempo totale impiegato per completare tutte le tracce nella cartella selezionata.
+- *Somma del tempo di* **Durata** — Questo visualizza il tempo totale impiegato per completare tutte le tracce nella cartella selezionata.
 
-- *Dimensione totale dei file scaricati in MB* — La dimensione totale dei file scaricati in megabyte mostra quanto spazio tutte le tracce nella cartella selezionata occupano sul tuo dispositivo.
+- *Dimensione totale dei file scaricati in MB* — La dimensione totale dei file scaricati in megabyte mostra quanto spazio occupano tutte le tracce nella cartella selezionata sul tuo dispositivo.
 
 
 ### Azioni cartella {#folder-actions}
@@ -363,7 +363,7 @@ Nella parte inferiore dell'elenco nella scheda *Tracce*, e sotto l'elenco delle 
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Funzione di ordinamento delle tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![Funzione di ordinamento delle tracce dei miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -371,13 +371,13 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Le mie tracce dei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Le azioni nella cartella ti aiutano a organizzare, ordinare e importare le tracce, per strutturare i tuoi dati di navigazione.  
+Le azioni nella cartella ti aiutano a organizzare, ordinare e importare tracce, per strutturare i tuoi dati di navigazione.  
 
 Come aprire le azioni della cartella:
 
@@ -393,9 +393,9 @@ Come aprire le azioni della cartella:
 
 - [Aggiungi cartella intelligente](../tracks/smart-folder.md#how-to-create-smart-folder) — Ordina automaticamente percorsi e tracce in base ai criteri impostati.
 
-- [Importa](#import) — Carica file GPX o altri file di traccia dal tuo dispositivo su OsmAnd per l'utilizzo offline.
+- [Importa](#import) — Carica file GPX o altri file di traccia dal tuo dispositivo in OsmAnd per l'uso offline.
 
-- **Aggiungi nuova cartella** — Per organizzare i tuoi percorsi e le tue tracce in categorie logiche, inseriscili in cartelle diverse. Questo aiuta a strutturare le tue informazioni di navigazione.
+- **Aggiungi nuova cartella** — Per organizzare i tuoi percorsi e le tue tracce in categorie logiche, inseriscili in cartelle diverse. Questo aiuta a strutturare le informazioni di navigazione.
 
 
 ### Elimina cartella {#delete-folder}
@@ -404,15 +404,15 @@ Come aprire le azioni della cartella:
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
-![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+![I miei luoghi con le tracce in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
 
 ![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
@@ -435,7 +435,7 @@ Lo strumento di importazione consente di aggiungere tracce da file esterni per l
 
 1. **Importazione diretta di file:**
 
-    - Tocca un file GPX, KML o KMZ da app di messaggistica, e-mail, Google Drive o gestori di file.
+    - Tocca un file GPX, KML o KMZ da app di messaggistica, e-mail, Google Drive o file manager.
     - Seleziona Apri in OsmAnd quando richiesto.
     - La traccia importata viene salvata nella cartella **Importa** in *I miei luoghi*.
     - Passaggi: Tocca il file GPX → Apri in OsmAnd.
@@ -447,7 +447,7 @@ Lo strumento di importazione consente di aggiungere tracce da file esterni per l
 
     *Opzioni aggiuntive:*
 
-    - **File GPX a traccia singola** - importa direttamente l'intera traccia.
+    - **File GPX a traccia singola** - importa l'intera traccia direttamente.
     - **File GPX a più tracce** - scegli di importare il singolo file GPX o seleziona tracce specifiche.
 
 ***NOTA:*** *Le tracce aggiunte manualmente alla cartella OsmAnd sul tuo dispositivo vengono importate automaticamente senza riavviare l'applicazione.*  
@@ -491,12 +491,12 @@ Lo strumento di importazione consente di aggiungere tracce da file esterni per l
 
 Esistono diversi modi per esportare uno o più file di traccia in qualsiasi messenger, e-mail, file manager o app.  
 
-1. Tramite [*Menu contestuale traccia → Condividi*](../../map/tracks/track-context-menu.md#options).
+1. Tramite [*Menu contestuale della traccia → Condividi*](../../map/tracks/track-context-menu.md#options).
 
 2. Tramite *Menu I miei luoghi → Tracce → Menu Cartella / Traccia*:
 
     - Per [**esportare una singola traccia**](#track-menu), seleziona il menu della traccia.
-    - Per [**esportare più tracce**](#track-folder), seleziona il menu della cartella richiesta.
+    - Per l'[**esportazione di più tracce**](#track-folder), seleziona il menu della cartella richiesta.
 
 3. Tramite [File di backup locale](../../personal/import-export.md#export-to-file). Esportazione di tracce GPX come file `.osf`.
 
@@ -505,7 +505,7 @@ Esistono diversi modi per esportare uno o più file di traccia in qualsiasi mess
 
 - [Mostra traccia sulla mappa](../../map/tracks/index.md)
 - [Analizza sulla mappa](../../map/tracks/index.md#analyze-track-on-map)
-- [Menu contestuale traccia](../../map/tracks/track-context-menu.md)
+- [Menu contestuale della traccia](../../map/tracks/track-context-menu.md)
 - [Navigazione per traccia](../../navigation/setup/gpx-navigation.md)
 - [Registrazione viaggio](../../plugins/trip-recording.md)
 

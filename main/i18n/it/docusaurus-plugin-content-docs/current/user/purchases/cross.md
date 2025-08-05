@@ -1,7 +1,7 @@
 ---
-source-hash: 88145581c12f95f7e0dba74a712f88afdcbe5249c5f0e8b66b14eb7035e3d3d1
+source-hash: 312a9f0bef4e4c80ffe9040157d89d4986b31e2d975b67baab520769f30facdb
 sidebar_position: 4
-title:  Acquisti multipiattaforma
+title: Acquisti multipiattaforma
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Acquisti multipiattaforma supportati {#supported-cross-platform-purchases}
 
-I seguenti prodotti OsmAnd supportano attualmente l'utilizzo su più piattaforme (Android, iOS e Web):
+I seguenti prodotti OsmAnd attualmente supportano l'utilizzo su più piattaforme (Android, iOS e Web):
 
 - Abbonamento **OsmAnd Pro**
 - Abbonamento **Maps+**
@@ -28,17 +28,17 @@ A partire da **OsmAnd versione 5.1**, rilasciata per celebrare il nostro **15° 
 Per attivare l'accesso multipiattaforma, gli acquisti devono essere collegati al tuo account [OsmAnd Cloud](../personal/osmand-cloud.md#login).
 Puoi confrontare tutti i prodotti OsmAnd qui: [differenza tra gli acquisti](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
-| Tipo di prodotto | Multipiattaforma | Note |
-|-----------------------------|----------------|-------|
-| OsmAnd Pro (abbonamento) | ✔ | Funziona su Android, iOS e Web tramite Cloud |
-| Maps+ (abbonamento) | ✔ | Richiede la versione 5.0+ e un account Cloud |
-| Maps+ (acquisto una tantum) | ✔ | Deve essere attivato tramite OsmAnd Cloud sul dispositivo di acquisto |
-| OsmAnd+ (app standalone) | Prossimamente | Non trasferibile tra store o piattaforme |
+| **Tipo di prodotto** | **Multipiattaforma** | **Note** |
+|-------------------------------|--------------------|--------------------------------------------------------------------------|
+| **OsmAnd Pro** (abbonamento) | ✔ | Completamente multipiattaforma. Funziona su Android, iOS e Web quando collegato al Cloud. |
+| **Maps+** (abbonamento) | ✔ | Utilizzabile su tutte le piattaforme, ma deve essere attivato tramite OsmAnd Cloud **sul dispositivo di acquisto**. |
+| **Maps+** (acquisto una tantum) | ✔ | Utilizzabile su tutte le piattaforme, ma deve essere attivato tramite OsmAnd Cloud **sul dispositivo di acquisto**. |
+| **OsmAnd+** (app standalone) | ✘ | Non trasferibile tra piattaforme. Per assistenza, contatta support@osmand.net. |
 
 
 ## Come funziona {#how-it-works}
 
-Per utilizzare il tuo acquisto **OsmAnd Pro** o **Maps+** su diverse piattaforme (Android, iOS o Web), devi **collegarlo al tuo account OsmAnd Cloud**.
+Per utilizzare il tuo acquisto **OsmAnd Pro**, **Maps+** su diverse piattaforme (Android, iOS o Web), devi **collegarlo al tuo account OsmAnd Cloud**.
 
 ### Collega il tuo acquisto {#link-your-purchase}
 
@@ -63,12 +63,12 @@ Esegui questo passaggio sul **dispositivo in cui hai effettuato l'acquisto** (An
 
 2. Quindi vai a:
    *Menu → Impostazioni → Acquisti*
-   Il tuo acquisto **Pro o Maps+** collegato dovrebbe ora essere disponibile.
+   Il tuo acquisto **Pro o Maps+** collegato dovrebbe essere ora disponibile.
 
 
 ### Risoluzione dei problemi {#troubleshooting}
 
-Se il tuo acquisto non è elencato:
+Se non vedi il tuo acquisto elencato:
 
 1. Tocca *Menu → Impostazioni → Acquisti → Ripristina acquisti*
 2. Assicurati di aver effettuato l'accesso allo **stesso account OsmAnd Cloud** utilizzato sul dispositivo originale.
@@ -83,7 +83,7 @@ Se il problema persiste, contatta **support@osmand.net** e includi:
 ## Esempio {#example}
 
 Hai acquistato **Maps+** come acquisto in-app una tantum nella versione gratuita di OsmAnd dall'[Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
-Successivamente, decidi di passare a un iPhone e desideri utilizzare **Maps+** con la [versione iOS di OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
+Successivamente, decidi di passare a un iPhone e vuoi usare **Maps+** con la [versione iOS di OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Per attivare il tuo acquisto Maps+ su iOS:
 
@@ -94,7 +94,7 @@ Per attivare il tuo acquisto Maps+ su iOS:
 4. Accedi allo **stesso account OsmAnd Cloud** sul tuo iPhone.
 5. Vai a *Menu → Impostazioni → Acquisti* e conferma che **Maps+** è elencato come attivo.
 
-Questo completa l'attivazione multipiattaforma del tuo acquisto. Ora puoi continuare a utilizzare **Maps+** sul tuo nuovo dispositivo.
+Questo completa l'attivazione multipiattaforma del tuo acquisto. Ora puoi continuare a usare **Maps+** sul tuo nuovo dispositivo.
 
 Goditi l'utilizzo di Maps+/Pro su tutte le piattaforme!
 
@@ -106,4 +106,4 @@ Goditi l'utilizzo di Maps+/Pro su tutte le piattaforme!
 - [Differenza tra acquisti Android](./android.md#difference-between-purchases-android)
 - [Differenza tra acquisti iOS](./ios.md#difference-between-purchases-ios)
 
-> *Ultimo aggiornamento: maggio 2025*
+> *Ultimo aggiornamento: Maggio 2025*

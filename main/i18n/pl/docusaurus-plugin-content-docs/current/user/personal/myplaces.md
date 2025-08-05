@@ -1,5 +1,5 @@
 ---
-source-hash: 988210732638f1fe31705172188e1b0f353988d14be005a73c33e3c309a5021a
+source-hash: 566a34a786c324ed799dd4550956785a23a8faec4a926d7a4a840c0d7ef44518
 sidebar_position: 6
 title: Moje Miejsca
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Moje Miejsca** to centralne centrum w aplikacji OsmAnd do zarządzania i dostosowywania wszystkich danych osobistych. Możesz użyć tej sekcji do organizowania [Ulubionych punktów](#favorites) oznaczonych jako ważne lub często odwiedzane. Zakładka [Ślady](#tracks) umożliwia przeglądanie, importowanie, nagrywanie i tworzenie plików GPX, aby pomóc Ci w prowadzeniu szczegółowej historii tras i podróży. Możesz także zarządzać swoimi [Edycjami OpenStreetMap](#openstreetmap-edits), co ułatwia wkład w ulepszanie i aktualizowanie map. Wtyczka [Notatki audio/wideo](#audiovideo-notes) i widżety umożliwiają użytkownikom Androida tworzenie i zapisywanie notatek multimedialnych związanych z konkretnymi lokalizacjami, dodając kontekst do ich podróży.
+**Moje Miejsca** to centralne centrum w aplikacji OsmAnd do zarządzania i dostosowywania wszystkich danych osobistych. Możesz użyć tej sekcji do organizowania [Ulubionych punktów](#favorites) oznaczonych jako ważne lub często odwiedzane. Zakładka [Ślady](#tracks) umożliwia przeglądanie, importowanie, nagrywanie i tworzenie plików GPX, aby pomóc Ci w prowadzeniu szczegółowej historii tras i podróży. Możesz także zarządzać swoimi [Edycjami OpenStreetMap](#openstreetmap-edits), co ułatwia przyczynianie się do ulepszania i aktualizowania map. Wtyczka i widżety [Notatki audio/wideo](#audiovideo-notes) umożliwiają użytkownikom Androida tworzenie i zapisywanie notatek multimedialnych związanych z określonymi lokalizacjami, dodając kontekst do ich podróży.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -42,13 +42,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje Miej
 
 - [***Import i eksport danych***](../personal/import-export.md):
 
-    Wszystkie dane przechowywane w menu *Moje Miejsca* mogą być przenoszone za pomocą specjalnego formatu `.osf` poprzez aplikacje na Twoim urządzeniu. Ten proces upraszcza zapisywanie i przesyłanie danych między urządzeniami oraz umożliwia udostępnianie ich innym użytkownikom OsmAnd.
+    Wszystkie dane przechowywane w menu *Moje Miejsca* mogą być przenoszone za pomocą specjalnego formatu `.osf` poprzez aplikacje na Twoim urządzeniu. Proces ten upraszcza zapisywanie i przesyłanie danych między urządzeniami oraz umożliwia udostępnianie ich innym użytkownikom OsmAnd.
 
     **Przejdź do** sekcji *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* i wybierz, czy chcesz wyeksportować, czy zaimportować dane. Jeśli wybierzesz *eksport*, będziesz musiał rozwinąć *grupę Moje Miejsca* i zaznaczyć wymagane dane.
 
 - [***Mapy i zasoby***](../personal/maps-resources.md):
 
-    Element menu głównego *Mapy i zasoby* aplikacji OsmAnd zapewnia dostęp do zarządzania danymi z sekcji *Moje Miejsca*. Zakładka [*Lokalne*](../personal/maps-resources.md#local) pokazuje, ile miejsca zajmują wszystkie istniejące dane OsmAnd na Twoim urządzeniu, a w szczególności sekcja *Moje Miejsca*. Możesz jej użyć, aby uzyskać szczegółowe informacje o swoich danych i dostęp do zarządzania nimi. Sekcja może zawierać tylko elementy, dla których dane zostały pobrane.
+    Element *Mapy i zasoby* w *Menu głównym* aplikacji OsmAnd zapewnia dostęp do zarządzania danymi z sekcji *Moje Miejsca*. Zakładka [*Lokalne*](../personal/maps-resources.md#local) pokazuje, ile miejsca zajmują wszystkie istniejące dane OsmAnd na Twoim urządzeniu, a w szczególności sekcja *Moje Miejsca*. Możesz jej użyć, aby uzyskać szczegółowe informacje o swoich danych i dostęp do zarządzania nimi. Sekcja może zawierać tylko elementy, dla których dane zostały pobrane.
 
     **Przejdź do** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Sprawdź i zarządzaj swoimi danymi.
 
@@ -71,20 +71,20 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje Miej
 
 </Tabs>
 
-**Ulubione** umożliwiają dodawanie zakładek do ważnych lub często odwiedzanych lokalizacji. Te ulubione punkty są zorganizowane w foldery i mogą być dostosowywane za pomocą różnych kolorów, kształtów i ikon. Możesz szybko nawigować do dowolnego ulubionego miejsca za pośrednictwem menu **Moje Miejsca** bez konieczności wielokrotnego wyszukiwania.
+**Ulubione** umożliwiają dodawanie zakładek do ważnych lub często odwiedzanych miejsc. Te ulubione punkty są zorganizowane w folderach i mogą być dostosowywane za pomocą różnych kolorów, kształtów i ikon. Możesz szybko nawigować do dowolnego ulubionego miejsca za pośrednictwem menu **Moje Miejsca** bez konieczności wielokrotnego wyszukiwania.
 
 
-1. ***Przyciski akcji***. *Przyciski akcji* na dole ekranu Moje Miejsca umożliwiają zarządzanie listą folderów z Twoimi ulubionymi:
+1. ***Przyciski akcji***. *Przyciski akcji* na dole ekranu Moje Miejsca umożliwiają zarządzanie listą folderów z ulubionymi:
 
     - **Importuj** (przycisk *Dodaj*) — Umożliwia importowanie plików *favorite.gpx* z pamięci urządzenia.
 
     - **Eksportuj** — Zapisz swoje ulubione punkty jako plik *favorites.gpx* do użytku zewnętrznego lub kopii zapasowej.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (tylko *Android*) — Możesz dodać dowolny ulubiony punkt lub całą listę ulubionych punktów w folderze do [listy znaczników mapy](../personal/markers.md).
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Tylko Android*) — Możesz dodać dowolny ulubiony punkt lub całą listę ulubionych punktów w folderze do [listy znaczników mapy](../personal/markers.md).
 
-    - **Usuń** (*na iOS, ta opcja znajduje się w menu Edycja*) — Usuwa ulubione punkty pojedynczo lub wybrane foldery ulubionych i wszystkie zawarte w nich punkty.
+    - **Usuń** (*na iOS, ta opcja znajduje się w menu Edytuj*) — Usuwa ulubione punkty pojedynczo lub wybrane foldery ulubionych i wszystkie punkty w nich zawarte.
 
-2. ***Menu z trzema kropkami*** (*Android*) i ***długie naciśnięcie*** (*iOS*). Użyj *menu z trzema kropkami* obok każdego folderu lub *długo naciśnij* folder, aby zarządzać grupami ulubionych:
+2. ***Menu trzech kropek*** (*Android*) i ***długie naciśnięcie*** (*iOS*). Użyj *menu trzech kropek* obok każdego folderu lub *długo naciśnij* folder, aby zarządzać grupami ulubionych:
 
     <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -104,13 +104,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje Miej
 
     - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
 
-    - **<Translate android="true" ids="change_default_appearance"/>** — Dostosuj wygląd ulubionych punktów w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
+    - **<Translate android="true" ids="change_default_appearance"/>** — Dostosuj sposób wyświetlania ulubionych punktów w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
 
     - **<Translate android="true" ids="shared_string_show_on_map"/>** lub **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć ulubione punkty z folderu na mapie.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń ze znaczników mapy** (tylko *Android*) — Dodaj wszystkie ulubione punkty z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić odniesienie.
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń ze znaczników mapy** (*Tylko Android*) — Dodaj wszystkie ulubione punkty z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby dla łatwego odniesienia.
 
-    - **<Translate android="true" ids="shared_string_share"/>** — Udostępnij ulubione punkty w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowych danych.
+    - **<Translate android="true" ids="shared_string_share"/>** — Udostępnij ulubione punkty w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia przesyłanie lub tworzenie kopii zapasowych danych.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
 
@@ -145,13 +145,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 - **Utwórz ślad** — Rozpocznij nagrywanie za pomocą **Zakładki Ślady** lub [wtyczki Nagrywanie podróży](../plugins/trip-recording.md).
 
-- **Wyświetl i edytuj** — Uzyskaj dostęp do listy śladów poprzez *Moje Miejsca* i zarządzaj nimi za pomocą *menu z trzema kropkami* dla [folderów](../personal/tracks/manage-tracks.md#track-folder) lub menu [pojedynczego śladu](../personal/tracks/manage-tracks.md#single-track-menu).
+- **Wyświetl i edytuj** — Uzyskaj dostęp do listy śladów poprzez *Moje Miejsca* i zarządzaj nimi za pomocą *menu trzech kropek* dla [folderów](../personal/tracks/manage-tracks.md#track-folder) lub menu [pojedynczego śladu](../personal/tracks/manage-tracks.md#single-track-menu).
 
 - **Zarządzaj** — Użyj narzędzi [Filtruj](../personal/tracks/smart-folder.md#filter) i [Inteligentny folder](../personal/tracks/smart-folder.md#smart-folder), aby organizować ślady na podstawie określonych parametrów.
 
-- **Wygląd i analiza** — [Dostosuj](../map/tracks/appearance.md) styl wizualny śladów i [analizuj](../map/tracks/index.md#analyze-track-on-map) je za pomocą narzędzia OsmAnd [Zaplanuj trasę](../plan-route/create-route.md).
+- **Wygląd i analiza** — [Dostosuj](../map/tracks/appearance.md) styl wizualny śladów i [analizuj](../map/tracks/index.md#analyze-track-on-map) je za pomocą narzędzia OsmAnd [Planuj trasę](../plan-route/create-route.md).
 
-Aby uzyskać kompleksowe wskazówki, zobacz artykuł [Zarządzaj śladami](../personal/tracks/manage-tracks.md).
+Wyczerpujące wskazówki znajdziesz w artykule [Zarządzaj śladami](../personal/tracks/manage-tracks.md).
 
 
 ## Edycje OpenStreetMap {#openstreetmap-edits}
@@ -176,7 +176,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 </Tabs>
 
-Funkcja **Edycje OpenStreetMap** w OsmAnd umożliwia wkład w globalną społeczność mapowania poprzez dodawanie, modyfikowanie lub komentowanie danych mapy.
+Funkcja **Edycje OpenStreetMap** w OsmAnd umożliwia wkład w globalną społeczność mapowania poprzez dodawanie, modyfikowanie lub komentowanie danych mapowych.
 
 1. ***Przyciski akcji***. Możesz użyć *przycisków akcji* na ekranie Moje Miejsca, aby zarządzać listą notatek:
 
@@ -184,12 +184,12 @@ Funkcja **Edycje OpenStreetMap** w OsmAnd umożliwia wkład w globalną społecz
 
     - **Prześlij pliki do OSM** — Wyślij swoje notatki i dane do OpenStreetMap, aby przyczynić się do społeczności.
 
-    - **Eksportuj** (tylko *Android*) — Zapisz swoje notatki i POI jako pliki do użytku zewnętrznego lub kopii zapasowej, z opcjami eksportu jako notatki OSM, POI lub wszystkie dane razem.
+    - **Eksportuj** (*Tylko Android*) — Zapisz swoje notatki i POI jako pliki do użytku zewnętrznego lub kopii zapasowej, z opcjami eksportu jako notatki OSM, POI lub wszystkie dane razem.
 
     - **Usuń** — Trwale usuń wybrane elementy z listy.
 
 
-2. ***Menu z trzema kropkami***. Możesz zarządzać konkretnymi POI lub notatkami za pomocą *menu z trzema kropkami* obok każdej notatki:
+2. ***Menu trzech kropek***. Możesz zarządzać konkretnymi POI lub notatkami za pomocą *menu trzech kropek* obok każdej notatki:
 
     ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
@@ -201,7 +201,7 @@ Funkcja **Edycje OpenStreetMap** w OsmAnd umożliwia wkład w globalną społecz
 
     - **Usuń** — Usuń wybrany POI lub notatkę z listy.
 
-Szczegółowe instrukcje krok po kroku znajdziesz w [wtyczce Edycja OSM](../plugins/osm-editing.md).
+Szczegółowe instrukcje znajdziesz w [wtyczce Edycja OSM](../plugins/osm-editing.md).
 
 
 ## Notatki audio/wideo {#audiovideo-notes}
@@ -218,26 +218,26 @@ Szczegółowe instrukcje krok po kroku znajdziesz w [wtyczce Edycja OSM](../plug
 
     ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
-    - **<Translate android="true" ids="shared_string_sort"/>** — Otwiera wybór metod sortowania, *Według typu* lub *Według daty*, a po wybraniu sortuje listę odpowiednio.
+    - **<Translate android="true" ids="shared_string_sort"/>** — Otwiera wybór metod sortowania, *Według typu* lub *Według daty*, i po wybraniu sortuje listę odpowiednio.
 
     - **<Translate android="true" ids="shared_string_share"/>** — Wyświetla listę kontrolną wszystkich notatek, w tym tych dodanych do plików GPX jako punkty trasy. Najpierw zaznacza się wymagane notatki, następnie ikona *Udostępnij* w prawym górnym rogu ekranu sugeruje dostępne opcje udostępniania, a na koniec te notatki stają się dostępne zgodnie z wybraną opcją.
 
     - **Udostępnij z punktami trasy GPX** — Możesz udostępnić notatki wybrane jako punkty trasy w menu *Moje Miejsca*, dodając do nich [dane GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) za pomocą przycisku **Udostępnij** na dole ekranu zakładki *Notatki A/V*.
 
-    - **<Translate android="true" ids="shared_string_delete"/>** — Wyświetla listę kontrolną tylko notatek audio, zdjęć i wideo. Najpierw zaznacz niepotrzebne notatki, następnie dotknij ikony *Usuń* w prawym górnym rogu ekranu, po potwierdzeniu wybrane notatki zostaną trwale usunięte.
+    - **<Translate android="true" ids="shared_string_delete"/>** — Wyświetla listę kontrolną tylko notatek audio, zdjęć i filmów. Najpierw zaznacz niepotrzebne notatki, następnie dotknij ikony *Usuń* w prawym górnym rogu ekranu, po potwierdzeniu wybrane notatki zostaną trwale usunięte.
 
 
-2. ***Menu z trzema kropkami***. Możesz zarządzać konkretnymi notatkami audio, wideo lub zdjęciami za pomocą *menu z trzema kropkami* obok każdej notatki:
+2. ***Menu trzech kropek***. Możesz zarządzać konkretnymi notatkami audio, wideo lub zdjęciami za pomocą *menu trzech kropek* obok każdej notatki:
 
     ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Bezpośrednio przegląda lub słucha wybranej notatki audio, wideo lub zdjęcia.
+    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Wyświetla lub odtwarza wybraną notatkę audio, wideo lub zdjęcie bezpośrednio.
 
     - **<Translate android="true" ids="shared_string_share"/>** — Udostępnia notatkę innym za pośrednictwem różnych aplikacji lub platform.
 
     - **<Translate android="true" ids="shared_string_show_on_map"/>** — Wyświetla powiązaną lokalizację i [menu kontekstowe](../plugins/audio-video-notes#actions-in-map-context-menu) notatki na mapie.
 
-    - **<Translate android="true" ids="shared_string_rename"/>** — Zmień nazwę notatki na bardziej opisową lub odpowiednią.
+    - **<Translate android="true" ids="shared_string_rename"/>** — Zmień nazwę notatki na bardziej opisową lub istotną.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — Wybrane notatki są trwale usuwane z Twojej kolekcji.
 

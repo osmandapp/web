@@ -1,7 +1,7 @@
 ---
-source-hash: 56e675ee7bba3e19ed4b22cb159f2939d58b0959b64b16aa30eb1a5eaeb05b9d
+source-hash: eafb2c57934c3fbb3a094db82d063658f9ebd6dc575f16b51dfce4826f7df701
 sidebar_position: 2
-title:  AIS Vessel Tracker
+title: AIS Schiffsverfolgung
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,25 +20,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das Plugin **AIS Vessel Tracker** zeigt [Automatische Identifikationssystem (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) Positionen und detaillierte Informationen über nahegelegene Schiffe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
+Das Plugin **AIS Schiffsverfolgung** zeigt [Automatic Identification System (AIS)](https://de.wikipedia.org/wiki/Automatic_Identification_System)-Positionen und detaillierte Informationen über nahegelegene Schiffe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
 
 :::caution HAFTUNGSAUSSCHLUSS
-**Dieses Plugin ist ein Hobbyprojekt und nicht für Zuverlässigkeit oder Genauigkeit ausgelegt. Verlassen Sie sich NICHT auf diese Software für Navigation oder Sicherheit von Menschenleben.**
+**Dieses Plugin ist ein Hobbyprojekt und nicht auf Zuverlässigkeit oder Genauigkeit ausgelegt. Verlassen Sie sich NICHT auf diese Software für Navigation oder Lebensrettung.**
 :::
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd automatisch aktiviert. Um Online-Karten in Android anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
+Die Nutzung von Online-Karten ist in der iOS-Version von OsmAnd automatisch aktiviert. Um Online-Karten in Android anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
-1. [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin **AIS Vessel Tracker** im *Hauptmenü → Plugins → AIS Vessel Tracker*.
-2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#select-raster-maps).
+1. [Aktivieren Sie](../plugins/index.md#enable--disable) das Plugin **AIS Schiffsverfolgung** im *Hauptmenü → Plugins → AIS Schiffsverfolgung*.
+2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#select-raster-maps)
 3. Konfigurieren Sie eine **AIS-Serververbindung** oder schließen Sie einen **externen AIS-Empfänger** an.
 4. Überprüfen Sie, ob Schiffe auf der OsmAnd-Karte angezeigt werden.
 
 ## Schiffe auf der Karte {#vessels-on-the-map}
 
-AIS arbeitet auf *VHF-Frequenzen* (161,975 MHz und 162,025 MHz) und hat aufgrund der Sichtverbindungsausbreitung eine begrenzte Signalreichweite.
+AIS arbeitet auf *VHF-Frequenzen* (161,975 MHz und 162,025 MHz) und hat aufgrund der Sichtlinienausbreitung eine begrenzte Signalreichweite.
 
 ***Typische AIS-Empfangsreichweite:***
 
@@ -51,17 +51,17 @@ AIS arbeitet auf *VHF-Frequenzen* (161,975 MHz und 162,025 MHz) und hat aufgrund
 
 <TabItem value="android" label="Android">
 
-![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
+![AIS Schiffsverfolgung](@site/static/img/plugins/ais/ais.png)
 
 </TabItem>
 
 </Tabs>
 
-Bei korrekter Einrichtung erscheinen die Schiffspositionen auf der Karte. Hauptmerkmale:
+Bei korrekter Einrichtung werden die Schiffspositionen auf der Karte angezeigt. Hauptmerkmale:
 
 - Schiffe bewegen sich basierend auf Echtzeitgeschwindigkeit und Kurs.
 - Neue Schiffe treten dynamisch in den sichtbaren Bereich ein und verlassen ihn.
-- Tippen auf ein Schiff öffnet detaillierte Informationen.
+- Durch Tippen auf ein Schiff werden detaillierte Informationen geöffnet.
 
 
 ### AIS Schiffsinformationen {#ais-vessel-information}
@@ -70,8 +70,8 @@ Bei korrekter Einrichtung erscheinen die Schiffspositionen auf der Karte. Hauptm
 
 <TabItem value="android" label="Android">
 
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS Schiffsverfolgung](@site/static/img/plugins/ais/ais_menu.png)
+![AIS Schiffsverfolgung](@site/static/img/plugins/ais/ais_menu_2.png)
 
 </TabItem>
 
@@ -79,74 +79,74 @@ Bei korrekter Einrichtung erscheinen die Schiffspositionen auf der Karte. Hauptm
 
 AIS-Schiffe senden drei Arten von Daten:
 
-1. Statische Informationen (unveränderliche Daten).  
-    *Wird alle **6 Minuten** oder auf Anfrage gesendet.*
+1. Statische Informationen (unveränderliche Daten).
+    *Alle **6 Minuten** oder auf Anfrage gesendet.*
 
-    - **Schiffsname** (*falls eingestellt*)  
-    - **MMSI (Maritime Mobile Service Identity)** (*Eindeutige 9-stellige Schiffskennung*)
-    - **IMO-Nummer** (*falls verfügbar*)  
-    - **Rufzeichen**  
-    - **Schiffstyp** (*z.B. Frachtschiff, Passagierschiff, Fischerboot*)  
-    - **Schiffsabmessungen** (*Länge und Breite*)  
-    - **AIS-Antennenposition** (*Relativ zum Schiffskörper*)  
+    - **Schiffsname** (*falls festgelegt*)
+    - **MMSI (Maritime Mobile Service Identity)** (*Eindeutige 9-stellige Schiffsidentifikation*)
+    - **IMO-Nummer** (*falls verfügbar*)
+    - **Rufzeichen**
+    - **Schiffstyp** (*z.B. Fracht, Passagier, Fischereifahrzeug*)
+    - **Schiffsabmessungen** (*Länge und Breite*)
+    - **AIS-Antennenposition** (*Relativ zum Schiffsrumpf*)
 
-2. Dynamische Informationen (Echtzeitdaten).  
-    *Wird in unterschiedlichen Intervallen gesendet, abhängig von Geschwindigkeit und Manövrieren.*
+2. Dynamische Informationen (Echtzeitdaten).
+    *In unterschiedlichen Intervallen gesendet, abhängig von Geschwindigkeit und Manövrieren.*
 
-    - **Schiffskoordinaten (Breitengrad & Längengrad)**  
-    - **Kurs über Grund (COG)**  
-    - **Geschwindigkeit über Grund (SOG)**  
+    - **Schiffskoordinaten (Breitengrad & Längengrad)**
+    - **Kurs über Grund (COG)**
+    - **Geschwindigkeit über Grund (SOG)**
     - **Steuerkurs** (*Richtung, in die der Bug zeigt*)
-    - **Schiffsstatus** (*Unterwegs, vor Anker, Manövrieren, etc.*)  
-    - **Drehrate (ROT)** (*Geschwindigkeit der Kursänderung*)  
-    - **Zeit der letzten Aktualisierung**  
+    - **Schiffsstatus** (*In Fahrt, Ankernd, Manövrierend, etc.*)
+    - **Drehrate (ROT)** (*Geschwindigkeit der Kursänderung*)
+    - **Letzte Aktualisierungszeit**
 
-3. Reiseinformationen (manuell von der Besatzung eingestellt).  
-    *Wird alle **6 Minuten** gesendet, manuell von der Besatzung eingestellt*
+3. Reiseinformationen (manuell von der Besatzung eingestellt).
+    *Alle **6 Minuten** gesendet, manuell von der Besatzung eingestellt*
 
     - **Zielhafen**
-    - **Geschätzte Ankunftszeit (ETA)**  
-    - **Tiefgang** (*Tiefgang des Schiffes unter der Wasseroberfläche*)  
-    - **Ladungsart** (*falls übermittelt*)
-    - **Anzahl der Personen an Bord** (*optional*)  
+    - **Geschätzte Ankunftszeit (ETA)**
+    - **Tiefgang** (*Wassertiefe des Schiffes unter der Oberfläche*)
+    - **Ladungsart** (*falls übertragen*)
+    - **Anzahl der Personen an Bord** (*optional*)
 
 ### AIS Symbole und Legenden {#ais-symbols-and-legends}
 
-[Richtlinien für die Darstellung von AIS-Symbolen](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Richtlinien für die AIS-Symbolpräsentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Symbole             | Beschreibung   |
 |---------------------|---------------|
 | | |
-| **Schiffstypen Symbole** |    |
+| **Symbole für Schiffstypen** |    |
 | *Grünes Dreieck*    | Frachtschiff    |
 | *Blaues Dreieck*     | Passagierschiff |
-| *Schwarzes Dreieck*    | Fischerboot |
+| *Schwarzes Dreieck*    | Fischereifahrzeug |
 | *Gelbes Dreieck*   | Schlepper       |
 | *Rotes Dreieck*      | Tanker        |
-| *Weißes Dreieck*    | Militärschiff |
+| *Weißes Dreieck*   | Militärschiff |
 | *Orangefarbenes Dreieck*   | Spezialfahrzeug (z.B. Lotsenboot, Eisbrecher) |
-| *Blinkendes rotes Dreieck* | Schiff in Seenot |
+| *Blinkendes rotes Dreieck* | Schiff in Not |
 | | |
-| **Navigationshilfen Symbole** |    |
-| *Grüne Boje*              | Steuerbordmarkierung (rechte Seite des Fahrwassers) |
-| *Rote Boje*                | Backbordmarkierung (linke Seite des Fahrwassers) |
+| **Symbole für Navigationshilfen** |    |
+| *Grüne Boje*              | Steuerbord-Markierung (rechte Seite des Kanals) |
+| *Rote Boje*                | Backbord-Markierung (linke Seite des Kanals) |
 | *Ankersymbol*           | Ankerplatz |
-| *Schiffssymbol (SS)*        | Fähre oder Passagierterminal |
-| *Hafenkran Symbol*       | Frachthafen |
+| *Schiffssymbol (SS)*        | Fähr- oder Passagierterminal |
+| *Hafenkran-Symbol*       | Frachthafen |
 | *Schwarzer Kreis*            | Offshore-Plattform |
 | | |
-| **Statusanzeigen** |    |
-| *Gefülltes Dreieck*  | Bewegtes Schiff |
-| *Hohles Dreieck* | Vor Anker oder Festgemacht |
-| *Rotierender Pfeil*  | Manövriert |
-| *Rotes Blinksymbol* | Notfallalarm |
+| **Statusindikatoren** |    |
+| *Volles Dreieck*  | Sich bewegendes Schiff |
+| *Hohles Dreieck* | Ankernd oder Festgemacht |
+| *Rotierender Pfeil*  | Manövrierend |
+| *Rot blinkendes Symbol* | Notfallalarm |
 | *Orangefarbenes Ausrufezeichen* | AIS-Sicherheitsmeldung |
 | | |
-| **Routen- und Geschwindigkeitsanzeigen** |    |
+| **Routen- und Geschwindigkeitsindikatoren** |    |
 | *Dünne blaue Linie*  | Geplante Route |
 | *Gepunktete Linie*     | Vergangene Spur |
 | *Uhrensymbol*      | Geschätzte Ankunftszeit (ETA) |
-| *Wellensymbol*       | Geschwindigkeit über Wasser |
+| *Wellen-Symbol*       | Geschwindigkeit über Wasser |
 
 ## Plugin-Einstellungen {#plugin-settings}
 
@@ -156,47 +156,47 @@ AIS-Schiffe senden drei Arten von Daten:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS-Einstellungen](@site/static/img/plugins/ais/ais_settings_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Das Plugin *AIS Vessel Tracker* bietet verschiedene Einstellungen zur Personalisierung der Navigation und Interaktion für Benutzer mit Behinderungen. Diese Einstellungen gelten für alle [Profile](../personal/profiles.md) in OsmAnd.
+Das Plugin *AIS Schiffsverfolgung* bietet verschiedene Einstellungen zur Personalisierung der Navigation und Interaktion für Benutzer mit Behinderungen. Diese Einstellungen werden für alle [Profile](../personal/profiles.md) in OsmAnd angewendet.
 
-| Einstellung |  Beschreibung  | Beispiel  |
+| Einstellung | Beschreibung | Beispiel |
 |---------|---------------|----------|
 | | | |
 | **IP-Adresseinstellungen** | | |
-| Protokoll   | Wählen Sie das Protokoll zum Empfangen von AIS-Daten | `UDP/TCP` |
-| IP-Adresse | Definieren Sie die IP der AIS-Datenquelle (wenn TCP verwendet wird) | `192.168.200.16` |
-| TCP-Port   | Definieren Sie die TCP-Portnummer für AIS-Daten | `4001` |
-| UDP-Port   | Definieren Sie den UDP-Port für den OsmAnd AIS-Empfang  | `10110` |
+| Protokoll | Protokoll für den Empfang von AIS-Daten wählen | `UDP/TCP` |
+| IP-Adresse | IP der AIS-Datenquelle definieren (falls TCP verwendet wird) | `192.168.200.16` |
+| TCP-Port | TCP-Portnummer für AIS-Daten definieren | `4001` |
+| UDP-Port | UDP-Port für OsmAnd AIS-Empfang definieren | `10110` |
 | | | |
-| **AIS Signalempfangs-Timeout** | |  |
-| Timeout für verlorene AIS-Objekte     | Schiffe verschwinden, wenn für eine festgelegte Zeit kein Signal empfangen wird | `3 - 20 min` |
-| Timeout für Schiffssichtbarkeit      | Schiffssymbole ändern ihren Zustand, wenn kein Signal empfangen wird | `2 - 15 min / Deaktiviert` |
+| **AIS-Signalempfangs-Timeout** | | |
+| Timeout für verlorene AIS-Objekte | Schiffe verschwinden, wenn für eine festgelegte Zeit kein Signal empfangen wird | `3 - 20 min` |
+| Timeout für Schiffssichtbarkeit | Schiffssymbole ändern den Status, wenn kein Signal empfangen wird | `2 - 15 min / Deaktiviert` |
 | | | |
 | **Closest Point of Approach (CPA) Warnungen** | | |
-| CPA Warnzeit | Schiff wird rot markiert, wenn die Zeit bis zum CPA unter diesem Limit liegt | `1 - 60 min / Deaktiviert` |
-| CPA Warndistanz | Schiff wird rot markiert, wenn die Entfernung zum CPA unter diesem Limit liegt | `0.02 - 2 Seemeilen` |
+| CPA-Warnzeit | Schiff wird rot markiert, wenn die Zeit bis zum CPA unter diesem Limit liegt | `1 - 60 min / Deaktiviert` |
+| CPA-Warndistanz | Schiff wird rot markiert, wenn die Distanz zum CPA unter diesem Limit liegt | `0.02 - 2 Seemeilen` |
 
 
-### AIS Simulationsmodus {#ais-simulation-mode}
+### AIS-Simulationsmodus {#ais-simulation-mode}
 
-> *Sie können AIS-Schiffspositionen mit dem [OsmAnd Development Plugin](../plugins/development.md) simulieren.*
+> *Sie können AIS-Schiffspositionen mit dem [OsmAnd Entwickler-Plugin](../plugins/development.md) simulieren.*
 
-1. **Laden Sie AIS-Daten als Textdateien herunter**:
+1. **AIS-Datentextdateien herunterladen**:
 
     - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
     - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
     - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
-2. **Laden Sie AIS-Daten in OsmAnd**  
+2. **AIS-Daten in OsmAnd laden**
 Öffnen Sie *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* und wählen Sie eine der heruntergeladenen Dateien aus.
 
-3. **Zeigen Sie AIS-Schiffe auf der Karte an**  
-Schiffssymbole erscheinen basierend auf den simulierten Daten. Tippen Sie auf das Schiffssymbol, um detaillierte Informationen anzuzeigen.
+3. **AIS-Schiffe auf der Karte anzeigen**
+Schiffssymbole werden basierend auf den simulierten Daten angezeigt. Tippen Sie auf das Schiffssymbol, um detaillierte Informationen anzuzeigen.
 
 
 ## Verwandte Artikel {#related-articles}

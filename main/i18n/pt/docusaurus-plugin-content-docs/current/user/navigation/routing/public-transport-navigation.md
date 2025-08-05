@@ -1,7 +1,7 @@
 ---
-source-hash: 4555734ace3e7132cbe343a64b51b8a14b9f7d50262e566f5b87185e156e7f36
+source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
 sidebar_position: 5
-title: Roteamento de Transporte Público
+title: Roteamento de transporte público
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Visão Geral {#overview}
+## Visão geral {#overview}
 
-A navegação de transporte público no aplicativo OsmAnd permite que você trace rotas usando transporte público, o que certamente o ajudará a se locomover pela "selva de concreto" mais rapidamente.
+A navegação de transporte público no aplicativo OsmAnd permite que você trace rotas usando o transporte público, o que certamente o ajudará a se locomover pela "selva de concreto" mais rapidamente.
 
-Os dados sobre rotas de transporte público são retirados do projeto [OpenStreetMap](http://openstreetmap.org/). O OsmAnd usa o [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para navegação. O OsmAnd suporta as seguintes rotas do OpenStreetMap para navegação: *ônibus*, *trólebus*, *táxi compartilhado*, *funicular*, *metrô*, *bonde*, *monotrilho*, *trem*, *bondinho*, *balsa*. A velocidade padrão para cada tipo de veículo é configurada em [Routing xml](../../../technical/build-osmand/routing.md) e é usada para encontrar as rotas mais rápidas.
+Os dados sobre as rotas de transporte público são retirados do projeto [OpenStreetMap](http://openstreetmap.org/). O OsmAnd usa o [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para navegação. O OsmAnd suporta as seguintes rotas do OpenStreetMap para navegação: *ônibus*, *trólebus*, *táxi_compartilhado*, *funicular*, *metrô*, *bonde*, *monotrilho*, *trem*, *bondinho*, *balsa*. A velocidade padrão para cada tipo de veículo é configurada em [Roteamento xml](../../../technical/build-osmand/routing.md) e é usada para encontrar as rotas mais rápidas.
 
 :::note
 O roteamento de transporte público está em fase de testes. Por enquanto, você pode construir e visualizar sua rota sem a função de navegação completa.
@@ -29,11 +29,11 @@ O roteamento de transporte público está em fase de testes. Por enquanto, você
 
 <TabItem value="android" label="Android">
 
-![Navegação de transporte público Android](@site/static/img/navigation/public/navigation_android.png)
+![Navegação de transporte público Android](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Navegação de transporte público iOS](@site/static/img/navigation/public/navigation_ios.png)
 
@@ -42,41 +42,41 @@ O roteamento de transporte público está em fase de testes. Por enquanto, você
 </Tabs>
 
 
-## Como Usar {#how-to-use}
+## Como usar {#how-to-use}
 
-Para começar a navegar pela cidade de transporte público, use [o botão de navegação](../../widgets/map-buttons.md#directions) na tela do mapa ou selecione a opção de navegação no *Menu Principal*.
+Para começar a navegar pela cidade de transporte público, use [o botão de navegação](../../widgets/map-buttons.md#directions) na tela do mapa ou selecione a opção de navegação no *Menu Principal*.  
 
-**1.** Você precisa escolher o *perfil de navegação de transporte público*, os pontos de partida e destino.
+**1.** Você precisa escolher o *perfil de navegação de transporte público*, os pontos de partida e destino.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rotas de navegação de transporte público Android](@site/static/img/navigation/public/navigation_public_android.png)
+![Rotas de transporte público de navegação Android](@site/static/img/navigation/public/navigation_public_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Rotas de navegação de transporte público iOS](@site/static/img/navigation/public/navigation_public_ios.png)
+![Rotas de transporte público de navegação iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**2.** O OsmAnd oferece opções de rota com tempos de caminhada e rotas de transporte público com informações de rota: tempo, distância, baldeação e rotas públicas. Você precisa rolar a tela de navegação para selecionar a opção desejada.
+**2.** O OsmAnd oferece opções de rota com tempos de caminhada e rotas de transporte público com informações de rota: tempo, distância, baldeação e rotas públicas. Você precisa rolar a tela de navegação para selecionar a opção desejada.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Caminho de navegação de transporte público Android](@site/static/img/navigation/public/navigation_way_android.png)
+![Caminho de transporte público de navegação Android](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Caminho de navegação de transporte público iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![Caminho de transporte público de navegação iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
@@ -88,32 +88,32 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 
 <TabItem value="android" label="Android">
 
-![Detalhes de navegação de transporte público Android](@site/static/img/navigation/public/navigation_details_android.png)
+![Detalhes de transporte público de navegação Android](@site/static/img/navigation/public/navigation_details_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Detalhes de navegação de transporte público iOS](@site/static/img/navigation/public/navigation_details_ios.png)
+![Detalhes de transporte público de navegação iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-**4.** Toque no botão "Detalhes" para abrir uma descrição da rota selecionada com todas as paradas e baldeações.
+**4.** Toque no botão "Detalhes" para abrir uma descrição da rota selecionada com todas as paradas e baldeações.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Lista de paradas de navegação de transporte público Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![Lista de paradas de transporte público de navegação Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Lista de paradas de navegação de transporte público iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![Lista de paradas de transporte público de navegação iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
 </TabItem>
 

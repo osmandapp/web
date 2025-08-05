@@ -1,5 +1,5 @@
 ---
-source-hash: 3285f0c719a8255c35a044a6bccdc05206d01216a9c0d4f8c30f58b3a9122f36
+source-hash: bf8498069a6041e804c4eedf6c801ea107273f7c61d7843af9fb0326f93c493d
 sidebar_position: 16
 title: Métricas del Vehículo
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-## Generalidades {#overview}
+## Descripción general {#overview}
 
 :::info Función de pago
 El complemento Métricas del Vehículo es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
@@ -27,7 +27,7 @@ El complemento Métricas del Vehículo es una [función de pago](../purchases/in
 
 El **complemento Métricas del Vehículo** permite la monitorización de datos del vehículo en tiempo real a través del protocolo OBD-II. Los usuarios pueden rastrear métricas esenciales como el rendimiento del motor, la eficiencia del combustible y la velocidad, lo que permite un mantenimiento proactivo del vehículo y la resolución de problemas.
 
-Los escáneres OBD-II son parte integral de los diagnósticos automotrices modernos. Con la transmisión de datos en tiempo real, los usuarios obtienen información instantánea sobre los sistemas del vehículo, lo que facilita el mantenimiento preventivo y reduce los costos de reparación. Estas herramientas son vitales tanto para uso personal como para servicios automotrices profesionales.
+Los escáneres OBD-II son parte integral del diagnóstico automotriz moderno. Con la transmisión de datos en tiempo real, los usuarios obtienen información instantánea sobre los sistemas del vehículo, lo que facilita el mantenimiento preventivo y reduce los costos de reparación. Estas herramientas son vitales tanto para uso personal como para servicios automotrices profesionales.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -40,20 +40,20 @@ Los escáneres OBD-II son parte integral de los diagnósticos automotrices moder
 </Tabs>
 
 
-## Parámetros de Configuración Requeridos {#required-setup-parameters}
+## Parámetros de configuración requeridos {#required-setup-parameters}
 
 Para usar datos de un escáner OBD-II:
 
-1. [Compre](../purchases/) una **suscripción a OsmAnd Pro**. (*Velocidad del vehículo* y *Velocidad del motor* son gratuitas).
-2. [Habilite](../plugins/index.md#enable--disable) el complemento Métricas del Vehículo en la sección Complementos del *Menú Principal*.
-3. **Active** Bluetooth en su dispositivo.
+1. [Adquiera](../purchases/) una **suscripción a OsmAnd Pro**. (*La velocidad del vehículo* y la *velocidad del motor* son gratuitas).
+2. [Habilite](../plugins/index.md#enable--disable) el complemento Métricas del Vehículo en la sección Complementos del *Menú principal*.
+3. **Active** el Bluetooth en su dispositivo.
 4. [Conecte](#pair-odb-ii-scanner) el escáner OBD-II al puerto de su vehículo.
 5. [Configure](#scanner-settings) la **configuración del escáner**.
 6. [Agregue](#widgets) **widgets de Métricas del Vehículo** para datos en pantalla (opcional).
-7. [Use](#trip-recording) el **complemento Grabación de Viajes** para registrar datos del vehículo.
+7. [Utilice](#trip-recording) el **complemento Grabación de viajes** para registrar datos del vehículo.
 
 
-### Emparejar Escáner ODB-II {#pair-odb-ii-scanner}
+### Emparejar escáner ODB-II {#pair-odb-ii-scanner}
 
 | | |
 |--|--|
@@ -62,12 +62,12 @@ Para usar datos de un escáner OBD-II:
 Conecte el escáner al puerto de su vehículo y emparéjelo a través de la aplicación:
 
 - Navegue a *Menú → Complementos → Métricas del Vehículo → Configuración → Conectar* o **+**.
-- Si Métricas del Vehículo está en el *Menú Principal*: *Menú → Métricas del Vehículo → Configuración → Conectar* o **+**.
+- Si Métricas del Vehículo está en el *Menú principal*: *Menú → Métricas del Vehículo → Configuración → Conectar* o **+**.
 
 Elija su dispositivo OBD-II de la lista y establezca la conexión.
 
 
-## Configuración del Escáner {#scanner-settings}
+## Configuración del escáner {#scanner-settings}
 
 **Android.** Vaya a: *Menú → Complementos → Métricas del Vehículo → OBD → menú de tres puntos*
 
@@ -81,38 +81,38 @@ Elija su dispositivo OBD-II de la lista y establezca la conexión.
 - **Olvidar**. Elimina el sensor OBD-II previamente emparejado de la lista, requiriendo un nuevo emparejamiento si es necesario más tarde.
 
 
-## Lista de Métricas {#metrics-list}
+## Lista de métricas {#metrics-list}
 
 Las métricas se clasifican para mayor claridad. Las herramientas de diagnóstico avanzadas permiten el mantenimiento preventivo al interpretar estos parámetros:
 
 *Temperatura:*
 
-- **Temperatura de Admisión**. Muestra la temperatura del aire que entra al colector de admisión.
-- **Temperatura Ambiente**. Monitorea las condiciones externas.
-- **Temperatura del Refrigerante**. Rastrea la eficiencia de enfriamiento del motor.
-- **Temperatura del Aceite del Motor**. Muestra el estado del aceite durante el funcionamiento.
+- **Temperatura de admisión**. Muestra la temperatura del aire que entra en el colector de admisión.
+- **Temperatura ambiente**. Monitoriza las condiciones externas.
+- **Temperatura del refrigerante**. Rastrea la eficiencia de enfriamiento del motor.
+- **Temperatura del aceite del motor**. Muestra el estado del aceite durante el funcionamiento.
 
 *Motor:*
 
-- **Velocidad del Motor**. Monitorea las revoluciones por minuto (RPM) del motor.
-- **Tiempo de Funcionamiento del Motor**. Rastrea el tiempo de funcionamiento del motor.
-- **Carga Calculada del Motor**. Indica el porcentaje de carga de trabajo del motor.
+- **Velocidad del motor**. Monitoriza las revoluciones por minuto (RPM) del motor.
+- **Tiempo de funcionamiento del motor**. Rastrea el tiempo de funcionamiento del motor.
+- **Carga calculada del motor**. Indica el porcentaje de carga de trabajo del motor.
 
 *Combustible:*
 
-- **Presión del Combustible**. Indica la presión del sistema de combustible.
-- **Consumo de Combustible**. Calcula el consumo de combustible del vehículo.
-- **Combustible Restante**. Indica el nivel de combustible en el vehículo.
+- **Presión de combustible**. Indica la presión del sistema de combustible.
+- **Consumo de combustible**. Calcula el consumo de combustible del vehículo.
+- **Combustible restante**. Indica el nivel de combustible en el vehículo.
 
 *Otros:*
 
-- **Nivel de Batería**. Indica el nivel de voltaje de la batería del vehículo.
-- **Velocidad del Vehículo**. Muestra los datos del Sensor de Velocidad del Vehículo (VSS).
-- **Posición del Acelerador**. Determina la entrada de aire del motor a través del ángulo de la placa del acelerador.
+- **Nivel de batería**. Indica el nivel de voltaje de la batería del vehículo.
+- **Velocidad del vehículo**. Muestra los datos del sensor de velocidad del vehículo (VSS).
+- **Posición del acelerador**. Determina la entrada de aire del motor a través del ángulo de la mariposa.
   **VIN**. Muestra el número de identificación de 17 caracteres del vehículo.
 
 
-## Grabación de Viajes {#trip-recording}
+## Grabación de viajes {#trip-recording}
 
 **Android**. Vaya a: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
@@ -120,15 +120,15 @@ Las métricas se clasifican para mayor claridad. Las herramientas de diagnóstic
 |--|--|
 |![Grabación OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Grabación OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
 
-Para incluir datos OBD-II en un archivo GPX, debe seleccionar los parámetros deseados para la grabación utilizando el [complemento Grabación de Viajes](../plugins/trip-recording.md#recording-settings). Esto le permite analizar las métricas del vehículo junto con los datos de su viaje.
+Para incluir datos OBD-II en un archivo GPX, debe seleccionar los parámetros deseados para la grabación utilizando el [complemento Grabación de viajes](../plugins/trip-recording.md#recording-settings). Esto le permite analizar las métricas del vehículo junto con los datos de su viaje.
 
 #### Etiquetas {#tags}
 
-OsmAnd aplica nombres de etiquetas personalizados para las métricas del vehículo en el [archivo GPX](../plugins/trip-recording.md#recorded-gpx-file). Por ejemplo:
+OsmAnd aplica nombres de etiquetas personalizadas para las métricas del vehículo en el [archivo GPX](../plugins/trip-recording.md#recorded-gpx-file). Por ejemplo:
 
-- `vm_eotemp`: Temperatura del Aceite del Motor.
-- `vm_fpress`: Presión del Combustible.
-- `vm_espeed`: Velocidad del Motor.
+- `vm_eotemp`: Temperatura del aceite del motor.
+- `vm_fpress`: Presión de combustible.
+- `vm_espeed`: Velocidad del motor.
 
 Estas etiquetas facilitan la identificación y utilización de datos específicos del vehículo al revisar el archivo GPX grabado.
 
@@ -141,11 +141,11 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 |--|--|
 |![Configuración OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Configuración OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
-Los [widgets de Métricas del Vehículo](../widgets/info-widgets.md#vehicle-metrics-widgets) se incluyen automáticamente al habilitar el complemento. Si no son visibles, puede agregarlos manualmente a través del menú [Configurar Pantalla](../widgets/configure-screen.md).
+Los [widgets de Métricas del Vehículo](../widgets/info-widgets.md#vehicle-metrics-widgets) se incluyen automáticamente cuando habilita el complemento. Si no están visibles, puede agregarlos manualmente a través del menú [Configurar pantalla](../widgets/configure-screen.md).
 
-### Configuración de Widgets {#widget-settings}
+### Configuración de widgets {#widget-settings}
 
-Los widgets muestran datos clave de su dispositivo OBD-II conectado en tiempo real, como velocidad, métricas del motor y consumo de combustible. Asegúrese de que sean visibles antes de comenzar su viaje para rastrear las métricas sin problemas.
+Los widgets muestran datos clave de su dispositivo OBD-II conectado en tiempo real, como la velocidad, las métricas del motor y el consumo de combustible. Asegúrese de que estén visibles antes de comenzar su viaje para rastrear las métricas sin problemas.
 
 Algunos widgets ofrecen opciones de modo de visualización:
 
@@ -153,10 +153,10 @@ Algunos widgets ofrecen opciones de modo de visualización:
 - **Promedio**. Muestra valores promediados durante un intervalo de tiempo configurable (de 15 segundos a 60 minutos).
 
 
-## Artículos Relacionados {#related-articles}
+## Artículos relacionados {#related-articles}
 
-- [Interactuar con el Mapa](../../user/map/interact-with-map.md)
-- [Configuración Global](../../user/personal/global-settings.md)
-- [Mapas Vectoriales (Estilos de Mapa)](../../user/map/vector-maps.md)
+- [Interactuar con el mapa](../../user/map/interact-with-map.md)
+- [Configuración global](../../user/personal/global-settings.md)
+- [Mapas vectoriales (estilos de mapa)](../../user/map/vector-maps.md)
 
 > *Última actualización: Diciembre de 2024*

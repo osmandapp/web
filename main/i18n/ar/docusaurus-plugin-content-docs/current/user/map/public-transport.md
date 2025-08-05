@@ -11,27 +11,25 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## نظرة عامة {#overview}
 
-المواصلات العامة هي طبقة إضافية تسمح لك بعرض مسارات و محطات النقل على الخريطة، للتحقق من معلومات مفصلة عنها و للتنقل.
+المواصلات العامة هي طبقة إضافية تتيح لك عرض مسارات وتوقفات النقل على الخريطة، للتحقق من معلومات مفصلة عنها والتنقل.
 
-## محطات النقل (الطبقة) {#transport-stops-layer}
+## محطات النقل (طبقة) {#transport-stops-layer}
 
 تفعيل/تعطيل طبقة المواصلات العامة:
 
-**<Translate android="true" ids="android_button_seq"/>:** *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> ←* …
+**<Translate android="true" ids="android_button_seq"/>:** *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> ←* ...
 
 <p> </p>
 
-**<Translate ios="true" ids="ios_button_seq"/>:** *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> ←* …
+**<Translate ios="true" ids="ios_button_seq"/>:** *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> ←* ...
 
 <p> </p>
 
 ![طبقة المواصلات العامة أندرويد](@site/static/img/map/pt_layer_android.png) ![طبقة المواصلات العامة iOS](@site/static/img/map/pt_layer_ios.png)
 
-اختر فئة نقل واحدة أو أكثر للعرض:
+اختر بين فئة نقل واحدة أو أكثر للعرض:
 
 - <Translate android="true" ids="rendering_attr_transportStops_name"/>
 - <Translate android="true" ids="rendering_attr_publicTransportMode_name"/>
@@ -40,16 +38,15 @@ import Translate from '@site/src/components/Translate.js';
 
 [اقرأ المزيد](../map/vector-maps.md#transport) حول كيفية عرض النقل على الخريطة.
 
-
 ## مسارات النقل (قائمة السياق) {#transport-routes-context-menu}
 
 ![قائمة مسار المواصلات العامة أندرويد](@site/static/img/map/pt_routemenu_android.png) ![قائمة مسار المواصلات العامة iOS](@site/static/img/map/pt_routemenu_ios.png)
 
-لفتح قائمة النقل، يمكنك النقر على أيقونة النقل. و تعرض:
+لفتح قائمة النقل، يمكنك النقر على أيقونة النقل. تعرض:
 
 - دروع المواصلات العامة الملونة (**قابلة للنقر**)
-- [قائمة المسارات](#routes) التي تتوقف عند تلك المحطة أو بالقرب منها (في نطاق 150 متر)
-- اسم المحطة و [تفاصيل أخرى](#transport-stop-details)
+- [قائمة المسارات](#routes) التي تتوقف عند تلك المحطة أو بالقرب منها (في نطاق 150 مترًا)
+- اسم المحطة و[تفاصيل أخرى](#transport-stop-details)
 
 ### تفاصيل محطة النقل {#transport-stop-details}
 
@@ -62,33 +59,31 @@ import Translate from '@site/src/components/Translate.js';
 - إمكانية الوصول بالكراسي المتحركة
 - اسم المشغل
 
-**ملاحظة**: يمكنك تصفية المحطات حسب معايير معينة. على سبيل المثال، قم بتوسيع و النقر على "مقعد" / "نعم" و يمكنك رؤية قائمة المحطات التي تحتوي على مقاعد. كما يمكن [عرضها على الخريطة](../map/point-layers-on-map.md#points-of-interest-pois).
-
+**ملاحظة**: يمكنك تصفية المحطات حسب معايير معينة. على سبيل المثال، قم بتوسيع والنقر على "مقعد" / "نعم" ويمكنك رؤية قائمة المحطات التي تحتوي على مقاعد. كما يمكن [عرضها على الخريطة](../map/point-layers-on-map.md#points-of-interest-pois).
 
 ### المسارات {#routes}
 
 ![مسارات المواصلات العامة أندرويد](@site/static/img/map/pt_routes_android.png) ![مسارات المواصلات العامة iOS](@site/static/img/map/pt_routes_ios.png)
 
-مسارات النقل هي جميع مسارات النقل العام التي تقترب عبر المحطة المحددة و المسارات القريبة (في نطاق 150 متر). يتم أخذ معلومات المسارات من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Public_transport) مثل المرجع و الاسم و اللون و النوع.
+مسارات النقل هي جميع مسارات المواصلات العامة التي تقترب عبر المحطة المحددة والمسارات القريبة (في نطاق 150 مترًا). يتم أخذ معلومات المسارات من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Public_transport) مثل المرجع والاسم واللون والنوع.
 
 **لون الدرع**:
 
-- مترو الأنفاق - لون خط خاص به
+- مترو الأنفاق - لون الخط الخاص به
 - السكك الحديدية - بني
-- الحافلات و غيرها - أحمر
+- الحافلات وغيرها - أحمر
 - الترام - أزرق
-- ترولي باص - بنفسجي
+- الترولي باص - أرجواني
 
 ### تصفح المسار {#browse-route}
 
 ![قائمة مسار المواصلات العامة أندرويد](@site/static/img/map/pt_route_list_android.png) ![قائمة مسار المواصلات العامة أندرويد](@site/static/img/map/pt_route_list_ios.png)
 
-يمكنك الدخول إلى قائمة تصفح المسار عن طريق **النقر على درع** أو **تحديد مسار** من قائمة المسارات. بعد ذلك يمكنك التصفح بين المحطات بالنقر على '<Translate android="true" ids="shared_string_previous"/>' و '<Translate android="true" ids="shared_string_next"/>'. سيتم تحديث معلومات المحطة في القائمة و سيتم تحديد موقع المحطة على الخريطة.
+يمكنك الدخول إلى قائمة تصفح المسار عن طريق **النقر على درع** أو **تحديد مسار** من قائمة المسارات. بعد ذلك يمكنك التصفح بين المحطات بالنقر على '<Translate android="true" ids="shared_string_previous"/>' و '<Translate android="true" ids="shared_string_next"/>'. سيتم تحديث معلومات المحطة في القائمة وسيتم تحديد موقع المحطة على الخريطة.
 
 يمكنك رؤية القائمة الكاملة للمحطات بالنقر على <Translate android="true" ids="rendering_category_details"/>. يتم تمييز المحطة المحددة حاليًا بأيقونة "الموقع" في قائمة المسارات.
 
-> **ملاحظة**: *إذا نقرت على زر <Translate android="true" ids="get_directions"/>، فستحصل على مسار من موقعك الحالي إلى محطة النقل العام المحددة.*
-
+> **ملاحظة**: *إذا نقرت على زر <Translate android="true" ids="get_directions"/>، فستحصل على مسار من موقعك الحالي إلى محطة المواصلات العامة المحددة.*
 
 ## مقالات ذات صلة {#related-articles}
 

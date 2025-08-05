@@ -21,18 +21,18 @@ async function createConfig(){
     staticDirectories: ['static', 'legacy-image-static'],
     i18n: {
       defaultLocale: 'en',
-      locales: ['en', 'fr', 'uk', 'de', 'it', 'pl', 'es', 'pt', 'tr', 'ar'],
+      locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'pl', 'pt', 'tr', 'uk'],
       localeConfigs: {
         en: { label: 'English' },
-        fr: { label: 'Français' },
-        uk: { label: 'Українська' },
+        ar: { label: 'العربية', direction: 'rtl', htmlLang: 'ar' },
         de: { label: 'Deutsch' },
+        es: { label: 'Español' },
+        fr: { label: 'Français' },
         it: { label: 'Italiano' },
         pl: { label: 'Polski' },
-        es: { label: 'Español' },
         pt: { label: 'Português' },
         tr: { label: 'Türkçe' },
-        ar: { label: 'العربية' },
+        uk: { label: 'Українська' },
       },
     },
     presets: [
