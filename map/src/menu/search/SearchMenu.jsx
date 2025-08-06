@@ -24,6 +24,7 @@ import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -114,7 +115,7 @@ export default function SearchMenu() {
     }, [searchValue]);
 
     useEffect(() => {
-        if (isMainSearchScreen) {
+        if (isMainSearchScreen && ltx.isLoggedIn()) {
             // for search categories
             if (mainCategories) {
                 setSearchCategories(mainCategories);

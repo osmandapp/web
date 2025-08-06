@@ -68,8 +68,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     }
 
     return (
-        ltx.loginUser &&
-        ltx.loginUser !== INIT_LOGIN_STATE && (
+        ltx.isLoggedIn() && (
             <Dialog id="se-delete-account-dialog" open={true} onClose={close}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>

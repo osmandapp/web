@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { apiGet } from '../util/HttpApi';
 import useCookie from 'react-use-cookie';
@@ -18,6 +18,8 @@ export const LoginContextProvider = ({ children }) => {
     const [completePurchase, setCompletePurchase] = useState(false);
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
+
+    const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
 
     useEffect(() => {
         checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo).then();
@@ -81,6 +83,7 @@ export const LoginContextProvider = ({ children }) => {
                 setOpenLoginDialog,
                 completePurchase,
                 setCompletePurchase,
+                isLoggedIn,
             }}
         >
             {children}

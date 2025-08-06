@@ -39,11 +39,7 @@ function equalExploreMarkers(marker1, marker2) {
 }
 
 export function isNewSelectedExploreMarker(objId, hoverMarker, map) {
-    return (
-        hoverMarker &&
-        !map.hasLayer(hoverMarker) &&
-        hoverMarker?.options.idObj !== objId
-    );
+    return hoverMarker && !map.hasLayer(hoverMarker) && hoverMarker?.options.idObj !== objId;
 }
 
 export function selectMarker(target, prevMarker, type = null) {

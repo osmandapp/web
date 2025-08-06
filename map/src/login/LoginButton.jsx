@@ -63,7 +63,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
             onClick={openLogin}
         >
             <ListItemButton
-                id={ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE ? 'se-logout-button' : 'se-login-button'}
+                id={ltx.loginUser && ltx.isLoggedIn() ? 'se-logout-button' : 'se-login-button'}
                 className={styles.profileButton}
                 sx={{
                     justifyContent: openMainMenu ? 'initial' : 'center',
@@ -95,9 +95,9 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
                                 },
                             }}
                         >
-                            {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE ? t('login_account') : t('user_login')}
+                            {ltx.isLoggedIn() ? t('login_account') : t('user_login')}
                         </ListItemText>
-                        {ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE && (
+                        {ltx.isLoggedIn() && (
                             <ListItemText
                                 className={styles.profileLogin}
                                 sx={{
