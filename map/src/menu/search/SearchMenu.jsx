@@ -126,7 +126,7 @@ export default function SearchMenu() {
                 addWikiPlacesDefaultFilters(ctx, true, DEFAULT_EXPLORE_POITYPES);
             }
         }
-    }, [isMainSearchScreen, zoom]);
+    }, [isMainSearchScreen, zoom, ltx.loginUser]);
 
     useEffect(() => {
         if (ctx.wikiPlaces || zoom < EXPLORE_MIN_ZOOM) {
