@@ -1,11 +1,9 @@
       
-import React from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams
-import LegendItemNew from './LegendItemNew1'; // Adjust path if WaterwaysParser is in a different folder
+import LegendItemNew from './LegendItemNew';
 
 const LegendItemNewDisplay = () => {
 
-    return <LegendItemNew itemsName={[
+    return <LegendItemNew svgPath={'/map/images/waterways.svg'} itemsName={[
           'River',
           'Canal',
           'Stream',
@@ -29,6 +27,4 @@ const LegendItemNewDisplay = () => {
           ]} />;
 };
 
-export default LegendItemNewDisplay; // Export the component
-
-    
+export default LegendItemNewDisplay;

@@ -2,31 +2,58 @@ import { Box, CircularProgress, Typography } from '@mui/material';
 import {React, useEffect, useState, useRef, useMemo} from 'react';
 import clsx from 'clsx';
 import styles from './LegendItem.module.css';
-import { ReactComponent as Waterways } from '../assets/waterways.svg';
 //import useB aseUrl from '@docusaurus/useBaseUrl';
 import {Tabs,TabItem } from './Tabs';
 //import TabItem from './Tabs';
 import { use } from 'react';
 
 
-export default function LegendItemNew({itemsName, props}) {
+export default function LegendItemNew({svgPath, itemsName, props}) {
 
   const [splitSvgs, setSplitSvgs] = useState([]);
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
-  const svgRef = useRef(null);
   let itemsTmp = [];
   let arr = [];
+  const [svgContent, setSvgContent] = useState('');
+  const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    if (!svgPath) {
+      setSvgContent('');
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    fetch(svgPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+
+        setSvgContent(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching SVG:', err);
+        setError(err);
+        setLoading(false);
+      });
+  }, [svgPath]);
+
 
 
    useEffect(() => {
-
-    if (svgRef.current) {
-     const svgString = svgRef.current.outerHTML;
-
+    if (svgContent !== ''){
       try {
         const parser = new DOMParser();
-        const svgDoc = parser.parseFromString(svgString, "image/svg+xml");
+        const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
         const originalSvgElement = svgDoc.documentElement;
 
         if (originalSvgElement.querySelector('parsererror')) {
@@ -94,8 +121,21 @@ export default function LegendItemNew({itemsName, props}) {
         setSplitSvgs([]);
       }
     }
-    }, []);
+    
+    }, [svgContent]);
 
+
+  if (loading) {
+    return <p>Loading SVG...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  if (!svgContent) {
+    return <p>No SVG content to display.</p>;
+  }
 
   const chunkArray = (arr, chunkSize) => {
     const R = [];
@@ -114,11 +154,7 @@ function useBaseUrl(relativePath){
 
   return (
 
-
     <div className="container row">
-       <div style={{ display: 'none' }}>
-        <Waterways ref={svgRef} {...props} />
-      </div>
      {// <Tabs groupId="map-legend">
        // <TabItem value="dayMode" label="Day mode"> 
        }

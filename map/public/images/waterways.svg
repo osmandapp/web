@@ -4,6 +4,11 @@
   <path d="m23.3267 5.87446v-3.13533l6.62432 5.96808-6.64747 6.00576 0.05329-3.47228h-8.04935l-6.28e-4 -5.36105z" fill="#429ab5" stroke="#4aaece"/>
   <path d="m255.336 5.93233v-3.13533l6.62432 5.96808-6.64747 6.00576 0.0533-3.47228h-8.04935l-6.2e-4 -5.36105z" fill="#429ab5" stroke="#4aaece"/>
  </g>
+ <g id="Canal" transform="translate(60,183)">
+  <path d="m0.500978 0.50479 368.32-4e-3 0.0274 16.3254-368.341 0.0105z" fill="#5ac3e7" stroke="#a5d3e7"/>
+  <path d="m23.3267 5.87446v-3.13533l6.62432 5.96808-6.64747 6.00576 0.05329-3.47228h-8.04935l-6.28e-4 -5.36105z" fill="#429ab5" stroke="#4aaece"/>
+  <path d="m255.336 5.93233v-3.13533l6.62432 5.96808-6.64747 6.00576 0.0533-3.47228h-8.04935l-6.2e-4 -5.36105z" fill="#429ab5" stroke="#4aaece"/>
+ </g>
  <g id="Stream" transform="translate(60,227)">
   <path d="m0.500785 4.16032h368.148v5.62002h-368.148z" fill="#5ac3e7" stroke="#a5d3e7"/>
   <path d="m23.1211 4.32122v-3.13533l6.62432 5.96808-6.64747 6.00576 0.05329-3.47228h-8.04935l-6.28e-4 -5.36105z" fill="#429ab5" stroke="#4aaece"/>
@@ -12,7 +17,10 @@
  <g id="Drain" transform="translate(60,289)">
   <path d="m0.500891 0.505792 368.325-5e-3 8e-3 2.99349-368.333-4e-3z" fill="#5ac3e7" stroke="#a5d3e7"/>
  </g>
- <g id="Intermitten stream" transform="translate(60.822,400.515)" fill="#5ac3e7" stroke="#a5d3e7">
+ <g id="Didch" transform="translate(60,359)">
+  <path d="m0.500891 0.505792 368.325-5e-3 8e-3 2.99349-368.333-4e-3z" fill="#5ac3e7" stroke="#a5d3e7"/>
+ </g>
+ <g id="Intermitten stream" transform="translate(60,400)" fill="#5ac3e7" stroke="#a5d3e7">
   <path d="m0 0h16.322v5.64623h-16.331z"/>
   <path d="m25.345-0.014h16.322v5.646h-16.331z"/>
   <path d="m50.692 0h16.322v5.646h-16.331z"/>
@@ -32,7 +40,13 @@
  <g id="Dam" transform="translate(60,459)">
   <path d="m0 0h368.325v2.993h-368.325z" fill="#525552" stroke="#9c9e9c"/>
  </g>
+ <g id="Wier" transform="translate(60,509)">
+  <path d="m0 0h368.325v2.993h-368.325z" fill="#525552" stroke="#9c9e9c"/>
+ </g>
  <g id="Groyne" transform="translate(60,569)">
+  <path d="m0 0 368.325-5e-3 8e-3 5.60638-368.333-4e-3z" fill="#adaaad" stroke="#cec7c6"/>
+ </g>
+ <g id="Breakwater" transform="translate(60,629)">
   <path d="m0 0 368.325-5e-3 8e-3 5.60638-368.333-4e-3z" fill="#adaaad" stroke="#cec7c6"/>
  </g>
  <g id="Pier" transform="translate(61.61,662.692)">
