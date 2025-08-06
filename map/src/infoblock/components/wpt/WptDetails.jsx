@@ -246,8 +246,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     });
                     fallbackTags.push(wikidataTag);
                     tags = { res: fallbackTags };
-                } else {
-                    tags = null;
                 }
             }
             return tags;
