@@ -4,6 +4,7 @@ import actionFinish from '../actions/actionFinish.mjs';
 import { assert, clickBy, getMarker, leftClickBy, sendKeysBy, waitBy, waitByRemoved, zoomMap } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../options.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 const searchWord = 'silpo';
 const blue = 'rgb(35 123 255)';
@@ -120,8 +121,10 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     // test zoom in
     if (type !== explore_type) {
         await zoomMap('in');
+        await actionIdleWait();
         await checkMarkerHighlighted(coords1, zoomState, type);
         await zoomMap('out');
+        await actionIdleWait();
         await checkMarkerHighlighted(coords1, zoomState, type);
 
         await clickBy(By.id('se-close-wpt-details'));
