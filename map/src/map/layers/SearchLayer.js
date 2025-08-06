@@ -31,7 +31,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
-import { selectMarker } from '../util/MarkerSelectionService';
+import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -139,7 +139,20 @@ export default function SearchLayer() {
                 newLayers.eachLayer((l) => {
                     searchLayers.current.addLayer(l);
                 });
-                prevSelectedRes.current = null;
+                if (prevSelectedRes.current && searchLayers.current) {
+                    // If we have a previously selected result, re-add it to the search layers
+                    let wasFound = false;
+                    searchLayers.current.getLayers().forEach((layer) => {
+                        if (layer.options.idObj === prevSelectedRes.current.options.idObj) {
+                            prevSelectedRes.current = selectMarker(layer, prevSelectedRes.current, SEARCH_LAYER_ID);
+                            wasFound = true;
+                        }
+                    });
+                    if (!wasFound) {
+                        // If the previously selected result is not found, reset it
+                        prevSelectedRes.current = null;
+                    }
+                }
             }
         };
 
@@ -213,10 +226,12 @@ export default function SearchLayer() {
                         objList: ctx.searchResult?.features,
                     });
                     searchLayers.current = layers;
+                    console.log(`SearchLayer: adding search layer with ${layers.getLayers().length} markers`);
                     layers.addTo(map).on('click', onClick);
                 }
             }
         };
+
         addAsyncLayers().then();
     }, [ctx.searchResult]);
 
