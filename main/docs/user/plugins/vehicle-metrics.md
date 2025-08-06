@@ -20,12 +20,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview {#overview}
 
 :::info Paid feature
-The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
+The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app. Vehicle speed and Engine speed info is available for OsmAnd free.
 :::
 
-The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the OBD-II protocol. Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
+The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
 
-OBD-II scanners are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
+[OBD-II scanners](https://en.wikipedia.org/wiki/ELM327) are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
