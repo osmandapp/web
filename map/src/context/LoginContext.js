@@ -19,6 +19,8 @@ export const LoginContextProvider = ({ children }) => {
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
 
+    const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
+
     useEffect(() => {
         checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo).then();
     }, [loginUser]);
@@ -81,6 +83,7 @@ export const LoginContextProvider = ({ children }) => {
                 setOpenLoginDialog,
                 completePurchase,
                 setCompletePurchase,
+                isLoggedIn,
             }}
         >
             {children}
