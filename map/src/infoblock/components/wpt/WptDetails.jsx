@@ -35,6 +35,7 @@ import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direct
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
+import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -59,6 +60,7 @@ import WptTagsProvider, {
     POI_OSM_URL,
     WIKIDATA,
     WIKIPEDIA,
+    addWikidataTags,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -166,6 +168,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
             const wikiObj = ctx.searchSettings.getPoi;
+            const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
             const poiType = getCategory(wikiObj.properties);
             return {
@@ -184,6 +187,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 osmUrl: currentPoi?.properties[POI_OSM_URL],
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
+                wikidata: wikidataId,
             };
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
@@ -231,7 +235,18 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 }
             } else if (type?.isSearch || type?.isPoi || type?.isWikiPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
-                tags = currentPoi ? await WptTagsProvider.getWptTags(currentPoi, type, ctx) : null;
+                if (currentPoi) {
+                    tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                } else if (newWpt?.wikidata) {
+                    const fallbackTags = [];
+                    const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {
+                        key: 'wikidata',
+                        value: 'Q' + newWpt.wikidata,
+                        textPrefix: 'Wikidata',
+                    });
+                    fallbackTags.push(wikidataTag);
+                    tags = { res: fallbackTags };
+                }
             }
             return tags;
         };
