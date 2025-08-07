@@ -53,14 +53,14 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
 
-
+<!--
 :::danger Summer Sale prices
 
 *Hurry up! This offer is only available until* **August 06 (23:00 CET)**.
 
 :::
 
-<!--
+
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |

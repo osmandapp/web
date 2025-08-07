@@ -36,7 +36,7 @@ All purchases made through any of these platforms support [**cross-platform acce
 
 Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
 
-
+<!--
 
 
 :::danger Summer Sale prices
@@ -45,7 +45,7 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 :::
 
-<!--
+
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |

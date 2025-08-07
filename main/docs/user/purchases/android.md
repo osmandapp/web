@@ -75,7 +75,7 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-
+<!--
 
 :::danger Summer Sale prices
 
@@ -83,7 +83,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 
 :::
 
-<!--
+
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
