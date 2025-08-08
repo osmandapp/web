@@ -95,7 +95,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
             });
         }
         return items;
-    }, [smartf, sortGroups, ctx.openGroups]);
+    }, [smartf, sortGroups, ctx.openFavGroups]);
 
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {

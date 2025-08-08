@@ -187,7 +187,13 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
-                                <MenuItem className={styles.item} onClick={() => ctx.setOpenVisibleMenu(true)}>
+                                <MenuItem
+                                    className={styles.item}
+                                    onClick={() => {
+                                        ctx.setOpenVisibleMenu(true);
+                                        ctx.setOpenMenu({ id: 'se-show-menu-tracks' });
+                                    }}
+                                >
                                     <ListItemIcon className={styles.iconEnabled}>
                                         <TracksIcon />
                                     </ListItemIcon>
