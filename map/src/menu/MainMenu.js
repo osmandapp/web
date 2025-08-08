@@ -25,6 +25,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_WEATHER,
     OBJECT_TRACK_ANALYZER,
+    OBJECT_TYPE_POI,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -460,6 +461,10 @@ export default function MainMenu({
     }
 
     function selectMenu({ item }) {
+        if (!ctx.openInfoDrawer) {
+            ctx.setOpenInfoDrawer(true);
+            return;
+        }
         closeSubPages({ ctx, ltx });
         let currentType;
         if (menuInfo) {
@@ -735,7 +740,7 @@ export default function MainMenu({
                     },
                 }}
                 sx={{ left: 'auto !important' }}
-                open={true}
+                open={ctx.openInfoDrawer}
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
