@@ -16,12 +16,16 @@ export default function CloudGpxUploader({ children, folder = null, style = null
         return name !== '' && name.trim().length > 0;
     }
 
+    function removeFileExtension(filename) {
+        return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
+    }
+
     useEffect(() => {
         for (const file in uploadedFiles) {
             let open = uploadedFiles[file].selected;
             let fileName = uploadedFiles[file].name;
             if (validName(fileName)) {
-                fileName = fileName.replace('.gpx', '');
+                fileName = removeFileExtension(fileName);
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
                 saveTrackToCloud({
                     ctx,
@@ -66,7 +70,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
             <HiddenInput
                 disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
-                accept=".gpx"
+                accept=".gpx, .kmz, .kml"
                 multiple
                 type="file"
                 onChange={fileSelected}
