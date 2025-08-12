@@ -97,7 +97,12 @@ export async function saveTrackToCloud({
 
     if (ltx.loginUser) {
         if (currentFile) {
-            const convertedData = new TextEncoder().encode(currentFile.data);
+            let convertedData
+            if (currentFile.name.toLowerCase().endsWith('.kmz')) {
+                convertedData = new Uint8Array(currentFile.data);
+            } else {
+                convertedData = new TextEncoder().encode(currentFile.data);
+            }
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });

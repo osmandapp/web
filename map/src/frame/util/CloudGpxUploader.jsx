@@ -16,12 +16,16 @@ export default function CloudGpxUploader({ children, folder = null, style = null
         return name !== '' && name.trim().length > 0;
     }
 
+    function removeFileExtension(filename) {
+        return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
+    }
+
     useEffect(() => {
         for (const file in uploadedFiles) {
             let open = uploadedFiles[file].selected;
             let fileName = uploadedFiles[file].name;
             if (validName(fileName)) {
-                fileName = fileName.replace('.gpx', '');
+                fileName = removeFileExtension(fileName);
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
                 saveTrackToCloud({
                     ctx,
@@ -40,7 +44,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
 
     const fileSelected = async (e) => {
         const selected = e.target.files.length === 1;
-        ctx.setTrackLoading(Array.from(e.target.files).map((track) => track.name));
+        ctx.setTrackLoading(Array.from(e.target.files).map((track) => removeFileExtension(track.name) + ".gpx"));
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async (e) => {
@@ -55,7 +59,11 @@ export default function CloudGpxUploader({ children, folder = null, style = null
                     ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                 }
             });
-            reader.readAsText(file);
+            if (file.name.toLowerCase().endsWith('.kmz')) {
+                reader.readAsArrayBuffer(file);
+            } else {
+                reader.readAsText(file);
+            }
         });
     };
 
@@ -66,7 +74,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
             <HiddenInput
                 disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
-                accept=".gpx"
+                accept=".gpx, .kmz, .kml"
                 multiple
                 type="file"
                 onChange={fileSelected}
