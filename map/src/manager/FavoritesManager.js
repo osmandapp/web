@@ -75,13 +75,8 @@ async function addFavorite(data, group, ctx) {
                 dataOnErrors: true,
                 throwErrors: true,
             });
-        } catch (err) {
-            const status = err?.response?.status;
-            // Catch File was changed
-            if (status === 400) {
-                return { data: null };
-            }
-            throw err;
+        } catch {
+            return { data: null };
         }
     };
 
