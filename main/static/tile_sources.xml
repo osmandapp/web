@@ -293,3 +293,4 @@
 
    <tile_source name="Bilingual Southeast Asia" url_template="http://tile.osm-tools.org/osm/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
 
+</tile_sources>
