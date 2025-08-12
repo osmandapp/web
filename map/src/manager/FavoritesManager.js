@@ -61,17 +61,54 @@ function getShapesSvg(color) {
     return res;
 }
 
-async function addFavorite(data, fileName, updatetime) {
-    fileName = normalizeGroupNameForFile(fileName);
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
-        params: {
-            fileName: fileName,
-            updatetime: updatetime,
-        },
-    });
-    if (resp.data) {
-        const data = prepareTrackData(resp.data.details.trackData);
-        return new GroupResult(resp.data.clienttime, resp.data.updatetime, data);
+// Try to add, refresh stale file, then retry once
+async function addFavorite(data, group, ctx) {
+    const fileName = normalizeGroupNameForFile(group?.file?.name ?? '');
+    if (!fileName) {
+        throw new Error('File name is required to add a favorite');
+    }
+
+    const postAdd = async (updatetime) => {
+        try {
+            return await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
+                params: { fileName, updatetime },
+                dataOnErrors: true,
+                throwErrors: true,
+            });
+        } catch (err) {
+            const status = err?.response?.status;
+            // Catch File was changed
+            if (status === 400) {
+                return { data: null };
+            }
+            throw err;
+        }
+    };
+
+    const toResult = (resp) => {
+        const td = prepareTrackData(resp.details.trackData);
+        return new GroupResult(resp.clienttime, resp.updatetime, td);
+    };
+
+    try {
+        let resp = await postAdd(group?.updatetimems);
+        if (resp?.data) return toResult(resp.data);
+
+        const files = await refreshGlobalFiles({
+            ctx,
+            type: OBJECT_TYPE_FAVORITE,
+            updateMarkers: false,
+        });
+
+        const freshGroup = files.groups?.find((g) => g.name === group?.name);
+        resp = await postAdd(freshGroup?.updatetimems);
+
+        if (resp?.data) return toResult(resp.data);
+
+        return null;
+    } catch (err) {
+        console.error('[addFavorite] failed:', err);
+        return null;
     }
 }
 
@@ -326,7 +363,7 @@ function getGroupSize(group) {
     }
 }
 
-export async function updateFavGroups(listFiles, ctx) {
+export async function updateFavGroups(listFiles, ctx, updateMarkers = true) {
     if (!_.isEmpty(listFiles)) {
         const files = TracksManager.getFavoriteGroups(listFiles);
         let newFavoritesFiles = {
@@ -349,7 +386,10 @@ export async function updateFavGroups(listFiles, ctx) {
                 newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
             }
         }
-        ctx.setUpdateMarkers(newFavoritesFiles);
+        if (updateMarkers) {
+            ctx.setUpdateMarkers(newFavoritesFiles);
+        }
+        return newFavoritesFiles;
     } else {
         ctx.setFavorites([]);
     }

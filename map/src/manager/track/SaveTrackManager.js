@@ -303,7 +303,13 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE }) {
+export async function refreshGlobalFiles({
+    ctx,
+    oldName = null,
+    currentFileName = null,
+    type = GPX_FILE_TYPE,
+    updateMarkers = true,
+}) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -313,7 +319,7 @@ export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName 
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {
-            await updateFavGroups(resJson, ctx);
+            return await updateFavGroups(resJson, ctx, updateMarkers);
         } else if (type === GPX_FILE_TYPE) {
             updateTrackGroups(resJson, ctx);
             if (oldName) {

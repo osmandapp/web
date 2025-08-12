@@ -227,7 +227,15 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                 ext: ext,
             };
         }
-        const res = await FavoritesManager.addFavorite(favorite, selectedGroup.file.name, selectedGroup.updatetimems);
+        const res = await FavoritesManager.addFavorite(favorite, selectedGroup, ctx);
+        if (!res) {
+            setProcess(false);
+            ctx.setNotification({
+                text: 'Error saving favorite',
+                severity: 'error',
+            });
+            return null;
+        }
         return { res, selectedGroup };
     }
 
