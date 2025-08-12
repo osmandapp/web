@@ -125,7 +125,7 @@
 
    <!-- Norway maps-->
   <!-- <tile_source name="🇳🇴 Finn Kart (NO)" url_template="http://maptiles{rnd}.finncdn.no/tileService/1.0.3/normaphd/{0}/{1}/{2}.png" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/> -->
-<!--   <tile_source name="🇳🇴 Kartverket Topo (NO)" url_template="https://cache.kartverket.no/topo/v1/wmts/1.0.0/?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=topo&amp;STYLE=default&amp;FORMAT=image/png&amp;tileMatrixSet=googlemaps&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>-->
+   <tile_source name="🇳🇴 Kartverket Topo (NO)" url_template="https://cache.kartverket.no/v1/service?layer=topo&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
    <!--
    <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)" url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>   
 
