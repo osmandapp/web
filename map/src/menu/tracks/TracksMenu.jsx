@@ -42,14 +42,14 @@ export default function TracksMenu() {
 
     // get gpx files and create groups
     useEffect(() => {
+        const defaultGroupWithFolders = {
+            subfolders: ctx.tracksGroups ?? [],
+            groupFiles: [],
+            name: DEFAULT_GROUP_NAME,
+            fullName: DEFAULT_GROUP_NAME,
+        };
         if (!isEmpty(ctx.tracksGroups)) {
             const defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
-            const defaultGroupWithFolders = {
-                subfolders: ctx.tracksGroups,
-                groupFiles: [],
-                name: DEFAULT_GROUP_NAME,
-                fullName: DEFAULT_GROUP_NAME,
-            };
             if (defGroup) {
                 setDefaultGroup(defGroup);
             } else {
@@ -62,11 +62,15 @@ export default function TracksMenu() {
                 files: defGroup ? defGroup.groupFiles : [],
                 groups: defaultGroupWithFolders.subfolders,
             });
+        } else {
+            setDefaultGroup(defaultGroupWithFolders);
+            setSortFiles([]);
+            setSortGroups([]);
         }
     }, [ctx.tracksGroups]);
 
     const defaultGroupItems = useMemo(() => {
-        if (defaultGroup && defaultGroup.groupFiles) {
+        if (defaultGroup?.groupFiles) {
             const items = [];
             const listTracks = sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles;
             listTracks.map((file, index) => {
