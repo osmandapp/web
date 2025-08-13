@@ -12,7 +12,7 @@ import TracksManager, {
     EMPTY_FILE_NAME,
     TRACK_VISIBLE_FLAG,
     preparedGpxFile,
-    GPX_FILE_EXT,
+    GPX_FILE_EXT, KMZ_FILE_EXT,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
 import {
@@ -106,7 +106,7 @@ export async function saveTrackToCloud({
     if (ltx.loginUser) {
         if (currentFile) {
             let convertedData;
-            if (currentFile.originalName.toLowerCase().endsWith('.kmz')) {
+            if (currentFile.originalName.toLowerCase().endsWith(KMZ_FILE_EXT)) {
                 convertedData = new Uint8Array(currentFile.data);
             } else {
                 convertedData = new TextEncoder().encode(currentFile.data);

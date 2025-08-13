@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
-import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
@@ -62,7 +62,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
                     ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                 }
             });
-            if (file.name.toLowerCase().endsWith('.kmz')) {
+            if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
                 reader.readAsArrayBuffer(file);
             } else {
                 reader.readAsText(file);
