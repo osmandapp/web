@@ -53,7 +53,8 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
           throw new Error("Failed to parse the Waterways SVG markup.");
         }
 
-        const groupElements = originalSvgElement.querySelectorAll('g');
+        const topLevelGroups = ':scope > g';
+        const groupElements = originalSvgElement.querySelectorAll(topLevelGroups);
         const originalDefs = originalSvgElement.querySelector('defs');
         const originalStyles = originalSvgElement.querySelectorAll('style');
         const svgArray = [];
