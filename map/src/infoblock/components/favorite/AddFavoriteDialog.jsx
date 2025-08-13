@@ -18,7 +18,7 @@ import FavoritesManager, {
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
 } from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
@@ -193,7 +193,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
             selectedGroup = {
                 name: FavoritesManager.DEFAULT_GROUP_NAME,
                 file: {
-                    name: FavoritesManager.DEFAULT_GROUP_NAME + '.gpx',
+                    name: FavoritesManager.DEFAULT_GROUP_NAME + GPX_FILE_EXT,
                     type: FavoritesManager.FAVORITE_FILE_TYPE,
                 },
             };

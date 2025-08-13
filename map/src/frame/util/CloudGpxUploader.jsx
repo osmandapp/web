@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
+import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
@@ -44,13 +45,15 @@ export default function CloudGpxUploader({ children, folder = null, style = null
 
     const fileSelected = async (e) => {
         const selected = e.target.files.length === 1;
-        ctx.setTrackLoading(Array.from(e.target.files).map((track) => removeFileExtension(track.name) + ".gpx"));
+        ctx.setTrackLoading(Array.from(e.target.files).map((track) => removeFileExtension(track.name) + GPX_FILE_EXT));
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async (e) => {
                 const data = e.target.result;
                 if (data) {
-                    mutateUploadedFiles((o) => (o[file.name] = { file, selected, data: data, name: file.name }));
+                    mutateUploadedFiles(
+                        (o) => (o[file.name] = { file, selected, data: data, name: file.name, originalName: file.name })
+                    );
                 } else {
                     ctx.setTrackErrorMsg({
                         title: 'Import error',

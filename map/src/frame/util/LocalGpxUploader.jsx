@@ -38,7 +38,7 @@ export default function LocalGpxUploader({ children }) {
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
-                    track.name = file.name;
+                    track.name = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
                     mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                 }
             });

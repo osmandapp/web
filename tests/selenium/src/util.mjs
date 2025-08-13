@@ -22,6 +22,20 @@ export function getFiles({ folder = 'gpx', filter = true }) {
     return filter ? files.filter((f) => f.name !== 'favorites-Castle Bromwich зміна назви ще раз    _-__-__-_') : files;
 }
 
+export function getFilesByName({ folder }) {
+    const files = [];
+
+    readdirSync(folder)
+        .sort()
+        .forEach((file) => {
+            const name = file;
+            const path = resolve(folder, file);
+            files.push({ file, name, path });
+        });
+
+    return files;
+}
+
 export async function createFolder(name) {
     await clickBy(By.id('se-add-folder'));
     const input = await waitBy(By.id('se-add-folder-input'));

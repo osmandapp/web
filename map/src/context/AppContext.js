@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
-import TracksManager, { getGpxFiles, preparedGpxFile, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import TracksManager, {
+    getGpxFiles,
+    GPX_FILE_EXT,
+    preparedGpxFile,
+    TRACK_VISIBLE_FLAG,
+} from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet, apiPost } from '../util/HttpApi';
@@ -108,7 +113,7 @@ async function loadListFiles(
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith('.gpx'))
+        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
             name: f.name,
             type: f.type,
