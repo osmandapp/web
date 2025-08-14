@@ -34,7 +34,53 @@ import TabItem from '@theme/TabItem';
 
 
 ## Highways {#highways}
-<img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" />
+<!--img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" /-->
+
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-highways-day.svg'}
+        itemsName={[
+          'Highways',
+          'Motorway',
+          'Trunk',
+          'Primary',
+          'Secondary',
+          'Tertiary',
+          'Residential',
+          'Unclassified',
+          'Service',
+          'Driveway',
+          'Living street',
+          'Pedestrian',
+          'Road (unknown type)',
+          'Track',
+          'Cycleway',
+          'Raceway',
+          'Escape lane',
+          'Abandoned road',
+          'Abandoned track',
+          'Bus way',
+          'Footway',
+          'Footway crossing',
+          'Path',
+          'Steps',
+          'Steps with a ramp',
+          'Escalator',
+          'Goods conveyor',
+          'Elevator',
+          'Bridleway',
+          'Construction',
+          'Proposed',
+          'Bridges',
+          'Tunnels',
+          'Bridges',
+          'Tunnels',
+          'Cycleway lane',
+          'Cycleway track',
+          'Cycleway opposite lane',
+          'Cycleway-share busway',
+          'Cycleway opposite',
+          'Cycle street'
+          ]} />
+
 
 ## Railways {#railways}
 <img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" />
