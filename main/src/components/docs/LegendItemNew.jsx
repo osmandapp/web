@@ -79,12 +79,11 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
           }
           newSvg.appendChild(clonedGroupElement);
           const toRemove = document.body.insertAdjacentElement("beforeend", newSvg);
-          let bbox = newSvg.getBBox();
+          const bbox = getVisualBBox(newSvg);
           toRemove?.remove();
-          console.log(bbox);
           newSvg.setAttribute('width', bbox.width.toFixed(2));
           newSvg.setAttribute('height', bbox.height.toFixed(2));
-          newSvg.setAttribute('viewBox', `0 0 ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`);
+          newSvg.setAttribute('viewBox', `${bbox.x.toFixed(2)} ${bbox.y.toFixed(2)} ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`)
           const serializer = new XMLSerializer();
           const serializedGroup = serializer.serializeToString(newSvg);
           svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup });
@@ -111,6 +110,36 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
     }
   }, [svgContent]);
 
+  function getSvgGroupVisualMetrics(groupElement) {
+    const groupBBox = groupElement.getBBox();
+    let topStroke = 0, bottomStroke = 0, leftStroke = 0, rightStroke = 0;
+    const topY = groupBBox.y;
+    const bottomY = groupBBox.y + groupBBox.height;
+    const leftX = groupBBox.x;
+    const rightX = groupBBox.x + groupBBox.width;
+    for (const child of groupElement.children) {
+      const childBBox = child.getBBox();
+      const style = window.getComputedStyle(child);
+      const strokeWidth = parseFloat(style.getPropertyValue('stroke-width')) || 0;
+      if (childBBox.y === topY) { topStroke = Math.max(topStroke, strokeWidth); }
+      if (childBBox.y + childBBox.height === bottomY) { bottomStroke = Math.max(bottomStroke, strokeWidth); }
+      if (childBBox.x === leftX) { leftStroke = Math.max(leftStroke, strokeWidth); }
+      if (childBBox.x + childBBox.width === rightX) { rightStroke = Math.max(rightStroke, strokeWidth); }
+    }
+    return { groupBBox, topStroke, bottomStroke, leftStroke, rightStroke };
+  }
+  function getVisualBBox(groupElement) {
+    if (!groupElement || typeof groupElement.getBBox !== 'function') {
+      console.error("Invalid SVG group element provided.");
+      return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    const { groupBBox, topStroke, bottomStroke, leftStroke, rightStroke } = getSvgGroupVisualMetrics(groupElement);
+    const finalWidth = groupBBox.width + (leftStroke / 2) + (rightStroke / 2);
+    const finalHeight = groupBBox.height + (topStroke / 2) + (bottomStroke / 2);
+    const finalX = groupBBox.x - (leftStroke / 2);
+    const finalY = groupBBox.y - (topStroke / 2);
+    return { x: finalX, y: finalY, width: finalWidth, height: finalHeight };
+  }
 
   if (loading) {
     return <p>Loading SVG...</p>;
