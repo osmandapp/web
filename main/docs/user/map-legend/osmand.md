@@ -83,7 +83,10 @@ import TabItem from '@theme/TabItem';
 
 
 ## Railways {#railways}
-<img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" />
+<!--img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" /-->
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-railways-day.svg'}
+        itemsName={[
+        ]} />
 
 ## Aerialways {#aerialways}
 <img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" />
@@ -117,8 +120,7 @@ import TabItem from '@theme/TabItem';
 
 
 
-## Waterways SVG {#waterways}
-
+## Waterways {#waterways}
 
 <LegendItemNew svgPathDay={'/img/map-legend/osmand-waterways-day.svg'}
         itemsName={[
