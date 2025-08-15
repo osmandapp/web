@@ -86,6 +86,21 @@ import TabItem from '@theme/TabItem';
 <!--img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" /-->
 <LegendItemNew svgPathDay={'/img/map-legend/osmand-railways-day.svg'}
         itemsName={[
+        "Rail",
+        "Bridge",
+        "Tunnel",
+        "Railway spur",
+        "Tram",
+        "Subway",
+        "Subway (underground)",
+        "Light rail",
+        "Abandoned",
+        "Disused",
+        "Preserved",
+        "Narrow gauge",
+        "Construction",
+        "Monorail",
+        "Funicular",
         ]} />
 
 ## Aerialways {#aerialways}
