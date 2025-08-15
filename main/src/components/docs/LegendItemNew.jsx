@@ -45,6 +45,7 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
     if (svgContent !== '') {
 
       try {
+        const itemsMap = new Map(Object.entries(itemsName));
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
         const originalSvgElement = svgDoc.documentElement;
@@ -74,7 +75,6 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
           });
           const clonedGroupElement = groupElement.cloneNode(true);
           if (clonedGroupElement.hasAttribute('transform')) {
-            console.log(`Removing 'transform' attribute from group with ID: ${clonedGroupElement.id || 'N/A'}`);
             clonedGroupElement.removeAttribute('transform');
           }
           newSvg.appendChild(clonedGroupElement);
@@ -86,7 +86,8 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
           newSvg.setAttribute('viewBox', `${bbox.x.toFixed(2)} ${bbox.y.toFixed(2)} ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`)
           const serializer = new XMLSerializer();
           const serializedGroup = serializer.serializeToString(newSvg);
-          svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup });
+          const title = itemsMap.get(groupElement.id)
+          svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup, title });
         });
 
         Object.entries(itemsName).forEach((entry) => {
@@ -173,9 +174,9 @@ export default function LegendItemNew({svgPathDay, itemsName, props}) {
                 {rows.map((itemArray, rowIndex) => {
                   return <>
                     <tr key={rowIndex * 2}>
-                      {itemArray.length > 0 && <td key={rowIndex * 2 + itemArray[0].id} className='text--center'>{itemArray[0].id}</td>}
-                      {itemArray.length > 1 && <td key={rowIndex * 2 + itemArray[1].id} className='text--center'>{itemArray[1].id}</td>}
-                      {itemArray.length > 2 && <td key={rowIndex * 2 + itemArray[2].id} className='text--center'>{itemArray[2].id}</td>}
+                      {itemArray.length > 0 && <td key={rowIndex * 2 + itemArray[0].id} className='text--center'>{itemArray[0].title}</td>}
+                      {itemArray.length > 1 && <td key={rowIndex * 2 + itemArray[1].id} className='text--center'>{itemArray[1].title}</td>}
+                      {itemArray.length > 2 && <td key={rowIndex * 2 + itemArray[2].id} className='text--center'>{itemArray[2].title}</td>}
                     </tr>
                     <tr key={rowIndex * 2 + 1} className={styles.legendDay}>
                       {itemArray.length > 0 && <td key={rowIndex * 2 + 1 + itemArray[0].id} className={styles.svg}>

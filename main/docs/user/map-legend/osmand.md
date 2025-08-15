@@ -36,72 +36,72 @@ import TabItem from '@theme/TabItem';
 ## Highways {#highways}
 <!--img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" /-->
 
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-highways-day.svg'}
-        itemsName={[
-          'Highways',
-          'Motorway',
-          'Trunk',
-          'Primary',
-          'Secondary',
-          'Tertiary',
-          'Residential',
-          'Unclassified',
-          'Service',
-          'Driveway',
-          'Living street',
-          'Pedestrian',
-          'Road (unknown type)',
-          'Track',
-          'Cycleway',
-          'Raceway',
-          'Escape lane',
-          'Abandoned road',
-          'Abandoned track',
-          'Bus way',
-          'Footway',
-          'Footway crossing',
-          'Path',
-          'Steps',
-          'Steps with a ramp',
-          'Escalator',
-          'Goods conveyor',
-          'Elevator',
-          'Bridleway',
-          'Construction',
-          'Proposed',
-          'Bridges',
-          'Tunnels',
-          'Bridges',
-          'Tunnels',
-          'Cycleway lane',
-          'Cycleway track',
-          'Cycleway opposite lane',
-          'Cycleway-share busway',
-          'Cycleway opposite',
-          'Cycle street'
-          ]} />
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-highways-day.svg'} 
+        itemsName={{
+        "highways": "Highways",
+        "motorway": "Motorway",
+        "trunk": "Trunk",
+        "primary": "Primary",
+        "secondary": "Secondary",
+        "tertiary": "Tertiary",
+        "residential": "Residential",
+        "unclassified": "Unclassified",
+        "service": "Service",
+        "driveway": "Driveway",
+        "living_street": "Living street",
+        "pedestrian": "Pedestrian",
+        "road_unknown_type": "Road (unknown type)",
+        "track": "Track",
+        "cycleway": "Cycleway",
+        "raceway": "Raceway",
+        "escape_lane": "Escape lane",
+        "abandoned_road": "Abandoned road",
+        "abandoned_track": "Abandoned track",
+        "bus_way": "Bus way",
+        "footway": "Footway",
+        "footway_crossing": "Footway crossing",
+        "path": "Path",
+        "steps": "Steps",
+        "steps_with_a_ramp": "Steps with a ramp",
+        "escalator": "Escalator",
+        "goods_conveyor": "Goods conveyor",
+        "elevator": "Elevator",
+        "bridleway": "Bridleway",
+        "construction": "Construction",
+        "proposed": "Proposed",
+        "bridges_1": "Bridges",
+        "tunnels_1": "Tunnels",
+        "bridges_2": "Bridges",
+        "tunnels_2": "Tunnels",
+        "cycleway_lane": "Cycleway lane",
+        "cycleway_track": "Cycleway track",
+        "cycleway_opposite_lane": "Cycleway opposite lane",
+        "cycleway_share_busway": "Cycleway-share busway",
+        "cycleway_opposite": "Cycleway opposite",
+        "cycle_street": "Cycle street"
+        }}/>
 
 
 ## Railways {#railways}
 <!--img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" /-->
 <LegendItemNew svgPathDay={'/img/map-legend/osmand-railways-day.svg'}
-        itemsName={[
-        "Rail",
-        "Bridge",
-        "Tunnel",
-        "Railway spur",
-        "Tram",
-        "Subway",
-        "Subway (underground)",
-        "Light rail",
-        "Abandoned",
-        "Disused",
-        "Preserved",
-        "Narrow gauge",
-        "Construction",
-        "Monorail",
-        "Funicular",
-        ]} />
+        itemsName={{
+        "rail": "Rail",
+        "bridge": "Bridge",
+        "tunnel": "Tunnel",
+        "railway_spur": "Railway spur",
+        "tram": "Tram",
+        "subway": "Subway",
+        "subway_underground": "Subway (underground)",
+        "light_rail": "Light rail",
+        "abandoned": "Abandoned",
+        "disused": "Disused",
+        "preserved": "Preserved",
+        "narrow_gauge": "Narrow gauge",
+        "construction": "Construction",
+        "monorail": "Monorail",
+        "funicular": "Funicular"
+        }}/>
 
 ## Aerialways {#aerialways}
 <img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" />
@@ -138,28 +138,28 @@ import TabItem from '@theme/TabItem';
 ## Waterways {#waterways}
 
 <LegendItemNew svgPathDay={'/img/map-legend/osmand-waterways-day.svg'}
-        itemsName={[
-          'River',
-          'Canal',
-          'Stream',
-          'Drain',
-          'Ditch',
-          'Intermittent stream',
-          'Dam',
-          'Weir',
-          'Groyne',
-          'Breakwater',
-          'Pier',
-          'Cliff',
-          'Slope',
-          'Earth bank',
-          'Ridge, arete',
-          'Valley',
-          'Waterfall',
-          'Tree row',
-          'Cutline',
-          'Water-slide'
-          ]} />
+        itemsName={{
+        "river": "River",
+        "canal": "Canal",
+        "stream": "Stream",
+        "drain": "Drain",
+        "ditch": "Ditch",
+        "intermittent_stream": "Intermittent stream",
+        "dam": "Dam",
+        "weir": "Weir",
+        "groyne": "Groyne",
+        "breakwater": "Breakwater",
+        "pier": "Pier",
+        "cliff": "Cliff",
+        "slope": "Slope",
+        "earth_bank": "Earth bank",
+        "ridge_arete": "Ridge, arete",
+        "valley": "Valley",
+        "waterfall": "Waterfall",
+        "tree_row": "Tree row",
+        "cutline": "Cutline",
+        "water_slide": "Water-slide"
+        }}/>
 
 ## Buildings, transportation {#buildings-transportation}
 
