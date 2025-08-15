@@ -600,6 +600,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             </Box>
             <Slider
                 sx={{
+                    width: Number(width.replace('px', '')) - 42,
                     '& .MuiSlider-thumb.first-thumb': {
                         backgroundImage: "url('/map/images/map_icons/map_track_point_start.svg')",
                         backgroundPosition: 'center',
