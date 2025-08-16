@@ -104,7 +104,24 @@ import TabItem from '@theme/TabItem';
         }}/>
 
 ## Aerialways {#aerialways}
-<img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" />
+<!--img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" /-->
+
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-aerialways-day.svg'}
+        itemsName={{
+        "cable_car": "Cable car",
+        "gondola": "Gondola",
+        "chair_lift": "Chair lift",
+        "t_bar": "T-bar",
+        "j_bar": "J-bar",
+        "platter": "Platter",
+        "mixed_lift": "Mixed-lift",
+        "drag_lift": "Drag lift",
+        "magic_carpet": "Magic carpet",
+        "rope_tow": "Rope tow",
+        "goods": "Goods",
+        "zip_line": "Zip-line"
+        }}/>
+
 
 ## Routes {#routes}
 <img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="OsmAnd Map style" />
