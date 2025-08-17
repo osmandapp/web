@@ -143,7 +143,21 @@ import TabItem from '@theme/TabItem';
 
 
 ## Path difficulty {#path-difficulty}
-<img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Map style" />
+<!--img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Map style" /-->
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-path-difficulty-day.svg'}
+        itemsName={{
+        "hiking": "Hiking",
+        "mountain_hiking": "Mountain hiking",
+        "demanding_mountain_hiking": "Demanding mountain hiking",
+        "alpine_hiking": "Alpine hiking",
+        "demanding_alpine_hiking": "Demanding alpine hiking",
+        "difficult_alpine_hiking": "Difficult alpine hiking",
+        "grade_1": "Grade 1",
+        "grade_2": "Grade 2",
+        "grade_3": "Grade 3",
+        "grade_4": "Grade 4",
+        "grade_5": "Grade 5"
+        }}/>
 
 ## Surface smoothness {#surface-smoothness}
 <img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" />
