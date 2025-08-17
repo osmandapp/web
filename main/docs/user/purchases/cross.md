@@ -102,7 +102,7 @@ Enjoy using Maps+/Pro across platforms!
 
 - [OsmAnd Cloud](../personal/osmand-cloud.md)  
 - [Troubleshooting purchases](../troubleshooting/purchases_payments.md)  
-- [Difference between purchases Android](./android.md#difference-between-purchases-android)
-- [Difference between purchases iOS](./ios.md#difference-between-purchases-ios)  
+- [Difference between purchases Android](./android.md#purchase-options)
+- [Difference between purchases iOS](./ios.md#purchase-options)  
 
 > *Last updated: May 2025*

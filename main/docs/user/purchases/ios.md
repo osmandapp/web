@@ -11,66 +11,51 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+## Introduction {#introduction}
 
-## Install OsmAnd (iOS) {#install-osmand-ios}
+OsmAnd is a feature-rich map and navigation application. While the free version offers extensive functionality, paid versions provide access to premium features, unlimited map downloads, and more frequent updates. This guide explains the different purchase options available for iOS users to help you choose the best plan for your needs.
 
-You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+## Install OsmAnd {#install-osmand}
 
+You can download the app from the Apple App Store:
 
-<!--
-### Types of subscriptions {#types-of-subscriptions}
+- [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
 
-#### OsmAnd Start {#osmand-start}
+## Purchase Options {#purchase-options}
 
-#### OsmAnd+ {#osmand}
+There are two main ways to get premium OsmAnd features on iOS:
 
-#### Maps+ {#maps}
+### Maps+ (In-App Purchase or Subscription) {#maps-in-app-purchase-or-subscription}
 
-#### OsmAnd Pro {#osmand-pro}
+This unlocks a powerful set of features **within the free OsmAnd app**.
 
--->
+-   **Advantages:**
+    -   Flexible options: choose between a lifetime purchase or a lower-cost annual subscription.
+    -   Can be shared with family members through [Apple Family Sharing](https://support.apple.com/en-us/HT201088).
+-   **Disadvantages:**
+    -   Not cross-platform; it is tied to your iOS device and Apple ID.
 
+### OsmAnd Pro (Subscription) {#osmand-pro-subscription}
 
-### Difference Between Purchases (iOS) {#difference-between-purchases-ios}
+This is the ultimate subscription plan that provides full, cross-platform access to all OsmAnd features.
 
-| Plan | Description | Availability | Notes |
-|------------|------------|------------|------------|
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to basic cloud features and **5MB** storage. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Can be added to the [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Supports **cross-platform** access (see note below). |
+-   **Advantages:**
+    -   **Cross-platform:** Use your subscription on iOS, Android, and the web.
+    -   Includes **OsmAnd Cloud** for syncing all your data (routes, tracks, favorites, etc.).
+    -   Unlocks exclusive Pro features like hourly map updates, 3D relief, and advanced weather forecasts.
+    -   Supports Apple CarPlay and Android Auto.
+    -   Can be used on up to 6 devices simultaneously.
 
-### Important Notes {#important-notes}
+### OsmAnd Start (Basic Free Plan) {#osmand-start-basic-free-plan}
 
-1. **Maps+** is an *upgrade* for the free version of OsmAnd, unlocking most features.
+All users of the free OsmAnd app automatically have the OsmAnd Start plan.
 
-2. **OsmAnd Pro is a *cross-platform* subscription**. This means you can purchase it in one store (e.g., *AppStore, Google Play, and osmand.net*) and restore it in another by [linking your purchase with OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
-
-3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
-
+-   **Functionality:** Provides basic access to **OsmAnd Cloud** to back up and sync Favorites, Settings, and OSM Notes.
+-   **Limitations:** Storage is limited to 5MB. It does not sync tracks or routes.
 
 ## Prices {#prices}
 
-In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
-
-
-<!--
-:::danger Summer Sale prices
-
-*Hurry up! This offer is only available until* **August 06 (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
--->
-
+Prices are for the US and Europe. For other regions, prices are equivalent in local currencies.
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -79,9 +64,9 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
+## Free and Paid Features {#free-and-paid-features}
 
-
-### Free and Paid Features {#free-and-paid-features}
+The table below details the features included in each plan.
 
 |  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
@@ -119,11 +104,11 @@ In the list, there is information about prices of OsmAnd product for the US and 
 
 [Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
 
-### Pro Features {#pro-features}
+## Pro Features {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *Pro Features* are available for [OsmAnd Pro subscription](#prices). It means you need to have [OsmAnd Pro subscription](#install-osmand-ios).
+OsmAnd Pro is the ultimate subscription for users who want access to every feature and the most up-to-date maps.
 
-At the moment, the Pro subscription has the following features:
+### What is included in the OsmAnd Pro subscription? {#what-is-included-in-the-osmand-pro-subscription}
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
@@ -136,14 +121,13 @@ At the moment, the Pro subscription has the following features:
 | [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 
+## How to Purchase {#how-to-purchase}
 
-### How to Buy {#how-to-buy}
-
-Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
+You can purchase any plan directly within the OsmAnd app.
 
 #### OsmAnd Pro Purchase {#osmand-pro-purchase}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose [monthly or annual subscription](#prices):
+![Pro](@site/static/img/svg/pro_icon.svg) To buy the *OsmAnd Pro* subscription:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continue with OsmAnd Pro*
 
@@ -155,52 +139,24 @@ or
 
 #### Maps+ Purchase {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) To buy the *Maps+* plan:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
+## Restoring Purchases {#restoring-purchases}
 
-## Legacy Subscriptions (prior 4.0) {#legacy-subscriptions-prior-40}
+You can restore your purchases at any time using your Apple ID.
 
-New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and technically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until you unsubscribes (the price for them might change in the future).
+1.  Make sure you are logged in to the **same Apple ID** you used to make the purchase.
+2.  Install OsmAnd from the App Store.
+3.  Open the app with an active internet connection.
+4.  Go to *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*. Your purchase should be activated automatically.
+5.  **For OsmAnd Pro:** If you linked your Pro subscription to your OsmAnd Cloud account, simply log in to your cloud account in the app to activate it.
 
-
-## Restore Purchases {#restore-purchases}
-
-User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).  
-
-Use the same Apple ID to restore your purchases.
-
-- Log in to the same Apple App Store account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
-- Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- Open OsmAnd Maps with an active Internet connection.
-- To restore purchases follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
-
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
-
-**If none of the methods worked:**
-
-1. Clear the cache for App Store.
-2. Clear the cache for OsmAnd.
-3. Restart the device and try to restore again.
-
-
-<!--
-## Action Guides {#action-guides}
-
-- Restore your data after purchases expire.
-- Transfer purchases from Android to iOS or vice versa 
-- One purchase (account) for Android and iOS
--->
-
+If you encounter issues, clearing the cache for both the App Store and OsmAnd, then restarting your device, can often resolve the problem.
 
 ## Giftcards {#giftcards}
 
-You can purchase OsmAnd using an App Store gift card. This method allows you to avoid sharing credit card information directly with the service. Simply buy a gift card from a retailer of your choice and redeem the code on the App Store.
-
-- [Detailed guide on purchasing App Store gift cards](https://www.apple.com/shop/gift-cards).
-- [Instructions for redeeming your App Store gift card](https://support.apple.com/en-gb/HT201209).
-
-> *Last updated: May 2025*
+You can use [App Store gift cards](https://www.apple.com/shop/gift-cards) to purchase any OsmAnd plan without a credit card.

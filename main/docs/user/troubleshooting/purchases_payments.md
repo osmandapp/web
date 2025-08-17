@@ -62,7 +62,7 @@ import Translate from '@site/src/components/Translate.js';
    - Check your transaction history in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/).
    - You may need to update *Huawei AppGallery* and clear the cache to avoid issues.
    - To restore your purchases, follow *Menu → Settings → Purchases → Restore Purchases* in OsmAnd.
-   - For more information, see the article [Android Purchases](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
+   - For more information, see the article [Android Purchases](../purchases/android.md#restoring-purchases).
 
 <!--
 - Instructions for setting up Huawei Mobile Services.

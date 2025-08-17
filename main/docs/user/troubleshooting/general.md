@@ -105,7 +105,7 @@ If you encounter an issue where the email associated with your OsmAnd Pro purcha
 
 2. **Verify OsmAnd app email**. Recheck the email address in your OsmAnd app to ensure it matches your current Google Play email. This can be done by opening the app and navigating to the account settings.
 
-3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./purchases_payments.md#how-to-restore-purchases).
+3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./purchases_payments.md#how-to-link-your-purchase-to-osmand-cloud-account).
 
 4. **Clear app cache and data**. Clear the cache and data of the OsmAnd app by going to your device's *Settings → Apps → OsmAnd → Storage → Clear Cache and Clear Data*. This will refresh the app and remove any residual issues from the old account.
 
