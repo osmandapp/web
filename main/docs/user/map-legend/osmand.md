@@ -160,7 +160,30 @@ import TabItem from '@theme/TabItem';
         }}/>
 
 ## Surface smoothness {#surface-smoothness}
-<img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" />
+<!--img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" /-->
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-surface-smoothness-day.svg'}
+        itemsName={{
+        "asphalt": "Asphalt",
+        "paved": "Paved (concrete,stone,wood etc)",
+        "loosely_paved": "Loosely paved (compacted, gravel)",
+        "ground_earth": "Ground,earth",
+        "sand": "Sand",
+        "grass": "Grass",
+        "grass_paver": "Grass paver",
+        "dirt": "Dirt",
+        "mud": "Mud",
+        "ice_snow": "Ice,snow",
+        "salt": "Salt",
+        "excellent": "Excellent (grade1)",
+        "good": "Good (grade2)",
+        "intermediate": "Intermediate (grade3)",
+        "bad": "Bad (grade3)",
+        "very_bad": "Very bad (grade4)",
+        "horrible": "Horrible (grade4)",
+        "very_horrible": "Very horrible (grade5)",
+        "impassable": "Impassable (grade5)",
+        "bad_trail_visibility": "Bad trail visibility"
+        }}/>
 
 ## Access {#access}
 
