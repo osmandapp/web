@@ -33,7 +33,7 @@ Como participante del **State of the Map Latam 2025**, eres elegible para una su
 
 2. Envíalo antes del **10 de septiembre de 2025** (la oferta expira).
 
-📖 **Manual completo** [AQUÍ](https://osmand.net/promo/manual#versión-en-español).
+**Manual completo** [AQUÍ](https://osmand.net/promo/manual#versión-en-español).
 
 <SotmScreenshots />
 
@@ -46,6 +46,7 @@ Consulta nuestra:
 - [Política de Privacidad](https://osmand.net/docs/legal/privacy-policy)
 - [Términos de Uso](https://osmand.net/docs/legal/terms-of-use)
 
+______________________________________________
 
 ## English version
 
