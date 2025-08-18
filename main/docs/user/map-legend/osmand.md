@@ -125,7 +125,20 @@ import TabItem from '@theme/TabItem';
 
 ## Routes {#routes}
 <img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="OsmAnd Map style" />
-<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="OsmAnd Map style" />
+
+## Dirtbike scale {#dirtbike-scale}
+<!--img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="OsmAnd Map style" /-->
+<LegendItemNew svgPathDay={'/img/map-legend/osmand-routes-dirtbike-day.svg'}
+        itemsName={{
+        "g0": "0",
+        "g1": "1",
+        "g2": "2",
+        "g3": "3",
+        "g4": "4",
+        "g5": "5",
+        "g6": "6",
+        "g7": "?"
+        }}/>
 
 ## Via ferrata {#via-ferrata}
 <!--img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Map style" /-->
