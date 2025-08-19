@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
 ## Highways {#highways}
 <!--img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" /-->
 
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-highways-day.svg'} 
+<LegendItemNew svgPath={'/img/map-legend/osmand-highways'} 
         itemsName={{
         "highways": "Highways",
         "motorway": "Motorway",
@@ -84,7 +84,7 @@ import TabItem from '@theme/TabItem';
 
 ## Railways {#railways}
 <!--img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-railways-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-railways'}
         itemsName={{
         "rail": "Rail",
         "bridge": "Bridge",
@@ -106,7 +106,7 @@ import TabItem from '@theme/TabItem';
 ## Aerialways {#aerialways}
 <!--img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="OsmAnd Map style" /-->
 
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-aerialways-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-aerialways'}
         itemsName={{
         "cable_car": "Cable car",
         "gondola": "Gondola",
@@ -125,7 +125,7 @@ import TabItem from '@theme/TabItem';
 
 ## Routes {#routes}
 <!--img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-routes-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-routes'}
         itemsName={{
         "transport_bus": "Bus",
         "transport_share_taxi": "Share taxi",
@@ -185,7 +185,7 @@ import TabItem from '@theme/TabItem';
 
 ## Dirtbike scale {#dirtbike-scale}
 <!--img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-routes-dirtbike-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-routes-dirtbike'}
         itemsName={{
         "g0": "0",
         "g1": "1",
@@ -199,7 +199,7 @@ import TabItem from '@theme/TabItem';
 
 ## Via ferrata {#via-ferrata}
 <!--img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-via-ferrata-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-via-ferrata'}
         itemsName={{
         "via_ferrata": "Via ferrata",
         "scale_0": "Scale 0",
@@ -214,7 +214,7 @@ import TabItem from '@theme/TabItem';
 
 ## Path difficulty {#path-difficulty}
 <!--img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-path-difficulty-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-path-difficulty'}
         itemsName={{
         "hiking": "Hiking",
         "mountain_hiking": "Mountain hiking",
@@ -231,7 +231,7 @@ import TabItem from '@theme/TabItem';
 
 ## Surface smoothness {#surface-smoothness}
 <!--img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" /-->
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-surface-smoothness-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-surface-smoothness'}
         itemsName={{
         "asphalt": "Asphalt",
         "paved": "Paved (concrete,stone,wood etc)",
@@ -273,7 +273,7 @@ import TabItem from '@theme/TabItem';
 
 ## Waterways {#waterways}
 
-<LegendItemNew svgPathDay={'/img/map-legend/osmand-waterways-day.svg'}
+<LegendItemNew svgPath={'/img/map-legend/osmand-waterways'}
         itemsName={{
         "river": "River",
         "canal": "Canal",
