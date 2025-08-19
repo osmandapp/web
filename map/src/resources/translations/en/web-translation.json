@@ -181,7 +181,6 @@
   "header_pricing": "Pricing",
   "header_map": "Map",
   "header_join_us": "Join us",
-  "header_test": "TEST",
   "track_analyzer_desc": "Select one or two points on the map to find tracks passing through them and view analytics.",
   "track_analyzer_tips_1": "Sort button allows to sort tracks by any data type",
   "track_analyzer_tips_2": "Click on <strong>Fields</strong> button to set visible data fields",

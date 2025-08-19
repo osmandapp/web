@@ -26,7 +26,6 @@ import {
     SHARE_MENU_URL,
     PURCHASES_URL,
     PRICING_URL,
-    TEST_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -47,7 +46,6 @@ import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
 import PricingPage from './shop/PricingPage';
-import LegendItemNewDisplay from './atest/LegendItemNewDisplay';
 
 export let globalNavigate = () => null;
 
@@ -97,7 +95,6 @@ const App = () => {
                             <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
                         </Route>
                         <Route path={PRICING_URL} element={<PricingPage />}></Route>
-                        <Route path={TEST_URL} element={<LegendItemNewDisplay />}></Route>
                     </Routes>
                 </BrowserRouter>
             </AppContextProvider>

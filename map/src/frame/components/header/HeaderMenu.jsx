@@ -45,10 +45,6 @@ const pages = ({ t }) => [
         name: `🚵‍ ${t('web:header_join_us')}`,
         url: '/docs/hiring',
     },
-    {
-        name: `🕵️ ${t('web:header_test')}`,
-        url: '/atest',
-    },
 ];
 
 export const DEFAULT_LANG = 'en';

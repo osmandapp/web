@@ -37,7 +37,6 @@ export const SHARE_FILE_MAIN_URL = 'share/join/';
 export const INFO_MENU_URL = 'info/';
 export const SHARE_MENU_URL = 'share/';
 export const PRICING_URL = 'pricing/';
-export const TEST_URL = 'atest/';
 
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;
