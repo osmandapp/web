@@ -1,0 +1,191 @@
+<svg width="700" height="1971" xmlns="http://www.w3.org/2000/svg" style="background-color:#F8F4F4;">
+  <!-- Column 1 -->
+  <g id="water">
+    <rect x="55" y="20" width="275" height="34" fill="#52BDE9"/>
+  </g>
+  <g id="swimming_pool">
+    <rect x="55" y="81" width="275" height="34" fill="#52BDE9" stroke="#6C59C3" stroke-width="2"/>
+  </g>
+  <g id="wood_unmaintained">
+    <rect x="55" y="142" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="broadleaved_wood">
+    <rect x="55" y="203" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="needleleaved_wood">
+    <rect x="55" y="264" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="mixed_wood">
+    <rect x="55" y="325" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="forest_maintained_by_human">
+    <rect x="55" y="386" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="broadleaved_forest">
+    <rect x="55" y="447" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="needleleaved_forest">
+    <rect x="55" y="508" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="mixed_forest">
+    <rect x="55" y="569" width="275" height="34" fill="#90C475"/>
+  </g>
+  <g id="scrub">
+    <rect x="55" y="630" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="orchard">
+    <rect x="55" y="691" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="plant_nursery">
+    <rect x="55" y="752" width="275" height="34" fill="#E6F2C2"/>
+  </g>
+  <g id="olive_orchard">
+    <rect x="55" y="813" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="apple_orchard">
+    <rect x="55" y="874" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="almond_orchard">
+    <rect x="55" y="935" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="oil_palms_orchard">
+    <rect x="55" y="996" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="orange_orchard">
+    <rect x="55" y="1057" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="banana_plants">
+    <rect x="55" y="1118" width="275" height="34" fill="#AED898"/>
+  </g>
+  <g id="vineyard">
+    <rect x="55" y="1179" width="275" height="34" fill="#C4E4B4"/>
+  </g>
+  <g id="heath">
+    <rect x="55" y="1240" width="275" height="34" fill="#D3EBC6"/>
+  </g>
+  <g id="grass">
+    <rect x="55" y="1301" width="275" height="34" fill="#D3EBC6"/>
+  </g>
+  <g id="grassland">
+    <rect x="55" y="1362" width="275" height="34" fill="#C4E4B4"/>
+  </g>
+  <g id="meadow">
+    <rect x="55" y="1423" width="275" height="34" fill="#E6F2C2"/>
+  </g>
+  <g id="farmland">
+    <rect x="55" y="1484" width="275" height="34" fill="#E6F2C2"/>
+  </g>
+  <g id="greenfield">
+    <rect x="55" y="1545" width="275" height="34" fill="#B2C999"/>
+  </g>
+  <g id="brownfield">
+    <rect x="55" y="1606" width="275" height="34" fill="#B2C999"/>
+  </g>
+  <g id="logging">
+    <rect x="55" y="1667" width="275" height="34" fill="#D3EBC6"/>
+  </g>
+  <g id="windfall">
+    <rect x="55" y="1728" width="275" height="34" fill="#D3EBC6"/>
+  </g>
+  <g id="dead_wood">
+    <rect x="55" y="1789" width="275" height="34" fill="#D3EBC6"/>
+  </g>
+  <g id="aquaculture">
+    <rect x="55" y="1850" width="275" height="34" fill="#F8F4F4" style="stroke-dasharray: 1 1; stroke: #D3EBC6; stroke-width: 1px;"/>
+  </g>
+  
+  <!-- Column 2 -->
+  <g id="greenhouse_horticulture">
+    <rect x="370" y="20" width="275" height="34" fill="#FBEBCE" style="stroke-dasharray: 1 1; stroke: #FBEBCE; stroke-width: 1px;"/>
+  </g>
+  <g id="conservation">
+    <rect x="370" y="81" width="275" height="34" fill="#C4E4B4"/>
+  </g>
+  <g id="glacier">
+    <rect x="370" y="142" width="275" height="34" fill="#D6F4F9" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="scree">
+    <rect x="370" y="203" width="275" height="34" fill="#E9EEE8"/>
+  </g>
+  <g id="fell">
+    <rect x="370" y="264" width="275" height="34" fill="#E9EEE8"/>
+  </g>
+  <g id="bare_rock">
+    <rect x="370" y="325" width="275" height="34" fill="#F8F4F4" stroke="#D3D3D3" stroke-width="1"/>
+  </g>
+  <g id="reef">
+    <rect x="370" y="386" width="275" height="34" fill="#71D1ED" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="coral_reef">
+    <rect x="370" y="447" width="275" height="34" fill="#71D1ED" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="rocky_reef">
+    <rect x="370" y="508" width="275" height="34" fill="#71D1ED" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="crater_sinkhole">
+    <rect x="370" y="569" width="275" height="34" fill="#DCCBCB" stroke="#9A7B7A" stroke-width="2"/>
+  </g>
+  <g id="sand">
+    <rect x="370" y="630" width="275" height="34" fill="#FBEBCE"/>
+  </g>
+  <g id="shoal">
+    <rect x="370" y="691" width="275" height="34" fill="#E9EEE8"/>
+  </g>
+  <g id="garden">
+    <rect x="370" y="752" width="275" height="34" fill="#C4E4B4"/>
+  </g>
+  <g id="nature_reserve">
+    <rect x="370" y="813" width="275" height="34" fill="#E6F2C2"/>
+  </g>
+  <g id="beach">
+    <rect x="370" y="874" width="275" height="34" fill="#FBEBCE"/>
+  </g>
+  <g id="wetland">
+    <rect x="370" y="935" width="275" height="34" fill="#D6F4F9" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="tidal_flat_mud_flat">
+    <rect x="370" y="996" width="275" height="34" fill="#E9EEE8" stroke-dasharray="4,2" stroke="#BDBDBD" stroke-width="1"/>
+  </g>
+  <g id="bog">
+    <rect x="370" y="1057" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="marsh">
+    <rect x="370" y="1118" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="swamp">
+    <rect x="370" y="1179" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="reedbed">
+    <rect x="370" y="1240" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="wet_meadow">
+    <rect x="370" y="1301" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="saltmarsh">
+    <rect x="370" y="1362" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="string_bog">
+    <rect x="370" y="1423" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="mangrove">
+    <rect x="370" y="1484" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="fen">
+    <rect x="370" y="1545" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="palsa_bog">
+    <rect x="370" y="1606" width="275" height="34" fill="#C6ECDA" stroke-dasharray="4,2" stroke="#007A89" stroke-width="1"/>
+  </g>
+  <g id="intermittent_wetland">
+    <rect x="370" y="1667" width="275" height="34" fill="#D6F4F9" stroke-dasharray="4,2" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="mud">
+    <rect x="370" y="1728" width="275" height="34" fill="#E9EEE8"/>
+  </g>
+  <g id="saltpond">
+    <rect x="370" y="1789" width="275" height="34" fill="#D6F4F9" stroke="#52BDE9" stroke-width="1"/>
+  </g>
+  <g id="protected_area">
+    <rect x="370" y="1850" width="275" height="34" fill="#D3EBC6" stroke-dasharray="4,2" stroke="#90C475" stroke-width="2"/>
+  </g>
+</svg>
