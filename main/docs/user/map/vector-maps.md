@@ -577,27 +577,40 @@ If the names on the map are not translated into the required language by the OSM
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
+- **Local names**  
+    ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
+
+- **Preferred language** (ukrainian)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
+
+- **Use latin name if missing**  
+    ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-</TabItem>
-
-</Tabs>  
-
 - **Local names**  
     ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
 
-- **Ukrainian names**  
-    ![Map language ukranian](@site/static/img/map/map-language-urkanian_2.png)
+- **Preferred language** (ukrainian)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Show local names**  
+- **Show local names**  (adds 2nd label if local name is different)
     ![Map language local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Transliterate names**  
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
+
+</TabItem>
+
+</Tabs>  
+
 
 
 ## Custom Map Style {#custom-map-style}
