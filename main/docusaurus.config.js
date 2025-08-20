@@ -6,9 +6,27 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const defaultLocale = 'en';
 
 async function createConfig(){
+  const useRspackBundler = process.env.USE_RSPACK_BUNDLER === 'true';
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
 
+  // webpack-threads = 5GB / 1x speed
+  // webpack+threads = 6GB / 1.25x speed (default)
+  // rspack-threads = 40GB / 1.5x speed
+  // rspack+threads = 44GB / 2x speed -- the best but RAM-demanding
+
+  const optimizations = {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true, // required for ssgWorkerThreads
+    },
+    experimental_faster: {
+      ssgWorkerThreads: true, // use Worker Thread Pool implementation
+      rspackBundler: useRspackBundler, // use rspack instead of webpack
+      rspackPersistentCache: useRspackBundler, // enable cache for rebuilds
+    }
+  };
+
   return {
+    future: optimizations,
     title: 'OsmAnd',
     tagline: 'Offline Maps and Navigation',
     url: 'https://osmand.net',
