@@ -1,5 +1,5 @@
 ---
-source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
+source-hash: d8ecad2b589fe6b03fafc80bbd07389dac12a24a068d3fdd0ed26cb3959de697
 sidebar_position: 10
 ---
 import Tabs from '@theme/Tabs';
@@ -15,38 +15,46 @@ import Translate from '@site/src/components/Translate.js';
 
 Rozwiązania i wskazówki dotyczące typowych problemów.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Konfiguracja](./setup.md) {#setup}
 
-Najczęstsze problemy związane z Android Auto.
-
-### [Dzienniki awarii](./crash-logs.md) {#crash-logs}
-
-Opis sposobu wysyłania dzienników awarii do zespołu OsmAnd.
+Typowe problemy napotykane podczas konfiguracji aplikacji.
 
 ### [Ogólne](./general.md) {#general}
 
 Ogólne problemy związane z różnymi funkcjami OsmAnd.
 
-### [Mapy i dane](./maps-data.md) {#maps--data}
+### [Zakupy i płatności](./purchases_payments.md) {#purchases-and-payments}
 
-Problemy związane z mapami, wyszukiwaniem i innymi danymi.
+Problemy związane z zakupami, subskrypcjami i płatnościami.
 
 ### [Nawigacja](./navigation.md) {#navigation}
 
-Najczęstsze problemy napotykane w trybie nawigacji.
+Typowe problemy napotykane w trybie nawigacji.
 
-### [Zasoby i dostosowania](./resources) {#resources-and-customizations}
+### [Mapy i dane](./maps-data.md) {#maps-and-data}
 
-Zasoby stworzone przez społeczność.
+Problemy związane z mapami, funkcją wyszukiwania i innymi danymi.
 
-### [Konfiguracja](./setup.md) {#setup}
+### [Dzienniki awarii](./crash-logs.md) {#crash-logs}
 
-Najczęstsze problemy napotykane podczas konfigurowania aplikacji.
+Jak zbierać i wysyłać dzienniki awarii do zespołu OsmAnd.
 
 ### [Nagrywanie śladu](./track-recording-issues.md) {#track-recording}
 
-Typowe problemy z nagrywaniem śladu, takie jak szumy, luki lub niedokładności.
+Problemy z nagrywaniem śladu, takie jak szumy, luki lub niedokładności.
+
+### [Android Auto](./android_auto.md) {#android-auto}
+
+Typowe problemy podczas korzystania z OsmAnd z Android Auto.
+
+### [Strona internetowa](./web.md) {#website}
+
+Typowe problemy z usługami i funkcjami OsmAnd Web.
+
+### [Zasoby i dostosowania](./resources.md) {#resources-and-customizations}
+
+Przewodniki i pomoc dotyczące zasobów i dostosowań stworzonych przez społeczność.
 
 ### [Samouczki wideo i przewodniki](./video-tutorials.md) {#video-tutorials-and-guides}
 
-Zbiór samouczków wideo i przewodników.
+Zbiór pomocnych samouczków wideo i przewodników krok po kroku.

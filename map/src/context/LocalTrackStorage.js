@@ -142,7 +142,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
 
 export function saveTrackToLocalStorage({ ctx, track }) {
     const localTracks = ctx.localTracks;
-    let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
+    let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
 
     if (currentTrackIndex === -1) {
         currentTrackIndex = localTracks.push(track) - 1;

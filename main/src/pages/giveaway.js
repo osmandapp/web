@@ -70,7 +70,9 @@ export default function Giveaway() {
         setTableData(tableData);
     }
     const participateWithEmail = async () => {
-        const res = await fetch(host + '/api/giveaway-subscribe?email=' + email +
+        // Encode the email to handle special characters like '+'
+        const encodedEmail = encodeURIComponent(email);
+        const res = await fetch(host + '/api/giveaway-subscribe?email=' + encodedEmail +
             '&os=' + (android ? 'android' : 'ios'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }

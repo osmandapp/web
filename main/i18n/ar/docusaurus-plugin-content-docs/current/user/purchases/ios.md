@@ -1,7 +1,7 @@
 ---
 source-hash: b11512f10d09281575deb764639d7daecade267fb0bd47de799032bed3e0046f
 sidebar_position: 2
-title:  iOS Purchases
+title:  مشتريات iOS
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,15 +11,12 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## تثبيت OsmAnd (iOS) {#install-osmand-ios}
 
 يمكنك تنزيل التطبيق عبر هذا الرابط - [خرائط OsmAnd على متجر تطبيقات Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-
 <!--
-### Types of subscriptions {#types-of-subscriptions}
+### أنواع الاشتراكات {#types-of-subscriptions}
 
 #### OsmAnd Start {#osmand-start}
 
@@ -31,33 +28,31 @@ import Translate from '@site/src/components/Translate.js';
 
 -->
 
-
 ### الفرق بين المشتريات (iOS) {#difference-between-purchases-ios}
 
 | الخطة | الوصف | التوفر | ملاحظات |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **خطة مجانية** توفر الوصول إلى [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) لـ *المفضلة* و *الإعدادات* و *تحرير/ملاحظات OSM*. | متاحة لجميع مستخدمي النسخة المجانية من OsmAnd. | تقتصر على ميزات السحابة الأساسية وتخزين **5 ميجابايت**. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **شراء داخل التطبيق** أو **اشتراك** يفتح ميزات متقدمة لتطبيق OsmAnd المجاني. | متاح على [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يمكن إضافته إلى [مشاركة العائلة من Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح ميزات متقدمة إضافية و [ميزات احترافية](#pro-features). | متاح على [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يدعم الوصول **عبر الأنظمة الأساسية** (انظر الملاحظة أدناه). |
+| **OsmAnd Start** | **خطة مجانية** توفر الوصول إلى [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) لـ *المفضلة*، *الإعدادات*، و *تحرير/ملاحظات OSM*. | متاحة لجميع مستخدمي الإصدار المجاني من OsmAnd. | تقتصر على ميزات السحابة الأساسية و **5 ميجابايت** من التخزين. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | متاح على [متجر التطبيقات](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يمكن إضافته إلى [مشاركة العائلة من Apple](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح ميزات متقدمة و [ميزات احترافية](#pro-features) إضافية. | متاح على [متجر التطبيقات](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يدعم الوصول **عبر الأنظمة الأساسية** (انظر الملاحظة أدناه). |
 
 ### ملاحظات هامة {#important-notes}
 
-1. **Maps+** هو *ترقية* للنسخة المجانية من OsmAnd، يفتح معظم الميزات.
+1. **Maps+** هو *ترقية* للإصدار المجاني من OsmAnd، يفتح معظم الميزات.
 
-2. **OsmAnd Pro هو اشتراك *عبر الأنظمة الأساسية***. هذا يعني أنه يمكنك شراؤه من متجر واحد (مثل *AppStore، Google Play، و osmand.net*) واستعادته في متجر آخر عن طريق [ربط مشترياتك بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro هو اشتراك *عبر الأنظمة الأساسية***. هذا يعني أنه يمكنك شراؤه من متجر واحد (على سبيل المثال، *AppStore، Google Play، و osmand.net*) واستعادته في متجر آخر عن طريق [ربط مشترياتك بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 3. يمكنك إضافة **Maps+** إلى [مشاركة العائلة من Apple](https://support.apple.com/en-us/HT201088) لمشاركة الشراء مع أفراد العائلة.
 
-
 ## الأسعار {#prices}
 
-في القائمة، توجد معلومات حول أسعار منتج OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، الأسعار متساوية بالعملات المحلية.
+في القائمة، توجد معلومات حول أسعار منتج OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، الأسعار مكافئة بالعملات المحلية.
 
 <!--
 
-:::danger June Sale prices
+:::danger أسعار تخفيضات يونيو
 
-*Hurry up! This offer is only available until* **May 15 (23:00 CET)**.
+*أسرع! هذا العرض متاح فقط حتى* **15 مايو (23:00 بتوقيت وسط أوروبا)**.
 
 :::
 
@@ -78,7 +73,6 @@ import Translate from '@site/src/components/Translate.js';
 | **السعر (يورو)** | 0 يورو | 39.99 يورو | 9.99 يورو | 2.99 يورو / 29.99 يورو |
 | **السعر (دولار أمريكي)** | 0 دولار | 39.99 دولار | 9.99 دولار | 2.99 دولار / 29.99 دولار |
 
-
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
 
 |  | OsmAnd مجاني | [OsmAnd Maps+](#install-osmand-ios)<br/>(داخل التطبيق والاشتراك) | [OsmAnd Pro](#install-osmand-ios) |
@@ -88,14 +82,14 @@ import Translate from '@site/src/components/Translate.js';
 | [الوصول بدون إعلانات](#free-and-paid-features) | بدون إعلانات | بدون إعلانات | بدون إعلانات |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [بدء](../personal/osmand-cloud.md#osmand-start) | [بدء](../personal/osmand-cloud.md#osmand-start) | [احترافي](../personal/osmand-cloud.md) |
 | [جميع الميزات الاحترافية](#pro-features) | **-** | **-** | ✔ |
-| [تنزيلات الخرائط](../start-with/download-maps.md) |  <details><summary>**5 تنزيلات للخرائط** <br /> (تحديث الخريطة يُحسب كتنزيل):</summary> <br /> - تنزيل أو تحديث الخريطة يعني فقط تنزيل-تحديث خريطة بلد (منطقة).<br /> - **خريطة نظرة عامة على العالم**، **تصحيح ارتفاع العالم**، **خطوط خرائط** و **توجيهات صوتية** لا تُحسب ضمن الـ 5 إمكانيات للتنزيل.</details> | ✔ | ✔ |
-| [تحديثات الخرائط الشهرية](../personal/maps-resources.md#update-maps) |  <details><summary>**مرة واحدة شهريًا** <br /> (مع تأخير يومين):</summary> * تقتصر على 5 تنزيلات (تحديث الخريطة يُحسب كتنزيل) </details> |  ✔ | ✔ |
+| [تنزيلات الخرائط](../start-with/download-maps.md) |  <details><summary>**5 تنزيلات للخرائط** <br /> (تحديث الخريطة يُحتسب كتنزيل):</summary> <br /> - تنزيل أو تحديث الخريطة يعني فقط تنزيل-تحديث خريطة بلد (منطقة).<br /> - **خريطة نظرة عامة على العالم**، **تصحيح ارتفاع العالم**، **خطوط الخرائط** و **مطالبات الصوت** لا تُحتسب ضمن 5 إمكانيات للتنزيل.</details> | ✔ | ✔ |
+| [تحديثات الخرائط الشهرية](../personal/maps-resources.md#update-maps) |  <details><summary>**مرة واحدة شهريًا** <br /> (مع تأخير يومين):</summary> * تقتصر على 5 تنزيلات (تحديث الخريطة يُحتسب كتنزيل) </details> |  ✔ | ✔ |
 | [تحديثات الخرائط كل ساعة](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (تأخير ساعة واحدة) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [إغاثة ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#setup)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تصور المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
-| [أعماق الملاحة البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [أعماق بحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [الملاحة دون اتصال بالإنترنت وعبر الإنترنت](../navigation/index.md)<br/>مع توجيهات خطوة بخطوة | ✔ | ✔ | ✔ |
@@ -109,7 +103,7 @@ import Translate from '@site/src/components/Translate.js';
 | [دعم خرائط SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
 | [نقاط المفضلة](../map/point-layers-on-map.md)<br/>الإشارات المرجعية ونقاط الطريق | ✔ | ✔ | ✔ |
 | [نقاط الصوت/الصور/الفيديو](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
-| [متتبع GPS عبر الإنترنت من OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [تصدير/استيراد ملف تعريف التطبيق](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 #### ** تحديثات الخرائط {#-map-updates}
@@ -129,13 +123,12 @@ import Translate from '@site/src/components/Translate.js';
 | [إغاثة ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يتيح لك الحصول على نموذج مصغر لحيّك أو قارة بأكملها ومراقبته. |
 | [أدوات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يتيح لك معرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر. |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | تحديث خرائط OsmAnd كل 15 دقيقة بعد تحسين [OpenStreetMap](https://www.openstreetmap.org/). |
-| [ملحق الطقس](../plugins/weather.md) | توقعات الطقس كل ساعة لمدة 24 ساعة و 7 أيام مقدمًا على الخريطة. |
-| [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء التنقل. |
-
+| [مكون الطقس الإضافي](../plugins/weather.md) | توقعات الطقس كل ساعة لمدة 24 ساعة و 7 أيام مقدمًا على الخريطة. |
+| [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
 
 ### كيفية الشراء {#how-to-buy}
 
-طريقة سهلة لاختيار وشراء الخطة المطلوبة من خلال قائمة **المشتريات**. بالطبع، سترى قائمة مقترحة للميزات المدفوعة.
+طريقة سهلة لاختيار وشراء الخطة المطلوبة من خلال قائمة **المشتريات**. بالطبع، سترى قائمة مقترحات للميزات المدفوعة.
 
 #### شراء OsmAnd Pro {#osmand-pro-purchase}
 
@@ -157,11 +150,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
-
 ## الاشتراكات القديمة (قبل 4.0) {#legacy-subscriptions-prior-40}
 
-أصبحت الاشتراكات الجديدة سارية المفعول اعتبارًا من OsmAnd 4.3 (ديسمبر 2022). جميع الاشتراكات السابقة هي اشتراكات قديمة وتساوي تقنيًا "اشتراك الخرائط"، على الرغم من أن الاشتراكات القديمة يحق لها تحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة ولكن يتم تجديد الاشتراكات القديمة تلقائيًا حتى تقوم بإلغاء الاشتراك (قد يتغير سعرها في المستقبل).
-
+أصبحت الاشتراكات الجديدة نشطة اعتبارًا من OsmAnd 4.3 (ديسمبر 2022). جميع الاشتراكات السابقة هي اشتراكات قديمة وتساوي تقنيًا "اشتراك الخرائط"، على الرغم من أن الاشتراكات القديمة يحق لها تحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة ولكن يتم تجديد الاشتراكات القديمة تلقائيًا حتى تقوم بإلغاء الاشتراك (قد يتغير سعرها في المستقبل).
 
 ## استعادة المشتريات {#restore-purchases}
 
@@ -169,32 +160,30 @@ import Translate from '@site/src/components/Translate.js';
 
 استخدم نفس معرف Apple لاستعادة مشترياتك.
 
-- قم بتسجيل الدخول إلى نفس حساب Apple App Store الذي استخدمته لشراء التطبيقات الداخلية (الاشتراكات) لخرائط OsmAnd.
-- قم بتثبيت [خرائط OsmAnd على متجر تطبيقات Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- افتح خرائط OsmAnd مع اتصال إنترنت نشط.
-- لاستعادة المشتريات اتبع هذه الخطوات: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* وفي الجزء العلوي من الشاشة يجب أن يظهر أن Maps+(Pro, Live) قد تم تفعيله.
+- قم بتسجيل الدخول إلى نفس حساب Apple App Store الذي استخدمته لشراء تطبيقات (اشتراكات) OsmAnd Maps.
+- قم بتثبيت [OsmAnd Maps على Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- افتح OsmAnd Maps مع اتصال إنترنت نشط.
+- لاستعادة المشتريات اتبع هذه الخطوات: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ويجب أن يظهر في الجزء العلوي من الشاشة أن Maps+(Pro, Live) قد تم تفعيله.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
 **إذا لم تنجح أي من الطرق:**
 
-1. مسح ذاكرة التخزين المؤقت لـ App Store.
-2. مسح ذاكرة التخزين المؤقت لـ OsmAnd.
+1. امسح ذاكرة التخزين المؤقت لمتجر التطبيقات.
+2. امسح ذاكرة التخزين المؤقت لـ OsmAnd.
 3. أعد تشغيل الجهاز وحاول الاستعادة مرة أخرى.
 
-
 <!--
-## Action Guides {#action-guides}
+## أدلة العمل {#action-guides}
 
-- Restore your data after purchases expire.
-- Transfer purchases from Android to iOS or vice versa 
-- One purchase (account) for Android and iOS
+- استعادة بياناتك بعد انتهاء صلاحية المشتريات.
+- نقل المشتريات من Android إلى iOS أو العكس
+- شراء واحد (حساب) لنظامي Android و iOS
 -->
-
 
 ## بطاقات الهدايا {#giftcards}
 
-يمكنك شراء OsmAnd باستخدام بطاقة هدايا App Store. تتيح لك هذه الطريقة تجنب مشاركة معلومات بطاقة الائتمان مباشرة مع الخدمة. ما عليك سوى شراء بطاقة هدايا من بائع تجزئة من اختيارك واسترداد الرمز في App Store.
+يمكنك شراء OsmAnd باستخدام بطاقة هدايا App Store. تتيح لك هذه الطريقة تجنب مشاركة معلومات بطاقة الائتمان مباشرة مع الخدمة. ما عليك سوى شراء بطاقة هدايا من بائع تجزئة من اختيارك واسترداد الرمز على App Store.
 
 - [دليل مفصل حول شراء بطاقات هدايا App Store](https://www.apple.com/shop/gift-cards).
 - [تعليمات استرداد بطاقة هدايا App Store الخاصة بك](https://support.apple.com/en-gb/HT201209).

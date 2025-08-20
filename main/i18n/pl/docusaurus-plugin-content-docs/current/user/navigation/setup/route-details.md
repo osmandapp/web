@@ -1,7 +1,7 @@
 ---
-source-hash: 4d94702418502470aad2ca1fbd09659956c170a23f9c5c7ba0cf595f9829be63
+source-hash: c79e974f36d7aa431b244d904400ae8e4b3fa0f00f5d843333d559e34b86a4b7
 sidebar_position: 4
-title: Szczegóły trasy
+title:  Szczegóły trasy
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-OsmAnd pozwala znaleźć najlepszą trasę i zbadać jej szczegóły. Aplikacja dostarcza szczegółowych informacji o trasie, takich jak odległość, [czas podróży](#distance--time--co2), [typ nawierzchni](#road-attributes), [różnice wysokości](#elevation-info), [dane dotyczące śladu CO2](#distance--time--co2) i [informacje o zakrętach](#turn-by-turn-information). Możesz także [analizować](#analyze-on-map) trasę na mapie, znajdować informacje o segmentach ścieżki, [drukować](#print) plan trasy, [zapisywać](#share--export-actions) trasę i udostępniać ją innym. Dzięki tej funkcjonalności zawsze będziesz znać szczegóły trasy i będziesz mógł efektywniej planować swoją podróż.
+OsmAnd pozwala znaleźć najlepszą trasę i zbadać jej szczegóły. Aplikacja dostarcza szczegółowych informacji o trasie, takich jak odległość, [czas podróży](#distance--time--co2), [typ nawierzchni](#road-attributes), [różnice wysokości](#elevation-info), [dane o śladzie węglowym CO2](#distance--time--co2) i [informacje o zakrętach](#turn-by-turn-information). Możesz również [analizować](#analyze-on-map) trasę na mapie, znajdować informacje o segmentach ścieżki, [drukować](#print) plan trasy, [zapisywać](#share--export-actions) trasę i udostępniać ją innym. Dzięki tej funkcjonalności zawsze będziesz znać szczegóły trasy i będziesz mógł efektywniej planować swoją podróż.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -40,14 +40,14 @@ OsmAnd pozwala znaleźć najlepszą trasę i zbadać jej szczegóły. Aplikacja 
 
 ### Jak uzyskać dostęp {#how-to-access}
 
-Po obliczeniu trasy w [menu Nawigacja](./route-navigation.md#start--stop-navigation) masz dostęp do „Szczegółów” tej trasy. Informacje te są przydatne przed rozpoczęciem podróży w celu poprawy planowania trasy lub sprawdzenia informacji o drodze przed sobą podczas jazdy.
+Po obliczeniu trasy w [menu Nawigacja](./route-navigation.md#start--stop-navigation), masz dostęp do „Szczegółów” dotyczących tej trasy. Informacje te są przydatne przed rozpoczęciem podróży w celu poprawy planowania trasy lub sprawdzenia informacji o drodze przed sobą podczas jazdy.
 Istnieją trzy sposoby dostępu do *menu Szczegóły trasy*.
 
-1. Przejdź do głównego *Menu → Nawigacja*, ustaw trasę i dotknij przycisku *Szczegóły*.
-2. Dotknij ikony *Nawigacja* na ekranie mapy, ustaw trasę i dotknij przycisku *Szczegóły*.
-3. Przejdź do menu *Moje miejsca*, dotknij dowolnej dostępnej ścieżki na liście *Menu → Moje miejsca → Ścieżki*, wybierz ikonę *Nawigacja* w menu kontekstowym ścieżki w *Przeglądzie* i dotknij *Szczegóły*.
+1. Przejdź do głównego *Menu → Nawigacja*, ustaw trasę i naciśnij przycisk *Szczegóły*.
+2. Naciśnij ikonę *Nawigacja* na ekranie mapy, ustaw trasę i naciśnij przycisk *Szczegóły*.
+3. Przejdź do menu *Moje miejsca*, naciśnij dowolną dostępną ścieżkę na liście *Menu → Moje miejsca → Ścieżki*, wybierz ikonę *Nawigacja* w menu kontekstowym ścieżki w *Przeglądzie* i naciśnij *Szczegóły*.
 
-W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wybranego [typu routingu](../../navigation/routing/osmand-routing.md#routing-types), niektóre szczegóły trasy mogą nie być wyświetlane. Ponadto szczegóły trasy są w dużym stopniu zależne od *pokrycia danymi OpenStreetMap*.
+W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wybranego [typu routingu](../../navigation/routing/osmand-routing.md#routing-types), niektóre szczegóły trasy mogą nie być wyświetlane. Ponadto, szczegóły trasy w dużym stopniu zależą od *pokrycia danych OpenStreetMap*.
 
 
 ## Odległość / Czas / CO2 {#distance--time--co2}
@@ -68,13 +68,13 @@ W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wy
 
 </Tabs>
 
-- ***Całkowita odległość*** jest obliczana między wszystkimi segmentami trasy, w tym punktami pośrednimi w wybranych [jednostkach](../../personal/profiles.md#units--formats).
+- ***Całkowita odległość*** jest obliczana między wszystkimi segmentami trasy, włączając punkty pośrednie w wybranych [jednostkach](../../personal/profiles.md#units--formats).
 
-- ***Szacowany czas podróży*** jest obliczany jako suma czasów na każdym segmencie i kar czasowych w określonych punktach. Każdy profil nawigacji ma różne zasady obliczania prędkości na segmencie i jakie kary powinny być uwzględnione (skonfigurowane w [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Na przykład, profile samochodowe i rowerowe pobierają średnią prędkość na segmencie z danych OpenStreetMap, ale profile piesze, łodzi i samolotów używają *domyślnej* prędkości z [Ustawień nawigacji](../guidance/navigation-settings.md#default-speed--road-speeds).
+- ***Szacowany czas podróży*** jest obliczany jako suma czasów na każdym segmencie i kar czasowych w określonych punktach. Każdy profil nawigacyjny ma różne zasady obliczania prędkości na segmencie i jakie kary powinny być uwzględnione (skonfigurowane w [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Na przykład, profile samochodowe i rowerowe przyjmują średnią prędkość na segment z danych OpenStreetMap, ale profile piesze, łodziowe i lotnicze używają *domyślnej* prędkości z [Ustawień nawigacji](../guidance/navigation-settings.md#default-speed--road-speeds).
 
 - ***Szacowany czas przybycia*** jest obliczany jako czas od teraz w czasie lokalnym miejsca pochodzenia, używając *Szacowanego czasu podróży*.
 
-- ***Dane dotyczące śladu CO2*** szacują w przybliżeniu, ile CO2 zostanie wyprodukowane podczas podążania trasą. Aby uzyskać dokładniejsze przybliżenie, należy skonfigurować [typ silnika paliwowego](../guidance/navigation-settings.md#fuel-used-by-motor) w parametrach pojazdu.
+- ***Dane o śladzie węglowym CO2*** szacują w przybliżeniu, ile CO2 zostanie wyprodukowane podczas podążania trasą. Aby uzyskać dokładniejsze przybliżenie, należy skonfigurować [Typ silnika paliwowego](../guidance/navigation-settings.md#fuel-used-by-motor) w parametrach pojazdu.
 
 
 ## Informacje o wysokości {#elevation-info}
@@ -95,15 +95,15 @@ W zależności od wybranych [ustawień profilu](../../personal/profiles.md) i wy
 
 </Tabs>
 
-**Informacje o wysokości** są dostępne we wszystkich profilach tras offline OsmAnd, z wyjątkiem profili, które używają [nawigacji po linii prostej](../routing/straight-line-routing.md). Dane wysokościowe są częścią map offline OsmAnd i są obliczane na podstawie [publicznych źródeł SRTM](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
+**Informacje o wysokości** są dostępne we wszystkich profilach tras offline OsmAnd, z wyjątkiem profili, które używają [nawigacji w linii prostej](../routing/straight-line-routing.md). Dane wysokościowe są częścią map offline OsmAnd i są obliczane na podstawie [publicznych źródeł SRTM](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
 
 - *Zakres wysokości*. Wyświetla minimalną / maksymalną wysokość na trasie.
 - *Średnia wysokość*. Wyświetla ważoną średnią wysokość na trasie.
-- *Pod górę / z górki*. Wyświetla stosunek ścieżki do poziomu, gdzie zero oznacza poziom, a liczba stopni wskazuje na większy lub bardziej stromy stopień nachylenia. Nachylenie pokazuje maksymalne nachylenie drogi w procentach od Twojej lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez widocznego punktu lokalizacji na ekranie.
+- *Pod górę / z górki*. Wyświetla stosunek ścieżki do poziomu, gdzie zero oznacza poziom, a liczba stopni wskazuje wyższy lub bardziej stromy stopień nachylenia. Nachylenie pokazuje maksymalne nachylenie drogi w procentach od punktu Twojej lokalizacji do końca widocznego wykresu lub dla wybranego odcinka trasy bez widocznego punktu lokalizacji na ekranie.
 
 
 ***Licencja na dane DEM używane przez OsmAnd do wykrywania terenu***
-Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej) zostały uzyskane z pomiarów wykonanych w ramach *Shuttle Radar Topography Mission (SRTM)*. Wykorzystano w niej *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, główne narzędzie obrazowania w *NASA's Earth Observation System*. Pełne informacje można znaleźć w [Licencji](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej) zostały uzyskane z pomiarów wykonanych w ramach *Shuttle Radar Topography Mission (SRTM)*. Wykorzystano w niej *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, główne narzędzie obrazowania w *NASA's Earth Observation System*. Pełne informacje znajdują się w [Licencji](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
 <details>
@@ -134,14 +134,14 @@ Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej pół
 
 </Tabs>
 
-[Wykresy](../../map/tracks/track-context-menu.md#altitude--speed-graphs) wizualnie wyświetlają informacje o wysokości i nachyleniu trasy nawigacyjnej oraz Twojej aktualnej pozycji na tym wykresie z aktualną wysokością i nachyleniem. Wykres jest wykreślony na dwóch osiach. Oś X to odległość na Twojej trasie. Pierwsza oś Y to wysokość nad poziomem morza, której wartość zależy od terenu, a druga oś Y to przybliżone [nachylenie](https://en.wikipedia.org/wiki/Grade_(slope)). Możesz wyświetlić wykres wysokości dla całej trasy lub tylko dla wybranego interwału, skalując wykres.
+[Wykresy](../../map/tracks/track-context-menu.md#altitude--speed-graphs) wizualnie wyświetlają informacje o wysokości i nachyleniu Twojej trasy nawigacyjnej oraz Twojej aktualnej pozycji na tym wykresie z aktualną wysokością i nachyleniem. Wykres jest wykreślany na dwóch osiach. Oś X to odległość na Twojej trasie. Pierwsza oś Y to wysokość nad poziomem morza, której wartość zależy od terenu, a druga oś Y to przybliżone [nachylenie](https://en.wikipedia.org/wiki/Grade_(slope)). Możesz wyświetlić wykres wysokości dla całej trasy lub tylko dla wybranego interwału, skalując wykres.
 
-- ***Powiększ/pomniejsz***. Domyślnie wykres pokazuje trasę od bieżącej lokalizacji do punktu docelowego. Możesz użyć [ruchów dwoma palcami](../../map/interact-with-map.md#gestures), aby powiększyć i pomniejszyć w celu uzyskania bardziej szczegółowego widoku. Możesz także przesunąć wykres w prawo, do przodu na trasie i do tyłu do bieżącej lokalizacji. *Takie manipulacje odnoszą się również do wizualnego bloku informacji w bloku [Atrybuty drogi](#road-attributes).*
+- ***Powiększ/pomniejsz***. Domyślnie wykres pokazuje trasę od bieżącej lokalizacji do punktu docelowego. Możesz użyć [ruchów dwoma palcami](../../map/interact-with-map.md#gestures), aby powiększyć i pomniejszyć dla bardziej szczegółowego widoku. Możesz również przesunąć wykres w prawo, do przodu na trasie i do tyłu do bieżącej lokalizacji. *Takie manipulacje odnoszą się również do wizualnego bloku informacji w bloku [Atrybuty drogi](#road-attributes).*
 
-- ***Wskaźnik lokalizacji***. Jeśli chcesz zobaczyć informacje w określonym punkcie na Twojej trasie, możesz dotknąć dowolnego miejsca na wykresie, a pojawi się wskaźnik z wysokością i procentem nachylenia.
+- ***Pin lokalizacji***. Jeśli chcesz zobaczyć informacje w konkretnym punkcie na trasie, możesz dotknąć dowolnego miejsca na wykresie, a pojawi się wskaźnik z wysokością i procentem nachylenia.
 
 
-## Analiza na mapie {#analyze-on-map}
+## Analizuj na mapie {#analyze-on-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -159,26 +159,26 @@ Dane wysokościowe na mapie (między 70 stopniem szerokości geograficznej pół
 
 </Tabs>
 
-Narzędzie **Analiza na mapie** jest podobne do narzędzia do przeglądania [szczegółów ścieżki](../../map/tracks/index.md#analyze-track-on-map) na mapie. Pozwala ono przeglądać i wizualnie wchodzić w interakcje z różnymi wykresami oraz widzieć wybrany punkt na mapie.
+Narzędzie **Analizuj na mapie** jest podobne do narzędzia do przeglądania [szczegółów ścieżki](../../map/tracks/index.md#analyze-track-on-map) na mapie. Pozwala ono przeglądać i wizualnie wchodzić w interakcje z różnymi wykresami oraz widzieć wybrany punkt na mapie.
 
-Jeśli dane są dostępne, możesz wybrać jeden z następujących typów:
+Jeśli dane są obecne, możesz wybrać jeden z następujących typów:
 
 - *Oś Y*:
    - [*Wysokość*](../../map/tracks/track-context-menu.md#altitude). Jest to [proces](https://wiki.openstreetmap.org/wiki/Altitude) uzyskiwania wysokości nad ustalonym poziomem.
-   - [*Nachylenie*](https://wiki.openstreetmap.org/wiki/Key:incline). [Nachylenie ukształtowania terenu](https://en.wikipedia.org/wiki/Grade_(slope)) oznacza tangens kąta nachylenia powierzchni do poziomu.
-   - [*Prędkość*](../../map/tracks/track-context-menu.md#speed). Wartości prędkości podczas jazdy po torze.
+   - [*Nachylenie*](https://wiki.openstreetmap.org/wiki/Key:incline). [Nachylenie formy terenu](https://en.wikipedia.org/wiki/Grade_(slope)) oznacza tangens kąta nachylenia powierzchni do poziomu.
+   - [*Prędkość*](../../map/tracks/track-context-menu.md#speed). Wartości prędkości podczas jazdy po ścieżce.
    - Wykresy z dwoma typami danych: &nbsp;*Wysokość/Nachylenie*, &nbsp;*Wysokość/Prędkość*, &nbsp;*Nachylenie/Prędkość*, &nbsp;*Animowane powiększenie/Prędkość*.
 - *Oś X*:
    - *Odległość*. Możesz przeglądać dane trasy, które odnoszą się do długości trasy.
-   - *Czas*. Możesz przeglądać dane trasy, które odnoszą się do czasu obliczonego dla tej trasy
-   - *Pora dnia*. Możesz przeglądać dane trasy w określonych porach dnia.
+   - *Czas*. Możesz przeglądać dane trasy, które odnoszą się do czasu obliczonego dla tej trasy.
+   - *Pora dnia*. Możesz przeglądać dane trasy o określonych porach dnia.
 
 
-### Typ interakcji {#type-of-interactions}
+### Rodzaje interakcji {#type-of-interactions}
 
-- *Dotknij i przesuń*. Dotknij wykresu, aby wyświetlić informacje o punkcie ścieżki i ruchu wzdłuż niej. Wykres podświetla położenie punktu na mapie i wyświetla informacje o nim na linijce.
+- *Dotknij i przesuń*. Dotknij wykresu, aby wyświetlić informacje o punkcie ścieżki i ruchu wzdłuż niej. Wykres podświetla lokalizację punktu na mapie i wyświetla informacje o nim na linijce.
 - *Skala*. Skaluj wykres za pomocą [gestu dwoma palcami](../../map/interact-with-map.md#gestures).
-- *Śledź moją lokalizację* (*tylko Android*). Możesz dotknąć [Moja lokalizacja](../../map/interact-with-map.md#my-location-and-zoom), aby zsynchronizować widok mapy i wykresu z Twoją lokalizacją. Podczas ruchu wykres będzie przesuwał się od lewej do prawej, wyświetlając informacje przed Twoją ścieżką.
+- *Śledź moją lokalizację* (*tylko Android*). Możesz dotknąć [Moja lokalizacja](../../map/interact-with-map.md#my-location-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją. Podczas ruchu wykres będzie przesuwał się od lewej do prawej, wyświetlając informacje przed Twoją ścieżką.
 
 
 ## Atrybuty drogi {#road-attributes}
@@ -205,19 +205,19 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_naviga
 
 Atrybuty drogi są dostępne w [Szczegółach trasy](#how-to-access) i wyświetlają informacje dotyczące segmentów z OpenStreetMap oraz dane wysokościowe. Wskazanie koloru odnosi się do sposobu renderowania poszczególnych atrybutów na mapie (patrz [Legenda mapy](../../map-legend/osmand.md#surface-smoothness)). Wykresy słupkowe są również interaktywne i możliwe jest wyświetlenie informacji w określonym miejscu poprzez dotknięcie wykresu.
 
-- [**Typ drogi**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Typ drogi jest określany na podstawie jej przeznaczenia funkcjonalnego i charakterystyki, takiej jak liczba pasów, ograniczenia prędkości, nośność, obecność ścieżek dla pieszych i rowerzystów, poboczy i innych parametrów. Różne typy dróg mogą mieć różne ograniczenia i zasady ruchu.
+- [**Typ drogi**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Typ drogi jest określany na podstawie jej przeznaczenia funkcjonalnego i cech, takich jak liczba pasów, ograniczenia prędkości, nośność, obecność ścieżek dla pieszych i rowerzystów, poboczy i innych parametrów. Różne typy dróg mogą mieć różne ograniczenia i zasady ruchu.
 
-   Na przykład, główne [autostrady](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) zazwyczaj mają wysokie ograniczenie prędkości i mogą być podzielone na pasy, a [drogi lokalne](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) mogą mieć niskie ograniczenie prędkości i jeden pas w każdym kierunku.
+   Na przykład, główne [autostrady](https://wiki.org/wiki/Tag:highway%3Dmotorway) zazwyczaj mają wysokie ograniczenia prędkości i mogą być podzielone na pasy, a [drogi lokalne](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) mogą mieć niskie ograniczenia prędkości i jeden pas w każdym kierunku.
 
-- [**Nawierzchnia**](https://wiki.openstreetmap.org/wiki/Key:surface). Nawierzchnie drogowe to wierzchnia warstwa nawierzchni, która styka się z kołami pojazdów. Mogą być różnego typu w zależności od ich właściwości i przeznaczenia funkcjonalnego.
+- [**Nawierzchnia**](https://wiki.openstreetmap.org/wiki/Key:surface). Nawierzchnie drogowe to górna warstwa nawierzchni, która styka się z kołami pojazdów. Mogą być różnego typu w zależności od ich właściwości i przeznaczenia funkcjonalnego.
 
-   Na przykład, nawierzchnia [asfaltowa](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) zapewnia dobrą przyczepność i izolację akustyczną, a nawierzchnia [betonowa](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) jest bardziej trwała i ma większą nośność. Inne materiały, takie jak żwir, tłuczeń, deski drewniane i inne, mogą być również wykorzystywane do tworzenia nawierzchni drogowej.
+   Na przykład, nawierzchnia [asfaltowa](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) zapewnia dobrą przyczepność i izolację akustyczną, a nawierzchnia [betonowa](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) jest trwalsza i ma większą nośność. Inne materiały, takie jak żwir, tłuczeń, deski drewniane i inne, mogą być również wykorzystywane do tworzenia nawierzchni drogowej.
 
-- [**Stromość**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Jest to pomiar kąta nachylenia drogi, wyrażony w procentach. Wskazuje, jak stromo droga jest nachylona w górę lub w dół względem horyzontu, i jest obliczana poprzez pomiar pionowej zmiany wysokości drogi przez odległość poziomą i pomnożenie wynikowej wartości przez 100%.
+- [**Stromość**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Jest to pomiar kąta nachylenia drogi, wyrażony w procentach. Wskazuje, jak stromo droga jest nachylona w górę lub w dół względem horyzontu, i jest obliczany poprzez pomiar pionowej zmiany wysokości drogi przez odległość poziomą i pomnożenie wynikowej wartości przez 100%.
 
    Na przykład, jeśli stromość drogi wynosi 10%, oznacza to, że na każde 100 metrów odległości poziomej wzdłuż drogi, poruszasz się w górę lub w dół o 10 metrów. Stromość drogi może wpływać na prędkość pojazdu, hamowanie, zużycie paliwa i bezpieczeństwo jazdy, zwłaszcza na śliskich drogach zimą.
 
-- [**Twardość nawierzchni**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Nawierzchnia drogi może odzyskać kształt po deformacji lub obciążeniu. Im większa twardość nawierzchni, tym mniejsze ryzyko uszkodzenia pojazdu i tym bardziej komfortowa będzie droga. Twardość nawierzchni może również wpływać na prędkość pojazdu i zużycie paliwa.
+- [**Twardość nawierzchni**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Nawierzchnia drogi może odzyskać kształt po odkształceniu lub obciążeniu. Im większa twardość nawierzchni, tym mniejsze ryzyko uszkodzenia pojazdu i tym bardziej komfortowa będzie droga. Twardość nawierzchni może również wpływać na prędkość pojazdu i zużycie paliwa.
 
 - [**Nachylenie**](https://wiki.openstreetmap.org/wiki/Key:incline). Wskazuje, jaki procent nachyleń występuje na Twojej trasie.
 
@@ -248,7 +248,7 @@ Atrybuty drogi są dostępne w [Szczegółach trasy](#how-to-access) i wyświetl
 
 Informacje o zakrętach dostarczają szczegółowych [instrukcji](#instructions) dotyczących nawigacji po trasie. Oprócz menu *Szczegóły*, są one również wyświetlane w widżetach [*Manewry trasy*](../../widgets/nav-widgets.md#route-maneuvers) i [*Pasy*](../../widgets/nav-widgets.md#lanes). Te informacje pomagają lepiej nawigować po trasie i pozwalają planować z wyprzedzeniem.
 
-Dotknij określonego odcinka trasy na liście, aby wyświetlić szczegółowe informacje lub wprowadzić wymagane zmiany. Mapa powiększa się i otwiera się [menu kontekstowe](../../map/map-context-menu.md).
+Dotknij konkretnego odcinka trasy na liście, aby wyświetlić szczegółowe informacje lub dokonać niezbędnych zmian. Mapa powiększy się i otworzy się [menu kontekstowe](../../map/map-context-menu.md).
 
 
 ### Instrukcje {#instructions}
@@ -273,13 +273,13 @@ Instrukcje zawierają informacje o poruszaniu się po trasie, takie jak:
 
 - [*Strzałka następnego zakrętu*](../../widgets/nav-widgets.md#next-turn) i *jej kierunek*.
 - *Odległość do manewru*.
-- Opis *co robić*, który zawiera *nazwę ulicy lub szlaku*.
+- Opis *co należy zrobić*, który zawiera *nazwę ulicy lub szlaku*.
 - *Całkowita odległość* i *czas trasy*.
-- [*Układ pasów*](../../widgets/nav-widgets.md#lanes) dla bieżącej drogi.
-- [*Wskaźnik pobocza*](#roadside-indicator) (*tylko iOS*).
+- *Układ [pasów](../../widgets/nav-widgets.md#lanes)* dla bieżącej drogi.
+- [*Wskaźnik strony drogi*](#roadside-indicator) (*tylko iOS*).
 
 
-### Wskaźnik pobocza {#roadside-indicator}
+### Wskaźnik strony drogi {#roadside-indicator}
 
 :::caution Tylko iOS
 Ten typ instrukcji jest obecnie *niedostępny dla wersji Android* aplikacji OsmAnd.
@@ -287,13 +287,13 @@ Ten typ instrukcji jest obecnie *niedostępny dla wersji Android* aplikacji OsmA
 
 ![Wskazanie strony](@site/static/img/navigation/route/side_indication.png)
 
-Na liście instrukcji **wskaźnik pobocza** pokazuje, w którym kierunku od Twojej aktualnej lokalizacji i kierunku ruchu do punktu docelowego znajduje się Twój cel, może to być lewo, prawo i prosto.
+Na liście instrukcji **wskaźnik strony drogi** pokazuje, w którym kierunku od Twojej aktualnej lokalizacji i kierunku ruchu do punktu końcowego znajduje się Twój cel, może to być lewo, prawo i prosto.
 
-Mierzony jest kąt między Twoim celem (*[Kierunek](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) od ostatniego punktu*) a ostatnim segmentem (*Kierunek do ostatnich 2 punktów trasy*), podzielony na 3 sektory po 120 stopni, a wynikiem jest to, że możesz zobaczyć, w którym kierunku znajduje się Twój cel.
+Mierzy się kąt między Twoim celem (*[Kierunek](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) od ostatniego punktu*) a ostatnim segmentem (*Kierunek do ostatnich 2 punktów trasy*), dzieli się go na 3 sektory po 120 stopni, a wynik jest taki, że możesz zobaczyć, w którym kierunku znajduje się Twój cel.
 
-- `-60 °`&nbsp; &nbsp; &nbsp; do &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - oznaczone jako **prosto**.
-- `-180 °`&nbsp; &nbsp; do &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - oznaczone jako **lewa** strona.
-- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; do &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - oznaczone jako **prawa** strona.
+- `-60 °`&nbsp; &nbsp; &nbsp; do &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - oznaczony jako **prosto**.
+- `-180 °`&nbsp; &nbsp; do &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - oznaczony jako **lewa** strona.
+- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; do &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - oznaczony jako **prawa** strona.
 
 
 ### Drukuj {#print}
@@ -302,13 +302,13 @@ Mierzony jest kąt między Twoim celem (*[Kierunek](https://en.wikipedia.org/w/i
 
 ![szczegóły trasy](@site/static/img/navigation/route/route_details_print-2.png)
 
-Funkcja **Drukuj** opisu trasy krok po kroku może być przydatna, jeśli wolisz mieć fizyczną kopię opisu trasy zamiast korzystania z urządzeń elektronicznych, lub jeśli nie masz dostępu do aplikacji nawigacyjnych lub nawigacji GPS, nie masz dostępu do Internetu, lub jeśli potrzebujesz informacji dla innych osób podróżujących z Tobą.
+Funkcja **Drukuj** opisu trasy krok po kroku może być przydatna, jeśli wolisz mieć fizyczną kopię opisu trasy zamiast korzystania z urządzeń elektronicznych, lub jeśli nie masz dostępu do aplikacji nawigacyjnych lub nawigatorów GPS, brak dostępu do Internetu, lub jeśli potrzebujesz informacji dla innych osób podróżujących z Tobą.
 
-Wydrukowany opis trasy zawiera szczegółowe instrukcje krok po kroku, jak nawigować po trasie, w tym odległość do następnego zakrętu, kierunek jazdy oraz nazwy ulic lub szlaków, a także informacje o odległości i czasie podróży.
+Wydrukowany opis trasy zawiera szczegółowe *instrukcje krok po kroku*, jak nawigować po trasie, w tym odległość do następnego zakrętu, kierunek jazdy oraz nazwy ulic lub szlaków, a także informacje o odległości i czasie podróży.
 
 Informacje te mogą być przydatne podczas planowania podróży, gdy chcesz oszacować czas i odległość między różnymi punktami na trasie oraz określić przewidywany czas przybycia.
 
-Możliwość **drukowania** lub **zapisywania** informacji o trasie krok po kroku **w formacie PDF** jest szczególnie przydatna podczas podróży na długie dystanse lub w nieznane miejsca, gdy potrzebujesz bardziej szczegółowego wyobrażenia o trasie i czasie potrzebnym na jej pokonanie.
+Możliwość **drukowania** lub **zapisywania** informacji krok po kroku **w formacie PDF** jest szczególnie przydatna podczas podróży na długie dystanse lub w nieznane miejsca, gdy potrzebujesz bardziej szczegółowego wyobrażenia o trasie i czasie potrzebnym na jej pokonanie.
 
 
 ## Udostępnij / Eksportuj (Akcje) {#share--export-actions}
@@ -331,8 +331,8 @@ Możliwość **drukowania** lub **zapisywania** informacji o trasie krok po krok
 
 Sekcja nawigacji Szczegóły trasy zawiera opcje, które pozwalają wykonywać określone działania z informacjami o trasie.
 
-- [**Drukuj**](#print). Umożliwia drukowanie lub zapisywanie informacji o trasie krok po kroku.
-- **Eksportuj/Zapisz**. Umożliwia zapisanie informacji o trasie **jako nowej ścieżki** do późniejszego użytku offline. Wyeksportowana ścieżka zawiera wszystkie informacje o atrybutach drogi i instrukcjach skrętu. Tak więc, [nawigacja po tej ścieżce](./gpx-navigation.md) powinna zapewniać wszystkie funkcje, jak nawigacja po trasie.
+- [**Drukuj**](#print). Pozwala drukować lub zapisywać informacje o trasie krok po kroku.
+- **Eksportuj/Zapisz**. Pozwala zapisać informacje o trasie **jako nową ścieżkę** do późniejszego użytku offline. Wyeksportowana ścieżka zawiera wszystkie informacje o atrybutach drogi i instrukcjach skrętu. Tak więc, [nawigacja po tej ścieżce](./gpx-navigation.md) powinna zapewniać wszystkie funkcje, jak nawigacja po trasie.
 - **Udostępnij**. Udostępnia wyeksportowaną ścieżkę lub link do trasy, który można otworzyć na innym urządzeniu z OsmAnd.
 
 

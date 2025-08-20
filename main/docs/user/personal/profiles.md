@@ -569,7 +569,12 @@ Plugins unlock additional features of the application and can be either [paid or
 
   > ***Changing the settings of the OsmAnd development plugin affects all profiles.***
 
-- **Wikipedia**. This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
+- **Wikipedia** (iOS only). This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
+
+- **Vehicle Metrics**. This menu opens *[Vehicle metrics plugin settings](../plugins/vehicle-metrics.md#scanner-settings)*. It allows you to connect OBD-II scanner to OsmAnd.
+
+- **AIS vessel tracker** (Android only). This menu opens *[AIS vessel tracker plugin settings](../plugins/ais-tracker.md#plugin-settings)*. This plugin allows you to connect AIS tracker to OsmAnd.
+
 
 
 ## Actions {#actions}

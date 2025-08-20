@@ -1,5 +1,5 @@
 ---
-source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
+source-hash: d8ecad2b589fe6b03fafc80bbd07389dac12a24a068d3fdd0ed26cb3959de697
 sidebar_position: 10
 ---
 import Tabs from '@theme/Tabs';
@@ -15,38 +15,46 @@ import Translate from '@site/src/components/Translate.js';
 
 Solutions et astuces pour les problèmes courants.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Configuration](./setup.md) {#setup}
 
-Les problèmes les plus typiques liés à Android Auto.
-
-### [Journaux de plantage](./crash-logs.md) {#crash-logs}
-
-Description de la manière d'envoyer les journaux de plantage à l'équipe OsmAnd.
+Problèmes typiques rencontrés lors de la configuration de l'application.
 
 ### [Général](./general.md) {#general}
 
-Problèmes généraux liés à diverses fonctionnalités d'OsmAnd.
+Problèmes généraux liés aux diverses fonctionnalités d'OsmAnd.
 
-### [Cartes et données](./maps-data.md) {#maps--data}
+### [Achats et paiements](./purchases_payments.md) {#purchases-and-payments}
 
-Problèmes liés aux cartes, à la recherche et à d'autres données.
+Problèmes liés aux achats, abonnements et paiements.
 
 ### [Navigation](./navigation.md) {#navigation}
 
-Les problèmes les plus courants rencontrés en mode navigation.
+Problèmes courants rencontrés en mode navigation.
 
-### [Ressources et personnalisations](./resources) {#resources-and-customizations}
+### [Cartes et données](./maps-data.md) {#maps-and-data}
 
-Ressources créées par la communauté.
+Problèmes liés aux cartes, à la fonctionnalité de recherche et à d'autres données.
 
-### [Configuration](./setup.md) {#setup}
+### [Journaux de plantage](./crash-logs.md) {#crash-logs}
 
-Les problèmes les plus typiques rencontrés lors de la configuration de l'application.
+Comment collecter et envoyer les journaux de plantage à l'équipe OsmAnd.
 
-### [Enregistrement de traces](./track-recording-issues.md) {#track-recording}
+### [Enregistrement de trace](./track-recording-issues.md) {#track-recording}
 
-Problèmes courants liés à l'enregistrement de traces, tels que le bruit, les lacunes ou les inexactitudes.
+Problèmes liés à l'enregistrement de trace tels que le bruit, les lacunes ou les imprécisions.
+
+### [Android Auto](./android_auto.md) {#android-auto}
+
+Problèmes typiques lors de l'utilisation d'OsmAnd avec Android Auto.
+
+### [Site Web](./web.md) {#website}
+
+Problèmes courants avec les services et fonctionnalités Web d'OsmAnd.
+
+### [Ressources et personnalisations](./resources.md) {#resources-and-customizations}
+
+Guides et aide concernant les ressources et personnalisations créées par la communauté.
 
 ### [Tutoriels vidéo et guides](./video-tutorials.md) {#video-tutorials-and-guides}
 
-Collection de tutoriels vidéo et de guides.
+Une collection de tutoriels vidéo utiles et de guides étape par étape.

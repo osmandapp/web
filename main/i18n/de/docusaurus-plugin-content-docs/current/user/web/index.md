@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Web-Routenplaner
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Webkarten-Viewer
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,26 +12,28 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+
+
 ### Überblick {#overview}
 
-In diesem Abschnitt finden Sie eine Beschreibung unseres [Webkarten-Dienstes](https://osmand.net/map).
+In diesem Abschnitt finden Sie eine Beschreibung unseres [Webkartendienstes](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-Dieser Abschnitt erklärt, wie Sie sich bei [www.osmand.net/map](https://osmand.net/map/) anmelden und registrieren können, und hebt die Vorteile hervor, die Benutzer nach der Registrierung erhalten.
+Dieser Abschnitt erklärt, wie man sich unter [www.osmand.net/map](https://osmand.net/map/) anmeldet und registriert, und hebt die Vorteile hervor, die Benutzer nach der Registrierung erhalten.
 
 ### [Karte](./web-map.md) {#map}
 
-Dieser Abschnitt beschreibt zusätzliche Kartendaten wie Favoriten, persönliche Tracks und Wetter-Layer.
+Dieser Abschnitt beschreibt zusätzliche Kartendaten wie Favoriten, persönliche Tracks und Wetterschichten.
 
-### [Benutzerdaten](./web-userdata.mdx) {#user-data}
+### [Benutzerdaten](../web/web-userdata.mdx) {#user-data}
 
 GPX-Tracks und Favoriten des Benutzers auf der Karte.
 
 ### [Route planen](./planner.md) {#plan-route}
 
-Dieser Abschnitt enthält Informationen zur Planung von Routen oder zur Erstellung von Navigationen unter Verwendung verschiedener Profile.
+Dieser Abschnitt bietet Informationen zur Routenplanung oder zur Erstellung von Navigationen unter Verwendung verschiedener Profile.
 
-### [Suche](./web-search.md) {#search}
+### [Suchen](./web-search.md) {#search}
 
-Dieser Abschnitt erklärt, wie Sie Points of Interest (POIs) aus verschiedenen Kategorien auf der Karte finden, eine klassische Suche durchführen und Kategoriesymbole auf der Karte anzeigen lassen können.
+Dieser Abschnitt erklärt, wie man Points of Interest (POIs) aus verschiedenen Kategorien auf der Karte findet, eine klassische Suche durchführt und Kategorie-Symbole auf der Karte anzeigt.

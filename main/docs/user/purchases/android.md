@@ -75,13 +75,14 @@ For Android devices, you can download the **Free** and **Paid** versions of the 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-
+<!--
 
 :::danger Summer Sale prices
 
 *Hurry up! This offer is only available until* **August 06 (23:00 CET)**.
 
 :::
+
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
@@ -91,7 +92,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
-<!--
+-->
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
@@ -100,7 +101,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
--->
+
 
 ### Free and Paid Features {#free-and-paid-features}
 
@@ -163,7 +164,7 @@ The **Pro** subscription currently has the following features:
 | [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
-| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records.  |
+| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |

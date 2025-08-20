@@ -1,7 +1,7 @@
 ---
-source-hash: 0d53a22616cf8e2e6cbef10c62b91267fdc834a708913b0ff57e3e2d168a7e90
+source-hash: 56be876b022a30d0407570ad16f12bc16882efb9fa70f60e3ef8e9dfb7079aa7
 sidebar_position: 4
-title:  Profiller (Ayarlar)
+title: Profiller (Ayarlar)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,16 +17,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd, sürüş, bisiklet, yürüyüş gibi farklı aktiviteler ve kayak ve tekne gezintisi gibi daha özel aktiviteler için tasarlanmış çeşitli varsayılan profiller sunar. Bu profiller, içinde bulunduğunuz aktiviteye göre navigasyon deneyiminizi geliştirmek için tasarlanmıştır. Her profil, tercihlerinize uyacak şekilde ayarları yapmanızı ve ek eklentileri dahil etmenizi sağlayan yapılandırılabilir seçenekler içerir.
+OsmAnd, sürüş, bisiklet, yürüyüş gibi farklı aktiviteler ve kayak ve tekne gibi daha özel aktiviteler için tasarlanmış çeşitli varsayılan profiller sunar. Bu profiller, içinde bulunduğunuz aktiviteye göre navigasyon deneyiminizi geliştirmek için tasarlanmıştır. Her profil, ayarları yapmanıza ve tercihlerinize uygun ek eklentileri dahil etmenize olanak tanıyan yapılandırılabilir seçenekler içerir.
 
-- *Kayak* ve *Tekne* gibi belirli profiller, yalnızca ilgili eklentiler etkinleştirildiğinde kullanılabilen **ek özelliklere** sahiptir.
+- *Kayak* ve *Tekne* gibi belirli profiller, ilgili eklentiler etkinleştirildiğinde kullanılabilen **ek özelliklere** sahiptir.
 
      - Eklentiler *Menü → Eklentiler → Kayak haritası görünümü* veya *Deniz haritası görünümü* yolunu izleyerek etkinleştirilebilir.
-     - Eklentilerin etkinleştirilmesi, bu aktivitelere özgü gereksinimleri karşılamak için profillere temel özellikleri sağlar.
+     - Eklentilerin etkinleştirilmesi, bu profillere, bu aktivitelerin özel gereksinimlerini karşılamak için gerekli özellikleri sağlar.
 
-- **Kamyon**, **Motosiklet**, **Moped**, **Tren**, **Uçak**, **Tekne** ve **At Binme** gibi bazı profillerin varsayılan olarak etkinleştirilmediğini unutmamak önemlidir.
+- **Kamyon**, **Motosiklet**, **Moped**, **Tren**, **Uçak**, **Tekne** ve **At binme** gibi bazı profillerin varsayılan olarak etkinleştirilmediğini belirtmek önemlidir.
 
-     - Bu profillere erişmek ve bunları kullanmak için, bunları *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde manuel olarak etkinleştirmeniz gerekir.
+     - Bu profillere erişmek ve kullanmak için bunları *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde manuel olarak etkinleştirmeniz gerekir.
      - Bu yöntem, yalnızca belirli aktiviteler için gereken profilleri etkinleştirerek düzenli ve ilgili bir profil listesi tutmaya yardımcı olur.
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -53,7 +53,7 @@ OsmAnd, sürüş, bisiklet, yürüyüş gibi farklı aktiviteler ve kayak ve tek
 
 ## Profil Yapılandırması {#profile-configuration}
 
-:::caution Ayarları yalnızca belirli bir profile uygulama
+:::caution Ayarları yalnızca belirli bir profile uygulamak
 Tüm ayarlar yalnızca o anda seçili olan uygulama profiline uygulanır.
 :::
 
@@ -73,7 +73,7 @@ Tüm ayarlar yalnızca o anda seçili olan uygulama profiline uygulanır.
 
 </Tabs>
 
-Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar menüsü ve profil ekranı ile ilgili tüm ayarları içerir.
+Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar menüsü ve profil ekranıyla ilgili tüm ayarları içerir.
 
 
 ### Ücretsiz Bulut Yedekleme {#free-cloud-backup}
@@ -98,14 +98,14 @@ Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar men�
 
 </Tabs>
 
-OsmAnd, uygulama profil ayarlarınızı OsmAnd Cloud'a [yedeklemenize](../personal/osmand-cloud.md#osmand-start) olanak tanır, böylece yapılandırmalarınız güvenli bir şekilde depolanır ve Android, iOS ve Web sürümleri arasında kolayca geri yüklenebilir. Bu yedekleme özelliği, cihaz arızası veya uygulama yeniden yüklemesi durumunda ayarlarınızı korur. Bu özel plandan [OsmAnd Başlangıç](../personal/osmand-cloud.md#osmand-start) kullanarak yararlanabilirsiniz.  
+OsmAnd, uygulama profil ayarlarınızı OsmAnd Cloud'a [yedeklemenize](../personal/osmand-cloud.md#osmand-start) olanak tanır, böylece yapılandırmalarınız güvenli bir şekilde depolanır ve Android, iOS ve Web sürümlerinde kolayca geri yüklenebilir. Bu yedekleme özelliği, cihaz arızası veya uygulama yeniden yüklemesi durumunda ayarlarınızı korur. Bu özel plandan [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) kullanarak yararlanabilirsiniz.  
 
-*Ücretsiz Ayar Yedeklemesi*'ni kullanmak için bir [OsmAnd Cloud](../personal/osmand-cloud.md#login) hesabınızın olması gerekir. Bir *OsmAnd Pro* aboneliğiniz veya aktif bir *OsmAnd Cloud* hesabınız varsa, promosyon afişi görüntülenmeyecektir.
+*Ücretsiz Ayarlar Yedeklemesi*'ni kullanmak için bir [OsmAnd Cloud](../personal/osmand-cloud.md#login) hesabınız olmalıdır. Bir *OsmAnd Pro* aboneliğiniz veya etkin bir *OsmAnd Cloud* hesabınız varsa, promosyon afişi görüntülenmeyecektir.
 
 
 ## Genel Ayarlar {#general-settings}
 
-Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimleri ve formatları, harici giriş cihazları ve seçtiğiniz profil için en uygun yapılandırmayı oluşturmak üzere diğer birçok ayarı içerir.
+Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimleri ve formatları, harici giriş cihazları ve seçtiğiniz profil için optimum yapılandırmayı oluşturmak üzere diğer birçok ayarı içerir.
 
 ### Görünüm {#appearance}
 
@@ -129,7 +129,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 </Tabs>
 
-- **<Translate android="true" ids="choose_osmand_theme"/>**. Uygulama için bir gündüz ve gece teması ayarlamanıza olanak tanır, bu tema tek bir profile veya hepsine birden uygulanabilir. Bu seçenek [harita modu](../map/vector-maps.md#map-mode) ayarlarını değiştirmez.
+- **<Translate android="true" ids="choose_osmand_theme"/>**. Uygulama için bir gündüz ve gece teması ayarlamanıza olanak tanır, bu bir profile veya hepsine aynı anda uygulanabilir. Bu seçenek [harita modu](../map/vector-maps.md#map-mode) ayarlarını değiştirmez.
   - *<Translate android="true" ids="dark_theme"/> teması*
   - *<Translate android="true" ids="light_theme"/> teması*
   - *<Translate android="true" ids="system_default_theme"/>*  
@@ -145,7 +145,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
   - *<Translate android="true" ids="map_orientation_landscape"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Yalnızca Android*). Cihaz pil tüketimini azaltmak için navigasyon sırasında cihaz ekranı için seçenekleri seçebileceğiniz ekran kontrol menüsünü açar.  
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Yalnızca Android*). Cihaz pil tüketimini azaltmak için navigasyon sırasında cihaz ekranı seçeneklerini seçebileceğiniz ekran kontrol menüsünü açar.  
 
 
 ### Birimler ve Biçimler {#units--formats}
@@ -166,7 +166,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 </Tabs>
 
-**Birimler ve Biçimler** bölümünde, tüm verilerin uygun ve tanıdık bir şekilde görüntülenmesini sağlamak için ölçü birimlerini ve biçimlerini kişisel tercihlerinize ve bölgesel standartlara göre ayarlayabilirsiniz.
+**Birimler ve Biçimler** bölümünde, ölçü birimlerini ve biçimlerini kişisel tercihlerinize ve bölgesel standartlara göre ayarlayarak tüm verilerin uygun ve tanıdık bir şekilde görüntülenmesini sağlayabilirsiniz.
 
 
 <!--
@@ -210,10 +210,10 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
 | **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mil / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mil / 3281 fit (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 mil / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 mil (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 deniz mili / 3280.84 ft / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 mil (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 deniz mili / 3280.84 fit / 1000 m |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Örnek: 50.12333° 19.93233° (Enlem Boylam) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Örnek: 50°7.393′ 19°55.941′ (Enlem Boylam)  |
@@ -231,20 +231,20 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/sa  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mil/sa  |
 |          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
-|          | <Translate android="true" ids="si_min_m"/> | 1.073 dk/m |
-|          | <Translate android="true" ids="si_min_km"/> | 0.667 dk/km |
+|          | <Translate android="true" ids="si_min_m"/> | 1.073 dak/m |
+|          | <Translate android="true" ids="si_min_km"/> | 0.667 dak/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
 | **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Avrupa, Asya, Latin Amerika, Kanada, Japonya, Hindistan, Avustralya |
-|  | <Translate android="true" ids="imperial_gallons"/> | Birleşik Krallık ve benzeri |
+|  | <Translate android="true" ids="imperial_gallons"/> | Birleşik Krallık ve benzerleri |
 |  | <Translate android="true" ids="us_gallons"/> | Amerika Birleşik Devletleri |
 |  |  |  |
 | **<Translate android="true" ids="shared_string_temperature"/>** (*Yalnızca Android*)| <Translate android="true" ids="system_default_theme"/> |  |
 |  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
-| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Hassas ölçümler için*, bir noktaya olan mesafe, bir sonraki dönüş veya belirli bir şerit gibi navigasyon widget'larında mesafe bilgisinin nasıl görüntüleneceğini seçin. |
-|          | <Translate android="true" ids="round_up"/> | *Daha iyi okunabilirlik için*, navigasyon widget'larında (bir noktaya olan mesafe, bir sonraki dönüş veya şerit) görüntülenen sayılar daha az basamağa sahip olacak şekilde aşağı yuvarlanacaktır. <br/> Örnekler: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Hassas ölçümler için*, bir noktaya, bir sonraki dönüşe veya belirli bir şeride olan mesafe gibi navigasyon widget'larında mesafe bilgisinin nasıl görüntüleneceğini seçin. |
+|          | <Translate android="true" ids="round_up"/> | *Daha iyi okunabilirlik için*, navigasyon widget'larında (bir noktaya, bir sonraki dönüşe veya şeride olan mesafe) görüntülenen sayılar daha az basamaklı olacak şekilde yuvarlanacaktır. <br/> Örnekler: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Diğer {#other}
@@ -271,19 +271,19 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 **Diğer** bölümü, OsmAnd'ın arayüzünü ve giriş kontrollerini özelleştirmek için ek profil ayarları sağlar. Bu ayarlar, harici cihazları yapılandırmanıza, animasyon tercihlerini ayarlamanıza ve tam ekran modunu açıp kapatmanıza olanak tanır.
 
-- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – OsmAnd'ı fiziksel düğmeler kullanarak çalıştırmak için *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* veya *<Translate android="true" ids="sett_parrot_ext_input"/>* gibi harici kontrol cihazlarını bağlayın.
+- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – OsmAnd'ı fiziksel düğmelerle çalıştırmak için *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* veya *<Translate android="true" ids="sett_parrot_ext_input"/>* gibi harici kontrol cihazlarını bağlayın.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Yalnızca Android*) – Cihazınızın ses düğmelerini haritada [yakınlaştırma](../map/interact-with-map.md#my-location-and-zoom) ve uzaklaştırma için kullanma özelliğini etkinleştirin veya devre dışı bırakın.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Yalnızca Android*) – Cihazınızın ses düğmelerini haritada [yakınlaştırmak ve uzaklaştırmak](../map/interact-with-map.md#my-location-and-zoom) için kullanma özelliğini etkinleştirin veya devre dışı bırakın.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – Harita dönüşünü [kademeli hareketle](https://en.wikipedia.org/wiki/Kalman_filter) yumuşatarak ani konum değişikliklerini azaltır. Bu, küçük bir gecikmeye (*1 saniyeden az*) neden olur.
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – [Kademeli hareketle](https://en.wikipedia.org/wiki/Kalman_filter) harita dönüşünü yumuşatır, ani konum değişikliklerini azaltır. Bu, küçük bir gecikmeye neden olur (*1 saniyeden az*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – Harita dönüşünü dengelemek ve ani değişiklikleri azaltmak için cihazınızın [manyetik sensörünü](https://en.wikipedia.org/wiki/Kalman_filter) kullanır. Bu da hafif bir gecikmeye neden olur.
+- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – Harita dönüşünü dengelemek için cihazınızın [manyetik sensörünü](https://en.wikipedia.org/wiki/Kalman_filter) kullanır, ani değişiklikleri azaltır. Bu da hafif bir gecikmeye neden olur.
 
-- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Yalnızca Android*) – Kontrol düğmelerini ve widget'ları gizlemek için haritadaki boş bir alana dokunarak harita görünürlüğünü en üst düzeye çıkarın.
+- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Yalnızca Android*) – Kontrol düğmelerini ve widget'ları gizlemek için haritada boş bir alana dokunun, böylece harita görünürlüğünü en üst düzeye çıkarın.
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Yalnızca Android*) – Daha hızlı ekran geçişleri için navigasyon modunda animasyonları devre dışı bırakın.
 
-- **<Translate android="true" ids="position_animation"/>** (*Yalnızca Android*) – [Konum](../map/interact-with-map.md#my-location-and-zoom) simgesi, alınan her GPS noktasıyla (saniyede bir) hareketlenir. Hızlı hareket veya GPS sinyal dalgalanmaları sırasında hareketinde hafif bir gecikme fark edilebilir. Bu efekti *Tahmin süresi* ayarını kullanarak ayarlayabilirsiniz: daha yüksek değerler yumuşaklığı artırır ancak gecikme ekler, daha düşük değerler gecikmeyi azaltır ancak hareketi daha az pürüzsüz hale getirebilir.
+- **<Translate android="true" ids="position_animation"/>** (*Yalnızca Android*) – [Konum](../map/interact-with-map.md#my-location-and-zoom) simgesi, alınan her GPS noktasıyla (saniyede bir kez) animasyonlu olarak hareket eder. Özellikle hızlı hareket veya GPS sinyal dalgalanmaları sırasında hareketinde hafif bir gecikme fark edilebilir. Bu efekti *Tahmin süresi* ayarını kullanarak ayarlayabilirsiniz: daha yüksek değerler akıcılığı artırır ancak gecikme ekler, daha düşük değerler gecikmeyi azaltır ancak hareketi daha az akıcı hale getirebilir.
 
 
 ## Navigasyon Ayarları {#navigation-settings}
@@ -308,26 +308,26 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 </Tabs>
 
-Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'ı en uygun navigasyon deneyimi için nasıl yapılandıracağınızı açıklayan [Navigasyon Ayarları](../navigation/guidance/navigation-settings.md) makalesine bakın.
+Navigasyon seçeneklerinin ayrıntılı bir genel görünümü için, OsmAnd'ı optimum bir navigasyon deneyimi için nasıl yapılandıracağınızı açıklayan [Navigasyon Ayarları](../navigation/guidance/navigation-settings.md) makalesine bakın.
 
 - [Navigasyon türü](../navigation/guidance/navigation-settings.md#navigation-type) - Seyahat yönteminize ve internet erişilebilirliğinize göre uygun navigasyon modunu seçin.
 
-- [Rota parametreleri](../navigation/guidance/navigation-settings.md#route-parameters) - OsmAnd'ın rotaları nasıl hesaplayacağını tanımlayın; belirli yollardan kaçınma veya rota türlerini seçme tercihleri dahil.
+- [Rota parametreleri](../navigation/guidance/navigation-settings.md#route-parameters) - Belirli yollardan kaçınma veya rota türlerini seçme tercihleri dahil olmak üzere OsmAnd'ın rotaları nasıl hesapladığını tanımlayın.
 
 - [Ekran uyarıları](../navigation/guidance/navigation-settings.md#screen-alerts) - Hız sınırları, dönüşler ve diğer önemli yol koşulları için gerçek zamanlı bildirimleri görüntülemek üzere *Uyarılar Widget'ı*'nı etkinleştirin.
 
 - [Sesli komutlar](../navigation/guidance/navigation-settings.md#voice-prompts) - Seçilen bir rota boyunca sürüş veya yürüyüş sırasında sesli navigasyon talimatları almak için sesli rehberliği etkinleştirin.
 
-- [Araç parametreleri](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Doğru rota belirleme ve kısıtlı yollardan kaçınmak için maksimum hız ve araç yüksekliği gibi araca özel ayarları yapılandırın.
+- [Araç parametreleri](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Doğru rota oluşturmayı sağlamak ve kısıtlı yollardan kaçınmak için maksimum hız ve araç yüksekliği gibi araca özel ayarları yapılandırın.
 
 - [Rota çizgisini özelleştir](../navigation/guidance/navigation-settings.md#customize-route-line) – Navigasyon sırasında daha iyi görünürlük için haritada görüntülenen rota çizgisinin rengini, genişliğini ve stilini ayarlayın.
 
 - [Navigasyon sırasında harita](../navigation/guidance/navigation-settings.md#map-during-navigation) – Haritada gerçek zamanlı konumlandırmayı görüntüleyin, rota boyunca ilerlemeyi takip edin ve önemli noktaları kullanarak yönlendirmeyi iyileştirin.
 
-- [Ayrıntılı parkur rehberliği](../navigation/guidance/navigation-settings.md) – Rotanızı haritalanmış yollarla hizalayarak adım adım navigasyonu iyileştirin. Mevcut ayarlar: *Her Seferinde Sor* veya *Her Zaman*.
+- [Ayrıntılı iz rehberliği](../navigation/guidance/navigation-settings.md) – Rotanızı haritalanmış yollarla hizalayarak adım adım navigasyonu iyileştirin. Mevcut ayarlar: *Her Zaman Sor* veya *Her Zaman*.
 
 :::info
-*Haritaya göz at* profilinde navigasyon ayarı yoktur.  
+*Haritaya Göz At* profilinde navigasyon ayarı yoktur.  
 :::
 
 
@@ -338,7 +338,7 @@ Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'
 <TabItem value="android" label="Android">
 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Haritayı yapılandır*
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Haritayı Yapılandır*
 
 ![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
 
@@ -354,13 +354,13 @@ Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'
 
 </Tabs>
 
-[<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menüsü, seçilen profil için harita görüntüleme ayarlarını özelleştirmenize olanak tanır ve temel harita öğelerinin daha iyi görselleştirilmesini sağlar.  
+[<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menüsü, seçilen profil için harita görüntüleme ayarlarını özelleştirmenize olanak tanır, böylece temel harita öğelerinin daha iyi görselleştirilmesini sağlar.  
 
 Bu menü ile şunları yapabilirsiniz:
 
-- Haritadaki [Favori noktalar](../personal/favorites.md), [Navigasyon işaretleri](../personal/markers.md) veya özel [İlgi Çekici Noktalar (POI'ler)](../map/point-layers-on-map.md#points-of-interest-pois) dahil olmak üzere **önemli harita öğelerini vurgulayın**.
+- Haritadaki [Favori noktalar](../personal/favorites.md), [Navigasyon işaretleri](../personal/markers.md) veya özel [İlgi Çekici Noktalar (POİ'ler)](../map/point-layers-on-map.md#points-of-interest-pois) dahil olmak üzere **önemli harita öğelerini vurgulayın**.
 
-- Navigasyon veya analiz için üçüncü taraf parkurlar dahil olmak üzere **belirli rotaları ve GPX dosyalarını görüntüleyin**.
+- Navigasyon veya analiz için üçüncü taraf izler dahil olmak üzere **belirli rotaları ve GPX dosyalarını görüntüleyin**.
 
 - [Arazi bilgileri](../plugins/topography.md), **uydu görüntüleri** veya diğer mevcut [raster haritalar](../map/raster-maps.md) gibi **ek harita katmanlarını üst üste bindirin**.
 
@@ -376,7 +376,7 @@ Bu menü ile şunları yapabilirsiniz:
 <TabItem value="android" label="Android">  
 
 - Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-- Şuraya git: *Menü → Ayarlar → Uygulama Profili → Ekranı yapılandır*
+- Şuraya git: *Menü → Ayarlar → Uygulama Profili → Ekranı Yapılandır*
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
@@ -392,7 +392,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 </Tabs>
 
-[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) seçilen profil için haritada görüntülenecek widget'ları yapılandırmanıza olanak tanıyan bir menüdür. Bu ekranda [Bilgi](../widgets/info-widgets.md) ve [Navigasyon](../widgets/nav-widgets.md) widget'larını ve diğer öğeleri etkinleştirebilir ve yapılandırabilirsiniz.
+[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md), seçilen profil için haritada görüntülenecek widget'ları yapılandırmanıza olanak tanıyan bir menüdür. Bu ekranda, [Bilgi](../widgets/info-widgets.md) ve [Navigasyon](../widgets/nav-widgets.md) widget'larını ve diğer öğeleri etkinleştirebilir ve yapılandırabilirsiniz.
 
 
 ## Profil Görünümü {#profile-appearance}
@@ -417,7 +417,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 </Tabs>
 
-**Profil görünümü** ayarları, profilinizin adını ve görsel temsilini özelleştirmenize olanak tanır. [Konumum](#my-location-appearance) görünümünü de buradan değiştirebilirsiniz. *Profil adı* benzersiz olmalı, *simgeler* ve *renkler* farklı profillerde aynı olabilir. Bu değişiklikler, [Rota hazırlığı](../navigation/setup/route-navigation.md) menüsü gibi uygulamanın çeşitli yerlerinde uygulanacaktır.
+**Profil görünümü** ayarları, profilinizin adını ve görsel temsilini özelleştirmenize olanak tanır. Ayrıca [Konumum görünümü](#my-location-appearance) ayarlarını da buradan değiştirebilirsiniz. *Profil adı* benzersiz olmalı, ancak *simgeler* ve *renkler* farklı profillerde aynı olabilir. Bu değişiklikler, [Rota hazırlığı](../navigation/setup/route-navigation.md) menüsü gibi uygulamanın çeşitli bölümlerinde uygulanacaktır.
 
 
 ### Konumum Görünümü {#my-location-appearance}
@@ -442,7 +442,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 </Tabs>
 
-**Konumum görünümü** ayarları, konumunuzun haritada hem sabit hem de hareket halindeyken nasıl görüntüleneceğini özelleştirmenize olanak tanır. Hareket, cihaz hızı **sıfırdan büyük** olduğunda işletim sistemi tarafından algılanır.
+**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken hem de hareket halindeyken nasıl görüntülendiğini özelleştirmenize olanak tanır. Hareket, cihaz hızı **sıfırdan büyük** olduğunda işletim sistemi tarafından algılanır.
 
 #### 1. Görüş Açısı ve Konum Yarıçapı {#1-view-angle-and-location-radius}
 
@@ -461,7 +461,7 @@ Daha kişiselleştirilmiş bir deneyim için, OsmAnd'a **özel 3B simgeler** olu
 1. **Bir 3B model oluşturun**. Simgenizi [MTL ve OBJ formatlarında](https://en.wikipedia.org/wiki/Wavefront_.obj_file) tasarlayın.
 
 2. **Modeli OsmAnd'a entegre edin:**  
-   - Sağlanan [eklenti örneğini](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) kullanarak özel bir [eklenti](../plugins/custom.md) geliştirin.  
+   - Sağlanan [eklenti örneğini](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) kullanarak [özel bir eklenti](../plugins/custom.md) geliştirin.  
    - 3B simge dosyalarınızı aşağıdaki yollara yerleştirin:  
 
      `..osmand/models/icon_folder_name/custom_3d_file.mtl`  
@@ -471,11 +471,11 @@ Daha kişiselleştirilmiş bir deneyim için, OsmAnd'a **özel 3B simgeler** olu
 
 #### 3. Harita Yönlendirme Modları {#3-map-orientation-modes}
 
-**Konumum** simgesinin farklı [harita yönlendirme modlarını](../widgets/map-buttons.md#compass) kullanarak nasıl davrandığını kontrol edebilirsiniz.  
+[Konumum](../widgets/map-buttons.md#compass) simgesinin farklı [harita yönlendirme modlarını](../widgets/map-buttons.md#compass) kullanarak nasıl davrandığını kontrol edebilirsiniz.  
 
-- Konum simgesi sabit dururken **titriyorsa veya dönüyorsa**, **Hareket Yönü Modu**'ndan ([Yönelim ile Haritayı Döndür](../map/interact-with-map.md#rotate-map-by-bearing)) başka bir moda geçin.  
-- *Menü → Ayarlar → Uygulama Profilleri → Profil Görünümü → Seçenekler* bölümündeki ek ayarları yapın.
-- Yönelim ve yön takibi hakkında daha fazla bilgi için [Yönelim Widget'ı](../widgets/nav-widgets#bearing-widget) bölümüne bakın.  
+- Konum simgesi sabitken **titriyor veya dönüyorsa**, **Hareket Yönü Modu**'ndan ([Haritayı Yönlendirmeye Göre Döndür](../map/interact-with-map.md#rotate-map-by-bearing)) başka bir moda geçin.  
+- *Menü → Ayarlar → Uygulama Profilleri → Profil Görünümü → Seçenekler* bölümünde ek ayarları yapın.
+- [Yön Widget'ı](../widgets/nav-widgets#bearing-widget) bölümünde yön ve yön takibi hakkında daha fazla bilgi edinin.  
 
 
 ## Kullanıcı Arayüzü Özelleştirme {#ui-customization}
@@ -483,23 +483,23 @@ Daha kişiselleştirilmiş bir deneyim için, OsmAnd'a **özel 3B simgeler** olu
 <InfoAndroidOnly />
 
 :::note Kullanılmayan eklentiler için
-Kullanılmayan [eklentilerin](../plugins/index.md#configure-plugin) tüm kontrol parametrelerini gizlemek için, bunları devre dışı bırakın.
+Kullanılmayan [eklentilerin](../plugins/index.md#configure-plugin) tüm kontrol parametrelerini gizlemek için bunları devre dışı bırakın.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
 ![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) ve [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md) gibi eylemlerdeki öğe sayısını ayarlayabilirsiniz. Tüm olası öğelerden eklenen öğe sayısı hakkında bilgiyi her özelliğin başlığı altında bulabilirsiniz.
+Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) ve [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md) gibi eylemlerdeki öğe sayısını ayarlayabilirsiniz. Tüm olası öğelerden eklenen öğe sayısı hakkında bilgi, her özelliğin başlığı altında bulunabilir.
 
 
 ### Çekmece {#drawer}
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
-- **Ana görünür öğeler** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Çekmece](../start-with/main-menu.md#customize-advanced-use-of-android) öğelerini tercihlerinize göre *yeniden sıralayabilir, gizleyebilir ve geri yükleyebilirsiniz*.
+- **Ana görünür öğeler** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Çekmece'deki](../start-with/main-menu.md#customize-advanced-use-of-android) öğeleri tercihlerinize göre *yeniden sıralayabilir, gizleyebilir ve geri yükleyebilirsiniz*.
 
-- **<Translate android="true" ids="reset_to_default"/>** - Çekmecedeki *orijinal öğe listesini* geri yükler ve tüm özelleştirmeleri anında geri alır.
+- **<Translate android="true" ids="reset_to_default"/>** - Çekmecedeki *orijinal öğe listesini* geri yükler, herhangi bir özelleştirmeyi anında geri alır.
 
 - **<Translate android="true" ids="copy_from_other_profile"/>** - Profiller arasında tutarlı bir kurulum sağlamak için *çekmece düzenini* başka bir OsmAnd profilinden kopyalamanıza olanak tanır.
 
@@ -507,11 +507,11 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Harita menüsünü yapılandır** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Haritayı yapılandır](../map/configure-map-menu.md) öğelerini *yeniden sıralayabilir veya gizleyebilirsiniz*, bu da sık kullanılan ayarlara hızlı erişim sağlar.
+- **Harita menüsünü yapılandır** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Haritayı yapılandır](../map/configure-map-menu.md) menüsündeki öğeleri *yeniden sıralayabilir veya gizleyebilirsiniz*, bu da sık kullanılan ayarlara hızlı erişim sağlar.
 
-- **<Translate android="true" ids="reset_to_default"/>** - Haritayı yapılandır menüsündeki *orijinal öğe listesini* geri yükler ve tüm değişiklikleri kaldırır.
+- **<Translate android="true" ids="reset_to_default"/>** - Haritayı Yapılandır menüsündeki *orijinal öğe listesini* geri yükler, herhangi bir değişikliği kaldırır.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - *Haritayı yapılandır menü düzenini* başka bir OsmAnd profilinden kopyalar.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - *Haritayı Yapılandır menü düzenini* başka bir OsmAnd profilinden kopyalar.
 
 
 ### Bağlam Menüsü Eylemleri {#context-menu-actions}
@@ -520,15 +520,15 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 - **Harita bağlam menüsü** - Kullanıcı Arayüzünü Özelleştir bölümünde, sık kullanılan özelliklere erişimi optimize etmek için [harita bağlam menüsündeki](../map/map-context-menu.md) öğeleri yeniden sıralayabilir veya gizleyebilirsiniz.
 
-- **<Translate android="true" ids="reset_to_default"/>** – Harita bağlam menüsündeki *varsayılan öğe listesini* geri yükler ve tüm değişiklikleri anında geri alır.
+- **<Translate android="true" ids="reset_to_default"/>** – Harita bağlam menüsündeki *varsayılan öğe listesini* geri yükler, herhangi bir değişikliği anında geri alır.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** – Farklı profiller arasında tutarlılığı sağlamak için *bağlam menüsü düzenini* başka bir OsmAnd profilinden kopyalar.
+- **<Translate android="true" ids="copy_from_other_profile"/>** – Farklı profiller arasında tutarlılığı sağlamak için *bağlam menüsü düzenlemesini* başka bir OsmAnd profilinden kopyalar.
 
 
 ## Eklenti Ayarları {#plugin-settings}
 
 :::caution Eklenti ayarlarına erişim
-Eklentinin ayarlarına erişmek için, önce [ana menünün Eklenti bölümünde eklentiyi etkinleştirmeniz](../plugins/index.md#enable--disable) gerekir.
+Eklentinin ayarlarına erişmek için önce eklentiyi ana menünün *Eklenti bölümünde* [**etkinleştirmeniz**](../plugins/index.md#enable--disable) gerekir.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -551,26 +551,26 @@ Eklentinin ayarlarına erişmek için, önce [ana menünün Eklenti bölümünde
 
 </Tabs>
 
-Eklentiler uygulamanın ek özelliklerini açar ve [ücretli veya ücretsiz](../plugins/index.md#purchase) olabilir. Bazı eklentilerin kendi [ayarları](../plugins/index.md#plugin-settings) varken, diğerlerinin yoktur. OsmAnd, eklentileri her profil için ayrı ayrı yapılandırma imkanı sunar.
+Eklentiler, uygulamanın ek özelliklerini açar ve [ücretli veya ücretsiz](../plugins/index.md#purchase) olabilir. Bazı eklentilerin kendi [ayarları](../plugins/index.md#plugin-settings) varken, bazılarının yoktur. OsmAnd, eklentileri her profil için ayrı ayrı yapılandırma imkanı sunar.
 
 
-- **Yolculuk Kaydı**. Bu öğe, seçilen profil için [yolculuk kaydı ayarlarını](../plugins/trip-recording.md#recording-settings) açar, burada yolculuklarınızı kaydetmek için herhangi bir parametre seçebilirsiniz.
+- **Yolculuk Kaydı**. Bu öğe, seçilen profil için [yolculuk kaydı ayarlarını](../plugins/trip-recording.md#recording-settings) açar, burada yolculuklarınızı kaydetmek için herhangi bir parametreyi seçebilirsiniz.
 
 - **Hava Durumu**. Etkileşimli [Hava Durumu](../plugins/weather.md#weather-settings) harita katmanları, şehrinizdeki veya küresel haritadaki herhangi bir konumdaki sıcaklığı, hava basıncını, bulut örtüsünü, rüzgar hızını ve yağışı izlemenizi sağlar.
 
-- **Sesli / Görüntülü Notlar** (*Yalnızca Android*). Bu öğe, seçilen profil için [sesli-görüntülü eklenti ayarlarını](../plugins/audio-video-notes.md#plugin-settings) açar. *Sesli/Görüntülü Notlar* eklentisi, notlarınızı fotoğraf, video veya ses gibi çeşitli formatlarda oluşturmanıza ve bunları coğrafi konum veya mevcut konumla ilişkilendirmenize olanak tanıyarak OsmAnd'ın işlevselliğini genişletir.  
+- **Ses / Video Notları** (*Yalnızca Android*). Bu öğe, seçilen profil için [sesli-video eklenti ayarlarını](../plugins/audio-video-notes.md#plugin-settings) açar. *Ses/Video Notları* eklentisi, OsmAnd'ın işlevselliğini genişleterek fotoğraf, video veya ses gibi çeşitli formatlarda notlar oluşturmanıza ve bunları coğrafi konum veya mevcut konumla ilişkilendirmenize olanak tanır.  
 
-- **OpenStreetMap Düzenleme**. Bu öğe, seçilen profil için [OpenStreetMap düzenleme eklentisi ayarlarını](../plugins/osm-editing.md#settings) açar. OsmAnd ve OSM düzenleme eklentisi ile POI'ler oluşturarak veya değiştirerek, notlar ekleyerek veya yorumlayarak ve kaydedilmiş GPX parkurlarını yükleyerek OpenStreetMap.org'a katkıda bulunabilirsiniz.
+- **OpenStreetMap Düzenleme**. Bu öğe, seçilen profil için [OpenStreetMap düzenleme eklentisi ayarlarını](../plugins/osm-editing.md#settings) açar. OsmAnd ve OSM düzenleme eklentisi ile POI'ler oluşturarak veya değiştirerek, notlar ekleyerek veya yorumlayarak ve kaydedilen GPX izlerini yükleyerek OpenStreetMap.org'a katkıda bulunabilirsiniz.
 
-- **Harici Sensörler**. *Eklenti Ayarları* bölümündeki bir öğeye dokunduğunuzda, seçilen profil için [harici sensörlerin ayarları](../plugins/external-sensors.md#sensors-settings) açılır. Harici Sensörler eklentisi, kablosuz harici sensörlerden veri okumanıza ve kaydetmenize ve OsmAnd uygulamasında widget'lar kullanarak görüntülemenize olanak tanır.
+- **Harici Sensörler**. *Eklenti Ayarları* bölümündeki bir öğeye dokunduğunuzda, seçilen profil için [harici sensörlerin ayarları](../plugins/external-sensors.md#sensors-settings) açılır. Harici Sensörler eklentisi, kablosuz harici sensörlerden veri okumanıza ve kaydetmenize ve bunları OsmAnd uygulamasındaki widget'ları kullanarak görüntülemenize olanak tanır.
 
 - **Erişilebilirlik** (*Yalnızca Android*). Bu öğe, seçilen profil için [Erişilebilirlik eklentisi ayarlarını](../plugins/accessibility.md#plugin-settings) açar. Erişilebilirlik eklentisi ayarları, uygulamayı ihtiyaçlarınıza göre özelleştirmenize olanak tanır. Tüm ayarlar navigasyon süreciyle ilgilidir ve her profil için ayrı ayrı ayarlanır.
 
-- **OsmAnd Geliştirme**. Bu menü, OsmAnd uygulamasını test amaçlı yapılandırabileceğiniz veya gelecek özellikleri keşfedebileceğiniz [OsmAnd geliştirme eklentisi ayarlarını](../plugins/development.md#plugin-settings) açar. Bu ayarlar geliştiriciler içindir ve uygulamanın normal kullanımı için gerekli değildir.  
+- **OsmAnd Geliştirme**. Bu menü, OsmAnd uygulamasını test amaçlı yapılandırabileceğiniz veya gelecek özellikleri keşfedebileceğiniz [OsmAnd geliştirme eklentisi ayarlarını](../plugins/development.md#plugin-settings) açar. Bu ayarlar geliştiriciler için tasarlanmıştır ve uygulamanın normal kullanımı için gerekli değildir.  
 
   > ***OsmAnd geliştirme eklentisinin ayarlarını değiştirmek tüm profilleri etkiler.***
 
-- **Wikipedia**. Bu menü *[Wikipedia eklenti ayarlarını](../plugins/wikipedia.md#wikipedia-settings)* açar. Makalelerin görüntüleneceği dili seçebilir ve Wikipedia'dan resim indirilip indirilmeyeceğini seçebilirsiniz. Seyahatinizde Wikipedia'ya sahip olmak, ziyaret ettiğiniz yerler hakkında bilgi sağlayarak deneyiminizi geliştirir. Çevrimdışı çalışır ve ilgi çekici noktalarla ilgili Wikipedia makalelerini doğrudan haritada görüntüler.
+- **Wikipedia**. Bu menü *[Wikipedia eklentisi ayarlarını](../plugins/wikipedia.md#wikipedia-settings)* açar. Makalelerin hangi dilde görüntüleneceğini seçebilir ve Wikipedia'dan resim indirilip indirilmeyeceğini seçebilirsiniz. Seyahatinizde Wikipedia'ya sahip olmak, ziyaret ettiğiniz yerler hakkında bilgi sağlayarak deneyiminizi geliştirir. Çevrimdışı çalışır ve ilgi çekici noktalarla ilgili Wikipedia makalelerini doğrudan haritada görüntüler.
 
 
 ## Eylemler {#actions}
@@ -591,11 +591,11 @@ Eklentiler uygulamanın ek özelliklerini açar ve [ücretli veya ücretsiz](../
 
 </Tabs>
 
-Seçilen profille ilgili eylemler:  
+Seçilen profille eylemler:  
 
 - [Profili dışa aktar](https://osmand.net/docs/user/personal/import-export#export) - Seçilen profilin tüm ayarlarını OSF formatında dışa aktarır.
 
-- **Başka bir profilden kopyala** - OsmAnd uygulamanızdaki başka bir mevcut profilden tüm ayarları kopyalar.
+- **Başka bir profilden kopyala** - OsmAnd uygulamanızdaki başka bir mevcut profilin tüm ayarlarını kopyalar.
 
 - **Varsayılana sıfırla** - Tüm ayarları başlangıç durumuna döndürür.
 
@@ -607,7 +607,7 @@ Seçilen profille ilgili eylemler:
 
 ## İlgili Makaleler {#related-articles}
 
-- [Parkurları Yönet](../personal/tracks/manage-tracks.md#import--export-track)
+- [İzleri Yönet](../personal/tracks/manage-tracks.md#import--export-track)
 - [Arama Geçmişi](../search/search-history.md#export-and-share)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
 

@@ -1,5 +1,5 @@
 import { apiGet } from '../../util/HttpApi';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
@@ -26,11 +26,12 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
+import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -87,19 +88,24 @@ export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
+    const prevSelectedRes = useRef(null);
+
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    const searchLayers = useRef(null);
+
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
-        SEARCH_LAYER_ID,
-        map
-    );
+        layers: searchLayers.current?.getLayers(),
+        type: SEARCH_LAYER_ID,
+        map,
+        prevSelectedMarker: prevSelectedRes,
+    });
 
     useEffect(() => {
         if (ctx.searchQuery?.search) {
@@ -125,14 +131,28 @@ export default function SearchLayer() {
 
     useEffect(() => {
         const updateAsyncLayers = async () => {
-            const searchLayer = findFeatureGroupById(map, SEARCH_LAYER_ID);
-
-            if (searchLayer) {
+            if (searchLayers.current) {
                 const newLayers = await createSearchLayer({
                     objList: ctx.searchResult?.features,
                 });
-                searchLayer.clearLayers();
-                searchLayer.addLayer(newLayers);
+                searchLayers.current.clearLayers();
+                newLayers.eachLayer((l) => {
+                    searchLayers.current.addLayer(l);
+                });
+                if (prevSelectedRes.current && searchLayers.current) {
+                    // If we have a previously selected result, re-add it to the search layers
+                    let wasFound = false;
+                    searchLayers.current.getLayers().forEach((layer) => {
+                        if (layer.options.idObj === prevSelectedRes.current.options.idObj) {
+                            prevSelectedRes.current = selectMarker(layer, prevSelectedRes.current, SEARCH_LAYER_ID);
+                            wasFound = true;
+                        }
+                    });
+                    if (!wasFound) {
+                        // If the previously selected result is not found, reset it
+                        prevSelectedRes.current = null;
+                    }
+                }
             }
         };
 
@@ -205,15 +225,21 @@ export default function SearchLayer() {
                     const layers = await createSearchLayer({
                         objList: ctx.searchResult?.features,
                     });
+                    searchLayers.current = layers;
+                    console.log(`SearchLayer: adding search layer with ${layers.getLayers().length} markers`);
                     layers.addTo(map).on('click', onClick);
                 }
             }
         };
+
         addAsyncLayers().then();
     }, [ctx.searchResult]);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
+
+        prevSelectedRes.current = selectMarker(e.sourceTarget, prevSelectedRes.current);
+
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
@@ -261,7 +287,8 @@ export default function SearchLayer() {
                     ...obj.properties,
                     idObj: getObjIdSearch(obj),
                     title: title,
-                    icon: icon,
+                    icon,
+                    svg: icon.options.svg,
                     [FINAL_POI_ICON_NAME]: finalIconName,
                 });
             })
@@ -283,7 +310,7 @@ export default function SearchLayer() {
                 mainStyle: true,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
-                iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                iconSize: DEFAULT_ICON_SIZE,
                 map,
                 ctx,
                 pointerStyle: styles.hoverPointer,
@@ -333,7 +360,7 @@ export default function SearchLayer() {
             background: DEFAULT_POI_SHAPE,
             svgIcon: coloredSvg,
         }).options.html;
-        return L.divIcon({ html: iconHtml });
+        return L.divIcon({ html: iconHtml, svg: coloredSvg });
     }
 
     function searchByCategory(category, key, catLang) {

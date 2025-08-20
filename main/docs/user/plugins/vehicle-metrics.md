@@ -16,23 +16,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-<InfoAndroidOnly/>
 
 ## Overview {#overview}
 
 :::info Paid feature
-The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
+The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app. Vehicle speed and Engine speed info is available for OsmAnd free.
 :::
 
-The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the OBD-II protocol. Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
+The **Vehicle Metrics plugin** enables real-time vehicle data monitoring via the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Users can track essential metrics such as engine performance, fuel efficiency, and speed, allowing for proactive vehicle maintenance and troubleshooting.  
 
-OBD-II scanners are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
+[OBD-II scanners](https://en.wikipedia.org/wiki/ELM327) are integral to modern automotive diagnostics. With real-time data streaming, users gain instantaneous insights into vehicle systems, facilitating preventive maintenance and reducing repair costs. These tools are vital for both personal use and professional automotive services.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OBD settings](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
@@ -54,9 +59,26 @@ To use data from an OBD-II scanner:
 
 ### Pair ODB-II Scanner {#pair-odb-ii-scanner}
 
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 |  |  |
 |--|--|
 |![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+|  |  |
+|--|--|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+
+</TabItem>
+
+</Tabs>
 
 Connect the scanner to your vehicle’s port and pair it through the app:
 
@@ -68,11 +90,30 @@ Choose your OBD-II device from the list and establish the connection.
 
 ## Scanner Settings {#scanner-settings}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 **Android.** Go to: *Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
 
 |  |  |
 |--|--|
 |![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS.** Go to: *Menu → Plugins → Vehicle Metrics → OBD → three-dot menu*
+
+|  |  |
+|--|--|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+
+</TabItem>
+
+</Tabs>
 
 - **Connect / Disconnect**. Establishes or terminates the connection with the OBD-II sensor.
 - **Settings**. Opens the OBD-II settings screen, allowing connection management and access to available vehicle parameters.
@@ -113,11 +154,33 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
 
 ## Trip Recording {#trip-recording}
 
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 **Android**. Go to: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
 |![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS**. Go to: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+
+| | |
+|--|--|
+|![OBD recording](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+
+</TabItem>
+
+</Tabs>
+
+
 
 To include OBD-II data in a GPX file, you need to select the desired parameters for recording using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). This allows you to analyze vehicle metrics alongside your trip data.
 
@@ -134,11 +197,32 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 ## Widgets {#widgets}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 **Android.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
 
 | | |
 |--|--|
 |![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
+
+| | |
+|--|--|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
+
+</TabItem>
+
+</Tabs>
+
+
 
 The [Vehicle Metrics widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) are automatically included when you enable the plugin. If they do not visible, you can manually add them via the [Configure Screen](../widgets/configure-screen.md) menu.
 
@@ -158,4 +242,4 @@ Some widgets offer display mode options:
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: December 2024*
+> *Last updated: August 2025*

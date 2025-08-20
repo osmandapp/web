@@ -1,5 +1,5 @@
 ---
-source-hash: e46e862bf3423da156a08ba066e94f7d2262dcd693d6bfcdfd87d3e6f3328253
+source-hash: aedd55d826014d3cfaaa5918963baf22bd911b20a8772409d2eb09fa220d9c67
 sidebar_position: 6
 title: Mapillary
 ---
@@ -14,18 +14,18 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-Per spostarsi più velocemente, in OsmAnd è possibile utilizzare le viste a livello stradale dei percorsi o dei punti di interesse forniti da [Mapillary](https://www.mapillary.com/) (è necessaria una connessione a Internet).
+Per spostarsi più velocemente, in OsmAnd è possibile utilizzare le visualizzazioni a livello stradale dei percorsi o dei punti di interesse fornite da [Mapillary](https://www.mapillary.com/) (è necessaria una connessione a Internet).
 
-[Il livello Mapillary](https://www.mapillary.com/) porta le immagini a livello stradale direttamente nell'app OsmAnd, in modo da poter facilmente avere una panoramica dei dintorni di qualsiasi punto di interesse o lungo il percorso pianificato. Se mancano delle immagini, puoi aggiungerle tu stesso e altri potranno utilizzarle. Questa funzione è nata dalla nostra collaborazione con [il team Mapillary](https://www.mapillary.com/about), unendo i vantaggi di entrambe le app.
+Il [livello Mapillary](https://www.mapillary.com/) porta le immagini a livello stradale direttamente nell'app OsmAnd, in modo da poter facilmente avere una panoramica dei dintorni di qualsiasi luogo di interesse o lungo il percorso pianificato. Se le immagini mancano, è possibile aggiungerle autonomamente e altri possono utilizzarle. Questa funzione è nata dalla nostra collaborazione con il [team Mapillary](https://www.mapillary.com/about), unendo i vantaggi di entrambe le app.
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
-Per visualizzare le immagini a livello stradale sulla mappa OsmAnd, è necessario effettuare le seguenti impostazioni:
+Per visualizzare le immagini a livello stradale sulla mappa di OsmAnd, è necessario effettuare le seguenti impostazioni:
 
-1. Abilita il [plugin Mapillary](../plugins/#enable--disable) nella sezione *Plugin* del *Menu principale*.
-2. Visualizza le [Immagini a livello stradale](#enable-layer) sulla mappa per il profilo richiesto nel menu Configura mappa.
+1. Abilitare il [plugin Mapillary](../plugins/#enable--disable) nella sezione *Plugin* del *Menu principale*.
+2. Visualizzare le [immagini a livello stradale](#enable-layer) sulla mappa per il profilo richiesto nel menu Configura mappa.
 
-## Livello della mappa {#map-layer}
+## Livello mappa {#map-layer}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,12 +43,12 @@ Per visualizzare le immagini a livello stradale sulla mappa OsmAnd, è necessari
 
 </Tabs>
 
-Il livello della mappa con le immagini stradali viene visualizzato sulla mappa OsmAnd come righe di punti verdi collegati.
+Il livello della mappa con le immagini stradali viene visualizzato sulla mappa di OsmAnd come righe di punti verdi collegati.
 
 - Le foto degli utenti Mapillary sono allegate a questi punti verdi.
-- Tocca un punto verde sulla mappa per aprire una foto con vista stradale. Le foto possono anche essere selezionate da un elenco nel [menu contestuale della mappa](#map-context-menu), se disponibili.
-- Dopo la selezione, lo schermo dell'applicazione è diviso tra la mappa OsmAnd e le immagini a livello stradale di Mapillary.
-- Puoi applicare [filtri](#data-filtering) per selezionare le foto che desideri visualizzare sulla mappa.
+- Tocca un punto verde sulla mappa per aprire una foto di Street View. Le foto possono anche essere selezionate da un elenco nel [menu contestuale della mappa](#map-context-menu), se disponibile.
+- Dopo la selezione, la schermata dell'applicazione è divisa tra la mappa di OsmAnd e le immagini a livello stradale di Mapillary.
+- È possibile applicare [filtri](#data-filtering) per selezionare le foto da visualizzare sulla mappa.
 
 ### Abilita livello {#enable-layer}
 
@@ -72,9 +72,9 @@ Per visualizzare le immagini a livello stradale di Mapillary sulla mappa, è nec
 
 *Per accedere: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
 
-:::note Visualizzatore foto Mapillary
+:::note Visualizzatore di foto Mapillary
 
-- Tocca il pulsante *menu a tre punti* (&#8285;) per aprire l'immagine selezionata nell'applicazione [**Mapillary**](https://www.mapillary.com/mobile-apps).
+- Tocca il pulsante *menu a tre puntini* (&#8285;) per aprire l'immagine selezionata nell'applicazione [**Mapillary**](https://www.mapillary.com/mobile-apps).
 - Tocca la freccia per passare da un'immagine all'altra.
 :::
 
@@ -96,12 +96,12 @@ Per visualizzare le immagini a livello stradale di Mapillary sulla mappa, è nec
 
 </Tabs>
 
-Puoi creare un filtro e selezionare quali foto visualizzare sulla mappa. Ad esempio, scegli di visualizzare solo le immagini recenti o solo le immagini a 360 gradi.
+È possibile creare un filtro e selezionare quali foto visualizzare sulla mappa. Ad esempio, scegliere di visualizzare solo le immagini recenti o solo le immagini a 360 gradi.
 
 *Per accedere: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-:::note Cache tile
-Se le immagini selezionate non vengono visualizzate, utilizza **Ricarica** per la **Cache tile**.
+:::note Cache delle tessere
+Se le immagini selezionate non vengono visualizzate, utilizzare **Ricarica** per la **Cache delle tessere**.
 :::
 
 ## Menu contestuale della mappa {#map-context-menu}
@@ -122,7 +122,7 @@ Se le immagini selezionate non vengono visualizzate, utilizza **Ricarica** per l
 
 </Tabs>
 
-Se il plugin Mapillary è abilitato, puoi visualizzare le foto delle strade disponibili entro un raggio di 40 metri dal punto selezionato sulla mappa. Le foto vengono aperte nel [menu contestuale della mappa](../map/map-context-menu.md#online-photos).
+Se il plugin Mapillary è abilitato, è possibile visualizzare le foto delle strade disponibili entro un raggio di 40 metri dal punto selezionato sulla mappa. Le foto vengono aperte nel [menu contestuale della mappa](../map/map-context-menu.md#online-photos).
 
 ## Aggiungi foto {#add-photos}
 
@@ -142,7 +142,7 @@ Se il plugin Mapillary è abilitato, puoi visualizzare le foto delle strade disp
 
 </Tabs>
 
-Per aggiungere foto, è necessario registrarsi nell'[app Mapillary](https://www.mapillary.com/mobile-apps). Puoi anche aggiungere foto al menu contestuale della mappa toccando il pulsante *Aggiungi foto* nella sezione [Foto online](../map/map-context-menu.md#online-photos) del menu contestuale della mappa. Quindi si aprirà l'applicazione Mapillary.
+Per aggiungere foto, è necessario registrarsi nell'[app Mapillary](https://www.mapillary.com/mobile-apps). È anche possibile aggiungere foto al menu contestuale della mappa toccando il pulsante *Aggiungi foto* nella sezione [Foto online](../map/map-context-menu.md#online-photos) del menu contestuale della mappa. Quindi si aprirà l'applicazione Mapillary.
 
 ## Widget Mapillary {#mapillary-widget}
 
@@ -166,12 +166,12 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-Il [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) viene utilizzato per ottenere un rapido accesso all'applicazione Mapillary. Il widget viene aggiunto automaticamente alla schermata principale quando il plugin Mapillary è abilitato. Puoi abilitare o disabilitare il widget Mapillary e altri widget nel menu [Configura schermata](../widgets/configure-screen.md).
+Il [widget Mapillary](../widgets/info-widgets.md#mapillary-widget) viene utilizzato per ottenere un rapido accesso all'applicazione Mapillary. Il widget viene aggiunto automaticamente alla schermata principale quando il plugin Mapillary è abilitato. È possibile abilitare o disabilitare il widget Mapillary e altri widget nel menu [Configura schermo](../widgets/configure-screen.md).
 
 ## Articoli correlati {#related-articles}
 
 - [Interagisci con la mappa](../../user/map/interact-with-map.md)
 - [Impostazioni globali](../../user/personal/global-settings.md)
-- [Mappe vettoriali (Stili mappa)](../../user/map/vector-maps.md)
+- [Mappe vettoriali (stili di mappa)](../../user/map/vector-maps.md)
 
-> *Ultimo aggiornamento: Ottobre 2024*
+> *Ultimo aggiornamento: ottobre 2024*

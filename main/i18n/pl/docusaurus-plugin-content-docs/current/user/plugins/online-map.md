@@ -1,7 +1,7 @@
 ---
-source-hash: 1b9d749ebb8730c64d4b1fceddc86003dfc6c14c7f5e556129e21a75f245cdc3
+source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
 sidebar_position: 8
-title: Mapy Online
+title: Mapy online
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,20 +16,20 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Mapy Online OsmAnd to obszerne uzupełnienie bazy danych OpenStreetMap, już obecnej w aplikacji. Dzięki tej wtyczce możesz dodawać warstwy do swojej mapy z informacjami z innego źródła, począwszy od widoku satelitarnego lub szlaków turystycznych, a skończywszy na bardzo specyficznych danych, takich jak lokalizacja hydrantów przeciwpożarowych. Możesz również zmienić główne źródło mapy z map wektorowych na kafelki online.
+Mapy online OsmAnd stanowią obszerne uzupełnienie bazy danych OpenStreetMap, która jest już obecna w aplikacji. Dzięki tej wtyczce możesz dodawać warstwy do swojej mapy z informacjami z innego źródła, zaczynając od widoku satelitarnego lub szlaków turystycznych, a kończąc na bardzo specyficznych danych, takich jak lokalizacja hydrantów przeciwpożarowych. Możesz także zmienić główne źródło mapy z map wektorowych na kafelki online.
 
 
 ## Wymagane parametry konfiguracji {#required-setup-parameters}
 
-Możliwość korzystania z Map Online jest automatycznie włączona w wersji OsmAnd na iOS. Aby wyświetlić Mapy Online w systemie Android, należy dokonać następujących ustawień:
+Możliwość korzystania z map online jest automatycznie włączona w wersji OsmAnd na iOS. Aby wyświetlić mapy online w systemie Android, należy dokonać następujących ustawień:
 
-1. [Włącz](../plugins/index.md#enable--disable) wtyczkę **Mapy Online** w *Menu głównym → Wtyczki → Mapy Online*.
-2. Dokonaj niezbędnych ustawień w sekcji [Źródło mapy](../map/raster-maps.md#select-raster-maps) menu Konfiguruj mapę.
-3. Ustaw *Źródło mapy*, *Nakładkę* i *Podkład* mapy. Wybierz preferowanego dostawcę map satelitarnych.
-4. Pobierz wybraną [Mapę Online](#how-to-prepare-raster-maps), jeśli to konieczne.
+1. [Włącz](../plugins/index.md#enable--disable) wtyczkę **Mapy online** w *Menu głównym → Wtyczki → Mapy online*.
+2. Dokonaj niezbędnych ustawień w sekcji [Źródło mapy](../map/raster-maps.md#select-raster-maps) w menu Konfiguruj mapę.
+3. Ustaw *Źródło mapy*, *Nakładkę* i *Podkład*. Wybierz preferowanego dostawcę map satelitarnych.
+4. W razie potrzeby pobierz wybraną [Mapę online](#how-to-prepare-raster-maps).
 
 
-## Używaj map rastrowych na urządzeniu {#use-raster-maps-on-device}
+## Korzystanie z map rastrowych na urządzeniu {#use-raster-maps-on-device}
 
 Szczegółowe informacje na temat wizualizacji i dostosowywania map rastrowych można znaleźć w artykule [Mapy rastrowe](../map/raster-maps.md). Jak używać:
 
@@ -37,8 +37,8 @@ Szczegółowe informacje na temat wizualizacji i dostosowywania map rastrowych m
     - [Zmień](../map/raster-maps.md#how-to-use-raster-maps) parametry warstwy (przezroczystość).
 
 2. [Przygotuj / skopiuj](../map/raster-maps.md#prepare--copy-raster-maps-to-device) mapy rastrowe na urządzenie.
-    - [Dodaj nowe źródło mapy rastrowej online](../map/raster-maps.md#add-new-online-raster-map-source)
-    - [Dodaj Magic URL](../map/raster-maps.md#magic-url-to-install-map-source), aby zainstalować źródło mapy.
+    - [Dodaj nowe źródło map rastrowych online](../map/raster-maps.md#add-new-online-raster-map-source)
+    - [Dodaj magiczny URL](../map/raster-maps.md#magic-url-to-install-map-source), aby zainstalować źródło mapy.
 
 3. [Zarządzaj](../map/raster-maps.md#manage-raster-maps) mapami rastrowymi.
     - [Pobierz / zaktualizuj kafelki](../map/raster-maps.md#download--update-tiles).
@@ -69,24 +69,24 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 ## Jak przygotować mapy rastrowe {#how-to-prepare-raster-maps}
 
 :::info
-Główny artykuł do przygotowania map [przeczytaj tutaj](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Główny artykuł dotyczący przygotowywania map [przeczytaj tutaj](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Mimo że wtyczka nazywa się *Mapy Online*, możesz używać map również bez połączenia z internetem. Wystarczy zapisać części map (często nazywane kafelkami), aby użyć ich później. Aby to zrobić, pobierz specjalne [narzędzie Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) opracowane przez zespół OsmAnd.
+Mimo że wtyczka nazywa się *Mapy online*, możesz korzystać z map również bez połączenia z internetem. Wystarczy zapisać fragmenty map (często nazywane kafelkami), aby użyć ich później. Aby to zrobić, pobierz specjalne [narzędzie Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) opracowane przez zespół OsmAnd.
 
 Wybierz obszar, który chcesz pobrać, kliknij Preload area, a następnie ustaw najmniejszy i największy poziom powiększenia, który chcesz wyświetlić, i pobierz kafelki.
-W przypadku <b>wersji Android</b> możesz skopiować je do folderu <i>osmand/tiles/*typ kafelka*</i> w telefonie. Musisz również otworzyć <i>Konfiguruj mapę -> Mapa nakładkowa</i> i wybrać kafelki online OsmAnd.
+W przypadku **wersji Android** możesz skopiować je do folderu *osmand/tiles/*typ kafelka** w telefonie. Musisz także otworzyć *Konfiguruj mapę -> Mapa nakładkowa* i wybrać kafelki online OsmAnd.
 
-W przypadku <b>wersji iOS</b> możesz wybrać plik SQ Lite w telefonie (dowolny komunikator lub Dropbox), OsmAnd zasugeruje jego dodanie. Musisz również otworzyć <i>Mapa → Nakładka / Podkład lub Typ mapy</i> i wybrać nowe źródło mapy.
+W przypadku **wersji iOS** możesz wybrać plik SQ Lite w telefonie (dowolny komunikator lub dropbox), OsmAnd zasugeruje jego dodanie. Musisz także otworzyć *Mapa → Nakładka / Podkład lub Typ mapy* i wybrać nowe źródło mapy.
 
-Jak dodać plik SQ Lite w wersji OsmAnd na Androida i iOS, możesz przeczytać w [<b>projekcie Anygis</b>](https://anygis.ru/Web/Html/Osmand_en).
+Jak dodać plik SQ Lite w wersji OsmAnd na Androida i iOS, możesz przeczytać w projekcie <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis</b></a>.
 
 
-Kafelki online mogą być pomocne, gdy potrzebujesz tylko małej sekcji mapy lub jej określonego typu do użycia na ograniczonym obszarze, ale nie chcesz pobierać całego regionu. Mogą się przydać w niezliczonych sytuacjach.
+Kafelki online mogą być pomocne, gdy potrzebujesz tylko małego fragmentu mapy lub jej określonego typu do użycia na ograniczonym obszarze, ale nie chcesz pobierać całego regionu. Mogą się przydać w niezliczonych sytuacjach.
 
-![Mapy Online](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Mapy online](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Mapy Online](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Mapy online](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Powiązane artykuły {#related-articles}
@@ -97,10 +97,10 @@ Kafelki online mogą być pomocne, gdy potrzebujesz tylko małej sekcji mapy lub
 
 ### Typowe problemy i rozwiązania {#common-issues-and-solutions}
 
-1. Mapy Online nie pojawiają się w menu Źródło mapy:  
+1. Mapy online nie pojawiają się w menu Źródło mapy:  
   
-    - Sprawdź, czy wtyczka Mapy Online jest włączona: *Menu → Wtyczki → Mapy Online*.  
-    - Upewnij się, że masz aktywne połączenie internetowe, aby uzyskać dostęp do zdjęć satelitarnych.  
-    - Sprawdź, czy wybrana Mapa Online jest pobrana lub wymaga [dodatkowych ustawień](../map/raster-maps.md#select-raster-maps).
+    - Sprawdź, czy wtyczka Mapy online jest włączona: *Menu → Wtyczki → Mapy online*.  
+    - Upewnij się, że masz aktywne połączenie z internetem, aby uzyskać dostęp do zdjęć satelitarnych.  
+    - Sprawdź, czy wybrana mapa online została pobrana lub wymaga [dodatkowych ustawień](../map/raster-maps.md#select-raster-maps).
 
 > *Ostatnia aktualizacja: styczeń 2025*

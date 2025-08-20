@@ -6,11 +6,11 @@ source-hash: cd8aaffff8157d524e85d5755e35248ae2363fbfe4b85b493213633acdd0e60c
 
 ### [الإصدارات المجانية - أندرويد](/docs/versions/free-versions) {#free-releases---android}
 
-قائمة بالإصدارات السابقة من OsmAnd لنظام أندرويد.
+قائمة بالإصدارات السابقة من تطبيق OsmAnd لنظام أندرويد.
 
 ### [إصدارات بيتا والليلية](/docs/versions/nightly_versions) {#beta--nightly-builds}
 
-يصدر OsmAnd يوميًا العديد من الإصدارات الجاهزة للاستخدام، مما يتيح لك متابعة والمشاركة في إنشاء ميزات جديدة (عملية الترجمة).
+يُصدر OsmAnd يوميًا العديد من الإصدارات الجاهزة للاستخدام، مما يتيح لك متابعة والمشاركة في إنشاء ميزات جديدة (عملية الترجمة).
 
 ### [OsmAnd MapCreator](/docs/versions/map-creator) {#osmand-mapcreator}
 

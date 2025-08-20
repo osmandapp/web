@@ -31,6 +31,7 @@ export default function Render() {
         'Cricket' : 'sport/sport_sport_cricket',
         'Cycling' : 'sport/sport_sport_cycling',
         'Diving' : 'sport/sport_sport_diving',
+        'Dojo' : 'sport/sport_sport_dojo',
         'Equestrian' : 'sport/sport_sport_equestrian',
         'Field hockey' : 'sport/sport_sport_field_hockey',
         'Hang gliding' : 'sport/sport_sport_hang_gliding',
@@ -60,8 +61,8 @@ export default function Render() {
         'Table tennis (ping-pong)' : 'sport/sport_sport_table_tennis',
         'Tennis' : 'sport/sport_sport_tennis',
         'Ten-pin bowling' : 'sport/sport_sport_10pin',
-        'Ultralight aviation' : 'sport/sport_sport_ultralight_aviation',
         'Volleyball' : 'sport/sport_sport_volleyball',
+        'Ultralight aviation' : 'sport/sport_sport_ultralight_aviation',
     }});
 
 }

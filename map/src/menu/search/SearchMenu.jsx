@@ -24,6 +24,7 @@ import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -114,7 +115,7 @@ export default function SearchMenu() {
     }, [searchValue]);
 
     useEffect(() => {
-        if (isMainSearchScreen) {
+        if (isMainSearchScreen && ltx.isLoggedIn()) {
             // for search categories
             if (mainCategories) {
                 setSearchCategories(mainCategories);
@@ -125,7 +126,7 @@ export default function SearchMenu() {
                 addWikiPlacesDefaultFilters(ctx, true, DEFAULT_EXPLORE_POITYPES);
             }
         }
-    }, [isMainSearchScreen, zoom]);
+    }, [isMainSearchScreen, zoom, ltx.loginUser]);
 
     useEffect(() => {
         if (ctx.wikiPlaces || zoom < EXPLORE_MIN_ZOOM) {
@@ -248,6 +249,7 @@ export default function SearchMenu() {
                                         .slice(0, 6)
                                         .map((item, key) => {
                                             const catName = translatePoi({ key, ctx, t });
+                                            const catNameId = catName.split(' ').join('_');
                                             return (
                                                 <Grid
                                                     item
@@ -257,7 +259,7 @@ export default function SearchMenu() {
                                                     id={'se-default-search-categories'}
                                                 >
                                                     <ListItemButton
-                                                        id={'se-default-search-categories-item-' + catName}
+                                                        id={'se-default-search-categories-item-' + catNameId}
                                                         key={key}
                                                         onClick={(e) => {
                                                             searchByCategory(catName);

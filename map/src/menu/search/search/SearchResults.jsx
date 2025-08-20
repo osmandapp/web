@@ -227,6 +227,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     function backToMainSearch() {
         setOpenSearchResults(false);
         setIsMainSearchScreen(true);
+        ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchQuery(null);
     }

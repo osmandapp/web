@@ -1,7 +1,7 @@
 ---
-source-hash: 6d1b3b96d03eeb0a709cb35252dd6e33692ccafc93d1375f5cfba33926b39f5a
+source-hash: 71c20d65a3fb26bf934cf5f977a6fd59d90d866366d685c137ace186ae0877f8
 sidebar_position: 3
-title:  Ustawienia globalne
+title: Ustawienia globalne
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -44,7 +44,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Ogólne {#general}
 
-Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#default-profile) podczas ładowania aplikacji, wybór [silnika renderującego](#map-rendering-engine) i [folderu](#data-storage-folder), w którym dane będą zapisywane.  
+Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#default-profile) podczas ładowania aplikacji, wybór [silnika renderowania](#map-rendering-engine) i [folderu](#data-storage-folder), w którym dane będą zapisywane.  
 
 
 ### Profil domyślny {#default-profile}
@@ -65,23 +65,23 @@ Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#defa
 
 </Tabs>
 
-OsmAnd używa domyślnego profilu, *Przeglądaj mapę*, jako pierwszego profilu dla nowych użytkowników, a jeśli ten profil został przez Ciebie wybrany, będzie on używany przy każdym ponownym uruchomieniu aplikacji. Możesz wybrać dowolny profil z listy domyślnej, w tym *Ostatnio używane* i *Przeglądaj mapę*.
+OsmAnd używa domyślnego profilu, *Przeglądaj mapę*, jako pierwszego profilu dla nowych użytkowników, a jeśli ten profil został przez Ciebie wybrany, będzie on używany przy każdym ponownym uruchomieniu aplikacji. Możesz wybrać dowolny profil z listy domyślnej, w tym *Ostatnio używany* i *Przeglądaj mapę*.
 
-- **<Translate android="true" ids="shared_string_last_used"/>**. Umożliwia wybranie ostatnio używanego profilu.
+- **<Translate android="true" ids="shared_string_last_used"/>**. Pozwala wybrać ostatnio używany profil.
 - **<Translate android="true" ids="settings_preset"/>**. Wybierasz profil, który ma być używany podczas uruchamiania OsmAnd. Można go zmienić w [ustawieniach](../personal/profiles.md) aplikacji.  
 
 
 ### Profil CarPlay {#carplay-profile}
 
 :::caution TYLKO iOS
-Ta funkcja jest dostępna w wersji aplikacji OsmAnd na iOS.
+Ta funkcja jest dostępna dla wersji iOS aplikacji OsmAnd.
 :::
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) jest używany po podłączeniu do oprogramowania [CarPlay](https://support.apple.com/en-gb/HT205634) w Twoim pojeździe i pomaga w pełni wykorzystać zoptymalizowaną wersję aplikacji OsmAnd, używając systemów audio i wideo do wyświetlania danych na telefonie.
+[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) jest używany po podłączeniu do oprogramowania [CarPlay](https://support.apple.com/en-gb/HT205634) Twojego pojazdu i pomaga w pełni wykorzystać zoptymalizowaną wersję aplikacji OsmAnd, używając systemów audio i wideo do wyświetlania danych na telefonie.
 
 
 ### Folder przechowywania danych {#data-storage-folder}
@@ -94,18 +94,18 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Pamięć urządzenia** pokazuje, ile wolnego miejsca pozostało na Twoim urządzeniu. Dotknij pola, aby uzyskać dostęp do menu [*Mapy i zasoby*](../personal/maps-resources.md#maps--resources), gdzie możesz przeglądać i zarządzać szczegółowymi informacjami o danych OsmAnd.
+1. **Pamięć urządzenia** pokazuje, ile wolnego miejsca pozostało na Twoim urządzeniu. Dotknij pola, aby uzyskać dostęp do menu [*Mapy i zasoby*](../personal/maps-resources.md#maps--resources), gdzie możesz przeglądać i zarządzać szczegółowymi informacjami o swoich danych OsmAnd.
 
 2. W **<Translate android="true" ids="change_data_storage_folder"/>** możesz wybrać folder do zapisywania danych OsmAnd na swoim urządzeniu.  
 
-    - *Wewnętrzna pamięć aplikacji*. Tylko aplikacja OsmAnd ma dostęp do swoich danych i żadne z zewnętrznych aplikacji.
+    - *Wewnętrzna pamięć aplikacji*. Tylko aplikacja OsmAnd ma dostęp do swoich danych i żadna z zewnętrznych aplikacji.
     - *Pamięć współdzielona*. Już niedostępne.
-    - *Pamięć zewnętrzna 1*. Tylko 1 aplikacja OsmAnd ma dostęp oraz aplikacje administratora i USB.
-    - *Pamięć wieloużytkownikowa*. Tylko 1 aplikacja OsmAnd ma dostęp, ale jest współdzielona między wieloma użytkownikami Androida.
-    - *Ręcznie określony*. Zależy od ścieżki.
+    - *Pamięć zewnętrzna 1*. Tylko 1 aplikacja OsmAnd ma dostęp, a także aplikacje administratora i USB.
+    - *Pamięć wielu użytkowników*. Tylko 1 aplikacja OsmAnd ma dostęp, ale jest współdzielona między wieloma użytkownikami Androida.
+    - *Ręcznie określone*. Zależy od ścieżki.
 
 :::note Android 12+ (zmiana folderu przechowywania)
-Nowe wytyczne dotyczące dostępu do pamięci zostały wdrożone w wersjach Androida 11-12. Szczegóły można znaleźć w sekcji [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+Nowe wytyczne dotyczące dostępu do pamięci zostały zaimplementowane w wersjach Androida 11-12. Szczegóły można znaleźć w sekcji [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 :::
 
 </TabItem>
@@ -129,30 +129,30 @@ Przejdź do: *Pliki → Na moim telefonie → Mapy OsmAnd*
 </Tabs>
 
 
-### Silnik renderowania map {#map-rendering-engine}
+### Silnik renderowania mapy {#map-rendering-engine}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (Tylko Android)*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (tylko Android)*
 
 ![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
-- W wersji aplikacji na **Androida** możesz przełączać się między renderowaniem mapy w wersji 1, pierwotnie zaimplementowanej w aplikacji OsmAnd, a wersją 2, która używa interfejsu programowania OpenGL (Open Graphics Library) do renderowania dwu- i trójwymiarowych obiektów graficznych.
+- W wersji **Android** aplikacji możesz przełączać się między renderowaniem mapy w wersji 1, pierwotnie zaimplementowanej w aplikacji OsmAnd, a wersją 2, która wykorzystuje interfejs programowania OpenGL (Open Graphics Library) do renderowania dwu- i trójwymiarowych obiektów graficznych.
 
-- Wersja na **iOS** używa tylko OpenGL do renderowania map.
+- Wersja **iOS** używa tylko OpenGL do renderowania mapy.
 
 
 | Funkcje | Wersja 1 | Wersja 2 (OpenGL) |
 |:---|:--- |:--- |
-| Wieloplatformowość | Nie używana w wersji na iOS. | Pasuje do obu wersji. |
-| Zależność od GPU / CPU | Zalecane dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderujący. <br /> Dostępny tylko dla [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) i nowszych wersji, oraz w trybie testowym dla [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
-| Tryb 3D | Możliwe jest przeglądanie mapy w 2D, a także zmiana kąta widzenia w celu uzyskania [widoku 3D](../widgets/map-buttons.md#3d-mode). | Możesz przeglądać mapę w 2D i [3D](../widgets/map-buttons.md#3d-mode). |
-| Wyświetlanie mapy | Cała mapa jest renderowana jako zestaw kafelków, a znaczniki, linie i tekst są już wewnątrz tych kafelków. | Najpierw renderowany jest cały pakiet kafelków, a następnie dostępne symbole są stosowane do mapy, [warstwa po warstwie](../../technical/algorithms/map-rendering-layers.md). |
-| Przezroczyste nakładanie / podkładanie symboli | Obsługuje wszystkie ustawienia. | Nie obsługuje warstwy rastrowej na wierzchu tekstu wektorowego. |
+| Wieloplatformowość | Nie używane w wersji iOS. | Pasuje do obu wersji. |
+| Zależność od GPU / CPU | Zalecane dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderowania. <br /> Dostępne tylko dla [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) i nowszych wersji, oraz w trybie testowym dla [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Tryb 3D | Możliwe jest przeglądanie mapy w 2D, a kąt widzenia można zmienić, aby uzyskać [widok 3D](../widgets/map-buttons.md#3d-mode). | Możesz przeglądać mapę w 2D i [3D](../widgets/map-buttons.md#3d-mode). |
+| Wyświetlanie mapy | Cała mapa jest renderowana jako zestaw kafelków, a znaczniki, linie i tekst są już wewnątrz tych kafelków. | Najpierw renderowany jest cały pakiet kafelków, a następnie dostępne symbole są nakładane na mapę, [warstwa po warstwie](../../technical/algorithms/map-rendering-layers.md). |
+| Przezroczyste nakładki / podkładki symboli | Obsługuje wszystkie ustawienia. | Nie obsługuje warstwy rastrowej na wierzchu tekstu wektorowego. |
 | [Teren 3D](../map/raster-maps.md#3d-relief) | Nieobsługiwane. | Ta funkcja wizualizuje teren na mapie, dodając informacje o wysokości do normalnej mapy 2D, co tworzy efekt 3D i głębi. |
 | [Ślady 3D](../map/tracks/appearance.md) | Nieobsługiwane. | Ta funkcja pozwala wyświetlać ślady według wysokości nad poziomem morza. |
-| [Mapa online](../plugins/online-map.md) | Nie obsługuje wyświetlania linii konturowych, jeśli źródłem mapy jest jakakolwiek internetowa mapa kafelkowa. | Gdy źródłem mapy jest mapa online, używane są również mapy 3D, a wyświetlanie linii konturowych na mapie jest obsługiwane. |
-| [Wtyczka pogodowa](../plugins/weather.md) | Nie możesz używać tej wtyczki. | Wygodna w użyciu z wtyczką. |  
+| [Mapa online](../plugins/online-map.md) | Nie można używać tej wtyczki. | Nie obsługuje wyświetlania linii konturowych, jeśli źródłem mapy jest dowolna mapa kafelkowa online. |
+| [Wtyczka pogodowa](../plugins/weather.md) | Nie można używać tej wtyczki. | Wygodne w użyciu z wtyczką. |  
 
-Obraz dla widoku 3D mapy jest ładowany kafel po kafelku, a następnie wszystkie symbole. Szybkość renderowania mapy zależy od liczby obiektów graficznych 2D i 3D na niej oraz bezpośrednio od wydajności Twojego sprzętu. Dlatego wersja 2 (OpenGL) nie może być używana na urządzeniach o niskiej wydajności.
+Obraz dla widoku 3D mapy jest ładowany kafel po kafelku, a następnie wszystkie symbole. Szybkość renderowania mapy zależy od liczby obiektów graficznych 2D i 3D na niej, a bezpośrednio od wydajności Twojego sprzętu. Dlatego wersja 2 (OpenGL) nie może być używana na urządzeniach o niskiej wydajności.
 
 <table class="blogimage">
     <tr>
@@ -165,10 +165,10 @@ Obraz dla widoku 3D mapy jest ładowany kafel po kafelku, a następnie wszystkie
 
 ## Prywatność i bezpieczeństwo {#privacy-and-security}
 
-OsmAnd pozwala wybrać, czy chcesz [udostępniać swoją aktywność w aplikacji](#analytics) i [identyfikatory](#identifiers) (tylko Android), możliwość edycji [historii](#history) i korzystania z [proxy](#proxy) (tylko Android) według własnego wyboru.  
+OsmAnd pozwala wybrać, czy [udostępniać aktywność w aplikacji](#analytics) i [identyfikatory](#identifiers) (tylko Android), możliwość edycji [historii](#history) i korzystania z [proxy](#proxy) (tylko Android) według własnego wyboru.  
 
 :::note
-Więcej informacji można znaleźć w [Polityce prywatności i bezpieczeństwa OsmAnd](../../legal/privacy-policy.md)
+Więcej informacji można znaleźć w [*Polityce prywatności i bezpieczeństwa OsmAnd*](../../legal/privacy-policy.md)
 :::
 
 ### Analityka {#analytics}
@@ -193,7 +193,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Ustawienie **<Translate android="true" ids="analytics_pref_title"/>** (Android) lub **<Translate ios="true" ids="send_anonymous_data"/>** (iOS) pozwala wybrać, czy chcesz udostępniać anonimowe dane o *Pobranych mapach* i *Odwiedzonych ekranach* (Android).  
+Ustawienie **<Translate android="true" ids="analytics_pref_title"/>** (Android) lub **<Translate ios="true" ids="send_anonymous_data"/>** (iOS) pozwala wybrać, czy udostępniać anonimowe dane o *Pobranych mapach* i *Odwiedzonych ekranach* (Android).  
 
 :::note
 Dane o Twojej lokalizacji lub miejscach, które przeglądasz na mapie, nie są zbierane.
@@ -209,7 +209,7 @@ Dane o Twojej lokalizacji lub miejscach, które przeglądasz na mapie, nie są z
 
 **UUID** (*Unikalny Identyfikator Użytkownika*) jest generowany dla każdej instalacji aplikacji OsmAnd i wysyłany na serwery podczas ładowania mapy.
 
-- Losowy UUID jest używany do pobierania map offline z serwerów OsmAnd w celu kontrolowania racjonalnego wykorzystania zasobów serwera, przewidywania wykorzystania ruchu i dostarczania ogólnych miesięcznych raportów o pobieraniu map.
+- Losowy UUID jest używany do pobierania map offline z serwerów OsmAnd w celu kontrolowania racjonalnego wykorzystania zasobów serwera, przewidywania wykorzystania ruchu i dostarczania ogólnych miesięcznych raportów dotyczących pobierania map.
 - UUID zmienia się co 3 miesiące.  
 - Począwszy od wersji OsmAnd 4.3, możesz wyłączyć zbieranie danych użytkownika podczas korzystania z aplikacji OsmAnd. Wtedy UUID nie będzie wysyłany z żadnym żądaniem pobrania.  
 - Więcej informacji można znaleźć w [Warunkach użytkowania (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
@@ -237,14 +237,14 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-Aplikacja rejestruje historię wcześniej wprowadzonych danych (historię) w następujących kategoriach: [Wyszukiwanie](../search/search-history.md), [Nawigacja](../navigation/setup/route-navigation.md#history-of-previous-routes), [Znaczniki mapy](../personal/markers.md#history). Za pomocą przełącznika na odpowiedniej zakładce możesz *włączyć / wyłączyć* logowanie dla niektórych kategorii wpisów. Możesz także [zarządzać](#history) (przeglądać, usuwać i udostępniać) wcześniej zarejestrowane dane.  
+Aplikacja rejestruje historię wcześniej wprowadzonych danych (historię) w następujących kategoriach: [Wyszukiwanie](../search/search-history.md), [Nawigacja](../navigation/setup/route-navigation.md#history-of-previous-routes), [Znaczniki mapy](../personal/markers.md#history). Za pomocą przełącznika na odpowiedniej zakładce możesz *Włączyć / Wyłączyć* rejestrowanie dla niektórych kategorii wpisów. Możesz również [zarządzać](#history) (przeglądać, usuwać i udostępniać) wcześniej zarejestrowane dane.  
 
 - ***Kopia zapasowa jako plik*** (Android) lub ***Eksportuj*** (iOS) służy do tworzenia [pliku kopii zapasowej](../personal/import-export.md#export) Twojej historii.
 - ***Wyczyść całą historię*** (Android) lub ***Usuń całą historię*** (iOS) służy do usuwania wszystkich wpisów historii zarejestrowanych do momentu usunięcia.
 
 <br/>
 
-**Udostępnianie i usuwanie historii.**
+**Udostępnij i usuń historię.**
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -274,7 +274,7 @@ Aplikacja rejestruje historię wcześniej wprowadzonych danych (historię) w nas
 
 ![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
-Ustawienie **<Translate android="true" ids="proxy_pref_title"/>** pozwala skonfigurować [proxy HTTP](https://en.wikipedia.org/wiki/Proxy_server) dla wszystkich żądań sieciowych. Możesz ustawić *Host proxy* i *Port proxy*.  
+Ustawienie **<Translate android="true" ids="proxy_pref_title"/>** pozwala skonfigurować [serwer proxy HTTP](https://en.wikipedia.org/wiki/Proxy_server) dla wszystkich żądań sieciowych. Możesz ustawić *Host proxy* i *Port proxy*.  
 
 
 ## Inne {#other}
@@ -302,7 +302,7 @@ W tej sekcji ustawień OsmAnd możesz skonfigurować otrzymywane powiadomienia, 
 Ustawienie **<Translate android="true" ids="dialogs_and_notifications_title"/>** pozwala włączyć/wyłączyć wyskakujące okienka, dialogi i powiadomienia.  
 
 - *Wiadomość startowa* zawiera promocje, quizy, wydarzenia i inne.
-- *<Translate ios="true" ids="do_not_show_discount"/>* (iOS) wyłącza wyświetlanie zniżek na aplikacje i specjalnych wiadomości o lokalnych wydarzeniach.
+- *<Translate ios="true" ids="do_not_show_discount"/>* (iOS) wyłącza wyświetlanie zniżek na aplikacje i specjalnych wiadomości o wydarzeniach lokalnych.
 - [*Okno dialogowe pobierania mapy*](../start-with/download-maps.md#download) informuje, że można pobrać określone mapy.
 
 
@@ -312,11 +312,11 @@ Ustawienie **<Translate android="true" ids="dialogs_and_notifications_title"/>**
 
 ![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
 
-OsmAnd oferuje wybór usług do określania Twojej lokalizacji. Zaleca się zapoznanie się z informacjami o [uprawnieniach do lokalizacji](../start-with/first-steps.md#permission-to-access-the-location) i [rozwiązywaniu problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) w tej sekcji.
+OsmAnd zapewnia wybór usług do określania Twojej lokalizacji. Zaleca się zapoznanie z dodatkowymi informacjami na temat [uprawnień lokalizacji](../start-with/first-steps.md#permission-to-access-the-location) i [rozwiązywania problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) w tej sekcji.
 
 ***Android***:
 
-- Możesz wybrać, które usługi *Google Play* lub *Android API* OsmAnd będzie używać do określania Twojej lokalizacji. Może to być przydatne dla urządzeń bez *Usług Google Play* lub w przypadku niedokładnych danych lokalizacji lub wysokości podczas rejestrowania śladów.
+- Możesz wybrać, które usługi *Google Play* lub *Android API* OsmAnd będzie używać do określania Twojej lokalizacji. Może to być przydatne dla urządzeń bez *Usług Google Play* lub w przypadku niedokładnych danych lokalizacji lub wysokości podczas nagrywania śladów.
 - OsmAnd otrzymuje dane z zasobów *Google Fused Location Providers* i *Android GPS and Network Providers*. Możesz przełączyć **<Translate android="true" id="location_source" />** w: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
 ***iOS***:
@@ -338,15 +338,15 @@ OsmAnd oferuje wybór usług do określania Twojej lokalizacji. Zaleca się zapo
 
 - Należy pamiętać, że rozmiar kopii zapasowej jest ograniczony do *25 MB*.
 
-- Aby znaleźć pliki kopii zapasowych, użyj aplikacji menedżera plików innej firmy.  
-    *UWAGA: Pliki kopii zapasowych można znaleźć za pomocą menedżera plików Androida: Android → data → net.osmand → files → backup, ale należy pamiętać, że w ostatnich wersjach Androida dostęp do katalogów systemowych jest ograniczony.*  
+- Aby znaleźć pliki kopii zapasowej, użyj aplikacji menedżera plików innej firmy.  
+    *UWAGA: Pliki kopii zapasowej można znaleźć za pomocą menedżera plików Androida: Android → data → net.osmand → files → backup, ale należy pamiętać, że w ostatnich wersjach Androida dostęp do katalogów systemowych jest ograniczony.*  
 
 **Jeśli używasz [*OsmAnd Cloud*](../personal/osmand-cloud.md), zaleca się dezaktywację tej domyślnej opcji tworzenia kopii zapasowych, aby zapobiec wszelkim nieporozumieniom podczas ponownej instalacji.**
 
 
 ## Prawne {#legal}
 
-OsmAnd może [ostrzegać o fotoradarach](../navigation/guidance/navigation-settings.md#screen-alerts), ale tylko wtedy, gdy zezwalają na to przepisy w Twoim kraju.
+OsmAnd może [ostrzegać Cię o fotoradarach](../navigation/guidance/navigation-settings.md#screen-alerts), ale tylko wtedy, gdy przepisy w Twoim kraju na to pozwalają.
 
 
 ### Odinstaluj fotoradary {#uninstall-speed-cameras}
@@ -386,8 +386,8 @@ Przeczytaj o alertach o fotoradarach na Twojej trasie w artykule Widżety nawiga
 
 ### Rozwiązywanie problemów {#troubleshooting}
 
-- **Android 12+ (zmiana folderu przechowywania)**. Nowe wytyczne dotyczące dostępu do pamięci zostały wdrożone w wersjach Androida 11-12. Zmiany te szczególnie wpływają na przechowywanie map na kartach SD, co skutkuje znacznie wolniejszą wydajnością dostępu do plików i bardziej rygorystycznymi ograniczeniami dostępu do folderów kart SD na Androidzie 11 i 12. Aby dowiedzieć się, jak rozwiązać ten problem, zobacz sekcję [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **Android 12+ (zmiana folderu przechowywania)**. Nowe wytyczne dotyczące dostępu do pamięci zostały zaimplementowane w wersjach Androida 11-12. Zmiany te szczególnie wpływają na przechowywanie map na kartach SD, co skutkuje znacznie wolniejszą wydajnością dostępu do plików i bardziej rygorystycznymi ograniczeniami dostępu do folderów kart SD na Androidzie 11 i 12. Aby rozwiązać ten problem, zapoznaj się z sekcją [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
-- **Źródło lokalizacji dla problemów z wysokością**. Google Play zmieniło swoją politykę, a aby się do niej dostosować, OsmAnd, począwszy od wersji 3.9, musi używać Usług Google Play do uzyskiwania poprawek lokalizacji podczas działania w tle. Więcej informacji można znaleźć w sekcji [Rozwiązywanie problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
+- **Źródło lokalizacji dla problemów z wysokością**. Google Play zmieniło swoją politykę, a aby ją spełnić, OsmAnd, począwszy od wersji 3.9, musi używać Usług Google Play do uzyskiwania poprawek lokalizacji podczas działania w tle. Więcej informacji można znaleźć w sekcji [Rozwiązywanie problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
 
 > *Ostatnia aktualizacja: listopad 2024*

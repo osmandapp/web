@@ -83,10 +83,25 @@ export default function Weather() {
     }, [ctx.weatherDate]);
 
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+        <Box
+            minWidth={ctx.infoBlockWidth}
+            maxWidth={ctx.infoBlockWidth}
+            sx={{
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+            }}
+        >
             <WeatherHeader />
             {dayForecast || weekForecast ? (
-                <>
+                <Box
+                    sx={{
+                        overflowX: 'hidden !important',
+                        overflowY: 'auto !important',
+                        flex: 1,
+                    }}
+                >
                     <TopWeatherInfo
                         loadingLocation={loadingLocation}
                         headerForecast={headerForecast}
@@ -102,7 +117,7 @@ export default function Weather() {
                         setHeaderForecast={setHeaderForecast}
                     />
                     <WeatherInfo dayForecast={dayForecast} weekForecast={weekForecast} />
-                </>
+                </Box>
             ) : (
                 <Loading />
             )}

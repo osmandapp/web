@@ -1,5 +1,5 @@
 ---
-source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
+source-hash: d8ecad2b589fe6b03fafc80bbd07389dac12a24a068d3fdd0ed26cb3959de697
 sidebar_position: 10
 ---
 import Tabs from '@theme/Tabs';
@@ -15,38 +15,46 @@ import Translate from '@site/src/components/Translate.js';
 
 Yaygın sorunlar için çözümler ve ipuçları.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Kurulum](./setup.md) {#setup}
 
-Android Auto ile ilgili en tipik sorunlar.
-
-### [Çökme Günlükleri](./crash-logs.md) {#crash-logs}
-
-Çökme günlüklerinin OsmAnd ekibine nasıl gönderileceğinin açıklaması.
+Uygulamayı kurarken karşılaşılan tipik sorunlar.
 
 ### [Genel](./general.md) {#general}
 
 Çeşitli OsmAnd özellikleriyle ilgili genel sorunlar.
 
-### [Haritalar ve Veriler](./maps-data.md) {#maps--data}
+### [Satın Almalar ve Ödemeler](./purchases_payments.md) {#purchases-and-payments}
 
-Haritalar, arama ve diğer verilerle ilgili sorunlar.
+Satın almalar, abonelikler ve ödemelerle ilgili sorunlar.
 
 ### [Navigasyon](./navigation.md) {#navigation}
 
-Navigasyon modunda karşılaşılan en yaygın sorunlar.
+Navigasyon modunda karşılaşılan yaygın sorunlar.
 
-### [Kaynaklar ve Özelleştirmeler](./resources) {#resources-and-customizations}
+### [Haritalar ve Veriler](./maps-data.md) {#maps-and-data}
 
-Topluluk tarafından oluşturulan kaynaklar.
+Haritalar, arama işlevselliği ve diğer verilerle ilgili sorunlar.
 
-### [Kurulum](./setup.md) {#setup}
+### [Çökme Günlükleri](./crash-logs.md) {#crash-logs}
 
-Uygulamayı kurarken karşılaşılan en tipik sorunlar.
+Çökme günlüklerini OsmAnd ekibine nasıl toplayıp göndereceğiniz.
 
-### [İz Kaydı](./track-recording-issues.md) {#track-recording}
+### [Rota Kaydı](./track-recording-issues.md) {#track-recording}
 
-Gürültü, boşluklar veya yanlışlıklar gibi iz kaydıyla ilgili yaygın sorunlar.
+Gürültü, boşluklar veya yanlışlıklar gibi rota kaydı sorunları.
 
-### [Video Eğitimleri ve Kılavuzları](./video-tutorials.md) {#video-tutorials-and-guides}
+### [Android Auto](./android_auto.md) {#android-auto}
 
-Video eğitimleri ve kılavuzları koleksiyonu.
+OsmAnd'ı Android Auto ile kullanırken karşılaşılan tipik sorunlar.
+
+### [Web Sitesi](./web.md) {#website}
+
+OsmAnd Web hizmetleri ve özellikleriyle ilgili yaygın sorunlar.
+
+### [Kaynaklar ve Özelleştirmeler](./resources.md) {#resources-and-customizations}
+
+Topluluk tarafından oluşturulan kaynaklar ve özelleştirmelerle ilgili kılavuzlar ve yardım.
+
+### [Video Eğitimleri ve Kılavuzlar](./video-tutorials.md) {#video-tutorials-and-guides}
+
+Faydalı video eğitimleri ve adım adım kılavuzlardan oluşan bir koleksiyon.

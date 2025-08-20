@@ -1,5 +1,5 @@
 ---
-source-hash: 128d77aba82249d6c7c6f4680929168a77c9a1b7b68d147ef9ee216321970557
+source-hash: cf00228b0959bc2aae53ebe181345d3b69c04b3d0d42a49a8ed5ebc376ca2673
 sidebar_position: 4
 title: Widgets de navegación
 ---
@@ -15,13 +15,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Descripción general {#overview}
 
-Los widgets de navegación se activan durante la navegación para mostrar información como la distancia, la hora de llegada o de salida, los próximos giros, el rumbo, el nombre de la calle actual, la información de carril, la velocidad máxima, las alertas de aproximación, los PDI y los puntos de referencia.
+Los widgets de navegación se activan durante la navegación para mostrar información como la distancia, la hora de llegada o de salida, los próximos giros, el rumbo, el nombre de la calle actual, la información de carril, la velocidad máxima, las alertas de aproximación, los PDI y los puntos de ruta.
 
 ![Widgets de navegación todos](@site/static/img/widgets/navigational_widgets_all.png)
 
 ## Navegación activa y pasiva {#active-and-passive-navigation}
 
-Los widgets de navegación en OsmAnd están diseñados para mejorar los modos de navegación **activa** y **pasiva**. Estos widgets proporcionan información valiosa como direcciones de ruta, detalles de la carretera y límites de velocidad, dependiendo del **perfil de navegación** seleccionado.
+Los widgets de navegación en OsmAnd están diseñados para mejorar los modos de navegación **activa** y **pasiva**. Estos widgets proporcionan información valiosa como direcciones de ruta, detalles de la carretera y límites de velocidad, según el **perfil de navegación** seleccionado.
 
 #### Navegación activa {#active-navigation}
 
@@ -41,7 +41,7 @@ Los widgets de navegación en OsmAnd están diseñados para mejorar los modos de
 #### Navegación pasiva {#passive-navigation}
 
 - **Cómo funciona:**
-  - No se necesita un destino.
+  - No se necesita destino.
   - Funciona automáticamente cuando selecciona un **perfil de navegación** (por ejemplo, *Conducción*, *Ciclismo*).
 
 - **Funcionalidad:**
@@ -52,12 +52,12 @@ Los widgets de navegación en OsmAnd están diseñados para mejorar los modos de
   - Algunas funciones avanzadas pueden no funcionar correctamente sin un destino establecido.
   - La información proporcionada puede no ser siempre **precisa**, especialmente en redes de carreteras complejas.
 
-> **NOTA.** *Tenga en cuenta que el perfil **Explorar mapa** no es compatible con los widgets de navegación en ninguno de los modos. Cambie a un **perfil de navegación** relevante para habilitar estas funciones.*
+> **NOTA.** *Tenga en cuenta que el perfil **Explorar mapa** no admite widgets de navegación en ninguno de los modos. Cambie a un **perfil de navegación** relevante para habilitar estas funciones.*
 
 <!--
 Los widgets de navegación se utilizan principalmente con la navegación **activa** o **pasiva** con perfiles de navegación, por lo que no están disponibles en el perfil **Explorar mapa**.
 
-La navegación **activa** requiere establecer un destino, calcular la ruta (Direcciones) e iniciar la navegación (Ir), no necesariamente con guía por voz. Todos los widgets de navegación son compatibles con este tipo de navegación.
+La navegación **activa** requiere establecer un destino, calcular la ruta (Direcciones) e iniciar la navegación (Ir), no necesariamente con guía por voz. Todos los widgets de navegación admiten ese tipo de navegación.
 
 La navegación **pasiva** no requiere un punto de destino establecido y funciona automáticamente una vez que cambia a cualquier perfil de navegación, por ejemplo, 'Conducción'. En ese caso, la aplicación intentará determinar qué carretera está siguiendo y mostrará información adicional sobre ella, es decir, nombre, información de carril, velocidad máxima disponible. Tenga en cuenta que este enfoque no es fiable y no es compatible con todas las funciones.
 -->
@@ -80,15 +80,15 @@ El widget de elevación muestra un gráfico con la elevación y la pendiente de 
 
 #### Interacciones con el gráfico {#interactions-with-the-graph}
 
-- *Acercar/alejar*. Por defecto, el gráfico muestra la ruta desde la ubicación actual hasta 10 km más adelante. Puede usar el [movimiento de dos dedos](../map/interact-with-map#gestures) para acercar y alejar para una vista más detallada de los cambios de altitud en su ruta. También puede mover el gráfico a la derecha, hacia adelante en la ruta y hacia atrás a la ubicación actual.
-- *Colocar un punto en el gráfico*. Si desea ver el valor de altitud y grado en un punto particular más adelante en su ruta, puede tocar en cualquier parte del gráfico y aparecerá un puntero con los valores.
+- *Acercar/alejar*. Por defecto, el gráfico muestra la ruta desde la ubicación actual hasta 10 km más adelante. Puede usar el [movimiento de dos dedos](../map/interact-with-map#gestures) para acercar y alejar para una vista más detallada de los cambios de altitud en su ruta. También puede mover el gráfico hacia la derecha, hacia adelante en la ruta y hacia atrás a la ubicación actual.
+- *Colocar un punto en el gráfico*. Si desea ver la altitud y el valor del grado en un punto particular más adelante en su ruta, puede tocar en cualquier lugar del gráfico y aparecerá un puntero con los valores.
 
-#### Contenido {#whats-in}
+#### Qué incluye {#whats-in}
 
 Cuando selecciona una ruta y presiona el botón **Iniciar**, el mapa se abre con su ubicación actual, la ruta y el widget en la parte inferior de la pantalla. El widget tiene el gráfico e información sobre *Subida*, *Bajada*, *Pendiente*, distancia, altitud y ángulo de inclinación. Puede seleccionar la *escala óptima* y ver todos los posibles obstáculos en su ruta.
 
 - Todos los valores se indican para toda la ruta o solo para el intervalo seleccionado escalando el gráfico.
-- Lea sobre la [licencia de los datos DEM](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) utilizados por OsmAnd para determinar la elevación.
+- Lea sobre la [licencia para los datos DEM](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) utilizados por OsmAnd para determinar la elevación.
 
 | |
 |:------------|
@@ -103,13 +103,13 @@ Cuando selecciona una ruta y presiona el botón **Iniciar**, el mapa se abre con
 | ![esquema de subida](@site/static/img/widgets/sch_uphill_1.png) ![esquema de subida](@site/static/img/widgets/sch_uphill_2.png)|
 | **Bajada** – muestra la suma de todas las distancias con altitud decreciente desde su punto de ubicación hasta el final del gráfico visible o para la sección seleccionada de la ruta sin el punto de ubicación visible en la pantalla.|
 | ![esquema de bajada](@site/static/img/widgets/sch_downhill_1.png) ![esquema de bajada](@site/static/img/widgets/sch_downhill_2.png)|
-|***Pendiente*** es la relación del camino con la horizontal, donde cero indica horizontalidad y el número de grados indica un grado de inclinación mayor o más pronunciado.|
-| **Pendiente** – muestra la pendiente máxima de la carretera en porcentaje desde su punto de ubicación hasta el final del gráfico visible o para la sección seleccionada de la ruta sin el punto de ubicación visible en la pantalla. |
-|![esquema de pendiente](@site/static/img/widgets/sch_grade_1.png) ![esquema de pendiente](@site/static/img/widgets/sch_grade_2.png)|
+|***Grado*** es la relación del camino con la horizontal, donde cero indica horizontalidad y el número de grados indica un grado de pendiente mayor o más pronunciado.|
+| **Grado** – muestra la pendiente máxima de la carretera en porcentaje desde su punto de ubicación hasta el final del gráfico visible o para la sección seleccionada de la ruta sin el punto de ubicación visible en la pantalla. |
+|![esquema de grado](@site/static/img/widgets/sch_grade_1.png) ![esquema de grado](@site/static/img/widgets/sch_grade_2.png)|
 
 ## Widget de rumbo {#bearing-widget}
 
-El rumbo es la dirección a un objetivo fuera de su vehículo, como un destino o punto de origen. Un rumbo puede ser *Relativo* (según su curso) o *Magnético* (según la brújula). Por ejemplo, un rumbo magnético de 180° es la dirección hacia el sur, y un rumbo relativo de 180° es directamente detrás de usted. Los puntos cardinales son las cuatro direcciones principales de la brújula. Son Norte (*N* - 0° o 360°), Este (*E* - 90°), Sur (*S* - 180°) y Oeste (*W* - 270°).
+El rumbo es la dirección hacia un objetivo fuera de su vehículo, como un destino o punto de origen. Un rumbo puede ser *Relativo* (según su curso) o *Magnético* (según la brújula). Por ejemplo, un rumbo magnético de 180° es la dirección hacia el sur, y un rumbo relativo de 180° está directamente detrás de usted. Los puntos cardinales son las cuatro direcciones principales de la brújula. Son Norte (*N* - 0° o 360°), Este (*E* - 90°), Sur (*S* - 180°) y Oeste (*W* - 270°).
 
 ![Widget de grabación de viaje](@site/static/img/widgets/bearing.png)
 
@@ -139,13 +139,13 @@ El rumbo es la dirección a un objetivo fuera de su vehículo, como un destino o
 
 #### Cómo funciona {#how-it-works}
 
-Para mostrar el rumbo, se debe seleccionar un **punto objetivo**. Si se selecciona un punto de **destino** (o el **primer punto intermedio**, si lo hay) para la navegación, se utilizará como punto objetivo. De lo contrario, se utilizará el **marcador seleccionado más alto**.
+Para mostrar el rumbo, se debe seleccionar un **punto objetivo**. Si se selecciona un punto de **destino** (o el **primer punto intermedio**, si lo hay) para la navegación, se utilizará como punto objetivo. De lo contrario, se utilizará el **marcador seleccionado más arriba**.
 
-- El [rumbo relativo](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) es el ángulo entre la dirección de su movimiento hacia adelante y el punto objetivo. La **dirección de movimiento hacia adelante** es la **dirección de su movimiento** obtenida de los sensores GPS o, si está parado, **hacia dónde ha apuntado su dispositivo** (es decir, la orientación de su dispositivo según su brújula magnética). Ejemplo: Un objeto con un rumbo relativo de 0° está directamente delante de usted y un objeto con un rumbo relativo de 180° está directamente detrás de usted. El **rumbo relativo** es el ángulo entre su dirección de avance y el punto objetivo.
+- El [rumbo relativo](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) es el ángulo entre la dirección de su movimiento hacia adelante y el punto objetivo. La **dirección de su movimiento hacia adelante** es la **dirección de su movimiento** obtenida de los sensores GPS o, si está parado, **hacia donde ha apuntado su dispositivo** (es decir, la orientación de su dispositivo según su brújula magnética). Ejemplo: Un objeto con un rumbo relativo de 0° está directamente delante de usted y un objeto con un rumbo relativo de 180° está directamente detrás de usted. El **rumbo relativo** es el ángulo entre su dirección hacia adelante y el punto objetivo.
 
-- El [rumbo magnético](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) es el ángulo horario (horizontal) entre el norte magnético y el punto objetivo observado desde su ubicación. Debe seguir este valor de brújula magnética para llegar a su objetivo. Ejemplo: Si el **rumbo magnético** se muestra como 0° M, debe moverse estrictamente hacia el norte magnético para llegar al punto objetivo.
+- El [rumbo magnético](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) es el ángulo horario (horizontal) entre el norte magnético y el punto objetivo observado desde su ubicación. Debe seguir este valor de brújula magnética para alcanzar su objetivo. Ejemplo: Si el **rumbo magnético** se muestra como 0° M, debe moverse estrictamente hacia el norte magnético para alcanzar el punto objetivo.
 
-- El [rumbo verdadero](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) se expresa como el ángulo horizontal entre el meridiano geográfico y una línea en la Tierra. Específicamente, el **rumbo verdadero de un punto** es el ángulo medido en grados en el sentido de las agujas del reloj desde la línea del Norte Verdadero. El software OsmAnd le mostrará el rumbo verdadero y la dirección en nuestra interfaz fácil de usar, lo que le facilitará tomar la decisión correcta desde el principio.
+- El [rumbo verdadero](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) se expresa como el ángulo horizontal entre el meridiano geográfico y una línea en la Tierra. Específicamente, el **rumbo verdadero de un punto** es el ángulo medido en grados en sentido horario desde la línea del Norte Verdadero. El software OsmAnd le mostrará el rumbo verdadero y la dirección en nuestra interfaz fácil de usar, lo que le facilitará tomar la decisión correcta desde el principio.
 
 ### Navegación a lo largo de la línea de rumbo {#navigation-along-the-rhumb-line}
 
@@ -159,16 +159,16 @@ Para mostrar el rumbo, se debe seleccionar un **punto objetivo**. Si se seleccio
 ## Puntos de navegación {#navigation-points}
 
 <!--
-Los widgets de *Punto de navegación* se habilitan durante la navegación para mostrar información como la distancia, la hora de llegada o de salida, los próximos giros, el rumbo, el nombre de la calle actual, la información de carriles, la velocidad máxima, las alertas de aproximación, los PDI y los puntos de referencia.
+El grupo de widgets *Punto de navegación* se activa durante la navegación para mostrar información como la distancia, la hora de llegada o de salida, los próximos giros, el rumbo, el nombre de la calle actual, la información de carriles, la velocidad máxima, las alertas de aproximación, los PDI y los puntos de ruta.
 -->
 
 El grupo de widgets *Punto de navegación* muestra la distancia restante hasta su destino, el punto intermedio, la hora de llegada al punto intermedio o el tiempo de viaje para la ruta calculada, y la hora estimada de llegada.
 
-### Información de la ruta {#route-information}
+### Información de ruta {#route-information}
 
 ![Widget de destino](@site/static/img/widgets/route_information_widget.png)
 
-El widget *Información de la ruta* proporciona datos en tiempo real sobre la ruta de navegación en curso y una forma rápida [de gestionar una ruta activa](../navigation/setup/route-navigation.md#start--stop-navigation). Ayuda a realizar un seguimiento de los detalles clave de la ruta y le permite detener o reanudar la sesión de navegación actual con una interacción mínima.
+El widget *Información de ruta* proporciona datos en tiempo real sobre la ruta de navegación en curso y una forma rápida [de administrar una ruta activa](../navigation/setup/route-navigation.md#start--stop-navigation). Ayuda a realizar un seguimiento de los detalles clave de la ruta y le permite detener o reanudar la sesión de navegación actual con una interacción mínima.
 
 **Información mostrada:**
 
@@ -186,7 +186,7 @@ El widget *Información de la ruta* proporciona datos en tiempo real sobre la ru
 | | |
 |:------------|:------------|
 | Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget →<Translate android="true" ids="map_widget_route_information"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Añadir widget → Información de la ruta* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Añadir widget → Información de ruta* |
 | Al tocar | Toca el botón con la flecha para abrir el panel [Iniciar/Detener navegación](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
@@ -204,7 +204,7 @@ El widget muestra la distancia restante hasta el último punto de destino al seg
 | Al tocar | Mueve el mapa al punto de destino. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Distancia al punto intermedio {#distance-to-intermediate}
+### Distancia al intermedio {#distance-to-intermediate}
 
 ![Widget de destino intermedio](@site/static/img/widgets/intermediate_destination_widget.png)
 
@@ -217,7 +217,7 @@ El widget muestra la distancia al primer punto intermedio a lo largo de la ruta 
 | Al tocar | **Un punto intermedio** - mueve el mapa al punto intermedio. <br /> **Dos o más puntos intermedios** - abre el menú de la lista de destinos. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Tiempo al punto intermedio {#time-to-intermediate}
+### Tiempo al intermedio {#time-to-intermediate}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -235,13 +235,13 @@ El widget muestra la distancia al primer punto intermedio a lo largo de la ruta 
 
 </Tabs>
 
-El widget muestra la *hora de llegada* o el *tiempo restante* hasta el primer punto intermedio. Durante la navegación, la hora se actualiza constantemente, y tan pronto como se pasa un punto intermedio, la hora se actualizará al siguiente punto de referencia. Por ejemplo, si detiene la navegación, el *tiempo restante* permanecerá sin cambios y la *hora de llegada* será igual al *tiempo restante* más la *hora actual*.
+El widget muestra la *hora de llegada* o el *tiempo restante* hasta el primer punto intermedio. Durante la navegación, la hora se actualiza constantemente, y tan pronto como se pasa un punto intermedio, la hora se actualizará al siguiente punto de ruta. Por ejemplo, si detiene la navegación, el *tiempo restante* permanecerá sin cambios y la *hora de llegada* será igual al *tiempo restante* más la *hora actual*.
 
 | | |
 |:------------|:------------|
 | Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Al tocar | Cambia entre *hora de llegada* a *tiempo restante* y viceversa. |
+| Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Tiempo al destino {#time-to-destination}
@@ -250,13 +250,13 @@ El widget muestra la *hora de llegada* o el *tiempo restante* hasta el primer pu
 
 <TabItem value="android" label="Android">
 
-![Widget de hora de llegada y hora intermedia](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget de hora de llegada intermedia](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de hora de llegada y hora intermedia](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget de hora de llegada intermedia](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
@@ -268,7 +268,7 @@ El widget muestra la *hora de llegada* o el *tiempo restante* hasta el último p
 |:------------|:------------|
 | Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Al tocar | Cambia entre *hora de llegada* a *tiempo restante* y viceversa. |
+| Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 ## Límite de velocidad {#speed-limit}
@@ -294,13 +294,13 @@ El widget *Límite de velocidad* muestra el límite de velocidad actual según l
 
 ![Widget de próximos giros](@site/static/img/widgets/next_turns_widget.png)
 
-Este conjunto de widgets de navegación se activa durante la navegación y muestra información sobre la distancia hasta la próxima maniobra.
+Este conjunto de widgets de navegación se activa durante la navegación y muestra información sobre la distancia a la siguiente maniobra.
 
 | | |
 |:------------|:------------|
-| Habilitar | **Android:** *Menú → Configurar pantalla → Panel izquierdo / derecho → Añadir widget → Maniobras de ruta → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panel izquierdo / derecho → Añadir widget → Maniobras de ruta → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
-| Al tocar | Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la próxima maniobra y la distancia a ella. |
+| Habilitar | **Android:** *Menú → Configurar pantalla → Panel izquierdo/derecho → Añadir widget → Maniobras de ruta → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panel izquierdo/derecho → Añadir widget → Maniobras de ruta → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
+| Al tocar | Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la siguiente maniobra y la distancia a ella. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Próximo giro {#next-turn}
@@ -315,9 +315,9 @@ Los widgets de *Maniobras de ruta* contienen información sobre:
 
 | | |
 |:------------|:------------|
-| Habilitar | **Android:** *Menú → Configurar pantalla → Panel izquierdo / derecho → Añadir widget → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panel izquierdo / derecho → Añadir widget → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
-| Al tocar | Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la próxima maniobra y la distancia a ella. |
+| Habilitar | **Android:** *Menú → Configurar pantalla → Panel izquierdo/derecho → Añadir widget → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Panel izquierdo/derecho → Añadir widget → Próximo giro, Próximo giro (pequeño), Segundo próximo giro* |
+| Al tocar | Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la siguiente maniobra y la distancia a ella. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Indicaciones de color para el próximo giro {#color-prompts-for-next-turn}
@@ -327,8 +327,8 @@ Esta tabla muestra el tiempo aproximado hasta que se activan las indicaciones y 
 | Color | ~ Tiempo de activación | Distancia | Tipo de indicación |
 | :-------- | :------------- | :--------- | :-------------- |
 | 🟢 Verde | 5 segundos | Cerca | Girar ahora |
-| 🟡 Amarillo | 20 segundos | Aproximándose| Girar en `x` m |
-| ⚪ Gris | > 100 segundos | Lejos | Prepararse para girar |
+| 🟡 Amarillo | 20 segundos | Aproximándose | Girar en `x` m |
+| ⚪ Gris | > 100 segundos | Lejano | Prepararse para girar |
 
 ## Carriles {#lanes}
 
@@ -357,18 +357,18 @@ Muestra un widget según la configuración de tiempo de aproximación. El color 
 
 ![widget de guía de ruta](@site/static/img/widgets/route_guidence_widgets_andr.png)
 
-Proporciona guía de ruta en tiempo real, incluyendo la distancia hasta el próximo giro, el nombre de la carretera, el nombre de la calle actual y la información de carril. Los widgets están activos durante la navegación.
+Proporciona guía de ruta en tiempo real, incluyendo la distancia al próximo giro, el nombre de la carretera, el nombre de la calle actual y la información de carril. Los widgets están activos durante la navegación.
 
 Los widgets de *Guía de ruta* contienen información sobre:
 
-- [Carriles](#lanes) - muestra la ubicación actual de los carriles de la carretera y resalta los que debe tomar.
+- [Carriles](#lanes) - muestra la ubicación actual de los carriles de la carretera y resalta aquellos por los que debe conducir.
 - **Próximo giro** - el próximo giro con una flecha grande que representa la maniobra y con datos sobre la distancia a ella.
 - **Segundo próximo giro** es el próximo giro después del primer giro, que se activa si está dentro de la distancia de aproximación.
 
 | | |
 |:------------|:------------|
 | Habilitar | **Android:** *Menú → Configurar pantalla → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget → Carril, Próximo giro, Segundo próximo giro* |
-| Al tocar | **Próximo giro**: Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la próxima maniobra y la distancia a ella. <br/> **Carril**: Sin cambios. |
+| Al tocar | **Próximo giro**: Si las [indicaciones de voz](../navigation/guidance/voice-navigation.md) están habilitadas, se pronuncian la siguiente maniobra y la distancia a ella. <br/> **Carril**: Sin cambios. |
 | Pulsación larga | **Próximo giro**: Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Carril**: Sin cambios. |
 
 ## Widget de alerta {#alert-widget}
@@ -381,7 +381,7 @@ El **widget de alerta** combina varios tipos de alertas que se muestran en la es
 
 - Para el tipo de alerta *Límite de velocidad*, puede ajustar el valor de <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) en la configuración de indicaciones de voz para que coincida mejor con la velocidad del vehículo y la velocidad del GPS.
 
-- La mayoría de las alertas se muestran en la pantalla y se anuncian mediante una indicación de voz durante 15 segundos, así como el tiempo de activación para pasar un punto de referencia, un punto favorito o un PDI. Lea más [aquí](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+- La mayoría de las alertas se muestran en la pantalla y se anuncian mediante una indicación de voz durante 15 segundos, así como el tiempo de activación para pasar un punto de ruta, un punto favorito o un PDI. Lea más [aquí](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 | | |
 |:------------|:------------|
@@ -395,20 +395,20 @@ Los tipos de alerta tienen un diseño visual diferente, que depende de la **<Tra
 | | | |
 |:------------|:------------|:------------|
 | Nombre | Descripción | Icono |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | La [calma del tráfico](https://en.wikipedia.org/wiki/Traffic_calming) utiliza el diseño físico y otras medidas para mejorar la seguridad de los automovilistas, peatones y ciclistas. | ![Alertas de calma del tráfico](@site/static/img/widgets/warnings_traffic_calming.png) ![Alertas de calma del tráfico de EE. UU.](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [paso de peatones](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalmente inglés británico) o cruce de peatones es un lugar designado para que los peatones crucen una carretera, calle o avenida. OsmAnd muestra la alerta del paso de peatones no controlado. | ![Alertas de calma del tráfico](@site/static/img/widgets/warnings_pedestrian.png) ![Alertas de calma del tráfico de EE. UU.](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | En la mayoría de los países, los [límites de velocidad de las carreteras](https://en.wikipedia.org/wiki/Speed_limit) establecen la velocidad máxima, media o mínima legal a la que los vehículos pueden circular por un determinado tramo de carretera. En OsmAnd, la alerta se muestra cuando excede la velocidad. Puede establecer los parámetros de exceso de velocidad (0, 5, 10... km/h). ![Alertas de exceso de velocidad](@site/static/img/widgets/ex_warning_speed.png) | ![Alertas de límite de velocidad](@site/static/img/widgets/warnings_limit.png) ![Alertas de límite de velocidad de CA](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alertas de límite de velocidad de EE. UU.](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Un túnel es un pasaje subterráneo, que pasa por debajo de una montaña, un río o un área urbana congestionada. En OsmAnd, la alerta *Túneles* tiene información sobre la longitud del túnel. Si está en un túnel, muestra la distancia hasta el final del túnel. ![Alertas de túneles](@site/static/img/widgets/ex_warning_tunnel.png) | ![Alertas de túneles](@site/static/img/widgets/warnings_tunnel.png) ![Alertas de túneles de EE. UU.](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | Las [cámaras de control de tráfico](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) y las [cámaras de velocidad](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registran infracciones de tráfico, incluyendo exceso de velocidad, saltarse semáforos en rojo y otros tipos de comportamiento ilegal. <br />**NOTA:** Las alertas de cámaras de velocidad están prohibidas o son ilegales en algunos países. Para [eliminar completamente las cámaras de velocidad](../personal/global-settings.md#legal) de OsmAnd, vaya a *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Alertas de calma del tráfico](@site/static/img/widgets/warnings_speed_camera.png) |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | Una [señal de stop](https://en.wikipedia.org/wiki/Stop_sign) es una señal de tráfico diseñada para notificar a los conductores que deben detenerse por completo y asegurarse de que la intersección esté despejada de vehículos y peatones antes de continuar. | ![Alertas de stop](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |Esta advertencia significa que hay un [cruce de ferrocarril](https://en.wikipedia.org/wiki/Crossbuck) más adelante. | ![Alertas de ferrocarriles](@site/static/img/widgets/warnings_railways.png) ![Alertas de ferrocarriles de CA](@site/static/img/widgets/warnings_railways_ca.png) ![Alertas de ferrocarriles de EE. UU.](@site/static/img/widgets/warnings_railways_us.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |Esta advertencia indica que hay un control fronterizo más adelante.| ![Alertas de control fronterizo](@site/static/img/widgets/warnings_border_control.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | Los [símbolos de peligro o símbolos de advertencia](https://en.wikipedia.org/wiki/Hazard_symbol) son símbolos reconocibles diseñados para advertir sobre materiales, ubicaciones u objetos peligrosos, incluyendo corrientes eléctricas, venenos y radioactividad. | ![Alertas de peligro](@site/static/img/widgets/warnings_hazard.png) ![Alertas de peligro de EE. UU.](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | Esta advertencia indica que hay una cabina de peaje para una carretera de peaje más adelante. ![Alertas de cabina de peaje](@site/static/img/widgets/ex_toll_booth.png) | ![Alertas de límite de velocidad](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | La [calma del tráfico](https://en.wikipedia.org/wiki/Traffic_calming) utiliza el diseño físico y otras medidas para mejorar la seguridad de los automovilistas, peatones y ciclistas. | ![Widgets de alerta de calma del tráfico](@site/static/img/widgets/warnings_traffic_calming.png) ![Widgets de alerta de calma del tráfico de EE. UU.](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [paso de peatones](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalmente inglés británico) o cruce de peatones es un lugar designado para que los peatones crucen una carretera, calle o avenida. OsmAnd muestra la alerta del paso de peatones sin control. | ![Widgets de alerta de calma del tráfico](@site/static/img/widgets/warnings_pedestrian.png) ![Widgets de alerta de calma del tráfico de EE. UU.](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | En la mayoría de los países, los [límites de velocidad en carretera](https://en.wikipedia.org/wiki/Speed_limit) establecen la velocidad máxima, media o mínima legal a la que los vehículos pueden circular en un determinado tramo de carretera. En OsmAnd, la alerta se muestra cuando se excede la velocidad. Puede establecer los parámetros de exceso de velocidad (0, 5, 10... km/h). ![Widgets de alerta de exceso de velocidad](@site/static/img/widgets/ex_warning_speed.png) | ![Widgets de alerta de límite de velocidad](@site/static/img/widgets/warnings_limit.png) ![Widgets de alerta de límite de velocidad de CA](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Widgets de alerta de límite de velocidad de EE. UU.](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Un túnel es un pasaje subterráneo, que pasa por debajo de una montaña, un río o un área urbana congestionada. En OsmAnd, la alerta *Túneles* tiene información sobre la longitud del túnel. Si está en un túnel, muestra la distancia hasta el final del túnel. ![Widgets de alerta de túnel](@site/static/img/widgets/ex_warning_tunnel.png) | ![Widgets de alerta de túneles](@site/static/img/widgets/warnings_tunnel.png) ![Widgets de alerta de túneles de EE. UU.](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | Las [cámaras de control de tráfico](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) y las [cámaras de velocidad](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registran las infracciones de tráfico, incluyendo el exceso de velocidad, el paso de semáforos en rojo y otros tipos de comportamiento ilegal. <br />**NOTA:** Las alertas de cámaras de velocidad están prohibidas o son ilegales en algunos países. Para [eliminar completamente las cámaras de velocidad](../personal/global-settings.md#legal) de OsmAnd, vaya al menú principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Widgets de alerta de calma del tráfico](@site/static/img/widgets/warnings_speed_camera.png) |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | Una [señal de stop](https://en.wikipedia.org/wiki/Stop_sign) es una señal de tráfico diseñada para notificar a los conductores que deben detenerse por completo y asegurarse de que la intersección esté despejada de vehículos y peatones antes de continuar. | ![Widgets de alerta de stop](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Esta advertencia significa que hay un [cruce de ferrocarril](https://en.wikipedia.org/wiki/Crossbuck) más adelante. | ![Widgets de alerta de ferrocarriles](@site/static/img/widgets/warnings_railways.png) ![Widgets de alerta de ferrocarriles de CA](@site/static/img/widgets/warnings_railways_ca.png) ![Widgets de alerta de ferrocarriles de EE. UU.](@site/static/img/widgets/warnings_railways_us.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Esta advertencia indica que hay un control fronterizo más adelante.| ![Widgets de alerta de control fronterizo](@site/static/img/widgets/warnings_border_control.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | Los [símbolos de peligro o símbolos de advertencia](https://en.wikipedia.org/wiki/Hazard_symbol) son símbolos reconocibles diseñados para advertir sobre materiales, ubicaciones u objetos peligrosos, incluyendo corrientes eléctricas, venenos y radioactividad. | ![Widgets de alerta de peligro](@site/static/img/widgets/warnings_hazard.png) ![Widgets de alerta de peligro de EE. UU.](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | Esta advertencia indica que hay una cabina de peaje para una carretera de peaje más adelante. ![Widgets de alerta de cabina de peaje](@site/static/img/widgets/ex_toll_booth.png) | ![Widgets de alerta de límite de velocidad](@site/static/img/widgets/warnings_limit.png) |
 
 ## Nombre de la calle {#street-name}
 
-El widget de nombre de calle muestra **el nombre de la calle actual** con una flecha recta, o **el nombre de la próxima calle** con la maniobra a realizar. El nombre de la calle generalmente consiste en un escudo de carretera, un [nombre](https://wiki.openstreetmap.org/wiki/Key:name), una [referencia](https://wiki.openstreetmap.org/wiki/Key:ref), una [referencia internacional](https://wiki.openstreetmap.org/wiki/Key:int_ref) y un [destino](https://wiki.openstreetmap.org/wiki/Key:destination). El cambio entre el nombre de la calle actual y el nombre de la próxima calle ocurre cuando se acerca al lugar donde desea realizar la maniobra (~20 segundos), similar a la indicación de voz [Girar en X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+El widget Nombre de la calle muestra **el nombre de la calle actual** con una flecha recta, o **el nombre de la próxima calle** con la maniobra a realizar. El nombre de la calle generalmente consiste en un escudo de carretera, un [nombre](https://wiki.openstreetmap.org/wiki/Key:name), una [referencia](https://wiki.openstreetmap.org/wiki/Key:ref), una [referencia internacional](https://wiki.openstreetmap.org/wiki/Key:int_ref) y un [destino](https://wiki.openstreetmap.org/wiki/Key:destination). El cambio entre el nombre de la calle actual y el nombre de la próxima calle ocurre cuando se acerca al lugar donde desea realizar la maniobra (~20 segundos), similar a la indicación de voz [Girar en X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - Al conducir por una calle o carretera, el widget muestra el nombre o la designación de la calle (carretera) actual con una flecha azul.
 
@@ -424,32 +424,32 @@ El widget de nombre de calle muestra **el nombre de la calle actual** con una fl
 | | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget → <Translate android="true" ids="map_widget_top_text"/>* |
 | Al tocar | Sin cambios |
 
-## PDI / Favoritos de aproximación {#approach-pois--favorites}
+## PDI/Favoritos cercanos {#approach-pois--favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![PDI/Favoritos Android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![PDI/Favoritos cercanos Android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![PDI/Favoritos iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![PDI/Favoritos cercanos iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-El widget **PDI/Favoritos/Puntos de referencia de aproximación** se combina con [Nombre de calle](#street-name) y muestra los puntos de interés, puntos de referencia de la pista seguida y favoritos a lo largo de la ruta que se aproximan y se pasan.
+El widget **PDI/Favoritos/Puntos de ruta cercanos** se combina con [Nombre de la calle](#street-name) y muestra los puntos de interés, puntos de ruta de la pista seguida y favoritos que se aproximan y se pasan a lo largo de la ruta.
 
 Muestra el **nombre**, el **icono del punto** y 2 **distancias**:
 
-- La **distancia de la ruta** (arriba) muestra la distancia que debe recorrerse siguiendo la ruta.
-- La **distancia de desviación** es una distancia recta desde el punto de ruta más cercano hasta el punto en sí.
+- La **distancia de la ruta** (arriba) muestra cuánta distancia debe cubrirse siguiendo la ruta.
+- La **distancia de desviación** es una distancia en línea recta desde el punto de ruta más cercano hasta el punto en sí.
 
-**iOS** - Además de la distancia al punto de referencia más cercano, también se muestra el lado (izquierdo o derecho) de la ruta en el que se encuentra el punto de referencia.
+**iOS** - Además de la distancia al punto de ruta más cercano, también se muestra el lado (izquierdo o derecho) de la ruta en el que se encuentra el punto de ruta.
 
 | | |
 |:------------|:------------|
@@ -464,7 +464,7 @@ Muestra el **nombre**, el **icono del punto** y 2 **distancias**:
 - [Widgets informativos](./info-widgets.md)
 - [Widgets de navegación](./nav-widgets.md)
 - [Regla de radio y regla](./radius-ruler.md)
-- [Widgets de marcadores](./markers.md)
+- [Widgets de marcador](./markers.md)
 - [Acción rápida](./quick-action.md)
 
 > *Última actualización: abril de 2025*

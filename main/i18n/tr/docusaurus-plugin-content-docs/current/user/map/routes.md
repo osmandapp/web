@@ -1,7 +1,7 @@
 ---
-source-hash: 0e2f6c946c393607b5033a3e8d96b50750de7efd28c223841bc9d886f3ec9f2d
+source-hash: 24073bbbba8108ac4befa02adbada3ce95bc6b6c5197b214d7ffa297c6ee56c5
 sidebar_position: 10
-title: Rotalar
+title:  Rotalar
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,56 +18,56 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd, harita üzerinde farklı [rotaları](#type-of-routes) görüntülemek için birçok güçlü özelliğe sahiptir. Varsayılan olarak, bu rotalar [vektör haritalarının](./vector-maps.md#routes) (OpenStreetMap verileri) bir parçasıdır, ancak benzer işlevsellik [Rota Planla](../plan-route/create-route.md) ile oluşturulabilen, [GPX parkurları](#save-as-a-track) olarak içe aktarılabilen, [Seyahat Kaydı eklentisi](../plugins/trip-recording.md) ile kaydedilebilen [parkurlar](./tracks/index.md) tarafından sağlanır.
+OsmAnd, harita üzerinde farklı [rotaları](#type-of-routes) görüntülemek için birçok güçlü özelliğe sahiptir. Varsayılan olarak, bu rotalar [vektör haritalarının](./vector-maps.md#routes) (OpenStreetMap verileri) bir parçasıdır, ancak benzer işlevsellik [Rota Planla](../plan-route/create-route.md) ile oluşturulabilen, [GPX parkurları](#save-as-a-track) olarak içe aktarılabilen, [Seyahat Kayıt eklentisi](../plugins/trip-recording.md) ile kaydedilebilen [parkurlar](./tracks/index.md) tarafından sağlanır.
 
 
-## Rota Türü {#type-of-routes}
+## Rota Türleri {#type-of-routes}
 
-Rotalar, [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) verilerini kullanarak farklı dış mekan etkinliklerini temsil eder. Harita üzerindeki **rota numarası veya rota bayrağı bulunan kalkan simgesine** dokunmak, rota hakkında ek bilgi sağlayan ve navigasyonun bir parçası olarak kullanılmasına izin veren bir bağlam menüsü açar.
+Rotalar, [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) verilerini kullanarak farklı açık hava etkinliklerini temsil eder. Harita üzerindeki **rota numarası veya rota bayrağı olan kalkan simgesine** dokunmak, rota hakkında ek bilgi sağlayan ve navigasyonun bir parçası olarak kullanılmasına izin veren bir bağlam menüsü açar.
 
 Bazı rota türlerinin filtrelenmesini [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünde yapılandırabilirsiniz.
 
 ### Bisiklet rotaları {#cycle-routes}
 
-[Bisiklet rotaları](https://wiki.openstreetmap.org/wiki/Cycle_routes) üç türde bulunur: *yerel* (`lcn`), *bölgesel* (`rcn`), *ulusal* (`ncn`), *uluslararası* (`icn`). Ayrıca, bisiklet rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) bir parçası olabilir. Rota segmentlerine renk atamasını seçebilirsiniz:
+[Bisiklet rotaları](https://wiki.openstreetmap.org/wiki/Cycle_routes) üç türde bulunur: *yerel* (`lcn`), *bölgesel* (`rcn`), *ulusal* (`ncn`), *uluslararası* (`icn`). Ayrıca, bisiklet rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) bir parçası olabilir. Rota segmentlerine renk atama şeklini seçebilirsiniz:
 
-- ***<Translate android="true" ids="layer_route"/>***.
+- ***<Translate android="true" ids="layer_route"/>***.  
 ![Harita rotaları - bisiklet rotaları](@site/static/img/map/map-routes-cycle-routes.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Harita rotaları - bisiklet-düğüm-ağları](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Daha fazla bilgiyi [Harita Açıklaması](../map-legend/index.md) makalesinde bulabilirsiniz.
+Daha fazla bilgiyi [Harita Açıklamaları](../map-legend/index.md) makalesinde bulabilirsiniz.
 
 
 ### Dağ bisikleti rotaları {#mountain-bike-routes}
 
-MTB rotaları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb)'te belirli bir eşlemeye sahiptir ve bisiklet rotalarından ayrı olarak seçilebilir.
+MTB rotaları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) içinde belirli bir eşlemeye sahiptir ve bisiklet rotalarından ayrı olarak seçilebilir.
 
 <!--
 | | | |
 |------------|------------|------------|
-| ***<Translate android="true" ids="mtb_scale"/>*** | MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Açıklaması](../map-legend/index.md) makalesindedir. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb-trails.png) |
-| ***<Translate android="true" ids="mtb_imba"/>*** | Uluslararası Dağ Bisikleti Birliği, [MTB IMBA](https://www.imba.com/) 'ya göre MTB parkurlarını gösterir. Daha fazla bilgi [Harita açıklaması](../map-legend/index.md) makalesindedir. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb_imba-trails.png) |
+| ***<Translate android="true" ids="mtb_scale"/>*** | MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Açıklamaları](../map-legend/index.md) makalesinde bulunmaktadır. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb-trails.png) |
+| ***<Translate android="true" ids="mtb_imba"/>*** | Uluslararası Dağ Bisikleti Birliği, [MTB IMBA](https://www.imba.com/)'ya göre MTB parkurlarını gösterir. Daha fazla bilgi [Harita açıklamaları](../map-legend/index.md) makalesinde bulunmaktadır. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
-- ***<Translate android="true" ids="mtb_scale"/>***. MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Açıklaması](../map-legend/index.md) makalesindedir.
-![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb-trails.png)
+- ***<Translate android="true" ids="mtb_scale"/>***.  MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Açıklamaları](../map-legend/index.md) makalesinde bulunmaktadır.  
+![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***. Uluslararası Dağ Bisikleti Birliği, [MTB IMBA](https://www.imba.com/)'ya göre MTB parkurlarını gösterir. Daha fazla bilgi [Harita açıklaması](../map-legend/index.md) makalesindedir.
+- ***<Translate android="true" ids="mtb_imba"/>***.  Uluslararası Dağ Bisikleti Birliği, [MTB IMBA](https://www.imba.com/)'ya göre MTB parkurlarını gösterir. Daha fazla bilgi [Harita açıklamaları](../map-legend/index.md) makalesinde bulunmaktadır.  
 ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### Yürüyüş / Yürüyüş rotaları {#hiking--walking-routes}
 
-[Yürüyüş rotaları](https://wiki.openstreetmap.org/wiki/Walking_Routes) üç türde bulunur: *yerel* (`lwn`), *bölgesel* (`rwn`), *ulusal* (`nwn`), *uluslararası* (`iwn`). Ayrıca, yürüyüş rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) bir parçası olabilir. OsmAnd, yürüyüş ve trekking rotalarını ayırmaz ve bunları 1 grupta birleştirir. Rota segmentlerine renk atamasını seçebilirsiniz:
+[Yürüyüş rotaları](https://wiki.openstreetmap.org/wiki/Walking_Routes) üç türde bulunur: *yerel* (`lwn`), *bölgesel* (`rwn`), *ulusal* (`nwn`), *uluslararası* (`iwn`). Ayrıca, yürüyüş rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) bir parçası olabilir. OsmAnd, yürüyüş ve trekking rotalarını ayırmaz ve bunları 1 grupta birleştirir. Rota segmentlerine renk atama şeklini seçebilirsiniz:
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***. Rotaları, bireysel [yerel renklerine](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (OpenStreetMap'te mevcutsa) ve turistik kalkan sembolüne göre renklendirir.
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Rotaları, bireysel [yerel renklerine](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (OpenStreetMap'te mevcutsa) ve turist kalkanı sembolüne göre renklendirir.  
 ![Harita rotaları - yürüyüş osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***. [Ağ bağlantısına](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) göre renklendirir.
+- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  [Ağ bağlantısına](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) göre renklendirir.  
 ![Harita rotaları - yürüyüş ağı](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***. Rotaları [düğüm ağı](https://wiki.openstreetmap.org/wiki/Node_Networks) türüne göre (uluslararası, bölgesel veya yerel) renklendirir.
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Rotaları [düğüm ağı](https://wiki.openstreetmap.org/wiki/Node_Networks) türüne göre (uluslararası, bölgesel veya yerel) renklendirir.  
 ![Harita rotaları - yürüyüş düğüm ağları](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
@@ -75,9 +75,9 @@ MTB rotaları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmt
 
 ![Harita rotaları - Kir Bisikleti Parkurları](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-**Kir Bisikleti Parkurları** özelliği, `dirtbike:scale` etiketine göre harita üzerinde kir bisikletine özel rotaları görüntülemenizi sağlar. Bu ölçek, kir bisikleti için uygun parkurları vurgular ve zorluk seviyelerini gösteren renkli bir katmanla gösterir.
+**Kir Bisikleti Parkurları** özelliği, `dirtbike:scale` etiketine göre harita üzerinde kir bisikletine özel rotaları görüntülemenizi sağlar. Bu ölçek, kir bisikleti için uygun parkurları vurgular ve zorluk seviyelerini gösteren renkli bir kaplama ile birlikte gelir.
 
-Bu özelliği *Menü → Haritayı Yapılandır → Rotalar → Kir bisikleti rotaları* bölümünde etkinleştirebilirsiniz. Sistem, MTB ölçeğine benzer şekilde çalışır ve kir bisikletine özel rotaların görsel bir temsilini sunar — [`dirtbike` etiketi hakkında daha fazla bilgiyi buradan bulabilirsiniz](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+Bu özelliği *Menü → Haritayı Yapılandır → Rotalar → Kir bisikleti rotaları* bölümünden etkinleştirebilirsiniz. Sistem, MTB ölçeğine benzer şekilde çalışır ve kir bisikleti için özel olarak tasarlanmış rotaların görsel bir temsilini sunar — `dirtbike` etiketi hakkında daha fazla bilgiyi [burada](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale) bulabilirsiniz.
 
 
 ### Tırmanma Rotaları {#climbing-routes}
@@ -88,24 +88,24 @@ OsmAnd, *tırmanma alanlarını* (`climbing=area`) ve *tırmanma kayalıkların�
 
 - **Tırmanma alanları**, birden fazla tırmanma rotasının bulunduğu **daha büyük bölgeleri** temsil eder.
 
-- **Tırmanma kayalıkları**, tırmanış için uygun **belirli kaya oluşumlarını** veya duvarları ifade eder.
+- **Tırmanma kayalıkları**, tırmanışa uygun **belirli kaya oluşumlarını** veya duvarları ifade eder.
 
 - Bu konumlar, aşağıdaki gibi **ayrıntılı özellikler** içerir:
 
     - *Tırmanma derecesi* (örn. UIAA, Fransız, YDS).
-    - *Kaya türü* (örn. kireçtaşı, granit).
+    - *Kaya tipi* (örn. kireçtaşı, granit).
     - *Rota uzunluğu* (metre cinsinden).
     - *Tırmanma kalitesi* (sağlam, gevşek, karışık).
     - *Zirve defteri kullanılabilirliği*.
 
-Harita üzerinde tırmanma konumlarını etkinleştirmek için şu adrese gidin: *Menü → Haritayı Yapılandır → Rotalar → Tırmanma Rotaları*.
+Haritada tırmanma konumlarını etkinleştirmek için: *Menü → Haritayı Yapılandır → Rotalar → Tırmanma Rotaları* yolunu izleyin.
 
 
 ### Yürüyüş Parkurları Zorluk Derecesi {#hiking-trails-difficulty-grade}
 
 ![Harita rotaları - alp yürüyüşü](@site/static/img/map/map-routes-alpine-hiking.png)
 
-Bazı yol segmentleri birçok rotanın parçası olabilir, ancak dağlık alanlardaki segmentin zorluğunu temsil etmek için ayrı ayrı renklendirilebilirler. Şu anda OsmAnd, İtalyan ve İsviçre sınıflandırmalarını desteklemektedir ve her birinin bu segmente erişmek için belirli ekipman gereksinimleri listesi vardır.
+Bazı yol segmentleri birçok rotanın bir parçası olabilir, ancak dağlık alanlardaki segmentin zorluğunu temsil etmek için ayrı ayrı renklendirilebilirler. Şu anda OsmAnd, İtalyan ve İsviçre sınıflandırmalarını desteklemektedir ve her birinin bu segmente erişmek için belirli bir ekipman gereksinimleri listesi vardır.
 
 1. [SAC ölçeği](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [CAI ölçeği](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)
@@ -115,28 +115,28 @@ Bazı yol segmentleri birçok rotanın parçası olabilir, ancak dağlık alanla
 
 ![Harita rotaları - kayak pistleri](@site/static/img/map/map-routes-ski-slopes.png)
 
-Kayak rotaları, OpenStreetMap'teki [rotaların](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) belirli bir grubudur. Genellikle, bu rotalar [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) harita stiliyle tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte kullanılabilir.
+Kayak rotaları, OpenStreetMap'te [rotaların](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) belirli bir grubudur. Tipik olarak, bu rotalar [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) harita stiliyle tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte kullanılabilir.
 
 
 ### At rotaları {#horse-routes}
 
 ![Harita rotaları - at rotaları](@site/static/img/map/map-routes-horse.png)
 
-[At rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse), at biniciliği için sembollerle renkli olarak belirtilen rotalar olarak görüntülenir.
+[At rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse), at biniciliği için sembollerle renkli olarak belirtilmiş rotalar olarak görüntülenir.
 
 
-### Akarsu sporları {#whitewater-sports}
+### Beyaz su sporları {#whitewater-sports}
 
-![Harita rotaları - akarsu sporu](@site/static/img/map/map-routes-whitewater-sport.png)
+![Harita rotaları - beyaz su sporu](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Akarsu rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe), erişim simgeleri ve [akarsu turizmi](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) için tehlike bölgeleri ile birlikte gösterilir.
+[Beyaz su rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe), [beyaz su turizmi](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) için erişim simgeleri ve tehlike bölgeleriyle birlikte gösterilir.
 
 
 ### Koşu rotaları {#running-routes}
 
 ![Fitness rotaları](@site/static/img/map/fitness_1.png)
 
-OpenStreetMap'teki [koşu rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning), öncelikli olarak atletizm için adlandırılmış, numaralandırılmış veya başka şekilde işaretlenmiş koşu rotaları için kullanılır.
+OpenStreetMap'teki [koşu rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning), öncelikle atletizm için adlandırılmış, numaralandırılmış veya başka şekilde işaretlenmiş koşu rotaları için kullanılır.
 
 
 ### Fitness parkurları {#fitness-trails}
@@ -154,10 +154,10 @@ Bir [fitness parkuru](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_tr
 
 Seyahat rotaları, [kullanıcının rotalarından](https://osmand.net/blog/routes#generated-travel-routes) oluşturulabilen veya ek [eklentilerin](../plugins/index.md) bir parçası olabilen özel [Seyahat kitabı](../plan-route/travel-guides.md) (`travel.obf`) dosyalarının bir parçasıdır.
 
-Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenmesini özelleştirebilir, parkurları noktalar veya ***Nokta grupları*** olarak görüntüleyebilirsiniz (örneğin Wikivoyage seyahat kitapları için). [Seyahat rehberleri hakkında daha fazla bilgiyi buradan edinin](../plan-route/travel-guides.md).
+Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenmesini özelleştirebilir, parkurları nokta olarak veya ***Nokta grupları*** olarak görüntüleyebilirsiniz (örneğin Wikivoyage seyahat kitapları için). [Seyahat rehberleri hakkında daha fazla bilgiyi burada bulabilirsiniz](../plan-route/travel-guides.md).
 
 
-## Rotaları Haritada Görüntüle {#display-routes-on-the-map}
+## Rotaları Haritada Görüntüleme {#display-routes-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -179,15 +179,15 @@ Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenme
 
 </Tabs>
 
-- Gerekli rotaları haritada görüntülemek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünün *Rotalar listesi* bölümünde etkinleştirin.
-- OsmAnd, [OpenStreetMap'te bulunan rotaları](https://wiki.openstreetmap.org/wiki/Relation:route) vurgulayabilir. Bunlar, [rotadaki sembole](#save-as-a-track) dokunarak seçilebilir ve görünür rota kümesi doğru yapılandırılmışsa, rengi ve simgeleri takip edebilirsiniz.
+- Gerekli rotaları haritada görüntülemek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünün *Rotalar listesinde* etkinleştirin.
+- OsmAnd, [OpenStreetMap'te bulunan rotaları](https://wiki.openstreetmap.org/wiki/Relation:route) vurgulayabilir. Bunlar, [rotadaki sembole](#save-as-a-track) dokunarak seçilebilir ve görünür rota kümesi doğru şekilde yapılandırılmışsa, rengi ve simgeleri takip edebilirsiniz.
 - [Rota Planla](../plan-route/create-route.md) aracını kullanarak rotaların üzerine bir parkur oluşturabilirsiniz.
 
 ![Harita rotaları - yürüyüş osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Harita rotaları - bisiklet-düğüm-ağları](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
 
-## Rotalarla İşlemler {#actions-with-routes}
+## Rotalarla Eylemler {#actions-with-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -205,9 +205,9 @@ Belirli ***Seyahat Kitaplarının*** ve ***parkur*** türlerinin görüntülenme
 
 </Tabs>
 
-Harita üzerinde, [yürüyüş, bisiklet, seyahat ve daha fazlası](#type-of-routes) için, uygun yerlerde [OSMC sembolleriyle](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) işaretlenmiş rotaları seçebilirsiniz.
+Haritada, uygun olduğu yerlerde [OSMC sembolleriyle](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) işaretlenmiş [yürüyüş, bisiklet, seyahat ve daha fazlası](#type-of-routes) için rotaları seçebilirsiniz.
 
-Harita üzerinde bir **rota sembolüne** dokunduğunuzda:
+Haritada bir **rota sembolüne** dokunduğunuzda:
 
 - O konumdaki **yakındaki rotaların bir listesi** görüntülenir.
 - Listeden bir rota seçtikten sonra, o rota için ayrıntılı bilgi ve mevcut eylemleri gösteren bir [bağlam menüsü](../map/tracks/track-context-menu.md) açılır.
@@ -239,14 +239,14 @@ Harita üzerinde bir **rota sembolüne** dokunduğunuzda:
 
 Aşağıdaki bilgiler bağlam menüsünde görünür olacaktır:
 
-- **Rota bilgisi**: Rota adı, OSM bağlantısı (OSM Düzenleme eklentisi gereklidir), Tür, Açıklama, Mesafe, Yön, Yokuş yukarı/Yokuş aşağı, Rakım aralığı, Ağ, Operatör, Durum, Renk, Gidiş-dönüş, Başlangıç/Bitiş noktaları ve daha fazlası.
+- **Rota bilgisi**: Rota adı, OSM bağlantısı (OSM Düzenleme eklentisi gerekli), Tür, Açıklama, Mesafe, Yön, Yokuş yukarı/aşağı, Rakım aralığı, Ağ, Operatör, Durum, Renk, Gidiş-dönüş, Başlangıç/Bitiş noktaları ve daha fazlası.
 - **Genel**: Boyut, Konum, Oluşturulma tarihi.
 - **Ek Bilgi**. Etkinlik türünü görüntüler.
-- eylem düğmeleri: [Kaydet](#save-as-a-track) ve [Navigasyonu Başlat](#start-navigation).
+- Eylem düğmeleri: [Kaydet](#save-as-a-track) ve [Navigasyonu Başlat](#start-navigation).
 - [Yükseklik bilgisi](../navigation/setup/route-details.md#elevation-info). Rota üzerindeki yükseklik verileri hakkında bilgi görüntüler.
-- [Parkuru Haritada Analiz Et](../map/tracks/index.md#analyze-track-on-map). Grafikler ve haritalar kullanarak parkur verilerinin ayrıntılı analizini görüntüler.
+- [Haritada Parkuru Analiz Et](../map/tracks/index.md#analyze-track-on-map). Grafikler ve haritalar kullanarak parkur verilerinin ayrıntılı analizini görüntüler.
 
-Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğini görüntülemek için, bağlam menüsündeki aşağıdaki değerlerden herhangi birine dokunmanız yeterlidir: **Mesafe**, **Yokuş yukarı**, **Yokuş aşağı** veya **Rakım**.
+Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğini görüntülemek için bağlam menüsündeki aşağıdaki değerlerden herhangi birine dokunmanız yeterlidir: **Mesafe**, **Yokuş yukarı**, **Yokuş aşağı** veya **Rakım**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -262,7 +262,7 @@ Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğ
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 ### Parkur Olarak Kaydet {#save-as-a-track}
 
@@ -280,9 +280,10 @@ Seçilen bir rota için yükseklik, eğim veya rakım ayrıntılarının grafiğ
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/track-context-menu.md#info-panel) altındaki **Kaydet (İndir)** düğmesine dokunun. Bu, [Görünümünü](./tracks/appearance.md) değiştirme, [Navigasyon](../navigation/setup/route-navigation.md) veya [Rota Planla](../plan-route/create-route.md) düzenleme gibi parkur eylemlerine erişebileceğiniz [Hızlı eylemler](../map/tracks/track-context-menu.md#track-actions) düğme panelini açacaktır.
+
+Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/track-context-menu.md#info-panel) altındaki **Kaydet (İndir)** düğmesine dokunun. Bu, [Görünümünü](./tracks/appearance.md) değiştirme, [Navigasyon](../navigation/setup/route-navigation.md) veya [Rota planlama](../plan-route/create-route.md) gibi parkur eylemlerine erişebileceğiniz [Hızlı eylemler](../map/tracks/track-context-menu.md#track-actions) düğme panelini açacaktır.
 
 
 ### Navigasyonu Başlat {#start-navigation}
@@ -301,7 +302,7 @@ Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Seçilen OSM rotası boyunca navigasyonu başlatmak için, [**Bilgi panelindeki**](../map/tracks/track-context-menu.md#info-panel) **Navigasyonu Başlat** düğmesine dokunun.
 
@@ -310,14 +311,14 @@ Bu, [**Parkurla Navigasyon**](../navigation/setup/gpx-navigation.md) modunu baş
 
 ### Hızlı Eylemler {#quick-actions}
 
-[Hızlı Eylem](../widgets/quick-action.md#configure-map) widget'ını kullanarak rotaların açılıp kapanacağını özelleştirebilirsiniz.
+[Hızlı Eylem](../widgets/quick-action.md#configure-map) widget'ını kullanarak rotaların açılıp kapanmasını özelleştirebilirsiniz.
 
 
 ## Rota Arama {#routes-search}
 
-[Arama işlevini](../search/index.md) kullanarak rota adıyla veya [Kategoriler bölümünde](../search/search-poi.md#) "Rotalar"ı seçerek rota bulun.
+[Arama işlevini](../search/index.md) kullanarak rota adıyla veya [Kategoriler bölümünde](../search/search-poi.md#) "Rotalar"ı seçerek rotaları bulun.
 
-Arama yapmak için, *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
+Arama yapmak için *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -333,9 +334,9 @@ Arama yapmak için, *<Translate android="true" ids="search_button"/>* menüsüne
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-İstenilen rotaları bulmak için *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* bölümüne gidin. Rotalar; ad, etkinlik türü, uzunluk, konum ve en yakın noktaya olan mesafeyi içerir.
+İstenen rotaları bulmak için *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* adresine gidin. Rotalar ad, etkinlik türü, uzunluk, konum ve en yakın noktaya olan mesafeyi içerir.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

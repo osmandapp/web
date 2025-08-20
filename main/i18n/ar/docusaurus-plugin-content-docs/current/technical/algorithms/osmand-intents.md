@@ -3,7 +3,7 @@ source-hash: ce45a79a4677df21e3a8b5a8f3178863dd34264f1ee672755713d1437ee0e199
 sidebar_position: 2
 ---
 
-# ما هي الأهداف التي يستمع إليها OsmAnd؟ {#what-intents-does-osmand-listen-to}
+# ما هي الأهداف التي يستمع إليها أوزماند؟ {#what-intents-does-osmand-listen-to}
 
 ### [أهداف أندرويد الجغرافية](http://developer.android.com/guide/appendix/g-app-intents.html) {#android-geo-intents}
 * geo:latitude,longitude
@@ -11,36 +11,36 @@ sidebar_position: 2
 * geo:0,0?q=my+street+address
 * geo:0,0?q=business+near+city
 
-### أهداف OsmAnd المحددة: {#osmand-specific-intents}
+### أهداف أوزماند المحددة: {#osmand-specific-intents}
 
 1. **الموقع مع الدبوس**: [https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116](https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116)
 
-وصف URL:
-- "https://osmand.net/map" - مورد ويب OsmAnd.
+وصف الرابط:
+- "https://osmand.net/map" - مصدر ويب أوزماند.
 - "?pin=52.491143,7.116394" - إحداثيات الدبوس.
 - "#9/52.3924/6.3116" - تكبير الخريطة ومركزها.
 
-![URL مع دبوس](@site/static/img/technical/url_pin.png) 
+![URL with PIN](/img/technical/url_pin.png)
 
 2. **الموقع بدون دبوس**: [https://osmand.net/map/#9/52.3924/6.3116](https://osmand.net/map/#9/52.3924/6.3116)
 
-وصف URL:
-- "https://osmand.net/map" - مورد ويب OsmAnd.
+وصف الرابط:
+- "https://osmand.net/map" - مصدر ويب أوزماند.
 - "#9/52.3924/6.3116" - تكبير الخريطة ومركزها.
 
-![URL بدون دبوس](@site/static/img/technical/url_without_pin.png) 
+![URL without PIN](/img/technical/url_without_pin.png)
 
-3. **الملاحة**: [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
+3. **التنقل**: [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
 
-وصف URL:
-- "https://osmand.net/map" - مورد ويب OsmAnd.
+وصف الرابط:
+- "https://osmand.net/map" - مصدر ويب أوزماند.
 - "start=52.236210,5.119629" - إحداثيات نقطة البداية.
 - "finish=52.412472,4.855957" - إحداثيات نقطة النهاية.
-- "profile=car" - ملف تعريف الملاحة.
+- "profile=car" - ملف تعريف التنقل.
 - "pin=52.491143,7.116394" - إحداثيات الدبوس.
 - "#9/52.3873/5.2570" - تكبير الخريطة ومركزها.
 
-![URL مع ملاحة](@site/static/img/technical/url_navigation.png) 
+![URL with navigation](/img/technical/url_navigation.png)
 
 ### جوجل: {#google}
 * google.navigation:q=34.99393,-106.61568
@@ -51,7 +51,7 @@ sidebar_position: 2
 * https://maps.google.com/maps?q=loc:-21.8835112,-47.7838932 (الاسم)
 * http://maps.google.com/maps?q=34,-106
 * http://www.google.com/maps/dir/Current+Location/34,-106
-* والعديد من المواقع المماثلة الأخرى على نطاقات google.`<lang>` مختلفة
+* والعديد من الروابط المشابهة الأخرى على نطاقات google.`<lang>` مختلفة
 
 ### OSM: {#osm}
 * `http://www.openstreetmap.org/search?query=<lat>%2C<lon>`
@@ -68,7 +68,7 @@ sidebar_position: 2
 * http://maps.apple.com/?daddr=Bargou,+Tunisien
 * http://maps.apple.com/?lsp=7618&q=40.738065,-73.988898&sll=40.738065,-73.988898
 * http://ge0.me/44TvlEGXf-/Kyiv
-  
+
 ### الكود والاختبارات هنا: {#code-and-tests-are-here}
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/util/GeoPointParserUtil.java
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/test/java/net/osmand/util/GeoPointParserUtilTest.java

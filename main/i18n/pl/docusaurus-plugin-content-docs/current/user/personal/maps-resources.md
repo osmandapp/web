@@ -1,7 +1,7 @@
 ---
-source-hash: 7709beb792400753a1f976b6fb02017857a5da0e9d06e235ddb18b6b45b4fb49
+source-hash: 57a0e223941f4fa5c78b961d2b8a0c14ce6e335350aa6cf77cf17491e4fcf0f6
 sidebar_position: 2
-title: Mapy i zasoby
+title:  Mapy i zasoby
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-W sekcji **Mapy i zasoby** możesz zarządzać mapami *online* i *offline* oraz innymi zasobami używanymi w OsmAnd. Możesz na przykład pobierać, usuwać, zmieniać nazwy, czyścić pamięć podręczną, aktualizować i sprawdzać rozmiar oraz wykonywać różne inne czynności.
+W sekcji **Mapy i zasoby** można zarządzać mapami *online* i *offline* oraz innymi zasobami używanymi w OsmAnd. Można na przykład pobierać, usuwać, zmieniać nazwy, czyścić pamięć podręczną, aktualizować i sprawdzać rozmiar, a także wykonywać różne inne działania.
 
-OsmAnd działa z dwoma typami map: [mapami wektorowymi](../map/vector-maps.md) i [mapami rastrowymi](../map/raster-maps.md). Zakładka [Lokalne](#localne) przechowuje wszystkie mapy i zasoby. Dostępne typy map można pobrać z zakładki [Pobrane](#pobrane). W zakładce [Aktualizacje](#aktualizacje) możesz pobrać mapy dostępne do aktualizacji i korzystać z [aktualizacji na żywo](#osmand-live). Możesz również uzyskać dostęp do funkcji [Dodatkowe mapy](#dodatkowe-mapy), aby tworzyć własne typy map.
+OsmAnd działa z dwoma typami map: [mapami wektorowymi](../map/vector-maps.md) i [mapami rastrowymi](../map/raster-maps.md). Zakładka [Lokalne](#localne) przechowuje wszystkie mapy i zasoby. Dostępne typy map można pobrać z zakładki [Pobrane](#pobrane). Na zakładce [Aktualizacje](#aktualizacje) można pobierać mapy, które są dostępne do aktualizacji i korzystać z [aktualizacji na żywo](#osmand-live). Można również uzyskać dostęp do funkcji [Dodatkowe mapy](#dodatkowe-mapy), aby tworzyć własne typy map.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -61,25 +61,25 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 </Tabs>
 
-Pobieranie map do aplikacji OsmAnd jest ważnym krokiem, który decyduje o funkcjonalności i wydajności nawigacji.
+Pobieranie map do aplikacji OsmAnd jest ważnym krokiem, który decyduje o funkcjonalności i efektywności nawigacji.
 
 #### Bezpłatne funkcje dla wybranej lokalizacji {#free-features-for-the-selected-location}
 
 - **Mapa standardowa**. Zapewnia przegląd obszaru na podstawie źródła [OpenStreetMap](https://www.openstreetmap.org/) i zawiera mapę, trasy, adresy, POI oraz informacje o transporcie publicznym. Dotknięcie otwiera ekran z listą regionów wybranego kraju i informacjami o tym, ile miejsca zajmą te mapy na Twoim urządzeniu.  
-- **Tylko drogi** (*tylko Android*). Mapa zawiera tylko informacje o siatce dróg, aby skupić się na trasach i infrastrukturze drogowej. Usuwając szczegóły, takie jak budynki i punkty zainteresowania, jest mniejsza niż mapa standardowa. Dotknięcie otwiera ekran z listą regionów w wybranym kraju i informacjami o tym, ile miejsca zajmą te mapy na Twoim urządzeniu.
+- **Tylko drogi** (*tylko Android*). Mapa zawiera tylko informacje o siatce dróg, aby skupić się na trasach i infrastrukturze drogowej. Dzięki usunięciu szczegółów, takich jak budynki i punkty POI, jest mniejsza niż mapa standardowa. Dotknięcie otwiera ekran z listą regionów w wybranym kraju i informacjami o tym, ile miejsca zajmą te mapy na Twoim urządzeniu.
 
 #### Płatne funkcje dla wybranej lokalizacji {#paid-features-for-the-selected-location}
 
-- [Warstwice](../plugins/topography.md#contour-lines). Mapa zawierająca warstwice wysokości do wizualizacji terenu.
-- [Mapa terenu (Cieniowanie i nachylenie)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Mapy z cieniami lub nachyleniami dostarczają dodatkowych informacji o terenie.
+- [Warstwice](../plugins/topography.md#contour-lines). Mapa zawierająca warstwice wysokościowe do wizualizacji terenu.
+- [Mapa terenu (Cieniowanie i nachylenie)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Mapy z cieniowaniem lub nachyleniami dostarczają dodatkowych informacji o terenie.
 - [Mapa terenu (3D)](../plugins/topography.md#3d-relief). Trójwymiarowa reprezentacja terenu dla lepszego zrozumienia otoczenia. Musi być włączony [silnik renderowania map w wersji 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 - [Wikipedia](../plugins/wikipedia.md). Mapa wektorowa z geopozycjonowanymi artykułami [Wikipedii](https://wikipedia.org/) o punktach orientacyjnych lub dodatkowymi informacjami o miejscach.
 - [Prognoza pogody](../plugins/weather.md). Informacje o pogodzie na mapie dla łatwego planowania trasy.
-- [Mapy rastrowe online](../map/raster-maps.md). Mapy są dostępne do pobrania online i mogą być instalowane jako mapy innych firm lub kafelki OsmAnd.
+- [Online mapy rastrowe](../map/raster-maps.md). Mapy są dostępne do pobrania online i mogą być instalowane jako mapy innych firm lub kafelki OsmAnd.
 
 #### Mapa przeglądowa świata {#world-overview-map}
 
-Wersje OsmAnd do 3.8 oferują pobranie mapy świata, dzięki czemu można ją przeglądać w skali planetarnej. W nowszych wersjach OsmAnd, lekka *Mini Mapa Świata* jest dołączona do aplikacji. Aplikacja umożliwia pobranie większej mapy przeglądowej świata z bardziej szczegółowymi informacjami.
+Wersje OsmAnd do 3.8 oferują pobranie mapy świata, dzięki czemu można ją przeglądać w skali planetarnej. W nowszych wersjach OsmAnd lekka *Mini mapa świata* jest dołączona do aplikacji. Aplikacja umożliwia pobranie większej mapy przeglądowej świata z bardziej szczegółowymi informacjami.
 
 
 ## Mapy i zasoby {#maps--resources}
@@ -90,7 +90,7 @@ Sekcja **Mapy i zasoby** w *menu głównym* aplikacji OsmAnd zapewnia dostęp do
 - W zakładce [Lokalne](#local) mapy można znaleźć i zarządzać szczegółowymi informacjami o mapach i miejscach, w tym ulubionymi, śladami, notatkami OSM i innymi elementami, które masz na swoim urządzeniu.  
 - Zakładka [Aktualizacje](#updates) umożliwia użytkownikom uzyskanie informacji o dostępnych aktualizacjach map i innych zasobów, zapewniając, że dane są aktualne i dokładne.
 
-***Ogólne działania, które możesz wykonać w Mapach i zasobach***:
+***Ogólne działania, które można wykonać w Mapach i zasobach***:
 
 - **Odśwież**. Ponownie ładuje listę dostępnych map z serwera OsmAnd.  
 - **Szukaj**. Wyszukaj mapy według **kraju**, **prowincji** lub dużego **miasta**.  
@@ -136,16 +136,16 @@ Zakładka **Pobierz** umożliwia pobieranie różnych typów map z serwerów Osm
     - *Android*: Menu z trzema kropkami.  
     - *iOS*: Ikona informacji (I).
 
-- **Mapy w trakcie ładowania** mają ikonę wizualizującą ten proces. Aby anulować pobieranie, dotknij ikony. Aby wyświetlić listę map w kolejce pobierania i anulować pobieranie, dotknij paska pobierania w obszarze informacji o pamięci urządzenia na kartach Pobieranie i Aktualizacje.
+- **Mapy w trakcie ładowania** mają ikonę wizualizującą ten proces. Aby anulować pobieranie, dotknij ikony. Aby wyświetlić listę map w kolejce pobierania i anulować pobieranie, dotknij paska Pobieranie w obszarze informacji o pamięci urządzenia na zakładkach Pobierane i Aktualizacje.
 
-- **W wersji darmowej**, mapy niedostępne do pobrania pokazują ikonę [POBIERZ](../purchases/index.md), prowadzącą do strony zakupu.
+- **W wersji darmowej** mapy niedostępne do pobrania pokazują ikonę [POBIERZ](../purchases/index.md), prowadzącą do strony zakupu.
 
 ***Zakładka pobierania składa się z grup map:***
 
 - **Informacje o pamięci urządzenia**. Wizualizuj ilość zajętego i wolnego miejsca na urządzeniu.
 - **Licznik map** (***Wersja darmowa***). Wyświetla, ile map pozostało do pobrania.
 - [Dodatkowe mapy](#extra-maps). Wyświetla dane mapy dla [pakietu niestandardowego](../plugins/custom.md).
-- **Regiony**. Lista według kontynentu i regionu świata: *Afryka, Antarktyda, Azja, Australia i Oceania, Ameryka Środkowa, Europa, Ameryka Północna, Rosja i Ameryka Południowa.*
+- **Regiony**. Lista według kontynentów i regionów świata: *Afryka, Antarktyda, Azja, Australia i Oceania, Ameryka Środkowa, Europa, Ameryka Północna, Rosja i Ameryka Południowa.*
 - [Mapy świata](#world-maps). Lista map całego świata: *Korekta wysokości świata (tylko Android)*, *Mapa przeglądowa świata*, *Cały świat (prognoza pogody)*
 - [Mapy morskie](../plugins/nautical-charts.md) ([*funkcja płatna*](../purchases/index.md)). Mapy wektorowe z wysokościami jako punkty lub linie.
 - [Przewodniki turystyczne (Wikivoyage)](../plan-route/travel-guides.md) ([*funkcja płatna*](../purchases/index.md)). Mapy wektorowe z kolekcją artykułów w formacie HTML i dodatkowo plikami GPX.
@@ -157,8 +157,8 @@ Zakładka **Pobierz** umożliwia pobieranie różnych typów map z serwerów Osm
 
 W menu Pobierz mapy znajduje się sekcja **Mapy świata**, która zapewnia dostęp do pobierania różnych map świata, uzupełniając funkcjonalność aplikacji.  
 
-- **Korekta wysokości świata** (*tylko Android*). Poprawia dokładność nawigacji, zwłaszcza w terenie górskim.
-- **Mapa przeglądowa świata**. Zapewnia obszerny przegląd powierzchni ziemi, przydatny do długoterminowego planowania tras i swobodnej eksploracji.
+- **Korekta wysokości świata** (*tylko Android*). Poprawia dokładność nawigacji, zwłaszcza w terenie górzystym.
+- **Mapa przeglądowa świata**. Zapewnia szeroki przegląd powierzchni ziemi, przydatny do długoterminowego planowania tras i swobodnego eksplorowania.
 - **Cały świat (prognoza pogody)**. Umożliwia pobranie mapy z informacjami o pogodzie.
 
 Informacje o *menu map* i *działaniach* można znaleźć w artykule [Pobierz mapy](../start-with/download-maps.md).
@@ -182,7 +182,7 @@ Informacje o *menu map* i *działaniach* można znaleźć w artykule [Pobierz ma
 
 </Tabs>
 
-Dla krajów składających się z **wielu map regionów** można skorzystać z masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikonami podwójnej strzałki pobierania i etykietą z liczbą regionów w środku (np. Warstwice / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać.
+Dla krajów składających się z **wielu map regionów** można użyć masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikonami podwójnej strzałki pobierania i etykietą z liczbą regionów w środku (np. Warstwice / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać.
 
 
 ### Lokalne {#local}
@@ -193,7 +193,7 @@ Dla krajów składających się z **wielu map regionów** można skorzystać z m
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
-![Zakładka Lokalne Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Zakładka Lokalne Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+![Zakładka lokalna Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Zakładka lokalna Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
 </TabItem>
 
@@ -201,30 +201,30 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
-![Menu zakładki Lokalne iOS](@site/static/img/personal/maps/local_tab_ios.png)
+![Menu zakładki lokalnej iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Zakładka Lokalne zapewnia przegląd wykorzystania pamięci dla wszystkich danych OsmAnd na Twoim urządzeniu. Dane są podzielone na trzy sekcje oznaczone kolorami dla przejrzystości, a elementy są sortowane według rozmiaru od największego do najmniejszego. Każda sekcja wyświetla tylko elementy z pobranymi danymi:
+Zakładka Lokalne zapewnia przegląd wykorzystania pamięci dla wszystkich danych OsmAnd na Twoim urządzeniu. Dane są podzielone na trzy sekcje oznaczone kolorami dla przejrzystości, z elementami posortowanymi według rozmiaru od największego do najmniejszego. Każda sekcja wyświetla tylko elementy z pobranymi danymi:
 
 - ***Zasoby*** (*niebieski*).  
-    Obejmuje mapy ([Standardowe](../map/vector-maps.md), &nbsp;[Morskie](../plugins/nautical-charts.md), &nbsp;[Topograficzne](../plugins/topography.md), &nbsp;[Pogodowe](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) i [Przewodniki turystyczne](../plan-route/travel-guides.md), &nbsp;[Aktualizacje na żywo](../personal/maps-resources.md#osmand-live), &nbsp;**Tylko drogi**,  &nbsp;[Źródła map](../map/raster-maps.md), &nbsp;[Style renderowania](../map/vector-maps.md#default-map-styles), &nbsp;**Czcionki map, &nbsp;Komunikaty głosowe (nagrane i TTS), &nbsp;Pamięć podręczna**.  
+    Obejmuje mapy ([Standardowe](../map/vector-maps.md), &nbsp;[Morskie](../plugins/nautical-charts.md), &nbsp;[Topograficzne](../plugins/topography.md), &nbsp;[Pogoda](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) i [Przewodniki turystyczne](../plan-route/travel-guides.md), &nbsp;[Aktualizacje na żywo](../personal/maps-resources.md#osmand-live), &nbsp;**Tylko drogi**,  &nbsp;[Źródła map](../map/raster-maps.md), &nbsp;[Style renderowania](../map/vector-maps.md#default-map-styles), &nbsp;**Czcionki map, &nbsp;Komunikaty głosowe (nagrane i TTS), &nbsp;Pamięć podręczna**.  
 
 - ***Moje miejsca*** (*żółty*).  
-    Obejmuje [Ulubione](../personal/favorites.md), &nbsp;[Ślady](../personal/tracks/manage-tracks.md), &nbsp;[Notatki OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Edycje OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Notatki A/V](../plugins/audio-video-notes.md), &nbsp;[Znaczniki mapy](../personal/markers.md), &nbsp;[Historia](../personal/global-settings.md#history), &nbsp;*Plan podróży*.  
+    Obejmuje [Ulubione](../personal/favorites.md), &nbsp;[Ślady](../personal/tracks/manage-tracks.md), &nbsp;[Notatki OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Edycje OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Notatki A/V](../plugins/audio-video-notes.md), &nbsp;[Znaczniki mapy](../personal/markers.md), &nbsp;[Historia](../personal/global-settings.md#history), &nbsp;*Trasa*.  
 
 - ***Ustawienia*** (*zielony*).  
-    Obejmuje [Profile](../personal/profiles.md), &nbsp;[Kolory](../personal/color-palette-schemes.md) i **inne** konfiguracje aplikacji.
+    Obejmuje [Profile](../personal/profiles.md), &nbsp;[Kolory](../personal/color-palette-schemes.md) i **Inne** konfiguracje aplikacji.
 
 
-#### Przeglądanie danych {#viewing-data}
+#### Wyświetlanie danych {#viewing-data}
 
-![Przegląd kategorii lokalnych Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opcje kategorii lokalnych Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
+![Przegląd kategorii lokalnej Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opcje kategorii lokalnej Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
 
-Dotknij dowolnego elementu w zakładce **Lokalne**, aby otworzyć jego szczegółową listę. U góry tej listy, wizualny panel wyświetla, ile miejsca zajmuje wybrany typ danych w stosunku do całkowitej pamięci OsmAnd.
+Dotknij dowolnego elementu w zakładce **Lokalne**, aby otworzyć jego szczegółową listę. Na górze tej listy, panel wizualny wyświetla, ile miejsca zajmuje wybrany typ danych w stosunku do całkowitej pamięci OsmAnd.
 
 ***Dostępne działania:***
 
@@ -237,37 +237,37 @@ Dotknij dowolnego elementu w zakładce **Lokalne**, aby otworzyć jego szczegó�
 
 #### Menu dla elementów z listy {#menu-for-items-from-the-list}
 
-![Działania elementów kategorii lokalnych 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Działania elementów kategorii lokalnych](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
+![Działania elementu kategorii lokalnej 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Działania elementu kategorii lokalnej](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
 Każdy element na liście oferuje *menu z trzema kropkami* z opcjami:
 
-- **Info**. Wyświetl szczegółowe informacje o *[elemencie danych](#local-data-item-overview)*.
-- **Eksportuj**. Zapisz dane do pliku za pomocą *Ustawienia → Eksportuj do pliku*.
+- **Informacje**. Wyświetl szczegółowe informacje o *[elemencie danych](#local-data-item-overview)*.
+- **Eksportuj**. Zapisz dane do pliku poprzez *Ustawienia → Eksportuj do pliku*.
 
 ***Dodatkowe opcje dla map:***
 
-- **Dezaktywuj**. Wyłącz mapy wektorowe bez ich usuwania. Pozostają one przechowywane, ale nie są używane do nawigacji, wyszukiwania ani wyznaczania tras. Zmniejsza to obciążenie urządzenia i przyspiesza działanie OsmAnd.
+- **Dezaktywuj**. Wyłącz mapy wektorowe bez ich usuwania. Pozostają one przechowywane, ale nie są używane do nawigacji, wyszukiwania ani routingu. Zmniejsza to obciążenie urządzenia i przyspiesza OsmAnd.
 - **Aktualizuj**. Pobierz najnowszą wersję mapy.
 - **Zmień nazwę**. Dostosuj nazwę mapy dla lepszej identyfikacji.
 - **Usuń**. Usuń mapę z urządzenia.
-- **Edytuj** (dla map online). Modyfikuj konfigurację mapy online.
+- **Edytuj** (dla map online). Zmodyfikuj konfigurację mapy online.
 
 #### Menu elementów źródła mapy {#map-source-items-menu}
 
 ![Menu elementów źródła mapy](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
-Każdy element na liście [Źródła mapy](../map/raster-maps.md) udostępnia ustawienia do zarządzania rastrową mapą online przechowywaną na Twoim urządzeniu. Otwórz *menu z trzema kropkami*, aby uzyskać dostęp do dostępnych działań:
+Każdy element na liście [Źródło mapy](../map/raster-maps.md) zawiera ustawienia do zarządzania rastrową mapą online przechowywaną na Twoim urządzeniu. Otwórz *menu z trzema kropkami*, aby uzyskać dostęp do dostępnych działań:
 
 - [Informacje](#local-data-item-overview). Wyświetla ogólne szczegóły dotyczące wybranego źródła mapy, w tym format i datę ostatniej aktualizacji.  
-- **Oblicz rozmiar**. Szacuje miejsce zajmowane przez buforowane kafelki tego źródła mapy. Jeśli pamięć podręczna przekracza *50 MB*, rozmiar może być wyświetlany jako *≥50 MB* zamiast dokładnej liczby.
-- **Wyczyść wszystkie kafelki**. Usuwa wszystkie buforowane kafelki dla wybranego źródła mapy, zwalniając miejsce, jednocześnie zachowując źródło mapy dostępne do przyszłego użytku.  
-- **Eksportuj**. Zapisuje konfigurację wybranego źródła mapy w celu utworzenia kopii zapasowej lub udostępnienia.  
+- **Oblicz rozmiar**. Szacuje zajmowaną pamięć przez buforowane kafelki tego źródła mapy. Jeśli pamięć podręczna przekracza *50 MB*, rozmiar może być wyświetlany jako *≥50 MB* zamiast dokładnej liczby.
+- **Wyczyść wszystkie kafelki**. Usuwa wszystkie buforowane kafelki dla wybranego źródła mapy, zwalniając pamięć, jednocześnie utrzymując źródło mapy dostępne do przyszłego użytku.  
+- **Eksportuj**. Zapisuje konfigurację wybranego źródła mapy do kopii zapasowej lub udostępniania.  
 - **Usuń**. Usuwa wybrane źródło mapy. To działanie nie wpływa na pobrane mapy offline, ale czyści powiązaną pamięć podręczną.
 
 
-#### Przegląd lokalnych elementów danych {#local-data-item-overview}
+#### Przegląd lokalnego elementu danych {#local-data-item-overview}
 
-![Przegląd lokalnych elementów danych](@site/static/img/settings/local_category_overview_2.png) ![Przegląd lokalnych elementów danych 2](@site/static/img/settings/local_category_overview_1.png)  
+![Przegląd lokalnego elementu danych](@site/static/img/settings/local_category_overview_2.png) ![Przegląd lokalnego elementu danych 2](@site/static/img/settings/local_category_overview_1.png)  
 
 Podczas przeglądania lokalnego elementu danych widzisz:
 
@@ -286,7 +286,7 @@ Użyj opcji sortowania, aby uporządkować dane mapy:
 - **Nazwa (A - Z / Z - A)**. Znajdź elementy alfabetycznie.
 - **Nazwa kraju (A - Z / Z - A)**. Uporządkuj mapy geograficznie.
 - **Najnowsza data najpierw** / **Najstarsza data najpierw**. Zobacz aktualizacje lub starsze wersje.
-- **Duży rozmiar najpierw** / **Mały rozmiar najpierw**. Zidentyfikuj duże mapy, aby zwolnić miejsce.
+- **Największy rozmiar najpierw** / **Najmniejszy rozmiar najpierw**. Zidentyfikuj duże mapy, aby zwolnić miejsce w pamięci.
 
 
 ### Aktualizacje {#updates}
@@ -311,21 +311,21 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download
 
 </Tabs>
 
-Zakładka **Aktualizacje** umożliwia comiesięczne odświeżanie map OsmAnd. Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w miarę potrzeb. Mapy standardowe i tylko drogowe są zazwyczaj wydawane dwa tygodnie w każdym miesiącu. Aby uzyskać godzinne aktualizacje, sprawdź status subskrypcji [OsmAnd Live](#osmand-live). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się u góry zakładki, pod wskaźnikiem pamięci urządzenia.
+Zakładka **Aktualizacje** umożliwia comiesięczne odświeżanie map OsmAnd. Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w miarę potrzeb. Mapy standardowe i tylko drogi są zazwyczaj wydawane dwa tygodnie po rozpoczęciu każdego miesiąca. Aby uzyskać aktualizacje godzinowe, sprawdź status subskrypcji [OsmAnd Live](#osmand-live). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się na górze zakładki, pod wskaźnikiem pamięci urządzenia.
 
 
 ### Dodatkowe mapy {#extra-maps}
 
-OsmAnd obsługuje transfer ustawień i danych specyficznych dla profilu, w tym plików renderowania, czcionek, tras, map i niestandardowych wtyczek. Utwórz niestandardowy folder mapy za pomocą pliku wtyczki `.osf` (skompresowany format `.zip`).
+OsmAnd obsługuje przesyłanie ustawień i danych specyficznych dla profilu, w tym plików renderowania, czcionek, tras, map i niestandardowych wtyczek. Utwórz niestandardowy folder mapy za pomocą pliku wtyczki `.osf` (skompresowany format `.zip`).
 
 Aby zaimportować plik:
 
 1. Znajdź plik `.osf` w pamięci urządzenia, komunikatorze lub poczcie e-mail.
 2. Dotknij, aby otworzyć go za pomocą OsmAnd.
 3. Wtyczka pojawi się w sekcji **Lista wtyczek**, gdzie będzie można ją aktywować.
-4. Odpowiedni folder pojawi się następnie w sekcji **Dodatkowe mapy** na karcie [Pobrane](#downloads).
+4. Odpowiedni folder pojawi się następnie w sekcji **Dodatkowe mapy** na zakładce [Pobrane](#downloads).
 
-Więcej informacji znajdziesz w artykule [**Niestandardowy pakiet**](../plugins/custom).
+Więcej informacji znajdziesz w artykule [**Pakiet niestandardowy**](../plugins/custom).
 
 
 ## OsmAnd Live {#osmand-live}
@@ -339,7 +339,7 @@ OsmAnd Live to funkcja płatna.
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
-![Menu map OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Menu map OsmAnd live edycja Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
+![Menu map OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Menu map OsmAnd live edytuj Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
@@ -347,13 +347,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Menu map OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Menu map OsmAnd live edycja iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Menu map OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Menu map OsmAnd live edytuj iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**OsmAnd Live** zapewnia częste, przyrostowe aktualizacje map poprzez [subskrypcję](../purchases/index.md) lub jest bezpłatne dla [współpracowników OSM](#free-for-osm-mappers). Aktualizacje odbywają się co 15 minut na serwerach OsmAnd i są dostępne do pobrania co godzinę, codziennie lub co tydzień. Te aktualizacje zużywają minimalną ilość pamięci — około 2-4% pełnego rozmiaru mapy miesięcznie.
+**OsmAnd Live** zapewnia częste, przyrostowe aktualizacje map poprzez [subskrypcję](../purchases/index.md) lub jest bezpłatny dla [współtwórców OSM](#free-for-osm-mappers). Aktualizacje odbywają się co 15 minut na serwerach OsmAnd i są dostępne do pobrania co godzinę, codziennie lub co tydzień. Te aktualizacje zużywają minimalną ilość pamięci — około 2-4% pełnego rozmiaru mapy miesięcznie.
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
@@ -367,7 +367,7 @@ Kluczowe cechy:
 - **<Translate android="true" ids="update_frequency"/>**. Wybierz częstotliwość aktualizacji mapy (co godzinę, codziennie lub co tydzień).
 - **<Translate android="true" ids="update_now"/>**. Rozpocznij aktualizację mapy *OsmAnd live*.
 - **<Translate android="true" ids="updates_size"/>**(*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>**(*iOS*). Rozmiar *aktualizacji na żywo*.
-- Przycisk **Kosz**(*Android*). Usuń wszystkie otrzymane *aktualizacje na żywo* dla bieżącej mapy.
+- **Przycisk kosza**(*Android*). Usuń wszystkie otrzymane *aktualizacje na żywo* dla bieżącej mapy.
 - **<Translate android="true" ids="only_download_over_wifi"/>**. Zarządzaj pobieraniem *aktualizacji na żywo* przez połączenie Wi-Fi.
 
 
@@ -384,8 +384,8 @@ Kluczowe cechy:
 ### Ograniczenia OsmAnd Live {#limitations-of-osmand-live}
 
 Zmiany adresów są obsługiwane tylko poprzez miesięczne aktualizacje.
-Zaktualizowane drogi nie posiadają szczegółów wysokości, co wpływa na wykresy nachylenia.
-Usunięte lub zmienione odniesienia do tras mogą nadal pojawiać się nieprawidłowo.
+Zaktualizowane drogi nie posiadają szczegółów wysokości, co wpływa na wykresy gradientów.
+Usunięte lub zmienione odniesienia do tras mogą nadal pojawiać się niepoprawnie.
 
 
 ### Bezpłatne dla mapujących OSM {#free-for-osm-mappers}
@@ -406,7 +406,7 @@ Usunięte lub zmienione odniesienia do tras mogą nadal pojawiać się nieprawid
 
 </Tabs>
 
-Współpracownicy [OpenStreetMap](https://openstreetmap.org/) kwalifikują się do bezpłatnego, nieograniczonego pobierania map i aktualizacji na żywo. Aby się zakwalifikować:
+Współtwórcy [OpenStreetMap](https://openstreetmap.org/) są uprawnieni do bezpłatnych, nieograniczonych pobrań map i aktualizacji na żywo. Aby się zakwalifikować:
 Włącz [wtyczkę edycji OpenStreetMap](../plugins/osm-editing.md).
 [Zaloguj się](../plugins/osm-editing.md#settings) za pomocą swojej nazwy użytkownika OSM.
 Utrzymaj co najmniej [**30 edycji**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) w ciągu ostatnich dwóch miesięcy.
