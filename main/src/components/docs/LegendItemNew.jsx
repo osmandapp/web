@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './LegendItem.module.css';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -181,51 +181,57 @@ export default function LegendItemNew({ svgPath, itemsName }) {
   const rowsDay = chunkArray(splitSvgsDay, 3);
   const rowsNight = chunkArray(splitSvgsNight, 3);
 
-  const SvgTable = ({ rows }) => {
-    return (<table className={styles.table}>
-      <tbody>
-        {rows.map((itemArray, rowIndex) => {
-          return <>
-            <tr key={rowIndex * 2}>
-              {itemArray.length > 0 && <td key={rowIndex * 2 + itemArray[0].id} className='text--center'>{itemArray[0].title}</td>}
-              {itemArray.length > 1 && <td key={rowIndex * 2 + itemArray[1].id} className='text--center'>{itemArray[1].title}</td>}
-              {itemArray.length > 2 && <td key={rowIndex * 2 + itemArray[2].id} className='text--center'>{itemArray[2].title}</td>}
-            </tr>
-            <tr key={rowIndex * 2 + 1} className={styles.legendDay}>
-              {itemArray.length > 0 && <td key={rowIndex * 2 + 1 + itemArray[0].id} className={styles.svg}>
-                <div dangerouslySetInnerHTML={{ __html: itemArray[0].svgString }} /></td>}
-              {itemArray.length > 1 && <td key={rowIndex * 2 + 1 + itemArray[1].id} className={styles.svg}>
-                <div dangerouslySetInnerHTML={{ __html: itemArray[1].svgString }} /></td>}
-              {itemArray.length > 2 && <td key={rowIndex * 2 + 1 + itemArray[2].id} className={styles.svg}>
-                <div dangerouslySetInnerHTML={{ __html: itemArray[2].svgString }} /></td>}
-            </tr>
-          </>
-        })}
-      </tbody>
-    </table>
-    );
+  const SvgTable = ({ rows, mode }) => {
+    const isNightMode = mode === 'night';
+    const hasRows = isNightMode ? rowsNight.length > 0 : rowsDay.length > 0;
+    const isLoading = isNightMode ? loadingNight : loadingDay;
+    const hasContent = isNightMode ? !svgContentNight && !loadingNight : !svgContentDay && !loadingDay
+    const legendStyle = isNightMode ? styles.legendNight : styles.legendDay;
+
+    if (hasRows) {
+      return (
+        <table className={styles.table}>
+          <tbody>
+            {rows.map((itemArray, rowIndex) => (
+              <React.Fragment key={`${mode}-row-${rowIndex}`}>
+                <tr>
+                  {itemArray.map((item, itemIndex) => (
+                    <td key={`${mode}-title-${rowIndex}-${item.id || itemIndex}`} className='text--center'>
+                      {item.title}
+                    </td>
+                  ))}
+                </tr>
+                <tr className={legendStyle}>
+                  {itemArray.map((item, itemIndex) => (
+                    <td key={`${mode}-svg-${rowIndex}-${item.id || itemIndex}`} className={styles.svg}>
+                      <div dangerouslySetInnerHTML={{ __html: item.svgString }} />
+                    </td>
+                  ))}
+                </tr>
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      );
+    } else {
+      !error && !isLoading && <p>No groups found in the SVG (after processing).</p>
+    }
+    if (isLoading) {
+      return <p>Loading SVG...</p>
+    }
+    if (!hasContent) {
+      return <p>No SVG content to display.</p>
+    }
   };
 
   return (
     <div className="container row">
       <Tabs groupId="map-legend">
         <TabItem value="dayMode" label="Day mode">
-          {splitSvgsDay.length > 0 ? (
-            <SvgTable rows={rowsDay} />
-          ) : (
-            !error && !loadingDay && <p>No groups found in the SVG (after processing).</p>
-          )}
-          {loadingDay && <p>Loading SVG...</p>}
-          {!svgContentDay && !loadingDay && <p>No SVG content to display.</p>}
+          <SvgTable rows={rowsDay} mode='day' />
         </TabItem>
         <TabItem value="nightMode" label="Night mode">
-          {splitSvgsNight.length > 0 ? (
-            <SvgTable rows={rowsNight} />
-          ) : (
-            !error && !loadingNight && <p>No groups found in the SVG (after processing).</p>
-          )}
-          {loadingNight && <p>Loading SVG...</p>}
-          {!svgContentNight && !loadingNight && <p>No SVG content to display.</p>}
+          <SvgTable rows={rowsNight} mode='night' />
         </TabItem>
       </Tabs>
     </div>
