@@ -26,6 +26,12 @@ To prevent data loss, ensure that your personal data, routes, and maps are backe
 - Alternatively, you can backup all your data from the previous device by copying the folder located in *Settings → OsmAnd Settings → Data storage folder* (default path: `Android/data/net.osmand.plus`). Then, paste the contents of this folder into the Data storage folder on your new device.
 
 
+### I can't install the application 
+Please check the following things:
+- Version of Android and application version
+- Check that app is not yet installed
+
+
 ## Import Files {#import-files}
 
 ### I have a GPX file, how do I import it into OsmAnd? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
