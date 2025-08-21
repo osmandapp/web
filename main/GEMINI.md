@@ -11,8 +11,6 @@
 
 - `docs/technical/build-osmand/setup-the-dev-environment.md` - A technical guide for developers on setting up the development environment for building the OsmAnd application. It provides instructions on how to check out the necessary source code repositories, either by using the `repo` utility with a manifest file or by using `git` directly.
 
-- `docs/user/purchases/ios_new.md` - This file appears to be a placeholder or a test file for new documentation related to in-app purchases on the iOS version of OsmAnd.
-
 - `docs/user/navigation/routing/osmand-routing.md` - This article provides a general overview of OsmAnd's offline routing capabilities. It explains that the routing is based on OpenStreetMap data and can be customized for various profiles (e.g., car, bicycle, pedestrian). It highlights the flexibility of the offline routing engine.
 
 - `docs/legal/index.md` - This is an index page for the legal documentation of OsmAnd, providing links to important legal documents such as the software License, Privacy Policy, and Terms of Use.
@@ -109,11 +107,7 @@
 
 - `docs/technical/build-osmand/rendering.md` - A technical guide for developers and designers on how to create a new rendering style for the maps in OsmAnd. It explains the structure of the rendering style files and how to customize the appearance of map elements.
 
-- `docs/user/purchases/osmand_features_capabilities.md` - This is a comprehensive overview of all the features and capabilities available in the different versions of the OsmAnd app (e.g., free vs. paid). It helps users to understand the benefits of the premium versions and make an informed purchase decision.
-
 - `docs/technical/map-creation/create_travel_guide.md` - A guide for creating custom Travel Guides for use in OsmAnd. It explains the file format and structure for creating collections of points of interest, which can then be displayed on the map as a travel guide.
-
-- `docs/user/purchases/android_new.md` - This file appears to be a placeholder or a test file for new documentation related to in-app purchases on the Android version of OsmAnd.
 
 - `docs/technical/algorithms/index.md` - This is an index page for technical documentation related to the algorithms, testing procedures, and internal workings of OsmAnd. It is a starting point for developers who want to understand the app's core logic.
 
