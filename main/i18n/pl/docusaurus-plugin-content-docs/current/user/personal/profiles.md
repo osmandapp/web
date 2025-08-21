@@ -1,7 +1,7 @@
 ---
-source-hash: 56be876b022a30d0407570ad16f12bc16882efb9fa70f60e3ef8e9dfb7079aa7
+source-hash: fc459398704a8d2bfa0f43cc8e873a69dba20960f781c8cd3153d34ffdf7234f
 sidebar_position: 4
-title: Profile (Ustawienia)
+title:  Profile (Ustawienia)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -53,8 +53,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Konfiguracja profilu {#profile-configuration}
 
-:::caution Stosowanie ustawień tylko do określonego profilu
-Wszystkie ustawienia mają zastosowanie wyłącznie do aktualnie wybranego profilu aplikacji.
+:::caution Stosowanie ustawień tylko do konkretnego profilu
+Wszystkie ustawienia dotyczą wyłącznie aktualnie wybranego profilu aplikacji.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -73,7 +73,7 @@ Wszystkie ustawienia mają zastosowanie wyłącznie do aktualnie wybranego profi
 
 </Tabs>
 
-Ta sekcja zawiera wszystkie ustawienia związane z wyglądem, opcjami nawigacji, wyświetlaniem mapy, menu ustawień i ekranem profilu.
+Ta sekcja zawiera wszystkie ustawienia dotyczące wyglądu, opcji nawigacji, wyświetlania mapy, menu ustawień i ekranu profilu.
 
 
 ### Darmowa kopia zapasowa w chmurze {#free-cloud-backup}
@@ -98,7 +98,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-OsmAnd umożliwia [tworzenie kopii zapasowych](../personal/osmand-cloud.md#osmand-start) ustawień profilu aplikacji w OsmAnd Cloud, zapewniając bezpieczne przechowywanie konfiguracji i łatwe ich przywracanie w wersjach na Androida, iOS i w Internecie. Ta funkcja tworzenia kopii zapasowych chroni ustawienia w przypadku awarii urządzenia lub ponownej instalacji aplikacji. Możesz skorzystać z tego specjalnego planu, korzystając z [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
+OsmAnd umożliwia [tworzenie kopii zapasowych](../personal/osmand-cloud.md#osmand-start) ustawień profilu aplikacji w OsmAnd Cloud, zapewniając bezpieczne przechowywanie i łatwe przywracanie konfiguracji na platformach Android, iOS i w wersjach internetowych. Ta funkcja tworzenia kopii zapasowych chroni ustawienia w przypadku awarii urządzenia lub ponownej instalacji aplikacji. Możesz skorzystać z tego specjalnego planu, używając [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
 
 Musisz mieć konto [OsmAnd Cloud](../personal/osmand-cloud.md#login), aby korzystać z *Darmowej kopii zapasowej ustawień*. Jeśli masz subskrypcję *OsmAnd Pro* lub aktywne konto *OsmAnd Cloud*, baner promocyjny nie będzie wyświetlany.
 
@@ -129,7 +129,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-- **<Translate android="true" ids="choose_osmand_theme"/>**. Umożliwia ustawienie dziennego i nocnego motywu dla aplikacji, który może być zastosowany do jednego profilu lub do wszystkich jednocześnie. Ta opcja nie zmienia ustawień [trybu mapy](../map/vector-maps.md#map-mode).
+- **<Translate android="true" ids="choose_osmand_theme"/>**. Umożliwia ustawienie dziennego i nocnego motywu dla aplikacji, który może być zastosowany do jednego profilu lub wszystkich naraz. Ta opcja nie zmienia ustawień [trybu mapy](../map/vector-maps.md#map-mode).
   - *<Translate android="true" ids="dark_theme"/> motyw*
   - *<Translate android="true" ids="light_theme"/> motyw*
   - *<Translate android="true" ids="system_default_theme"/>*  
@@ -145,7 +145,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
   - *<Translate android="true" ids="map_orientation_landscape"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Tylko Android*). Otwiera menu sterowania ekranem, w którym można wybrać opcje dla ekranu urządzenia podczas nawigacji, aby oszczędzić zużycie baterii urządzenia.  
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Tylko Android*). Otwiera menu sterowania ekranem, gdzie można wybrać opcje dla ekranu urządzenia podczas nawigacji, aby oszczędzić zużycie baterii urządzenia.  
 
 
 ### Jednostki i formaty {#units--formats}
@@ -213,14 +213,14 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 stóp (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 jardy / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nm / 3280.84 stóp / 1000 m |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 stóp / 1000 m |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Przykład: 50.12333° 19.93233° (Szer. Dług.) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Przykład: 50°7.393′ 19°55.941′ (Szer. Dług.)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Przykład: 50°7′23.6″ 19°55′56.4″ (Szer. Dług.) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Strefa Północ Wschód) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Przykład: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | Przykład:  9F2X4WFJ+7W ([Otwarty kod lokalizacji](https://en.wikipedia.org/wiki/Open_Location_Code) reprezentuje obszar 9m x 14m)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | Przykład:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) reprezentuje obszar 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Tylko wersja Android) | Przykład: 2 215 227.87, 830 915.9 ([Szwajcarski system współrzędnych](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Tylko wersja Android) | Przykład: 4 215 227.87, 1 830 915.9 ([Szwajcarski system współrzędnych](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
@@ -243,8 +243,8 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
-| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Dla precyzyjnych pomiarów*, wybierz sposób wyświetlania informacji o odległości w widżetach nawigacyjnych, takich jak odległość do punktu, następnego zakrętu lub konkretnego pasa ruchu. |
-|          | <Translate android="true" ids="round_up"/> | *Dla lepszej czytelności*, liczby wyświetlane w widżetach nawigacyjnych (odległość do punktu, następny zakręt lub pas ruchu) zostaną zaokrąglone w dół, aby miały mniej cyfr. <br/> Na przykład: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Dla precyzyjnych pomiarów*, wybierz sposób wyświetlania informacji o odległości w widżetach nawigacyjnych, takich jak odległość do punktu, następny zakręt lub konkretny pas. |
+|          | <Translate android="true" ids="round_up"/> | *Dla lepszej czytelności*, liczby wyświetlane w widżetach nawigacyjnych (odległość do punktu, następny zakręt lub pas) zostaną zaokrąglone w dół, aby miały mniej cyfr. <br/> Na przykład: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Inne {#other}
@@ -269,7 +269,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Sekcja **Inne** zawiera dodatkowe ustawienia profilu do dostosowania interfejsu OsmAnd i elementów sterujących. Ustawienia te umożliwiają konfigurację urządzeń zewnętrznych, dostosowanie preferencji animacji i przełączanie trybu pełnoekranowego.
+Sekcja **Inne** zawiera dodatkowe ustawienia profilu, umożliwiające dostosowanie interfejsu OsmAnd i elementów sterujących. Ustawienia te pozwalają skonfigurować urządzenia zewnętrzne, dostosować preferencje animacji i przełączać tryb pełnoekranowy.
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Podłącz zewnętrzne kontrolery, takie jak *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* lub *<Translate android="true" ids="sett_parrot_ext_input"/>*, aby obsługiwać OsmAnd za pomocą fizycznych przycisków.
 
@@ -279,11 +279,11 @@ Sekcja **Inne** zawiera dodatkowe ustawienia profilu do dostosowania interfejsu 
 
 - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Tylko Android*) – Wykorzystuje [czujnik magnetyczny](https://en.wikipedia.org/wiki/Kalman_filter) urządzenia do stabilizacji obrotu mapy, redukując nagłe zmiany. Wprowadza to również niewielkie opóźnienie.
 
-- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Tylko Android*) – Dotknij pustej przestrzeni na mapie, aby ukryć przyciski sterujące i widżety, maksymalizując widoczność mapy.
+- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Tylko Android*) – Dotknij pustego miejsca na mapie, aby ukryć przyciski sterujące i widżety, maksymalizując widoczność mapy.
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Tylko Android*) – Wyłącz animacje w trybie nawigacji, aby przyspieszyć przejścia ekranu.
 
-- **<Translate android="true" ids="position_animation"/>** (*Tylko Android*) – Ikona [pozycji](../map/interact-with-map.md#my-location-and-zoom) animuje się z każdym odebranym punktem GPS (raz na sekundę). Niewielkie opóźnienie w jej ruchu może być zauważalne, zwłaszcza podczas szybkiego ruchu lub wahań sygnału GPS. Efekt ten można dostosować za pomocą ustawienia *Czas przewidywania*: wyższe wartości zwiększają płynność, ale dodają opóźnienie, niższe wartości zmniejszają opóźnienie, ale mogą sprawić, że ruch będzie mniej płynny.
+- **<Translate android="true" ids="position_animation"/>** (*Tylko Android*) – Ikona [pozycji](../map/interact-with-map.md#my-location-and-zoom) animuje się z każdym odebranym punktem GPS (raz na sekundę). Może być zauważalne niewielkie opóźnienie w jej ruchu, zwłaszcza podczas szybkiego ruchu lub wahań sygnału GPS. Możesz dostosować ten efekt za pomocą ustawienia *Czas przewidywania*: wyższe wartości zwiększają płynność, ale dodają opóźnienie, niższe wartości zmniejszają opóźnienie, ale mogą sprawić, że ruch będzie mniej płynny.
 
 
 ## Ustawienia nawigacji {#navigation-settings}
@@ -308,30 +308,30 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Szczegółowy przegląd opcji nawigacji znajduje się w artykule [Ustawienia nawigacji](../navigation/guidance/navigation-settings.md), który wyjaśnia, jak skonfigurować OsmAnd dla optymalnego doświadczenia nawigacyjnego.
+Aby uzyskać szczegółowy przegląd opcji nawigacji, zapoznaj się z artykułem [Ustawienia nawigacji](../navigation/guidance/navigation-settings.md), który wyjaśnia, jak skonfigurować OsmAnd dla optymalnego doświadczenia nawigacyjnego.
 
-- [Typ nawigacji](../navigation/guidance/navigation-settings.md#navigation-type) - Wybierz odpowiedni tryb nawigacji w zależności od metody podróży i dostępności Internetu.
+- [Typ nawigacji](../navigation/guidance/navigation-settings.md#navigation-type) - Wybierz odpowiedni tryb nawigacji w zależności od metody podróży i dostępności internetu.
 
-- [Parametry trasy](../navigation/guidance/navigation-settings.md#route-parameters) - Zdefiniuj, jak OsmAnd oblicza trasy, w tym preferencje dotyczące unikania niektórych dróg lub wybierania typów tras.
+- [Parametry trasy](../navigation/guidance/navigation-settings.md#route-parameters) - Zdefiniuj, jak OsmAnd oblicza trasy, w tym preferencje dotyczące unikania niektórych dróg lub wyboru typów tras.
 
 - [Alerty ekranowe](../navigation/guidance/navigation-settings.md#screen-alerts) - Włącz *Widżet alertów*, aby wyświetlać powiadomienia w czasie rzeczywistym o ograniczeniach prędkości, zakrętach i innych ważnych warunkach drogowych.
 
-- [Komunikaty głosowe](../navigation/guidance/navigation-settings.md#voice-prompts) - Włącz wskazówki głosowe, aby otrzymywać mówione instrukcje nawigacyjne podczas jazdy lub spaceru wzdłuż wybranej trasy.
+- [Komunikaty głosowe](../navigation/guidance/navigation-settings.md#voice-prompts) - Włącz wskazówki audio, aby otrzymywać mówione instrukcje nawigacyjne podczas jazdy lub spaceru wzdłuż wybranej trasy.
 
-- [Parametry pojazdu](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Skonfiguruj ustawienia specyficzne dla pojazdu, takie jak maksymalna prędkość i wysokość pojazdu, aby zapewnić dokładne wyznaczanie tras i unikać dróg o ograniczonym dostępie.
+- [Parametry pojazdu](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Skonfiguruj ustawienia specyficzne dla pojazdu, takie jak maksymalna prędkość i wysokość pojazdu, aby zapewnić dokładne wyznaczanie trasy i unikać dróg z ograniczeniami.
 
 - [Dostosuj linię trasy](../navigation/guidance/navigation-settings.md#customize-route-line) – Dostosuj kolor, szerokość i styl linii trasy wyświetlanej na mapie dla lepszej widoczności podczas nawigacji.
 
-- [Mapa podczas nawigacji](../navigation/guidance/navigation-settings.md#map-during-navigation) – Wyświetlaj pozycjonowanie w czasie rzeczywistym na mapie, śledź postępy wzdłuż trasy i popraw orientację za pomocą punktów orientacyjnych.
+- [Mapa podczas nawigacji](../navigation/guidance/navigation-settings.md#map-during-navigation) – Zobacz pozycjonowanie w czasie rzeczywistym na mapie, śledź postępy wzdłuż trasy i popraw orientację za pomocą punktów orientacyjnych.
 
-- [Szczegółowe wskazówki dotyczące śledzenia](../navigation/guidance/navigation-settings.md) – Popraw nawigację zakręt po zakręcie, dopasowując trasę do dróg na mapie. Dostępne ustawienia: *Pytaj za każdym razem* lub *Zawsze*.
+- [Szczegółowe wskazówki dotyczące trasy](../navigation/guidance/navigation-settings.md) – Popraw nawigację zakręt po zakręcie, dopasowując trasę do dróg na mapie. Dostępne ustawienia: *Pytaj za każdym razem* lub *Zawsze*.
 
 :::info
-W profilu *Przeglądaj mapę* nie ma ustawień nawigacji.  
+Brak ustawień nawigacji w profilu *Przeglądaj mapę*.  
 :::
 
 
-## Konfiguracja mapy {#configure-map}
+## Konfiguruj mapę {#configure-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -358,7 +358,7 @@ Menu [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu
 
 Za pomocą tego menu można:
 
-- **Podświetlić ważne elementy mapy**, w tym [punkty ulubione](../personal/favorites.md), [znaczniki nawigacyjne](../personal/markers.md) lub specjalne [punkty zainteresowania (POI)](../map/point-layers-on-map.md#points-of-interest-pois) na mapie.
+- **Wyróżnić ważne elementy mapy**, w tym [Ulubione punkty](../personal/favorites.md), [Markery nawigacyjne](../personal/markers.md) lub specjalne [Punkty POI](../map/point-layers-on-map.md#points-of-interest-pois) na mapie.
 
 - **Wyświetlać określone trasy i pliki GPX**, w tym ślady innych firm do nawigacji lub analizy.
 
@@ -369,7 +369,7 @@ Za pomocą tego menu można:
 - **Dostosować wygląd mapy**, wybierając inny [styl mapy](../map/vector-maps.md#default-map-styles), aby dopasować go do swoich potrzeb.
 
 
-## Konfiguracja ekranu {#configure-screen}
+## Konfiguruj ekran {#configure-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -392,7 +392,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 </Tabs>
 
-[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) to menu, które umożliwia konfigurację widżetów dla wybranego profilu, które mają być wyświetlane na mapie. Na tym ekranie można włączyć i skonfigurować widżety [informacyjne](../widgets/info-widgets.md) i [nawigacyjne](../widgets/nav-widgets.md), a także inne elementy.
+[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) to menu, które umożliwia konfigurację widżetów dla wybranego profilu do wyświetlania na mapie. Na tym ekranie można włączyć i skonfigurować widżety [informacyjne](../widgets/info-widgets.md) i [nawigacyjne](../widgets/nav-widgets.md), a także inne elementy.
 
 
 ## Wygląd profilu {#profile-appearance}
@@ -417,7 +417,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Ustawienia **Wyglądu profilu** umożliwiają dostosowanie nazwy i wizualnej reprezentacji profilu. Możesz również zmodyfikować wygląd [Mojej lokalizacji](#my-location-appearance) tutaj. Podczas gdy *nazwa profilu* musi być unikalna, *ikony* i *kolory* mogą być takie same dla różnych profili. Zmiany te zostaną zastosowane w różnych częściach aplikacji, takich jak menu [Przygotowanie trasy](../navigation/setup/route-navigation.md).
+Ustawienia **Wygląd profilu** umożliwiają dostosowanie nazwy i wizualnej reprezentacji profilu. Można tu również zmodyfikować wygląd [Mojej lokalizacji](#my-location-appearance). Chociaż *nazwa profilu* musi być unikalna, *ikony* i *kolory* mogą być takie same w różnych profilach. Zmiany te zostaną zastosowane w różnych częściach aplikacji, takich jak menu [Przygotowanie trasy](../navigation/setup/route-navigation.md).
 
 
 ### Wygląd mojej lokalizacji {#my-location-appearance}
@@ -442,13 +442,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Ustawienia **Wyglądu mojej lokalizacji** umożliwiają dostosowanie sposobu wyświetlania Twojej lokalizacji na mapie, zarówno w stanie spoczynku, jak i w ruchu. Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa niż zero**.
+Ustawienia **Wygląd mojej lokalizacji** umożliwiają dostosowanie sposobu wyświetlania Twojej lokalizacji na mapie, zarówno w spoczynku, jak i w ruchu. Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
 #### 1. Kąt widzenia i promień lokalizacji {#1-view-angle-and-location-radius}
 
-Możesz dostosować elementy wizualne związane z Twoją lokalizacją i zastosować je oddzielnie lub razem dla pozycji **Spoczynku** i **Nawigacji**. Zarówno w trybie 2D, jak i 3D, *Kąt widzenia* i *Promień lokalizacji* są wyświetlane w tym samym kolorze wybranym dla [profilu nawigacji](#profile-appearance), bezpośrednio pod ikoną [Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom).
+Możesz dostosować elementy wizualne związane z Twoją lokalizacją i zastosować je oddzielnie lub razem dla pozycji **Spoczynku** i **Nawigacji**. Zarówno w trybie 2D, jak i 3D, *Kąt widzenia* i *Promień lokalizacji* są wyświetlane w tym samym kolorze, co wybrany dla [profilu nawigacji](#profile-appearance), bezpośrednio pod ikoną [Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom).
 
-- **<Translate android="true" ids="view_angle"/>** – Wyświetla obszar w kształcie **stożka**, wskazujący kierunek, w którym aktualnie jesteś zwrócony.  
+- **<Translate android="true" ids="view_angle"/>** – Wyświetla **obszar w kształcie stożka** wskazujący kierunek, w którym aktualnie się znajdujesz.  
 - **<Translate android="true" ids="location_radius"/>** – Pokazuje **obszar kołowy** wokół Twojej ikony, reprezentujący dokładność Twojej aktualnej lokalizacji.
 
 
@@ -473,7 +473,7 @@ Dla bardziej spersonalizowanego doświadczenia, możesz tworzyć i dodawać **ni
 
 Możesz kontrolować zachowanie ikony **Moja lokalizacja** za pomocą różnych [trybów orientacji mapy](../widgets/map-buttons.md#compass).  
 
-- Jeśli ikona lokalizacji **drży lub obraca się** w stanie spoczynku, przełącz się z **Trybu kierunku ruchu** ([Obróć mapę według kierunku](../map/interact-with-map.md#rotate-map-by-bearing)) na inny tryb.  
+- Jeśli ikona lokalizacji **drga lub obraca się** w spoczynku, przełącz się z **Trybu kierunku ruchu** ([Obróć mapę według kierunku](../map/interact-with-map.md#rotate-map-by-bearing)) na inny tryb.  
 - Dostosuj dodatkowe ustawienia w *Menu → Ustawienia → Profile aplikacji → Wygląd profilu → Opcje*.
 - Dowiedz się więcej o śledzeniu kierunku i namiaru w sekcji [Widżet namiaru](../widgets/nav-widgets#bearing-widget).  
 
@@ -490,7 +490,7 @@ Aby ukryć wszystkie parametry sterowania nieużywanych [wtyczek](../plugins/ind
 
 ![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-Dzięki funkcji dostosowywania interfejsu użytkownika możesz dostosować liczbę elementów w akcjach, takich jak [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) i [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Informacje o liczbie dodanych elementów spośród wszystkich możliwych elementów można znaleźć pod tytułem każdej funkcji.
+Dzięki funkcji dostosowywania interfejsu użytkownika możesz dostosować liczbę elementów w akcjach, takich jak [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) i [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Informacje o liczbie dodanych elementów ze wszystkich możliwych elementów można znaleźć pod tytułem każdej funkcji.
 
 
 ### Szuflada {#drawer}
@@ -501,17 +501,17 @@ Dzięki funkcji dostosowywania interfejsu użytkownika możesz dostosować liczb
 
 - **<Translate android="true" ids="reset_to_default"/>** - Przywraca *oryginalną listę elementów* w szufladzie, natychmiast cofając wszelkie dostosowania.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Umożliwia skopiowanie *układu szuflady* z innego profilu OsmAnd, aby zachować spójne ustawienia we wszystkich profilach.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Umożliwia skopiowanie *układu szuflady* z innego profilu OsmAnd, aby zachować spójną konfigurację w różnych profilach.
 
 ### Konfiguracja mapy {#configuring-the-map}
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Menu konfiguracji mapy** - W sekcji *Dostosuj interfejs użytkownika* możesz *zmieniać kolejność lub ukrywać elementy* z [Konfiguracji mapy](../map/configure-map-menu.md), co umożliwia szybki dostęp do często używanych ustawień.
+- **Menu konfiguracji mapy** - W sekcji *Dostosuj interfejs użytkownika* możesz *zmieniać kolejność lub ukrywać elementy* z [Konfiguracji mapy](../map/configure-map-menu.md), umożliwiając szybki dostęp do często używanych ustawień.
 
-- **<Translate android="true" ids="reset_to_default"/>** - Przywraca *oryginalną listę elementów* w menu Konfiguracji mapy, usuwając wszelkie zmiany.
+- **<Translate android="true" ids="reset_to_default"/>** - Przywraca *oryginalną listę elementów* w menu Konfiguruj mapę, usuwając wszelkie zmiany.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Kopiuje *układ menu Konfiguracji mapy* z innego profilu OsmAnd.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Kopiuje *układ menu Konfiguruj mapę* z innego profilu OsmAnd.
 
 
 ### Akcje menu kontekstowego {#context-menu-actions}
@@ -522,7 +522,7 @@ Dzięki funkcji dostosowywania interfejsu użytkownika możesz dostosować liczb
 
 - **<Translate android="true" ids="reset_to_default"/>** – Przywraca *domyślną listę elementów* w menu kontekstowym mapy, natychmiast cofając wszelkie modyfikacje.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** – Kopiuje *układ menu kontekstowego* z innego profilu OsmAnd, aby zachować spójność między różnymi profilami.
+- **<Translate android="true" ids="copy_from_other_profile"/>** – Kopiuje *układ menu kontekstowego* z innego profilu OsmAnd, aby zachować spójność w różnych profilach.
 
 
 ## Ustawienia wtyczek {#plugin-settings}
@@ -554,23 +554,28 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 Wtyczki odblokowują dodatkowe funkcje aplikacji i mogą być [płatne lub bezpłatne](../plugins/index.md#purchase). Niektóre wtyczki mają własne [ustawienia](../plugins/index.md#plugin-settings), inne nie. OsmAnd daje możliwość konfiguracji wtyczek dla każdego profilu osobno.
 
 
-- **Nagrywanie podróży**. Ten element otwiera [ustawienia nagrywania podróży](../plugins/trip-recording.md#recording-settings) dla wybranego profilu, gdzie można wybrać dowolne parametry nagrywania podróży.
+- **Nagrywanie podróży**. Ten element otwiera [ustawienia nagrywania podróży](../plugins/trip-recording.md#recording-settings) dla wybranego profilu, gdzie możesz wybrać dowolne parametry nagrywania swoich podróży.
 
-- **Pogoda**. Interaktywne warstwy mapy [Pogoda](../plugins/weather.md#weather-settings) pozwalają monitorować temperaturę, ciśnienie powietrza, zachmurzenie, prędkość wiatru i opady w Twoim mieście lub dowolnej innej lokalizacji na globalnej mapie.
+- **Pogoda**. Interaktywne warstwy mapy [Pogoda](../plugins/weather.md#weather-settings) umożliwiają monitorowanie temperatury, ciśnienia powietrza, zachmurzenia, prędkości wiatru i opadów w Twoim mieście lub dowolnej innej lokalizacji na globalnej mapie.
 
-- **Notatki audio/wideo** (*Tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęcia, wideo lub audio, i kojarzenie ich z lokalizacją geograficzną lub bieżącą lokalizacją.  
+- **Notatki audio/wideo** (*Tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęcia, filmy lub audio, i kojarzenie ich z lokalizacją geograficzną lub aktualną lokalizacją.  
 
-- **Edycja OpenStreetMap**. Ten element otwiera [ustawienia wtyczki edycji OpenStreetMap](../plugins/osm-editing.md#settings) dla wybranego profilu. Dzięki OsmAnd i wtyczce edycji OSM możesz przyczyniać się do OpenStreetMap.org, tworząc lub modyfikując POI, dodając lub komentując notatki oraz przesyłając nagrane ślady GPX.
+- **Edycja OpenStreetMap**. Ten element otwiera [ustawienia wtyczki edycji OpenStreetMap](../plugins/osm-editing.md#settings) dla wybranego profilu. Dzięki OsmAnd i wtyczce do edycji OSM możesz przyczynić się do rozwoju OpenStreetMap.org, tworząc lub modyfikując POI, dodając lub komentując notatki oraz przesyłając nagrane ślady GPX.
 
-- **Zewnętrzne czujniki**. Po dotknięciu elementu w sekcji *Ustawienia wtyczek* otwierają się [ustawienia zewnętrznych czujników](../plugins/external-sensors.md#sensors-settings) dla wybranego profilu. Wtyczka Zewnętrzne czujniki umożliwia odczytywanie i rejestrowanie danych z bezprzewodowych czujników zewnętrznych oraz wyświetlanie ich za pomocą widżetów w aplikacji OsmAnd.
+- **Czujniki zewnętrzne**. Po dotknięciu elementu w sekcji *Ustawienia wtyczek* otwierają się [ustawienia czujników zewnętrznych](../plugins/external-sensors.md#sensors-settings) dla wybranego profilu. Wtyczka Czujniki zewnętrzne umożliwia odczytywanie i rejestrowanie danych z bezprzewodowych czujników zewnętrznych oraz wyświetlanie ich za pomocą widżetów w aplikacji OsmAnd.
 
-- **Dostępność** (*Tylko Android*). Ten element otwiera [ustawienia wtyczki Dostępność](../plugins/accessibility.md#plugin-settings) dla wybranego profilu. Ustawienia wtyczki Dostępność umożliwiają dostosowanie aplikacji do własnych potrzeb. Wszystkie ustawienia dotyczą procesu nawigacji i są ustawiane indywidualnie dla każdego profilu.
+- **Dostępność** (*Tylko Android*). Ten element otwiera [ustawienia wtyczki Dostępność](../plugins/accessibility.md#plugin-settings) dla wybranego profilu. Ustawienia wtyczki Dostępność umożliwiają dostosowanie aplikacji do Twoich potrzeb. Wszystkie ustawienia dotyczą procesu nawigacji i są ustawiane indywidualnie dla każdego profilu.
 
-- **Rozwój OsmAnd**. To menu otwiera [ustawienia wtyczki rozwoju OsmAnd](../plugins/development.md#plugin-settings), gdzie można skonfigurować aplikację OsmAnd do celów testowych lub eksplorować nadchodzące funkcje. Te ustawienia są przeznaczone dla programistów i nie są wymagane do normalnego użytkowania aplikacji.  
+- **Rozwój OsmAnd**. To menu otwiera [ustawienia wtyczki rozwoju OsmAnd](../plugins/development.md#plugin-settings), gdzie możesz skonfigurować aplikację OsmAnd do celów testowych lub odkrywać nadchodzące funkcje. Te ustawienia są przeznaczone dla programistów i nie są wymagane do normalnego użytkowania aplikacji.  
 
   > ***Zmiana ustawień wtyczki rozwoju OsmAnd wpływa na wszystkie profile.***
 
-- **Wikipedia**. To menu otwiera *[ustawienia wtyczki Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Możesz wybrać język, w którym będą wyświetlane artykuły, oraz zdecydować, czy pobierać obrazy z Wikipedii. Posiadanie Wikipedii podczas podróży poprawia wrażenia, dostarczając informacji o odwiedzanych miejscach. Działa offline i wyświetla odpowiednie artykuły z Wikipedii bezpośrednio na mapie, związane z punktami zainteresowania.
+- **Wikipedia** (tylko iOS). To menu otwiera *[ustawienia wtyczki Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Możesz wybrać język, w którym będą wyświetlane artykuły, oraz zdecydować, czy pobierać obrazy z Wikipedii. Posiadanie Wikipedii podczas podróży wzbogaca Twoje doświadczenie, dostarczając informacji o odwiedzanych miejscach. Działa offline i wyświetla odpowiednie artykuły z Wikipedii bezpośrednio na mapie, związane z punktami zainteresowania.
+
+- **Wskaźniki pojazdu**. To menu otwiera *[ustawienia wtyczki Wskaźniki pojazdu](../plugins/vehicle-metrics.md#scanner-settings)*. Umożliwia podłączenie skanera OBD-II do OsmAnd.
+
+- **AIS vessel tracker** (tylko Android). To menu otwiera *[ustawienia wtyczki AIS vessel tracker](../plugins/ais-tracker.md#plugin-settings)*. Ta wtyczka umożliwia podłączenie trackera AIS do OsmAnd.
+
 
 
 ## Akcje {#actions}
@@ -607,7 +612,7 @@ Akcje z wybranym profilem:
 
 ## Powiązane artykuły {#related-articles}
 
-- [Zarządzanie śladami](../personal/tracks/manage-tracks.md#import--export-track)
+- [Zarządzaj śladami](../personal/tracks/manage-tracks.md#import--export-track)
 - [Historia wyszukiwania](../search/search-history.md#export-and-share)
 - [Schematy palet kolorów](../personal/color-palette-schemes.md)
 
