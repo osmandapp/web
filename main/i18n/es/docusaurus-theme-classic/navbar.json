@@ -31,7 +31,7 @@
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
   },
-    "localeDropdown.label.en": {
+  "localeDropdown.label.en": {
     "message": "English",
     "description": "Locale dropdown label for English"
   },
@@ -70,5 +70,9 @@
   "localeDropdown.label.ar": {
     "message": "العربية",
     "description": "Locale dropdown label for Arabic"
+  },
+  "localeDropdown.label.nl": {
+    "message": "Dutch",
+    "description": "Locale dropdown label for Dutch"
   }
 }
