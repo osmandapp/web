@@ -1,7 +1,7 @@
 ---
-source-hash: 980f515f6e093abb64ea0f47a5ba9c91222e89b754fe6c84d7fbb89babff64a4
+source-hash: 3a1c816749e2ed67adb2f7b7687d9981d693027d0b2647c0f82f6be0c7104836
 sidebar_position: 1
-title: Стиль карти OsmAnd
+title: Стиль мапи OsmAnd
 ---
 import Translate from '@site/src/components/Translate.js';
 import LegendItem from '@site/src/components/docs/LegendItem.js';
@@ -29,94 +29,94 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Стиль карти OsmAnd {#osmand-map-style}
+# Стиль мапи OsmAnd {#osmand-map-style}
 <Translate android="yes" id="default_render_descr" />
 
 
 ## Автошляхи {#highways}
-<img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Залізниці {#railways}
-<img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Канатні дороги {#aerialways}
-<img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Маршрути {#routes}
-<img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="Стиль карти OsmAnd" />
-<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-routes.png').default} alt="Стиль мапи OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-routes-dirtbike.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Віа феррата {#via-ferrata}
-<img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Складність шляху {#path-difficulty}
-<img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="Стиль мапи OsmAnd" />
 
-## Гладкість поверхні {#surface-smoothness}
-<img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="Стиль карти OsmAnd" />
+## Рівність поверхні {#surface-smoothness}
+<img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Доступ {#access}
 
 <LegendItem itemsMap={{
-        'Access Private' : 'access/access_PrivateColor',
-        'Access Destination' : 'access/access_DestinationColor',
-        'Access Permissive' : 'access/access_PermissiveColor',
-        'Access Customers' : 'access/access_CustomersColor',
-        'Access Delivery' : 'access/access_DeliveryColor',
-        'Access Agricultural' : 'access/access_AgriculturalColor',
-        'Access Emergency' : 'access/access_EmergencyColor',
-        'Access Toll' : 'access/access_tollColor'
+        'Приватний доступ' : 'access/access_PrivateColor',
+        'Доступ до місця призначення' : 'access/access_DestinationColor',
+        'Дозволений доступ' : 'access/access_PermissiveColor',
+        'Доступ для клієнтів' : 'access/access_CustomersColor',
+        'Доступ для доставки' : 'access/access_DeliveryColor',
+        'Сільськогосподарський доступ' : 'access/access_AgriculturalColor',
+        'Аварійний доступ' : 'access/access_EmergencyColor',
+        'Платний доступ' : 'access/access_tollColor'
         }}>
 </LegendItem>
 
 
 ## Водні шляхи {#waterways}
-<img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Будівлі, транспорт {#buildings-transportation}
 
 <LegendItem itemsMap={{
-        'Regular Building' : 'buildigns/building_RegularColor',
-        'Industrianl, garagaes etc.' : 'buildigns/building_IndustrialColor',
-        'Residential' : 'buildigns/building_ResidentialColor',
-        'Hospital, civic, educational' : 'buildigns/building_HospitalColor',
-        'Commercial, retail' : 'buildigns/building_CommercialColor',
-        'Place of worship, historic tower' : 'buildigns/building_churchColor',
-        'Abandoned, damaged, collapsed' : 'buildigns/building_AbandonedColor',
-        'Construction' : 'buildigns/building_ConstructionColor',
-        'Proposed' : 'buildigns/building_ProposedColor',
-        'Military: barraks' : 'buildigns/building_MilitaryColor',
-        'Bunker' : 'buildigns/building_bunker',
-        'Railway station' : 'buildigns/building_railway_station',
-        'Aerialway station' : 'buildigns/building_aerialway_station',
-        'Public transport platform' : 'buildigns/building_public_transport_platform',
-        'Aerodrome' : 'buildigns/building_aerodromeColor',
-        'Aeroway terminal' : 'buildigns/building_aerowayTerminalColor',
-        'Apron' : 'buildigns/building_apronColor',
-        'Helipad' : 'buildigns/building_aeroway_helipad',
+        'Звичайна будівля' : 'buildigns/building_RegularColor',
+        'Промислові, гаражі тощо.' : 'buildigns/building_IndustrialColor',
+        'Житловий' : 'buildigns/building_ResidentialColor',
+        'Лікарня, цивільні, освітні' : 'buildigns/building_HospitalColor',
+        'Комерційні, роздрібні' : 'buildigns/building_CommercialColor',
+        'Місце поклоніння, історична вежа' : 'buildigns/building_churchColor',
+        'Занедбані, пошкоджені, зруйновані' : 'buildigns/building_AbandonedColor',
+        'Будівництво' : 'buildigns/building_ConstructionColor',
+        'Запропоновано' : 'buildigns/building_ProposedColor',
+        'Військові: казарми' : 'buildigns/building_MilitaryColor',
+        'Бункер' : 'buildigns/building_bunker',
+        'Залізнична станція' : 'buildigns/building_railway_station',
+        'Станція канатної дороги' : 'buildigns/building_aerialway_station',
+        'Платформа громадського транспорту' : 'buildigns/building_public_transport_platform',
+        'Аеродром' : 'buildigns/building_aerodromeColor',
+        'Термінал аеропорту' : 'buildigns/building_aerowayTerminalColor',
+        'Перон' : 'buildigns/building_apronColor',
+        'Вертолітний майданчик' : 'buildigns/building_aeroway_helipad',
         }}>
 </LegendItem>
 
 ## Спорт, дозвілля {#sport-leisure}
 
 <LegendItem itemsMap={{
-        'Stadium' : 'sport_leisure/sport_Stadium',
-        'Sports Centre' : 'sport_leisure/sport_sportsCentreColor',
-        'Track (leisure)' : 'sport_leisure/sport_track',
-        'Golf Course' : 'sport_leisure/leisure_golfCourseColor',
-        'Park' : 'sport_leisure/leisure_Park',
-        'Recreation ground' : 'sport_leisure/leisure_recreationGroundColor',
-        'Pitch' : 'sport_leisure/leisure_pitchColor',
-        'Horse riding' : 'sport_leisure/leisure_horse_riding',
-        'Playground' : 'sport_leisure/leisure_playgroundColor',
-        'Common (leisure)' : 'sport_leisure/leisure_leisureCommonColor',
-        'Camp site' : 'sport_leisure/leisure_camp_site',
-        'Outdoor seating' : 'sport_leisure/leisure_outdoor_seating',
-        'Caravan site' : 'sport_leisure/leisure_caravan_site',
-        'Picnic site' : 'sport_leisure/leisure_picnic_site',
-        'Rest area' : 'sport_leisure/leisure_rest_area',
-        'Beach resort' : 'sport_leisure/leisure_beach_resort',
-        'Bleachers' : 'sport_leisure/leisure_bleachers',
+        'Стадіон' : 'sport_leisure/sport_Stadium',
+        'Спортивний центр' : 'sport_leisure/sport_sportsCentreColor',
+        'Доріжка (дозвілля)' : 'sport_leisure/sport_track',
+        'Поле для гольфу' : 'sport_leisure/leisure_golfCourseColor',
+        'Парк' : 'sport_leisure/leisure_Park',
+        'Зона відпочинку' : 'sport_leisure/leisure_recreationGroundColor',
+        'Поле' : 'sport_leisure/leisure_pitchColor',
+        'Верхова їзда' : 'sport_leisure/leisure_horse_riding',
+        'Дитячий майданчик' : 'sport_leisure/leisure_playgroundColor',
+        'Загальна (дозвілля)' : 'sport_leisure/leisure_leisureCommonColor',
+        'Кемпінг' : 'sport_leisure/leisure_camp_site',
+        'Відкриті сидіння' : 'sport_leisure/leisure_outdoor_seating',
+        'Місце для караванів' : 'sport_leisure/leisure_caravan_site',
+        'Місце для пікніка' : 'sport_leisure/leisure_picnic_site',
+        'Зона відпочинку' : 'sport_leisure/leisure_rest_area',
+        'Пляжний курорт' : 'sport_leisure/leisure_beach_resort',
+        'Трибуни' : 'sport_leisure/leisure_bleachers',
         }}>
 </LegendItem>
 
@@ -124,87 +124,87 @@ import TabItem from '@theme/TabItem';
 ## Забудовані території {#built-up-areas}
 
 <LegendItem itemsMap={{
-        'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
-        'Monastery' : 'built-up-areas/built-up_Monastery',
-        'Water Park' : 'built-up-areas/built-up_WaterPark',
-        'Theme Park' : 'built-up-areas/built-up_ThemePark',
-        'Zoo' : 'built-up-areas/built-up_Zoo',
-        'Climbing Crag' : 'built-up-areas/built-up_ClimbingCrag',
-        'Landuse Allotments Color' : 'built-up-areas/built-up_landuseAllotmentsColor',
-        'City Wall' : 'built-up-areas/built-up_CityWall',
-        'Fountain' : 'built-up-areas/built-up_Fountain',
-        'Cinema' : 'built-up-areas/built-up_amenityCinema',
-        'Hospital' : 'built-up-areas/built-up_amenityHospital',
-        'Social Facility' : 'built-up-areas/built-up_SocialFacility',
-        'LandFill' : 'built-up-areas/built-up_LandFill',
-        'Spoil heap' : 'built-up-areas/built-up_spoilHeapColor',
-        'Landuse Construction Color' : 'built-up-areas/built-up_landuseConstructionColor',
-        'Prison' : 'built-up-areas/built-up_Prison',
-        'Quarry' : 'built-up-areas/built-up_landuseQuarry',
-        'Military' : 'built-up-areas/built-up_landuseMilitary',
-        'Military Danger Area' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
-        'Power Plant' : 'built-up-areas/built-up_landusePowerPlant',
-        'Power Substation' : 'built-up-areas/built-up_landusePowerSubstation',
+        'Місце поклоніння' : 'built-up-areas/built-up_PlaceOfWorship',
+        'Монастир' : 'built-up-areas/built-up_Monastery',
+        'Аквапарк' : 'built-up-areas/built-up_WaterPark',
+        'Тематичний парк' : 'built-up-areas/built-up_ThemePark',
+        'Зоопарк' : 'built-up-areas/built-up_Zoo',
+        'Скелелазний масив' : 'built-up-areas/built-up_ClimbingCrag',
+        'Колір ділянок землі' : 'built-up-areas/built-up_landuseAllotmentsColor',
+        'Міська стіна' : 'built-up-areas/built-up_CityWall',
+        'Фонтан' : 'built-up-areas/built-up_Fountain',
+        'Кінотеатр' : 'built-up-areas/built-up_amenityCinema',
+        'Лікарня' : 'built-up-areas/built-up_amenityHospital',
+        'Соціальний заклад' : 'built-up-areas/built-up_SocialFacility',
+        'Звалище' : 'built-up-areas/built-up_LandFill',
+        'Відвал' : 'built-up-areas/built-up_spoilHeapColor',
+        'Колір будівництва землі' : 'built-up-areas/built-up_landuseConstructionColor',
+        'В’язниця' : 'built-up-areas/built-up_Prison',
+        'Кар’єр' : 'built-up-areas/built-up_landuseQuarry',
+        'Військовий' : 'built-up-areas/built-up_landuseMilitary',
+        'Військова небезпечна зона' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
+        'Електростанція' : 'built-up-areas/built-up_landusePowerPlant',
+        'Електрична підстанція' : 'built-up-areas/built-up_landusePowerSubstation',
         }}>
 </LegendItem>
 
 ### Землекористування {#landuse}
 <LegendItem itemsMap={{
-        'Residential' : 'built-up-areas/built-up_Residential',
-        'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
-        'Industrial' : 'built-up-areas/built-up_landuseIndustrialColor',
-        'Garages' : 'built-up-areas/built-up_landuseGaragesColor',
-        'Railway' : 'built-up-areas/built-up_landuseRailway',
-        'Farmyard' : 'built-up-areas/built-up_farmyardColor',
-        'Retail' : 'built-up-areas/built-up_landuseRetailColor',
-        'Commercial' : 'built-up-areas/built-up_landuseCommercialColor',
-        'Abandone place' : 'built-up-areas/built-up_placeAbandoned',
-        'Animal Keeping' : 'built-up-areas/built-up_AnimalKeeping',
+        'Житловий' : 'built-up-areas/built-up_Residential',
+        'Житловий (сільський)' : 'built-up-areas/built-up_ResidentialRural',
+        'Промисловий' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Гаражі' : 'built-up-areas/built-up_landuseGaragesColor',
+        'Залізничний' : 'built-up-areas/built-up_landuseRailway',
+        'Фермерське подвір’я' : 'built-up-areas/built-up_farmyardColor',
+        'Роздрібна торгівля' : 'built-up-areas/built-up_landuseRetailColor',
+        'Комерційний' : 'built-up-areas/built-up_landuseCommercialColor',
+        'Занедбане місце' : 'built-up-areas/built-up_placeAbandoned',
+        'Утримання тварин' : 'built-up-areas/built-up_AnimalKeeping',
         }}>
 </LegendItem>
 
 
-### Паркування {#parking}
+### Парковка {#parking}
 <LegendItem itemsMap={{
-        'Parking' : 'built-up-areas/built-up_Parking',
-        'Parking Permissive access' : 'built-up-areas/built-up_ParkingPermissive',
-        'Parking Access Customers' : 'built-up-areas/built-up_ParkingAccessCustomers',
-        'ParkingPaid' : 'built-up-areas/built-up_ParkingPaid',
-        'ParkingBicycle' : 'built-up-areas/built-up_ParkingBicycle',
+        'Парковка' : 'built-up-areas/built-up_Parking',
+        'Парковка з дозволеним доступом' : 'built-up-areas/built-up_ParkingPermissive',
+        'Парковка для клієнтів' : 'built-up-areas/built-up_ParkingAccessCustomers',
+        'Платна парковка' : 'built-up-areas/built-up_ParkingPaid',
+        'Парковка для велосипедів' : 'built-up-areas/built-up_ParkingBicycle',
         }}>
 </LegendItem>
 
-### Цвинтар {#cemetery}
+### Кладовище {#cemetery}
 <LegendItem itemsMap={{
-        'Cemetery' : 'built-up-areas/built-up_cemeteryColor',
-        'Christian cemetery' : 'built-up-areas/built-up_cemeteryColorСhristian',
-        'Muslim cemetery' : 'built-up-areas/built-up_cemeteryColorMuslim',
-        'Jewish cemetery' : 'built-up-areas/built-up_cemeteryColorJewish',
+        'Кладовище' : 'built-up-areas/built-up_cemeteryColor',
+        'Християнське кладовище' : 'built-up-areas/built-up_cemeteryColorСhristian',
+        'Мусульманське кладовище' : 'built-up-areas/built-up_cemeteryColorMuslim',
+        'Єврейське кладовище' : 'built-up-areas/built-up_cemeteryColorJewish',
         }}>
 </LegendItem>
 
 ### Освіта {#education}
 <LegendItem itemsMap={{
-        'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
-        'School' : 'built-up-areas/built-up_amenitySchool',
-        'College' : 'built-up-areas/built-up_amenityCollege',
-        'University' : 'built-up-areas/built-up_amenityUniversity',
-        'Training' : 'built-up-areas/built-up_amenityTraining',
-        'Library' : 'built-up-areas/built-up_amenityLibrary',
+        'Дитячий садок' : 'built-up-areas/built-up_amenityKinderGarten',
+        'Школа' : 'built-up-areas/built-up_amenitySchool',
+        'Коледж' : 'built-up-areas/built-up_amenityCollege',
+        'Університет' : 'built-up-areas/built-up_amenityUniversity',
+        'Навчання' : 'built-up-areas/built-up_amenityTraining',
+        'Бібліотека' : 'built-up-areas/built-up_amenityLibrary',
         }}>
 </LegendItem>
 
 ### Історичні {#historic}
 <LegendItem itemsMap={{
-        'Archaeological Site' : 'built-up-areas/built-up_ArchaeologicalSite',
-        'Historic Ruins' : 'built-up-areas/built-up_HistoricRuins',
-        'Palaeontological Site' : 'built-up-areas/built-up_PalaeontologicalSite',
+        'Археологічний об’єкт' : 'built-up-areas/built-up_ArchaeologicalSite',
+        'Історичні руїни' : 'built-up-areas/built-up_HistoricRuins',
+        'Палеонтологічний об’єкт' : 'built-up-areas/built-up_PalaeontologicalSite',
         }}>
 </LegendItem>
 
 
 ## Природа {#nature}
-<img src={require('@site/static/img/map-legend/osmand-nature.png').default} alt="Стиль карти OsmAnd" />
+<img src={require('@site/static/img/map-legend/osmand-nature.png').default} alt="Стиль мапи OsmAnd" />
 
 ## Іконки {#icons}
 
@@ -212,11 +212,11 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedTraffic />
 
-### Надзвичайні ситуації {#emergency}
+### Надзвичайна ситуація {#emergency}
 
 <LegendItemAutogeneratedEmergency />
 
-### Здоров'я {#health}
+### Здоров’я {#health}
 
 <LegendItemAutogeneratedHealth />
 
@@ -256,7 +256,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedAdministrative />
 
-### Послуги {#service}
+### Сервіс {#service}
 
 <LegendItemAutogeneratedService />
 
@@ -268,7 +268,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedOffice />
 
-### Ремесла {#craft}
+### Ремесло {#craft}
 
 <LegendItemAutogeneratedCraft />
 
@@ -280,6 +280,9 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedBarrier />
 
-### Штучні об'єкти {#man-made}
+### Створені людиною {#man-made}
 
 <LegendItemAutogeneratedManmade />
+
+## Іконки для опції "Іконки на низьких масштабах" {#icons-at-low-zooms}
+<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="Стиль мапи OsmAnd" />

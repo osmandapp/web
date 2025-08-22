@@ -1,5 +1,5 @@
 ---
-source-hash: 2940492b887fc393c3f0d0c70f3dc846bfb39e45115a0482ab0a76fda430a200
+source-hash: fcfc89424f2777c40ade752821a787dd9edd9cfca7d3f80e0cbcccf014af9bdf
 sidebar_position: 3
 title: Compras na Web
 ---
@@ -11,8 +11,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## Como Comprar {#how-to-buy}
 
 Você pode comprar produtos OsmAnd em [nosso site oficial](https://osmand.net/pricing):
@@ -21,12 +19,11 @@ Você pode comprar produtos OsmAnd em [nosso site oficial](https://osmand.net/pr
 
 Todas as compras feitas através de qualquer uma dessas plataformas suportam [**acesso multiplataforma**](./cross.md).
 
-
 ### Diferença Entre Compras {#difference-between-purchases}
 
 | Plano | Descrição | Notas |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Uma **compra no aplicativo** ou **assinatura** que desbloqueia recursos avançados para o aplicativo OsmAnd gratuito. | Suporta acesso **multiplataforma** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Uma **compra no aplicativo** ou **assinatura** que desbloqueia recursos avançados para o aplicativo gratuito OsmAnd. | Suporta acesso **multiplataforma** |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Um **plano de assinatura** que desbloqueia todos os [recursos pro](#pro-features), incluindo CarPlay e Relevo 3D. | Suporta acesso **multiplataforma** |
 
 :::note
@@ -39,45 +36,38 @@ Abaixo estão os preços dos produtos OsmAnd nos EUA e na UE. Os preços em outr
 
 <!--
 
+:::danger Preços de Venda de Verão
 
-:::danger June Sale prices
-
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **June 15 (23:00 CET)**.
+*[Apresse-se!](https://osmand.net/pricing) Esta oferta está disponível apenas até* **06 de agosto (23:00 CET)**.
 
 :::
 
-
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| | OsmAnd Gratuito | **Maps+** Compra Única | **Maps+** Assinatura | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> €299.00   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> $299.00   |
+| | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |**Compra Única** (15 Anos Pro / Maps+ Vitalício) |
+| **Preço (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00** |
+| **Preço (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00** |
 
 :::note
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
-you receive a 2-year discounted plan.
-Starting from the third year, the full price will apply.
+Ao adquirir uma assinatura através do nosso [site](https://osmand.net/pricing) com desconto,
+você recebe um plano com desconto de 2 anos.
+A partir do terceiro ano, o preço total será aplicado.
 :::
-
 
 -->
 
-| | OsmAnd Grátis | **Maps+** Compra Única | **Maps+** Assinatura | **OsmAnd Pro** |**OsmAnd XV** |
+| | OsmAnd Gratuito | **Maps+** Compra Única | **Maps+** Assinatura | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 | | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Tipo de Compra** | **Grátis** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |**Compra Única** (15 Anos Pro / Maps+ Vitalício) |
+| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |**Compra Única** (15 Anos Pro / Maps+ Vitalício) |
 | **Preço (EUR)** | €0 | €39.99 | €9.99 | €2.99 / €29.99 |<s>€450</s> €299.00 |
 | **Preço (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |<s>$450</s> $299.00 |
-
-
 
 ### Recursos Gratuitos e Pagos {#free-and-paid-features}
 
 - [Recursos gratuitos e pagos do Android.](./android.md#free-and-paid-features)
 - [Recursos gratuitos e pagos do iOS.](./ios.md#free-and-paid-features)
-
-
 
 ## Restaurar Compras {#restore-purchases}
 

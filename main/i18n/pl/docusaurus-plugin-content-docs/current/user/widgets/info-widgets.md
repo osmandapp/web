@@ -1,5 +1,5 @@
 ---
-source-hash: 99a8848b650f28fb548431acc15260477193eac642ebad44773e5203faac1724
+source-hash: 27b32890625cf93a03c736a3e9e5b69340ef24cbdda764258f58f7265e15c755
 sidebar_position: 3
 title: Widżety informacyjne
 ---
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Widżety informacyjne zapewniają szybki dostęp do ważnych danych. Mogą to być dane dotyczące prędkości, pogody, pozycji parkowania, dane z zewnętrznych czujników i wiele innych. Widżety można konfigurować zgodnie z własnymi wymaganiami, umożliwiając ich widoczność na ekranie aplikacji lub wyłączając je w razie potrzeby.
+Widżety informacyjne zapewniają szybki dostęp do ważnych danych. Mogą to być dane dotyczące prędkości, pogody, pozycji parkowania, dane z zewnętrznych czujników i wiele innych. Widżety można konfigurować zgodnie z własnymi wymaganiami, włączając lub wyłączając ich widoczność na ekranie aplikacji w razie potrzeby.
 
 ![Widżety informacyjne](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -24,13 +24,13 @@ Widżety informacyjne zapewniają szybki dostęp do ważnych danych. Mogą to by
 
 Widżety wysokości wyświetlają wysokość nad poziomem morza bieżącej geolokalizacji oraz wysokość środka mapy.
 
-### Wysokość: Bieżąca lokalizacja {#altitude-current-location}
+### Wysokość: bieżąca lokalizacja {#altitude-current-location}
 
 :::note Pobierz korektę wysokości świata
 Na niektórych urządzeniach z systemem Android wysokość może być wyświetlana niedokładnie. Aby rozwiązać ten problem, pobierz mapę z korektą wysokości.
 
 - Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Więcej szczegółów znajdziesz w [Mapy i zasoby](../personal/maps-resources.md#downloads).
+- Aby uzyskać więcej szczegółów, odwiedź [Mapy i zasoby](../personal/maps-resources.md#downloads).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -54,10 +54,10 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *Menu → Ustawienia → Profile aplikacji → Ustawienia ogólne → Jednostki i formaty → Jednostki długości* |
 
-### Wysokość: Środek mapy {#elevation-map-center}
+### Wysokość: środek mapy {#elevation-map-center}
 
 :::info Funkcja płatna
 &nbsp;<ProFeature/> Aby uzyskać dostęp do widżetu *Wysokość: środek mapy*, wykup subskrypcję OsmAnd Pro dla [Androida](../purchases/android.md#pro-features) lub [iOS](../purchases/ios.md#pro-features).
@@ -79,14 +79,14 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 
 </Tabs>
 
-Możesz użyć widżetu, aby sprawdzić wysokość środka bieżącej mapy nad poziomem morza. Do wyświetlania informacji w widżecie **Wysokość: środek mapy** potrzebna jest [mapa terenu (cieniowanie i nachylenie)](../plugins/topography.md#download-maps) dla wymaganego obszaru.
+Możesz użyć widżetu, aby sprawdzić wysokość bieżącego środka mapy nad poziomem morza. Do wyświetlania informacji w widżecie **Wysokość: środek mapy** potrzebna jest [mapa terenu (cieniowanie i nachylenie)](../plugins/topography.md#download-maps) dla wymaganego obszaru.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *Menu → Ustawienia → Profile aplikacji → Ustawienia ogólne → Jednostki i formaty → Jednostki długości* |
 
 ## Bieżący czas {#current-time}
@@ -100,8 +100,8 @@ Ten widżet wyświetla bieżący czas pobrany z Twojego urządzenia.
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_plain_time"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_plain_time"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
-| Format | Ustawienia urządzenia konfigurują Czas i Format. |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Format | Ustawienia urządzenia konfigurują Czas i format. |
 
 ## Bieżąca prędkość {#current-speed}
 
@@ -114,7 +114,7 @@ Widżet pokazuje bieżącą prędkość wykrytą przez czujnik GPS.
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_current_speed"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_current_speed"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 ## Średnia prędkość {#average-speed}
@@ -135,31 +135,31 @@ Widżet pokazuje bieżącą prędkość wykrytą przez czujnik GPS.
 
 </Tabs>
 
-Widżet **Średnia prędkość** oblicza i wyświetla średnią prędkość w wybranym przedziale czasowym bez konieczności nawigacji lub rejestrowania trasy. Jest to przydatne do monitorowania zgodności prędkości na autostradach lub śledzenia średniej prędkości w ciągu ostatnich kilku minut jazdy na rowerze.
+Widżet **Średnia prędkość** oblicza i wyświetla średnią prędkość w wybranym przedziale czasowym, bez konieczności nawigacji lub rejestrowania trasy. Jest to przydatne do monitorowania zgodności prędkości na autostradach lub śledzenia średniej prędkości w ciągu ostatnich kilku minut jazdy na rowerze.
 
 1. ***Konfiguracja widżetu.***
-   Aby dostosować ustawienia, dotknij przycisku **Ustawienia** (*Android*) lub **pola widżetu** (*iOS*). Dostępne opcje obejmują:
+   Aby dostosować ustawienia, dotknij przycisku **Ustawienia** (Android) lub **pola widżetu** (iOS). Dostępne opcje to:
 
 2. ***Przedział czasowy.***
 
    - Średnia prędkość jest obliczana na podstawie wybranego przedziału czasowego, który może wynosić od **15 sekund do 60 minut**.
 
    - Obliczenia opierają się na danych GPS, używając wzoru:
-   `Średnia prędkość = ŚREDNIA(GPS_LOKALIZACJA.prędkość)`.
+   `Średnia prędkość = ŚREDNIA(GPS_LOCATION.speed)`.
 
-3. ***Uwzględnij postoje.***
+3. ***Uwzględnij przystanki.***
 
-   **Włączone** — Jeśli zarejestrowana prędkość jest niższa niż 1 jednostka na godzinę, jest ignorowana, co zapobiega niepotrzebnym spadkom średniej prędkości podczas postojów na światłach lub krótkich przerw.
+   **Włączone** — Jeśli zarejestrowana prędkość jest niższa niż 1 jednostka na godzinę, jest ignorowana, co zapobiega niepotrzebnym spadkom średniej prędkości podczas zatrzymywania się na światłach lub krótkich przerw.
 
-   **Wyłączone** — Postoje są uwzględniane w obliczeniach, co oznacza, że długie przerwy zmniejszą ogólną średnią prędkość.
+   **Wyłączone** — Przystanki są uwzględniane w obliczeniach, co oznacza, że długie przerwy zmniejszą ogólną średnią prędkość.
 
 4. ***Resetuj średnią prędkość.***
-   Możesz zresetować obliczanie średniej prędkości na dwa sposoby:
+   Możesz zresetować obliczenia średniej prędkości na dwa sposoby:
 
-   - Długie dotknięcie widżetu, aby otworzyć [Menu kontekstowe](../widgets/configure-screen.md#widget-context-menu), i wybierz *Resetuj średnią prędkość*.
-   - Otwórz *ustawienia widżetu* za pośrednictwem [Menu konfiguracji ekranu](../widgets/configure-screen.md#settings) i wybierz opcję resetowania.
+   - Długie dotknięcie widżetu, aby otworzyć [menu kontekstowe](../widgets/configure-screen.md#widget-context-menu), a następnie wybierz *Resetuj średnią prędkość*.
+   - Otwórz *ustawienia widżetu* za pośrednictwem [menu Konfiguruj ekran](../widgets/configure-screen.md#settings) i wybierz opcję resetowania.
 
-Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych danych GPS. Ta funkcja jest przydatna do monitorowania prędkości w czasie rzeczywistym, np. śledzenia prędkości w obszarach z **kamerami do egzekwowania średniej prędkości**.
+Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych danych GPS. Ta funkcja jest przydatna do monitorowania prędkości w czasie rzeczywistym, np. do śledzenia prędkości w obszarach z **kamerami do pomiaru średniej prędkości**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +182,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_average_speed"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_average_speed"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu). <br/> Może być używane do resetowania średniej prędkości. |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu). <br/> Może być użyte do zresetowania średniej prędkości. |
 
 ## Współczynnik szybowania {#glide-ratio}
 
@@ -206,70 +206,70 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 </Tabs>
 
-[Proste](../widgets/configure-screen.md#widgets-for-all-panels) widżety *Współczynnik szybowania* dostarczają cennych informacji o współczynniku szybowania, pomagając w podejmowaniu świadomych decyzji podczas planowania tras lotniczych. Widżet *Współczynnik szybowania* w OsmAnd pomaga ocenić efektywność zniżania lub wznoszenia podczas nawigacji do określonej lokalizacji ([znacznika](../personal/markers.md) na mapie). Oblicza on współczynnik szybowania jako stosunek odległości do różnicy wysokości między bieżącą pozycją a zamierzonym celem. Więcej na ten temat można przeczytać [tutaj](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+[Proste](../widgets/configure-screen.md#widgets-for-all-panels) widżety *Współczynnik szybowania* dostarczają cennych informacji o współczynniku szybowania, pomagając w podejmowaniu świadomych decyzji podczas planowania tras lotniczych. Widżet *Współczynnik szybowania* w OsmAnd pomaga ocenić efektywność zniżania lub wznoszenia podczas nawigacji do określonej lokalizacji (pozycji [znacznika](../personal/markers.md) na mapie). Oblicza on współczynnik szybowania jako stosunek odległości do różnicy wysokości między Twoją bieżącą pozycją a zamierzonym celem. Więcej na ten temat można przeczytać [tutaj](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 **Zastosowanie widżetów:**
 
 - *Planowanie lotów szybowcowych.* Dla pilotów szybowcowych widżet *Współczynnik szybowania do celu* staje się niezastąpionym narzędziem podczas planowania i wykonywania lotów szybowcowych. Piloci mogą oszacować, jak daleko mogą polecieć do celu, biorąc pod uwagę aktualne warunki i wymagany współczynnik szybowania.
-- *Optymalizacja wznoszeń i zniżań.* Średni współczynnik szybowania pozwala pilotom optymalizować wznoszenia i zniżania w oparciu o aktualne warunki. Piloci mogą wybrać optymalny czas na wznoszenia, aby zmaksymalizować czas lotu, lub na zniżania, aby osiągnąć punkt docelowy.
+- *Optymalizacja wznoszeń i zniżań.* Średni współczynnik szybowania pozwala pilotom optymalizować wznoszenia i zniżania na podstawie aktualnych warunków. Piloci mogą wybrać optymalny czas na wznoszenie, aby zmaksymalizować czas lotu, lub na zniżanie, aby osiągnąć punkt docelowy.
 - *Reagowanie na zmieniające się warunki.* Widżet zapewnia ciągłe aktualizacje współczynnika szybowania, umożliwiając pilotom natychmiastowe reagowanie na zmiany warunków atmosferycznych lub tras. Mogą dostosować swój plan lotu, aby zapewnić bezpieczeństwo i wydajność.
-- *Maksymalne wykorzystanie odległości poziomej.* Znajomość współczynnika szybowania pozwala pilotom maksymalnie wykorzystać odległość poziomą do przemieszczania się do celu, co jest szczególnie ważne podczas planowania długich lotów.
+- *Maksymalne wykorzystanie odległości poziomej.* Znajomość współczynnika szybowania pozwala pilotom maksymalnie wykorzystać odległość poziomą do przemieszczenia się do celu, co jest szczególnie ważne podczas planowania długich lotów.
 - *Redukcja ryzyka*. Widżet *Współczynnik szybowania do celu* pomaga pilotom unikać sytuacji, w których osiągnięcie celu staje się niemożliwe z powodu niewystarczającego współczynnika szybowania. Pomaga to zmniejszyć ryzyko i poprawić bezpieczeństwo lotu.
 
 **Wartości dodatnie i ujemne:**
 
-- **Wartości dodatnie** wskazują, że cel znajduje się na niższej wysokości niż bieżąca pozycja, co wymaga zniżania.
-- **Wartości ujemne** wskazują, że cel znajduje się na wyższej wysokości, co wymaga wznoszenia. Na przykład "-90:1" oznacza, że po pokonaniu odległości 90 kilometrów należy wznieść się o 1 kilometr, aby osiągnąć cel.
+- **Wartości dodatnie** wskazują, że Twój cel znajduje się na niższej wysokości niż Twoja bieżąca pozycja, co wymaga zniżania.
+- **Wartości ujemne** wskazują, że Twój cel znajduje się na wyższej wysokości, co wymaga wznoszenia. Na przykład, "-90:1" oznacza, że po pokonaniu odległości 90 kilometrów, musisz wznieść się o 1 kilometr, aby dotrzeć do celu.
 
 **Zaokrąglanie/Formatowanie:**
 
 - Wartość **≤ 0.1**:
   - "0.05" jest wyświetlane jako "0".
 - Wartość **> 0.1 i < 100**:
-  - na przykład "50.7643" jest wyświetlane jako "50.8:1".
+  - na przykład, "50.7643" jest wyświetlane jako "50.8:1".
 - Wartość **> 100:**
   - "102.35" jest wyświetlane jako "102:1."
 
 ### Współczynnik szybowania do celu {#glide-ratio-to-target}
 
 - **Współczynnik szybowania do celu** pokazuje dokładny współczynnik szybowania wymagany do osiągnięcia punktu docelowego.
-- **Wysokość celu** pokazuje wysokość punktu docelowego. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
+- **Wysokość celu** pokazuje wysokość punktu docelowego. Jako punkt docelowy powinien być użyty [znacznik mapy](../personal/markers.md).
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Współczynnik szybowania* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Współczynnik szybowania* |
 | Dotknięcie | Zmienia *Współczynnik szybowania do celu* lub *Wysokość celu* |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Średni współczynnik szybowania {#average-glide-ratio}
 
 - **Średni współczynnik szybowania** pokazuje średni współczynnik szybowania dla określonego przedziału czasowego.
-- **Średnia prędkość pionowa** wskazuje tempo, z jakim obiekt wznosi się lub opada przez pewien czas. Do oceny brane są pod uwagę tylko pierwszy i ostatni punkt przedziału czasowego. Możesz ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
+- **Średnia prędkość pionowa** wskazuje tempo, w jakim obiekt wznosi się lub opada przez pewien czas. Do oceny brane są pod uwagę tylko pierwszy i ostatni punkt przedziału czasowego. Możesz ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Współczynnik szybowania* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Współczynnik szybowania* |
 | Dotknięcie | Zmienia *Średni współczynnik szybowania* lub *Średnią prędkość pionową* |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ## Poziom baterii {#battery-level}
 
 ![Widżet poziomu baterii](@site/static/img/widgets/battery_level_widget.png)
 
-Widżet **Poziom baterii** wyświetla procent baterii urządzenia bezpośrednio na ekranie mapy i aktualizuje się automatycznie co najmniej raz na minutę.
+Widżet **Poziom baterii** wyświetla procentowy poziom baterii Twojego urządzenia bezpośrednio na ekranie mapy i aktualizuje się automatycznie co najmniej raz na minutę.
 
-- **iOS 17 i nowsze** — Ze względu na **ograniczenia prywatności**, dane o poziomie baterii są dostępne tylko w krokach co 5% (np. 35%, 60% lub 85%). Jest to ograniczenie systemowe narzucone przez Apple.
+- **iOS 17 i nowsze** — Ze względu na **ograniczenia prywatności**, dane o poziomie baterii są dostępne tylko w odstępach 5% (np. 35%, 60% lub 85%). Jest to ograniczenie systemowe narzucone przez Apple.
 
-- Urządzenia **Android** — Widżet wyświetla dokładny procent baterii zgłoszony przez system, bez zaokrąglania.
+- Urządzenia z systemem **Android** — Widżet wyświetla dokładny procent baterii zgłoszony przez system, bez zaokrąglania.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_battery"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_battery"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ## Widżet współrzędnych {#coordinates-widget}
 
@@ -318,9 +318,9 @@ Możesz zresetować bieżącą pamięć podręczną GPS poprzez:
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_gps_info"/>* |
 | Dotknięcie | Otwiera menu statusu GPS z narzędziami innych firm do konfiguracji wbudowanego urządzenia GPS. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
-## Pozycja słońca {#sun-position}
+## Położenie słońca {#sun-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -338,7 +338,7 @@ Możesz zresetować bieżącą pamięć podręczną GPS poprzez:
 
 </Tabs>
 
-Widżety pozycji słońca pokazują następne czasy wschodu i zachodu słońca dla środka mapy. Po dotknięciu wyświetlają czas pozostały do oczekiwanego zachodu lub wschodu słońca. W obu przypadkach czas jest oparty na skonfigurowanym czasie Twojego urządzenia.
+Widżety położenia słońca pokazują następne czasy wschodu i zachodu słońca dla środka mapy. Po dotknięciu wyświetlają czas pozostały do przewidywanego zachodu lub wschodu słońca. W obu przypadkach czas jest oparty na skonfigurowanym czasie Twojego urządzenia.
 
 - **<Translate ios="true" ids="map_widget_sun_position"/>**. <Translate ios="true" ids="map_widget_sun_position_desc"/>
 - **<Translate ios="true" ids="map_widget_sunrise"/>**. <Translate ios="true" ids="map_widget_sunrise_desc"/>
@@ -349,12 +349,12 @@ Widżety pozycji słońca pokazują następne czasy wschodu i zachodu słońca d
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
 | Dotknięcie | Przełączanie między pozostałym czasem a czasem następnego wschodu/zachodu słońca. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ## Linijka promienia {#radius-ruler}
 
 :::note
-Bardziej szczegółowy opis znajdziesz tutaj: **[Linijka promienia i Linijka](../widgets/radius-ruler)**.
+Bardziej szczegółowy opis znajdziesz tutaj: **[Linijka promienia i linijka](../widgets/radius-ruler)**.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -386,7 +386,7 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_ruler_control"/>* |
 | Dotknięcie | Zmienia stan widżetu między trybami czarnej skali, skali szarości i niewidzialnym. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 ## Prędkościomierz {#speedometer}
@@ -407,10 +407,10 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 </Tabs>
 
-**Widżet prędkościomierza** to graficzne wyświetlanie bieżącej prędkości pojazdu na podstawie *danych otrzymanych z GPS*. Pozwala on monitorować w czasie rzeczywistym zgodność Twojej prędkości z dopuszczalnym ograniczeniem prędkości. Dopuszczalne ograniczenie prędkości jest dostarczane przez [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dla danego odcinka drogi oraz ustawienie [Tolerancja ograniczenia prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.
+**Widżet prędkościomierza** to graficzne wyświetlanie bieżącej prędkości pojazdu na podstawie *danych otrzymanych z GPS*. Pozwala monitorować w czasie rzeczywistym zgodność między Twoją prędkością a dopuszczalnym ograniczeniem prędkości. Dopuszczalne ograniczenie prędkości jest dostarczane przez [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dla danego odcinka drogi i ustawienie [Tolerancji ograniczenia prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.
 
 - W *ustawieniach prędkościomierza* możesz wybrać rozmiar (**Wysokość**) widżetu na ekranie aplikacji jako *Mały*, *Średni* lub *Duży*.
-- Możesz określić, kiedy otrzymywać **ostrzeżenie o ograniczeniu prędkości**, wybierając *Zawsze* lub *Po przekroczeniu*.
+- Możesz określić, kiedy chcesz otrzymywać **ostrzeżenie o ograniczeniu prędkości**, wybierając *Zawsze* lub *Po przekroczeniu*.
 
 <table class="blogimage">
     <tr>
@@ -429,7 +429,7 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 Te widżety są włączane i działają w połączeniu z odpowiadającymi im wtyczkami.
 
-### Widżety rejestrowania podróży {#trip-recording-widgets}
+### Widżety nagrywania podróży {#trip-recording-widgets}
 
 :::note
 Bardziej szczegółowy opis znajdziesz tutaj: **[Wtyczka <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
@@ -439,26 +439,26 @@ Bardziej szczegółowy opis znajdziesz tutaj: **[Wtyczka <Translate android="tru
 
 <TabItem value="android" label="Android">
 
-![widżet rejestrowania podróży](@site/static/img/widgets/wid_trip_rec.png)
+![widżet_nagrywania_podróży](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![widżet rejestrowania podróży](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![widżet_nagrywania_podróży](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Widżety rejestrowania podróży odnoszą się do [wtyczki <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Możesz używać widżetów do wyświetlania krótkich informacji o nagrywaniu trasy na ekranie. Takich jak *Dystans*, *Czas trwania*, *Pod górę* i *Z górki*.
+Widżety nagrywania podróży odnoszą się do wtyczki [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Możesz użyć widżetów, aby wyświetlić krótkie informacje o nagraniu trasy na ekranie. Takie jak *Dystans*, *Czas trwania*, *Pod górę* i *W dół*.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_monitoring"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_monitoring"/>* |
-| Dotknięcie | Rozpoczyna/Zatrzymuje nagrywanie trasy lub Wyświetla wykres. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Dotknięcie | Rozpoczyna/zatrzymuje nagrywanie trasy lub wyświetla wykres. |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Widżety czujników zewnętrznych {#external-sensors-widgets}
 
@@ -476,13 +476,13 @@ Aby dodać widżety czujników zewnętrznych do ekranu mapy, włącz wtyczkę Os
 
 <TabItem value="ios" label="iOS">
 
-![widżet rejestrowania podróży](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![widżet_nagrywania_podróży](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Widżety odnoszą się do [wtyczki Czujniki zewnętrzne](../plugins/external-sensors.md#widgets). Możesz ich używać do wyświetlania krótkich informacji z zewnętrznych czujników, takich jak: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*tylko Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** i **<Translate android="true" ids="external_device_characteristic_temperature"/>**. *Na iOS* możesz również wybrać **poziom baterii** podłączonych czujników BLE, aby był wyświetlany bezpośrednio w widżecie.
+Widżety odnoszą się do [wtyczki Czujniki zewnętrzne](../plugins/external-sensors.md#widgets). Możesz ich użyć do wyświetlenia krótkich informacji z zewnętrznych czujników, takich jak: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*tylko Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** i **<Translate android="true" ids="external_device_characteristic_temperature"/>**. *Na iOS* możesz również wybrać, aby **poziom baterii** podłączonych czujników BLE był wyświetlany bezpośrednio w widżecie.
 
 - Aby dodać widżet — [włącz](../plugins/index.md#enable--disable) wtyczkę OsmAnd Czujniki zewnętrzne.
 
@@ -494,7 +494,7 @@ Widżety odnoszą się do [wtyczki Czujniki zewnętrzne](../plugins/external-sen
 
 - **Wszystkie dodane widżety są widoczne**, nawet jeśli nie ma podłączonego czujnika zewnętrznego.
 
-- Użyj [wtyczki Rejestrowanie podróży](../plugins/trip-recording.md#recording-settings) do rejestrowania danych z czujników.
+- Użyj [wtyczki Nagrywanie podróży](../plugins/trip-recording.md#recording-settings), aby nagrywać dane z czujników.
 
 - Przeczytaj, jak wybrać, który czujnik (tego samego typu) ma być wyświetlany w widżecie [tutaj](../plugins/external-sensors.md#widget-settings).
 
@@ -503,35 +503,48 @@ Widżety odnoszą się do [wtyczki Czujniki zewnętrzne](../plugins/external-sen
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="external_sensor_widgets"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
 | Dotknięcie | Brak zmian (*Android*) / Przełącza tryb między danymi czujnika a poziomem baterii (*iOS*). |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Widżety metryk pojazdu {#vehicle-metrics-widgets}
-
-<InfoAndroidOnly />
 
 :::note
 Aby dodać widżety metryk pojazdu do ekranu mapy, włącz wtyczkę OsmAnd [Metryki pojazdu](../plugins/vehicle-metrics.md).
 :::
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Widżety metryk pojazdu Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
-Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich używać do wyświetlania informacji z podłączonego skanera OBD-II, takich jak (*13 metryk*): **Temperatura wlotu**, &nbsp; **Temperatura otoczenia**, &nbsp; **Temperatura płynu chłodzącego**, &nbsp; **Temperatura oleju silnikowego**, &nbsp; **Prędkość obrotowa silnika** (*bezpłatnie*), &nbsp; **Czas pracy silnika**, &nbsp; **Obliczone obciążenie silnika**, &nbsp; **Ciśnienie paliwa**, &nbsp; **Zużycie paliwa**, &nbsp; **Pozostałe paliwo**, &nbsp; **Poziom baterii**, &nbsp; **Prędkość pojazdu** (*bezpłatnie*) i **Pozycja przepustnicy**.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Widżety metryk pojazdu Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich użyć do wyświetlania informacji z podłączonego skanera OBD-II, takich jak (*13 metryk*): **Temperatura wlotu**, &nbsp; **Temperatura otoczenia**, &nbsp; **Temperatura płynu chłodzącego**, &nbsp; **Temperatura oleju silnikowego**, &nbsp; **Prędkość obrotowa silnika** (*bezpłatnie*), &nbsp; **Czas pracy silnika**, &nbsp; **Obliczone obciążenie silnika**, &nbsp; **Ciśnienie paliwa**, &nbsp; **Zużycie paliwa**, &nbsp; **Pozostałe paliwo**, &nbsp; **Poziom baterii**, &nbsp; **Prędkość pojazdu** (*bezpłatnie*) i **Położenie przepustnicy**.
 
 - Aby dodać widżety metryk pojazdu do ekranu mapy, [włącz](../plugins/index.md#enable--disable) **wtyczkę Metryki pojazdu**.
-- Możesz dodawać widżety, nawet jeśli nie ma podłączonego skanera OBD-II.
+- Możesz dodać widżety, nawet jeśli nie ma podłączonego skanera OBD-II.
 - Wszystkie dodane widżety są widoczne, niezależnie od tego, czy skaner OBD-II jest podłączony, czy nie.
-- Aby edytować widżet, dotknij widżetu dodanego do panelu, a następnie dotknij *Ustawienia* lub bezpośrednio dotknij *ikonę Ustawienia* w polu widżetu.
+- Aby edytować widżet, dotknij widżetu dodanego do panelu, a następnie dotknij *Ustawienia* lub bezpośrednio dotknij *ikonę Ustawień* w polu widżetu.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="obd_widget_group"/>* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="obd_plugin_name"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
-### Widżety pogody {#weather-widgets}
+### Widżety pogodowe {#weather-widgets}
 
 :::note
-Aby dodać widżety pogody do ekranu mapy, włącz wtyczkę OsmAnd [Pogoda](../plugins/weather.md).
+Aby dodać widżety pogodowe do ekranu mapy, włącz wtyczkę OsmAnd [Pogoda](../plugins/weather.md).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -550,20 +563,20 @@ Aby dodać widżety pogody do ekranu mapy, włącz wtyczkę OsmAnd [Pogoda](../p
 
 </Tabs>
 
-Widżety pogody wyświetlają bieżące informacje o pogodzie dla centralnego punktu na mapie. Są one automatycznie włączane na ekranie po wyświetleniu za pomocą wtyczki (*Menu → Pogoda*), a Ty możesz wybrać, które z nich umieścić na ekranie głównym do codziennego użytku (*Menu → Dostosuj ekran*). Więcej na ten temat można przeczytać w artykule [Wtyczka pogody](../plugins/weather.md).
+Widżety pogodowe wyświetlają bieżące informacje o pogodzie dla centralnego punktu na mapie. Są one automatycznie włączane na ekranie po wyświetleniu za pomocą wtyczki (*Menu → Pogoda*), a Ty możesz wybrać, które z nich mają być umieszczone na ekranie głównym do codziennego użytku (*Menu → Dostosuj ekran*). Więcej na ten temat można przeczytać w artykule [Wtyczka Pogoda](../plugins/weather.md).
 
 - **Temperatura**. <Translate android="true" ids="temperature_widget_desc"/>
 - **Ciśnienie powietrza**. <Translate android="true" ids="air_pressure_widget_desc"/>
 - **Wiatr**. <Translate android="true" ids="wind_widget_desc"/>
-- **Zachmurzenie**. <Translate android="true" ids="clouds_widget_desc"/>
+- **Chmury**. <Translate android="true" ids="clouds_widget_desc"/>
 - **Opady**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="shared_string_weather"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="shared_string_weather"/>* |
-| Dotknięcie | Wyświetla w wyskakującym oknie dialogowym datę i godzinę, kiedy informacje o pogodzie są aktualne. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Dotknięcie | Wyświetla w oknie dialogowym datę i godzinę, dla których informacje o pogodzie są aktualne. |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *Menu → Wtyczki → Pogoda → Ustawienia* lub *Menu → Ustawienia → Profil aplikacji → Pogoda* |
 
 ### Widżet parkowania {#parking-widget}
@@ -574,16 +587,16 @@ Aby dodać widżety parkowania do ekranu mapy, włącz wtyczkę OsmAnd [Pozycja 
 
 ![Widżet parkowania](@site/static/img/plugins/parking/parking_widget.png)
 
-Widżet wtyczki parkowania pokazuje odległość od środka ekranu do miejsca parkowania. Aby ustawić miejsce parkingowe na mapie, powiększ do wymaganego poziomu, a następnie długo dotknij miejsca na mapie, aby otworzyć menu kontekstowe. Postępuj zgodnie z [tymi ustawieniami](../plugins/parking.md#set-a-spot).
+Widżet wtyczki Parking pokazuje odległość od środka ekranu do miejsca parkowania. Aby ustawić miejsce parkingowe na mapie, powiększ do wymaganego poziomu, a następnie długo dotknij miejsca na mapie, aby otworzyć menu kontekstowe. Postępuj zgodnie z [tymi ustawieniami](../plugins/parking.md#set-a-spot).
 
-**Uwaga:** Widżet parkowania pojawi się tylko wtedy, gdy na mapie zostanie dodana pozycja parkowania. Bez zapisanej pozycji parkowania widżet nie będzie widoczny.
+**Uwaga:** Widżet parkowania pojawi się tylko wtedy, gdy do mapy zostanie dodana pozycja parkowania. Bez zapisanej pozycji parkowania widżet nie będzie widoczny.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_parking"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="parking_place"/>* |
 | Dotknięcie | Przenosi widok mapy do pozycji parkowania. |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 ### Widżet Mapillary {#mapillary-widget}
@@ -594,14 +607,14 @@ Aby dodać widżet Mapillary do ekranu mapy, włącz wtyczkę OsmAnd [Mapillary]
 
 ![Widżet Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
-Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji Mapillary, co umożliwia dodawanie [*obrazów na poziomie ulicy*](../plugins/mapillary.md#enable-layer). Widżet jest dodawany do mapy automatycznie po włączeniu wtyczki.
+Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji Mapillary, umożliwiającej dodawanie [*obrazów na poziomie ulicy*](../plugins/mapillary.md#enable-layer). Widżet jest automatycznie dodawany do mapy po włączeniu wtyczki.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="mapillary"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="mapillary"/>* |
 | Dotknięcie | Otwiera aplikację [Mapillary](https://www.mapillary.com/). |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Widżet notatek audio/wideo {#audiovideo-notes-widget}
 
@@ -618,15 +631,15 @@ Są to widżety wtyczki notatek audio/wideo, które zapewniają szybki dostęp d
 Możesz skonfigurować, która akcja jest domyślnie wybrana:
 
 - *Na żądanie*. Stan domyślny. Za każdym razem wyświetlane jest okno dialogowe wyboru akcji.
-- *Nagraj dźwięk* - nagrywa notatkę dźwiękową.
+- *Nagraj audio* - nagrywa notatkę audio.
 - *Nagraj wideo* - pozwala nagrać wideo.
 - *Zrób zdjęcie* - pozwala zrobić zdjęcie.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_av_notes"/>* |
-| Dotknięcie | Rozpoczyna / zatrzymuje robienie notatki |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Dotknięcie | Rozpoczyna / zatrzymuje nagrywanie notatki |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ### Widżet Trackera {#tracker-widget}
 
@@ -650,7 +663,7 @@ Ten widżet wtyczki OsmAnd Tracker służy do szybkiego dostępu do aplikacji Os
 ### Widżety deweloperskie {#developer-widgets}
 
 :::note
-Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [Wtyczka deweloperska OsmAnd](../plugins/development.md).
+Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [Rozwój OsmAnd](../plugins/development.md).
 :::
 
 **Widżety deweloperskie** dostarczają informacji o [prędkości renderowania mapy](../plugins/development.md#map-rendering-fps-widget) i parametrach pozycji wirtualnej kamery, w tym [poziomie powiększenia](../plugins/development.md#zoom-level), [odległości](../plugins/development.md#distance-to-target) do środka mapy, [wysokości kamery](../plugins/development.md#camera-elevation) i [kącie nachylenia](../plugins/development.md#camera-tilt).
@@ -673,14 +686,14 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [Wtycz
 
 </Tabs>
 
-Widżet [FPS renderowania mapy](../plugins/development.md#map-rendering-fps-widget) wyświetla prędkość renderowania mapy i jej elementów, mierzoną w klatkach na sekundę (FPS). Wyższa wartość FPS wskazuje na szybsze renderowanie i płynniejszą wydajność wizualną.
+[Widżet FPS renderowania mapy](../plugins/development.md#map-rendering-fps-widget) wyświetla prędkość renderowania mapy i jej elementów, mierzoną w klatkach na sekundę (FPS). Wyższa wartość FPS oznacza szybsze renderowanie i płynniejszą wydajność wizualną.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_rendering_fps"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 #### Widżety kamery {#camera-widgets}
 
@@ -702,7 +715,7 @@ Widżet [FPS renderowania mapy](../plugins/development.md#map-rendering-fps-widg
 
 **Widżety kamery** pozwalają monitorować wyrównanie między mapą OsmAnd a powierzchnią ziemi.
 
-- [Pochylenie kamery](../plugins/development.md#camera-tilt). Wyświetla kąt pochylenia kamery w trybie perspektywicznym. Wartość domyślna to 90° (bez pochylenia).
+- [Nachylenie kamery](../plugins/development.md#camera-tilt). Wyświetla kąt nachylenia kamery w trybie perspektywy. Domyślna wartość to 90° (bez nachylenia).
 - [Wysokość kamery](../plugins/development.md#camera-elevation). Wskazuje wysokość kamery nad poziomem powierzchni.
 - [Poziom powiększenia](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
 - [Odległość od kamery do celu](../plugins/development.md#distance-to-target). Mierzy odległość między kamerą a docelową lokalizacją na mapie.
@@ -712,7 +725,7 @@ Widżet [FPS renderowania mapy](../plugins/development.md#map-rendering-fps-widg
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/>* |
 | | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="developer_widgets"/>* |
 | Dotknięcie | Przełączanie między trybami (*Poziom powiększenia*) / Brak zmian (*Inne*) |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 #### Dostępna pamięć RAM {#available-ram}
 
@@ -720,28 +733,28 @@ Widżet [FPS renderowania mapy](../plugins/development.md#map-rendering-fps-widg
 
 ![Widżety średniej prędkości](@site/static/img/widgets/available_RAM_2_andr.png)
 
-Widżet **Dostępna pamięć RAM** to narzędzie do monitorowania zużycia pamięci urządzenia w odniesieniu do OsmAnd. Dostarcza szczegółowych danych, aby pomóc zoptymalizować wydajność aplikacji.
+Widżet **Dostępna pamięć RAM** to narzędzie do monitorowania zużycia pamięci urządzenia w odniesieniu do OsmAnd. Dostarcza szczegółowych danych, które pomagają zoptymalizować wydajność aplikacji.
 
 - **Dostępna pamięć RAM aplikacji.** Wyświetla ilość pamięci RAM dostępnej dla OsmAnd do użycia bez powodowania problemów z wydajnością.
 
 - **Zużycie pamięci RAM aplikacji** — Pokazuje bieżące zużycie pamięci RAM przez OsmAnd.
 
-- **Całkowita pamięć RAM aplikacji** — Wskazuje całkowitą pamięć przydzieloną OsmAnd, w tym zarówno pamięć używaną, jak i dostępną.
+- **Całkowita pamięć RAM aplikacji** — Wskazuje całkowitą pamięć przydzieloną OsmAnd, w tym zarówno używaną, jak i dostępną pamięć.
 
-> **UWAGA**. *Całkowita dostępna pamięć RAM* może się różnić w zależności od procesów w tle i innych aplikacji działających na urządzeniu. Te wartości są dynamiczne i oferują sposób na śledzenie i zarządzanie zużyciem pamięci w celu zapewnienia spójnej i wydajnej pracy OsmAnd.*
+> **UWAGA**. *Całkowita dostępna pamięć RAM* może się różnić w zależności od procesów działających w tle i innych aplikacji uruchomionych na Twoim urządzeniu. Te wartości są dynamiczne i oferują sposób na śledzenie i zarządzanie zużyciem pamięci w celu zapewnienia spójnej i wydajnej pracy OsmAnd.
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/> → *Dostępna pamięć RAM* |
 | Dotknięcie | Brak zmian |
-| Długie dotknięcie | Otwiera [Menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 ## Powiązane artykuły {#related-articles}
 
-- [Konfiguracja ekranu](./configure-screen.md)
+- [Konfiguruj ekran](./configure-screen.md)
 - [Przyciski mapy](./map-buttons.md)
 - [Widżety nawigacyjne](./nav-widgets.md)
-- [Linijka promienia i Linijka](./radius-ruler.md)
+- [Linijka promienia i linijka](./radius-ruler.md)
 - [Widżety znaczników](./markers.md)
 - [Szybka akcja](./quick-action.md)
 
