@@ -4,80 +4,70 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-export default function LegendItemNew({ svgPath, itemsName }) {
+export default function LegendItemWithSplit({ svgPath, svgParts }) {
 
+  const SVG_DAY_FILE_SUFFIX = '-day.svg';
+  const WIDTH_ATTR = 'width';
+  const HEIGHT_ATTR = 'height';
+  const VIEW_BOX_ATTR = 'viewBox';
+  const TRANSFORM_ATTR = 'transform';
+  const TOP_LEVEL_GROUPS_SELECT = ':scope > g';
+  const DEFS_SELECT = 'defs';
+  const STYLE_SELECT = 'style';
   const [splitSvgsDay, setSplitSvgsDay] = useState([]);
   const [splitSvgsNight, setSplitSvgsNight] = useState([]);
-  const [error, setError] = useState(null);
   const [svgContentDay, setSvgContentDay] = useState('');
   const [svgContentNight, setSvgContentNight] = useState('');
   const [loadingDay, setLoadingDay] = useState(true);
   const [loadingNight, setLoadingNight] = useState(true);
+  const DEBUG = false;
 
-  useEffect(() => {
+  const useSvgContent = ((svgPath, setSvgContent, setLoading, fileSuffix) => {
     if (!svgPath) {
-      setSvgContentDay('');
-      setSvgContentNight('');
-      setLoadingDay(false);
-      setLoadingNight(false);
+      setSvgContent('');
+      setLoading(false);
       return;
     }
-    setLoadingDay(true);
-    setLoadingNight(true);
-    setError(null);
+    setLoading(true)
+    fetch(svgPath + fileSuffix)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        setSvgContent(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        DEBUG && console.error('Error fetching SVG:', err);
+        setLoading(false);
+      });
+  })
 
-    fetch(svgPath + "-day.svg")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(data => {
-        setSvgContentDay(data);
-        setLoadingDay(false);
-      })
-      .catch(err => {
-        console.error('Error fetching SVG:', err);
-        setError(err);
-        setLoadingDay(false);
-      });
-    fetch(svgPath + "-day.svg")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(data => {
-        setSvgContentNight(data);
-        setLoadingNight(false);
-      })
-      .catch(err => {
-        console.error('Error fetching SVG:', err);
-        setError(err);
-        setLoadingNight(false);
-      });
+  useEffect(() => {
+    useSvgContent(svgPath, setSvgContentDay, setLoadingDay, SVG_DAY_FILE_SUFFIX);
+    useSvgContent(svgPath, setSvgContentNight, setLoadingNight, SVG_DAY_FILE_SUFFIX);
   }, [svgPath]);
 
   function splitSvgToArray(svgContent) {
-    const itemsMap = new Map(Object.entries(itemsName));
+    const svgPartsMap = new Map(Object.entries(svgParts));
     const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
+    const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
     const originalSvgElement = svgDoc.documentElement;
 
     if (originalSvgElement.querySelector('parsererror')) {
-      throw new Error("Failed to parse the Waterways SVG markup.");
+      throw new Error('Failed to parse the Waterways SVG markup.');
     }
 
-    const topLevelGroups = ':scope > g';
-    const groupElements = originalSvgElement.querySelectorAll(topLevelGroups);
-    const originalDefs = originalSvgElement.querySelector('defs');
-    const originalStyles = originalSvgElement.querySelectorAll('style');
+    const groupElements = originalSvgElement.querySelectorAll(TOP_LEVEL_GROUPS_SELECT);
+    const originalDefs = originalSvgElement.querySelector(DEFS_SELECT);
+    const originalStyles = originalSvgElement.querySelectorAll(STYLE_SELECT);
     const svgArray = [];
     groupElements.forEach(groupElement => {
-      const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const attributesToExclude = ['width', 'height', 'viewBox'];
+      const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const attributesToExclude = [WIDTH_ATTR, HEIGHT_ATTR, VIEW_BOX_ATTR];
       for (const attr of originalSvgElement.attributes) {
         if (!attributesToExclude.includes(attr.name)) {
           newSvg.setAttribute(attr.name, attr.value);
@@ -90,19 +80,19 @@ export default function LegendItemNew({ svgPath, itemsName }) {
         newSvg.appendChild(styleNode.cloneNode(true));
       });
       const clonedGroupElement = groupElement.cloneNode(true);
-      if (clonedGroupElement.hasAttribute('transform')) {
-        clonedGroupElement.removeAttribute('transform');
+      if (clonedGroupElement.hasAttribute(TRANSFORM_ATTR)) {
+        clonedGroupElement.removeAttribute(TRANSFORM_ATTR);
       }
       newSvg.appendChild(clonedGroupElement);
-      const toRemove = document.body.insertAdjacentElement("beforeend", newSvg);
+      const toRemove = document.body.insertAdjacentElement('beforeend', newSvg);
       const bbox = getVisualBBox(clonedGroupElement);
       toRemove?.remove();
-      newSvg.setAttribute('width', bbox.width.toFixed(2));
-      newSvg.setAttribute('height', bbox.height.toFixed(2));
-      newSvg.setAttribute('viewBox', `${bbox.x.toFixed(2)} ${bbox.y.toFixed(2)} ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`)
+      newSvg.setAttribute(WIDTH_ATTR, bbox.width.toFixed(2));
+      newSvg.setAttribute(HEIGHT_ATTR, bbox.height.toFixed(2));
+      newSvg.setAttribute(VIEW_BOX_ATTR, `${bbox.x.toFixed(2)} ${bbox.y.toFixed(2)} ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`)
       const serializer = new XMLSerializer();
       const serializedGroup = serializer.serializeToString(newSvg);
-      const title = itemsMap.get(groupElement.id)
+      const title = svgPartsMap.get(groupElement.id)
       svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup, title });
     });
     return svgArray;
@@ -113,9 +103,7 @@ export default function LegendItemNew({ svgPath, itemsName }) {
       try {
         const svgArray = splitSvgToArray(svgContentDay)
         setSplitSvgsDay(svgArray);
-        setError(null);
       } catch (e) {
-        setError(e.message);
         setSplitSvgsDay([]);
       }
     }
@@ -126,9 +114,7 @@ export default function LegendItemNew({ svgPath, itemsName }) {
       try {
         const svgArray = splitSvgToArray(svgContentNight)
         setSplitSvgsNight(svgArray);
-        setError(null);
       } catch (e) {
-        setError(e.message);
         setSplitSvgsNight([]);
       }
     }
@@ -155,7 +141,7 @@ export default function LegendItemNew({ svgPath, itemsName }) {
 
   function getVisualBBox(groupElement) {
     if (!groupElement || typeof groupElement.getBBox !== 'function') {
-      console.error("Invalid SVG group element provided.");
+      DEBUG && console.error('Invalid SVG group element provided.');
       return { x: 0, y: 0, width: 0, height: 0 };
     }
     const { groupBBox, topStroke, bottomStroke, leftStroke, rightStroke } = getSvgGroupVisualMetrics(groupElement);
@@ -164,10 +150,6 @@ export default function LegendItemNew({ svgPath, itemsName }) {
     const finalX = groupBBox.x - (leftStroke / 2);
     const finalY = groupBBox.y - (topStroke / 2);
     return { x: finalX, y: finalY, width: finalWidth, height: finalHeight };
-  }
-
-  if (error) {
-    console.error(error.message);
   }
 
   const chunkArray = (arr, chunkSize) => {
@@ -214,7 +196,7 @@ export default function LegendItemNew({ svgPath, itemsName }) {
         </table>
       );
     } else {
-      !error && !isLoading && <p>No groups found in the SVG (after processing).</p>
+      DEBUG && !isLoading && <p>No groups found in the SVG (after processing).</p>
     }
     if (isLoading) {
       return <p>Loading SVG...</p>
@@ -225,12 +207,12 @@ export default function LegendItemNew({ svgPath, itemsName }) {
   };
 
   return (
-    <div className="container row">
-      <Tabs groupId="map-legend">
-        <TabItem value="dayMode" label="Day mode">
+    <div className='container row'>
+      <Tabs groupId='map-legend'>
+        <TabItem value='dayMode' label='Day mode'>
           <SvgTable rows={rowsDay} mode='day' />
         </TabItem>
-        <TabItem value="nightMode" label="Night mode">
+        <TabItem value='nightMode' label='Night mode'>
           <SvgTable rows={rowsNight} mode='night' />
         </TabItem>
       </Tabs>
