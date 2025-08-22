@@ -432,7 +432,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 Beim Navigieren durch Städte benötigen Sie eine kontrastreichere Ansicht des öffentlichen Nahverkehrs und der Haltestellen. Sie können auf eine Haltestelle des öffentlichen Nahverkehrs tippen und eine der Routen oder Haltestellen aus der Liste auswählen. Zugstrecken werden in dieser Einstellung ebenfalls angezeigt.
 
 - **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Zeigt Haltestellen des öffentlichen Nahverkehrs an.
-    ![Map transport stops](@site/static/map/map-transport-stops.png)
+    ![Map transport stops](@site/static/img/map/map-transport-stops.png)
 
 - **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Zeigt Bus-, Oberleitungsbus- und Shuttle-Routen an.
     ![Map transport bus](@site/static/img/map/map-transport-bus.png)

@@ -516,7 +516,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 ### Bağlam Menüsü Eylemleri {#context-menu-actions}
 
-![Profil Bağlam menüsü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profil Haritayı yapılandır menüsü Sıfırla Android](@site/static/profiles/profile_context_menu_hidden_2_andr.png)
+![Profil Bağlam menüsü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profil Haritayı yapılandır menüsü Sıfırla Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Harita bağlam menüsü** - Kullanıcı Arayüzünü Özelleştir bölümünde, sık kullanılan özelliklere erişimi optimize etmek için [harita bağlam menüsündeki](../map/map-context-menu.md) öğeleri yeniden sıralayabilir veya gizleyebilirsiniz.
 
