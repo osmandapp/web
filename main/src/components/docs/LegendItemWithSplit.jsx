@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './LegendItem.module.css';
+import SvgMeasurementComponent from './SvgMeasurementComponent.jsx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+const svgCache = new Map();
 
 export default function LegendItemWithSplit({ svgPath, svgParts }) {
 
   const SVG_DAY_FILE_SUFFIX = '-day.svg';
+  const SVG_NIGHT_FILE_SUFFIX = '-night.svg';
   const WIDTH_ATTR = 'width';
   const HEIGHT_ATTR = 'height';
   const VIEW_BOX_ATTR = 'viewBox';
@@ -20,16 +23,21 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
   const [svgContentNight, setSvgContentNight] = useState('');
   const [loadingDay, setLoadingDay] = useState(true);
   const [loadingNight, setLoadingNight] = useState(true);
+  const measurementComponentRef = useRef(null);
   const DEBUG = false;
 
-  const useSvgContent = ((svgPath, setSvgContent, setLoading, fileSuffix) => {
+  const useSvgContent = ((svgPath, setSvgContent, setLoading, setSplitSvgs) => {
     if (!svgPath) {
       setSvgContent('');
       setLoading(false);
       return;
     }
     setLoading(true)
-    fetch(svgPath + fileSuffix)
+    if (svgCache.has(svgPath)) {
+      setSplitSvgs(svgCache.get(svgPath));
+      return;
+    }
+    fetch(svgPath)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -37,7 +45,7 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
         return response.text();
       })
       .then(data => {
-        setSvgContent(data);
+        setSvgContent({ svgPath, data });
         setLoading(false);
       })
       .catch(err => {
@@ -47,8 +55,8 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
   })
 
   useEffect(() => {
-    useSvgContent(svgPath, setSvgContentDay, setLoadingDay, SVG_DAY_FILE_SUFFIX);
-    useSvgContent(svgPath, setSvgContentNight, setLoadingNight, SVG_DAY_FILE_SUFFIX);
+    useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX, setSvgContentDay, setLoadingDay, setSplitSvgsDay);
+    useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX, setSvgContentNight, setLoadingNight, setSplitSvgsNight);
   }, [svgPath]);
 
   function splitSvgToArray(svgContent) {
@@ -84,73 +92,43 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
         clonedGroupElement.removeAttribute(TRANSFORM_ATTR);
       }
       newSvg.appendChild(clonedGroupElement);
-      const toRemove = document.body.insertAdjacentElement('beforeend', newSvg);
-      const bbox = getVisualBBox(clonedGroupElement);
-      toRemove?.remove();
-      newSvg.setAttribute(WIDTH_ATTR, bbox.width.toFixed(2));
-      newSvg.setAttribute(HEIGHT_ATTR, bbox.height.toFixed(2));
-      newSvg.setAttribute(VIEW_BOX_ATTR, `${bbox.x.toFixed(2)} ${bbox.y.toFixed(2)} ${bbox.width.toFixed(2)} ${bbox.height.toFixed(2)}`)
       const serializer = new XMLSerializer();
-      const serializedGroup = serializer.serializeToString(newSvg);
+      let svgString = serializer.serializeToString(newSvg);
+      const groupBBox = measurementComponentRef.current.measureGroupBBox(svgString);
+      const width = groupBBox.width.toFixed(2);
+      const height = groupBBox.height.toFixed(2);
+      newSvg.setAttribute(WIDTH_ATTR, width);
+      newSvg.setAttribute(HEIGHT_ATTR, height);
+      newSvg.setAttribute(VIEW_BOX_ATTR, `${groupBBox.x.toFixed(2)} ${groupBBox.y.toFixed(2)} ${width} ${height}`)
+      svgString = serializer.serializeToString(newSvg);
       const title = svgPartsMap.get(groupElement.id)
-      svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString: serializedGroup, title });
+      svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString, title });
     });
     return svgArray;
   }
 
-  useEffect(() => {
-    if (svgContentDay !== '') {
-      try {
-        const svgArray = splitSvgToArray(svgContentDay)
-        setSplitSvgsDay(svgArray);
-      } catch (e) {
-        setSplitSvgsDay([]);
+  const useSplitSvg = (svgContent, setSplitSvgs) => {
+    useEffect(() => {
+      if (svgContent) {
+        if (svgCache.has(svgContent.svgPath)) {
+          setSplitSvgs(svgCache.get(svgContent.svgPath));
+          return;
+        }
+        try {
+          const svgArray = splitSvgToArray(svgContent.data);
+          svgCache.set(svgContent.svgPath, svgArray);
+          setSplitSvgs(svgArray);
+        } catch (e) {
+          setSplitSvgs([]);
+        }
+      } else {
+        setSplitSvgs([]);
       }
-    }
-  }, [svgContentDay]);
+    }, [svgContent]);
+  };
 
-  useEffect(() => {
-    if (svgContentNight !== '') {
-      try {
-        const svgArray = splitSvgToArray(svgContentNight)
-        setSplitSvgsNight(svgArray);
-      } catch (e) {
-        setSplitSvgsNight([]);
-      }
-    }
-  }, [svgContentNight]);
-
-  function getSvgGroupVisualMetrics(groupElement) {
-    const groupBBox = groupElement.getBBox();
-    let topStroke = 0, bottomStroke = 0, leftStroke = 0, rightStroke = 0;
-    const topY = groupBBox.y;
-    const bottomY = groupBBox.y + groupBBox.height;
-    const leftX = groupBBox.x;
-    const rightX = groupBBox.x + groupBBox.width;
-    for (const child of groupElement.children) {
-      const childBBox = child.getBBox();
-      const style = window.getComputedStyle(child);
-      const strokeWidth = parseFloat(style.getPropertyValue('stroke-width')) || 0;
-      if (childBBox.y === topY) { topStroke = Math.max(topStroke, strokeWidth); }
-      if (childBBox.y + childBBox.height === bottomY) { bottomStroke = Math.max(bottomStroke, strokeWidth); }
-      if (childBBox.x === leftX) { leftStroke = Math.max(leftStroke, strokeWidth); }
-      if (childBBox.x + childBBox.width === rightX) { rightStroke = Math.max(rightStroke, strokeWidth); }
-    }
-    return { groupBBox, topStroke, bottomStroke, leftStroke, rightStroke };
-  }
-
-  function getVisualBBox(groupElement) {
-    if (!groupElement || typeof groupElement.getBBox !== 'function') {
-      DEBUG && console.error('Invalid SVG group element provided.');
-      return { x: 0, y: 0, width: 0, height: 0 };
-    }
-    const { groupBBox, topStroke, bottomStroke, leftStroke, rightStroke } = getSvgGroupVisualMetrics(groupElement);
-    const finalWidth = groupBBox.width + (leftStroke / 2) + (rightStroke / 2);
-    const finalHeight = groupBBox.height + (topStroke / 2) + (bottomStroke / 2);
-    const finalX = groupBBox.x - (leftStroke / 2);
-    const finalY = groupBBox.y - (topStroke / 2);
-    return { x: finalX, y: finalY, width: finalWidth, height: finalHeight };
-  }
+  useSplitSvg(svgContentDay, setSplitSvgsDay);
+  useSplitSvg(svgContentNight, setSplitSvgsNight);
 
   const chunkArray = (arr, chunkSize) => {
     const R = [];
@@ -216,6 +194,7 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
           <SvgTable rows={rowsNight} mode='night' />
         </TabItem>
       </Tabs>
+      <SvgMeasurementComponent ref={measurementComponentRef} />
     </div>
   );
 }
