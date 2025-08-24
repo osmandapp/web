@@ -5,6 +5,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 const svgCache = new Map();
+export const TOP_LEVEL_GROUPS_SELECT = ':scope > g';
 
 export default function LegendItemWithSplit({ svgPath, svgParts }) {
 
@@ -14,7 +15,6 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
   const HEIGHT_ATTR = 'height';
   const VIEW_BOX_ATTR = 'viewBox';
   const TRANSFORM_ATTR = 'transform';
-  const TOP_LEVEL_GROUPS_SELECT = ':scope > g';
   const DEFS_SELECT = 'defs';
   const STYLE_SELECT = 'style';
   const [splitSvgsDay, setSplitSvgsDay] = useState([]);
@@ -23,6 +23,7 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
   const [svgContentNight, setSvgContentNight] = useState('');
   const [loadingDay, setLoadingDay] = useState(true);
   const [loadingNight, setLoadingNight] = useState(true);
+  const COLUMN_COUNT = 3;
   const measurementComponentRef = useRef(null);
   const DEBUG = false;
 
@@ -138,8 +139,8 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
     return R;
   };
 
-  const rowsDay = chunkArray(splitSvgsDay, 3);
-  const rowsNight = chunkArray(splitSvgsNight, 3);
+  const rowsDay = chunkArray(splitSvgsDay, COLUMN_COUNT);
+  const rowsNight = chunkArray(splitSvgsNight, COLUMN_COUNT);
 
   const SvgTable = ({ rows, mode }) => {
     const isNightMode = mode === 'night';
@@ -198,4 +199,3 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
     </div>
   );
 }
-

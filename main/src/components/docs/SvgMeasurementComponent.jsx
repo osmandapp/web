@@ -1,8 +1,9 @@
 import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+import { TOP_LEVEL_GROUPS_SELECT } from './LegendItemWithSplit';
 
 const SvgMeasurementComponent = forwardRef((props, ref) => {
   const measurementContainerRef = useRef(null);
-  const GROUP_SELECT = 'g';
+  const SVG_SELECT = 'svg';
   const DEBUG = false;
 
   useImperativeHandle(ref, () => ({
@@ -20,7 +21,8 @@ const SvgMeasurementComponent = forwardRef((props, ref) => {
       
       try {
         container.innerHTML = svgString;
-        const groupElement = container.querySelector(GROUP_SELECT);
+        const svgElement = container.querySelector(SVG_SELECT);
+        const groupElement = svgElement.querySelector(TOP_LEVEL_GROUPS_SELECT);
         if (!groupElement) {
           DEBUG && console.error("Provided string does not contain an SVG element.");
           return null;
