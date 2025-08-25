@@ -1,5 +1,5 @@
 import React, { useRef, useImperativeHandle, forwardRef } from 'react';
-import { TOP_LEVEL_GROUPS_SELECT } from './LegendItemWithSplit';
+import { TOP_LEVEL_GROUPS_SELECT } from './LegendItemWithProcessing';
 
 const SvgMeasurementComponent = forwardRef((props, ref) => {
   const measurementContainerRef = useRef(null);

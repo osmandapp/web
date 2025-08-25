@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 const svgCache = new Map();
 export const TOP_LEVEL_GROUPS_SELECT = ':scope > g';
 
-export default function LegendItemWithSplit({ svgPath, svgParts }) {
+export default function LegendItemWithProcessing({ svgPath, svgParts }) {
 
   const SVG_DAY_FILE_SUFFIX = '-day.svg';
   const SVG_NIGHT_FILE_SUFFIX = '-night.svg';
@@ -36,6 +36,7 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
     setLoading(true)
     if (svgCache.has(svgPath)) {
       setSplitSvgs(svgCache.get(svgPath));
+      setLoading(false)
       return;
     }
     fetch(svgPath)
@@ -95,7 +96,7 @@ export default function LegendItemWithSplit({ svgPath, svgParts }) {
       newSvg.appendChild(clonedGroupElement);
       const serializer = new XMLSerializer();
       let svgString = serializer.serializeToString(newSvg);
-      const groupBBox = measurementComponentRef.current.measureGroupBBox(svgString);
+      const groupBBox = measurementComponentRef?.current.measureGroupBBox(svgString);
       const width = groupBBox.width.toFixed(2);
       const height = groupBBox.height.toFixed(2);
       newSvg.setAttribute(WIDTH_ATTR, width);
