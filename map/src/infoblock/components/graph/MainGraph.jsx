@@ -587,7 +587,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     }
     return (
         <>
-            <Box id="se-main-graph" sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 180 }}>
+            <Box id="se-main-graph" sx={{ p: 0, height: 180 }}>
                 <Chart
                     ref={chartRef}
                     style={{ fontSize: 10 }}
