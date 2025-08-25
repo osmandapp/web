@@ -328,7 +328,7 @@ export default function InformationBlock({
                     )}
                     {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
-                        <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
+                        <Box anchor={'right'} sx={{ height: 'auto', overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton
