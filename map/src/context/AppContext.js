@@ -24,6 +24,7 @@ import { units } from '../menu/settings/units/UnitsMenu';
 import i18n from 'i18next';
 import * as locales from 'date-fns/locale';
 import { getSortFromDB } from './FavoriteStorage';
+import MarkerOptions from '../map/markers/MarkerOptions';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -365,6 +366,7 @@ export const AppContextProvider = (props) => {
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
+    const [usedIcons, setUsedIcons] = useState([MarkerOptions.DEFAULT_WPT_ICON]);
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
@@ -821,6 +823,8 @@ export const AppContextProvider = (props) => {
                 setNotification,
                 dateLocale,
                 setDateLocale,
+                usedIcons,
+                setUsedIcons,
             }}
         >
             {props.children}
