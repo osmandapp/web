@@ -226,17 +226,25 @@ const GpxGraphProvider = ({ width }) => {
     }, [data]);
 
     const attrGraphData = useMemo(() => {
-        if (roadPoints) {
+        if (roadPoints && roadPoints instanceof Array && roadPoints.length > 0 && routeTypes) {
             addDistanceToPoints(roadPoints);
             let segments = [];
             let prevSegPoint;
             roadPoints.forEach((p) => {
-                if (p.segment && p.segment.ext.types) {
+                if (p.segment?.ext.types) {
                     let seg = _.cloneDeep(p);
                     seg.ind = _.indexOf(roadPoints, p);
+                    const rawLen = Number(seg.segment?.ext?.length);
+                    if (!Number.isFinite(rawLen) || rawLen < 1) {
+                        return;
+                    }
+                    let endIdx = seg.ind + rawLen - 1;
+                    if (endIdx >= roadPoints.length) {
+                        return;
+                    }
                     seg.distance = prevSegPoint
-                        ? roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal - seg.distanceTotal
-                        : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
+                        ? roadPoints[endIdx].distanceTotal - seg.distanceTotal
+                        : roadPoints[endIdx].distanceTotal;
                     attributesTags.forEach((a) => (seg[a] = UNDEFINED_DATA));
                     p.segment.ext.types.split(',').forEach((t) => {
                         const type = routeTypes?.[t];
