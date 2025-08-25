@@ -166,7 +166,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
     }
 
     return (
-        <Box id="se-road-attributes-graph" sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
+        <Box id="se-road-attributes-graph" sx={{ p: 0 }}>
             <Divider sx={{ mt: '15px', mb: '12px' }} />
             <Grid container spacing={2}>
                 <Grid item xs={9}>
@@ -186,7 +186,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     </Button>
                 </Grid>
             </Grid>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 60 }}>
+            <Box sx={{ p: 0, height: 60 }}>
                 <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
