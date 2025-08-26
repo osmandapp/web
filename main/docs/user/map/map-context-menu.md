@@ -247,13 +247,6 @@ Shown info about Public transport routes for chosen transport stop. Information 
 This is a list of all points in one group for a Favorite or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
 
-### Linear Object {#linear-object}
-
-![Favorite list](@site/static/img/map/linear_object_andr.png)
-
-For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
-
-
 ### Climbing Area and Crag Details {#climbing-area-and-crag-details}
 
 ![Favorite list](@site/static/img/map/climbing_andr.png)
