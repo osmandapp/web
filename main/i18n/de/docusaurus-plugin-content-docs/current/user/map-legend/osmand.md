@@ -1,5 +1,5 @@
 ---
-source-hash: 980f515f6e093abb64ea0f47a5ba9c91222e89b754fe6c84d7fbb89babff64a4
+source-hash: 3a1c816749e2ed67adb2f7b7687d9981d693027d0b2647c0f82f6be0c7104836
 sidebar_position: 1
 title: OsmAnd Kartenstil
 ---
@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 <Translate android="yes" id="default_render_descr" />
 
 
-## Autobahnen {#highways}
+## Straßen {#highways}
 <img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Kartenstil" />
 
 ## Eisenbahnen {#railways}
@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 ## Klettersteige {#via-ferrata}
 <img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Kartenstil" />
 
-## Wegschwierigkeit {#path-difficulty}
+## Pfadschwierigkeit {#path-difficulty}
 <img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Kartenstil" />
 
 ## Oberflächenglätte {#surface-smoothness}
@@ -58,14 +58,14 @@ import TabItem from '@theme/TabItem';
 ## Zugang {#access}
 
 <LegendItem itemsMap={{
-        'Access Private' : 'access/access_PrivateColor',
-        'Access Destination' : 'access/access_DestinationColor',
-        'Access Permissive' : 'access/access_PermissiveColor',
-        'Access Customers' : 'access/access_CustomersColor',
-        'Access Delivery' : 'access/access_DeliveryColor',
-        'Access Agricultural' : 'access/access_AgriculturalColor',
-        'Access Emergency' : 'access/access_EmergencyColor',
-        'Access Toll' : 'access/access_tollColor'
+        'Zugang Privat' : 'access/access_PrivateColor',
+        'Zugang Ziel' : 'access/access_DestinationColor',
+        'Zugang Erlaubt' : 'access/access_PermissiveColor',
+        'Zugang Kunden' : 'access/access_CustomersColor',
+        'Zugang Lieferung' : 'access/access_DeliveryColor',
+        'Zugang Landwirtschaftlich' : 'access/access_AgriculturalColor',
+        'Zugang Notfall' : 'access/access_EmergencyColor',
+        'Zugang Maut' : 'access/access_tollColor'
         }}>
 </LegendItem>
 
@@ -79,21 +79,21 @@ import TabItem from '@theme/TabItem';
         'Reguläres Gebäude' : 'buildigns/building_RegularColor',
         'Industrie, Garagen etc.' : 'buildigns/building_IndustrialColor',
         'Wohngebäude' : 'buildigns/building_ResidentialColor',
-        'Krankenhaus, öffentliche Gebäude, Bildungseinrichtungen' : 'buildigns/building_HospitalColor',
-        'Geschäftlich, Einzelhandel' : 'buildigns/building_CommercialColor',
-        'Gotteshaus, historischer Turm' : 'buildigns/building_churchColor',
+        'Krankenhaus, Zivil, Bildung' : 'buildigns/building_HospitalColor',
+        'Gewerbe, Einzelhandel' : 'buildigns/building_CommercialColor',
+        'Gebetsstätte, historischer Turm' : 'buildigns/building_churchColor',
         'Verlassen, beschädigt, eingestürzt' : 'buildigns/building_AbandonedColor',
         'Baustelle' : 'buildigns/building_ConstructionColor',
         'Vorgeschlagen' : 'buildigns/building_ProposedColor',
-        'Militär: Kaserne' : 'buildigns/building_MilitaryColor',
+        'Militär: Kasernen' : 'buildigns/building_MilitaryColor',
         'Bunker' : 'buildigns/building_bunker',
         'Bahnhof' : 'buildigns/building_railway_station',
         'Seilbahnstation' : 'buildigns/building_aerialway_station',
         'Öffentliche Verkehrsplattform' : 'buildigns/building_public_transport_platform',
         'Flugplatz' : 'buildigns/building_aerodromeColor',
-        'Flugplatz-Terminal' : 'buildigns/building_aerowayTerminalColor',
+        'Flugplatzterminal' : 'buildigns/building_aerowayTerminalColor',
         'Vorfeld' : 'buildigns/building_apronColor',
-        'Hubschrauberlandeplatz' : 'buildigns/building_aeroway_helipad',
+        'Heliport' : 'buildigns/building_aeroway_helipad',
         }}>
 </LegendItem>
 
@@ -102,16 +102,16 @@ import TabItem from '@theme/TabItem';
 <LegendItem itemsMap={{
         'Stadion' : 'sport_leisure/sport_Stadium',
         'Sportzentrum' : 'sport_leisure/sport_sportsCentreColor',
-        'Trainingsstrecke (Freizeit)' : 'sport_leisure/sport_track',
+        'Laufbahn (Freizeit)' : 'sport_leisure/sport_track',
         'Golfplatz' : 'sport_leisure/leisure_golfCourseColor',
         'Park' : 'sport_leisure/leisure_Park',
         'Erholungsgebiet' : 'sport_leisure/leisure_recreationGroundColor',
         'Spielfeld' : 'sport_leisure/leisure_pitchColor',
         'Reiten' : 'sport_leisure/leisure_horse_riding',
         'Spielplatz' : 'sport_leisure/leisure_playgroundColor',
-        'Gemeinde (Freizeit)' : 'sport_leisure/leisure_leisureCommonColor',
+        'Gemeinschaft (Freizeit)' : 'sport_leisure/leisure_leisureCommonColor',
         'Campingplatz' : 'sport_leisure/leisure_camp_site',
-        'Sitzgelegenheiten im Freien' : 'sport_leisure/leisure_outdoor_seating',
+        'Außenbestuhlung' : 'sport_leisure/leisure_outdoor_seating',
         'Wohnwagenstellplatz' : 'sport_leisure/leisure_caravan_site',
         'Picknickplatz' : 'sport_leisure/leisure_picnic_site',
         'Rastplatz' : 'sport_leisure/leisure_rest_area',
@@ -121,10 +121,10 @@ import TabItem from '@theme/TabItem';
 </LegendItem>
 
 
-## Besiedelte Gebiete {#built-up-areas}
+## Bebauungsgebiete {#built-up-areas}
 
 <LegendItem itemsMap={{
-        'Gotteshaus' : 'built-up-areas/built-up_PlaceOfWorship',
+        'Gebetsstätte' : 'built-up-areas/built-up_PlaceOfWorship',
         'Kloster' : 'built-up-areas/built-up_Monastery',
         'Wasserpark' : 'built-up-areas/built-up_WaterPark',
         'Themenpark' : 'built-up-areas/built-up_ThemePark',
@@ -137,7 +137,7 @@ import TabItem from '@theme/TabItem';
         'Krankenhaus' : 'built-up-areas/built-up_amenityHospital',
         'Soziale Einrichtung' : 'built-up-areas/built-up_SocialFacility',
         'Mülldeponie' : 'built-up-areas/built-up_LandFill',
-        'Halde' : 'built-up-areas/built-up_spoilHeapColor',
+        'Abraumhalde' : 'built-up-areas/built-up_spoilHeapColor',
         'Landnutzung Baustelle Farbe' : 'built-up-areas/built-up_landuseConstructionColor',
         'Gefängnis' : 'built-up-areas/built-up_Prison',
         'Steinbruch' : 'built-up-areas/built-up_landuseQuarry',
@@ -151,8 +151,8 @@ import TabItem from '@theme/TabItem';
 ### Landnutzung {#landuse}
 <LegendItem itemsMap={{
         'Wohngebiet' : 'built-up-areas/built-up_Residential',
-        'Wohngebiet (ländlich)' : 'built-up-areas/built-up_ResidentialRural',
-        'Industriegebiet' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Wohngebiet (Ländlich)' : 'built-up-areas/built-up_ResidentialRural',
+        'Industrie' : 'built-up-areas/built-up_landuseIndustrialColor',
         'Garagen' : 'built-up-areas/built-up_landuseGaragesColor',
         'Eisenbahn' : 'built-up-areas/built-up_landuseRailway',
         'Bauernhof' : 'built-up-areas/built-up_farmyardColor',
@@ -167,10 +167,10 @@ import TabItem from '@theme/TabItem';
 ### Parken {#parking}
 <LegendItem itemsMap={{
         'Parken' : 'built-up-areas/built-up_Parking',
-        'Parken erlaubter Zugang' : 'built-up-areas/built-up_ParkingPermissive',
+        'Parken Erlaubter Zugang' : 'built-up-areas/built-up_ParkingPermissive',
         'Parken Zugang Kunden' : 'built-up-areas/built-up_ParkingAccessCustomers',
-        'Parken kostenpflichtig' : 'built-up-areas/built-up_ParkingPaid',
-        'Fahrradparkplatz' : 'built-up-areas/built-up_ParkingBicycle',
+        'Parken Bezahlt' : 'built-up-areas/built-up_ParkingPaid',
+        'Fahrradparken' : 'built-up-areas/built-up_ParkingBicycle',
         }}>
 </LegendItem>
 
@@ -185,9 +185,9 @@ import TabItem from '@theme/TabItem';
 
 ### Bildung {#education}
 <LegendItem itemsMap={{
-        'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
+        'Kindergarten' : 'built-up-areas/built-up_amenityKinderGarten',
         'Schule' : 'built-up-areas/built-up_amenitySchool',
-        'Kolleg' : 'built-up-areas/built-up_amenityCollege',
+        'College' : 'built-up-areas/built-up_amenityCollege',
         'Universität' : 'built-up-areas/built-up_amenityUniversity',
         'Ausbildung' : 'built-up-areas/built-up_amenityTraining',
         'Bibliothek' : 'built-up-areas/built-up_amenityLibrary',
@@ -256,7 +256,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedAdministrative />
 
-### Service {#service}
+### Dienstleistung {#service}
 
 <LegendItemAutogeneratedService />
 
@@ -283,3 +283,6 @@ import TabItem from '@theme/TabItem';
 ### Künstlich {#man-made}
 
 <LegendItemAutogeneratedManmade />
+
+## Symbole für die Option "Symbole bei niedrigen Zoomstufen" {#icons-at-low-zooms}
+<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="OsmAnd Kartenstil" />

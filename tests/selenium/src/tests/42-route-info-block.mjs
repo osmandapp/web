@@ -11,21 +11,27 @@ const routes = [
     {
         type: 'osmand',
         profile: 'bicycle',
-        A: '46.58083, 31.51220',
-        B: '46.42675, 31.71208',
+        A: '50.49301, 30.52445',
+        B: '50.50810, 30.51207',
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Bicycle 2\d\.\d\d km/, // 24.48
-            /Route: 2\d\.\d km, 1:\d\d min/, // 24.5 1:08
-            // '-2 / 0 / 4 m', // ele // TODO
-            // /Track.*?: 26.80 km/s, // Road // temporarily disabled // TODO
-            // /Sand.*?: 8.93 km/s, // Surface // temporarily disabled // TODO
+            /Bicycle 2\.(0\d|1\d?) km/, // 2.09 km
+            /Route: 2\.1\d? km, 0:10 min/,
         ],
         turns: [
-            /Go ahead and go [01].[019] km/,
-            'Turn slightly left (+TSLL,TSLR) and go 0.2 km',
-            'Turn slightly right (+TSLR,TSLL) and go 2.5 km',
+            'Go ahead and go 0.0 km',
+            'Turn left and go 0.0 km',
+            'Turn slightly left (+TSLL,TSLR) and go 0.1 km',
+            'Turn right and go 0.0 km',
+            'Turn left and go 0.0 km',
+            'Turn right onto Оболонська набережна and go 0.0 km',
+            'Turn left onto Оболонська набережна and go 0.3 km',
+            'Keep left (+C,TSLR) onto Оболонська набережна and go 0.7 km',
+            'Keep left (+C,TSLR) onto Оболонська набережна and go 0.0 km',
+            'Keep left (+C,TSLR) and go 0.8 km',
+            'Turn left and go 0.0 km',
+            'Keep left (+C,TSLR) and go 0.1 km',
         ],
     },
     {

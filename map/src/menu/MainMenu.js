@@ -380,7 +380,7 @@ export default function MainMenu({
                         selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }
                 }, 100);
-            } else if (menuInfo?.type.name !== ctx.currentObjectType) {
+            } else if (selectedType !== ctx.currentObjectType) {
                 selectMenuInfoByObjectType(); // process all other object types
             }
         }

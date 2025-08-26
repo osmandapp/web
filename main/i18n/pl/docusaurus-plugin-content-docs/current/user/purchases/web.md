@@ -1,5 +1,5 @@
 ---
-source-hash: 2940492b887fc393c3f0d0c70f3dc846bfb39e45115a0482ab0a76fda430a200
+source-hash: fcfc89424f2777c40ade752821a787dd9edd9cfca7d3f80e0cbcccf014af9bdf
 sidebar_position: 3
 title: Zakupy w sieci
 ---
@@ -26,8 +26,8 @@ Wszystkie zakupy dokonane za pośrednictwem którejkolwiek z tych platform obsł
 
 | Plan | Opis | Uwagi |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja**, która odblokowuje zaawansowane funkcje dla bezpłatnej aplikacji OsmAnd. | Obsługuje **dostęp międzyplatformowy** |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje wszystkie [funkcje pro](#pro-features), w tym CarPlay i 3D Relief. | Obsługuje **dostęp międzyplatformowy** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja**, która odblokowuje zaawansowane funkcje dla bezpłatnej aplikacji OsmAnd. | Obsługuje dostęp **międzyplatformowy** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje wszystkie [funkcje pro](#pro-features), w tym CarPlay i 3D Relief. | Obsługuje dostęp **międzyplatformowy** |
 
 :::note
 **Dostęp międzyplatformowy** oznacza, że możesz kupić OsmAnd na naszej stronie internetowej lub w jednym sklepie (np. *App Store, Google Play lub osmand.net*) i używać go na innej platformie, [łącząc swój zakup z kontem OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
@@ -40,19 +40,20 @@ Poniżej przedstawiono ceny produktów OsmAnd w USA i UE. Ceny w innych regionac
 <!--
 
 
-:::danger June Sale prices
+:::danger Summer Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **June 15 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **August 06 (23:00 CET)**.
 
 :::
+
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> €299.00   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> $299.00   |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
 
 :::note
 By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
@@ -60,22 +61,21 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
-
 -->
 
-| | OsmAnd Free | **Maps+** Jednorazowy | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
+| | OsmAnd Free | **Maps+** Jednorazowo | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 | | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotnio) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ dożywotnio) |
-| **Cena (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € |<s>450 €</s> 299,00 € |
-| **Cena (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ |<s>450 $</s> 299,00 $ |
+| **Rodzaj zakupu** | **Bezpłatny** | **Zakup jednorazowy** (dożywotnio) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ dożywotnio) |
+| **Cena (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € | <s>450 €</s> 299,00 € |
+| **Cena (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ | <s>450 $</s> 299,00 $ |
 
 
 
 ### Funkcje bezpłatne i płatne {#free-and-paid-features}
 
-- [Funkcje bezpłatne i płatne dla Androida.](./android.md#free-and-paid-features)
-- [Funkcje bezpłatne i płatne dla iOS.](./ios.md#free-and-paid-features)
+- [Bezpłatne i płatne funkcje Androida.](./android.md#free-and-paid-features)
+- [Bezpłatne i płatne funkcje iOS.](./ios.md#free-and-paid-features)
 
 
 

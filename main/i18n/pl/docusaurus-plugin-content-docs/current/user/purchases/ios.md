@@ -1,5 +1,5 @@
 ---
-source-hash: b11512f10d09281575deb764639d7daecade267fb0bd47de799032bed3e0046f
+source-hash: bb2df08996d5e675ad8a35607f395919c9ab27e31ab35d676216f553028fedb5
 sidebar_position: 2
 title: Zakupy iOS
 ---
@@ -11,12 +11,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## Zainstaluj OsmAnd (iOS) {#install-osmand-ios}
 
-Możesz pobrać aplikację za pomocą tego linku - [OsmAnd Maps w Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-
+Aplikację możesz pobrać, korzystając z tego linku - [OsmAnd Maps w Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 <!--
 ### Types of subscriptions {#types-of-subscriptions}
@@ -31,35 +28,33 @@ Możesz pobrać aplikację za pomocą tego linku - [OsmAnd Maps w Apple App Stor
 
 -->
 
-
 ### Różnice między zakupami (iOS) {#difference-between-purchases-ios}
 
 | Plan | Opis | Dostępność | Uwagi |
-|------------|------------|------------|------------|
-| **OsmAnd Start** | **Darmowy plan**, który zapewnia dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników darmowej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5 MB** pamięci. |
+| :----------- | :----------- | :----------- | :----------- |
+| **OsmAnd Start** | **Darmowy plan**, który zapewnia dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników darmowej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5MB** pamięci. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja**, która odblokowuje zaawansowane funkcje dla darmowej aplikacji OsmAnd. | Dostępne w [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Można dodać do [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje dodatkowe zaawansowane i [profesjonalne funkcje](#pro-features). | Dostępne w [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Obsługuje dostęp **międzyplatformowy** (patrz uwaga poniżej). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcyjny**, który odblokowuje dodatkowe zaawansowane i [profesjonalne funkcje](#pro-features). | Dostępne w [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Obsługuje dostęp **międzyplatformowy** (patrz uwaga poniżej). |
 
 ### Ważne uwagi {#important-notes}
 
-1. **Maps+** to *aktualizacja* darmowej wersji OsmAnd, odblokowująca większość funkcji.
+1. **Maps+** to *aktualizacja* dla darmowej wersji OsmAnd, odblokowująca większość funkcji.
 
 2. **OsmAnd Pro to subskrypcja *międzyplatformowa***. Oznacza to, że możesz ją kupić w jednym sklepie (np. *AppStore, Google Play i osmand.net*) i przywrócić w innym, [łącząc swój zakup z kontem OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 3. Możesz dodać **Maps+** do [Apple Family Sharing](https://support.apple.com/en-us/HT201088), aby udostępnić zakup członkom rodziny.
-
 
 ## Ceny {#prices}
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionów USA i Europy. Dla innych regionów ceny są równoważne w walutach lokalnych.
 
 <!--
+:::danger Summer Sale prices
 
-:::danger June Sale prices
-
-*Hurry up! This offer is only available until* **May 15 (23:00 CET)**.
+*Hurry up! This offer is only available until* **August 06 (23:00 CET)**.
 
 :::
+
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -78,32 +73,32 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionów US
 | **Cena (EUR)** | 0 € | 39.99 € | 9.99 € | 2.99 € / 29.99 € |
 | **Cena (USD)** | 0 $ | 39.99 $ | 9.99 $ | 2.99 $ / 29.99 $ |
 
-
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
-| | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(w aplikacji i subskrypcji) | [OsmAnd Pro](#install-osmand-ios) |
+| | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(w aplikacji i subskrypcja) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 | | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | | | | |
 | [Dostęp bez reklam](#free-and-paid-features) | Bez reklam | Bez reklam | Bez reklam |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Wszystkie funkcje Pro](#pro-features) | **-** | **-** | ✔ |
-| [Pobieranie map](../start-with/download-maps.md) | <details><summary>**5 pobrań map** <br /> (aktualizacja mapy liczy się jako pobranie):</summary> <br /> - Pobieranie lub aktualizacja mapy oznacza tylko pobieranie-aktualizację mapy kraju (regionu).<br /> - **Mapa przeglądowa świata**, **Korekta wysokości świata**, **Czcionki mapy** i **Komunikaty głosowe** nie są liczone jako 5 możliwości pobrania.</details> | ✔ | ✔ |
+| [Pobieranie map](../start-with/download-maps.md) | <details><summary>**5 pobrań map** <br /> (aktualizacja mapy liczy się jako pobranie):</summary> <br /> - Pobieranie lub aktualizacja mapy oznacza tylko pobranie-aktualizację mapy kraju (regionu).<br /> - **Mapa przeglądowa świata**, **Korekta wysokości świata**, **Czcionki map** i **Komunikaty głosowe** nie są liczone jako 5 możliwości pobrania.</details> | ✔ | ✔ |
 | [Miesięczne aktualizacje map](../personal/maps-resources.md#update-maps) | <details><summary>**Raz w miesiącu** <br /> (z 2-dniowym opóźnieniem):</summary> * ograniczone do 5 pobrań (aktualizacja mapy liczy się jako pobranie) </details> | ✔ | ✔ |
 | [Godzinne aktualizacje map](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 godzina opóźnienia) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rzeźba 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Dane topograficzne](../plugins/topography.md#setup)<br/>(Linie konturowe i teren) | **-** | ✔ | ✔ |
+| [Dane topograficzne](../plugins/topography.md#setup)<br/>(Linie konturowe i Teren) | **-** | ✔ | ✔ |
 | [Wizualizacja ścieżki 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [Obsługa zewnętrznych czujników](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Obsługa czujników zewnętrznych](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>z instrukcjami zakręt po zakręcie | ✔ | ✔ | ✔ |
 | [Wyszukiwanie natychmiastowe offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Eksport ścieżek GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Import ścieżek GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Eksport śladów GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Import śladów GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Narzędzie do planowania trasy](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Widżety metryk pojazdu](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | ✔ |
 | [Narzędzie znaczników mapy](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Źródła map online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [Obsługa map SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
@@ -114,7 +109,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionów US
 
 #### ** Aktualizacje map {#-map-updates}
 
-[Darmowe](../personal/maps-resources.md#free-for-osm-mappers). Aktualizacje na żywo i nieograniczone pobieranie map są dostępne dla mapujących OSM.
+[Darmowe](../personal/maps-resources.md#free-for-osm-mappers). Aktualizacje na żywo i nieograniczone pobieranie map są dostępne dla mapperów OSM.
 
 ### Funkcje Pro {#pro-features}
 
@@ -124,18 +119,18 @@ Obecnie subskrypcja Pro obejmuje następujące funkcje:
 
 | Funkcja Pro | Opis |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Twórz kopie zapasowe i przywracaj swoje dane, synchronizuj dane z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
 | [Międzyplatformowe](../personal/osmand-cloud.md#cross-platform) | Możliwość korzystania z OsmAnd Pro i OsmAnd Start na wszystkich platformach (Android ← → iOS → Web). |
 | [Rzeźba 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
-| [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość obecnego środka mapy nad poziomem morza. |
+| [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość aktualnego środka mapy nad poziomem morza. |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Mapy OsmAnd aktualizują się co 15 minut po ulepszeniu [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Wtyczka pogodowa](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni do przodu na mapie. |
+| [Wtyczka pogodowa](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni na mapie. |
+| [Wtyczka metryk pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Pozwala podłączyć skaner OBD-II, aby wyświetlać szczegółowe dane pojazdu w aplikacji OsmAnd i przechowywać informacje w zapisach trasy. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne dla darmowej wersji OsmAnd. |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |
-
 
 ### Jak kupić {#how-to-buy}
 
-Łatwy sposób wyboru i zakupu potrzebnego planu poprzez menu **Zakupy**. Oczywiście, zobaczysz menu propozycji dla płatnych funkcji.
+Łatwy sposób na wybranie i zakup potrzebnego planu poprzez menu **Zakupy**. Oczywiście, zobaczysz menu propozycji dla płatnych funkcji.
 
 #### Zakup OsmAnd Pro {#osmand-pro-purchase}
 
@@ -157,11 +152,9 @@ lub
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
-
 ## Starsze subskrypcje (przed 4.0) {#legacy-subscriptions-prior-40}
 
 Nowe subskrypcje stały się aktywne od OsmAnd 4.3 (grudzień 2022). Wszystkie wcześniejsze subskrypcje są starsze i technicznie równoważne z "subskrypcją map", chociaż starsze subskrypcje uprawniają do godzinnych aktualizacji map. Użytkownicy nie mogą kupować starszych subskrypcji, ale stare subskrypcje są automatycznie odnawiane, dopóki nie zrezygnujesz z subskrypcji (cena za nie może ulec zmianie w przyszłości).
-
 
 ## Przywróć zakupy {#restore-purchases}
 
@@ -172,7 +165,7 @@ Użyj tego samego Apple ID, aby przywrócić swoje zakupy.
 - Zaloguj się na to samo konto Apple App Store, którego użyłeś do zakupu w aplikacji (subskrypcji) OsmAnd Maps.
 - Zainstaluj [OsmAnd Maps w Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Otwórz OsmAnd Maps z aktywnym połączeniem internetowym.
-- Aby przywrócić zakupy, wykonaj następujące kroki: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* i na górze ekranu powinno pojawić się, że Maps+(Pro, Live) jest aktywowane.
+- Aby przywrócić zakupy, wykonaj następujące kroki: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* i na górze ekranu powinno pojawić się powiadomienie, że Maps+(Pro, Live) jest aktywowane.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
@@ -180,8 +173,7 @@ Użyj tego samego Apple ID, aby przywrócić swoje zakupy.
 
 1. Wyczyść pamięć podręczną App Store.
 2. Wyczyść pamięć podręczną OsmAnd.
-3. Uruchom ponownie urządzenie i spróbuj ponownie przywrócić.
-
+3. Uruchom ponownie urządzenie i spróbuj przywrócić ponownie.
 
 <!--
 ## Action Guides {#action-guides}
@@ -191,10 +183,9 @@ Użyj tego samego Apple ID, aby przywrócić swoje zakupy.
 - One purchase (account) for Android and iOS
 -->
 
-
 ## Karty podarunkowe {#giftcards}
 
-Możesz kupić OsmAnd za pomocą karty podarunkowej App Store. Ta metoda pozwala uniknąć bezpośredniego udostępniania informacji o karcie kredytowej usłudze. Po prostu kup kartę podarunkową u wybranego sprzedawcy i zrealizuj kod w App Store.
+Możesz kupić OsmAnd, używając karty podarunkowej App Store. Ta metoda pozwala uniknąć bezpośredniego udostępniania danych karty kredytowej usłudze. Po prostu kup kartę podarunkową u wybranego sprzedawcy i zrealizuj kod w App Store.
 
 - [Szczegółowy przewodnik dotyczący zakupu kart podarunkowych App Store](https://www.apple.com/shop/gift-cards).
 - [Instrukcje dotyczące realizacji karty podarunkowej App Store](https://support.apple.com/en-gb/HT201209).

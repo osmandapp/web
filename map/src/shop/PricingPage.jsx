@@ -33,7 +33,7 @@ export default function PricingPage() {
     };
 
     useEffect(() => {
-        if (ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE) {
+        if (ltx.isLoggedIn()) {
             getAccountInfo(ltx.setAccountInfo).then((info) => {
                 const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                 const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);

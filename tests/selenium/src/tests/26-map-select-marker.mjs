@@ -4,6 +4,7 @@ import actionFinish from '../actions/actionFinish.mjs';
 import { assert, clickBy, getMarker, leftClickBy, sendKeysBy, waitBy, waitByRemoved, zoomMap } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../options.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 const searchWord = 'silpo';
 const blue = 'rgb(35 123 255)';
@@ -27,7 +28,7 @@ const pcoords3 = { lat: 50.441887, lng: 30.498642 };
 
 const ecoords1 = { lat: 50.458996, lng: 30.517986 };
 const ecoords2 = { lat: 50.45286, lng: 30.51432 };
-const ecoords3 = { lat: 50.455696, lng: 30.522839 };
+const ecoords3 = { lat: 50.456146, lng: 30.52705 };
 
 export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');
@@ -48,10 +49,6 @@ export default async function test() {
     await clickBy(By.id('se-search-input-back'));
 
     await testPoiMarkers(pcoords1, pcoords2, pcoords3);
-
-    //await clickBy(By.id('se-search-input-back'));
-
-    // await testExploreMarkers(ecoords1, ecoords2, ecoords3);
 
     await actionFinish();
 }
@@ -120,8 +117,10 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     // test zoom in
     if (type !== explore_type) {
         await zoomMap('in');
+        await actionIdleWait();
         await checkMarkerHighlighted(coords1, zoomState, type);
         await zoomMap('out');
+        await actionIdleWait();
         await checkMarkerHighlighted(coords1, zoomState, type);
 
         await clickBy(By.id('se-close-wpt-details'));

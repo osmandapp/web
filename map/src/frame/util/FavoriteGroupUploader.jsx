@@ -47,6 +47,7 @@ export default function FavoriteGroupUploader({ children }) {
             }
             mutateUploadedFiles((o) => delete o[file]);
             setImportFile(null);
+            ctx.setFavLoading(false);
             break; // process 1 file per 1 render
         }
     }, [uploadedFiles]);
@@ -96,6 +97,7 @@ export default function FavoriteGroupUploader({ children }) {
                                     title: 'Import error',
                                     msg: `Favorite group ${groupName} already exist`,
                                 });
+                                ctx.setFavLoading(false);
                             }
                         } else {
                             track.name = groupName;
@@ -108,6 +110,7 @@ export default function FavoriteGroupUploader({ children }) {
                         msg: `Unable to import ${file.name}`,
                     });
                 }
+                ctx.setFavLoading(false)
             });
             reader.readAsText(file);
         });
@@ -118,7 +121,13 @@ export default function FavoriteGroupUploader({ children }) {
     return (
         <>
             <label htmlFor="se-upload-fav-group">
-                <HiddenInput id="se-upload-fav-group" accept=".gpx, .kmz, .kml" multiple type="file" onChange={fileSelected} />
+                <HiddenInput
+                    id="se-upload-fav-group"
+                    accept=".gpx, .kmz, .kml"
+                    multiple
+                    type="file"
+                    onChange={fileSelected}
+                />
                 {children}
             </label>
             {openDialog && importFile && (

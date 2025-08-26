@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ICONS_PREFIX, POI_ICONS_FOLDER } from '../../../../map/markers/MarkerOptions';
 import { AppBar, Box, ListItem, ListItemButton, ListItemText, Tab, Typography } from '@mui/material';
 import { History } from '@mui/icons-material';
@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 import { isEmpty } from 'lodash';
+import AppContext from '../../../../context/AppContext';
 
 export default function FavoriteIcon({
     favoriteIcon,
@@ -17,6 +18,8 @@ export default function FavoriteIcon({
     defaultIcon,
     widthDialog,
 }) {
+    const ctx = useContext(AppContext);
+
     const [value, setValue] = useState(FavoritesManager.DEFAULT_TAB_ICONS);
     const [selectFavoriteIcon, setSelectFavoriteIcon] = useState(false);
     let tabs = {};
@@ -33,13 +36,19 @@ export default function FavoriteIcon({
             >
                 {icons.map((icon, index) => {
                     return (
-                        <ListItem key={index} sx={{ maxWidth: 50, maxHeight: 50 }} component="div" disablePadding>
+                        <ListItem
+                            key={index + icon}
+                            sx={{ maxWidth: 50, maxHeight: 50 }}
+                            component="div"
+                            disablePadding
+                        >
                             <ListItemButton
                                 id={`se-favorite-icon-${index}`}
                                 sx={{ maxWidth: 50, maxHeight: 50, top: -10 }}
                                 selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === defaultIcon)}
                                 onClick={() => {
                                     setSelectFavoriteIcon(true);
+                                    ctx.setUsedIcons((prev) => new Set([icon, ...prev]));
                                     setFavoriteIcon(icon);
                                 }}
                             >
@@ -83,12 +92,7 @@ export default function FavoriteIcon({
             tabs[category[0]] = <ListIcons key={category[0]} icons={category[1].icons} />;
         });
 
-    tabs[FavoritesManager.DEFAULT_TAB_ICONS] =
-        add || isEmpty(selectedGpxFile) ? (
-            <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={[favoriteIcon]} />
-        ) : (
-            getTabUsedIcons()
-        );
+    tabs[FavoritesManager.DEFAULT_TAB_ICONS] = getTabUsedIcons();
 
     list =
         tabs &&
@@ -124,7 +128,10 @@ export default function FavoriteIcon({
         );
 
     function getTabUsedIcons() {
-        const res = [];
+        const res = [...ctx.usedIcons];
+        if (add || isEmpty(selectedGpxFile)) {
+            return <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={res} />;
+        }
         const wpts = selectedGpxFile?.trackData?.wpts ?? selectedGpxFile.wpts;
         wpts.forEach((wpt) => {
             if (!res.some((icon) => icon === wpt.icon)) {

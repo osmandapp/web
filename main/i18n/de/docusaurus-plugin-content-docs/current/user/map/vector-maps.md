@@ -1,7 +1,7 @@
 ---
-source-hash: 99c48be6477aad0311de511c5ccd59a56edd267cf8d507a31c6f2b1a3a1921bd
+source-hash: a88db727a56929097a8c07ddebe3d67c7ae6791b63a8d75e38c832528fdae92e
 sidebar_position: 5
-title:  Vektorkarten (Kartenstile)
+title: Vektorkarten (Kartenstile)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Vektorkarten sind als Standard-Kartendatenquelle für OsmAnd vorgesehen, daher **müssen Sie diese auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine Vielzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.
 
-Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten ergänzt und im Standard-Kartenstil angezeigt werden, wie z.B. Informationen zu *Höhenlinien*. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die benötigten Informationen darzustellen.
+Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten ergänzt und im Standard-Kartenstil angezeigt werden, z. B. Informationen zu *Höhenlinien*. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die erforderlichen Informationen anzuzeigen.
 
 
 ## Anwendungsfälle {#use-cases}
@@ -40,16 +40,16 @@ OsmAnd bietet Ihnen viele Kartenstile und Datenebenen, die standardmäßig passe
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
 
-Der Standard-Kartenstil von OsmAnd gleicht Detailreichtum und Einfachheit aus und ist somit ideal für die Erkundung von Städten und im Freien. Er zeigt Details von Stadtmerkmalen wie Straßen, Gebäuden und Verkehrshaltestellen, während er visuelle Unordnung durch eine klarere Kartendarstellung reduziert.
+Der Standard-Kartenstil von OsmAnd bietet ein ausgewogenes Verhältnis zwischen Detailreichtum und Einfachheit und ist somit ideal für die Erkundung von Städten und Landschaften. Er detailliert städtische Merkmale wie Straßen, Gebäude und Verkehrshaltestellen, während er visuelle Unordnung durch eine klarere Kartendarstellung reduziert.
 
-Zu den Hauptvorteilen gehören Routenplanung, Oberflächenqualität, Zugangsbeschränkungen, Straßenbeschilderung, SAC-Skalen-Wegdarstellungen, Sportanlagen und topografische Details wie Höhenlinien.
+Zu den Hauptvorteilen gehören Routenplanung, Oberflächenqualität, Zugangsbeschränkungen, Straßenschilder, SAC-Skalen-Wegdarstellungen, Sportanlagen und topografische Details wie Höhenlinien.
 
 
 ### Touring-Ansicht {#touring-view}
 
 ![Touring view map style](@site/static/img/map/map-style-touring.png)
 
-Touring-Stil mit hohem Kontrast und maximaler Detailgenauigkeit. Enthält alle Optionen des Standard-OsmAnd-Stils, während so viele Details wie möglich angezeigt werden, insbesondere Straßen, Wege und andere Reisemöglichkeiten. Klare Unterscheidung der Straßentypen in einem *Touring-Atlas*. Geeignet für Tag, Nacht und Outdoor-Nutzung.
+Touring-Stil mit hohem Kontrast und maximaler Detailgenauigkeit. Enthält alle Optionen des Standard-OsmAnd-Stils und zeigt dabei so viele Details wie möglich an, insbesondere Straßen, Wege und andere Reisewege. Klare Unterscheidung der Straßentypen in einem *Touring-Atlas*. Geeignet für Tag, Nacht und Outdoor-Nutzung.
 
 ### UniRS und LightRS {#unirs-and-lightrs}
 
@@ -61,7 +61,7 @@ UniRS- und LightRS-Stile sind Autorenstile, die die grundlegenden Karteninformat
 
     ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
 
-- **LightRS-Stil**. Dies ist ein einfacher Fahrstil mit einem sanften Nachtmodus. Er hebt Straßen in einer kontrastreichen orangefarbenen Farbe hervor, dimmt sekundäre Kartenobjekte und zeigt topografische Merkmale wie Höhenlinien an.
+- **LightRS-Stil**. Dies ist ein einfacher Fahrstil, der einen sanften Nachtmodus bietet. Er hebt Straßen in einer kontrastierenden orangefarbenen Farbe hervor, dimmt sekundäre Kartenobjekte und zeigt topografische Merkmale wie Höhenlinien an.
 
     ![UniRS map style](@site/static/img/map/map-style-unirs.png)
 
@@ -69,7 +69,7 @@ UniRS- und LightRS-Stile sind Autorenstile, die die grundlegenden Karteninformat
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-Dies ist ein Stil für die nautische Navigation mit Bojen, Leuchttürmen, Flussrouten, Seewegen, Markierungen, Häfen, nautischen Markierungen und Tiefenkonturen. Lesen Sie mehr im Artikel [Nautische Kartenansicht](../plugins/nautical-charts.md).
+Dies ist ein Stil für die Seenavigation mit Bojen, Leuchttürmen, Flussrouten, Seewegen, Markierungen, Häfen, nautischen Markierungen und Tiefenkonturen. Lesen Sie mehr im Artikel [Nautische Kartenansicht](../plugins/nautical-charts.md).
 
 ### Winter und Ski {#winter-and-ski}
 
@@ -77,13 +77,13 @@ Dies ist ein Stil für die nautische Navigation mit Bojen, Leuchttürmen, Flussr
 
 Dies ist ein Stil für den Skisport, der Pisten, Lifte und Langlaufloipen beschreibt und sekundäre Kartenobjekte ausblendet. Der **Winter- und Ski-Stil** wurde entwickelt, um Sie bei der Wintersportnavigation zu unterstützen.
 
-Sie können die Skipisten und andere Details wie den Schwierigkeitsgrad der Pisten und Liftmarkierungen sehen. Zu den Hauptvorteilen gehören die bequeme Anzeige von Pisten, Liften und anderen Skifunktionen. Weniger störende sekundäre Objekte der Karte. Lesen Sie mehr im Artikel [Skikarten](../plugins/ski-maps.md).
+Sie können die Skipisten und andere Details wie den Schwierigkeitsgrad der Pisten und Liftmarkierungen sehen. Zu den Hauptvorteilen gehört die bequeme Anzeige von Pisten, Liften und anderen Skifunktionen. Weniger störende sekundäre Objekte der Karte. Lesen Sie mehr im Artikel [Skikarten](../plugins/ski-maps.md).
 
 ### Topo {#topo}
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
-Dieser Stil ist für Wanderungen, Camping und Radtouren in der Natur konzipiert. Er zeichnet sich durch kontrastreiche Straßen und natürliche Merkmale, verschiedene Arten von Wegen, erweiterte Höhenlinienoptionen und zusätzliche Details aus. Er ist im Freien gut lesbar. Die Einstellung *Oberflächenintegrität* ermöglicht es Ihnen, die Qualität der Straße zu unterscheiden.
+Dieser Stil ist für Wanderungen, Camping und Radtouren in der Natur konzipiert. Er zeichnet sich durch kontrastreiche Straßen und Naturmerkmale, verschiedene Arten von Wegen, erweiterte Höhenlinienoptionen und zusätzliche Details aus. Er ist im Freien gut lesbar. Die Einstellung *Oberflächenintegrität* ermöglicht es Ihnen, die Qualität der Straße zu unterscheiden.
 
 ### OSM-Carto {#osm-carto}
 
@@ -107,14 +107,14 @@ Dieser Stil wurde für die Offroad-Navigation entwickelt, basiert auf dem [Topo]
 
 ![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
 
-Dieser Stil wurde speziell für die Schneemobilnavigation entwickelt und hebt schneemobilfreundliche Pfade, Straßen und Wege hervor. Er hebt spezielle Pfade in schneereichen Regionen hervor und bietet eine klare Navigation durch schneebedeckte Gelände, wo Standardstraßen möglicherweise nicht verfügbar sind.
+Dieser Stil ist auf die Schneemobilnavigation zugeschnitten und hebt schneemobilfreundliche Pfade, Straßen und Wege hervor. Er hebt spezielle Pfade in schneebedeckten Regionen hervor und bietet eine klare Navigation über schneebedeckte Terrains, wo Standardstraßen möglicherweise nicht verfügbar sind.
 
 
 ## Kartenlegende {#map-legend}
 
-Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd-Karten verwendeten Symbole. Sie erklärt die Bedeutung hinter verschiedenen Kartensymbolen, einschließlich Punkten, Linien und Flächen. Zum Beispiel zeigen Symbole wie blaue geschwungene Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.
+Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd-Karten verwendeten Symbole. Sie erklärt die Bedeutung verschiedener Kartensymbole, einschließlich Punkte, Linien und Flächen. Zum Beispiel zeigen blaue, gewundene Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.
 
-Die Legende hilft Benutzern, das auf der Karte Gesehene zu interpretieren. Die vollständige OsmAnd-Kartenlegende finden Sie [hier](../map-legend/index.md).
+Die Legende hilft Benutzern, das, was sie auf der Karte sehen, zu interpretieren. Die vollständige OsmAnd-Kartenlegende finden Sie [hier](../map-legend/index.md).
 
 
 ## Karten-Schriftarten (Android) {#map-fonts-android}
@@ -123,7 +123,7 @@ Die Legende hilft Benutzern, das auf der Karte Gesehene zu interpretieren. Die v
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
-Bei Karten in vereinfachtem/traditionellem Chinesisch, Japanisch und Koreanisch können falsche Zeichen oder Symbole (wie Quadrate) erscheinen, wenn Ihrem Gerät die notwendigen Schriftarten fehlen. Dieses Problem tritt beim Rendern lokaler Namen auf und kann durch das Herunterladen der erforderlichen Schriftarten über OsmAnd gelöst werden.
+Bei Karten in vereinfachtem/traditionellem Chinesisch, Japanisch und Koreanisch können falsche Zeichen oder Symbole (wie Quadrate) erscheinen, wenn Ihrem Gerät die erforderlichen Schriftarten fehlen. Dieses Problem tritt beim Rendern lokaler Namen auf und kann durch Herunterladen der erforderlichen Schriftarten über OsmAnd gelöst werden.
 
 Einige verwandte Schriftartprobleme wurden auf GitHub dokumentiert: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
@@ -148,9 +148,9 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 ![Contour lines map style](@site/static/img/map/contour_lines.png)
 
-Höhenlinien in OsmAnd werden als Höhenlinien auf Vektorkarten angezeigt. Um sie zu verwenden, müssen Sie zuerst das [Topografie-Plugin](../plugins/topography.md) aktivieren, die notwendigen regionalen Daten herunterladen und die Anzeige konfigurieren. Diese Funktion ist nicht standardmäßig aktiviert und erfordert einen [Kauf](../purchases/index.md).
+Höhenlinien in OsmAnd werden als Höhenlinien auf Vektorkarten angezeigt. Um sie zu verwenden, müssen Sie zuerst das [Topografie-Plugin](../plugins/topography.md) aktivieren, die erforderlichen regionalen Daten herunterladen und die Anzeige konfigurieren. Diese Funktion ist nicht standardmäßig aktiviert und erfordert einen [Kauf](../purchases/index.md).
 
-Höhenlinien sind mit allen Kartenstilen kompatibel und können über das Menü [Höhenlinien](../plugins/topography.md#contour-lines) angepasst werden. Weitere Details finden Sie im Artikel [Topografie-Plugin](../plugins/topography.md).
+Höhenlinien sind mit allen Kartenstilen kompatibel und können über das [Höhenlinien-Menü](../plugins/topography.md#contour-lines) angepasst werden. Weitere Details finden Sie im Artikel [Topografie-Plugin](../plugins/topography.md).
 
 
 ## * Nautische Tiefe {#-nautical-depth}
@@ -175,9 +175,9 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 </Tabs>
 
-Nautische Tiefenlinien stellen Bereiche gleicher Tiefe dar und helfen, Veränderungen der Unterwassertopographie zu visualisieren. Diese Funktion ist in allen Kartenstilen und Modi verfügbar und kann mit oder ohne aktiviertem Nautik-Kartenansicht-Plugin angepasst werden.
+Nautische Tiefenlinien stellen Bereiche gleicher Tiefe dar und helfen, topografische Veränderungen unter Wasser zu visualisieren. Diese Funktion ist in allen Kartenstilen und Modi verfügbar und kann mit oder ohne aktiviertem Nautik-Kartenansicht-Plugin angepasst werden.
 
-Weitere Details zur Nautik-Kartenansicht finden Sie auf der [Nautik-Plugin-Seite](../plugins/nautical-charts).
+Weitere Details zur Nautik-Kartenansicht finden Sie auf der [Nautik-Karten-Plugin-Seite](../plugins/nautical-charts).
 
 
 ## Grenzen anzeigen {#show-borders}
@@ -202,14 +202,14 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borde
 
 </Tabs>
 
-Diese Funktion ermöglicht es Ihnen, die Sichtbarkeit von Grenzen für zuvor heruntergeladene Karten aus der Liste der verfügbaren Karten umzuschalten. Ihr Hauptzweck ist es, die Hauptkarte zu entlasten, indem die Umrisse heruntergeladener Karten ausgeblendet werden, was besonders nützlich ist, wenn Sie viele Karten installiert haben.
+Diese Funktion ermöglicht es Ihnen, die Sichtbarkeit von Grenzen für zuvor heruntergeladene Karten aus der Liste der verfügbaren Karten umzuschalten. Ihr Hauptzweck ist es, die Hauptkarte zu entrümpeln, indem die Umrisse heruntergeladener Karten ausgeblendet werden, was besonders nützlich ist, wenn Sie viele Karten installiert haben.
 
-Standardmäßig werden Kartenränder angezeigt, wenn Sie auf Stufe 7 zoomen, und verschwinden bei Zoomstufe 3 und darunter.
+Standardmäßig erscheinen Kartenränder, wenn Sie auf Stufe 7 heranzoomen, und verschwinden bei Zoomstufe 3 und darunter.
 
 :::tip Farbe Grenzen heruntergeladener Karten anzeigen
-Wenn die Funktion *Grenzen heruntergeladener Karten anzeigen* aktiviert ist, werden heruntergeladene Karten in beiden OsmAnd-Versionen (Android und iOS) **Grün** gefärbt.
+Wenn die Funktion *Grenzen heruntergeladener Karten anzeigen* aktiviert ist, werden heruntergeladene Karten in den Android- und iOS-Versionen von OsmAnd **Grün** gefärbt.
 
-Auf Android werden archivierte Karten in **Orange** angezeigt. In iOS werden Karten, die aktualisiert werden können, ebenfalls in **Orange** markiert.
+Auf Android werden archivierte Karten in **Orange** angezeigt. Unter iOS werden Karten, die aktualisiert werden können, ebenfalls in **Orange** markiert.
 :::
 
 
@@ -236,7 +236,7 @@ Gehe zu: *Menü → Karte konfigurieren → Anzeigen → Koordinatengitter*
 </Tabs>
 
 
-Die Funktion **Koordinatengitter** legt ein Referenzgitter über die Karte, wodurch Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für präzise Standortreferenzen und geospatiale Navigation.
+Die Funktion **Koordinatengitter** legt ein Referenzgitter über die Karte, sodass Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für präzise Standortreferenzen und geospatiale Navigation.
 
 ***1. Verfügbare Koordinatenformate:***
 
@@ -248,9 +248,9 @@ Die Funktion **Koordinatengitter** legt ein Referenzgitter über die Karte, wodu
 
 :::note
 
-1. *UTM-Gitterbeschränkungen:*
+1. *UTM-Gitter-Einschränkungen:*
     - Die minimale Zoomstufe für die Anzeige des UTM-Gitters ist 9.
-    - Es wird immer nur eine UTM-Zone angezeigt, da die Zonen durch Meridiane alle 6° getrennt sind.
+    - Es wird jeweils nur eine UTM-Zone angezeigt, da die Zonen durch Meridiane alle 6° getrennt sind.
 
 2. *Das WGS84-Gitter unterstützt drei verschiedene Modi:* Dezimalgrad, Grad+Minuten und Grad+Minuten+Sekunden.
 
@@ -258,26 +258,26 @@ Die Funktion **Koordinatengitter** legt ein Referenzgitter über die Karte, wodu
 
 ***Unterstützte Koordinatensysteme:***
 
-OsmAnd unterstützt mehrere **Basiprojektionen** zur Anzeige geografischer Gitterlinien:
+OsmAnd unterstützt mehrere **Basisprojektionen** zur Anzeige geografischer Gitterlinien:
 
 | **Projektion** | **EPSG-Code** | **Beschreibung** |
 |----------------|-------------|----------------|
 | **WGS84** | EPSG:4326 | Standard-Breiten-/Längengrad-Referenzsystem, weltweit verwendet. |
 | **Mercator** | EPSG:3857 | Wird für webbasierte Kartierung verwendet (Google Maps, OpenStreetMap usw.). |
-| **UTM** | EPSG:6387 | Teilt die Welt in **60 Zonen** für genaue lokale Positionierung. |
+| **UTM** | EPSG:6387 | Teilt die Welt in **60 Zonen** für eine genaue lokale Positionierung. |
 | **MGRS** | - | Military Grid Reference System (Erweiterung von UTM). |
 
 
 
-***2. Einstellungen der Zoomstufe:***
+***2. Zoomstufen-Einstellungen:***
 
 - Die Gitterlinien erscheinen basierend auf der Zoomstufe, zwischen **2 – 22**.
 - Die Linien passen die Koordinatenteilungen dynamisch an die Zoomstufe an.
 
-**Standardmäßig verwendet die App das im Bereich** [Allgemeine Einstellungen](../personal/profiles.md#units--formats) **ausgewählte Koordinatenformat.**
+**Standardmäßig verwendet die App das in den** [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) **ausgewählte Koordinatenformat.**
 
 
-***3. Position der Beschriftungen:***
+***3. Beschriftungsposition:***
 - Ränder
 - Mitte
 
@@ -310,11 +310,11 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 Die Karte kann in einem hellen oder dunklen Thema angezeigt werden, basierend auf dem aus einer Liste von Optionen ausgewählten Modus. Standardmäßig und für alle neuen Benutzer richtet sich der [Kartenstil](#default-map-styles) nach dem in den Systemeinstellungen Ihres Geräts gewählten Thema.
 
-- **<Translate android="true" ids="daynight_mode_day"/>**. Zeigt die Karte immer in einem hellen Thema an, um eine optimale Sichtbarkeit bei Tageslicht zu gewährleisten.
+- **<Translate android="true" ids="daynight_mode_day"/>**. Zeigt die Karte immer in einem hellen Thema für optimale Sichtbarkeit bei Tageslicht an.
 
-- **<Translate android="true" ids="daynight_mode_night"/>**. Zeigt die Karte immer in einem dunklen Thema an, ideal für die Nacht oder schlechte Lichtverhältnisse.
+- **<Translate android="true" ids="daynight_mode_night"/>**. Zeigt die Karte immer in einem dunklen Thema an, ideal für Nacht- oder schlechte Lichtverhältnisse.
 
-- **Sonnenaufgang / Sonnenuntergang**. Wechselt automatisch zwischen Tag- und Nachtthemen entsprechend den lokalen Sonnenauf- und -untergangszeiten, die in dieser Registerkarte in der App detailliert aufgeführt sind.
+- **Sonnenaufgang / Sonnenuntergang**. Wechselt automatisch zwischen Tag- und Nachtthemen entsprechend den lokalen Sonnenaufgangs- und Sonnenuntergangszeiten, die in diesem Tab in der App detailliert aufgeführt sind.
 
 - **<Translate android="true" ids="daynight_mode_sensor"/>** (*nur Android*). Nutzt den Lichtsensor des Geräts, um automatisch zwischen hellen und dunklen Themen entsprechend den Umgebungslichtverhältnissen zu wechseln.
 
@@ -340,10 +340,10 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 
 </Tabs>
 
-- **<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Zeigt Polygone, Wege, Punkte und Schilder auf der Karte bei geringem Zoom an. Das bedeutet, dass Sie bei geringer Vergrößerung mehr Details auf der Karte sehen können. Beachten Sie, dass die Darstellung auf Ihrem Gerät möglicherweise nicht schnell ist.
+- **<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Zeigt Polygone, Pfade, Punkte und Schilder auf der Karte bei geringem Zoom an. Das bedeutet, dass Sie bei geringer Vergrößerung mehr Details auf der Karte sehen können. Beachten Sie, dass das Rendering auf Ihrem Gerät möglicherweise nicht schnell ist.
     ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)
 
-- **<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Zeigt den Typ der Straßenoberfläche an. Die Farbe der Straße hilft Ihnen zu verstehen, welche Straßenoberfläche es ist, z.B. Asphalt, Gras oder Sand. Siehe die [Kartenlegende](../map-legend/index.md).
+- **<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Zeigt den Typ der Straßenoberfläche an. Die Farbe der Straße hilft Ihnen zu verstehen, welche Straßenoberfläche es ist, z. B. Asphalt, Gras oder Sand. Siehe die [Kartenlegende](../map-legend/index.md).
     ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png)
 
 - **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Zeigt die Qualität der Straße an. Zeigt die Glätte (Steigung) der Straße an. Wie glatt Ihre Straßen sind: gut, schlecht, möglicherweise schrecklich usw. Schauen Sie in die [Kartenlegende](../map-legend/index.md), um die Glätte Ihrer Straße zu bestimmen.
@@ -352,23 +352,23 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 - **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Zeigt die Zugänglichkeit der Straße an: privat oder erlaubt, nur für Notfälle oder Mautstraße. Sehen Sie in der [Kartenlegende](../map-legend/index.md) nach, um verfügbare Straßen zu finden.
     ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)
 
-- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. Die Funktion [Umweltzonen (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) zeigt grüne Grenzen und "LEZ"-Beschriftungen auf Karten für Bereiche in Städten an, in denen der Zugang für bestimmte umweltschädliche Fahrzeuge eingeschränkt ist. LEZs zielen darauf ab, die Luftqualität zu verbessern, indem sie den Zugang zu Fahrzeugen einschränken, die bestimmte Emissionsstandards erfüllen. Die Verwendung dieser Funktion hilft Benutzern, Strafen zu vermeiden, indem sie diese grünen Zonen identifizieren und umfahren, um die Einhaltung lokaler Umweltvorschriften beim Reisen durch Stadtzentren sicherzustellen.
+- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. Die Funktion [Niedrigemissionszonen (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) zeigt grüne Grenzen und "LEZ"-Beschriftungen auf Karten für Bereiche in Städten an, in denen der Zugang für bestimmte umweltschädliche Fahrzeuge eingeschränkt ist. LEZs zielen darauf ab, die Luftqualität zu verbessern, indem sie den Zugang für Fahrzeuge, die bestimmte Emissionsstandards erfüllen, einschränken. Die Verwendung dieser Funktion hilft Benutzern, Strafen zu vermeiden, indem sie diese grünen Zonen identifizieren und umfahren, um die Einhaltung lokaler Umweltvorschriften beim Reisen durch Stadtzentren sicherzustellen.
 
     ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)
 
 - **<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. Verschiedene Gebäudekategorien, wie Wohn-, Industrie- und Gewerbegebäude, sind farblich gekennzeichnet. Details finden Sie in der [Kartenlegende](../map-legend/index.md).
     ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)
 
-- **<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. Zeigt beleuchtete und unbeleuchtete Straßen sowie unterirdische und temporär beleuchtete Wege an. Spezifika finden Sie in der [Kartenlegende](../map-legend/index.md).
+- **<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. Zeigt beleuchtete und unbeleuchtete Straßen sowie unterirdische und temporär beleuchtete Wege an. Spezifisches finden Sie in der [Kartenlegende](../map-legend/index.md).
     ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)
 
-- **<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Diese Funktion wurde für Kartographen entwickelt und zeigt Referenzen, Bemerkungen und Kommentare anderer Benutzer auf der Karte an.
+- **<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Diese Funktion wurde für Mapper entwickelt und zeigt Referenzen, Bemerkungen und Kommentare anderer Benutzer auf der Karte an.
     ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)
 
-- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Zeigt Meerestiefenkonturen an. Sie müssen das [Nautik-Plugin](../plugins/nautical-charts) installieren und nautische Karten herunterladen.
+- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Zeigt Meerestiefenlinien an. Sie müssen das [Nautik-Plugin](../plugins/nautical-charts) installieren und Nautikkarten herunterladen.
     ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)
 
-- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Zeigt grüne Tafeln und Labels "NR" für [Naturschutzgebiete](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Hebt Schutzgebiete mit einer grünen Grenze und dem Label "NR" für Wildschutzgebiete hervor.
+- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Zeigt grüne Tafeln und Labels "NR" für [Naturschutzgebiete](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Hebt Schutzgebiete mit einem grünen Rand und dem Label "NR" für Wildschutzgebiete hervor.
 
     &nbsp;&nbsp;&nbsp;![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)
 
@@ -408,7 +408,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png) ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-Eine Route ist ein vorgegebener Pfad, der befolgt werden muss, um ein bestimmtes Ziel zu erreichen. Eine Route kann für verschiedene Arten von Reisen optimiert werden, wie z.B. Radfahren, Wandern, Laufen, öffentliche Verkehrsmittel und andere. Mehr über Routen und ihre Typen erfahren Sie im Artikel [Routen](../map/routes.md).
+Eine Route ist ein vorgegebener Pfad, der befolgt werden muss, um ein bestimmtes Ziel zu erreichen. Eine Route kann für verschiedene Arten von Reisen optimiert werden, wie z. B. Radfahren, Wandern, Laufen, öffentliche Verkehrsmittel und andere. Weitere Informationen zu Routen und ihren Typen finden Sie im Artikel [Routen](../map/routes.md).
 
 
 ### Transport {#transport}
@@ -429,18 +429,18 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 </Tabs>
 
-Beim Navigieren durch Städte benötigen Sie eine kontrastreichere Ansicht des öffentlichen Nahverkehrs und der Haltestellen. Sie können auf eine Haltestelle des öffentlichen Nahverkehrs tippen und eine der Routen oder Haltestellen aus der Liste auswählen. Zugrouten werden ebenfalls in dieser Einstellung angezeigt.
+Beim Navigieren durch Städte benötigen Sie eine kontrastreichere Ansicht des öffentlichen Nahverkehrs und der Haltestellen. Sie können auf eine Haltestelle des öffentlichen Nahverkehrs tippen und eine der Routen oder Haltestellen aus der Liste auswählen. Zugstrecken werden in dieser Einstellung ebenfalls angezeigt.
 
 - **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Zeigt Haltestellen des öffentlichen Nahverkehrs an.
     ![Map transport stops](@site/static/img/map/map-transport-stops.png)
 
-- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Zeigt Bus-, Trolleybus- und Shuttle-Routen an.
+- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Zeigt Bus-, Oberleitungsbus- und Shuttle-Routen an.
     ![Map transport bus](@site/static/img/map/map-transport-bus.png)
 
-- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Zeigt Straßenbahn- und Zugrouten an.
+- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Zeigt Straßenbahn- und Zugstrecken an.
     ![Map transport tram](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Zeigt U-Bahn-Routen an.
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Zeigt U-Bahn-Strecken an.
     ![Map transport subway](@site/static/img/map/map-transport-subway.png)
 
 ### Ausblenden {#hide}
@@ -461,18 +461,18 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 </Tabs>
 
-Um die Kartensichtbarkeit zu verbessern, müssen Sie möglicherweise bestimmte Objekte ausblenden. Zum Beispiel können Sie Wasser ausblenden, wenn Sie die [Satelliten-Online-Karten mit der Unterlage-Ebene](../map/raster-maps.md#select-raster-maps) verwenden.
+Um die Sichtbarkeit der Karte zu verbessern, müssen Sie möglicherweise bestimmte Objekte ausblenden. Zum Beispiel können Sie Wasser ausblenden, wenn Sie die [Satelliten-Onlinekarten mit der Unterlage-Ebene](../map/raster-maps.md#select-raster-maps) verwenden.
 
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Blendet regionale Grenzen innerhalb von Ländern aus, aber Staatsgrenzen sind sichtbar.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Blendet alle Polygone natürlicher Objekte aus, spezielle Funktion für [Unterlage-/Überlagerungsebene](../map/raster-maps.md#select-raster-maps).
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Blendet alle Polygone von Gebäuden aus.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Blendet alle Polygone von Wasser (Meere, Seen, Stauseen usw.) aus.
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Blendet Hausnummern auf der Karte aus.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Blendet vorgeschlagene Objekte aus – jene Objekte, die für den Bau geplant sind, aber nur ein Projekt haben (geplante Straßen, Kreuzungen, Gebäude und andere).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Blendet die POI-Symbole von der Karte aus. Die Beschriftungen dieser POIs werden jedoch weiterhin auf der Karte angezeigt.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Blendet die POI-Beschriftungen von der Karte aus. Die POI-Symbole werden jedoch weiterhin auf der Karte angezeigt.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Blendet alle unterirdischen Objekte aus, wie Tunnel, Passagen, Etagen usw. Speziell zum Bereinigen von Karten in Städten von unnötigen Objekten.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Blendet alle oberirdischen Objekte aus. Speziell, um nur unterirdische Objekte wie Tunnel, Passagen usw. zu sehen.
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Regionale Grenzen innerhalb von Ländern ausblenden, aber Staatsgrenzen sind sichtbar.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Alle Polygone von natürlichen Objekten ausblenden, spezielle Funktion für [Unterlage-/Überlagerungsebene](../map/raster-maps.md#select-raster-maps).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Alle Polygone von Gebäuden ausblenden.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Alle Polygone von Wasser (Meere, Seen, Stauseen usw.) ausblenden.
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hausnummern auf der Karte ausblenden.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Vorgeschlagene Objekte ausblenden – jene Objekte, die zur Bebauung geplant sind, aber nur ein Projekt haben (geplante Straßen, Kreuzungen, Gebäude und andere).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Die POI-Symbole von der Karte ausblenden. Die Beschriftungen dieser POIs werden jedoch weiterhin auf der Karte angezeigt.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Die POI-Beschriftungen von der Karte ausblenden. Die POI-Symbole werden jedoch weiterhin auf der Karte angezeigt.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Alle unterirdischen Objekte ausblenden, wie Tunnel, Pässe, Stockwerke usw. Speziell zum Bereinigen von Karten in Städten von unnötigen Objekten.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Alle oberirdischen Objekte ausblenden. Speziell zum Anzeigen nur unterirdischer Objekte wie Tunnel, Pässe usw.
 
 ### Straßenstil {#road-style}
 
@@ -492,7 +492,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 </Tabs>
 
-Spezielle Einstellungen für Straßen, bei denen Sie die Farben ändern können, um sie an den Straßenatlas anzupassen, oder kontrastreiche Straßen oder fette Umrisse für Straßen hinzufügen können.
+Spezielle Einstellungen für Straßen, bei denen Sie die Farben an den Straßenatlas anpassen oder kontrastreiche Straßen oder fette Umrisse für Straßen hinzufügen können.
 
 - **<Translate android="true" ids="rendering_value_default_name"/>**. Standardstil für Autobahnen. Siehe [Kartenlegende](../map-legend/index.md).
 ![Map road style default](@site/static/img/map/map-road-style-default.png)
@@ -505,10 +505,10 @@ Spezielle Einstellungen für Straßen, bei denen Sie die Farben ändern können,
 
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Der hohe Kontrast von Straßen.
 ![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)
-- **Blass**. Weniger kontrastreiche Farben von Straßen.
+- **Blass**. Weniger kontrastreiche Straßenfarben.
 ![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)
 
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Fette Umrandung für Straßen.
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Fetter Umriss für Straßen.
 ![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)
 
 
@@ -537,20 +537,20 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
     ![Map text size 200%](@site/static/img/map/map-text-size-200.png)
 
 
-### Kartenlupe {#map-magnifier}
+### Kartenvergrößerung {#map-magnifier}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Sie können diese Einstellung durch langes Tippen auf die Schaltfläche "+" oder "-" auf dem Bildschirm auswählen oder:
+Sie können diese Einstellung durch langes Tippen auf die Schaltfläche „+“ oder „-“ auf dem Bildschirm auswählen oder:
 *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Sie können diese Einstellung durch langes Tippen auf die Schaltfläche "+" oder "-" auf dem Bildschirm auswählen oder:
+Sie können diese Einstellung durch langes Tippen auf die Schaltfläche „+“ oder „-“ auf dem Bildschirm auswählen oder:
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>*
 
 </TabItem>
@@ -578,32 +578,44 @@ Wenn die Namen auf der Karte von der OSM-Community nicht in die gewünschte Spra
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
+- **Lokale Namen**
+    ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
+
+- **Bevorzugte Sprache** (Ukrainisch)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
+
+- **Lateinischen Namen verwenden, falls nicht vorhanden**
+    ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-</TabItem>
-
-</Tabs>
-
 - **Lokale Namen**
     ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
 
-- **Ukrainische Namen**
-    ![Map language ukranian](@site/static/img/map/map-language-urkanian_2.png)
+- **Bevorzugte Sprache** (Ukrainisch)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Lokale Namen anzeigen**
+- **Lokale Namen anzeigen** (fügt ein 2. Label hinzu, wenn der lokale Name abweicht)
     ![Map language local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Namen transliterieren**
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
 
 
+
+</TabItem>
+
+</Tabs>
+
+
 ## Benutzerdefinierter Kartenstil {#custom-map-style}
 
-Wenn Sie einen persönlichen oder Drittanbieter-Kartenstil haben, der gemäß der [Spezifikation](../../technical/osmand-file-formats/osmand-rendering-style.md) erstellt wurde, können Sie ihn auf folgende Weise auf Ihrem Gerät installieren:
+Wenn Sie einen persönlichen oder Drittanbieter-Kartenstil haben, der gemäß der [Spezifikation](../../technical/osmand-file-formats/osmand-rendering-style.md) erstellt wurde, können Sie ihn auf folgende Weisen auf Ihrem Gerät installieren:
 
 - Kopieren Sie die `.render.xml`-Datei auf Ihr Gerät und öffnen Sie sie mit OsmAnd.
 - Verwenden Sie die [Standard-Import-/Exportdialoge](../personal/import-export.md), um Rendering-Stile zu exportieren oder zu importieren. Wenn Sie ein `.osf`-Paket erstellen, funktioniert es als Plugin, das Sie mit anderen teilen können.
@@ -613,6 +625,6 @@ Wenn Sie einen persönlichen oder Drittanbieter-Kartenstil haben, der gemäß de
 ## Verwandte Artikel {#related-articles}
 
 - [Import / Export](../personal/import-export.md)
-- [Farbschema-Paletten](../personal/color-palette-schemes.md)
+- [Farbschemata](../personal/color-palette-schemes.md)
 
 > *Zuletzt aktualisiert: März 2025*

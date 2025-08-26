@@ -91,8 +91,9 @@ const FavoriteLayer = () => {
     useEffect(() => {
         if (ctx.zoomToFavGroup) {
             const group = ctx.favorites.mapObjs[ctx.zoomToFavGroup];
-            if (group && group.markers) {
+            if (group?.markers) {
                 map.fitBounds(group.markers.getBounds(), fitBoundsOptions(ctx));
+                ctx.setZoomToFavGroup(null);
             }
         }
     }, [ctx.zoomToFavGroup]);

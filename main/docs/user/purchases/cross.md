@@ -29,10 +29,10 @@ You can compare all OsmAnd products here: [difference between purchases](https:/
 
 | **Product Type**               | **Cross-Platform** | **Notes**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|
-| **OsmAnd Pro** (subscription) | ✔                  | Fully cross-platform. Works on Android, iOS, and Web when linked to Cloud. |
+| **OsmAnd Pro** (subscription) | ✔                  | Works after OsmAnd Cloud login on Android, iOS, and Web when linked to Cloud. |
 | **Maps+** (subscription)      | ✔                  | Usable on all platforms, but must be activated via OsmAnd Cloud **on the purchase device**.     |
 | **Maps+** (one-time purchase) | ✔                  | Usable on all platforms, but must be activated via OsmAnd Cloud **on the purchase device**. |
-| **OsmAnd+** (standalone app)  | ✘                  | Not transferable between platforms. For assistance, contact support@osmand.net. |
+| **OsmAnd+** (standalone app)  | ✘                  | Not transferable by default between platforms, requires manual purchase registration at OsmAnd Cloud account. For assistance, contact support@osmand.net. |
 
 
 ## How It Works {#how-it-works}

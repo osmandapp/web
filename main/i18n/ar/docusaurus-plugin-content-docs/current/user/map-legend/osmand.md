@@ -1,5 +1,5 @@
 ---
-source-hash: 980f515f6e093abb64ea0f47a5ba9c91222e89b754fe6c84d7fbb89babff64a4
+source-hash: 3a1c816749e2ed67adb2f7b7687d9981d693027d0b2647c0f82f6be0c7104836
 sidebar_position: 1
 title: نمط خريطة OsmAnd
 ---
@@ -39,7 +39,7 @@ import TabItem from '@theme/TabItem';
 ## السكك الحديدية {#railways}
 <img src={require('@site/static/img/map-legend/osmand-railways.png').default} alt="نمط خريطة OsmAnd" />
 
-## الطرق الهوائية {#aerialways}
+## الطرق الجوية {#aerialways}
 <img src={require('@site/static/img/map-legend/osmand-aerialways.png').default} alt="نمط خريطة OsmAnd" />
 
 ## المسارات {#routes}
@@ -58,14 +58,14 @@ import TabItem from '@theme/TabItem';
 ## الوصول {#access}
 
 <LegendItem itemsMap={{
-        'وصول خاص' : 'access/access_PrivateColor',
-        'وجهة الوصول' : 'access/access_DestinationColor',
-        'وصول مسموح به' : 'access/access_PermissiveColor',
-        'وصول العملاء' : 'access/access_CustomersColor',
-        'وصول التسليم' : 'access/access_DeliveryColor',
-        'وصول زراعي' : 'access/access_AgriculturalColor',
-        'وصول طوارئ' : 'access/access_EmergencyColor',
-        'رسوم الوصول' : 'access/access_tollColor'
+        'Access Private' : 'access/access_PrivateColor',
+        'Access Destination' : 'access/access_DestinationColor',
+        'Access Permissive' : 'access/access_PermissiveColor',
+        'Access Customers' : 'access/access_CustomersColor',
+        'Access Delivery' : 'access/access_DeliveryColor',
+        'Access Agricultural' : 'access/access_AgriculturalColor',
+        'Access Emergency' : 'access/access_EmergencyColor',
+        'Access Toll' : 'access/access_tollColor'
         }}>
 </LegendItem>
 
@@ -76,47 +76,47 @@ import TabItem from '@theme/TabItem';
 ## المباني، النقل {#buildings-transportation}
 
 <LegendItem itemsMap={{
-        'مبنى عادي' : 'buildigns/building_RegularColor',
-        'صناعي، مرائب، إلخ.' : 'buildigns/building_IndustrialColor',
-        'سكني' : 'buildigns/building_ResidentialColor',
-        'مستشفى، مدني، تعليمي' : 'buildigns/building_HospitalColor',
-        'تجاري، بيع بالتجزئة' : 'buildigns/building_CommercialColor',
-        'مكان عبادة، برج تاريخي' : 'buildigns/building_churchColor',
-        'مهجور، متضرر، منهار' : 'buildigns/building_AbandonedColor',
-        'إنشاءات' : 'buildigns/building_ConstructionColor',
-        'مقترح' : 'buildigns/building_ProposedColor',
-        'عسكري: ثكنات' : 'buildigns/building_MilitaryColor',
-        'ملجأ' : 'buildigns/building_bunker',
-        'محطة سكة حديد' : 'buildigns/building_railway_station',
-        'محطة طرق هوائية' : 'buildigns/building_aerialway_station',
-        'منصة نقل عام' : 'buildigns/building_public_transport_platform',
-        'مطار' : 'buildigns/building_aerodromeColor',
-        'مبنى مطار' : 'buildigns/building_aerowayTerminalColor',
-        'ساحة انتظار الطائرات' : 'buildigns/building_apronColor',
-        'مهبط طائرات هليكوبتر' : 'buildigns/building_aeroway_helipad',
+        'Regular Building' : 'buildigns/building_RegularColor',
+        'Industrianl, garagaes etc.' : 'buildigns/building_IndustrialColor',
+        'Residential' : 'buildigns/building_ResidentialColor',
+        'Hospital, civic, educational' : 'buildigns/building_HospitalColor',
+        'Commercial, retail' : 'buildigns/building_CommercialColor',
+        'Place of worship, historic tower' : 'buildigns/building_churchColor',
+        'Abandoned, damaged, collapsed' : 'buildigns/building_AbandonedColor',
+        'Construction' : 'buildigns/building_ConstructionColor',
+        'Proposed' : 'buildigns/building_ProposedColor',
+        'Military: barraks' : 'buildigns/building_MilitaryColor',
+        'Bunker' : 'buildigns/building_bunker',
+        'Railway station' : 'buildigns/building_railway_station',
+        'Aerialway station' : 'buildigns/building_aerialway_station',
+        'Public transport platform' : 'buildigns/building_public_transport_platform',
+        'Aerodrome' : 'buildigns/building_aerodromeColor',
+        'Aeroway terminal' : 'buildigns/building_aerowayTerminalColor',
+        'Apron' : 'buildigns/building_apronColor',
+        'Helipad' : 'buildigns/building_aeroway_helipad',
         }}>
 </LegendItem>
 
 ## الرياضة، الترفيه {#sport-leisure}
 
 <LegendItem itemsMap={{
-        'ملعب' : 'sport_leisure/sport_Stadium',
-        'مركز رياضي' : 'sport_leisure/sport_sportsCentreColor',
-        'مسار (ترفيهي)' : 'sport_leisure/sport_track',
-        'ملعب جولف' : 'sport_leisure/leisure_golfCourseColor',
-        'حديقة' : 'sport_leisure/leisure_Park',
-        'أرض ترفيهية' : 'sport_leisure/leisure_recreationGroundColor',
-        'ملعب' : 'sport_leisure/leisure_pitchColor',
-        'ركوب الخيل' : 'sport_leisure/leisure_horse_riding',
-        'ملعب أطفال' : 'sport_leisure/leisure_playgroundColor',
-        'عام (ترفيهي)' : 'sport_leisure/leisure_leisureCommonColor',
-        'موقع تخييم' : 'sport_leisure/leisure_camp_site',
-        'جلوس في الهواء الطلق' : 'sport_leisure/leisure_outdoor_seating',
-        'موقع قوافل' : 'sport_leisure/leisure_caravan_site',
-        'موقع نزهة' : 'sport_leisure/leisure_picnic_site',
-        'منطقة استراحة' : 'sport_leisure/leisure_rest_area',
-        'منتجع شاطئي' : 'sport_leisure/leisure_beach_resort',
-        'مدرجات' : 'sport_leisure/leisure_bleachers',
+        'Stadium' : 'sport_leisure/sport_Stadium',
+        'Sports Centre' : 'sport_leisure/sport_sportsCentreColor',
+        'Track (leisure)' : 'sport_leisure/sport_track',
+        'Golf Course' : 'sport_leisure/leisure_golfCourseColor',
+        'Park' : 'sport_leisure/leisure_Park',
+        'Recreation ground' : 'sport_leisure/leisure_recreationGroundColor',
+        'Pitch' : 'sport_leisure/leisure_pitchColor',
+        'Horse riding' : 'sport_leisure/leisure_horse_riding',
+        'Playground' : 'sport_leisure/leisure_playgroundColor',
+        'Common (leisure)' : 'sport_leisure/leisure_leisureCommonColor',
+        'Camp site' : 'sport_leisure/leisure_camp_site',
+        'Outdoor seating' : 'sport_leisure/leisure_outdoor_seating',
+        'Caravan site' : 'sport_leisure/leisure_caravan_site',
+        'Picnic site' : 'sport_leisure/leisure_picnic_site',
+        'Rest area' : 'sport_leisure/leisure_rest_area',
+        'Beach resort' : 'sport_leisure/leisure_beach_resort',
+        'Bleachers' : 'sport_leisure/leisure_bleachers',
         }}>
 </LegendItem>
 
@@ -124,81 +124,81 @@ import TabItem from '@theme/TabItem';
 ## المناطق المبنية {#built-up-areas}
 
 <LegendItem itemsMap={{
-        'مكان عبادة' : 'built-up-areas/built-up_PlaceOfWorship',
-        'دير' : 'built-up-areas/built-up_Monastery',
-        'حديقة مائية' : 'built-up-areas/built-up_WaterPark',
-        'مدينة ملاهي' : 'built-up-areas/built-up_ThemePark',
-        'حديقة حيوان' : 'built-up-areas/built-up_Zoo',
-        'صخرة تسلق' : 'built-up-areas/built-up_ClimbingCrag',
-        'لون تخصيص الأراضي' : 'built-up-areas/built-up_landuseAllotmentsColor',
-        'سور المدينة' : 'built-up-areas/built-up_CityWall',
-        'نافورة' : 'built-up-areas/built-up_Fountain',
-        'سينما' : 'built-up-areas/built-up_amenityCinema',
-        'مستشفى' : 'built-up-areas/built-up_amenityHospital',
-        'مرفق اجتماعي' : 'built-up-areas/built-up_SocialFacility',
-        'مكب نفايات' : 'built-up-areas/built-up_LandFill',
-        'كومة نفايات' : 'built-up-areas/built-up_spoilHeapColor',
-        'لون استخدام الأراضي للإنشاءات' : 'built-up-areas/built-up_landuseConstructionColor',
-        'سجن' : 'built-up-areas/built-up_Prison',
-        'محجر' : 'built-up-areas/built-up_landuseQuarry',
-        'عسكري' : 'built-up-areas/built-up_landuseMilitary',
-        'منطقة خطر عسكرية' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
-        'محطة طاقة' : 'built-up-areas/built-up_landusePowerPlant',
-        'محطة فرعية للطاقة' : 'built-up-areas/built-up_landusePowerSubstation',
+        'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
+        'Monastery' : 'built-up-areas/built-up_Monastery',
+        'Water Park' : 'built-up-areas/built-up_WaterPark',
+        'Theme Park' : 'built-up-areas/built-up_ThemePark',
+        'Zoo' : 'built-up-areas/built-up_Zoo',
+        'Climbing Crag' : 'built-up-areas/built-up_ClimbingCrag',
+        'Landuse Allotments Color' : 'built-up-areas/built-up_landuseAllotmentsColor',
+        'City Wall' : 'built-up-areas/built-up_CityWall',
+        'Fountain' : 'built-up-areas/built-up_Fountain',
+        'Cinema' : 'built-up-areas/built-up_amenityCinema',
+        'Hospital' : 'built-up-areas/built-up_amenityHospital',
+        'Social Facility' : 'built-up-areas/built-up_SocialFacility',
+        'LandFill' : 'built-up-areas/built-up_LandFill',
+        'Spoil heap' : 'built-up-areas/built-up_spoilHeapColor',
+        'Landuse Construction Color' : 'built-up-areas/built-up_landuseConstructionColor',
+        'Prison' : 'built-up-areas/built-up_Prison',
+        'Quarry' : 'built-up-areas/built-up_landuseQuarry',
+        'Military' : 'built-up-areas/built-up_landuseMilitary',
+        'Military Danger Area' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
+        'Power Plant' : 'built-up-areas/built-up_landusePowerPlant',
+        'Power Substation' : 'built-up-areas/built-up_landusePowerSubstation',
         }}>
 </LegendItem>
 
 ### استخدام الأراضي {#landuse}
 <LegendItem itemsMap={{
-        'سكني' : 'built-up-areas/built-up_Residential',
-        'سكني (ريفي)' : 'built-up-areas/built-up_ResidentialRural',
-        'صناعي' : 'built-up-areas/built-up_landuseIndustrialColor',
-        'مرائب' : 'built-up-areas/built-up_landuseGaragesColor',
-        'سكك حديدية' : 'built-up-areas/built-up_landuseRailway',
-        'ساحة مزرعة' : 'built-up-areas/built-up_farmyardColor',
-        'تجارة التجزئة' : 'built-up-areas/built-up_landuseRetailColor',
-        'تجاري' : 'built-up-areas/built-up_landuseCommercialColor',
-        'مكان مهجور' : 'built-up-areas/built-up_placeAbandoned',
-        'تربية الحيوانات' : 'built-up-areas/built-up_AnimalKeeping',
+        'Residential' : 'built-up-areas/built-up_Residential',
+        'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
+        'Industrial' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Garages' : 'built-up-areas/built-up_landuseGaragesColor',
+        'Railway' : 'built-up-areas/built-up_landuseRailway',
+        'Farmyard' : 'built-up-areas/built-up_farmyardColor',
+        'Retail' : 'built-up-areas/built-up_landuseRetailColor',
+        'Commercial' : 'built-up-areas/built-up_landuseCommercialColor',
+        'Abandone place' : 'built-up-areas/built-up_placeAbandoned',
+        'Animal Keeping' : 'built-up-areas/built-up_AnimalKeeping',
         }}>
 </LegendItem>
 
 
-### موقف سيارات {#parking}
+### موقف السيارات {#parking}
 <LegendItem itemsMap={{
-        'موقف سيارات' : 'built-up-areas/built-up_Parking',
-        'موقف سيارات وصول مسموح به' : 'built-up-areas/built-up_ParkingPermissive',
-        'موقف سيارات وصول العملاء' : 'built-up-areas/built-up_ParkingAccessCustomers',
-        'موقف سيارات مدفوع' : 'built-up-areas/built-up_ParkingPaid',
-        'موقف دراجات' : 'built-up-areas/built-up_ParkingBicycle',
+        'Parking' : 'built-up-areas/built-up_Parking',
+        'Parking Permissive access' : 'built-up-areas/built-up_ParkingPermissive',
+        'Parking Access Customers' : 'built-up-areas/built-up_ParkingAccessCustomers',
+        'ParkingPaid' : 'built-up-areas/built-up_ParkingPaid',
+        'ParkingBicycle' : 'built-up-areas/built-up_ParkingBicycle',
         }}>
 </LegendItem>
 
-### مقبرة {#cemetery}
+### المقبرة {#cemetery}
 <LegendItem itemsMap={{
-        'مقبرة' : 'built-up-areas/built-up_cemeteryColor',
-        'مقبرة مسيحية' : 'built-up-areas/built-up_cemeteryColorСhristian',
-        'مقبرة مسلمة' : 'built-up-areas/built-up_cemeteryColorMuslim',
-        'مقبرة يهودية' : 'built-up-areas/built-up_cemeteryColorJewish',
+        'Cemetery' : 'built-up-areas/built-up_cemeteryColor',
+        'Christian cemetery' : 'built-up-areas/built-up_cemeteryColorСhristian',
+        'Muslim cemetery' : 'built-up-areas/built-up_cemeteryColorMuslim',
+        'Jewish cemetery' : 'built-up-areas/built-up_cemeteryColorJewish',
         }}>
 </LegendItem>
 
 ### التعليم {#education}
 <LegendItem itemsMap={{
-        'روضة أطفال' : 'built-up-areas/built-up_amenityKinderGarten',
-        'مدرسة' : 'built-up-areas/built-up_amenitySchool',
-        'كلية' : 'built-up-areas/built-up_amenityCollege',
-        'جامعة' : 'built-up-areas/built-up_amenityUniversity',
-        'تدريب' : 'built-up-areas/built-up_amenityTraining',
-        'مكتبة' : 'built-up-areas/built-up_amenityLibrary',
+        'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
+        'School' : 'built-up-areas/built-up_amenitySchool',
+        'College' : 'built-up-areas/built-up_amenityCollege',
+        'University' : 'built-up-areas/built-up_amenityUniversity',
+        'Training' : 'built-up-areas/built-up_amenityTraining',
+        'Library' : 'built-up-areas/built-up_amenityLibrary',
         }}>
 </LegendItem>
 
 ### تاريخي {#historic}
 <LegendItem itemsMap={{
-        'موقع أثري' : 'built-up-areas/built-up_ArchaeologicalSite',
-        'آثار تاريخية' : 'built-up-areas/built-up_HistoricRuins',
-        'موقع أحفوري' : 'built-up-areas/built-up_PalaeontologicalSite',
+        'Archaeological Site' : 'built-up-areas/built-up_ArchaeologicalSite',
+        'Historic Ruins' : 'built-up-areas/built-up_HistoricRuins',
+        'Palaeontological Site' : 'built-up-areas/built-up_PalaeontologicalSite',
         }}>
 </LegendItem>
 
@@ -252,7 +252,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedFinance />
 
-### إداري {#administrative}
+### الإدارة {#administrative}
 
 <LegendItemAutogeneratedAdministrative />
 
@@ -283,3 +283,6 @@ import TabItem from '@theme/TabItem';
 ### من صنع الإنسان {#man-made}
 
 <LegendItemAutogeneratedManmade />
+
+## أيقونات "الأيقونات في مستويات التكبير المنخفضة" {#icons-at-low-zooms}
+<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="نمط خريطة OsmAnd" />

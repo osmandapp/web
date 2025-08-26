@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
-import TracksManager, { getGpxFiles, preparedGpxFile, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import TracksManager, {
+    getGpxFiles,
+    GPX_FILE_EXT,
+    preparedGpxFile,
+    TRACK_VISIBLE_FLAG,
+} from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet, apiPost } from '../util/HttpApi';
@@ -19,6 +24,7 @@ import { units } from '../menu/settings/units/UnitsMenu';
 import i18n from 'i18next';
 import * as locales from 'date-fns/locale';
 import { getSortFromDB } from './FavoriteStorage';
+import MarkerOptions from '../map/markers/MarkerOptions';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -108,7 +114,7 @@ async function loadListFiles(
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith('.gpx'))
+        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
             name: f.name,
             type: f.type,
@@ -360,6 +366,7 @@ export const AppContextProvider = (props) => {
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
+    const [usedIcons, setUsedIcons] = useState(new Set([MarkerOptions.DEFAULT_WPT_ICON]));
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
@@ -817,6 +824,8 @@ export const AppContextProvider = (props) => {
                 setNotification,
                 dateLocale,
                 setDateLocale,
+                usedIcons,
+                setUsedIcons,
                 openFavGroups,
                 setOpenFavGroups,
             }}

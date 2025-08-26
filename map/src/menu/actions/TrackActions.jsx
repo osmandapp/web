@@ -7,7 +7,7 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx, GPX_FILE_EXT } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
@@ -35,7 +35,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                 null,
                 DEFAULT_GROUP_NAME
             );
-            const saved = await saveSharedFileToCloud(track, fileName + '.gpx');
+            const saved = await saveSharedFileToCloud(track, fileName + GPX_FILE_EXT);
             if (saved) {
                 await refreshGlobalFiles({ ctx });
             }

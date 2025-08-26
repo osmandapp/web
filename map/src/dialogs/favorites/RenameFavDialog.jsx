@@ -10,6 +10,7 @@ import { apiGet } from '../../util/HttpApi';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import FavoritesManager, { normalizeGroupNameForFile, extractBaseFavFileName } from '../../manager/FavoritesManager';
 import { updateSortList } from '../../menu/actions/SortActions';
+import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -37,7 +38,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
     }
 
     async function renameFavGroup(group, newName, ctx) {
-        let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + GPX_FILE_EXT;
         const oldName = extractBaseFavFileName(group.name);
         newGroupName = normalizeGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {

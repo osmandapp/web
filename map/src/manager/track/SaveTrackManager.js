@@ -12,6 +12,7 @@ import TracksManager, {
     EMPTY_FILE_NAME,
     TRACK_VISIBLE_FLAG,
     preparedGpxFile,
+    GPX_FILE_EXT, KMZ_FILE_EXT,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
 import {
@@ -27,7 +28,7 @@ import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTr
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
-    const originalName = track.name;
+    const originalName = track.name + GPX_FILE_EXT;
     let localName = TracksManager.prepareName(originalName, true);
 
     // find free name
@@ -82,7 +83,14 @@ export async function saveTrackToCloud({
             return uploadedFile;
         }
         if (trackData) {
-            return await getGpxFileFromTrackData(trackData, routeTypes);
+            const gpx = await getGpxFileFromTrackData(trackData, routeTypes);
+            const data = gpx?.data;
+            if (data) {
+                return {
+                    originalName: trackData.originalName ?? trackData.name + GPX_FILE_EXT,
+                    data,
+                };
+            }
         }
         return null;
     }
@@ -97,16 +105,24 @@ export async function saveTrackToCloud({
 
     if (ltx.loginUser) {
         if (currentFile) {
-            const convertedData = new TextEncoder().encode(currentFile.data);
+            let convertedData;
+            if (currentFile.originalName.toLowerCase().endsWith(KMZ_FILE_EXT)) {
+                convertedData = new Uint8Array(currentFile.data);
+            } else {
+                convertedData = new TextEncoder().encode(currentFile.data);
+            }
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             const data = new FormData();
-            data.append('file', oMyBlob, currentFile.name);
+            data.append('file', oMyBlob, currentFile.originalName);
 
             const params = {
                 type: type,
-                name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : currentFolder + fileName + '.gpx',
+                name:
+                    type === FavoritesManager.FAVORITE_FILE_TYPE
+                        ? currentFolder
+                        : currentFolder + fileName + GPX_FILE_EXT,
             };
 
             // close possibly loaded Cloud track (clean up layers)
@@ -154,7 +170,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
 }
 
 export async function renameTrack(oldName, folder, newName, ctx) {
-    const newFileName = folder + newName + '.gpx';
+    const newFileName = folder + newName + GPX_FILE_EXT;
     if (newFileName !== oldName) {
         const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
             params: {
@@ -238,7 +254,7 @@ export function updateVisibleTracks(oldN, newN) {
 export async function duplicateTrack(oldName, folderName, newName, ctx) {
     newName = createTrackFreeName(newName, ctx.tracksGroups, null, folderName);
     let folder = folderName !== '' ? `${folderName}/` : '';
-    const newFileName = folder + newName + '.gpx';
+    const newFileName = folder + newName + GPX_FILE_EXT;
     if (newFileName !== oldName) {
         const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
             params: {
@@ -303,7 +319,13 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE }) {
+export async function refreshGlobalFiles({
+    ctx,
+    oldName = null,
+    currentFileName = null,
+    type = GPX_FILE_TYPE,
+    updateMarkers = true,
+}) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -313,7 +335,7 @@ export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName 
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {
-            await updateFavGroups(resJson, ctx);
+            return await updateFavGroups(resJson, ctx, updateMarkers);
         } else if (type === GPX_FILE_TYPE) {
             updateTrackGroups(resJson, ctx);
             if (oldName) {
