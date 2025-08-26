@@ -127,13 +127,14 @@ The **Object Info** panel provides additional details about the selected object.
 Available details include:
 
 - [Alternative names](#alternative-names)
-- [Coordinates](../map/map-context-menu.md#coordinates)
-- [Nearby POIs / Wikipedia](../map/map-context-menu.md#nearby-pois--wikipedia-nearby-pois--wikipedia)
-- [Public Transport routes](../map/map-context-menu.md#public-transport-routes) (for transport stops)
-- [Favorites / Track Points from the same group](../map/map-context-menu.md#favorites--track-points-from-the-group)
-- [OpenStreetMap link](../map/map-context-menu.md#openstreetmap-link)
-- [Article image / description](../map/map-context-menu.md#article-description-article-description)
-- [Online photos](../map/map-context-menu.md#online-photos)
+- [Coordinates](#coordinates)
+- [Within areas](#polygon-information)
+- [Nearby POIs / Wikipedia](#nearby-pois--wikipedia-nearby-pois--wikipedia)
+- [Public Transport routes for stops](#public-transport-routes)
+- [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
+- [OpenStreetMap link](#openstreetmap-link)
+- [Article image / description](#article-description-article-description)
+- [Online photos](#online-photos)
 
 Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features), such as:
 
