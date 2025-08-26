@@ -102,4 +102,4 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_c
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-> *Last updated: February 2025*
+

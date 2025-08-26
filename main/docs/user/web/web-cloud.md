@@ -155,6 +155,6 @@ In this section of the menu, you can change the map style. You can read more abo
 
 
 
-> *Last updated: July 2024*
+
 
 

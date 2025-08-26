@@ -627,4 +627,4 @@ If you have a personal or third-party custom map style created according to the 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: March 2025*
+

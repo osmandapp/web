@@ -713,4 +713,4 @@ The list of actions is available at the bottom of the **Filter** or **Statistics
 - [Trip Recording plugin](../../plugins/trip-recording.md)
 - [Analyze on Map](../index.md#analyze-track-on-map)
 
-> *Last updated: November 2024*
+

@@ -641,4 +641,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: July 2025*
+

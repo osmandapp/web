@@ -256,4 +256,4 @@ The Turn Arrows setting allows you to select whether turn arrows are displayed o
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: December 2024*
+

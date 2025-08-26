@@ -57,4 +57,4 @@ When online routing is selected for navigation, an additional option appears in 
 
 - *<Translate android="true" ids="calculate_osmand_route_without_internet"/>*  - Allows to use OsmAnd offline routing, when online routing is selected in the navigation settings. This option may help if a route has already been built online, but then there was a deviation from the route and at the same time the internet connection was lost. In this case, offline routing will be used to return to the route, previousely calculated online.
 
-> *Last updated: June 2024*
+

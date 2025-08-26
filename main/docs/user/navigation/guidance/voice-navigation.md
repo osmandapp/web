@@ -424,4 +424,4 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 3. [Why should I use a TTS voice instead of a recorded voice?](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
 4. [TTS does not function properly? Follow these steps to fix it.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
 
-> *Last updated: March 2025*
+

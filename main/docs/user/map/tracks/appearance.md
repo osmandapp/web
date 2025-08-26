@@ -294,4 +294,4 @@ To specify a color for a track, use the following format:
 - [Tracks Context menu](../tracks/track-context-menu.md)
 - [Trip Recording](../../plugins/trip-recording.md)
 
-> *Last updated: February 2025*
+

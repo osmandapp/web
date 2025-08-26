@@ -102,4 +102,4 @@ Online tiles can be helpful when you need just a small section of the map or a s
     - Ensure you have an active internet connection to access satellite imagery.  
     - Check if the selected Online Map is downloaded or requires [additional settings](../map/raster-maps.md#select-raster-maps).
 
-> *Last updated: January 2025*
+

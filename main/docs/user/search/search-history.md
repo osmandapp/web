@@ -195,4 +195,4 @@ On the [delete](#delete) screen, select the required items from the Search Histo
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *Last updated: July 2024*
+

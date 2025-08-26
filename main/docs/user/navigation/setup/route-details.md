@@ -69,7 +69,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - ***Total distance*** is calculated between all route segments, including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
 
-- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
+- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed).
 
 - ***Estimated arrival time*** is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
@@ -347,4 +347,4 @@ The Route Details navigation section has options that allow you to perform certa
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: November 2024*
+

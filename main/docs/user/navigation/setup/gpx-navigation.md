@@ -201,4 +201,4 @@ During navigation, you can use various options such as zooming in or out, pannin
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: April 2025*
+

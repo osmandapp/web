@@ -493,4 +493,4 @@ All information about a Favourite is stored and described using tags. When creat
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: April 2025*
+

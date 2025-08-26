@@ -310,4 +310,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *Last updated: April 2025*
+

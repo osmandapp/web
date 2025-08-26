@@ -222,4 +222,4 @@ To learn more, see: [Informational Widgets – Parking Widget](https://osmand.ne
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: May 2025*
+

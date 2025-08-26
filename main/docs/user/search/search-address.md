@@ -213,4 +213,4 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-> *Last updated: July 2024*
+

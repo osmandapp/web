@@ -508,4 +508,4 @@ There are several ways to export one or more track files to any messenger, email
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *Last updated: April 2025*
+

@@ -362,4 +362,4 @@ The [Wikipedia plugin](../plugins/wikipedia.md) is a [paid feature](../purchases
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: January 2025*
+

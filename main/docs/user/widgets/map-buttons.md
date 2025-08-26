@@ -197,4 +197,4 @@ Customizing the appearance of buttons allows you to adjust the size, shape, icon
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: February 2025*
+

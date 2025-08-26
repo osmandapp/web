@@ -269,4 +269,4 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: March 2025*
+

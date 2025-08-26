@@ -615,4 +615,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: February 2025*
+

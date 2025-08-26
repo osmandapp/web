@@ -333,4 +333,4 @@ In Android Auto settings, you can change the position of the taskbar and the lay
         Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
 
 
-> *Last updated: March 2025*
+

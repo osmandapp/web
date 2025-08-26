@@ -279,4 +279,4 @@ On **iOS**, you can choose what value to display in the widget:
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: May 2025*
+

@@ -52,15 +52,3 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-
-## Other Routing Settings {#other-routing-settings}
-
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options. The default value is 0 meters of deviation, which means that the route is not recalculated.
-
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
-
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). These settings can also be set for *Direct-to-point* routing. It is used to calculate Estimated Time of Arrival.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
-
-> *Last updated: June 2024*

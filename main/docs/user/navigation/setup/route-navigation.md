@@ -497,4 +497,4 @@ For more troubleshooting steps, see [navigation issues](../../troubleshooting/na
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: February 2025*
+

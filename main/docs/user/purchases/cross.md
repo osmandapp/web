@@ -105,4 +105,4 @@ Enjoy using Maps+/Pro across platforms!
 - [Difference between purchases Android](./android.md#difference-between-purchases-android)
 - [Difference between purchases iOS](./ios.md#difference-between-purchases-ios)  
 
-> *Last updated: May 2025*
+

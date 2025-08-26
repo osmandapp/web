@@ -488,4 +488,4 @@ It displays the **name**, the **icon of the point**, and 2 **distances**:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: April 2025*
+

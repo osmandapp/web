@@ -205,4 +205,4 @@ Vessel icons will appear based on the simulated data. Tap the vessel icon to vie
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 - [Nautical Plugin](../../user/plugins/nautical-charts.md)
 
-> *Last updated: March 2025*
+

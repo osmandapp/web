@@ -459,7 +459,8 @@ By entering the exact capacity of your fuel tank, the app can provide a more tai
 To ensure accurate calculations and navigation suggestions, verify that your selected unit matches your tank’s measurement standard.
 
 
-### Default Speed / Road Speeds {#default-speed--road-speeds}
+
+### Default Speed {#default-speed}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -477,50 +478,23 @@ To ensure accurate calculations and navigation suggestions, verify that your sel
 
 </Tabs>  
 
-For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
-Speed settings determine when [voice announcements](../guidance/voice-navigation.md) are activated.
-
-These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#time-to-intermediate) when speed cannot be determined from map data:
-
-- for the selected profile;
-- if the used roads have no speed limits, which can also affect the routing;
-- if user-generated or imported tracks are selected.
+The **Default speed** is the default movement speed for this mode of transport ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h (mph) ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h (1 mph). It is used:
+- To estimate the [route time](../../widgets/nav-widgets.md#time-to-intermediate) when speed cannot be determined from the roads like [GPX Navigation](../setup/gpx-navigation.md), [Ski routes](../routing/ski-routing.md), [Boat routes](../routing/boat-navigation.md), [Pedestrian](../routing/pedestrian-routing.md) and other similar profiles.
+- To determine when [voice announcements](../guidance/voice-navigation.md) are activated.
+- To determine ETA for Map markers by a straight line navigation if average speed is not calculated yet.
 
 
-#### Default Speed {#default-speed}
 
-The **Default speed** is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+ It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical. For example, car, public transport, pedestrian, or the speed you set manually.
 
 
-#### Road Speeds {#road-speeds}
+### Road Speeds {#road-speeds}
 
-<InfoAndroidOnly />
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-:::note
-These settings in iOS are available in *Menu → Settings → app profile → Navigation settings → Route parameters → Road speeds*.
-:::
-
--->
+For some types of navigation the minimum and maximum allowable speed could be set. If it's set than routing engine assumes that vehicle or transportation mode won't move faster the limit and won't move slower than minimal speed. 
+For example, it allows to create an **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the egnine will find shorter route avoiding longer but faster roads.
 
 - **Minimum speed**  
     The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
@@ -573,4 +547,4 @@ For more information on using track-based navigation, visit [Navigation by Track
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: April 2025*
+

@@ -256,5 +256,5 @@ To restore the purchase, please check what OsmAnd plan you bought.
 
 You can purchase OsmAnd using Google Play gift cards, which provides a secure alternative to sharing credit card information online. Simply buy a gift card from a retailer of your choice and redeem the code on Google Play.
 
-> *Last updated: May 2025*
+
 

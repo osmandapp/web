@@ -175,4 +175,4 @@ Tap the [My Location](../../map/interact-with-map.md#my-location-and-zoom) butto
 - [Plan route](../../plan-route/index.md)  
 - [Trip Recording](../../plugins/trip-recording.md)
 
-> *Last updated: November 2024*
+

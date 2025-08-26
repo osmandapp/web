@@ -504,4 +504,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *Last updated: May 2025*
+

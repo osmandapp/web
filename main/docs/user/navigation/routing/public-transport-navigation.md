@@ -127,4 +127,4 @@ OsmAnd uses a new public transport scheme, also called Public Transport Version 
 - A guide to building or adjusting public transport routes is available on our [blog](https://osmand.net/blog/guideline-pt).
 - The presentation [2019: Public Transport Navigation using OpenStreetMap by OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
 
-> *Last updated: June 2024.*
+

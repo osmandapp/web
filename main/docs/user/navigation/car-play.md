@@ -314,4 +314,4 @@ Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though
         Ensure your device is properly connected via USB or Bluetooth.  
         Restart your car’s infotainment system and the OsmAnd app if the connection is unstable.
 
-> *Last updated: January 2025*
+

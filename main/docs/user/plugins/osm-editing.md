@@ -288,5 +288,5 @@ You can create an OBF file with [OsmAndMapCreator](../../technical/map-creation/
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: May 2024*
+
 

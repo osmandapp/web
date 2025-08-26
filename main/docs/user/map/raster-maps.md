@@ -416,4 +416,4 @@ Raster maps can be used as they already exist if the tiles are already mapped. I
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: October 2024*
+
