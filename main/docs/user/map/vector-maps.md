@@ -235,53 +235,18 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 </Tabs>
 
 
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation.
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. You can select ***Zoom level settings:*** to display between 2 - 22, ***Labels position*** - **Edges**/**Center** and ***Grid color*** separately for Day/Night mode.
 
-***1. Available coordinate formats:***
 
-- **DD°MM′SS″** (Degrees, Minutes, Seconds)
-- **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
-- **DD°MM.MMM′** (Degrees, Decimal Minutes)
+***Available coordinate formats:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
 - **MGRS** (Military Grid Reference System)
-- **UTM** (Universal Transverse Mercator - zone-based grid system)
 
-:::note
-
-1. *UTM grid limitations:*
-    - The minimum zoom level for displaying the UTM grid is 9.  
-    - Only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
-
-2. *WGS84 grid supports three different modes:* decimal degrees, degrees+minutes, and degrees+minutes+seconds.
-
-:::
-
-***Supported coordinate systems:***  
-
-OsmAnd supports multiple **base projections** for displaying geographic grid lines:  
-
-| **Projection**  | **EPSG Code** | **Description** |
-|----------------|-------------|----------------|
-| **WGS84**      | EPSG:4326   | Default latitude/longitude reference system, used globally. |
-| **Mercator**   | EPSG:3857   | Used for web-based mapping (Google Maps, OpenStreetMap, etc.). |
-| **UTM**        | EPSG:6387   | Divides the world into **60 zones** for accurate local positioning. |
-| **MGRS**       | -           | Military Grid Reference System (extension of UTM). |
-
-
-
-***2. Zoom level settings:***
-
-- The grid lines appear based on the zoom level, between **2 – 22**.
-- The lines dynamically adjust coordinate divisions based on the zoom level.
-
-**By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
-
-
-***3. Labels position:***
-- Edges
-- Center
-
-***4. Grid color:***
-- Choose your grid color for Day/Night mode.
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats).
 
 ## Configure Map Style {#configure-map-style}
 
