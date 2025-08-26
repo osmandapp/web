@@ -36,14 +36,19 @@ export default function FavoriteIcon({
             >
                 {icons.map((icon, index) => {
                     return (
-                        <ListItem key={index} sx={{ maxWidth: 50, maxHeight: 50 }} component="div" disablePadding>
+                        <ListItem
+                            key={index + icon}
+                            sx={{ maxWidth: 50, maxHeight: 50 }}
+                            component="div"
+                            disablePadding
+                        >
                             <ListItemButton
                                 id={`se-favorite-icon-${index}`}
                                 sx={{ maxWidth: 50, maxHeight: 50, top: -10 }}
                                 selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === defaultIcon)}
                                 onClick={() => {
                                     setSelectFavoriteIcon(true);
-                                    ctx.setUsedIcons((prev) => [icon, ...prev]);
+                                    ctx.setUsedIcons((prev) => new Set([icon, ...prev]));
                                     setFavoriteIcon(icon);
                                 }}
                             >
@@ -123,7 +128,7 @@ export default function FavoriteIcon({
         );
 
     function getTabUsedIcons() {
-        const res = ctx.usedIcons;
+        const res = [...ctx.usedIcons];
         if (add || isEmpty(selectedGpxFile)) {
             return <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={res} />;
         }

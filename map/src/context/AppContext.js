@@ -366,7 +366,7 @@ export const AppContextProvider = (props) => {
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
-    const [usedIcons, setUsedIcons] = useState([MarkerOptions.DEFAULT_WPT_ICON]);
+    const [usedIcons, setUsedIcons] = useState(new Set([MarkerOptions.DEFAULT_WPT_ICON]));
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
