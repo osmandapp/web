@@ -209,19 +209,21 @@ The Favorites and Tracks categories have a special *Last Modified* folder. Since
 In addition to the basic features of the OsmAnd app in *Android Auto* that provide convenient navigation in your vehicle, there are a number of additional features that enhance your experience and make navigation more personalized, comfortable, and efficient.  
 
 
-### Next Turn & Route Info {#next-turn--route-info}
+### Next Turn {#next-turn}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
 The **Next turn** widget displays the distance and type of the [next turn maneuver](../widgets/nav-widgets.md#next-turn) and the [street name](../widgets/nav-widgets.md#street-name).
 
+### Route Info {#route-info}
+
 Route information consists of:
 
-- [estimated travel time](../widgets/nav-widgets.md#time-to-destination),
-- [estimated arrival time](../widgets/nav-widgets.md#time-to-destination),
-- [travel distance](../widgets/nav-widgets.md#distance-to-destination).
+- [Estimated travel time](../widgets/nav-widgets.md#time-to-destination),
+- [Estimated arrival time](../widgets/nav-widgets.md#time-to-destination),
+- [Travel distance](../widgets/nav-widgets.md#distance-to-destination).
 
-When enabled, [the widget setting](#eta-next-stop) (Route information) will show route details for the next stop ([the intermediate point](../navigation/setup/route-navigation.md#intermediate-destinations)).
+When enabled, **[the widget setting](#eta-next-stop)** (Route information) will show route details for the next stop ([the intermediate point](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
 ### Screen Alert Widget {#screen-alert-widget}
@@ -257,6 +259,8 @@ The OsmAnd app allows you to use the 3D map view on the *Android Auto* screen to
 - You can switch between 3D / 2D map modes by tapping this button.
 
 
+## Settings {#settings}
+
 ### Voice Prompts {#voice-prompts}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
@@ -272,7 +276,7 @@ To configure [voice prompts](../navigation/guidance/voice-navigation.md) accordi
 
 In the OsmAnd app, you can select one or more [intermediate points](../navigation/setup/route-navigation.md#intermediate-destinations) for the navigation route.
 
-To enable or disable [**Route info** for an intermediate point (next stop)](#next-turn--route-info), go to *Android Auto (OsmAnd)→ Setting button → Show route details for the next stop → On/Off*. This option displays the time and distance to the next stop on the [*Route info* widget](#next-turn--route-info).
+To enable or disable [**Route info** for an intermediate point (next stop)](#next-turn), go to *Android Auto (OsmAnd)→ Setting button → Show route details for the next stop → On/Off*. This option displays the time and distance to the next stop on the [*Route info* widget](#route-info).
 
 
 ### Map Mode {#map-mode}
