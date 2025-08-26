@@ -257,7 +257,19 @@ import TabItem from '@theme/TabItem';
 
 ## Access {#access}
 
-<LegendItem itemsMap={{
+<LegendItemWithProcessing svgPath={'/img/map-legend/osmand-access'}
+        svgParts={{
+        'access_PrivateColor' :'Access Private',
+        'access_DestinationColor' :'Access Destination',
+        'access_PermissiveColor' :'Access Permissive',
+        'access_CustomersColor' :'Access Customers',
+        'access_DeliveryColor' :'Access Delivery',
+        'access_AgriculturalColor' :'Access Agricultural',
+        'access_EmergencyColor' :'Access Emergency',
+        'access_tollColor' :'Access Toll'
+        }}/>
+
+<!--LegendItem itemsMap={{
         'Access Private' : 'access/access_PrivateColor',
         'Access Destination' : 'access/access_DestinationColor',
         'Access Permissive' : 'access/access_PermissiveColor',
@@ -267,7 +279,7 @@ import TabItem from '@theme/TabItem';
         'Access Emergency' : 'access/access_EmergencyColor',
         'Access Toll' : 'access/access_tollColor'
         }}>
-</LegendItem>
+</LegendItem-->
 
 
 
