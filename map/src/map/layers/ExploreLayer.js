@@ -145,8 +145,8 @@ export default function ExploreLayer() {
 
         if (skippedObjectType()) {
             removeLayers();
-            if (ctx.searchSettings.showOnMainSearch) {
-                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            if (ctx.searchSettings.showExploreMarkers) {
+                ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             }
             ctx.setWikiPlaces(null);
             return;
@@ -155,7 +155,7 @@ export default function ExploreLayer() {
         const onMapMoveEnd = async () => {
             if (
                 settings.useWikiImages ||
-                settings.showOnMainSearch ||
+                settings.showExploreMarkers ||
                 (ctx.currentObjectType === OBJECT_EXPLORE && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
                 debouncer(
@@ -167,7 +167,7 @@ export default function ExploreLayer() {
         };
         map.on('moveend', onMapMoveEnd);
 
-        if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showOnMainSearch) {
+        if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showExploreMarkers) {
             if (
                 !settings.selectedFilters ||
                 !ctx.wikiPlaces ||
@@ -183,7 +183,7 @@ export default function ExploreLayer() {
             }
         }
 
-        if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showOnMainSearch) {
+        if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showExploreMarkers) {
             removeLayers();
             ctx.setWikiPlaces(null);
         }
@@ -197,7 +197,7 @@ export default function ExploreLayer() {
         ctx.currentObjectType,
         ctx.searchSettings.useWikiImages,
         ctx.searchSettings.selectedFilters,
-        ctx.searchSettings.showOnMainSearch,
+        ctx.searchSettings.showExploreMarkers,
         ctx.setLoadingContextMenu,
     ]);
 
@@ -349,7 +349,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showOnMainSearch) {
+        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showExploreMarkers) {
             abortController.abort();
             return;
         }
@@ -426,7 +426,7 @@ export default function ExploreLayer() {
                         simpleMarkersArr.addLayer(circle);
                     }
 
-                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showOnMainSearch) {
+                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showExploreMarkers) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
@@ -443,7 +443,7 @@ export default function ExploreLayer() {
         return () => {
             abortController.abort();
         };
-    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showOnMainSearch]);
+    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showExploreMarkers]);
 
     function addEventListeners({ marker, place, main = false, latlng, iconSize = SIMPLE_ICON_SIZE }) {
         // Add click event to open information about the place

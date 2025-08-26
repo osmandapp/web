@@ -45,7 +45,7 @@ import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_d
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
-import _, { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
@@ -351,6 +351,7 @@ export default function MainMenu({
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
         }
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: selectedType === OBJECT_SEARCH });
     }, [selectedType]);
 
     useEffect(() => {
@@ -431,7 +432,7 @@ export default function MainMenu({
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
@@ -452,6 +453,7 @@ export default function MainMenu({
         }
         ctx.setPrevPageUrl({ url: location, active: false });
         setSelectedType(currentType);
+
         return currentType;
     }
 

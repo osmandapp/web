@@ -24,7 +24,6 @@ import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
-import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -120,13 +119,13 @@ export default function SearchMenu() {
             if (mainCategories) {
                 setSearchCategories(mainCategories);
             }
-            //for explore layers
-            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: true });
             if (!ctx.searchSettings.selectedFilters) {
                 addWikiPlacesDefaultFilters(ctx, true, DEFAULT_EXPLORE_POITYPES);
             }
+        } else {
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
         }
-    }, [isMainSearchScreen, zoom, ltx.loginUser]);
+    }, [isMainSearchScreen, ltx.loginUser]);
 
     useEffect(() => {
         if (ctx.wikiPlaces || zoom < EXPLORE_MIN_ZOOM) {
