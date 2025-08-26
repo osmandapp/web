@@ -176,7 +176,7 @@ Features of alternative names display:
 - If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
 
 
-### Polygon Information {#polygon-information}
+### Within area {#polygon-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -194,26 +194,7 @@ Features of alternative names display:
 
 </Tabs>
 
-The **Polygon information** feature provides detailed data on nearby **polygons** displayed on the map. This includes geographic features, administrative boundaries, and other mapped areas.  
-
-**Within section**:
-
-- Displays a *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
-
-- Each entry shows the *polygon type and name*, allowing for easy identification of regions and boundaries.
-
-**Additional details**:
-
-- When selecting a point on the map or a POI, the **polygon information** panel displays a list of all polygons that contain the selected location.
-
-- Entries in the list include **administrative divisions, land use areas, natural features, and other categorized regions**.
-
-- The panel allows users to **copy the polygon's name and details** for reference.
-
-- To view this information, go to *Map Context Menu → Details → Within*.
-
-This feature helps you understand your *current location* in relation to mapped administrative divisions, natural areas, or other important geographic features.
-
+The **Within Area** feature lists the **areas** that an object is located within. This includes geographic features, administrative boundaries, land use areas, natural features, and other categorized areas. A *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
 
 ### Coordinates {#coordinates}
 
