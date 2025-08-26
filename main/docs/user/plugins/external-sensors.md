@@ -238,7 +238,7 @@ Supported widget types:
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – current cycling speed.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – total distance measured by the sensor.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – current ambient temperature.
-7. **Battery Level** (*iOS only*) – percentage of battery remaining in a connected BLE sensor.
+7. **Battery Level** – percentage of battery remaining in a connected BLE sensor, switch it in **Sensor settings**.
 
 
 ### Widget Settings {#widget-settings}

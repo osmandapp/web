@@ -506,7 +506,7 @@ To add External Sensors widgets to the map screen, enable the OsmAnd [External S
 
 </Tabs>
 
-Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**. *On iOS*, you can also select the **battery level** of connected BLE sensors to be displayed directly in the widget.  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**. You can also select the **battery level** of connected BLE sensors to be displayed directly in the widget.  
 
 - To add widget — [enable](../plugins/index.md#enable--disable) OsmAnd External Sensors plugin.
 
