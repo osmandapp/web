@@ -38,15 +38,15 @@ The map context menu provides information about the selected object on the map. 
 
 </Tabs>
 
-The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name, icon* (as represented on the map), *address, distance*, and *direction* from your current position.  
+The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name*, *icon* (as represented on the map), *address, distance*, *boundaries* and *direction* from your current position.  
 
 You can select various types of map objects, such as *POIs*, *favorites*, *transportation stops*, *markers*, *mountain peaks*, or other *map objects*.
 
 :::note
-Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- Selected map objects and their boundaries correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 :::
 
-> *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 
 
 ### Select Any Point (Long Tap) {#select-any-point-long-tap}
@@ -68,8 +68,6 @@ Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openst
 </Tabs>
 
 When you **long tap** anywhere on the map, a **context menu** appears, providing information about the selected location. This includes the address, distance, and direction from your current position.
-
-> **NOTE**. *Long tapping a **building number** highlights its outline and opens the map context menu*
 
 
 ### Select Route {#select-route}
