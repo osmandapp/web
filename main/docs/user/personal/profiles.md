@@ -238,7 +238,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
 |  | <Translate android="true" ids="us_gallons"/> | United States |
 |  |  |  |
-| **<Translate android="true" ids="shared_string_temperature"/>** (*Android only*)| <Translate android="true" ids="system_default_theme"/> |  |
+| **<Translate android="true" ids="shared_string_temperature"/>**| <Translate android="true" ids="system_default_theme"/> |  |
 |  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
