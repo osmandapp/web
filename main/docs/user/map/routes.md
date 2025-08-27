@@ -184,6 +184,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+## Climbing Area and Crag Details {#climbing-area-and-crag-details}
+
+![Climbing details](@site/static/img/map/climbing_andr.png)
+
+When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
+
 
 
 ## Actions with Routes {#actions-with-routes}

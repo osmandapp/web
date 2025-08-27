@@ -70,7 +70,7 @@ You can select various types of map objects, such as *POIs*, *favorites*, *trans
 When you **long tap** anywhere on the map, a **context menu** appears, providing information about the selected location. This includes the address, distance, and direction from your current position.
 
 
-### Select Route {#select-route}
+### Select GPX Route {#select-gpx-route}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -89,6 +89,15 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 </Tabs>
 
 Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options.
+
+
+
+### Routes, Ski Slopes, and Trails {#routes-and-trails}
+
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
+
+You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Check [Routes article](../routes.md#actions-with-routes) for more information.
+
 
 
 ### Hide Context Menu {#hide-context-menu}
@@ -133,7 +142,6 @@ Available details include:
 - [Public Transport routes for stops](#public-transport-routes)
 - [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
 - [OpenStreetMap link](#openstreetmap-link)
-- [Article image / description](#article-description-article-description)
 - [Online photos](#online-photos)
 
 Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features), such as:
@@ -247,24 +255,6 @@ Shown info about Public transport routes for chosen transport stop. Information 
 This is a list of all points in one group for a Favorite or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
 
-### Climbing Area and Crag Details {#climbing-area-and-crag-details}
-
-![Favorite list](@site/static/img/map/climbing_andr.png)
-
-When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
-
-
-### Ski Slopes, MTB Routes, and Dirt Bike Trails {#ski-slopes-mtb-routes-and-dirt-bike-trails}
-
-![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
-
-You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Available information includes: route or slope name (if available in OSM data), OSM object ID or relation ID, difficulty level, trail length, terrain type, and more.
-
-**Supported Tags:** `piste:type=*` (ski slopes), `route=mtb`, `route=atv` or `route=dirt_bike` (motorbike off-road trails)
-
-:::note
-Use the [Winter and Ski](../map/vector-maps.md#winter-and-ski) or [Offroad](../map/vector-maps.md#offroad) map styles for better visibility.
-:::
 
 
 ### Article Description {#article-description}
