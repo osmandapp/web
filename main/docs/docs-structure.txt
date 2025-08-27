@@ -574,6 +574,7 @@
             * `## Read more`
                 * `### Quick actions`
                 * `### Import / Export Colors`
+            * `## Related Articles`
         * `favorites.md`
             * `## Overview`
             * `## Favorite Point`
@@ -588,11 +589,12 @@
                 * `### Change Group Appearance`
             * `## Export / Import`
                 * `### Free Cloud Backup`
-                    * `##### How to Create a Backup`
+                * `### How to Create a Backup`
                 * `### All Favorites`
                 * `### Favorite Group`
                 * `### Automatic Favorites Backup`
                 * `### Favorites in GPX File`
+             * `## Related Articles`
         * `global-settings.md`
             * `## Overview`
             * `## General`
@@ -611,6 +613,8 @@
                 * `### Auto-Backup`
             * `## Legal`
                 * `### Uninstall Speed Cameras`
+            * `## Related Articles`
+                * `### Troubleshooting`
         * `import-export.md`
             * `## Overview`
             * `## Export / Import data`
@@ -618,28 +622,32 @@
                 * `### Import`
                 * `### OsmAnd Cloud`
             * `## Preventing Data Loss`
+            * `## Related Articles`
+                * `### Common Issues and Solutions`
         * `maps-resources.md`
             * `## Overview`
             * `## Map Types`
-                * `### Free Features for the Selected Location`
-                * `### Paid Features for the Selected Location`
-                * `### World Overview Map`
+                * `#### Free Features for the Selected Location`
+                * `#### Paid Features for the Selected Location`
+                * `#### World Overview Map`
             * `## Maps & Resources`
                 * `### Downloads`
-                    * `##### World Maps`
-                    * `##### Multiple Map Loading`
+                    * `#### World Maps`
+                    * `#### Multiple Map Loading`
                 * `### Local`
-                    * `##### Viewing Data`
-                    * `##### Menu for Items from the List`
-                    * `##### Map source items menu`
-                    * `##### Local Data Item Overview`
-                    * `##### Sorting Options`
+                    * `#### Viewing Data`
+                    * `#### Menu for Items from the List`
+                    * `#### Map source items menu`
+                    * `#### Local Data Item Overview`
+                    * `#### Sorting Options`
                 * `### Updates`
                 * `### Extra Maps`
             * `## OsmAnd Live`
                 * `### Update Timestamps`
                 * `### Limitations of OsmAnd Live`
                 * `### Free for OSM Mappers`
+            * `## Related Articles`
+                * `### Common Issues and Solutions`
         * `markers.md`
             * `## Overview`
             * `## Markers`
@@ -650,12 +658,14 @@
             * `## Appearance on the Map`
             * `## Plan Route for Markers`
             * `## Actions`
+            * `## Related Articles`
         * `myplaces.md`
             * `## Overview`
             * `## Favorites`
             * `## Tracks`
             * `## OpenStreetMap Edits`
             * `## Audio/Video Notes`
+            * `## Related Articles`
         * `osmand-cloud.md`
             * `## Overview`
             * `## Cross-Platform`
@@ -672,6 +682,7 @@
             * `## List of Changes`
                 * `### Local and Cloud`
                 * `### Conflicts`
+            * `## Related Articles`
         * `profiles.md`
             * `## Overview`
             * `## Profile Configuration`
@@ -694,6 +705,7 @@
                 * `### Context Menu Actions`
             * `## Plugin Settings`
             * `## Actions`
+            * `## Related Articles`
         * **tracks/**
             * `index.md`
                 * `## [Manage Tracks](./manage-tracks.md)`
@@ -709,8 +721,8 @@
                     * `### Track Menu`
                     * `### Search`
                     * `### Selection Mode`
-                    * `### Sort by`
-                        * `##### Sorting Subfolders`
+                    * `### Sort Tracks`
+                    * `### Sorting Subfolders`
                 * `## Track Folder`
                     * `### Folder Statistics`
                     * `### Folder Actions`
@@ -718,13 +730,15 @@
                 * `## Import / Export Track`
                     * `### Import`
                     * `### Export`
+                * `## Related Articles`
             * `smart-folder.md`
                 * `## Overview`
                 * `## Search Filter`
                     * `### Available Filters`
-                * `## Smart Folder`
+                * `## Smart Folder `
                     * `### How to Create Smart Folder`
                     * `### Managing Smart Folders`
+                * `## Related Articles`
     * **plan-route/**
         * `index.md` *(Lists sections)*
         * `coordinate-input.md`
@@ -754,6 +768,7 @@
                 * `### Save Route`
                 * `### Options`
                 * `### Graph`
+            * `## Related Articles`
         * `travel-guides.md`
             * `## Overview`
             * `## How to use`
@@ -771,6 +786,7 @@
                 * `### Custom Travel guides`
             * `## Manage as GPX Track`
             * `## Combine with Wikipedia`
+            * `## Related Articles`
     * **plugins/**
         * `index.md`
             * `## Overview`
@@ -806,6 +822,7 @@
             * `## Required Setup Parameters`
             * `## Plugin Settings`
                 * `### Smart Autoannounce and Clockwise Directions`
+            * `## Related Articles`
         * `ais-tracker.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -814,15 +831,16 @@
                 * `### AIS Symbols and Legends`
             * `## Plugin Settings`
                 * `### AIS Simulation Mode`
+            * `## Related Articles`
         * `audio-video-notes.md`
             * `## Overview`
             * `## Required Setup Parameters`
             * `## Plugin Settings`
             * `## Manage a Single Note`
                 * `### Create`
-                    * `##### 1. Create and Tie to your Current Position`
-                    * `##### 2. Create and Tie to Selected Geolocation`
-                    * `##### Recorder Dialog`
+                    * `#### 1. Create and Tie to your Current Position`
+                    * `#### 2. Create and Tie to Selected Geolocation`
+                    * `#### Recorder Dialog`
                 * `### View in My Places`
                 * `### Show on the Map`
                 * `### Play`
@@ -839,6 +857,7 @@
             * `## Miscellaneous`
                 * `### File Name Details`
                 * `### Export to JOSM`
+            * `## Related Articles`
         * `custom.md`
             * `## Overview`
             * `## How to Create`
@@ -851,6 +870,7 @@
                 * `### Suggested Downloads`
                 * `### Files`
             * `## Examples`
+            * `## Related Articles`
         * `development.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -870,6 +890,7 @@
                 * `### Comparison with a Satellite Imagery`
             * `## Available RAM Widget`
             * `## GPX-Track Simulation`
+            * `## Related Articles`
         * `external-sensors.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -879,6 +900,7 @@
                 * `### Data Analyze`
             * `## Widgets`
                 * `### Widget Settings`
+            * `## Related Articles`
         * `mapillary.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -888,6 +910,7 @@
             * `## Map Context Menu`
             * `## Add Photos`
             * `## Mapillary Widget`
+            * `## Related Articles`
         * `nautical-charts.md`
             * `## Overview`
                 * `### Why the Nautical Theme Matters`
@@ -900,11 +923,14 @@
                 * `### Depth Points`
                 * `### Depth Contours`
                 * `### Seabed Details`
+            * `## Related Articles`
         * `online-map.md`
             * `## Overview`
             * `## Required Setup Parameters`
             * `## Use Raster Maps on Device`
             * `## How to Prepare Raster Maps`
+            * `## Related Articles`
+                * `### Common Issues and Solutions`
         * `osm-editing.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -919,6 +945,7 @@
             * `## GPS Track`
                 * `### Upload GPS track`
                 * `### Generate OBF file`
+            * `## Related Articles`
         * `osmand-tracker.md`
             * `## Overview`
                 * `### How It Works`
@@ -948,6 +975,7 @@
                 * `### Navigating to a Waypoint`
                 * `### Remove a Spot`
             * `## Parking Widget`
+            * `## Related Articles`
         * `ski-maps.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -961,6 +989,7 @@
                 * `### Grooming Trails`
                 * `### Ski Slope Routes`
                 * `### Night and Lighting`
+            * `## Related Articles`
         * `topography.md`
             * `## Overview`
                 * `### License for DEM data used by OsmAnd for terrain detection`
@@ -982,6 +1011,8 @@
                 * `### Vertical Exaggeration`
                 * `### Hillshade and 3D Relief`
             * `## Combine Layer Types`
+            * `## Related Articles`
+                * `### Common Issues and Solutions`
         * `trip-recording.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -999,6 +1030,8 @@
                 * `### Add Recording Widget`
                 * `### Distance (Start-Stop)`
                 * `### Duration, Uphill, Downhill`
+            * `## Related Articles`
+                * `### Common Issues and Solutions`
         * `vehicle-metrics.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -1009,6 +1042,7 @@
                 * `### Tags`
             * `## Widgets`
                 * `### Widget Settings`
+            * `## Related Articles`
         * `weather.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -1023,6 +1057,7 @@
                 * `### Cache`
                 * `### Download Forecast`
             * `## Weather Widgets`
+            * `## Related Articles`
         * `wikipedia.md`
             * `## Overview`
             * `## Required Setup Parameters`
@@ -1034,6 +1069,7 @@
                 * `### Set Preferred Language`
                 * `### Switch Languages Inside the Article`
                 * `### Download Images`
+            * `## Related Articles`
     * **purchases/**
         * `index.md` *(Lists sections)*
         * `android.md`
@@ -1046,8 +1082,8 @@
                     * `##### *** Android Auto`
                 * `### Pro Features`
             * `## How to Buy`
-                * `##### OsmAnd Pro Purchase`
-                * `##### Maps+ Purchase`
+                * `### OsmAnd Pro Purchase`
+                * `### Maps+ Purchase`
             * `## Legacy Subscriptions (prior 4.0)`
             * `## Restore Purchases`
                 * `### Find your Purchase`
@@ -1055,31 +1091,15 @@
                 * `### Restore Subscription / In App`
                 * `### Other Cases`
             * `## Giftcards`
-        * `android_new.md` *(Not in original structure)*
-            * `## Introduction`
-            * `## Install OsmAnd`
-            * `## Purchase Options`
-                * `### OsmAnd+ (One-Time Purchase)`
-                * `### Maps+ (In-App Purchase or Subscription)`
-                * `### OsmAnd Pro (Subscription)`
-                * `### OsmAnd Start (Basic Free Plan)`
-            * `## Prices`
-            * `## Free and Paid Features`
-            * `## Pro Features`
-                * `### What is OsmAnd Pro`
-                * `### What is included in the OsmAnd Pro subscription`
-            * `## How to Purchase`
-            * `## Restoring Purchases`
-            * `## Purchase Synchronization`
-            * `## Transferring Purchases`
-            * `## Managing Subscriptions`
-            * `## Refunds`
-            * `## Giftcards`
-            * `## Common issues and solutions`
-                * `### Troubleshooting Purchases`
-                * `### FAQ`
+        * `cross.md`
+            * `## Supported Cross-Platform Purchases`
+            * `## How It Works`
+                * `### Link Your Purchase`
+                * `### Activate on Another Device or Platform`
+                * `### Troubleshooting`
+            * `## Example`
+            * `## Related Articles`
         * `giveaway.md`
-            * `## Overview`
         * `ios.md`
             * `## Install OsmAnd (iOS)`
                 * `### Difference Between Purchases (iOS)`
@@ -1089,23 +1109,17 @@
                     * `##### ** Map updates`
                 * `### Pro Features`
             * `## How to Buy`
-                * `##### OsmAnd Pro Purchase`
-                * `##### Maps+ Purchase`
+                * `### OsmAnd Pro Purchase`
+                * `### Maps+ Purchase`
             * `## Legacy Subscriptions (prior 4.0)`
             * `## Restore Purchases`
             * `## Giftcards`
-        * `ios_new.md` *(Not in original structure)*
-            * `## Install OsmAnd`
-        * `osmand_features_capabilities.md` *(Not in original structure)*
-            * `## All Features and Capabilities`
-            * `## Navigation`
-            * `## Maps and Rendering`
-            * `## Search and POIs`
-            * `## Tracks and Routes`
-            * `## Map Tools and Customization`
-            * `## Plugins`
-            * `## Widgets and Additional Indicators`
-            * `## User Profiles`
+        * `web.md`
+            * `## How to Buy`
+                * `### Difference Between Purchases`
+            * `## Prices`
+                * `### Free and Paid Features`
+            * `## Restore Purchases`
     * **search/**
         * `index.md`
             * `## Overview`
@@ -1123,6 +1137,7 @@
             * `## Select Street`
             * `## Postcode Search`
             * `## Coordinates Search`
+            * `## Related Articles`
         * `search-all.md`
             * `## Overview`
             * `## How to Use`
@@ -1135,10 +1150,12 @@
             * `## Search History`
             * `## Search POI`
             * `## Search Coordinates`
+            * `## Related Articles`
         * `search-coordinates.md`
             * `## Overview`
             * `## How to Use`
             * `## Coordinate Format`
+            * `## Related Articles`
         * `search-history.md`
             * `## Overview`
             * `## How to Use`
@@ -1148,7 +1165,8 @@
             * `## Actions`
                 * `### Delete`
                 * `### Export and Share`
-                    * `##### Share (Android)`
+                * `### Share (Android)`
+            * `## Related Articles`
         * `search-poi.md`
             * `## Overview`
             * `## How to Use`
@@ -1164,6 +1182,7 @@
                 * `### Edit an Existing Filter`
                 * `### Delete Custom POI Filter`
                     * `##### Delete Custom Categories (iOS)`
+            * `## Related Articles`
     * **start-with/**
         * `index.md` *(Lists sections)*
         * `download-maps.md`
