@@ -225,19 +225,19 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 </details>
 
 
-### Track Information Activity {#track-information-activity}
+### Track Activity Type {#ttrack-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_andr.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track Information Activity](@site/static/img/personal/tracks/track_info_activity_ios.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_ios.png)
 
 </TabItem>
 
