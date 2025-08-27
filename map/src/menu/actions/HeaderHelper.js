@@ -9,6 +9,7 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
     }
     if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
         ctx.setSelectedGpxFile({});
+        ctx.setSelectedFavoriteObj(null);
     }
     ctx.setCurrentObjectType(null);
 }

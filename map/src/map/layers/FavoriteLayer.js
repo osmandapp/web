@@ -1,10 +1,10 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { ZOOM_TO_MAP } from './SearchLayer';
@@ -299,7 +299,6 @@ const FavoriteLayer = () => {
 
     const onClick = useCallback(
         (e) => {
-            ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
             ctx.selectedGpxFile = {};
             ctx.selectedGpxFile.trackData = { ...ctx.favorites.mapObjs[e.sourceTarget.options.groupId] };
 
@@ -317,9 +316,9 @@ const FavoriteLayer = () => {
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
             ctx.selectedGpxFile.id = e.sourceTarget.options.groupId;
+            ctx.selectedGpxFile.key = `${e.sourceTarget.options.groupId}:${ctx.selectedGpxFile.markerCurrent.name}`;
 
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            ctx.setSelectedWpt(ctx.selectedGpxFile);
+            openFavoriteObj(ctx, ctx.selectedGpxFile);
         },
         [ctx, selectedGpxFileRef]
     );

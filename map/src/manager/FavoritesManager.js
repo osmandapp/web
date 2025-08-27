@@ -648,6 +648,12 @@ export function addShareFavoriteToMap(marker, ctx) {
     ctx.setSelectedWpt(newSelectedGpxFile);
 }
 
+export function openFavoriteObj(ctx, object) {
+    ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
+    ctx.setSelectedWpt({ ...object });
+    ctx.setSelectedGpxFile({ ...object });
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,

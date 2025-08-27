@@ -83,6 +83,7 @@ import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
+import { openFavoriteObj } from '../manager/FavoritesManager';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -126,6 +127,12 @@ export default function MainMenu({
     const [redirectUrl, setRedirectUrl] = useState(null);
 
     const [savePrevState, setSavePrevState] = useState(false);
+
+    const [menuDots, setMenuDots] = useState({});
+
+    function setActiveMenu(type, value) {
+        setMenuDots((prev) => ({ ...prev, [type]: value }));
+    }
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -221,6 +228,15 @@ export default function MainMenu({
             saveSortToDB(ctx.selectedSort).then();
         }
     }, [ctx.selectedSort]);
+
+    // show/hide dot on menu item
+    useEffect(() => {
+        setActiveMenu(OBJECT_TYPE_FAVORITE, ctx.openFavGroups?.length > 0 || ctx.selectedFavoriteObj);
+    }, [ctx.openFavGroups, ctx.selectedFavoriteObj]);
+
+    useEffect(() => {
+        setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0);
+    }, [ctx.openGroups]);
 
     function selectMenuByUrl() {
         const item = items.find((item) => item.url === location.pathname);
@@ -351,6 +367,12 @@ export default function MainMenu({
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
         }
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (ctx.selectedFavoriteObj) {
+                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+            }
+        }
+
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: selectedType === OBJECT_SEARCH });
     }, [selectedType]);
 
@@ -638,6 +660,7 @@ export default function MainMenu({
                                                     component={item.icon}
                                                     inheritViewBox
                                                 />
+                                                {menuDots[item.type] && <span className={styles.dotMenu} />}
                                             </ListItemIcon>
                                             <ListItemText
                                                 primary={item.name}

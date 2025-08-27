@@ -13,7 +13,6 @@ import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
-import TrackGroupFolder from '../tracks/TrackGroupFolder';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
 
 export default function FavoritesMenu() {
@@ -40,7 +39,7 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            groups.map((g, index) => {
+            groups.forEach((g, index) => {
                 items.push(
                     <FavoriteGroup
                         key={g + index}
@@ -56,7 +55,7 @@ export default function FavoritesMenu() {
     }, [ctx.favorites?.groups, sortGroups]);
 
     useEffect(() => {
-        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME]) {
+        if (ctx.selectedSort?.favorites?.[DEFAULT_FAV_GROUP_NAME]) {
             doSort({
                 method: ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME],
                 setSortGroups,

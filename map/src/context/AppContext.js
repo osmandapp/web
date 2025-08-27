@@ -451,6 +451,13 @@ export const AppContextProvider = (props) => {
 
     const [dateLocale, setDateLocale] = useState(null);
 
+    const [recentObjs, setRecentObjs] = useState({
+        tracks: [],
+        favorites: [],
+    });
+
+    const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
+
     useEffect(() => {
         const currentLanguage = i18n.language;
         const locale = locales[currentLanguage] || locales.enUS;
@@ -828,6 +835,9 @@ export const AppContextProvider = (props) => {
                 setUsedIcons,
                 openFavGroups,
                 setOpenFavGroups,
+                recentObjs,
+                setRecentObjs,
+                selectedFavoriteObj, setSelectedFavoriteObj,
             }}
         >
             {props.children}

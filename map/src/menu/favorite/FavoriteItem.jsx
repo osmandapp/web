@@ -1,12 +1,12 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
-import { addShareFavoriteToMap, getColorLocation } from '../../manager/FavoritesManager';
+import { addShareFavoriteToMap, getColorLocation, openFavoriteObj } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
@@ -32,8 +32,6 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
     const sharedFile = smartf?.type === SHARE_TYPE;
 
     function addFavoriteToMap(marker) {
-        ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-
         const newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;
         if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
@@ -51,6 +49,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
             }
         });
         newSelectedGpxFile.id = group.id;
+        newSelectedGpxFile.key = `${group.id}:${marker.name}`;
         newSelectedGpxFile.trackData = trackData;
         newSelectedGpxFile.sharedWithMe = sharedFile;
         newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
@@ -59,8 +58,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
         newSelectedGpxFile.prevState = ctx.selectedGpxFile;
         newSelectedGpxFile.favItem = true;
 
-        ctx.setSelectedWpt(newSelectedGpxFile);
-        ctx.setSelectedGpxFile(newSelectedGpxFile);
+        openFavoriteObj(ctx, newSelectedGpxFile);
     }
 
     const FavInfo = () => {
