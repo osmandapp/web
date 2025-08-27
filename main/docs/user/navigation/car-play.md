@@ -189,6 +189,11 @@ You can use the *Search tool* to find the required place on the map for route pl
 - [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md). The list of nearby similar names will also display POIs or their categories.
 - [Coordinates search](../search/search-address#coordinates-search). Enter the coordinates to find the point on the map.
 
+:::note
+You can select a specific buliding by searching by a street name and selecting it in the search box in *CarPlay*. Be aware that result list is limited to 25 items. So if your expected building is missing, then you need to type the building number.
+:::
+
+
 #### Address Search Priorities {#address-search-priorities}
 
 The CarPlay search feature prioritizes streets and building numbers when **searching for addresses**.
