@@ -374,11 +374,11 @@ Please read about route parameters for the corresponding navigation type.
 How to configure [routing type](../routing/osmand-routing.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/osmand-routing.md#routing-types).  
 
 
-### Simulated Navigation {#simulated-navigation}
+## Simulated Navigation {#simulated-navigation}
 
 The **Simulated navigation** tool allows you to preview a route before traveling. This helps with planning, familiarization, and testing OsmAnd's navigation system.
 
-#### Start / Stop Simulation {#start--stop-simulation}
+### Start / Stop Simulation {#start--stop-simulation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -404,7 +404,7 @@ When a navigation route is built, you can start simulating navigation using the 
 - To [Stop](#start--stop-navigation) the navigation simulation, tap **Stop** (*Android*), or **Cancel** (*iOS*).
 
 
-#### Speed Mode {#speed-mode}
+### Speed Mode {#speed-mode}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -454,7 +454,7 @@ To build a route all **necessary maps** need to be downloaded and have the same 
 
 </Tabs>
 
-#### Required Maps {#required-maps}
+### Required Maps {#required-maps}
 
 In the required maps dialog you will see suggestions of maps to be downloaded or updated. The list of used maps might be not precise as it calculates a very basic route, to get the precise list of maps you can click **Calculate online**. If you select **Use downloaded maps** then routing calculation will try to use already downloaded maps and skip the warning message.
 

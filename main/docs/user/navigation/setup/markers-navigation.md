@@ -63,7 +63,7 @@ However *Map markers* also provide various functionality such as [widgets](../..
 In case you need a simple point to point navigation displayed as straight lines, you can build and sort ***Itinerary list*** consisted of markers as intermediate points and use widgets for simple navigation.
 
 
-#### Recommendations {#recommendations}
+### Recommendations {#recommendations}
 
 Here are simple recommendation steps to *Navigate by markers*:
 

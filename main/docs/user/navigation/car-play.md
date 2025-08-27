@@ -25,7 +25,7 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use *CarPlay* on your device.
 3. Once connected, the *CarPlay interface* will automatically appear on your vehicle screen with all available apps. If the *CarPlay home screen* does not appear, select the *CarPlay logo* on the vehicle display.  
 
-#### CarPlay Interface {#carplay-interface}
+### CarPlay Interface {#carplay-interface}
 
 *CarPlay* is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
@@ -194,7 +194,7 @@ You can select a specific buliding by searching by a street name and selecting i
 :::
 
 
-#### Address Search Priorities {#address-search-priorities}
+### Address Search Priorities {#address-search-priorities}
 
 The CarPlay search feature prioritizes streets and building numbers when **searching for addresses**.
 
