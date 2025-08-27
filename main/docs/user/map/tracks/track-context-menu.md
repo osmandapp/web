@@ -421,7 +421,7 @@ Waypoints can be added to the currently recorded track or to any track from [*My
 
 - Add a waypoint as a [Quick action](../../widgets/quick-action.md#my-places) button.
 
-#### Create Waypoint {#create-waypoint}
+### Create Waypoint {#create-waypoint}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

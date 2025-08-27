@@ -43,7 +43,7 @@ You can also change the main source of maps from vector maps to online tiles.
 
 Online maps in OsmAnd are composed of raster data, which consists of pixels (also referred to as grid cells) - essentially a set of small images known as tiles. Unlike vector maps, which represent data like roads, points, and polygons using binary information, raster map tiles are arranged in a grid and can appear pixelated at high zoom levels because each pixel has a fixed value or class.
 
-#### Comparison to default vector maps {#comparison-to-default-vector-maps}
+### Comparison to default vector maps {#comparison-to-default-vector-maps}
 
 **Advantages:**
 
