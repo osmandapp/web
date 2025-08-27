@@ -524,7 +524,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 </Tabs>
 
-The **Detailed track guidance** feature improves the accuracy of route navigation when using **track-based routes**. When you select a track as the destination, you can enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting from the [Follow track](../setup/gpx-navigation.md#follow-track-options) menu. This ensures the track is aligned with existing roads for smoother, more precise navigation.
+The **Detailed track guidance** feature improves the accuracy of route navigation when using **track-based routes**. When you select a track as the destination, you can enable the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) setting from the [Follow track](../setup/gpx-navigation.md#follow-track-options) menu. This ensures the track is aligned with existing roads, so navigation will provide precise instructions on roundabouts, turns, provides speed limits, turn lanes and street names for the roads.
 
 There are two options for using *Detailed track guidance*:
 
