@@ -259,10 +259,10 @@
             * `## Restricted area`
             * `## Precautionary area`
             * `## Notice`
-                * `#### Notice: prohibition`
-                * `#### Notice: regulation`
-                * `#### Notice: recomendation`
-                * `#### Notice: information`
+                * `### Notice: prohibition`
+                * `### Notice: regulation`
+                * `### Notice: recomendation`
+                * `### Notice: information`
         * `osmand.md`
             * `# OsmAnd map style`
             * `## Highways`
@@ -277,32 +277,33 @@
             * `## Buildings, transportation`
             * `## Sport, leisure`
             * `## Built-up areas`
-                * `#### Landuse`
-                * `#### Parking`
-                * `#### Cemetery`
-                * `#### Education`
-                * `#### Historic`
+                * `### Landuse`
+                * `### Parking`
+                * `### Cemetery`
+                * `### Education`
+                * `### Historic`
             * `## Nature`
             * `## Icons`
-                * `#### Traffic, transportation`
-                * `#### Emergency`
-                * `#### Health`
-                * `#### Tourism`
-                * `#### Entertainment`
-                * `#### Accomodation`
-                * `#### Education`
-                * `#### Food and drink`
-                * `#### Nature`
-                * `#### Sport`
-                * `#### Finance`
-                * `#### Administrative`
-                * `#### Service`
-                * `#### Shops`
-                * `#### Offices`
-                * `#### Craft`
-                * `#### Club`
-                * `#### Barriers`
-                * `#### Man made`
+                * `### Traffic, transportation`
+                * `### Emergency`
+                * `### Health`
+                * `### Tourism`
+                * `### Entertainment`
+                * `### Accomodation`
+                * `### Education`
+                * `### Food and drink`
+                * `### Nature`
+                * `### Sport`
+                * `### Finance`
+                * `### Administrative`
+                * `### Service`
+                * `### Shops`
+                * `### Offices`
+                * `### Craft`
+                * `### Club`
+                * `### Barriers`
+                * `### Man made`
+            * `## Icons for "Icons at low zooms" option`
         * `ski-map.md`
             * `# Ski map style`
             * `## Piste type`
