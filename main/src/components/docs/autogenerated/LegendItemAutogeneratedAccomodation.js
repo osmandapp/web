@@ -1,9 +1,3 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
 

@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import styles from './LegendItem.module.css';
+import React, { useRef, useCallback } from 'react';
+import styles from './legenditem.module.css';
+import useSvgContent from './hooks/useSvgContent.js';
+import useSplitSvg from './hooks/useSplitSvg.js';
 import SvgMeasurementComponent from './SvgMeasurementComponent.jsx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-const svgCache = new Map();
 export const TOP_LEVEL_GROUPS_SELECT = ':scope > g';
 
 export default function LegendItemWithProcessing({ svgPath, svgParts }) {
@@ -17,51 +18,11 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
   const TRANSFORM_ATTR = 'transform';
   const DEFS_SELECT = 'defs';
   const STYLE_SELECT = 'style';
-  const [splitSvgsDay, setSplitSvgsDay] = useState([]);
-  const [splitSvgsNight, setSplitSvgsNight] = useState([]);
-  const [svgContentDay, setSvgContentDay] = useState('');
-  const [svgContentNight, setSvgContentNight] = useState('');
-  const [loadingDay, setLoadingDay] = useState(true);
-  const [loadingNight, setLoadingNight] = useState(true);
   const COLUMN_COUNT = 3;
   const measurementComponentRef = useRef(null);
   const DEBUG = false;
 
-  const useSvgContent = ((svgPath, setSvgContent, setLoading, setSplitSvgs) => {
-    if (!svgPath) {
-      setSvgContent('');
-      setLoading(false);
-      return;
-    }
-    setLoading(true)
-    if (svgCache.has(svgPath)) {
-      setSplitSvgs(svgCache.get(svgPath));
-      setLoading(false)
-      return;
-    }
-    fetch(svgPath)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(data => {
-        setSvgContent({ svgPath, data });
-        setLoading(false);
-      })
-      .catch(err => {
-        DEBUG && console.error('Error fetching SVG:', err);
-        setLoading(false);
-      });
-  })
-
-  useEffect(() => {
-    useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX, setSvgContentDay, setLoadingDay, setSplitSvgsDay);
-    useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX, setSvgContentNight, setLoadingNight, setSplitSvgsNight);
-  }, [svgPath]);
-
-  function splitSvgToArray(svgContent) {
+  const splitSvgToArray = useCallback((svgContent) => {
     const svgPartsMap = new Map(Object.entries(svgParts));
     const parser = new DOMParser();
     const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
@@ -107,30 +68,14 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
       svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString, title });
     });
     return svgArray;
-  }
 
-  const useSplitSvg = (svgContent, setSplitSvgs) => {
-    useEffect(() => {
-      if (svgContent) {
-        if (svgCache.has(svgContent.svgPath)) {
-          setSplitSvgs(svgCache.get(svgContent.svgPath));
-          return;
-        }
-        try {
-          const svgArray = splitSvgToArray(svgContent.data);
-          svgCache.set(svgContent.svgPath, svgArray);
-          setSplitSvgs(svgArray);
-        } catch (e) {
-          setSplitSvgs([]);
-        }
-      } else {
-        setSplitSvgs([]);
-      }
-    }, [svgContent]);
-  };
+  }, []); 
 
-  useSplitSvg(svgContentDay, setSplitSvgsDay);
-  useSplitSvg(svgContentNight, setSplitSvgsNight);
+  const { svgContent: svgContentDay, loading: loadingDay } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
+  const { svgContent: svgContentNight, loading: loadingNight } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
+
+  const splitSvgsDay = useSplitSvg(svgContentDay, splitSvgToArray);
+  const splitSvgsNight = useSplitSvg(svgContentNight, splitSvgToArray);
 
   const chunkArray = (arr, chunkSize) => {
     const R = [];

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LegendItem.module.css';
+import styles from './legenditem.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
