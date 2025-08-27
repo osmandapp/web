@@ -36,18 +36,6 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 While your device is connected to *CarPlay*, the map on the app screen is locked. This is an intentional security feature to ensure that navigation is controlled exclusively from the car display, minimizing distractions while driving. Check the [common questions](#common-issues-and-solutions) about the connection screen.
 
 
-### Location Position in CarPlay {#location-position-in-carplay}
-
-The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
-
-**How to change the indicator position:**
-
-- Go to *Menu → Configure screen → Other → [Location position on screen](../widgets/configure-screen.md#display-position-location-position-on-screen)*.
-- Select your preferred placement:
-    - **Automatic (default)**. The application automatically shifts the position of the indicator for navigation mode or free movement.
-    - **Center**. The indicator is placed in the center of the screen, suitable for standard navigation.
-    - **Bottom**. The indicator is positioned closer to the bottom of the screen, making it easier to observe surrounding objects and complex intersections.
-
 ### Interaction with the Map {#interaction-with-the-map}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
@@ -228,16 +216,6 @@ Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features,
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
 
 
-### Announce Incoming Text Messages {#announce-incoming-text-messages}
-
-You can change the notification settings for the OsmAnd app in the system settings of your device. Tap *CarPlay*, then select one of the following items:
-
-- *Announce New Messages*
-- *Silence New Messages*
-- *Remember Previous Setting*
-
-You can also enable or disable Announce messages directly in *CarPlay*. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
-
 
 ### Screen Alert Widget {#screen-alert-widget}
 
@@ -281,8 +259,32 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 - Setting up the multifunction dashboard on a phone connected to *CarPlay* or on the screen in your vehicle system.
 - Find Multi window button and switch it.
 
+## Settings {#settings}
 
-## Volume Control Issue {#volume-control-issue}
+### Announce Incoming Text Messages {#announce-incoming-text-messages}
+
+You can change the notification settings for the OsmAnd app in the system settings of your device. Tap *CarPlay*, then select one of the following items:
+
+- *Announce New Messages*
+- *Silence New Messages*
+- *Remember Previous Setting*
+
+You can also enable or disable Announce messages directly in *CarPlay*. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
+
+### Location Position in CarPlay {#location-position-in-carplay}
+
+The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
+
+**How to change the indicator position:**
+
+- Go to *Menu → Configure screen → Other → [Location position on screen](../widgets/configure-screen.md#display-position-location-position-on-screen)*.
+- Select your preferred placement:
+    - **Automatic (default)**. The application automatically shifts the position of the indicator for navigation mode or free movement.
+    - **Center**. The indicator is placed in the center of the screen, suitable for standard navigation.
+    - **Bottom**. The indicator is positioned closer to the bottom of the screen, making it easier to observe surrounding objects and complex intersections.
+
+
+### Volume Control Issue {#volume-control-issue}
 
 Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in *CarPlay*. Possible solutions:  
 
