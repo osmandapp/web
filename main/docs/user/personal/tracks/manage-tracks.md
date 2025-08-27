@@ -208,7 +208,7 @@ Once you have made your choice, the following steps are provided:
 - **Delete** — If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
 
-### Sort by {#sort-by}
+### Sort Tracks {#sort-by}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -231,26 +231,17 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 ***Sorting options:***
 
 - **Nearest** — Shows tracks closest to your current location.
-
 - **Last modified** — Displays tracks sorted by their most recent modification date.
-
 - **Name: A - Z** — Arranges tracks alphabetically from A to Z.
-
 - **Name: Z - A** — Arranges tracks alphabetically from Z to A.
-
 - **Newest date first** — Lists tracks by creation date, with the newest at the top.
-
 - **Oldest date first** — Lists tracks by creation date, with the oldest at the top.
-
 - **Longest distance first** — Displays tracks sorted by length, with the longest at the top.
-
 - **Shortest distance first** — Displays tracks sorted by length, with the shortest at the top.
-
 - **Longest duration first** — Sorts tracks by duration, placing the longest at the top.
-
 - **Shorted duration first** — Sorts tracks by duration, placing the shortest at the top.
 
-#### Sorting Subfolders {#sorting-subfolders}
+### Sorting Subfolders {#sorting-subfolders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -279,11 +270,15 @@ The selected sorting option is applied not only to the current subfolder but als
 
 <TabItem value="android" label="Android">
 
+Tap the *three-dot menu* in the folder field to **open** the folder menu.
+
 ![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+> Long tap on the folder field to **open** the folder menu.
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
@@ -293,28 +288,16 @@ The selected sorting option is applied not only to the current subfolder but als
 
 Track folder menu lets you view, rename, export, and manage folders.
 
-How to open the folder menu:
-
-- *Android* - tap the *three-dot menu* in the folder field.
-- *iOS* - long tap the folder field.
 
 ***Actions with a folder:***
 
 - **Name** — Displays the folder name, creation date, and the number of tracks it contains.
-
-- **Show all tracks on the map** (*Android only*) — Displays all tracks in the folder on the map —  
-    *NOTE: If there are many tracks, this may cause the device to freeze.*
-
+- **Show all tracks on the map** (*Android only*) — Displays all tracks in the folder on the map. If there are many tracks, this may cause the device to freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*) — Allows you to rename the folder.
-
 - [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*) — Changes the display appearance of all tracks in the folder.
-
 - [Export](../../personal/import-export.md) — Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
-
 - [Move](#track-folder) — Allows you to move the folder to another existing folder or create a new one.
-
-- [Delete folder](#delete-folder) — Deletes the folder after confirmation.  
-    ***NOTE: This action is irreversible.***
+- [Delete folder](#delete-folder) — Deletes the folder after confirmation. ***This action is irreversible.***
 
 
 ### Folder Statistics {#folder-statistics}
@@ -342,15 +325,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 At the bottom of the list in the *Tracks* tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
 
 - *Number of **Tracks** in the folder* — Displays the number of tracks contained in the selected folder.
-
 - *Total sum of* **Distances** — The total length of all tracks in the selected folder, measured in the units you have selected, is displayed.
-
 - *Sum of* **Uphills** — The data indicates the total vertical rise across all tracks in the selected folder.
-
 - *Sum of* **Downhills** — This parameter is the sum of vertical descents on all tracks in the selected folder.
-
 - *Sum of* **Duration** *time* — This displays the total time taken to complete all tracks in the selected folder.
-
 - *Total **Size** of downloaded files in MB* — The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
 
 
@@ -387,13 +365,9 @@ How to open folder actions:
 ***Actions in the folder menu:***
 
 - [Select](#selection-mode) — Tap the required folders and tracks to apply actions from the menu in *selection mode*.
-
 - [Sort subfolders](#sort-by) — Apply a sorting order (e.g., by name, date) to all subfolders and tracks at every level.
-
 - [Add smart folder](../tracks/smart-folder.md#how-to-create-smart-folder) — Automatically sort routes and tracks based on criteria you set.
-
 - [Import](#import) — Upload GPX or other track files from your device to OsmAnd for offline use.
-
 - **Add new folder** — To organize your routes and tracks into logical categories, put them in different folders. This helps to structure your navigation information.
 
 

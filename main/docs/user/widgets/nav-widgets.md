@@ -427,7 +427,9 @@ Alert types have a different visual design, which depends on the **<Translate an
 
 ## Street Name {#street-name}
 
-The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). 
+
+In widget **Settings** you can select to always display **the current street name** and use it with [**Next turn**](#next-turn) widget. If you enable **Next turn information**, then switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), same to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
