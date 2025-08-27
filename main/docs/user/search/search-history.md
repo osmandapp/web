@@ -178,7 +178,7 @@ Exporting items or the entire search history can be useful in the following case
 - [Share](#share-android) search history with other OsmAnd users.
 
 
-#### Share (Android) {#share-android}
+### Share (Android) {#share-android}
 
 ![Settings History](@site/static/img/search/history_search_share_andr.png)
 

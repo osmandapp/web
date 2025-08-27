@@ -170,11 +170,11 @@ The **Pro** subscription currently has the following features:
 | [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/topography.md#download-maps) required for chosen region). |
 
 
-### How to Buy {#how-to-buy}
+## How to Buy {#how-to-buy}
 
 Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-#### OsmAnd Pro Purchase {#osmand-pro-purchase}
+### OsmAnd Pro Purchase {#osmand-pro-purchase}
 
 ![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose monthly or annual subscription:
 
@@ -186,7 +186,7 @@ or
 
 ![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
-#### Maps+ Purchase {#maps-purchase}
+### Maps+ Purchase {#maps-purchase}
 
 ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  *Maps+* subscription / in-app plan. Here you can choose annual subscription or one-time payment:
 

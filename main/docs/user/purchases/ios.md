@@ -136,11 +136,11 @@ At the moment, the Pro subscription has the following features:
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 
 
-### How to Buy {#how-to-buy}
+## How to Buy {#how-to-buy}
 
 Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-#### OsmAnd Pro Purchase {#osmand-pro-purchase}
+### OsmAnd Pro Purchase {#osmand-pro-purchase}
 
 ![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
@@ -152,7 +152,7 @@ or
 
 ![Pro Plan](@site/static/img/purchases/pro.png)
 
-#### Maps+ Purchase {#maps-purchase}
+### Maps+ Purchase {#maps-purchase}
 
 ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
 

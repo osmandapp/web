@@ -182,7 +182,7 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
 
 To include OBD-II data in a GPX file, you need to select the desired parameters for recording using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). This allows you to analyze vehicle metrics alongside your trip data.
 
-#### Tags {#tags}
+### Tags {#tags}
 
 OsmAnd applies custom tag names for vehicle metrics in the [GPX file](../plugins/trip-recording.md#recorded-gpx-file). For example:
 

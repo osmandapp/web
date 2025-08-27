@@ -131,7 +131,7 @@ The Accessibility plugin offers various settings to personalize navigation and i
 - **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
 
 
-#### Smart Autoannounce and Clockwise Directions {#smart-autoannounce-and-clockwise-directions}
+### Smart Autoannounce and Clockwise Directions {#smart-autoannounce-and-clockwise-directions}
 
 The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route, while the **Clockwise Direction Style** offers *clock-face-based navigation guidances*. These features are designed to support visually impaired users who rely on *voice guidance*.  
 

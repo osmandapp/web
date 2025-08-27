@@ -65,7 +65,7 @@ Search query list:
 - Additional information, such as the city's district.
 
 
-#### US Address Search and TIGER Data {#us-address-search-and-tiger-data}
+### US Address Search and TIGER Data {#us-address-search-and-tiger-data}
 
 OsmAnd supports address searches using OpenStreetMap data, but in the United States, address search results may be incomplete due to the use of [TIGER data](https://wiki.openstreetmap.org/wiki/TIGER).  
 
