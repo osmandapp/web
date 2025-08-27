@@ -47,7 +47,7 @@ async function createConfig(){
         es: { label: 'Español' },
         fr: { label: 'Français' },
         it: { label: 'Italiano' },
-        nl: { label: 'Nederlands, Vlaams' },
+        nl: { label: 'Nederlands' },
         pl: { label: 'Polski' },
         pt: { label: 'Português' },
         tr: { label: 'Türkçe' },
