@@ -1,5 +1,5 @@
 ---
-source-hash: aa7b248df7d6116b19b0428376bb9c1f59b764588678067dd00d7ee9bd820a7a
+source-hash: abf1b919c11620b673c16903f768b50745c03c90e9df1ffbce47273d81a45c47
 sidebar_position: 2
 sidebar_label: OsmAnd Cloud
 title: OsmAnd Cloud на Вебсайті
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-[Портал карт OsmAnd](https://osmand.net/map) — це браузерний сервіс, що надається OsmAnd, який дозволяє користувачам досліджувати карти, керувати своїми даними, планувати та створювати поїздки, або просто переглядати карту.
+[Портал карт OsmAnd](https://osmand.net/map) — це браузерний сервіс, наданий OsmAnd, що дозволяє користувачам досліджувати карти, керувати своїми даними, планувати та створювати поїздки або просто переглядати карту.
 
 
 
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
   1. Перейдіть на [**Портал карт OsmAnd**](https://osmand.net/map).
   2. Відкрийте меню **Обліковий запис**.
-     - **Увійти**: Введіть адресу електронної пошти, що використовується для вашої підписки Pro або Start.
+     - **Увійти**: Введіть адресу електронної пошти, використану для вашої підписки Pro або Start.
      - **Створити обліковий запис**: Використовуйте цю опцію для реєстрації безкоштовного облікового запису OsmAnd Start.
 
 ![Web Account](@site/static/img/web/web_account.png)
@@ -46,16 +46,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Переглядати інформацію про обліковий запис
 - Завантажувати хмарні резервні копії
-- Вийти зі свого облікового запису
+- Вийти з облікового запису
 - Видалити свій обліковий запис
 - Змінити адресу електронної пошти
-- Переглядати свої платежі та покупки
+- Переглянути свої платежі та покупки
 
 ![Web Account](@site/static/img/web/web_account_2.png)
 
 ### Мої дані {#my-data}
 
-Ви можете завантажувати резервні копії, які були створені та синхронізовані з вашого мобільного пристрою через **OsmAnd Cloud**.
+Ви можете завантажити резервні копії, які були створені та синхронізовані з вашого мобільного пристрою через **OsmAnd Cloud**.
 
 - Перейдіть до **Головне меню → Обліковий запис → Мої дані (OsmAnd Cloud) → Завантажити все**.
 
@@ -71,7 +71,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Перейдіть до **Головне меню → Обліковий запис → Платежі та покупки**.
 
-У цьому розділі ви можете переглядати всі покупки та підписки, пов'язані з вашим обліковим записом.
+У цьому розділі ви можете переглянути всі покупки та підписки, пов'язані з вашим обліковим записом.
 
 Для отримання додаткової інформації про використання ваших покупок на різних платформах, прочитайте про [кросплатформний доступ](../purchases/cross.md).
 
@@ -103,12 +103,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **OsmAnd Pro** — це [кросплатформна](../troubleshooting/setup.md#cross-platform) платна підписка.
 - **OsmAnd Start** — це [безкоштовна реєстрація в OsmAnd Cloud](https://osmand.net/blog/start).
 
-Кросплатформна можливість дозволяє використовувати OsmAnd Pro на всіх платформах *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Для цього вам потрібно:
+Кросплатформна можливість дозволяє використовувати OsmAnd Pro на всіх платформах *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Веб](https://www.osmand.net/map))*. Для цього вам потрібно:
 
-1. Підписатися на **OsmAnd Pro**. Детальніше про те, як це зробити для [Android, читайте тут](../purchases/android.md#how-to-buy), а для [iOS — тут](../purchases/ios.md#how-to-buy).
+1. Підписатися на **OsmAnd Pro**. Докладніше про те, як це зробити для [Android тут](../purchases/android.md#how-to-buy), а для [iOS тут](../purchases/ios.md#how-to-buy).
 2. Як створити обліковий запис **OsmAnd Start**, читайте [тут](https://osmand.net/blog/start#how-to-create-an-account).
 3. Зареєструйте свій обліковий запис [Pro або Start](../troubleshooting/setup.md#cross-platform) на сервері OsmAnd у програмі OsmAnd.
-4. Зареєстрована електронна пошта буде вашим логіном для активації OsmAnd Pro на вебплатформі. Спочатку потрібно вибрати пароль для майбутнього входу на вебпортал (будь ласка, використовуйте інструкції на вебпорталі).
+4. Зареєстрована електронна пошта буде вашим логіном для активації OsmAnd Pro на вебплатформі. Спочатку потрібно вибрати пароль для майбутнього входу на вебпортал (будь ласка, скористайтеся інструкцією на вебпорталі).
 
 
 <!--
@@ -153,7 +153,3 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
-
-
-
-> *Останнє оновлення: липень 2024*

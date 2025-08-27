@@ -1,5 +1,5 @@
 ---
-source-hash: 82311f61fc7e617e22d754968f02e6ec8009c51ecb4943a18c23ef0a9d897cfd
+source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
 sidebar_position: 5
 title: Зовнішні датчики
 ---
@@ -47,8 +47,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 3. **Увімкніть Bluetooth** на своєму пристрої, щоб дозволити підключення до **датчиків BLE**.
 4. [Підключіть та налаштуйте](#pair-new-sensor) зовнішні датчики через меню плагіна.
 5. (Необов'язково) [Додайте](#widgets) **віджети зовнішніх датчиків** на екран карти, щоб відображати дані в реальному часі, такі як частота серцевих скорочень, каденс або рівень заряду батареї.
-6. (Необов'язково) Використовуйте [плагін «Запис поїздки»](../plugins/trip-recording.md) для запису даних датчиків у GPX-треки.
-7. (Необов'язково, лише Android) Дотримуйтесь [цих порад](https://www.thisisant.com/consumer/ant-101/ant-in-phones), щоб підключити датчики ANT+, якщо ваш пристрій їх підтримує.
+6. (Необов'язково) Використовуйте [плагін «Запис поїздки»](../plugins/trip-recording.md) для запису даних датчиків у треки GPX.
+7. (Необов'язково, лише для Android) Дотримуйтесь [цих порад](https://www.thisisant.com/consumer/ant-101/ant-in-phones), щоб підключити датчики ANT+, якщо ваш пристрій їх підтримує.
 
 
 ### Підключити новий датчик {#pair-new-sensor}
@@ -67,7 +67,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
+| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
 
 </TabItem>
 
@@ -75,17 +75,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Щоб підключити новий датчик, виконайте такі дії:
 
-1. Переконайтеся, що **Bluetooth увімкнено** на вашому пристрої.
+1. Переконайтеся, що на вашому пристрої **увімкнено Bluetooth**.
 2. Перейдіть до *Меню → Плагіни → Зовнішні датчики → Налаштування*.
-3. Торкніться **Підключити новий датчик**.
-4. OsmAnd шукатиме доступні датчики **Bluetooth LE** або **ANT+** (залежно від вашої платформи).
-5. Торкніться кнопки **+** поруч із датчиком, який потрібно підключити.
+3. Натисніть **Підключити новий датчик**.
+4. OsmAnd скануватиме наявні датчики **Bluetooth LE** або **ANT+** (залежно від вашої платформи).
+5. Натисніть кнопку **+** поруч із датчиком, який потрібно підключити.
 6. Після підключення датчик з'явиться у списку **Підключених пристроїв**.
 
 ***Примітки:***
 
 - На **iOS** підтримуються лише датчики **Bluetooth Low Energy (BLE)** через апаратні обмеження. Датчики ANT+ недоступні.
-- На **Android** можуть підтримуватися як датчики BLE, так і ANT+ залежно від вашого пристрою. Дивіться [посібник із сумісності ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) для отримання додаткової інформації.
+- На **Android** можуть підтримуватися як датчики BLE, так і ANT+ залежно від вашого пристрою. Докладніше див. у [посібнику сумісності ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
 - **Спливаюче сповіщення** з'являтиметься щоразу, коли датчик підключається або відключається.
 - **Датчики потужності велосипеда** доступні лише на Android через ANT+.
 
@@ -118,7 +118,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Кожен підключений зовнішній датчик, перелічений в OsmAnd, має власний екран конфігурації з такими опціями:
+Кожен підключений зовнішній датчик, перелічений в OsmAnd, має власний екран конфігурації з такими параметрами:
 
 - **Підключити / Відключити** – перемикання стану підключення.
 - **Перейменувати** – призначити власну назву датчику.
@@ -127,8 +127,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ***Примітки:***
 
-- На **iOS** ви можете відображати **рівень заряду батареї** підключених датчиків BLE безпосередньо у віджеті карти [віджеті](#widgets). Щоб увімкнути це, перейдіть до: *Меню → Налаштувати екран → Вибрати панель → Додати віджет → Зовнішній датчик → Налаштування → Показати → Рівень заряду батареї*
-- З'являється спливаюче сповіщення, коли рівень заряду батареї підключеного датчика **опускається нижче 15%**.
+- На **iOS** ви можете відображати **рівень заряду батареї** підключених датчиків BLE безпосередньо у [віджеті](#widgets) карти. Щоб увімкнути це, перейдіть до: *Меню → Налаштувати екран → Вибрати панель → Додати віджет → Зовнішній датчик → Налаштування → Показати → Рівень заряду батареї*
+- З'являється спливаюче сповіщення, коли рівень заряду батареї **підключеного датчика падає нижче 15%**.
 
 
 ## Запис поїздки {#trip-recording}
@@ -139,7 +139,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
 
 </TabItem>
 
@@ -147,18 +147,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png) ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Щоб записати дані датчиків за допомогою [плагіна «Запис поїздки»](../plugins/trip-recording.md#recording-settings) під час вашої поїздки:
+Щоб записати дані датчика за допомогою [плагіна «Запис поїздки»](../plugins/trip-recording.md#recording-settings) під час вашої поїздки:
 
 1. Переконайтеся, що **плагін «Зовнішні датчики»** увімкнено.
 2. Перейдіть до *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
 3. Виберіть типи датчиків, які ви хочете записати (наприклад, каденс, частота серцевих скорочень, швидкість).
-4. Почніть запис поїздки. OsmAnd збереже вибрані дані датчиків у GPX-трек.
+4. Почніть запис поїздки. OsmAnd збереже вибрані дані датчика в трек GPX.
 
 ***Примітки:***
 
@@ -177,27 +177,27 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 
 <TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Після запису поїздки за допомогою [плагіна «Запис поїздки»](../plugins/trip-recording.md#recording-settings) ви можете переглядати дані датчиків в інтерфейсі аналізу треку.
+Після запису поїздки за допомогою [плагіна «Запис поїздки»](../plugins/trip-recording.md#recording-settings) ви можете переглянути дані датчика в інтерфейсі аналізу треку.
 
 Щоб проаналізувати дані:
 
 1. Завершіть запис поїздки.
 2. Відкрийте записаний трек з *Мої місця → Треки* або торкніться треку на карті.
-3. Виберіть *Опції → Аналізувати на карті* з контекстного меню треку.
+3. Виберіть *Параметри → Аналізувати на карті* з контекстного меню треку.
 
-Це відобразить графіки для ваших записаних даних: *Частота серцевих скорочень*, *Швидкість*, *Каденс*, *Потужність велосипеда* та *Температура*
+Це відобразить графіки для ваших записаних даних: *Частота серцевих скорочень*, *Швидкість*, *Каденс*, *Потужність велосипеда* та *Температура*.
 
 > *Рівень заряду батареї та Відстань недоступні у функції [Аналізувати на карті](../map/tracks/index.md#analyze-track-on-map).*
 
@@ -210,7 +210,7 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
+![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
 
 </TabItem>
 
@@ -218,7 +218,7 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png) ![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
+![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
 
 </TabItem>
 
@@ -229,17 +229,17 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 Перед початком поїздки:
 
 - Переконайтеся, що плагін «Зовнішні датчики» увімкнено.
-- Відкрийте *Налаштувати екран* та додайте необхідні віджети до відповідної панелі.
+- Відкрийте *Налаштувати екран* і додайте необхідні віджети до відповідної панелі.
 
 Підтримувані типи віджетів:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – відображає частоту серцевих скорочень у реальному часі з підключеного монітора.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*лише Android*) – показує поточну потужність педалювання у ватах.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*лише для Android*) – показує поточну потужність педалювання у ватах.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – показує кількість обертів педалей за хвилину.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – поточна швидкість їзди на велосипеді.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – загальна відстань, виміряна датчиком.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – поточна температура навколишнього середовища.
-7. **Рівень заряду батареї** (*лише iOS*) – відсоток заряду батареї, що залишився в підключеному датчику BLE.
+7. **Рівень заряду батареї** – відсоток заряду батареї, що залишився в підключеному датчику BLE, перемкніть його в **Налаштуваннях датчика**.
 
 
 ### Налаштування віджетів {#widget-settings}
@@ -264,7 +264,7 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 
 </Tabs>
 
-За замовчуванням віджет показує перший підключений датчик цього типу. Якщо ви хочете використовувати певний датчик, торкніться **Джерело даних** і виберіть зі списку підключених датчиків.
+За замовчуванням віджет показує перший підключений датчик цього типу. Якщо ви хочете використовувати певний датчик, натисніть **Джерело даних** і виберіть зі списку підключених датчиків.
 
 На **iOS** ви можете вибрати, яке значення відображати у віджеті:
 
@@ -278,6 +278,4 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 
 - [Взаємодія з картою](../../user/map/interact-with-map.md)
 - [Глобальні налаштування](../../user/personal/global-settings.md)
-- [Векторні карти (Стилі карт)](../../user/map/vector-maps.md)
-
-> *Останнє оновлення: травень 2025*
+- [Векторні карти (стилі карт)](../../user/map/vector-maps.md)
