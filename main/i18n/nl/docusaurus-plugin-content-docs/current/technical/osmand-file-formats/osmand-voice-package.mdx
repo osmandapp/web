@@ -1,0 +1,62 @@
+---
+source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
+sidebar_position: 10
+---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+# Spraakpakketten {#voice-packages}
+
+<IncompleteArticle/>
+
+OsmAnd ondersteunt twee soorten spraakpakketten:
+- **Tekst-naar-spraak** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) beschikbaar in App Stores of vooraf geïnstalleerd
+- **Opgenomen spraakpakketten**, die opgenomen stemmen bevatten.
+
+Als u het spraakpakket dat u nodig hebt niet kunt vinden, volg dan de volgende voorbeelden en maak uw eigen spraakpakket. Voorbeelden - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, Duits pakket [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), Engels pakket [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### Verschil tussen TTS- en opgenomen pakketten {#difference-between-tts-and-recorded-packages}
+
+- een tekst-naar-spraak-engine ondersteunt de uitspraak van straatnamen, referenties en POI-namen
+- alle door tekst-naar-spraak ondersteunde pakketten worden gebundeld en bijgewerkt met een applicatie
+- een opgenomen pakket moet handmatig worden geïnstalleerd en bijgewerkt (hoewel het configuratiebestand kan worden bijgewerkt met een app-update)
+- een opgenomen pakket ondersteunt mogelijk niet alle correcte vormen, en de ondersteuning is beperkt
+- een opgenomen pakket vereist geen installatie van een eigen TTS-engine
+
+### Pakketstructuur {#package-structure}
+
+Een spraakpakket wordt meestal gedistribueerd als .voice.zip, waarbij de zip één map bevat met [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (hoofd **configuratie**bestand), en geluidsbestanden indien aanwezig.
+
+De configuratiebestanden zijn geschreven in JavaScript. Alle configuratiebestanden zijn standaard TTS-pakketten, zelfs als er nog geen TTS aanwezig is om de taal te ondersteunen. En later wordt de configuratie uitgebreid door 'woordenboekzinnen' te koppelen aan 'opgenomen bestandsnamen'.
+
+```
+function populateDictionary(tts) {
+	// ROUTE BEREKEND
+	dictionary["route_is1"] = tts ? "De berekende route is" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route opnieuw berekend" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "de afstand bedraagt" : "distance.ogg";
+
+	// LINKS/RECHTS
+	dictionary["prepare"] = tts ? "Binnenkort " : "prepare.ogg";  // Binnenkort klinkt beter dan Voorbereiden op
+	dictionary["after"] = tts ? "na" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links afslaan" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### Aangepast pakket genereren {#generation-custom-package}
+
+Controleer de [projectbronnen](https://github.com/osmandapp/OsmAnd-resources/) en gebruik dezelfde mapstructuur als het [Duitse pakket](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - maak gewoon een kopie. Zodra dit is gebeurd, kunt u het [generatiescript](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) wijzigen en uitvoeren en de vereiste argumenten opgeven. Hulp is te vinden in het script.
+
+### Spraakpakket testen (Android) {#testing-voice-package-android}
+
+Voor het testen kunt u gebruiken:
+- navigatie;
+- navigatiesimulatie;
+- of een handige versie van de [OsmAnd ontwikkelingsplugin](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts), die verschillende spraakcommando's simuleert voor het testen.

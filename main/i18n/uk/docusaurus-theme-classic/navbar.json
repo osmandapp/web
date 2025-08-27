@@ -15,9 +15,9 @@
     "message": "Blog",
     "description": "Navbar item with label Blog"
   },
-  "item.label.💳 Purchases": {
-    "message": "💳 Purchases",
-    "description": "Navbar item with label 💳 Purchases"
+  "item.label.💳 Pricing": {
+    "message": "💳 Pricing",
+    "description": "Navbar item with label 💳 Pricing"
   },
   "item.label.🌍 Map": {
     "message": "🌍 Map",
@@ -70,5 +70,9 @@
   "localeDropdown.label.ar": {
     "message": "العربية",
     "description": "Locale dropdown label for Arabic"
+  },
+  "localeDropdown.label.nl": {
+    "message": "Dutch",
+    "description": "Locale dropdown label for Dutch"
   }
 }

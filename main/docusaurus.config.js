@@ -39,7 +39,7 @@ async function createConfig(){
     staticDirectories: ['static', 'legacy-image-static'],
     i18n: {
       defaultLocale: 'en',
-      locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'pl', 'pt', 'tr', 'uk'],
+      locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
       localeConfigs: {
         en: { label: 'English' },
         ar: { label: 'العربية', direction: 'rtl', htmlLang: 'ar'},
@@ -47,6 +47,7 @@ async function createConfig(){
         es: { label: 'Español' },
         fr: { label: 'Français' },
         it: { label: 'Italiano' },
+        nl: { label: 'Nederlands' },
         pl: { label: 'Polski' },
         pt: { label: 'Português' },
         tr: { label: 'Türkçe' },
