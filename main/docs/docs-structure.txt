@@ -12,75 +12,71 @@
             * `## Overview`
             * `## Gestures`
             * `## My Location and Zoom`
-                * `#### My Location Appearance`
+                * `### My Location Appearance`
             * `## Map Magnifier`
             * `## Map Orientation Modes`
             * `## Compass`
-                * `#### Map Orientation Modes`
-                * `#### Compass Tapping Behavior`
-                * `#### Display Options`
             * `## Rotate Map by Bearing`
             * `## Map Tilt and Horizon`
             * `## Touch Screen Lock`
             * `## Settings`
-                * `#### Extra Compass Settings`
-                * `#### No Animations`
-                * `#### Animate Own Position`
+                * `### Extra Compass Settings`
+                * `### No Animations`
+                * `### Animate Own Position`
             * `## External Input Devices`
-                * `#### Preconfigured Input Device`
-                * `#### Custom Input Device Type`
-                * `#### Add Action & Key Asssigments`
-                * `#### Delete Key assignment`
+                * `### Preconfigured Input Device`
+                * `### Custom Input Device Type`
+                * `### Add Action & Key Asssigments`
+                * `### Delete Key assignment`
+            * `## Related Articles`
         * `map-context-menu.md`
             * `## Overview`
-                * `#### Select an Object (Single Tap)`
-                * `#### Select Any Point (Long Tap)`
-                * `#### Select Route`
-                * `#### Hide Context Menu`
+                * `### Select an Object (Single Tap)`
+                * `### Select Any Point (Long Tap)`
+                * `### Select Route`
+                * `### Hide Context Menu`
             * `## Details`
-                * `#### Object Info`
-                * `#### Alternative Names`
-                * `#### Polygon Information`
-                * `#### Coordinates`
-                * `#### Nearby POIs / Wikipedia`
-                * `#### Public Transport Routes`
-                * `#### Favorites / Track Points from the Group`
-                * `#### Linear Object`
-                * `#### Climbing Area and Crag Details`
-                * `#### Ski Slopes, MTB Routes, and Dirt Bike Trails`
-                * `#### Article Description`
-                * `#### OpenStreetMap Link`
-                * `#### Online Photos`
-                    * `###### Actions With Photos`
-                    * `###### Gallery Menu`
-                    * `###### Street-level Imagery`
-                * `#### * Audio/Video Note`
+                * `### Object Info`
+                * `### Alternative Names`
+                * `### Within area`
+                * `### Coordinates`
+                * `### Nearby POIs / Wikipedia`
+                * `### Public Transport Routes`
+                * `### Favorites / Track Points from the Group`
+                * `### Climbing Area and Crag Details`
+                * `### Ski Slopes, MTB Routes, and Dirt Bike Trails`
+                * `### Article Description`
+                * `### OpenStreetMap Link`
+                * `### Online Photos`
+                * `### Street-level Imagery`
+                * `### * Audio/Video Note`
             * `## Actions`
-                * `#### Add / Edit Favorite`
-                * `#### Add / Edit Marker`
-                * `#### Share`
-                * `#### Directions To / From`
-                * `#### Search Nearby`
-                * `#### Avoid Road`
-                * `#### Change Object Position`
-                * `#### Plan a Route`
-                * `#### Update / Download Online Maps`
-                * `#### Update / Download Vector Maps`
-                * `#### * Add / Delete Parking point`
-                * `#### * Add / Edit Track waypoint`
-                * `#### * Create / Modify POI`
-                * `#### * Open OSM Note`
-                * `#### * Comment / Close OSM Note`
-                * `#### * Upload POI / OSM Note`
-                * `#### * Record AV Note`
+                * `### Add / Edit Favorite`
+                * `### Add / Edit Marker`
+                * `### Share`
+                * `### Directions To / From`
+                * `### Search Nearby`
+                * `### Avoid Road`
+                * `### Change Object Position`
+                * `### Plan a Route`
+                * `### Update / Download Online Maps`
+                * `### Update / Download Vector Maps`
+                * `### * Add / Delete Parking point`
+                * `### * Add / Edit Track waypoint`
+                * `### * Create / Modify POI`
+                * `### * Open OSM Note`
+                * `### * Comment / Close OSM Note`
+                * `### * Upload POI / OSM Note`
+                * `### * Record AV Note`
             * `## Customize`
+            * `## Related Articles`
         * `point-layers-on-map.md`
             * `## Overview`
             * `## Favorites`
             * `## Favorite and POI Names`
             * `## Points of Interest (POIs)`
-                * `#### POI Types`
-                * `#### Map Style POI`
+                * `### POI Types`
+                * `### Map Style POI`
             * `## Markers`
             * `## Track Waypoints`
             * `## Search Results (POI)`
@@ -91,78 +87,84 @@
             * `## * OSM Edit Points`
             * `## * OSM Notes`
             * `## Points Along the Route`
+            * `## Related Articles`
         * `popular_places.md`
             * `## Overview`
-            * `## How to Use`
-                * `#### Popular Places (Wikipedia) Menu`
-                * `#### Explore Mode by Search`
-            * `## Online Photos Menu`
-                * `#### Actions With Photos`
-                * `#### Gallery Menu`
+                * `### Data Sources`
+                * `### How to Use`
+            * `## Explore in Search`
+            * `## Enable Layer`
+                * `### Layer Options`
+            * `## Online Photos`
+                * `### Actions`
+                * `### Gallery`
         * `public-transport.md`
             * `## Overview`
             * `## Transport Stops (Layer)`
             * `## Transport Routes (Context Menu)`
-                * `#### Transport Stop Details`
-                * `#### Routes`
-                * `#### Browse Route`
+                * `### Transport Stop Details`
+                * `### Routes`
+                * `### Browse Route`
+            * `## Related Articles`
         * `raster-maps.md`
             * `## Overview`
             * `## Use Cases`
             * `## Raster Maps`
-                * `#### Comparison to default vector maps`
+                * `### Comparison to default vector maps`
             * `## How to Use Raster Maps`
             * `## Select Raster Maps`
-                * `#### Main`
-                * `#### Overlay Layer`
-                * `#### Underlay Layer`
+                * `### Main`
+                * `### Overlay Layer`
+                * `### Underlay Layer`
             * `## Hillshade / Slope`
-                * `#### Hillshade and 3D Relief`
-                * `#### Configure Display Options`
+                * `### Hillshade and 3D Relief`
+                * `### Configure Display Options`
             * `## 3D Relief`
             * `## Prepare/Copy Raster Maps to Device`
-                * `#### Add New Online Raster Map Source`
-                * `#### Magic URL to Install Map Source`
+                * `### Add New Online Raster Map Source`
+                * `### Magic URL to Install Map Source`
             * `## Manage Raster Maps`
-                * `#### Clear Raster Map Cache`
-                * `#### Download / Update Tiles`
-                * `#### Change Raster Map Parameters`
+                * `### Clear Raster Map Cache`
+                * `### Download / Update Tiles`
+                * `### Change Raster Map Parameters`
+            * `## Related Articles`
         * `routes.md`
             * `## Overview`
             * `## Type of Routes`
-                * `#### Cycle routes`
-                * `#### Mountain bike routes`
-                * `#### Hiking / Walking routes`
-                * `#### Dirt Bike Trails`
-                * `#### Climbing Routes`
-                * `#### Hiking Trails Difficulty Grade`
-                * `#### Ski routes`
-                * `#### Horse routes`
-                * `#### Whitewater sports`
-                * `#### Running routes`
-                * `#### Fitness trails`
-                * `#### Travel routes`
+                * `### Cycle routes`
+                * `### Mountain bike routes`
+                * `### Hiking / Walking routes`
+                * `### Dirt Bike Trails`
+                * `### Climbing Routes`
+                * `### Hiking Trails Difficulty Grade`
+                * `### Ski routes`
+                * `### Horse routes`
+                * `### Whitewater sports`
+                * `### Running routes`
+                * `### Fitness trails`
+                * `### Travel routes`
             * `## Display Routes on the Map`
             * `## Actions with Routes`
-                * `#### Route Info and Elevation`
-                * `#### Save as a Track`
-                * `#### Start Navigation`
-                * `#### Quick Actions`
+                * `### Route Info and Elevation`
+                * `### Save as a Track`
+                * `### Start Navigation`
+                * `### Quick Actions`
             * `## Routes Search`
+            * `## Related Articles`
         * `vector-maps.md`
             * `## Overview`
             * `## Use Cases`
             * `## Default Map Styles`
-                * `#### OsmAnd`
-                * `#### Touring View`
-                * `#### UniRS and LightRS`
-                * `#### Nautical`
-                * `#### Winter and Ski`
-                * `#### Topo`
-                * `#### OSM-carto`
-                * `#### Desert`
-                * `#### Offroad`
-                * `#### Snowmobile`
+                * `### OsmAnd`
+                * `### Touring View`
+                * `### UniRS and LightRS`
+                * `### Nautical`
+                * `### Winter and Ski`
+                * `### Topo`
+                * `### OSM-carto`
+                * `### Desert`
+                * `### Offroad`
+                * `### Snowmobile`
             * `## Map Legend`
             * `## Map Fonts (Android)`
             * `## * Contour Lines`
@@ -170,64 +172,70 @@
             * `## Show Borders`
             * `## Coordinates Grid`
             * `## Configure Map Style`
-                * `#### Map Mode`
-                * `#### Details`
-                * `#### Routes`
-                * `#### Transport`
-                * `#### Hide`
-                * `#### Road Style`
-                * `#### Text Size`
-                * `#### Map Magnifier`
-                * `#### Map Language`
+                * `### Map Mode`
+                * `### Details`
+                * `### Routes`
+                * `### Transport`
+                * `### Hide`
+                * `### Road Style`
+                * `### Text Size`
+                * `### Map Magnifier`
+                * `### Map Language`
             * `## Custom Map Style`
+            * `## Related Articles`
         * **tracks/**
             * `index.md`
-                * `## [Manage Tracks](./manage-tracks.md)`
-                * `## [Smart Folder(filter)](./smart-folder.md)`
-                * `## Read more`
-                    * `#### [Types of tracks](../../map/tracks/index.md#types-of-tracks)`
-                    * `#### [Display tracks](../../map/tracks/index.md#display-tracks)`
-                    * `#### [Navigate by track](../../navigation/setup/gpx-navigation.md)`
+                * `## Overview`
+                * `## Types of Tracks`
+                * `## Display Tracks on the Map`
+                    * `### Configure Map`
+                    * `### My Places`
+                    * `### Track Context Menu`
+                * `## Analyze Track on Map`
+                    * `### Follow My Location`
+                * `## Related Articles`
             * `appearance.md`
                 * `## Overview`
                 * `## Access to the menu`
                 * `## Track Appearance Settings`
-                    * `#### Color`
-                    * `#### Width`
-                    * `#### Split Interval`
-                    * `#### Direction Arrows`
-                    * `#### Start and Finish Icons`
-                    * `#### Join Gaps`
-                    * `#### Reset to Original`
+                    * `### Color`
+                    * `### Width`
+                    * `### Split Interval`
+                    * `### Direction Arrows`
+                    * `### Start and Finish Icons`
+                    * `### Join Gaps`
+                    * `### Reset to Original`
                 * `## 3D Track`
-                    * `#### 3D Track Settings`
-                    * `#### Use Cases`
+                    * `### 3D Track Settings`
+                    * `### Use Cases`
                 * `## Change Appearance for Multiple Tracks`
                 * `## Track Colors in GPX Files`
+                * `## Related Articles`
             * `track-context-menu.md`
                 * `## Overview`
                 * `## Track Overview`
-                    * `#### Info Panel`
-                    * `#### Track Actions`
-                    * `#### Options`
-                    * `#### Description and Info`
-                    * `#### Track Information Activity`
+                    * `### Info Panel`
+                    * `### Track Actions`
+                    * `### Options`
+                    * `### Description and Info`
+                    * `### Track Information Activity`
                 * `## Altitude / Speed Graphs`
-                    * `#### Overview Information`
-                    * `#### Speed`
-                    * `#### Altitude`
-                    * `#### Calculate Missing Elevation`
+                    * `### Overview Information`
+                    * `### Speed`
+                    * `### Altitude`
+                    * `### Calculate Missing Elevation`
                 * `## Points / Waypoints`
-                    * `#### Add Waypoint to a Track`
-                        * `###### Create Waypoint`
-                    * `#### Actions with Groups`
-                    * `#### Waypoint Groups`
-                    * `#### Display Custom GPX Tags`
+                    * `### Add Waypoint to a Track`
+                    * `### Create Waypoint`
+                    * `### Actions with Groups`
+                    * `### Waypoint Groups`
+                    * `### Display Custom GPX Tags`
                 * `## Split Interval`
                 * `## GPS Filter`
-                    * `#### Filter Menu`
-                    * `#### Statistics`
-                    * `#### Actions`
+                    * `### Filter Menu`
+                    * `### Statistics`
+                    * `### Actions`
+                * `## Related Articles`
     * **map-legend/**
         * `index.md` *(Lists sections)*
         * `nautical-map.md`
