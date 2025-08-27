@@ -235,8 +235,8 @@ export default function MainMenu({
     }, [ctx.openFavGroups, ctx.selectedFavoriteObj]);
 
     useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0);
-    }, [ctx.openGroups]);
+        setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj);
+    }, [ctx.openGroups, ctx.selectedCloudTrackObj]);
 
     function selectMenuByUrl() {
         const item = items.find((item) => item.url === location.pathname);
@@ -370,6 +370,21 @@ export default function MainMenu({
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             if (ctx.selectedFavoriteObj) {
                 openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+            }
+        }
+
+        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctx.selectedCloudTrackObj) {
+                processDisplayTrack({
+                    visible: true,
+                    showOnMap: true,
+                    showInfo: true,
+                    zoomToTrack: true,
+                    file: ctx.selectedCloudTrackObj,
+                    ctx,
+                    fileStorage: ctx.gpxFiles,
+                    setFileStorage: ctx.setGpxFiles,
+                }).then();
             }
         }
 

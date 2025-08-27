@@ -457,6 +457,7 @@ export const AppContextProvider = (props) => {
     });
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
+    const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
 
     useEffect(() => {
         const currentLanguage = i18n.language;
@@ -837,7 +838,10 @@ export const AppContextProvider = (props) => {
                 setOpenFavGroups,
                 recentObjs,
                 setRecentObjs,
-                selectedFavoriteObj, setSelectedFavoriteObj,
+                selectedFavoriteObj,
+                setSelectedFavoriteObj,
+                selectedCloudTrackObj,
+                setSelectedCloudTrackObj,
             }}
         >
             {props.children}
