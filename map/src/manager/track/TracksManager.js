@@ -478,7 +478,7 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
     const tracks = [];
 
     files.forEach((file) => {
-        const name = isSmartf ? file.details.shareFileName : file.name;
+        const name = isSmartf && file.details?.shareFileName ? file.details.shareFileName : file.name;
         const parts = name.split('/');
         const isFile = parts.length === 1;
 
@@ -1373,6 +1373,7 @@ export async function openTrackOnMap({
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
             }
         }
+        console.log(showOnMap);
         newGpxFiles[file.name].showOnMap = showOnMap;
         newGpxFiles[file.name].zoomToTrack = zoomToTrack;
         if (!showOnMap) {

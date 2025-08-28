@@ -139,7 +139,7 @@ export default function Login({ dialog = false }) {
                         type="email"
                         fullWidth
                         variant="filled"
-                        helperText={emailError ? emailError : EMPTY_INPUT}
+                        helperText={emailError || EMPTY_INPUT}
                         value={userEmail}
                     />
                     {emailError !== EMPTY_INPUT && (
@@ -161,9 +161,9 @@ export default function Login({ dialog = false }) {
                         type="password"
                         fullWidth
                         variant="filled"
-                        helperText={passwordError ? passwordError : EMPTY_INPUT}
+                        helperText={passwordError || EMPTY_INPUT}
                         error={passwordError.length > 0}
-                        value={userPassword ? userPassword : EMPTY_INPUT}
+                        value={userPassword || EMPTY_INPUT}
                     />
                 </Box>
                 <Typography className={styles.loginText}>

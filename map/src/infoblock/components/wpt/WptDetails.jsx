@@ -456,7 +456,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             }
             isDetails ? returnToSearch() : closeHeader({ ctx });
         } else if (wpt?.type?.isWpt) {
-            isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
+            isDetails || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt?.type?.isFav) {
             ctx.setSelectedFavoriteObj(null);
             isDetails || ctx.openFavGroups?.length > 0 ? closeOnlyFavDetails() : closeHeader({ ctx });

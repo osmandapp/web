@@ -29,7 +29,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
     const sharedFile = smartf?.type === SHARE_TYPE;
 
     useEffect(() => {
-        if (ctx.favorites.mapObjs[group.id]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
+        if (ctx.favorites.mapObjs?.[group.id]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
             const updatedFile = {
                 ...ctx.selectedGpxFile.file,
                 markers: ctx.favorites.mapObjs[group.id].markers,

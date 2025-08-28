@@ -162,25 +162,52 @@ export async function clickBy(by, { optional = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
-            const classes = await element.getAttribute('class');
+            // pick visible candidate if the first is not visible
+            let target = element;
+            try {
+                const shown = await target.isDisplayed();
+                const { width = 0, height = 0 } = (await target.getRect?.()) || {};
+                if (!shown || width === 0 || height === 0) {
+                    const candidates = await driver.findElements(by);
+                    for (const c of candidates) {
+                        const vis = await c.isDisplayed().catch(() => false);
+                        const r = (await c.getRect?.().catch(() => ({}))) || {};
+                        if (vis && (r.width ?? 0) > 0 && (r.height ?? 0) > 0) {
+                            target = c;
+                            break;
+                        }
+                    }
+                }
+            } catch (_) {
+                // ignore visibility probing errors; fallback to original element
+            }
+
+            const classes = await target.getAttribute('class');
 
             await classDelay(classes, delaysBeforeClick); // class-based delay
-            await transitionDelay(element); // wait for CSS transition finish <Collapse>
+            await transitionDelay(target); // wait for CSS transition finish <Collapse>
 
             try {
-                await element.click(); // the best way to click
+                // center scroll to reduce "not interactable" (interactable → интерактивный)
+                if (driver.executeScript) {
+                    await driver.executeScript(
+                        'arguments[0].scrollIntoView({block:"center", inline:"center"})',
+                        target
+                    );
+                }
+                await target.click(); // the best way to click
             } catch (e) {
                 if (isNotInteractableError(e)) {
                     // worse way, used for non-interactive elements only
                     console.log('clickBy', by.value || by, 'retry with move');
-                    await driver.actions().move({ origin: element }).click().perform();
+                    await driver.actions().move({ origin: target }).click().perform();
                 } else {
                     throw e;
                 }
             }
 
             await classDelay(classes, delaysAfterClick);
-            return element;
+            return target;
         }
         return true; // enclose needs truthy
     };
@@ -429,7 +456,7 @@ async function getMapCoords(lat, lon) {
     const container = await driver.findElement(By.className('leaflet-container'));
 
     const [px, py] = await driver.executeScript(
-        'const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
+        'const p = window.__leafletMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
             'return [Math.round(p.x), Math.round(p.y)];',
         lat,
         lon
@@ -517,7 +544,7 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait();
         const layersInfo = await driver.executeScript(`
-      return Object.values(window.seleniumTestsMap._layers)
+      return Object.values(window.__leafletMap._layers)
         .filter(layer => typeof layer.getLatLng === 'function')
         .map(layer => {
           const info = {};
@@ -577,6 +604,6 @@ export async function zoomMap(direction) {
  * @param {number} lon - longitude
  */
 export async function setMapCenter(lat, lon) {
-    await driver.executeScript('window.seleniumTestsMap.setView([arguments[0], arguments[1]]);', lat, lon);
+    await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
     await actionIdleWait();
 }

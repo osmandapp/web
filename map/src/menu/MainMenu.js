@@ -29,7 +29,7 @@ import AppContext, {
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './navigate/RouteMenu';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -70,6 +70,7 @@ import {
     INFO_MENU_URL,
     SHARE_MENU_URL,
     LOGIN_URL,
+    DELETE_ACCOUNT_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -114,6 +115,11 @@ export default function MainMenu({
 
     const { t } = useTranslation();
     const location = useLocation();
+
+    const outlet = useOutlet();
+    const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
+    const showShareOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + SHARE_FILE_MAIN_URL + '*' }, location.pathname);
+
     const [, height] = useWindowSize();
     const { filename } = useParams();
 
@@ -738,6 +744,7 @@ export default function MainMenu({
                         mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
+                        overflow: 'hidden',
                     },
                 }}
                 sx={{ left: 'auto !important' }}
@@ -745,25 +752,26 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
+                {(showDeleteOutlet || showShareOutlet) && outlet}
                 {!isOpenSubMenu() && (
                     <>
-                        {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen ? <Outlet /> : null}
+                        {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen && outlet ? outlet : null}
                         <div
                             style={{
                                 display: isAccountOpen || ctx.openProFeatures ? 'none' : 'block',
                             }}
                         >
-                            {items.map(
-                                (item) =>
-                                    item.show && (
-                                        <div
-                                            key={item.type}
-                                            style={{ display: selectedType === item.type ? 'block' : 'none' }}
-                                        >
-                                            {item.component}
-                                        </div>
-                                    )
-                            )}
+                            {items.map((item) => {
+                                if (!item.show) return null;
+                                const display = selectedType === item.type ? 'block' : 'none';
+                                const id = `se-menu-component-${item.type}-${display}`;
+
+                                return (
+                                    <div id={id} key={item.type} style={{ display }}>
+                                        {item.component}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </>
                 )}

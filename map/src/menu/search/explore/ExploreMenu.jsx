@@ -1,5 +1,5 @@
 import headerStyles from '../../trackfavmenu.module.css';
-import { AppBar, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from '../../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
@@ -51,7 +51,7 @@ export default function ExploreMenu() {
     }, [ctx.wikiPlaces]);
 
     return (
-        <>
+        <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
@@ -84,24 +84,26 @@ export default function ExploreMenu() {
                 </Toolbar>
                 {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
             </AppBar>
-            {zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
-            {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
-                <Loading id={'se-loading-page'} />
-            ) : (
-                <>
-                    {ctx.wikiPlaces?.length === 0 ? (
-                        <Empty title={'Places not found'} />
-                    ) : (
-                        <WikiPlacesList size={MAX_PLACES} />
-                    )}
-                </>
-            )}
+            <Box sx={{ flex: 1, overflowY: 'auto' }}>
+                {zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
+                {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
+                    <Loading id={'se-loading-page'} />
+                ) : (
+                    <>
+                        {ctx.wikiPlaces?.length === 0 ? (
+                            <Empty title={'Places not found'} />
+                        ) : (
+                            <WikiPlacesList size={MAX_PLACES} />
+                        )}
+                    </>
+                )}
+            </Box>
             <ActionsMenu
                 open={openFiltersDialog}
                 setOpen={setOpenFiltersDialog}
                 anchorEl={anchorEl}
                 actions={<WikiPlacesFilter />}
             />
-        </>
+        </Box>
     );
 }
