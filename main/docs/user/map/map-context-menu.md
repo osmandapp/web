@@ -96,7 +96,7 @@ Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track contex
 
 ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
 
-You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Check [Routes article](../routes.md#actions-with-routes) for more information.
+You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Check [Routes article](../map/routes.md#actions-with-routes) for more information.
 
 
 
