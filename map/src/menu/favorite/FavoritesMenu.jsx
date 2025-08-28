@@ -26,8 +26,7 @@ export default function FavoritesMenu() {
     const [sortGroups, setSortGroups] = useState([]);
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
-    console.log('sharedFiles', sharedFiles);
-    console.log(ctx.favorites?.groups);
+
     // get list of favorites groups
     const groupItems = useMemo(() => {
         const items = [];
