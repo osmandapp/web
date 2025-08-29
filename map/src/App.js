@@ -1,4 +1,4 @@
-import { createContext, React, useContext, useState } from 'react';
+import { createContext, React, useCallback, useContext, useState } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
@@ -59,13 +59,23 @@ export const useResetApp = () => useContext(ResetAppContext);
 
 const App = () => {
     const [resetKey, setResetKey] = useState(0);
-    const resetApp = () => {
+
+    const resetApp = useCallback(() => {
+        clearMapInstances();
+        setResetKey((k) => k + 1);
+    }, []);
+
+    // clear leaflet map and hash instances to avoid errors after app reset
+    function clearMapInstances() {
         try {
             const map = window.__leafletMap;
             const hash = window.__leafletHash;
 
+            // remove event listeners
             if (map && hash?.onMapMove) map.off('moveend', hash.onMapMove, hash);
             if (hash?.onHashChange) window.removeEventListener('hashchange', hash.onHashChange, false);
+
+            // disable hash update function
             if (hash) hash.update = () => {};
 
             window.__leafletMap = null;
@@ -73,9 +83,7 @@ const App = () => {
         } catch (e) {
             console.warn('dispose leaflet-hash failed', e);
         }
-
-        setResetKey((k) => k + 1);
-    };
+    }
 
     return (
         <ResetAppContext.Provider value={resetApp}>
