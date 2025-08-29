@@ -7,20 +7,20 @@ import LegendItem from "../LegendItem";
 export default function Render() {
 
     return LegendItem({itemsMap: {
-        'Hotel' : 'accomodation/accomodation_tourism_hotel',
-        'Motel' : 'accomodation/accomodation_tourism_motel',
-        'Hostel' : 'accomodation/accomodation_tourism_hostel',
-        'Apartment' : 'accomodation/accomodation_tourism_apartment',
-        'Guest house' : 'accomodation/accomodation_tourism_guest_house',
-        'Caravan site' : 'accomodation/accomodation_tourism_caravan_site',
-        'Alpine hut' : 'accomodation/accomodation_tourism_alpine_hut',
-        'Wilderness hut' : 'accomodation/accomodation_tourism_wilderness_hut',
-        'Cabin' : 'accomodation/accomodation_tourism_cabin',
-        'Chalet' : 'accomodation/accomodation_tourism_chalet',
-        'Camp site' : 'accomodation/accomodation_tourism_camp_site',
-        'Camp pitch' : 'accomodation/accomodation_tourism_camp_pitch',
-        'Shelter' : 'accomodation/accomodation_amenity_shelter',
-        'Refugee site' : 'accomodation/accomodation_amenity_refugee_site',
+        'poi_hotel' : 'accomodation/accomodation_tourism_hotel',
+        'poi_motel' : 'accomodation/accomodation_tourism_motel',
+        'poi_hostel' : 'accomodation/accomodation_tourism_hostel',
+        'poi_apartment' : 'accomodation/accomodation_tourism_apartment',
+        'poi_guest_house' : 'accomodation/accomodation_tourism_guest_house',
+        'poi_caravan_site' : 'accomodation/accomodation_tourism_caravan_site',
+        'poi_alpine_hut' : 'accomodation/accomodation_tourism_alpine_hut',
+        'poi_wilderness_hut' : 'accomodation/accomodation_tourism_wilderness_hut',
+        'poi_cabin' : 'accomodation/accomodation_tourism_cabin',
+        'poi_chalet' : 'accomodation/accomodation_tourism_chalet',
+        'poi_camp_site' : 'accomodation/accomodation_tourism_camp_site',
+        'poi_camp_pitch' : 'accomodation/accomodation_tourism_camp_pitch',
+        'poi_shelter' : 'accomodation/accomodation_amenity_shelter',
+        'poi_refugee_site' : 'accomodation/accomodation_amenity_refugee_site',
     }});
 
 }

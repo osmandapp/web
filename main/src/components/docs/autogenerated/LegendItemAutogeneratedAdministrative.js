@@ -7,10 +7,10 @@ import LegendItem from "../LegendItem";
 export default function Render() {
 
     return LegendItem({itemsMap: {
-        'Embassy' : 'administrative/administrative_office_diplomatic',
-        'Townhall' : 'administrative/administrative_amenity_townhall',
-        'Courthouse' : 'administrative/administrative_amenity_courthouse',
-        'Prison' : 'administrative/administrative_amenity_prison',
+        'poi_embassy' : 'administrative/administrative_office_diplomatic',
+        'poi_townhall' : 'administrative/administrative_amenity_townhall',
+        'poi_courthouse' : 'administrative/administrative_amenity_courthouse',
+        'poi_prison' : 'administrative/administrative_amenity_prison',
     }});
 
 }

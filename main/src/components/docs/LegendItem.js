@@ -3,6 +3,7 @@ import styles from './legenditem.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Translate from '@site/src/components/Translate.js';
 
 export default function LegendItem({ itemsMap }) {
   // {'Access Private' : 'access/access_PrivateColor' }
@@ -33,7 +34,7 @@ export default function LegendItem({ itemsMap }) {
               <tr>
                 {itemArray.map(([title, imageName]) => (
                   <td key={`title-${imageName}`} className='text--center'>
-                    {title}
+                    {title.startsWith('poi_') ? <Translate android="yes" id={title} /> : title}
                   </td>
                 ))}
               </tr>
