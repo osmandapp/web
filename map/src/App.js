@@ -83,6 +83,7 @@ const App = () => {
                 <AppContextProvider key={`app-${resetKey}`}>
                     <BrowserRouter
                         key={`router-${resetKey}`}
+                        // Enable React Router v7 features: concurrent transitions and correct relative splat path resolution
                         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
                     >
                         <AppServices />

@@ -69,7 +69,7 @@ export default function GroupHeader({
         }
     }
 
-    function getGroupLength() {
+    function getGroupsCount() {
         if (type === TRACKS_TYPE) {
             return ctx.openGroups?.length || 0;
         } else if (type === FAVORITES_TYPE) {
@@ -109,7 +109,7 @@ export default function GroupHeader({
         <>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    {getGroupLength() > 0 ? (
+                    {getGroupsCount() > 0 ? (
                         <IconButton
                             variant="contained"
                             id="se-back-folder-button"

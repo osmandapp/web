@@ -316,7 +316,7 @@ const FavoriteLayer = () => {
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
             ctx.selectedGpxFile.id = e.sourceTarget.options.groupId;
-            ctx.selectedGpxFile.key = `${e.sourceTarget.options.groupId}:${ctx.selectedGpxFile.markerCurrent.name}`;
+            ctx.selectedGpxFile.key = `${ctx.selectedGpxFile.id}:${ctx.selectedGpxFile.name}`;
 
             openFavoriteObj(ctx, ctx.selectedGpxFile);
         },

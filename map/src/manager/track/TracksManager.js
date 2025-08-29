@@ -1373,7 +1373,6 @@ export async function openTrackOnMap({
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
             }
         }
-        console.log(showOnMap);
         newGpxFiles[file.name].showOnMap = showOnMap;
         newGpxFiles[file.name].zoomToTrack = zoomToTrack;
         if (!showOnMap) {
