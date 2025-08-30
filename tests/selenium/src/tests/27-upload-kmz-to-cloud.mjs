@@ -35,7 +35,7 @@ export default async function test() {
 
     await waitBy(By.id('se-import-first-track'));
 
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-visible'));
     await waitBy(By.id(`se-menu-cloud-${UPLOAD_TRACK}`));
     await actionDeleteFolder(UPLOAD_TRACK);
 

@@ -33,7 +33,7 @@ export default async function test() {
 
     await waitBy(By.className('leaflet-marker-icon'));
 
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-visible'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
     await actionDeleteFavGroup(shortFavGroupName);

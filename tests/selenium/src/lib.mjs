@@ -162,52 +162,25 @@ export async function clickBy(by, { optional = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
-            // pick visible candidate if the first is not visible
-            let target = element;
-            try {
-                const shown = await target.isDisplayed();
-                const { width = 0, height = 0 } = (await target.getRect?.()) || {};
-                if (!shown || width === 0 || height === 0) {
-                    const candidates = await driver.findElements(by);
-                    for (const c of candidates) {
-                        const vis = await c.isDisplayed().catch(() => false);
-                        const r = (await c.getRect?.().catch(() => ({}))) || {};
-                        if (vis && (r.width ?? 0) > 0 && (r.height ?? 0) > 0) {
-                            target = c;
-                            break;
-                        }
-                    }
-                }
-            } catch (_) {
-                // ignore visibility probing errors; fallback to original element
-            }
-
-            const classes = await target.getAttribute('class');
+            const classes = await element.getAttribute('class');
 
             await classDelay(classes, delaysBeforeClick); // class-based delay
-            await transitionDelay(target); // wait for CSS transition finish <Collapse>
+            await transitionDelay(element); // wait for CSS transition finish <Collapse>
 
             try {
-                // center scroll to reduce "not interactable" (interactable → интерактивный)
-                if (driver.executeScript) {
-                    await driver.executeScript(
-                        'arguments[0].scrollIntoView({block:"center", inline:"center"})',
-                        target
-                    );
-                }
-                await target.click(); // the best way to click
+                await element.click(); // the best way to click
             } catch (e) {
                 if (isNotInteractableError(e)) {
                     // worse way, used for non-interactive elements only
                     console.log('clickBy', by.value || by, 'retry with move');
-                    await driver.actions().move({ origin: target }).click().perform();
+                    await driver.actions().move({ origin: element }).click().perform();
                 } else {
                     throw e;
                 }
             }
 
             await classDelay(classes, delaysAfterClick);
-            return target;
+            return element;
         }
         return true; // enclose needs truthy
     };

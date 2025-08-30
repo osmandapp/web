@@ -67,7 +67,7 @@ export default async function test() {
     await clickBy(By.id('se-delete-fav-dialog-submit'));
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}${suffix}`));
 
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-visible'));
 
     await actionDeleteFavGroup(shortFavGroupName);
     await waitBy(By.id('se-empty-page'));

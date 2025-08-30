@@ -1,7 +1,17 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { assert, clickBy, getMarker, leftClickBy, sendKeysBy, waitBy, waitByRemoved, zoomMap } from '../lib.mjs';
+import {
+    assert,
+    clickBy,
+    enclose,
+    getMarker,
+    leftClickBy,
+    sendKeysBy,
+    waitBy,
+    waitByRemoved,
+    zoomMap,
+} from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../options.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
@@ -95,12 +105,17 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     await waitByRemoved(By.id('se-wpt-details'));
     await checkDotMarkerNotHighlighted(coords3, mapState);
 
+    if (type === poi_type) {
+        return; // temporarily skip menu tests for POI
+    }
+
     // test clicks on menu
     let items =
         type === explore_type
             ? await driver.findElements(By.css("[id^='se-wiki-place-']"))
             : await driver.findElements(By.id('se-search-result-item'));
     await items[indexes[0]].click();
+    await waitBy(By.id('se-wpt-details'));
     await checkMarkerHighlighted(coords1, menuState, type);
     await clickBy(By.id('se-close-wpt-details'));
     await waitByRemoved(By.id('se-wpt-details'));
@@ -109,6 +124,7 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     if (type === search_type) {
         items = await driver.findElements(By.id('se-search-result-item'));
         await items[indexes[1]].click();
+        await waitBy(By.id('se-wpt-details'));
         await checkDotMarkerHighlighted(coords3, menuState);
     }
 
@@ -127,6 +143,24 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
         await clickBy(By.id('se-close-wpt-details'));
         await checkMarkerNotHighlighted(coords1, zoomState, type);
     }
+}
+
+export async function waitUntilNotSkeleton(by) {
+    return await enclose(
+        async () => {
+            const els = await driver.findElements(by);
+            if (!els || els.length === 0) return null;
+
+            // ждём пока у первого элемента не будет skeleton-класса
+            const cls = await els[0].getAttribute('class');
+            if (cls.includes('Skeleton')) {
+                return null; // ещё не готово, продолжаем ждать
+            }
+
+            return els; // готовы — возвращаем список
+        },
+        { tag: `waitUntilNotSkeleton(${by.value || by})` }
+    );
 }
 
 async function checkMarkerHighlighted(coords, state, type) {

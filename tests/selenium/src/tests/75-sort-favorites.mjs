@@ -33,25 +33,25 @@ export default async function test() {
 
     // check group sort
     await validateGroupOrder(favGroupsLastModified);
-    await clickBy(By.id('se-sort-button-time'));
+    await clickBy(By.id('se-sort-button-time-visible'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-az'));
     await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsAZ);
-    await waitBy(By.id('se-sort-button-az'));
-    await clickBy(By.id('se-sort-button-az'));
+    await waitBy(By.id('se-sort-button-az-visible'));
+    await clickBy(By.id('se-sort-button-az-visible'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-za'));
     await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsZA);
-    await waitBy(By.id('se-sort-button-za'));
-    await clickBy(By.id('se-sort-button-za'));
+    await waitBy(By.id('se-sort-button-za-visible'));
+    await clickBy(By.id('se-sort-button-za-visible'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-newDate'));
     await actionUploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsNewDate);
-    await waitBy(By.id('se-sort-button-newDate'));
-    await clickBy(By.id('se-sort-button-newDate'));
+    await waitBy(By.id('se-sort-button-newDate-visible'));
+    await clickBy(By.id('se-sort-button-newDate-visible'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-oldDate'));
     await actionUploadFavGroup(favorites, false);
@@ -63,12 +63,12 @@ export default async function test() {
     await validateItemOrder(favItemsFood);
 
     // check save prev groups sort
-    await clickBy(By.id('se-back-folder-button'));
-    await waitBy(By.id('se-sort-button-oldDate'));
+    await clickBy(By.id('se-back-folder-button-visible'));
+    await waitBy(By.id('se-sort-button-oldDate-visible'));
 
     // check save prev groups sort after rename
     await actionRenameFavGroup(shortFavGroupName, suffix);
-    await waitBy(By.id('se-sort-button-oldDate'));
+    await waitBy(By.id('se-sort-button-oldDate-visible'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
     await validateGroupOrder(favGroupsOldDateAfterRename);
 

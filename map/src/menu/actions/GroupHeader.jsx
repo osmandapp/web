@@ -21,6 +21,7 @@ import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import SortFilesButton from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
+import { useIsVisible } from '../../util/hooks/useIsVisible';
 
 export default function GroupHeader({
     type,
@@ -42,6 +43,8 @@ export default function GroupHeader({
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
 
     const hiddenBtn = smartf?.type === SHARE_TYPE;
+
+    const [btnRef, isVisible] = useIsVisible();
 
     useEffect(() => {
         if (favoriteGroup && !ctx.selectedSort) {
@@ -107,12 +110,12 @@ export default function GroupHeader({
 
     return (
         <>
-            <AppBar position="static" className={styles.appbar}>
+            <AppBar ref={btnRef} position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
                     {getGroupsCount() > 0 ? (
                         <IconButton
                             variant="contained"
-                            id="se-back-folder-button"
+                            id={`se-back-folder-button-${isVisible}`}
                             type="button"
                             className={styles.appBarIcon}
                             onClick={prevTrackMenu}
@@ -122,7 +125,7 @@ export default function GroupHeader({
                     ) : (
                         <IconButton
                             variant="contained"
-                            id="se-close-folder-button"
+                            id={`se-close-folder-button-${isVisible}`}
                             type="button"
                             className={styles.appBarIcon}
                             onClick={() => {

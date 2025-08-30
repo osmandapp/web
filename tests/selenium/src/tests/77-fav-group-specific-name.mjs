@@ -33,7 +33,7 @@ export default async function test() {
     await waitByRemoved(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-visible'));
 
     await actionDeleteFavGroup(`${shortFavGroupName}`);
     await waitBy(By.id('se-empty-page'));
