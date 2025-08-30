@@ -104,7 +104,7 @@ import { legendContentData } from '@site/src/components/docs/legend/legendSectio
 ### Administrative {#administrative}
 <LazyLegendContent sectionData={legendContentData.administrative} />
 
-### Service {#service}
+### Service {#service-icons}
 <LazyLegendContent sectionData={legendContentData.service} />
 
 ### Shops {#shops}
