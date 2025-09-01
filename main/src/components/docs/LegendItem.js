@@ -34,7 +34,7 @@ export default function LegendItem({ itemsMap }) {
               <tr>
                 {itemArray.map(([title, imageName]) => (
                   <td key={`title-${imageName}`} className='text--center'>
-                    {title.startsWith('poi_') ? <Translate android="yes" id={title} /> : title}
+                    {title.startsWith('poi_') ? <Translate android="yes" id={title} getFirstPart={true} /> : title}
                   </td>
                 ))}
               </tr>
