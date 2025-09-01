@@ -159,6 +159,10 @@ export default function SearchLayer() {
         if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
             updateAsyncLayers().then();
         }
+        const newBounds = map.getBounds();
+        if (!ctx.visibleBounds || !ctx.visibleBounds.equals(newBounds)) {
+            ctx.setVisibleBounds(newBounds);
+        }
     }, [zoom, move]);
 
     useEffect(() => {

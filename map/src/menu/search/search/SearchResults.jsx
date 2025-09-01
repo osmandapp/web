@@ -27,7 +27,6 @@ import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
-const MAX_DISTANCE_FOR_LOCATION_SEARCH = 5000; // meters
 const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByCategory(value, ctx) {
@@ -192,13 +191,11 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         let isUser = false;
         let loc = null;
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            const center = getCenterMapLoc(hash) ?? centerFromHash;
-            const distM = getDistance(center.lat, center.lon, currentLoc.lat, currentLoc.lng);
-            if (distM < MAX_DISTANCE_FOR_LOCATION_SEARCH) {
+            if (ctx.visibleBounds?.contains(currentLoc)) {
                 isUser = true;
                 loc = currentLoc;
             } else {
-                loc = center;
+                loc = getCenterMapLoc(hash);
             }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
