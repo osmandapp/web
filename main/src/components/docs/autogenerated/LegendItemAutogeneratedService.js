@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_recycling' : 'service/service_amenity_recycling',
         'poi_recycling_centre' : 'service/service_amenity_recycling_recycling_type_centre',
@@ -42,6 +41,5 @@ export default function Render() {
         'poi_boat_rental' : 'service/service_amenity_boat_rental',
         'poi_boat_storage' : 'service/service_amenity_boat_storage',
     }});
-
 }
 

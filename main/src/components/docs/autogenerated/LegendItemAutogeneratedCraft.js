@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_craft_agricultural_engines' : 'craft/craft_craft_agricultural_engines',
         'poi_craft_beekeeper' : 'craft/craft_craft_beekeeper',
@@ -43,6 +42,5 @@ export default function Render() {
         'poi_craft_window_construction' : 'craft/craft_craft_window_construction',
         'poi_craft_winery' : 'craft/craft_craft_winery',
     }});
-
 }
 

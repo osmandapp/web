@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_club_amateur_radio' : 'club/club_club_amateur_radio',
         'poi_club_automobile' : 'club/club_club_automobile',
@@ -36,6 +35,5 @@ export default function Render() {
         'poi_club_veterans' : 'club/club_club_veterans',
         'poi_club_youth_movement' : 'club/club_club_youth_movement',
     }});
-
 }
 

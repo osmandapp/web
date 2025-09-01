@@ -5,7 +5,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         "poi_barrier_bar": "barrier/barrier_barrier_bar",
         "poi_block": "barrier/barrier_barrier_block",

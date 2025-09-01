@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_studio' : 'office/office_amenity_studio',
         'poi_research_institute' : 'office/office_amenity_research_institute',
@@ -70,6 +69,5 @@ export default function Render() {
         'poi_international_organization' : 'office/office_office_international_organization',
         'poi_airline' : 'office/office_office_airline',
     }});
-
 }
 

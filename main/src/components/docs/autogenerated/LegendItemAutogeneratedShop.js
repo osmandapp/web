@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_convenience' : 'shop/shop_shop_convenience',
         'poi_supermarket' : 'shop/shop_shop_supermarket',

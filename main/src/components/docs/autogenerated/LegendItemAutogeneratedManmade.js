@@ -6,7 +6,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_adit' : 'manmade/manmade_man_made_adit',
         'poi_aerialway_pylon' : 'manmade/manmade_aerialway_pylon',
@@ -73,6 +72,5 @@ export default function Render() {
         'poi_power_pole' : 'manmade/manmade_power_pole',
         'poi_power_tower' : 'manmade/manmade_power_tower',
     }});
-
 }
 

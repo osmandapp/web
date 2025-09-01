@@ -5,7 +5,6 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'poi_hotel' : 'accomodation/accomodation_tourism_hotel',
         'poi_motel' : 'accomodation/accomodation_tourism_motel',
@@ -22,6 +21,5 @@ export default function Render() {
         'poi_shelter' : 'accomodation/accomodation_amenity_shelter',
         'poi_refugee_site' : 'accomodation/accomodation_amenity_refugee_site',
     }});
-
 }
 

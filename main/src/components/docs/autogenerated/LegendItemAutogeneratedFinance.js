@@ -6,8 +6,7 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
-return LegendItem({itemsMap: {
+    return LegendItem({itemsMap: {
         'poi_bank' : 'finance/finance_amenity_bank',
         'poi_atm' : 'finance/finance_amenity_atm',
         'poi_payment_terminal' : 'finance/finance_amenity_payment_terminal',

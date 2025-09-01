@@ -6,22 +6,20 @@ import LegendItem from "../LegendItem";
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
-        'College' : 'education/education_amenity_college',
-        'Driving school' : 'education/education_amenity_driving_school',
-        'Driver training site' : 'education/education_amenity_driver_training',
-        'Kindergarten' : 'education/education_amenity_kindergarten',
-        'Library' : 'education/education_amenity_library',
-        'Mobile library' : 'education/education_amenity_mobile_library',
-        'Childcare' : 'education/education_amenity_childcare',
-        'School' : 'education/education_amenity_school',
-        'Prep school' : 'education/education_amenity_prep_school',
-        'Music school' : 'education/education_amenity_music_school',
-        'Language school' : 'education/education_amenity_language_school',
-        'Training' : 'education/education_amenity_training',
-        'University' : 'education/education_amenity_university',
+        'poi_college' : 'education/education_amenity_college',
+        'poi_driving_school' : 'education/education_amenity_driving_school',
+        'poi_driver_training' : 'education/education_amenity_driver_training',
+        'poi_kindergarten' : 'education/education_amenity_kindergarten',
+        'poi_library' : 'education/education_amenity_library',
+        'poi_mobile_library' : 'education/education_amenity_mobile_library',
+        'poi_childcare' : 'education/education_amenity_childcare',
+        'poi_school' : 'education/education_amenity_school',
+        'poi_prep_school' : 'education/education_amenity_prep_school',
+        'poi_music_school' : 'education/education_amenity_music_school',
+        'poi_language_school' : 'education/education_amenity_language_school',
+        'poi_training' : 'education/education_amenity_training',
+        'poi_university' : 'education/education_amenity_university',
     }});
-
 }
 
