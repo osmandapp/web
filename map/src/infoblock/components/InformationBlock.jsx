@@ -152,9 +152,14 @@ export default function InformationBlock({
     // update URL for info track menu
     useEffect(() => {
         if (trackName && !ctx.shareFile) {
-            navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)), {
-                replace: true,
-            });
+            navigate(
+                {
+                    pathname:
+                        MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)),
+                    hash: window.location.hash,
+                },
+                { replace: true }
+            );
         }
     }, [trackName]);
 
@@ -352,7 +357,10 @@ export default function InformationBlock({
                                             setTrackName(null);
                                             setSavePrevState(true);
                                             ctx.setSelectedCloudTrackObj(null);
-                                            navigate(MAIN_URL_WITH_SLASH + trackType);
+                                            navigate({
+                                                pathname: MAIN_URL_WITH_SLASH + trackType,
+                                                hash: window.location.hash,
+                                            });
                                         }
                                     }}
                                 >
