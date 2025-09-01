@@ -1,17 +1,7 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import {
-    assert,
-    clickBy,
-    enclose,
-    getMarker,
-    leftClickBy,
-    sendKeysBy,
-    waitBy,
-    waitByRemoved,
-    zoomMap,
-} from '../lib.mjs';
+import { assert, clickBy, getMarker, leftClickBy, sendKeysBy, waitBy, waitByRemoved, zoomMap } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../options.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
