@@ -35,23 +35,23 @@ export default async function test() {
         await waitByRemoved(By.id('se-import-loading-' + t.name));
     }
 
-    await waitBy(By.id('se-sort-button-time-visible'));
+    await waitBy(By.id('se-sort-button-time-tracks'));
     await actionIdleWait();
     await actionCheckCloudTracks(tracks);
     await actionRenameTrack(trackName, suffix);
     await validateGroupOrder(trackGroupsLastModified, 'LastModified');
-    await waitBy(By.id('se-sort-button-time-visible'));
-    await clickBy(By.id('se-sort-button-time-visible'));
+    await waitBy(By.id('se-sort-button-time-tracks'));
+    await clickBy(By.id('se-sort-button-time-tracks'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-longest'));
     await validateGroupOrder(trackGroupsLongest, 'Longest');
-    await waitBy(By.id('se-sort-button-longest-visible'));
-    await clickBy(By.id('se-sort-button-longest-visible'));
+    await waitBy(By.id('se-sort-button-longest-tracks'));
+    await clickBy(By.id('se-sort-button-longest-tracks'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-shortest'));
     await validateGroupOrder(trackGroupsShortest, 'Shortest');
-    await waitBy(By.id('se-back-folder-button-visible'));
-    await clickBy(By.id('se-back-folder-button-visible'));
+    await waitBy(By.id('se-back-folder-button-tracks'));
+    await clickBy(By.id('se-back-folder-button-tracks'));
     await waitBy(By.id(`se-menu-cloud-${folder}`));
     await actionDeleteFolder(folder);
 

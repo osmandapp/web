@@ -145,24 +145,6 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     }
 }
 
-export async function waitUntilNotSkeleton(by) {
-    return await enclose(
-        async () => {
-            const els = await driver.findElements(by);
-            if (!els || els.length === 0) return null;
-
-            // ждём пока у первого элемента не будет skeleton-класса
-            const cls = await els[0].getAttribute('class');
-            if (cls.includes('Skeleton')) {
-                return null; // ещё не готово, продолжаем ждать
-            }
-
-            return els; // готовы — возвращаем список
-        },
-        { tag: `waitUntilNotSkeleton(${by.value || by})` }
-    );
-}
-
 async function checkMarkerHighlighted(coords, state, type) {
     const marker = await getMarker(coords.lat, coords.lng);
     if (type === explore_type) {

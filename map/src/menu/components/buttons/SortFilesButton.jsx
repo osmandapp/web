@@ -8,7 +8,6 @@ import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import SortMenu from '../../actions/SortMenu';
 import LoginContext from '../../../context/LoginContext';
-import { useIsVisible } from '../../../util/hooks/useIsVisible';
 
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';
@@ -54,8 +53,6 @@ export default function SortFilesButton({
     const [sortName, setSortName] = useState(t('sort_last_modified'));
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
 
-    const [btnRef, isVisible] = useIsVisible();
-
     // get selected sort method from cache
     const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, ctx });
     const currentSortType = sortType ? sortType : 'time';
@@ -86,16 +83,10 @@ export default function SortFilesButton({
 
     return (
         <>
-            <Tooltip
-                ref={btnRef}
-                key={`sort_${type}`}
-                title={`${t('sort_by')}: ${sortName}`}
-                arrow
-                placement="bottom-end"
-            >
+            <Tooltip key={`sort_${type}`} title={`${t('sort_by')}: ${sortName}`} arrow placement="bottom-end">
                 <span>
                     <IconButton
-                        id={`se-sort-button-${currentSortType}-${isVisible}`}
+                        id={`se-sort-button-${currentSortType}-${type}`}
                         variant="contained"
                         type="button"
                         className={styles.appBarIcon}

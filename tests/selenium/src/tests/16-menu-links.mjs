@@ -49,8 +49,8 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
     url = await getUrl();
     await assert(url.includes(TRACKS_URL));
-    await waitBy(By.id('se-close-folder-button-visible'));
-    await clickBy(By.id('se-close-folder-button-visible'));
+    await waitBy(By.id('se-close-folder-button-tracks'));
+    await clickBy(By.id('se-close-folder-button-tracks'));
     url = await getUrl();
     await assert(!url.includes(TRACKS_URL));
 
@@ -58,8 +58,8 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-favorites'));
     url = await getUrl();
     await assert(url.includes(FAVORITES_URL));
-    await waitBy(By.id('se-close-folder-button-visible'));
-    await clickBy(By.id('se-close-folder-button-visible'));
+    await waitBy(By.id('se-close-folder-button-favorites'));
+    await clickBy(By.id('se-close-folder-button-favorites'));
     url = await getUrl();
     await assert(!url.includes(FAVORITES_URL));
 
