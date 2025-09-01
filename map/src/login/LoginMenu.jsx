@@ -34,6 +34,7 @@ import CloudInfo from './CloudInfo';
 import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
+import { useResetApp } from '../App';
 
 export function getAccountType({ account = null, name = null }) {
     if (account && account === FREE_ACCOUNT) {
@@ -45,6 +46,8 @@ export function getAccountType({ account = null, name = null }) {
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const resetApp = useResetApp();
 
     const lang = i18n.language;
     const anchorEl = useRef(null);
@@ -140,6 +143,8 @@ export default function LoginMenu() {
                                                         username: ltx.loginUser,
                                                         handleClose,
                                                         lang,
+                                                    }).then(() => {
+                                                        resetApp();
                                                     })
                                                 }
                                             >

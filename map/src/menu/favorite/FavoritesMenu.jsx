@@ -12,6 +12,8 @@ import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
+import { SHARE_TYPE } from '../share/shareConstants';
+import FavoriteGroupFolder from './FavoriteGroupFolder';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -37,7 +39,7 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            groups.map((g, index) => {
+            groups.forEach((g, index) => {
                 items.push(
                     <FavoriteGroup
                         key={g + index}
@@ -53,7 +55,7 @@ export default function FavoritesMenu() {
     }, [ctx.favorites?.groups, sortGroups]);
 
     useEffect(() => {
-        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME]) {
+        if (ctx.selectedSort?.favorites?.[DEFAULT_FAV_GROUP_NAME]) {
             doSort({
                 method: ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME],
                 setSortGroups,
@@ -62,6 +64,18 @@ export default function FavoritesMenu() {
             });
         }
     }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
+
+    // open favorite group
+    if (ctx.openFavGroups && ctx.openFavGroups.length > 0) {
+        const lastGroup = ctx.openFavGroups[ctx.openFavGroups.length - 1];
+        if (lastGroup?.type === SHARE_TYPE) {
+            if (lastGroup?.files) {
+                return <FavoriteGroupFolder smartf={lastGroup} />;
+            }
+            return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
+        }
+        return <FavoriteGroupFolder folder={lastGroup} />;
+    }
 
     return (
         <>

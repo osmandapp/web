@@ -13,10 +13,12 @@ import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
-import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
+import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
+import { SHARE_TYPE } from '../share/shareConstants';
+import TrackGroupFolder from './TrackGroupFolder';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -86,6 +88,20 @@ export default function TracksMenu() {
             updateLoadingTracks(ctx, defaultGroup.groupFiles);
         }
     }, [defaultGroup?.groupFiles]);
+
+    // open visible tracks
+    if (ctx.openVisibleMenu) {
+        return <VisibleTracks />;
+    }
+
+    // open folders
+    if (ctx.openGroups && ctx.openGroups.length > 0) {
+        const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
+        if (lastGroup?.type === SHARE_TYPE) {
+            return <TrackGroupFolder smartf={lastGroup} />;
+        }
+        return <TrackGroupFolder folder={lastGroup} />;
+    }
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>

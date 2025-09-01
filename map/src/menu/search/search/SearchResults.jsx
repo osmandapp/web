@@ -203,7 +203,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         // hide explore layers
-        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
     }, []);
 
     useEffect(() => {

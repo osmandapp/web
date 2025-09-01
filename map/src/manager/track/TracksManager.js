@@ -478,7 +478,7 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
     const tracks = [];
 
     files.forEach((file) => {
-        const name = isSmartf ? file.details.shareFileName : file.name;
+        const name = isSmartf && file.details?.shareFileName ? file.details.shareFileName : file.name;
         const parts = name.split('/');
         const isFile = parts.length === 1;
 
@@ -1407,6 +1407,7 @@ export async function openTrackOnMap({
         } else if (isEmptyTrack(track) === false) {
             track.info = await Utils.getFileInfo(oneGpxFile);
             track.name = file.name;
+            track.key = track.name;
             Object.keys(track).forEach((t) => {
                 oneGpxFile[t] = track[t];
             });
@@ -1496,10 +1497,20 @@ function showInfoBlock({ hasUrl, file, ctx, smartf }) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         }
     }
+
+    ctx.setRecentObjs((prev) => {
+        const tracks = prev.tracks.filter((f) => f.key !== file.key);
+        return {
+            ...prev,
+            tracks: [{ ...file }, ...tracks],
+        };
+    });
+    ctx.setSelectedCloudTrackObj({ ...file });
+
     if (hasUrl) {
         ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
     } else {
-        ctx.setSelectedGpxFile(Object.assign({}, file));
+        ctx.setSelectedGpxFile({ ...file });
     }
 }
 

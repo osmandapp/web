@@ -12,8 +12,8 @@ export default async function test({ login = TEST_LOGIN, password = TEST_PASSWOR
     await clickBy(By.id('se-show-main-menu'), { optional: true });
 
     await clickBy(By.id('se-login-button'));
+    await waitBy(By.id('se-login-btn'));
     await clickBy(By.id('se-login-btn'));
-
     await fillLoginData(login, password);
 
     await waitBy(By.id('se-logout-button'));

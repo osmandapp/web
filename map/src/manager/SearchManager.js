@@ -104,7 +104,6 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
         ...ctx.searchSettings,
         selectedFilters: new Set(defaultFilters),
         useWikiImages: false,
-        showOnMainSearch: mainSearch,
     });
 }
 

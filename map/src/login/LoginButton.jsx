@@ -35,7 +35,9 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
     };
 
     function clearPrevState() {
-        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        if (ctx.searchSettings.showExploreMarkers) {
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+        }
         ctx.setCurrentObjectType(null);
     }
 

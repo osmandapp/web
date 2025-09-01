@@ -351,6 +351,7 @@ export default function InformationBlock({
                                             // back to prev url
                                             setTrackName(null);
                                             setSavePrevState(true);
+                                            ctx.setSelectedCloudTrackObj(null);
                                             navigate(MAIN_URL_WITH_SLASH + trackType);
                                         }
                                     }}

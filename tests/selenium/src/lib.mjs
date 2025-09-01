@@ -429,7 +429,7 @@ async function getMapCoords(lat, lon) {
     const container = await driver.findElement(By.className('leaflet-container'));
 
     const [px, py] = await driver.executeScript(
-        'const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
+        'const p = window.__leafletMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
             'return [Math.round(p.x), Math.round(p.y)];',
         lat,
         lon
@@ -517,7 +517,7 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait();
         const layersInfo = await driver.executeScript(`
-      return Object.values(window.seleniumTestsMap._layers)
+      return Object.values(window.__leafletMap._layers)
         .filter(layer => typeof layer.getLatLng === 'function')
         .map(layer => {
           const info = {};
@@ -577,6 +577,6 @@ export async function zoomMap(direction) {
  * @param {number} lon - longitude
  */
 export async function setMapCenter(lat, lon) {
-    await driver.executeScript('window.seleniumTestsMap.setView([arguments[0], arguments[1]]);', lat, lon);
+    await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
     await actionIdleWait();
 }

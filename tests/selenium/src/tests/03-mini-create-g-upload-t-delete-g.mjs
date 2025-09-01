@@ -32,7 +32,7 @@ export default async function test() {
     // import one track
     await actionImportCloudTrack(tracks, trackName);
     // delete folder
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-tracks'));
     await waitBy(By.id(`se-menu-cloud-${folder}`));
     await actionDeleteFolder(folder);
 

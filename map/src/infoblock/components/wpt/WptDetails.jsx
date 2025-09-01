@@ -219,6 +219,23 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }, [ctx.selectedWpt]);
 
     useEffect(() => {
+        if (!ctx.selectedWpt) return;
+
+        const type = getWptType(ctx.selectedWpt);
+
+        if (type?.isFav || type?.isShareFav) {
+            ctx.setRecentObjs((prev) => {
+                const favorites = prev.favorites.filter((f) => f.key !== ctx.selectedWpt.key);
+                return {
+                    ...prev,
+                    favorites: [{ ...ctx.selectedWpt }, ...favorites],
+                };
+            });
+            ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
+        }
+    }, [ctx.selectedWpt]);
+
+    useEffect(() => {
         if (!newWpt || !ctx.selectedWpt) return;
 
         const fetchTagsAndData = async () => {
@@ -439,9 +456,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             }
             isDetails ? returnToSearch() : closeHeader({ ctx });
         } else if (wpt?.type?.isWpt) {
-            isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
+            isDetails || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt?.type?.isFav) {
-            isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
+            ctx.setSelectedFavoriteObj(null);
+            isDetails || ctx.openFavGroups?.length > 0 ? closeOnlyFavDetails() : closeHeader({ ctx });
         } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });

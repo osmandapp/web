@@ -54,7 +54,7 @@ export function selectMarker(target, prevMarker, type = null) {
 }
 
 export function hideSelectedMarker(target, type = null) {
-    if (type && type === EXPLORE_LAYER_ID && target.options?.hover) {
+    if (type && type === EXPLORE_LAYER_ID && target?.options?.hover) {
         target.options.hover.remove();
         target.options.hovered = null;
         return;

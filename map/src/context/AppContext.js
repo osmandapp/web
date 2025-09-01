@@ -451,6 +451,14 @@ export const AppContextProvider = (props) => {
 
     const [dateLocale, setDateLocale] = useState(null);
 
+    const [recentObjs, setRecentObjs] = useState({
+        tracks: [],
+        favorites: [],
+    });
+
+    const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
+    const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
+
     useEffect(() => {
         const currentLanguage = i18n.language;
         const locale = locales[currentLanguage] || locales.enUS;
@@ -619,6 +627,7 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     const [openGroups, setOpenGroups] = useState([]);
+    const [openFavGroups, setOpenFavGroups] = useState([]);
 
     const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
 
@@ -825,6 +834,14 @@ export const AppContextProvider = (props) => {
                 setDateLocale,
                 usedIcons,
                 setUsedIcons,
+                openFavGroups,
+                setOpenFavGroups,
+                recentObjs,
+                setRecentObjs,
+                selectedFavoriteObj,
+                setSelectedFavoriteObj,
+                selectedCloudTrackObj,
+                setSelectedCloudTrackObj,
             }}
         >
             {props.children}

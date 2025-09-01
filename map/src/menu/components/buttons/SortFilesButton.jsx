@@ -86,7 +86,7 @@ export default function SortFilesButton({
             <Tooltip key={`sort_${type}`} title={`${t('sort_by')}: ${sortName}`} arrow placement="bottom-end">
                 <span>
                     <IconButton
-                        id={`se-sort-button-${currentSortType}`}
+                        id={`se-sort-button-${currentSortType}-${type}`}
                         variant="contained"
                         type="button"
                         className={styles.appBarIcon}
