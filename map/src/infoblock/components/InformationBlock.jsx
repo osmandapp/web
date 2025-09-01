@@ -155,10 +155,7 @@ export default function InformationBlock({
             navigate(
                 {
                     pathname:
-                        MAIN_URL_WITH_SLASH +
-                        TRACKS_URL +
-                        INFO_MENU_URL +
-                        encodeURIComponent(encodeString(trackName)),
+                        MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)),
                     hash: window.location.hash,
                 },
                 { replace: true }
@@ -360,7 +357,10 @@ export default function InformationBlock({
                                             setTrackName(null);
                                             setSavePrevState(true);
                                             ctx.setSelectedCloudTrackObj(null);
-                                            navigate(MAIN_URL_WITH_SLASH + trackType);
+                                            navigate({
+                                                pathname: MAIN_URL_WITH_SLASH + trackType,
+                                                hash: window.location.hash,
+                                            });
                                         }
                                     }}
                                 >
