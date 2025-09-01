@@ -325,6 +325,8 @@ export const AppContextProvider = (props) => {
         zoom: 17,
         animateDist: 1000000,
     });
+    const [visibleBounds, setVisibleBounds] = useState(null);
+
     // travel
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
@@ -842,6 +844,8 @@ export const AppContextProvider = (props) => {
                 setSelectedFavoriteObj,
                 selectedCloudTrackObj,
                 setSelectedCloudTrackObj,
+                visibleBounds,
+                setVisibleBounds,
             }}
         >
             {props.children}

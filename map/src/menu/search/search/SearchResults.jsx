@@ -191,8 +191,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         let isUser = false;
         let loc = null;
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            isUser = true;
-            loc = currentLoc;
+            if (ctx.visibleBounds?.contains(currentLoc)) {
+                isUser = true;
+                loc = currentLoc;
+            } else {
+                loc = getCenterMapLoc(hash);
+            }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             loc = getCenterMapLoc(hash);
