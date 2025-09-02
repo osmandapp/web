@@ -1,4 +1,3 @@
-
 import LegendItem from "../LegendItem";
 
 

@@ -1,4 +1,3 @@
-
 import LegendItem from "../LegendItem";
 
 
@@ -102,6 +101,7 @@ export default function Render() {
         'poi_lighting' : 'shop/shop_shop_lighting',
         'poi_locksmith' : 'shop/shop_shop_locksmith',
         'poi_lottery' : 'shop/shop_shop_lottery',
+        'poi_mall' : 'shop/shop_shop_mall',
         'poi_marketplace' : 'shop/shop_amenity_marketplace',
         'poi_medical_supply' : 'shop/shop_shop_medical_supply',
         'poi_mobile_phone' : 'shop/shop_shop_mobile_phone',
@@ -138,6 +138,7 @@ export default function Render() {
         'poi_skate' : 'shop/shop_shop_skate',
         'poi_sports' : 'shop/shop_shop_sports',
         'poi_stationery' : 'shop/shop_shop_stationery',
+        'poi_supermarket' : 'shop/shop_shop_supermarket',
         'poi_telecommunication' : 'shop/shop_shop_telecommunication',
         'poi_ticket' : 'shop/shop_shop_ticket',
         'poi_tiles' : 'shop/shop_shop_tiles',

@@ -1,4 +1,3 @@
-
 import LegendItem from "../LegendItem";
 
 
@@ -25,6 +24,7 @@ export default function Render() {
         'poi_cricket' : 'sport/sport_sport_cricket',
         'poi_cycling' : 'sport/sport_sport_cycling',
         'poi_diving' : 'sport/sport_sport_diving',
+        'poi_dojo' : 'sport/sport_sport_dojo',
         'poi_equestrian' : 'sport/sport_sport_equestrian',
         'poi_field_hockey' : 'sport/sport_sport_field_hockey',
         'poi_hang_gliding' : 'sport/sport_sport_hang_gliding',
@@ -54,8 +54,8 @@ export default function Render() {
         'poi_table_tennis' : 'sport/sport_sport_table_tennis',
         'poi_tennis' : 'sport/sport_sport_tennis',
         'poi_10pin' : 'sport/sport_sport_10pin',
-        'poi_ultralight_aviation' : 'sport/sport_sport_ultralight_aviation',
         'poi_volleyball' : 'sport/sport_sport_volleyball',
+        'poi_ultralight_aviation' : 'sport/sport_sport_ultralight_aviation',
     }});
 }
 
