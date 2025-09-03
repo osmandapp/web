@@ -39,7 +39,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 For optimal route calculation in OsmAnd, you should consider the following vehicle parameters:
 
-1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
+1. Set the [*Default Speed* or *Road Speeds*](#road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
 3. Enter the [*capacity of your tank*](#fuel-tank-capacity) to accurately track your fuel level and consumption.
 4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.

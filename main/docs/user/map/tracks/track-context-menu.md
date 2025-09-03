@@ -127,7 +127,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Android only*) – Merges track segments to fill gaps.
-- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
+- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
 
 <br/>
@@ -412,7 +412,7 @@ In this *Points* tab:
 
 Waypoints can be added to the currently recorded track or to any track from [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
-- Use the [map context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint).
+- Use the [map context menu](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - Waypoints are automatically displayed if the selected track is enabled on the map.
   - [Long tap](../../map/map-context-menu.md#select-any-point-long-tap) the map at any chosen location to create a waypoint.
   - You can set information about the waypoint in the opened [map context menu](../../map/map-context-menu.md#-add--edit-track-waypoint).
@@ -711,6 +711,6 @@ The list of actions is available at the bottom of the **Filter** or **Statistics
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Plan route](../../plan-route/index.md)
 - [Trip Recording plugin](../../plugins/trip-recording.md)
-- [Analyze on Map](../index.md#analyze-track-on-map)
+- [Analyze on Map](../tracks/index.md#analyze-track-on-map)
 
 
