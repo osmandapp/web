@@ -53,7 +53,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 [Configure the profiles](../../personal/profiles.md) you intend to use:
 
-- Set [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (*important for truck drivers*), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (*optional*).
+- Set [vehicle parameters](../guidance/vehicle-parameters.md#size-parameters) (*important for truck drivers*), select the [engine type](../guidance/vehicle-parameters.md#fuel-used-by-motor) (*optional*).
 
 - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (*optional*, available for Pro users ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
 

@@ -69,11 +69,11 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - ***Total distance*** is calculated between all route segments, including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
 
-- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed).
+- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use *default* speed from [Navigation Settings](../guidance/vehicle-parameters.md#default-speed).
 
 - ***Estimated arrival time*** is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
-- ***CO2 footprint data*** estimates roughly how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
+- ***CO2 footprint data*** estimates roughly how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/vehicle-parameters.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
 ## Elevation Info {#elevation-info}
