@@ -26,6 +26,7 @@ import {
     SHARE_MENU_URL,
     PURCHASES_URL,
     PRICING_URL,
+    WEATHER_FORECAST_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -46,6 +47,7 @@ import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
 import PricingPage from './shop/PricingPage';
+import WeatherForecastDetails from './menu/weather/WeatherForecastDetails';
 
 export let globalNavigate = () => null;
 
@@ -111,7 +113,9 @@ const App = () => {
                                     <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
                                 </Route>
                                 <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
-                                <Route path={WEATHER_URL} element={<Weather />}></Route>
+                                <Route path={WEATHER_URL} element={<Weather />}>
+                                    <Route path={WEATHER_FORECAST_URL} element={<WeatherForecastDetails />}></Route>
+                                </Route>
                                 <Route path={TRACKS_URL} element={<TracksMenu />}>
                                     <Route path={INFO_MENU_URL + ':filename'} element={<InformationBlock />}>
                                         <Route path={SHARE_MENU_URL} element={<ShareFileMenu />} />

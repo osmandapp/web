@@ -43,7 +43,7 @@ import { ReactComponent as TrackAnalyzerIcon } from '../assets/icons/ic_action_t
 import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
-import Weather from './weather/Weather';
+import Weather, { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM, selectedForecastDetails } from './weather/Weather';
 import styles from './mainmenu.module.css';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
@@ -71,6 +71,7 @@ import {
     SHARE_MENU_URL,
     LOGIN_URL,
     DELETE_ACCOUNT_URL,
+    WEATHER_FORECAST_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -85,6 +86,7 @@ import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { openFavoriteObj } from '../manager/FavoritesManager';
+import useMenuDots from '../util/hooks/menu/useMenuDots';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -134,11 +136,7 @@ export default function MainMenu({
 
     const [savePrevState, setSavePrevState] = useState(false);
 
-    const [menuDots, setMenuDots] = useState({});
-
-    function setActiveMenu(type, value) {
-        setMenuDots((prev) => ({ ...prev, [type]: value }));
-    }
+    const menuDots = useMenuDots(ctx);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -235,17 +233,8 @@ export default function MainMenu({
         }
     }, [ctx.selectedSort]);
 
-    // show/hide dot on menu item
-    useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_FAVORITE, ctx.openFavGroups?.length > 0 || ctx.selectedFavoriteObj);
-    }, [ctx.openFavGroups, ctx.selectedFavoriteObj]);
-
-    useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj);
-    }, [ctx.openGroups, ctx.selectedCloudTrackObj]);
-
     function selectMenuByUrl() {
-        const item = items.find((item) => item.url === location.pathname);
+        const item = items.find((item) => location.pathname.startsWith(item.url));
         if (item) {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             return selectMenu({ item, openFromUrl: true });
@@ -554,6 +543,20 @@ export default function MainMenu({
                     return;
                 }
             }
+
+            if (selectedType === OBJECT_TYPE_WEATHER) {
+                const res = selectedForecastDetails(ctx);
+                if (res) {
+                    const index = ctx.weatherLayers[ctx.weatherType].indexOf(res);
+                    navigate({
+                        pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
+                        search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                        hash: location.hash,
+                    });
+                    return;
+                }
+            }
+
             // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
@@ -576,6 +579,12 @@ export default function MainMenu({
     }, [ctx.prevPageUrl]);
 
     function navigateToUrl({ menu = null, isMain = false }) {
+        if (menu) {
+            const isSubroute = location.pathname.startsWith(menu.url) && location.pathname !== menu.url;
+            if (isSubroute) {
+                return;
+            }
+        }
         if (isMain) {
             if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
                 navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);

@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import { dayFormatter, timeFormatter } from '../../manager/WeatherManager';
+import {
+    openWeatherForecastDetails,
+    dayFormatter,
+    timeFormatter,
+    LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+} from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import TimeSlider from './TimeSlider';
 import DayCardsCarousel from './DayCardsCarousel';
@@ -12,16 +17,47 @@ import WeatherHeader from './WeatherHeader';
 import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
+import { matchPath, useLocation, useOutlet } from 'react-router-dom';
+import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
+
+export const FORECAST_TYPE_PARAM = 'type';
+export const FORECAST_SOURCE_PARAM = 'source';
+
+export const forecastParams = (urlLocation) => {
+    const params = new URLSearchParams(urlLocation.search);
+    const type = params.get(FORECAST_TYPE_PARAM);
+    const source = params.get(FORECAST_SOURCE_PARAM);
+
+    if (!type || !source) {
+        return null;
+    }
+
+    return { type, source };
+};
+
+export function selectedForecastDetails(ctx) {
+    return ctx.weatherLayers[ctx.weatherType].find((layer) => {
+        return layer.showDetails;
+    });
+}
 
 export default function Weather() {
     const ctx = useContext(AppContext);
 
+    const outlet = useOutlet();
+
+    const urlLocation = useLocation();
     const location = useGeoLocation(ctx, false);
     const currentLoc = ctx.openMenu?.latlng ?? location;
     const hash = window.location.hash;
     const debouncerTimer = useRef(0);
     const [delayedHash, setDelayedHash] = useState(hash);
     const [loadingLocation, setLoadingLocation] = useState(false);
+
+    const showForecastOutlet = matchPath(
+        { path: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL + '*' },
+        useLocation().pathname
+    );
 
     // debounce map move/scroll
     useEffect(() => {
@@ -73,7 +109,7 @@ export default function Weather() {
 
     // get current forecast
     useEffect(() => {
-        if (!currentTimeForecast) {
+        if (!currentTimeForecast.day && !currentTimeForecast.week) {
             const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
             const forecast = useDayForecast ? dayForecast : weekForecast;
             const timeKey = `${dayFormatter(ctx.weatherDate)} ${timeFormatter(ctx.weatherDate)}`;
@@ -82,45 +118,65 @@ export default function Weather() {
         }
     }, [ctx.weatherDate]);
 
+    useEffect(() => {
+        if (!showForecastOutlet) return;
+
+        const params = forecastParams(urlLocation);
+        if (!params) return;
+
+        if (params.source !== ctx.weatherType) {
+            ctx.setWeatherType(params.source);
+            localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+        }
+
+        openWeatherForecastDetails(ctx, Number(params.type), params.source);
+    }, [urlLocation]);
+
     return (
-        <Box
-            minWidth={ctx.infoBlockWidth}
-            maxWidth={ctx.infoBlockWidth}
-            sx={{
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-            }}
-        >
-            <WeatherHeader />
-            {dayForecast || weekForecast ? (
+        <>
+            {showForecastOutlet && outlet ? (
+                outlet
+            ) : (
                 <Box
+                    minWidth={ctx.infoBlockWidth}
+                    maxWidth={ctx.infoBlockWidth}
                     sx={{
-                        overflowX: 'hidden !important',
-                        overflowY: 'auto !important',
-                        flex: 1,
+                        overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
                     }}
                 >
-                    <TopWeatherInfo
-                        loadingLocation={loadingLocation}
-                        headerForecast={headerForecast}
-                        weatherLoc={weatherLoc}
-                        useWeatherDate={true}
-                    />
-                    <DayCardsCarousel />
-                    <TimeSlider />
-                    <ForecastTable
-                        dayForecast={dayForecast}
-                        weekForecast={weekForecast}
-                        currentTimeForecast={currentTimeForecast}
-                        setHeaderForecast={setHeaderForecast}
-                    />
-                    <WeatherInfo dayForecast={dayForecast} weekForecast={weekForecast} />
+                    <WeatherHeader />
+                    {dayForecast || weekForecast ? (
+                        <Box
+                            sx={{
+                                overflowX: 'hidden !important',
+                                overflowY: 'auto !important',
+                                flex: 1,
+                            }}
+                        >
+                            <TopWeatherInfo
+                                loadingLocation={loadingLocation}
+                                headerForecast={headerForecast}
+                                weatherLoc={weatherLoc}
+                                useWeatherDate={true}
+                            />
+                            <DayCardsCarousel />
+                            <TimeSlider />
+                            <ForecastTable
+                                dayForecast={dayForecast}
+                                weekForecast={weekForecast}
+                                currentTimeForecast={currentTimeForecast}
+                                setHeaderForecast={setHeaderForecast}
+                            />
+                            <WeatherInfo dayForecast={dayForecast} weekForecast={weekForecast} />
+                        </Box>
+                    ) : (
+                        <Loading />
+                    )}
                 </Box>
-            ) : (
-                <Loading />
             )}
-        </Box>
+        </>
     );
 }

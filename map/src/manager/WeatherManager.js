@@ -147,14 +147,17 @@ export function getAlignedStep({ direction = null, weatherDate = null, ctx, diff
     return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
 }
 
-export function addShowDetailsFlag(ctx, index) {
-    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem, layerIndex) => {
-        if (index === layerIndex) {
-            return { ...layerItem, showDetails: true };
-        }
-        return layerItem;
+export function openWeatherForecastDetails(ctx, type, source) {
+    const newWeatherLayers = ctx.weatherLayers[source].map((layerItem, layerIndex) => {
+        return {
+            ...layerItem,
+            showDetails: layerIndex === type,
+        };
     });
-    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+    ctx.setWeatherLayers((prev) => ({
+        ...prev,
+        [source]: newWeatherLayers,
+    }));
 }
 
 export function clearShowDetailsFlag(ctx) {
@@ -212,7 +215,7 @@ export const fetchWeekForecast = async ({ lat, lon, ctx, setWeekForecast = null 
 
 export function changedWeatherType(weatherType) {
     if (weatherType) {
-        let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
+        const type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
         if (type !== weatherType) {
             localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
             return true;
