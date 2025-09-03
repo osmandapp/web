@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Overview {#overview}
 
-In this section you find description of our [Web Map service](https://osmand.net/map).
+In this section, you will find a description of our [Web Planner](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
