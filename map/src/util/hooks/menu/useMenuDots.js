@@ -31,7 +31,9 @@ export default function useMenuDots(ctx) {
 
     useEffect(() => {
         const showDetails = selectedForecastDetails(ctx);
-        setActiveMenu(OBJECT_TYPE_WEATHER, !isSameHour() || showDetails);
+        const openLayers = ctx.weatherLayers[ctx.weatherType]?.some((l) => l.checked);
+
+        setActiveMenu(OBJECT_TYPE_WEATHER, !isSameHour() || showDetails || openLayers);
     }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
 
     return menuDots;

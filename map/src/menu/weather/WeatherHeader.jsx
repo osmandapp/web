@@ -52,6 +52,10 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                                 });
                             } else {
                                 ctx.setWeatherDate(new Date());
+                                ctx.setWeatherLayers((prev) => ({
+                                    ...prev,
+                                    [ctx.weatherType]: prev[ctx.weatherType].map((l) => ({ ...l, checked: false })),
+                                }));
                                 closeHeader({ ctx, setShowInfoBlock });
                             }
                         }}
