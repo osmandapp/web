@@ -79,6 +79,11 @@ If the issue persists, contact **support@osmand.net** and include:
 - Type of purchase (Pro / Maps+ one-time / Maps+ subscription).
 
 
+### Purchases and Multiple Accounts {#purchases-and-multiple-accounts}
+
+A cross-platform purchase is linked to the OsmAnd Cloud account that was last activated on the device holding the original purchase receipt (from the App Store or Google Play). If you log out of your primary account and log into a new one on this device, the system automatically transfers the license to the new account. As a result, your original account loses its purchases status on other platforms. More info is [here](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
+
+
 ## Example {#example}
 
 You purchased **Maps+** as a one-time in-app purchase in the free version of OsmAnd from the [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
