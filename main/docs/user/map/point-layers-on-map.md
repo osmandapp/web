@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview {#overview}
 
-The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android--audio--video-points-android), and [OSM editing](#-osm-edit-points--osm-edit-points).
+The map can display points such as [Favorites](#favorites), [Points of Interest](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Search results](#search-results-poi), [Audio and Video notes](#-audio--video-points-android), and [OSM editing](#-osm-edit-points--osm-edit-points).
 
 
 ## Favorites {#favorites}
