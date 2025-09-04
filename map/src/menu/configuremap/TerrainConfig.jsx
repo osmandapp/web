@@ -20,8 +20,8 @@ import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg
 import { useTranslation } from 'react-i18next';
 import { ExpandMore } from '@mui/icons-material';
 import ActionsMenu from '../actions/ActionsMenu';
-import capitalize from 'lodash/capitalize';
-import { cloneDeep } from 'lodash';
+import capitalize from 'lodash-es/capitalize';
+import cloneDeep from 'lodash-es/cloneDeep';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';

@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 import FavoritesManager from '../../../manager/FavoritesManager';
 import { GPX_FILE_EXT } from '../../../manager/track/TracksManager';

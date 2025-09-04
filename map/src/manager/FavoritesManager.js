@@ -5,7 +5,7 @@ import MarkerOptions, {
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import Utils, { getDistance, quickNaNfix } from '../util/Utils';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
@@ -205,14 +205,14 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
     if (selectedFile) {
         const currentGroup =
             selectedFile?.pointsGroups &&
-            !_.isEmpty(selectedFile?.pointsGroups) &&
+            !isEmpty(selectedFile?.pointsGroups) &&
             selectedFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
     } else if (gpxFile || favoritesGroup) {
         const file = gpxFile || favoritesGroup;
-        const currentGroup = file?.pointsGroups && !_.isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
+        const currentGroup = file?.pointsGroups && !isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
@@ -359,7 +359,7 @@ function getGroupSize(group) {
 }
 
 export async function updateFavGroups(listFiles, ctx, updateMarkers = true) {
-    if (!_.isEmpty(listFiles)) {
+    if (!isEmpty(listFiles)) {
         const files = TracksManager.getFavoriteGroups(listFiles);
         let newFavoritesFiles = {
             groups: [],

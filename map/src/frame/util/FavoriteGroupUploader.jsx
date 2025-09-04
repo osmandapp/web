@@ -11,7 +11,7 @@ import {
     saveFavoriteGroup,
 } from '../../manager/FavoritesManager';
 import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);

@@ -1,6 +1,8 @@
 import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
+import indexOf from 'lodash-es/indexOf';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
@@ -51,7 +53,7 @@ export function fitBoundsOptions(ctx) {
 }
 
 export function prepareLocalTrack(track) {
-    const prepareTrack = _.cloneDeep(track);
+    const prepareTrack = cloneDeep(track);
     return {
         name: prepareTrack.name,
         id: prepareTrack.id,
@@ -216,12 +218,12 @@ export async function getApproximatePoints({ points, profile }) {
         headers: { 'Content-Type': 'application/json' },
     });
     return approximateResult && approximateResult.data?.points?.length >= 2
-        ? _.cloneDeep(approximateResult.data.points) // avoid poisoning cache
+        ? cloneDeep(approximateResult.data.points) // avoid poisoning cache
         : points;
 }
 
 function hasGeo(track) {
-    if (!_.isEmpty(track.points)) {
+    if (!isEmpty(track.points)) {
         return track.points.some((p) => p.geometry?.length > 0);
     } else {
         if (track.tracks) {
@@ -351,7 +353,7 @@ export function addDistanceToPoints(points) {
                 distanceSegment = 0;
             }
         } else {
-            let ind = _.indexOf(points, point);
+            let ind = indexOf(points, point);
             if (ind !== 0) {
                 let prevPoint = points[ind - 1];
                 if (prevGapInd !== ind) {
@@ -911,7 +913,7 @@ export function validateRoutePoints(points) {
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
-    const cloneFile = _.cloneDeep(ctx.selectedGpxFile);
+    const cloneFile = cloneDeep(ctx.selectedGpxFile);
 
     if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
         return cloneFile; // no tracks = nothing to analyze
@@ -945,7 +947,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         setLoading(false);
 
         // data will be mutated, use cloneDeep to avoid apiCache mutations
-        const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
+        const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
@@ -993,7 +995,7 @@ function createTrack(ctx, latlng) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
+            file: cloneDeep(ctx.selectedGpxFile),
         };
     }
     ctx.setCreateTrack({ ...createState });
@@ -1358,7 +1360,7 @@ export async function openTrackOnMap({
         ctx.setCreateTrack({
             enable: false,
             closePrev: {
-                file: _.cloneDeep(ctx.selectedGpxFile),
+                file: cloneDeep(ctx.selectedGpxFile),
             },
         });
     }

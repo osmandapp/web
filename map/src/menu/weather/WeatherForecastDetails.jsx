@@ -10,7 +10,7 @@ import {
 } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import i18n from 'i18next';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ForecastGraph from './ForecastGraph';
 import Loading from '../errors/Loading';

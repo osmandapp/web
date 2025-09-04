@@ -7,7 +7,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import {
     DEFAULT_GROUP_NAME,
     getAllVisibleFiles,

@@ -5,7 +5,7 @@ import { History } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import FavoritesManager from '../../../../manager/FavoritesManager';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import AppContext from '../../../../context/AppContext';
 
 export default function FavoriteIcon({

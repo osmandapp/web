@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Box, ListItemButton, Typography } from '@mui/material';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import AppContext from '../../context/AppContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';

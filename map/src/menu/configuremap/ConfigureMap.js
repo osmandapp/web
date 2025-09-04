@@ -25,14 +25,14 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';

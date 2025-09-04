@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import _ from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager from '../../manager/track/TracksManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TrackInfo from './TrackInfo';
@@ -76,7 +76,7 @@ export default function LocalTrackItem({ track }) {
                 enable: true, // start-editor
                 edit: true,
                 closePrev: {
-                    file: _.cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
+                    file: cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
                 },
             });
         } else {

@@ -45,7 +45,7 @@ import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_d
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather, { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM, selectedForecastDetails } from './weather/Weather';
 import styles from './mainmenu.module.css';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';

@@ -1,6 +1,6 @@
 import { apiGet } from '../util/HttpApi';
 import icons from '../resources/generated/poiicons.json';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
     MAIN_CATEGORY_KEY_NAME,
@@ -97,7 +97,7 @@ async function searchPoiCategories(search) {
             locale: i18n.language,
         },
     });
-    if (!_.isEmpty(response?.data)) {
+    if (!isEmpty(response?.data)) {
         return response.data;
     } else {
         return null;

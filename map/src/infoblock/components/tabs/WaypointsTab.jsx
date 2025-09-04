@@ -8,7 +8,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 // distinct component
 const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
@@ -340,7 +340,7 @@ export default function WaypointsTab() {
             <MenuItem divider sx={{ px: 1, py: 1 }}>
                 <Grid container alignItems="center">
                     <Grid item xs={7}>
-                        {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
+                        {ctx.createTrack && ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts) && (
                             <Button
                                 variant="contained"
                                 sx={{
@@ -376,7 +376,7 @@ export default function WaypointsTab() {
                 </Grid>
             </MenuItem>
 
-            {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)) && (
+            {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || isEmpty(ctx.selectedGpxFile.wpts)) && (
                 <Alert
                     sx={{ mt: 2 }}
                     severity="info"

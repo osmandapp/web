@@ -22,7 +22,7 @@ import SegmentSelector from './SegmentSelector';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
-import { debounce } from 'lodash';
+import debounce from 'lodash-es/debounce';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getLargeLengthUnit, getSmallLengthUnit } from '../../../menu/settings/units/UnitsConverter';
 

@@ -1,5 +1,6 @@
 import styles from '../../src/resources/mapStyles/styleRulesResult.json';
-import _ from 'lodash';
+import mapKeys from 'lodash-es/mapKeys';
+import isEmpty from 'lodash-es/isEmpty';
 import i18n from '../i18n';
 import Utils from '../util/Utils';
 import { Interaction } from 'chart.js';
@@ -293,7 +294,7 @@ function addSteepnessDataSet(tag, slopes, roadPoints) {
         if (currentRange) {
             const type = currentRange[1].name;
             let res;
-            if (!_.isEmpty(tag.datasets)) {
+            if (!isEmpty(tag.datasets)) {
                 const prev = tag.datasets[tag.datasets.length - 1];
                 if (prev.label === type) {
                     tag.datasets.pop();
@@ -321,7 +322,7 @@ function addSteepnessDataSet(tag, slopes, roadPoints) {
 }
 
 function prepareLegend(legend) {
-    return _.mapKeys(legend, function (value, key) {
+    return mapKeys(legend, function (value, key) {
         return formattingSteepnessLabel(key);
     });
 }
@@ -344,7 +345,7 @@ function createSteepnessDataSet(tag, type, roadPoints, slope) {
         };
     }
     const dist = SLOPE_STEP / 1000;
-    const totalDist = !_.isEmpty(tag.datasets) ? Number(tag.datasets[tag.datasets.length - 1].totalDist) + dist : dist;
+    const totalDist = !isEmpty(tag.datasets) ? Number(tag.datasets[tag.datasets.length - 1].totalDist) + dist : dist;
     const ind = roadPoints.findIndex((p, i) => {
         return (
             slope.dist >= p.distanceTotal / 1000 &&
@@ -397,7 +398,7 @@ function addDataSet(tag, seg) {
         let res;
         if (label) {
             const type = getType(data_parser[tag.graphName], label);
-            if (!_.isEmpty(tag.datasets)) {
+            if (!isEmpty(tag.datasets)) {
                 const prev = tag.datasets[tag.datasets.length - 1];
                 if (prev.label === type) {
                     tag.datasets.pop();
@@ -443,7 +444,7 @@ function createDataSet(tag, seg, name) {
             }
         }
         const dist = Number(Math.round(seg.distance) / 1000);
-        const totalDist = !_.isEmpty(tag.datasets)
+        const totalDist = !isEmpty(tag.datasets)
             ? Number(tag.datasets[tag.datasets.length - 1].totalDist) + dist
             : dist;
         return {

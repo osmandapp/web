@@ -1,7 +1,8 @@
 import L from 'leaflet';
 import MarkerOptions from '../../markers/MarkerOptions';
 import TrackLayerProvider from '../TrackLayerProvider';
-import _ from 'lodash';
+import indexOf from 'lodash-es/indexOf';
+import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager, { isPointUnrouted } from '../../../manager/track/TracksManager';
 import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
@@ -133,11 +134,11 @@ export default class EditableMarker {
                 const fp = pp.find((point) => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
                 if (fp !== -1) {
                     currentPolyline = p;
-                    indPointInPolyline = _.indexOf(pp, fp, 0);
+                    indPointInPolyline = indexOf(pp, fp, 0);
                 }
             });
 
-            const oldPoint = _.cloneDeep(currentPoint);
+            const oldPoint = cloneDeep(currentPoint);
 
             currentPoint.lat = lat;
             currentPoint.lng = lng;
@@ -163,7 +164,7 @@ export default class EditableMarker {
                 if (prevPoint && prevPoint.profile !== TracksManager.PROFILE_GAP) {
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
-                            const newGeo = _.cloneDeep(currentPoint.geometry);
+                            const newGeo = cloneDeep(currentPoint.geometry);
                             newGeo[newGeo.length - 1] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             currentPoint.geometry = newGeo;
                             track.refreshAnalytics = true;
@@ -190,10 +191,10 @@ export default class EditableMarker {
                 }
 
                 if (nextPoint && currentPoint.profile !== TracksManager.PROFILE_GAP) {
-                    const oldNextPoint = _.cloneDeep(nextPoint);
+                    const oldNextPoint = cloneDeep(nextPoint);
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
-                            const newGeo = _.cloneDeep(nextPoint.geometry);
+                            const newGeo = cloneDeep(nextPoint.geometry);
                             newGeo[0] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             nextPoint.geometry = newGeo;
                             track.refreshAnalytics = true;

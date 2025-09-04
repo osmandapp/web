@@ -6,7 +6,8 @@ import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { ZOOM_TO_MAP } from './SearchLayer';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
@@ -305,7 +306,7 @@ const FavoriteLayer = () => {
             const groupWithOriginalFile = ctx.favorites.groups?.find((g) => g.id === e.sourceTarget.options.groupId);
             ctx.selectedGpxFile.file = groupWithOriginalFile.file;
 
-            ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
+            ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
                 icon: e.sourceTarget.options.icon.options.html,

@@ -1,5 +1,5 @@
 import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
-import _ from 'lodash';
+import indexOf from 'lodash-es/indexOf';
 
 const DB_NAME = 'TracksDB';
 const STORE_NAME = 'local_tracks';
@@ -162,7 +162,7 @@ async function updateStoredLocalTracks(tracks) {
     for (let track of tracks) {
         let res = prepareLocalTrack(track);
         if (res) {
-            await saveTrackToDB(_.indexOf(tracks, track), res);
+            await saveTrackToDB(indexOf(tracks, track), res);
         }
     }
 }
