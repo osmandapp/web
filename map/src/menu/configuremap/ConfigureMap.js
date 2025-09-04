@@ -12,6 +12,7 @@ import {
     AppBar,
     Toolbar,
     Tooltip,
+    Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -39,6 +40,9 @@ import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import gStyles from '../gstylesmenu.module.css';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -46,6 +50,8 @@ export const VECTOR_GRID = 'vector_grid';
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const [, height] = useWindowSize();
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
@@ -296,11 +302,13 @@ export default function ConfigureMap() {
     };
 
     return (
-        <>
-            {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
-            {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
-            {/* Display default configuration if no specific component is active */}
-            {!openPoiConfig && !openTerrainConfig && <DEFAULT_CONFIGURE />}
-        </>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
+            <Box className={gStyles.scrollActiveBlock}>
+                {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
+                {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
+                {/* Display default configuration if no specific component is active */}
+                {!openPoiConfig && !openTerrainConfig && <DEFAULT_CONFIGURE />}
+            </Box>
+        </Box>
     );
 }

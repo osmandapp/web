@@ -18,7 +18,8 @@ import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
 import { matchPath, useLocation, useOutlet } from 'react-router-dom';
-import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export const FORECAST_TYPE_PARAM = 'type';
 export const FORECAST_SOURCE_PARAM = 'source';
@@ -43,6 +44,8 @@ export function selectedForecastDetails(ctx) {
 
 export default function Weather() {
     const ctx = useContext(AppContext);
+
+    const [, height] = useWindowSize();
 
     const outlet = useOutlet();
 
@@ -144,7 +147,7 @@ export default function Weather() {
                         overflow: 'hidden',
                         display: 'flex',
                         flexDirection: 'column',
-                        height: '100%',
+                        height: `${height - HEADER_SIZE}px`,
                     }}
                 >
                     <WeatherHeader />

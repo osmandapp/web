@@ -28,6 +28,9 @@ import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import i18n from 'i18next';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -67,6 +70,8 @@ export function formatLatLon(pnt) {
 
 export default function RouteMenu() {
     const ctx = useContext(AppContext);
+
+    const [, height] = useWindowSize();
 
     const routeObject = ctx.routeObject;
 
@@ -185,7 +190,7 @@ export default function RouteMenu() {
     }
 
     return (
-        <>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollActiveBlock}>
             <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
@@ -414,6 +419,6 @@ export default function RouteMenu() {
                 )}
             </ButtonGroup>
             {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
-        </>
+        </Box>
     );
 }
