@@ -471,7 +471,7 @@ There are several ways to export one or more track files to any messenger, email
     - To [**export a single track**](#track-menu), select the menu of the track.
     - To [**multi-track export**](#track-folder), select the menu of the required folder.
 
-3. By [Local backup file](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
+3. By [Local backup file](../../personal/import-export.md#export). Exporting GPX tracks as `.osf` files.
 
 
 ## Related Articles {#related-articles}
