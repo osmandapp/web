@@ -60,7 +60,7 @@ You can add tracks in OsmAnd in the following ways:
 2. Create a new track in the application using **[Plan a route](../../plan-route/create-route.md)** tool.
 3. Record track in the application using **[Trip recording](../../plugins/trip-recording.md)** plugin.
 4. Enter multiple points by coordinates and save them as a track using the **[Coordinate input](../../plan-route/coordinate-input.md)** tool.
-5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## Manage Tracks {#manage-tracks}
