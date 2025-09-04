@@ -98,7 +98,8 @@ export default function LoginMenu() {
         ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };
 
-    const cloudSize = `${(ctx.listFiles?.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`;
+    const cloudSize = ctx.listFiles?.totalZipSize ? `${(ctx.listFiles.totalZipSize / 1024 / 1024).toFixed(1)} MB` : '';
+
     const mainSubscription = () => {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
