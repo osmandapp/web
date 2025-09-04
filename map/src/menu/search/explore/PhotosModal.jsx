@@ -10,12 +10,12 @@ import styles from '../search.module.css';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
 import AppContext from '../../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
-import { format } from 'date-fns';
 import { getPhotoUrl } from './PhotoGallery';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 import PropTypes from 'prop-types';
+import { fmt } from '../../../util/dateFmt';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -125,12 +125,9 @@ export default function PhotosModal({ photos }) {
     }
 
     const formatDate = (dateStr) => {
-        const cleanDateStr = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
-        const date = new Date(cleanDateStr);
-        if (isNaN(date)) {
-            return dateStr;
-        }
-        return format(date, 'd MMMM yyyy', { locale: ctx.dateLocale });
+        const clean = dateStr?.startsWith('+') ? dateStr.slice(1) : dateStr;
+        const d = new Date(clean);
+        return isNaN(d) ? dateStr : fmt.dMMMMY(d);
     };
 
     return (

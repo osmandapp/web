@@ -1,9 +1,7 @@
 import { Chart } from 'react-chartjs-2';
 import GraphManager from '../../manager/GraphManager';
 import { Box } from '@mui/material';
-import React, { useContext, useRef } from 'react';
-import { format } from 'date-fns';
-import i18n from 'i18next';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     BarElement,
@@ -20,7 +18,7 @@ import {
 } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import AppContext from '../../context/AppContext';
+import { fmt } from '../../util/dateFmt';
 
 ChartJS.register(
     Tooltip,
@@ -37,10 +35,8 @@ ChartJS.register(
 );
 
 export default function ForecastGraph({ data, weatherType, weatherUnits }) {
-    const ctx = useContext(AppContext);
-
     const chartRef = useRef(null);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     Interaction.modes.myCustomMode = GraphManager.myCustomMode;
     const isPrecipitation = weatherType?.includes('precip');
@@ -86,10 +82,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
             x: {
                 display: true,
                 ticks: {
-                    callback: function (value, index) {
-                        const date = new Date(Object.keys(data)[index]);
-                        return format(date, 'dd.MM', { locale: ctx.dateLocale });
-                    },
+                    callback: (v, i) => fmt.ddMM(Object.keys(data)[i]),
                     font: {
                         size: 9,
                     },
@@ -130,12 +123,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 backgroundColor: '#757575',
                 displayColors: false,
                 callbacks: {
-                    title: (context) => {
-                        return new Date(context[0].label).toLocaleString(i18n.language, {
-                            day: 'numeric',
-                            month: 'short',
-                        });
-                    },
+                    title: (items) => fmt.ddMM(Object.keys(data)[items[0].dataIndex]),
                     label: (context) => {
                         let label = context.dataset.label || '';
                         if (label) {

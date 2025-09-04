@@ -9,12 +9,12 @@ import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
-import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import FileShareIcon from '../share/FileShareIcon.jsx';
 import { getShare } from '../../manager/track/TracksManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
+import { fmt } from '../../util/dateFmt';
 
 export default function FavoriteGroup({ index, group, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -78,7 +78,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
                         {share && !sharedFile && <FileShareIcon />}
-                        {`${getLocalizedTimeUpdate(group.clienttimems, ctx)}, ${groupSize}`}
+                        {`${fmt.MMMdY(Number(group.clienttimems))}, ${groupSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton

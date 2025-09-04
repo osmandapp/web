@@ -18,7 +18,6 @@ import styles from './header.module.css';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import * as locales from 'date-fns/locale';
 import AppContext from '../../../context/AppContext';
 import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -66,8 +65,6 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         // handler for when the language changes
         const onLangChanged = (lng) => {
             setCurrentLangLabel(getTransLanguage(lng));
-            const locale = locales[lng] || locales.enUS;
-            ctx.setDateLocale(locale);
         };
 
         i18n.on('languageChanged', onLangChanged);
@@ -138,9 +135,6 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         await i18n.changeLanguage(lng);
 
         localStorage.setItem('i18nextLng', lng);
-        const locale = locales[lng] || locales.enUS;
-        ctx.setDateLocale(locale);
-
         setCurrentLangLabel(t(`lang_${lng}`));
     }
 

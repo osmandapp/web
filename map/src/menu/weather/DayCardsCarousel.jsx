@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Box, ListItemButton, Typography } from '@mui/material';
-import i18n from 'i18next';
 import { isEmpty } from 'lodash';
 import AppContext from '../../context/AppContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
-import { format } from 'date-fns';
+import { fmt } from '../../util/dateFmt';
 
 export default function DayCardsCarousel() {
     const ctx = useContext(AppContext);
@@ -18,8 +17,7 @@ export default function DayCardsCarousel() {
     const carouselRef = useRef(null);
 
     function formatDay(currentDay) {
-        const formattedDay = format(currentDay, 'eee', { locale: ctx.dateLocale });
-        return formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
+        return fmt.wkShort(currentDay);
     }
 
     useEffect(() => {

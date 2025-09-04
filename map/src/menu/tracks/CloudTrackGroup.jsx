@@ -7,9 +7,9 @@ import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
-import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
+import { fmt } from '../../util/dateFmt';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -43,7 +43,7 @@ export default function CloudTrackGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${getLocalizedTimeUpdate(group.lastModifiedData, ctx)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
+                        {`${fmt.MMMdY(Number(group.lastModifiedData))}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton

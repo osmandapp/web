@@ -24,20 +24,13 @@ import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete
 import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { format } from 'date-fns';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
-import * as locales from 'date-fns/locale';
 import gStyles from '../gstylesmenu.module.css';
-
-export function getLocalizedTimeUpdate(time, ctx) {
-    const currentDate = new Date(time);
-    return format(currentDate, 'MMM d', { locale: ctx.dateLocale });
-}
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
@@ -79,8 +72,6 @@ export default function SettingsMenu() {
             }
 
             localStorage.setItem('i18nextLng', lng);
-            const locale = locales[lng] || locales.enUS;
-            ctx.setDateLocale(locale);
             setCurrentLang(t(`lang_${lng}`));
         }
 

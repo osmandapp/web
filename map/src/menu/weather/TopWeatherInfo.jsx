@@ -3,8 +3,8 @@ import i18n from 'i18next';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import styles from '../weather/weather.module.css';
-import { format } from 'date-fns';
 import { useTranslation } from 'react-i18next';
+import { fmt } from '../../util/dateFmt';
 
 export default function TopWeatherInfo({
     loadingLocation,
@@ -17,17 +17,7 @@ export default function TopWeatherInfo({
     const { t } = useTranslation();
 
     function getSubInfo() {
-        if (useWeatherDate) {
-            let formattedDay = format(ctx.weatherDate, 'eeee', { locale: ctx.dateLocale });
-            formattedDay = formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
-            return `${formattedDay}, ${ctx.weatherDate.toLocaleString(i18n.language, {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-            })}`;
-        } else {
-            return t('web:weather_current');
-        }
+        return useWeatherDate ? fmt.wkLongTime(ctx.weatherDate) : t('web:weather_current');
     }
 
     function getLocation() {
