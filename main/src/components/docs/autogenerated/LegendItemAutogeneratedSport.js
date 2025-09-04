@@ -1,7 +1,6 @@
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
@@ -24,7 +23,7 @@ export default function Render() {
         'poi_cricket' : 'sport/sport_sport_cricket',
         'poi_cycling' : 'sport/sport_sport_cycling',
         'poi_diving' : 'sport/sport_sport_diving',
-        'poi_dojo' : 'sport/sport_sport_dojo',
+        'poi_dojo' : 'sport/sport_amenity_dojo',
         'poi_equestrian' : 'sport/sport_sport_equestrian',
         'poi_field_hockey' : 'sport/sport_sport_field_hockey',
         'poi_hang_gliding' : 'sport/sport_sport_hang_gliding',
@@ -58,4 +57,3 @@ export default function Render() {
         'poi_ultralight_aviation' : 'sport/sport_sport_ultralight_aviation',
     }});
 }
-

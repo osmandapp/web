@@ -1,7 +1,6 @@
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
@@ -89,4 +88,3 @@ export default function Render() {
         'poi_lighthouse' : 'traffic/traffic_man_made_lighthouse',
     }});
 }
-

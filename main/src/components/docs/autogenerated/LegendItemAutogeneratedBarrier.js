@@ -1,7 +1,6 @@
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
@@ -45,4 +44,3 @@ export default function Render() {
         'poi_wicket_gate' : 'barrier/barrier_barrier_wicket_gate',
     }});
 }
-

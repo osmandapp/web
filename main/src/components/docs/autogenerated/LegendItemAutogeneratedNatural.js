@@ -1,7 +1,6 @@
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
@@ -32,4 +31,3 @@ export default function Render() {
         'poi_termite_mound' : 'natural/natural_natural_termite_mound',
     }});
 }
-
