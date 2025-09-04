@@ -131,7 +131,7 @@ The menu provides the following actions:
 
 - **Upload modifications to OSM** (*iOS*) — [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
 
-- **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool to modify tracks.
+- **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-existing-gpx-track) tool to modify tracks.
 
 - **Duplicate** (*iOS*) — Creates a copy of the selected track.
 
