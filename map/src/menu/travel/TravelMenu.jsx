@@ -3,7 +3,7 @@ import { AppBar, Box, CircularProgress, IconButton, Toolbar, Typography } from '
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
 import {
@@ -21,6 +21,8 @@ import TravelRoutesResult from './TravelRoutesResult';
 import capitalize from 'lodash/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import LoginContext from '../../context/LoginContext';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import gStyles from '../gstylesmenu.module.css';
 
 export const ALL_YEARS = 'all';
 
@@ -32,6 +34,8 @@ export default function TravelMenu() {
     const DEFAULT_ACTIVITY = 'hiking';
     const DEFAULT_YEAR = new Date().getFullYear();
     const MIN_YEAR = 2005;
+
+    const [, height] = useWindowSize();
 
     const [selectedActivityType, setSelectedActivityType] = useState(DEFAULT_ACTIVITY);
     const [selectedYear, setSelectedYear] = useState(DEFAULT_YEAR);
@@ -157,7 +161,7 @@ export default function TravelMenu() {
     }
 
     return (
-        <>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             {ltx.loginUser ? (
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
@@ -170,49 +174,55 @@ export default function TravelMenu() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    {updatedActivities?.length > 0 && (
+                    <Box className={gStyles.scrollActiveBlock}>
+                        {updatedActivities?.length > 0 && (
+                            <CustomSelect
+                                name="Activity"
+                                value={selectedActivityType}
+                                onChange={(value) => setSelectedActivityType(value)}
+                                options={updatedActivities}
+                                renderLabel={(option) => option?.label}
+                                renderIcon={(option) => option?.icon}
+                                handleSelect={(id) => handleActivitySelect(id)}
+                            />
+                        )}
                         <CustomSelect
-                            name="Activity"
-                            value={selectedActivityType}
-                            onChange={(value) => setSelectedActivityType(value)}
-                            options={updatedActivities}
+                            name="Year"
+                            value={selectedYear}
+                            onChange={(value) => setSelectedYear(value)}
+                            options={years}
                             renderLabel={(option) => option?.label}
-                            renderIcon={(option) => option?.icon}
-                            handleSelect={(id) => handleActivitySelect(id)}
+                            handleSelect={(year) => handleYearSelect(year)}
+                            menuWidth={'auto'}
+                            hasIcons={false}
+                            defaultIcon={SortDateIcon}
+                            my={'0px'}
+                            marginLeft={'250px'}
                         />
-                    )}
-                    <CustomSelect
-                        name="Year"
-                        value={selectedYear}
-                        onChange={(value) => setSelectedYear(value)}
-                        options={years}
-                        renderLabel={(option) => option?.label}
-                        handleSelect={(year) => handleYearSelect(year)}
-                        menuWidth={'auto'}
-                        hasIcons={false}
-                        defaultIcon={SortDateIcon}
-                        my={'0px'}
-                        marginLeft={'250px'}
-                    />
-                    <Box sx={{ m: 2 }}>
-                        <PrimaryBtn action={showRoutes} id={'se-submit-show-travel'} text={t('shared_string_show')} />
+                        <Box sx={{ m: 2 }}>
+                            <PrimaryBtn
+                                action={showRoutes}
+                                id={'se-submit-show-travel'}
+                                text={t('shared_string_show')}
+                            />
+                        </Box>
+                        {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
+                        {travelResult &&
+                            (travelResult?.features?.length > 0 ? (
+                                <>
+                                    <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
+                                        Results: {travelResult?.features?.length || 0}
+                                    </Typography>
+                                    <TravelRoutesResult routes={travelResult.features} />
+                                </>
+                            ) : (
+                                <EmptyTravel reset={resetSearch} />
+                            ))}
                     </Box>
-                    {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
-                    {travelResult &&
-                        (travelResult?.features?.length > 0 ? (
-                            <>
-                                <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
-                                    Results: {travelResult?.features?.length || 0}
-                                </Typography>
-                                <TravelRoutesResult routes={travelResult.features} />
-                            </>
-                        ) : (
-                            <EmptyTravel reset={resetSearch} />
-                        ))}
                 </>
             ) : (
                 <EmptyLogin />
             )}
-        </>
+        </Box>
     );
 }

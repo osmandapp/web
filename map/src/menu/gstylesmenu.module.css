@@ -18,3 +18,16 @@
         background-color: #f5f5f5 !important;
     }
 }
+.scrollMainBlock {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+.scrollActiveBlock {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+

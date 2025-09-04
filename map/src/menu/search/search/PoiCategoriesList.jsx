@@ -44,7 +44,7 @@ export default function PoiCategoriesList({
     }
 
     return (
-        <Box>
+        <Box className={gStyles.scrollMainBlock}>
             <AppBar
                 id={'se-search-categories-list'}
                 position="static"
@@ -72,7 +72,7 @@ export default function PoiCategoriesList({
             {loadingIcons ? (
                 <Loading />
             ) : (
-                <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
+                <Box className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
                         const catName = getCatName(category);
