@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-In the **Maps and Resources** section, you can manage *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
+In the **Maps and Resources** section, you can manage both *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
 
 OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
 
