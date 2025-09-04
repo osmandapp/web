@@ -13,9 +13,14 @@ import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_acti
 import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { useTranslation } from 'react-i18next';
 import { clearShowDetailsFlag } from '../../manager/WeatherManager';
+import { MAIN_URL_WITH_SLASH, WEATHER_URL } from '../../manager/GlobalManager';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function WeatherHeader({ setShowInfoBlock = null, isDetails = false }) {
     const ctx = useContext(AppContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const { t } = useTranslation();
     const [openForecastActions, setOpenForecastActions] = useState(false);
@@ -39,8 +44,20 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            closeHeader({ ctx, setShowInfoBlock });
                             clearShowDetailsFlag(ctx);
+                            if (isDetails) {
+                                navigate({
+                                    pathname: MAIN_URL_WITH_SLASH + WEATHER_URL,
+                                    hash: location.hash,
+                                });
+                            } else {
+                                ctx.setWeatherDate(new Date());
+                                ctx.setWeatherLayers((prev) => ({
+                                    ...prev,
+                                    [ctx.weatherType]: prev[ctx.weatherType].map((l) => ({ ...l, checked: false })),
+                                }));
+                                closeHeader({ ctx, setShowInfoBlock });
+                            }
                         }}
                     >
                         {isDetails ? <BackIcon /> : <CloseIcon />}

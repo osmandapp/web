@@ -3,7 +3,11 @@ import WeatherHeader from './WeatherHeader';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import TopWeatherInfo from './TopWeatherInfo';
-import { LOCAL_STORAGE_WEATHER_FORECAST_WEEK, LOCAL_STORAGE_WEATHER_LOC } from '../../manager/WeatherManager';
+import {
+    openWeatherForecastDetails,
+    LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+    LOCAL_STORAGE_WEATHER_LOC,
+} from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import i18n from 'i18next';
 import { isEmpty } from 'lodash';
@@ -14,10 +18,14 @@ import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import Empty from '../errors/Empty';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
+import { FORECAST_TYPE_PARAM } from './Weather';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const [, height] = useWindowSize();
+
+    const updateQueryParam = useUpdateQueryParam();
 
     const [forecast, setForecast] = useState(getSavedForecast());
     const [weatherLoc, setWeatherLoc] = useState(getWeatherLoc());
@@ -212,6 +220,8 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 onClick={() => {
                     setCurrentWeatherType(item.key);
                     setCurrentWeatherUnits(item.units);
+                    updateQueryParam(FORECAST_TYPE_PARAM, index);
+                    openWeatherForecastDetails(ctx, index, ctx.weatherType);
                 }}
             >
                 <Icon className={setForecastButtonIconStyles(item)}>{item.icon}</Icon>

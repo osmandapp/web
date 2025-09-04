@@ -1,14 +1,20 @@
 import React, { useContext, useEffect } from 'react';
-import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { addShowDetailsFlag, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
+import { openWeatherForecastDetails, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
+import { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM } from './Weather';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const NOT_AVAILABLE = t('data_is_not_available');
 
@@ -54,8 +60,12 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                     id={'se-weather-forecast-' + item.name()}
                     key={index}
                     onClick={() => {
-                        ctx.setCurrentObjectType(OBJECT_TYPE_WEATHER);
-                        addShowDetailsFlag(ctx, index);
+                        navigate({
+                            pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
+                            search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                            hash: location.hash,
+                        });
+                        openWeatherForecastDetails(ctx, index, ctx.weatherType);
                     }}
                 >
                     <ListItemIcon className={styles.forecastIcon}>{item.icon}</ListItemIcon>

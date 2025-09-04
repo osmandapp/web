@@ -13,9 +13,10 @@ const WeatherLayersActions = forwardRef((props, ref) => {
     const { t } = useTranslation();
 
     const switchLayer = (ctx, index, weatherType) => (e) => {
-        let newLayers = { ...ctx.weatherLayers };
-        newLayers[weatherType][index].checked = e.target.checked;
-        ctx.setWeatherLayers(newLayers);
+        ctx.setWeatherLayers((prev) => ({
+            ...prev,
+            [weatherType]: prev[weatherType].map((l, i) => (i === index ? { ...l, checked: e.target.checked } : l)),
+        }));
     };
 
     function setWeatherStyles(item) {

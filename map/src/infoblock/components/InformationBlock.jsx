@@ -25,7 +25,6 @@ import {
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
-import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
@@ -69,7 +68,6 @@ export default function InformationBlock({
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
-    const [openWeatherForecastDetails, setOpenWeatherForecastDetails] = useState(false);
     const [openWptDetails, setOpenWptDetails] = useState(false);
     const [openWptTab, setOpenWptTab] = useState(false);
     const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
@@ -175,12 +173,6 @@ export default function InformationBlock({
         isLocalTrack(ctx) && ctx.setUpdateInfoBlock(true);
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
-    function isValidWeatherObj() {
-        const isWeatherValid = ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherDate;
-        setOpenWeatherForecastDetails(isWeatherValid);
-        return isWeatherValid;
-    }
-
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
@@ -194,9 +186,7 @@ export default function InformationBlock({
                 let tObj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
-                if (isValidWeatherObj()) {
-                    setShowInfoBlock(true);
-                } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
+                if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
                 } else if (ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
@@ -303,7 +293,7 @@ export default function InformationBlock({
     }
 
     function hasOldTabs() {
-        return !openWeatherForecastDetails && !openWptDetails && !openShareFileMenu;
+        return !openWptDetails && !openShareFileMenu;
     }
 
     function isOpenMainFavShareFile() {
@@ -315,7 +305,6 @@ export default function InformationBlock({
         <>
             {showInfoBlock && (
                 <>
-                    {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
                     {openWptDetails &&
                         (ctx.photoGallery ? (
                             <WptPhotoList photos={ctx.photoGallery} />

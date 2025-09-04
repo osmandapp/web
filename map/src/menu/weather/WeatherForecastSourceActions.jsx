@@ -11,6 +11,8 @@ import {
 } from '../../manager/WeatherManager';
 import ActionItem from '../components/ActionItem';
 import { useTranslation } from 'react-i18next';
+import { FORECAST_SOURCE_PARAM } from './Weather';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 
 export const weatherTypes = {
     GFS: {
@@ -28,11 +30,14 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
 
     const { t } = useTranslation();
 
+    const updateQueryParam = useUpdateQueryParam();
+
     const handleWeatherType = (e) => {
         const selectedType = e.target.value;
         if (selectedType !== null && selectedType !== ctx.weatherType) {
             localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
             ctx.setWeatherType(selectedType);
+            updateQueryParam(FORECAST_SOURCE_PARAM, selectedType);
             ctx.setForecastLoading(true);
             if (setOpenActions) {
                 setOpenActions(false);
