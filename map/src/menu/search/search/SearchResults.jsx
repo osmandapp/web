@@ -234,6 +234,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchQuery(null);
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
     }
 
     function resulNotPrepared() {
