@@ -35,7 +35,6 @@ import {
     Speed,
     Terrain,
 } from '@mui/icons-material';
-import DescTrackDialog from '../../../dialogs/tracks/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/navigate/RouteMenu';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
@@ -318,28 +317,7 @@ export default function GeneralInfo({ width }) {
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
-                    {isLocalTrack(ctx) && (
-                        <IconButton
-                            sx={{ alignSelf: 'flex-start', mt: '-10px' }}
-                            onClick={() => setOpenDescDialog(true)}
-                        >
-                            <Edit fontSize="small" />
-                        </IconButton>
-                    )}
                 </Box>
-                {descHeight === DESC_MAX_HEIGHT && (
-                    <Link
-                        href="#"
-                        color="inherit"
-                        sx={{ fontSize: '0.875rem' }}
-                        onClick={() => {
-                            setOpenDescDialog(true);
-                        }}
-                    >
-                        Show more...
-                    </Link>
-                )}
-                {/*<Divider sx={{ mt: '6px', mb: '12px' }} light />*/}
             </ListItemText>
         );
     };
@@ -565,24 +543,7 @@ export default function GeneralInfo({ width }) {
                     }}
                 >
                     <div>{isLocalTrack(ctx) ? EditName() : NoEditName()}</div>
-                    <div>
-                        {preparedDesc
-                            ? Description({ desc: preparedDesc })
-                            : isLocalTrack(ctx) && (
-                                  <>
-                                      <Link
-                                          href="#"
-                                          color="inherit"
-                                          sx={{ fontSize: '0.875rem' }}
-                                          onClick={() => {
-                                              setOpenDescDialog(true);
-                                          }}
-                                      >
-                                          • Add description
-                                      </Link>
-                                  </>
-                              )}
-                    </div>
+                    <div>{preparedDesc && Description({ desc: preparedDesc })}</div>
                     {ltx.loginUser &&
                         ltx.accountInfo?.account !== FREE_ACCOUNT &&
                         (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
@@ -730,9 +691,6 @@ export default function GeneralInfo({ width }) {
                     </>
                 )}
             </Box>
-            {openDescDialog && (
-                <DescTrackDialog dialogOpen={openDescDialog} setDialogOpen={setOpenDescDialog} desc={preparedDesc} />
-            )}
         </>
     );
 }
