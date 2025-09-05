@@ -34,6 +34,7 @@ export default function ExploreMenu() {
     function close() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
         ctx.setLoadingContextMenu(false);
+        ctx.setCurrentObjectType(null);
     }
 
     useEffect(() => {
