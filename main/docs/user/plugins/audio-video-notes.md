@@ -113,7 +113,7 @@ You can create a photo, video, and audio note in any of the following ways:
 
 The <Translate android="true" ids="map_widget_av_notes"/> widget is used to create a note tied to your current position, and thus, avoid any search for a suitable point for a note on the map. Simply tap the widget, and make the note.  
 
-The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in and then opens the respective recorder dialog.
+The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#audiovideo-notes-widget) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in and then opens the respective recorder dialog.
 
 
 #### 2. Create and Tie to Selected Geolocation {#2-create-and-tie-to-selected-geolocation}
@@ -128,7 +128,7 @@ The functions provided by the <Translate android="true" ids="map_widget_av_notes
 
 </Tabs>
 
-To create a note tied to a selected point on the map, use the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point:
+To create a note tied to a selected point on the map, use the [Context menu](../map/map-context-menu.md#-record-av-note) of the point:
 
 1. Long tap a point on the map, and the [Context menu](../map/map-context-menu.md) opens.
 2. Tap **Actions**, and select one of the available options from the list:
@@ -194,7 +194,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 
 </Tabs>
 
-To show a specific note on the map, use the list of notes in My Places, find the needed one, and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#-audiovideo-note). It is possible to work with the note by selecting the options in the context menu.
+To show a specific note on the map, use the list of notes in My Places, find the needed one, and tap it. As a result, the map shows up, highlights the location of the note, and opens the Context menu. It is possible to work with the note by selecting the options in the context menu.
 
 
 ### Play {#play}
@@ -234,7 +234,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Open and view the selected video or play the audio note.
 - **<Translate android="true" ids="shared_string_share"/>**. Easily share the selected note with others via various platforms.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Shows the exact location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Shows the exact location and Context menu of the note on the map.
 - **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the note for easier identification.
 - **<Translate android="true" ids="shared_string_delete"/>**. Removes notes permanently from the application.
 
@@ -367,11 +367,11 @@ If a track is exported, the waypoints cannot be viewed, or played, because audio
 
 There are two ways to create a waypoint: automatically and manually.
 
-1. **Automatically**, a waypoint is created, in case you takes an audio/video/photo note when the [Trip recording](../plugins/trip-recording) is in progress, regardless of the geolocation if it is tied to the current position or any place, and thus, regardless of the means used for that: if it is the [Widget](../widgets/info-widgets#-audio-video-notes-widget-android), or the [Context menu](../map/map-context-menu#-audiovideo-note-android).
+1. **Automatically**, a waypoint is created, in case you takes an audio/video/photo note when the [Trip recording](../plugins/trip-recording) is in progress, regardless of the geolocation if it is tied to the current position or any place, and thus, regardless of the means used for that: if it is the [Widget](../widgets/info-widgets#audiovideo-notes-widget), or the [Context menu](../map/map-context-menu#-audiovideo-note).
 
     All waypoints added automatically get an automatically assigned name. The name is created, according to the format specified below for an audio/video/photo file, and has a [shortlink](https://wiki.openstreetmap.org/wiki/Shortlink). The example of the waypoints in the figure above shows automatically and manually created waypoints, where the first four were created automatically, and the last one - manually.
 
-2. **Manually**, a waypoint is created via the [Context menu](../map/map-context-menu#-audiovideo-note-android), as follows:
+2. **Manually**, a waypoint is created via the [Context menu](../map/map-context-menu#-audiovideo-note), as follows:
 
     - Select the required audio/video/photo note on the map.
     - Tap **Actions**, and then tap **Add track**.
