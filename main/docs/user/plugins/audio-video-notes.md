@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Your audio and video recordings can be useful in the future, such as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when the Audio/Video Notes plugin is enabled.
 
-The Audio/Video Notes plugin extends OsmAnd's functionality by allowing you to create their own notes in various formats, such as photos, video, or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
+The Audio/Video Notes plugin extends OsmAnd's functionality by allowing you to create their own notes in various formats, such as photos, video, or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#audiovideo-notes-widget) and/or the [map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
 
 All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.
 
@@ -39,7 +39,7 @@ All created audio and video notes compose the Record layer. When enabled on the 
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
 1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the *Main Menu*.  
-2. Add a [widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the map screen for the most convenient use.
+2. Add a [widget](../widgets/info-widgets.md#audiovideo-notes-widget) to the map screen for the most convenient use.
 3. Customize the [recording settings](#plugin-settings) for each profile, if necessary.  
 
 
@@ -87,7 +87,7 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 - Rename a note in My Places.
 - Show all notes [on the map](../map/configure-map-menu.md#map-data-layers).
 - Play the note.
-- Create waypoints in a [track](../plugins/trip-recording.md#gpx-file-details).
+- Create waypoints in a [track](../plugins/trip-recording.md#new-track-recording).
 - Export to [JOSM](https://josm.openstreetmap.de/).
 
 
@@ -95,8 +95,8 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 
 You can create a photo, video, and audio note in any of the following ways:
 
-- With the [Widget](../widgets/info-widgets.md#-audio-video-notes-widget-android). If the note should be tied to your current geographical position.
-- With the [Context menu](../map/map-context-menu.md#-record-av-note-android) of a point on the map. If the note should be tied to the selected point on the map.
+- With the [Widget](../widgets/info-widgets.md#audiovideo-notes-widget). If the note should be tied to your current geographical position.
+- With the [Context menu](../map/map-context-menu.md#overview) of a point on the map. If the note should be tied to the selected point on the map.
 
 
 #### 1. Create and Tie to your Current Position {#1-create-and-tie-to-your-current-position}
@@ -194,7 +194,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 
 </Tabs>
 
-To show a specific note on the map, use the list of notes in My Places, find the needed one, and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#actions-in-map-context-menu). It is possible to work with the note by selecting the options in the context menu.
+To show a specific note on the map, use the list of notes in My Places, find the needed one, and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#-audiovideo-note). It is possible to work with the note by selecting the options in the context menu.
 
 
 ### Play {#play}
@@ -210,12 +210,12 @@ To show a specific note on the map, use the list of notes in My Places, find the
 
 </Tabs>
 
-To play a note, use the respective option in the [Context menu](../map/map-context-menu#-audiovideo-note-android) opened for the note:
+To play a note, use the respective option in the [Context menu](../map/map-context-menu#overview) opened for the note:
 
 - on the map;
 - in My Places.
 
-The [Details](../map/map-context-menu#-audiovideo-note-android) section provides more data about the notes, such as latitude and longitude, the date and time of the note, and photos.
+The [Details](../map/map-context-menu#details) section provides more data about the notes, such as latitude and longitude, the date and time of the note, and photos.
 
 
 ### Rename, Delete, Share {#rename-delete-share}
