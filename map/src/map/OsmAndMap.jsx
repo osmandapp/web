@@ -58,8 +58,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
-            window.seleniumTestsMap = map;
             const hash = new L.Hash(map);
+
+            window.__leafletMap = map;
+            window.__leafletHash = hash;
+
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
                 ctx.setMapMarkerListener(

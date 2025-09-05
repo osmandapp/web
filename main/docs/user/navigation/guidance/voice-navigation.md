@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 title:  Voice Prompts / Notifications
 ---
 
@@ -276,7 +276,7 @@ OsmAnd provides two types of voice prompts:
 
 > *TTS is recommended for detailed navigation guidance.*
 
-#### System-Level Voice Prompt Settings {#system-level-voice-prompt-settings}
+### System-Level Voice Prompt Settings {#system-level-voice-prompt-settings}
 
 Voice prompt behavior, including *playback speed, pitch, and pauses*, can be adjusted only in the device’s system settings.
 
@@ -294,7 +294,7 @@ Voice prompt behavior, including *playback speed, pitch, and pauses*, can be adj
 > *For additional voices, download language packs from system settings.*
 
 
-#### Available TTS Languages {#available-tts-languages}
+### Available TTS Languages {#available-tts-languages}
 
 There are currently a total of 45 languages. Not all languages listed below may be supported by every TTS engine. See [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
@@ -424,4 +424,4 @@ Select screen wake-up options and ensure OsmAnd remains in the foreground when t
 3. [Why should I use a TTS voice instead of a recorded voice?](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
 4. [TTS does not function properly? Follow these steps to fix it.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)
 
-> *Last updated: March 2025*
+

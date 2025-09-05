@@ -3,11 +3,9 @@ import loginStyles from '../../login.module.css';
 import styles from '../../../frame/components/items/items.module.css';
 import PurchaseStatus from '../PurchaseStatus';
 import { ReactComponent as StartIcon } from '../../../assets/icons/ic_action_osmand_start_v2.svg';
-import { useContext } from 'react';
-import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { format } from 'date-fns';
 import { FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE } from '../../../manager/LoginManager';
+import { fmt } from '../../../util/dateFmt';
 
 export const FreeAccountObject = (regTime) => ({
     name: FREE_ACCOUNT,
@@ -18,13 +16,9 @@ export const FreeAccountObject = (regTime) => ({
 });
 
 export default function FreeAccItem({ onClick, regTime }) {
-    const ctx = useContext(AppContext);
-
     const { t } = useTranslation();
 
-    const purchaseDate = regTime
-        ? format(new Date(parseInt(regTime, 10)), 'MMM d, yyyy', { locale: ctx.dateLocale })
-        : 'N/A';
+    const purchaseDate = regTime ? fmt.MMMdY(Number(regTime)) : 'N/A';
 
     return (
         <MenuItem disableRipple className={loginStyles.purchaseItem} onClick={onClick} divider>

@@ -5,7 +5,7 @@ import MarkerOptions, {
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import Utils, { getDistance, quickNaNfix } from '../util/Utils';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
@@ -61,17 +61,49 @@ function getShapesSvg(color) {
     return res;
 }
 
-async function addFavorite(data, fileName, updatetime) {
-    fileName = normalizeGroupNameForFile(fileName);
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
-        params: {
-            fileName: fileName,
-            updatetime: updatetime,
-        },
-    });
-    if (resp.data) {
-        const data = prepareTrackData(resp.data.details.trackData);
-        return new GroupResult(resp.data.clienttime, resp.data.updatetime, data);
+// Try to add, refresh stale file, then retry once
+async function addFavorite(data, group, ctx) {
+    const fileName = normalizeGroupNameForFile(group?.file?.name ?? '');
+    if (!fileName) {
+        throw new Error('File name is required to add a favorite');
+    }
+
+    const postAdd = async (updatetime) => {
+        try {
+            return await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
+                params: { fileName, updatetime },
+                dataOnErrors: true,
+                throwErrors: true,
+            });
+        } catch {
+            return { data: null };
+        }
+    };
+
+    const toResult = (resp) => {
+        const td = prepareTrackData(resp.details.trackData);
+        return new GroupResult(resp.clienttime, resp.updatetime, td);
+    };
+
+    try {
+        let resp = await postAdd(group?.updatetimems);
+        if (resp?.data) return toResult(resp.data);
+
+        const files = await refreshGlobalFiles({
+            ctx,
+            type: OBJECT_TYPE_FAVORITE,
+            updateMarkers: false,
+        });
+
+        const freshGroup = files.groups?.find((g) => g.name === group?.name);
+        resp = await postAdd(freshGroup?.updatetimems);
+
+        if (resp?.data) return toResult(resp.data);
+
+        return null;
+    } catch (err) {
+        console.error('[addFavorite] failed:', err);
+        return null;
     }
 }
 
@@ -173,14 +205,14 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
     if (selectedFile) {
         const currentGroup =
             selectedFile?.pointsGroups &&
-            !_.isEmpty(selectedFile?.pointsGroups) &&
+            !isEmpty(selectedFile?.pointsGroups) &&
             selectedFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
     } else if (gpxFile || favoritesGroup) {
         const file = gpxFile || favoritesGroup;
-        const currentGroup = file?.pointsGroups && !_.isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
+        const currentGroup = file?.pointsGroups && !isEmpty(file?.pointsGroups) && file.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
@@ -326,8 +358,8 @@ function getGroupSize(group) {
     }
 }
 
-export async function updateFavGroups(listFiles, ctx) {
-    if (!_.isEmpty(listFiles)) {
+export async function updateFavGroups(listFiles, ctx, updateMarkers = true) {
+    if (!isEmpty(listFiles)) {
         const files = TracksManager.getFavoriteGroups(listFiles);
         let newFavoritesFiles = {
             groups: [],
@@ -349,7 +381,10 @@ export async function updateFavGroups(listFiles, ctx) {
                 newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
             }
         }
-        ctx.setUpdateMarkers(newFavoritesFiles);
+        if (updateMarkers) {
+            ctx.setUpdateMarkers(newFavoritesFiles);
+        }
+        return newFavoritesFiles;
     } else {
         ctx.setFavorites([]);
     }
@@ -611,6 +646,12 @@ export function addShareFavoriteToMap(marker, ctx) {
     newSelectedGpxFile.favItem = true;
     ctx.setSelectedGpxFile((prev) => ({ ...prev, ...newSelectedGpxFile }));
     ctx.setSelectedWpt(newSelectedGpxFile);
+}
+
+export function openFavoriteObj(ctx, object) {
+    ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
+    ctx.setSelectedWpt({ ...object });
+    ctx.setSelectedGpxFile({ ...object });
 }
 
 const FavoritesManager = {

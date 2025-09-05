@@ -361,4 +361,4 @@ To stop simulation of the movement of your device, go back to the OsmAnd develop
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: May 2023*
+

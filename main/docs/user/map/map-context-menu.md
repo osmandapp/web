@@ -38,15 +38,15 @@ The map context menu provides information about the selected object on the map. 
 
 </Tabs>
 
-The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name, icon* (as represented on the map), *address, distance*, and *direction* from your current position.  
+The **context menu** appears when you **tap once** a marked object on the map. This context menu displays essential information about the selected object, including its *name*, *icon* (as represented on the map), *address, distance*, *boundaries* and *direction* from your current position.  
 
 You can select various types of map objects, such as *POIs*, *favorites*, *transportation stops*, *markers*, *mountain peaks*, or other *map objects*.
 
 :::note
-Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- Selected map objects and their boundaries correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 :::
 
-> *The height of mountain peaks is displayed in meters or feet depending on the [units of length](../personal/profiles.md#units--formats) selected in the profile settings.*
 
 
 ### Select Any Point (Long Tap) {#select-any-point-long-tap}
@@ -69,10 +69,8 @@ Selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openst
 
 When you **long tap** anywhere on the map, a **context menu** appears, providing information about the selected location. This includes the address, distance, and direction from your current position.
 
-> **NOTE**. *Long tapping a **building number** highlights its outline and opens the map context menu*
 
-
-### Select Route {#select-route}
+### Select GPX Route {#select-gpx-route}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -91,6 +89,15 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 </Tabs>
 
 Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options.
+
+
+
+### Routes, Ski Slopes, and Trails {#routes-and-trails}
+
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
+
+You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Check [Routes article](../map/routes.md#actions-with-routes) for more information.
+
 
 
 ### Hide Context Menu {#hide-context-menu}
@@ -129,13 +136,13 @@ The **Object Info** panel provides additional details about the selected object.
 Available details include:
 
 - [Alternative names](#alternative-names)
-- [Coordinates](../map/map-context-menu.md#coordinates)
-- [Nearby POIs / Wikipedia](../map/map-context-menu.md#nearby-pois--wikipedia-nearby-pois--wikipedia)
-- [Public Transport routes](../map/map-context-menu.md#public-transport-routes) (for transport stops)
-- [Favorites / Track Points from the same group](../map/map-context-menu.md#favorites--track-points-from-the-group)
-- [OpenStreetMap link](../map/map-context-menu.md#openstreetmap-link)
-- [Article image / description](../map/map-context-menu.md#article-description-article-description)
-- [Online photos](../map/map-context-menu.md#online-photos)
+- [Coordinates](#coordinates)
+- [Within areas](#polygon-information)
+- [Nearby POIs / Wikipedia](#nearby-pois--wikipedia-nearby-pois--wikipedia)
+- [Public Transport routes for stops](#public-transport-routes)
+- [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
+- [OpenStreetMap link](#openstreetmap-link)
+- [Online photos](#online-photos)
 
 Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features), such as:
 
@@ -178,7 +185,7 @@ Features of alternative names display:
 - If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
 
 
-### Polygon Information {#polygon-information}
+### Within area {#polygon-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -196,26 +203,7 @@ Features of alternative names display:
 
 </Tabs>
 
-The **Polygon information** feature provides detailed data on nearby **polygons** displayed on the map. This includes geographic features, administrative boundaries, and other mapped areas.  
-
-**Within section**:
-
-- Displays a *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
-
-- Each entry shows the *polygon type and name*, allowing for easy identification of regions and boundaries.
-
-**Additional details**:
-
-- When selecting a point on the map or a POI, the **polygon information** panel displays a list of all polygons that contain the selected location.
-
-- Entries in the list include **administrative divisions, land use areas, natural features, and other categorized regions**.
-
-- The panel allows users to **copy the polygon's name and details** for reference.
-
-- To view this information, go to *Map Context Menu → Details → Within*.
-
-This feature helps you understand your *current location* in relation to mapped administrative divisions, natural areas, or other important geographic features.
-
+The **Within Area** feature lists the **areas** that an object is located within. This includes geographic features, administrative boundaries, land use areas, natural features, and other categorized areas. A *list of surrounding polygons*, sorted *from smallest to largest* based on area size.
 
 ### Coordinates {#coordinates}
 
@@ -267,31 +255,6 @@ Shown info about Public transport routes for chosen transport stop. Information 
 This is a list of all points in one group for a Favorite or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
 
 
-### Linear Object {#linear-object}
-
-![Favorite list](@site/static/img/map/linear_object_andr.png)
-
-For **linear objects**, such as *barriers, steps, gates, benches, slipways, weirs, bollard, or coupures*, the context menu displays additional details. These include the POI type and address associated with them, or the object type if no name is assigned.
-
-
-### Climbing Area and Crag Details {#climbing-area-and-crag-details}
-
-![Favorite list](@site/static/img/map/climbing_andr.png)
-
-When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
-
-
-### Ski Slopes, MTB Routes, and Dirt Bike Trails {#ski-slopes-mtb-routes-and-dirt-bike-trails}
-
-![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
-
-You can tap map elements such as **ski slopes**, **mountain bike (MTB) routes**, and **dirt bike trails** to open their context menu with detailed information. Available information includes: route or slope name (if available in OSM data), OSM object ID or relation ID, difficulty level, trail length, terrain type, and more.
-
-**Supported Tags:** `piste:type=*` (ski slopes), `route=mtb`, `route=atv` or `route=dirt_bike` (motorbike off-road trails)
-
-:::note
-Use the [Winter and Ski](../map/vector-maps.md#winter-and-ski) or [Offroad](../map/vector-maps.md#offroad) map styles for better visibility.
-:::
 
 
 ### Article Description {#article-description}
@@ -872,4 +835,4 @@ Available types of actions:
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: June 2025*
+

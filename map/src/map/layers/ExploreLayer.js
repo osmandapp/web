@@ -11,10 +11,18 @@ import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
-import { clusterMarkers, createHoverMarker, EXPLORE_BIG_ICON_SIZE, removeTooltip } from '../util/Clusterizer';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import {
+    clusterMarkers,
+    createHoverMarker,
+    EXPLORE_BIG_ICON_SIZE,
+    removeTooltip,
+    SIMPLE_ICON_SIZE,
+} from '../util/Clusterizer';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
+import { selectMarker } from '../util/MarkerSelectionService';
+import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -38,6 +46,7 @@ export default function ExploreLayer() {
     const GET_OBJ_DEBOUNCE_MS = 500;
 
     const timerRef = useRef(null);
+    const selectedObjRef = useRef(null);
 
     const filtersRef = useRef(null);
     const openedPoiRef = useRef(null);
@@ -59,14 +68,18 @@ export default function ExploreLayer() {
         }
     }, [zoom]);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        mainIconsLayerRef.current && otherIconsLayerRef.current
-            ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
-            : null,
-        EXPLORE_LAYER_ID,
-        map
-    );
+        layers:
+            mainIconsLayerRef.current && otherIconsLayerRef.current
+                ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
+                : null,
+        type: EXPLORE_LAYER_ID,
+        map,
+        prevSelectedMarker: selectedObjRef,
+        mainIconsLayerRef,
+        otherIconsLayerRef,
+    });
 
     function closeModal() {
         setModalIsOpen(false);
@@ -132,8 +145,8 @@ export default function ExploreLayer() {
 
         if (skippedObjectType()) {
             removeLayers();
-            if (ctx.searchSettings.showOnMainSearch) {
-                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            if (ctx.searchSettings.showExploreMarkers) {
+                ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             }
             ctx.setWikiPlaces(null);
             return;
@@ -142,7 +155,7 @@ export default function ExploreLayer() {
         const onMapMoveEnd = async () => {
             if (
                 settings.useWikiImages ||
-                settings.showOnMainSearch ||
+                settings.showExploreMarkers ||
                 (ctx.currentObjectType === OBJECT_EXPLORE && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
                 debouncer(
@@ -154,7 +167,7 @@ export default function ExploreLayer() {
         };
         map.on('moveend', onMapMoveEnd);
 
-        if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showOnMainSearch) {
+        if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showExploreMarkers) {
             if (
                 !settings.selectedFilters ||
                 !ctx.wikiPlaces ||
@@ -170,7 +183,7 @@ export default function ExploreLayer() {
             }
         }
 
-        if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showOnMainSearch) {
+        if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showExploreMarkers) {
             removeLayers();
             ctx.setWikiPlaces(null);
         }
@@ -184,7 +197,7 @@ export default function ExploreLayer() {
         ctx.currentObjectType,
         ctx.searchSettings.useWikiImages,
         ctx.searchSettings.selectedFilters,
-        ctx.searchSettings.showOnMainSearch,
+        ctx.searchSettings.showExploreMarkers,
         ctx.setLoadingContextMenu,
     ]);
 
@@ -238,19 +251,25 @@ export default function ExploreLayer() {
         }
     }
 
-    function openInfo(feature) {
+    function openInfo(e, feature) {
         if (ctx.searchSettings.useWikiImages) {
             setSelectedObj(feature);
             setModalIsOpen(true);
-        } else {
-            if (openedPoiRef.current !== feature) {
-                openedPoiRef.current = feature;
-                ctx.setLoadingContextMenu(true);
-                map.spin(true, { color: '#1976d2' });
-                ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
-            }
+        } else if (openedPoiRef.current !== feature) {
+            openedPoiRef.current = feature;
+            ctx.setLoadingContextMenu(true);
+            map.spin(true, { color: '#1976d2' });
+            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
+
         ctx.setPhotoGallery(null);
+
+        if (
+            !selectedObjRef.current?.options.hover ||
+            selectedObjRef.current?.options.hover?.options.idObj !== ctx.selectedWpt?.wikidata?.properties?.id
+        ) {
+            selectedObjRef.current = selectMarker(e.sourceTarget, selectedObjRef.current, EXPLORE_LAYER_ID);
+        }
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
@@ -272,6 +291,7 @@ export default function ExploreLayer() {
             }
             return L.divIcon({
                 className: 'dot-icon',
+                simple: true,
                 iconSize: [8, 8],
                 html: '<div class="dot"></div>',
             });
@@ -329,7 +349,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showOnMainSearch) {
+        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showExploreMarkers) {
             abortController.abort();
             return;
         }
@@ -355,7 +375,6 @@ export default function ExploreLayer() {
                     ? place.properties.imageTitle
                     : getImgByProps(place.properties);
                 const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
-                const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
@@ -369,7 +388,7 @@ export default function ExploreLayer() {
                         }
                         const icon = L.icon({
                             iconUrl,
-                            iconSize,
+                            iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
                             className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
                         });
                         const marker = L.marker(latlng, {
@@ -377,7 +396,7 @@ export default function ExploreLayer() {
                             index: place.index,
                             idObj: place.properties.id,
                         });
-                        addEventListeners({ marker, place, main: true, iconSize, latlng });
+                        addEventListeners({ marker, place, main: true, iconSize: EXPLORE_BIG_ICON_SIZE, latlng });
                         largeMarkersArr.addLayer(marker);
                         resolve();
                     };
@@ -385,15 +404,9 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
-                        const circle = L.circleMarker(latlng, {
+                        const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
-                            fillOpacity: 0.9,
-                            radius: 5,
-                            color: '#ffffff',
-                            fillColor: '#fe8800',
-                            weight: 1,
-                            zIndex: 1000,
-                        });
+                        }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
                         resolve();
@@ -406,23 +419,18 @@ export default function ExploreLayer() {
                 .then(() => {
                     for (const place of secondaryMarkers) {
                         const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-                        const circle = L.circleMarker(latlng, {
+                        const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
-                            fillOpacity: 0.9,
-                            radius: 5,
-                            color: '#ffffff',
-                            fillColor: '#fe8800',
-                            weight: 1,
-                            zIndex: 1000,
-                        });
+                        }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         simpleMarkersArr.addLayer(circle);
                     }
 
-                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showOnMainSearch) {
+                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showExploreMarkers) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                        map.fire('explore-layers-updated');
                     }
                 })
                 .catch((error) => {
@@ -435,12 +443,12 @@ export default function ExploreLayer() {
         return () => {
             abortController.abort();
         };
-    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showOnMainSearch]);
+    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showExploreMarkers]);
 
-    function addEventListeners({ marker, place, main = false, latlng, iconSize = [10, 10] }) {
+    function addEventListeners({ marker, place, main = false, latlng, iconSize = SIMPLE_ICON_SIZE }) {
         // Add click event to open information about the place
-        marker.on('click', () => {
-            openInfo(place);
+        marker.on('click', (e) => {
+            openInfo(e, place);
         });
 
         const tooltipText = () => {

@@ -10,13 +10,12 @@ import { ReactComponent as UserIcon } from '../../../assets/icons/ic_action_user
 import { ReactComponent as ActionDoneIcon } from '../../../assets/icons/ic_action_done.svg';
 import { ReactComponent as ActionRemoveIcon } from '../../../assets/icons/ic_action_remove_dark.svg';
 import { ReactComponent as AnyoneIcon } from '../../../assets/icons/ic_world_globe_dark.svg';
-import { format } from 'date-fns';
-import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import LoginContext from '../../../context/LoginContext';
 import { APPROVED_ACCESS_TYPE, BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE } from '../shareConstants';
+import { fmt } from '../../../util/dateFmt';
 
 export default function UserAccessListItem({
     index,
@@ -61,7 +60,9 @@ export default function UserAccessListItem({
     }
 
     function formatRequestedDateWithDateFns(date) {
-        return `Requested: ${format(date, 'd MMM yyyy', { locale: ctx.dateLocale })}`;
+        const d = new Date(date);
+        if (isNaN(d)) return `Requested: ${date ?? '-'}`;
+        return `Requested: ${fmt.MMMdY(d)}`;
     }
 
     function approveRequest() {

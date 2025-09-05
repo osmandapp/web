@@ -10,10 +10,10 @@ import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folde
 import AppContext from '../../context/AppContext';
 import { FAVOURITES, GPX } from '../../manager/GlobalManager';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
-import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
+import { fmt } from '../../util/dateFmt';
 
 export default function ShareFileItem({ file, type }) {
     const ctx = useContext(AppContext);
@@ -63,7 +63,7 @@ export default function ShareFileItem({ file, type }) {
                     )}
                     {type === FAVOURITES && (
                         <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                            {`${getLocalizedTimeUpdate(favGroup.clienttimems, ctx)}, ${getSize(favGroup, t)}`}
+                            {`${fmt.MMMdY(Number(favGroup.clienttimems))}, ${getSize(favGroup, t)}`}
                         </Typography>
                     )}
                 </ListItemText>

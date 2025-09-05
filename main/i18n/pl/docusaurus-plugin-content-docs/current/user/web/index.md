@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Planowanie trasy w sieci
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Przeglądarka map internetowych
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ Ta sekcja wyjaśnia, jak zalogować się i zarejestrować na stronie [www.osmand
 
 Ta sekcja zawiera szczegółowe informacje o dodatkowych danych mapy, takich jak Ulubione, Osobiste ślady i Warstwy pogodowe.
 
-### [Dane użytkownika](./web-userdata.mdx) {#user-data}
+### [Dane użytkownika](../web/web-userdata.mdx) {#user-data}
 
 Ślady GPX i Ulubione użytkownika na mapie.
 

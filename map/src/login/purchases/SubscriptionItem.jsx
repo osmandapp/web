@@ -1,15 +1,14 @@
 import styles from '../../frame/components/items/items.module.css';
 import loginStyles from '../../login/login.module.css';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import { ReactComponent as OsmAndProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored.svg';
 import { ReactComponent as OsmAndLiveIcon } from '../../assets/icons/ic_action_subscription_osmand_live.svg';
 import { ReactComponent as OsmAndMapsIcon } from '../../assets/icons/ic_action_osmand_maps_plus.svg';
 import PurchaseStatus from './PurchaseStatus';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
-import { format } from 'date-fns';
-import AppContext from '../../context/AppContext';
+import { fmt } from '../../util/dateFmt';
 
 export const typeMap = {
     monthly: 'monthly_subscription',
@@ -26,12 +25,8 @@ const subIconMap = {
 };
 
 export default function SubscriptionItem({ id, onClick, name, type, state, billingDate = null }) {
-    const ctx = useContext(AppContext);
-
     const { t } = useTranslation();
-    const billingDateFormatted = billingDate
-        ? format(new Date(parseInt(billingDate, 10)), 'MMM d, yyyy', { locale: ctx.dateLocale })
-        : 'N/A';
+    const billingDateFormatted = billingDate ? fmt.MMMdY(Number(billingDate)) : 'N/A';
     const billingDateString = formatString(t('next_billing_date'), [billingDateFormatted]);
 
     return (

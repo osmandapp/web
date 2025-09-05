@@ -238,7 +238,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
 |  | <Translate android="true" ids="us_gallons"/> | United States |
 |  |  |  |
-| **<Translate android="true" ids="shared_string_temperature"/>** (*Android only*)| <Translate android="true" ids="system_default_theme"/> |  |
+| **<Translate android="true" ids="shared_string_temperature"/>**| <Translate android="true" ids="system_default_theme"/> |  |
 |  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
@@ -272,6 +272,8 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Connect external controllers such as *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, or *<Translate android="true" ids="sett_parrot_ext_input"/>* to operate OsmAnd using physical buttons.
 
+- **<Translate android="true" ids="position_animation"/>** / **Animate own position** – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting (Android only): higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
+
 - **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-location-and-zoom) in and out on the map.
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
@@ -282,7 +284,6 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Android only*) – Disable animations in navigation mode for faster screen transitions.
 
-- **<Translate android="true" ids="position_animation"/>** (*Android only*) – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting: higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
 
 ## Navigation Settings {#navigation-settings}
@@ -419,7 +420,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [My Location](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
 
 
-### My Location Appearance {#my-location-appearance}
+## My Location Appearance {#my-location-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -443,7 +444,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when the device speed is **greater than zero**.
 
-#### 1. View Angle and Location Radius {#1-view-angle-and-location-radius}
+### View Angle and Location Radius {#view-angle-and-location-radius}
 
 You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My Location](../map/interact-with-map.md#my-location-and-zoom) icon.
 
@@ -451,7 +452,7 @@ You can customize the visual elements related to your location and apply them se
 - **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.
 
 
-#### 2. Custom 3D Icons {#2-custom-3d-icons}
+### Custom 3D Icons {#custom-3d-icons}
 
 For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
@@ -468,7 +469,7 @@ For a more personalized experience, you can create and add **custom 3D icons** t
 
    - Alternatively, copy the **MTL and OBJ files** directly into the OsmAnd folder using the same directory structure.  
 
-#### 3. Map Orientation Modes {#3-map-orientation-modes}
+### Map Orientation Modes {#map-orientation-modes-my-location}
 
 You can control how the **My Location** icon behaves using different [map orientation modes](../widgets/map-buttons.md#compass).  
 
@@ -569,7 +570,12 @@ Plugins unlock additional features of the application and can be either [paid or
 
   > ***Changing the settings of the OsmAnd development plugin affects all profiles.***
 
-- **Wikipedia**. This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
+- **Wikipedia** (iOS only). This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
+
+- **Vehicle Metrics**. This menu opens *[Vehicle metrics plugin settings](../plugins/vehicle-metrics.md#scanner-settings)*. It allows you to connect OBD-II scanner to OsmAnd.
+
+- **AIS vessel tracker** (Android only). This menu opens *[AIS vessel tracker plugin settings](../plugins/ais-tracker.md#plugin-settings)*. This plugin allows you to connect AIS tracker to OsmAnd.
+
 
 
 ## Actions {#actions}
@@ -610,4 +616,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: February 2025*
+

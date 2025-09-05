@@ -60,8 +60,22 @@ export default function GroupHeader({
     }, [favoriteGroup, ctx.favorites]);
 
     function prevTrackMenu() {
-        ctx.openGroups.pop();
-        ctx.setOpenGroups([...ctx.openGroups]);
+        if (type === TRACKS_TYPE) {
+            ctx.openGroups.pop();
+            ctx.setOpenGroups([...ctx.openGroups]);
+        } else if (type === FAVORITES_TYPE) {
+            ctx.openFavGroups.pop();
+            ctx.setOpenFavGroups([...ctx.openFavGroups]);
+        }
+    }
+
+    function getGroupsCount() {
+        if (type === TRACKS_TYPE) {
+            return ctx.openGroups?.length || 0;
+        } else if (type === FAVORITES_TYPE) {
+            return ctx.openFavGroups?.length || 0;
+        }
+        return 0;
     }
 
     function getTitle() {
@@ -95,10 +109,10 @@ export default function GroupHeader({
         <>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    {ctx.openGroups.length > 0 ? (
+                    {getGroupsCount() > 0 ? (
                         <IconButton
                             variant="contained"
-                            id="se-back-folder-button"
+                            id={`se-back-folder-button-${type}`}
                             type="button"
                             className={styles.appBarIcon}
                             onClick={prevTrackMenu}
@@ -108,10 +122,17 @@ export default function GroupHeader({
                     ) : (
                         <IconButton
                             variant="contained"
-                            id="se-close-folder-button"
+                            id={`se-close-folder-button-${type}`}
                             type="button"
                             className={styles.appBarIcon}
-                            onClick={() => closeHeader({ ctx })}
+                            onClick={() => {
+                                if (type === TRACKS_TYPE) {
+                                    ctx.setOpenGroups([]);
+                                } else if (type === FAVORITES_TYPE) {
+                                    ctx.setOpenFavGroups([]);
+                                }
+                                closeHeader({ ctx });
+                            }}
                         >
                             <CloseIcon />
                         </IconButton>

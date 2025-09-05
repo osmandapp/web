@@ -1,20 +1,56 @@
 {
     "android": {
-        "languages" : ["en", "de", "nl", "fr", "it", "uk", "es", "pl", "ar", "tr", "pt"],
+        "languages": [
+            "en",
+            "de",
+            "fr",
+            "it",
+            "uk",
+            "es",
+            "pl",
+            "ar",
+            "tr",
+            "pt",
+            "nl"
+        ],
         "default_translate_json": "android-values.json",
-        "translate_json_pattern" : "android-values-%s.json",
+        "translate_json_pattern": "android-values-%s.json",
         "supportedLanguagesFile": "./supportedLanguages.json"
     },
     "ios": {
-        "languages" : ["en", "de", "nl", "fr", "it", "uk", "es", "pl", "ar", "tr", "pt"],
+        "languages": [
+            "en",
+            "de",
+            "fr",
+            "it",
+            "uk",
+            "es",
+            "pl",
+            "ar",
+            "tr",
+            "pt",
+            "nl"
+        ],
         "default_translate_json": "ios-values.json",
-        "translate_json_pattern" : "ios-values-%s.json",
+        "translate_json_pattern": "ios-values-%s.json",
         "supportedLanguagesFile": "./supportedLanguages.json"
     },
     "other": {
-        "languages" : ["en", "de", "nl", "fr", "it", "uk", "es", "pl", "ar", "tr", "pt"],
+        "languages": [
+            "en",
+            "de",
+            "fr",
+            "it",
+            "uk",
+            "es",
+            "pl",
+            "ar",
+            "tr",
+            "pt",
+            "nl"
+        ],
         "default_translate_json": "other-values.json",
-        "translate_json_pattern" : "other-values-%s.json",
+        "translate_json_pattern": "other-values-%s.json",
         "supportedLanguagesFile": "./supportedLanguages.json"
     }
 }

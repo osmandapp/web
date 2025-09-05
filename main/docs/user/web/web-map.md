@@ -231,4 +231,4 @@ Depending on the specified parameters, URL strings can contain:
 11. Direct link to the current [**Explore page**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-> *Last updated: January 2025*
+

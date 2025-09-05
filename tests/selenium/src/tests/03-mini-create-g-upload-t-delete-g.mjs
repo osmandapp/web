@@ -17,6 +17,12 @@ export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
 
     await clickBy(By.id('se-show-menu-tracks'));
+
+    const found = await waitBy(By.id(`se-menu-cloud-${folder}`), { idle: true, optional: true });
+    if (found) {
+        await actionDeleteFolder(folder);
+    }
+
     // create folder
     await actionCreateNewFolder(folder);
     await clickBy(By.id(`se-menu-cloud-${folder}`));
@@ -26,7 +32,7 @@ export default async function test() {
     // import one track
     await actionImportCloudTrack(tracks, trackName);
     // delete folder
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-tracks'));
     await waitBy(By.id(`se-menu-cloud-${folder}`));
     await actionDeleteFolder(folder);
 

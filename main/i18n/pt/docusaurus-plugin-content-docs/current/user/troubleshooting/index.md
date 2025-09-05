@@ -1,5 +1,5 @@
 ---
-source-hash: f4bfa5d27b06d6b62f71474e1eae1218ef9add8b5fade76e6107def055d05c2d
+source-hash: d8ecad2b589fe6b03fafc80bbd07389dac12a24a068d3fdd0ed26cb3959de697
 sidebar_position: 10
 ---
 import Tabs from '@theme/Tabs';
@@ -11,42 +11,50 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-# Resolução de problemas {#troubleshooting}
+# Solução de problemas {#troubleshooting}
 
 Soluções e dicas para problemas comuns.
 
-### [Android Auto](android_auto.md) {#android-auto}
+### [Configuração](./setup.md) {#setup}
 
-Os problemas mais comuns relacionados ao Android Auto.
-
-### [Registros de falhas](./crash-logs.md) {#crash-logs}
-
-Descrição de como enviar registros de falhas para a equipe do OsmAnd.
+Problemas típicos encontrados ao configurar o aplicativo.
 
 ### [Geral](./general.md) {#general}
 
 Problemas gerais relacionados a vários recursos do OsmAnd.
 
-### [Mapas e dados](./maps-data.md) {#maps--data}
+### [Compras e Pagamentos](./purchases_payments.md) {#purchases-and-payments}
 
-Problemas relacionados a mapas, pesquisa e outros dados.
+Problemas relacionados a compras, assinaturas e pagamentos.
 
 ### [Navegação](./navigation.md) {#navigation}
 
-Os problemas mais comuns encontrados no modo de navegação.
+Problemas comuns encontrados no modo de navegação.
 
-### [Recursos e personalizações](./resources) {#resources-and-customizations}
+### [Mapas e Dados](./maps-data.md) {#maps-and-data}
 
-Recursos criados pela comunidade.
+Problemas relacionados a mapas, funcionalidade de pesquisa e outros dados.
 
-### [Configuração](./setup.md) {#setup}
+### [Registros de falhas](./crash-logs.md) {#crash-logs}
 
-Os problemas mais comuns encontrados ao configurar o aplicativo.
+Como coletar e enviar registros de falhas para a equipe do OsmAnd.
 
 ### [Gravação de trilhas](./track-recording-issues.md) {#track-recording}
 
-Problemas comuns com a gravação de trilhas, como ruído, lacunas ou imprecisões.
+Problemas com a gravação de trilhas, como ruído, lacunas ou imprecisões.
+
+### [Android Auto](./android_auto.md) {#android-auto}
+
+Problemas típicos ao usar o OsmAnd com o Android Auto.
+
+### [Site](./web.md) {#website}
+
+Problemas comuns com os serviços e recursos da Web do OsmAnd.
+
+### [Recursos e Personalizações](./resources.md) {#resources-and-customizations}
+
+Guias e ajuda com recursos e personalizações criados pela comunidade.
 
 ### [Tutoriais em vídeo e guias](./video-tutorials.md) {#video-tutorials-and-guides}
 
-Coleção de tutoriais em vídeo e guias.
+Uma coleção de tutoriais em vídeo úteis e guias passo a passo.

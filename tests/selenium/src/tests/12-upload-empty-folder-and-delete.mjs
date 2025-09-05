@@ -26,7 +26,7 @@ export default async function test() {
     const { path } = getFiles({ folder: 'gpx' }).find((t) => t.name === 'test-routed-osrm');
     await actionUploadCloudTracks({ files: path });
     await clickBy(By.id('se-button-back'));
-    await clickBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button-tracks'));
 
     await actionDeleteFolder(folder);
 

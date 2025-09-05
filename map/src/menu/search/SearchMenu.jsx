@@ -6,8 +6,13 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
-import { EXPLORE_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
-import { useNavigate } from 'react-router-dom';
+import {
+    EXPLORE_URL,
+    HEADER_SIZE,
+    MAIN_URL_WITH_SLASH,
+    SEARCH_URL,
+} from '../../manager/GlobalManager';
+import { matchPath, useNavigate, useOutlet } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getCatPoiIconName,
@@ -24,12 +29,23 @@ import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import gStyles from '../gstylesmenu.module.css';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const outlet = useOutlet();
+
+    const [, height] = useWindowSize();
+
+    const showExploreOutlet = matchPath(
+        { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
+        location.pathname
+    );
 
     const navigate = useNavigate();
 
@@ -114,18 +130,18 @@ export default function SearchMenu() {
     }, [searchValue]);
 
     useEffect(() => {
-        if (isMainSearchScreen) {
+        if (isMainSearchScreen && ltx.isLoggedIn()) {
             // for search categories
             if (mainCategories) {
                 setSearchCategories(mainCategories);
             }
-            //for explore layers
-            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: true });
             if (!ctx.searchSettings.selectedFilters) {
                 addWikiPlacesDefaultFilters(ctx, true, DEFAULT_EXPLORE_POITYPES);
             }
+        } else {
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
         }
-    }, [isMainSearchScreen, zoom]);
+    }, [isMainSearchScreen, ltx.loginUser]);
 
     useEffect(() => {
         if (ctx.wikiPlaces || zoom < EXPLORE_MIN_ZOOM) {
@@ -199,7 +215,7 @@ export default function SearchMenu() {
     }
 
     function openExploreMenu() {
-        navigate(MAIN_URL_WITH_SLASH + EXPLORE_URL + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
     }
 
     function searchByCategory(category) {
@@ -215,101 +231,120 @@ export default function SearchMenu() {
         <>
             {ltx.loginUser ? (
                 <>
-                    {openSearchResults && (
-                        <SearchResults
-                            value={searchValue}
-                            setOpenSearchResults={setOpenSearchResults}
-                            setIsMainSearchScreen={setIsMainSearchScreen}
-                            setSearchValue={setSearchValue}
-                        />
-                    )}
-                    {openCategories && (
-                        <PoiCategoriesList
-                            categories={searchCategories}
-                            categoriesIcons={searchCategoriesIcons}
-                            setSearchValue={setSearchValue}
-                            setOpenCategories={setOpenCategories}
-                            setOpenSearchResults={setOpenSearchResults}
-                            setIsMainSearchScreen={setIsMainSearchScreen}
-                            loadingIcons={loadingIcons}
-                        />
-                    )}
-                    {isMainSearchScreen && (
-                        <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
-                            <CustomInput
-                                menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
-                                setSearchValue={setSearchValue}
-                            />
-                            <SubTitleMenu text={t('search_categories')} />
-                            <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>
-                                <Grid container spacing={2}>
-                                    {ctx.poiCategory?.filters
-                                        ?.sort()
-                                        .slice(0, 6)
-                                        .map((item, key) => {
-                                            const catName = translatePoi({ key, ctx, t });
-                                            return (
-                                                <Grid
-                                                    item
-                                                    xs={4}
-                                                    key={key}
-                                                    className={styles.gridItem}
-                                                    id={'se-default-search-categories'}
-                                                >
-                                                    <ListItemButton
-                                                        id={'se-default-search-categories-item-' + catName}
-                                                        key={key}
-                                                        onClick={(e) => {
-                                                            searchByCategory(catName);
-                                                            e.preventDefault();
-                                                        }}
-                                                    >
-                                                        <Box className={styles.categoryItem}>
-                                                            <ListItemIcon className={styles.categoryItemIcon}>
-                                                                {categoriesIcons[item]}
-                                                            </ListItemIcon>
-                                                            <Typography className={styles.categoryItemText}>
-                                                                {catName}
-                                                            </Typography>
-                                                        </Box>
-                                                    </ListItemButton>
-                                                </Grid>
-                                            );
-                                        })}
-                                </Grid>
-                            </Box>
-                            <Button
-                                id={'se-search-categories-show-all'}
-                                className={styles.buttonShowAllExplore}
-                                onClick={openSearchByCategories}
-                            >
-                                {t('shared_string_show_all')}
-                            </Button>
-                            <Divider />
-                            {zoom >= EXPLORE_MIN_ZOOM && (
-                                <>
-                                    <SubTitleMenu text={t('web:explore_menu')} />
-                                    {loadingWikiPlaces ? (
-                                        <LinearProgress />
-                                    ) : (
-                                        <>
-                                            <WikiPlacesList
-                                                size={3}
-                                                useOverflow={false}
-                                                showAll={
-                                                    <Button
-                                                        id={'se-show-all-wiki-place'}
-                                                        className={styles.buttonShowAllExplore}
-                                                        onClick={openExploreMenu}
-                                                    >
-                                                        {t('shared_string_show_all')}
-                                                    </Button>
-                                                }
-                                            />
-                                            <Divider />
-                                        </>
-                                    )}
-                                </>
+                    {showExploreOutlet && outlet ? (
+                        outlet
+                    ) : (
+                        <Box
+                            sx={{
+                                height: `${height - HEADER_SIZE}px`,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                minHeight: 0,
+                            }}
+                        >
+                            {openSearchResults && (
+                                <SearchResults
+                                    value={searchValue}
+                                    setOpenSearchResults={setOpenSearchResults}
+                                    setIsMainSearchScreen={setIsMainSearchScreen}
+                                    setSearchValue={setSearchValue}
+                                />
+                            )}
+                            {openCategories && (
+                                <PoiCategoriesList
+                                    categories={searchCategories}
+                                    categoriesIcons={searchCategoriesIcons}
+                                    setSearchValue={setSearchValue}
+                                    setOpenCategories={setOpenCategories}
+                                    setOpenSearchResults={setOpenSearchResults}
+                                    setIsMainSearchScreen={setIsMainSearchScreen}
+                                    loadingIcons={loadingIcons}
+                                />
+                            )}
+                            {isMainSearchScreen && (
+                                <Box className={gStyles.scrollMainBlock}>
+                                    <CustomInput
+                                        menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
+                                        setSearchValue={setSearchValue}
+                                    />
+                                    <Box className={gStyles.scrollActiveBlock}>
+                                        <SubTitleMenu text={t('search_categories')} />
+                                        <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>
+                                            <Grid container spacing={2}>
+                                                {ctx.poiCategory?.filters
+                                                    ?.sort()
+                                                    .slice(0, 6)
+                                                    .map((item, key) => {
+                                                        const catName = translatePoi({ key, ctx, t });
+                                                        const catNameId = catName.split(' ').join('_');
+                                                        return (
+                                                            <Grid
+                                                                item
+                                                                xs={4}
+                                                                key={key + catName + 'grid'}
+                                                                className={styles.gridItem}
+                                                                id={'se-default-search-categories'}
+                                                            >
+                                                                <ListItemButton
+                                                                    id={
+                                                                        'se-default-search-categories-item-' + catNameId
+                                                                    }
+                                                                    key={key + catName}
+                                                                    onClick={(e) => {
+                                                                        searchByCategory(catName);
+                                                                        e.preventDefault();
+                                                                    }}
+                                                                >
+                                                                    <Box className={styles.categoryItem}>
+                                                                        <ListItemIcon
+                                                                            className={styles.categoryItemIcon}
+                                                                        >
+                                                                            {categoriesIcons[item]}
+                                                                        </ListItemIcon>
+                                                                        <Typography className={styles.categoryItemText}>
+                                                                            {catName}
+                                                                        </Typography>
+                                                                    </Box>
+                                                                </ListItemButton>
+                                                            </Grid>
+                                                        );
+                                                    })}
+                                            </Grid>
+                                        </Box>
+                                        <Button
+                                            id={'se-search-categories-show-all'}
+                                            className={styles.buttonShowAllExplore}
+                                            onClick={openSearchByCategories}
+                                        >
+                                            {t('shared_string_show_all')}
+                                        </Button>
+                                        <Divider />
+                                        {zoom >= EXPLORE_MIN_ZOOM && (
+                                            <>
+                                                <SubTitleMenu text={t('web:explore_menu')} />
+                                                {loadingWikiPlaces ? (
+                                                    <LinearProgress />
+                                                ) : (
+                                                    <>
+                                                        <WikiPlacesList
+                                                            size={3}
+                                                            showAll={
+                                                                <Button
+                                                                    id={'se-show-all-wiki-place'}
+                                                                    className={styles.buttonShowAllExplore}
+                                                                    onClick={openExploreMenu}
+                                                                >
+                                                                    {t('shared_string_show_all')}
+                                                                </Button>
+                                                            }
+                                                        />
+                                                        <Divider />
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                    </Box>
+                                </Box>
                             )}
                         </Box>
                     )}

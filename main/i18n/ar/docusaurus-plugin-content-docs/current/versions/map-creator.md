@@ -4,9 +4,9 @@ sidebar_position: 3
 ---
 import Download from '@site/src/components/buttons/Download.js';
 
-# أداة OsmAnd MapCreator {#osmand-mapcreator}
+# OsmAnd MapCreator {#osmand-mapcreator}
 
 
-يمكن استخدام [**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) لإنشاء أي خرائط يدعمها تطبيق OsmAnd بنفسك. يمكنك تنزيل أحدث إصدار من [الموقع الإلكتروني](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). تتمتع أداة OsmAndMapCreator بقدرات واجهة المستخدم لإنشاء خرائط نقطية ومتجهة. لإنشاء خريطة متجهة، ستحتاج إلى ملف OSM (`*.pbf, *.osm.gz, *.osm.bz2`)، ولإنشاء ملف خريطة sqlite عبر الإنترنت، ستحتاج إلى `عنوان URL أساسي للمربعات`.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) يمكن استخدامه لإنشاء أي خرائط يدعمها OsmAnd بنفسك. يمكنك تنزيل أحدث إصدار من [الموقع الإلكتروني](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). يتمتع OsmAndMapCreator بقدرات واجهة المستخدم لإنشاء خرائط نقطية ومتجهة. لإنشاء خريطة متجهة ستحتاج إلى ملف OSM (`*.pbf, *.osm.gz, *.osm.bz2`) ولإنشاء ملف خريطة sqlite عبر الإنترنت ستحتاج إلى `عنوان URL للبلاط الأساسي`.
 
 <Download link="https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip"/>

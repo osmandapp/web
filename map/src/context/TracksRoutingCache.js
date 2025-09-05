@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
 import { DEFAULT_TRACK_LINE_WEIGHT } from '../map/util/TrackLayerProvider';
@@ -221,8 +221,8 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
         (o) =>
             (o[routingKey] = {
                 tempLine: tempLine,
-                startPoint: _.cloneDeep(startPoint),
-                endPoint: _.cloneDeep(endPoint),
+                startPoint: cloneDeep(startPoint),
+                endPoint: cloneDeep(endPoint),
                 geoProfile: geoProfile,
                 geometry: cachedGeometry,
                 busy: false,

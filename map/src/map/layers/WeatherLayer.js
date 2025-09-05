@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
-import _ from 'lodash';
 import { disableLayers } from '../../manager/WeatherManager';
 
 function getWeatherTime(weatherDateObj) {
@@ -28,21 +27,24 @@ const WeatherLayer = () => {
     const [time, setTime] = useState(null);
 
     useEffect(() => {
-        let newLayers = { ...ctx.weatherLayers };
-        Object.keys(newLayers).forEach((type) => {
-            if (type !== ctx.weatherType) {
-                newLayers[type].forEach((l) => {
-                    if (l.checked) {
-                        const index = _.indexOf(newLayers[type], l);
-                        if (!disableLayers(newLayers[ctx.weatherType][index], ctx)) {
-                            newLayers[ctx.weatherType][index].checked = true;
+        ctx.setWeatherLayers((prev) => {
+            const next = { ...prev };
+            Object.keys(next).forEach((type) => {
+                if (type !== ctx.weatherType) {
+                    next[type] = next[type].map((l, index) => {
+                        if (!l.checked) return l;
+                        const canEnable = !disableLayers(next[ctx.weatherType][index], ctx);
+                        const cleared = { ...l, checked: false };
+                        if (canEnable) {
+                            const tgt = next[ctx.weatherType][index];
+                            next[ctx.weatherType][index] = { ...tgt, checked: true };
                         }
-                        newLayers[type][index].checked = false;
-                    }
-                });
-            }
+                        return cleared;
+                    });
+                }
+            });
+            return next;
         });
-        ctx.setWeatherLayers(newLayers);
     }, [ctx.weatherType]);
 
     useEffect(() => {

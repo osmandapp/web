@@ -1,5 +1,5 @@
 ---
-source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
+source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
 title:  Configurazione
 ---
@@ -14,38 +14,38 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Configurazione iniziale {#initial-setup}
+## Configurazione Iniziale {#initial-setup}
 
 ### Come recuperare i dati {#how-to-recover-data}
 
-Per evitare la perdita di dati, assicurati che i tuoi dati personali, i percorsi e le mappe siano sottoposti a backup. OsmAnd offre opzioni per esportare i tuoi dati in vari formati. In caso di perdita di dati o cambio di dispositivo, segui [questi passaggi](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) per ripristinare i tuoi dati da un backup.
+Per prevenire la perdita di dati, assicurati che i tuoi dati personali, percorsi e mappe siano sottoposti a backup. OsmAnd offre opzioni per esportare i tuoi dati in vari formati. In caso di perdita di dati o cambio di dispositivo, segui [questi passaggi](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) per ripristinare i tuoi dati da un backup.
 
 
 ### Come trasferire Preferiti e Tracce su un nuovo dispositivo {#how-to-transfer-favorites-and-tracks-to-a-new-device}
 
 - Il metodo più semplice è esportare un profilo con i dati necessari: *Menu → Impostazioni → Esporta →* seleziona i dati che desideri esportare.
-- In alternativa, puoi eseguire il backup di tutti i tuoi dati dal dispositivo precedente copiando la cartella che si trova in *Impostazioni → Impostazioni OsmAnd → Cartella di archiviazione dati* (percorso predefinito: `Android/data/net.osmand.plus`). Quindi, incolla il contenuto di questa cartella nella Cartella di archiviazione dati sul tuo nuovo dispositivo.
+- In alternativa, puoi eseguire il backup di tutti i tuoi dati dal dispositivo precedente copiando la cartella che si trova in *Impostazioni → Impostazioni OsmAnd → Cartella di archiviazione dati* (percorso predefinito: `Android/data/net.osmand.plus`). Quindi, incolla il contenuto di questa cartella nella cartella di archiviazione dati sul tuo nuovo dispositivo.
 
 
-## Importa file {#import-files}
+## Importa File {#import-files}
 
 ### Ho un file GPX, come lo importo in OsmAnd? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
 
 - **Android**
-    - Puoi [scaricare e aprire il file](../navigation/setup/gpx-navigation.md) utilizzando un file browser o un servizio cloud come Dropbox e selezionare OsmAnd come applicazione di destinazione.
-    - In alternativa, posiziona il file nella cartella principale di OsmAnd: `osmand/tracks/(sottocartella_opzionale)/tuo_file.gpx`.
+    - Puoi [scaricare e aprire il file](../navigation/setup/gpx-navigation.md) usando un browser di file o un servizio cloud come Dropbox, e selezionare OsmAnd come applicazione di destinazione.
+    - In alternativa, posiziona il file nella cartella principale di OsmAnd: `osmand/tracks/(sottocartella_opzionale)/il_tuo_file.gpx`.
 
 - **iOS**
-    - Per aprire [un file GPX in OsmAnd](../navigation/setup/gpx-navigation.md), scaricalo semplicemente e scegli OsmAnd come app per aprirlo. Il file sarà quindi disponibile per l'uso all'interno dell'app.
+    - Per aprire [un file GPX in OsmAnd](../navigation/setup/gpx-navigation.md), scaricalo e scegli OsmAnd come app per aprirlo. Il file sarà quindi disponibile per l'uso all'interno dell'app.
 
 ### Le curve di livello o le ombreggiature non vengono visualizzate {#contour-lines-or-hillshades-do-not-show-up}
 
-Leggi di più sul [plugin Topografia](../plugins/topography.md).
+Maggiori informazioni sul [plugin Topografia](../plugins/topography.md).
 
 
 ## Come abilitare i font di sistema (Android) {#how-to-enable-system-fonts-android}
 
-A partire dalla versione Android 4.9, OsmAnd integra il font di sistema del tuo dispositivo nell'interfaccia dell'applicazione, ottimizzandone il design eliminando l'uso di font misti. Il font di sistema viene applicato automaticamente a tutti gli elementi dell'interfaccia utente.
+A partire dalla versione Android 4.9, OsmAnd integra il font di sistema del tuo dispositivo nell'interfaccia dell'applicazione, ottimizzandone il design ed eliminando l'uso di font misti. Il font di sistema viene applicato automaticamente a tutti gli elementi dell'interfaccia utente.
 
 - OsmAnd utilizza il font di sistema predefinito del tuo dispositivo in tutti gli elementi dell'interfaccia utente.
 - Il passaggio al font di sistema è automatico. Non è necessario configurare alcuna impostazione nell'applicazione per questa funzione.
@@ -54,7 +54,7 @@ A partire dalla versione Android 4.9, OsmAnd integra il font di sistema del tuo 
 
 ## OsmAnd 4.4 (iOS) {#osmand-44-ios}
 
-OsmAnd 4.4 per dispositivi iOS non è disponibile per versioni di iOS precedenti a iOS 15.
+OsmAnd 4.4 per dispositivi iOS non è disponibile per le versioni iOS precedenti a iOS 15.
 
 Ciò significa che per installare OsmAnd 4.4 è necessario aggiornare il sistema operativo ad almeno iOS 15 o versioni successive.
 
@@ -129,8 +129,8 @@ errors (e.g. if the SD card is too full).
 
 </Tabs>
 
-I pacchetti mappa possono essere salvati in due formati: [SQLite e Metainfo](https://osmand.net/docs/user/map/raster-maps). Dopo aver creato il pacchetto mappa, segui questi passaggi per spostarlo in OsmAnd:
+I pacchetti mappa possono essere salvati in due formati: [SQLite e Metainfo](https://osmand.net/docs/user/map/raster-maps). Dopo aver creato il tuo pacchetto mappa, segui questi passaggi per spostarlo in OsmAnd:
 
-- **Per Android**. Accedi all'archiviazione sul tuo dispositivo e copia i file dal tuo PC nella cartella `BASE_OSMAND_STORAGE/tiles_`. In alternativa, puoi scaricare il file dalla tua email, cloud o messenger e aprirlo con l'app OsmAnd. Il pacchetto mappa verrà aggiunto automaticamente all'elenco delle tue mappe online.
+- **Per Android**. Accedi all'archiviazione sul tuo dispositivo e copia i file dal tuo PC nella cartella `BASE_OSMAND_STORAGE/tiles_`. In alternativa, puoi scaricare il file dalla tua email, cloud o messenger, e aprirlo con l'app OsmAnd. Il pacchetto mappa verrà automaticamente aggiunto alla tua lista di mappe online.
 
-- **Per iOS**. Scarica il file da iTunes o da un messenger, quindi aprilo con l'app OsmAnd. Il pacchetto mappa verrà aggiunto automaticamente all'elenco delle tue mappe online.
+- **Per iOS**. Scarica il file da iTunes o un messenger, quindi aprilo con l'app OsmAnd. Il pacchetto mappa verrà automaticamente aggiunto alla tua lista di mappe online.

@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
-import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionCheckMarker from '../actions/map/actionCheckMarker.mjs';
@@ -20,9 +20,7 @@ export default async function test() {
 
     await waitBy(By.id('se-search-input-close'));
     await clickBy(By.id('se-search-input-close'));
-
-    await waitByRemoved(By.id('se-search-input'));
-
+    await waitBy(By.id('se-menu-component-search-block'));
     await waitBy(By.id('se-open-search-button'));
     await clickBy(By.id('se-open-search-button'));
     await waitBy(By.id('se-search-input'));

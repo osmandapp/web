@@ -59,12 +59,11 @@ import WptTagsProvider, {
     POI_OSM_URL,
     WIKIDATA,
     WIKIPEDIA,
+    addWikidataTags,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
-import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
-import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { apiGet, apiPost } from '../../../util/HttpApi';
@@ -77,10 +76,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 import PoiActionsButtons from './actions/PoiActionsButtons';
+import { fmt } from '../../../util/dateFmt';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -132,8 +132,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     const [devWikiContent, setDevWikiContent] = useState(null);
 
-    const currentLoc = useGeoLocation(ctx);
-
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 48;
 
@@ -166,6 +164,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
             const wikiObj = ctx.searchSettings.getPoi;
+            const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
             const poiType = getCategory(wikiObj.properties);
             return {
@@ -184,6 +183,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 osmUrl: currentPoi?.properties[POI_OSM_URL],
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
+                wikidata: wikidataId,
             };
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
@@ -215,6 +215,23 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }, [ctx.selectedWpt]);
 
     useEffect(() => {
+        if (!ctx.selectedWpt) return;
+
+        const type = getWptType(ctx.selectedWpt);
+
+        if (type?.isFav || type?.isShareFav) {
+            ctx.setRecentObjs((prev) => {
+                const favorites = prev.favorites.filter((f) => f.key !== ctx.selectedWpt.key);
+                return {
+                    ...prev,
+                    favorites: [{ ...ctx.selectedWpt }, ...favorites],
+                };
+            });
+            ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
+        }
+    }, [ctx.selectedWpt]);
+
+    useEffect(() => {
         if (!newWpt || !ctx.selectedWpt) return;
 
         const fetchTagsAndData = async () => {
@@ -231,7 +248,18 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 }
             } else if (type?.isSearch || type?.isPoi || type?.isWikiPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
-                tags = currentPoi ? await WptTagsProvider.getWptTags(currentPoi, type, ctx) : null;
+                if (currentPoi) {
+                    tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                } else if (newWpt?.wikidata) {
+                    const fallbackTags = [];
+                    const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {
+                        key: 'wikidata',
+                        value: 'Q' + newWpt.wikidata,
+                        textPrefix: 'Wikidata',
+                    });
+                    fallbackTags.push(wikidataTag);
+                    tags = { res: fallbackTags };
+                }
             }
             return tags;
         };
@@ -424,9 +452,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             }
             isDetails ? returnToSearch() : closeHeader({ ctx });
         } else if (wpt?.type?.isWpt) {
-            isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
+            isDetails || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt?.type?.isFav) {
-            isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
+            ctx.setSelectedFavoriteObj(null);
+            isDetails || ctx.openFavGroups?.length > 0 ? closeOnlyFavDetails() : closeHeader({ ctx });
         } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
@@ -458,7 +487,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function formatTime(time) {
-        return format(time, 'MMM dd, yyyy – HH:mm', { locale: ctx.dateLocale }).replace(',', EMPTY_STRING);
+        return fmt.dateTimeShort(time);
     }
 
     async function getPoiAddress(wpt) {

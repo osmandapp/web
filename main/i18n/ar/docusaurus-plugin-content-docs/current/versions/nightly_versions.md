@@ -17,7 +17,7 @@ sidebar_position: 1
 </div>
 
 ### الإصدارات الليلية {#nightly-builds}
-#### بناء OpenGL {#opengl-build}
+#### إصدار OpenGL {#opengl-build}
 
 #### الإصدار المجاني {#free-version}
 OsmAnd-default.apk — الإصدار الليلي من OsmAnd المجاني.
@@ -27,7 +27,7 @@ OsmAnd-default.apk — الإصدار الليلي من OsmAnd المجاني.
 
 ## iOS {#ios}
 ### TestFlight {#testflight}
-عادةً ما يتم توفير إصدارات بيتا (TestFlight) لنظام iOS أسبوعيًا. ليس لديها وصف وقد يكون لديها ترقيم مستمر للإصدارات. من المفترض أن تكون مستقرة وجاهزة للاستخدام.
+عادةً ما يتم توفير إصدارات بيتا لنظام iOS (TestFlight) أسبوعيًا. ليس لها وصف وقد يكون لها ترقيم مستمر للإصدارات. من المفترض أن تكون مستقرة وجاهزة للاستخدام.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">انضم إلى TestFlight</a>

@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 import Utils from '../../../../util/Utils';
 import AddNewGroupDialog from '../AddNewGroupDialog';
-import _ from 'lodash';
+import values from 'lodash-es/values';
 import AppContext from '../../../../context/AppContext';
 
 export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups, defaultGroup, widthDialog }) {
@@ -12,7 +12,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
 
     const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
 
-    let groupList = FavoritesManager.orderList(_.values(groups), defaultGroup);
+    let groupList = FavoritesManager.orderList(values(groups), defaultGroup);
 
     const defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
     // filter shared groups

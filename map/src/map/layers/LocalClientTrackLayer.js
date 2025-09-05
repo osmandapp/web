@@ -8,7 +8,8 @@ import TrackLayerProvider, {
     WPT_SIMPLIFY_THRESHOLD,
 } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions, isEmptyTrack } from '../../manager/track/TracksManager';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import EditablePolyline from '../util/creator/EditablePolyline';
 import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
@@ -21,7 +22,7 @@ import TracksRoutingCache, {
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
@@ -214,7 +215,7 @@ export default function LocalClientTrackLayer() {
 
     useEffect(() => {
         if (ctx.createTrack && ctxTrack) {
-            if (ctx.createTrack?.enable && _.isEmpty(ctx.pointContextMenu) && !ctx.openContextMenu) {
+            if (ctx.createTrack?.enable && isEmpty(ctx.pointContextMenu) && !ctx.openContextMenu) {
                 setupClickOnMap();
             } else {
                 deleteClickOnMap();
@@ -299,7 +300,7 @@ export default function LocalClientTrackLayer() {
         if (ctx.createTrack === null) {
             clearAllRegisteredLayers(map, setRegisteredLayers);
         }
-        if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
+        if (ctx.createTrack?.closePrev && !isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
             clearAllRegisteredLayers(map, setRegisteredLayers);
@@ -427,7 +428,7 @@ export default function LocalClientTrackLayer() {
         });
         if (layer) {
             if (fitBounds) {
-                if (!_.isEmpty(layer.getBounds())) {
+                if (!isEmpty(layer.getBounds())) {
                     map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
                 }
             }
@@ -570,7 +571,7 @@ export default function LocalClientTrackLayer() {
 
     function addGeometryToTrack(newPoint, points) {
         let prevPoint = points[points.length - 1];
-        prevPoint.geometry = deleteInfo(_.cloneDeep(points));
+        prevPoint.geometry = deleteInfo(cloneDeep(points));
         prevPoint.profile = newPoint.profile;
         prevPoint.geoProfile = newPoint.geoProfile;
         let firstP = points[0];
@@ -802,7 +803,7 @@ export default function LocalClientTrackLayer() {
     }
 
     useEffect(() => {
-        if (!_.isEmpty(ctx.routingNewSegments)) {
+        if (!isEmpty(ctx.routingNewSegments)) {
             ctx.routingNewSegments.forEach((s) => {
                 TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx);
             });

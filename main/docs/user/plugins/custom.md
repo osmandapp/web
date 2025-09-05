@@ -339,4 +339,4 @@ You can take a look at some of the plugins that OsmAnd users have made on their 
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
- > *Last updated: June 2024*
+ 

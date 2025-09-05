@@ -31,12 +31,13 @@ This article covers GPX track recording issues which have been observed for a lo
 
 There are 2 typical accuracy issues leading to a *messy* recorded track.
 
-- Longer standing in the same place.
-- Bad GPS signal and switching to network signal-based location.
+- Longer standing in the same place, or too frequent point recording (corresponding zig-zagging exaggerates true values)
+- Weak GPS signal or switching to network signal-based location.
 
-Actions you can perform:
+Mitigation actions:
 
-- You can avoid such problems using **Pause** to interrupt recording under such conditions.
+- Pause your recordings while standing, or use the Trip recording plugin’s *Minumum displacement* filter.
+- Select the time or displacement spacing of your recorded points appropriate to capture the curviness of your trip, but not creating lots of extra points (the spread of which will create noise and exaggerate distance and elevation fluctuations). 
 - It is also possible to edit a track later and remove *"noisy"* points.
 - Or you can use the *Trip recording Plugin* settings to filter *"noisy"* points already while recording, based on your **experience** and **recording device**. You can filter out points by various criteria:
   - Points with low or zero speed.
@@ -48,8 +49,6 @@ Actions you can perform:
 
 ## Recorded Tracks Have Gaps {#recorded-tracks-have-gaps}
 
-Starting with Android 4.4, power-saving features can limit CPU usage, reduce screen brightness, and kill background apps when the screen is off. This can affect OsmAnd’s performance for outdoor use, map rendering, and track recording. To avoid issues, consider disabling power-saving features entirely. Based on user experience, this has little impact on battery life for most devices.
-
 ### Configuring OsmAnd for Track Recording {#configuring-osmand-for-track-recording}
 
 - **Prevent Standalone Logging**. Ensure the *Prevent standalone logging* setting under Plugins/Trip Recording is deactivated to allow OsmAnd to record tracks with the screen off.
@@ -58,9 +57,15 @@ Starting with Android 4.4, power-saving features can limit CPU usage, reduce scr
 
 ### Optimizing Android for Track Recording {#optimizing-android-for-track-recording}
 
-- **Exclude OsmAnd from Power Optimization**. In your Android device's Power or Power Savings settings, find OsmAnd under *Apps*, *Applications*, or *App Manager*. Locate *Power Savings* or *Power Consumption*, and exclude OsmAnd from power optimization. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
+Starting with Android 4.4, power-saving features can limit CPU usage, reduce screen brightness, and kill background apps when the screen is off. This can affect OsmAnd’s performance for outdoor use, map rendering, and track recording. Later versions of Andrid have added AI-based power saving bahaviors like **Automatic battery** and **Automatic power saving**, introducing dynamic and even less predictable behavior. To avoid recording issues, at least initially or for debugging, **consider disabling power-saving features entirely**. Users report that the impact on battery life for most devices is tolerable.
+
+- **Exclude OsmAnd from *Battery optimization*.** In your Android device's *Settings*, find OsmAnd under *Apps*, *Applications*, or *App Manager*. Locate the *Battery*, *Power Savings* or *Power Consumption* section, and exclude OsmAnd from battery optimization. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
   
-- **Disable Power Saving Mode**. Disabling Android Power Saving entirely can help, especially on older Android versions. This may resolve performance issues during track recording or navigation.
+- **Disable the *Power saving* Mode.** This mode has a high chance of impacting/killing even foreground services, like OsmAnd's trip recording.
+
+- **Disable *Adaptive power saving*.** Having this 'on' will apply system-wide, use-pattern based policies to deactivate/activate the above 'power saving' mode.
+
+- **Diasable *Adaptive battery* unless you use the OsmAnd app regularly.** *Adaptive battery* works on a per app basis, also use-pattern based. Its effect on a specific app can be reduced by exempting that app from *Battery optimization* (like setting to *Not optimized*). However, *Adaptive battery* can still kill foreground services such as OsmAnd's trip recording, if the device judges OsmAnd to be in your 'rarely used' pool of apps.
 
 ### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
 
@@ -74,14 +79,14 @@ For more details on how iOS handles location tracking, check out Apple's documen
 The following Power settings have been successfully tested under Android 9, 10, and later 11 (on Samsung devices) to make OsmAnd register tracks without gaps. Please review these **10 settings** and set accordingly:
 
 - (1) **Power saving (mode)** = OFF (or *Optimized* in Android 10)
-- (2) **Adaptive power saving** = OFF (When ON, medium power saving mode may sometimes be activated, which prevents OsmAnd from logging)
-- (3) **Adaptive battery** = ON (should not affect apps exempted from battery optimization anyway, see (9) below)
-- (4) **Put unused apps to sleep** = OFF (ON probably also ok if OsmAnd is exempted from battery optimization, see (9) below)
-- (5) **Auto disable unused apps** = OFF (seems only present in Android 9)
-- (6) **Optimize settings** = OFF (in Android 10 under *Device care / Advanced*, in Android 11 seems gone)
-- (7) **Auto optimize (daily)** = ON (probably not relevant)
-- (8) **Auto restart (at set times)** = OFF (probably not relevant)
-- (9) **Optimize Battery Usage** (under *Apps / OsmAnd / Battery* or *Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd*) = advisable to exempt OsmAnd from battery optimization (although not necessary on all devices)
+- (2) **Adaptive power saving** = OFF (When ON, power saving mode may sometimes be activated, which prevents OsmAnd from logging.)
+- (3) **Adaptive battery** = ON (Does not affect apps exempted from battery optimization anyway, see (9) below, **unless the app is used rarely**. To be safe, set to OFF.)
+- (4) **Put unused apps to sleep** = ON (But exempt OsmAnd is exempted from battery optimization, see (9) below!)
+- (5) **Auto disable unused apps** = OFF (Seems only present in Android 9.)
+- (6) **Optimize settings** = OFF (In Android 10 under *Device care / Advanced*, in Android 11 seems gone.)
+- (7) **Auto optimize (daily)** = ON (Has no effect here.)
+- (8) **Auto restart (at set times)** = OFF (Has no effect here.)
+- (9) **Optimize Battery Usage** (Under Android *Settings / Apps / OsmAnd / Battery* or *Settings / Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd*) = Exempt OsmAnd from battery optimization (very advisable, although not necessary if the app is user-started frequently).
 - (10) **Allow background activity** = ON for OsmAnd under *Apps / OsmAnd / Battery* for Android 11
 
 Some of these settings interact, so be accurate. The best search for the above settings by name (with and without the expressions in parentheses). Depending on your version of Android, they may be scattered over these various *Android Settings screens*:

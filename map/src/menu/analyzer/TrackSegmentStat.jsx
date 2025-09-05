@@ -15,8 +15,6 @@ import { ReactComponent as EndTimeIcon } from '../../assets/icons/ic_action_time
 import { ReactComponent as TimeDurationIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as TimeMovingIcon } from '../../assets/icons/ic_action_time_span_16.svg';
 import { ReactComponent as DistanceIcon } from '../../assets/icons/ic_action_length_16.svg';
-import { format } from 'date-fns';
-import i18n from 'i18next';
 import { MAIN_BLOCK_SIZE } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
 import TrackSegmentItem from './TrackSegmentItem';
@@ -29,6 +27,7 @@ import {
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 import AppContext from '../../context/AppContext';
+import { fmt } from '../../util/dateFmt';
 
 export const getSpeedStats = (stats, t, ctx) => [
     {
@@ -135,8 +134,7 @@ const formatTimestamp = (value) => {
     if (value === UNDEFINED_VALUE) return { value: UNDEFINED_VALUE, unit: '' };
     const timestamp = Number(value);
     if (isTimestampInMilliseconds(timestamp)) {
-        const date = new Date(timestamp);
-        return { value: date.toLocaleTimeString('en-GB', { hour12: false }), unit: '' };
+        return { value: fmt.time24(timestamp), unit: '' };
     }
     return timestamp;
 };
@@ -169,11 +167,8 @@ export default function TrackSegmentStat({ height, sortedSegments, activeSegment
     const [filteredStats, setFilteredStats] = useState([]);
 
     const formatDate = (timestamp) => {
-        const date = new Date(parseInt(timestamp, 10));
-        if (isNaN(date)) {
-            return UNDEFINED_VALUE;
-        }
-        return format(date, 'dd.MM.yyyy', { locale: ctx.dateLocale });
+        const d = new Date(Number(timestamp));
+        return isNaN(d) ? UNDEFINED_VALUE : fmt.ddMMyyyy(d);
     };
 
     useEffect(() => {

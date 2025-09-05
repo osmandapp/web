@@ -4,7 +4,7 @@ import { Marker, GeoJSON, useMap } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 import { getDistance } from '../../util/Utils';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 const DEFAULT_SEGMENT_COLOR = '#227bff';
 

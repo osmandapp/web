@@ -1,7 +1,7 @@
 ---
-source-hash: 872ff87a35bc61fbd415cf02fa9593a1f01ab711832783bd8413d76746b5e729
+source-hash: a88db727a56929097a8c07ddebe3d67c7ae6791b63a8d75e38c832528fdae92e
 sidebar_position: 5
-title:  Mapas Vetoriais (Estilos de Mapa)
+title: Mapas Vetoriais (Estilos de Mapa)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,17 +17,17 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## Visão Geral {#overview}
 
-Os mapas vetoriais são destinados a serem usados como a fonte de dados de mapa padrão para o OsmAnd, então **você precisa baixá-los para o seu dispositivo**. Os mapas vetoriais suportam um grande número de estilos de mapa para diferentes atividades, como ciclismo, caminhada, condução de carro ou snowmobile, e outros.
+Os mapas vetoriais destinam-se a ser utilizados como fonte de dados de mapa predefinida para o OsmAnd, pelo que **precisa de os transferir para o seu dispositivo**. Os mapas vetoriais suportam um grande número de estilos de mapa para diferentes atividades, como ciclismo, caminhadas, condução de carro ou mota de neve, e outros.
 
-Cada estilo de mapa pode ser personalizado para destacar ou ocultar objetos específicos e para alternar entre os modos diurno e noturno. Os dados do mapa vetorial podem ser aumentados por dados vetoriais e exibidos no estilo de mapa padrão, como informações de *Linha de contorno*. Você pode *criar seu próprio estilo de mapa OsmAnd* para demonstrar as informações necessárias.
+Cada estilo de mapa pode ser personalizado para realçar ou ocultar objetos específicos e para alternar entre os modos diurno e noturno. Os dados do mapa vetorial podem ser aumentados por dados vetoriais e exibidos no estilo de mapa predefinido, como informações de *Linha de Contorno*. Pode *criar o seu próprio estilo de mapa OsmAnd* para demonstrar as informações necessárias.
 
 
 ## Casos de Uso {#use-cases}
 
-Estilos de mapa personalizáveis são uma das principais vantagens do OsmAnd. Você pode personalizar a exibição do mapa para se adequar a você e seus hobbies, ajustar a exibição ou ocultação de certos objetos do mapa, os tamanhos e cores desses objetos e alterar a escala de exibição de certos objetos.
+Os estilos de mapa personalizáveis são uma das principais vantagens do OsmAnd. Pode personalizar a exibição do mapa para se adequar a si e aos seus hobbies, ajustar a exibição ou ocultação de certos objetos do mapa, os tamanhos e cores desses objetos e alterar a escala de exibição de certos objetos.
 
 
-## Estilos de Mapa Padrão {#default-map-styles}
+## Estilos de Mapa Predefinidos {#default-map-styles}
 
 O OsmAnd oferece muitos estilos de mapa e camadas de dados que se encaixam por padrão. Esta seção descreve os principais para os modos diurno e noturno.
 
@@ -40,16 +40,16 @@ O OsmAnd oferece muitos estilos de mapa e camadas de dados que se encaixam por p
 
 ![Estilo de mapa OsmAnd](@site/static/img/map/map-style-osmand-with-routes.png)
 
-O estilo de renderização de mapa padrão do OsmAnd equilibra detalhes e simplicidade, tornando-o ideal para exploração urbana e ao ar livre. Ele detalha características da cidade, como ruas, edifícios e paradas de transporte, enquanto simplifica a desordem visual, tornando os mapas mais claros.
+O estilo de renderização de mapa padrão do OsmAnd equilibra detalhes e simplicidade, tornando-o ideal para exploração urbana e ao ar livre. Detalha características da cidade, como ruas, edifícios e paragens de transporte, enquanto simplifica a desordem visual, tornando os mapas mais claros.
 
-Os principais benefícios incluem mapeamento de rotas, qualidade da superfície, restrições de acesso, sinalização de estradas, renderizações de trilhas em escala SAC, instalações esportivas e detalhes topográficos, como linhas de contorno.
+Os principais benefícios incluem mapeamento de rotas, qualidade da superfície, restrições de acesso, sinalização rodoviária, renderização de caminhos de escala SAC, instalações desportivas e detalhes topográficos, como linhas de contorno.
 
 
-### Visualização de Turismo {#touring-view}
+### Vista de Passeio {#touring-view}
 
-![Estilo de mapa de visualização de turismo](@site/static/img/map/map-style-touring.png)
+![Estilo de mapa Vista de Passeio](@site/static/img/map/map-style-touring.png)
 
-Estilo de turismo com alto contraste e máximo detalhe. Inclui todas as opções do estilo OsmAnd padrão, exibindo o máximo de detalhes possível, em particular estradas, caminhos e outras formas de viajar. Distinção clara dos tipos de estradas em um *atlas de turismo*. Adequado para uso diurno, noturno e ao ar livre.
+Estilo de passeio com alto contraste e máximo detalhe. Inclui todas as opções do estilo OsmAnd padrão, exibindo o máximo de detalhes possível, em particular estradas, caminhos e outras formas de viajar. Distinção clara dos tipos de estrada num *atlas de passeio*. Adequado para uso diurno, noturno e ao ar livre.
 
 ### UniRS e LightRS {#unirs-and-lightrs}
 
@@ -57,11 +57,11 @@ Estilo de turismo com alto contraste e máximo detalhe. Inclui todas as opções
 
 Os estilos UniRS e LightRS são estilos de autor que renderizam as informações básicas do mapa, mas em diferentes esquemas de cores.
 
-- **Estilo UniRS**. Este estilo é uma versão modificada do padrão para aumentar o contraste para caminhos de pedestres e bicicletas. Ele mantém o esquema de cores clássico do Mapnik.
+- **Estilo UniRS**. Este estilo é uma versão modificada do padrão para aumentar o contraste para caminhos pedonais e ciclovias. Mantém o esquema de cores clássico do Mapnik.
 
     ![Estilo de mapa LightRS](@site/static/img/map/map-style-lightrs.png)
 
-- **Estilo LightRS**. Este é um estilo de condução simples que apresenta um modo noturno suave. Ele destaca as estradas em uma cor laranja contrastante, escurece objetos secundários do mapa e exibe características topográficas como linhas de contorno.
+- **Estilo LightRS**. Este é um estilo de condução simples que apresenta um modo noturno suave. Realça as estradas numa cor laranja contrastante, escurece objetos secundários do mapa e exibe características topográficas como linhas de contorno.
 
     ![Estilo de mapa UniRS](@site/static/img/map/map-style-unirs.png)
 
@@ -69,52 +69,52 @@ Os estilos UniRS e LightRS são estilos de autor que renderizam as informações
 
 ![Estilo de mapa Náutico](@site/static/img/map/map-style-nautical.png)
 
-Este é um estilo de navegação náutica que apresenta boias, faróis, rotas fluviais, vias marítimas, marcas, portos, marcas náuticas e contornos de profundidade. Leia mais no artigo [Visualização de Mapa Náutico](../plugins/nautical-charts.md).
+Este é um estilo de navegação náutica com boias, faróis, rotas fluviais, vias marítimas, marcas, portos, marcas náuticas e contornos de profundidade. Leia mais no artigo [Vista de Mapa Náutico](../plugins/nautical-charts.md).
 
 ### Inverno e Esqui {#winter-and-ski}
 
 ![Estilo de mapa Inverno e Esqui](@site/static/img/map/map-style-winter-ski.png)
 
-Este é um estilo para esportes de esqui que descreve as pistas, elevadores e trilhas de esqui cross-country, além de obscurecer objetos secundários do mapa. O **estilo Inverno e Esqui** foi projetado para ajudá-lo na navegação em esportes de inverno.
+Este é um estilo para desportos de esqui que descreve as pistas, elevadores e trilhos de esqui de fundo, bem como obscurece objetos secundários do mapa. O **estilo Inverno e Esqui** foi concebido para o ajudar na navegação em desportos de inverno.
 
-Você pode ver as pistas de esqui e outros detalhes, como a dificuldade das pistas e os marcadores de elevador. Os principais benefícios incluem a exibição conveniente de pistas, elevadores e outras características de esqui. Menos objetos secundários distrativos do mapa. Leia mais no artigo [Mapas de Esqui](../plugins/ski-maps.md).
+Pode ver as pistas de esqui e outros detalhes, como a dificuldade das pistas e os marcadores dos elevadores. Os principais benefícios incluem a exibição conveniente de pistas, elevadores e outras características de esqui. Menos objetos secundários distrativos do mapa. Leia mais no artigo [Mapas de Esqui](../plugins/ski-maps.md).
 
 ### Topo {#topo}
 
 ![Estilo de mapa Topo](@site/static/img/map/map-style-topo.png)
 
-Este estilo foi projetado para caminhadas, acampamentos e ciclismo na natureza. Ele apresenta estradas e características naturais contrastantes, diferentes tipos de trilhas, opções estendidas de linhas de contorno e detalhes adicionais. É legível ao ar livre. A configuração *Integridade da Superfície* permite distinguir a qualidade da estrada.
+Este estilo foi concebido para caminhadas, campismo e ciclismo na natureza. Apresenta estradas e características naturais contrastantes, diferentes tipos de trilhos, opções de linhas de contorno estendidas e detalhes adicionais. É legível ao ar livre. A configuração *Integridade da Superfície* permite distinguir a qualidade da estrada.
 
 ### OSM-carto {#osm-carto}
 
 ![Estilo de mapa OSM-carto](@site/static/img/map/map-style-osm-carto.png)
 
-Este estilo imita o [estilo web padrão do OpenStreetMap](https://www.openstreetmap.org/). O código-fonte da versão web está disponível no [Github](https://github.com/gravitystorm/openstreetmap-carto), o código OsmAnd está disponível no [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
+Este estilo imita o [estilo web OpenStreetMap](https://www.openstreetmap.org/) padrão. O código-fonte da versão web está disponível no [Github](https://github.com/gravitystorm/openstreetmap-carto), o código OsmAnd está disponível no [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
 ### Deserto {#desert}
 
 ![Estilo de mapa Deserto](@site/static/img/map/map-style-desert.png)
 
-Projetado para desertos e outras regiões pouco povoadas, oferecendo informações de mapa mais detalhadas.
+Concebido para desertos e outras regiões pouco povoadas, oferecendo informações de mapa mais detalhadas.
 
 ### Offroad {#offroad}
 
 ![Estilo de mapa Offroad](@site/static/img/map/map-style-offroad.png)
 
-Projetado para navegação off-road, este estilo é baseado no layout do mapa [Topo](#topo) e funciona bem com imagens de satélite como camada de fundo. Ele apresenta estradas principais mais finas para destacar caminhos, trilhas, rotas de bicicleta e outras trilhas off-road, tornando-o ideal para explorar rotas não pavimentadas em áreas rurais ou remotas.
+Concebido para navegação off-road, este estilo baseia-se no layout do mapa [Topo](#topo) e funciona bem com imagens de satélite como camada inferior. Apresenta estradas principais mais finas para realçar caminhos, trilhos, rotas de bicicleta e outros trilhos off-road, tornando-o ideal para explorar rotas não pavimentadas em áreas rurais ou remotas.
 
-### Snowmobile {#snowmobile}
+### Mota de Neve {#snowmobile}
 
-![Estilo de mapa Snowmobile](@site/static/img/map/map-style-snowmobile.png)
+![Estilo de mapa Mota de Neve](@site/static/img/map/map-style-snowmobile.png)
 
-Adaptado para navegação em snowmobile, este estilo destaca caminhos, estradas e trilhas adequados para snowmobile. Ele destaca caminhos especializados em regiões nevadas, oferecendo navegação clara em terrenos cobertos de neve onde as estradas padrão podem não estar disponíveis.
+Adaptado para navegação em mota de neve, este estilo realça caminhos, estradas e trilhos adequados para motas de neve. Realça caminhos especializados em regiões nevadas, oferecendo navegação clara em terrenos cobertos de neve onde as estradas padrão podem não estar disponíveis.
 
 
 ## Legenda do Mapa {#map-legend}
 
-A legenda do mapa serve como uma chave para entender os símbolos usados nos mapas do OsmAnd. Ela explica o significado por trás de vários símbolos do mapa, incluindo pontos, linhas e áreas. Por exemplo, símbolos como linhas sinuosas azuis indicam rios, enquanto diferentes cores e formas podem representar edifícios, caminhos e rotas.
+A legenda do mapa serve como uma chave para entender os símbolos usados nos mapas do OsmAnd. Explica o significado por trás de vários símbolos do mapa, incluindo pontos, linhas e áreas. Por exemplo, símbolos como linhas sinuosas azuis indicam rios, enquanto diferentes cores e formas podem representar edifícios, caminhos e rotas.
 
-A legenda ajuda os usuários a interpretar o que veem no mapa. Você pode acessar a legenda completa do mapa do OsmAnd [aqui](../map-legend/index.md).
+A legenda ajuda os utilizadores a interpretar o que veem no mapa. Pode aceder à legenda completa do mapa OsmAnd [aqui](../map-legend/index.md).
 
 
 ## Fontes do Mapa (Android) {#map-fonts-android}
@@ -123,9 +123,9 @@ A legenda ajuda os usuários a interpretar o que veem no mapa. Você pode acessa
 
 ![Fontes do mapa versão Android](@site/static/img/map/map_fonts.png) ![Fontes do mapa versão](@site/static/img/map/map_fonts_1.png)
 
-Para mapas em chinês simplificado/tradicional, japonês e coreano, caracteres ou símbolos incorretos (como quadrados) podem aparecer se o seu dispositivo não tiver as fontes necessárias. Esse problema ocorre ao renderizar nomes locais e pode ser resolvido baixando as fontes necessárias via OsmAnd.
+Para mapas em chinês simplificado/tradicional, japonês e coreano, podem aparecer caracteres ou símbolos incorretos (como quadrados) se o seu dispositivo não tiver as fontes necessárias. Este problema ocorre ao renderizar nomes locais e pode ser resolvido transferindo as fontes necessárias via OsmAnd.
 
-Alguns problemas de fonte relacionados foram documentados no GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
+Alguns problemas de fontes relacionados foram documentados no GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
 ## * Linhas de Contorno {#-contour-lines}
@@ -134,23 +134,23 @@ Alguns problemas de fonte relacionados foram documentados no GitHub: [3911](http
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 
 </Tabs>
 
-![Estilo de mapa de linhas de contorno](@site/static/img/map/contour_lines.png)
+![Estilo de mapa Linhas de contorno](@site/static/img/map/contour_lines.png)
 
-As linhas de contorno no OsmAnd são exibidas como linhas de elevação em mapas vetoriais. Para usá-las, você deve primeiro habilitar o [plugin de Topografia](../plugins/topography.md), baixar os dados regionais necessários e configurar a exibição. Este recurso não está habilitado por padrão e requer uma [compra](../purchases/index.md).
+As linhas de contorno no OsmAnd são exibidas como linhas de elevação em mapas vetoriais. Para as usar, deve primeiro ativar o [plugin Topografia](../plugins/topography.md), transferir os dados regionais necessários e configurar a exibição. Esta funcionalidade não está ativada por predefinição e requer uma [compra](../purchases/index.md).
 
-As linhas de contorno são compatíveis com todos os estilos de mapa e podem ser personalizadas através do [menu Linhas de contorno](../plugins/topography.md#contour-lines). Para mais detalhes, visite o artigo [plugin de Topografia](../plugins/topography.md).
+As linhas de contorno são compatíveis com todos os estilos de mapa e podem ser personalizadas através do [menu Linhas de Contorno](../plugins/topography.md#contour-lines). Para mais detalhes, visite o artigo [plugin Topografia](../plugins/topography.md).
 
 
 ## * Profundidade Náutica {#-nautical-depth}
@@ -159,7 +159,7 @@ As linhas de contorno são compatíveis com todos os estilos de mapa e podem ser
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
@@ -167,7 +167,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
@@ -175,18 +175,18 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 </Tabs>
 
-As linhas de contorno de profundidade náutica representam áreas de igual profundidade, ajudando a visualizar as mudanças na topografia subaquática. Este recurso está disponível em todos os estilos e modos de mapa e pode ser ajustado com ou sem o plugin de visualização de mapa Náutico habilitado.
+As linhas de contorno de profundidade náutica representam áreas de igual profundidade, ajudando a visualizar as mudanças na topografia subaquática. Esta funcionalidade está disponível em todos os estilos e modos de mapa e pode ser ajustada com ou sem o plugin de vista de mapa Náutico ativado.
 
-Para mais detalhes sobre a visualização de mapa Náutico, visite a [página do plugin Náutico](../plugins/nautical-charts).
+Para mais detalhes sobre a vista de mapa Náutico, visite a [página do plugin Mapa Náutico](../plugins/nautical-charts).
 
 
-## Mostrar Bordas {#show-borders}
+## Mostrar Limites {#show-borders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
 ![show-borders-andr](@site/static/img/map/show-borders-andr.png)
 
@@ -194,7 +194,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,show_
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
 ![show-borders-ios](@site/static/img/map/show-borders-ios.png)
 
@@ -202,28 +202,28 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,show_bord
 
 </Tabs>
 
-Este recurso permite alternar a visibilidade das bordas para mapas previamente baixados da lista de mapas disponíveis. Seu principal objetivo é ajudar a desorganizar o mapa principal, ocultando os contornos dos mapas baixados, o que é especialmente útil se você tiver muitos mapas instalados.
+Esta funcionalidade permite alternar a visibilidade dos limites para mapas previamente transferidos da lista de mapas disponíveis. O seu principal objetivo é ajudar a organizar o mapa principal, ocultando os contornos dos mapas transferidos, o que é especialmente útil se tiver muitos mapas instalados.
 
-Por padrão, as bordas do mapa aparecerão quando você ampliar para o nível 7 e desaparecerão no nível de zoom 3 e abaixo.
+Por predefinição, os limites do mapa aparecerão quando aumentar o zoom para o nível 7 e desaparecerão no nível de zoom 3 e abaixo.
 
-:::tip Cor Mostrar bordas dos mapas baixados
-Quando o recurso *Mostrar bordas dos mapas baixados* está habilitado, os mapas baixados são coloridos em **Verde** nas versões Android e iOS do OsmAnd.
+:::tip Cor Mostrar limites dos mapas transferidos
+Quando a funcionalidade *Mostrar limites dos mapas transferidos* está ativada, os mapas transferidos são coloridos a **Verde** nas versões Android e iOS do OsmAnd.
 
-No Android, os mapas arquivados são mostrados em **Laranja**. No iOS, os mapas que podem ser atualizados também são marcados em **Laranja**.
+No Android, os mapas arquivados são mostrados a **Laranja**. No iOS, os mapas que podem ser atualizados também são marcados a **Laranja**.
 :::
 
 
-## Grade de Coordenadas {#coordinates-grid}
+## Grelha de Coordenadas {#coordinates-grid}
 
 
-Vá para: *Menu → Configurar Mapa → Mostrar → Grade de Coordenadas*
+Ir para: *Menu → Configurar Mapa → Mostrar → Grelha de Coordenadas*
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Menu da grade de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png)
+![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png)
 
 </TabItem>
 
@@ -236,53 +236,53 @@ Vá para: *Menu → Configurar Mapa → Mostrar → Grade de Coordenadas*
 </Tabs>
 
 
-O recurso **Grade de Coordenadas** sobrepõe uma grade de referência no mapa, permitindo visualizar linhas de latitude e longitude com base em diferentes sistemas de coordenadas. Este recurso é útil para referência de localização precisa e navegação geoespacial.
+A funcionalidade **Grelha de Coordenadas** sobrepõe uma grelha de referência no mapa, permitindo visualizar linhas de latitude e longitude com base em diferentes sistemas de coordenadas. Esta funcionalidade é útil para referência de localização precisa e navegação geoespacial.
 
 ***1. Formatos de coordenadas disponíveis:***
 
 - **DD°MM′SS″** (Graus, Minutos, Segundos)
 - **DD.DDDDD°** (Graus Decimais - formato padrão WGS84)
 - **DD°MM.MMM′** (Graus, Minutos Decimais)
-- **MGRS** (Sistema de Referência de Grade Militar)
-- **UTM** (Universal Transverse Mercator - sistema de grade baseado em zonas)
+- **MGRS** (Sistema de Referência de Grelha Militar)
+- **UTM** (Universal Transverse Mercator - sistema de grelha baseado em zonas)
 
 :::note
 
-1. *Limitações da grade UTM:*
-    - O nível de zoom mínimo para exibir a grade UTM é 9.
-    - Apenas uma zona UTM é exibida por vez, pois as zonas são separadas por meridianos a cada 6°.
+1. *Limitações da grelha UTM:*
+    - O nível de zoom mínimo para exibir a grelha UTM é 9.
+    - Apenas uma zona UTM é exibida de cada vez, pois as zonas são separadas por meridianos a cada 6°.
 
-2. *A grade WGS84 suporta três modos diferentes:* graus decimais, graus+minutos e graus+minutos+segundos.
+2. *A grelha WGS84 suporta três modos diferentes:* graus decimais, graus+minutos e graus+minutos+segundos.
 
 :::
 
 ***Sistemas de coordenadas suportados:***
 
-O OsmAnd suporta múltiplas **projeções base** para exibir linhas de grade geográficas:
+O OsmAnd suporta múltiplas **projeções base** para exibir linhas de grelha geográfica:
 
 | **Projeção** | **Código EPSG** | **Descrição** |
 |---|---|---|
 | **WGS84** | EPSG:4326 | Sistema de referência de latitude/longitude padrão, usado globalmente. |
 | **Mercator** | EPSG:3857 | Usado para mapeamento baseado na web (Google Maps, OpenStreetMap, etc.). |
 | **UTM** | EPSG:6387 | Divide o mundo em **60 zonas** para posicionamento local preciso. |
-| **MGRS** | - | Sistema de Referência de Grade Militar (extensão do UTM). |
+| **MGRS** | - | Sistema de Referência de Grelha Militar (extensão do UTM). |
 
 
 
 ***2. Configurações de nível de zoom:***
 
-- As linhas da grade aparecem com base no nível de zoom, entre **2 – 22**.
+- As linhas da grelha aparecem com base no nível de zoom, entre **2 – 22**.
 - As linhas ajustam dinamicamente as divisões de coordenadas com base no nível de zoom.
 
-**Por padrão, o aplicativo usa o formato de coordenadas selecionado em** [Configurações gerais](../personal/profiles.md#units--formats).
+**Por predefinição, a aplicação utiliza o formato de coordenadas selecionado em** [Definições gerais](../personal/profiles.md#units--formats).
 
 
 ***3. Posição dos rótulos:***
 - Bordas
 - Centro
 
-***4. Cor da grade:***
-- Escolha a cor da sua grade para o modo Dia/Noite.
+***4. Cor da grelha:***
+- Escolha a cor da sua grelha para o modo Dia/Noite.
 
 ## Configurar Estilo do Mapa {#configure-map-style}
 
@@ -292,7 +292,7 @@ O OsmAnd suporta múltiplas **projeções base** para exibir linhas de grade geo
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*
 
 ![Modo do Mapa](@site/static/img/map/map_mode_andr.png)
 
@@ -300,7 +300,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
 
 ![Modo do Mapa](@site/static/img/map/map_mode_4-9_ios.png)
 
@@ -308,17 +308,17 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widge
 
 </Tabs>
 
-O mapa pode ser exibido em um tema claro ou escuro com base no modo selecionado em uma lista de opções. Por padrão e para todos os novos usuários, o [estilo do mapa](#default-map-styles) se alinha com o tema escolhido nas configurações do sistema do seu dispositivo.
+O mapa pode ser exibido num tema claro ou escuro com base no modo selecionado numa lista de opções. Por predefinição e para todos os novos utilizadores, o [estilo do mapa](#default-map-styles) alinha-se com o tema escolhido nas definições do sistema do seu dispositivo.
 
-- **<Translate android="true" ids="daynight_mode_day"/>**. Sempre exibe o mapa em um tema claro para visibilidade ideal durante o dia.
+- **<Translate android="true" ids="daynight_mode_day"/>**. Sempre exibe o mapa num tema claro para ótima visibilidade diurna.
 
-- **<Translate android="true" ids="daynight_mode_night"/>**. Sempre mostra o mapa em um tema escuro, ideal para condições noturnas ou de pouca luz.
+- **<Translate android="true" ids="daynight_mode_night"/>**. Sempre mostra o mapa num tema escuro, ideal para condições noturnas ou de pouca luz.
 
-- **Nascer do Sol / Pôr do Sol**. Transita automaticamente entre temas diurnos e noturnos de acordo com os horários locais de nascer e pôr do sol, que são detalhados nesta aba no aplicativo.
+- **Nascer do Sol / Pôr do Sol**. Transita automaticamente entre temas diurnos e noturnos de acordo com os horários locais de nascer e pôr do sol, que são detalhados nesta aba na aplicação.
 
-- **<Translate android="true" ids="daynight_mode_sensor"/>** (*Somente Android*). Utiliza o sensor de luz do dispositivo para alternar automaticamente entre temas claros e escuros de acordo com os níveis de luz ambiente.
+- **<Translate android="true" ids="daynight_mode_sensor"/>** (*apenas Android*). Utiliza o sensor de luz do dispositivo para alternar automaticamente entre temas claros e escuros de acordo com os níveis de luz ambiente.
 
-- **<Translate android="true" ids="daynight_mode_app_theme"/>**. A exibição do mapa se adapta ao tema geral do aplicativo, mostrando o modo diurno no tema claro e o modo noturno no tema escuro.
+- **<Translate android="true" ids="daynight_mode_app_theme"/>**. A exibição do mapa adapta-se ao tema geral da aplicação, mostrando o modo diurno no tema claro e o modo noturno no tema escuro.
 
 
 ### Detalhes {#details}
@@ -327,7 +327,7 @@ O mapa pode ser exibido em um tema claro ou escuro com base no modo selecionado 
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*
 
 </TabItem>
 
@@ -340,35 +340,35 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 </Tabs>
 
-- **<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Mostra polígonos, trilhas, pontos e sinais no mapa com zoom baixo. Isso significa que você pode ver mais detalhes no mapa com baixa ampliação. Observe que a renderização em seu dispositivo pode não ser rápida.
+- **<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Mostra polígonos, trilhos, pontos e sinais no mapa com zoom baixo. Isso significa que pode ver mais detalhes no mapa com baixa ampliação. Note que a renderização no seu dispositivo pode não ser rápida.
     ![Parâmetro do mapa - Mais detalhado](@site/static/img/map/map-parameter-more-details.png)
 
-- **<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Mostra o tipo de superfície da estrada. A cor da estrada ajuda você a entender qual é a superfície da estrada, como asfalto, grama ou areia. Veja a [legenda do mapa](../map-legend/index.md).
+- **<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Mostra o tipo de superfície da estrada. A cor da estrada ajuda a entender qual é a superfície da estrada, como asfalto, relva ou areia. Consulte a [Legenda do Mapa](../map-legend/index.md).
     ![Parâmetro do mapa - Superfície da estrada](@site/static/img/map/map-parameter-road-surface.png)
 
-- **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indica a qualidade da estrada. Indica a suavidade (inclinação) da estrada. Quão suaves são suas estradas: boas, ruins, possivelmente terríveis, etc. Consulte a [Legenda do Mapa](../map-legend/index.md) para determinar a suavidade de sua estrada.
+- **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indica a qualidade da estrada. Indica a suavidade (inclinação) da estrada. Quão suaves são as suas estradas: boas, más, possivelmente terríveis, etc. Consulte a [Legenda do Mapa](../map-legend/index.md) para determinar a suavidade da sua estrada.
     ![Parâmetro do mapa - Suavidade da estrada](@site/static/img/map/map-parameter-road-smoothness.png)
 
-- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Mostra a acessibilidade da estrada: privada ou permitida, somente emergência ou estrada com pedágio. Veja a [Legenda do Mapa](../map-legend/index.md) para encontrar estradas disponíveis.
+- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Mostra a acessibilidade da estrada: privada ou permitida, apenas para emergências ou estrada com portagem. Consulte a [Legenda do Mapa](../map-legend/index.md) para encontrar estradas disponíveis.
     ![Parâmetro do mapa - Acesso à estrada](@site/static/img/map/map-parameter-road-access.png)
 
-- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. O recurso [Zonas de Baixa Emissão (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) exibe bordas verdes e rótulos "LEZ" nos mapas para áreas em cidades onde o acesso é restrito para certos veículos poluentes. As LEZs visam melhorar a qualidade do ar, limitando a entrada de veículos que atendem a padrões de emissão específicos. Usar este recurso ajuda os usuários a evitar penalidades, identificando e navegando ao redor dessas zonas verdes, garantindo a conformidade com as regulamentações ambientais locais ao viajar pelos centros das cidades.
+- **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. A funcionalidade [Zonas de Baixas Emissões (ZBE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) exibe limites verdes e etiquetas "ZBE" nos mapas para áreas em cidades onde o acesso é restrito a certos veículos poluentes. As ZBEs visam melhorar a qualidade do ar, limitando a entrada a veículos que cumprem normas de emissões específicas. A utilização desta funcionalidade ajuda os utilizadores a evitar penalidades, identificando e navegando em torno destas zonas verdes, garantindo o cumprimento dos regulamentos ambientais locais ao viajar pelos centros das cidades.
 
-    ![Parâmetro do mapa - Zonas de baixa emissão](@site/static/img/map/map-parameter-low-emission-zones.png)
+    ![Parâmetro do mapa - Zonas de baixas emissões](@site/static/img/map/map-parameter-low-emission-zones.png)
 
-- **<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. Diferentes categorias de edifícios, como residenciais, industriais e comerciais, são codificadas por cores. Consulte a [legenda do mapa](../map-legend/index.md) para obter detalhes.
+- **<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. Diferentes categorias de edifícios, como residenciais, industriais e comerciais, são codificadas por cores. Consulte a [Legenda do Mapa](../map-legend/index.md) para detalhes.
     ![Parâmetro do mapa - Edifícios coloridos](@site/static/img/map/map-parameter-coloured-buildings.png)
 
-- **<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. Exibe ruas iluminadas e não iluminadas, bem como vias subterrâneas e temporariamente iluminadas. Verifique a [legenda do mapa](../map-legend/index.md) para detalhes.
+- **<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. Exibe ruas iluminadas e não iluminadas, bem como vias subterrâneas e temporariamente iluminadas. Verifique a [Legenda do Mapa](../map-legend/index.md) para detalhes.
     ![Parâmetro do mapa - Iluminação pública](@site/static/img/map/map-parameter-street-lighting.png)
 
-- **<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Projetado para mapeadores, este recurso mostra referências, observações e comentários de outros usuários no mapa.
+- **<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Concebida para mapeadores, esta funcionalidade mostra referências, observações e comentários de outros utilizadores no mapa.
     ![Parâmetro do mapa - Assistente de mapa](@site/static/img/map/map-parameter-map-assistant.png)
 
-- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Mostra contornos de profundidade do mar. Você precisa instalar o [plugin Náutico](../plugins/nautical-charts) e baixar mapas Náuticos.
+- **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Mostra contornos de profundidade do mar. Precisa de instalar o [plugin Náutico](../plugins/nautical-charts) e transferir mapas Náuticos.
     ![Parâmetro do mapa - Contornos de profundidade](@site/static/img/map/map-parameter-depth-contours.png)
 
-- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Mostrando borda verde e rótulos "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Destaca áreas protegidas com uma borda verde e rótulo "NR" para zonas de conservação da vida selvagem.
+- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Mostra o quadro verde e as etiquetas "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Realça áreas protegidas com um limite verde e etiqueta "NR" para zonas de conservação da vida selvagem.
 
     &nbsp;&nbsp;&nbsp;![Parâmetro do mapa - Reserva natural](@site/static/img/map/nature-reserve.png)
 
@@ -376,16 +376,16 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 <!--
 | | | |
 |--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Mostra polígonos, trilhas, pontos e sinais no mapa com zoom baixo. Isso significa que você pode ver mais detalhes no mapa com baixa ampliação. Observe que a renderização em seu dispositivo pode não ser rápida.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Mostra o tipo de superfície da estrada. A cor da estrada ajuda você a entender qual é a superfície da estrada, como asfalto, grama ou areia. Veja a [legenda do mapa](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indica a qualidade da estrada. Indica a suavidade (inclinação) da estrada. Quão suaves são suas estradas: boas, ruins, possivelmente terríveis, etc. Consulte a [Legenda do Mapa](../map-legend/index.md) para determinar a suavidade de sua estrada.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Mostra a acessibilidade da estrada: privada ou permitida, somente emergência ou estrada com pedágio. Veja a [Legenda do Mapa](../map-legend/index.md) para encontrar estradas disponíveis. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | O recurso [Zonas de Baixa Emissão (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) exibe bordas verdes e rótulos "LEZ" nos mapas para áreas em cidades onde o acesso é restrito para certos veículos poluentes. As LEZs visam melhorar a qualidade do ar, limitando a entrada de veículos que atendem a padrões de emissão específicos. Usar este recurso ajuda os usuários a evitar penalidades, identificando e navegando ao redor dessas zonas verdes, garantindo a conformidade com as regulamentações ambientais locais ao viajar pelos centros das cidades.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Diferentes categorias de edifícios, como residenciais, industriais e comerciais, são codificadas por cores. Consulte a [legenda do mapa](../map-legend/index.md) para obter detalhes. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Exibe ruas iluminadas e não iluminadas, bem como vias subterrâneas e temporariamente iluminadas. Verifique a [legenda do mapa](../map-legend/index.md) para detalhes. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Projetado para mapeadores, este recurso mostra referências, observações e comentários de outros usuários no mapa. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Mostra contornos de profundidade do mar. Você precisa instalar o [plugin Náutico](../plugins/nautical-charts) e baixar mapas Náuticos.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Mostrando borda verde e rótulos "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Destaca áreas protegidas com uma borda verde e rótulo "NR" para zonas de conservação da vida selvagem.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Mostra polígonos, trilhos, pontos e sinais no mapa com zoom baixo. Isso significa que pode ver mais detalhes no mapa com baixa ampliação. Note que a renderização no seu dispositivo pode não ser rápida.| ![Parâmetro do mapa - Mais detalhado](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Mostra o tipo de superfície da estrada. A cor da estrada ajuda a entender qual é a superfície da estrada, como asfalto, relva ou areia. Consulte a [Legenda do Mapa](../map-legend/index.md).| ![Parâmetro do mapa - Superfície da estrada](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indica a qualidade da estrada. Indica a suavidade (inclinação) da estrada. Quão suaves são as suas estradas: boas, más, possivelmente terríveis, etc. Consulte a [Legenda do Mapa](../map-legend/index.md) para determinar a suavidade da sua estrada.| ![Parâmetro do mapa - Suavidade da estrada](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Mostra a acessibilidade da estrada: privada ou permitida, apenas para emergências ou estrada com portagem. Consulte a [Legenda do Mapa](../map-legend/index.md) para encontrar estradas disponíveis. | ![Parâmetro do mapa - Acesso à estrada](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | A funcionalidade [Zonas de Baixas Emissões (ZBE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) exibe limites verdes e etiquetas "ZBE" nos mapas para áreas em cidades onde o acesso é restrito a certos veículos poluentes. As ZBEs visam melhorar a qualidade do ar, limitando a entrada a veículos que cumprem normas de emissões específicas. A utilização desta funcionalidade ajuda os utilizadores a evitar penalidades, identificando e navegando em torno destas zonas verdes, garantindo o cumprimento dos regulamentos ambientais locais ao viajar pelos centros das cidades.| ![Parâmetro do mapa - Zonas de baixas emissões](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Diferentes categorias de edifícios, como residenciais, industriais e comerciais, são codificadas por cores. Consulte a [Legenda do Mapa](../map-legend/index.md) para detalhes. | ![Parâmetro do mapa - Edifícios coloridos](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Exibe ruas iluminadas e não iluminadas, bem como vias subterrâneas e temporariamente iluminadas. Verifique a [Legenda do Mapa](../map-legend/index.md) para detalhes. | ![Parâmetro do mapa - Iluminação pública](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Concebida para mapeadores, esta funcionalidade mostra referências, observações e comentários de outros utilizadores no mapa. | ![Parâmetro do mapa - Assistente de mapa](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Mostra contornos de profundidade do mar. Precisa de instalar o [plugin Náutico](../plugins/nautical-charts) e transferir mapas Náuticos.| ![Parâmetro do mapa - Contornos de profundidade](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Mostra o quadro verde e as etiquetas "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Realça áreas protegidas com um limite verde e etiqueta "NR" para zonas de conservação da vida selvagem.| ![Parâmetro do mapa - Reserva natural](@site/static/img/map/nature-reserve.png)|
 -->
 
 ### Rotas {#routes}
@@ -394,21 +394,21 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
 </Tabs>
 
-![Rotas do mapa - rotas de bicicleta](@site/static/img/map/map-routes-cycle-routes.png) ![Rotas do mapa - rede de caminhada](@site/static/img/map/map-routes-hiking-network.png)
+![Rotas do mapa - rotas de bicicleta](@site/static/img/map/map-routes-cycle-routes.png) ![Rotas do mapa - rede de caminhadas](@site/static/img/map/map-routes-hiking-network.png)
 
-Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um destino específico. Uma rota pode ser otimizada para diferentes tipos de viagem, como ciclismo, caminhada, corrida, transporte público e outros. Você pode ler mais sobre rotas e seus tipos no artigo [Rotas](../map/routes.md).
+Uma rota é um caminho predeterminado que precisa de ser seguido para chegar a um destino específico. Uma rota pode ser otimizada para diferentes tipos de viagem, como ciclismo, caminhadas, corrida, transporte público e outros. Pode ler mais sobre rotas e os seus tipos no artigo [Rotas](../map/routes.md).
 
 
 ### Transporte {#transport}
@@ -417,31 +417,31 @@ Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um d
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
 
 </TabItem>
 
 </Tabs>
 
-Ao navegar pelas cidades, você precisa de uma visão mais contrastante do transporte público e das paradas. Você pode tocar em uma parada de transporte público e selecionar uma das rotas ou paradas da lista. As rotas de trem também são exibidas nesta configuração.
+Ao navegar pelas cidades, precisa de uma vista mais contrastante dos transportes públicos e paragens. Pode tocar numa paragem de transporte público e selecionar uma das rotas ou paragens da lista. As rotas de comboio também são exibidas nesta configuração.
 
-- **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Mostra as paradas de transporte público.
-    ![Paradas de transporte do mapa](@site/static/img/map/map-transport-stops.png)
+- **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Mostra paragens de transportes públicos.
+    ![Paragens de transporte do mapa](@site/static/img/map/map-transport-stops.png)
 
-- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Mostra rotas de ônibus, trólebus e vans.
-    ![Ônibus de transporte do mapa](@site/static/img/map/map-transport-bus.png)
+- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Mostra rotas de autocarro, trólei e vaivém.
+    ![Autocarro de transporte do mapa](@site/static/img/map/map-transport-bus.png)
 
-- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Mostra rotas de bonde e trem.
-    ![Bonde de transporte do mapa](@site/static/img/map/map-transport-tram.png)
+- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Mostra rotas de elétrico e comboio.
+    ![Elétrico de transporte do mapa](@site/static/img/map/map-transport-tram.png)
 
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Mostra rotas subterrâneas.
-    ![Metrô de transporte do mapa](@site/static/img/map/map-transport-subway.png)
+    ![Metro de transporte do mapa](@site/static/img/map/map-transport-subway.png)
 
 ### Ocultar {#hide}
 
@@ -449,30 +449,30 @@ Ao navegar pelas cidades, você precisa de uma visão mais contrastante do trans
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
 </Tabs>
 
-Para melhorar a visibilidade do mapa, pode ser necessário ocultar certos objetos. Por exemplo, você pode ocultar a água ao usar os [mapas online de satélite com a camada de subjacência](../map/raster-maps.md#select-raster-maps).
+Para melhorar a visibilidade do mapa, pode ser necessário ocultar certos objetos. Por exemplo, pode ocultar a água ao usar os [mapas online de satélite com a camada de subjacência](../map/raster-maps.md#select-raster-maps).
 
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Oculta os limites regionais dentro dos países, mas os limites estaduais são visíveis.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Oculta todos os polígonos de objetos naturais, função especial para [camada de subjacência/sobreposição](../map/raster-maps.md#select-raster-maps).
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Oculta todos os polígonos de edifícios.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Oculta todos os polígonos de água (mares, lagos, reservatórios, etc.)
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Oculta os números das casas no mapa.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Oculta objetos propostos - aqueles objetos que estão planejados para construção, mas que possuem apenas um projeto (estradas projetadas, interseções, edifícios e outros).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Oculta os ícones de POI do mapa. No entanto, os rótulos desses POIs ainda aparecerão no mapa.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Oculta os rótulos de POI do mapa. No entanto, os ícones de POI ainda aparecerão no mapa.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Oculta todos os objetos subterrâneos, como túneis, passagens, andares, etc. Especial para limpar mapas de cidades de objetos não úteis.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Oculta todos os objetos acima do solo. Especial para ver apenas objetos subterrâneos como túneis, passagens, etc.
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Ocultar limites regionais dentro dos países, mas os limites estaduais são visíveis.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Ocultar todos os polígonos de objetos naturais, função especial para [camada de Subjacência/Sobreposição](../map/raster-maps.md#select-raster-maps).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Ocultar todos os polígonos de edifícios.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Ocultar todos os polígonos de água (mares, lagos, reservatórios, etc.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Ocultar números de casas no mapa.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Ocultar objetos propostos - aqueles objetos que estão planeados para construção, mas que apenas têm um projeto (estradas projetadas, cruzamentos, edifícios e outros).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Ocultar os ícones de POI do mapa. No entanto, os rótulos desses POIs ainda aparecerão no mapa.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Ocultar os rótulos de POI do mapa. No entanto, os ícones de POI ainda aparecerão no mapa.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Ocultar todos os objetos subterrâneos, como túneis, passagens, pisos, etc. Especial para limpar mapas em cidades de objetos não úteis.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Ocultar todos os objetos acima do solo. Especial para ver apenas objetos subterrâneos como túneis, passagens, etc.
 
 ### Estilo da Estrada {#road-style}
 
@@ -480,22 +480,22 @@ Para melhorar a visibilidade do mapa, pode ser necessário ocultar certos objeto
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
 </Tabs>
 
-Configurações especiais para estradas, onde você pode alterar as cores para corresponder ao atlas rodoviário ou adicionar estradas de alto contraste ou contornos em negrito para estradas.
+Definições especiais para estradas, onde pode alterar as cores para corresponder ao atlas rodoviário ou adicionar estradas de alto contraste ou contornos em negrito para estradas.
 
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Estilo padrão para rodovias. Consulte a [legenda do mapa](../map-legend/index.md).
-![Estilo de estrada do mapa padrão](@site/static/img/map/map-road-style-default.png)
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Estilo predefinido para autoestradas. Consulte a [Legenda do Mapa](../map-legend/index.md).
+![Estilo de estrada do mapa predefinido](@site/static/img/map/map-road-style-default.png)
 
 - **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Estilo do atlas rodoviário alemão.
 ![Estilo de estrada do mapa alemão](@site/static/img/map/map-road-style-german.png)
@@ -518,13 +518,13 @@ Configurações especiais para estradas, onde você pode alterar as cores para c
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
 
 </TabItem>
 
@@ -537,77 +537,90 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widge
     ![Tamanho do texto do mapa 200%](@site/static/img/map/map-text-size-200.png)
 
 
-### Ampliador de Mapa {#map-magnifier}
+### Lupa do Mapa {#map-magnifier}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Você pode escolher esta configuração tocando longamente no botão "+" ou "-" na tela ou:
+Pode escolher esta definição tocando longamente no botão "+" ou "-" no ecrã ou:
 *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Você pode escolher esta configuração tocando longamente no botão "+" ou "-" na tela ou:
+Pode escolher esta definição tocando longamente no botão "+" ou "-" no ecrã ou:
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>*
 
 </TabItem>
 
 </Tabs>
 
-Esta configuração ajuda a alterar a ampliação do mapa. É aplicável para mapas raster e vetoriais. Para mapas raster, aplica um efeito de ampliação, então os rótulos de texto parecem maiores ou menores. Para mapas vetoriais, faz com que o mapa pareça mais ou menos detalhado; se você definir um valor baixo, o mapa parecerá ruidoso/lento.
+Esta definição ajuda a alterar a ampliação do mapa. É aplicável a mapas raster e vetoriais. Para mapas raster, aplica um efeito de ampliação, para que os rótulos de texto pareçam maiores ou menores. Para mapas vetoriais, faz com que o mapa pareça mais ou menos detalhado; se o definir para um valor baixo, o mapa parecerá ruidoso/lento.
 
 - **75%**
-    ![Ampliador de mapa 75%](@site/static/img/map/map-magnifier-75.png)
+    ![Lupa do mapa 75%](@site/static/img/map/map-magnifier-75.png)
 
 - **200%**
-    ![Ampliador de mapa 200%](@site/static/img/map/map-magnifier-200.png)
+    ![Lupa do mapa 200%](@site/static/img/map/map-magnifier-200.png)
 
 
 ### Idioma do Mapa {#map-language}
 
-A opção **Idioma do mapa** configura a grafia dos nomes no mapa do OsmAnd para os níveis de zoom 7-20, inclusive. Para os níveis de zoom 2-6, os nomes são exibidos no idioma definido para o OsmAnd no menu de configurações do sistema (consulte a seção *[Como alterar o idioma do aplicativo](../start-with/first-steps.md#how-to-change-app-language)*).
+A opção **Idioma do mapa** configura a ortografia dos nomes no mapa OsmAnd para os níveis de zoom 7-20, inclusive. Para os níveis de zoom 2-6, os nomes são exibidos no idioma definido para o OsmAnd no menu de configurações do sistema (consulte a seção *[Como alterar o idioma da aplicação](../start-with/first-steps.md#how-to-change-app-language)*).
 
-Se os nomes no mapa não forem traduzidos para o idioma desejado pela comunidade OSM, você pode usar [nomes transliterados](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).
+Se os nomes no mapa não forem traduzidos para o idioma pretendido pela comunidade OSM, pode usar [nomes transliterados](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
+
+- **Nomes locais**
+    ![Idioma do mapa nomes locais](@site/static/img/map/map-language-local-names_2.png)
+
+- **Idioma preferido** (ucraniano)
+    ![Idioma do mapa ucraniano](@site/static/img/map/map-language-urkanian_2.png)
+
+- **Usar nome latino se em falta**
+    ![Idioma do mapa transliterar](@site/static/img/map/map-language-transliterate_2.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
-
-</TabItem>
-
-</Tabs>
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
 - **Nomes locais**
-    ![Nomes locais do idioma do mapa](@site/static/img/map/map-language-local-names_2.png)
+    ![Idioma do mapa nomes locais](@site/static/img/map/map-language-local-names_2.png)
 
-- **Nomes ucranianos**
+- **Idioma preferido** (ucraniano)
     ![Idioma do mapa ucraniano](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Mostrar nomes locais**
+- **Mostrar nomes locais** (adiciona 2º rótulo se o nome local for diferente)
     ![Idioma do mapa local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Transliterar nomes**
     ![Idioma do mapa transliterar](@site/static/img/map/map-language-transliterate_2.png)
 
 
+
+</TabItem>
+
+</Tabs>
+
+
+
 ## Estilo de Mapa Personalizado {#custom-map-style}
 
-Se você tem um estilo de mapa personalizado, pessoal ou de terceiros, criado de acordo com a [Especificação](../../technical/osmand-file-formats/osmand-rendering-style.md), você pode instalá-lo em seu dispositivo das seguintes maneiras:
+Se tiver um estilo de mapa personalizado pessoal ou de terceiros criado de acordo com a [Especificação](../../technical/osmand-file-formats/osmand-rendering-style.md), pode instalá-lo no seu dispositivo destas formas:
 
-- Copie o arquivo `.render.xml` para o seu dispositivo e abra-o com o OsmAnd.
-- Use as [caixas de diálogo padrão de importação/exportação](../personal/import-export.md) para exportar ou importar estilos de renderização. Se você criar um pacote `.osf`, ele funciona como um plugin que você pode compartilhar com outras pessoas.
-- Após a instalação, você pode selecionar o estilo do mapa no menu.
+- Copie o ficheiro `.render.xml` para o seu dispositivo e abra-o com o OsmAnd.
+- Utilize as [caixas de diálogo padrão de importação/exportação](../personal/import-export.md) para exportar ou importar estilos de renderização. Se criar um pacote `.osf`, ele funciona como um plugin que pode partilhar com outros.
+- Após a instalação, pode selecionar o estilo do mapa no menu.
 
 
 ## Artigos Relacionados {#related-articles}

@@ -285,7 +285,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 - [Wikipedia plugin](../plugins/wikipedia.md)
 
 
-> *Last updated: July 2025*
+
 
 
 <!--

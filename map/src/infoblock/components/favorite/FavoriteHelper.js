@@ -1,7 +1,8 @@
 import L from 'leaflet';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 import FavoritesManager from '../../../manager/FavoritesManager';
+import { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 
 function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted }) {
     if (ctx.selectedWpt?.poi || ctx.selectedWpt?.wikidata) {
@@ -38,7 +39,7 @@ function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
         file.folder = selectedGroupName;
         file.clienttimems = result.clienttimems;
         file.updatetimems = result.updatetimems;
-        file.name = selectedGroupName + '.gpx';
+        file.name = selectedGroupName + GPX_FILE_EXT;
         file.type = FavoritesManager.FAVORITE_FILE_TYPE;
 
         const newGroup = {

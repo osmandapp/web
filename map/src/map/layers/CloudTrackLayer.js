@@ -8,14 +8,22 @@ import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
-import { isEmpty } from 'lodash';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 import { addLayerToMap } from '../util/MapManager';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
+        ctx.setRecentObjs((prev) => {
+            const tracks = prev.tracks.filter((f) => f.key !== file.key);
+            return {
+                ...prev,
+                tracks: [{ ...file }, ...tracks],
+            };
+        });
+        ctx.setSelectedCloudTrackObj({ ...file });
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         if (ctx.selectedWpt) {

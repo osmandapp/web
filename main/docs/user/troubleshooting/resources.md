@@ -97,7 +97,7 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 
 | Source Name | Description | Link |
 | -- | -- | --|
-| Gravel Roads Seeker | Map style offering a better visualization of the road surface, distinguishing between paved and unpaved roads (*French* web page). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-offline) |
+| Gravel Roads Seeker | Map style offering a better visualization of the road surface, distinguishing between paved and unpaved roads (*French* web page). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
 | OsmAnd Rendering | A collection of access to online maps, topographic maps, orthophotos, and other geographic resources available from some of the main geographic institutions in different countries. Updates are ongoing, but if any files are out of date, users are encouraged to notify. | [Online Maps: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | A topographic map with a *Hide All Water* option, contributed by [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | The repository is designed to provide custom map styles created by users for other users. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|

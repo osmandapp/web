@@ -79,4 +79,4 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 - Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
-> *Last updated: July 2022*
+

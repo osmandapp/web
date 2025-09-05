@@ -29,7 +29,7 @@ import AppContext, {
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './navigate/RouteMenu';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -43,12 +43,9 @@ import { ReactComponent as TrackAnalyzerIcon } from '../assets/icons/ic_action_t
 import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
-import Weather from './weather/Weather';
+import Weather, { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM, selectedForecastDetails } from './weather/Weather';
 import styles from './mainmenu.module.css';
-import TrackGroupFolder from './tracks/TrackGroupFolder';
-import _, { isEmpty } from 'lodash';
-import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
-import VisibleTracks from './visibletracks/VisibleTracks';
+import isEmpty from 'lodash-es/isEmpty';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
@@ -73,6 +70,8 @@ import {
     INFO_MENU_URL,
     SHARE_MENU_URL,
     LOGIN_URL,
+    DELETE_ACCOUNT_URL,
+    WEATHER_FORECAST_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -85,12 +84,11 @@ import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
-import { SHARE_TYPE } from './share/shareConstants';
 import { saveSortToDB } from '../context/FavoriteStorage';
+import { openFavoriteObj } from '../manager/FavoritesManager';
+import useMenuDots from '../util/hooks/menu/useMenuDots';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
-    ctx.setOpenGroups([]);
-    ctx.setOpenVisibleMenu(false);
     ctx.setOpenProFeatures(null);
     if (wptDetails) {
         ctx.setSelectedWpt(null);
@@ -119,8 +117,15 @@ export default function MainMenu({
 
     const { t } = useTranslation();
     const location = useLocation();
+
+    const outlet = useOutlet();
+    const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
+    const showShareOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + SHARE_FILE_MAIN_URL + '*' }, location.pathname);
+
     const [, height] = useWindowSize();
     const { filename } = useParams();
+
+    const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
 
     const timerRef = useRef(null);
 
@@ -130,6 +135,8 @@ export default function MainMenu({
     const [redirectUrl, setRedirectUrl] = useState(null);
 
     const [savePrevState, setSavePrevState] = useState(false);
+
+    const menuDots = useMenuDots(ctx);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -227,7 +234,7 @@ export default function MainMenu({
     }, [ctx.selectedSort]);
 
     function selectMenuByUrl() {
-        const item = items.find((item) => item.url === location.pathname);
+        const item = items.find((item) => location.pathname.startsWith(item.url));
         if (item) {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             return selectMenu({ item, openFromUrl: true });
@@ -352,15 +359,31 @@ export default function MainMenu({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        if (ctx.openVisibleMenu) {
-            ctx.setOpenVisibleMenu(false);
-        }
-    }, [menuInfo]);
-
-    useEffect(() => {
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
         }
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (ctx.selectedFavoriteObj) {
+                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+            }
+        }
+
+        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctx.selectedCloudTrackObj) {
+                processDisplayTrack({
+                    visible: true,
+                    showOnMap: true,
+                    showInfo: true,
+                    zoomToTrack: true,
+                    file: ctx.selectedCloudTrackObj,
+                    ctx,
+                    fileStorage: ctx.gpxFiles,
+                    setFileStorage: ctx.setGpxFiles,
+                }).then();
+            }
+        }
+
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: selectedType === OBJECT_SEARCH });
     }, [selectedType]);
 
     useEffect(() => {
@@ -390,7 +413,7 @@ export default function MainMenu({
                         selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }
                 }, 100);
-            } else if (menuInfo?.type.name !== ctx.currentObjectType) {
+            } else if (selectedType !== ctx.currentObjectType) {
                 selectMenuInfoByObjectType(); // process all other object types
             }
         }
@@ -435,37 +458,13 @@ export default function MainMenu({
         return res.join(' ');
     }
 
-    function getGroup() {
-        if (ctx.openGroups?.length > 0) {
-            let type = selectedType;
-            if (!type) {
-                type = selectMenuByUrl();
-            }
-            const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
-            if (type === OBJECT_TYPE_FAVORITE) {
-                if (lastGroup?.type === SHARE_TYPE) {
-                    if (lastGroup?.files) {
-                        return <FavoriteGroupFolder smartf={lastGroup} />;
-                    }
-                    return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
-                }
-                return <FavoriteGroupFolder folder={lastGroup} />;
-            } else if (type === OBJECT_TYPE_CLOUD_TRACK) {
-                if (lastGroup?.type === SHARE_TYPE) {
-                    return <TrackGroupFolder smartf={lastGroup} />;
-                }
-                return <TrackGroupFolder folder={lastGroup} />;
-            }
-        }
-    }
-
     function selectMenu({ item }) {
         closeSubPages({ ctx, ltx });
         let currentType;
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
@@ -486,6 +485,7 @@ export default function MainMenu({
         }
         ctx.setPrevPageUrl({ url: location, active: false });
         setSelectedType(currentType);
+
         return currentType;
     }
 
@@ -543,6 +543,20 @@ export default function MainMenu({
                     return;
                 }
             }
+
+            if (selectedType === OBJECT_TYPE_WEATHER) {
+                const res = selectedForecastDetails(ctx);
+                if (res) {
+                    const index = ctx.weatherLayers[ctx.weatherType].indexOf(res);
+                    navigate({
+                        pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
+                        search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                        hash: location.hash,
+                    });
+                    return;
+                }
+            }
+
             // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
@@ -565,6 +579,12 @@ export default function MainMenu({
     }, [ctx.prevPageUrl]);
 
     function navigateToUrl({ menu = null, isMain = false }) {
+        if (menu) {
+            const isSubroute = location.pathname.startsWith(menu.url) && location.pathname !== menu.url;
+            if (isSubroute) {
+                return;
+            }
+        }
         if (isMain) {
             if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
                 navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
@@ -670,6 +690,7 @@ export default function MainMenu({
                                                     component={item.icon}
                                                     inheritViewBox
                                                 />
+                                                {menuDots[item.type] && <span className={styles.dotMenu} />}
                                             </ListItemIcon>
                                             <ListItemText
                                                 primary={item.name}
@@ -732,6 +753,7 @@ export default function MainMenu({
                         mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
+                        overflow: 'hidden',
                     },
                 }}
                 sx={{ left: 'auto !important' }}
@@ -739,17 +761,27 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
+                {(showDeleteOutlet || showShareOutlet) && outlet}
                 {!isOpenSubMenu() && (
                     <>
-                        {/*add pro features*/}
-                        {ctx.openProFeatures && <ProFeatures />}
-                        {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openProFeatures && <Outlet />}
-                        {/*add track groups*/}
-                        {ctx.openGroups.length > 0 && getGroup()}
-                        {ctx.openVisibleMenu && (
-                            <VisibleTracks setMenuInfo={setMenuInfo} setSelectedType={setSelectedType} />
-                        )}
+                        {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen && outlet ? outlet : null}
+                        <div
+                            style={{
+                                display: isAccountOpen || ctx.openProFeatures ? 'none' : 'block',
+                            }}
+                        >
+                            {items.map((item) => {
+                                if (!item.show) return null;
+                                const display = selectedType === item.type ? 'block' : 'none';
+                                const id = `se-menu-component-${item.type}-${display}`;
+
+                                return (
+                                    <div id={id} key={item.type} style={{ display }}>
+                                        {item.component}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </>
                 )}
                 <InformationBlock

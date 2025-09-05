@@ -1,7 +1,7 @@
 ---
-source-hash: 88e4f7fd45f03ba362eef617efece8cbb32eac46a5e30d86a6db12675354fa56
+source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
-title: Konfiguracja
+title:  Konfiguracja
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,15 +32,15 @@ Aby zapobiec utracie danych, upewnij się, że Twoje dane osobowe, trasy i mapy 
 ### Mam plik GPX, jak go zaimportować do OsmAnd? {#i-have-a-gpx-file-how-do-i-import-it-into-osmand}
 
 - **Android**
-    - Możesz [pobrać i otworzyć plik](../navigation/setup/gpx-navigation.md) za pomocą przeglądarki plików lub usługi w chmurze, takiej jak Dropbox, i wybrać OsmAnd jako aplikację docelową.
-    - Alternatywnie, umieść plik w folderze domowym OsmAnd: `osmand/tracks/(opcjonalny_podfolder)/twój_plik.gpx`.
+    - Możesz [pobrać i otworzyć plik](../navigation/setup/gpx-navigation.md) za pomocą przeglądarki plików lub usługi chmurowej, takiej jak Dropbox, i wybrać OsmAnd jako aplikację docelową.
+    - Alternatywnie, umieść plik w folderze głównym OsmAnd: `osmand/tracks/(opcjonalny_podfolder)/twój_plik.gpx`.
 
 - **iOS**
-    - Aby otworzyć [plik GPX w OsmAnd](../navigation/setup/gpx-navigation.md), po prostu pobierz go i wybierz OsmAnd jako aplikację do otwarcia. Plik będzie wtedy dostępny do użytku w aplikacji.
+    - Aby otworzyć [plik GPX w OsmAnd](../navigation/setup/gpx-navigation.md), wystarczy go pobrać i wybrać OsmAnd jako aplikację do jego otwarcia. Plik będzie wtedy dostępny do użytku w aplikacji.
 
-### Linie konturowe lub cieniowanie terenu nie są wyświetlane {#contour-lines-or-hillshades-do-not-show-up}
+### Linie konturowe lub cieniowanie terenu nie wyświetlają się {#contour-lines-or-hillshades-do-not-show-up}
 
-Przeczytaj więcej o [wtyczce Topografia](../plugins/topography.md).
+Więcej informacji na temat [wtyczki Topografia](../plugins/topography.md).
 
 
 ## Jak włączyć czcionki systemowe (Android) {#how-to-enable-system-fonts-android}
@@ -48,7 +48,7 @@ Przeczytaj więcej o [wtyczce Topografia](../plugins/topography.md).
 Począwszy od wersji Androida 4.9, OsmAnd integruje czcionkę systemową Twojego urządzenia z interfejsem aplikacji, optymalizując jej wygląd poprzez eliminację mieszanego użycia czcionek. Czcionka systemowa jest automatycznie stosowana do wszystkich elementów interfejsu użytkownika.
 
 - OsmAnd używa domyślnej czcionki systemowej Twojego urządzenia we wszystkich elementach interfejsu użytkownika.
-- Przełączanie na czcionkę systemową jest automatyczne. Nie musisz konfigurować żadnych ustawień w aplikacji dla tej funkcji.
+- Przełączenie na czcionkę systemową jest automatyczne. Nie musisz konfigurować żadnych ustawień w aplikacji dla tej funkcji.
 - Ta funkcja nie wpływa na czcionki wyświetlane na mapie.
 
 
@@ -79,7 +79,7 @@ When you *turn on a USB drive to share files* with a computer or disconnect the 
     connecting the device to a computer as external storage and performing the move from there.
 
 
-### How do I use my SD card with OsmAnd under Android 4.4+ and 5 {#how-do-i-use-my-sd-card-with-osmand-under-android-44-and-5}
+### How do I use my SD card with OsmAnd under Android 4.4+ and 5 {#how-do-i-use-my-sd-card-with-osmand-under-android 44-and-5}
 
 If you update your Android to version 4.4.x, you will experience a known
 Android issue with the `WRITE_EXTERNAL_STORAGE` permission: Android has
@@ -111,7 +111,7 @@ errors (e.g. if the SD card is too full).
 -->
 
 
-## Kopiowanie pakietu map rastrowych utworzonego na komputerze PC {#copy-raster-map-package-created-on-pc}
+## Kopiowanie pakietu map rastrowych utworzonego na komputerze {#copy-raster-map-package-created-on-pc}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -129,8 +129,8 @@ errors (e.g. if the SD card is too full).
 
 </Tabs>
 
-Pakiety map można zapisywać w dwóch formatach: [SQLite i Metainfo](https://osmand.net/docs/user/map/raster-maps). Po utworzeniu pakietu map, wykonaj następujące kroki, aby przenieść go do OsmAnd:
+Pakiety map mogą być zapisywane w dwóch formatach: [SQLite i Metainfo](https://osmand.net/docs/user/map/raster-maps). Po utworzeniu pakietu map, wykonaj następujące kroki, aby przenieść go do OsmAnd:
 
-- **Dla Androida**. Uzyskaj dostęp do pamięci na swoim urządzeniu i skopiuj plik(i) z komputera PC do folderu `BASE_OSMAND_STORAGE/tiles_`. Alternatywnie, możesz pobrać plik z poczty e-mail, chmury lub komunikatora i otworzyć go za pomocą aplikacji OsmAnd. Pakiet map zostanie automatycznie dodany do Twojej listy map online.
+- **Dla Androida**. Uzyskaj dostęp do pamięci masowej na swoim urządzeniu i skopiuj plik(i) z komputera do folderu `BASE_OSMAND_STORAGE/tiles_`. Alternatywnie, możesz pobrać plik z poczty e-mail, chmury lub komunikatora i otworzyć go za pomocą aplikacji OsmAnd. Pakiet map zostanie automatycznie dodany do listy map online.
 
-- **Dla iOS**. Pobierz plik z iTunes lub komunikatora, a następnie otwórz go za pomocą aplikacji OsmAnd. Pakiet map zostanie automatycznie dodany do Twojej listy map online.
+- **Dla iOS**. Pobierz plik z iTunes lub komunikatora, a następnie otwórz go za pomocą aplikacji OsmAnd. Pakiet map zostanie automatycznie dodany do listy map online.

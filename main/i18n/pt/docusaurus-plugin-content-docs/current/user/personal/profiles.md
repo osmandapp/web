@@ -1,5 +1,5 @@
 ---
-source-hash: 0d53a22616cf8e2e6cbef10c62b91267fdc834a708913b0ff57e3e2d168a7e90
+source-hash: fc459398704a8d2bfa0f43cc8e873a69dba20960f781c8cd3153d34ffdf7234f
 sidebar_position: 4
 title: Perfis (Configurações)
 ---
@@ -17,12 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes atividades, incluindo condução, ciclismo, caminhada e atividades mais especializadas, como esqui e navegação. Esses perfis são projetados para aprimorar sua experiência de navegação de acordo com a atividade em que você está envolvido. Cada perfil inclui opções configuráveis, permitindo ajustar as configurações e incorporar plug-ins adicionais para atender às suas preferências.
+O OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes atividades, incluindo condução, ciclismo, caminhada e atividades mais especializadas, como esqui e navegação. Esses perfis são projetados para aprimorar sua experiência de navegação de acordo com a atividade em que você está envolvido. Cada perfil inclui opções configuráveis, permitindo que você ajuste as configurações e incorpore plugins adicionais para corresponder às suas preferências.
 
-- Certos perfis, como *Esqui* e *Barco*, possuem **recursos adicionais** que se tornam disponíveis apenas quando os plug-ins correspondentes são ativados.
+- Certos perfis, como *Esqui* e *Barco*, possuem **recursos adicionais** que se tornam disponíveis apenas quando os plugins correspondentes são ativados.
 
-     - Os plug-ins podem ser ativados navegando em *Menu → Plug-ins → Visualização do mapa de esqui* ou *Visualização do mapa náutico*.
-     - A ativação dos plug-ins fornece aos perfis os recursos essenciais para atender aos requisitos específicos dessas atividades.
+     - Os plugins podem ser ativados navegando para *Menu → Plugins → Visualização de mapa de esqui* ou *Visualização de mapa náutico*.
+     - A ativação dos plugins fornece aos perfis os recursos essenciais para atender aos requisitos específicos dessas atividades.
 
 - É importante notar que alguns perfis, como **Caminhão**, **Motocicleta**, **Ciclomotor**, **Trem**, **Aeronave**, **Barco** e **Equitação**, não são ativados por padrão.
 
@@ -98,7 +98,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-O OsmAnd permite [fazer backup](../personal/osmand-cloud.md#osmand-start) das configurações do seu perfil de aplicativo para o OsmAnd Cloud, garantindo que suas configurações sejam armazenadas com segurança e facilmente restauradas nas versões Android, iOS e Web. Esse recurso de backup protege suas configurações em caso de falha do dispositivo ou reinstalação do aplicativo. Você pode se beneficiar desse plano especial usando o [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).
+O OsmAnd permite que você [faça backup](../personal/osmand-cloud.md#osmand-start) das configurações do seu perfil de aplicativo para o OsmAnd Cloud, garantindo que suas configurações sejam armazenadas com segurança e facilmente restauradas nas versões Android, iOS e Web. Esse recurso de backup protege suas configurações em caso de falha do dispositivo ou reinstalação do aplicativo. Você pode se beneficiar desse plano especial usando o [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).
 
 Você deve ter uma conta [OsmAnd Cloud](../personal/osmand-cloud.md#login) para usar o *Backup Gratuito de Configurações*. Se você tiver uma assinatura *OsmAnd Pro* ou uma conta *OsmAnd Cloud* ativa, o banner de promoção não será exibido.
 
@@ -130,9 +130,9 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 </Tabs>
 
 - **<Translate android="true" ids="choose_osmand_theme"/>**. Permite definir um tema diurno e noturno para o aplicativo, que pode ser aplicado a um perfil ou a todos de uma vez. Esta opção não altera as configurações do [modo de mapa](../map/vector-maps.md#map-mode).
-  - *<Translate android="true" ids="dark_theme"/> tema*
-  - *<Translate android="true" ids="light_theme"/> tema*
-  - *<Translate android="true" ids="system_default_theme"/>*
+  - *Tema <Translate android="true" ids="dark_theme"/>*
+  - *Tema <Translate android="true" ids="light_theme"/>*
+  - *<Translate android="true" ids="system_default_theme"/>*  
       Aplica o tema do sistema. Por padrão, e para todos os novos usuários, o estilo do mapa corresponde ao tema claro ou escuro selecionado nas configurações do sistema do seu dispositivo.
 - **<Translate android="true" ids="rotate_map_to"/>**. Permite escolher o [modo de orientação do mapa](../map/interact-with-map.md#map-orientation-modes) para o perfil selecionado.
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*
@@ -143,9 +143,9 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 - **<Translate android="true" ids="map_screen_orientation"/>**. Define e bloqueia a posição da tela no aplicativo OsmAnd. Este recurso não é suportado no iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
-  - *<Translate android="true" ids="map_orientation_default"/>*
+  - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Somente Android*). Abre o menu de controle da tela, onde você pode selecionar opções para a tela do dispositivo durante a navegação para economizar o consumo da bateria do dispositivo.
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Somente Android*). Abre o menu de controle de tela, onde você pode selecionar opções para a tela do dispositivo durante a navegação para economizar o consumo de bateria do dispositivo.
 
 
 ### Unidades e Formatos {#units--formats}
@@ -212,15 +212,15 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 | **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 pés (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 pés / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 jardas / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 milhas náuticas / 3280.84 pés / 1000 m |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Exemplo: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Exemplo: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Exemplo: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zona Norte Leste) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Exemplo: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemplo:  9F2X4WFJ+7W ([Código de Localização Aberta](https://en.wikipedia.org/wiki/Open_Location_Code) representa área 9m x 14m)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemplo:  9F2X4WFJ+7W ([Código de Localização Aberta](https://en.wikipedia.org/wiki/Open_Location_Code) representa área de 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Somente versão Android) | Exemplo: 2 215 227.87, 830 915.9 ([Sistema de coordenadas suíço](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Somente versão Android) | Exemplo: 4 215 227.87, 1 830 915.9 ([Sistema de coordenadas suíço](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
@@ -273,9 +273,9 @@ A seção **Outros** fornece configurações de perfil adicionais para personali
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Conecte controladores externos como *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* ou *<Translate android="true" ids="sett_parrot_ext_input"/>* para operar o OsmAnd usando botões físicos.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Somente Android*) – Ativa ou desativa a capacidade de usar os botões de volume do seu dispositivo para [ampliar e reduzir](../map/interact-with-map.md#my-location-and-zoom) o mapa.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Somente Android*) – Ativa ou desativa a capacidade de usar os botões de volume do seu dispositivo para [aumentar e diminuir o zoom](../map/interact-with-map.md#my-location-and-zoom) no mapa.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Somente Android*) – Suaviza a rotação do mapa com [movimento gradual](https://en.wikipedia.org/wiki/Kalman_filter), reduzindo mudanças repentinas de posição. Isso introduz um pequeno atraso (*menos de 1 segundo*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Somente Android*) – Suaviza a rotação do mapa com [movimento gradual](https://en.wikipedia.org/wiki/Kalman_filter), reduzindo mudanças bruscas de posição. Isso introduz um pequeno atraso (*menos de 1 segundo*).
 
 - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Somente Android*) – Usa o [sensor magnético](https://en.wikipedia.org/wiki/Kalman_filter) do seu dispositivo para estabilizar a rotação do mapa, reduzindo mudanças abruptas. Isso também introduz um ligeiro atraso.
 
@@ -283,7 +283,7 @@ A seção **Outros** fornece configurações de perfil adicionais para personali
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Somente Android*) – Desativa as animações no modo de navegação para transições de tela mais rápidas.
 
-- **<Translate android="true" ids="position_animation"/>** (*Somente Android*) – O ícone de [posição](../map/interact-with-map.md#my-location-and-zoom) anima com cada ponto GPS recebido (uma vez por segundo). Um ligeiro atraso em seu movimento pode ser perceptível, especialmente durante movimentos rápidos ou flutuações do sinal GPS. Você pode ajustar esse efeito usando a configuração *Tempo de Previsão*: valores mais altos aumentam a suavidade, mas adicionam atraso, valores mais baixos reduzem o atraso, mas podem tornar o movimento menos suave.
+- **<Translate android="true" ids="position_animation"/>** (*Somente Android*) – O ícone de [posição](../map/interact-with-map.md#my-location-and-zoom) anima a cada ponto GPS recebido (uma vez por segundo). Um ligeiro atraso em seu movimento pode ser perceptível, especialmente durante movimentos rápidos ou flutuações do sinal GPS. Você pode ajustar esse efeito usando a configuração *Tempo de previsão*: valores mais altos aumentam a suavidade, mas adicionam atraso, valores mais baixos reduzem o atraso, mas podem tornar o movimento menos suave.
 
 
 ## Configurações de Navegação {#navigation-settings}
@@ -324,10 +324,10 @@ Para uma visão detalhada das opções de navegação, consulte o artigo [Config
 
 - [Mapa durante a navegação](../navigation/guidance/navigation-settings.md#map-during-navigation) – Visualize o posicionamento em tempo real no mapa, acompanhe o progresso ao longo da rota e melhore a orientação usando pontos de referência.
 
-- [Orientação detalhada da trilha](../navigation/guidance/navigation-settings.md) – Melhore a navegação curva a curva alinhando sua rota com as estradas mapeadas. Configurações disponíveis: *Perguntar sempre* ou *Sempre*.
+- [Orientação detalhada da trilha](../navigation/guidance/navigation-settings.md) – Melhore a navegação curva a curva alinhando sua rota com as estradas mapeadas. Configurações disponíveis: *Perguntar Sempre* ou *Sempre*.
 
 :::info
-Não há configurações de navegação no perfil *Navegar no mapa*.  
+Não há configurações de navegação no perfil *Navegar no mapa*.
 :::
 
 
@@ -354,7 +354,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-O menu [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) permite personalizar as configurações de exibição do mapa para o perfil selecionado, possibilitando uma melhor visualização dos elementos-chave do mapa.  
+O menu [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) permite personalizar as configurações de exibição do mapa para o perfil selecionado, possibilitando uma melhor visualização dos elementos chave do mapa.
 
 Com este menu, você pode:
 
@@ -362,9 +362,9 @@ Com este menu, você pode:
 
 - **Exibir rotas e arquivos GPX específicos**, incluindo trilhas de terceiros para navegação ou análise.
 
-- **Sobrepor camadas de mapa adicionais**, como [informações de terreno](../plugins/topography.md), **imagens de satélite** ou outros [mapas raster](../map/raster-maps.md) disponíveis.
+- **Sobrepor camadas adicionais do mapa**, como [informações de terreno](../plugins/topography.md), **imagens de satélite** ou outros [mapas raster](../map/raster-maps.md) disponíveis.
 
-- **Ativar a visualização de transporte público**, mostrando [rotas e paradas](../map/public-transport.md) para um melhor planejamento de viagens.
+- **Ativar a visualização de transporte público**, mostrando [rotas e paradas](../map/public-transport.md) para um melhor planejamento de viagem.
 
 - **Ajustar a aparência do mapa** selecionando um [estilo de mapa](../map/vector-maps.md#default-map-styles) diferente para atender às suas necessidades.
 
@@ -392,7 +392,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/
 
 </Tabs>
 
-O [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) é um menu que permite configurar os widgets para o perfil selecionado a serem exibidos no mapa. Nesta tela, você pode ativar e configurar widgets [Informativos](../widgets/info-widgets.md) e [Navegacionais](../widgets/nav-widgets.md), bem como outros itens.
+O [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) é um menu que permite configurar os widgets para o perfil selecionado a serem exibidos no mapa. Nesta tela, você pode habilitar e configurar widgets [Informativos](../widgets/info-widgets.md) e [de Navegação](../widgets/nav-widgets.md), além de outros itens.
 
 
 ## Aparência do Perfil {#profile-appearance}
@@ -446,49 +446,49 @@ As configurações de **Aparência da Minha Localização** permitem personaliza
 
 #### 1. Ângulo de Visão e Raio de Localização {#1-view-angle-and-location-radius}
 
-Você pode personalizar os elementos visuais relacionados à sua localização e aplicá-los separadamente ou juntos para as posições de **Repouso** e **Navegação**. Para os modos 2D e 3D, o *Ângulo de Visão* e o *Raio de Localização* são exibidos na mesma cor selecionada para o [perfil de navegação](#profile-appearance), diretamente abaixo do ícone [Minha Localização](../map/interact-with-map.md#my-location-and-zoom).
+Você pode personalizar os elementos visuais relacionados à sua localização e aplicá-los separadamente ou juntos para as posições de **Repouso** e **Navegação**. Para os modos 2D e 3D, *Ângulo de Visão* e *Raio de Localização* são exibidos na mesma cor selecionada para o [perfil de navegação](#profile-appearance), diretamente abaixo do ícone [Minha Localização](../map/interact-with-map.md#my-location-and-zoom).
 
-- **<Translate android="true" ids="view_angle"/>** – Exibe uma área em **forma de cone** indicando a direção em que você está atualmente virado.  
+- **<Translate android="true" ids="view_angle"/>** – Exibe uma área em **forma de cone** indicando a direção para a qual você está atualmente virado.
 - **<Translate android="true" ids="location_radius"/>** – Mostra uma **área circular** ao redor do seu ícone, representando a precisão da sua localização atual.
 
 
 #### 2. Ícones 3D Personalizados {#2-custom-3d-icons}
 
-Para uma experiência mais personalizada, você pode criar e adicionar **ícones 3D personalizados** ao OsmAnd.  
+Para uma experiência mais personalizada, você pode criar e adicionar **ícones 3D personalizados** ao OsmAnd.
 
 ***Como adicionar um ícone de localização 3D personalizado:***
 
-1. **Crie um modelo 3D**. Desenhe seu ícone nos [formatos MTL e OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+1. **Crie um modelo 3D**. Projete seu ícone nos [formatos MTL e OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
 
-2. **Integre o modelo ao OsmAnd:**  
-   - Desenvolva um [plug-in personalizado](../plugins/custom.md) usando o [exemplo de plug-in](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) fornecido.  
-   - Coloque seus arquivos de ícone 3D nos seguintes caminhos:  
+2. **Integre o modelo ao OsmAnd:**
+   - Desenvolva um [plugin personalizado](../plugins/custom.md) usando o [exemplo de plugin](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) fornecido.
+   - Coloque seus arquivos de ícone 3D nos seguintes caminhos:
 
-     `..osmand/models/icon_folder_name/custom_3d_file.mtl`  
+     `..osmand/models/icon_folder_name/custom_3d_file.mtl`
      `..osmand/models/icon_folder_name/custom_3d_file.obj`
 
-   - Alternativamente, copie os **arquivos MTL e OBJ** diretamente para a pasta OsmAnd usando a mesma estrutura de diretórios.  
+   - Alternativamente, copie os **arquivos MTL e OBJ** diretamente para a pasta OsmAnd usando a mesma estrutura de diretórios.
 
 #### 3. Modos de Orientação do Mapa {#3-map-orientation-modes}
 
-Você pode controlar o comportamento do ícone **Minha Localização** usando diferentes [modos de orientação do mapa](../widgets/map-buttons.md#compass).  
+Você pode controlar como o ícone **Minha Localização** se comporta usando diferentes [modos de orientação do mapa](../widgets/map-buttons.md#compass).
 
-- Se o ícone de localização **oscilar ou girar** enquanto estacionário, mude do **Modo de Direção de Movimento** ([Rotacionar Mapa por Rumo](../map/interact-with-map.md#rotate-map-by-bearing)) para outro modo.  
-- Ajuste as configurações adicionais em *Menu → Configurações → Perfis do aplicativo → Aparência do perfil → Opções*.
-- Saiba mais sobre o rastreamento de rumo e direção na seção [Widget de Rumo](../widgets/nav-widgets#bearing-widget).  
+- Se o ícone de localização **oscilar ou girar** enquanto estacionário, mude do **Modo de Direção de Movimento** ([Rotacionar Mapa por Rumo](../map/interact-with-map.md#rotate-map-by-bearing)) para outro modo.
+- Ajuste as configurações adicionais em *Menu → Configurações → Perfis do Aplicativo → Aparência do Perfil → Opções*.
+- Saiba mais sobre rumo e rastreamento de direção na seção [Widget de Rumo](../widgets/nav-widgets#bearing-widget).
 
 
 ## Personalização da Interface do Usuário {#ui-customization}
 
 <InfoAndroidOnly />
 
-:::note Para plug-ins não utilizados
-Para ocultar todos os parâmetros de controle de [plug-ins](../plugins/index.md#configure-plugin) não utilizados, desative-os.
+:::note Para plugins não utilizados
+Para ocultar todos os parâmetros de controle de [plugins](../plugins/index.md#configure-plugin) não utilizados, desative-os.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
-![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
+![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)
 
 Com o recurso de personalização da interface do usuário, você pode ajustar o número de itens em ações como [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) e [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Informações sobre o número de itens adicionados de todos os itens possíveis podem ser encontradas sob o título de cada recurso.
 
@@ -497,38 +497,38 @@ Com o recurso de personalização da interface do usuário, você pode ajustar o
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
-- **Principais itens visíveis** - Na seção *Personalizar UI*, você pode *reordenar, ocultar e restaurar* itens da [Gaveta](../start-with/main-menu.md#customize-advanced-use-of-android) para corresponder às suas preferências.
+- **Principais itens visíveis** - Na seção *Personalizar IU*, você pode *reordenar, ocultar e restaurar* itens da [Gaveta](../start-with/main-menu.md#customize-advanced-use-of-android) para corresponder às suas preferências.
 
 - **<Translate android="true" ids="reset_to_default"/>** - Restaura a *lista original de itens* na gaveta, desfazendo instantaneamente quaisquer personalizações.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Permite copiar o *layout da gaveta* de outro perfil OsmAnd para manter uma configuração consistente entre os perfis.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Permite copiar o *layout da gaveta* de outro perfil do OsmAnd para manter uma configuração consistente entre os perfis.
 
 ### Configurando o Mapa {#configuring-the-map}
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Menu Configurar mapa** - Na seção *Personalizar UI*, você pode *reordenar ou ocultar itens* do [Configurar mapa](../map/configure-map-menu.md), permitindo acesso rápido às configurações usadas com frequência.
+- **Menu Configurar mapa** - Na seção *Personalizar IU*, você pode *reordenar ou ocultar itens* do [Configurar mapa](../map/configure-map-menu.md), permitindo acesso rápido a configurações frequentemente usadas.
 
 - **<Translate android="true" ids="reset_to_default"/>** - Restaura a *lista de itens original* no menu Configurar mapa, removendo quaisquer alterações.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Copia o *layout do menu Configurar mapa* de outro perfil OsmAnd.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Copia o *layout do menu Configurar mapa* de outro perfil do OsmAnd.
 
 
 ### Ações do Menu de Contexto {#context-menu-actions}
 
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
-- **Menu de contexto do mapa** - Na seção Personalizar UI, você pode reordenar ou ocultar itens no [menu de contexto do mapa](../map/map-context-menu.md) para otimizar o acesso a recursos usados com frequência.
+- **Menu de contexto do mapa** - Na seção Personalizar IU, você pode reordenar ou ocultar itens no [menu de contexto do mapa](../map/map-context-menu.md) para otimizar o acesso a recursos frequentemente usados.
 
 - **<Translate android="true" ids="reset_to_default"/>** – Restaura a *lista de itens padrão* no menu de contexto do mapa, revertendo instantaneamente quaisquer modificações.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** – Copia o *arranjo do menu de contexto* de outro perfil OsmAnd para manter a consistência entre diferentes perfis.
+- **<Translate android="true" ids="copy_from_other_profile"/>** – Copia o *arranjo do menu de contexto* de outro perfil do OsmAnd para manter a consistência entre diferentes perfis.
 
 
-## Configurações de Plug-in {#plugin-settings}
+## Configurações de Plugin {#plugin-settings}
 
-:::caution Acesso às configurações do plug-in
-Para acessar as configurações do plug-in, você deve primeiro [**ativar o plug-in**](../plugins/index.md#enable--disable) na *seção Plug-in do menu principal*.
+:::caution Acesso às configurações do plugin
+Para acessar as configurações do plugin, você deve primeiro [**habilitar o plugin**](../plugins/index.md#enable--disable) na seção *Plugin do menu principal*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -551,26 +551,30 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-Os plug-ins desbloqueiam recursos adicionais do aplicativo e podem ser [pagos ou gratuitos](../plugins/index.md#purchase). Alguns plug-ins têm suas próprias [configurações](../plugins/index.md#plugin-settings), outros não. O OsmAnd oferece a possibilidade de configurar plug-ins para cada perfil separadamente.
+Os plugins desbloqueiam recursos adicionais do aplicativo e podem ser [pagos ou gratuitos](../plugins/index.md#purchase). Alguns plugins têm suas próprias [configurações](../plugins/index.md#plugin-settings), outros não. O OsmAnd oferece a possibilidade de configurar plugins para cada perfil separadamente.
 
 
 - **Gravação de Viagem**. Este item abre as [configurações de gravação de viagem](../plugins/trip-recording.md#recording-settings) para o perfil selecionado, onde você pode escolher quaisquer parâmetros para gravar suas viagens.
 
-- **Clima**. As camadas interativas do mapa [Clima](../plugins/weather.md#weather-settings) permitem monitorar a temperatura, pressão do ar, cobertura de nuvens, velocidade do vento e precipitação em sua cidade ou em qualquer outro local em um mapa global.
+- **Clima**. As camadas interativas do mapa [Clima](../plugins/weather.md#weather-settings) permitem que você monitore a temperatura, pressão do ar, cobertura de nuvens, velocidade do vento e precipitação em sua cidade ou em qualquer outro local em um mapa global.
 
-- **Notas de Áudio / Vídeo** (*Somente Android*). Este item abre as [configurações do plug-in de áudio-vídeo](../plugins/audio-video-notes.md#plugin-settings) para o perfil selecionado. O plug-in *Notas de Áudio/Vídeo* estende a funcionalidade do OsmAnd, permitindo que você crie suas notas em vários formatos, como foto, vídeo ou áudio, e as associe a uma localização geográfica ou localização atual.
+- **Notas de Áudio / Vídeo** (*Somente Android*). Este item abre as [configurações do plugin de áudio-vídeo](../plugins/audio-video-notes.md#plugin-settings) para o perfil selecionado. O plugin *Notas de Áudio/Vídeo* estende a funcionalidade do OsmAnd, permitindo que você crie suas notas em vários formatos, como foto, vídeo ou áudio, e as associe a uma localização geográfica ou à localização atual.
 
-- **Edição OpenStreetMap**. Este item abre as [configurações do plug-in de edição OpenStreetMap](../plugins/osm-editing.md#settings) para o perfil selecionado. Com o OsmAnd e o plug-in de edição OSM, você pode contribuir para o OpenStreetMap.org criando ou modificando POIs, adicionando ou comentando notas e enviando trilhas GPX gravadas.
+- **Edição OpenStreetMap**. Este item abre as [configurações do plugin de edição OpenStreetMap](../plugins/osm-editing.md#settings) para o perfil selecionado. Com o OsmAnd e o plugin de edição OSM, você pode contribuir para o OpenStreetMap.org criando ou modificando POIs, adicionando ou comentando notas e carregando trilhas GPX gravadas.
 
-- **Sensores Externos**. Ao tocar em um item na seção *Configurações do Plug-in*, as [configurações de sensores externos](../plugins/external-sensors.md#sensors-settings) para o perfil selecionado são abertas. O plug-in Sensores Externos permite ler e gravar dados de sensores externos sem fio e exibi-los usando widgets no aplicativo OsmAnd.
+- **Sensores Externos**. Ao tocar em um item na seção *Configurações do Plugin*, as [configurações dos sensores externos](../plugins/external-sensors.md#sensors-settings) para o perfil selecionado são abertas. O plugin Sensores Externos permite que você leia e grave dados de sensores externos sem fio e os exiba usando widgets no aplicativo OsmAnd.
 
-- **Acessibilidade** (*Somente Android*). Este item abre as [configurações do plug-in de Acessibilidade](../plugins/accessibility.md#plugin-settings) para o perfil selecionado. As configurações do plug-in de Acessibilidade permitem personalizar o aplicativo de acordo com suas necessidades. Todas as configurações se relacionam com o processo de navegação e são definidas individualmente para cada perfil.
+- **Acessibilidade** (*Somente Android*). Este item abre as [configurações do plugin de Acessibilidade](../plugins/accessibility.md#plugin-settings) para o perfil selecionado. As configurações do plugin de Acessibilidade permitem que você personalize o aplicativo de acordo com suas necessidades. Todas as configurações se relacionam ao processo de navegação e são definidas individualmente para cada perfil.
 
-- **Desenvolvimento OsmAnd**. Este menu abre as [configurações do plug-in de desenvolvimento OsmAnd](../plugins/development.md#plugin-settings), onde você pode configurar o aplicativo OsmAnd para fins de teste ou explorar recursos futuros. Essas configurações são destinadas a desenvolvedores e não são necessárias para o uso normal do aplicativo.
+- **Desenvolvimento OsmAnd**. Este menu abre as [configurações do plugin de desenvolvimento OsmAnd](../plugins/development.md#plugin-settings), onde você pode configurar o aplicativo OsmAnd para fins de teste ou explorar recursos futuros. Essas configurações são destinadas a desenvolvedores e não são necessárias para o uso normal do aplicativo.
 
-  > ***Alterar as configurações do plug-in de desenvolvimento OsmAnd afeta todos os perfis.***
+  > ***A alteração das configurações do plugin de desenvolvimento OsmAnd afeta todos os perfis.***
 
-- **Wikipedia**. Este menu abre as *[configurações do plug-in Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Você pode selecionar o idioma em que os artigos serão exibidos e escolher se deseja baixar imagens da Wikipedia. Ter a Wikipedia em sua viagem aprimora sua experiência, fornecendo informações sobre os locais que você visita. Funciona offline e exibe artigos relevantes da Wikipedia diretamente no mapa relacionados a pontos de interesse.
+- **Wikipedia** (Somente iOS). Este menu abre as *[configurações do plugin Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Você pode selecionar o idioma em que os artigos serão exibidos e escolher se deseja baixar imagens da Wikipedia. Ter a Wikipedia em sua viagem aprimora sua experiência, fornecendo informações sobre os locais que você visita. Funciona offline e exibe artigos relevantes da Wikipedia diretamente no mapa relacionados a pontos de interesse.
+
+- **Métricas do Veículo**. Este menu abre as *[configurações do plugin Métricas do Veículo](../plugins/vehicle-metrics.md#scanner-settings)*. Ele permite conectar um scanner OBD-II ao OsmAnd.
+
+- **Rastreador de embarcações AIS** (Somente Android). Este menu abre as *[configurações do plugin Rastreador de embarcações AIS](../plugins/ais-tracker.md#plugin-settings)*. Este plugin permite conectar um rastreador AIS ao OsmAnd.
 
 
 ## Ações {#actions}
@@ -591,7 +595,7 @@ Os plug-ins desbloqueiam recursos adicionais do aplicativo e podem ser [pagos ou
 
 </Tabs>
 
-Ações com o perfil selecionado:  
+Ações com o perfil selecionado:
 
 - [Exportar perfil](https://osmand.net/docs/user/personal/import-export#export) - Exporta todas as configurações do perfil selecionado no formato OSF.
 
@@ -611,4 +615,4 @@ Ações com o perfil selecionado:
 - [Histórico de Pesquisa](../search/search-history.md#export-and-share)
 - [Esquemas de Paleta de Cores](../personal/color-palette-schemes.md)
 
-> *Última atualização: fevereiro de 2025*
+> *Última atualização: Fevereiro de 2025*

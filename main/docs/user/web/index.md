@@ -1,5 +1,5 @@
 ---
-title: Web Map Viewer
+title: Web Planner
 ---
 
 import Tabs from '@theme/Tabs';

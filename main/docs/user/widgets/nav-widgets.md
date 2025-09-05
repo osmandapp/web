@@ -302,37 +302,49 @@ The *Speed Limit* widget displays the current speed limit based on the map data 
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Route Maneuvers {#route-maneuvers}
+## Route Guidance {#route-guidance}
+
 
 ![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
 
-This set of navigational widgets is activated during navigation and displays information about the distance to the next maneuver.
+Provides real-time route guidance, including distance to the next turn, road name, current street name, and lane information. Widgets are active during navigation.
+
+The *Route Guidance* widgets contain information about:
+
+- [Lanes](#lanes) - shows the current location of road lanes and highlights the ones you should drive on. (only for _Top / Bottom panels_)
+- [Next turn](#next-turn) - the next turn with a large arrow representing the maneuver and with data about the distance to it.
+- [Next turn (small)](#next-turn) - the next turn with a small arrow representing the maneuver and with distance data next to the arrow. (only for _Left / Right panels_)
+- [Second next turn](#next-turn) is the next turn after the first turn, which is activated if it is within approach distance.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Add widget → Route Maneuvers → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Left / Right panel → Add widget → Route Maneuvers → Next turn, Next turn (small), Second next turn* |
-| By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Enable      | **Android:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*  |
+|      | **iOS:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*   |
+| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
+| Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
 
 
 ### Next Turn {#next-turn}
 
-![Next turns widget](@site/static/img/widgets/next_turns_widgets_andr.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-The *Route Maneuvers* widgets contain information about:
+<TabItem value="android" label="Android">  
+
+![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Approach POIs/Favorites ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 - **Next turn** - the next turn with a large arrow representing the maneuver and with data about the distance to it.
-- **Next turn (small)** - the next turn with a small arrow representing the maneuver and with distance data next to the arrow.
+- **Next turn (small)** - the next turn with a small arrow representing the maneuver and with distance data next to the arrow. (only for _Left / Right panel_)
 - **Second next turn** - the next turn after the first turn, which is activated if it is within approach distance.
-
-| | |
-|:------------|:------------|
-| Enable      | **Android:** *Menu → Configure screen → Left / Right panel → Add widget → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Left / Right panel → Add widget → Next turn, Next turn (small), Second next turn* |
-| By tapping  | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
-| Long tap    | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
-
 
 ### Color Prompts for Next Turn {#color-prompts-for-next-turn}
 
@@ -345,17 +357,11 @@ This table shows the approximate time until the prompts are activated and the co
 | ⚪ Grey   | > 100 seconds  | Distant    | Prepare to turn |
 
 
-## Lanes {#lanes}
+### Lanes {#lanes}
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-| | |
-|:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Add widget → <Translate android="true" ids="show_lanes"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="show_lanes"/>* |
-| By tapping | No changes |
+The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
 
 ### Color Prompts for Lanes {#color-prompts-for-lanes}
 
@@ -366,26 +372,6 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
 | 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
 
-
-## Route Guidance {#route-guidance}
-
-<InfoAndroidOnly />
-
-![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
-
-Provides real-time route guidance, including distance to the next turn, road name, current street name, and lane information. Widgets are active during navigation.
-
-The *Route Guidance* widgets contain information about:
-
-- [Lanes](#lanes) - shows the current location of road lanes and highlights the ones you should drive on.
-- **Next turn** - the next turn with a large arrow representing the maneuver and with data about the distance to it.
-- **Second next turn** is the next turn after the first turn, which is activated if it is within approach distance.
-
-| | |
-|:------------|:------------|
-| Enable      | **Android:** *Menu → Configure screen → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → Lane, Next turn, Second next turn*  |
-| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
-| Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lane**: No changes. |
 
 
 ## Alert Widget {#alert-widget}
@@ -427,7 +413,9 @@ Alert types have a different visual design, which depends on the **<Translate an
 
 ## Street Name {#street-name}
 
-The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). 
+
+In widget **Settings** you can select to always display **the current street name** and use it with [**Next turn**](#next-turn) widget. If you enable **Next turn information**, then switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), same to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
@@ -488,4 +476,4 @@ It displays the **name**, the **icon of the point**, and 2 **distances**:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: April 2025*
+

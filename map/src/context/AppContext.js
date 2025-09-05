@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
-import TracksManager, { getGpxFiles, preparedGpxFile, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import TracksManager, {
+    getGpxFiles,
+    GPX_FILE_EXT,
+    preparedGpxFile,
+    TRACK_VISIBLE_FLAG,
+} from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet, apiPost } from '../util/HttpApi';
@@ -9,16 +14,17 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 import { INIT_LOGIN_STATE } from '../manager/LoginManager';
-import { cloneDeep, isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
 import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
-import i18n from 'i18next';
-import * as locales from 'date-fns/locale';
 import { getSortFromDB } from './FavoriteStorage';
+import MarkerOptions from '../map/markers/MarkerOptions';
+import { FORECAST_SOURCE_PARAM } from '../menu/weather/Weather';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -108,7 +114,7 @@ async function loadListFiles(
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith('.gpx'))
+        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
             name: f.name,
             type: f.type,
@@ -296,7 +302,7 @@ export const AppContextProvider = (props) => {
     // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(new Date());
-    const [weatherType, setWeatherType] = useState('gfs');
+    const [weatherType, setWeatherType] = useState(searchParams.get(FORECAST_SOURCE_PARAM) ?? 'gfs');
     const [renderingType, setRenderingType] = useState(null);
     const [forecastLoading, setForecastLoading] = useState(false);
     const [mapBbox, setMapBbox] = useState(null);
@@ -319,6 +325,8 @@ export const AppContextProvider = (props) => {
         zoom: 17,
         animateDist: 1000000,
     });
+    const [visibleBounds, setVisibleBounds] = useState(null);
+
     // travel
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
@@ -360,6 +368,7 @@ export const AppContextProvider = (props) => {
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
+    const [usedIcons, setUsedIcons] = useState(new Set([MarkerOptions.DEFAULT_WPT_ICON]));
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
@@ -442,13 +451,13 @@ export const AppContextProvider = (props) => {
     const [graphHighlightedPoint, setGraphHighlightedPoint] = useState(null);
     const [sortedSegments, setSortedSegments] = useState(null);
 
-    const [dateLocale, setDateLocale] = useState(null);
+    const [recentObjs, setRecentObjs] = useState({
+        tracks: [],
+        favorites: [],
+    });
 
-    useEffect(() => {
-        const currentLanguage = i18n.language;
-        const locale = locales[currentLanguage] || locales.enUS;
-        setDateLocale(locale);
-    }, []);
+    const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
+    const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
 
     useEffect(() => {
         async function loadSort() {
@@ -612,6 +621,7 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     const [openGroups, setOpenGroups] = useState([]);
+    const [openFavGroups, setOpenFavGroups] = useState([]);
 
     const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
 
@@ -814,8 +824,18 @@ export const AppContextProvider = (props) => {
                 setRemoveFavGroup,
                 notification,
                 setNotification,
-                dateLocale,
-                setDateLocale,
+                usedIcons,
+                setUsedIcons,
+                openFavGroups,
+                setOpenFavGroups,
+                recentObjs,
+                setRecentObjs,
+                selectedFavoriteObj,
+                setSelectedFavoriteObj,
+                selectedCloudTrackObj,
+                setSelectedCloudTrackObj,
+                visibleBounds,
+                setVisibleBounds,
             }}
         >
             {props.children}

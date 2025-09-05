@@ -1,5 +1,5 @@
 ---
-source-hash: 9d1531d9555eb2840386ca7a59c86b6aaea01e503c8115d6bb52a5af5ac3dfed
+source-hash: 82311f61fc7e617e22d754968f02e6ec8009c51ecb4943a18c23ef0a9d897cfd
 sidebar_position: 5
 title: Harici Sensörler
 ---
@@ -24,7 +24,7 @@ Harici Sensörler eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir]
 
 **Harici Sensörler eklentisi**, [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) ve [BLE (Bluetooth Düşük Enerji)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) teknolojileriyle çalışan [kablosuz harici sensörlerden](https://en.wikipedia.org/wiki/Wireless_sensor_network) veri okumanıza ve kaydetmenize ve bu verileri OsmAnd uygulamasındaki [widget'ları](#widgets) kullanarak görüntülemenize olanak tanır. Bu yönetilen ağ, sensör verilerini toplayabilir, iletebilir ve depolayabilir.
 
-> *NOT: iPhone ve iPad'ler donanım sınırlamaları nedeniyle ANT+ desteği sunmaz.*
+> *NOT: iPhone'lar ve iPad'ler donanım sınırlamaları nedeniyle ANT+ desteği sunmaz.*
 
 **Harici Sensörler eklentisi** harici sensörlere erişir ve aşağıdaki gibi verileri okuyabilir:
 
@@ -46,9 +46,9 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 2. Eklentiyi *Menü → Eklentiler*'de [etkinleştirin](../plugins/#enable--disable).
 3. **BLE sensörleriyle** bağlantıya izin vermek için cihazınızda **Bluetooth'u açın**.
 4. Eklenti menüsü aracılığıyla harici sensörleri [eşleştirin ve yapılandırın](#pair-new-sensor).
-5. (İsteğe bağlı) Kalp atış hızı, kadans veya pil seviyesi gibi gerçek zamanlı verileri görüntülemek için harita ekranınıza [Harici Sensörler widget'ları](#widgets) [ekleyin](#widgets).
+5. (İsteğe bağlı) Kalp atış hızı, kadans veya pil seviyesi gibi gerçek zamanlı verileri görüntülemek için harita ekranınıza **Harici Sensörler widget'ları** [ekleyin](#widgets).
 6. (İsteğe bağlı) Sensör verilerini GPX izlerine kaydetmek için [Yolculuk kaydı eklentisini](../plugins/trip-recording.md) kullanın.
-7. (İsteğe bağlı, yalnızca Android) Cihazınız ANT+ sensörlerini destekliyorsa, ANT+ sensörlerini bağlamak için [bu ipuçlarını](https://www.thisisant.com/consumer/ant-101/ant-in-phones) izleyin.
+7. (İsteğe bağlı, yalnızca Android) Cihazınız destekliyorsa ANT+ sensörlerini bağlamak için [bu ipuçlarını](https://www.thisisant.com/consumer/ant-101/ant-in-phones) izleyin.
 
 
 ### Yeni Sensör Eşleştir {#pair-new-sensor}
@@ -59,7 +59,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 
 | | |
 | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png) |
+| ![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png) | ![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png) |
 
 </TabItem>
 
@@ -67,7 +67,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 
 | | |
 | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
+| ![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) | ![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 
 Yeni bir sensör eşleştirmek için şu adımları izleyin:
 
-1. Cihazınızda **Bluetooth'un etkinleştirildiğinden** emin olun.
+1. Cihazınızda **Bluetooth'un etkin olduğundan** emin olun.
 2. *Menü → Eklentiler → Harici Sensörler → Ayarlar*'a gidin.
 3. **Yeni sensör eşleştir**'e dokunun.
 4. OsmAnd, mevcut **Bluetooth LE** veya **ANT+** sensörlerini (platformunuza bağlı olarak) tarayacaktır.
@@ -101,7 +101,7 @@ Sensör ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Mevcut cihaz → Ayarlar*
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Mevcut cihaz → Ayarlar*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
+![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Sensör ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
+![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
 
 </TabItem>
 
@@ -120,14 +120,14 @@ Sensör ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçeneklere sahip kendi yapılandırma ekranı vardır:
 
-- **Bağlan / Bağlantıyı Kes** – bağlantı durumunu değiştirin.
-- **Yeniden Adlandır** – sensöre özel bir ad atayın.
-- **Sensörü unut** – sensörü listeden kaldırın (daha sonra tekrar eşleştirilebilir).
-- **Ayarlar** – sensör ayrıntıları ekranını açın (sensör tipi, değerler, pil seviyesi, tekerlek çevresi ayarı).
+- **Bağlan / Bağlantıyı Kes** – bağlantı durumunu değiştirir.
+- **Yeniden Adlandır** – sensöre özel bir ad atar.
+- **Sensörü unut** – sensörü listeden kaldırır (daha sonra tekrar eşleştirilebilir).
+- **Ayarlar** – sensör ayrıntıları ekranını açar (sensör tipi, değerler, pil seviyesi, tekerlek çevresi ayarı).
 
 ***Notlar:***
 
-- **iOS**'ta, bağlı BLE sensörlerinin **pil seviyesini** doğrudan bir harita [widget'ında](#widgets) görüntüleyebilirsiniz. Bunu etkinleştirmek için şu adrese gidin: *Menü → Ekranı Yapılandır → Panel seç → Widget ekle → Harici sensör → Ayarlar → Göster → Pil seviyesi*
+- **iOS**'ta, bağlı BLE sensörlerinin **pil seviyesini** doğrudan bir harita [widget'ında](#widgets) görüntüleyebilirsiniz. Bunu etkinleştirmek için şu adrese gidin: *Menü → Ekranı yapılandır → Panel seç → Widget ekle → Harici sensör → Ayarlar → Göster → Pil seviyesi*
 - Eşleştirilmiş bir sensörün pil **seviyesi %15'in altına düştüğünde** bir açılır bildirim görünür.
 
 
@@ -139,7 +139,7 @@ OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçene
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
+![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png) ![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
 
 </TabItem>
 
@@ -147,22 +147,22 @@ OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçene
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png) ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
+![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png) ![Harici sensörler eklentisi](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Yolculuğunuz sırasında [Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak sensör verilerini kaydetmek için:
+Yolculuğunuz sırasında sensör verilerini [Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak kaydetmek için:
 
 1. **Harici Sensörler eklentisinin** etkinleştirildiğinden emin olun.
-2. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*'e gidin.
+2. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*'a gidin.
 3. Kaydetmek istediğiniz sensör türlerini seçin (örn. kadans, kalp atış hızı, hız).
-4. Yolculuğunuzu kaydetmeye başlayın. OsmAnd, seçilen sensör verilerini GPX izine kaydedecektir.
+4. Yolculuğunuzu kaydetmeye başlayın. OsmAnd seçilen sensör verilerini GPX izine kaydedecektir.
 
 ***Notlar:***
 
-- Mevcut sensör türleri listesi, hiçbir sensör bağlı olmasa bile gösterilir.
+- Mevcut sensör türlerinin listesi, hiçbir sensör bağlı olmasa bile gösterilir.
 - Henüz hiçbir sensör eşleştirilmediyse, eklenti ayarlarındaki [Yeni sensör eşleştir](#pair-new-sensor) düğmesini kullanın.
 - Pil seviyesi verileri GPX dosyalarına kaydedilmez ve harita üzerinde analiz için kullanılamaz.
 
@@ -177,24 +177,24 @@ OsmAnd, sensör verilerini GPX dosyalarına yerleştirmek için [iz kaydını](.
 
 <TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
+![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png) ![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png) ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
+![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png) ![Harici sensörler](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-[Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak yolculuğunuzu kaydettikten sonra, sensör verilerini iz analiz arayüzünde inceleyebilirsiniz.
+[Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak yolculuğunuzu kaydettikten sonra, iz analiz arayüzünde sensör verilerini inceleyebilirsiniz.
 
 Verileri analiz etmek için:
 
 1. Yolculuk kaydınızı bitirin.
-2. Kaydedilen izi *Yerlerim → İzler*'den açın veya haritadaki ize dokunun.
+2. *Yerlerim → İzler*'den kaydedilen izi açın veya haritadaki ize dokunun.
 3. İz bağlam menüsünden *Seçenekler → Haritada analiz et*'i seçin.
 
 Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*, *Hız*, *Kadans*, *Bisiklet gücü* ve *Sıcaklık*
@@ -210,7 +210,7 @@ Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*,
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
+![Harici sensörler widget'ları Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png) ![Harici sensörler widget'ları Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
 
 </TabItem>
 
@@ -218,7 +218,7 @@ Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*,
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png) ![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
+![Harici sensörler widget'ları iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png) ![Harici sensörler widget'ları iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
 
 </TabItem>
 
@@ -229,12 +229,12 @@ Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*,
 Yolculuğunuza başlamadan önce:
 
 - Harici Sensörler eklentisinin etkinleştirildiğinden emin olun.
-- *Ekranı Yapılandır*'ı açın ve gerekli widget'ları uygun panele ekleyin.
+- *Ekranı yapılandır*'ı açın ve gerekli widget'ları uygun panele ekleyin.
 
 Desteklenen widget türleri:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – eşleştirilmiş bir monitörden gerçek zamanlı kalp atış hızını görüntüler.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Yalnızca Android*) – mevcut pedal çevirme gücünü watt cinsinden gösterir.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Yalnızca Android*) – watt cinsinden mevcut pedal çevirme gücünü gösterir.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – dakikadaki pedal devir sayısını gösterir.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – mevcut bisiklet hızı.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – sensör tarafından ölçülen toplam mesafe.
@@ -250,7 +250,7 @@ Desteklenen widget türleri:
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="external_sensor_widgets"/> → Bir widget seçin → <Translate android="true" ids="shared_string_settings"/>*
 
-![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
+![Harici sensörler widget'ları Ayarları Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
 </TabItem>
 
@@ -258,7 +258,7 @@ Desteklenen widget türleri:
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → Widget ekle → Harici sensör → Bir widget seçin → Ayarlar*
 
-![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Harici sensörler widget'ları Ayarları Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

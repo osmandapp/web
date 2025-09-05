@@ -17,7 +17,7 @@ export const MenuButton = ({ needBackButton = false, backToPrevScreen = null }) 
             id={'se-search-input-close'}
             className={`${gStyles.icon} ${styles.searchInputIcon}`}
             onClick={() => {
-                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+                ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
                 closeHeader({ ctx });
             }}
         >

@@ -4,7 +4,7 @@ import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
 import { Close } from '@mui/icons-material';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 export default function PointContextMenu({ anchorEl }) {
     const ctx = useContext(AppContext);
@@ -154,7 +154,7 @@ export default function PointContextMenu({ anchorEl }) {
             !isGap(pointInd) &&
             !isPointAfterGap(pointInd) &&
             !isPointAfterGap(pointInd - 1) &&
-            !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
+            !isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
         );
     }
 
@@ -177,7 +177,7 @@ export default function PointContextMenu({ anchorEl }) {
             !isGap(pointInd) &&
             !isPointAfterGap(pointInd) &&
             !isGap(pointInd + 1) &&
-            !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
+            !isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
         );
     }
 

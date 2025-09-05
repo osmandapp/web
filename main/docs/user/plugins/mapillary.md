@@ -183,4 +183,4 @@ The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to g
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: October 2024*
+

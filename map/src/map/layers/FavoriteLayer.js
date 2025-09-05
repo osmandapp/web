@@ -1,19 +1,20 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { ZOOM_TO_MAP } from './SearchLayer';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
@@ -91,8 +92,9 @@ const FavoriteLayer = () => {
     useEffect(() => {
         if (ctx.zoomToFavGroup) {
             const group = ctx.favorites.mapObjs[ctx.zoomToFavGroup];
-            if (group && group.markers) {
+            if (group?.markers) {
                 map.fitBounds(group.markers.getBounds(), fitBoundsOptions(ctx));
+                ctx.setZoomToFavGroup(null);
             }
         }
     }, [ctx.zoomToFavGroup]);
@@ -204,7 +206,7 @@ const FavoriteLayer = () => {
                         mainStyle: true,
                         text: marker.options['name'],
                         latlng: marker._latlng,
-                        iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                        iconSize: DEFAULT_ICON_SIZE,
                         map,
                         ctx,
                     });
@@ -298,14 +300,13 @@ const FavoriteLayer = () => {
 
     const onClick = useCallback(
         (e) => {
-            ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
             ctx.selectedGpxFile = {};
             ctx.selectedGpxFile.trackData = { ...ctx.favorites.mapObjs[e.sourceTarget.options.groupId] };
 
             const groupWithOriginalFile = ctx.favorites.groups?.find((g) => g.id === e.sourceTarget.options.groupId);
             ctx.selectedGpxFile.file = groupWithOriginalFile.file;
 
-            ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
+            ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
                 icon: e.sourceTarget.options.icon.options.html,
@@ -316,9 +317,9 @@ const FavoriteLayer = () => {
                 ? e.sourceTarget.options.category
                 : FavoritesManager.DEFAULT_GROUP_NAME;
             ctx.selectedGpxFile.id = e.sourceTarget.options.groupId;
+            ctx.selectedGpxFile.key = `${ctx.selectedGpxFile.id}:${ctx.selectedGpxFile.name}`;
 
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            ctx.setSelectedWpt(ctx.selectedGpxFile);
+            openFavoriteObj(ctx, ctx.selectedGpxFile);
         },
         [ctx, selectedGpxFileRef]
     );

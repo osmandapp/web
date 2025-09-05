@@ -2,7 +2,8 @@ import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
-import _ from 'lodash';
+import indexOfL from 'lodash-es/indexOf';
+import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager, {
     isPointUnrouted,
     isProtectedSegment,
@@ -135,7 +136,7 @@ export default class EditablePolyline {
 
         // find exact point which has the same geometry with the current layer (OK for routable)
         const nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points);
-        const indexOf = nextPoint ? _.indexOf(points, nextPoint, 0) : -1;
+        const indexOf = nextPoint ? indexOfL(points, nextPoint, 0) : -1;
 
         const findPoint = new L.LatLng(lat, lng);
 
@@ -209,7 +210,7 @@ export default class EditablePolyline {
             splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex: index });
             track.refreshAnalytics = true;
         } else {
-            const newPoint = _.cloneDeep(track.points[index]);
+            const newPoint = cloneDeep(track.points[index]);
 
             newPoint.lat = lat;
             newPoint.lng = lng;

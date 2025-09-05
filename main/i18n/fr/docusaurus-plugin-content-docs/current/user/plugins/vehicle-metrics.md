@@ -1,7 +1,7 @@
 ---
-source-hash: 3285f0c719a8255c35a044a6bccdc05206d01216a9c0d4f8c30f58b3a9122f36
+source-hash: 7cce24b2cd87bfae38687f74d452a20648b7bb08c58e4e9a6b8489cb8398e2a2
 sidebar_position: 16
-title:  Métriques du véhicule
+title: Métriques du véhicule
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,23 +17,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-<InfoAndroidOnly/>
 
-## Vue d'ensemble {#overview}
+## Aperçu {#overview}
 
 :::info Fonctionnalité payante
-Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
+Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
 :::
 
-Le **plugin Métriques du véhicule** permet la surveillance en temps réel des données du véhicule via le protocole OBD-II. Les utilisateurs peuvent suivre les métriques essentielles telles que les performances du moteur, l'efficacité énergétique et la vitesse, ce qui permet une maintenance et un dépannage proactifs du véhicule.
+Le **plugin Métriques du véhicule** permet la surveillance en temps réel des données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité énergétique et la vitesse, ce qui permet une maintenance proactive du véhicule et un dépannage.
 
-Les scanners OBD-II font partie intégrante des diagnostics automobiles modernes. Grâce à la diffusion de données en temps réel, les utilisateurs obtiennent des informations instantanées sur les systèmes du véhicule, ce qui facilite la maintenance préventive et réduit les coûts de réparation. Ces outils sont essentiels pour un usage personnel et les services automobiles professionnels.
+Les [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) font partie intégrante des diagnostics automobiles modernes. Grâce à la diffusion de données en temps réel, les utilisateurs obtiennent des informations instantanées sur les systèmes du véhicule, ce qui facilite la maintenance préventive et réduit les coûts de réparation. Ces outils sont essentiels pour une utilisation personnelle et les services automobiles professionnels.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![Paramètres OBD](@site/static/img/plugins/obd/obd_overview_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Paramètres OBD](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
@@ -49,41 +54,77 @@ Pour utiliser les données d'un scanner OBD-II :
 3. **Activez** le Bluetooth sur votre appareil.
 4. [Connectez](#pair-odb-ii-scanner) le scanner OBD-II au port de votre véhicule.
 5. [Configurez](#scanner-settings) les **paramètres du scanner**.
-6. [Ajoutez](#widgets) des **widgets Métriques du véhicule** pour afficher les données à l'écran (facultatif).
+6. [Ajoutez](#widgets) les **widgets Métriques du véhicule** pour les données à l'écran (facultatif).
 7. [Utilisez](#trip-recording) le **plugin Enregistrement de trajet** pour enregistrer les données du véhicule.
 
 
-### Coupler le scanner ODB-II {#pair-odb-ii-scanner}
+### Jumeler un scanner ODB-II {#pair-odb-ii-scanner}
 
-|  |  |
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+| | |
 |--|--|
 |![Connexion OBD](@site/static/img/plugins/obd/obd_connect.png)|![Connexion OBD](@site/static/img/plugins/obd/obd_connect_2.png)|
 
-Connectez le scanner au port de votre véhicule et couplez-le via l'application :
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+| | |
+|--|--|
+|![Connexion OBD](@site/static/img/plugins/obd/obd_connect_ios.png)|![Connexion OBD](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+
+</TabItem>
+
+</Tabs>
+
+Connectez le scanner au port de votre véhicule et jumelez-le via l'application :
 
 - Accédez à *Menu → Plugins → Métriques du véhicule → Paramètres → Connecter* ou **+**.
-- Si Métriques du véhicule se trouve dans le *Menu principal* : *Menu → Métriques du véhicule → Paramètres → Connecter* ou **+**.
+- Si Métriques du véhicule est dans le *Menu principal* : *Menu → Métriques du véhicule → Paramètres → Connecter* ou **+**.
 
 Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 
 ## Paramètres du scanner {#scanner-settings}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 **Android.** Accédez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
 
-|  |  |
+| | |
 |--|--|
 |![Paramètres OBD](@site/static/img/plugins/obd/obd_settings.png)|![Paramètres OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS.** Accédez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
+
+| | |
+|--|--|
+|![Paramètres OBD](@site/static/img/plugins/obd/obd_settings_ios.png)|![Paramètres OBD](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+
+</TabItem>
+
+</Tabs>
+
 - **Connecter / Déconnecter**. Établit ou met fin à la connexion avec le capteur OBD-II.
 - **Paramètres**. Ouvre l'écran des paramètres OBD-II, permettant la gestion de la connexion et l'accès aux paramètres disponibles du véhicule.
-- **Renommer**. Vous permet d'attribuer un nom personnalisé au capteur pour une identification plus facile.
-- **Oublier**. Supprime le capteur OBD-II précédemment couplé de la liste, nécessitant un nouveau couplage si nécessaire ultérieurement.
+- **Renommer**. Permet d'attribuer un nom personnalisé au capteur pour une identification plus facile.
+- **Oublier**. Supprime le capteur OBD-II précédemment jumelé de la liste, nécessitant un nouveau jumelage si nécessaire ultérieurement.
 
 
 ## Liste des métriques {#metrics-list}
 
-Les métriques sont classées par catégorie pour plus de clarté. Les outils de diagnostic avancés permettent une maintenance préventive en interprétant ces paramètres :
+Les métriques sont classées pour plus de clarté. Les outils de diagnostic avancés permettent une maintenance préventive en interprétant ces paramètres :
 
 *Température :*
 
@@ -94,8 +135,8 @@ Les métriques sont classées par catégorie pour plus de clarté. Les outils de
 
 *Moteur :*
 
-- **Régime moteur**. Surveille les tours par minute (tr/min) du moteur.
-- **Durée de fonctionnement du moteur**. Suit la durée de fonctionnement du moteur.
+- **Régime moteur**. Surveille les tours par minute (RPM) du moteur.
+- **Temps de fonctionnement du moteur**. Suit le temps de fonctionnement du moteur.
 - **Charge moteur calculée**. Indique le pourcentage de charge de travail du moteur.
 
 *Carburant :*
@@ -108,11 +149,16 @@ Les métriques sont classées par catégorie pour plus de clarté. Les outils de
 
 - **Niveau de batterie**. Indique le niveau de tension de la batterie du véhicule.
 - **Vitesse du véhicule**. Affiche les données du capteur de vitesse du véhicule (VSS).
-- **Position du papillon**. Détermine l'admission d'air du moteur via l'angle de la plaque du papillon.
-  **VIN**. Affiche le numéro d'identification du véhicule à 17 caractères.
+- **Position du papillon**. Détermine l'admission d'air du moteur via l'angle du papillon.
+- **VIN**. Affiche le numéro d'identification à 17 caractères du véhicule.
 
 
 ## Enregistrement de trajet {#trip-recording}
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Android**. Accédez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
@@ -120,7 +166,24 @@ Les métriques sont classées par catégorie pour plus de clarté. Les outils de
 |--|--|
 |![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
 
-Pour inclure les données OBD-II dans un fichier GPX, vous devez sélectionner les paramètres souhaités pour l'enregistrement à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings). Cela vous permet d'analyser les métriques du véhicule parallèlement aux données de votre trajet.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS**. Accédez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+
+| | |
+|--|--|
+|![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording_ios.png)| ![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+
+</TabItem>
+
+</Tabs>
+
+
+
+Pour inclure les données OBD-II dans un fichier GPX, vous devez sélectionner les paramètres souhaités pour l'enregistrement à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings). Cela vous permet d'analyser les métriques du véhicule en même temps que les données de votre trajet.
 
 #### Balises {#tags}
 
@@ -135,22 +198,43 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 ## Widgets {#widgets}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 **Android.** Accédez à : *Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
 
 | | |
 |--|--|
 |![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**iOS.** Accédez à : *Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
+
+| | |
+|--|--|
+|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+
+</TabItem>
+
+</Tabs>
+
+
+
 Les [widgets Métriques du véhicule](../widgets/info-widgets.md#vehicle-metrics-widgets) sont automatiquement inclus lorsque vous activez le plugin. S'ils ne sont pas visibles, vous pouvez les ajouter manuellement via le menu [Configurer l'écran](../widgets/configure-screen.md).
 
 ### Paramètres du widget {#widget-settings}
 
-Les widgets affichent les données clés de votre appareil OBD-II connecté en temps réel, telles que la vitesse, les métriques du moteur et la consommation de carburant. Assurez-vous qu'ils sont visibles avant de commencer votre trajet pour suivre les métriques de manière transparente.
+Les widgets affichent les données clés de votre appareil OBD-II connecté en temps réel, telles que la vitesse, les métriques du moteur et la consommation de carburant. Assurez-vous qu'ils sont visibles avant de commencer votre trajet pour suivre les métriques en toute transparence.
 
 Certains widgets offrent des options de mode d'affichage :
 
 - **Instantané**. Affiche les données en temps réel pour la métrique sélectionnée.
-- **Moyenne**. Affiche les valeurs moyennes sur un intervalle de temps configurable (15 secondes à 60 minutes).
+- **Moyenne**. Affiche les valeurs moyennes sur un intervalle de temps configurable (de 15 secondes à 60 minutes).
 
 
 ## Articles connexes {#related-articles}
@@ -159,4 +243,4 @@ Certains widgets offrent des options de mode d'affichage :
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)
 
-> *Dernière mise à jour : décembre 2024*
+> *Dernière mise à jour : août 2025*

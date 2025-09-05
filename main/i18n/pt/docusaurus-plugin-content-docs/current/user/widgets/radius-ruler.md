@@ -1,5 +1,5 @@
 ---
-source-hash: 14db1ff378f43e871dddc04366518dc17627a2aeb32b40272132b8334b11f558
+source-hash: 338468efc137a0618ed472d99c99d808cd6f3df5d30650e5054eabd75c599d06
 sidebar_position: 5
 title: Régua de Raio e Régua
 ---
@@ -50,18 +50,18 @@ Essas ferramentas são úteis para planejar rotas, estimar a proximidade de pont
 
 A **Régua** exibe a escala atual do mapa como um segmento de linha rotulado com seu comprimento real (por exemplo, 100 m ou 500 pés), na parte inferior da tela. Características:
 
-- A escala se adapta dinamicamente à medida que você aumenta ou diminui o zoom.
-- Ela fornece uma referência visual para estimar distâncias reais entre objetos no mapa.
+- A escala se adapta dinamicamente conforme você aumenta ou diminui o zoom.
+- Fornece uma referência visual para estimar distâncias reais entre objetos no mapa.
 - O comprimento do segmento é arredondado para unidades convenientes (por exemplo, 100 m), correspondendo aproximadamente à largura de um polegar para uso intuitivo.
 
-Essa ferramenta é útil quando você precisa de uma compreensão rápida dos tamanhos ou distâncias dos objetos sem colocar marcadores ou rotas.
+Essa ferramenta é útil quando você precisa de uma compreensão rápida dos tamanhos de objetos ou distâncias sem colocar marcadores ou rotas.
 
 | | |
 |------------|------------|
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Widget de Régua de Raio {#radius-ruler-widget}
+## Widget da Régua de Raio {#radius-ruler-widget}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -82,11 +82,11 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 </Tabs>
 
-O [Widget de Régua de Raio](../widgets/info-widgets.md#radius-ruler) mostra a distância entre sua localização atual (*Minha Localização*) e o centro do mapa. Você também pode mover o mapa para definir qualquer ponto central personalizado. Características:
+O [Widget da Régua de Raio](../widgets/info-widgets.md#radius-ruler) mostra a distância entre sua localização atual (*Minha Localização*) e o centro do mapa. Você também pode mover o mapa para definir qualquer ponto central personalizado. Características:
 
-- Exibir círculos concêntricos centrados no ponto selecionado.
-- O primeiro círculo reflete a [escala atual do mapa](#ruler) para referência visual rápida.
-- Ajusta-se automaticamente ao aumentar o zoom para manter valores de raio precisos.
+- Exibe círculos concêntricos centrados no ponto selecionado.
+- O primeiro círculo reflete a [escala do mapa](#ruler) atual para referência visual rápida.
+- Ajusta-se automaticamente ao fazer zoom para manter valores de raio precisos.
 
 Use este widget para estimar a proximidade de pontos de interesse ou planejar em torno de uma área definida.
 
@@ -133,7 +133,7 @@ Use este widget para estimar a proximidade de pontos de interesse ou planejar em
 
 Quando a **Régua de Raio** está ativa, o mapa exibe uma sobreposição de bússola para ajudar a orientar-se no espaço. A sobreposição mostra como o mapa está alinhado em relação ao Norte verdadeiro e pode incluir um triângulo azul indicando a direção atual do dispositivo.
 
-- O anel da bússola mostra a orientação do mapa — se o Norte está para cima ou girado.
+- O anel da bússola mostra a orientação do mapa — se o Norte está para cima ou rotacionado.
 - Um **triângulo azul** indica a direção para a qual seu dispositivo está apontando.
 - Para usar este recurso, o dispositivo deve suportar e habilitar um **sensor de bússola** (bússola GPS, magnetômetro).
 - Segurar o dispositivo horizontalmente melhora a precisão e a visualização.
@@ -144,7 +144,7 @@ Esta sobreposição é útil para navegação ao ar livre, permitindo que você 
 | | |
 |------------|------------|
 | Habilitar | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
-|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
+| | **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
 
 
@@ -170,7 +170,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>
 
 </Tabs>
 
-Para aumentar o raio visível ao redor de sua localização, você pode alterar a posição da Régua de Raio selecionando a opção *Centro* ou *Inferior*.
+Para aumentar o raio visível em torno de sua localização, você pode alterar a posição da Régua de Raio selecionando a opção *Centro* ou *Inferior*.
 
 Para mais informações sobre *a posição na tela*, consulte o artigo [Configurar Tela](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -195,8 +195,8 @@ Para mais informações sobre *a posição na tela*, consulte o artigo [Configur
 
 Você pode mudar para a **visualização 3D** para visualizar melhor as distâncias e o terreno circundante ao usar a Régua de Raio. Essa visualização inclina o mapa e fornece um efeito de perspectiva que expande o raio visível.
 
-- Toque [no botão de localização](../map/interact-with-map.md#my-location-and-zoom) para focar em sua posição.
-- Use um gesto de [deslizar com dois dedos para cima](../map/interact-with-map.md#gestures) para inclinar o mapa para o modo 3D.
+- Toque no [botão de localização](../map/interact-with-map.md#my-location-and-zoom) para focar em sua posição.
+- Use um gesto de [deslizar para cima com dois dedos](../map/interact-with-map.md#gestures) para inclinar o mapa para o modo 3D.
 
 Os círculos de raio aparecerão com profundidade, o que é particularmente útil para planejar rotas em áreas montanhosas ou ambientes urbanos onde o contexto vertical é importante.
 
@@ -210,15 +210,15 @@ A ferramenta **Distância por Toque** permite medir distâncias entre pontos no 
 Existem dois casos de uso:
 
 - **Distância da sua localização até um ponto**
-  Toque em qualquer lugar do mapa e uma linha reta aparecerá da sua localização atual até o ponto tocado, junto com um rótulo de distância. A linha permanece na tela mesmo se você tocar em outro lugar.
+  Toque em qualquer lugar no mapa e uma linha reta aparecerá da sua localização atual até o ponto tocado, juntamente com um rótulo de distância. A linha permanece na tela mesmo se você tocar em outro lugar.
 
-- **Distância entre dois pontos quaisquer**
-  Toque em dois pontos no mapa simultaneamente (multitoque). Uma linha conecta os dois pontos, e a distância medida é exibida.
+- **Distância entre quaisquer dois pontos**
+  Toque em dois pontos no mapa simultaneamente (multi-toque). Uma linha conecta os dois pontos, e a distância medida é exibida.
 
 | | |
 |------------|------------|
-| Habilitar |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
-|   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
+| Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Tamanho do texto (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Formato das unidades | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
@@ -247,10 +247,10 @@ Assista a estes tutoriais curtos para aprender como usar a Régua de Raio e ferr
 ## Artigos Relacionados {#related-articles}
 
 - [Configurar Tela](./configure-screen.md)
-- [Botões do Mapa](./map-buttons.md)
-- [Widgets Informacionais](./info-widgets.md)
-- [Widgets de Navegação](./nav-widgets.md)
+- [Botões do mapa](./map-buttons.md)
+- [Widgets informativos](./info-widgets.md)
+- [Widgets de navegação](./nav-widgets.md)
 - [Ação Rápida](./quick-action.md)
-- [Widgets de Marcadores](./markers.md)
+- [Widgets de marcador](./markers.md)
 
-> *Última atualização: Maio de 2025*
+> *Última atualização: maio de 2025*

@@ -1,5 +1,6 @@
 import {
     AppBar,
+    Box,
     ClickAwayListener,
     IconButton,
     ListItemIcon,
@@ -20,22 +21,16 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_action_map_language.svg';
 import { ReactComponent as ChangesIcon } from '../../assets/icons/ic_action_history.svg';
 import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { format } from 'date-fns';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
-import * as locales from 'date-fns/locale';
-
-export function getLocalizedTimeUpdate(time, ctx) {
-    const currentDate = new Date(time);
-    return format(currentDate, 'MMM d', { locale: ctx.dateLocale });
-}
+import gStyles from '../gstylesmenu.module.css';
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
@@ -77,8 +72,6 @@ export default function SettingsMenu() {
             }
 
             localStorage.setItem('i18nextLng', lng);
-            const locale = locales[lng] || locales.enUS;
-            ctx.setDateLocale(locale);
             setCurrentLang(t(`lang_${lng}`));
         }
 
@@ -140,7 +133,7 @@ export default function SettingsMenu() {
     }, [i18n, ctx, currentLang, t]);
 
     return (
-        <>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
@@ -151,77 +144,79 @@ export default function SettingsMenu() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <SubTitleMenu text={t('general_settings_2')} />
-            <MenuItem className={styles.item} onClick={selectLanguage}>
-                <ListItemIcon className={styles.icon}>
-                    <DisplayLanguageIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                        }}
-                    >
-                        <Typography variant="inherit" noWrap>
-                            {t('preferred_locale')}
-                        </Typography>
-                        <Typography ref={anchorEl} variant="body2" className={styles.lang} noWrap>
-                            {currentLang}
-                        </Typography>
-                    </div>
-                </ListItemText>
-            </MenuItem>
-            <DividerWithMargin margin={'64px'} />
-            <UnitsMenu />
-            <SimpleDivider />
-            {ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT && (
-                <>
-                    <SubTitleMenu text={t('osmand_cloud')} />
-                    <MenuItem
-                        id={'se-cloud_changes'}
-                        className={styles.item}
-                        onClick={() => openCloudSettingsMenu({ changes: true })}
-                    >
-                        <ListItemIcon className={styles.icon}>
-                            <ChangesIcon />
-                        </ListItemIcon>
-                        <ListItemText>
+            <Box className={gStyles.scrollActiveBlock}>
+                <SubTitleMenu text={t('general_settings_2')} />
+                <MenuItem className={styles.item} onClick={selectLanguage}>
+                    <ListItemIcon className={styles.icon}>
+                        <DisplayLanguageIcon />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                            }}
+                        >
                             <Typography variant="inherit" noWrap>
-                                {t('shared_string_changes')}
+                                {t('preferred_locale')}
                             </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <DividerWithMargin margin={'64px'} />
-                    <MenuItem
-                        id={'se-cloud_trash'}
-                        divider
-                        className={styles.item}
-                        onClick={() => openCloudSettingsMenu({ trash: true })}
-                    >
-                        <ListItemIcon className={styles.icon}>
-                            <TrashIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" noWrap>
-                                {t('shared_string_trash')}
+                            <Typography ref={anchorEl} variant="body2" className={styles.lang} noWrap>
+                                {currentLang}
                             </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                </>
-            )}
-            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ltx.loginUser && (
-                <>
-                    <Typography component="div" sx={{ ml: 2 }}>
-                        Explore Wikimedia Images
-                        <Switch
-                            checked={ctx.searchSettings.useWikiImages ?? false}
-                            onChange={(event) => ctx.setSearchSettings({ useWikiImages: event.target.checked })}
-                        />
-                    </Typography>
-                </>
-            )}
+                        </div>
+                    </ListItemText>
+                </MenuItem>
+                <DividerWithMargin margin={'64px'} />
+                <UnitsMenu />
+                <SimpleDivider />
+                {ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT && (
+                    <>
+                        <SubTitleMenu text={t('osmand_cloud')} />
+                        <MenuItem
+                            id={'se-cloud_changes'}
+                            className={styles.item}
+                            onClick={() => openCloudSettingsMenu({ changes: true })}
+                        >
+                            <ListItemIcon className={styles.icon}>
+                                <ChangesIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" noWrap>
+                                    {t('shared_string_changes')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                        <DividerWithMargin margin={'64px'} />
+                        <MenuItem
+                            id={'se-cloud_trash'}
+                            divider
+                            className={styles.item}
+                            onClick={() => openCloudSettingsMenu({ trash: true })}
+                        >
+                            <ListItemIcon className={styles.icon}>
+                                <TrashIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" noWrap>
+                                    {t('shared_string_trash')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    </>
+                )}
+                {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ltx.loginUser && (
+                    <>
+                        <Typography component="div" sx={{ ml: 2 }}>
+                            Explore Wikimedia Images
+                            <Switch
+                                checked={ctx.searchSettings.useWikiImages ?? false}
+                                onChange={(event) => ctx.setSearchSettings({ useWikiImages: event.target.checked })}
+                            />
+                        </Typography>
+                    </>
+                )}
+            </Box>
             <Popover
                 anchorOrigin={{
                     vertical: 'top',
@@ -245,6 +240,6 @@ export default function SettingsMenu() {
                     <div>{languageList}</div>
                 </ClickAwayListener>
             </Popover>
-        </>
+        </Box>
     );
 }

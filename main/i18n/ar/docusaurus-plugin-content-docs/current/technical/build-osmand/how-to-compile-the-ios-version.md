@@ -6,53 +6,53 @@ sidebar_position: 6
 # كيفية تجميع إصدار iOS {#how-to-compile-the-ios-version}
 
 1. أولاً، قم بإعداد **[بيئة التطوير](setup-the-dev-environment.md)**.
-2. قم بتثبيت Xcode من AppStore (آخر إصدار تم اختباره 14.2)
+2. قم بتثبيت Xcode من AppStore (آخر اختبار 14.2)
 3. قم بتثبيت أدوات سطر الأوامر لـ Xcode
   ```
   $ xcode-select --install
   ```
-  أو في حالة وجود أخطاء، حاول تنزيله وتثبيته من: [موقع Apple](https://developer.apple.com/download/all/?q=xcode>).
+  أو في حالة وجود أخطاء، حاول تنزيلها وتثبيتها من: [موقع Apple](https://developer.apple.com/download/all/?q=xcode>).
 
 4. تسجيل الدخول إلى حساب Xcode (اختياري)
   في حال لم يكن لديك حساب مطور Apple. افتح Xcode وانتقل إلى التفضيلات (عبر القائمة العلوية)
   ```
   Preferences -> Accounts
   ```
-  اضغط على الزر `+`. يمكنك تسجيل الدخول باستخدام AppleID الخاص بك (اسم المستخدم وكلمة المرور من أجهزة iOS/macOS الخاصة بك). اتبع تعليمات Xcode.
-  لأعضاء فريق OsmAnd: أرسل اسم مستخدم AppleID الخاص بك، حتى يتم إضافتك إلى قائمة المطورين. عندما تتلقى رسالة بريد إلكتروني مع دعوة، قم بتنشيطها.
+  اضغط على زر `+`. يمكنك تسجيل الدخول باستخدام AppleID الخاص بك (اسم المستخدم وكلمة المرور من أجهزة iOS/macOS الخاصة بك). اتبع تعليمات Xcode.
+  لأعضاء فريق OsmAnd: أرسل اسم المستخدم الخاص بـ AppleID الخاص بك، حتى يتم إضافتك إلى قائمة المطورين. عندما تتلقى بريدًا إلكترونيًا يحتوي على رسالة دعوة، قم بتنشيطها.
   أغلق Xcode.
 
-5. تثبيت أدوات سطر الأوامر - cmake، svn، cocoapods
+5. قم بتثبيت أدوات سطر الأوامر - cmake، svn، cocoapods
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  # لمعالجات Intel
+  # لمعالجات intel
   $ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/usr/local/bin/brew shellenv)"
 
-  # لمعالجات M1
+  # لمعالجات m1
   $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
   $ brew install svn
-  $ brew install cmake # تم اختباره على 3.25.2, 3.19, 3.11
+  $ brew install cmake # تم اختباره على 3.25.2، 3.19، 3.11
 
-  # لمعالجات Intel
+  # لمعالجات intel
   $ sudo gem install cocoapods
 
-  # لمعالجات M1
+  # لمعالجات m1
   $ brew install cocoapods
   ```
-6. تنزيل وتثبيت Java jdk 17
+6. قم بتنزيل وتثبيت Java jdk 17
   ```
-  # لمعالجات Intel
+  # لمعالجات intel
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
 
-  # لمعالجات M1
+  # لمعالجات m1
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
   ```
 
-7. إنشاء ملف نصي جديد. أو تحديثه إذا كان موجودًا.
+7. أنشئ ملف نصي جديد. أو قم بتحديثه إذا كان موجودًا.
   ```
   $ mkdir ~/.gradle
   $ nano ~/.gradle/gradle.properties
@@ -66,8 +66,8 @@ sidebar_position: 6
 # لمزيد من التفاصيل حول كيفية تهيئة بيئة البناء الخاصة بك، قم بزيارة {#for-more-details-on-how-to-configure-your-build-environment-visit}
 # http://www.gradle.org/docs/current/userguide/build_environment.html {#httpwwwgradleorgdocscurrentuserguidebuildenvironmenthtml}
 #
-# يحدد وسيطات JVM المستخدمة لعملية daemon. {#specifies-the-jvm-arguments-used-for-the-daemon-process}
-# الإعداد مفيد بشكل خاص لتعديل إعدادات الذاكرة. {#the-setting-is-particularly-useful-for-tweaking-memory-settings}
+# يحدد وسائط JVM المستخدمة لعملية daemon. {#specifies-the-jvm-arguments-used-for-the-daemon-process}
+# هذا الإعداد مفيد بشكل خاص لتعديل إعدادات الذاكرة. {#the-setting-is-particularly-useful-for-tweaking-memory-settings}
 # القيمة الافتراضية: -Xmx10248m -XX:MaxMetaspaceSize=256m {#default-value--xmx10248m--xxmaxmetaspacesize256m}
 # org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 {#orggradlejvmargs-xmx2048m--xxmaxmetaspacesize512m--xxheapdumponoutofmemoryerror--dfileencodingutf-8}
 
@@ -76,7 +76,7 @@ org.gradle.daemon=true
 org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
 #
-# عند التهيئة، سيعمل Gradle في وضع متوازي تجريبي. {#when-configured-gradle-will-run-in-incubating-parallel-mode}
+# عند التهيئة، سيعمل Gradle في وضع التزايد المتوازي. {#when-configured-gradle-will-run-in-incubating-parallel-mode}
 # يجب استخدام هذا الخيار فقط مع المشاريع المفككة. لمزيد من التفاصيل، قم بزيارة {#this-option-should-only-be-used-with-decoupled-projects-more-details-visit}
 # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects {#httpwwwgradleorgdocscurrentuserguidemultiprojectbuildshtmlsecdecoupledprojects}
 
@@ -94,21 +94,21 @@ org.gradle.caching=true
   ```
 
   خطأ: `Xcode not set up properly. You may need to confirm the license...`.
-  الحل: قم بتبديل XcodeCommandLineTools إلى تطبيق Xcode، قم بتأكيد الترخيص ثم أعده إلى حالته الأصلية.
+  الحل: قم بتبديل XcodeCommandLineTools إلى تطبيق Xcode، قم بتأكيد الترخيص ثم قم بتبديله مرة أخرى.
   ```
   $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
   $ sudo xcodebuild -license accept
   $ sudo xcode-select --switch /Library/Developer/CommandLineTools
   ```
 
-  الحل 2: تحقق مما إذا كان xcrun متاحًا: ``` /usr/bin/xcrun -find xcrun ```. إذا حصلت على: ``` xcrun: error: unable to find utility "xcrun", not a developer tool or in PATH ```. ثم افتح Xcode > Preferences > Locations وفي حقل "Command Line Tools" اختر أدوات سطر الأوامر الخاصة بك "Xcode XX.X" ثم قم بتشغيل `$ ./prepare.sh` مرة أخرى.
+  الحل 2: تحقق مما إذا كان `xcrun` متاحًا: ``` /usr/bin/xcrun -find xcrun ```. إذا حصلت على: ``` xcrun: error: unable to find utility "xcrun", not a developer tool or in PATH ```. ثم افتح Xcode > Preferences > Locations وفي حقل "Command Line Tools" اختر أدوات سطر الأوامر الخاصة بك "Xcode XX.X" ثم قم بتشغيل `$ ./prepare.sh` مرة أخرى.
 
   الحل 3: خطأ: `CMake Error ... iphoneos is not an iOS SDK`.
   ```
   $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
   ```
 
-  الحل 4: إذا حصلت على خطأ مثل هذا: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required. You are running version 3.11.2 ```. ثم قم بتنزيل مثبت dmg من موقع CMake وقم بتثبيت يدوي. ثم قم بتشغيل `$ ./prepare.sh` مرة أخرى.
+  الحل 4: إذا حصلت على خطأ مثل هذا: ``` CMake Error at CMakeLists.txt:1 (cmake_minimum_required): CMake 3.21.2 or higher is required. You are running version 3.11.2 ```. ثم قم بتنزيل مثبت dmg من موقع CMake على الويب وقم بالتثبيت اليدوي. ثم قم بتشغيل `$ ./prepare.sh` مرة أخرى.
   ```
   https://cmake.org/download/
   ```
@@ -119,7 +119,7 @@ org.gradle.caching=true
 9. افتح `osmand.xcworkspace` في Xcode
 
 10. البناء الأول.
-  قم بتعيين هدف البناء إلى `OsmAnd Maps`. (بالقرب من أزرار التشغيل/الإيقاف). اختر جهازك أو أحد محاكيات iOS كهدف. ولكن لا تستخدم "أي جهاز iOS (arm64)" الافتراضي. قم ببناء المشروع (زر التشغيل).
+  قم بتعيين هدف البناء إلى `OsmAnd Maps`. (بالقرب من أزرار التشغيل/الإيقاف). حدد جهازك كهدف أو أحد محاكيات iOS. ولكن لا تستخدم الافتراضي 'Any iOS Device (arm64)'. قم ببناء المشروع (زر التشغيل).
 
 11. وجهات XCode و Sandbox
 
@@ -137,14 +137,14 @@ org.gradle.caching=true
   - في حالة وجود أخطاء في البناء، يمكنك الضغط في Xcode على: ```Product -> Clean build folder```
   - أغلق Xcode.
   - احذف مجلدات `baked` و `binaries` في دليل `OsmAnd` (إذا كانت موجودة بالفعل).
-  - انتقل إلى المجلد ```core/external/qtbase-ios/``` واحذف جميع المجلدات التي تبدأ بـ ```upstream```.
+  - اذهب إلى المجلد ```core/external/qtbase-ios/``` واحذف جميع المجلدات التي تبدأ بـ ```upstream```.
   - احذف مجلد Xcode DerivedData: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
   - تأكد من أن جميع المستودعات محدثة وعلى الفروع الصحيحة.
   - أعد تشغيل جهاز الكمبيوتر الخاص بك. (نعم، يمكن أن يساعد ذلك).
   - ثم قم بتشغيل `$ ./prepare.sh`
   - افتح XCode وحاول بناء المشروع مرة أخرى.
 
-### جهاز Mac بمعالج M1 {#m1-mac}
+### جهاز Mac M1 {#m1-mac}
   - في حالة ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (في قائمة Project/Targets) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - أضف حقل سلسلة من نوع ```Any IOS Simulator SDK``` بقيمة ```arm64```. (ستحتاج إلى إضافته بعد كل تشغيل لـ prepare.sh)

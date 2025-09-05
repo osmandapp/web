@@ -9,7 +9,7 @@ import AppContext from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
 import PointManager from '../../manager/PointManager';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 export default function DeleteWptDialog({

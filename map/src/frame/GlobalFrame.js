@@ -22,8 +22,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import _, { isEmpty } from 'lodash';
-import TracksManager, { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import isEmpty from 'lodash-es/isEmpty';
+import { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
@@ -269,7 +269,7 @@ const GlobalFrame = () => {
     }, [ctx.openVisibleMenu]);
     // create track groups
     useEffect(() => {
-        if (!_.isEmpty(ctx.listFiles)) {
+        if (!isEmpty(ctx.listFiles)) {
             const files = getGpxFiles(ctx.listFiles);
             const trackGroups = createTrackGroups({ files, ctx });
             ctx.setTracksGroups(trackGroups);

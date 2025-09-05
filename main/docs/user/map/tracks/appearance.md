@@ -42,7 +42,7 @@ You can modify track appearance using one of the following methods:
 
 - **From My Places**. Open *Menu → My Places → Tracks*, select a track, tap the *Appearance icon* in the [track context menu](../../map/tracks/track-context-menu.md#overview).
 - **From the map**. Tap a track directly on the map, then tap the *Appearance icon* in the *Overview section*.
-- **From track recording**. Modify the appearance of the currently recorded track via the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
+- **From track recording**. Modify the appearance of the currently recorded track via the [track recording context menu](../../plugins/trip-recording.md#current-track-recording).  
 - **From the Configure Map menu**. Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the displayed tracks.
 
 
@@ -294,4 +294,4 @@ To specify a color for a track, use the following format:
 - [Tracks Context menu](../tracks/track-context-menu.md)
 - [Trip Recording](../../plugins/trip-recording.md)
 
-> *Last updated: February 2025*
+

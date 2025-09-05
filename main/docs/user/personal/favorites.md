@@ -345,7 +345,7 @@ The [Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a speci
 - **Transfer favorite points**. Import your favorite points to a new device with *Free Favorites Backup* feature if you use OsmAnd across multiple devices.  
 
 
-#### How to Create a Backup {#how-to-create-a-backup}
+### How to Create a Backup {#how-to-create-a-backup}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -493,4 +493,4 @@ All information about a Favourite is stored and described using tags. When creat
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: April 2025*
+

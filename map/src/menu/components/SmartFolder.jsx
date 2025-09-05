@@ -48,7 +48,11 @@ export default function SmartFolder({ type, subtype, files }) {
     }, [openActions]);
 
     function openFiles() {
-        ctx.setOpenGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
+        if (subtype === 'favorite') {
+            ctx.setOpenFavGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
+        } else if (subtype === 'track') {
+            ctx.setOpenGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
+        }
     }
 
     return (

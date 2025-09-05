@@ -191,8 +191,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         let isUser = false;
         let loc = null;
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            isUser = true;
-            loc = currentLoc;
+            if (ctx.visibleBounds?.contains(currentLoc)) {
+                isUser = true;
+                loc = currentLoc;
+            } else {
+                loc = getCenterMapLoc(hash);
+            }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             loc = getCenterMapLoc(hash);
@@ -203,7 +207,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         // hide explore layers
-        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
     }, []);
 
     useEffect(() => {
@@ -227,8 +231,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     function backToMainSearch() {
         setOpenSearchResults(false);
         setIsMainSearchScreen(true);
+        ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchQuery(null);
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
     }
 
     function resulNotPrepared() {

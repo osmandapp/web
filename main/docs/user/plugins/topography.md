@@ -54,7 +54,7 @@ The Topography plugin provides access to the following map types:
 
 </Tabs>
 
-#### License for DEM data used by OsmAnd for terrain detection {#license-for-dem-data-used-by-osmand-for-terrain-detection}
+### License for DEM data used by OsmAnd for terrain detection {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
 For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
@@ -460,4 +460,4 @@ OsmAnd allows you to combine multiple types of map layers for a more visual disp
     - Ensure the **3D Mode** button is disabled in the **Menu → Configure Screen → Buttons → Default Buttons**.  
     - Check if any Terrain features are enabled in **Menu → Configure Map → Topography** that may trigger a 3D effect.
 
-> *Last updated: January 2025*
+

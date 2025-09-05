@@ -24,7 +24,7 @@ import Translate from '@site/src/components/Translate.js';
 
 - Always ensure you're using the same OsmAnd Cloud account across all devices to access your purchases.
 
-- For more details, see: [Android purchases](../purchases/android.md), [iOS purchases](../purchases/ios.md), and [OsmAnd Map Portal](https://www.osmand.net/map).
+- For more details, see: [Android purchases](../purchases/android.md), [iOS purchases](../purchases/ios.md), [Cross platfrom purchases](../purchases/cross.md) and [OsmAnd Map Portal](../purchases/web.md).
 
 
 ### How to link your purchase to OsmAnd Cloud account {#how-to-link-your-purchase-to-osmand-cloud-account}
@@ -45,8 +45,19 @@ import Translate from '@site/src/components/Translate.js';
     - Tap **Restore purchases** to synchronize the purchase with your account.
 
 
-> For more information, read [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform) article.
+> For more information, read [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform), [Cross platfrom purchases](../purchases/cross.md) articles.
 
+
+### Purchase Association with Multiple OsmAnd Cloud Accounts {#purchase-association-with-multiple-osmand-cloud-accounts}
+
+
+A cross-platform purchase, such as _Maps+_ and _Pro_, is linked to the OsmAnd Cloud account that was last activated on the device holding the original purchase receipt (from the App Store or Google Play). If a user on this device logs out of their primary account (`OsmAnd Cloud account A`) and logs into a new one (`OsmAnd Cloud account B`), the OsmAnd system automatically transfers the license to the new `OsmAnd Cloud account B`. As a result, your original OsmAnd Cloud account loses its purchases status on other platforms, as the license can only be active on one OsmAnd Cloud account at a time.
+
+Technically, this works as follows: the purchase itself belongs to your Apple ID or Google Account, not to an OsmAnd account. The OsmAnd app on the device with the purchase simply informs our server which OsmAnd Cloud account is currently active. The server, in turn, grants cross-platform access to that account. Therefore, the last account to log in on the "main" device always becomes the holder of the license.
+
+To restore the purchase to the correct account (`OsmAnd Cloud account A`), you must perform the reverse action. On the same device where the purchase was made, you need to log out of the incorrect `OsmAnd Cloud account B` and log back into `OsmAnd Cloud account A`. This process will force the system to re-verify the purchase receipt and re-link the license to the correct `OsmAnd Cloud account A`, restoring its cross-platform status.
+
+> For more information, read [Cross platfrom purchases](../purchases/cross.md) articles.
 
 ## How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
 

@@ -235,53 +235,18 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 </Tabs>
 
 
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation.
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. You can select ***Zoom level settings:*** to display between 2 - 22, ***Labels position*** - **Edges**/**Center** and ***Grid color*** separately for Day/Night mode.
 
-***1. Available coordinate formats:***
 
-- **DD°MM′SS″** (Degrees, Minutes, Seconds)
-- **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
-- **DD°MM.MMM′** (Degrees, Decimal Minutes)
+***Available coordinate formats:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
 - **MGRS** (Military Grid Reference System)
-- **UTM** (Universal Transverse Mercator - zone-based grid system)
 
-:::note
-
-1. *UTM grid limitations:*
-    - The minimum zoom level for displaying the UTM grid is 9.  
-    - Only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
-
-2. *WGS84 grid supports three different modes:* decimal degrees, degrees+minutes, and degrees+minutes+seconds.
-
-:::
-
-***Supported coordinate systems:***  
-
-OsmAnd supports multiple **base projections** for displaying geographic grid lines:  
-
-| **Projection**  | **EPSG Code** | **Description** |
-|----------------|-------------|----------------|
-| **WGS84**      | EPSG:4326   | Default latitude/longitude reference system, used globally. |
-| **Mercator**   | EPSG:3857   | Used for web-based mapping (Google Maps, OpenStreetMap, etc.). |
-| **UTM**        | EPSG:6387   | Divides the world into **60 zones** for accurate local positioning. |
-| **MGRS**       | -           | Military Grid Reference System (extension of UTM). |
-
-
-
-***2. Zoom level settings:***
-
-- The grid lines appear based on the zoom level, between **2 – 22**.
-- The lines dynamically adjust coordinate divisions based on the zoom level.
-
-**By default, the app uses the coordinate format selected in** [General settings](../personal/profiles.md#units--formats).
-
-
-***3. Labels position:***
-- Edges
-- Center
-
-***4. Grid color:***
-- Choose your grid color for Day/Night mode.
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats).
 
 ## Configure Map Style {#configure-map-style}
 
@@ -577,27 +542,40 @@ If the names on the map are not translated into the required language by the OSM
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
+- **Local names**  
+    ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
+
+- **Preferred language** (ukrainian)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
+
+- **Use latin name if missing**  
+    ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-</TabItem>
-
-</Tabs>  
-
 - **Local names**  
     ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
 
-- **Ukrainian names**  
-    ![Map language ukranian](@site/static/img/map/map-language-urkanian_2.png)
+- **Preferred language** (ukrainian)
+    ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Show local names**  
+- **Show local names**  (adds 2nd label if local name is different)
     ![Map language local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Transliterate names**  
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
+
+</TabItem>
+
+</Tabs>  
+
 
 
 ## Custom Map Style {#custom-map-style}
@@ -614,4 +592,4 @@ If you have a personal or third-party custom map style created according to the 
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *Last updated: March 2025*
+

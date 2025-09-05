@@ -287,8 +287,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - *Show an interim dialog*. Displays a dialog with a list of profiles. <br /> - *Do not show an interim dialog*. The profiles change in a defined order. <br /> - *Note*. You can customize a single action that allows you to switch between multiple profiles, or create several separate actions, each for a specific profile. |
 | Change <br/> [**App profile to next**](../personal/profiles.md) | Switches to the next profile in the list. |
 | Change <br/> [**App profile to previous**](../personal/profiles.md) | Switches to the previous profile in the list. |
-| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *Android only*  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
-| Change <br/> [**Location position on screen**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS only*  | Allows you to enable or disable the display of the previously selected My Location cursor position on the map. |
+| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Location position on screen**)  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
 
 
 ## Use Keyboard for Actions {#use-keyboard-for-actions}
@@ -311,4 +310,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *Last updated: April 2025*
+

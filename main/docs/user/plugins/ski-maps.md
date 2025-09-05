@@ -275,4 +275,4 @@ Both options are in the [Configure map](../map/configure-map-menu.md) menu.
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: December 2024*
+

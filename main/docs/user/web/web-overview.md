@@ -83,4 +83,3 @@ To change the language of the interface:
 ![Web Language](@site/static/img/web/web_language.png)
 
 
-> *Last updated: July 2024*

@@ -506,7 +506,7 @@ To add External Sensors widgets to the map screen, enable the OsmAnd [External S
 
 </Tabs>
 
-Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**. *On iOS*, you can also select the **battery level** of connected BLE sensors to be displayed directly in the widget.  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**. You can also select the **battery level** of connected BLE sensors to be displayed directly in the widget.  
 
 - To add widget — [enable](../plugins/index.md#enable--disable) OsmAnd External Sensors plugin.
 
@@ -532,13 +532,28 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 
 ### Vehicle Metrics Widgets {#vehicle-metrics-widgets}
 
-<InfoAndroidOnly />
 
 :::note
 To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [Vehicle Metrics plugin](../plugins/vehicle-metrics.md).
 :::
 
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*13 metrics*): **Intake Temperature**,&nbsp; **Ambient Temperature**,&nbsp; **Coolant Temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Speed** (*free*),&nbsp; **Engine Runtime**,&nbsp; **Calculated Engine Load**,&nbsp; **Fuel Pressure**,&nbsp; **Fuel Consumption**,&nbsp; **Remaining Fuel**,&nbsp; **Battery Level**,&nbsp; **Vehicle Speed** (*free*), and **Throttle Position**.  
 
@@ -550,6 +565,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget →  <Translate android="true" ids="obd_widget_group"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate ios="true" ids="obd_plugin_name"/>* |
 | By tapping | No changes |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -779,5 +795,5 @@ The **Available RAM** widget is a tool for monitoring your device's memory usage
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: April 2025*
+
 

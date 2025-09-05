@@ -391,6 +391,6 @@ When calculating a route for navigation in *Plan a route*, you can find out addi
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Trip recording](../plugins/trip-recording.md)
 
-> *Last updated: May 2025*
+
 
 

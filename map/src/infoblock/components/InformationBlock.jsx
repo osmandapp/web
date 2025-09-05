@@ -10,7 +10,7 @@ import AppContext, {
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import {
     FAVORITES_URL,
@@ -25,7 +25,6 @@ import {
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
-import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
@@ -69,7 +68,6 @@ export default function InformationBlock({
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
-    const [openWeatherForecastDetails, setOpenWeatherForecastDetails] = useState(false);
     const [openWptDetails, setOpenWptDetails] = useState(false);
     const [openWptTab, setOpenWptTab] = useState(false);
     const [openShareFileMenu, setOpenShareFileMenu] = useState(false);
@@ -90,7 +88,7 @@ export default function InformationBlock({
     }, []);
     useEffect(() => {
         window.removeEventListener('keydown', escapePointMenu);
-        if (!_.isEmpty(ctx.pointContextMenu)) {
+        if (!isEmpty(ctx.pointContextMenu)) {
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
@@ -152,9 +150,14 @@ export default function InformationBlock({
     // update URL for info track menu
     useEffect(() => {
         if (trackName && !ctx.shareFile) {
-            navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)), {
-                replace: true,
-            });
+            navigate(
+                {
+                    pathname:
+                        MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)),
+                    hash: window.location.hash,
+                },
+                { replace: true }
+            );
         }
     }, [trackName]);
 
@@ -170,14 +173,8 @@ export default function InformationBlock({
         isLocalTrack(ctx) && ctx.setUpdateInfoBlock(true);
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
-    function isValidWeatherObj() {
-        const isWeatherValid = ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherDate;
-        setOpenWeatherForecastDetails(isWeatherValid);
-        return isWeatherValid;
-    }
-
     useEffect(() => {
-        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
+        if ((!ctx.selectedGpxFile || isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowInfoBlock(false);
@@ -189,9 +186,7 @@ export default function InformationBlock({
                 let tObj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
-                if (isValidWeatherObj()) {
-                    setShowInfoBlock(true);
-                } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
+                if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
                 } else if (ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem) {
                     // finally assume that default selectedGpxFile is a track
@@ -298,7 +293,7 @@ export default function InformationBlock({
     }
 
     function hasOldTabs() {
-        return !openWeatherForecastDetails && !openWptDetails && !openShareFileMenu;
+        return !openWptDetails && !openShareFileMenu;
     }
 
     function isOpenMainFavShareFile() {
@@ -310,7 +305,6 @@ export default function InformationBlock({
         <>
             {showInfoBlock && (
                 <>
-                    {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
                     {openWptDetails &&
                         (ctx.photoGallery ? (
                             <WptPhotoList photos={ctx.photoGallery} />
@@ -328,7 +322,7 @@ export default function InformationBlock({
                     )}
                     {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
-                        <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
+                        <Box anchor={'right'} sx={{ height: 'auto', overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton
@@ -351,7 +345,11 @@ export default function InformationBlock({
                                             // back to prev url
                                             setTrackName(null);
                                             setSavePrevState(true);
-                                            navigate(MAIN_URL_WITH_SLASH + trackType);
+                                            ctx.setSelectedCloudTrackObj(null);
+                                            navigate({
+                                                pathname: MAIN_URL_WITH_SLASH + trackType,
+                                                hash: window.location.hash,
+                                            });
                                         }
                                     }}
                                 >

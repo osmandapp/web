@@ -12,7 +12,8 @@ import AppContext, {
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager, { downloadGpx, isEmptyTrack } from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
@@ -33,7 +34,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
     const isUndoDisabled =
-        !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
+        !isUndoPossible || (pastStates.length === 1 && isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
     const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
     const isProfileProgress = ctx.processRouting;
 
@@ -57,7 +58,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     useEffect(() => {
         if (!useSavedState) {
             if (ctx.trackState.update) {
-                setState(_.cloneDeep(ctx.selectedGpxFile));
+                setState(cloneDeep(ctx.selectedGpxFile));
                 ctx.trackState.update = false;
                 ctx.setTrackState({ ...ctx.trackState });
             }

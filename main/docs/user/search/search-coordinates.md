@@ -152,4 +152,4 @@ https://github.com/osmandapp/OsmAnd/issues/14081
 - [Search POI](./search-poi.md)
 
 
-> *Last updated: July 2024*
+

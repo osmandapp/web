@@ -63,7 +63,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 By default, *Tuck profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It considers additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (check table below). All other routing settings are identical to [car routing](#route-parameters---car).  
+Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It considers additional factors such as vehicle [height, weight, and width restrictions](../guidance/vehicle-parameters.md#size-parameters) and the possibility to transport hazardous materials (check table below). All other routing settings are identical to [car routing](#route-parameters---car).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -99,17 +99,3 @@ By default, *Motorcycle profile* is deactivated. To use this profile for routing
 
 Motorcycle routing is the process of creating a route specifically optimized for motorcycle travel. This type of routing takes into account the unique needs and preferences of motorcyclists, providing the best possible riding conditions. Routes are laid out taking into account a number of parameters such as choice of road surface ( for example, poor road conditions can be preferred or avoided), avoidance of traffic jams, accessibility of infrastructure or safety.
 
-
-## Other Routing Settings {#other-routing-settings}
-
-- The routing algorithm can also consider temporary limitations specified in OpenStreetMap. This can be done using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
-
-- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
-
-- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
-
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
-
-> *Last updated: Jule 2024*

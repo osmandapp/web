@@ -19,7 +19,7 @@ import { ReactComponent as AllTracksIcon } from '../../assets/icons/ic_action_gr
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ALL_GROUP_MARKER } from './TrackAnalyzerMenu';
 import { useTranslation } from 'react-i18next';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 const DEFAULT_GROUP_MARKER = '_default_';
 

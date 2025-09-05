@@ -340,4 +340,4 @@ All of these point types can be saved in GPX format to provide you with location
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 
-> *Last updated: June 2025*
+

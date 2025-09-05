@@ -337,13 +337,13 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 <TabItem value="android" label="Android">  
 
-![Widget dublicate](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget dublicate](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_ios.png)
 
 </TabItem>
 
@@ -351,32 +351,26 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 The **widget context menu** provides a quick way to manage and configure widgets directly from the map screen. You can access it by ***long tapping*** any widget to customize the layout of widgets without leaving the map.
 
-**For Top and Bottom panels**  
 
-- *Add widget to the Right/Left:*
-
+- **Add widget to the Right/Left** (only for *Top and Bottom panels*)
     - Select a position for the new widget relative to the current one.
     - Choose the widget from the [Available widgets](#widgets-for-all-panels) list.
 
-**For Left and Right panels**  
-
-- *Add widget Above/Below:*
-
+- **Add widget Above/Below** (only for *Left and Right panels*)
     - Select whether to position the new widget above or below the current widget.
     - Tap the required widget in the list to add it to the specified position.
 
-**General actions for all panels**  
-
-- *Settings*.
+- **Settings**
     - Access the widget’s settings (if available) to customize its appearance or behavior.
 
-- *Reset average speed*.
+- **Delete**
+    - Remove the widget from the panel.
+    - A confirmation prompt ensures the action is intentional.
+
+- **Reset average speed** (example of *Widget specific actions*)
     - Available for the [Average Speed](../widgets/info-widgets.md#average-speed) widget.
     - Long tap to instantly reset the speed value during a trip.
 
-- *Delete*.
-    - Remove the widget from the panel.
-    - A confirmation prompt ensures the action is intentional.
 
 ### Copies of Widgets {#copies-of-widgets}
 
@@ -641,4 +635,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *Last updated: July 2025*
+

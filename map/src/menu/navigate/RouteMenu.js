@@ -28,6 +28,9 @@ import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import i18n from 'i18next';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -67,6 +70,8 @@ export function formatLatLon(pnt) {
 
 export default function RouteMenu() {
     const ctx = useContext(AppContext);
+
+    const [, height] = useWindowSize();
 
     const routeObject = ctx.routeObject;
 
@@ -131,18 +136,23 @@ export default function RouteMenu() {
         if ((startPoint || finishPoint) && !open) {
             setOpen(true);
         }
+        if (startPoint && typeof startPoint == 'object') {
+            setStart(formatLatLon(startPoint));
+        }
+        if (finishPoint && typeof finishPoint == 'object') {
+            setFinish(formatLatLon(finishPoint));
+        }
     }, [startPoint, finishPoint]);
 
     function handleCoord(e, setPoint) {
-        let value = e.target.value;
-        let latlon = getCoord(value.replace(/[,%]/g, ''));
+        const latlon = getCoord(e.target.value);
         if (latlon) {
             setPoint(latlon);
         }
     }
 
     function getCoord(value) {
-        let coords = value.trim().split(' ');
+        const coords = value.trim().split(/[, ]+/);
         if (coords.length === 2) {
             let lat = coords[0];
             let lng = coords[1];
@@ -153,18 +163,10 @@ export default function RouteMenu() {
     }
 
     function keyPress(e, setPoint) {
-        if (e.keyCode === 13) {
+        const TAB = 9;
+        const ENTER = 13;
+        if (e.keyCode === TAB || e.keyCode === ENTER) {
             handleCoord(e, setPoint);
-        }
-    }
-
-    function getInputValue(fieldValue, setFieldValue, point) {
-        if (point) {
-            if (typeof point === 'object') {
-                return formatLatLon(point);
-            }
-        } else {
-            return fieldValue;
         }
     }
 
@@ -188,7 +190,7 @@ export default function RouteMenu() {
     }
 
     return (
-        <>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollActiveBlock}>
             <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
@@ -252,7 +254,7 @@ export default function RouteMenu() {
                         variant="filled"
                         label="Start"
                         onKeyDown={(e) => keyPress(e, (point) => routeObject.setOption('route.points.start', point))}
-                        value={getInputValue(start, setStart, startPoint)}
+                        value={start}
                     ></TextField>
                 </FormControl>
                 <IconButton
@@ -317,7 +319,7 @@ export default function RouteMenu() {
                         variant="filled"
                         label="Finish"
                         onKeyDown={(e) => keyPress(e, (point) => routeObject.setOption('route.points.finish', point))}
-                        value={getInputValue(finish, setFinish, finishPoint)}
+                        value={finish}
                     ></TextField>
                 </FormControl>
                 <IconButton
@@ -417,6 +419,6 @@ export default function RouteMenu() {
                 )}
             </ButtonGroup>
             {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
-        </>
+        </Box>
     );
 }

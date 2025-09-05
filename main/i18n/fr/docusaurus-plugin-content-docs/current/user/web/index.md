@@ -1,6 +1,6 @@
 ---
-source-hash: db5393e1ef4b80ecb882bc11e9592a05dc345bb7a77685186a3304ee088544a7
-title: Planificateur d'itinéraire Web
+source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
+title: Visionneuse de carte Web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,13 +20,13 @@ Dans cette section, vous trouverez la description de notre [service de carte Web
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-Cette section explique comment se connecter et s'inscrire sur [www.osmand.net/map](https://osmand.net/map/) et met en évidence les avantages que les utilisateurs reçoivent après leur inscription.
+Cette section explique comment se connecter et s'inscrire sur [www.osmand.net/map](https://osmand.net/map/) et met en évidence les avantages que les utilisateurs reçoivent après l'inscription.
 
 ### [Carte](./web-map.md) {#map}
 
-Cette section détaille les données cartographiques supplémentaires telles que les Favoris, les Tracés personnels et les Couches météo.
+Cette section détaille les données cartographiques supplémentaires telles que les Favoris, les Tracés personnels et les Couches météorologiques.
 
-### [Données utilisateur](./web-userdata.mdx) {#user-data}
+### [Données utilisateur](../web/web-userdata.mdx) {#user-data}
 
 Tracés GPX et Favoris de l'utilisateur sur la carte.
 

@@ -429,7 +429,7 @@ async function getMapCoords(lat, lon) {
     const container = await driver.findElement(By.className('leaflet-container'));
 
     const [px, py] = await driver.executeScript(
-        'const p = window.seleniumTestsMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
+        'const p = window.__leafletMap.latLngToContainerPoint([arguments[0], arguments[1]]);' +
             'return [Math.round(p.x), Math.round(p.y)];',
         lat,
         lon
@@ -501,4 +501,82 @@ export async function leftClickBy(lat, lon, { optional = false } = {}) {
         if (optional) return null;
         throw e;
     }
+}
+
+/**
+ * Lib: getMarker(lat, lon, { optional })
+ *
+ * Find a Leaflet marker by geographic coordinates and return its data (properties or options).
+ *
+ * @param {number} lat             – latitude
+ * @param {number} lon             – longitude
+ * @param {Object} opts
+ * @param {boolean} opts.optional  – if true, returns null instead of throwing when not found
+ */
+export async function getMarker(lat, lon, { optional = false } = {}) {
+    const fn = async () => {
+        await actionIdleWait();
+        const layersInfo = await driver.executeScript(`
+      return Object.values(window.__leafletMap._layers)
+        .filter(layer => typeof layer.getLatLng === 'function')
+        .map(layer => {
+          const info = {};
+          const { lat: la, lng: lo } = layer.getLatLng();
+          info.lat = la;
+          info.lng = lo;
+          const opts = {};
+          for (const [k, v] of Object.entries(layer.options || {})) {
+            if (v == null || ['string','number','boolean'].includes(typeof v)) {
+              opts[k] = v;
+            }
+          }
+          info.options = opts;
+          // icon options
+          if (layer.options.icon && layer.options.icon.options) {
+            const ico = {};
+            for (const [k, v] of Object.entries(layer.options.icon.options)) {
+              if (v == null || ['string','number','boolean'].includes(typeof v)) {
+                ico[k] = v;
+              }
+            }
+            info.iconOptions = ico;
+          }
+          return info;
+        });
+    `);
+
+        const found = layersInfo.find((l) => l.lat === lat && l.lng === lon);
+        // console.log('Found marker:', found);
+        return found;
+    };
+
+    try {
+        return await enclose(fn, { tag: 'getMarker', optional });
+    } catch (e) {
+        if (optional) return null;
+        throw e;
+    }
+}
+
+/**
+ * Zooms the Leaflet map via its built‑in ZoomControl.
+ *
+ * @param {'in'|'out'} direction  – "in" to zoom in, "out" to zoom out.
+ * @returns {Promise<void>}
+ */
+export async function zoomMap(direction) {
+    const zoomButton = direction === 'in' ? By.css('.leaflet-control-zoom-in') : By.css('.leaflet-control-zoom-out');
+    const button = await waitBy(zoomButton, { optional: false, idle: true });
+    await button.click();
+}
+
+/**
+ * Centers the Leaflet map on the given coordinates.
+ *
+ * @param {number} lat - latitude
+ * @param {number} lon - longitude
+ */
+export async function setMapCenter(lat, lon) {
+    await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
+    await actionIdleWait();
 }

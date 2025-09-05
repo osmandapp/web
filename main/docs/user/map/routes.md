@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default, these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
+OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default, these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md). Routes Map Ledend is [here](../map-legend/osmand.md#routes).
 
 
 ## Type of Routes {#type-of-routes}
@@ -74,7 +74,7 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels.  
+The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels ([Map Legend](../map-legend/osmand.md#routes)).  
 
 You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [`dirtbike` tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
@@ -183,6 +183,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 - You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+## Climbing Area and Crag Details {#climbing-area-and-crag-details}
+
+![Climbing details](@site/static/img/map/climbing_andr.png)
+
+When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
 
 
 
@@ -382,4 +388,4 @@ Use filters button (top right corner) to display only the desired routes.
 - [Public transport](./public-transport.md)
 - [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
-> *Last updated: May 2025*
+

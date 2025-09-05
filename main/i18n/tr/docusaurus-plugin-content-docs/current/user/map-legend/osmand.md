@@ -1,5 +1,5 @@
 ---
-source-hash: 980f515f6e093abb64ea0f47a5ba9c91222e89b754fe6c84d7fbb89babff64a4
+source-hash: 3a1c816749e2ed67adb2f7b7687d9981d693027d0b2647c0f82f6be0c7104836
 sidebar_position: 1
 title: OsmAnd Harita Stili
 ---
@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 ## Via ferrata {#via-ferrata}
 <img src={require('@site/static/img/map-legend/osmand-via-ferrata.png').default} alt="OsmAnd Harita stili" />
 
-## Patika zorluğu {#path-difficulty}
+## Yol zorluğu {#path-difficulty}
 <img src={require('@site/static/img/map-legend/osmand-path-difficulty.png').default} alt="OsmAnd Harita stili" />
 
 ## Yüzey düzgünlüğü {#surface-smoothness}
@@ -58,14 +58,14 @@ import TabItem from '@theme/TabItem';
 ## Erişim {#access}
 
 <LegendItem itemsMap={{
-        'Access Private' : 'access/access_PrivateColor',
-        'Access Destination' : 'access/access_DestinationColor',
-        'Access Permissive' : 'access/access_PermissiveColor',
-        'Access Customers' : 'access/access_CustomersColor',
-        'Access Delivery' : 'access/access_DeliveryColor',
-        'Access Agricultural' : 'access/access_AgriculturalColor',
-        'Access Emergency' : 'access/access_EmergencyColor',
-        'Access Toll' : 'access/access_tollColor'
+        'Özel Erişim' : 'access/access_PrivateColor',
+        'Hedef Erişimi' : 'access/access_DestinationColor',
+        'İzinli Erişim' : 'access/access_PermissiveColor',
+        'Müşteri Erişimi' : 'access/access_CustomersColor',
+        'Teslimat Erişimi' : 'access/access_DeliveryColor',
+        'Tarım Erişimi' : 'access/access_AgriculturalColor',
+        'Acil Durum Erişimi' : 'access/access_EmergencyColor',
+        'Ücretli Erişim' : 'access/access_tollColor'
         }}>
 </LegendItem>
 
@@ -76,47 +76,47 @@ import TabItem from '@theme/TabItem';
 ## Binalar, ulaşım {#buildings-transportation}
 
 <LegendItem itemsMap={{
-        'Regular Building' : 'buildigns/building_RegularColor',
-        'Industrianl, garagaes etc.' : 'buildigns/building_IndustrialColor',
-        'Residential' : 'buildigns/building_ResidentialColor',
-        'Hospital, civic, educational' : 'buildigns/building_HospitalColor',
-        'Commercial, retail' : 'buildigns/building_CommercialColor',
-        'Place of worship, historic tower' : 'buildigns/building_churchColor',
-        'Abandoned, damaged, collapsed' : 'buildigns/building_AbandonedColor',
-        'Construction' : 'buildigns/building_ConstructionColor',
-        'Proposed' : 'buildigns/building_ProposedColor',
-        'Military: barraks' : 'buildigns/building_MilitaryColor',
-        'Bunker' : 'buildigns/building_bunker',
-        'Railway station' : 'buildigns/building_railway_station',
-        'Aerialway station' : 'buildigns/building_aerialway_station',
-        'Public transport platform' : 'buildigns/building_public_transport_platform',
-        'Aerodrome' : 'buildigns/building_aerodromeColor',
-        'Aeroway terminal' : 'buildigns/building_aerowayTerminalColor',
+        'Normal Bina' : 'buildigns/building_RegularColor',
+        'Endüstriyel, garajlar vb.' : 'buildigns/building_IndustrialColor',
+        'Konut' : 'buildigns/building_ResidentialColor',
+        'Hastane, sivil, eğitim' : 'buildigns/building_HospitalColor',
+        'Ticari, perakende' : 'buildigns/building_CommercialColor',
+        'İbadethane, tarihi kule' : 'buildigns/building_churchColor',
+        'Terk edilmiş, hasarlı, çökmüş' : 'buildigns/building_AbandonedColor',
+        'İnşaat' : 'buildigns/building_ConstructionColor',
+        'Önerilen' : 'buildigns/building_ProposedColor',
+        'Askeri: kışla' : 'buildigns/building_MilitaryColor',
+        'Sığınak' : 'buildigns/building_bunker',
+        'Tren istasyonu' : 'buildigns/building_railway_station',
+        'Havayolu istasyonu' : 'buildigns/building_aerialway_station',
+        'Toplu taşıma platformu' : 'buildigns/building_public_transport_platform',
+        'Havaalanı' : 'buildigns/building_aerodromeColor',
+        'Havayolu terminali' : 'buildigns/building_aerowayTerminalColor',
         'Apron' : 'buildigns/building_apronColor',
-        'Helipad' : 'buildigns/building_aeroway_helipad',
+        'Helikopter pisti' : 'buildigns/building_aeroway_helipad',
         }}>
 </LegendItem>
 
 ## Spor, eğlence {#sport-leisure}
 
 <LegendItem itemsMap={{
-        'Stadium' : 'sport_leisure/sport_Stadium',
-        'Sports Centre' : 'sport_leisure/sport_sportsCentreColor',
-        'Track (leisure)' : 'sport_leisure/sport_track',
-        'Golf Course' : 'sport_leisure/leisure_golfCourseColor',
+        'Stadyum' : 'sport_leisure/sport_Stadium',
+        'Spor Merkezi' : 'sport_leisure/sport_sportsCentreColor',
+        'Pist (eğlence)' : 'sport_leisure/sport_track',
+        'Golf Sahası' : 'sport_leisure/leisure_golfCourseColor',
         'Park' : 'sport_leisure/leisure_Park',
-        'Recreation ground' : 'sport_leisure/leisure_recreationGroundColor',
-        'Pitch' : 'sport_leisure/leisure_pitchColor',
-        'Horse riding' : 'sport_leisure/leisure_horse_riding',
-        'Playground' : 'sport_leisure/leisure_playgroundColor',
-        'Common (leisure)' : 'sport_leisure/leisure_leisureCommonColor',
-        'Camp site' : 'sport_leisure/leisure_camp_site',
-        'Outdoor seating' : 'sport_leisure/leisure_outdoor_seating',
-        'Caravan site' : 'sport_leisure/leisure_caravan_site',
-        'Picnic site' : 'sport_leisure/leisure_picnic_site',
-        'Rest area' : 'sport_leisure/leisure_rest_area',
-        'Beach resort' : 'sport_leisure/leisure_beach_resort',
-        'Bleachers' : 'sport_leisure/leisure_bleachers',
+        'Rekreasyon alanı' : 'sport_leisure/leisure_recreationGroundColor',
+        'Saha' : 'sport_leisure/leisure_pitchColor',
+        'At biniciliği' : 'sport_leisure/leisure_horse_riding',
+        'Oyun alanı' : 'sport_leisure/leisure_playgroundColor',
+        'Ortak (eğlence)' : 'sport_leisure/leisure_leisureCommonColor',
+        'Kamp alanı' : 'sport_leisure/leisure_camp_site',
+        'Açık hava oturma alanı' : 'sport_leisure/leisure_outdoor_seating',
+        'Karavan alanı' : 'sport_leisure/leisure_caravan_site',
+        'Piknik alanı' : 'sport_leisure/leisure_picnic_site',
+        'Dinlenme alanı' : 'sport_leisure/leisure_rest_area',
+        'Plaj tesisi' : 'sport_leisure/leisure_beach_resort',
+        'Tribünler' : 'sport_leisure/leisure_bleachers',
         }}>
 </LegendItem>
 
@@ -124,81 +124,81 @@ import TabItem from '@theme/TabItem';
 ## Yerleşim alanları {#built-up-areas}
 
 <LegendItem itemsMap={{
-        'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
-        'Monastery' : 'built-up-areas/built-up_Monastery',
-        'Water Park' : 'built-up-areas/built-up_WaterPark',
-        'Theme Park' : 'built-up-areas/built-up_ThemePark',
-        'Zoo' : 'built-up-areas/built-up_Zoo',
-        'Climbing Crag' : 'built-up-areas/built-up_ClimbingCrag',
-        'Landuse Allotments Color' : 'built-up-areas/built-up_landuseAllotmentsColor',
-        'City Wall' : 'built-up-areas/built-up_CityWall',
-        'Fountain' : 'built-up-areas/built-up_Fountain',
-        'Cinema' : 'built-up-areas/built-up_amenityCinema',
-        'Hospital' : 'built-up-areas/built-up_amenityHospital',
-        'Social Facility' : 'built-up-areas/built-up_SocialFacility',
-        'LandFill' : 'built-up-areas/built-up_LandFill',
-        'Spoil heap' : 'built-up-areas/built-up_spoilHeapColor',
-        'Landuse Construction Color' : 'built-up-areas/built-up_landuseConstructionColor',
-        'Prison' : 'built-up-areas/built-up_Prison',
-        'Quarry' : 'built-up-areas/built-up_landuseQuarry',
-        'Military' : 'built-up-areas/built-up_landuseMilitary',
-        'Military Danger Area' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
-        'Power Plant' : 'built-up-areas/built-up_landusePowerPlant',
-        'Power Substation' : 'built-up-areas/built-up_landusePowerSubstation',
+        'İbadethane' : 'built-up-areas/built-up_PlaceOfWorship',
+        'Manastır' : 'built-up-areas/built-up_Monastery',
+        'Su Parkı' : 'built-up-areas/built-up_WaterPark',
+        'Tema Parkı' : 'built-up-areas/built-up_ThemePark',
+        'Hayvanat Bahçesi' : 'built-up-areas/built-up_Zoo',
+        'Tırmanma Kayalığı' : 'built-up-areas/built-up_ClimbingCrag',
+        'Arazi Kullanımı Parselleri Rengi' : 'built-up-areas/built-up_landuseAllotmentsColor',
+        'Şehir Duvarı' : 'built-up-areas/built-up_CityWall',
+        'Çeşme' : 'built-up-areas/built-up_Fountain',
+        'Sinema' : 'built-up-areas/built-up_amenityCinema',
+        'Hastane' : 'built-up-areas/built-up_amenityHospital',
+        'Sosyal Tesis' : 'built-up-areas/built-up_SocialFacility',
+        'Çöp Depolama Alanı' : 'built-up-areas/built-up_LandFill',
+        'Hafriyat Yığını' : 'built-up-areas/built-up_spoilHeapColor',
+        'Arazi Kullanımı İnşaat Rengi' : 'built-up-areas/built-up_landuseConstructionColor',
+        'Cezaevi' : 'built-up-areas/built-up_Prison',
+        'Taş Ocağı' : 'built-up-areas/built-up_landuseQuarry',
+        'Askeri' : 'built-up-areas/built-up_landuseMilitary',
+        'Askeri Tehlike Alanı' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
+        'Enerji Santrali' : 'built-up-areas/built-up_landusePowerPlant',
+        'Elektrik Santrali' : 'built-up-areas/built-up_landusePowerSubstation',
         }}>
 </LegendItem>
 
 ### Arazi kullanımı {#landuse}
 <LegendItem itemsMap={{
-        'Residential' : 'built-up-areas/built-up_Residential',
-        'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
-        'Industrial' : 'built-up-areas/built-up_landuseIndustrialColor',
-        'Garages' : 'built-up-areas/built-up_landuseGaragesColor',
-        'Railway' : 'built-up-areas/built-up_landuseRailway',
-        'Farmyard' : 'built-up-areas/built-up_farmyardColor',
-        'Retail' : 'built-up-areas/built-up_landuseRetailColor',
-        'Commercial' : 'built-up-areas/built-up_landuseCommercialColor',
-        'Abandone place' : 'built-up-areas/built-up_placeAbandoned',
-        'Animal Keeping' : 'built-up-areas/built-up_AnimalKeeping',
+        'Konut' : 'built-up-areas/built-up_Residential',
+        'Konut (Kırsal)' : 'built-up-areas/built-up_ResidentialRural',
+        'Endüstriyel' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Garajlar' : 'built-up-areas/built-up_landuseGaragesColor',
+        'Demiryolu' : 'built-up-areas/built-up_landuseRailway',
+        'Çiftlik Avlusu' : 'built-up-areas/built-up_farmyardColor',
+        'Perakende' : 'built-up-areas/built-up_landuseRetailColor',
+        'Ticari' : 'built-up-areas/built-up_landuseCommercialColor',
+        'Terk edilmiş yer' : 'built-up-areas/built-up_placeAbandoned',
+        'Hayvan Barınağı' : 'built-up-areas/built-up_AnimalKeeping',
         }}>
 </LegendItem>
 
 
-### Park etme {#parking}
+### Otopark {#parking}
 <LegendItem itemsMap={{
-        'Parking' : 'built-up-areas/built-up_Parking',
-        'Parking Permissive access' : 'built-up-areas/built-up_ParkingPermissive',
-        'Parking Access Customers' : 'built-up-areas/built-up_ParkingAccessCustomers',
-        'ParkingPaid' : 'built-up-areas/built-up_ParkingPaid',
-        'ParkingBicycle' : 'built-up-areas/built-up_ParkingBicycle',
+        'Otopark' : 'built-up-areas/built-up_Parking',
+        'Otopark İzinli Erişim' : 'built-up-areas/built-up_ParkingPermissive',
+        'Otopark Müşteri Erişimi' : 'built-up-areas/built-up_ParkingAccessCustomers',
+        'Ücretli Otopark' : 'built-up-areas/built-up_ParkingPaid',
+        'Bisiklet Otoparkı' : 'built-up-areas/built-up_ParkingBicycle',
         }}>
 </LegendItem>
 
 ### Mezarlık {#cemetery}
 <LegendItem itemsMap={{
-        'Cemetery' : 'built-up-areas/built-up_cemeteryColor',
-        'Christian cemetery' : 'built-up-areas/built-up_cemeteryColorСhristian',
-        'Muslim cemetery' : 'built-up-areas/built-up_cemeteryColorMuslim',
-        'Jewish cemetery' : 'built-up-areas/built-up_cemeteryColorJewish',
+        'Mezarlık' : 'built-up-areas/built-up_cemeteryColor',
+        'Hristiyan mezarlığı' : 'built-up-areas/built-up_cemeteryColorСhristian',
+        'Müslüman mezarlığı' : 'built-up-areas/built-up_cemeteryColorMuslim',
+        'Yahudi mezarlığı' : 'built-up-areas/built-up_cemeteryColorJewish',
         }}>
 </LegendItem>
 
 ### Eğitim {#education}
 <LegendItem itemsMap={{
-        'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
-        'School' : 'built-up-areas/built-up_amenitySchool',
-        'College' : 'built-up-areas/built-up_amenityCollege',
-        'University' : 'built-up-areas/built-up_amenityUniversity',
-        'Training' : 'built-up-areas/built-up_amenityTraining',
-        'Library' : 'built-up-areas/built-up_amenityLibrary',
+        'Anaokulu' : 'built-up-areas/built-up_amenityKinderGarten',
+        'Okul' : 'built-up-areas/built-up_amenitySchool',
+        'Kolej' : 'built-up-areas/built-up_amenityCollege',
+        'Üniversite' : 'built-up-areas/built-up_amenityUniversity',
+        'Eğitim' : 'built-up-areas/built-up_amenityTraining',
+        'Kütüphane' : 'built-up-areas/built-up_amenityLibrary',
         }}>
 </LegendItem>
 
 ### Tarihi {#historic}
 <LegendItem itemsMap={{
-        'Archaeological Site' : 'built-up-areas/built-up_ArchaeologicalSite',
-        'Historic Ruins' : 'built-up-areas/built-up_HistoricRuins',
-        'Palaeontological Site' : 'built-up-areas/built-up_PalaeontologicalSite',
+        'Arkeolojik Alan' : 'built-up-areas/built-up_ArchaeologicalSite',
+        'Tarihi Harabeler' : 'built-up-areas/built-up_HistoricRuins',
+        'Paleontolojik Alan' : 'built-up-areas/built-up_PalaeontologicalSite',
         }}>
 </LegendItem>
 
@@ -268,7 +268,7 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedOffice />
 
-### Zanaat {#craft}
+### El sanatları {#craft}
 
 <LegendItemAutogeneratedCraft />
 
@@ -276,10 +276,12 @@ import TabItem from '@theme/TabItem';
 
 <LegendItemAutogeneratedClub />
 
-### Bariyerler {#barriers}
+### Engeller {#barriers}
 
 <LegendItemAutogeneratedBarrier />
 
 ### İnsan yapımı {#man-made}
 
 <LegendItemAutogeneratedManmade />
+## "Düşük yakınlaştırmalarda simgeler" seçeneği için simgeler {#icons-at-low-zooms}
+<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="OsmAnd Harita stili" />

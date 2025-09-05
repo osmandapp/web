@@ -669,4 +669,4 @@ OsmAnd doesn't have any required permissions on the iOS / Android version.
 - **Camera/voice recording** (*Android*). Only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as a plugin and by default disabled. It allows you to quickly create location-related audio/video notes during a trip.
 
 
-> *Last updated: January 2025*
+

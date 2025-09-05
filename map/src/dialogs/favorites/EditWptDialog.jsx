@@ -16,7 +16,7 @@ import FavoriteShape from '../../infoblock/components/favorite/structure/Favorit
 import FavoritesManager, { updateFavoriteGroups } from '../../manager/FavoritesManager';
 import { apiGet } from '../../util/HttpApi';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { ADDRESS_NOT_FOUND } from '../../infoblock/components/wpt/WptDetails';
 
 export default function EditWptDialog({

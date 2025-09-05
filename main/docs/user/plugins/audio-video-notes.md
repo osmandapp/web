@@ -432,4 +432,4 @@ To view everything later, you can export the track along with all the media file
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: May 2023*
+

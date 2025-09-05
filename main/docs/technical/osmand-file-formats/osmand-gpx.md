@@ -649,4 +649,4 @@ Some GPX tags are used or stored indirectly in OBF files. Refer to [OsmGpxWriteC
 | `route_segment_index`        | Specifies an ordinal number of the geometry segment which is linked to this point (optional)               |
 | `route_name`                 | The route name, used by internal `searchPoiByName` (deprecated)                                            |
 
-> *Last updated: March 2025*
+

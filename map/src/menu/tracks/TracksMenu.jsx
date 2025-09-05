@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import CloudTrackGroup from './CloudTrackGroup';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
@@ -13,10 +13,12 @@ import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
-import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
+import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
+import { SHARE_TYPE } from '../share/shareConstants';
+import TrackGroupFolder from './TrackGroupFolder';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -42,14 +44,14 @@ export default function TracksMenu() {
 
     // get gpx files and create groups
     useEffect(() => {
+        const defaultGroupWithFolders = {
+            subfolders: ctx.tracksGroups ?? [],
+            groupFiles: [],
+            name: DEFAULT_GROUP_NAME,
+            fullName: DEFAULT_GROUP_NAME,
+        };
         if (!isEmpty(ctx.tracksGroups)) {
             const defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
-            const defaultGroupWithFolders = {
-                subfolders: ctx.tracksGroups,
-                groupFiles: [],
-                name: DEFAULT_GROUP_NAME,
-                fullName: DEFAULT_GROUP_NAME,
-            };
             if (defGroup) {
                 setDefaultGroup(defGroup);
             } else {
@@ -62,11 +64,15 @@ export default function TracksMenu() {
                 files: defGroup ? defGroup.groupFiles : [],
                 groups: defaultGroupWithFolders.subfolders,
             });
+        } else {
+            setDefaultGroup(defaultGroupWithFolders);
+            setSortFiles([]);
+            setSortGroups([]);
         }
     }, [ctx.tracksGroups]);
 
     const defaultGroupItems = useMemo(() => {
-        if (defaultGroup && defaultGroup.groupFiles) {
+        if (defaultGroup?.groupFiles) {
             const items = [];
             const listTracks = sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles;
             listTracks.map((file, index) => {
@@ -82,6 +88,20 @@ export default function TracksMenu() {
             updateLoadingTracks(ctx, defaultGroup.groupFiles);
         }
     }, [defaultGroup?.groupFiles]);
+
+    // open visible tracks
+    if (ctx.openVisibleMenu) {
+        return <VisibleTracks />;
+    }
+
+    // open folders
+    if (ctx.openGroups && ctx.openGroups.length > 0) {
+        const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
+        if (lastGroup?.type === SHARE_TYPE) {
+            return <TrackGroupFolder smartf={lastGroup} />;
+        }
+        return <TrackGroupFolder folder={lastGroup} />;
+    }
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>

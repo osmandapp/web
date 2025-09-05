@@ -1,5 +1,5 @@
 import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
-import _ from 'lodash';
+import indexOf from 'lodash-es/indexOf';
 
 const DB_NAME = 'TracksDB';
 const STORE_NAME = 'local_tracks';
@@ -142,7 +142,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
 
 export function saveTrackToLocalStorage({ ctx, track }) {
     const localTracks = ctx.localTracks;
-    let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
+    let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
 
     if (currentTrackIndex === -1) {
         currentTrackIndex = localTracks.push(track) - 1;
@@ -162,7 +162,7 @@ async function updateStoredLocalTracks(tracks) {
     for (let track of tracks) {
         let res = prepareLocalTrack(track);
         if (res) {
-            await saveTrackToDB(_.indexOf(tracks, track), res);
+            await saveTrackToDB(indexOf(tracks, track), res);
         }
     }
 }

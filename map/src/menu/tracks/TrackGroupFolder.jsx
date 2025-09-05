@@ -15,7 +15,7 @@ import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
 

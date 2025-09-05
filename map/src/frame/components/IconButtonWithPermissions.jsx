@@ -27,6 +27,7 @@ export default function IconButtonWithPermissions({ onClick, className, ...props
         <>
             <IconButton
                 {...props}
+                className={className}
                 onClick={handleClick}
                 sx={isDisabled ? { cursor: 'not-allowed', color: '#B3B3B3' } : {}}
             />

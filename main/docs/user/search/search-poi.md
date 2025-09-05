@@ -50,35 +50,24 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 </Tabs>
 
-*All POI types in OsmAnd you can find here:* [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
+*All POI types in OsmAnd you can find here:* [github link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
-- **Point of Interest (POI) search:**
+- **Point of Interest (POI) search by type and name**:
     - Allows you to search:
-       - for nearby or specific categories of points of interest (POI).
-       - for [OSM routes](../map/routes.md).
-       - for [Popular places (Wikipedia)](../map/map-context-menu.md#details).
-
+       - For nearby points of interest (POI) or specific categories of POI.
+       - For [OSM routes](../map/routes.md) by name and by ref number.
+       - For [Popular places (Wikipedia)](../map/map-context-menu.md#details).
     - Filters and sorting results by category, distance, or rating are possible.
+    
+- **Search POIs on the map** - Show on map:
+    1. You can select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
+    2. You can enter a search query first or can start searching for POIs in *Menu → Search → Categories* and then click **Show on map** .
 
-    - Search results show the location of the POI, its contact information, ratings, and reviews.
+- **Brand search**:
+    - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to changed during each updates. 
+    - Brand is defined by OSM tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) and OsmAnd collects limited types of brands per map with a maximum 1000 brands per map, however it makes sure that list of brands is aligned across the neighbor maps.
 
-- **Search POIs by category directly on the map**:
-    - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
-
-    - *Android*: You can start searching for POIs in *Menu → Search → Categories*.
-
-- **Brand search:**
-    - When entering a business venue or brand name (such as Audi, Starbucks, or Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
-
-    - The name of the locality is displayed alongside each search result to help you identify the right location among others at a similar distance from you.
-
-    - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
-
-    - To perform a search, the tag `brand` and brand names must be added to the POI description.
-
-    - Example of a car shop: *POI type* - Car dealer, *name* - Octo Automobile, [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) - Audi, BMW, Fiat, Jaguar, Land Rover.  
-
-    ![Search POI Android](@site/static/img/search/brand_search_andr.png)
+![Search POI Android](@site/static/img/search/brand_search_andr.png)
 
 
 :::note
@@ -288,16 +277,11 @@ To improve results, before using the Search tool, zoom in on the map to get clos
 
 You can find out information about Online Navigation in [Online routing](../navigation/routing/online-routing.md) article.
 
-#### Example of Online Search Query {#example-of-online-search-query}
-
-*Nominatim* in OsmAnd is used as a search engine for OpenStreetMap data, with which you can search by name (search by address is currently disabled). Each result has a link to a detail page to see what data about the object is stored in the database.  
-
-**Example XML file.** This XML file does not contain any style information associated with it. The document tree is shown in the [link](https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300).
 
 
-## Custom POI Search {#custom-poi-search}
+## Customize POI Search {#custom-poi-search}
 
-Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
+POI Search Customization is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
 
 For example, you can search restaurants and pharmacies simultaneously to find the nearest place to dine and then take your medicine. Or search for the nearest gas station and car service when you have a problem with your car.  
 
@@ -504,4 +488,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *Last updated: May 2025*
+

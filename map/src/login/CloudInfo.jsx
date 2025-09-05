@@ -34,9 +34,11 @@ export default function CloudInfo({ setOpenCloudInfo }) {
     }
 
     function getCloudStorageInfo() {
-        return `${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB ${
-            ltx.accountInfo && `of ${ltx.accountInfo.maxAccSize / (1024 * 1024)} MB`
-        }`;
+        const usedMb = (ctx.listFiles.totalZipSize / 1024 / 1024).toFixed(1);
+        const maxMb = ltx.accountInfo?.maxAccSize
+            ? ` of ${(ltx.accountInfo.maxAccSize / (1024 * 1024)).toFixed(1)} MB`
+            : '';
+        return `${usedMb} MB${maxMb}`;
     }
 
     return (

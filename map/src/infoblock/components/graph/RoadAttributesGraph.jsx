@@ -7,7 +7,7 @@ import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
 import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../../../manager/GraphManager';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import {
     convertMeters,
     getLargeLengthUnit,
@@ -74,10 +74,10 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                             borderWidth: 1,
                         },
                         box1: {
-                            display: !_.isEmpty(ctx.trackRange),
+                            display: !isEmpty(ctx.trackRange),
                             type: 'box',
-                            xMin: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
-                            xMax: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
+                            xMin: !isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
+                            xMax: !isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
                             backgroundColor: 'rgba(0, 0, 0, 0.1)',
                             borderWidth: 0,
                         },
@@ -166,7 +166,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
     }
 
     return (
-        <Box id="se-road-attributes-graph" sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
+        <Box id="se-road-attributes-graph" sx={{ p: 0 }}>
             <Divider sx={{ mt: '15px', mb: '12px' }} />
             <Grid container spacing={2}>
                 <Grid item xs={9}>
@@ -186,7 +186,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     </Button>
                 </Grid>
             </Grid>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 60 }}>
+            <Box sx={{ p: 0, height: 60 }}>
                 <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}

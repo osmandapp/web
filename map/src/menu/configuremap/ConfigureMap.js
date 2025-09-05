@@ -12,6 +12,7 @@ import {
     AppBar,
     Toolbar,
     Tooltip,
+    Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -24,14 +25,14 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
@@ -39,6 +40,9 @@ import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
+import gStyles from '../gstylesmenu.module.css';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -46,6 +50,8 @@ export const VECTOR_GRID = 'vector_grid';
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const [, height] = useWindowSize();
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
@@ -187,7 +193,13 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
-                                <MenuItem className={styles.item} onClick={() => ctx.setOpenVisibleMenu(true)}>
+                                <MenuItem
+                                    className={styles.item}
+                                    onClick={() => {
+                                        ctx.setOpenVisibleMenu(true);
+                                        ctx.setOpenMenu({ id: 'se-show-menu-tracks' });
+                                    }}
+                                >
                                     <ListItemIcon className={styles.iconEnabled}>
                                         <TracksIcon />
                                     </ListItemIcon>
@@ -290,11 +302,13 @@ export default function ConfigureMap() {
     };
 
     return (
-        <>
-            {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
-            {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
-            {/* Display default configuration if no specific component is active */}
-            {!openPoiConfig && !openTerrainConfig && <DEFAULT_CONFIGURE />}
-        </>
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
+            <Box className={gStyles.scrollActiveBlock}>
+                {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
+                {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
+                {/* Display default configuration if no specific component is active */}
+                {!openPoiConfig && !openTerrainConfig && <DEFAULT_CONFIGURE />}
+            </Box>
+        </Box>
     );
 }

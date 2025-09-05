@@ -1,6 +1,8 @@
 import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
+import indexOf from 'lodash-es/indexOf';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
@@ -23,6 +25,8 @@ import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 
 export const GPX_FILE_TYPE = 'GPX';
+export const GPX_FILE_EXT = '.gpx';
+export const KMZ_FILE_EXT = '.kmz';
 export const EMPTY_FILE_NAME = '__folder__.info';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
@@ -49,7 +53,7 @@ export function fitBoundsOptions(ctx) {
 }
 
 export function prepareLocalTrack(track) {
-    const prepareTrack = _.cloneDeep(track);
+    const prepareTrack = cloneDeep(track);
     return {
         name: prepareTrack.name,
         id: prepareTrack.id,
@@ -185,7 +189,7 @@ function handleEditCloudTrack(ctx) {
 }
 
 function prepareTrack(track, localName = null, originalName = null) {
-    track.originalName = originalName ?? track.name;
+    track.originalName = originalName ?? track.name + GPX_FILE_EXT;
     track.name = localName ?? prepareName(track.name, true);
     track.id = track.name;
 
@@ -214,12 +218,12 @@ export async function getApproximatePoints({ points, profile }) {
         headers: { 'Content-Type': 'application/json' },
     });
     return approximateResult && approximateResult.data?.points?.length >= 2
-        ? _.cloneDeep(approximateResult.data.points) // avoid poisoning cache
+        ? cloneDeep(approximateResult.data.points) // avoid poisoning cache
         : points;
 }
 
 function hasGeo(track) {
-    if (!_.isEmpty(track.points)) {
+    if (!isEmpty(track.points)) {
         return track.points.some((p) => p.geometry?.length > 0);
     } else {
         if (track.tracks) {
@@ -349,7 +353,7 @@ export function addDistanceToPoints(points) {
                 distanceSegment = 0;
             }
         } else {
-            let ind = _.indexOf(points, point);
+            let ind = indexOf(points, point);
             if (ind !== 0) {
                 let prevPoint = points[ind - 1];
                 if (prevGapInd !== ind) {
@@ -476,7 +480,7 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
     const tracks = [];
 
     files.forEach((file) => {
-        const name = isSmartf ? file.details.shareFileName : file.name;
+        const name = isSmartf && file.details?.shareFileName ? file.details.shareFileName : file.name;
         const parts = name.split('/');
         const isFile = parts.length === 1;
 
@@ -909,7 +913,7 @@ export function validateRoutePoints(points) {
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
-    const cloneFile = _.cloneDeep(ctx.selectedGpxFile);
+    const cloneFile = cloneDeep(ctx.selectedGpxFile);
 
     if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
         return cloneFile; // no tracks = nothing to analyze
@@ -943,7 +947,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         setLoading(false);
 
         // data will be mutated, use cloneDeep to avoid apiCache mutations
-        const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
+        const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
@@ -991,7 +995,7 @@ function createTrack(ctx, latlng) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
+            file: cloneDeep(ctx.selectedGpxFile),
         };
     }
     ctx.setCreateTrack({ ...createState });
@@ -1018,7 +1022,7 @@ function clearTrack(file, points) {
 
 function getFavoriteGroups(allFiles) {
     return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
-        return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
+        return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === GPX_FILE_EXT;
     });
 }
 
@@ -1274,7 +1278,7 @@ export function getGpxFiles(listFiles) {
     return (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
         return (
             (item.type === 'gpx' || item.type === 'GPX') &&
-            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX' || item.name.endsWith(EMPTY_FILE_NAME))
+            (item.name.toLowerCase().slice(-4) === GPX_FILE_EXT || item.name.endsWith(EMPTY_FILE_NAME))
         );
     });
 }
@@ -1356,7 +1360,7 @@ export async function openTrackOnMap({
         ctx.setCreateTrack({
             enable: false,
             closePrev: {
-                file: _.cloneDeep(ctx.selectedGpxFile),
+                file: cloneDeep(ctx.selectedGpxFile),
             },
         });
     }
@@ -1405,6 +1409,7 @@ export async function openTrackOnMap({
         } else if (isEmptyTrack(track) === false) {
             track.info = await Utils.getFileInfo(oneGpxFile);
             track.name = file.name;
+            track.key = track.name;
             Object.keys(track).forEach((t) => {
                 oneGpxFile[t] = track[t];
             });
@@ -1494,10 +1499,20 @@ function showInfoBlock({ hasUrl, file, ctx, smartf }) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         }
     }
+
+    ctx.setRecentObjs((prev) => {
+        const tracks = prev.tracks.filter((f) => f.key !== file.key);
+        return {
+            ...prev,
+            tracks: [{ ...file }, ...tracks],
+        };
+    });
+    ctx.setSelectedCloudTrackObj({ ...file });
+
     if (hasUrl) {
         ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
     } else {
-        ctx.setSelectedGpxFile(Object.assign({}, file));
+        ctx.setSelectedGpxFile({ ...file });
     }
 }
 

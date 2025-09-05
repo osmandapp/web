@@ -17,7 +17,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 const PointsTab = ({ width }) => {
     const ctx = useContext(AppContext);
@@ -125,8 +125,8 @@ const PointsTab = ({ width }) => {
         <>
             {openPointAlert &&
                 ctx.createTrack &&
-                (!ctx.selectedGpxFile?.points || _.isEmpty(ctx.selectedGpxFile?.points)) &&
-                (!ctx.selectedGpxFile?.tracks || _.isEmpty(ctx.selectedGpxFile?.tracks[0]?.points)) && (
+                (!ctx.selectedGpxFile?.points || isEmpty(ctx.selectedGpxFile?.points)) &&
+                (!ctx.selectedGpxFile?.tracks || isEmpty(ctx.selectedGpxFile?.tracks[0]?.points)) && (
                     <Alert
                         severity="info"
                         sx={{ mt: 2 }}

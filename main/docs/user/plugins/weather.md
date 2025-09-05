@@ -265,4 +265,4 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *Last updated: November 2024*
+

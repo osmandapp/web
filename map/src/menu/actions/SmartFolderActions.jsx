@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
 import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager/track/TracksManager';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 
 const SmartFolderActions = forwardRef(

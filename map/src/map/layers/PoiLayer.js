@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import _ from 'lodash';
+import debounce from 'lodash-es/debounce';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import 'leaflet-spin';
@@ -27,11 +29,12 @@ import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchL
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
-import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
-import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
+import { selectMarker } from '../util/MarkerSelectionService';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -65,7 +68,8 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
                 ...poi.properties,
                 idObj: getObjIdSearch(poi),
                 name: poi.properties[POI_NAME],
-                icon: icon,
+                icon,
+                svg: icon.options.svg,
                 [FINAL_POI_ICON_NAME]: finalIconName,
             });
 
@@ -93,7 +97,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             mainStyle: true,
             text: marker.options[POI_NAME],
             latlng: marker._latlng,
-            iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+            iconSize: DEFAULT_ICON_SIZE,
             map,
             ctx,
             pointerStyle: styles.hoverPointer,
@@ -139,7 +143,7 @@ export async function getPoiIcon(poi, cache, finalIconName) {
                 background: DEFAULT_POI_SHAPE,
                 svgIcon: coloredSvg,
             }).options.html;
-            return L.divIcon({ html: iconHtml });
+            return L.divIcon({ html: iconHtml, svg: coloredSvg });
         }
     }
 }
@@ -159,6 +163,8 @@ export default function PoiLayer() {
         prevLayer: null,
         listFeatures: null,
     });
+    const prevSelectedPoi = useRef(null);
+
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
     const [bbox, setBbox] = useState(null);
@@ -168,12 +174,13 @@ export default function PoiLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
-    useSelectedPoiMarker(
+    useSelectMarkerOnMap({
         ctx,
-        ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
-        POI_LAYER_ID,
-        map
-    );
+        layers: poiList?.layer?.getLayers(),
+        type: POI_LAYER_ID,
+        map,
+        prevSelectedMarker: prevSelectedPoi,
+    });
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
@@ -229,7 +236,7 @@ export default function PoiLayer() {
     }
 
     function typesChanged() {
-        if (!_.isEmpty(ctx.showPoiCategories)) {
+        if (!isEmpty(ctx.showPoiCategories)) {
             if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
                 // always clear the old poi list
                 return true;
@@ -242,7 +249,7 @@ export default function PoiLayer() {
     }
 
     const debouncedGetPoi = useRef(
-        _.debounce(
+        debounce(
             async ({
                 controller,
                 ignore,
@@ -270,7 +277,7 @@ export default function PoiLayer() {
                                     zoom,
                                 });
                                 const newPoiList = {
-                                    prevLayer: _.cloneDeep(poiList?.layer),
+                                    prevLayer: cloneDeep(poiList?.layer),
                                     layer: layer,
                                     listFeatures: res.features,
                                 };
@@ -310,9 +317,9 @@ export default function PoiLayer() {
         let controller = new AbortController();
 
         async function getPoiList() {
-            setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
+            setPrevTypesLength(cloneDeep(ctx.showPoiCategories.length));
             if (
-                (!_.isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
+                (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
                 move ||
                 typesChanged()
             ) {
@@ -320,7 +327,7 @@ export default function PoiLayer() {
                     prevController.abort();
                 }
                 setPrevController(controller);
-                setPrevZoom(_.cloneDeep(zoom));
+                setPrevZoom(cloneDeep(zoom));
                 if (ctx.showPoiCategories.length > 0) {
                     debouncedGetPoi({
                         controller,
@@ -334,9 +341,9 @@ export default function PoiLayer() {
                     });
                 }
             } else {
-                if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
+                if (poiList?.layer && isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
-                        prevLayer: _.cloneDeep(poiList?.layer),
+                        prevLayer: cloneDeep(poiList?.layer),
                         layer: null,
                     };
                     setPoiList(newPoiList);
@@ -351,7 +358,7 @@ export default function PoiLayer() {
                             zoom,
                         });
                         const newPoiList = {
-                            prevLayer: _.cloneDeep(poiList?.layer),
+                            prevLayer: cloneDeep(poiList?.layer),
                             layer: layer,
                             listFeatures: poiList?.listFeatures,
                         };
@@ -375,6 +382,7 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
+                prevSelectedPoi.current = null;
             }
             addToSearchRes(poiList);
             setMove(false);
@@ -384,6 +392,9 @@ export default function PoiLayer() {
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+
+        prevSelectedPoi.current = selectMarker(e.sourceTarget, prevSelectedPoi.current);
+
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,

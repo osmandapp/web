@@ -185,4 +185,4 @@ Go to: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_
 - [Quick Action](./quick-action.md)
 
 
-> *Last updated: October 2023*
+

@@ -4,7 +4,7 @@ import {
     WEB_POI_ADDITIONAL_CATEGORY,
     WEB_POI_FILTER_NAME,
 } from '../infoblock/components/wpt/WptTagsProvider';
-import _ from 'lodash';
+import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
@@ -104,7 +104,6 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
         ...ctx.searchSettings,
         selectedFilters: new Set(defaultFilters),
         useWikiImages: false,
-        showOnMainSearch: mainSearch,
     });
 }
 
@@ -113,24 +112,24 @@ export function getPoiParentCategory(props, t) {
     if (type) {
         const brandRes = parseTagWithLang(type);
         if (brandRes.key === SEARCH_BRAND) {
-            let brandType = _.capitalize(formattingPoiType(t(`poi_${brandRes.key}`)));
+            let brandType = capitalize(formattingPoiType(t(`poi_${brandRes.key}`)));
             if (brandRes.lang) {
                 brandType += ' (' + t(`lang_${brandRes.lang}`).toLowerCase() + ')';
             }
             return brandType;
         }
-        type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
+        type = capitalize(formattingPoiType(t(`poi_${type}`)));
     } else {
         const filter = props[WEB_POI_FILTER_NAME];
         const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
         let filterName;
         let addCategoryName;
         if (filter) {
-            filterName = _.capitalize(formattingPoiType(t(`poi_${filter}`)));
+            filterName = capitalize(formattingPoiType(t(`poi_${filter}`)));
             filterName = getFirstSubstring(filterName);
         }
         if (addCategory) {
-            addCategoryName = _.capitalize(formattingPoiType(t(`poi_${addCategory}`)));
+            addCategoryName = capitalize(formattingPoiType(t(`poi_${addCategory}`)));
             addCategoryName = getFirstSubstring(addCategoryName);
         }
         if (filterName) {

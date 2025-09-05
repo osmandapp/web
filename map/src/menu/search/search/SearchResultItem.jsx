@@ -4,7 +4,7 @@ import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
-import _ from 'lodash';
+import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
@@ -39,7 +39,7 @@ export function getFirstSubstring(inputString) {
 }
 
 export function preparedType(type, t) {
-    return _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+    return capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
 }
 
 export function getPropsFromSearchResultItem(props, t) {
@@ -59,7 +59,7 @@ export function getPropsFromSearchResultItem(props, t) {
         } else {
             type = props[CATEGORY_TYPE]?.toLowerCase();
             if (type) {
-                type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+                type = capitalize(t(`search_address_${type}`, formattingPoiType(type)));
             }
         }
     }

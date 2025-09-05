@@ -7,8 +7,8 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
-import { isEmpty } from 'lodash';
-import TracksManager, {
+import isEmpty from 'lodash-es/isEmpty';
+import {
     DEFAULT_GROUP_NAME,
     getAllVisibleFiles,
     getFileName,
@@ -91,7 +91,7 @@ export function addCloseTracksToRecently(ctx) {
     }
 }
 
-export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
+export default function VisibleTracks() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -166,16 +166,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
 
     return (
         <>
-            <Box
-                minWidth={ctx.infoBlockWidth}
-                maxWidth={ctx.infoBlockWidth}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height,
-                    overflow: 'hidden',
-                }}
-            >
+            <Box sx={{ overflow: 'hidden' }}>
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
@@ -200,14 +191,7 @@ export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
                         </Button>
                     </Toolbar>
                 </AppBar>
-                {isEmpty(ctx.visibleTracks?.new) && hasTracks() && (
-                    <EmptyVisible
-                        id="se-empty-visible"
-                        setMenuInfo={setMenuInfo}
-                        setOpenVisibleMenu={ctx.setOpenVisibleMenu}
-                        setSelectedType={setSelectedType}
-                    />
-                )}
+                {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}
                 {hasVisibleTracks() && (
                     <Box
                         sx={{

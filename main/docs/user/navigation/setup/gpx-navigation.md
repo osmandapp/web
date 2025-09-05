@@ -155,7 +155,7 @@ The **Attach to the roads** feature aligns your track with the nearest road for 
 - For large tracks with many points, the attachment process may take a little longer. You will see a **progress indicator** (*orange status line*) showing the attachment status.
 - After the attachment is complete, tap **Apply** to use the modified track for navigation.
 
-#### Automatic Attachment to the Roads {#automatic-attachment-to-the-roads}
+### Automatic Attachment to the Roads {#automatic-attachment-to-the-roads}
 
 OsmAnd automatically snaps routes to roads when using the **Plan a Route** tool:
 
@@ -201,4 +201,4 @@ During navigation, you can use various options such as zooming in or out, pannin
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *Last updated: April 2025*
+

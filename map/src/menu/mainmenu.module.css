@@ -75,3 +75,12 @@
 .customIconPath {
     fill: var(--svg-icon-color) !important;
 }
+.dotMenu {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #f8931d;
+}

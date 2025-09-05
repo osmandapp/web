@@ -66,25 +66,35 @@ async function OsmAndHelpStructureGenerator(props) {
   }
 
   if (isTranslatedDocs) {
-    return items; // avoid translated help-structure.json
+    return items; // avoid the translated help-structure.json
   }
+
+  const languages = new Set(['en']);
+  await fetchLanguagesFromConfig(languages);
 
   const articles = [];
   const filteredItems = filterUnlistedSidebarItems(items, unlistedDocIds);
   traverseItems(articles, filteredItems);
-  flushArticlesIntoStaticDir(articles);
+
+  flushArticlesIntoStaticDir(articles, languages);
   // articles.forEach((i) => console.log(i)); // debug
 
   return items;
 }
 
-function flushArticlesIntoStaticDir(articles) {
+async function fetchLanguagesFromConfig(languages) {
+  const { i18n } = await require('../docusaurus.config')();
+  i18n.locales.forEach(locale => { languages.add(locale); });
+}
+
+function flushArticlesIntoStaticDir(articles, languagesSet) {
   const prettyJSON = (smth) => JSON.stringify(smth, null, 2);
 
   const ios = JSON.parse(fs.readFileSync(IOS_LINKS_JSON, { encoding: "utf8" }));
   const android = JSON.parse(fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" }));
 
   const helpStructure = {
+    languages: Array.from(languagesSet.keys()),
     articles,
     android,
     ios,

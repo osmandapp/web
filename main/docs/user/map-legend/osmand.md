@@ -124,3 +124,6 @@ import { legendContentData } from '@site/src/components/docs/legend/legendSectio
 
 ### Man made {#man-made}
 <LazyLegendContent sectionData={legendContentData['man-made']} />
+
+## Icons for "Icons at low zooms" option {#icons-at-low-zooms}
+<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="OsmAnd Map style" />
