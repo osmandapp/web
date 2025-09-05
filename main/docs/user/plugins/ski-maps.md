@@ -98,7 +98,7 @@ The Skiing profile is designed for use in combination with the Winter and Ski st
 
 </Tabs>
 
-The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/topography.md#show-contour-linesterrain) and [Hillshade](../plugins/topography.md#hillshade-map). Below are two examples. The tracks on the default vector map are shown on the left, and the tracks on the vector map combined with the *Contour Lines* and *Hillshade* raster map are shown on the right. In the second case, the map shows more elevation data to help estimate difficulty, risk, and distance.  
+The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/topography.md#contour-lines) and [Hillshade](../plugins/topography.md#hillshade-slope-and-altitude-layers). Below are two examples. The tracks on the default vector map are shown on the left, and the tracks on the vector map combined with the *Contour Lines* and *Hillshade* raster map are shown on the right. In the second case, the map shows more elevation data to help estimate difficulty, risk, and distance.  
 
 
 ### Disable Ski Map Style {#disable-ski-map-style}

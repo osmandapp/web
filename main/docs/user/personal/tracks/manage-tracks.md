@@ -60,7 +60,7 @@ You can add tracks in OsmAnd in the following ways:
 2. Create a new track in the application using **[Plan a route](../../plan-route/create-route.md)** tool.
 3. Record track in the application using **[Trip recording](../../plugins/trip-recording.md)** plugin.
 4. Enter multiple points by coordinates and save them as a track using the **[Coordinate input](../../plan-route/coordinate-input.md)** tool.
-5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## Manage Tracks {#manage-tracks}
@@ -131,7 +131,7 @@ The menu provides the following actions:
 
 - **Upload modifications to OSM** (*iOS*) — [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
 
-- **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool to modify tracks.
+- **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-existing-gpx-track) tool to modify tracks.
 
 - **Duplicate** (*iOS*) — Creates a copy of the selected track.
 
@@ -201,7 +201,7 @@ Once you have made your choice, the following steps are provided:
 
 - **Move** — You can organize your data by moving selected tracks and folders to other folders.
 
-- [Change activity](../../map/tracks/track-context-menu.md#track-activity-type) — This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
+- [Change activity](../../map/tracks/track-context-menu.md#ttrack-activity-type) — This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
 
 - [Change appearance](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
@@ -471,7 +471,7 @@ There are several ways to export one or more track files to any messenger, email
     - To [**export a single track**](#track-menu), select the menu of the track.
     - To [**multi-track export**](#track-folder), select the menu of the required folder.
 
-3. By [Local backup file](../../personal/import-export.md#export-to-file). Exporting GPX tracks as `.osf` files.
+3. By [Local backup file](../../personal/import-export.md#export). Exporting GPX tracks as `.osf` files.
 
 
 ## Related Articles {#related-articles}

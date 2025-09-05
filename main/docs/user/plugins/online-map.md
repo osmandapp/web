@@ -35,7 +35,7 @@ You can find detailed information about visualizing and customizing raster maps 
 1. [Select](../map/raster-maps.md#select-raster-maps) the raster map as a *Main*, *Underlay*, or *Overlay* layer.
     - [Change](../map/raster-maps.md#how-to-use-raster-maps) layer parameters (transparency).
 
-2. [Prepare / copy](../map/raster-maps.md#prepare--copy-raster-maps-to-device) raster maps to device.
+2. [Prepare / copy](../map/raster-maps.md#preparecopy-raster-maps-to-device) raster maps to device.
     - [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)
     - [Add Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) to install map source.
 

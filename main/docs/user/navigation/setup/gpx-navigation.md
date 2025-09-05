@@ -176,7 +176,7 @@ In the [Follow track menu](#follow-track-options), you can choose whether you wa
 
 ### Waypoints {#waypoints}
 
-If the track has waypoints, you can use [Show along the route](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via [Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint), track need to be visible on the map.
+If the track has waypoints, you can use [Show along the route](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via [Context menu](../../map/map-context-menu.md#-add--edit-track-waypoint), track need to be visible on the map.
 
 ### Intermediate Points {#intermediate-points}
 

@@ -55,7 +55,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 - Set [vehicle parameters](../guidance/vehicle-parameters.md#size-parameters) (*important for truck drivers*), select the [engine type](../guidance/vehicle-parameters.md#fuel-used-by-motor) (*optional*).
 
-- Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (*optional*, available for Pro users ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
+- Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (*optional*, available for Pro users ([Android](../../purchases/android.md#pro-features) / [iOS](../../purchases/ios.md#pro-features))).
 
 - Configure [voice prompts](../guidance/voice-navigation.md).
 
@@ -251,8 +251,8 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 :::note
 
-- When [logging of History](../../personal/global-settings.md#history-options) data is disabled, you will not be prompted to use previous routes for navigation.
-- You can delete some or all history records about your previous routes. This can be done on the *[Navigation history](../../personal/global-settings.md#history-options)* tab of the History option (*Menu → Settings → OsmAnd settings → History*).
+- When [logging of History](../../personal/global-settings.md#history) data is disabled, you will not be prompted to use previous routes for navigation.
+- You can delete some or all history records about your previous routes. This can be done on the *[Navigation history](../../personal/global-settings.md#history)* tab of the History option (*Menu → Settings → OsmAnd settings → History*).
 
 :::
 

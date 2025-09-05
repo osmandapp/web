@@ -23,7 +23,7 @@ The Wikipedia plugin is a [paid feature](../purchases/index.md) of the OsmAnd ap
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Popular Places (Android) / Wikipedia articles (iOS) related to the points of interest directly on the map.  
 
-The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources.md#download-maps-maps) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: brief information and a full article.  
+The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources#maps--resources) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: brief information and a full article.  
 
 
 Brief information is provided by Wikipedia POIs (an abbreviation for "[point of interest](../map/point-layers-on-map.md)"). If the Wikipedia option is toggled on in the menu, a Wikipedia POI appears on the map. When you tap a point of interest, it expands to provide brief information from Wikipedia, as well as the ability to open a full article. The Wikipedia POI, as well as related articles, are available offline. You can read them as needed, switch languages, and search for other information on Wikipedia.  
@@ -49,7 +49,7 @@ To display Wikipedia data on the map, you need to make the following settings:
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case, the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.
 
-To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#download---main-menu), find the needed region, and open it. The Wikipedia data will be among other packages.
+To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#download), find the needed region, and open it. The Wikipedia data will be among other packages.
 
 You can open Wikipedia data to download by region as follows:
 
@@ -88,7 +88,7 @@ To show/hide Wikipedia POIs, do the following:
 
 1. Go to: 
 
-   **<Translate android="true" ids="android_button_seq"/>**: [*<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*](../map/popular_places.md#popular-places-wikipedia-menu) 
+   **<Translate android="true" ids="android_button_seq"/>**: [*<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*](../map/popular_places.md#overview) 
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
@@ -116,7 +116,7 @@ To show/hide Wikipedia POIs, do the following:
 
 With uploaded Wikipedia data, regardless of the visibility mode of the [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) on the map, it is possible to [search](../search/search-poi.md) for any information from Wikipedia.
 
-When you tap the Search button, an additional panel appears allowing you to [search](../search/index.md) the entire text and/or a specific category. In the former case, the search results will show Wikipedia POIs with corresponding Wikipedia articles among other types of information. In the case of a [Wikipedia category search](../search/search-poi.md#poi-search), the search results will only show Wikipedia information, sorted by the closest location to the area of the map that is currently displayed on the screen.  
+When you tap the Search button, an additional panel appears allowing you to [search](../search/index.md) the entire text and/or a specific category. In the former case, the search results will show Wikipedia POIs with corresponding Wikipedia articles among other types of information. In the case of a [Wikipedia category search](../search/search-poi.md#search-poi), the search results will only show Wikipedia information, sorted by the closest location to the area of the map that is currently displayed on the screen.  
 
 - In the **Android** version, you can open [Search](../search/index.md) by tapping the *Search icon* in the upper left corner of the screen and/or tapping the *Search option* in the menu.
 - In the **iOS** version, to open [Search](../search/index.md), the Search icon is in the upper left corner of the screen.

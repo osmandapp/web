@@ -177,7 +177,7 @@ W menu [Śledź trasę](#follow-track-options) możesz wybrać, czy chcesz nawig
 
 ### Punkty trasy {#waypoints}
 
-Jeśli ślad ma punkty trasy, możesz użyć [Pokaż wzdłuż trasy](../guidance/map-during-navigation.md#show-points-along-the-route) i [Wskazówki głosowe](../guidance/voice-navigation.md#voice-settings), aby otrzymywać powiadomienia o punktach zainteresowania. Możesz dodać **Punkty trasy** do istniejącego śladu za pomocą [Menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint), ślad musi być widoczny na mapie.
+Jeśli ślad ma punkty trasy, możesz użyć [Pokaż wzdłuż trasy](../guidance/map-during-navigation.md#show-points-along-the-route) i [Wskazówki głosowe](../guidance/voice-navigation.md#voice-settings), aby otrzymywać powiadomienia o punktach zainteresowania. Możesz dodać **Punkty trasy** do istniejącego śladu za pomocą [Menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint), ślad musi być widoczny na mapie.
 
 ### Punkty pośrednie {#intermediate-points}
 

@@ -111,10 +111,10 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
 
-If [Elevation data](../map/tracks/track-context-menu.md#calculating-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
+If [Elevation data](../map/tracks/track-context-menu.md#calculate-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
 
 - [Use nearby roads](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
-- [Use Terrain maps](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
+- [Use Terrain maps](../map/tracks/track-context-menu.md##calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
 ### Attach Track to Roads {#attach-track-to-roads}
@@ -137,7 +137,7 @@ If [Elevation data](../map/tracks/track-context-menu.md#calculating-missing-elev
 
 **Attach to the roads** setting allows attaching a recorded or an imported track to the roads from OsmAnd offline maps to get additional information:
 
-- Correct turn information for [Navigate by track](../navigation/setup/gpx-navigation.md#how-to-follow-the-track) (especially at roundabouts).
+- Correct turn information for [Navigate by track](../navigation/setup/gpx-navigation.md#follow-track-options) (especially at roundabouts).
 - Street names and lane information.
 - Elevation data.
 - [Road attributes](../navigation/setup/route-details.md#road-attributes).
@@ -380,7 +380,7 @@ During route planning, the [graph](../navigation/setup/route-details.md#elevatio
 - For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [Navigation](../navigation/setup/gpx-navigation.md) using *Plan a route*.
 - For **iOS**, the graph is only available through the *[Options](#options) → Navigation* menu.
 
-When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
+When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyze-on-map) tool. Tap the *Details* button below the graph.  
 
 
 ## Related Articles {#related-articles}

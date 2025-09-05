@@ -114,7 +114,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautica
 
 For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, as needed, contours. On the other hand, standard maps with information about inland, onshore, and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.  
 
-When you [download](../start-with/download-maps.md) a nautical map, more details related to *Boat* navigation appear on the map. Some types of [Nautical maps](../start-with/download-maps.md#type-of-maps) contain details such as:  
+When you [download](../start-with/download-maps.md) a nautical map, more details related to *Boat* navigation appear on the map. Some types of [Nautical maps](../plugins/nautical-charts/#nautical-map-style) contain details such as:  
 
 - **Nautical marks and symbols.**  
     Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, and sides of the channel, regardless of the direction, etc. Marks and symbols are downloaded once for the entire world.

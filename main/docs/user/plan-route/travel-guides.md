@@ -80,7 +80,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
 </Tabs>
 
-Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). The articles are grouped by regions: *Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America*, so you don't have to download travel books for a separate city or country.  
+Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#maps-and-resources) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). The articles are grouped by regions: *Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America*, so you don't have to download travel books for a separate city or country.  
 By saving the required regions on your device, you can browse the articles with OsmAnd even when you are abroad or out of range of your mobile network.
 
 :::note
@@ -348,7 +348,7 @@ In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you c
 
 In the *Travel guide articles* you can find useful information about tourist attractions (contact information, web links, prices, and so on). Many articles have a *Wikipedia* button that allows opening a *[Wikipedia article](../plugins/wikipedia.md)* (online or offline) about the place of interest.  
 
-In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you to download [Wikipedia map layer](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages) to browse related articles offline.
+In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you to download [Wikipedia map layer](../plugins/wikipedia.md#download-wikipedia-packages) to browse related articles offline.
 
 ![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
