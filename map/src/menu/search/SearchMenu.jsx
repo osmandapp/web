@@ -210,6 +210,7 @@ export default function SearchMenu() {
     }
 
     function openExploreMenu() {
+        ctx.setExploreMenu(true);
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
     }
 
