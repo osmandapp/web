@@ -80,7 +80,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
 </Tabs>
 
-Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). The articles are grouped by regions: *Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America*, so you don't have to download travel books for a separate city or country.  
+Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#maps-and-resources) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). The articles are grouped by regions: *Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America*, so you don't have to download travel books for a separate city or country.  
 By saving the required regions on your device, you can browse the articles with OsmAnd even when you are abroad or out of range of your mobile network.
 
 :::note
