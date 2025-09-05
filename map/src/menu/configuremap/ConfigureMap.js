@@ -145,7 +145,7 @@ export default function ConfigureMap() {
                                         setOpenPoiConfig(true);
                                     }}
                                 >
-                                    <ListItemIcon className={styles.iconEnabled}>
+                                    <ListItemIcon className={setIconStyles(ctx.showPoiCategories.length > 0)}>
                                         <PoiIcon />
                                     </ListItemIcon>
                                     <ListItemText>
