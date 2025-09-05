@@ -30,8 +30,6 @@ export default function LazyLegendContent({ sectionData }) {
   return (
     <div style={{
       minHeight: height ? `${height}px` : '240px',
-      // A subtle background can indicate that content is coming.
-      backgroundColor: height ? '#fafafa' : 'transparent',
     }}>
       <LazyVisible>
         <BrowserOnly>
