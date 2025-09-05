@@ -135,6 +135,13 @@ export default function TravelMenu() {
         ctx.setSearchTravelRoutes({
             clear: true,
         });
+        setDefaultState();
+    }
+
+    function setDefaultState() {
+        setTravelResult(null);
+        setSelectedActivityType(DEFAULT_ACTIVITY);
+        setSelectedYear(DEFAULT_YEAR);
     }
 
     function handleActivitySelect(activityId) {

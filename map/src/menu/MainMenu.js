@@ -383,7 +383,10 @@ export default function MainMenu({
             }
         }
 
-        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: selectedType === OBJECT_SEARCH });
+        ctx.setSearchSettings({
+            ...ctx.searchSettings,
+            showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult : false,
+        });
     }, [selectedType]);
 
     useEffect(() => {

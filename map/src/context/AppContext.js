@@ -37,7 +37,6 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
-export const OBJECT_EXPLORE = 'explore';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
@@ -326,6 +325,7 @@ export const AppContextProvider = (props) => {
         animateDist: 1000000,
     });
     const [visibleBounds, setVisibleBounds] = useState(null);
+    const [exploreMenu, setExploreMenu] = useState(false);
 
     // travel
     const [travelFilter, setTravelFilter] = useState(null);
@@ -836,6 +836,7 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
+                exploreMenu, setExploreMenu,
             }}
         >
             {props.children}

@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_EXPLORE, OBJECT_SEARCH } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
@@ -143,20 +143,31 @@ export default function ExploreLayer() {
         const settings = ctx.searchSettings;
         const setLoadingContextMenu = ctx.setLoadingContextMenu;
 
-        if (skippedObjectType()) {
+        if (!ctx.exploreMenu && !ctx.searchSettings.showExploreMarkers && !settings.useWikiImages) {
             removeLayers();
-            if (ctx.searchSettings.showExploreMarkers) {
-                ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
-            }
             ctx.setWikiPlaces(null);
             return;
+        }
+
+        if (
+            !settings.selectedFilters ||
+            !ctx.wikiPlaces ||
+            !areSetsEqual(filtersRef.current, settings.selectedFilters)
+        ) {
+            filtersRef.current = settings.selectedFilters ?? null;
+            removeLayers();
+            debouncer(
+                () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                timerRef,
+                GET_OBJ_DEBOUNCE_MS
+            );
         }
 
         const onMapMoveEnd = async () => {
             if (
                 settings.useWikiImages ||
                 settings.showExploreMarkers ||
-                (ctx.currentObjectType === OBJECT_EXPLORE && (mainIconsLayerRef.current || otherIconsLayerRef.current))
+                (ctx.exploreMenu && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
                 debouncer(
                     () => getData({ controller, ignore, settings, setLoadingContextMenu }),
@@ -167,45 +178,18 @@ export default function ExploreLayer() {
         };
         map.on('moveend', onMapMoveEnd);
 
-        if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showExploreMarkers) {
-            if (
-                !settings.selectedFilters ||
-                !ctx.wikiPlaces ||
-                !areSetsEqual(filtersRef.current, settings.selectedFilters)
-            ) {
-                filtersRef.current = settings.selectedFilters ?? null;
-                removeLayers();
-                debouncer(
-                    () => getData({ controller, ignore, settings, setLoadingContextMenu }),
-                    timerRef,
-                    GET_OBJ_DEBOUNCE_MS
-                );
-            }
-        }
-
-        if (!settings.useWikiImages && ctx.currentObjectType !== OBJECT_EXPLORE && !settings.showExploreMarkers) {
-            removeLayers();
-            ctx.setWikiPlaces(null);
-        }
-
         return () => {
             ignore = true;
             controller.abort();
             map.off('moveend', onMapMoveEnd);
         };
     }, [
-        ctx.currentObjectType,
+        ctx.exploreMenu,
         ctx.searchSettings.useWikiImages,
         ctx.searchSettings.selectedFilters,
         ctx.searchSettings.showExploreMarkers,
         ctx.setLoadingContextMenu,
     ]);
-
-    function skippedObjectType() {
-        return (
-            ctx.currentObjectType && ctx.currentObjectType !== OBJECT_EXPLORE && ctx.currentObjectType !== OBJECT_SEARCH
-        );
-    }
 
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
@@ -349,7 +333,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (ctx.currentObjectType !== OBJECT_EXPLORE && !ctx.searchSettings.showExploreMarkers) {
+        if (!ctx.exploreMenu && !ctx.searchSettings.showExploreMarkers && !ctx.searchSettings.useWikiImages) {
             abortController.abort();
             return;
         }
@@ -426,7 +410,7 @@ export default function ExploreLayer() {
                         simpleMarkersArr.addLayer(circle);
                     }
 
-                    if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.searchSettings.showExploreMarkers) {
+                    if (ctx.exploreMenu || ctx.searchSettings.showExploreMarkers || ctx.searchSettings.useWikiImages) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
@@ -443,7 +427,7 @@ export default function ExploreLayer() {
         return () => {
             abortController.abort();
         };
-    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showExploreMarkers]);
+    }, [ctx.wikiPlaces, ctx.exploreMenu, ctx.searchSettings.showExploreMarkers]);
 
     function addEventListeners({ marker, place, main = false, latlng, iconSize = SIMPLE_ICON_SIZE }) {
         // Add click event to open information about the place

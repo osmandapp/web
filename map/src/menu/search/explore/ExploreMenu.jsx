@@ -6,7 +6,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import { ReactComponent as FilterIcon } from '../../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
-import AppContext, { OBJECT_EXPLORE } from '../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import Loading from '../../errors/Loading';
 import Empty from '../../errors/Empty';
 import ActionsMenu from '../../actions/ActionsMenu';
@@ -34,10 +34,10 @@ export default function ExploreMenu() {
     function close() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
         ctx.setLoadingContextMenu(false);
+        ctx.setExploreMenu(false);
     }
 
     useEffect(() => {
-        ctx.setCurrentObjectType(OBJECT_EXPLORE);
         if (!ctx.searchSettings.selectedFilters) {
             addWikiPlacesDefaultFilters(ctx);
         }
