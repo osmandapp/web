@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
-import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
+import {
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_TRAVEL,
+    OBJECT_TYPE_WEATHER,
+} from '../../../context/AppContext';
 import { selectedForecastDetails } from '../../../menu/weather/Weather';
 
 export default function useMenuDots(ctx) {
@@ -17,6 +22,20 @@ export default function useMenuDots(ctx) {
         setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj);
     }, [ctx.openGroups, ctx.selectedCloudTrackObj]);
 
+    useEffect(() => {
+        const showDetails = selectedForecastDetails(ctx);
+        const openLayers = ctx.weatherLayers[ctx.weatherType]?.some((l) => l.checked);
+
+        setActiveMenu(OBJECT_TYPE_WEATHER, !isSameHour() || showDetails || openLayers);
+    }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
+
+    useEffect(() => {
+        setActiveMenu(
+            OBJECT_TYPE_TRAVEL,
+            ctx.openGroups?.length > 0 || (ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear)
+        );
+    }, [ctx.searchTravelRoutes]);
+
     function isSameHour() {
         const initial = new Date();
         const current = ctx.weatherDate;
@@ -28,13 +47,6 @@ export default function useMenuDots(ctx) {
             initial.getHours() === current.getHours()
         );
     }
-
-    useEffect(() => {
-        const showDetails = selectedForecastDetails(ctx);
-        const openLayers = ctx.weatherLayers[ctx.weatherType]?.some((l) => l.checked);
-
-        setActiveMenu(OBJECT_TYPE_WEATHER, !isSameHour() || showDetails || openLayers);
-    }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
 
     return menuDots;
 }
