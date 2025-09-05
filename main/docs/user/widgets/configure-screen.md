@@ -354,7 +354,7 @@ The **widget context menu** provides a quick way to manage and configure widgets
 
 - **Add widget to the Right/Left** (only for *Top and Bottom panels*)
     - Select a position for the new widget relative to the current one.
-    - Choose the widget from the [Available widgets](#widgets-for-all-panels) list.
+    - Choose the widget from the [Available widgets](#widgets-catalog) list.
 
 - **Add widget Above/Below** (only for *Left and Right panels*)
     - Select whether to position the new widget above or below the current widget.
