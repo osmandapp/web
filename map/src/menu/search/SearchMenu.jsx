@@ -6,12 +6,7 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
-import {
-    EXPLORE_URL,
-    HEADER_SIZE,
-    MAIN_URL_WITH_SLASH,
-    SEARCH_URL,
-} from '../../manager/GlobalManager';
+import { EXPLORE_URL, HEADER_SIZE, MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../manager/GlobalManager';
 import { matchPath, useNavigate, useOutlet } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,

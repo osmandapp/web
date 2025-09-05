@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton, ListItemIcon, ListItemText, MenuItem, Toolbar, Typography } from '@mui/material';
 import CustomInput from './CustomInput';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import headerStyles from '../../trackfavmenu.module.css';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
@@ -14,6 +14,7 @@ import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProv
 import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
+import AppContext from '../../../context/AppContext';
 
 export default function PoiCategoriesList({
     categories,
@@ -24,6 +25,7 @@ export default function PoiCategoriesList({
     setIsMainSearchScreen,
     loadingIcons,
 }) {
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const sortedCategories = categories?.sort((a, b) => {
@@ -58,6 +60,7 @@ export default function PoiCategoriesList({
                         onClick={() => {
                             setOpenCategories(false);
                             setIsMainSearchScreen(true);
+                            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
                         }}
                     >
                         <BackIcon />

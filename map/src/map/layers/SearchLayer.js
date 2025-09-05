@@ -230,7 +230,6 @@ export default function SearchLayer() {
                         objList: ctx.searchResult?.features,
                     });
                     searchLayers.current = layers;
-                    console.log(`SearchLayer: adding search layer with ${layers.getLayers().length} markers`);
                     layers.addTo(map).on('click', onClick);
                 }
             }

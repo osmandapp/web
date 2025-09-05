@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
+    OBJECT_SEARCH,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRAVEL,
@@ -30,11 +31,12 @@ export default function useMenuDots(ctx) {
     }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
 
     useEffect(() => {
-        setActiveMenu(
-            OBJECT_TYPE_TRAVEL,
-            ctx.openGroups?.length > 0 || (ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear)
-        );
+        setActiveMenu(OBJECT_TYPE_TRAVEL, ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear);
     }, [ctx.searchTravelRoutes]);
+
+    useEffect(() => {
+        setActiveMenu(OBJECT_SEARCH, ctx.searchResult);
+    }, [ctx.searchResult]);
 
     function isSameHour() {
         const initial = new Date();
