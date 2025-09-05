@@ -70,21 +70,21 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | Plugin name |Features |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-settings) |
-| [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
-| [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
+| [Online maps](#online-maps) |[Map layer](../plugins/online-map.md##how-to-prepare-raster-maps) |
+| [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#recording-settings) |
 | [Topography](#topography) | [Map layer](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [3D Relief](#topography) 🤖  | [Map layer](../plugins/topography.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
-| [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
-| [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
+| [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-profile)  |
+| [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
 |[Audio/video notes](#audiovideo-notes) 🤖  | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
-|[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
+|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#authorization) |
+|[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[External Sensors](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
 | [OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#osmand-tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
 | [AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
@@ -121,11 +121,11 @@ The following plugins provide their own settings:
 
 | Plugin name | Settings |
 |:------------|:-------|
-| [Trip recording](#trip-recording) | Сonfigure the trip recording [operation modes](../plugins/trip-recording.md#recording-parameters) |
+| [Trip recording](#trip-recording) | Сonfigure the trip recording [operation modes](../plugins/trip-recording.md#required-setup-parameters) |
 | [Weather](#weather) | Configure measurement units for displaying weather events |
 |[Audio/video notes](#audiovideo-notes) 🤖  | Select [video format, how long to store, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
-|  [External Sensors](#external-sensors) 🤖  | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
+|  [External Sensors](#external-sensors) 🤖  | Connect to external device [Settings](../plugins/external-sensors.md##required-setup-parameters) |
 |  [Accessibility](#accessibility) 🤖  | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | All settings are configurable in a separate app |
