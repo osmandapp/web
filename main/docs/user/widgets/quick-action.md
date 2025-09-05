@@ -209,7 +209,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Change <br/> [**Terrain color scheme**](../plugins/topography.md#modify-color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
 | Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - ***Precipitation layer*** <br/> - ***Cloud layer*** <br/> - ***Pressure layer*** <br/> - ***Wind layer*** <br/> - ***Temperature layer*** |
 | Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
-| Show / Hide <br/> [**Favorites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
+| Show / Hide <br/> [**Favorites**](../map/point-layers-on-map.md#favorites) | Show or hide the favourite points on the map. |
 | Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#track-menu) | Show or hide the last visible tracks on the map. |
 | Show / Hide <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from the Configure Map selected without using Quick Actions.  |
 | Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |

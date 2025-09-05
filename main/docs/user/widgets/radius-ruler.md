@@ -138,7 +138,7 @@ When the **Radius Ruler** is active, the map displays a compass overlay to help 
 - Holding the device horizontally improves accuracy and visualization.
 - If the **blue triangle** and the **red arrow** (North) both point upward, the device is aligned to true North.
 
-This overlay is helpful for outdoor navigation, allowing you to match [map orientation](../map/interact-with-map.md#map-orientation--compass) with the real environment.  
+This overlay is helpful for outdoor navigation, allowing you to match [map orientation](../map/interact-with-map.md#map-orientation-modes) with the real environment.  
 
 | | |
 |------------|------------|

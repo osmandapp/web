@@ -67,7 +67,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
     - Wait until the route is calculated. After that, you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/osmand-routing.md#routing-types) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
-    - You can also change the departure point from the [current location](../../map/interact-with-map#my-location-and-zoom) to the required one.
+    - You can also change the departure point from the [current location](../../map/interact-with-map.md#my-location-and-zoom) to the required one.
 
 2. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 

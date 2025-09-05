@@ -84,7 +84,7 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 
 #### Interactions With the Graph {#interactions-with-the-graph}
 
-- *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 - *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
@@ -369,8 +369,8 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 | Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
-| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
+| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 
 
 

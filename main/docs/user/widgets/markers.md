@@ -24,9 +24,9 @@ The **Map markers bar** (Android) widget / **Distance indication - Top bar** (iO
 - Distance from your current location (or the centre map point / the initial map touching point when the Location is off) to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be chosen in the Profile settings).
 - An arrow of the same color as the marker indicates the direction from the current location (or the centre map point / the initial map touching point when the Location is off) and orientation in space of your device (heading) towards the marker.
 - Location Address.
-- Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
+- Menu icon leading to [Map marker list](../navigation/setup/markers-navigation.md#itinerary-list).
 
-You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#appearance-on-the-map).
 :::info
 *The distance to the marker* is the length of the straight line between your position (or the centre map point / the initial map touching point when the Location is off) and the marker.
 :::  
@@ -116,7 +116,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 ## Configure Marker Widgets {#configure-marker-widgets}
 
-You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
+You can read general information about the Map markers widget settings on this [page](../personal/markers#appearance-on-the-map).  
 
 **Map markers bar**  
 The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.

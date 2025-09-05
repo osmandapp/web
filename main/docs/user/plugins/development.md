@@ -347,7 +347,7 @@ OsmAnd provides an opportunity to simulate the location and movement of your dev
 
 </Tabs>  
 
-After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap [my location button](../map/interact-with-map#my-location-and-zoom) to synchronize *My Location* (simulated geolocation of the device) with the center of the map.  
+After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap [my location button](../map/interact-with-map.md#my-location-and-zoom) to synchronize *My Location* (simulated geolocation of the device) with the center of the map.  
 To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap **stop** in the **simulate your position** option.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* can be also accessed through **[Quick action menu](../widgets/quick-action.md#navigation)**.

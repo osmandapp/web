@@ -108,7 +108,7 @@ To resolve the issue of slow map rendering, especially when using offline vector
 
 6. **Use offline maps only.** Online maps, especially when not downloaded in advance, can slow down map loading. Switch to using only offline maps for smoother performance.
 
-These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map#settings).
+These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map.md#settings).
 
 
 ## Contour Lines {#contour-lines}

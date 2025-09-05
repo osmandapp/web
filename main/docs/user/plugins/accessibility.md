@@ -43,7 +43,7 @@ Accessibility improves usability for blind and visually impaired users by integr
 ***Features and functionality:***
 
 - **Gesture controls**:
-   - Supports all standard [OsmAnd gestures](../map/interact-with-map#gestures).
+   - Supports all standard [OsmAnd gestures](../map/interact-with-map.md#gestures).
    - Adjusts gestures to align with Android's **TalkBack** instructions.
 
 - **TalkBack integration**:
@@ -72,7 +72,7 @@ The iOS version of OsmAnd uses the system’s **built-in accessibility tools**.
 2. **Supported features**:
    - **Screen reader support** for map interactions.
    - **Customizable gestures** through iOS settings.
-   - All standard [OsmAnd gestures](../map/interact-with-map#gestures) are available.
+   - All standard [OsmAnd gestures](../map/interact-with-map.md#gestures) are available.
 
 3. **Learn more**:
    - Read about iOS Vision Accessibility features [here](https://www.apple.com/accessibility/vision/).

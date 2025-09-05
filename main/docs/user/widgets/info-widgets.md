@@ -165,7 +165,7 @@ The **Average Speed** widget calculates and displays your average speed over a s
    You can reset the average speed calculation in two ways:
 
    - Long tap the widget to open the [Context menu](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
-   - Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#settings) and select the reset option.
+   - Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#widget-settings) and select the reset option.
 
 After reset, the average speed is recalculated from the new GPS data. This feature is useful for real-time speed monitoring, such as tracking speed in areas with **average speed enforcement cameras**.
 
@@ -216,7 +216,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 
 </Tabs>  
 
-The [simple](../widgets/configure-screen.md#widgets-for-all-panels) *Glide Ratio* widgets provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you evaluate the efficiency of your descent or ascent when navigating to a specific location ([marker](../personal/markers.md) position on the map). It calculates the glide ratio as the ratio of distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+The [simple](../widgets/configure-screen.md#widget-panels) *Glide Ratio* widgets provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you evaluate the efficiency of your descent or ascent when navigating to a specific location ([marker](../personal/markers.md) position on the map). It calculates the glide ratio as the ratio of distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Widgets use:**

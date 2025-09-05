@@ -63,7 +63,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-At the top of the information panel, you can see the track’s name and the symbol used to mark it (*Android only*). The track name can be changed using the rename function in the [Options menu](#options). Some tracks (mostly the *[Travel guides](../../plan-route/travel-guides.md#manage-as-gpx-track)*) may have a short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../../map/interact-with-map#my-location-and-zoom).  
+At the top of the information panel, you can see the track’s name and the symbol used to mark it (*Android only*). The track name can be changed using the rename function in the [Options menu](#options). Some tracks (mostly the *[Travel guides](../../plan-route/travel-guides.md#manage-as-gpx-track)*) may have a short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../../map/interact-with-map.md#my-location-and-zoom).  
 
 The info panel also provides information about the following:
 

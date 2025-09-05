@@ -107,7 +107,7 @@ Each panel supports different layout behaviors:
 
 ***Navigational widgets:***  
 
-- [Bearing](../widgets/nav-widgets.md#bearing).  
+- [Bearing](../widgets/nav-widgets.md#bearing-widget).  
     This set shows the absolute or relative bearing to a target in angular units.  
     3 widgets are included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 
@@ -117,7 +117,7 @@ Each panel supports different layout behaviors:
 - [Lanes](../widgets/nav-widgets#lanes) (*Top/Bottom only*).  
     Visual lane guidance.
 
-- [Map markers bar](../widgets/markers.md#configure-marker-widgets-android) (*Top/Bottom only*).  
+- [Map markers bar](../widgets/markers.md#configure-marker-widgets) (*Top/Bottom only*).  
     Shows distance/direction to saved markers.  
     Configurable for 1 or 2 markers.
 
@@ -146,7 +146,7 @@ Each panel supports different layout behaviors:
     The set displays the altitude above sea level for the current location or for the current map center.  
     2 widgets are included: *Altitude: current location*, *Elevation: map center*.
 
-- [Average speed](../widgets/info-widgets.md#average-speed-widget).  
+- [Average speed](../widgets/info-widgets.md#average-speed).  
     Shows the average speed of the current trip.
 
 - [Battery level](../widgets/info-widgets.md#battery-level).  
@@ -156,7 +156,7 @@ Each panel supports different layout behaviors:
     This set displays the geographic coordinates of the current geolocation.  
     2 widgets are included: *Coordinates: map center*, *Coordinates: current location*.
 
-- [Current Speed](../widgets/info-widgets.md#speed).  
+- [Current Speed](../widgets/info-widgets.md#current-speed).  
     Displays speed from the GPS sensor.
 
 - [Current time](../widgets/info-widgets.md#current-time).  
@@ -176,7 +176,7 @@ Each panel supports different layout behaviors:
 - [Radius ruler](../widgets/info-widgets.md#radius-ruler).  
     Shows the distance between your location and a point on the map, circled by the [Radius ruler tool](../widgets/radius-ruler.md).
 
-- [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise).  
+- [Sunrise, sunset](../widgets/info-widgets.md#sun-position).  
     Shows the time of the next sunrise or sunset for the center of the map.  
     2 widgets are included: *Sunrise*, *Sunset*.
 
