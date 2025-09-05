@@ -191,7 +191,6 @@ export default function ExploreLayer() {
         ctx.setLoadingContextMenu,
     ]);
 
-
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
      * It only executes if not ignored and if at least one filter is selected.
@@ -334,7 +333,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (!ctx.exploreMenu && !ctx.searchSettings.showExploreMarkers) {
+        if (!ctx.exploreMenu && !ctx.searchSettings.showExploreMarkers && !ctx.searchSettings.useWikiImages) {
             abortController.abort();
             return;
         }
@@ -411,7 +410,7 @@ export default function ExploreLayer() {
                         simpleMarkersArr.addLayer(circle);
                     }
 
-                    if (ctx.exploreMenu || ctx.searchSettings.showExploreMarkers) {
+                    if (ctx.exploreMenu || ctx.searchSettings.showExploreMarkers || ctx.searchSettings.useWikiImages) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
