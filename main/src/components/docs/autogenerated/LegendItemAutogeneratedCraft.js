@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Agricultural engines' : 'craft/craft_craft_agricultural_engines',
         'Beekeeper' : 'craft/craft_craft_beekeeper',
@@ -48,6 +40,4 @@ export default function Render() {
         'Window construction' : 'craft/craft_craft_window_construction',
         'Winery' : 'craft/craft_craft_winery',
     }});
-
 }
-

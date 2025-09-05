@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Bank' : 'finance/finance_amenity_bank',
         'Atm' : 'finance/finance_amenity_atm',
@@ -23,6 +15,4 @@ export default function Render() {
         'Mobile money agent' : 'finance/finance_amenity_mobile_money_agent',
         'Ticket validator' : 'finance/finance_amenity_ticket_validator',
     }});
-
 }
-

@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Restaurant' : 'sustenance/sustenance_amenity_restaurant',
         'Cafe' : 'sustenance/sustenance_amenity_cafe',
@@ -26,6 +18,4 @@ export default function Render() {
         'Drinking water' : 'sustenance/sustenance_amenity_drinking_water',
         'Barbecue' : 'sustenance/sustenance_amenity_bbq',
     }});
-
 }
-

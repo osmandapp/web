@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Peak' : 'natural/natural_natural_peak',
         'Volcano' : 'natural/natural_natural_volcano',
@@ -38,6 +30,4 @@ export default function Render() {
         'Birds nest' : 'natural/natural_natural_birds_nest',
         'Termite mound' : 'natural/natural_natural_termite_mound',
     }});
-
 }
-

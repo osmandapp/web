@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Adit' : 'manmade/manmade_man_made_adit',
         'Aerialway pylon' : 'manmade/manmade_aerialway_pylon',
@@ -78,6 +70,4 @@ export default function Render() {
         'Power pole' : 'manmade/manmade_power_pole',
         'Power tower' : 'manmade/manmade_power_tower',
     }});
-
 }
-

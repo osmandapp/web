@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Community centre' : 'entertainment/entertainment_amenity_community_centre',
         'Social center' : 'entertainment/entertainment_amenity_social_centre',
@@ -51,6 +43,4 @@ export default function Render() {
         'Trampoline' : 'entertainment/entertainment_playground_trampoline',
         'Horizontal bar' : 'entertainment/entertainment_playground_horizontal_bar',
     }});
-
 }
-
