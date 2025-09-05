@@ -68,9 +68,9 @@ All the data you have configured and created can be exported using the ***Export
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-| |
-| --- | --- | --- |
-| ![Profiles Actions Import Android](@site/static/img/personal/profiles/profile_actions_import_android.png) | ![Profiles Actions Import 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) | ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) |
+![Profiles Actions Import Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Profiles Actions Import 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+
+<!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
 </TabItem>
 
@@ -78,9 +78,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
-| |
-| --- | --- | --- |
-| ![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) | ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) | ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) |
+
+![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+<!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>
 
