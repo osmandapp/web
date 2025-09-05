@@ -380,7 +380,7 @@ During route planning, the [graph](../navigation/setup/route-details.md#elevatio
 - For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [Navigation](../navigation/setup/gpx-navigation.md) using *Plan a route*.
 - For **iOS**, the graph is only available through the *[Options](#options) → Navigation* menu.
 
-When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
+When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyze-on-map) tool. Tap the *Details* button below the graph.  
 
 
 ## Related Articles {#related-articles}
