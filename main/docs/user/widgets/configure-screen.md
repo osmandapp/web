@@ -117,7 +117,7 @@ Each panel supports different layout behaviors:
 - [Lanes](../widgets/nav-widgets#lanes) (*Top/Bottom only*).  
     Visual lane guidance.
 
-- [Map markers bar](../widgets/markers.md#configure-marker-widgets-android) (*Top/Bottom only*).  
+- [Map markers bar](../widgets/markers.md#configure-marker-widgets) (*Top/Bottom only*).  
     Shows distance/direction to saved markers.  
     Configurable for 1 or 2 markers.
 
@@ -354,7 +354,7 @@ The **widget context menu** provides a quick way to manage and configure widgets
 
 - **Add widget to the Right/Left** (only for *Top and Bottom panels*)
     - Select a position for the new widget relative to the current one.
-    - Choose the widget from the [Available widgets](#widgets-for-all-panels) list.
+    - Choose the widget from the [Available widgets](#widgets-catalog) list.
 
 - **Add widget Above/Below** (only for *Left and Right panels*)
     - Select whether to position the new widget above or below the current widget.
