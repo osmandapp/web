@@ -58,7 +58,7 @@ import { legendContentData } from '@site/src/components/docs/legend/legendSectio
 <LazyLegendContent sectionData={legendContentData.cemetery} />
 
 ### Education {#education-landuse}
-<LazyLegendContent sectionData={legendContentData['education-landuse']} />
+<LazyLegendContent sectionData={legendContentData['education']} />
 
 ### Historic {#historic}
 <LazyLegendContent sectionData={legendContentData.historic} />
@@ -87,13 +87,13 @@ import { legendContentData } from '@site/src/components/docs/legend/legendSectio
 <LazyLegendContent sectionData={legendContentData.accomodation} />
 
 ### Education {#education-icons}
-<LazyLegendContent sectionData={legendContentData['education-icons']} />
+<LazyLegendContent sectionData={legendContentData['education-1']} />
 
 ### Food and drink {#food-and-drink}
 <LazyLegendContent sectionData={legendContentData['food-and-drink']} />
 
 ### Nature {#nature-icons}
-<LazyLegendContent sectionData={legendContentData['nature-icons']} />
+<LazyLegendContent sectionData={legendContentData['nature-1']} />
 
 ### Sport {#sport}
 <LazyLegendContent sectionData={legendContentData.sport} />

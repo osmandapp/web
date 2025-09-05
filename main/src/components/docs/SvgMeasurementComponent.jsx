@@ -43,6 +43,9 @@ const SvgMeasurementComponent = forwardRef((props, ref) => {
       const leftX = groupBBox.x;
       const rightX = groupBBox.x + groupBBox.width;
       for (const child of groupElement.children) {
+         if (!child || typeof child.getBBox !== 'function') {
+          continue;
+        }
         const childBBox = child.getBBox();
         const style = window.getComputedStyle(child);
         const strokeWidth = parseFloat(style.getPropertyValue('stroke-width')) || 0;
