@@ -2,14 +2,14 @@ import React, { useContext, useEffect } from 'react';
 import LocalTrackGroup from '../tracks/LocalTrackGroup';
 import AppContext from '../../context/AppContext';
 import { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 
 export default function PlanRouteMenu() {
     const ctx = useContext(AppContext);
 
     // get gpx files and create groups
     useEffect(() => {
-        if (!_.isEmpty(ctx.listFiles)) {
+        if (!isEmpty(ctx.listFiles)) {
             //get gpx files
             let files = getGpxFiles(ctx.listFiles);
             //get groups

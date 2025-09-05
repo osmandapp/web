@@ -14,13 +14,12 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
-import { format, startOfWeek, addDays } from 'date-fns';
-import capitalize from 'lodash/capitalize';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
+import { localizeWeekTokens } from '../../../util/dateFmt';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
@@ -320,7 +319,7 @@ async function getWptTags(obj, type, ctx) {
                 }
 
                 if (tagObj.key === OPENING_HOURS) {
-                    tagObj.value = localizeWeekDays(tagObj.value, ctx);
+                    tagObj.value = localizeWeekTokens(tagObj.value);
                 }
 
                 if (tagObj.key.startsWith(POI_NAME)) {
@@ -388,23 +387,6 @@ export async function addPoiTypeTag({
     tagObj.textPrefix = value;
 
     return tagObj;
-}
-
-function localizeWeekDays(schedule, ctx) {
-    const locale = ctx.dateLocale;
-    const baseDate = startOfWeek(new Date(), { weekStartsOn: 1 });
-
-    const days = {
-        Mo: capitalize(format(baseDate, 'eee', { locale })),
-        Tu: capitalize(format(addDays(baseDate, 1), 'eee', { locale })),
-        We: capitalize(format(addDays(baseDate, 2), 'eee', { locale })),
-        Th: capitalize(format(addDays(baseDate, 3), 'eee', { locale })),
-        Fr: capitalize(format(addDays(baseDate, 4), 'eee', { locale })),
-        Sa: capitalize(format(addDays(baseDate, 5), 'eee', { locale })),
-        Su: capitalize(format(addDays(baseDate, 6), 'eee', { locale })),
-    };
-
-    return schedule.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (match) => days[match]);
 }
 
 function fixTagsKeys(tags) {

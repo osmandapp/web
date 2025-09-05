@@ -12,9 +12,11 @@ import TracksManager, {
     EMPTY_FILE_NAME,
     TRACK_VISIBLE_FLAG,
     preparedGpxFile,
-    GPX_FILE_EXT, KMZ_FILE_EXT,
+    GPX_FILE_EXT,
+    KMZ_FILE_EXT,
 } from './TracksManager';
-import _, { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
+import isEmpty from 'lodash-es/isEmpty';
 import {
     getFilesForUpdateDetails,
     OBJECT_TYPE_CLOUD_TRACK,
@@ -193,7 +195,7 @@ export async function renameTrack(oldName, folder, newName, ctx) {
 }
 
 export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
-    if (!_.isEmpty(listFiles)) {
+    if (!isEmpty(listFiles)) {
         //get gpx files
         let files = getGpxFiles(listFiles);
         if (ctx.gpxFiles[oldName]) {
@@ -361,7 +363,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
+            file: cloneDeep(ctx.selectedGpxFile),
         };
     }
 
@@ -395,7 +397,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
 }
 
 function updateTrackGroups(listFiles, ctx) {
-    if (!_.isEmpty(listFiles)) {
+    if (!isEmpty(listFiles)) {
         const files = getGpxFiles(listFiles);
         const trackGroups = createTrackGroups({ files, ctx });
         ctx.setTracksGroups(trackGroups);
@@ -454,7 +456,7 @@ function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
+            file: cloneDeep(ctx.selectedGpxFile),
         };
     }
 

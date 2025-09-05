@@ -6,7 +6,7 @@ import Empty from '../errors/Empty';
 import { Box, LinearProgress } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';

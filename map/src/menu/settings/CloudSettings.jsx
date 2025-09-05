@@ -2,9 +2,9 @@ import CloudTrash from './CloudTrash';
 import CloudChanges from './CloudChanges';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
-import { format } from 'date-fns';
 import devList from '../../resources/apple_device_model_list.json';
 import AppContext from '../../context/AppContext';
+import { fmt } from '../../util/dateFmt';
 
 export default function CloudSettings({ setOpenCloudSettings }) {
     const ctx = useContext(AppContext);
@@ -81,7 +81,7 @@ export default function CloudSettings({ setOpenCloudSettings }) {
     function getPreparedFiles(files) {
         const filesByDate = {};
         files.forEach((file) => {
-            let dateKey = format(new Date(file.updatetimems), 'LLLL yyyy', { locale: ctx.dateLocale });
+            let dateKey = fmt.monthYearLong(file.updatetimems);
             dateKey = dateKey.charAt(0).toUpperCase() + dateKey.slice(1);
             if (!filesByDate[dateKey]) {
                 filesByDate[dateKey] = [];

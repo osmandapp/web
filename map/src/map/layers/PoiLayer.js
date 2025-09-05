@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import _ from 'lodash';
+import debounce from 'lodash-es/debounce';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import 'leaflet-spin';
@@ -234,7 +236,7 @@ export default function PoiLayer() {
     }
 
     function typesChanged() {
-        if (!_.isEmpty(ctx.showPoiCategories)) {
+        if (!isEmpty(ctx.showPoiCategories)) {
             if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
                 // always clear the old poi list
                 return true;
@@ -247,7 +249,7 @@ export default function PoiLayer() {
     }
 
     const debouncedGetPoi = useRef(
-        _.debounce(
+        debounce(
             async ({
                 controller,
                 ignore,
@@ -275,7 +277,7 @@ export default function PoiLayer() {
                                     zoom,
                                 });
                                 const newPoiList = {
-                                    prevLayer: _.cloneDeep(poiList?.layer),
+                                    prevLayer: cloneDeep(poiList?.layer),
                                     layer: layer,
                                     listFeatures: res.features,
                                 };
@@ -315,9 +317,9 @@ export default function PoiLayer() {
         let controller = new AbortController();
 
         async function getPoiList() {
-            setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
+            setPrevTypesLength(cloneDeep(ctx.showPoiCategories.length));
             if (
-                (!_.isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
+                (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
                 move ||
                 typesChanged()
             ) {
@@ -325,7 +327,7 @@ export default function PoiLayer() {
                     prevController.abort();
                 }
                 setPrevController(controller);
-                setPrevZoom(_.cloneDeep(zoom));
+                setPrevZoom(cloneDeep(zoom));
                 if (ctx.showPoiCategories.length > 0) {
                     debouncedGetPoi({
                         controller,
@@ -339,9 +341,9 @@ export default function PoiLayer() {
                     });
                 }
             } else {
-                if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
+                if (poiList?.layer && isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
-                        prevLayer: _.cloneDeep(poiList?.layer),
+                        prevLayer: cloneDeep(poiList?.layer),
                         layer: null,
                     };
                     setPoiList(newPoiList);
@@ -356,7 +358,7 @@ export default function PoiLayer() {
                             zoom,
                         });
                         const newPoiList = {
-                            prevLayer: _.cloneDeep(poiList?.layer),
+                            prevLayer: cloneDeep(poiList?.layer),
                             layer: layer,
                             listFeatures: poiList?.listFeatures,
                         };

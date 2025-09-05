@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
-import _ from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
+import indexOf from 'lodash-es/indexOf';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, createHoverMarker } from './Clusterizer';
@@ -77,7 +78,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
                 let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
-                coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
+                coordsAll = coordsAll.concat(cloneDeep(coordsTrk));
                 coordsTrk = [];
             }
         }
@@ -348,7 +349,7 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
                 zIndexOffset: 1000,
             })
         );
-        let currentInd = _.indexOf(allPoints, point);
+        let currentInd = indexOf(allPoints, point);
         if (currentInd !== -1 && currentInd + 1 < allPoints.length) {
             let start = new L.LatLng(allPoints[currentInd + 1].lat, allPoints[currentInd + 1].lng);
             layers.push(
@@ -365,7 +366,7 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
 // find previous point if possible
 // use PROFILE_LINE if no geoProfile found
 function getPointGeoProfile(point, points) {
-    const ind = _.indexOf(points, point, 0);
+    const ind = indexOf(points, point, 0);
     const usePoint = ind > 0 ? points[ind - 1] : point;
     if (usePoint?.geoProfile || usePoint?.profile) {
         return { profile: usePoint?.profile, geoProfile: usePoint?.geoProfile };

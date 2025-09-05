@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';

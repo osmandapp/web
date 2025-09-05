@@ -8,7 +8,7 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import { translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 

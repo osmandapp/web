@@ -35,7 +35,6 @@ import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direct
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -64,9 +63,7 @@ import WptTagsProvider, {
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
-import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
-import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { apiGet, apiPost } from '../../../util/HttpApi';
@@ -79,10 +76,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 import PoiActionsButtons from './actions/PoiActionsButtons';
+import { fmt } from '../../../util/dateFmt';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -133,8 +131,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const hash = window.location.hash;
 
     const [devWikiContent, setDevWikiContent] = useState(null);
-
-    const currentLoc = useGeoLocation(ctx);
 
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 48;
@@ -491,7 +487,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function formatTime(time) {
-        return format(time, 'MMM dd, yyyy – HH:mm', { locale: ctx.dateLocale }).replace(',', EMPTY_STRING);
+        return fmt.dateTimeShort(time);
     }
 
     async function getPoiAddress(wpt) {

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
-import _ from 'lodash';
 import { disableLayers } from '../../manager/WeatherManager';
 
 function getWeatherTime(weatherDateObj) {

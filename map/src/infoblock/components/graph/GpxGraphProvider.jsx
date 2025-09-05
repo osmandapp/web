@@ -7,7 +7,9 @@ import TracksManager, {
     getAllPoints,
     getTrackPoints,
 } from '../../../manager/track/TracksManager';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
+import indexOf from 'lodash-es/indexOf';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { seleniumUpdateActivity } from '../../../util/Utils';
 import {
@@ -43,10 +45,10 @@ export const getGraphData = ({
     hasSpeed = false,
 }) => {
     const pointsArr = trackData ? trackData.data : segmentData ? segmentData.points : [];
-    if (!_.isEmpty(pointsArr)) {
+    if (!isEmpty(pointsArr)) {
         let elevation = hasEle ? 'ele' : null;
         let elevationSRTM = hasSrtm ? 'srtmEle' : null;
-        let points = _.cloneDeep(pointsArr);
+        let points = cloneDeep(pointsArr);
         let result = [];
         let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
         let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
@@ -74,7 +76,7 @@ export const getGraphData = ({
                 }
             }
             if (hasSpeed) {
-                speed = _.cloneDeep(
+                speed = cloneDeep(
                     point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
                 );
                 if (speed) {
@@ -145,12 +147,12 @@ const GpxGraphProvider = ({ width }) => {
     }
 
     function getRoadPoints(pointsFromTracks) {
-        let points = !_.isEmpty(ctx.selectedGpxFile.points)
+        let points = !isEmpty(ctx.selectedGpxFile.points)
             ? getAllPoints(ctx.selectedGpxFile.points)
             : pointsFromTracks;
-        if (!_.isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
+        if (!isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
             setRoadPoints(points);
-        } else if (_.isEmpty(points) || points[0].segment === undefined) {
+        } else if (isEmpty(points) || points[0].segment === undefined) {
             setRoadPoints(null);
         }
         return points ? points : [];
@@ -163,7 +165,7 @@ const GpxGraphProvider = ({ width }) => {
             let points = getTrackPoints(ctx.selectedGpxFile);
             getRoadPoints(points);
             setRouteTypes(ctx.selectedGpxFile.routeTypes);
-            if (!_.isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
+            if (!isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;
                     trackData.slope = true;
@@ -182,7 +184,7 @@ const GpxGraphProvider = ({ width }) => {
                     }
                 }
                 setData({ ...trackData });
-            } else if (_.isEmpty(points)) {
+            } else if (isEmpty(points)) {
                 setData(null);
             }
         } else {
@@ -232,8 +234,8 @@ const GpxGraphProvider = ({ width }) => {
             let prevSegPoint;
             roadPoints.forEach((p) => {
                 if (p.segment?.ext.types) {
-                    let seg = _.cloneDeep(p);
-                    seg.ind = _.indexOf(roadPoints, p);
+                    let seg = cloneDeep(p);
+                    seg.ind = indexOf(roadPoints, p);
                     const rawLen = Number(seg.segment?.ext?.length);
                     if (!Number.isFinite(rawLen) || rawLen < 1) {
                         return;

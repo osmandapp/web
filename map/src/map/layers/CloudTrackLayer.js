@@ -9,7 +9,7 @@ import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 import { addLayerToMap } from '../util/MapManager';
 

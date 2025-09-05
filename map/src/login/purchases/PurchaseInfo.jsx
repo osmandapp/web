@@ -8,18 +8,16 @@ import LoginContext from '../../context/LoginContext';
 import { FREE_ACCOUNT, getAccountInfo } from '../../manager/LoginManager';
 import Loading from '../../menu/errors/Loading';
 import InAppItem from './InAppItem';
-import { format } from 'date-fns';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import PurchaseManager, { getStatus } from './PurchaseManager';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
-import AppContext from '../../context/AppContext';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
+import { fmt } from '../../util/dateFmt';
 
 export const SUBSCRIPTION = 'subscription';
 export const IN_APP = 'inApp';
 
 export default function PurchaseInfo() {
-    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { selectedPurchase } = useOutletContext();
@@ -30,8 +28,6 @@ export default function PurchaseInfo() {
 
     const [item, setItem] = useState(null);
     const [type, setType] = useState(null);
-
-    const locale = ctx.dateLocale;
 
     function backToPurchases() {
         navigate({
@@ -96,7 +92,7 @@ export default function PurchaseInfo() {
     }
 
     function formatDate(date) {
-        return date ? format(new Date(parseInt(date, 10)), 'MMM d, yyyy', { locale }) : 'N/A';
+        return date ? fmt.MMMdY(Number(date)) : 'N/A';
     }
 
     function purchaseType() {

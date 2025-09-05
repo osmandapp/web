@@ -10,7 +10,7 @@ import AppContext, {
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
-import _, { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import {
     FAVORITES_URL,
@@ -88,7 +88,7 @@ export default function InformationBlock({
     }, []);
     useEffect(() => {
         window.removeEventListener('keydown', escapePointMenu);
-        if (!_.isEmpty(ctx.pointContextMenu)) {
+        if (!isEmpty(ctx.pointContextMenu)) {
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
@@ -174,7 +174,7 @@ export default function InformationBlock({
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
     useEffect(() => {
-        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
+        if ((!ctx.selectedGpxFile || isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowInfoBlock(false);

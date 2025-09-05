@@ -1,7 +1,8 @@
 import { Chart } from 'react-chartjs-2';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import isEqual from 'lodash-es/isEqual';
 import GraphManager, {
     cap,
     checkNextSegment,
@@ -86,7 +87,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
 
     const handleRangeChange = useCallback(
         (event, newValue) => {
-            if (_.isEqual(distRangeRef.current, newValue)) return;
+            if (isEqual(distRangeRef.current, newValue)) return;
 
             distRangeRef.current = newValue;
             setDistRangeValue([...newValue]);
@@ -204,12 +205,12 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     }
 
     function showMaxMin() {
-        return !_.isEmpty(maxMinData);
+        return !isEmpty(maxMinData);
     }
 
     function showRange() {
         const defaultPos =
-            _.isEmpty(ctx.trackRange?.range) ||
+            isEmpty(ctx.trackRange?.range) ||
             (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === dataGraph.length - 1);
         return !defaultPos;
     }
@@ -320,8 +321,8 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         box1: {
                             display: showRange(),
                             type: 'box',
-                            xMin: ctx.trackRange && !_.isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[0],
-                            xMax: ctx.trackRange && !_.isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[1],
+                            xMin: ctx.trackRange && !isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[0],
+                            xMax: ctx.trackRange && !isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[1],
                             backgroundColor: 'rgb(169,169,169, 0.34)',
                             borderWidth: 0,
                         },

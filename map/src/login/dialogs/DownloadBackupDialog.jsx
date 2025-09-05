@@ -21,7 +21,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import _ from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { apiPost } from '../../util/HttpApi';
 
 export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpenDownloadBackupDialog, widthDialog }) {
@@ -63,7 +64,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     };
 
     useEffect(() => {
-        if (openDownloadBackupDialog && _.isEmpty(categories)) {
+        if (openDownloadBackupDialog && isEmpty(categories)) {
             let groups = getCategoryGroups();
             groups = prepareFileGroups(groups);
             setCategories(groups);
@@ -78,7 +79,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     }, [openDownloadBackupDialog]);
 
     useEffect(() => {
-        if (!_.isEmpty(selectedCategories)) {
+        if (!isEmpty(selectedCategories)) {
             let data = [];
             let size = 0;
             let count = 0;
@@ -121,7 +122,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     function getCategoryGroups() {
         let groups = {};
         ctx.listFiles.uniqueFiles.forEach((file) => {
-            let type = _.cloneDeep(file.type);
+            let type = cloneDeep(file.type);
             if (type === FILE_TYPE) {
                 type = getTypeByName(type, file.name);
             }

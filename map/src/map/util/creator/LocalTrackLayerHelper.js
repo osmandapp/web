@@ -1,7 +1,7 @@
 import EditableMarker from './EditableMarker';
 import L from 'leaflet';
 import TrackLayerProvider, { TEMP_LAYER_FLAG, WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvider';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash-es/isEmpty';
 import TracksManager from '../../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
 import { LOCAL_TRACKS_LAYERS_ID } from '../../layers/LocalClientTrackLayer';
