@@ -43,7 +43,7 @@ export default function CloudTrackGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${fmt.MMMdY(Number(group.lastModifiedData))}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
+                        {`${fmt.monthShortDay(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton

@@ -55,6 +55,14 @@ export const fmt = {
             hour12: false,
         }),
 
+    // "MMM d" with month first (e.g., "Sep 13"; uk: "серп. 13")
+    monthShortDay: (d) => {
+        const date = new Date(d);
+        const mon = date.toLocaleDateString(lang(), { month: 'short' });
+        const day = date.toLocaleDateString(lang(), { day: 'numeric' });
+        return `${mon} ${day}`;
+    },
+
     // "MMM d, yyyy – HH:mm"
     dateTimeShort: (d) =>
         `${new Date(d).toLocaleDateString(lang(), {

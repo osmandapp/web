@@ -78,7 +78,7 @@ export default function FavoriteGroup({ index, group, smartf = null }) {
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" component="div" className={styles.groupInfo} noWrap>
                         {share && !sharedFile && <FileShareIcon />}
-                        {`${fmt.MMMdY(Number(group.clienttimems))}, ${groupSize}`}
+                        {`${fmt.monthShortDay(Number(group.clienttimems))}, ${groupSize}`}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton
