@@ -29,6 +29,11 @@ export default function LegendItem({ itemsMap }) {
     return (
       <table className={styles.table}>
         <tbody>
+          <tr>
+            <th className="col-3" style={{ display: 'none' }} />
+            <th className="col-3" style={{ display: 'none' }} />
+            <th className="col-3" style={{ display: 'none' }} />
+          </tr>
           {items.map((itemArray, rowIndex) => (
             <React.Fragment key={`legend-row-${rowIndex}`}>
               <tr>

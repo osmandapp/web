@@ -72,7 +72,7 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
   }, []); 
 
   const { svgContent: svgContentDay, loading: loadingDay } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
-  const { svgContent: svgContentNight, loading: loadingNight } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
+  const { svgContent: svgContentNight, loading: loadingNight } = useSvgContent(svgPath + SVG_NIGHT_FILE_SUFFIX);
 
   const splitSvgsDay = useSplitSvg(svgContentDay, splitSvgToArray);
   const splitSvgsNight = useSplitSvg(svgContentNight, splitSvgToArray);
@@ -99,6 +99,11 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
       return (
         <table className={styles.table}>
           <tbody>
+            <tr>
+              <th className="col-3" style={{ display: 'none' }} />
+              <th className="col-3" style={{ display: 'none' }} />
+              <th className="col-3" style={{ display: 'none' }} />
+            </tr>
             {rows.map((itemArray, rowIndex) => (
               <React.Fragment key={`${mode}-row-${rowIndex}`}>
                 <tr>
