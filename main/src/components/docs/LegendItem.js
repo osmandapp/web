@@ -1,11 +1,11 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './LegendItem.module.css';
+import styles from './legenditem.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Translate from '@site/src/components/Translate.js';
 
-export default function LegendItem({itemsMap, columns = 3}) {
+export default function LegendItem({ itemsMap }) {
   // {'Access Private' : 'access/access_PrivateColor' }
   let items = [];
   let arr = [];
@@ -20,71 +20,53 @@ export default function LegendItem({itemsMap, columns = 3}) {
     items.push(arr);
   }
 
-  return (
+  const LegendTable = ({ items, useBaseUrl, mode }) => {
+    const isNightMode = mode === 'night';
+    const legendStyle = isNightMode ? styles.legendNight : styles.legendDay;
+    const imageSuffix = isNightMode ? '_night.svg' : '_day.svg';
+    const altSuffix = isNightMode ? ' Night' : ' Day';
 
+    return (
+      <table className={styles.table}>
+        <tbody>
+          <tr>
+            <th className="col-3" style={{ display: 'none' }} />
+            <th className="col-3" style={{ display: 'none' }} />
+            <th className="col-3" style={{ display: 'none' }} />
+          </tr>
+          {items.map((itemArray, rowIndex) => (
+            <React.Fragment key={`legend-row-${rowIndex}`}>
+              <tr>
+                {itemArray.map(([title, imageName]) => (
+                  <td key={`title-${imageName}`} className='text--center'>
+                    {title.startsWith('poi_') ? <Translate android="yes" id={title} getFirstPart={true} /> : title}
+                  </td>
+                ))}
+              </tr>
+              <tr className={legendStyle}>
+                {itemArray.map(([title, imageName]) => (
+                  <td key={`image-${imageName}`}>
+                    <img className={styles.img} src={useBaseUrl(`/img/legend/osmand/${imageName}${imageSuffix}`)} alt={`${title}${altSuffix}`} />
+                  </td>
+                ))}
+              </tr>
+            </React.Fragment>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
+
+  return (
     <div className="container row">
       <Tabs groupId="map-legend">
         <TabItem value="dayMode" label="Day mode">
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th className="col-3" style={{ display: 'none' }} />
-                <th className="col-3" style={{ display: 'none' }} />
-                <th className="col-3" style={{ display: 'none' }} />
-              </tr>
-            </thead>
-            {items.map((itemArray, ind) => {
-              return <>
-                <tr key={ind * 2}>
-                  {itemArray.length > 0 && <td className='text--center'>{itemArray[0][0]}</td>}
-                  {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
-                  {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
-                </tr>
-                <tr key={ind * 2 + 1} className={styles.legendDay}>
-                  {itemArray.length > 0 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_day.svg')}
-                    alt={itemArray[0][0] + " Day"} /></td>}
-                  {itemArray.length > 1 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_day.svg')}
-                    alt={itemArray[1][0] + " Day"} /></td>}
-                  {itemArray.length > 2 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_day.svg')}
-                    alt={itemArray[2][0] + " Day"} /></td>}
-                </tr>
-              </>
-
-            })}
-            </table>
+          <LegendTable items={items} useBaseUrl={useBaseUrl}  mode="day" />
         </TabItem>
         <TabItem value="nightMode" label="Night mode">
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th className="col-3" style={{ display: 'none' }} />
-                <th className="col-3" style={{ display: 'none' }} />
-                <th className="col-3" style={{ display: 'none' }} />
-              </tr>
-            </thead>
-            {items.map((itemArray, ind) => {
-              return <>
-                <tr key={ind * 2}>
-                  {itemArray.length > 0 && <td className='text--center'>{itemArray[0][0]}</td>}
-                  {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
-                  {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
-                </tr>
-                <tr key={ind * 2 + 1} className={styles.legendNight}>
-                  {itemArray.length > 0 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_night.svg')}
-                    alt={itemArray[0][0] + " Night"} /></td>}
-                  {itemArray.length > 1 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_night.svg')}
-                    alt={itemArray[1][0] + " Night"} /></td>}
-                  {itemArray.length > 2 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_night.svg')}
-                    alt={itemArray[2][0] + " Night"} /></td>}
-                </tr>
-              </>
-
-            })}
-          </table>
+          <LegendTable items={items} useBaseUrl={useBaseUrl} mode="night"/>
         </TabItem>
-
       </Tabs>
     </div>
-
   );
 }

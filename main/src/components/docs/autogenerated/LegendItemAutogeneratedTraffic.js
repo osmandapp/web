@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Gas station' : 'traffic/traffic_amenity_fuel',
         'Gas station for aircrafts' : 'traffic/traffic_aeroway_fuel',
@@ -95,6 +87,4 @@ export default function Render() {
         'Ferry terminal' : 'traffic/traffic_amenity_ferry_terminal',
         'Lighthouse' : 'traffic/traffic_man_made_lighthouse',
     }});
-
 }
-

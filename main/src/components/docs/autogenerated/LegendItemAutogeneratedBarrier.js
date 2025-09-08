@@ -1,19 +1,10 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
-        'Bar' : 'barrier/barrier_barrier_bar',
         'Bar' : 'barrier/barrier_barrier_bar',
         'Block' : 'barrier/barrier_barrier_block',
         'Board' : 'barrier/barrier_barrier_barrier_board',
@@ -52,6 +43,4 @@ export default function Render() {
         'Wedge' : 'barrier/barrier_barrier_wedge',
         'Wicket gate' : 'barrier/barrier_barrier_wicket_gate',
     }});
-
 }
-

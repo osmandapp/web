@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Amateur radio' : 'club/club_club_amateur_radio',
         'Automobile' : 'club/club_club_automobile',
@@ -41,6 +33,4 @@ export default function Render() {
         'Veterans' : 'club/club_club_veterans',
         'Youth movement' : 'club/club_club_youth_movement',
     }});
-
 }
-
