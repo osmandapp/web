@@ -118,12 +118,12 @@ You can also select to display one or two markers. Read more about widget settin
 
 You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
 
-**Map markers bar**  
+### Map markers bar {#map-markers bar}
 The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.
 
 ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)  
 
-**Map markers**  
+### Map markers {#map-markers} 
 The widget shows the distance or estimated time of arrival (ETA) for the first or second marker in the list of Map markers. You can choose: one marker, first or second, to be displayed on the screen or both.
 
 ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  
