@@ -155,21 +155,7 @@ The most important thing to start navigation is to determine your destination. T
 
 ### Intermediate Destinations {#intermediate-destinations}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigation intermediate Android 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![Navigation intermediate Android 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigation intermediate iOS 1](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_1.png) ![Navigation intermediate iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_2.png)
-
-</TabItem>
-
-</Tabs>
+:::note
 
 - **&nbsp;&#x1F589;** - allows to open the destination points list to make changes.
 - **&nbsp;&#8592;** - moves to Navigation menu screen.
@@ -177,6 +163,9 @@ The most important thing to start navigation is to determine your destination. T
 - **&nbsp;&#61;** - allows to change point order in the points list.
 - *&nbsp;&#43; Add* - opens context menu *Add intermediate*.
 - *&nbsp;&#9776; Clear all* - allows to clear all intermediate points.
+
+:::
+
 
 If you choose **Sort** (*Android*) or **Options** (*iOS*) in the destinations list, you will reach special options to adjust the order of navigation to intermediate points.
 
