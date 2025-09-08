@@ -48,7 +48,7 @@ When using OsmAnd, several features can influence battery consumption, especiall
 
 - **Screen control during navigation** (*Android*). To save power, you can configure OsmAnd to keep the screen off during navigation unless a turn or important event occurs. This is particularly useful during voice navigation. For more details, refer to the *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/> → [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)*.
 
-- **Power-saving navigation settings**. You can reduce battery consumption by minimizing map redraw frequency and limiting GPS accuracy. To adjust these settings, go to *Navigation → Settings → Route Navigation*. For more information, refer to the [saving power during navigation](../navigation/setup/route-navigation.md#saving-power-during-navigation).
+- **Power-saving navigation settings**. You can reduce battery consumption by minimizing map redraw frequency and limiting GPS accuracy. To adjust these settings, go to *Navigation → Settings → Route Navigation*. For more information, refer to the [saving power during navigation](../navigation/setup/route-navigation.md#power-saving-tips).
 
 - **Managing map layers and details**. Deactivate unnecessary map features like 3D relief, contour lines, or hillshades. You can also reduce the number of displayed objects (POI labels, boundaries, house numbers, etc.) via the *Configure Map* menu. Disabling these layers helps reduce the frequency of map redraws, which lowers power consumption.
 
@@ -86,7 +86,7 @@ To resolve GPS connection issues, follow these steps:
 1. **Change Location Source**. Try different options like Google Play Services or Android API in *OsmAnd Settings → Location Source*.
 2. **Update Google Service API**. Ensure you have the latest version from [Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en&gl=US).
 3. **Check Android Location Settings**. Go to Android System Settings and ensure Location Access is turned on and set to High Accuracy. You can also try clearing the cache and restarting your device. GPS issues may occur if buildings or large objects interfere with the signal. Test GPS performance, and if the signal is weak, set the minimum recording accuracy to over 15 meters.
-4. **Enable GPS Widget**. Use the GPS info widget to check satellite connections. If there are no satellite connections, your device will not determine the location, and the number of satellites will be 0. More details can be found in the [GPS widget guide](../widgets/info-widgets.md#gps-info-android).
+4. **Enable GPS Widget**. Use the GPS info widget to check satellite connections. If there are no satellite connections, your device will not determine the location, and the number of satellites will be 0. More details can be found in the [GPS widget guide](../widgets/info-widgets.md#gps-info).
 5. **Use GPS Signal Only**. Set your device to use only GPS (disable Wi-Fi or Bluetooth-based location). Instructions are available on [Google Support](https://support.google.com/android/answer/3467281?hl=en).
 6. **Reinstall OsmAnd**. If the above steps don't work, try reinstalling the OsmAnd app to clear bad data and resolve GPS issues. Before doing so, export all your saved data.
 7. **Check Device RAM**. If the issue persists, it may be due to insufficient memory, so ensure your device has enough RAM available.
@@ -105,7 +105,7 @@ If you encounter an issue where the email associated with your OsmAnd Pro purcha
 
 2. **Verify OsmAnd app email**. Recheck the email address in your OsmAnd app to ensure it matches your current Google Play email. This can be done by opening the app and navigating to the account settings.
 
-3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./purchases_payments.md#how-to-restore-purchases).
+3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./purchases_payments.md#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services).
 
 4. **Clear app cache and data**. Clear the cache and data of the OsmAnd app by going to your device's *Settings → Apps → OsmAnd → Storage → Clear Cache and Clear Data*. This will refresh the app and remove any residual issues from the old account.
 

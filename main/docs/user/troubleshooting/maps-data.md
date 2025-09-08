@@ -63,7 +63,7 @@ A correct path will not prompt OsmAnd with any write permission errors. Before m
 
 ### Deleting map data after the app update (if “Multiuser Storage 1” is selected) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-In OsmAnd’s Android version, selecting *Multiuser Storage 1* as the storage location can lead to the deletion of all [local maps](../personal/maps-resources.md#local-maps) whenever the app is automatically updated, such as from version 4.1.9 to 4.1.10, 4.1.11, or later (**Android 11, 12**). This issue is documented on [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+In OsmAnd’s Android version, selecting *Multiuser Storage 1* as the storage location can lead to the deletion of all [local maps](../personal/maps-resources.md#local) whenever the app is automatically updated, such as from version 4.1.9 to 4.1.10, 4.1.11, or later (**Android 11, 12**). This issue is documented on [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 To avoid losing your map data during updates, consider these solutions:
 
