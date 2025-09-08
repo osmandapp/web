@@ -75,6 +75,7 @@ export default function TravelMenu() {
 
     // Create activities array
     const activitiesArr = useMemo(() => {
+        if (!ctx.openTravel) return [];
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {
                 act.push({
@@ -99,7 +100,7 @@ export default function TravelMenu() {
             });
             return act;
         }, []);
-    }, [activities]);
+    }, [activities, ctx.openTravel]);
 
     // Fetch icons for activities
     useEffect(() => {
@@ -142,6 +143,7 @@ export default function TravelMenu() {
         setTravelResult(null);
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
+        ctx.setOpenTravel(false);
     }
 
     function handleActivitySelect(activityId) {

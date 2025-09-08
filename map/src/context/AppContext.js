@@ -328,6 +328,7 @@ export const AppContextProvider = (props) => {
     const [exploreMenu, setExploreMenu] = useState(false);
 
     // travel
+    const [openTravel, setOpenTravel] = useState(false);
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
@@ -837,6 +838,7 @@ export const AppContextProvider = (props) => {
                 visibleBounds,
                 setVisibleBounds,
                 exploreMenu, setExploreMenu,
+                openTravel, setOpenTravel,
             }}
         >
             {props.children}
