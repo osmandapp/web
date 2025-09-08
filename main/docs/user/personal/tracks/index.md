@@ -17,7 +17,7 @@ A simle way to create virtual folders for tracks with any filters.
 
 Read about what's a track and the different types of tracks.
 
-### [Display tracks](../../map/tracks/index.md##display-tracks-on-the-map) {##display-tracks-on-the-map}
+### [Display tracks](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
 Read about how to display tracks and its options in OsmAnd.
 

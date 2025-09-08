@@ -114,7 +114,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 If [Elevation data](../map/tracks/track-context-menu.md#calculate-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
 
 - [Use nearby roads](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
-- [Use Terrain maps](../map/tracks/track-context-menu.md##calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
+- [Use Terrain maps](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
 ### Attach Track to Roads {#attach-track-to-roads}
