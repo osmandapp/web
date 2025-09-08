@@ -167,7 +167,7 @@ export async function prepareDriver() {
     driver = builder.build();
 
     // setRect might cause unknown error: failed to change window state to 'normal'
-    useLocalHomeBinary || await driver.manage().window().setRect({ width, height });
+    useLocalHomeBinary || (await driver.manage().window().setRect({ width, height }));
 
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
 }
