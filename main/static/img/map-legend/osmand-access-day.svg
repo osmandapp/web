@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 350 327" xmlns="http://www.w3.org/2000/svg">
 <g id="access_CustomersColor">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
@@ -18,7 +18,7 @@
 <circle cx="288" cy="12" r="6" fill="#DFB3E5" />
 
 </g>
-<g id="access_EmergencyColor">
+<g id="access_EmergencyColor" transform="translate(0 40)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />
@@ -37,7 +37,7 @@
 <circle cx="288" cy="12" r="6" fill="#FD8500" />
 
 </g>
-<g id="access_tollColor">
+<g id="access_tollColor" transform="translate(0 80)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 18.6274 5.37258 24 12 24H288C294.627 24 300 18.6274 300 12C300 5.37258 294.627 0 288 0H12C5.37258 0 0 5.37258 0 12Z" fill="#908079" fill-opacity="0.18" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 17.5228 6.47715 22 12 22H288C293.523 22 298 17.5228 298 12C298 6.47715 293.523 2 288 2H12C6.47715 2 2 6.47715 2 12Z" fill="#F5E85B" />
@@ -54,7 +54,7 @@
 <circle cx="285" cy="12" r="8" fill="#9E2D74" />
 
 </g>
-<g id="access_PrivateColor">
+<g id="access_PrivateColor" transform="translate(0 120)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />
@@ -73,7 +73,7 @@
 <circle cx="288" cy="12" r="6" fill="#FEB3B3" />
 
 </g>
-<g id="access_AgriculturalColor">
+<g id="access_AgriculturalColor" transform="translate(0 160)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />
@@ -92,7 +92,7 @@
 <circle cx="288" cy="12" r="6" fill="#8FC763" />
 
 </g>
-<g id="access_DeliveryColor">
+<g id="access_DeliveryColor" transform="translate(0 200)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />
@@ -111,7 +111,7 @@
 <circle cx="288" cy="12" r="6" fill="#B2AEB7" />
 
 </g>
-<g id="access_PermissiveColor">
+<g id="access_PermissiveColor" transform="translate(0 240)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />
@@ -130,7 +130,7 @@
 <circle cx="288" cy="12" r="6" fill="#9AFB87" />
 
 </g>
-<g id="access_DestinationColor">
+<g id="access_DestinationColor" transform="translate(0 280)">
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 17.5228 4.47715 22 10 22H290C295.523 22 300 17.5228 300 12C300 6.47715 295.523 2 290 2H10C4.47715 2 0 6.47715 0 12Z" fill="#300000" fill-opacity="0.1" />
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 16.4183 5.58172 20 10 20H290C294.418 20 298 16.4183 298 12C298 7.58172 294.418 4 290 4H10C5.58172 4 2 7.58172 2 12Z" fill="white" />

@@ -5,7 +5,7 @@ import LegendItemWithProcessing from "../LegendItemWithProcessing";
 
 export default function Render() {
   return LegendItemWithProcessing({
-    svgPath: '/img/map-legend/osmand-historic',
+    svgPath: '/img/map-legend/osmand-built-up-historic',
     svgParts: {
       'built-up_ArchaeologicalSite' : 'Archaeological Site',
       'built-up_HistoricRuins' : 'Access Destination',
