@@ -203,7 +203,7 @@ For more information, read the **[United Kingdom Postcode data](https://github.c
 
 </Tabs>
 
-[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location, and can make it easier to plan travel and navigate in unknown places.  
+[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinate-format) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location, and can make it easier to plan travel and navigate in unknown places.  
 
 
 ## Related Articles {#related-articles}

@@ -26,7 +26,7 @@ All purchases made through any of these platforms support [**cross-platform acce
 | Plan | Description | Notes |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Supports **cross-platform** access |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks all [pro features](#pro-features), including CarPlay and 3D Relief. | Supports **cross-platform** access |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks all [pro features](#free-and-paid-features), including CarPlay and 3D Relief. | Supports **cross-platform** access |
 
 :::note  
 **Cross-platform access** means you can buy OsmAnd in our website or one store (e.g., *App Store, Google Play, or osmand.net*) and use it on another platform by [linking your purchase to an OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
