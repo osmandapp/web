@@ -70,12 +70,12 @@ export default function SearchMenu() {
     }, [ctx.categoryIcons]);
 
     useEffect(() => {
-        if (ctx.poiCategory?.filters) {
+        if (ctx.poiCategory?.filters && ctx.searchSettings.showExploreMarkers && !mainCategories) {
             const cats = createCategoriesFromFilters(ctx.poiCategory.filters);
             setMainCategories(cats);
             setSearchCategories(cats);
         }
-    }, [ctx.poiCategory?.filters]);
+    }, [ctx.poiCategory?.filters, ctx.searchSettings.showExploreMarkers]);
 
     useEffect(() => {
         const fetchCategorySearchResults = async (searchValue) => {

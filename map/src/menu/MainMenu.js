@@ -383,6 +383,10 @@ export default function MainMenu({
             }
         }
 
+        if (selectedType === OBJECT_TYPE_TRAVEL) {
+            ctx.setOpenTravel(true);
+        }
+
         ctx.setSearchSettings({
             ...ctx.searchSettings,
             showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult : false,
