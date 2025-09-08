@@ -253,7 +253,7 @@ Description and how to use:
 
 ![Search POI Android](@site/static/img/search/search_online_2_andr.png)  
 
-**Online Search** allows finding locations, addresses, and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back ([*example*](#example-of-online-search-query)).  
+**Online Search** allows finding locations, addresses, and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back.  
 
 Online Search includes the following features:
 

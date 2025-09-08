@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. OsmAnd uses two different **offline routing engines**: a *Java-based engine* and a *Native (C++) engine*.
 
-- The *Java-based engine* is used in [Safe Mode](../plugins/development.md#safe), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#safe) and ensure this option is disabled.
+- The *Java-based engine* is used in [Safe Mode](../plugins/development.md#overview), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#overview) and ensure this option is disabled.
 - The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
 
 
@@ -27,7 +27,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
 
-2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
+2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-settings).
 
 3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
 
@@ -124,4 +124,4 @@ For additional troubleshooting, visit:
 
 ### Navigation stops while screen is off {#navigation-stops-while-screen-is-off}
 
-- [The same issue](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) with track recording in the background.
+- [The same issue](../troubleshooting/track-recording-issues.md#overview) with track recording in the background.
