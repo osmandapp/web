@@ -546,27 +546,12 @@ export default function MainMenu({
                     return;
                 }
             }
-
-            if (selectedType === OBJECT_TYPE_WEATHER) {
-                const res = selectedForecastDetails(ctx);
-                if (res) {
-                    const index = ctx.weatherLayers[ctx.weatherType].indexOf(res);
-                    navigate({
-                        pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
-                        search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
-                        hash: location.hash,
-                    });
-                    return;
-                }
-            }
-
-            // navigate to the current menu
-            navigateToUrl({ menu: currentMenu });
+            setSelectedType(currentMenu?.type);
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
             // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true });
         }
-    }, [ctx.pageParams, menuInfo]);
+    }, [menuInfo]);
 
     useEffect(() => {
         // now this case only for login/logout
