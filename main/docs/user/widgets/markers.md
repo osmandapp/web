@@ -118,7 +118,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
 
-### Map markers bar {#map-markers bar}
+### Map markers bar {#map-markers-bar}
 The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.
 
 ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)  
