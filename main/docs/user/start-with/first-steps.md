@@ -452,7 +452,7 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 - [Cancel navigation](../navigation/setup/route-navigation.md)
 - [Stop map downloading and updating](../start-with/download-maps.md)
-- [Stop trip recording](../plugins/trip-recording.md#create-new-track)
+- [Stop trip recording](../plugins/trip-recording.md#new-track-recording)
 - [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
 </TabItem>

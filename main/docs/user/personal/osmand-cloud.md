@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview {#overview}
 
 :::tip subscribe  
-&nbsp;<ProFeature/> To access all features of OsmAnd Cloud, subscribe to **OsmAnd Pro** for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
+&nbsp;<ProFeature/> To access all features of OsmAnd Cloud, subscribe to **OsmAnd Pro** for [Android](../purchases/android.md#prices) or [iOS](../purchases/ios.md#prices).  
 :::  
 
 :::note cross-platform  

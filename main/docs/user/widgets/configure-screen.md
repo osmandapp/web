@@ -259,7 +259,7 @@ The **Row mode** feature allows you to add as many rows as needed to the top and
 The mode allows you to add **more than one widget in a single row** on the top and bottom panels to display as much information as needed.  
 
 - **Complex widgets**. Only one complex widget can be added per row. These include:
-    - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android)
+    - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets)
     - [Street name](../widgets/nav-widgets#street-name)
     - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
     - [Lanes](../widgets/nav-widgets#lanes)

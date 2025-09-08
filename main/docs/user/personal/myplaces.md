@@ -234,7 +234,7 @@ The **Audio/Video Notes plugin** allows you to create multimedia notes linked to
 
     - **<Translate android="true" ids="shared_string_share"/>** — Shares the note with others through various apps or platforms.
 
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Displays the related location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Displays the related location and [Context menu](../plugins/audio-video-notes#show-on-the-map) of the note on the map.
 
     - **<Translate android="true" ids="shared_string_rename"/>** — Change the name of the note to something more descriptive or relevant.
 

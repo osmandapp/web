@@ -116,7 +116,7 @@ To show/hide Wikipedia POIs, do the following:
 
 With uploaded Wikipedia data, regardless of the visibility mode of the [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) on the map, it is possible to [search](../search/search-poi.md) for any information from Wikipedia.
 
-When you tap the Search button, an additional panel appears allowing you to [search](../search/index.md) the entire text and/or a specific category. In the former case, the search results will show Wikipedia POIs with corresponding Wikipedia articles among other types of information. In the case of a [Wikipedia category search](../search/search-poi.md#search-poi), the search results will only show Wikipedia information, sorted by the closest location to the area of the map that is currently displayed on the screen.  
+When you tap the Search button, an additional panel appears allowing you to [search](../search/index.md) the entire text and/or a specific category. In the former case, the search results will show Wikipedia POIs with corresponding Wikipedia articles among other types of information. In the case of a [Wikipedia category search](../search/search-poi.md#poi-search-by-categories), the search results will only show Wikipedia information, sorted by the closest location to the area of the map that is currently displayed on the screen.  
 
 - In the **Android** version, you can open [Search](../search/index.md) by tapping the *Search icon* in the upper left corner of the screen and/or tapping the *Search option* in the menu.
 - In the **iOS** version, to open [Search](../search/index.md), the Search icon is in the upper left corner of the screen.
@@ -140,7 +140,7 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 
 -->
 
-- To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
+- To search by the Wikipedia [category](../search/search-poi.md#poi-search-by-categories), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -70,11 +70,11 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | Plugin name |Features |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-settings) |
-| [Online maps](#online-maps) |[Map layer](../plugins/online-map.md##how-to-prepare-raster-maps) |
+| [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#recording-settings) |
 | [Topography](#topography) | [Map layer](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
 | [3D Relief](#topography) 🤖  | [Map layer](../plugins/topography.md#3d-relief) |
-| [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
+| [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#weather-forecast-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-profile)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
 |[Audio/video notes](#audiovideo-notes) 🤖  | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
@@ -125,7 +125,7 @@ The following plugins provide their own settings:
 | [Weather](#weather) | Configure measurement units for displaying weather events |
 |[Audio/video notes](#audiovideo-notes) 🤖  | Select [video format, how long to store, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
-|  [External Sensors](#external-sensors) 🤖  | Connect to external device [Settings](../plugins/external-sensors.md##required-setup-parameters) |
+|  [External Sensors](#external-sensors) 🤖  | Connect to external device [Settings](../plugins/external-sensors.md#required-setup-parameters) |
 |  [Accessibility](#accessibility) 🤖  | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | All settings are configurable in a separate app |

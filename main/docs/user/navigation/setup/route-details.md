@@ -245,7 +245,7 @@ Road attributes are accessible in the [Route Details](#how-to-access) and displa
 
 </Tabs>
 
-Turn-by-turn information provides detailed [instructions](#instructions) on how to navigate a route. In addition to the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. This information helps you to better navigate your route and allows you to plan ahead.
+Turn-by-turn information provides detailed [instructions](#instructions) on how to navigate a route. In addition to the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-guidance) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. This information helps you to better navigate your route and allows you to plan ahead.
 
 Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens.
 
