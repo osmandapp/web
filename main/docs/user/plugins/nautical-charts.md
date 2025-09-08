@@ -190,7 +190,7 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 
 </Tabs>
 
-Depth point [packages](../start-with/download-maps.md#type-of-maps) are available for Europe, the Northern Hemisphere, and the Southern Hemisphere and are informational. Depth points indicate changes in topography below the water's surface, indicating the shallowest depth. This is necessary for *Boat* navigation. After downloading, you need to turn on [Depth contours](#depth-contours) to display it on the map.
+Depth point [packages](../start-with/download-maps.md#overview) are available for Europe, the Northern Hemisphere, and the Southern Hemisphere and are informational. Depth points indicate changes in topography below the water's surface, indicating the shallowest depth. This is necessary for *Boat* navigation. After downloading, you need to turn on [Depth contours](#depth-contours) to display it on the map.
 
 
 ### Depth Contours {#depth-contours}
