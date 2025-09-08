@@ -145,11 +145,12 @@ export async function prepareDriver() {
     options.addArguments('--incognito');
 
     mobile && options.setMobileEmulation({ deviceName });
-    //headless && options.headless().windowSize({ width, height });
+    // headless && options.headless().windowSize({ width, height }); // use --window-size
     headless && options.addArguments('--headless', '--disable-gpu', '--no-sandbox', `--window-size=${width},${height}`);
 
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
-    existsSync(tryHomeBinary) && options.setChromeBinaryPath(tryHomeBinary);
+    const useLocalHomeBinary = existsSync(tryHomeBinary);
+    useLocalHomeBinary && options.setChromeBinaryPath(tryHomeBinary);
 
     options.setLoggingPrefs({
         browser: 'ALL',
@@ -165,7 +166,8 @@ export async function prepareDriver() {
 
     driver = builder.build();
 
-    await driver.manage().window().setRect({ width, height });
+    // setRect might cause unknown error: failed to change window state to 'normal'
+    useLocalHomeBinary || await driver.manage().window().setRect({ width, height });
 
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
 }

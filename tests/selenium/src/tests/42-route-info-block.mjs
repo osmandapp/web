@@ -49,7 +49,7 @@ const routes = [
         turns: [
             'Go ahead onto Gottlieb-Daimler-Straße and go 0.1 km',
             'Keep left (+C|+C,TSLR) onto Sønderjyske Motorvej E 45 and go 74.0 km',
-            'Turn slightly left (+TSLL,C|C) onto Banegårdspladsen and go 0.3 km',
+            'Turn slightly left (+TSLL,C|C) onto Banegårdspladsen and go 0.2 km',
         ],
     },
 ];
