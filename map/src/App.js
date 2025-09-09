@@ -27,6 +27,7 @@ import {
     PURCHASES_URL,
     PRICING_URL,
     WEATHER_FORECAST_URL,
+    POI_CATEGORIES_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -48,6 +49,7 @@ import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
 import PricingPage from './shop/PricingPage';
 import WeatherForecastDetails from './menu/weather/WeatherForecastDetails';
+import PoiCategoriesList from './menu/search/search/PoiCategoriesList';
 
 export let globalNavigate = () => null;
 
@@ -111,6 +113,7 @@ const App = () => {
                                 />
                                 <Route path={SEARCH_URL} element={<SearchMenu />}>
                                     <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
+                                    <Route path={POI_CATEGORIES_URL} element={<PoiCategoriesList />}></Route>
                                 </Route>
                                 <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
                                 <Route path={WEATHER_URL} element={<Weather />}>

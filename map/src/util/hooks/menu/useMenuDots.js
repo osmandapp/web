@@ -35,8 +35,8 @@ export default function useMenuDots(ctx) {
     }, [ctx.searchTravelRoutes]);
 
     useEffect(() => {
-        setActiveMenu(OBJECT_SEARCH, ctx.searchResult);
-    }, [ctx.searchResult]);
+        setActiveMenu(OBJECT_SEARCH, ctx.searchResult || ctx.exploreMenu || ctx.poiCatMenu);
+    }, [ctx.searchResult, ctx.exploreMenu, ctx.poiCatMenu]);
 
     function isSameHour() {
         const initial = new Date();

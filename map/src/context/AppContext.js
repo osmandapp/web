@@ -326,6 +326,7 @@ export const AppContextProvider = (props) => {
     });
     const [visibleBounds, setVisibleBounds] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
+    const [poiCatMenu, setPoiCatMenu] = useState(false);
 
     // travel
     const [openTravel, setOpenTravel] = useState(false);
@@ -837,8 +838,12 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
-                exploreMenu, setExploreMenu,
-                openTravel, setOpenTravel,
+                exploreMenu,
+                setExploreMenu,
+                openTravel,
+                setOpenTravel,
+                poiCatMenu,
+                setPoiCatMenu,
             }}
         >
             {props.children}
