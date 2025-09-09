@@ -124,7 +124,7 @@ The following plugins provide their own settings:
 | [Trip recording](#trip-recording) | Сonfigure the trip recording [operation modes](../plugins/trip-recording.md#required-setup-parameters) |
 | [Weather](#weather) | Configure measurement units for displaying weather events |
 |[Audio/video notes](#audiovideo-notes) 🤖  | Select [video format, how long to store, etc.](../plugins/audio-video-notes.md#plugin-settings) |
-|[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
+|[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#settings)  |
 |  [External Sensors](#external-sensors) 🤖  | Connect to external device [Settings](../plugins/external-sensors.md#required-setup-parameters) |
 |  [Accessibility](#accessibility) 🤖  | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
