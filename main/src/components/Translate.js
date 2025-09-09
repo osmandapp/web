@@ -46,7 +46,7 @@ function pick(id, dicts, isAndroid) {
   return (<span>{`MISSING ${isAndroid ? 'Android' : 'iOS'} resource: ${id}!`}</span>);
 }
 
-export default function Translate({ id, android, ids, delimeter = ' → '}) {
+export default function Translate({ id, android, ids, delimeter = ' → ', getFirstPart = false}) {
   const {i18n} = useDocusaurusContext();
   const locale = i18n?.currentLocale ?? 'en';
 
@@ -56,7 +56,11 @@ export default function Translate({ id, android, ids, delimeter = ' → '}) {
   const isAndroid = !!android && android !== 'no' && android !== 'false';
 
   if (id) {
-    return pick(id, dicts, isAndroid);
+    const translation = pick(id, dicts, isAndroid);
+    if (typeof translation === 'string' && getFirstPart) {
+       return translation.split(';')[0];
+    }
+    return translation;
   }
 
   if (ids) {

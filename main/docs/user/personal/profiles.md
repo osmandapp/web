@@ -562,7 +562,7 @@ Plugins unlock additional features of the application and can be either [paid or
 
 - **OpenStreetMap Editing**. This item opens the [OpenStreetMap editing plugin settings](../plugins/osm-editing.md#settings) for the selected profile. With OsmAnd and the OSM editing plugin, you can contribute to OpenStreetMap.org by creating or modifying POIs, adding or commenting on notes, and uploading recorded GPX tracks.
 
-- **External Sensors**. When you tap an item in the *Plugin Settings* section, the [settings of external sensors](../plugins/external-sensors.md#sensors-settings) for the selected profile are opened. The External Sensors plugin allows you to read and record data from wireless external sensors and display it using widgets in the OsmAnd application.
+- **External Sensors**. When you tap an item in the *Plugin Settings* section, the [settings of external sensors](../plugins/external-sensors.md#sensor-settings) for the selected profile are opened. The External Sensors plugin allows you to read and record data from wireless external sensors and display it using widgets in the OsmAnd application.
 
 - **Accessibility** (*Android only*). This item opens [Accessibility plugin settings](../plugins/accessibility.md#plugin-settings) for the selected profile. The Accessibility plugin settings allow you to customize the application according to your needs. All settings relate to the navigation process and are set individually for each profile.
 

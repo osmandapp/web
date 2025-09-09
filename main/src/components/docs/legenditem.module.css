@@ -20,3 +20,10 @@
 table {
     display: table;
 }
+
+.svg svg{
+        display: block;
+        width: 100%;
+        min-height: 35px;
+        height: 100%;
+}

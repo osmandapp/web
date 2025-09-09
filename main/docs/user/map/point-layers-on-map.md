@@ -329,7 +329,7 @@ Waypoints, POIs, Favorite points, and Audio/video notes all refer to the concept
 
 [Favorite points](#favorites) are places users find particularly important or interesting and save to their list of favorite places. Places can include any location you may want to find and return to later.
 
-[Audio/video notes](#-audio--video-points-android--audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
+[Audio/video notes](#-audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
 
 All of these point types can be saved in GPX format to provide you with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so you can use it in their navigation tasks.
 

@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'College' : 'education/education_amenity_college',
         'Driving school' : 'education/education_amenity_driving_school',
@@ -27,6 +19,4 @@ export default function Render() {
         'Training' : 'education/education_amenity_training',
         'University' : 'education/education_amenity_university',
     }});
-
 }
-

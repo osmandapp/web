@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Stadium' : 'sport/sport_leisure_stadium',
         'Sports centre' : 'sport/sport_leisure_sports_centre',
@@ -31,7 +23,7 @@ export default function Render() {
         'Cricket' : 'sport/sport_sport_cricket',
         'Cycling' : 'sport/sport_sport_cycling',
         'Diving' : 'sport/sport_sport_diving',
-        'Dojo' : 'sport/sport_sport_dojo',
+        'Dojo' : 'sport/sport_amenity_dojo',
         'Equestrian' : 'sport/sport_sport_equestrian',
         'Field hockey' : 'sport/sport_sport_field_hockey',
         'Hang gliding' : 'sport/sport_sport_hang_gliding',
@@ -64,6 +56,4 @@ export default function Render() {
         'Volleyball' : 'sport/sport_sport_volleyball',
         'Ultralight aviation' : 'sport/sport_sport_ultralight_aviation',
     }});
-
 }
-

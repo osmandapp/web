@@ -259,7 +259,7 @@ The **Row mode** feature allows you to add as many rows as needed to the top and
 The mode allows you to add **more than one widget in a single row** on the top and bottom panels to display as much information as needed.  
 
 - **Complex widgets**. Only one complex widget can be added per row. These include:
-    - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android)
+    - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets)
     - [Street name](../widgets/nav-widgets#street-name)
     - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
     - [Lanes](../widgets/nav-widgets#lanes)
@@ -354,7 +354,7 @@ The **widget context menu** provides a quick way to manage and configure widgets
 
 - **Add widget to the Right/Left** (only for *Top and Bottom panels*)
     - Select a position for the new widget relative to the current one.
-    - Choose the widget from the [Available widgets](#widgets-for-all-panels) list.
+    - Choose the widget from the [Available widgets](#widgets-catalog) list.
 
 - **Add widget Above/Below** (only for *Left and Right panels*)
     - Select whether to position the new widget above or below the current widget.

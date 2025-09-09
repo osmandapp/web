@@ -1,17 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from '../LegendItem.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import LegendItem from "../LegendItem";
 
-
-// This code was automatically generated 
+// This code was automatically generated
 // with Java-tools SvgMapLegendGenerator
 
 export default function Render() {
-
     return LegendItem({itemsMap: {
         'Cinema' : 'tourism/tourism_amenity_cinema',
         'Museum' : 'tourism/tourism_tourism_museum',
@@ -104,6 +96,4 @@ export default function Render() {
         'Trailhead' : 'tourism/tourism_highway_trailhead',
         'Ranger station' : 'tourism/tourism_amenity_ranger_station',
     }});
-
 }
-
