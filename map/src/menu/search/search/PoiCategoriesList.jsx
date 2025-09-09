@@ -15,7 +15,7 @@ import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
-import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
+import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
 
 export default function PoiCategoriesList({
@@ -97,6 +97,8 @@ export default function PoiCategoriesList({
                                         type: SEARCH_TYPE_CATEGORY,
                                     });
                                     setOpenSearchResults(true);
+                                    navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
+                                    ctx.setPoiCatMenu(false);
                                 }}
                             >
                                 <ListItemIcon>{categoriesIcons[category]}</ListItemIcon>
