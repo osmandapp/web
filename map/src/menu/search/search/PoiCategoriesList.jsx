@@ -97,7 +97,6 @@ export default function PoiCategoriesList({
                                         type: SEARCH_TYPE_CATEGORY,
                                     });
                                     setOpenSearchResults(true);
-                                    setOpenCategories(false);
                                 }}
                             >
                                 <ListItemIcon>{categoriesIcons[category]}</ListItemIcon>
