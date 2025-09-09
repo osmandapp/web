@@ -10,6 +10,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 35px;
+    object-fit: cover;
 }
 
 .table {
