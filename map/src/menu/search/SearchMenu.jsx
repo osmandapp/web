@@ -6,7 +6,13 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
-import { EXPLORE_URL, HEADER_SIZE, MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../manager/GlobalManager';
+import {
+    EXPLORE_URL,
+    HEADER_SIZE,
+    MAIN_URL_WITH_SLASH,
+    POI_CATEGORIES_URL,
+    SEARCH_URL,
+} from '../../manager/GlobalManager';
 import { matchPath, useNavigate, useOutlet } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
@@ -42,14 +48,18 @@ export default function SearchMenu() {
         location.pathname
     );
 
+    const isPoiCategoriesRoute = matchPath(
+        { path: MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + '*' },
+        location.pathname
+    );
+
     const navigate = useNavigate();
 
-    const [isMainSearchScreen, setIsMainSearchScreen] = useState(true);
+    const [isMainSearchScreen, setIsMainSearchScreen] = useState(!isPoiCategoriesRoute);
     const [loadingWikiPlaces, setLoadingWikiPlaces] = useState(false);
     const [loadingIcons, setLoadingIcons] = useState(false);
     const [searchValue, setSearchValue] = useState(ctx.searchResult);
     const [categoriesIcons, setCategoriesIcons] = useState({});
-    const [openCategories, setOpenCategories] = useState(false);
     const [openSearchResults, setOpenSearchResults] = useState(false);
     const [searchCategories, setSearchCategories] = useState([]);
     const [searchCategoriesIconNames, setSearchCategoriesIconNames] = useState(null);
@@ -80,7 +90,7 @@ export default function SearchMenu() {
     useEffect(() => {
         const fetchCategorySearchResults = async (searchValue) => {
             if (searchValue) {
-                if (openCategories) {
+                if (isPoiCategoriesRoute) {
                     const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
                     if (categoriesResult) {
                         const validCategories = Object.values(categoriesResult).filter(
@@ -98,7 +108,7 @@ export default function SearchMenu() {
                     }
                 }
             } else {
-                if (openCategories) {
+                if (isPoiCategoriesRoute) {
                     setSearchCategories(mainCategories);
                 }
             }
@@ -205,8 +215,9 @@ export default function SearchMenu() {
     }
 
     function openSearchByCategories() {
-        setOpenCategories(true);
         setIsMainSearchScreen(false);
+        ctx.setPoiCatMenu(true);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
     }
 
     function openExploreMenu() {
@@ -246,12 +257,11 @@ export default function SearchMenu() {
                                     setSearchValue={setSearchValue}
                                 />
                             )}
-                            {openCategories && (
+                            {isPoiCategoriesRoute && (
                                 <PoiCategoriesList
                                     categories={searchCategories}
                                     categoriesIcons={searchCategoriesIcons}
                                     setSearchValue={setSearchValue}
-                                    setOpenCategories={setOpenCategories}
                                     setOpenSearchResults={setOpenSearchResults}
                                     setIsMainSearchScreen={setIsMainSearchScreen}
                                     loadingIcons={loadingIcons}

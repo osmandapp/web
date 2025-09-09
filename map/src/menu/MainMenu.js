@@ -72,6 +72,7 @@ import {
     LOGIN_URL,
     DELETE_ACCOUNT_URL,
     WEATHER_FORECAST_URL,
+    POI_CATEGORIES_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -383,6 +384,19 @@ export default function MainMenu({
             }
         }
 
+        if (selectedType === OBJECT_TYPE_WEATHER) {
+            const res = selectedForecastDetails(ctx);
+            if (res) {
+                const index = ctx.weatherLayers[ctx.weatherType].indexOf(res);
+                navigate({
+                    pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
+                    search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                    hash: location.hash,
+                });
+                return;
+            }
+        }
+
         if (selectedType === OBJECT_TYPE_TRAVEL) {
             ctx.setOpenTravel(true);
         }
@@ -391,6 +405,16 @@ export default function MainMenu({
             ...ctx.searchSettings,
             showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult : false,
         });
+
+        if (selectedType === OBJECT_SEARCH) {
+            if (ctx.poiCatMenu) {
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
+                return;
+            }
+        }
+
+        const menu = items.find((item) => isSelectedMenuItem(item));
+        menu && navigateToUrl({ menu });
     }, [selectedType]);
 
     useEffect(() => {

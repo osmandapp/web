@@ -15,18 +15,20 @@ import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
 
 export default function PoiCategoriesList({
     categories,
     categoriesIcons,
     setSearchValue,
-    setOpenCategories,
     setOpenSearchResults,
     setIsMainSearchScreen,
     loadingIcons,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const sortedCategories = categories?.sort((a, b) => {
         const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
@@ -58,9 +60,10 @@ export default function PoiCategoriesList({
                         variant="contained"
                         className={gStyles.icon}
                         onClick={() => {
-                            setOpenCategories(false);
                             setIsMainSearchScreen(true);
+                            ctx.setPoiCatMenu(false);
                             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
+                            navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
                         }}
                     >
                         <BackIcon />
