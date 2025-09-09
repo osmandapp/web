@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Встановлення OsmAnd (iOS) {#install-osmand-ios}
 
-Ви можете завантажити застосунок за цим посиланням - [OsmAnd Maps в Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+Ви можете завантажити додаток за цим посиланням - [OsmAnd Maps в Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -36,8 +36,8 @@ import Translate from '@site/src/components/Translate.js';
 
 | План | Опис | Доступність | Примітки |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **Безплатний план** що надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Обраного*, *Налаштувань* та *редагування/нотаток OSM*. | Доступно для всіх користувачів безплатної версії OsmAnd. | Обмежено базовими хмарними функціями та сховищем на **5 МБ**. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Внутрішня покупка** або **підписка**, що розблоковує розширені функції для безплатного застосунку OsmAnd. | Доступно в [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Можна додати до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088). |
+| **OsmAnd Start** | **Безплатний план**, що надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Обраного*, *Налаштувань* та *редагування/нотаток OSM*. | Доступний для всіх користувачів безплатної версії OsmAnd. | Обмежений базовими хмарними функціями та сховищем на **5 МБ**. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Внутрішня покупка** або **підписка**, що розблоковує розширені функції для безплатного додатку OsmAnd. | Доступно в [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Можна додати до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088). |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, що розблоковує додаткові розширені та [професійні функції](#pro-features). | Доступно в [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Надає повний доступ до функцій OsmAnd Cloud. |
 
 ### Важливі примітки {#important-notes}
@@ -46,7 +46,7 @@ import Translate from '@site/src/components/Translate.js';
 
 2. **OsmAnd Pro**, **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати їх в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-3. Ви можете додати **Maps+** до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088), щоб поділитися покупкою з членами родини.  
+3. Ви можете додати **Maps+** до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088), щоб поділитися покупкою з членами родини.
 
 
 ## Ціни {#prices}
@@ -73,7 +73,7 @@ import Translate from '@site/src/components/Translate.js';
 -->
 
 
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) Вбудована покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
@@ -84,7 +84,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Безплатні та платні функції {#free-and-paid-features}
 
-|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(внутрішня покупка та підписка) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(вбудована покупка та підписка) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -96,10 +96,10 @@ import Translate from '@site/src/components/Translate.js';
 | [Щогодинні оновлення мап](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (затримка 1 година) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Топографічні дані](../plugins/topography.md#overview)<br/>(Лінії контуру та Рельєф) | **-** | ✔ | ✔ |
+| [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
 | [3D-візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [Туристичні довідники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
+| [Путівники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх датчиків](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Офлайн та онлайн навігація](../navigation/index.md)<br/>з покроковими вказівками | ✔ | ✔ | ✔ |
 | [Офлайн миттєвий пошук](../search/index.md) | ✔ | ✔ | ✔ |
@@ -108,21 +108,21 @@ import Translate from '@site/src/components/Translate.js';
 | [Імпорт треків GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Інструмент планування маршруту](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Віджети показників транспортного засобу](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 віджети безплатно**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Оберти двигуна*</li></ul></details> | <details><summary>**2 віджети безплатно**</summary><ul><li>*Швидкість транспортного засобу*</li><li>*Оберти двигуна*</li></ul></details> | ✔ |
-| [Інструмент маркерів на мапі](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Інструмент "Маркери на мапі"](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Джерела онлайн-мап](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [Підтримка мап SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
 | [Обрані точки](../map/point-layers-on-map.md)<br/>закладки та шляхові точки | ✔ | ✔ | ✔ |
 | [Аудіо/фото/відео точки](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
-| [Експорт/імпорт профілю застосунку](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Експорт/імпорт профілю додатку](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 #### ** Оновлення мап {#-map-updates}
 
-[Безплатно](../personal/maps-resources.md#free-for-osm-mappers). Live-оновлення та необмежені завантаження мап доступні для маперів OSM.
+[Безплатно](../personal/maps-resources.md#free-for-osm-mappers). Живі оновлення та необмежені завантаження мап доступні для OSM-маперів.
 
 ### Pro Функції {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *Pro Функції* доступні для підписки [OsmAnd Pro](#prices). Це означає, що вам потрібно мати підписку [OsmAnd Pro](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) *Pro Функції* доступні за [підпискою OsmAnd Pro](#prices). Це означає, що вам потрібно мати [підписку OsmAnd Pro](#install-osmand-ios).
 
 На цей час підписка Pro має наступні функції:
 
@@ -132,8 +132,8 @@ import Translate from '@site/src/components/Translate.js';
 | [3D-рельєф](../plugins/topography.md#3d-relief) | Дозволяє мати та спостерігати масштабну модель вашого району або цілого континенту. |
 | [Віджети висоти - Висота: Центр мапи](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру мапи над рівнем моря.  |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | Мапи OsmAnd оновлюються кожні 15 хвилин після покращення [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Плагін Погода](../plugins/weather.md) | Погодинний прогноз на 24 години на 7 днів уперед на мапі. |
-| [Плагін Показники транспортного засобу (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє під'єднати сканер OBD-II для відображення детальних даних про транспортний засіб у застосунку OsmAnd та зберігання інформації в записах треків. Інформація про швидкість транспортного засобу та оберти двигуна доступна для OsmAnd Free.  |
+| [Плагін "Погода"](../plugins/weather.md) | Погодинний прогноз на 24 години на 7 днів вперед на мапі. |
+| [Плагін "Показники транспортного засобу" (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє під'єднати сканер OBD-II для відображення детальних даних про транспортний засіб у додатку OsmAnd та зберігання інформації в записах треків. Інформація про швидкість транспортного засобу та оберти двигуна доступна для OsmAnd безплатно.  |
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
 
 
@@ -155,7 +155,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Покупка Maps+ {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) План підписки / внутрішньої покупки *Maps+*. Тут ви можете обрати [річну підписку](#prices) або [одноразовий платіж](#prices):
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) План підписки / вбудованої покупки *Maps+*. Тут ви можете обрати [річну підписку](#prices) або [одноразовий платіж](#prices):
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Торкніться списку функцій Maps+ → Продовжити з Maps+*
 
@@ -164,19 +164,19 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Застарілі підписки (до версії 4.0) {#legacy-subscriptions-prior-40}
 
-Нові підписки стали активними з версії OsmAnd 4.3 (грудень 2022 року). Усі попередні підписки є застарілими й технічно еквівалентні "Підписці на мапи", хоча застарілі підписки дають право на щогодинні оновлення мап. Користувачі не можуть придбати застарілі підписки, але старі підписки автоматично поновлюються, доки ви не скасуєте підписку (ціна на них може змінитися в майбутньому).
+Нові підписки стали активними з версії OsmAnd 4.3 (грудень 2022 року). Усі попередні підписки є застарілими та технічно еквівалентні "Підписці на мапи", хоча застарілі підписки дають право на щогодинні оновлення мап. Користувачі не можуть придбати застарілі підписки, але старі підписки автоматично поновлюються, доки ви не скасуєте підписку (ціна на них може змінитися в майбутньому).
 
 
 ## Відновлення покупок {#restore-purchases}
 
-Користувач може керувати всіма покупками та підписками з [облікового запису Apple](https://appleid.apple.com/).  
+Користувач може керувати всіма покупками та підписками зі свого [облікового запису Apple](https://appleid.apple.com/).  
 
 Використовуйте той самий Apple ID для відновлення покупок.
 
-- Увійдіть до того ж облікового запису Apple App Store, який ви використовували для придбання внутрішніх покупок (підписок) OsmAnd Maps.
+- Увійдіть до того ж облікового запису Apple App Store, який ви використовували для придбання вбудованих покупок (підписок) OsmAnd Maps.
 - Встановіть [OsmAnd Maps з Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Відкрийте OsmAnd Maps з активним інтернет-з'єднанням.
-- Щоб відновити покупки, виконайте такі дії: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*, і у верхній частині екрана має з'явитися повідомлення про активацію Maps+ (Pro, Live).
+- Щоб відновити покупки, виконайте наступні кроки: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*, і у верхній частині екрана має з'явитися повідомлення про активацію Maps+(Pro, Live).
 
 ![План Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
@@ -184,7 +184,7 @@ import Translate from '@site/src/components/Translate.js';
 
 1. Очистіть кеш для App Store.
 2. Очистіть кеш для OsmAnd.
-3. Перезавантажте пристрій і спробуйте відновити ще раз.
+3. Перезавантажте пристрій і спробуйте відновити знову.
 
 
 <!--
@@ -200,5 +200,5 @@ import Translate from '@site/src/components/Translate.js';
 
 Ви можете придбати OsmAnd за допомогою подарункової картки App Store. Цей метод дозволяє уникнути передачі даних кредитної картки безпосередньо сервісу. Просто придбайте подарункову картку у вибраного вами продавця та активуйте код в App Store.
 
-- [Детальна інструкція з придбання подарункових карток App Store](https://www.apple.com/shop/gift-cards).
+- [Детальний посібник з придбання подарункових карток App Store](https://www.apple.com/shop/gift-cards).
 - [Інструкції з активації подарункової картки App Store](https://support.apple.com/en-gb/HT201209).
