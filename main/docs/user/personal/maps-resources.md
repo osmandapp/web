@@ -82,7 +82,7 @@ Please note that monthly map updates are considered another map download and are
 - [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
 
-## Downloads {#downloads}
+## Downloads Menu {#downloads-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -133,7 +133,7 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 - [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
 - [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
 
-#### World Maps {#world-maps}
+### World Maps {#world-maps}
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
@@ -144,7 +144,21 @@ In the Download Maps menu, there is a **World Maps** section that provides acces
 Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
 
 
-#### Multiple Map Loading {#multiple-map-loading}
+### Extra Maps {#extra-maps}
+
+OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder using a `.osf` plugin file (a compressed `.zip` format).
+
+To import a file:
+
+1. Locate the `.osf` file in your device’s storage, messenger, or email.
+2. Tap to open it with OsmAnd.
+3. The plugin will appear in the **Plugin List** section, where it can be activated.
+4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads) tab.
+
+Read more in the [**Custom package**](../plugins/custom) article.
+
+
+### Multiple Map Loading {#multiple-map-loading}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -292,20 +306,6 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 </Tabs>
 
 The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [OsmAnd Live](#osmand-live) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
-
-
-### Extra Maps {#extra-maps}
-
-OsmAnd supports the transfer of profile-specific settings and data, including rendering files, fonts, routes, maps, and custom plugins. Create a custom map folder using a `.osf` plugin file (a compressed `.zip` format).
-
-To import a file:
-
-1. Locate the `.osf` file in your device’s storage, messenger, or email.
-2. Tap to open it with OsmAnd.
-3. The plugin will appear in the **Plugin List** section, where it can be activated.
-4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads) tab.
-
-Read more in the [**Custom package**](../plugins/custom) article.
 
 
 ## OsmAnd Live {#osmand-live}
