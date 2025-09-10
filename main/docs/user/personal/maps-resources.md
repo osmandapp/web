@@ -62,12 +62,17 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Downloading maps into the OsmAnd application is an important step that determines the functionality and efficiency of navigation.
 
-#### Free Features for the Selected Location {#free-features-for-the-selected-location}
+### Free Map Content {#free-map-content}
 
 - **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POI, and public transportation information. Tapping opens a screen with a list of regions of the selected country and information about how much space these maps will take up on your device.  
 - **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. By removing details such as buildings and points of interest, it is smaller than a standard map. Tapping opens a screen with a list of regions in the selected country and information about how much space these maps will take up on your device.
+- **World-overview-map**. Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information. 
 
-#### Paid Features for the Selected Location {#paid-features-for-the-selected-location}
+:::info monthly map updates
+Please note that monthly map updates are considered another map download and are substracted from the available number of free map downloads.
+:::
+
+### Paid Map Content {#paid-map-content}
 
 - [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
 - [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
@@ -76,32 +81,8 @@ Downloading maps into the OsmAnd application is an important step that determine
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
 - [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
-#### World Overview Map {#world-overview-map}
 
-Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information.
-
-
-## Maps & Resources {#maps--resources}
-
-The **Maps & Resources** *Main Menu* section of the OsmAnd app provides access to manage maps and other important data.
-
-- The [Download](#downloads) maps tab allows you to download maps for offline use, ensuring their availability without the internet.  
-- In the [Local](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items you have on your device.  
-- The [Updates](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate.
-
-***General actions you can do in Maps & Resources***:
-
-- **Refresh**. Reloads the list of available maps from the OsmAnd server.  
-- **Search**. Search for maps by **country**, **province**, or major **city**.  
-- **Device memory**. Shows on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
-- **Map counter** (*Free version* is only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*.
-
-:::info monthly map updates
-Please note that monthly map updates are considered another map download and are substracted from the available number of free map downloads.
-:::
-
-
-### Downloads {#downloads}
+## Downloads {#downloads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
