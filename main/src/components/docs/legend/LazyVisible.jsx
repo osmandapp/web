@@ -1,17 +1,48 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-export default function LazyVisible({rootMargin = '200px', children}) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+export default function LazyVisible({ children, once = true, options }) {
+
+  const placeholderRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current || visible) return;
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setVisible(true); io.disconnect(); }
-    }, {rootMargin});
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, [visible, rootMargin]);
+    const ref = placeholderRef.current;
+    if (!ref) {
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          if (once) {
+            observer.unobserve(ref);
+          }
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+        ...options,
+      }
+    );
 
-  return <div ref={ref}>{visible ? children : <div style={{height:240}} />}</div>;
+    observer.observe(ref);
+
+    return () => {
+      if (ref) {
+        observer.unobserve(ref);
+      }
+    };
+  }, [once, options]);
+
+  const content = typeof children === 'function'
+    ? children({ isVisible })
+    : isVisible ? children : null;
+
+  return (
+    <div ref={placeholderRef}>
+      {content}
+    </div>
+  );
 }

@@ -4,14 +4,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Translate from '@site/src/components/Translate.js';
+import LazyIcon from './LazyIcon';
 
 export default function LegendItem({ itemsMap }) {
-  // {'Access Private' : 'access/access_PrivateColor' }
   let items = [];
   let arr = [];
   Object.entries(itemsMap).forEach((entry) => {
     arr.push(entry);
-    if (arr.length == 3) {
+    if (arr.length === 3) {
       items.push(arr);
       arr = [];
     }
@@ -46,7 +46,12 @@ export default function LegendItem({ itemsMap }) {
               <tr className={legendStyle}>
                 {itemArray.map(([title, imageName]) => (
                   <td key={`image-${imageName}`}>
-                    <img className={styles.img} src={useBaseUrl(`/img/legend/osmand/${imageName}${imageSuffix}`)} alt={`${title}${altSuffix}`} />
+                    <LazyIcon
+                      legendBackground={legendStyle}
+                      className={styles.img}
+                      src={useBaseUrl(`/img/legend/osmand/${imageName}${imageSuffix}`)}
+                      alt={`${title}${altSuffix}`}
+                    />
                   </td>
                 ))}
               </tr>
@@ -61,10 +66,10 @@ export default function LegendItem({ itemsMap }) {
     <div className="container row">
       <Tabs groupId="map-legend">
         <TabItem value="dayMode" label="Day mode">
-          <LegendTable items={items} useBaseUrl={useBaseUrl}  mode="day" />
+          <LegendTable items={items} useBaseUrl={useBaseUrl} mode="day" />
         </TabItem>
         <TabItem value="nightMode" label="Night mode">
-          <LegendTable items={items} useBaseUrl={useBaseUrl} mode="night"/>
+          <LegendTable items={items} useBaseUrl={useBaseUrl} mode="night" />
         </TabItem>
       </Tabs>
     </div>
