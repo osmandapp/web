@@ -414,8 +414,8 @@ export default function MainMenu({
         }
 
         const menu = items.find((item) => isSelectedMenuItem(item));
-        menu && navigateToUrl({ menu });
-    }, [selectedType]);
+        menu && navigateToUrl({ menu, params: ctx.pageParams });
+    }, [selectedType, ctx.pageParams]);
 
     useEffect(() => {
         const updateRequests = () => {
@@ -577,9 +577,9 @@ export default function MainMenu({
             setSelectedType(currentMenu?.type);
         } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
             // if the menu not found, navigate to the main page
-            navigateToUrl({ isMain: true });
+            navigateToUrl({ isMain: true, params: ctx.pageParams });
         }
-    }, [menuInfo]);
+    }, [ctx.pageParams, menuInfo]);
 
     useEffect(() => {
         // now this case only for login/logout
@@ -594,7 +594,7 @@ export default function MainMenu({
         }
     }, [ctx.prevPageUrl]);
 
-    function navigateToUrl({ menu = null, isMain = false }) {
+    function navigateToUrl({ menu = null, isMain = false, params = null }) {
         if (menu) {
             const isSubroute = location.pathname.startsWith(menu.url) && location.pathname !== menu.url;
             if (isSubroute) {
@@ -602,8 +602,8 @@ export default function MainMenu({
             }
         }
         if (isMain) {
-            if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
-                navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+            if (params?.[MAIN_PAGE_TYPE] !== undefined) {
+                navigate(MAIN_URL_WITH_SLASH + params?.[MAIN_PAGE_TYPE] + location.hash);
             } else {
                 navigate(MAIN_URL_WITH_SLASH + location.hash);
             }
@@ -614,8 +614,8 @@ export default function MainMenu({
                     return;
                 }
                 // special case for Navigation due to lazy-loading providers
-                if (ctx.pageParams[menu.type] !== undefined) {
-                    navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+                if (params?.[menu.type] !== undefined) {
+                    navigate(menu.url + params?.[menu.type] + location.hash);
                 } else if (!ctx.routeObject.isReady()) {
                     navigate(menu.url + window.location.search + location.hash);
                 } else {
@@ -623,8 +623,8 @@ export default function MainMenu({
                 }
             } else {
                 // all other cases
-                if (ctx.pageParams[menu.type] !== undefined) {
-                    navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+                if (params?.[menu.type] !== undefined) {
+                    navigate(menu.url + params?.[menu.type] + location.hash);
                 } else {
                     navigate(menu.url + location.hash);
                 }
