@@ -279,7 +279,7 @@ You can find out information about Online Navigation in [Online routing](../navi
 
 
 
-## Customize POI Search {#custom-poi-search}
+## Customize POI Search {#customize-poi-search}
 
 POI Search Customization is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
 
@@ -322,7 +322,7 @@ To create custom filters for finding places on the map, select relevant categori
 - *Select all* - To do this, select the toggle button.
 - Refine the list by excluding unnecessary ones - Start typing the suggested name in the *Search for POI types* field.  
 
-#### Categories and their Filters {#categories-and-their-filters}
+### Categories and their Filters {#categories-and-their-filters}
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
@@ -469,7 +469,7 @@ You can only delete categories that were created using filters or custom search.
 - ***You cannot undo the deletion.***
 
 
-#### Delete Custom Categories (iOS) {#delete-custom-categories-ios}
+### Delete Custom Categories (iOS) {#delete-custom-categories-ios}
 
 ![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_3_ios.png)  
 
