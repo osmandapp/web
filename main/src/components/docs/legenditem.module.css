@@ -6,10 +6,18 @@
     background-color: #121926;
 }
 
+@media(max-width: 800px) {
+    .img {
+        height: 36px;
+        object-fit: cover;
+    }
+}
+
 .img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    min-height: 36px;
 }
 
 .table {
@@ -24,6 +32,6 @@ table {
 .svg svg{
         display: block;
         width: 100%;
-        min-height: 35px;
+        min-height: 36px;
         height: 100%;
 }
