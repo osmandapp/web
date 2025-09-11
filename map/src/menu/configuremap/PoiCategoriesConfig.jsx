@@ -66,7 +66,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     function selectCheckedCategories() {
         const updatedCategories = Array.from(selectedCategories).map((category) => ({
             key: null,
-            category: category,
+            category,
         }));
         ctx.setShowPoiCategories([...updatedCategories]);
         setOpenPoiConfig(false);

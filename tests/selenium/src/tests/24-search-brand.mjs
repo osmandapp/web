@@ -5,6 +5,7 @@ import actionGetCountElements from '../actions/actionGetCountElements.mjs';
 import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionCheckPoi from '../actions/map/actionCheckPoi.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');
@@ -15,7 +16,7 @@ export default async function test() {
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
-
+    await actionIdleWait();
     await waitBy(By.id('se-search-input'));
 
     await sendKeysBy(By.id('se-search-input'), searchWord1 + '\n');
@@ -35,7 +36,8 @@ export default async function test() {
     }
 
     await actionCheckPoi({ iconWpt: 'shop_supermarket', name: searchWord2 });
-
+    await actionIdleWait();
+    await waitBy(By.id('se-search-input-back'));
     await clickBy(By.id('se-search-input-back'));
     await waitByRemoved(By.id('se-loading-page'));
     await waitBy(By.id('se-search-input'));

@@ -191,7 +191,6 @@ export default function PoiLayer() {
         //add fields for restoring the previous search result
         let prevSearchRes;
         let prevSearchCategory;
-
         showPoiCategories.forEach((obj) => {
             if (obj.key) {
                 if (!prevSearchRes && !prevSearchCategory) {
@@ -400,6 +399,7 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
+        ctx.setSelectedPoiObj({ ...poi });
     }
 
     useEffect(() => {

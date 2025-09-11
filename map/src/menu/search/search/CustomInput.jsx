@@ -1,5 +1,4 @@
-import { TextField } from '@mui/material/';
-import { Box, IconButton, InputAdornment } from '@mui/material';
+import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import React, { useContext, useEffect, useState } from 'react';
@@ -9,8 +8,14 @@ import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
 import { formattingPoiType } from '../../../manager/PoiManager';
+import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
-export default function CustomInput({ menuButton = null, setSearchValue, type = null, defaultSearchValue = '' }) {
+export default function CustomInput({
+    menuButton = null,
+    setSearchValue = null,
+    type = null,
+    defaultSearchValue = '',
+}) {
     const ctx = useContext(AppContext);
 
     const [value, setValue] = useState(defaultSearchValue);
@@ -22,6 +27,8 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
 
     const MIN_SIZE_SEARCH_VALUE = 1;
 
+    const { navigateToSearchResults } = useSearchNav();
+
     useEffect(() => {
         if (!isInitialRender) {
             if (value === EMPTY_SEARCH) {
@@ -31,7 +38,12 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                         features: [],
                     };
                 });
-                setSearchValue(null);
+                ctx.setSearchQuery((prev) => ({
+                    ...prev,
+                    search: { query: '' },
+                    type: null,
+                }));
+                navigateToSearchResults({ query: '', type: null });
             }
         } else {
             setIsInitialRender(false);
@@ -43,10 +55,14 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     }, [defaultSearchValue]);
 
     function search(value) {
-        setSearchValue({
-            query: value,
-            type: type,
-        });
+        if (setSearchValue) {
+            setSearchValue({
+                query: value,
+                type,
+            });
+            return;
+        }
+        navigateToSearchResults({ query: value, type });
     }
 
     const handleKeyPress = (e) => {

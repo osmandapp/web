@@ -73,6 +73,8 @@ import {
     DELETE_ACCOUNT_URL,
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
+    SEARCH_RESULT_URL,
+    EXPLORE_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -88,6 +90,8 @@ import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
+import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
+import { openPoiObj } from '../manager/SearchManager';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -223,7 +227,7 @@ export default function MainMenu({
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
@@ -407,8 +411,24 @@ export default function MainMenu({
         });
 
         if (selectedType === OBJECT_SEARCH) {
+            if (ctx.selectedPoiObj) {
+                openPoiObj(ctx, ctx.selectedPoiObj);
+            }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
+                return;
+            }
+            if (ctx.searchQuery) {
+                navigate({
+                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+                    search: buildSearchParamsFromQuery(ctx.searchQuery),
+                    hash: window.location.hash,
+                });
+                return;
+            }
+
+            if (ctx.exploreMenu) {
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
                 return;
             }
         }

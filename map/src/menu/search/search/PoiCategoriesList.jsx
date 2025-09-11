@@ -15,20 +15,13 @@ import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
-import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
-import { useNavigate } from 'react-router-dom';
+import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
-export default function PoiCategoriesList({
-    categories,
-    categoriesIcons,
-    setSearchValue,
-    setOpenSearchResults,
-    setIsMainSearchScreen,
-    loadingIcons,
-}) {
+export default function PoiCategoriesList({ categories, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-    const navigate = useNavigate();
+
+    const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
 
     const sortedCategories = categories?.sort((a, b) => {
         const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
@@ -60,10 +53,9 @@ export default function PoiCategoriesList({
                         variant="contained"
                         className={gStyles.icon}
                         onClick={() => {
-                            setIsMainSearchScreen(true);
                             ctx.setPoiCatMenu(false);
                             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
-                            navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
+                            navigateToSearchMenu();
                         }}
                     >
                         <BackIcon />
@@ -73,7 +65,7 @@ export default function PoiCategoriesList({
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <CustomInput setSearchValue={setSearchValue} type={SEARCH_TYPE_CATEGORY} />
+            <CustomInput type={SEARCH_TYPE_CATEGORY} />
             {sortedCategories?.length === 0 && <EmptySearch />}
             {loadingIcons ? (
                 <Loading />
@@ -88,16 +80,14 @@ export default function PoiCategoriesList({
                             <MenuItem
                                 id={'se-search-categories-list-item-' + catName}
                                 className={styles.categoriesListItem}
-                                key={key}
+                                key={key + catName}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    setSearchValue({
+                                    navigateToSearchResults({
                                         query: catName,
-                                        key: category,
                                         type: SEARCH_TYPE_CATEGORY,
+                                        key: category,
                                     });
-                                    setOpenSearchResults(true);
-                                    navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
                                     ctx.setPoiCatMenu(false);
                                 }}
                             >

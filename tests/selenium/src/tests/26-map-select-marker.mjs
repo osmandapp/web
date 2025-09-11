@@ -40,10 +40,6 @@ export default async function test() {
 
     await testExploreMarkers(ecoords1, ecoords2, ecoords3);
 
-    await clickBy(By.id('se-close-wpt-details'));
-    await waitByRemoved(By.id('se-wpt-details'));
-    await clickBy(By.id('se-explore-menu-close'));
-
     await testSearchMarkers(scoords1, scoords2, scoords3);
 
     await clickBy(By.id('se-search-input-back'));
@@ -76,6 +72,10 @@ async function testExploreMarkers(coords1, coords2, coords3) {
     await waitBy(By.id('se-explore-menu-name'));
 
     await testMarkers(coords1, coords2, coords3, [3, 4], explore_type);
+
+    await clickBy(By.id('se-close-wpt-details'));
+    await waitByRemoved(By.id('se-wpt-details'));
+    await clickBy(By.id('se-explore-menu-close'));
 }
 
 async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {

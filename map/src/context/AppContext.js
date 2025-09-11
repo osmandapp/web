@@ -45,6 +45,8 @@ export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
+export const MAX_RECENT_OBJS = 5;
+
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
     showPoi: false,
@@ -293,6 +295,8 @@ export const AppContextProvider = (props) => {
 
     const [notification, setNotification] = useState(null);
 
+    const [zoomToCoords, setZoomToCoords] = useState(null);
+
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
@@ -456,10 +460,13 @@ export const AppContextProvider = (props) => {
     const [recentObjs, setRecentObjs] = useState({
         tracks: [],
         favorites: [],
+        pois: [],
+        searchResults: [],
     });
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
+    const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
     useEffect(() => {
         async function loadSort() {
@@ -844,6 +851,10 @@ export const AppContextProvider = (props) => {
                 setOpenTravel,
                 poiCatMenu,
                 setPoiCatMenu,
+                selectedPoiObj,
+                setSelectedPoiObj,
+                zoomToCoords,
+                setZoomToCoords,
             }}
         >
             {props.children}

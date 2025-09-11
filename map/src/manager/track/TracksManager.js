@@ -7,6 +7,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
+    MAX_RECENT_OBJS,
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_LOCAL_TRACK,
@@ -1502,9 +1503,11 @@ function showInfoBlock({ hasUrl, file, ctx, smartf }) {
 
     ctx.setRecentObjs((prev) => {
         const tracks = prev.tracks.filter((f) => f.key !== file.key);
+        const next = [{ ...file }, ...tracks];
+        const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
         return {
             ...prev,
-            tracks: [{ ...file }, ...tracks],
+            tracks: limited,
         };
     });
     ctx.setSelectedCloudTrackObj({ ...file });

@@ -108,6 +108,24 @@ export default function SearchLayer() {
     });
 
     useEffect(() => {
+        if (ctx.zoomToCoords) {
+            const mapBounds = map.getBounds();
+            const pointLatLng = new LatLng(ctx.zoomToCoords.lat, ctx.zoomToCoords.lon);
+            if (!mapBounds.contains(pointLatLng)) {
+                map.setView(pointLatLng, zoom, { animate: true });
+            }
+            ctx.setZoomToCoords(null);
+
+            updateSelectedMarkerOnMap({
+                layers: searchLayers.current?.getLayers(),
+                selectedObjId: ctx.zoomToCoords.idObj,
+                prevSelectedMarker: prevSelectedRes,
+                type: SEARCH_LAYER_ID,
+            });
+        }
+    }, [ctx.zoomToCoords]);
+
+    useEffect(() => {
         if (ctx.searchQuery?.search) {
             removeOldSearchLayer();
             const searchData = ctx.searchQuery.search;
@@ -248,6 +266,7 @@ export default function SearchLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
+        ctx.setSelectedPoiObj({ ...poi });
     }
 
     async function createSearchLayer({ objList }) {

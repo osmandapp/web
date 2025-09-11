@@ -10,6 +10,7 @@ import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
 import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
+import { OBJECT_TYPE_POI } from '../context/AppContext';
 
 export const USE_OSMAND_SERVER = true;
 export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-1280/';
@@ -158,4 +159,9 @@ export function getPhotoTitle(photo) {
         return URL.substring(URL.lastIndexOf('/') + 1);
     }
     return URL;
+}
+
+export function openPoiObj(ctx, object) {
+    ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+    ctx.setSelectedWpt((prev) => ({ ...prev, poi: object }));
 }

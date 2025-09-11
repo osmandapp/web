@@ -6,7 +6,7 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from '../../../manager/PoiManager';
-import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, { MAX_RECENT_OBJS, OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import {
@@ -30,6 +30,7 @@ import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { apiGet } from '../../../util/HttpApi';
+import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -84,7 +85,7 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type, info, city };
 }
 
-export default function SearchResultItem({ item, setSearchValue, typeItem }) {
+export default function SearchResultItem({ item, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -92,6 +93,8 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
+
+    const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
 
     const itemId = getObjIdSearch(item);
 
@@ -161,12 +164,23 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                 }
             }
             const poi = {
+                key: itemId ?? `${typeItem}-${item.geometry.coordinates[0]}-${item.geometry.coordinates[1]}`,
                 options: options ?? item.properties,
                 latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
             };
             // click on item
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
+            ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi });
+            ctx.setRecentObjs((prev) => {
+                const pois = prev.pois.filter((f) => f.key !== poi.key);
+                const next = [{ ...poi }, ...pois];
+                const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
+                return {
+                    ...prev,
+                    pois: limited,
+                };
+            });
             ctx.setZoomToMapObj((prev) => {
                 return {
                     ...prev,
@@ -177,10 +191,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
-                setSearchValue({
+                return navigateToSearchResults({
                     query: getFirstSubstring(t(`poi_${category}`)),
-                    key: category,
                     type: SEARCH_TYPE_CATEGORY,
+                    key: category,
                 });
             } else {
                 // search by brand
@@ -190,10 +204,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     const brandRes = parseTagWithLang(type);
                     lang = brandRes.lang;
                 }
-                setSearchValue({
+                return navigateToSearchResults({
                     query: item.properties[CATEGORY_NAME],
-                    key: item.properties[CATEGORY_NAME],
                     type: SEARCH_TYPE_CATEGORY,
+                    key: item.properties[CATEGORY_NAME],
                     lang,
                 });
             }
