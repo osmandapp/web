@@ -16,7 +16,7 @@ export default async function test() {
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
-
+    await actionIdleWait();
     await waitBy(By.id('se-search-input'));
 
     await sendKeysBy(By.id('se-search-input'), searchWord1 + '\n');
