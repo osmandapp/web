@@ -176,7 +176,7 @@ export default function SearchResults({ setIsMainSearchScreen }) {
     }, [memoizedResult]);
 
     useEffect(() => {
-        if (locReady) {
+        if (locReady && !ctx.searchResult) {
             if (params.query && params.query !== '') {
                 ctx.setProcessingSearch(true);
                 if (params.type === SEARCH_TYPE_CATEGORY) {
