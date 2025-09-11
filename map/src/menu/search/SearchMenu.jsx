@@ -158,6 +158,7 @@ export default function SearchMenu() {
         }
     }, [ctx.wikiPlaces, zoom]);
 
+    // clear search value when object result context menu (WptDetails) is opened
     useEffect(() => {
         if (ctx.selectedWpt?.poi) {
             setSearchValue(null);
