@@ -13,6 +13,7 @@ export const legendContentData = {
   // LegendItemWithProcessing Sections
   'highways': {
     svgPath: '/img/map-legend/osmand-highways',
+    height: 1600,
     svgParts: {
       'highways': 'Highways',
       'motorway': 'Motorway',
@@ -59,6 +60,7 @@ export const legendContentData = {
   },
   'railways': {
     svgPath: '/img/map-legend/osmand-railways',
+    height: 600,
     svgParts: {
       'rail': 'Rail',
       'bridge': 'Bridge',
@@ -79,6 +81,7 @@ export const legendContentData = {
   },
   'aerialways': {
     svgPath: '/img/map-legend/osmand-aerialways',
+    height: 500,
     svgParts: {
       'cable_car': 'Cable car',
       'gondola': 'Gondola',
@@ -96,6 +99,7 @@ export const legendContentData = {
   },
   'routes': {
     svgPath: '/img/map-legend/osmand-routes',
+    height: 2289,
     svgParts: {
       'transport_bus': 'Bus',
       'transport_share_taxi': 'Share taxi',
@@ -155,6 +159,7 @@ export const legendContentData = {
   },
   'dirtbike-scale': {
     svgPath: '/img/map-legend/osmand-routes-dirtbike',
+    height: 359,
     svgParts: {
       'g0': '0',
       'g1': '1',
@@ -168,6 +173,7 @@ export const legendContentData = {
   },
   'via-ferrata': {
     svgPath: '/img/map-legend/osmand-via-ferrata',
+    height: 322,
     svgParts: {
       'via_ferrata': 'Via ferrata',
       'scale_0': 'Scale 0',
@@ -181,6 +187,7 @@ export const legendContentData = {
   },
   'path-difficulty': {
     svgPath: '/img/map-legend/osmand-path-difficulty',
+    height: 471,
     svgParts: {
       'hiking': 'Hiking',
       'mountain_hiking': 'Mountain hiking',
@@ -197,6 +204,7 @@ export const legendContentData = {
   },
   'surface-smoothness': {
     svgPath: '/img/map-legend/osmand-surface-smoothness',
+    height: 801,
     svgParts: {
       'asphalt': 'Asphalt',
       'paved': 'Paved (concrete,stone,wood etc)',
@@ -222,6 +230,7 @@ export const legendContentData = {
   },
   'access': {
     svgPath: '/img/map-legend/osmand-access',
+    height: 359,
     svgParts: {
       'access_PrivateColor': 'Access Private',
       'access_DestinationColor': 'Access Destination',
@@ -235,6 +244,7 @@ export const legendContentData = {
   },
   'waterways': {
     svgPath: '/img/map-legend/osmand-waterways',
+    height: 801,
     svgParts: {
       'river': 'River',
       'canal': 'Canal',
@@ -258,8 +268,141 @@ export const legendContentData = {
       'water_slide': 'Water-slide'
     }
   },
+  'buildings-transportation': {
+    svgPath: '/img/map-legend/osmand-buildings-transportation',
+    height: 729,
+    svgParts: {
+      'building_RegularColor' : 'Regular Building',
+      'building_IndustrialColor' : 'Industrianl, garagaes etc.',
+      'building_ResidentialColor' : 'Residential',
+      'building_HospitalColor' : 'Hospital, civic, educational',
+      'building_CommercialColor' : 'Commercial, retail',
+      'building_churchColor' : 'Place of worship, historic tower',
+      'building_AbandonedColor' : 'Abandoned, damaged, collapsed',
+      'building_ConstructionColor' : 'Construction',
+      'building_ProposedColor' : 'Proposed',
+      'building_MilitaryColor' : 'Military: barraks',
+      'building_bunker' : 'Bunker',
+      'building_railway_station' : 'Railway station',
+      'building_aerialway_station' : 'Aerialway station',
+      'building_public_transport_platform' : 'Public transport platform',
+      'building_aerodromeColor' : 'Aerodrome',
+      'building_aerowayTerminalColor' : 'Aeroway terminal',
+      'building_apronColor' : 'Apron',
+      'building_aeroway_helipad' : 'Helipad',
+    }
+  },
+  'sport-leisure': {
+    svgPath: '/img/map-legend/osmand-sport-leisure',
+    height: 692,
+    svgParts: {
+      'sport_Stadium' : 'Stadium',
+      'sport_sportsCentreColor' : 'Sports Centre',
+      'sport_track' : 'Track (leisure)',
+      'leisure_golfCourseColor' : 'Golf Course',
+      'leisure_Park' : 'Park',
+      'leisure_recreationGroundColor' : 'Recreation ground',
+      'leisure_pitchColor' : 'Pitch',
+      'leisure_horse_riding' : 'Horse riding',
+      'leisure_playgroundColor' : 'Playground',
+      'leisure_leisureCommonColor' : 'Common (leisure)',
+      'leisure_camp_site' : 'Camp site',
+      'leisure_outdoor_seating' : 'Outdoor seating',
+      'leisure_caravan_site' : 'Caravan site',
+      'leisure_picnic_site' : 'Picnic site',
+      'leisure_rest_area' : 'Rest area',
+      'leisure_beach_resort' : 'Beach resort',
+      'leisure_bleachers' : 'Bleachers',
+    }
+  },
+  'built-up-areas': {
+    svgPath: '/img/map-legend/osmand-built-up-areas',
+    height: 875,
+    svgParts: {
+      'built-up_PlaceOfWorship' : 'Place Of Worship',
+      'built-up_Monastery' : 'Monastery',
+      'built-up_WaterPark' : 'Water Park',
+      'built-up_ThemePark' : 'Theme Park',
+      'built-up_Zoo' : 'Zoo',
+      'built-up_ClimbingCrag' : 'Climbing Crag',
+      'built-up_landuseAllotmentsColor' : 'Landuse Allotments Color',
+      'built-up_CityWall' : 'City Wall',
+      'built-up_Fountain' : 'Fountain',
+      'built-up_amenityCinema' : 'Cinema',
+      'built-up_amenityHospital' : 'Hospital',
+      'built-up_SocialFacility' : 'Social Facility',
+      'built-up_LandFill' : 'LandFill',
+      'built-up_spoilHeapColor' : 'Spoil heap',
+      'built-up_landuseConstructionColor' : 'Landuse Construction Color',
+      'built-up_Prison' : 'Prison',
+      'built-up_landuseQuarry' : 'Quarry',
+      'built-up_landuseMilitary' : 'Military',
+      'built-up_landuseMilitaryDangerArea' : 'Military Danger Area',
+      'built-up_landusePowerPlant' : 'Power Plant',
+      'built-up_landusePowerSubstation' : 'Power Substation',
+    }
+  },
+  'landuse': {
+    svgPath: '/img/map-legend/osmand-landuse',
+    height: 434,
+    svgParts: {
+      'built-up_Residential' : 'Residential',
+      'built-up_ResidentialRural' : 'Residential (Rural)',
+      'built-up_landuseIndustrialColor' : 'Industrial',
+      'built-up_landuseGaragesColor' : 'Garages',
+      'built-up_landuseRailway' : 'Railway',
+      'built-up_farmyardColor' : 'Farmyard',
+      'built-up_landuseRetailColor' : 'Retail',
+      'built-up_landuseCommercialColor' : 'Commercial',
+      'built-up_placeAbandoned' : 'Abandone place',
+      'built-up_AnimalKeeping' : 'Animal Keeping',
+    }
+  },
+  'parking': {
+    svgPath: '/img/map-legend/osmand-parking',
+    height: 247,
+    svgParts: {
+      'built-up_Parking' : 'Parking',
+      'built-up_ParkingPermissive' : 'Parking Permissive access',
+      'built-up_ParkingAccessCustomers' : 'Parking Access Customers',
+      'built-up_ParkingPaid' : 'ParkingPaid',
+      'built-up_ParkingBicycle' : 'ParkingBicycle',
+    }
+  },
+  'cemetery': {
+    svgPath: '/img/map-legend/osmand-cemetery',
+    height: 210,
+    svgParts: {
+      'built-up_cemeteryColor' : 'Cemetery',
+      'built-up_cemeteryColorСhristian' : 'Christian cemetery',
+      'built-up_cemeteryColorMuslim' : 'Muslim cemetery',
+      'built-up_cemeteryColorJewish' : 'Jewish cemetery',
+    }
+  },
+  'education-landuse': {
+    svgPath: '/img/map-legend/osmand-built-up-education',
+    height: 284,
+    svgParts: {
+      'built-up_amenityKinderGarten' : 'KinderGarten',
+      'built-up_amenitySchool' : 'School',
+      'built-up_amenityCollege' : 'College',
+      'built-up_amenityUniversity' : 'University',
+      'built-up_amenityTraining' : 'Training',
+      'built-up_amenityLibrary' : 'Library',
+    }
+  },
+  'historic': {
+    svgPath: '/img/map-legend/osmand-built-up-historic',
+    height: 172,
+    svgParts: {
+      'built-up_ArchaeologicalSite' : 'Archaeological Site',
+      'built-up_HistoricRuins' : 'Access Destination',
+      'built-up_PalaeontologicalSite' : 'Palaeontological Site',
+    }
+  },
   'nature': {
     svgPath: '/img/map-legend/osmand-nature',
+    height: 2515,
     svgParts: {
       'water': 'Water',
       'swimming_pool': 'Swimming pool',
@@ -323,131 +466,6 @@ export const legendContentData = {
       'mud': 'Mud',
       'saltpond': 'Saltpond',
       'protected_area': 'Protected area'
-    }
-  },
-  'buildings-transportation': {
-    svgPath: '/img/map-legend/osmand-buildings-transportation',
-    svgParts: {
-      'building_RegularColor' : 'Regular Building',
-      'building_IndustrialColor' : 'Industrianl, garagaes etc.',
-      'building_ResidentialColor' : 'Residential',
-      'building_HospitalColor' : 'Hospital, civic, educational',
-      'building_CommercialColor' : 'Commercial, retail',
-      'building_churchColor' : 'Place of worship, historic tower',
-      'building_AbandonedColor' : 'Abandoned, damaged, collapsed',
-      'building_ConstructionColor' : 'Construction',
-      'building_ProposedColor' : 'Proposed',
-      'building_MilitaryColor' : 'Military: barraks',
-      'building_bunker' : 'Bunker',
-      'building_railway_station' : 'Railway station',
-      'building_aerialway_station' : 'Aerialway station',
-      'building_public_transport_platform' : 'Public transport platform',
-      'building_aerodromeColor' : 'Aerodrome',
-      'building_aerowayTerminalColor' : 'Aeroway terminal',
-      'building_apronColor' : 'Apron',
-      'building_aeroway_helipad' : 'Helipad',
-    }
-  },
-  // LegendItem Sections
-  'sport-leisure': {
-    svgPath: '/img/map-legend/osmand-sport-leisure',
-    svgParts: {
-      'sport_Stadium' : 'Stadium',
-      'sport_sportsCentreColor' : 'Sports Centre',
-      'sport_track' : 'Track (leisure)',
-      'leisure_golfCourseColor' : 'Golf Course',
-      'leisure_Park' : 'Park',
-      'leisure_recreationGroundColor' : 'Recreation ground',
-      'leisure_pitchColor' : 'Pitch',
-      'leisure_horse_riding' : 'Horse riding',
-      'leisure_playgroundColor' : 'Playground',
-      'leisure_leisureCommonColor' : 'Common (leisure)',
-      'leisure_camp_site' : 'Camp site',
-      'leisure_outdoor_seating' : 'Outdoor seating',
-      'leisure_caravan_site' : 'Caravan site',
-      'leisure_picnic_site' : 'Picnic site',
-      'leisure_rest_area' : 'Rest area',
-      'leisure_beach_resort' : 'Beach resort',
-      'leisure_bleachers' : 'Bleachers',
-    }
-  },
-  'built-up-areas': {
-    svgPath: '/img/map-legend/osmand-built-up-areas',
-    svgParts: {
-      'built-up_PlaceOfWorship' : 'Place Of Worship',
-      'built-up_Monastery' : 'Monastery',
-      'built-up_WaterPark' : 'Water Park',
-      'built-up_ThemePark' : 'Theme Park',
-      'built-up_Zoo' : 'Zoo',
-      'built-up_ClimbingCrag' : 'Climbing Crag',
-      'built-up_landuseAllotmentsColor' : 'Landuse Allotments Color',
-      'built-up_CityWall' : 'City Wall',
-      'built-up_Fountain' : 'Fountain',
-      'built-up_amenityCinema' : 'Cinema',
-      'built-up_amenityHospital' : 'Hospital',
-      'built-up_SocialFacility' : 'Social Facility',
-      'built-up_LandFill' : 'LandFill',
-      'built-up_spoilHeapColor' : 'Spoil heap',
-      'built-up_landuseConstructionColor' : 'Landuse Construction Color',
-      'built-up_Prison' : 'Prison',
-      'built-up_landuseQuarry' : 'Quarry',
-      'built-up_landuseMilitary' : 'Military',
-      'built-up_landuseMilitaryDangerArea' : 'Military Danger Area',
-      'built-up_landusePowerPlant' : 'Power Plant',
-      'built-up_landusePowerSubstation' : 'Power Substation',
-    }
-  },
-  'landuse': {
-    svgPath: '/img/map-legend/osmand-landuse',
-    svgParts: {
-      'built-up_Residential' : 'Residential',
-      'built-up_ResidentialRural' : 'Residential (Rural)',
-      'built-up_landuseIndustrialColor' : 'Industrial',
-      'built-up_landuseGaragesColor' : 'Garages',
-      'built-up_landuseRailway' : 'Railway',
-      'built-up_farmyardColor' : 'Farmyard',
-      'built-up_landuseRetailColor' : 'Retail',
-      'built-up_landuseCommercialColor' : 'Commercial',
-      'built-up_placeAbandoned' : 'Abandone place',
-      'built-up_AnimalKeeping' : 'Animal Keeping',
-    }
-  },
-  'parking': {
-    svgPath: '/img/map-legend/osmand-parking',
-    svgParts: {
-      'built-up_Parking' : 'Parking',
-      'built-up_ParkingPermissive' : 'Parking Permissive access',
-      'built-up_ParkingAccessCustomers' : 'Parking Access Customers',
-      'built-up_ParkingPaid' : 'ParkingPaid',
-      'built-up_ParkingBicycle' : 'ParkingBicycle',
-    }
-  },
-  'cemetery': {
-    svgPath: '/img/map-legend/osmand-cemetery',
-    svgParts: {
-      'built-up_cemeteryColor' : 'Cemetery',
-      'built-up_cemeteryColorСhristian' : 'Christian cemetery',
-      'built-up_cemeteryColorMuslim' : 'Muslim cemetery',
-      'built-up_cemeteryColorJewish' : 'Jewish cemetery',
-    }
-  },
-  'education-landuse': {
-    svgPath: '/img/map-legend/osmand-built-up-education',
-    svgParts: {
-      'built-up_amenityKinderGarten' : 'KinderGarten',
-      'built-up_amenitySchool' : 'School',
-      'built-up_amenityCollege' : 'College',
-      'built-up_amenityUniversity' : 'University',
-      'built-up_amenityTraining' : 'Training',
-      'built-up_amenityLibrary' : 'Library',
-    }
-  },
-  'historic': {
-    svgPath: '/img/map-legend/osmand-built-up-historic',
-    svgParts: {
-      'built-up_ArchaeologicalSite' : 'Archaeological Site',
-      'built-up_HistoricRuins' : 'Access Destination',
-      'built-up_PalaeontologicalSite' : 'Palaeontological Site',
     }
   },
 
