@@ -55,7 +55,7 @@ export function searchByCategory(searchParams, ctx) {
     });
 }
 
-export default function SearchResults({ setOpenSearchResults, setIsMainSearchScreen }) {
+export default function SearchResults({ setIsMainSearchScreen }) {
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
@@ -230,7 +230,6 @@ export default function SearchResults({ setOpenSearchResults, setIsMainSearchScr
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
-        setOpenSearchResults(false);
         setIsMainSearchScreen(true);
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);

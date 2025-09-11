@@ -63,7 +63,6 @@ export default function SearchMenu() {
     const [loadingIcons, setLoadingIcons] = useState(false);
     const [searchValue, setSearchValue] = useState(null);
     const [categoriesIcons, setCategoriesIcons] = useState({});
-    const [openSearchResults, setOpenSearchResults] = useState(false);
     const [searchCategories, setSearchCategories] = useState([]);
     const [searchCategoriesIconNames, setSearchCategoriesIconNames] = useState(null);
     const [searchCategoriesIcons, setSearchCategoriesIcons] = useState({});
@@ -248,12 +247,7 @@ export default function SearchMenu() {
                                 minHeight: 0,
                             }}
                         >
-                            {(isSearchResultRoute || openSearchResults) && (
-                                <SearchResults
-                                    setOpenSearchResults={setOpenSearchResults}
-                                    setIsMainSearchScreen={setIsMainSearchScreen}
-                                />
-                            )}
+                            {isSearchResultRoute && <SearchResults setIsMainSearchScreen={setIsMainSearchScreen} />}
                             {isPoiCategoriesRoute && (
                                 <PoiCategoriesList
                                     categories={searchCategories}
