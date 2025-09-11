@@ -63,7 +63,7 @@ The plugin settings are global and apply to all profiles.
 - **<Translate android="true" ids="layer_osm_edits"/>**. Tap it to open [*Menu → My Places → OSM edits*](../personal/myplaces.md). This tab lists your unedited OSM notes. The following actions are available with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.  
 
 :::note
-If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps-resources.md#osmand-live) are enabled.
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps-resources.md#live-updates) are enabled.
 :::  
 
 

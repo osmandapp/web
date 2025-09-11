@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 In the **Maps and Resources** section, you can manage both *Online* and *Offline* maps, and other resources used in OsmAnd. For example, you can download, delete, rename, clear cache, update and check size, and perform different actions.
 
-OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#osmand-live). You can also access the [Extra map](#extra-maps) feature to create your map types.
+OsmAnd operates with two types of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). The [Local](#local) tab stores all maps and resources. Available map types can be downloaded from the [Downloads](#downloads) tab. On the [Updates](#updates) tab, you can download maps that are available for updates and use [Live updates](#live-updates). You can also access the [Extra map](#extra-maps) feature to create your map types.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -179,7 +179,7 @@ Read more in the [**Custom package**](../plugins/custom) article.
 For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download.
 
 
-### Local {#local}
+## Local Menu {#local-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -204,7 +204,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_l
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#osmand-live), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -283,7 +283,7 @@ Use sorting options to organize map data:
 - **Large size first** / **Small size first**. Identify large maps to free storage space.
 
 
-### Updates {#updates}
+## Updates Menu {#updates-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -305,10 +305,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 
 </Tabs>
 
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [OsmAnd Live](#osmand-live) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
 
-## OsmAnd Live {#osmand-live}
+## Live Updates {#live-updates}
 
 :::tip Purchase
 OsmAnd Live is a paid feature.  
@@ -333,7 +333,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 
 </Tabs>
 
-**OsmAnd Live** provides frequent, incremental map updates through [subscription](../purchases/index.md) or is free for [OSM contributors](#free-for-osm-mappers). Updates occur every 15 minutes on OsmAnd servers and are downloadable hourly, daily, or weekly. These updates consume minimal storage — about 2-4% of the full map size per month.
+**Live Updates** provides frequent, incremental map updates through [subscription](../purchases/index.md) or is free for [OSM contributors](#free-for-osm-mappers). Updates occur every 15 minutes on OsmAnd servers and are downloadable hourly, daily, or weekly. These updates consume minimal storage — about 2-4% of the full map size per month.
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
@@ -361,7 +361,7 @@ Key features:
     Displays the scheduled time for the next update check.
 
 
-### Limitations of OsmAnd Live {#limitations-of-osmand-live}
+### Limitations of Live Updates {#limitations-of-live-updates}
 
 Address changes are supported only via monthly updates.
 Updated roads lack elevation details, affecting gradient graphs.

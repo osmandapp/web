@@ -92,7 +92,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [All Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#updates) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
+| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
@@ -130,7 +130,7 @@ At the moment, the Pro subscription has the following features:
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [Live](../personal/maps-resources.md#live-updates) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |

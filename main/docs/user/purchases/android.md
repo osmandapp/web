@@ -119,7 +119,7 @@ The table below details the features included in both the free and paid packages
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#updates)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
@@ -161,7 +161,7 @@ The **Pro** subscription currently has the following features:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [Live updates](../personal/maps-resources.md#live-updates) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
