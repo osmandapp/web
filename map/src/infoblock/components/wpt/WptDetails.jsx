@@ -670,7 +670,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 <ListItemIcon style={{ minWidth: 'auto' }}>
                     <LocationOn fontSize="small" />
                 </ListItemIcon>
-                <ListItemText>
+                <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
                     <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
                         {wpt.address}
                     </Typography>

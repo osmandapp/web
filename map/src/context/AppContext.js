@@ -295,6 +295,8 @@ export const AppContextProvider = (props) => {
 
     const [notification, setNotification] = useState(null);
 
+    const [zoomToCoords, setZoomToCoords] = useState(null);
+
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
@@ -851,6 +853,8 @@ export const AppContextProvider = (props) => {
                 setPoiCatMenu,
                 selectedPoiObj,
                 setSelectedPoiObj,
+                zoomToCoords,
+                setZoomToCoords,
             }}
         >
             {props.children}
