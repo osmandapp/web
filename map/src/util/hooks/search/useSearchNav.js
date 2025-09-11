@@ -49,12 +49,20 @@ export default function useSearchNav() {
         location.pathname
     );
 
+    function isSearchEqualToUrl(q) {
+        const s = buildSearchParamsFromQuery(q);
+        const sp = new URLSearchParams(s?.startsWith('?') ? s.slice(1) : s);
+        const fromCtx = parseParams(sp);
+        return shallowEqualByKeys(fromCtx, params, [QUERY_KEY, TYPE_KEY, CAT_KEY, LANG_KEY]);
+    }
+
     return {
         params,
         searchParams,
         setSearchParams,
         navigateToSearchResults,
         navigateToSearchMenu,
+        isSearchEqualToUrl,
         isSearchResultRoute,
     };
 }
@@ -66,6 +74,13 @@ function parseParams(sp) {
         if (v) acc[key] = v;
         return acc;
     }, {});
+}
+
+function shallowEqualByKeys(a, b, keys) {
+    for (const k of keys) {
+        if ((a[k]?.toLowerCase() || '') !== (b[k]?.toLowerCase() || '')) return false;
+    }
+    return true;
 }
 
 function buildSearchParams({ query, type, key, lang } = {}, currentSearchParams) {

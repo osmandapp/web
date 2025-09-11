@@ -55,7 +55,7 @@ export function searchByCategory(searchParams, ctx) {
     });
 }
 
-export default function SearchResults({ setIsMainSearchScreen }) {
+export default function SearchResults() {
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
@@ -66,7 +66,7 @@ export default function SearchResults({ setIsMainSearchScreen }) {
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
 
-    const { params, navigateToSearchMenu } = useSearchNav();
+    const { params, navigateToSearchMenu, isSearchEqualToUrl } = useSearchNav();
 
     useEffect(() => {
         const handler = setTimeout(() => {
@@ -176,8 +176,8 @@ export default function SearchResults({ setIsMainSearchScreen }) {
     }, [memoizedResult]);
 
     useEffect(() => {
-        if (locReady && !ctx.searchResult) {
-            if (params.query && params.query !== '') {
+        if (locReady) {
+            if (params.query && params.query !== '' && !isSearchEqualToUrl(ctx.searchQuery)) {
                 ctx.setProcessingSearch(true);
                 if (params.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(params, ctx);
@@ -230,7 +230,6 @@ export default function SearchResults({ setIsMainSearchScreen }) {
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
-        setIsMainSearchScreen(true);
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchQuery(null);

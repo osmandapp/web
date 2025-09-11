@@ -17,7 +17,7 @@ import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
-export default function PoiCategoriesList({ categories, categoriesIcons, setIsMainSearchScreen, loadingIcons }) {
+export default function PoiCategoriesList({ categories, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -53,7 +53,6 @@ export default function PoiCategoriesList({ categories, categoriesIcons, setIsMa
                         variant="contained"
                         className={gStyles.icon}
                         onClick={() => {
-                            setIsMainSearchScreen(true);
                             ctx.setPoiCatMenu(false);
                             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
                             navigateToSearchMenu();
