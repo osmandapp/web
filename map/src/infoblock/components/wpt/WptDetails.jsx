@@ -470,6 +470,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function returnToSearch() {
+        ctx.setSelectedPoiObj(null);
         setShowInfoBlock(false);
     }
 

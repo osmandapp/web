@@ -12,4 +12,5 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
         ctx.setSelectedFavoriteObj(null);
     }
     ctx.setCurrentObjectType(null);
+    ctx.setSelectedPoiObj(null);
 }

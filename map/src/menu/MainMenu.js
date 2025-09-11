@@ -90,6 +90,7 @@ import { saveSortToDB } from '../context/FavoriteStorage';
 import { openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
+import { openPoiObj } from '../manager/SearchManager';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -225,7 +226,7 @@ export default function MainMenu({
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
@@ -409,6 +410,9 @@ export default function MainMenu({
         });
 
         if (selectedType === OBJECT_SEARCH) {
+            if (ctx.selectedPoiObj) {
+                openPoiObj(ctx, ctx.selectedPoiObj);
+            }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
                 return;

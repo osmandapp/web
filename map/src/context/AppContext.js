@@ -458,11 +458,13 @@ export const AppContextProvider = (props) => {
     const [recentObjs, setRecentObjs] = useState({
         tracks: [],
         favorites: [],
+        pois: [],
         searchResults: [],
     });
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
+    const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
     useEffect(() => {
         async function loadSort() {
@@ -847,6 +849,8 @@ export const AppContextProvider = (props) => {
                 setOpenTravel,
                 poiCatMenu,
                 setPoiCatMenu,
+                selectedPoiObj,
+                setSelectedPoiObj,
             }}
         >
             {props.children}
