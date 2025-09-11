@@ -7,6 +7,8 @@ const TYPE_KEY = 'type';
 const CAT_KEY = 'key';
 const LANG_KEY = 'lang';
 
+const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY, CAT_KEY, LANG_KEY];
+
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
@@ -53,7 +55,7 @@ export default function useSearchNav() {
         const s = buildSearchParamsFromQuery(q);
         const sp = new URLSearchParams(s?.startsWith('?') ? s.slice(1) : s);
         const fromCtx = parseParams(sp);
-        return shallowEqualByKeys(fromCtx, params, [QUERY_KEY, TYPE_KEY, CAT_KEY, LANG_KEY]);
+        return shallowEqualByKeys(fromCtx, params, QUERY_SEARCH_RESULT_PARAMS);
     }
 
     return {
@@ -68,8 +70,7 @@ export default function useSearchNav() {
 }
 
 function parseParams(sp) {
-    const keys = [QUERY_KEY, TYPE_KEY, CAT_KEY, LANG_KEY];
-    return keys.reduce((acc, key) => {
+    return QUERY_SEARCH_RESULT_PARAMS.reduce((acc, key) => {
         const v = sp.get(key) || '';
         if (v) acc[key] = v;
         return acc;
