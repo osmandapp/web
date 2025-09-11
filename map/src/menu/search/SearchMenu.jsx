@@ -32,6 +32,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
+import useSearchNav from '../../util/hooks/search/useSearchNav';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -42,6 +43,8 @@ export default function SearchMenu() {
     const outlet = useOutlet();
 
     const [, height] = useWindowSize();
+
+    const { navigateToSearchResults, isSearchResultRoute } = useSearchNav();
 
     const showExploreOutlet = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
@@ -58,7 +61,7 @@ export default function SearchMenu() {
     const [isMainSearchScreen, setIsMainSearchScreen] = useState(!isPoiCategoriesRoute);
     const [loadingWikiPlaces, setLoadingWikiPlaces] = useState(false);
     const [loadingIcons, setLoadingIcons] = useState(false);
-    const [searchValue, setSearchValue] = useState(ctx.searchResult);
+    const [searchValue, setSearchValue] = useState(null);
     const [categoriesIcons, setCategoriesIcons] = useState({});
     const [openSearchResults, setOpenSearchResults] = useState(false);
     const [searchCategories, setSearchCategories] = useState([]);
@@ -121,7 +124,7 @@ export default function SearchMenu() {
             if (searchValue.type === SEARCH_TYPE_CATEGORY) {
                 fetchCategorySearchResults(searchValue).then();
             } else {
-                setOpenSearchResults(true);
+                navigateToSearchResults({ query: searchValue.query });
             }
         }
 
@@ -155,6 +158,12 @@ export default function SearchMenu() {
             setLoadingWikiPlaces(true);
         }
     }, [ctx.wikiPlaces, zoom]);
+
+    useEffect(() => {
+        if (ctx.selectedWpt?.poi) {
+            setSearchValue(null);
+        }
+    }, [ctx.selectedWpt?.poi]);
 
     // load icons for main search categories
     useEffect(() => {
@@ -202,12 +211,6 @@ export default function SearchMenu() {
         }
     }, [searchCategoriesIconNames]);
 
-    useEffect(() => {
-        if (!openSearchResults) {
-            setSearchValue(null);
-        }
-    }, [openSearchResults]);
-
     function createCategoriesFromFilters(filters) {
         return filters.map((item) => ({
             [CATEGORY_KEY_NAME]: item,
@@ -226,11 +229,7 @@ export default function SearchMenu() {
     }
 
     function searchByCategory(category) {
-        setSearchValue({
-            query: category,
-            type: SEARCH_TYPE_CATEGORY,
-        });
-        setOpenSearchResults(true);
+        navigateToSearchResults({ query: category, type: SEARCH_TYPE_CATEGORY });
         setIsMainSearchScreen(false);
     }
 
@@ -249,25 +248,21 @@ export default function SearchMenu() {
                                 minHeight: 0,
                             }}
                         >
-                            {openSearchResults && (
+                            {(isSearchResultRoute || openSearchResults) && (
                                 <SearchResults
-                                    value={searchValue}
                                     setOpenSearchResults={setOpenSearchResults}
                                     setIsMainSearchScreen={setIsMainSearchScreen}
-                                    setSearchValue={setSearchValue}
                                 />
                             )}
                             {isPoiCategoriesRoute && (
                                 <PoiCategoriesList
                                     categories={searchCategories}
                                     categoriesIcons={searchCategoriesIcons}
-                                    setSearchValue={setSearchValue}
-                                    setOpenSearchResults={setOpenSearchResults}
                                     setIsMainSearchScreen={setIsMainSearchScreen}
                                     loadingIcons={loadingIcons}
                                 />
                             )}
-                            {isMainSearchScreen && (
+                            {isMainSearchScreen && !isSearchResultRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
                                     <CustomInput
                                         menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}

@@ -30,6 +30,7 @@ import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { apiGet } from '../../../util/HttpApi';
+import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -84,7 +85,7 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type, info, city };
 }
 
-export default function SearchResultItem({ item, setSearchValue, typeItem }) {
+export default function SearchResultItem({ item, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -92,6 +93,8 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
+
+    const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
 
     const itemId = getObjIdSearch(item);
 
@@ -177,10 +180,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
-                setSearchValue({
+                return navigateToSearchResults({
                     query: getFirstSubstring(t(`poi_${category}`)),
-                    key: category,
                     type: SEARCH_TYPE_CATEGORY,
+                    key: category,
                 });
             } else {
                 // search by brand
@@ -190,10 +193,10 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                     const brandRes = parseTagWithLang(type);
                     lang = brandRes.lang;
                 }
-                setSearchValue({
+                return navigateToSearchResults({
                     query: item.properties[CATEGORY_NAME],
-                    key: item.properties[CATEGORY_NAME],
                     type: SEARCH_TYPE_CATEGORY,
+                    key: item.properties[CATEGORY_NAME],
                     lang,
                 });
             }

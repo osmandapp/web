@@ -24,25 +24,38 @@ import {
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
+import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
 const EMPTY_SEARCH_RESULT = 'empty';
 
-export function searchByCategory(value, ctx) {
+export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
+    ctx.setSearchQuery({
+        search: { query: formattingPoiType(searchParams.query) },
+        latlng: { lat: loc.lat, lng: loc.lng },
+        baseSearch,
+    });
+}
+
+export function performBaseSearch(searchParams, ctx, loc) {
+    searchByWord(searchParams, ctx, loc, true);
+}
+
+export function searchByCategory(searchParams, ctx) {
     const preparedValue = {
-        query: formattingPoiType(value.query),
-        type: value.type,
-        key: value.key,
+        query: formattingPoiType(searchParams.query),
+        type: searchParams.type,
+        key: searchParams.key,
     };
     ctx.setSearchQuery({
         search: preparedValue,
         type: SEARCH_TYPE_CATEGORY,
-        lang: value.lang,
+        lang: searchParams.lang,
     });
 }
 
-export default function SearchResults({ value, setOpenSearchResults, setIsMainSearchScreen, setSearchValue }) {
+export default function SearchResults({ setOpenSearchResults, setIsMainSearchScreen }) {
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
@@ -52,6 +65,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
+
+    const { params, navigateToSearchMenu } = useSearchNav();
 
     useEffect(() => {
         const handler = setTimeout(() => {
@@ -76,10 +91,10 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [zoom]);
 
     useEffect(() => {
-        if (value?.query) {
-            document.title = value.query;
+        if (params.query) {
+            document.title = params.query;
         }
-    }, [value?.query]);
+    }, [params.query]);
 
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
@@ -162,24 +177,22 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         if (locReady) {
-            if (value) {
+            if (params.query && params.query !== '') {
                 ctx.setProcessingSearch(true);
-                if (value.type === SEARCH_TYPE_CATEGORY) {
-                    searchByCategory(value, ctx);
+                if (params.type === SEARCH_TYPE_CATEGORY) {
+                    searchByCategory(params, ctx);
                 } else {
+                    const { loc } = getLoc();
+                    if (!loc) return;
                     if (zoom < MIN_SEARCH_ZOOM) {
-                        performBaseSearch(value);
+                        performBaseSearch(params, ctx, loc);
                     } else {
-                        searchByWord(value);
+                        searchByWord(params, ctx, loc);
                     }
                 }
             }
         }
-    }, [locReady, value]);
-
-    function performBaseSearch(value) {
-        searchByWord(value, true);
-    }
+    }, [locReady, params]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {
@@ -216,18 +229,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         }
     }, [ctx.searchResult]);
 
-    function searchByWord(value, baseSearch = false) {
-        const { loc } = getLoc();
-
-        if (!loc) return;
-
-        ctx.setSearchQuery({
-            search: value,
-            latlng: { lat: loc.lat, lng: loc.lng },
-            baseSearch,
-        });
-    }
-
     function backToMainSearch() {
         setOpenSearchResults(false);
         setIsMainSearchScreen(true);
@@ -235,21 +236,26 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchResult(null);
         ctx.setSearchQuery(null);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
+        navigateToSearchMenu();
     }
 
     function resulNotPrepared() {
-        return !ctx.processingSearch && !result;
+        return !ctx.processingSearch && (!result || reopenSearchResult());
+    }
+
+    function reopenSearchResult() {
+        return result && result !== EMPTY_SEARCH_RESULT && !params.query;
     }
 
     return (
         <>
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
-                setSearchValue={setSearchValue}
-                defaultSearchValue={value?.query}
+                defaultSearchValue={ctx.searchQuery?.search?.query || params?.query || ''}
             />
             {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
+                !reopenSearchResult() &&
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
@@ -258,13 +264,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                             .filter((item) => item?.properties)
                             .map((item, index) => (
                                 <SearchResultItem
-                                    key={index}
+                                    key={index + (item?.id || item?.properties?.id || '')}
                                     item={item}
                                     index={index}
                                     typeItem={
                                         ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
                                     }
-                                    setSearchValue={setSearchValue}
                                 />
                             ))}
                     </Box>
