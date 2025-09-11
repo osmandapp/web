@@ -45,6 +45,8 @@ export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
+export const MAX_RECENT_OBJS = 5;
+
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
     showPoi: false,
@@ -456,6 +458,7 @@ export const AppContextProvider = (props) => {
     const [recentObjs, setRecentObjs] = useState({
         tracks: [],
         favorites: [],
+        searchResults: [],
     });
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);

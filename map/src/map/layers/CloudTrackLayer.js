@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import AppContext, { isCloudTrack, MAX_RECENT_OBJS, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions, getTracksArrBounds } from '../../manager/track/TracksManager';
@@ -18,9 +18,11 @@ function clickHandler({ ctx, file, layer }) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setRecentObjs((prev) => {
             const tracks = prev.tracks.filter((f) => f.key !== file.key);
+            const next = [{ ...file }, ...tracks];
+            const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
             return {
                 ...prev,
-                tracks: [{ ...file }, ...tracks],
+                tracks: limited,
             };
         });
         ctx.setSelectedCloudTrackObj({ ...file });

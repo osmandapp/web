@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { MAX_RECENT_OBJS } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -44,7 +44,7 @@ export default function SearchMenu() {
 
     const [, height] = useWindowSize();
 
-    const { navigateToSearchResults, isSearchResultRoute } = useSearchNav();
+    const { searchParams, navigateToSearchResults, isSearchResultRoute } = useSearchNav();
 
     const showExploreOutlet = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
@@ -70,6 +70,26 @@ export default function SearchMenu() {
     const { zoom } = useHashParams();
 
     const { t } = useTranslation();
+
+    useEffect(() => {
+        if (ctx.searchResult) {
+            const urlKey = searchParams.toString();
+
+            ctx.setRecentObjs((prev) => {
+                const prevSearchResultsMap = prev.searchResults instanceof Map ? prev.searchResults : new Map();
+                prevSearchResultsMap.delete(urlKey);
+                const nextResults = new Map([[urlKey, ctx.searchResult], ...prevSearchResultsMap.entries()]);
+                if (nextResults.size > MAX_RECENT_OBJS) {
+                    const keys = Array.from(nextResults.keys());
+                    for (let i = MAX_RECENT_OBJS; i < keys.length; i++) {
+                        nextResults.delete(keys[i]);
+                    }
+                }
+
+                return { ...prev, searchResults: nextResults };
+            });
+        }
+    }, [ctx.searchResult]);
 
     useEffect(() => {
         if (ctx.categoryIcons) {

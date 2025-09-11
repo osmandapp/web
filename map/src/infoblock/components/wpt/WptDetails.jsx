@@ -18,6 +18,7 @@ import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, {
     isTrack,
+    MAX_RECENT_OBJS,
     OBJECT_SEARCH,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_POI,
@@ -222,9 +223,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         if (type?.isFav || type?.isShareFav) {
             ctx.setRecentObjs((prev) => {
                 const favorites = prev.favorites.filter((f) => f.key !== ctx.selectedWpt.key);
+                const next = [{ ...ctx.selectedWpt }, ...favorites];
+                const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
                 return {
                     ...prev,
-                    favorites: [{ ...ctx.selectedWpt }, ...favorites],
+                    favorites: limited,
                 };
             });
             ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
