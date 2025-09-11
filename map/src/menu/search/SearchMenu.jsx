@@ -268,7 +268,7 @@ export default function SearchMenu() {
                                     loadingIcons={loadingIcons}
                                 />
                             )}
-                            {!isSearchResultRoute && (
+                            {!isSearchResultRoute && !isPoiCategoriesRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
                                     <CustomInput
                                         menuButton={

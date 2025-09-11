@@ -74,6 +74,7 @@ import {
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
+    EXPLORE_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -423,6 +424,11 @@ export default function MainMenu({
                     search: buildSearchParamsFromQuery(ctx.searchQuery),
                     hash: window.location.hash,
                 });
+                return;
+            }
+
+            if (ctx.exploreMenu) {
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
                 return;
             }
         }
