@@ -96,6 +96,13 @@ export default function SearchResults() {
         }
     }, [params.query]);
 
+    // always hide explore markers when search query is active
+    useEffect(() => {
+        if (ctx.searchQuery?.search) {
+            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+        }
+    }, [ctx.searchQuery?.search]);
+
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
             if (!f?.properties) return;
