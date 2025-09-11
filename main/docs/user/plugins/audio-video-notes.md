@@ -77,21 +77,7 @@ For each profile, you can configure the *audio and video recording options*.
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Opens a dialog to select a profile to copy the Audio/video note recording configuration from, and establish it for the current profile. |
 
 
-## Manage a Single Note {#manage-a-single-note}
-
-You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
-
-- Create a note.
-- View all notes as a list in [My Places](../personal/myplaces.md).
-- Show the specific note on the map.
-- Rename a note in My Places.
-- Show all notes [on the map](../map/configure-map-menu.md#map-data-layers).
-- Play the note.
-- Create waypoints in a [track](../plugins/trip-recording.md#new-track-recording).
-- Export to [JOSM](https://josm.openstreetmap.de/).
-
-
-### Create {#create}
+## Create a Single Note {#create-a-single-note}
 
 You can create a photo, video, and audio note in any of the following ways:
 
@@ -99,7 +85,7 @@ You can create a photo, video, and audio note in any of the following ways:
 - With the [Context menu](../map/map-context-menu.md#overview) of a point on the map. If the note should be tied to the selected point on the map.
 
 
-#### 1. Create and Tie to your Current Position {#1-create-and-tie-to-your-current-position}
+### Create & Pin Current Position {#create-&-pin-current-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -116,7 +102,7 @@ The <Translate android="true" ids="map_widget_av_notes"/> widget is used to crea
 The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#audiovideo-notes-widget) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in and then opens the respective recorder dialog.
 
 
-#### 2. Create and Tie to Selected Geolocation {#2-create-and-tie-to-selected-geolocation}
+### Create & Pin Selected Location {#create-&-pin-selected-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -140,7 +126,7 @@ To create a note tied to a selected point on the map, use the [Context menu](../
 3. Depending on the selected format of the note, the respective recorder dialog opens.
 
 
-#### Recorder Dialog {#recorder-dialog}
+### Recorder Dialog {#recorder-dialog}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -163,6 +149,19 @@ It is possible to stop the recording with a tap of the <Translate android="true"
 :::info note
 Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab.
 :::
+
+
+## Manage a Single Note {#manage-a-single-note}
+
+You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
+
+- View all notes as a list in [My Places](../personal/myplaces.md).
+- Show the specific note on the map.
+- Rename a note in My Places.
+- Show all notes [on the map](../map/configure-map-menu.md#map-data-layers).
+- Play the note.
+- Create waypoints in a [track](../plugins/trip-recording.md#new-track-recording).
+- Export to [JOSM](https://josm.openstreetmap.de/).
 
 
 ### View in My Places {#view-in-my-places}
