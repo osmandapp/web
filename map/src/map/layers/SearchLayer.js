@@ -248,6 +248,7 @@ export default function SearchLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
+        ctx.setSelectedPoiObj({ ...poi });
     }
 
     async function createSearchLayer({ objList }) {

@@ -399,6 +399,7 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
+        ctx.setSelectedPoiObj({ ...poi });
     }
 
     useEffect(() => {
