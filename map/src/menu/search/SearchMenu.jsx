@@ -33,6 +33,7 @@ import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
+import { SEARCH_RESULTS_KEY, useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -44,7 +45,7 @@ export default function SearchMenu() {
 
     const [, height] = useWindowSize();
 
-    const { searchParams, navigateToSearchResults, isSearchResultRoute } = useSearchNav();
+    const { navigateToSearchResults, isSearchResultRoute } = useSearchNav();
 
     const showExploreOutlet = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
@@ -71,23 +72,11 @@ export default function SearchMenu() {
 
     const { t } = useTranslation();
 
+    const recentSaver = useRecentSaver();
+
     useEffect(() => {
         if (ctx.searchResult) {
-            const urlKey = searchParams.toString();
-
-            ctx.setRecentObjs((prev) => {
-                const prevSearchResultsMap = prev.searchResults instanceof Map ? prev.searchResults : new Map();
-                prevSearchResultsMap.delete(urlKey);
-                const nextResults = new Map([[urlKey, ctx.searchResult], ...prevSearchResultsMap.entries()]);
-                if (nextResults.size > MAX_RECENT_OBJS) {
-                    const keys = Array.from(nextResults.keys());
-                    for (let i = MAX_RECENT_OBJS; i < keys.length; i++) {
-                        nextResults.delete(keys[i]);
-                    }
-                }
-
-                return { ...prev, searchResults: nextResults };
-            });
+            recentSaver(SEARCH_RESULTS_KEY, ctx.searchResult);
         }
     }, [ctx.searchResult]);
 

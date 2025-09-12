@@ -10,6 +10,7 @@ import { filterPointsInBounds } from './FavoriteLayer';
 import useHashParams from '../../util/hooks/useHashParams';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { addShareFavoriteToMap } from '../../manager/FavoritesManager';
+import { useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
 
 export default function ShareFileLayer() {
     const ctx = useContext(AppContext);
@@ -20,6 +21,7 @@ export default function ShareFileLayer() {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+    const recentSaver = useRecentSaver();
 
     const [currentShareFile, setCurrentShareFile] = useState(null);
 
@@ -27,7 +29,7 @@ export default function ShareFileLayer() {
     useEffect(() => {
         if (ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && location.pathname.includes(SHARE_FILE_MAIN_URL)) {
             if (ctx.selectedGpxFile?.type === GPX) {
-                const layer = addTrackToMap({ ctx, file: ctx.selectedGpxFile, map, fit: true });
+                const layer = addTrackToMap({ ctx, file: ctx.selectedGpxFile, map, fit: true, recentSaver });
                 if (layer) {
                     setCurrentShareFile(layer);
                 }

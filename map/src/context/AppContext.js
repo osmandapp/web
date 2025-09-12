@@ -25,6 +25,13 @@ import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
 import { FORECAST_SOURCE_PARAM } from '../menu/weather/Weather';
+import {
+    EXPLORE_OBJS_KEY,
+    FAVORITES_KEY,
+    POIS_KEY,
+    SEARCH_RESULTS_KEY,
+    TRACKS_KEY,
+} from '../util/hooks/menu/useRecentSaver';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -458,10 +465,11 @@ export const AppContextProvider = (props) => {
     const [sortedSegments, setSortedSegments] = useState(null);
 
     const [recentObjs, setRecentObjs] = useState({
-        tracks: [],
-        favorites: [],
-        pois: [],
-        searchResults: [],
+        [TRACKS_KEY]: [],
+        [FAVORITES_KEY]: [],
+        [POIS_KEY]: [],
+        [EXPLORE_OBJS_KEY]: [],
+        [SEARCH_RESULTS_KEY]: [],
     });
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);

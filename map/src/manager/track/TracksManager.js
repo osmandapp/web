@@ -24,6 +24,7 @@ import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
+import { TRACKS_KEY } from '../../util/hooks/menu/useRecentSaver';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -1355,6 +1356,7 @@ export async function openTrackOnMap({
     ctx,
     setError = null,
     returnOneTrack = false,
+    recentSaver,
 }) {
     // cleanup edited localTrack
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
@@ -1382,7 +1384,7 @@ export async function openTrackOnMap({
             newGpxFiles[file.name].url = null;
         }
         if (showInfo) {
-            showInfoBlock({ hasUrl: true, file, ctx, smartf });
+            showInfoBlock({ hasUrl: true, file, ctx, smartf, recentSaver });
         }
         if (returnOneTrack) {
             return {
@@ -1424,7 +1426,7 @@ export async function openTrackOnMap({
             }
             newGpxFiles[file.name] = oneGpxFile;
             if (showInfo) {
-                showInfoBlock({ hasUrl: false, file: oneGpxFile, ctx, smartf });
+                showInfoBlock({ hasUrl: false, file: oneGpxFile, ctx, smartf, recentSaver });
             }
             if (setError) {
                 setError('');
@@ -1484,7 +1486,7 @@ export function updateTracks(ctx, smartf, newTracks) {
     }
 }
 
-function showInfoBlock({ hasUrl, file, ctx, smartf }) {
+function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     ctx.setUpdateInfoBlock(true);
     let allFiles;
     if (smartf?.type === SHARE_TYPE) {
@@ -1501,15 +1503,7 @@ function showInfoBlock({ hasUrl, file, ctx, smartf }) {
         }
     }
 
-    ctx.setRecentObjs((prev) => {
-        const tracks = prev.tracks.filter((f) => f.key !== file.key);
-        const next = [{ ...file }, ...tracks];
-        const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
-        return {
-            ...prev,
-            tracks: limited,
-        };
-    });
+    recentSaver(TRACKS_KEY, file);
     ctx.setSelectedCloudTrackObj({ ...file });
 
     if (hasUrl) {
@@ -1561,6 +1555,7 @@ export async function processDisplayTrack({
     setError = null,
     fileStorage,
     setFileStorage,
+    recentSaver,
 }) {
     if (!showInfo) {
         updateVisibleCache({ visible: showOnMap, file, smartf });
@@ -1587,6 +1582,7 @@ export async function processDisplayTrack({
             smartf,
             ctx,
             setError,
+            recentSaver,
         }).then((newGpxFiles) => {
             updateTracks(ctx, smartf, newGpxFiles);
         });

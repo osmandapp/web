@@ -18,7 +18,6 @@ import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, {
     isTrack,
-    MAX_RECENT_OBJS,
     OBJECT_SEARCH,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_POI,
@@ -82,6 +81,7 @@ import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
+import { FAVORITES_KEY, useRecentSaver } from '../../../util/hooks/menu/useRecentSaver';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -130,6 +130,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const hash = window.location.hash;
+
+    const recentSaver = useRecentSaver();
 
     const [devWikiContent, setDevWikiContent] = useState(null);
 
@@ -221,15 +223,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const type = getWptType(ctx.selectedWpt);
 
         if (type?.isFav || type?.isShareFav) {
-            ctx.setRecentObjs((prev) => {
-                const favorites = prev.favorites.filter((f) => f.key !== ctx.selectedWpt.key);
-                const next = [{ ...ctx.selectedWpt }, ...favorites];
-                const limited = next.length > MAX_RECENT_OBJS ? next.slice(0, MAX_RECENT_OBJS) : next;
-                return {
-                    ...prev,
-                    favorites: limited,
-                };
-            });
+            recentSaver(FAVORITES_KEY, ctx.selectedWpt);
             ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
         }
     }, [ctx.selectedWpt]);

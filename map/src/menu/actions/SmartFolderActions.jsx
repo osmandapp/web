@@ -9,11 +9,13 @@ import AppContext from '../../context/AppContext';
 import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
+import { useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
 
 const SmartFolderActions = forwardRef(
     ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
         const { t } = useTranslation();
         const ctx = useContext(AppContext);
+        const recentSaver = useRecentSaver();
 
         async function downloadOsf() {
             setProcessDownload(true);
@@ -84,6 +86,7 @@ const SmartFolderActions = forwardRef(
                         smartf: { type: SHARE_TYPE },
                         ctx,
                         returnOneTrack: true,
+                        recentSaver,
                     })
                 );
                 const resultsArray = await Promise.all(promises);

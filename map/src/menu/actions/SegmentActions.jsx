@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import { processDisplayTrack } from '../../manager/track/TracksManager';
 import MakeTrackVisibleAction from './components/MakeTrackVisibleAction';
+import { useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
 
 const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSegmentInd, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+    const recentSaver = useRecentSaver();
 
     const file = ctx.listFiles.uniqueFiles.find((file) => file.name === filteredStats[selectedSegmentInd].name);
 
@@ -25,6 +27,7 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
                 ctx,
                 fileStorage: ctx.gpxFiles,
                 setFileStorage: ctx.setGpxFiles,
+                recentSaver,
             }).then();
             setDisplayTrack(null);
         }
@@ -40,6 +43,7 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
             ctx,
             fileStorage: ctx.gpxFiles,
             setFileStorage: ctx.setGpxFiles,
+            recentSaver,
         }).then();
     }
 
