@@ -16,6 +16,8 @@ import {
     Grid,
     ButtonGroup,
     TextField,
+    AppBar,
+    Toolbar,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -29,8 +31,12 @@ import styles from './routemenu.module.css';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import i18n from 'i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
+import { closeHeader } from '../actions/HeaderHelper';
+import { useTranslation } from 'react-i18next';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -71,6 +77,8 @@ export function formatLatLon(pnt) {
 export default function NavigateMenu() {
     const ctx = useContext(AppContext);
 
+    const { t } = useTranslation();
+
     const [, height] = useWindowSize();
 
     const routeObject = ctx.routeObject;
@@ -85,6 +93,8 @@ export default function NavigateMenu() {
     const [finish, setFinish] = useState('');
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    const [resetSettings, setResetSettings] = useState(false);
 
     // auto switch between Navigation/Tracks menu
     // additionally, conceal route track from the map
@@ -189,236 +199,284 @@ export default function NavigateMenu() {
         }
     }
 
+    function close() {
+        setStart('');
+        setFinish('');
+        routeObject.setOption('route.points.start', null);
+        routeObject.setOption('route.points.finish', null);
+        routeObject.setOption('route.points.viaPoints', []);
+        routeObject.setOption('route.points.avoidRoads', []);
+        routeObject.resetRoute();
+        setResetSettings(true);
+        setOpen(false);
+        closeHeader({ ctx });
+    }
+
     return (
-        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollActiveBlock}>
-            <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                <FormControl fullWidth>
-                    <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
-                    <Select
-                        id="se-route-select"
-                        labelid="route-mode-label"
-                        label={`Route profile (${type})`}
-                        value={profile}
-                        onChange={(e) => routeObject.onRouterProfileSelected({ profile: e.target.value })}
+        <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
+            <AppBar position="static" className={headerStyles.appbar}>
+                <Toolbar className={headerStyles.toolbar}>
+                    <IconButton variant="contained" type="button" className={headerStyles.appBarIcon} onClick={close}>
+                        <CloseIcon />
+                    </IconButton>
+                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
+                        {t('shared_string_navigation')}
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Box className={gStyles.scrollActiveBlock} sx={{ mt: 1 }}>
+                <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
+                    <FormControl fullWidth>
+                        <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
+                        <Select
+                            id="se-route-select"
+                            labelid="route-mode-label"
+                            label={`Route profile (${type})`}
+                            value={profile}
+                            onChange={(e) => routeObject.onRouterProfileSelected({ profile: e.target.value })}
+                        >
+                            {routeObject.listProfiles().map(({ key, name, icon }) => (
+                                <MenuItem id={'se-route-profile-' + key} key={key} value={key}>
+                                    <Box display="flex" width="100%" alignItems="center">
+                                        <Box display="flex" width={25} justifyContent="center" alignItems="center">
+                                            {icon}
+                                        </Box>
+                                        <Box display="flex" sx={{ ml: 1 }}>
+                                            <Box sx={{ mt: '3px' }}>{name}</Box>
+                                        </Box>
+                                    </Box>
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                    <IconButton
+                        sx={{ ml: 1 }}
+                        onClick={() => {
+                            setOpenSettings(true);
+                        }}
                     >
-                        {routeObject.listProfiles().map(({ key, name, icon }) => (
-                            <MenuItem id={'se-route-profile-' + key} key={key} value={key}>
-                                <Box display="flex" width="100%" alignItems="center">
-                                    <Box display="flex" width={25} justifyContent="center" alignItems="center">
-                                        {icon}
-                                    </Box>
-                                    <Box display="flex" sx={{ ml: 1 }}>
-                                        <Box sx={{ mt: '3px' }}>{name}</Box>
-                                    </Box>
-                                </Box>
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-                <IconButton
-                    sx={{ ml: 1 }}
-                    onClick={() => {
-                        setOpenSettings(true);
-                    }}
-                >
-                    <Settings fontSize="small" />
-                </IconButton>
-            </MenuItem>
-            {routeObject.getRouteProps() && (
-                <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                    <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
+                        <Settings fontSize="small" />
+                    </IconButton>
                 </MenuItem>
-            )}
-            <MenuItem
-                key="start"
-                sx={{
-                    ml: 1,
-                    mr: 2,
-                    mt: 1,
-                    '& .MuiFilledInput-root': {
-                        background: '#aad3df',
-                    },
-                }}
-                disableRipple={true}
-            >
-                <FormControl fullWidth>
-                    <TextField
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        onChange={(e) => {
-                            setStart(e.target.value);
-                        }}
-                        id="se-route-start-point"
-                        labelid="start-point-label"
-                        variant="filled"
-                        label="Start"
-                        onKeyDown={(e) => keyPress(e, (point) => routeObject.setOption('route.points.start', point))}
-                        value={start}
-                    ></TextField>
-                </FormControl>
-                <IconButton
-                    sx={{ ml: 1 }}
-                    id="se-clear-route-start-point"
-                    onClick={() => {
-                        setStart('');
-                        routeObject.setOption('route.points.start', null);
-                        routeObject.resetRoute();
+                {routeObject.getRouteProps() && (
+                    <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
+                        <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
+                    </MenuItem>
+                )}
+                <MenuItem
+                    key="start"
+                    sx={{
+                        ml: 1,
+                        mr: 2,
+                        mt: 1,
+                        '& .MuiFilledInput-root': {
+                            background: '#aad3df',
+                        },
                     }}
+                    disableRipple={true}
                 >
-                    <Clear fontSize="small" />
-                </IconButton>
-            </MenuItem>
-            {viaPoints.map((item, ind) => (
-                <MenuItem key={'via' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                     <FormControl fullWidth>
                         <TextField
                             InputLabelProps={{
                                 shrink: true,
                             }}
-                            labelid="via-point-label"
-                            label={'Via ' + (ind + 1)}
+                            onChange={(e) => {
+                                setStart(e.target.value);
+                            }}
+                            id="se-route-start-point"
+                            labelid="start-point-label"
                             variant="filled"
-                            value={formatLatLon(item)}
+                            label="Start"
+                            onKeyDown={(e) =>
+                                keyPress(e, (point) => routeObject.setOption('route.points.start', point))
+                            }
+                            value={start}
                         ></TextField>
                     </FormControl>
                     <IconButton
                         sx={{ ml: 1 }}
+                        id="se-clear-route-start-point"
                         onClick={() => {
-                            const newViaPoints = Object.assign([], viaPoints);
-                            newViaPoints.splice(ind, 1);
-                            routeObject.setOption('route.points.viaPoints', newViaPoints);
-                        }}
-                    >
-                        <RemoveCircle fontSize="small" />
-                    </IconButton>
-                </MenuItem>
-            ))}
-            <MenuItem
-                key="finish"
-                sx={{
-                    ml: 1,
-                    mr: 2,
-                    mt: 1,
-                    '& .MuiFilledInput-root': {
-                        background: '#ebdbe8',
-                    },
-                }}
-                disableRipple={true}
-            >
-                <FormControl fullWidth>
-                    <TextField
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        onChange={(e) => {
-                            setFinish(e.target.value);
-                        }}
-                        id="se-route-finish-point"
-                        labelid="finish-point-label"
-                        variant="filled"
-                        label="Finish"
-                        onKeyDown={(e) => keyPress(e, (point) => routeObject.setOption('route.points.finish', point))}
-                        value={finish}
-                    ></TextField>
-                </FormControl>
-                <IconButton
-                    sx={{ ml: 1 }}
-                    id="se-clear-route-finish-point"
-                    onClick={() => {
-                        setFinish('');
-                        routeObject.setOption('route.points.finish', null);
-                        routeObject.resetRoute();
-                    }}
-                >
-                    <Clear fontSize="small" />
-                </IconButton>
-            </MenuItem>
-            {avoidRoads.map((item, ind) => (
-                <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                    <FormControl fullWidth>
-                        <Link
-                            target="_blank"
-                            rel="noopener"
-                            href={'https://openstreetmap.org/way/' + Math.floor(item.id / 64)}
-                        >
-                            Avoid {item.name}
-                        </Link>
-                    </FormControl>
-                    <IconButton
-                        sx={{ ml: 1 }}
-                        onClick={() => {
-                            const newAvoidRoads = Object.assign([], avoidRoads);
-                            newAvoidRoads.splice(ind, 1);
-                            routeObject.setOption('route.points.avoidRoads', newAvoidRoads);
-                        }}
-                    >
-                        <RemoveCircle fontSize="small" />
-                    </IconButton>
-                </MenuItem>
-            ))}
-            {ctx.routeTrackFile && (
-                <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                    <FormControl fullWidth>
-                        <InputLabel id="track-file-label">Selected track</InputLabel>
-                        <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
-                    </FormControl>
-                    <IconButton
-                        sx={{ ml: 1 }}
-                        onClick={() => {
-                            routeObject.resetRoute();
-                            ctx.setRouteTrackFile(null);
+                            setStart('');
                             routeObject.setOption('route.points.start', null);
-                            routeObject.setOption('route.points.finish', null);
+                            routeObject.resetRoute();
                         }}
                     >
-                        <RemoveCircle fontSize="small" />
+                        <Clear fontSize="small" />
                     </IconButton>
                 </MenuItem>
-            )}
-            {/*ctx.develFeatures && */ <RouteProfileSettings key="routesettingsembed" embed={true} />}
-            {routeObject.getRoute() &&
-                routeOptions.map((opt) => (
-                    <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
-                        <Grid container alignItems="center">
-                            <Grid item xs={10} sx={{ mt: '4px' }} onClick={() => routeObject.setOption(opt, (o) => !o)}>
-                                {routeObject.getOptionText(opt)}
-                            </Grid>
-                            <Grid item xs={2}>
-                                <Switch
-                                    checked={routeObject.getOption(opt)}
-                                    onChange={(e) => routeObject.setOption(opt, e.target.checked)}
-                                />
-                            </Grid>
-                        </Grid>
+                {viaPoints.map((item, ind) => (
+                    <MenuItem key={'via' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
+                        <FormControl fullWidth>
+                            <TextField
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                labelid="via-point-label"
+                                label={'Via ' + (ind + 1)}
+                                variant="filled"
+                                value={formatLatLon(item)}
+                            ></TextField>
+                        </FormControl>
+                        <IconButton
+                            sx={{ ml: 1 }}
+                            onClick={() => {
+                                const newViaPoints = Object.assign([], viaPoints);
+                                newViaPoints.splice(ind, 1);
+                                routeObject.setOption('route.points.viaPoints', newViaPoints);
+                            }}
+                        >
+                            <RemoveCircle fontSize="small" />
+                        </IconButton>
                     </MenuItem>
                 ))}
-            <ButtonGroup variant="text" sx={{ mt: 1, ml: 1 }}>
-                <label htmlFor="contained-button-route">
-                    <StyledInput
-                        ref={btnFile}
-                        accept=".gpx"
-                        id="contained-button-route"
-                        type="file"
-                        onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
-                    />
-                    <Button component="span" variant="contained" className={styles.smallButton}>
-                        Approximate GPX
-                    </Button>
-                </label>
-                {routeObject.getRoute() && (
-                    <Button
-                        id="se-route-more-information"
-                        variant="contained"
-                        component="span"
-                        className={styles.smallButton}
-                        onClick={openInfoBlock}
+                <MenuItem
+                    key="finish"
+                    sx={{
+                        ml: 1,
+                        mr: 2,
+                        mt: 1,
+                        '& .MuiFilledInput-root': {
+                            background: '#ebdbe8',
+                        },
+                    }}
+                    disableRipple={true}
+                >
+                    <FormControl fullWidth>
+                        <TextField
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            onChange={(e) => {
+                                setFinish(e.target.value);
+                            }}
+                            id="se-route-finish-point"
+                            labelid="finish-point-label"
+                            variant="filled"
+                            label="Finish"
+                            onKeyDown={(e) =>
+                                keyPress(e, (point) => routeObject.setOption('route.points.finish', point))
+                            }
+                            value={finish}
+                        ></TextField>
+                    </FormControl>
+                    <IconButton
+                        sx={{ ml: 1 }}
+                        id="se-clear-route-finish-point"
+                        onClick={() => {
+                            setFinish('');
+                            routeObject.setOption('route.points.finish', null);
+                            routeObject.resetRoute();
+                        }}
                     >
-                        More information
-                    </Button>
+                        <Clear fontSize="small" />
+                    </IconButton>
+                </MenuItem>
+                {avoidRoads.map((item, ind) => (
+                    <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
+                        <FormControl fullWidth>
+                            <Link
+                                target="_blank"
+                                rel="noopener"
+                                href={'https://openstreetmap.org/way/' + Math.floor(item.id / 64)}
+                            >
+                                Avoid {item.name}
+                            </Link>
+                        </FormControl>
+                        <IconButton
+                            sx={{ ml: 1 }}
+                            onClick={() => {
+                                const newAvoidRoads = Object.assign([], avoidRoads);
+                                newAvoidRoads.splice(ind, 1);
+                                routeObject.setOption('route.points.avoidRoads', newAvoidRoads);
+                            }}
+                        >
+                            <RemoveCircle fontSize="small" />
+                        </IconButton>
+                    </MenuItem>
+                ))}
+                {ctx.routeTrackFile && (
+                    <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
+                        <FormControl fullWidth>
+                            <InputLabel id="track-file-label">Selected track</InputLabel>
+                            <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
+                        </FormControl>
+                        <IconButton
+                            sx={{ ml: 1 }}
+                            onClick={() => {
+                                routeObject.resetRoute();
+                                ctx.setRouteTrackFile(null);
+                                routeObject.setOption('route.points.start', null);
+                                routeObject.setOption('route.points.finish', null);
+                            }}
+                        >
+                            <RemoveCircle fontSize="small" />
+                        </IconButton>
+                    </MenuItem>
                 )}
-            </ButtonGroup>
-            {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
+                <Box sx={{ mx: 3, mt: 2 }}>
+                    {
+                        /*ctx.develFeatures && */ <RouteProfileSettings
+                            key="routesettingsembed"
+                            embed={true}
+                            resetSettings={resetSettings}
+                        />
+                    }
+                    {routeObject.getRoute() &&
+                        routeOptions.map((opt) => (
+                            <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
+                                <Grid container alignItems="center">
+                                    <Grid
+                                        item
+                                        xs={10}
+                                        sx={{ mt: '4px' }}
+                                        onClick={() => routeObject.setOption(opt, (o) => !o)}
+                                    >
+                                        {routeObject.getOptionText(opt)}
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Switch
+                                            checked={routeObject.getOption(opt)}
+                                            onChange={(e) => routeObject.setOption(opt, e.target.checked)}
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </MenuItem>
+                        ))}
+                </Box>
+                <ButtonGroup variant="text" sx={{ mt: 2, ml: '11px' }}>
+                    <label htmlFor="contained-button-route">
+                        <StyledInput
+                            ref={btnFile}
+                            accept=".gpx"
+                            id="contained-button-route"
+                            type="file"
+                            onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
+                        />
+                        <Button component="span" variant="contained" className={styles.smallButton}>
+                            Approximate GPX
+                        </Button>
+                    </label>
+                    {routeObject.getRoute() && (
+                        <Button
+                            id="se-route-more-information"
+                            variant="contained"
+                            component="span"
+                            className={styles.smallButton}
+                            onClick={openInfoBlock}
+                        >
+                            More information
+                        </Button>
+                    )}
+                </ButtonGroup>
+                {openSettings && (
+                    <RouteProfileSettings
+                        key="routesettingsdialog"
+                        setOpenSettings={setOpenSettings}
+                        resetSettings={resetSettings}
+                    />
+                )}
+            </Box>
         </Box>
     );
 }
