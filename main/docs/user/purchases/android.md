@@ -119,7 +119,7 @@ The table below details the features included in both the free and paid packages
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#updates)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>Live updates (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
@@ -222,7 +222,7 @@ To restore the purchase, please check what OsmAnd plan you bought.
 
 ### Restore Subscription / In App {#restore-subscription--in-app}
 
-**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](#difference-between-purchases-android)).**
+**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, Live updates](#difference-between-purchases-android)).**
 
 - *Update Market app* (Google Play, Huawei AppGallery).
 - *Log in* with **the same account** to the Market (Google Play, Huawei AppGallery) that you have an OsmAnd purchase.

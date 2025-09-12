@@ -410,7 +410,7 @@ The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update a
 ## Live Updates {#live-updates}
 
 :::tip Purchase
-OsmAnd Live is a paid feature.  
+Live updates is a paid feature.  
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -441,10 +441,10 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 Key features:
 
 - **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Live Updates**. Manage via a toggle in the settings.
-- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *OsmAnd live* settings.
+- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *live updates* settings.
 - **Switcher**(*Android*) / **&#43;** button (*iOS*). Add maps for *live updates*.
 - **<Translate android="true" ids="update_frequency"/>**. Select the map update frequency (hourly, daily, or weekly).
-- **<Translate android="true" ids="update_now"/>**. Start the *OsmAnd live* map update.
+- **<Translate android="true" ids="update_now"/>**. Start the *live updates* for map.
 - **<Translate android="true" ids="updates_size"/>**(*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>**(*iOS*). Size of *live updates*.
 - **Trash button**(*Android*). Delete all received *live updates* for the current map.
 - **<Translate android="true" ids="only_download_over_wifi"/>**. Manage the download of *live updates* over a Wi-Fi connection.

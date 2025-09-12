@@ -109,7 +109,7 @@ Login to contribute changes and GPX files.
 
 </Tabs>
 
-The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps-resources.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. This way you can enjoy free hourly map updates, unlike the standard monthly updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check your eligibility for unlimited monthly and hourly map updates.
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[live updates](../personal/maps-resources.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. This way you can enjoy free hourly map updates, unlike the standard monthly updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check your eligibility for unlimited monthly and hourly map updates.
 
 
 ### OSM Editing Layer {#osm-editing-layer}
