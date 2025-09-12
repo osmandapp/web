@@ -1,7 +1,7 @@
 import { FormControl, InputLabel, MenuItem, IconButton, Select, Box } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import { useState } from 'react';
-import RouteProfileSettings from '../../../menu/navigate/RouteProfileSettings';
+import RouteProfileSettings from '../../../menu/navigation/RouteProfileSettings';
 
 export default function SelectTrackProfile({ geoRouter, label, hideSettings = false } = {}) {
     const [openSettings, setOpenSettings] = useState(false);

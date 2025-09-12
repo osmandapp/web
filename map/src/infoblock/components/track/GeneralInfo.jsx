@@ -36,7 +36,7 @@ import {
     Terrain,
 } from '@mui/icons-material';
 import RouteIcon from '@mui/icons-material/Route';
-import { formatRouteInfo } from '../../../menu/navigate/RouteMenu';
+import { formatRouteInfo } from '../../../menu/navigation/NavigationMenu';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import {

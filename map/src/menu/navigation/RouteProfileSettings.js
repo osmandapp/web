@@ -24,7 +24,13 @@ import { useMutator } from '../../util/Utils';
 
 const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
 
-export default function RouteProfileSettings({ geoRouter, setOpenSettings, embed = false }) {
+export default function RouteProfileSettings({
+    geoRouter,
+    setOpenSettings,
+    embed = false,
+    resetSettings = false,
+    setResetSettings = null,
+}) {
     const ctx = useContext(AppContext);
     const useDevelFeatures = ctx.develFeatures;
 
@@ -33,6 +39,15 @@ export default function RouteProfileSettings({ geoRouter, setOpenSettings, embed
     geoRouter = geoRouter || ctx.routeObject; // `trackRouter` callers should specify distinct geoRouter
 
     const [opts, setOpts] = useState(geoRouter.getParams());
+
+    useEffect(() => {
+        if (resetSettings) {
+            handleReset();
+            geoRouter.resetRoute();
+            mutateUnfoldedSections({});
+            if (setResetSettings) setResetSettings(false);
+        }
+    }, [resetSettings]);
 
     // Close = Accept
     const handleCloseAccept = () => {
@@ -247,7 +262,7 @@ export default function RouteProfileSettings({ geoRouter, setOpenSettings, embed
                         ))}
                     {showReset() && (
                         <MenuItem>
-                            <Button sx={{ ml: 1 }} onClick={handleReset}>
+                            <Button sx={{ ml: -2 }} onClick={handleReset}>
                                 Reset options
                             </Button>
                         </MenuItem>
@@ -322,7 +337,7 @@ export default function RouteProfileSettings({ geoRouter, setOpenSettings, embed
                 <DialogActions>
                     <Box display="flex" flexGrow={1}>
                         {showReset() && (
-                            <Button sx={{ ml: 1 }} onClick={handleReset}>
+                            <Button sx={{ ml: -2 }} onClick={handleReset}>
                                 Reset options
                             </Button>
                         )}
