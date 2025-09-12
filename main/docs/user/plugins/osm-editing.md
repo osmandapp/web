@@ -63,7 +63,7 @@ The plugin settings are global and apply to all profiles.
 - **<Translate android="true" ids="layer_osm_edits"/>**. Tap it to open [*Menu → My Places → OSM edits*](../personal/myplaces.md). This tab lists your unedited OSM notes. The following actions are available with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.  
 
 :::note
-If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps-resources.md#osmand-live) are enabled.
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps-resources.md#live-updates) are enabled.
 :::  
 
 
@@ -109,7 +109,7 @@ Login to contribute changes and GPX files.
 
 </Tabs>
 
-The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps-resources.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. This way you can enjoy free hourly map updates, unlike the standard monthly updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check your eligibility for unlimited monthly and hourly map updates.
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[live updates](../personal/maps-resources.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. This way you can enjoy free hourly map updates, unlike the standard monthly updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check your eligibility for unlimited monthly and hourly map updates.
 
 
 ### OSM Editing Layer {#osm-editing-layer}
