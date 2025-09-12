@@ -206,7 +206,6 @@ export default function NavigateMenu() {
         routeObject.setOption('route.points.finish', null);
         routeObject.setOption('route.points.viaPoints', []);
         routeObject.setOption('route.points.avoidRoads', []);
-        routeObject.resetRoute();
         setResetSettings(true);
         setOpen(false);
         closeHeader({ ctx });
@@ -420,6 +419,7 @@ export default function NavigateMenu() {
                             key="routesettingsembed"
                             embed={true}
                             resetSettings={resetSettings}
+                            setResetSettings={setResetSettings}
                         />
                     }
                     {routeObject.getRoute() &&
@@ -474,6 +474,7 @@ export default function NavigateMenu() {
                         key="routesettingsdialog"
                         setOpenSettings={setOpenSettings}
                         resetSettings={resetSettings}
+                        setResetSettings={setResetSettings}
                     />
                 )}
             </Box>
