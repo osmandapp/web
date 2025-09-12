@@ -28,7 +28,7 @@ import AppContext, {
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
-import RouteMenu from './navigate/RouteMenu';
+import NavigateMenu from './navigate/NavigateMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
@@ -311,7 +311,7 @@ export default function MainMenu({
         {
             name: t('shared_string_navigation'),
             icon: NavigationIcon,
-            component: <RouteMenu />,
+            component: <NavigateMenu />,
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
             show: true,
             id: 'se-show-menu-navigation',

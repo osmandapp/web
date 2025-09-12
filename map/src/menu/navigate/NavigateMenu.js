@@ -68,7 +68,7 @@ export function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
 }
 
-export default function RouteMenu() {
+export default function NavigateMenu() {
     const ctx = useContext(AppContext);
 
     const [, height] = useWindowSize();
