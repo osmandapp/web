@@ -203,7 +203,7 @@ export function RouteService() {
                     }
                 }
 
-                // do not open InfoBlock until openInfoBlock activated (NavigateMenu)
+                // do not open InfoBlock until openInfoBlock activated (NavigationMenu)
                 if (isRouteTrack(ctx)) {
                     // re-open InfoBlock
                     ctx.setUpdateInfoBlock(true);

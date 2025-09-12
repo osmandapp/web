@@ -74,7 +74,7 @@ export function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
 }
 
-export default function NavigateMenu() {
+export default function NavigationMenu() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();

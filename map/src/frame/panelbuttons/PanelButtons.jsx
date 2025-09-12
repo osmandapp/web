@@ -19,7 +19,7 @@ import useUndoRedo from '../../infoblock/useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import RouteProfileSettings from '../../menu/navigate/RouteProfileSettings';
+import RouteProfileSettings from '../../menu/navigation/RouteProfileSettings';
 import { downloadCurrentGpx } from '../../infoblock/components/tabs/GeneralInfoTab';
 import LoginContext from '../../context/LoginContext';
 

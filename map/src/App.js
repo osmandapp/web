@@ -34,7 +34,7 @@ import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
 import Weather from './menu/weather/Weather';
 import FavoritesMenu from './menu/favorite/FavoritesMenu';
-import NavigateMenu from './menu/navigate/NavigateMenu';
+import NavigationMenu from './menu/navigation/NavigationMenu';
 import PlanRouteMenu from './menu/planroute/PlanRouteMenu';
 import TracksMenu from './menu/tracks/TracksMenu';
 import SettingsMenu from './menu/settings/SettingsMenu';
@@ -133,7 +133,7 @@ const App = () => {
                                         element={<ShareFileMenu />}
                                     />
                                 </Route>
-                                <Route path={NAVIGATE_URL} element={<NavigateMenu />}></Route>
+                                <Route path={NAVIGATE_URL} element={<NavigationMenu />}></Route>
                                 <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>
                                 <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
                                 <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>

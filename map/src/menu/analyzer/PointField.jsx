@@ -3,7 +3,7 @@ import { ReactComponent as PointAIcon } from '../../assets/icons/ic_action_point
 import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point_b.svg';
 import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
-import { formatLatLon } from '../navigate/NavigateMenu';
+import { formatLatLon } from '../navigation/NavigationMenu';
 import { parseCoordinate } from './util/PointsManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
