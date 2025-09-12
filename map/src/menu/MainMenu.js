@@ -599,6 +599,7 @@ export default function MainMenu({
             // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true, params: ctx.pageParams });
         }
+        if (!menuInfo) setSelectedType(null);
     }, [ctx.pageParams, menuInfo]);
 
     useEffect(() => {
