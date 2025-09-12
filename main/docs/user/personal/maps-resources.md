@@ -251,7 +251,7 @@ Each item in the list offers a *three-dot menu* with options:
 
 <TabItem value="ios" label="iOS">  
 
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png)
+![Viewing data](@site/static/img/personal/maps/viewing_data_ios.png)
 
 Tap any item in the **Local** tab to open its detailed data, as follows:
 
@@ -292,9 +292,7 @@ Available **Actions** depend on the data type and may include **Deactivate**, **
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
-
-![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
+![Actions iOS](@site/static/img/personal/maps/local_actions_ios.png)
 
 Available **Actions** depend on the data type and may include **Clear cache**, **Edit**, and **Delete**.
 
