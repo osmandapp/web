@@ -7,7 +7,6 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
-    MAX_RECENT_OBJS,
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_LOCAL_TRACK,
@@ -24,7 +23,7 @@ import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
-import { TRACKS_KEY } from '../../util/hooks/menu/useRecentSaver';
+import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';

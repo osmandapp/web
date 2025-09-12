@@ -35,7 +35,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
-import { POIS_KEY, useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
+import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -174,7 +174,7 @@ export default function PoiLayer() {
     const [selectedPoi, setSelectedPoi] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     useSelectMarkerOnMap({
         ctx,
@@ -400,7 +400,7 @@ export default function PoiLayer() {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
-        recentSaver(POIS_KEY, poi);
+        recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
         ctx.setSelectedPoiObj({ ...poi });
     }

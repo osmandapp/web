@@ -81,7 +81,7 @@ import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
-import { FAVORITES_KEY, useRecentSaver } from '../../../util/hooks/menu/useRecentSaver';
+import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -131,7 +131,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const { t } = useTranslation();
     const hash = window.location.hash;
 
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     const [devWikiContent, setDevWikiContent] = useState(null);
 

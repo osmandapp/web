@@ -33,7 +33,7 @@ import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
-import { SEARCH_RESULTS_KEY, useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
+import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
@@ -72,7 +72,7 @@ export default function SearchMenu() {
 
     const { t } = useTranslation();
 
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     useEffect(() => {
         if (ctx.searchResult) {

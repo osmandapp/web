@@ -7,10 +7,10 @@ const MAX_RECENT_OBJS = 5;
 export const SEARCH_RESULTS_KEY = 'searchResults';
 export const TRACKS_KEY = 'tracks';
 export const FAVORITES_KEY = 'favorites';
-export const POIS_KEY = 'pois';
+export const POI_OBJECTS_KEY = 'pois';
 export const EXPLORE_OBJS_KEY = 'exploreObjs';
 
-export function useRecentSaver() {
+export function useRecentDataSaver() {
     const ctx = useContext(AppContext);
     const [searchParams] = useSearchParams();
 

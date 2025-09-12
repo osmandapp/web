@@ -31,7 +31,7 @@ import DividerWithMargin from '../../../frame/components/dividers/DividerWithMar
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
-import { POIS_KEY, useRecentSaver } from '../../../util/hooks/menu/useRecentSaver';
+import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -96,7 +96,7 @@ export default function SearchResultItem({ item, typeItem }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const { navigateToSearchResults } = useSearchNav();
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     const itemId = getObjIdSearch(item);
 
@@ -174,7 +174,7 @@ export default function SearchResultItem({ item, typeItem }) {
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi });
-            recentSaver(POIS_KEY, poi);
+            recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setZoomToMapObj((prev) => {
                 return {
                     ...prev,

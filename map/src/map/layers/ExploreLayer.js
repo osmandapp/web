@@ -23,7 +23,7 @@ import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
-import { EXPLORE_OBJS_KEY, useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
+import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -81,7 +81,7 @@ export default function ExploreLayer() {
         mainIconsLayerRef,
         otherIconsLayerRef,
     });
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     function closeModal() {
         setModalIsOpen(false);

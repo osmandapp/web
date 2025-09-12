@@ -92,7 +92,7 @@ import { openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 import { openPoiObj } from '../manager/SearchManager';
-import { useRecentSaver } from '../util/hooks/menu/useRecentSaver';
+import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -143,7 +143,7 @@ export default function MainMenu({
     const [savePrevState, setSavePrevState] = useState(false);
 
     const menuDots = useMenuDots(ctx);
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;

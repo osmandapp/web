@@ -10,7 +10,7 @@ import { filterPointsInBounds } from './FavoriteLayer';
 import useHashParams from '../../util/hooks/useHashParams';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { addShareFavoriteToMap } from '../../manager/FavoritesManager';
-import { useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
+import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export default function ShareFileLayer() {
     const ctx = useContext(AppContext);
@@ -21,7 +21,7 @@ export default function ShareFileLayer() {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     const [currentShareFile, setCurrentShareFile] = useState(null);
 

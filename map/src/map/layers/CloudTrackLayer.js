@@ -12,7 +12,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 import { addLayerToMap } from '../util/MapManager';
-import { TRACKS_KEY, useRecentSaver } from '../../util/hooks/menu/useRecentSaver';
+import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 function clickHandler({ ctx, file, layer, recentSaver }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
@@ -143,7 +143,7 @@ const CloudTrackLayer = () => {
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
-    const recentSaver = useRecentSaver();
+    const recentSaver = useRecentDataSaver();
 
     useEffect(() => {
         const needUpdate = move || zoom !== prevZoom;
