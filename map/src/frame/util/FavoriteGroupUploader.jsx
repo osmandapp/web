@@ -110,7 +110,7 @@ export default function FavoriteGroupUploader({ children }) {
                         msg: `Unable to import ${file.name}`,
                     });
                 }
-                ctx.setFavLoading(false)
+                ctx.setFavLoading(false);
             });
             reader.readAsText(file);
         });

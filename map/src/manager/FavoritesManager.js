@@ -204,9 +204,7 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
     }
     if (selectedFile) {
         const currentGroup =
-            selectedFile?.pointsGroups &&
-            !isEmpty(selectedFile?.pointsGroups) &&
-            selectedFile.pointsGroups[groupName];
+            selectedFile?.pointsGroups && !isEmpty(selectedFile?.pointsGroups) && selectedFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }

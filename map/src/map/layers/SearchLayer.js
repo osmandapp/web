@@ -32,6 +32,7 @@ import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
 import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
+import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -98,6 +99,7 @@ export default function SearchLayer() {
     const searchLayers = useRef(null);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+    const recentSaver = useRecentDataSaver();
 
     useSelectMarkerOnMap({
         ctx,
@@ -265,6 +267,7 @@ export default function SearchLayer() {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
+        recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
         ctx.setSelectedPoiObj({ ...poi });
     }

@@ -23,6 +23,7 @@ import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
+import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -80,6 +81,7 @@ export default function ExploreLayer() {
         mainIconsLayerRef,
         otherIconsLayerRef,
     });
+    const recentSaver = useRecentDataSaver();
 
     function closeModal() {
         setModalIsOpen(false);
@@ -118,12 +120,11 @@ export default function ExploreLayer() {
                     type: item.properties?.osmtype,
                 },
             });
-            if (response?.data) {
-                const poi = response.data;
-                ctx.setSelectedWpt({ poi, wikidata: item });
-            } else {
-                ctx.setSelectedWpt({ wikidata: item });
-            }
+            const key = item.properties?.osmid ?? item.geometry.coordinates[1] + item.geometry.coordinates[0];
+            const poi = response?.data ?? null;
+            const obj = { poi, wikidata: item, key };
+            recentSaver(EXPLORE_OBJS_KEY, obj);
+            ctx.setSelectedWpt(obj);
         }
 
         if (item) {

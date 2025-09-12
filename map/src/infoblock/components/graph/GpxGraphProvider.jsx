@@ -147,9 +147,7 @@ const GpxGraphProvider = ({ width }) => {
     }
 
     function getRoadPoints(pointsFromTracks) {
-        let points = !isEmpty(ctx.selectedGpxFile.points)
-            ? getAllPoints(ctx.selectedGpxFile.points)
-            : pointsFromTracks;
+        let points = !isEmpty(ctx.selectedGpxFile.points) ? getAllPoints(ctx.selectedGpxFile.points) : pointsFromTracks;
         if (!isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
             setRoadPoints(points);
         } else if (isEmpty(points) || points[0].segment === undefined) {

@@ -32,6 +32,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
+import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -39,6 +40,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [, , mobile] = useWindowSize();
 
     const { t } = useTranslation();
+    const recentSaver = useRecentDataSaver();
 
     const [fileStorage, setFileStorage] = useState(null);
 
@@ -92,6 +94,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                 setError,
                 fileStorage,
                 setFileStorage,
+                recentSaver,
             }).then();
             setDisplayTrack(null);
         }
@@ -131,6 +134,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     setError,
                                     fileStorage,
                                     setFileStorage,
+                                    recentSaver,
                                 }).then();
                             }}
                             onMouseEnter={() => visible && setShowMenu(true)}
