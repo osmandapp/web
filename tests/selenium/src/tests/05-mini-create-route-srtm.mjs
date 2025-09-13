@@ -11,7 +11,7 @@ const routes = [
         A: '50.49321, 30.52429',
         B: '50.49639, 30.51174',
         hasAttributes: false,
-        strings: [/Route: 1\.[234] km, 0:0[678] min/, '100 / 101 / 103 m'],
+        strings: [/Route: 1\.[234] km, 0:0[678] min/, '101 / 101 / 103 m'],
         srtm: 'Elevation (Satellite): 101 / 102 / 103 m',
     },
     {
