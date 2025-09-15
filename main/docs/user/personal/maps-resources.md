@@ -300,6 +300,7 @@ Available **Actions** depend on the data type and may include **Clear cache**, *
 
 </Tabs>
 
+<!--
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
@@ -381,6 +382,7 @@ Use sorting options to organize map data:
 - **Newest date first** / **Oldest date first**. See updates or older versions.
 - **Large size first** / **Small size first**. Identify large maps to free storage space.
 
+-->
 
 ## Updates Menu {#updates-menu}
 
