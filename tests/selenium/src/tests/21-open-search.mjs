@@ -20,7 +20,7 @@ export default async function test() {
 
     await waitBy(By.id('se-search-input-close'));
     await clickBy(By.id('se-search-input-close'));
-    await waitBy(By.id('se-menu-component-search-block'));
+    await waitBy(By.id('se-menu-component-search-none'));
     await waitBy(By.id('se-open-search-button'));
     await clickBy(By.id('se-open-search-button'));
     await waitBy(By.id('se-search-input'));
