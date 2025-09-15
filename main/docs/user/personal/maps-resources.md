@@ -162,13 +162,13 @@ Read more in the [**Custom package**](../plugins/custom) article.
 
 <TabItem value="android" label="Android">
 
-![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png)
+![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png) ![Deselect menu Android](@site/static/img/personal/maps/multiple_maps_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png)
+![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![Deselect menu IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
