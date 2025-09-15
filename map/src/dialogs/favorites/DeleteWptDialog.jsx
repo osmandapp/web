@@ -38,6 +38,7 @@ export default function DeleteWptDialog({
                 const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt.lat === lat && wpt.lon === lng);
                 PointManager.deleteWpt(ind, ctx, !isDetails);
                 ctx.setSelectedWpt(null);
+                ctx.setSelectedFavoriteObj(null);
                 if (!isDetails) {
                     ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
                 }
@@ -47,6 +48,7 @@ export default function DeleteWptDialog({
             //delete favorite point from group
             deleteFavorite().then(() => {
                 ctx.setSelectedWpt(null);
+                ctx.setSelectedFavoriteObj(null);
                 if (!isDetails) {
                     ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
                 }
