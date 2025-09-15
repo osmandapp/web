@@ -79,7 +79,6 @@ Please note that monthly map updates are considered another map download and are
 - [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
 - [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
-- [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
 
 ## Downloads Menu {#downloads-menu}
@@ -132,16 +131,15 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
 - [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
 - [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
+- **Search city or region** (*Android only*). A quick search tool at the top of the downloads tab (magnifying glass icon) to find the needed city or region.
 
 ### World Maps {#world-maps}
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
-- **World Altitude Correction** (*Android only*). Improves navigation accuracy, especially in mountainous terrain.
+- **World Altitude Correction** (*Android only*). Corrects altitude readings to mean sea level using a global geoid model.
 - **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
 - **All world (Weather forecast)**. Allows you to download a map with weather information.
-
-Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
 
 
 ### Extra Maps {#extra-maps}
@@ -443,7 +441,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 Key features:
 
 - **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Live Updates**. Manage via a toggle in the settings.
-- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *live updates* settings.
+- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *Live updates* settings.
 - **Switcher**(*Android*) / **&#43;** button (*iOS*). Add maps for *live updates*.
 - **<Translate android="true" ids="update_frequency"/>**. Select the map update frequency (hourly, daily, or weekly).
 - **<Translate android="true" ids="update_now"/>**. Start the *live updates* for map.
