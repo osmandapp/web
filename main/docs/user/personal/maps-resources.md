@@ -206,7 +206,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_l
 
 ![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
-The Local tab provides an overview of the storage usage for for maps and resources data on your device.
+The Local tab provides an overview of the storage usage for for maps and resources data on your device. The memory bar at the top displays three categories:
+
+- ***Green***. Total used device storage.
+- ***Orange***. Part of the used storage occupied by OsmAnd downloads.
+- ***Grey***. Free storage available on the device.
+
+Below the memory bar, a list of all downloaded OsmAnd maps and resources is shown, including their type and file size. Online maps are not counted in the memory bar, as they are streamed and only cached temporarily.
 
 </TabItem>
 
@@ -251,11 +257,13 @@ Each item in the list offers a *three-dot menu* with options:
 
 ![Viewing data](@site/static/img/personal/maps/viewing_data_ios.png)
 
-Tap any item in the **Local** tab to open its detailed data, as follows:
+Tap any offline item in the **Local** tab to open its detailed data, as follows:
 
 - **Type**. The dataitem's type like **Standard map**, **Wikipedia**, **Contour lines**, or so on.
 - **Size**. The item’s size is in MB.
 - **Created on**. The date the item was added.
+
+For online maps, only the type and size of cached data are displayed.
 
 </TabItem>
 
@@ -292,7 +300,10 @@ Available **Actions** depend on the data type and may include **Deactivate**, **
 
 ![Actions iOS](@site/static/img/personal/maps/local_actions_ios.png)
 
-Available **Actions** depend on the data type and may include **Clear cache**, **Edit**, and **Delete**.
+Available **Actions** depend Available actions depend on the data type:
+
+- For **offline items**, only the **Delete** option is available.
+- For **online maps**, actions may include **Clear cache**, **Edit**, and **Delete**.
 
 </TabItem>
 
