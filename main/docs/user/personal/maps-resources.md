@@ -403,20 +403,27 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
 
+The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png)
+![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+
+The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
+The **Updates** tab also includes a Weather forecast section. This feature allows you to download offline weather forecasts for selected countries:
+
+- If no forecast has been downloaded yet, you will see a prompt to select countries. Forecast data is available for up to 7 days.
+- Once a forecast is downloaded, the ***Offline forecast*** screen displays the list of countries with status information, including the last update time, validity period, and total data size.
+- Tapping a country opens detailed information such as last updated time, next update, data size, and accuracy. Options include ***Update now***, enabling or disabling ***Auto-update***, and ***Remove forecast***.
 
 </TabItem>
 
 </Tabs>
-
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
-
 
 ## Live Updates {#live-updates}
 
