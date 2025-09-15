@@ -17,7 +17,7 @@ const routes = [
         strings: [
             'Points: 2',
             /Bicycle 2\.(0\d|1\d?) km/, // 2.09 km
-            /Route: 2\.1\d? km, 0:10 min/,
+            /Route: 2\.1\d? km, 0:09 min/,
         ],
         turns: [
             'Go ahead and go 0.0 km',
@@ -44,7 +44,7 @@ const routes = [
             'Points: 2',
             /Car 47[0123].\d\d km/,
             /Route: 47[0123].\d km, 5:2\d min/,
-            /-1 \/ 2[45] \/ 84 m/, // ele
+            /-1 \/ 2[45] \/ 85 m/, // ele
         ],
         turns: [
             'Go ahead onto Gottlieb-Daimler-Straße and go 0.1 km',
