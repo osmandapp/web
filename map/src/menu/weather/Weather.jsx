@@ -135,7 +135,7 @@ export default function Weather() {
         }
 
         if (res.length > 0) {
-            (useDayForecast ? setDayF : setWeekF)(res);
+            useDayForecast ? setDayF(res) : setWeekF(res);
         }
     }, [ctx.weatherDate, weekForecast]);
 
