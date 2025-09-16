@@ -227,7 +227,7 @@ In the download forecast menu, you can obtain information and set parameters to 
 - **Edit** *pencil* button (*Android*). Allows you to rename the weather file.
 
 :::info  
-OsmAnd generates a new forecast every 6 hours.  
+Weather data is updated every 6 hours (all 4 updates from [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) and 3 from [ECMWF](https://www.ecmwf.int/)) and becomes available in OsmAnd with a short delay, as the computation process takes several hours before release (usually around 07:00 UTC).  
 :::
 
 

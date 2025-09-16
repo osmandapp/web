@@ -137,7 +137,7 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
-- **World Altitude Correction** (*Android only*). Corrects altitude readings to mean sea level using a global geoid model.
+- **World Altitude Correction** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
 - **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
 - **All world (Weather forecast)**. Allows you to download a map with weather information.
 
@@ -403,7 +403,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
 
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are typically released two weeks into each month. Other data such as Wikipedia, terrain, or nautical maps may follow different (non-regular) update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
 </TabItem>
 
@@ -413,9 +413,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are typically released two weeks into each month. Other data such as Wikipedia, terrain, or nautical maps may follow different (non-regular) update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
-The **Updates** tab also includes a Weather forecast section. This feature allows you to download offline weather forecasts for selected countries:
+The **Updates** tab also includes a Weather forecast section. It is designed to manage your offline forecasts for selected countries:
 
 - If no forecast has been downloaded yet, you will see a prompt to select countries. Forecast data is available for up to 7 days.
 - Once a forecast is downloaded, the ***Offline forecast*** screen displays the list of countries with status information, including the last update time, validity period, and total data size.
