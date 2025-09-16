@@ -623,7 +623,7 @@ Available actions:
 - For **Android** devices, you can change profiles at the top of the Configure Screen home screen using the available profile icons.  
 - If you are using an **iOS** device, tap the profile icon in the top corner of the Configure Screen home screen and select the required profile from the list to activate it.  
 
-**Take note**. The *Switch profile option* does not display all existing profiles, but only those that have been *switched on* in the Settings menu.
+**Take a note**: The *Switch profile option* does not display all existing profiles, but only those that have been *switched on* in the Settings menu.
 
 
 ## Related Articles {#related-articles}
