@@ -6,6 +6,7 @@ import {
     dayFormatter,
     timeFormatter,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+    getAlignedStep,
 } from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import TimeSlider from './TimeSlider';
@@ -112,14 +113,31 @@ export default function Weather() {
 
     // get current forecast
     useEffect(() => {
-        if (!currentTimeForecast.day && !currentTimeForecast.week) {
-            const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
-            const forecast = useDayForecast ? dayForecast : weekForecast;
-            const timeKey = `${dayFormatter(ctx.weatherDate)} ${timeFormatter(ctx.weatherDate)}`;
-            const res = forecast?.filter((f) => f[1] === timeKey);
-            useDayForecast ? setDayF(res) : setWeekF(res);
+        if (!dayForecast && !weekForecast) return;
+        if (ctx.weatherDate === null) return;
+
+        const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
+        const forecast = useDayForecast ? dayForecast : weekForecast;
+
+        const findForecast = (date) => {
+            const timeKey = `${dayFormatter(date)} ${timeFormatter(date)}`;
+            return forecast?.filter((f) => f.time === timeKey) ?? [];
+        };
+
+        let res = findForecast(ctx.weatherDate);
+
+        if (res.length === 0) {
+            const alignedStep = getAlignedStep({ direction: +1, weatherDate: ctx.weatherDate, ctx });
+            if (alignedStep) {
+                const shifted = new Date(ctx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000);
+                res = findForecast(shifted);
+            }
         }
-    }, [ctx.weatherDate]);
+
+        if (res.length > 0) {
+            (useDayForecast ? setDayF : setWeekF)(res);
+        }
+    }, [ctx.weatherDate, weekForecast]);
 
     useEffect(() => {
         if (!showForecastOutlet) return;
@@ -132,7 +150,7 @@ export default function Weather() {
             localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
         }
 
-        openWeatherForecastDetails(ctx, Number(params.type), params.source);
+        openWeatherForecastDetails(ctx, params.type, params.source);
     }, [urlLocation]);
 
     return (

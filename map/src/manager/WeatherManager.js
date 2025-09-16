@@ -11,8 +11,6 @@ import { apiGet } from '../util/HttpApi';
 export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
 export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
-export const MIN_WEATHER_DAYS = -2;
-export const MAX_WEATHER_DAYS = +7;
 export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
 export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
 export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
@@ -20,61 +18,64 @@ export const LOCAL_STORAGE_WEATHER_TYPE = 'weatherType';
 
 function getLayers() {
     let allLayers = {};
-    allLayers['gfs'] = getWeatherLayers('gfs');
-    allLayers['ecmwf'] = getWeatherLayers('ecmwf');
+    allLayers[GFS_WEATHER_TYPE] = getWeatherLayers(GFS_WEATHER_TYPE);
+    allLayers[ECWMF_WEATHER_TYPE] = getWeatherLayers(ECWMF_WEATHER_TYPE);
     return allLayers;
 }
+
+export const TEMP_LAYER_KEY = 'temp';
+export const PRECIP_LAYER_KEY = 'precip';
+export const WIND_LAYER_KEY = 'wind';
+export const PRESS_LAYER_KEY = 'press';
+export const CLOUD_LAYER_KEY = 'cloud';
 
 export function getWeatherLayers(type) {
     const layers = [
         {
-            key: 'temperature',
+            key: TEMP_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_temp'),
             opacity: 0.5,
             icon: <TemperatureIcon className={styles.icon} />,
             units: '°C',
             fixed: 1,
-            index: type === ECWMF_WEATHER_TYPE ? 2 : 3,
             checkValue: (value) => value,
         },
         {
-            key: 'precip',
+            key: PRECIP_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_precip'),
             opacity: 0.7,
             icon: <PrecipitationIcon className={styles.icon} />,
             units: i18n?.t('weather_precip_mm'),
             fixed: 2,
-            index: type === ECWMF_WEATHER_TYPE ? 4 : 6,
             checkValue: (value) => value,
         },
         {
-            key: 'wind',
+            key: WIND_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_wind'),
             opacity: 0.6,
             icon: <WindIcon className={styles.icon} />,
             units: i18n?.t('weather_wind_ms'),
             fixed: 2,
-            index: type === ECWMF_WEATHER_TYPE ? -1 : 5,
+            onlyGFS: true,
             checkValue: (value) => value,
         },
         {
-            key: 'pressure',
+            key: PRESS_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_air_pressure'),
             opacity: 0.6,
             icon: <PressureIcon className={styles.icon} />,
             units: i18n?.t('weather_pressure_mmhg'),
             fixed: 2,
-            index: type === ECWMF_WEATHER_TYPE ? 3 : 4,
             checkValue: (value) => value,
         },
         {
-            key: 'cloud',
+            key: CLOUD_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_cloud'),
             opacity: 0.5,
             icon: <CloudIcon className={styles.icon} />,
             units: '%',
             fixed: 2,
-            index: type === ECWMF_WEATHER_TYPE ? -1 : 2,
+            onlyGFS: true,
             checkValue: (value) => value,
         },
     ];
@@ -147,11 +148,11 @@ export function getAlignedStep({ direction = null, weatherDate = null, ctx, diff
     return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
 }
 
-export function openWeatherForecastDetails(ctx, type, source) {
-    const newWeatherLayers = ctx.weatherLayers[source].map((layerItem, layerIndex) => {
+export function openWeatherForecastDetails(ctx, key, source) {
+    const newWeatherLayers = ctx.weatherLayers[source].map((layerItem) => {
         return {
             ...layerItem,
-            showDetails: layerIndex === type,
+            showDetails: layerItem.key === key,
         };
     });
     ctx.setWeatherLayers((prev) => ({

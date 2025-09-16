@@ -1,7 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { openWeatherForecastDetails, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
+import {
+    openWeatherForecastDetails,
+    dayFormatter,
+    timeFormatter,
+    PRECIP_LAYER_KEY,
+    TEMP_LAYER_KEY,
+} from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
@@ -22,17 +28,16 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
         function formatting(value) {
             return item.checkValue(value).toFixed(item.fixed);
         }
-
         const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
         const forecast = useDayForecast ? dayForecast : weekForecast;
         if (ctx.weatherDate && forecast) {
             const timeKey = `${dayFormatter(ctx.weatherDate)} ${timeFormatter(ctx.weatherDate)}`;
             const currentF = useDayForecast ? currentTimeForecast?.day : currentTimeForecast?.week;
-            const res = currentF ?? forecast?.filter((f) => f[1] === timeKey);
+            const res = currentF ?? forecast?.filter((f) => f.time === timeKey);
             if (res?.length > 0) {
-                if (item.index !== -1) {
-                    const units = item.key === 'precip' ? i18n?.t('web:weather_precip_mmh') : item.units;
-                    return `${formatting(res[0][item.index])} ${units}`;
+                if (res[0][item.key] !== undefined) {
+                    const units = item.key === PRECIP_LAYER_KEY ? i18n?.t('web:weather_precip_mmh') : item.units;
+                    return `${formatting(res[0][item.key])} ${units}`;
                 } else {
                     return NOT_AVAILABLE;
                 }
@@ -46,7 +51,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
 
         useEffect(() => {
             if (forecastValue) {
-                if (item.key === 'temperature') {
+                if (item.key === TEMP_LAYER_KEY) {
                     setHeaderForecast(forecastValue);
                 }
             }
@@ -62,10 +67,10 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                     onClick={() => {
                         navigate({
                             pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
-                            search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                            search: `?${FORECAST_TYPE_PARAM}=${item.key}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
                             hash: location.hash,
                         });
-                        openWeatherForecastDetails(ctx, index, ctx.weatherType);
+                        openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
                     }}
                 >
                     <ListItemIcon className={styles.forecastIcon}>{item.icon}</ListItemIcon>
@@ -106,10 +111,9 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
     return (
         <>
             <Divider />
-            {ctx.weatherLayers &&
-                ctx.weatherLayers[ctx.weatherType].map((item, index) => (
-                    <ForecastItem item={item} index={index} key={item.id || item.name} />
-                ))}
+            {ctx.weatherLayers?.[ctx.weatherType].map((item, index) => (
+                <ForecastItem item={item} index={index} key={item.id || item.name} />
+            ))}
             <Divider sx={{ mt: '0px !important' }} />
         </>
     );

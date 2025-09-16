@@ -395,10 +395,10 @@ export default function MainMenu({
         if (selectedType === OBJECT_TYPE_WEATHER) {
             const res = selectedForecastDetails(ctx);
             if (res) {
-                const index = ctx.weatherLayers[ctx.weatherType].indexOf(res);
+                const type = res.key;
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
-                    search: `?${FORECAST_TYPE_PARAM}=${index}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                    search: `?${FORECAST_TYPE_PARAM}=${type}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
                     hash: location.hash,
                 });
                 return;
