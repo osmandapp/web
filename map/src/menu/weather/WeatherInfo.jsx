@@ -16,7 +16,7 @@ export default function WeatherInfo({ dayForecast, weekForecast }) {
         const forecast = useDayForecast ? dayForecast : weekForecast;
         if (ctx.weatherDate && forecast) {
             if (Array.isArray(forecast) && forecast.length > 0) {
-                const time = forecast[0].ts;
+                const time = forecast[0].fileModified;
                 const weatherDateObj = new Date(time);
                 let hourstr = 'now';
                 let hours = currentDiffHours(ctx, weatherDateObj);
