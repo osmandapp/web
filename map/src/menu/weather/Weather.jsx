@@ -65,6 +65,8 @@ export default function Weather() {
 
     const showWeatherMain = !!matchPath({ path: MAIN_URL_WITH_SLASH + WEATHER_URL + '*' }, useLocation().pathname);
 
+    const enabled = showWeatherMain || showForecastOutlet;
+
     // debounce map move/scroll
     useEffect(() => {
         if (!ctx.openMenu?.latlng) {
@@ -98,7 +100,7 @@ export default function Weather() {
         setDayForecast,
         weekForecast,
         setWeekForecast,
-        enabled: showWeatherMain || showForecastOutlet,
+        enabled,
     });
 
     const [currentTimeForecast, setCurrentTimeForecast] = useState({
@@ -197,7 +199,7 @@ export default function Weather() {
                             <WeatherInfo dayForecast={dayForecast} weekForecast={weekForecast} />
                         </Box>
                     ) : (
-                        <Loading />
+                        enabled && <Loading />
                     )}
                 </Box>
             )}
