@@ -26,7 +26,7 @@ This article describes how to configure the appearance of the map during navigat
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 ![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
