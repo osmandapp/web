@@ -64,7 +64,7 @@ export default function PricingPage() {
                         if (
                             allPurchases.find((p) => {
                                 p.type = p.type ?? 'one-time';
-                                return p.name === item.name && p.type === type;
+                                return p.valid === true && p.name === item.name && p.type === type;
                             })
                         ) {
                             item.show = false;
