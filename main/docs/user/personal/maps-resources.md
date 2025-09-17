@@ -78,6 +78,7 @@ Please note that monthly map updates are considered another map download and are
 - [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
 - [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
 - [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
+- [Wikivoyage](../plan-route/travel-guides.md). It provides vector maps with virtual travel guides, offering users valuable information, recommendations, and tips.
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
 
 
@@ -113,7 +114,7 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 
 - **Downloaded maps** show a green icon with a menu button:  
     - *Android*: Three-dot menu.  
-    - *iOS*: Info (I) icon.
+    - *iOS*: Info (i) icon.
 
 - **Maps in the process of loading** have an icon visualizing this. To cancel the download, tap the icon. To view the list of maps in the download queue and cancel the downloads, tap the Download bar in the Device memory info area of the Downloads and Updates tabs.
 
@@ -415,14 +416,16 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
-The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
+The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. 
+
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
 The **Updates** tab also includes a Weather forecast section. It is designed to manage your offline forecasts for selected countries:
 
 - If no forecast has been downloaded yet, you will see a prompt to select countries. Forecast data is available for up to 7 days.
 - Once a forecast is downloaded, the ***Offline forecast*** screen displays the list of countries with status information, including the last update time, validity period, and total data size.
-- Tapping a country opens detailed information such as last updated time, next update, data size, and accuracy. Options include ***Update now***, enabling or disabling ***Auto-update***, and ***Remove forecast***.
+- Tapping a country opens detailed information such as last updated time, next update, data size, and accuracy. Options include ***Update now***, enabling or disabling ***Auto-update*** (Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast).), and ***Remove forecast***.
+
 
 </TabItem>
 
