@@ -7,20 +7,22 @@ import {
     openWeatherForecastDetails,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
     LOCAL_STORAGE_WEATHER_LOC,
+    ECWMF_WEATHER_TYPE,
+    PRECIP_LAYER_KEY,
 } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import i18n from 'i18next';
 import isEmpty from 'lodash-es/isEmpty';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import ForecastGraph from './ForecastGraph';
 import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import Empty from '../errors/Empty';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
 import { FORECAST_TYPE_PARAM } from './Weather';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
+import ForecastGraph from './ForecastGraph';
+import Empty from '../errors/Empty';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -81,7 +83,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     useEffect(() => {
         if (currentWeatherType) {
             const selectedType = ctx.weatherLayers[ctx.weatherType].find((layer) => currentWeatherType === layer.key);
-            setIsDisabledType(selectedType.index === -1);
+            setIsDisabledType(ctx.weatherType === ECWMF_WEATHER_TYPE && selectedType.onlyGFS);
         }
     }, [ctx.weatherType, currentWeatherType]);
 
@@ -91,11 +93,11 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         }
 
         let res = {};
-        let uniqueDates = new Set();
+        const uniqueDates = new Set();
         const layers = ctx.weatherLayers[ctx.weatherType].map((layer) => ({ ...layer }));
 
         forecast.forEach((item) => {
-            const date = new Date(item[0]);
+            const date = new Date(item.ts);
             const dateString = date.toISOString().split('T')[0];
 
             if (uniqueDates.size > 7) {
@@ -110,30 +112,26 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             if (!res[dateString]) {
                 res[dateString] = { day: {}, night: {}, totalPrecipitation: 0 };
                 layers.forEach((layer) => {
-                    if (layer.index !== -1) {
-                        res[dateString][period][layer.key] = { max: item[layer.index], units: layer.units };
-                    }
+                    res[dateString][period][layer.key] = { max: item[layer.key], units: layer.units };
                 });
             } else {
                 layers.forEach((layer) => {
-                    if (layer.index !== -1) {
-                        let entry = res[dateString][period][layer.key];
-                        if (entry) {
-                            entry.max = Math.max(entry.max, item[layer.index]);
-                        } else {
-                            res[dateString][period][layer.key] = {
-                                max: item[layer.index],
-                                units: layer.units,
-                            };
-                        }
+                    let entry = res[dateString][period][layer.key];
+                    if (entry) {
+                        entry.max = Math.max(entry.max, item[layer.key]);
+                    } else {
+                        res[dateString][period][layer.key] = {
+                            max: item[layer.key],
+                            units: layer.units,
+                        };
                     }
                 });
             }
 
             // Sum the precipitation values
             layers.forEach((layer) => {
-                if (layer.key.includes('precip')) {
-                    res[dateString].totalPrecipitation += item[layer.index];
+                if (layer.key.includes(PRECIP_LAYER_KEY)) {
+                    res[dateString].totalPrecipitation += item[layer.key];
                 }
             });
         });
@@ -150,8 +148,8 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         Object.keys(res).forEach((date) => {
             layers.forEach((layer) => {
                 ['day', 'night'].forEach((period) => {
-                    if (res[date][period][layer.key] && layer.index !== -1) {
-                        let entry = res[date][period][layer.key];
+                    if (res[date][period][layer.key] !== undefined) {
+                        const entry = res[date][period][layer.key];
                         entry.max = layer.checkValue(entry.max).toFixed(layer.fixed);
                     }
                 });
@@ -219,12 +217,12 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             <Button
                 key={index}
                 className={setForecastButtonStyles(item)}
-                disabled={item.index === -1}
+                disabled={ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS}
                 onClick={() => {
                     setCurrentWeatherType(item.key);
                     setCurrentWeatherUnits(item.units);
-                    updateQueryParam(FORECAST_TYPE_PARAM, index);
-                    openWeatherForecastDetails(ctx, index, ctx.weatherType);
+                    updateQueryParam(FORECAST_TYPE_PARAM, item.key);
+                    openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
                 }}
             >
                 <Icon className={setForecastButtonIconStyles(item)}>{item.icon}</Icon>
@@ -235,7 +233,6 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ForecastWeekItem = ({ day, data, index }) => {
         const currentDay = new Date(day);
         const isLastItem = index === Object.entries(forecastPreparedData).length - 1;
-
         function formatDay(day) {
             const formattedDay = day.toLocaleString(i18n.language, { weekday: 'long' });
             return formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
@@ -255,7 +252,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                                 </Typography>
                             </ListItemText>
                             <div style={{ display: 'flex' }}>
-                                {currentWeatherType === 'precip' ? (
+                                {currentWeatherType === PRECIP_LAYER_KEY ? (
                                     <>
                                         <Typography className={styles.weekItemDay}>
                                             {data?.totalPrecipitation.toFixed(2)}
@@ -305,22 +302,26 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 }}
             >
                 <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
-                <Box className={styles.forecastButtonBox}>
-                    {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
-                        <ForecastButtonItem item={item} index={index} key={item.id || item.name} />
-                    ))}
-                </Box>
+                {!isEmpty(forecastPreparedData) && (
+                    <Box className={styles.forecastButtonBox}>
+                        {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
+                            <ForecastButtonItem item={item} index={index} key={item.id || item.name} />
+                        ))}
+                    </Box>
+                )}
                 {ctx.forecastLoading ? (
                     <Loading />
                 ) : !isDisabledType ? (
                     <>
-                        <Box id="se-weather-forecast-graph" sx={{ px: '16px' }}>
-                            <ForecastGraph
-                                data={forecastPreparedData}
-                                weatherType={currentWeatherType}
-                                weatherUnits={currentWeatherUnits}
-                            />
-                        </Box>
+                        {!isEmpty(forecastPreparedData) && (
+                            <Box id="se-weather-forecast-graph" sx={{ px: '16px' }}>
+                                <ForecastGraph
+                                    data={forecastPreparedData}
+                                    weatherType={currentWeatherType}
+                                    weatherUnits={currentWeatherUnits}
+                                />
+                            </Box>
+                        )}
                         <Box
                             id="se-weather-forecast-week-details"
                             sx={{

@@ -15,13 +15,8 @@ export default function WeatherInfo({ dayForecast, weekForecast }) {
         const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
         const forecast = useDayForecast ? dayForecast : weekForecast;
         if (ctx.weatherDate && forecast) {
-            if (
-                Array.isArray(forecast) &&
-                forecast.length > 0 &&
-                Array.isArray(forecast[0]) &&
-                forecast[0].length > 7
-            ) {
-                const time = forecast[0][7];
+            if (Array.isArray(forecast) && forecast.length > 0) {
+                const time = forecast[0].fileModified;
                 const weatherDateObj = new Date(time);
                 let hourstr = 'now';
                 let hours = currentDiffHours(ctx, weatherDateObj);

@@ -20,8 +20,10 @@ export const useWeatherLocationChange = ({
     setDayForecast = null,
     weekForecast = null,
     setWeekForecast = null,
+    enabled = true,
 }) => {
     useEffect(() => {
+        if (!enabled) return;
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
             const useCache = getWeatherDataFromCache({ lat: currentLoc.lat, lon: currentLoc.lng });
             if (!useCache) {
@@ -46,7 +48,7 @@ export const useWeatherLocationChange = ({
                 });
             }
         }
-    }, [currentLoc, delayedHash]);
+    }, [currentLoc, delayedHash, enabled]);
 
     function getForecastData(lat, lon) {
         fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
