@@ -327,7 +327,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                             sx={{
                                 overflowX: 'hidden',
                                 overflowY: 'auto !important',
-                                maxHeight: `${height - 2 * HEADER_SIZE - DEFAULT_GRAPH_HEIGHT + 16}px`,
+                                maxHeight: `${height - 2 * HEADER_SIZE - DEFAULT_GRAPH_HEIGHT + 30}px`,
                             }}
                         >
                             {currentWeatherType !== null &&
