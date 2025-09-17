@@ -171,7 +171,7 @@ export default function TravelMenu() {
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
-            {ltx.loginUser ? (
+            {ltx.isLoggedIn() ? (
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>

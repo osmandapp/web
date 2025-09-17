@@ -236,7 +236,7 @@ export default function SearchMenu() {
 
     return (
         <>
-            {ltx.loginUser ? (
+            {ltx.isLoggedIn() ? (
                 <>
                     {showExploreOutlet && outlet ? (
                         outlet

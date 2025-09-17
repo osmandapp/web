@@ -268,7 +268,7 @@ export default function MainMenu({
             icon: SearchIcon,
             component: <SearchMenu />,
             type: OBJECT_SEARCH,
-            show: ltx.loginUser,
+            show: true,
             id: 'se-show-menu-search',
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
         },
