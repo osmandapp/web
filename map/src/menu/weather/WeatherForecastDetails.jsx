@@ -20,6 +20,7 @@ import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
 import { FORECAST_TYPE_PARAM } from './Weather';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
 import ForecastGraph from './ForecastGraph';
 import Empty from '../errors/Empty';
 
@@ -37,6 +38,8 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const [isDisabledType, setIsDisabledType] = useState(false);
     const debouncerTimer = useRef(0);
     const [loadingLocation, setLoadingLocation] = useState(false);
+
+    const DEFAULT_GRAPH_HEIGHT = 328;
 
     useWeatherTypeChange({ ctx, currentLoc, setWeekForecast: setForecast });
     useWeatherLocationChange({
@@ -321,7 +324,11 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                         )}
                         <Box
                             id="se-weather-forecast-week-details"
-                            sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}
+                            sx={{
+                                overflowX: 'hidden',
+                                overflowY: 'auto !important',
+                                maxHeight: `${height - 2 * HEADER_SIZE - DEFAULT_GRAPH_HEIGHT + 16}px`,
+                            }}
                         >
                             {currentWeatherType !== null &&
                                 Object.entries(forecastPreparedData).map(([key, value], index) => (
