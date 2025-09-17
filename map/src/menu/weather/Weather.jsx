@@ -58,10 +58,12 @@ export default function Weather() {
     const [delayedHash, setDelayedHash] = useState(hash);
     const [loadingLocation, setLoadingLocation] = useState(false);
 
-    const showForecastOutlet = matchPath(
+    const showForecastOutlet = !!matchPath(
         { path: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL + '*' },
         useLocation().pathname
     );
+
+    const showWeatherMain = !!matchPath({ path: MAIN_URL_WITH_SLASH + WEATHER_URL + '*' }, useLocation().pathname);
 
     // debounce map move/scroll
     useEffect(() => {
@@ -96,6 +98,7 @@ export default function Weather() {
         setDayForecast,
         weekForecast,
         setWeekForecast,
+        enabled: showWeatherMain || showForecastOutlet,
     });
 
     const [currentTimeForecast, setCurrentTimeForecast] = useState({
