@@ -79,7 +79,6 @@ Please note that monthly map updates are considered another map download and are
 - [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
 - [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
-- [Online raster maps](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
 
 
 ## Downloads Menu {#downloads-menu}
@@ -132,16 +131,15 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 - **Other maps**. Maps that cannot be assigned to the current map hierarchy because they are not supported or will be available in future versions.
 - [Voice prompts](../navigation/guidance/voice-navigation.md) (*Android only*). Voice packs for voicing navigation prompts.
 - [Map fonts](../map/vector-maps.md#map-fonts-android) (*Android only*). Additional font files display text on the map.
+- **Search city or region** (*Android only*). A quick search tool at the top of the downloads tab (magnifying glass icon) to find the needed city or region.
 
 ### World Maps {#world-maps}
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
-- **World Altitude Correction** (*Android only*). Improves navigation accuracy, especially in mountainous terrain.
+- **World Altitude Correction** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
 - **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
 - **All world (Weather forecast)**. Allows you to download a map with weather information.
-
-Information about *maps menu* and *actions* can be found in the article [Download maps](../start-with/download-maps.md).
 
 
 ### Extra Maps {#extra-maps}
@@ -164,13 +162,13 @@ Read more in the [**Custom package**](../plugins/custom) article.
 
 <TabItem value="android" label="Android">
 
-![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png)
+![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png) ![Deselect menu Android](@site/static/img/personal/maps/multiple_maps_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png)
+![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![Deselect menu IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
@@ -208,7 +206,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_l
 
 ![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
-The Local tab provides an overview of the storage usage for for maps and resources data on your device.
+The Local tab provides an overview of the storage usage for for maps and resources data on your device. The memory bar at the top displays three categories:
+
+- ***Green***. Total used device storage.
+- ***Orange***. Part of the used storage occupied by OsmAnd downloads.
+- ***Grey***. Free storage available on the device.
+
+Below the memory bar, a list of all downloaded OsmAnd maps and resources is shown, including their type and file size. Online maps are not counted in the memory bar, as they are streamed and only cached temporarily.
 
 </TabItem>
 
@@ -253,11 +257,13 @@ Each item in the list offers a *three-dot menu* with options:
 
 ![Viewing data](@site/static/img/personal/maps/viewing_data_ios.png)
 
-Tap any item in the **Local** tab to open its detailed data, as follows:
+Tap any offline item in the **Local** tab to open its detailed data, as follows:
 
 - **Type**. The dataitem's type like **Standard map**, **Wikipedia**, **Contour lines**, or so on.
 - **Size**. The item’s size is in MB.
 - **Created on**. The date the item was added.
+
+For online maps, only the type and size of cached data are displayed.
 
 </TabItem>
 
@@ -294,7 +300,10 @@ Available **Actions** depend on the data type and may include **Deactivate**, **
 
 ![Actions iOS](@site/static/img/personal/maps/local_actions_ios.png)
 
-Available **Actions** depend on the data type and may include **Clear cache**, **Edit**, and **Delete**.
+Available **Actions** depend Available actions depend on the data type:
+
+- For **offline items**, only the **Delete** option is available.
+- For **online maps**, actions may include **Clear cache**, **Edit**, and **Delete**.
 
 </TabItem>
 
@@ -394,20 +403,30 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
 
+The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
+
+Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png)
+![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+
+The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
+Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
+The **Updates** tab also includes a Weather forecast section. It is designed to manage your offline forecasts for selected countries:
+
+- If no forecast has been downloaded yet, you will see a prompt to select countries. Forecast data is available for up to 7 days.
+- Once a forecast is downloaded, the ***Offline forecast*** screen displays the list of countries with status information, including the last update time, validity period, and total data size.
+- Tapping a country opens detailed information such as last updated time, next update, data size, and accuracy. Options include ***Update now***, enabling or disabling ***Auto-update***, and ***Remove forecast***.
 
 </TabItem>
 
 </Tabs>
-
-The **Updates** tab allows you to refresh OsmAnd maps monthly. Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. Standard and road-only maps are typically released two weeks into each month. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
-
 
 ## Live Updates {#live-updates}
 
@@ -443,7 +462,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 Key features:
 
 - **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Live Updates**. Manage via a toggle in the settings.
-- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *live updates* settings.
+- **&#8230; &#124;** button (*Android*) / **&#62;** button (*iOS*). Open *Live updates* settings.
 - **Switcher**(*Android*) / **&#43;** button (*iOS*). Add maps for *live updates*.
 - **<Translate android="true" ids="update_frequency"/>**. Select the map update frequency (hourly, daily, or weekly).
 - **<Translate android="true" ids="update_now"/>**. Start the *live updates* for map.
