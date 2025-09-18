@@ -254,7 +254,7 @@ You can configure the following options:
 
 By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
 
-**Quick action:** You can also add a quick toggle *Show/Hide Coordinates Grid* to the *Configure Map* group for fast access.
+[Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
 
 ## Configure Map Style {#configure-map-style}
 
