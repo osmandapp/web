@@ -130,6 +130,8 @@ export default function SearchLayer() {
     useEffect(() => {
         if (ctx.searchQuery?.search) {
             removeOldSearchLayer();
+            //remove old categories
+            ctx.setShowPoiCategories([]);
             const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
                 const category = PoiManager.formattingPoiFilter(searchData?.query, true);
@@ -232,8 +234,6 @@ export default function SearchLayer() {
         if (searchLayer) {
             map.removeLayer(searchLayer);
         }
-        //remove old categories
-        ctx.setShowPoiCategories([]);
     }
 
     useEffect(() => {
@@ -399,6 +399,7 @@ export default function SearchLayer() {
         if (index > -1) {
             ctx.showPoiCategories.splice(index, 1);
         }
+        console.log("rty");
         ctx.setShowPoiCategories([...ctx.showPoiCategories]);
     }
 }

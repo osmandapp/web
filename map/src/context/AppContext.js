@@ -56,7 +56,7 @@ export const MAX_RECENT_OBJS = 5;
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
-    showPoi: false,
+    pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
 };
@@ -508,6 +508,9 @@ export const AppContextProvider = (props) => {
                 return defaultConfigureMapStateValues;
             }
             setHeightmap(savedConfigureMap.terrain);
+            if (!isEmpty(savedConfigureMap.pois)) {
+                setShowPoiCategories(savedConfigureMap.pois);
+            }
             return savedConfigureMap;
         }
         return defaultConfigureMapStateValues;
