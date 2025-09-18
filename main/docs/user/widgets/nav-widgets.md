@@ -342,9 +342,14 @@ The *Route Guidance* widgets contain information about:
 
 </Tabs>
 
-- **Next turn** - the next turn with a large arrow representing the maneuver and with data about the distance to it.
-- **Next turn (small)** - the next turn with a small arrow representing the maneuver and with distance data next to the arrow. (only for _Left / Right panel_)
-- **Second next turn** - the next turn after the first turn, which is activated if it is within approach distance.
+The navigation widgets **Next turn**, **Next turn (small)**, **Second next turn** can be placed on any panel for user convenience. However, the information displayed differs depending on the widget type and its placement. The table below summarizes the behavior:
+
+|   Widget/Panel   | Left panel    | Right panet   | Top panel              | Bottom panel           |
+| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
+| **Next turn**        | Distance only | Distance only | Street name + distance | Street name + distance |
+| **Next turn (small)**| Distance only | Distance only | Not available          | Not available          |
+| **Second next turn** | Distance only | Distance only | Street name + distance | Street name + distance |
+
 
 ### Color Prompts for Next Turn {#color-prompts-for-next-turn}
 
@@ -361,7 +366,7 @@ This table shows the approximate time until the prompts are activated and the co
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
+The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. A distance indicator is also shown below the lane diagram, representing how far remains until the maneuver where the lane guidance applies. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
 
 ### Color Prompts for Lanes {#color-prompts-for-lanes}
 
