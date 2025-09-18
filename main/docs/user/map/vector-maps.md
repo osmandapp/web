@@ -235,7 +235,13 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 </Tabs>
 
 
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. You can select ***Zoom level settings:*** to display between 2 - 22, ***Labels position*** - **Edges**/**Center** and ***Grid color*** separately for Day/Night mode.
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
+
+You can configure the following options:
+- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
+- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
+- **Grid color:** available separately for Day/Night mode. Customizing grid color is a paid feature.
+- **Coordinate format:** select from several available formats (see list below).
 
 
 ***Available coordinate formats:***
@@ -246,7 +252,9 @@ The **Coordinates Grid** feature overlays a reference grid on the map, allowing 
 - **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
 - **MGRS** (Military Grid Reference System)
 
-By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats).
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
+
+**Quick action:** You can also add a quick toggle *Show/Hide Coordinates Grid* to the *Configure Map* group for fast access.
 
 ## Configure Map Style {#configure-map-style}
 
