@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
-    OBJECT_SEARCH,
+    OBJECT_SEARCH, OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRAVEL,
@@ -37,6 +37,10 @@ export default function useMenuDots(ctx) {
     useEffect(() => {
         setActiveMenu(OBJECT_SEARCH, ctx.searchResult || ctx.exploreMenu || ctx.poiCatMenu || ctx.selectedPoiObj);
     }, [ctx.searchResult, ctx.exploreMenu, ctx.poiCatMenu, ctx.selectedPoiObj]);
+
+    useEffect(() => {
+        setActiveMenu(OBJECT_TRACK_ANALYZER, ctx.trackAnalyzer);
+    }, [ctx.trackAnalyzer]);
 
     function isSameHour() {
         const initial = new Date();
