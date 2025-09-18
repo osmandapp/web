@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro for SotM US
+title: OsmAnd Pro for EuroVelo & Cycling Tourism Conference
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,19 +16,19 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-![SOTM](@site/static/img/promo/sotmus/sotmus25.png)
+![SOTM](@site/static/img/promo/all/eurovelo.png)
 
 # Get OsmAnd Pro Free for 3 Months!
 
-As a participant of **State of the Map US 2025**, you’re eligible for a free 3-month OsmAnd Pro subscription.
+As a participant of **EuroVelo & Cycling Tourism Conference Balatonfüred**, you’re eligible for a free 3-month OsmAnd Pro subscription.
 
 To claim your subscription:
 
 1. Enter your email in the form below.
 
-<RegisterUserPromoBlock  promoKey='sotmus2025'/>
+<RegisterUserPromoBlock  promoKey='eurovelo'/>
 
-2. Submit before June 30, 2025 (offer expires).
+2. Submit before September 30, 2025 (offer expires).
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
