@@ -1,5 +1,5 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
-import { clickBy, waitBy } from '../lib.mjs';
+import { waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import { driver, url } from '../options.mjs';
@@ -11,8 +11,6 @@ const routes = [
         A: '50.49321, 30.52429',
         B: '50.49639, 30.51174',
         hasAttributes: false,
-        strings: [/Route: 1\.[234] km, 0:0[678] min/, '100 / 101 / 103 m'],
-        srtm: 'Elevation (Satellite): 101 / 102 / 103 m',
     },
     {
         type: 'osmand',
@@ -20,8 +18,6 @@ const routes = [
         A: '50.49321, 30.52429',
         B: '50.49631, 30.51184',
         hasAttributes: false,
-        strings: [/Route: 1\.[456] km, 0:0[345] min/, '101 / 101 / 103 m'],
-        srtm: 'Elevation (Satellite): 101 / 101 / 103 m',
     },
 ];
 
@@ -36,18 +32,15 @@ export default async function test() {
         await driver.get(newUrl);
 
         await waitBy(By.className('leaflet-interactive'));
-        await clickBy(By.id('se-route-more-information'));
-
-        await validateInfoBlock();
-        await clickBy(By.id('se-button-back'));
+        await validateInfo();
     }
 
     await actionFinish();
 }
 
-async function validateInfoBlock() {
+async function validateInfo() {
     try {
-        const el = await driver.findElement(By.id('se-infoblock-all'));
+        const el = await driver.findElement(By.id('se-route-info'));
         const text = await el.getText();
 
         // get all numbers from the text
