@@ -1,5 +1,5 @@
 ---
-source-hash: 71c20d65a3fb26bf934cf5f977a6fd59d90d866366d685c137ace186ae0877f8
+source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
 sidebar_position: 3
 title:  Глобальні налаштування
 ---
@@ -19,23 +19,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-**Глобальні налаштування** — це загальні [налаштування](../personal/profiles.md) для всіх профілів у застосунку OsmAnd. Це базові налаштування для системи OsmAnd, і будь-які внесені зміни впливатимуть на весь застосунок.
+**Глобальні налаштування** — це загальні [налаштування](../personal/profiles.md) для всіх профілів у додатку OsmAnd. Це базові налаштування для системи OsmAnd, і будь-які внесені зміни впливатимуть на весь додаток.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Перейти до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
+![Загальні налаштування профілів Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Загальні налаштування профілів Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейти до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
+![Загальні налаштування профілів iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Загальні {#general}
 
-Цей розділ містить основні налаштування OsmAnd, такі як вибір [профілю](#default-profile) під час завантаження застосунку, вибір [механізму візуалізації](#map-rendering-engine) та [папки](#data-storage-folder), куди будуть збережені дані.  
+Цей розділ містить основні налаштування OsmAnd, такі як вибір [профілю](#default-profile) при завантаженні програми, вибір [рушія рендерингу мапи](#map-rendering-engine) та [папки](#data-storage-folder), де будуть зберігатися дані.  
 
 
 ### Профіль за замовчуванням {#default-profile}
@@ -53,35 +53,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_andr.png)  
+![Загальні налаштування Профіль за замовчуванням Android](@site/static/img/personal/profiles/default_profile_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_ios.png)
+![Загальні налаштування Профіль за замовчуванням iOS](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd використовує профіль за замовчуванням, *Перегляд карти*, як перший профіль для нових користувачів, і якщо цей профіль був обраний вами, він буде використовуватися щоразу при перезапуску застосунку. Ви можете вибрати будь-який профіль зі списку за замовчуванням, включаючи *Останній використаний* та *Перегляд карти*.
+OsmAnd використовує профіль за замовчуванням, *Перегляд мапи*, як перший профіль для нових користувачів, і якщо цей профіль був обраний вами, він буде використовуватися кожного разу при перезапуску програми. Ви можете вибрати будь-який профіль зі списку за замовчуванням, включаючи *Останній використаний* та *Перегляд мапи*.
 
 - **<Translate android="true" ids="shared_string_last_used"/>**. Дозволяє вибрати профіль, який використовувався останнім.
-- **<Translate android="true" ids="settings_preset"/>**. Ви вибираєте профіль, який буде використовуватися при запуску OsmAnd. Його можна змінити в [налаштуваннях](../personal/profiles.md) застосунку.  
+- **<Translate android="true" ids="settings_preset"/>**. Ви вибираєте профіль, який буде використовуватися при запуску OsmAnd. Його можна змінити в [налаштуваннях](../personal/profiles.md) програми.  
 
 
 ### Профіль CarPlay {#carplay-profile}
 
-:::caution ТІЛЬКИ iOS
-Ця функція доступна для версії застосунку OsmAnd для iOS.
+:::caution ТІЛЬКИ для iOS
+Ця функція доступна для версії програми OsmAnd для iOS.
 :::
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Загальні налаштування Профіль за замовчуванням Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) використовується при підключенні до програмного забезпечення [CarPlay](https://support.apple.com/en-gb/HT205634) вашого автомобіля та допомагає вам максимально використовувати оптимізовану версію застосунку OsmAnd, використовуючи аудіо- та відеосистеми для відображення даних на вашому телефоні.
+[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) використовується при підключенні до [програмного забезпечення CarPlay](https://support.apple.com/en-gb/HT205634) вашого автомобіля і допомагає вам максимально використовувати оптимізовану версію програми OsmAnd, використовуючи аудіо- та відеосистеми для відображення даних на вашому телефоні.
 
 
 ### Папка для зберігання даних {#data-storage-folder}
@@ -90,82 +90,82 @@ OsmAnd використовує профіль за замовчуванням, 
 
 <TabItem value="android" label="Android">
 
-Перейти до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+![Налаштування сховища профілів Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Пам'ять пристрою** показує, скільки вільного місця залишилося на вашому пристрої. Торкніться поля, щоб отримати доступ до меню [*Карти та ресурси*](../personal/maps-resources.md#maps--resources), де ви можете переглядати та керувати детальною інформацією про ваші дані OsmAnd.
+1. **Пам'ять пристрою** показує, скільки вільного місця залишилося на вашому пристрої. Торкніться поля, щоб отримати доступ до меню [*Мапи та ресурси*](../personal/maps-resources.md#maps--resources), де ви можете переглянути та керувати детальною інформацією про ваші дані OsmAnd.
 
 2. У **<Translate android="true" ids="change_data_storage_folder"/>** ви можете вибрати папку для збереження даних OsmAnd на вашому пристрої.  
 
-    - *Внутрішня пам'ять застосунку*. Лише застосунок OsmAnd має доступ до своїх даних, а жоден із зовнішніх застосунків не має.
-    - *Спільна пам'ять*. Більше недоступна.
-    - *Зовнішнє сховище 1*. Лише 1 застосунок OsmAnd має доступ, а також застосунки адміністратора та USB.
-    - *Багатокористувацьке сховище*. Лише 1 застосунок OsmAnd має доступ, але він спільно використовується кількома користувачами Android.
+    - *Внутрішня пам'ять додатку*. Тільки додаток OsmAnd має доступ до своїх даних, і жоден із зовнішніх додатків.
+    - *Спільна пам'ять*. Більше не доступно.
+    - *Зовнішнє сховище 1*. Доступ має лише 1 додаток OsmAnd, а також додатки адміністратора та USB.
+    - *Сховище для кількох користувачів*. Доступ має лише 1 додаток OsmAnd, але він спільний для кількох користувачів Android.
     - *Вказано вручну*. Залежить від шляху.
 
-:::note Android 12+ (зміна папки зберігання)
-Нові рекомендації щодо доступу до сховища були реалізовані в Android версіях 11-12. Детальніше дивіться в розділі [**Вирішення проблем**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+:::note Android 12+ (зміна папки для зберігання)
+У версіях Android 11-12 були впроваджені нові правила доступу до сховища. Детальніше дивіться у розділі [**Вирішення проблем**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 :::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейти до: *Пристрій iOS → Налаштування → Загальні → Сховище iPhone → OsmAnd Maps*  
+Перейдіть до: *Пристрій iOS → Налаштування → Загальні → Сховище iPhone → OsmAnd Maps*  
 
-![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
+![Загальні налаштування сховища iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Файли OsmAnd видно в застосунку [*Файли*](https://apps.apple.com/us/app/files/id1232058109). Ви можете отримати доступ до всіх файлів OsmAnd: [треків](../personal/tracks/manage-tracks.md), [вибраних](../personal/favorites.md), [карт](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Для цього дотримуйтесь наступного шляху:  
+Файли OsmAnd видимі в додатку [*Файли*](https://apps.apple.com/us/app/files/id1232058109). Ви можете отримати доступ до всіх файлів OsmAnd: [треків](../personal/tracks/manage-tracks.md), [обраних місць](../personal/favorites.md), [мап](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Для цього дотримуйтесь наступного шляху:  
 
-Перейти до: *Файли → На моєму телефоні → OsmAnd Maps*
+Перейдіть до: *Файли → На моєму iPhone → OsmAnd Maps*
 
 <!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
-![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
+![Загальні налаштування сховища iOS](@site/static/img/personal/profiles/files-1.png) ![Загальні налаштування сховища iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
 </Tabs>
 
 
-### Механізм візуалізації карти {#map-rendering-engine}
+### Рушій рендерингу мапи {#map-rendering-engine}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (Тільки Android)*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (лише для Android)*
 
-![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
+![Загальні налаштування рушія рендерингу Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
-- У **Android** версії застосунку ви можете перемикатися між візуалізацією карти Версії 1, спочатку реалізованою в застосунку OsmAnd, та Версією 2, яка використовує інтерфейс програмування OpenGL (Open Graphics Library) для візуалізації дво- та тривимірних графічних об'єктів.
+- У версії програми для **Android** ви можете перемикатися між рендерингом мапи версії 1, спочатку реалізованим у додатку OsmAnd, та версією 2, яка використовує програмний інтерфейс OpenGL (Open Graphics Library) для рендерингу дво- та тривимірних графічних об'єктів.
 
-- Версія **iOS** використовує лише OpenGL для візуалізації карти.
+- Версія для **iOS** використовує лише OpenGL для рендерингу мапи.
 
 
 | Особливості | Версія 1 | Версія 2 (OpenGL) |
 |:---|:--- |:--- |
-| Кросплатформність | Не використовується у версії iOS. | Підходить для обох версій. |
-| Залежність від GPU / CPU | Рекомендовано для малопродуктивних або застарілих пристроїв. | Потужний механізм візуалізації. <br /> Доступно лише для [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) та пізніших версій, а також у тестовому режимі для [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
-| 3D режим | Можна переглядати карту в 2D, а також змінювати кут огляду для отримання [3D-вигляду](../widgets/map-buttons.md#3d-mode). | Можна переглядати карту в 2D та [3D](../widgets/map-buttons.md#3d-mode). |
-| Відображення карти | Вся карта візуалізується як набір тайлів, а маркери, лінії та текст вже знаходяться всередині цих тайлів. | Спочатку візуалізується весь пакет тайлів, а потім доступні символи застосовуються до карти, [шар за шаром](../../technical/algorithms/map-rendering-layers.md). |
-| Прозоре накладання / підкладання символів | Підтримує всі налаштування. | Не підтримує растровий шар поверх векторного тексту. |
-| [3D Рельєф](../map/raster-maps.md#3d-relief) | Не підтримується. | Ця функція візуалізує рельєф на карті, додаючи інформацію про висоту до звичайної 2D-карти, що створює 3D-ефект та ефект глибини. |
-| [3D Треки](../map/tracks/appearance.md) | Не підтримується. | Ця функція дозволяє відображати треки за висотою над рівнем моря. |
-| [Онлайн-карта](../plugins/online-map.md) | Не підтримує відображення контурних ліній, якщо джерелом карти є будь-яка онлайн-тайлова карта. | Коли джерелом карти є онлайн-карта, також використовуються 3D-карти, і підтримується відображення контурних ліній на карті. |
-| [Плагін погоди](../plugins/weather.md) | Ви не можете використовувати цей плагін. | Зручно використовувати з плагіном. |  
+| Кросплатформеність | Не використовується у версії для iOS. | Підходить для обох версій. |
+| Залежність від GPU / CPU | Рекомендовано для пристроїв з низькою продуктивністю або застарілих пристроїв. | Потужний рушій рендерингу. <br /> Доступно лише для [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) та пізніших версій, а також у тестовому режимі для [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| 3D-режим | Можна переглядати мапу в 2D, а також змінювати кут огляду для отримання [3D-вигляду](../widgets/map-buttons.md#3d-mode). | Ви можете переглядати мапу в 2D та [3D](../widgets/map-buttons.md#3d-mode). |
+| Відображення мапи | Вся мапа рендериться як набір тайлів, а маркери, лінії та текст вже знаходяться всередині цих тайлів. | Спочатку рендериться весь пакет тайлів, а потім доступні символи наносяться на мапу, [шар за шаром](../../technical/algorithms/map-rendering-layers.md). |
+| Накладання/підкладання прозорих символів | Підтримує всі налаштування. | Не підтримує растровий шар поверх векторного тексту. |
+| [3D-рельєф](../map/raster-maps.md#3d-relief) | Не підтримується. | Ця функція візуалізує рельєф на мапі, додаючи інформацію про висоту до звичайної 2D-мапи, що створює ефект 3D та глибини. |
+| [3D-треки](../map/tracks/appearance.md) | Не підтримується. | Ця функція дозволяє відображати треки за висотою над рівнем моря. |
+| [Онлайн-мапа](../plugins/online-map.md) | Не підтримує відображення ліній контуру, якщо джерелом мапи є будь-яка онлайн-тайлова мапа. | Коли джерелом мапи є онлайн-мапа, також використовуються 3D-мапи, і підтримується відображення ліній контуру на мапі. |
+| [Плагін "Погода"](../plugins/weather.md) | Ви не можете використовувати цей плагін. | Зручно використовувати з плагіном. |  
 
-Зображення для 3D-перегляду карти завантажується тайл за тайлом, потім всі символи. Швидкість візуалізації карти залежить від кількості 2D та 3D графічних об'єктів на ній, а також безпосередньо від продуктивності вашого обладнання. Тому Версія 2 (OpenGL) не може використовуватися на малопродуктивних пристроях.
+Зображення для 3D-вигляду мапи завантажується тайл за тайлом, а потім всі символи. Швидкість рендерингу мапи залежить від кількості 2D та 3D графічних об'єктів на ній, а також безпосередньо від продуктивності вашого обладнання. Тому версія 2 (OpenGL) не може використовуватися на пристроях з низькою продуктивністю.
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="рендеринг"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="рендеринг"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="рендеринг"/></td>
     </tr>
 </table>
 
 
 ## Конфіденційність та безпека {#privacy-and-security}
 
-OsmAnd дозволяє вам вибрати, чи [ділитися своєю активністю в застосунку](#analytics) та [ідентифікаторами](#identifiers) (тільки Android) у застосунку, можливість редагувати свою [історію](#history) та використовувати [проксі](#proxy) (тільки Android) на ваш вибір.  
+OsmAnd дозволяє вам вибирати, чи *[ділитися вашою активністю в додатку](#analytics)* та [ідентифікаторами](#identifiers) (*лише для Android*) в додатку, можливість редагувати вашу *[історію](#history)* та використовувати *[проксі](#proxy)* (*лише для Android*) на ваш вибір.  
 
 :::note
 Більше інформації можна знайти в [*Політиці конфіденційності та безпеки OsmAnd*](../../legal/privacy-policy.md)
@@ -177,26 +177,26 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 <TabItem value="android" label="Android">
 
-Перейти до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
-![General Settings Analytics Android](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
+![Загальні налаштування Аналітика Android](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Перейти до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
 
-![General Settings Send anonymous data iOS](@site/static/img/personal/profiles/general_settings_send_anonymous_data_ios.png)
+![Загальні налаштування Надсилати анонімні дані iOS](@site/static/img/personal/profiles/general_settings_send_anonymous_data_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Налаштування **<Translate android="true" ids="analytics_pref_title"/>** (Android) або **<Translate ios="true" ids="send_anonymous_data"/>** (iOS) дозволяє вам вибирати, чи надавати анонімні дані про *Завантажені карти* та *Відвідані екрани* (Android).  
+Налаштування **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) або **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) дозволяє вам вибирати, чи надавати анонімні дані про *Завантажені мапи* та *Відвідані екрани* (*Android*).  
 
 :::note
-Дані про ваше місцезнаходження або місця, які ви переглядаєте на карті, не збираються.
+Дані про ваше місцезнаходження або місця, які ви переглядаєте на мапі, не збираються.
 :::  
 
 ### Ідентифікатори {#identifiers}
@@ -207,11 +207,11 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 ![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
 
-**UUID** (*Унікальний ідентифікатор користувача*) генерується для кожної інсталяції застосунку OsmAnd та надсилається на сервери під час завантаження карти.
+**UUID** (*Унікальний ідентифікатор користувача*) генерується для кожної інсталяції програми OsmAnd і надсилається на сервери під час завантаження мапи.
 
-- Випадковий UUID використовується для завантаження офлайн-карт із серверів OsmAnd для контролю раціонального використання серверних ресурсів, прогнозування використання трафіку та надання загальних щомісячних звітів про завантаження карт.
+- Випадковий UUID використовується для завантаження офлайн-мап з серверів OsmAnd для контролю раціонального використання ресурсів сервера, прогнозування використання трафіку та надання загальних щомісячних звітів про завантаження мап.
 - UUID змінюється кожні 3 місяці.  
-- Починаючи з OsmAnd версії 4.3, ви можете вимкнути збір даних користувача під час використання застосунку OsmAnd. Тоді UUID не буде надсилатися з жодним запитом на завантаження.  
+- Починаючи з версії OsmAnd 4.3, ви можете вимкнути збір даних користувача при використанні програми OsmAnd. Тоді UUID не буде надсилатися з жодним запитом на завантаження.  
 - Ви можете прочитати більше інформації в [Умовах використання (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 
@@ -221,26 +221,26 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 <TabItem value="android" label="Android">
 
-Перейти до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
+![Загальні налаштування Історія Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![Загальні налаштування Історія Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Перейти до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
+![Загальні налаштування Історія IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Загальні налаштування Історія IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
 </Tabs>  
 
-Застосунок записує історію раніше введених даних (історію) у наступних категоріях: [Пошук](../search/search-history.md), [Навігація](../navigation/setup/route-navigation.md#history-of-previous-routes), [Маркери карти](../personal/markers.md#history). За допомогою перемикача на відповідній вкладці ви можете *Увімкнути / Вимкнути* ведення журналу для певних категорій записів. Ви також можете [керувати](#history) (переглядати, видаляти та ділитися) раніше записаними даними.  
+Додаток записує історію раніше введених даних (історію) в наступних категоріях: [Пошук](../search/search-history.md), [Навігація](../navigation/setup/route-navigation.md#history-of-previous-routes), [Маркери на мапі](../personal/markers.md#history). За допомогою перемикача на відповідній вкладці ви можете *Увімкнути / Вимкнути* запис для певних категорій записів. Ви також можете [керувати](#history) (переглядати, видаляти та ділитися) раніше записаними даними.  
 
-- ***Резервна копія як файл*** (Android) або ***Експорт*** (iOS) використовується для створення [файлу резервної копії](../personal/import-export.md#export) вашої історії.
-- ***Очистити всю історію*** (Android) або ***Видалити всю історію*** (iOS) використовується для видалення всіх записів історії, записаних до моменту видалення.
+- ***Резервне копіювання у файл*** (*Android*) або ***Експорт*** (*iOS*) використовується для створення [файлу резервної копії](../personal/import-export.md#export) вашої історії.
+- ***Очистити всю історію*** (*Android*) або ***Видалити всю історію*** (*iOS*) використовується для видалення всіх записів історії, зроблених до моменту видалення.
 
 <br/>
 
@@ -250,20 +250,20 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 <TabItem value="android" label="Android">
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+![Загальні налаштування Історія Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+![Загальні налаштування Історія IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Загальні налаштування Історія IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
 </Tabs>
 
-- Ви можете видалити один або кілька елементів зі списку історії або поділитися ними як файлом (для доступу до цих функцій *в iOS* торкніться кнопки ***Редагувати***).  
-- Щоб видалити або експортувати кілька записів одночасно, встановіть прапорці поруч із потрібними записами та торкніться кнопок **Експорт** або **Видалити**.  
+- Ви можете видалити один або кілька елементів зі списку історії або поділитися ними як файлом (для доступу до цих функцій *в iOS*, торкніться кнопки ***Редагувати***).  
+- Щоб видалити або експортувати кілька записів одночасно, встановіть прапорці біля потрібних записів і торкніться кнопок **Експорт** або **Видалити**.  
 
 
 ### Проксі {#proxy}
@@ -272,14 +272,14 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*  
 
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
+![Загальні налаштування Проксі Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
 Налаштування **<Translate android="true" ids="proxy_pref_title"/>** дозволяє налаштувати [HTTP-проксі](https://en.wikipedia.org/wiki/Proxy_server) для всіх мережевих запитів. Ви можете встановити *Хост проксі* та *Порт проксі*.  
 
 
 ## Інше {#other}
 
-У цьому розділі налаштувань OsmAnd ви можете налаштувати сповіщення, які ви отримуєте, службу визначення місцезнаходження та спосіб збереження налаштувань вашого застосунку.
+У цьому розділі налаштувань OsmAnd ви можете налаштувати сповіщення, які ви отримуєте, службу визначення місцезнаходження та спосіб збереження налаштувань вашого додатку.
 
 ### Діалоги та сповіщення {#dialogs-and-notifications}
 
@@ -287,13 +287,13 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 <TabItem value="android" label="Android">
 
-![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)  
+![Загальні налаштування сповіщень Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_2_ios.png)  
+![Загальні налаштування Діалоги iOS](@site/static/img/personal/profiles/general_settings_dialogs_2_ios.png)  
 
 </TabItem>
 
@@ -301,79 +301,79 @@ OsmAnd дозволяє вам вибрати, чи [ділитися своєю
 
 Налаштування **<Translate android="true" ids="dialogs_and_notifications_title"/>** дозволяє вмикати/вимикати спливаючі вікна, діалоги та сповіщення.  
 
-- *Повідомлення при запуску* включає акції, вікторини, події тощо.
-- *<Translate ios="true" ids="do_not_show_discount"/>* (iOS) пригнічує відображення знижок на застосунки та спеціальних повідомлень про місцеві події.
-- [*Діалог завантаження карти*](../start-with/download-maps.md#download) інформує вас про те, що можна завантажити певні карти.
+- *Повідомлення при запуску* включає акції, вікторини, події та інше.
+- *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) пригнічує відображення знижок на додаток та повідомлень про спеціальні місцеві події.
+- [*Діалог завантаження мапи*](../start-with/download-maps.md#download) інформує вас про те, що можна завантажити певні мапи.
 
 
 ### Джерело місцезнаходження {#location-source}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (Тільки Android)
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*лише для Android*)
 
-![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
+![Автоматичне резервне копіювання](@site/static/img/personal/profiles/location_source_andr.png)
 
-OsmAnd надає вам вибір послуг для визначення вашого місцезнаходження. Рекомендується прочитати більше інформації про [Дозвіл на місцезнаходження](../start-with/first-steps.md#permission-to-access-the-location) та [Вирішення проблем](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) для цього розділу.
+OsmAnd надає вам вибір сервісів для визначення вашого місцезнаходження. Рекомендується прочитати більше інформації про [Дозвіл на доступ до місцезнаходження](../start-with/first-steps.md#permission-to-access-the-location) та [Вирішення проблем](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) для цього розділу.
 
 ***Android***:
 
-- Ви можете вибрати, які служби *Google Play* або *Android API* OsmAnd використовуватиме для визначення вашого місцезнаходження. Це може бути корисно для пристроїв без *Google Play Services* або у випадку неточних даних про місцезнаходження чи висоту під час запису треків.
-- OsmAnd отримує дані з ресурсів *Google Fused Location Providers* та *Android GPS and Network Providers*. Ви можете перемкнути **<Translate android="true" id="location_source" />** в: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
+- Ви можете вибрати, які сервіси *Google Play* або *Android API* буде використовувати OsmAnd для визначення вашого місцезнаходження. Це може бути корисно для пристроїв без *Google Play Services* або у випадку неточних даних про місцезнаходження чи висоту при записі треків.
+- OsmAnd отримує дані з ресурсів *Google Fused Location Providers* та *Android GPS and Network Providers*. Ви можете перемкнути **<Translate android="true" id="location_source" />** у: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
 ***iOS***:
 
 - Система iOS використовує *iOS API* для визначення місцезнаходження.  
-- Усі налаштування місцезнаходження OsmAnd можна знайти в налаштуваннях пристрою iOS: *Налаштування → Карти OsmAnd → Місцезнаходження*  
-- Конфіденційність служб місцезнаходження: *Налаштування → Конфіденційність → Служби місцезнаходження*
+- Усі налаштування для місцезнаходження OsmAnd можна знайти в налаштуваннях пристрою iOS: *Налаштування → OsmAnd maps → Місцезнаходження*  
+- Конфіденційність служб геолокації: *Налаштування → Конфіденційність → Служби геолокації*
 
 
 ### Автоматичне резервне копіювання {#auto-backup}
 
 <InfoAndroidOnly />
 
-![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![Загальні налаштування сповіщень Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
-- Android або OsmAnd Cloud можуть зберігати ваші дані та налаштування застосунку.
+- Android або OsmAnd Cloud можуть зберігати ваші дані та налаштування додатку.
 
-- За замовчуванням ваші *налаштування OsmAnd* та [*Вибрані*](../personal/favorites.md#automatic-favorites-backup) маркери карти автоматично створюються резервними копіями системою Android. Це дозволяє відновлювати їх на нових пристроях або після перевстановлення застосунку.
+- За замовчуванням, ваші *налаштування OsmAnd* та маркери мапи [*Обрані*](../personal/favorites.md#automatic-favorites-backup) автоматично резервуються системою Android. Це дозволяє вам відновити їх на нових пристроях або після перевстановлення додатку.
 
 - Зверніть увагу, що розмір резервної копії обмежений *25 МБ*.
 
 - Щоб знайти файли резервних копій, використовуйте сторонній файловий менеджер.  
     *ПРИМІТКА: Ви можете знайти файли резервних копій за допомогою файлового менеджера Android: Android → data → net.osmand → files → backup, але майте на увазі, що в останніх версіях Android доступ до системних каталогів обмежений.*  
 
-**Якщо ви використовуєте [*OsmAnd Cloud*](../personal/osmand-cloud.md), рекомендується деактивувати цю опцію резервного копіювання за замовчуванням, щоб запобігти будь-якій плутанині під час перевстановлення.**
+**Якщо ви використовуєте [*OsmAnd Cloud*](../personal/osmand-cloud.md), рекомендується деактивувати цю опцію резервного копіювання за замовчуванням, щоб уникнути плутанини під час перевстановлення.**
 
 
-## Юридична інформація {#legal}
+## Правова інформація {#legal}
 
-OsmAnd може [попереджати вас про камери контролю швидкості](../navigation/guidance/navigation-settings.md#screen-alerts), але тільки якщо це дозволено законами вашої країни.
+OsmAnd може [попереджати вас про камери контролю швидкості](../navigation/guidance/navigation-settings.md#screen-alerts), але тільки якщо це дозволено законодавством вашої країни.
 
 
-### Видалити камери контролю швидкості {#uninstall-speed-cameras}
+### Видалення камер контролю швидкості {#uninstall-speed-cameras}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Перейти до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
+![Загальні налаштування Камери Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![Загальні налаштування Камери Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейти до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Загальні налаштування Камери Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Загальні налаштування Камери Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Це налаштування дозволяє активувати або деактивувати POI з камерами контролю швидкості, для внесення змін необхідно перезапустити застосунок OsmAnd.
+Це налаштування дозволяє активувати або деактивувати POI з камерами контролю швидкості, вам потрібно перезапустити додаток OsmAnd, щоб зміни набули чинності.
   
-У деяких країнах або регіонах використання застосунків для попередження про камери контролю швидкості є незаконним. Ви повинні зробити вибір залежно від законів вашої країни. Виберіть **Залишити активним**, і ви отримуватимете попередження та сповіщення про камери контролю швидкості. Виберіть **Видалити**, і всі дані, пов'язані з камерами контролю швидкості, такі як попередження, сповіщення та POI, будуть видалені, доки ви повністю не перевстановите OsmAnd.  
+У деяких країнах або регіонах використання додатків для попередження про камери контролю швидкості є незаконним. Ви повинні зробити вибір залежно від законодавства вашої країни. Виберіть **Залишити активним**, і ви будете отримувати сповіщення та повідомлення про камери контролю швидкості. Виберіть **Видалити**, і всі дані, пов'язані з камерами контролю швидкості, такі як попередження, сповіщення та POI, будуть видалені, доки ви повністю не перевстановите OsmAnd.  
 
 Прочитайте про сповіщення про камери контролю швидкості на вашому маршруті в статті Віджети навігації в розділі *[Віджет сповіщень](../widgets/nav-widgets.md#alert-widget)*.
 
@@ -382,12 +382,10 @@ OsmAnd може [попереджати вас про камери контро�
 
 - [Профілі (Налаштування)](./profiles.md)
 - [Імпорт / Експорт](../personal/import-export.md)
-- [Схеми кольорових палітр](../personal/color-palette-schemes.md)
+- [Схеми колірних палітр](../personal/color-palette-schemes.md)
 
 ### Вирішення проблем {#troubleshooting}
 
-- **Android 12+ (зміна папки зберігання)**. Нові рекомендації щодо доступу до сховища були реалізовані в Android версіях 11-12. Ці зміни особливо впливають на зберігання карт на SD-картах, що призводить до значно повільнішої продуктивності доступу до файлів та суворіших обмежень доступу до папок SD-карт на Android 11 та 12. Щоб дізнатися, як вирішити цю проблему, дивіться розділ [**Вирішення проблем**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **Android 12+ (зміна папки для зберігання)**. У версіях Android 11-12 були впроваджені нові правила доступу до сховища. Ці зміни особливо впливають на зберігання мап на SD-картах, що призводить до значно повільнішої продуктивності доступу до файлів та суворіших обмежень доступу до папок на SD-карті на Android 11 та 12. Про те, як вирішити цю проблему, дивіться у розділі [**Вирішення проблем**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
-- **Джерело місцезнаходження для проблем з висотою**. Google Play змінив свою політику, і для відповідності, OsmAnd, починаючи з версії 3.9, повинен використовувати Google Play Services для отримання даних про місцезнаходження під час роботи у фоновому режимі. Докладніше дивіться в розділі [Вирішення проблем](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
-
-> *Останнє оновлення: листопад 2024*
+- **Джерело місцезнаходження для проблем з висотою**. Google Play змінив свою політику, і для відповідності, OsmAnd, починаючи з версії 3.9, повинен використовувати Google Play Services для отримання даних про місцезнаходження під час роботи у фоновому режимі. Більше інформації читайте в розділі [Вирішення проблем](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).

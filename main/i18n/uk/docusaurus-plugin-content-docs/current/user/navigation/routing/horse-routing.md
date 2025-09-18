@@ -1,7 +1,7 @@
 ---
-source-hash: 608b9213c4fcb3c823354f8437ecb5956cf9ff48ee8a5806aa35db217a835164
+source-hash: f863a18e2c3b8c34a6bbf837cba45b313219a45379aed3eb8ba136511d1c18a4
 sidebar_position: 6
-title:  Прокладання маршрутів для верхової їзди
+title:  Кінний маршрут
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,32 +16,32 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-*Прокладання маршрутів для верхової їзди* може бути корисним для вершників, які хочуть спланувати свої поїздки по стежках та дорогах, безпечних та придатних для коней. За допомогою цього типу маршрутизації ви також можете відкрити нові маршрути, про які раніше не знали.
+*Кінний маршрут* може бути корисним для вершників, які хочуть планувати свої поїздки стежками та доріжками, безпечними та придатними для коней. За допомогою цього типу маршрутизації ви також можете відкрити для себе нові маршрути, про які раніше не було відомо.
 
-*Прокладання маршрутів для верхової їзди* можна налаштувати відповідно до ваших потреб у розділі [Параметри маршруту](../guidance/navigation-settings.md#route-parameters) Налаштувань навігації.
+*Кінний маршрут* можна налаштувати відповідно до ваших потреб у розділі [Параметри маршруту](../guidance/navigation-settings.md#route-parameters) налаштувань навігації.
 
-![Horseback](@site/static/img/navigation/routing/horseback_routing_overview.png)
+![Кінний маршрут](@site/static/img/navigation/routing/horseback_routing_overview.png)
 
 
 ## Параметри маршруту - Кінь {#route-parameters---horse}
 
 :::note
-За замовчуванням *Профіль верхової їзди* деактивовано. Щоб використовувати цей профіль для прокладання маршрутів, його потрібно увімкнути в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+За замовчуванням *профіль "Верхова їзда"* вимкнено. Щоб використовувати цей профіль для маршрутизації, вам потрібно увімкнути його в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Прокладання маршрутів для верхової їзди призначене для надання вершникам інформації про зручні для коней стежки, доріжки та маршрути для верхової їзди.
+Кінний маршрут призначений для надання вершникам інформації про зручні для коней стежки, доріжки для верхової їзди та маршрути для верхової їзди.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Horse routing settings Android 1](@site/static/img/navigation/routing/horse-routing-andr.png)
+![Налаштування кінного маршруту Android 1](@site/static/img/navigation/routing/horse-routing-andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Horse routing settings iOS 1](@site/static/img/navigation/routing/horse-routing-ios.png)
+![Налаштування кінного маршруту iOS 1](@site/static/img/navigation/routing/horse-routing-ios.png)
 
 </TabItem>
 
@@ -49,26 +49,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Виберіть дороги, яких ви хочете уникнути під час навігації. Ви можете [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road) або вибрати типи доріг зі списку.  </summary>  ![Avoid roads Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, який перевозить транспортні засоби через водойми)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Ви можете вибрати, чи віддавати перевагу маршрутам для коней. </summary> ![Prefer horses routes Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png)  </details>  | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). Шлях, призначений для використання вершниками (переважно) та пішоходами (залежно від правил конкретної країни). </li></ul> |
-| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | [Ворота](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) — це різновид [бар'єру](https://wiki.openstreetmap.org/wiki/Key:barrier), що перешкоджає руху. Зазвичай це секція в стіні або огорожі, яку можна відкрити або закрити, щоб дозволити або обмежити доступ. |
-|  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | У деяких країнах [кінні екіпажі](https://wiki.openstreetmap.org/wiki/Key:carriage) не допускаються на автомагістралі, їм дозволено рух лише на дуже невеликій кількості інших доріг.   |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Обмеження приватного доступу будуть ігноруватися при розрахунку маршруту.  | Тег *[private](https://wiki.openstreetmap.org/wiki/Key:access)* використовується в OSM для опису обмежень на використання доріг та інших транспортних маршрутів, а також будівель, входів, зручностей та об'єктів дозвілля.   |
-| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Для прокладання маршрутів будуть використовуватися лише вулиці, спеціально призначені для коней.   |
-| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Для прокладання маршрутів будуть використовуватися лише шляхи, спеціально призначені для коней.   |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Прогнозований час подорожі відображатиме вплив висоти. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | Ця перевага може допомогти уникнути крутих підйомів. Без даних про висоту буде розраховано найшвидший маршрут, як на рівнинній місцевості. |
-
-
-## Інші налаштування маршрутизації {#other-routing-settings}
-
-- Алгоритм маршрутизації також може враховувати тимчасові обмеження, зазначені в OpenStreetMap. Це можна зробити за допомогою опції [<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations). Зауважте, що в деяких випадках інформація з OSM може бути застарілою.
-
-- У розділі [Перерахувати маршрут](../../navigation/guidance/navigation-settings.md#recalculate-route) *Параметрів маршруту* ви можете увімкнути та налаштувати параметри перерахунку маршруту.
-
-- У розділі [Розробка](../guidance/navigation-settings.md#development-settings) *Параметрів маршруту* ви можете спробувати нові функції маршрутизації, які зараз знаходяться на стадії тестування. Зауважте, що ці налаштування доступні лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md).
-
-- Налаштування [<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds) у версії OsmAnd для *iOS* знаходиться в *Налаштуваннях навігації → Параметри маршруту* (для *Android* — у *Параметрах транспортного засобу → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Це налаштування використовується на невідомих дорогах без обмежень швидкості. Це найчастіше трапляється при навігації по треку або онлайн-маршруту. Його необхідно встановити відповідно до параметрів вашого транспортного засобу.
-
-- [<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters). Правильне налаштування параметрів допоможе уникнути проблем при створенні маршруту. Ви можете вибрати найбільш підходящий маршрут залежно від типу транспортного засобу та дорожніх обмежень, а також розрахувати час у дорозі.
-
-> *Останнє оновлення: червень 2024*
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Виберіть дороги, яких ви хочете уникати під час навігації. Ви можете [вибрати дорогу на карті](../../map/map-context-menu/#avoid-road) або вибрати типи доріг зі списку.  </summary>  ![Уникати доріг Android](@site/static/img/navigation/routing/horse_routing_avoid_android.png) </details> | <ul><li> [<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (тип водного транспорту, що перевозить транспортні засоби через водойми)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* | <details><summary> Ви можете вибрати, чи надавати перевагу маршрутам для коней. </summary> ![Надавати перевагу кінним маршрутам Android](@site/static/img/navigation/routing/horse_routing_prefer_android.png)  </details>  | <ul><li>[<Translate android="true" ids="routing_attr_prefer_horse_routes_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway). Доріжка, призначена для використання вершниками (переважно) та пішоходами (залежно від правил конкретної країни). </li></ul> |
+| *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | [Ворота](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate) — це різновид [бар'єра](https://wiki.openstreetmap.org/wiki/Key:barrier), що блокує рух. Зазвичай це секція в стіні або огорожі, яку можна відкривати або закривати, щоб дозволити або обмежити доступ. |
+|  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | У деяких країнах [кінні екіпажі](https://wiki.openstreetmap.org/wiki/Key:carriage) не допускаються на автомагістралі, вони дозволені лише на дуже невеликій кількості інших доріг.   |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Обмеження приватного доступу будуть ігноруватися при розрахунку маршруту.  | Тег *[private](https://wiki.openstreetmap.org/wiki/Key:access)* використовується в OSM для опису обмежень на використання автомобільних доріг та інших транспортних шляхів, а також будівель, входів, об'єктів благоустрою та відпочинку.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Для прокладання маршруту будуть використовуватися тільки спеціально відведені для коней вулиці.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Для прокладання маршруту будуть використовуватися тільки спеціально відведені для коней шляхи.   |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Прогнозований час у дорозі буде враховувати вплив висоти. </summary> ![Використовувати дані про висоту Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | Цей параметр може допомогти уникнути крутих підйомів. Без даних про висоту буде розраховано найшвидший маршрут, як по рівнинній місцевості. |

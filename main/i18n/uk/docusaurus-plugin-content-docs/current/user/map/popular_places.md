@@ -1,5 +1,5 @@
 ---
-source-hash: 0c3b5e8e7cf6ef6e151b2af4c26f3e274170841399bcaf73871ab607bf13fd43
+source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
 sidebar_position: 8
 title: Популярні місця
 ---
@@ -19,21 +19,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Функція **Популярні місця** в OsmAnd виділяє визначні пам'ятки та атракціони, використовуючи відкриті структуровані дані з [Wikidata](https://www.wikidata.org) та [Wikipedia](https://www.wikipedia.org/). Вона допомагає користувачам досліджувати відомі місця з багатомовними описами та фотографіями.
+Функція **Популярні місця** в OsmAnd висвітлює визначні пам'ятки та цікаві місця, використовуючи відкриті структуровані дані з [Wikidata](https://www.wikidata.org) та [Wikipedia](https://www.wikipedia.org/). Вона допомагає користувачам досліджувати відомі місця з багатомовними описами та фотографіями.
 
-Кожне місце, включене в цю функцію, пов'язане з **ідентифікатором Wikidata**, що дозволяє OsmAnd відображати перевірені назви, попередні зображення та посилання на статті Вікіпедії. Цей інструмент **не** показує всі точки OpenStreetMap (OSM). Він обмежений POI з посиланнями на Wikidata.
+Кожне місце, включене в цю функцію, пов'язане з **ID Wikidata**, що дозволяє OsmAnd відображати перевірені назви, зображення для попереднього перегляду та посилання на статті Вікіпедії. Цей інструмент **не** показує всі точки OpenStreetMap (OSM). Він обмежується POI з посиланнями на Wikidata.
 
-Наразі курована база даних включає приблизно **50 000 – 150 000 найпопулярніших місць** у всьому світі, відібраних з понад **1 мільйона** об'єктів Wikidata + OSM.
+Наразі підібрана база даних включає приблизно **від 50 000 до 150 000 найпопулярніших місць** у всьому світі, відібраних з понад **1 мільйона** об'єктів Wikidata + OSM.
 
 :::note
-*Це перша версія функції «Популярні місця». Відгуки вітаються на [GitHub](https://github.com/osmandapp/OsmAnd)*.
+*Це перша версія функції "Популярні місця". Відгуки вітаються на [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Популярні місця](@site/static/img/map/popular_places/popular_places.png) ![Популярні місця](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -42,37 +42,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Джерела даних
 
-**Популярні місця** базуються на структурованому вмісті з [Wikidata](https://www.wikidata.org) та [Wikipedia](https://www.wikipedia.org/).
+**Популярні місця** базуються на структурованому контенті з [Wikidata](https://www.wikidata.org) та [Wikipedia](https://www.wikipedia.org/).
 
-Відображаються лише POI з пов'язаним **ідентифікатором Wikidata**. Ці ідентифікатори пов'язують об'єкти карти з перевіреними назвами, описами та зображеннями.
+Відображаються лише POI з пов'язаним **ID Wikidata**. Ці ідентифікатори пов'язують об'єкти на мапі з перевіреними назвами, описами та зображеннями.
 
-Ви можете переглянути посилання на Wikidata безпосередньо в [Контекстному меню карти](../map/map-context-menu.md). Натискання на тег Wikidata відкриває повну сторінку об'єкта на вебсайті Wikidata.
+Ви можете переглянути посилання на Wikidata безпосередньо в [Контекстному меню мапи](../map/map-context-menu.md). Натискання на тег Wikidata відкриває повну сторінку об'єкта на сайті Wikidata.
 
-Дізнайтеся, як знайти ідентифікатор Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Дізнайтеся, як знайти ID Wikidata: [Wikipedia: Пошук ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Як користуватися {#how-to-use}
 
 <InfoAndroidOnly/>
 
-Функція **Популярні місця** включає як курований список найближчих пам'яток, так і шар POI на карті на основі Вікіпедії.
+Функція **Популярні місця** включає як підібраний список визначних пам'яток поблизу, так і шар POI на основі Вікіпедії на мапі.
 
-Існує два основні способи доступу до цієї функції:
+Існує два основних способи доступу до цієї функції:
 
 - **Безкоштовна версія**  
-  Доступ через [Пошук](#explore-in-search) для дослідження найближчих місць у вигляді списку.  
+  Доступ через [Пошук](#explore-in-search) для перегляду найближчих місць у вигляді списку.  
   *<Translate android="true" ids="android_button_seq"/>*. Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
 - **Платні версії** *(Maps+ та OsmAnd Pro)*  
-  Увімкніть візуальне накладання в [Налаштувати карту](#enable-layer).  
+  Увімкніть візуальний шар у [Налаштуваннях мапи](#enable-layer).  
   *<Translate android="true" ids="android_button_seq"/>*. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
-  У цьому режимі популярні POI з'являються безпосередньо на карті з попереднім переглядом мініатюр та вмістом Вікіпедії.
+  У цьому режимі популярні POI з'являються безпосередньо на мапі з мініатюрами для попереднього перегляду та вмістом з Вікіпедії.
 
-  Ви можете перемикатися між **онлайн** та **офлайн** джерелами Вікіпедії в налаштуваннях накладання. Докладніше дивіться в [Увімкнути шар](#enable-layer).
+  Ви можете перемикатися між **онлайн** та **офлайн** джерелами Вікіпедії в налаштуваннях шару. Дізнайтеся більше в розділі [Увімкнути шар](#enable-layer).
 
 
-## Досліджуйте в пошуку {#explore-in-search}
+## Дослідити в Пошуку {#explore-in-search}
 
 <InfoAndroidOnly/>
 
@@ -82,24 +82,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Режим дослідження](@site/static/img/map/popular_places/popular_places_search.png)  
+![Режим дослідження](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Розділ **<Translate android="true" ids="popular_places_nearby"/>** відображає прокручуваний список найпопулярніших пам'яток поблизу вашого поточного місцезнаходження. Кожен елемент включає:
+Розділ **<Translate android="true" ids="popular_places_nearby"/>** відображає список найпопулярніших пам'яток поблизу вашого поточного місцезнаходження, який можна прокручувати. Кожен елемент включає:
 
-- Назва місця.
+- Назву місця.
 - Короткий опис.
 - Тег категорії POI.
 - Відстань та напрямок.
-- Зображення мініатюри (якщо доступно).
+- Мініатюру зображення (за наявності).
 
-Натисніть **Показати все**, щоб переглянути повний список, або **Показати на карті**, щоб відобразити всі перелічені POI на карті.
+Натисніть **Показати все**, щоб переглянути повний список, або **Показати на мапі**, щоб відобразити всі перелічені POI на мапі.
 
-Натискання на будь-яке місце відкриває [контекстне меню POI](./map-context-menu.md), де ви можете переглядати фотографії та отримувати доступ до пов'язаного [вмісту Вікіпедії](../plugins/wikipedia.md).
+Натискання на будь-яке місце відкриває [контекстне меню POI](./map-context-menu.md), де ви можете переглянути фотографії та отримати доступ до пов'язаного [вмісту Вікіпедії](../plugins/wikipedia.md).
 
 :::tip
 Режим дослідження на основі пошуку працює **лише онлайн** у безкоштовній версії.  
@@ -117,34 +117,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **<Translate android="true" ids="android_button_seq"/>**. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Меню популярних місць](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
 </Tabs>
 
-Функція **Популярні місця (Wikipedia)** доступна в [меню Налаштувати карту](./configure-map-menu.md). Щоб відобразити популярні місця безпосередньо на карті, увімкніть шар POI з даними з Вікіпедії, використовуючи зображення Wikidata.
+Функція **Популярні місця (Вікіпедія)** доступна в меню [Налаштування мапи](./configure-map-menu.md). Щоб відображати популярні місця безпосередньо на мапі, увімкніть шар POI з даними з Вікіпедії, використовуючи зображення з Wikidata.
 
 Перед використанням цієї функції:
 
-- Переконайтеся, що [Плагін Wikipedia](../plugins/wikipedia.md) увімкнено.
-- Завантажте дані Вікіпедії для вашого регіону, якщо ви хочете використовувати їх офлайн.
+- Переконайтеся, що [плагін Вікіпедії](../plugins/wikipedia.md) увімкнено.
+- Завантажте дані Вікіпедії для вашого регіону, якщо ви хочете використовувати їх в офлайн-режимі.
 
-### Параметри шару
+### Опції шару
 
-Після увімкнення стають доступними такі параметри:
+Після ввімкнення стають доступними наступні опції:
 
-- **<Translate android="true" ids="poi_osmwiki"/>** – Перемикання POI Вікіпедії на карті.
+- **<Translate android="true" ids="poi_osmwiki"/>** – Перемикання відображення POI Вікіпедії на мапі.
 
 - **Джерело POI** – Перемикання між:
   - *Офлайн-режим* (статті Вікіпедії мають бути завантажені).
-  - *Лише онлайн* режим (використовує живі дані та зображення).
+  - *Лише онлайн* режим (використовує актуальні дані та зображення).
 
-- **<Translate android="true" ids="shared_string_language"/>** – Виберіть мову для описів Вікіпедії.
+- **<Translate android="true" ids="shared_string_language"/>** – Вибір мови для описів з Вікіпедії.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Показати мініатюри зображень з Wikidata поруч з POI.
+- **<Translate android="true" ids="show_image_previews"/>** – Показувати мініатюри зображень з Wikidata поруч з POI.
 
-Натискання на POI на карті відкриває [контекстне меню POI](./map-context-menu.md), де ви можете переглядати [онлайн-фотографії](#online-photos) та отримувати доступ до пов'язаних [статей Вікіпедії](../plugins/wikipedia.md).
+Натискання на POI на мапі відкриває [контекстне меню POI](./map-context-menu.md), де ви можете переглянути [онлайн-фотографії](#online-photos) та отримати доступ до пов'язаних [статей Вікіпедії](../plugins/wikipedia.md).
 
 
 ## Онлайн-фотографії {#online-photos}
@@ -155,21 +155,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Контекстне меню онлайн-фотографій Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Це розділ у [контекстному меню POI](./map-context-menu.md), який відображає попередній перегляд фотографії вибраного Популярного місця (Wikipedia). Ви можете прокручувати горизонтально, щоб переглядати доступні фотографії, або натиснути будь-яке зображення, щоб відкрити його в [повноекранному режимі](#gallery).
+Це розділ у [контекстному меню POI](./map-context-menu.md), який відображає попередній перегляд фотографій обраного Популярного місця (Вікіпедія). Ви можете прокручувати по горизонталі, щоб переглянути доступні фотографії, або торкнутися будь-якого зображення, щоб відкрити його в [повноекранному режимі](#gallery).
 
-Дізнайтеся більше про додаткові параметри в розділі [Дії](#actions) та [Галерея](#gallery).
+Дізнайтеся більше про додаткові опції в розділах [Дії](#actions) та [Галерея](#gallery).
 
 
 <!-- 
@@ -185,12 +185,11 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### Дії {#actions}
 
-У контекстному меню карти Як отримати доступ:
+У контекстному меню мапи Як отримати доступ:
 
-- Натисніть кнопку **Показати все** (Android) / **Переглянути все** (iOS), щоб відкрити [галерею](#gallery) у повноекранному режимі, де ви можете прокручувати всі доступні фотографії для вибраного місця.
+- Натисніть кнопку **Показати все** (Android) / **Переглянути все** (iOS), щоб відкрити [галерею](#gallery) в повноекранному режимі, де ви можете перегортати всі доступні фотографії для вибраного місця.
 
-- Натисніть будь-яку фотографію, щоб переглянути її в [повноекранному режимі](#gallery) та отримати доступ до доступних дій:  
-  **Поділитися**, **Деталі**, **Відкрити в браузері** та **Завантажити**.
+- Торкніться будь-якої фотографії, щоб переглянути її в [повноекранному режимі](#gallery) та отримати доступ до доступних дій: **Поділитися**, **Деталі**, **Відкрити в браузері** та **Завантажити**.
 
 
 ### Галерея {#gallery}
@@ -199,51 +198,51 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 
-**Меню Галереї** може відображати до **100 зображень**, пов'язаних з вибраною точкою інтересу. Ви можете прокручувати всі доступні фотографії. Коротке натискання на будь-яку фотографію відкриває детальний перегляд, що показує: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*  
+**Меню галереї** може відображати до **100 зображень**, пов'язаних з обраною точкою інтересу. Ви можете перегортати всі доступні фотографії. Коротке натискання на фотографію відкриває детальний перегляд, що показує: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*  
 
-Ви також можете виконувати такі дії з кожною фотографією:
+Ви також можете виконати наступні дії з кожною фотографією:
 
 - **Поділитися**  
-  Поділіться вибраним зображенням за допомогою будь-якої сумісної програми, встановленої на вашому пристрої (наприклад, месенджера, електронної пошти або соціальних мереж). Спільний вміст включає зображення та посилання на його джерело (якщо доступно).
+  Поділіться вибраним зображенням за допомогою будь-якого сумісного додатка, встановленого на вашому пристрої (наприклад, месенджери, електронна пошта або соціальні мережі). Спільний вміст включає зображення та посилання на його джерело (за наявності).
 
 - **Деталі**  
   Відкрийте детальний перегляд, що показує метадані про зображення, включаючи: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*, *Джерело* та *Пряме посилання*
 
 - **Відкрити в браузері**  
-  Запустіть сторінку джерела зображення (зазвичай на [Wikimedia Commons](https://commons.wikimedia.org/)) у вашому стандартному браузері. Це дозволяє переглядати повне зображення, інформацію про ліцензування та пов'язаний вміст.
+  Запустіть сторінку джерела зображення (зазвичай на [Wikimedia Commons](https://commons.wikimedia.org/)) у вашому браузері за замовчуванням. Це дозволяє переглянути повне зображення, інформацію про ліцензування та пов'язаний вміст.
 
 - **Завантажити**  
-  Збережіть зображення на сховище вашого пристрою. Завантажене зображення можна знайти в стандартній папці "Завантаження" вашого пристрою та отримати до нього доступ офлайн.
+  Збережіть зображення в пам'яті пристрою. Завантажене зображення можна знайти в папці "Завантаження" вашого пристрою за замовчуванням і отримати до нього доступ в автономному режимі.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Версія для Android не включає додаткового меню для дій з фотографіями.
+Версія для Android не містить додаткового меню для дій з фотографіями.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Опції контекстного меню](@site/static/img/map/gallery_menu_ios_3.png)
 
-На **iOS** тривале натискання на фотографію відкриває контекстне меню з додатковими діями:
+На **iOS** довге натискання на фотографію відкриває контекстне меню з додатковими діями:
 
 - **Деталі**  
 - **Відкрити в браузері**  
@@ -252,7 +251,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 **Кнопки**:
 
 - Кнопка **Поділитися** дозволяє швидко поділитися вибраним зображенням.  
-- **Меню з трьома крапками** надає доступ до додаткових дій, включаючи перегляд деталей, відкриття джерела в браузері або завантаження зображення.
+- Меню з **трьома крапками** надає доступ до додаткових дій, включаючи перегляд деталей, відкриття джерела в браузері або завантаження зображення.
 
 </TabItem>
 
@@ -263,13 +262,13 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <TabItem value="android" label="Android">  
 
-![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Детальний перегляд](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Детальний перегляд](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
@@ -280,13 +279,13 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ## Пов'язані статті
 
-- [Контекстне меню карти](./map-context-menu.md)
-- [Налаштувати карту](./configure-map-menu.md)
+- [Контекстне меню мапи](./map-context-menu.md)
+- [Налаштування мапи](./configure-map-menu.md)
 - [Пошук POI](../search/search-poi.md)
-- [Плагін Wikipedia](../plugins/wikipedia.md)
+- [Плагін Вікіпедії](../plugins/wikipedia.md)
 
 
-> *Останнє оновлення: липень 2025*
+
 
 
 <!--

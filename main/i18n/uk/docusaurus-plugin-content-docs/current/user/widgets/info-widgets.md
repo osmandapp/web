@@ -1,7 +1,8 @@
 ---
-source-hash: 27b32890625cf93a03c736a3e9e5b69340ef24cbdda764258f58f7265e15c755
+source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
+
 sidebar_position: 3
-title: Інформаційні віджети
+title:  Інформаційні віджети
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Інформаційні віджети надають вам швидкий доступ до важливих даних. Це можуть бути дані про швидкість, погоду, місце паркування, дані із зовнішніх датчиків та багато іншого. Віджети можна налаштувати відповідно до ваших конкретних вимог, увімкнувши їх видимість на екрані програми або вимкнувши їх за потреби.
+Інформаційні віджети надають швидкий доступ до важливих даних. Це можуть бути дані про швидкість, погоду, місце паркування, дані із зовнішніх датчиків та багато іншого. Віджети можна налаштувати відповідно до ваших конкретних вимог, увімкнувши їх видимість на екрані програми або вимкнувши за потреби.
 
 ![Інформаційні віджети](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -30,9 +31,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ### Висота: Поточне місцезнаходження {#altitude-current-location}
-
-:::note Завантажити корекцію висоти світу
-На деяких пристроях Android висота може відображатися неточно. Щоб вирішити цю проблему, завантажте карту з корекцією висоти.
+  
+:::note Завантажте корекцію висот світу
+На деяких пристроях Android висота може відображатися неточно. Щоб вирішити цю проблему, завантажте карту з корекцією висот.
 
 - Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
 - Для отримання додаткової інформації відвідайте [Карти та ресурси](../personal/maps-resources.md#downloads).
@@ -52,15 +53,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
-| Натисканням | Без змін |
+| Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
-| Формат | *Меню → Налаштування → Профілі програми → Загальні налаштування → Одиниці та формати → Одиниці довжини* |
+| Формат | *Меню → Налаштування → Профілі додатку → Загальні налаштування → Одиниці виміру та формат → Одиниці довжини* |
 
 
 ### Висота: Центр карти {#elevation-map-center}
@@ -85,43 +86,43 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Ви можете використовувати віджет, щоб дізнатися висоту поточного центру карти над рівнем моря. Для відображення інформації у віджеті **Висота: центр карти** потрібна [Карта рельєфу (затінення та схил)](../plugins/topography.md#download-maps) потрібної області.
+Ви можете використовувати віджет, щоб дізнатися висоту поточного центру карти над рівнем моря. Для відображення інформації у віджеті **Висота: центр карти** потрібна [Карта рельєфу (Відтінення рельєфу та Ухил)](../plugins/topography.md#download-maps) необхідної області.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
-| Натисканням | Без змін |
+| Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
-| Формат | *Меню → Налаштування → Профілі програми → Загальні налаштування → Одиниці та формати → Одиниці довжини* |
+| Формат | *Меню → Налаштування → Профілі додатку → Загальні налаштування → Одиниці виміру та формат → Одиниці довжини* |
 
 
 ## Поточний час {#current-time}
 
 ![Віджет поточного часу](@site/static/img/widgets/current_time_widget.png)
 
-Цей віджет відображає поточний час, взятий з вашого пристрою.
+Цей віджет відображає поточний час, отриманий з вашого пристрою.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_plain_time"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_plain_time"/>* |
-| Натисканням | Без змін |
+| Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_plain_time"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_plain_time"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
-| Формат | Налаштування пристрою конфігурують Час та Формат. |
+| Формат | Налаштування пристрою визначають час та формат. |
 
 
 ## Поточна швидкість {#current-speed}
 
 ![Віджет швидкості](@site/static/img/widgets/current_speed_widget.png)
 
-Віджет показує поточну швидкість, визначену GPS-датчиком.
+Віджет показує поточну швидкість, визначену датчиком GPS.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_current_speed"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_current_speed"/>* |
-| Натисканням | Без змін |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_current_speed"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_current_speed"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
@@ -144,31 +145,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Віджет **Середня швидкість** обчислює та відображає вашу середню швидкість за вибраний інтервал часу без потреби в навігації або записі треку. Він корисний для моніторингу дотримання швидкості на автомагістралях або відстеження середньої швидкості за останні кілька хвилин їзди на велосипеді.
+Віджет **Середня швидкість** обчислює та відображає вашу середню швидкість за обраний проміжок часу, не вимагаючи навігації чи запису треку. Він корисний для контролю дотримання швидкості на автомагістралях або відстеження середньої швидкості за останні кілька хвилин їзди на велосипеді.
 
 1. ***Налаштування віджета.***
-   Щоб налаштувати параметри, торкніться кнопки **Налаштування** (*Android*) або **поля віджета** (*iOS*). Доступні опції включають:
+   Щоб налаштувати параметри, натисніть кнопку **Налаштування** (*Android*) або **поле віджета** (*iOS*). Доступні опції:
 
-2. ***Інтервал часу.***
+2. ***Проміжок часу.***
 
-   - Середня швидкість розраховується на основі вибраного інтервалу часу, який може коливатися від **15 секунд до 60 хвилин**.
+   - Середня швидкість розраховується на основі обраного проміжку часу, який може становити від **15 секунд до 60 хвилин**.
 
    - Розрахунок базується на даних GPS за формулою:
-   `Середня швидкість = AVERAGE(GPS_LOCATION.speed)`.
+   `Середня швидкість = СЕРЕДНЄ(GPS_LOCATION.speed)`.
 
 3. ***Враховувати зупинки.***
 
-   **Увімкнено** — Якщо записана швидкість нижче 1 одиниці на годину, вона ігнорується, запобігаючи непотрібним падінням середньої швидкості під час зупинок на світлофорах або коротких перерв.
+   **Увімкнено** — якщо зафіксована швидкість нижче 1 одиниці на годину, вона ігнорується, що запобігає непотрібному зниженню середньої швидкості під час зупинок на світлофорах або коротких перерв.
 
-   **Вимкнено** — Зупинки включаються в розрахунок, що означає, що тривалі паузи зменшать загальну середню швидкість.
+   **Вимкнено** — зупинки враховуються в розрахунку, тобто тривалі паузи зменшать загальну середню швидкість.
 
 4. ***Скинути середню швидкість.***
    Ви можете скинути розрахунок середньої швидкості двома способами:
 
-   - Довго торкніться віджета, щоб відкрити [Контекстне меню](../widgets/configure-screen.md#widget-context-menu), і виберіть *Скинути середню швидкість*.
-   - Відкрийте *налаштування віджета* через [Меню налаштування екрана](../widgets/configure-screen.md#settings) і виберіть опцію скидання.
+   - Довго натисніть на віджет, щоб відкрити [Контекстне меню](../widgets/configure-screen.md#widget-context-menu), і виберіть *Скинути середню швидкість*.
+   - Відкрийте *налаштування віджета* через [меню Налаштувати екран](../widgets/configure-screen.md#widget-settings) і виберіть опцію скидання.
 
-Після скидання середня швидкість перераховується на основі нових даних GPS. Ця функція корисна для моніторингу швидкості в реальному часі, наприклад, для відстеження швидкості в районах з **камерами контролю середньої швидкості**.
+Після скидання середня швидкість перераховується з нових даних GPS. Ця функція корисна для моніторингу швидкості в реальному часі, наприклад, для відстеження швидкості в зонах з **камерами контролю середньої швидкості**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -188,13 +189,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_average_speed"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_average_speed"/>* |
-| Натисканням | Без змін |
-| Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu). <br/> Може використовуватися для скидання середньої швидкості. |
+| Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_average_speed"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_average_speed"/>* |
+| При натисканні | Без змін |
+| Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu). <br/> Можна використовувати для скидання середньої швидкості. |
 
 
-## Коефіцієнт ковзання {#glide-ratio}
+## Аеродинамічна якість {#glide-ratio}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -202,7 +203,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |Віджети| Віджети на екрані|
 |:--------|:---------|
-|![Коефіцієнт ковзання](@site/static/img/widgets/glide_ratio_3.png)|![Коефіцієнт ковзання](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Аеродинамічна якість](@site/static/img/widgets/glide_ratio_3.png)|![Аеродинамічна якість](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
 </TabItem>
 
@@ -210,64 +211,64 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |Віджети| Віджети на екрані|
 |:--------|:---------|
-|![Коефіцієнт ковзання](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Коефіцієнт ковзання](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+|![Аеродинамічна якість](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Аеродинамічна якість](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
 </TabItem>
 
 </Tabs>
 
-[Прості](../widgets/configure-screen.md#widgets-for-all-panels) віджети *Коефіцієнт ковзання* надають цінну інформацію про коефіцієнт ковзання, щоб допомогти приймати обґрунтовані рішення при плануванні повітряних маршрутів. Віджет *Коефіцієнт ковзання* в OsmAnd допомагає оцінити ефективність вашого спуску або підйому при навігації до певного місця (позиції [маркера](../personal/markers.md) на карті). Він обчислює коефіцієнт ковзання як відношення відстані до різниці висот між вашим поточним положенням та вашим передбачуваним пунктом призначення. Докладніше про це можна прочитати [тут](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+[Прості](../widgets/configure-screen.md#widget-panels) віджети *Аеродинамічна якість* надають цінну інформацію про аеродинамічну якість, що допомагає приймати обґрунтовані рішення при плануванні повітряних маршрутів. Віджет *Аеродинамічна якість* в OsmAnd допомагає оцінити ефективність вашого зниження або набору висоти під час навігації до певного місця (положення [маркера](../personal/markers.md) на карті). Він розраховує аеродинамічну якість як відношення відстані до різниці висот між вашим поточним положенням і запланованим пунктом призначення. Детальніше про це можна прочитати [тут](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Використання віджетів:**
 
-- *Планування ширяючих польотів.* Для пілотів, що ширяють, віджет *Коефіцієнт ковзання до цілі* стає незамінним інструментом при плануванні та виконанні ширяючих польотів. Пілоти можуть оцінити, наскільки далеко вони можуть пролетіти до своєї цілі за поточних умов та необхідного коефіцієнта ковзання.
-- *Оптимізація підйомів та спусків.* Середній коефіцієнт ковзання дозволяє пілотам оптимізувати підйоми та спуски на основі поточних умов. Пілоти можуть вибрати оптимальний час для підйомів, щоб максимізувати час польоту, або для спусків, щоб досягти цільової точки.
-- *Реагування на змінні умови.* Віджет надає безперервні оновлення коефіцієнта ковзання, дозволяючи пілотам миттєво реагувати на зміни атмосферних умов або маршрутів. Вони можуть коригувати свій план польоту, щоб забезпечити безпеку та ефективність.
-- *Максимальне використання горизонтальної відстані.* Знання коефіцієнта ковзання дозволяє пілотам максимально використовувати горизонтальну відстань для переміщення до цілі, що особливо важливо при плануванні тривалих польотів.
-- *Зменшення ризику*. Віджет *Коефіцієнт ковзання до цілі* допомагає пілотам уникнути ситуацій, коли досягнення цілі стає неможливим через недостатній коефіцієнт ковзання. Це допомагає зменшити ризики та підвищити безпеку польотів.
+- *Планування польотів у режимі ширяння.* Для пілотів, що ширяють, віджет *Аеродинамічна якість до цілі* стає незамінним інструментом при плануванні та виконанні польотів. Пілоти можуть оцінити, як далеко вони можуть пролетіти до своєї цілі за поточних умов і необхідної аеродинамічної якості.
+- *Оптимізація наборів висоти та знижень.* Середня аеродинамічна якість дозволяє пілотам оптимізувати набори висоти та зниження на основі поточних умов. Пілоти можуть вибрати оптимальний час для набору висоти, щоб максимізувати час польоту, або для зниження, щоб досягти цільової точки.
+- *Реагування на зміну умов.* Віджет надає безперервні оновлення аеродинамічної якості, дозволяючи пілотам миттєво реагувати на зміни атмосферних умов або маршрутів. Вони можуть коригувати свій план польоту для забезпечення безпеки та ефективності.
+- *Максимальне використання горизонтальної відстані.* Знання аеродинамічної якості дозволяє пілотам максимально використовувати горизонтальну відстань для переміщення до цілі, що особливо важливо при плануванні тривалих польотів.
+- *Зменшення ризиків*. Віджет *Аеродинамічна якість до цілі* допомагає пілотам уникати ситуацій, коли досягнення цілі стає неможливим через недостатню аеродинамічну якість. Це допомагає зменшити ризики та підвищити безпеку польотів.
 
 
 **Позитивні та негативні значення:**
 
-- **Позитивні значення** вказують на те, що ваше призначення знаходиться на меншій висоті, ніж ваше поточне положення, що вимагає спуску.
-- **Негативні значення** вказують на те, що ваше призначення знаходиться на більшій висоті, що вимагає підйому. Наприклад, "-90:1" означає, що після подолання відстані в 90 кілометрів вам потрібно піднятися на 1 кілометр, щоб досягти пункту призначення.
+- **Позитивні значення** вказують на те, що ваш пункт призначення знаходиться на меншій висоті, ніж ваше поточне положення, що вимагає зниження.
+- **Негативні значення** вказують на те, що ваш пункт призначення знаходиться на більшій висоті, що вимагає набору висоти. Наприклад, "-90:1" означає, що після подолання відстані 90 кілометрів вам потрібно набрати 1 кілометр висоти, щоб досягти пункту призначення.
 
 
-**Округлення/форматування:**
+**Округлення/Форматування:**
 
 - Значення **≤ 0.1**:
   - "0.05" відображається як "0".
 - Значення **> 0.1 та < 100**:
   - наприклад, "50.7643" відображається як "50.8:1".
 - Значення **> 100:**
-  - "102.35" відображається як "102:1".
+  - "102.35" відображається як "102:1."
 
 
-### Коефіцієнт ковзання до цілі {#glide-ratio-to-target}
+### Аеродинамічна якість до цілі {#glide-ratio-to-target}
 
-- **Коефіцієнт ковзання до цілі** показує точний коефіцієнт ковзання, необхідний для досягнення цільової точки.
-- **Висота цілі** показує висоту цільової точки. Як цільова точка має використовуватися [Маркер карти](../personal/markers.md).
+- **Аеродинамічна якість до цілі** показує точну аеродинамічну якість, необхідну для досягнення цільової точки.
+- **Висота цілі** показує висоту цільової точки. В якості цільової точки слід використовувати [Маркер на карті](../personal/markers.md).
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → Коефіцієнт ковзання* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → Коефіцієнт ковзання* |
-| Натисканням | Змінює *Коефіцієнт ковзання до цілі* або *Висоту цілі* |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → Аеродинамічна якість* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → Аеродинамічна якість* |
+| При натисканні | Змінює *Аеродинамічна якість до цілі* або *Висота цілі* |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Середній коефіцієнт ковзання {#average-glide-ratio}
+### Середня аеродинамічна якість {#average-glide-ratio}
 
-- **Середній коефіцієнт ковзання** показує середній коефіцієнт ковзання за вказаний інтервал часу.
-- **Середня вертикальна швидкість** вказує швидкість, з якою об'єкт піднімається або опускається протягом певного часу. Для оцінки враховуються лише перша та остання точки інтервалу часу. Ви можете встановити інтервал часу для цього віджета від 15 секунд до 60 хвилин. Ви повинні використовувати [Маркер карти](../personal/markers.md) як цільову точку.
+- **Середня аеродинамічна якість** показує середню аеродинамічну якість за вказаний проміжок часу.
+- **Середня вертикальна швидкість** вказує на швидкість, з якою об'єкт піднімається або опускається протягом певного часу. Для оцінки враховуються лише перша та остання точки часового інтервалу. Ви можете встановити часовий інтервал для цього віджета від 15 секунд до 60 хвилин. В якості цільової точки слід використовувати [Маркер на карті](../personal/markers.md).
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → Коефіцієнт ковзання* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → Коефіцієнт ковзання* |
-| Натисканням | Змінює *Середній коефіцієнт ковзання* або *Середню вертикальну швидкість* |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → Аеродинамічна якість* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → Аеродинамічна якість* |
+| При натисканні | Змінює *Середня аеродинамічна якість* або *Середня вертикальна швидкість* |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -275,17 +276,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Віджет рівня заряду батареї](@site/static/img/widgets/battery_level_widget.png)
 
-Віджет **Рівень заряду батареї** відображає відсоток заряду батареї вашого пристрою прямо на екрані карти та автоматично оновлюється щонайменше раз на хвилину.
+Віджет **Рівень заряду батареї** відображає відсоток заряду батареї вашого пристрою прямо на екрані карти та оновлюється автоматично щонайменше раз на хвилину.
 
-- **iOS 17 та новіші версії** — Через **обмеження конфіденційності** дані про рівень заряду батареї доступні лише з кроком 5% (наприклад, 35%, 60% або 85%). Це системне обмеження, встановлене Apple.
+- **iOS 17 і новіші версії** — через **обмеження конфіденційності**, дані про рівень заряду батареї доступні лише з кроком 5% (наприклад, 35%, 60% або 85%). Це системне обмеження, встановлене Apple.
 
-- Пристрої **Android** — Віджет відображає точний відсоток заряду батареї, як повідомляє система, без округлення.
+- **Пристрої Android** — віджет відображає точний відсоток заряду батареї, як повідомляє система, без округлення.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_battery"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_battery"/>* |
-| Натисканням | Без змін |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_battery"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_battery"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -312,13 +313,13 @@ OsmAnd пропонує два типи віджетів координат:
 - **Координати: центр карти** - показує географічні координати поточного центру карти.
 - **Координати: поточне місцезнаходження** - показує географічні координати поточного географічного розташування.
 
-Віджети координат відображаються у верхній частині екрана. Іконки із зеленим фоном показують широту та довготу точки в центрі видимої частини карти, а іконки з синім фоном показують координати вашого поточного місцезнаходження. Інформацію про підтримувані *Формати координат* можна знайти в статті *[Пошук координат](../search/search-coordinates.md#coordinate-format)*.
+Віджети координат відображаються у верхній частині екрана. Іконки із зеленим фоном показують широту та довготу точки в центрі видимої частини карти, а іконки з синім фоном — координати вашого поточного місцезнаходження. Інформацію про підтримувані *Формати координат* можна знайти у статті *[Пошук за координатами](../search/search-coordinates.md#coordinate-format)*.
 
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
-| Натисканням | Копіює координати в буфер обміну. |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
+| При натисканні | Копіює координати в буфер обміну. |
 | Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) або <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
@@ -326,21 +327,21 @@ OsmAnd пропонує два типи віджетів координат:
 
 <InfoAndroidOnly />
 
-![Віджет GPS Info Android](@site/static/img/widgets/gps_info_widget.png)
+![Віджет інформації GPS Android](@site/static/img/widgets/gps_info_widget.png)
 
-Віджет інформації GPS (Global Positioning System) показує кількість супутників, які пристрій наразі виявляє та використовує. Ви можете використовувати його для перевірки стану GPS у разі слабкого сигналу.
+Віджет інформації GPS (Глобальна система позиціонування) показує кількість супутників, які пристрій зараз виявляє та використовує. Ви можете використовувати його для перевірки стану GPS у разі поганого сигналу.
 
 Ви можете скинути поточний кеш GPS через:
 *<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_gps_info"/>* |
-| Натисканням | Відкриває меню стану GPS за допомогою сторонніх інструментів для налаштування вбудованого GPS-пристрою. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_gps_info"/>* |
+| При натисканні | Відкриває меню стану GPS зі сторонніми інструментами для налаштування вбудованого пристрою GPS. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Положення Сонця {#sun-position}
+## Положення сонця {#sun-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -358,7 +359,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-Віджети положення Сонця показують час наступного сходу та заходу сонця для центру карти. При натисканні вони відображають час, що залишився до очікуваного заходу або сходу сонця. В обох випадках час базується на налаштованому часі вашого пристрою.
+Віджети положення сонця показують час наступного сходу та заходу сонця для центру карти. При натисканні вони відображають час, що залишився до очікуваного заходу або сходу сонця. В обох випадках час базується на налаштованому часі вашого пристрою.
 
 - **<Translate ios="true" ids="map_widget_sun_position"/>**. <Translate ios="true" ids="map_widget_sun_position_desc"/>
 - **<Translate ios="true" ids="map_widget_sunrise"/>**. <Translate ios="true" ids="map_widget_sunrise_desc"/>
@@ -366,23 +367,23 @@ OsmAnd пропонує два типи віджетів координат:
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
-| Натисканням | Перемикання між часом, що залишився, та часом наступного сходу/заходу сонця. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
+| При натисканні | Перемикання між часом, що залишився, та часом наступного сходу/заходу сонця. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## Лінійка радіуса {#radius-ruler}
+## Радіусна лінійка {#radius-ruler}
 
 :::note
-Детальніший опис можна прочитати тут: **[Лінійка радіуса та Лінійка](../widgets/radius-ruler)**.
+Ви можете прочитати більш детальний опис тут: **[Радіусна лінійка та Лінійка](../widgets/radius-ruler)**.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Екран лінійки радіуса](@site/static/img/widgets/radius_ruler_widget.png)
+![Екран радіусної лінійки](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -390,9 +391,9 @@ OsmAnd пропонує два типи віджетів координат:
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Лінійка радіуса"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Лінійка радіуса"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Лінійка радіуса"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Радіусна лінійка"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Радіусна лінійка"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Радіусна лінійка"/></td>
     </tr>
 </table>
 
@@ -400,15 +401,15 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-Віджет "Лінійка радіуса" показує відстань між вашим місцезнаходженням та центральною точкою лінійки радіуса. Радіус першого кола дорівнює [масштабу карти](../widgets/radius-ruler.md#ruler).
+Віджет Радіусна лінійка показує відстань між вашим місцезнаходженням та центральною точкою Радіусної лінійки. Радіус першого кола дорівнює [масштабу карти](../widgets/radius-ruler.md#ruler).
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_ruler_control"/>* |
-| Натисканням | Змінює стан віджета між чорною шкалою, відтінками сірого та невидимим режимами. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="map_widget_ruler_control"/>* |
+| При натисканні | Змінює стан віджета між чорною шкалою, відтінками сірого та невидимим режимами. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
-| Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 ## Спідометр {#speedometer}
@@ -417,22 +418,22 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="android" label="Android">
 
-![Спідометр](@site/static/img/widgets/speedometer_1_andr.png) ![Спідометр](@site/static/img/widgets/speedometer_2_andr.png)
+![Спідометр](@site/static/img/widgets/speedometer_1_andr.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Спідометр](@site/static/img/widgets/speedometer_1_ios.png) ![Спідометр](@site/static/img/widgets/speedometer_2_ios.png)
+![Спідометр](@site/static/img/widgets/speedometer_1_ios.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Віджет спідометра** — це графічне відображення поточної швидкості транспортного засобу на основі *даних, отриманих від GPS*. Він дозволяє в реальному часі контролювати відповідність вашої швидкості дозволеній межі швидкості. Дозволена межа швидкості надається [даними OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) для певної ділянки дороги та налаштуванням OsmAnd [Допустиме відхилення швидкості](../navigation/guidance/voice-navigation.md#speed-limit).
+**Віджет Спідометр** — це графічне відображення поточної швидкості транспортного засобу на основі *даних, отриманих з GPS*. Він дозволяє в реальному часі контролювати відповідність вашої швидкості дозволеному обмеженню. Дозволене обмеження швидкості надається [даними OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) для певної ділянки дороги та налаштуванням OsmAnd [Допуск обмеження швидкості](../navigation/guidance/voice-navigation.md#speed-limit).
 
-- У *налаштуваннях спідометра* ви можете вибрати розмір (**Висота**) віджета на екрані програми як *Малий*, *Середній* або *Великий*.
-- Ви можете вказати, коли отримувати **Попередження про обмеження швидкості**, вибравши *Завжди* або *При перевищенні*.
+- У *Налаштуваннях спідометра* ви можете вибрати розмір (**Висота**) віджета на екрані програми як *Малий*, *Середній* або *Великий*.
+- Ви можете вказати, коли отримувати **Попередження про обмеження швидкості,** вибравши *Завжди* або *При перевищенні*.
 
 <table class="blogimage">
     <tr>
@@ -444,8 +445,8 @@ OsmAnd пропонує два типи віджетів координат:
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Спідометр* |
-| Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>* |
+|        | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Спідометр* |
+| Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
 ## Віджети плагінів {#plugin-widgets}
@@ -456,32 +457,32 @@ OsmAnd пропонує два типи віджетів координат:
 ### Віджети запису поїздки {#trip-recording-widgets}
 
 :::note
-Детальніший опис можна прочитати тут: **[Плагін <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
+Ви можете прочитати більш детальний опис тут: **Плагін [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![віджет запису поїздки](@site/static/img/widgets/wid_trip_rec.png)
+![віджет_запису_поїздки](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![віджет запису поїздки](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![віджет_запису_поїздки](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Віджети запису поїздки відносяться до плагіна [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Ви можете використовувати віджети для перегляду короткої інформації про запис треку на екрані. Такої як *Відстань*, *Тривалість*, *Підйом* та *Спуск*.
+Віджети запису поїздки відносяться до [плагіна <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Ви можете використовувати віджети для перегляду короткої інформації про запис треку на екрані. Наприклад, *Відстань*, *Тривалість*, *Підйом* та *Спуск*.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_monitoring"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_monitoring"/>* |
-| Натисканням | Запускає/зупиняє запис треку або Переглядає графік. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_monitoring"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_monitoring"/>* |
+| При натисканні | Почати/Зупинити запис треку або Переглянути графік. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -501,33 +502,33 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="ios" label="iOS">
 
-![віджет запису поїздки](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![віджет_запису_поїздки](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Віджети відносяться до [плагіна зовнішніх датчиків](../plugins/external-sensors.md#widgets). Ви можете використовувати їх для перегляду короткої інформації з ваших зовнішніх датчиків, таких як: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*лише Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** та **<Translate android="true" ids="external_device_characteristic_temperature"/>**. *На iOS* ви також можете вибрати, щоб рівень заряду батареї підключених BLE-датчиків відображався безпосередньо у віджеті.
+Віджети відносяться до [плагіна Зовнішні датчики](../plugins/external-sensors.md#widgets). Ви можете використовувати їх для перегляду короткої інформації з ваших зовнішніх датчиків, таких як: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*лише Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** та **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Ви також можете вибрати відображення **рівня заряду батареї** підключених датчиків BLE безпосередньо у віджеті.
 
-- Щоб додати віджет — [увімкніть](../plugins/index.md#enable--disable) плагін OsmAnd External Sensors.
+- Щоб додати віджет — [увімкніть](../plugins/index.md#enable--disable) плагін Зовнішні датчики OsmAnd.
 
 - Щоб додати датчики, виберіть один з варіантів:
   - Перейдіть до *Меню → Плагіни → Зовнішні датчики → Налаштування → Підключити новий датчик*.
-  - Перейдіть до *Меню → Налаштувати екран → Виберіть панель → Додати віджет → Зовнішні датчики → Виберіть датчик → Налаштування → Підключити новий датчик*.
+  - Перейдіть до *Меню → Налаштувати екран → Обрати панель → Додати віджет → Зовнішні датчики → Обрати датчик → Налаштування → Підключити новий датчик*.
 
-- Додайте віджети, навіть якщо зовнішній датчик не підключено.
+- Додавайте віджети, навіть якщо зовнішній датчик не підключений.
 
-- **Усі додані віджети видно**, навіть якщо зовнішній датчик не підключено.
+- **Усі додані віджети видимі**, навіть якщо зовнішній датчик не підключений.
 
-- Використовуйте [плагін запису поїздки](../plugins/trip-recording.md#recording-settings) для запису даних датчиків.
+- Використовуйте [плагін Запис поїздки](../plugins/trip-recording.md#recording-settings) для запису даних з датчиків.
 
-- Прочитайте, як вибрати, який датчик (одного типу) відображати у віджеті [тут](../plugins/external-sensors.md#widget-settings).
+- Прочитайте про те, як вибрати, який датчик (одного типу) показувати у віджеті, [тут](../plugins/external-sensors.md#widget-settings).
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="external_sensor_widgets"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
-| Натисканням | Без змін (*Android*) / Перемикає режим між даними датчика та рівнем заряду батареї (*iOS*). |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="external_sensor_widgets"/>* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
+| При натисканні | Без змін (*Android*) / Перемикає режим між даними датчика та рівнем заряду батареї (*iOS*). |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -556,18 +557,18 @@ OsmAnd пропонує два типи віджетів координат:
 </Tabs>
 
 
-Віджети належать до [плагіна показників транспортного засобу](../plugins/vehicle-metrics.md#widgets). Ви можете використовувати їх для перегляду інформації з підключеного сканера OBD-II, такої як (*13 показників*): **Температура впуску**, &nbsp; **Температура навколишнього середовища**, &nbsp; **Температура охолоджуючої рідини**, &nbsp; **Температура моторного масла**, &nbsp; **Швидкість двигуна** (*безкоштовно*), &nbsp; **Час роботи двигуна**, &nbsp; **Розрахункове навантаження двигуна**, &nbsp; **Тиск палива**, &nbsp; **Витрата палива**, &nbsp; **Залишок палива**, &nbsp; **Рівень заряду батареї**, &nbsp; **Швидкість транспортного засобу** (*безкоштовно*), та **Положення дросельної заслінки**.
+Віджети належать до [плагіна Показники транспортного засобу](../plugins/vehicle-metrics.md#widgets). Ви можете використовувати їх для перегляду інформації з підключеного сканера OBD-II, наприклад (*13 показників*): **Температура на впуску**,&nbsp; **Температура навколишнього середовища**,&nbsp; **Температура охолоджувальної рідини**,&nbsp; **Температура мастила**,&nbsp; **Оберти двигуна** (*безкоштовно*),&nbsp; **Час роботи двигуна**,&nbsp; **Розрахункове навантаження на двигун**,&nbsp; **Тиск пального**,&nbsp; **Споживання пального**,&nbsp; **Залишок пального**,&nbsp; **Рівень заряду акумулятора**,&nbsp; **Швидкість транспортного засобу** (*безкоштовно*), та **Положення дросельної заслінки**.
 
-- Щоб додати віджети показників транспортного засобу на екран карти, [увімкніть](../plugins/index.md#enable--disable) **плагін показників транспортного засобу**.
-- Ви можете додавати віджети, навіть якщо сканер OBD-II не підключено.
-- Усі додані віджети видно незалежно від того, підключено сканер OBD-II чи ні.
-- Щоб відредагувати віджет, торкніться віджета, доданого до панелі, потім торкніться *Налаштування*, або безпосередньо торкніться *іконки Налаштування* в полі віджета.
+- Щоб додати віджети показників транспортного засобу на екран карти, [увімкніть](../plugins/index.md#enable--disable) **плагін Показники транспортного засобу**.
+- Ви можете додавати віджети, навіть якщо сканер OBD-II не підключений.
+- Усі додані віджети видимі незалежно від того, підключений сканер OBD-II чи ні.
+- Щоб відредагувати віджет, натисніть на віджет, доданий на панель, потім натисніть *Налаштування*, або безпосередньо натисніть *іконку Налаштування* в полі віджета.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="obd_widget_group"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="obd_plugin_name"/>* |
-| Натисканням | Без змін |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет →  <Translate android="true" ids="obd_widget_group"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет →  <Translate ios="true" ids="obd_plugin_name"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -593,40 +594,40 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-Віджети погоди відображають поточну інформацію про погоду для центральної точки на карті. Вони автоматично вмикаються на екрані при перегляді з плагіном (*Меню → Погода*), і ви можете вибрати, які з них розмістити на головному екрані для повсякденного використання (*Меню → Налаштувати екран*). Докладніше про це можна прочитати в статті [Плагін погоди](../plugins/weather.md).
+Віджети погоди відображають поточну інформацію про погоду для центральної точки на карті. Вони автоматично вмикаються на екрані при перегляді з плагіном (*Меню → Погода*), і ви можете вибрати, які з них розмістити на головному екрані для щоденного використання (*Меню → Налаштувати екран*). Детальніше про це можна прочитати у статті [Плагін Погода](../plugins/weather.md).
 
 - **Температура**. <Translate android="true" ids="temperature_widget_desc"/>
-- **Тиск повітря**. <Translate android="true" ids="air_pressure_widget_desc"/>
+- **Атмосферний тиск**. <Translate android="true" ids="air_pressure_widget_desc"/>
 - **Вітер**. <Translate android="true" ids="wind_widget_desc"/>
 - **Хмарність**. <Translate android="true" ids="clouds_widget_desc"/>
 - **Опади**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="shared_string_weather"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="shared_string_weather"/>* |
-| Натисканням | Відображає у спливаючому діалоговому вікні дату та час, коли інформація про погоду є актуальною. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="shared_string_weather"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="shared_string_weather"/>* |
+| При натисканні | Показує у спливаючому діалоговому вікні дату та час, коли інформація про погоду є актуальною. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
-| Формат | *Меню → Плагіни → Погода → Налаштування* або *Меню → Налаштування → Профіль програми → Погода* |
+| Формат | *Меню → Плагіни → Погода → Налаштування* або *Меню → Налаштування → Профіль додатку → Погода* |
 
 
 ### Віджет паркування {#parking-widget}
 
 :::note
-Щоб додати віджети паркування на екран карти, увімкніть плагін OsmAnd [Позиція паркування](../plugins/parking.md).
+Щоб додати віджети паркування на екран карти, увімкніть плагін OsmAnd [Місце паркування](../plugins/parking.md).
 :::
 
 ![Віджет паркування](@site/static/img/plugins/parking/parking_widget.png)
 
-Віджет плагіна "Паркування" показує відстань від центру екрана до місця паркування. Щоб встановити місце паркування на карті, збільште масштаб до потрібного рівня, потім довго торкніться місця на карті, щоб відкрити контекстне меню. Дотримуйтесь [цих налаштувань](../plugins/parking.md#set-a-spot).
+Віджет плагіна Паркування показує відстань від центру екрана до місця паркування. Щоб встановити місце паркування на карті, збільште масштаб до необхідного рівня, потім довго натисніть на місце на карті, щоб відкрити контекстне меню. Дотримуйтесь [цих налаштувань](../plugins/parking.md#set-a-spot).
 
-**Примітка:** Віджет паркування з'явиться лише в тому випадку, якщо місце паркування було додано на карту. Без збереженого місця паркування віджет не буде видимим.
+**Примітка:** Віджет паркування з'явиться лише в тому випадку, якщо на карті було додано місце паркування. Без збереженого місця паркування віджет не буде видимим.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_parking"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="parking_place"/>* |
-| Натисканням | Переміщує вигляд карти до місця паркування. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_parking"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="parking_place"/>* |
+| При натисканні | Переміщує вигляд карти до місця паркування. |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
@@ -639,13 +640,13 @@ OsmAnd пропонує два типи віджетів координат:
 
 ![Віджет Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
-Це віджет плагіна Mapillary, який надає швидкий доступ до програми Mapillary, що дозволяє додавати [*зображення рівня вулиці*](../plugins/mapillary.md#enable-layer). Віджет автоматично додається на карту, коли плагін увімкнено.
+Це віджет плагіна Mapillary, який надає швидкий доступ до програми Mapillary, що дозволяє додавати [*зображення на рівні вулиць*](../plugins/mapillary.md#enable-layer). Віджет додається на карту автоматично, коли плагін увімкнено.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="mapillary"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="mapillary"/>* |
-| Натисканням | Відкриває програму [Mapillary](https://www.mapillary.com/). |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="mapillary"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="mapillary"/>* |
+| При натисканні | Відкриває програму [Mapillary](https://www.mapillary.com/). |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -659,19 +660,19 @@ OsmAnd пропонує два типи віджетів координат:
 
 ![Віджет аудіо-відео нотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
 
-Це віджети плагіна аудіо/відео нотаток, які надають швидкий доступ до початку/зупинки запису аудіо, відео або фото нотаток.
+Це віджети плагіна Аудіо/відео нотатки, які надають швидкий доступ до початку/зупинки запису аудіо, відео або фото нотаток.
 
-Ви можете налаштувати, яка дія вибирається за замовчуванням:
+Ви можете налаштувати, яка дія буде обрана за замовчуванням:
 
-- *За запитом*. Стан за замовчуванням. Щоразу відображається діалог вибору дії.
+- *За запитом*. Стан за замовчуванням. Кожного разу відображається діалогове вікно вибору дії.
 - *Записати аудіо* - записує аудіо нотатку.
 - *Записати відео* - дозволяє записати відео.
 - *Зробити фото* - дозволяє зробити фото.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_av_notes"/>* |
-| Натисканням | Запускає / зупиняє запис нотатки |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_av_notes"/>*  |
+| При натисканні | Почати / зупинити запис нотатки |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -680,19 +681,19 @@ OsmAnd пропонує два типи віджетів координат:
 <InfoAndroidOnly />
 
 :::note
-Щоб додати віджет Tracker на екран карти, увімкніть плагін OsmAnd [Tracker](../plugins/osmand-tracker.md).
+Щоб додати віджет трекера на екран карти, увімкніть плагін OsmAnd [Трекер](../plugins/osmand-tracker.md).
 :::
 
 Для роботи плагіна та віджета необхідно встановити [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) з Google Play або інших джерел.
 
-Цей віджет плагіна OsmAnd Tracker використовується для швидкого доступу до програми OsmAnd Tracker та обміну інформацією про ваше місцезнаходження з іншими користувачами. Додаток надсилає повідомлення *Live Location* у вибрані чати протягом певного часу, відображає список контактів та груп, а також перевіряє чати на наявність повідомлень з вашим місцезнаходженням, які потім відображаються на карті в OsmAnd.
+Цей віджет плагіна OsmAnd Tracker використовується для швидкого доступу до програми OsmAnd Tracker та обміну інформацією про ваше місцезнаходження з іншими користувачами. Програма надсилає повідомлення *Live Location* до вибраних чатів протягом певного часу, відображає список контактів та груп, а також перевіряє чати на наявність повідомлень з вашим місцезнаходженням, які потім відображаються на карті в OsmAnd.
 
 ![Віджет трекера](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="tracker_item"/>* |
-| Натисканням | Відкриває програму OsmAnd Online GPS Tracker. |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="tracker_item"/>* |
+| При натисканні | Відкриває програму OsmAnd Online GPS Tracker. |
 
 
 ### Віджети розробника {#developer-widgets}
@@ -701,7 +702,7 @@ OsmAnd пропонує два типи віджетів координат:
 Щоб додати віджети розробника на екран карти, увімкніть плагін OsmAnd [Розробка OsmAnd](../plugins/development.md).
 :::
 
-**Віджети розробника** надають інформацію про [швидкість рендерингу карти](../plugins/development.md#map-rendering-fps-widget) та параметри віртуальної позиції камери, включаючи [рівень масштабування](../plugins/development.md#zoom-level), [відстань](../plugins/development.md#distance-to-target) до центру карти, [висоту камери](../plugins/development.md#camera-elevation) та [кут нахилу](../plugins/development.md#camera-tilt).
+**Віджети розробника** надають інформацію про [швидкість рендерингу карти](../plugins/development.md#map-rendering-fps-widget) та параметри положення віртуальної камери, включаючи [рівень масштабування](../plugins/development.md#zoom-level), [відстань](../plugins/development.md#distance-to-target) до центру карти, [висоту камери](../plugins/development.md#camera-elevation) та [кут нахилу](../plugins/development.md#camera-tilt).
 
 #### FPS рендерингу карти {#map-rendering-fps}
 
@@ -709,7 +710,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="android" label="Android">
 
-![Віджет FPS Android](@site/static/img/widgets/fps_widgets_andr.png)
+![Віджети FPS Android](@site/static/img/widgets/fps_widgets_andr.png)
 
 </TabItem>
 
@@ -721,13 +722,13 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-Віджет [FPS рендерингу карти](../plugins/development.md#map-rendering-fps-widget) відображає швидкість рендерингу карти та її елементів, виміряну в кадрах на секунду (FPS). Вище значення FPS вказує на швидший рендеринг та більш плавну візуальну продуктивність.
+[Віджет FPS рендерингу карти](../plugins/development.md#map-rendering-fps-widget) відображає швидкість рендерингу карти та її елементів, виміряну в кадрах за секунду (FPS). Вище значення FPS вказує на швидший рендеринг та більш плавну візуальну продуктивність.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_rendering_fps"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
-| Натисканням | Без змін |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="map_widget_rendering_fps"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -749,18 +750,18 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-**Віджети камери** дозволяють контролювати вирівнювання карти OsmAnd та поверхні землі.
+**Віджети камери** дозволяють контролювати вирівнювання між картою OsmAnd та поверхнею землі.
 
-- [Нахил камери](../plugins/development.md#camera-tilt). Відображає кут нахилу камери в перспективному режимі. Значення за замовчуванням 90° (без нахилу).
+- [Нахил камери](../plugins/development.md#camera-tilt). Відображає кут нахилу камери в режимі перспективи. Значення за замовчуванням — 90° (без нахилу).
 - [Висота камери](../plugins/development.md#camera-elevation). Вказує висоту камери над рівнем поверхні.
 - [Рівень масштабування](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
 - [Відстань від камери до цілі](../plugins/development.md#distance-to-target). Вимірює відстань між камерою та цільовим місцезнаходженням на карті.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="developer_widgets"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="developer_widgets"/>* |
-| Натисканням | Перемикання між режимами (*Рівень масштабування*) / Без змін (*Інші*) |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="developer_widgets"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Обрати панель → Додати віджет → <Translate ios="true" ids="developer_widgets"/>* |
+| При натисканні | Перемикання між режимами (*Рівень масштабування*) / Без змін (*Інші*) |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -770,30 +771,28 @@ OsmAnd пропонує два типи віджетів координат:
 
 ![Віджети середньої швидкості](@site/static/img/widgets/available_RAM_2_andr.png)
 
-Віджет **Доступна оперативна пам'ять** — це інструмент для моніторингу використання пам'яті вашого пристрою стосовно OsmAnd. Він надає детальні дані, які допомагають оптимізувати продуктивність програми.
+Віджет **Доступна оперативна пам'ять** — це інструмент для моніторингу використання пам'яті вашого пристрою у зв'язку з OsmAnd. Він надає детальні дані для оптимізації продуктивності програми.
 
-- **Доступна оперативна пам'ять програми.** Відображає обсяг оперативної пам'яті, доступної для використання OsmAnd без спричинення проблем з продуктивністю.
+- **Доступна оперативна пам'ять для програми.** Відображає обсяг оперативної пам'яті, доступний для використання OsmAnd без спричинення проблем з продуктивністю.
 
-- **Використання оперативної пам'яті програми** — Показує поточне споживання оперативної пам'яті OsmAnd.
+- **Використання оперативної пам'яті програмою** — показує поточне споживання оперативної пам'яті програмою OsmAnd.
 
-- **Загальна оперативна пам'ять програми** — Вказує загальний обсяг пам'яті, виділений для OsmAnd, включаючи як використану, так і доступну пам'ять.
+- **Загальна оперативна пам'ять програми** — вказує на загальний обсяг пам'яті, виділений для OsmAnd, включаючи як використану, так і доступну пам'ять.
 
-> **ПРИМІТКА**. *Загальна доступна оперативна пам'ять* може змінюватися залежно від фонових процесів та інших програм, що працюють на вашому пристрої. Ці значення є динамічними та пропонують спосіб відстежувати та керувати використанням пам'яті для стабільної та ефективної роботи OsmAnd.*
+> **ПРИМІТКА**. *Загальний обсяг доступної оперативної пам'яті* може змінюватися залежно від фонових процесів та інших програм, що працюють на вашому пристрої. Ці значення є динамічними та пропонують спосіб відстежувати та керувати використанням пам'яті для стабільної та ефективної роботи OsmAnd.*
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="developer_widgets"/> → *Доступна оперативна пам'ять* |
-| Натисканням | Без змін |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="developer_widgets"/> → *Доступна оперативна пам'ять* |
+| При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Налаштування екрана](./configure-screen.md)
-- [Кнопки карти](./map-buttons.md)
+- [Налаштувати екран](./configure-screen.md)
+- [Кнопки на карті](./map-buttons.md)
 - [Навігаційні віджети](./nav-widgets.md)
-- [Лінійка радіуса та Лінійка](./radius-ruler.md)
+- [Радіусна лінійка та Лінійка](./radius-ruler.md)
 - [Віджети маркерів](./markers.md)
 - [Швидка дія](./quick-action.md)
-
-> *Останнє оновлення: квітень 2025*
