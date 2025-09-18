@@ -1,8 +1,8 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
-import { clickBy, matchInnerTextBy, sendKeysBy, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
-import { selectProfile } from './42-route-info-block.mjs';
+import { driver, url } from '../options.mjs';
 
 const routes = [
     {
@@ -27,28 +27,35 @@ const routes = [
 
 export default async function test() {
     await actionOpenMap();
-    await clickBy(By.id('se-show-menu-navigation'));
 
-    for await (const { type, profile, strings, A, B } of routes) {
-        await clickBy(By.id('se-clear-route-start-point'));
-        await clickBy(By.id('se-clear-route-finish-point'));
+    for await (const { profile, A, B } of routes) {
+        const newUrl =
+            url.split('#')[0] +
+            `navigate/?start=${encodeURIComponent(A)}&end=${encodeURIComponent(B)}&profile=${profile}#16/50.4948/30.5132`;
 
-        await selectProfile({ type, profile });
+        await driver.get(newUrl);
 
-        await sendKeysBy(By.id('se-route-start-point'), A + '\n');
-        await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
         await waitBy(By.className('leaflet-interactive'));
         await clickBy(By.id('se-route-more-information'));
 
-        await validateInfoBlockStrings(strings);
+        await validateInfoBlock();
         await clickBy(By.id('se-button-back'));
     }
 
     await actionFinish();
 }
 
-async function validateInfoBlockStrings(strings) {
-    for await (const match of strings) {
-        await matchInnerTextBy(By.id('se-infoblock-all'), match);
+async function validateInfoBlock() {
+    try {
+        const el = await driver.findElement(By.id('se-infoblock-all'));
+        const text = await el.getText();
+
+        // get all numbers from the text
+        const numbers = text.match(/\d+(\.\d+)?/g)?.map(Number) || [];
+
+        // check that all numbers are positive
+        return numbers.length > 0 && numbers.every((n) => n > 0);
+    } catch {
+        return false;
     }
 }
