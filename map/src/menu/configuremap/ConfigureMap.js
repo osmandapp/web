@@ -43,6 +43,7 @@ import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import isEmpty from 'lodash-es/isEmpty';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -59,10 +60,14 @@ export default function ConfigureMap() {
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
 
+    function updateConfigureMapCache(conf) {
+        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
+    }
+
     const handleFavoritesSwitchChange = () => {
-        let newConfigureMap = cloneDeep(ctx.configureMapState);
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
-        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
+        updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
     };
 
@@ -87,10 +92,19 @@ export default function ConfigureMap() {
         }
     }, [ctx.configureMapState.terrain]);
 
+    useEffect(() => {
+        if (isEmpty(ctx.showPoiCategories)) return;
+        ctx.setConfigureMapState((prev) => {
+            const next = { ...prev, pois: ctx.showPoiCategories };
+            updateConfigureMapCache(next);
+            return next;
+        });
+    }, [ctx.showPoiCategories]);
+
     function setDefaultConfigureMap() {
         const defaultConfigureMap = defaultConfigureMapStateValues;
         ctx.setConfigureMapState({ ...defaultConfigureMap });
-        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(defaultConfigureMap));
+        updateConfigureMapCache(defaultConfigureMap);
     }
 
     function showProButton() {

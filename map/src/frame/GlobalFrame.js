@@ -53,11 +53,11 @@ const GlobalFrame = () => {
 
     // check configure map state
     useEffect(() => {
-        if (!ctx.configureMapState.showPoi) {
-            ctx.setShowPoiCategories([]);
-        }
         if (!ctx.configureMapState.showTracks) {
             hideAllTracks(ctx);
+        }
+        if (isEmpty(ctx.configureMapState.pois)) {
+            ctx.setShowPoiCategories([]);
         }
     }, [ctx.configureMapState]);
 

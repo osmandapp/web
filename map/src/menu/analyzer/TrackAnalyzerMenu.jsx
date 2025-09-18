@@ -220,6 +220,8 @@ export default function TrackAnalyzerMenu() {
     }, [analyseResult]);
 
     function clearSegmentsFromMap() {
+        if (!ctx.trackAnalyzer) return;
+
         ctx.setTrackAnalyzer({
             ...ctx.trackAnalyzer,
             segmentsUpdateDate: new Date().getMilliseconds(),
@@ -346,7 +348,18 @@ export default function TrackAnalyzerMenu() {
                                 id="se-close-folder-button"
                                 type="button"
                                 className={headerStyles.appBarIcon}
-                                onClick={() => closeHeader({ ctx })}
+                                onClick={() => {
+                                    stopAnalyzer();
+                                    ctx.setTrackAnalyzer(null);
+                                    ctx.setGlobalGraph((prev) => {
+                                        return {
+                                            ...prev,
+                                            show: false,
+                                            type: null,
+                                        };
+                                    });
+                                    closeHeader({ ctx });
+                                }}
                             >
                                 <CloseIcon />
                             </IconButton>

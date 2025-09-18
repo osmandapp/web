@@ -5,6 +5,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 import { getDistance } from '../../util/Utils';
 import isEmpty from 'lodash-es/isEmpty';
+import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
 
 const DEFAULT_SEGMENT_COLOR = '#227bff';
 
@@ -16,8 +17,6 @@ export default function TrackAnalyzerLayer() {
 
     const [startPoint, setStartPoint] = useState(null);
     const [finishPoint, setFinishPoint] = useState(null);
-
-    const hoverTimeout = useRef(null);
 
     // menu -> map
     useEffect(() => {
@@ -84,34 +83,44 @@ export default function TrackAnalyzerLayer() {
                     features: geoJsonFeatures,
                 });
             }
-        } else {
-            if (geoJsonRef?.current) {
-                geoJsonRef.current.clearLayers();
-            }
+        } else if (geoJsonRef?.current) {
+            geoJsonRef.current.clearLayers();
         }
     }, [ctx.trackAnalyzer?.segmentsUpdateDate, ctx.excludedSegments]);
 
     useEffect(() => {
         if (!ctx.trackAnalyzer && (startPoint || finishPoint)) {
-            // clear points
-            setStartPoint(null);
-            setFinishPoint(null);
-            // clear geojson
-            if (geoJsonRef.current) {
-                geoJsonRef.current.clearLayers();
-            }
+            clearLayersFromMap();
         }
     }, [ctx.trackAnalyzer]);
 
     // close track analyzer
     useEffect(() => {
-        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER && ctx.trackAnalyzer) {
-            ctx.setTrackAnalyzer(null);
+        if (!ctx.trackAnalyzer) return;
+
+        // hide layers when switching to another menu
+        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER) {
+            clearLayersFromMap();
             ctx.setGlobalGraph((prev) => {
                 return {
                     ...prev,
                     show: false,
                     type: null,
+                };
+            });
+        } else {
+            // reopen current track analyzer
+            ctx.setTrackAnalyzer((prev) => {
+                return {
+                    ...prev,
+                    segmentsUpdateDate: new Date().getMilliseconds(),
+                };
+            });
+            ctx.setGlobalGraph((prev) => {
+                return {
+                    ...prev,
+                    show: true,
+                    type: TYPE_ANALYZER,
                 };
             });
         }
@@ -134,6 +143,14 @@ export default function TrackAnalyzerLayer() {
             });
         }
     }, [startPoint, finishPoint]);
+
+    function clearLayersFromMap() {
+        setStartPoint(null);
+        setFinishPoint(null);
+        if (geoJsonRef.current) {
+            geoJsonRef.current.clearLayers();
+        }
+    }
 
     const handleMarkerDragEnd = (e, setPoint) => {
         const { lat, lng } = e.target.getLatLng();
