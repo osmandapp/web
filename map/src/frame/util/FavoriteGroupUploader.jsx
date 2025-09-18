@@ -48,6 +48,7 @@ export default function FavoriteGroupUploader({ children }) {
             mutateUploadedFiles((o) => delete o[file]);
             setImportFile(null);
             ctx.setFavLoading(false);
+            setImportFavoriteGroup(false);
             break; // process 1 file per 1 render
         }
     }, [uploadedFiles]);
