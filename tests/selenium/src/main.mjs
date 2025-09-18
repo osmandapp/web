@@ -3,7 +3,7 @@
 import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { TestIgnored } from './TestIgnored.mjs';
-import { recordResult, generateReport } from "./reporter.mjs";
+import { recordResult, generateReport } from './reporter.mjs';
 import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
 import { driver, ignore, cycle, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
 
@@ -72,14 +72,14 @@ async function runTest({ file, i, total }) {
         }
     })().then(
         () => {
-	    const runtime = Date.now() - started;
-	    loggerPass({ file, i, total, runtime });
-            recordResult({ file, status: "passed", runtime });
+            const runtime = Date.now() - started;
+            loggerPass({ file, i, total, runtime });
+            recordResult({ file, status: 'passed', runtime });
         },
         (error) => {
-	    const runtime = Date.now() - started;
-	    loggerFail({ file, i, total, error, runtime });
-	    recordResult({ file, status: "failed", error, runtime });
+            const runtime = Date.now() - started;
+            loggerFail({ file, i, total, error, runtime });
+            recordResult({ file, status: 'failed', error, runtime });
         }
     );
 }
