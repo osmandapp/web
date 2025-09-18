@@ -22,6 +22,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "junit-report-builder": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.0",
     "prettier": "^3.0.3"
   }
 }
