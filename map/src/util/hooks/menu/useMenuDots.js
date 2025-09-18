@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
-    OBJECT_SEARCH, OBJECT_TRACK_ANALYZER,
+    OBJECT_SEARCH,
+    OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRAVEL,
