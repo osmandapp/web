@@ -342,9 +342,14 @@ The *Route Guidance* widgets contain information about:
 
 </Tabs>
 
-- **Next turn** - the next turn with a large arrow representing the maneuver and with data about the distance to it.
-- **Next turn (small)** - the next turn with a small arrow representing the maneuver and with distance data next to the arrow. (only for _Left / Right panel_)
-- **Second next turn** - the next turn after the first turn, which is activated if it is within approach distance.
+The navigation widgets **Next turn**, **Next turn (small)**, **Second next turn** can be placed on any panel for user convenience. However, the information displayed differs depending on the widget type and its placement. The table below summarizes the behavior:
+
+|   Widget/Panel   | Left panel    | Right panet   | Top panel              | Bottom panel           |
+| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
+| **Next turn**        | Distance only | Distance only | Street name + distance | Street name + distance |
+| **Next turn (small)**| Distance only | Distance only | Not available          | Not available          |
+| **Second next turn** | Distance only | Distance only | Street name + distance | Street name + distance |
+
 
 ### Color Prompts for Next Turn {#color-prompts-for-next-turn}
 
