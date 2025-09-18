@@ -399,7 +399,6 @@ export default function SearchLayer() {
         if (index > -1) {
             ctx.showPoiCategories.splice(index, 1);
         }
-        console.log("rty");
         ctx.setShowPoiCategories([...ctx.showPoiCategories]);
     }
 }
