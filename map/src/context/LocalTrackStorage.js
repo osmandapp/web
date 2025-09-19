@@ -168,7 +168,7 @@ async function updateStoredLocalTracks(tracks) {
 }
 
 export function deleteLocalTrack(ctx) {
-    const currentTrackIndex = ctx.localTracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
+    const currentTrackIndex = ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
     if (currentTrackIndex !== -1) {
         deleteTrackFromDB(currentTrackIndex).then(() => {
             ctx.localTracks.splice(currentTrackIndex, 1);
@@ -178,7 +178,18 @@ export function deleteLocalTrack(ctx) {
 }
 
 export function clearAllLocalTracks(ctx) {
-    if (ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name)) {
+    let localTracks = ctx.localTracks;
+    localTracks = localTracks.filter((t, idx) => {
+        if (!t?.name) {
+            deleteTrackFromDB(idx).then(() => {
+                DEBUG && console.log(`Removed nameless local track at index ${idx}`);
+            });
+            return false;
+        }
+        return true;
+    });
+
+    if (localTracks.find((t) => t?.name === ctx.selectedGpxFile?.name)) {
         ctx.setSelectedGpxFile({});
     }
     ctx.setLocalTracks([]);
