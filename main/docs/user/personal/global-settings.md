@@ -93,7 +93,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#maps--resources) menu, where you can view and manage detailed information about your OsmAnd data.
+1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#local-menu) menu, where you can view and manage detailed information about your OsmAnd data.
 
 2. In the **<Translate android="true" ids="change_data_storage_folder"/>**, you can select a folder to save OsmAnd data on your device.  
 
@@ -302,7 +302,7 @@ The **<Translate android="true" ids="dialogs_and_notifications_title"/>** settin
 
 - *Start-up message* includes promotions, quizzes, events, and more.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) suppresses displaying app discounts and special local event messages.
-- [*Download map dialog*](../start-with/download-maps.md#download) informs you that specific maps can be downloaded.
+- [*Download map dialog*](../start-with/download-maps.md#downloads-menu) informs you that specific maps can be downloaded.
 
 
 ### Location Source {#location-source}

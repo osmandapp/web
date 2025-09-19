@@ -302,7 +302,7 @@ NOTE: Start creating a navigation profile with all parameters, for this purpose 
 ### Downloads {#downloads}
 
 You can add any files such as *SQLite, OBF, or fonts* for download using the **"DOWNLOADS"** type. The main types of downloadable files can be found [here](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>NOTE</u>*. The tag **"isHidden":"true"** (by default it is *false*) can hide your map data from [Maps and Resources](../personal/maps-resources.md#local) of OsmAnd.  In **"scope-id"** you can add all the necessary information about your file's URL, name, description, and more.  
+   *<u>NOTE</u>*. The tag **"isHidden":"true"** (by default it is *false*) can hide your map data from [Maps and Resources](../personal/maps-resources.md#local-menu) of OsmAnd.  In **"scope-id"** you can add all the necessary information about your file's URL, name, description, and more.  
 
    ![Custom package](@site/static/img/plugins/custom/3.jpg)
 

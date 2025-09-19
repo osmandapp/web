@@ -101,9 +101,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 The [Maps & Resources](../personal/maps-resources.md) screen provides access to the following sections:
 
-- [Downloads](../personal/maps-resources.md#downloads). Offers a comprehensive selection of [OsmAnd map types](../personal/maps-resources.md#map-types).
-- [Local](../personal/maps-resources.md#local). Displays all map data currently stored on your device, including custom and imported resources.
-- [Updates](../personal/maps-resources.md#updates). Enables you to refresh maps monthly to keep your data current.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Offers a comprehensive selection of [OsmAnd map types](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local-menu). Displays all map data currently stored on your device, including custom and imported resources.
+- [Updates](../personal/maps-resources.md#updates-menu). Enables you to refresh maps monthly to keep your data current.
 
 ### Downloading Maps {#downloading-maps}
 
@@ -113,7 +113,7 @@ To download a specific map type for a country or region:
 - Select your preferred country or region from the list.
 - On the next screen, review and choose from the available map types for that area.
 
-You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads) section of the **Maps** article.
+You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads-menu) section of the **Maps** article.
 
 ## World Map Options {#world-map-options}
 
