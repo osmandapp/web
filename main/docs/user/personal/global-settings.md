@@ -302,7 +302,7 @@ The **<Translate android="true" ids="dialogs_and_notifications_title"/>** settin
 
 - *Start-up message* includes promotions, quizzes, events, and more.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) suppresses displaying app discounts and special local event messages.
-- [*Download map dialog*](../start-with/download-maps.md#downloads-menu) informs you that specific maps can be downloaded.
+- [*Download map dialog*](../start-with/download-maps.md#downloading-maps) informs you that specific maps can be downloaded.
 
 
 ### Location Source {#location-source}
