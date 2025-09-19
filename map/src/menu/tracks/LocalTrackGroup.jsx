@@ -85,9 +85,9 @@ export default function LocalTrackGroup() {
             <Collapse in={localGpxOpen} timeout="auto">
                 <div style={{ maxHeight: '39vh', overflow: 'auto' }}>
                     {ctx.localTracks.length > 0 &&
-                        ctx.localTracks.map((track) => {
-                            return <LocalTrackItem key={'localtrack-' + track.name} track={track} />;
-                        })}
+                        ctx.localTracks
+                            .filter((track) => track?.name)
+                            .map((track) => <LocalTrackItem key={'localtrack-' + track.name} track={track} />)}
                 </div>
                 <ButtonGroup variant="text" sx={{ mt: 1, ml: 2 }}>
                     <Button

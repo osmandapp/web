@@ -255,6 +255,11 @@ export default function GeneralInfo({ width }) {
             const oldName = ctx.selectedGpxFile.name;
             const newName = sanitizedFileName(fileName) || oldName;
 
+            if (newName === '') {
+                setFileNameError('Name cannot be empty');
+                return;
+            }
+
             setFileName(newName); // update for next try
 
             if (newName === oldName) {
@@ -263,12 +268,12 @@ export default function GeneralInfo({ width }) {
                 return;
             }
 
-            if (ctx.localTracks.find((t) => t.name === newName)) {
+            if (ctx.localTracks.find((t) => t?.name === newName)) {
                 setFileNameError('This name is already exists');
                 return;
             }
 
-            const currentTrack = ctx.localTracks.find((t) => t.name === oldName);
+            const currentTrack = ctx.localTracks.find((t) => t?.name === oldName);
 
             if (currentTrack) {
                 currentTrack.name = newName;

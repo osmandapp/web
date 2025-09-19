@@ -88,8 +88,8 @@ function createName(ctx) {
     let name;
     let maxNumber = 0;
     ctx.localTracks.forEach((t) => {
-        if (t.name.split(' - ')[0] === date) {
-            let sp = parseInt(t.name.split(' - ')[1], 10);
+        if (t?.name.split(' - ')[0] === date) {
+            let sp = parseInt(t?.name.split(' - ')[1], 10);
             count++;
             if (sp > maxNumber) {
                 maxNumber = sp;
@@ -98,7 +98,7 @@ function createName(ctx) {
     });
     name = count > 0 ? date + ' - ' + (count + 1) : date;
     ctx.localTracks.forEach((t) => {
-        if (t.name === name) {
+        if (t?.name === name) {
             name = date + ' - ' + (maxNumber + 1);
         }
     });
@@ -113,6 +113,9 @@ export function getFileName(currentFile) {
 
 export function prepareName(name, local = false) {
     const result = name.replace(/.gpx/, '');
+    if (result === '') {
+        return createName();
+    }
     if (result.includes('/')) {
         const groups = result.split('/');
         return groups[groups.length - 1];
