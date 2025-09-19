@@ -82,6 +82,9 @@ import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/set
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
+import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
+import { useNavigate } from 'react-router-dom';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -129,6 +132,9 @@ export const EMPTY_STRING = '';
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
+
     const hash = window.location.hash;
 
     const recentSaver = useRecentDataSaver();
@@ -330,11 +336,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 }
             }
         }
-        return wikiTitle ? wikiTitle : wikipedia;
+        return wikiTitle ?? wikipedia;
     }
 
     function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
-        const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
+        const currentWpt = wptFromFile ?? selectedWpt;
         return {
             type: type,
             file: selectedWpt.file,
@@ -466,6 +472,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function returnToSearch() {
         ctx.setSelectedPoiObj(null);
         setShowInfoBlock(false);
+        navigate({
+            pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+            search: buildSearchParamsFromQuery(ctx.searchQuery),
+            hash: window.location.hash,
+        });
     }
 
     function closeOnlyFavDetails() {

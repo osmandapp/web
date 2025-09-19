@@ -29,6 +29,7 @@ import {
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
+    POI_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -52,6 +53,7 @@ import PricingPage from './shop/PricingPage';
 import WeatherForecastDetails from './menu/weather/WeatherForecastDetails';
 import PoiCategoriesList from './menu/search/search/PoiCategoriesList';
 import SearchResults from './menu/search/search/SearchResults';
+import WptDetails from './infoblock/components/wpt/WptDetails';
 
 export let globalNavigate = () => null;
 
@@ -139,6 +141,7 @@ const App = () => {
                                 <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
                                 <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
                                 <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
+                                <Route path={POI_URL} element={<WptDetails />}></Route>
                             </Route>
                             <Route path={PRICING_URL} element={<PricingPage />}></Route>
                         </Routes>

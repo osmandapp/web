@@ -17,10 +17,13 @@ export const FILE_WAS_DELETED = 'file was deleted';
 export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';
 export const MAIN_URL_WITH_SLASH = '/map/';
+
 export const SEARCH_URL = 'search/';
 export const EXPLORE_URL = 'explore/';
 export const POI_CATEGORIES_URL = 'poi-categories/';
 export const SEARCH_RESULT_URL = 'result/';
+export const POI_URL = 'poi/';
+
 export const CONFIGURE_URL = 'configure/';
 export const WEATHER_URL = 'weather/';
 export const WEATHER_FORECAST_URL = 'forecast/';

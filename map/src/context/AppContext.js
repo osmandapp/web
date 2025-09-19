@@ -338,6 +338,7 @@ export const AppContextProvider = (props) => {
     const [visibleBounds, setVisibleBounds] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
+    const [poiByUrl, setPoiByUrl] = useState(null);
 
     // travel
     const [openTravel, setOpenTravel] = useState(false);
@@ -866,6 +867,8 @@ export const AppContextProvider = (props) => {
                 setSelectedPoiObj,
                 zoomToCoords,
                 setZoomToCoords,
+                poiByUrl,
+                setPoiByUrl,
             }}
         >
             {props.children}

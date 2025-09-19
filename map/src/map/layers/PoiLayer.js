@@ -12,10 +12,11 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
+    navigateToPoi,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
-import { apiPost } from '../../util/HttpApi';
+import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
@@ -36,6 +37,7 @@ import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { useNavigate } from 'react-router-dom';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -155,6 +157,8 @@ export default function PoiLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
+    const navigate = useNavigate();
+
     const [prevZoom, setPrevZoom] = useState(null);
     const [prevTypesLength, setPrevTypesLength] = useState(null);
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
@@ -183,6 +187,44 @@ export default function PoiLayer() {
         map,
         prevSelectedMarker: prevSelectedPoi,
     });
+
+    useEffect(() => {
+        if (ctx.poiByUrl) {
+            openPoiByUrl().then(ctx.setPoiByUrl(null));
+        }
+    }, [ctx.poiByUrl]);
+
+    async function openPoiByUrl() {
+        const { lat, lng, name, type } = ctx.poiByUrl;
+
+        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
+            params: {
+                lat,
+                lng,
+                name,
+                type,
+            },
+            apiCache: true,
+        });
+        if (response?.data) {
+            const data = response.data;
+            const poi = {
+                options: { ...data.properties },
+                latlng: {
+                    lat: data.geometry.coordinates[1],
+                    lng: data.geometry.coordinates[0],
+                },
+            };
+            ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            recentSaver(POI_OBJECTS_KEY, poi);
+            ctx.setSelectedWpt({ poi });
+            ctx.setSelectedPoiObj({ ...poi });
+            return response.data;
+        } else {
+            return null;
+        }
+    }
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
@@ -403,6 +445,7 @@ export default function PoiLayer() {
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
         ctx.setSelectedPoiObj({ ...poi });
+        navigateToPoi(poi, navigate);
     }
 
     useEffect(() => {
