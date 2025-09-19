@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-import */
 import junit from 'junit-report-builder';
 import marge from 'mochawesome-report-generator';
 
