@@ -49,7 +49,7 @@ To display Wikipedia data on the map, you need to make the following settings:
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case, the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.
 
-To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#downloads-menu), find the needed region, and open it. The Wikipedia data will be among other packages.
+To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#downloading-maps), find the needed region, and open it. The Wikipedia data will be among other packages.
 
 You can open Wikipedia data to download by region as follows:
 

@@ -152,7 +152,7 @@ To import a file:
 1. Locate the `.osf` file in your device’s storage, messenger, or email.
 2. Tap to open it with OsmAnd.
 3. The plugin will appear in the **Plugin List** section, where it can be activated.
-4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads) tab.
+4. A corresponding folder will then appear in the **Extra Maps** section of the [Downloads](#downloads-menu) tab.
 
 Read more in the [**Custom package**](../plugins/custom) article.
 
