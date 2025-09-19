@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#poi-search-by-categories) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
 
-[Custom Search](#custom-poi-search) enhances search functionality by allowing multiple category and subcategory choices. You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
+[Custom Search](#customize-poi-search) enhances search functionality by allowing multiple category and subcategory choices. You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
 
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
@@ -242,7 +242,7 @@ Description and how to use:
 - *To hide* unnecessary categories, tap the **minus** icon.
 - **Available**. Previously *Hidden* categories can be returned to the displayed list by tapping the **plus** icon.
 - Use the **Reset** to default button to return the list to the preset state.
-- Categories created with [Custom Search](#custom-poi-search) or [Filters](#save-new-custom-filters) can be deleted using the **Delete** icon.  
+- Categories created with [Custom Search](#customize-poi-search) or [Filters](#save-new-custom-filters) can be deleted using the **Delete** icon.  
 
 ![Search POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 

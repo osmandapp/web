@@ -34,7 +34,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
 
 - Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads).
+- For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

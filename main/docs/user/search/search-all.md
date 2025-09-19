@@ -237,7 +237,7 @@ You can use the **Search History** to search again for previously found places, 
 
 The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
 
-- [Custom POI search](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search.  
+- [Custom POI search](./search-poi.md#customize-poi-search) allows you to combine different POI categories to simplify and personalize your search.  
 For example, if you need to find several types of services in a certain area or on a certain section of a route.
 
 - OsmAnd provides an [Online search](./search-poi.md#online-search) that works in real-time, giving you quick access to search results.  

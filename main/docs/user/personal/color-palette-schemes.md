@@ -25,7 +25,7 @@ Color schemes are used as part of paid [Maps+](../purchases/index.md) and Pro <P
 
 Color schemes are used in [route colorization](#routes), [map terrain](#terrain), and [weather map](#weather), and are represented as a separate part of the information that can be exported, imported, and edited to change the map color scheme and data visualization.
 
-Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local) menu.
+Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local-menu) menu.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

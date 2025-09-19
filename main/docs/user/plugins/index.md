@@ -77,7 +77,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#weather-forecast-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-profile)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
-|[Audio/video notes](#audiovideo-notes) 🤖  | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Audio/video notes](#audiovideo-notes) 🤖  | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#authorization) |
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|

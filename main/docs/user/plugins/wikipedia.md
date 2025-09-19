@@ -23,7 +23,7 @@ The Wikipedia plugin is a [paid feature](../purchases/index.md) of the OsmAnd ap
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Popular Places (Android) / Wikipedia articles (iOS) related to the points of interest directly on the map.  
 
-The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources#maps--resources) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: brief information and a full article.  
+The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources#downloads-menu) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: brief information and a full article.  
 
 
 Brief information is provided by Wikipedia POIs (an abbreviation for "[point of interest](../map/point-layers-on-map.md)"). If the Wikipedia option is toggled on in the menu, a Wikipedia POI appears on the map. When you tap a point of interest, it expands to provide brief information from Wikipedia, as well as the ability to open a full article. The Wikipedia POI, as well as related articles, are available offline. You can read them as needed, switch languages, and search for other information on Wikipedia.  
@@ -49,7 +49,7 @@ To display Wikipedia data on the map, you need to make the following settings:
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case, the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.
 
-To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#download), find the needed region, and open it. The Wikipedia data will be among other packages.
+To download the Wikipedia data for a region, go to the [available packages for download in the *Main Menu*](../start-with/download-maps.md#downloads-menu), find the needed region, and open it. The Wikipedia data will be among other packages.
 
 You can open Wikipedia data to download by region as follows:
 

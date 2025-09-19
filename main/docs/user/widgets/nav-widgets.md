@@ -292,7 +292,7 @@ The *Speed Limit* widget displays the current speed limit based on the map data 
 - Widget works in passive and active navigation modes.
 - If speed limit data is unavailable for a specific road or area, *the widget will not appear*.
 
-> NOTE: Ensure your [maps are up-to-date](../personal/maps-resources.md#updates) and that you have downloaded all necessary regional data to access the latest speed limit information.
+> NOTE: Ensure your [maps are up-to-date](../personal/maps-resources.md#updates-menu) and that you have downloaded all necessary regional data to access the latest speed limit information.
 
 | |  |
 |:------------|:------------|
