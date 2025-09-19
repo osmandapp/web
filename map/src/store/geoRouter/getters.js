@@ -94,17 +94,12 @@ export function getShortGeoProfile(geoProfile) {
 }
 
 export function prepareParams(params) {
-    const result = {};
-    Object.entries(params || {}).forEach(([name, p]) => {
-        if (!p) return;
-        const v = p.value;
-
-        if (v === undefined || v === null) return;
-        if (typeof v === 'number' && v === 0) return;
-
-        result[name] = { key: name, value: v };
-    });
-    return result;
+    return Object.fromEntries(
+        Object.keys(params || {}).map((key) => {
+            const p = params[key];
+            return [p.key, { key: p.key, value: p.value }];
+        })
+    );
 }
 
 /**
