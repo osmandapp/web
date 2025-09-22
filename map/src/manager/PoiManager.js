@@ -22,6 +22,7 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
+import { POI_URL } from './GlobalManager';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -316,6 +317,16 @@ export function translateWithSplit(t, string) {
         translatedString = translatedString.split(SEPARATOR)[0];
     }
     return translatedString;
+}
+
+export function navigateToPoi(poi, navigate) {
+    const name = poi.options.amenity_name;
+    const type = poi.options.amenity_subtype;
+    navigate({
+        pathname: POI_URL,
+        search: `?name=${name}&type=${type}&lat=${poi.latlng.lat}&lng=${poi.latlng.lng}`,
+        hash: window.location.hash,
+    });
 }
 
 const PoiManager = {

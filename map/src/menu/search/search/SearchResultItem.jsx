@@ -5,7 +5,7 @@ import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
-import { formattingPoiType } from '../../../manager/PoiManager';
+import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
@@ -32,6 +32,7 @@ import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } fro
 import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
+import { useNavigate } from 'react-router-dom';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -88,6 +89,8 @@ export function getPropsFromSearchResultItem(props, t) {
 
 export default function SearchResultItem({ item, typeItem }) {
     const ctx = useContext(AppContext);
+
+    const navigate = useNavigate();
 
     const { t } = useTranslation();
     const { ref, inView } = useInView();
@@ -181,6 +184,7 @@ export default function SearchResultItem({ item, typeItem }) {
                     obj: item,
                 };
             });
+            navigateToPoi(poi, navigate);
         } else {
             // click on category
             const category = item.properties['web_keyName'];

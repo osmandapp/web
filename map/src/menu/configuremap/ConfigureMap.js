@@ -93,7 +93,7 @@ export default function ConfigureMap() {
     }, [ctx.configureMapState.terrain]);
 
     useEffect(() => {
-        if (isEmpty(ctx.showPoiCategories)) return;
+        if (JSON.stringify(ctx.showPoiCategories) === JSON.stringify(ctx.configureMapState.pois)) return;
         ctx.setConfigureMapState((prev) => {
             const next = { ...prev, pois: ctx.showPoiCategories };
             updateConfigureMapCache(next);

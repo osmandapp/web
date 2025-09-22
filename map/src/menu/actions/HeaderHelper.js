@@ -11,6 +11,15 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
         ctx.setSelectedGpxFile({});
         ctx.setSelectedFavoriteObj(null);
     }
+    if (ctx.poiByUrl?.layer) {
+        // remove poi marker
+        ctx.setPoiByUrl((prev) => {
+            return {
+                ...prev,
+                open: false,
+            };
+        });
+    }
     ctx.setCurrentObjectType(null);
     ctx.setSelectedPoiObj(null);
 }
