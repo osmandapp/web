@@ -1,27 +1,27 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
-title: Tracks
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
+title:  Tracks
 sidebar_position: 8
 ---
 
 ## [Tracks beheren](./manage-tracks.md) {#manage-tracks}
 
-Alle informatie over het maken, beheren en organiseren van tracks en trackmappen.
+Alle informatie over het aanmaken, beheren en organiseren van tracks en trackmappen.
 
 ## [Slimme map (filter)](./smart-folder.md) {#smart-folderfilter}
 
-Een eenvoudige manier om virtuele mappen voor tracks met filters te maken.
+Een eenvoudige manier om virtuele mappen voor tracks te maken met filters.
 
-## Meer lezen {#read-more}
+## Lees meer {#read-more}
 
 ### [Soorten tracks](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
 
-Lees meer over wat een track is en de verschillende soorten tracks.
+Lees wat een track is en de verschillende soorten tracks.
 
-### [Tracks weergeven](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Tracks weergeven](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
-Lees meer over hoe je tracks en de opties ervan in OsmAnd kunt weergeven.
+Lees hoe u tracks en de bijbehorende opties in OsmAnd kunt weergeven.
 
-### [Navigeren via track](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [Navigeren via een track](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-Lees meer over het gebruik van tracks bij navigatie.
+Lees meer over hoe u een track kunt gebruiken bij het navigeren.

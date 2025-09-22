@@ -1,7 +1,7 @@
 ---
-source-hash: 0c3b5e8e7cf6ef6e151b2af4c26f3e274170841399bcaf73871ab607bf13fd43
+source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
 sidebar_position: 8
-title: أماكن شهيرة
+title: الأماكن المشهورة
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,21 +19,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-تُبرز ميزة **الأماكن الشهيرة** في OsmAnd المعالم ومناطق الجذب البارزة باستخدام بيانات مفتوحة ومنظمة من [Wikidata](https://www.wikidata.org) و[Wikipedia](https://www.wikipedia.org/). وتساعد المستخدمين على استكشاف الوجهات المعروفة بوصف متعدد اللغات وصور.
+تسلط ميزة **الأماكن المشهورة** في OsmAnd الضوء على المعالم البارزة ومناطق الجذب السياحي باستخدام بيانات منظمة مفتوحة من [ويكيداتا](https://www.wikidata.org) و[ويكيبيديا](https://www.wikipedia.org/). وهي تساعد المستخدمين على استكشاف الوجهات المعروفة مع أوصاف وصور متعددة اللغات.
 
-يرتبط كل مكان مشمول في هذه الميزة بـ **معرف Wikidata**، مما يمكّن OsmAnd من عرض أسماء وصور معاينة وروابط إلى مقالات ويكيبيديا تم التحقق منها. لا تعرض هذه الأداة جميع نقاط OpenStreetMap (OSM). وهي تقتصر على نقاط الاهتمام (POIs) التي تحتوي على مراجع Wikidata.
+كل مكان مدرج في هذه الميزة مرتبط بـ **معرّف ويكيداتا (Wikidata ID)**، مما يمكّن OsmAnd من عرض أسماء موثقة وصور معاينة وروابط لمقالات ويكيبيديا. هذه الأداة **لا** تعرض جميع نقاط خريطة الشارع المفتوحة (OSM). فهي تقتصر على نقاط الاهتمام التي لها مراجع في ويكيداتا.
 
-حاليًا، تتضمن قاعدة البيانات المنسقة ما يقرب من **50,000 إلى 150,000 مكان من الأماكن الأعلى تقييمًا** عالميًا، تم اختيارها من أكثر من **مليون** كائن Wikidata + OSM.
+حاليًا، تتضمن قاعدة البيانات المنسقة ما يقرب من **٥٠٬٠٠٠ إلى ١٥٠٬٠٠٠ من الأماكن الأعلى تقييمًا** على مستوى العالم، تم اختيارها من بين أكثر من **مليون** كائن من ويكيداتا + خريطة الشارع المفتوحة.
 
 :::note
-*هذه هي النسخة الأولى من ميزة الأماكن الشهيرة. نرحب بالملاحظات على [GitHub](https://github.com/osmandapp/OsmAnd)*.
+*هذه هي النسخة الأولى من ميزة الأماكن المشهورة. نرحب بآرائكم وملاحظاتكم على [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![أماكن شهيرة](@site/static/img/map/popular_places/popular_places.png) ![أماكن شهيرة](@site/static/img/map/popular_places/popular_places_1.png)
+![الأماكن المشهورة](@site/static/img/map/popular_places/popular_places.png) ![الأماكن المشهورة](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -42,107 +42,107 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مصادر البيانات
 
-تعتمد **الأماكن الشهيرة** على محتوى منظم من [Wikidata](https://www.wikidata.org) و[Wikipedia](https://www.wikipedia.org/).
+تعتمد **الأماكن المشهورة** على محتوى منظم من [ويكيداتا](https://www.wikidata.org) و[ويكيبيديا](https://www.wikipedia.org/).
 
-يتم عرض نقاط الاهتمام (POIs) التي تحتوي على **معرف Wikidata** فقط. تربط هذه المعرفات كائنات الخريطة بالأسماء والأوصاف والصور التي تم التحقق منها.
+يتم عرض نقاط الاهتمام التي لها **معرّف ويكيداتا (Wikidata ID)** مرتبط فقط. تربط هذه المعرّفات كائنات الخريطة بأسماء وأوصاف وصور موثقة.
 
-يمكنك عرض رابط Wikidata مباشرة في [قائمة سياق الخريطة](../map/map-context-menu.md). يؤدي النقر على علامة Wikidata إلى فتح صفحة الكائن الكاملة على موقع Wikidata.
+يمكنك عرض رابط ويكيداتا مباشرة في [قائمة سياق الخريطة](../map/map-context-menu.md). يؤدي النقر على وسم ويكيداتا إلى فتح صفحة الكائن الكاملة على موقع ويكيداتا.
 
-تعرف على كيفية العثور على معرف Wikidata: [ويكيبيديا: العثور على معرف Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+تعلم كيفية العثور على معرّف ويكيداتا: [ويكيبيديا: العثور على معرّف ويكيداتا](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## كيفية الاستخدام {#how-to-use}
 
 <InfoAndroidOnly/>
 
-تتضمن ميزة **الأماكن الشهيرة** كلاً من قائمة منسقة بالمعالم القريبة وطبقة من نقاط الاهتمام المستندة إلى ويكيبيديا على الخريطة.
+تتضمن ميزة **الأماكن المشهورة** قائمة منسقة بالمعالم القريبة وطبقة من نقاط الاهتمام المستندة إلى ويكيبيديا على الخريطة.
 
 هناك طريقتان رئيسيتان للوصول إلى هذه الميزة:
 
-- **النسخة المجانية**
-  الوصول عبر [البحث](#explore-in-search) لاستكشاف الأماكن القريبة في عرض القائمة.
+- **النسخة المجانية**  
+  يمكنك الوصول إليها عبر [البحث](#explore-in-search) لاستكشاف الأماكن القريبة في عرض القائمة.  
   *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-- **النسخ المدفوعة** *(Maps+ وOsmAnd Pro)*
-  تمكين التراكب المرئي في [تكوين الخريطة](#enable-layer).
-  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+- **النسخ المدفوعة** *(Maps+ و OsmAnd Pro)*  
+  قم بتمكين الطبقة المرئية في [تخصيص الخريطة](#enable-layer).  
+  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
-  في هذا الوضع، تظهر نقاط الاهتمام الشهيرة مباشرة على الخريطة مع معاينات مصغرة ومحتوى ويكيبيديا.
+  في هذا الوضع، تظهر نقاط الاهتمام المشهورة مباشرة على الخريطة مع معاينات مصغرة ومحتوى من ويكيبيديا.
 
-  يمكنك التبديل بين مصادر ويكيبيديا **المتصلة بالإنترنت** و**غير المتصلة بالإنترنت** في إعدادات التراكب. تعرف على المزيد في [تمكين الطبقة](#enable-layer).
+  يمكنك التبديل بين مصادر ويكيبيديا **عبر الإنترنت** و**دون اتصال** في إعدادات الطبقة. تعلم المزيد في [تفعيل الطبقة](#enable-layer).
 
 
-## استكشاف في البحث {#explore-in-search}
+## الاستكشاف في البحث {#explore-in-search}
 
 <InfoAndroidOnly/>
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![وضع الاستكشاف](@site/static/img/map/popular_places/popular_places_search.png)
+![وضع الاستكشاف](@site/static/img/map/popular_places/popular_places_search.png)  
 ![وضع الاستكشاف](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
 </Tabs>
 
-يعرض قسم **<Translate android="true" ids="popular_places_nearby"/>** قائمة قابلة للتمرير لأهم المعالم القريبة من موقعك الحالي. يتضمن كل عنصر:
+يعرض قسم **<Translate android="true" ids="popular_places_nearby"/>** قائمة قابلة للتمرير لأبرز المعالم الأعلى تقييمًا بالقرب من موقعك الحالي. يتضمن كل عنصر:
 
 - اسم المكان.
 - وصف قصير.
-- علامة فئة نقطة الاهتمام.
+- وسم فئة نقطة الاهتمام.
 - المسافة والاتجاه.
-- صورة مصغرة (إذا كانت متوفرة).
+- صورة مصغرة (إن وجدت).
 
-انقر على **إظهار الكل** لعرض القائمة الكاملة، أو **إظهار على الخريطة** لعرض جميع نقاط الاهتمام المدرجة على الخريطة.
+انقر على **عرض الكل** لعرض القائمة الكاملة، أو **عرض على الخريطة** لعرض جميع نقاط الاهتمام المدرجة على الخريطة.
 
 يؤدي النقر على أي مكان إلى فتح [قائمة سياق نقطة الاهتمام](./map-context-menu.md)، حيث يمكنك معاينة الصور والوصول إلى [محتوى ويكيبيديا](../plugins/wikipedia.md) ذي الصلة.
 
 :::tip
-يعمل وضع الاستكشاف القائم على البحث **عبر الإنترنت فقط** في النسخة المجانية.
-لاستخدامه **دون اتصال بالإنترنت**، تحتاج إلى اشتراك [Maps+ أو OsmAnd Pro](../purchases/android.md) وخرائط [ويكيبيديا](../plugins/wikipedia.md) التي تم تنزيلها.
+يعمل وضع الاستكشاف القائم على البحث **عبر الإنترنت فقط** في النسخة المجانية.  
+لاستخدامه **دون اتصال**، تحتاج إلى اشتراك [Maps+ أو OsmAnd Pro](../purchases/android.md) وتنزيل [خرائط ويكيبيديا](../plugins/wikipedia.md).
 :::
 
 
-## تمكين الطبقة {#enable-layer}
+## تفعيل الطبقة {#enable-layer}
 
 <InfoAndroidOnly/>
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 **<Translate android="true" ids="android_button_seq"/>**. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![قائمة الأماكن الشهيرة](@site/static/img/map/popular_places/popular_places_menu.png)
+![قائمة الأماكن المشهورة](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
 </Tabs>
 
-تتوفر ميزة **الأماكن الشهيرة (ويكيبيديا)** في [قائمة تكوين الخريطة](./configure-map-menu.md). لعرض الأماكن الشهيرة مباشرة على الخريطة، قم بتمكين طبقة نقاط الاهتمام (POI) مع بيانات من ويكيبيديا باستخدام صور Wikidata.
+ميزة **الأماكن المشهورة (ويكيبيديا)** متاحة في [قائمة تخصيص الخريطة](./configure-map-menu.md). لعرض الأماكن المشهورة مباشرة على الخريطة، قم بتمكين طبقة نقاط الاهتمام مع بيانات من ويكيبيديا باستخدام صور ويكيداتا.
 
 قبل استخدام هذه الميزة:
 
-- تأكد من تمكين [مكون ويكيبيديا الإضافي](../plugins/wikipedia.md).
+- تأكد من تمكين [إضافة ويكيبيديا](../plugins/wikipedia.md).
 - قم بتنزيل بيانات ويكيبيديا لمنطقتك إذا كنت ترغب في استخدامها دون اتصال بالإنترنت.
 
 ### خيارات الطبقة
 
 بمجرد التمكين، تصبح الخيارات التالية متاحة:
 
-- **<Translate android="true" ids="poi_osmwiki"/>** – تبديل نقاط اهتمام ويكيبيديا على الخريطة.
+- **<Translate android="true" ids="poi_osmwiki"/>** – تبديل عرض نقاط اهتمام ويكيبيديا على الخريطة.
 
-- **مصدر نقطة الاهتمام** – التبديل بين:
+- **مصدر نقاط الاهتمام** – التبديل بين:
   - *وضع عدم الاتصال* (يجب تنزيل مقالات ويكيبيديا).
-  - *وضع الاتصال فقط* (يستخدم البيانات والصور المباشرة).
+  - *وضع الاتصال بالإنترنت فقط* (يستخدم البيانات والصور الحية).
 
-- **<Translate android="true" ids="shared_string_language"/>** – تحديد اللغة لأوصاف ويكيبيديا.
+- **<Translate android="true" ids="shared_string_language"/>** – حدد لغة أوصاف ويكيبيديا.
 
-- **<Translate android="true" ids="show_image_previews"/>** – إظهار الصور المصغرة من Wikidata بجوار نقاط الاهتمام.
+- **<Translate android="true" ids="show_image_previews"/>** – إظهار الصور المصغرة من ويكيداتا بجانب نقاط الاهتمام.
 
 يؤدي النقر على نقطة اهتمام على الخريطة إلى فتح [قائمة سياق نقطة الاهتمام](./map-context-menu.md)، حيث يمكنك عرض [الصور عبر الإنترنت](#online-photos) والوصول إلى [مقالات ويكيبيديا](../plugins/wikipedia.md) المرتبطة.
 
@@ -153,30 +153,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">  
 
-![قائمة سياق الصور عبر الإنترنت أندرويد](@site/static/img/map/popular_places/online_photos_android.png)
+![قائمة سياق الصور عبر الإنترنت للأندرويد](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![قائمة سياق الصور عبر الإنترنت iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![قائمة سياق الصور عبر الإنترنت للـ iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-هذا قسم ضمن [قائمة سياق نقطة الاهتمام](./map-context-menu.md) يعرض معاينة صور للمكان الشهير (ويكيبيديا) المحدد. يمكنك التمرير أفقيًا لتصفح الصور المتاحة، أو النقر على أي صورة لفتحها في [وضع ملء الشاشة](#gallery).
+هذا قسم داخل [قائمة سياق نقطة الاهتمام](./map-context-menu.md) يعرض معاينة للصور للمكان المشهور المحدد (ويكيبيديا). يمكنك التمرير أفقيًا لتصفح الصور المتاحة، أو النقر على أي صورة لفتحها في [وضع ملء الشاشة](#gallery).
 
-تعرف على المزيد حول الخيارات الإضافية في قسم [الإجراءات](#actions) و[المعرض](#gallery).
+تعرف على المزيد حول الخيارات الإضافية في قسمي [الإجراءات](#actions) و[المعرض](#gallery).
 
 
-<!--
+<!-- 
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
-- Tap any photo to view it in fullscreen.
+- Tap any photo to view it in fullscreen.  
 - Swipe to browse more images.
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
@@ -185,11 +185,11 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### الإجراءات {#actions}
 
-في قائمة سياق الخريطة كيفية الوصول:
+في قائمة سياق الخريطة، كيفية الوصول:
 
-- انقر على زر **إظهار الكل** (أندرويد) / **عرض الكل** (iOS) لفتح [المعرض](#gallery) في وضع ملء الشاشة، حيث يمكنك التمرير عبر جميع الصور المتاحة للموقع المحدد.
+- انقر على زر **عرض الكل** (Android) / **View All** (iOS) لفتح [المعرض](#gallery) في وضع ملء الشاشة، حيث يمكنك التمرير عبر جميع الصور المتاحة للموقع المحدد.
 
-- انقر على أي صورة لعرضها في [وضع ملء الشاشة](#gallery) والوصول إلى الإجراءات المتاحة:
+- انقر على أي صورة لعرضها في [ملء الشاشة](#gallery) والوصول إلى الإجراءات المتاحة:  
   **مشاركة**، **تفاصيل**، **فتح في المتصفح**، و**تنزيل**.
 
 
@@ -197,62 +197,62 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">  
 
-![قائمة المعرض - أندرويد](@site/static/img/map/gallery_menu_android.png)
-![قائمة المعرض - أندرويد](@site/static/img/map/gallery_menu_android_1.png)
+![قائمة المعرض – أندرويد](@site/static/img/map/gallery_menu_android.png)
+![قائمة المعرض – أندرويد](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![قائمة المعرض - iOS](@site/static/img/map/gallery_menu_ios.png)
-![قائمة المعرض - iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![قائمة المعرض – iOS](@site/static/img/map/gallery_menu_ios.png)
+![قائمة المعرض – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 
-يمكن لـ **قائمة المعرض** عرض ما يصل إلى **100 صورة** متعلقة بنقطة الاهتمام المحددة. يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر على صورة إلى فتح عرض تفصيلي يظهر: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
+يمكن لـ **قائمة المعرض** عرض ما يصل إلى **١٠٠ صورة** تتعلق بنقطة الاهتمام المحددة. يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر لفترة وجيزة على صورة ما إلى فتح عرض تفصيلي يوضح: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
 
 يمكنك أيضًا تنفيذ الإجراءات التالية على كل صورة:
 
-- **مشاركة**
-  شارك الصورة المحددة باستخدام أي تطبيق متوافق مثبت على جهازك (مثل المراسلة، البريد الإلكتروني، أو وسائل التواصل الاجتماعي). يتضمن المحتوى المشترك الصورة ورابط مصدرها (إذا كان متاحًا).
+- **مشاركة**  
+  شارك الصورة المحددة باستخدام أي تطبيق متوافق مثبت على جهازك (مثل تطبيقات المراسلة أو البريد الإلكتر الإلكتروني أو وسائل التواصل الاجتماعي). يتضمن المحتوى المشترك الصورة ورابط مصدرها (إن وجد).
 
-- **تفاصيل**
-  افتح عرضًا تفصيليًا يظهر بيانات تعريف حول الصورة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*.
+- **تفاصيل**  
+  افتح عرضًا تفصيليًا يعرض البيانات الوصفية حول الصورة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*.
 
-- **فتح في المتصفح**
-  قم بتشغيل صفحة مصدر الصورة (عادةً على [Wikimedia Commons](https://commons.wikimedia.org/)) في متصفحك الافتراضي. يتيح لك ذلك عرض الصورة بالكامل، ومعلومات الترخيص، والمحتوى ذي الصلة.
+- **فتح في المتصفح**  
+  شغّل صفحة مصدر الصورة (عادةً على [ويكيميديا كومنز](https://commons.wikimedia.org/)) في متصفحك الافتراضي. يتيح لك هذا عرض الصورة الكاملة ومعلومات الترخيص والمحتوى ذي الصلة.
 
-- **تنزيل**
-  احفظ الصورة في مساحة تخزين جهازك. يمكن العثور على الصورة التي تم تنزيلها في مجلد التنزيلات الافتراضي لجهازك والوصول إليها دون اتصال بالإنترنت.
+- **تنزيل**  
+  احفظ الصورة في مساحة تخزين جهازك. يمكن العثور على الصورة التي تم تنزيلها في مجلد التنزيلات الافتراضي بجهازك والوصول إليها دون اتصال بالإنترنت.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">  
 
 لا يتضمن إصدار أندرويد قائمة إضافية لإجراءات الصور.
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![iOS - خيارات قائمة السياق](@site/static/img/map/gallery_menu_ios_3.png)
 
-على **iOS**، يؤدي الضغط المطول على الصورة إلى فتح قائمة سياق مع إجراءات إضافية:
+في **iOS**، يؤدي الضغط المطول على الصورة إلى فتح قائمة سياق تحتوي على إجراءات إضافية:
 
-- **تفاصيل**
-- **فتح في المتصفح**
+- **تفاصيل**  
+- **فتح في المتصفح**  
 - **تنزيل**
 
 **الأزرار**:
 
-- يتيح لك زر **المشاركة** مشاركة الصورة المحددة بسرعة.
-- يوفر زر **النقاط الثلاث** الوصول إلى إجراءات إضافية، بما في ذلك عرض التفاصيل، وفتح المصدر في المتصفح، أو تنزيل الصورة.
+- يتيح لك زر **المشاركة** مشاركة الصورة المحددة بسرعة.  
+- توفر **قائمة النقاط الثلاث** الوصول إلى إجراءات إضافية، بما في ذلك عرض التفاصيل أو فتح المصدر في متصفح أو تنزيل الصورة.
 
 </TabItem>
 
@@ -261,32 +261,32 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">  
 
-![أندرويد - عرض التفاصيل](@site/static/img/map/gallery_menu_android_2.png)
+![أندرويد – عرض التفاصيل](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![iOS - عرض التفاصيل](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – عرض التفاصيل](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر شاشة **التفاصيل** بيانات تعريف كاملة للصورة المحددة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*.
+توفر شاشة **التفاصيل** بيانات وصفية كاملة للصورة المحددة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*.
 
 
 ## مقالات ذات صلة
 
 - [قائمة سياق الخريطة](./map-context-menu.md)
-- [تكوين الخريطة](./configure-map-menu.md)
-- [البحث عن نقطة اهتمام](../search/search-poi.md)
-- [مكون ويكيبيديا الإضافي](../plugins/wikipedia.md)
+- [تخصيص الخريطة](./configure-map-menu.md)
+- [البحث عن نقاط الاهتمام](../search/search-poi.md)
+- [إضافة ويكيبيديا](../plugins/wikipedia.md)
 
 
-> *آخر تحديث: يوليو 2025*
+
 
 
 <!--
@@ -294,15 +294,15 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png) ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png) ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
@@ -316,7 +316,7 @@ How to access:
 
 - Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
 
-- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.
+- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
 
 In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap.
 
@@ -324,15 +324,15 @@ In the **Online photos** section of the map context menu, you can access photos 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png) ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png) ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -344,13 +344,13 @@ The gallery can display up to 100 items. You can browse through all the photos, 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
 
 </TabItem>
 
@@ -362,20 +362,20 @@ On iOS, long tapping on any photo opens an additional menu with actions such as 
 
 Buttons:
 
-- The **Share** button allows you to share the selected item.
+- The **Share** button allows you to share the selected item.  
 - The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0c3b5e8e7cf6ef6e151b2af4c26f3e274170841399bcaf73871ab607bf13fd43
+source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
@@ -21,12 +21,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 De functie **Populaire Plaatsen** in OsmAnd markeert opmerkelijke bezienswaardigheden en attracties met behulp van open gestructureerde gegevens van [Wikidata](https://www.wikidata.org) en [Wikipedia](https://www.wikipedia.org/). Het helpt gebruikers bekende bestemmingen te verkennen met meertalige beschrijvingen en foto's.
 
-Elke plaats die in deze functie is opgenomen, is gekoppeld aan een **Wikidata ID**, waardoor OsmAnd geverifieerde namen, voorbeeldafbeeldingen en links naar Wikipedia-artikelen kan weergeven. Deze tool toont **niet** alle OpenStreetMap (OSM) punten. Het is beperkt tot POI's met Wikidata-referenties.
+Elke plaats in deze functie is gekoppeld aan een **Wikidata ID**, waarmee OsmAnd geverifieerde namen, voorbeeldafbeeldingen en links naar Wikipedia-artikelen kan weergeven. Deze tool toont **niet** alle OpenStreetMap (OSM) punten. Het is beperkt tot POI's met Wikidata-referenties.
 
-Momenteel omvat de samengestelde database ongeveer **50.000 tot 150.000 best beoordeelde plaatsen** wereldwijd, geselecteerd uit meer dan **1 miljoen** Wikidata + OSM-objecten.
+Momenteel bevat de samengestelde database wereldwijd ongeveer **50.000 tot 150.000 best beoordeelde plaatsen**, geselecteerd uit meer dan **1 miljoen** Wikidata + OSM-objecten.
 
 :::note
-*Dit is de eerste versie van de functie Populaire Plaatsen. Feedback is welkom op [GitHub](https://github.com)*.
+*Dit is de eerste versie van de functie Populaire Plaatsen. Feedback is welkom op [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -44,11 +44,11 @@ Momenteel omvat de samengestelde database ongeveer **50.000 tot 150.000 best beo
 
 **Populaire Plaatsen** zijn gebaseerd op gestructureerde inhoud van [Wikidata](https://www.wikidata.org) en [Wikipedia](https://www.wikipedia.org/).
 
-Alleen POI's met een gekoppelde **Wikidata ID** worden weergegeven. Deze ID's verbinden kaartobjecten met geverifieerde namen, beschrijvingen en afbeeldingen.
+Alleen POI's met een gekoppeld **Wikidata ID** worden weergegeven. Deze ID's verbinden kaartobjecten met geverifieerde namen, beschrijvingen en afbeeldingen.
 
 U kunt de Wikidata-link direct bekijken in het [Kaartcontextmenu](../map/map-context-menu.md). Door op de Wikidata-tag te tikken, wordt de volledige objectpagina op de Wikidata-website geopend.
 
-Leer hoe u een Wikidata ID kunt vinden: [Wikipedia: Een Wikidata ID vinden](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Leer hoe u een Wikidata ID kunt vinden: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Hoe te gebruiken {#how-to-use}
@@ -57,19 +57,19 @@ Leer hoe u een Wikidata ID kunt vinden: [Wikipedia: Een Wikidata ID vinden](http
 
 De functie **Populaire Plaatsen** omvat zowel een samengestelde lijst van nabijgelegen bezienswaardigheden als een laag van op Wikipedia gebaseerde POI's op de kaart.
 
-Er zijn twee belangrijke manieren om toegang te krijgen tot deze functie:
+Er zijn twee manieren om deze functie te gebruiken:
 
 - **Gratis versie**  
-  Toegang via [Zoeken](#explore-in-search) om nabijgelegen plaatsen in lijstweergave te verkennen.  
+  Toegang via [Zoeken](#explore-in-search) om nabijgelegen plaatsen in een lijstweergave te verkennen.  
   *<Translate android="true" ids="android_button_seq"/>*. Ga naar: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
 - **Betaalde versies** *(Maps+ en OsmAnd Pro)*  
-  Schakel de visuele overlay in via [Kaart configureren](#enable-layer).  
+  Schakel de visuele laag in via [Kaart configureren](#enable-layer).  
   *<Translate android="true" ids="android_button_seq"/>*. Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   In deze modus verschijnen populaire POI's direct op de kaart met miniatuurvoorbeelden en Wikipedia-inhoud.
 
-  U kunt schakelen tussen **online** en **offline** Wikipedia-bronnen in de overlay-instellingen. Meer informatie vindt u in [Laag inschakelen](#enable-layer).
+  U kunt schakelen tussen **online** en **offline** Wikipedia-bronnen in de instellingen van de laag. Lees meer in [Laag inschakelen](#enable-layer).
 
 
 ## Verkennen in Zoeken {#explore-in-search}
@@ -89,21 +89,21 @@ Ga naar: *<Translate android="true" ids="map_widget_search,shared_string_explore
 
 </Tabs>
 
-De sectie **<Translate android="true" ids="popular_places_nearby"/>** toont een scrollbare lijst met topbezienswaardigheden in de buurt van uw huidige locatie. Elk item omvat:
+Het gedeelte **<Translate android="true" ids="popular_places_nearby"/>** toont een scrollbare lijst van best beoordeelde bezienswaardigheden in de buurt van uw huidige locatie. Elk item bevat:
 
 - Naam van de plaats.
 - Korte beschrijving.
-- POI-categorie-tag.
+- POI-categorielabel.
 - Afstand en richting.
 - Miniatuurafbeelding (indien beschikbaar).
 
-Tik op **Alles tonen** om de volledige lijst te bekijken, of op **Op kaart tonen** om alle vermelde POI's op de kaart weer te geven.
+Tik op **Alles tonen** om de volledige lijst te bekijken, of op **Toon op kaart** om alle vermelde POI's op de kaart weer te geven.
 
 Door op een plaats te tikken, wordt het [POI-contextmenu](./map-context-menu.md) geopend, waar u foto's kunt bekijken en toegang krijgt tot gerelateerde [Wikipedia-inhoud](../plugins/wikipedia.md).
 
 :::tip
-De zoekgebaseerde Verkenmodus werkt **alleen online** in de gratis versie.  
-Om deze **offline** te gebruiken, hebt u een [Maps+ of OsmAnd Pro](../purchases/android.md) abonnement en gedownloade [Wikipedia-kaarten](../plugins/wikipedia.md) nodig.
+De op zoeken gebaseerde Verkenmodus werkt **alleen online** in de gratis versie.  
+Om het **offline** te gebruiken, heeft u een [Maps+ of OsmAnd Pro](../purchases/android.md) abonnement en gedownloade [Wikipedia-kaarten](../plugins/wikipedia.md) nodig.
 :::
 
 
@@ -123,7 +123,7 @@ Om deze **offline** te gebruiken, hebt u een [Maps+ of OsmAnd Pro](../purchases/
 
 </Tabs>
 
-De functie **Populaire Plaatsen (Wikipedia)** is beschikbaar in het menu [Kaart configureren](./configure-map-menu.md). Om populaire plaatsen direct op de kaart weer te geven, schakelt u de POI-laag in met gegevens van Wikipedia met behulp van Wikidata-afbeeldingen.
+De functie **Populaire Plaatsen (Wikipedia)** is beschikbaar in het menu [Kaart configureren](./configure-map-menu.md). Om populaire plaatsen direct op de kaart weer te geven, schakelt u de POI-laag in met gegevens van Wikipedia en afbeeldingen van Wikidata.
 
 Voordat u deze functie gebruikt:
 
@@ -134,10 +134,10 @@ Voordat u deze functie gebruikt:
 
 Eenmaal ingeschakeld, worden de volgende opties beschikbaar:
 
-- **<Translate android="true" ids="poi_osmwiki"/>** – Schakel Wikipedia POI's op de kaart in/uit.
+- **<Translate android="true" ids="poi_osmwiki"/>** – Schakel Wikipedia POI's op de kaart in of uit.
 
 - **POI-bron** – Schakel tussen:
-  - *Offlinemodus* (Wikipedia-artikelen moeten worden gedownload).
+  - *Offline-modus* (Wikipedia-artikelen moeten gedownload zijn).
   - *Alleen online* modus (gebruikt live gegevens en afbeeldingen).
 
 - **<Translate android="true" ids="shared_string_language"/>** – Selecteer de taal voor Wikipedia-beschrijvingen.
@@ -155,19 +155,21 @@ Door op een POI op de kaart te tikken, wordt het [POI-contextmenu](./map-context
 
 <TabItem value="android" label="Android">  
 
-![Online foto's contextmenu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Contextmenu Online foto's Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online foto's contextmenu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Contextmenu Online foto's iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 Dit is een sectie binnen het [POI-contextmenu](./map-context-menu.md) die een fotovoorbeeld van de geselecteerde Populaire Plaats (Wikipedia) weergeeft. U kunt horizontaal scrollen om door de beschikbare foto's te bladeren, of op een afbeelding tikken om deze in [volledig scherm](#gallery) te openen.
+
+Lees meer over extra opties in de secties [Acties](#actions) en [Galerij](#gallery).
 
 
 <!-- 
@@ -183,9 +185,9 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### Acties {#actions}
 
-In het kaartcontextmenu Hoe te openen:
+Hoe te openen in het Kaartcontextmenu:
 
-- Tik op de knop **Alles tonen** (Android) / **Alles bekijken** (iOS) om de [galerij](#gallery) in volledig scherm te openen, waar u door alle beschikbare foto's voor de geselecteerde locatie kunt vegen.
+- Tik op de knop **Alles tonen** (Android) / **Bekijk alles** (iOS) om de [galerij](#gallery) in volledig scherm te openen, waar u door alle beschikbare foto's voor de geselecteerde locatie kunt vegen.
 
 - Tik op een foto om deze in [volledig scherm](#gallery) te bekijken en toegang te krijgen tot de beschikbare acties:  
   **Delen**, **Details**, **Openen in browser** en **Downloaden**.
@@ -212,21 +214,21 @@ In het kaartcontextmenu Hoe te openen:
 </Tabs>
 
 
-Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde punt van interesse. U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*  
+Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde nuttige punt. U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*  
 
 U kunt ook de volgende acties uitvoeren op elke foto:
 
 - **Delen**  
-  Deel de geselecteerde afbeelding met elke compatibele app die op uw apparaat is geïnstalleerd (bijv. berichten, e-mail of sociale media). De gedeelde inhoud omvat de afbeelding en de bronlink (indien beschikbaar).
+  Deel de geselecteerde afbeelding via een compatibele app die op uw apparaat is geïnstalleerd (bijv. berichten, e-mail of sociale media). De gedeelde inhoud bevat de afbeelding en de bronlink (indien beschikbaar).
 
 - **Details**  
-  Open een gedetailleerde weergave met metadata over de afbeelding, inclusief: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
+  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
 
 - **Openen in browser**  
-  Start de bronpagina van de afbeelding (meestal op [Wikimedia Commons](https://commons.wikimedia.org/)) in uw standaardbrowser. Hiermee kunt u de volledige afbeelding, licentie-informatie en gerelateerde inhoud bekijken.
+  Open de bronpagina van de afbeelding (meestal op [Wikimedia Commons](https://commons.wikimedia.org/)) in uw standaardbrowser. Hiermee kunt u de volledige afbeelding, licentie-informatie en gerelateerde inhoud bekijken.
 
 - **Downloaden**  
-  Sla de afbeelding op in de opslag van uw apparaat. De gedownloade afbeelding is te vinden in de standaardmap Downloads van uw apparaat en is offline toegankelijk.
+  Sla de afbeelding op in de opslag van uw apparaat. De gedownloade afbeelding is te vinden in de standaard Downloads-map van uw apparaat en is offline toegankelijk.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -241,7 +243,7 @@ De Android-versie bevat geen extra menu voor fotoacties.
 
 ![iOS - Contextmenu-opties](@site/static/img/map/gallery_menu_ios_3.png)
 
-Op **iOS** opent een lang indrukken van een foto een contextmenu met extra acties:
+Op **iOS** opent lang drukken op een foto een contextmenu met extra acties:
 
 - **Details**  
 - **Openen in browser**  
@@ -249,8 +251,8 @@ Op **iOS** opent een lang indrukken van een foto een contextmenu met extra actie
 
 **Knoppen**:
 
-- Met de knop **Delen** kunt u de geselecteerde afbeelding snel delen.  
-- Het **drie-stippenmenu** biedt toegang tot extra acties, waaronder het bekijken van details, het openen van de bron in een browser of het downloaden van de afbeelding.
+- Met de **Delen**-knop kunt u snel de geselecteerde afbeelding delen.  
+- Het **drie-punten-menu** geeft toegang tot extra acties, waaronder het bekijken van details, het openen van de bron in een browser of het downloaden van de afbeelding.
 
 </TabItem>
 
@@ -261,19 +263,19 @@ Op **iOS** opent een lang indrukken van een foto een contextmenu met extra actie
 
 <TabItem value="android" label="Android">  
 
-![Android – Detailsweergave](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Detailweergave](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – Detailsweergave](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Detailweergave](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Het scherm **Details** biedt volledige metadata voor de geselecteerde foto, inclusief: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
+Het **Details**-scherm biedt volledige metadata voor de geselecteerde foto, waaronder: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
 
 
 ## Gerelateerde artikelen
@@ -284,7 +286,7 @@ Het scherm **Details** biedt volledige metadata voor de geselecteerde foto, incl
 - [Wikipedia-plugin](../plugins/wikipedia.md)
 
 
-> *Laatst bijgewerkt: juli 2025*
+
 
 
 <!--

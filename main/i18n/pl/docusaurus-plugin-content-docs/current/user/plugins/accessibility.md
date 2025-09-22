@@ -1,7 +1,7 @@
 ---
-source-hash: f88b26c81cd85ceae10dd091bfd8f3587782fc1e066bd79fe00de8a7ce769b72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
-title: Dostępność
+title:  Ułatwienia dostępu
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,97 +15,97 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Uwaga
-Wtyczka Dostępność jest dostępna tylko w **wersji OsmAnd na Androida**. [Wersja na iOS](#how-to-use-ios) opiera się na domyślnych ustawieniach dostępności systemu.
+Wtyczka Ułatwienia dostępu jest dostępna tylko w wersji OsmAnd na **Androida**. [Wersja na iOS](#how-to-use-ios) opiera się na domyślnych ustawieniach ułatwień dostępu systemu.
 :::
 
 ## Przegląd {#overview}
 
-Dostępność poprawia użyteczność dla niewidomych i niedowidzących użytkowników poprzez integrację z narzędziami [Android Accessibility](https://www.android.com/accessibility/). Wtyczka oferuje **zamianę tekstu na mowę, sterowanie gestami, automatyczne ogłoszenia** i **haptyczne sprzężenie zwrotne**, aby nawigacja była bardziej dostępna. Na iOS, OsmAnd wykorzystuje wbudowane funkcje dostępności Apple, takie jak VoiceOver.
+Ułatwienia dostępu poprawiają użyteczność dla użytkowników niewidomych i niedowidzących dzięki integracji z narzędziami [Ułatwienia dostępu Androida](https://www.android.com/accessibility/). Wtyczka oferuje **zamianę tekstu na mowę, sterowanie gestami, automatyczne komunikaty** i **sygnały haptyczne**, aby nawigacja była bardziej dostępna. W systemie iOS OsmAnd wykorzystuje wbudowane funkcje ułatwień dostępu firmy Apple, takie jak VoiceOver.
 
 
 ### Jak używać (Android) {#how-to-use-android}
 
-![Dostępność](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Ułatwienia dostępu](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-***Włącz wtyczkę Dostępność:***
+***Włącz wtyczkę Ułatwienia dostępu:***  
 
-1. **Aktywuj wtyczkę**: *Menu → Wtyczki → Dostępność → Włącz*.
+1. **Aktywuj wtyczkę**: *Menu → Wtyczki → Ułatwienia dostępu → Włącz*.
 
-2. **Włącz tryb dostępności**:
-   - Przejdź do *Ustawień systemowych → Dostępność* na swoim urządzeniu z Androidem.
+2. **Włącz tryb ułatwień dostępu**:  
+   - Przejdź do *Ustawienia systemowe → Ułatwienia dostępu* na swoim urządzeniu z Androidem.
    - Włącz TalkBack lub inny czytnik ekranu.
 
-3. **Dostosuj ustawienia wtyczki**:
-   - Otwórz [Ustawienia dostępności](#plugin-settings) w aplikacji OsmAnd.
-   - Skonfiguruj funkcje, takie jak szybkość mowy, automatyczne ogłaszanie i haptyczne sprzężenie zwrotne.
+3. **Dostosuj ustawienia wtyczki**:  
+   - Otwórz [Ustawienia ułatwień dostępu](#plugin-settings) w aplikacji OsmAnd.
+   - Skonfiguruj funkcje, takie jak szybkość mowy, automatyczne komunikaty i sygnały haptyczne.
 
 <br/>
 
-***Funkcje i funkcjonalność:***
+***Cechy i funkcjonalność:***
 
 - **Sterowanie gestami**:
-   - Obsługuje wszystkie standardowe [gesty OsmAnd](../map/interact-with-map#gestures).
-   - Dostosowuje gesty do instrukcji **TalkBack** Androida.
+   - Obsługuje wszystkie standardowe [gesty OsmAnd](../map/interact-with-map.md#gestures).
+   - Dostosowuje gesty do instrukcji **TalkBack** systemu Android.
 
 - **Integracja z TalkBack**:
-   - Czytnik ekranu TalkBack oferuje wskazówki dźwiękowe do nawigacji i interakcji z menu.
+   - Czytnik ekranu TalkBack oferuje wskazówki dźwiękowe dotyczące nawigacji i interakcji z menu.
    - Dowiedz się więcej o gestach TalkBack [tutaj](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-- **Operacje w tle**. Dźwięk i haptyczne sprzężenie zwrotne działają nawet, gdy ekran jest wyłączony lub zablokowany.
+- **Działanie w tle**. Sygnały dźwiękowe i haptyczne działają nawet wtedy, gdy ekran jest wyłączony lub zablokowany.
 
-- **Działania przycisku kompasu**:
+- **Działania przycisku Kompas**:
 
-| Gest | Akcja | Odpowiednik TalkBack |
+| Gest | Akcja | Odpowiednik w TalkBack |
 |-----|-----|-----|
 | **Pojedyncze dotknięcie** | Obraca mapę na **Północ** | **Podwójne dotknięcie** |
 | **Długie dotknięcie** | Otwiera listę [orientacji mapy](../map/interact-with-map.md#map-orientation-modes) | **Podwójne dotknięcie i przytrzymanie** |
-| **Podwójne dotknięcie** | *Niedostępne w trybie Dostępności* | *Nieobsługiwane* |
+| **Podwójne dotknięcie** | *Niedostępne w trybie ułatwień dostępu* | *Nieobsługiwane* |
 
 
 ### Jak używać (iOS) {#how-to-use-ios}
 
-Wersja OsmAnd na iOS wykorzystuje **wbudowane narzędzia dostępności** systemu.
+Wersja OsmAnd na iOS wykorzystuje **wbudowane w system narzędzia ułatwień dostępu**.
 
 1. **Włącz VoiceOver**:
-   - Przejdź do *Ustawień → Dostępność → VoiceOver*.
+   - Przejdź do *Ustawienia → Dostępność → VoiceOver*.
    - Skonfiguruj **gesty VoiceOver** do użytku z OsmAnd.
 
 2. **Obsługiwane funkcje**:
    - **Obsługa czytnika ekranu** dla interakcji z mapą.
    - **Konfigurowalne gesty** poprzez ustawienia iOS.
-   - Dostępne są wszystkie standardowe [gesty OsmAnd](../map/interact-with-map#gestures).
+   - Dostępne są wszystkie standardowe [gesty OsmAnd](../map/interact-with-map.md#gestures).
 
 3. **Dowiedz się więcej**:
-   - Przeczytaj o funkcjach dostępności wzrokowej iOS [tutaj](https://www.apple.com/accessibility/vision/).
-   - Przeglądaj gesty VoiceOver dla iPhone'a [tutaj](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
+   - Przeczytaj o funkcjach ułatwień dostępu dla wzroku w iOS [tutaj](https://www.apple.com/accessibility/vision/).
+   - Poznaj gesty VoiceOver dla iPhone'a [tutaj](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
-## Wymagane parametry konfiguracji {#required-setup-parameters}
+## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
-Aby aktywować funkcje dostępności urządzenia w OsmAnd, należy dokonać następujących ustawień:
+Aby aktywować funkcje ułatwień dostępu urządzenia w OsmAnd, należy wprowadzić następujące ustawienia:
 
-1. **Włącz** [wtyczkę Dostępność](../plugins/index.md#enable--disable): *Menu → Wtyczki → Dostępność → Włącz*.
-2. **Włącz tryb dostępności** na swoim urządzeniu.
-3. Skonfiguruj [ustawienia](#plugin-settings) wtyczki Dostępność.
+1. **Włącz** [wtyczkę Ułatwienia dostępu](../plugins/index.md#enable--disable): *Menu → Wtyczki → Ułatwienia dostępu → Włącz*.  
+2. **Włącz tryb ułatwień dostępu** na swoim urządzeniu.
+3. Skonfiguruj [ustawienia](#plugin-settings) wtyczki Ułatwienia dostępu.
 
 
 ## Ustawienia wtyczki {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Dostępność](@site/static/img/plugins/Accessibility/access_.png)
+![Ułatwienia dostępu](@site/static/img/plugins/Accessibility/access_.png)  
 
-Wtyczka Dostępność oferuje różne ustawienia, aby spersonalizować nawigację i interakcję dla użytkowników z niepełnosprawnościami. Ustawienia te są stosowane dla każdego [profilu](../personal/profiles.md) w OsmAnd.
+Wtyczka Ułatwienia dostępu oferuje różne ustawienia personalizacji nawigacji i interakcji dla użytkowników z niepełnosprawnościami. Ustawienia te są stosowane dla każdego [profilu](../personal/profiles.md) w OsmAnd.
 
-| Ustawienie | Opis |
-|---------------------------|-------------|
-| **Tryb dostępności** | Włącza *wbudowane funkcje OsmAnd* lub używa **ustawień systemowych**. |
-| **Szybkość mowy** | Kontroluje *szybkość zamiany tekstu na mowę*, w zakresie od **50% do 200%**. |
-| [Inteligentne automatyczne ogłaszanie](#smart-autoannounce-and-clockwise-directions) | Zapewnia *wskazówki głosowe* w przypadku odchylenia od trasy. |
-| **Okres automatycznego ogłaszania** | Ustawia minimalny czas między ogłoszeniami, od **5 sekund do 5 minut**. |
-| **Styl kierunku** | Wybierz między *Bocznym (8 kierunków)* lub [Zgodnie z ruchem wskazówek zegara](#smart-autoannounce-and-clockwise-directions) (12 kierunków)*. |
-| **Wskazówki dźwiękowe** | Odtwarza *wskazówki dźwiękowe* wskazujące kierunek. |
-| **Wskazówki haptyczne** | Zapewnia *wibracyjne sprzężenie zwrotne* dla zakrętów i odchyleń. |
+| Ustawienie                   | Opis |  
+|---------------------------|-------------|  
+| **Tryb ułatwień dostępu**    | Włącza *wbudowane funkcje OsmAnd* lub używa **ustawień systemowych**. |  
+| **Szybkość mowy**           | Kontroluje *szybkość zamiany tekstu na mowę* w zakresie od **50% do 200%**. |  
+| [Inteligentne automatyczne komunikaty](#smart-autoannounce-and-clockwise-directions)    | Zapewnia *wskazówki głosowe* w przypadku zboczenia z trasy. |  
+| **Okres automatycznych komunikatów**   | Ustawia minimalny czas między komunikatami, od **5 sekund do 5 minut**. |  
+| **Styl kierunku**       | Wybierz pomiędzy *Na boki (8 kierunków)* lub [Zegarowe](#smart-autoannounce-and-clockwise-directions) (12 kierunków)*. |  
+| **Kierunki dźwiękowe**      | Odtwarza *wskazówki dźwiękowe* wskazujące kierunek. |  
+| **Kierunki haptyczne**     | Zapewnia *informacje zwrotne w postaci wibracji* przy skrętach i odchyleniach od trasy.|  
 
 <!--
 - **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
@@ -125,28 +125,26 @@ Wtyczka Dostępność oferuje różne ustawienia, aby spersonalizować nawigacj�
 
 <br/>
 
-***Wskazówki dotyczące zoptymalizowanej dostępności:***
+***Wskazówki dotyczące zoptymalizowanych ułatwień dostępu:***
 
-- **Czytnik ekranu** - Użyj TalkBack (*Android*) lub VoiceOver (*iOS*) dla ulepszonej interakcji z mapą.
-- **Nawigacja dźwiękowa** - Włącz automatyczne ogłaszanie, aby otrzymywać wskazówki głosowe, gdy ekran jest wyłączony.
-- **Sprzężenie zwrotne haptyczne** - Idealne w warunkach słabej widoczności lub gdy wskazówki dźwiękowe są niepraktyczne.
+- **Czytnik ekranu** - Użyj TalkBack (*Android*) lub VoiceOver (*iOS*) dla lepszej interakcji z mapą.
+- **Nawigacja dźwiękowa** - Włącz automatyczne komunikaty, aby otrzymywać wskazówki głosowe, gdy ekran jest wyłączony.
+- **Sygnały haptyczne** - Idealne w warunkach słabej widoczności lub gdy wskazówki dźwiękowe są niepraktyczne.
 
 
-#### Inteligentne automatyczne ogłaszanie i kierunki zgodne z ruchem wskazówek zegara {#smart-autoannounce-and-clockwise-directions}
+### Inteligentne automatyczne komunikaty i kierunki zegarowe {#smart-autoannounce-and-clockwise-directions}
 
-Funkcja **Inteligentne automatyczne ogłaszanie** zapewnia *powiadomienia dźwiękowe*, gdy odchylisz się od zaplanowanej trasy, podczas gdy **Styl kierunku zgodny z ruchem wskazówek zegara** oferuje *wskazówki nawigacyjne oparte na tarczy zegara*. Funkcje te zostały zaprojektowane, aby wspierać użytkowników niedowidzących, którzy polegają na *wskazówkach głosowych*.
+Funkcja **Inteligentne automatyczne komunikaty** zapewnia *powiadomienia dźwiękowe*, gdy zboczysz z zaplanowanej trasy, podczas gdy **Styl kierunku zegarowego** oferuje *wskazówki nawigacyjne oparte na tarczy zegara*. Funkcje te mają na celu wspieranie użytkowników niedowidzących, którzy polegają na *wskazówkach głosowych*.  
 
-- Jeśli **TalkBack nie jest włączony**, zarówno *Inteligentne automatyczne ogłaszanie*, jak i *Kierunki zgodne z ruchem wskazówek zegara* będą wyświetlać tylko *powiadomienia tekstowe* na ekranie.
+- Jeśli **TalkBack nie jest włączony**, zarówno *Inteligentne automatyczne komunikaty*, jak i *Kierunki zegarowe* będą wyświetlać tylko *powiadomienia tekstowe* na ekranie.  
 
-- **Powiadomienia głosowe** są aktywowane tylko, gdy *TalkBack* jest włączony w **ustawieniach systemowych urządzenia**.
+- **Powiadomienia głosowe** są aktywowane tylko wtedy, gdy *TalkBack* jest włączony w **ustawieniach systemowych urządzenia**.  
 
-- Ustaw **Okres automatycznego ogłaszania** (np. *10 sekund*), aby kontrolować częstotliwość ogłoszeń.
+- Ustaw **Okres automatycznych komunikatów** (np. *10 sekund*), aby kontrolować częstotliwość komunikatów.
 
 
 ## Powiązane artykuły {#related-articles}
 
 - [Interakcja z mapą](../../user/map/interact-with-map.md)
 - [Ustawienia globalne](../../user/personal/global-settings.md)
-- [Mapy wektorowe (style map)](../../user/map/vector-maps.md)
-
-> *Ostatnia aktualizacja: luty 2025*
+- [Mapy wektorowe (Style mapy)](../../user/map/vector-maps.md)

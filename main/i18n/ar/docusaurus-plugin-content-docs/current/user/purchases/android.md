@@ -1,7 +1,7 @@
 ---
-source-hash: a3158ee1cc84980e8205c232f84806b0b5bd52fe3316734021239fb76dd217df
+source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
 sidebar_position: 1
-title:  مشتريات أندرويد
+title:  عمليات الشراء في أندرويد
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,31 +13,33 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+
+
 ## تثبيت OsmAnd (أندرويد) {#install-osmand-android}
 
 لأجهزة أندرويد، يمكنك تنزيل الإصدارين **المجاني** و**المدفوع** من التطبيق من المتاجر التالية:
 
-- [جوجل بلاي](https://play.google.com/store/apps/dev?id=8483587772816822023)
-- [هواوي آب غاليري](https://appgallery.huawei.com/#/app/C101486545)
-- أمازون لم يعد متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
+- [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
+- لم يعد متجر أمازون متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
 
 **إصدارات تطبيق OsmAnd:**
 
-| التطبيق | جوجل بلاي | هواوي آب غاليري | مجاني / مدفوع |
+| التطبيق | Google Play | Huawei AppGallery | مجاني / مدفوع |
 | :------------- | :------------- | :------------- | :------------- |
-| ![الخرائط+](@site/static/img/svg/osmand_maps.svg) OsmAnd | ✔ &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[تثبيت](https://appgallery.huawei.com/#/app/C101486545) | مجاني |
-| ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+ | ✔ &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | مدفوع |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[تثبيت](https://appgallery.huawei.com/#/app/C101486545) | مجاني |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | مدفوع |
 
-**أنواع المشتريات:**
+**أنواع عمليات الشراء:**
 
-| الشراء | جوجل بلاي | هواوي آب غاليري | التطبيق |
+| الشراء | Google Play | Huawei AppGallery | التطبيق |
 | :------------- | :------------- | :------------- | :------------- |
-| ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) الخرائط+ داخل التطبيق | ✔ | ✔ | OsmAnd |
-| ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) اشتراك الخرائط+ | ✔ | ✔ | OsmAnd |
-| ![برو](@site/static/img/svg/pro_icon.svg) اشتراك OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Maps+ داخل التطبيق | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) اشتراك Maps+ | ✔ | ✔ | OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) اشتراك OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 <!--
-### أنواع الاشتراكات {#types-of-subscriptions}
+### Types of subscriptions {#types-of-subscriptions}
 
 #### OsmAnd Start {#osmand-start}
 
@@ -49,36 +51,40 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 -->
 
-### الفرق بين المشتريات (أندرويد) {#difference-between-purchases-android}
+
+### الفرق بين عمليات الشراء (أندرويد) {#difference-between-purchases-android}
 
 | الخطة | الوصف | التوفر | ملاحظات |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **خطة مجانية** توفر الوصول إلى [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) لـ *المفضلة*، *الإعدادات*، و*تحرير/ملاحظات OSM*. | متاحة لجميع مستخدمي الإصدار المجاني من OsmAnd. | تقتصر على ميزات السحابة الأساسية و**5 ميجابايت** من التخزين. |
-| ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **تطبيق مدفوع منفصل** يتضمن ميزات متقدمة. | متاح على [جوجل بلاي](https://play.google.com/store/apps/details?id=net.osmand.plus). | يمكن إضافته إلى [مكتبة عائلة جوجل بلاي](https://support.google.com/googleplay/answer/7007852?hl=en). |
-| ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) **الخرائط+** | **شراء داخل التطبيق** أو **اشتراك** لتطبيق OsmAnd المجاني، يفتح نفس الميزات مثل OsmAnd+. | متاح على [جوجل بلاي](https://play.google.com/store/apps/details?id=net.osmand) و[هواوي آب غاليري](https://appgallery.huawei.com/#/app/C101486545). | متطابق في الميزات والتسعير مع OsmAnd+. |
-| ![برو](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح ميزات متقدمة و[ميزات احترافية](#pro-features) إضافية. | متاح على [جوجل بلاي](https://play.google.com/store/apps/dev?id=8483587772816822023) و[هواوي آب غاليري](https://appgallery.huawei.com/#/app/C101486545). | يدعم الوصول **عبر الأنظمة الأساسية** (انظر الملاحظة أدناه). |
+| **OsmAnd Start** | خطة **مجانية** توفر الوصول إلى [سحابة OsmAnd](../personal/osmand-cloud.md#osmand-start) من أجل *المفضلة*، و*الإعدادات*، و*تعديلات/ملاحظات OSM*. | متاحة لجميع مستخدمي إصدار OsmAnd المجاني. | محدودة بميزات السحابة الأساسية وسعة تخزين **٥ ميجابايت**. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | تطبيق **مدفوع منفصل** يتضمن ميزات متقدمة. | متوفر على [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | يمكن إضافته إلى [مكتبة العائلة في Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **عملية شراء داخل التطبيق** أو **اشتراك** لتطبيق OsmAnd المجاني، مما يفتح نفس ميزات OsmAnd+. | متوفر على [Google Play](https://play.google.com/store/apps/details?id=net.osmand) و [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | مطابق في الميزات والتسعير لـ OsmAnd+. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | خطة **اشتراك** تفتح ميزات متقدمة و[احترافية](#pro-features) إضافية. | متوفر على [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) و [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | يوفر وصولاً كاملاً لميزات سحابة OsmAnd. |
 
 ### ملاحظات هامة {#important-notes}
 
-1. تقدم **OsmAnd+** و**الخرائط+** نفس الميزات. الفرق الوحيد هو أن OsmAnd+ هو **تطبيق مدفوع منفصل**، بينما الخرائط+ هو **اشتراك أو شراء داخل التطبيق**.
+١. **OsmAnd+** و **Maps+** يقدمان نفس الميزات. الفرق الوحيد هو أن OsmAnd+ هو **تطبيق مدفوع منفصل**، بينما Maps+ هو **اشتراك أو عملية شراء داخل التطبيق**.
 
-2. لا يدعم **أندرويد أوتو** إلا OsmAnd الذي تم تنزيله من **جوجل بلاي**. وهو **غير متاح** للخرائط+ التي تم تنزيلها من *هواوي آب غاليري*.
+٢. **Android Auto** مدعوم فقط لتطبيق OsmAnd الذي تم تنزيله من **Google Play**. وهو **غير متاح** لـ Maps+ الذي تم تنزيله من *Huawei AppGallery*.
 
-3. **OsmAnd Pro هو اشتراك *عبر الأنظمة الأساسية***. هذا يعني أنه يمكنك شراؤه من متجر واحد (مثل *جوجل بلاي، هواوي آب غاليري، آب ستور*، و*osmand.net*) واستعادته في متجر آخر عن طريق [ربط مشترياتك بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+٣. **OsmAnd Pro**، و **OsmAnd+**، و **Maps+** هي عمليات شراء *متعددة المنصات*. هذا يعني أنه يمكنك شراؤها في متجر واحد (على سبيل المثال، *Google Play، Huawei AppGallery، AppStore*، و *osmand.net*) واستعادتها في متجر آخر عن طريق [ربط عملية الشراء بحساب سحابة OsmAnd](../personal/osmand-cloud.md#cross-platform).
 
-4. يمكنك إضافة **OsmAnd+** إلى **[مكتبة عائلة جوجل بلاي](https://support.google.com/googleplay/answer/7007852?hl=en)** لمشاركة الشراء مع أفراد العائلة.
+٤. يمكنك إضافة **OsmAnd+** إلى **[مكتبة العائلة في Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** لمشاركة عملية الشراء مع أفراد العائلة.
+
 
 ## الأسعار {#prices}
 
-في القائمة، توجد معلومات حول أسعار منتج OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، الأسعار مكافئة بالعملات المحلية.
+في القائمة، توجد معلومات حول أسعار منتجات OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، تكون الأسعار معادلة بالعملات المحلية.
 
 <!--
 
-:::danger أسعار تخفيضات الصيف
+:::danger September Sale prices
 
-*أسرع! هذا العرض متاح فقط حتى* **6 أغسطس (23:00 بتوقيت وسط أوروبا)**.
+*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
 
 :::
+
+
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -89,159 +95,164 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 -->
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+
+|    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![الخرائط+](@site/static/img/svg/osmand_maps.svg) | ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) | ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) | ![برو](@site/static/img/svg/pro_icon.svg) |
-| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
-| **السعر (يورو)** | 0 يورو | 39.99 يورو | 9.99 يورو | 2.99 يورو / 29.99 يورو |
-| **السعر (دولار أمريكي)** | 0 دولار | 39.99 دولار | 9.99 دولار | 2.99 دولار / 29.99 دولار |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |
+| **السعر (يورو)** | ٠ يورو | ٣٩٬٩٩ يورو | ٩٬٩٩ يورو | ٢٬٩٩ يورو / ٢٩٬٩٩ يورو |
+| **السعر (دولار أمريكي)** | ٠ دولار | ٣٩٬٩٩ دولار | ٩٬٩٩ دولار | ٢٬٩٩ دولار / ٢٩٬٩٩ دولار |
+
 
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
 
-يقدم تطبيق OsmAnd مجموعة واسعة من الميزات والأدوات، والعديد منها متاح مجانًا.
+يقدم تطبيق OsmAnd مجموعة واسعة من الميزات والأدوات، والكثير منها متاح مجانًا.
 
-يوضح الجدول أدناه الميزات المتضمنة في كل من الحزم المجانية والمدفوعة من OsmAnd، بالإضافة إلى أسعارها الخاصة.
+يوضح الجدول أدناه تفاصيل الميزات المضمنة في كل من الحزم المجانية والمدفوعة من OsmAnd، إلى جانب أسعار كل منها.
 
-| | OsmAnd مجاني | [OsmAnd+](#install-osmand-android) <br/> [الخرائط+](#install-osmand-android) (داخل التطبيق والاشتراك) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd مجاني | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (داخل التطبيق واشتراك) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
-| | ![الخرائط+](@site/static/img/svg/osmand_maps.svg) | ![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) | ![برو](@site/static/img/svg/pro_icon.svg) |
-| | | | |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
+|  |  |  |  |
 | [الوصول بدون إعلانات](#free-and-paid-features) | بدون إعلانات | بدون إعلانات | بدون إعلانات |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | [بدء](../personal/osmand-cloud.md#osmand-start) | [بدء](../personal/osmand-cloud.md#osmand-start) | [برو](../personal/osmand-cloud.md) |
-| [جميع الميزات الاحترافية](#pro-features) | **-** | **-** | ✔ |
-| [إغاثة ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [تنزيلات خرائط غير محدودة](../start-with/download-maps.md) | <details><summary>**7 تنزيلات خرائط**</summary> - تنزيل أو تحديث الخريطة يعني فقط تنزيل-تحديث لخريطة بلد (منطقة). <br/> - **خريطة نظرة عامة على العالم**، **تصحيح ارتفاع العالم**، **خطوط الخرائط**، و**المطالبات الصوتية** لا تُحتسب ضمن 7 إمكانيات للتنزيل. </details> | ✔ | ✔ |
-| [تحديثات الخرائط الشهرية](../personal/maps-resources.md#update-maps)<br/>مرة واحدة شهريًا (بتأخير يومين) | <details><summary>**7 تنزيلات خرائط**</summary> تحديث الخريطة يُحتسب كتنزيل.</details> | ✔ | ✔ |
-| [تحديثات الخرائط كل ساعة](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (تأخير ساعة واحدة) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [أندرويد أوتو](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
+| [سحابة OsmAnd](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
+| [جميع ميزات Pro](#pro-features) | **-** | **-** | ✔ |
+| [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [تنزيلات خرائط غير محدودة](../start-with/download-maps.md) | <details><summary>**٧ تنزيلات للخرائط**</summary> - تنزيل الخريطة أو تحديثها يعني فقط تنزيل-تحديث خريطة بلد (منطقة). <br/> - **خريطة العالم العامة**، و**تصحيح الارتفاع العالمي**، و**خطوط الخرائط**، و**التوجيهات الصوتية** لا تُحتسب ضمن إمكانيات التنزيل السبع. </details> | ✔ | ✔ |
+| [تحديثات الخرائط الشهرية](../personal/maps-resources.md#updates-menu)<br/>مرة في الشهر (مع تأخير يومين) | <details><summary>**٧ تنزيلات للخرائط**</summary> يُحتسب تحديث الخريطة كتنزيل.</details> | ✔ | ✔ |
+| [تحديثات الخرائط كل ساعة](../personal/maps-resources.md#live-updates)<br/>تحديثات حية (تأخير ساعة واحدة) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [بيانات التضاريس](../plugins/topography.md#setup)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
-| [تصور المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
-| [أعماق بحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [أماكن شعبية (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |
-| [ويكيفوياج دون اتصال - أدلة سفر](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [الملاحة دون اتصال وعبر الإنترنت](../navigation/index.md)<br/>مع توجيهات خطوة بخطوة | ✔ | ✔ | ✔ |
-| [البحث الفوري دون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
-| [تسجيل الرحلات](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
+| [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [الأماكن المشهورة (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |
+| [ويكي رحلات بدون اتصال - أدلة السفر](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [الملاحة بدون اتصال وبالاتصال بالإنترنت](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
+| [بحث فوري بدون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
+| [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [تصدير مسارات GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
 | [استيراد مسارات GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [أداة تخطيط المسار](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [أدوات قياس المركبة](../plugins/vehicle-metrics.md#widgets) | <details><summary>**أداتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | <details><summary>**أداتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | ✔ |
+| [ويدجات مقاييس المركبة](../plugins/vehicle-metrics.md#widgets) | <details><summary>**ويدجتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | <details><summary>**ويدجتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | ✔ |
 | [أداة علامات الخريطة](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [مصادر الخرائط عبر الإنترنت](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [خريطة SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
-| [نقاط المفضلة](../map/point-layers-on-map.md)<br/>الإشارات المرجعية ونقاط الطريق | ✔ | ✔ | ✔ |
+| [النقاط المفضلة](../map/point-layers-on-map.md)<br/>الإشارات المرجعية ونقاط الطريق | ✔ | ✔ | ✔ |
 | [نقاط الصوت/الصور/الفيديو](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [متتبع GPS عبر الإنترنت من OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [تصدير / استيراد ملف تعريف التطبيق](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 #### ** تحديثات الخرائط {#-map-updates}
 
-[مجاني](../personal/maps-resources.md#free-for-osm-mappers). تتوفر التحديثات المباشرة وتنزيلات الخرائط غير المحدودة لرسامي خرائط OSM.
+[مجاني](../personal/maps-resources.md#free-for-osm-mappers). التحديثات الحية وتنزيلات الخرائط غير المحدودة متاحة لرسامي خرائط OSM.
 
-#### *** أندرويد أوتو {#-android-auto}
+#### *** Android Auto {#-android-auto}
 
-ميزة [أندرويد أوتو](https://www.android.com/auto/) تعمل فقط لتطبيقات OsmAnd من [جوجل بلاي](https://play.google.com/store/apps/dev?id=8483587772816822023).
+ميزة [Android Auto](https://www.android.com/auto/) تعمل فقط مع تطبيقات OsmAnd من [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
-### الميزات الاحترافية {#pro-features}
 
-تتوفر الميزات الاحترافية لاشتراك [OsmAnd Pro](#prices).
+### ميزات Pro {#pro-features}
+
+ميزات Pro متاحة لاشتراك [OsmAnd Pro](#prices).
 
 يحتوي اشتراك **Pro** حاليًا على الميزات التالية:
 
-| الميزة الاحترافية | الوصف |
+| ميزة Pro | الوصف |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، مزامنة البيانات مع [بوابة OsmAnd على الويب](https://www.osmand.net/map). |
-| [عبر الأنظمة الأساسية](../personal/osmand-cloud.md#cross-platform) | إمكانية استخدام OsmAnd Pro وOsmAnd Start على جميع الأنظمة الأساسية (أندرويد *←→* iOS *←→* الويب). |
-| [إغاثة ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يتيح لك الحصول على نموذج مصغر ثلاثي الأبعاد لحيّك أو قارة بأكملها ومراقبته. |
-| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | تحديث خرائط OsmAnd كل 15 دقيقة بعد تحسين [OpenStreetMap](https://www.openstreetmap.org/). |
-| [مكون الطقس الإضافي](../plugins/weather.md) | توقعات جوية كل ساعة لمدة 24 ساعة و7 أيام مقدمًا على الخريطة. |
-| [مكون قياسات المركبة الإضافي (OBD-II)](../plugins/vehicle-metrics.md) | يتيح لك توصيل ماسح OBD-II لعرض بيانات المركبة المفصلة في تطبيق OsmAnd وتخزين المعلومات في سجلات المسارات. تتوفر معلومات سرعة المركبة وسرعة المحرك لإصدار OsmAnd المجاني. |
+| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة OsmAnd على الويب](https://www.osmand.net/map). |
+| [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمنطقتك أو قارة بأكملها ومراقبته. |
+| [تحديثات حية](../personal/maps-resources.md#live-updates) | تتحدث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |
+| [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة قادمة ولمدة ٧ أيام على الخريطة. |
+| [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات مفصلة للمركبة في تطبيق OsmAnd وتخزين المعلومات في سجلات المسار. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني. |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
-| [أداة الارتفاع](../widgets/nav-widgets.md#elevation-widget) | تعرض موقعك على رسم بياني للارتفاع لمسار الملاحة مع معلومات إضافية. |
-| [أدوات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | تتيح لك معرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر. |
-| [تصحيح الارتفاع (دون اتصال)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | يتيح لك حساب رسم بياني للارتفاع لمسارك (يتطلب [خريطة تضاريس](../plugins/topography.md#download-maps) للمنطقة المختارة). |
+| [ويدجت الارتفاع](../widgets/nav-widgets.md#elevation-widget) | يعرض موقعك على الرسم البياني للارتفاع لمسار الملاحة مع معلومات إضافية. |
+| [ويدجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر. |
+| [تصحيح الارتفاع (بدون اتصال)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | يسمح لك بحساب رسم بياني للارتفاع لمسارك (تتطلب [خريطة التضاريس](../plugins/topography.md#download-maps) للمنطقة المختارة). |
 
-### كيفية الشراء {#how-to-buy}
+
+## كيفية الشراء {#how-to-buy}
 
 طريقة سهلة لاختيار وشراء الخطة المطلوبة من خلال قائمة **المشتريات**. بالطبع، سترى قائمة مقترحات للميزات المدفوعة.
 
-#### شراء OsmAnd Pro {#osmand-pro-purchase}
+### شراء OsmAnd Pro {#osmand-pro-purchase}
 
-![برو](@site/static/img/svg/pro_icon.svg) خطة اشتراك *OsmAnd Pro*. هنا يمكنك اختيار الاشتراك الشهري أو السنوي:
+![Pro](@site/static/img/svg/pro_icon.svg) خطة اشتراك *OsmAnd Pro*. هنا يمكنك اختيار اشتراك شهري أو سنوي:
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> ← متابعة مع OsmAnd Pro*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → المتابعة مع OsmAnd Pro*
 
 أو
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> ← متابعة مع OsmAnd Pro*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → المتابعة مع OsmAnd Pro*
 
-![خطة برو](@site/static/img/purchases/android_subscription_plan.png)
+![خطة Pro](@site/static/img/purchases/android_subscription_plan.png)
 
-#### شراء الخرائط+ {#maps-purchase}
+### شراء Maps+ {#maps-purchase}
 
-![الخرائط+](@site/static/img/svg/osmand_maps_plus.svg) خطة اشتراك / داخل التطبيق *الخرائط+*. هنا يمكنك اختيار الاشتراك السنوي أو الدفع لمرة واحدة:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) اشتراك / خطة داخل التطبيق *Maps+*. هنا يمكنك اختيار اشتراك سنوي أو دفعة لمرة واحدة:
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> ← انقر على قائمة ميزات الخرائط+ ← متابعة مع الخرائط+*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → المتابعة مع Maps+*
 
-![خطة الخرائط+](@site/static/img/purchases/maps.png)
+![خطة Maps+](@site/static/img/purchases/maps.png)
 
-## الاشتراكات القديمة (قبل 4.0) {#legacy-subscriptions-prior-40}
 
-تبدأ الاشتراكات الجديدة بإصدار OsmAnd 4.0 (أغسطس 2021). جميع الاشتراكات السابقة أصبحت قديمة وتُعادل تقنيًا *اشتراك الخرائط*، على الرغم من أن الاشتراكات القديمة مؤهلة لتحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة، ولكن الاشتراكات القديمة تتجدد تلقائيًا حتى تقوم بإلغاء الاشتراك (قد يتغير السعر في المستقبل).
+## الاشتراكات القديمة (قبل الإصدار ٤.٠) {#legacy-subscriptions-prior-40}
+
+تبدأ الاشتراكات الجديدة مع إصدار OsmAnd ٤.٠ (أغسطس ٢٠٢١). جميع الاشتراكات السابقة أصبحت قديمة وتساوي تقنيًا *اشتراك الخرائط*، على الرغم من أن الاشتراكات القديمة مؤهلة لتحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة، ولكن يتم تجديد الاشتراكات القديمة تلقائيًا حتى تقوم بإلغاء الاشتراك (قد يتغير السعر في المستقبل).
+
 
 ## استعادة المشتريات {#restore-purchases}
 
 ### العثور على مشترياتك {#find-your-purchase}
 
-لاستعادة الشراء، يرجى التحقق من خطة OsmAnd التي اشتريتها.
+لاستعادة عملية الشراء، يرجى التحقق من خطة OsmAnd التي اشتريتها.
 
-- **جوجل بلاي**: يمكنك التحقق من ذلك في [سجل طلبات جوجل بلاي](https://support.google.com/googleplay/answer/2850369).
-- **هواوي آب غاليري**: يمكنك التحقق من ذلك في [سجل طلبات هواوي آب غاليري](https://consumer.huawei.com/en/support/content/en-us00694318/).
+- **Google Play**: يمكنك التحقق منها في [سجل طلبات Google Play](https://support.google.com/googleplay/answer/2850369).
+- **Huawei App Gallery**: يمكنك التحقق منها في [سجل طلبات Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
 
 ### تثبيت التطبيق {#install-application}
 
-- تحديث تطبيق المتجر (جوجل بلاي، هواوي آب غاليري).
-- تسجيل الدخول بنفس الحساب إلى المتجر (جوجل بلاي، هواوي آب غاليري) الذي لديك فيه شراء OsmAnd.
-- تثبيت التطبيق من الرابط أدناه.
+- حدّث تطبيق المتجر (Google Play، Huawei AppGallery).
+- سجّل الدخول **بنفس الحساب** إلى المتجر (Google Play، Huawei AppGallery) الذي لديك فيه عملية شراء OsmAnd.
+- ثبّت التطبيق من الرابط أدناه.
 
-| التطبيق | جوجل بلاي | هواوي آب غاليري |
+| التطبيق | Google Play | Huawei AppGallery |
 | :------------- | :------------- | :------------- |
-| OsmAnd | ✔ &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[تثبيت](https://appgallery.huawei.com/#/app/C101486545) |
-| OsmAnd+ | ✔ &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
+| OsmAnd  | ✔  &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[تثبيت](https://appgallery.huawei.com/#/app/C101486545) |
+| OsmAnd+  | ✔  &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
-### استعادة الاشتراك / داخل التطبيق {#restore-subscription--in-app}
+### استعادة الاشتراك / الشراء داخل التطبيق {#restore-subscription--in-app}
 
-**لاستعادة *مشترياتك داخل التطبيق* أو *اشتراكك* ([الخرائط+، برو، OsmAnd Live](#difference-between-purchases-android)).**
+**لاستعادة *عملية الشراء داخل التطبيق* أو *الاشتراك* ([Maps+، Pro، التحديثات الحية](#difference-between-purchases-android)).**
 
-- *تحديث تطبيق المتجر* (جوجل بلاي، هواوي آب غاليري).
-- *تسجيل الدخول* **بنفس الحساب** إلى المتجر (جوجل بلاي، هواوي آب غاليري) الذي لديك فيه شراء OsmAnd.
+- *حدّث تطبيق المتجر* (Google Play، Huawei AppGallery).
+- *سجّل الدخول* **بنفس الحساب** إلى المتجر (Google Play، Huawei AppGallery) الذي لديك فيه عملية شراء OsmAnd.
 - *افتح OsmAnd* مع اتصال إنترنت نشط.
-- *لفتح استعادة المشتريات*، اتبع هذه الخطوات: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ويجب أن يظهر في الجزء العلوي من الشاشة أن الخرائط+ (برو) قد تم تنشيطها.
-- *تسجيل ميزات برو* باشتراك OsmAnd Pro لجميع الأنظمة الأساسية (أندرويد و iOS). إذا كان لديك حساب OsmAnd Pro، فأنت بحاجة إلى استخدامه [لتنشيط OsmAnd Pro](../personal/osmand-cloud.md) لجهازك.
+- *لفتح استعادة المشتريات*، اتبع الخطوات التالية: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ويجب أن يظهر في أعلى الشاشة أن Maps+ (Pro) قد تم تفعيله.
+- *سجّل ميزات Pro* باشتراك OsmAnd Pro لجميع المنصات (أندرويد و iOS). إذا كان لديك حساب OsmAnd Pro، فأنت بحاجة إلى استخدامه [لتفعيل OsmAnd Pro](../personal/osmand-cloud.md) على جهازك.
 
-![خطة برو](@site/static/img/purchases/maps_purchases.png)
+![خطة Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### حالات أخرى {#other-cases}
 
 **إذا لم تنجح أي من الطرق:**
 
-1. مسح ذاكرة التخزين المؤقت لجوجل بلاي (هواوي آب غاليري).
-2. مسح ذاكرة التخزين المؤقت لـ OsmAnd.
-3. إعادة تشغيل الجهاز ومحاولة الاستعادة مرة أخرى.
+١. امسح ذاكرة التخزين المؤقت لـ Google Play (Huawei AppGallery).
+٢. امسح ذاكرة التخزين المؤقت لـ OsmAnd.
+٣. أعد تشغيل الجهاز وحاول الاستعادة مرة أخرى.
+
 
 <!--
-## أدلة العمل {#action-guides}
+## Action Guides {#action-guides}
 
-- استعادة بياناتك بعد انتهاء صلاحية المشتريات.
-- نقل المشتريات من أندرويد إلى iOS أو العكس
-- شراء واحد (حساب) لأندرويد و iOS
+- Restore your data after purchases expire.
+- Transfer purchases from Android to iOS or vice versa 
+- One purchase (account) for Android and iOS
 -->
+
 
 ## بطاقات الهدايا {#giftcards}
 
-[دليل مفصل حول شراء بطاقات هدايا جوجل بلاي](https://support.google.com/googleplay/answer/3422734?hl=en).
+[دليل مفصل حول شراء بطاقات هدايا Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
 
-يمكنك شراء OsmAnd باستخدام بطاقات هدايا جوجل بلاي، مما يوفر بديلاً آمنًا لمشاركة معلومات بطاقة الائتمان عبر الإنترنت. ما عليك سوى شراء بطاقة هدية من بائع التجزئة الذي تختاره واسترداد الرمز على جوجل بلاي.
-
-> *آخر تحديث: مايو 2025*
+يمكنك شراء OsmAnd باستخدام بطاقات هدايا Google Play، مما يوفر بديلاً آمنًا لمشاركة معلومات بطاقة الائتمان عبر الإنترنت. ببساطة، اشترِ بطاقة هدايا من بائع تجزئة من اختيارك واسترد الرمز على Google Play.

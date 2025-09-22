@@ -1,7 +1,7 @@
 ---
-source-hash: c406b4c0fcaa397722ffd39164023525d4248abb42fb6a6add45bac6f360f5b8
+source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
 sidebar_position: 3
-title: Kaartcontextmenu
+title: Kaart Contextmenu
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,20 +18,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Het kaartcontextmenu geeft informatie over het geselecteerde object op de kaart. U kunt het ook gebruiken om een route naar de geselecteerde locatie te maken. Om het contextmenu te openen, zoekt u eerst de gewenste locatie op de kaart en selecteert u vervolgens het object met een korte tik of een lange tik bij het selecteren van een precies punt op de kaart.
+Het kaartcontextmenu geeft informatie over het geselecteerde object op de kaart. U kunt het ook gebruiken om een route naar de geselecteerde locatie te maken. Om het contextmenu te openen, zoekt u eerst de gewenste locatie op de kaart en selecteert u vervolgens het object met een korte tik of een lange tik wanneer u een precies punt op de kaart selecteert.
 
 
 ### Een object selecteren (enkele tik) {#select-an-object-single-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Contextmenu Android](@site/static/img/map/map_context_menu_short_tap_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Contextmenu iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
 
@@ -39,59 +39,66 @@ Het kaartcontextmenu geeft informatie over het geselecteerde object op de kaart.
 
 </Tabs>
 
-Het **contextmenu** verschijnt wanneer u **één keer tikt** op een gemarkeerd object op de kaart. Dit contextmenu toont essentiële informatie over het geselecteerde object, inclusief de *naam, het pictogram* (zoals weergegeven op de kaart), het *adres, de afstand* en de *richting* vanaf uw huidige positie.
+Het **contextmenu** verschijnt wanneer u **één keer tikt** op een gemarkeerd object op de kaart. Dit contextmenu toont essentiële informatie over het geselecteerde object, inclusief de *naam*, het *icoon* (zoals weergegeven op de kaart), het *adres, de afstand*, de *grenzen* en de *richting* vanaf uw huidige positie.  
 
 U kunt verschillende soorten kaartobjecten selecteren, zoals *POI's*, *favorieten*, *vervoershaltes*, *markeringen*, *bergtoppen* of andere *kaartobjecten*.
 
 :::note
-Geselecteerde kaartobjecten komen overeen met OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) of [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- Geselecteerde kaartobjecten en hun grenzen komen overeen met OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) of [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+- *De hoogte van bergtoppen wordt weergegeven in meters of voeten, afhankelijk van de [lengte-eenheden](../personal/profiles.md#units--formats) die in de profielinstellingen zijn geselecteerd.*
 :::
 
-> *De hoogte van bergtoppen wordt weergegeven in meters of voeten, afhankelijk van de [lengte-eenheden](../personal/profiles.md#units--formats) die zijn geselecteerd in de profielinstellingen.*
 
 
-### Een willekeurig punt selecteren (lange tik) {#select-any-point-long-tap}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Contextmenu lange tik Android](@site/static/img/map/map_context_menu_long_tap_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Contextmenu lange tik iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Wanneer u ergens op de kaart **lang tikt**, verschijnt een **contextmenu** met informatie over de geselecteerde locatie. Dit omvat het adres, de afstand en de richting vanaf uw huidige positie.
-
-> **OPMERKING**. *Lang tikken op een **huisnummer** markeert de omtrek ervan en opent het kaartcontextmenu.*
-
-
-### Route selecteren {#select-route}
+### Een willekeurig punt selecteren (lang tikken) {#select-any-point-long-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+![Contextmenu lang tikken Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Statistieken scherm track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Contextmenu lang tikken iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tikken op een [GPX-track](../map/tracks/index.md) op de kaart opent het [trackcontextmenu](../map/tracks/track-context-menu.md), waar u toegang krijgt tot aanvullende trackgerelateerde opties.
+Wanneer u ergens op de kaart **lang tikt**, verschijnt er een **contextmenu** met informatie over de geselecteerde locatie. Dit omvat het adres, de afstand en de richting vanaf uw huidige positie.
+
+
+### GPX-route selecteren {#select-gpx-route}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Context trackmenu Android](@site/static/img/map/context_track_menu_Android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Statistiekenscherm track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Door op een [GPX-track](../map/tracks/index.md) op de kaart te tikken, wordt het [trackcontextmenu](../map/tracks/track-context-menu.md) geopend, waar u toegang hebt tot extra trackgerelateerde opties.
+
+
+
+### Routes, skipistes en paden {#routes-and-trails}
+
+![Skipistes en MTB-routes](@site/static/img/map/ski_mtb.png)  ![Skipistes en MTB-routes](@site/static/img/map/ski_mtb_2.png)
+
+U kunt op kaartelementen tikken zoals **skipistes**, **mountainbike (MTB) routes** en **crossmotorpaden** om hun contextmenu met gedetailleerde informatie te openen. Bekijk het [Routes-artikel](../map/routes.md#actions-with-routes) voor meer informatie.
+
 
 
 ### Contextmenu verbergen {#hide-context-menu}
@@ -106,13 +113,13 @@ Om het **contextmenu** te sluiten:
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Contextmenu Android](@site/static/img/map/context_menu_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Contextmenu iOS](@site/static/img/map/context_menu_ios.png)
 
@@ -123,22 +130,22 @@ Om het **contextmenu** te sluiten:
 Voor meer gedetailleerde informatie over een object, tikt u op de knop **Details** in het contextmenu of veegt u het paneel omhoog om het uit te vouwen.
 
 
-### Objectinformatie {#object-info}
+### Objectinfo {#object-info}
 
-Het paneel **Objectinformatie** geeft aanvullende details over het geselecteerde object. U kunt op elke vermelding tikken om de informatie naar het klembord te kopiëren.
+Het **Objectinfo**-paneel biedt aanvullende details over het geselecteerde object. U kunt op een item tikken om de informatie naar het klembord te kopiëren.  
 
 Beschikbare details zijn onder andere:
 
 - [Alternatieve namen](#alternative-names)
-- [Coördinaten](../map/map-context-menu.md#coordinates)
-- [POI's in de buurt / Wikipedia](../map/map-context-menu.md#nearby-pois--wikipedia-nearby-pois--wikipedia)
-- [Openbaar vervoer routes](../map/map-context-menu.md#public-transport-routes) (voor vervoershaltes)
-- [Favorieten / Trackpunten uit dezelfde groep](../map/map-context-menu.md#favorites--track-points-from-the-group)
-- [OpenStreetMap-link](../map/map-context-menu.md#openstreetmap-link)
-- [Artikelafbeelding / beschrijving](../map/map-context-menu.md#article-description-article-description)
-- [Online foto's](../map/map-context-menu.md#online-photos)
+- [Coördinaten](#coordinates)
+- [Binnen gebieden](#polygon-information)
+- [Nabije POI's / Wikipedia](#nearby-pois--wikipedia)
+- [Openbaarvervoerroutes voor haltes](#public-transport-routes)
+- [Favorieten / Trackpunten uit dezelfde groep](#favorites--track-points-from-the-group)
+- [OpenStreetMap-link](#openstreetmap-link)
+- [Online foto's](#online-photos)
 
-Bovendien kan het paneel [OpenStreetMap-details](https://wiki.openstreetmap.org/wiki/Map_features) bevatten, zoals:
+Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features) bevatten, zoals:
 
 - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
 - [Telefoonnummer](https://wiki.openstreetmap.org/wiki/Key:contact)
@@ -152,7 +159,7 @@ Bovendien kan het paneel [OpenStreetMap-details](https://wiki.openstreetmap.org/
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Alternatieve namen Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_andr.png)
 
@@ -160,30 +167,30 @@ Bovendien kan het paneel [OpenStreetMap-details](https://wiki.openstreetmap.org/
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen 1 iOS](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen 2 iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd toont **aanvullende POI-namen** in het *kaartcontextmenu*, waarbij de naam in de *weergavetaal* of de voorkeurstaal van het systeem prioriteit krijgt. Als er meerdere vertalingen beschikbaar zijn, worden deze gegroepeerd in gecategoriseerde tags zoals *naam, merk, operator,* of *POI's in de buurt*.
+OsmAnd toont **extra POI-namen** in het *kaartcontextmenu*, waarbij prioriteit wordt gegeven aan de naam in de *weergavetaal* of de voorkeurstaallijst van het systeem. Als er meerdere vertalingen beschikbaar zijn, worden deze gegroepeerd in gecategoriseerde tags zoals *naam, merk, operator* of *nabije POI's*.  
 
 Kenmerken van de weergave van alternatieve namen:
 
-- Aanvullende vertalingen zijn toegankelijk via een *vervolgkeuzelijst*.
+- Extra vertalingen zijn toegankelijk via een *vervolgkeuzelijst*.
 
-- Namen zijn gecategoriseerd in verschillende groepen, zoals de *lijst met namen in andere talen*, *Regionaal*, *Lokaal*, *Nationaal*, *Internationaal*, *Kort*, *Oud*, *Officieel* en *Alternatieve* namen.
+- Namen zijn gecategoriseerd in verschillende groepen, zoals de *lijst met namen in andere talen*, *Regionale*, *Lokale*, *Nationale*, *Internationale*, *Korte*, *Oude*, *Officiële* en *Alternatieve* namen.
 
-- Andere categorieën zijn onder andere *regiospecifieke vertaling* of *standaardinstellingen*.
+- Andere categorieën omvatten *regiospecifieke vertaling* of *standaardinstellingen*.
 
-- Als een specifieke vertaling *niet beschikbaar* is, valt OsmAnd terug op de **lokale** naam om nauwkeurigheid en consistentie in meertalige regio's te garanderen.
+- Als een specifieke vertaling *niet beschikbaar* is, gebruikt OsmAnd standaard de **lokale** naam om nauwkeurigheid en consistentie in meertalige regio's te garanderen.
 
 
-### Polygooninformatie {#polygon-information}
+### Binnen gebied {#polygon-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Polygooninformatie Android](@site/static/img/map/polygon_information_andr.png)
 
@@ -191,121 +198,77 @@ Kenmerken van de weergave van alternatieve namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygooninformatie Android](@site/static/img/map/polygon_information_ios.png)
+![Polygooninformatie iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De functie **Polygooninformatie** biedt gedetailleerde gegevens over nabijgelegen **polygonen** die op de kaart worden weergegeven. Dit omvat geografische kenmerken, administratieve grenzen en andere in kaart gebrachte gebieden.
-
-**Binnen sectie**:
-
-- Toont een *lijst met omringende polygonen*, gesorteerd *van kleinste naar grootste* op basis van oppervlakte.
-
-- Elke vermelding toont het *polygoontype en de naam*, waardoor regio's en grenzen eenvoudig kunnen worden geïdentificeerd.
-
-**Aanvullende details**:
-
-- Bij het selecteren van een punt op de kaart of een POI, toont het **polygooninformatie**-paneel een lijst van alle polygonen die de geselecteerde locatie bevatten.
-
-- Vermeldingen in de lijst omvatten **administratieve indelingen, landgebieden, natuurlijke kenmerken en andere gecategoriseerde regio's**.
-
-- Het paneel stelt gebruikers in staat om de **naam en details van de polygoon te kopiëren** ter referentie.
-
-- Om deze informatie te bekijken, gaat u naar *Kaartcontextmenu → Details → Binnen*.
-
-Deze functie helpt u uw *huidige locatie* te begrijpen in relatie tot in kaart gebrachte administratieve indelingen, natuurgebieden of andere belangrijke geografische kenmerken.
-
+De functie **Binnen gebied** geeft een lijst van de **gebieden** waarbinnen een object zich bevindt. Dit omvat geografische kenmerken, administratieve grenzen, landgebruiksgebieden, natuurlijke kenmerken en andere gecategoriseerde gebieden. Een *lijst van omliggende polygonen*, gesorteerd *van klein naar groot* op basis van oppervlakte.
 
 ### Coördinaten {#coordinates}
 
 |Coördinatenformaat| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (platte decimale graden)</li><li>DDD.DDDDD (N/Z, O/W komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM-standaard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Zwitsers raster CH1903 en CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Weblink](https://osmand.net/map)</li><li>[OpenStreetMap Weblink](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coördinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Platte decimale graden)</li><li>DDD.DDDDD (N/S, E/W komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standaard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Zwitsers Grid CH1903 en CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Weblink](https://osmand.net/map)</li><li>[OpenStreetMap Weblink](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coördinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-In het contextmenu vindt u [geografische coördinaten](../search/search-coordinates.md#coordinate-format) van een punt in verschillende formaten en ook deelbare OsmAnd- en [OpenStreetMap-links](../map/map-context-menu.md#openstreetmap-link) (de laatste optie is alleen beschikbaar wanneer de [OpenStreetMap-bewerkingsplugin](../plugins/osm-editing.md) is ingeschakeld). Als u de coördinatensectie uitvouwt en lang tikt op een regel uit de lijst, worden de waarden automatisch naar het klembord gekopieerd (**Android**) of wordt de optie *Kopiëren* beschikbaar in het pop-upbericht (**iOS**).
+In het contextmenu kunt u [geografische coördinaten](../search/search-coordinates.md#coordinate-format) van een punt in verschillende formaten vinden en ook deelbare OsmAnd en [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (de laatste optie is alleen beschikbaar als de [OpenStreetMap bewerkingsplugin](../plugins/osm-editing.md) is ingeschakeld). Als u de coördinatensectie uitvouwt en lang op een regel uit de lijst tikt, worden de waarden automatisch naar het klembord gekopieerd (**Android**) of wordt de optie *Kopiëren* beschikbaar in het pop-upbericht (**iOS**).  
 
-OsmAnd Weblink kan automatisch worden herkend door OsmAnd (voorbeeld: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Zowel OsmAnd- als [OpenStreetMap-links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) worden geopend op de corresponderende sites met een pinmarkering naar de interessante plaats.
-
-
-### POI's in de buurt / Wikipedia {#nearby-pois--wikipedia}
-
-![Wikipedia-artikelen in de buurt](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Wikipedia-artikelen in de buurt](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
-
-Deze secties tonen nabijgelegen [Wikipedia-artikelen](../plugins/wikipedia.md) of [Points of Interest (POI's)](../map/point-layers-on-map.md#points-of-interest-pois) met *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle andere POI's en Wikipedia-artikelen weer te geven en te [zoeken](../search/search-poi.md).
-
-Tikken op *POI's in de buurt / Wikipedia-artikelen* opent een lijst met punten (POI's of Wikipedia). Een tik op een van deze punten uit een puntenlijst verplaatst de kaart naar dit punt (POI's of Wikipedia) met het openen van het contextmenu van het punt.
-
-> **OPMERKING**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) verschijnt alleen als u eerder speciale kaarten met [Wikipedia-artikelen voor dit gebied](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages) hebt gedownload*.
+OsmAnd Weblink kan automatisch worden herkend door OsmAnd (voorbeeld: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Zowel OsmAnd als [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) worden geopend op de overeenkomstige sites met een speldmarkering op de plaats van interesse.  
 
 
-### Openbaar vervoer routes {#public-transport-routes}
+### Nabije POI's / Wikipedia {#nearby-pois--wikipedia}
+
+![Nabije Wikipedia-artikelen](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nabije Wikipedia-artikelen](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+
+Deze secties tonen nabijgelegen [Wikipedia-artikelen](../plugins/wikipedia.md) of [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) met *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle andere POI's & Wikipedia-artikelen weer te geven en te [zoeken](../search/search-poi.md).
+
+Tikken op *Nabije POI's / Wikipedia-artikelen* opent een puntenlijst (POI's of Wikipedia). Een tik op een van deze punten uit een puntenlijst verplaatst de kaart naar dit punt (POI's of Wikipedia) en opent het kaartcontextmenu van het punt.
+
+> **OPMERKING**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) verschijnt alleen als u eerder speciale kaarten met [Wikipedia-artikelen voor dit gebied](../plugins/wikipedia.md#download-wikipedia-packages) hebt gedownload*.
+
+
+### Openbaarvervoerroutes {#public-transport-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Openbaar vervoer routes Android](@site/static/img/map/pt_routes_android.png)
+![Openbaarvervoerroutes Android](@site/static/img/map/pt_routes_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Openbaar vervoer routes iOS](@site/static/img/map/pt_routes_ios.png)
+![Openbaarvervoerroutes iOS](@site/static/img/map/pt_routes_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Toont informatie over openbaar vervoer routes voor de gekozen halte. Informatie over het contextmenu van het openbaar vervoer en acties ermee, leest u in het [artikel](../map/public-transport.md#transport-routes-context-menu).
+Toont informatie over openbaarvervoerroutes voor de gekozen vervoershalte. Informatie over het contextmenu van het openbaar vervoer en de acties ermee, leest u in het [artikel](../map/public-transport.md#transport-routes-context-menu).
 
 
 ### Favorieten / Trackpunten uit de groep {#favorites--track-points-from-the-group}
 
-![Favorietenlijst](@site/static/img/map/favorite_list_android.png) ![Favorietenlijst volledig](@site/static/img/map/favorite_list_full_android.png)
+![Favorietenlijst](@site/static/img/map/favorite_list_android.png) ![Volledige favorietenlijst](@site/static/img/map/favorite_list_full_android.png)
 
-Dit is een lijst van alle punten in één groep voor een Favoriet of Waypoint. Door te tikken wordt de hele lijst met punten van één groep uitgevouwen, bij het tikken op een punt uit de lijst beweegt de kaart naar het geselecteerde punt.
-
-
-### Lineair object {#linear-object}
-
-![Favorietenlijst](@site/static/img/map/linear_object_andr.png)
-
-Voor **lineaire objecten**, zoals *barrières, trappen, poorten, banken, hellingen, stuwen, bolders of coupures*, toont het contextmenu aanvullende details. Deze omvatten het POI-type en het bijbehorende adres, of het objecttype als er geen naam is toegewezen.
+Dit is een lijst van alle punten in één groep voor een Favoriet of Waypoint. Door te tikken, wordt de volledige lijst met punten van één groep uitgevouwen. Wanneer u op een punt uit de lijst tikt, wordt de kaart naar het geselecteerde punt verplaatst.
 
 
-### Klimgebied en Crag Details {#climbing-area-and-crag-details}
-
-![Favorietenlijst](@site/static/img/map/climbing_andr.png)
-
-Bij het selecteren van een [klimgebied of crag](../map/routes.md#climbing-routes), biedt OsmAnd een gedetailleerde samenvatting van de klimlocatie, inclusief: naam en locatie, klimmoeilijkheidsgraad (UIAA, Frans, YDS, enz.), rotssoort, hoogte en routelengte, klimkwaliteit en oppervlaktecondities.
-
-
-### Skipistes, MTB-routes en Dirtbike-paden {#ski-slopes-mtb-routes-and-dirt-bike-trails}
-
-![Skipistes en MTB-routes](@site/static/img/map/ski_mtb.png) ![Skipistes en MTB-routes](@site/static/img/map/ski_mtb_2.png)
-
-U kunt op kaartelementen zoals **skipistes**, **mountainbikeroutes (MTB)** en **dirtbike-paden** tikken om hun contextmenu met gedetailleerde informatie te openen. Beschikbare informatie omvat: route- of pistenaam (indien beschikbaar in OSM-gegevens), OSM-object-ID of relatie-ID, moeilijkheidsgraad, padlengte, terreintype en meer.
-
-**Ondersteunde tags:** `piste:type=*` (skipistes), `route=mtb`, `route=atv` of `route=dirt_bike` (motorcross-offroadpaden)
-
-:::note
-Gebruik de [Winter en Ski](../map/vector-maps.md#winter-and-ski) of [Offroad](../map/vector-maps.md#offroad) kaartstijlen voor betere zichtbaarheid.
-:::
 
 
 ### Artikelbeschrijving {#article-description}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Beschrijvingslijst](@site/static/img/map/description_list_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Beschrijvingslijst](@site/static/img/map/description_list_ios.png)
 
@@ -313,14 +276,14 @@ Gebruik de [Winter en Ski](../map/vector-maps.md#winter-and-ski) of [Offroad](..
 
 </Tabs>
 
-Dit deel bevat een deel van de beschrijving uit het [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving, door te tikken kunt u de volledige beschrijving openen.
+Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
 
 
 ### OpenStreetMap-link {#openstreetmap-link}
 
 ![OSM-link](@site/static/img/map/context_menu_osm_link.png) ![OSM-link](@site/static/img/map/context_menu_osm_link_1.png)
 
-OpenStreetMap-link biedt een directe link naar het OpenStreetMap-object waar u volledige informatie over kunt vinden:
+De OpenStreetMap-link biedt een directe link naar het OpenStreetMap-object waar u volledige informatie erover kunt vinden:  
 [node](https://wiki.openstreetmap.org/wiki/Node) of [way](https://wiki.openstreetmap.org/wiki/Way).
 
 
@@ -328,195 +291,195 @@ OpenStreetMap-link biedt een directe link naar het OpenStreetMap-object waar u v
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Online foto's contextmenu Android](@site/static/img/map/images_nearby_1_andr.png)
-![Galerijmenu Android](@site/static/img/map/gallery_menu_andr.png)
+![Online foto's contextmenu Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Online foto's contextmenu iOS](@site/static/img/map/online_photo_ios.png)
-![Galerijmenu iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Online foto's contextmenu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Wanneer u op een populaire plaats op de kaart tikt, toont de sectie **Online foto's** in het *POI-contextmenu* voorbeelden van afbeeldingen afkomstig van [Wikipedia](https://www.wikipedia.org/) en [Wikimedia Commons](https://www.wikimedia.org/).
+Wanneer u op een Populaire Plaats op de kaart tikt, toont de sectie **Online foto's** in het *POI-contextmenu* voorbeeldafbeeldingen afkomstig van [Wikipedia](https://www.wikipedia.org/) en [Wikimedia Commons](https://www.wikimedia.org/).
 
-Tikken op een foto opent de **Galerij**-weergave, waar u:
+Door op een foto te tikken, wordt de **Galerij**-weergave geopend, waar u kunt:
 
-- Tot 100 afbeeldingen per plaats kunt bekijken
-- Afbeeldingsmetadata (*auteur*, *licentie*, *bron*) kunt bekijken
-- Acties kunt uitvoeren: **Delen**, **Openen in browser**, **Downloaden**
+- Bladeren door maximaal 100 afbeeldingen per plaats
+- Afbeeldingsmetadata bekijken (*auteur*, *licentie*, *bron*)
+- Acties uitvoeren: **Delen**, **Openen in browser**, **Downloaden**
 
 > *Op iOS opent lang tikken op een afbeelding een contextmenu met snelle acties.*
 
 Voor meer informatie, zie: [Online foto's](https://osmand.net/docs/user/map/popular_places#online-photos) en [Galerijweergave](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
-### Street-level Imagery {#street-level-imagery}
+### Beeldmateriaal op straatniveau {#street-level-imagery}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+![Beeldmateriaal op straatniveau Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Beeldmateriaal op straatniveau iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd ondersteunt integratie met [Mapillary](https://www.mapillary.com/), een wereldwijd platform voor crowdsourced street-level imagery. Met deze functie kunt u real-world fotosequenties direct op de kaart bekijken en verkennen.
+OsmAnd ondersteunt integratie met [Mapillary](https://www.mapillary.com/), een wereldwijd platform voor door de gemeenschap verzameld beeldmateriaal op straatniveau. Met deze functie kunt u fotoreeksen uit de echte wereld direct op de kaart bekijken en verkennen.
 
-Mapillary-afbeeldingen verschijnen als directionele foto-pictogrammen, uitgelijnd met de weg of het pad waar ze zijn vastgelegd. Deze kunnen u helpen uw omgeving beter te begrijpen, vooral in onbekende gebieden.
+Mapillary-afbeeldingen verschijnen als directionele foto-iconen, uitgelijnd met de weg of het pad waar ze zijn vastgelegd. Deze kunnen u helpen uw omgeving beter te begrijpen, vooral in onbekende gebieden.
 
 U kunt:
 
-- De knop **Verkennen** gebruiken om de Mapillary-viewer te openen en door nabijgelegen street-level afbeeldingen te bladeren.
+- De knop **Verkennen** gebruiken om de viewer van Mapillary te openen en door nabijgelegen beelden op straatniveau te bladeren.
 - Op de knop **Foto's toevoegen** tikken om uw eigen foto's bij te dragen aan het Mapillary-platform.
 
-> *Lees meer over het activeren en gebruiken van deze functie in de [Mapillary-pluginhandleiding](../plugins/mapillary.md).*
+> *Lees meer over hoe u deze functie kunt activeren en gebruiken in de [Mapillary-plugingids](../plugins/mapillary.md).*
 
 
-### * Audio/Video Notitie {#-audiovideo-note}
+### * Audio-/videonotitie {#-audiovideo-note}
 
 <InfoAndroidOnly />
 
 ![Afbeeldingenlijst](@site/static/img/map/image_list_android.png) ![Videolijst](@site/static/img/map/video_list_android.png)
 
-[Audio-/videonotities](../plugins/audio-video-notes.md) informatie zoals datum, coördinaten, voorvertoning en andere zijn beschikbaar in het menu **Details**. U kunt de notities openen in secundaire software door op de knop **Afspelen / Tonen** te tikken in het contextmenu van de notitie.
+Informatie over [Audio-/videonotities](../plugins/audio-video-notes.md) zoals datum, coördinaten, voorbeeld en andere zijn beschikbaar in het **Details**-menu. U kunt de notities in secundaire software openen door op de knop **Afspelen / Tonen** te tikken in het contextmenu van de notitie.
 
 
 ## Acties {#actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Acties menu Android](@site/static/img/map/actions_menu_android.png) ![Acties aanvullend menu Android](@site/static/img/map/actions_additional_menu_android.png)
+![Actiemenu Android](@site/static/img/map/actions_menu_android.png) ![Extra actiemenu Android](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Acties menu iOS](@site/static/img/map/actions_menu_ios.png) ![Acties aanvullend menu iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Actiemenu iOS](@site/static/img/map/actions_menu_ios.png)  ![Extra actiemenu iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Het is een reeks specifieke manipulaties die op een punt of object kunnen worden uitgevoerd. Dit menu is opgesplitst in twee delen: het zichtbare gedeelte bestaat uit maximaal 3 acties en andere acties zijn toegankelijk via de knop *Acties*. U kunt de volgorde van de acties aanpassen (*Android*) in de [Algemene instellingen](#customize).
+Dit is een set van specifieke handelingen die kunnen worden uitgevoerd op een punt of object. Dit menu is opgesplitst in twee delen: het zichtbare gedeelte bestaat uit maximaal 3 acties en andere acties zijn toegankelijk via de knop *Acties*. U kunt de volgorde van acties (*Android*) aanpassen in de [Algemene instellingen](#customize).
 
 
 ### Favoriet toevoegen / bewerken {#add--edit-favorite}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Favoriet toevoegen bewerken actie Android](@site/static/img/map/add_favorite_android.png)
+![Actie favoriet toevoegen/bewerken Android](@site/static/img/map/add_favorite_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Favoriet toevoegen bewerken actie iOS](@site/static/img/map/add_favorite_ios.png)
+![Actie favoriet toevoegen/bewerken iOS](@site/static/img/map/add_favorite_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In het contextmenu zijn er opties om het geselecteerde punt/object **toe te voegen** of te **bewerken** aan de [favorietenlijst](../personal/myplaces.md).
+In het contextmenu zijn er opties om het geselecteerde punt / object **toe te voegen** of te **bewerken** aan de [favorietenlijst](../personal/myplaces.md).
 
-- Om **toe te voegen**, moet u een punt/object selecteren, op het *Ster*-pictogram (met handtekening Toevoegen) tikken en alle benodigde informatie invoeren.
+- Om **toe te voegen**, moet u een punt / object selecteren, op het *Ster*-icoon tikken (met de handtekening Toevoegen) en alle benodigde informatie invoeren.  
 
-- Om informatie over een favoriet punt te **bewerken**, moet u *Tonen op de kaart* inschakelen (*Menu → Mijn plaatsen → Favorieten*) en vervolgens erop drukken. In het contextmenu verschijnt dan in plaats van het *Ster*-pictogram een *Potlood*-pictogram (met handtekening Bewerken).
+- Om informatie over een favoriet punt te **bewerken**, moet u *Toon op de kaart* inschakelen (*Menu → Mijn plaatsen → Favorieten*), er vervolgens op drukken en in het contextmenu verschijnt in plaats van het *Ster*-icoon een *Potlood*-icoon (met de handtekening Bewerken).
 
-- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - voegt een geselecteerd punt toe aan de favorietenlijst.
+- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - voegt een geselecteerd punt toe aan de favorietenlijst.
 
 
 ### Markering toevoegen / bewerken {#add--edit-marker}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Markering toevoegen bewerken actie Android](@site/static/img/map/add_marker_android.png) ![Markering passeren actie Android](@site/static/img/map/action_pass_marker_android.png)
+![Actie markering toevoegen/bewerken Android](@site/static/img/map/add_marker_android.png) ![Actie markering passeren Android](@site/static/img/map/action_pass_marker_android.png)
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Markering toevoegen bewerken actie iOS](@site/static/img/map/add_marker_ios.png) ![Markering herstellen actie Android](@site/static/img/map/action_restore_marker_android.png)
+![Actie markering toevoegen/bewerken iOS](@site/static/img/map/add_marker_ios.png)  ![Actie markering herstellen Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Het is mogelijk om een punt of een object te markeren om de navigatieplanning te vergemakkelijken. U hoeft alleen maar op het **vlag**-pictogram in het menu (*Android*) te tikken, **pijl** (*iOS*) - toont richting en afstand tot het geselecteerde punt vanaf uw huidige locatie.
+Het is mogelijk om een punt of een object te markeren om het plannen van navigatie te vergemakkelijken. U hoeft alleen maar op het **vlag**-icoon in het menu (*Android*) of de **pijl** (*iOS*) te tikken - dit toont de richting en afstand tot het geselecteerde punt vanaf uw huidige locatie.
 
 Acties:
 
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md). Plaatst een nieuwe markering op het geselecteerde punt.
-- **Markeer gepasseerd** (*Android*) / *Verwijderen* (*iOS*). Deactiveert markering en plaatst deze in de geschiedenis.
-- **Actief maken** (*Android*). Verplaatst markering naar de bovenste positie (op het bovenste paneel).
-- **Markering herstellen** (*Android*). Verplaatst markering van geschiedenis naar actieve lijst.
+- **Gepasseerd markeren** (*Android*) / *Negeren* (*iOS*). Deactiveert de markering en plaatst deze in de Geschiedenis.
+- **Actief maken** (*Android*). Verplaatst de markering naar de bovenste positie (op het bovenste paneel).
+- **Markering herstellen** (*Android*). Verplaatst de markering van Geschiedenis naar de actieve lijst.
 
-Lees meer over [markeringen hier](../personal/markers.md).
+Lees hier meer over [markeringen](../personal/markers.md).
 
 
 ### Delen {#share}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 | Versies tot Android 14 | 14+ Android |
 |:------------|:---------------|
-| ![Deel actie Android](@site/static/img/map/action_share_1_andr.png) | ![Deel actie Android](@site/static/img/map/action_share_2_andr.png) |
+| ![Actie delen Android](@site/static/img/map/action_share_1_andr.png) | ![Actie delen Android](@site/static/img/map/action_share_2_andr.png) |
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Deel actie iOS](@site/static/img/map/action_share_1_ios.png)
+![Actie delen iOS](@site/static/img/map/action_share_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De OsmAnd-app stelt u in staat om **<Translate android="true" ids="shared_string_share"/>** *Mijn locatie* of een geselecteerde locatie op de kaart te delen met messenger, e-mails of sociale media.
+De OsmAnd-app stelt u in staat om **<Translate android="true" ids="shared_string_share"/>** *Mijn Locatie* of een geselecteerde locatie op de kaart te delen via messengers, e-mails of sociale media.  
 
 Beschikbare opties om de locatie te delen:
 
-- ***Verzenden***. Verzendt tekst via apps die beschikbaar zijn op uw apparaat. Bevat alle informatie over de locatie: Mijn locatienaam of de naam van de geselecteerde POI, adres, coördinaten en geolocatie als link.
-- ***Kopiëren***. Kopieert alle locatie-informatie (Mijn locatienaam of naam van de geselecteerde POI, adres, coördinaten en geolocatie als link) naar het klembord.
+- ***Verzenden***. Verzendt tekst via apps die beschikbaar zijn op uw apparaat. Bevat alle informatie over de locatie: de naam van Mijn locatie of de naam van de geselecteerde POI, adres, coördinaten en geolocatie als een link.
+- ***Kopiëren***. Kopieert alle locatie-informatie (naam van Mijn locatie of naam van de geselecteerde POI, adres, coördinaten en geolocatie als een link) naar het klembord.  
 - ***Adres kopiëren***. Kopieert alleen adresinformatie naar het klembord.
-- ***POI-naam kopiëren***. Kopieert alleen de POI-naam of het adres (indien geen naam aanwezig) naar het klembord.
+- ***POI-naam kopiëren***. Kopieert alleen de POI-naam of het adres als er geen naam is naar het klembord.
 - ***Coördinaten kopiëren***. Kopieert alleen coördinateninformatie naar het klembord.
-- ***geo***. Opent een lijst met beschikbare applicaties die geolocaties ondersteunen. <!-- (info over [geo urls Android](https://developers.google.com/maps/documentation/urls/android-intents)). -->
+- ***geo***. Opent een lijst met beschikbare applicaties die geolocaties ondersteunen. <!-- (info about [geo urls Android](https://developers.google.com/maps/documentation/urls/android-intents)). -->
 - ***QR-code*** (*Android*). Genereert een link naar de geselecteerde locatie in een QR-code.
 
 <!--
-- ***Afbeelding opslaan*** (*iOS*) - slaat een screenshot met kaart en geselecteerd punt op in de afbeeldingengalerij.
-- ***Toewijzen aan contact*** (*iOS*) - maakt een pictogram voor gekozen contact van de kaartscreenshot.
-- ***Afdrukken*** (*iOS*) - opent printeropties voor het afdrukken van de kaartscreenshot.
-- ***Opslaan in bestanden*** (*iOS*) - slaat de kaartscreenshot op in iCloud Drive of de opslag van uw apparaat. -->
+- ***Save Image*** (*iOS*) - saves a screenshot with map and selected point in the image gallery.
+- ***Assign to Contact*** (*iOS*) - makes an icon for chosen contact from the map screenshot.
+- ***Print*** (*iOS*) - opens Printer Options for printing the map screenshot.
+- ***Save to files*** (*iOS*) - saves the map screenshot in iCloud Drive or storage of your device. -->
 
 
-### Route naar / van {#directions-to--from}
+### Routebeschrijving naar / van {#directions-to--from}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Routebeschrijving Android](@site/static/img/map/action_directions_android.png)
 
@@ -524,7 +487,7 @@ Beschikbare opties om de locatie te delen:
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Routebeschrijving iOS](@site/static/img/map/action_directions_ios.png)
 
@@ -532,63 +495,63 @@ Beschikbare opties om de locatie te delen:
 
 </Tabs>
 
-Om navigatie of routeplanning te starten, moet u eerst de bestemming selecteren met [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Als u al een bestemmingspunt hebt, stelt het menu voor om het bestemmingspunt te vervangen of als een ander tussen- of startpunt in te voegen.
+Om de navigatie of routeplanning te starten, moet u eerst een bestemming selecteren met [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Als u al een bestemmingspunt heeft, zal het menu voorstellen om het bestemmingspunt te vervangen of om het als een ander tussenliggend of startpunt in te voegen.
 
-Het is ook mogelijk om eerst *Van* bestemming te selecteren via het kaartcontextmenu (<Translate android="true" ids="context_menu_item_directions_from"/>).
+Het is ook mogelijk om eerst een *Van*-bestemming te selecteren via het kaartcontextmenu (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
-Lees meer over [navigatie hier](../navigation/setup/route-navigation.md).
+Lees hier meer over [navigatie](../navigation/setup/route-navigation.md).
 
-:::note Tik op Navigatie starten
-Als u op **Navigatie starten** tikt, wordt het *Van*-punt genegeerd omdat de applicatie de navigatiemodus ingaat. Om een route te behouden, tikt u niet op *Navigatie starten* en [**veegt u het menu Routevoorbereiding naar beneden**](#hide-context-menu).
+:::note Tik op Start navigatie
+Als u op **Start navigatie** tikt, wordt het *Van*-punt verworpen omdat de applicatie in de navigatiemodus gaat. Om een route te behouden, tikt u niet op *Start navigatie* en [**veegt u naar beneden**](#hide-context-menu) in het *Routevoorbereiding*-menu.
 :::
 
 
-### Zoeken in de buurt {#search-nearby}
+### Zoek in de buurt {#search-nearby}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Zoekactie Android](@site/static/img/map/action_search_android.png)
+![Actie zoeken Android](@site/static/img/map/action_search_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Zoekactie iOS](@site/static/img/map/action_search_ios.png)
+![Actie zoeken iOS](@site/static/img/map/action_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Met deze contextmenu-actie is het mogelijk om rond een specifieke locatie op de kaart te zoeken.
+Met deze contextmenu-actie is het mogelijk om rond een specifieke locatie op de kaart te zoeken.  
 
-Lees meer over de [zoekfunctie](../search/index.md).
+Lees meer over de [zoekfunctionaliteit](../search/index.md).
 
 
 ### Weg vermijden {#avoid-road}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Weg vermijden op de kaart Android](@site/static/img/map/action_avoid_android.png) ![Vermeden weg verwijderen Android](@site/static/img/map/action_avoid_delete_android.png)
+![Weg vermijden op de kaart Android](@site/static/img/map/action_avoid_android.png) ![Vermeden weg negeren Android](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Weg vermijden op de kaart iOS](@site/static/img/map/avoid_route_ios_1.png) ![Vermeden weg verwijderen iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
+![Weg vermijden op de kaart iOS](@site/static/img/map/avoid_route_ios_1.png) ![Vermeden weg negeren iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-Met behulp van het kaartcontextmenu kunt u een specifieke weg toevoegen aan de lijst met wegen die niet voor routering worden gebruikt. Dit heeft invloed op de [routevoorbereiding](../navigation/setup/route-navigation.md).
-Om eerder geselecteerde wegen uit de *[Wegen vermijden-lijst](../navigation/routing/osmand-routing.md#avoid-roads-menu)* te verwijderen, tikt u op een teken, kiest u *Verwijderen* (**Android**) of *Afwijzen* (**iOS**).
+Met het kaartcontextmenu kunt u een specifieke weg toevoegen aan de lijst van niet-gebruikte wegen voor routering. Dat heeft invloed op de [routevoorbereiding](../navigation/setup/route-navigation.md).  
+Om eerder geselecteerde wegen uit de *[Lijst met te vermijden wegen](../navigation/routing/osmand-routing.md#avoid-roads-menu)* te verwijderen, tikt u op een teken, kiest u *Verwijderen* (**Android**) of *Negeren* (**iOS**).
 
 :::note
-De functie Wegen vermijden is globaal en beïnvloedt alle *[routeringstypen](../navigation/routing/osmand-routing.md#routing-types)* (behalve *[Online routering](../navigation/routing/online-routing.md)*).
+De functie 'wegen vermijden' is globaal en beïnvloedt alle *[routeringstypes](../navigation/routing/osmand-routing.md#routing-types)* (behalve *[Online routering](../navigation/routing/online-routing.md)*).  
 :::
 
 
@@ -596,49 +559,49 @@ De functie Wegen vermijden is globaal en beïnvloedt alle *[routeringstypen](../
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Positie wijzigen Android](@site/static/img/map/action_change_position_android.png)
+![Actie positie wijzigen Android](@site/static/img/map/action_change_position_android.png)
 
-![Actie Positie wijzigen UI Android](@site/static/img/map/action_change_position_ui_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Actie Positie wijzigen iOS](@site/static/img/map/action_change_position_ios.png)
-
-![Actie Positie wijzigen UI iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+![Actie positie wijzigen UI Android](@site/static/img/map/action_change_position_ui_android.png)
 
 </TabItem>
 
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
-Bijna elk door de gebruiker gemaakt object is verplaatsbaar, d.w.z. Markering, Favoriet, Gemaakte POI, Audio/Video Notitie of Track Waypoint. Selecteer eerst een object op de kaart en gebruik vervolgens het menu *<Translate android="true" ids="change_markers_position"/>* om het naar een nieuwe locatie te verplaatsen.
+![Actie positie wijzigen iOS](@site/static/img/map/action_change_position_ios.png)
+
+![Actie positie wijzigen UI iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+
+</TabItem>
+
+</Tabs>  
+
+Bijna elk door de gebruiker gemaakt object is verplaatsbaar, d.w.z. Markering, Favoriet, Gemaakte POI, Audio-/Videonotitie of Track Waypoint. Selecteer eerst een object op de kaart en gebruik vervolgens *<Translate android="true" ids="change_markers_position"/>* in het menu om het naar een nieuwe locatie te verplaatsen.
 
 
 ### Een route plannen {#plan-a-route}
 
-![Actie Route plannen Android](@site/static/img/map/action_plan_route_android.png)
+![Actie een route plannen Android](@site/static/img/map/action_plan_route_android.png)
 
-U kunt een routeplanning starten vanaf een geselecteerd punt via het objectcontextmenu.
+U kunt een routeplanning starten vanaf een geselecteerd punt via het contextmenu van het object.
 
-Lees meer over de tool [Route plannen](../plan-route/create-route.md).
+Lees meer over de tool [Een route plannen](../plan-route/create-route.md).
 
 
 ### Online kaarten bijwerken / downloaden {#update--download-online-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Online kaart downloaden Android](@site/static/img/map/action_load_online_map_and.png)
+![Actie online kaart downloaden Android](@site/static/img/map/action_load_online_map_and.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Actie Online kaart downloaden iOS](@site/static/img/map/action_download_online_map_ios.png)
+![Actie online kaart downloaden iOS](@site/static/img/map/action_download_online_map_ios.png)
 
 </TabItem>
 
@@ -646,121 +609,121 @@ Lees meer over de tool [Route plannen](../plan-route/create-route.md).
 
 Om online kaarten (tegels) op een specifieke locatie bij te werken of te downloaden, kunt u het contextmenu van het object gebruiken:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* en voor *Bijwerken*, ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* en *<Translate ios="true" ids="update_tile"/>*.
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* en voor *Bijwerken*, ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* en *<Translate ios="true" ids="update_tile"/>*.  
 
-Lees de [volledige instructie](../map/raster-maps.md#download--update-tiles).
+Lees de [volledige instructie](../map/raster-maps.md#download--update-tiles).  
 
 
-### Vector kaarten bijwerken / downloaden {#update--download-vector-maps}
+### Vectorkaarten bijwerken / downloaden {#update--download-vector-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Vector kaart downloaden Android](@site/static/img/map/action_download_vector_map_android.png)
+![Actie vectorkaart downloaden Android](@site/static/img/map/action_download_vector_map_android.png)
 
-![Vector kaart wereldwijd selecteren op Android](@site/static/img/map/download_region_map_via_worldmap.png)
+![Vectorkaart wereldwijd selecteren op Android](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Actie Vector kaart downloaden iOS](@site/static/img/map/action_download_vector_map_ios.png)
+![Actie vectorkaart downloaden iOS](@site/static/img/map/action_download_vector_map_ios.png)
 
-![Vector kaart selecteren op iOS](@site/static/img/map/download_map_ios.png)
+![Vectorkaart selecteren op iOS](@site/static/img/map/download_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Als er geen offline kaart aanwezig is op de geselecteerde locatie, bijvoorbeeld als het kaartobjectmenu is geopend via Zoeken of via een specifieke Favoriet, dan wordt de kleinst mogelijke offline kaart voorgesteld om te [downloaden](../start-with/download-maps.md#select-on-the-map).
+Als er geen offline kaart aanwezig is op de geselecteerde locatie, bijvoorbeeld als het kaartobjectmenu werd geopend via Zoeken of via een specifieke Favoriet, dan wordt de kleinst mogelijke offline kaart voorgesteld om te [downloaden](../start-with/download-maps.md#select-on-the-map).  
 
-**iOS**. Als u al [OsmAnd-kaarten (vector of terrein) hebt gedownload](../map/map-context-menu.md), is het mogelijk om deze via het contextmenu bij te werken. U moet eerst de regio op de kaart selecteren - tik op een willekeurige locatie op wereldwijde zoom 3-7.
+**iOS**. Als u al [gedownloade](../map/map-context-menu.md) OsmAnd-kaarten (vector of terrein) heeft, is het mogelijk om deze bij te werken via het contextmenu. U moet eerst de regio op de kaart selecteren - tik op een willekeurige locatie op wereldwijde zoom 3-7.  
 
-> **OPMERKING**. *Als u het contextmenu voor een kaartregio hebt geopend (regio is gemarkeerd), kunt u er ***<Translate android="true" ids="rendering_category_details"/>*** over zien: type en grootte van een beschikbare kaart, link naar een Wikipedia-pagina, taal, bevolking en andere.*
+> **OPMERKING**. *Als u het contextmenu voor een kaartregio hebt geopend (de regio is gemarkeerd), kunt u ***<Translate android="true" ids="rendering_category_details"/>*** erover zien: type en grootte van een beschikbare kaart, link naar een Wikipedia-pagina, taal, bevolking en andere.*
 
 
-### * Parkeerpunt toevoegen / verwijderen {#-add--delete-parking-point}
+### * Parkeerplaats toevoegen / verwijderen {#-add--delete-parking-point}
 
 :::note
-Om parkeerpunten toe te voegen/verwijderen, schakelt u de OsmAnd [**Parkeerpositie-plugin**](../plugins/parking.md) in.
-:::
+Om parkeerplaatsen toe te voegen/verwijderen, schakelt u de OsmAnd [**Parkeerpositie-plugin**](../plugins/parking.md) in.
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Parkeren Android](@site/static/img/map/action_parking_android.png)
+![Actie parkeren Android](@site/static/img/map/action_parking_android.png)
 
-![Actie Parkeren verwijderen Android](@site/static/img/map/context_menu_limited_parking.png)
+![Actie parkeren verwijderen Android](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Actie Parkeren iOS](@site/static/img/map/action_parking_ios.png)
+![Actie parkeren iOS](@site/static/img/map/action_parking_ios.png)
 
-![Actie Parkeren verwijderen iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+![Actie parkeren verwijderen iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Elke geselecteerde locatie op de kaart kan worden gemarkeerd als [een parkeerpositie](../plugins/parking.md). Om een parkeerpositie te verwijderen, kunt u het contextmenu openen dat is gekoppeld aan de parkeerlocatie.
+Elke geselecteerde locatie op de kaart kan worden gemarkeerd als [een parkeerpositie](../plugins/parking.md). Om de parkeerpositie te verwijderen, kunt u het contextmenu openen dat bij de parkeerlocatie hoort.
 
 
-### * Track waypoint toevoegen / bewerken {#-add--edit-track-waypoint}
+### * Trackwaypoint toevoegen / bewerken {#-add--edit-track-waypoint}
 
 :::note
-Om trackpunten toe te voegen/bewerken, schakelt u de OsmAnd [**Trip recording plugin**](../plugins/trip-recording.md) in.
-:::
+Om trackpunten toe te voegen/bewerken, schakelt u de OsmAnd [**Tripopname-plugin**](../plugins/trip-recording.md) in.
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Waypoint Android](@site/static/img/map/action_waypoint_android.png)
+![Actie waypoint Android](@site/static/img/map/action_waypoint_android.png)
 
-![Track selecteren om Waypoint Android toe te voegen](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Selecteer track om waypoint toe te voegen Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Actie Waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
+![Actie waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![Track selecteren om Waypoint iOS toe te voegen](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![Selecteer track om waypoint toe te voegen iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-U kunt waypoints toevoegen aan een opgenomen track of aan de huidige trackopname via het kaartcontextmenu.
+U kunt waypoints toevoegen aan een opgenomen track of aan de huidige trackopname via het kaartcontextmenu.  
 
 - Selecteer een locatie op de kaart met een [lange tik](../map/map-context-menu.md#select-any-point-long-tap).
-- Kies in het *kaartcontextmenu* dat verschijnt *Acties → Track waypoint toevoegen*.
-- De lijst toont de [tracks](../map/tracks/index.md#display-tracks-on-the-map) die zijn opgenomen en weergegeven op de kaart, evenals de [huidige trackopname](../plugins/trip-recording.md), waaraan u het geselecteerde waypoint kunt toevoegen.
-- U kunt waypoints toevoegen aan een track die nog niet actief is voor opname, in welk geval de inactieve track overschakelt van de *Startstatus* naar de *Hervatstatus*.
+- Kies in het *kaartcontextmenu* dat opent *Acties → Trackwaypoint toevoegen*.
+- De lijst toont de [tracks](../map/tracks/index.md#display-tracks-on-the-map) die zijn opgenomen en op de kaart worden weergegeven, evenals de [huidige trackopname](../plugins/trip-recording.md), waaraan u het geselecteerde waypoint kunt toevoegen.
+- U kunt waypoints toevoegen aan een track die nog niet actief is voor opname, in welk geval de inactieve track overschakelt van de *Start-status* naar de *Hervat-status*.
 - [Vul](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) de vereiste gegevens in en sla het waypoint op.
-- U kunt de [Snelle acties](../widgets/quick-action.md) configureren door een waypoint toe te voegen aan de *Track waypoint toevoegen*.
+- U kunt de [Snelle Acties](../widgets/quick-action.md) configureren door een waypoint toe te voegen aan de *Trackwaypoint toevoegen*.
 
 
-### * POI maken / wijzigen {#-create--modify-poi}
+### * POI aanmaken / wijzigen {#-create--modify-poi}
 
 :::note
-Om POI's te maken/wijzigen, schakelt u de OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md) in.
+Om POI's aan te maken/wijzigen, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](../plugins/osm-editing.md) in.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Actie POI Android](@site/static/img/map/action_poi_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Actie POI iOS](@site/static/img/map/action_poi_ios.png)
 
@@ -768,62 +731,62 @@ Om POI's te maken/wijzigen, schakelt u de OsmAnd [**OSM Editing plugin**](../plu
 
 </Tabs>
 
-Met de OSM Editing plugin kunt u de meeste POI's die op [OpenStreetMap](https://www.openstreetmap.org/) aanwezig zijn, maken en wijzigen.
+Met de OSM Bewerkingsplugin kunt u de meeste POI's die op [OpenStreetMap](https://www.openstreetmap.org/) aanwezig zijn, aanmaken en wijzigen.
 
-- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [maakt een nieuwe POI](../plugins/osm-editing.md#create--modify-poi) op de geselecteerde locatie.
+- &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [maakt een nieuwe POI aan](../plugins/osm-editing.md#create--modify-poi) op de geselecteerde locatie.
 - &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [wijzigt de geselecteerde POI](../plugins/osm-editing.md#create--modify-poi).
 
 
 ### * OSM-notitie openen {#-open-osm-note}
 
 :::note
-Om OSM-notities te openen, schakelt u de OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md) in.
+Om een OSM-notitie te openen, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](../plugins/osm-editing.md) in.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Actie Notitie Android](@site/static/img/map/action_note_android.png)
+![Actie notitie Android](@site/static/img/map/action_note_android.png)
 
-![Actie Notitie toevoegen UI Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+![Actie OSM-notitie toevoegen UI Android](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Actie Notitie iOS](@site/static/img/map/action_note_ios.png)
+![Actie notitie iOS](@site/static/img/map/action_note_ios.png)
 
-![Actie Notitie toevoegen UI iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![Actie OSM-notitie toevoegen UI iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-U kunt **kaartdatafouten** op een specifieke locatie rapporteren aan de [OpenStreetMap-gemeenschap](https://wiki.openstreetmap.org/wiki/Join_the_community). Volg de [richtlijnen](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) en voeg de juiste opmerkingen toe aan een probleem.
+U kunt kaartgegevensfouten op een specifieke locatie **rapporteren** aan de [OpenStreetMap-gemeenschap](https://wiki.openstreetmap.org/wiki/Join_the_community). Volg de [richtlijnen](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) en voeg de juiste opmerkingen toe aan een probleem.
 
 
-### * OSM-notitie becommentariëren / sluiten {#-comment--close-osm-note}
+### * Reageren op / sluiten van OSM-notitie {#-comment--close-osm-note}
 
 :::note
-Om OSM-notities te becommentariëren/sluiten, schakelt u de OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md) in.
+Om te reageren op/sluiten van een OSM-notitie, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](../plugins/osm-editing.md) in.
 :::
 
-![OSM-notitie becommentariëren Android](@site/static/img/map/action_comment_note_android.png) ![OSM-notitie heropenen Android](@site/static/img/map/action_reopen_note_android.png)
+![Reageren op OSM-notitie Android](@site/static/img/map/action_comment_note_android.png) ![OSM-notitie heropenen Android](@site/static/img/map/action_reopen_note_android.png)
 
-U kunt [commentaar geven](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [oplossen](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) en heropenen
+U kunt [reageren](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [oplossen](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) en heropenen
 OpenStreetMap-notities via het contextmenu van het object.
 
 
 ### * POI / OSM-notitie uploaden {#-upload-poi--osm-note}
 
 :::note
-Om POI / OSM-notities te uploaden, schakelt u de OsmAnd [**OSM Editing plugin**](../plugins/osm-editing.md) in.
+Om een POI / OSM-notitie te uploaden, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](../plugins/osm-editing.md) in.
 :::
 
 ![POI uploaden Android](@site/static/img/map/action_poi_upload_android.png) ![OSM-notitie uploaden Android](@site/static/img/map/action_note_upload_android.png)
 
-Als u de *Offline-modus* gebruikt om POI's of OSM-notities toe te voegen/bewerken, moet u de wijzigingen uploaden naar OpenStreetMap. Standaard is de *Offline-modus* ingeschakeld om onbedoelde wijzigingen in de openbare database te voorkomen. U kunt wijzigingen uploaden of verwijderen via het contextmenu van het gemaakte object.
+Als u de *Offline-modus* gebruikt om een POI of OSM-notitie toe te voegen / te bewerken, moet u de wijzigingen uploaden naar OpenStreetMap. Standaard staat de *Offline-modus* aan om onbedoelde wijzigingen in de openbare database te voorkomen. U kunt de wijziging uploaden of verwijderen via het contextmenu van het gemaakte object.
 
 
 ### * AV-notitie opnemen {#-record-av-note}
@@ -831,46 +794,44 @@ Als u de *Offline-modus* gebruikt om POI's of OSM-notities toe te voegen/bewerke
 <InfoAndroidOnly />
 
 :::note
-Om audio/video-notities op te nemen, schakelt u de OsmAnd [**Audio/Video Notes plugin**](../plugins/audio-video-notes.md) in.
+Om audio-/videonotities op te nemen, schakelt u de OsmAnd [**Audio-/Videonotities-plugin**](../plugins/audio-video-notes.md) in.
 :::
 
-![Actie Audio-Video Android](@site/static/img/map/action_av_note_android.png)
+![Actie audio-video Android](@site/static/img/map/action_av_note_android.png)
 
-Neemt een medianotitie op of maakt een medianotitie op een geselecteerd punt op de kaart.
+Neemt een medianotitie op of maakt er een op een geselecteerd punt op de kaart.
 
-- &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - maakt een [audionotitie](../map/point-layers-on-map.md#-audio--video-points-android) op het geselecteerde punt (maakt een nieuw punt op de overlay met een audiopictogram).
-- &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - maakt een [videonotitie](../map/point-layers-on-map.md#-audio--video-points-android) op het geselecteerde punt (maakt een nieuw punt op de overlay met een videopictogram).
+- &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - maakt een [audionotitie](../map/point-layers-on-map.md#-audio--video-points-android) op het geselecteerde punt (maakt een nieuw punt op de overlay met een audio-icoon).
+- &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - maakt een [videonotitie](../map/point-layers-on-map.md#-audio--video-points-android) op het geselecteerde punt (maakt een nieuw punt op de overlay met een video-icoon).
 - &nbsp;<Translate android="true" ids="recording_context_menu_precord"/> - maakt een [fotopunt](../map/point-layers-on-map.md#-audio--video-points-android) op de kaart.
 
 
 ## Aanpassen {#customize}
 
-<InfoAndroidOnly/>
+<InfoAndroidOnly/>  
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Kaartcontextmenu Aanpassen](@site/static/img/map/map_context_menu_customize_1.png) <!-- ![Kaartcontextmenu Aanpassen](@site/static/img/map/map_context_menu_customize_2.png) --> ![Kaartcontextmenu Aanpassen](@site/static/img/map/map_context_menu_customize_3.png)
+![Kaart contextmenu aanpassen](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Kaart contextmenu aanpassen](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Kaart contextmenu aanpassen](@site/static/img/map/map_context_menu_customize_3.png)
 
-U kunt de volgorde van items in het menu *Acties* in het *kaartcontextmenu* wijzigen of items verbergen. Er worden in totaal 16 acties voorgesteld.
+U kunt de volgorde wijzigen of items verbergen in het menu *Acties* in het *kaartcontextmenu*. Er worden in totaal 16 acties voorgesteld.  
 
-- U kunt de drie meest nuttige acties bovenaan de lijst met *Hoofdacties* plaatsen.
-- De rest van het menu kan voor elk profiel afzonderlijk worden aangepast in de secties *Aanvullende acties* en *Verborgen*.
+- U kunt de drie meest nuttige acties naar de bovenkant van de lijst *Hoofdacties* verplaatsen.
+- De rest van het menu kan voor elk profiel afzonderlijk worden aangepast in de secties *Extra acties* en *Verborgen*.  
 
-Beschikbare typen acties:
+Beschikbare soorten acties:
 
-- **<Translate android="true" ids="main_actions"/>**. De sectie heeft slechts 4 knoppen, waarvan er drie kunnen worden aangepast, en Acties, die ongewijzigd blijft.
-- **<Translate android="true" ids="additional_actions"/>**. U kunt deze acties openen door op de knop *Acties* te tikken.
-- **<Translate android="true" ids="shared_string_hidden"/>**. Het verplaatsen van acties naar deze sectie voorkomt niet dat ze werken. Ze verschijnen gewoon niet in het menu Acties.
+- **<Translate android="true" ids="main_actions"/>**. De sectie heeft slechts 4 knoppen, waarvan er drie kunnen worden aangepast, en Acties, die ongewijzigd blijft.  
+- **<Translate android="true" ids="additional_actions"/>**. U kunt deze acties openen door op de knop *Acties* te tikken.  
+- **<Translate android="true" ids="shared_string_hidden"/>**. Het verplaatsen van acties naar deze sectie stopt hun werking niet. Ze verschijnen alleen niet in het Acties-menu.  
 
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Vector kaarten (Kaartstijlen)](./vector-maps.md)
-- [Rasterkaarten (Online / Offline)](./raster-maps.md)
+- [Vectorkaarten (kaartstijlen)](./vector-maps.md)
+- [Rasterkaarten (online / offline)](./raster-maps.md)
 - [Punten op de kaart](./point-layers-on-map.md)
-- [Contextmenu tracks](./tracks/track-context-menu.md)
+- [Contextmenu voor tracks](./tracks/track-context-menu.md)
 - [Openbaar vervoer](./public-transport.md)
 - [Importeren / Exporteren](../personal/import-export.md)
 - [Kleurenpaletschema's](../personal/color-palette-schemes.md)
-
-*Laatst bijgewerkt: juni 2025*

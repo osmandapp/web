@@ -1,5 +1,5 @@
 ---
-source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+source-hash: 89f13b2052ddf4cfe0e48c82af9f59e5dd98c3977b988e768072eb20a6ad2a59
 sidebar_position: 4
 sidebar_label: Gebruikersgegevens
 title: Gebruikersgegevens op de kaart
@@ -23,25 +23,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Op het web kunnen gebruikers hun persoonlijke gegevens, zoals Tracks en Favorieten, rechtstreeks op het web openen, beheren en aanmaken.
 
 - Tracks: Gebruikers kunnen online nieuwe tracks uploaden, bekijken, bewerken of aanmaken. Alle wijzigingen worden automatisch gesynchroniseerd met de OsmAnd Cloud, zodat de gegevens beschikbaar zijn op alle verbonden apparaten.
-- Favorieten: Maak en organiseer opgeslagen locaties op het web, met automatische synchronisatie met uw OsmAnd-app voor snelle toegang en navigatie.
+- Favorieten: Maak en organiseer opgeslagen locaties op het web, met automatische synchronisatie naar uw OsmAnd-app voor snelle toegang en navigatie.
 
-De integratie met OsmAnd Cloud maakt naadloze synchronisatie mogelijk, waardoor gebruikers hun gegevens gemakkelijk vanaf elk apparaat kunnen beheren.
+De integratie met OsmAnd Cloud zorgt voor een naadloze synchronisatie, waardoor gebruikers hun gegevens gemakkelijk vanaf elk apparaat kunnen beheren.
 
 ## Tracks op het web {#tracks-on-the-web}
 
-Het is een betaalde functie <ProFeature/>. Eerst moet u inloggen op uw OsmAnd Pro:
+Dit is een betaalde functie <ProFeature/>. Eerst moet u inloggen op uw OsmAnd Pro:
 
 ![Track inloggen](@site/static/img/web/track_loggin.png)
 
 Voor de sectie Tracks:
 
-- Toon tracks van [OsmAnd Cloud](#users-tracks-pro).
-- Tracks toevoegen op de kaart (**Zichtbaar op kaart** map).
-- Alle trackinformatie en grafiek bekijken
-- Tracks wijzigen en toevoegen aan Cloud.
+- Toon tracks van [OsmAnd Cloud](#cloud-tracks).
+- Tracks toevoegen aan de kaart (map **Zichtbaar op kaart**).
+- Alle trackinformatie en grafieken bekijken
+- Tracks wijzigen en toevoegen aan de Cloud.
 - Tracks downloaden en verwijderen.
 - Nieuwe mappen aanmaken of verwijderen.
-- Mappen downloaden als OSF- of OBF-collectie.
+- Mappen downloaden als OSF- of OBF-verzameling.
 
 
 ### Zichtbaar op de kaart {#visible-on-the-map}
@@ -55,45 +55,45 @@ _Schakel_ tracks _in/uit_ om ze wel of niet op de kaart te tonen.
 
 ### Trackmapmenu {#track-folder-menu}
 
-Klik op de *Drie punten* **⋮** knop om het *Trackmapmenu* te openen. Hier kunt u alle tracks uit de gekozen map downloaden als:
+Klik op de knop met de *drie puntjes* **⋮** om het menu *Trackmap* te openen. Hier kunt u alle tracks uit de gekozen map downloaden als:
 
  - Downloaden als OSF.
- - Downloaden als OBF-collectie:
-  U kunt een OBF-kaart krijgen van deze gegevens: [OBF-bestand](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) of [Reis-OBF](https://osmand.net/blog/routes#generated-travel-routes).
+ - Downloaden als OBF-verzameling:
+  U kunt een OBF-kaart van deze gegevens krijgen: [OBF-bestand](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) of [Reis-OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
     -  [OBF-bestand](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
-  U kunt offline kaart OBF (OsmAnd Binary Format) downloaden en openen met OsmAnd op het apparaat, het is geschikt om een grote hoeveelheid tracks weer te geven die zichtbaar zullen zijn op de kaart.
+  U kunt de offline kaart OBF (OsmAnd Binary Format) downloaden en openen met OsmAnd op uw apparaat. Dit is geschikt om een grote hoeveelheid tracks weer te geven die zichtbaar zullen zijn op de kaart.
 
     -  [Reis-OBF](https://osmand.net/blog/routes#generated-travel-routes):
 
-  U kunt ook een kaart met tracks importeren als reisboek, waarmee u ook een specifieke track op de kaart kunt selecteren en deze als normale GPX kunt gebruiken. Reisboeken ondersteunen ook functies zoals het weergeven van tracks als punten, het filteren van tracks op activiteitstype en het filteren van waypoints.
+  U kunt ook een kaart met tracks importeren als een Reisboek, waarmee u ook een specifieke track op de kaart kunt selecteren en deze als een normale GPX kunt gebruiken. Een reisboek ondersteunt ook functies zoals het weergeven van tracks als punten, het filteren van tracks op activiteitstype en het filteren van waypoints.
 
-- _Hernoem_ de gekozen map.
-- _Verwijder_ de gekozen map.
+- _Hernoem_ gekozen map.
+- _Verwijder_ gekozen map.
 
 ![Trackmapmenu](@site/static/img/web/collection.png)
 
 
 ### Cloud Tracks {#cloud-tracks}
 
-GPX-tracks die u in [OsmAnd Cloud](../personal/osmand-cloud.md) hebt, zijn na het inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-gebruikers (die hun gegevens kunnen downloaden, zelfs nadat hun Pro-abonnement is verlopen).
+GPX-tracks die u in [OsmAnd Cloud](../personal/osmand-cloud.md) heeft, zijn na het inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers (die hun gegevens kunnen downloaden, zelfs nadat hun Pro-abonnement is verlopen).
 
-De volgende functies zijn beschikbaar na het kiezen van een cloudtrack:
+De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
 
 - Informatieschermen:
-  - *Informatie* - weergave van trackgegevens.
-  - *Hoogte* - grafiek van hoogte.
+  - *Informatie* - toont trackgegevens.
+  - *Hoogte* - hoogtegrafiek.
   - *Snelheid* - snelheidsgrafiek.
   - *Helling* - hellingsgrafiek.
-  - *Instellingen* - lijst met navigatieprofielen voor de tool *Route maken*.  
+  - *Instellingen* - lijst met navigatieprofielen voor de tool *Route aanmaken*.
 
 - Actieknoppen:
-  - *Track bewerken* - cloudtrack toevoegen aan lokaal voor bewerking (knop _Locatie bewerken_ op het paneel).
-  - *GPX downloaden* - downloadt de track naar de pc.
-  - *Hoogte opnieuw berekenen* (Satelliet) - toont de hoogtegrafiek van de geselecteerde track.
-  - *Track verwijderen* - verwijdert de track.
-  - *Track sluiten* - sluit de track.
+  - *Track bewerken* - voegt cloud-track toe aan lokaal voor bewerking (knop _Lokaal bewerken_ op het paneel).
+  - *Download GPX* - downloadt de track naar de pc.
+  - *Herbereken* Hoogte (Satelliet) - toont de hoogtegrafiek van de geselecteerde track.
+  - *Verwijder Track* - verwijdert de track.
+  - *Sluit track* - sluit de track.
 
 ![OsmAnd Web cloud GPX bewerken](@site/static/img/web/cloud_track.png)
 
@@ -101,18 +101,18 @@ De volgende functies zijn beschikbaar na het kiezen van een cloudtrack:
 
 ## Favorieten op het web {#favorites-on-the-web}
 
-Na registratie van een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), worden uw Favorieten weergegeven in het Favorietenmenu.  
+Na registratie van een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), worden uw Favorieten weergegeven in het Favorieten-menu.
 De volgende acties zijn beschikbaar:
 
 - *Toon op kaart* - toon favoriete punten uit de gekozen map op de kaart.
-- *Hernoem* - naam en beschrijving van de favoriete map.
-- *Download* - download de gekozen favoriete map.
-- *Verwijder* - verwijder de gekozen favoriete map.
+- *Hernoemen* - naam en beschrijving van de favorietenmap.
+- *Downloaden* - download de gekozen favorietenmap.
+- *Verwijderen* - verwijder de gekozen favorietenmap.
 
 ![OsmAnd Web cloud Favorieten bewerken](@site/static/img/web/favorites.png)
 
 ### Favoriet toevoegen / bewerken {#add--edit-favorite}
 
-Om een nieuw favoriet punt [toe te voegen](../personal/favorites.md#edit), klikt u met de rechtermuisknop op het scherm. Om te beginnen met bewerken, klikt u op het favoriete punt; het bewerkingsmenuscherm ziet er hetzelfde uit als [het menu in de OsmAnd-app](../personal/favorites.md#create).  
+[Om een nieuw favoriet punt toe te voegen](../personal/favorites.md#manage-favorites), klikt u met de rechtermuisknop op het scherm. Om te beginnen met bewerken, klikt u op het favoriete punt. Het bewerkingsmenuscherm ziet er hetzelfde uit als [het menu in de OsmAnd-app](../personal/favorites.md#create).
 
 ![OsmAnd Web Favorieten toevoegen](@site/static/img/web/web_favorites_add.png)

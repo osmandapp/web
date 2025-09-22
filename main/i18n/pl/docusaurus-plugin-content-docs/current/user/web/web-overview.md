@@ -1,5 +1,5 @@
 ---
-source-hash: 5d832465941870703a27d7bcf3e7a52806533527f1a691bbbdf879cf6b4e0def
+source-hash: 468554af76614d225c0a6d533461ed0e21450d49977ff9641eba44e245d32a09
 sidebar_position: 1
 sidebar_label: Wprowadzenie
 title: Wprowadzenie do strony internetowej
@@ -20,49 +20,49 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Czym jest przeglądarka map internetowych OsmAnd?
 
-[**Portal map OsmAnd**](https://osmand.net/map) — zwany również **Przeglądarką map internetowych** — jest rozszerzeniem aplikacji mobilnej OsmAnd opartym na przeglądarce. Umożliwia użytkownikom przeglądanie globalnych map, planowanie tras, symulowanie nawigacji, zarządzanie danymi osobowymi i dostęp do zsynchronizowanych treści z ich urządzeń za pośrednictwem chmury.
+[**Portal map OsmAnd**](https://osmand.net/map) — nazywany również **przeglądarką map internetowych** — to oparte na przeglądarce rozszerzenie aplikacji mobilnej OsmAnd. Umożliwia użytkownikom przeglądanie globalnych map, planowanie tras, symulowanie nawigacji, zarządzanie danymi osobistymi i dostęp do zsynchronizowanych treści z ich urządzeń za pośrednictwem chmury.
 
-Zaprojektowana jako wieloplatformowy towarzysz OsmAnd dla systemów Android i iOS, Przeglądarka map internetowych pomaga użytkownikom planować podróże, analizować ślady, przeglądać teren i zarządzać plikami za pomocą dowolnej przeglądarki stacjonarnej lub tabletowej — bez instalowania aplikacji.
+Zaprojektowana jako wieloplatformowy dodatek do OsmAnd na Androida i iOS, przeglądarka map internetowych pomaga użytkownikom planować wycieczki, analizować trasy, przeglądać ukształtowanie terenu i zarządzać plikami za pomocą dowolnej przeglądarki na komputerze stacjonarnym lub tablecie — bez konieczności instalowania aplikacji.
 
-OsmAnd Web ściśle integruje się z usługą **OsmAnd Cloud**, która umożliwia synchronizację ulubionych, śladów i kopii zapasowych między urządzeniami i platformami. Użytkownicy z kontami **OsmAnd Start** (bezpłatne) lub **OsmAnd Pro** (płatne) mogą w pełni wykorzystać ten ekosystem, synchronizując dane między urządzeniami mobilnymi a internetem.
+OsmAnd Web jest ściśle zintegrowany z usługą **OsmAnd Cloud**, która umożliwia synchronizację ulubionych, tras i kopii zapasowych między urządzeniami i platformami. Użytkownicy z kontami **OsmAnd Start** (bezpłatne) lub **OsmAnd Pro** (płatne) mogą w pełni wykorzystać ten ekosystem, synchronizując dane między urządzeniami mobilnymi a wersją internetową.
 
 
 
 ## Kluczowe funkcje
 
-- Mapa z globalnym zasięgiem i wysokiej jakości danymi wektorowymi
-- Planowanie tras dla pieszych, samochodów, rowerów i innych profili
-- Podgląd nawigacji z instrukcjami zakręt po zakręcie
-- Wyszukiwanie i odkrywanie pobliskich popularnych miejsc
-- Wyświetlanie Ulubionych, Śladów i POI na mapie
+- Mapa o globalnym zasięgu i wysokiej jakości danych wektorowych
+- Planowanie trasy przy użyciu profili pieszego, samochodowego, rowerowego i innych
+- Podgląd nawigacji z instrukcjami krok po kroku
+- Wyszukiwanie i odkrywanie popularnych miejsc w pobliżu
+- Wyświetlanie ulubionych, tras i POI na mapie
 - Nakładki pogodowe: wiatr, temperatura i ciśnienie
 - Warstwy terenu: cieniowanie wzgórz, stoki i widok wysokości
-- Analizator śladów dla profili wysokości i prędkości
-- Pełny dostęp do zsynchronizowanych danych za pośrednictwem OsmAnd Cloud
-- Obsługa importu/eksportu plików (GPX: ślady, ulubione)
+- Analizator tras dla profili wysokości i prędkości
+- Pełny dostęp do zsynchronizowanych danych przez OsmAnd Cloud
+- Obsługa importu/eksportu plików (GPX: trasy, ulubione)
 - Bezproblemowa integracja z **OsmAnd Pro** i **OsmAnd Start**
 
 
 
-### Dostęp do subskrypcji {#subscription-accesses}
+### Dostęp w ramach subskrypcji {#subscription-accesses}
 
-Wiele funkcji jest bezpłatnych, ale niektóre wymagają zarejestrowanego konta.
+Wiele funkcji jest darmowych, ale niektóre wymagają zarejestrowanego konta.  
 Poniższa tabela przedstawia, co jest dostępne w każdej wersji:
 
 | Funkcja | Dostępne w |
 |--------|--------------|
-| [Trasa nawigacji](./planner.md) | Bezpłatne |
-| [Planer tras](./planner.md) | Bezpłatne |
-| [Nakładki pogodowe](./web-map.md) | Bezpłatne |
+| [Trasa nawigacyjna](./planner.md) | Bezpłatnie |
+| [Planer trasy](./planner.md) | Bezpłatnie |
+| [Nakładki pogodowe](./web-map.md) | Bezpłatnie |
 | [Ulubione](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
 | [Synchronizacja z OsmAnd Cloud](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
-| [Wyszukiwanie w sieci, Popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
-| [Foldery śladów i warstwy](./web-map.md) | <ProFeature/> |
+| [Wyszukiwanie w sieci, popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
+| [Foldery i warstwa tras](./web-map.md) | <ProFeature/> |
 
 
 ## Jak zacząć {#how-to-start}
 
-Aby uzyskać dostęp do wszystkich funkcji przeglądarki map internetowych OsmAnd, musisz zalogować się za pomocą konta OsmAnd Cloud.
+Aby uzyskać dostęp do pełnych funkcji przeglądarki map internetowych OsmAnd, musisz zalogować się na konto OsmAnd Cloud.
 
 - Jeśli masz już subskrypcję [**OsmAnd Pro**](../personal/osmand-cloud.md#login) lub chcesz utworzyć bezpłatne konto [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), wykonaj następujące kroki:
 
@@ -82,6 +82,3 @@ Aby zmienić język interfejsu:
 - Przejdź do **Menu → ⚙ Ustawienia → Język wyświetlania**
 
 ![Język internetowy](@site/static/img/web/web_language.png)
-
-
-> *Ostatnia aktualizacja: lipiec 2024*

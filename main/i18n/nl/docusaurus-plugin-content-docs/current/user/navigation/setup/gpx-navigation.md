@@ -1,7 +1,7 @@
 ---
-source-hash: ae9687e6f1f23d70428677a5ebd5a73f6a67a71286137aec6ff175aad5589758
+source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
 sidebar_position: 2
-title: Navigeren via een route
+title:  Navigeren op een track
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,68 +17,68 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-De optie *Navigeren via een route* (GPX) stelt u in staat om een vooraf gedefinieerde route of track op een kaart te volgen. Dit kan bijzonder nuttig zijn voor buitenactiviteiten zoals wandelen, fietsen of off-road rijden, waarbij een geplande route de veiligheid en efficiëntie verbetert. Als u in een georganiseerde groep reist, helpt deze functie u en elk lid van de groep dezelfde route-informatie te hebben als de anderen.
+De optie *Navigeren op een track* (GPX) stelt u in staat om een vooraf gedefinieerde route of track op een kaart te volgen. Dit kan met name handig zijn voor buitenactiviteiten zoals wandelen, fietsen of off-road rijden, waar een geplande route de veiligheid en efficiëntie verbetert. Als u in een georganiseerde groep reist, helpt deze functie u en elk lid van de groep om dezelfde route-informatie te hebben als de anderen.  
 
-De optie *Navigeren via een route* kan ook in het dagelijks leven worden gebruikt. U kunt een eerder [opgenomen route](../../plugins/trip-recording.md) gebruiken of [een route maken](../../personal/tracks/manage-tracks.md#create-a-track) en deze delen met uw familie of vrienden in plaats van hen de route uit te leggen. U kunt ook de [routes op de OsmAnd-kaart](../../../../blog/routes/) gebruiken voor navigatie. Hoe u deze op de kaart markeert en wat hun kleuren betekenen, wordt beschreven in de [Routes-sectie](../../map/vector-maps.md#routes) van het artikel *Vector kaarten*.
+De optie *Navigeren op een track* kan ook in het dagelijks leven worden gebruikt. U kunt een eerder [opgenomen track](../../plugins/trip-recording.md) gebruiken of [een track aanmaken](../../personal/tracks/manage-tracks.md#create-a-track) en deze delen met uw familie of vrienden in plaats van hen de route uit te leggen. U kunt ook de [routes op de OsmAnd-kaart](../../../../blog/routes/) gebruiken voor navigatie. Hoe u ze op de kaart markeert en wat hun kleuren betekenen, wordt beschreven in de sectie [Routes](../../map/vector-maps.md#routes) van het artikel *Vectorkaarten*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Navigatie via route scherm Android](@site/static/img/navigation/gpx/navigation_gpx_android.png)
+![Navigatiescherm op track Android](@site/static/img/navigation/gpx/navigation_gpx_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigatie via route scherm iOS](@site/static/img/navigation/gpx/navigation_gpx_ios.png)
+![Navigatiescherm op track iOS](@site/static/img/navigation/gpx/navigation_gpx_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Selecteer de route {#select-the-track}
+## Selecteer de track {#select-the-track}
 
-Voordat u de optie *Navigeren via een route* gebruikt, moet u de [route op de kaart weergeven](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd ondersteunt routes als een lijn (**Geometrie**) en routes als een route (**Route**) of een combinatie daarvan (**OsmAnd** via [Route plannen](../../plan-route/create-route.md)). Als u een route heeft als een verzameling **Waypoints**, kunt u [Navigatie via markeringen](./markers-navigation.md) gebruiken.
-
-
-- **Geometrie**-routes hebben standaard een zeer eenvoudige navigatie en bieden geen nauwkeurige afslagen, straatnamen en rijstroken. Om ontbrekende informatie te verkrijgen, moet u de tool [Aan wegen koppelen](#attach-to-the-roads) gebruiken.
-
-- **Route**-routes berekenen de route tussen routepunten op basis van het geselecteerde profiel. In principe worden alle routepunten beschouwd als tussenpunten. Als uw route meer dan 50 punten bevat, is het zeer waarschijnlijk dat het een verkeerd geconfigureerde **Geometrie**-route is.
-
-- **OsmAnd**-routes bestaan uit zowel geometrie- als routedelen, en zijn geschikt om precies dezelfde begeleiding te bieden als standaard navigatie. Deze routes worden geproduceerd door [Route plannen](../../plan-route/create-route.md) of de [Webversie](../../web/index.md). Het is mogelijk om deze route opnieuw op te slaan als een **Geometrie**-only route als [**Vereenvoudigd**](../../plan-route/create-route.md#save-route) om te gebruiken in programma's van derden.
+Voordat u de optie *Navigeren op een track* gebruikt, moet u [de track op de kaart weergeven](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd ondersteunt een track als een lijn (**Geometrie**) en een track als een route (**Route**) of een combinatie daarvan (**OsmAnd** via [Route plannen](../../plan-route/create-route.md)). Als u een track heeft als een verzameling **Waypoints**, kunt u [Navigatie op basis van markeringen](./markers-navigation.md) gebruiken.
 
 
-### Start GPX-navigatie {#start-gpx-navigation}
+- Een **Geometrie**-track heeft standaard zeer eenvoudige navigatie en geeft geen nauwkeurige afslagen, straatnamen en rijstroken. Om ontbrekende informatie te verkrijgen, moet u de tool [Aan de weg koppelen](#attach-to-the-roads) gebruiken.
+
+- Een **Route**-track berekent de route tussen routepunten op basis van het geselecteerde profiel. In principe worden alle routepunten beschouwd als tussenliggende punten. Als uw route uit meer dan 50 punten bestaat, is het zeer waarschijnlijk dat het een verkeerd geconfigureerde **Geometrie**-track is.
+
+- Een **OsmAnd**-track bestaat uit zowel geometrie- als route-onderdelen en is geschikt om exact dezelfde begeleiding te bieden als de standaardnavigatie. Deze tracks worden geproduceerd door [Route plannen](../../plan-route/create-route.md) of de [Webversie](../../web/index.md). Het is mogelijk om deze track opnieuw op te slaan als een **Geometrie**-track via [**Vereenvoudigd**](../../plan-route/create-route.md#save-route) om te gebruiken in programma's van derden.
+
+
+### GPX-navigatie starten {#start-gpx-navigation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Selecteer route om te navigeren Android 1](@site/static/img/navigation/gpx/follow_track_andr_1.png) ![Selecteer route om te navigeren Android 2](@site/static/img/navigation/gpx/follow_track_andr_2.png)
+![Selecteer track om te navigeren Android 1](@site/static/img/navigation/gpx/follow_track_andr_1.png) ![Selecteer track om te navigeren Android 2](@site/static/img/navigation/gpx/follow_track_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Selecteer route om te navigeren iOS 1](@site/static/img/navigation/gpx/follow_track_ios_1.png) ![Selecteer route om te navigeren iOS 2](@site/static/img/navigation/gpx/follow_track_ios_2.png)
+![Selecteer track om te navigeren iOS 1](@site/static/img/navigation/gpx/follow_track_ios_1.png) ![Selecteer track om te navigeren iOS 2](@site/static/img/navigation/gpx/follow_track_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Navigatie op een route kan worden gestart met de sneltoets in het [route-contextmenu](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (geopend door een van de [gemarkeerde routes](./route-navigation.md#history-of-previous-routes) op de kaart te selecteren, of door op een routebestand te tikken in de sectie [Mijn plaatsen](../../personal/myplaces.md) van het *Hoofdmenu*) of vanuit het navigatiemenu, dat wordt geopend door te tikken op:
+Navigatie op een track kan worden gestart met de snelle actieknop in het [contextmenu van de track](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (geopend door een van de [gemarkeerde tracks](./route-navigation.md#history-of-previous-routes) op de kaart te selecteren, of door op een trackbestand te tikken in de sectie [Mijn Plaatsen](../../personal/myplaces.md) van het *Hoofdmenu*) of vanuit het navigatiemenu, dat wordt geopend door te tikken op:
 
-- [*Navigatieknop*](../../widgets/map-buttons.md#directions) op het kaartscherm.
+- *[Navigatieknop](../../widgets/map-buttons.md#directions)* op het kaartscherm.  
 - *Navigatiesectie* in het *Hoofdmenu* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- Ga in het [*Navigatiemenu*](./route-navigation.md#navigation-menu) naar *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
+- Ga in het [*Navigatiemenu*](./route-navigation.md#navigation-menu) naar *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
 ### Segmenten kiezen {#choose-segments}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Segmenten Android](@site/static/img/navigation/gpx/segments_andr.png)
 
@@ -92,19 +92,19 @@ Navigatie op een route kan worden gestart met de sneltoets in het [route-context
 
 </Tabs>
 
-Voor navigatie, als de geselecteerde route uit meerdere segmenten of routes bestaat, kunt u een specifiek segment of het gehele GPX-routebestand selecteren. Bij het **[importeren](../../personal/tracks/manage-tracks.md#import)** kunt u kiezen of u het in één bestand of in meerdere bestanden wilt opslaan.
+Voor navigatie kunt u, als de geselecteerde track uit meerdere segmenten of tracks bestaat, een specifiek segment of het volledige GPX-trackbestand selecteren. Bij het **[importeren](../../personal/tracks/manage-tracks.md#import)** kunt u kiezen of u het in één bestand of in meerdere bestanden wilt opslaan.
 
 
-### Route-opties volgen {#follow-track-options}
+### Opties voor track volgen {#follow-track-options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 - *<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 - *<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>*
 
-![Navigatie via route scherm Android](@site/static/img/navigation/gpx/follow_the_track_5-1_andr.png)
+![Navigatiescherm op track Android](@site/static/img/navigation/gpx/follow_the_track_5-1_andr.png)
 
 </TabItem>
 
@@ -113,81 +113,81 @@ Voor navigatie, als de geselecteerde route uit meerdere segmenten of routes best
 Ga naar: *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 
 
-![Navigatie via route scherm iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)
+![Navigatiescherm op track iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Bewerken** (*potloodpictogram* naast de routenaam) — Opent de route in de tool [*Route plannen*](../../plan-route/create-route.md).
+- **Bewerken** (*potloodicoon* naast de tracknaam) — Opent de track in de tool [*Route plannen*](../../plan-route/create-route.md).
 - **<Translate android="true" ids="select_another_track"/>** — Selecteer een ander GPX-bestand voor navigatie.
-- **<Translate android="true" ids="gpx_option_reverse_route"/>** — Als deze instelling is ingeschakeld, wordt de bewegingsrichting langs de route omgekeerd.
-- **<Translate android="true" ids="attach_to_the_roads"/>** — Configureert [een route aan wegen koppelen](#attach-to-the-roads).
-- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — U kunt kiezen hoe u navigeert van mijn locatie naar de route:
-naar het *<Translate android="true" ids="start_of_the_track"/>* of naar het *<Translate android="true" ids="nearest_point"/>* op de route.
-- Kies **Navigatietype** voor het eerste en laatste segment: bouw een [*rechte lijn*](../routing/straight-line-routing.md) of gebruik het [*routingtype*](../routing/osmand-routing.md#routing-types) van het huidige profiel.
+- **<Translate android="true" ids="gpx_option_reverse_route"/>** — Als deze instelling is ingeschakeld, wordt de bewegingsrichting langs de track omgekeerd.
+- **<Translate android="true" ids="attach_to_the_roads"/>** — Configureert het [koppelen van een track aan de wegen](#attach-to-the-roads).
+- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — U kunt selecteren hoe u van mijn locatie naar de track wilt navigeren:
+naar het *<Translate android="true" ids="start_of_the_track"/>* of naar het *<Translate android="true" ids="nearest_point"/>* op de track.
+- Kies **Navigatietype** voor het eerste en laatste segment: bouw een [*rechte lijn*](../routing/straight-line-routing.md) of gebruik het [*routeringstype*](../routing/osmand-routing.md#routing-types) van het huidige profiel.
 
 
-### Aan wegen koppelen {#attach-to-the-roads}
+### Aan de weg koppelen {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Aan wegen koppelen 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
+![Aan de weg koppelen 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aan wegen koppelen 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Aan de weg koppelen 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De functie **Aan wegen koppelen** lijnt uw route uit met de dichtstbijzijnde weg voor een nauwkeurigere navigatie-ervaring. Deze functie, beschikbaar in het menu [Route volgen](#follow-track-options), zorgt ervoor dat uw route het juiste wegennet volgt op basis van het geselecteerde *navigatieprofiel* en de **drempelafstand**. Dit verbetert zowel de [routedetails](../setup/route-details.md) als de [gesproken instructies](#guidance) tijdens de navigatie.
+De functie **Aan de weg koppelen** lijnt uw track uit met de dichtstbijzijnde weg voor een nauwkeurigere navigatie-ervaring. Deze functie, beschikbaar in het menu [Track volgen](#follow-track-options), zorgt ervoor dat uw route het juiste wegennet volgt op basis van het geselecteerde *navigatieprofiel* en de **drempelafstand**. Dit verbetert zowel de [routedetails](../setup/route-details.md) als de [spraakinstructies](#guidance) tijdens de navigatie.
 
 ***Hoe het werkt:***
 
-- OsmAnd koppelt elk routepunt aan de **dichtstbijzijnde weg** binnen de ingestelde **drempelafstand** (standaard: **50 meter**).
-- De **drempelafstand** definieert de maximaal toegestane afstand tussen een GPS-routepunt en een weg voor koppeling.
-- **Automatische herkoppeling** — Bij het wisselen van **navigatieprofielen** koppelt OsmAnd de route automatisch opnieuw aan wegen die geschikt zijn voor het nieuwe profiel.
-- Voor grote routes met veel punten kan het koppelingsproces iets langer duren. U ziet een **voortgangsindicator** (*oranje statusbalk*) die de koppelingsstatus aangeeft.
-- Nadat de koppeling is voltooid, tikt u op **Toepassen** om de gewijzigde route te gebruiken voor navigatie.
+- OsmAnd koppelt elk trackpunt aan de **dichtstbijzijnde weg** binnen de ingestelde **drempelafstand** (standaard: **50 meter**).  
+- De **drempelafstand** definieert de maximaal toegestane afstand tussen een GPS-trackpunt en een weg voor koppeling.
+- **Automatische herkoppeling** — Bij het wisselen van **navigatieprofielen** koppelt OsmAnd de track automatisch opnieuw aan wegen die geschikt zijn voor het nieuwe profiel.
+- Voor grote tracks met veel punten kan het koppelingsproces iets langer duren. U ziet een **voortgangsindicator** (*oranje statusbalk*) die de koppelingsstatus toont.
+- Nadat de koppeling is voltooid, tikt u op **Toepassen** om de gewijzigde track voor navigatie te gebruiken.
 
-#### Automatische koppeling aan wegen {#automatic-attachment-to-the-roads}
+### Automatisch aan de weg koppelen {#automatic-attachment-to-the-roads}
 
 OsmAnd koppelt routes automatisch aan wegen bij gebruik van de tool **Route plannen**:
 
 - **Waypoints** worden automatisch uitgelijnd met de dichtstbijzijnde beschikbare weg (*behalve voor [Rechte lijn routering](../../navigation/routing/straight-line-routing.md) en [Direct-naar-punt routering](../../navigation/routing/direct-to-point-routing.md)*).
 - Als er geen wegen worden gedetecteerd (bijv. in off-road omgevingen), volgt de route **rechte lijnsegmenten**.
-- U kunt de route **handmatig aanpassen** door waypoints naar verschillende locaties te slepen.
+- U kunt de route **handmatig aanpassen** door waypoints naar andere locaties te slepen.
 
-Standaard wordt de functie **Aan wegen koppelen** **automatisch** uitgevoerd wanneer een route wordt geselecteerd voor navigatie. U kunt deze instelling naar behoefte wijzigen. Voor meer details, zie [Gedetailleerde routebegeleiding](../guidance/navigation-settings.md#detailed-track-guidance) in het artikel *Navigatie-instellingen*.
+Standaard wordt de functie **Aan de weg koppelen** **automatisch** uitgevoerd wanneer een track wordt geselecteerd voor navigatie. U kunt deze instelling naar wens wijzigen. Raadpleeg voor meer details [Gedetailleerde trackbegeleiding](../guidance/navigation-settings.md#detailed-track-guidance) in het artikel *Navigatie-instellingen*.
 
 
 ## Punten {#points}
 
 ### Start-/eindpunt {#start--finish-point}
 
-U kunt een start- en eindpunt voor een route opgeven dat afwijkt van het start-/eindpunt dat in het GPX-bestand is opgegeven. Wijzig dit net zoals u dat doet voor [Navigatie](../setup/route-navigation.md#select-starting-point).
+U kunt een ander start- en eindpunt voor een route specificeren dan het start-/eindpunt dat in het GPX-bestand is opgegeven. Wijzig dit op dezelfde manier als u doet voor [Navigatie](../setup/route-navigation.md#select-starting-point).
 
-In het menu [Route volgen](#follow-track-options) kunt u kiezen of u vanaf uw huidige locatie naar het startpunt van de route wilt navigeren of naar het dichtstbijzijnde punt op de GPX-route. Ook kunt u [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) kiezen dat wordt gebruikt voor het start- en eindsegment van uw route.
+In het menu [Track volgen](#follow-track-options) kunt u kiezen of u wilt navigeren vanaf uw huidige locatie naar het startpunt van de track of naar het dichtstbijzijnde punt op de GPX-track. U kunt ook het [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) kiezen dat wordt gebruikt voor het begin- en eindsegment van uw route.  
 
 ### Waypoints {#waypoints}
 
-Als de route waypoints heeft, kunt u [Toon langs de route](../guidance/map-during-navigation.md#show-points-along-the-route) en [Gesproken begeleiding](../guidance/voice-navigation.md#voice-settings) gebruiken om meldingen te ontvangen over nuttige plaatsen. U kunt **Waypoints** toevoegen aan een bestaande route via [Contextmenu](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint), de route moet zichtbaar zijn op de kaart.
+Als de track waypoints heeft, kunt u [Langs de route tonen](../guidance/map-during-navigation.md#show-points-along-the-route) en [Spraakbegeleiding](../guidance/voice-navigation.md#voice-settings) gebruiken om meldingen te ontvangen over Nuttige Plaatsen. U kunt **Waypoints** toevoegen aan een bestaande track via het [Contextmenu](../../map/map-context-menu.md#-add--edit-track-waypoint), de track moet zichtbaar zijn op de kaart.
 
-### Tussenpunten {#intermediate-points}
+### Tussenliggende punten {#intermediate-points}
 
-Bij het voorbereiden of navigeren van een GPX-route kunt u geen tussenliggende plaatsen toevoegen waar u doorheen wilt rijden binnen die route. U kunt alleen start- en eindpunten toewijzen naast de route of het segment dat u van plan bent te volgen.
+Bij het voorbereiden of navigeren van een GPX-track kunt u geen tussenliggende plaatsen toevoegen die u van plan bent te passeren binnen die track. U kunt alleen start- en eindpunten toewijzen naast de track of het segment dat u van plan bent te volgen.
 
 ## Begeleiding {#guidance}
 
-*Navigatie via GPX-route* bevat dezelfde [gesproken instructies](../guidance/voice-navigation.md) als routenavigatie. Sommige afslagen of rotondes worden echter mogelijk niet correct geïnterpreteerd omdat er geen informatie over wegkruisingen in GPX is, behalve voor GPX-bestanden die door OsmAnd zijn gemaakt. Om deze problemen te elimineren, moet u de functie [Aan wegen koppelen](#attach-to-the-roads) gebruiken.
+*Navigatie op GPX-track* bevat dezelfde [spraakinstructies](../guidance/voice-navigation.md) als routenavigatie. Sommige afslagen of rotondes worden echter mogelijk niet correct geïnterpreteerd omdat er geen informatie over kruispunten in GPX staat, behalve voor GPX-bestanden die door OsmAnd zijn gemaakt. Om deze problemen te elimineren, moet u de functie [Aan de weg koppelen](#attach-to-the-roads) gebruiken.  
 
-Tijdens de navigatie kunt u verschillende opties gebruiken, zoals in- of uitzoomen, de kaart verschuiven of overschakelen naar een andere kaartstijl. Als u van de route afwijkt, berekent OsmAnd de route automatisch opnieuw om u weer op de route te brengen. U kunt ook de snelheid van de route aanpassen en hoorbare waarschuwingen instellen voor naderende punten of afwijkingen van de route.
+Tijdens de navigatie kunt u verschillende opties gebruiken, zoals in- of uitzoomen, de kaart verschuiven of overschakelen naar een andere kaartstijl. Als u van de track afwijkt, zal OsmAnd de route automatisch herberekenen om u weer op de track te brengen. U kunt ook de snelheid van de track aanpassen en hoorbare waarschuwingen instellen voor naderende punten of afwijkingen van de route.  
 
 
 ## Gerelateerde artikelen {#related-articles}
@@ -195,11 +195,9 @@ Tijdens de navigatie kunt u verschillende opties gebruiken, zoals in- of uitzoom
 - [Routeparameters](../routing/osmand-routing.md#routing-types)
 - [Routevoorbereiding](./route-navigation.md)
 - [Routedetails](./route-details.md)
-- [Navigatie via markeringen](./markers-navigation.md)
+- [Navigatie op basis van markeringen](./markers-navigation.md)
 - [Navigatie-instellingen](../guidance/navigation-settings.md)
 - [Kaartscherm tijdens navigatie](../guidance/map-during-navigation.md)
-- [Gesproken aanwijzingen / Meldingen](../guidance/voice-navigation.md)
+- [Spraakinstructies / Meldingen](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Laatst bijgewerkt: april 2025*

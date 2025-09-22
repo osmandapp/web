@@ -1,8 +1,8 @@
 ---
-source-hash: 4861815642f39190c1d87fb62206d4b05c6eea3b5d2af97e4dcef2e6834f466c
+source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
 sidebar_position: 5
-sidebar_label: Planuj trasę
-title: Planuj trasę na stronie internetowej
+sidebar_label:  Planowanie trasy
+title: Planowanie trasy na stronie internetowej
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Narzędzie OsmAnd Web Route Planner pozwala tworzyć trasy nawigacyjne, planować ścieżki i zarządzać plikami lokalnymi bezpośrednio z przeglądarki. To narzędzie internetowe jest przydatne do tworzenia szczegółowych tras podróży, które można zsynchronizować z aplikacją lub udostępnić innym.
+Narzędzie do planowania tras OsmAnd Web pozwala tworzyć trasy nawigacyjne, planować ślady i zarządzać lokalnymi plikami bezpośrednio z przeglądarki. To narzędzie internetowe jest przydatne do tworzenia szczegółowych tras podróży, które można zsynchronizować z aplikacją lub udostępnić innym.
 
 
 ## Trasa nawigacyjna {#navigation-route}
@@ -30,98 +30,96 @@ Aby utworzyć trasę nawigacyjną, wykonaj następujące kroki:
 
 - **Kliknij prawym przyciskiem myszy** na mapie, aby dodać punkty trasy:
 
-  - *Nawiguj od*. Ustaw punkt początkowy.
-  - *Nawiguj do*. Ustaw punkt docelowy.
-  - *Nawiguj przez*. Dodaj punkty pośrednie, jeśli to konieczne.
+  - *Nawiguj z*. Ustaw punkt początkowy.
+  - *Nawiguj do*. Ustaw miejsce docelowe.
+  - *Nawiguj przez*. W razie potrzeby dodaj punkty pośrednie.
 
 - Po ustawieniu punktów początkowego i końcowego trasa zostanie wyświetlona na mapie.
 
 - W bloku **Trasa**:
 
-  - Przesuń punkty początkowy i końcowy, jeśli to konieczne.
-  - Edytuj punkty trasy i wybierz żądany typ trasy (np. samochód, rower, pieszo).
+  - W razie potrzeby przesuń punkty początkowy i końcowy.
+  - Edytuj punkty trasy i wybierz pożądany typ trasy (np. samochód, rower, pieszo).
 
-  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
+  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/navigation.png)
 
 - Wybierz odpowiedni **Profil trasy** dla różnych opcji nawigacji.
 
-  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
+  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/profile_type.png)
 
 - Kliknij pomarańczowe kółka wzdłuż trasy, aby wyświetlić szczegółowe instrukcje nawigacyjne.
 
-  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
+  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/nav_instr.png)
 
 - Aby udostępnić trasę, skopiuj adres URL. Przykład: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 
-## Tworzenie ścieżek i plików lokalnych {#create-track-and-local-files}
+## Tworzenie śladu i pliki lokalne {#create-track-and-local-files}
 
-Narzędzie OsmAnd Web [**Planuj trasę**](../plan-route/create-route.md) pozwala tworzyć i edytować ścieżki podobnie jak aplikacja mobilna. Oto jak można tworzyć ścieżki i zarządzać nimi:
+Narzędzie **Planowanie trasy** w OsmAnd Web pozwala na tworzenie i edytowanie śladów w podobny sposób jak w aplikacji mobilnej. Oto jak można tworzyć i zarządzać śladami:
 
 
 ***Tworzenie nowej trasy:***
 
 - *Kliknij prawym przyciskiem myszy* na mapie i wybierz **Utwórz nową trasę**.
-- Alternatywnie, użyj przycisku **Utwórz ścieżkę** w menu *Lokalne* (znajdującego się po prawej stronie z przyciskami *Ołówek* i *Prześlij*).
+- Alternatywnie, użyj przycisku **Utwórz ślad** w menu *Lokalne* (znajdującym się po prawej stronie z przyciskami *Ołówek* i *Prześlij*).
 
 
-***Zarządzanie ścieżkami:***
+***Zarządzanie śladami:***
 
 - **Wybierz profil nawigacji**. Wybierz profil (np. pieszy, samochodowy) dla określonych odcinków trasy (*Nowe segmenty*) lub dla całej trasy (*Wszystkie segmenty*).
 - **Dodaj punkty trasy**. Kliknij na mapie, aby dodać nowe punkty.
-- **Zapisz trasę**. Zapisz trasę do wykorzystania w przyszłości.
-- **Wyświetl szczegóły trasy**. Uzyskaj dostęp do szczegółowych informacji o ścieżce, w tym długości, czasu trwania i terenu.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
+- **Zapisz trasę**. Zapisz trasę do przyszłego użytku.
+- **Wyświetl szczegóły trasy**. Uzyskaj dostęp do szczegółowych informacji o śladzie, w tym długości, czasu trwania i ukształtowania terenu.
+  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route.png)
 
 
-***Importowanie i tworzenie ścieżek:***
+***Importowanie i tworzenie śladów:***
 
-- **Importuj ścieżkę**. Możesz przesłać dowolny plik GPX do sekcji **Lokalne**, odwiedzając stronę [osmand.net/map](https://osmand.net/map).
-- **Utwórz ścieżkę**. Ręcznie utwórz nową ścieżkę, wybierając punkty trasy.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+- **Importuj ślad**. Możesz przesłać dowolny plik GPX do sekcji **Lokalne**, odwiedzając [osmand.net/map](https://osmand.net/map).
+- **Utwórz ślad**. Ręcznie utwórz nowy ślad, wybierając punkty trasy.
+  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_2.png)
 
 
-***Działania i informacje o ścieżkach lokalnych:***
+***Działania i informacje o śladzie lokalnym:***
 
-Menu **Ścieżka lokalna** zawiera trzy panele do edycji: **Informacje**, **Ścieżka** i **Punkty trasy**.
+Menu **Ślad lokalny** udostępnia trzy panele do edycji: **Informacje**, **Ślad** i **Punkty trasy**.
 
-**Panel informacji**:
+**Panel Informacje**:
 
-- *Zapisz w chmurze*. Zapisz ścieżkę w OsmAnd Cloud, aby uzyskać do niej dostęp na różnych urządzeniach.
-- *Dodaj opis*. Dodaj notatki dotyczące ścieżki.
-- *Zmień nazwę*. Zmień nazwę ścieżki.
-- *Przelicz*. Dodaj lub zaktualizuj dane wysokościowe.
+- *Zapisz w chmurze*. Zapisz swój ślad w OsmAnd Cloud, aby mieć do niego dostęp na różnych urządzeniach.
+- *Dodaj opis*. Dodaj notatki o śladzie.
+- *Zmień nazwę*. Zmień nazwę śladu.
+- *Przelicz ponownie*. Dodaj lub zaktualizuj dane o wysokości.
 - *Wysokość*. Wyświetl profil wysokości.
-- *Wykres prędkości*. Wyświetl dane prędkości wzdłuż ścieżki.
+- *Wykres prędkości*. Wyświetl dane o prędkości na całej trasie.
 - *Wykres nachylenia*. Pokaż zmiany nachylenia wzdłuż trasy.
 - *Szczegóły drogi*. Wyświetl szczegółowe informacje, takie jak typ drogi, nawierzchnia i stromość.
-- *Pobierz GPX*. Eksportuj ścieżkę jako plik GPX ([funkcja Pro](../purchases/index.md)).
-- *Zamknij ścieżkę*. Zamknij widok edycji ścieżki.
-- *Usuń ścieżkę*. Trwale usuń ścieżkę.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
+- *Pobierz GPX*. Eksportuj ślad jako plik GPX ([funkcja Pro](../purchases/index.md)).
+- *Zamknij ślad*. Zamknij widok edycji śladu.
+- *Usuń ślad*. Trwale usuń ślad.
+  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_3.png)
 
-**Panel ścieżki**:
+**Panel Ślad**:
 
-- Wyświetlaj i edytuj punkty ścieżki.
-- Zmieniaj kolejność lub usuwaj punkty w razie potrzeby.
+- Wyświetlaj i edytuj punkty śladu.
+- W razie potrzeby zmieniaj kolejność lub usuwaj punkty.
 
-**Panel punktów trasy**:
+**Panel Punkty trasy**:
 
 - Wyświetlaj i zarządzaj punktami trasy.
-- Przełącz widoczność punktów trasy na mapie.
-- Usuwaj pojedyncze punkty trasy w razie potrzeby.
+- Przełączaj widoczność punktów trasy na mapie.
+- W razie potrzeby usuwaj pojedyncze punkty trasy.
 
-**Panel zakrętów**:
+**Panel Zakręty**:
 
-- Wyświetl szczegółowe informacje o zakrętach wzdłuż ścieżki.
+- Wyświetl szczegółowe informacje o zakrętach na trasie.
 
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_1.png)
 
 
 ***Dodatkowe funkcje:***
 
 - **Synchronizacja z aplikacją**. Zapisuj trasy w OsmAnd Cloud i uzyskuj do nich dostęp w aplikacji mobilnej.
 - **Niestandardowe profile tras**. Dostosuj profile do różnych aktywności, takich jak jazda na rowerze czy piesze wędrówki.
-- **Trasy do udostępniania**. Kopiuj i udostępniaj adresy URL tras do wspólnego planowania.
-
-> *Ostatnia aktualizacja: styczeń 2025*
+- **Trasy do udostępniania**. Kopiuj i udostępniaj adresy URL tras w celu wspólnego planowania.

@@ -1,7 +1,7 @@
 ---
-source-hash: 5622b3c06a619b7597895ee507b9910943c93a7d5ec31ddecd00215481e51e29
+source-hash: 5fb403ac929548da954c23978366b423e0002af152181c45ffbbe2070e386dcc
 sidebar_position: 7
-title:  توجيه القطار
+title:  مسارات القطارات
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,45 +19,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## نظرة عامة {#overview}
 
 :::note
-بشكل افتراضي، يتم إلغاء تنشيط *ملف تعريف القطار*. لاستخدام هذا الملف الشخصي للتوجيه، تحتاج إلى تشغيله في *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+بشكل افتراضي، يكون *ملف تعريف القطار* غير نشط. لاستخدام هذا الملف الشخصي للمسارات، تحتاج إلى تفعيله في *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-يوفر *توجيه القطار* في OsmAnd للمستخدمين إمكانية استخدام خطوط السكك الحديدية للملاحة كما لو كانوا يقودون قطارًا مثل السيارة. يمكن أن يكون هذا الخيار مفيدًا، على سبيل المثال، للمشي لمسافات طويلة عندما لا تتوفر طرق أخرى. في حالات أخرى، من الأفضل استخدام *[توجيه النقل العام](./public-transport-navigation.md)*.
+توفر *مسارات القطارات* في OsmAnd للمستخدمين إمكانية استخدام خطوط السكك الحديدية للملاحة كما لو كانوا يقودون قطارًا مثل السيارة. يمكن أن يكون هذا الخيار مفيدًا، على سبيل المثال، للمشي لمسافات طويلة عند عدم توفر طرق أخرى. في حالات أخرى، من الأفضل استخدام *[مسارات النقل العام](./public-transport-navigation.md)*.
 
-![خريطة ترام النقل](@site/static/img/navigation/routing/train_routing_overview.png)
+![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
 ## معلمات المسار - القطار {#route-parameters---train}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![إعدادات توجيه القطار أندرويد](@site/static/img/navigation/routing/train_routing_andr.png)
+![Train routing settings Android](@site/static/img/navigation/routing/train_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات توجيه القطار iOS](@site/static/img/navigation/routing/train_routing_ios.png)
+![Train routing settings iOS](@site/static/img/navigation/routing/train_routing_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكن تكوين *توجيه القطار* وفقًا لاحتياجاتك في [قسم معلمات المسار](../guidance/navigation-settings.md#route-parameters) في إعدادات الملاحة.
-
-
-## إعدادات التوجيه الأخرى {#other-routing-settings}
-
-- يمكن لخوارزمية التوجيه أيضًا أن تأخذ في الاعتبار القيود المؤقتة المحددة في OpenStreetMap. يمكن القيام بذلك باستخدام خيار *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. لاحظ أنه في بعض الحالات، قد تكون المعلومات من OSM قديمة.
-
-- في قسم [*إعادة حساب المسار*](../../navigation/guidance/navigation-settings.md#recalculate-route) في *معلمات المسار*، يمكنك تمكين وتعديل خيارات إعادة حساب المسار.
-
-- في قسم [*التطوير*](../guidance/navigation-settings.md#development-settings) في *معلمات المسار*، يمكنك تجربة ميزات توجيه جديدة قيد الاختبار حاليًا. لاحظ أن هذه الإعدادات متاحة فقط عند تمكين [المكون الإضافي لتطوير OsmAnd](../../plugins/development.md).
-
-- يوجد إعداد *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* في إصدار *iOS* من OsmAnd في *إعدادات الملاحة ← معلمات المسار* (بالنسبة لـ *أندرويد*، في *معلمات المركبة ← [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). يمكن أيضًا تعيين هذه الإعدادات لتوجيه *مباشر إلى نقطة*. يتم استخدامه لحساب الوقت المقدر للوصول.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. سيساعدك التكوين الصحيح للإعدادات على تجنب المشاكل عند إنشاء مسار. يمكنك تحديد المسار الأنسب اعتمادًا على نوع المركبة وقيود الطريق، بالإضافة إلى حساب وقت السفر.
-
-> *آخر تحديث: يونيو 2024*
+يمكن تكوين *مسارات القطارات* وفقًا لاحتياجاتك في قسم [معلمات المسار](../guidance/navigation-settings.md#route-parameters) من إعدادات الملاحة.

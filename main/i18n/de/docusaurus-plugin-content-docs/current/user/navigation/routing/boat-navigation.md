@@ -1,7 +1,7 @@
 ---
-source-hash: 89f0bd9a9dfbfdb2158d837c90031efd8ceeca297a50647bb295c32585e91830
+source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
 sidebar_position: 8
-title:  Bootsnavigation
+title:  Boots-Routing
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -14,10 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
-Die Bootsnavigation kann ein wertvolles Hilfsmittel für alle sein, die gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrwassern unterwegs sind. Da die meisten Fahrwasser in den OpenStreetMap-Daten fehlen, wird die Bootsnavigation **nicht für die Navigation auf offenem Wasser empfohlen**. Stattdessen wird die Verwendung von **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** vorgeschlagen. Mit aktivierten Tiefenlinien kann sie Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Sie Gefahren wie flaches Wasser, Felsen oder andere Hindernisse vermeiden.
-Die OsmAnd Bootsnavigations-Engine berücksichtigt auch die Eigenschaften der Wasserwege und des Bootes selbst.
+Boots-Routing kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrrinnen unterwegs ist. Aufgrund des Fehlens der meisten Fahrrinnen in den OpenStreetMap-Daten wird das Boots-Routing für die **Navigation auf offenem Wasser** *nicht empfohlen*. Es wird stattdessen empfohlen, **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** zu verwenden. Wenn Tiefenlinien aktiviert sind, kann es Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Gefahren wie seichtes Wasser, Felsen oder andere Hindernisse vermieden werden.
+Die OsmAnd Boots-Routing-Engine berücksichtigt auch die Eigenschaften der Wasserstraßen und des Bootes selbst.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -38,24 +38,26 @@ Die OsmAnd Bootsnavigations-Engine berücksichtigt auch die Eigenschaften der Wa
 ## Routenparameter - Boot {#route-parameters---boat}
 
 :::note
-Standardmäßig ist das *Bootsprofil* deaktiviert. Um dieses Profil für die Routenplanung zu verwenden, müssen Sie es unter *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* aktivieren.
+Standardmäßig ist das *Bootsprofil* deaktiviert. Um dieses Profil für das Routing zu verwenden, müssen Sie es unter *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* aktivieren.
 :::
 
-Die Bootsnavigation kann nach Ihren Bedürfnissen im Abschnitt [Routenparameter](../../navigation/guidance/navigation-settings.md#route-parameters) der Navigationseinstellungen konfiguriert werden.
+Das Boots-Routing kann nach Ihren Bedürfnissen im Abschnitt [Routenparameter](../../navigation/guidance/navigation-settings.md#route-parameters) der Navigationseinstellungen konfiguriert werden.
 
-Typischerweise wird die *Bootsnavigation* mit dem Bootsprofil verwendet (das letzte, das zusammen mit dem [Nautik-Plugin](../../plugins/nautical-charts.md) aktiviert ist). Es ist jedoch auch möglich, die Bootsnavigation mit anderen Profilen zu verwenden, und verschiedene [Routentypen](#other-routing-types-for-boat) können auch im Bootsprofil eingesetzt werden.
+Typischerweise wird das *Boots-Routing* mit dem Bootsprofil verwendet (das zuletzt zusammen mit dem [Nautik-Plugin](../../plugins/nautical-charts.md) aktiviert wurde). Es ist jedoch auch möglich, das Boots-Routing mit anderen Profilen zu verwenden, und verschiedene [Routing-Typen](#other-routing-types-for-boat) können ebenfalls im Bootsprofil eingesetzt werden.
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Bootsnavigationseinstellungen Android](@site/static/img/navigation/routing/boat_routing_andr.png)
+
+![Boots-Routing-Einstellungen Android](@site/static/img/navigation/routing/boat_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bootsnavigationseinstellungen iOS](@site/static/img/navigation/routing/boat_routing_ios.png)
+![Boots-Routing-Einstellungen iOS](@site/static/img/navigation/routing/boat_routing_ios.png)
 
 </TabItem>
 
@@ -63,62 +65,51 @@ Typischerweise wird die *Bootsnavigation* mit dem Bootsprofil verwendet (das let
 
 | Parameter | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Ermöglicht die Nutzung von Bächen und Entwässerungsgräben für die Bootsnavigation. Die Aktivierung dieser Option kann für kleine Boote wie Kanus, Kajaks, Flöße, Ruderboote nützlich sein. | [Bäche](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sind natürlich entstandene Wasserläufe, die zu schmal sind, um als Fluss bezeichnet zu werden. [Entwässerungsgräben](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sind künstliche Wasserläufe, typischerweise mit Beton oder ähnlichem ausgekleidet, die zum Abführen von überschüssigem Wasser wie Regenwasser oder Grauwasser verwendet werden. |
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | Das Einschalten dieser Option ermöglicht es Ihnen, intermittierende Wasserwege für die Bootsnavigation zu nutzen. | Das Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) wird verwendet, um anzuzeigen, dass ein Wasserweg nicht dauerhaft Wasser enthält. |
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Ermöglicht die Nutzung von Bächen und Abflussgräben für die Bootsnavigation. Die Aktivierung dieser Option kann für kleine Boote wie Kanus, Kajaks, Flöße und Ruderboote nützlich sein. | [Bäche](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sind natürlich entstandene Wasserläufe, die zu schmal sind, um als Fluss bezeichnet zu werden. [Abflussgräben](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sind künstliche Wasserwege, typischerweise mit Beton oder Ähnlichem ausgekleidet, die dazu dienen, überschüssiges Wasser wie Regenwasser oder Grauwasser abzuführen. |
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | Das Aktivieren dieser Option ermöglicht es Ihnen, zeitweise wasserführende Wasserwege für die Bootsnavigation zu nutzen. | Das Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) wird verwendet, um anzuzeigen, dass ein Wasserweg nicht ständig Wasser führt. |
+
 
 :::note Wassernavigation und Einschränkungen
 
-1. Das Bootsprofil ist für die Routenplanung entlang von Flüssen, Seen und anderen Wasserwegen konzipiert. Es unterstützt OSM-Tags wie:
+1. Das Bootsprofil ist für das Routing auf Flüssen, Seen und anderen Wasserstraßen konzipiert. Es unterstützt OSM-Tags wie:
     - `waterway=river`
     - `waterway=canal`
     - `natural=water`, etc.
 
-2. Das Bootsprofil **unterstützt keine Fährverbindungen (`route=ferry`)**. Das bedeutet, dass Fährverbindungen, selbst wenn sie auf der Karte vorhanden sind, bei der Berechnung von Bootsrouten **nicht verwendet werden**.
+2. Das Bootsprofil **unterstützt keine Fährverbindungen (`route=ferry`)**. Das bedeutet, dass Fährverbindungen, auch wenn sie auf der Karte vorhanden sind, bei der Berechnung von Bootsrouten **nicht verwendet werden**.
 
-3. Um eine Fährverbindung manuell zu verfolgen:
+3. Um einer Fährlinie manuell zu folgen:
 
-    - Verwenden Sie das Werkzeug [Route planen](../../plan-route/create-route.md) und setzen Sie Wegpunkte manuell.
-    - Verwenden Sie das Profil Auto, das Fährverbindungen unterstützt.
+    - Verwenden Sie das Werkzeug [Route planen](../../plan-route/create-route.md) und setzen Sie die Wegpunkte manuell.
+    - Verwenden Sie das Autoprofil, das Fährverbindungen unterstützt.
 
 :::
 
-## Andere Routentypen für Boote {#other-routing-types-for-boat}
+## Andere Routing-Typen für Boote {#other-routing-types-for-boat}
 
-Der Routentyp [Bootsnavigation](#route-parameters---boat) ist der Standard-Routing-Algorithmus für das Bootsprofil. Sie können jedoch auch einen anderen Routentyp wählen, der ebenfalls für die Bootsnavigation geeignet ist:
+Der [Boots-Routing](#route-parameters---boat)-Typ ist der Standard-Routing-Algorithmus für das Bootsprofil. Sie können jedoch auch einen anderen Routing-Typ wählen, der ebenfalls für die Bootsnavigation geeignet ist:
 
  - [Direkt-zum-Punkt-Routing für Boote](./boat-navigation.md#direct-to-point-routing-for-boat)
- - [Geradliniges Routing für Boote](./boat-navigation.md#straight-line-routing-for-boat)
+ - [Luftlinien-Routing für Boote](./boat-navigation.md#straight-line-routing-for-boat)
 
-Es ist wichtig zu beachten, dass die Routentypen *Direkt zum Punkt* und *Gerade Linie* nur auf offenem Wasser verwendet werden sollten, wo es keine Hindernisse oder Gefahren für die Navigation gibt. Wenn Sie in einem Wasserweg mit einem bestimmten Kanal oder einer bestimmten Route navigieren, sollten Sie den Routentyp "Boot" in OsmAnd verwenden, der Sie durch die richtigen Navigationskanäle führt und flache Bereiche oder andere Gefahren vermeidet.
+Es ist wichtig zu beachten, dass die Routing-Typen *Direkt-zum-Punkt* und *Luftlinie* nur auf offenem Wasser verwendet werden sollten, wo es keine Hindernisse oder Gefahren für die Navigation gibt. Wenn Sie in einem Wasserweg mit einem bestimmten Kanal oder einer bestimmten Route navigieren, sollten Sie den Boots-Routing-Typ in OsmAnd verwenden, der Sie durch die richtigen Navigationskanäle führt und flache Bereiche oder andere Gefahren vermeidet.
 
-Diese Routentypen für das Bootsprofil können über den folgenden Pfad aktiviert werden: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> oder ein anderes) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+Diese Routing-Typen für das Bootsprofil können über folgenden Pfad aktiviert werden: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> oder ein anderes) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+
 
 ### Direkt-zum-Punkt-Routing für Boote {#direct-to-point-routing-for-boat}
 
 :::note
-Bei der Verwendung der Navigationstypen "Direkt zum Punkt" und "Boot" benötigen Sie [Tiefenlinien-Daten](../../plugins/nautical-charts.md#nautical-map-style), die in *Karte konfigurieren* aktiviert und eingestellt werden können.
+Bei Verwendung der Navigationstypen Direkt-zum-Punkt und Boot benötigen Sie [Tiefenkonturdaten](../../plugins/nautical-charts.md#nautical-map-style), die unter *Karte konfigurieren* aktiviert und eingestellt werden können.
 :::
 
-Der [Direkt-zum-Punkt-Routentyp](./direct-to-point-routing.md) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, ohne einer bestimmten Route oder einem Wasserweg zu folgen. Dieser Routentyp ermöglicht es Ihnen, einen Zielpunkt festzulegen, und OsmAnd berechnet einen direkten Weg zu diesem Punkt von Ihrem aktuellen Standort aus. Dieser Routentyp berücksichtigt nicht die Eigenschaften Ihres Bootes wie Mindest- und Höchstgeschwindigkeiten, Höhe und Breite. Ihre Route wird im Falle einer Abweichung nicht neu berechnet.
+Der [Direkt-zum-Punkt-Routing-Typ](./direct-to-point-routing.md) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, ohne einer bestimmten Route oder einem Wasserweg zu folgen. Dieser Routing-Typ ermöglicht es Ihnen, einen Zielpunkt festzulegen, und OsmAnd berechnet einen direkten Weg von Ihrem aktuellen Standort zu diesem Punkt. Diese Art des Routings berücksichtigt nicht die Eigenschaften Ihres Bootes wie Mindest- und Höchstgeschwindigkeiten, Höhe und Breite. Ihre Route wird bei Abweichungen nicht neu berechnet.
 
-![Direkt-zum-Punkt-Navigationstyp Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
+![Direkt-zum-Punkt Navigationstyp Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
-### Geradliniges Routing für Boote {#straight-line-routing-for-boat}
 
-Der [Geradlinige Routentyp](./straight-line-routing) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, aber lieber einer geraden Linie als einer gekrümmten Route zu Ihrem Zielpunkt folgen möchten. Dies kann nützlich sein, wenn Sie zu einem entfernten Punkt navigieren, der beispielsweise am Horizont sichtbar ist.
+### Luftlinien-Routing für Boote {#straight-line-routing-for-boat}
 
-![Geradliniger Navigationstyp Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+Der [Luftlinien-Routing-Typ](./straight-line-routing) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, aber lieber einer geraden Linie anstelle einer gekrümmten Route zu Ihrem Zielpunkt folgen. Dies kann nützlich sein, wenn Sie zu einem entfernten Punkt navigieren, der beispielsweise am Horizont sichtbar ist.
 
-## Weitere Routing-Einstellungen {#other-routing-settings}
-
-- Der Routing-Algorithmus kann auch temporäre Einschränkungen berücksichtigen, die in OpenStreetMap angegeben sind. Dies kann mit der Option *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* erfolgen. Beachten Sie, dass Informationen aus OSM in einigen Fällen veraltet sein können.
-
-- Im Abschnitt [*Route neu berechnen*](../../navigation/guidance/navigation-settings.md#recalculate-route) der *Routenparameter* können Sie Optionen zur Routenneuberechnung aktivieren und anpassen.
-
-- Im Abschnitt [*Entwicklung*](../guidance/navigation-settings.md#development-settings) der *Routenparameter* können Sie neue Routing-Funktionen ausprobieren, die sich derzeit in der Testphase befinden. Beachten Sie, dass diese Einstellungen nur verfügbar sind, wenn das [OsmAnd-Entwicklungs-Plugin](../../plugins/development.md) aktiviert ist.
-
-- Die Einstellung *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* in der *iOS*-Version von OsmAnd befindet sich unter *Navigationseinstellungen → Routenparameter* (für *Android* unter *Fahrzeugparameter → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Diese Einstellung wird auf unbekannten Straßen ohne Geschwindigkeitsbegrenzungen verwendet. Dies ist am häufigsten der Fall, wenn eine Strecke oder eine Online-Route navigiert wird. Sie muss entsprechend den Parametern Ihres Fahrzeugs eingestellt werden.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Eine korrekte Konfiguration der Einstellungen hilft Ihnen, Probleme bei der Routenerstellung zu vermeiden. Sie können die am besten geeignete Route je nach Fahrzeugtyp und Straßenbeschränkungen auswählen und die Fahrzeit berechnen.
-
-> *Zuletzt aktualisiert: Mai 2025*
+![Luftlinien-Navigationstyp Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)

@@ -1,7 +1,7 @@
 ---
-source-hash: f88b26c81cd85ceae10dd091bfd8f3587782fc1e066bd79fe00de8a7ce769b72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
-title: Toegankelijkheid
+title:  Toegankelijkheid
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,112 +15,112 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Opmerking
-De toegankelijkheidsplugin is alleen beschikbaar op de **Android-versie** van OsmAnd. De [iOS-versie](#how-to-use-ios) maakt gebruik van de standaard toegankelijkheidsinstellingen van het systeem.
+De Toegankelijkheidsplugin is alleen beschikbaar op de **Android-versie** van OsmAnd. De [iOS-versie](#how-to-use-ios) maakt gebruik van de standaard toegankelijkheidsinstellingen van het systeem.
 :::
 
 ## Overzicht {#overview}
 
-Toegankelijkheid verbetert de bruikbaarheid voor blinde en slechtziende gebruikers door integratie met [Android Toegankelijkheid](https://www.android.com/accessibility/) tools. De plugin biedt **tekst-naar-spraak, gebarenbediening, automatische aankondigingen** en **haptische feedback** om navigatie toegankelijker te maken. Op iOS maakt OsmAnd gebruik van de ingebouwde toegankelijkheidsfuncties van Apple, zoals VoiceOver.
+Toegankelijkheid verbetert de bruikbaarheid voor blinde en visueel beperkte gebruikers door integratie met [Android Toegankelijkheid](https://www.android.com/accessibility/) tools. De plugin biedt **tekst-naar-spraak, gebarenbediening, automatische aankondigingen** en **haptische feedback** om navigatie toegankelijker te maken. Op iOS maakt OsmAnd gebruik van de ingebouwde toegankelijkheidsfuncties van Apple, zoals VoiceOver.
 
 
 ### Hoe te gebruiken (Android) {#how-to-use-android}
 
-![Toegankelijkheid](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-***Schakel de toegankelijkheidsplugin in:***
+***De Toegankelijkheidsplugin inschakelen:***  
 
 1. **Activeer de plugin**: *Menu → Plugins → Toegankelijkheid → Inschakelen*.
 
-2. **Schakel de toegankelijkheidsmodus in**:
+2. **Schakel de toegankelijkheidsmodus in**:  
    - Navigeer naar *Systeeminstellingen → Toegankelijkheid* op uw Android-apparaat.
    - Schakel TalkBack of een andere schermlezer in.
 
-3. **Pas de plugininstellingen aan**:
-   - Open [Toegankelijkheidsinstellingen](#plugin-settings) binnen de OsmAnd-app.
-   - Configureer functies zoals spraaksnelheid, automatische aankondiging en haptische feedback.
+3. **Pas de plugin-instellingen aan**:  
+   - Open de [Toegankelijkheidsinstellingen](#plugin-settings) in de OsmAnd-app.
+   - Configureer functies zoals spraaksnelheid, automatische aankondigingen en haptische feedback.
 
 <br/>
 
-***Functies en functionaliteit:***
+***Kenmerken en functionaliteit:***
 
 - **Gebarenbediening**:
-   - Ondersteunt alle standaard [OsmAnd-gebaren](../map/interact-with-map#gebaren).
-   - Past gebaren aan om aan te sluiten bij de **TalkBack**-instructies van Android.
+   - Ondersteunt alle standaard [OsmAnd-gebaren](../map/interact-with-map.md#gestures).
+   - Past gebaren aan om overeen te komen met de **TalkBack**-instructies van Android.
 
 - **TalkBack-integratie**:
-   - De TalkBack-schermlezer biedt audiogids voor navigatie en menu-interacties.
-   - Meer informatie over TalkBack-gebaren vindt u [hier](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+   - De TalkBack-schermlezer biedt audiogeleiding voor navigatie en menu-interacties.
+   - Leer meer over TalkBack-gebaren [hier](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-- **Achtergrondbewerkingen**. Audio- en haptische feedback blijven werken, zelfs wanneer het scherm is uitgeschakeld of vergrendeld.
+- **Achtergrondbewerkingen**. Audio- en haptische feedback blijven doorgaan, zelfs als het scherm is uitgeschakeld of vergrendeld.
 
-- **Kompas-knopacties**:
+- **Acties van de kompasknop**:
 
 | Gebaar | Actie | TalkBack-equivalent |
 |-----|-----|-----|
-| **Enkele tik** | Draait kaart naar **Noord** | **Dubbele tik** |
-| **Lange tik** | Opent de lijst met [kaartoriëntaties](../map/interact-with-map.md#map-orientation-modes) | **Dubbele tik en vasthouden** |
-| **Dubbele tik** | *Niet beschikbaar in toegankelijkheidsmodus* | *Niet ondersteund* |
+| **Eén keer tikken** | Roteert de kaart naar het **Noorden** | **Dubbel tikken** |
+| **Lang tikken** | Opent de lijst met [kaartoriëntaties](../map/interact-with-map.md#map-orientation-modes) | **Dubbel tikken en vasthouden** |
+| **Dubbel tikken** | *Niet beschikbaar in Toegankelijkheidsmodus* | *Niet ondersteund* |
 
 
 ### Hoe te gebruiken (iOS) {#how-to-use-ios}
 
-De iOS-versie van OsmAnd gebruikt de **ingebouwde toegankelijkheidstools** van het systeem.
+De iOS-versie van OsmAnd maakt gebruik van de **ingebouwde toegankelijkheidstools** van het systeem.
 
 1. **Schakel VoiceOver in**:
    - Ga naar *Instellingen → Toegankelijkheid → VoiceOver*.
    - Configureer **VoiceOver-gebaren** voor gebruik met OsmAnd.
 
 2. **Ondersteunde functies**:
-   - **Schermlezerondersteuning** voor kaartinteracties.
+   - **Ondersteuning voor schermlezers** voor kaartinteracties.
    - **Aanpasbare gebaren** via iOS-instellingen.
-   - Alle standaard [OsmAnd-gebaren](../map/interact-with-map#gebaren) zijn beschikbaar.
+   - Alle standaard [OsmAnd-gebaren](../map/interact-with-map.md#gestures) zijn beschikbaar.
 
 3. **Meer informatie**:
-   - Lees meer over iOS Vision Toegankelijkheidsfuncties [hier](https://www.apple.com/accessibility/vision/).
-   - Ontdek VoiceOver-gebaren voor iPhone [hier](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
+   - Lees [hier](https://www.apple.com/accessibility/vision/) over de toegankelijkheidsfuncties voor het gezichtsvermogen van iOS.
+   - Verken VoiceOver-gebaren voor de iPhone [hier](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
 ## Vereiste instellingsparameters {#required-setup-parameters}
 
 Om de toegankelijkheidsfuncties van het apparaat in OsmAnd te activeren, moet u de volgende instellingen maken:
 
-1. **Schakel de** [Toegankelijkheidsplugin](../plugins/index.md#enable--disable) in: *Menu → Plugins → Toegankelijkheid → Inschakelen*.
+1. **Schakel de** [Toegankelijkheidsplugin](../plugins/index.md#enable--disable) in: *Menu → Plugins → Toegankelijkheid → Inschakelen*.  
 2. **Schakel de toegankelijkheidsmodus** op uw apparaat in.
-3. Configureer de instellingen van de toegankelijkheidsplugin [instellingen](#plugin-settings).
+3. Configureer de [instellingen](#plugin-settings) van de Toegankelijkheidsplugin.
 
 
-## Plugininstellingen {#plugin-settings}
+## Plugin-instellingen {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Toegankelijkheid](@site/static/img/plugins/Accessibility/access_.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
 
-De toegankelijkheidsplugin biedt verschillende instellingen om navigatie en interactie te personaliseren voor gebruikers met een beperking. Deze instellingen worden per [profiel](../personal/profiles.md) in OsmAnd toegepast.
+De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en interactie te personaliseren voor gebruikers met een beperking. Deze instellingen worden toegepast per [profiel](../personal/profiles.md) in OsmAnd.
 
-| Instelling | Beschrijving |
-|---------------------------|-------------|
-| **Toegankelijkheidsmodus** | Schakelt *ingebouwde OsmAnd-functies* in of gebruikt **systeeminstellingen**. |
-| **Spraaksnelheid** | Regelt de *tekst-naar-spraak-snelheid*, variërend van **50% tot 200%**. |
-| [Slimme automatische aankondiging](#smart-autoannounce-and-clockwise-directions) | Biedt *stembegeleiding* bij afwijking van de route. |
-| **Periode automatische aankondiging** | Stelt de minimale tijd tussen aankondigingen in, van **5 seconden tot 5 minuten**. |
-| **Richtingstijl** | Kies tussen *Zijwaarts (8 richtingen)* of [Met de klok mee](#smart-autoannounce-and-clockwise-directions) (12 richtingen)*. |
-| **Audio-aanwijzingen** | Speelt *audio-aanwijzingen* af die de richting aangeven. |
-| **Haptische aanwijzingen** | Geeft *trilfeedback* voor bochten en afwijkingen. |
+| Instelling                   | Beschrijving |  
+|---------------------------|-------------|  
+| **Toegankelijkheidsmodus**    | Schakelt *ingebouwde OsmAnd-functies* in of gebruikt **systeeminstellingen**. |  
+| **Spraaksnelheid**           | Regelt de *tekst-naar-spraak-snelheid*, variërend van **50% tot 200%**. |  
+| [Slimme automatische aankondiging](#smart-autoannounce-and-clockwise-directions)    | Biedt *spraakbegeleiding* bij afwijking van de route. |  
+| **Periode voor automatische aankondiging**   | Stelt de minimale tijd tussen aankondigingen in, van **5 seconden tot 5 minuten**. |  
+| **Richtingsstijl**       | Kies tussen *Zijdelings (8 richtingen)* of [Kloksgewijs](#smart-autoannounce-and-clockwise-directions) (12 richtingen)*. |  
+| **Audio-aanwijzingen**      | Speelt *audiobegeleiding* af die de richting aangeeft. |  
+| **Haptische aanwijzingen**     | Biedt *trilfeedback* voor bochten en afwijkingen.|  
 
 <!--
-- **Toegankelijkheidsmodus**. Schakel speciale tools in die mensen met een beperking helpen om met de OsmAnd-app te communiceren. Er zijn drie modi: *Aan* - schakelt de ingebouwde OsmAnd-functies in, *Uit* - schakelt alle pluginfuncties uit, en *Volgens de Android-systeeminstellingen* - schakelt Android-systeeminstellingen in.
+- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
 
-- **Spraaksnelheid**. Pas de spraaksnelheid van de tekst-naar-spraak aan, variërend van 50% tot 200%.
+- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
 
-- **Slimme automatische aankondiging**. Indien ingeschakeld, ontvangt u stemmeldingen wanneer u afwijkt van de ingestelde route.
+- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
 
-- **Periode automatische aankondiging**. Dit is een automatische aankondiging van de richting en afstand tot uw bestemming. U kunt een minimale tijd tussen aankondigingen selecteren, variërend van 5 seconden tot 5 minuten.
+- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
 
-- **Richtingstijl**. Kies hoe de OsmAnd-app u op de hoogte stelt van richtingen. *Zijwaarts* - geeft de richting naar de windstreken aan (8 richtingen), *Met de klok mee* - geeft richtingen aan die georiënteerd zijn op de wijzerplaat (12 richtingen).
+- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
 
-- **Audio-aanwijzingen**. Biedt feedback tijdens het navigeren door de richting naar het doel met geluid aan te geven.
+- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
 
-- **Haptische aanwijzingen**. Deze instelling geeft haptische feedback tijdens het navigeren. De trilling geeft de richting naar het doel en afwijkingen van het pad aan.
+- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
 -->
 
 <br/>
@@ -128,25 +128,23 @@ De toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 ***Tips voor geoptimaliseerde toegankelijkheid:***
 
 - **Schermlezer** - Gebruik TalkBack (*Android*) of VoiceOver (*iOS*) voor verbeterde kaartinteractie.
-- **Audionavigatie** - Schakel automatische aankondiging in om stemaanwijzingen te ontvangen terwijl het scherm uit is.
-- **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audio-aanwijzingen onpraktisch zijn.
+- **Audionavigatie** - Schakel automatische aankondigingen in om spraakaanwijzingen te ontvangen terwijl het scherm uit is.
+- **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audiobegeleiding onpraktisch is.
 
 
-#### Slimme automatische aankondiging en richtingen met de klok mee {#smart-autoannounce-and-clockwise-directions}
+### Slimme automatische aankondiging en kloksgewijze richtingen {#smart-autoannounce-and-clockwise-directions}
 
-De functie **Slimme automatische aankondiging** geeft *audio-meldingen* wanneer u afwijkt van de geplande route, terwijl de **Richtingstijl met de klok mee** *navigatie-aanwijzingen op basis van de wijzerplaat* biedt. Deze functies zijn ontworpen om visueel gehandicapte gebruikers te ondersteunen die afhankelijk zijn van *stembegeleiding*.
+De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route, terwijl de **Kloksgewijze richtingsstijl** *navigatiebegeleiding op basis van de wijzerplaat* biedt. Deze functies zijn ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
 
-- Als **TalkBack niet is ingeschakeld**, zullen zowel *Slimme automatische aankondiging* als *Richting met de klok mee* alleen *tekstmeldingen* op het scherm weergeven.
+- Als **TalkBack niet is ingeschakeld**, zullen zowel *Slimme automatische aankondiging* als *Kloksgewijze richtingen* alleen *tekstmeldingen* op het scherm weergeven.  
 
-- **Stemmeldingen** worden alleen geactiveerd wanneer *TalkBack* is ingeschakeld in de **systeeminstellingen van het apparaat**.
+- **Spraakmeldingen** worden alleen geactiveerd wanneer *TalkBack* is ingeschakeld in de **systeeminstellingen van het apparaat**.  
 
-- Stel de **Periode automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van aankondigingen te regelen.
+- Stel de **Periode voor automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van de aankondigingen te regelen.
 
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Interactie met kaart](../../user/map/interact-with-map.md)
+- [Interactie met de kaart](../../user/map/interact-with-map.md)
 - [Algemene instellingen](../../user/personal/global-settings.md)
-- [Vectorkaarten (kaartstijlen)](../../user/map/vector-maps.md)
-
-> *Laatst bijgewerkt: februari 2025*
+- [Vectorkaarten (Kaartstijlen)](../../user/map/vector-maps.md)

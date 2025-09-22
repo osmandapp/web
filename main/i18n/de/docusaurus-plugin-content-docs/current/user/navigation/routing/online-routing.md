@@ -1,7 +1,7 @@
 ---
-source-hash: 4f96a8e9fe2039b52000ce52f1a94177338192fe1d90ceb5161a41d19e94cfea
+source-hash: ad9c1155352c7c8fc6705861acfb7f006ba101d59528a256c0205ba34b62fd80
 sidebar_position: 11
-title: Online-Routing
+title:  Online-Routenführung
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,43 +19,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-Online-Routing ist ein leistungsfähiges Werkzeug, das Benutzern helfen kann, Zeit zu sparen und effizienter zu navigieren. Es ist jedoch wichtig zu beachten, dass Online-Routing auf eine Internetverbindung angewiesen ist und in Gebieten mit schlechter Netzabdeckung möglicherweise nicht verfügbar ist. Darüber hinaus sollten Benutzer immer Vorsicht walten lassen und ihr Urteilsvermögen einsetzen, wenn sie einer von einem Online-Routing-Dienst vorgeschlagenen Route folgen.
+Die Online-Routenführung ist ein leistungsstarkes Werkzeug, das Benutzern helfen kann, Zeit zu sparen und effizienter zu navigieren. Es ist jedoch wichtig zu beachten, dass die Online-Routenführung eine Internetverbindung erfordert und in Gebieten mit schlechter Netzabdeckung möglicherweise nicht verfügbar ist. Darüber hinaus sollten Benutzer immer Vorsicht walten lassen und ihr eigenes Urteilsvermögen einsetzen, wenn sie einer von einem Online-Routendienst vorgeschlagenen Route folgen.
 
-![Online-Routing Android](@site/static/img/navigation/routing/online_routing_andr.png)
+![Online-Routenführung Android](@site/static/img/navigation/routing/online_routing_andr.png)
 
 
-## Routenparameter - Online-Routing {#route-parameters---online-routing}
+## Routenparameter - Online-Routenführung {#route-parameters---online-routing}
 
-*Online-Routing* kann im Abschnitt [Navigationstyp](../guidance/navigation-settings.md#overview) der Navigationseinstellungen des ausgewählten *Profils* aktiviert werden. In OsmAnd gibt es zwei vordefinierte *Online-Routing-Engines* ([ZLZK](https://zlzk.biz/) und [OSM DE](https://routing.openstreetmap.de)), die drei *Online-Routing*-Typen anbieten: *Fahrrad, Auto und Zu Fuß*.
+Die *Online-Routenführung* kann im Abschnitt [Navigationstyp](../guidance/navigation-settings.md#overview) der Navigationseinstellungen des ausgewählten *Profils* aktiviert werden. In OsmAnd gibt es zwei vordefinierte *Online-Routing-Engines* ([ZLZK](https://zlzk.biz/) und [OSM DE](https://routing.openstreetmap.de)), die drei *Online-Routenführungs*-Typen anbieten: *Fahrrad, Auto und Zu Fuß*.
 
 :::note
-Online-Routing-Typen sind für die Profile *Fahren, Radfahren und Gehen* konzipiert, obwohl sie auch mit anderen OsmAnd-Profilen (LKW, Motorrad, Skifahren, Reiten) verwendet werden können. Sie werden "wie besehen" bereitgestellt, sodass Sie sie nicht mit verschiedenen Navigationsoptionen an Ihre Bedürfnisse anpassen können.
+Die Online-Routenführungstypen sind für die Profile *Fahren, Radfahren und Gehen* konzipiert, können aber auch mit anderen OsmAnd-Profilen (LKW, Motorrad, Skifahren, Reiten) verwendet werden. Sie werden "wie besehen" zur Verfügung gestellt, sodass Sie sie nicht mit verschiedenen Navigationsoptionen an Ihre Bedürfnisse anpassen können.
 :::
 
-### Benutzerdefiniertes Online-Routing {#custom-online-routing}
+### Benutzerdefinierte Online-Routenführung {#custom-online-routing}
 
-Zusätzlich zu den voreingestellten Online-Routing-Typen können Sie weitere Online-Routing-Mechanismen konfigurieren.
-Tippen Sie auf die Schaltfläche **+ Online-Routing-Engine hinzufügen** und wählen Sie einen der vorgeschlagenen Online-Routing-Typen ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Wählen Sie das entsprechende Fahrzeug aus und tippen Sie auf *Routing testen*, bevor Sie Ihre Änderungen speichern.
+Zusätzlich zu den voreingestellten Online-Routenführungstypen können Sie andere Online-Routenführungsmechanismen konfigurieren.
+Tippen Sie auf die Schaltfläche **+ Online-Routing-Engine hinzufügen** und wählen Sie einen der vorgeschlagenen Online-Routenführungstypen ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Wählen Sie das entsprechende Fahrzeug aus und tippen Sie auf *Test-Routing*, bevor Sie Ihre Änderungen speichern.
 
-![Benutzerdefiniertes Online-Routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Benutzerdefiniertes Online-Routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)
+![Benutzerdefinierte Online-Routenführung Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Benutzerdefinierte Online-Routenführung Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)
 
 :::info
-Sie können die Unterschiede zwischen Online-Routing-Engines in [OSMwiki](https://wiki.openstreetmap.org/wiki/Routing/online_routers) nachlesen.
+Informationen zu den Unterschieden zwischen den Online-Routing-Engines finden Sie im [OSMwiki](https://wiki.openstreetmap.org/wiki/Routing/online_routers).
 :::
 
-### Benutzerdefiniertes Online-GPX-Routing {#custom-online-gpx-routing}
+### Benutzerdefinierte Online-GPX-Routenführung {#custom-online-gpx-routing}
 
-Der Online-Server erstellt eine Route anhand Ihres Startpunkts und Ihres Ziels. Nach Erhalt der Strecke vom Server erstellt OsmAnd eine Route unter Verwendung der Funktion *[An Straßen anbinden](../setup/gpx-navigation.md#attach-to-the-roads)*. So werden alle benötigten Routing-Informationen aus unseren Offline-Karten entnommen, und es wird eine präzisere Führung entlang der Route bereitgestellt.
+Der Online-Server erstellt eine Route anhand Ihres Start- und Zielpunkts. Nachdem der Track vom Server empfangen wurde, erstellt OsmAnd eine Route mit der Funktion *[An Straßen ausrichten](../setup/gpx-navigation.md#attach-to-the-roads)*. So werden alle benötigten Routeninformationen aus unseren Offline-Karten entnommen und eine präzisere Führung entlang der Route ermöglicht.
 
-![Benutzerdefiniertes GPX-Routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Benutzerdefiniertes GPX-Routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
+![Benutzerdefinierte GPX-Routenführung Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Benutzerdefinierte GPX-Routenführung Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
 
 
-## Online-Routing-Einstellung {#online-routing-setting}
+## Einstellung für Online-Routenführung {#online-routing-setting}
 
-Wenn Online-Routing für die Navigation ausgewählt ist, erscheint eine zusätzliche Option in den Einstellungen.
+Wenn die Online-Routenführung für die Navigation ausgewählt ist, erscheint eine zusätzliche Option in den Einstellungen.
 
-![Einstellungen Online-Routing Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
+![Einstellungen Online-Routenführung Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
 
-- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>* - Ermöglicht die Verwendung des OsmAnd Offline-Routings, wenn Online-Routing in den Navigationseinstellungen ausgewählt ist. Diese Option kann hilfreich sein, wenn eine Route bereits online erstellt wurde, es aber dann zu einer Abweichung von der Route kam und gleichzeitig die Internetverbindung verloren ging. In diesem Fall wird das Offline-Routing verwendet, um zur zuvor online berechneten Route zurückzukehren.
-
-> *Zuletzt aktualisiert: Juni 2024*
+- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>* - Ermöglicht die Verwendung der Offline-Routenführung von OsmAnd, wenn in den Navigationseinstellungen die Online-Routenführung ausgewählt ist. Diese Option kann hilfreich sein, wenn eine Route bereits online erstellt wurde, es dann aber zu einer Abweichung von der Route kam und gleichzeitig die Internetverbindung unterbrochen wurde. In diesem Fall wird die Offline-Routenführung verwendet, um zur zuvor online berechneten Route zurückzukehren.

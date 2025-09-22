@@ -1,8 +1,8 @@
 ---
-source-hash: e1ed0c38654083ff1654ec38b2f9235f0e80e91f2cdccf6bfa4e90d11da491a5
 sidebar_position: 2
-title:  تنزيل الخرائط
+title:  Download Maps
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,173 +16,167 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
+## Overview {#overview}
 
-## نظرة عامة {#overview}
+Uploading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an Internet connection.  
 
-يُعد تحميل الخرائط إلى تطبيق OsmAnd خطوة أساسية لضمان التشغيل السلس واستخدام الملاحة دون اتصال بالإنترنت. بدون الخرائط غير المتصلة بالإنترنت، لا يمكن للتطبيق أن يعمل بشكل كامل. يمنحك تنزيل الخرائط إمكانية الوصول إلى خرائط مناطق مختلفة، مما يتيح لك التنقل دون اتصال بالإنترنت.
+You have two *main* ways to download maps: **1)** start from the [initial setup screen](#initial-setup-screen) or [view the list of regions in the *Main Menu*](#maps-and-resources), or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
 
-لديك طريقتان *رئيسيتان* لتنزيل الخرائط: **1)** [عرض قائمة المناطق في *القائمة الرئيسية*](#maps-and-resources)، أو **2)** [تحديد المنطقة المطلوبة مباشرة على الخريطة](#select-on-the-map). يمنحك هذا المرونة في تحديد المناطق التي تريدها ويضمن أن الخرائط ستناسب خططك.
-
-على الرغم من أن OsmAnd يدعم كلاً من [الخرائط المتجهة (Vector)](../map/vector-maps.md) و [الخرائط النقطية (Raster)](../map/raster-maps.md)، إلا أنه يوصى بالبدء بالعمل مع الخرائط المتجهة دون اتصال بالإنترنت. يضمن هذا النوع من الخرائط (اقرأ المزيد حول [أنواع خرائط OsmAnd](../personal/maps-resources.md#map-types) هنا) التشغيل الموثوق لجميع الوظائف الرئيسية للتطبيق، بما في ذلك [البحث](../search/index.md)، و [الملاحة](../navigation/index.md)، و [قائمة السياق](../map/map-context-menu.md). وهذا مهم بشكل خاص إذا كانت رحلاتك تتضمن السفر إلى مواقع نائية أو أماكن ذات وصول محدود للإنترنت.
-
-
-## تنزيل {#download}
-
-ابدأ تحميل الخرائط من [شاشة الإعداد الأولية](#initial-setup-screen)، أو انتقل إلى *القائمة الجانبية* الرئيسية *←* [الخرائط والموارد](#maps-and-resources) وحدد الخرائط المطلوبة من القائمة العامة، أو [حدد منطقة](#select-on-the-map) مباشرة على الخريطة عن طريق النقر على المنطقة التي تحتاجها.
+Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of map (read more about [Map OsmAnd types](../personal/maps-resources.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
-### شاشة الإعداد الأولية {#initial-setup-screen}
+## Initial Setup Screen {#initial-setup-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![تنزيل خريطة أندرويد](@site/static/img/steps/start_screen_first_screen_andr.png)
+![Download map Android](@site/static/img/steps/start_screen_first_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![تنزيل خريطة iOS](@site/static/img/steps/start_screen_first_screen_ios.png)
+![Download map iOS](@site/static/img/steps/start_screen_first_screen_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-عند تشغيل التطبيق لأول مرة، يُطلب منك تنزيل خريطة مصممة خصيصًا لموقعك الحالي، والذي يتم تحديده بواسطة اتصالك بالإنترنت. هذه الخطوة اختيارية، مما يتيح لك تخطي التنزيل والمتابعة مباشرة إلى واجهة الخرائط المحلية لمنطقتك.
+Upon launching the application for the first time, you are prompted to download a map tailored to your current location, determined by your Internet connection. This step is optional, allowing you to skip the download and proceed directly to the local maps interface for your region.  
 
-إذا كنت تستخدم شبكة افتراضية خاصة (VPN)، فقد يقترح OsmAnd خريطة بناءً على الموقع الافتراضي لشبكة VPN. في مثل هذه الحالات، يمكنك تحديد خريطة يدويًا تتوافق بشكل أفضل مع منطقتك الجغرافية الفعلية.
+If you are using a VPN, OsmAnd may suggest a map based on the VPN’s virtual location. In such cases, you can manually select a map that better aligns with your actual geographic region.  
 
 
-#### قائمة النقاط الثلاث {#three-dot-menu}
+### Three-dot Menu {#three-dot-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![تنزيل خريطة أندرويد](@site/static/img/steps/start_screen_first_screen_location_andr.png) ![تنزيل خريطة iOS](@site/static/img/steps/start_screen_first_screen_other_andr.png)
+![Download map Android](@site/static/img/steps/start_screen_first_screen_location_andr.png)   ![Download map iOS](@site/static/img/steps/start_screen_first_screen_other_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![تنزيل خريطة أندرويد](@site/static/img/steps/start_screen_first_screen_location_ios.png) ![تنزيل خريطة iOS](@site/static/img/steps/start_screen_first_screen_other_ios.png)
+![Download map Android](@site/static/img/steps/start_screen_first_screen_location_ios.png)   ![Download map iOS](@site/static/img/steps/start_screen_first_screen_other_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**قائمة الموقع:**
+**Location menu:**
 
-- *حدد منطقة مختلفة.* يفتح قائمة [تنزيل الخرائط](#maps-and-resources).
-- *اسمح لنا بتحديد موقعك.* [يطلب الإذن](../start-with/first-steps.md#permission-to-access-the-location) للوصول إلى الموقع، والعثور على الخريطة المطلوبة باستخدام هذه البيانات.
+- *Select a different region.* Opens the [Download Maps](#maps-and-resources) menu.
+- *Allow us to determine your location.* [Requests permission](../start-with/first-steps.md#permission-to-access-the-location) to access the location, and find the required map using this data.
 
-**قائمة أخرى:**
+**Other menu:**
 
-- *الاستعادة من OsmAnd Cloud.* يفتح الشاشة الرئيسية لـ [OsmAnd Cloud](../personal/osmand-cloud.md) أو شاشة تسجيل الدخول. وهذا مفيد إذا قمت بإعادة تثبيت التطبيق أو كنت ترغب في استعادة تجربة المستخدم السابقة دون إعادة تحديد المناطق والإعدادات.
-- *الاستعادة من ملف.* يفتح مدير ملفات الجهاز لتحديد واستيراد ملف `.osf`.
+- *Restore from OsmAnd Cloud.* Opens the [OsmAnd Cloud](../personal/osmand-cloud.md) main screen or login screen. This is useful if you have reinstalled the app or want to restore the previous user experience without re-selecting regions and settings.
+- *Restore from file.* Opens the device's file manager to select and import an `.osf` file.  
 
 
-### الخرائط والموارد {#maps-and-resources}
+## Maps and Resources {#maps-and-resources}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
-![تنزيل قائمة الخرائط العامة أندرويد](@site/static/img/personal/maps/download_menu_andr.png)
+![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![تنزيل قائمة الخرائط العامة iOS](@site/static/img/personal/maps/download_menu_ios.png)
+![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر شاشة [الخرائط والموارد](../personal/maps-resources.md) الوصول إلى الأقسام التالية:
+The [Maps & Resources](../personal/maps-resources.md) screen provides access to the following sections:
 
-- [التنزيلات](../personal/maps-resources.resources.md#downloads). تقدم مجموعة شاملة من [أنواع خرائط OsmAnd](../personal/maps-resources.md#map-types).
-- [المحلية](../personal/maps-resources.md#local). تعرض جميع بيانات الخرائط المخزنة حاليًا على جهازك، بما في ذلك الموارد المخصصة والمستوردة.
-- [التحديثات](../personal/maps-resources.md#updates). تمكنك من تحديث الخرائط شهريًا للحفاظ على بياناتك محدثة.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Offers a comprehensive selection of [OsmAnd map types](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local-menu). Displays all map data currently stored on your device, including custom and imported resources.
+- [Updates](../personal/maps-resources.md#updates-menu). Enables you to refresh maps monthly to keep your data current.
 
-#### تنزيل الخرائط {#downloading-maps}
+### Downloading Maps {#downloading-maps}
 
-لتنزيل نوع خريطة معين لبلد أو منطقة:
+To download a specific map type for a country or region:
 
-- انتقل إلى المجلد الخاص بالمنطقة المطلوبة، مثل إفريقيا أو أوروبا أو قارة أخرى.
-- حدد البلد أو المنطقة المفضلة لديك من القائمة.
-- في الشاشة التالية، راجع واختر من أنواع الخرائط المتاحة لتلك المنطقة.
+- Navigate to the folder for the required region, such as Africa, Europe, or another continent.
+- Select your preferred country or region from the list.
+- On the next screen, review and choose from the available map types for that area.
 
-يمكنك العثور على معلومات حول أنواع الخرائط الأخرى في قسم [التنزيلات](../personal/maps-resources.md#downloads) من مقال **الخرائط**.
+You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads-menu) section of the **Maps** article.
 
-### خيارات خريطة العالم {#world-map-options}
+## World Map Options {#world-map-options}
 
-يتضمن OsmAnd خيارين لخريطة العالم:
+OsmAnd includes two world map options:  
 
-1. **خريطة العالم المصغرة** (مثبتة مسبقًا). خريطة خفيفة الوزن تتيح الملاحة الأساسية وتوفر نظرة عامة على العالم.
-2. **خريطة العالم المفصلة** (قابلة للتنزيل). خريطة عالمية تتميز بالمدن الرئيسية والطرق والأنهار والميزات الجغرافية الأخرى.
+1. **Mini World Map** (pre-installed). A lightweight map that enables basic navigation and provides an overview of the world.  
+2. **Detailed World Map** (downloadable). A global map featuring major cities, roads, rivers, and other geographical features.
 
-***ملاحظات هامة:***
+***Important notes:***
 
-- **خريطة العالم المفصلة لا تحل محل خرائط البلدان أو المناطق الفردية.** إنها مفيدة للحصول على نظرة عامة ولكنها لا تحتوي على نفس مستوى التفاصيل مثل الخرائط الإقليمية.
-- إذا كنت بحاجة إلى ملاحة مفصلة، **قم بتنزيل خرائط بلد أو منطقة معينة يدويًا** عبر *القائمة ← الخرائط والموارد ← تنزيل الخرائط.*
-- يمكن للمستخدمين الذين لديهم **OsmAnd Pro أو Maps+** تنزيل **عدد غير محدود من الخرائط** ولكن يجب عليهم تنزيل كل منطقة على حدة.
-- **لا يوجد خيار واحد لتنزيل جميع خرائط العالم دفعة واحدة.**
+- The **Detailed World Map does not replace individual country or region maps.** It is useful for an overview but does not contain the same level of detail as regional maps.  
+- If you need detailed navigation, **download specific country or region maps manually** via *Menu → Maps & Resources → Download Maps.*
+- Users with **OsmAnd Pro or Maps+** can download an **unlimited number of maps** but must still download each region separately.  
+- **There is no single option to download all world maps at once.**
 
 
-### التحديد على الخريطة {#select-on-the-map}
+## Select on the Map {#select-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![النقر القصير على خريطة العالم يسمح بتنزيل خريطة المنطقة](@site/static/img/map/download_region_map_via_worldmap.png)
+![Short tap the World map allows to download region map](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![النقر القصير على خريطة العالم يسمح بتنزيل خريطة المنطقة](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
+![Short tap the World map allows to download region map](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-إحدى طرق تنزيل الخريطة هي التصغير على خريطة العالم والنقر لفترة وجيزة لتحديد منطقة لتنزيلها. سيتم تمييز هذه المنطقة باللون الأصفر، وستظهر لوحة في الأسفل تحمل اسم المنطقة واقتراحًا لتنزيلها أو تحديد خرائط أخرى.
+One way to download a map is to zoom out on the world map and briefly tap to select a region to download. This area will be highlighted in yellow, and a panel will appear at the bottom with the name of the region and a suggestion to download it or select other maps.  
 
-:::tip لون الخريطة
-على الشاشة الصغيرة، سيتم تمييز الخريطة المحددة للتنزيل باللون الأصفر، وسيتم تمييز الخرائط التي تم تنزيلها بالفعل باللون الأخضر، وسيتم تمييز الخرائط المعطلة باللون البرتقالي. يتم تجاوز الخرائط **المعطلة** لتسريع البرنامج في حال كان لديك الكثير من الخرائط المحملة.
+:::tip Map color  
+On the small screen, the map selected for downloading will be highlighted in yellow, maps that have already been downloaded will be highlighted in green, and deactivated maps will be highlighted in orange. **Deactivated** maps are bypassed to speed up the program in case you have a lot of loaded maps.
 :::
 
-### البحث {#search}
+## Search {#search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![وظيفة البحث لتنزيل خريطة أندرويد](@site/static/img/settings/search_download_map_3_andr.png) ![وظيفة البحث لتنزيل خريطة أندرويد](@site/static/img/settings/search_download_map_4_andr.png)
+![Search function to download map Android](@site/static/img/settings/search_download_map_3_andr.png) ![Search function to download map Android](@site/static/img/settings/search_download_map_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة البحث لتنزيل خريطة iOS](@site/static/img/settings/search_download_map_1_ios.png) ![وظيفة البحث لتنزيل خريطة iOS](@site/static/img/settings/search_download_map_2_ios.png)
+![Search function to download map iOS](@site/static/img/settings/search_download_map_1_ios.png) ![Search function to download map iOS](@site/static/img/settings/search_download_map_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يجعل البحث من السهل العثور على خريطة أو منطقة معينة، مما يوفر طريقة مريحة وسريعة لتنزيل البيانات التي تحتاجها. يمكنك العثور على الخريطة وتنزيلها باستخدام [وظيفة البحث](../search/index.md).
+Search makes it easy to find a specific map or region, providing a convenient and quick way to download the data you need. You can find and download the map using the [search function](../search/index.md).
 
-- ابدأ البحث عن طريق إدخال اسم بلد أو منطقة في حقل البحث. ثم حدد الخريطة المطلوبة من القائمة التي تظهر.
-- تظهر الخرائط المتاحة للتنزيل باللون الرمادي مع أيقونة تنزيل، وتظهر الخرائط التي تم تنزيلها باللون الأخضر وزر القائمة.
-- انقر على اسم النتيجة المطلوبة وستفتح قائمة الخرائط الإقليمية.
-- حدد [أنواع الخرائط](../personal/maps-resources.md#map-types): *خريطة قياسية، خريطة طرق فقط، خطوط كنتورية، ويكيبيديا*.
+- Start a search by entering the name of a country or region in the search field. Then select the required map from the list that appears.
+- Maps available for download are displayed in gray with a download icon, downloaded maps have a green color and a menu button.
+- Tap the name of the required result and the Regionwide map list will open.
+- Select [map types](../personal/maps-resources.md#map-types): *Standard map, Road-only map, Contour lines, Wikipedia*.
 
-> *آخر تحديث: يناير 2025*
+

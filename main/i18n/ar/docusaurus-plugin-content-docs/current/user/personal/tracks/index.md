@@ -1,27 +1,27 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
 title:  المسارات
 sidebar_position: 8
 ---
 
 ## [إدارة المسارات](./manage-tracks.md) {#manage-tracks}
 
-جميع المعلومات حول إنشاء وإدارة وتنظيم المسارات ومجلدات المسارات.
+كل المعلومات حول إنشاء وإدارة وتنظيم المسارات ومجلدات المسارات.
 
-## [المجلد الذكي (فلتر)](./smart-folder.md) {#smart-folderfilter}
+## [المجلد الذكي (مرشح)](./smart-folder.md) {#smart-folderfilter}
 
-طريقة بسيطة لإنشاء مجلدات افتراضية للمسارات باستخدام أي فلاتر.
+طريقة بسيطة لإنشاء مجلدات افتراضية للمسارات باستخدام أي مرشحات.
 
 ## اقرأ المزيد {#read-more}
 
 ### [أنواع المسارات](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
 
-اقرأ عن ماهية المسار وأنواع المسارات المختلفة.
+اقرأ عن ماهية المسار والأنواع المختلفة للمسارات.
 
-### [عرض المسارات](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [عرض المسارات](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
 اقرأ عن كيفية عرض المسارات وخياراتها في OsmAnd.
 
-### [التنقل بالمسار](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [الملاحة باستخدام مسار](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-اقرأ المزيد حول كيفية استخدام المسار في التنقل.
+اقرأ المزيد عن كيفية استخدام المسار في الملاحة.

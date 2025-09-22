@@ -1,5 +1,5 @@
 ---
-source-hash: 82311f61fc7e617e22d754968f02e6ec8009c51ecb4943a18c23ef0a9d897cfd
+source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
 sidebar_position: 5
 title:  المستشعرات الخارجية
 ---
@@ -19,47 +19,47 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## نظرة عامة {#overview}
 
 :::info ميزة مدفوعة
-مكون المستشعرات الخارجية الإضافي هو [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd.
+ملحق المستشعرات الخارجية هو [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd.
 :::
 
-يتيح لك **مكون المستشعرات الخارجية الإضافي** قراءة وتسجيل البيانات من [المستشعرات الخارجية اللاسلكية](https://en.wikipedia.org/wiki/Wireless_sensor_network) التي تعمل بتقنيتي [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) و [BLE (بلوتوث منخفض الطاقة)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) وعرض هذه البيانات باستخدام [الودجات](#widgets) في تطبيق OsmAnd. هذه الشبكة المدارة قادرة على جمع بيانات المستشعر ونقلها وتخزينها.
+يسمح لك **ملحق المستشعرات الخارجية** بقراءة وتسجيل البيانات من [المستشعرات الخارجية اللاسلكية](https://en.wikipedia.org/wiki/Wireless_sensor_network) التي تعمل بتقنيات [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) و [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) وعرض هذه البيانات باستخدام [الودجات](#widgets) في تطبيق OsmAnd. هذه الشبكة المُدارة قادرة على جمع بيانات المستشعرات ونقلها وتخزينها.
 
-> *ملاحظة: لا تدعم هواتف iPhone وأجهزة iPad تقنية ANT+ بسبب قيود الأجهزة.*
+> *ملاحظة: لا تدعم أجهزة iPhone و iPad تقنية ANT+ بسبب قيود في العتاد.*
 
-يصل **مكون المستشعرات الخارجية الإضافي** إلى المستشعرات الخارجية ويمكنه قراءة بيانات مثل:
+يصل **ملحق المستشعرات الخارجية** إلى المستشعرات الخارجية ويمكنه قراءة بيانات مثل:
 
 - *معدل ضربات القلب*
-- *قوة الدراجة*
+- *طاقة الدراجة*
 - *إيقاع الدراجة*
 - *سرعة الدراجة*
 - *مسافة الدراجة*
 - *درجة الحرارة*
 
-لاستخدام المكون الإضافي، تأكد من أن جهازك [متوافق](#pair-new-sensor)، وأن المكون الإضافي [مُمكن](../plugins/#enable--disable)، وأن مستشعراتك الخارجية متصلة عبر البلوتوث (BLE).
+لاستخدام الملحق، تأكد من أن جهازك [متوافق](#pair-new-sensor)، وأن الملحق [مُمكّن](../plugins/#enable--disable)، وأن مستشعراتك الخارجية متصلة عبر البلوتوث (BLE).
 
 
-## معلمات الإعداد المطلوبة {#required-setup-parameters}
+## إعدادات التهيئة المطلوبة {#required-setup-parameters}
 
-لبدء استخدام البيانات من المستشعرات الخارجية، اتبع هذه الخطوات:
+لبدء استخدام البيانات من المستشعرات الخارجية، اتبع الخطوات التالية:
 
-1. [اشترِ](../purchases/) **اشتراك OsmAnd Pro** لفتح مكون المستشعرات الخارجية الإضافي.
-2. [مكّن](../plugins/#enable--disable) المكون الإضافي في *القائمة ← المكونات الإضافية*.
+1. [شراء](../purchases/) **اشتراك OsmAnd Pro** لفتح ملحق المستشعرات الخارجية.
+2. [تمكين](../plugins/#enable--disable) الملحق في *القائمة → الملحقات*.
 3. **قم بتشغيل البلوتوث** على جهازك للسماح بالاتصال بـ **مستشعرات BLE**.
-4. [قم بإقران وتكوين](#pair-new-sensor) المستشعرات الخارجية من خلال قائمة المكون الإضافي.
-5. (اختياري) [أضف](#widgets) **ودجات المستشعرات الخارجية** إلى شاشة الخريطة لعرض البيانات في الوقت الفعلي مثل معدل ضربات القلب أو الإيقاع أو مستوى البطارية.
-6. (اختياري) استخدم [مكون تسجيل الرحلة الإضافي](../plugins/trip-recording.md) لتسجيل بيانات المستشعر في مسارات GPX.
-7. (اختياري، أندرويد فقط) اتبع [هذه النصائح](https://www.thisisant.com/consumer/ant-101/ant-in-phones) لتوصيل مستشعرات ANT+ إذا كان جهازك يدعمها.
+4. [إقران وتهيئة](#pair-new-sensor) المستشعرات الخارجية من خلال قائمة الملحق.
+5. (اختياري) [إضافة](#widgets) **ودجات المستشعرات الخارجية** إلى شاشة الخريطة لعرض البيانات في الوقت الفعلي مثل معدل ضربات القلب أو الإيقاع أو مستوى البطارية.
+6. (اختياري) استخدم [ملحق تسجيل الرحلات](../plugins/trip-recording.md) لتسجيل بيانات المستشعرات في مسارات GPX.
+7. (اختياري، لأندرويد فقط) اتبع [هذه النصائح](https://www.thisisant.com/consumer/ant-101/ant-in-phones) لتوصيل مستشعرات ANT+ إذا كان جهازك يدعمها.
 
 
 ### إقران مستشعر جديد {#pair-new-sensor}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 | | |
 | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png) |
+| ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png) | ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png) |
 
 </TabItem>
 
@@ -67,41 +67,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
+| ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
 
 </TabItem>
 
 </Tabs>
 
-لإقران مستشعر جديد، اتبع هذه الخطوات:
+لإقران مستشعر جديد، اتبع الخطوات التالية:
 
 1. تأكد من **تمكين البلوتوث** على جهازك.
-2. اذهب إلى *القائمة ← المكونات الإضافية ← المستشعرات الخارجية ← الإعدادات*.
-3. اضغط على **إقران مستشعر جديد**.
-4. سيبحث OsmAnd عن مستشعرات **بلوتوث منخفض الطاقة (Bluetooth LE)** أو **ANT+** المتاحة (حسب نظامك الأساسي).
-5. اضغط على زر **+** بجوار المستشعر الذي تريد إقرانه.
+2. اذهب إلى *القائمة → الملحقات → المستشعرات الخارجية → الإعدادات*.
+3. انقر على **إقران مستشعر جديد**.
+4. سيقوم OsmAnd بالبحث عن مستشعرات **Bluetooth LE** أو **ANT+** المتاحة (حسب منصتك).
+5. انقر على زر **+** بجوار المستشعر الذي تريد إقرانه.
 6. بمجرد الاتصال، سيظهر المستشعر في قائمة **الأجهزة المتصلة**.
 
 ***ملاحظات:***
 
-- على **iOS**، يتم دعم مستشعرات **بلوتوث منخفض الطاقة (BLE)** فقط بسبب قيود الأجهزة. مستشعرات ANT+ غير متاحة.
-- على **أندرويد**، قد يتم دعم كل من مستشعرات BLE وANT+ حسب جهازك. راجع [دليل توافق ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) لمزيد من التفاصيل.
-- ستظهر **إشعار منبثق** في كل مرة يتصل فيها المستشعر أو ينقطع اتصاله.
-- تتوفر **مستشعرات قوة الدراجة** على أندرويد فقط عبر ANT+.
+- على **iOS**، يتم دعم مستشعرات **Bluetooth Low Energy (BLE)** فقط بسبب قيود العتاد. مستشعرات ANT+ غير متاحة.
+- على **أندرويد**، قد يتم دعم كل من مستشعرات BLE و ANT+ حسب جهازك. راجع [دليل توافق ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) لمزيد من التفاصيل.
+- سيظهر **إشعار منبثق** في كل مرة يتصل فيها مستشعر أو ينفصل.
+- **مستشعرات طاقة الدراجة** متاحة فقط على أندرويد عبر ANT+.
 
 
 ## إعدادات المستشعر {#sensor-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 استخدم أحد المسارات التالية لفتح إعدادات المستشعر:
 
-- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> ← الجهاز المتاح ← الإعدادات*
-- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> ← الجهاز المتاح ← الإعدادات*
+- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → الجهاز المتاح → الإعدادات*
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → الجهاز المتاح → الإعدادات*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
 
 </TabItem>
 
@@ -112,34 +112,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)  
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-كل مستشعر خارجي مقترن مدرج في OsmAnd لديه شاشة تكوين خاصة به مع الخيارات التالية:
+لكل مستشعر خارجي مقترن مدرج في OsmAnd شاشة تهيئة خاصة به مع الخيارات التالية:
 
-- **اتصال / قطع اتصال** – تبديل حالة الاتصال.
+- **اتصال / قطع الاتصال** – تبديل حالة الاتصال.
 - **إعادة تسمية** – تعيين اسم مخصص للمستشعر.
 - **نسيان المستشعر** – إزالة المستشعر من القائمة (يمكن إعادة إقرانه لاحقًا).
 - **الإعدادات** – فتح شاشة تفاصيل المستشعر (نوع المستشعر، القيم، مستوى البطارية، إعداد محيط العجلة).
 
 ***ملاحظات:***
 
-- على **iOS**، يمكنك عرض **مستوى البطارية** لمستشعرات BLE المتصلة مباشرة في [ودجة](#widgets) الخريطة. لتمكين ذلك، اذهب إلى: *القائمة ← تكوين الشاشة ← اختيار لوحة ← إضافة ودجة ← مستشعر خارجي ← الإعدادات ← إظهار ← مستوى البطارية*
-- يظهر إشعار منبثق عندما ينخفض مستوى بطارية المستشعر المقترن **أقل من 15%**.
+- على **iOS**، يمكنك عرض **مستوى البطارية** لمستشعرات BLE المتصلة مباشرة في [ودجت](#widgets) الخريطة. لتمكين ذلك، اذهب إلى: *القائمة → تهيئة الشاشة → اختر لوحة → إضافة ودجت → مستشعر خارجي → الإعدادات → عرض → مستوى البطارية*
+- يظهر إشعار منبثق عندما ينخفض **مستوى بطارية مستشعر مقترن إلى أقل من ١٥٪**.
 
 
 ## تسجيل الرحلة {#trip-recording}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
 
 </TabItem>
 
@@ -147,24 +147,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-لتسجيل بيانات المستشعر باستخدام [مكون تسجيل الرحلة الإضافي](../plugins/trip-recording.md#recording-settings) أثناء رحلتك:
+لتسجيل بيانات المستشعر باستخدام [ملحق تسجيل الرحلات](../plugins/trip-recording.md#recording-settings) أثناء رحلتك:
 
-1. تأكد من تمكين **مكون المستشعرات الخارجية الإضافي**.
+1. تأكد من تمكين **ملحق المستشعرات الخارجية**.
 2. اذهب إلى *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
 3. حدد أنواع المستشعرات التي تريد تسجيلها (مثل الإيقاع، معدل ضربات القلب، السرعة).
-4. ابدأ تسجيل رحلتك. سيحفظ OsmAnd بيانات المستشعر المحددة في مسار GPX.
+4. ابدأ تسجيل رحلتك. سيقوم OsmAnd بحفظ بيانات المستشعر المحددة في مسار GPX.
 
 ***ملاحظات:***
 
-- يتم عرض قائمة أنواع المستشعرات المتاحة حتى لو لم تكن هناك مستشعرات متصلة.
-- إذا لم يتم إقران أي مستشعرات بعد، استخدم زر [إقران مستشعر جديد](#pair-new-sensor) في إعدادات المكونات الإضافية.
-- لا يتم تسجيل بيانات مستوى البطارية في ملفات GPX وهي غير متاحة للتحليل على الخريطة.
+- تُعرض قائمة أنواع المستشعرات المتاحة حتى لو لم تكن هناك مستشعرات متصلة.
+- إذا لم يتم إقران أي مستشعرات بعد، فاستخدم زر [إقران مستشعر جديد](#pair-new-sensor) في إعدادات الملحقات.
+- بيانات مستوى البطارية **لا** يتم تسجيلها في ملفات GPX وليست متاحة للتحليل على الخريطة.
 
 :::note توافق التنسيق
 يستخدم OsmAnd [تسجيل المسار](../plugins/trip-recording.md#recorded-gpx-file) لتضمين بيانات المستشعر في ملفات GPX. هذا التنسيق متوافق مع العديد من تطبيقات الرياضة والتدريب (مثل Strava، Runkeeper).
@@ -175,29 +175,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
+![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
+![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-بعد تسجيل رحلتك باستخدام [مكون تسجيل الرحلة الإضافي](../plugins/trip-recording.md#recording-settings)، يمكنك مراجعة بيانات المستشعر في واجهة تحليل المسار.
+بعد تسجيل رحلتك باستخدام [ملحق تسجيل الرحلات](../plugins/trip-recording.md#recording-settings)، يمكنك مراجعة بيانات المستشعر في واجهة تحليل المسار.
 
 لتحليل البيانات:
 
 1. أنهِ تسجيل رحلتك.
-2. افتح المسار المسجل من *أماكني ← المسارات* أو اضغط على المسار على الخريطة.
-3. حدد *الخيارات ← تحليل على الخريطة* من قائمة سياق المسار.
+2. افتح المسار المسجل من *أماكني → المسارات* أو انقر على المسار على الخريطة.
+3. حدد *خيارات → تحليل على الخريطة* من قائمة سياق المسار.
 
-سيعرض هذا الرسوم البيانية لبياناتك المسجلة: *معدل ضربات القلب*، *السرعة*، *الإيقاع*، *قوة الدراجة*، و*درجة الحرارة*.
+سيعرض هذا رسومًا بيانية لبياناتك المسجلة: *معدل ضربات القلب*، *السرعة*، *الإيقاع*، *طاقة الدراجة*، و *درجة الحرارة*
 
 > *مستوى البطارية والمسافة غير متاحين في ميزة [التحليل على الخريطة](../map/tracks/index.md#analyze-track-on-map).*
 
@@ -206,78 +206,76 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة ودجة ← <Translate android="true" ids="external_sensor_widgets"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
+![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> ← اختر لوحة ← إضافة ودجة ← <Translate ios="true" ids="external_sensors_plugin_name"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)  
+![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تسمح لك [ودجة المستشعرات الخارجية](../widgets/info-widgets.md#external-sensors-widgets) بعرض البيانات الحية من مستشعراتك المتصلة مباشرة على شاشة الخريطة.
+يسمح لك [ودجت المستشعرات الخارجية](../widgets/info-widgets.md#external-sensors-widgets) بعرض البيانات الحية من مستشعراتك المتصلة مباشرة على شاشة الخريطة.
 
 قبل بدء رحلتك:
 
-- تأكد من تمكين مكون المستشعرات الخارجية الإضافي.
-- افتح *تكوين الشاشة* وأضف الودجات الضرورية إلى اللوحة المناسبة.
+- تأكد من تمكين ملحق المستشعرات الخارجية.
+- افتح *تهيئة الشاشة* وأضف الودجات اللازمة إلى اللوحة المناسبة.
 
 أنواع الودجات المدعومة:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – يعرض معدل ضربات القلب في الوقت الفعلي من جهاز مراقبة مقترن.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*أندرويد فقط*) – يعرض قوة الدواسة الحالية بالواط.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*لأندرويد فقط*) – يعرض طاقة الدواسة الحالية بالواط.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – يعرض عدد دورات الدواسة في الدقيقة.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – سرعة ركوب الدراجة الحالية.
-5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – المسافة الإجمالية المقاسة بواسطة المستشعر.
+5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – المسافة الإجمالية التي قاسها المستشعر.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – درجة الحرارة المحيطة الحالية.
-7. **مستوى البطارية** (*iOS فقط*) – نسبة البطارية المتبقية في مستشعر BLE متصل.
+7. **مستوى البطارية** – النسبة المئوية للبطارية المتبقية في مستشعر BLE متصل، قم بتبديله في **إعدادات المستشعر**.
 
 
-### إعدادات الودجة {#widget-settings}
+### إعدادات الودجت {#widget-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← إضافة ودجة ← <Translate android="true" ids="external_sensor_widgets"/> ← اختر ودجة ← <Translate android="true" ids="shared_string_settings"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → <Translate android="true" ids="external_sensor_widgets"/> → اختر ودجت → <Translate android="true" ids="shared_string_settings"/>*
 
-![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
+![إعدادات ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-widget-settings-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> ← اختر لوحة ← إضافة ودجة ← مستشعر خارجي ← اختر ودجة ← الإعدادات*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → مستشعر خارجي → اختر ودجت → الإعدادات*
 
-![External sensors widgets Settings Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![إعدادات ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 
 </Tabs>
 
-بشكل افتراضي، تعرض الودجة أول مستشعر متصل حاليًا من هذا النوع. إذا كنت ترغب في استخدام مستشعر معين، اضغط على **مصدر البيانات** واختر من قائمة المستشعرات المتصلة.
+بشكل افتراضي، يعرض الودجت أول مستشعر متصل حاليًا من هذا النوع. إذا كنت ترغب في استخدام مستشعر معين، فانقر على **مصدر البيانات** واختر من قائمة المستشعرات المتصلة.
 
-على **iOS**، يمكنك اختيار القيمة التي تريد عرضها في الودجة:
+على **iOS**، يمكنك اختيار القيمة التي سيتم عرضها في الودجت:
 
 - **بيانات المستشعر** (مثل الإيقاع، السرعة).
-- **مستوى البطارية** – نسبة البطارية في الوقت الفعلي للمستشعر المحدد.
+- **مستوى البطارية** – النسبة المئوية للبطارية في الوقت الفعلي للمستشعر المحدد.
 
-> *هذا مفيد عندما تريد مراقبة شحن البطارية خلال الرحلات الطويلة لتجنب الانقطاعات.*
+> *هذا مفيد عندما تريد مراقبة شحن البطارية أثناء الرحلات الطويلة لتجنب انقطاع الاتصال.*
 
 
 ## مقالات ذات صلة {#related-articles}
 
 - [التفاعل مع الخريطة](../../user/map/interact-with-map.md)
 - [الإعدادات العامة](../../user/personal/global-settings.md)
-- [خرائط المتجهات (أنماط الخرائط)](../../user/map/vector-maps.md)
-
-> *آخر تحديث: مايو 2025*
+- [الخرائط المتجهية (أنماط الخرائط)](../../user/map/vector-maps.md)

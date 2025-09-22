@@ -1,7 +1,7 @@
 ---
-source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
+source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
 sidebar_position: 3
-title: Slimme map (Filter)
+title: Slimme Map (Filter)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-De functie **Slimme map** biedt krachtige hulpmiddelen voor het organiseren en beheren van uw tracks. Een van de belangrijkste functies is de mogelijkheid om bestanden in het tabblad *Tracks* van het menu *Mijn plaatsen* te filteren op basis van criteria zoals duur, lengte of snelheid.
+De functie **Slimme Map** biedt krachtige hulpmiddelen voor het organiseren en beheren van uw tracks. Een van de belangrijkste functies is de mogelijkheid om bestanden te filteren in het *Tracks-tabblad* van het *Mijn Plaatsen*-menu op basis van criteria zoals duur, lengte of snelheid.
 
-Met deze functie kunt u snel specifieke tracks vinden die aan uw vereisten voldoen. Gefilterde resultaten kunnen worden opgeslagen als een **Slimme map**, wat handige toegang biedt tot dynamisch bijgewerkte trackverzamelingen.
+Met deze functie kunt u snel specifieke tracks vinden die aan uw eisen voldoen. Gefilterde resultaten kunnen worden opgeslagen als een **Slimme Map**, wat handige toegang biedt tot dynamisch bijgewerkte trackcollecties.
 
 
 ## Zoekfilter {#search-filter}
@@ -47,18 +47,18 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 ***Hoe een filter toe te passen:***
 
-- Tik op het pictogram *Zoeken* en tik vervolgens op *Filter* in de rij [*Sorteren op*](./manage-tracks.md#sort-by).
+- Tik op het *Zoek*-icoon, tik vervolgens op *Filter* in de rij [*Sorteren op*](./manage-tracks.md#sort-by).
 
-- **Kies de vereiste filterinstellingen** om uw trackzoekopdracht te verfijnen.
+- **Kies de vereiste filterinstellingen** om uw zoekopdracht naar tracks te verfijnen.
 
 - Tik op **Tonen** in de rechterbenedenhoek om de gefilterde resultaten te zien. Het aantal overeenkomende tracks verschijnt tussen haakjes.
 
-- **Om alle actieve filters te wissen**, tikt u op **Alles resetten**.
+- **Om te wissen**, tik op **Alles resetten** om alle actieve filters te verwijderen.
 
-- **Om de huidige filterset op te slaan** als een nieuwe **Slimme map**, tikt u op het opslagpictogram in de rechterbovenhoek van het scherm.
+- **Om op te slaan**, tik op het opslaan-icoon in de rechterbovenhoek van het scherm om de huidige filterset op te slaan als een nieuwe **Slimme Map**.
 
 
-### Beschikbare filters {#available-filters}
+### Beschikbare Filters {#available-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -94,20 +94,20 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
     - Fietsvermogen, max.
     - Temperatuur, gemiddeld.
     - Temperatuur, max.
-- **Max snelheid** — Selecteer tracks met specifieke maximale snelheidsbereiken.
-- **Omhoog** en **Omlaag** — Filter tracks op basis van positieve of negatieve hoogteverschillen.
-- **Gemiddelde hoogte** en **Max hoogte** — Vind tracks met specifieke gemiddelde of maximale hoogtedata.
-- **Aanmaakdatum** — Filter tracks die binnen een bepaald datumbereik zijn aangemaakt.
+- **Max Snelheid** — Selecteer tracks met specifieke maximale snelheidsbereiken.
+- **Stijgen** en **Dalen** — Filter tracks op basis van positieve of negatieve hoogteverschillen.
+- **Gemiddelde hoogte** en **Max hoogte** — Vind tracks met specifieke gemiddelde of maximale hoogtegegevens.
+- **Aanmaakdatum** — Filter tracks die binnen een bepaald datumbereik zijn gemaakt.
 - **Dichtstbijzijnde steden** — Toon tracks die in de buurt van geselecteerde steden of plaatsen passeren.
-- **Type activiteit** — Filter tracks op basis van het type [activiteiten](../../map/tracks/track-context-menu.md#track-information-activity) opgenomen in het GPX-bestand (bijv. fietsen, wandelen).
+- **Type activiteit** — Filter tracks op basis van het [activiteitstype](../../map/tracks/track-context-menu.md#ttrack-activity-type) dat in het GPX-bestand is opgenomen (bijv. fietsen, wandelen).
 - **Land** — Filter tracks op het land of de regio waar ze zijn opgenomen.
 - **Kleur** en **Breedte** — Selecteer tracks op toegewezen kleur of lijnbreedte.
-- **Overig** — Aanvullende filters voor speciale kenmerken:
-    - *Zichtbaar op kaart*. Toont alleen tracks die op de kaart worden weergegeven.
+- **Overig** — Extra filters voor speciale kenmerken:
+    - *Zichtbaar op Kaart*. Toont alleen tracks die op de kaart worden weergegeven.
     - *Met Waypoints*. Toont tracks die specifieke waypoints bevatten.
 
 
-## Slimme map {#smart-folder}
+## Slimme Map {#smart-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -125,27 +125,27 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Een **Slimme map** is een dynamische verzameling tracks die automatisch wordt bijgewerkt op basis van specifieke filtercriteria. Het biedt geavanceerde hulpmiddelen voor het efficiënt organiseren, zoeken en beheren van tracks.
+Een **Slimme Map** is een dynamische verzameling van tracks die automatisch wordt bijgewerkt op basis van specifieke filtercriteria. Het biedt geavanceerde hulpmiddelen voor het efficiënt organiseren, zoeken en beheren van tracks.
 
-***Voordelen van Slimme mappen:***
+***Voordelen van Slimme Mappen:***
 
 1. **Geautomatiseerde organisatie.**
-    Neemt automatisch tracks op die voldoen aan vooraf gedefinieerde regels, zoals aanmaakdatum of duur.
+    Neemt automatisch tracks op die voldoen aan vooraf gedefinieerde regels, zoals aanmaakdatum of duurbereik.
 2. **Filteren en zoeken.**
-    Maakt snel zoeken binnen tracks mogelijk met behulp van geavanceerde filters en trefwoorden.
+    Maakt snelle zoekopdrachten binnen tracks mogelijk met behulp van geavanceerde filters en trefwoorden.
 3. **Dynamische vernieuwing.**
-    Vernieuwt de inhoud automatisch om de nieuwste tracks weer te geven die aan de criteria voldoen.
+    Vernieuwt automatisch de inhoud om de nieuwste tracks weer te geven die aan de criteria voldoen.
 4. **Regels aanpassen.**
-    Maak gepersonaliseerde trackverzamelingen door aangepaste filterregels te definiëren.
+    Creëer gepersonaliseerde trackcollecties door aangepaste filterregels te definiëren.
 
 
-### Hoe een slimme map te maken {#how-to-create-smart-folder}
+### Hoe een Slimme Map te Maken {#how-to-create-smart-folder}
 
-Volg deze stappen om een **Slimme map** te maken:
+Volg deze stappen om een **Slimme Map** te maken:
 
-1. Tik op het pictogram ***drie-stippenmenu*** in het tabblad *Tracks* van het menu *Mijn plaatsen*.
+1. Tik op het ***drie-puntjes menu***-icoon in het *Tracks*-tabblad van het *Mijn Plaatsen*-menu.
 
-2. Selecteer **Slimme map toevoegen** uit het vervolgkeuzemenu.
+2. Selecteer **Slimme map toevoegen** uit het dropdownmenu.
 
 3. Configureer instellingen:
    - **Geef de map een naam**. Voer een naam in om de map te identificeren.
@@ -153,66 +153,64 @@ Volg deze stappen om een **Slimme map** te maken:
 
 4. **Sla** de instellingen op.
     - Tik op **Tonen** om een voorbeeld van de tracks te bekijken.
-    - Selecteer de knop **Opslaan** om de *Slimme map* te voltooien.
+    - Selecteer de **Opslaan**-knop om de *Slimme Map* te voltooien.
 
-De nieuw aangemaakte **Slimme map** zal de inhoud automatisch bijwerken met tracks die overeenkomen met de geselecteerde criteria.
+De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tracks die aan de geselecteerde criteria voldoen.
 
 
-### Slimme mappen beheren {#managing-smart-folders}
+### Slimme Mappen Beheren {#managing-smart-folders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mijn plaatsen Slimme mappen beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Mijn plaatsen Slimme mappen beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mijn plaatsen Slimme mappen beheren iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Mijn plaatsen Slimme mappen beheren iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De **Slimme map** wordt weergegeven met een uniek pictogram in de mappenlijst in het tabblad Tracks. Om de map te beheren, tikt u op het *drie-stippenmenu* ernaast (*Android*) en *lang tikken* (*iOS*) of opent u de map en gebruikt u het pictogram in de rechterbovenhoek.
+De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast (*Android*) en *lang tikken* (*iOS*) of opent u de map en gebruikt u het icoon in de rechterbovenhoek.
 
-***Beschikbare acties:***
+***Beschikbare Acties:***
 
 - **Details** — Bekijk de volledige lijst met tracks in de map.
 
-- **Toon alle tracks op de kaart** (*alleen Android*) — Toon alle maptracks op de kaart.
+- **Toon alle tracks op de kaart** (*alleen Android*) — Toon alle tracks uit de map op de kaart.
     *OPMERKING: Het laden van veel tracks kan de prestaties beïnvloeden.*
 
-- **Naam bewerken** (*Android*) / **Naam wijzigen** (*iOS*) — Wijzig de mapnaam voor eenvoudigere identificatie.
+- **Naam bewerken** (*Android*) / **Hernoemen** (*iOS*) — Wijzig de naam van de map voor eenvoudigere identificatie.
 
 - **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
 
 - **Standaardweergave wijzigen** (*Android*) — Wijzigt de weergave van alle tracks in de map.
 
-- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme map. Zie [Zoekfilter](#search-filter) voor details.
+- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
 
-- **Exporteren** — Exporteer alle tracks in de Slimme map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Tabblad Acties*.
+- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
 
-- **Map verwijderen** — Verwijder de Slimme map zonder de tracks te verwijderen.
+- **Map verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.
     *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
 
-- **Verplaatsen** (*iOS*) — Hiermee kunt u de map verplaatsen naar een andere bestaande map of een nieuwe maken.
+- **Verplaatsen** (*iOS*) — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe aanmaken.
 
-- **Selecteren** — Gebruik [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
 
 
-## Gerelateerde artikelen {#related-articles}
+## Gerelateerde Artikelen {#related-articles}
 
 - [Toon track op kaart](../../map/tracks/index.md)
-- [Analyseren op kaart](../../map/tracks/index.md#analyze-track-on-map)
-- [Track contextmenu](../../map/tracks/track-context-menu.md)
+- [Analyseer op kaart](../../map/tracks/index.md#analyze-track-on-map)
+- [Track Contextmenu](../../map/tracks/track-context-menu.md)
 - [Navigatie per track](../../navigation/setup/gpx-navigation.md)
-- [Ritregistratie](../../plugins/trip-recording.md)
-
-> *Laatst bijgewerkt: maart 2025*
+- [Trip opnemen](../../plugins/trip-recording.md)

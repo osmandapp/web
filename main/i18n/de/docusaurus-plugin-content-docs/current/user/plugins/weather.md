@@ -1,7 +1,7 @@
 ---
-source-hash: e5fd3ea3059108d94fc75d50becf312a8c006b80209c72a142b97f415bb426ca
+source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
 sidebar_position: 17
-title: Wetter
+title:  Wetter
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,37 +16,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
- <ProFeature/> Das Wetter-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
+ <ProFeature/> Das Wetter-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.  
 :::
 
-Die interaktiven Wetterkarten-Ebenen in der OsmAnd-App ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an jedem anderen Ort auf einer interaktiven globalen Karte zu überwachen. Das Wetter-Plugin bietet stündliche Wettervorhersagen für 7 Tage im Voraus direkt auf der OsmAnd-Karte. Wetterinformationen können auch für die Offline-Nutzung heruntergeladen werden.
+Die interaktiven Wetterkarten-Ebenen in der OsmAnd-App ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an jedem anderen Ort auf einer interaktiven Weltkarte zu überwachen. Das Wetter-Plugin liefert stündliche Wettervorhersagen für 7 Tage im Voraus direkt auf der OsmAnd-Karte. Wetterinformationen können auch für die Offline-Nutzung heruntergeladen werden.  
 
-Die Datenquelle für das Wetter-Plugin ist das [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), das vom United States National Weather Service (NWS) betrieben wird, und das Europäische Zentrum für mittelfristige Wettervorhersagen ([ECMWF](https://www.ecmwf.int/)).
+Die Datenquelle für das Wetter-Plugin ist das [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), das vom Nationalen Wetterdienst der Vereinigten Staaten (NWS) und dem Europäischen Zentrum für mittelfristige Wettervorhersage ([ECMWF](https://www.ecmwf.int/)) betrieben wird.  
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
 Die folgenden Einstellungen sind *erforderlich*, um das Wetter auf der OsmAnd-Karte anzuzeigen:
 
-**1.** [OsmAnd Pro-Abonnement erwerben](../purchases/).
+**1.** [**OsmAnd Pro-Abonnement** erwerben](../purchases/).
 
 **2.** Das Wetter-Plugin im Abschnitt *Plugins* des *Hauptmenüs* [aktivieren](../plugins/#enable--disable).
 
-**3.** Die [Maßeinheiten](#weather-settings) für die Wetterereignisse auswählen.
+**3.** Die **Maßeinheiten** für die Wetterereignisse [auswählen](#weather-settings).
 
-**4.** Die [Wetterebenen](#customize-weather-layers) auf der Karte über den Menüpunkt Wetter im Menü Karte konfigurieren anzeigen (vergessen Sie nicht, herauszuzoomen).
+**4.** Die **Wetter-Ebenen** auf der Karte über den Menüpunkt Wetter im Menü "Karte konfigurieren" [anzeigen](#customize-weather-layers) (denken Sie daran, herauszuzoomen).
 
-**5.** Die [Wettervorhersage](#weather-forecast-screen) für den ausgewählten Bereich anzeigen (dieses Menü ermöglicht es, den Hauptbildschirm der OsmAnd-Karte nicht mit Wetterebenen zu überladen).
+**5.** Die **Wettervorhersage** für den ausgewählten Bereich [anzeigen](#weather-forecast-screen) (dieses Menü ermöglicht es, den Hauptbildschirm der OsmAnd-Karte frei von Wetter-Ebenen zu halten).
 
-**6.** Die [Wettervorhersage herunterladen](#offline-forecast), wenn Sie sie offline verwenden möchten.
+**6.** Die Wettervorhersage [herunterladen](#offline-forecast), wenn Sie sie offline verwenden möchten.
 
-**7.** Die [Wetter-Widgets](#weather-widgets) aktivieren, wenn Sie täglich aktuelle Wetterinformationen sehen möchten.
+**7.** **Wetter-Widgets** [aktivieren](#weather-widgets), wenn Sie täglich aktuelle Wetterinformationen sehen möchten.  
 
-:::caution Erforderliche Darstellung
-Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../personal/global-settings/#map-rendering-engine) (OpenGL) verfügbar.
+:::caution Erforderliches Rendering
+Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../personal/global-settings/#map-rendering-engine) (OpenGL) verfügbar.  
 :::
 
 
@@ -54,67 +54,67 @@ Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../persona
 
 ### Wettervorhersage-Bildschirm {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
 Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)
+![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-Das Hauptseitenmenü verfügt über einen speziellen Menüpunkt **Wetter**, der schnellen Zugriff auf alle Wettertools bietet. Der *Wettervorhersage-Bildschirm* zeigt Informationen zu *Temperatur*, *Luftdruck*, *Windgeschwindigkeit*, *Wolkenbedeckung* und *Niederschlag*.
+Das Hauptseitenmenü hat einen eigenen Menüpunkt **Wetter**, der schnellen Zugriff auf alle Wetter-Werkzeuge bietet. Der *Wettervorhersage-Bildschirm* zeigt Informationen über *Temperatur*, *Luftdruck*, *Windgeschwindigkeit*, *Wolkenbedeckung* und *Niederschlag* an.  
 
-Am unteren Bildschirmrand befindet sich die *Wetter-Symbolleiste*. Sie können die Tagestasten und den Zeitschieberegler verwenden, um die genaue Zeit einzustellen, zu der die Wettervorhersage angezeigt werden soll.
+Am unteren Bildschirmrand befindet sich die *Wetter-Symbolleiste*. Mit den Tages-Schaltflächen und dem Zeitregler können Sie die genaue Zeit einstellen, zu der die Wettervorhersage angezeigt wird.
 
-### Wetterebenen anpassen {#customize-weather-layers}
+### Wetter-Ebenen anpassen {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
 Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)
+![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-Um Wetterebenen auf dem OsmAnd-Kartenbildschirm anzuzeigen, müssen Sie das Menü *Karte konfigurieren* verwenden. Gehen Sie zum Menü, suchen Sie den Punkt *Wetter* in der Liste (nur verfügbar, wenn das Plugin aktiviert ist) und tippen Sie darauf.
+Um Wetter-Ebenen auf dem OsmAnd-Kartenbildschirm anzuzeigen, müssen Sie das Menü *Karte konfigurieren* verwenden. Gehen Sie zum Menü, suchen Sie den Punkt *Wetter* in der Liste (nur verfügbar, wenn das Plugin aktiviert ist) und tippen Sie darauf.  
 
-In diesem Menü können Sie die **Sichtbarkeit** und [Einstellungen](#weather-settings) für jede Ebene ändern, den Typ der Höhenlinien auswählen und die [Offline-7-Tage-Wettervorhersage](#offline-forecast) herunterladen (*hier nur für Android verfügbar*).
+In diesem Menü können Sie die **Sichtbarkeit** und die [Einstellungen](#weather-settings) für jede Ebene ändern, die Art der Höhenlinien auswählen und die [offline 7-Tage-Wettervorhersage](#offline-forecast) herunterladen (*hier nur für Android verfügbar*).
 
 
 ### Wetter-Einstellungen {#weather-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 - *Hauptmenü → Plugins → Wetter → Einstellungen*
 - *Hauptmenü → Einstellungen → Profil → Plugin-Einstellungen → Wetter*
 
-![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Wetter-Einstellungen Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Wetter-Einstellungen 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
 </TabItem>
 
@@ -122,36 +122,36 @@ In diesem Menü können Sie die **Sichtbarkeit** und [Einstellungen](#weather-se
 
 - *Hauptmenü → Einstellungen → Profil → Plugins → Wetter*
 
-![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Wetter-Einstellungen iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Wetter-Einstellungen iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Es ist wichtig zu entscheiden, in welchen Maßeinheiten Sie die [Wetterdaten](#weather-layers) auf der Karte und im Bereich [Wetter-Widgets](#weather-widgets) des Bildschirms sehen möchten. Sie können für jeden Parameter geeignete Maßeinheiten auswählen oder Standardwerte verwenden (*nur iOS*). In der iOS-Version der OsmAnd-App können Sie auch die Option für die Offline-Vorhersage aktivieren, um die Nutzung des mobilen Datenverkehrs während der Reise zu vermeiden.
+Es ist wichtig zu entscheiden, in welchen Maßeinheiten Sie die [Wetterdaten](#weather-layers) auf der Karte und im Bereich [Wetter-Widgets](#weather-widgets) des Bildschirms sehen möchten. Sie können für jeden Parameter geeignete Maßeinheiten auswählen oder Standardwerte verwenden (*nur iOS*). In der iOS-Version der OsmAnd-App können Sie auch die Offline-Vorhersageoption aktivieren, um die Nutzung mobiler Daten während der Reise zu vermeiden.  
 
 :::note
-In der iOS-Version von OsmAnd können Sie Maßeinheiten und Transparenzstufe im Menü ändern, das sich nach einem langen Tippen auf das Symbol der gewünschten Kartenebene öffnet.
+In der iOS-Version von OsmAnd können Sie die Maßeinheiten und die Transparenzstufe in dem Menü ändern, das sich nach einem langen Tippen auf das Symbol der gewünschten Kartenebene öffnet.  
 :::
 
-### Wetterebenen {#weather-layers}
+### Wetter-Ebenen {#weather-layers}
 
-Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetterebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf Zoomstufen 2-12 verfügbar. Wetterebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben, diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#edit-palette-file) werden.
+Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetter-Ebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf den Zoomstufen 2-12 verfügbar. Wetter-Ebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben. Diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#edit-palette-file) werden.
 
-| |
-|------------|
-| **Niederschlagsebene** zeigt Informationen über Wetterereignisse an, wenn Wasser in verschiedenen Aggregatzuständen vom Himmel auf den Boden fällt. Niederschlag ist Regen, Schnee, Graupel oder Hagel. Die Niederschlagsskala ist in Millimetern (oder Zoll) Wasser abgestuft, das in 24 Stunden auf 1 Quadratmeter fällt. 1 mm Regen entspricht 1 Liter Wasser pro 1 Quadratmeter. |
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|
-| **Temperatur** drückt die quantitative Wahrnehmung von heiß und kalt aus. Sie wird in Grad gemessen. In OsmAnd können Sie zwischen Celsius- und Fahrenheit-Skala wählen. |
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|
-| **Wind** ist die Bewegung der Luft, verursacht durch die ungleichmäßige Erwärmung der Erde durch die Sonne und ihre eigene Rotation. Winde können von einer leichten Brise bis zu Naturkatastrophen wie Hurrikanen und Tornados reichen. In OsmAnd kann die Windgeschwindigkeit in Metern pro Sekunde (m/s), Kilometern pro Stunde (km/h), Meilen pro Stunde (mph) und Knoten (kt) angezeigt werden. |
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|
-| **Wolkenbedeckung** ist der durchschnittliche Anteil des Himmels, der von Wolken bedeckt ist, wenn er von einem bestimmten Ort aus beobachtet wird. Sie wird in % gemessen. |
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|
-| **Atmosphärischer Druck** wird durch das Gewicht der Luft über dem Messpunkt verursacht. Er nimmt mit zunehmender Höhe ab. Der atmosphärische Druck kann in Hektopascal (hPa), Millimeter Quecksilbersäule (mmHg) und Zoll Quecksilbersäule (inHg) angezeigt werden. |
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
-| **Windanimation** beinhaltet dynamische Darstellungen, die Windrichtung und -geschwindigkeit in der Region zeigen. |
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
+| |  
+|------------|  
+| Die **Niederschlagsebene** zeigt Informationen über Wetterereignisse an, bei denen Wasser in verschiedenen Aggregatzuständen vom Himmel auf die Erde fällt. Niederschlag ist Regen, Schnee, Schneeregen oder Hagel. Die Niederschlagsskala ist in Millimetern (oder Zoll) Wasser angegeben, das in 24 Stunden auf 1 Quadratmeter fällt. 1 mm Regen entspricht 1 Liter Wasser pro 1 Quadratmeter. |  
+|![Niederschlagsschema](@site/static/img/plugins/weather/precipitation.png)|  
+| **Temperatur** drückt die quantitative Wahrnehmung von heiß und kalt aus. Sie wird in Grad gemessen. In OsmAnd können Sie zwischen der Celsius- und der Fahrenheit-Skala wählen. |  
+|![Temperaturschema](@site/static/img/plugins/weather/temperature.png)|  
+| **Wind** ist die Bewegung von Luft, die durch die ungleichmäßige Erwärmung der Erde durch die Sonne und ihre eigene Rotation verursacht wird. Winde können von leichten Brisen bis zu Naturkatastrophen wie Hurrikanen und Tornados reichen. In OsmAnd kann die Windgeschwindigkeit in Metern pro Sekunde (m/s), Kilometern pro Stunde (km/h), Meilen pro Stunde (mph) und Knoten (kt) angezeigt werden. |  
+|![Windschema](@site/static/img/plugins/weather/wind.png)|  
+| **Wolkenbedeckung** ist der durchschnittliche Anteil des Himmels, der von Wolken bedeckt ist, wenn er von einem bestimmten Ort aus beobachtet wird. Sie wird in % gemessen. |  
+|![Wolkenschema](@site/static/img/plugins/weather/clouds.png)|  
+| **Luftdruck** wird durch das Gewicht der Luft über dem Messpunkt verursacht. Er nimmt mit zunehmender Höhe ab. Der Luftdruck kann in Hektopascal (hPa), Millimeter Quecksilbersäule (mmHg) und Zoll Quecksilbersäule (inHg) angezeigt werden. |  
+| ![Druckschema](@site/static/img/plugins/weather/pressure.png) |  
+| Die **Windanimation** umfasst dynamische Darstellungen, die Windrichtung und -geschwindigkeit in der Region zeigen. |  
+| ![Windanimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
 ### Karten kombinieren {#combine-maps}
@@ -160,75 +160,75 @@ Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wettereben
 
 <TabItem value="android" label="Android">
 
-![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
+![Wetter-Ebenen auf Android kombinieren](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Wetter-Ebenen auf Android kombinieren](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)
+![Wetter-Ebenen auf iOS kombinieren](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Wetter-Ebenen auf iOS kombinieren](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
 </Tabs>
 
-Um umfassende Wetterinformationen zu erhalten, können Sie die Kartenebenen separat verwenden oder sie einfach kombinieren. Isolinien eines bestimmten Typs können auch zur Wetterebene hinzugefügt werden. Tippen Sie einfach auf die Schaltfläche *Ebenen* oder *Isolinien* auf dem Bildschirm.
+Um umfassende Wetterinformationen zu erhalten, können Sie die Kartenebenen separat verwenden oder einfach kombinieren. Isolinien eines bestimmten Typs können ebenfalls zur Wetter-Ebene hinzugefügt werden. Tippen Sie einfach auf die Schaltfläche *Ebenen* oder *Isolinien* auf dem Bildschirm.
 
 
 ### Schnellaktionen für Ebenen {#quick-actions-for-layers}
 
-![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+![QA Wetter-Ebenen](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
-Um die Sichtbarkeit von Wetterebenen umzuschalten, können Sie die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden. Die allgemeinen Einstellungen zum Anzeigen oder Ausblenden von Ebenen finden Sie im separaten [Wetterbereich](#weather-forecast-screen) des *Hauptmenüs*. Im Artikel [Schnellaktion](../widgets/quick-action.md#configure-map) finden Sie eine Liste der zur Anzeige verfügbaren Ebenen. Wenn Sie schnellen Zugriff auf diese Kartenkonfiguration benötigen, verwenden Sie das Tool *Benutzerdefinierte Schaltfläche*.
+Um die Sichtbarkeit von Wetter-Ebenen umzuschalten, können Sie die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden. Die allgemeinen Einstellungen zum Ein- oder Ausblenden von Ebenen finden Sie im separaten [Wetter-Abschnitt](#weather-forecast-screen) des *Hauptmenüs*. Im Artikel [Schnellaktion](../widgets/quick-action.md#configure-map) finden Sie eine Liste der zur Anzeige verfügbaren Ebenen. Wenn Sie schnellen Zugriff auf diese Kartenkonfiguration benötigen, verwenden Sie das Werkzeug *Benutzerdefinierte Schaltfläche*.
 
-- Gehe zu [Aktion hinzufügen](../widgets/quick-action.md#custom-buttons): *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Aktion hinzufügen → Karte konfigurieren*.
-- Fügen Sie eine oder mehrere QA-Schaltflächen hinzu, um die Sichtbarkeit einer bestimmten Wetterebene zu ändern.
+- Gehen Sie zu [Aktion hinzufügen](../widgets/quick-action.md#custom-buttons): *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Aktion hinzufügen → Karte konfigurieren*.
+- Fügen Sie eine oder mehrere QA-Schaltflächen hinzu, um die Sichtbarkeit einer bestimmten Wetter-Ebene zu ändern.
 
 
 ## Offline-Vorhersage {#offline-forecast}
 
 ### Cache {#cache}
 
-Wenn die Registerkarte Wetter geöffnet ist, werden, sofern nicht anders angegeben, die erforderlichen Wetterinformationen aus dem Netzwerk heruntergeladen. Sie können die vorab geladene [Wettervorhersage](#download-forecast) auf Ihren Geräten verwenden. Die Wetterinformationen werden nach dem Herunterladen automatisch zwischengespeichert und können offline verwendet werden, bis die Vorhersage abläuft.
+Wenn der Wetter-Tab geöffnet ist, werden die erforderlichen Wetterinformationen aus dem Netzwerk heruntergeladen, sofern nicht anders angegeben. Sie können die vorgeladene [Wettervorhersage](#download-forecast) auf Ihren Geräten verwenden. Die Wetterinformationen werden nach dem Herunterladen automatisch zwischengespeichert und können offline verwendet werden, bis die Vorhersage abläuft.  
 
 :::tip
-Auf Android-Geräten können Sie überprüfen, wann Wetterdaten heruntergeladen wurden, indem Sie auf das *Wetter-Widget* tippen. Das OsmAnd Development-Plugin muss aktiviert sein.
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)
+Auf Android-Geräten können Sie überprüfen, wann Wetterdaten heruntergeladen wurden, indem Sie auf das *Wetter-Widget* tippen. Das OsmAnd-Entwicklungs-Plugin muss aktiviert sein.  
+![Datum des Wetter-Caches Android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Vorhersage herunterladen {#download-forecast}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+![Wetter-Plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Wetter-Plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
-Für jedes Land können Sie die **Offline-Vorhersage** (bis zu 7 Tage) herunterladen. Je näher sie am aktuellen Datum liegt, desto genauer ist sie. Wenn Sie die Wettervorhersage offline verwenden möchten, sollten Sie die Wetterdaten im Voraus herunterladen.
+![Wetter-Plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Wetter-Plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
-Im Menü zum Herunterladen der Vorhersage können Sie Informationen abrufen und Parameter festlegen, um die Wetterdaten auf dem neuesten Stand zu halten.
+</TabItem>
 
-- **Erstellt** (*Android*) / **Aktualisiert** (*iOS*). Zeigt an, wann die letzte Aktualisierung erfolgte.
-- **Nächste Aktualisierung** (*iOS*). Wann die nächste Aktualisierung verfügbar sein wird.
-- **Größe** (*Android*) / **Aktualisierungsgröße** (*iOS*). Zeigt die Größe aller Aktualisierungen an.
-- Schaltfläche **Aktualisieren** (*Android*) / **Jetzt aktualisieren** (*iOS*). Wenn aktiv, können Sie Wetterdaten manuell aktualisieren, ohne auf eine automatische Aktualisierung zu warten.
-- **Aktualisierungshäufigkeit** (*iOS*). Kann auf 12-Stunden, 24-Stunden oder wöchentlich eingestellt werden.
-- *Nur über Wi-Fi aktualisieren* (*iOS*). Aktivieren Sie diese Option, wenn Sie keine mobilen Daten für Downloads verwenden möchten.
-- Schaltfläche **Entfernen** *Mülleimer* (*Android*) / **Vorhersage entfernen** (*iOS*). Ermöglicht das Löschen aller Vorhersagedaten für diese Region.
-- Schaltfläche **Bearbeiten** *Bleistift* (*Android*). Ermöglicht das Umbenennen der Wetterdatei.
+</Tabs>  
 
-:::info
-OsmAnd erstellt alle 6 Stunden eine neue Vorhersage.
+Für jedes Land können Sie eine **Offline-Vorhersage** (bis zu 7 Tage) herunterladen. Je näher das Datum am aktuellen Tag liegt, desto genauer ist die Vorhersage. Wenn Sie die Wettervorhersage offline nutzen möchten, sollten Sie die Wetterdaten im Voraus herunterladen.  
+
+Im Menü zum Herunterladen der Vorhersage können Sie Informationen abrufen und Parameter einstellen, um die Wetterdaten auf dem neuesten Stand zu halten.  
+  
+- **Erstellt** (*Android*) / **Aktualisiert** (*iOS*). Zeigt an, wann die letzte Aktualisierung durchgeführt wurde.  
+- **Nächstes Update** (*iOS*). Wann das nächste Update verfügbar sein wird.  
+- **Größe** (*Android*) / **Update-Größe** (*iOS*). Zeigt die Größe aller Updates an.  
+- **Aktualisieren**-Schaltfläche (*Android*) / **Jetzt aktualisieren** (*iOS*). Wenn aktiv, können Sie Wetterdaten manuell aktualisieren, ohne auf eine automatische Aktualisierung zu warten.  
+- **Aktualisierungshäufigkeit** (*iOS*). Kann auf 12-Stunden, 24-Stunden oder wöchentlich eingestellt werden.  
+- *Nur über WLAN aktualisieren* (*iOS*). Aktivieren Sie diese Option, wenn Sie keine mobilen Daten für Downloads verwenden möchten.  
+- **Entfernen** *Mülleimer*-Schaltfläche (*Android*) / **Vorhersage entfernen** (*iOS*). Ermöglicht das Löschen aller Vorhersagedaten für diese Region.
+- **Bearbeiten** *Bleistift*-Schaltfläche (*Android*). Ermöglicht das Umbenennen der Wetterdatei.
+
+:::info  
+Wetterdaten werden alle 6 Stunden aktualisiert (alle 4 Updates von [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) und 3 von [ECMWF](https://www.ecmwf.int/)) und werden in OsmAnd mit einer kurzen Verzögerung verfügbar, da der Berechnungsprozess vor der Veröffentlichung mehrere Stunden dauert (normalerweise gegen 07:00 UTC).  
 :::
 
 
@@ -238,32 +238,30 @@ OsmAnd erstellt alle 6 Stunden eine neue Vorhersage.
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Ein Panel auswählen → <Translate android="true" ids="shared_string_weather"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)
+![Wetter-Widgets auf Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Wetter-Widgets auf Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Ein Panel auswählen → <Translate ios="true" ids="shared_string_weather"/>*
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)
+![Wetter-Widgets auf iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-[Wetter-Widgets](../widgets/info-widgets.md#weather-widgets) wie Temperatur, Luftdruck, Wind, Wolken und Niederschlag zeigen die aktuellen Wetterdaten für den **zentralen Punkt auf der Karte** an.
+[Wetter-Widgets](../widgets/info-widgets.md#weather-widgets) wie Temperatur, Luftdruck, Wind, Wolken und Niederschlag zeigen die aktuellen Wetterdaten für den **zentralen Punkt auf der Karte**.
 
-- Wetter-Widgets werden nur angezeigt, wenn der [Wetterbildschirm](#weather-forecast-screen) eingeschaltet ist.
-- Um Wetter-Widgets zu aktivieren, wählen Sie den Menüpunkt *Bildschirm konfigurieren* im Hauptmenü, das Panel, auf dem sie platziert werden sollen, und die gewünschten Widgets aus der Liste.
+- Wetter-Widgets werden nur angezeigt, wenn der [Wetter-Bildschirm](#weather-forecast-screen) eingeschaltet ist.
+- Um Wetter-Widgets zu aktivieren, wählen Sie den Menüpunkt *Bildschirm konfigurieren*, das Panel, auf dem sie platziert werden sollen, und die gewünschten Widgets aus der Liste.
 
 
 ## Verwandte Artikel {#related-articles}
 
-- [Interaktion mit der Karte](../../user/map/interact-with-map.md)
-- [Globale Einstellungen](../../user/personal/global-settings.md)
+- [Mit der Karte interagieren](../../user/map/interact-with-map.md)
+- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)
-
-> *Zuletzt aktualisiert: November 2024*

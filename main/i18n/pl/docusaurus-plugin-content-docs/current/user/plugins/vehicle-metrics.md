@@ -1,7 +1,7 @@
 ---
-source-hash: 7cce24b2cd87bfae38687f74d452a20648b7bb08c58e4e9a6b8489cb8398e2a2
+source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
 sidebar_position: 16
-title: Metryki pojazdu
+title:  Dane pojazdu
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -14,52 +14,45 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-<InfoIncompleteArticle/>
-
-
 ## Przegląd {#overview}
 
-:::info Funkcja płatna
-Wtyczka Metryki pojazdu to [płatna funkcja](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne w bezpłatnej wersji OsmAnd.
+:::info Płatna funkcja
+Wtyczka Dane pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
 :::
 
-**Wtyczka Metryki pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić kluczowe metryki, takie jak osiągi silnika, zużycie paliwa i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.
+**Wtyczka Dane pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, zużycie paliwa i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.
 
-[Skanery OBD-II](https://en.wikipedia.org/wiki/ELM327) są integralną częścią nowoczesnej diagnostyki samochodowej. Dzięki strumieniowaniu danych w czasie rzeczywistym użytkownicy uzyskują natychmiastowy wgląd w systemy pojazdu, co ułatwia konserwację zapobiegawczą i zmniejsza koszty napraw. Narzędzia te są niezbędne zarówno do użytku osobistego, jak i profesjonalnych usług motoryzacyjnych.
+[Skanery OBD-II](https://en.wikipedia.org/wiki/ELM327) są integralną częścią nowoczesnej diagnostyki samochodowej. Dzięki strumieniowaniu danych w czasie rzeczywistym użytkownicy uzyskują natychmiastowy wgląd w systemy pojazdu, co ułatwia konserwację zapobiegawczą i obniża koszty napraw. Narzędzia te są niezbędne zarówno do użytku osobistego, jak i w profesjonalnych serwisach samochodowych.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
+![Ustawienia OBD](@site/static/img/plugins/obd/obd_overview_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OBD settings](@site/static/img/plugins/obd/obd_overview_ios.png)
+![Ustawienia OBD](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-
-## Wymagane parametry konfiguracji {#required-setup-parameters}
+## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
 Aby korzystać z danych ze skanera OBD-II:
 
-1. [Kup](../purchases/) **subskrypcję OsmAnd Pro**. (*Prędkość pojazdu* i *Prędkość obrotowa silnika* są bezpłatne.)
-2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Metryki pojazdu w sekcji Wtyczki w *Menu głównym*.
+1. [Kup](../purchases/) subskrypcję **OsmAnd Pro**. (*Prędkość pojazdu* i *Prędkość obrotowa silnika* są bezpłatne).
+2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Dane pojazdu w sekcji Wtyczki w *Menu głównym*.
 3. **Włącz** Bluetooth na swoim urządzeniu.
-4. [Podłącz](#pair-odb-ii-scanner) skaner OBD-II do portu pojazdu.
+4. [Podłącz](#pair-odb-ii-scanner) skaner OBD-II do portu w pojeździe.
 5. [Skonfiguruj](#scanner-settings) **ustawienia skanera**.
-6. [Dodaj](#widgets) **widżety Metryki pojazdu** do wyświetlania danych na ekranie (opcjonalnie).
-7. [Użyj](#trip-recording) **wtyczki Nagrywanie trasy** do rejestrowania danych pojazdu.
-
+6. [Dodaj](#widgets) **widżety Danych pojazdu**, aby wyświetlać dane na ekranie (opcjonalnie).
+7. [Użyj](#trip-recording) **wtyczki Zapis trasy**, aby rejestrować dane pojazdu.
 
 ### Parowanie skanera ODB-II {#pair-odb-ii-scanner}
-
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -67,7 +60,7 @@ Aby korzystać z danych ze skanera OBD-II:
 
 |  |  |
 |--|--|
-|![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
+|![Połączenie OBD](@site/static/img/plugins/obd/obd_connect.png)|![Połączenie OBD](@site/static/img/plugins/obd/obd_connect_2.png)|
 
 </TabItem>
 
@@ -75,19 +68,18 @@ Aby korzystać z danych ze skanera OBD-II:
 
 |  |  |
 |--|--|
-|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+|![Połączenie OBD](@site/static/img/plugins/obd/obd_connect_ios.png)|![Połączenie OBD](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
 </TabItem>
 
 </Tabs>
 
-Podłącz skaner do portu pojazdu i sparuj go za pośrednictwem aplikacji:
+Podłącz skaner do portu w pojeździe i sparuj go za pomocą aplikacji:
 
-- Przejdź do *Menu → Wtyczki → Metryki pojazdu → Ustawienia → Połącz* lub **+**.
-- Jeśli Metryki pojazdu są w *Menu głównym*: *Menu → Metryki pojazdu → Ustawienia → Połącz* lub **+**.
+- Przejdź do *Menu → Wtyczki → Dane pojazdu → Ustawienia → Połącz* lub **+**.
+- Jeśli Dane pojazdu znajdują się w *Menu głównym*: *Menu → Dane pojazdu → Ustawienia → Połącz* lub **+**.
 
 Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
-
 
 ## Ustawienia skanera {#scanner-settings}
 
@@ -95,40 +87,38 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 
 <TabItem value="android" label="Android">
 
-**Android.** Przejdź do: *Menu → Wtyczki → Metryki pojazdu → OBD → menu z trzema kropkami*
+**Android.** Przejdź do: *Menu → Wtyczki → Dane pojazdu → OBD → menu z trzema kropkami*
 
 |  |  |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
-
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings.png)|![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Przejdź do: *Menu → Wtyczki → Metryki pojazdu → OBD → menu z trzema kropkami*
+**iOS.** Przejdź do: *Menu → Wtyczki → Dane pojazdu → OBD → menu z trzema kropkami*
 
 |  |  |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings_ios.png)|![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
 </TabItem>
 
 </Tabs>
 
-- **Połącz / Rozłącz**. Nawiązuje lub przerywa połączenie z czujnikiem OBD-II.
-- **Ustawienia**. Otwiera ekran ustawień OBD-II, umożliwiając zarządzanie połączeniami i dostęp do dostępnych parametrów pojazdu.
-- **Zmień nazwę**. Pozwala przypisać niestandardową nazwę czujnikowi w celu łatwiejszej identyfikacji.
-- **Zapomnij**. Usuwa wcześniej sparowany czujnik OBD-II z listy, wymagając ponownego parowania, jeśli będzie potrzebny później.
-
+- **Połącz / Rozłącz**. Nawiązuje lub kończy połączenie z czujnikiem OBD-II.
+- **Ustawienia**. Otwiera ekran ustawień OBD-II, umożliwiając zarządzanie połączeniem i dostęp do dostępnych parametrów pojazdu.
+- **Zmień nazwę**. Pozwala przypisać niestandardową nazwę do czujnika w celu łatwiejszej identyfikacji.
+- **Zapomnij**. Usuwa wcześniej sparowany czujnik OBD-II z listy, co wymaga ponownego parowania w razie potrzeby.
 
 ## Lista metryk {#metrics-list}
 
-Metryki są kategoryzowane dla przejrzystości. Zaawansowane narzędzia diagnostyczne umożliwiają konserwację zapobiegawczą poprzez interpretację tych parametrów:
+Metryki są podzielone na kategorie dla przejrzystości. Zaawansowane narzędzia diagnostyczne umożliwiają konserwację zapobiegawczą poprzez interpretację tych parametrów:
 
 *Temperatura:*
 
-- **Temperatura powietrza dolotowego**. Wyświetla temperaturę powietrza wchodzącego do kolektora dolotowego.
+- **Temperatura w dolocie**. Wyświetla temperaturę powietrza wchodzącego do kolektora dolotowego.
 - **Temperatura otoczenia**. Monitoruje warunki zewnętrzne.
 - **Temperatura płynu chłodzącego**. Śledzi wydajność chłodzenia silnika.
 - **Temperatura oleju silnikowego**. Wyświetla stan oleju podczas pracy.
@@ -137,7 +127,7 @@ Metryki są kategoryzowane dla przejrzystości. Zaawansowane narzędzia diagnost
 
 - **Prędkość obrotowa silnika**. Monitoruje obroty silnika na minutę (RPM).
 - **Czas pracy silnika**. Śledzi czas pracy silnika.
-- **Obliczone obciążenie silnika**. Wskazuje procent obciążenia silnika.
+- **Obliczone obciążenie silnika**. Wskazuje procentowe obciążenie silnika.
 
 *Paliwo:*
 
@@ -150,11 +140,9 @@ Metryki są kategoryzowane dla przejrzystości. Zaawansowane narzędzia diagnost
 - **Poziom naładowania akumulatora**. Wskazuje poziom napięcia akumulatora pojazdu.
 - **Prędkość pojazdu**. Wyświetla dane z czujnika prędkości pojazdu (VSS).
 - **Położenie przepustnicy**. Określa dopływ powietrza do silnika poprzez kąt otwarcia przepustnicy.
-  **VIN**. Wyświetla 17-znakowy numer identyfikacyjny pojazdu.
+- **VIN**. Wyświetla 17-znakowy numer identyfikacyjny pojazdu.
 
-
-## Nagrywanie trasy {#trip-recording}
-
+## Zapis trasy {#trip-recording}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -164,8 +152,7 @@ Metryki są kategoryzowane dla przejrzystości. Zaawansowane narzędzia diagnost
 
 | | |
 |--|--|
-|![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
-
+|![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
 
 </TabItem>
 
@@ -175,17 +162,15 @@ Metryki są kategoryzowane dla przejrzystości. Zaawansowane narzędzia diagnost
 
 | | |
 |--|--|
-|![OBD recording](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+|![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording_ios.png)| ![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
 
 </TabItem>
 
 </Tabs>
 
+Aby uwzględnić dane OBD-II w pliku GPX, należy wybrać żądane parametry do zapisu za pomocą [wtyczki Zapis trasy](../plugins/trip-recording.md#recording-settings). Pozwala to na analizę metryk pojazdu wraz z danymi z podróży.
 
-
-Aby uwzględnić dane OBD-II w pliku GPX, należy wybrać żądane parametry do nagrywania za pomocą [wtyczki Nagrywanie trasy](../plugins/trip-recording.md#recording-settings). Pozwala to analizować metryki pojazdu wraz z danymi trasy.
-
-#### Tagi {#tags}
+### Tagi {#tags}
 
 OsmAnd stosuje niestandardowe nazwy tagów dla metryk pojazdu w [pliku GPX](../plugins/trip-recording.md#recorded-gpx-file). Na przykład:
 
@@ -193,8 +178,7 @@ OsmAnd stosuje niestandardowe nazwy tagów dla metryk pojazdu w [pliku GPX](../p
 - `vm_fpress`: Ciśnienie paliwa.
 - `vm_espeed`: Prędkość obrotowa silnika.
 
-Te tagi ułatwiają identyfikację i wykorzystanie konkretnych danych pojazdu podczas przeglądania nagranego pliku GPX.
-
+Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu podczas przeglądania zapisanego pliku GPX.
 
 ## Widżety {#widgets}
 
@@ -202,45 +186,39 @@ Te tagi ułatwiają identyfikację i wykorzystanie konkretnych danych pojazdu po
 
 <TabItem value="android" label="Android">
 
-**Android.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
+**Android.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Dane pojazdu*
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
-
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
+**iOS.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Dane pojazdu*
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
 </Tabs>
 
+[Widżety Danych pojazdu](../widgets/info-widgets.md#vehicle-metrics-widgets) są automatycznie dodawane po włączeniu wtyczki. Jeśli nie są widoczne, można je dodać ręcznie za pomocą menu [Konfiguruj ekran](../widgets/configure-screen.md).
 
+### Ustawienia widżetu {#widget-settings}
 
-[Widżety Metryki pojazdu](../widgets/info-widgets.md#vehicle-metrics-widgets) są automatycznie dołączane po włączeniu wtyczki. Jeśli nie są widoczne, możesz je ręcznie dodać za pośrednictwem menu [Konfiguruj ekran](../widgets/configure-screen.md).
-
-### Ustawienia widżetów {#widget-settings}
-
-Widżety wyświetlają kluczowe dane z podłączonego urządzenia OBD-II w czasie rzeczywistym, takie jak prędkość, metryki silnika i zużycie paliwa. Upewnij się, że są widoczne przed rozpoczęciem podróży, aby bezproblemowo śledzić metryki.
+Widżety wyświetlają w czasie rzeczywistym kluczowe dane z podłączonego urządzenia OBD-II, takie jak prędkość, parametry silnika i zużycie paliwa. Upewnij się, że są widoczne przed rozpoczęciem podróży, aby płynnie śledzić metryki.
 
 Niektóre widżety oferują opcje trybu wyświetlania:
 
-- **Natychmiastowy**. Wyświetla dane w czasie rzeczywistym dla wybranej metryki.
-- **Średnia**. Wyświetla uśrednione wartości w konfigurowalnym przedziale czasowym (od 15 sekund do 60 minut).
-
+- **Chwilowe**. Wyświetla dane w czasie rzeczywistym dla wybranej metryki.
+- **Średnie**. Wyświetla uśrednione wartości w konfigurowalnym przedziale czasowym (od 15 sekund do 60 minut).
 
 ## Powiązane artykuły {#related-articles}
 
 - [Interakcja z mapą](../../user/map/interact-with-map.md)
 - [Ustawienia globalne](../../user/personal/global-settings.md)
-- [Mapy wektorowe (Style map)](../../user/map/vector-maps.md)
-
-> *Ostatnia aktualizacja: sierpień 2025*
+- [Mapy wektorowe (Style mapy)](../../user/map/vector-maps.md)

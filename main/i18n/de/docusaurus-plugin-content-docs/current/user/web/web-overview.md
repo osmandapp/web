@@ -1,8 +1,8 @@
 ---
-source-hash: 5d832465941870703a27d7bcf3e7a52806533527f1a691bbbdf879cf6b4e0def
+source-hash: 468554af76614d225c0a6d533461ed0e21450d49977ff9641eba44e245d32a09
 sidebar_position: 1
 sidebar_label: Einführung
-title: Einführung auf der Website
+title: Einführung auf der Webseite
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,25 +18,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Was ist der OsmAnd Webkartenbetrachter?
+## Was ist der OsmAnd Web-Kartenbetrachter?
 
-Das [**OsmAnd Kartenportal**](https://osmand.net/map) – auch als **Webkartenbetrachter** bezeichnet – ist eine browserbasierte Erweiterung der mobilen OsmAnd App. Es ermöglicht Benutzern, globale Karten anzuzeigen, Routen zu planen, die Navigation zu simulieren, persönliche Daten zu verwalten und synchronisierte Inhalte von ihren Geräten über die Cloud abzurufen.
+Das [**OsmAnd Kartenportal**](https://osmand.net/map) – auch als **Web-Kartenbetrachter** bezeichnet – ist eine browserbasierte Erweiterung der mobilen OsmAnd-App. Es ermöglicht Benutzern, globale Karten anzuzeigen, Routen zu planen, die Navigation zu simulieren, persönliche Daten zu verwalten und über die Cloud auf synchronisierte Inhalte von ihren Geräten zuzugreifen.
 
-Der Webkartenbetrachter wurde als plattformübergreifender Begleiter zu OsmAnd für Android und iOS entwickelt und hilft Benutzern, Reisen zu planen, Tracks zu analysieren, Gelände anzuzeigen und Dateien mit jedem Desktop- oder Tablet-Browser zu verwalten – ohne eine App installieren zu müssen.
+Entwickelt als plattformübergreifender Begleiter zu OsmAnd für Android und iOS, hilft der Web-Kartenbetrachter Benutzern, Reisen zu planen, Tracks zu analysieren, Gelände anzuzeigen und Dateien mit jedem Desktop- oder Tablet-Browser zu verwalten – ohne eine App installieren zu müssen.
 
-OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchronisierung von Favoriten, Tracks und Backups über Geräte und Plattformen hinweg ermöglicht. Benutzer mit **OsmAnd Start** (kostenlos) oder **OsmAnd Pro** (kostenpflichtig) Konten können dieses Ökosystem voll ausschöpfen, indem sie Daten zwischen Mobilgeräten und dem Web synchronisieren.
+OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchronisierung von Favoriten, Tracks und Backups über Geräte und Plattformen hinweg ermöglicht. Benutzer mit **OsmAnd Start** (kostenlos) oder **OsmAnd Pro** (kostenpflichtig) Konten können dieses Ökosystem voll ausnutzen, indem sie Daten zwischen Mobilgeräten und dem Web synchronisieren.
 
 
 
-## Hauptfunktionen
+## Hauptmerkmale
 
 - Karte mit globaler Abdeckung und hochwertigen Vektordaten
-- Routenplanung mit Fuß-, Auto-, Fahrrad- und anderen Profilen
-- Navigationsvorschau mit Abbiegeanweisungen
-- Suche und Erkundung beliebter Orte in der Nähe
+- Routenplanung mit Profilen für Fußgänger, Auto, Fahrrad und andere
+- Navigationsvorschau mit Abbiegehinweisen
+- Suchen und Erkunden von beliebten Orten in der Nähe
 - Anzeige von Favoriten, Tracks und POIs auf der Karte
-- Wetter-Overlays: Wind, Temperatur und Druck
-- Geländeschichten: Geländeschattierung, Neigungen und Höhenansicht
+- Wetter-Overlays: Wind, Temperatur und Luftdruck
+- Geländeschichten: Schummerung, Hänge und Höhenansicht
 - Track-Analysator für Höhen- und Geschwindigkeitsprofile
 - Voller Zugriff auf synchronisierte Daten über OsmAnd Cloud
 - Unterstützung für Dateiimport/-export (GPX: Tracks, Favoriten)
@@ -44,9 +44,9 @@ OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchroni
 
 
 
-### Abonnementzugänge {#subscription-accesses}
+### Abonnement-Zugang {#subscription-accesses}
 
-Viele Funktionen sind kostenlos nutzbar, einige erfordern jedoch ein registriertes Konto.
+Viele Funktionen sind kostenlos nutzbar, aber einige erfordern ein registriertes Konto.
 Die folgende Tabelle zeigt, was in jeder Version verfügbar ist:
 
 | Funktion | Verfügbar in |
@@ -57,17 +57,17 @@ Die folgende Tabelle zeigt, was in jeder Version verfügbar ist:
 | [Favoriten](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
 | [OsmAnd Cloud Sync](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
 | [Websuche, Beliebte Orte](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
-| [Track-Ordner und Ebene](./web-map.md) | <ProFeature/> |
+| [Track-Ordner und -Ebene](./web-map.md) | <ProFeature/> |
 
 
-## So starten Sie {#how-to-start}
+## Wie man anfängt {#how-to-start}
 
-Um die vollen Funktionen des OsmAnd Webkartenbetrachters nutzen zu können, müssen Sie sich mit einem OsmAnd Cloud-Konto anmelden.
+Um auf alle Funktionen des OsmAnd Web-Kartenbetrachters zugreifen zu können, müssen Sie sich mit einem OsmAnd Cloud-Konto anmelden.
 
-- Wenn Sie bereits ein [**OsmAnd Pro**](../personal/osmand-cloud.md#login)-Abonnement haben oder ein kostenloses [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Konto erstellen möchten, gehen Sie wie folgt vor:
+- Wenn Sie bereits ein [**OsmAnd Pro**](../personal/osmand-cloud.md#login)-Abonnement haben oder ein kostenloses [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Konto erstellen möchten, folgen Sie diesen Schritten:
 
 1. Gehen Sie zum [**OsmAnd Kartenportal**](https://osmand.net/map).
-2. Öffnen Sie das Menü **Konto**:
+2. Öffnen Sie das **Konto**-Menü:
    - **Anmelden**: Geben Sie die E-Mail-Adresse ein, die mit Ihrem Pro- oder Start-Abonnement verknüpft ist.
    - **Konto erstellen**: Registrieren Sie sich für ein kostenloses OsmAnd Start-Konto.
 
@@ -75,13 +75,10 @@ Um die vollen Funktionen des OsmAnd Webkartenbetrachters nutzen zu können, müs
 
 
 
-### Sprache ändern {#how-to-change-language}
+### Wie man die Sprache ändert {#how-to-change-language}
 
-Um die Sprache der Benutzeroberfläche zu ändern:
+So ändern Sie die Sprache der Benutzeroberfläche:
 
 - Navigieren Sie zu **Menü → ⚙ Einstellungen → Anzeigesprache**
 
 ![Web Language](@site/static/img/web/web_language.png)
-
-
-> *Zuletzt aktualisiert: Juli 2024*

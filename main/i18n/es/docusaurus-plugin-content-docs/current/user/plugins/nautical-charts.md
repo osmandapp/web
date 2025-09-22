@@ -1,5 +1,5 @@
 ---
-source-hash: b955b527f4a6288fa803d731df2f410db4fb91c6a6b0ec46ae14193d525bf995
+source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
 sidebar_position: 7
 title:  Vista de mapa náutico
 ---
@@ -13,19 +13,17 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
-
 ## Resumen {#overview}
 
 :::info Función de pago
-El complemento Vista de mapa náutico es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
+El plugin Vista de mapa náutico es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
 :::
 
-La vista de mapa náutico es una representación gráfica detallada de océanos, mares, áreas costeras y ríos que te ayuda a navegar por el agua y a conocer rutas populares, obstáculos en tu vía fluvial, puertos más cercanos, fondeaderos y otros puntos de referencia importantes.
+La Vista de mapa náutico es una representación gráfica detallada de océanos, mares, zonas costeras y ríos que le ayuda a navegar por el agua y a conocer las rutas populares, los obstáculos en su vía navegable, los puertos más cercanos, los fondeaderos y otros puntos de referencia importantes.
 
-Un mapa náutico es un mapa topográfico muy detallado que ayuda a los patrones a navegar una embarcación en un rumbo seleccionado en el agua. Es similar a un mapa de carreteras para quienes viajan en coche. A menudo llamado "carta" por razones históricas, es una representación gráfica detallada de los océanos, mares, áreas costeras y ríos.
+Un mapa náutico es un mapa topográfico muy detallado que ayuda a los patrones a navegar con una embarcación por un rumbo seleccionado en el agua. Es similar a un mapa de carreteras para quienes viajan en coche. A menudo llamado *'Carta'* por razones históricas, es una representación gráfica detallada de los océanos, mares, zonas costeras y ríos.
 
-Los mapas náuticos son importantes para los marineros profesionales y los aficionados que alquilan un barco para navegar por los canales de la ciudad. Los mapas les proporcionan diversa información, como rutas de navegación, luces de navegación, zonas de peligro, zonas donde está permitido o prohibido navegar o atracar, etc.
+Los mapas náuticos son importantes para los navegantes profesionales y los aficionados que alquilan un barco para navegar por los canales de la ciudad. Los mapas les proporcionan diversa información, como rutas de navegación, luces de navegación, zonas de peligro, zonas en las que está permitido o prohibido navegar o atracar, etc.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,22 +41,19 @@ Los mapas náuticos son importantes para los marineros profesionales y los afici
 
 </Tabs>
 
-
 ### Por qué es importante el tema náutico {#why-the-nautical-theme-matters}
 
-Todos los marineros profesionales deben tener mapas náuticos oficiales en sus barcos. Estos mapas son publicados por agencias autorizadas y son bastante caros. Las agencias invierten mucho en mantener los mapas actualizados. Emiten actualizaciones periódicas de los mapas, pero debido a que lleva tiempo verificar la información y procesar las actualizaciones, los mapas náuticos nunca están completamente actualizados.
+Todos los navegantes profesionales están obligados a llevar mapas náuticos oficiales en sus barcos. Estos mapas son publicados por agencias autorizadas y son bastante caros. Las agencias invierten mucho en mantener los mapas actualizados. Publican actualizaciones periódicas de los mapas, pero como se necesita tiempo para verificar la información y procesar las actualizaciones, los mapas náuticos nunca están completamente al día.
 
-Basados en los datos de [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap), los mapas náuticos de OsmAnd son creados por personas que los utilizan. Cada usuario del mapa puede contribuir al mapa añadiendo información que considere importante y útil para sí mismo, haciendo así el mapa más detallado y preciso, ideal para la orientación o la planificación de rutas.
+Basados en los datos de [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap), los mapas náuticos de OsmAnd son creados por las personas que los utilizan. Cada usuario del mapa puede contribuir al mismo añadiendo la información que considere importante y útil para sí mismo, haciendo así el mapa más detallado y preciso, ideal para la orientación o la planificación de rutas.
 
-
-## Parámetros de configuración necesarios {#required-setup-parameters}
+## Parámetros de configuración requeridos {#required-setup-parameters}
 
 La siguiente configuración hace que el mapa náutico aparezca en la pantalla:
 
-1. [Comprar](../plugins/index.md#purchase) y [Habilitar](../plugins/index.md#enable--disable) el complemento de vista de mapa náutico.
+1. [Comprar](../plugins/index.md#purchase) y [Activar](../plugins/index.md#enable--disable) el plugin Vista de mapa náutico.
 2. [Descargar](#download-nautical-maps) los mapas náuticos.
-3. Establecer el [estilo de mapa náutico](#set-nautical-map-style) para el [perfil](../personal/profiles.md) requerido.
-
+3. Establecer el estilo de mapa [Náutico](#set-nautical-map-style) para el [perfil](../personal/profiles.md) requerido.
 
 ### Establecer estilo de mapa náutico {#set-nautical-map-style}
 
@@ -66,7 +61,7 @@ La siguiente configuración hace que el mapa náutico aparezca en la pantalla:
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
 
 ![Tipo de mapa náutico en Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -74,7 +69,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widge
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
 
 ![Tipo de mapa náutico en iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -82,14 +77,13 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_
 
 </Tabs>
 
-Utiliza la [Leyenda del mapa](../../user/map-legend/nautical-map.md) para cualquier referencia a lo que se muestra en el mapa náutico. Explica los elementos simbólicos de un mapa náutico y sirve como referencia para ayudarte a navegar cuando tengas dudas. Al establecer el estilo de mapa náutico, puedes obtener la mejor vista de los datos náuticos descargados y mostrados.
+Utilice la [Leyenda del mapa](../../user/map-legend/nautical-map.md) como referencia de lo que se muestra en el mapa náutico. Explica los elementos simbólicos de un mapa náutico y sirve de referencia para ayudarle a navegar en caso de duda. Al establecer el estilo de mapa Náutico, puede obtener la mejor vista de los datos náuticos descargados y mostrados.
 
-Para cambiar el estilo de mapa actual a Náutico, debes realizar las siguientes configuraciones:
+Para cambiar el estilo de mapa actual a Náutico, debe realizar los siguientes ajustes:
 
-1. Selecciona el [perfil](../personal/profiles.md) requerido.
-2. Abre [Configurar mapa](../map/configure-map-menu.md).
-3. Desplázate hasta Estilo de mapa, ábrelo y marca la opción **Náutico**.
-
+1. Seleccione el [perfil](../personal/profiles.md) requerido.
+2. Abra [Configurar mapa](../map/configure-map-menu.md).
+3. Desplácese hasta Estilo de mapa, ábralo y marque **Náutico**.
 
 ### Descargar mapas náuticos {#download-nautical-maps}
 
@@ -97,81 +91,77 @@ Para cambiar el estilo de mapa actual a Náutico, debes realizar las siguientes 
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
 
-![Vista de mapas del complemento náutico Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
+![Vista de mapas del plugin náutico en Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
 
-![Vista de mapas del complemento náutico iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
+![Vista de mapas del plugin náutico en iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Para una presentación óptima, los mapas pueden adaptarse a las necesidades actuales: se pueden añadir marcas y símbolos con puntos de profundidad y, según sea necesario, contornos. Por otro lado, los mapas estándar con información sobre aguas interiores, costeras y cercanas a la costa para una región en particular pueden ser un buen complemento a la información sobre vías navegables en un mapa náutico.
+Para una presentación óptima, los mapas pueden adaptarse a las necesidades actuales: se pueden añadir marcas y símbolos con puntos de profundidad y, si es necesario, contornos. Por otro lado, los mapas estándar con información sobre aguas interiores, costeras y cercanas a la costa de una región concreta pueden ser un buen complemento a la información sobre vías navegables de un mapa náutico.
 
-Cuando [descargas](../start-with/download-maps.md) un mapa náutico, aparecen más detalles relacionados con la navegación en *Barco* en el mapa. Algunos tipos de [mapas náuticos](../start-with/download-maps.md#type-of-maps) contienen detalles como:
+Cuando [descarga](../start-with/download-maps.md) un mapa náutico, aparecen en el mapa más detalles relacionados con la navegación en *Barco*. Algunos tipos de [mapas náuticos](../plugins/nautical-charts/#nautical-map-style) contienen detalles como:
 
 - **Marcas y símbolos náuticos.**
-Las marcas y símbolos contienen todas las marcas de navegación náuticas tanto para la navegación interior como costera. Conocer estas marcas te ayudará a predecir la ubicación de rocas, obstrucciones, fondeaderos, boyas, corrientes, aguas profundas y poco profundas, y lados del canal, independientemente de la dirección, etc. Las marcas y símbolos se descargan una vez para todo el mundo.
+    Las marcas y símbolos contienen todas las marcas de navegación náutica tanto para la navegación interior como para la costera. Conocer estas marcas le ayudará a predecir la ubicación de rocas, obstrucciones, fondeaderos, boyas, corrientes, aguas profundas y someras, y los lados del canal, independientemente de la dirección, etc. Las marcas y símbolos se descargan una vez para todo el mundo.
 
 - **Puntos de profundidad.**
-Los datos náuticos de los paquetes de puntos de profundidad se representan mediante números que se muestran en el agua e indican la profundidad más baja en un lugar determinado. Los puntos de profundidad están disponibles para cada hemisferio y algunas regiones.
+    Los datos náuticos de los paquetes de puntos de profundidad se representan mediante números que aparecen en el agua e indican la profundidad más somera en un lugar determinado. Los puntos de profundidad están disponibles para cada hemisferio y algunas regiones.
 
-- **Curvas de nivel de profundidad.**
-Los paquetes de curvas de nivel de profundidad te permiten definir áreas de igual profundidad. Están destinados a visualizar cambios en el relieve debajo de la superficie del agua. Las curvas de nivel de profundidad se pueden descargar para ciertas áreas y luego desactivarse si no las necesitas.
+- **Contornos de profundidad.**
+    Los paquetes de contornos de profundidad le permiten definir zonas de igual profundidad. Están pensados para visualizar los cambios de relieve bajo la superficie del agua. Los contornos de profundidad pueden descargarse para determinadas zonas y desactivarse si no se necesitan.
 
 :::info Números de profundidad
-Todos los números de profundidad en los mapas náuticos se indican en metros.
+Todos los números de profundidad en los Mapas Náuticos se indican en metros.
 :::
 
+### Desactivar el estilo de mapa náutico {#disable-nautical-map-style}
 
-### Deshabilitar estilo de mapa náutico {#disable-nautical-map-style}
+Para eliminar Náutico y mostrar uno de los mapas convencionales de OsmAnd, realice una de las siguientes acciones:
 
-Para eliminar Náutico y mostrar uno de los mapas convencionales de OsmAnd, haz cualquiera de las siguientes acciones:
-
-- Deshabilita el complemento Náutico.
-- Cambia el estilo del mapa a cualquier otro que no sea *Náutico*.
+- Desactive el plugin Náutico.
+- Cambie el estilo del mapa a cualquier otro que no sea *Náutico*.
 
 :::info NOTA
-Deshabilitar el complemento Náutico no elimina los datos náuticos cargados, por lo que incluso si cambias el método de renderizado de náutico a cualquier otro método cuando se descargan datos náuticos, estos permanecen visibles en el mapa.
+La desactivación del plugin Náutico no elimina los datos náuticos cargados, por lo que aunque cambie el método de renderizado de náutico a cualquier otro método cuando se descargan los datos náuticos, éstos permanecen visibles en el mapa.
 :::
 
-
-## Perfil Náutico {#nautical-profile}
+## Perfil náutico {#nautical-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Curvas de nivel de profundidad náuticas en Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+![Contornos de profundidad náuticos en Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Curvas de nivel de profundidad en iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
+![Contornos de profundidad en iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
 </TabItem>
 
 </Tabs>
 
-El mapa náutico puede incluirse en cualquier perfil. Sin embargo, es más valioso en el [perfil de Barco](../personal/profiles.md) y especialmente en la [navegación en Barco](../navigation/routing/boat-navigation.md).
-
+El mapa náutico puede incluirse en cualquier perfil. Sin embargo, es más valioso en el [perfil Barco](../personal/profiles.md) y especialmente en la [navegación en Barco](../navigation/routing/boat-navigation.md).
 
 ## Estilo de mapa náutico {#nautical-map-style}
 
-El complemento Náutico en OsmAnd extiende los estilos de mapa de capa vectorial con el estilo de mapa Náutico. Permite mostrar datos del mapa según las reglas del mapa Náutico, por ejemplo: áreas amarillas para tierra y bajíos, áreas azul claro para aguas poco profundas, etc. Para obtener más información, consulta la [Leyenda del mapa](../../user/map-legend/nautical-map.md).
-
+El plugin Náutico de OsmAnd amplía los estilos de mapa de la capa vectorial con el estilo de mapa Náutico. Permite mostrar los datos del mapa según las reglas de los mapas náuticos, por ejemplo: zonas amarillas para tierra y bancos de arena, zonas azul claro para aguas poco profundas, etc. Para más información, consulte [Leyenda del mapa](../../user/map-legend/nautical-map.md).
 
 ### Puntos de profundidad {#depth-points}
 
@@ -191,40 +181,38 @@ El complemento Náutico en OsmAnd extiende los estilos de mapa de capa vectorial
 
 </Tabs>
 
-Los [paquetes](../start-with/download-maps.md#type-of-maps) de puntos de profundidad están disponibles para Europa, el Hemisferio Norte y el Hemisferio Sur y son informativos. Los puntos de profundidad indican cambios en la topografía debajo de la superficie del agua, indicando la profundidad más baja. Esto es necesario para la navegación en *Barco*. Después de la descarga, debes activar las [Curvas de nivel de profundidad](#depth-contours) para mostrarlas en el mapa.
+Los [paquetes](../start-with/download-maps.md#overview) de puntos de profundidad están disponibles para Europa, el hemisferio norte y el hemisferio sur y son informativos. Los puntos de profundidad indican cambios en la topografía bajo la superficie del agua, indicando la profundidad más somera. Esto es necesario para la navegación en *Barco*. Después de la descarga, es necesario activar los [Contornos de profundidad](#depth-contours) para mostrarlo en el mapa.
 
-
-### Curvas de nivel de profundidad {#depth-contours}
+### Contornos de profundidad {#depth-contours}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
 
-![Curvas de nivel de profundidad náuticas en Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
+![Contornos de profundidad náuticos en Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
-![Curvas de nivel de profundidad en iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
+![Contornos de profundidad en iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
 </TabItem>
 
 </Tabs>
 
-Cuando se muestra un mapa náutico en la pantalla, puedes ajustar lo que ves:
+Cuando se muestra un mapa náutico en la pantalla, puede ajustar lo que ve:
 
-- Mostrar u ocultar las *curvas de nivel de profundidad*.
-- Configurar el nivel de detalle de la información del fondo marino: [*Ancho de línea* y *Esquema de color de línea*](../map/vector-maps.md#-nautical-depth).
+- Mostrar u ocultar los *Contornos de profundidad*.
+- Establecer el nivel de detalle de la información del fondo marino: [*Ancho de línea* y *Esquema de color de línea*](../map/vector-maps.md#-nautical-depth).
 
 :::info NOTA
-Puedes ayudar a la aplicación OsmAnd a aumentar la base de datos de curvas de nivel de profundidad añadiendo tu información utilizando [OpenSeaMap](https://map.openseamap.org/)
+Puede ayudar a la aplicación OsmAnd a aumentar la base de datos de contornos de profundidad añadiendo su información a través de [OpenSeaMap](https://map.openseamap.org/)
 :::
-
 
 ### Detalles del fondo marino {#seabed-details}
 
@@ -232,7 +220,7 @@ Puedes ayudar a la aplicación OsmAnd a aumentar la base de datos de curvas de n
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
 
 ![Detalles del fondo marino](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
@@ -240,7 +228,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![Detalles del fondo marino](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
@@ -248,21 +236,18 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_
 
 </Tabs>
 
-Los datos del fondo marino contienen información sobre la vegetación y el material general de la superficie, como rocas, conchas, grava, coral, limo, etc. Debido a la clasificación internacional de los datos del fondo marino, existen opciones para mostrar dichos detalles en un mapa: *simple*, *categoría*, *todo* u *omitir*. Utiliza la [leyenda del mapa del área del fondo marino](../map-legend/nautical-map.md#seabed-area) para obtener más información.
+Los datos del fondo marino contienen información sobre la vegetación y el material general de la superficie, como rocas, conchas, grava, coral, limo, etc. Debido a la clasificación internacional de los datos del fondo marino, existen opciones para mostrar dichos detalles en un mapa: *simple*, *categoría*, *todo* u *omitir*. Utilice la [leyenda del mapa de la zona del fondo marino](../map-legend/nautical-map.md#seabed-area) para obtener más información.
 
-- **Simple** (*para la versión de Android*): muestra los símbolos de las marcas marinas de acuerdo con INT-1 Ref, indicando la naturaleza de la superficie del fondo marino.
-- **Categoría**: además del símbolo de la marca marina, también muestra la etiqueta de marca marina relevante, indicando el material natural o la categoría de algas y pastos marinos.
-- **Todo**: además del símbolo, etiqueta o categoría de la marca marina, también muestra calificaciones como fino, pegajoso, grueso, etc. Para algas y pastos marinos, muestra datos marcados con las etiquetas *taxon* y *genus*.
-- **Omitir**: no muestra detalles del fondo marino.
+- **Simple** (*para la versión de Android*) - muestra los símbolos de las marcas marinas de acuerdo con la Ref. INT-1, indicando la naturaleza de la superficie del fondo marino.
+- **Categoría** - además del símbolo de la marca marina, también muestra la etiqueta de la marca marina correspondiente, indicando el material natural, o la categoría de algas y pastos marinos.
+- **Todo** - además del símbolo, la etiqueta o la categoría de la marca marina, también muestra calificativos como fino, pegajoso, grueso, etc. Para los pastos y las algas marinas, muestra los datos marcados con las etiquetas *taxon* y *genus*.
+- **Omitir** - no muestra detalles del fondo marino.
 
 :::info NOTA
-Para obtener más detalles sobre la clasificación de los detalles de la superficie y las opciones de renderizado, consulta la [wiki de marcas marinas de OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+Para más detalles sobre la clasificación de los detalles de la superficie y las opciones de renderizado, consulte la [wiki de marcas marinas de OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
-
 
 ## Artículos relacionados {#related-articles}
 
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
-
-> *Última actualización: junio de 2023*
