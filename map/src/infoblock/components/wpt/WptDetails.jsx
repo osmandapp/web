@@ -778,7 +778,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
         if (wpt.osmUrl) {
             return (
-                <Typography className={styles.name}>
+                <Typography id={'se-wpt-name'} className={styles.name}>
                     <Link href={wpt.osmUrl} target="_blank" underline="none">
                         {name}
                     </Link>
