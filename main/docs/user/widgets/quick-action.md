@@ -78,7 +78,7 @@ All actions are organized in the **Add Action** menu and grouped by type. A comp
 
 You can assign one or more [actions](#action-types) to the quick action button. There are two ways to add actions.
 
-- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
+- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#action-parameters).
 - **In the quick action button panel**. Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
 
 
