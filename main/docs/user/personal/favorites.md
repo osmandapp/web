@@ -266,7 +266,7 @@ Use the ***Three-dot menu*** (*Android*) next to each folder and ***long tap*** 
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
 
-- **<Translate android="true" ids="change_default_appearance"/>** — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** or **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
 
@@ -275,8 +275,6 @@ Use the ***Three-dot menu*** (*Android*) next to each folder and ***long tap*** 
 - **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
 
 - **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
-
-More details in the article [My Places](../personal/myplaces.md#favorites) article.
 
 
 
@@ -298,11 +296,19 @@ More details in the article [My Places](../personal/myplaces.md#favorites) artic
 
 </Tabs>
 
-*Change Group Appearance* settings:
+The **Change Group Appearance** option allows you to set a default style for all favorites in a folder. You can adjust the following parameters:
 
-- **Icon, color, shape** — Set a default style for all favorites in a group.
-- **Consistency** — New favorites added to the group inherit the default appearance automatically.
-- **Customization** — Override the default settings for existing points in the folder, new favorites only, or apply to all.
+- **Icon** — Choose an icon from the available categories.
+- **Color** — Select a solid color to highlight favorites.
+- **Shape** — Pick a marker shape (circle, square, octagon).
+
+If the favorites in a folder already have different icons, colors, or shapes, the *Original state* is displayed. This means each favorite keeps its current style unless you select a new one. When saving, you will also be prompted to choose how the changes should be applied:
+
+- **Apply only to new points** — Existing favorites remain unchanged; new favorites will inherit the default appearance.
+- **Apply to existing points** — Update only the favorites already in the folder.
+- **Apply to all points** — Apply the new style to both existing and future favorites.
+
+This flexibility allows you to standardize the appearance of a folder or keep unique customizations while still setting defaults for new points.
 
 
 ## Export / Import {#export--import}
