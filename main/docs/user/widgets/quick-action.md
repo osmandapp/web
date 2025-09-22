@@ -132,50 +132,9 @@ Some actions such as *Map source*, *Map style*, *Overlay*, *Underlay*, *Terrain 
 :::
 
 
-### Change Button Position {#change-button-position}
+## Buttons on the Screen {#buttons-on-the-screen}
 
-The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
-
-- **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
-
-    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
-
-- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
-
-    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
-
-- **New placement**. Once moved, the widget will remain in its new position on the map screen until manually adjusted again.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
-
-- **Multiple [Custom buttons](#custom-buttons)**. You can add multiple quick action buttons to the map screen. These buttons can also be customized and repositioned individually using the same drag-and-drop method.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
-
-
-### Grid Layout for Buttons {#grid-layout-for-buttons}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Grid for buttons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Grid for buttons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-[Map buttons](../widgets/map-buttons.md#overview) are automatically arranged using a grid layout. Each button is assigned to one of the four corners of the screen (*top-left*, *top-right*, *bottom-left*, *bottom-right*). If there is not enough space in the assigned corner, the buttons are aligned horizontally or vertically, depending on the screen orientation.
-
-This layout helps keep buttons visually consistent and avoids overlapping. For example, on a landscape display, buttons in the right corner will line up horizontally at the bottom of the screen, while on a portrait display they will expand vertically upwards or downwards as needed.
-
-## Custom buttons {#custom-buttons}
+### Custom buttons {#custom-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -201,7 +160,6 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons can be configured as ***Single-action*** buttons, which apply the selected action immediately upon being tapped, without the need to navigate through an extra menu.
 
-
 ### Button Appearance {#button-appearance}
 
 <InfoAndroidOnly/>
@@ -211,6 +169,48 @@ All available [actions](#action-types) are identical to those that can be applie
 You can modify the appearance of Quick Action buttons through: *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*. This setting provides options to personalize the button's size, shape, icon, and background opacity, offering greater control over how the buttons look on your screen.  
 
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
+
+### Change Button Position {#change-button-position}
+
+The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
+
+- **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
+
+    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
+
+- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
+
+    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
+
+- **New placement**. Once moved, the widget will remain in its new position on the map screen until manually adjusted again.
+
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
+
+- **Multiple [Custom buttons](#custom-buttons)**. You can add multiple quick action buttons to the map screen. These buttons can also be customized and repositioned individually using the same drag-and-drop method.
+
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
+
+### Grid Layout for Buttons {#grid-layout-for-buttons}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Grid for buttons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Grid for buttons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+[Map buttons](../widgets/map-buttons.md#overview) are automatically arranged using a grid layout. Each button is assigned to one of the four corners of the screen (*top-left*, *top-right*, *bottom-left*, *bottom-right*). If there is not enough space in the assigned corner, the buttons are aligned horizontally or vertically, depending on the screen orientation.
+
+This layout helps keep buttons visually consistent and avoids overlapping. For example, on a landscape display, buttons in the right corner will line up horizontally at the bottom of the screen, while on a portrait display they will expand vertically upwards or downwards as needed.
 
 
 ## Action Types {#action-types}
