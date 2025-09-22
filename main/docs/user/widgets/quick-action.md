@@ -78,7 +78,7 @@ All actions are organized in the **Add Action** menu and grouped by type. A comp
 
 You can assign one or more [actions](#action-types) to the quick action button. There are two ways to add actions.
 
-- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
+- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#action-parameters).
 - **In the quick action button panel**. Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
 
 
@@ -127,38 +127,12 @@ The actions assigned to a quick action button are grouped into screens. These gr
 - Navigate to *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Tap *Edit* (pencil icon), then *Hold & Drag* on the three vertical lines icon to rearrange actions.
 
-#### Actions in Loop {#actions-in-loop}
-
-![Custom button Android](@site/static/img/widgets/actions_in_loop_andr.png)  
-
-For some actions, you can assign a list of layers that will change in a circle with each tap: *Map source*, *Map style*, *Overlay*, *Underlay*, *Terrain color scheme*, *Add profile*.
-
-The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
-
-- **Show an interim dialog**. Displays a dialog with a list of maps.
-- **Do not show an interim dialog**. The map sources change in a defined order.
+:::info note
+Some actions such as *Map source*, *Map style*, *Overlay*, *Underlay*, *Terrain color scheme*, and *Add profile* can be assigned as a loop. Each tap on the button cycles through the selected layers. An interim dialog can be shown to select from the list manually, or hidden to switch in the defined order.
+:::
 
 
-### Change Position on the Map {#change-position-on-the-map}
-
-The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
-
-- **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
-
-    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
-
-- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
-
-    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
-
-- **New placement**. Once moved, the widget will remain in its new position on the map screen until manually adjusted again.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
-
-- **Multiple [Custom buttons](#custom-buttons)**. You can add multiple quick action buttons to the map screen. These buttons can also be customized and repositioned individually using the same drag-and-drop method.
-
-    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
-
+## Buttons on the Screen {#buttons-on-the-screen}
 
 ### Custom buttons {#custom-buttons}
 
@@ -186,8 +160,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons can be configured as ***Single-action*** buttons, which apply the selected action immediately upon being tapped, without the need to navigate through an extra menu.
 
-
-### Quick Action Button Appearance {#quick-action-button-appearance}
+### Button Appearance {#button-appearance}
 
 <InfoAndroidOnly/>
 
@@ -196,6 +169,48 @@ All available [actions](#action-types) are identical to those that can be applie
 You can modify the appearance of Quick Action buttons through: *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*. This setting provides options to personalize the button's size, shape, icon, and background opacity, offering greater control over how the buttons look on your screen.  
 
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
+
+### Change Button Position {#change-button-position}
+
+The *Quick Action* widget appears at the bottom corner of the map screen when you first enable it. You can move the widget to any part of the screen by holding and dragging. For precise and accurate placement of buttons on the map screen, they are automatically aligned to the nearest invisible grid position when dragged.
+
+- **Initial appearance**. By default, the quick action widget is placed in the lower right corner of the map interface.
+
+    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
+
+- **Move the widget**. By long pressing and dragging the widget, you can reposition it on the screen, with automatic column and row alignment.  
+
+    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
+
+- **New placement**. Once moved, the widget will remain in its new position on the map screen until manually adjusted again.
+
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
+
+- **Multiple [Custom buttons](#custom-buttons)**. You can add multiple quick action buttons to the map screen. These buttons can also be customized and repositioned individually using the same drag-and-drop method.
+
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
+
+### Grid Layout for Buttons {#grid-layout-for-buttons}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Grid for buttons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Grid for buttons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+[Map buttons](../widgets/map-buttons.md#overview) are automatically arranged using a grid layout. Each button is assigned to one of the four corners of the screen (*top-left*, *top-right*, *bottom-left*, *bottom-right*). If there is not enough space in the assigned corner, the buttons are aligned horizontally or vertically, depending on the screen orientation.
+
+This layout helps keep buttons visually consistent and avoids overlapping. For example, on a landscape display, buttons in the right corner will line up horizontally at the bottom of the screen, while on a portrait display they will expand vertically upwards or downwards as needed.
 
 
 ## Action Types {#action-types}

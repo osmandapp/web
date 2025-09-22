@@ -185,7 +185,7 @@ Setting for the map button appearance are available via the following menus:
 - *Menu → Configure screen → Buttons → Default buttons*
 - *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*
 
-Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#quick-action-button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability.
+Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability.
 
 
 ## Related Articles {#related-articles}
