@@ -38,6 +38,7 @@ import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
+import LoginContext from '../../context/LoginContext';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -155,6 +156,7 @@ export const POI_LAYER_ID = 'poi-layer';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const map = useMap();
 
     const navigate = useNavigate();
@@ -189,13 +191,39 @@ export default function PoiLayer() {
     });
 
     useEffect(() => {
-        if (ctx.poiByUrl) {
-            openPoiByUrl().then(ctx.setPoiByUrl(null));
+        if (ctx.poiByUrl?.params) {
+            openPoiByUrl().then(async (res) => {
+                let poiLayer;
+                if (res) {
+                    if (ctx.selectedPoiId?.id !== getObjIdSearch(res)) {
+                        poiLayer = await createPoiLayer({
+                            ctx,
+                            poiList: [res],
+                            globalPoiIconCache: ctx.poiIconCache,
+                            map,
+                            zoom,
+                        });
+                        // remove old poi marker
+                        if (ctx.poiByUrl.layer) {
+                            map.removeLayer(ctx.poiByUrl.layer);
+                        }
+                        map.addLayer(poiLayer);
+                    }
+                }
+                ctx.setPoiByUrl({
+                    params: null,
+                    layer: poiLayer,
+                    open: true,
+                });
+            });
+        } else if (ctx.poiByUrl?.layer && !ctx.poiByUrl?.open) {
+            map.removeLayer(ctx.poiByUrl.layer);
+            ctx.setPoiByUrl(null);
         }
     }, [ctx.poiByUrl]);
 
     async function openPoiByUrl() {
-        const { lat, lng, name, type } = ctx.poiByUrl;
+        const { lat, lng, name, type } = ctx.poiByUrl.params;
 
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
             params: {
@@ -208,6 +236,12 @@ export default function PoiLayer() {
         });
         if (response?.data) {
             const data = response.data;
+            data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
+                iconKeyName: data.properties[ICON_KEY_NAME],
+                typeOsmTag: data.properties[TYPE_OSM_TAG],
+                typeOsmValue: data.properties[TYPE_OSM_VALUE],
+                iconName: data.properties[POI_ICON_NAME],
+            });
             const poi = {
                 options: { ...data.properties },
                 latlng: {
@@ -220,7 +254,7 @@ export default function PoiLayer() {
             recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setSelectedWpt({ poi });
             ctx.setSelectedPoiObj({ ...poi });
-            return response.data;
+            return data;
         } else {
             return null;
         }
@@ -411,7 +445,9 @@ export default function PoiLayer() {
             }
         }
 
-        getPoiList().then();
+        if (ltx.isLoggedIn()) {
+            getPoiList().then();
+        }
         return () => {
             ignore = true;
         };
