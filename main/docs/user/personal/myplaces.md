@@ -83,37 +83,10 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
     - **Delete** (*on iOS, this option is located in the Edit menu*) — Deletes favorite points one at a time or selected favorite folders and all points contained in them.
 
-2. ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites:  
+2. ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites. See [Favorite Group Actions](../personal/favorites.md#favorite-group-actions) for details.  
 
-    <Tabs groupId="operating-systems" queryString="current-os">
 
-    <TabItem value="android" label="Android">
-
-    ![Three-dot menu](@site/static/img/personal/favorites_three-dot_menu.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorites menu iOS](@site/static/img/personal/favorites_long-tap_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
-
-    - **<Translate android="true" ids="change_default_appearance"/>** — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** or **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
-
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** or **Remove from map markers** (*Android only*) — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
-
-For more detailed instructions, refer to the [Favorites](../personal/favorites.md) article.
+For full instructions, refer to the [Favorites](../personal/favorites.md) article.
 
 
 ## Tracks {#tracks}
