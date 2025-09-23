@@ -33,7 +33,7 @@ function moveableMarker(routeObject, map, marker) {
     return marker;
 }
 
-const RouteLayer = ({ geocodingData, region }) => {
+const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
 
@@ -330,4 +330,4 @@ const RouteLayer = ({ geocodingData, region }) => {
     );
 };
 
-export default RouteLayer;
+export default NavigationLayer;

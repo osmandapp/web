@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
-import RouteLayer from './layers/RouteLayer';
+import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
 import 'leaflet-hash';
 import L from 'leaflet';
@@ -177,7 +177,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             >
                 {routersReady && <CloudTrackLayer />}
                 {routersReady && <LocalClientTrackLayer />}
-                {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
+                {routersReady && <NavigationLayer geocodingData={geocodingData} region={regionData} />}
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
                 <TravelLayer />
