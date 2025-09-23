@@ -4,7 +4,7 @@ import { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
-import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
+import { hideAllVisTracks, showAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
@@ -111,18 +111,16 @@ export function closeTrack(ctx, file, smartf) {
 
 export function hideAllTracks(ctx) {
     if (!isEmpty(ctx.visibleTracks)) {
-        let files = getAllVisibleFiles(ctx);
+        const files = getAllVisibleFiles(ctx);
         if (files.length > 0) {
             deleteTracksFromMap(ctx, files);
         }
     }
 }
 
-// delete tracks from map using different sources (cloud, shared), clean local storage
-export function deleteTracksFromMap(ctx, files) {
-    hideAllVisTracks();
-    let cloudFiles = [];
-    let sharedFiles = [];
+function separateFilesBySource(files, ctx) {
+    const cloudFiles = [];
+    const sharedFiles = [];
     files.forEach((file) => {
         if (file.url) {
             if (file.sharedWithMe) {
@@ -135,6 +133,16 @@ export function deleteTracksFromMap(ctx, files) {
             }
         }
     });
+    return { cloudFiles, sharedFiles };
+}
+
+export function deleteTracksFromMap(ctx, files) {
+    if (!files || files.length === 0) return;
+
+    hideAllVisTracks();
+
+    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx);
+
     if (cloudFiles.length > 0) {
         ctx.setGpxFiles((prevFiles) => ({
             ...prevFiles,
@@ -159,6 +167,51 @@ export function deleteTracksFromMap(ctx, files) {
                         updatedTracks[file.name] = {
                             ...prevFiles.tracks[file.name],
                             url: null,
+                        };
+                    }
+                    return updatedTracks;
+                }, {}),
+            },
+        }));
+    }
+}
+
+export function showAllVisibleTracks(ctx) {
+    const files = getAllVisibleFiles(ctx);
+    if (!files || files.length === 0) return;
+
+    showAllVisTracks();
+
+    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx);
+    if (cloudFiles.length > 0) {
+        ctx.setGpxFiles((prevFiles) => ({
+            ...prevFiles,
+            ...cloudFiles.reduce((updatedFiles, file) => {
+                if (prevFiles[file.name]) {
+                    updatedFiles[file.name] = {
+                        ...prevFiles[file.name],
+                        showOnMap: true,
+                        visible: true,
+                        url: file.url,
+                    };
+                }
+                return updatedFiles;
+            }, {}),
+        }));
+    }
+
+    if (sharedFiles.length > 0) {
+        ctx.setShareWithMeFiles((prevFiles) => ({
+            ...prevFiles,
+            tracks: {
+                ...prevFiles.tracks,
+                ...sharedFiles.reduce((updatedTracks, file) => {
+                    if (prevFiles.tracks[file.name]) {
+                        updatedTracks[file.name] = {
+                            ...prevFiles.tracks[file.name],
+                            showOnMap: true,
+                            visible: true,
+                            url: file.url,
                         };
                     }
                     return updatedTracks;
