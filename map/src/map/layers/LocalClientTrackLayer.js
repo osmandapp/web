@@ -23,7 +23,7 @@ import TracksRoutingCache, {
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
+import { deleteLocalTracksByIndexes, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
     addRegisteredLayers,
@@ -240,10 +240,14 @@ export default function LocalClientTrackLayer() {
         for (let l in localLayers) {
             localLayers[l].active = false;
         }
-
+        const deleteInds = [];
         // Loop through all local tracks and update their visibility on the map
-        Object.values(ctx.localTracks).forEach((track) => {
-            let currLayer = localLayers[track.name];
+        Object.values(ctx.localTracks).forEach((track, index) => {
+            if (!track?.name) {
+                deleteInds.push(index);
+                return;
+            }
+            const currLayer = localLayers[track.name];
 
             // Check if the track is selected and not already added to the map
             if (track.selected && !currLayer) {
@@ -278,6 +282,10 @@ export default function LocalClientTrackLayer() {
 
         // Update the localLayers state after cleaning up
         setLocalLayers({ ...localLayers });
+
+        if (!isEmpty(deleteInds)) {
+            deleteLocalTracksByIndexes(ctx, deleteInds);
+        }
     }, [ctx.localTracks, !!ctx.createTrack]);
 
     /*
@@ -343,7 +351,7 @@ export default function LocalClientTrackLayer() {
     }, [ctx.createTrack]);
 
     function saveResult(file, closePrev) {
-        let ind = ctx.localTracks.findIndex((t) => t?.name === file?.name);
+        const ind = ctx.localTracks.findIndex((t) => t?.name === file?.name);
         if (ind !== -1) {
             ctx.localTracks[ind] = file;
             if (ctx.createTrack.clear) {
