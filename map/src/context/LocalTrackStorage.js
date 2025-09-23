@@ -142,6 +142,10 @@ export async function loadLocalTracksFromStorage(setLoading) {
 
 export function saveTrackToLocalStorage({ ctx, track }) {
     const localTracks = ctx.localTracks;
+    if (!track?.name) {
+        ctx.setRoutingErrorMsg('⚠️ Cannot save nameless local track.');
+        return;
+    }
     let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
 
     if (currentTrackIndex === -1) {
@@ -167,14 +171,64 @@ async function updateStoredLocalTracks(tracks) {
     }
 }
 
-export function deleteLocalTrack(ctx) {
-    const currentTrackIndex = ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
+export function deleteLocalTrack(ctx, index = -1) {
+    const currentTrackIndex =
+        index !== -1 ? index : ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
     if (currentTrackIndex !== -1) {
         deleteTrackFromDB(currentTrackIndex).then(() => {
             ctx.localTracks.splice(currentTrackIndex, 1);
             ctx.setLocalTracks([...ctx.localTracks]);
         });
     }
+}
+
+export function deleteLocalTracksByIndexes(ctx, indexes = []) {
+    if (!indexes?.length) return;
+
+    const toDelete = new Set([...indexes].filter((n) => Number.isInteger(n) && n >= 0));
+
+    ctx.setLocalTracks((prev) => {
+        // { oldId, newId, track }
+        const moves = [];
+
+        const next = [];
+
+        for (let oldId = 0; oldId < prev.length; oldId++) {
+            if (toDelete.has(oldId)) continue; // skip deleted
+
+            const track = prev[oldId];
+            const newId = next.length; // position in the new array
+            next.push(track);
+
+            if (newId !== oldId) {
+                moves.push({ oldId, newId, track });
+            }
+        }
+
+        (async () => {
+            try {
+                // save moved tracks with new ids
+                for (const { newId, track } of moves) {
+                    const res = prepareLocalTrack(track);
+                    if (res) {
+                        await saveTrackToDB(newId, res);
+                    }
+                }
+
+                // collect all ids to remove: deleted + moved-from
+                const idsToRemove = new Set([...toDelete, ...moves.map(({ oldId }) => oldId)]);
+
+                // delete old ids
+                for (const oldId of idsToRemove) {
+                    await deleteTrackFromDB(oldId);
+                }
+            } catch (e) {
+                DEBUG && console.error('Failed to delete selected local tracks', e);
+            }
+        })();
+
+        return next;
+    });
 }
 
 export function clearAllLocalTracks(ctx) {

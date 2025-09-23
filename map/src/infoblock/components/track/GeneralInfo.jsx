@@ -255,7 +255,7 @@ export default function GeneralInfo({ width }) {
             const oldName = ctx.selectedGpxFile.name;
             const newName = sanitizedFileName(fileName) || oldName;
 
-            if (newName === '') {
+            if (newName === '' || !newName) {
                 setFileNameError('Name cannot be empty');
                 return;
             }

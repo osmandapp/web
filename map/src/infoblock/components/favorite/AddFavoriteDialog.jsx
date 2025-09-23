@@ -151,7 +151,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }
 
     function prepareLocalTrack() {
-        let ind = ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
+        if (!ctx.selectedGpxFile?.name) {
+            ctx.setRoutingErrorMsg('⚠️ Cannot save nameless local track.');
+            return;
+        }
+        const ind = ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
         if (ind !== -1) {
             if (!ctx.localTracks[ind].wpts) {
                 ctx.localTracks[ind].wpts = [];

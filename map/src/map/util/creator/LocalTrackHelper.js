@@ -7,7 +7,7 @@ export function trackWasChanged(localTracks, track) {
 }
 
 export function isNewTrack(localTracks, track) {
-    return !localTracks.find((t) => t.name === track.name);
+    return !localTracks.find((t) => t?.name === track?.name);
 }
 
 export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, setRegisteredLayers }) {
