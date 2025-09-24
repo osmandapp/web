@@ -628,16 +628,31 @@ To change the Waypoint description, you can go one of the following ways:
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
 
-## Split Interval {#split-interval}
+## Analyze by Intervals {#analyze-by-intervals}
 
 <InfoAndroidOnly />
+
+![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
 You can divide the track into intervals, such as distance and time, and analyze it.  
 
 Split the track by distance or time interval.  
 *<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
 
-![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+
+### Split by Distance {#split-by-distance}
+
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+
+### Split by Time {#split-by-time}
+
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png)  
+
+
+### Split by Uphill/Downhill {#split-by-uphill-downhill}
+
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 
 ## GPS Filter {#gps-filter}
