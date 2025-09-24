@@ -634,10 +634,10 @@ To change the Waypoint description, you can go one of the following ways:
 
 ![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-You can divide the track into intervals, such as distance and time, and analyze it.  
+The **Analyze by Intervals** option allows you to divide a track into sections and view detailed statistics for each part of the route. Tracks can be split by **distance**, **time**, or **uphill/downhill** parameters. 
 
-Split the track by distance or time interval.  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+To open this option:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → choose the desired split mode 
 
 
 ### Split by Distance {#split-by-distance}
