@@ -92,7 +92,8 @@ Adjust track width to improve visibility on the map.
 
 ![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
-Select whether to split the interval on the track **by distance or by time**.
+Select whether to split the interval on the track **by distance or by time**. To analyze intervals with detailed statistics, see [Analyze by Intervals](../../map/tracks/track-context-menu.md#analyze-by-intervals).
+
 
 ### Direction Arrows {#direction-arrows}
 
