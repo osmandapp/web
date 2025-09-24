@@ -4,6 +4,7 @@ import {
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_TRAVEL,
     OBJECT_TYPE_WEATHER,
 } from '../../../context/AppContext';
@@ -42,6 +43,12 @@ export default function useMenuDots(ctx) {
     useEffect(() => {
         setActiveMenu(OBJECT_TRACK_ANALYZER, ctx.trackAnalyzer);
     }, [ctx.trackAnalyzer]);
+
+    useEffect(() => {
+        const startPoint = ctx.routeObject.getOption('route.points.start');
+        const finishPoint = ctx.routeObject.getOption('route.points.finish');
+        setActiveMenu(OBJECT_TYPE_NAVIGATION_TRACK, startPoint || finishPoint);
+    }, [ctx.routeObject]);
 
     function isSameHour() {
         const initial = new Date();
