@@ -61,10 +61,10 @@ Use one of the following paths to open the plugin settings:
 
 ### Terrain {#terrain}
 
-- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). Load old format raster maps.
+- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). When using the V2 rendering engine, instead of calculating hillshading or slopes from the 3D Terrain map, use the old format raster maps for this purpose. Can speed up rendering significantly.
 
 
-### Troubleshotting {#troubleshotting}
+### Troubleshooting {#troubleshooting}
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.

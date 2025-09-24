@@ -39,10 +39,8 @@ export default function SaveTrackDialog() {
     const closeDialog = ({ uploaded }) => {
         setProcess(false);
         if (uploaded) {
-            // ctx.selectedGpxFile.clear = true; // no-more-need
             if (isRouteTrack(ctx)) {
                 ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-                ctx.routeObject.setOption('route.map.conceal', true);
             }
         }
         const updatedSelectedGpxFile = {

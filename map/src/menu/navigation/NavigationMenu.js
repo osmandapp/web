@@ -105,30 +105,8 @@ export default function NavigationMenu() {
             routeObject.setOption('route.map.zoom', true);
         } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
             setOpen(false);
-            ctx.routeObject.setOption('route.map.conceal', true);
         }
     }, [ctx.currentObjectType]);
-
-    // This block was used for 2 actions:
-    // restore Navigation layer on the map (because Track Editor kills all "foreign" layers) -
-    // restoration was done by "reset" currentGpxFile with putRoute() -- please check is Navigation track (layer) really
-    // back when you switch back to Navigation menu after editing Local track
-    // second action is Zoom-on map Navigation track when you open Navigation menu
-    // Commenting this block breaks previously accepted task (Navigation menu changes).
-
-    // // auto zoom once Navigation menu open
-    // // additionally, trigger fitBounds (zoom) always on menu open
-    // // optionally, re-convert (get->put) to switch to route object type
-    // useEffect(() => {
-    //     const route = routeObject.getRoute();
-    //     if (open && route) {
-    //         if (isRouteTrack(ctx) === false) {
-    //             routeObject.putRoute({ route: routeObject.getRoute() });
-    //         } else {
-    //             routeObject.setOption('route.map.zoom', true);
-    //         }
-    //     }
-    // }, [open]);
 
     useEffect(() => {
         openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();

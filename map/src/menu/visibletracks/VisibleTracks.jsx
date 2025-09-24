@@ -1,24 +1,19 @@
 import { AppBar, Box, Divider, IconButton, MenuItem, Toolbar, Typography } from '@mui/material';
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import visibleStyles from './visibletracks.module.css';
 import headerStyles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import CloudTrackItem from '../tracks/CloudTrackItem';
-import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
 import isEmpty from 'lodash-es/isEmpty';
-import {
-    DEFAULT_GROUP_NAME,
-    getAllVisibleFiles,
-    getFileName,
-    TRACK_VISIBLE_FLAG,
-} from '../../manager/track/TracksManager';
+import { DEFAULT_GROUP_NAME, getFileName, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
-import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
+import { hideAllTracks, showAllVisibleTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
+import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -51,9 +46,17 @@ export function updateVisibleCache({ visible, file, smartf = null }) {
 }
 
 export function hideAllVisTracks() {
-    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
+    const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible) {
         savedVisible.open = [];
+    }
+    localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+}
+
+export function showAllVisTracks() {
+    const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
+    if (savedVisible) {
+        savedVisible.open = [...(savedVisible.old || []), ...(savedVisible.new || [])];
     }
     localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
@@ -95,7 +98,13 @@ export default function VisibleTracks() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [, height] = useWindowSize();
+    const recentSaver = useRecentDataSaver();
+
+    const [allTracksHidden, setAllTracksHidden] = useState(() => allVisibleTracksHidden());
+
+    useEffect(() => {
+        setAllTracksHidden(allVisibleTracksHidden());
+    }, [ctx.visibleTracks]);
 
     const trackItems = useMemo(() => {
         const items = [];
@@ -156,13 +165,29 @@ export default function VisibleTracks() {
     }
 
     function allVisibleTracksHidden() {
-        let files = getAllVisibleFiles(ctx);
-        if (files.length > 0) {
-            const visibleCloudTracks = files.some((f) => f.url !== null && f.showOnMap);
-            return !visibleCloudTracks;
-        }
-        return true;
+        const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
+        return savedVisible.open.length === 0;
     }
+
+    const ToggleButton = () => {
+        const id = allTracksHidden ? 'se-show-all-visible-tracks' : 'se-hide-all-visible-tracks';
+        const label = allTracksHidden ? t('shared_string_show_all') : t('shared_string_hide_all');
+        return (
+            <Button
+                id={id}
+                className={visibleStyles.button}
+                onClick={() => {
+                    if (allTracksHidden) {
+                        showAllVisibleTracks(ctx, recentSaver);
+                    } else {
+                        hideAllTracks(ctx);
+                    }
+                }}
+            >
+                {label}
+            </Button>
+        );
+    };
 
     return (
         <>
@@ -181,14 +206,7 @@ export default function VisibleTracks() {
                         <Typography id="se-visible-cloud-track-name" component="div" className={headerStyles.title}>
                             {t('shared_string_tracks')}
                         </Typography>
-                        <Button
-                            id="se-hide-all-visible-tracks"
-                            className={visibleStyles.button}
-                            onClick={() => hideAllTracks(ctx)}
-                            disabled={allVisibleTracksHidden()}
-                        >
-                            {t('shared_string_hide_all')}
-                        </Button>
+                        <ToggleButton />
                     </Toolbar>
                 </AppBar>
                 {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}

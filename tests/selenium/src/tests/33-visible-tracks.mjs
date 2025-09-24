@@ -61,6 +61,10 @@ export default async function test() {
     await clickBy(By.id('se-hide-all-visible-tracks'));
     await checkElementByCss('img[src*="point_finish"]', false);
 
+    // check show all
+    await clickBy(By.id('se-show-all-visible-tracks'));
+    await checkElementByCss('img[src*="point_finish"]');
+
     await clickBy(By.id('se-close-visible-tracks'));
     await deleteTrack(`${trackName}`);
 

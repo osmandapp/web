@@ -176,7 +176,6 @@ function handleEditCloudTrack(ctx) {
         function proceed() {
             if (isRouteTrack(ctx)) {
                 ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-                ctx.routeObject.setOption('route.map.conceal', true);
             }
             saveTrackToLocal({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
             ctx.setUpdateInfoBlock(true);
@@ -195,8 +194,8 @@ function handleEditCloudTrack(ctx) {
 function prepareTrack(track, localName = null, originalName = null) {
     track.originalName = originalName ?? track.name + GPX_FILE_EXT;
     track.name = localName ?? prepareName(track.name, true);
+    track.name = track.name === '' ? createName() : track.name;
     track.id = track.name;
-
     track.hasGeo = hasGeo(track);
     addDistance(track); // recalc-distance-local-initial
 }
