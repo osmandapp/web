@@ -644,6 +644,18 @@ To open this option:
 
 ![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
 
+This option allows you to divide a track into fixed distance intervals and analyze detailed statistics for each segment. Available distance intervals are **20 m**, **50 m**, **100 m**, **200 m**, **500 m**, **1 km**, **2 km**, **5 km**, and **10 km**. After choosing a distance interval, the track is displayed as a list of segments. 
+
+For each segment, you can view:
+- distance covered.
+- time span.
+- average, minimum and maximum altitude.
+- ascent and descent.
+- time in motion.
+- average and maximum speed.
+
+When you tap on any segment in the list, the map view shows the full track with its intervals and opens the context menu for the track at the bottom of the screen.
+
 
 ### Split by Time {#split-by-time}
 
