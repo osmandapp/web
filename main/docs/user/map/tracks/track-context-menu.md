@@ -659,7 +659,9 @@ When you tap on any segment in the list, the map view shows the full track with 
 
 ### Split by Time {#split-by-time}
 
-![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png)  
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+The **Split by Time** option divides a track into intervals of equal duration. You can choose between **1 min**, **2 min**, **2.5 min**, **5 min**, **10 min**, **15 min**, **30 min**, and **60 min**. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are the same as in [Split by Distance](#split-by-distance)
 
 
 ### Split by Uphill/Downhill {#split-by-uphill-downhill}
