@@ -1,5 +1,5 @@
 ---
-source-hash: b955b527f4a6288fa803d731df2f410db4fb91c6a6b0ec46ae14193d525bf995
+source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
 sidebar_position: 7
 title: Deniz Haritası Görünümü
 ---
@@ -23,9 +23,9 @@ Deniz Haritası Görünümü eklentisi, OsmAnd uygulamasının [ücretli bir öz
 
 Deniz Haritası Görünümü, su üzerinde gezinmenize ve popüler rotaları, su yolunuzdaki engelleri, en yakın limanları, demirleme yerlerini ve diğer önemli yer işaretlerini öğrenmenize yardımcı olan okyanusların, denizlerin, kıyı bölgelerinin ve nehirlerin ayrıntılı bir grafik temsilidir.
 
-Deniz haritası, kaptanların su üzerinde seçilen bir rota üzerinde bir gemiyi yönlendirmesine yardımcı olan son derece ayrıntılı bir topografik haritadır. Arabayla seyahat edenler için bir yol haritasına benzer. Tarihsel nedenlerden dolayı genellikle *'Harita'* olarak adlandırılır, okyanusların, denizlerin, kıyı bölgelerinin ve nehirlerin ayrıntılı bir grafik temsilidir.
+Deniz haritası, kaptanların su üzerinde seçilen bir rota üzerinde bir gemiyi yönlendirmesine yardımcı olan son derece ayrıntılı bir topografik haritadır. Arabayla seyahat edenler için bir yol haritasına benzer. Tarihsel nedenlerle genellikle 'Harita' olarak adlandırılır, okyanusların, denizlerin, kıyı bölgelerinin ve nehirlerin ayrıntılı bir grafik temsilidir.
 
-Deniz haritaları, profesyonel denizciler ve şehrin kanallarında seyir için tekne kiralayan amatörler için önemlidir. Haritalar onlara seyir rotaları, seyir ışıkları, tehlike bölgeleri, seyir veya yanaşmanın izinli veya yasak olduğu bölgeler gibi çeşitli bilgiler sağlar.
+Deniz haritaları, profesyonel denizciler ve şehrin kanallarında seyir için tekne kiralayan amatörler için önemlidir. Haritalar onlara seyir rotaları, seyir ışıkları, tehlike bölgeleri, yelken açmanın veya yanaşmanın izinli veya yasak olduğu bölgeler vb. gibi çeşitli bilgiler sağlar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -46,9 +46,9 @@ Deniz haritaları, profesyonel denizciler ve şehrin kanallarında seyir için t
 
 ### Deniz Teması Neden Önemlidir? {#why-the-nautical-theme-matters}
 
-Tüm profesyonel denizcilerin gemilerinde resmi deniz haritaları bulundurmaları gerekmektedir. Bu haritalar yetkili kurumlar tarafından yayınlanır ve oldukça pahalıdır. Kurumlar, haritaları güncel tutmak için yoğun yatırım yapmaktadır. Haritalara düzenli güncellemeler yayınlarlar, ancak bilgileri doğrulamak ve güncellemeleri işlemek zaman aldığından, deniz haritaları hiçbir zaman tamamen güncel değildir.
+Tüm profesyonel denizcilerin gemilerinde resmi deniz haritaları bulundurmaları gerekmektedir. Bu haritalar yetkili kurumlar tarafından yayınlanmakta ve oldukça pahalıdır. Kurumlar, haritaları güncel tutmak için yoğun yatırım yapmaktadır. Haritalara düzenli güncellemeler yayınlarlar, ancak bilgileri doğrulamak ve güncellemeleri işlemek zaman aldığından, deniz haritaları hiçbir zaman tamamen güncel değildir.
 
-[OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) verilerine dayanarak, OsmAnd Deniz haritaları onları kullanan kişiler tarafından oluşturulmuştur. Her harita kullanıcısı, kendileri için önemli ve faydalı buldukları bilgileri ekleyerek haritaya katkıda bulunabilir, böylece haritayı daha ayrıntılı ve doğru hale getirir, yön bulma veya rota planlama için idealdir.
+[OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) verilerine dayanarak, OsmAnd Deniz haritaları onları kullanan kişiler tarafından oluşturulur. Her harita kullanıcısı, kendileri için önemli ve faydalı buldukları bilgileri ekleyerek haritaya katkıda bulunabilir, böylece haritayı daha ayrıntılı ve doğru hale getirerek yön bulma veya rota planlama için ideal hale getirir.
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
@@ -57,16 +57,16 @@ Aşağıdaki kurulum, Deniz haritasının ekranda görünmesini sağlar:
 
 1. Deniz haritası görünümü eklentisini [satın alın](../plugins/index.md#purchase) ve [etkinleştirin](../plugins/index.md#enable--disable).
 2. Deniz haritalarını [indirin](#download-nautical-maps).
-3. Gerekli [profil](../personal/profiles.md) için [Deniz haritası stilini](#set-nautical-map-style) ayarlayın.
+3. Gerekli [profil](../personal/profiles.md) için [Deniz](#set-nautical-map-style) harita stilini ayarlayın.
 
 
-### Deniz Haritası Stilini Ayarlayın {#set-nautical-map-style}
+### Deniz Haritası Stilini Ayarla {#set-nautical-map-style}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
 
 ![Android'de Deniz Haritası Türü](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -74,7 +74,7 @@ Aşağıdaki kurulum, Deniz haritasının ekranda görünmesini sağlar:
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
 
 ![iOS'ta Deniz Haritası Türü](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -82,22 +82,22 @@ Aşağıdaki kurulum, Deniz haritasının ekranda görünmesini sağlar:
 
 </Tabs>
 
-Deniz haritasında gösterilen herhangi bir referans için [Harita lejantını](../../user/map-legend/nautical-map.md) kullanın. Bir deniz haritasındaki sembolik öğeleri açıklar ve şüpheye düştüğünüzde gezinmenize yardımcı olacak bir referans görevi görür. Deniz haritası stilini ayarlayarak, indirilen ve görüntülenen deniz verilerinin en iyi görünümünü elde edebilirsiniz.
+Deniz haritasında gösterilenlere referans için [Harita lejantını](../../user/map-legend/nautical-map.md) kullanın. Deniz haritasındaki sembolik öğeleri açıklar ve şüpheye düştüğünüzde gezinmenize yardımcı olacak bir referans görevi görür. Deniz haritası stilini ayarlayarak, indirilen ve görüntülenen deniz verilerinin en iyi görünümünü elde edebilirsiniz.
 
 Mevcut harita stilini Deniz olarak değiştirmek için aşağıdaki ayarları yapmanız gerekir:
 
 1. Gerekli [profili](../personal/profiles.md) seçin.
 2. [Haritayı yapılandır](../map/configure-map-menu.md) seçeneğini açın.
-3. Harita stiline gidin, açın ve **Deniz** seçeneğini işaretleyin.
+3. Harita stiline ilerleyin, açın ve **Deniz** seçeneğini işaretleyin.
 
 
-### Deniz Haritalarını İndirin {#download-nautical-maps}
+### Deniz Haritalarını İndir {#download-nautical-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
 
 ![Android'de Deniz eklentisi haritaları görünümü](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
@@ -105,7 +105,7 @@ Mevcut harita stilini Deniz olarak değiştirmek için aşağıdaki ayarları ya
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
 
 ![iOS'ta Deniz eklentisi haritaları görünümü](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -113,33 +113,33 @@ Mevcut harita stilini Deniz olarak değiştirmek için aşağıdaki ayarları ya
 
 </Tabs>
 
-Optimal sunum için haritalar mevcut ihtiyaçlara göre uyarlanabilir: işaretler ve semboller derinlik noktaları ve gerektiğinde konturlar ile eklenebilir. Öte yandan, belirli bir bölge için iç, karasal ve kıyı suları hakkında bilgi içeren standart haritalar, bir Deniz haritasındaki su yolları hakkındaki bilgilere iyi bir tamamlayıcı olabilir.
+Optimum sunum için haritalar mevcut ihtiyaçlara göre uyarlanabilir: derinlik noktaları ve gerektiğinde konturlarla işaretler ve semboller eklenebilir. Öte yandan, belirli bir bölge için iç, kıyı ve kıyıya yakın sular hakkında bilgi içeren standart haritalar, bir Deniz haritasındaki su yolları hakkındaki bilgilere iyi bir tamamlayıcı olabilir.
 
-Bir deniz haritası [indirdiğinizde](../start-with/download-maps.md), haritada *Tekne* navigasyonuyla ilgili daha fazla ayrıntı görünür. Bazı [Deniz haritası türleri](../start-with/download-maps.md#type-of-maps) aşağıdaki gibi ayrıntıları içerir:
+Bir deniz haritası [indirdiğinizde](../start-with/download-maps.md), haritada *Tekne* navigasyonuyla ilgili daha fazla ayrıntı görünür. Bazı [Deniz haritası](../plugins/nautical-charts/#nautical-map-style) türleri aşağıdaki gibi ayrıntıları içerir:
 
 - **Deniz işaretleri ve sembolleri.**
     İşaretler ve semboller, hem iç hem de kıyı navigasyonu için tüm deniz navigasyon işaretlerini içerir. Bu işaretleri bilmek, kayaların, engellerin, demirleme yerlerinin, şamandıraların, akıntıların, derin ve sığ suların ve kanalın kenarlarının konumunu, yön ne olursa olsun tahmin etmenize yardımcı olacaktır. İşaretler ve semboller tüm dünya için bir kez indirilir.
 
 - **Derinlik noktaları.**
-    Derinlik noktası paketlerinden elde edilen deniz verileri, belirli bir konumdaki en sığ derinliği gösteren su üzerinde görüntülenen sayılarla temsil edilir. Derinlik noktaları her yarım küre ve bazı bölgeler için mevcuttur.
+    Derinlik noktası paketlerinden gelen deniz verileri, su üzerinde görüntülenen ve belirli bir konumdaki en sığ derinliği gösteren sayılarla temsil edilir. Derinlik noktaları her yarım küre ve bazı bölgeler için mevcuttur.
 
 - **Derinlik konturları.**
     Derinlik kontur paketleri, eşit derinlikteki alanları tanımlamanıza olanak tanır. Su yüzeyinin altındaki kabartmadaki değişiklikleri görselleştirmek için tasarlanmıştır. Derinlik konturları belirli alanlar için indirilebilir ve daha sonra ihtiyacınız yoksa kapatılabilir.
 
 :::info Derinlik Numaraları
-Deniz Haritalarındaki tüm derinlik numaraları metre cinsindendir.
+Deniz Haritalarındaki tüm derinlik numaraları metre cinsinden belirtilmiştir.
 :::
 
 
-### Deniz Haritası Stilini Devre Dışı Bırakın {#disable-nautical-map-style}
+### Deniz Haritası Stilini Devre Dışı Bırak {#disable-nautical-map-style}
 
 Deniz haritasını kaldırmak ve OsmAnd'ın geleneksel haritalarından birini görüntülemek için aşağıdakilerden herhangi birini yapın:
 
 - Deniz eklentisini devre dışı bırakın.
-- Harita stilini *Deniz* dışında başka bir şeye değiştirin.
+- Harita stilini *Deniz* dışındaki herhangi bir şeye değiştirin.
 
 :::info NOT
-Deniz eklentisini devre dışı bırakmak, yüklenen deniz verilerini kaldırmaz, bu nedenle deniz verileri indirildiğinde, görüntüleme yöntemini denizden başka bir yönteme değiştirseniz bile haritada görünür kalır.
+Deniz eklentisini devre dışı bırakmak, yüklenen deniz verilerini kaldırmaz, bu nedenle deniz verileri indirildiğinde oluşturma yöntemini denizden başka bir yönteme değiştirseniz bile haritada görünür kalır.
 :::
 
 
@@ -149,7 +149,7 @@ Deniz eklentisini devre dışı bırakmak, yüklenen deniz verilerini kaldırmaz
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
 ![Android'de Deniz derinlik konturları](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
@@ -157,7 +157,7 @@ Deniz eklentisini devre dışı bırakmak, yüklenen deniz verilerini kaldırmaz
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
 ![iOS'ta Derinlik konturları](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
@@ -170,7 +170,7 @@ Deniz haritası herhangi bir profile dahil edilebilir. Ancak, en çok [Tekne pro
 
 ## Deniz Haritası Stili {#nautical-map-style}
 
-OsmAnd'daki Deniz eklentisi, vektör katman harita stillerini Deniz harita stiliyle genişletir. Harita verilerini Deniz harita kurallarına göre görüntülemenizi sağlar, örneğin: kara ve sığlıklar için sarı alanlar, sığ sular için açık mavi alanlar vb. Daha fazla bilgi için [Harita lejantına](../../user/map-legend/nautical-map.md) bakın.
+OsmAnd'daki Deniz eklentisi, vektör katmanı harita stillerini Deniz harita stiliyle genişletir. Harita verilerini Deniz harita kurallarına göre görüntülemenizi sağlar, örneğin: kara ve sığlıklar için sarı alanlar, sığ sular için açık mavi alanlar vb. Daha fazla bilgi için [Harita lejantına](../../user/map-legend/nautical-map.md) bakın.
 
 
 ### Derinlik Noktaları {#depth-points}
@@ -191,7 +191,7 @@ OsmAnd'daki Deniz eklentisi, vektör katman harita stillerini Deniz harita stili
 
 </Tabs>
 
-Derinlik noktası [paketleri](../start-with/download-maps.md#type-of-maps) Avrupa, Kuzey Yarımküre ve Güney Yarımküre için mevcuttur ve bilgilendiricidir. Derinlik noktaları, su yüzeyinin altındaki topografyadaki değişiklikleri gösterir ve en sığ derinliği belirtir. Bu, *Tekne* navigasyonu için gereklidir. İndirdikten sonra, haritada görüntülemek için [Derinlik konturlarını](#depth-contours) açmanız gerekir.
+Derinlik noktası [paketleri](../start-with/download-maps.md#overview) Avrupa, Kuzey Yarımküre ve Güney Yarımküre için mevcuttur ve bilgilendiricidir. Derinlik noktaları, su yüzeyinin altındaki topografyadaki değişiklikleri gösterir ve en sığ derinliği belirtir. Bu, *Tekne* navigasyonu için gereklidir. İndirdikten sonra, haritada görüntülemek için [Derinlik konturlarını](#depth-contours) açmanız gerekir.
 
 
 ### Derinlik Konturları {#depth-contours}
@@ -200,7 +200,7 @@ Derinlik noktası [paketleri](../start-with/download-maps.md#type-of-maps) Avrup
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
 
 ![Android'de Deniz derinlik konturları](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
@@ -208,7 +208,7 @@ Derinlik noktası [paketleri](../start-with/download-maps.md#type-of-maps) Avrup
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![iOS'ta Derinlik konturları](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
@@ -219,7 +219,7 @@ Derinlik noktası [paketleri](../start-with/download-maps.md#type-of-maps) Avrup
 Ekranda bir Deniz haritası görüntülendiğinde, gördüğünüzü ayarlayabilirsiniz:
 
 - *Derinlik konturlarını* göster veya gizle.
-- Deniz tabanı bilgilerinin ayrıntı düzeyini ayarlama: [*Çizgi genişliği* ve *Çizgi renk şeması*](../map/vector-maps.md#-nautical-depth).
+- Deniz tabanı bilgilerinin detay seviyesini ayarlama: [*Çizgi genişliği* ve *Çizgi renk şeması*](../map/vector-maps.md#-nautical-depth).
 
 :::info NOT
 [OpenSeaMap](https://map.openseamap.org/) kullanarak kendi bilgilerinizi ekleyerek OsmAnd uygulamasının Derinlik konturları veritabanını artırmasına yardımcı olabilirsiniz.
@@ -232,7 +232,7 @@ Ekranda bir Deniz haritası görüntülendiğinde, gördüğünüzü ayarlayabil
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
 
 ![Deniz yatağı detayları](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
@@ -240,7 +240,7 @@ Ekranda bir Deniz haritası görüntülendiğinde, gördüğünüzü ayarlayabil
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![Deniz yatağı detayları](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
@@ -248,15 +248,15 @@ Ekranda bir Deniz haritası görüntülendiğinde, gördüğünüzü ayarlayabil
 
 </Tabs>
 
-Deniz yatağı verileri, bitki örtüsü ve kayalık kayalar, kabuklar, çakıl, mercan, silt vb. gibi genel yüzey malzemesi hakkında bilgi içerir. Deniz yatağı verilerinin uluslararası sınıflandırması nedeniyle, bu tür ayrıntıları bir haritada görüntülemek için seçenekler vardır: *basit*, *kategori*, *tümü* veya *atla*. Daha fazla bilgi için [Deniz yatağı alanı harita lejantına](../map-legend/nautical-map.md#seabed-area) bakın.
+Deniz yatağı verileri, bitki örtüsü ve kayalık kayalar, kabuklar, çakıl, mercan, silt vb. gibi genel yüzey malzemesi hakkında bilgi içerir. Deniz tabanı verilerinin uluslararası sınıflandırması nedeniyle, bu tür ayrıntıları bir haritada görüntülemek için seçenekler vardır: *basit*, *kategori*, *tümü* veya *atla*. Daha fazla bilgi için [Deniz yatağı alanı harita lejantına](../map-legend/nautical-map.md#seabed-area) bakın.
 
 - **Basit** (*Android sürümü için*) - INT-1 Ref'e uygun olarak deniz yatağı yüzeyinin doğasını gösteren deniz işareti sembollerini gösterir.
-- **Kategori** - deniz işareti sembolüne ek olarak, ilgili deniz işareti etiketini, doğal malzemeyi veya deniz yosunu ve deniz çayırı kategorisini de gösterir.
-- **Tümü** - deniz işareti sembolüne, etiketine veya kategorisine ek olarak, ince, yapışkan, kaba vb. gibi nitelikleri de gösterir. Deniz çayırı ve deniz yosunu için, *taxon* ve *genus* etiketleriyle işaretlenmiş verileri gösterir.
+- **Kategori** - deniz işareti sembolüne ek olarak, doğal malzemeyi veya deniz yosunu ve deniz çayırı kategorisini gösteren ilgili deniz işareti etiketini de gösterir.
+- **Tümü** - deniz işareti sembolüne, etiketine veya kategorisine ek olarak, ince, yapışkan, kaba vb. gibi nitelikleri de gösterir. Deniz yosunu ve deniz çayırı için, *taxon* ve *genus* etiketleriyle işaretlenmiş verileri gösterir.
 - **Atla** - deniz yatağının ayrıntılarını göstermez.
 
 :::info NOT
-Yüzey ayrıntılarının sınıflandırılması ve işleme seçenekleri hakkında daha fazla bilgi için [OSM'nin deniz işareti vikisine](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J) bakın.
+Yüzey detaylarının sınıflandırılması ve oluşturma seçenekleri hakkında daha fazla bilgi için [OSM'nin deniz işaretleri vikisine](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J) bakın.
 :::
 
 
@@ -264,5 +264,3 @@ Yüzey ayrıntılarının sınıflandırılması ve işleme seçenekleri hakkın
 
 - [İçe Aktar / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
-
-> *Son güncelleme: Haziran 2023*

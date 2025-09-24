@@ -1,5 +1,5 @@
 ---
-source-hash: 7aea09ded358921f2251853fe554d8f51b9a110d6d8c0ced23bab4e8a044c7d3
+source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
 
 ---
 # Kullanım Kılavuzu {#user-guide}
@@ -13,11 +13,11 @@ OsmAnd Uygulaması ile Nasıl Başlanır ve Haritalar Nasıl İndirilir.
 
 ### [Harita](./map/index.md) {#map}
 
-Harita, OsmAnd'ın temel bir öğesidir. Bu bölüm, harita ile nasıl etkileşim kurulacağını, ek İÇN katmanlarının nasıl yapılandırılacağını, haritanın trekking, bisiklet veya arazi navigasyonu için nasıl özelleştirileceğini, arazi bilgilerinin nasıl ekleneceğini, sokak seviyesi görüntülerinin nasıl etkinleştirileceğini vb. açıklar.
+Harita, OsmAnd'ın temel bir öğesidir. Bu bölüm, harita ile nasıl etkileşim kurulacağını, ek POI katmanlarının nasıl yapılandırılacağını, haritanın trekking, bisiklet veya arazi navigasyonu için nasıl özelleştirileceğini, arazi bilgilerinin nasıl ekleneceğini, sokak seviyesi görüntülerinin nasıl etkinleştirileceğini vb. açıklar.
 
 ### [Harita Lejantı](./map-legend/index.md) {#map-legend}
 
-Harita Lejantı, bir haritada kullanılan sembolleri, renkleri ve çizgileri açıklayan bir anahtardır. Kullanıcıların yollar, patikalar, su kütleleri ve farklı arazi kullanımları gibi çeşitli harita özelliklerinin neyi temsil ettiğini anlamalarına yardımcı olur. Harita lejantına başvurarak, haritada görüntülenen bilgileri doğru bir şekilde yorumlayabilir, böylece bölgenin düzenini gezinmek ve anlamak daha kolay hale gelir.
+Harita Lejantı, bir haritada kullanılan sembolleri, renkleri ve çizgileri açıklayan bir anahtardır. Kullanıcıların yollar, patikalar, su kütleleri ve farklı arazi kullanımları gibi çeşitli harita özelliklerinin neyi temsil ettiğini anlamalarına yardımcı olur. Harita lejantına başvurarak, haritada görüntülenen bilgileri doğru bir şekilde yorumlayabilir, böylece bölgenin düzenini gezinmeyi ve anlamayı kolaylaştırabilirsiniz.
 
 ### [Harita Widget'ları](./widgets/index.md) {#map-widgets}
 
@@ -31,14 +31,13 @@ OsmAnd, haritalar, noktalar, izler gibi farklı harita verilerini; uygulama prof
 
 Navigasyon işlevi, rotaları görüntüleyerek, adım adım talimatlar ve isteğe bağlı sesli rehberlik sunarak sizi hedeflerinize yönlendirir.
 
-
 ### [Rota Planla](./plan-route/index.md) {#plan-route}
 
 OsmAnd, kendi rotalarınızı oluşturmanıza ve geziler için diğer kullanıcı rotalarını kullanmanıza olanak tanır.
 
 ### [Eklentiler](./plugins/index.md) {#plugins}
 
-Eklentiler, OsmAnd için gelişmiş ayarları ve ek işlevselliği etkinleştirir; örneğin gezi kaydı, haritada arazi verilerini gösterme, Mapillary ile sokak görünümleri, haritada çevrimdışı Wikipedia makaleleri vb.
+Eklentiler, OsmAnd için gelişmiş ayarları ve ek işlevleri etkinleştirir; örneğin gezi kaydı, haritada arazi verilerini gösterme, Mapillary tarafından sokak görünümleri, haritada çevrimdışı Wikipedia makaleleri vb.
 
 ### [Satın Almalar](./purchases/index.md) {#purchases}
 
@@ -46,9 +45,9 @@ OsmAnd uygulaması Android ve iOS sistemleri için mevcuttur. OsmAnd'ın sunduğ
 
 ### [Arama](./search/index.md) {#search}
 
-Araç, herhangi bir kullanım durumu için arama özellikleri sağlar: adres arama, İÇN arama, özel arama, geçmiş arama, koordinat arama.
+Araç, her türlü kullanım durumu için arama özellikleri sağlar: adres arama, POI arama, özel arama, geçmiş arama, koordinat arama.
 
-### [Web Rota Planlayıcı](./web/index.md) {#web-route-planner}
+### [Web Planlayıcı](./web/index.md) {#web-planner}
 
 OsmAnd Web Kaynağı, geniş bir harita özelliği yelpazesi, bir navigasyon hizmeti ve OsmAnd Cloud ile senkronizasyon sağlar. Bu, kullanıcıların ayrıntılı haritalara erişmesine, rotalarda gezinmesine ve verilerini cihazlar arasında senkronize tutmasına olanak tanır.
 

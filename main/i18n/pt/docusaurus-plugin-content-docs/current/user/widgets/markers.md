@@ -1,7 +1,7 @@
 ---
-source-hash: 9e178d46c34474107d426605f944341538b486f2bc4997dab4e5643b50cb3990
+source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
 sidebar_position: 6
-title:  Widgets de Marcadores
+title: Marcadores de Widgets
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Visão Geral {#overview}
+## Visão geral {#overview}
 
 Marcadores são pontos temporários indicados no mapa na forma de bandeiras. Os widgets mostram a *Direção*, *Distância*, *Endereço* e *Tempo estimado de chegada* ao marcador. Eles permitem que você encontre rapidamente marcadores no mapa, bem como altere sua posição. Você pode ler mais sobre marcadores neste [artigo](../personal/markers).
 
@@ -22,12 +22,12 @@ Marcadores são pontos temporários indicados no mapa na forma de bandeiras. Os 
 
 O widget **Barra de marcadores do mapa** (Android) / **Indicação de distância - Barra superior** (iOS) exibe:
 
-- Distância da sua localização atual (ou do ponto central do mapa / o ponto inicial de toque do mapa quando a Localização está desativada) até o ponto selecionado indicado pelo Marcador no mapa ([Unidades de comprimento](../personal/profiles/#general-settings) podem ser escolhidas nas configurações do Perfil).
-- Uma seta da mesma cor do marcador indica a direção da localização atual (ou do ponto central do mapa / o ponto inicial de toque do mapa quando a Localização está desativada) e a orientação no espaço do seu dispositivo (direção) em relação ao marcador.
-- Endereço da Localização.
-- Ícone de menu que leva à [Lista de marcadores do mapa](../personal/markers/#map-markers-menu).
+- Distância da sua localização atual (ou do ponto central do mapa / do ponto inicial de toque do mapa quando a Localização está desativada) até o ponto selecionado indicado pelo Marcador no mapa ([Unidades de comprimento](../personal/profiles/#general-settings) podem ser escolhidas nas configurações do Perfil).
+- Uma seta da mesma cor do marcador indica a direção da localização atual (ou do ponto central do mapa / do ponto inicial de toque do mapa quando a Localização está desativada) e a orientação no espaço do seu dispositivo (rumo) em direção ao marcador.
+- Endereço da localização.
+- Ícone de menu que leva à [lista de marcadores do mapa](../navigation/setup/markers-navigation.md#itinerary-list).
 
-Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as configurações do widget neste [artigo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as configurações do widget neste [artigo](https://osmand.net/docs/user/personal/markers#appearance-on-the-map).
 :::info
 *A distância até o marcador* é o comprimento da linha reta entre sua posição (ou o ponto central do mapa / o ponto inicial de toque do mapa quando a Localização está desativada) e o marcador.
 :::
@@ -67,9 +67,9 @@ Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as co
 </Tabs>
 
 
-## Widgets de Painel {#panel-widgets}
+## Widgets do Painel {#panel-widgets}
 
-Os widgets **Marcadores do mapa** *(para Android)* e **Indicação de distância - Widgets** *(para iOS)* exibem:
+O widget **Marcadores do mapa** *(para Android)* e **Indicação de distância - Widgets** *(para iOS)* exibe:
 
 - *Distância da sua localização atual* até o ponto selecionado indicado pelo Marcador no mapa ([Unidades de comprimento](../personal/profiles/#general-settings) podem ser escolhidas nas configurações do Perfil).
 - *Tempo estimado de chegada ou ETA*.
@@ -86,7 +86,7 @@ Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as co
 
 <TabItem value="android" label="Android">
 
-![Widgets de painel](@site/static/img/widgets/map_markers_widget-02.png)
+![Widgets do painel](@site/static/img/widgets/map_markers_widget-02.png)
 
 | | |
 |------------|------------|
@@ -101,7 +101,7 @@ Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as co
 
 <TabItem value="ios" label="iOS">
 
-![Widgets de painel](@site/static/img/widgets/map_markers_widget_ios-02.png)
+![Widgets do painel](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
 | | |
 |------------|------------|
@@ -115,16 +115,16 @@ Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as co
 </Tabs>
 
 
-## Configurar Widgets de Marcadores {#configure-marker-widgets}
+## Configurar Widgets de Marcador {#configure-marker-widgets}
 
-Você pode ler informações gerais sobre as configurações do widget de marcadores do mapa nesta [página](../personal/markers#map-markers-widgets).
+Você pode ler informações gerais sobre as configurações do widget Marcadores do mapa nesta [página](../personal/markers#appearance-on-the-map).
 
-**Barra de marcadores do mapa**
+### Barra de marcadores do mapa {#map-markers-bar}
 O widget da barra superior exibe a distância e a direção para o próximo marcador do mapa a partir da sua localização atual. Nas configurações, você pode escolher se um ou dois marcadores serão exibidos na parte superior da tela.
 
 ![aparência_no_mapa](@site/static/img/widgets/configure-marker-wid-02.png)
 
-**Marcadores do mapa**
+### Marcadores do mapa {#map-markers}
 O widget mostra a distância ou o tempo estimado de chegada (ETA) para o primeiro ou segundo marcador na lista de marcadores do mapa. Você pode escolher: um marcador, o primeiro ou o segundo, para ser exibido na tela ou ambos.
 
 ![aparência_no_mapa](@site/static/img/widgets/configure-marker-wid-01.png) ![aparência_no_mapa](@site/static/img/widgets/settings-marker-wid-first-01.png)
@@ -133,12 +133,12 @@ O widget mostra a distância ou o tempo estimado de chegada (ETA) para o primeir
 | :------------- | :------------- |
 | Mostra | Este modo permite escolher qual informação o widget exibirá: *Distância* ou *Tempo estimado de chegada*. |
 | Intervalo | Se *Tempo estimado de chegada* for selecionado em 'Mostrar', esta opção aparece com uma escolha de tempos (de 15 segundos a 60 minutos) para o cálculo do ETA. |
-| Clicar no widget | Esta configuração permite escolher qual ação será realizada ao clicar no widget: *Alternar modo* ou *Ir para a localização do marcador*. |
+| Clicar no widget | Esta configuração permite escolher qual ação será executada ao clicar no widget: *Alternar modo* ou *Ir para a localização do marcador*. |
 
 
 ## Aparência no Mapa {#appearance-on-the-map}
 
-A configuração da aparência dos marcadores do mapa está disponível nas versões Android e iOS do OsmAnd. O menu "Aparência no Mapa" é uma configuração geral para Marcadores do Mapa e se aplica independentemente de os widgets estarem ativados ou não. Você pode ler as informações detalhadas nesta [página](../personal/markers.md#appearance-on-the-map).
+A configuração da aparência dos marcadores do mapa está disponível nas versões Android e iOS do OsmAnd. O menu "Aparência no Mapa" é uma configuração geral para os marcadores do mapa e se aplica independentemente de os widgets estarem ativados ou não. Você pode ler as informações detalhadas nesta [página](../personal/markers.md#appearance-on-the-map).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -152,7 +152,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_markers_item,sh
 | :------------- | :------------- |
 | <Translate android="true" ids="active_markers"/> | Mostra informações sobre o primeiro ou os dois primeiros marcadores na lista de marcadores do mapa. |
 | <Translate android="true" ids="show_arrows_on_the_map"/> | Indica a direção para o marcador rastreado (um ou dois) como uma seta no mapa. Se o marcador estiver na parte visível do mapa, nenhuma seta é exibida. |
-| <Translate android="true" ids="show_guide_line"/> | Mostra a direção, como uma linha tracejada, de um ponto específico no mapa até o marcador rastreado em linha reta. |
+| <Translate android="true" ids="show_guide_line"/> | Mostra a direção, como uma linha tracejada, de um ponto específico no mapa para o marcador rastreado em linha reta. |
 | <Translate android="true" ids="one_tap_active"/> | Com um toque no marcador desejado no mapa, este marcador se move para o topo da lista de marcadores ativos do mapa sem abrir o menu de contexto. |
 | <Translate android="true" ids="keep_passed_markers"/> | Marcadores adicionados como um grupo de Favoritos ou pontos de passagem GPX marcados como Passados permanecerão no mapa. Se o grupo não estiver ativo, os marcadores desaparecerão do mapa. |
 
@@ -169,7 +169,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_stri
 | <Translate android="true" ids="active_markers"/> | Mostra informações sobre o primeiro ou os dois primeiros marcadores na lista de marcadores do mapa. |
 | <Translate android="true" ids="show_direction"/> | Permite escolher se os widgets serão exibidos e como aparecerão: acima do mapa (<Translate android="true" ids="shared_string_topbar"/>) ou no lado direito da tela (<Translate android="true" ids="shared_string_widgets"/>). |
 | Setas no mapa | Indica a direção para o marcador rastreado (um ou dois) como uma seta no mapa. Se o marcador estiver na parte visível do mapa, nenhuma seta é exibida. |
-| Linha de direção | Mostra a direção, como uma linha tracejada, de um ponto específico no mapa até o marcador rastreado em linha reta. |
+| Linha de direção | Mostra a direção, como uma linha tracejada, de um ponto específico no mapa para o marcador rastreado em linha reta. |
 
 </TabItem>
 
@@ -179,11 +179,8 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_stri
 ## Artigos Relacionados {#related-articles}
 
 - [Configurar Tela](./configure-screen.md)
-- [Botões do Mapa](./map-buttons.md)
-- [Widgets Informativos](./info-widgets.md)
-- [Widgets de Navegação](./nav-widgets.md)
-- [Régua de Raio e Régua](./radius-ruler.md)
+- [Botões do mapa](./map-buttons.md)
+- [Widgets informativos](./info-widgets.md)
+- [Widgets de navegação](./nav-widgets.md)
+- [Régua de raio e Régua](./radius-ruler.md)
 - [Ação Rápida](./quick-action.md)
-
-
-> *Última atualização: Outubro de 2023*

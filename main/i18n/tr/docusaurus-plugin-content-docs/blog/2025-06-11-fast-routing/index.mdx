@@ -130,7 +130,7 @@ Speed is fantastic, but not if it means sacrificing the features OsmAnd users re
     * Avoiding specific road types or toll roads.
     * Adding penalties or preferences for certain roads.
     * Following all the nuanced rules in your custom [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) profiles.
-* **Handling Live Updates & Dynamic Changes:** What if a bridge is closed due to a [live map update](https://osmand.net/docs/user/personal/maps-resources#osmand-live) you just downloaded?
+* **Handling Live Updates & Dynamic Changes:** What if a bridge is closed due to a [live map update](https://osmand.net/docs/user/personal/maps-resources#live-updates) you just downloaded?
     * If the A* calculation for a shortcut (in Step 3) finds it's now impassable, or if its actual detailed cost is significantly different (e.g., >20%) from the pre-calculated shortcut value:
         * **Option 1:** The system can update the cost of that specific shortcut in the base graph and quickly re-run the Dijkstra search (Step 2) on the abstract graph to find an alternative high-level path.
         * **Option 2:** For very localized changes, it might even re-evaluate all shortcuts within that one affected cluster.
@@ -149,7 +149,7 @@ This complex engineering translates into tangible benefits:
 * **Tiny Footprint:** Our HH-Routing data adds only **0.5% to 1%** to OsmAnd's already incredibly compact map sizes. The entire planet's car routing data is around 800MB!
 * **Full Customization Power:** All the beloved flexibility of [`routing.xml`](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) and detailed routing parameters is retained.
 * **Works with Regional Maps:** Download only the countries you need. HH-Routing seamlessly calculates routes across the borders of your downloaded map files (as long as they are compatible, see limitations). Clusters that overlap a region's boundary are included within that region's data.
-* **Supports Frequent Updates:** The architecture is designed to work with [OsmAnd’s hourly map updates](https://osmand.net/docs/user/personal/maps-resources#osmand-live), allowing routing to adapt to fresh road information.
+* **Supports Frequent Updates:** The architecture is designed to work with [OsmAnd’s hourly map updates](https://osmand.net/docs/user/personal/maps-resources#live-updates), allowing routing to adapt to fresh road information.
 * **Future-Proof:** This structure makes it much easier to implement features like alternative route suggestions based on these key border points.
 
 

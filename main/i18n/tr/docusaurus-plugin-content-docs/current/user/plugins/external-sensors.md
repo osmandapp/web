@@ -1,5 +1,5 @@
 ---
-source-hash: 82311f61fc7e617e22d754968f02e6ec8009c51ecb4943a18c23ef0a9d897cfd
+source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
 sidebar_position: 5
 title: Harici Sensörler
 ---
@@ -24,9 +24,9 @@ Harici Sensörler eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir]
 
 **Harici Sensörler eklentisi**, [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) ve [BLE (Bluetooth Düşük Enerji)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) teknolojileriyle çalışan [kablosuz harici sensörlerden](https://en.wikipedia.org/wiki/Wireless_sensor_network) veri okumanıza ve kaydetmenize ve bu verileri OsmAnd uygulamasındaki [widget'ları](#widgets) kullanarak görüntülemenize olanak tanır. Bu yönetilen ağ, sensör verilerini toplayabilir, iletebilir ve depolayabilir.
 
-> *NOT: iPhone'lar ve iPad'ler donanım sınırlamaları nedeniyle ANT+ desteği sunmaz.*
+> *NOT: iPhone ve iPad'ler donanım sınırlamaları nedeniyle ANT+ desteği sunmaz.*
 
-**Harici Sensörler eklentisi** harici sensörlere erişir ve aşağıdaki gibi verileri okuyabilir:
+**Harici Sensörler eklentisi** harici sensörlere erişir ve aşağıdaki verileri okuyabilir:
 
 - *Kalp Atış Hızı*
 - *Bisiklet Gücü*
@@ -46,7 +46,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 2. Eklentiyi *Menü → Eklentiler*'de [etkinleştirin](../plugins/#enable--disable).
 3. **BLE sensörleriyle** bağlantıya izin vermek için cihazınızda **Bluetooth'u açın**.
 4. Eklenti menüsü aracılığıyla harici sensörleri [eşleştirin ve yapılandırın](#pair-new-sensor).
-5. (İsteğe bağlı) Kalp atış hızı, kadans veya pil seviyesi gibi gerçek zamanlı verileri görüntülemek için harita ekranınıza **Harici Sensörler widget'ları** [ekleyin](#widgets).
+5. (İsteğe bağlı) Kalp atış hızı, kadans veya pil seviyesi gibi gerçek zamanlı verileri görüntülemek için harita ekranınıza [Harici Sensörler widget'ları](#widgets) ekleyin.
 6. (İsteğe bağlı) Sensör verilerini GPX izlerine kaydetmek için [Yolculuk kaydı eklentisini](../plugins/trip-recording.md) kullanın.
 7. (İsteğe bağlı, yalnızca Android) Cihazınız destekliyorsa ANT+ sensörlerini bağlamak için [bu ipuçlarını](https://www.thisisant.com/consumer/ant-101/ant-in-phones) izleyin.
 
@@ -75,7 +75,7 @@ Harici sensörlerden veri kullanmaya başlamak için şu adımları izleyin:
 
 Yeni bir sensör eşleştirmek için şu adımları izleyin:
 
-1. Cihazınızda **Bluetooth'un etkin olduğundan** emin olun.
+1. Cihazınızda **Bluetooth'un etkinleştirildiğinden** emin olun.
 2. *Menü → Eklentiler → Harici Sensörler → Ayarlar*'a gidin.
 3. **Yeni sensör eşleştir**'e dokunun.
 4. OsmAnd, mevcut **Bluetooth LE** veya **ANT+** sensörlerini (platformunuza bağlı olarak) tarayacaktır.
@@ -118,16 +118,16 @@ Sensör ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 </Tabs>
 
-OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçeneklere sahip kendi yapılandırma ekranı vardır:
+OsmAnd'de listelenen her eşleştirilmiş harici sensörün aşağıdaki seçeneklere sahip kendi yapılandırma ekranı vardır:
 
 - **Bağlan / Bağlantıyı Kes** – bağlantı durumunu değiştirir.
 - **Yeniden Adlandır** – sensöre özel bir ad atar.
-- **Sensörü unut** – sensörü listeden kaldırır (daha sonra tekrar eşleştirilebilir).
+- **Sensörü Unut** – sensörü listeden kaldırır (daha sonra tekrar eşleştirilebilir).
 - **Ayarlar** – sensör ayrıntıları ekranını açar (sensör tipi, değerler, pil seviyesi, tekerlek çevresi ayarı).
 
 ***Notlar:***
 
-- **iOS**'ta, bağlı BLE sensörlerinin **pil seviyesini** doğrudan bir harita [widget'ında](#widgets) görüntüleyebilirsiniz. Bunu etkinleştirmek için şu adrese gidin: *Menü → Ekranı yapılandır → Panel seç → Widget ekle → Harici sensör → Ayarlar → Göster → Pil seviyesi*
+- **iOS**'ta, bağlı BLE sensörlerinin **pil seviyesini** doğrudan bir harita [widget'ında](#widgets) görüntüleyebilirsiniz. Bunu etkinleştirmek için şuraya gidin: *Menü → Ekranı Yapılandır → Panel seç → Widget ekle → Harici sensör → Ayarlar → Göster → Pil seviyesi*
 - Eşleştirilmiş bir sensörün pil **seviyesi %15'in altına düştüğünde** bir açılır bildirim görünür.
 
 
@@ -153,21 +153,21 @@ OsmAnd'da listelenen her eşleştirilmiş harici sensörün aşağıdaki seçene
 
 </Tabs>
 
-Yolculuğunuz sırasında sensör verilerini [Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak kaydetmek için:
+Yolculuğunuz sırasında [Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak sensör verilerini kaydetmek için:
 
 1. **Harici Sensörler eklentisinin** etkinleştirildiğinden emin olun.
 2. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*'a gidin.
-3. Kaydetmek istediğiniz sensör türlerini seçin (örn. kadans, kalp atış hızı, hız).
-4. Yolculuğunuzu kaydetmeye başlayın. OsmAnd seçilen sensör verilerini GPX izine kaydedecektir.
+3. Kaydetmek istediğiniz sensör tiplerini seçin (örn. kadans, kalp atış hızı, hız).
+4. Yolculuğunuzu kaydetmeye başlayın. OsmAnd, seçilen sensör verilerini GPX izine kaydedecektir.
 
 ***Notlar:***
 
-- Mevcut sensör türlerinin listesi, hiçbir sensör bağlı olmasa bile gösterilir.
-- Henüz hiçbir sensör eşleştirilmediyse, eklenti ayarlarındaki [Yeni sensör eşleştir](#pair-new-sensor) düğmesini kullanın.
+- Mevcut sensör tiplerinin listesi, hiçbir sensör bağlı olmasa bile gösterilir.
+- Henüz hiçbir sensör eşleştirilmediyse, eklenti ayarlarındaki [Yeni sensör eşleştir](#pair-new-new-sensor) düğmesini kullanın.
 - Pil seviyesi verileri GPX dosyalarına kaydedilmez ve harita üzerinde analiz için kullanılamaz.
 
 :::note Biçim uyumluluğu
-OsmAnd, sensör verilerini GPX dosyalarına yerleştirmek için [iz kaydını](../plugins/trip-recording.md#recorded-gpx-file) kullanır. Bu biçim, birçok spor ve antrenman uygulamasıyla (örn. Strava, Runkeeper) uyumludur.
+OsmAnd, sensör verilerini GPX dosyalarına gömmek için [iz kaydını](../plugins/trip-recording.md#recorded-gpx-file) kullanır. Bu biçim birçok spor ve antrenman uygulamasıyla (örn. Strava, Runkeeper) uyumludur.
 :::
 
 
@@ -189,12 +189,12 @@ OsmAnd, sensör verilerini GPX dosyalarına yerleştirmek için [iz kaydını](.
 
 </Tabs>
 
-[Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak yolculuğunuzu kaydettikten sonra, iz analiz arayüzünde sensör verilerini inceleyebilirsiniz.
+[Yolculuk kaydı eklentisini](../plugins/trip-recording.md#recording-settings) kullanarak yolculuğunuzu kaydettikten sonra, sensör verilerini iz analizi arayüzünde inceleyebilirsiniz.
 
 Verileri analiz etmek için:
 
 1. Yolculuk kaydınızı bitirin.
-2. *Yerlerim → İzler*'den kaydedilen izi açın veya haritadaki ize dokunun.
+2. *Yerlerim → İzler*'den kaydedilen izi açın veya harita üzerindeki ize dokunun.
 3. İz bağlam menüsünden *Seçenekler → Haritada analiz et*'i seçin.
 
 Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*, *Hız*, *Kadans*, *Bisiklet gücü* ve *Sıcaklık*
@@ -224,22 +224,22 @@ Bu, kaydedilen verileriniz için grafikler gösterecektir: *Kalp atış hızı*,
 
 </Tabs>
 
-[Harici Sensörler widget'ı](../widgets/info-widgets.md#external-sensors-widgets), bağlı sensörlerinizden canlı verileri doğrudan harita ekranında görüntülemenizi sağlar.
+[Harici Sensörler widget'ı](../widgets/info-widgets.md#external-sensors-widgets), bağlı sensörlerinizden gelen canlı verileri doğrudan harita ekranında görüntülemenizi sağlar.
 
 Yolculuğunuza başlamadan önce:
 
 - Harici Sensörler eklentisinin etkinleştirildiğinden emin olun.
-- *Ekranı yapılandır*'ı açın ve gerekli widget'ları uygun panele ekleyin.
+- *Ekranı Yapılandır*'ı açın ve gerekli widget'ları uygun panele ekleyin.
 
 Desteklenen widget türleri:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – eşleştirilmiş bir monitörden gerçek zamanlı kalp atış hızını görüntüler.
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Yalnızca Android*) – watt cinsinden mevcut pedal çevirme gücünü gösterir.
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (yalnızca Android) – mevcut pedal çevirme gücünü watt cinsinden gösterir.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – dakikadaki pedal devir sayısını gösterir.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – mevcut bisiklet hızı.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – sensör tarafından ölçülen toplam mesafe.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – mevcut ortam sıcaklığı.
-7. **Pil Seviyesi** (*Yalnızca iOS*) – bağlı bir BLE sensöründe kalan pil yüzdesi.
+7. **Pil Seviyesi** – bağlı bir BLE sensöründe kalan pil yüzdesi, **Sensör ayarları**'nda değiştirin.
 
 
 ### Widget Ayarları {#widget-settings}
@@ -264,7 +264,7 @@ Desteklenen widget türleri:
 
 </Tabs>
 
-Varsayılan olarak, widget bu türdeki ilk bağlı sensörü gösterir. Belirli bir sensörü kullanmak isterseniz, **Veri kaynağı**'na dokunun ve bağlı sensörler listesinden seçim yapın.
+Varsayılan olarak, widget bu türdeki ilk bağlı sensörü gösterir. Belirli bir sensörü kullanmak istiyorsanız, **Veri kaynağı**'na dokunun ve bağlı sensörler listesinden seçim yapın.
 
 **iOS**'ta, widget'ta hangi değeri görüntüleyeceğinizi seçebilirsiniz:
 
@@ -277,7 +277,5 @@ Varsayılan olarak, widget bu türdeki ilk bağlı sensörü gösterir. Belirli 
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Küresel Ayarlar](../../user/personal/global-settings.md)
+- [Genel Ayarlar](../../user/personal/global-settings.md)
 - [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
-
-> *Son güncelleme: Mayıs 2025*

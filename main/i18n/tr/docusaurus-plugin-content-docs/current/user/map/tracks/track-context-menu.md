@@ -1,7 +1,7 @@
 ---
-source-hash: 3010d587c123ef963a233b0b6205168ae7e8d4f377766e5140cb45e5c54f1d00
+source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
 sidebar_position: 4
-title:  İz Bağlam Menüsü
+title:  Rota Bağlam Menüsü
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,28 +19,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-*İz bağlam menüsü*, *[İz](../../personal/tracks/index.md)* hakkında hem metin hem de [grafik](#altitude--speed-graphs) biçiminde bilgi sağlar. Bilgi eklemenize, değişiklik yapmanıza, düzenlemenize ve izle ilgili çeşitli başka eylemler gerçekleştirmenize olanak tanır. *İz bağlam menüsüne* haritadaki gerekli ize dokunarak veya *[Yerlerim](../../personal/myplaces.md)* menüsünü (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) kullanarak erişebilirsiniz. İz klasörünü açmanız ve istediğiniz ize dokunarak seçmeniz gerekebilir.
+*Rota bağlam menüsü*, *[Rota](../../personal/tracks/index.md)* hakkında hem metin hem de [grafik](#altitude--speed-graphs) biçiminde bilgi sağlar. Rota ile ilgili bilgi eklemenize, değişiklik yapmanıza, düzenlemenize ve çeşitli başka eylemler gerçekleştirmenize olanak tanır. *Rota bağlam menüsüne* harita üzerinde gerekli rotaya dokunarak veya *[Yerlerim](../../personal/myplaces.md)* menüsünü (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) kullanarak erişebilirsiniz. Rota klasörünü açmanız ve istediğiniz rotayı üzerine dokunarak seçmeniz gerekebilir.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz bağlam menüsü genel bakış Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
+![Overview track context menu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz bağlam menüsü genel bakış iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
+![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## İz Genel Bakışı {#track-overview}
+## Rota Genel Bakışı {#track-overview}
 
-Bir ize dokunduğunuzda, *İz bağlam menüsünün* ilk ekranı - *Genel Bakış sekmesi* açılır. Bu sekmede, seçilen iz hakkında bir özet (*[Bilgi paneli](#info-panel)*) bulabilir ve *[İz eylemleri menüsünü](#track-actions)* kullanarak izle ilgili en yaygın eylemleri gerçekleştirebilirsiniz. Genel Bakış sekmesini yukarı çekerseniz iziniz hakkında [açıklama ve hizmet bilgilerini](#description-and-info) görebilirsiniz.
+Bir rotaya dokunduğunuzda, *Rota bağlam menüsünün* ilk ekranı olan *Genel Bakış sekmesi* açılır. Bu sekmede, seçilen rota hakkında bir özet (*[Bilgi paneli](#info-panel)*) bulabilir ve *[Rota eylemleri menüsünü](#track-actions)* kullanarak rotayla ilgili en yaygın eylemleri gerçekleştirebilirsiniz. Genel Bakış sekmesini yukarı çekerseniz rotanız hakkında [açıklama ve hizmet bilgilerini](#description-and-info) görebilirsiniz.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
@@ -52,53 +52,53 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Bilgi paneli genel bakış Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
+![Info panel overview Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bilgi paneli genel bakış iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
+![Info panel overview iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Bilgi panelinin üst kısmında, izin adını ve onu işaretlemek için kullanılan sembolü (*yalnızca Android*) görebilirsiniz. İz adı, [Seçenekler menüsündeki](#options) yeniden adlandırma işlevi kullanılarak değiştirilebilir. Bazı izler (çoğunlukla *[Seyahat rehberleri](../../plan-route/travel-guides.md#manage-as-gpx-track)*) *İz adının* altında kısa bir *[açıklama](#description-and-info)* ve (veya) bir resme sahip olabilir. Bir ok, [Konumumdan](../../map/interact-with-map#my-location-and-zoom) *izin en yakın noktasına olan yönü* gösterir.
+Bilgi panelinin üst kısmında, rotanın adını ve onu işaretlemek için kullanılan sembolü (*yalnızca Android*) görebilirsiniz. Rota adı, [Seçenekler menüsündeki](#options) yeniden adlandırma işlevi kullanılarak değiştirilebilir. Bazı rotalar (çoğunlukla *[Seyahat rehberleri](../../plan-route/travel-guides.md#manage-as-gpx-track)*), *Rota adı* altında kısa bir *[açıklamaya](#description-and-info)* ve (veya) bir resme sahip olabilir. Bir ok, [Konumumdan](../../map/interact-with-map.md#my-location-and-zoom) *rotanın en yakın noktasına olan yönü* gösterir.
 
 Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
-- *<Translate android="true" ids="distance"/>*. İz uzunluğunu gösterir.
-- *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Yolculuk sırasındaki toplam tırmanış ve inişlerin toplamını gösterir.
-- *<Translate android="true" ids="altitude_range"/>*. Bir iz üzerindeki minimum ve maksimum yüksekliği gösterir.
+- *<Translate android="true" ids="distance"/>*. Rota uzunluğunu gösterir.
+- *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Yolculuk sırasındaki toplam tırmanış ve iniş toplamını gösterir.
+- *<Translate android="true" ids="altitude_range"/>*. Bir rotadaki minimum ve maksimum yüksekliği gösterir.
 
 :::note
-İziniz OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani noktalarında [`time` ve `speed`](../../plugins/trip-recording#recorded-gpx-file) etiketleri varsa), bilgi paneli ayrıca *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) veya *<Translate ios="true" ids="total_time"/>* (*iOS*) (izin başlangıç ve bitiş noktaları arasındaki süre) ve *<Translate android="true" ids="shared_string_time_moving"/>* (sürüş sırasındaki toplam süre) hakkında bilgi içerecektir.
+Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani noktalarında [`zaman` ve `hız`](../../plugins/trip-recording#recorded-gpx-file) etiketleri varsa), bilgi paneli ayrıca *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) veya *<Translate ios="true" ids="total_time"/>* (*iOS*) (rotanın başlangıç ve bitiş noktaları arasındaki süre) ve *<Translate android="true" ids="shared_string_time_moving"/>* (sürüş sırasındaki toplam süre) hakkında bilgi içerecektir.
 :::
 
-### İz Eylemleri {#track-actions}
+### Rota Eylemleri {#track-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz bağlam menüsü genel bakış Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz bağlam menüsü genel bakış iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Göster / gizle** düğmeleri. İzin haritadaki görünürlüğünü değiştirir.
-- [Görünüm](./appearance.md). İzinizin görünümünü özelleştirin.
-- **İzi düzenle** (*Android*). İzi [Rota planlama aracında](../../plan-route/create-route.md) açar.
-- **Dışa aktar** (*iOS*). [Bir izi dışa aktarmanıza](../../personal/tracks/manage-tracks.md#export) olanak tanır.
-- **Yol tarifleri**. İzi *[Navigasyon](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* modunda açar.
+- **Göster / gizle** düğmeleri. Rotanın harita üzerindeki görünürlüğünü değiştirir.
+- [Görünüm](./appearance.md). Rotanızın görünümünü özelleştirin.
+- **Rotayı düzenle** (*Android*). Rotayı [Rota planlama aracında](../../plan-route/create-route.md) açar.
+- **Dışa Aktar** (*iOS*). [Bir rotayı dışa aktarmanıza](../../personal/tracks/manage-tracks.md#export) olanak tanır.
+- **Yol tarifleri**. Rotayı *[Navigasyon](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* modunda açar.
 
 
 ### Seçenekler {#options}
@@ -107,51 +107,51 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 <TabItem value="android" label="Android">
 
-![İz menüsü seçenekleri Android](@site/static/img/personal/tracks/track_menu_options_android.png)
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz menüsü seçenekleri Android](@site/static/img/personal/tracks/track_menu_options_ios.png)
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Seçenekler** menüsü, seçilen izi çeşitli araçlar ve ayarlar ile yönetmenize ve değiştirmenize olanak tanır.
+**Seçenekler** menüsü, seçilen rotayı çeşitli araçlar ve ayarlar ile yönetmenize ve değiştirmenize olanak tanır.
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** – İzin haritadaki görünürlüğünü kontrol eder.
-- **<Translate android="true" ids="shared_string_appearance"/>** – İzin rengini, genişliğini ve şeffaflığını özelleştirmek için [Görünüm menüsünü](../tracks/appearance.md) açar.
-- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – Seçilen izle rotanızı hizalayarak [izle navigasyonu](../../navigation/setup/gpx-navigation.md) başlatır.
-
-<br/>
-
-- **<Translate android="true" ids="join_segments"/>** (*Yalnızca Android*) – Boşlukları doldurmak için iz segmentlerini birleştirir.
-- **<Translate android="true" ids="analyze_on_map"/>**. İzin yüksekliğini, hızını ve mesafesini incelemek için [Harita üzerinde analiz et](../tracks/index.md#analyze-track-on-map-analyze-track-on-map) aracını açar.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Yalnızca Android*) - İzi zaman veya mesafe [aralıklarına](./track-context-menu.md#split-interval) göre analiz eder.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** – Rotanın harita üzerindeki görünürlüğünü kontrol eder.
+- **<Translate android="true" ids="shared_string_appearance"/>** – Rotanın rengini, genişliğini ve şeffaflığını özelleştirmek için [Görünüm menüsünü](../tracks/appearance.md) açar.
+- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – [Rota ile navigasyonu](../../navigation/setup/gpx-navigation.md) başlatır, rotanızı seçilen rotayla hizalar.
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Seçilen izi GPX formatında dışa aktarır.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - Seçilen izi OpenStreetMap'e [yükler](../../plugins/osm-editing.md#upload-gps-track).
+- **<Translate android="true" ids="join_segments"/>** (*Yalnızca Android*) – Boşlukları doldurmak için rota segmentlerini birleştirir.
+- **<Translate android="true" ids="analyze_on_map"/>**. Rotanın yüksekliğini, hızını ve mesafesini incelemek için [Haritada analiz et](../tracks/index.md#analyze-track-on-map) aracını açar.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Yalnızca Android*) - Rotayı zaman veya mesafe [aralıklarına](./track-context-menu.md#split-interval) göre analiz eder.
 
 <br/>
 
-- **<Translate android="true" ids="edit_track"/>** - İzi değiştirmek için [Rota planla](../../plan-route/create-route.md) aracını açar.
-- **İzi çoğalt** (*Yalnızca iOS*) – İzin bir kopyasını oluşturur ve kaydeder.
-- **<Translate android="true" ids="rename_track"/>** – İz adını değiştirmeye olanak tanır.
-- **<Translate android="true" ids="change_folder"/>** – İzi başka bir klasöre taşır veya yeni bir klasör oluşturur.
+- **<Translate android="true" ids="shared_string_share"/>** – Seçilen rotayı GPX formatında dışa aktarır.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - Seçilen rotayı OpenStreetMap'e [yükler](../../plugins/osm-editing.md#upload-gps-track).
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Yalnızca Android*) - Doğruluğu iyileştirmek için [izin noktalarını filtrelemeye](#gps-filter) olanak tanır.
-- **<Translate android="true" ids="altitude_correction"/>** (*Yalnızca Android*) - [Yükseklik verilerini almak](#calculate-missing-elevation), [izinizi yollara bağlamak](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) veya çevrimdışı hesaplamak için (gerekli [Arazi haritaları](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*Yalnızca Android*) - Bir GPX izi kullanarak [konumunuzu simüle eder](../../plugins/development.md#gpx-track-simulation).
+- **<Translate android="true" ids="edit_track"/>** - Rotayı değiştirmek için [Rota planla](../../plan-route/create-route.md) aracını açar.
+- **Rotayı çoğalt** (*Yalnızca iOS*) – Rotanın bir kopyasını oluşturur ve kaydeder.
+- **<Translate android="true" ids="rename_track"/>** – Rota adını değiştirmeye olanak tanır.
+- **<Translate android="true" ids="change_folder"/>** – Rotayı başka bir klasöre taşır veya yeni bir klasör oluşturur.
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_delete"/>**. İzi siler.
+- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Yalnızca Android*) - Doğruluğu iyileştirmek için [rotanın noktalarını filtrelemeye](#gps-filter) olanak tanır.
+- **<Translate android="true" ids="altitude_correction"/>** (*Yalnızca Android*) - [Yükseklik verilerini almak](#calculate-missing-elevation), [rotanızı yollara bağlamak](../../navigation/setup/gpx-navigation.md#attach-to-the-roads) veya çevrimdışı hesaplamak için (gerekli [Arazi haritaları](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="simulate_your_location"/>** (*Yalnızca Android*) - Bir GPX rotası kullanarak [konumunuzu simüle eder](../../plugins/development.md#gpx-track-simulation).
+
+<br/>
+
+- **<Translate android="true" ids="shared_string_delete"/>**. Rotayı siler.
 
 
 ### Açıklama ve Bilgi {#description-and-info}
@@ -160,21 +160,21 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
 <TabItem value="android" label="Android">
 
-![Açıklama ve Bilgi Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png) ![Açıklama ve Bilgi Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
+![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz açıklaması iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
 
 </TabItem>
 
 </Tabs>
 
-*Genel Bakış* sekmesinin bu bölümü ***etiket verilerini*** ve ***tüm genel bilgileri*** gösterir.
+*Genel Bakış* sekmesinin bu bölümü ***etiket verilerini*** ve ***tüm genel bilgileri*** görüntüler.
 
-- **Açıklama**. İz açıklamasını düzenlemek için *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) düğmesi kullanılır. Etiket `desc`.
+- **Açıklama**. Rota açıklamasını düzenlemek için *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) düğmesi kullanılır. `desc` etiketi.
 
 - **Genel**. *GPX dosya boyutu*, *dosya klasörü* ve `time` etiketiyle *oluşturma tarihi* hakkında bilgi içerir.
 
@@ -185,6 +185,7 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 - **Telif Hakkı**. Etiketler: *Telif Hakkı* - `copyright`, &nbsp;*Yazar* - `author`, &nbsp;*Yıl* - `year`, &nbsp;*Lisans* - `license`.
 
 - **Ek**. ***Uzantılar*** bölümündeki tüm etiketler:&nbsp; `address`,&nbsp; `icon`,&nbsp; `background`,&nbsp; `color`,&nbsp; `country`,&nbsp; `state`,&nbsp; `telephone`,&nbsp; `postcode`,&nbsp; `start_date`,&nbsp; `desc`.
+
 
 <details>
 
@@ -225,42 +226,42 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 </details>
 
 
-### İz Bilgisi Etkinliği {#track-information-activity}
+### Rota Etkinlik Türü {#ttrack-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz Bilgisi Etkinliği](@site/static/img/personal/tracks/track_info_activity_andr.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz Bilgisi Etkinliği](@site/static/img/personal/tracks/track_info_activity_ios.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-OsmAnd'daki *Etkinlik* özelliği, kaydedilen GPX izlerini daha fazla analiz ve klasörlerde düzenleme için belirli etkinliklerle etiketlemenize olanak tanır.
+OsmAnd'daki *Etkinlik* özelliği, daha fazla analiz ve klasörlerde düzenleme için kaydedilen GPX rotalarını belirli etkinliklerle etiketlemenize olanak tanır.
 
-- GPX izleri için [Etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Bir GPX izi kaydederken, bir etkinlik türü atayabilirsiniz. Bu etkinlik etiketlemesi, izleri başlangıçta kategorize etmenize yardımcı olur.
-- [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX izlerini etkinliğe göre filtreleyebilirsiniz, bu da tüm bisiklet veya yürüyüş izleri gibi belirli kayıt türlerini bulmaya odaklanmanıza olanak tanır.
-- [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün İzler sekmesindeki seçim modunu kullanarak seçilen klasörler veya izler için etkinlik türünü değiştirebilirsiniz.
+- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Bir GPX rotası kaydederken, bir etkinlik türü atayabilirsiniz. Bu etkinlik etiketleme, rotaları başlangıçta kategorize etmenize yardımcı olur.
+- [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanızı sağlar.
+- [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar sekmesindeki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
 - **Etkinlik listesi**. Etkinlik kategorileri ve grupları OsmAnd'ın kaynaklarında tanımlanmıştır. Geliştiriciler ve katkıda bulunanlar için etkinlik listesi, mevcut etkinlik gruplarını ve türlerini detaylandıran [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) adresinde yapılandırılmış bir formatta tutulur.
 
 
-## Rakım / Hız Grafikleri {#altitude--speed-graphs}
+## Yükseklik / Hız Grafikleri {#altitude--speed-graphs}
 
-*<Translate android="true" ids="shared_string_gpx_track"/>* sekmesinde, iz hakkında grafik biçiminde bilgi bulabilirsiniz. Anahtarı kullanarak, grafikte hangi verilerin görüntüleneceğini seçebilirsiniz: *[<Translate android="true" ids="altitude"/>](#altitude)* hakkında ayrı veriler, *[Hız](#speed)* hakkında (bu seçenek yalnızca kaydedilen izler için kullanılabilir) veya hepsini birlikte görüntüle (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
+*<Translate android="true" ids="shared_string_gpx_track"/>* sekmesinde, rota hakkında grafik biçiminde bilgi bulabilirsiniz. Anahtarı kullanarak grafikte hangi verilerin görüntüleneceğini seçebilirsiniz: *[<Translate android="true" ids="altitude"/>](#altitude)* hakkındaki ayrı veriler, *[Hız](#speed)* hakkındaki veriler (bu seçenek yalnızca kaydedilmiş rotalar için kullanılabilir) veya hepsini birlikte görüntüleme (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
 
 Grafikle etkileşim:
 
-- ***Grafiğe bir nokta yerleştirin***. Bir izin belirli bir noktasındaki bilgileri görmek isterseniz, grafiğin herhangi bir yerine dokunabilirsiniz ve değerleri olan bir işaretçi görünecektir. Aynı zamanda, haritada, izin o konumunu gösteren mavi bir işaretçi görünecektir.
-- ***Yakınlaştır/Uzaklaştır***. Daha ayrıntılı bir görünüm için yakınlaştırmak ve uzaklaştırmak için [iki parmak hareketlerini](../../map/interact-with-map.md#gestures) kullanabilirsiniz. Yakınlaştırdıktan sonra, grafiği sağa ve sola hareket ettirebilirsiniz, bu da rota boyunca ileri ve geri hareket etmeye karşılık gelir.
-- ***Ek bilgi***. Grafiğin sağ tarafında en düşük, en yüksek ve ortalama rakım, eğim ve hız hakkında veriler bulunur. Grafiğin altında mesafe işaretlerini görebilirsiniz.
+- ***Grafiğe bir nokta yerleştirin***. Bir rotanın belirli bir noktasındaki bilgileri görmek isterseniz, grafiğin herhangi bir yerine dokunabilirsiniz ve değerlerle birlikte bir işaretçi görünecektir. Aynı zamanda, harita üzerinde o rotadaki konumu gösteren mavi bir işaretçi belirecektir.
+- ***Yakınlaştır / Uzaklaştır***. Daha ayrıntılı bir görünüm için yakınlaştırmak ve uzaklaştırmak için [iki parmak hareketlerini](../../map/interact-with-map.md#gestures) kullanabilirsiniz. Yakınlaştırdıktan sonra, rotada ileri ve geri hareket etmeye karşılık gelen grafiği sağa ve sola hareket ettirebilirsiniz.
+- ***Ek bilgi***. Grafiğin sağ tarafında en düşük, en yüksek ve ortalama yükseklik, eğim ve hız hakkında veriler bulunur. Grafiğin altında mesafe işaretlerini görebilirsiniz.
 
 
 ### Genel Bakış Bilgileri {#overview-information}
@@ -269,13 +270,13 @@ Grafikle etkileşim:
 
 <TabItem value="android" label="Android">
 
-![Bağlam iz menüsü Grafikler Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bağlam iz menüsü Grafikler iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
 
 </TabItem>
 
@@ -283,120 +284,120 @@ Grafikle etkileşim:
 
 **Genel Bakış** sekmesinde aşağıdaki parametreleri görebilirsiniz:
 
-- *<Translate android="true" ids="distance"/>*. İz üzerinde kat edilen toplam mesafenin toplamı veya izin kendi uzunluğu.
-- *<Translate android="true" ids="shared_string_time_span"/>*. İzin başlangıç ve bitiş noktaları arasındaki zaman aralığı.
-- *<Translate android="true" ids="shared_string_start_time"/>* İz kaydının başladığı tam zaman.
-- *<Translate android="true" ids="shared_string_end_time"/>*. İz kaydının bitiş zamanı.
+- *<Translate android="true" ids="distance"/>*. Rotada kat edilen toplam mesafenin toplamı veya rotanın kendi uzunluğu.
+- *<Translate android="true" ids="shared_string_time_span"/>*. Rotanın başlangıç ve bitiş noktaları arasındaki zaman aralığı.
+- *<Translate android="true" ids="shared_string_start_time"/>* Rotanın kaydının başladığı tam zaman.
+- *<Translate android="true" ids="shared_string_end_time"/>*. Rota kaydının bitiş zamanı.
 
-Etkin **düğmeler** aşağıdaki eylemlere erişim sağlar:
+Aktif **düğmeler** aşağıdaki eylemlere erişim sağlar:
 
-- **<Translate android="true" ids="analyze_on_map"/>** düğmesi, iz için [İzi analiz et menüsünü](../tracks/index.md#analyze-track-on-map) açar.
+- **<Translate android="true" ids="analyze_on_map"/>** düğmesi, rota için [Rotayı analiz et menüsünü](../tracks/index.md#analyze-track-on-map) açar.
 - **<Translate android="true" ids="shared_string_options"/>** düğmesi, aşağıdaki seçenekleri içeren bir menü açar:
 
-  - *Düzenle*, izi [Rota planlama aracında](../../plan-route/index.md) açar.
-  - *Sil*, seçilen iz öğesini silmenize olanak tanır.
-  - *Aralığı böl*, iz için [Aralığı böl işlevini](#split-interval) açar.
+  - *Düzenle* rotayı [Rota planlama aracında](../../plan-route/index.md) açar.
+  - *Sil* seçilen rota öğesini kaldırmanıza olanak tanır.
+  - *Aralığı böl* rota için [Aralığı böl işlevini](#split-interval) açar.
 
 
 ### Hız {#speed}
 
-:::note Yalnızca kaydedilen izler
-Bu sekme yalnızca kaydedilen izlerde görünür olabilir. Bu tür izlerdeki noktaların **[`speed`](../../plugins/trip-recording#recorded-gpx-file)** etiketleri bulunur.
+:::note Yalnızca kaydedilmiş rotalar
+Bu sekme yalnızca kaydedilmiş rotalarda görünür olabilir. Bu tür rotalardaki noktalar **[`hız`](../../plugins/trip-recording#recorded-gpx-file)** etiketlerine sahiptir.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz grafiği Hız Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
+![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz grafiği Hız iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
+![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Hız** grafiği aşağıdaki metrikleri gösterir:
+**Hız** grafiği aşağıdaki metrikleri görüntüler:
 
 - *<Translate android="true" ids="average_speed"/>*. Yolculuk sırasındaki ortalama hızı gösterir.
 - *<Translate android="true" ids="max_speed"/>*. Yolculuk sırasındaki maksimum hızı gösterir.
-- *<Translate android="true" ids="moving_time"/>*. Yolculuk sırasındaki yalnızca hareket halindeki toplam süreyi gösterir.
+- *<Translate android="true" ids="moving_time"/>*. Yolculuk sırasındaki toplam hareket süresini gösterir.
 - *<Translate android="true" ids="distance_moving"/>*. Yolculuğun ayarlanmış mesafesini gösterir.
 
 
-### Rakım {#altitude}
+### Yükseklik {#altitude}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz grafiği rakım Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz grafiği rakım iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
+![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Rakım** grafiği aşağıdaki metrikleri gösterir:
+**Yükseklik** grafiği aşağıdaki metrikleri görüntüler:
 
-- *<Translate android="true" ids="average_altitude"/>*. Rota üzerindeki deniz seviyesinden ortalama yüksekliği gösterir.
-- *<Translate android="true" ids="altitude_range"/>*. Rota üzerinde kaydedilen en yüksek ve en düşük rakım.
+- *<Translate android="true" ids="average_altitude"/>*. Rota üzerindeki ortalama deniz seviyesinden yüksekliği gösterir.
+- *<Translate android="true" ids="altitude_range"/>*. Rota üzerinde kaydedilen en yüksek ve en düşük yükseklik.
 - *<Translate android="true" ids="altitude_ascent"/>*. Rota boyunca deniz seviyesinden kümülatif yükseklik artışı.
 - *<Translate android="true" ids="altitude_descent"/>*. Rota boyunca kümülatif yükseklik kaybı.
 
 **Yükseklik verilerini al.**
 Rota üzerinde *yükseklik bilgisi yoksa*, aşağıdaki yollarla ekleyebilirsiniz:
 
-- *Yüksekliği hesapla düğmesi → [Yakındaki yolları kullan](../../plan-route/create-route.md#get-elevation-data)*. Yakındaki yolları ve yükseklik verilerini bulmak için çevrimdışı bir harita kullanır. İzin geometrisini özelleştirmenize olanak tanır.
-- [Arazi haritalarını kullan](#calculate-missing-elevation). Yükseklik verilerini elde etmek için arazi haritalarını kullanır. İz geometrisi değişmeden kalır.
+- *Yükseklik hesapla düğmesi → [Yakındaki yolları kullan](../../plan-route/create-route.md#get-elevation-data)*. Yakındaki yolları ve yükseklik verilerini bulmak için çevrimdışı bir harita kullanır. Rotanın geometrisini özelleştirmenize olanak tanır.
+- [Arazi haritalarını kullan](#calculate-missing-elevation). Yükseklik verilerini elde etmek için arazi haritalarını kullanır. Rota geometrisi değişmeden kalır.
 
 
 ### Eksik Yüksekliği Hesapla {#calculate-missing-elevation}
 
 :::note OsmAnd Pro aboneliği
-Çevrimdışı yükseklik hesaplama özelliği yalnızca [**OsmAnd Pro aboneleri**](../../purchases/android.md#pro-features) için kullanılabilir <ProFeature />.
+Çevrimdışı yükseklik hesaplama özelliği yalnızca [**OsmAnd Pro aboneleri**](../../purchases/android.md#pro-features) <ProFeature /> için kullanılabilir.
 :::
 
 <InfoAndroidOnly />
 
-Bu özellik, [Arazi harita verilerine](../../plugins/topography.md#download-maps) dayanarak 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX izi için çevrimdışı yükseklik profilini hesaplamanıza olanak tanır. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
+Bu özellik, 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX rotasının yükseklik profilini çevrimdışı olarak hesaplamanıza olanak tanır, [Arazi haritası verilerine](../../plugins/topography.md#download-maps) dayanarak. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
 
 1. Gerekli bölge için [Arazi haritalarını (3D)](../../plugins/topography.md#download-maps) indirin.
-2. İz herhangi bir yükseklik verisi içermiyorsa, iz bağlam menüsüne gidin (*İz bağlam menüsü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), *Arazi haritalarını kullan*'ı seçin ve hesaplamadan sonra arazi verilerine dayalı bir iz grafiği elde edeceksiniz.
+2. Rota herhangi bir yükseklik verisi içermiyorsa, rota bağlam menüsüne gidin (*Rota bağlam menüsü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), *Arazi haritalarını kullan*'ı seçin ve hesaplamadan sonra arazi verilerine dayalı bir rota grafiği elde edeceksiniz.
 
-    ![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_10.png) <!--![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_4.png) ![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
+    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
 
-3. [Rota planla](../../plan-route/create-route.md#graph) aracını kullanarak *Düz çizgi* yöntemiyle bir rota oluşturuyorsanız ve grafikte yükseklik verisi yoksa, şunları yapmanız gerekir:
+3. *Düz çizgi* yöntemini kullanarak [Rota planla](../../plan-route/create-route.md#graph) aracıyla bir rota oluşturuyorsanız ve grafikte yükseklik verisi yoksa, şunları yapmanız gerekir:
     - *Yükseklik verilerini al*'a dokunun, ardından *Arazi haritalarını kullan*'ı seçin.
-    - Hesaplamadan sonra, rotanızın arazi verilerine dayalı tam Rakım/Eğim grafiğini elde edeceksiniz.
+    - Hesaplamadan sonra, arazi verilerine dayalı rotanızın tam Yükseklik/Eğim grafiğini elde edeceksiniz.
 
-  ![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_9.png) ![İz grafiği rakım Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
 
 
-## Noktalar / Ara Noktalar {#points--waypoints}
+## Noktalar / Yol Noktaları {#points--waypoints}
 
-Ara noktalar, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX dosyalarının bir parçası olan iz noktaları olabilirler. Ayrıntılı bir açıklama [haritadaki noktalar](../../map/point-layers-on-map.md) makalesinde mevcuttur.
+Yol noktaları, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX dosyalarının bir parçası olan rota noktaları olabilirler. Ayrıntılı bir açıklama [haritadaki noktalar](../../map/point-layers-on-map.md) makalesinde mevcuttur.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Bağlam iz menüsü Noktalar Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bağlam iz menüsü Noktalar iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -404,57 +405,57 @@ Ara noktalar, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX dos
 
 Bu *Noktalar* sekmesinde:
 
-- [Özel GPX etiketlerini görüntüle](#display-custom-gpx-tags) ve iz noktalarınızı (ara noktalar ve rota noktaları) değiştirin, [silin ve ekleyin](#points--waypoints) ara noktaları bir ize.
+- [Rota noktaları verilerini göster](#display-custom-gpx-tags) ve rota noktalarınızı (yol noktaları ve rota noktaları) değiştirin, [silin ve](#points--waypoints) rotaya yol noktaları ekleyin.
 - [Nokta grubu (klasörü)](#waypoint-groups) oluşturun ve değiştirin.
 
 
-### İze Ara Nokta Ekle {#add-waypoint-to-a-track}
+### Rotaya Yol Noktası Ekle {#add-waypoint-to-a-track}
 
-Ara noktalar, şu anda kaydedilen ize veya [*Yerlerim → İzler listesi*](../../personal/tracks/manage-tracks.md) içindeki herhangi bir ize eklenebilir:
+Yol noktaları, o anda kaydedilen rotaya veya [*Yerlerim → Rotalar listesi*](../../personal/tracks/manage-tracks.md) içindeki herhangi bir rotaya eklenebilir:
 
-- [Harita bağlam menüsünü](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint) kullanın.
-  - Seçilen iz haritada etkinleştirilirse ara noktalar otomatik olarak görüntülenir.
-  - Bir ara nokta oluşturmak için haritada herhangi bir seçilen konuma [uzun dokunun](../../map/map-context-menu.md#select-any-point-long-tap).
-  - Açılan [harita bağlam menüsünde](../../map/map-context-menu.md#-add--edit-track-waypoint) ara nokta hakkında bilgi ayarlayabilirsiniz.
+- [Harita bağlam menüsünü](../../map/map-context-menu.md#-add--edit-track-waypoint) kullanın.
+  - Seçilen rota haritada etkinleştirilmişse yol noktaları otomatik olarak görüntülenir.
+  - Bir yol noktası oluşturmak için haritada herhangi bir seçilen konuma [uzun dokunun](../../map/map-context-menu.md#select-any-point-long-tap).
+  - Açılan [harita bağlam menüsünde](../../map/map-context-menu.md#-add--edit-track-waypoint) yol noktası hakkında bilgi ayarlayabilirsiniz.
 
-- İz bağlam menüsünün [Ara Nokta Ekle](#points--waypoints) düğmesini kullanın.
+- Rota bağlam menüsünün [Yol Noktası Ekle](#points--waypoints) düğmesini kullanın.
 
-- Bir ara noktayı [Hızlı eylem](../../widgets/quick-action.md#my-places) düğmesi olarak ekleyin.
+- Bir yol noktasını [Hızlı eylem](../../widgets/quick-action.md#my-places) düğmesi olarak ekleyin.
 
-#### Ara Nokta Oluştur {#create-waypoint}
+### Yol Noktası Oluştur {#create-waypoint}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Ara nokta ekle](@site/static/img/personal/tracks/add_waypoint_1_andr.png) ![Ara nokta ekle](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
+![Add waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ara nokta ekle](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png) ![Ara nokta ekle](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Ara nokta oluşturma ekranını açmak için *Ara Nokta Ekle* düğmesine dokunun (bu ekran [Favori Bağlam menüsüyle](../../personal/favorites.md#create) benzerdir).
+Yol noktası oluşturma ekranını açmak için *Yol Noktası Ekle* düğmesine dokunun (bu ekran [Favori Bağlam menüsüyle](../../personal/favorites.md#create) tanıdıktır).
 
-1. Ara noktanın *Adını*, seçilen konumun *Adresini* ve *Açıklamasını* (isteğe bağlı) **ekleyin**.
-2. Grup **Seçin**.
+1. Yol noktasının *Adını*, seçilen konumun *Adresini* ve *Açıklamasını* (isteğe bağlı) **ekleyin**.
+2. Grup **seçin**.
 
     - Daha önce oluşturulmuş grup kategorilerini seçin veya yeni bir tane oluşturun.
-    - Yeni ara nokta grubu için bir ad ve görünüm oluşturun. Buna uygulamada *yeni kategori* de denir.
-    - **Simge**, **simge rengi** ve **şekil**, gruba eklenen tüm yeni ara noktalar için kullanılacaktır.
+    - Yeni yol noktası grubu için bir ad ve görünüm oluşturun. Buna uygulamada *yeni kategori* de denir.
+    - **Simge**, **simge rengi** ve **şekil**, gruba eklenen tüm yeni yol noktaları için kullanılacaktır.
 
 3. **Görünüm** ayarı:
 
-    - Tüm POI kategorileri simgelerinin listesinden bir [**simge**](../../personal/favorites.md#favorite-icons) seçin.
+    - Tüm POI kategorileri simgeleri listesinden bir [**simge**](../../personal/favorites.md#favorite-icons) seçin.
     - Simgenin **Rengini** seçin.
     - Ardından simgenin **Şeklini** seçin: *Daire, Sekizgen, Kare*.
 
-4. Gerekirse başka bir noktayı bununla **Değiştirin**.
+4. Gerekirse başka bir noktayı bununla **değiştirin**.
 
 
 ### Gruplarla Eylemler {#actions-with-groups}
@@ -463,52 +464,52 @@ Ara nokta oluşturma ekranını açmak için *Ara Nokta Ekle* düğmesine dokunu
 
 <TabItem value="android" label="Android">
 
-![İz menüsü Grup menüsü Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz menüsü Grup menüsü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-*Üç nokta menüsü* ( &#8285; ) ara nokta *Grup menüsünü* açar.
+*Üç nokta menüsü* ( &#8285; ) yol noktası *Grup menüsünü* açar.
 
 **Eylemler:**
 
-- **<Translate android="true" ids="shared_string_show_on_map"/>** - Grup ara noktalarını haritada görüntülemenize veya görüntülememenize olanak tanır. Veya grup ara noktalarını haritada görüntülemek veya atlamak için [ekran düğmesini](#points--waypoints) kullanabilirsiniz.
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - Grup yol noktalarını haritada görüntülemenize veya görüntülememenize olanak tanır. Veya grup yol noktalarını haritada görüntülemek veya atlamak için [ekran düğmesini](#points--waypoints) kullanabilirsiniz.
 - **<Translate android="true" ids="shared_string_rename"/>** - Grubun adını değiştirin.
-- **<Translate android="true" ids="change_default_appearance"/>** - Bir ara nokta grubunun görüntüleme seçeneklerini değiştirin.
-- **<Translate android="true" ids="add_group_to_markers"/>** veya **Kaldır** (*Yalnızca Android*) - Grup ara noktalarını [Harita işaretçileri](../../personal/markers.md) listesine taşıyın.
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Yalnızca Android*) - Grup ara noktalarını [Favorilere](../../personal/favorites.md) taşıyın.
-- **<Translate android="true" ids="add_to_navigation"/>** (*Yalnızca Android*) - Ara noktalar arasında bir rota oluşturur. İlk ve son noktalar rotanın başlangıcı ve bitişi olur, geri kalanlar ara noktalara dönüştürülür.
-- **<Translate android="true" ids="shared_string_delete"/>** - Bir ara nokta grubunu silin.
+- **<Translate android="true" ids="change_default_appearance"/>** - Bir yol noktası grubunun görüntüleme seçeneklerini değiştirin.
+- **<Translate android="true" ids="add_group_to_markers"/>** veya **Kaldır** (*Yalnızca Android*) - Grup yol noktalarını [Harita işaretçileri](../../personal/markers.md) listesine taşıyın.
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Yalnızca Android*) - Grup yol noktalarını [Favorilere](../../personal/favorites.md) taşıyın.
+- **<Translate android="true" ids="add_to_navigation"/>** (*Yalnızca Android*) - Yol noktaları arasında bir rota oluşturur. İlk ve son noktalar rotanın başlangıcı ve bitişi olur, diğerleri ara noktalara dönüştürülür.
+- **<Translate android="true" ids="shared_string_delete"/>** - Bir yol noktası grubunu silin.
 
 
-### Ara Nokta Grupları {#waypoint-groups}
+### Yol Noktası Grupları {#waypoint-groups}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İz menüsü Grup haritası Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![İz menüsü Grup haritası Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz menüsü Grup haritası iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![İz menüsü Grup haritası iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Haritadaki grupların görünürlüğünü yönetin: bir izi gizlerseniz, tüm grup da gizlenir.
+Grupların harita üzerindeki görünürlüğünü yönetin: bir rotayı gizlerseniz, tüm grup da gizlenecektir.
 
-İz bağlam menüsünün sağ üst köşesindeki düğmeyi kullanarak grup ara noktalarını haritada açıp kapatabilirsiniz. Dokunun ve gerekli eylemi seçin.
+Harita üzerindeki rotanın bağlam menüsünün sağ üst köşesindeki düğmeyi kullanarak grup yol noktalarını haritada açıp kapatabilirsiniz. Üzerine dokunun ve gerekli eylemi seçin.
 
 ### Özel GPX Etiketlerini Görüntüle {#display-custom-gpx-tags}
 
@@ -516,21 +517,22 @@ Haritadaki grupların görünürlüğünü yönetin: bir izi gizlerseniz, tüm g
 
 <TabItem value="android" label="Android">
 
-![Noktalar](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Noktalar](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+
 <details>
 
-<summary>Ara nokta etiketlerinin örnek XML kodu</summary>
+<summary>Yol Noktası etiketlerinin örnek XML kodu</summary>
 
 ```xml
   <wpt lat="40.123456" lon="-73.987654">
@@ -591,11 +593,11 @@ Haritadaki grupların görünürlüğünü yönetin: bir izi gizlerseniz, tüm g
 | Parametre | Açıklama |
 | --- | --- |
 | `lat` | **Enlem**, bir konumu belirleyebileceğiniz coğrafi koordinatlardan biridir. |
-| `lon` | **Boylam**, bir konumu belirleyebileceğiniz diğer coğrafi koordinatlardan biridir. |
+| `lon` | **Boylam**, bir konumu belirleyebileceğiniz coğrafi koordinatlardan bir diğeridir. |
 | `time` | **Zaman damgası**, noktanın kaydedildiği tarih ve saattir. |
-| `name` | **Ad**, noktanın adıdır. Herhangi bir karaktere izin verilir. |
+| `name` | **Ad**, noktanın adıdır. Herhangi bir karakter kullanılabilir. |
 | `desc` | **Açıklama**, nokta hakkında ek bilgi içerir. |
-| `type` | **Grup seç**, bu ara noktanın kaydedildiği OsmAnd klasörünün adıdır. |
+| `type` | **Grup seç**, bu yol noktasının kaydedildiği OsmAnd klasörünün adıdır. |
 | `cmt` | **Yorum**, bir nokta hakkında kısa bir yorumdur. |
 | `link` | **Bağlantı**, herhangi bir kaynağa bağlantıdır. |
 | `ele` | **Yükseklik**, bir noktanın yüksekliğidir. |
@@ -615,28 +617,27 @@ Haritadaki grupların görünürlüğünü yönetin: bir izi gizlerseniz, tüm g
 | `osmand:state` | **Eyalet**, eyalet adıdır. |
 | `osmand:start_date` | **Başlangıç tarihi**, bir noktanın program verisidir. |
 
-Ara noktalar, [GPX dosyasına](../../../technical/osmand-file-formats/osmand-gpx.md) izle birlikte kaydedilir. Bu ara noktaların her birinin kendi açıklama etiketleri kümesi vardır. OsmAnd uygulamasında doğrudan düzenlenebilen ara noktaların açıklamasıyla doğrudan ilgili tüm etiketler bu bölümde listelenmiştir.
-Ara nokta açıklamasını değiştirmek için aşağıdaki yollardan birini kullanabilirsiniz:
+Yol noktaları, [GPX dosyasına](../../../technical/osmand-file-formats/osmand-gpx.md) rota ile birlikte kaydedilir. Bu yol noktalarının her birinin kendi açıklama etiketleri kümesi vardır. OsmAnd uygulamasında doğrudan düzenlenebilen yol noktalarının açıklamasıyla doğrudan ilgili tüm etiketler bu bölümde listelenmiştir.
+Yol noktası açıklamasını değiştirmek için aşağıdaki yollardan birini kullanabilirsiniz:
 
-1. Gerekli izi *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi* listesinde bulun.
-2. İz [görünür izler listesine](../tracks/index.md#display-tracks-on-the-map) dahil edilmişse, haritadaki ize dokunun.
-3. Gerekli ara nokta haritada [görünürse](../../personal/tracks/manage-tracks.md#track-menu) ona dokunun.
+1. Gerekli rotayı *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi* listesinde bulun.
+2. Haritada görünür [rotalar listesine](../tracks/index.md#display-tracks-on-the-map) dahil edilmişse, harita üzerindeki rotaya dokunun.
+3. Haritada [görünürse](../../personal/tracks/manage-tracks.md#track-menu) gerekli yol noktasına dokunun.
 
-    Ardından [İz Bağlam menüsünde](./track-context-menu.md) *noktalara*, mevcut ara noktaların bulunduğu gerekli klasörün alanına ve aradığınız Ara noktaya dokunun. *Eylemler →* **GPX ara noktasını düzenle** menüsünü seçin ve değişiklikleri yapın. Uygulamada bir noktanın oluşturulma tarihini, *zaman damgasını* değiştiremezsiniz.
+    Ardından [Rotalar Bağlam menüsünde](./track-context-menu.md) *noktalar*, mevcut yol noktalarıyla gerekli klasörün alanı ve aradığınız yol noktası üzerine dokunun. *Eylemler →* **GPX yol noktasını düzenle** menüsünü seçin ve değişiklikleri yapın. Uygulamada bir noktanın oluşturulma tarihini, *zaman damgasını* değiştiremezsiniz.
 
-Çalışma saatleri veya telefon numarası gibi ek bilgileri açıklayan **Tesis etiketleri**, bu bilgileri OpenStreetMap verilerinden veya POI oluştururken girdiğiniz verilerden alır. Bu tür etiketleri ve [özel etiketleri](#display-custom-gpx-tags) yalnızca cihazınızdaki herhangi bir metin düzenleyiciyle açabileceğiniz GPX dosyasının kodunda düzenleyebilirsiniz.
+Çalışma saatleri veya telefon numarası gibi ek bilgileri açıklayan **Tesis etiketleri**, POI'ye özgü bu bilgileri OpenStreetMap verilerinden veya POI'yi oluştururken girdiğiniz verilerden alır. Bu tür etiketleri ve [özel etiketleri](#display-custom-gpx-tags) yalnızca cihazınızdaki herhangi bir metin düzenleyiciyle açabileceğiniz GPX dosyasının kodunda düzenleyebilirsiniz.
 
 
 ## Aralığı Böl {#split-interval}
 
 <InfoAndroidOnly />
 
-İzi mesafe ve zaman gibi aralıklara bölebilir ve analiz edebilirsiniz.
-
-İzi mesafe veya zaman aralığına göre bölün.
+Rotayı mesafe ve zaman gibi aralıklara bölebilir ve analiz edebilirsiniz.
+Rotayı mesafe veya zaman aralığına göre bölün.
 *<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
 
-![İz bölme aralığı ekranı Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![İz bölme aralığı ekranı zaman Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
+![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
 
 
 ## GPS Filtresi {#gps-filter}
@@ -645,11 +646,11 @@ Ara nokta açıklamasını değiştirmek için aşağıdaki yollardan birini kul
 
 *<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>*
 
-![GPS filtre ekranı Android](@site/static/img/personal/tracks/gps_filter_android.png)
+![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Bu filtre, gereksiz veya yanlış verileri hariç tutarak iz istatistiklerinizi iyileştirmenize olanak tanır. İz parametrelerinize uymayan iz noktalarını filtreleyebilir ve sonuç olarak bozulma veya kayıt gürültüsü olmadan daha doğru bir grafik ve görsel rota çizgisi elde edebilirsiniz. *Düzeltme*, *Hız*, *Rakım* ve *GPS Hassasiyeti* gibi filtrelerle değişiklikler yapabilirsiniz, bu filtreler filtrelenmiş noktaları mevcut izden gizler. Ayrıca, *İstatistikler* menüsünde, değişikliklerinizi kaydetmeden önce grafikte nasıl görüntülendiğini kontrol edebilirsiniz. Ayrıca, bu filtrede izinizin *Orijinaline sıfırla* ve *Kopya olarak kaydet* seçeneklerini kullanarak orijinalini kaydetmeden de kullanabilirsiniz.
+Bu filtre, gereksiz veya yanlış verileri hariç tutarak rota istatistiklerinizi iyileştirmenize olanak tanır. Rota parametrelerinize uymayan rota noktalarını filtreleyebilir ve sonuç olarak bozulma veya kayıt gürültüsü olmadan daha doğru bir grafik ve görsel rota çizgisi elde edebilirsiniz. *Düzeltme*, *Hız*, *Yükseklik* ve *GPS Hassasiyeti* gibi filtrelerle değişiklikler yapabilirsiniz, bu filtreler filtrelenmiş noktaları mevcut rotadan gizler. Ayrıca, *İstatistikler* menüsünde, değişikliklerinizin grafikte nasıl görüntülendiğini kaydetmeden önce kontrol edebilirsiniz. Ayrıca, orijinalini kaydetmeden bu filtrede rotanızın *Orijinale sıfırla* ve *Kopya olarak kaydet* seçeneklerini de kullanabilirsiniz.
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -659,57 +660,55 @@ Bu filtre, gereksiz veya yanlış verileri hariç tutarak iz istatistiklerinizi 
 
 Android GPS Filtre uygulaması sayfası aşağıdakileri içerir:
 
-- Kaydedilmiş bir iz ve ek bir düğme, *İzim konumu* (izi haritanın merkezine hizalar) içeren bir harita.
+- Kaydedilmiş bir rota ve ek bir düğme olan *Rotamın konumu* (rotayı haritanın merkezine hizalar) içeren bir harita.
 - Üstte *Yenile* ve *Menü* düğmeleri (*Menü*, sayfanın altındaki *Eylem* alanını açar).
 - *Filtre*, *İstatistikler*, *Eylem* blokları.
 
 
 ### Filtre Menüsü {#filter-menu}
 
-Bu menüde, filtreleri kullanarak *Düzeltme*, *Hız*, *Rakım* veya *GPS hassasiyeti* gibi izinizin bazı parametrelerini değiştirebilirsiniz. Menü bir *Noktalar kısmı* ve bir *Eylemler kısmı* olarak ikiye ayrılmıştır.
+Bu menüde, filtreleri kullanarak *Düzeltme*, *Hız*, *Yükseklik* veya *GPS hassasiyeti* gibi rotanızın bazı parametrelerini değiştirebilirsiniz. Menü bir *Noktalar kısmı* ve bir *Eylemler kısmı* olarak ikiye ayrılmıştır.
 
 | ***Noktalar*** |
 |:------------|
-|Bu kısım, filtrelemeden sonraki nokta sayısını ve filtreler kullanılmadan önce seçilen izdeki toplam nokta sayısını gösterir.|
-|![GPS filtre ekranı nokta sayıları Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
+|Bu kısım, filtrelemeden sonraki nokta sayısını ve filtreler kullanılmadan önce seçilen rotadaki toplam nokta sayısını gösterir.|
+|![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Eylemler*** |
-|*Düzeltme*. Noktalar arasındaki eşik mesafeyi ayarlar. İz noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. İz üzerindeki, birbirlerinden filtre tarafından seçilen mesafeden daha az mesafede olan tüm noktalar gizlenecektir. İz noktaları son görünür noktadan sayılır. Yüksek eşiklerin iz geometrisini aşırı basitleştirebileceğini unutmayın.|
-|![GPS filtre düzeltme sayıları Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
-|*Hız*. Yalnızca seçilen hız aralığına karşılık gelen iz noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
-|![GPS filtre hız sayıları Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
-|*Rakım*. Yalnızca seçilen rakım aralığına karşılık gelen iz noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
-|![GPS filtre rakım sayıları Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
+|*Düzeltme*. Noktalar arasındaki eşik mesafeyi ayarlar. Rota noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. Filtre tarafından seçilen mesafeden daha az mesafede olan rotadaki tüm noktalar gizlenecektir. Rota noktaları son görünür noktadan sayılır. Yüksek eşiklerin rota geometrisini aşırı basitleştirebileceğini unutmayın.|
+|![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
+|*Hız*. Yalnızca seçilen hız aralığına karşılık gelen rota noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
+|![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
+|*Yükseklik*. Yalnızca seçilen yükseklik aralığına karşılık gelen rota noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
+|![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*GPS hassasiyeti*. HDOP için izin verilen maksimum değeri ayarlar. Daha yüksek değere sahip noktalar gizlenir.|
-|![GPS filtre hassasiyet sayıları Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
+|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
 
 
 ### İstatistikler {#statistics}
 
-![GPS filtre grafiği Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
-İstatistikler sekmesi, **değiştirilmiş** iz hakkında bilgi görüntüler, yani filtrelenmiş değerler olmadan iz. İstatistik bloklarında ve grafik verilerinde görüntülenir.
+İstatistikler sekmesi, **değiştirilmiş** rota hakkındaki bilgileri, yani filtrelenmiş değerler olmadan rotayı görüntüler. İstatistik bloklarında ve grafik verilerinde görüntülenir.
 
-- *Veri* kısmı, [Filtre menüsüne](#filter-menu) benzer istatistikler gösterir.
-- *Grafik* kısmı, parametrelere göre üç tür grafik görüntüler: Genel Bakış, Rakım ve Hız. Bu işlev, [iz Grafiğinin](#altitude--speed-graphs) bir kopyasıdır.
+- *Veri* kısmı, [Filtre menüsüne](#filter-menu) benzer istatistikleri gösterir.
+- *Grafik* kısmı, parametrelere göre üç tür grafik görüntüler: Genel Bakış, Yükseklik ve Hız. Bu işlev, [rota Grafiğinin](#altitude--speed-graphs) bir kopyasıdır.
 
 ### Eylemler {#actions}
 
-![GPS filtre eylemi Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
+![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
-Eylemler listesi **Filtre** veya **İstatistikler** sekmesinin altında mevcuttur. OsmAnd, izde yapılan tüm değişiklikleri dosyayı güncellemeden uygular, ancak değişiklikleri manuel olarak kaydedebilirsiniz.
+Eylemler listesi **Filtre** veya **İstatistikler** sekmesinin altında mevcuttur. OsmAnd, dosyayı güncellemeden rotada yapılan tüm değişiklikleri uygular, ancak değişiklikleri manuel olarak kaydedebilirsiniz.
 
 - *<Translate android="true" ids="reset_to_original"/>*. Parametreleri orijinal durumlarına döndürmenize olanak tanır.
-- *<Translate android="true" ids="save_as_copy"/>*. İzi yeni bir iz olarak kaydetmenize olanak tanır.
-- *<Translate android="true" ids="save_changes_into_file"/>*. İzi yeni parametrelerle yeniden yazmanıza olanak tanır.
+- *<Translate android="true" ids="save_as_copy"/>*. Rotayı yeni bir rota olarak kaydetmenize olanak tanır.
+- *<Translate android="true" ids="save_changes_into_file"/>*. Rotayı yeni parametrelerle yeniden yazmanıza olanak tanır.
 
 
 ## İlgili Makaleler {#related-articles}
 
-- [GPX izleri](../../personal/tracks/manage-tracks.md)
-- [Haritadaki izler](./track-context-menu.md)
-- [İzle navigasyon](../../navigation/setup/gpx-navigation.md)
+- [GPX rotaları](../../personal/tracks/manage-tracks.md)
+- [Haritadaki rotalar](./track-context-menu.md)
+- [Rotaya göre navigasyon](../../navigation/setup/gpx-navigation.md)
 - [Rota planla](../../plan-route/index.md)
-- [Gezi Kaydı eklentisi](../../plugins/trip-recording.md)
-- [Haritada analiz et](../index.md#analyze-track-on-map)
-
-> *Son güncelleme: Kasım 2024*
+- [Yolculuk Kayıt eklentisi](../../plugins/trip-recording.md)
+- [Haritada analiz et](../tracks/index.md#analyze-track-on-map)

@@ -1,5 +1,5 @@
 ---
-source-hash: f4b2b293ad51358460be21f120eea4ead0ba855b2536fc69c26f9eb724fe95d1
+source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
 sidebar_position: 2
 ---
 
@@ -11,7 +11,7 @@ GPX (GPS Exchange Format) é um padrão baseado em XML amplamente utilizado para
 
 #### O que torna o GPX do OsmAnd único? {#what-makes-osmand-gpx-unique}
 
-O OsmAnd estende o formato GPX 1.1 padrão, introduzindo seu próprio namespace XML `osmand:`. Este namespace permite armazenar dados adicionais, como:
+O OsmAnd estende o formato GPX 1.1 padrão introduzindo seu próprio namespace XML `osmand:`. Este namespace permite armazenar dados adicionais, como:
 
 - Configurações visuais da trilha (cor, largura, setas).
 - Agrupamento e ícones de pontos de passagem.
@@ -24,7 +24,7 @@ Este artigo fornece uma visão geral abrangente da estrutura e dos recursos do a
 1. Como personalizar trilhas e pontos de passagem usando tags GPX.
 2. Recursos avançados, como descrições HTML, dados de sensores e tipos de atividade.
 3. Como exportar rotas calculadas e preservar sua funcionalidade completa.
-4. Converter arquivos GPX para o formato OBF para armazenamento otimizado e recursos de pesquisa avançados.
+4. Convertendo arquivos GPX para o formato OBF para armazenamento otimizado e recursos de pesquisa avançados.
 
 #### Visão geral da estrutura GPX {#gpx-structure-overview}
 
@@ -36,6 +36,7 @@ Os arquivos GPX no OsmAnd organizam os dados hierarquicamente nos seguintes elem
 - `<rte>` - representa rotas, incluindo pontos de passagem e pontos-chave.
 - `<wpt>` - representa pontos de passagem individuais.
 
+
 ## Personalização de trilhas {#track-customization}
 
 ### Parâmetros de aparência da trilha {#track-appearance-parameters}
@@ -45,18 +46,18 @@ Esta seção descreve como o OsmAnd exibe trilhas no mapa e as opções de perso
 | Nome da tag | Descrição / Valores |
 |:----------------------------------------|:---------|
 | `<color>` | - Define a cor da linha da trilha no mapa. <br/> - *String:* Código de cor HEX `#RRGGBB` ou `#AARRGGBB` |
-| `<width>` | - Especifica a largura da linha da trilha. <br/> - *String:* `“thin”` (fina), `“medium"` (média), `“bold”` (grossa) (definida pelo atributo `“currentTrackWidth”`), ou inteiro (1-24) |
-| `<show_arrows>` | - Habilita ou desabilita as setas de direção ao longo da trilha. <br/> - *Bool:* `"true"` / `"false"` |
-| `<show_start_finish>` | - Mostra ou oculta marcadores para o início e o fim da trilha. <br/> - *Bool:* `"true"` / `"false"` |
-| `<split_type>` | - Especifica o tipo de segmentação para a trilha. <br/> - *String:* `"no_split"` (sem divisão), `"distance"` (distância), `"time"` (tempo) |
-| `<split_interval>` | - Define o intervalo para a segmentação da trilha com base no tipo selecionado. <br/> - *Double:* Inteiro (metros para `"distance"`, segundos para `"time"`) |
-| `<line_3d_visualization_by_type>` | - Especifica o tipo de visualização 3D para a trilha. <br/> - *String:* `"none"` (nenhum), `"altitude"` (altitude), `"shared_string_speed"` (velocidade de string compartilhada), `"map_widget_ant_heart_rate"` (frequência cardíaca ANT do widget do mapa), `"map_widget_ant_bicycle_cadence"` (cadência da bicicleta ANT do widget do mapa), `"map_widget_ant_bicycle_power"` (potência da bicicleta ANT do widget do mapa), `"shared_string_temperature"` (temperatura de string compartilhada), `"shared_string_speed"` (velocidade de string compartilhada), `"fixed_height"` (altura fixa) |
-| `<line_3d_visualization_wall_color_type>` | - Define o tipo de cor da parede para visualização 3D. <br/> - *String:* `"none"` (nenhum), `"solid"` (sólido), `"downward_gradient"` (gradiente para baixo), `"upward_gradient"` (gradiente para cima), `"altitude"` (altitude), `"slope"` (inclinação), `"speed"` (velocidade) |
-| `<line_3d_visualization_position_type>` | - Define a posição da visualização 3D em relação à trilha. <br/> - *String:* `"top"` (topo), `"bottom"` (inferior), `"top_bottom"` (topo e inferior) |
+| `<width>` | - Especifica a largura da linha da trilha. <br/> - *String:* `“thin”`, `“medium"`, `“bold”` (definido pelo atributo `“currentTrackWidth”`), ou inteiro (1-24) |
+| `<show_arrows>` | - Habilita ou desabilita setas de direção ao longo da trilha. <br/> - *Booleano:* `"true"` / `"false"` |
+| `<show_start_finish>` | - Mostra ou oculta marcadores para o início e o fim da trilha. <br/> - *Booleano:* `"true"` / `"false"` |
+| `<split_type>` | - Especifica o tipo de segmentação para a trilha. <br/> - *String:* `"no_split"`, `"distance"`, `"time"` |
+| `<split_interval>` | - Define o intervalo para a segmentação da trilha com base no tipo selecionado. <br/> - *Duplo:* Inteiro (metros para `"distance"`, segundos para `"time"`) |
+| `<line_3d_visualization_by_type>` | - Especifica o tipo de visualização 3D para a trilha. <br/> - *String:* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
+| `<line_3d_visualization_wall_color_type>` | - Define o tipo de cor da parede para visualização 3D. <br/> - *String:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
+| `<line_3d_visualization_position_type>` | - Define a posição da visualização 3D em relação à trilha. <br/> - *String:* `"top"`, `"bottom"`, `"top_bottom"`|
 | `<vertical_exaggeration_scale>` | - Multiplicador para escalar o valor do atributo `line_3d_visualization_by_type`. <br/> - *Float:* Padrão: 1.0 |
 | `<elevation_meters>` | - Especifica uma elevação fixa em metros para `"fixed_height"` em `<line_3d_visualization_by_type>`. <br/> - *Float:* Padrão: `1000` |
-| `<coloring_type>` | - Determina o método de coloração para a trilha. <br/> - *String:* `"solid"` (sólido), `"speed"` (velocidade), `"altitude"` (altitude), `"slope"` (inclinação), `"routeInfo_roadClass"` (classe de estrada RouteInfo), `"routeInfo_surface"` (superfície RouteInfo), `"routeInfo_smoothness"` (suavidade RouteInfo) |
-| `<color_palette>` | - Especifica o esquema de cores para a trilha. <br/> - *String:* `"default"` (padrão) / [esquemas definidos pelo usuário](/docs/user/personal/color-palette-schemes) |
+| `<coloring_type>` | - Determina o método de coloração para a trilha. <br/> - *String:* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
+| `<color_palette>` | - Especifica o esquema de cores para a trilha. <br/> - *String:* `"default"` / [esquemas definidos pelo usuário](/docs/user/personal/color-palette-schemes) |
 
 ***Exemplo:***
 
@@ -75,19 +76,19 @@ Esta seção descreve como o OsmAnd exibe trilhas no mapa e as opções de perso
 
 ### Tag 'coloring_type' {#tag-coloringtype}
 
-A tag `<coloring_type>` no OsmAnd permite que os usuários personalizem a coloração da trilha com base em atributos de dados específicos, fornecendo uma maneira visual de interpretar informações-chave ao longo da trilha.
+A tag `<coloring_type>` no OsmAnd permite aos usuários personalizar a coloração da trilha com base em atributos de dados específicos, fornecendo uma maneira visual de interpretar informações-chave ao longo da trilha.
 
 | Tipo | Descrição | Caso de uso |
 |:-----------------------|:--------|:--------|
 | `<solid>` | A trilha inteira é exibida com uma única cor sólida especificada pela tag `color`. | Use quando uma cor uniforme for necessária para visibilidade clara. |
 | `<speed>` | A trilha é colorida em um gradiente com base nos valores de velocidade em cada ponto da trilha (`<trkpt>`). Velocidades mais altas são representadas por cores distintas. | Ideal para atividades como ciclismo ou direção para visualizar mudanças na velocidade. |
-| `<altitude>` | A trilha é colorida de acordo com os dados de elevação em cada `<trkpt>`. Um gradiente é aplicado, indicando diferentes faixas de altitude. | Útil para rotas de caminhada ou montanha para destacar mudanças de altitude. |
-| `<slope>` | A trilha é colorida com base na inclinação/declínio entre pontos de trilha consecutivos. Gradientes positivos indicam inclinações para cima, enquanto gradientes negativos indicam para baixo. | Adequado para ciclistas ou caminhantes que analisam a dificuldade da trilha. |
-| `<routeInfo_roadClass>` | Colore os segmentos da trilha com base na classificação de estrada do OpenStreetMap (OSM) (por exemplo, rodovia, rua residencial). | Ajuda a distinguir entre diferentes tipos de estrada ao seguir uma rota. |
+| `<altitude>` | A trilha é colorida de acordo com os dados de elevação em cada `<trkpt>`. Um gradiente é aplicado, indicando diferentes faixas de altitude. | Útil para caminhadas ou rotas de montanha para destacar mudanças de altitude. |
+| `<slope>` | A trilha é colorida com base na inclinação/declínio entre pontos de trilha consecutivos. Gradientes positivos indicam subidas, enquanto gradientes negativos indicam descidas. | Adequado para ciclistas ou caminhantes que analisam a dificuldade da trilha. |
+| `<routeInfo_roadClass>` | Colore os segmentos da trilha com base na classificação de estradas do OpenStreetMap (OSM) (por exemplo, rodovia, rua residencial). | Ajuda a distinguir entre diferentes tipos de estradas ao seguir uma rota. |
 | `<routeInfo_surface>` | Colore os segmentos da trilha com base no tipo de superfície do OSM (por exemplo, pavimentado, cascalho, terra). | Útil para determinar as condições da trilha durante atividades como off-road. |
-| `<routeInfo_smoothness>` | Colore a trilha de acordo com as classificações de suavidade do OSM, indicando a aspereza ou suavidade do caminho (por exemplo, excelente, ruim). | Útil para avaliar a navegabilidade da trilha para veículos específicos. |
+| `<routeInfo_smoothness>` | Colore a trilha de acordo com as classificações de suavidade do OSM, indicando a rugosidade ou suavidade do caminho (por exemplo, excelente, ruim). | Útil para avaliar a navegabilidade da trilha para veículos específicos. |
 
-### Tags GPX na interface do usuário {#gpx-tags-in-ui}
+### Tags GPX na UI {#gpx-tags-in-ui}
 
 As tags de extensão GPX são exibidas na parte inferior do menu de contexto da trilha.
 Ambas as `<metadata>` e `<gpx>` `<extensions>` são listadas.
@@ -123,10 +124,10 @@ As seguintes tags controlam a aparência dos ícones de pontos de passagem no Os
 
 ### Grupos de pontos de passagem {#waypoint-groups}
 
-Os pontos de passagem no OsmAnd podem ser classificados em grupos com base em seu tipo. Esse agrupamento permite que o usuário organize vários pontos de passagem em categorias específicas, melhorando a clareza e a legibilidade do mapa.
+Os pontos de passagem no OsmAnd podem ser classificados em grupos com base em seu tipo. Esse agrupamento permite ao usuário organizar vários pontos de passagem em categorias específicas, melhorando a clareza e a legibilidade do mapa.
 
-- **Definição de grupo de pontos.** A tag `<type>` dentro do elemento `<wpt>` especifica o grupo do ponto (por exemplo, `"castle"`, `"aqueduct"`).
-- **Configuração de grupo.** A extensão `<osmand:points_groups>` no elemento `<gpx>` define as configurações para cada grupo, incluindo o `name`, `color`, `icon` e `background` para todos os pontos de passagem nesse grupo.
+- **Definição do grupo de pontos.** A tag `<type>` dentro do elemento `<wpt>` especifica o grupo do ponto (por exemplo, `"castle"`, `"aqueduct"`).
+- **Configuração do grupo.** A extensão `<osmand:points_groups>` no elemento `<gpx>` define as configurações para cada grupo, incluindo o `name`, `color`, `icon` e `background` para todos os pontos de passagem nesse grupo.
 
 ***Exemplo:***
 
@@ -153,13 +154,15 @@ Os pontos de passagem no OsmAnd podem ser classificados em grupos com base em se
 </gpx>
 ```
 
-## Recursos avançados de GPX {#advanced-gpx-features}
+
+## Recursos avançados do GPX {#advanced-gpx-features}
 
 ### Tipo de atividade {#activity-type}
 
-A partir do OsmAnd [versão 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities), você pode classificar suas trilhas por tipo de atividade para análise e organização em pastas.
+A partir da [versão 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities) do OsmAnd, você pode classificar suas trilhas por tipo de atividade para análise e organização em pastas.
 
 A lista de tipos de atividade suportados está disponível no arquivo [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json). Cada atividade é identificada por seu `ID` exclusivo e armazenada nas extensões `<metadata>` do arquivo GPX.
+
 
 ***Exemplo:***
 
@@ -175,7 +178,7 @@ A lista de tipos de atividade suportados está disponível no arquivo [activitie
 
 Tags HTML podem ser usadas dentro das tags `<desc>` nos elementos `<metadata>` ou `<wpt>` para fornecer descrições formatadas para trilhas ou pontos de passagem.
 
-Para evitar conflitos com a sintaxe XML, substitua caracteres especiais da seguinte forma:
+Para evitar conflitos com a sintaxe XML, substitua os caracteres especiais da seguinte forma:
 
 - `<` *→* `&lt;`
 - `>` *→* `&gt;`
@@ -187,12 +190,12 @@ Para evitar conflitos com a sintaxe XML, substitua caracteres especiais da segui
 <metadata>
   <desc>
     &lt;p&gt;
-        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
-        HTML tags are stripped in brief descriptions.
+        O primeiro parágrafo será exibido como descrição &lt;b&gt;breve&lt;/b&gt;.
+        As tags HTML são removidas em descrições breves.
     &lt;/p&gt;
     &lt;p&gt;
-      &lt;h3&gt;Second paragraph&lt;/h3&gt;
-        &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
+      &lt;h3&gt;Segundo parágrafo&lt;/h3&gt;
+        &lt;b&gt;Olá, mundo!&lt;/b&gt;&lt;br/&gt;
         &lt;img src="..."/&gt;&lt;br/&gt;
         &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
         &lt;table&gt; ... &lt;/table&gt;
@@ -206,6 +209,7 @@ Para evitar conflitos com a sintaxe XML, substitua caracteres especiais da segui
 - O OsmAnd remove todas as tags HTML ao gerar descrições breves, deixando texto simples.
 - Você pode usar tags como `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>` e outras para personalização.
 
+
 ### Tag de link {#link-tag}
 
 Use a tag `<link>` para associar URLs a metadados, informações do autor ou pontos de passagem em arquivos GPX do OsmAnd. Esta tag também pode exibir uma imagem quando a URL aponta para um arquivo de imagem.
@@ -215,7 +219,7 @@ Use a tag `<link>` para associar URLs a metadados, informações do autor ou pon
 ```xml
 <metadata>
   <link href="https://osmand.net/img/logo.png">
-    <text>OsmAnd Logo</text>
+    <text>Logotipo do OsmAnd</text>
   </link>
 </metadata>
 ```
@@ -277,15 +281,17 @@ Cada `<trkpt>` (ponto da trilha) no arquivo GPX pode incluir atributos adicionai
   </trkpt>
 ```
 
-## Rota(s) calculada(s) {#calculated-routes}
 
-No **OsmAnd**, você pode calcular uma rota e salvar todos os dados em GPX, de modo que, posteriormente, todos os recursos de navegação estarão disponíveis como navegação GPX em execução, ou seja, o GPX do **OsmAnd** conterá segmentos de rota, curvas, nomes de estradas, tipos de estradas, restrições, etc. A rota pode ser completamente restaurada como se tivesse acabado de ser construída, mesmo na ausência dos respectivos mapas offline.
 
-Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um segmento específico sob **trkseg** / **extensions**. Um arquivo gpx é salvo nesta forma ao exportar uma rota construída ou ao salvar uma trilha que consiste em vários segmentos separados por meio da funcionalidade [**Planejar uma rota**](../../user/plan-route/create-route.md).
+## Rotas calculadas {#calculated-routes}
+
+No **OsmAnd**, você pode calcular rotas e salvar todos os dados em GPX, para que posteriormente todos os recursos de navegação estejam disponíveis como navegação GPX em execução, de modo que o GPX do **OsmAnd** conterá segmentos de rota, curvas, nomes de ruas, tipos de ruas, restrições, etc. A rota pode ser completamente restaurada como se tivesse acabado de ser construída, mesmo na ausência dos respectivos mapas offline.
+
+Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um segmento específico em **trkseg** / **extensions**. Um arquivo gpx é salvo neste formato ao exportar uma rota construída ou ao salvar uma trilha que consiste em vários segmentos separados através da funcionalidade [**Planejar uma rota**](../../user/plan-route/create-route.md).
 
 [**Planejar uma rota**](../../user/plan-route/create-route.md) também adiciona um (ou vários, de acordo com o número de segmentos/trilhas separadas contidas) blocos **rte** ao arquivo gpx, contendo pontos-chave da rota (**rtept**).
 
-#### Estrutura GPX: {#gpx-structure}
+#### Estrutura Gpx: {#gpx-structure}
 
 ```xml
 <trk>
@@ -299,7 +305,7 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
         <segment ... />
       </route>
       // Propriedades dos segmentos incluídos na rota.
-      // Esses dados são obtidos de mapas offline durante a construção inicial de uma rota.
+      // Esses dados são retirados de mapas offline durante a construção inicial de uma rota.
       <types>
         <type ... />
       </types>
@@ -328,12 +334,12 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
 * **trkpt_idx** do primeiro **rtept** em **trkseg** é 0. Assim, se houver dois **trkseg**s, haverá dois **rtept**s com **trkpt_idx** = 0
 * **trkpt_idx** do último **rtept** em **trkseg** é igual ao número de **trkpt**s em **trkseg** menos 1. Por exemplo, se **trkseg** tiver 12 **trkpt**s, **trkpt_idx** do último **rtept** deve ser 11
 * Os **segmentos** de rota vizinhos se sobrepõem: o final do **segmento** anterior e o início do próximo **segmento** são o mesmo **trkpt**.
-* Há uma exceção quando os **segmentos** de rota vizinhos não se sobrepõem (não compartilham o mesmo **trkpt**). Isso acontece quando há **rtept** "entre" os **segmentos** de rota. O final do **segmento** de rota anterior é um **trkpt**, e o início do próximo **segmento** de rota é outro **rtept**. Mas esses dois **trkpt**s são totalmente iguais por lat, lon e outros parâmetros.
-* A sobreposição de **segmentos** de rota pode ser detectada via **length** e **startTrkptIdx** (este último é usado apenas para conveniência de leitura humana):
-  - Se a soma de **startTrkptIdx** e **length** do **segmento** de rota anterior for igual a **startTrkptIdx** do próximo **segmento** de rota, os **segmentos** de rota não se sobrepõem
-  - Se a soma for menor em um, então os **segmentos** de rota se sobrepõem
+* Há uma exceção quando os **segmentos** de rota vizinhos não se sobrepõem (não compartilham o mesmo **trkpt**). Isso acontece quando há um **rtept** "entre" os **segmentos** de rota. O final do **segmento** de rota anterior é um **trkpt**, e o início do próximo **segmento** de rota é outro **rtept**. Mas esses dois **trkpt**s são totalmente iguais por lat, lon e outros parâmetros.
+* A sobreposição de **segmentos** de rota pode ser detectada via **length** e **startTrkptIdx** (o último é usado apenas para conveniência de leitura humana):
+  - Se a soma de **startTrkptIdx** e **length** do **segmento** de rota anterior for igual a **startTrkptIdx** do próximo **segmento** de rota, os **segmentos** de rota não estão se sobrepondo
+  - Se a soma for menor em um, então os **segmentos** de rota estão se sobrepondo
 * Pode haver **segmentos** de rota retos. Eles são marcados com **id="-1"**. Eles podem aparecer em dois casos:
-  - É uma rota multiprofilada, e o usuário selecionou linha reta
+  - É uma rota multiprofilada, e o usuário selecionou uma linha reta
   - O usuário colocou **rtept** muito longe da estrada mais próxima, então o osmand fez uma linha reta entre **rtept** e a estrada
 * trkpts = length - (segments - 1) + (rtepts - 2), onde:
   - trkpts - quantidade de **trkpt**s dentro de **trkseg**
@@ -346,10 +352,10 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Fri 06 Nov 2020</name>
+    <name>Sex 06 Nov 2020</name>
   </metadata>
   <trk>
-    <name>Fri 06 Nov 2020</name>
+    <name>Sex 06 Nov 2020</name>
     <trkseg>
       <trkpt lat="52.3639849" lon="4.8900533">
         <ele>0.801</ele>
@@ -420,13 +426,14 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
 
 ## Coleções GPX em OBF {#gpx-collections-in-obf}
 
-O OsmAnd permite converter vários arquivos GPX em um único arquivo OBF. Isso possibilita o armazenamento de milhares de trilhas GPX em um formato compacto e otimizado, mantendo recursos como ícones de mapa especiais, personalização da aparência da trilha e funcionalidade de pesquisa. Isso evita um limite de arquivos GPX locais grandes que normalmente não conseguem lidar com mais de 500 mil pontos no total, no entanto, alguns recursos das trilhas GPX podem estar ausentes em comparação com a exibição do arquivo OBF.
+O OsmAnd permite converter vários arquivos GPX em um único arquivo OBF. Isso permite o armazenamento de milhares de trilhas GPX em um formato compacto e otimizado, mantendo recursos como ícones de mapa especiais, personalização da aparência da trilha e funcionalidade de pesquisa. Isso evita um limite de arquivos GPX locais grandes que normalmente não conseguem lidar com mais de 500 mil pontos no total, no entanto, alguns recursos de trilhas GPX podem estar ausentes em comparação com a exibição do arquivo OBF.
 
 Etapas para converter GPX para OBF:
 
 - Faça login no [Mapa Web do OsmAnd](https://osmand.net/map) *→ Trilhas → Selecione uma pasta → *Menu* (⋮) *→ Baixar como coleção OBF*
 
 - O arquivo `<.obf>` resultante pode ser importado para o OsmAnd (requer OsmAnd Android 5.0+).
+
 
 ### Estilo da linha da trilha {#track-line-style}
 
@@ -437,9 +444,9 @@ Personalize as linhas da trilha com as seguintes tags:
 | `<name>` | *(nenhum)* | Nome exibido sobre a linha da trilha. |
 | `color` | `red` | Cor primária (HEX ou texto). |
 | `colour`, `displaycolor` | *(nenhum)* | Maneiras alternativas de substituir `color`. |
-| `shield_waycolor` | *(nenhum)* | Substituição para `color` da linha da trilha do escudo. |
+| `shield_waycolor` | *(nenhum)* | Substituição para a `color` da linha da trilha do escudo. |
 | `translucent_line_colors` | `no` | Defina como `yes` para cores semi-transparentes. |
-| `width` | `thin` | Largura da linha: `"thin"` (fina), `"medium"` (média), `"bold"` (grossa), `"1-24"`, ou `"roadstyle"` (estilo de estrada) |
+| `width` | `thin` | Largura da linha: `"thin"`, `"medium"`, `"bold"`, `"1-24"`, ou `"roadstyle"` |
 
 **Cores suportadas:** preto, azul, marrom, amarelo escuro, cinza, verde, azul claro, verde claro, laranja, roxo, vermelho, branco, amarelo.
 
@@ -449,7 +456,7 @@ Personalize as linhas da trilha com as seguintes tags:
 <gpx>
   <metadata>
     <name>
-      Track name located in Metadata
+      Nome da trilha localizado em Metadados
     </name>
   </metadata>
   <trk>
@@ -463,9 +470,9 @@ Personalize as linhas da trilha com as seguintes tags:
 </gpx>
 ```
 
-### Escudos de linha de trilha {#track-line-shields}
+### Escudos da linha da trilha {#track-line-shields}
 
-Escudos são ícones ou símbolos exibidos ao longo da linha da trilha. O OsmAnd suporta escudos no estilo [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), que podem incluir:
+Escudos são ícones ou símbolos exibidos ao longo da linha da trilha. O OsmAnd suporta escudos [OSMC-symbol-style](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), que podem incluir:
 
 - Ícone de fundo - a forma principal (por exemplo, círculo ou quadrado).
 - Ícones de primeiro plano - até dois símbolos menores sobrepostos ao fundo.
@@ -480,7 +487,7 @@ Se nenhuma propriedade de escudo for definida, o OsmAnd usa um escudo amarelo de
 | `shield_bg` | Define o ícone de fundo para o escudo. |
 | `shield_fg` | Especifica o primeiro ícone de primeiro plano (por exemplo, uma seta ou ponto). |
 | `shield_fg_2` | Especifica o segundo ícone de primeiro plano (opcional). |
-| `shield_text` | Define o texto curto a ser exibido sobre o escudo (por exemplo, ref da rota). |
+| `shield_text` | Define o texto curto a ser exibido sobre o escudo (por exemplo, referência de rota). |
 | `shield_textcolor` | Determina a cor do texto do escudo (opcional). |
 | `shield_waycolor` | Substitui a cor padrão da trilha para a linha do escudo (opcional). |
 | `ref` | Usado como texto de fallback se `shield_text` não for fornecido. |
@@ -490,7 +497,7 @@ Se nenhuma propriedade de escudo for definida, o OsmAnd usa um escudo amarelo de
 ```xml
 <gpx>
   <trk>
-    <name>Sample Route</name>
+    <name>Exemplo de Rota</name>
   </trk>
   <extensions>
     <osmand:shield_text>ABC</osmand:shield_text>
@@ -510,12 +517,12 @@ Os ícones de pontos de passagem podem ser personalizados com as seguintes tags:
 |:-------------|:---------|:---------------------------------------------------|
 | `icon` | *(nenhum)* | Especifica o ícone para o ponto de passagem (usa ícones padrão do editor de pontos de passagem do OsmAnd). |
 | `color` | `red` | Define a cor do ícone usando um código HEX (por exemplo, `#ffaa00`) ou um nome de cor suportado (opções limitadas). |
-| `background` | `circle` | Define a forma do ícone. Valores suportados: `circle` (círculo), `square` (quadrado), `octagon` (octógono). |
+| `background` | `circle` | Define a forma do ícone. Valores suportados: `circle`, `square`, `octagon`. |
 
 ***Comportamento das formas de `background`:***
 
 - `circle` - exibe o ícone com um fundo circular.
-- `square` - exibe o ícone com um fundo quadrado, padrão para vermelho se nenhuma cor for especificada.
+- `square` - exibe o ícone com um fundo quadrado, padronizando para vermelho se nenhuma cor for especificada.
 - `octagon` - tratado como um fundo circular no OsmAnd.
 
 **Cores suportadas para** `background=circle`: azul, cinza, verde, azul claro, verde claro, laranja, roxo, amarelo.
@@ -538,6 +545,7 @@ Os ícones de pontos de passagem podem ser personalizados com as seguintes tags:
 </wpt>
 ```
 
+
 ### Pesquisar por nome e referências {#search-by-name-and-refs}
 
 Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags GPX.
@@ -547,7 +555,7 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
 | `<name>` | `<metadata>` | O nome principal da trilha GPX. |
 | `ref` | `<extensions>` GPX | Um identificador curto, frequentemente derivado da tag `ref` do OSM. |
 | `shield_text` | `<extensions>` GPX | Texto exibido em escudos (também pode ser usado com `ref`). |
-| `name_-_lang` | `<extensions>` GPX/WPT | `name:lang` localizado (por exemplo, `name_-_en` para inglês, substitua `:` -> `_-_`) |
+| `name_-_lang` | `<extensions>` GPX/WPT | `name:lang` localizado (por exemplo, `name_-_en` para inglês, substituir `:` -> `_-_`) |
 | `<name>` | `<wpt>` | O nome do ponto de passagem. |
 
 ***Exemplo:***
@@ -555,7 +563,7 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
 ```xml
 <gpx>
   <metadata>
-    <name>Xemxija Heritage Trail</name>
+    <name>Trilha do Patrimônio de Xemxija</name>
   </metadata>
   <extensions>
     <osmand:ref>XHT</osmand:ref>
@@ -563,7 +571,7 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
   <wpt lat="35.948477" lon="14.3806796">
     <name>Il-Mighba Rumana</name>
     <extensions>
-      <osmand:name_-_en>The Roman Apiary</osmand:name_-_en>
+      <osmand:name_-_en>O Apiário Romano</osmand:name_-_en>
     </extensions>
   </wpt>
 </gpx>
@@ -571,21 +579,23 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
 
 ### Pesquisar por tipo de atividade {#search-by-activity-type}
 
-O OsmAnd organiza as trilhas em arquivos OBF em **Grupos de Atividade** e **Tipos de Atividade**. Essas classificações ajudam você a filtrar trilhas como POIs ou criar filtros de pesquisa baseados em atividades.
+O OsmAnd organiza as trilhas em arquivos OBF em **Grupos de Atividades** e **Tipos de Atividades**. Essas classificações ajudam você a filtrar trilhas como POIs ou criar filtros de pesquisa baseados em atividades.
 
 Como os tipos de atividade funcionam:
 
 - Os tipos e grupos de atividade são determinados usando o `"id"` e as `"tags"` do arquivo [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json).
 - O OsmAnd usa as tags `osmand:activity` ou `osmand:route` para classificar atividades em arquivos GPX.
 
+
 | Tag GPX | Localização | Finalidade |
 |:------------------|:---------|:-------------------------------------------------|
 | `osmand:activity` | `<metadata>` | Tag principal do OsmAnd para armazenar o tipo de atividade (ID). |
-| `osmand:route` | `<extensions>` GPX | Maneira alternativa do OSM para definir o tipo de atividade. |
+| `osmand:route` | `<extensions>` GPX | Maneira alternativa do OSM de definir o tipo de atividade. |
+
 
 ***Exemplos de organização de trilhas por tipo de atividade:***
 
-1. Isso classificará a trilha no grupo **Motociclismo** com o tipo **Motociclismo Off-Road (Trilha)**.
+1. Isso classificará a trilha no grupo **Motociclismo** com o tipo **Motociclismo Off-Road (Dirt Biking)**.
 
     ```xml
     <metadata>
@@ -607,7 +617,7 @@ Como os tipos de atividade funcionam:
 
 ### Tags de informações de pesquisa {#search-information-tags}
 
-Os arquivos OBF geram e armazenam automaticamente estatísticas e análises críticas da trilha.
+Os arquivos OBF geram e armazenam automaticamente estatísticas e análises críticas de trilhas.
 
 | Tag OBF | Finalidade |
 |:--------------------------------------|:----------------------------------------------------------------------|
@@ -625,9 +635,9 @@ Algumas tags GPX são usadas ou armazenadas indiretamente em arquivos OBF. Consu
 
 | Tag OBF | Finalidade |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
-| `route_id` | Um identificador exclusivo para o arquivo GPX, vinculando dados de mapa e POI (formato: `/[A-Z]+[0-9]+/` por exemplo, `OSM12345`). |
-| `route_type` | Identificador de grupo de atividade (`id`) derivado de `poi/activities.json` |
-| `route_activity_type` | Identificador de tipo de atividade (dentro do grupo) (`id`) derivado de `poi/activities.json` |
+| `route_id` | Um identificador exclusivo para o arquivo GPX, vinculando dados de Mapa e POI (formato: `/[A-Z]+[0-9]+/` por exemplo, `OSM12345`). |
+| `route_type` | Identificador do grupo de atividades (`id`) derivado de `poi/activities.json` |
+| `route_activity_type` | Identificador do tipo de atividade (dentro do grupo) (`id`) derivado de `poi/activities.json` |
 | `name`, `ref`, `description` | Atributos localizáveis e pesquisáveis (`lang="true"` em tipos de POI) |
 | `filename` | O nome do arquivo GPX original usado para gerar esta trilha. |
 | `track_color` | Cor da trilha da seção do mapa derivada de `shield_waycolor`, `color`, `colour` ou `displaycolor` |
@@ -636,8 +646,6 @@ Algumas tags GPX são usadas ou armazenadas indiretamente em arquivos OBF. Consu
 | `wpt_extra_tags` | Tags extras arbitrárias para pontos de passagem `<wpt><extensions>` no formato JSON. |
 | `route_track_point` | Pontos de passagem do arquivo GPX usam este tipo em dados de POI. |
 | `route_bbox_radius` | Especifica o raio padrão para pesquisar partes da trilha dentro da seção POI |
-| `route_shortlink_tiles` | Especifica uma lista separada por vírgulas de blocos OSM Shortlink para acelerar a leitura de dados de geometria (opcional) |
+| `route_shortlink_tiles` | Especifica uma lista separada por vírgulas de blocos de link curto do OSM para acelerar a leitura de dados de geometria (opcional) |
 | `route_segment_index` | Especifica um número ordinal do segmento de geometria que está vinculado a este ponto (opcional) |
 | `route_name` | O nome da rota, usado por `searchPoiByName` interno (obsoleto) |
-
-> *Última atualização: Março de 2025*

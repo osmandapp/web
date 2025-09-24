@@ -1,6 +1,6 @@
 ---
-source-hash: 9dfdc23272c2395a2fe157264de05cb42ea6de2b1b0d9d756c1c1bf66f78f6d3
-sidebar_position: 7
+source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+sidebar_position: 1
 title: Navigasyon Ayarları
 ---
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-Başarılı bir navigasyon için, ihtiyaçlarınıza ve seyahat şeklinize göre (araba, yaya, at veya kayakla) uygun ayarları doğru bir şekilde yapılandırmak önemlidir. Bu makale, temel rota parametrelerini, [Sesli komutları](#voice-prompts), [Ekran uyarılarını](#screen-alerts), [Navigasyon sırasında harita davranışını](#map-during-navigation) ve [Rota çizgilerinin görünümünü](#customize-route-line) açıklamaktadır. Ayrıca, rota üzerinde etkili olabilecek [Varsayılan hız](#default-speed) ve [Maksimum/minimum hız](#road-speeds), CO2 hesaplaması için [Motor tipi](#fuel-used-by-motor), [Yakıt deposu kapasitesi](#fuel-tank-capacity) ve [Boyut/ağırlık](#size-parameters) gibi araç ayarlarını da detaylandırmaktadır. Bu ayarları yapmak, OsmAnd'ı en verimli şekilde kullanmanıza ve gereksiz gecikmeler olmadan hedefinize ulaşmanıza yardımcı olacaktır.
+Başarılı bir navigasyon için, ihtiyaçlarınıza ve seyahat şeklinize (araba, yaya, at veya kayak) göre uygun ayarları doğru bir şekilde yapılandırmak önemlidir. Bu makale, temel rota parametrelerini, [Sesli komutları](#voice-prompts), [Ekran uyarılarını](#screen-alerts), [Navigasyon sırasında harita davranışını](#map-during-navigation) ve [Rota çizgilerinin görünümünü](#customize-route-line) açıklar. Ayrıca varsayılan hız, CO2 hesaplaması için motor tipi, yakıt deposu kapasitesi ve boyut/ağırlık sınırlamaları gibi [Araç Ayarlarını](#vehicle-parameters) detaylandırır. Bu ayarları yapmak, OsmAnd'ı en verimli şekilde kullanmanıza ve gereksiz gecikmeler olmadan hedefinize ulaşmanıza yardımcı olacaktır.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -38,7 +38,7 @@ Başarılı bir navigasyon için, ihtiyaçlarınıza ve seyahat şeklinize göre
 
 ### Nasıl Açılır {#how-to-open}
 
-Bu bölüm, seçilen profil için ayarlayabileceğiniz, rota hesaplama ve çizimi için gerekli navigasyon ayarlarını sunar. Bu menü, [Rota hazırlığı](../setup/route-navigation.md), [Navigasyon sırasında harita ekranı](../guidance/map-during-navigation.md) ayarlarını içerir ve *Navigasyon ayarları*'nda belirlediğiniz ayarlar, [Rota Detayları](../setup/route-details.md)ndaki verilerin görüntülenmesini doğrudan etkiler.
+Bu bölüm, seçilen profil için ayarlayabileceğiniz, bir rotayı hesaplamak ve çizmek için gerekli navigasyon ayarlarını sunar. Bu menü, [Rota hazırlığı](../setup/route-navigation.md), [Navigasyon sırasında harita ekranı](../guidance/map-during-navigation.md) ve *Navigasyon ayarlarında* doğrudan ayarladığınız şeylerin [Rota Detayları](../setup/route-details.md) içindeki verilerin görüntülenmesini etkilediği ayarları içerir.
 
 Navigasyon ayarları menüsüne erişmek için üç yol vardır.
 
@@ -49,7 +49,7 @@ Navigasyon ayarları menüsüne erişmek için üç yol vardır.
 - Ana *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*'ye gidin.
 
 :::info
-Varsayılan *Haritaya Göz At* profilinde navigasyon ayarları bulunmamaktadır.
+Varsayılan *Haritaya Göz At* profilinin navigasyon ayarları yoktur.
 :::
 
 
@@ -71,15 +71,15 @@ Varsayılan *Haritaya Göz At* profilinde navigasyon ayarları bulunmamaktadır.
 
 </Tabs>
 
-Navigasyon, bir seyahatin önemli bir parçasıdır ve *doğru navigasyon türünü* seçmek yolculuğunuzu çok daha kolaylaştırabilir. Seçtiğiniz navigasyon türü, nasıl seyahat ettiğinize ve İnternet bağlantınız olup olmadığına bağlı olabilir.
+Navigasyon, bir seyahatin önemli bir parçasıdır ve *doğru navigasyon türünü* seçmek yolculuğunuzu çok daha kolay hale getirebilir. Seçtiğiniz navigasyon türü, nasıl seyahat ettiğinize ve İnternet bağlantınız olup olmadığına bağlı olabilir.
 
 - **Çevrimiçi navigasyon**
-OsmAnd uygulamasının güncel bilgilere ve diğer faktörlere dayanarak bir rota çizmesini sağlayan özel bir yönlendirme sistemi veya web sitesi kullanır. En iyi çevrimiçi rotayı seçme hakkında [Çevrimiçi yönlendirme](../routing/online-routing.md) makalesinde okuyabilirsiniz. Bu navigasyon türü yalnızca uygulamanın *Android sürümü* için mevcuttur.
+OsmAnd uygulamasının mevcut bilgilere ve diğer faktörlere dayanarak bir rota çizmesini sağlayan özel bir yönlendirme sistemi veya web sitesi kullanır. En iyi çevrimiçi rotayı seçme hakkında [Çevrimiçi yönlendirme](../routing/online-routing.md) makalesinde okuyabilirsiniz. Bu navigasyon türü yalnızca uygulamanın *Android sürümü* için mevcuttur.
 
 - **Çevrimdışı navigasyon**
-İnternet erişimi gerektirmez ve bir rota hesaplamak için kullanılabilecek daha geniş bir [navigasyon türleri](../routing/osmand-routing.md#routing-types) seçeneği sunar. Bunlar arasında *bisiklet, tekne, araba, yaya, kayak* ve *düz çizgi* bulunur. Şu anda 13 temel yönlendirme türü ve ek yönlendirme fırsatları sağlayan harici bir [BRouter](../routing/brouter.md) yönlendirme türü bulunmaktadır.
+İnternet erişimi gerektirmez ve bir rotayı hesaplamak için kullanılabilecek daha geniş bir [navigasyon türü](../routing/osmand-routing.md#routing-types) seçeneği sunar. Bunlar arasında *bisiklet, tekne, araba, yaya, kayak* ve *düz çizgi* bulunur. Şu anda 13 temel yönlendirme türü ve ek yönlendirme fırsatları sağlayan harici bir [BRouter](../routing/brouter.md) yönlendirme türü bulunmaktadır.
 
-Navigasyon türü, rotaları hesaplamak için hangi kuralların kullanılacağını belirler. Belirli bir navigasyon türüne ihtiyacınız varsa, **kendi değiştirilmiş *XML* yönlendirme dosyanızı içe aktarabilirsiniz**. Yönlendirme kuralları hakkında daha fazla bilgiyi [GitHub sayfamızda](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) okuyun. Ayrıca, XML formatı ve nasıl kullanılacağı hakkında ayrı bir makale olan [Harita Oluşturma Stili](../../../technical/osmand-file-formats/osmand-rendering-style.md), bir rota dosyası oluşturmanıza yardımcı olabilir.
+Navigasyon türü, rotaları hesaplamak için hangi kuralların kullanılacağını belirler. Belirli bir navigasyon türüne ihtiyacınız varsa, **kendi değiştirilmiş *XML* yönlendirme dosyanızı içe aktarabilirsiniz**. Yönlendirme kuralları hakkında daha fazla bilgiyi [GitHub sayfamızda](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) okuyun. XML formatı ve nasıl kullanılacağı hakkında ayrı bir makale olan [Harita Oluşturma stili](../../../technical/osmand-file-formats/osmand-rendering-style.md), bir rota dosyası oluşturmanıza yardımcı olabilir.
 
 
 ## Rota Parametreleri {#route-parameters}
@@ -100,9 +100,9 @@ Navigasyon türü, rotaları hesaplamak için hangi kuralların kullanılacağı
 
 </Tabs>
 
-**<Translate android="true" ids="route_parameters"/>** uygulama, ulaşım türü, yönlendirme öncelikleri, rota koşulları, rota karmaşıklığı ve kullanıcı tercihleri gibi faktörleri göz önünde bulundurarak bir hedefe ulaşmak için bir rotayı nasıl hesaplayacağını belirleyen ayarlardır.
+**<Translate android="true" ids="route_parameters"/>**, uygulamanın bir hedefe ulaşmak için bir rotayı nasıl hesaplayacağını belirleyen ayarlardır; ulaşım türü, yönlendirme öncelikleri, rota koşulları, rota karmaşıklığı ve kullanıcı tercihleri gibi faktörleri dikkate alır.
 
-*Haritaya Göz At* hariç her [profil](../../personal/global-settings.md#default-profile) için OsmAnd, varsayılan olarak optimal [Navigasyon türünü](#navigation-type) ve ilgili [rota parametrelerini](../routing/osmand-routing.md#routing-types) seçer. Ancak, tercihlerinize ve yaklaşan seyahatin dış koşullarına bağlı olarak istediğiniz herhangi bir türü seçebilir ve parametreleri değiştirebilirsiniz.
+*Haritaya Göz At* hariç her [profil](../../personal/global-settings.md#default-profile) için OsmAnd, varsayılan olarak en uygun [Navigasyon türünü](#navigation-type) ve ilgili [rota parametrelerini](../routing/osmand-routing.md#routing-types) seçer. Ancak, tercihlerinize ve yaklaşan seyahatin dış koşullarına bağlı olarak istediğiniz türü seçebilir ve parametreleri değiştirebilirsiniz.
 
 Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak açıklanmıştır:
 *[Araba yönlendirme (Kamyon, Motosiklet)](../routing/car-based-routing.md), [Bisiklet yönlendirme (MTB)](../routing/bicycle-based-routing.md), [Moped yönlendirme](../routing/moped-routing.md), [Yaya yönlendirme](../routing/pedestrian-routing.md), [Toplu Taşıma yönlendirme](../routing/public-transport-navigation.md), [Atlı yönlendirme](../routing/horse-routing.md), [Kayak yönlendirme](../routing/ski-routing.md), [Tren yönlendirme](../routing/train-routing.md), [Tekne yönlendirme](../routing/boat-navigation.md), [Noktadan noktaya yönlendirme](../routing/direct-to-point-routing.md), [Düz çizgi yönlendirme](../routing/straight-line-routing.md), [Çevrimiçi yönlendirme](../routing/online-routing.md), [BRouter yönlendirme](../routing/brouter.md)*.
@@ -128,12 +128,12 @@ Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak 
 
 </Tabs>
 
-**Rota Hesaplama** parametresi, rotadan saptığınızda veya ters yönde gittiğinizde hesaplanan rotayı otomatik olarak değiştirir. Her iki durumda da bu ayar, seyahat yönünüzü korumanıza ve yeni bir rota için manuel olarak zaman kaybetmeden hedefinize ulaşmanıza yardımcı olur.
+**Rota Hesaplama** parametresi, rotadan saptığınızda veya ters yönde sürdüğünüzde hesaplanan rotayı otomatik olarak değiştirir. Her iki durumda da, bu ayar seyahat yönünüzü korumanıza ve yeni bir rota aramak için manuel olarak zaman kaybetmeden hedefinize ulaşmanıza yardımcı olur.
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> sapma durumunda* | <Translate android="true" ids="recalculate_route_distance_promo"/> | [Sesli komutlar](../guidance/voice-navigation.md#voice-settings) açıksa, OsmAnd rotanın yeniden hesaplandığını bildirir. |
-| *Ters yönde rota yeniden hesapla* | Başlangıç noktasına doğru hareket ederseniz rotanız yeniden hesaplanacaktır. | Bu ayar kapalıyken, başlangıç noktasına hareket, yolun bir sapması olarak kabul edilmez (hesaplanan rotayı takip ettiği sürece). |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> sapma durumunda* | <Translate android="true" ids="recalculate_route_distance_promo"/> | [Sesli komutlar](../guidance/voice-navigation.md#voice-settings) açıksa, OsmAnd rotanın yeniden hesaplandığını duyurur. |
+| *Ters yönde rota yeniden hesapla* | Başlangıç noktasına doğru hareket ederseniz rotanız yeniden hesaplanacaktır. | Bu ayar kapalıyken, başlangıç noktasına hareket, yoldan sapma olarak kabul edilmez (hesaplanan rotayı takip ettiği sürece). |
 
 
 ### Geliştirme Ayarları {#development-settings}
@@ -142,7 +142,7 @@ Tüm rota parametreleri, belgelemenin ilgili bölümlerinde ayrıntılı olarak 
 
 <TabItem value="android" label="Android">
 
-Git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota parametreleri → Geliştirme*
+Şuraya git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota parametreleri → Geliştirme*
 
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
@@ -150,7 +150,7 @@ Git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota p
 
 <TabItem value="ios" label="iOS">
 
-Git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota parametreleri → Geliştirme*
+Şuraya git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota parametreleri → Geliştirme*
 
 ![Navigasyon Ayarları iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
@@ -162,15 +162,15 @@ Git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota p
 
 | Parametre | Açıklama |
 |:------------|:---------------|
-| *Yönlendirme türü* (*Android*) / *Yönlendirme algoritması* (*iOS*) | <ul><li>**A*** 2 fazlı (*Android*) / **A*** (*iOS*) hesaplanan rotanın kalitesini artırmak için varsayılan algoritmaya ek bir faz ekler. Bu seçenek, büyük ve karmaşık yol ağlarında rota bulmak için faydalı olabilir, ancak rota hesaplaması daha uzun sürebilir.</li><li>**A* klasik** (*Android*) / **Otoyol hiyerarşileri** (*iOS*) rota planlamasını ana yolları ve otobanları tercih ederek optimize eder, rotadaki dönüş ve kavşak sayısını en aza indirir. Özellikle uzun mesafelerde etkilidir.</li><li>**HH (Otoyol Hiyerarşileri) x Java** (*Android yalnızca*) çalışma zamanı kısıtlamalarını ve cihaz kaynak tüketimini dikkate alarak haritada yol bulmayı optimize etmek için hiyerarşik veri yapılarının uygulanmasına dayanır ve Java platformunda gerçekleştirilir.</li><li>**HH (Otoyol Hiyerarşileri) x C++** (*Android yalnızca*) yol ağı verilerini verimli bir şekilde işlemek ve hiyerarşik veri yapılarını kullanarak optimal rotalar oluşturmak için C++ programlama dilini kullanan bir algoritmadır. Büyük miktarda verinin hızlı işlenmesi için optimize edilmiştir ve birçok yol ağına sahip haritalarda gezinmek için özellikle etkilidir.</li></ul> |
-| *GPX yaklaşımı* (*Android yalnızca*) | <ul><li>**Yönlendirme tabanlı** GPX yaklaşımı **C++ ve Java**'da, GPS izlerini mevcut yol rotalarıyla yaklaştırmak için rota verilerini kullanır, bu da iz doğruluğunu artırır ve iz boyutunu azaltır.</li><li>**Geometri tabanlı** GPX yaklaşımları **C++ ve Java**'da, büyük miktarda verinin verimli işlenmesine olanak tanıyan GPS izlerini hızlı ve doğru bir şekilde yaklaştırmak için geometrik prensiplere dayanarak çalışır.</li></ul> |
-| *Otomatik yakınlaştırma* | <ul><li>**Ayrık** haritayı birkaç ayrık adımda ölçülen belirli bir ayrıntı düzeyine yakınlaştırmanıza olanak tanır.</li><li>**Pürüzsüz** harita ölçeğinde pürüzsüz animasyon efektleriyle sarsıntısız veya atlamasız kademeli bir değişiklik sağlar.</li></ul> |
-| *<Translate android="true" ids="use_live_routing"/>* (*Android yalnızca*) | Yönlendirme sırasında [OsmAnd Canlı güncellemelerini](../../personal/maps-resources.md#osmand-live) kullanın. Bu seçeneği yalnızca test amaçlı kullanmanızı öneririz. |
+| *Yönlendirme türü* (*Android*) / *Yönlendirme algoritması* (*iOS*) | <ul><li>**A*** 2 fazlı (*Android*) / **A*** (*iOS*), hesaplanan rotanın kalitesini artırmak için varsayılan algoritmaya ek bir faz ekler. Bu seçenek, büyük ve karmaşık yol ağlarında rota bulmak için faydalı olabilir, ancak rota hesaplaması daha uzun sürebilir.</li><li>**A* klasik** (*Android*) / **Otoyol hiyerarşileri** (*iOS*), ana yolları ve otoyolları tercih ederek rota planlamasını optimize eder, rotadaki dönüş ve kavşak sayısını en aza indirir. Özellikle uzun mesafelerde etkilidir.</li><li>**HH (Otoyol Hiyerarşileri) x Java** (*Yalnızca Android*), çalışma zamanı kısıtlamalarını ve cihaz kaynak tüketimini dikkate alarak bir harita üzerinde yol bulmayı optimize etmek için hiyerarşik veri yapılarının uygulanmasına dayanır ve Java platformunda gerçekleştirilir.</li><li>**HH (Otoyol Hiyerarşileri) x C++** (*Yalnızca Android*), yol ağı verilerini verimli bir şekilde işlemek ve hiyerarşik veri yapılarını kullanarak optimal rotalar oluşturmak için C++ programlama dilini kullanan bir algoritmadır. Büyük miktarda verinin hızlı işlenmesi için optimize edilmiştir ve birçok yol ağına sahip haritalarda gezinmek için özellikle etkilidir.</li></ul> |
+| *GPX yaklaşımı* (*Yalnızca Android*) | <ul><li>**Yönlendirme tabanlı** GPX yaklaşımı **C++ ve Java**'da, GPS izlerini mevcut yol rotalarıyla yaklaştırmak için rota verilerini kullanır, bu da iz doğruluğunu artırır ve iz boyutunu azaltır.</li><li>**Geometri tabanlı** GPX yaklaşımları **C++ ve Java**'da, GPS izlerini hızlı ve doğru bir şekilde yaklaştırmak için geometrik prensiplere dayanır, bu da büyük miktarda verinin verimli işlenmesini sağlar.</li></ul> |
+| *Otomatik yakınlaştırma* | <ul><li>**Ayrık**, haritayı birkaç ayrık adımda ölçülen belirli bir ayrıntı düzeyine yakınlaştırmanıza olanak tanır.</li><li>**Pürüzsüz**, harita ölçeğinde sarsıntısız veya atlamasız, pürüzsüz animasyon efektleriyle kademeli bir değişiklik sağlar.</li></ul> |
+| *<Translate android="true" ids="use_live_routing"/>* (*Yalnızca Android*) | Yönlendirme sırasında [Canlı güncellemeleri](../../personal/maps-resources.md#live-updates) kullanın. Bu seçeneği yalnızca test amaçlı kullanmanızı öneririz. |
 
 <!--
 | Parametre | Açıklama | Not |
 |:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>* | Yönlendirme sırasında [OsmAnd Canlı güncellemelerini](../../personal/maps-resources.md#osmand-live) kullanmaya izin verir. Bu seçeneği yalnızca test amaçlı kullanmanızı öneririz. |
+| *<Translate android="true" ids="use_live_routing"/>* | Yönlendirme sırasında [Canlı güncellemeleri](../../personal/maps-resources.md#live-updates) kullanmaya izin verir. Bu seçeneği yalnızca test amaçlı kullanmanızı öneririz. |
 | *<Translate android="true" ids="use_two_phase_routing"/>* | Hesaplanan rotanın kalitesini artırmak için varsayılan (A*) algoritmaya ek bir faz ekler. Bu seçenek, büyük ve karmaşık yol ağlarında rota bulmak için faydalı olabilir, ancak rota hesaplaması daha uzun sürebilir. |
 | *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/> |
 -->
@@ -200,13 +200,13 @@ Git: *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota p
 
 </Tabs>
 
-*[Sesli Komutlar / Bildirimler](./voice-navigation.md)* makalesinin ilk bölümü, sesli komutların nasıl ayrıntılı olarak ayarlanacağını açıklamaktadır.
+*[Sesli Komutlar / Bildirimler](./voice-navigation.md)* makalesinin ilk bölümü, sesli komutların nasıl ayrıntılı olarak ayarlanacağını açıklar.
 
-Navigasyon sırasında sesli talimatlar, sürücü veya yaya olarak [seçilen bir rotada gezinirken](../setup/route-navigation.md) hedefinize ulaşmanıza yardımcı olur. Dönüşler, sürüş yönleri, yol işaretleri, hedefinize olan mesafeler ve navigasyonunuzu etkileyebilecek diğer faktörler hakkında bilgi içerirler.
+Navigasyon sırasında sesli talimatlar, seçilen bir rotada gezinirken sürücü veya yaya olarak hedefinize ulaşmanıza yardımcı olur. Dönüşler, sürüş yönleri, yol işaretleri, hedefinize olan mesafeler ve navigasyonunuzu etkileyebilecek diğer faktörler hakkında bilgi içerirler.
 
-Hedef noktanız olarak bir iz seçerseniz, sesli komutların doğru çalışması için [Yollara bağla](../setup/gpx-navigation.md#attach-to-the-roads) seçeneğini kullanmanız gerekir.
+Hedef noktanız olarak bir iz seçerseniz, sesli komutların doğru çalışması için [Yollara Bağla](../setup/gpx-navigation.md#attach-to-the-roads) seçeneğini kullanmanız gerekir.
 
-*Sesli komutlar*, yola odaklanmanızı ve harita veya navigasyon cihazı tarafından dikkatinizin dağılmamasını sağlar. Ayrıca sürüş güvenliğini artırır, bilinmeyen arazide gezinmek için gereken süreyi azaltır ve farklı [rota türleri](../routing/osmand-routing.md#routing-types) için faydalı olabilir.
+*Sesli komutlar*, yola odaklanmanızı ve harita veya navigasyon cihazı tarafından dikkatinizin dağılmamasını sağlar. Ayrıca sürüş güvenliğini artırır, tanıdık olmayan arazide gezinmek için gereken süreyi azaltır ve farklı [rota türleri](../routing/osmand-routing.md#routing-types) için faydalı olabilir.
 
 
 ## Ekran Uyarıları {#screen-alerts}
@@ -215,7 +215,7 @@ Hedef noktanız olarak bir iz seçerseniz, sesli komutların doğru çalışmas�
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -223,7 +223,7 @@ Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routin
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
 ![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
@@ -234,11 +234,11 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 **Ekran uyarısı** navigasyon ayarı, [**Uyarılar Widget'ını**](../../widgets/nav-widgets.md#alert-widget) etkinleştirir. *Detaylar:*
 
 - Yoldaki desteklenen engellerden birine yaklaştığınızda, haritanın sol alt köşesinde bildirimler görünür.
-- OsmAnd uygulamasında bulunan [*sesli ve metinli komutları*](../../navigation/guidance/voice-navigation.md) yapılandırırsanız, daha konforlu ve güvenli bir yolculuk yaparsınız.
+- OsmAnd uygulamasında bulunan [*sesli ve yazılı komutları*](../../navigation/guidance/voice-navigation.md) yapılandırırsanız, daha konforlu ve güvenli bir yolculuk yaparsınız.
 - Komutların görünümü ve zamanlaması hız ayarlarınıza bağlıdır. Bunları [makalede](../../../technical/algorithms/voice-prompt-triggering.md) bulabilirsiniz.
-- *Ekran Uyarıları*'nın davranışı, [Rota boyunca noktaları göster](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) ayarından da etkilenir.
+- *Ekran Uyarılarının* davranışı, [Rota boyunca noktaları göster](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) ayarından da etkilenir.
 
-Navigasyon sırasında uygulama ekranında ***hangi uyarıları görmek istediğinizi*** seçebilirsiniz:
+Navigasyon sırasında uygulama ekranında görmek istediğiniz ***uyarıları seçebilirsiniz***:
 
 - **Hız sınırı** ([OSM Wiki bilgisi](https://wiki.openstreetmap.org/wiki/Speed_limits)). Ekran uyarıları ayarında, *Hız sınırı* yalnızca *Trafik uyarıları* açıkken ekranda görüntülenir. Diğer uyarılar olmadan navigasyon sırasında hız sınırlarını görmek isterseniz, [widget'ı](../../widgets/nav-widgets.md#speed-limit) kullanın.
 - **Trafik uyarıları** ([OSM Wiki bilgisi](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Ek bilgi [Navigasyon sırasında harita ekranı](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings) makalesinde bulunabilir.
@@ -247,7 +247,7 @@ Navigasyon sırasında uygulama ekranında ***hangi uyarıları görmek istediğ
 - **Tüneller** ([OSM Wiki bilgisi](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
-Uyarı türleri, seyahat bölgesine bağlı olarak farklı görsel görünümlere sahiptir. OsmAnd, yol işaretlerini %100 aynı sunmayı hedeflemez, ancak bazı benzerliklere dikkat çeker.
+Uyarı türlerinin, seyahat bölgesine bağlı olarak farklı görsel görünümleri vardır. OsmAnd, %100 aynı yol işaretlerini sunmayı hedeflemez, ancak bazı benzerliklere işaret eder.
 :::
 
 
@@ -257,13 +257,13 @@ Uyarı türleri, seyahat bölgesine bağlı olarak farklı görsel görünümler
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
 
 </TabItem>
 
@@ -271,7 +271,7 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-**Harita, navigasyon sırasında** konumunuzu belirlemek, rotanızı planlamak ve arazi yönlendirmesi için kullanılır. Navigasyon sırasında haritayı *otomatik merkezleme* ile görüntüleyebilir, hareket ettirebilir ve gerekli alanı görmek için *yakınlaştırıp uzaklaştırabilirsiniz*. Harita ayrıca ilgi çekici noktaları, rotaları, hava koşullarını, yol işaretlerini ve gezinmenize yardımcı olacak diğer nesneleri gösteren işaretçileri de görüntüleyebilir. Harita *gerçek zamanlı* olarak güncellenebilir ve rota planlamasını etkileyebilecek *güncel bilgileri* görüntüler.
+**Harita, navigasyon sırasında** konumunuzu belirlemek, rotanızı planlamak ve arazi yönlendirmesi için kullanılır. Navigasyon sırasında, haritayı *otomatik merkezleme* ile görüntüleyebilir, etrafında hareket ettirebilir ve gerekli alanı görmek için *yakınlaştırıp uzaklaştırabilirsiniz*. Harita ayrıca ilgi çekici noktaları, rotaları, hava koşullarını, yol işaretlerini ve gezinmenize yardımcı olacak diğer nesneleri gösteren işaretçileri de görüntüleyebilir. Harita *gerçek zamanlı* olarak güncellenebilir ve rota planlamasını etkileyebilecek *güncel bilgileri* görüntüler.
 
 Navigasyon sırasında haritanın davranışının nasıl değiştiğini [Navigasyon sırasında harita ekranı](../guidance/map-during-navigation.md) makalesinde öğrenebilirsiniz.
 
@@ -281,7 +281,7 @@ Navigasyon sırasında haritanın davranışının nasıl değiştiğini [Naviga
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
+Şuraya git: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
 
 ![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
@@ -289,7 +289,7 @@ Git: *<Translate android="true" ids="profile_type_user_string,shared_string_sett
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
@@ -297,7 +297,7 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 
 </Tabs>
 
-**Rota Çizgisini Özelleştir** ayarı ile navigasyon sırasında haritada görünecek rota çizgisinin görünümünü seçebilirsiniz. Çizginin *rengini*, *genişliğini* ve üzerindeki *dönüş oklarının* gösterimini seçebilirsiniz. Her profil için farklı bir çizgi görünümü seçebilirsiniz. Tüm bu parametreler, *Navigasyon sırasında harita ekranı* makalesinin [Rota çizgisi görünümü](../../navigation/guidance/map-during-navigation.md#route-line-appearance) bölümünde ayrıntılı olarak açıklanmıştır.
+**Rota Çizgisini Özelleştir** ayarı ile navigasyon sırasında haritada görünecek rota çizgisinin görünümünü seçebilirsiniz. *Rengi*, *çizginin genişliğini* ve üzerindeki *dönüş oklarının* gösterimini seçebilirsiniz. Her profil için farklı bir çizgi görünümü seçebilirsiniz. Tüm bu parametreler, *Navigasyon sırasında harita ekranı* makalesinin [Rota çizgisi görünümü](../../navigation/guidance/map-during-navigation.md#route-line-appearance) bölümünde ayrıntılı olarak açıklanmıştır.
 
 
 ## Araç Parametreleri {#vehicle-parameters}
@@ -306,7 +306,7 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -314,7 +314,7 @@ Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routin
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
 
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
@@ -322,208 +322,7 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 
 </Tabs>
 
-OsmAnd'da optimal rota hesaplaması için aşağıdaki araç parametrelerini göz önünde bulundurmalısınız:
-
-1. Aracın [minimum ve maksimum hızı](#road-speeds) olarak [*Varsayılan Hız* veya *Yol Hızları*'nı](#default-speed--road-speeds) ayarlayın. Bu, uygulamanın rotayı tamamlamak için gereken süreyi belirlemesine ve farklı yol segmentlerindeki hız sınırlarını dikkate alarak en iyi rotayı seçmesine yardımcı olacaktır.
-2. Motor tarafından kullanılan yakıtın [*tipini*](#fuel-used-by-motor) belirtin. Bu, uygulamanın CO2 emisyonlarını tahmin etmesini sağlayacaktır.
-3. Yakıt seviyenizi ve tüketiminizi doğru bir şekilde takip etmek için [*deponuzun kapasitesini*](#fuel-tank-capacity) girin.
-4. Aracınızın [*boyut ve ağırlık parametrelerini*](#size-parameters) tanımlayın; bu, uygulamanın optimal rotayı hesaplamasına ve kısıtlamalar nedeniyle yoldaki engellerden kaçınmasına yardımcı olabilir.
-
-OsmAnd uygulamasında parametreleri doğru bir şekilde ayarlamak, bir rotada gezinirken sorunlardan kaçınmanıza, araç tipine ve yol kısıtlamalarına göre en uygun olanı seçmenize ve seyahatiniz için süreyi hesaplamanıza yardımcı olacaktır.
-
-
-### Boyut Parametreleri {#size-parameters}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Araç parametreleri, yol, köprü, feribot, baraj ve diğer altyapıların kullanılabilirliğini belirlediği için navigasyonu ve rota yapısını etkiler. Bir aracın yüksekliği, genişliği, uzunluğu veya ağırlığı belirli yol kesimleri için izin verilen değerleri aşarsa, OsmAnd navigasyon sistemi yol boyunca engellerden kaçınmak için alternatif bir rota bulacaktır.
-
-- Ölçü birimleri, *Genel ayarlar → [Birimler ve formatlar](../../personal/profiles.md#units--formats)* bölümünde seçilen ayarlara karşılık gelecektir.
-- Araç parametreleri manuel olarak ayarlanabilir.
-- Araç ölçüm parametresini manuel olarak seçerseniz, uygulama size hazır listeden en yakın değeri sunacaktır. Bu, hatalardan kaçınmak ve rotayı daha doğru oluşturmak için gereklidir.
-- Araç parametrelerini hazır bir boyut listesinden seçebilirsiniz.
-- Boyutu ayarlamayın, *Yok* seçeneği, seçilen parametre üzerinde herhangi bir kısıtlama uygulanmayacağı anlamına gelir.
-
-#### Sınırlar {#limits}
-
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Ağırlık parametresi yalnızca [*Araba, Kamyon* ve *Motosiklet*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
-
-**2.** [**<Translate android="true" ids="routing_attr_height_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Yükseklik parametresi yalnızca *[Araba, Kamyon, Motosiklet](../../navigation/routing/car-based-routing.md)* ve *[Tekne](../../navigation/routing/boat-navigation.md)* gibi navigasyon türlerinde mevcuttur.
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)
-
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Uzunluk parametresi yalnızca [*Araba, Kamyon* ve *Motosiklet*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_length_andr.png)
-
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Genişlik parametresi yalnızca *[Araba, Kamyon, Motosiklet](../../navigation/routing/car-based-routing.md)* ve *[Tekne](../../navigation/routing/boat-navigation.md)* gibi navigasyon türlerinde mevcuttur.
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
-
-Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli olabilir. Bu kısıtlamalardan bazıları şunları içerebilir:
-
-1. Belirli kentsel alanlarda hareket eden araçlara yönelik kısıtlamalar.
-2. Köprüler, sınırlı alana sahip tüneller, alçak geçitler, karmaşık dönüşler veya diğer yapılar gibi belirli yol kesimlerinde araç hareketine yönelik kısıtlamalar.
-3. Araç aksı başına ağırlık limitleri, özellikle kamyonlar için önemli olabilir.
-4. Yüksek sıcaklıklar, ıslak veya karlı yollar, gece veya sınırlı görüş mesafesine sahip hava koşulları gibi belirli koşullarda hareket eden araçlara yönelik kısıtlamalar.
-
-Bu kısıtlamalar navigasyon için önemli olabilir ve bir rota planlarken dikkate alınmalıdır. Bir araç limitleri aşarsa, yol güvenliği, altyapı hasarı, kaza cezaları ve diğer yasal sonuçlar doğurabilir. Bu nedenle, sürücüler rotayı dikkatlice incelemeli ve araçlarının yüksekliğinin limitlere uygun olduğundan emin olmalıdır.
-
-
-### Yakıt parametreleri {#fuel-parameters}
-
-#### Motor Tarafından Kullanılan Yakıt {#fuel-used-by-motor}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigasyon rotası Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigasyon rotası iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Araç parametrelerinde motor tipini seçerseniz, [Rota Detayları](../setup/route-details.md)ndaki grafiğin üzerinde [***CO2 ayak izi verileri***](../../navigation/setup/route-details.md#elevation-info) görüntülenecektir.
-Altı yakıt türü mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik*** ve ***Hibrit***.
-
-**Uygulanabilirlik:**
-
-**Motor tarafından kullanılan yakıt** ayarı yalnızca *[Araba, Motosiklet ve Kamyon](../../navigation/routing/car-based-routing.md)* gibi araç tabanlı navigasyonlarda mevcuttur.
-
-
-#### Yakıt Deposu Kapasitesi {#fuel-tank-capacity}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**Yakıt deposu kapasitesi** parametresi, deponuzun toplam hacmini sağlayarak aracınızın yakıt seviyesini ve tüketimini daha doğru bir şekilde takip etmenizi sağlar. Yakıt kapasitesi için ölçü birimi, *Menü → Profili yapılandır → Genel ayarlar → Birimler ve Formatlar → Hacim birimi* bölümünde yapılandırılan ayarlarla belirlenir. Birimler ve Formatları ayarlama konusunda ayrıntılı rehberlik için [Profil (Ayarlar)](https://osmand.net/docs/user/personal/profiles#units--formats) makalesine bakın.
-
-OsmAnd, kapasite için aşağıdaki birimleri destekler:
-
-- Galon - **gal**. Bu kısaltma, seçtiğiniz birim tercihlerine bağlı olarak hem **İmparatorluk galonlarını** hem de **ABD galonlarını** temsil etmek için kullanılır.
-- Litre - **l**. Kapasite için metrik birim.
-
-**Uygulanabilirlik:**
-
-**Yakıt deposu kapasitesi** ayarı yalnızca araç tabanlı navigasyonlarda mevcuttur. *Bisiklet*, *Atlı*, *Yaya* ve *Kayak* gibi navigasyon türleri için bu parametre Araç Parametrelerinde görüntülenmez.
-
-Yakıt deponuzun tam kapasitesini girerek, uygulama daha kişiselleştirilmiş bir deneyim sunabilir, buna şunlar dahildir:
-
-- Tüketiminize göre kalan yakıtın hassas takibi.
-- Depo boyutunuza göre optimize edilmiş yakıt duraklarıyla geliştirilmiş rota planlaması.
-
-Doğru hesaplamalar ve navigasyon önerileri sağlamak için, seçtiğiniz birimin deponuzun ölçüm standardıyla eşleştiğini doğrulayın.
-
-
-### Varsayılan Hız / Yol Hızları {#default-speed--road-speeds}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Tüm navigasyon türleri için minimum ve maksimum izin verilen hız, hem varsayılan olarak hem de yola göre, belirli değerlere ([Varsayılan hız sınırları](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) ve araçlar için kısıtlamalara göre farklılık gösterebilir. Uygulama ayarlarını maksimum kullanılabilir hale getirmek için hız belirli artışlarla da ayarlanır. *Yürüme*, *Atlı* ve *Bisiklet* profilleri için 0,1 km/s'ye ([Birimler ve formatlar](https://osmand.net/docs/user/personal/profiles#units--formats)) eşdeğer küçük artışlarla, diğer profiller için ise 1 km/s'ye eşdeğer artışlarla.
-Hız ayarları, [sesli anonsların](../guidance/voice-navigation.md) ne zaman etkinleştirileceğini belirler.
-
-Bu parametreler, hız harita verilerinden belirlenemediğinde [varış süresini](../../widgets/nav-widgets.md#time-to-intermediate) tahmin etmek için hız olarak kullanılır:
-
-- seçilen profil için;
-- kullanılan yolların hız sınırı yoksa, bu da yönlendirmeyi etkileyebilir;
-- kullanıcı tarafından oluşturulan veya içe aktarılan izler seçilirse.
-
-
-#### Varsayılan Hız {#default-speed}
-
-**Varsayılan hız**, önceden ayarlanmış hareket hızıdır. Varış süresini hesaplamak ve uygulamanın bu ulaşım modu için tipik kabul ettiği hareket hızına göre en uygun rotayı belirlemek için kullanılır. Örneğin, araba, toplu taşıma, yaya veya manuel olarak ayarladığınız hız.
-
-
-#### Yol Hızları {#road-speeds}
-
-<InfoAndroidOnly />
-
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-:::note
-iOS'taki bu ayarlar *Menü → Ayarlar → uygulama profili → Navigasyon ayarları → Rota parametreleri → Yol hızları* bölümünde mevcuttur.
-:::
-
--->
-
-- **Minimum hız**
-Ayar, rotadaki tüm yol türleri için minimum sürüş hızını belirler. Minimum hızdan daha düşük önerilen hıza sahip yollar için önceliği artırır.
-- **Maksimum hız**
-Ayar, maksimum sürüş hızını belirler ve maksimum hızdan daha yüksek olası hıza sahip yollar için önceliği azaltır.
+OsmAnd'ın en uygun rotayı hesaplamasını sağlamak için, aracınızın hız, boyutlar, ağırlık ve yakıt tipi gibi parametrelerini yapılandırmak çok önemlidir. Bu, uygulamanın seyahat süresini doğru bir şekilde tahmin etmesine, yol kısıtlamalarından kaçınmasına ve yakıt tüketimini izlemesine olanak tanır. Bu, [Araç Parametreleri](./vehicle-parameters.md) hakkındaki tam kılavuzumuzda açıklanmıştır.
 
 
 ## Detaylı İz Rehberliği {#detailed-track-guidance}
@@ -532,15 +331,15 @@ Ayar, maksimum sürüş hızını belirler ve maksimum hızdan daha yüksek olas
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
-![Yollara bağla 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![Navigasyon Ayarları Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
+![Yollara Bağla 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![Navigasyon Ayarları Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detaylı iz rehberliği*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detaylı iz rehberliği*
 
 ![Navigasyon Ayarları](@site/static/img/navigation/detailed_track_guidance_1_ios.png) ![Navigasyon Ayarları](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
@@ -548,15 +347,15 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 
 </Tabs>
 
-**Detaylı iz rehberliği** özelliği, **iz tabanlı rotalar** kullanırken rota navigasyonunun doğruluğunu artırır. Bir izi hedef olarak seçtiğinizde, [İzi takip et](../setup/gpx-navigation.md#follow-track-options) menüsünden [Yollara bağla](../setup/gpx-navigation.md#attach-to-the-roads) ayarını etkinleştirebilirsiniz. Bu, izi mevcut yollarla hizalayarak daha sorunsuz ve daha hassas navigasyon sağlar.
+**Detaylı iz rehberliği** özelliği, **iz tabanlı rotalar** kullanırken rota navigasyonunun doğruluğunu artırır. Hedef olarak bir iz seçtiğinizde, [İzi takip et](../setup/gpx-navigation.md#follow-track-options) menüsünden [Yollara Bağla](../setup/gpx-navigation.md#attach-to-the-roads) ayarını etkinleştirebilirsiniz. Bu, izin mevcut yollarla hizalanmasını sağlar, böylece navigasyon, kavşaklar, dönüşler, hız sınırları, dönüş şeritleri ve yolların sokak adları hakkında kesin talimatlar sağlayacaktır.
 
 *Detaylı iz rehberliğini* kullanmak için iki seçenek vardır:
 
-- **<Translate android="true" ids="ask_every_time"/>** (*varsayılan ayarlar*) – *Yollara bağla* seçeneği, iz tabanlı bir rota her hesaplandığında [Rota Detayları](../setup/route-details.md) bölümünde görünecektir. Bu, her navigasyon oturumu için yol bağlantısı uygulayıp uygulamayacağınıza karar vermenizi sağlar.
+- **<Translate android="true" ids="ask_every_time"/>** (*varsayılan ayarlar*) – *Yollara Bağla* seçeneği, iz tabanlı bir rota her hesaplandığında [Rota Detayları](../setup/route-details.md) bölümünde görünecektir. Bu, her navigasyon oturumu için yol bağlantısını uygulayıp uygulamayacağınıza karar vermenizi sağlar.
 
 - **<Translate android="true" ids="shared_string_always"/>** – Yol bağlantı süreci, manuel onay gerektirmeden her *izle navigasyon* rotası için otomatik olarak uygulanacaktır.
 
-İz tabanlı navigasyon kullanımı hakkında daha fazla bilgi için [İzle Navigasyon](../setup/gpx-navigation.md) sayfasını ziyaret edin.
+İz tabanlı navigasyon kullanımı hakkında daha fazla bilgi için [İzle Navigasyon](../setup/gpx-navigation.md) bölümünü ziyaret edin.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -570,5 +369,3 @@ Git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appli
 - [Sesli komutlar / Bildirimler](./voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Son güncelleme: Nisan 2025*

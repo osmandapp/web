@@ -40,7 +40,7 @@ export default function Render() {
         'Parking entrance' : 'traffic/traffic_amenity_parking_entrance',
         'Bicycle parking' : 'traffic/traffic_amenity_bicycle_parking',
         'Bicycle parking (stands)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_stands',
-        'Bicycle parking (wall loops)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_wall loops',
+        'Bicycle parking (wall loops)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_wall_loops',
         'Bicycle parking (rack)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_rack',
         'Bicycle parking (anchors)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_anchors',
         'Bicycle parking (building)' : 'traffic/traffic_amenity_bicycle_parking_bicycle_parking_building',

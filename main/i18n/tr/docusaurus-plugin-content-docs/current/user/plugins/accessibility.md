@@ -1,5 +1,5 @@
 ---
-source-hash: f88b26c81cd85ceae10dd091bfd8f3587782fc1e066bd79fe00de8a7ce769b72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
 title: Erişilebilirlik
 ---
@@ -36,7 +36,7 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
    - TalkBack'i veya başka bir ekran okuyucuyu etkinleştirin.
 
 3. **Eklenti ayarlarını yapın**:
-   - OsmAnd uygulaması içinde [Erişilebilirlik ayarlarına](#plugin-settings) gidin.
+   - OsmAnd uygulamasında [Erişilebilirlik ayarlarına](#plugin-settings) gidin.
    - Konuşma hızı, otomatik duyuru ve dokunsal geri bildirim gibi özellikleri yapılandırın.
 
 <br/>
@@ -44,12 +44,12 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
 ***Özellikler ve işlevsellik:***
 
 - **Hareket kontrolleri**:
-   - Tüm standart [OsmAnd hareketlerini](../map/interact-with-map#gestures) destekler.
+   - Tüm standart [OsmAnd hareketlerini](../map/interact-with-map.md#gestures) destekler.
    - Hareketleri Android'in **TalkBack** talimatlarına uyacak şekilde ayarlar.
 
 - **TalkBack entegrasyonu**:
    - TalkBack ekran okuyucu, navigasyon ve menü etkileşimleri için sesli rehberlik sunar.
-   - TalkBack hareketleri hakkında daha fazla bilgiyi [buradan](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation) edinebilirsiniz.
+   - TalkBack hareketleri hakkında daha fazla bilgiyi [burada](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation) bulabilirsiniz.
 
 - **Arka plan işlemleri**. Ekran kapalı veya kilitli olsa bile sesli ve dokunsal geri bildirim devam eder.
 
@@ -59,7 +59,7 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
 |-----|-----|-----|
 | **Tek dokunuş** | Haritayı **Kuzey**'e döndürür | **Çift dokunuş** |
 | **Uzun dokunuş** | [Harita yönlendirme modları](../map/interact-with-map.md#map-orientation-modes) listesini açar | **Çift dokunuş ve basılı tutma** |
-| **Çift dokunuş** | *Erişilebilirlik modunda kullanılamaz* | *Desteklenmiyor* |
+| **Çift dokunuş** | *Erişilebilirlik modunda mevcut değil* | *Desteklenmiyor* |
 
 
 ### Nasıl Kullanılır (iOS) {#how-to-use-ios}
@@ -73,7 +73,7 @@ OsmAnd'ın iOS sürümü, sistemin **yerleşik erişilebilirlik araçlarını** 
 2. **Desteklenen özellikler**:
    - Harita etkileşimleri için **ekran okuyucu desteği**.
    - iOS ayarları aracılığıyla **özelleştirilebilir hareketler**.
-   - Tüm standart [OsmAnd hareketleri](../map/interact-with-map#gestures) mevcuttur.
+   - Tüm standart [OsmAnd hareketleri](../map/interact-with-map.md#gestures) mevcuttur.
 
 3. **Daha fazla bilgi edinin**:
    - iOS Görme Erişilebilirliği özellikleri hakkında [buradan](https://www.apple.com/accessibility/vision/) okuyun.
@@ -95,32 +95,32 @@ OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağ�
 
 ![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_.png)
 
-Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek üzere çeşitli ayarlar sunar. Bu ayarlar OsmAnd'da [profil başına](../personal/profiles.md) uygulanır.
+Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek için çeşitli ayarlar sunar. Bu ayarlar OsmAnd'da [profile](../personal/profiles.md) göre uygulanır.
 
 | Ayar | Açıklama |
 |---------------------------|-------------|
 | **Erişilebilirlik Modu** | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |
-| **Konuşma Hızı** | *Metin okuma hızını* **%50'den %200'e** kadar kontrol eder. |
+| **Konuşma Hızı** | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |
 | [Akıllı Otomatik Duyuru](#smart-autoannounce-and-clockwise-directions) | Rotadan sapıldığında *sesli rehberlik* sağlar. |
-| **Otomatik Duyuru Periyodu** | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** kadar ayarlar. |
-| **Yön Stili** | *Yanlamasına (8 yön)* veya [Saat Yönünde](#smart-autoannounce-and-clockwise-directions) (12 yön)* arasında seçim yapın. |
+| **Otomatik Duyuru Periyodu** | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |
+| **Yön Stili** | *Yana doğru (8 yön)* veya [Saat yönünde](#smart-autoannounce-and-clockwise-directions) (12 yön)* arasında seçim yapın. |
 | **Sesli Yönlendirmeler** | Yönü gösteren *sesli rehberlikler* çalar. |
 | **Dokunsal Yönlendirmeler** | Dönüşler ve sapmalar için *titreşim geri bildirimi* sağlar. |
 
 <!--
 - **Erişilebilirlik Modu**. Engelli kişilerin OsmAnd uygulamasıyla etkileşim kurmasına yardımcı olan özel araçları etkinleştirin. Üç mod vardır: *Açık* - yerleşik OsmAnd özelliklerini açar, *Kapalı* - tüm eklenti özelliklerini kapatır ve *Android sistem ayarlarına göre* - Android sistem ayarlarını açar.
 
-- **Konuşma hızı**. Metin okumanın konuşma hızını %50'den %200'e kadar ayarlayın.
+- **Konuşma hızı**. Metin okuma hızını %50'den %200'e kadar ayarlayın.
 
-- **Akıllı otomatik duyuru**. Etkinleştirilirse, ayarlanan rotadan saptığınızda sesli duyurular alırsınız.
+- **Akıllı otomatik duyuru**. Etkinleştirilirse, belirlenen rotadan saptığınızda sesli duyurular alırsınız.
 
 - **Otomatik duyuru periyodu**. Bu, hedefinize olan yön ve mesafenin otomatik duyurusudur. Duyurular arasında 5 saniyeden 5 dakikaya kadar minimum bir süre seçebilirsiniz.
 
-- **Yön stili**. OsmAnd uygulamasının sizi yönler hakkında nasıl bilgilendireceğini seçin. *Yanlamasına* - dünyanın yanlarına olan yönü gösterir (8 yön), *Saat yönünde* - saat yüzüne göre yönleri gösterir (12 yön).
+- **Yön stili**. OsmAnd uygulamasının sizi yönler hakkında nasıl bilgilendireceğini seçin. *Yana doğru* - dünyanın yanlarına doğru yönü gösterir (8 yön), *Saat yönünde* - saat yüzüne göre yönleri gösterir (12 yön).
 
 - **Sesli yönlendirmeler**. Hedef noktaya olan yönü sesle belirterek navigasyon sırasında geri bildirim sağlar.
 
-- **Dokunsal yönlendirmeler**. Bu ayar, navigasyon sırasında dokunsal geri bildirim sağlar. Titreşim, hedef noktaya olan yönü ve rotadan sapmaları gösterir.
+- **Dokunsal yönlendirmeler**. Bu ayar, navigasyon sırasında dokunsal geri bildirim sağlar. Titreşim, hedef noktaya olan yönü ve yoldan sapmaları gösterir.
 -->
 
 <br/>
@@ -129,12 +129,12 @@ Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşi
 
 - **Ekran okuyucu** - Gelişmiş harita etkileşimi için TalkBack (*Android*) veya VoiceOver (*iOS*) kullanın.
 - **Sesli navigasyon** - Ekran kapalıyken sesli yönlendirmeler almak için otomatik duyuruyu etkinleştirin.
-- **Dokunsal geri bildirim** - Düşük görüş ortamları veya sesli rehberliklerin pratik olmadığı durumlar için idealdir.
+- **Dokunsal geri bildirim** - Düşük görüşlü ortamlar veya sesli rehberliklerin pratik olmadığı durumlar için idealdir.
 
 
-#### Akıllı Otomatik Duyuru ve Saat Yönünde Yönlendirmeler {#smart-autoannounce-and-clockwise-directions}
+### Akıllı Otomatik Duyuru ve Saat Yönünde Yönlendirmeler {#smart-autoannounce-and-clockwise-directions}
 
-**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlarken, **Saat Yönünde Yön Stili** *saat yüzüne dayalı navigasyon rehberlikleri* sunar. Bu özellikler, *sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.
+**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlarken, **Saat Yönünde Yönlendirme Stili** *saat yüzüne dayalı navigasyon rehberlikleri* sunar. Bu özellikler, *sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.
 
 - **TalkBack etkin değilse**, hem *Akıllı Otomatik Duyuru* hem de *Saat Yönünde Yönlendirmeler* yalnızca ekranda *metin bildirimleri* gösterecektir.
 
@@ -146,7 +146,5 @@ Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşi
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Genel Ayarlar](../../user/personal/global-settings.md)
+- [Küresel Ayarlar](../../user/personal/global-settings.md)
 - [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
-
-> *Son güncelleme: Şubat 2025*

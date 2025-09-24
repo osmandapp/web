@@ -1,7 +1,7 @@
 ---
-source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
+source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
 sidebar_position: 5
-title: Roteamento de transporte público
+title:  Rotas de transporte público
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,9 +17,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão geral {#overview}
 
-A navegação de transporte público no aplicativo OsmAnd permite que você trace rotas usando o transporte público, o que certamente o ajudará a se locomover pela "selva de concreto" mais rapidamente.
+A navegação de transporte público no aplicativo OsmAnd permite que você trace rotas usando o transporte público, o que certamente o ajudará a se locomover mais rapidamente pela "selva de pedra".
 
-Os dados sobre as rotas de transporte público são retirados do projeto [OpenStreetMap](http://openstreetmap.org/). O OsmAnd usa o [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para navegação. O OsmAnd suporta as seguintes rotas do OpenStreetMap para navegação: *ônibus*, *trólebus*, *táxi_compartilhado*, *funicular*, *metrô*, *bonde*, *monotrilho*, *trem*, *bondinho*, *balsa*. A velocidade padrão para cada tipo de veículo é configurada em [Roteamento xml](../../../technical/build-osmand/routing.md) e é usada para encontrar as rotas mais rápidas.
+Os dados sobre as rotas de transporte público são retirados do projeto [OpenStreetMap](http://openstreetmap.org/). O OsmAnd usa o [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para navegação. O OsmAnd suporta as seguintes rotas do OpenStreetMap para navegação: *ônibus*, *trólebus*, *táxi compartilhado*, *funicular*, *metrô*, *bonde*, *monotrilho*, *trem*, *elétrico*, *balsa*. A velocidade padrão para cada tipo de veículo é configurada em [Roteamento xml](../../../technical/build-osmand/routing.md) e é usada para encontrar as rotas mais rápidas.
 
 :::note
 O roteamento de transporte público está em fase de testes. Por enquanto, você pode construir e visualizar sua rota sem a função de navegação completa.
@@ -120,12 +120,10 @@ Para começar a navegar pela cidade de transporte público, use [o botão de nav
 </Tabs>
 
 
-## Dados e Diretrizes {#data-and-guideline}
+## Dados e diretrizes {#data-and-guideline}
 
 O OsmAnd usa um novo esquema de transporte público, também chamado de Public Transport Version 2 (PTv2) para o algoritmo de navegação de transporte público do OsmAnd.
 
 - Você pode verificar seu transporte público [aqui](http://tools.geofabrik.de/osmi/).
 - Um guia para construir ou ajustar rotas de transporte público está disponível em nosso [blog](https://osmand.net/blog/guideline-pt).
 - A apresentação [2019: Navegação de Transporte Público usando OpenStreetMap por OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
-
-> *Última atualização: Junho de 2024.*

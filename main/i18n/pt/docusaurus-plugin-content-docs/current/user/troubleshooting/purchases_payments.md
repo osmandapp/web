@@ -1,5 +1,5 @@
 ---
-source-hash: 2c18098f94d113417dbc7c36dee6af4769f8e0f98a71713649f8f3d246f92e77
+source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
 sidebar_position: 2
 title: Compras e Pagamentos
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Compras entre plataformas {#cross-platform-purchases}
 
-**OsmAnd Pro** e **Maps+** (*Todos os Mapas do Mundo* para iOS) são **assinaturas entre plataformas** disponíveis para Android e iOS a partir do OsmAnd 5.0. Multiplataforma significa que, se você comprar uma assinatura, por exemplo, em uma das lojas Android (Google Play, Huawei AppGallery), também poderá usá-la no iOS e na versão web.
+**OsmAnd Pro** e **Maps+** (*Todos os Mapas do Mundo* para iOS) são **assinaturas entre plataformas** disponíveis para Android e iOS a partir do OsmAnd 5.0. Entre plataformas significa que, se você comprar uma assinatura, por exemplo, em uma das lojas Android (Google Play, Huawei AppGallery), você também poderá usá-la no iOS e na versão web.
 
 - A assinatura entre plataformas pode ser usada em vários dispositivos e plataformas **se vinculada à mesma conta OsmAnd Cloud**.
 
@@ -25,7 +25,7 @@ import Translate from '@site/src/components/Translate.js';
 
 - Sempre certifique-se de usar a mesma conta OsmAnd Cloud em todos os dispositivos para acessar suas compras.
 
-- Para mais detalhes, consulte: [Compras Android](../purchases/android.md), [Compras iOS](../purchases/ios.md) e [Portal de Mapas OsmAnd](https://www.osmand.net/map).
+- Para mais detalhes, consulte: [Compras Android](../purchases/android.md), [Compras iOS](../purchases/ios.md), [Compras entre plataformas](../purchases/cross.md) e [Portal de Mapas OsmAnd](../purchases/web.md).
 
 
 ### Como vincular sua compra à conta OsmAnd Cloud {#how-to-link-your-purchase-to-osmand-cloud-account}
@@ -46,13 +46,24 @@ import Translate from '@site/src/components/Translate.js';
     - Toque em **Restaurar compras** para sincronizar a compra com sua conta.
 
 
-> Para mais informações, leia o artigo [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+> Para mais informações, leia os artigos [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform), [Compras entre plataformas](../purchases/cross.md).
 
 
-## Como comprar e restaurar o OsmAnd na Huawei AppGallery sem os Serviços Móveis Huawei {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
+### Associação de compra com várias contas OsmAnd Cloud {#purchase-association-with-multiple-osmand-cloud-accounts}
+
+
+Uma compra entre plataformas, como _Maps+_ e _Pro_, é vinculada à conta OsmAnd Cloud que foi ativada por último no dispositivo que possui o recibo de compra original (da App Store ou Google Play). Se um usuário neste dispositivo sair de sua conta principal (`Conta OsmAnd Cloud A`) e entrar em uma nova (`Conta OsmAnd Cloud B`), o sistema OsmAnd transfere automaticamente a licença para a nova `Conta OsmAnd Cloud B`. Como resultado, sua conta OsmAnd Cloud original perde seu status de compras em outras plataformas, pois a licença só pode estar ativa em uma conta OsmAnd Cloud por vez.
+
+Tecnicamente, isso funciona da seguinte forma: a compra em si pertence ao seu ID Apple ou Conta Google, não a uma conta OsmAnd. O aplicativo OsmAnd no dispositivo com a compra simplesmente informa ao nosso servidor qual conta OsmAnd Cloud está ativa no momento. O servidor, por sua vez, concede acesso entre plataformas a essa conta. Portanto, a última conta a fazer login no dispositivo "principal" sempre se torna a detentora da licença.
+
+Para restaurar a compra para a conta correta (`Conta OsmAnd Cloud A`), você deve realizar a ação inversa. No mesmo dispositivo onde a compra foi feita, você precisa sair da `Conta OsmAnd Cloud B` incorreta e fazer login novamente na `Conta OsmAnd Cloud A`. Este processo forçará o sistema a verificar novamente o recibo de compra e a vincular novamente a licença à `Conta OsmAnd Cloud A` correta, restaurando seu status entre plataformas.
+
+> Para mais informações, leia os artigos [Compras entre plataformas](../purchases/cross.md).
+
+## Como comprar e restaurar o OsmAnd na Huawei AppGallery sem os Serviços Móveis da Huawei {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
 
 1. **Comprar OsmAnd**:
-   - Primeiro, ative a opção *Instalar de Fontes Desconhecidas* nas configurações do seu dispositivo. Geralmente, você pode encontrar essa opção em **Configurações → Segurança**.
+   - Primeiro, ative *Instalar de Fontes Desconhecidas* nas configurações do seu dispositivo. Você geralmente pode encontrar esta opção em **Configurações → Segurança**.
    - Instale o [Huawei Mobile Services (HMS Core)](https://consumer.huawei.com/za/community/details/Download-the-latest-Huawei-HMS-Core-APK-5-3-0-312/topicId-142217/), que é essencial para a compatibilidade do aplicativo.
    - Em seguida, abra a *Huawei AppGallery* na página do [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) e baixe o aplicativo.
    - Apenas a versão gratuita está disponível para download inicialmente. Para fazer uma compra, vá para *Menu OsmAnd → Configurações → Compras* e selecione o tipo desejado.
@@ -66,9 +77,9 @@ import Translate from '@site/src/components/Translate.js';
    - Para mais informações, consulte o artigo [Compras Android](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
 
 <!--
-- Instruções para configurar os Serviços Móveis Huawei.
-- Como comprar OsmAnd sem HMS Core.
-- Restaurar compras na Huawei AppGallery.
+- Instructions for setting up Huawei Mobile Services.
+- How to buy OsmAnd without HMS Core.
+- Restore purchases in the Huawei AppGallery.
 -->
 
 ## A loja Amazon está fechando - o que fazer {#amazon-store-is-closing---what-to-do}
@@ -86,7 +97,7 @@ Para restaurar o [plugin Topografia](https://play.google.com/store/apps/details?
 
 1. Faça login na mesma conta do Google Play usada para comprar o plugin Topografia e instale [o aplicativo](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
 2. Se o botão *Instalar* estiver inativo, certifique-se de que os aplicativos Google Play e OsmAnd estejam atualizados. Limpe o cache, reinicie o dispositivo e tente instalar o plugin novamente.
-3. Após a instalação, ative o plugin Topografia no *[menu OsmAnd → Plugins](../plugins/topography.md)*, baixe os arquivos necessários em *[Mapas e Recursos](../start-with/download-maps.md#maps-and-resources)* e ative-o através do *[menu Configurar mapa](../map/configure-map-menu.md)*.
+3. Após a instalação, ative o plugin Topografia no *[Menu OsmAnd → Plugins](../plugins/topography.md)*, baixe os arquivos necessários em *[Mapas e Recursos](../start-with/download-maps.md#maps-and-resources)* e ative-o através do *[Menu Configurar mapa](../map/configure-map-menu.md)*.
 
 
 ## Como identificar se o OsmAnd Unlimited está ativo {#how-to-identify-if-osmand-unlimited-is-active}
@@ -94,30 +105,25 @@ Para restaurar o [plugin Topografia](https://play.google.com/store/apps/details?
 Navegue até *Menu → Baixar mapas* e toque no contador de mapas (o campo rotulado *Versão gratuita. X downloads restantes*). Se o OsmAnd Unlimited estiver ativo, a exibição mostrará o armazenamento restante do dispositivo em vez do número de downloads gratuitos.
 
 
-## Posso obter a versão completa do OsmAnd como um aplicativo separado para iOS? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
-
-Para iOS, existe apenas uma versão do OsmAnd disponível. Para acessar a versão completa, você precisa desbloquear funções adicionais por meio de compras no aplicativo.
-
-
 ## O que significam 5 ou 7 downloads gratuitos? {#what-do-5-or-7-free-downloads-mean}
 
-Você tem permissão para 5 downloads gratuitos no iOS ou 7 no Android. Cada download, seja um mapa, uma atualização (atualizações de mapas contam como downloads), pacotes de voz ou outros itens, reduz a contagem disponível. Observe que a remoção de itens de seus downloads não restaura a contagem de downloads gratuitos.
+Você tem permissão para 5 downloads gratuitos no iOS ou 7 no Android. Cada download, seja um mapa, uma atualização (atualizações de mapa contam como downloads), pacotes de voz ou outros itens, reduz a contagem disponível. Observe que a remoção de itens de seus downloads não restaura a contagem de downloads gratuitos.
 
 
-## Como posso obter downloads de mapas adicionais no OsmAnd Gratuito? {#how-can-i-get-additional-map-downloads-in-osmand-free}
+## Como posso obter downloads de mapas adicionais no OsmAnd Free? {#how-can-i-get-additional-map-downloads-in-osmand-free}
 
-Se você usou todos os 5 (iOS) ou 7 (Android) downloads gratuitos, pode receber 3 downloads extras ao *assinar a lista de e-mails*. Um banner com a opção de assinatura aparecerá assim que todos os downloads gratuitos forem usados.
+Se você usou todos os 5 (iOS) ou 7 (Android) downloads gratuitos, você pode receber 3 downloads extras ao *assinar a lista de e-mails*. Um banner com a opção de assinatura aparecerá assim que todos os downloads gratuitos forem usados.
 
 
-## Código de Verificação para OsmAnd Cloud Não Recebido {#verification-code-for-osmand-cloud-not-received}
+## Código de verificação para OsmAnd Cloud não recebido {#verification-code-for-osmand-cloud-not-received}
 
 Se você não receber o **código de verificação** ao criar uma conta **OsmAnd Cloud**, siga estas etapas para resolver o problema:
 
 1. Verifique seu endereço de e-mail.
-    Certifique-se de ter inserido o **endereço de e-mail correto**. O e-mail deve corresponder ao usado para comprar o **OsmAnd Pro** ou registrar sua conta **OsmAnd Cloud**.
+    Certifique-se de ter digitado o **endereço de e-mail correto**. O e-mail deve corresponder ao usado para comprar o **OsmAnd Pro** ou registrar sua conta **OsmAnd Cloud**.
 
 2. Verifique as pastas de spam.
-    Às vezes, o e-mail de verificação pode ser filtrado como spam. Procure um e-mail do **OsmAnd** em suas pastas de **Spam**, **Lixo** ou **Promoções**.
+    Às vezes, o e-mail de verificação pode ser filtrado como spam. Procure um e-mail do **OsmAnd** em suas pastas de **Spam**, **Lixo Eletrônico** ou **Promoções**.
 
 3. Aguarde a chegada do código.
     Em alguns casos, o e-mail do código de ativação pode estar **atrasado**. Evite **múltiplas tentativas de ativação** em um curto período, pois isso pode causar atrasos adicionais.
@@ -129,35 +135,35 @@ Se você não receber o **código de verificação** ao criar uma conta **OsmAnd
     Se você estiver usando um **domínio de e-mail corporativo ou personalizado**, verifique com seu **provedor de e-mail** para garantir que o e-mail não esteja sendo bloqueado. Considere usar um serviço de e-mail diferente (por exemplo, Gmail, Outlook) se os problemas persistirem.
 
 <!--
-## Compras e Pagamentos {#purchases--payments}
+## Purchases & Payments {#purchases--payments}
 
-- Compra Não Exibida
-- Compra Não Restaurando
-- Problemas de Pagamento
-- Política de Reembolso
-- Soluções passo a passo para problemas com compras.
-- Instruções para limpar o cache do Google Play, Huawei AppGallery.
-- O que fazer se a compra não aparecer ou a transação falhar.
-- Compra não aparecendo - recomendações sobre como verificar sua conta e restaurar suas compras.
-- Problemas de pagamento - instruções para entrar em contato com o Suporte do Google Play em caso de problemas de pagamento.
+- Purchase Not Showing
+- Purchase Not Restoring
+- Payment Issues
+- Refund Policy
+- Step-by-step solutions to problems with purchases.
+- Instructions for clearing the cache of Google Play, Huawei AppGallery.
+- What to do if the purchase does not appear or the transaction fails.
+- Purchase not showing up - recommendations on how to check your account and restore your purchases.
+- Payment issues - instructions for contacting Google Play Support in case of paymentissues.
 
 
 ## FAQ {#faq}
 
-- Posso transferir uma compra entre Android e iOS?
-- Posso usar uma compra em vários dispositivos?
-- Por que a compra não aparece?
-- Onde posso encontrar detalhes de pagamento?
-- Posso transferir o OsmAnd+ entre Android e iOS?
-- Como posso restaurar compras após reinstalar o aplicativo?
-- O que é o OsmAnd Pro e quais são suas vantagens?
-- Posso ativar minha assinatura sem o Google Play?
-- Posso compartilhar minha compra com minha família?
-- Como transfiro o OsmAnd+ para outro telefone?
-- Por que minha compra não aparece após a reinstalação?
-- Por que não consigo retomar minha compra?
-- Como sei se minha assinatura está ativa?
-- Posso usar uma compra em vários dispositivos?
-- Posso comprar o OsmAnd sem o Google Play?
-- Onde posso encontrar meus detalhes de pagamento?
+- Can I transfer a purchase between Android and iOS?
+- Can I use a purchase on multiple devices?
+- Why does the purchase not appear?
+- Where can I find payment details?
+- Can I transfer OsmAnd+ between Android and iOS?
+- How can I restore purchases after reinstalling the app?
+- What is OsmAnd Pro and what are its advantages?
+- Can I activate my subscription without Google Play?
+- Can I share my purchase with my family?
+- How do I transfer OsmAnd+ to another phone?
+- Why doesn't my purchase appear after reinstalling?
+- Why can't I resume my purchase?
+- How do I know if my subscription is active?
+- Can I use one purchase on multiple devices?
+- Can I buy OsmAnd without Google Play?
+- Where can I find my payment details?
 -->

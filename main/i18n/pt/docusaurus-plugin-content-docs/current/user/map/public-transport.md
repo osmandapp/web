@@ -1,7 +1,7 @@
 ---
-source-hash: 1089ba9ce4a9f9d1985bccd4ba5ebfe5e0e35eb8437bb1a83fe1c4859bf5a769
+source-hash: c08c6419ce4eb37eaeeedc1186f95e9b81ac6219dcfadc6455d0a16f81b7bdd4
 sidebar_position: 10
-title: Transporte Público
+title:  Transporte Público
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -48,14 +48,14 @@ Escolha entre 1 ou mais categorias de transporte para exibição:
 Para abrir o menu de Transporte, você pode tocar no ícone de transporte. Ele exibe:
 
 - Escudos coloridos de transporte público (**clicáveis**)
-- [Lista das rotas](#routes) que param naquela parada ou nas proximidades (dentro de 150 m)
+- [Lista das rotas](#routes) que param nessa parada ou nas proximidades (dentro de 150 m)
 - Nome da parada e outros [detalhes](#transport-stop-details)
 
 ### Detalhes da Parada de Transporte {#transport-stop-details}
 
 ![Detalhes do menu de rota de transporte público Android](@site/static/img/map/pt_routemenu_details_android.png) ![Detalhes do menu de rota de transporte público iOS](@site/static/img/map/pt_routemenu_details_ios.png)
 
-A parada de transporte público fornece detalhes extras em comparação com o objeto padrão do OpenStreetMap [menu](../map/map-context-menu.md#details):
+A parada de transporte público oferece detalhes extras em comparação com o menu de objeto padrão do OpenStreetMap [menu](../map/map-context-menu.md#details):
 
 - Presença de banco
 - Presença de cobertura
@@ -69,7 +69,7 @@ A parada de transporte público fornece detalhes extras em comparação com o ob
 
 ![Rotas de transporte público Android](@site/static/img/map/pt_routes_android.png) ![Rotas de transporte público iOS](@site/static/img/map/pt_routes_ios.png)
 
-As Rotas de Transporte são todas as rotas de transporte público que se aproximam da parada selecionada e rotas próximas (dentro de 150m). As informações das rotas são obtidas de [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Public_transport), como ref, nome, cor e tipo.
+As Rotas de Transporte são todas as rotas de transporte público que se aproximam da parada selecionada e rotas próximas (dentro de 150m). As informações das rotas são retiradas dos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Public_transport), como referência, nome, cor e tipo.
 
 **Cor do escudo**:
 
@@ -81,11 +81,11 @@ As Rotas de Transporte são todas as rotas de transporte público que se aproxim
 
 ### Navegar Rota {#browse-route}
 
-![Lista de rotas de transporte público Android](@site/static/img/map/pt_route_list_android.png)  ![Lista de rotas de transporte público Android](@site/static/img/map/pt_route_list_ios.png)
+![Lista de rotas de transporte público Android](@site/static/img/map/pt_route_list_android.png) ![Lista de rotas de transporte público Android](@site/static/img/map/pt_route_list_ios.png)
 
 Você pode entrar no menu Navegar Rota **clicando em um escudo** ou **selecionando uma rota** na lista de rotas. Depois disso, você pode navegar entre as paradas clicando em '<Translate android="true" ids="shared_string_previous"/>' e '<Translate android="true" ids="shared_string_next"/>'. As informações da parada serão atualizadas no menu e a parada será localizada no mapa.
 
-Você pode ver a lista completa de paradas clicando em <Translate android="true" ids="rendering_category_details"/>. A parada atualmente selecionada é marcada com um ícone de 'localização' na lista de Rotas.
+Você pode ver a lista completa de paradas clicando em <Translate android="true" ids="rendering_category_details"/>. A parada atualmente selecionada é marcada com o ícone de 'localização' na lista de Rotas.
 
 > **NOTA**: *Se você tocar no botão <Translate android="true" ids="get_directions"/>, você obterá uma rota da sua localização atual para a Estação de Transporte Público selecionada.*
 
@@ -94,5 +94,3 @@ Você pode ver a lista completa de paradas clicando em <Translate android="true"
 
 - [Mapas vetoriais](../map/vector-maps.md)
 - [Navegação de transporte público](../navigation/routing/public-transport-navigation.md)
-
-> *Última atualização: Agosto de 2022*

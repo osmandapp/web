@@ -1,5 +1,5 @@
 ---
-source-hash: 5614ff96c05b150dc149ccfc7296cdeb953b69993517dcf326e81979e07d4a0f
+source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -17,13 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd'deki **Rota hazırlığı** özelliği, [sürüş](./../routing/car-based-routing.md), [yürüme](./../routing/pedestrian-routing.md), bisiklet sürme, [ata binme](./../routing/horse-routing.md) ve [kayak yapma](./../routing/ski-routing.md) dahil olmak üzere çeşitli [rota türleri](./../routing/osmand-routing.md#routing-types) için adım adım navigasyon rehberliği sağlar. Kullanıcılar navigasyon ayarlarını özelleştirebilir, varış noktaları ekleyebilir ve rotaları verimlilik için optimize edebilir.
+OsmAnd'daki **Rota hazırlığı** özelliği, [sürüş](./../routing/car-based-routing.md), [yürüme](./../routing/pedestrian-routing.md), bisiklete binme, [ata binme](./../routing/horse-routing.md) ve [kayak](./../routing/ski-routing.md) dahil olmak üzere çeşitli [rota türleri](./../routing/osmand-routing.md#routing-types) için adım adım navigasyon rehberliği sağlar. Kullanıcılar navigasyon ayarlarını özelleştirebilir, varış noktaları ekleyebilir ve verimlilik için rotaları optimize edebilir.
 
 :::tip
 
 - **Çevrimdışı navigasyon** varsayılan olarak etkindir. Ancak, [çevrimiçi rota motorlarını](./../routing/online-routing.md) da kullanabilirsiniz.
 
-- **OsmAnd'ın doğru navigasyon için** [hassas konum erişim iznine](../../start-with/first-steps.md#permission-to-access-the-location) ihtiyacı vardır. Gerekirse cihaz ayarlarında bunu etkinleştirin.
+- **OsmAnd'ın doğru navigasyon için** [hassas konuma](../../start-with/first-steps.md#permission-to-access-the-location) erişim iznine ihtiyacı vardır. Gerekirse bunu cihaz ayarlarında etkinleştirin.
 
 :::
 
@@ -54,9 +54,9 @@ OsmAnd'deki **Rota hazırlığı** özelliği, [sürüş](./../routing/car-based
 
 Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/profiles.md):
 
-- [Araç parametrelerini](../guidance/navigation-settings.md#size-parameters) ayarlayın (*kamyon sürücüleri için önemlidir*), [motor tipini](../guidance/navigation-settings.md#fuel-used-by-motor) seçin (*isteğe bağlı*).
+- [Araç parametrelerini](../guidance/vehicle-parameters.md#size-parameters) ayarlayın (*kamyon sürücüleri için önemlidir*), [motor tipini](../guidance/vehicle-parameters.md#fuel-used-by-motor) seçin (*isteğe bağlı*).
 
-- [Rota çizgisi görünümünü](../guidance/map-during-navigation#route-line-appearance) yapılandırın (*isteğe bağlı*, Pro kullanıcıları için mevcut ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
+- [Rota çizgisi görünümünü](../guidance/map-during-navigation#route-line-appearance) yapılandırın (*isteğe bağlı*, Pro kullanıcıları için mevcuttur ([Android](../../purchases/android.md#pro-features) / [iOS](../../purchases/ios.md#pro-features))).
 
 - [Sesli komutları](../guidance/voice-navigation.md) yapılandırın.
 
@@ -64,22 +64,22 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 
 1. [*Navigasyon menüsünü*](#navigation-menu) açın:
 
-    - [Varış noktasını](#set-target-point) belirtin.
-    - Rota hesaplanana kadar bekleyin. Bundan sonra, rotanız hakkında ek bilgileri *[Detaylar bölümünde](./route-details.md#overview)* edinebileceksiniz.
-    - En iyi sonucu almak için farklı [rota türleri](./../routing/osmand-routing.md#routing-types) (profiller) arasında geçiş yapabilirsiniz.
+    - [Hedef noktayı](#set-target-point) belirtin.
+    - Rota hesaplanana kadar bekleyin. Bundan sonra, rotanız hakkında ek bilgileri *[Ayrıntılar bölümünde](./route-details.md#overview)* edinebileceksiniz.
+    - En iyi sonucu elde etmek için farklı [rota türleri](./../routing/osmand-routing.md#routing-types) (profiller) arasında geçiş yapabilirsiniz.
     - [Ara varış noktaları](#intermediate-destinations) ekleyin (isteğe bağlı).
-    - Ayrıca kalkış noktasını [mevcut konumdan](../../map/interact-with-map#my-location-and-zoom) gerekli olana değiştirebilirsiniz.
+    - Kalkış noktasını da [mevcut konumdan](../../map/interact-with-map.md#my-location-and-zoom) gerekli olana değiştirebilirsiniz.
 
-2. Ek [*Navigasyon ayarları*](#settings) amaçlarınıza bağlı olarak kullanılabilir (hangi yollardan kaçınacağınızı veya tercih edeceğinizi, yakıt tasarrufu yapmayı veya en hızlı rotayı seçmeyi yapılandırabilirsiniz).
+2. Ek [*Navigasyon ayarları*](#settings) amaçlarınıza bağlı olarak kullanılabilir (hangi yollardan kaçınılacağını veya tercih edileceğini yapılandırabilir, yakıt tasarrufu yapabilir veya en hızlı rotayı seçebilirsiniz vb.).
 
-3. Navigasyonu [başlatın](#start--stop-navigation) veya önce [navigasyonu simüle edin](#simulated-navigation) (bu fonksiyonla rotanızı gerçekten seyahat etmeden önce test edebilirsiniz).
+3. Navigasyonu [başlatın](#start--stop-navigation) veya önce [simüle edilmiş navigasyonu](#simulated-navigation) yapın (bu fonksiyonla rotanızı gerçekten seyahat etmeden önce test edebilirsiniz).
 
-4. Rota üzerindeyken navigasyonu [*Duraklat/Devam Ettir*](#pause--resume-navigation) ve [*Durdur*](#start--stop-navigation)abilirsiniz.
+4. Rota üzerindeyken navigasyonu [*Duraklat/Devam Ettir*](#pause--resume-navigation) ve [*Durdur*](#start--stop-stop-navigation) yapabilirsiniz.
 
 
 :::note
 
-**[Çevrimiçi harita](../../map/raster-maps.md#select-raster-maps) harita kaynağı olarak seçildiğinde rota oluşturulamaz.**
+**Harita kaynağı olarak *[Çevrimiçi harita](../../map/raster-maps.md#select-raster-maps)* seçildiğinde rota oluşturulamaz.**
 
 :::
 
@@ -89,7 +89,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 Navigasyon menüsüne ulaşmanın 3 yolu vardır:
 
 - Harita ekranındaki [*Navigasyon düğmesi*](../../widgets/map-buttons.md#directions).  
-- Bir [*harita bağlam menüsünde*](../../map/map-context-menu.md#directions-to--from) *Yönlendir/Yönlendirilen*.  
+- Bir [*harita bağlam menüsünde*](../../map/map-context-menu.md#directions-to--from) *Yönlendirme/Yönlendirme*.  
 - [*Ana Menüdeki*](../../start-with/main-menu.md) Navigasyon bölümü *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -109,13 +109,13 @@ Navigasyon menüsüne ulaşmanın 3 yolu vardır:
 </Tabs>
 
 - **<Translate android="true" ids="shared_string_my_location"/>** – Başlangıç konumunu ayarla (varsayılan: [*Mevcut Konumum*](../../map/interact-with-map.md#my-location-and-zoom)).
-- **<Translate android="true" ids="add_destination_point"/>** - [Varış noktanızı ayarlamak](#set-target-point) için kullanın.
+- **<Translate android="true" ids="add_destination_point"/>** - [Hedef noktanızı ayarlamak](#set-target-point) için kullanın.
 - **Ekle** &nbsp;&#43; - Rota boyunca [ara noktalar](../../widgets/nav-widgets.md#distance-to-intermediate) ekleyin.
-- **Değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını tersine çevir.
-- **Ses düğmesi** - [Sesli komutları](../guidance/voice-navigation.md) sessize al.
-- **<Translate android="true" ids="shared_string_settings"/>** – Rota tercihlerini ve yol kısıtlamalarını [ayarla](#settings).
+- **Değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını tersine çevirin.
+- **Ses düğmesi** - [Sesli komutları](../guidance/voice-navigation.md) sessize alın.
+- **<Translate android="true" ids="shared_string_settings"/>** – Rota tercihlerini ve yol kısıtlamalarını [ayarlayın](#settings).
 
-Navigasyon menüsünde varış noktanızı şunları kullanarak ayarlayın:
+Navigasyon menüsünde hedefinizi kullanarak ayarlayın:
 
 - Özel favori noktalar [Ev / İş](#use-home-or-work-points).
 - Önceki rota veya [Geçmiş](../../personal/global-settings.md#history).
@@ -124,7 +124,7 @@ Navigasyon menüsünde varış noktanızı şunları kullanarak ayarlayın:
   
 ### Başlangıç Noktası Seç {#select-starting-point}
 
-Başlangıç noktası olarak mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Arama](../../search/index.md) kullanabilirsiniz. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirilen](../../map/map-context-menu.md#directions-to--from) fonksiyonunu seçerek bir başlangıç noktası ayarlayabilirsiniz.  
+Başlangıç noktası olarak mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Ara](../../search/index.md) özelliğini kullanabilirsiniz. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirme](../../map/map-context-menu.md#directions-to--from) işlevini seçerek bir başlangıç noktası ayarlayabilirsiniz.  
 
 
 ### Hedef Noktası Ayarla {#set-target-point}
@@ -144,14 +144,14 @@ Başlangıç noktası olarak mevcut konumunuzu, bir [Favori noktanın](../../map
 
 </Tabs>
 
-Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. Varış noktası bir [*Arama*](../../search/index.md#overview) fonksiyonu kullanılarak veya sadece bir harita üzerinde bulunabilir. Ayrıca [*Navigasyon menüsünde*](#navigation-menu) hedef noktayı ayarlayabilirsiniz:  
+Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. Varış noktası bir [*Arama*](../../search/index.md#overview) işlevi kullanılarak veya basitçe bir harita üzerinde bulunabilir. Ayrıca [*Navigasyon menüsünde*](#navigation-menu) hedef noktayı ayarlayabilirsiniz:  
 
 - **<Translate android="true" ids="search_button"/>** - [Arama menüsünü](../../search/index.md) açar.
 - **<Translate android="true" ids="shared_string_address"/>** - [Adres arama menüsünü](../../search/search-address.md) açar.
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Haritaya dokunarak bir varış noktası seçmek için haritayı açar.
-- **<Translate android="true" ids="shared_string_favorites"/>** - [Favori](../../personal/favorites.md) olarak bir varış noktası kullanmaya izin verir.
-- **<Translate android="true" ids="shared_string_markers"/>** - [Harita işaretleyicilerinden](../../personal/markers.md) birini varış noktası olarak seçmeye izin verir.
-- **Başlangıç noktası ve Hedefi değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını değiştirmeye izin verir.
+- **<Translate android="true" ids="shared_string_favorites"/>** - [Favori](../../personal/favorites.md) olarak bir varış noktası kullanılmasına izin verir.
+- **<Translate android="true" ids="shared_string_markers"/>** - [Harita işaretçilerinden](../../personal/markers.md) birini varış noktası olarak seçmeye izin verir.
+- **Başlangıç noktasını ve Varış noktasını değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını değiştirmeye izin verir.
 
 
 ### Ara Varış Noktaları {#intermediate-destinations}
@@ -173,10 +173,10 @@ Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. 
 </Tabs>
 
 - **&nbsp;&#x1F589;** - değişiklik yapmak için varış noktaları listesini açmaya izin verir.
-- **&nbsp;&#8592;** - Navigasyon menüsü ekranına geri döner.
+- **&nbsp;&#8592;** - Navigasyon menüsü ekranına geçer.
 - **&nbsp;&#10005;** - varış noktasını noktalar listesinden silmeye izin verir.
 - **&nbsp;&#61;** - noktalar listesindeki nokta sırasını değiştirmeye izin verir.
-- *&nbsp;&#43; Ekle* - *Ara nokta ekle* bağlam menüsünü açar.
+- *&nbsp;&#43; Ekle* - *Ara ekle* bağlam menüsünü açar.
 - *&nbsp;&#9776; Tümünü temizle* - tüm ara noktaları temizlemeye izin verir.
 
 Varış noktaları listesinde **Sırala** (*Android*) veya **Seçenekler** (*iOS*) seçeneğini belirlerseniz, ara noktalara navigasyon sırasını ayarlamak için özel seçeneklere ulaşırsınız.
@@ -197,9 +197,9 @@ Varış noktaları listesinde **Sırala** (*Android*) veya **Seçenekler** (*iOS
 
 </Tabs>
 
-Bu menüde varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
+Bu menüde, varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
-- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd, tüm varış noktalarınız arasında en kısa rotayı sunacaktır, ancak ziyaret sırası düzenlenebilir. Başlangıç noktası ve son varış noktası değişmeyecektir.
+- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd, tüm varış noktalarınız arasındaki en kısa rotayı sunacaktır, ancak ziyaret sırası düzenlenebilir. Başlangıç noktası ve son varış noktası değiştirilmeyecektir.
 
 - **<Translate android="true" ids="switch_start_finish"/>** - Başlangıç noktası ve son varış noktası değiştirilecektir.
 
@@ -248,12 +248,12 @@ Bu menüde varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 </Tabs>
 
-[Navigasyon Geçmişi](../../personal/global-settings.md#history) kaydı etkinleştirilmişse, navigasyon için geçmiş listesinden önceki rotaları veya varış noktalarını kullanabilirsiniz. Bu seçenek, sık kullanılan rotalara hızlı erişim için faydalı olabilir. Geçmiş listesindeki öğeler, en yeni kullanımdan başlayarak en son kullanıma göre sıralanır.  
+[Navigasyon Geçmişi](../../personal/global-settings.md#history) kaydı etkinleştirilmişse, navigasyon için geçmiş listesindeki önceki rotaları veya varış noktalarını kullanabilirsiniz. Bu seçenek, sık kullanılan rotalara hızlı erişim için faydalı olabilir. Geçmiş listesindeki öğeler, en yeni olandan başlayarak en son kullanıma göre sıralanır.  
 
 :::note
 
-- Geçmiş verilerinin [kaydı devre dışı bırakıldığında](../../personal/global-settings.md#history-options), navigasyon için önceki rotaları kullanmanız istenmeyecektir.
-- Önceki rotalarınıza ait bazı veya tüm geçmiş kayıtlarını silebilirsiniz. Bu, Geçmiş seçeneğinin (*Menü → Ayarlar → OsmAnd ayarları → Geçmiş*) *[Navigasyon geçmişi](../../personal/global-settings.md#history-options)* sekmesinde yapılabilir.
+- [Geçmiş](../../personal/global-settings.md#history) verilerinin kaydı devre dışı bırakıldığında, navigasyon için önceki rotaları kullanmanız istenmeyecektir.
+- Önceki rotalarınızla ilgili bazı veya tüm geçmiş kayıtlarını silebilirsiniz. Bu, Geçmiş seçeneğinin (*Menü → Ayarlar → OsmAnd ayarları → Geçmiş*) *[Navigasyon geçmişi](../../personal/global-settings.md#history)* sekmesinde yapılabilir.
 
 :::
 
@@ -276,26 +276,26 @@ Bu menüde varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 </Tabs>
 
-Başlangıç ve bitiş noktaları seçildiğinde, uygulama aktif bir profil kullanarak aralarında bir rota oluşturacaktır. [Uygulama profili](../../personal/profiles.md) ve [widget'lar](../../widgets/index.md) seti, yalnızca navigasyonun *Başlat* düğmesine dokunduğunuzda değişecektir.
+Başlangıç ve bitiş noktaları seçildikten sonra, uygulama aktif bir profil kullanarak aralarında bir rota oluşturacaktır. [Uygulama profili](../../personal/profiles.md) ve [widget'lar](../../widgets/index.md) seti, yalnızca navigasyonun *Başlat* düğmesine dokunduğunuzda değişecektir.
 
 - Navigasyonu başlatmak için **Başlat**'a dokunun.
 - Mola verirken navigasyonu [Duraklatın](#pause--resume-navigation). (*Yalnızca Android*)
-- **Durdur**'u (*Android*) veya **İptal**'i (*iOS*) seçerek navigasyonu **Durdurun**.
+- **Durdur** (*Android*) veya **İptal** (*iOS*) seçeneğini belirleyerek navigasyonu **Durdurun**.
 
 :::note Rota Detayları
-Oluşturulan rota hakkında irtifa, adım adım talimatlar, analiz aracı ve diğerleri gibi ek bilgiler [**Detaylar**](../setup/route-details.md) bölümünde bulunabilir.
+Rakım, adım adım talimatlar, analiz aracı ve diğerleri gibi oluşturulan rota hakkındaki ek bilgiler [**Detaylar**](../setup/route-details.md) bölümünde bulunabilir.
 :::
 
 ### Rota Yeniden Hesaplama {#route-recalculation}
 
-Rotadan sapma durumunda rota otomatik olarak yeniden hesaplanabilir. Yeniden hesaplama parametrelerini [Navigasyon ayarlarında](../guidance/navigation-settings.md#recalculate-route) değiştirebilirsiniz. Ayrıca [Sesli komutlar](../guidance/voice-navigation.md#voice-settings) ayarlarında rota yeniden hesaplama bildirimini devre dışı bırakabilirsiniz.
+Rotadan sapma durumunda rota otomatik olarak yeniden hesaplanabilir. Yeniden hesaplama parametrelerini [Navigasyon ayarları](../guidance/navigation-settings.md#recalculate-route) bölümünde değiştirebilirsiniz. Ayrıca [Sesli komutlar](../guidance/voice-navigation.md#voice-settings) ayarlarında rota yeniden hesaplama bildirimini devre dışı bırakabilirsiniz.
 
 ### Navigasyonu Duraklat / Devam Ettir {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
-Mola vermek ve kısa bir süre rotadan sapmak isterseniz, sesli komutları duraklatmak ve rotayı yeniden hesaplamayı durdurmak için *Duraklat/Devam Ettir* navigasyon fonksiyonunu kullanabilirsiniz.  
-Bu seçenek, uygulamanın Android sürümünde *[Bildirim listesinde](../guidance/voice-navigation.md#text-notifications)* veya *[Hızlı eylemler menüsünden](../../widgets/quick-action.md)* mevcuttur.
+Kısa bir mola vermek ve rotadan sapmak isterseniz, sesli komutları duraklatmak ve rotayı yeniden hesaplamayı durdurmak için *Duraklat/Devam Ettir* navigasyon işlevini kullanabilirsiniz.  
+Bu seçenek, uygulamanın Android sürümünde *[Bildirim listesi](../guidance/voice-navigation.md#text-notifications)* veya *[Hızlı eylemler menüsü](../../widgets/quick-action.md)* aracılığıyla kullanılabilir.
 
 ![Bildirim ekranı Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
@@ -308,26 +308,26 @@ Navigasyona devam etmek için:
 
 <TabItem value="android" label="Android">
 
-![Navigasyonu devam ettir Android](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
+![Navigasyona devam et Android](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyonu devam ettir ios](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
+![Navigasyona devam et ios](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-Rotanızdayken **Navigasyon düğmesine dokunduğunuzda**, navigasyon **durmaz ve sesli komutlar verilmeye devam eder**, ancak önerilen seçenekler Devam Et veya Başlat kafa karıştırıcı olabilir.
+Rotanızdayken **Navigasyon düğmesine dokunduğunuzda**, navigasyon **durmaz ve sesli komutlar seslendirilmeye devam eder**, ancak önerilen Devam Et veya Başlat seçenekleri kafa karıştırıcı olabilir.
 :::
 
 
 ### Güç Tasarrufu İpuçları {#power-saving-tips}
 
-Navigasyon, GPS ve arka plan işlemeyi kullanır, bu da bataryayı tüketebilir. Güç kullanımını optimize etmek için:
+Navigasyon, GPS ve arka plan işlemeyi kullanır, bu da pilin bitmesine neden olabilir. Güç kullanımını optimize etmek için:
 
 - Sesli komutlara güvenirken **ekranı kapatın**.  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*'da [Ekran kontrolünü](../guidance/voice-navigation.md#screen-control) etkinleştirin (*Yalnızca Android*).
@@ -347,7 +347,7 @@ Navigasyon ayarlarına erişmek için aşağıdaki adımlardan birini izleyin:
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
 
 :::info
-*Haritayı Tara* profilinde navigasyon ayarları yoktur.  
+*Haritaya Göz At* profilinde navigasyon ayarları yoktur.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -366,20 +366,20 @@ Navigasyon ayarlarına erişmek için aşağıdaki adımlardan birini izleyin:
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** rotaların nasıl hesaplandığını belirler. Örneğin, bisiklet profilinizde rota kurallarını belirleyen bir Bisiklet navigasyon türü vardır. Bu kuralları (routing.xml dosyası olarak) OsmAnd'a aktarabilirsiniz. Rota hakkında daha fazla bilgiyi [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) sayfamızda okuyabilirsiniz.&nbsp;  
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** rotaların nasıl hesaplandığını belirler. Örneğin, bisiklet profiliniz, rota kurallarını belirleyen Bisiklet navigasyon türüne sahiptir. Bu kuralları (routing.xml dosyası olarak) OsmAnd'a aktarabilirsiniz. Rota hakkında daha fazla bilgiyi [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) sayfamızda okuyabilirsiniz.&nbsp;  
 
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** rota belirleme sırasında hangi parametrelerin kullanılacağını kontrol eder (bu, navigasyon için bir rota seçme işlemidir).
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** rota sırasında hangi parametrelerin kullanılacağını kontrol eder (bu, navigasyon için bir rota seçme sürecidir).
 
 Lütfen ilgili navigasyon türü için rota parametreleri hakkında bilgi edinin.
 
 [Rota türünü](../routing/osmand-routing.md#routing-types) ve [rota parametrelerini](../guidance/navigation-settings.md#route-parameters) nasıl yapılandıracağınızı [Navigasyon ayarları makalesinde](../guidance/navigation-settings.md) veya [Rota Parametreleri bölümündeki](../routing/osmand-routing.md#routing-types) belirli rota türleri hakkındaki makalelerde okuyabilirsiniz.  
 
 
-### Simüle Edilmiş Navigasyon {#simulated-navigation}
+## Simüle Edilmiş Navigasyon {#simulated-navigation}
 
-**Simüle edilmiş navigasyon** aracı, seyahat etmeden önce bir rotayı önizlemenizi sağlar. Bu, planlama, tanıma ve OsmAnd'ın navigasyon sistemini test etmeye yardımcı olur.
+**Simüle edilmiş navigasyon** aracı, seyahat etmeden önce bir rotayı önizlemenizi sağlar. Bu, planlama, tanıma ve OsmAnd'ın navigasyon sistemini test etme konusunda yardımcı olur.
 
-#### Simülasyonu Başlat / Durdur {#start--stop-simulation}
+### Simülasyonu Başlat / Durdur {#start--stop-simulation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -402,10 +402,10 @@ Bir navigasyon rotası oluşturulduğunda, **<Translate android="true" ids="simu
 - [Navigasyon menüsünde](#navigation-menu) *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*'a gidin.
 - Seçeneği etkinleştirmek için anahtarı açın.
 - Simülasyonu başlatmak için [Başlat](#start--stop-navigation) navigasyon düğmesine dokunun.
-- Navigasyon simülasyonunu [Durdurmak](#start--stop-navigation) için **Durdur**'a (*Android*) veya **İptal**'e (*iOS*) dokunun.
+- Navigasyon simülasyonunu [Durdurmak](#start--stop-navigation) için **Durdur** (*Android*) veya **İptal** (*iOS*) düğmesine dokunun.
 
 
-#### Hız Modu {#speed-mode}
+### Hız Modu {#speed-mode}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -429,11 +429,11 @@ Bir navigasyon rotası oluşturulduğunda, **<Translate android="true" ids="simu
 
 - **<Translate android="true" ids="simulation_preview_mode_title"/>** - Düz yollarda simülasyonu hızlandırır, kavşaklarda yavaşlar.
 
-- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Sabit bir hızda çalışır.
+- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Sabit hızda çalışır.
 - **<Translate android="true" ids="simulation_real_mode_title"/>**:
     - Yolun **düz bölümlerinde** hız, izin verilen maksimum hıza yakın olacaktır.
-    - **Kavşaklarda**, simülatör hızı düşürecektir.
-    - Trafik ışıkları, dur işaretleri ve diğer benzer engellerde **ek cezalar** uygulanacaktır.
+    - **Kavşaklarda**, simülatör hızı azaltacaktır.
+    - Trafik ışıklarında, dur işaretlerinde ve diğer benzer engellerde **ek cezalar** uygulanacaktır.
 
 
 ## Haritalar Eksik veya Senkronize Değil {#maps-missing-or-not-synchronized}
@@ -444,39 +444,39 @@ Bir rota oluşturmak için tüm **gerekli haritaların** indirilmiş ve aynı ya
 
 <TabItem value="android" label="Android">
 
-![Navigasyon Android 5 oluştururken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Navigasyon Android oluşturulurken harita yok mesajı 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon iOS oluştururken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Navigasyon iOS oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
 </TabItem>
 
 </Tabs>
 
-#### Gerekli Haritalar {#required-maps}
+### Gerekli Haritalar {#required-maps}
 
-Gerekli haritalar iletişim kutusunda indirilecek veya güncellenecek haritalar için öneriler göreceksiniz. Kullanılan haritaların listesi çok temel bir rota hesapladığı için kesin olmayabilir, kesin harita listesini almak için **Çevrimiçi hesapla**'ya tıklayabilirsiniz. **İndirilen haritaları kullan**'ı seçerseniz, rota hesaplaması zaten indirilmiş haritaları kullanmaya çalışacak ve uyarı mesajını atlayacaktır.
+Gerekli haritalar iletişim kutusunda, indirilecek veya güncellenecek haritalar için öneriler göreceksiniz. Kullanılan haritaların listesi çok temel bir rota hesapladığı için kesin olmayabilir, kesin harita listesini almak için **Çevrimiçi hesapla**'ya tıklayabilirsiniz. **İndirilen haritaları kullan** seçeneğini seçerseniz, rota hesaplaması zaten indirilmiş haritaları kullanmaya çalışacak ve uyarı mesajını atlayacaktır.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Navigasyon Android oluştururken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
+![Navigasyon Android oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon iOS oluştururken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_2_ios.png)
+![Navigasyon iOS oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Sık Karşılaşılan Sorunlar ve Çözümler {#common-issues-and-solutions}
+## Yaygın Sorunlar ve Çözümler {#common-issues-and-solutions}
 
 1. [Yavaş rota hesaplamasının olası nedenleri.](../../troubleshooting/navigation.md#route-calculation-is-slow)
 2. [Rota uzunluğu 250 kilometreyi aşarsa ne yapılmalı.](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)
@@ -497,5 +497,3 @@ Daha fazla sorun giderme adımı için [navigasyon sorunlarına](../../troublesh
 - [Sesli komutlar / Bildirimler](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Son güncelleme: Şubat 2025*
