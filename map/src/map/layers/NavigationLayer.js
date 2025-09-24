@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, useCallback } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import AppContext, { isRouteTrack } from '../../context/AppContext';
+import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 
@@ -46,7 +46,6 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     let timer = null;
     function debouncer(f) {
-        // if (timer) { clearTimeout(timer); timer = null; } // another kind of debouncer
         if (timer === null) {
             timer = setTimeout(() => {
                 timer = null;
@@ -77,6 +76,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ctx.setRouteTrackFile(null);
                 }
             },
+            click() {
+                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+            },
         },
         [startPointRef]
     );
@@ -99,6 +101,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     routeObject.setOption('route.points.finish', marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
+            },
+            click() {
+                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
             },
         },
         [finishPointRef]
@@ -151,7 +156,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
     };
 
     const onEachFeature = ({ feature, layer, id = null }) => {
-        if (feature.properties && feature.properties.description) {
+        if (feature.properties?.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
                 const id = feature.properties.roadId;
@@ -176,26 +181,26 @@ const NavigationLayer = ({ geocodingData, region }) => {
             });
             layer.bindPopup(desc);
         }
+        layer.on('click', (e) => {
+            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+        });
     };
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true) {
-            return false;
-        }
-        return true;
+        return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
     };
 
     const pointToLayer = (feature, latlng) => {
-        let opts = Object.assign({}, geojsonMarkerOptions);
-        if (feature.properties && feature.properties.description && feature.properties.description.includes('[MUTE]')) {
+        let opts = { ...geojsonMarkerOptions };
+        if (feature.properties?.description?.includes('[MUTE]')) {
             opts.fillColor = '#777';
         }
         return moveableMarker(routeObject, map, L.circleMarker(latlng, opts));
     };
 
     const pointToLayerGeoData = (feature, latlng) => {
-        let opts = Object.assign({}, geojsonMarkerOptions);
+        let opts = { ...geojsonMarkerOptions };
         if (feature.properties && feature.properties.index) {
             opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
             let clrs = ['#6DD6DA', '#95D9DA', '#A2ABB5', '#AE8CA3', '#817F82'];

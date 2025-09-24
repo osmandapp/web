@@ -176,7 +176,6 @@ function handleEditCloudTrack(ctx) {
         function proceed() {
             if (isRouteTrack(ctx)) {
                 ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-                ctx.routeObject.setOption('route.map.conceal', true);
             }
             saveTrackToLocal({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
             ctx.setUpdateInfoBlock(true);
