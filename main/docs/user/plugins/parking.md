@@ -53,7 +53,7 @@ To use a parking spot on the map, you need to make the following settings:
 
 ## Parking Spot on the Map {#parking-spot-on-the-map}
 
-When you mark a parking spot, OsmAnd saves its geographic coordinates along with a timestamp. If needed, a time limit and calendar reminder can also be added.
+When you mark a parking spot, OsmAnd saves its geographic coordinates along with a timestamp. If needed, a time limit and calendar reminder can also be added. Parking spots are saved as **Favorite points**. To make sure the parking marker is visible on the map, [Favorites](../personal/favorites.md) must be enabled.
 
 
 ### Set a Spot {#set-a-spot}
