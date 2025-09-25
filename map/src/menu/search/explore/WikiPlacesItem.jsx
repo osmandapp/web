@@ -89,7 +89,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     async function openInfo(item) {
         ctx.setLoadingContextMenu(true);
         ctx.setLoadingContextItem(item);
-        ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item, isDetails: true });
+        ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item });
     }
 
     function getType(type) {

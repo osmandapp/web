@@ -26,7 +26,6 @@ export default function EditWptDialog({
     deleteFavoritesDialogOpen,
     setDeleteFavoritesDialogOpen,
     setOpenActions = null,
-    isDetails = false,
 }) {
     const ctx = useContext(AppContext);
     const [favoriteName, setFavoriteName] = useState(wpt.name);
@@ -86,9 +85,9 @@ export default function EditWptDialog({
     }
 
     function saveTrackWpt() {
-        let selectedGroupName = favoriteGroup === null ? wpt.category : favoriteGroup.name;
-        let currentWpt = getCurrentWpt(selectedGroupName);
-        let ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt === currentWpt);
+        const selectedGroupName = favoriteGroup === null ? wpt.category : favoriteGroup.name;
+        const currentWpt = getCurrentWpt(selectedGroupName);
+        const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt === currentWpt);
         if (ind !== -1) {
             ctx.selectedGpxFile.wpts[ind] = {
                 name: favoriteName,
@@ -104,15 +103,13 @@ export default function EditWptDialog({
         }
         ctx.selectedGpxFile.wptChangedFlag++;
         ctx.selectedGpxFile.updateLayers = true;
-        if (!isDetails) {
+        if (wpt.mapObj) {
             ctx.selectedGpxFile.save = true;
             ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
         }
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        let newWpt = ctx.selectedGpxFile.wpts[ind];
-        if (isDetails) {
-            newWpt.trackWptItem = true;
-        }
+        const newWpt = ctx.selectedGpxFile.wpts[ind];
+        newWpt.mapObj = wpt.mapObj;
 
         const updatedWpt = {
             trackWpt: true,
@@ -315,7 +312,6 @@ export default function EditWptDialog({
                             dialogOpen={deleteFavoritesDialogOpen}
                             setDialogOpen={setDeleteFavoritesDialogOpen}
                             wpt={wpt}
-                            isDetails={isDetails}
                         />
                     )}
                     <Button id="se-edit-fav-item-submit" disabled={errorName} onClick={() => save()}>

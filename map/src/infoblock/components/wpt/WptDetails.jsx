@@ -24,7 +24,6 @@ import AppContext, {
     OBJECT_TYPE_SHARE_FILE,
 } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
-import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
@@ -129,7 +128,7 @@ export const ADDRESS_NOT_FOUND = 'No data';
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
 
-export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
+export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -172,6 +171,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         if (type?.isWikiPoi) {
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
+            const mapObj = ctx.selectedWpt.mapObj;
             const wikiObj = ctx.searchSettings.getPoi;
             const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
@@ -193,6 +193,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
                 wikidata: wikidataId,
+                mapObj,
             };
         } else if (type?.isWpt) {
             return getDataFromWpt(type, ctx.selectedWpt);
@@ -205,7 +206,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             }
         } else if (type?.isSearch || type?.isPoi) {
             const currentPoi = ctx.selectedWpt.poi;
-            const { options: objOptions, latlng } = currentPoi;
+            const { options: objOptions, latlng, mapObj } = currentPoi;
             const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
             return {
                 type,
@@ -218,6 +219,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
+                mapObj,
             };
         }
         return null;
@@ -359,6 +361,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             tags: null,
+            mapObj: selectedWpt.mapObj,
         };
     }
 
@@ -440,43 +443,64 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
             isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi && !wpt?.wikidata,
             isWikiPoi: wpt?.wikidata,
-            isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
+            isWpt: isTrack(ctx) && wpt?.trackWpt,
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
             isShareFav: ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && wpt?.markerCurrent,
         };
     }
 
     function closeDetails() {
-        if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
+        const type = wpt?.type;
+        if (!type) return;
+
+        ctx.setSelectedWpt(null);
+
+        if (type.isPoi || type.isSearch) {
             if (ctx.selectedPoiId) {
                 ctx.setSelectedPoiId((prev) => {
                     return { ...prev, show: false };
                 });
             }
-            isDetails ? returnToSearch() : closeHeader({ ctx });
-        } else if (wpt?.type?.isWpt) {
-            isDetails || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeHeader({ ctx });
-        } else if (wpt?.type?.isFav) {
-            ctx.setSelectedFavoriteObj(null);
-            isDetails || ctx.openFavGroups?.length > 0 ? closeOnlyFavDetails() : closeHeader({ ctx });
-        } else if (wpt?.type?.isWikiPoi) {
+            if (!wpt.mapObj) {
+                ctx.setSelectedPoiObj(null);
+                setShowInfoBlock(false);
+                navigate({
+                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+                    search: buildSearchParamsFromQuery(ctx.searchQuery),
+                    hash: window.location.hash,
+                });
+            } else {
+                closeObjectFromMap();
+            }
+        } else if (type.isWpt) {
+            !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
+        } else if (type.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
-        } else if (wpt?.type?.isShareFav) {
-            ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
+        } else if (type.isFav) {
+            ctx.setSelectedFavoriteObj(null);
+            !wpt.mapObj ? closeOnlyFavDetails() : closeObjectFromMap();
+        } else if (type.isShareFav) {
             setShowInfoBlock(false);
+            ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
         }
-        ctx.setSelectedWpt(null);
     }
 
-    function returnToSearch() {
+    function closeObjectFromMap() {
+        ctx.setCurrentObjectType(null);
         ctx.setSelectedPoiObj(null);
-        setShowInfoBlock(false);
-        navigate({
-            pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-            search: buildSearchParamsFromQuery(ctx.searchQuery),
-            hash: window.location.hash,
-        });
+
+        if (ctx.poiByUrl?.layer) {
+            // remove poi marker
+            ctx.setPoiByUrl((prev) => {
+                return {
+                    ...prev,
+                    open: false,
+                };
+            });
+        }
+
+        ctx.setCloseMapObj(true);
     }
 
     function closeOnlyFavDetails() {
@@ -631,7 +655,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         className={styles.closeIcon}
                         onClick={() => closeDetails()}
                     >
-                        {ctx.searchSettings?.isDetails || isDetails ? <BackIcon /> : <CloseIcon />}
+                        {wpt?.mapObj ? <CloseIcon /> : <BackIcon />}
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -831,7 +855,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
-                            {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} isDetails={isDetails} />}
+                            {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                             {wpt?.wikiDesc && (
                                 <>

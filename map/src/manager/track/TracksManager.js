@@ -18,7 +18,7 @@ import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
-import { getFileStorage, GPX } from '../GlobalManager';
+import { getFileStorage, GPX, MENU_INFO_OPEN_SIZE } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
@@ -989,7 +989,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 }
 
 function createTrack(ctx, latlng) {
-    let createState = {
+    const createState = {
         enable: true, // start-editor
     };
     if (latlng) {
@@ -1370,7 +1370,7 @@ export async function openTrackOnMap({
     }
     const sharedFile = smartf?.type === SHARE_TYPE;
     const files = getFileStorage({ ctx, smartf, type: GPX });
-    let newGpxFiles = Object.assign({}, files);
+    const newGpxFiles = { ...files };
 
     // check if file is already loaded
     if (files[file.name]?.url) {
@@ -1414,6 +1414,7 @@ export async function openTrackOnMap({
             track.info = await Utils.getFileInfo(oneGpxFile);
             track.name = file.name;
             track.key = track.name;
+            track.mapObj = file.mapObj;
             Object.keys(track).forEach((t) => {
                 oneGpxFile[t] = track[t];
             });
@@ -1505,7 +1506,10 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     }
 
     recentSaver(TRACKS_KEY, file);
-    ctx.setSelectedCloudTrackObj({ ...file });
+    // save only tracks from menu
+    if (!file.mapObj) {
+        ctx.setSelectedCloudTrackObj({ ...file });
+    }
 
     if (hasUrl) {
         ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });

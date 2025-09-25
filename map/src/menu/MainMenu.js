@@ -21,10 +21,10 @@ import AppContext, {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_WEATHER,
     OBJECT_TRACK_ANALYZER,
+    OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -134,6 +134,7 @@ export default function MainMenu({
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
 
     const timerRef = useRef(null);
+    const lastMenuUrlsRef = useRef({});
 
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
@@ -182,7 +183,7 @@ export default function MainMenu({
                     return;
                 }
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-
+                file.mapObj = true;
                 if (location.pathname.includes(SHARE_MENU_URL)) {
                     // open share menu
                     if (!ctx.shareFile) {
@@ -359,37 +360,33 @@ export default function MainMenu({
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
 
-    //open main menu if infoblock was opened
     useEffect(() => {
-        if (showInfoBlock && !menuInfo) {
-            selectMenuInfoByObjectType();
+        const holder = items.find((i) => location.pathname.startsWith(i.url));
+        if (holder?.type) {
+            lastMenuUrlsRef.current[holder.type] = location.pathname + location.search + location.hash;
         }
-    }, [showInfoBlock]);
+    }, [location.pathname, location.search, location.hash]);
 
     useEffect(() => {
+        if (ctx.closeMapObj) {
+            if (!selectedType) {
+                ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
+            } else {
+                const saved = lastMenuUrlsRef.current[selectedType];
+                if (saved) {
+                    navigate(saved);
+                    openMenuObject();
+                }
+            }
+            ctx.setCloseMapObj(false);
+        }
+    }, [ctx.closeMapObj]);
+
+    useEffect(() => {
+        openMenuObject();
+
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
-        }
-        if (selectedType === OBJECT_TYPE_FAVORITE) {
-            if (ctx.selectedFavoriteObj) {
-                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
-            }
-        }
-
-        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
-            if (ctx.selectedCloudTrackObj) {
-                processDisplayTrack({
-                    visible: true,
-                    showOnMap: true,
-                    showInfo: true,
-                    zoomToTrack: true,
-                    file: ctx.selectedCloudTrackObj,
-                    ctx,
-                    fileStorage: ctx.gpxFiles,
-                    setFileStorage: ctx.setGpxFiles,
-                    recentSaver,
-                }).then();
-            }
         }
 
         if (selectedType === OBJECT_TYPE_WEATHER) {
@@ -451,7 +448,7 @@ export default function MainMenu({
         return () => clearTimeout(timerRef.current);
     }, [ctx.updatedRequestList]);
 
-    //open main menu if currentObjectType was changed
+    // Select menu by object type. Only for actions from map context menu.
     useEffect(() => {
         if (ctx.currentObjectType) {
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
@@ -468,11 +465,50 @@ export default function MainMenu({
                         selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }
                 }, 100);
-            } else if (selectedType !== ctx.currentObjectType) {
-                selectMenuInfoByObjectType(); // process all other object types
+            } else if (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack?.enable) {
+                selectMenuInfoByObjectType(OBJECT_TYPE_LOCAL_TRACK);
             }
         }
     }, [ctx.currentObjectType]);
+
+    // Open info block if it was closed
+    useEffect(() => {
+        if (ctx.currentObjectType && ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
+            ctx.setInfoBlockWidth(`${MENU_INFO_OPEN_SIZE}px`);
+        }
+    }, [ctx.currentObjectType]);
+
+    useEffect(() => {
+        if (ctx.saveTrackToCloud) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+            selectMenuInfoByObjectType(OBJECT_TYPE_CLOUD_TRACK);
+            ctx.setSaveTrackToCloud(false);
+        }
+    }, [ctx.saveTrackToCloud]);
+
+    function openMenuObject() {
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (ctx.selectedFavoriteObj) {
+                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+            }
+        }
+
+        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctx.selectedCloudTrackObj) {
+                processDisplayTrack({
+                    visible: true,
+                    showOnMap: true,
+                    showInfo: true,
+                    zoomToTrack: true,
+                    file: ctx.selectedCloudTrackObj,
+                    ctx,
+                    fileStorage: ctx.gpxFiles,
+                    setFileStorage: ctx.setGpxFiles,
+                    recentSaver,
+                }).then();
+            }
+        }
+    }
 
     function selectMenuInfoByObjectType(force = null) {
         const currentMenu = items.find((item) => {

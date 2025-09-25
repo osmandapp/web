@@ -71,6 +71,7 @@ export default class EditableMarker {
                     );
                     const wpt = {
                         trackWpt: true,
+                        mapObj: true,
                         file: track.gpx,
                         ...e,
                         ...point,

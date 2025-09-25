@@ -23,6 +23,7 @@ import {
     TRACKS_URL,
 } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
@@ -44,8 +45,6 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
                 <Box sx={{ px: 3, pt: 3, pb: 8 }}>{children}</Box>
             </Typography>
         );
-    } else {
-        // mounted || setTimeout(() => setMounted(true), 1000); // mount not-selected tabs with delay
     }
 
     return null;
@@ -109,24 +108,8 @@ export default function InformationBlock({
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
-
-            if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
-                if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
-                    ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
-                }
-                // remove share file from visible tracks
-                if (ctx.shareWithMeFiles?.tracks && ctx.shareWithMeFiles.tracks[ctx.selectedGpxFile.name]) {
-                    ctx.setShareWithMeFiles({
-                        ...ctx.shareWithMeFiles,
-                        tracks: {
-                            ...ctx.shareWithMeFiles.tracks,
-                            [ctx.selectedGpxFile.name]: {
-                                ...ctx.shareWithMeFiles.tracks[ctx.selectedGpxFile.name],
-                                url: null,
-                            },
-                        },
-                    });
-                }
+            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+            if (!isEmpty(ctx.selectedGpxFile)) {
                 ctx.setSelectedGpxFile({});
             }
         }
@@ -195,6 +178,7 @@ export default function InformationBlock({
                         // set track identification for URL
                         setTrackName(ctx.selectedGpxFile.name);
                         setTrackType(TRACKS_URL);
+                        setOpenWptDetails(false);
                     }
                 }
                 if (tObj) {
@@ -218,7 +202,7 @@ export default function InformationBlock({
 
     // share file menu
     useEffect(() => {
-        if (ctx.shareFile && ctx.shareFile.mainFile.name) {
+        if (ctx.shareFile?.mainFile.name) {
             setOpenShareFileMenu(true);
             if (!showInfoBlock) {
                 setShowInfoBlock(true);
@@ -259,6 +243,27 @@ export default function InformationBlock({
             setValue('waypoints');
         }
     }, [openWptTab]);
+
+    function hideTrackFromMapIfNotVisible(track) {
+        if (!isEmpty(track) && !isVisibleTrack(track)) {
+            if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[track.name]) {
+                ctx.mutateGpxFiles((o) => (o[track.name].url = null));
+            }
+            // remove share file from visible tracks
+            if (ctx.shareWithMeFiles?.tracks[track.name]) {
+                ctx.setShareWithMeFiles({
+                    ...ctx.shareWithMeFiles,
+                    tracks: {
+                        ...ctx.shareWithMeFiles.tracks,
+                        [track.name]: {
+                            ...ctx.shareWithMeFiles.tracks[track.name],
+                            url: null,
+                        },
+                    },
+                });
+            }
+        }
+    }
 
     function clearStateIfObjChange() {
         if (
@@ -309,13 +314,7 @@ export default function InformationBlock({
                         (ctx.photoGallery ? (
                             <WptPhotoList photos={ctx.photoGallery} />
                         ) : (
-                            <WptDetails
-                                isDetails={
-                                    ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem || ctx.searchResult
-                                }
-                                setOpenWptTab={setOpenWptTab}
-                                setShowInfoBlock={setShowInfoBlock}
-                            />
+                            <WptDetails setOpenWptTab={setOpenWptTab} setShowInfoBlock={setShowInfoBlock} />
                         ))}
                     {openShareFileMenu && (
                         <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
@@ -341,11 +340,17 @@ export default function InformationBlock({
                                             ctx.setCurrentObjectType(null);
                                         }
 
-                                        if (trackName) {
-                                            // back to prev url
+                                        if (ctx.selectedGpxFile.mapObj) {
+                                            ctx.setCloseMapObj(true);
+                                        } else if (isCloudTrack(ctx)) {
+                                            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+                                            if (!isEmpty(ctx.selectedGpxFile)) {
+                                                ctx.setSelectedGpxFile({});
+                                            }
                                             setTrackName(null);
                                             setSavePrevState(true);
                                             ctx.setSelectedCloudTrackObj(null);
+
                                             navigate({
                                                 pathname: MAIN_URL_WITH_SLASH + trackType,
                                                 hash: window.location.hash,
@@ -353,7 +358,7 @@ export default function InformationBlock({
                                         }
                                     }}
                                 >
-                                    <BackIcon />
+                                    {ctx.selectedGpxFile.mapObj ? <CloseIcon /> : <BackIcon />}
                                 </IconButton>
                                 {tabsObj && tabsObj.tabList.length > 0 && (
                                     <TabContext value={value}>

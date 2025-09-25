@@ -266,6 +266,7 @@ export default function SearchLayer() {
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
+            mapObj: true,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });

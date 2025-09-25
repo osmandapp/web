@@ -86,7 +86,6 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                     setDialogOpen={setOpenDeleteDialog}
                     wpt={favorite}
                     setOpenActions={setOpenActions}
-                    isDetails={true}
                 />
             )}
             {openEditDialog && (
@@ -97,7 +96,6 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                     deleteFavoritesDialogOpen={openDeleteDialog}
                     setDeleteFavoritesDialogOpen={setOpenDeleteDialog}
                     setOpenActions={setOpenActions}
-                    isDetails={true}
                 />
             )}
         </>

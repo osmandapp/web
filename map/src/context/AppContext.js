@@ -477,6 +477,9 @@ export const AppContextProvider = (props) => {
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
+    const [closeMapObj, setCloseMapObj] = useState(false);
+    const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
+
     useEffect(() => {
         async function loadSort() {
             try {
@@ -869,6 +872,10 @@ export const AppContextProvider = (props) => {
                 setZoomToCoords,
                 poiByUrl,
                 setPoiByUrl,
+                closeMapObj,
+                setCloseMapObj,
+                saveTrackToCloud,
+                setSaveTrackToCloud,
             }}
         >
             {props.children}
