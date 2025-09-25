@@ -37,19 +37,23 @@ export default function LegendItem({ itemsMap }) {
           {items.map((itemArray, rowIndex) => (
             <React.Fragment key={`legend-row-${rowIndex}`}>
               <tr>
-                {itemArray.map(([title, imageName]) => (
-                  <td key={`title-${imageName}`} className='text--center'>
-                    {title.startsWith('poi_') ? <Translate android="yes" id={title} getFirstPart={true} /> : title}
+                {itemArray.map(([title, image]) => (
+                  <td key={`title-${image.folderName}`} className='text--center'>
+                    {<Translate android="yes" id={'poi_' + image.poiName} getFirstPart={true} />}
+                    {image.poiName2 !== null ? (
+                      <>{' ('}<Translate android="yes" id={'poi_' + image.poiName2} getFirstPart={true} />{')'}
+                      </>
+                    ) : null}
                   </td>
                 ))}
               </tr>
               <tr className={legendStyle}>
-                {itemArray.map(([title, imageName]) => (
-                  <td key={`image-${imageName}`}>
+                {itemArray.map(([title, image]) => (
+                  <td key={`image-${image.folderName}`}>
                     <LazyIcon
                       legendBackground={legendStyle}
                       className={styles.img}
-                      src={useBaseUrl(`/img/legend/osmand/${imageName}${imageSuffix}`)}
+                      src={useBaseUrl(`/img/legend/osmand/${image.folderName}${imageSuffix}`)}
                       alt={`${title}${altSuffix}`}
                     />
                   </td>
