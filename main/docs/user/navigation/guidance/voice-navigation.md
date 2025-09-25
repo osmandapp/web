@@ -357,6 +357,8 @@ You can configure an OsmAnd profile to beep instead of speaking, in a similar wa
 
 ## Text Notifications {#text-notifications}
 
+<InfoAndroidOnly />
+
 Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 
 ![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
