@@ -270,7 +270,6 @@ export default function SearchLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        ctx.setSelectedPoiObj({ ...poi });
     }
 
     async function createSearchLayer({ objList }) {

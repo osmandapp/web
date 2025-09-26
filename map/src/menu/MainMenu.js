@@ -75,6 +75,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
     EXPLORE_URL,
+    POI_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -208,6 +209,9 @@ export default function MainMenu({
     }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
 
     useEffect(() => {
+        if (location.pathname.includes(POI_URL)) {
+            return;
+        }
         if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
             setSavePrevState(false);
             return;
@@ -224,6 +228,7 @@ export default function MainMenu({
         }
 
         closeSubPages({ ctx, ltx, wptDetails: false });
+
         openShareFileByLink();
 
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
@@ -272,6 +277,7 @@ export default function MainMenu({
             show: true,
             id: 'se-show-menu-search',
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
+            otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
         },
         {
             name: t('configure_map'),
@@ -362,7 +368,10 @@ export default function MainMenu({
 
     // url caching for every menu type
     useEffect(() => {
-        const menuByUrl = items.find((i) => location.pathname.startsWith(i.url));
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        const menuByUrl = items.find(
+            (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
+        );
         if (menuByUrl) {
             lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + location.hash;
         }
@@ -414,9 +423,6 @@ export default function MainMenu({
         });
 
         if (selectedType === OBJECT_SEARCH) {
-            if (ctx.selectedPoiObj) {
-                openPoiObj(ctx, ctx.selectedPoiObj);
-            }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
                 return;
@@ -509,6 +515,10 @@ export default function MainMenu({
                     recentSaver,
                 }).then();
             }
+        }
+
+        if (selectedType === OBJECT_SEARCH && ctx.selectedPoiObj) {
+            openPoiObj(ctx, ctx.selectedPoiObj);
         }
     }
 

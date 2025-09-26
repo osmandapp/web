@@ -488,7 +488,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     function closeObjectFromMap() {
         ctx.setCurrentObjectType(null);
-        ctx.setSelectedPoiObj(null);
 
         if (ctx.poiByUrl?.layer) {
             // remove poi marker

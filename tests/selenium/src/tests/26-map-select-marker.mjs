@@ -132,15 +132,16 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
 
         await clickBy(By.id('se-close-wpt-details'));
         await checkMarkerNotHighlighted(coords1, zoomState, type);
+        await clickBy(By.id('se-close-wpt-details'));
     }
 }
 
 async function checkMarkerHighlighted(coords, state, type) {
     const marker = await getMarker(coords.lat, coords.lng);
     if (type === explore_type) {
-        await assert(marker && marker.options.hovered, `Marker is not highlighted in blue (${state})`);
+        await assert(marker?.options.hovered, `Marker is not highlighted in blue (${state})`);
     } else {
-        await assert(marker && marker.iconOptions.html.includes(blue), `Marker is not highlighted in blue (${state})`);
+        await assert(marker?.iconOptions.html.includes(blue), `Marker is not highlighted in blue (${state})`);
     }
 }
 

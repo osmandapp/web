@@ -254,7 +254,6 @@ export default function PoiLayer() {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setSelectedWpt({ poi });
-            ctx.setSelectedPoiObj({ ...poi });
             return data;
         } else {
             return null;
@@ -482,7 +481,6 @@ export default function PoiLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        ctx.setSelectedPoiObj({ ...poi });
         navigateToPoi(poi, navigate);
     }
 
