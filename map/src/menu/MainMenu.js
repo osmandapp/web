@@ -360,13 +360,15 @@ export default function MainMenu({
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
 
+    // url caching for every menu type
     useEffect(() => {
-        const holder = items.find((i) => location.pathname.startsWith(i.url));
-        if (holder?.type) {
-            lastMenuUrlsRef.current[holder.type] = location.pathname + location.search + location.hash;
+        const menuByUrl = items.find((i) => location.pathname.startsWith(i.url));
+        if (menuByUrl) {
+            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + location.hash;
         }
     }, [location.pathname, location.search, location.hash]);
 
+    // open menu after closing map object if any selected before
     useEffect(() => {
         if (ctx.closeMapObj) {
             if (!selectedType) {
