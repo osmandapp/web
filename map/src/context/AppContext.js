@@ -475,6 +475,7 @@ export const AppContextProvider = (props) => {
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
+    const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
@@ -876,6 +877,8 @@ export const AppContextProvider = (props) => {
                 setCloseMapObj,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
+                selectedLocalTrackObj,
+                setSelectedLocalTrackObj,
             }}
         >
             {props.children}

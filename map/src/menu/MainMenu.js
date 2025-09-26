@@ -31,7 +31,7 @@ import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
-import PlanRouteMenu from './planroute/PlanRouteMenu';
+import PlanRouteMenu, { openSelectedLocalTrack } from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WeatherIcon } from '../assets/menu/ic_action_umbrella.svg';
 import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg';
@@ -519,6 +519,10 @@ export default function MainMenu({
 
         if (selectedType === OBJECT_SEARCH && ctx.selectedPoiObj) {
             openPoiObj(ctx, ctx.selectedPoiObj);
+        }
+
+        if (selectedType === OBJECT_TYPE_LOCAL_TRACK && ctx.selectedLocalTrackObj && !ctx.createTrack?.enable) {
+            openSelectedLocalTrack(ctx);
         }
     }
 

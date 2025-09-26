@@ -4,6 +4,7 @@ import {
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_TRAVEL,
     OBJECT_TYPE_WEATHER,
@@ -49,6 +50,10 @@ export default function useMenuDots(ctx) {
         const finishPoint = ctx.routeObject.getOption('route.points.finish');
         setActiveMenu(OBJECT_TYPE_NAVIGATION_TRACK, startPoint || finishPoint);
     }, [ctx.routeObject]);
+
+    useEffect(() => {
+        setActiveMenu(OBJECT_TYPE_LOCAL_TRACK, ctx.selectedLocalTrackObj);
+    }, [ctx.selectedLocalTrackObj]);
 
     function isSameHour() {
         const initial = new Date();

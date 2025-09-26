@@ -355,6 +355,11 @@ export default function InformationBlock({
                                                 pathname: MAIN_URL_WITH_SLASH + trackType,
                                                 hash: window.location.hash,
                                             });
+                                        } else if (isLocalTrack(ctx)) {
+                                            if (!isEmpty(ctx.selectedGpxFile)) {
+                                                ctx.setSelectedGpxFile({});
+                                            }
+                                            ctx.setSelectedLocalTrackObj(null);
                                         }
                                     }}
                                 >

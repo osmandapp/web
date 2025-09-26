@@ -57,7 +57,7 @@ export default function GeneralInfo({ width }) {
     const { t } = useTranslation();
 
     const [enableEditName, setEnableEditName] = useState(false);
-    const [fileName, setFileName] = useState((ctx.selectedGpxFile && ctx.selectedGpxFile.name) ?? '');
+    const [fileName, setFileName] = useState(ctx.selectedGpxFile?.name ?? '');
     const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
     const [pointsTotal, setPointsTotal] = useState(0);
@@ -69,7 +69,6 @@ export default function GeneralInfo({ width }) {
     const [elevation, setElevation] = useState('');
     const [elevationSRTM, setElevationSRTM] = useState('');
     const [loadingSrtm, setLoadingSrtm] = useState(false);
-    const [openDescDialog, setOpenDescDialog] = useState(false);
 
     const DESC_MAX_HEIGHT = 150;
     const [descHeight, setDescHeight] = useState(0);

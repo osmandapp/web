@@ -1,12 +1,10 @@
-import { Box, Button, ButtonGroup, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LocalTrackItem from './LocalTrackItem';
-import TracksManager from '../../manager/track/TracksManager';
-import PopperMenu from './PopperMenu';
+import PopperMenu from '../tracks/PopperMenu';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../../frame/util/LocalGpxUploader';
 import { clearAllLocalTracks } from '../../context/LocalTrackStorage';
 
 export default function LocalTrackGroup() {
@@ -89,40 +87,6 @@ export default function LocalTrackGroup() {
                             .filter((track) => track?.name)
                             .map((track) => <LocalTrackItem key={'localtrack-' + track.name} track={track} />)}
                 </div>
-                <ButtonGroup variant="text" sx={{ mt: 1, ml: 2 }}>
-                    <Button
-                        sx={{
-                            ml: 3,
-                            fontSize: 11,
-                            textAlign: 'center',
-                            maxWidth: '120px !important',
-                            maxHeight: '40px',
-                            minWidth: '120px !important',
-                            minHeight: '40px',
-                        }}
-                        variant="contained"
-                        component="span"
-                        onClick={() => TracksManager.createTrack(ctx)}
-                    >
-                        Create track
-                    </Button>
-                    <LocalGpxUploader>
-                        <Button
-                            sx={{
-                                fontSize: 11,
-                                ml: 2,
-                                maxWidth: '120px !important',
-                                maxHeight: '40px',
-                                minWidth: '120px !important',
-                                minHeight: '40px',
-                            }}
-                            variant="contained"
-                            component="span"
-                        >
-                            Import track
-                        </Button>
-                    </LocalGpxUploader>
-                </ButtonGroup>
             </Collapse>
         </Box>
     );
