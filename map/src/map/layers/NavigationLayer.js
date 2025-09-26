@@ -8,16 +8,16 @@ import { fitBoundsOptions } from '../../manager/track/TracksManager';
 const DRAG_DEBOUNCE_MS = 10;
 
 function moveableMarker(routeObject, map, marker) {
-    let moved;
-    let mv;
+    let startPx = null;
+    let startLL = null; // LatLng
 
     function trackCursor(evt) {
         marker.setLatLng(evt.latlng);
     }
 
     marker.on('mousedown', () => {
-        moved = marker._point;
-        mv = marker.getLatLng();
+        startLL = marker.getLatLng();
+        startPx = map.latLngToLayerPoint(startLL);
         map.dragging.disable();
         map.on('mousemove', trackCursor);
     });
@@ -25,9 +25,17 @@ function moveableMarker(routeObject, map, marker) {
     marker.on('mouseup', () => {
         map.dragging.enable();
         map.off('mousemove', trackCursor);
-        if (moved && Math.abs(moved.x - marker._point.x) + Math.abs(moved.y - marker._point.y) > 10) {
-            routeObject.routeAddViaPoint({ ll: marker.getLatLng(), old: mv });
+
+        if (!startPx) return;
+        const endPx = map.latLngToLayerPoint(marker.getLatLng());
+        const moved = Math.abs(endPx.x - startPx.x) + Math.abs(endPx.y - startPx.y);
+
+        if (moved > 10) {
+            routeObject.routeAddViaPoint({ ll: marker.getLatLng(), old: startLL });
         }
+
+        startPx = null;
+        startLL = null;
     });
 
     return marker;
@@ -36,6 +44,21 @@ function moveableMarker(routeObject, map, marker) {
 const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
+
+    const makeDotIcon = useCallback((color = '#ff7800', opacity = 0.9, size = 16, border = '#000', strokeWidth = 1) => {
+        const r = size / 2 - strokeWidth / 2;
+        const c = size / 2;
+        const svg =
+            `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" style="display:block">` +
+            `<circle cx="${c}" cy="${c}" r="${r}" fill="${color}" fill-opacity="${opacity}" stroke="${border}" stroke-width="${strokeWidth}"/>` +
+            `</svg>`;
+        return L.divIcon({
+            className: 'nav-dot-icon',
+            html: svg,
+            iconSize: [size, size],
+            iconAnchor: [size / 2, size / 2],
+        });
+    }, []);
 
     const routeObject = ctx.routeObject;
 
@@ -196,7 +219,14 @@ const NavigationLayer = ({ geocodingData, region }) => {
         if (feature.properties?.description?.includes('[MUTE]')) {
             opts.fillColor = '#777';
         }
-        return moveableMarker(routeObject, map, L.circleMarker(latlng, opts));
+        return moveableMarker(
+            routeObject,
+            map,
+            L.marker(latlng, {
+                icon: makeDotIcon(opts.fillColor, opts.fillOpacity),
+                interactive: true,
+            })
+        );
     };
 
     const pointToLayerGeoData = (feature, latlng) => {
@@ -211,7 +241,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 }
             }
         }
-        return L.circleMarker(latlng, opts);
+        return L.marker(latlng, {
+            icon: makeDotIcon(opts.fillColor, opts.fillOpacity),
+            interactive: true,
+        });
     };
 
     // GeoJSON requires dynamic key to refresh/refilter
