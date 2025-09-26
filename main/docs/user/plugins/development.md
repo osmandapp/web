@@ -61,7 +61,7 @@ Use one of the following paths to open the plugin settings:
 
 ### Terrain {#terrain}
 
-- **Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). When using the V2 rendering engine, instead of calculating hillshading or slopes from the 3D Terrain map, use the old format raster maps for this purpose. Can speed up rendering significantly.
+- **Use raster [SQLite format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). When using the V2 rendering engine, instead of calculating hillshading or slopes from the 3D Terrain map, use the old format raster maps for this purpose. Can speed up rendering significantly.
 
 
 ### Troubleshooting {#troubleshooting}
