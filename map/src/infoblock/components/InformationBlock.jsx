@@ -325,7 +325,7 @@ export default function InformationBlock({
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton
-                                    id={'se-button-back'}
+                                    id={ctx.selectedGpxFile.mapObj ? 'se-button-close' : 'se-button-back'}
                                     size="small"
                                     edge="start"
                                     color="inherit"

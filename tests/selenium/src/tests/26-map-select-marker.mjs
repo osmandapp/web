@@ -107,7 +107,7 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
     await items[indexes[0]].click();
     await waitBy(By.id('se-wpt-details'));
     await checkMarkerHighlighted(coords1, menuState, type);
-    await clickBy(By.id('se-close-wpt-details'));
+    await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id('se-wpt-details'));
     await checkMarkerNotHighlighted(coords1, menuState, type);
 
@@ -132,7 +132,7 @@ async function testMarkers(coords1, coords2, coords3, indexes = [0, 1], type) {
 
         await clickBy(By.id('se-close-wpt-details'));
         await checkMarkerNotHighlighted(coords1, zoomState, type);
-        await clickBy(By.id('se-close-wpt-details'));
+        await clickBy(By.id('se-back-wpt-details'));
     }
 }
 

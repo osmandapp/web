@@ -50,7 +50,7 @@ export default async function test() {
     await matchTextBy(By.id('se-wpt-group'), `${favoriteGroupName} (1)`);
     await matchTextBy(By.id('se-wpt-address'), favoriteAddress);
     await waitBy(By.className('leaflet-marker-icon'));
-    await clickBy(By.id('se-close-wpt-details'));
+    await clickBy(By.id('se-back-wpt-details'));
     // check new favorite group
     await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
     await waitBy(By.className('leaflet-marker-icon'));

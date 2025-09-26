@@ -648,7 +648,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
-                        id={'se-close-wpt-details'}
+                        id={wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details'}
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
