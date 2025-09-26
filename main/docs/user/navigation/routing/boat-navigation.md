@@ -50,13 +50,13 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 <TabItem value="android" label="Android">
 
 
-![Boat routing settings Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
+![Boat routing settings Android](@site/static/img/navigation/routing/boat_route_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Boat routing settings iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
+![Boat routing settings iOS](@site/static/img/navigation/routing/boat_route_ios.png)  
 
 </TabItem>
 
