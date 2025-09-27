@@ -100,9 +100,9 @@ The Accessibility plugin offers various settings to personalize navigation and i
 |---------------------------|-------------|  
 | **Accessibility Mode**    | Enables *built-in OsmAnd features* or uses **system settings**. |  
 | **Speech Rate**           | Controls *text-to-speech speed*, ranging from **50% to 200%**. |  
-| [Smart Autoannounce](#smart-autoannounce-and-clockwise-directions)    | Provides *voice guidance* when deviating from the route. |  
+| [Smart Autoannounce](#smart-autoannounce)    | Provides *voice guidance* when deviating from the route. |  
 | **Autoannounce Period**   | Sets minimum time between announcements, from **5 seconds to 5 minutes**. |  
-| **Direction Style**       | Choose between *Sidewise (8 directions)* or [Clockwise](#smart-autoannounce-and-clockwise-directions) (12 directions)*. |  
+| [Direction Style](#direction-style)       | Choose between *Sidewise (8 directions)* or *Clockwise (12 directions)*. |  
 | **Audio Directions**      | Plays *audio guidances* indicating direction. |  
 | **Haptic Directions**     | Provides *vibration feedback* for turns and deviations.|  
 
@@ -131,16 +131,32 @@ The Accessibility plugin offers various settings to personalize navigation and i
 - **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
 
 
-### Smart Autoannounce and Clockwise Directions {#smart-autoannounce-and-clockwise-directions}
+### Smart Autoannounce {#smart-autoannounce}
 
-The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route, while the **Clockwise Direction Style** offers *clock-face-based navigation guidances*. These features are designed to support visually impaired users who rely on *voice guidance*.  
+The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route. It is designed to support visually impaired users who rely on *voice guidance*.  
 
-- If **TalkBack is not enabled**, both *Smart Autoannounce* and *Clockwise Directions* will only display *text notifications* on the screen.  
+- If **TalkBack is not enabled**, *Smart Autoannounce* will only display *text notifications* on the screen.  
 
 - **Voice notifications** are activated only when *TalkBack* is enabled in the **device’s system settings**.  
 
 - Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
 
+
+### Direction Style {#direction-style}
+
+The **Direction Style** setting defines how navigation instructions are presented:
+
+- Sidewise (8 directions) – uses classic left/right or cardinal/intercardinal directions.
+- Clockwise (12 directions) – uses clock-face based guidance, such as “at 3 o’clock” or “at 10 o’clock”.
+
+This feature is designed to improve spatial awareness, especially for visually impaired users who prefer clock-based orientation.
+
+To enable:
+*Menu* → *Plugins* → *Accessibility* → *Settings* → *Direction Style* → choose **Sidewise** or **Clockwise**.
+
+:::info note
+Direction Style is an independent option. It is not linked to Smart Autoannounce and works regardless of whether Smart Autoannounce is enabled.
+:::
 
 ## Related Articles {#related-articles}
 

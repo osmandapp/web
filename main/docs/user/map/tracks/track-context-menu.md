@@ -128,7 +128,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 
 - **<Translate android="true" ids="join_segments"/>** (*Android only*) – Merges track segments to fill gaps.
 - **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -295,7 +295,7 @@ The active **buttons** give access to actions such as:
 
   - *Edit* opens the track in [Plan route tool](../../plan-route/index.md).
   - *Delete* allows you to remove the selected track element.
-  - *Split interval* opens [Split interval function](#split-interval) for the track.
+  - *Split interval* opens [Split interval function](#analyze-by-intervals) for the track.
 
 
 ### Speed {#speed}
@@ -628,16 +628,47 @@ To change the Waypoint description, you can go one of the following ways:
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
 
-## Split Interval {#split-interval}
+## Analyze by Intervals {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-You can divide the track into intervals, such as distance and time, and analyze it.  
+![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Split the track by distance or time interval.  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+The **Analyze by Intervals** option allows you to divide a track into sections and view detailed statistics for each part of the route. Tracks can be split by ***distance***, ***time***, or ***uphill/downhill*** parameters. 
 
-![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+To open this option:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → choose the desired split mode 
+
+
+### Split by Distance {#split-by-distance}
+
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+This option allows you to divide a track into fixed distance intervals and analyze detailed statistics for each segment. Available distance intervals are ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km***, and ***10 km***. After choosing a distance interval, the track is displayed as a list of segments. 
+
+For each segment, you can view:
+- distance covered.
+- time span.
+- average, minimum and maximum altitude.
+- ascent and descent.
+- time in motion.
+- average and maximum speed.
+
+When you tap on any segment in the list, the map view shows the full track with its intervals and opens the context menu for the track at the bottom of the screen.
+
+
+### Split by Time {#split-by-time}
+
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+The **Split by Time** option divides a track into intervals of equal duration. You can choose between ***1 min***, ***2 min***, ***2.5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min***, and ***60 min***. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are the same as in [Split by Distance](#split-by-distance) section.
+
+
+### Split by Uphill/Downhill {#split-by-uphill-downhill}
+
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are also the same as in [Split by Distance](#split-by-distance) section.
 
 
 ## GPS Filter {#gps-filter}
