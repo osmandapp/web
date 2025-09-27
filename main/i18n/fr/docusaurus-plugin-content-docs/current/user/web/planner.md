@@ -1,7 +1,7 @@
 ---
-source-hash: 4861815642f39190c1d87fb62206d4b05c6eea3b5d2af97e4dcef2e6834f466c
+source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
 sidebar_position: 5
-sidebar_label: Planifier un itinéraire
+sidebar_label:  Planifier un itinéraire
 title: Planifier un itinéraire sur le site web
 ---
 import Tabs from '@theme/Tabs';
@@ -21,29 +21,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Le planificateur d'itinéraire web OsmAnd vous permet de créer des itinéraires de navigation, de planifier des tracés et de gérer des fichiers locaux directement depuis votre navigateur. Cet outil web est utile pour créer des itinéraires de voyage détaillés que vous pouvez synchroniser avec votre application ou partager avec d'autres.
+Le planificateur d'itinéraires web d'OsmAnd vous permet de créer des itinéraires de navigation, de planifier des traces et de gérer des fichiers locaux directement depuis votre navigateur. Cet outil web est utile pour créer des itinéraires de voyage détaillés que vous pouvez synchroniser avec votre application ou partager avec d'autres.
 
 
 ## Itinéraire de navigation {#navigation-route}
 
-Pour créer un itinéraire de navigation, suivez ces étapes :
+Pour créer un itinéraire de navigation, suivez ces étapes :
 
-- **Cliquez avec le bouton droit** sur la carte pour ajouter des points de cheminement :
+- **Faites un clic droit** sur la carte pour ajouter des points de cheminement :
 
-  - *Naviguer depuis*. Définissez le point de départ.
-  - *Naviguer vers*. Définissez la destination.
-  - *Naviguer via*. Ajoutez des points intermédiaires si nécessaire.
+  - *Naviguer depuis*. Définir le point de départ.
+  - *Naviguer vers*. Définir la destination.
+  - *Naviguer via*. Ajouter des points intermédiaires si nécessaire.
 
-- Après avoir défini les points de début et de fin, l'itinéraire s'affiche sur la carte.
+- Après avoir défini les points de départ et d'arrivée, l'itinéraire s'affichera sur la carte.
 
-- Dans le bloc **Itinéraire** :
+- Dans le bloc **Itinéraire** :
 
-  - Déplacez les points de début et de fin si nécessaire.
+  - Déplacez les points de départ et d'arrivée si nécessaire.
   - Modifiez les points de cheminement et choisissez le type d'itinéraire souhaité (par exemple, voiture, vélo, marche).
 
   ![Créer un itinéraire web OsmAnd](@site/static/img/web/navigation.png)
 
-- Sélectionnez le **profil d'itinéraire** approprié pour les différentes options de navigation.
+- Sélectionnez le **Profil d'itinéraire** approprié pour les différentes options de navigation.
 
   ![Créer un itinéraire web OsmAnd](@site/static/img/web/profile_type.png)
 
@@ -51,77 +51,75 @@ Pour créer un itinéraire de navigation, suivez ces étapes :
 
   ![Créer un itinéraire web OsmAnd](@site/static/img/web/nav_instr.png)
 
-- Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 
-## Créer un tracé et des fichiers locaux {#create-track-and-local-files}
+## Créer une trace et des fichiers locaux {#create-track-and-local-files}
 
-L'outil [**Planifier un itinéraire**](../plan-route/create-route.md) d'OsmAnd Web vous permet de créer et de modifier des tracés de manière similaire à l'application mobile. Voici comment créer et gérer des tracés :
-
-
-***Créer un nouvel itinéraire :***
-
-- *Cliquez avec le bouton droit* sur la carte et sélectionnez **Créer un nouvel itinéraire**.
-- Vous pouvez également utiliser le bouton **Créer un tracé** dans le menu *Local* (situé à droite avec les boutons *Crayon* et *Télécharger*).
+L'outil [**Planifier un itinéraire**](../plan-route/create-route.md) d'OsmAnd Web vous permet de créer et de modifier des traces de la même manière que dans l'application mobile. Voici comment vous pouvez créer et gérer des traces :
 
 
-***Gérer les tracés :***
+***Création d'un nouvel itinéraire :***
 
-- **Sélectionner le profil de navigation**. Choisissez un profil (par exemple, randonnée, conduite) pour des sections d'itinéraire spécifiques (*Nouveaux segments*) ou pour l'itinéraire entier (*Tous les segments*).
+- *Faites un clic droit* sur la carte et sélectionnez **Créer un nouvel itinéraire**.
+- Alternativement, utilisez le bouton **Créer une trace** dans le menu *Local* (situé sur le côté droit avec les boutons *Crayon* et *Télécharger*).
+
+
+***Gestion des traces :***
+
+- **Sélectionner le profil de navigation**. Choisissez un profil (par exemple, randonnée, conduite) pour des sections d'itinéraire spécifiques (*Nouveaux segments*) ou pour l'ensemble de l'itinéraire (*Tous les segments*).
 - **Ajouter des points de cheminement**. Cliquez sur la carte pour ajouter de nouveaux points.
 - **Enregistrer l'itinéraire**. Enregistrez votre itinéraire pour une utilisation future.
-- **Afficher les détails de l'itinéraire**. Accédez aux informations détaillées du tracé, y compris la longueur, la durée et le terrain.
-  ![Créer un tracé web OsmAnd](@site/static/img/web/create_route.png)
+- **Afficher les détails de l'itinéraire**. Accédez aux informations détaillées de la trace, y compris la longueur, la durée et le terrain.
+  ![Créer une trace web OsmAnd](@site/static/img/web/create_route.png)
 
 
-***Importer et créer des tracés :***
+***Importation et création de traces :***
 
-- **Importer un tracé**. Vous pouvez télécharger n'importe quel fichier GPX dans la section **Local** en visitant [osmand.net/map](https://osmand.net/map).
-- **Créer un tracé**. Créez manuellement un nouveau tracé en sélectionnant des points de cheminement.
-  ![Créer un tracé web OsmAnd](@site/static/img/web/create_route_2.png)
+- **Importer une trace**. Vous pouvez télécharger n'importe quel fichier GPX dans la section **Local** en visitant [osmand.net/map](https://osmand.net/map).
+- **Créer une trace**. Créez manuellement une nouvelle trace en sélectionnant des points de cheminement.
+  ![Créer une trace web OsmAnd](@site/static/img/web/create_route_2.png)
 
 
-***Actions et informations sur les tracés locaux :***
+***Actions et informations sur la trace locale :***
 
-Le menu **Tracé local** propose trois panneaux d'édition : **Info**, **Tracé** et **Points de cheminement**.
+Le menu **Trace locale** propose trois panneaux pour l'édition : **Infos**, **Trace** et **Points de cheminement**.
 
-**Panneau Info** :
+**Panneau Infos** :
 
-- *Enregistrer dans le cloud*. Enregistrez votre tracé dans OsmAnd Cloud pour y accéder sur plusieurs appareils.
-- *Ajouter une description*. Ajoutez des notes sur le tracé.
-- *Renommer*. Modifiez le nom du tracé.
+- *Enregistrer sur le Cloud*. Enregistrez votre trace sur OsmAnd Cloud pour y accéder sur tous vos appareils.
+- *Ajouter une description*. Ajoutez des notes sur la trace.
+- *Renommer*. Changez le nom de la trace.
 - *Recalculer*. Ajoutez ou mettez à jour les données d'altitude.
 - *Altitude*. Affichez le profil d'altitude.
-- *Graphique de vitesse*. Affichez les données de vitesse sur le tracé.
+- *Graphique de vitesse*. Affichez les données de vitesse le long de la trace.
 - *Graphique de pente*. Affichez les changements de pente le long de l'itinéraire.
 - *Détails de la route*. Affichez des informations détaillées telles que le type de route, la surface et la pente.
-- *Télécharger le fichier GPX*. Exportez le tracé au format GPX ([fonctionnalité Pro](../purchases/index.md)).
-- *Fermer le tracé*. Fermez la vue d'édition du tracé.
-- *Supprimer le tracé*. Supprimez définitivement le tracé.
-  ![Créer un tracé web OsmAnd](@site/static/img/web/create_route_3.png)
+- *Télécharger en GPX*. Exportez la trace en tant que fichier GPX ([Fonctionnalité Pro](../purchases/index.md)).
+- *Fermer la trace*. Fermez la vue d'édition de la trace.
+- *Supprimer la trace*. Supprimez définitivement la trace.
+  ![Créer une trace web OsmAnd](@site/static/img/web/create_route_3.png)
 
-**Panneau Tracé** :
+**Panneau Trace** :
 
-- Affichez et modifiez les points du tracé.
-- Réorganisez ou supprimez des points si nécessaire.
+- Affichez et modifiez les points de la trace.
+- Réorganisez ou supprimez des points selon vos besoins.
 
-**Panneau Points de cheminement** :
+**Panneau Points de cheminement** :
 
-- Affichez et gérez les points de cheminement du tracé.
+- Affichez et gérez les points de cheminement de la trace.
 - Activez ou désactivez la visibilité des points de cheminement sur la carte.
 - Supprimez les points de cheminement individuellement si nécessaire.
 
-**Panneau Virages** :
+**Panneau Virages** :
 
-- Affichez des informations détaillées sur les virages le long du tracé.
+- Affichez des informations détaillées sur les virages le long de la trace.
 
-  ![Créer un tracé web OsmAnd](@site/static/img/web/create_route_1.png)
+  ![Créer une trace web OsmAnd](@site/static/img/web/create_route_1.png)
 
 
-***Fonctionnalités supplémentaires :***
+***Fonctionnalités supplémentaires :***
 
-- **Synchroniser avec l'application**. Enregistrez les itinéraires dans OsmAnd Cloud et accédez-y sur votre application mobile.
-- **Profils d'itinéraire personnalisés**. Ajustez les profils pour s'adapter à différentes activités, telles que le cyclisme ou la randonnée.
-- **Itinéraires partageables**. Copiez et partagez les URL d'itinéraire pour une planification collaborative.
-
-> *Dernière mise à jour : janvier 2025*
+- **Synchronisation avec l'application**. Enregistrez les itinéraires sur OsmAnd Cloud et accédez-y sur votre application mobile.
+- **Profils d'itinéraire personnalisés**. Ajustez les profils pour les adapter à différentes activités, comme le vélo ou la randonnée.
+- **Itinéraires partageables**. Copiez et partagez les URL des itinéraires pour une planification collaborative.

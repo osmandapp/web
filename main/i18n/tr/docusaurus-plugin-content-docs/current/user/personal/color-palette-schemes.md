@@ -1,5 +1,5 @@
 ---
-source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title: Renk Şemaları
 ---
@@ -20,13 +20,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Ücretli özellik
 
-Renk şemaları, ücretli [Haritalar+](../purchases/index.md) ve Pro <ProFeature /> özelliklerinin bir parçası olarak kullanılır.
+Renk şemaları, ücretli [Maps+](../purchases/index.md) ve Pro <ProFeature /> özelliklerinin bir parçası olarak kullanılır.
 
 :::
 
-Renk şemaları [rota renklendirme](#routes), [harita arazisi](#terrain) ve [hava durumu haritasında](#weather) kullanılır ve harita renk şemasını ve veri görselleştirmesini değiştirmek için dışa aktarılabilen, içe aktarılabilen ve düzenlenebilen bilgilerin ayrı bir parçası olarak temsil edilir.
+Renk şemaları [rota renklendirmesinde](#routes), [harita arazisinde](#terrain) ve [hava durumu haritasında](#weather) kullanılır ve harita renk şemasını ve veri görselleştirmesini değiştirmek için dışa aktarılabilen, içe aktarılabilen ve düzenlenebilen bilgilerin ayrı bir parçası olarak temsil edilir.
 
-Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#local) menüsünde mevcuttur.
+Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#local-menu) menüsünde mevcuttur.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,14 +70,14 @@ Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#lo
 
 ### Arazi {#terrain}
 
-Arazi dosyaları (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) 3 [arazi görselleştirmesini](../plugins/topography.md#hillshade-slope-and-altitude-layers) tanımlar: *Tepe Gölgeleme, Eğim* ve *Rakım*. Her tür için birden fazla paletiniz olabilir, örneğin, *çığ eğimi* varsayılan olarak sağlanır.
+Arazi dosyaları (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) 3 [arazi görselleştirmesi](../plugins/topography.md#hillshade-slope-and-altitude-layers) tanımlar: *Tepe Gölgesi, Eğim* ve *Rakım*. Her tür için birden fazla paletiniz olabilir, örneğin, *çığ eğimi* varsayılan olarak sağlanır.
 
 ### Rotalar {#routes}
 
 Çizgi gradyan görselleştirmeleri, GPX izlerini ve Rotaları renklendirmek için palet dosyalarını (`route_<type_name>_<palette_name>.txt`) kullanır:
 
 - [Rotalar](../navigation/guidance/map-during-navigation.md#color) için: *Hız, Eğim* ve *Yükseklik (Rakım)*.
-- [GPX İzleri](../map/tracks/appearance#track-colors-in-gpx-files) için: *Hız, Eğim* ve *Yükseklik (Rakım) veya Harici sensörlerden bilgi*.
+- [GPX İzleri](../map/tracks/appearance#track-colors-in-gpx-files) için: *Hız, Eğim* ve *Yükseklik (Rakım) veya Harici sensörlerden gelen bilgiler*.
 
 ### Hava Durumu {#weather}
 
@@ -85,7 +85,7 @@ Hava durumu palet dosyaları (`weather_<type_name>.txt`), [hava durumu katmanlar
 
 ### Renkler {#colors}
 
-Renk paleti (`user_palette_default.txt`), [Favorilere](./favorites.md) ve [İzlere](./tracks/) atamak için önceden tanımlanmış renkler için kullanılır.
+Renk paleti (`user_palette_default.txt`), [Favorilere](./favorites.md), [İzlere](./tracks/) atanacak önceden tanımlanmış renkler için kullanılır.
 
 
 ## Palet Açıklaması {#palette-legend}
@@ -99,19 +99,19 @@ Renk paleti (`user_palette_default.txt`), [Favorilere](./favorites.md) ve [İzle
 </table>
 
 
-Açıklama, haritadaki farklı işaretleri görüntülemek ve anlamak için kolay bir yol sağlar. [İzler için **hız**](../map/tracks/appearance#track-colors-in-gpx-files), [rotalar için **çizgi türü**](../navigation/guidance/map-during-navigation.md#color), [arazi için **rakım ve eğim**](../plugins/topography.md#default-color-scheme) ve tüm [**hava durumu katmanı**](../plugins/weather.md#weather-layers) renk paletlerini görüntülemek için yeni renk paletleri eklendi.
+Açıklama, haritadaki farklı işaretleri görüntülemenin ve anlamanın kolay bir yolunu sunar. [İzler için **hız**](../map/tracks/appearance#track-colors-in-gpx-files), [rotalar için **çizgi tipi**](../navigation/guidance/map-during-navigation.md#color), [arazi için **rakım ve eğim**](../plugins/topography.md#default-color-scheme) ve tüm [**hava durumu katmanı**](../plugins/weather.md#weather-layers) renk paletlerini görüntülemek için yeni renk paletleri eklenmiştir.
 
 
 ## Palet dosyasını düzenle {#edit-palette-file}
 
-Haritalar ve rotalar için görünümü kişiselleştirmek üzere paletleri düzenleyebilirsiniz. Kendi renk paleti dosyaları, [içe/dışa aktarma aracı](./import-export.md) kullanılarak OsmAnd'a eklenebilir.
+Haritaların ve rotaların görünümünü kişiselleştirmek için paletleri düzenleyebilirsiniz. Kendi renk paleti dosyaları, [içe/dışa aktarma aracı](./import-export.md) kullanılarak OsmAnd'a eklenebilir.
 
 - *Rotalar*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
 - *Arazi*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Hava Durumu*: `weather_<type_name>.txt`.
 - *Renk*: `user_palette_default.txt`.
 
-Her satır sayısal bir değeri (renk paleti için bir dizindir) ve RGB rengini temsil eder. Örneğin:
+Her satır bir sayısal değeri (renk paleti için bir dizin) ve RGB rengini temsil eder. Örneğin:
 
 ```xml
 # *height_altitude_0-200.txt* adlı TXT dosyası {#txt-file-named-heightaltitude0-200txt}
@@ -155,6 +155,7 @@ Bu TXT dosyasını *..Android/data/net.osmand/files/color-palete/height_altitude
 
 Arazi için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında geçiş yapmaya benzer şekilde, arazi renk şemaları arasında geçiş yapma yeteneği eklendi. Bu, [Hızlı Eylemler](../widgets/quick-action.md#configure-map) aracı kullanılarak yapılabilir.
 
+
 ### Renkleri İçe / Dışa Aktar {#import--export-colors}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -163,7 +164,7 @@ Arazi için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında ge
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Profiller Eylemler Dışa Aktar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Yedek Yerel Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profiller Eylemleri Dışa Aktar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Yedekleme yerel Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -171,7 +172,7 @@ Arazi için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında ge
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiller Eylemler Dışa Aktar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Profiller Eylemler Dışa Aktar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Profiller Eylemleri Dışa Aktar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Profiller Eylemleri Dışa Aktar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -179,9 +180,9 @@ Arazi için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında ge
 
 OsmAnd'ın geri yükleme ve yedekleme dosyaları aracını kullanarak mevcut tüm varsayılan ve özel renk paletlerini içe ve dışa aktarabilirsiniz.
 
-- Ana *Menüyü*, *Ayarları* açın, **İçe/dışa aktar** (*Android*) veya **Yerel Yedekleme** (*iOS*) bölümüne gidin ve gerekli eylemi seçin.
+- Ana *Menü*, *Ayarlar*'ı açın, **İçe/dışa aktar** (*Android*) veya **Yerel Yedekleme** (*iOS*) bölümüne gidin ve gerekli eylemi seçin.
 - *Renk* listesinden bir veya daha fazla öğe veya *Tümünü Seç* seçeneğini seçin.
-- Dışa aktarılan tüm dosyalar `.osf` formatında kaydedilir.
+- Dışa aktarılan tüm dosyalar `.osf` biçiminde kaydedilir.
 - Seçtiğiniz verilerin boyutu önemliyse, uygulamanın `.osf` dosyasını hazırlaması biraz zaman alacaktır.
 - Daha ayrıntılı bilgi için [*İçe / Dışa Aktar*](../personal/import-export.md) makalesine bakın.
 
@@ -189,7 +190,5 @@ OsmAnd'ın geri yükleme ve yedekleme dosyaları aracını kullanarak mevcut tü
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Küresel Ayarlar](../../user/personal/global-settings.md)
-- [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
-
-> *Son güncelleme: Ocak 2025*
+- [Genel Ayarlar](../../user/personal/global-settings.md)
+- [Vektör Haritaları (Harita Stilleri)](../../user/map/vector-maps.md)

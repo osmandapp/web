@@ -1,8 +1,8 @@
 ---
-source-hash: a37206b0786e0c2a77928c36df15a5b99385e8522ae259e744dfd7222696eb76
 sidebar_position: 1
-title: البحث عن الكل
+title:  Search All
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,254 +12,266 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 <InfoIncompleteArticle/>
 
-## نظرة عامة {#overview}
 
-يُعد **البحث** أداة مفيدة للعثور بسرعة على المواقع. يمكنك استخدام البحث للعثور على موقع حسب العنوان أو الإحداثيات أو نقاط الاهتمام (POI) أو عمليات البحث السابقة. يتيح لك [البحث عن عنوان](#search-address) إدخال العنوان الذي تريد الحصول على موقع دقيق له. يعمل البحث عن [الإحداثيات](#search-coordinates) مع الإحداثيات الجغرافية مثل خطوط العرض والطول. باستخدام البحث عن [نقاط الاهتمام (POI)](#search-poi)، يمكنك البحث عن الأماكن القريبة في فئات محددة، مثل المقاهي أو الفنادق أو محطات الوقود. يحفظ [سجل البحث](#search-history) عمليات البحث السابقة للوصول السريع إلى الأماكن التي تم العثور عليها سابقًا. تسهل ميزة البحث تخطيط الرحلات والتنقل في التضاريس غير المعروفة والعثور على نقاط الاهتمام القريبة.
+## Overview {#overview}
 
-## كيفية الاستخدام {#how-to-use}
+**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. Search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
+
+
+## How to Use {#how-to-use}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![قائمة نقاط الاهتمام للبحث أندرويد](@site/static/img/search/poi_list_android.png)
+![Search POI list Android](@site/static/img/search/poi_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة نقاط الاهتمام للبحث iOS](@site/static/img/search/poi_list_1_ios.png)
+![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-تحتاج إلى اتباع إحدى الخطوات لبدء البحث:
+You need to follow one of the steps to start your search:
 
-- اضغط على [زر البحث](../widgets/map-buttons.md#search) على شاشة تطبيق الخريطة وأدخل استعلامك.
+- Tap the [Search button](../widgets/map-buttons.md#search) on the map application screen and enter your query.
 
-- انتقل إلى *القائمة الرئيسية ← بحث ← أدخل استعلام البحث*.
+- Go to the main *Menu → Search → enter your search query*.
 
-- عند التحضير لبدء مسار، اضغط على [*التنقل ← تعيين الوجهة ← حقل البحث*](../navigation/setup/route-navigation.md#set-target-point) *← استعلام البحث*.
+- When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
 
-معلومات هامة:
 
-- ***مطلوب خرائط متجه غير متصلة بالإنترنت تم تنزيلها للبحث باستخدام OsmAnd***.
+Important information:
 
-- في البداية، **يعتمد البحث على البيانات الموجودة على الخريطة في المنطقة المرئية من شاشة الجهاز**، ولكن إذا لم يتم العثور على شيء هناك، يقدم OsmAnd زيادة نصف قطر البحث.
+- ***Downloaded offline vector maps are required to search with OsmAnd***.
 
-### الاستعلامات الأساسية {#basic-queries}
+- Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
-***قائمة الاستعلامات***:
+### Basic Queries {#basic-queries}
 
-- الإحداثيات بجميع التنسيقات المتاحة.
-- العنوان:
-    - الشارع، رقم المنزل؛
-    - المدينة، الشارع؛
-    - تقاطعات الشوارع؛
-    - المدينة؛
-    - بيانات تايجر (Tiger)؛
-    - الرمز البريدي، رقم المنزل؛
-    - الرمز البريدي، الشارع، رقم المنزل.
-- البحث عن نقاط الاهتمام بالاسم والفئة مع فلاتر إضافية.
-- البحث عن مسارات OSM بالاسم والفئة مع فلاتر إضافية.
-- البحث عن أبرز القمم والبراكين.
-- البحث عن المفضلة ونقاط الطريق.
-- البحث عن الأيقونات بأسماء الفئات الفرعية لنقاط الاهتمام.
-- البحث عن المسارات.
-- البحث عن الأماكن التجارية وأسماء العلامات التجارية.
-- البحث عبر الإنترنت (Nominatim).
-- البحث عن عناوين URL (جوجل وOsmAnd).
-- سجل البحث.
+***Query list*:**
+
+- Coordinates all available formats.
+- Address:
+    - Street, House Number;
+    - City, Street;
+    - Street Intersections;
+    - City;
+    - Tiger data;
+    - Postal Code, House Number;
+    - Postal Code, Street, House Number.
+- Search POI by name and by category with additional filters.
+- Search OSM routes by name and by category with additional filters.
+- Search by most prominent peaks and volcanoes.
+- Search by Favorites and Waypoints.
+- Search icons by POI subcategory names.
+- Search by tracks.
+- Search by business venues and brand names.
+- Online search (Nominatim).
+- URL search (Google and OsmAnd).
+- Search History.
 
 <!--
-***التنسيقات المدعومة***:
+***Supported formats*:**  
 
-يمكن استخدام ***العلامات*** كاستعلام بحث. تتكون من ***مفتاح وقيمة***، على سبيل المثال:
-*addr:street=StreetName*.
-لتجنب الارتباك، يتم أحيانًا إحاطة المفتاح أو القيمة بعلامات اقتباس: **key="value" أو "key"="value"**. علامات الاقتباس وعلامة التساوي ليست جزءًا من محتوى العلامة.
+***Tags*** can be used as a search query. They consist of ***a key and a value***, for example:
+*addr:street=StreetName*.  
+To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 -->
 
-### فرز نتائج البحث {#sorting-search-results}
+### Sorting Search Results {#sorting-search-results}
 
-يقوم OsmAnd تلقائيًا بفرز نتائج البحث وفقًا لثلاثة معايير رئيسية:
+OsmAnd automatically sorts search results by three main criteria:
 
-1. **الاستعلامات المطابقة** - يتم عرض النتائج التي تحتوي على تطابقات دقيقة أو جزئية للكلمات التي أدخلتها في الأعلى.
+1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
 
-2. **نوع الكائن** - عند الفرز حسب الاسم، يتم إعطاء الأولوية للمدن والشوارع على نقاط الاهتمام عند عرض النتائج.
+2. **Object type** - When sorting by name, cities, and streets are prioritized over POIs when displaying results.
 
-3. **المسافة** - عندما يكون للنتائج معايير مطابقة وأنواع كائنات متشابهة، يتم عرض النتائج الأقرب إلى موقع المستخدم الحالي أولاً.
+3. **Distance** - When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
 
-***على سبيل المثال***، سيُظهر استعلام البحث *مكتب بريد* أقرب مكاتب البريد أولاً، حتى لو كانت هناك عناصر أخرى بأسماء مشابهة على مسافة أكبر.
+***For example***, a search query *post office* will show the nearest post offices first, even if there are other items with similar names at a greater distance.  
 
-***القيود الحالية:***
+***Current limitations:***
 
-- لا يوجد إعداد يدوي لتغيير ترتيب فرز نتائج البحث.
-- تتم إدارة عملية الفرز **تلقائيًا** بواسطة OsmAnd، بناءً على المعايير المذكورة أعلاه.
-- في الحالات التي تكون فيها نتائج البحث واسعة جدًا، يمكن لـ OsmAnd **تحديد النتائج المعروضة** لتلك التي تتمتع بأعلى دقة مطابقة للكلمات.
+- There is no manual setting to change the sorting order of search results.
+- The sorting process is **automatically managed** by OsmAnd, based on the criteria listed above.
+- In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
 
-### البحث بالنص الكامل {#full-text-search}
+
+### Full Text Search {#full-text-search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![البحث المفضل أندرويد](@site/static/img/search/favorite_search_android.png)
+![Favorite search Android](@site/static/img/search/favorite_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث المفضل iOS](@site/static/img/search/favorite_search_ios.png)
+![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-يمكنك العثور على الموقع المطلوب على الخريطة من قائمة النقاط التي تظهر أثناء إدخال الاستعلام.
+You can find the required location on the map from the list of points that appear as you enter a query.
 
-1. ابدأ بكتابة الاسم أو العنوان في شريط البحث.
+1. Start typing the name or address in the search bar.
 
-2. أثناء الكتابة، تعرض القائمة النقاط الأقرب إلى الاستعلام، بهذا الترتيب تقريبًا:
-    - فئات نقاط الاهتمام (POI)
-    - المفضلة، نقاط الاهتمام، المسارات، ونقاط الطريق
-    - المسارات
-    - العناوين
-    - الخرائط المراد تنزيلها
+2. As you type, the list displays the points closest to the query, in roughly this order:
+    - POI Categories
+    - Favorites, POI, Routes, and Waypoints
+    - Tracks
+    - Addresses
+    - Maps to download
 
-3. إذا أدخلت [اسم علامة تجارية](../search/search-poi.md#how-to-use)، فستبدأ القائمة بالنتائج حسب هذا الاسم، مرتبة حسب أقرب مسافة.
+3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
 
-:::note قيود بيانات TIGER في عمليات البحث عن العناوين
-لقد قام OsmAnd بدمج [**بيانات TIGER**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) في خرائط الولايات المتحدة لتوفير معلومات حول العناوين الأمريكية. مجموعة بيانات TIGER **تعتمد على النطاق** ولا تحتوي على أرقام منازل دقيقة، لذلك قد تكون بعض العناوين مفقودة أو غير دقيقة.
+:::note TIGER data limitations in address searches
+OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
-### البحث على الخريطة {#search-on-the-map}
+
+### Search on the Map {#search-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![البحث عن نقاط الاهتمام أندرويد](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![البحث عن نقاط الاهتمام iOS](@site/static/img/search/poi_overlay_ios.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يتيح لك OsmAnd البحث عن النقاط المعروضة على الخريطة على شاشة جهازك. للقيام بذلك:
+OsmAnd allows you to search for points displayed on a map on your device's screen. To do this:
 
-- استخدم [إحدى الطرق](#how-to-use) للوصول إلى أداة البحث.
-- ابدأ بكتابة الاسم أو العنوان في مربع البحث.
-- سيظهر مربع به زر *إظهار على الخريطة* أسفل حقل إدخال البحث.
-- اضغط على هذا الزر للانتقال إلى الخريطة.
-- يمكنك متابعة كتابة استعلامك في الجزء العلوي من الشاشة.
+- Use [one of the ways](#how-to-use) to get to the Search tool.
+- Start typing the name or address into the search box.
+- A box with the *Show on map* button will appear below the search input field.
+- Tap this button to go to the map.
+- You can continue typing your query at the top of the screen.
 
-### البحث في مكان قريب {#search-nearby}
 
-![البحث أندرويد](@site/static/img/search/search_all_near_location_andr.png)
+### Search Nearby {#search-nearby}
 
-يمكنك استخدام البحث في محيط موقع معين. للقيام بذلك، حدد النقطة المطلوبة [من القائمة في قائمة البحث](#full-text-search) أو حددها مباشرة على الخريطة. في [قائمة سياق الخريطة](../map/map-context-menu.md#actions)، حدد *الإجراءات ← البحث في مكان قريب*.
+![Search Android](@site/static/img/search/search_all_near_location_andr.png)
 
-## البحث عن عنوان {#search-address}
+You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [map context menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
+
+
+## Search Address {#search-address}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![البحث عن عنوان أندرويد](@site/static/img/search/search_address_2_andr.png)
+![Search Android](@site/static/img/search/search_address_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن عنوان iOS](@site/static/img/search/street_search_ios.png)
+![Search iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-يستخدم **البحث عن عنوان** بيانات OpenStreetMap. يتيح لك هذا النوع من البحث العثور على الموقع والاتجاهات إلى عنوان محدد من قائمة مرتبة جاهزة. اقرأ المزيد في مقال [البحث عن عنوان](./search-address.md).
+**Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready-sorted list. Read more in the [Search Address](./search-address.md) article.
 
-## سجل البحث {#search-history}
+
+## Search History {#search-history}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![سجل البحث](@site/static/img/search/history_search_android.png)
+![History search](@site/static/img/search/history_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![سجل البحث](@site/static/img/search/history_search_ios.png)
+![History search](@site/static/img/search/history_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكنك استخدام **سجل البحث** للبحث مرة أخرى عن الأماكن أو العناوين التي تم العثور عليها سابقًا أو الأماكن التي تمت زيارتها بشكل متكرر دون إدخال الاستعلام مرة أخرى. يمكن العثور على مزيد من التفاصيل في مقال [سجل البحث](./search-history.md).
+You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again.. More details can be found in the [Search History](./search-history.md) article.
 
-## البحث عن نقاط الاهتمام (POI) {#search-poi}
+
+## Search POI {#search-poi}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![البحث عن نقاط الاهتمام أندرويد](@site/static/img/search/search_poi_categoties_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن نقاط الاهتمام iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**البحث عن نقاط الاهتمام (POI)** هو قائمة، مرتبة حسب الفئة، يمكنك من خلالها بسهولة العثور على الأماكن والخدمات بالقرب من موقعك الحالي أو منطقة محددة على الخريطة.
+The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
 
-- يتيح لك [البحث المخصص عن نقاط الاهتمام](./search-poi.md#custom-poi-search) دمج فئات مختلفة من نقاط الاهتمام لتبسيط بحثك وتخصيصه.
-على سبيل المثال، إذا كنت بحاجة إلى العثور على عدة أنواع من الخدمات في منطقة معينة أو على جزء معين من المسار.
+- [Custom POI search](./search-poi.md#customize-poi-search) allows you to combine different POI categories to simplify and personalize your search.  
+For example, if you need to find several types of services in a certain area or on a certain section of a route.
 
-- يوفر OsmAnd [بحثًا عبر الإنترنت](./search-poi.md#online-search) يعمل في الوقت الفعلي، مما يمنحك وصولاً سريعًا إلى نتائج البحث.
-من الملائم استخدامه عندما تكون خرائط المنطقة غير متاحة، ولكن يلزم وجود اتصال إنترنت ثابت ومستقر.
+- OsmAnd provides an [Online search](./search-poi.md#online-search) that works in real-time, giving you quick access to search results.  
+It is convenient to use when maps of the region are unavailable, but a constant and stable Internet connection is required.
 
-- اقرأ مقال [البحث عن نقاط الاهتمام (POI)](./search-poi.md) لمزيد من المعلومات.
+- Read the [Search POI](./search-poi.md) article for more information.
 
-## البحث عن الإحداثيات {#search-coordinates}
+
+## Search Coordinates {#search-coordinates}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![البحث عن الإحداثيات أندرويد](@site/static/img/search/coordinates_search_android.png)
+![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن الإحداثيات iOS](@site/static/img/search/coordinates_search_ios.png)
+![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يوفر البحث عن الإحداثيات موقعًا دقيقًا. يمكنك إدخال إحداثيات دقيقة تم الحصول عليها، على سبيل المثال، من مصادر أخرى مثل الخريطة أو جهاز GPS أو الخدمات عبر الإنترنت، وهو أمر مفيد بشكل خاص عندما يتعلق الأمر بأماكن ليس لها عنوان دقيق. لمزيد من المعلومات، راجع مقال [البحث عن الإحداثيات](./search-coordinates.md).
+Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
 
-## مقالات ذات صلة {#related-articles}
 
-- [البحث عن عنوان](./search-address.md)
-- [سجل البحث](./search-history.md)
-- [البحث عن نقاط الاهتمام (POI)](./search-poi.md)
-- [البحث عن الإحداثيات](./search-coordinates.md)
+## Related Articles {#related-articles}
 
-> *آخر تحديث: أبريل 2025*
+- [Search Address](./search-address.md)
+- [Search History](./search-history.md)
+- [Search POI](./search-poi.md)
+- [Search Coordinates](./search-coordinates.md)
+
+

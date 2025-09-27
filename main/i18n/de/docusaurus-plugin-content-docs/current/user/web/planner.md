@@ -1,8 +1,8 @@
 ---
-source-hash: 4861815642f39190c1d87fb62206d4b05c6eea3b5d2af97e4dcef2e6834f466c
+source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
 sidebar_position: 5
 sidebar_label:  Route planen
-title: Route auf der Website planen
+title: Route auf der Webseite planen
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,27 +19,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
-Der OsmAnd Web Routenplaner ermöglicht es Ihnen, Navigationsrouten zu erstellen, Tracks zu planen und lokale Dateien direkt in Ihrem Browser zu verwalten. Dieses Web-Tool ist nützlich, um detaillierte Reiserouten zu erstellen, die Sie mit Ihrer App synchronisieren oder mit anderen teilen können.
+Der OsmAnd Web-Routenplaner ermöglicht es Ihnen, Navigationsrouten zu erstellen, Tracks zu planen und lokale Dateien direkt in Ihrem Browser zu verwalten. Dieses Web-Tool ist nützlich, um detaillierte Reiserouten zu erstellen, die Sie mit Ihrer App synchronisieren oder mit anderen teilen können.
 
 
 ## Navigationsroute {#navigation-route}
 
-Um eine Navigationsroute zu erstellen, gehen Sie wie folgt vor:
+Um eine Navigationsroute zu erstellen, folgen Sie diesen Schritten:
 
-- **Rechtsklicken** Sie auf die Karte, um Wegpunkte hinzuzufügen:
+- **Klicken Sie mit der rechten Maustaste** auf die Karte, um Wegpunkte hinzuzufügen:
 
   - *Navigieren von*. Legen Sie den Startpunkt fest.
-  - *Navigieren zu*. Legen Sie das Ziel fest.
+  - *Navigieren nach*. Legen Sie das Ziel fest.
   - *Navigieren über*. Fügen Sie bei Bedarf Zwischenpunkte hinzu.
 
-- Nach dem Festlegen von Start- und Endpunkt wird die Route auf der Karte angezeigt.
+- Nachdem Sie den Start- und Endpunkt festgelegt haben, wird die Route auf der Karte angezeigt.
 
-- Im **Routen**-Block:
+- Im **Route**-Block:
 
-  - Verschieben Sie bei Bedarf die Start- und Endpunkte.
-  - Bearbeiten Sie die Wegpunkte und wählen Sie den gewünschten Routentyp (z. B. Auto, Fahrrad, Gehen).
+  - Verschieben Sie bei Bedarf den Start- und Endpunkt.
+  - Bearbeiten Sie die Wegpunkte und wählen Sie den gewünschten Routentyp (z. B. Auto, Fahrrad, zu Fuß).
 
   ![OsmAnd Web Route erstellen](@site/static/img/web/navigation.png)
 
@@ -56,20 +56,20 @@ Um eine Navigationsroute zu erstellen, gehen Sie wie folgt vor:
 
 ## Track und lokale Dateien erstellen {#create-track-and-local-files}
 
-Das [**Route planen**](../plan-route/create-route.md)-Tool von OsmAnd Web ermöglicht es Ihnen, Tracks ähnlich wie in der mobilen App zu erstellen und zu bearbeiten. So können Sie Tracks erstellen und verwalten:
+Das Werkzeug [**Route planen**](../plan-route/create-route.md) von OsmAnd Web ermöglicht es Ihnen, Tracks ähnlich wie in der mobilen App zu erstellen und zu bearbeiten. So können Sie Tracks erstellen und verwalten:
 
 
 ***Eine neue Route erstellen:***
 
-- *Rechtsklicken* Sie auf die Karte und wählen Sie **Neue Route erstellen**.
-- Alternativ verwenden Sie die Schaltfläche **Track erstellen** im Menü *Lokal* (befindet sich auf der rechten Seite mit den Schaltflächen *Bleistift* und *Hochladen*).
+- *Klicken Sie mit der rechten Maustaste* auf die Karte und wählen Sie **Neue Route erstellen**.
+- Alternativ können Sie die Schaltfläche **Track erstellen** im Menü *Lokal* verwenden (befindet sich auf der rechten Seite mit den Schaltflächen *Stift* und *Hochladen*).
 
 
 ***Tracks verwalten:***
 
 - **Navigationsprofil auswählen**. Wählen Sie ein Profil (z. B. Wandern, Fahren) für bestimmte Routenabschnitte (*Neue Segmente*) oder für die gesamte Route (*Alle Segmente*).
 - **Wegpunkte hinzufügen**. Klicken Sie auf die Karte, um neue Punkte hinzuzufügen.
-- **Route speichern**. Speichern Sie Ihre Route zur späteren Verwendung.
+- **Route speichern**. Speichern Sie Ihre Route für die zukünftige Verwendung.
 - **Routendetails anzeigen**. Greifen Sie auf detaillierte Track-Informationen zu, einschließlich Länge, Dauer und Gelände.
   ![OsmAnd Web Track erstellen](@site/static/img/web/create_route.png)
 
@@ -81,7 +81,7 @@ Das [**Route planen**](../plan-route/create-route.md)-Tool von OsmAnd Web ermög
   ![OsmAnd Web Track erstellen](@site/static/img/web/create_route_2.png)
 
 
-***Lokale Track-Aktionen und Informationen:***
+***Aktionen und Informationen zu lokalen Tracks:***
 
 Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Track** und **Wegpunkte**.
 
@@ -89,21 +89,21 @@ Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Tr
 
 - *In Cloud speichern*. Speichern Sie Ihren Track in der OsmAnd Cloud für den geräteübergreifenden Zugriff.
 - *Beschreibung hinzufügen*. Fügen Sie Notizen zum Track hinzu.
-- *Umbenennen*. Ändern Sie den Track-Namen.
-- *Neu berechnen*. Höheninformationen hinzufügen oder aktualisieren.
+- *Umbenennen*. Ändern Sie den Namen des Tracks.
+- *Neu berechnen*. Höhendaten hinzufügen oder aktualisieren.
 - *Höhe*. Zeigen Sie das Höhenprofil an.
-- *Geschwindigkeitsgraph*. Zeigen Sie Geschwindigkeitsdaten über den Track an.
-- *Steigungsgraph*. Zeigen Sie Steigungsänderungen entlang der Route an.
-- *Straßendetails*. Zeigen Sie detaillierte Informationen wie Straßentyp, Oberfläche und Steigung an.
+- *Geschwindigkeitsdiagramm*. Zeigen Sie Geschwindigkeitsdaten entlang des Tracks an.
+- *Steigungsdiagramm*. Zeigen Sie Steigungsänderungen entlang der Route an.
+- *Straßendetails*. Zeigen Sie detaillierte Informationen wie Straßentyp, Oberfläche und Steilheit an.
 - *GPX herunterladen*. Exportieren Sie den Track als GPX-Datei ([Pro-Funktion](../purchases/index.md)).
-- *Track schließen*. Schließen Sie die Track-Bearbeitungsansicht.
+- *Track schließen*. Schließen Sie die Bearbeitungsansicht des Tracks.
 - *Track löschen*. Löschen Sie den Track dauerhaft.
   ![OsmAnd Web Track erstellen](@site/static/img/web/create_route_3.png)
 
 **Track-Bereich**:
 
-- Track-Punkte anzeigen und bearbeiten.
-- Punkte bei Bedarf neu anordnen oder löschen.
+- Trackpunkte anzeigen und bearbeiten.
+- Punkte nach Bedarf neu anordnen oder löschen.
 
 **Wegpunkte-Bereich**:
 
@@ -120,8 +120,6 @@ Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Tr
 
 ***Zusätzliche Funktionen:***
 
-- **Mit App synchronisieren**. Speichern Sie Routen in der OsmAnd Cloud und greifen Sie über Ihre mobile App darauf zu.
-- **Benutzerdefinierte Routenprofile**. Passen Sie Profile an verschiedene Aktivitäten an, z. B. Radfahren oder Wandern.
+- **Mit App synchronisieren**. Speichern Sie Routen in der OsmAnd Cloud und greifen Sie auf Ihrer mobilen App darauf zu.
+- **Benutzerdefinierte Routenprofile**. Passen Sie Profile an verschiedene Aktivitäten wie Radfahren oder Wandern an.
 - **Teilbare Routen**. Kopieren und teilen Sie Routen-URLs für die gemeinsame Planung.
-
-> *Zuletzt aktualisiert: Januar 2025*

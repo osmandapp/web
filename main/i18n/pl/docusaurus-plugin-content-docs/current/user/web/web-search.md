@@ -1,8 +1,8 @@
 ---
-source-hash: 576b2a6ec144f65d9bbd387b7ce25523a8a81f929e1a4c17b8d400a8c97827dd
+source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
 sidebar_position: 6
-sidebar_label: Szukaj
-title: Szukaj na stronie
+sidebar_label:  Wyszukiwanie
+title: Wyszukiwanie na stronie internetowej
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,108 +21,105 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Menu wyszukiwania** jest dostępne z panelu bocznego lub z **lewego rogu 🔍** mapy. Zawiera:
+Dostęp do **menu Wyszukiwania** można uzyskać z panelu bocznego lub z **lewego rogu 🔍** mapy. Zawiera ono:
 
-- [Pasek wyszukiwania](#search-bar). Wprowadź słowa kluczowe, aby wyszukać konkretne lokalizacje lub punkty POI.
-- [Sekcja kategorii](#categories). Przeglądaj opcje podzielone na kategorie, aby łatwiej wyszukiwać POI.
-- [Sekcja Eksploruj](#explore). Odkrywaj pobliskie miejsca i interesujące obszary ze zdjęciami.
+- [Pasek wyszukiwania](#search-bar). Wprowadź słowa kluczowe, aby wyszukać określone lokalizacje lub punkty POI.  
+- [Sekcja Kategorie](#categories). Przeglądaj opcje podzielone na kategorie, aby ułatwić wyszukiwanie POI.  
+- [Sekcja Odkrywaj](#explore). Odkrywaj pobliskie miejsca i interesujące obszary ze zdjęciami.
 
-![Menu wyszukiwania](@site/static/img/web/search.png)
+![Menu Wyszukiwania](@site/static/img/web/search.png)
 
 
 ## Pasek wyszukiwania {#search-bar}
 
-Kliknij **przycisk 🔍**, aby rozpocząć wyszukiwanie. Wprowadź zapytanie w **Linii wyszukiwania** i kliknij POI, aby otworzyć [**Menu kontekstowe POI**](#explore-poi-data), gdzie możesz wyświetlić informacje o tagach.
+Kliknij **przycisk 🔍**, aby rozpocząć wyszukiwanie. Wprowadź zapytanie w **linii wyszukiwania** i kliknij POI, aby otworzyć [**menu kontekstowe POI**](#explore-poi-data), gdzie można wyświetlić informacje o tagach.
 
-Jeśli wyszukujesz według **nazwy kategorii**, pierwszy wynik wyświetli kategorię tego POI. Jeśli klikniesz kategorię POI, otworzy się okno [**Wyszukiwanie kategorii**](#categories).
+Jeśli wyszukujesz według **nazwy kategorii**, pierwszy wynik wyświetli kategorię tego POI. Jeśli klikniesz kategorię POI, otworzy się okno [**Wyszukiwania w kategoriach**](#categories).
 
 ![Menu kontekstowe POI](@site/static/img/web/context_menu_poi.png)
 
 
-Kliknięcie wybranego POI na mapie lub na liście wyników otwiera **Menu kontekstowe POI**. To menu zawiera następujące dane i linki:
+Kliknięcie wybranego POI na mapie lub na liście wyników otwiera **menu kontekstowe POI**. To menu dostarcza następujące dane i linki:
 
-- **Nazwa i ikona**. Wyświetla nazwę i ikonę POI.
-- **Przycisk ★ (*Dodaj do ulubionych*)**. Pozwala zapisać wybrany POI jako [ulubiony](../web/web-userdata.mdx#add--edit-favorite).
-- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.
-- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.
-- **Lokalizacja**. Wyświetla współrzędne POI.
-- **Zdjęcia online**. Udostępnia dane Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).
-- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii, opisy, inskrypcje itp.
-- **ID OSM**. Identyfikator OpenStreetMap POI.
+- **Nazwa i ikona**. Wyświetla nazwę i ikonę POI.  
+- **Przycisk ★ (*Dodaj do ulubionych*)**. Pozwala zapisać wybrane POI jako [ulubione](../web/web-userdata.mdx#add--edit-favorite).  
+- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.  
+- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.  
+- **Lokalizacja**. Wyświetla współrzędne POI.  
+- **Zdjęcia online**. Dostarcza dane z Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).
+- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii, opisy, inskrypcje itp.  
+- **ID OSM**. Identyfikator OpenStreetMap danego POI.  
 - **Współrzędne**. Kliknięcie współrzędnych pozwala je skopiować.
 
 ![Menu kontekstowe POI](@site/static/img/web/context_menu_poi_1.png)
 
 ## Kategorie {#categories}
 
-Możesz wybrać i wyświetlić jedną kategorię POI na mapie w **Menu kategorii**:
+W **menu Kategorie** możesz wybrać i wyświetlić jedną kategorię POI na mapie:
 
-- Wybierz z **6 najpopularniejszych kategorii**.
+- Wybierz jedną z **6 najpopularniejszych kategorii**.  
 - Lub kliknij **Pokaż wszystko**, aby otworzyć pełną listę kategorii POI.
 
 ![Kategorie POI](@site/static/img/web/categories_poi.png)
 
-Kliknięcie wybranego POI na mapie lub na liście wyników otwiera **Menu kontekstowe POI**. To menu zawiera następujące dane i linki:
+Kliknięcie wybranego POI na mapie lub na liście wyników otwiera **menu kontekstowe POI**. To menu dostarcza następujące dane i linki:
 
-- **Nazwa i ikona**. Wyświetla nazwę i ikonę POI.
-- **Przycisk ★ (*Dodaj do ulubionych*)**. Pozwala zapisać wybrany POI jako [ulubiony](../web/web-userdata.mdx#add--edit-favorite).
-- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.
-- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.
-- **Lokalizacja**. Wyświetla współrzędne POI.
-- **Zdjęcia online**. Udostępnia dane Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).
-- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii, opisy, inskrypcje itp.
-- **ID OSM**. Identyfikator OpenStreetMap POI.
+- **Nazwa i ikona**. Wyświetla nazwę i ikonę POI.  
+- **Przycisk ★ (*Dodaj do ulubionych*)**. Pozwala zapisać wybrane POI jako [ulubione](../web/web-userdata.mdx#add--edit-favorite).  
+- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.  
+- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.  
+- **Lokalizacja**. Wyświetla współrzędne POI.  
+- **Zdjęcia online**. Dostarcza dane z Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).
+- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii, opisy, inskrypcje itp.  
+- **ID OSM**. Identyfikator OpenStreetMap danego POI.  
 - **Współrzędne**. Kliknięcie współrzędnych pozwala je skopiować.
 
 ![Menu kontekstowe POI](@site/static/img/web/categories_poi_1.png)
 
 
-## Eksploruj {#explore}
+## Odkrywaj {#explore}
 
-Sekcja **Eksploruj** w menu wyszukiwania ułatwia znajdowanie miejsc i przeglądanie punktów POI ze zdjęciami ([źródło Wikidata](https://www.wikidata.org/)) bezpośrednio na mapie.
+Sekcja **Odkrywaj** w menu Wyszukiwania ułatwia znajdowanie miejsc i przeglądanie punktów POI wraz z ich zdjęciami (źródło: [Wikidata](https://www.wikidata.org/)) bezpośrednio na mapie.
 
 
 Aby rozpocząć:
 
-1. Kliknij **ikonę 🔍**, aby otworzyć zakładkę wyszukiwania, która wyświetla popularne kategorie POI i menu **Eksploruj** poniżej.
-2. Dane **Eksploruj** zostaną automatycznie wyświetlone na mapie.
-3. Wybierz **„Pokaż wszystko”** w sekcji Eksploruj, aby otworzyć pełną listę kategorii z przyciskiem ***Filtruj*** u góry.
+1. Kliknij **ikonę 🔍**, aby otworzyć kartę wyszukiwania, która wyświetla popularne kategorie POI i menu **Odkrywaj** poniżej.  
+2. Dane z sekcji **Odkrywaj** zostaną automatycznie wyświetlone na mapie.  
+3. Wybierz **"Pokaż wszystko"** w sekcji Odkrywaj, aby otworzyć pełną listę kategorii z przyciskiem ***Filtruj*** na górze.  
 
-   ![Menu Eksploruj](@site/static/img/web/explore.png)
+   ![Menu Odkrywaj](@site/static/img/web/explore.png)
 
-4. Naciśnięcie przycisku ***Filtruj*** otwiera menu Kategorii dla „Eksploruj”. Aby doprecyzować wyszukiwanie, otwórz menu Kategorii i wybierz interesujące Cię elementy.
+4. Naciśnięcie przycisku ***Filtruj*** otwiera menu Kategorie dla "Odkrywaj". Aby zawęzić wyszukiwanie, otwórz menu Kategorie i wybierz interesujące Cię pozycje.  
 
-   ![Menu Eksploruj](@site/static/img/web/explore_cat.png)
+   ![Menu Odkrywaj](@site/static/img/web/explore_cat.png)
 
-### Eksploruj dane POI {#explore-poi-data}
+### Dane POI w Odkrywaj {#explore-poi-data}
 
-Kliknięcie obrazu POI otwiera nowe menu kontekstowe, które zawiera:
+Kliknięcie na POI ze zdjęciem otwiera nowe menu kontekstowe, które zawiera:
 
-- **Nazwa i tag POI**. Wyświetla nazwę i ogólny tag POI.
-- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.
-- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.
-- **Lokalizacja**. Wyświetla współrzędne POI.
-- **Opis**. Zawiera dodatkowe informacje o POI.
-- **Zdjęcia online**. Wyświetla dane Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).
-- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii itp.
-- **ID OSM**. Wyświetla identyfikator OpenStreetMap POI.
-- **Współrzędne**. Klikając na współrzędne, możesz je skopiować.
+- **Nazwa i tag POI**. Wyświetla nazwę i ogólny tag POI.  
+- **Przycisk 🔍**. Przesuwa mapę do lokalizacji POI.  
+- **Odległość i kierunek**. Pokazuje odległość i kierunek od Twojej lokalizacji do wybranego POI.  
+- **Lokalizacja**. Wyświetla współrzędne POI.  
+- **Opis**. Dostarcza dodatkowych informacji o POI.  
+- **Zdjęcia online**. Wyświetla dane z Wikimedia związane z POI, jeśli są dostępne. Kliknij *Pokaż wszystko*, aby otworzyć [Galerię zdjęć](#photo-gallery).  
+- **Dane obiektu**. Zawiera szczegóły, takie jak kontakty, linki do mediów społecznościowych, linki do Wikipedii itp.  
+- **ID OSM**. Wyświetla identyfikator OpenStreetMap danego POI.  
+- **Współrzędne**. Klikając na współrzędne, można je skopiować.
 
-![Menu Eksploruj](@site/static/img/web/poi_context.png)
+![Menu Odkrywaj](@site/static/img/web/poi_context.png)
 
 ### Galeria zdjęć {#photo-gallery}
 
-Jeśli klikniesz ***Pokaż wszystko*** w sekcji **Zdjęcia online** w menu kontekstowym, otworzy się *Galeria zdjęć* wybranego POI.
-W *Galerii zdjęć* możesz przewijać wszystkie zdjęcia POI.
+Jeśli klikniesz ***Pokaż wszystko*** w sekcji **Zdjęcia online** w menu kontekstowym, otworzy się *Galeria zdjęć* wybranego POI.  
+W *Galerii zdjęć* możesz przewijać wszystkie zdjęcia POI.  
 
 Każde zdjęcie zawiera:
 
-- **Datę**. Datę wykonania lub przesłania zdjęcia.
-- **Autora**. Imię i nazwisko autora zdjęcia.
-- **Informacje o licencji**. Szczegóły dotyczące praw do użytkowania zdjęcia.
+- **Data**. Data wykonania lub przesłania zdjęcia.  
+- **Autor**. Imię i nazwisko autora zdjęcia.  
+- **Informacje o licencji**. Szczegóły dotyczące praw do użytkowania zdjęcia.  
 - **Opis**. Dodatkowe informacje o zdjęciu.
 
 ![Galeria zdjęć](@site/static/img/web/poi_photo.png)
-
-
-> *Ostatnia aktualizacja: styczeń 2025*

@@ -1,6 +1,6 @@
 ---
-source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
-title: Visor de mapas web
+source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+title: Planificador Web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,11 +12,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+### Resumen {#overview}
 
-
-### Descripción general {#overview}
-
-En esta sección encontrará la descripción de nuestro [servicio de mapas web](https://osmand.net/map).
+En esta sección, encontrará una descripción de nuestro [Planificador Web](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
@@ -24,16 +22,16 @@ Esta sección explica cómo iniciar sesión y registrarse en [www.osmand.net/map
 
 ### [Mapa](./web-map.md) {#map}
 
-Esta sección detalla datos adicionales del mapa como Favoritos, Rutas personales y Capas meteorológicas.
+Esta sección detalla datos adicionales del mapa como Favoritos, Rutas Personales y Capas Meteorológicas.
 
 ### [Datos de usuario](../web/web-userdata.mdx) {#user-data}
 
 Rutas GPX y Favoritos del usuario en el mapa.
 
-### [Planificar ruta](./planner.md) {#plan-route}
+### [Planificar Ruta](./planner.md) {#plan-route}
 
-Esta sección proporciona información sobre cómo planificar rutas o crear navegación utilizando diferentes perfiles.
+Esta sección proporciona información sobre la planificación de rutas o la creación de navegación utilizando diferentes perfiles.
 
-### [Buscar](./web-search.md) {#search}
+### [Búsqueda](./web-search.md) {#search}
 
-Esta sección explica cómo encontrar puntos de interés (PDI) de diferentes categorías en el mapa, realizar una búsqueda clásica y mostrar iconos de categoría en el mapa.
+Esta sección explica cómo encontrar puntos de interés (PDI) de diferentes categorías en el mapa, realizar una búsqueda clásica y mostrar iconos de categorías en el mapa.

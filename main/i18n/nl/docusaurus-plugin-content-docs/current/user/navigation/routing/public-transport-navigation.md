@@ -1,7 +1,7 @@
 ---
-source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
+source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
 sidebar_position: 5
-title: Openbaarvervoerroutering
+title:  Routering openbaar vervoer
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,12 +17,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overzicht {#overview}
 
-Met de openbaarvervoerroutering in de OsmAnd-app kunt u routes uitwerken met het openbaar vervoer, wat u zeker zal helpen om sneller door de "betonnen jungle" te reizen.
+Navigatie met het openbaar vervoer in de OsmAnd-app stelt u in staat om routes uit te stippelen met het openbaar vervoer, wat u zeker zal helpen om sneller door de "betonnen jungle" te navigeren.
 
-Gegevens over openbaarvervoerroutes zijn afkomstig van het [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd gebruikt het [PTv2-schema](https://wiki.openstreetmap.org/wiki/Public_transport) voor navigatie. OsmAnd ondersteunt de volgende OpenStreetMap-routes voor navigatie: *bus*, *trolleybus*, *deeltaxi*, *kabelspoorweg*, *metro*, *lightrail*, *monorail*, *trein*, *tram*, *veerboot*. De standaardsnelheid voor elk type voertuig is geconfigureerd in [Routing xml](../../../technical/build-osmand/routing.md) en wordt gebruikt om de snelste routes te vinden.
+Gegevens over routes van het openbaar vervoer zijn afkomstig van het [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd gebruikt het [PTv2-schema](https://wiki.openstreetmap.org/wiki/Public_transport) voor navigatie. OsmAnd ondersteunt het volgen van OpenStreetMap-routes voor navigatie met *bus*, *trolleybus*, *deeltaxi*, *kabelspoorweg*, *metro*, *lightrail*, *monorail*, *trein*, *tram*, *veerboot*. De standaardsnelheid voor elk type voertuig is geconfigureerd in [Routing xml](../../../technical/build-osmand/routing.md) en wordt gebruikt om de snelste routes te vinden.
 
 :::note
-Openbaarvervoerroutering bevindt zich in de testfase. Voorlopig kunt u uw route bouwen en bekijken zonder de volledige navigatiefunctie.
+Routering met het openbaar vervoer bevindt zich in de testfase. Voorlopig kunt u uw route uitstippelen en bekijken zonder de volledige navigatiefunctie.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -44,9 +44,9 @@ Openbaarvervoerroutering bevindt zich in de testfase. Voorlopig kunt u uw route 
 
 ## Hoe te gebruiken {#how-to-use}
 
-Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [de navigatieknop](../../widgets/map-buttons.md#directions) op het kaarten scherm of selecteert u de navigatieoptie in het *Hoofdmenu*.  
+Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [de navigatieknop](../../widgets/map-buttons.md#directions) op het kaartscherm of selecteert u de navigatieoptie in het *Hoofdmenu*.  
 
-**1.** U moet het *Openbaarvervoer navigatieprofiel*, start- en bestemmingspunten kiezen.  
+**1.** U moet het *navigatieprofiel Openbaar vervoer*, het startpunt en de bestemming kiezen.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -64,7 +64,7 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 </Tabs>
 
-**2.** OsmAnd biedt routeopties met looptijden en openbaarvervoerroutes met route-informatie: tijd, afstand, overstap en openbare routes. U moet door het navigatiescherm scrollen om de gewenste optie te selecteren.  
+**2.** OsmAnd biedt routeopties met wandeltijden en routes met het openbaar vervoer met route-informatie: tijd, afstand, overstappen en openbare routes. U moet door het navigatiescherm scrollen om de gewenste optie te selecteren.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -82,7 +82,7 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 </Tabs>
 
-**3.** U kunt alle mogelijke routesuggesties op de kaart bekijken met de knop *Op kaart tonen*. Veeg door de schermen om de volgende routeoptie te bekijken.
+**3.** U kunt alle mogelijke routesuggesties op de kaart bekijken met de knop *Toon op kaart*. Veeg door de schermen om de volgende routeoptie te bekijken.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -107,13 +107,13 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 <TabItem value="android" label="Android">
 
-![Navigatie openbaar vervoer halteslijst Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![Navigatie openbaar vervoer haltes lijst Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navigatie openbaar vervoer halteslijst iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![Navigatie openbaar vervoer haltes lijst iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
 </TabItem>
 
@@ -122,10 +122,8 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 ## Gegevens en richtlijnen {#data-and-guideline}
 
-OsmAnd gebruikt een nieuw openbaarvervoerschema, ook wel Public Transport Version 2 (PTv2) genoemd, voor het OsmAnd Openbaar Vervoer navigatie-algoritme.
+OsmAnd gebruikt een nieuw schema voor openbaar vervoer, ook wel Public Transport Version 2 (PTv2) genoemd, voor het OsmAnd-navigatiealgoritme voor openbaar vervoer.
 
 - U kunt uw openbaar vervoer [hier](http://tools.geofabrik.de/osmi/) controleren.
-- Een gids voor het bouwen of aanpassen van openbaarvervoerroutes is beschikbaar op onze [blog](https://osmand.net/blog/guideline-pt).
-- De presentatie [2019: Openbaarvervoernavigatie met OpenStreetMap door OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
-
-> *Laatst bijgewerkt: juni 2024.*
+- Een gids voor het bouwen of aanpassen van routes voor het openbaar vervoer is beschikbaar op onze [blog](https://osmand.net/blog/guideline-pt).
+- De presentatie [2019: Public Transport Navigation using OpenStreetMap by OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).

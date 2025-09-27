@@ -1,7 +1,7 @@
 ---
-source-hash: e5fd3ea3059108d94fc75d50becf312a8c006b80209c72a142b97f415bb426ca
+source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
 sidebar_position: 17
-title: Meteo
+title:  Meteo
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,94 +19,97 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
- <ProFeature/> Il plugin Meteo è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd.
+ <ProFeature/> Il plugin Meteo è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd.  
 :::
 
-I livelli interattivi della mappa meteo nell'app OsmAnd ti consentono di monitorare la temperatura, la pressione atmosferica, la copertura nuvolosa, la velocità del vento e le precipitazioni nella tua città o in qualsiasi altra località su una mappa globale interattiva. Il plugin Meteo fornisce previsioni meteo orarie per 7 giorni direttamente sulla mappa OsmAnd. Le informazioni meteo possono anche essere scaricate per l'uso offline.
+I livelli interattivi della mappa meteo nell'app OsmAnd consentono di monitorare la temperatura, la pressione atmosferica, la copertura nuvolosa, la velocità del vento e le precipitazioni nella propria città o in qualsiasi altro luogo su una mappa globale interattiva. Il plugin Meteo fornisce previsioni meteorologiche orarie per i 7 giorni successivi direttamente sulla mappa di OsmAnd. Le informazioni meteorologiche possono anche essere scaricate per l'uso offline.  
 
-La fonte dati per il plugin Meteo è il [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) gestito dal National Weather Service (NWS) degli Stati Uniti e il Centro Europeo per le Previsioni Meteorologiche a Medio Termine ([ECMWF](https://www.ecmwf.int/)).
+La fonte dei dati per il plugin Meteo è il [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) gestito dal National Weather Service (NWS) degli Stati Uniti e dal Centro europeo per le previsioni meteorologiche a medio termine ([ECMWF](https://www.ecmwf.int/)).  
+
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
-Le seguenti impostazioni sono *richieste* per visualizzare il Meteo sulla mappa OsmAnd:
+Le seguenti impostazioni sono *richieste* per visualizzare il Meteo sulla mappa di OsmAnd:
 
-**1.** [Acquista **abbonamento OsmAnd Pro**](../purchases/).
+**1.** [Acquistare l'**abbonamento OsmAnd Pro**](../purchases/).
 
-**2.** [Abilita](../plugins/#enable--disable) il plugin Meteo nella sezione *Plugin* del *Menu principale*.
+**2.** [Abilitare](../plugins/#enable--disable) il plugin Meteo nella sezione *Plugin* del *Menu principale*.
 
-**3.** [Seleziona le **unità di misura**](#weather-settings) per gli eventi meteorologici.
+**3.** [Selezionare le **unità di misura**](#weather-settings) per i fenomeni meteorologici.
 
-**4.** [Visualizza i **livelli Meteo**](#customize-weather-layers) sulla mappa usando la voce di menu Meteo nel menu Configura mappa (ricorda di rimpicciolire).
+**4.** [Visualizzare i **livelli Meteo**](#customize-weather-layers) sulla mappa utilizzando la voce di menu Meteo nel menu Configura mappa (ricordarsi di ridurre lo zoom).
 
-**5.** [Visualizza le **Previsioni Meteo**](#weather-forecast-screen) per l'area selezionata (questo menu consente di non ingombrare la schermata principale della mappa OsmAnd con i livelli meteo).
+**5.** [Visualizzare le **previsioni del tempo**](#weather-forecast-screen) per l'area selezionata (questo menu permette di non ingombrare la schermata principale della mappa di OsmAnd con i livelli meteo).
 
-**6.** [Scarica](#offline-forecast) le previsioni meteo se intendi usarle offline.
+**6.** [Scaricare](#offline-forecast) le previsioni del tempo se si prevede di utilizzarle offline.
 
-**7.** [Abilita i **widget Meteo**](#weather-widgets) se desideri visualizzare quotidianamente informazioni meteo aggiornate.
+**7.** [Abilitare i **widget Meteo**](#weather-widgets) se si desidera visualizzare quotidianamente informazioni meteorologiche aggiornate.  
 
 :::caution Rendering richiesto
-Il plugin Meteo è disponibile solo con il motore di rendering della mappa [Versione 2](../personal/global-settings/#map-rendering-engine) (OpenGL).
+Il plugin Meteo è disponibile solo con il motore di rendering della mappa [Versione 2](../personal/global-settings/#map-rendering-engine) (OpenGL).  
 :::
 
-## Visualizza il Meteo sulla Mappa {#display-weather-on-the-map}
 
-### Schermata delle previsioni meteo {#weather-forecast-screen}
+## Visualizzare il Meteo sulla mappa {#display-weather-on-the-map}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+### Schermata Previsioni Meteo {#weather-forecast-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
-Vai a: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
+Andare su: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
+Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-Il menu laterale principale ha una voce di menu dedicata **Meteo** che fornisce un rapido accesso a tutti gli strumenti meteo. La *schermata delle previsioni meteo* visualizza informazioni su *temperatura*, *pressione atmosferica*, *velocità del vento*, *copertura nuvolosa* e *precipitazioni*.
+Il menu laterale principale ha una voce di menu dedicata **Meteo** che fornisce un accesso rapido a tutti gli strumenti meteorologici. La *schermata delle previsioni meteo* visualizza informazioni su *temperatura*, *pressione atmosferica*, *velocità del vento*, *copertura nuvolosa* e *precipitazioni*.  
 
-Nella parte inferiore dello schermo si trova la *barra degli strumenti meteo*. Puoi utilizzare i pulsanti del giorno e il cursore del tempo per impostare l'ora esatta in cui verranno visualizzate le previsioni meteo.
+Nella parte inferiore dello schermo si trova la *barra degli strumenti meteo*. È possibile utilizzare i pulsanti dei giorni e il cursore del tempo per impostare l'ora esatta in cui verranno visualizzate le previsioni del tempo.
 
-### Personalizza i livelli meteo {#customize-weather-layers}
+### Personalizzare i livelli Meteo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
-Vai a: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
+Andare su: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
+Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-Per visualizzare i livelli meteo sulla schermata della mappa OsmAnd, è necessario utilizzare il menu *Configura mappa*. Vai al menu, trova la voce *Meteo* nell'elenco (disponibile solo quando il plugin è abilitato) e toccala.
+Per visualizzare i livelli meteo sulla schermata della mappa di OsmAnd, è necessario utilizzare il menu *Configura mappa*. Andare al menu, trovare la voce *Meteo* nell'elenco (disponibile solo quando il plugin è abilitato) e toccarla.  
 
-In questo menu, puoi modificare la **visibilità** e le [impostazioni](#weather-settings) per ogni livello, selezionare il tipo di linee di contorno e scaricare le [previsioni meteo offline di 7 giorni](#offline-forecast) (*disponibile qui solo per Android*).
+In questo menu è possibile modificare la **visibilità** e le [impostazioni](#weather-settings) di ogni livello, selezionare il tipo di linee di contorno e scaricare le [previsioni meteo offline a 7 giorni](#offline-forecast) (*disponibile solo per Android qui*).
 
-### Impostazioni meteo {#weather-settings}
+
+### Impostazioni Meteo {#weather-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 - *Menu principale → Plugin → Meteo → Impostazioni*
 - *Menu principale → Impostazioni → Profilo → Impostazioni plugin → Meteo*
@@ -123,34 +126,35 @@ In questo menu, puoi modificare la **visibilità** e le [impostazioni](#weather-
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-È importante decidere in quali unità di misura ti è comodo visualizzare i [dati meteo](#weather-layers) sulla mappa e nella sezione [widget Meteo](#weather-widgets) dello schermo. Puoi scegliere le unità di misura appropriate per ogni parametro o utilizzare i valori predefiniti (*solo iOS*). Nella versione iOS dell'app OsmAnd, puoi anche abilitare l'opzione di previsione offline per evitare di utilizzare il traffico mobile durante i viaggi.
+È importante decidere in quali unità di misura è più comodo visualizzare i [dati Meteo](#weather-layers) sulla mappa e nella sezione [widget Meteo](#weather-widgets) dello schermo. È possibile scegliere le unità di misura appropriate per ogni parametro o utilizzare i valori predefiniti (*solo iOS*). Nella versione iOS dell'app OsmAnd, è anche possibile abilitare l'opzione di previsione offline per evitare di utilizzare il traffico mobile durante il viaggio.  
 
 :::note
-Nella versione iOS di OsmAnd, puoi modificare le unità di misura e il livello di trasparenza nel menu che si apre dopo un tocco lungo dell'icona del livello della mappa richiesto.
+Nella versione iOS di OsmAnd, è possibile modificare le unità di misura e il livello di trasparenza nel menu che si apre dopo un tocco prolungato dell'icona del livello della mappa richiesto.  
 :::
 
-### Livelli meteo {#weather-layers}
+### Livelli Meteo {#weather-layers}
 
-Tutti i dati meteo sono presentati come livelli di mappa separati. Per visualizzare i livelli meteo sulla mappa, è necessario rimpicciolire, sono disponibili solo su scale di zoom 2-12. I livelli meteo utilizzano [tavolozze meteo](../personal/color-palette-schemes.md#weather) per colorare la mappa, queste tavolozze possono essere [modificate](../personal/color-palette-schemes.md#edit-palette-file) se necessario.
+Tutti i dati meteorologici sono presentati come livelli di mappa separati. Per vedere i livelli meteo sulla mappa, è necessario ridurre lo zoom, poiché sono disponibili solo su scale di zoom 2-12. I livelli meteo utilizzano [tavolozze di colori per il meteo](../personal/color-palette-schemes.md#weather) per colorare la mappa; queste tavolozze possono essere [modificate](../personal/color-palette-schemes.md#edit-palette-file) se necessario.
 
-| |
-|------------|
-| **Livello precipitazioni** visualizza informazioni su eventi meteorologici quando l'acqua in diversi stati aggregati cade dal cielo a terra. Le precipitazioni sono pioggia, neve, nevischio o grandine. La scala delle precipitazioni è graduata in millimetri (o pollici) di acqua che cade su 1 metro quadrato in 24 ore. 1 mm di pioggia corrisponde a 1 litro d'acqua per 1 metro quadrato. |
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|
-| La **temperatura** esprime la percezione quantitativa di caldo e freddo. Si misura in gradi. In OsmAnd, puoi scegliere tra la scala Celsius e Fahrenheit. |
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|
-| Il **vento** è il movimento dell'aria causato dal riscaldamento irregolare della Terra da parte del sole e dalla sua rotazione. I venti possono variare da una leggera brezza a disastri naturali come uragani e tornado. In OsmAnd, la velocità del vento può essere visualizzata in metri al secondo (m/s), chilometri all'ora (km/h), miglia all'ora (mph) e nodi (kt). |
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|
-| La **copertura nuvolosa** è la frazione media del cielo coperta da nuvole quando osservata da una particolare posizione. Si misura in %. |
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|
-| La **pressione atmosferica** è causata dal peso dell'aria sopra il punto di misurazione. Diminuisce con l'aumentare dell'altitudine. La pressione atmosferica può essere visualizzata in ettapascal (hPa), millimetri di mercurio (mmHg) e pollici di mercurio (inHg). |
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
-| L'**animazione del vento** include rappresentazioni dinamiche che mostrano la direzione e la velocità del vento nella regione. |
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
+| |  
+|------------|  
+| Il **livello Precipitazioni** visualizza informazioni sugli eventi meteorologici in cui l'acqua in diversi stati di aggregazione cade dal cielo al suolo. Le precipitazioni sono pioggia, neve, nevischio o grandine. La scala delle precipitazioni è graduata in millimetri (o pollici) di acqua che cade su 1 metro quadrato in 24 ore. 1 mm di pioggia corrisponde a 1 litro d'acqua per 1 metro quadrato. |  
+|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+| La **Temperatura** esprime la percezione quantitativa del caldo e del freddo. Si misura in gradi. In OsmAnd è possibile scegliere tra la scala Celsius e quella Fahrenheit. |  
+|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
+| Il **Vento** è il movimento dell'aria causato dal riscaldamento non uniforme della Terra da parte del sole e dalla sua stessa rotazione. I venti possono variare da una leggera brezza a disastri naturali come uragani e tornado. In OsmAnd, la velocità del vento può essere visualizzata in metri al secondo (m/s), chilometri all'ora (km/h), miglia all'ora (mph) e nodi (kt). |  
+|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
+| La **Copertura nuvolosa** è la frazione media del cielo coperta da nuvole se osservata da una particolare posizione. Si misura in %. |  
+|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
+| La **Pressione atmosferica** è causata dal peso dell'aria al di sopra del punto di misurazione. Diminuisce con l'aumentare dell'altitudine. La pressione atmosferica può essere visualizzata in ettopascal (hPa), millimetri di mercurio (mmHg) e pollici di mercurio (inHg). |  
+| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| L'**Animazione del vento** include rappresentazioni dinamiche che mostrano la direzione e la velocità del vento nella regione. |  
+| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
-### Combina mappe {#combine-maps}
+
+### Combinare le mappe {#combine-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -162,100 +166,102 @@ Tutti i dati meteo sono presentati come livelli di mappa separati. Per visualizz
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)
+![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
 </Tabs>
 
-Per ottenere informazioni meteo complete, puoi utilizzare i livelli della mappa separatamente o combinarli facilmente. Le isolinee di un tipo specifico possono anche essere aggiunte al livello Meteo. Basta toccare il pulsante *Livelli* o *Isolinee* sullo schermo.
+Per ottenere informazioni meteorologiche complete, è possibile utilizzare i livelli della mappa separatamente o combinarli facilmente. Al livello Meteo possono essere aggiunte anche isolinee di un tipo specifico. Basta toccare il pulsante *Livelli* o *Isolinee* sullo schermo.
+
 
 ### Azioni rapide per i livelli {#quick-actions-for-layers}
 
 ![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
-Per attivare la visibilità dei livelli meteo, puoi utilizzare i pulsanti *Azione rapida* sulla schermata della mappa. Le impostazioni generali per mostrare o nascondere i livelli si trovano nella sezione [Meteo](#weather-forecast-screen) separata del *Menu principale*. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map), troverai un elenco dei livelli disponibili per la visualizzazione. Se hai bisogno di un accesso rapido a questa configurazione della mappa, utilizza lo strumento *Pulsante personalizzato*.
+Per attivare o disattivare la visibilità dei livelli meteo, è possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa. Le impostazioni generali per mostrare o nascondere i livelli si trovano nella sezione [Meteo](#weather-forecast-screen) separata del *Menu principale*. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map) troverete un elenco dei livelli disponibili per la visualizzazione. Se avete bisogno di un accesso rapido a questa configurazione della mappa, utilizzate lo strumento *Pulsante personalizzato*.
 
-- Vai a [Aggiungi azione](../widgets/quick-action.md#custom-buttons): *Menu → Configura schermo → Pulsanti personalizzati → Azione rapida → Aggiungi azione → Configura mappa*.
-- Aggiungi uno o più pulsanti QA per modificare la visibilità di un particolare livello meteo.
+- Andare su [Aggiungi azione](../widgets/quick-action.md#custom-buttons): *Menu → Configura schermata → Pulsanti personalizzati → Azione rapida → Aggiungi azione → Configura mappa*.
+- Aggiungere uno o più pulsanti di Azione rapida per modificare la visibilità di un particolare livello meteo.
+
 
 ## Previsioni offline {#offline-forecast}
 
 ### Cache {#cache}
 
-Quando la scheda Meteo è aperta, salvo diversa indicazione, le informazioni meteo richieste vengono scaricate dalla rete. Puoi utilizzare le [previsioni meteo](#download-forecast) precaricate sui tuoi dispositivi. Le informazioni meteo vengono automaticamente memorizzate nella cache dopo il download e possono essere utilizzate offline fino alla scadenza delle previsioni.
+Quando la scheda Meteo è aperta, se non diversamente specificato, le informazioni meteorologiche richieste vengono scaricate dalla rete. È possibile utilizzare le [previsioni meteo](#download-forecast) precaricate sui propri dispositivi. Le informazioni meteorologiche vengono automaticamente memorizzate nella cache dopo il download e possono essere utilizzate offline fino alla scadenza delle previsioni.  
 
 :::tip
-Sui dispositivi Android, puoi controllare quando i dati meteo sono stati scaricati toccando il *widget Meteo*. Il plugin di sviluppo OsmAnd deve essere abilitato.
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)
+Sui dispositivi Android, è possibile controllare quando i dati meteo sono stati scaricati toccando il *widget Meteo*. Il plugin OsmAnd Development deve essere abilitato.  
+![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Scarica previsioni {#download-forecast}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Per ogni paese, puoi scaricare le **Previsioni offline** (fino a 7 giorni). Più è vicina alla data corrente, più sarà precisa. Se desideri utilizzare le previsioni meteo offline, dovresti scaricare i dati meteo in anticipo.
+Per ogni paese è possibile scaricare le **Previsioni offline** (fino a 7 giorni). Più ci si avvicina alla data attuale, più le previsioni saranno accurate. Se si desidera utilizzare le previsioni del tempo offline, è necessario scaricare i dati meteorologici in anticipo.  
 
-Nel menu di download delle previsioni, puoi ottenere informazioni e impostare i parametri per mantenere aggiornati i dati meteo.
-
-- **Creato** (*Android*) / **Aggiornato** (*iOS*). Mostra quando è stato effettuato l'ultimo aggiornamento.
-- **Prossimo aggiornamento** (*iOS*). Quando sarà disponibile il prossimo aggiornamento.
-- **Dimensione** (*Android*) / **Dimensione aggiornamenti** (*iOS*). Mostra la dimensione di tutti gli aggiornamenti.
-- Pulsante **Aggiorna** (*Android*) / **Aggiorna ora** (*iOS*). Quando attivo, consente di aggiornare manualmente i dati meteo senza attendere un aggiornamento automatico.
-- **Frequenza di aggiornamento** (*iOS*). Può essere impostata su 12 ore, 24 ore o settimanale.
-- *Aggiorna solo tramite Wi-Fi* (*iOS*). Abilita questa opzione se non vuoi utilizzare i dati mobili per i download.
+Nel menu di download delle previsioni, è possibile ottenere informazioni e impostare i parametri per mantenere aggiornati i dati meteorologici.  
+  
+- **Creato** (*Android*) / **Aggiornato** (*iOS*). Mostra quando è stato effettuato l'ultimo aggiornamento.  
+- **Prossimo aggiornamento** (*iOS*). Quando sarà disponibile il prossimo aggiornamento.  
+- **Dimensione** (*Android*) / **Dimensione aggiornamenti** (*iOS*). Mostra la dimensione di tutti gli aggiornamenti.  
+- Pulsante **Aggiorna** (*Android*) / **Aggiorna ora** (*iOS*). Quando è attivo, consente di aggiornare i dati meteorologici manualmente senza attendere l'aggiornamento automatico.  
+- **Frequenza di aggiornamento** (*iOS*). Può essere impostata su 12 ore, 24 ore o settimanale.  
+- *Aggiorna solo tramite Wi-Fi* (*iOS*). Abilitare questa opzione se non si desidera utilizzare i dati mobili per i download.  
 - Pulsante **Rimuovi** *cestino* (*Android*) / **Rimuovi previsioni** (*iOS*). Consente di eliminare tutti i dati delle previsioni per questa regione.
 - Pulsante **Modifica** *matita* (*Android*). Consente di rinominare il file meteo.
 
-:::info
-OsmAnd genera una nuova previsione ogni 6 ore.
+:::info  
+I dati meteorologici vengono aggiornati ogni 6 ore (tutti e 4 gli aggiornamenti da [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 da [ECMWF](https://www.ecmwf.int/)) e diventano disponibili in OsmAnd con un breve ritardo, poiché il processo di calcolo richiede diverse ore prima del rilascio (di solito intorno alle 07:00 UTC).  
 :::
 
-## Widget meteo {#weather-widgets}
+
+## Widget Meteo {#weather-widgets}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="shared_string_weather"/>*
+Andare su: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegliere un pannello → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)
+![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate ios="true" ids="shared_string_weather"/>*
+Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegliere un pannello → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)
+![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-I [widget meteo](../widgets/info-widgets.md#weather-widgets) come Temperatura, Pressione atmosferica, Vento, Nuvole e Precipitazioni mostrano i dati meteo attuali per il **punto centrale sulla mappa**.
+I [widget Meteo](../widgets/info-widgets.md#weather-widgets) come Temperatura, Pressione atmosferica, Vento, Nuvole e Precipitazioni mostrano i dati meteorologici attuali per il **punto centrale della mappa**.
 
-- I widget meteo vengono visualizzati solo quando la [schermata Meteo](#weather-forecast-screen) è attivata.
-- Per attivare i widget meteo, seleziona la voce di menu principale *Configura schermo*, il pannello su cui posizionarli e i widget richiesti dall'elenco.
+- I widget Meteo vengono visualizzati solo quando la [schermata Meteo](#weather-forecast-screen) è attiva.
+- Per attivare i widget meteo, selezionare la voce di menu *Configura schermata*, il pannello su cui posizionarli e i widget richiesti dall'elenco.
+
 
 ## Articoli correlati {#related-articles}
 
-- [Interagisci con la mappa](../../user/map/interact-with-map.md)
+- [Interagire con la mappa](../../user/map/interact-with-map.md)
 - [Impostazioni globali](../../user/personal/global-settings.md)
-- [Mappe vettoriali (stili di mappa)](../../user/map/vector-maps.md)
-
-> *Ultimo aggiornamento: novembre 2024*
+- [Mappe vettoriali (Stili mappa)](../../user/map/vector-maps.md)

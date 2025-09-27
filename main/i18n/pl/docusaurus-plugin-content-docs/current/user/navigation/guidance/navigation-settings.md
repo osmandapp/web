@@ -1,7 +1,7 @@
 ---
-source-hash: 9dfdc23272c2395a2fe157264de05cb42ea6de2b1b0d9d756c1c1bf66f78f6d3
-sidebar_position: 7
-title: Ustawienia nawigacji
+source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+sidebar_position: 1
+title:  Ustawienia nawigacji
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Aby nawigacja była udana, ważne jest odpowiednie skonfigurowanie ustawień zgodnie z potrzebami i sposobem podróżowania – samochodem, pieszo, konno czy na nartach. Ten artykuł opisuje podstawowe parametry trasy, [komunikaty głosowe](#voice-prompts), [ostrzeżenia ekranowe](#screen-alerts), [zachowanie mapy podczas nawigacji](#map-during-navigation) oraz [wygląd linii trasy](#customize-route-line). Szczegółowo omawia również ustawienia pojazdu, takie jak [prędkość domyślna](#default-speed) i [prędkość maksymalna/minimalna](#road-speeds), [typ silnika](#fuel-used-by-motor) do obliczania emisji CO2, [pojemność zbiornika paliwa](#fuel-tank-capacity) oraz [rozmiar/waga](#size-parameters), które mogą wpływać na trasę. Dostosowanie tych ustawień pomoże Ci w pełni wykorzystać OsmAnd i dotrzeć do celu bez zbędnych opóźnień.
+Aby nawigacja przebiegała pomyślnie, ważne jest, aby odpowiednio skonfigurować ustawienia zgodnie z własnymi potrzebami i sposobem podróżowania - samochodem, pieszo, konno lub na nartach. W tym artykule opisano podstawowe parametry trasy, [Komunikaty głosowe](#voice-prompts), [Alerty ekranowe](#screen-alerts), [Zachowanie mapy podczas nawigacji](#map-during-navigation) oraz [Wygląd linii trasy](#customize-route-line). Szczegółowo opisano również [Ustawienia pojazdu](#vehicle-parameters), takie jak domyślna prędkość, typ silnika do obliczania emisji CO2, pojemność zbiornika paliwa oraz ograniczenia dotyczące wielkości/masy. Dostosowanie tych ustawień pomoże w pełni wykorzystać możliwości OsmAnd i dotrzeć do celu bez niepotrzebnych opóźnień.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -38,18 +38,18 @@ Aby nawigacja była udana, ważne jest odpowiednie skonfigurowanie ustawień zgo
 
 ### Jak otworzyć {#how-to-open}
 
-Ta sekcja przedstawia ustawienia nawigacji niezbędne do obliczania i wyznaczania trasy, które można ustawić dla wybranego profilu. To menu zawiera ustawienia dotyczące [przygotowania trasy](../setup/route-navigation.md), [ekranu mapy podczas nawigacji](../guidance/map-during-navigation.md), a to, co ustawisz w *Ustawieniach nawigacji*, bezpośrednio wpływa na wyświetlanie danych w [Szczegółach trasy](../setup/route-details.md).
+W tej sekcji przedstawiono ustawienia nawigacji niezbędne do obliczania i wyznaczania trasy, które można ustawić dla wybranego profilu. To menu zawiera ustawienia [Przygotowania trasy](../setup/route-navigation.md), [Ekranu mapy podczas nawigacji](../guidance/map-during-navigation.md), a to, co ustawisz w *Ustawieniach nawigacji*, bezpośrednio wpływa na wyświetlanie danych w [Szczegółach trasy](../setup/route-details.md).
 
-Istnieją trzy sposoby dostępu do menu Ustawienia nawigacji.
+Istnieją trzy sposoby uzyskania dostępu do menu ustawień nawigacji.
 
 - Przejdź do głównego *Menu → Ustawienia*, wybierz wymagany *Profil* i dotknij *Ustawienia nawigacji*.
 
-- Dotknij ikonę *Nawigacja* na ekranie mapy, a następnie wybierz *ikonę Ustawienia → Ustawienia nawigacji*.
+- Dotknij ikony *Nawigacja* na ekranie mapy, a następnie wybierz *ikonę Ustawienia → Ustawienia nawigacji*.
 
-- Przejdź do głównego *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
+- Przejdź do głównego *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
 
 :::info
-Domyślny profil *Przeglądaj mapę* nie ma ustawień nawigacji.
+Domyślny profil *Przeglądaj mapę* nie ma ustawień nawigacji.  
 :::
 
 
@@ -59,7 +59,7 @@ Domyślny profil *Przeglądaj mapę* nie ma ustawień nawigacji.
 
 <TabItem value="android" label="Android">
 
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png) ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png)   ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
 
 </TabItem>
 
@@ -69,17 +69,17 @@ Domyślny profil *Przeglądaj mapę* nie ma ustawień nawigacji.
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Nawigacja jest ważną częścią podróży, a wybór *właściwego typu* nawigacji może znacznie ułatwić podróż. Wybrany typ nawigacji może zależeć od sposobu podróżowania i tego, czy masz połączenie z Internetem.
+Nawigacja jest ważną częścią podróży, a wybór *odpowiedniego typu* nawigacji może znacznie ułatwić podróż. Wybór typu nawigacji może zależeć od sposobu podróżowania i tego, czy masz połączenie z Internetem.  
 
 - **Nawigacja online**
-Wykorzystuje głównie specjalny system routingu lub stronę internetową, która pozwala aplikacji OsmAnd wyznaczyć trasę na podstawie aktualnych informacji i innych czynników. O wyborze najlepszej trasy online możesz przeczytać w artykule [Routing online](../routing/online-routing.md). Ten typ nawigacji jest dostępny tylko dla *wersji Android* aplikacji.
+    Wykorzystuje głównie specjalny system wyznaczania tras lub stronę internetową, która pozwala aplikacji OsmAnd wyznaczyć trasę na podstawie aktualnych informacji i innych czynników. O wyborze najlepszej trasy online można przeczytać w artykule [Wyznaczanie tras online](../routing/online-routing.md). Ten typ nawigacji jest dostępny tylko dla *wersji aplikacji na Androida*.  
 
 - **Nawigacja offline**
-Nie wymaga dostępu do Internetu i oferuje szerszy wybór [typów nawigacji](../routing/osmand-routing.md#routing-types), które mogą być używane do obliczania trasy. Wśród nich są *rower, łódź, samochód, pieszo, narty* i *linia prosta*. Obecnie istnieje 13 podstawowych typów routingu, a także zewnętrzny typ routingu [BRouter](../routing/brouter.md), który zapewnia dodatkowe możliwości routingu.
+Nie wymaga dostępu do Internetu i oferuje szerszy wybór [typów nawigacji](../routing/osmand-routing.md#routing-types), które można wykorzystać do obliczenia trasy. Wśród nich są *rower, łódź, samochód, pieszo, narty* i *linia prosta*. Obecnie istnieje 13 podstawowych typów wyznaczania tras, a także zewnętrzny typ wyznaczania tras [BRouter](../routing/brouter.md), który zapewnia dodatkowe możliwości wyznaczania tras.  
 
-Typ nawigacji określa, które zasady są używane do obliczania tras. Jeśli potrzebujesz konkretnego typu nawigacji, możesz **zaimportować własny zmodyfikowany plik routingu *XML***. Więcej o zasadach routingu przeczytasz na naszej [stronie GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). Istnieje również osobny artykuł o formacie XML i jego użyciu, [Styl renderowania mapy](../../../technical/osmand-file-formats/osmand-rendering-style.md), który może pomóc w tworzeniu pliku trasy.
+Typ nawigacji określa, które reguły są używane do obliczania tras. Jeśli potrzebujesz określonego typu nawigacji, możesz **zaimportować własny zmodyfikowany plik routingu *XML***. Więcej o regułach routingu można przeczytać na naszej [stronie GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). Istnieje również osobny artykuł o formacie XML i sposobie jego użycia, [Styl renderowania mapy](../../../technical/osmand-file-formats/osmand-rendering-style.md), który może pomóc w tworzeniu pliku trasy.  
 
 
 ## Parametry trasy {#route-parameters}
@@ -98,17 +98,17 @@ Typ nawigacji określa, które zasady są używane do obliczania tras. Jeśli po
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-**<Translate android="true" ids="route_parameters"/>** to ustawienia, które określają, w jaki sposób aplikacja obliczy trasę do celu, uwzględniając takie czynniki, jak rodzaj transportu, priorytety routingu, warunki trasy, złożoność trasy i preferencje użytkownika.
+**<Translate android="true" ids="route_parameters"/>** to ustawienia, które określają, w jaki sposób aplikacja obliczy trasę do miejsca docelowego, biorąc pod uwagę takie czynniki, jak rodzaj transportu, priorytety wyznaczania trasy, warunki na trasie, złożoność trasy i preferencje użytkownika.  
 
-Dla każdego [profilu](../../personal/global-settings.md#default-profile), z wyjątkiem *Przeglądaj mapę*, OsmAnd domyślnie wybiera optymalny [typ nawigacji](#navigation-type) i odpowiednie [parametry trasy](../routing/osmand-routing.md#routing-types). Możesz jednak wybrać dowolny typ i zmienić parametry w zależności od preferencji i warunków zewnętrznych nadchodzącej podróży.
+Dla każdego [profilu](../../personal/global-settings.md#default-profile), z wyjątkiem *Przeglądaj mapę*, OsmAnd domyślnie wybiera optymalny [Typ nawigacji](#navigation-type) i odpowiednie [parametry trasy](../routing/osmand-routing.md#routing-types). Można jednak wybrać dowolny typ i zmienić parametry w zależności od preferencji i warunków zewnętrznych nadchodzącej podróży.  
 
-Wszystkie parametry trasy są szczegółowo opisane w odpowiednich sekcjach dokumentacji:
-*[Routing samochodowy (Ciężarówka, Motocykl)](../routing/car-based-routing.md), [Routing rowerowy (MTB)](../routing/bicycle-based-routing.md), [Routing motorowerowy](../routing/moped-routing.md), [Routing pieszy](../routing/pedestrian-routing.md), [Routing transportu publicznego](../routing/public-transport-navigation.md), [Routing konny](../routing/horse-routing.md), [Routing narciarski](../routing/ski-routing.md), [Routing pociągiem](../routing/train-routing.md), [Routing łodzią](../routing/boat-navigation.md), [Routing punkt-punkt](../routing/direct-to-point-routing.md), [Routing linią prostą](../routing/straight-line-routing.md), [Routing online](../routing/online-routing.md), [Routing BRouter](../routing/brouter.md)*.
+Wszystkie parametry trasy są szczegółowo opisane w odpowiednich sekcjach dokumentacji:  
+*[Trasa samochodowa (ciężarówka, motocykl)](../routing/car-based-routing.md), [Trasa rowerowa (MTB)](../routing/bicycle-based-routing.md), [Trasa motorowerowa](../routing/moped-routing.md), [Trasa piesza](../routing/pedestrian-routing.md), [Nawigacja transportem publicznym](../routing/public-transport-navigation.md), [Trasa konna](../routing/horse-routing.md), [Trasa narciarska](../routing/ski-routing.md), [Trasa kolejowa](../routing/train-routing.md), [Nawigacja łodzią](../routing/boat-navigation.md), [Nawigacja do punktu](../routing/direct-to-point-routing.md), [Nawigacja w linii prostej](../routing/straight-line-routing.md), [Wyznaczanie tras online](../routing/online-routing.md), [Wyznaczanie tras BRouter](../routing/brouter.md)*.  
 
 
-### Przelicz trasę {#recalculate-route}
+### Ponowne obliczanie trasy {#recalculate-route}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -126,14 +126,14 @@ Wszystkie parametry trasy są szczegółowo opisane w odpowiednich sekcjach doku
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Parametr **Obliczanie trasy** automatycznie zmienia obliczoną trasę, gdy z niej zboczysz lub pojedziesz w przeciwnym kierunku. W obu przypadkach to ustawienie pomaga utrzymać kierunek podróży i dotrzeć do celu bez marnowania czasu na ręczne wyszukiwanie nowej trasy.
+Parametr **Obliczanie trasy** automatycznie zmienia obliczoną trasę, gdy z niej zboczysz lub pojedziesz w przeciwnym kierunku. W obu przypadkach to ustawienie pomaga utrzymać kierunek podróży i dotrzeć do celu bez marnowania czasu na ręczne wyszukiwanie nowej trasy.  
 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> w przypadku odchylenia* | <Translate android="true" ids="recalculate_route_distance_promo"/> | Jeśli [komunikaty głosowe](../guidance/voice-navigation.md#voice-settings) są włączone, OsmAnd ogłasza, że trasa jest przeliczana. |
-| *Przelicz trasę w przypadku zmiany kierunku* | Twoja trasa zostanie przeliczona, jeśli będziesz poruszać się w kierunku punktu początkowego. | Przy wyłączonym tym ustawieniu ruch w kierunku punktu początkowego nie jest uważany za odchylenie od ścieżki (o ile podąża za obliczoną trasą). |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> w przypadku odchylenia*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | Jeśli [Komunikaty głosowe](../guidance/voice-navigation.md#voice-settings) są włączone, OsmAnd ogłasza, że trasa jest ponownie obliczana. |
+|  *Przelicz trasę w przypadku jazdy w przeciwnym kierunku*  | Trasa zostanie przeliczona, jeśli poruszasz się w kierunku punktu początkowego.  |  Przy wyłączonym tym ustawieniu ruch w kierunku punktu początkowego nie jest uważany za zboczenie z trasy (o ile odbywa się po obliczonej trasie).  |
 
 
 ### Ustawienia deweloperskie {#development-settings}
@@ -142,7 +142,7 @@ Parametr **Obliczanie trasy** automatycznie zmienia obliczoną trasę, gdy z nie
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji → Parametry trasy → Rozwój*
+Przejdź do: *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji → Parametry trasy → Deweloperskie*
 
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
@@ -150,29 +150,29 @@ Przejdź do: *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji 
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji → Parametry trasy → Rozwój*
+Przejdź do: *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji → Parametry trasy → Deweloperskie*
 
 ![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Parametry w sekcji **Rozwój** są przeznaczone głównie dla zaawansowanych użytkowników i są dostępne tylko po włączeniu [wtyczki deweloperskiej OsmAnd](../../plugins/development.md).
+Parametry w sekcji **Deweloperskie** są przeznaczone głównie dla zaawansowanych użytkowników i są dostępne tylko wtedy, gdy włączona jest [wtyczka deweloperska OsmAnd](../../plugins/development.md).  
 
 | Parametr | Opis |
 |:------------|:---------------|
-| *Typ routingu* (*Android*) / *Algorytm routingu* (*iOS*) | <ul><li>**A*** 2-fazowy (*Android*) / **A*** (*iOS*) dodaje dodatkową fazę do domyślnego algorytmu, aby poprawić jakość obliczonej trasy. Ta opcja może być przydatna do znajdowania tras w dużych i złożonych sieciach drogowych, ale obliczanie trasy może trwać dłużej.</li><li>**A* klasyczny** (*Android*) / **Hierarchie autostrad** (*iOS*) optymalizują planowanie trasy, preferując główne drogi i autostrady, minimalizując liczbę zakrętów i skrzyżowań na trasie. Szczególnie skuteczne na długich dystansach.</li><li>**HH (Hierarchie autostrad) x Java** (*tylko Android*) opiera się na implementacji hierarchicznych struktur danych w celu optymalizacji wyszukiwania ścieżek na mapie, z uwzględnieniem ograniczeń czasu wykonania i zużycia zasobów urządzenia, i jest zrealizowany na platformie Java.</li><li>**HH (Hierarchie autostrad) x C++** (*tylko Android*) to algorytm, który wykorzystuje język programowania C++ do efektywnego przetwarzania danych sieci drogowej i budowania optymalnych tras przy użyciu hierarchicznych struktur danych. Jest zoptymalizowany pod kątem szybkiego przetwarzania dużych ilości danych i jest szczególnie skuteczny w nawigacji po mapach z wieloma sieciami drogowymi.</li></ul> |
-| *Aproksymacja GPX* (*tylko Android*) | <ul><li>Aproksymacja GPX **oparta na routingu** w **C++ i Java** wykorzystuje dane trasy do aproksymacji śladów GPS z istniejącymi trasami drogowymi, co poprawia dokładność śladu i zmniejsza jego rozmiar.</li><li>Aproksymacje GPX **oparte na geometrii** w **C++ i Java** działają w oparciu o zasady geometryczne, aby szybko i dokładnie aproksymować ślady GPS, umożliwiając efektywne przetwarzanie dużych ilości danych.</li></ul> |
-| *Automatyczne powiększanie* | <ul><li>**Dyskretne** pozwala powiększyć mapę do określonego poziomu szczegółowości mierzonego w kilku dyskretnych krokach.</li><li>**Płynne** zapewnia stopniową zmianę skali mapy z płynnymi efektami animacji bez szarpnięć i skoków.</li></ul> |
-| *<Translate android="true" ids="use_live_routing"/>* (*tylko Android*) | Używaj [aktualizacji OsmAnd Live](../../personal/maps-resources.md#osmand-live) podczas routingu. Zauważ, że zalecamy używanie tej opcji tylko do celów testowych. |
+| *Typ routingu* (*Android*) / *Algorytm routingu* (*iOS*) | <ul><li>**A*** 2-fazowy (*Android*) / **A*** (*iOS*) dodaje dodatkową fazę do domyślnego algorytmu w celu poprawy jakości obliczonej trasy. Ta opcja może być przydatna do znajdowania tras w dużych i złożonych sieciach drogowych, ale obliczanie trasy może potrwać dłużej.</li><li>**A* klasyczny** (*Android*) / **Hierarchie autostrad** (*iOS*) optymalizują planowanie trasy, faworyzując główne drogi i autostrady, minimalizując liczbę zakrętów i skrzyżowań na trasie. Szczególnie skuteczne na długich dystansach.</li><li>**HH (Highway Hierarchies) x Java** (*tylko Android*) opiera się na implementacji hierarchicznych struktur danych w celu optymalizacji wyszukiwania ścieżek na mapie, z uwzględnieniem ograniczeń czasu wykonywania i zużycia zasobów urządzenia, i jest realizowany na platformie Java.</li><li>**HH (Highway Hierarchies) x C++** (*tylko Android*) to algorytm, który wykorzystuje język programowania C++ do wydajnego przetwarzania danych sieci drogowej i budowania optymalnych tras przy użyciu hierarchicznych struktur danych. Jest zoptymalizowany pod kątem szybkiego przetwarzania dużych ilości danych i jest szczególnie skuteczny w nawigacji po mapach z wieloma sieciami drogowymi.</li></ul> |  
+| *Aproksymacja GPX* (*tylko Android*)  | <ul><li>Aproksymacja GPX **oparta na routingu** w **C++ i Javie** wykorzystuje dane trasy do aproksymacji śladów GPS z istniejącymi trasami drogowymi, co poprawia dokładność śladu i zmniejsza jego rozmiar.</li><li>Aproksymacje GPX **oparte na geometrii** w **C++ i Javie** działają w oparciu o zasady geometryczne w celu szybkiej i dokładnej aproksymacji śladów GPS, umożliwiając wydajne przetwarzanie dużych ilości danych.</li></ul> |
+| *Automatyczne powiększanie* | <ul><li>**Dyskretne** pozwala na powiększenie mapy do określonego poziomu szczegółowości mierzonego w kilku dyskretnych krokach.</li><li>**Płynne** zapewnia stopniową zmianę skali mapy z płynnymi efektami animacji bez szarpnięć i skoków.</li></ul> |
+| *<Translate android="true" ids="use_live_routing"/>* (*tylko Android*)  | Użyj [Aktualizacji na żywo](../../personal/maps-resources.md#live-updates) podczas wyznaczania trasy. Pamiętaj, że zalecamy używanie tej opcji tylko do celów testowych.  |
 
 <!--
-| Parametr | Opis | Uwaga |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>* | Umożliwia korzystanie z [aktualizacji OsmAnd Live](../../personal/maps-resources.md#osmand-live) podczas routingu. Zauważ, że zalecamy używanie tej opcji tylko do celów testowych. |
-| *<Translate android="true" ids="use_two_phase_routing"/>* | Dodaje dodatkową fazę do domyślnego algorytmu (A*), aby poprawić jakość obliczonej trasy. Ta opcja może być przydatna do znajdowania tras w dużych i złożonych sieciach drogowych, chociaż obliczanie trasy może zająć więcej czasu. |
-| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/> |
+| Parameter | Description | Note |
+|:------------|:---------------|
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows using [Live updates](../../personal/maps-resources.md#live-updates) while routing. Note, that we recommend using this option for testing purposes only. |   
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation. |  
+| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   
 -->
 
 
@@ -192,7 +192,7 @@ Parametry w sekcji **Rozwój** są przeznaczone głównie dla zaawansowanych uż
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/> przycisk* *(lub <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Wybierz profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *przycisk <Translate ios="true" ids="routing_settings"/>* *(lub <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Wybierz profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Ustawienia nawigacji głosowej iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -200,22 +200,22 @@ Parametry w sekcji **Rozwój** są przeznaczone głównie dla zaawansowanych uż
 
 </Tabs>
 
-Pierwsza część artykułu *[Komunikaty głosowe / Powiadomienia](./voice-navigation.md)* szczegółowo opisuje, jak skonfigurować komunikaty głosowe.
+Pierwsza część artykułu *[Komunikaty głosowe / Powiadomienia](./voice-navigation.md)* szczegółowo opisuje, jak skonfigurować komunikaty głosowe.  
 
-Instrukcje audio podczas nawigacji pomagają kierowcy lub pieszemu dotrzeć do celu podczas [nawigowania po wybranej trasie](../setup/route-navigation.md). Zawierają informacje o zakrętach, kierunkach jazdy, znakach drogowych, odległościach do celu i innych czynnikach, które mogą wpływać na nawigację.
+Instrukcje dźwiękowe podczas nawigacji pomagają kierowcy lub pieszemu dotrzeć do celu podczas [nawigacji po wybranej trasie](../setup/route-navigation.md). Zawierają one informacje o zakrętach, kierunkach jazdy, znakach drogowych, odległościach do celu i innych czynnikach, które mogą mieć wpływ na nawigację.  
 
-Jeśli wybierzesz ścieżkę jako punkt docelowy, musisz użyć opcji [Przyłącz do dróg](../setup/gpx-navigation.md#attach-to-the-roads), aby komunikaty głosowe działały poprawnie.
+Jeśli jako punkt docelowy wybierzesz ślad, musisz użyć opcji [Dołącz do dróg](../setup/gpx-navigation.md#attach-to-the-roads), aby komunikaty głosowe działały poprawnie.
 
-*Komunikaty głosowe* pozwalają skupić się na drodze i nie rozpraszać się mapą ani urządzeniem nawigacyjnym. Poprawiają również bezpieczeństwo jazdy, skracają czas potrzebny na nawigację w nieznanym terenie i mogą być przydatne dla różnych [typów tras](../routing/osmand-routing.md#routing-types).
+*Komunikaty głosowe* pozwalają skupić się na drodze i nie rozpraszać się mapą lub urządzeniem nawigacyjnym. Poprawiają również bezpieczeństwo jazdy, skracają czas potrzebny na nawigację w nieznanym terenie i mogą być przydatne dla różnych [typów tras](../routing/osmand-routing.md#routing-types).
 
 
-## Ostrzeżenia ekranowe {#screen-alerts}
+## Alerty ekranowe {#screen-alerts}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -223,31 +223,31 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Ustawienie nawigacji **Ostrzeżenia ekranowe** włącza [**Widżet ostrzeżeń**](../../widgets/nav-widgets.md#alert-widget). *Szczegóły:*
+Ustawienie nawigacji **Alerty ekranowe** włącza [**Widżet alertów**](../../widgets/nav-widgets.md#alert-widget). *Szczegóły:*
 
 - Gdy zbliżasz się do jednej z obsługiwanych przeszkód na drodze, powiadomienia pojawiają się w lewym dolnym rogu mapy.
-- Jeśli skonfigurujesz [*komunikaty głosowe i tekstowe*](../../navigation/guidance/voice-navigation.md) dostępne w aplikacji OsmAnd, podróż będzie wygodniejsza i bezpieczniejsza.
-- Wygląd i czas wyświetlania komunikatów zależą od ustawień prędkości. Można je znaleźć [w artykule](../../../technical/algorithms/voice-prompt-triggering.md).
-- Na zachowanie *Ostrzeżeń ekranowych* wpływa również ustawienie [Pokaż punkty wzdłuż trasy](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route).
+- Jeśli skonfigurujesz [*komunikaty głosowe i tekstowe*](../../navigation/guidance/voice-navigation.md) dostępne w aplikacji OsmAnd, podróż będzie bardziej komfortowa i bezpieczniejsza.
+- Wygląd i czas wyświetlania monitów zależą od ustawień prędkości. Można je znaleźć [w artykule](../../../technical/algorithms/voice-prompt-triggering.md).  
+- Na zachowanie *Alertów ekranowych* ma również wpływ ustawienie [Pokaż punkty na trasie](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route).
 
-Możesz ***wybrać, które ostrzeżenia*** chcesz widzieć na ekranie aplikacji podczas nawigacji:
+Możesz ***wybrać, które alerty*** chcesz widzieć na ekranie aplikacji podczas nawigacji:
 
-- **Limit prędkości** ([informacje OSM Wiki](https://wiki.openstreetmap.org/wiki/Speed_limits)). W ustawieniach ostrzeżeń ekranowych *Limit prędkości* jest wyświetlany na ekranie tylko po włączeniu *Ostrzeżeń o ruchu drogowym*. Jeśli chcesz widzieć limity prędkości podczas nawigacji bez innych ostrzeżeń, użyj [widżetu](../../widgets/nav-widgets.md#speed-limit).
-- **Ostrzeżenia o ruchu drogowym** ([informacje OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Dodatkowe informacje można znaleźć w artykule [Ekran mapy podczas nawigacji](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
-- **Przejścia dla pieszych** ([informacje OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Fotoradary** ([informacje OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Więcej informacji o ustawieniach fotoradarów w OsmAnd znajdziesz w [Typach ostrzeżeń](../../widgets/nav-widgets.md#alert-types) oraz w artykule *Ustawienia globalne*, sekcja [Prawne](../../personal/global-settings.md#legal).
-- **Tunele** ([informacje OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
+- **Ograniczenie prędkości** ([informacje z OSM Wiki](https://wiki.openstreetmap.org/wiki/Speed_limits)). W ustawieniach alertów ekranowych *Ograniczenie prędkości* jest wyświetlane na ekranie tylko przy włączonych *Ostrzeżeniach o ruchu drogowym*. Jeśli chcesz widzieć ograniczenia prędkości podczas nawigacji bez innych ostrzeżeń, użyj [widżetu](../../widgets/nav-widgets.md#speed-limit).
+- **Ostrzeżenia drogowe** ([informacje z OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Dodatkowe informacje można znaleźć w artykule [Ekran mapy podczas nawigacji](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **Przejścia dla pieszych** ([informacje z OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **Fotoradary** ([informacje z OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Więcej informacji na temat ustawień fotoradarów w OsmAnd można znaleźć w [Typach alertów](../../widgets/nav-widgets.md#alert-types) oraz w artykule *Ustawienia globalne*, sekcja [Prawne](../../personal/global-settings.md#legal).
+- **Tunele** ([informacje z OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
-Rodzaje ostrzeżeń mają różny wygląd wizualny, który zależy od regionu podróży. OsmAnd nie ma na celu przedstawienia w 100% identycznych znaków drogowych, ale wskazuje na pewne podobieństwa.
+Rodzaje ostrzeżeń mają różny wygląd, który zależy od regionu podróży. OsmAnd nie ma na celu prezentowania w 100% identycznych znaków drogowych, ale wskazuje na pewne podobieństwa.  
 :::
 
 
@@ -257,13 +257,13 @@ Rodzaje ostrzeżeń mają różny wygląd wizualny, który zależy od regionu po
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -271,9 +271,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-**Mapa jest używana podczas nawigacji** do określania Twojej lokalizacji, planowania trasy i orientacji w terenie. Podczas nawigacji możesz przeglądać mapę z *automatycznym centrowaniem*, przesuwać ją oraz *powiększać i pomniejszać*, aby zobaczyć wymagany obszar. Mapa może również wyświetlać znaczniki wskazujące punkty zainteresowania, trasy, warunki pogodowe, znaki drogowe i inne obiekty, które pomogą Ci w nawigacji. Mapa może być aktualizowana w *czasie rzeczywistym* i wyświetla *aktualne informacje*, które mogą wpływać na planowanie trasy.
+**Mapa jest używana podczas nawigacji** do określania lokalizacji, planowania trasy i orientacji w terenie. Podczas nawigacji można wyświetlać mapę z *automatycznym centrowaniem*, przesuwać ją oraz *przybliżać i oddalać*, aby zobaczyć wymagany obszar. Mapa może również wyświetlać znaczniki wskazujące interesujące miejsca, trasy, warunki pogodowe, znaki drogowe i inne obiekty ułatwiające nawigację. Mapa może być aktualizowana w *czasie rzeczywistym* i wyświetlać *aktualne informacje*, które mogą mieć wpływ na planowanie trasy.
 
-Możesz dowiedzieć się, jak zmienia się zachowanie mapy podczas nawigacji w artykule [Ekran mapy podczas nawigacji](../guidance/map-during-navigation.md).
+O tym, jak zmienia się zachowanie mapy podczas nawigacji, można dowiedzieć się z artykułu [Ekran mapy podczas nawigacji](../guidance/map-during-navigation.md).  
 
 ## Dostosuj linię trasy {#customize-route-line}
 
@@ -281,13 +281,13 @@ Możesz dowiedzieć się, jak zmienia się zachowanie mapy podczas nawigacji w a
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
+Przejdź do: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
@@ -295,9 +295,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Dzięki ustawieniu **Dostosuj linię trasy** możesz wybrać wygląd linii trasy, która będzie widoczna na mapie podczas nawigacji. Możesz wybrać *kolor*, *szerokość linii* oraz wyświetlanie *strzałek kierunkowych*. Dla każdego profilu możesz wybrać inny widok linii. Wszystkie te parametry są szczegółowo opisane w artykule *Ekran mapy podczas nawigacji* w sekcji [Wygląd linii trasy](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+Dzięki ustawieniu **Dostosuj linię trasy** można wybrać wygląd linii trasy, która będzie widoczna na mapie podczas nawigacji. Można wybrać *kolor*, *szerokość linii* i wyświetlanie na niej *strzałek skrętu*. Dla każdego profilu można wybrać inny widok linii. Wszystkie te parametry są szczegółowo opisane w artykule *Ekran mapy podczas nawigacji* w sekcji [Wygląd linii trasy](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Parametry pojazdu {#vehicle-parameters}
@@ -306,7 +306,7 @@ Dzięki ustawieniu **Dostosuj linię trasy** możesz wybrać wygląd linii trasy
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -314,222 +314,18 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Dla optymalnego obliczania trasy w OsmAnd należy wziąć pod uwagę następujące parametry pojazdu:
+Aby zapewnić, że OsmAnd obliczy najbardziej optymalną trasę, kluczowe jest skonfigurowanie parametrów pojazdu - w tym jego prędkości, wymiarów, wagi i rodzaju paliwa - co pozwala aplikacji dokładnie oszacować czas podróży, unikać ograniczeń drogowych i śledzić zużycie paliwa, jak wyjaśniono w naszym pełnym przewodniku na temat [Parametrów pojazdu](./vehicle-parameters.md).
 
-1. Ustaw [*Prędkość domyślną* lub *Prędkości drogowe*](#default-speed--road-speeds), jako [minimalną i maksymalną prędkość](#road-speeds) pojazdu. Pomoże to aplikacji określić czas potrzebny na pokonanie trasy i pozwoli jej wybrać najlepszą trasę, uwzględniając ograniczenia prędkości na różnych odcinkach drogi.
-2. Określ [*typ*](#fuel-used-by-motor) paliwa używanego przez silnik. Pozwoli to aplikacji oszacować emisję CO2.
-3. Wprowadź [*pojemność zbiornika paliwa*](#fuel-tank-capacity), aby dokładnie śledzić poziom paliwa i zużycie.
-4. Zdefiniuj [*parametry rozmiaru i wagi*](#size-parameters) pojazdu, co może pomóc aplikacji obliczyć optymalną trasę i uniknąć przeszkód na drodze z powodu ograniczeń.
 
-Prawidłowe ustawienie parametrów w aplikacji OsmAnd pomoże uniknąć problemów podczas nawigacji po trasie, wybrać najbardziej odpowiednią trasę zgodnie z typem pojazdu i ograniczeniami drogowymi oraz obliczyć czas podróży.
-
-
-### Parametry rozmiaru {#size-parameters}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Parametry pojazdu wpływają na nawigację i konstrukcję trasy, ponieważ określają dostępność dróg, mostów, promów, tam i innej infrastruktury. Jeśli wysokość, szerokość, długość lub waga pojazdu przekracza dopuszczalne wartości dla niektórych odcinków drogi, system nawigacji OsmAnd znajdzie alternatywną trasę, aby uniknąć przeszkód po drodze.
-
-- Jednostki miary będą odpowiadać ustawieniom wybranym w *Ustawieniach ogólnych → [Jednostki i formaty](../../personal/profiles.md#units--formats)*.
-- Parametry pojazdu można ustawić ręcznie.
-- Jeśli ręcznie wybierzesz parametr pomiaru pojazdu, aplikacja zaproponuje Ci najbliższą wartość z gotowej listy. Jest to konieczne, aby uniknąć błędów i poprawniej zbudować trasę.
-- Możesz wybrać parametry pojazdu z gotowej listy rozmiarów.
-- Nie ustawiaj rozmiaru, *Brak*, co oznacza, że nie zostaną zastosowane żadne ograniczenia dla wybranego parametru.
-
-#### Limity {#limits}
-
-**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Parametr Waga jest dostępny tylko w typach nawigacji, takich jak [*Samochód, Ciężarówka* i *Motocykl*](../../navigation/routing/car-based-routing.md).
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
-
-**2.** [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Parametr Wysokość jest dostępny tylko w typach nawigacji, takich jak *[Samochód, Ciężarówka, Motocykl](../../navigation/routing/car-based-routing.md)* i *[Łódź](../../navigation/routing/boat-navigation.md)*.
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)
-
-**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Parametr Długość jest dostępny tylko w typach nawigacji, takich jak [*Samochód, Ciężarówka* i *Motocykl*](../../navigation/routing/car-based-routing.md).
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_length_andr.png)
-
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Parametr Szerokość jest dostępny tylko w typach nawigacji, takich jak *[Samochód, Ciężarówka, Motocykl](../../navigation/routing/car-based-routing.md)* i *[Łódź](../../navigation/routing/boat-navigation.md)*.
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
-
-Ograniczenia parametrów pojazdu mogą być ważne dla nawigacji i bezpieczeństwa drogowego. Niektóre z tych ograniczeń mogą obejmować:
-
-1. Ograniczenia dotyczące ruchu pojazdów w niektórych obszarach miejskich.
-2. Ograniczenia dotyczące ruchu pojazdów na określonych odcinkach dróg, takich jak mosty, tunele o ograniczonej przestrzeni, niskie wiadukty, złożone zakręty lub inne konstrukcje.
-3. Ograniczenia wagowe na oś pojazdu mogą być szczególnie ważne dla ciężarówek.
-4. Ograniczenia dla pojazdów poruszających się w określonych warunkach, takich jak wysokie temperatury, mokre lub zaśnieżone drogi, w nocy lub w warunkach pogodowych z ograniczoną widocznością.
-
-Te ograniczenia mogą być ważne dla nawigacji i należy je wziąć pod uwagę podczas planowania trasy. Jeśli pojazd przekroczy limity, może to skutkować zagrożeniem bezpieczeństwa drogowego, uszkodzeniem infrastruktury, mandatami za wypadki i innymi konsekwencjami prawnymi. Dlatego kierowcy powinni dokładnie zbadać trasę i upewnić się, że wysokość ich pojazdu spełnia limity.
-
-
-### Parametry paliwa {#fuel-parameters}
-
-#### Paliwo używane przez silnik {#fuel-used-by-motor}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Trasa nawigacji Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Trasa nawigacji iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Jeśli wybierzesz typ silnika w parametrach pojazdu, [***dane o śladzie CO2***](../../navigation/setup/route-details.md#elevation-info) zostaną wyświetlone nad wykresem w [Szczegółach trasy](../setup/route-details.md).
-Dostępnych jest sześć typów paliwa: ***Benzyna, Diesel, LPG, CNG, Elektryczne*** i ***Hybrydowe***.
-
-**Zastosowanie:**
-
-Ustawienie **Paliwo używane przez silnik** jest dostępne tylko w nawigacji opartej na pojazdach, takich jak *[Samochód, Motocykl i Ciężarówka](../../navigation/routing/car-based-routing.md)*.
-
-
-#### Pojemność zbiornika paliwa {#fuel-tank-capacity}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
-
-Parametr **Pojemność zbiornika paliwa** pozwala dokładniej śledzić poziom paliwa i zużycie pojazdu, podając całkowitą objętość zbiornika. Jednostka miary pojemności paliwa jest określana przez ustawienia skonfigurowane w *Menu → Konfiguruj profil → Ustawienia ogólne → Jednostki i formaty → Jednostka objętości*. Aby uzyskać szczegółowe wskazówki dotyczące ustawiania jednostek i formatów, zapoznaj się z artykułem [Profil (Ustawienia)](https://osmand.net/docs/user/personal/profiles#units--formats).
-
-OsmAnd obsługuje następujące jednostki pojemności:
-
-- Galony - **gal**. Ten skrót jest używany do reprezentowania zarówno **galonów imperialnych**, jak i **galonów amerykańskich**, w zależności od wybranych preferencji jednostek.
-- Litry - **l**. Metryczna jednostka pojemności.
-
-**Zastosowanie:**
-
-Ustawienie **Pojemność zbiornika paliwa** jest dostępne tylko w nawigacji opartej na pojazdach. Dla typów nawigacji, takich jak *Rower*, *Jazda konna*, *Pieszo* i *Narty*, ten parametr nie jest wyświetlany w Parametrach pojazdu.
-
-Wprowadzając dokładną pojemność zbiornika paliwa, aplikacja może zapewnić bardziej spersonalizowane doświadczenie, w tym:
-
-- Precyzyjne śledzenie pozostałego paliwa na podstawie zużycia.
-- Ulepszone planowanie trasy z postojami na tankowanie zoptymalizowanymi pod kątem rozmiaru zbiornika.
-
-Aby zapewnić dokładne obliczenia i sugestie nawigacyjne, sprawdź, czy wybrana jednostka odpowiada standardowi pomiaru zbiornika.
-
-
-### Prędkość domyślna / Prędkości drogowe {#default-speed--road-speeds}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Dla wszystkich typów nawigacji minimalna i maksymalna dopuszczalna prędkość, zarówno domyślna, jak i drogowa, może być różna, zgodnie z określonymi wartościami ([Domyślne ograniczenia prędkości](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) i ograniczeniami dla pojazdów. Prędkość jest również ustawiana w określonych przyrostach, aby ustawienia aplikacji były maksymalnie użyteczne. Dla profili *Pieszo*, *Jazda konna* i *Jazda na rowerze*, w małych przyrostach odpowiadających 0,1 km/h ([Jednostki i formaty](https://osmand.net/docs/user/personal/profiles#units--formats)), a dla pozostałych profili, w przyrostach odpowiadających 1 km/h.
-Ustawienia prędkości określają, kiedy aktywowane są [komunikaty głosowe](../guidance/voice-navigation.md).
-
-Te parametry są używane jako prędkość do oszacowania [czasu przybycia](../../widgets/nav-widgets.md#time-to-intermediate), gdy prędkość nie może być określona na podstawie danych mapy:
-
-- dla wybranego profilu;
-- jeśli używane drogi nie mają ograniczeń prędkości, co może również wpływać na routing;
-- jeśli wybrano ślady wygenerowane przez użytkownika lub zaimportowane.
-
-
-#### Prędkość domyślna {#default-speed}
-
-**Prędkość domyślna** to wstępnie ustawiona prędkość ruchu. Jest używana do obliczania czasu przybycia i określania optymalnej trasy na podstawie prędkości ruchu, którą aplikacja uważa za typową dla tego trybu transportu. Na przykład samochód, transport publiczny, pieszy lub prędkość ustawiona ręcznie.
-
-
-#### Prędkości drogowe {#road-speeds}
-
-<InfoAndroidOnly />
-
-![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-:::note
-Te ustawienia w iOS są dostępne w *Menu → Ustawienia → profil aplikacji → Ustawienia nawigacji → Parametry trasy → Prędkości drogowe*.
-:::
-
--->
-
-- **Prędkość minimalna**
-Ustawienie określa minimalną prędkość jazdy dla wszystkich typów dróg na trasie. Zwiększa priorytet dla dróg o zalecanej prędkości niższej niż prędkość minimalna.
-- **Prędkość maksymalna**
-Ustawienie określa maksymalną prędkość jazdy i zmniejsza priorytet dla dróg o możliwej prędkości wyższej niż maksymalna.
-
-
-## Szczegółowe wskazówki dotyczące ścieżki {#detailed-track-guidance}
+## Szczegółowe prowadzenie po śladzie {#detailed-track-guidance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -537,41 +333,39 @@ Ustawienie określa maksymalną prędkość jazdy i zmniejsza priorytet dla dró
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
-![Dołącz do dróg 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png) ![Ustawienia nawigacji Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
+![Dołącz do dróg 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Ustawienia nawigacji Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Szczegółowe wskazówki dotyczące ścieżki*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Szczegółowe prowadzenie po śladzie*
 
-![Ustawienia nawigacji](@site/static/img/navigation/detailed_track_guidance_1_ios.png) ![Ustawienia nawigacji](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
+![Ustawienia nawigacji](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Ustawienia nawigacji](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Funkcja **Szczegółowe wskazówki dotyczące ścieżki** poprawia dokładność nawigacji po trasie podczas korzystania z **tras opartych na ścieżkach**. Po wybraniu ścieżki jako celu podróży możesz włączyć ustawienie [Dołącz do dróg](../setup/gpx-navigation.md#attach-to-the-roads) z menu [Śledź ścieżkę](../setup/gpx-navigation.md#follow-track-options). Zapewnia to wyrównanie ścieżki z istniejącymi drogami, co zapewnia płynniejszą i dokładniejszą nawigację.
+Funkcja **Szczegółowe prowadzenie po śladzie** poprawia dokładność nawigacji po trasie podczas korzystania z **tras opartych na śladach**. Po wybraniu śladu jako miejsca docelowego można włączyć ustawienie [Dołącz do dróg](../setup/gpx-navigation.md#attach-to-the-roads) z menu [Podążaj za śladem](../setup/gpx-navigation.md#follow-track-options). Zapewnia to dopasowanie śladu do istniejących dróg, dzięki czemu nawigacja będzie dostarczać precyzyjnych instrukcji na rondach, zakrętach, podawać ograniczenia prędkości, pasy ruchu i nazwy ulic.
 
-Istnieją dwie opcje korzystania z *Szczegółowych wskazówek dotyczących ścieżki*:
+Istnieją dwie opcje korzystania z funkcji *Szczegółowe prowadzenie po śladzie*:
 
-- **<Translate android="true" ids="ask_every_time"/>** (*ustawienia domyślne*) – Opcja *Dołącz do dróg* będzie pojawiać się w sekcji [Szczegóły trasy](../setup/route-details.md) za każdym razem, gdy obliczana jest trasa oparta na ścieżce. Pozwala to zdecydować, czy zastosować dołączenie do dróg dla każdej sesji nawigacyjnej.
+- **<Translate android="true" ids="ask_every_time"/>** (*ustawienia domyślne*) – opcja *Dołącz do dróg* będzie pojawiać się w sekcji [Szczegóły trasy](../setup/route-details.md) za każdym razem, gdy obliczana jest trasa oparta na śladzie. Pozwala to zdecydować, czy zastosować dołączanie do dróg dla każdej sesji nawigacyjnej.
 
-- **<Translate android="true" ids="shared_string_always"/>** – Proces dołączania do dróg zostanie zastosowany automatycznie dla każdej trasy *nawigacji po ścieżce* bez konieczności ręcznego potwierdzania.
+- **<Translate android="true" ids="shared_string_always"/>** – proces dołączania do dróg będzie stosowany automatycznie dla każdej trasy *nawigacji po śladzie* bez konieczności ręcznego potwierdzania.
 
-Więcej informacji na temat korzystania z nawigacji opartej na ścieżkach znajdziesz w [Nawigacja po ścieżce](../setup/gpx-navigation.md).
+Więcej informacji na temat korzystania z nawigacji opartej na śladach można znaleźć w artykule [Nawigacja po śladzie](../setup/gpx-navigation.md).
 
 
 ## Powiązane artykuły {#related-articles}
 
 - [Parametry trasy](../routing/osmand-routing.md#routing-types)
 - [Przygotowanie trasy](../setup/route-navigation.md)
-- [Nawigacja po ścieżce](../setup/gpx-navigation.md)
-- [Nawigacja po znacznikach](../setup/markers-navigation.md)
+- [Nawigacja po śladzie](../setup/gpx-navigation.md)
+- [Nawigacja według znaczników](../setup/markers-navigation.md)
 - [Szczegóły trasy](../setup/route-details.md)
 - [Ekran mapy podczas nawigacji](./map-during-navigation.md)
 - [Komunikaty głosowe / Powiadomienia](./voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Ostatnia aktualizacja: kwiecień 2025*

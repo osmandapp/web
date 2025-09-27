@@ -1,7 +1,7 @@
 ---
-source-hash: 8b0e6840fa8a6ab7074614a2706b18f2202e61cb73c6101c59c92ac68b75cc73
+source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
 sidebar_position: 4
-title: Pakiet niestandardowy
+title:  Pakiet niestandardowy
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,34 +13,38 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+
 ## Przegląd {#overview}
 
-W aplikacji OsmAnd można tworzyć wiele dostosowań i eksportować je do pliku `.osf`. Po dodaniu opisu, obrazu i ikony, te dostosowania stają się całkowicie niezależną wtyczką. Wtyczka ta może zawierać:
+W aplikacji OsmAnd można tworzyć wiele dostosowań i eksportować je do pliku `.osf`. Po dodaniu opisu, obrazu i ikony, te dostosowania stają się całkowicie niezależną wtyczką. Taka wtyczka może zawierać:
 
-- Wszystkie [ustawienia profilu](../personal/profiles.md) z nowym profilem.
-- Specyficzny zestaw szybkich akcji i układów menu dla *szuflady* i *menu kontekstowego*.
+- Wszystkie [Ustawienia profilu](../personal/profiles.md) z nowym profilem.
+- Określony zestaw szybkich akcji i układów menu dla *Szuflady* i *Menu kontekstowego*.
 - Niestandardową mapę offline wewnątrz wtyczki lub sugerowaną do pobrania.
-- Specyficzne typy tras online i mapy online.
+- Specyficzne typy trasowania online i mapy online.
 
-## Jak stworzyć {#how-to-create}
+
+## Jak utworzyć {#how-to-create}
 
 ![Pakiet niestandardowy](@site/static/img/plugins/custom/1.jpg)
 
-Plik `.osf` to zmieniony plik `.zip` zawierający pliki i foldery `.json`. Przykładowo, możesz pobrać nasze przygotowane pliki z [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) lub gotową wtyczkę z tego [linku](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).
+Plik `.osf` to plik `.zip` o zmienionej nazwie, zawierający pliki `.json` i foldery. Jako przykład można pobrać nasze przygotowane pliki z [Dysku Google](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) lub gotową wtyczkę z tego [linku](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).  
 
 Możesz modyfikować pliki `.json` za pomocą pliku *items.json* OsmAnd, który zawiera polecenia do importowania plików `.json`, plików `.obf`, ikon i innych.
 
-Możesz potrzebować przeczytać:
+Może być konieczne przeczytanie:
 
 - O [formacie `.json`](https://en.wikipedia.org/wiki/JSON).
-- O [edytorach tekstowych](https://en.wikipedia.org/wiki/List_of_text_editors), za pomocą których można otwierać i edytować pliki w formacie JSON.
+- O [edytorach tekstu](https://en.wikipedia.org/wiki/List_of_text_editors), za pomocą których można otwierać i edytować pliki w formacie JSON.
 - O [edytorze Sublime Text](https://en.wikipedia.org/wiki/Sublime_Text), który jest używany w OsmAnd jako odniesienie.
 - Możesz sprawdzić swój kod w [JSON Editor Online](https://jsoneditoronline.org/).
+
 
 ### items.json {#itemsjson}
 
 <details>
-<summary> Plik <b>items.json</b> OsmAnd. </summary>
+<summary> Plik <b>items.json</b> OsmAnd. </summary> 
 
 ```
 {
@@ -53,18 +57,18 @@ Możesz potrzebować przeczytać:
          "version" : 1,
          "icon": {
              "" : "@plugin-id.png"
-
+             
          },
          "image": {
              "" :"@plugin-image.webp"
          },
          "name":{
-            "":"Test Plugin",
-            "ru":"Test Plugin: RU language"
+            "":"Testowa wtyczka",
+            "ru":"Testowa wtyczka: język RU"
          },
          "description":{
-            "":"This package is a test package and displays test information.",
-            "ru":"This package is a test package and displays test information. RU language."
+            "":"Ten pakiet jest pakietem testowym i wyświetla informacje testowe.",
+            "ru":"Ten pakiet jest pakietem testowym i wyświetla informacje testowe. Język RU."
          }
       },
 
@@ -82,8 +86,8 @@ Możesz potrzebować przeczytać:
             {
                "path":"test",
                "name":{
-                  "":"My offline maps",
-                  "ru":"RU: My offline maps"
+                  "":"Moje mapy offline",
+                  "ru":"RU: Moje mapy offline"
                },
                "icon":{
                   "":"ic_world_globe_dark"
@@ -91,12 +95,12 @@ Możesz potrzebować przeczytać:
                "header-color":"#002E64",
                "description":{
                   "text":{
-                     "":"This package is a collection of online and offline map sources of various types.",
-                     "ru":"RU: This package is a collection of online and offline map sources of various types."
+                     "":"Ten pakiet to zbiór źródeł map online i offline różnego typu.",
+                     "ru":"RU: Ten pakiet to zbiór źródeł map online i offline różnego typu."
                   },
                   "button":[
                      {
-                        "":"Telegram chat OsmAnd",
+                        "":"Czat Telegram OsmAnd",
                         "url":"https:\/\/t.me\/OsmAndMaps"
                      }
                   ]
@@ -107,8 +111,8 @@ Możesz potrzebować przeczytać:
                "path":"test/Waterway",
                "header-color":"#002E64",
                "name":{
-                  "":"Waterway",
-                  "ru":"RU: waterway"
+                  "":"Droga wodna",
+                  "ru":"RU: droga wodna"
                },
                "icon":{
                   "":"ic_world_globe_dark"
@@ -116,8 +120,8 @@ Możesz potrzebować przeczytać:
                "items":[
                   {
                      "name":{
-                        "":"Offline Waterway map SA",
-                        "ru":"RU: Offline Waterway map SA"
+                        "":"Mapa offline dróg wodnych SA",
+                        "ru":"RU: Mapa offline dróg wodnych SA"
                      },
                      "filename":"waterway.obf.zip",
                      "type":"map",
@@ -127,8 +131,8 @@ Możesz potrzebować przeczytać:
                      "contentSize":28195301,
                      "description":{
                         "text":{
-                           "":"Zoom min: 0<br />Zoom max: 19<br />Countries: SA",
-                           "ru":"RU: Zoom min: 0<br />Zoom max: 19<br />Countries: SA"
+                           "":"Min. powiększenie: 0<br />Maks. powiększenie: 19<br />Kraje: SA",
+                           "ru":"RU: Min. powiększenie: 0<br />Maks. powiększenie: 19<br />Kraje: SA"
                         },
                         "image":[
                            "https://drive.google.com/uc?id=16HjUHsSWNgeQI0bmuup9ohpyrg6rWkHH&export=download"
@@ -136,8 +140,8 @@ Możesz potrzebować przeczytać:
                      },
                      "downloadurl":"https://drive.google.com/uc?id=10iP2VZexHtHC0QLhACZ1QoEy-duNN5Wg&export=download",
                      "firstsubname":{
-                        "":"Waterway",
-                        "ru":"RU: Waterway"
+                        "":"Droga wodna",
+                        "ru":"RU: Droga wodna"
                      },
                      "secondsubname":{
                         "":"",
@@ -145,7 +149,7 @@ Możesz potrzebować przeczytać:
                      }
                 }
            ]
-        }]
+        }] 
     },
 
       {
@@ -160,7 +164,7 @@ Możesz potrzebować przeczytać:
             "order":32,
             "parent":"bicycle",
             "stringKey":"bicycle_test",
-            "userProfileName" : "Test Prof"
+            "userProfileName" : "Testowy prof."
          },
          "prefs" : {
             "drawer_logo": { "" : "@logo.png"},
@@ -191,9 +195,9 @@ Możesz potrzebować przeczytać:
       {
          "type":"SUGGESTED_DOWNLOADS",
          "pluginId":"test.plugin",
-         "comment-1" : "search-type are latlon (closest by latlon), worldregion (by boundaries if name matches worldRegion downloadName as we do for default types), by default natural order, limit finds first N elements",
-         "comment-2" : "predefined scope-id are @type of indexes.xml map, srtm_map, road_map, wikimap, wikivoyage, hillshade, slope, fonts, voice, depth ",
-         "comment-3" : "names filters ignore case by name.contains(filterName)",
+         "comment-1" : "search-type to latlon (najbliższy wg latlon), worldregion (wg granic, jeśli nazwa pasuje do downloadName worldRegion, tak jak w przypadku typów domyślnych), domyślnie porządek naturalny, limit znajduje pierwsze N elementów",
+         "comment-2" : "predefiniowane scope-id to @type z indexes.xml map, srtm_map, road_map, wikimap, wikivoyage, hillshade, slope, fonts, voice, depth ",
+         "comment-3" : "filtry nazw ignorują wielkość liter wg name.contains(filterName)",
          "items": [{
              "scope-id" : "test-downloads",
              "limit" : 1,
@@ -215,19 +219,19 @@ Możesz potrzebować przeczytać:
             "locationIcon": {
                  "" : "@bentley-car.png"
             },
-            "locationIconId": "BENTLEY",
+            "locationIconId": "BENTLEY", 
             "navigationIcon": {
                  "" : "@bentley-car-moving.png"
             },
             "navigationIconId": "BENTLEY"
          }]
       },
-
+      
       {
          "type":"QUICK_ACTIONS",
          "pluginId":"test.plugin",
          "items": [{
-            "name": "Test quick action",
+            "name": "Testowa szybka akcja",
             "actionType": "osmbug.add",
             "params": "{\"dialog\":\"false\",\"message\":\"Message\"}"
           }]
@@ -237,7 +241,7 @@ Możesz potrzebować przeczytać:
          "type":"POI_UI_FILTERS",
          "pluginId":"test.plugin",
           "items": [{
-                "name": "Test Search",
+                "name": "Testowe wyszukiwanie",
                 "filterId": "test_search",
                 "acceptedTypes": "{\"sustenance\":[\"bar\",\"alpine_hut\"]}"
             }]
@@ -270,66 +274,68 @@ Możesz potrzebować przeczytać:
 
 </details>
 
+
 ## Typy importu {#import-types}
 
-Istnieje wiele typów importu dla pliku OsmAnd *items.JSON*. Wszystkie typy można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), a ten artykuł opisuje tylko kilka z nich.
+Istnieje wiele typów importu dla pliku *items.JSON* OsmAnd. Wszystkie typy można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), a ten artykuł opisuje tylko kilka z nich.
 
 ### Opis wtyczki {#plugin-description}
 
-Na początek tworzysz i dodajesz swoją wtyczkę do *items.JSON*. Pierwszy typ importu to **"PLUGIN"**.
-*<u>UWAGA</u>*. Musisz utworzyć i dodać tę linię dla każdego typu **"pluginId":"test.plugin"**, gdzie *test.plugin* to nazwa Twojego pakietu.
+Na początek tworzysz i dodajesz swoją wtyczkę do *items.JSON*. Pierwszym typem importu jest **"PLUGIN"**.  
+   *<u>UWAGA</u>*. Musisz utworzyć i dodać tę linię dla każdego typu **"pluginId":"test.plugin"**, gdzie *test.plugin* to nazwa Twojego pakietu.  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/2.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/2.jpg)
 
 ### Obrazy wtyczki {#plugin-images}
 
-Aby zaimportować obrazy ikon wtyczki do OsmAnd, utwórz folder (w naszym przykładzie jest to folder *"res”*), w którym będą przechowywane pliki obrazów. Nazwa tego typu to **"RESOURCES"**.
+Aby zaimportować obrazy ikon wtyczki do OsmAnd, utwórz folder (w naszym przykładzie jest to folder *"res”*), w którym będą przechowywane pliki obrazów. Nazwa tego typu to **"RESOURCES"**.  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/4.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/4.jpg)
+
 
 ### Profile {#profiles}
 
-Używając typu **"PROFILE”** możesz dodać profil nawigacyjny dla swojej wtyczki. Wszystkie informacje o profilu nawigacyjnym możesz uzyskać w wyeksportowanym pliku JSON, gdzie można odczytać, które typy *items.JSON* zostały dodane (*„QUICK_ACTIONS”, „POI_UI_FILTERS”, „MAP_SOURCES”* lub inne).
-UWAGA: Rozpocznij tworzenie profilu nawigacyjnego ze wszystkimi parametrami, w tym celu wyeksportuj profile nawigacyjne i skopiuj niezbędne elementy z pliku *profiles.osf* (items.JSON) do pliku *PLUGIN.osf* (items.JSON).
+Używając typu **"PROFILE”** możesz dodać profil nawigacyjny dla swojej wtyczki. Wszystkie informacje o swoim profilu nawigacyjnym możesz uzyskać w wyeksportowanym pliku JSON, gdzie można odczytać, które typy *items.JSON* zostały dodane (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* lub inne).
+UWAGA: Zacznij tworzyć profil nawigacyjny ze wszystkimi parametrami, w tym celu wyeksportuj profile nawigacyjne i skopiuj niezbędne elementy z pliku *profiles.osf* (items.JSON) do pliku *PLUGIN.osf* (items.JSON).  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/6.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/6.jpg)
 
-### Pobieranie {#downloads}
+### Pobrane pliki {#downloads}
 
-Możesz dodawać dowolne pliki, takie jak *SQLite, OBF lub czcionki*, do pobrania za pomocą typu **"DOWNLOADS"**. Główne typy plików do pobrania można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).
-*<u>UWAGA</u>*. Tag **"isHidden":"true"** (domyślnie jest to *false*) może ukryć dane mapy przed [Mapami i zasobami](../personal/maps-resources.md#local) OsmAnd. W **"scope-id"** możesz dodać wszystkie niezbędne informacje o adresie URL pliku, nazwie, opisie i innych.
+Możesz dodać dowolne pliki, takie jak *SQLite, OBF lub czcionki* do pobrania, używając typu **"DOWNLOADS"**. Główne typy plików do pobrania można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
+   *<u>UWAGA</u>*. Tag **"isHidden":"true"** (domyślnie jest to *false*) może ukryć dane mapy przed [Mapami i zasobami](../personal/maps-resources.md#local) OsmAnd. W **"scope-id"** możesz dodać wszystkie niezbędne informacje o adresie URL pliku, nazwie, opisie i nie tylko.  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/3.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/3.jpg)
 
-### Sugerowane pobieranie {#suggested-downloads}
+### Sugerowane pliki do pobrania {#suggested-downloads}
 
-W typie **"SUGGESTED_DOWNLOADS"** możesz pobrać mapy, które OsmAnd oferuje podczas importowania nowej wtyczki.
+W typie **"SUGGESTED_DOWNLOADS"** możesz pobrać mapy, które OsmAnd oferuje podczas importowania nowej wtyczki.  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/7.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/7.jpg)
 
 ### Pliki {#files}
 
-W typie **"FILE"** możesz dodawać pliki z folderów wtyczki do folderów OsmAnd, których "podtyp" można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). W podanym przykładzie dodano pliki *routing.xml* i *rendering.xml*. Możesz przeczytać, jak tworzyć te pliki, pod linkami [tutaj](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) i [tutaj](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+ W typie **"FILE"** możesz dodawać pliki z folderów wtyczki do folderów OsmAnd, których "podtyp" można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). W podanym przykładzie dodano pliki *routing.xml* i *rendering.xml*. O tym, jak tworzyć te pliki, można przeczytać pod linkami [tutaj](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) i [tutaj](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).  
 
-![Pakiet niestandardowy](@site/static/img/plugins/custom/8.jpg)
+   ![Pakiet niestandardowy](@site/static/img/plugins/custom/8.jpg)
 
-Gdy plik *items.JSON* i wszystkie pliki w folderze są gotowe, możesz spakować je w jeden dokument. Następnie plik *.zip* powinien zostać zmieniony na *.osf*, a wtedy Twój *PLUGIN.osf* będzie gotowy do dodania do aplikacji OsmAnd.
+Gdy plik *items.JSON* i wszystkie pliki w folderze są gotowe, można je spakować do jednego dokumentu. Następnie plik *.zip* należy przemianować na *.osf*, a wtedy Twój *PLUGIN.osf* będzie gotowy do dodania do aplikacji OsmAnd.
+
 
 ## Przykłady {#examples}
 
-Możesz zapoznać się z niektórymi wtyczkami, które użytkownicy OsmAnd stworzyli samodzielnie:
+Możesz rzucić okiem na niektóre wtyczki, które użytkownicy OsmAnd stworzyli samodzielnie:
 
-- [Wtyczka niestandardowa Mapy USA](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (dane PAD-US, szlaki i drogi USFS, rekreacja USFS).
-- [Wtyczka niestandardowa map Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf).
-- [Wtyczka niestandardowa Legenda mapy](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf).
-- [UMP-PL](https://ump.waw.pl/) Polska [wtyczka niestandardowa mapy](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
-- [Wtyczka niestandardowa renderowania OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf).
-- [Wtyczka niestandardowa Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf).
+ - Niestandardowa wtyczka [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (dane PAD-US, szlaki i drogi USFS, rekreacja USFS).
+ - Niestandardowa wtyczka [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf).
+ - Niestandardowa wtyczka [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf).
+ - Polska [niestandardowa wtyczka mapy](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) [UMP-PL](https://ump.waw.pl/).
+ - Niestandardowa wtyczka [OsmAnd Rendering plugin](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf).
+ - Niestandardowa wtyczka [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf).
+
 
 ## Powiązane artykuły {#related-articles}
 
 - [Interakcja z mapą](../../user/map/interact-with-map.md)
 - [Ustawienia globalne](../../user/personal/global-settings.md)
-- [Mapy wektorowe (style map)](../../user/map/vector-maps.md)
-
-> *Ostatnia aktualizacja: czerwiec 2024*
+- [Mapy wektorowe (Style mapy)](../../user/map/vector-maps.md)

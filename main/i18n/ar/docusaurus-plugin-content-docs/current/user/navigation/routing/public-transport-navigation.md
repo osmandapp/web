@@ -1,7 +1,7 @@
 ---
-source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
+source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
 sidebar_position: 5
-title:  Public Transport routing
+title:  توجيه النقل العام
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,114 +12,118 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
+
+
 ## نظرة عامة {#overview}
 
-تتيح لك ميزة التنقل بالمواصلات العامة في تطبيق OsmAnd تحديد المسارات باستخدام وسائل النقل العام، مما سيساعدك بالتأكيد على التنقل في "الغابة الخرسانية" بشكل أسرع.
+تتيح لك ميزة الملاحة عبر وسائل النقل العام في تطبيق OsmAnd تحديد المسارات باستخدام وسائل النقل العام، مما سيساعدك بالتأكيد على التنقل في "الغابة الخرسانية" بشكل أسرع.
 
-تُؤخذ بيانات مسارات النقل العام من مشروع [OpenStreetMap](http://openstreetmap.org/). يستخدم OsmAnd [مخطط PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) للملاحة. يدعم OsmAnd مسارات OpenStreetMap التالية للملاحة: *حافلة*، *ترولي باص*، *تاكسي مشترك*، *قطار جبلي مائل*، *مترو أنفاق*، *قطار خفيف*، *قطار أحادي*، *قطار*، *ترام*، *عبّارة*. يتم تكوين السرعة الافتراضية لكل نوع من المركبات في [Routing xml](../../../technical/build-osmand/routing.md) وتُستخدم للعثور على أسرع المسارات.
+تُؤخذ البيانات المتعلقة بمسارات النقل العام من مشروع [خريطة الشارع المفتوحة](http://openstreetmap.org/). يستخدم OsmAnd [مخطط PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) للملاحة. يدعم OsmAnd مسارات خريطة الشارع المفتوحة التالية للملاحة: *bus* (حافلة)، *trolleybus* (حافلة كهربائية)، *share_taxi* (سيارة أجرة مشتركة)، *funicular* (قطار جبلي مائل)، *subway* (مترو أنفاق)، *light_rail* (سكة حديد خفيفة)، *monorail* (قطار أحادي السكة)، *train* (قطار)، *tram* (ترام)، *ferry* (عبّارة). يتم تكوين السرعة الافتراضية لكل نوع من المركبات في [ملف Routing xml](../../../technical/build-osmand/routing.md) ويُستخدم للعثور على أسرع المسارات.
 
 :::note
-ميزة التنقل بالمواصلات العامة في مرحلة الاختبار. في الوقت الحالي، يمكنك إنشاء وعرض مسارك دون وظيفة التنقل الكاملة.
+توجيه النقل العام في مرحلة الاختبار. في الوقت الحالي، يمكنك إنشاء مسارك وعرضه بدون وظيفة الملاحة الكاملة.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation public transport Android](@site/static/img/navigation/public/navigation_android.png)
+![ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![avigation public transport iOS](@site/static/img/navigation/public/navigation_ios.png)
+![ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## كيفية الاستخدام {#how-to-use}
 
-لبدء التنقل في المدينة بواسطة وسائل النقل العام، استخدم [زر التنقل](../../widgets/map-buttons.md#directions) على شاشة الخريطة أو حدد خيار التنقل في *القائمة الرئيسية*.
+لبدء الملاحة في جميع أنحاء المدينة بواسطة وسائل النقل العام، استخدم [زر الملاحة](../../widgets/map-buttons.md#directions) على شاشة الخريطة أو حدد خيار الملاحة في *القائمة الرئيسية*.
 
-**1.** تحتاج إلى اختيار *ملف تعريف التنقل بالمواصلات العامة*، ونقاط البداية والوجهة.
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="أندرويد">
-
-![Navigation public transport routes Android](@site/static/img/navigation/public/navigation_public_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigation public transport routes iOS](@site/static/img/navigation/public/navigation_public_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**2.** يقدم OsmAnd خيارات مسار مع أوقات المشي ومسارات النقل العام مع معلومات المسار: الوقت، المسافة، النقل، والمسارات العامة. تحتاج إلى التمرير عبر شاشة التنقل لتحديد الخيار المطلوب.
+**١.** تحتاج إلى اختيار *ملف تعريف ملاحة النقل العام*، ونقاط البداية والوجهة.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation public transport way Android](@site/static/img/navigation/public/navigation_way_android.png)
+![مسارات ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_public_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation public transport way iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![مسارات ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**3.** يمكنك عرض جميع اقتراحات المسار الممكنة على الخريطة باستخدام زر *إظهار على الخريطة*. اسحب عبر الشاشات لعرض خيار المسار التالي.
+**٢.** يقدم OsmAnd خيارات للمسارات مع أوقات المشي ومسارات النقل العام مع معلومات المسار: الوقت، والمسافة، والتغيير، والمسارات العامة. تحتاج إلى التمرير عبر شاشة الملاحة لتحديد الخيار المطلوب.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation public transport Details Android](@site/static/img/navigation/public/navigation_details_android.png)
+![طريق ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation public transport Details iOS](@site/static/img/navigation/public/navigation_details_ios.png)
+![طريق ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**4.** انقر على زر "التفاصيل" لفتح وصف المسار المحدد مع جميع المحطات وعمليات النقل.
+**٣.** يمكنك عرض جميع اقتراحات المسارات الممكنة على الخريطة باستخدام زر *عرض على الخريطة*. اسحب عبر الشاشات لعرض خيار المسار التالي.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation public transport stops list Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![تفاصيل ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_details_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation public transport stops list iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![تفاصيل ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+
+**٤.** انقر على زر "التفاصيل" لفتح وصف للمسار المحدد مع جميع المحطات والتغييرات.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![قائمة محطات ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_stops_list_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![قائمة محطات ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ## البيانات والإرشادات {#data-and-guideline}
 
-يستخدم OsmAnd مخططًا جديدًا للنقل العام، يُسمى أيضًا Public Transport Version 2 (PTv2) لخوارزمية التنقل بالمواصلات العامة في OsmAnd.
+يستخدم OsmAnd مخططًا جديدًا للنقل العام، يُطلق عليه أيضًا اسم Public Transport Version 2 (PTv2) لخوارزمية ملاحة النقل العام في OsmAnd.
 
 - يمكنك التحقق من وسائل النقل العام الخاصة بك [هنا](http://tools.geofabrik.de/osmi/).
-- يتوفر دليل لإنشاء أو تعديل مسارات النقل العام على [مدونتنا](https://osmand.net/blog/guideline-pt).
-- العرض التقديمي [2019: التنقل بالمواصلات العامة باستخدام OpenStreetMap بواسطة OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
-
-> *آخر تحديث: يونيو 2024.*
+- يتوفر دليل لبناء أو تعديل مسارات النقل العام على [مدونتنا](https://osmand.net/blog/guideline-pt).
+- العرض التقديمي [2019: ملاحة النقل العام باستخدام خريطة الشارع المفتوحة بواسطة OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).

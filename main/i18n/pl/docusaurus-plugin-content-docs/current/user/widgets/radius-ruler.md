@@ -1,7 +1,7 @@
 ---
-source-hash: 338468efc137a0618ed472d99c99d808cd6f3df5d30650e5054eabd75c599d06
+source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
 sidebar_position: 5
-title:  Linijka promienia i linijka
+title:  Linijka promienia i Linijka
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Narzędzia linijki** w OsmAnd zostały zaprojektowane, aby pomóc Ci precyzyjnie mierzyć odległości i zrozumieć [skalę mapy](https://en.wikipedia.org/wiki/Scale_(map)).
+Narzędzia **Linijki** w OsmAnd zostały zaprojektowane, aby pomóc w precyzyjnym mierzeniu odległości i zrozumieniu [skali mapy](https://en.wikipedia.org/wiki/Scale_(map)).
 
 - Narzędzie **Linijka** wyświetla dynamiczną skalę mapy w jednostkach takich jak metry lub stopy, pomagając wizualnie ocenić odległości między obiektami na ekranie.
 - **Linijka promienia** pozwala ustawić promień z dowolnego punktu na mapie, pokazując koncentryczne okręgi reprezentujące interwały odległości.
-- Narzędzie **Odległość przez dotknięcie** pozwala mierzyć odległości, dotykając mapy — albo z Twojej bieżącej lokalizacji, albo między dowolnymi dwoma lokalizacjami.
+- Narzędzie **Odległość przez dotknięcie** pozwala mierzyć odległości poprzez dotykanie mapy — albo od bieżącej lokalizacji, albo między dwoma dowolnymi lokalizacjami.
 
-Te narzędzia są przydatne do planowania tras, szacowania bliskości punktów orientacyjnych i analizowania obszarów — zarówno do aktywności na świeżym powietrzu, jak i do precyzyjnej nawigacji.
+Narzędzia te są przydatne do planowania tras, szacowania bliskości punktów orientacyjnych i analizowania obszarów — zarówno podczas aktywności na świeżym powietrzu, jak i do precyzyjnej nawigacji.
 
 ![Ekran linijki promienia](@site/static/img/widgets/radius_ruler_screen.png)
 
@@ -36,32 +36,32 @@ Te narzędzia są przydatne do planowania tras, szacowania bliskości punktów o
 
 <TabItem value="android" label="Android">
 
-![Narzędzie linijki](@site/static/img/widgets/ruler_tool_map_andr.png)
+![Narzędzie Linijka](@site/static/img/widgets/ruler_tool_map_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Narzędzie linijki](@site/static/img/widgets/ruler_tool_map_ios.png)
+![Narzędzie Linijka](@site/static/img/widgets/ruler_tool_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Linijka** wyświetla aktualną skalę mapy jako odcinek linii oznaczony jego rzeczywistą długością (np. 100 m lub 500 stóp), u dołu ekranu. Charakterystyka:
+**Linijka** wyświetla bieżącą skalę mapy jako odcinek linii oznaczony jego rzeczywistą długością (np. 100 m lub 500 stóp) na dole ekranu. Charakterystyka:
 
 - Skala dostosowuje się dynamicznie podczas powiększania lub pomniejszania.
 - Daje wizualne odniesienie do szacowania rzeczywistych odległości między obiektami na mapie.
-- Długość segmentu jest zaokrąglana do wygodnych jednostek (np. 100 m), z grubsza odpowiadając szerokości kciuka dla intuicyjnego użytkowania.
+- Długość segmentu jest zaokrąglana do wygodnych jednostek (np. 100 m), w przybliżeniu odpowiadając szerokości kciuka dla intuicyjnego użytkowania.
 
-To narzędzie jest pomocne, gdy potrzebujesz szybkiego zrozumienia rozmiarów obiektów lub odległości bez umieszczania znaczników lub tras.
+To narzędzie jest pomocne, gdy potrzebujesz szybko zrozumieć rozmiary obiektów lub odległości bez umieszczania znaczników lub tras.
 
 | | |
 |------------|------------|
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Widżet linijki promienia {#radius-ruler-widget}
+## Widżet Linijka promienia {#radius-ruler-widget}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -82,13 +82,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 </Tabs>
 
-[Widżet linijki promienia](../widgets/info-widgets.md#radius-ruler) pokazuje odległość między Twoją bieżącą lokalizacją (*Moja lokalizacja*) a środkiem mapy. Możesz również przesunąć mapę, aby ustawić dowolny niestandardowy punkt centralny. Charakterystyka:
+[Widżet Linijka promienia](../widgets/info-widgets.md#radius-ruler) pokazuje odległość między Twoją bieżącą lokalizacją (*Moja lokalizacja*) a środkiem mapy. Możesz również przesunąć mapę, aby ustawić dowolny niestandardowy punkt centralny. Charakterystyka:
 
-- Wyświetlaj koncentryczne okręgi wyśrodkowane na wybranym punkcie.
-- Pierwszy okrąg odzwierciedla aktualną [skalę mapy](#ruler) dla szybkiego wizualnego odniesienia.
-- Automatycznie dostosowuje się podczas powiększania, aby utrzymać dokładne wartości promienia.
+- Wyświetla koncentryczne okręgi wyśrodkowane na wybranym punkcie.
+- Pierwszy okrąg odzwierciedla bieżącą [skalę mapy](#ruler) w celu szybkiego odniesienia wizualnego.
+- Automatycznie dostosowuje się podczas powiększania, aby zachować dokładne wartości promienia.
 
-Użyj tego widżetu, aby oszacować bliskość punktów zainteresowania lub zaplanować wokół zdefiniowanego obszaru.
+Użyj tego widżetu, aby oszacować bliskość interesujących miejsc lub planować wokół zdefiniowanego obszaru.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -113,7 +113,7 @@ Użyj tego widżetu, aby oszacować bliskość punktów zainteresowania lub zapl
 </Tabs>
 
 
-## Kompas dla linijki promienia {#compass-for-radius-ruler}
+## Kompas dla Linijki promienia {#compass-for-radius-ruler}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -131,24 +131,24 @@ Użyj tego widżetu, aby oszacować bliskość punktów zainteresowania lub zapl
 
 </Tabs>
 
-Gdy **Linijka promienia** jest aktywna, mapa wyświetla nakładkę kompasu, która pomaga zorientować się w przestrzeni. Nakładka pokazuje, jak mapa jest wyrównana względem prawdziwej Północy, i może zawierać niebieski trójkąt wskazujący bieżący kierunek urządzenia.
+Gdy **Linijka promienia** jest aktywna, mapa wyświetla nakładkę kompasu, która pomaga zorientować się w przestrzeni. Nakładka pokazuje, jak mapa jest wyrównana względem prawdziwej północy i może zawierać niebieski trójkąt wskazujący bieżący kierunek urządzenia.
 
-- Pierścień kompasu pokazuje orientację mapy — czy Północ jest u góry, czy obrócona.
-- **Niebieski trójkąt** wskazuje kierunek, w którym zwrócone jest Twoje urządzenie.
+- Pierścień kompasu pokazuje orientację mapy — czy północ jest na górze, czy jest obrócona.
+- **Niebieski trójkąt** wskazuje kierunek, w którym skierowane jest urządzenie.
 - Aby korzystać z tej funkcji, urządzenie musi obsługiwać i mieć włączony **czujnik kompasu** (kompas GPS, magnetometr).
 - Trzymanie urządzenia poziomo poprawia dokładność i wizualizację.
-- Jeśli **niebieski trójkąt** i **czerwona strzałka** (Północ) wskazują w górę, urządzenie jest wyrównane z prawdziwą Północą.
+- Jeśli **niebieski trójkąt** i **czerwona strzałka** (północ) wskazują w górę, urządzenie jest wyrównane z prawdziwą północą.
 
-Ta nakładka jest pomocna w nawigacji na zewnątrz, pozwalając dopasować [orientację mapy](../map/interact-with-map.md#map-orientation--compass) do rzeczywistego otoczenia.  
+Ta nakładka jest pomocna w nawigacji na zewnątrz, umożliwiając dopasowanie [orientacji mapy](../map/interact-with-map.md#map-orientation-modes) do rzeczywistego otoczenia.
 
 | | |
 |------------|------------|
 | Włącz | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>* |
-| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
 
 
-## Pozycja środkowa / dolna {#center--bottom-position}
+## Pozycja na środku / na dole {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -170,9 +170,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Aby zwiększyć widoczny promień wokół Twojej lokalizacji, możesz zmienić pozycję linijki promienia, wybierając opcję *Środek* lub *Dół*.  
+Aby zwiększyć widoczny promień wokół swojej lokalizacji, możesz zmienić pozycję Linijki promienia, wybierając opcję *Środek* lub *Dół*.
 
-Więcej informacji o *pozycji na ekranie* znajdziesz w artykule [Konfiguracja ekranu](../widgets/configure-screen.md#display-position-location-position-on-screen).
+Więcej informacji na temat *pozycji na ekranie* można znaleźć w artykule [Konfiguracja ekranu](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
 ## Widok 3D {#3d-view}
@@ -193,27 +193,27 @@ Więcej informacji o *pozycji na ekranie* znajdziesz w artykule [Konfiguracja ek
 
 </Tabs>
 
-Możesz przełączyć się na **widok 3D**, aby lepiej wizualizować odległości i otaczający teren podczas korzystania z linijki promienia. Ten widok przechyla mapę i zapewnia efekt perspektywy, który rozszerza widoczny promień.
+Możesz przełączyć się na **widok 3D**, aby lepiej wizualizować odległości i otaczający teren podczas korzystania z Linijki promienia. Ten widok przechyla mapę i zapewnia efekt perspektywy, który rozszerza widoczny promień.
 
 - Dotknij [przycisku lokalizacji](../map/interact-with-map.md#my-location-and-zoom), aby skupić się na swojej pozycji.
-- Użyj gestu [przeciągnięcia dwoma palcami w górę](../map/interact-with-map.md#gestures), aby przechylić mapę w tryb 3D.
+- Użyj gestu [przesunięcia dwoma palcami w górę](../map/interact-with-map.md#gestures), aby przechylić mapę do trybu 3D.
 
-Okręgi promienia pojawią się z głębią, co jest szczególnie przydatne do planowania tras w obszarach pagórkowatych lub środowiskach miejskich, gdzie ważny jest kontekst pionowy.
+Okręgi promienia pojawią się z głębią, co jest szczególnie przydatne do planowania tras w pagórkowatych obszarach lub środowiskach miejskich, gdzie ważny jest kontekst pionowy.
 
 
 ## Odległość przez dotknięcie {#distance-by-tap}
 
 ![Odległość między dwoma losowymi punktami na mapie](@site/static/img/widgets/distance_between_two_random_points.png)
 
-Narzędzie **Odległość przez dotknięcie** pozwala mierzyć odległości między punktami na mapie bez używania linijki promienia lub tworzenia trasy.
+Narzędzie **Odległość przez dotknięcie** pozwala mierzyć odległości między punktami na mapie bez użycia Linijki promienia lub tworzenia trasy.
 
 Istnieją dwa przypadki użycia:
 
 - **Odległość od Twojej lokalizacji do punktu**  
-  Dotknij dowolnego miejsca na mapie, a pojawi się prosta linia od Twojej bieżącej lokalizacji do dotkniętego punktu, wraz z etykietą odległości. Linia pozostaje na ekranie, nawet jeśli dotkniesz gdzie indziej.
+  Dotknij dowolnego miejsca na mapie, a pojawi się linia prosta od Twojej bieżącej lokalizacji do dotkniętego punktu wraz z etykietą odległości. Linia pozostaje na ekranie, nawet jeśli dotkniesz gdzie indziej.
 
 - **Odległość między dwoma dowolnymi punktami**  
-  Dotknij jednocześnie dwóch punktów na mapie (multi-touch). Linia łączy te dwa punkty, a zmierzona odległość jest wyświetlana.
+  Dotknij dwóch punktów na mapie jednocześnie (multi-touch). Linia łączy dwa punkty i wyświetlana jest zmierzona odległość.
 
 | | |
 |------------|------------|
@@ -223,9 +223,9 @@ Istnieją dwa przypadki użycia:
 | Format jednostek | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## Przewodniki wideo {#video-guides}
+## Poradniki wideo {#video-guides}
 
-Obejrzyj te krótkie samouczki, aby dowiedzieć się, jak korzystać z linijki promienia i powiązanych narzędzi w OsmAnd:
+Obejrzyj te krótkie samouczki, aby dowiedzieć się, jak korzystać z Linijki promienia i powiązanych narzędzi w OsmAnd:
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -252,5 +252,3 @@ Obejrzyj te krótkie samouczki, aby dowiedzieć się, jak korzystać z linijki p
 - [Widżety nawigacyjne](./nav-widgets.md)
 - [Szybka akcja](./quick-action.md)
 - [Widżety znaczników](./markers.md)
-
-> *Ostatnia aktualizacja: maj 2025*

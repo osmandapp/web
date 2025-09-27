@@ -1,8 +1,8 @@
 ---
-source-hash: aa7b248df7d6116b19b0428376bb9c1f59b764588678067dd00d7ee9bd820a7a
+source-hash: 36fa594008d56ae693369164879dccfe01f275c12d52be379ad60b0b9c264d67
 sidebar_position: 2
-sidebar_label: OsmAnd Cloud
-title: OsmAnd Cloud sur le site Web
+sidebar_label:  OsmAnd Cloud
+title: OsmAnd Cloud sur le site web
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,78 +20,78 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Le [portail cartographique OsmAnd](https://osmand.net/map) est un service basé sur un navigateur fourni par OsmAnd, permettant aux utilisateurs d'explorer des cartes, de gérer leurs données, de planifier et de créer des voyages, ou simplement de parcourir la carte.
+Le [Portail Cartographique OsmAnd](https://osmand.net/map) est un service basé sur un navigateur fourni par OsmAnd, permettant aux utilisateurs d'explorer des cartes, de gérer leurs données, de planifier et de créer des voyages, ou simplement de parcourir la carte.
 
 
 
-## Comment démarrer {#how-to-start}
+## Comment commencer {#how-to-start}
 
-Pour accéder aux fonctionnalités Web d'OsmAnd, vous avez besoin d'un compte :
+Pour accéder aux fonctionnalités d'OsmAnd Web, vous avez besoin d'un compte :
 
-- Si vous avez déjà un abonnement [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte gratuit [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), suivez ces étapes :
+- Si vous avez déjà un abonnement [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte gratuit [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), suivez ces étapes :
 
-  1. Accédez au [**portail cartographique OsmAnd**](https://osmand.net/map).
+  1. Allez sur le [**Portail Cartographique OsmAnd**](https://osmand.net/map).
   2. Ouvrez le menu **Compte**.
-     - **Connexion** : saisissez l'adresse e-mail utilisée pour votre abonnement Pro ou Start.
-     - **Créer un compte** : utilisez cette option pour vous inscrire à un compte OsmAnd Start gratuit.
+     - **Se connecter** : Saisissez l'adresse e-mail utilisée pour votre abonnement Pro ou Start.
+     - **Créer un compte** : Utilisez cette option pour vous inscrire à un compte gratuit OsmAnd Start.
 
-![Web Account](@site/static/img/web/web_account.png)
+![Compte Web](@site/static/img/web/web_account.png)
 
 ## Gestion du compte {#managing-account}
 
-Pour gérer votre compte, accédez à :
-**Menu général → Compte**
+Pour gérer votre compte, allez dans :  
+**Menu Général → Compte**
 
-Après vous être inscrit sur le Web, vous pouvez :
+Après vous être inscrit sur le web, vous pouvez :
 
-- Afficher les informations du compte
+- Consulter les informations du compte
 - Télécharger les sauvegardes cloud
 - Vous déconnecter de votre compte
 - Supprimer votre compte
-- Modifier votre adresse e-mail
-- Consulter vos paiements et achats
+- Changer votre adresse e-mail
+- Voir vos paiements et achats
 
-![Web Account](@site/static/img/web/web_account_2.png)
+![Compte Web](@site/static/img/web/web_account_2.png)
 
 ### Mes données {#my-data}
 
 Vous pouvez télécharger les sauvegardes qui ont été créées et synchronisées depuis votre appareil mobile via **OsmAnd Cloud**.
 
-- Accédez à **Menu général → Compte → Mes données (OsmAnd Cloud) → Tout télécharger**.
+- Allez dans **Menu Général → Compte → Mes données (OsmAnd Cloud) → Tout télécharger**.
 
-Cette section affiche :
+Cette section affiche :
 
 - Le nombre de fichiers stockés dans votre cloud
 - Le volume de stockage total utilisé
 - L'espace de stockage cloud disponible
 
-> 💡 Seules les sauvegardes créées sur les appareils où **OsmAnd Cloud** est activé apparaîtront ici.
+> 💡 Seules les sauvegardes créées sur des appareils où **OsmAnd Cloud** est activé apparaîtront ici.
 
 ### Paiements et achats {#payments-and-purchases}
 
-- Accédez à **Menu général → Compte → Paiements et achats**.
+- Allez dans **Menu Général → Compte → Paiements et Achats**.
 
-Dans cette section, vous pouvez consulter tous les achats et abonnements liés à votre compte.
+Dans cette section, vous pouvez voir tous les achats et abonnements liés à votre compte.
 
-Pour plus de détails sur l'utilisation de vos achats sur différentes plateformes, lisez l'article sur l'[accès multiplateforme](../purchases/cross.md).
+Pour plus de détails sur l'utilisation de vos achats sur différentes plateformes, lisez l'article sur [l'accès multiplateforme](../purchases/cross.md).
 
-### Modifier l'adresse e-mail {#change-email-address}
+### Changer l'adresse e-mail {#change-email-address}
 
-Pour mettre à jour votre adresse e-mail :
+Pour mettre à jour votre adresse e-mail :
 
-1. Accédez à **Menu général → Compte → E-mail → ⋮ → Modifier l'e-mail**.
+1. Allez dans **Menu Général → Compte → E-mail → ⋮ → Changer l'e-mail**.
 2. Saisissez votre nouvelle adresse e-mail et confirmez.
 
-> 🔒 Un e-mail de vérification sera envoyé à la nouvelle adresse avant que la modification ne soit finalisée.
+> 🔒 Un e-mail de vérification sera envoyé à la nouvelle adresse avant que le changement ne soit finalisé.
 
-### Déconnexion et suppression du compte {#log-out-and-delete}
+### Se déconnecter et supprimer le compte {#log-out-and-delete}
 
-Pour vous déconnecter de votre compte Web OsmAnd :
+Pour vous déconnecter de votre compte OsmAnd Web :
 
-- Ouvrez **Menu général → Compte**.
-- Cliquez sur le bouton **Déconnexion** pour terminer votre session actuelle.
+- Ouvrez **Menu Général → Compte**.
+- Cliquez sur le bouton **Se déconnecter** pour mettre fin à votre session actuelle.
 
-Pour supprimer définitivement votre compte :
+Pour supprimer définitivement votre compte :
 
 - Faites défiler jusqu'en bas du menu **Compte**.
 - Cliquez sur le bouton **Supprimer le compte**.
@@ -100,15 +100,15 @@ Pour supprimer définitivement votre compte :
 
 ## Synchronisation OsmAnd Pro et OsmAnd Start {#osmand-pro-and-osmand-start-sync}
 
-- **OsmAnd Pro** est un abonnement payant [multiplateforme](../troubleshooting/setup.md#cross-platform).
+- **OsmAnd Pro** est un abonnement payant [multiplateforme](../troubleshooting/setup.md#initial-setup). 
 - **OsmAnd Start** est une [inscription gratuite à OsmAnd Cloud](https://osmand.net/blog/start).
 
-La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
+La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
 
-1. Vous abonner à **OsmAnd Pro**. Pour en savoir plus sur la procédure à suivre pour [Android, cliquez ici](../purchases/android.md#how-to-buy), et pour [iOS, cliquez ici](../purchases/ios.md#how-to-buy).
-2. Pour savoir comment créer un compte **OsmAnd Start**, lisez la suite [ici](https://osmand.net/blog/start#how-to-create-an-account).
-3. Enregistrer votre [compte Pro ou Start](../troubleshooting/setup.md#cross-platform) sur le serveur OsmAnd dans l'application OsmAnd.
-4. L'e-mail enregistré sera votre identifiant pour activer OsmAnd Pro sur la plateforme Web. La première fois, vous devrez choisir un mot de passe pour vous connecter ultérieurement au portail Web (veuillez suivre les instructions sur le portail Web).
+1. Vous abonner à **OsmAnd Pro**. Pour en savoir plus sur la manière de le faire pour [Android, cliquez ici](../purchases/android.md#how-to-buy), et pour [iOS, cliquez ici](../purchases/ios.md#how-to-buy).
+2. Pour savoir comment créer un compte **OsmAnd Start**, lisez plus [ici](https://osmand.net/blog/start#how-to-create-an-account).
+3. Enregistrez votre [compte Pro ou Start](/docs/user/personal/osmand-cloud/#cross-platform) sur le serveur OsmAnd à l'intérieur de l'application OsmAnd.
+4. L'e-mail enregistré sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, il est nécessaire de choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).
 
 
 <!--
@@ -153,7 +153,3 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
-
-
-
-> *Dernière mise à jour : juillet 2024*

@@ -1,5 +1,5 @@
 ---
-source-hash: 8c47a63c8420d1c5228963331f215a7aa5c8808f6c030e2e1fc5ca817821edbb
+source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
 sidebar_position: 4
 title: Haritayı Yapılandır
 ---
@@ -11,11 +11,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
-
 ## Genel Bakış {#overview}
 
-**Haritayı Yapılandır** menüsü, OsmAnd *Ana Menüsünde* önemli bir öğedir ve harita görüntüsünü ihtiyaçlarınıza göre özelleştirmenizi sağlar. Favori noktaları, navigasyon işaretlerini veya özel ilgi çekici noktaları haritada vurgulayabilir, belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir, arazi bilgilerini, uydu görüntülerini veya diğer mevcut raster görüntüleri üst üste bindirebilir, toplu taşıma bilgilerini görüntüleyebilir ve harita stilini değiştirebilirsiniz.
+**Haritayı Yapılandır** menüsü, OsmAnd *Ana Menüsü*'nde harita görünümünü ihtiyaçlarınıza göre özelleştirebileceğiniz önemli bir öğedir. Harita üzerinde favori noktaları, navigasyon işaretlerini veya özel ilgi çekici noktaları vurgulayabilir, belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir, arazi bilgilerini, uydu görüntülerini veya diğer mevcut raster görüntüleri üst üste bindirebilir, toplu taşıma bilgilerini görüntüleyebilir ve harita stilini değiştirebilirsiniz.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -47,22 +45,21 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-
 **<Translate android="true" ids="configure_map"/>** menüsü iki kategoriye ayrılmıştır:
 
-- [Harita stili parametreleri](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (veya **<Translate ios="true" ids="map_widget_renderer"/>**) ana haritanın görüntülenme şeklini değiştirmenizi sağlayan bir ayar grubudur.
-- [Harita katmanları](#map-layers). Bu katmanlar, ana harita katmanının üzerine (veya altına) bilgi yerleştirmenize olanak tanır, ancak haritanın kendisinin görüntüsünü değiştirmez.
+- [Harita stili parametreleri](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (veya **<Translate ios="true" ids="map_widget_renderer"/>**) ana haritanın görüntülenme şeklini değiştirmenize olanak tanıyan bir ayarlar grubudur.
+- [Harita katmanları](#map-layers). Bu katmanlar, ana harita katmanının üzerine (veya altına) bilgi yerleştirmenize olanak tanır ancak haritanın kendisinin görünümünü değiştirmez.
 
 **Notlar:**
 
-- Ekrandaki bilgileri (widget'lar, simgeler) değiştirmek için [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md) bölümündeki ayarları yapabilirsiniz.
+- Ekrandaki bilgileri (widget'lar, simgeler) değiştirmek için [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md) bölümünde ayarları yapabilirsiniz.
 - Haritayı Yapılandır ayarları [profilinize](../personal/profiles.md) bağlıdır.
-- Dikkat edin - Haritayı Yapılandır menüsü harita alanına dokunduğunuzda **kapanır**.
+- Dikkat edin - harita alanına dokunduğunuzda Haritayı Yapılandır menüsü **kapanır**.
 
 ## Harita Katmanları {#map-layers}
 
 - [Vektör Harita Katmanı](../map/vector-maps.md) - OpenStreetMap, Kontur çizgileri ve Denizcilik verileri dahil tüm vektör harita bilgilerini görüntüler.
-- [Harita Raster kaynakları](../map/raster-maps.md#select-raster-maps) - şeffaflık seviyeleri ile altlık / ana kaynak / üst üste bindirme haritası seçmeye olanak tanır.
+- [Harita Raster kaynakları](../map/raster-maps.md#select-raster-maps) - şeffaflık seviyeleri ile alt katman / ana kaynak / üst katman haritası seçmenize olanak tanır.
 - [Arazi](../plugins/topography.md#hillshade-slope-and-altitude-layers) - eğim / gölgelendirme bilgilerini, 3D Rölyefi görüntüler.
 - [İndirilen haritaların sınırları](../map/vector-maps.md#show-borders) - indirilen tüm haritaların sınırlarını ana harita katmanında görüntüler.
 - [Koordinat ızgarası](../map/vector-maps.md#coordinates-grid) - harita üzerindeki koordinat ızgarasının görünürlüğünü kontrol eder.
@@ -82,16 +79,16 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Harita stili parametreleri {#map-style-parameters}
 
-Harita stili ayarları, görüntülenen ana harita stiline bağlıdır. Bu konuda daha fazla bilgiyi [Harita Stilleri makalesinde](../map/vector-maps) bulabilirsiniz.
+Harita stili ayarları, görüntülenen ana harita stiline bağlıdır. Bu konuda daha fazla bilgiyi [Harita Stilleri makalesinde](../map/vector-maps) okuyabilirsiniz.
 
 - [Harita stili](../map/vector-maps.md#default-map-styles) - OsmAnd (Şehir), Topo, Denizcilik ve diğerlerini içerir.
-- [Harita modu](../map/vector-maps.md#map-mode) - günün saatine bağlı olarak harita görünümünü ve navigasyonu seçmenizi sağlar.
-- [Harita büyüteci](../map/vector-maps.md#map-magnifier) - haritanın büyütmesini değiştirmeye olanak tanır.
-- [Metin boyutu](../map/vector-maps.md#text-size) - harita üzerindeki metin boyutunu artırmaya veya azaltmaya olanak tanır.
-- [Harita dili](../map/vector-maps.md#map-language) - haritada görüntülenen tercih edilen dili seçmeye olanak tanır.
+- [Harita modu](../map/vector-maps.md#map-mode) - günün saatine bağlı olarak harita görünümünü ve navigasyonu seçmenize olanak tanır.
+- [Harita büyüteci](../map/vector-maps.md#map-magnifier) - haritanın büyütmesini değiştirmenize olanak tanır.
+- [Metin boyutu](../map/vector-maps.md#text-size) - harita üzerindeki metin boyutunu artırmanıza veya azaltmanıza olanak tanır.
+- [Harita dili](../map/vector-maps.md#map-language) - haritada görüntülenen tercih edilen dili seçmenize olanak tanır.
 - [Detaylar](../map/vector-maps.md#details) - belirli nesneleri gösterir.
 - [Gizle](../map/vector-maps.md#hide) - belirli nesneleri gizler.
-- [Rotalar](../map/vector-maps.md#routes) - rotaları ve sembollerini vurgulamaya olanak tanır.
+- [Rotalar](../map/vector-maps.md#routes) - rotaları ve sembollerini vurgulamanıza olanak tanır.
 
 ## Kullanıcı Arayüzü Özelleştirme (Android) {#ui-customization-android}
 
@@ -100,6 +97,3 @@ Android sisteminde seçilen her profil için <Translate android="true" ids="conf
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
 
 ![Harita öğelerini yapılandır ](@site/static/img/settings/configure-screen-ui-customization.png)
-
-
-> *Son güncelleme: Şubat 2025*

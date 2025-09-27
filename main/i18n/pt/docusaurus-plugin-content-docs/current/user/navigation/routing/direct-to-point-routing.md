@@ -1,5 +1,5 @@
 ---
-source-hash: 1009e397e49c6876a7afb34c8bd224fefa84be12f75b981af08e61dc95164eaf
+source-hash: 13fd1af76a8741fd09464e167ec356fac8a95838f37bb43f0fc4715f11186d0d
 sidebar_position: 9
 title: Roteamento direto ao ponto (Barco)
 ---
@@ -16,10 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão geral {#overview}
 
-O roteamento direto ao ponto no OsmAnd é um recurso útil que permite navegar diretamente para um ponto específico no mapa sem ter que seguir uma rota predefinida ou rede rodoviária. Este recurso pode ser usado por capitães de barco,
-entusiastas de atividades ao ar livre ou por serviços de emergência durante operações de resgate. No geral, o roteamento direto ao ponto é um recurso flexível e versátil que pode ser usado em uma variedade de situações onde os métodos de roteamento tradicionais podem não ser apropriados ou eficazes.
+O roteamento direto ao ponto no OsmAnd é um recurso útil que permite navegar diretamente para um ponto específico no mapa sem ter que seguir uma rota predefinida ou rede de estradas. Este recurso pode ser usado por capitães de barco, entusiastas de atividades ao ar livre ou por serviços de emergência durante operações de resgate. No geral, o roteamento direto ao ponto é um recurso flexível e versátil que pode ser usado em uma variedade de situações em que os métodos de roteamento tradicionais podem não ser apropriados ou eficazes.
 
-![Tipo de navegação direta Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
+![Tipo de navegação direta ao ponto Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 Um ponto em uma linha é um ponto virtual cuja distância até o destino é a mesma que a distância da sua localização atual, mas não é uma projeção da sua localização atual em uma linha. Isso facilita a medição do progresso, e você pode usar a ferramenta de medição para obter a distância correta.
 
@@ -52,16 +51,3 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 </TabItem>
 
 </Tabs>
-
-
-## Outras configurações de roteamento {#other-routing-settings}
-
-- Na seção [*Recalcular rota*](../../navigation/guidance/navigation-settings.md#recalculate-route) dos *Parâmetros de rota*, você pode ativar e ajustar as opções de recálculo de rota. O valor padrão é 0 metros de desvio, o que significa que a rota não é recalculada.
-
-- Na seção [*Desenvolvimento*](../guidance/navigation-settings.md#development-settings) dos *Parâmetros de rota*, você pode experimentar novos recursos de roteamento que estão atualmente em fase de teste. Observe que essas configurações só estão disponíveis quando o [plugin de desenvolvimento do OsmAnd](../../plugins/development.md) está ativado.
-
-- A configuração *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* na versão *iOS* do OsmAnd está localizada em *Configurações de navegação → Parâmetros de rota* (para *Android*, em *Parâmetros do veículo → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Essas configurações também podem ser definidas para o roteamento *Direto ao ponto*. É usada para calcular o Tempo Estimado de Chegada.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. A configuração adequada das configurações o ajudará a evitar problemas ao criar uma rota. Você pode selecionar a rota mais apropriada dependendo do tipo de veículo e das restrições da estrada, bem como calcular o tempo de viagem.
-
-> *Última atualização: Junho de 2024*

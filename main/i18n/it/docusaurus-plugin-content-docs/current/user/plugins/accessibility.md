@@ -1,7 +1,7 @@
 ---
-source-hash: f88b26c81cd85ceae10dd091bfd8f3587782fc1e066bd79fe00de8a7ce769b72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
-title: Accessibilità
+title:  Accessibilità
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,45 +20,45 @@ Il plugin Accessibilità è disponibile solo sulla **versione Android** di OsmAn
 
 ## Panoramica {#overview}
 
-L'Accessibilità migliora l'usabilità per gli utenti non vedenti e ipovedenti integrandosi con gli strumenti di [Accessibilità di Android](https://www.android.com/accessibility/). Il plugin offre **text-to-speech, controllo gestuale, annunci automatici** e **feedback tattile** per rendere la navigazione più accessibile. Su iOS, OsmAnd utilizza le funzioni di accessibilità integrate di Apple come VoiceOver.
+L'accessibilità migliora l'usabilità per gli utenti non vedenti e ipovedenti integrandosi con gli strumenti di [Accessibilità di Android](https://www.android.com/accessibility/). Il plugin offre **sintesi vocale, controllo gestuale, annunci automatici** e **feedback aptico** per rendere la navigazione più accessibile. Su iOS, OsmAnd utilizza le funzioni di accessibilità integrate di Apple, come VoiceOver.
 
 
 ### Come usare (Android) {#how-to-use-android}
 
 ![Accessibilità](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-***Abilita il plugin Accessibilità:***
+***Abilita il plugin Accessibilità:***  
 
 1. **Attiva il plugin**: *Menu → Plugin → Accessibilità → Abilita*.
 
-2. **Attiva la modalità accessibilità**:
-   - Naviga in *Impostazioni di sistema → Accessibilità* sul tuo dispositivo Android.
-   - Abilita TalkBack o un altro screen reader.
+2. **Attiva la modalità accessibilità**:  
+   - Vai su *Impostazioni di sistema → Accessibilità* sul tuo dispositivo Android.
+   - Abilita TalkBack o un altro lettore di schermo.
 
-3. **Regola le impostazioni del plugin**:
+3. **Regola le impostazioni del plugin**:  
    - Apri le [impostazioni di Accessibilità](#plugin-settings) all'interno dell'app OsmAnd.
-   - Configura funzioni come la velocità del parlato, l'annuncio automatico e il feedback tattile.
+   - Configura funzioni come la velocità di sintesi vocale, gli annunci automatici e il feedback aptico.
 
 <br/>
 
-***Funzionalità e caratteristiche:***
+***Caratteristiche e funzionalità:***
 
 - **Controlli gestuali**:
-   - Supporta tutti i [gesti standard di OsmAnd](../map/interact-with-map#gestures).
-   - Regola i gesti per allinearsi alle istruzioni di **TalkBack** di Android.
+   - Supporta tutti i [gesti standard di OsmAnd](../map/interact-with-map.md#gestures).
+   - Adatta i gesti per allinearli con le istruzioni di **TalkBack** di Android.
 
-- **Integrazione TalkBack**:
-   - Lo screen reader TalkBack offre una guida audio per la navigazione e le interazioni con il menu.
-   - Scopri di più sui gesti di TalkBack [qui](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+- **Integrazione con TalkBack**:
+   - Il lettore di schermo TalkBack offre una guida audio per la navigazione e le interazioni con i menu.
+   - Scopri di più sui gesti di TalkBack [qui](https://support.google.com/accessibility/android/answer/6151827?hl=it&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-- **Operazioni in background**. L'audio e il feedback tattile continuano anche quando lo schermo è spento o bloccato.
+- **Operazioni in background**. Il feedback audio e aptico continua anche quando lo schermo è spento o bloccato.
 
-- **Azioni del pulsante bussola**:
+- **Azioni del pulsante Bussola**:
 
 | Gesto | Azione | Equivalente TalkBack |
 |-----|-----|-----|
-| **Tocco singolo** | Ruota la mappa a **Nord** | **Doppio tocco** |
-| **Tocco lungo** | Apre l'elenco delle [orientazioni della mappa](../map/interact-with-map.md#map-orientation-modes) | **Doppio tocco e tieni premuto** |
+| **Tocco singolo** | Ruota la mappa verso **Nord** | **Doppio tocco** |
+| **Tocco lungo** | Apre l'elenco degli [orientamenti della mappa](../map/interact-with-map.md#map-orientation-modes) | **Doppio tocco e tieni premuto** |
 | **Doppio tocco** | *Non disponibile in modalità Accessibilità* | *Non supportato* |
 
 
@@ -68,23 +68,23 @@ La versione iOS di OsmAnd utilizza gli **strumenti di accessibilità integrati**
 
 1. **Abilita VoiceOver**:
    - Vai su *Impostazioni → Accessibilità → VoiceOver*.
-   - Configura i **gesti di VoiceOver** per l'uso con OsmAnd.
+   - Configura i **gesti di VoiceOver** da utilizzare con OsmAnd.
 
 2. **Funzionalità supportate**:
-   - **Supporto screen reader** per le interazioni con la mappa.
+   - **Supporto del lettore di schermo** per le interazioni con la mappa.
    - **Gesti personalizzabili** tramite le impostazioni di iOS.
-   - Sono disponibili tutti i [gesti standard di OsmAnd](../map/interact-with-map#gestures).
+   - Tutti i [gesti standard di OsmAnd](../map/interact-with-map.md#gestures) sono disponibili.
 
 3. **Scopri di più**:
-   - Leggi le funzionalità di Accessibilità visiva di iOS [qui](https://www.apple.com/accessibility/vision/).
-   - Esplora i gesti di VoiceOver per iPhone [qui](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
+   - Leggi le funzioni di accessibilità visiva di iOS [qui](https://www.apple.com/it/accessibility/vision/).
+   - Esplora i gesti di VoiceOver per iPhone [qui](https://support.apple.com/it-it/guide/iphone/iph3e2e2281/ios).
 
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
 Per attivare le funzioni di accessibilità del dispositivo in OsmAnd, è necessario effettuare le seguenti impostazioni:
 
-1. **Abilita il** [plugin Accessibilità](../plugins/index.md#enable--disable): *Menu → Plugin → Accessibilità → Abilita*.
+1. **Abilita il** [plugin Accessibilità](../plugins/index.md#enable--disable): *Menu → Plugin → Accessibilità → Abilita*.  
 2. **Abilita la modalità accessibilità** sul tuo dispositivo.
 3. Configura le [impostazioni](#plugin-settings) del plugin Accessibilità.
 
@@ -93,60 +93,58 @@ Per attivare le funzioni di accessibilità del dispositivo in OsmAnd, è necessa
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibilità](@site/static/img/plugins/Accessibility/access_.png)
+![Accessibilità](@site/static/img/plugins/Accessibility/access_.png)  
 
-Il plugin Accessibilità offre varie impostazioni per personalizzare la navigazione e l'interazione per gli utenti con disabilità. Queste impostazioni vengono applicate per [profilo](../personal/profiles.md) in OsmAnd.
+Il plugin Accessibilità offre varie impostazioni per personalizzare la navigazione e l'interazione per gli utenti con disabilità. Queste impostazioni vengono applicate per ogni [profilo](../personal/profiles.md) in OsmAnd.
 
-| Impostazione                   | Descrizione |
-|---------------------------|-------------|
-| **Modalità Accessibilità**    | Abilita le *funzioni integrate di OsmAnd* o utilizza le **impostazioni di sistema**. |
-| **Velocità parlato**           | Controlla la *velocità del text-to-speech*, che va dal **50% al 200%**. |
-| [Annuncio automatico intelligente](#smart-autoannounce-and-clockwise-directions)    | Fornisce *guida vocale* quando si devia dal percorso. |
-| **Periodo annuncio automatico**   | Imposta il tempo minimo tra gli annunci, da **5 secondi a 5 minuti**. |
-| **Stile direzione**       | Scegli tra *Laterale (8 direzioni)* o [Orario](#smart-autoannounce-and-clockwise-directions) (12 direzioni)*. |
-| **Direzioni audio**      | Riproduce *guide audio* che indicano la direzione. |
-| **Direzioni tattili**     | Fornisce *feedback a vibrazione* per svolte e deviazioni.|
+| Impostazione                   | Descrizione |  
+|---------------------------|-------------|  
+| **Modalità Accessibilità**    | Abilita le *funzioni integrate di OsmAnd* o utilizza le **impostazioni di sistema**. |  
+| **Velocità di sintesi vocale**           | Controlla la *velocità della sintesi vocale*, con un intervallo dal **50% al 200%**. |  
+| [Annuncio automatico intelligente](#smart-autoannounce-and-clockwise-directions)    | Fornisce una *guida vocale* quando si devia dal percorso. |  
+| **Periodo annuncio automatico**   | Imposta il tempo minimo tra gli annunci, da **5 secondi a 5 minuti**. |  
+| **Stile direzione**       | Scegli tra *Laterale (8 direzioni)* o [Orario](#smart-autoannounce-and-clockwise-directions) (12 direzioni)*. |  
+| **Indicazioni audio**      | Riproduce *guide audio* che indicano la direzione. |  
+| **Indicazioni aptiche**     | Fornisce un *feedback a vibrazione* per svolte e deviazioni.|  
 
 <!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
+- **Modalità Accessibilità**. Abilita strumenti speciali che aiutano le persone con disabilità a interagire con l'app OsmAnd. Ci sono tre modalità: *Attiva* - attiva le funzioni integrate di OsmAnd, *Disattiva* - disattiva tutte le funzioni del plugin, e *Secondo le impostazioni di sistema Android* - attiva le impostazioni di sistema Android.
 
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
+- **Velocità di sintesi vocale**. Regola la velocità di sintesi vocale, con un intervallo dal 50% al 200%.
 
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
+- **Annuncio automatico intelligente**. Se abilitato, riceverai annunci vocali quando devii dalla traccia impostata.
 
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
+- **Periodo annuncio automatico**. Questo è un annuncio automatico della direzione e della distanza dalla tua destinazione. Puoi selezionare un tempo minimo tra gli annunci, che va da 5 secondi a 5 minuti.
 
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
+- **Stile direzione**. Scegli come l'app OsmAnd ti notificherà le direzioni. *Laterale* - indica la direzione verso i punti cardinali (8 direzioni), *Orario* - indica le direzioni orientate come il quadrante di un orologio (12 direzioni).
 
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
+- **Indicazioni audio**. Fornisce un feedback durante la navigazione indicando la direzione verso il punto di destinazione con il suono.
 
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
+- **Indicazioni aptiche**. Questa impostazione fornisce un feedback aptico durante la navigazione. La vibrazione indica la direzione verso il punto di destinazione e le deviazioni dal percorso.
 -->
 
 <br/>
 
 ***Suggerimenti per un'accessibilità ottimizzata:***
 
-- **Screen reader** - Usa TalkBack (*Android*) o VoiceOver (*iOS*) per una migliore interazione con la mappa.
+- **Lettore di schermo** - Usa TalkBack (*Android*) o VoiceOver (*iOS*) per una migliore interazione con la mappa.
 - **Navigazione audio** - Abilita l'annuncio automatico per ricevere indicazioni vocali mentre lo schermo è spento.
-- **Feedback tattile** - Ideale per ambienti con scarsa visibilità o quando le guide audio non sono pratiche.
+- **Feedback aptico** - Ideale per ambienti a bassa visibilità o quando le guide audio non sono pratiche.
 
 
-#### Annuncio automatico intelligente e direzioni orarie {#smart-autoannounce-and-clockwise-directions}
+### Annuncio automatico intelligente e direzioni in senso orario {#smart-autoannounce-and-clockwise-directions}
 
-La funzione **Annuncio automatico intelligente** fornisce *notifiche audio* quando si devia dal percorso pianificato, mentre lo **Stile direzione oraria** offre *guide di navigazione basate sul quadrante dell'orologio*. Queste funzioni sono progettate per supportare gli utenti ipovedenti che si affidano alla *guida vocale*.
+La funzione **Annuncio automatico intelligente** fornisce *notifiche audio* quando si devia dal percorso pianificato, mentre lo **Stile direzione orario** offre *guide di navigazione basate sul quadrante dell'orologio*. Queste funzioni sono progettate per supportare gli utenti ipovedenti che si affidano alla *guida vocale*.  
 
-- Se **TalkBack non è abilitato**, sia l'*Annuncio automatico intelligente* che le *Direzioni orarie* visualizzeranno solo *notifiche testuali* sullo schermo.
+- Se **TalkBack non è abilitato**, sia l'*Annuncio automatico intelligente* che le *Direzioni in senso orario* mostreranno solo *notifiche di testo* sullo schermo.  
 
-- Le **notifiche vocali** vengono attivate solo quando *TalkBack* è abilitato nelle **impostazioni di sistema del dispositivo**.
+- Le **notifiche vocali** si attivano solo quando *TalkBack* è abilitato nelle **impostazioni di sistema del dispositivo**.  
 
-- Imposta il **Periodo annuncio automatico** (ad esempio, *10 secondi*) per controllare la frequenza degli annunci.
+- Imposta il **Periodo di annuncio automatico** (ad es. *10 secondi*) per controllare la frequenza degli annunci.
 
 
 ## Articoli correlati {#related-articles}
 
-- [Interagisci con la mappa](../../user/map/interact-with-map.md)
+- [Interagire con la mappa](../../user/map/interact-with-map.md)
 - [Impostazioni globali](../../user/personal/global-settings.md)
 - [Mappe vettoriali (Stili mappa)](../../user/map/vector-maps.md)
-
-> *Ultimo aggiornamento: Febbraio 2025*

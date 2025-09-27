@@ -1,5 +1,5 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
 title: Trilhas
 sidebar_position: 8
 ---
@@ -18,10 +18,10 @@ Uma maneira simples de criar pastas virtuais para trilhas com quaisquer filtros.
 
 Leia sobre o que é uma trilha e os diferentes tipos de trilhas.
 
-### [Exibir trilhas](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Exibir trilhas](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
 Leia sobre como exibir trilhas e suas opções no OsmAnd.
 
 ### [Navegar por trilha](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-Leia mais sobre como usar a trilha na navegação.
+Leia mais sobre como usar trilhas na navegação.

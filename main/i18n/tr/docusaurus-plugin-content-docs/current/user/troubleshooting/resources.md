@@ -1,5 +1,5 @@
 ---
-source-hash: a6ac3e26e303e0906f8e1000bdd051b36b35e0f99bc3fb6d392941cc2915c41d
+source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
 sidebar_position: 9
 title: Kaynaklar ve Özelleştirmeler
 ---
@@ -28,12 +28,12 @@ Diğer OsmAnd kullanıcılarıyla bağlantı kurmak, soru sormak ve deneyimlerin
 | Platform | Grup Adı | Açıklama | Bağlantı |
 | :-- | :-- | :-- | :-- |
 | Facebook | OsmAnd kullanıcıları topluluğu (*İngilizce*) | Bu, OsmAnd kullanıcılarının diğer kullanıcılara yardımcı olabileceği bir gruptur. | [Facebook](https://www.facebook.com/groups/osmandusers/) |
-| Facebook | Osmand-gebruikers (*Hollandaca*) | Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom. | [Facebook](https://www.facebook.com/groups/1734792863427411) |
-| Facebook | OSMAND+ Aide Partage et Astuces (*Fransızca*) | Yardım Paylaşım ve İpuçları | [Facebook](https://www.facebook.com/groups/584042065963135) |
+| Facebook | Osmand-gebruikers (*Hollandaca*) | "Osmand" uygulamasındaki güncellemelerden ve/veya değişikliklerden haberdar olmak isterseniz, bunları buradan okuyabilirsiniz. İpuçları, sorular, yorumlar da hoş geldiniz. | [Facebook](https://www.facebook.com/groups/1734792863427411) |
+| Facebook | OSMAND+ Aide Partage et Astuces (*Fransızca*) | Yardım Paylaşımı ve İpuçları | [Facebook](https://www.facebook.com/groups/584042065963135) |
 | Facebook | LC8 Rally OsmAnd kullanıcı grubu (*İngilizce*) | OsmAnd kullanım deneyimlerini paylaşmak için. | [Facebook](https://www.facebook.com/groups/1848734328597008) |
 | Facebook | Osmand Italian's friends (*İtalyanca*) | OsmAnd kullanım deneyimlerini paylaşmak için. | [Facebook](https://www.facebook.com/groups/231397842534959/) |
-| Google Grupları | Osmand (*İngilizce*) | Kullanıcıların ipuçlarını paylaştığı, soruları yanıtladığı ve OsmAnd'ın işlevlerini tartıştığı bir grup. | [Google Grupları](https://groups.google.com/g/osmand) |
-| Reddit | OsmAnd - tartışma ve destek | OsmAnd kullanıcıları için Reddit topluluğu. Sorular sorun, deneyimlerinizi paylaşın veya özel harita stillerinizi gösterin. | [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+| Google Grupları | Osmand (*İngilizce*) | Kullanıcıların ipuçlarını paylaştığı, soruları yanıtladığı ve OsmAnd'in işlevlerini tartıştığı bir grup. | [Google Grupları](https://groups.google.com/g/osmand) |
+| Reddit | OsmAnd - tartışma ve destek | OsmAnd kullanıcıları için Reddit topluluğu. Soru sorun, deneyimlerinizi paylaşın veya özel harita stillerinizi gösterin. | [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 | Telegram | OsmAnd Haber kanalı (*İngilizce*) | Geliştiricilerden doğrudan duyurular ve güncellemeler için resmi OsmAnd grubu. | [Telegram OsmAnd](https://t.me/OsmAnd_News) |
 | Twitter | OsmAnd haber kanalı | Canlı tartışmalar, duyurular ve güncellemeler için resmi OsmAnd grubu. | [Twitter OsmAnd](https://x.com/osmandapp/) |
 | Instagram | OsmAnd haber kanalı | OsmAnd özellikleriyle sohbet edebileceğiniz, ipuçlarını paylaşabileceğiniz ve yardım alabileceğiniz bir topluluk. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
@@ -46,20 +46,20 @@ Aşağıdaki liste, OsmAnd tarafından desteklenen çeşitli veri türleri için
 | Tür | Açıklama | Bağlantı |
 |-- | -- | --|
 | KMZ'den GPX'e | *KMZ* dosyalarını *GPX* formatına, simgeler dahil, dönüştürmek için Python betiği. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML'den GPX'e | *KML* dosyalarını simgelerle birlikte *GPX* formatına dönüştürmek için Python betiği. Diğer araçlar mevcut. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
-| Garmin | Garmin Basecamp dosyalarını OsmAnd'e dönüştürme aracı. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
+| KML'den GPX'e | *KML* dosyalarını simgelerle *GPX* formatına dönüştürmek için Python betiği. Diğer araçlar mevcut. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| Garmin | Garmin Basecamp dosyalarını OsmAnd'e dönüştürmek için araç. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi'den OsmAnd'e | GeoPDF, geoTiff ve ozi harita formatlarının OsmAnd'e dönüştürülmesi. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX'ten KML'e | OsmAnd *GPX* dosyalarını *KML* formatına, simgeleri koruyarak dönüştürme aracı. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX'ten OsmAnd'e | iOverlander *GPX* dosyalarını simgelerle birlikte OsmAnd'e aktarmak için Python betiği. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Yazdırılabilir topo haritası | Bu, OsmAnd'den (https://osmand.net) ekran görüntüleri kullanarak yazdırılabilir bir topografik harita oluşturmak için [bir araçtır](https://github.com/acui/osmand_topo_map_generator). Harita UTM ızgarasını kullanır ve sapma bilgisine sahiptir. Bir pusula veya UTM koordinatlarına sahip bir GPS cihazı ile kullanılmak üzere tasarlanmıştır. | [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX'ten KML'ye | OsmAnd *GPX* dosyalarını *KML* formatına, simgeleri koruyarak, dönüştürmek için araç. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX'ten OsmAnd'e | iOverlander *GPX* dosyalarını OsmAnd'e simgelerle dışa aktarmak için Python betiği. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo haritasını yazdırılabilir hale getirme| Bu, OsmAnd'den (https://osmand.net) ekran görüntüleri kullanarak yazdırılabilir bir topografik harita oluşturmak için [bir araçtır](https://github.com/acui/osmand_topo_map_generator). Harita UTM ızgarasını kullanır ve sapma bilgisine sahiptir. Bir pusula veya UTM koordinatlarına sahip bir GPS cihazı ile kullanılmalıdır.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Özel Kaynaklar {#custom-resources}
 
 ### Kılavuzlar {#manuals}
 
-OsmAnd'ın resmi belgeleri kapsamlıdır, ancak topluluk, kullanıcıların belirli özellikler ve kullanım durumları hakkında yardımcı olmak için bir dizi özel kılavuz da üretmiştir.
+OsmAnd'in resmi belgeleri kapsamlıdır, ancak topluluk, belirli özellikler ve kullanım durumları için kullanıcılara yardımcı olmak amacıyla bir dizi özel kılavuz da üretmiştir.
 
-Birden fazla dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer almayan benzersiz içgörüler, ipuçları ve püf noktaları sağlar. Bu kaynaklar, uygulamanın özellikleri hakkında daha fazla bilgi sunarak resmi [OsmAnd Kullanım Kılavuzu](https://osmand.net/docs/user/) için uygun eklemelerdir.
+Birden çok dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer almayan benzersiz içgörüler, ipuçları ve püf noktaları sunar. Bu kaynaklar, uygulamanın özellikleri hakkında daha fazla bilgi sunarak resmi [OsmAnd Kullanıcı Kılavuzu](https://osmand.net/docs/user/) için uygun eklemelerdir.
 
 | Dil | Açıklama | Bağlantı |
 | :-- | :-- | :-- |
@@ -82,14 +82,14 @@ Aşağıda, OsmAnd ekibi ve kullanıcı topluluğu tarafından geliştirilen ve 
 
 | Ad | Açıklama | Eklenti Bağlantısı |
 |--|--|--|
-| OsmAnd Rendering | Eklenti, Enduro, CycloRoute ve Yürüyüş harita stillerini (daha fazla bilgi [burada](../map/vector-maps.md#default-map-styles)) ve 5 yeni [profili](https://osmand.net/docs/user/personal/profiles) (Yaya, Bisiklet ve üç Motosiklet profili) ekler. Ayrıca, *OsmAnd rendering online maps* klasöründeki [*OsmAnd menüsü → Ayarlar → Haritalar ve Kaynaklar*](../personal/maps-resources.md#extra-maps) menüsü aracılığıyla İspanya, Fransa, Norveç, İsviçre, Avusturya, Belçika ve Arjantin için çevrimiçi haritalar sağlar. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) |
-| Rahal Team Suudi Arabistan haritası | Topografik özellikler, yollar, şehirler, köyler ve su kaynakları dahil olmak üzere Suudi Arabistan Krallığı'nın profesyonel bir çevrimdışı haritası. Çöl gezileri için mükemmel. Daha fazla bilgi için [Rahal Haritaları](https://rahalteam.com) adresini ziyaret edin. | [🇸🇦 Rahal Team tarafından Suudi Arabistan haritaları](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf) |
-| 3D model | Bu paket, profiller için bir 3D model seçeneği ekler. Görünümü menü aracılığıyla özelleştirin: [*OsmAnd menüsü → Ayarlar → Profil → Profil görünümü → Konum simgesinin 4.-5. simgelerini seçin*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) |
-| AnyGIS çevrimiçi harita koleksiyonu | Uydu, turist ve tarihi haritalar dahil olmak üzere çeşitli çevrimiçi harita kaynaklarının bir koleksiyonu. | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) |
-| Harita Lejantı | Bu paket, *Menü → Yerlerim → Favoriler → Harita lejantı* aracılığıyla erişilebilen bir çevrimdışı harita lejantı (sürüm 1.01; 03-04-2024) ekler. Harita lejantı ayrıca [bu konumda](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059) da mevcuttur | [Harita Lejantı](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) |
-| 🇺🇸 ABD Haritaları | [Kamu arazileri (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [USFS Patikaları ve Yolları](https://www.fs.usda.gov/visit/maps), [Arazi Yönetimi Bürosu (BLM)](https://www.blm.gov) ve bazı eyaletler için [Parsel verileri (Özel Araziler)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) içeren ABD haritaları koleksiyonu. Tüm kamu ve özel arazi haritaları eyaletlere göre kategorize edilmiştir. BLM ve USFS harita verileri, tüm Amerika Birleşik Devletleri toprakları için *Yollar ve Patikalar* ve *İlgi Çekici Noktalar* olarak ayrılmıştır. Haritalar OsmAnd için OBF formatındadır. Daha fazla bilgi [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/) adresinde. | [ABD haritaları](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) |
-| 🇵🇱 Polonya UMP haritası | [UMP](https://ump.waw.pl/), Polonya'nın çoğunu kapsayan ve devam eden bir geliştirme çabasıyla desteklenen bir haritadır. Uzun süre UMP-pcPL (mapą prawie całej Polski) adı kullanılmıştır. | [Polonya UMP haritası](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) |
-| Outdoor Explorer | Bu eklenti, OsmAnd'de asfaltlanmamış yolların ve patikaların görünürlüğünü artıran hafif bir harita stili içerir. | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) |
+| OsmAnd Rendering | Eklenti, Enduro, CycloRoute ve Yürüyüş harita stillerini (daha fazla bilgi [burada](../map/vector-maps.md#default-map-styles)) ve 5 yeni [profili](https://osmand.net/docs/user/personal/profiles) (Yaya, Bisiklet ve üç Motosiklet profili) ekler. Ayrıca, *OsmAnd rendering online maps* klasöründeki [Haritalar ve Kaynaklar](../personal/maps-resources.md#extra-maps) menüsü aracılığıyla İspanya, Fransa, Norveç, İsviçre, Avusturya, Belçika ve Arjantin için çevrimiçi haritalar sağlar. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) |
+| Rahal Team Suudi Arabistan haritası | Topografik özellikler, yollar, şehirler, köyler ve su kaynakları dahil olmak üzere Suudi Arabistan Krallığı'nın profesyonel bir çevrimdışı haritası. Çöl gezileri için mükemmel. Daha fazla bilgi için [Rahal Haritalar](https://rahalteam.com) adresini ziyaret edin. | [🇸🇦 Rahal Team tarafından Suudi Arabistan haritaları](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf) |
+| 3D model | Bu paket, profiller için bir 3D model seçeneği ekler. Görünümü menüden özelleştirin: [*OsmAnd menüsü → Ayarlar → Profil → Profil görünümü → Konum simgesinin 4-5. simgelerini seçin*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) |
+| AnyGIS çevrimiçi harita koleksiyonu | Uydu, turistik ve tarihi haritalar dahil olmak üzere çeşitli çevrimiçi harita kaynaklarının bir koleksiyonu. | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) |
+| Harita Lejantı | Bu paket, *Menü → Yerlerim → Favoriler → Harita lejantı* aracılığıyla erişilebilen bir çevrimdışı harita lejantı (sürüm 1.01; 03-04-2024) ekler. Harita lejantı ayrıca [bu konumda](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059) mevcuttur | [Harita Lejantı](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) |
+| 🇺🇸 ABD Haritaları | [Kamu arazileri (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [USFS Patikaları ve Yolları](https://www.fs.usda.gov/visit/maps), [Arazi Yönetimi Bürosu (BLM)](https://www.blm.gov) ve bazı eyaletler için [Parsel verileri (Özel Araziler)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) içeren ABD haritaları koleksiyonu. Tüm kamu ve özel arazi haritaları eyaletlere göre kategorize edildi. BLM ve USFS harita verileri, tüm Amerika Birleşik Devletleri toprakları için *Yollar ve Patikalar* ve *İÇN'ler* olarak ayrıldı. Haritalar OsmAnd için OBF formatındadır. Daha fazla bilgi için [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/) adresine bakın. | [ABD haritaları](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) |
+| 🇵🇱 Polonya UMP haritası | [UMP](https://ump.waw.pl/), devam eden bir geliştirme çabasıyla Polonya'nın çoğunu kapsar. Uzun süre UMP-pcPL (mapą prawie całej Polski) adı kullanıldı. | [Polonya UMP haritası](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) |
+| Outdoor Explorer | Bu eklenti, OsmAnd'de stabilize edilmemiş yolların ve patikaların görünürlüğünü artıran hafif bir harita stili içerir. | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) |
 
 
 ### Harita Stilleri {#map-styles}
@@ -98,13 +98,13 @@ Varsayılan [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 
 | Kaynak Adı | Açıklama | Bağlantı |
 | -- | -- | --|
-| Gravel Roads Seeker | Yol yüzeyinin daha iyi görselleştirilmesini sağlayan, asfaltlanmış ve asfaltlanmamış yolları ayırt eden harita stili (*Fransızca* web sayfası). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-offline) |
-| OsmAnd Rendering | Çevrimiçi haritalara, topografik haritalara, ortofotolara ve farklı ülkelerdeki bazı ana coğrafi kurumlardan erişilebilen diğer coğrafi kaynaklara erişim koleksiyonu. Güncellemeler devam etmektedir, ancak herhangi bir dosya güncel değilse, kullanıcıların bildirmesi teşvik edilir. | [Çevrimiçi Haritalar: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| Gravel Roads Seeker | Asfaltlanmış ve stabilize edilmemiş yollar arasında ayrım yaparak yol yüzeyinin daha iyi görselleştirilmesini sağlayan harita stili (*Fransızca* web sayfası). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
+| OsmAnd Rendering | Çevrimiçi haritalara, topografik haritalara, ortofotolara ve farklı ülkelerdeki bazı ana coğrafi kurumlardan elde edilebilen diğer coğrafi kaynaklara erişim koleksiyonu. Güncellemeler devam etmektedir, ancak herhangi bir dosya güncel değilse, kullanıcıların bildirmesi teşvik edilir. | [Çevrimiçi Haritalar: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | [mariush444](https://github.com/mariush444/Osmand-tools) tarafından katkıda bulunulan, *Tüm Suyu Gizle* seçeneğine sahip bir topografik harita. |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | Depo, kullanıcılar tarafından diğer kullanıcılar için oluşturulan özel harita stillerini sağlamak üzere tasarlanmıştır. |[GitHub'dan UniMap](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | [OpenRailwayMap](https://www.openrailwaymap.org/) benzeri bir renk şeması kullanarak demiryollarına odaklanan çevrimdışı harita stilleri. |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
-| Vurgulanmış Yönetim Sınırları | Harita işleme stili, daha iyi görünürlük için daha fazla vurgulanmış Yönetim Sınırları ile OsmAnd varsayılanına dayanmaktadır. |[Vurgulanmış Yönetim Sınırları](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
-| Open Fiets haritası | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0), bisiklet yollarını (kırmızı), bisiklet rotalarını (mavi kesikli), bisiklet patikalarını (kırmızı kesikli) ve bisiklet caddeleri gibi sınırlı araç trafiğine sahip yolları (düz kırmızı kenarlıklar) vurgulayan bisiklet odaklı bir harita stilidir. |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
+| Vurgulanmış Yönetim Sınırları | Harita oluşturma stili, daha iyi görünürlük için daha fazla vurgulanmış Yönetim Sınırları ile OsmAnd varsayılanına dayanmaktadır. |[Vurgulanmış Yönetim Sınırları](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
+| Open Fiets haritası | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0), bisiklet odaklı bir harita stilidir ve bisiklet şeritlerini (kırmızı), bisiklet rotalarını (mavi kesikli), bisiklet yollarını (kırmızı kesikli) ve bisiklet caddeleri gibi sınırlı araç trafiğine sahip yolları (düz kırmızı kenarlıklar) vurgular. |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Seçim Harita Stili | ["Seçim" Harita Stili](https://groups.google.com/g/osmand/c/DS7WywdgsDA), Holder Tamm tarafından belirli nesneleri gizleyip gizlemeyeceğinizi seçmenize olanak tanıyan bir harita stilidir. |["Seçim" Harita Stili](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 
 
@@ -114,38 +114,38 @@ Kullanıcılar tarafından oluşturulan özel vektör haritaları (OBF dosyalar�
 
 | Kaynak Adı | Açıklama | Bağlantı|
 | -- | -- | --|
-| OpenSuperMaps | [pnoll1](https://github.com/pnoll1) tarafından oluşturulan haritalar, ayrıntılı vektör haritaları sunar. |[OpenSuperMap](https://opensupermaps.com/)|
+| OpenSuperMaps | [pnoll1](https://github.com/pnoll1) tarafından oluşturulan, ayrıntılı vektör haritaları sunan haritalar. |[OpenSuperMap](https://opensupermaps.com/)|
 | UMP PL | [UMP-pcPL](https://ump.waw.pl/) - Polonya'nın alternatif bir haritası. |[UMP-PL eklentisi](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
 
 
 ### Çevrimiçi Harita Koleksiyonu {#online-maps-collection}
 
-Aşağıdaki tablo, kullanıcılar tarafından hazırlanan çeşitli çevrimiçi harita kaynaklarını listeler ve farklı coğrafi bölgelerden ve hizmetlerden özel harita verilerine erişim sunar.
+Aşağıdaki tablo, kullanıcılar tarafından hazırlanan çeşitli çevrimiçi harita kaynaklarını listeler ve farklı coğrafi bölgelerden ve hizmetlerden özel harita verilerine erişim sağlar.
 
 | Ad | Açıklama | Bağlantı|
 | -- | -- | --|
-| Gravel Roads Seeker | Çakıllı yollar haritası (*Fransızca* web sayfası). WMTS (Web Harita Döşeme Hizmeti) veya WMS (Web Harita Hizmeti) gibi döşeme sunucularından gerçek zamanlı olarak oluşturulan çevrimiçi bir harita. | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
+| Gravel Roads Seeker | Stabilize yollar haritası (*Fransızca* web sayfası). WMTS (Web Harita Döşeme Hizmeti) veya WMS (Web Harita Hizmeti) gibi döşeme sunucularından gerçek zamanlı olarak oluşturulan çevrimiçi bir harita. | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | OsmAnd Rendering | Topo, ortofoto ve diğerlerini içeren çevrimiçi haritaların bir koleksiyonu, farklı ülkelerin bazı ana coğrafi enstitülerinden temin edilebilir. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | Çeşitli [renk şemalarına](https://www.rainviewer.com/api/color-schemes.html) sahip [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) haritası |[RainViewer-osf verileri](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
-| Basemap AT WMTS | mariush444 tarafından oluşturulan [basemap.at WMTS](https://basemap.at/en/) tabanlı Avusturya haritaları seti |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
-| OsmAnd haritaları IGN (FR) | Fransız coğrafya enstitüsü IGN tarafından sağlanan haritalar seti. | [OsmAnd haritaları IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
-| AnyGis harita koleksiyonu | Site, ülke tatilleri için turist, dağ, deniz haritaları ve daha birçok harita koleksiyonu sunmaktadır. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| Basemap AT WMTS | [basemap.at WMTS](https://basemap.at/en/) temel alınarak mariush444 tarafından oluşturulan Avusturya haritaları seti |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
+| OsmAnd haritaları IGN (FR) | Fransız coğrafi enstitüsü IGN tarafından sağlanan haritalar seti. | [OsmAnd haritaları IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
+| AnyGis harita koleksiyonu | Site, turist, dağ, deniz haritaları ve diğerleri dahil olmak üzere ülke tatilleri için bir harita koleksiyonu sunar. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
 
 
 <!-- Donanım
 
-| donanım|	!!! ticari şirketler var ama bağlantılar BAĞLANTILI DEĞİLDİR !!!	|
+| donanım|	!!! ticari şirketler var ama bağlantılar BAĞLANTILI DEĞİL !!!	|
 |--|--|
 | barbuttons|	[JaxeADV](https://jaxeadv.com/barbuttons) </br> [ARN Rally](https://www.arnrally.com/arn-rally/en/products/remotes)</br>[SilverFox](https://www.silverfoxcontrollers.com/)</br>[Remotek](https://www.remotek.no/)</br>[7SOLID](https://7solid.myshopify.com/en)</br>[THORK RACING](https://www.thorkracing.com/produto/dmd-remote1/)</br>[summiot](https://summiot.com/en/)</br>[URSAE system](https://ursaesystem.com/)</br>[Carpe Iter](https://carpe-iter.eu/)</br>[HEASA PARTS](https://hesaparts.com/en/categoria-producto/remote-12v-en-en/) |
 
 -->
 
-## OsmAnd ile Etkileşim Kurun: Paylaşın, Önerin ve Bağlanın {#engage-with-osmand-share-suggest-and-connect}
+## OsmAnd ile Etkileşim Kurun: Paylaşın, Önerin ve Bağlantı Kurun {#engage-with-osmand-share-suggest-and-connect}
 
-Yeni harita stilleri, eklentiler için herhangi bir öneriniz varsa veya OsmAnd topluluk kaynaklarını genişletmek için kendi yaratımlarınızla katkıda bulunmak isterseniz, lütfen bizimle iletişime geçin. OsmAnd veritabanını daha da geliştirmek için katkılarınızı takdir ediyor ve memnuniyetle karşılıyoruz.
+Yeni harita stilleri, eklentiler için herhangi bir öneriniz varsa veya OsmAnd topluluk kaynaklarını genişletmek için kendi eserlerinizle katkıda bulunmak isterseniz, lütfen bizimle iletişime geçin. OsmAnd veritabanını daha da geliştirmek için katkılarınızı takdir ediyor ve memnuniyetle karşılıyoruz.
 
-- **Takip Et**: <LinksSocial/>
+- **Takip Edin**: <LinksSocial/>
 
-- **Katıl**: <LinksTelegram/>
+- **Katılın**: <LinksTelegram/>
 
-- **Al**: <AllStores/>
+- **Edinin**: <AllStores/>

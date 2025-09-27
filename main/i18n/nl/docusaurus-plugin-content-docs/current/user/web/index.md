@@ -1,6 +1,6 @@
 ---
-source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
-title: Webkaartviewer
+source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+title: Webplanner
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,11 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Overzicht {#overview}
 
-In dit gedeelte vindt u een beschrijving van onze [Webkaartservice](https://osmand.net/map).
+In dit gedeelte vindt u een beschrijving van onze [Webplanner](https://osmand.net/map).
 
 ### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
 
-Dit gedeelte legt uit hoe u kunt inloggen en registreren op [www.osmand.net/map](https://osmand.net/map/) en belicht de voordelen die gebruikers ontvangen na registratie.
+Dit gedeelte legt uit hoe u kunt inloggen en aanmelden op [www.osmand.net/map](https://osmand.net/map/) en belicht de voordelen die gebruikers ontvangen na registratie.
 
 ### [Kaart](./web-map.md) {#map}
 
@@ -32,7 +32,7 @@ GPX-tracks en Favorieten van de gebruiker op de kaart.
 
 ### [Route plannen](./planner.md) {#plan-route}
 
-Dit gedeelte geeft informatie over het plannen van routes of het maken van navigatie met behulp van verschillende profielen.
+Dit gedeelte biedt informatie over het plannen van routes of het creëren van navigatie met behulp van verschillende profielen.
 
 ### [Zoeken](./web-search.md) {#search}
 

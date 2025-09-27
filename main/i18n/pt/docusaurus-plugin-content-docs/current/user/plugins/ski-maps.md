@@ -1,7 +1,7 @@
 ---
-source-hash: 75b343dc56914a3acab72cd3b0a8c476b5b8c888a2b3d0ebf1e06e1edbfdfd2f
+source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
 sidebar_position: 13
-title: Visualização do Mapa de Esqui
+title: Vista de Mapa de Esqui
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,9 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-O plugin de visualização do Mapa de Esqui do OsmAnd mostra pistas famosas e populares, áreas de esqui oficialmente aprovadas e mapas de trilhas da maioria das estações de esqui. Os mapas de pista do [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) são a fonte de dados para os mapas de esqui do OsmAnd. Combinando mapas vetoriais com mapas raster, o mapa de esqui do OsmAnd é muito preciso e será útil para instrutores, alpinistas e entusiastas de esportes de inverno.
+O plugin de visualização de Mapa de Esqui do OsmAnd mostra pistas famosas e populares, áreas de esqui oficialmente aprovadas e mapas de trilhas da maioria das estações de esqui. Os mapas de pistas do [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) são a fonte de dados para os mapas de esqui do OsmAnd. Combinando mapas vetoriais com mapas raster, o mapa de esqui do OsmAnd é muito preciso e será útil para instrutores, alpinistas e entusiastas de esportes de inverno.
 
-O mapa de esqui do OsmAnd faz parte dos mapas vetoriais e não requer downloads adicionais. Ele é desativado por padrão. O Mapa de Esqui do OsmAnd é um dos [Estilos de Mapa](../map/vector-maps.md) que oferece recursos adicionais ao destacar alguns objetos e tornar outros menos visíveis.
+O mapa de esqui do OsmAnd faz parte dos mapas vetoriais e não requer downloads adicionais. Ele está desativado por padrão. O Mapa de Esqui do OsmAnd é um dos [Estilos de Mapa](../map/vector-maps.md) que oferece recursos adicionais ao destacar alguns objetos e tornar outros menos visíveis.
 
 Dois perfis são mostrados abaixo: o da esquerda é para esqui e o da direita é para dirigir. O perfil de Esqui destaca trilhas, vias aéreas, cores de inverno e todos os objetos do mapa úteis para navegar na área de esqui.
 
@@ -43,7 +43,7 @@ Dois perfis são mostrados abaixo: o da esquerda é para esqui e o da direita é
 
 A seguinte configuração faz com que o Mapa de Esqui do OsmAnd apareça na tela:
 
-1. Ative o [plugin de visualização do Mapa de Esqui](../plugins/index.md#enable--disable).
+1. Ative o [plugin de visualização de Mapa de Esqui](../plugins/index.md#enable--disable).
 2. Defina o estilo de mapa [Inverno e Esqui](#set-winter-and-ski-map-style) para o [perfil](../personal/profiles.md) necessário.
 3. Se necessário, [combine mapas](#combine-maps).
 
@@ -70,14 +70,14 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-O estilo de mapa Inverno e Esqui destaca trilhas, rotas de esqui de travessia, trilhas de trenó e informações relacionadas ao inverno e esqui. Para exibir o estilo no mapa, você precisa fazer as seguintes configurações:
+O estilo de mapa Inverno e Esqui destaca trilhas, rotas de esqui-caminhada, trilhas de trenó e informações relacionadas ao inverno e ao esqui. Para exibir o estilo no mapa, você precisa fazer as seguintes configurações:
 
 1. Selecione o [perfil](../personal/profiles.md) necessário.
 2. Abra [Configurar mapa](../map/configure-map-menu.md).
 3. Role para baixo até Estilo de mapa/Tipo de mapa, abra-o e marque **Inverno e Esqui**.
 
 :::tip configurações
-O perfil de Esqui é projetado para uso em combinação com os estilos de Inverno e Esqui. No entanto, o tipo de navegação para cada perfil específico pode ser alterado e definido individualmente, então a configuração final do perfil, estilo de mapa e navegação depende completamente das suas configurações.
+O perfil de Esqui é projetado para uso em combinação com os estilos de Inverno e Esqui. No entanto, o tipo de navegação para cada perfil específico pode ser alterado e definido individualmente, de modo que a configuração final do perfil, estilo de mapa e navegação depende completamente de suas configurações.
 :::
 
 
@@ -99,16 +99,16 @@ O perfil de Esqui é projetado para uso em combinação com os estilos de Invern
 
 </Tabs>
 
-O [mapa vetorial](../map/vector-maps.md) com o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) incluído pode ser completado com [linhas de contorno](../plugins/topography.md#show-contour-linesterrain) e [sombreamento](../plugins/topography.md#hillshade-map). Abaixo estão dois exemplos. As trilhas no mapa vetorial padrão são mostradas à esquerda, e as trilhas no mapa vetorial combinadas com o mapa raster de *Linhas de Contorno* e *Sombreamento* são mostradas à direita. No segundo caso, o mapa mostra mais dados de elevação para ajudar a estimar dificuldade, risco e distância.
+O [Mapa vetorial](../map/vector-maps.md) com o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) incluído pode ser complementado com [Linhas de contorno](../plugins/topography.md#contour-lines) e [Relevo sombreado](../plugins/topography.md#hillshade-slope-and-altitude-layers). Abaixo estão dois exemplos. As trilhas no mapa vetorial padrão são mostradas à esquerda, e as trilhas no mapa vetorial combinado com o mapa raster *Linhas de Contorno* e *Relevo Sombreado* são mostradas à direita. No segundo caso, o mapa mostra mais dados de elevação para ajudar a estimar a dificuldade, o risco e a distância.
 
 
 ### Desativar Estilo de Mapa de Esqui {#disable-ski-map-style}
 
-Se for preferível remover trilhas e cores de inverno do mapa, ou se a temporada de esqui tiver terminado, faça uma das seguintes opções:
+Se preferir remover trilhas e cores de inverno do mapa, ou se a temporada de esqui acabou, faça uma das seguintes opções:
 
 - Desmarque o estilo de mapa [Inverno e Esqui](#set-winter-and-ski-map-style) para o perfil necessário.
 - Mude o [perfil de Esqui](../personal/profiles.md) para qualquer outro perfil.
-- Desative o [plugin de visualização do Mapa de Esqui](../plugins/index.md#enable--disable).
+- Desative o [plugin de visualização de Mapa de Esqui](../plugins/index.md#enable--disable).
 
 
 :::info desinstalar plugin
@@ -138,14 +138,14 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-Os estilos de mapa Inverno e Esqui podem ser ativados em qualquer perfil. Mas é mais valioso no [perfil de Esqui](../personal/profiles.md), onde é definido por padrão. O perfil de Esqui é muito confortável para a [navegação de Esqui](../navigation/routing/ski-routing.md).
+Os estilos de mapa de Inverno e Esqui podem ser ativados em qualquer perfil. Mas é mais valioso no [perfil de Esqui](../personal/profiles.md), onde é definido por padrão. O perfil de Esqui é muito confortável para a [navegação de Esqui](../navigation/routing/ski-routing.md).
 
 
 ## Estilo de Mapa de Esqui {#ski-map-style}
 
 Use a [legenda do mapa de esqui](../../user/map-legend/ski-map.md) para qualquer referência. Ela ajuda a identificar os tipos de pistas no mapa, bem como os tipos de vias aéreas e outras características que podem ser lidas no mapa.
 
-Ao ler o mapa, você pode descobrir os detalhes que são importantes para você, como a dificuldade de uma trilha específica, o tipo de trilha, se a manutenção é feita e se a trilha é iluminada à noite.
+Ao ler o mapa, você pode descobrir os detalhes importantes para você, como a dificuldade de uma trilha específica, o tipo de trilha, se a manutenção é feita e se a trilha é iluminada à noite.
 
 As opções descritas aqui estão disponíveis na [navegação de Esqui](../navigation/setup/route-navigation.md). A **navegação de Esqui** define as opções de rota individuais, que se aplicam apenas ao esqui.
 
@@ -160,7 +160,7 @@ O Mapa de Esqui do OsmAnd é construído como um dos estilos de renderização, 
 | Cor | Descrição |
 | --- | --- |
 | ![Pista para iniciantes](@site/static/img/plugins/ski-maps/1c_green_1.png) | Verde - Pista para iniciantes |
-| ![Colinas fáceis](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Azul - Colinas fáceis |
+| ![ Colinas fáceis](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Azul - Colinas fáceis |
 | ![Pistas intermediárias](@site/static/img/plugins/ski-maps/3c_red_1.png) | Vermelho - Pistas intermediárias |
 | ![Dificuldade avançada](@site/static/img/plugins/ski-maps/4c_black_1.png) | Cinza - Pistas de dificuldade avançada |
 | ![Dificuldade de especialista](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Amarelo - Pistas de dificuldade de especialista |
@@ -172,20 +172,20 @@ Para orientações mais específicas para cada tipo de dificuldade de trilha, co
 :::
 
 
-### Pistas por Tipos {#piste-by-types}
+### Pista por Tipos {#piste-by-types}
 
-As pistas diferem por tipo. Um tipo representa diferentes características para uma pista para atender aos requisitos de diferentes atividades relacionadas ao inverno: esqui alpino, patinação clássica, snowboard, passeio de trenó, esqui de fundo, esqui de travessia, esqui de moguls, esqui noturno, etc. Entender o [tipo da pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) no mapa ajuda a construir uma rota de navegação ideal.
+As pistas diferem por tipo. Um tipo representa diferentes características para uma pista atender aos requisitos de diferentes atividades relacionadas ao inverno: esqui alpino, patinação clássica, snowboard, trenó, esqui de fundo, esqui-caminhada, esqui mogul, esqui noturno, etc. Compreender o [tipo da pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) no mapa ajuda a construir uma rota de navegação ideal.
 
-- **Pista de esqui alpino/downhill.**
-Usado para navegação de esqui. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) tem direção e dificuldade, e na maioria das vezes é cercado pelos limites da estação de esqui. Quando uma pista de downhill é selecionada para navegação de esqui, a direção da pista é levada em consideração. Se os pontos de Partida e Destino forem estabelecidos opostos à direção da pista, a navegação segue pela via aérea mais próxima.
+- **Pista de esqui alpino/descida.**
+Usada para navegação de esqui. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) tem direção e dificuldade, e na maioria das vezes é cercada pelos limites da estação de esqui. Quando uma pista de descida é selecionada para navegação de esqui, a direção da pista é levada em consideração. Se os pontos de Partida e Destino forem estabelecidos opostos à direção da pista, a navegação segue pela via aérea mais próxima.
 
 - **Pista de esqui nórdico/de fundo.**
-Também usado para navegação de esqui. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) não tem dificuldade, pode ou não ter uma direção, e na maioria das vezes vai além dos limites da estação de esqui. Ao navegar por este tipo de pistas, os pontos de Partida e Destino podem ser frequentemente trocados.
+Também usada para navegação de esqui. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) não tem dificuldade, pode ou não ter direção, e na maioria das vezes vai além dos limites da estação de esqui. Ao navegar por este tipo de pistas, os pontos de Partida e Destino geralmente podem ser trocados.
 
-- **Pista de esqui de travessia.**
-Frequentemente usada por esquiadores para uma subida nórdica e uma descida. A dificuldade de uma pista de esqui de travessia é frequentemente marcada com a cor respectiva. A navegação de esqui pode construir uma rota ao longo deste tipo de pista, o que permite combinar os tipos de pista.
+- **Pista de esqui-caminhada.**
+Frequentemente usada por esquiadores para uma subida nórdica e uma descida. A dificuldade de uma pista de esqui-caminhada é frequentemente marcada com a cor respectiva. A navegação de esqui pode construir uma rota ao longo deste tipo de pista, o que permite combinar os tipos de pista.
 
-- **Outras pistas de esqui.**
+- **Outra pista de esqui.**
 Tipos de pista como *Trilhas de Caminhada* ou *Trilhas de Trenó* podem ser usados para perfis de esqui ou caminhada.
 
 
@@ -211,7 +211,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widge
 
 </Tabs>
 
-Para verificar no mapa se uma pista específica está preparada, você precisa ativar a opção **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na lista **<Translate android="true" ids="rendering_category_details"/>** aberta no menu [Configurar mapa](../map/configure-map-menu.md).
+Para verificar no mapa se uma pista específica é preparada, você precisa ativar a opção **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na lista **<Translate android="true" ids="rendering_category_details"/>** aberta no menu [Configurar mapa](../map/configure-map-menu.md).
 Máquinas especiais preparam as pistas para a atividade apropriada, como patinação clássica, patinação no gelo e outras. A mesma pista pode ser preparada de forma diferente em diferentes áreas.
 
 ### Rotas de Pistas de Esqui {#ski-slope-routes}
@@ -238,7 +238,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 Para descobrir quais pistas fora da estação de esqui você pode navegar, você precisa ativar a opção **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** na lista **<Translate android="true" ids="rendering_category_routes"/>**, aberta no menu [Configurar mapa](../map/configure-map-menu.md).
 
-Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ativados, as rotas de [Pistas de Esqui](../map/vector-maps.md#routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.
+Com o perfil de Esqui e o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ativados, as rotas de [Pistas de esqui](../map/vector-maps.md#routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.
 
 
 ### Noite e Iluminação {#night-and-lighting}
@@ -259,7 +259,7 @@ Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqu
 
 </Tabs>
 
-O estilo **Inverno e Esqui** pode ser usado com o [modo Noturno ou Nascer/Pôr do Sol](../map/vector-maps.md#map-mode). Uma escolha confortável para quem prefere cores escuras, ou escurecer a tela à noite, bem como para quem pratica esqui noturno. Juntamente com o modo Noturno, os Mapas de Esqui do OsmAnd também podem mostrar quais pistas têm iluminação com a opção [Iluminação Pública](../map/vector-maps.md#details).
+O estilo **Inverno e esqui** pode ser usado com o [modo Noturno ou Nascer/Pôr do Sol](../map/vector-maps.md#map-mode). Uma escolha confortável para quem prefere cores escuras, ou escurecer a tela à noite, bem como para quem pratica esqui noturno. Juntamente com o modo Noturno, os Mapas de Esqui do OsmAnd também podem mostrar quais pistas têm iluminação com a opção [Iluminação Pública](../map/vector-maps.md#details).
 
 Ambas as opções estão no menu [Configurar mapa](../map/configure-map-menu.md).
 
@@ -275,5 +275,3 @@ Ambas as opções estão no menu [Configurar mapa](../map/configure-map-menu.md)
 - [Interagir com o Mapa](../../user/map/interact-with-map.md)
 - [Configurações Globais](../../user/personal/global-settings.md)
 - [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
-
-> *Última atualização: Dezembro de 2024*

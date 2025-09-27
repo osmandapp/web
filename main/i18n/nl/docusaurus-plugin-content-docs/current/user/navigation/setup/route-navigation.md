@@ -1,7 +1,7 @@
 ---
-source-hash: 5614ff96c05b150dc149ccfc7296cdeb953b69993517dcf326e81979e07d4a0f
+source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
 sidebar_position: 1
-title: Routevoorbereiding
+title:  Routevoorbereiding
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,13 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-De functie **Routevoorbereiding** in OsmAnd biedt stapsgewijze navigatiebegeleiding voor verschillende [routeringstypen](./../routing/osmand-routing.md#routing-types), waaronder [autorijden](./../routing/car-based-routing.md), [wandelen](./../routing/pedestrian-routing.md), fietsen, [paardrijden](./../routing/horse-routing.md) en [skiën](./../routing/ski-routing.md). Gebruikers kunnen navigatie-instellingen aanpassen, bestemmingen toevoegen en routes optimaliseren voor efficiëntie.
+De functie **Routevoorbereiding** in OsmAnd biedt stapsgewijze navigatiebegeleiding voor verschillende [routeringstypes](./../routing/osmand-routing.md#routing-types), waaronder [autorijden](./../routing/car-based-routing.md), [wandelen](./../routing/pedestrian-routing.md), fietsen, [paardrijden](./../routing/horse-routing.md) en [skiën](./../routing/ski-routing.md). Gebruikers kunnen navigatie-instellingen aanpassen, bestemmingen toevoegen en routes optimaliseren voor efficiëntie.
 
 :::tip
 
 - **Offline navigatie** is standaard ingeschakeld. U kunt echter ook [online routeringsengines](./../routing/online-routing.md) gebruiken.
 
-- **OsmAnd vereist toestemming** om toegang te krijgen tot [nauwkeurige locatie](../../start-with/first-steps.md#permission-to-access-the-location) voor nauwkeurige navigatie. Schakel dit indien nodig in de apparaatinstellingen in.
+- **OsmAnd vereist toestemming** voor toegang tot [precieze locatie](../../start-with/first-steps.md#permission-to-access-the-location) voor nauwkeurige navigatie. Schakel dit indien nodig in de apparaatinstellingen in.
 
 :::
 
@@ -48,15 +48,15 @@ De functie **Routevoorbereiding** in OsmAnd biedt stapsgewijze navigatiebegeleid
 
 **Stap 1: Kaarten downloaden.**
 
-Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaarten zijn gedownload](../../start-with/download-maps.md). Ga naar *Menu → Kaarten & Middelen → Kaarten downloaden* om kaarten voor uw regio te installeren.
+Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaarten zijn gedownload](../../start-with/download-maps.md). Ga naar *Menu → Kaarten & Bronnen → Kaarten downloaden* om kaarten voor uw regio te installeren.
 
 **Stap 2: Navigatieprofielen configureren.**
 
 [Configureer de profielen](../../personal/profiles.md) die u wilt gebruiken:
 
-- Stel [voertuigparameters in](../guidance/navigation-settings.md#size-parameters) (*belangrijk voor vrachtwagenchauffeurs*), selecteer het [motortype](../guidance/navigation-settings.md#fuel-used-by-motor) (*optioneel*).
+- Stel [voertuigparameters](../guidance/vehicle-parameters.md#size-parameters) in (*belangrijk voor vrachtwagenchauffeurs*), selecteer het [motortype](../guidance/vehicle-parameters.md#fuel-used-by-motor) (*optioneel*).
 
-- Configureer [uiterlijk van de routelijn](../guidance/map-during-navigation#route-line-appearance) (*optioneel*, beschikbaar voor Pro-gebruikers ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
+- Configureer de [weergave van de routelijn](../guidance/map-during-navigation#route-line-appearance) (*optioneel*, beschikbaar voor Pro-gebruikers ([Android](../../purchases/android.md#pro-features) / [iOS](../../purchases/ios.md#pro-features))).
 
 - Configureer [gesproken aanwijzingen](../guidance/voice-navigation.md).
 
@@ -64,22 +64,22 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 1. Open het [*Navigatiemenu*](#navigation-menu):
 
-    - Geef het [bestemmingspunt op](#set-target-point).
-    - Wacht tot de route is berekend. Daarna kunt u aanvullende informatie over uw route verkrijgen in de sectie *[Details](./route-details.md#overview)*.
-    - U kunt schakelen tussen verschillende [routeringstypen](./../routing/osmand-routing.md#routing-types) (profielen) om het beste resultaat te krijgen.
-    - Voeg [tussenbestemmingen](#intermediate-destinations) toe (optioneel).
-    - U kunt ook het vertrekpunt wijzigen van de [huidige locatie](../../map/interact-with-map#my-location-and-zoom) naar de gewenste locatie.
+    - Specificeer het [bestemmingspunt](#set-target-point).
+    - Wacht tot de route is berekend. Daarna kunt u aanvullende informatie over uw route verkrijgen in de *[sectie Details](./route-details.md#overview)*.
+    - U kunt schakelen tussen verschillende [routeringstypes](./../routing/osmand-routing.md#routing-types) (profielen) om het beste resultaat te krijgen.
+    - Voeg [tussenliggende bestemmingen](#intermediate-destinations) toe (optioneel).
+    - U kunt ook het vertrekpunt wijzigen van de [huidige locatie](../../map/interact-with-map.md#my-location-and-zoom) naar de gewenste locatie.
 
 2. Aanvullende [*Navigatie-instellingen*](#settings) kunnen worden gebruikt, afhankelijk van uw doeleinden (u kunt configureren welke wegen u wilt vermijden of verkiezen, brandstof besparen of de snelste route kiezen, enz.).
 
-3. [Start](#start--stop-navigation) navigatie of [simuleer eerst navigatie](#simulated-navigation) (met deze functie kunt u uw route testen voordat u er daadwerkelijk langs reist).
+3. [Start](#start--stop-navigation) de navigatie of [simuleer de navigatie](#simulated-navigation) eerst (met deze functie kunt u uw route testen voordat u er daadwerkelijk langs reist).
 
-4. Onderweg kunt u de navigatie [*Pauzeren/Hervatten*](#pause--resume-navigation) en [*Stoppen*](#start--stop-navigation).
+4. Terwijl u onderweg bent, kunt u de navigatie [*Pauzeren/Hervatten*](#pause--resume-navigation) en [*Stoppen*](#start--stop-navigation).
 
 
 :::note
 
-**Route kan niet worden opgebouwd wanneer *[Online kaart](../../map/raster-maps.md#select-raster-maps)* is geselecteerd als kaartbron.**
+**Route kan niet worden gebouwd wanneer *[Online kaart](../../map/raster-maps.md#select-raster-maps)* is geselecteerd als kaartbron.**
 
 :::
 
@@ -88,7 +88,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 Er zijn 3 manieren om het navigatiemenu te bereiken:
 
-- De [*Navigatieknop*](../../widgets/map-buttons.md#directions) op het kaartenoverzicht.  
+- De [*Navigatieknop*](../../widgets/map-buttons.md#directions) op het kaartscherm.  
 - *Richting naar/van* in een [*kaartcontextmenu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigatiesectie in het [*Hoofdmenu*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,23 +108,23 @@ Er zijn 3 manieren om het navigatiemenu te bereiken:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Startlocatie instellen (standaard: [*Mijn huidige locatie*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Stel de startlocatie in (standaard: [*Mijn huidige locatie*](../../map/interact-with-map.md#my-location-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Gebruik om [uw bestemmingspunt in te stellen](#set-target-point).
-- **Toevoegen** &nbsp;&#43; - Voeg [tussenpunten](../../widgets/nav-widgets.md#distance-to-intermediate) langs de route in.
+- **Toevoegen** &nbsp;&#43; - Voeg [tussenliggende punten](../../widgets/nav-widgets.md#distance-to-intermediate) langs de route in.
 - **Wisselen** &nbsp;&#8595;&#8593; - Keer de *Start*- en *Eind*-punten om.
-- **Geluidsknop** - Dempen van de [gesproken aanwijzingen](../guidance/voice-navigation.md).
+- **Geluidsknop** - Demp de [gesproken aanwijzingen](../guidance/voice-navigation.md).
 - **<Translate android="true" ids="shared_string_settings"/>** – [Pas](#settings) routevoorkeuren en wegbeperkingen aan.
 
-Stel uw bestemming in het *Navigatiemenu* in met behulp van:
+Stel uw bestemming in het *Navigatiemenu* in met:
 
 - Speciale favoriete punten [Thuis / Werk](#use-home-or-work-points).
 - Vorige route of [Geschiedenis](../../personal/global-settings.md#history).
-- De knop **Annuleren** leidt terug naar het hoofdscherm.
+- De **Annuleren**-knop leidt terug naar het hoofdscherm.
 - [Startknop](#start--stop-navigation) start de navigatie nadat de routeberekening is voltooid.
   
 ### Startpunt selecteren {#select-starting-point}
 
-Als startpunt kunt u uw huidige locatie kiezen, de locatie van een [Favoriet punt](../../map/point-layers-on-map.md#favorites), een punt op de kaart selecteren of [Zoeken](../../search/index.md) gebruiken. U kunt ook een startpunt instellen in het [kaartcontextmenu](../../map/map-context-menu.md) door de functie [Route vanaf](../../map/map-context-menu.md#directions-to--from) te selecteren.  
+Wat het startpunt betreft, kunt u uw huidige locatie kiezen, de locatie van een [Favoriet punt](../../map/point-layers-on-map.md#favorites), een punt op de kaart selecteren of [Zoeken](../../search/index.md) gebruiken. U kunt ook een startpunt instellen in het [kaartcontextmenu](../../map/map-context-menu.md) door de functie [Richting van](../../map/map-context-menu.md#directions-to--from) te selecteren.  
 
 
 ### Doelpunt instellen {#set-target-point}
@@ -144,17 +144,17 @@ Als startpunt kunt u uw huidige locatie kiezen, de locatie van een [Favoriet pun
 
 </Tabs>
 
-Het belangrijkste om navigatie te starten is het bepalen van uw bestemming. Het bestemmingspunt kan worden gevonden met behulp van een [*Zoekfunctie*](../../search/index.md#overview), of eenvoudigweg op een kaart. U kunt ook een doelpunt instellen in het [*Navigatiemenu*](#navigation-menu):  
+Het belangrijkste om de navigatie te starten is het bepalen van uw bestemming. Het bestemmingspunt kan worden gevonden met behulp van een [*Zoekfunctie*](../../search/index.md#overview), of gewoon op een kaart. U kunt ook een doelpunt instellen in het [*Navigatiemenu*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Opent [het zoekmenu](../../search/index.md).
-- **<Translate android="true" ids="shared_string_address"/>** - Opent [adreszoekmenu](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Opent [het adreszoekmenu](../../search/search-address.md).
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Opent de kaart om een bestemmingspunt te kiezen door op de kaart te tikken.
-- **<Translate android="true" ids="shared_string_favorites"/>** - Maakt het mogelijk om [Favoriet](../../personal/favorites.md) als bestemming te gebruiken.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Maakt het mogelijk om een [Favoriet](../../personal/favorites.md) als bestemming te gebruiken.
 - **<Translate android="true" ids="shared_string_markers"/>** - Maakt het mogelijk om een van de [Kaartmarkeringen](../../personal/markers.md) als bestemmingspunt te kiezen.
-- **Startpunt en bestemming wisselen** &nbsp;&#8595;&#8593; - Maakt het mogelijk om *Start*- en *Eind*-punten te wisselen.
+- **Wissel Startpunt en Bestemming** &nbsp;&#8595;&#8593; - Maakt het mogelijk om *Start*- en *Eind*-punten om te wisselen.
 
 
-### Tussenbestemmingen {#intermediate-destinations}
+### Tussenliggende bestemmingen {#intermediate-destinations}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -172,12 +172,12 @@ Het belangrijkste om navigatie te starten is het bepalen van uw bestemming. Het 
 
 </Tabs>
 
-- **&nbsp;&#x1F589;** - maakt het mogelijk om de lijst met bestemmingspunten te openen om wijzigingen aan te brengen.
-- **&nbsp;&#8592;** - gaat naar het navigatiemenu.
-- **&nbsp;&#10005;** - maakt het mogelijk om een bestemmingspunt uit de puntenlijst te verwijderen.
-- **&nbsp;&#61;** - maakt het mogelijk om de volgorde van punten in de puntenlijst te wijzigen.
+- **&nbsp;&#x1F589;** - hiermee opent u de lijst met bestemmingspunten om wijzigingen aan te brengen.
+- **&nbsp;&#8592;** - gaat naar het Navigatiemenuscherm.
+- **&nbsp;&#10005;** - hiermee kunt u een bestemmingspunt uit de puntenlijst verwijderen.
+- **&nbsp;&#61;** - hiermee kunt u de volgorde van de punten in de puntenlijst wijzigen.
 - *&nbsp;&#43; Toevoegen* - opent het contextmenu *Tussenliggend toevoegen*.
-- *&nbsp;&#9776; Alles wissen* - maakt het mogelijk om alle tussenliggende punten te wissen.
+- *&nbsp;&#9776; Alles wissen* - hiermee kunt u alle tussenliggende punten wissen.
 
 Als u **Sorteren** (*Android*) of **Opties** (*iOS*) kiest in de lijst met bestemmingen, krijgt u speciale opties om de volgorde van de navigatie naar tussenliggende punten aan te passen.
 
@@ -191,23 +191,23 @@ Als u **Sorteren** (*Android*) of **Opties** (*iOS*) kiest in de lijst met beste
 
 <TabItem value="ios" label="iOS">
 
-![Navigatie tussenliggend iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
+![Navigatie tussenliggend iOS 3](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
 
 </TabItem>
 
 </Tabs>
 
-In dit menu vindt u aanvullende opties voor het beheren van de bestemmingspunten:
+In dit menu vindt u extra opties voor het beheren van de bestemmingspunten:
 
-- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd biedt de kortste route tussen al uw bestemmingen, maar de volgorde van het bezoek kan worden bewerkt. Het startpunt en de eindbestemming worden niet gewijzigd.
+- **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - OsmAnd zal de kortste route tussen al uw bestemmingen voorstellen, maar de volgorde van het bezoek kan worden bewerkt. Het startpunt en de eindbestemming worden niet gewijzigd.
 
-- **<Translate android="true" ids="switch_start_finish"/>** - Het startpunt en de eindbestemming worden verwisseld.
+- **<Translate android="true" ids="switch_start_finish"/>** - Het startpunt en de eindbestemming worden omgewisseld.
 
-- **<Translate android="true" ids="reverse_all_points"/>** (*alleen Android*) - Alle punten worden in omgekeerde richting geplaatst.
+- **<Translate android="true" ids="reverse_all_points"/>** (*Alleen Android*) - Alle punten worden in omgekeerde richting gezet.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. U kunt tussenbestemmingen toevoegen vanuit dit menu.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. U kunt vanuit dit menu tussenliggende bestemmingen toevoegen.
 
-- **<Translate android="true" ids="clear_all_intermediates"/>**. Alle tussenbestemmingen worden van de kaart verwijderd.
+- **<Translate android="true" ids="clear_all_intermediates"/>**. Alle tussenliggende bestemmingen worden van de kaart verwijderd.
 
 ### Thuis- of werkpunten gebruiken {#use-home-or-work-points}
 
@@ -227,10 +227,10 @@ In dit menu vindt u aanvullende opties voor het beheren van de bestemmingspunten
 
 </Tabs>
 
-De tabbladen **Thuis** en **Werk** (of [Speciale punten](../../personal/favorites.md#special-favorites-personal) voor Favorieten) kunnen worden gebruikt om snel bestemmingspunten in te stellen in het navigatiemenu. Als u de adressen van de Speciale favorieten niet hebt ingevoerd, blijven deze cellen leeg. Als u op dit veld tikt, wordt u gevraagd deze POI's aan te maken.  
+**Thuis** en **Werk** tabs (of [Speciale punten](../../personal/favorites.md#special-favorites-personal) voor Favorieten) kunnen worden gebruikt om snel bestemmingspunten in te stellen in het navigatiemenu. Als u de adressen van de Speciale favorieten niet hebt ingevoerd, blijven deze cellen leeg. Als u op dit veld tikt, wordt u gevraagd om deze POI's aan te maken.  
 
 
-### Geschiedenis van eerdere routes {#history-of-previous-routes}
+### Geschiedenis van vorige routes {#history-of-previous-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -248,12 +248,12 @@ De tabbladen **Thuis** en **Werk** (of [Speciale punten](../../personal/favorite
 
 </Tabs>
 
-Als de registratie van de [Navigatiegeschiedenis](../../personal/global-settings.md#history) is ingeschakeld, kunt u de vorige routes of bestemmingen uit de geschiedenislijst gebruiken voor navigatie. Deze optie kan handig zijn voor snelle toegang tot veelgebruikte routes. Items in de geschiedenislijst worden gesorteerd op meest recent gebruik, beginnend met de nieuwste.  
+Als het opnemen van [Navigatiegeschiedenis](../../personal/global-settings.md#history) is ingeschakeld, kunt u de vorige routes of bestemmingen uit de geschiedenislijst gebruiken voor navigatie. Deze optie kan handig zijn voor snelle toegang tot veelgebruikte routes. Items in de geschiedenislijst zijn gesorteerd op meest recent gebruik, beginnend met de nieuwste.  
 
 :::note
 
-- Wanneer het [loggen van geschiedenisgegevens](../../personal/global-settings.md#history-options) is uitgeschakeld, wordt u niet gevraagd om eerdere routes te gebruiken voor navigatie.
-- U kunt sommige of alle geschiedenisrecords over uw eerdere routes verwijderen. Dit kan worden gedaan op het tabblad *[Navigatiegeschiedenis](../../personal/global-settings.md#history-options)* van de optie Geschiedenis (*Menu → Instellingen → OsmAnd-instellingen → Geschiedenis*).
+- Wanneer het loggen van [Geschiedenisgegevens](../../personal/global-settings.md#history) is uitgeschakeld, wordt u niet gevraagd om vorige routes voor navigatie te gebruiken.
+- U kunt sommige of alle geschiedenisrecords over uw vorige routes verwijderen. Dit kan worden gedaan op het tabblad *[Navigatiegeschiedenis](../../personal/global-settings.md#history)* van de optie Geschiedenis (*Menu → Instellingen → OsmAnd-instellingen → Geschiedenis*).
 
 :::
 
@@ -276,33 +276,33 @@ Als de registratie van de [Navigatiegeschiedenis](../../personal/global-settings
 
 </Tabs>
 
-Zodra start- en eindpunten zijn geselecteerd, maakt de app een route tussen deze punten met behulp van een actief profiel. [Het app-profiel](../../personal/profiles.md) en de [widgets](../../widgets/index.md) worden pas gewisseld als u op de *Start*-knop van de navigatie tikt.
+Zodra de start- en eindpunten zijn geselecteerd, zal de app een route tussen hen creëren met behulp van een actief profiel. [Het app-profiel](../../personal/profiles.md) en de [widgets](../../widgets/index.md) set zullen alleen veranderen zodra u op de *Start*-knop van de navigatie tikt.
 
-- **Tik op Start** om de navigatie te starten.
+- **Tik op Start** om de navigatie te beginnen.
 - [Pauzeer](#pause--resume-navigation) de navigatie wanneer u een pauze neemt. (*Alleen Android*)
 - **Stop** de navigatie door **Stop** (*Android*) of **Annuleren** (*iOS*) te selecteren.
 
-:::note Routegegevens
-Aanvullende informatie over de gemaakte route, zoals hoogte, afslag-voor-afslag instructies, analysehulpmiddel en andere, is te vinden in de sectie [**Details**](../setup/route-details.md).
+:::note Routedetails
+Aanvullende informatie over de gemaakte route, zoals hoogte, stapsgewijze instructies, analyse-tool en andere, is te vinden in de sectie [**Details**](../setup/route-details.md).
 :::
 
 ### Routeherberekening {#route-recalculation}
 
-De route kan automatisch opnieuw worden berekend in geval van afwijking. U kunt de parameters van de herberekening wijzigen in de [Navigatie-instellingen](../guidance/navigation-settings.md#recalculate-route). U kunt ook de melding over routeherberekening uitschakelen in de instellingen van [Gesproken aanwijzingen](../guidance/voice-navigation.md#voice-settings).
+De route kan automatisch worden herberekend in geval van afwijking ervan. U kunt de parameters van de herberekening wijzigen in de [Navigatie-instellingen](../guidance/navigation-settings.md#recalculate-route). U kunt ook de melding over routeherberekening uitschakelen in de instellingen van [Gesproken aanwijzingen](../guidance/voice-navigation.md#voice-settings).
 
 ### Navigatie pauzeren / hervatten {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
-Als u even wilt stoppen voor een pauze en korte tijd van de route wilt afwijken, kunt u de functie *Navigatie pauzeren/hervatten* gebruiken om gesproken aanwijzingen te pauzeren en het herberekenen van de route te stoppen.  
-Deze optie is beschikbaar in de Android-versie van de app in de *[Meldingslijst](../guidance/voice-navigation.md#text-notifications)* of via het *[Snelactiemenu](../../widgets/quick-action.md)*.
+Als u wilt stoppen voor een pauze en voor korte tijd van de route wilt afwijken, kunt u de functie *Pauzeren/Hervatten* van de navigatie gebruiken om gesproken aanwijzingen te pauzeren en het herberekenen van de route te stoppen.  
+Deze optie is beschikbaar in de Android-versie van de app in de *[Notificatielijst](../guidance/voice-navigation.md#text-notifications)* of via het *[Snelle acties menu](../../widgets/quick-action.md)*.
 
-![Meldingsscherm Android](@site/static/img/navigation/route/navigation_pause_android.png)
+![Notificatiescherm Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
 Om de navigatie te hervatten:
 
 - Gebruik het bericht van OsmAnd in de notificatiebalk.
-- Gebruik het *Snelactiemenu* of het dialoogvenster dat verschijnt wanneer u op de *[Navigatieknop](../../widgets/map-buttons.md#directions)* tikt (zie schermafbeelding).
+- Gebruik het *Snelle acties menu* of het dialoogvenster dat verschijnt wanneer u op de *[Navigatieknop](../../widgets/map-buttons.md#directions)* tikt (zie screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -321,16 +321,16 @@ Om de navigatie te hervatten:
 </Tabs>
 
 :::note
-Wanneer u **op de navigatieknop tikt** terwijl u onderweg bent, stopt de navigatie **niet en blijven gesproken aanwijzingen hoorbaar**, hoewel de voorgestelde opties Hervatten of Start verwarrend kunnen zijn.
+Wanneer u **op de Navigatieknop tikt** terwijl u op uw route bent, **stopt de navigatie niet en blijven de gesproken aanwijzingen doorgaan**, hoewel de voorgestelde opties Hervatten of Starten verwarrend kunnen zijn.
 :::
 
 
-### Tips voor energiebesparing {#power-saving-tips}
+### Energiebesparende tips {#power-saving-tips}
 
-Navigatie maakt gebruik van GPS en achtergrondverwerking, wat de batterij kan leegtrekken. Om het energieverbruik te optimaliseren:
+Navigatie gebruikt GPS en achtergrondverwerking, wat de batterij kan leegmaken. Om het stroomverbruik te optimaliseren:
 
 - **Schakel het scherm uit** terwijl u vertrouwt op gesproken aanwijzingen.  
-- Schakel [Schermbediening](../guidance/voice-navigation.md#screen-control) (*alleen Android*) in via *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
+- Schakel [Schermbediening](../guidance/voice-navigation.md#screen-control) (*Alleen Android*) in via *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
 
 
 ## Instellingen {#settings}
@@ -366,20 +366,20 @@ Er zijn geen navigatie-instellingen in het profiel *Kaart bekijken*.
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** bepaalt hoe routes worden berekend. Uw fietsprofiel heeft bijvoorbeeld een navigatietype Fietsen, dat de routeringsregels instelt. U kunt deze regels (als routing.xml-bestand) importeren in OsmAnd. Meer over routering kunt u lezen op onze [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) pagina.&nbsp;  
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** bepaalt hoe routes worden berekend. Uw fietsprofiel heeft bijvoorbeeld een Fietsnavigatietype, dat de routeringsregels instelt. U kunt deze regels (als routing.xml-bestand) importeren in OsmAnd. Meer over routering kunt u lezen op onze [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) pagina.&nbsp;  
 
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** bepaalt welke parameters tijdens de routering worden gebruikt (dit is het proces van het selecteren van een route voor navigatie).
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** bepaalt welke parameters worden gebruikt tijdens het routeren (dit is het proces van het selecteren van een route voor navigatie).
 
-Lees meer over routeparameters voor het corresponderende navigatietype.
+Lees over de routeparameters voor het overeenkomstige navigatietype.
 
-Hoe u [routeringstype](../routing/osmand-routing.md#routing-types) en [routeparameters](../guidance/navigation-settings.md#route-parameters) configureert, kunt u lezen in het artikel [Navigatie-instellingen](../guidance/navigation-settings.md) of in artikelen over specifieke routeringstypen in de sectie [Routeparameters](../routing/osmand-routing.md#routing-types).  
+Hoe u [routeringstype](../routing/osmand-routing.md#routing-types) en [routeparameters](../guidance/navigation-settings.md#route-parameters) kunt configureren, kunt u lezen in het [artikel Navigatie-instellingen](../guidance/navigation-settings.md) of in artikelen over specifieke soorten routering in de sectie [Routeparameters](../routing/osmand-routing.md#routing-types).  
 
 
-### Gesimuleerde navigatie {#simulated-navigation}
+## Gesimuleerde navigatie {#simulated-navigation}
 
-De tool **Gesimuleerde navigatie** stelt u in staat om een route te bekijken voordat u gaat reizen. Dit helpt bij het plannen, vertrouwd raken en testen van het navigatiesysteem van OsmAnd.
+De tool **Gesimuleerde navigatie** stelt u in staat om een route te bekijken voordat u op reis gaat. Dit helpt bij het plannen, vertrouwd raken en testen van het navigatiesysteem van OsmAnd.
 
-#### Simulatie starten / stoppen {#start--stop-simulation}
+### Simulatie starten / stoppen {#start--stop-simulation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -397,15 +397,15 @@ De tool **Gesimuleerde navigatie** stelt u in staat om een route te bekijken voo
 
 </Tabs>
 
-Wanneer een navigatieroute is opgebouwd, kunt u de navigatie simuleren met de optie **<Translate android="true" ids="simulate_navigation"/>**.  
+Wanneer een navigatieroute is gebouwd, kunt u de navigatie simuleren met de optie **<Translate android="true" ids="simulate_navigation"/>**.  
 
 - Ga in het [Navigatiemenu](#navigation-menu) naar *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
-- Schakel de schakelaar om de optie in te schakelen.
+- Zet de schakelaar om de optie in te schakelen.
 - Tik op de [Start](#start--stop-navigation) navigatieknop om de simulatie te starten.
-- Om de navigatiesimulatie te [Stoppen](#start--stop-navigation), tikt u op **Stop** (*Android*) of **Annuleren** (*iOS*).
+- Om de navigatiesimulatie te [Stoppen](#start--stop-navigation), tikt u op **Stop** (*Android*), of **Annuleren** (*iOS*).
 
 
-#### Snelheidsmodus {#speed-mode}
+### Snelheidsmodus {#speed-mode}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -427,18 +427,18 @@ Ga naar: *<Translate android="true" ids="shared_string_navigation,shared_string_
 
 </Tabs>
 
-- **<Translate android="true" ids="simulation_preview_mode_title"/>** - Versnelt de simulatie op rechte paden, vertraagt bij kruispunten.
+- **<Translate android="true" ids="simulation_preview_mode_title"/>** - Versnelt de simulatie op rechte paden en vertraagt bij kruispunten.
 
-- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Draait met een vaste snelheid.
+- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Draait op een vaste snelheid.
 - **<Translate android="true" ids="simulation_real_mode_title"/>**:
-    - **Op rechte weggedeelten** zal de snelheid dicht bij de maximaal toegestane snelheid liggen.
-    - **Bij kruispunten** zal de simulator de snelheid verminderen.
-    - **Aanvullende straffen** worden toegepast bij verkeerslichten, stopborden en andere soortgelijke obstakels.
+    - **Op rechte stukken** van de weg zal de snelheid dicht bij de maximaal toegestane snelheid liggen.
+    - **Bij kruispunten** zal de simulator de snelheid verlagen.
+    - **Extra straffen** worden toegepast bij verkeerslichten, stopborden en andere vergelijkbare obstakels.
 
 
-## Kaarten ontbreken of niet gesynchroniseerd {#maps-missing-or-not-synchronized}
+## Kaarten ontbreken of zijn niet gesynchroniseerd {#maps-missing-or-not-synchronized}
 
-Om een route te bouwen moeten alle **benodigde kaarten** gedownload zijn en dezelfde releasedatum hebben. Houd er rekening mee dat in sommige situaties de melding van ontbrekende kaarten verborgen kan zijn in het routevoorbereidingsmenu. Als u het navigatiemenu omhoog trekt, ziet u mogelijke redenen waarom uw route niet kon worden berekend.
+Om een route te bouwen moeten alle **noodzakelijke kaarten** gedownload zijn en dezelfde releasedatum hebben. Let op, in sommige situaties kan het bericht over ontbrekende kaarten verborgen zijn in het routevoorbereidingsmenu. Als u het navigatiemenu omhoog trekt, ziet u mogelijke redenen waarom uw route niet berekend kon worden.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -455,9 +455,9 @@ Om een route te bouwen moeten alle **benodigde kaarten** gedownload zijn en deze
 
 </Tabs>
 
-#### Vereiste kaarten {#required-maps}
+### Vereiste kaarten {#required-maps}
 
-In het dialoogvenster met vereiste kaarten ziet u suggesties voor kaarten die moeten worden gedownload of bijgewerkt. De lijst met gebruikte kaarten is mogelijk niet nauwkeurig, omdat deze een zeer eenvoudige route berekent. Om de precieze lijst met kaarten te krijgen, kunt u op **Online berekenen** klikken. Als u **Gedownloade kaarten gebruiken** selecteert, zal de routeberekening proberen reeds gedownloade kaarten te gebruiken en de waarschuwingsmelding overslaan.
+In het dialoogvenster voor vereiste kaarten ziet u suggesties voor kaarten die gedownload of bijgewerkt moeten worden. De lijst met gebruikte kaarten is mogelijk niet precies, omdat deze een zeer eenvoudige route berekent. Om de precieze lijst met kaarten te krijgen, kunt u op **Online berekenen** klikken. Als u **Gebruik gedownloade kaarten** selecteert, zal de routeberekening proberen reeds gedownloade kaarten te gebruiken en het waarschuwingsbericht overslaan.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -489,13 +489,11 @@ Voor meer stappen voor probleemoplossing, zie [navigatieproblemen](../../trouble
 ## Gerelateerde artikelen {#related-articles}
 
 - [Routeparameters](../routing/osmand-routing.md#routing-types)
-- [Routegegevens](./route-details.md)
-- [Navigatie via spoor](./gpx-navigation.md)
-- [Navigatie via markeringen](./markers-navigation.md)
+- [Routedetails](./route-details.md)
+- [Navigatie op basis van een track](./gpx-navigation.md)
+- [Navigatie op basis van markeringen](./markers-navigation.md)
 - [Navigatie-instellingen](../guidance/navigation-settings.md)
 - [Kaartscherm tijdens navigatie](../guidance/map-during-navigation.md)
 - [Gesproken aanwijzingen / Meldingen](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Laatst bijgewerkt: februari 2025*

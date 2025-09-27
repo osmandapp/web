@@ -1,5 +1,5 @@
 ---
-source-hash: dde8250578460772829e966968add9c68eaa6a84529c9781ca298152f25ce984
+source-hash: d91382fd90471c35f09518fffca8df6e01494de94a597a6b8006d0c7f62c249d
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -20,39 +20,39 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info
 De site *[osmand.net/map](https://osmand.net/map/)* wordt momenteel ontwikkeld en getest.
-**Daarom kunnen de lay-out en de werking van sommige functies op de site afwijken van de beschrijving in dit artikel.**
+**Daarom kunnen de lay-out en de werking van sommige functies op de site afwijken van wat in dit artikel wordt beschreven.**
 
-We hebben het [Discussiethema](https://github.com/osmandapp/OsmAnd/discussions/16567) op onze GitHub aangemaakt, zodat u daar feedback kunt achterlaten.
+We hebben het [Discussie-onderwerp](https://github.com/osmandapp/OsmAnd/discussions/16567) op onze GitHub aangemaakt zodat u daar feedback kunt achterlaten.
 :::
 
 
 ## Overzicht {#overview}
 
-De OsmAnd webkaart is een wereldkaart gebaseerd op [OpenStreetMap (OSM)](https://www.openstreetmap.org/) gegevens. Het stelt gebruikers in staat om hun eigen gegevens, zoals tracks en favorieten, te bekijken, navigatieroutes voor elk profiel aan te maken, en toegang te krijgen tot aanvullende functies zoals weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring direct in uw browser aan.
+De OsmAnd-webkaart is een wereldkaart gebaseerd op gegevens van [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Het stelt gebruikers in staat om hun eigen gegevens te bekijken, zoals tracks en favorieten, navigatieroutes voor elk profiel te maken en toegang te krijgen tot extra functies zoals het weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring rechtstreeks in uw browser aan.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web alles](@site/static/img/web/web_map_all.png)
 
 
-## Kaartcontextmenu {#map-context-menu}
+## Contextmenu Kaart {#map-context-menu}
 
 Om het te openen, klikt u met de rechtermuisknop ergens op de kaart. Dit menu bevat de volgende acties:
 
 - **Waar ben ik** – Vind snel uw huidige locatie op de kaart. Deze functie toont de dichtstbijzijnde adressen bij het geselecteerde punt op de kaart.
-- **Open weer** – Open het [Weermenu](#weather-on-the-web) om weersdetails te bekijken.
-- **Nieuwe route maken** – Opent de tool [*Route plannen*](../web/planner.md#create-track-and-local) met de geselecteerde locatie als start- of bestemmingspunt.
-- **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-userdata.mdx#add--edit-favorite) aanmaken en opslaan op elk punt op de kaart voor gemakkelijke toegang.
+- **Open weer** – Ga naar het [Weermenu](#weather-on-the-web) om weerdetails te bekijken.
+- **Nieuwe route maken** – Opent de tool [*Plan een route*](../web/planner.md#navigation-route) met de geselecteerde locatie als start- of eindpunt.
+- **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-userdata.mdx#add--edit-favorite) op elk punt op de kaart maken en opslaan voor gemakkelijke toegang.
 - **Route vanaf** – Stelt het geselecteerde punt in als de [startlocatie](../web/planner.md#navigation-route) voor navigatie.
 - **Route naar** – Stelt het geselecteerde punt in als de [bestemming voor navigatie](../web/planner.md#navigation-route).
 - **Coördinaten kopiëren** – Kopieert de coördinaten van het geselecteerde punt voor extern gebruik.
-- **Speld toevoegen** – Plaatst een speld om een locatie op de kaart te markeren. ([Voorbeeld](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
+- **Pin toevoegen** – Plaatst een pin om een locatie op de kaart te markeren. ([Voorbeeld](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Regio's tonen** – Toont de regio's die bij de geselecteerde locatie horen.
 
-![Map Context menu](@site/static/img/web/map_context_menu.png)
+![Contextmenu Kaart](@site/static/img/web/map_context_menu.png)
 
 
-## Weer op het web {#weather-on-the-web}
+## Weer op het Web {#weather-on-the-web}
 
-De OsmAnd Web biedt weersinformatie van twee voorspellingsbronnen:
+OsmAnd Web biedt weersinformatie uit twee voorspellingsbronnen:
 
 - **GFS (standaard)**
 - **ECMWF**
@@ -61,7 +61,7 @@ Om tussen deze voorspellingsbronnen te schakelen, klikt u op de **parapluknop** 
 
 ***Functies van het weermenu:***
 
-- **Huidige weergegevens**: Toont uw coördinaten samen met de volgende gegevens:
+- **Huidige Weergegevens**: Toont uw coördinaten samen met de volgende gegevens:
 
   - Temperatuur.
   - Neerslag.
@@ -69,7 +69,7 @@ Om tussen deze voorspellingsbronnen te schakelen, klikt u op de **parapluknop** 
   - Luchtdruk.
   - Bewolking.
 
-- **Tijdaanpassing**: Wijzig de datum en tijd met behulp van de **tijdtool** in het Weermenu om het weer voor een specifiek moment te bekijken.
+- **Tijdaanpassing**: Wijzig de datum en tijd met de **tijdtool** in het Weermenu om het weer voor een specifiek moment te bekijken.
 
 ***Weerlagen op de kaart:***
 
@@ -88,7 +88,7 @@ Om tussen deze voorspellingsbronnen te schakelen, klikt u op de **parapluknop** 
 
 Om deze functies te openen of aan te passen, gebruikt u de menu's aan de linker- of rechterkant van de interface.
 
-  ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
+  ![OsmAnd Web Weer](@site/static/img/web/web_weather.png)
 
 ***7-daagse voorspelling***:
 
@@ -97,84 +97,84 @@ Klik op de voorspellingsgegevens in het menu om de **7-daagse voorspelling** voo
 - **Grafiekformaat**
 - **Lijstformaat**
 
-  ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
+  ![OsmAnd Web Weer](@site/static/img/web/web_7day.png)
 
 
-## Kaartmenu configureren {#configure-map-menu}
+## Menu Kaart configureren {#configure-map-menu}
 
-Met het menu Kaart configureren kunt u de weergave-instellingen voor kaartgegevens beheren, zoals POI-lagen, Favorieten, tracks en terrein. Log in op uw OsmAnd-account om dit menugedeelte te gebruiken.
+Het menu Kaart configureren stelt u in staat om de weergave-instellingen voor kaartgegevens te beheren, zoals POI-lagen, Favorieten, tracks en terrein. Log in op uw OsmAnd-account om dit menugedeelte te gebruiken.
 
 Om dit menu te openen, klikt u op de knop in de **linkerbovenhoek** of opent u het via het **Menu**.
 
-- [POI-overlay...](#poi-overlay-section). Hiermee kunt u de gewenste POI-categorieën op de kaart kiezen en weergeven.
+- [POI-overlay...](#poi-overlay-section). Hiermee kunt u de benodigde POI-categorieën kiezen en op de kaart weergeven.
 - [Favorieten](#favorites-section). Schakel de weergave van favorieten op de kaart in of uit.
 - [Tracks](#tracks-section). Bevat GPX-tracks die zichtbaar zijn op de kaart.
-- [Terrein](#terrain-section). Schakel het terreinkleurenschema op de kaart in of uit.
+- [Terrein](#terrain-section). Schakel het terrein-kleurenschema op de kaart in of uit.
 
-![POIs menu](@site/static/img/web/configure_map_web.png)
+![POI's menu](@site/static/img/web/configure_map_web.png)
 
 
-### POI-overlay sectie {#poi-overlay-section}
+### Sectie POI-overlay {#poi-overlay-section}
 
 Om POI's op de kaart te tonen:
 
-*Kaartmenu configureren → POI-overlay...*. Hier kunt u categorieën kiezen om op de kaart weer te geven.
+*Menu Kaart configureren → POI-overlay...*. Hier kunt u categorieën kiezen om op de kaart weer te geven.
 
-Als alternatief kunt u de [**Zoeksectie**](web-search.md) gebruiken om de gewenste plaats te vinden.
+Als alternatief kunt u de [**sectie Zoeken**](web-search.md) gebruiken om de gewenste plaats te vinden.
 
-![POIs menu](@site/static/img/web/poi_menu.png)
-
-
-### Favorieten sectie {#favorites-section}
-
-Met één klik kunt u favorieten op de kaart in- of uitschakelen. Echter, alleen favorieten met [**Toon op kaart ingeschakeld**](../web/web-userdata.mdx##favorites-on-the-web) worden weergegeven.
+![POI's menu](@site/static/img/web/poi_menu.png)
 
 
-### Tracks sectie {#tracks-section}
+### Sectie Favorieten {#favorites-section}
 
-Deze sectie bevat een lijst van uw [**GPX-tracks zichtbaar op de kaart**](../web/web-userdata.mdx#visible-on-the-map) en **Recent zichtbare** tracks.
+Met één klik kunt u favorieten op de kaart in- of uitschakelen. Alleen favorieten met [**Toon op kaart ingeschakeld**](../web/web-userdata.mdx#favorites-on-the-web) worden echter weergegeven.
+
+
+### Sectie Tracks {#tracks-section}
+
+Deze sectie bevat een lijst van uw [**GPX-tracks die zichtbaar zijn op de kaart**](../web/web-userdata.mdx#visible-on-the-map) en **Recent Zichtbare** tracks.
 
 - U kunt tracks direct in- of uitschakelen.
-- Schakel tracks in of uit vanuit de lijst **Recent zichtbaar**.
+- Schakel tracks in of uit vanuit de lijst **Recent Zichtbaar**.
 
-Elke track heeft een **Contextmenu** (toegankelijk via de ⋮-knop) met de volgende opdrachten:
+Elke track heeft een **Contextmenu** (toegankelijk via de ⋮ knop) met de volgende commando's:
 
-- **Track verbergen**: Verbergt de momenteel zichtbare track van de kaart.
-- **Track zichtbaar maken**: Toont een track uit de lijst Recent zichtbaar op de kaart.
-- **Naam wijzigen**: Hiermee kunt u de track een andere naam geven voor gemakkelijkere identificatie.
+- **Verberg track**: Verbergt de momenteel zichtbare track van de kaart.
+- **Maak track zichtbaar**: Toont een track uit de lijst Recent Zichtbaar op de kaart.
+- **Hernoemen**: Hiermee kunt u de track hernoemen voor eenvoudigere identificatie.
 - **Dupliceren**: Maakt een kopie van de track.
 - **Downloaden**: Slaat de track op uw lokale apparaat op.
 - **Verwijderen**: Verwijdert de track permanent uit de lijst.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+![Menu Kaart configureren Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Terrein sectie {#terrain-section}
+### Sectie Terrein {#terrain-section}
 
 De sectie **Terrein** is een betaalde functie <ProFeature/>. Om deze functie te gebruiken, moet u eerst inloggen op uw OsmAnd Pro-account.
 
 In deze sectie kunt u:
 
 - Een **kleurenschema** voor terrein kiezen:
-  - **Schaduw**
+  - **Schaduw helling**
   - **Helling**
   - **Hoogte**
 - De zichtbaarheid van de geselecteerde terreinlaag aanpassen van **0% tot 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Menu Kaart configureren Terrein](@site/static/img/web/configure_map_terrain.png)
 
 
 <!--
-## Kaartstijl {#map-style}
+## Map style {#map-style}
 
-In dit gedeelte van het menu kunt u de kaartstijl wijzigen. U kunt meer lezen over hoe u dit doet in het artikel [Vector Maps (Map Styles)](../map/vector-maps.md) voor de OsmAnd-app. De instellingen in de webversie verschillen niet.
-**Enkele voorbeelden:**
+In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
+**Some examples:**
 
-- Nautische kaartstijl
+- Nautical map style
 
 ![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
 
-- Topo kaartstijl
+- Topo map style
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
@@ -182,7 +182,7 @@ In dit gedeelte van het menu kunt u de kaartstijl wijzigen. U kunt meer lezen ov
 
 ## URL-schema's {#url-schemes}
 
-Voor eenvoudig gebruik van de OsmAnd-webservice (en applicatie) kunt u gebruikmaken van directe links. Dit zijn speciale URL's waarmee u locatiegegevens kunt overdragen en details over pins, tracks, weer en meer kunt opnemen.
+Voor eenvoudig gebruik van de OsmAnd-webservice (en applicatie) kunt u gebruikmaken van directe links. Dit zijn speciale URL's waarmee u locatiegegevens kunt overdragen en details kunt opnemen over pinnen, tracks, weer en meer.
 
 Deze URL's kunnen worden gekopieerd en gedeeld via elk medium dat door uw apparaat wordt ondersteund en zijn compatibel met zowel de Android- als de iOS-versie van OsmAnd.
 
@@ -190,19 +190,19 @@ Deze URL's kunnen worden gekopieerd en gedeeld via elk medium dat door uw appara
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web Track maken](@site/static/img/plan-route/web_url_pin.png)
 
-2. **URL zonder een pin op de kaart:**
+2. **URL zonder pin op de kaart:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web Track maken](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL met navigatie:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web Track maken](@site/static/img/plan-route/web_url_track.png)
 
 Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten:
 
@@ -214,7 +214,7 @@ Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten
 
 4. **Weer**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-***Bijvoorbeeld***, u kunt direct de weerpagina openen met opgegeven coördinaten:
+***Bijvoorbeeld***, u kunt direct naar de weerpagina gaan met opgegeven coördinaten:
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
 5. **Account**&nbsp; – &nbsp;`osmand.net/map/account`
@@ -227,9 +227,6 @@ Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten
 
 9. **Instellingen**&nbsp; – &nbsp;`osmand.net/map/settings`
 
-10. **Route plannen**&nbsp; - &nbsp;`osmand.net/map/plan`
+10. **Plan een route**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11. Directe link naar de huidige [**Verkenpagina**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
-
-
-> *Laatst bijgewerkt: januari 2025*
+11. Directe link naar de huidige [**Verken-pagina**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`

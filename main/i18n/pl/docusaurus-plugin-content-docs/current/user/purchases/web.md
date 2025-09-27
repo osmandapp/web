@@ -1,7 +1,7 @@
 ---
-source-hash: fcfc89424f2777c40ade752821a787dd9edd9cfca7d3f80e0cbcccf014af9bdf
+source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
 sidebar_position: 3
-title: Zakupy w sieci
+title:  Zakupy przez stronę internetową
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,32 +17,32 @@ import Translate from '@site/src/components/Translate.js';
 
 Produkty OsmAnd można kupić na [naszej oficjalnej stronie internetowej](https://osmand.net/pricing):
 
-- [**Strona internetowa**](https://osmand.net/pricing): Płatności są bezpiecznie przetwarzane przez naszego autoryzowanego sprzedawcę [FastSpring](https://fastspring.com/).
+- [**Strona internetowa**](https://osmand.net/pricing): Płatności są bezpiecznie przetwarzane przez naszego autoryzowanego sprzedawcę [FastSpring](https://fastspring.com/).  
 
 Wszystkie zakupy dokonane za pośrednictwem którejkolwiek z tych platform obsługują [**dostęp międzyplatformowy**](./cross.md).
 
 
-### Różnica między zakupami {#difference-between-purchases}
+### Różnice między zakupami {#difference-between-purchases}
 
 | Plan | Opis | Uwagi |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja**, która odblokowuje zaawansowane funkcje dla bezpłatnej aplikacji OsmAnd. | Obsługuje dostęp **międzyplatformowy** |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcji**, który odblokowuje wszystkie [funkcje pro](#pro-features), w tym CarPlay i 3D Relief. | Obsługuje dostęp **międzyplatformowy** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja**, która odblokowuje zaawansowane funkcje darmowej aplikacji OsmAnd. | Obsługuje dostęp **międzyplatformowy** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcyjny**, który odblokowuje wszystkie [funkcje pro](#free-and-paid-features), w tym CarPlay i Rzeźbę terenu 3D. | Obsługuje dostęp **międzyplatformowy** |
 
-:::note
-**Dostęp międzyplatformowy** oznacza, że możesz kupić OsmAnd na naszej stronie internetowej lub w jednym sklepie (np. *App Store, Google Play lub osmand.net*) i używać go na innej platformie, [łącząc swój zakup z kontem OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+:::note  
+**Dostęp międzyplatformowy** oznacza, że możesz kupić OsmAnd na naszej stronie internetowej lub w jednym ze sklepów (np. *App Store, Google Play lub osmand.net*) i używać go na innej platformie, [łącząc swój zakup z kontem OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## Ceny {#prices}
 
-Poniżej przedstawiono ceny produktów OsmAnd w USA i UE. Ceny w innych regionach są automatycznie przeliczane na walutę lokalną przez platformę płatniczą.
+Poniżej znajdują się ceny produktów OsmAnd w USA i UE. Ceny w innych regionach są automatycznie przeliczane na lokalną walutę przez platformę płatniczą.
+
 
 <!--
 
+:::danger September Sale prices
 
-:::danger Summer Sale prices
-
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **August 06 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
 
 :::
 
@@ -55,42 +55,43 @@ Poniżej przedstawiono ceny produktów OsmAnd w USA i UE. Ceny w innych regionac
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
 
-:::note
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
-you receive a 2-year discounted plan.
+:::note 
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
 Starting from the third year, the full price will apply.
 :::
 
 -->
 
-| | OsmAnd Free | **Maps+** Jednorazowo | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
+
+|    | OsmAnd Darmowy   | **Maps+** Jednorazowy | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-| | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Rodzaj zakupu** | **Bezpłatny** | **Zakup jednorazowy** (dożywotnio) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ dożywotnio) |
-| **Cena (EUR)** | 0 € | 39,99 € | 9,99 € | 2,99 € / 29,99 € | <s>450 €</s> 299,00 € |
-| **Cena (USD)** | 0 $ | 39,99 $ | 9,99 $ | 2,99 $ / 29,99 $ | <s>450 $</s> 299,00 $ |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ dożywotnio) |
+| **Cena (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Cena (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
 
 
-### Funkcje bezpłatne i płatne {#free-and-paid-features}
+### Funkcje darmowe i płatne {#free-and-paid-features}
 
-- [Bezpłatne i płatne funkcje Androida.](./android.md#free-and-paid-features)
-- [Bezpłatne i płatne funkcje iOS.](./ios.md#free-and-paid-features)
+- [Darmowe i płatne funkcje na Androida.](./android.md#free-and-paid-features)
+- [Darmowe i płatne funkcje na iOS.](./ios.md#free-and-paid-features)
 
 
 
 ## Przywracanie zakupów {#restore-purchases}
 
-Twoje zakupy są powiązane z Twoim [kontem OsmAnd Cloud](../personal/osmand-cloud.md#login) (Twój adres e-mail). Aby przywrócić zakupy na nowym urządzeniu:
+Twoje zakupy są powiązane z Twoim [kontem OsmAnd Cloud](../personal/osmand-cloud.md#login) (Twoim adresem e-mail). Aby przywrócić zakupy na nowym urządzeniu:
 
 1. Zainstaluj aplikację OsmAnd (Android lub iOS).
 2. Otwórz aplikację z aktywnym połączeniem internetowym.
-3. Przejdź do:
-   **Menu → Ustawienia → OsmAnd Cloud → Mam już konto**
+3. Przejdź do:  
+   **Menu → Ustawienia → OsmAnd Cloud → Mam już konto**  
    [Więcej informacji tutaj](../personal/osmand-cloud.md#login)
-4. Aby przywrócić zakupy:
-   Przejdź do **Menu → Ustawienia → Zakupy → Przywróć zakupy**
-   Ekran potwierdzi, że **Maps+**, **Pro** lub **Live** jest aktywowany.
+4. Aby przywrócić zakupy:  
+   Przejdź do **Menu → Ustawienia → Zakupy → Przywróć zakupy**  
+   Na ekranie pojawi się potwierdzenie, że **Maps+**, **Pro** lub **Live** zostały aktywowane.
 
 **Jeśli przywracanie nie działa:**
 

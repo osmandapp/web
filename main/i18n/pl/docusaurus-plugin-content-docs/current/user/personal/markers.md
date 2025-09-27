@@ -1,7 +1,7 @@
 ---
-source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
+source-hash: 4a76625c2bb84dea3475d937395b2dcabeed514e2bbf68736a1f6e8649b066f9
 sidebar_position: 8
-title: Markery
+title:  Znaczniki
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,59 +17,59 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Markery to specjalne punkty oznaczone na mapie jako flagi, które można szybko utworzyć jednym dotknięciem bez podawania nazwy i innych informacji, w przeciwieństwie do [punktów ulubionych](./favorites.md). Markery zapewniają również dodatkową funkcjonalność dzięki [widżetom](../widgets/markers.md), **strzałkom** (<Translate android="true" ids="show_arrows_on_the_map"/>) i **wskazaniu odległości** (<Translate android="true" ids="show_direction"/>).
+Znaczniki to specjalne punkty oznaczone na mapie jako flagi, które można szybko utworzyć jednym dotknięciem, bez podawania nazwy i innych informacji, w przeciwieństwie do [punktów Ulubionych](./favorites.md). Znaczniki zapewniają również dodatkową funkcjonalność dzięki [widżetom](../widgets/markers.md), **strzałkom** (<Translate android="true" ids="show_arrows_on_the_map"/>) i **wskazaniom odległości** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Markery mapy Android](@site/static/img/map/map_markers_android.png)
+![Znaczniki mapy Android](@site/static/img/map/map_markers_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Markery mapy iOS](@site/static/img/map/map_markers_ios.png)
+![Znaczniki mapy iOS](@site/static/img/map/map_markers_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-## Markery {#markers}
+## Znaczniki {#markers}
 
-### Dodawanie / Edytowanie markerów {#add--edit-markers}
+### Dodaj / Edytuj znaczniki {#add--edit-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Krótko lub długo dotknij mapy i wybierz wymaganą akcję z [menu kontekstowego mapy](../map/map-context-menu.md#add--edit-marker).
+Krótkie lub długie dotknięcie mapy i wybranie wymaganej akcji z [menu kontekstowego mapy](../map/map-context-menu.md#add--edit-marker).
 
-![Dodaj akcję edycji markera Android](@site/static/img/map/add_marker_android.png) ![Akcja przekazania markera Android](@site/static/img/map/action_pass_marker_android.png)
+![Akcja dodawania/edycji znacznika Android](@site/static/img/map/add_marker_android.png) ![Akcja minięcia znacznika Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Krótko lub długo dotknij mapy i wybierz wymaganą akcję z [menu kontekstowego mapy](../map/map-context-menu.md#add--edit-marker).
+Krótkie lub długie dotknięcie mapy i wybranie potrzebnej akcji w [menu kontekstowym mapy](../map/map-context-menu.md#add--edit-marker).
 
-![Dodaj akcję edycji markera iOS](@site/static/img/map/add_marker_ios.png) ![Akcja przywracania markera Android](@site/static/img/map/action_restore_marker_android.png)
+![Akcja dodawania/edycji znacznika iOS](@site/static/img/map/add_marker_ios.png) ![Akcja przywrócenia znacznika Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Możliwe jest oznaczenie punktu lub obiektu, aby ułatwić planowanie nawigacji. Wystarczy dotknąć ikonę *flagi* (*Android*) lub *strzałki* (*iOS*) w menu, aby wyświetlić kierunek i odległość do wybranego punktu od bieżącej lokalizacji (lub centralnego punktu mapy / początkowego punktu dotknięcia mapy, gdy lokalizacja jest wyłączona).
+Możliwe jest oznaczenie punktu lub obiektu w celu ułatwienia planowania nawigacji. Wystarczy dotknąć ikony *flagi* (*Android*) lub *strzałki* (*iOS*) w menu, aby wyświetlić kierunek i odległość do wybranego punktu z bieżącej lokalizacji (lub środka mapy / początkowego punktu dotknięcia mapy, gdy lokalizacja jest wyłączona).
 
 ***Akcje***:
 
-- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Umieszcza nowy marker w wybranym punkcie.
-- **Oznacz jako przekroczony** (*Android*) / Odrzuć (iOS). Dezaktywuje marker i umieszcza go w Historii.
-- **Ustaw jako aktywny** (*Android*). Przenosi marker na górną pozycję (na górnym panelu).
-- **Przywróć marker** (*Android*). Przenosi marker z Historii do aktywnej listy.
+- **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Umieszcza nowy znacznik w wybranym punkcie.
+- **Oznacz jako minięty** (*Android*) / Odrzuć (iOS). Dezaktywuje znacznik i umieszcza go w Historii.
+- **Uaktywnij** (*Android*). Przenosi znacznik na najwyższą pozycję (na górnym panelu).
+- **Przywróć znacznik** (*Android*). Przenosi znacznik z Historii na listę aktywnych.
 
 :::note
-Nie można od razu usunąć markera, należy go najpierw dezaktywować (oznaczyć jako przekroczony), aby został przeniesiony do [Historii](#history), a następnie można go trwale usunąć z historii. Po dezaktywacji marker zostanie usunięty z mapy i listy tras.
+Nie można natychmiast usunąć znacznika, należy go najpierw dezaktywować (oznaczyć jako minięty), aby został przeniesiony do [Historii](#history), a następnie można go trwale usunąć z historii. Po dezaktywacji znacznik zostanie usunięty z mapy i listy planu podróży.
 :::
 
 
@@ -89,17 +89,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Lista tras {#itinerary-list}
+### Lista planu podróży {#itinerary-list}
 
-Lista tras przedstawia uporządkowaną listę markerów, gdzie pierwszy marker jest używany w widżetach do nawigacji. Więcej informacji na ten temat można znaleźć w artykule [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#itinerary-list).
+Lista planu podróży reprezentuje uporządkowaną listę znaczników, gdzie pierwszy znacznik z góry jest używany w widżetach do nawigacji. Przeczytaj więcej na ten temat w artykule [Nawigacja według znaczników](../navigation/setup/markers-navigation.md#itinerary-list).
 
-### Grupy markerów {#marker-groups}
+### Grupy znaczników {#marker-groups}
 
 <InfoAndroidOnly />
 
-![Grupy markerów mapy Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
+![Grupy znaczników mapy Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Markery mogą być dodawane i usuwane jako cała grupa z grupy Ulubionych lub pliku GPX z punktami trasy. Dzięki temu są bardzo wygodne w użyciu w specjalnym trybie nawigacji - [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Znaczniki można dodawać i usuwać jako całą grupę z grupy Ulubionych lub pliku GPX z punktami trasy. To sprawia, że są bardzo wygodne w użyciu w specjalnym trybie nawigacji - [Nawigacja według znaczników](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Historia {#history}
 
@@ -107,19 +107,19 @@ Markery mogą być dodawane i usuwane jako cała grupa z grupy Ulubionych lub pl
 
 <TabItem value="android" label="Android">
 
-![Historia markerów mapy Android](@site/static/img/personal/markers/map_markers_history_android.png)
+![Historia znaczników mapy Android](@site/static/img/personal/markers/map_markers_history_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Historia markerów mapy iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
+![Historia znaczników mapy iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Historia to lista wszystkich dezaktywowanych (przekroczonych) markerów. Z tej listy można trwale usunąć marker lub go przywrócić.
+Historia to lista wszystkich dezaktywowanych (miniętych) znaczników. Z tej listy można trwale usunąć znacznik lub go przywrócić.
 
 
 ## Wygląd na mapie {#appearance-on-the-map}
@@ -138,51 +138,49 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_markers_item
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
-![Wygląd markerów mapy iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Wygląd markerów mapy iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Wygląd znaczników mapy iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Wygląd znaczników mapy iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 </TabItem>
 
 </Tabs>
 
-Menu *Wygląd na mapie* to ogólne ustawienie wyświetlania markerów i dodatkowych wskaźników do nich.
-W wersji OsmAnd na iOS, *Wygląd na mapie* jest również ustawieniem wyświetlania widżetów. Istnieją również dodatkowe ustawienia do [konfiguracji widżetów z markerami](../widgets/markers.md#configure-marker-widgets).
+Menu *Wygląd na mapie* to ogólne ustawienie wyświetlania znaczników i dodatkowych wskaźników do nich.
+W wersji OsmAnd na iOS *Wygląd na mapie* jest również ustawieniem wyświetlania widżetów. Istnieją również dodatkowe ustawienia do [konfiguracji widżetów ze znacznikami](../widgets/markers.md#configure-marker-widgets).
 
-- **Aktywne markery**. Pokazuje informacje o pierwszym lub dwóch markerach na liście markerów mapy.
-- **Wskazanie odległości** *(dla iOS)*. Pozwala wybrać, czy widżety mają być wyświetlane i jak będą się pojawiać: nad mapą (Górny pasek) czy po prawej stronie ekranu (Widżety).
-- **Strzałki na mapie**. Wskazuje kierunek do śledzonego markera (jednego lub dwóch) jako strzałka na mapie. Jeśli marker znajduje się w widocznej części mapy, strzałka nie jest wyświetlana.
-- **Linia kierunku**. Pokazuje kierunek, jako przerywaną linię, od konkretnego punktu na mapie do śledzonego markera w linii prostej.
-- ***Jedno dotknięcie*** aktywne (*dla Androida*). Jedno dotknięcie wymaganego markera na mapie przenosi ten marker na górę listy aktywnych markerów mapy bez otwierania menu kontekstowego.
-- **Zachowaj przekroczone markery na mapie** *(dla Androida)*. Markery dodane jako grupa Ulubionych lub punkty trasy GPX oznaczone jako Przekroczone pozostaną na mapie. Jeśli grupa nie jest aktywna, markery znikną z mapy.
+- **Aktywne znaczniki**. Pokazuje informacje o pierwszym lub dwóch pierwszych znacznikach na liście znaczników mapy.
+- **Wskazanie odległości** *(dla iOS)*. Pozwala wybrać, czy widżety mają być wyświetlane, a jeśli tak, to w jaki sposób: nad mapą (górny pasek) czy po prawej stronie ekranu (widżety).
+- **Strzałki na mapie**. Wskazuje kierunek do śledzonego znacznika (jednego lub dwóch) jako strzałka na mapie. Jeśli znacznik znajduje się w widocznej części mapy, strzałka nie jest wyświetlana.
+- **Linia kierunku**. Pokazuje kierunek, jako linia przerywana, od określonego punktu na mapie do śledzonego znacznika w linii prostej.
+- ***Jedno dotknięcie*** aktywne (*dla Androida*). Po jednokrotnym dotknięciu wymaganego znacznika na mapie, znacznik ten przesuwa się na górę listy aktywnych znaczników mapy bez otwierania menu kontekstowego.
+- **Zachowaj minięte znaczniki na mapie** (*dla Androida*). Znaczniki dodane jako grupa Ulubionych lub punkty trasy GPX oznaczone jako Minięte pozostaną na mapie. Jeśli grupa nie jest aktywna, znaczniki znikną z mapy.
 
 
-## Planowanie trasy dla markerów {#plan-route-for-markers}
+## Planuj trasę dla znaczników {#plan-route-for-markers}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Markery mapy Planowanie punktów trasy Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Markery mapy Opcje planowania trasy Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Punkty trasy planu znaczników mapy Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Opcje trasy planu znaczników mapy Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Korzystając z funkcji Planowanie trasy w narzędziu listy markerów, możesz sortować *Markery* *od drzwi do drzwi*, ustawiać je w odwrotnej kolejności lub tworzyć *podróż w obie strony*. Jeśli dotkniesz opcji *Nawigacja*, *Markery* zostaną użyte jako [punkty pośrednie](../navigation/setup/route-navigation.md#intermediate-destinations).
+Korzystając z funkcjonalności narzędzia Planuj trasę na liście znaczników, można sortować *Znaczniki* *Od drzwi do drzwi*, umieszczać je w odwrotnej kolejności lub tworzyć *Podróż okrężną*. Jeśli dotkniesz opcji *Nawigacja*, *Znaczniki* zostaną użyte jako [punkty pośrednie](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Akcje {#actions}
 
 <InfoAndroidOnly />
 
-![Markery mapy Więcej Android](@site/static/img/personal/markers/map_markers_more_android.png)
+![Więcej opcji znaczników mapy Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. Markery można sortować na liście według nazwy, bliskości, czasu dodania.
-- **<Translate android="true" ids="appearance_on_the_map"/>** lub **<Translate ios="true" ids="shared_string_appearance"/>**. [Ustawienia dla markerów mapy](#appearance-on-the-map).
-- **<Translate android="true" ids="coordinate_input"/>**. Dodaje markery poprzez [wprowadzanie współrzędnych](../plan-route/coordinate-input.md).
-- **<Translate android="true" ids="plan_route"/>**. Tworzy trasę [do nawigacji](../navigation/setup/markers-navigation.md) przy użyciu wybranych markerów.
-- **<Translate android="true" ids="marker_save_as_track"/>**. Zapisuje aktywne markery w pliku GPX.
-- **<Translate android="true" ids="move_all_to_history"/>**. Dezaktywuje wszystkie markery i przenosi je do [Historii](#history).
+- **<Translate android="true" ids="sort_by"/>**. Znaczniki na liście można sortować według nazwy, odległości, czasu dodania.
+- **<Translate android="true" ids="appearance_on_the_map"/>** lub **<Translate ios="true" ids="shared_string_appearance"/>**. [Ustawienia znaczników mapy](#appearance-on-the-map).
+- **<Translate android="true" ids="coordinate_input"/>**. Dodaje znaczniki poprzez [wprowadzanie współrzędnych](../plan-route/coordinate-input.md).
+- **<Translate android="true" ids="plan_route"/>**. Buduje trasę [do nawigacji](../navigation/setup/markers-navigation.md) przy użyciu wybranych znaczników.
+- **<Translate android="true" ids="marker_save_as_track"/>**. Zapisuje aktywne znaczniki w pliku GPX.
+- **<Translate android="true" ids="move_all_to_history"/>**. Dezaktywuje wszystkie znaczniki i przenosi je do [Historii](#history).
 
 
 ## Powiązane artykuły {#related-articles}
 
-- [Nawigacja za pomocą markerów](../navigation/setup/markers-navigation.md)
-- [Widżety markerów](../widgets/markers.md)
-
-> *Ostatnia aktualizacja: sierpień 2024*
+- [Nawigacja według znaczników](../navigation/setup/markers-navigation.md)
+- [Widżety znaczników](../widgets/markers.md)

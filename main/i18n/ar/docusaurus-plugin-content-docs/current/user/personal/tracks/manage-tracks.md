@@ -1,5 +1,5 @@
 ---
-source-hash: ccc92258ad1865c820ecfed771b07e1d48a441845c435a996fe12367c3ecf9df
+source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
 sidebar_position: 2
 title:  إدارة المسارات
 ---
@@ -18,19 +18,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-تُخزَّن جميع المسارات في OsmAnd في علامة تبويب ضمن *<Translate android="true" ids="shared_string_menu"/> ← <Translate android="true" ids="shared_string_my_places"/> ← <Translate android="true" ids="shared_string_gpx_tracks"/>*. يعالج OsmAnd ملف المسار بتنسيق [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format)، ولكن يمكن استيراد [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) و[KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) وتحويلهما إلى GPX. اقرأ المزيد عن الأنواع المختلفة للمسارات في مقال [المسارات على الخريطة](../../map/tracks/index.md#types-of-tracks).
+تُخزن جميع المسارات في OsmAnd في تبويب في *<Translate android="true" ids="shared_string_menu"/> ← <Translate android="true" ids="shared_string_my_places"/> ← <Translate android="true" ids="shared_string_gpx_tracks"/>*. يعالج OsmAnd ملف المسار بتنسيق [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format)، ولكن يمكن استيراد [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) و [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) وتحويلهما إلى GPX. اقرأ المزيد عن أنواع المسارات المختلفة في مقال [المسارات على الخريطة](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![نظرة عامة على إدارة المسار أندرويد](@site/static/img/personal/tracks/track_on_map_android.png)
+![نظرة عامة على إدارة المسارات في أندرويد](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![نظرة عامة على إدارة المسار iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![نظرة عامة على إدارة المسارات في iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -41,15 +41,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![تخطيط مسار تعديل المسار أندرويد](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![تخطيط مسار تعديل-المسار-أندرويد](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![تخطيط مسار تعديل المسار iOS](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![تخطيط مسار تعديل-المسار-iOS](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -57,20 +57,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك إضافة مسارات في OsmAnd بالطرق التالية:
 
-1. **[استيراد](./manage-tracks.md#import--export-track)** مسار من مصدر خارجي.
-2. إنشاء مسار جديد في التطبيق باستخدام أداة **[تخطيط مسار](../../plan-route/create-route.md)**.
-3. تسجيل مسار في التطبيق باستخدام إضافة **[تسجيل الرحلة](../../plugins/trip-recording.md)**.
-4. إدخال نقاط متعددة بالإحداثيات وحفظها كمسار باستخدام أداة **[إدخال الإحداثيات](../../plan-route/coordinate-input.md)**.
-5. يمكنك أيضًا إضافة **نقاط طريق** إلى مسار جديد عبر **[قائمة السياق](../../map/map-context-menu.md#-add--edit-track-waypoint--add--edit-track-waypoint)**.
+١. **[استيراد](./manage-tracks.md#import--export-track)** مسار من مصدر خارجي.
+٢. إنشاء مسار جديد في التطبيق باستخدام أداة **[تخطيط مسار](../../plan-route/create-route.md)**.
+٣. تسجيل مسار في التطبيق باستخدام إضافة **[تسجيل الرحلة](../../plugins/trip-recording.md)**.
+٤. إدخال نقاط متعددة بالإحداثيات وحفظها كمسار باستخدام أداة **[إدخال الإحداثيات](../../plan-route/coordinate-input.md)**.
+٥. يمكنك أيضًا إضافة **نقاط الطريق** إلى مسار جديد عبر **[القائمة السياقية](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## إدارة المسارات {#manage-tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -86,16 +86,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تُعرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد [أماكني](../../personal/myplaces.md) في علامة تبويب *المسارات*. تُنظَّم هذه المسارات حسب المجلد أو تُعرض في قائمة أسفلها.
+تُعرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد [أماكني](../../personal/myplaces.md) في تبويب *المسارات*. وهي منظمة حسب المجلد أو معروضة في قائمة أسفلها.
 
 
 ### قائمة المسار {#track-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -103,24 +103,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![قائمة سياق المسار في iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 لكل مسار، مثل المجلدات، قائمة تسمح لك بإدارة المسارات بكفاءة. إليك كيفية الوصول إليها:
 
-- *أندرويد* - اضغط على *قائمة النقاط الثلاث* في حقل المسار.
-- *iOS* - اضغط مطولاً على المسار المطلوب في القائمة.
+- *أندرويد* - انقر على *قائمة الثلاث نقاط* في حقل المسار.
+- *iOS* - انقر مطولاً على المسار المطلوب في القائمة.
 
 توفر القائمة الإجراءات التالية:
 
 - **إظهار/إخفاء على الخريطة** — يعرض أو يخفي المسارات المحددة على الخريطة، مما يمثل موقعها بصريًا.
 
-- [فتح](../../map/tracks/index.md#configure-map) (*iOS*) — يتوفر هذا الإعداد في قائمة تهيئة الخريطة. يقع في *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*، ويسمح لك بالوصول إلى [قائمة سياق المسار المحدد](../../map/tracks/track-context-menu.md) عند النقر عليه.
+- [فتح](../../map/tracks/index.md#configure-map) (*iOS*) — هذا الإعداد متاح في قائمة "تكوين الخريطة". يقع في *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*، ويسمح لك بالوصول إلى [القائمة السياقية للمسار المحدد](../../map/tracks/track-context-menu.md) عند النقر عليه.
 
 - **المظهر** (*iOS*) — تخصيص [مظهر المسارات](../../map/tracks/appearance.md) ليناسب تفضيلاتك.
 
@@ -130,45 +130,45 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **مشاركة** — يتيح مشاركة المسار المحدد مع الآخرين.
 
-- **تحميل التعديلات إلى OSM** (*iOS*) — [تحميل التغييرات](../../plugins/osm-editing.md#gps-track) التي أجريتها على المسار مباشرة إلى *OpenStreetMap*.
+- **رفع التعديلات إلى OSM** (*iOS*) — [رفع التغييرات](../../plugins/osm-editing.md#gps-track) التي أجريتها على المسار مباشرة إلى *OpenStreetMap*.
 
-- **تعديل** (*iOS*) — استخدم أداة [تخطيط مسار](../../plan-route/create-route.md#modify-gpx-track) لتعديل المسارات.
+- **تعديل** (*iOS*) — استخدم أداة [تخطيط مسار](../../plan-route/create-route.md#modify-existing-gpx-track) لتعديل المسارات.
 
 - **تكرار** (*iOS*) — ينشئ نسخة من المسار المحدد.
 
-- **إعادة تسمية** — تغيير اسم المسار المحدد لتحسين التنظيم.
+- **إعادة تسمية** — تغيير اسم المسار المحدد لتنظيم أفضل.
 
 - **نقل** — يسمح لك بنقل المسار المحدد إلى مجلد مختلف.
 
-- **تصدير** (*أندرويد*) — انتقل إلى *القائمة ← الإعدادات ← علامة تبويب الإجراءات* لتصدير جميع المسارات من مجلد.
+- **تصدير** (*أندرويد*) — انتقل إلى تبويب *القائمة ← الإعدادات ← الإجراءات* لتصدير جميع المسارات من مجلد.
 
-- **حذف** — إزالة المسار المحدد بشكل دائم الذي لم يعد مطلوبًا.
+- **حذف** — إزالة المسار المحدد الذي لم تعد بحاجة إليه بشكل دائم.
 
 
 ### بحث {#search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![وظيفة البحث عن المسارات في أماكني أندرويد](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![وظيفة البحث عن المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة البحث عن المسارات في أماكني iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![وظيفة البحث عن المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-اضغط على زر &#x1F50D; في الجزء العلوي من شاشة الجهاز لفتح قائمة فرز قائمة المسارات.
+انقر على زر &#x1F50D; في أعلى شاشة الجهاز لفتح قائمة فرز قائمة المسارات.  
 
 متاح:
 
-- البحث بالاسم المسار.
-- [الفرز حسب](#sort-by) لتحسين البحث إذا لم تتذكر العنوان.
+- البحث حسب اسم المسار.
+- [الفرز حسب](#sort-by) لبحث أفضل إذا كنت لا تتذكر العنوان.
 - [تصفية](./smart-folder.md#search-filter) (*أندرويد فقط*) إذا كنت بحاجة إلى خصائص محددة للمسار.
 
 
@@ -176,109 +176,102 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![وظيفة فرز المسارات في أماكني أندرويد](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![مسارات أماكني iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![مسارات أماكني في iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-يوفر عنصر قائمة **تحديد** خيارات لإدارة المجلدات والمسارات. تتيح لك هذه الميزة تحديد مسارات متعددة أو مجلدات مسارات. يمكنك أيضًا تحديد جميع المسارات والمجلدات عن طريق النقر على زر **تحديد الكل** الخاص.
+يوفر عنصر قائمة **تحديد** خيارات لإدارة المجلدات والمسارات. تتيح لك هذه الميزة تحديد مسارات أو مجلدات مسارات متعددة. يمكنك أيضًا تحديد جميع المسارات والمجلدات عن طريق النقر على زر **تحديد الكل** الخاص.
 
-بمجرد اتخاذ قرارك، يتم توفير الخطوات التالية:
+بمجرد تحديد اختيارك، يتم توفير الخطوات التالية:  
 
-- **إظهار على الخريطة** — باستخدام هذه الميزة، يمكنك عرض المسارات المحددة على الخريطة لفهم أفضل لموقعها وعلاقتها ببعضها البعض.
+- **إظهار على الخريطة** — باستخدام هذه الميزة، يمكنك عرض المسارات المحددة على الخريطة لفهم موقعها وعلاقتها ببعضها البعض بشكل أفضل.
 
-- **مشاركة** (*أندرويد*) / **تصدير** (*iOS*) — إذا كنت ترغب في مشاركة البيانات المحددة مع مستخدمين آخرين أو حفظها في خدمة سحابية، تتيح لك ميزة *مشاركة/تصدير* إرسال المسارات والمجلدات باستخدام طرق مشاركة مختلفة.
+- **مشاركة** (*أندرويد*) / **تصدير** (*iOS*) — إذا كنت ترغب في مشاركة البيانات المحددة مع مستخدمين آخرين أو حفظها في خدمة سحابية، فإن ميزة *المشاركة/التصدير* تتيح لك إرسال المسارات والمجلدات باستخدام طرق مشاركة مختلفة.
 
-- **تحميل إلى OpenStreetMap** — يمكنك إرسال المسارات المحددة إلى OpenStreetMap، مما يساهم في تطوير وتحسين البيانات.
+- **الرفع إلى OpenStreetMap** — يمكنك إرسال المسارات المحددة إلى OpenStreetMap، مما يساهم في تطوير وتحسين البيانات.
 
 - **نقل** — يمكنك تنظيم بياناتك عن طريق نقل المسارات والمجلدات المحددة إلى مجلدات أخرى.
 
-- [تغيير النشاط](../../map/tracks/track-context-menu.md#track-information-activity) — يتيح لك هذا الإجراء تغيير نوع النشاط، على سبيل المثال إلى *سيارة*، *رياضات المغامرة بالدراجات النارية*، *التخييم* أو غيرها، للمسار المحدد.
+- [تغيير النشاط](../../map/tracks/track-context-menu.md#ttrack-activity-type) — يسمح لك هذا الإجراء بتغيير نوع النشاط، على سبيل المثال إلى *سيارة*، *رياضة المغامرات بالدراجات النارية*، *رحلات الظهر* أو غيرها، للمسار المحدد.
 
-- [تغيير المظهر](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — يتيح لك هذا الخيار تخصيص مظهر المسارات المحددة، مما يجعلها أكثر وضوحًا وتميزًا على الخريطة.
+- [تغيير المظهر](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — يتيح لك هذا الخيار تخصيص مظهر المسارات المحددة، مما يجعلها أكثر وضوحًا وتمييزًا على الخريطة.
 
-- **حذف** — إذا لم تعد المسارات أو المجلدات المحددة ضرورية، تتيح لك وظيفة الحذف حذفها، مع توفير التطبيق لخيارات التأكيد لتجنب الحذف العرضي.
+- **حذف** — إذا لم تعد المسارات أو المجلدات المحددة مطلوبة، فإن وظيفة الحذف تسمح لك بحذفها، مع توفير التطبيق خيارات تأكيد لتجنب الحذف العرضي.
 
 
-### الفرز حسب {#sort-by}
+### فرز المسارات {#sort-by}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![وظيفة فرز المسارات في أماكني أندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)
+![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة فرز المسارات في أماكني iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-يوفر OsmAnd طريقة سهلة لفرز مساراتك، مما يساعدك على إدارة مجموعة كبيرة أو العثور بسرعة على ميزات محددة. للوصول إلى قائمة الفرز، اضغط على **فرز حسب** في الجزء العلوي من قائمة المسارات.
+يقدم OsmAnd طريقة سهلة لفرز مساراتك، مما يساعدك على إدارة مجموعة كبيرة أو العثور بسرعة على ميزات محددة. للوصول إلى قائمة الفرز، انقر على **فرز حسب** في أعلى قائمة المسارات.
 
 ***خيارات الفرز:***
 
 - **الأقرب** — يعرض المسارات الأقرب إلى موقعك الحالي.
+- **آخر تعديل** — يعرض المسارات مرتبة حسب تاريخ آخر تعديل لها.
+- **الاسم: أ - ي** — يرتب المسارات أبجديًا من أ إلى ي.
+- **الاسم: ي - أ** — يرتب المسارات أبجديًا من ي إلى أ.
+- **التاريخ الأحدث أولاً** — يسرد المسارات حسب تاريخ الإنشاء، مع الأحدث في الأعلى.
+- **التاريخ الأقدم أولاً** — يسرد المسارات حسب تاريخ الإنشاء، مع الأقدم في الأعلى.
+- **المسافة الأطول أولاً** — يعرض المسارات مرتبة حسب الطول، مع الأطول في الأعلى.
+- **المسافة الأقصر أولاً** — يعرض المسارات مرتبة حسب الطول، مع الأقصر في الأعلى.
+- **المدة الأطول أولاً** — يفرز المسارات حسب المدة، ويضع الأطول في الأعلى.
+- **المدة الأقصر أولاً** — يفرز المسارات حسب المدة، ويضع الأقصر في الأعلى.
 
-- **آخر تعديل** — يعرض المسارات مرتبة حسب أحدث تاريخ تعديل لها.
-
-- **الاسم: أ - ي** — يرتب المسارات أبجديًا من الألف إلى الياء.
-
-- **الاسم: ي - أ** — يرتب المسارات أبجديًا من الياء إلى الألف.
-
-- **أحدث تاريخ أولاً** — يسرد المسارات حسب تاريخ الإنشاء، مع الأحدث في الأعلى.
-
-- **أقدم تاريخ أولاً** — يسرد المسارات حسب تاريخ الإنشاء، مع الأقدم في الأعلى.
-
-- **أطول مسافة أولاً** — يعرض المسارات مرتبة حسب الطول، مع الأطول في الأعلى.
-
-- **أقصر مسافة أولاً** — يعرض المسارات مرتبة حسب الطول، مع الأقصر في الأعلى.
-
-- **أطول مدة أولاً** — يرتب المسارات حسب المدة، مع وضع الأطول في الأعلى.
-
-- **أقصر مدة أولاً** — يرتب المسارات حسب المدة، مع وضع الأقصر في الأعلى.
-
-#### فرز المجلدات الفرعية {#sorting-subfolders}
+### فرز المجلدات الفرعية {#sorting-subfolders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![وظيفة فرز المسارات في أماكني أندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)
+![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة فرز المسارات في أماكني iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-إذا كنت ترغب في فرز [المجلدات الفرعية](#folder-actions)، فانتقل إلى قائمة النقاط الثلاث داخل المجلد المحدد وحدد [الخيارات](#sort-by) المطلوبة.
+إذا كنت ترغب في فرز [المجلدات الفرعية](#folder-actions)، فانتقل إلى قائمة الثلاث نقاط داخل المجلد المحدد وحدد [الخيارات](#sort-by) المطلوبة.  
 
-يُطبق خيار الفرز المحدد ليس فقط على المجلد الفرعي الحالي ولكن أيضًا على جميع المجلدات المتداخلة والمسارات على جميع المستويات. وهذا يضمن بنية متسقة عبر بياناتك المحفوظة.
+يتم تطبيق خيار الفرز المحدد ليس فقط على المجلد الفرعي الحالي ولكن أيضًا على جميع المجلدات والمسارات المتداخلة على جميع المستويات. وهذا يضمن بنية متسقة عبر بياناتك المحفوظة.
 
 
 ## مجلد المسار {#track-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
+
+انقر على *قائمة الثلاث نقاط* في حقل المجلد **لفتح** قائمة المجلد.
 
 ![استيراد مسارات متعددة](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
@@ -286,7 +279,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار في iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+> انقر مطولاً على حقل المجلد **لفتح** قائمة المجلد.
+
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
 </TabItem>
 
@@ -294,37 +289,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تتيح لك قائمة مجلد المسار عرض المجلدات وإعادة تسميتها وتصديرها وإدارتها.
 
-كيفية فتح قائمة المجلد:
-
-- *أندرويد* - اضغط على *قائمة النقاط الثلاث* في حقل المجلد.
-- *iOS* - اضغط مطولاً على حقل المجلد.
 
 ***الإجراءات مع المجلد:***
 
 - **الاسم** — يعرض اسم المجلد وتاريخ الإنشاء وعدد المسارات التي يحتوي عليها.
-
-- **إظهار جميع المسارات على الخريطة** (*أندرويد فقط*) — يعرض جميع المسارات في المجلد على الخريطة —
-    *ملاحظة: إذا كان هناك العديد من المسارات، فقد يتسبب ذلك في تجميد الجهاز.*
-
+- **إظهار جميع المسارات على الخريطة** (*أندرويد فقط*) — يعرض جميع المسارات في المجلد على الخريطة. إذا كان هناك العديد من المسارات، فقد يتسبب ذلك في تجميد الجهاز.
 - **تعديل الاسم** (*أندرويد*) / **إعادة تسمية** (*iOS*) — يسمح لك بإعادة تسمية المجلد.
-
 - [تغيير المظهر الافتراضي](../../map/tracks/appearance.md) (*أندرويد*) / **المظهر** (*iOS*) — يغير مظهر عرض جميع المسارات في المجلد.
-
-- [تصدير](../../personal/import-export.md) — يفتح *القائمة ← الإعدادات ← علامة تبويب الإجراءات* لتصدير جميع المسارات في المجلد كملف [`.osf`](../../personal/import-export.md#export).
-
+- [تصدير](../../personal/import-export.md) — يفتح تبويب *القائمة ← الإعدادات ← الإجراءات* لتصدير جميع المسارات في المجلد كملف [`.osf`](../../personal/import-export.md#export).
 - [نقل](#track-folder) — يسمح لك بنقل المجلد إلى مجلد آخر موجود أو إنشاء مجلد جديد.
-
-- [حذف المجلد](#delete-folder) — يحذف المجلد بعد التأكيد.
-    ***ملاحظة: هذا الإجراء لا رجعة فيه.***
+- [حذف المجلد](#delete-folder) — يحذف المجلد بعد التأكيد. ***هذا الإجراء لا يمكن التراجع عنه.***
 
 
 ### إحصائيات المجلد {#folder-statistics}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -332,7 +315,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
@@ -340,71 +323,62 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-في أسفل القائمة في علامة تبويب *المسارات*، وأسفل قائمة المسارات **في كل مجلد من مجلداتك**، يوجد قسم معلومات يسمح لك بعرض إحصائيات ملخصة شاملة للمسارات في المجلد المحدد. تُعرض جميع القيم بال[وحدات](../../personal/profiles.md#units--formats) التي حددتها.
+في أسفل القائمة في تبويب *المسارات*، وأسفل قائمة المسارات **في كل مجلد من مجلداتك**، يوجد قسم معلومات يتيح لك عرض الإحصائيات الموجزة الإجمالية للمسارات في المجلد المحدد. يتم عرض جميع القيم بـ [الوحدات](../../personal/profiles.md#units--formats) التي حددتها.
 
 - *عدد **المسارات** في المجلد* — يعرض عدد المسارات الموجودة في المجلد المحدد.
-
-- *المجموع الكلي لـ* **المسافات** — يُعرض الطول الإجمالي لجميع المسارات في المجلد المحدد، مقاسًا بالوحدات التي حددتها.
-
-- *مجموع* **المرتفعات** — تشير البيانات إلى الارتفاع الرأسي الإجمالي عبر جميع المسارات في المجلد المحدد.
-
-- *مجموع* **المنحدرات** — هذا المعامل هو مجموع الانحدارات الرأسية على جميع المسارات في المجلد المحدد.
-
-- *مجموع* **مدة** *الوقت* — يعرض هذا الوقت الإجمالي المستغرق لإكمال جميع المسارات في المجلد المحدد.
-
-- *إجمالي **حجم** الملفات التي تم تنزيلها بالميغابايت* — يُظهر الحجم الإجمالي للملفات التي تم تنزيلها بالميغابايت مقدار المساحة التي تشغلها جميع المسارات في المجلد المحدد على جهازك.
+- *المجموع الكلي لـ **المسافات*** — يتم عرض الطول الإجمالي لجميع المسارات في المجلد المحدد، مقاسًا بالوحدات التي حددتها.
+- *مجموع **الصعود*** — تشير البيانات إلى إجمالي الارتفاع الرأسي عبر جميع المسارات في المجلد المحدد.
+- *مجموع **النزول*** — هذا المعامل هو مجموع الانخفاضات الرأسية على جميع المسارات في المجلد المحدد.
+- *مجموع وقت **المدة*** — يعرض هذا إجمالي الوقت المستغرق لإكمال جميع المسارات في المجلد المحدد.
+- *إجمالي **حجم** الملفات التي تم تنزيلها بالميجابايت* — يوضح إجمالي حجم الملفات التي تم تنزيلها بالميجابايت مقدار المساحة التي تشغلها جميع المسارات في المجلد المحدد على جهازك.
 
 
 ### إجراءات المجلد {#folder-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![وظيفة فرز المسارات في أماكني أندرويد](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![مسارات أماكني iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![مسارات أماكني في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تساعدك الإجراءات في المجلد على تنظيم المسارات وفرزها واستيرادها، لهيكلة بيانات الملاحة الخاصة بك.
+تساعدك الإجراءات في المجلد على تنظيم وفرز واستيراد المسارات، لهيكلة بيانات الملاحة الخاصة بك.  
 
 كيفية فتح إجراءات المجلد:
 
-- افتح علامة تبويب المسارات في أماكني.
+- افتح تبويب المسارات في أماكني.
 - انتقل إلى المجلد الذي تريد إدارته.
-- اضغط على *قائمة النقاط الثلاث* في الزاوية العلوية اليمنى لفتح قائمة إجراءات المجلد.
+- انقر على *قائمة الثلاث نقاط* في الزاوية اليمنى العليا لفتح قائمة إجراءات المجلد.
 
 ***الإجراءات في قائمة المجلد:***
 
-- [تحديد](#selection-mode) — اضغط على المجلدات والمسارات المطلوبة لتطبيق الإجراءات من القائمة في *وضع التحديد*.
-
-- [فرز المجلدات الفرعية](#sort-by) — تطبيق ترتيب فرز (مثل حسب الاسم، التاريخ) على جميع المجلدات الفرعية والمسارات على كل مستوى.
-
+- [تحديد](#selection-mode) — انقر على المجلدات والمسارات المطلوبة لتطبيق الإجراءات من القائمة في *وضع التحديد*.
+- [فرز المجلدات الفرعية](#sort-by) — تطبيق ترتيب فرز (على سبيل المثال، حسب الاسم، التاريخ) على جميع المجلدات الفرعية والمسارات في كل مستوى.
 - [إضافة مجلد ذكي](../tracks/smart-folder.md#how-to-create-smart-folder) — فرز المسارات والمسارات تلقائيًا بناءً على المعايير التي تحددها.
-
-- [استيراد](#import) — تحميل ملفات GPX أو غيرها من ملفات المسارات من جهازك إلى OsmAnd للاستخدام دون اتصال بالإنترنت.
-
+- [استيراد](#import) — تحميل ملفات GPX أو ملفات مسارات أخرى من جهازك إلى OsmAnd للاستخدام دون اتصال بالإنترنت.
 - **إضافة مجلد جديد** — لتنظيم مساراتك ومساراتك في فئات منطقية، ضعها في مجلدات مختلفة. يساعد هذا في هيكلة معلومات الملاحة الخاصة بك.
 
 
-### حذف مجلد {#delete-folder}
+### حذف المجلد {#delete-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -412,52 +386,52 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![قائمة سياق المسار في iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-يمكنك حذف مجلد بكل المسارات التي يحتوي عليها. للقيام بذلك:
+يمكنك حذف مجلد مع جميع المسارات التي يحتوي عليها. للقيام بذلك:
 
-- اضغط على *قائمة النقاط الثلاث* في حقل المجلد للحذف.
+- انقر على *قائمة الثلاث نقاط* في حقل المجلد المراد حذفه.
 - في أسفل القائمة، ابحث عن خيار **حذف المجلد**.
-- ***ملاحظة: هذا الإجراء لا رجعة فيه.***
+- ***ملاحظة: هذا الإجراء لا يمكن التراجع عنه.***
 
 
-## استيراد / تصدير مسار {#import--export-track}
+## استيراد / تصدير المسار {#import--export-track}
 
 ### استيراد {#import}
 
 تتيح لك أداة الاستيراد إضافة مسارات من ملفات خارجية للملاحة والتحليل دون اتصال بالإنترنت. طرق استيراد المسارات:
 
-1. **استيراد الملف المباشر:**
+١. **استيراد مباشر للملف:**
 
-    - اضغط على ملف GPX أو KML أو KMZ من تطبيقات المراسلة أو البريد الإلكتروني أو Google Drive أو مديري الملفات.
+    - انقر على ملف GPX أو KML أو KMZ من تطبيقات المراسلة أو البريد الإلكتروني أو Google Drive أو مديري الملفات.
     - حدد فتح في OsmAnd عند المطالبة.
-    - يُحفظ المسار المستورد في مجلد **الاستيراد** في *أماكني*.
-    - الخطوات: اضغط على ملف GPX ← فتح في OsmAnd.
+    - يتم حفظ المسار المستورد في مجلد **الاستيراد** في *أماكني*.
+    - الخطوات: انقر على ملف GPX ← فتح في OsmAnd.
 
-2. **الاستيراد باستخدام قائمة *أماكني*:**
+٢. **الاستيراد باستخدام قائمة *أماكني*:**
 
     - افتح *قائمة أماكني ← المسارات*.
-    - حدد ملف GPX للاستيراد.
+    - حدد ملف GPX المراد استيراده.
 
     *خيارات إضافية:*
 
     - **ملفات GPX ذات المسار الواحد** - استيراد المسار بأكمله مباشرة.
-    - **ملفات GPX متعددة المسارات** - اختر استيراد ملف GPX واحد أو تحديد مسارات محددة.
+    - **ملفات GPX متعددة المسارات** - اختر استيراد ملف GPX واحد أو تحديد مسارات معينة.
 
-***ملاحظة:*** *تُستورد المسارات المضافة يدويًا إلى مجلد OsmAnd على جهازك تلقائيًا دون إعادة تشغيل التطبيق.*
+***ملاحظة:*** *يتم استيراد المسارات المضافة يدويًا إلى مجلد OsmAnd على جهازك تلقائيًا دون إعادة تشغيل التطبيق.*  
 
 
 ### تصدير {#export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![استيراد مسارات متعددة](@site/static/img/personal/tracks/import_multitrack.png) ![استيراد مسارات متعددة](@site/static/img/personal/tracks/import_multitrack_1.png)
 
@@ -489,24 +463,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-هناك عدة طرق لتصدير ملف أو أكثر من ملفات المسارات إلى أي تطبيق مراسلة أو بريد إلكتروني أو مدير ملفات أو تطبيق.
+هناك عدة طرق لتصدير ملف مسار واحد أو أكثر إلى أي برنامج مراسلة أو بريد إلكتروني أو مدير ملفات أو تطبيق.  
 
-1. عن طريق [*قائمة سياق المسار ← مشاركة*](../../map/tracks/track-context-menu.md#options).
+١. عن طريق [*القائمة السياقية للمسار ← مشاركة*](../../map/tracks/track-context-menu.md#options).
 
-2. عن طريق *قائمة أماكني ← المسارات ← قائمة المجلد / المسار*:
+٢. عن طريق *قائمة أماكني ← المسارات ← قائمة المجلد / المسار*:
 
     - لـ [**تصدير مسار واحد**](#track-menu)، حدد قائمة المسار.
     - لـ [**تصدير مسارات متعددة**](#track-folder)، حدد قائمة المجلد المطلوب.
 
-3. عن طريق [ملف النسخ الاحتياطي المحلي](../../personal/import-export.md#export-to-file). تصدير مسارات GPX كملفات `.osf`.
+٣. عن طريق [ملف النسخ الاحتياطي المحلي](../../personal/import-export.md#export). تصدير مسارات GPX كملفات `.osf`.
 
 
 ## مقالات ذات صلة {#related-articles}
 
 - [إظهار المسار على الخريطة](../../map/tracks/index.md)
-- [تحليل على الخريطة](../../map/tracks/index.md#analyze-track-on-map)
-- [قائمة سياق المسار](../../map/tracks/track-context-menu.md)
-- [الملاحة بالمسار](../../navigation/setup/gpx-navigation.md)
+- [التحليل على الخريطة](../../map/tracks/index.md#analyze-track-on-map)
+- [القائمة السياقية للمسار](../../map/tracks/track-context-menu.md)
+- [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)
 - [تسجيل الرحلة](../../plugins/trip-recording.md)
-
-> *آخر تحديث: أبريل 2025*

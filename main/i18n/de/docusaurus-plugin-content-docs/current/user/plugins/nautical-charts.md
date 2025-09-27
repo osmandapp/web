@@ -1,7 +1,7 @@
 ---
-source-hash: b955b527f4a6288fa803d731df2f410db4fb91c6a6b0ec46ae14193d525bf995
+source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
 sidebar_position: 7
-title: Nautische Kartenansicht
+title:  Ansicht Nautische Karte
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,17 +15,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
-Das Plugin „Nautische Kartenansicht“ ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
+Das Plugin "Ansicht Nautische Karte" ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
 :::
 
-Die Nautische Kartenansicht ist eine detaillierte grafische Darstellung von Ozeanen, Meeren, Küstengebieten und Flüssen, die Ihnen hilft, auf dem Wasser zu navigieren und beliebte Routen, Hindernisse in Ihrem Wasserweg, die nächsten Häfen, Ankerplätze und andere wichtige Orientierungspunkte zu kennen.
+Die Ansicht Nautische Karte ist eine detaillierte grafische Darstellung von Ozeanen, Meeren, Küstengebieten und Flüssen, die Ihnen hilft, auf dem Wasser zu navigieren und beliebte Routen, Hindernisse auf Ihrer Wasserstraße, die nächsten Häfen, Ankerplätze und andere wichtige Orientierungspunkte zu kennen.
 
-Eine nautische Karte ist eine sehr detaillierte topografische Karte, die Skippern hilft, ein Schiff auf einem ausgewählten Kurs auf dem Wasser zu navigieren. Sie ähnelt einer Straßenkarte für Autofahrer. Oft aus historischen Gründen als „Seekarte“ bezeichnet, ist sie eine detaillierte grafische Darstellung der Ozeane, Meere, Küstengebiete und Flüsse.
+Eine Seekarte ist eine sehr detaillierte topografische Karte, die Skippern hilft, ein Schiff auf einem ausgewählten Kurs auf dem Wasser zu navigieren. Sie ähnelt einer Straßenkarte für Autofahrer. Aus historischen Gründen wird sie oft als *'Chart'* bezeichnet und ist eine detaillierte grafische Darstellung von Ozeanen, Meeren, Küstengebieten und Flüssen.
 
-Nautische Karten sind wichtig für professionelle Segler und Amateure, die ein Boot mieten, um die Kanäle der Stadt zu befahren. Die Karten liefern ihnen verschiedene Informationen wie Segelrouten, Navigationslichter, Gefahrenzonen, Zonen, in denen das Segeln oder Anlegen erlaubt oder verboten ist, usw.
+Seekarten sind wichtig für professionelle Segler und Amateure, die ein Boot mieten, um durch die Kanäle der Stadt zu fahren. Die Karten liefern ihnen verschiedene Informationen wie Segelrouten, Navigationslichter, Gefahrenzonen, Zonen, in denen das Segeln oder Anlegen erlaubt oder verboten ist, usw.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -46,35 +46,35 @@ Nautische Karten sind wichtig für professionelle Segler und Amateure, die ein B
 
 ### Warum das nautische Thema wichtig ist {#why-the-nautical-theme-matters}
 
-Alle professionellen Segler müssen offizielle Seekarten auf ihren Schiffen mitführen. Diese Karten werden von autorisierten Behörden herausgegeben und sind recht teuer. Die Behörden investieren viel in die Aktualisierung der Karten. Sie geben regelmäßige Updates für die Karten heraus, aber da es Zeit braucht, die Informationen zu überprüfen und die Updates zu verarbeiten, sind Seekarten nie vollständig aktuell.
+Alle professionellen Seeleute sind verpflichtet, offizielle Seekarten an Bord ihrer Schiffe zu haben. Diese Karten werden von autorisierten Agenturen herausgegeben und sind recht teuer. Die Agenturen investieren viel, um die Karten auf dem neuesten Stand zu halten. Sie geben regelmäßig Aktualisierungen für die Karten heraus, aber da es Zeit braucht, die Informationen zu überprüfen und die Aktualisierungen zu verarbeiten, sind Seekarten nie vollständig aktuell.
 
-Basierend auf [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap)-Daten werden OsmAnd-Seekarten von den Personen erstellt, die sie verwenden. Jeder Kartennutzer kann zur Karte beitragen, indem er Informationen hinzufügt, die er für wichtig und nützlich hält, wodurch die Karte detaillierter und genauer wird, ideal für die Orientierung oder Routenplanung.
+Basierend auf den Daten von [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) werden die nautischen Karten von OsmAnd von den Menschen erstellt, die sie benutzen. Jeder Kartennutzer kann zur Karte beitragen, indem er Informationen hinzufügt, die er für sich selbst wichtig und nützlich findet, und so die Karte detaillierter und genauer macht, ideal für die Orientierung oder Routenplanung.
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Die folgende Einrichtung lässt die Nautische Karte auf dem Bildschirm erscheinen:
+Die folgende Einrichtung sorgt dafür, dass die nautische Karte auf dem Bildschirm angezeigt wird:
 
-1. [Kaufen](../plugins/index.md#purchase) und [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin „Nautische Kartenansicht“.
-2. [Laden](#download-nautical-maps) Sie die Nautischen Karten herunter.
-3. Stellen Sie den [Nautischen](#set-nautical-map-style) Kartenstil für das erforderliche [Profil](../personal/profiles.md) ein.
+1. [Kaufen](../plugins/index.md#purchase) und [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin "Ansicht Nautische Karte".
+2. [Laden Sie die nautischen Karten herunter](#download-nautical-maps).
+3. Stellen Sie den [nautischen Kartenstil](#set-nautical-map-style) für das gewünschte [Profil](../personal/profiles.md) ein.
 
 
 ### Nautischen Kartenstil einstellen {#set-nautical-map-style}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
 ![Nautischer Kartentyp in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
 ![Nautischer Kartentyp in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -82,64 +82,64 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 </Tabs>
 
-Verwenden Sie die [Kartenlegende](../../user/map-legend/nautical-map.md) für alle Referenzen zu dem, was auf der Seekarte angezeigt wird. Sie erklärt die symbolischen Elemente auf einer Seekarte und dient als Referenz, um Ihnen bei Zweifeln bei der Navigation zu helfen. Durch die Einstellung des Nautischen Kartenstils erhalten Sie die beste Ansicht der heruntergeladenen und angezeigten nautischen Daten.
+Verwenden Sie die [Kartenlegende](../../user/map-legend/nautical-map.md) als Referenz für alles, was auf der nautischen Karte angezeigt wird. Sie erklärt die symbolischen Elemente auf einer Seekarte und dient als Referenz, um Ihnen bei Zweifeln bei der Navigation zu helfen. Durch die Einstellung des nautischen Kartenstils erhalten Sie die beste Ansicht der heruntergeladenen und angezeigten nautischen Daten.
 
 Um den aktuellen Kartenstil auf Nautisch zu ändern, müssen Sie die folgenden Einstellungen vornehmen:
 
-1. Wählen Sie das erforderliche [Profil](../personal/profiles.md).
+1. Wählen Sie das gewünschte [Profil](../personal/profiles.md).
 2. Öffnen Sie [Karte konfigurieren](../map/configure-map-menu.md).
-3. Scrollen Sie nach unten zu Kartenstil, öffnen Sie ihn und aktivieren Sie **Nautisch**.
+3. Scrollen Sie nach unten zu Kartenstil, öffnen Sie ihn und wählen Sie **Nautisch**.
 
 
 ### Nautische Karten herunterladen {#download-nautical-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
-![Nautische Plugin-Kartenansicht Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
+![Ansicht der Karten des Nautik-Plugins Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
 
-![Nautische Plugin-Kartenansicht iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
+![Ansicht der Karten des Nautik-Plugins iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Für eine optimale Darstellung können Karten an die aktuellen Bedürfnisse angepasst werden: Marken und Symbole können mit Tiefenpunkten und, falls erforderlich, Konturen hinzugefügt werden. Andererseits können Standardkarten mit Informationen über Binnen-, Land- und Küstengewässerinformationen für eine bestimmte Region eine gute Ergänzung zu den Informationen über Wasserwege auf einer Nautischen Karte sein.
+Für eine optimale Darstellung können die Karten an die aktuellen Bedürfnisse angepasst werden: Seezeichen und Symbole können mit Tiefenpunkten und bei Bedarf mit Konturen ergänzt werden. Andererseits können Standardkarten mit Informationen über Binnen-, Küsten- und küstennahe Gewässer für eine bestimmte Region eine gute Ergänzung zu den Informationen über Wasserstraßen auf einer nautischen Karte sein.
 
-Wenn Sie eine nautische Karte [herunterladen](../start-with/download-maps.md), erscheinen weitere Details zur *Bootsnavigation* auf der Karte. Einige Arten von [Nautischen Karten](../start-with/download-maps.md#type-of-maps) enthalten Details wie:
+Wenn Sie eine nautische Karte [herunterladen](../start-with/download-maps.md), erscheinen auf der Karte mehr Details zur *Bootsnavigation*. Einige Arten von [nautischen Karten](../plugins/nautical-charts/#nautical-map-style) enthalten Details wie:
 
-- **Nautische Zeichen und Symbole.**
-Zeichen und Symbole enthalten alle nautischen Navigationszeichen für die Binnen- und Küstenschifffahrt. Das Wissen um diese Zeichen hilft Ihnen, die Lage von Felsen, Hindernissen, Ankerplätzen, Bojen, Strömungen, tiefem und flachem Wasser und den Seiten des Kanals vorherzusagen, unabhängig von der Richtung usw. Zeichen und Symbole werden einmal für die ganze Welt heruntergeladen.
+- **Nautische Seezeichen und Symbole.**  
+    Seezeichen und Symbole enthalten alle nautischen Navigationszeichen für die Binnen- und Küstenschifffahrt. Die Kenntnis dieser Zeichen hilft Ihnen, die Lage von Felsen, Hindernissen, Ankerplätzen, Bojen, Strömungen, tiefem und flachem Wasser sowie die Seiten des Fahrwassers unabhängig von der Richtung usw. vorherzusagen. Seezeichen und Symbole werden einmal für die ganze Welt heruntergeladen.
 
-- **Tiefenpunkte.**
-Nautische Daten aus den Tiefenpunktpaketen werden durch Zahlen dargestellt, die auf dem Wasser angezeigt werden und die geringste Tiefe an einem bestimmten Ort angeben. Tiefenpunkte sind für jede Hemisphäre und einige Regionen verfügbar.
+- **Tiefenpunkte.**  
+    Nautische Daten aus den Tiefenpunkt-Paketen werden durch Zahlen dargestellt, die auf dem Wasser angezeigt werden und die geringste Tiefe an einem bestimmten Ort angeben. Tiefenpunkte sind für jede Hemisphäre und einige Regionen verfügbar.
 
-- **Tiefenlinien.**
-Tiefenlinienpakete ermöglichen es Ihnen, Bereiche gleicher Tiefe zu definieren. Sie sollen Veränderungen im Relief unter der Wasseroberfläche visualisieren. Tiefenlinien können für bestimmte Gebiete heruntergeladen und dann deaktiviert werden, wenn Sie sie nicht benötigen.
+- **Tiefenlinien.**  
+    Tiefenlinien-Pakete ermöglichen es Ihnen, Bereiche gleicher Tiefe zu definieren. Sie dienen dazu, Reliefveränderungen unter der Wasseroberfläche zu visualisieren. Tiefenlinien können für bestimmte Gebiete heruntergeladen und bei Nichtgebrauch wieder ausgeschaltet werden.
 
 :::info Tiefenangaben
-Alle Tiefenangaben auf den Seekarten sind in Metern angegeben.
+Alle Tiefenangaben auf den nautischen Karten sind in Metern angegeben.
 :::
 
 
 ### Nautischen Kartenstil deaktivieren {#disable-nautical-map-style}
 
-Um Nautisch zu entfernen und eine der konventionellen OsmAnd-Karten anzuzeigen, tun Sie Folgendes:
+Um die nautische Ansicht zu entfernen und eine der herkömmlichen Karten von OsmAnd anzuzeigen, führen Sie einen der folgenden Schritte aus:
 
-- Deaktivieren Sie das Nautische Plugin.
-- Ändern Sie den Kartenstil auf etwas anderes als *Nautisch*.
+- Deaktivieren Sie das Nautik-Plugin.
+- Ändern Sie den Kartenstil auf einen anderen als *Nautisch*.
 
 :::info HINWEIS
-Das Deaktivieren des Nautischen Plugins entfernt die geladenen nautischen Daten nicht, sodass selbst wenn Sie die Rendering-Methode von nautisch auf eine andere Methode ändern, die nautischen Daten sichtbar bleiben, wenn sie heruntergeladen wurden.
+Das Deaktivieren des Nautik-Plugins entfernt keine geladenen nautischen Daten. Selbst wenn Sie die Darstellungsmethode von nautisch auf eine andere Methode ändern, bleiben die heruntergeladenen nautischen Daten auf der Karte sichtbar.
 :::
 
 
@@ -147,17 +147,17 @@ Das Deaktivieren des Nautischen Plugins entfernt die geladenen nautischen Daten 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Nautische Tiefenlinien in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
 ![Tiefenlinien in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
@@ -165,12 +165,12 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 </Tabs>
 
-Die Nautische Karte kann in jedes Profil aufgenommen werden. Am wertvollsten ist sie jedoch im [Bootsprofil](../personal/profiles.md) und insbesondere in der [Bootsnavigation](../navigation/routing/boat-navigation.md).
+Die nautische Karte kann in jedes Profil aufgenommen werden. Am wertvollsten ist sie jedoch im [Bootsprofil](../personal/profiles.md) und insbesondere bei der [Bootsnavigation](../navigation/routing/boat-navigation.md).
 
 
 ## Nautischer Kartenstil {#nautical-map-style}
 
-Das Nautische Plugin in OsmAnd erweitert die Vektor-Layer-Kartenstile um den Nautischen Kartenstil. Es ermöglicht Ihnen, Kartendaten gemäß den Nautischen Kartenregeln anzuzeigen, zum Beispiel: gelbe Bereiche für Land und Untiefen, hellblaue Bereiche für flache Gewässer usw. Weitere Informationen finden Sie unter [Kartenlegende](../../user/map-legend/nautical-map.md).
+Das Nautik-Plugin in OsmAnd erweitert die Kartenstile der Vektorebene um den nautischen Kartenstil. Er ermöglicht es Ihnen, Kartendaten nach den Regeln der nautischen Karte darzustellen, zum Beispiel: gelbe Bereiche für Land und Untiefen, hellblaue Bereiche für seichte Gewässer, usw. Weitere Informationen finden Sie in der [Kartenlegende](../../user/map-legend/nautical-map.md).
 
 
 ### Tiefenpunkte {#depth-points}
@@ -191,24 +191,24 @@ Das Nautische Plugin in OsmAnd erweitert die Vektor-Layer-Kartenstile um den Nau
 
 </Tabs>
 
-Tiefenpunkt-[Pakete](../start-with/download-maps.md#type-of-maps) sind für Europa, die Nordhalbkugel und die Südhalbkugel verfügbar und informativ. Tiefenpunkte zeigen Veränderungen in der Topographie unter der Wasseroberfläche an, die die geringste Tiefe angeben. Dies ist für die *Bootsnavigation* notwendig. Nach dem Herunterladen müssen Sie die [Tiefenlinien](#depth-contours) einschalten, um sie auf der Karte anzuzeigen.
+Tiefenpunkt-[Pakete](../start-with/download-maps.md#overview) sind für Europa, die Nordhalbkugel und die Südhalbkugel verfügbar und dienen der Information. Tiefenpunkte zeigen topografische Veränderungen unter der Wasseroberfläche an und geben die geringste Tiefe an. Dies ist für die *Bootsnavigation* notwendig. Nach dem Herunterladen müssen Sie die [Tiefenlinien](#depth-contours) einschalten, um sie auf der Karte anzuzeigen.
 
 
 ### Tiefenlinien {#depth-contours}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
 ![Nautische Tiefenlinien in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
 ![Tiefenlinien in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
@@ -216,53 +216,51 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 </Tabs>
 
-Wenn eine Nautische Karte auf dem Bildschirm angezeigt wird, können Sie anpassen, was Sie sehen:
+Wenn eine nautische Karte auf dem Bildschirm angezeigt wird, können Sie anpassen, was Sie sehen:
 
-- Anzeigen oder Ausblenden der *Tiefenlinien*.
-- Einstellen des Detaillierungsgrades der Meeresbodeninformationen: [*Linienbreite* und *Farbschema der Linien*](../map/vector-maps.md#-nautical-depth).
+- *Tiefenlinien* ein- oder ausblenden.
+- Einstellen des Detaillierungsgrads der Meeresbodeninformationen: [*Linienbreite* und *Linienfarbschema*](../map/vector-maps.md#-nautical-depth).
 
 :::info HINWEIS
-Sie können der OsmAnd-App helfen, die Tiefenlinien-Datenbank zu erweitern, indem Sie Ihre Informationen über [OpenSeaMap](https://map.openseamap.org/) hinzufügen.
+Sie können der OsmAnd-App helfen, die Datenbank der Tiefenlinien zu erweitern, indem Sie Ihre Informationen über [OpenSeaMap](https://map.openseamap.org/) hinzufügen.
 :::
 
 
-### Details zum Meeresboden {#seabed-details}
+### Meeresbodendetails {#seabed-details}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
 
-![Details zum Meeresboden](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+![Meeresbodendetails](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
-![Details zum Meeresboden](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+![Meeresbodendetails](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
 </TabItem>
 
 </Tabs>
 
-Meeresbodendaten enthalten Informationen über Vegetation und allgemeines Oberflächenmaterial wie felsige Felsen, Muscheln, Kies, Korallen, Schlick usw. Aufgrund der internationalen Klassifizierung von Meeresbodendaten gibt es Optionen zur Anzeige solcher Details auf einer Karte: *einfach*, *Kategorie*, *alle* oder *weglassen*. Weitere Informationen finden Sie in der [Kartenlegende für Meeresbodenbereiche](../map-legend/nautical-map.md#seabed-area).
+Meeresbodendaten enthalten Informationen über Vegetation und allgemeines Oberflächenmaterial wie felsige Felsen, Muscheln, Kies, Korallen, Schlick usw. Aufgrund der internationalen Klassifizierung von Meeresbodendaten gibt es Optionen zur Anzeige solcher Details auf einer Karte: *einfach*, *Kategorie*, *alle* oder *weglassen*. Verwenden Sie die [Kartenlegende für Meeresbodengebiete](../map-legend/nautical-map.md#seabed-area) für weitere Informationen.
 
-- **Einfach** (*für Android-Version*) - zeigt die Seezeichen-Symbole gemäß INT-1 Ref an, die die Art der Meeresbodenoberfläche angeben.
-- **Kategorie** - zeigt zusätzlich zum Seezeichen-Symbol auch das entsprechende Seezeichen-Tag an, das das natürliche Material oder die Kategorie der Meeresalgen und des Seegrases angibt.
-- **Alle** - zeigt zusätzlich zum Seezeichen-Symbol, Tag oder Kategorie auch Qualifikationen wie fein, klebrig, grob usw. an. Für Seegras und Meeresalgen werden Daten angezeigt, die mit den Tags *taxon* und *genus* markiert sind.
+- **Einfach** (*für Android-Version*) - zeigt die Seezeichen-Symbole gemäß INT-1 Ref an, die die Beschaffenheit der Meeresbodenoberfläche angeben.
+- **Kategorie** - zeigt zusätzlich zum Seezeichen-Symbol auch das entsprechende Seezeichen-Tag an, das das natürliche Material oder die Kategorie Seetang und Seegras angibt.
+- **Alle** - zeigt zusätzlich zum Seezeichen-Symbol, Tag oder der Kategorie auch Qualifikationen wie fein, klebrig, grob usw. an. Für Seegras und Seetang werden Daten angezeigt, die mit den Tags *taxon* und *genus* gekennzeichnet sind.
 - **Weglassen** - zeigt keine Details des Meeresbodens an.
 
 :::info HINWEIS
-Weitere Details zur Klassifizierung der Oberflächendetails und den Rendering-Optionen finden Sie im [OSM Seamark Wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+Weitere Einzelheiten zur Klassifizierung der Oberflächendetails und den Darstellungsoptionen finden Sie im [Seamark-Wiki von OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
 
 
 ## Verwandte Artikel {#related-articles}
 
-- [Importieren / Exportieren](../personal/import-export.md)
-- [Farbpalettenschemata](../personal/color-palette-schemes.md)
-
-> *Zuletzt aktualisiert: Juni 2023*
+- [Import / Export](../personal/import-export.md)
+- [Farbpaletten-Schemata](../personal/color-palette-schemes.md)

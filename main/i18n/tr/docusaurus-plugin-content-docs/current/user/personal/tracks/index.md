@@ -1,27 +1,27 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
-title: Rotalar
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
+title:  Parkurlar
 sidebar_position: 8
 ---
 
-## [Rotaları Yönetme](./manage-tracks.md) {#manage-tracks}
+## [Parkurları Yönetme](./manage-tracks.md) {#manage-tracks}
 
-Rota ve rota klasörleri oluşturma, yönetme ve düzenleme hakkında tüm bilgiler.
+Parkurlar ve parkur klasörleri oluşturma, yönetme ve düzenleme hakkında tüm bilgiler.
 
 ## [Akıllı Klasör (filtre)](./smart-folder.md) {#smart-folderfilter}
 
-Herhangi bir filtreyle rotalar için sanal klasörler oluşturmanın basit bir yolu.
+Herhangi bir filtreyle parkurlar için sanal klasörler oluşturmanın basit bir yolu.
 
-## Daha fazla bilgi {#read-more}
+## Daha fazla oku {#read-more}
 
-### [Rota Türleri](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
+### [Parkur Türleri](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
 
-Rotanın ne olduğu ve farklı rota türleri hakkında bilgi edinin.
+Parkurun ne olduğu ve farklı parkur türleri hakkında bilgi edinin.
 
-### [Rotaları Görüntüleme](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Parkurları Haritada Görüntüleme](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
-OsmAnd'da rotaların nasıl görüntüleneceği ve seçenekleri hakkında bilgi edinin.
+OsmAnd'da parkurları ve seçeneklerini nasıl görüntüleyeceğiniz hakkında bilgi edinin.
 
-### [Rotaya Göre Gezinme](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [Parkura Göre Gezinme](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-Navigasyonda rotanın nasıl kullanılacağı hakkında daha fazla bilgi edinin.
+Navigasyonda parkuru nasıl kullanacağınız hakkında daha fazla bilgi edinin.

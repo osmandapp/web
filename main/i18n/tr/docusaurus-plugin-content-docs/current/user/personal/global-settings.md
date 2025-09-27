@@ -1,7 +1,7 @@
 ---
-source-hash: 71c20d65a3fb26bf934cf5f977a6fd59d90d866366d685c137ace186ae0877f8
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
-title: Genel Ayarlar
+title:  Küresel Ayarlar
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Genel ayarlar**, OsmAnd uygulamasındaki tüm profiller için genel [ayarlardır](../personal/profiles.md). Bunlar OsmAnd sistemi için temel ayarlardır ve yapılan herhangi bir değişiklik tüm uygulamayı etkileyecektir.
+**Küresel ayarlar**, OsmAnd uygulamasındaki tüm profiller için genel [ayarlardır](../personal/profiles.md). Bunlar OsmAnd sisteminin temel ayarlarıdır ve yapılan tüm değişiklikler uygulamanın tamamını etkiler.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel {#general}
 
-Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [harita oluşturma motorunu](#map-rendering-engine) seçme ve verilerin kaydedileceği [klasör](#data-storage-folder) gibi temel OsmAnd ayarlarını içerir.  
+Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [harita oluşturma motorunu](#map-rendering-engine) ve verilerin kaydedileceği [klasörü](#data-storage-folder) seçme gibi temel OsmAnd ayarlarını içerir.  
 
 
 ### Varsayılan Profil {#default-profile}
@@ -65,7 +65,7 @@ Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [har
 
 </Tabs>
 
-OsmAnd, yeni kullanıcılar için ilk profil olarak varsayılan *Haritaya Göz At* profilini kullanır ve bu profil sizin tarafınızdan seçilmişse, uygulama her yeniden başlatıldığında kullanılacaktır. Varsayılan listeden *Son kullanılan* ve *Haritaya Göz At* dahil olmak üzere herhangi bir profili seçebilirsiniz.
+OsmAnd, yeni kullanıcılar için ilk profil olarak varsayılan profil olan *Haritaya Göz At*'ı kullanır ve bu profil sizin tarafınızdan seçilmişse, uygulama her yeniden başlatıldığında kullanılacaktır. Varsayılan listeden *Son kullanılan* ve *Haritaya Göz At* dahil olmak üzere herhangi bir profili seçebilirsiniz.
 
 - **<Translate android="true" ids="shared_string_last_used"/>**. Son kullanılan profili seçmenize olanak tanır.
 - **<Translate android="true" ids="settings_preset"/>**. OsmAnd başlatılırken kullanılacak profili seçersiniz. Uygulama [ayarlarında](../personal/profiles.md) değiştirilebilir.  
@@ -81,7 +81,7 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 
 ![Genel Ayarlar Varsayılan profil Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) aracınızın [CarPlay yazılımına](https://support.apple.com/en-gb/HT205634) bağlandığında kullanılır ve telefonunuzdaki verileri görüntülemek için ses ve video sistemlerini kullanarak OsmAnd uygulamasının optimize edilmiş sürümünden en iyi şekilde yararlanmanıza yardımcı olur.
+[**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md), aracınızın [CarPlay yazılımına](https://support.apple.com/en-gb/HT205634) bağlandığında kullanılır ve telefonunuzdaki verileri görüntülemek için ses ve video sistemlerini kullanarak OsmAnd uygulamasının optimize edilmiş sürümünden en iyi şekilde yararlanmanıza yardımcı olur.
 
 
 ### Veri Depolama Klasörü {#data-storage-folder}
@@ -94,7 +94,7 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 
 ![Profiller Depolama Ayarları Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Cihaz belleği**, cihazınızda ne kadar boş alan kaldığını gösterir. [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#maps--resources) menüsüne erişmek için bir alana dokunun, burada OsmAnd verileriniz hakkında ayrıntılı bilgileri görüntüleyebilir ve yönetebilirsiniz.
+1. **Cihaz belleği**, cihazınızda ne kadar boş alan kaldığını gösterir. OsmAnd verileriniz hakkında ayrıntılı bilgileri görüntüleyebileceğiniz ve yönetebileceğiniz [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#local-menu) menüsüne erişmek için bir alana dokunun.
 
 2. **<Translate android="true" ids="change_data_storage_folder"/>** bölümünde, OsmAnd verilerini cihazınıza kaydetmek için bir klasör seçebilirsiniz.  
 
@@ -102,7 +102,7 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
     - *Paylaşılan bellek*. Artık mevcut değil.
     - *Harici depolama 1*. Yalnızca 1 OsmAnd uygulaması erişebilir ve Yönetici uygulamaları ve USB.
     - *Çok kullanıcılı depolama*. Yalnızca 1 OsmAnd uygulaması erişebilir, ancak birden çok Android kullanıcısı arasında paylaşılır.
-    - *Manuel olarak belirtilen*. Yola bağlıdır.
+    - *Manuel olarak belirtildi*. Yola bağlıdır.
 
 :::note Android 12+ (depolama klasörünü değiştir)
 Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır. Ayrıntılar için [**Sorun Giderme**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) bölümüne bakın.
@@ -137,22 +137,22 @@ OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109)
 
 - Uygulamanın **Android** sürümünde, OsmAnd uygulamasında orijinal olarak uygulanan Sürüm 1 harita oluşturma ile iki ve üç boyutlu grafik nesneleri oluşturmak için OpenGL (Açık Grafik Kitaplığı) programlama arayüzünü kullanan Sürüm 2 arasında geçiş yapabilirsiniz.
 
-- **iOS** sürümü harita oluşturma için yalnızca OpenGL kullanır.
+- **iOS** sürümü, harita oluşturma için yalnızca OpenGL kullanır.
 
 
 | Özellikler | Sürüm 1 | Sürüm 2 (OpenGL) |
 |:---|:--- |:--- |
 | Çapraz platform | iOS sürümünde kullanılmaz. | Her iki sürüme de uyar. |
 | GPU / CPU bağımlı | Düşük performanslı veya eski cihazlar için önerilir. | Güçlü oluşturma motoru. <br /> Yalnızca [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) ve sonraki sürümler için ve [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released) için test modunda mevcuttur. |
-| 3D modu | Haritayı 2D olarak görüntülemek mümkündür ve [3D görünüm](../widgets/map-buttons.md#3d-mode) elde etmek için görüntüleme açısını değiştirebilirsiniz. | Haritayı 2D ve [3D](../widgets/map-buttons.md#3d-mode) olarak görüntüleyebilirsiniz. |
-| Harita gösterimi | Tüm harita bir dizi döşeme olarak oluşturulur ve işaretçiler, çizgiler ve metin zaten bu döşemelerin içindedir. | İlk olarak, tüm döşeme paketi oluşturulur ve ardından mevcut semboller haritaya [katman katman](../../technical/algorithms/map-rendering-layers.md) uygulanır. |
+| 3B mod | Haritayı 2B olarak görüntülemek mümkündür ve [3B görünüm](../widgets/map-buttons.md#3d-mode) elde etmek için görüntüleme açısını değiştirebilirsiniz. | Haritayı 2B ve [3B](../widgets/map-buttons.md#3d-mode) olarak görüntüleyebilirsiniz. |
+| Harita gösterimi | Tüm harita bir dizi döşeme olarak oluşturulur ve işaretleyiciler, çizgiler ve metin zaten bu döşemelerin içindedir. | İlk olarak, tüm döşeme paketi oluşturulur ve ardından mevcut semboller haritaya [katman katman](../../technical/algorithms/map-rendering-layers.md) uygulanır. |
 | Şeffaf semboller katmanı / alt katmanı | Tüm ayarları destekler. | Vektör metninin üzerinde bir raster katmanı desteklemez. |
-| [3D Arazi](../map/raster-maps.md#3d-relief) | Desteklenmiyor. | Bu özellik, normal bir 2D haritaya yükseklik bilgisi ekleyerek haritadaki araziyi görselleştirir, bu da 3D ve derinlik efekti oluşturur. |
-| [3D İzler](../map/tracks/appearance.md) | Desteklenmiyor. | Bu özellik, izleri deniz seviyesinden yüksekliğe göre görüntülemenizi sağlar. |
-| [Çevrimiçi harita](../plugins/online-map.md) | Harita kaynağı herhangi bir çevrimiçi döşeme haritası ise Kontur çizgilerinin görüntülenmesini desteklemez. | Harita kaynağı çevrimiçi bir harita olduğunda, 3D haritalar da kullanılır ve haritada Kontur çizgilerinin görüntülenmesi desteklenir. |
-| [Hava Durumu eklentisi](../plugins/weather.md) | Bu eklentiyi kullanamazsınız. | Eklenti ile kullanışlıdır. |  
+| [3B Arazi](../map/raster-maps.md#3d-relief) | Desteklenmiyor. | Bu özellik, normal bir 2B haritaya yükseklik bilgisi ekleyerek harita üzerindeki araziyi görselleştirir, bu da 3B ve derinlik efekti yaratır. |
+| [3B İzler](../map/tracks/appearance.md) | Desteklenmiyor. | Bu özellik, izleri deniz seviyesinden yüksekliğe göre görüntülemenizi sağlar. |
+| [Çevrimiçi harita](../plugins/online-map.md) | Harita kaynağı herhangi bir çevrimiçi döşeme haritası ise Kontur çizgilerinin görüntülenmesini desteklemez. | Harita kaynağı çevrimiçi bir harita olduğunda, 3B haritalar da kullanılır ve harita üzerinde Kontur çizgilerinin görüntülenmesi desteklenir. |
+| [Hava Durumu eklentisi](../plugins/weather.md) | Bu eklentiyi kullanamazsınız. | Eklenti ile kullanımı kolaydır. |  
 
-Haritanın 3D görünümü için görüntü döşeme döşeme yüklenir, ardından tüm semboller yüklenir. Haritanın oluşturma hızı, üzerindeki 2D ve 3D grafik nesnelerinin sayısına ve doğrudan donanımınızın performansına bağlıdır. Bu nedenle, Sürüm 2 (OpenGL) düşük performanslı cihazlarda kullanılamaz.
+Haritanın 3B görünümü için görüntü döşeme döşeme yüklenir, ardından tüm semboller yüklenir. Haritanın oluşturma hızı, üzerindeki 2B ve 3B grafik nesnelerinin sayısına ve doğrudan donanımınızın performansına bağlıdır. Bu nedenle, Sürüm 2 (OpenGL) düşük performanslı cihazlarda kullanılamaz.
 
 <table class="blogimage">
     <tr>
@@ -165,7 +165,7 @@ Haritanın 3D görünümü için görüntü döşeme döşeme yüklenir, ardınd
 
 ## Gizlilik ve Güvenlik {#privacy-and-security}
 
-OsmAnd, uygulama içi etkinliğinizi [paylaşıp paylaşmayacağınızı](#analytics) ve [tanımlayıcıları](#identifiers) (*yalnızca Android*) seçmenize, [geçmişinizi](#history) düzenleme ve seçtiğiniz bir [proxy](#proxy) (*yalnızca Android*) kullanma olanağı sunar.  
+OsmAnd, uygulamada [uygulama içi etkinliğinizi](#analytics) ve [tanımlayıcılarınızı](#identifiers) (*yalnızca Android*) paylaşıp paylaşmayacağınızı, [geçmişinizi](#history) düzenleme yeteneğini ve seçtiğiniz bir [proxy'yi](#proxy) (*yalnızca Android*) kullanma yeteneğini seçmenize olanak tanır.  
 
 :::note
 Daha fazla bilgi [*OsmAnd Gizlilik ve Güvenlik Politikası*](../../legal/privacy-policy.md) bölümünde bulunabilir.
@@ -207,7 +207,7 @@ Konumunuz veya haritada görüntülediğiniz yerler hakkında veri toplanmaz.
 
 ![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
 
-Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanımlayıcısı*) oluşturulur ve harita yüklemesi sırasında sunuculara gönderilir.
+Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanımlayıcısı*) oluşturulur ve harita yükleme sırasında sunuculara gönderilir.
 
 - Sunucu kaynaklarının rasyonel kullanımını kontrol etmek, trafik kullanımını tahmin etmek ve harita indirmeleri hakkında genel aylık raporlar sağlamak için OsmAnd sunucularından çevrimdışı haritaları indirmek için rastgele bir UUID kullanılır.
 - UUID her 3 ayda bir değişir.  
@@ -237,7 +237,7 @@ Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanım
 
 </Tabs>  
 
-Uygulama, daha önce girilen verilerin (geçmiş) geçmişini aşağıdaki kategorilerde kaydeder: [Arama](../search/search-history.md), [Navigasyon](../navigation/setup/route-navigation.md#history-of-previous-routes), [Harita işaretleyicileri](../personal/markers.md#history). İlgili sekmedeki anahtarı kullanarak belirli giriş kategorileri için günlüğe kaydetmeyi *Etkinleştirebilir / Devre dışı bırakabilirsiniz*. Ayrıca daha önce kaydedilen verileri [yönetebilir](#history) (görüntüleyebilir, silebilir ve paylaşabilirsiniz).  
+Uygulama, daha önce girilen verilerin (geçmiş) geçmişini aşağıdaki kategorilerde kaydeder: [Arama](../search/search-history.md), [Navigasyon](../navigation/setup/route-navigation.md#history-of-previous-routes), [Harita işaretleyicileri](../personal/markers.md#history). İlgili sekmedeki anahtarı kullanarak, belirli giriş kategorileri için günlük kaydını *Etkinleştirebilir / Devre Dışı Bırakabilirsiniz*. Ayrıca daha önce kaydedilen verileri [yönetebilir](#history) (görüntüleyebilir, silebilir ve paylaşabilirsiniz).  
 
 - ***Dosya olarak yedekle*** (*Android*) veya ***Dışa Aktar*** (*iOS*), geçmişinizin [yedek dosyasını](../personal/import-export.md#export) oluşturmak için kullanılır.
 - ***Tüm geçmişi temizle*** (*Android*) veya ***Tüm geçmişi sil*** (*iOS*), silme anına kadar kaydedilen tüm geçmiş girişlerini silmek için kullanılır.
@@ -262,8 +262,8 @@ Uygulama, daha önce girilen verilerin (geçmiş) geçmişini aşağıdaki kateg
 
 </Tabs>
 
-- Geçmiş listesinden bir veya daha fazla öğeyi silebilir veya bunları dosya olarak paylaşabilirsiniz (bu işlevlere *iOS'ta* erişmek için ***Düzenle*** düğmesine dokunun).  
-- Aynı anda birden çok kaydı silmek veya dışa aktarmak için, gerekli kayıtların yanındaki onay kutularını seçin ve **Dışa Aktar** veya **Sil** düğmelerine dokunun.  
+- Geçmiş listesinden bir veya daha fazla öğeyi silebilir veya bir dosya olarak paylaşabilirsiniz (bu işlevlere *iOS'ta* erişmek için ***Düzenle*** düğmesine dokunun).  
+- Birden çok kaydı aynı anda silmek veya dışa aktarmak için, gerekli kayıtların yanındaki onay kutularını seçin ve **Dışa Aktar** veya **Sil** düğmelerine dokunun.  
 
 
 ### Proxy {#proxy}
@@ -302,8 +302,8 @@ OsmAnd ayarlarının bu bölümünde, aldığınız bildirimleri, konum hizmetin
 **<Translate android="true" ids="dialogs_and_notifications_title"/>** ayarı, açılır pencereleri, diyalogları ve bildirimleri etkinleştirmenize/devre dışı bırakmanıza olanak tanır.  
 
 - *Başlangıç mesajı* promosyonları, sınavları, etkinlikleri ve daha fazlasını içerir.
-- *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) uygulama indirimlerinin ve özel yerel etkinlik mesajlarının görüntülenmesini engeller.
-- [*Harita indirme diyaloğu*](../start-with/download-maps.md#download) belirli haritaların indirilebileceğini bildirir.
+- *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*), uygulama indirimlerini ve özel yerel etkinlik mesajlarını görüntülemeyi engeller.
+- [*Harita indirme diyaloğu*](../start-with/download-maps.md#downloading-maps), belirli haritaların indirilebileceğini size bildirir.
 
 
 ### Konum Kaynağı {#location-source}
@@ -312,12 +312,12 @@ OsmAnd ayarlarının bu bölümünde, aldığınız bildirimleri, konum hizmetin
 
 ![Otomatik yedekleme](@site/static/img/personal/profiles/location_source_andr.png)
 
-OsmAnd, konumunuzu belirlemek için size hizmet seçeneği sunar. Bu bölüm için [Konum izni](../start-with/first-steps.md#permission-to-access-the-location) ve [Sorun Giderme](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) hakkında daha fazla bilgi okumanız önerilir.
+OsmAnd, konumunuzu belirlemek için size hizmet seçenekleri sunar. Bu bölüm için [Konum izni](../start-with/first-steps.md#permission-to-access-the-location) ve [Sorun Giderme](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) hakkında daha fazla bilgi okumanız önerilir.
 
 ***Android***:
 
 - OsmAnd'ın konumunuzu belirlemek için hangi *Google Play* veya *Android API* hizmetlerini kullanacağını seçebilirsiniz. Bu, *Google Play Hizmetleri* olmayan cihazlar için veya izleri kaydederken yanlış konum veya yükseklik verileri durumunda yararlı olabilir.
-- OsmAnd, *Google Fused Konum Sağlayıcıları* ve *Android GPS ve Ağ Sağlayıcıları* kaynaklarından veri alır. **<Translate android="true" id="location_source" />** öğesini şurada değiştirebilirsiniz: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
+- OsmAnd, *Google Fused Konum Sağlayıcıları* ve *Android GPS ve Ağ Sağlayıcıları* kaynaklarından veri alır. **<Translate android="true" id="location_source" />** ayarını şurada değiştirebilirsiniz: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
 ***iOS***:
 
@@ -336,7 +336,7 @@ OsmAnd, konumunuzu belirlemek için size hizmet seçeneği sunar. Bu bölüm iç
 
 - Varsayılan olarak, *OsmAnd ayarlarınız* ve [*Favoriler*](../personal/favorites.md#automatic-favorites-backup) harita işaretleyicileriniz Android sistemi tarafından otomatik olarak yedeklenir. Bu, bunları yeni cihazlarda veya uygulamayı yeniden yükledikten sonra geri yüklemenizi sağlar.
 
-- Lütfen yedekleme boyutunun *25MB* ile sınırlı olduğunu unutmayın.
+- Yedekleme boyutunun *25MB* ile sınırlı olduğunu lütfen unutmayın.
 
 - Yedekleme dosyalarını bulmak için üçüncü taraf bir dosya yöneticisi uygulaması kullanın.  
     *NOT: Yedekleme dosyalarını Android dosya yöneticisini kullanarak bulabilirsiniz: Android → data → net.osmand → files → backup, ancak Android'in son sürümlerinde sistem dizinlerine erişimin sınırlı olduğunu unutmayın.*  
@@ -371,23 +371,21 @@ OsmAnd sizi [hız kameraları hakkında uyarabilir](../navigation/guidance/navig
 
 </Tabs>
 
-Bu ayar, hız kameralarıyla POI'yi etkinleştirmenize veya devre dışı bırakmanıza olanak tanır, değişiklikleri yapmak için OsmAnd uygulamasını yeniden başlatmanız gerekir.
+Bu ayar, hız kameralı POI'leri etkinleştirmenize veya devre dışı bırakmanıza olanak tanır, değişiklikleri yapmak için OsmAnd uygulamasını yeniden başlatmanız gerekir.
   
-Bazı ülkelerde veya bölgelerde, hız kamerası uyarı uygulamalarını kullanmak yasa dışıdır. Ülkenizdeki yasalara bağlı olarak bir seçim yapmalısınız. **Aktif Tut**'u seçin, hız kamerası uyarıları ve bildirimleri alacaksınız. **Kaldır**'ı seçin ve uyarılar, bildirimler ve POI gibi hız kameralarıyla ilgili tüm veriler, OsmAnd'ı tamamen yeniden yükleyene kadar silinecektir.  
+Bazı ülkelerde veya bölgelerde, hız kamerası uyarı uygulamalarını kullanmak yasa dışıdır. Ülkenizdeki yasalara bağlı olarak bir seçim yapmalısınız. **Etkin tut**'u seçin, hız kamerası uyarıları ve bildirimleri alacaksınız. **Kaldır**'ı seçin ve uyarılar, bildirimler ve POI gibi hız kameralarıyla ilgili tüm veriler, OsmAnd'ı tamamen yeniden yükleyene kadar silinecektir.  
 
-Makaledeki rota üzerindeki hız kameraları için uyarıları okuyun Navigasyon widget'ları *[Uyarı widget'ı](../widgets/nav-widgets.md#alert-widget)* bölümünde.
+Rotanızdaki hız kameraları için uyarılar hakkında, *[Uyarı widget'ı](../widgets/nav-widgets.md#alert-widget)* bölümündeki Navigasyon widget'ları makalesini okuyun.
 
 
 ## İlgili Makaleler {#related-articles}
 
 - [Profiller (Ayarlar)](./profiles.md)
-- [İçe/Dışa Aktar](../personal/import-export.md)
+- [İçe / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
 
 ### Sorun Giderme {#troubleshooting}
 
-- **Android 12+ (depolama klasörünü değiştir)**. Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır. Bu değişiklikler özellikle SD kartlardaki haritaların depolanmasını etkiler, bu da dosya erişim performansında önemli ölçüde yavaşlamaya ve Android 11 ve 12'deki SD kart klasörlerine daha katı erişim sınırlamalarına neden olur. Bu sorunu nasıl çözeceğinizi öğrenmek için [**Sorun Giderme**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) bölümüne bakın.
+- **Android 12+ (depolama klasörünü değiştir)**. Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır. Bu değişiklikler özellikle SD kartlardaki haritaların depolanmasını etkiler, bu da dosya erişim performansında önemli ölçüde yavaşlamaya ve Android 11 ve 12'deki SD kart klasörlerine erişim sınırlamalarının daha katı olmasına neden olur. Bu sorunu nasıl çözeceğinizi [**Sorun Giderme**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) bölümünde bulabilirsiniz.
 
 - **Yükseklik sorunları için konum kaynağı**. Google Play politikasını değiştirdi ve buna uymak için OsmAnd, sürüm 3.9'dan itibaren arka planda çalışırken konum düzeltmeleri almak için Google Play Hizmetlerini kullanmalıdır. Daha fazla bilgiyi [Sorun Giderme](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) bölümünde okuyun.
-
-> *Son güncelleme: Kasım 2024*

@@ -1,7 +1,7 @@
 ---
-source-hash: 9e178d46c34474107d426605f944341538b486f2bc4997dab4e5643b50cb3990
+source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
 sidebar_position: 6
-title: Marker-Widgets
+title:  Markierungs-Widgets
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,54 +13,54 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
-Marker sind temporäre Punkte, die auf der Karte in Form von Flaggen angezeigt werden. Die Widgets zeigen die *Richtung*, *Entfernung*, *Adresse* und *geschätzte Ankunftszeit* zum Marker an. Sie ermöglichen es Ihnen, Marker auf der Karte schnell zu finden und ihre Position zu ändern. Mehr über Marker erfahren Sie in diesem [Artikel](../personal/markers).
+Markierungen sind temporäre Punkte, die auf der Karte in Form von Flaggen angezeigt werden. Die Widgets zeigen die *Richtung*, *Entfernung*, *Adresse* und die *voraussichtliche Ankunftszeit* zur Markierung an. Sie ermöglichen es Ihnen, Markierungen auf der Karte schnell zu finden sowie deren Position zu ändern. Mehr über Markierungen können Sie in diesem [Artikel](../personal/markers) lesen.  
 
 
-## Widget der oberen Leiste {#top-bar-widget}
+## Widget in der oberen Leiste {#top-bar-widget}
 
-Das Widget **Kartenmarkerleiste** (Android) / **Entfernungsanzeige - Obere Leiste** (iOS) zeigt an:
+Das Widget **Kartenmarkierungsleiste** (Android) / **Entfernungsanzeige - Obere Leiste** (iOS) zeigt an:
 
-- Entfernung von Ihrem aktuellen Standort (oder dem Kartenmittelpunkt / dem ursprünglichen Berührungspunkt der Karte, wenn der Standort ausgeschaltet ist) zum ausgewählten Punkt, der durch den Marker auf der Karte angezeigt wird ([Längeneinheiten](../personal/profiles/#general-settings) können in den Profileinstellungen ausgewählt werden).
-- Ein Pfeil in der gleichen Farbe wie der Marker zeigt die Richtung vom aktuellen Standort (oder dem Kartenmittelpunkt / dem ursprünglichen Berührungspunkt der Karte, wenn der Standort ausgeschaltet ist) und die räumliche Ausrichtung Ihres Geräts (Kurs) zum Marker an.
+- Entfernung von Ihrem aktuellen Standort (oder dem Kartenmittelpunkt / dem anfänglichen Berührungspunkt der Karte bei ausgeschaltetem Standort) zum ausgewählten Punkt, der durch die Markierung auf der Karte angezeigt wird ([Längeneinheiten](../personal/profiles/#general-settings) können in den Profileinstellungen ausgewählt werden).
+- Ein Pfeil in der gleichen Farbe wie die Markierung zeigt die Richtung von Ihrem aktuellen Standort (oder dem Kartenmittelpunkt / dem anfänglichen Berührungspunkt der Karte bei ausgeschaltetem Standort) und die Ausrichtung Ihres Geräts im Raum (Kurs) zur Markierung an.
 - Standortadresse.
-- Menüsymbol, das zur [Kartenmarkerliste](../personal/markers/#map-markers-menu) führt.
+- Menüsymbol, das zur [Kartenmarkierungsliste](../navigation/setup/markers-navigation.md#itinerary-list) führt.
 
-Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Weitere Informationen zu den Widget-Einstellungen finden Sie in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#appearance-on-the-map).
 :::info
-*Die Entfernung zum Marker* ist die Länge der geraden Linie zwischen Ihrer Position (oder dem Kartenmittelpunkt / dem ursprünglichen Berührungspunkt der Karte, wenn der Standort ausgeschaltet ist) und dem Marker.
-:::
+*Die Entfernung zur Markierung* ist die Länge der geraden Linie zwischen Ihrer Position (oder dem Kartenmittelpunkt / dem anfänglichen Berührungspunkt der Karte bei ausgeschaltetem Standort) und der Markierung.
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Kartenmarker auf dem Widget der oberen Leiste](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
+![Kartenmarkierungen im Widget der oberen Leiste](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
 
 
 | | |
 |------------|------------|
-| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Ein Panel auswählen → <Translate android="true" ids="map_markers_bar"/>* |
-| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Marker-Standort. |
-| Langes Tippen + Verschieben | Um die Entfernung zu messen und die Richtung von einem bestimmten Punkt auf der Karte zum verfolgten Marker zu sehen, müssen Sie lange tippen und die Kartenposition sofort leicht verschieben (das Kontextmenü sollte nicht erscheinen). |
-| Marker annähern | Falls sich Ihr Standort in einem kleinen Radius des Kartenmarkers befindet (**< 50 m**), sehen Sie im Widget-Feld eine Schaltfläche mit einem Häkchen, um den Kartenmarker schnell zu löschen (als passiert markieren). Der markierte Marker wird durch den nächsten Marker in der Markerliste ersetzt. |
-| Entfernungsformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_markers_bar"/>* |
+| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Standort der Markierung. |
+| Langes Tippen + Verschieben | Um die Entfernung zu messen und die Richtung von einem bestimmten Punkt auf der Karte zur verfolgten Markierung zu sehen, müssen Sie lange tippen und die Kartenposition sofort leicht verschieben (das Kontextmenü sollte nicht erscheinen). |
+| Annäherung an Markierung | Falls sich Ihr Standort in einem kleinen Radius um die Kartenmarkierung befindet (**< 50 m**), sehen Sie im Widget-Feld eine Schaltfläche mit einem Häkchen, um die Kartenmarkierung schnell zu löschen (als passiert markieren). Die markierte Markierung wird durch die nächste Markierung in der Liste der Markierungen ersetzt.  |
+| Entfernungsformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Kartenmarker auf dem Widget der oberen Leiste](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
+![Kartenmarkierungen im Widget der oberen Leiste](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
 
 | | |
 |------------|------------|
-| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Ein Panel auswählen → <Translate android="true" ids="map_markers_bar"/>*|
-| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Marker-Standort. |
-| Durch Tippen | Wechseln zwischen "Entfernung" / "Geschätzte Ankunftszeit" (Modus wechseln). |
-| Marker annähern | Falls sich Ihr Standort in einem kleinen Radius des Kartenmarkers befindet (**< 50 m**), sehen Sie im Widget-Feld eine Schaltfläche mit einem Häkchen, um den Kartenmarker schnell zu löschen (als passiert markieren). Der markierte Marker wird durch den nächsten Marker in der Markerliste ersetzt. |
-| Entfernungsformat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_markers_bar"/>*|
+| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Standort der Markierung. |
+| Durch Tippen | Wechseln zwischen "Entfernung" / "Voraussichtliche Ankunftszeit" (Modus wechseln). |
+| Annäherung an Markierung | Falls sich Ihr Standort in einem kleinen Radius um die Kartenmarkierung befindet (**< 50 m**), sehen Sie im Widget-Feld eine Schaltfläche mit einem Häkchen, um die Kartenmarkierung schnell zu löschen (als passiert markieren). Die markierte Markierung wird durch die nächste Markierung in der Liste der Markierungen ersetzt.  |
+| Entfernungsformat  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
 
 </TabItem>
 
@@ -69,107 +69,107 @@ Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. We
 
 ## Panel-Widgets {#panel-widgets}
 
-Das Widget **Kartenmarker** *(für Android)* und **Entfernungsanzeige - Widgets** *(für iOS)* zeigt an:
+Das Widget **Kartenmarkierungen** *(für Android)* und **Entfernungsanzeige - Widgets** *(für iOS)* zeigt an:
 
-- *Entfernung von Ihrem aktuellen Standort* zum ausgewählten Punkt, der durch den Marker auf der Karte angezeigt wird ([Längeneinheiten](../personal/profiles/#general-settings) können in den Profileinstellungen ausgewählt werden).
-- *Geschätzte Ankunftszeit oder ETA*.
-Dies ist die Zeit (hh:mm), zu der das Fahrzeug oder die Person am Ziel ankommen sollte. Sie wird berechnet als die Entfernung zum Marker geteilt durch die Durchschnittsgeschwindigkeit.
-Die Durchschnittsgeschwindigkeit wird als Mittelwert aller Geschwindigkeitswerte berechnet, die von den Standortpunkten für das von Ihnen ausgewählte Zeitintervall von 15 Sekunden bis 60 Minuten empfangen wurden.
+- *Entfernung von Ihrem aktuellen Standort* zum ausgewählten Punkt, der durch die Markierung auf der Karte angezeigt wird ([Längeneinheiten](../personal/profiles/#general-settings) können in den Profileinstellungen ausgewählt werden).
+- *Voraussichtliche Ankunftszeit oder ETA*.  
+Dies ist die Zeit (hh:mm), zu der das Fahrzeug oder die Person am Ziel ankommen sollte. Sie wird berechnet als die Entfernung zur Markierung geteilt durch die Durchschnittsgeschwindigkeit.
+Die Durchschnittsgeschwindigkeit wird als Mittelwert aller Geschwindigkeitswerte berechnet, die von den Standortpunkten für das von Ihnen gewählte Zeitintervall von 15 Sekunden bis 60 Minuten empfangen wurden.
 
-Sie können auch auswählen, ob ein oder zwei Marker angezeigt werden sollen. Weitere Informationen zu den Widget-Einstellungen finden Sie in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*Die Entfernung zum Marker* ist die Länge der geraden Linie zwischen Ihrer Position (oder einem bestimmten Punkt auf der Karte) und dem Marker.
-:::
+*Die Entfernung zur Markierung* ist die Länge der geraden Linie zwischen Ihrer Position (oder einem bestimmten Punkt auf der Karte) und der Markierung.
+:::  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Panel-Widgets](@site/static/img/widgets/map_markers_widget-02.png)
+![Panel-Widgets](@site/static/img/widgets/map_markers_widget-02.png)  
 
 | | |
 |------------|------------|
-| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>* |
-| Durch Tippen 1 | Wechseln zwischen "Entfernung" / "Geschätzte Ankunftszeit" (Modus wechseln). |
-| Durch Tippen 2 | Der sichtbare Teil der Karte verschiebt sich zum Marker-Standort (Gehe zum Marker-Standort-Modus) |
-| Langes Tippen + Verschieben | Um die Entfernung zu messen und die Richtung von einem bestimmten Punkt auf der Karte zum verfolgten Marker zu sehen, müssen Sie lange tippen und die Kartenposition sofort leicht verschieben (das Kontextmenü sollte nicht erscheinen). |
-| Entfernungsformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>*  |
+| Durch Tippen 1 | Wechseln zwischen "Entfernung" / "Voraussichtliche Ankunftszeit" (Modus wechseln). |
+| Durch Tippen 2 | Der sichtbare Teil der Karte verschiebt sich zum Standort der Markierung (Zum Standort der Markierung gehen). |
+| Langes Tippen + Verschieben | Um die Entfernung zu messen und die Richtung von einem bestimmten Punkt auf der Karte zur verfolgten Markierung zu sehen, müssen Sie lange tippen und die Kartenposition sofort leicht verschieben (das Kontextmenü sollte nicht erscheinen). |
+| Entfernungsformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Panel-Widgets](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
 | | |
 |------------|------------|
-| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Ein Panel auswählen → <Translate android="true" ids="map_markers_bar"/>* |
-| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Marker-Standort. |
-| Durch Tippen | Wechseln zwischen "Entfernung" / "Geschätzte Ankunftszeit" (Modus wechseln). |
-| Entfernungsformat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_markers_bar"/>*  |
+| Durch Tippen | Der sichtbare Teil der Karte verschiebt sich zum Standort der Markierung. |
+| Durch Tippen | Wechseln zwischen "Entfernung" / "Voraussichtliche Ankunftszeit" (Modus wechseln). |
+| Entfernungsformat  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 </TabItem>
 
 </Tabs>
 
 
-## Marker-Widgets konfigurieren {#configure-marker-widgets}
+## Markierungs-Widgets konfigurieren {#configure-marker-widgets}
 
-Allgemeine Informationen zu den Einstellungen des Kartenmarker-Widgets finden Sie auf dieser [Seite](../personal/markers#map-markers-widgets).
+Allgemeine Informationen zu den Einstellungen des Kartenmarkierungs-Widgets finden Sie auf dieser [Seite](../personal/markers#appearance-on-the-map).  
 
-**Kartenmarkerleiste**
-Das Widget der oberen Leiste zeigt die Entfernung und Richtung zum nächsten Kartenmarker von Ihrem aktuellen Standort an. In den Einstellungen können Sie wählen, ob ein oder zwei Marker oben auf dem Bildschirm angezeigt werden sollen.
+### Kartenmarkierungsleiste {#map-markers-bar}
+Das Widget in der oberen Leiste zeigt die Entfernung und Richtung zur nächsten Kartenmarkierung von Ihrem aktuellen Standort an. In den Einstellungen können Sie wählen, ob eine oder zwei Markierungen oben auf dem Bildschirm angezeigt werden sollen.
 
-![Aussehen auf der Karte](@site/static/img/widgets/configure-marker-wid-02.png)
+![Darstellung auf der Karte](@site/static/img/widgets/configure-marker-wid-02.png)  
 
-**Kartenmarker**
-Das Widget zeigt die Entfernung oder die geschätzte Ankunftszeit (ETA) für den ersten oder zweiten Marker in der Liste der Kartenmarker an. Sie können wählen: einen Marker, den ersten oder zweiten, der auf dem Bildschirm angezeigt werden soll, oder beide.
+### Kartenmarkierungen {#map-markers} 
+Das Widget zeigt die Entfernung oder die voraussichtliche Ankunftszeit (ETA) für die erste oder zweite Markierung in der Liste der Kartenmarkierungen an. Sie können wählen, ob eine Markierung, die erste oder die zweite, oder beide auf dem Bildschirm angezeigt werden sollen.
 
-![Aussehen auf der Karte](@site/static/img/widgets/configure-marker-wid-01.png) ![Aussehen auf der Karte](@site/static/img/widgets/settings-marker-wid-first-01.png)
+![Darstellung auf der Karte](@site/static/img/widgets/configure-marker-wid-01.png)  ![Darstellung auf der Karte](@site/static/img/widgets/settings-marker-wid-first-01.png)  
 
-| | |
+|    |     |  
 | :------------- | :------------- |
-| Zeigt an | Dieser Modus ermöglicht es Ihnen zu wählen, welche Informationen das Widget anzeigen soll: *Entfernung* oder *Geschätzte Ankunftszeit*. |
-| Intervall | Wenn *Geschätzte Ankunftszeit* in 'Anzeigen' ausgewählt ist, erscheint diese Option mit einer Auswahl von Zeiten (von 15 Sekunden bis 60 Minuten) für die ETA-Berechnung. |
-| Klick auf Widget | Diese Einstellung ermöglicht es Ihnen zu wählen, welche Aktion ausgeführt wird, wenn Sie auf das Widget klicken: *Modus wechseln* oder *Zum Marker-Standort gehen*. |
+| Zeigt an | In diesem Modus können Sie auswählen, welche Informationen das Widget anzeigen soll: *Entfernung* oder *Voraussichtliche Ankunftszeit*. |
+| Intervall | Wenn unter 'Anzeigen' die Option *Voraussichtliche Ankunftszeit* ausgewählt ist, erscheint diese Option mit einer Auswahl von Zeiten (von 15 Sekunden bis 60 Minuten) für die ETA-Berechnung. |
+| Klick auf Widget | Mit dieser Einstellung können Sie wählen, welche Aktion ausgeführt wird, wenn Sie auf das Widget klicken: *Modus wechseln* oder *Zum Standort der Markierung gehen*. |
 
 
-## Aussehen auf der Karte {#appearance-on-the-map}
+## Darstellung auf der Karte {#appearance-on-the-map}
 
-Die Konfiguration des Aussehens von Kartenmarkern ist sowohl in den Android- als auch in den iOS-Versionen von OsmAnd verfügbar. Das Menü "Aussehen auf der Karte" ist eine allgemeine Einstellung für Kartenmarker und gilt unabhängig davon, ob die Widgets aktiviert sind oder nicht. Detaillierte Informationen finden Sie auf dieser [Seite](../personal/markers.md#appearance-on-the-map).
+Die Konfiguration der Darstellung von Kartenmarkierungen ist sowohl in der Android- als auch in der iOS-Version von OsmAnd verfügbar. Das Menü "Darstellung auf der Karte" ist eine allgemeine Einstellung für Kartenmarkierungen und gilt unabhängig davon, ob die Widgets aktiviert sind oder nicht. Detaillierte Informationen finden Sie auf dieser [Seite](../personal/markers.md#appearance-on-the-map).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
-![Aussehen auf der Karte](@site/static/img/widgets/appearence_on_the_map-02.png)
+![Darstellung auf der Karte](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
-| | |
+|    |    |
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Zeigt Informationen über den ersten oder die ersten beiden Marker in der Kartenmarkerliste an. |
-| <Translate android="true" ids="show_arrows_on_the_map"/> | Zeigt die Richtung zum verfolgten Marker (einen oder zwei) als Pfeil auf der Karte an. Wenn sich der Marker im sichtbaren Teil der Karte befindet, wird kein Pfeil angezeigt. |
-| <Translate android="true" ids="show_guide_line"/> | Zeigt die Richtung als gestrichelte Linie von einem bestimmten Punkt auf der Karte zum verfolgten Marker in einer geraden Linie an. |
-| <Translate android="true" ids="one_tap_active"/> | Mit einem einzigen Tippen auf den gewünschten Marker auf der Karte verschiebt sich dieser Marker an den Anfang der Liste der aktiven Kartenmarker, ohne das Kontextmenü zu öffnen. |
-| <Translate android="true" ids="keep_passed_markers"/> | Marker, die als Gruppe von Favoriten oder GPX-Wegpunkten hinzugefügt und als "Passiert" markiert wurden, bleiben auf der Karte. Wenn die Gruppe nicht aktiv ist, verschwinden die Marker von der Karte. |
+| <Translate android="true" ids="active_markers"/> | Zeigt Informationen über die erste oder die ersten beiden Markierungen in der Kartenmarkierungsliste an. |
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Zeigt die Richtung zur verfolgten Markierung (eine oder zwei) als Pfeil auf der Karte an. Befindet sich die Markierung im sichtbaren Teil der Karte, wird kein Pfeil angezeigt. |
+| <Translate android="true" ids="show_guide_line"/> | Zeigt die Richtung als gestrichelte Linie von einem bestimmten Punkt auf der Karte zur verfolgten Markierung in einer geraden Linie an.  |
+| <Translate android="true" ids="one_tap_active"/> |  Mit einem einzigen Tippen auf die gewünschte Markierung auf der Karte wird diese Markierung an den Anfang der Liste der aktiven Kartenmarkierungen verschoben, ohne das Kontextmenü zu öffnen. |  
+| <Translate android="true" ids="keep_passed_markers"/> | Markierungen, die als Gruppe von Favoriten oder GPX-Wegpunkten hinzugefügt und als "Passiert" markiert wurden, bleiben auf der Karte. Wenn die Gruppe nicht aktiv ist, verschwinden die Markierungen von der Karte. |
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
 
-![Kartenmarker Aussehen iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Darstellung der Kartenmarkierungen iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 
-| | |
+|    |     |  
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Zeigt Informationen über den ersten oder die ersten beiden Marker in der Kartenmarkerliste an. |
-| <Translate android="true" ids="show_direction"/> | Ermöglicht die Auswahl, ob Widgets angezeigt werden sollen und wie sie erscheinen: über der Karte (<Translate android="true" ids="shared_string_topbar"/>) oder auf der rechten Seite des Bildschirms (<Translate android="true" ids="shared_string_widgets"/>). |
-| Pfeile auf der Karte | Zeigt die Richtung zum verfolgten Marker (einen oder zwei) als Pfeil auf der Karte an. Wenn sich der Marker im sichtbaren Teil der Karte befindet, wird kein Pfeil angezeigt. |
-| Richtungslinie | Zeigt die Richtung als gestrichelte Linie von einem bestimmten Punkt auf der Karte zum verfolgten Marker in einer geraden Linie an. |
+| <Translate android="true" ids="active_markers"/> | Zeigt Informationen über die erste oder die ersten beiden Markierungen in der Kartenmarkierungsliste an. |
+|  <Translate android="true" ids="show_direction"/> | Ermöglicht die Auswahl, ob Widgets angezeigt werden sollen oder nicht und wie sie erscheinen: über der Karte (<Translate android="true" ids="shared_string_topbar"/>) oder auf der rechten Seite des Bildschirms (<Translate android="true" ids="shared_string_widgets"/>). |
+|  Pfeile auf der Karte |  Zeigt die Richtung zur verfolgten Markierung (eine oder zwei) als Pfeil auf der Karte an. Befindet sich die Markierung im sichtbaren Teil der Karte, wird kein Pfeil angezeigt. |
+| Richtungslinie | Zeigt die Richtung als gestrichelte Linie von einem bestimmten Punkt auf der Karte zur verfolgten Markierung in einer geraden Linie an.  |
 
 </TabItem>
 
@@ -184,6 +184,3 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_strin
 - [Navigations-Widgets](./nav-widgets.md)
 - [Radius-Lineal und Lineal](./radius-ruler.md)
 - [Schnellaktion](./quick-action.md)
-
-
-> *Zuletzt aktualisiert: Oktober 2023*

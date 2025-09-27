@@ -1,27 +1,27 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
-title: Tracks
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
+title:  Pistas
 sidebar_position: 8
 ---
 
-## [Gestionar Tracks](./manage-tracks.md) {#manage-tracks}
+## [Gestionar Pistas](./manage-tracks.md) {#manage-tracks}
 
-Toda la información sobre cómo crear, gestionar y organizar tracks y carpetas de tracks.
+Toda la información sobre cómo crear, gestionar y organizar pistas y carpetas de pistas.
 
-## [Carpeta inteligente (filtro)](./smart-folder.md) {#smart-folderfilter}
+## [Carpeta Inteligente (filtro)](./smart-folder.md) {#smart-folderfilter}
 
-Una forma sencilla de crear carpetas virtuales para tracks con cualquier filtro.
+Una forma sencilla de crear carpetas virtuales para pistas con cualquier filtro.
 
 ## Leer más {#read-more}
 
-### [Tipos de tracks](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
+### [Tipos de pistas](../../map/tracks/index.md#types-of-tracks) {#types-of-tracks}
 
-Lee qué es un track y los diferentes tipos de tracks.
+Lea qué es una pista y los diferentes tipos de pistas.
 
-### [Mostrar tracks](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Mostrar pistas](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
-Lee cómo mostrar tracks y sus opciones en OsmAnd.
+Lea sobre cómo mostrar pistas y sus opciones en OsmAnd.
 
-### [Navegar por track](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [Navegar por pista](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-Lee más sobre cómo usar tracks en la navegación.
+Lea más sobre cómo usar una pista en la navegación.

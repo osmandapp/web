@@ -1,7 +1,7 @@
 ---
-source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
+source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
 sidebar_position: 3
-title: Cartella Intelligente (Filtro)
+title: Cartella Smart (Filtro)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-La funzione **Cartella Intelligente** fornisce strumenti potenti per organizzare e gestire le tue tracce. Una delle caratteristiche principali è la possibilità di filtrare i file nella *scheda Tracce* del menu *Le mie posizioni* in base a criteri quali durata, lunghezza o velocità.
+La funzione **Cartella Smart** fornisce potenti strumenti per organizzare e gestire le tue tracce. Una delle caratteristiche principali è la possibilità di filtrare i file nella *scheda Tracce* del menu *I miei luoghi* in base a criteri quali durata, lunghezza o velocità.  
 
-Questa funzione ti consente di trovare rapidamente tracce specifiche che corrispondono alle tue esigenze. I risultati filtrati possono essere salvati come **Cartella Intelligente**, offrendo un comodo accesso a raccolte di tracce aggiornate dinamicamente.
+Questa funzione consente di trovare rapidamente tracce specifiche che corrispondono ai propri requisiti. I risultati filtrati possono essere salvati come **Cartella Smart**, offrendo un comodo accesso a raccolte di tracce aggiornate dinamicamente.
 
 
 ## Filtro di ricerca {#search-filter}
@@ -29,17 +29,17 @@ Questa funzione ti consente di trovare rapidamente tracce specifiche che corrisp
 
 <TabItem value="android" label="Android">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> scheda*
+Vai a: *scheda <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Tracce Le mie posizioni](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
+![Tracce I miei luoghi](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> scheda*
+Vai a: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Tracce Le mie posizioni](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
+![Tracce I miei luoghi](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
 </TabItem>
 
@@ -47,15 +47,15 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 ***Come applicare un filtro:***
 
-- Tocca l'icona *Cerca*, quindi tocca *Filtra* nella riga [*Ordina per*](./manage-tracks.md#sort-by).
+- Tocca l'icona *Cerca*, quindi tocca *Filtro* nella riga [*Ordina per*](./manage-tracks.md#sort-by).
 
-- **Scegli le impostazioni del filtro richieste** per affinare la ricerca della traccia.
+- **Scegli le impostazioni del filtro richieste** per affinare la ricerca delle tracce.
 
 - Tocca **Mostra** nell'angolo in basso a destra per vedere i risultati filtrati. Il numero di tracce corrispondenti appare tra parentesi.
 
-- **Per cancellare** tutti i filtri attivi, tocca **Reimposta tutto**.
+- **Per cancellare** tutti i filtri attivi, tocca **Ripristina tutto**.
 
-- **Per salvare** il set di filtri corrente come nuova **Cartella Intelligente**, tocca l'icona di salvataggio nell'angolo in alto a destra dello schermo.
+- **Per salvare** il set di filtri corrente come nuova **Cartella Smart**, tocca l'icona di salvataggio nell'angolo in alto a destra dello schermo.
 
 
 ### Filtri disponibili {#available-filters}
@@ -64,145 +64,145 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 <TabItem value="android" label="Android">
 
-![Tracce Le mie posizioni](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
+![Tracce I miei luoghi](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tracce Le mie posizioni](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
+![Tracce I miei luoghi](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Nome** — Cerca tracce per titolo. Inserisci un nome completo o parziale per visualizzare le tracce corrispondenti.
+- **Nome** — Cerca le tracce per titolo. Inserisci un nome completo o parziale per visualizzare le tracce corrispondenti.
 - **Cartella** — Seleziona una o più cartelle per filtrare le tracce in base alla loro posizione di archiviazione.
 - **Durata** — Filtra le tracce in base alla loro durata registrata, impostando un intervallo in ore e minuti.
 - **Tempo in movimento** — Specifica l'intervallo di tempo trascorso in movimento durante la registrazione.
 - **Lunghezza** — Imposta un intervallo specifico in chilometri o miglia per trovare tracce di una particolare lunghezza.
 - **Velocità media** — Filtra le tracce per [velocità media](../../widgets/info-widgets.md#average-speed).
-- **Gruppo dati sensore.**
-    Applica filtri basati sui dati di sensori esterni, inclusi:
+- **Gruppo dati sensore.**  
+    Applica filtri basati sui dati dei sensori esterni, tra cui:
     - Velocità sensore, media.
-    - Velocità sensore, massima.
+    - Velocità sensore, max.
     - Frequenza cardiaca, media.
-    - Frequenza cardiaca, massima.
+    - Frequenza cardiaca, max.
     - Cadenza bicicletta, media.
-    - Cadenza bicicletta, massima.
+    - Cadenza bicicletta, max
     - Potenza bicicletta, media.
-    - Potenza bicicletta, massima.
+    - Potenza bicicletta, max.
     - Temperatura, media.
-    - Temperatura, massima.
-- **Velocità massima** — Seleziona tracce con intervalli di velocità massima specifici.
-- **In salita** e **In discesa** — Filtra le tracce in base a cambiamenti di elevazione positivi o negativi.
-- **Altitudine media** e **Altitudine massima** — Trova tracce con dati di altitudine media o massima specifici.
+    - Temperatura, max.
+- **Velocità massima** — Seleziona le tracce con specifici intervalli di velocità massima.
+- **Salita** e **Discesa** — Filtra le tracce in base ai dislivelli positivi o negativi.
+- **Altitudine media** e **Altitudine massima** — Trova tracce con dati specifici di altitudine media o massima.
 - **Data di creazione** — Filtra le tracce create entro un particolare intervallo di date.
 - **Città più vicine** — Visualizza le tracce che passano vicino a città o località selezionate.
-- **Tipo di attività** — Filtra le tracce in base al tipo di [attività](../../map/tracks/track-context-menu.md#track-information-activity) registrato nel file GPX (ad esempio, ciclismo, escursionismo).
-- **Paese** — Filtra le tracce in base al paese o alla regione in cui sono state registrate.
-- **Colore** e **Larghezza** — Seleziona le tracce per colore assegnato o larghezza della linea.
+- **Tipo di attività** — Filtra le tracce in base al tipo di [attività](../../map/tracks/track-context-menu.md#ttrack-activity-type) registrata nel file GPX (ad es. ciclismo, escursionismo).
+- **Paese** — Filtra le tracce per paese o regione in cui sono state registrate.
+- **Colore** e **Larghezza** — Seleziona le tracce in base al colore o alla larghezza della linea assegnati.
 - **Altro** — Filtri aggiuntivi per caratteristiche speciali:
     - *Visibile sulla mappa*. Mostra solo le tracce visualizzate sulla mappa.
     - *Con Waypoint*. Visualizza le tracce contenenti waypoint specifici.
 
 
-## Cartella Intelligente {#smart-folder}
+## Cartella Smart {#smart-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Funzione di ordinamento tracce Le mie posizioni Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![Funzione di ordinamento tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tracce Le mie posizioni](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+![Tracce I miei luoghi](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Una **Cartella Intelligente** è una raccolta dinamica di tracce aggiornata automaticamente in base a criteri di filtro specifici. Offre strumenti avanzati per organizzare, cercare e gestire le tracce in modo efficiente.
+Una **Cartella Smart** è una raccolta dinamica di tracce aggiornata automaticamente in base a specifici criteri di filtro. Offre strumenti avanzati per organizzare, cercare e gestire le tracce in modo efficiente.  
 
-***Vantaggi delle Cartelle Intelligenti:***
+***Vantaggi delle Cartelle Smart:***
 
-1. **Organizzazione automatizzata.**
+1. **Organizzazione automatizzata.**  
     Include automaticamente le tracce che corrispondono a regole predefinite, come la data di creazione o l'intervallo di durata.
-2. **Filtraggio e ricerca.**
+2. **Filtraggio e ricerca.**  
     Consente ricerche rapide all'interno delle tracce utilizzando filtri avanzati e parole chiave.
-3. **Aggiornamento dinamico.**
+3. **Aggiornamento dinamico.**  
     Aggiorna automaticamente il contenuto per visualizzare le ultime tracce che corrispondono ai criteri.
-4. **Personalizza le regole.**
+4. **Personalizzazione delle regole.**  
     Crea raccolte di tracce personalizzate definendo regole di filtro personalizzate.
 
 
-### Come creare una Cartella Intelligente {#how-to-create-smart-folder}
+### Come creare una Cartella Smart {#how-to-create-smart-folder}
 
-Per creare una **Cartella Intelligente**, segui questi passaggi:
+Per creare una **Cartella Smart**, segui questi passaggi:
 
-1. Tocca l'icona del ***menu a tre punti*** nella scheda *Tracce* del menu *Le mie posizioni*.
+1. Tocca l'icona del ***menu a tre punti*** nella scheda *Tracce* del menu *I miei luoghi*.
 
-2. Seleziona **Aggiungi cartella intelligente** dal menu a discesa.
+2. Seleziona **Aggiungi cartella smart** dal menu a discesa.
 
 3. Configura le impostazioni:
-   - **Nomina la cartella**. Inserisci un nome per identificare la cartella.
-   - Specifica i **parametri del filtro traccia**. Applica i filtri richiesti utilizzando le opzioni [Filtro](#available-filters) disponibili.
+   - **Dai un nome alla cartella**. Inserisci un nome per identificare la cartella.
+   - Specifica i **parametri del filtro delle tracce**. Applica i filtri richiesti utilizzando le opzioni disponibili in [Filtro](#available-filters).
 
 4. **Salva** le impostazioni.
-    - Tocca **Mostra** per visualizzare in anteprima le tracce.
-    - Seleziona il pulsante **Salva** per finalizzare la *Cartella Intelligente*.
+    - Tocca **Mostra** per visualizzare l'anteprima delle tracce.
+    - Seleziona il pulsante **Salva** per finalizzare la *Cartella Smart*.
 
-La **Cartella Intelligente** appena creata aggiornerà automaticamente i suoi contenuti con le tracce che corrispondono ai criteri selezionati.
+La **Cartella Smart** appena creata aggiornerà automaticamente il suo contenuto con le tracce che corrispondono ai criteri selezionati.
 
 
-### Gestione delle Cartelle Intelligenti {#managing-smart-folders}
+### Gestione delle Cartelle Smart {#managing-smart-folders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Gestione Cartelle Intelligenti Le mie posizioni Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Gestione Cartelle Intelligenti Le mie posizioni Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gestione Cartelle Intelligenti Le mie posizioni iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Gestione Cartelle Intelligenti Le mie posizioni iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La **Cartella intelligente** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, tocca il *menu a tre punti* accanto ad essa (*Android*) e *tieni premuto* (*iOS*) o apri la cartella e usa l'icona nell'angolo in alto a destra.
+La **Cartella Smart** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, tocca il *menu a tre punti* accanto ad essa (*Android*) e fai un *tocco lungo* (*iOS*) o apri la cartella e usa l'icona nell'angolo in alto a destra.
 
 ***Azioni disponibili:***
 
 - **Dettagli** — Visualizza l'elenco completo delle tracce contenute nella cartella.
 
-- **Mostra tutte le tracce sulla mappa** (*solo Android*) — Visualizza tutte le tracce della cartella sulla mappa.
-    *NOTA: Il caricamento di molte tracce potrebbe influire sulle prestazioni.*
+- **Mostra tutte le tracce sulla mappa** (*solo Android*) — Visualizza tutte le tracce della cartella sulla mappa.  
+    *NOTA: il caricamento di molte tracce potrebbe influire sulle prestazioni.*
 
 - **Modifica nome** (*Android*) / **Rinomina** (*iOS*) — Cambia il nome della cartella per una più facile identificazione.
 
-- **Aggiorna** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le ultime tracce.
+- **Aggiorna** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
 
 - **Cambia aspetto predefinito** (*Android*) — Modifica l'aspetto di visualizzazione di tutte le tracce nella cartella.
 
-- **Modifica filtro** — Modifica le impostazioni del filtro traccia per la Cartella Intelligente corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
+- **Modifica filtro** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
 
-- **Esporta** — Esporta tutte le tracce nella Cartella Intelligente tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
+- **Esporta** — Esporta tutte le tracce nella Cartella Smart tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
 
-- **Elimina cartella** — Rimuovi la Cartella Intelligente senza eliminare le sue tracce.
-    *ATTENZIONE: Questa azione è irreversibile e richiederà un messaggio di conferma.*
+- **Elimina cartella** — Rimuovi la Cartella Smart senza eliminare le sue tracce.  
+    *ATTENZIONE: questa azione è irreversibile e richiederà un messaggio di conferma.*
 
-- **Sposta** (*iOS*) — Ti consente di spostare la cartella in un'altra cartella esistente o crearne una nuova.
+- **Sposta** (*iOS*) — Consente di spostare la cartella in un'altra cartella esistente o di crearne una nuova.
 
 - **Seleziona** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
 
@@ -212,7 +212,5 @@ La **Cartella intelligente** viene visualizzata con un'icona unica nell'elenco d
 - [Mostra traccia sulla mappa](../../map/tracks/index.md)
 - [Analizza sulla mappa](../../map/tracks/index.md#analyze-track-on-map)
 - [Menu contestuale traccia](../../map/tracks/track-context-menu.md)
-- [Navigazione per traccia](../../navigation/setup/gpx-navigation.md)
+- [Navigazione tramite traccia](../../navigation/setup/gpx-navigation.md)
 - [Registrazione viaggio](../../plugins/trip-recording.md)
-
-> *Ultimo aggiornamento: marzo 2025*

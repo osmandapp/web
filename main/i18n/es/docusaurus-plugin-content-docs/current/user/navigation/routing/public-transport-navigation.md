@@ -1,7 +1,7 @@
 ---
-source-hash: 666034567fd284a4497490ffa9885eebc102c1d37823e71a52d03c189944eb25
+source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
 sidebar_position: 5
-title: Rutas de transporte público
+title:  Enrutamiento de Transporte Público
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,25 +15,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Descripción general {#overview}
+## Resumen {#overview}
 
-La navegación de transporte público en la aplicación OsmAnd te permite trazar rutas utilizando el transporte público, lo que sin duda te ayudará a moverte por la "jungla de cemento" más rápido.
+La navegación de transporte público en la aplicación OsmAnd le permite calcular las rutas utilizando el transporte público, lo que sin duda le ayudará a moverse más rápido por la "jungla de asfalto".
 
-Los datos sobre las rutas de transporte público se toman del proyecto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utiliza el [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para la navegación. OsmAnd admite las siguientes rutas de OpenStreetMap para la navegación: *autobús*, *trolebús*, *taxi_compartido*, *funicular*, *metro*, *tren_ligero*, *monorraíl*, *tren*, *tranvía*, *ferry*. La velocidad predeterminada para cada tipo de vehículo está configurada en [Routing xml](../../../technical/build-osmand/routing.md) y se utiliza para encontrar las rutas más rápidas.
+Los datos sobre las rutas de transporte público se toman del proyecto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utiliza el [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para la navegación. OsmAnd admite las siguientes rutas de OpenStreetMap para la navegación: *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La velocidad predeterminada para cada tipo de vehículo se configura en el [XML de enrutamiento](../../../technical/build-osmand/routing.md) y se utiliza para encontrar las rutas más rápidas.
 
 :::note
-La navegación de transporte público está en fase de pruebas. Por ahora, puedes construir y ver tu ruta sin la función de navegación completa.
+El enrutamiento de transporte público está en fase de pruebas. Por ahora, puede crear y ver su ruta sin la función de navegación completa.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Navegación transporte público Android](@site/static/img/navigation/public/navigation_android.png)
+![Navegación transporte público Android](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Navegación transporte público iOS](@site/static/img/navigation/public/navigation_ios.png)
 
@@ -44,9 +44,9 @@ La navegación de transporte público está en fase de pruebas. Por ahora, puede
 
 ## Cómo usar {#how-to-use}
 
-Para empezar a navegar por la ciudad en transporte público, utiliza [el botón de navegación](../../widgets/map-buttons.md#directions) en la pantalla del mapa o selecciona la opción de navegación en el *Menú principal*.
+Para comenzar a navegar por la ciudad en transporte público, use [el botón de navegación](../../widgets/map-buttons.md#directions) en la pantalla del mapa o seleccione la opción de navegación en el *Menú principal*.  
 
-**1.** Debes elegir el *perfil de navegación de transporte público*, los puntos de inicio y destino.
+**1.** Debe elegir el *perfil de navegación de Transporte público*, los puntos de inicio y de destino.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -56,7 +56,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Rutas de navegación de transporte público iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
@@ -64,25 +64,25 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 </Tabs>
 
-**2.** OsmAnd ofrece opciones de ruta con tiempos de caminata y rutas de transporte público con información de ruta: tiempo, distancia, transbordo y rutas públicas. Debes desplazarte por la pantalla de navegación para seleccionar la opción requerida.
+**2.** OsmAnd ofrece opciones de ruta con tiempos de caminata y rutas de transporte público con información de la ruta: tiempo, distancia, transbordo y rutas públicas. Debe desplazarse por la pantalla de navegación para seleccionar la opción requerida.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Ruta de navegación de transporte público Android](@site/static/img/navigation/public/navigation_way_android.png)
+![Trayecto de navegación de transporte público Android](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Ruta de navegación de transporte público iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![Trayecto de navegación de transporte público iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**3.** Puedes ver todas las posibles sugerencias de ruta en el mapa usando el botón *Mostrar en el mapa*. Desliza las pantallas para ver la siguiente opción de ruta.
+**3.** Puede ver todas las sugerencias de rutas posibles en el mapa usando el botón *Mostrar en el mapa*. Deslice el dedo por las pantallas para ver la siguiente opción de ruta.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -92,7 +92,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Detalles de navegación de transporte público iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
@@ -101,7 +101,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 </Tabs>
 
 
-**4.** Toca el botón "Detalles" para abrir una descripción de la ruta seleccionada con todas las paradas y transbordos.
+**4.** Toque el botón "Detalles" para abrir una descripción de la ruta seleccionada con todas las paradas y transbordos.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -111,7 +111,7 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Lista de paradas de navegación de transporte público iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
@@ -120,12 +120,10 @@ Para empezar a navegar por la ciudad en transporte público, utiliza [el botón 
 </Tabs>
 
 
-## Datos y guía {#data-and-guideline}
+## Datos y directrices {#data-and-guideline}
 
-OsmAnd utiliza un nuevo esquema de transporte público, también llamado Public Transport Version 2 (PTv2) para el algoritmo de navegación de transporte público de OsmAnd.
+OsmAnd utiliza un nuevo esquema de transporte público, también llamado Public Transport Version 2 (PTv2) para el algoritmo de navegación de Transporte Público de OsmAnd.
 
-- Puedes consultar tu transporte público [aquí](http://tools.geofabrik.de/osmi/).
+- Puede verificar su transporte público [aquí](http://tools.geofabrik.de/osmi/).
 - Una guía para construir o ajustar rutas de transporte público está disponible en nuestro [blog](https://osmand.net/blog/guideline-pt).
-- La presentación [2019: Navegación de transporte público usando OpenStreetMap por OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
-
-> *Última actualización: junio de 2024.*
+- La presentación [2019: Navegación de Transporte Público usando OpenStreetMap por OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).

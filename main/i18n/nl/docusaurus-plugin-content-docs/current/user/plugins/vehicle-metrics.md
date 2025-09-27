@@ -1,7 +1,7 @@
 ---
-source-hash: 7cce24b2cd87bfae38687f74d452a20648b7bb08c58e4e9a6b8489cb8398e2a2
+source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
 sidebar_position: 16
-title: Voertuigstatistieken
+title:  Voertuigstatistieken
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,18 +15,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
-
 
 ## Overzicht {#overview}
 
 :::info Betaalde functie
-De plug-in Voertuigstatistieken is een [betaalde functie](../purchases/index.md) van de OsmAnd-app. Voertuigsnelheid en motortoerentalinformatie zijn gratis beschikbaar voor OsmAnd.
+De Voertuigstatistieken-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
 :::
 
-De **plug-in Voertuigstatistieken** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële metingen zoals motorprestaties, brandstofefficiëntie en snelheid volgen, waardoor proactief voertuigonderhoud en probleemoplossing mogelijk zijn.
+De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële statistieken bijhouden, zoals motorprestaties, brandstofefficiëntie en snelheid, wat proactief voertuigonderhoud en probleemoplossing mogelijk maakt.  
 
-[OBD-II-scanners](https://en.wikipedia.org/wiki/ELM327) zijn een integraal onderdeel van moderne autodiagnostiek. Met real-time gegevensstreaming krijgen gebruikers direct inzicht in voertuigsystemen, wat preventief onderhoud vergemakkelijkt en reparatiekosten verlaagt. Deze hulpmiddelen zijn essentieel voor zowel persoonlijk gebruik als professionele autoservices.
+[OBD-II-scanners](https://en.wikipedia.org/wiki/ELM327) zijn een integraal onderdeel van de moderne autodiagnostiek. Met real-time datastreaming krijgen gebruikers direct inzicht in voertuigsystemen, wat preventief onderhoud vergemakkelijkt en reparatiekosten verlaagt. Deze tools zijn essentieel voor zowel persoonlijk gebruik als professionele autodiensten.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -45,27 +43,27 @@ De **plug-in Voertuigstatistieken** maakt real-time monitoring van voertuiggegev
 </Tabs>
 
 
-## Vereiste instellingsparameters {#required-setup-parameters}
+## Vereiste installatieparameters {#required-setup-parameters}
 
 Om gegevens van een OBD-II-scanner te gebruiken:
 
-1. [Koop](../purchases/) een **OsmAnd Pro-abonnement**. (*Voertuigsnelheid* en *Motortoerental* zijn gratis.)
-2. [Schakel](../plugins/index.md#enable--disable) de plug-in Voertuigstatistieken in het gedeelte Plug-ins van het *Hoofdmenu* in.
-3. **Schakel** Bluetooth in op uw apparaat.
-4. [Sluit](#pair-odb-ii-scanner) de OBD-II-scanner aan op de poort van uw voertuig.
+1. [Koop](../purchases/) een **OsmAnd Pro-abonnement**. (*Voertuigsnelheid* en *Motortoerental* zijn gratis.)  
+2. [Activeer](../plugins/index.md#enable--disable) de Voertuigstatistieken-plugin in de sectie Plugins van het *Hoofdmenu*.
+3. **Schakel** Bluetooth **in** op uw apparaat.
+4. [Verbind](#pair-odb-ii-scanner) de OBD-II-scanner met de poort van uw voertuig.
 5. [Configureer](#scanner-settings) de **scannerinstellingen**.
-6. [Voeg](#widgets) **widgets voor voertuigstatistieken** toe voor gegevens op het scherm (optioneel).
-7. [Gebruik](#trip-recording) de **plug-in Ritregistratie** om voertuiggegevens op te nemen.
+6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe voor gegevens op het scherm (optioneel).
+7. [Gebruik](#trip-recording) de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
 
 
-### Koppel ODB-II-scanner {#pair-odb-ii-scanner}
+### ODB-II-scanner koppelen {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-| | |
+|  |  |
 |--|--|
 |![OBD-verbinding](@site/static/img/plugins/obd/obd_connect.png)|![OBD-verbinding](@site/static/img/plugins/obd/obd_connect_2.png)|
 
@@ -73,7 +71,7 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 
 <TabItem value="ios" label="iOS">
 
-| | |
+|  |  |
 |--|--|
 |![OBD-verbinding](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD-verbinding](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
@@ -83,7 +81,7 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 
 Sluit de scanner aan op de poort van uw voertuig en koppel deze via de app:
 
-- Navigeer naar *Menu → Plug-ins → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
+- Navigeer naar *Menu → Plugins → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
 - Als Voertuigstatistieken in het *Hoofdmenu* staat: *Menu → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
 
 Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
@@ -95,9 +93,9 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 
 <TabItem value="android" label="Android">
 
-**Android.** Ga naar: *Menu → Plug-ins → Voertuigstatistieken → OBD → menu met drie stippen*
+**Android.** Ga naar: *Menu → Plugins → Voertuigstatistieken → OBD → menu met drie stippen*
 
-| | |
+|  |  |
 |--|--|
 |![OBD-instellingen](@site/static/img/plugins/obd/obd_settings.png)|![OBD-instellingen](@site/static/img/plugins/obd/obd_settings_1.png)|
 
@@ -106,9 +104,9 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Ga naar: *Menu → Plug-ins → Voertuigstatistieken → OBD → menu met drie stippen*
+**iOS.** Ga naar: *Menu → Plugins → Voertuigstatistieken → OBD → menu met drie stippen*
 
-| | |
+|  |  |
 |--|--|
 |![OBD-instellingen](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD-instellingen](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
@@ -116,28 +114,28 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 
 </Tabs>
 
-- **Verbinden / Verbinding verbreken**. Brengt de verbinding met de OBD-II-sensor tot stand of beëindigt deze.
-- **Instellingen**. Opent het OBD-II-instellingenscherm, waardoor verbindingsbeheer en toegang tot beschikbare voertuigparameters mogelijk zijn.
-- **Naam wijzigen**. Hiermee kunt u een aangepaste naam toewijzen aan de sensor voor eenvoudigere identificatie.
-- **Vergeten**. Verwijdert de eerder gekoppelde OBD-II-sensor uit de lijst, waardoor opnieuw koppelen nodig is als deze later weer nodig is.
+- **Verbinden / Verbinding verbreken**. Brengt de verbinding met de OBD-II-sensor tot stand of verbreekt deze.
+- **Instellingen**. Opent het instellingenscherm van de OBD-II, waar u de verbinding kunt beheren en toegang hebt tot beschikbare voertuigparameters.
+- **Hernoemen**. Hiermee kunt u een aangepaste naam aan de sensor toewijzen voor eenvoudigere identificatie.
+- **Vergeten**. Verwijdert de eerder gekoppelde OBD-II-sensor uit de lijst, waardoor opnieuw koppelen later nodig is.
 
 
-## Lijst met metingen {#metrics-list}
+## Lijst met statistieken {#metrics-list}
 
-Metingen zijn gecategoriseerd voor duidelijkheid. Geavanceerde diagnostische hulpmiddelen maken preventief onderhoud mogelijk door deze parameters te interpreteren:
+Statistieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostische tools maken preventief onderhoud mogelijk door deze parameters te interpreteren:
 
 *Temperatuur:*
 
-- **Inlaattemperatuur**. Geeft de temperatuur weer van de lucht die het inlaatspruitstuk binnenkomt.
+- **Inlaattemperatuur**. Toont de temperatuur van de lucht die het inlaatspruitstuk binnenkomt.
 - **Omgevingstemperatuur**. Bewaakt externe omstandigheden.
 - **Koelvloeistoftemperatuur**. Volgt de efficiëntie van de motorkoeling.
-- **Motorolietemperatuur**. Geeft de olietoestand tijdens bedrijf weer.
+- **Motorolietemperatuur**. Toont de toestand van de olie tijdens bedrijf.
 
 *Motor:*
 
-- **Motortoerental**. Bewaakt het motortoerental in omwentelingen per minuut (RPM).
+- **Motortoerental**. Bewaakt het aantal omwentelingen per minuut (RPM) van de motor.
 - **Motorlooptijd**. Volgt de bedrijfstijd van de motor.
-- **Berekende motorbelasting**. Geeft het percentage motorbelasting aan.
+- **Berekende motorbelasting**. Geeft het werkbelastingspercentage van de motor aan.
 
 *Brandstof:*
 
@@ -147,10 +145,10 @@ Metingen zijn gecategoriseerd voor duidelijkheid. Geavanceerde diagnostische hul
 
 *Overig:*
 
-- **Batterijniveau**. Geeft het spanningsniveau van de voertuigaccu aan.
-- **Voertuigsnelheid**. Geeft gegevens van de voertuigsnelheidssensor (VSS) weer.
-- **Gaskleppositie**. Bepaalt de luchtinlaat van de motor via de gasklephoek.
-  **VIN**. Geeft het 17-cijferige identificatienummer van het voertuig weer.
+- **Accuniveau**. Geeft het spanningsniveau van de accu van het voertuig aan.
+- **Voertuigsnelheid**. Toont gegevens van de voertuigsnelheidssensor (VSS).
+- **Gaskleppositie**. Bepaalt de luchtinlaat van de motor via de hoek van de gasklepplaat.  
+  **VIN**. Toont het 17-cijferige identificatienummer van het voertuig.
 
 
 ## Ritregistratie {#trip-recording}
@@ -183,11 +181,11 @@ Metingen zijn gecategoriseerd voor duidelijkheid. Geavanceerde diagnostische hul
 
 
 
-Om OBD-II-gegevens in een GPX-bestand op te nemen, moet u de gewenste parameters voor opname selecteren met behulp van de [plug-in Ritregistratie](../plugins/trip-recording.md#recording-settings). Hiermee kunt u voertuigmetingen analyseren naast uw ritgegevens.
+Om OBD-II-gegevens in een GPX-bestand op te nemen, moet u de gewenste parameters voor opname selecteren met behulp van de [Ritregistratie-plugin](../plugins/trip-recording.md#recording-settings). Hiermee kunt u voertuigstatistieken samen met uw ritgegevens analyseren.
 
-#### Tags {#tags}
+### Tags {#tags}
 
-OsmAnd past aangepaste tagnamen toe voor voertuigmetingen in het [GPX-bestand](../plugins/trip-recording.md#recorded-gpx-file). Bijvoorbeeld:
+OsmAnd past aangepaste tagnamen toe voor voertuigstatistieken in het [GPX-bestand](../plugins/trip-recording.md#recorded-gpx-file). Bijvoorbeeld:
 
 - `vm_eotemp`: Motorolietemperatuur.
 - `vm_fpress`: Brandstofdruk.
@@ -225,22 +223,20 @@ Deze tags maken het gemakkelijker om specifieke voertuiggegevens te identificere
 
 
 
-De [widgets voor voertuigstatistieken](../widgets/info-widgets.md#vehicle-metrics-widgets) worden automatisch opgenomen wanneer u de plug-in inschakelt. Als ze niet zichtbaar zijn, kunt u ze handmatig toevoegen via het menu [Scherm configureren](../widgets/configure-screen.md).
+De [Voertuigstatistieken-widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) worden automatisch opgenomen wanneer u de plugin inschakelt. Als ze niet zichtbaar zijn, kunt u ze handmatig toevoegen via het menu [Scherm configureren](../widgets/configure-screen.md).
 
 ### Widgetinstellingen {#widget-settings}
 
-De widgets geven real-time belangrijke gegevens van uw aangesloten OBD-II-apparaat weer, zoals snelheid, motormetingen en brandstofverbruik. Zorg ervoor dat ze zichtbaar zijn voordat u uw reis begint om metingen naadloos te volgen.
+De widgets tonen belangrijke gegevens van uw verbonden OBD-II-apparaat in realtime, zoals snelheid, motorstatistieken en brandstofverbruik. Zorg ervoor dat ze zichtbaar zijn voordat u uw rit begint om de statistieken naadloos te volgen.
 
 Sommige widgets bieden weergavemodusopties:
 
-- **Direct**. Geeft real-time gegevens weer voor de geselecteerde meting.
-- **Gemiddeld**. Geeft gemiddelde waarden weer over een configureerbaar tijdsinterval (15 seconden tot 60 minuten).
+- **Direct**. Toont realtime gegevens voor de geselecteerde statistiek.
+- **Gemiddeld**. Toont gemiddelde waarden over een configureerbaar tijdsinterval (15 seconden tot 60 minuten).
 
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Interactie met kaart](../../user/map/interact-with-map.md)
+- [Interactie met de kaart](../../user/map/interact-with-map.md)
 - [Algemene instellingen](../../user/personal/global-settings.md)
-- [Vector kaarten (kaartstijlen)](../../user/map/vector-maps.md)
-
-> *Laatst bijgewerkt: augustus 2025*
+- [Vectorkaarten (Kaartstijlen)](../../user/map/vector-maps.md)

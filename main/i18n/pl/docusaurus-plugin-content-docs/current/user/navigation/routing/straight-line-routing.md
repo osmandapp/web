@@ -1,7 +1,7 @@
 ---
-source-hash: 100d908b7334f94fa58c6e50f580170815bc0544acdf8e49f048fef77daafbc2
+source-hash: 1ca5ebf392132069b1b5beabb8bfe492c629807a3258b756d15d406a2613de59
 sidebar_position: 10
-title:  Wyznaczanie trasy w linii prostej (samolot)
+title:  Prowadzenie po linii prostej (Samolot)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,35 +18,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-W przeciwieństwie do tradycyjnych algorytmów wyznaczania tras, które wykorzystują drogi, szlaki lub zdefiniowane trasy, wyznaczanie trasy w linii prostej oblicza najkrótszą odległość między dwoma punktami na mapie jako linię prostą. Ta funkcja może być przydatna dla aktywnych turystów, którzy chcą wyznaczyć trasę z dala od szlaków lub eksplorować odległe obszary, gdzie tradycyjne trasy mogą nie być dostępne. Dla pilotów lekkich samolotów i kapitanów statków, użycie *typu wyznaczania trasy w linii prostej* może być bardzo przydatne w nawigacji.
+W przeciwieństwie do tradycyjnych algorytmów wyznaczania tras, które wykorzystują drogi, szlaki lub predefiniowane trasy, prowadzenie po linii prostej oblicza najkrótszą odległość między dwoma punktami na mapie jako linię prostą. Ta funkcja może być przydatna dla aktywnych turystów, którzy chcą wyznaczać trasy z dala od szlaków lub odkrywać odległe obszary, gdzie tradycyjne trasy mogą nie być dostępne. Dla pilotów lekkich samolotów i kapitanów statków korzystanie z *Typu prowadzenia po linii prostej* może być bardzo przydatne w nawigacji.
 
-<!-- ![Przykład nawigacji w linii prostej Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Przykład nawigacji w linii prostej Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
+<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
 
-- Wyznaczanie trasy *w linii prostej* nie uwzględnia żadnych przeszkód ani barier, które mogą występować w terenie, takich jak góry, rzeki czy gęste lasy.
+- Prowadzenie po *linii prostej* nie uwzględnia żadnych przeszkód ani barier, które mogą występować w terenie, takich jak góry, rzeki czy gęste lasy.
 - Nie dostarcza żadnych informacji o jakości terenu, poziomie trudności trasy ani żadnych innych istotnych czynnikach, które mogą wpływać na bezpieczeństwo lub wykonalność trasy (sekcja [Szczegóły trasy](../setup/route-details.md) jest pusta).
 
-![Typ nawigacji w linii prostej Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
+![Typ nawigacji po linii prostej Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
 ## Parametry trasy - Linia prosta {#route-parameters---straight-line}
 
 :::note
-Wyznaczanie trasy w linii prostej jest powiązane z *profilem samolotu*. Domyślnie ten profil jest dezaktywowany. Aby użyć tego profilu do wyznaczania trasy, musisz go włączyć w *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Prowadzenie po linii prostej jest powiązane z profilem *Samolot*. Domyślnie ten profil jest wyłączony. Aby użyć tego profilu do wyznaczania tras, należy go włączyć w *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Wyznaczanie trasy *w linii prostej* można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) ustawień nawigacji.
+Prowadzenie po *linii prostej* można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Ustawienia wyznaczania trasy w linii prostej Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png)
+![Ustawienia prowadzenia po linii prostej Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ustawienia wyznaczania trasy w linii prostej iOS 1](@site/static/img/navigation/routing/straight_line_ios.png)
+![Ustawienia prowadzenia po linii prostej iOS 1](@site/static/img/navigation/routing/straight_line_ios.png)
 
 </TabItem>
 
@@ -54,17 +54,4 @@ Wyznaczanie trasy *w linii prostej* można skonfigurować zgodnie z własnymi po
 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Ponowne przeliczanie linii prostej Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Gdy kąt między obliczoną trasą a rzeczywistą geolokalizacją jest większy niż ustawiony przez Ciebie, zostanie zbudowana najkrótsza ścieżka z Twojej bieżącej pozycji do obliczonej trasy. Innymi słowy, OsmAnd obliczy dodatkowy segment trasy do wcześniej obliczonej trasy. |
-
-
-## Inne ustawienia wyznaczania trasy {#other-routing-settings}
-
-- W sekcji [*Przelicz trasę*](../../navigation/guidance/navigation-settings.md#recalculate-route) *Parametrów trasy*, odległość, przy której trasa zostanie przeliczona dla *wyznaczania trasy w linii prostej*, jest domyślnie ustawiona na 500 metrów.
-
-- W sekcji [*Rozwój*](../guidance/navigation-settings.md#development-settings) *Parametrów trasy* możesz wypróbować nowe funkcje wyznaczania trasy, które są obecnie w fazie testów. Zauważ, że te ustawienia są dostępne tylko wtedy, gdy włączona jest [wtyczka deweloperska OsmAnd](../../plugins/development.md).
-
-- Ustawienie *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* w wersji OsmAnd na *iOS* znajduje się w *Ustawieniach nawigacji → Parametry trasy* (dla *Androida*, w *Parametrach pojazdu → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Te ustawienia można również ustawić dla wyznaczania trasy *bezpośrednio do punktu*. Służy do obliczania szacowanego czasu przybycia.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Prawidłowe skonfigurowanie ustawień pomoże uniknąć problemów podczas tworzenia trasy. Możesz wybrać najbardziej odpowiednią trasę w zależności od typu pojazdu i ograniczeń drogowych, a także obliczyć czas podróży.
-
-> *Ostatnia aktualizacja: czerwiec 2024*
+| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Przeliczanie trasy po linii prostej Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Gdy kąt między obliczoną trasą a rzeczywistą geolokalizacją jest większy niż ustawiony przez Ciebie, zostanie zbudowana najkrótsza ścieżka z Twojej bieżącej pozycji do obliczonej trasy. Innymi słowy, OsmAnd obliczy dodatkowy odcinek trasy do wcześniej obliczonej trasy. |

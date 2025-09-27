@@ -1,5 +1,5 @@
 ---
-source-hash: 27acdc622e2e460a91c82997ca3c6a46ddff094dce1fb89a1f2d05a529a31216
+source-hash: 2428f76d4d2b174f4096091771998583d1804e3fbc62cf63cf7e6bf40e95cc8c
 sidebar_position: 6
 title: Roteamento de esqui
 ---
@@ -20,7 +20,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 O roteamento de esqui e o perfil de esqui só estão disponíveis quando o [plugin de visualização de mapa de esqui](../../plugins/ski-maps.md) está ativado.
 :::
 
-O *roteamento de esqui* pode ser particularmente útil para esquiadores de fundo, montanhistas de esqui e outros entusiastas de esportes de inverno que desejam explorar novas áreas e planejar suas viagens com antecedência. Com o *roteamento de esqui*, os usuários do OsmAnd podem planejar rotas e navegar com segurança enquanto desfrutam da beleza das paisagens de inverno.
+O *roteamento de esqui* pode ser particularmente útil para esquiadores de fundo, esquiadores de montanha e outros entusiastas de esportes de inverno que desejam explorar novas áreas e planejar suas viagens com antecedência. Com o *roteamento de esqui*, os usuários do OsmAnd podem planejar rotas e navegar com segurança enquanto desfrutam da beleza das paisagens de inverno.
 
 O *roteamento de esqui* pode ser configurado de acordo com suas necessidades na seção [Parâmetros de rota](../guidance/navigation-settings.md#route-parameters) das configurações de Navegação.
 
@@ -51,10 +51,10 @@ As configurações de *roteamento de esqui* permitem que os usuários planejem s
 
 </Tabs>
 
-| Parâmetro | Permite usar para roteamento | Observação |
+| Parâmetro | Permite usar para roteamento | Nota |
 |:------------|:---------------|:---------------|
 |*<Translate android="true" ids="routing_attr_allow_skating_only_name"/>* | <Translate android="true" ids="routing_attr_allow_skating_only_description"/> | `https://wiki.openstreetmap.org/wiki/Piste_Maps#Type` |
-|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Um [caminho de esqui-tour](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) recomendado ou área que é geralmente usada por muitos esquiadores durante uma temporada para fins de uma subida nórdica e uma descida em esqui de fundo. |
+|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Uma [rota de esqui](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) ou área recomendada que é geralmente usada por muitos esquiadores durante uma temporada para fins de uma subida nórdica e uma descida em terreno acidentado. |
 |*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* | <Translate android="true" ids="routing_attr_allow_advanced_description"/> | Rotas mais [difíceis](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) serão permitidas para roteamento. |
 |*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* | <details><summary> Escolha uma das opções para esqui freeride. </summary>![Fora de pista Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
 |*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | O uso de [teleféricos](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) será ativado |
@@ -64,18 +64,3 @@ As configurações de *roteamento de esqui* permitem que os usuários planejem s
 |*<Translate android="true" ids="routing_attr_piste_type_sled_name"/>* | <Translate android="true" ids="routing_attr_piste_type_sled_description"/> | [Trenós](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) são veículos menores que são puxados por um humano ou impulsionados apenas pela gravidade. Quando ativado, [pistas de trenó](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) serão usadas para roteamento de esqui |
 |*<Translate android="true" ids="routing_attr_allow_intermediate_name"/>* | <Translate android="true" ids="routing_attr_allow_intermediate_description"/>| |
 |*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* | <details><summary> <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Fora de pista Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
-
-
-## Outras configurações de roteamento {#other-routing-settings}
-
-- O algoritmo de roteamento também pode considerar limitações temporárias especificadas no OpenStreetMap. Isso pode ser feito usando a opção *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Observe que, em alguns casos, as informações do OSM podem estar desatualizadas.
-
-- Na seção [*Recalcular rota*](../../navigation/guidance/navigation-settings.md#recalculate-route) dos *Parâmetros de rota*, você pode habilitar e ajustar as opções de recálculo de rota.
-
-- Na seção [*Desenvolvimento*](../guidance/navigation-settings.md#development-settings) dos *Parâmetros de rota*, você pode experimentar novos recursos de roteamento que estão atualmente em fase de testes. Observe que essas configurações só estão disponíveis quando o [plugin de desenvolvimento do OsmAnd](../../plugins/development.md) está habilitado.
-
-- A configuração *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* na versão *iOS* do OsmAnd está localizada em *Configurações de navegação → Parâmetros de rota* (para *Android*, em *Parâmetros do veículo → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Essa configuração é usada em estradas desconhecidas sem limites de velocidade. Isso ocorre com mais frequência ao navegar por uma trilha ou rota online. Deve ser configurado de acordo com os parâmetros do seu veículo.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. A configuração adequada das definições ajudará a evitar problemas ao criar uma rota. Você pode selecionar a rota mais apropriada dependendo do tipo de veículo e das restrições da estrada, bem como calcular o tempo de viagem.
-
-> *Última atualização: junho de 2024*

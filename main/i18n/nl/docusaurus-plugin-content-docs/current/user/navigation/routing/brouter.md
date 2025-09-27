@@ -1,7 +1,7 @@
 ---
-source-hash: 7669ebc684d82d59a895a98d5dc83c05fad8cf9113b076ddb5dd9660c461ce5e
+source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
 sidebar_position: 12
-title: BRouter
+title:  BRouter
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,22 +19,22 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ## Overzicht {#overview}
 
 :::caution ALLEEN ANDROID
-Het BRouter-routeringsalgoritme van derden is alleen beschikbaar voor de Android-versie van de OsmAnd-app.
+Het externe routeringsalgoritme BRouter is alleen beschikbaar voor de Android-versie van de OsmAnd-app.
 :::
 
-*BRouter* is een routeringsalgoritme van derden dat kan worden gebruikt in de OsmAnd-app voor de [offline navigatiemodus](../guidance/navigation-settings.md#navigation-type). Het is ontworpen om een route te optimaliseren op basis van verschillende parameters, zoals tijd, afstand of voertuigtype.
+*BRouter* is een extern routeringsalgoritme dat in de OsmAnd-app kan worden gebruikt voor de [offline navigatiemodus](../guidance/navigation-settings.md#navigation-type). Het is ontworpen om een route te optimaliseren op basis van verschillende parameters, zoals tijd, afstand of voertuigtype.
 
-[BRouter](http://brouter.de/) gebruikt OpenStreetMap-gegevens om een route te maken en past deze vervolgens aan op basis van gespecificeerde parameters. Het gebruikt vooraf berekende routes om snel offline een route op te bouwen. Het stelt u ook in staat om routeringsprofielen aan te passen, die worden gedefinieerd door een reeks parameters om rekening te houden met verschillende factoren bij de routeselectie. Het [BRouter readme.txt](http://brouter.de/brouter/readme.txt) bestand legt gedetailleerder uit hoe het programma te installeren en te gebruiken.
+[BRouter](http://brouter.de/) gebruikt OpenStreetMap-gegevens om een route te maken en past deze vervolgens aan op basis van gespecificeerde parameters. Het gebruikt vooraf berekende routes om snel offline een route op te bouwen. Het stelt u ook in staat om routeringsprofielen aan te passen, die worden gedefinieerd door een set parameters om rekening te houden met verschillende factoren bij de routekeuze. Het [BRouter readme.txt](http://brouter.de/brouter/readme.txt)-bestand legt in meer detail uit hoe het programma te installeren en te gebruiken.
 
-OsmAnd biedt u de mogelijkheid om routes te selecteren met BRouter en routeringsprofielen te configureren om de route beter te definiëren volgens uw behoeften.
+OsmAnd biedt u de mogelijkheid om routes met BRouter te selecteren en routeringsprofielen te configureren om de route beter af te stemmen op uw behoeften.
 
-Voor meer informatie kunt u de officiële [Brouter website](http://www.brouter.de/brouter/algorithm.html) bezoeken.
+Voor meer informatie kunt u de officiële [Brouter-website](http://www.brouter.de/brouter/algorithm.html) bezoeken.
 
-De BRouter-integratie in OsmAnd is in de zomer van 2019 veel veranderd. Deze gids gaat ervan uit dat u de BRouter Android-app in versie 1.5.0 of hoger gebruikt, evenals OsmAnd in versie 3.4 of hoger.
+De integratie van BRouter in OsmAnd is in de zomer van 2019 sterk veranderd. Deze gids gaat ervan uit dat u de BRouter Android-app in versie 1.5.0 of hoger gebruikt, evenals OsmAnd in versie 3.4 of hoger.
 
 :::note
-Het BRouter-routeringsalgoritme van derden is alleen beschikbaar voor de Android-versie van de OsmAnd-app.
-:::
+Het externe routeringsalgoritme BRouter is alleen beschikbaar voor de Android-versie van de OsmAnd-app.
+:::  
 
 
 <table class="blogimage">
@@ -47,13 +47,13 @@ Het BRouter-routeringsalgoritme van derden is alleen beschikbaar voor de Android
 
 ## Hoe te configureren {#how-to-configure}
 
-Volg deze gids voor het installeren en configureren van de externe *BRouter Offline Navigatie*-applicatie voor gebruik in OsmAnd.
+Volg deze gids voor het installeren en configureren van de externe applicatie *BRouter Offline Navigation* voor gebruik in OsmAnd.
 
-**1.** Om te beginnen moet u de BRouter-app op uw Android-apparaat installeren via [F-Droid](https://f-droid.org/packages/btools.routingapp) of [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) op uw apparaat.
-**2.** Om vervolgens te navigeren met de OsmAnd-app langs vooraf berekende routes met de BRouter, moet u:
+**1.** Om te beginnen moet u de BRouter-app op uw Android-apparaat installeren vanuit [F-Droid](https://f-droid.org/packages/btools.routingapp) of de [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp).
+**2.** Om vervolgens met de OsmAnd-app te navigeren langs vooraf berekende routes met BRouter, moet u:
 
 
-  - Open de BRouter-applicatie en tik op *Download Manager*.
+  - De BRouter-applicatie openen en op *Download Manager* tikken.
 
 <table class="blogimage">
     <tr>
@@ -61,7 +61,7 @@ Volg deze gids voor het installeren en configureren van de externe *BRouter Offl
     </tr>
 </table>
 
-  - Zoom in en selecteer de gebieden waarin u wilt routeren. Klik vervolgens op "Start Download" en BRouter begint met het downloaden van de [segmenten](http://brouter.de/brouter/segments4/) bestanden voor de geselecteerde gebieden.
+  - Inzoomen en de gebieden selecteren waarin u wilt routeren. Klik vervolgens op "Start Download" en BRouter begint met het downloaden van de [segmenten](http://brouter.de/brouter/segments4/)-bestanden voor de geselecteerde gebieden.
 
 <table class="blogimage">
     <tr>
@@ -77,23 +77,22 @@ Volg deze gids voor het installeren en configureren van de externe *BRouter Offl
     </tr>
 </table>
 
-**Let op** dat u deze stap periodiek moet herhalen, wanneer u een bijgewerkte versie van de OSM-gegevens wilt hebben die voor de routering worden gebruikt.
+**Opmerking**: u zult deze stap periodiek moeten herhalen, telkens wanneer u een bijgewerkte versie van de OSM-gegevens wilt hebben die voor de routering worden gebruikt.
 
-**3.** Zodra dit is gebeurd, start u de BRouter-app opnieuw en kiest u de "BRouter App"-ingang in het *Hoofdmenu*. Kies een routeringsprofiel afhankelijk van uw reiswijze. Dit kan fietsen, bromfietsen, wandelen of trektochten zijn. Een lijst met beschikbare profielen om te downloaden in *brf*-formaat vindt u [hier](http://brouter.de/brouter/profiles2/). Of u kunt proberen het routeringsprofiel te gebruiken in [BRouter-online](http://brouter.de/brouter-web/).
-Klik op "Service-modus". Vink vervolgens de vakjes aan voor de routeringsmodi waarvoor u dit profiel wilt gebruiken. U kunt twee verschillende profielen per vervoerswijze gebruiken, die worden toegewezen aan de "kortste" en "snelste" voorinstellingen (dit zijn slechts labels) in OsmAnd.
+**3.** Zodra dit is gebeurd, start u de BRouter-app opnieuw en kiest u de "BRouter App"-optie in het *Hoofdmenu*. Kies een routeringsprofiel afhankelijk van uw vervoerswijze. Dit kan fietsen, bromfietsen, wandelen of trektochten zijn. Een lijst met beschikbare profielen om te downloaden in *brf*-formaat is [hier](http://brouter.de/brouter/profiles2/) te vinden. Of u kunt proberen het routeringsprofiel te gebruiken in [BRouter-online](http://brouter.de/brouter-web/). Klik op "Service-Mode". Vink vervolgens de vakjes aan voor de routeringsmodi waarvoor u dit profiel wilt gebruiken. U kunt twee verschillende profielen per vervoersmodus gebruiken, die worden toegewezen aan de "kortste" en "snelste" voorinstellingen (dit zijn slechts labels) in OsmAnd.
 
 <table class="blogimage">
     <tr>
         <td><img src={require('@site/static/img/navigation/third/prof18.png').default} alt="BRouter"/></td>
         <td><img src={require('@site/static/img/navigation/third/prof18a.png').default} alt="BRouter"/></td>
     </tr>
-</table>
+</table>  
 
-**4.** Als u eerder segmenten hebt geladen, worden deze weergegeven op de BRouter-kaart. De segmenten hebben vier statussen:
+**4.** Als u eerder al segmenten hebt geladen, worden deze weergegeven op de BRouter-kaart. De segmenten hebben vier statussen:
 
 - *"Groen"* vierkant - Geselecteerd nieuw segment om te downloaden.
 - *"Blauw"* vierkant - Het segment met bijgewerkte gegevens.
-- *"Grijs"* vierkant - Het segment is al gedownload, maar moet worden bijgewerkt.
+- *"Grijs"* vierkant - Het segment is al gedownload maar moet worden bijgewerkt.
 - *"Geel"* vierkant - Het segment wordt bijgewerkt.
 
 <table class="blogimage">
@@ -102,10 +101,10 @@ Klik op "Service-modus". Vink vervolgens de vakjes aan voor de routeringsmodi wa
     </tr>
 </table>
 
-**5.** Wanneer u de vereiste kaartsegmenten met BRouter hebt geladen en een routeringsprofiel daarin hebt geselecteerd, worden alle volgende instellingen van dit type navigatie gemaakt in de OsmAnd-applicatie.
+**5.** Wanneer u de vereiste kaartsegmenten met BRouter hebt geladen en daarin een routeringsprofiel hebt geselecteerd, worden alle volgende instellingen van dit type navigatie in de OsmAnd-applicatie gedaan.
 
 **6.** U kunt een "Applicatieprofiel" aanmaken in OsmAnd dat BRouter zal gebruiken voor offline routering.
-Gebruik het *BRouter (offline)* routeringstype met elk [profiel](../../personal/profiles.md) in de OsmAnd-app. Ga hiervoor naar het hoofdmenu *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>* en maak een nieuw profiel aan op basis van het basisprofiel van uw keuze (hier fietsen, voor fietsroutering), met een aangepaste naam naar keuze ("BRouter" op de onderstaande schermafbeelding) en gebruikmakend van "BRouter (offline)" voor navigatie.
+Gebruik het routeringstype *BRouter (offline)* met een willekeurig [profiel](../../personal/profiles.md) in de OsmAnd-app. Ga hiervoor naar het hoofdmenu *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>* en maak een nieuw profiel aan op basis van het basisprofiel van uw keuze (hier fietsen, voor fietsroutes), met een aangepaste naam naar keuze ("BRouter" op de schermafbeelding hieronder) en maak gebruik van "BRouter (offline)" voor navigatie.
 
 
 <table class="blogimage">
@@ -115,29 +114,29 @@ Gebruik het *BRouter (offline)* routeringstype met elk [profiel](../../personal/
     </tr>
 </table>
 
-De BRouter-app moet vóór OsmAnd worden gestart om deze specifieke vermelding in OsmAnd te laten verschijnen. Als u de navigatieoptie "BRouter (offline)" niet kunt vinden, moet u OsmAnd geforceerd afsluiten en opnieuw starten.
+De BRouter-app moet vóór OsmAnd worden gestart om deze specifieke optie in OsmAnd te laten verschijnen. Als u de navigatieoptie "BRouter (offline)" niet kunt vinden, moet u OsmAnd geforceerd afsluiten en opnieuw opstarten.
 
 ## OsmAnd Versie 4.7.1 {#osmand-version-471}
 
-Vanaf versie 4.7.1 ondersteunt Osmand de profielparameter voor mapping: Sinds Osmand versie 3 kunnen veel profielen in Osmand worden gedefinieerd en kunt u eenvoudig tussen deze profielen schakelen. Er moet een nieuw profiel worden aangemaakt, bijvoorbeeld door het bestaande *Fietsen*-profiel te kopiëren en het een nieuwe naam te geven in het formaat Brouter[fastbike]. U kunt een van de bestaande BRouter-profielen in de naam gebruiken die op uw apparaat zijn geïnstalleerd. Alle profielbestanden hebben een naamgevingsformaat van 'xxxxxxx.brf'. Of u kunt een nieuw profiel van uzelf maken, zoals 'myprofile.brf'.
+Vanaf versie 4.7.1 ondersteunt OsmAnd de profielparameter voor mapping: Sinds OsmAnd versie 3 kunnen veel profielen in OsmAnd worden gedefinieerd en kunt u eenvoudig tussen deze profielen schakelen. Er moet een nieuw profiel worden aangemaakt, bijvoorbeeld door het bestaande *Fietsen*-profiel te kopiëren en het een nieuwe naam te geven in het formaat Brouter[fastbike]. U kunt een van de bestaande BRouter-profielen die op uw apparaat zijn geïnstalleerd in de naam gebruiken. Alle profielbestanden hebben een naamgevingsformaat van 'xxxxxxx.brf'. Of u kunt een eigen nieuw profiel aanmaken, zoals 'mijnprofiel.brf'.
 
-De naamgevingsconventie in het OsmAnd-profiel is belangrijk, aangezien het BRouter-profiel dat in dat profiel is opgenomen, de feitelijke brug vormt tussen OsmAnd en BRouter.
+De naamgevingsconventie in het OsmAnd-profiel is belangrijk, omdat het BRouter-profiel dat in dat profiel is opgenomen de daadwerkelijke brug vormt tussen OsmAnd en BRouter.
 
-- Als in Osmand een profiel *BRouter* als navigatieservice heeft gedefinieerd
+- Als in OsmAnd een profiel *BRouter* heeft gedefinieerd als navigatiedienst
 - EN de profielnaam eruitziet als "Brouter[mystring]"
 
-Dan wordt het profiel "mystring" gebruikt in de Brouter-app. Deze nieuwe mapping vervangt in dat geval de hierboven gedefinieerde basismapping en is gebaseerd op het bestand "serviceconfig.dat".
+Dan zal het profiel "mystring" worden gebruikt in de Brouter-app. Deze nieuwe mapping vervangt in dat geval de basismapping die hierboven is gedefinieerd en gebaseerd is op het bestand "serviceconfig.dat".
 
-### Voorbeelden: Osmand-profielnaam Brouter-app {#examples-osmand-profile-name-brouter-app}
+### Voorbeelden: OsmAnd-profielnaam Brouter-app {#examples-osmand-profile-name-brouter-app}
 
 ```xml
-Brouter[trekking] "trekking" profiel wordt gebruikt bestand: trekking.brf
-Brouter[fastbike] "fastbike" profiel wordt gebruikt bestand: fastbike.brf
+Brouter[trekking] "trekking" profiel zal worden gebruikt bestand: trekking.brf
+Brouter[fastbike] "fastbike" profiel zal worden gebruikt bestand: fastbike.brf
 ....
 ```
 
 Opmerking:
-Momenteel controleert Osmand de gedefinieerde naam (hoofdlettergevoelig) voor het Brouter-profiel (mystring) niet.
+Momenteel controleert OsmAnd de gedefinieerde naam (hoofdlettergevoelig) voor het Brouter-profiel (mystring) niet.
 Als er geen profiel wordt gevonden, mislukt de routering met "Kon route niet berekenen..".
 
 <table class="blogimage">
@@ -150,7 +149,7 @@ Als er geen profiel wordt gevonden, mislukt de routering met "Kon route niet ber
 
 Deze sectie beschrijft een vergelijking van BRouter met de interne routering van de OsmAnd-applicatie.
 
-Wanneer BRouter is geconfigureerd, kunnen we de voorberekeningssnelheid van de BRouter-routeringsgegevens vergelijken met de interne OsmAnd-routering. Laten we twee willekeurige punten in Nederland kiezen en de reisberekening starten. Hiervoor stellen we een gebalanceerde rijstijl in zonder hoogtedata te gebruiken voor het basisprofiel. De berekeningstijd voor deze reis is 14,5 sec voor onze interne OsmAnd-route. De routeberekeningstijd bij gebruik van BRouter-routering is minder dan 1 seconde.
+Wanneer BRouter is geconfigureerd, kunnen we de snelheid van de voorberekening van de BRouter-routeringsgegevens vergelijken met de interne OsmAnd-routering. Laten we twee willekeurige punten in Nederland kiezen en de berekening van de reis starten. Hiervoor stellen we een gebalanceerde rijstijl in zonder hoogtegegevens te gebruiken voor het basisprofiel. De berekeningstijd voor deze reis is 14,5 sec voor onze interne OsmAnd-route. De routeberekeningstijd bij gebruik van BRouter-routering is minder dan 1 seconde.
 
 <table class="blogimage">
     <tr>
@@ -162,22 +161,20 @@ Wanneer BRouter is geconfigureerd, kunnen we de voorberekeningssnelheid van de B
 
 ## Routeparameters {#route-parameters}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*  
 
 ![BRouter](@site/static/img/navigation/routing/BRouter_route_param.png)
 
 | Parameter | Beschrijving | Opmerking |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> <Translate android="true" ids="fast_route_mode_descr"/> | In de meeste gevallen wordt de kortste route voorgesteld. Vaak kan deze route langer duren dan wanneer de instelling was uitgeschakeld |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* | Lees over de optie Tijdelijke beperkingen overwegen in dit [artikel](../routing/osmand-routing.md#consider-temporary-limitations). | Het routeringsalgoritme houdt rekening met de tijdsbeperkingen die zijn gespecificeerd in OpenStreetMap. Houd er rekening mee dat in sommige gevallen de informatie van de OSM verouderd kan zijn. |
+| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | In de meeste gevallen wordt de kortste route voorgesteld. Vaak kan deze route langer duren dan wanneer de instelling was uitgeschakeld |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Lees over de optie Tijdelijke beperkingen in dit [artikel](../routing/osmand-routing.md#consider-temporary-limitations).   | Het routeringsalgoritme houdt rekening met de tijdsbeperkingen die in OpenStreetMap zijn gespecificeerd. Merk op dat in sommige gevallen de informatie van OSM verouderd kan zijn.   |
 
 
-### Overige routeringsinstellingen {#other-routing-settings}
+### Andere routeringsinstellingen {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigatie → Instellingen*, [afbeelding](../routing/online-routing.md#online-routing-setting)). Als deze optie is ingeschakeld, voegt OsmAnd twee segmenten toe aan het berekende Brouter-spoor: één van *[Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom)* naar het startpunt van het spoor en één van het einde van het spoor naar het eindpunt van uw route. Deze optie is actief als de afstand naar of van het spoor meer dan 60 meter bedraagt.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigatie → Instellingen*, [afbeelding](../routing/online-routing.md#online-routing-setting)). Als deze optie is ingeschakeld, voegt OsmAnd twee segmenten toe aan de berekende Brouter-track: één van *[Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom)* naar het startpunt van de track en een andere van het einde van de track naar het eindpunt van uw route. Deze optie is actief als de afstand van of naar de track groter is dan 60 meter.
 
-- In de sectie [*Route herberekenen*](../../navigation/guidance/navigation-settings.md#recalculate-route) van de *Routeparameters* kunt u opties voor routeherberekening inschakelen en aanpassen.
+- In de sectie [*Route herberekenen*](../../navigation/guidance/navigation-settings.md#recalculate-route) van de *Routeparameters* kunt u opties voor het herberekenen van de route inschakelen en aanpassen.
 
-- In de sectie [*Ontwikkeling*](../guidance/navigation-settings.md#development-settings) van de *Routeparameters* kunt u nieuwe routeringsfuncties uitproberen die momenteel in de testfase zijn. Houd er rekening mee dat deze instellingen alleen beschikbaar zijn wanneer de [OsmAnd-ontwikkelingsplug-in](../../plugins/development.md) is ingeschakeld.
-
-> *Laatst bijgewerkt: juni 2024*
+- In de sectie [*Ontwikkeling*](../guidance/navigation-settings.md#development-settings) van de *Routeparameters* kunt u nieuwe routeringsfuncties uitproberen die momenteel in de testfase zijn. Merk op dat deze instellingen alleen beschikbaar zijn wanneer de [OsmAnd ontwikkelingsplugin](../../plugins/development.md) is ingeschakeld.

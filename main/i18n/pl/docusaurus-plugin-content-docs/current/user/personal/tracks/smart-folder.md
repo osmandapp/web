@@ -1,7 +1,7 @@
 ---
-source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
+source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
 sidebar_position: 3
-title: Inteligentny Folder (Filtr)
+title: Inteligentny folder (Filtr)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Funkcja **Inteligentny Folder** zapewnia potężne narzędzia do organizowania i zarządzania śladami. Jedną z kluczowych funkcji jest możliwość filtrowania plików w *zakładce Ślady* w menu *Moje Miejsca* na podstawie kryteriów takich jak czas trwania, długość lub prędkość.
+Funkcja **Inteligentny folder** zapewnia zaawansowane narzędzia do organizowania i zarządzania trasami. Jedną z kluczowych funkcji jest możliwość filtrowania plików w zakładce *Trasy* menu *Moje miejsca* na podstawie kryteriów takich jak czas trwania, długość czy prędkość.  
 
-Ta funkcja umożliwia szybkie znalezienie konkretnych śladów, które spełniają Twoje wymagania. Przefiltrowane wyniki można zapisać jako **Inteligentny Folder**, oferując wygodny dostęp do dynamicznie aktualizowanych kolekcji śladów.
+Ta funkcja pozwala szybko znaleźć określone trasy, które spełniają Twoje wymagania. Przefiltrowane wyniki można zapisać jako **Inteligentny folder**, oferujący wygodny dostęp do dynamicznie aktualizowanych kolekcji tras.
 
 
 ## Filtr wyszukiwania {#search-filter}
@@ -29,17 +29,17 @@ Ta funkcja umożliwia szybkie znalezienie konkretnych śladów, które spełniaj
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> zakładka*
+Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Moje miejsca ślady](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
+![Moje miejsca trasy](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> zakładka*
+Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Moje miejsca ślady](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
+![Moje miejsca trasy](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
 </TabItem>
 
@@ -47,15 +47,15 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 ***Jak zastosować filtr:***
 
-- Stuknij ikonę *Szukaj*, a następnie stuknij *Filtr* w wierszu [*Sortuj według*](./manage-tracks.md#sort-by).
+- Dotknij ikony *Wyszukaj*, a następnie dotknij *Filtr* w wierszu [*Sortuj według*](./manage-tracks.md#sort-by).
 
-- **Wybierz wymagane ustawienia filtra**, aby doprecyzować wyszukiwanie śladów.
+- **Wybierz wymagane ustawienia filtra**, aby zawęzić wyszukiwanie tras.
 
-- Stuknij **Pokaż** w prawym dolnym rogu, aby zobaczyć przefiltrowane wyniki. Liczba pasujących śladów pojawia się w nawiasach.
+- Dotknij **Pokaż** w prawym dolnym rogu, aby zobaczyć przefiltrowane wyniki. Liczba pasujących tras pojawi się w nawiasach.
 
-- **Aby wyczyścić** wszystkie aktywne filtry, stuknij **Resetuj wszystko**.
+- **Aby wyczyścić** wszystkie aktywne filtry, dotknij **Resetuj wszystko**.
 
-- **Aby zapisać** bieżący zestaw filtrów jako nowy **Inteligentny Folder**, stuknij ikonę zapisu w prawym górnym rogu ekranu.
+- **Aby zapisać** bieżący zestaw filtrów jako nowy **Inteligentny folder**, dotknij ikony zapisu w prawym górnym rogu ekranu.
 
 
 ### Dostępne filtry {#available-filters}
@@ -64,28 +64,28 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="android" label="Android">
 
-![Moje miejsca ślady](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
+![Moje miejsca trasy](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Moje miejsca ślady](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
+![Moje miejsca trasy](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Nazwa** — Wyszukaj ślady według tytułu. Wprowadź pełną lub częściową nazwę, aby wyświetlić pasujące ślady.
-- **Folder** — Wybierz jeden lub więcej folderów, aby filtrować ślady według ich lokalizacji przechowywania.
-- **Czas trwania** — Filtruj ślady według zarejestrowanego czasu trwania, ustawiając zakres w godzinach i minutach.
+- **Nazwa** — Wyszukaj trasy według tytułu. Wprowadź pełną lub częściową nazwę, aby wyświetlić pasujące trasy.
+- **Folder** — Wybierz jeden lub więcej folderów, aby filtrować trasy według ich lokalizacji przechowywania.
+- **Czas trwania** — Filtruj trasy według zarejestrowanego czasu trwania, ustawiając zakres w godzinach i minutach.
 - **Czas w ruchu** — Określ zakres czasu spędzonego w ruchu podczas nagrywania.
-- **Długość** — Ustaw określony zakres w kilometrach lub milach, aby znaleźć ślady o określonej długości.
-- **Średnia prędkość** — Filtruj ślady według [średniej prędkości](../../widgets/info-widgets.md#average-speed).
-- **Grupa danych z czujników.**
-    Zastosuj filtry na podstawie danych z zewnętrznych czujników, w tym:
-    - Prędkość czujnika, średnia.
-    - Prędkość czujnika, maks.
+- **Długość** — Ustaw określony zakres w kilometrach lub milach, aby znaleźć trasy o określonej długości.
+- **Średnia prędkość** — Filtruj trasy według [średniej prędkości](../../widgets/info-widgets.md#average-speed).
+- **Grupa danych z czujników.**  
+    Zastosuj filtry na podstawie danych z czujników zewnętrznych, w tym:
+    - Prędkość z czujnika, średnia.
+    - Prędkość z czujnika, maks.
     - Tętno, średnie.
     - Tętno, maks.
     - Kadencja rowerowa, średnia.
@@ -94,125 +94,123 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
     - Moc rowerowa, maks.
     - Temperatura, średnia.
     - Temperatura, maks.
-- **Maksymalna prędkość** — Wybierz ślady z określonymi zakresami maksymalnej prędkości.
-- **Pod górę** i **Z górki** — Filtruj ślady na podstawie dodatnich lub ujemnych zmian wysokości.
-- **Średnia wysokość** i **Maksymalna wysokość** — Znajdź ślady z określonymi danymi średniej lub maksymalnej wysokości.
-- **Data utworzenia** — Filtruj ślady utworzone w określonym zakresie dat.
-- **Najbliższe miasta** — Wyświetl ślady przechodzące w pobliżu wybranych miast lub miejscowości.
-- **Typ aktywności** — Filtruj ślady na podstawie typu [aktywności](../../map/tracks/track-context-menu.md#track-information-activity) zarejestrowanego w pliku GPX (np. jazda na rowerze, wędrówki).
-- **Kraj** — Filtruj ślady według kraju lub regionu, w którym zostały zarejestrowane.
-- **Kolor** i **Szerokość** — Wybierz ślady według przypisanego koloru lub szerokości linii.
-- **Inne** — Dodatkowe filtry dla specjalnych cech:
-    - *Widoczne na mapie*. Pokazuje tylko ślady wyświetlane na mapie.
-    - *Z punktami trasy*. Wyświetla ślady zawierające określone punkty trasy.
+- **Prędkość maksymalna** — Wybierz trasy z określonymi zakresami prędkości maksymalnej.
+- **W górę** i **W dół** — Filtruj trasy na podstawie dodatnich lub ujemnych zmian wysokości.
+- **Średnia wysokość** i **Maksymalna wysokość** — Znajdź trasy z określonymi danymi dotyczącymi średniej lub maksymalnej wysokości.
+- **Data utworzenia** — Filtruj trasy utworzone w określonym zakresie dat.
+- **Najbliższe miasta** — Wyświetlaj trasy przechodzące w pobliżu wybranych miast lub miejscowości.
+- **Rodzaj aktywności** — Filtruj trasy na podstawie typu [aktywności](../../map/tracks/track-context-menu.md#ttrack-activity-type) zarejestrowanego w pliku GPX (np. jazda na rowerze, piesze wycieczki).
+- **Kraj** — Filtruj trasy według kraju lub regionu, w którym zostały zarejestrowane.
+- **Kolor** i **Szerokość** — Wybierz trasy według przypisanego koloru lub szerokości linii.
+- **Inne** — Dodatkowe filtry dla cech specjalnych:
+    - *Widoczne na mapie*. Pokazuje tylko trasy wyświetlane na mapie.
+    - *Z punktami trasy*. Wyświetla trasy zawierające określone punkty trasy.
 
 
-## Inteligentny Folder {#smart-folder}
+## Inteligentny folder {#smart-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Moje miejsca funkcja sortowania śladów Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![Funkcja sortowania tras w Moich miejscach na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Moje miejsca ślady](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+![Moje miejsca trasy](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Inteligentny Folder** to dynamiczna kolekcja śladów automatycznie aktualizowana na podstawie określonych kryteriów filtrowania. Oferuje zaawansowane narzędzia do efektywnego organizowania, wyszukiwania i zarządzania śladami.
+**Inteligentny folder** to dynamiczna kolekcja tras, automatycznie aktualizowana na podstawie określonych kryteriów filtrowania. Oferuje zaawansowane narzędzia do efektywnego organizowania, wyszukiwania i zarządzania trasami.  
 
-***Korzyści z Inteligentnych Folderów:***
+***Zalety inteligentnych folderów:***
 
-1. **Automatyczna organizacja.**
-    Automatycznie zawiera ślady, które pasują do predefiniowanych reguł, takich jak data utworzenia lub zakres czasu trwania.
-2. **Filtrowanie i wyszukiwanie.**
-    Umożliwia szybkie wyszukiwanie w śladach za pomocą zaawansowanych filtrów i słów kluczowych.
-3. **Dynamiczne odświeżanie.**
-    Automatycznie odświeża zawartość, aby wyświetlić najnowsze ślady pasujące do kryteriów.
-4. **Dostosuj reguły.**
-    Twórz spersonalizowane kolekcje śladów, definiując niestandardowe reguły filtrowania.
+1. **Zautomatyzowana organizacja.**  
+    Automatycznie uwzględnia trasy, które pasują do predefiniowanych reguł, takich jak data utworzenia lub zakres czasu trwania.
+2. **Filtrowanie i wyszukiwanie.**  
+    Umożliwia szybkie wyszukiwanie w obrębie tras za pomocą zaawansowanych filtrów i słów kluczowych.
+3. **Dynamiczne odświeżanie.**  
+    Automatycznie odświeża zawartość, aby wyświetlić najnowsze trasy pasujące do kryteriów.
+4. **Dostosowywanie reguł.**  
+    Twórz spersonalizowane kolekcje tras, definiując niestandardowe reguły filtrowania.
 
 
-### Jak utworzyć Inteligentny Folder {#how-to-create-smart-folder}
+### Jak utworzyć inteligentny folder {#how-to-create-smart-folder}
 
-Aby utworzyć **Inteligentny Folder**, wykonaj następujące kroki:
+Aby utworzyć **Inteligentny folder**, wykonaj następujące kroki:
 
-1. Stuknij ikonę ***menu z trzema kropkami*** w zakładce *Ślady* w menu *Moje Miejsca*.
+1. Dotknij ikony ***menu z trzema kropkami*** w zakładce *Trasy* menu *Moje miejsca*.
 
-2. Wybierz **Dodaj inteligentny folder** z menu rozwijanego.
+2. Wybierz **Dodaj inteligentny folder** z rozwijanego menu.
 
 3. Skonfiguruj ustawienia:
    - **Nazwij folder**. Wprowadź nazwę, aby zidentyfikować folder.
-   - Określ **parametry filtra śladów**. Zastosuj wymagane filtry, korzystając z dostępnych opcji [Filtra](#available-filters).
+   - Określ **parametry filtra tras**. Zastosuj wymagane filtry, korzystając z dostępnych opcji [Filtra](#available-filters).
 
 4. **Zapisz** ustawienia.
-    - Stuknij **Pokaż**, aby wyświetlić podgląd śladów.
-    - Wybierz przycisk **Zapisz**, aby sfinalizować *Inteligentny Folder*.
+    - Dotknij **Pokaż**, aby wyświetlić podgląd tras.
+    - Wybierz przycisk **Zapisz**, aby sfinalizować tworzenie *Inteligentnego folderu*.
 
-Nowo utworzony **Inteligentny Folder** automatycznie zaktualizuje swoją zawartość o ślady, które pasują do wybranych kryteriów.
+Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawartość o trasy, które pasują do wybranych kryteriów.
 
 
-### Zarządzanie Inteligentnymi Folderami {#managing-smart-folders}
+### Zarządzanie inteligentnymi folderami {#managing-smart-folders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Moje miejsca Zarządzanie Inteligentnymi Folderami Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Zarządzanie inteligentnymi folderami w Moich miejscach na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Moje miejsca Zarządzanie Inteligentnymi Folderami Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Zarządzanie inteligentnymi folderami w Moich miejscach na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Moje miejsca Zarządzanie Inteligentnymi Folderami iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Zarządzanie inteligentnymi folderami w Moich miejscach na iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Moje miejsca Zarządzanie Inteligentnymi Folderami iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Zarządzanie inteligentnymi folderami w Moich miejscach na iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Ślady. Aby zarządzać folderem, stuknij *menu z trzema kropkami* obok niego (*Android*) i *przytrzymaj* (*iOS*) lub otwórz folder i użyj ikony w prawym górnym rogu.
+**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, dotknij *menu z trzema kropkami* obok niego (*Android*) i wykonaj *długie dotknięcie* (*iOS*) lub otwórz folder i użyj ikony w prawym górnym rogu.
 
 ***Dostępne działania:***
 
-- **Szczegóły** — Wyświetl pełną listę śladów zawartych w folderze.
+- **Szczegóły** — Wyświetl pełną listę tras zawartych w folderze.
 
-- **Pokaż wszystkie ślady na mapie** (*tylko Android*) — Wyświetl wszystkie ślady folderu na mapie.
-    *UWAGA: Ładowanie wielu śladów może wpłynąć na wydajność.*
+- **Pokaż wszystkie trasy na mapie** (*tylko Android*) — Wyświetl wszystkie trasy z folderu na mapie.  
+    *UWAGA: Ładowanie wielu tras może wpłynąć na wydajność.*
 
-- **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Zmień nazwę folderu, aby ułatwić identyfikację.
+- **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Zmień nazwę folderu w celu łatwiejszej identyfikacji.
 
-- **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze ślady.
+- **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
 
-- **Zmień domyślny wygląd** (*Android*) — Zmienia wygląd wyświetlania wszystkich śladów w folderze.
+- **Zmień domyślny wygląd** (*Android*) — Zmienia wygląd wyświetlania wszystkich tras w folderze.
 
-- **Edytuj filtr** — Modyfikuj ustawienia filtra śladów dla bieżącego Inteligentnego Folderu. Szczegóły znajdziesz w [Filtrze wyszukiwania](#search-filter).
+- **Edytuj filtr** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
 
-- **Eksportuj** — Eksportuj wszystkie ślady w Inteligentnym Folderze za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Akcje*.
+- **Eksportuj** — Eksportuj wszystkie trasy z inteligentnego folderu za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Działania*.
 
-- **Usuń folder** — Usuń Inteligentny Folder bez usuwania jego śladów.
-    *OSTRZEŻENIE: Ta akcja jest nieodwracalna i wyświetli komunikat potwierdzający.*
+- **Usuń folder** — Usuń inteligentny folder bez usuwania jego tras.  
+    *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
 
 - **Przenieś** (*iOS*) — Umożliwia przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
 
-- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) dla określonych działań na śladach w folderze.
+- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
 
 
 ## Powiązane artykuły {#related-articles}
 
-- [Pokaż ślad na mapie](../../map/tracks/index.md)
+- [Pokaż trasę na mapie](../../map/tracks/index.md)
 - [Analizuj na mapie](../../map/tracks/index.md#analyze-track-on-map)
-- [Menu kontekstowe śladu](../../map/tracks/track-context-menu.md)
-- [Nawigacja po śladzie](../../navigation/setup/gpx-navigation.md)
+- [Menu kontekstowe trasy](../../map/tracks/track-context-menu.md)
+- [Nawigacja po trasie](../../navigation/setup/gpx-navigation.md)
 - [Nagrywanie podróży](../../plugins/trip-recording.md)
-
-> *Ostatnia aktualizacja: marzec 2025*

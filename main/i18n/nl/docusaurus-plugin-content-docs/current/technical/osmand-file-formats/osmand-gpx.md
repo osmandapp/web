@@ -1,5 +1,5 @@
 ---
-source-hash: f4b2b293ad51358460be21f120eea4ead0ba855b2536fc69c26f9eb724fe95d1
+source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
 sidebar_position: 2
 ---
 
@@ -7,56 +7,57 @@ sidebar_position: 2
 
 ## Introductie {#introduction}
 
-GPX (GPS Exchange Format) is een veelgebruikte XML-gebaseerde standaard voor het opslaan van GPS-gegevens, waaronder tracks, routes en waypoints. OsmAnd ondersteunt het GPX-formaat voor het importeren, exporteren en aanpassen van GPS-gegevens voor navigatie, waardoor zowel beginnende als gevorderde gebruikers hun ervaring kunnen optimaliseren.
+GPX (GPS Exchange Format) is een veelgebruikte, op XML gebaseerde standaard voor het opslaan van GPS-gegevens, inclusief tracks, routes en waypoints. OsmAnd ondersteunt het GPX-formaat voor het importeren, exporteren en aanpassen van GPS-gegevens voor navigatie, waardoor zowel beginnende als gevorderde gebruikers hun ervaring kunnen optimaliseren.
 
 #### Wat maakt OsmAnd GPX uniek? {#what-makes-osmand-gpx-unique}
 
-OsmAnd breidt het standaard GPX 1.1-formaat uit door een eigen `osmand:` XML-naamruimte te introduceren. Deze naamruimte maakt het mogelijk om aanvullende gegevens op te slaan, zoals:
+OsmAnd breidt het standaard GPX 1.1-formaat uit door zijn eigen aangepaste `osmand:` XML-naamruimte te introduceren. Deze naamruimte maakt het mogelijk om extra gegevens op te slaan, zoals:
 
 - Visuele instellingen van de track (kleur, breedte, pijlen).
-- Groepering en pictogrammen van waypoints.
-- Gedetailleerde routekenmerken, inclusief berekende routes en activiteitstypen.
+- Groepering en iconen van waypoints.
+- Gedetailleerde routeattributen, inclusief berekende routes en activiteitstypes.
 
 #### Wat leert u in deze gids? {#what-will-you-learn-in-this-guide}
 
-Dit artikel biedt een uitgebreid overzicht van de GPX-bestandsstructuur en -functies in OsmAnd. U leert:
+Dit artikel geeft een uitgebreid overzicht van de GPX-bestandsstructuur en -functies in OsmAnd. U leert:
 
-1. Hoe u tracks en waypoints kunt aanpassen met behulp van GPX-tags.
-2. Geavanceerde functies zoals HTML-beschrijvingen, sensorgegevens en activiteitstypen.
+1. Hoe u tracks en waypoints kunt aanpassen met GPX-tags.
+2. Geavanceerde functies zoals HTML-beschrijvingen, sensorgegevens en activiteitstypes.
 3. Hoe u berekende routes kunt exporteren en hun volledige functionaliteit kunt behouden.
 4. GPX-bestanden converteren naar OBF-formaat voor geoptimaliseerde opslag en geavanceerde zoekmogelijkheden.
 
-#### Overzicht GPX-structuur {#gpx-structure-overview}
+#### Overzicht van de GPX-structuur {#gpx-structure-overview}
 
 GPX-bestanden in OsmAnd organiseren gegevens hiërarchisch in de volgende elementen:
 
-- `<gpx>` - het rootelement van het bestand.
-- `<trk>` - vertegenwoordigt tracks, die bevatten:
+- `<gpx>` - het root-element van het bestand.
+- `<trk>` - vertegenwoordigt tracks, die het volgende bevatten:
   - `<trkseg>` - segmenten van de track, die verder zijn onderverdeeld in `<trkpt>` (trackpunten).
 - `<rte>` - vertegenwoordigt routes, inclusief waypoints en belangrijke punten.
 - `<wpt>` - vertegenwoordigt individuele waypoints.
 
+
 ## Trackaanpassing {#track-customization}
 
-### Trackweergaveparameters {#track-appearance-parameters}
+### Parameters voor trackweergave {#track-appearance-parameters}
 
-Deze sectie beschrijft hoe OsmAnd tracks op de kaart weergeeft en de aanpassingsopties die beschikbaar zijn om hun uiterlijk aan te passen. De hieronder beschreven parameters worden toegepast binnen de `<gpx>`-tag en beïnvloeden alle tracks die in een GPX-bestand zijn opgenomen.
+Deze sectie beschrijft hoe OsmAnd tracks op de kaart weergeeft en de aanpassingsopties die beschikbaar zijn om hun uiterlijk aan te passen. De hieronder beschreven parameters worden toegepast binnen de `<gpx>`-tag en hebben invloed op alle tracks in een GPX-bestand.
 
 | Tagnaam | Beschrijving / Waarden |
 |:----------------------------------------|:---------|
 | `<color>` | - Definieert de kleur van de tracklijn op de kaart. <br/> - *String:* HEX-kleurcode `#RRGGBB` of `#AARRGGBB` |
-| `<width>` | - Specificeert de breedte van de tracklijn. <br/> - *String:* `“thin”`, `“medium"`, `“bold”` (gedefinieerd door het `“currentTrackWidth”` attribuut), of geheel getal (1-24) |
-| `<show_arrows>` | - Schakelt richtingpijlen langs de track in of uit. <br/> - *Bool:* `"true"` / `"false"` |
+| `<width>` | - Specificeert de breedte van de tracklijn. <br/> - *String:* `“thin”`, `“medium"`, `“bold”` (gedefinieerd door het `“currentTrackWidth”`-attribuut), of een geheel getal (1-24) |
+| `<show_arrows>` | - Schakelt richtingspijlen langs de track in of uit. <br/> - *Bool:* `"true"` / `"false"` |
 | `<show_start_finish>` | - Toont of verbergt markeringen voor het begin en einde van de track. <br/> - *Bool:* `"true"` / `"false"` |
 | `<split_type>` | - Specificeert het type segmentatie voor de track. <br/> - *String:* `"no_split"`, `"distance"`, `"time"` |
 | `<split_interval>` | - Stelt het interval in voor tracksegmentatie op basis van het geselecteerde type. <br/> - *Double:* Geheel getal (meters voor `"distance"`, seconden voor `"time"`) |
 | `<line_3d_visualization_by_type>` | - Specificeert het type 3D-visualisatie voor de track. <br/> - *String:* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
-| `<line_3d_visualization_wall_color_type>` | - Definieert het type muurkleur voor 3D-visualisatie. <br/> - *String:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
+| `<line_3d_visualization_wall_color_type>` | - Definieert het muurkleurtype voor 3D-visualisatie. <br/> - *String:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
 | `<line_3d_visualization_position_type>` | - Stelt de positie van de 3D-visualisatie in ten opzichte van de track. <br/> - *String:* `"top"`, `"bottom"`, `"top_bottom"`|
-| `<vertical_exaggeration_scale>` | - Vermenigvuldiger om de waarde van het `line_3d_visualization_by_type` attribuut te schalen. <br/> - *Float:* Standaard: 1.0 |
+| `<vertical_exaggeration_scale>` | - Vermenigvuldiger om de waarde van het `line_3d_visualization_by_type`-attribuut te schalen. <br/> - *Float:* Standaard: 1.0 |
 | `<elevation_meters>` | - Specificeert een vaste hoogte in meters voor `"fixed_height"` in `<line_3d_visualization_by_type>`. <br/> - *Float:* Standaard: `1000` |
 | `<coloring_type>` | - Bepaalt de kleurmethode voor de track. <br/> - *String:* `"solid"`, `"speed"`, `"altitude"`, `"slope"`, `"routeInfo_roadClass`, `"routeInfo_surface"`, `"routeInfo_smoothness"` |
-| `<color_palette>` | - Specificeert het kleurenschema voor de track. <br/> - *String:* `"default"` / [door de gebruiker gedefinieerde schema's](/docs/user/personal/color-palette-schemes) |
+| `<color_palette>` | - Specificeert het kleurenschema voor de track. <br/> - *String:* `"default"` / [door gebruiker gedefinieerde schema's](/docs/user/personal/color-palette-schemes) |
 
 ***Voorbeeld:***
 
@@ -75,38 +76,38 @@ Deze sectie beschrijft hoe OsmAnd tracks op de kaart weergeeft en de aanpassings
 
 ### Tag 'coloring_type' {#tag-coloringtype}
 
-De `<coloring_type>`-tag in OsmAnd stelt gebruikers in staat om trackkleuring aan te passen op basis van specifieke gegevenskenmerken, wat een visuele manier biedt om belangrijke informatie langs de track te interpreteren.
+De `<coloring_type>`-tag in OsmAnd stelt gebruikers in staat om de trackkleuring aan te passen op basis van specifieke data-attributen, wat een visuele manier biedt om belangrijke informatie langs de track te interpreteren.
 
 | Type | Beschrijving | Gebruiksscenario |
 |:-----------------------|:--------|:--------|
-| `<solid>` | De gehele track wordt weergegeven met een enkele, effen kleur gespecificeerd door de `color`-tag. | Gebruik wanneer een uniforme kleur nodig is voor duidelijke zichtbaarheid. |
-| `<speed>` | De track wordt gekleurd in een gradiënt op basis van de snelheidswaarden bij elk trackpunt (`<trkpt>`). Hogere snelheden worden weergegeven door verschillende kleuren. | Ideaal voor activiteiten zoals fietsen of autorijden om veranderingen in snelheid te visualiseren. |
-| `<altitude>` | De track wordt gekleurd volgens de hoogtedata bij elke `<trkpt>`. Een gradiënt wordt toegepast, wat verschillende hoogtebereiken aangeeft. | Handig voor wandel- of bergroutes om hoogteverschillen te benadrukken. |
-| `<slope>` | De track wordt gekleurd op basis van de helling/daling tussen opeenvolgende trackpunten. Positieve gradiënten geven stijgende hellingen aan, terwijl negatieve gradiënten dalende hellingen aangeven. | Geschikt voor fietsers of wandelaars die de moeilijkheidsgraad van de track analyseren. |
-| `<routeInfo_roadClass>` | Kleurt de tracksegmenten op basis van de OpenStreetMap (OSM) wegclassificatie (bijv. snelweg, woonstraat). | Helpt onderscheid te maken tussen verschillende wegtypen bij het volgen van een route. |
-| `<routeInfo_surface>` | Kleurt de tracksegmenten op basis van het OSM-oppervlaktetype (bijv. verhard, grind, onverhard). | Handig voor het bepalen van trackcondities tijdens activiteiten zoals off-road rijden. |
-| `<routeInfo_smoothness>` | Kleurt de track volgens OSM-gladheidsbeoordelingen, wat de ruwheid of gladheid van het pad aangeeft (bijv. uitstekend, slecht). | Handig voor het evalueren van de navigeerbaarheid van de track voor specifieke voertuigen. |
+| `<solid>` | De hele track wordt weergegeven met een enkele, effen kleur die is gespecificeerd door de `color`-tag. | Gebruik wanneer een uniforme kleur nodig is voor duidelijke zichtbaarheid. |
+| `<speed>` | De track wordt gekleurd in een verloop op basis van de snelheden bij elk trackpunt (`<trkpt>`). Hogere snelheden worden weergegeven door verschillende kleuren. | Ideaal voor activiteiten zoals fietsen of autorijden om snelheidsveranderingen te visualiseren. |
+| `<altitude>` | De track wordt gekleurd volgens de hoogtegegevens bij elke `<trkpt>`. Er wordt een verloop toegepast dat verschillende hoogtebereiken aangeeft. | Handig voor wandel- of bergroutes om hoogteverschillen te benadrukken. |
+| `<slope>` | De track wordt gekleurd op basis van de helling/daling tussen opeenvolgende trackpunten. Positieve gradiënten duiden op hellingen omhoog, terwijl negatieve gradiënten op hellingen omlaag duiden. | Geschikt voor fietsers of wandelaars die de moeilijkheidsgraad van de track analyseren. |
+| `<routeInfo_roadClass>` | Kleurt de tracksegmenten op basis van de OpenStreetMap (OSM) wegclassificatie (bijv. snelweg, woonstraat). | Helpt bij het onderscheiden van verschillende wegtypes bij het volgen van een route. |
+| `<routeInfo_surface>` | Kleurt de tracksegmenten op basis van het OSM-oppervlaktetype (bijv. verhard, grind, onverhard). | Handig voor het bepalen van de trackcondities tijdens activiteiten zoals off-road rijden. |
+| `<routeInfo_smoothness>` | Kleurt de track volgens de OSM-gladheidsclassificaties, die de ruwheid of gladheid van het pad aangeven (bijv. uitstekend, slecht). | Nuttig voor het evalueren van de begaanbaarheid van de track voor specifieke voertuigen. |
 
-### GPX-tags in UI {#gpx-tags-in-ui}
+### GPX-tags in de gebruikersinterface {#gpx-tags-in-ui}
 
 GPX-extensietags worden onderaan het contextmenu van de track weergegeven.
 Zowel `<metadata>` als `<gpx>` `<extensions>` worden vermeld.
-Uiterlijk-tags zijn uitgesloten van de lijst.
+Weergavetags worden uit de lijst weggelaten.
 Ondersteund sinds OsmAnd Android 5.0.
 
-## Waypoint-aanpassing {#waypoints-customization}
+## Waypointaanpassing {#waypoints-customization}
 
-Deze sectie legt uit hoe OsmAnd het aanpassen van waypoints in GPX-bestanden mogelijk maakt door gebruik te maken van pictogrammen, kleuren en groepering.
+Deze sectie legt uit hoe OsmAnd het aanpassen van waypoints in GPX-bestanden mogelijk maakt door gebruik te maken van iconen, kleuren en groepering.
 
-### Waypoint-pictogrammen {#waypoint-icons}
+### Waypoint-iconen {#waypoint-icons}
 
-De volgende tags bepalen het uiterlijk van waypoint-pictogrammen in OsmAnd:
+De volgende tags bepalen het uiterlijk van waypoint-iconen in OsmAnd:
 
 | GPX-tag | Standaard | Doel |
 |:-------------|:----------|:-----------|
-| `<icon>` | *(geen)* | Specificeert het pictogram voor het waypoint (bijv. `historic_castle`). |
-| `<color>` | `"red"` | Stelt de kleur van het pictogram in met een HEX-code (bijv. `#FF0000`) of kleurnaam (bijv. `"blue"`). |
-| `<background>` | `"circle"` | Definieert de achtergrondvorm van het pictogram. Mogelijke waarden: `"circle"`, `"square"`, `"octagon"`. |
+| `<icon>` | *(geen)* | Specificeert het icoon voor het waypoint (bijv. `historic_castle`). |
+| `<color>` | `"red"` | Stelt de kleur van het icoon in met een HEX-code (bijv. `#FF0000`) of kleurnaam (bijv. `"blue"`). |
+| `<background>` | `"circle"` | Definieert de achtergrondvorm van het icoon. Mogelijke waarden: `"circle"`, `"square"`, `"octagon"`. |
 
 ***Voorbeeld:***
 
@@ -121,7 +122,7 @@ De volgende tags bepalen het uiterlijk van waypoint-pictogrammen in OsmAnd:
 </wpt>
 ```
 
-### Waypoint-groepen {#waypoint-groups}
+### Waypointgroepen {#waypoint-groups}
 
 Waypoints in OsmAnd kunnen worden gesorteerd in groepen op basis van hun type. Deze groepering stelt de gebruiker in staat om meerdere waypoints onder specifieke categorieën te organiseren, wat de duidelijkheid en leesbaarheid van de kaart verbetert.
 
@@ -153,13 +154,15 @@ Waypoints in OsmAnd kunnen worden gesorteerd in groepen op basis van hun type. D
 </gpx>
 ```
 
+
 ## Geavanceerde GPX-functies {#advanced-gpx-features}
 
 ### Activiteitstype {#activity-type}
 
 Vanaf OsmAnd [versie 4.9](/blog/osmand-android-4-9-released/#gpx-track-activities) kunt u uw tracks classificeren op activiteitstype voor verdere analyse en organisatie in mappen.
 
-De lijst met ondersteunde activiteitstypen is beschikbaar in het bestand [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json). Elke activiteit wordt geïdentificeerd door zijn unieke `ID` en opgeslagen binnen de `<metadata>`-extensies van het GPX-bestand.
+De lijst met ondersteunde activiteitstypes is beschikbaar in het [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)-bestand. Elke activiteit wordt geïdentificeerd door zijn unieke `ID` en opgeslagen binnen de `<metadata>`-extensies van het GPX-bestand.
+
 
 ***Voorbeeld:***
 
@@ -173,9 +176,9 @@ De lijst met ondersteunde activiteitstypen is beschikbaar in het bestand [activi
 
 ### HTML in beschrijvingen {#html-in-descriptions}
 
-HTML-tags kunnen worden gebruikt binnen de `<desc>`-tags in de `<metadata>`- of `<wpt>`-elementen om geformatteerde beschrijvingen voor tracks of waypoints te bieden.
+HTML-tags kunnen worden gebruikt binnen de `<desc>`-tags in de `<metadata>`- of `<wpt>`-elementen om opgemaakte beschrijvingen voor tracks of waypoints te bieden.
 
-Om conflicten met de XML-syntaxis te voorkomen, vervangt u speciale tekens als volgt:
+Om conflicten met de XML-syntaxis te vermijden, vervangt u speciale tekens als volgt:
 
 - `<` *→* `&lt;`
 - `>` *→* `&gt;`
@@ -203,14 +206,15 @@ Om conflicten met de XML-syntaxis te voorkomen, vervangt u speciale tekens als v
 
 ***Belangrijke opmerkingen:***
 
-- OsmAnd verwijdert alle HTML-tags bij het genereren van korte beschrijvingen, waardoor platte tekst overblijft.
+- OsmAnd verwijdert alle HTML-tags bij het genereren van korte beschrijvingen, waardoor alleen platte tekst overblijft.
 - U kunt tags zoals `<b>`, `<i>`, `<p>`, `<br/>`, `<a>`, `<img>` en meer gebruiken voor aanpassing.
+
 
 ### Link-tag {#link-tag}
 
-Gebruik de `<link>`-tag om URL's te koppelen aan metadata, auteurinformatie of waypoints in OsmAnd GPX-bestanden. Deze tag kan ook een afbeelding weergeven wanneer de URL naar een afbeeldingsbestand verwijst.
+Gebruik de `<link>`-tag om URL's te koppelen aan metadata, auteursinformatie of waypoints in OsmAnd GPX-bestanden. Deze tag kan ook een afbeelding weergeven wanneer de URL naar een afbeeldingsbestand verwijst.
 
-***Voorbeelden (Metadata-link met afbeelding):***
+***Voorbeelden (Metadatalink met afbeelding):***
 
 ```xml
 <metadata>
@@ -220,7 +224,7 @@ Gebruik de `<link>`-tag om URL's te koppelen aan metadata, auteurinformatie of w
 </metadata>
 ```
 
-***Voorbeelden (Waypoint-link met afbeelding):***
+***Voorbeelden (Waypointlink met afbeelding):***
 
 ```xml
 <wpt lat="52.5163" lon="13.3779">
@@ -228,14 +232,14 @@ Gebruik de `<link>`-tag om URL's te koppelen aan metadata, auteurinformatie of w
 </wpt>
 ```
 
-### Sensorgegevens-tags {#sensor-data-tags}
+### Sensorgegevenstags {#sensor-data-tags}
 
-U kunt uw tracks verrijken met gegevens van fitnesssensoren, zoals hartslagmeters of temperatuursensoren. OsmAnd gebruikt Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)-schema om deze gegevens op te slaan, waardoor het compatibel is met platforms zoals **Strava** en **Garmin Basecamp**.
+U kunt uw tracks verrijken met gegevens van fitnesssensoren, zoals hartslagmeters of temperatuursensoren. OsmAnd gebruikt het [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)-schema van Garmin om deze gegevens op te slaan, waardoor het compatibel is met platforms zoals **Strava** en **Garmin Basecamp**.
 
-*Ondersteunde sensorgegevens-tags:*
+*Ondersteunde sensorgegevenstags:*
 
 - **hr** - hartslag (in slagen per minuut).
-- **cad** - fiets cadans (in omwentelingen per minuut).
+- **cad** - fietscadans (in omwentelingen per minuut).
 - **atemp** - omgevingstemperatuur (in graden Celsius).
 - **power** - fietsvermogen (in watt).
 
@@ -252,9 +256,9 @@ U kunt uw tracks verrijken met gegevens van fitnesssensoren, zoals hartslagmeter
 </extensions>
 ```
 
-### Trackpunt-details {#track-point-details}
+### Trackpuntgegevens {#track-point-details}
 
-Elk `<trkpt>` (trackpunt) in het GPX-bestand kan aanvullende attributen bevatten om gegevens zoals snelheid, koers en hoogte vast te leggen.
+Elk `<trkpt>` (trackpunt) in het GPX-bestand kan extra attributen bevatten om gegevens zoals snelheid, koers en hoogte vast te leggen.
 
 *Ondersteunde attributen:*
 
@@ -277,29 +281,31 @@ Elk `<trkpt>` (trackpunt) in het GPX-bestand kan aanvullende attributen bevatten
   </trkpt>
 ```
 
+
+
 ## Berekende route(s) {#calculated-routes}
 
-In **OsmAnd** kunt u een route berekenen en alle gegevens opslaan in GPX, zodat later alle navigatiefuncties beschikbaar zijn als lopende GPX-navigatie. De OsmAnd GPX zal dan routesegmenten, afslagen, weg namen, wegtypen, beperkingen, enz. bevatten. De route kan volledig worden hersteld alsof deze zojuist is gebouwd, zelfs bij afwezigheid van de betreffende offline kaarten.
+In **OsmAnd** kunt u een route berekenen en alle gegevens opslaan in GPX, zodat later alle navigatiefuncties beschikbaar zijn als u de GPX-navigatie uitvoert. De **OsmAnd** GPX bevat dan routesegmenten, afslagen, wegnamen, wegtypes, beperkingen, enz. De route kan volledig worden hersteld alsof deze zojuist is berekend, zelfs als de betreffende offline kaarten niet aanwezig zijn.
 
-Een GPX-bestand kan meerdere routes bevatten. Elk daarvan is opgenomen in een specifiek segment onder **trkseg** / **extensions**. Een GPX-bestand wordt in deze vorm opgeslagen bij het exporteren van een geconstrueerde route of bij het opslaan van een track die bestaat uit meerdere afzonderlijke segmenten via de functionaliteit [**Plan een route**](../../user/plan-route/create-route.md).
+Een GPX-bestand kan meerdere routes bevatten. Elk daarvan bevindt zich in een specifiek segment onder **trkseg** / **extensions**. Een GPX-bestand wordt in deze vorm opgeslagen bij het exporteren van een geconstrueerde route of bij het opslaan van een track die uit meerdere afzonderlijke segmenten bestaat via de functionaliteit [**Plan een route**](../../user/plan-route/create-route.md).
 
-[**Plan een route**](../../user/plan-route/create-route.md) voegt ook één (of meerdere, in overeenstemming met het aantal opgenomen afzonderlijke segmenten / tracks) **rte**-blokken toe aan het GPX-bestand, die belangrijke routepunten (**rtept**) bevatten.
+[**Plan een route**](../../user/plan-route/create-route.md) voegt ook een (of meerdere, afhankelijk van het aantal afzonderlijke segmenten/tracks) **rte**-blok toe aan het GPX-bestand, dat de belangrijkste routepunten (**rtept**) bevat.
 
 #### GPX-structuur: {#gpx-structure}
 
 ```xml
 <trk>
   <trkseg>
-    // Lijst met segmentpunten. De volgorde van de punten komt overeen met de volgorde en lengte van de routesegmenten (<route><segment length="x" ... />).
+    // Lijst van segmentpunten. De volgorde van de punten komt overeen met de volgorde en lengte van de routesegmenten (<route><segment length="x" ... />).
     // De waarde van het "length"-attribuut komt overeen met het aantal punten in dit segment van de route.
     <trkpt ... ></trkpt>
     <extensions>
-      // Lijst met routesegmenten
+      // Lijst van routesegmenten
       <route>
         <segment ... />
       </route>
       // Eigenschappen van segmenten die in de route zijn opgenomen.
-      // Deze gegevens worden van offline kaarten gehaald tijdens de initiële constructie van een route.
+      // Deze gegevens worden overgenomen van offline kaarten tijdens de initiële berekening van een route.
       <types>
         <type ... />
       </types>
@@ -307,16 +313,16 @@ Een GPX-bestand kan meerdere routes bevatten. Elk daarvan is opgenomen in een sp
   </trkseg>
 </trk>
 
-// Lijst met tussenliggende routepunten. Als er meerdere routes zijn, komt de volgorde van de rte-lijst overeen met de volgorde van de routesegmenten.
+// Lijst van tussenliggende routepunten. Als er meerdere routes zijn, komt de volgorde van de rte-lijst overeen met de volgorde van de routesegmenten.
 <rte>
   <rtept ... />
-    // Voor routes die zijn gebouwd met "Plan route", worden de parameters van belangrijke punten opgeslagen.
-    // Als rtept niet de eerste en laatste is, zal trkpt ervoor (met dezelfde idx) dezelfde gegevens bevatten.
+    // Voor routes die zijn gebouwd met "Plan een route", worden de parameters van de belangrijkste punten opgeslagen.
+    // Als rtept niet het eerste en laatste is, zal er daarvoor (met dezelfde idx) een trkpt zijn met dezelfde gegevens.
     <extensions>
-      // Routeprofieltype voor volgend segment (auto, fiets, voetganger, enz.).
+      // Routeprofieltype voor het volgende segment (auto, fiets, voetganger, enz.).
       <profile>...</profile>
       // De index van het punt in het gpx-segment dat overeenkomt met het eerste punt van de berekende route voor dit segment.
-      // Als rtept niet de eerste en laatste is, zal trkpt ervoor (met dezelfde idx) dezelfde gegevens bevatten.
+      // Als rtept niet het eerste en laatste is, zal er daarvoor (met dezelfde idx) een trkpt zijn met dezelfde gegevens.
       <trkpt_idx>...</trkpt_idx>
     </extensions>
   </rtept>
@@ -325,20 +331,20 @@ Een GPX-bestand kan meerdere routes bevatten. Elk daarvan is opgenomen in een sp
 
 #### Belangrijke eigenschappen: {#important-properties}
 
-* **trkpt_idx** van de eerste **rtept** in **trkseg** is 0. Dus, als er twee **trkseg**s zijn, zullen er twee **rtept**s zijn met **trkpt_idx** = 0
-* **trkpt_idx** van de laatste **rtept** in **trkseg** is gelijk aan het aantal **trkpt**s in **trkseg** min 1. Bijvoorbeeld, als **trkseg** 12 **trkpt**s heeft, moet **trkpt_idx** van de laatste **rtept** 11 zijn
-* Aangrenzende route **segmenten** overlappen: het einde van het vorige **segment** en het begin van het volgende **segment** is hetzelfde **trkpt**.
-* Er is een uitzondering wanneer aangrenzende route **segmenten** niet overlappen (niet hetzelfde **trkpt** delen). Dit gebeurt wanneer er een **rtept** "tussen" route **segmenten** is. Het einde van het vorige route **segment** is één **trkpt**, en het begin van het volgende route **segment** is een ander **rtept**. Maar deze twee **trkpt**s zijn volledig gelijk qua lat, lon en andere parameters.
-* Route **segment** overlapping kan worden gedetecteerd via **length** en **startTrkptIdx** (de laatste wordt alleen gebruikt voor het gemak van menselijk lezen):
-  - Als de som van **startTrkptIdx** en **length** van het vorige route **segment** gelijk is aan **startTrkptIdx** van het volgende route **segment**, overlappen de route **segmenten** niet
-  - Als de som één minder is, dan overlappen de route **segmenten**
-* Er kunnen rechte route **segmenten** zijn. Deze zijn gemarkeerd met **id="-1"**. Ze kunnen in twee gevallen verschijnen:
-  - Het is een multiprofielroute, en de gebruiker heeft een rechte lijn geselecteerd
-  - De gebruiker heeft **rtept** te ver van de dichtstbijzijnde weg geplaatst, dus OsmAnd heeft een rechte lijn gemaakt tussen **rtept** en de weg
+* **trkpt_idx** van het eerste **rtept** in **trkseg** is 0. Dus, als er twee **trkseg**s zijn, zullen er twee **rtept**s zijn met **trkpt_idx** = 0
+* **trkpt_idx** van het laatste **rtept** in **trkseg** is gelijk aan het aantal **trkpt**s in **trkseg** min 1. Bijvoorbeeld, als **trkseg** 12 **trkpt**s heeft, moet de **trkpt_idx** van het laatste **rtept** 11 zijn.
+* Aangrenzende route**segmenten** overlappen: het einde van het vorige **segment** en het begin van het volgende **segment** is hetzelfde **trkpt**.
+* Er is een uitzondering wanneer aangrenzende route**segmenten** niet overlappen (niet hetzelfde **trkpt** delen). Dit gebeurt wanneer er een **rtept** "tussen" route**segmenten** is. Het einde van het vorige route**segment** is één **trkpt**, en het begin van het volgende route**segment** is een ander **rtept**. Maar deze twee **trkpt**s zijn volledig gelijk qua lat, lon en andere parameters.
+* Overlapping van route**segmenten** kan worden gedetecteerd via **length** en **startTrkptIdx** (de laatste wordt alleen gebruikt voor het gemak van menselijke lezing):
+  - Als de som van **startTrkptIdx** en **length** van het vorige route**segment** gelijk is aan de **startTrkptIdx** van het volgende route**segment**, overlappen de route**segmenten** niet.
+  - Als de som één minder is, dan overlappen de route**segmenten** wel.
+* Er kunnen rechte route**segmenten** zijn. Deze zijn gemarkeerd met **id="-1"**. Ze kunnen in twee gevallen verschijnen:
+  - Het is een route met meerdere profielen en de gebruiker heeft een rechte lijn geselecteerd.
+  - De gebruiker heeft een **rtept** te ver van de dichtstbijzijnde weg geplaatst, dus OsmAnd heeft een rechte lijn gemaakt tussen het **rtept** en de weg.
 * trkpts = length - (segments - 1) + (rtepts - 2), waarbij:
   - trkpts - aantal **trkpt**s binnen **trkseg**
-  - length - som van alle **length**s van route **segmenten** binnen **trkseg**
-  - segments - aantal route **segmenten** binnen **trkseg**
+  - length - som van alle **length**s van route**segmenten** binnen **trkseg**
+  - segments - aantal route**segmenten** binnen **trkseg**
   - rtepts - aantal **rtept**s die eigendom zijn van **trkseg**
 
 #### Voorbeeld: {#example}
@@ -420,7 +426,7 @@ Een GPX-bestand kan meerdere routes bevatten. Elk daarvan is opgenomen in een sp
 
 ## GPX-collecties in OBF {#gpx-collections-in-obf}
 
-OsmAnd stelt u in staat om meerdere GPX-bestanden om te zetten naar één OBF-bestand. Dit maakt het mogelijk om duizenden GPX-tracks op te slaan in een compact, geoptimaliseerd formaat, terwijl functies zoals speciale kaartpictogrammen, aanpassing van het trackuiterlijk en zoekfunctionaliteit behouden blijven. Dit voorkomt een limiet van lokale grote GPX-bestanden die doorgaans niet meer dan 500 K punten in totaal kunnen verwerken, hoewel sommige functies van GPX-tracks mogelijk ontbreken in vergelijking met het weergeven van een OBF-bestand.
+Met OsmAnd kunt u meerdere GPX-bestanden converteren naar één OBF-bestand. Dit maakt het mogelijk om duizenden GPX-tracks op te slaan in een compact, geoptimaliseerd formaat, terwijl functies zoals speciale kaarticonen, aanpassing van de trackweergave en zoekfunctionaliteit behouden blijven. Dit voorkomt een limiet van grote lokale GPX-bestanden die doorgaans niet meer dan 500.000 punten in totaal kunnen verwerken, hoewel sommige functies van GPX-tracks kunnen ontbreken in vergelijking met het weergeven van een OBF-bestand.
 
 Stappen om GPX naar OBF te converteren:
 
@@ -428,20 +434,21 @@ Stappen om GPX naar OBF te converteren:
 
 - Het resulterende `<.obf>`-bestand kan worden geïmporteerd in OsmAnd (vereist OsmAnd Android 5.0+).
 
-### Tracklijn-stijl {#track-line-style}
+
+### Stijl van de tracklijn {#track-line-style}
 
 Pas tracklijnen aan met de volgende tags:
 
 | GPX-tag | Standaard | Doel |
 |:--------------------------|:--------|:---------|
-| `<name>` | *(geen)* | Naam weergegeven boven de tracklijn. |
+| `<name>` | *(geen)* | Naam die over de tracklijn wordt weergegeven. |
 | `color` | `red` | Primaire kleur (HEX of tekst). |
 | `colour`, `displaycolor` | *(geen)* | Alternatieve manieren om `color` te overschrijven. |
-| `shield_waycolor` | *(geen)* | Overschrijving voor schildtracklijn `color`. |
+| `shield_waycolor` | *(geen)* | Overschrijft de `color` van de tracklijn voor het schild. |
 | `translucent_line_colors` | `no` | Stel in op `yes` voor semi-transparante kleuren. |
 | `width` | `thin` | Lijnbreedte: `"thin"`, `"medium"`, `"bold"`, `"1-24"`, of `"roadstyle"` |
 
-**Ondersteunde kleuren:** zwart, blauw, bruin, donkergeel, grijs, groen, lichtblauw, lichtgroen, oranje, paars, rood, wit, geel.
+**Ondersteunde kleuren:** black, blue, brown, darkyellow, gray, green, lightblue, lightgreen, orange, purple, red, white, yellow.
 
 ***Voorbeeld:***
 
@@ -463,34 +470,34 @@ Pas tracklijnen aan met de volgende tags:
 </gpx>
 ```
 
-### Tracklijn-schilden {#track-line-shields}
+### Schilden voor tracklijnen {#track-line-shields}
 
-Schilden zijn pictogrammen of symbolen die langs de tracklijn worden weergegeven. OsmAnd ondersteunt [OSMC-symboolstijl](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)-schilden, die kunnen omvatten:
+Schilden zijn iconen of symbolen die langs de tracklijn worden weergegeven. OsmAnd ondersteunt schilden in [OSMC-symboolstijl](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), die kunnen bestaan uit:
 
-- Achtergrondpictogram - de hoofdvorm (bijv. cirkel of vierkant).
-- Voorgrondpictogrammen - maximaal twee kleinere symbolen over de achtergrond.
+- Achtergrondicoon - de hoofdvorm (bijv. cirkel of vierkant).
+- Voorgrondiconen - tot twee kleinere symbolen die over de achtergrond worden geplaatst.
 - Tekst - korte beschrijvingen of identificaties, afgeleid van de `shield_text`- of `ref`-tags.
 
-Als er geen schildeigenschappen zijn gedefinieerd, gebruikt OsmAnd een automatisch formaat geel schild voor de track.
+Als er geen schildeigenschappen zijn gedefinieerd, gebruikt OsmAnd een automatisch geschaald geel schild voor de track.
 
 ***Tags voor schilden:***
 
 | GPX-tag | Doel |
 |:-------------------|:-----------------------------------------------------------------------|
-| `shield_bg` | Definieert het achtergrondpictogram voor het schild. |
-| `shield_fg` | Specificeert het eerste voorgrondpictogram (bijv. een pijl of stip). |
-| `shield_fg_2` | Specificeert het tweede voorgrondpictogram (optioneel). |
-| `shield_text` | Stelt de korte tekst in die over het schild moet worden weergegeven (bijv. route-referentie). |
+| `shield_bg` | Definieert het achtergrondicoon voor het schild. |
+| `shield_fg` | Specificeert het eerste voorgrondicoon (bijv. een pijl of stip). |
+| `shield_fg_2` | Specificeert het tweede voorgrondicoon (optioneel). |
+| `shield_text` | Stelt de korte tekst in die over het schild wordt weergegeven (bijv. route-ref). |
 | `shield_textcolor` | Bepaalt de kleur van de schildtekst (optioneel). |
 | `shield_waycolor` | Overschrijft de standaard trackkleur voor de lijn van het schild (optioneel). |
-| `ref` | Gebruikt als terugvaltekst als `shield_text` niet is opgegeven. |
+| `ref` | Wordt gebruikt als fallback-tekst als `shield_text` niet is opgegeven. |
 
 ***Voorbeeld:***
 
 ```xml
 <gpx>
   <trk>
-    <name>Voorbeeldroute</name>
+    <name>Sample Route</name>
   </trk>
   <extensions>
     <osmand:shield_text>ABC</osmand:shield_text>
@@ -502,28 +509,28 @@ Als er geen schildeigenschappen zijn gedefinieerd, gebruikt OsmAnd een automatis
 </gpx>
 ```
 
-### Waypoint-weergave {#waypoints-display}
+### Weergave van waypoints {#waypoints-display}
 
-Waypoint-pictogrammen kunnen worden aangepast met de volgende tags:
+Waypoint-iconen kunnen worden aangepast met de volgende tags:
 
 | GPX-tag | Standaard | Doel |
 |:-------------|:---------|:---------------------------------------------------|
-| `icon` | *(geen)* | Specificeert het pictogram voor het waypoint (gebruikt standaard OsmAnd waypoint-editorpictogrammen). |
-| `color` | `red` | Stelt de pictogramkleur in met een HEX-code (bijv. `#ffaa00`) of een ondersteunde kleurnaam (beperkte opties). |
-| `background` | `circle` | Definieert de vorm van het pictogram. Ondersteunde waarden: `circle`, `square`, `octagon`. |
+| `icon` | *(geen)* | Specificeert het icoon voor het waypoint (gebruikt standaard OsmAnd waypoint-editor iconen). |
+| `color` | `red` | Stelt de icoonkleur in met een HEX-code (bijv. `#ffaa00`) of een ondersteunde kleurnaam (beperkte opties). |
+| `background` | `circle` | Definieert de vorm van het icoon. Ondersteunde waarden: `circle`, `square`, `octagon`. |
 
 ***Gedrag van `background`-vormen:***
 
-- `circle` - geeft het pictogram weer met een cirkelvormige achtergrond.
-- `square` - geeft het pictogram weer met een vierkante achtergrond, standaard rood als er geen kleur is opgegeven.
-- `octagon` - wordt behandeld als een cirkelvormige achtergrond in OsmAnd.
+- `circle` - toont het icoon met een cirkelvormige achtergrond.
+- `square` - toont het icoon met een vierkante achtergrond, standaard rood als er geen kleur is opgegeven.
+- `octagon` - wordt in OsmAnd behandeld als een cirkelvormige achtergrond.
 
-**Ondersteunde kleuren voor** `background=circle`: blauw, grijs, groen, lichtblauw, lichtgroen, oranje, paars, geel.
+**Ondersteunde kleuren voor** `background=circle`: blue, gray, green, lightblue, lightgreen, orange, purple, yellow.
 
-***Verbeteringen met aanvullende elementen:***
+***Verbeteringen met extra elementen:***
 
-- U kunt geformatteerde beschrijvingen toevoegen aan waypoints met behulp van [HTML-code](#html-in-descriptions). Hiermee kunt u opgemaakte tekst, links of zelfs afbeeldingen opnemen.
-- Waypoints kunnen gekoppelde afbeeldingen weergeven met behulp van [Link-as-Image](#link-tag).
+- U kunt opgemaakte beschrijvingen toevoegen aan waypoints met behulp van [HTML-code](#html-in-descriptions). Hiermee kunt u gestileerde tekst, links of zelfs afbeeldingen opnemen.
+- Waypoints kunnen gekoppelde afbeeldingen weergeven met [Link-als-Afbeelding](#link-tag).
 
 ***Voorbeeld:***
 
@@ -538,6 +545,7 @@ Waypoint-pictogrammen kunnen worden aangepast met de volgende tags:
 </wpt>
 ```
 
+
 ### Zoeken op naam en referenties {#search-by-name-and-refs}
 
 Tracks en waypoints kunnen worden gevonden met behulp van verschillende GPX-tags.
@@ -546,7 +554,7 @@ Tracks en waypoints kunnen worden gevonden met behulp van verschillende GPX-tags
 |:--------------|:-----------------------|:----------------------------------------------------------------------------|
 | `<name>` | `<metadata>` | De primaire naam van de GPX-track. |
 | `ref` | GPX `<extensions>` | Een korte identificatie, vaak afgeleid van de OSM `ref`-tag. |
-| `shield_text` | GPX `<extensions>` | Tekst weergegeven op schilden (kan ook worden gebruikt met `ref`). |
+| `shield_text` | GPX `<extensions>` | Tekst die op schilden wordt weergegeven (kan ook worden gebruikt met `ref`). |
 | `name_-_lang` | GPX/WPT `<extensions>` | Gelokaliseerde `name:lang` (bijv. `name_-_en` voor Engels, vervang `:` -> `_-_`) |
 | `<name>` | `<wpt>` | De naam van het waypoint. |
 
@@ -571,17 +579,19 @@ Tracks en waypoints kunnen worden gevonden met behulp van verschillende GPX-tags
 
 ### Zoeken op activiteitstype {#search-by-activity-type}
 
-OsmAnd organiseert tracks in OBF-bestanden in **Activiteitsgroepen** en **Activiteitstypen**. Deze classificaties helpen u tracks te filteren als POI's of activiteitsgebaseerde zoekfilters te maken.
+OsmAnd organiseert tracks in OBF-bestanden in **Activiteitengroepen** en **Activiteitstypes**. Deze classificaties helpen u bij het filteren van tracks als POI's of bij het maken van op activiteiten gebaseerde zoekfilters.
 
-Hoe activiteitstypen werken:
+Hoe activiteitstypes werken:
 
-- Activiteitstypen en -groepen worden bepaald met behulp van de `"id"` en `"tags"` uit het bestand [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json).
-- OsmAnd gebruikt `osmand:activity` of `osmand:route`-tags om activiteiten in GPX-bestanden te classificeren.
+- Activiteitstypes en -groepen worden bepaald met behulp van de `"id"` en `"tags"` uit het [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)-bestand.
+- OsmAnd gebruikt `osmand:activity`- of `osmand:route`-tags om activiteiten in GPX-bestanden te classificeren.
+
 
 | GPX-tag | Locatie | Doel |
 |:------------------|:---------|:-------------------------------------------------|
-| `osmand:activity` | `<metadata>` | Hoofd-OsmAnd-tag om het activiteitstype (ID) op te slaan. |
+| `osmand:activity` | `<metadata>` | Hoofdtag van OsmAnd om het activiteitstype (ID) op te slaan. |
 | `osmand:route` | GPX `<extensions>` | Alternatieve OSM-manier om het activiteitstype te definiëren. |
+
 
 ***Voorbeelden van het organiseren van tracks op activiteitstype:***
 
@@ -612,12 +622,12 @@ OBF-bestanden genereren en slaan automatisch kritieke trackstatistieken en -anal
 | OBF-tag | Doel |
 |:--------------------------------------|:----------------------------------------------------------------------|
 | `distance` | Totale afstand afgelegd door alle tracksegmenten. |
-| `start_ele`, `ele_graph` | Hoogtegegevens van GPX, verpakt in een compacte binaire array. |
-| `min_ele`, `avg_ele`, `max_ele` | Minimum, gemiddelde en maximum hoogte-analyses. |
-| `diff_ele_up`, `diff_ele_down` | Totale hoogteverschil omhoog en omlaag over de track. |
-| `max_speed`, `avg_speed`, `min_speed` | Track snelheidsanalyses, inclusief maximum, gemiddelde en minimum snelheid. |
-| `time_span`, `time_span_no_gaps` | Totale tijd voor de track, met en zonder rekening te houden met gaten. |
-| `time_moving`, `time_moving_no_gaps` | Totale bewegingstijd, met en zonder rekening te houden met gaten. |
+| `start_ele`, `ele_graph` | Hoogtegegevens uit GPX, verpakt in een compacte binaire array. |
+| `min_ele`, `avg_ele`, `max_ele` | Analyse van minimale, gemiddelde en maximale hoogte. |
+| `diff_ele_up`, `diff_ele_down` | Totaal hoogteverschil omhoog en omlaag over de track. |
+| `max_speed`, `avg_speed`, `min_speed` | Snelheidsanalyse van de track, inclusief maximale, gemiddelde en minimale snelheid. |
+| `time_span`, `time_span_no_gaps` | Totale tijd voor de track, met en zonder rekening te houden met onderbrekingen. |
+| `time_moving`, `time_moving_no_gaps` | Totale bewegingstijd, met en zonder rekening te houden met onderbrekingen. |
 
 ### Interne tags {#internal-tags}
 
@@ -626,18 +636,16 @@ Sommige GPX-tags worden indirect gebruikt of opgeslagen in OBF-bestanden. Raadpl
 | OBF-tag | Doel |
 |:-----------------------------|:-----------------------------------------------------------------------------------------------------------|
 | `route_id` | Een unieke identificatie voor het GPX-bestand, die kaart- en POI-gegevens koppelt (formaat: `/[A-Z]+[0-9]+/` bijv. `OSM12345`). |
-| `route_type` | Activiteitsgroep-identificatie (`id`) afgeleid van `poi/activities.json` |
-| `route_activity_type` | Activiteitstype (binnen de groep) identificatie (`id`) afgeleid van `poi/activities.json` |
-| `name`, `ref`, `description` | Lokaliseerbare en doorzoekbare attributen (`lang="true"` in POI-typen) |
-| `filename` | De naam van het originele GPX-bestand dat is gebruikt om deze track te genereren. |
+| `route_type` | Identificatie van de activiteitengroep (`id`) afgeleid van `poi/activities.json` |
+| `route_activity_type` | Identificatie van het activiteitstype (binnen de groep) (`id`) afgeleid van `poi/activities.json` |
+| `name`, `ref`, `description` | Lokaliseerbare en doorzoekbare attributen (`lang="true"` in POI-types) |
+| `filename` | De naam van het oorspronkelijke GPX-bestand dat is gebruikt om deze track te genereren. |
 | `track_color` | Kaartsectie trackkleur afgeleid van `shield_waycolor`, `color`, `colour`, of `displaycolor` |
 | `extensions_extra_tags` | Willekeurige extra tags voor `<gpx><extensions>` in JSON-formaat. |
 | `metadata_extra_tags` | Willekeurige extra tags voor `<metadata><extensions>` in JSON-formaat. |
 | `wpt_extra_tags` | Willekeurige extra tags voor waypoints `<wpt><extensions>` in JSON-formaat. |
-| `route_track_point` | Waypoints uit GPX-bestand gebruiken dit type in POI-gegevens. |
+| `route_track_point` | Waypoints uit het GPX-bestand gebruiken dit type in POI-gegevens. |
 | `route_bbox_radius` | Specificeert de standaardradius voor het zoeken naar delen van de track binnen de POI-sectie |
 | `route_shortlink_tiles` | Specificeert een door komma's gescheiden lijst van OSM Shortlink-tegels om het lezen van geometriegegevens te versnellen (optioneel) |
-| `route_segment_index` | Specificeert een ordinaal nummer van het geometrie-segment dat aan dit punt is gekoppeld (optioneel) |
-| `route_name` | De routenaam, gebruikt door interne `searchPoiByName` (verouderd) |
-
-> *Laatst bijgewerkt: maart 2025*
+| `route_segment_index` | Specificeert een volgnummer van het geometriesegment dat aan dit punt is gekoppeld (optioneel) |
+| `route_name` | De routenaam, gebruikt door de interne `searchPoiByName` (verouderd) |

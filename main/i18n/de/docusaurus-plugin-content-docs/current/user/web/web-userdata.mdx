@@ -1,7 +1,7 @@
 ---
-source-hash: 42031b78e29fbd1911d4dd552afcc77bc2c286dce954d90b69e5940edc79b516
+source-hash: 89f13b2052ddf4cfe0e48c82af9f59e5dd98c3977b988e768072eb20a6ad2a59
 sidebar_position: 4
-sidebar_label: User data
+sidebar_label: Benutzerdaten
 title: Benutzerdaten auf der Karte
 ---
 import Tabs from '@theme/Tabs';
@@ -20,9 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Im Web können Benutzer ihre persönlichen Daten wie Tracks und Favoriten direkt im Web abrufen, verwalten und erstellen.
+Im Web können Benutzer ihre persönlichen Daten, wie Tracks und Favoriten, direkt online abrufen, verwalten und erstellen.
 
-- Tracks: Benutzer können Tracks online hochladen, anzeigen, bearbeiten oder neue Tracks erstellen. Alle Änderungen werden automatisch mit der OsmAnd Cloud synchronisiert, um sicherzustellen, dass die Daten auf allen verbundenen Geräten verfügbar sind.
+- Tracks: Benutzer können Tracks online hochladen, anzeigen, bearbeiten oder neue erstellen. Alle Änderungen werden automatisch mit der OsmAnd Cloud synchronisiert, sodass die Daten auf allen verbundenen Geräten verfügbar sind.
 - Favoriten: Erstellen und organisieren Sie gespeicherte Orte im Web, mit automatischer Synchronisierung mit Ihrer OsmAnd-App für schnellen Zugriff und Navigation.
 
 Die Integration mit der OsmAnd Cloud ermöglicht eine nahtlose Synchronisierung, sodass Benutzer ihre Daten bequem von jedem Gerät aus verwalten können.
@@ -31,13 +31,13 @@ Die Integration mit der OsmAnd Cloud ermöglicht eine nahtlose Synchronisierung,
 
 Dies ist eine kostenpflichtige Funktion <ProFeature/>. Zuerst müssen Sie sich bei Ihrem OsmAnd Pro anmelden:
 
-![Track loggin](@site/static/img/web/track_loggin.png)
+![Track-Anmeldung](@site/static/img/web/track_loggin.png)
 
 Für den Bereich Tracks:
 
-- Tracks aus der [OsmAnd Cloud](#users-tracks-pro) anzeigen.
-- Tracks auf der Karte hinzufügen (**Auf der Karte sichtbar** Ordner).
-- Alle Track-Informationen und Graphen anzeigen.
+- Tracks aus der [OsmAnd Cloud](#cloud-tracks) anzeigen.
+- Tracks zur Karte hinzufügen (Ordner **Auf der Karte sichtbar**).
+- Alle Track-Informationen und Diagramme ansehen
 - Tracks ändern und zur Cloud hinzufügen.
 - Tracks herunterladen und löschen.
 - Neue Ordner erstellen oder löschen.
@@ -46,73 +46,73 @@ Für den Bereich Tracks:
 
 ### Auf der Karte sichtbar {#visible-on-the-map}
 
-Hier ist eine Liste der auf der Karte sichtbaren Tracks.
+Hier befindet sich eine Liste der auf der Karte sichtbaren Tracks.
 
-Schalten Sie Tracks ein/aus, um sie auf der Karte anzuzeigen oder nicht.
+_Ein-/Ausschalten_ von Tracks, um sie auf der Karte anzuzeigen oder auszublenden.
 
-![Visible on the map](@site/static/img/web/visible.png)
+![Auf der Karte sichtbar](@site/static/img/web/visible.png)
 
 
 ### Track-Ordner-Menü {#track-folder-menu}
 
-Klicken Sie auf die Schaltfläche *Drei Punkte* **⋮**, um das Menü *Track-Ordner* zu öffnen. Hier können Sie alle Tracks aus dem gewählten Ordner herunterladen als:
+Klicken Sie auf die Schaltfläche *Drei Punkte* **⋮**, um das Menü *Track-Ordner* zu öffnen. Hier können Sie alle Tracks aus dem ausgewählten Ordner herunterladen als:
 
  - Als OSF herunterladen.
  - Als OBF-Sammlung herunterladen:
-  Sie können OBF-Karten aus diesen Daten erhalten: [OBF-Datei](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) oder [Reise-OBF](https://osmand.net/blog/routes#generated-travel-routes).
+  Sie können aus diesen Daten eine OBF-Karte erhalten: [OBF-Datei](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) oder [Reise-OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
     -  [OBF-Datei](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
-  Sie können eine Offline-Karte im OBF-Format (OsmAnd Binary Format) herunterladen und mit OsmAnd auf dem Gerät öffnen. Dies ist geeignet, um eine große Menge von Tracks anzuzeigen, die auf der Karte sichtbar sein werden.
+  Sie können die Offline-Karte OBF (OsmAnd Binary Format) herunterladen und mit OsmAnd auf dem Gerät öffnen. Dies ist geeignet, um eine große Anzahl von Tracks auf der Karte anzuzeigen.
 
     -  [Reise-OBF](https://osmand.net/blog/routes#generated-travel-routes):
 
-  Sie können auch eine Karte von Tracks als Reisebuch importieren, wodurch Sie auch einen bestimmten Track auf der Karte auswählen und ihn als normales GPX verwenden können. Das Reisebuch unterstützt auch Funktionen wie die Anzeige von Tracks als Punkte, das Filtern von Tracks nach Aktivitätstyp und das Filtern von Wegpunkten.
+  Sie können auch eine Karte mit Tracks als Reisebuch importieren, was es Ihnen ermöglicht, einen bestimmten Track auf der Karte auszuwählen und ihn wie eine normale GPX-Datei zu verwenden. Das Reisebuch unterstützt auch Funktionen wie die Anzeige von Tracks als Punkte, das Filtern von Tracks nach Aktivitätstyp und das Filtern von Wegpunkten.
 
-- Gewählten Ordner *umbenennen*.
-- Gewählten Ordner *löschen*.
+- Ausgewählten Ordner _umbenennen_.
+- Ausgewählten Ordner _löschen_.
 
-![Track folder menu](@site/static/img/web/collection.png)
+![Track-Ordner-Menü](@site/static/img/web/collection.png)
 
 
 ### Cloud-Tracks {#cloud-tracks}
 
-GPX-Tracks, die Sie in der [OsmAnd Cloud](../personal/osmand-cloud.md) haben, stehen nach dem Login zur Anzeige und Bearbeitung zur Verfügung. Nur für **Pro-Benutzer** <ProFeature/> und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) Benutzer (die ihre Daten auch nach Ablauf ihres Pro-Abonnements herunterladen können).
+GPX-Tracks, die Sie in der [OsmAnd Cloud](../personal/osmand-cloud.md) haben, stehen nach der Anmeldung zur Anzeige und Bearbeitung zur Verfügung. Nur für **Pro-Benutzer** <ProFeature/> und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Benutzer (die ihre Daten auch nach Ablauf ihres Pro-Abonnements herunterladen können).
 
-Die folgenden Funktionen sind nach Auswahl eines Cloud-Tracks verfügbar:
+Die folgenden Funktionen sind nach der Auswahl eines Cloud-Tracks verfügbar:
 
 - Informationsbildschirme:
-  - *Information* - Anzeige von Trackdaten.
-  - *Höhe* - Höhengraph.
-  - *Geschwindigkeit* - Geschwindigkeitsgraph.
-  - *Steigung* - Steigungsgraph.
-  - *Einstellungen* - Liste der Navigationsprofile für das Werkzeug *Route erstellen*.
+  - *Informationen* - Anzeige der Track-Daten.
+  - *Höhe* - Höhendiagramm.
+  - *Geschwindigkeit* - Geschwindigkeitsdiagramm.
+  - *Steigung* - Steigungsdiagramm.
+  - *Einstellungen* - Liste der Navigationsprofile für das Werkzeug *Route erstellen*.  
 
 - Aktionsschaltflächen:
-  - *Track bearbeiten* - Hinzufügen des Cloud-Tracks zur lokalen Bearbeitung (Schaltfläche *Lokalität bearbeiten* auf der Leiste).
-  - *GPX herunterladen* - Lädt den Track auf den PC herunter.
-  - *Höhe neu berechnen* (Satellit) - Zeigt den Höhengraph des ausgewählten Tracks an.
-  - *Track löschen* - Löscht den Track.
-  - *Track schließen* - Schließt den Track.
+  - *Track bearbeiten* - fügt den Cloud-Track zur lokalen Bearbeitung hinzu (Schaltfläche _Lokal bearbeiten_ im Panel).
+  - *GPX herunterladen* - lädt den Track auf den PC herunter.
+  - *Höhe neu berechnen* (Satellit) - zeigt das Höhendiagramm des ausgewählten Tracks an.
+  - *Track löschen* - löscht den Track.
+  - *Track schließen* - schließt den Track.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
+![OsmAnd Web Cloud GPX bearbeiten](@site/static/img/web/cloud_track.png)
 
 
 
 ## Favoriten im Web {#favorites-on-the-web}
 
-Nach der Registrierung eines [**OsmAnd Pro**](../personal/osmand-cloud.md#login) und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) werden Ihre Favoriten im Favoriten-Menü angezeigt.
+Nach der Registrierung eines [**OsmAnd Pro**](../personal/osmand-cloud.md#login) und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) werden Ihre Favoriten im Favoriten-Menü angezeigt.  
 Die folgenden Aktionen sind verfügbar:
 
-- *Auf Karte anzeigen* - Zeigt Favoritenpunkte aus dem gewählten Ordner auf der Karte an.
+- *Auf Karte anzeigen* - zeigt Favoritenpunkte aus dem ausgewählten Ordner auf der Karte an.
 - *Umbenennen* - Name und Beschreibung des Favoritenordners.
-- *Herunterladen* - Lädt den gewählten Favoritenordner herunter.
-- *Löschen* - Löscht den gewählten Favoritenordner.
+- *Herunterladen* - lädt den ausgewählten Favoritenordner herunter.
+- *Löschen* - löscht den ausgewählten Favoritenordner.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+![OsmAnd Web Cloud Favoriten bearbeiten](@site/static/img/web/favorites.png)
 
 ### Favoriten hinzufügen / bearbeiten {#add--edit-favorite}
 
-Um einen neuen Favoritenpunkt [hinzuzufügen](../personal/favorites.md#edit), klicken Sie mit der rechten Maustaste auf den Bildschirm. Um die Bearbeitung zu starten, klicken Sie auf den Favoritenpunkt. Der Bearbeitungsmenübildschirm sieht genauso aus wie [das Menü in der OsmAnd-App](../personal/favorites.md#create).
+[Um einen neuen Favoritenpunkt hinzuzufügen](../personal/favorites.md#manage-favorites), klicken Sie mit der rechten Maustaste auf den Bildschirm. Um mit der Bearbeitung zu beginnen, klicken Sie auf den Favoritenpunkt. Der Bearbeitungsmenübildschirm sieht genauso aus wie [das Menü in der OsmAnd-App](../personal/favorites.md#create).  
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+![OsmAnd Web Favoriten hinzufügen](@site/static/img/web/web_favorites_add.png)

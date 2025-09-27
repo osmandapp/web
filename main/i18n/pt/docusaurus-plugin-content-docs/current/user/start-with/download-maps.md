@@ -1,5 +1,5 @@
 ---
-source-hash: e1ed0c38654083ff1654ec38b2f9235f0e80e91f2cdccf6bfa4e90d11da491a5
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title: Baixar Mapas
 ---
@@ -17,21 +17,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Visão geral {#overview}
+## Visão Geral {#overview}
 
-Carregar mapas para o aplicativo OsmAnd é um passo fundamental para garantir o bom funcionamento e o uso da navegação offline. Sem mapas offline, o aplicativo não pode funcionar completamente. Baixar mapas dá acesso a mapas de diferentes regiões, permitindo que você navegue sem uma conexão com a Internet.
+Carregar mapas para a aplicação OsmAnd é um passo fundamental para garantir o bom funcionamento e a utilização da navegação offline. Sem mapas offline, a aplicação não consegue funcionar plenamente. O download de mapas dá-lhe acesso a mapas de diferentes regiões, permitindo-lhe navegar sem ligação à Internet.
 
-Você tem duas *principais* maneiras de baixar mapas: **1)** [visualizar a lista de regiões no *Menu Principal*](#maps-and-resources), ou **2)** [selecionar a região necessária diretamente no mapa](#select-on-the-map). Isso oferece flexibilidade para selecionar as regiões desejadas e garante que os mapas se adequem aos seus planos.
+Tem duas formas *principais* de descarregar mapas: **1)** começar a partir do [ecrã de configuração inicial](#initial-setup-screen) ou [ver a lista de regiões no *Menu Principal*](#maps-and-resources), ou **2)** [selecionar a região necessária diretamente no mapa](#select-on-the-map). Isto dá-lhe a flexibilidade de selecionar as regiões que pretende e garante que os mapas se adequarão aos seus planos.
 
-Embora o OsmAnd suporte tanto [Vetorial](../map/vector-maps.md) quanto [Raster](../map/raster-maps.md), é recomendado começar a trabalhar com mapas vetoriais offline. Este tipo de mapa (leia mais sobre os [tipos de mapa OsmAnd](../personal/maps-resources.md#map-types) aqui) garante o funcionamento confiável de todas as funções chave do aplicativo, incluindo [Pesquisa](../search/index.md), [Navegação](../navigation/index.md) e [Menu de contexto](../map/map-context-menu.md). Isso é especialmente importante se suas viagens incluírem deslocamentos para locais remotos ou lugares com acesso limitado à internet.
-
-
-## Baixar {#download}
-
-Comece a carregar mapas a partir da [tela de configuração inicial](#initial-setup-screen), ou vá para o *menu lateral* principal *→* [Mapas e Recursos](#maps-and-resources) e selecione os mapas necessários na lista geral, ou [selecione uma região](#select-on-the-map) diretamente no mapa tocando na região que você precisa.
+Embora o OsmAnd suporte tanto [Vetorial](../map/vector-maps.md) como [Raster](../map/raster-maps.md), é recomendado começar a trabalhar com mapas vetoriais offline. Este tipo de mapa (leia mais sobre [tipos de Mapa OsmAnd](../personal/maps-resources.md#map-types) aqui) garante o funcionamento fiável de todas as funções chave da aplicação, incluindo [Pesquisa](../search/index.md), [Navegação](../navigation/index.md) e [Menu de Contexto](../map/map-context-menu.md). Isto é especialmente importante se as suas viagens incluírem deslocações para locais remotos ou locais com acesso limitado à internet.
 
 
-### Tela de Configuração Inicial {#initial-setup-screen}
+## Ecrã de Configuração Inicial {#initial-setup-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -49,12 +44,12 @@ Comece a carregar mapas a partir da [tela de configuração inicial](#initial-se
 
 </Tabs>
 
-Ao iniciar o aplicativo pela primeira vez, você é solicitado a baixar um mapa adaptado à sua localização atual, determinado pela sua conexão com a Internet. Esta etapa é opcional, permitindo que você pule o download e prossiga diretamente para a interface de mapas locais da sua região.
+Ao iniciar a aplicação pela primeira vez, é-lhe pedido que descarregue um mapa adaptado à sua localização atual, determinado pela sua ligação à Internet. Este passo é opcional, permitindo-lhe ignorar o download e prosseguir diretamente para a interface de mapas locais da sua região.
 
-Se você estiver usando uma VPN, o OsmAnd pode sugerir um mapa baseado na localização virtual da VPN. Nesses casos, você pode selecionar manualmente um mapa que se alinhe melhor com sua região geográfica real.
+Se estiver a utilizar uma VPN, o OsmAnd pode sugerir um mapa com base na localização virtual da VPN. Nesses casos, pode selecionar manualmente um mapa que se alinhe melhor com a sua região geográfica real.
 
 
-#### Menu de três pontos {#three-dot-menu}
+### Menu de três pontos {#three-dot-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -75,21 +70,21 @@ Se você estiver usando uma VPN, o OsmAnd pode sugerir um mapa baseado na locali
 **Menu de localização:**
 
 - *Selecionar uma região diferente.* Abre o menu [Baixar Mapas](#maps-and-resources).
-- *Permitir-nos determinar sua localização.* [Solicita permissão](../start-with/first-steps.md#permission-to-access-the-location) para acessar a localização e encontrar o mapa necessário usando esses dados.
+- *Permitir-nos determinar a sua localização.* [Pede permissão](../start-with/first-steps.md#permission-to-access-the-location) para aceder à localização e encontrar o mapa necessário utilizando esses dados.
 
 **Outro menu:**
 
-- *Restaurar do OsmAnd Cloud.* Abre a tela principal do [OsmAnd Cloud](../personal/osmand-cloud.md) ou a tela de login. Isso é útil se você reinstalou o aplicativo ou deseja restaurar a experiência de usuário anterior sem selecionar novamente regiões e configurações.
-- *Restaurar de arquivo.* Abre o gerenciador de arquivos do dispositivo para selecionar e importar um arquivo `.osf`.
+- *Restaurar do OsmAnd Cloud.* Abre o ecrã principal do [OsmAnd Cloud](../personal/osmand-cloud.md) ou o ecrã de login. Isto é útil se reinstalou a aplicação ou quer restaurar a experiência de utilizador anterior sem voltar a selecionar regiões e definições.
+- *Restaurar de ficheiro.* Abre o gestor de ficheiros do dispositivo para selecionar e importar um ficheiro `.osf`.
 
 
-### Mapas e Recursos {#maps-and-resources}
+## Mapas e Recursos {#maps-and-resources}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
+Ir para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Menu de download de mapas geral Android](@site/static/img/personal/maps/download_menu_andr.png)
 
@@ -97,7 +92,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+Ir para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Menu de download de mapas geral iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
@@ -105,84 +100,82 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 </Tabs>
 
-A tela [Mapas e Recursos](../personal/maps-resources.md) oferece acesso às seguintes seções:
+O ecrã [Mapas e Recursos](../personal/maps-resources.md) dá acesso às seguintes secções:
 
-- [Downloads](../personal/maps-resources.md#downloads). Oferece uma seleção abrangente de [tipos de mapa OsmAnd](../personal/maps-resources.md#map-types).
-- [Local](../personal/maps-resources.md#local). Exibe todos os dados de mapa atualmente armazenados em seu dispositivo, incluindo recursos personalizados e importados.
-- [Atualizações](../personal/maps-resources.md#updates). Permite que você atualize os mapas mensalmente para manter seus dados atualizados.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Oferece uma seleção abrangente de [tipos de mapa OsmAnd](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local-menu). Exibe todos os dados do mapa atualmente armazenados no seu dispositivo, incluindo recursos personalizados e importados.
+- [Atualizações](../personal/maps-resources.md#updates-menu). Permite-lhe atualizar os mapas mensalmente para manter os seus dados atualizados.
 
-#### Baixando Mapas {#downloading-maps}
+### Baixar Mapas {#downloading-maps}
 
-Para baixar um tipo de mapa específico para um país ou região:
+Para descarregar um tipo de mapa específico para um país ou região:
 
-- Navegue até a pasta da região necessária, como África, Europa ou outro continente.
-- Selecione seu país ou região preferido na lista.
-- Na próxima tela, revise e escolha entre os tipos de mapa disponíveis para essa área.
+- Navegue para a pasta da região necessária, como África, Europa ou outro continente.
+- Selecione o seu país ou região preferido na lista.
+- No ecrã seguinte, reveja e escolha entre os tipos de mapa disponíveis para essa área.
 
-Você pode encontrar informações sobre outros tipos de mapas na seção [Downloads](../personal/maps-resources.md#downloads) do artigo **Mapas**.
+Pode encontrar informações sobre outros tipos de mapas na secção [Downloads](../personal/maps-resources.md#downloads-menu) do artigo **Mapas**.
 
-### Opções do Mapa Mundi {#world-map-options}
+## Opções do Mapa Mundial {#world-map-options}
 
-O OsmAnd inclui duas opções de mapa mundi:
+O OsmAnd inclui duas opções de mapa mundial:
 
-1. **Mini Mapa Mundi** (pré-instalado). Um mapa leve que permite navegação básica e oferece uma visão geral do mundo.
-2. **Mapa Mundi Detalhado** (baixável). Um mapa global com as principais cidades, estradas, rios e outras características geográficas.
+1. **Mini Mapa Mundial** (pré-instalado). Um mapa leve que permite navegação básica e fornece uma visão geral do mundo.
+2. **Mapa Mundial Detalhado** (descarregável). Um mapa global com as principais cidades, estradas, rios e outras características geográficas.
 
 ***Notas importantes:***
 
-- O **Mapa Mundi Detalhado não substitui mapas individuais de países ou regiões.** É útil para uma visão geral, mas não contém o mesmo nível de detalhe que os mapas regionais.
-- Se você precisar de navegação detalhada, **baixe mapas específicos de países ou regiões manualmente** via *Menu → Mapas e Recursos → Baixar Mapas.*
-- Usuários com **OsmAnd Pro ou Maps+** podem baixar um **número ilimitado de mapas**, mas ainda devem baixar cada região separadamente.
-- **Não há uma única opção para baixar todos os mapas mundiais de uma vez.**
+- O **Mapa Mundial Detalhado não substitui mapas de países ou regiões individuais.** É útil para uma visão geral, mas não contém o mesmo nível de detalhe que os mapas regionais.
+- Se precisar de navegação detalhada, **descarregue mapas de países ou regiões específicos manualmente** através de *Menu → Mapas e Recursos → Baixar Mapas.*
+- Utilizadores com **OsmAnd Pro ou Maps+** podem descarregar um **número ilimitado de mapas**, mas ainda assim devem descarregar cada região separadamente.
+- **Não existe uma única opção para descarregar todos os mapas mundiais de uma só vez.**
 
 
-### Selecionar no mapa {#select-on-the-map}
+## Selecionar no Mapa {#select-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Um toque curto no mapa mundi permite baixar o mapa da região](@site/static/img/map/download_region_map_via_worldmap.png)
+![Um toque curto no mapa mundial permite descarregar o mapa da região](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Um toque curto no mapa mundi permite baixar o mapa da região](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
+![Um toque curto no mapa mundial permite descarregar o mapa da região](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Uma maneira de baixar um mapa é diminuir o zoom no mapa mundi e tocar brevemente para selecionar uma região para download. Esta área será destacada em amarelo, e um painel aparecerá na parte inferior com o nome da região e uma sugestão para baixá-la ou selecionar outros mapas.
+Uma forma de descarregar um mapa é fazer zoom out no mapa mundial e tocar brevemente para selecionar uma região para descarregar. Esta área será destacada a amarelo, e um painel aparecerá na parte inferior com o nome da região e uma sugestão para a descarregar ou selecionar outros mapas.
 
 :::tip Cor do mapa
-Na tela pequena, o mapa selecionado para download será destacado em amarelo, os mapas que já foram baixados serão destacados em verde, e os mapas desativados serão destacados em laranja. Mapas **desativados** são ignorados para acelerar o programa caso você tenha muitos mapas carregados.
+No ecrã pequeno, o mapa selecionado para download será destacado a amarelo, os mapas que já foram descarregados serão destacados a verde, e os mapas desativados serão destacados a laranja. Os mapas **desativados** são ignorados para acelerar o programa caso tenha muitos mapas carregados.
 :::
 
-### Pesquisar {#search}
+## Pesquisar {#search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Função de pesquisa para baixar mapa Android](@site/static/img/settings/search_download_map_3_andr.png) ![Função de pesquisa para baixar mapa Android](@site/static/img/settings/search_download_map_4_andr.png)
+![Função de pesquisa para descarregar mapa Android](@site/static/img/settings/search_download_map_3_andr.png) ![Função de pesquisa para descarregar mapa Android](@site/static/img/settings/search_download_map_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Função de pesquisa para baixar mapa iOS](@site/static/img/settings/search_download_map_1_ios.png) ![Função de pesquisa para baixar mapa iOS](@site/static/img/settings/search_download_map_2_ios.png)
+![Função de pesquisa para descarregar mapa iOS](@site/static/img/settings/search_download_map_1_ios.png) ![Função de pesquisa para descarregar mapa iOS](@site/static/img/settings/search_download_map_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-A pesquisa facilita a localização de um mapa ou região específica, proporcionando uma maneira conveniente e rápida de baixar os dados de que você precisa. Você pode encontrar e baixar o mapa usando a [função de pesquisa](../search/index.md).
+A pesquisa facilita a localização de um mapa ou região específica, proporcionando uma forma conveniente e rápida de descarregar os dados de que necessita. Pode encontrar e descarregar o mapa utilizando a [função de pesquisa](../search/index.md).
 
-- Inicie uma pesquisa digitando o nome de um país ou região no campo de pesquisa. Em seguida, selecione o mapa necessário na lista que aparece.
-- Os mapas disponíveis para download são exibidos em cinza com um ícone de download, os mapas baixados têm uma cor verde e um botão de menu.
-- Toque no nome do resultado desejado e a lista de mapas regionais será aberta.
-- Selecione [tipos de mapa](../personal/maps-resources.md#map-types): *Mapa padrão, Mapa apenas de estradas, Curvas de nível, Wikipédia*.
-
-> *Última atualização: Janeiro de 2025*
+- Inicie uma pesquisa introduzindo o nome de um país ou região no campo de pesquisa. Em seguida, selecione o mapa necessário na lista que aparece.
+- Os mapas disponíveis para download são exibidos a cinzento com um ícone de download, os mapas descarregados têm uma cor verde e um botão de menu.
+- Toque no nome do resultado necessário e a lista de mapas regionais será aberta.
+- Selecione [tipos de mapa](../personal/maps-resources.md#map-types): *Mapa padrão, Mapa apenas de estradas, Curvas de nível, Wikipedia*.

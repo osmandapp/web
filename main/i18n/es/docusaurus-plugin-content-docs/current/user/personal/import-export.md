@@ -1,7 +1,7 @@
 ---
-source-hash: f24f24555f47b3d32f9623bdce45ca173d296caa2e59dbe6073460a5cd95119d
+source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
 sidebar_position: 10
-title: Importar / Exportar
+title:  Importar / Exportar
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,25 +15,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Resumen {#overview}
 
-Las herramientas de **Importar** y **Exportar** en OsmAnd te permiten gestionar tus datos. Puedes mover tus perfiles, favoritos, rutas y otras configuraciones usando un formato especial a través de las aplicaciones en tu dispositivo. Este proceso simplifica el guardado y la transferencia de datos entre dispositivos y te permite compartirlos con otros usuarios de OsmAnd.
+Las herramientas de **Importar** y **Exportar** en OsmAnd le permiten gestionar sus datos. Puede mover sus perfiles, favoritos, rutas y otros ajustes utilizando un formato especial a través de las aplicaciones de su dispositivo. Este proceso simplifica el guardado y la transferencia de datos entre dispositivos y le permite compartirlos con otros usuarios de OsmAnd.
 
 :::note Tamaño grande
-*Si el tamaño de los datos seleccionados es significativo, la aplicación tardará en preparar el archivo `.osf`.*
+*Si el tamaño de los datos seleccionados es significativo, la aplicación tardará un tiempo en preparar el archivo `.osf`.*
 :::
 
 
 ## Exportar / Importar datos {#export--import-data}
 
-Las funciones de *Importar* y *Exportar* te permiten guardar datos de **archivos** `.osf` generados o usar [fuentes en línea](../map/raster-maps.md), lo que hace posible restaurar la información después de una reinstalación.
+*Importar* y *Exportar* le permiten guardar datos de **archivos** `.osf` generados o utilizar [fuentes en línea](../map/raster-maps.md), lo que permite restaurar la información después de la reinstalación.
 
 **Tipos de datos** disponibles para importar/exportar:
 
-- **Configuración:**
-        [Perfiles](../personal/profiles.md#actions), &nbsp;[Configuración general/OsmAnd](../personal/global-settings.md), &nbsp;[Colores](../personal/color-palette-schemes.md), &nbsp;[Acción rápida](../widgets/quick-action.md), &nbsp;[Tipo de PDI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar carretera](../map/map-context-menu.md#avoid-road).
-- **Mis lugares:**
+- **Ajustes:**  
+        [Perfiles](../personal/profiles.md#actions), &nbsp;[Ajustes generales de OsmAnd](../personal/global-settings.md), &nbsp;[Colores](../personal/color-palette-schemes.md), &nbsp;[Acción rápida](../widgets/quick-action.md), &nbsp;[Tipo de PDI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar carretera](../map/map-context-menu.md#avoid-road).
+- **Mis Lugares:**  
         [Favoritos](../personal/favorites.md#export--import), &nbsp;[Rutas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Ediciones OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Historial de marcadores*, *Historial de búsqueda*, *Historial de navegación](../personal/global-settings.md#history), &nbsp;*Itinerario*.
-- **Recursos:**
-        [Estilo de renderizado](../map/vector-maps.md#custom-map-style), &nbsp;[Rutas](../navigation/routing/osmand-routing.md), &nbsp;[Motores de enrutamiento en línea](../navigation/routing/online-routing.md), &nbsp;[Fuentes de mapa*, *Mapas estándar/sin conexión](../map/raster-maps.md), &nbsp;[Mapas de Wikipedia y Viajes](../plan-route/travel-guides.md), &nbsp;[Mapas náuticos](../plugins/nautical-charts.md), &nbsp;[Mapas de carreteras](../map/vector-maps.md#road-style), &nbsp;[Mapas de topografía](../plugins/topography.md), &nbsp;[Mensajes de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Mensajes de voz (grabados)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Copia de seguridad de favoritos](../personal/favorites.md#automatic-favorites-backup).
+- **Recursos:**  
+        [Estilo de renderizado](../map/vector-maps.md#custom-map-style), &nbsp;[Enrutamiento](../navigation/routing/osmand-routing.md), &nbsp;[Motores de enrutamiento en línea](../navigation/routing/online-routing.md), &nbsp;[Fuentes de mapa*, *Mapas estándar/sin conexión](../map/raster-maps.md), &nbsp;[Mapas de Wikipedia y Viajes](../plan-route/travel-guides.md), &nbsp;[Cartas náuticas](../plugins/nautical-charts.md), &nbsp;[Mapas de carreteras](../map/vector-maps.md#road-style), &nbsp;[Mapas topográficos](../plugins/topography.md), &nbsp;[Instrucciones de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instrucciones de voz (grabadas)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Copia de seguridad de favoritos](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Exportar {#export}
@@ -42,9 +42,9 @@ Las funciones de *Importar* y *Exportar* te permiten guardar datos de **archivos
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Perfiles Acciones Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)
+![Acciones de Perfiles Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,13 +52,13 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Perfiles Acciones Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Perfiles Acciones Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![Acciones de Perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Acciones de Perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Todos los datos que hayas configurado y creado se pueden exportar usando el ***menú Exportar***. El menú consta de tres grupos: **Configuración**, **Mis lugares** y **Recursos**, que contienen todas las carpetas de archivos disponibles. Puedes seleccionar los archivos que deseas exportar en cada carpeta, uno a la vez o todos a la vez. **Todos los archivos exportados se guardan en formato `.osf`**.
+Todos los datos que ha configurado y creado se pueden exportar utilizando el ***Menú de exportación***. El menú consta de tres grupos: **Ajustes**, **Mis Lugares** y **Recursos**, que contienen todas las carpetas de archivos disponibles. Puede seleccionar los archivos que desea exportar en cada carpeta, uno por uno o todos a la vez. **Todos los archivos exportados se guardan en formato `.osf`**.  
 
 
 ### Importar {#import}
@@ -67,58 +67,56 @@ Todos los datos que hayas configurado y creado se pueden exportar usando el ***m
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-| |
-| --- | --- | --- |
-| ![Perfiles Acciones Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) | ![Perfiles Acciones Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) | ![Perfiles Acciones Importar 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) |
+![Acciones de Perfiles Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Acciones de Perfiles Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+
+<!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
-| |
-| --- | --- | --- |
-| ![Perfiles Acciones Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) | ![Perfiles Acciones Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) | ![Perfiles Acciones Importar 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) |
+
+![Acciones de Perfiles Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Acciones de Perfiles Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+<!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>
 
 </Tabs>
 
-Abre y restaura archivos `.osf`. Toca el archivo en el administrador de archivos del dispositivo o usa el botón de acción.
+Abre y restaura archivos `.osf`. Toque el archivo en el gestor de archivos del dispositivo o utilice el botón de acción.
 
-- *Algunos elementos ya existen*. Puedes usar esta función para guardar ambos archivos o reemplazarlos todos.
+- *Algunos elementos ya existen*. Puede utilizar esta función para guardar ambos archivos o reemplazarlos todos.
 - *Reiniciar*. Después de importar los archivos, la aplicación debe reiniciarse.
 
 
 ### OsmAnd Cloud {#osmand-cloud}
 
-[OsmAnd Cloud](../personal/osmand-cloud.md) es el recurso alternativo que necesitas para guardar tu configuración personal y los datos de la aplicación. Puedes usar estos datos en cualquier dispositivo disponible para instalar la aplicación OsmAnd o al usar la aplicación de escritorio. Cualquier cambio que realices se puede sincronizar.
+[OsmAnd Cloud](../personal/osmand-cloud.md) es el recurso alternativo que necesita para guardar sus ajustes personales y los datos de la aplicación. Puede utilizar estos datos en cualquier dispositivo disponible para instalar la aplicación OsmAnd o al utilizar la aplicación de escritorio. Cualquier cambio que realice se puede sincronizar.
 
 
-## Prevención de pérdida de datos {#preventing-data-loss}
+## Prevenir la pérdida de datos {#preventing-data-loss}
 
-En las versiones de *Android* e *iOS* de OsmAnd, si **desinstalas** completamente la aplicación o seleccionas **Borrar datos** en la información de la aplicación del menú de Configuración de tu dispositivo, la carpeta de datos también se eliminará del administrador de archivos del dispositivo. Si no tomas precauciones, esto resultará en la **pérdida de todos los mapas descargados para datos de OsmAnd, todos los Favoritos guardados, rutas GPX, mensajes de voz (TTS) y [otros datos](#export--import-data).**
+En las versiones de *Android* e *iOS* de OsmAnd, si **desinstala** completamente la aplicación o selecciona **Borrar datos** en el menú de Ajustes de información de la aplicación de su dispositivo, la carpeta de datos también se eliminará del gestor de archivos del dispositivo. Si no toma precauciones, esto resultará en la **pérdida de todos los mapas descargados para los datos de OsmAnd, todos los Favoritos guardados, las rutas GPX, las instrucciones de voz (TTS) y [otros datos](#export--import-data).**
 
-Hay dos formas de guardar tus datos antes de reinstalar la aplicación OsmAnd:
+Hay dos formas de guardar sus datos antes de reinstalar la aplicación OsmAnd:
 
-- Usa [OsmAnd Cloud](#osmand-cloud). Puedes hacer una copia de seguridad de tus datos usando funciones de OsmAnd como [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), como versión gratuita, o [OsmAnd Pro](../purchases/index.md), una suscripción de pago con más funciones.
-- [Exportar archivo OSF](#export) con tus datos. Copia el archivo `.osf` a una carpeta de tu dispositivo o a OsmAnd Cloud. Después de reinstalar OsmAnd, [importa este archivo `.osf`](#import) a la aplicación OsmAnd.
+- Usar [OsmAnd Cloud](#osmand-cloud). Puede hacer una copia de seguridad de sus datos utilizando las funciones de OsmAnd como [OsmAnd Start](../personal/osmand-cloud.md#osmand-start), como versión gratuita, o [OsmAnd Pro](../purchases/index.md), una suscripción de pago con más funciones.
+- [Exportar archivo OSF](#export) con sus datos. Copie el archivo `.osf` a una carpeta en su dispositivo o en OsmAnd Cloud. Después de reinstalar OsmAnd, [importe este archivo `.osf`](#import) a la aplicación OsmAnd.
 
 
 ## Artículos relacionados {#related-articles}
 
-- [Perfiles (Configuración)](./profiles.md)
-- [Gestionar rutas](../personal/tracks/manage-tracks.md#import--export-track)
+- [Perfiles (Ajustes)](./profiles.md)
+- [Gestionar Rutas](../personal/tracks/manage-tracks.md#import--export-track)
 - [Historial de búsqueda](../search/search-history.md#export-and-share)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
 
 ### Problemas comunes y soluciones {#common-issues-and-solutions}
 
-1. Cómo transferir Favoritos y Rutas a un nuevo dispositivo. [(ver)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
-2. Tengo un archivo GPX, ¿cómo lo importo a OsmAnd? [(ver)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Eliminación de datos del mapa después de la actualización de la aplicación (si está seleccionada la "Almacenamiento multiusuario 1"). [(ver)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
-
-> *Última actualización: Enero de 2025*
+1. Cómo transferir Favoritos y Rutas a un nuevo dispositivo. [(verificar)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
+2. Tengo un archivo GPX, ¿cómo lo importo a OsmAnd? [(verificar)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
+3. Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona "Almacenamiento multiusuario 1"). [(verificar)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

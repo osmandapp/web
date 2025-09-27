@@ -1,7 +1,7 @@
 ---
-source-hash: 2c18098f94d113417dbc7c36dee6af4769f8e0f98a71713649f8f3d246f92e77
+source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
 sidebar_position: 2
-title: Aankopen & Betalingen
+title:  Aankopen & Betalingen
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,57 +13,68 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Cross-platform aankopen {#cross-platform-purchases}
+## Platformonafhankelijke aankopen {#cross-platform-purchases}
 
-**OsmAnd Pro** en **Maps+** (*Alle Wereldkaarten* voor iOS) zijn **cross-platform abonnementen** beschikbaar voor Android en iOS vanaf OsmAnd 5.0. Cross-platform betekent dat als je een abonnement koopt, bijvoorbeeld in een van de Android-winkels (Google Play, Huawei AppGallery), je het ook kunt gebruiken op iOS en in de webversie.
+**OsmAnd Pro** en **Maps+** (*Alle Wereldkaarten* voor iOS) zijn **platformonafhankelijke abonnementen** die beschikbaar zijn voor Android en iOS vanaf OsmAnd 5.0. Platformonafhankelijk betekent dat als u een abonnement koopt, bijvoorbeeld in een van de Android-winkels (Google Play, Huawei AppGallery), u dit ook op iOS en in de webversie kunt gebruiken.
 
-- Cross-platform abonnementen kunnen op meerdere apparaten en platforms worden gebruikt **indien gekoppeld aan hetzelfde OsmAnd Cloud-account**.
+- Een platformonafhankelijk abonnement kan op meerdere apparaten en platforms worden gebruikt **als het gekoppeld is aan hetzelfde OsmAnd Cloud-account**.
 
 - Eenmalige aankopen zoals **OsmAnd+** (Android) en winkelspecifieke aankopen zijn niet overdraagbaar tussen platforms.
 
-- Je kunt OsmAnd Pro op maximaal 6 apparaten gebruiken, zelfs als ze verschillende besturingssystemen hebben.
+- U kunt OsmAnd Pro op maximaal 6 apparaten gebruiken, zelfs als ze verschillende besturingssystemen hebben.
 
-- Zorg er altijd voor dat je hetzelfde OsmAnd Cloud-account gebruikt op alle apparaten om toegang te krijgen tot je aankopen.
+- Zorg er altijd voor dat u op alle apparaten hetzelfde OsmAnd Cloud-account gebruikt om toegang te krijgen tot uw aankopen.
 
-- Voor meer details, zie: [Android aankopen](../purchases/android.md), [iOS aankopen](../purchases/ios.md), en [OsmAnd Kaartportaal](https://www.osmand.net/map).
+- Voor meer details, zie: [Android-aankopen](../purchases/android.md), [iOS-aankopen](../purchases/ios.md), [Platformonafhankelijke aankopen](../purchases/cross.md) en [OsmAnd Kaartportaal](../purchases/web.md).
 
 
-### Hoe je aankoop te koppelen aan je OsmAnd Cloud-account {#how-to-link-your-purchase-to-osmand-cloud-account}
+### Hoe u uw aankoop kunt koppelen aan uw OsmAnd Cloud-account {#how-to-link-your-purchase-to-osmand-cloud-account}
 
-1. Als je **geen** OsmAnd Cloud-account hebt:
+1. Als u **geen** OsmAnd Cloud-account heeft:
 
-    - Open de OsmAnd-app op het apparaat waar je de aankoop hebt gedaan.
+    - Open de OsmAnd-app op het apparaat waarop u de aankoop heeft gedaan.
     - Ga naar *Menu → Instellingen → OsmAnd Cloud*.
     - Tik op **Nieuw account aanmaken**.
-    - Nadat je het account hebt aangemaakt, ga je naar *OsmAnd Menu → Instellingen → Aankopen*.
-    - Tik op **Aankopen herstellen** om je aankoop aan een nieuw account te koppelen.
+    - Nadat u het account heeft aangemaakt, gaat u naar *OsmAnd Menu → Instellingen → Aankopen*.
+    - Tik op **Aankopen herstellen** om uw aankoop aan een nieuw account te koppelen.
 
-2. Als je **al** een OsmAnd Cloud-account hebt:
+2. Als u **al een** OsmAnd Cloud-account heeft:
 
-    - Zorg ervoor dat je bent ingelogd op het OsmAnd Cloud-account op het apparaat waar je de aankoop hebt gedaan.
+    - Zorg ervoor dat u bent ingelogd op het OsmAnd Cloud-account op het apparaat waarop u de aankoop heeft gedaan.
     - Navigeer naar *OsmAnd Menu → Instellingen → OsmAnd Cloud → Ik heb al een account*
-    - Nadat je bent ingelogd op je account, ga je naar *OsmAnd Menu → Instellingen → Aankopen*.
-    - Tik op **Aankopen herstellen** om de aankoop met je account te synchroniseren.
+    - Nadat u bent ingelogd op uw account, gaat u naar *OsmAnd Menu → Instellingen → Aankopen*.
+    - Tik op **Aankopen herstellen** om de aankoop met uw account te synchroniseren.
 
 
-> Voor meer informatie, lees het artikel [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+> Voor meer informatie, lees de artikelen [OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform) en [Platformonafhankelijke aankopen](../purchases/cross.md).
 
 
-## Hoe OsmAnd te kopen en te herstellen in de Huawei AppGallery zonder Huawei Mobile Services {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
+### Koppeling van aankopen met meerdere OsmAnd Cloud-accounts {#purchase-association-with-multiple-osmand-cloud-accounts}
 
-1. **Koop OsmAnd**:
-   - Schakel eerst *Installeren vanuit onbekende bronnen* in de instellingen van je apparaat in. Je vindt deze optie meestal onder **Instellingen → Beveiliging**.
+
+Een platformonafhankelijke aankoop, zoals _Maps+_ en _Pro_, is gekoppeld aan het OsmAnd Cloud-account dat als laatste is geactiveerd op het apparaat met het originele aankoopbewijs (van de App Store of Google Play). Als een gebruiker op dit apparaat uitlogt van zijn primaire account (`OsmAnd Cloud-account A`) en inlogt op een nieuw account (`OsmAnd Cloud-account B`), draagt het OsmAnd-systeem de licentie automatisch over naar het nieuwe `OsmAnd Cloud-account B`. Als gevolg hiervan verliest uw oorspronkelijke OsmAnd Cloud-account zijn aankoopstatus op andere platforms, omdat de licentie slechts op één OsmAnd Cloud-account tegelijk actief kan zijn.
+
+Technisch gezien werkt dit als volgt: de aankoop zelf behoort toe aan uw Apple ID of Google-account, niet aan een OsmAnd-account. De OsmAnd-app op het apparaat met de aankoop informeert onze server simpelweg welk OsmAnd Cloud-account momenteel actief is. De server verleent op zijn beurt platformonafhankelijke toegang aan dat account. Daarom wordt het laatste account dat inlogt op het "hoofd"-apparaat altijd de houder van de licentie.
+
+Om de aankoop te herstellen naar het juiste account (`OsmAnd Cloud-account A`), moet u de omgekeerde actie uitvoeren. Op hetzelfde apparaat waar de aankoop is gedaan, moet u uitloggen van het onjuiste `OsmAnd Cloud-account B` en weer inloggen op `OsmAnd Cloud-account A`. Dit proces dwingt het systeem om het aankoopbewijs opnieuw te verifiëren en de licentie opnieuw te koppelen aan het juiste `OsmAnd Cloud-account A`, waardoor de platformonafhankelijke status wordt hersteld.
+
+> Voor meer informatie, lees de artikelen over [Platformonafhankelijke aankopen](../purchases/cross.md).
+
+## Hoe u OsmAnd kunt kopen en herstellen in de Huawei AppGallery zonder Huawei Mobile Services {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
+
+1. **OsmAnd kopen**:
+   - Schakel eerst *Installeren van onbekende bronnen* in de instellingen van uw apparaat in. U kunt deze optie meestal vinden in **Instellingen → Beveiliging**.
    - Installeer de [Huawei Mobile Services (HMS Core)](https://consumer.huawei.com/za/community/details/Download-the-latest-Huawei-HMS-Core-APK-5-3-0-312/topicId-142217/), wat essentieel is voor app-compatibiliteit.
-   - Open vervolgens de *Huawei AppGallery* op de [OsmAnd](https://appgallery.huawei.com/#/app/C101486545)-pagina en download de app.
-   - Alleen de gratis versie is in eerste instantie beschikbaar om te downloaden. Om een aankoop te doen, ga je naar OsmAnd *Menu → Instellingen → Aankopen* en selecteer je het gewenste type.
-   - Voor verdere details, bezoek [deze pagina](https://osmand.net/docs/user/purchases/android#install-application).
+   - Open vervolgens *Huawei AppGallery* op de [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) pagina en download de app.
+   - In eerste instantie is alleen de gratis versie beschikbaar om te downloaden. Om een aankoop te doen, ga naar OsmAnd *Menu → Instellingen → Aankopen* en selecteer het gewenste type.
+   - Voor meer details, bezoek [deze pagina](https://osmand.net/docs/user/purchases/android#install-application).
 
 2. **Aankoop herstellen**:
-   - Om je aankoop te herstellen, log je in bij *Huawei AppGallery* met hetzelfde account dat is gekoppeld aan je OsmAnd-aankoop.
-   - Controleer je transactiegeschiedenis in de [Huawei App Gallery bestelgeschiedenis](https://consumer.huawei.com/en/support/content/en-us00694318/).
-   - Mogelijk moet je *Huawei AppGallery* bijwerken en de cache wissen om problemen te voorkomen.
-   - Om je aankopen te herstellen, volg je *Menu → Instellingen → Aankopen → Aankopen herstellen* in OsmAnd.
-   - Voor meer informatie, zie het artikel [Android Aankopen](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
+   - Om uw aankoop te herstellen, logt u in op *Huawei AppGallery* met hetzelfde account dat aan uw OsmAnd-aankoop is gekoppeld.
+   - Controleer uw transactiegeschiedenis in de [bestelgeschiedenis van de Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
+   - Mogelijk moet u *Huawei AppGallery* bijwerken en de cache wissen om problemen te voorkomen.
+   - Om uw aankopen te herstellen, volgt u *Menu → Instellingen → Aankopen → Aankopen herstellen* in OsmAnd.
+   - Voor meer informatie, zie het artikel [Android-aankopen](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
 
 <!--
 - Instructies voor het instellen van Huawei Mobile Services.
@@ -71,62 +82,62 @@ import Translate from '@site/src/components/Translate.js';
 - Aankopen herstellen in de Huawei AppGallery.
 -->
 
-## Amazon store sluit - wat te doen {#amazon-store-is-closing---what-to-do}
+## De Amazon-winkel sluit - wat te doen {#amazon-store-is-closing---what-to-do}
 
-Op **20 augustus 2025** sluit Amazon de Amazon Appstore voor Android-apparaten. Je kunt de officiële aankondiging [hier](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) lezen.
+Op **20 augustus 2025** sluit Amazon de Amazon Appstore voor Android-apparaten. U kunt de officiële aankondiging [hier](https://developer.amazon.com/apps-and-games/blogs/2025/02/upcoming-changes-to-amazon-appstore-for-android-devices-and-coins-program) lezen.
 
-Als je aankopen hebt gedaan via Amazon, moet je **je abonnementen (Pro, Maps+) of in-app (Maps+) aankopen overzetten** naar een ander platform.
+Als u aankopen heeft gedaan via Amazon, moet u uw **abonnementen (Pro, Maps+) of in-app aankopen (Maps+) overzetten** naar een ander platform.
 
-➡️ Momenteel is [cross-platform overdracht mogelijk voor abonnementen en in-app aankopen](../purchases/cross.md).
-❗ **OsmAnd+** (stand-alone app) kan niet tussen platforms worden overgedragen via het OsmAnd Cloud-account. Voor hulp, neem contact op met **support@osmand.net**.
+➡️ Momenteel is [platformonafhankelijke overdracht mogelijk voor abonnementen en in-app aankopen](../purchases/cross.md).
+❗ **OsmAnd+** (zelfstandige app) kan niet worden overgedragen tussen platforms via een OsmAnd Cloud-account. Neem voor hulp contact op met **support@osmand.net**.
 
-## Hoe de Topografie (voorheen Contourlijnen) plugin aankoop te herstellen {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
+## Hoe de aankoop van de Topografie-plug-in (voorheen Hoogtelijnen) te herstellen {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
-Om de [Topografie plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid) te herstellen:
+Om de [Topografie-plug-in](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid) te herstellen:
 
-1. Log in op hetzelfde Google Play-account dat is gebruikt om de Topografie plugin te kopen, en installeer [de app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
-2. Als de *Installeren*-knop inactief is, zorg er dan voor dat zowel de Google Play- als de OsmAnd-apps up-to-date zijn. Wis hun cache, herstart je apparaat en probeer de plugin opnieuw te installeren.
-3. Na installatie, schakel de Topografie plugin in via het *[OsmAnd menu → Plugins](../plugins/topography.md)*, download de benodigde bestanden in de *[Kaarten en Bronnen](../start-with/download-maps.md#maps-and-resources)*, en activeer deze via het *[Kaart configureren menu](../map/configure-map-menu.md)*.
+1. Log in op hetzelfde Google Play-account dat u gebruikte om de Topografie-plug-in te kopen en installeer [de app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
+2. Als de *Installeren*-knop inactief is, zorg er dan voor dat zowel de Google Play- als de OsmAnd-app up-to-date zijn. Wis hun cache, start uw apparaat opnieuw op en probeer de plug-in opnieuw te installeren.
+3. Schakel na de installatie de Topografie-plug-in in via *[OsmAnd menu → Plug-ins](../plugins/topography.md)*, download de benodigde bestanden in *[Kaarten en bronnen](../start-with/download-maps.md#maps-and-resources)* en activeer deze via het *[Kaart configureren-menu](../map/configure-map-menu.md)*.
 
 
-## Hoe te identificeren of OsmAnd Unlimited actief is {#how-to-identify-if-osmand-unlimited-is-active}
+## Hoe te herkennen of OsmAnd Unlimited actief is {#how-to-identify-if-osmand-unlimited-is-active}
 
-Navigeer naar *Menu → Kaarten downloaden* en tik op de kaartteller (het veld met de tekst *Gratis versie. X downloads over*). Als OsmAnd Unlimited actief is, toont het scherm de resterende opslagruimte van het apparaat in plaats van het aantal gratis downloads.
+Navigeer naar *Menu → Kaarten downloaden* en tik op de kaartenteller (het veld met het label *Gratis versie. X downloads over*). Als OsmAnd Unlimited actief is, wordt de resterende opslagruimte op het apparaat weergegeven in plaats van het aantal gratis downloads.
 
 
 ## Kan ik de volledige versie van OsmAnd als een aparte app voor iOS krijgen? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
 
-Voor iOS is er slechts één versie van OsmAnd beschikbaar. Om toegang te krijgen tot de volledige versie, moet je extra functies ontgrendelen via in-app aankopen.
+Voor iOS is er slechts één versie van OsmAnd beschikbaar. Om toegang te krijgen tot de volledige versie, moet u extra functies ontgrendelen via in-app aankopen.
 
 
 ## Wat betekenen 5 of 7 gratis downloads? {#what-do-5-or-7-free-downloads-mean}
 
-Je krijgt 5 gratis downloads op iOS of 7 op Android. Elke download, of het nu een kaart, een update (kaartupdates tellen als downloads), stemmenpakketten of andere items is, vermindert het beschikbare aantal. Let op, het verwijderen van items uit je downloads herstelt het aantal gratis downloads niet.
+U heeft recht op 5 gratis downloads op iOS of 7 op Android. Elke download, of het nu een kaart, een update (kaartupdates tellen als downloads), stemmenpakketten of andere items zijn, vermindert het beschikbare aantal. Let op, het verwijderen van items uit uw downloads herstelt het aantal gratis downloads niet.
 
 
 ## Hoe kan ik extra kaartdownloads krijgen in OsmAnd Free? {#how-can-i-get-additional-map-downloads-in-osmand-free}
 
-Als je alle 5 (iOS) of 7 (Android) gratis downloads hebt gebruikt, kun je 3 extra downloads ontvangen door je *aan te melden voor de mailinglijst*. Een banner met de abonnementsoptie verschijnt zodra alle gratis downloads zijn gebruikt.
+Als u alle 5 (iOS) of 7 (Android) gratis downloads heeft gebruikt, kunt u 3 extra downloads ontvangen door u *in te schrijven voor de mailinglijst*. Een banner met de inschrijvingsoptie verschijnt zodra alle gratis downloads zijn gebruikt.
 
 
 ## Verificatiecode voor OsmAnd Cloud niet ontvangen {#verification-code-for-osmand-cloud-not-received}
 
-Als je de **verificatiecode** niet ontvangt bij het aanmaken van een **OsmAnd Cloud**-account, volg dan deze stappen om het probleem op te lossen:
+Als u de **verificatiecode** niet ontvangt bij het aanmaken van een **OsmAnd Cloud**-account, volg dan deze stappen om het probleem op te lossen:
 
-1. Controleer je e-mailadres.
-    Zorg ervoor dat je het **juiste e-mailadres** hebt ingevoerd. Het e-mailadres moet overeenkomen met het adres dat is gebruikt voor de aankoop van **OsmAnd Pro** of de registratie van je **OsmAnd Cloud**-account.
+1. Controleer uw e-mailadres.
+    Zorg ervoor dat u het **juiste e-mailadres** heeft ingevoerd. Het e-mailadres moet overeenkomen met het adres dat is gebruikt voor de aankoop van **OsmAnd Pro** of de registratie van uw **OsmAnd Cloud**-account.
 
-2. Controleer spamfolders.
-    Soms kan de verificatie-e-mail als spam worden gefilterd. Zoek naar een e-mail van **OsmAnd** in je **Spam**, **Ongewenste e-mail** of **Promoties**-mappen.
+2. Controleer spam-mappen.
+    Soms wordt de verificatie-e-mail als spam gefilterd. Zoek naar een e-mail van **OsmAnd** in uw mappen **Spam**, **Ongewenst** of **Reclame**.
 
 3. Wacht tot de code arriveert.
-    In sommige gevallen kan de e-mail met de activeringscode **vertraging** oplopen. Vermijd **meerdere activeringspogingen** binnen een korte periode, aangezien dit extra vertragingen kan veroorzaken.
+    In sommige gevallen kan de e-mail met de activeringscode **vertraagd** zijn. Vermijd **meerdere activeringspogingen** binnen een korte periode, omdat dit extra vertragingen kan veroorzaken.
 
 4. Probeer de code opnieuw te verzenden.
-    Ga terug naar het **OsmAnd Cloud inlogscherm** en selecteer **Code opnieuw verzenden** indien beschikbaar. Wacht een paar minuten voordat je een nieuwe code aanvraagt.
+    Ga terug naar het **OsmAnd Cloud inlogscherm** en selecteer **Code opnieuw verzenden** indien beschikbaar. Wacht een paar minuten voordat u een nieuwe code aanvraagt.
 
-5. Controleer e-mailserverbeperkingen.
-    Als je een **bedrijfs- of aangepast e-maildomein** gebruikt, neem dan contact op met je **e-mailprovider** om er zeker van te zijn dat de e-mail niet wordt geblokkeerd. Overweeg een andere e-mailservice te gebruiken (bijv. Gmail, Outlook) als de problemen aanhouden.
+5. Verifieer beperkingen van de e-mailserver.
+    Als u een **zakelijk of aangepast e-maildomein** gebruikt, controleer dan bij uw **e-mailprovider** of de e-mail niet wordt geblokkeerd. Overweeg een andere e-maildienst te gebruiken (bijv. Gmail, Outlook) als de problemen aanhouden.
 
 <!--
 ## Aankopen & Betalingen {#purchases--payments}
@@ -134,11 +145,11 @@ Als je de **verificatiecode** niet ontvangt bij het aanmaken van een **OsmAnd Cl
 - Aankoop wordt niet weergegeven
 - Aankoop wordt niet hersteld
 - Betalingsproblemen
-- Terugbetalingsbeleid
-- Stap-voor-stap oplossingen voor problemen met aankopen.
+- Restitutiebeleid
+- Stapsgewijze oplossingen voor problemen met aankopen.
 - Instructies voor het wissen van de cache van Google Play, Huawei AppGallery.
 - Wat te doen als de aankoop niet verschijnt of de transactie mislukt.
-- Aankoop wordt niet weergegeven - aanbevelingen voor het controleren van je account en het herstellen van je aankopen.
+- Aankoop wordt niet weergegeven - aanbevelingen over hoe u uw account kunt controleren en uw aankopen kunt herstellen.
 - Betalingsproblemen - instructies voor het contacteren van Google Play Support in geval van betalingsproblemen.
 
 

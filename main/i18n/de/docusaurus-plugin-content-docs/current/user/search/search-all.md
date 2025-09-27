@@ -1,7 +1,7 @@
 ---
-source-hash: a37206b0786e0c2a77928c36df15a5b99385e8522ae259e744dfd7222696eb76
+source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
 sidebar_position: 1
-title:  Alle suchen
+title:  Alles durchsuchen
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,24 +17,24 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
-Die **Suche** ist ein nützliches Werkzeug, um schnell Orte zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengraden. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z.B. Cafés, Hotels oder Tankstellen. Die [Suchhistorie](#search-history) speichert frühere Suchen für den schnellen Zugriff auf zuvor gefundene Orte. Die Suchfunktion erleichtert die Reiseplanung, die Navigation in unbekanntem Gelände und das Auffinden von POIs in der Nähe.
+Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der [Suchverlauf](#search-history) speichert vergangene Suchen für einen schnellen Zugriff auf zuvor gefundene Orte. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
 
 
-## Verwendung {#how-to-use}
+## Wie zu verwenden {#how-to-use}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![POI-Liste suchen Android](@site/static/img/search/poi_list_android.png)
+![POI-Suchliste Android](@site/static/img/search/poi_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI-Liste suchen iOS](@site/static/img/search/poi_list_1_ios.png)  
+![POI-Suchliste iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
@@ -42,9 +42,9 @@ Die **Suche** ist ein nützliches Werkzeug, um schnell Orte zu finden. Sie könn
 
 Sie müssen einen der folgenden Schritte ausführen, um Ihre Suche zu starten:
 
-- Tippen Sie auf die [Suchschaltfläche](../widgets/map-buttons.md#search) auf dem Kartenanwendungsbildschirm und geben Sie Ihre Abfrage ein.
+- Tippen Sie auf die [Suchen-Schaltfläche](../widgets/map-buttons.md#search) auf dem Bildschirm der Kartenanwendung und geben Sie Ihre Anfrage ein.
 
-- Gehen Sie zum Haupt-*Menü → Suchen → geben Sie Ihre Suchanfrage ein*.
+- Gehen Sie zum Hauptmenü *Menü → Suchen → geben Sie Ihre Suchanfrage ein*.
 
 - Wenn Sie eine Route vorbereiten, tippen Sie auf [*Navigation → Ziel festlegen → Suchfeld*](../navigation/setup/route-navigation.md#set-target-point) *→ Suchanfrage*.  
 
@@ -53,11 +53,11 @@ Wichtige Informationen:
 
 - ***Heruntergeladene Offline-Vektorkarten sind für die Suche mit OsmAnd erforderlich***.
 
-- Zunächst **basiert die Suche auf den Daten, die auf der Karte im sichtbaren Bereich des Gerätebildschirms liegen**, aber wenn dort nichts gefunden wird, bietet OsmAnd an, den Suchradius zu vergrößern.  
+- Zunächst **basiert die Suche auf den Daten, die sich auf der Karte im sichtbaren Bereich des Gerätebildschirms befinden**, aber wenn dort nichts gefunden wird, bietet OsmAnd an, den Suchradius zu vergrößern.  
 
 ### Grundlegende Abfragen {#basic-queries}
 
-***Abfrageliste***:
+***Liste der Abfragen***:
 
 - Koordinaten in allen verfügbaren Formaten.
 - Adresse:
@@ -65,19 +65,19 @@ Wichtige Informationen:
     - Stadt, Straße;
     - Straßenkreuzungen;
     - Stadt;
-    - Tiger-Daten;
+    - TIGER-Daten;
     - Postleitzahl, Hausnummer;
     - Postleitzahl, Straße, Hausnummer.
-- POI-Suche nach Name und Kategorie mit zusätzlichen Filtern.
-- OSM-Routensuche nach Name und Kategorie mit zusätzlichen Filtern.
+- Suche nach POI nach Name und Kategorie mit zusätzlichen Filtern.
+- Suche nach OSM-Routen nach Name und Kategorie mit zusätzlichen Filtern.
 - Suche nach den markantesten Gipfeln und Vulkanen.
 - Suche nach Favoriten und Wegpunkten.
-- Suchsymbole nach POI-Unterkategorienamen.
+- Suche nach Symbolen anhand von POI-Unterkategorienamen.
 - Suche nach Tracks.
-- Suche nach Geschäftsorten und Markennamen.
+- Suche nach Geschäftsstandorten und Markennamen.
 - Online-Suche (Nominatim).
 - URL-Suche (Google und OsmAnd).
-- Suchhistorie.
+- Suchverlauf.
 
 <!--
 ***Supported formats*:**  
@@ -87,23 +87,23 @@ Wichtige Informationen:
 To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 -->
 
-### Sortieren von Suchergebnissen {#sorting-search-results}
+### Sortieren der Suchergebnisse {#sorting-search-results}
 
-OsmAnd sortiert Suchergebnisse automatisch nach drei Hauptkriterien:
+OsmAnd sortiert die Suchergebnisse automatisch nach drei Hauptkriterien:
 
-1. **Übereinstimmende Abfragen** — Ergebnisse, die exakte oder teilweise Übereinstimmungen mit den eingegebenen Wörtern enthalten, werden höher angezeigt.
+1. **Übereinstimmende Abfragen** — Ergebnisse, die exakte oder teilweise Übereinstimmungen mit den von Ihnen eingegebenen Wörtern enthalten, werden höher angezeigt.
 
-2. **Objekttyp** - Beim Sortieren nach Namen werden Städte und Straßen gegenüber POIs bevorzugt, wenn Ergebnisse angezeigt werden.
+2. **Objekttyp** - Bei der Sortierung nach Namen werden Städte und Straßen bei der Anzeige der Ergebnisse gegenüber POIs bevorzugt.
 
 3. **Entfernung** - Wenn Ergebnisse ähnliche Übereinstimmungskriterien und Objekttypen aufweisen, werden die Ergebnisse, die dem aktuellen Standort des Benutzers am nächsten liegen, zuerst angezeigt.
 
-***Zum Beispiel*** zeigt eine Suchanfrage *Postamt* zuerst die nächstgelegenen Postämter an, auch wenn es andere Elemente mit ähnlichen Namen in größerer Entfernung gibt.  
+***Zum Beispiel*** wird eine Suchanfrage *Postamt* zuerst die nächstgelegenen Postämter anzeigen, auch wenn es andere Elemente mit ähnlichen Namen in größerer Entfernung gibt.  
 
 ***Aktuelle Einschränkungen:***
 
 - Es gibt keine manuelle Einstellung, um die Sortierreihenfolge der Suchergebnisse zu ändern.
-- Der Sortierprozess wird **automatisch von OsmAnd verwaltet**, basierend auf den oben genannten Kriterien.
-- In Fällen, in denen die Suchergebnisse zu breit sind, kann OsmAnd die angezeigten Ergebnisse auf diejenigen mit der höchsten Wortübereinstimmungsgenauigkeit **begrenzen**.
+- Der Sortierprozess wird von OsmAnd **automatisch verwaltet**, basierend auf den oben aufgeführten Kriterien.
+- In Fällen, in denen die Suchergebnisse zu breit gefächert sind, kann OsmAnd **die angezeigten Ergebnisse auf diejenigen mit der höchsten Wortübereinstimmungsgenauigkeit beschränken**.
 
 
 ### Volltextsuche {#full-text-search}
@@ -124,25 +124,25 @@ OsmAnd sortiert Suchergebnisse automatisch nach drei Hauptkriterien:
 
 </Tabs>
 
-Sie können den gewünschten Ort auf der Karte aus der Liste der Punkte finden, die beim Eingeben einer Abfrage erscheinen.
+Sie können den gewünschten Ort auf der Karte aus der Liste der Punkte finden, die während der Eingabe einer Anfrage erscheinen.
 
 1. Beginnen Sie, den Namen oder die Adresse in die Suchleiste einzugeben.
 
-2. Während Sie tippen, zeigt die Liste die der Abfrage am nächsten liegenden Punkte an, ungefähr in dieser Reihenfolge:
+2. Während Sie tippen, zeigt die Liste die Punkte an, die der Anfrage am nächsten kommen, in etwa dieser Reihenfolge:
     - POI-Kategorien
     - Favoriten, POI, Routen und Wegpunkte
     - Tracks
     - Adressen
     - Karten zum Herunterladen
 
-3. Wenn Sie einen [Markennamen](../search/search-poi.md#how-to-use) eingeben, beginnt die Liste mit Ergebnissen dieses Namens, sortiert nach der kürzesten Entfernung.
+3. Wenn Sie einen [Markennamen](../search/search-poi.md#how-to-use) eingeben, beginnt die Liste mit Ergebnissen unter diesem Namen, sortiert nach der geringsten Entfernung.
 
-:::note TIGER-Datenbeschränkungen bei Adresssuchen
-OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER-Datensatz ist **bereichsbasiert** und enthält keine präzisen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
+:::note Einschränkungen der TIGER-Daten bei der Adresssuche
+OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER-Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
 :::
 
 
-### Suche auf der Karte {#search-on-the-map}
+### Auf der Karte suchen {#search-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -160,20 +160,20 @@ OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-iss
 
 </Tabs>
 
-OsmAnd ermöglicht Ihnen die Suche nach Punkten, die auf einer Karte auf dem Bildschirm Ihres Geräts angezeigt werden. Dazu:
+OsmAnd ermöglicht es Ihnen, nach Punkten zu suchen, die auf einer Karte auf dem Bildschirm Ihres Geräts angezeigt werden. Um dies zu tun:
 
-- Verwenden Sie [eine der Möglichkeiten](#how-to-use), um zum Suchwerkzeug zu gelangen.
+- Nutzen Sie [einen der Wege](#how-to-use), um zum Suchwerkzeug zu gelangen.
 - Beginnen Sie, den Namen oder die Adresse in das Suchfeld einzugeben.
-- Ein Feld mit der Schaltfläche *Auf Karte anzeigen* erscheint unter dem Suchfeld.
+- Unter dem Sucheingabefeld erscheint ein Feld mit der Schaltfläche *Auf Karte anzeigen*.
 - Tippen Sie auf diese Schaltfläche, um zur Karte zu gelangen.
-- Sie können Ihre Abfrage oben auf dem Bildschirm weiter eingeben.
+- Sie können Ihre Anfrage weiterhin oben auf dem Bildschirm eingeben.
 
 
-### Suche in der Nähe {#search-nearby}
+### In der Nähe suchen {#search-nearby}
 
 ![Suche Android](@site/static/img/search/search_all_near_location_andr.png)
 
-Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie dazu den gewünschten Punkt [aus der Liste im Suchmenü](#full-text-search) oder wählen Sie ihn direkt auf der Karte aus. Im [Kartenkontextmenü](../map/map-context-menu.md#actions) wählen Sie *Aktionen → In der Nähe suchen*.
+Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie dazu den gewünschten Punkt [aus der Liste im Suchmenü](#full-text-search) oder wählen Sie ihn direkt auf der Karte aus. Wählen Sie im [Kartenkontextmenü](../map/map-context-menu.md#actions) *Aktionen → In der Nähe suchen*.
 
 
 ## Adresssuche {#search-address}
@@ -194,28 +194,28 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 </Tabs>
 
-Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer vorsortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
+Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer bereits sortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
 
 
-## Suchhistorie {#search-history}
+## Suchverlauf {#search-history}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Suchhistorie](@site/static/img/search/history_search_android.png)
+![Verlaufssuche](@site/static/img/search/history_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suchhistorie](@site/static/img/search/history_search_ios.png)
+![Verlaufssuche](@site/static/img/search/history_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Sie können die **Suchhistorie** verwenden, um zuvor gefundene Orte, Adressen oder häufig besuchte Orte erneut zu suchen, ohne die Abfrage erneut eingeben zu müssen. Weitere Details finden Sie im Artikel [Suchhistorie](./search-history.md).
+Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten, Adressen oder häufig besuchten Orten zu suchen, ohne die Anfrage erneut eingeben zu müssen. Weitere Details finden Sie im Artikel [Suchverlauf](./search-history.md).
 
 
 ## POI-Suche {#search-poi}
@@ -236,15 +236,15 @@ Sie können die **Suchhistorie** verwenden, um zuvor gefundene Orte, Adressen od
 
 </Tabs>
 
-Die **POI-Suche** ist eine nach Kategorien sortierte Liste, mit der Sie ganz einfach Orte und Dienste in Ihrer Nähe oder in einem ausgewählten Bereich auf der Karte finden können.
+Die **POI-Suche** ist eine nach Kategorien sortierte Liste, mit der Sie leicht Orte und Dienstleistungen in der Nähe Ihres aktuellen Standorts oder eines ausgewählten Bereichs auf der Karte finden können.
 
-- [Benutzerdefinierte POI-Suche](./search-poi.md#custom-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
-Zum Beispiel, wenn Sie mehrere Arten von Diensten in einem bestimmten Gebiet oder auf einem bestimmten Abschnitt einer Route finden müssen.
+- Die [Benutzerdefinierte POI-Suche](./search-poi.md#custom-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
+Zum Beispiel, wenn Sie mehrere Arten von Dienstleistungen in einem bestimmten Gebiet oder auf einem bestimmten Abschnitt einer Route finden müssen.
 
 - OsmAnd bietet eine [Online-Suche](./search-poi.md#online-search), die in Echtzeit funktioniert und Ihnen schnellen Zugriff auf Suchergebnisse ermöglicht.  
-Dies ist praktisch, wenn Karten der Region nicht verfügbar sind, aber eine konstante und stabile Internetverbindung erforderlich ist.
+Sie ist praktisch, wenn keine Karten der Region verfügbar sind, aber eine konstante und stabile Internetverbindung erforderlich ist.
 
-- Weitere Informationen finden Sie im Artikel [POI-Suche](./search-poi.md).
+- Lesen Sie den Artikel [POI-Suche](./search-poi.md) für weitere Informationen.
 
 
 ## Koordinatensuche {#search-coordinates}
@@ -271,8 +271,6 @@ Die Koordinatensuche liefert einen genauen Standort. Sie können präzise Koordi
 ## Verwandte Artikel {#related-articles}
 
 - [Adresssuche](./search-address.md)
-- [Suchhistorie](./search-history.md)
+- [Suchverlauf](./search-history.md)
 - [POI-Suche](./search-poi.md)
 - [Koordinatensuche](./search-coordinates.md)
-
-> *Zuletzt aktualisiert: April 2025*

@@ -1,5 +1,5 @@
 ---
-source-hash: 46f8bd9f97c636e1d4eed0afa1bdf6ebb5963b97004fdc01d9e05197cf654281
+source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
 sidebar_position: 9
 title: OpenStreetMap Düzenleme
 ---
@@ -18,14 +18,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 [OpenStreetMap](https://www.openstreetmap.org/about) (OSM), dünyanın ayrıntılı, ücretsiz bir coğrafi haritasını oluşturmayı ve her kullanıcıya güncel açık kaynak verileri sağlamayı amaçlayan küresel bir topluluktur. OpenStreetMap düzenleme eklentisi, topluluğa katkıda bulunmanızı sağlar.
 
-OsmAnd ve OSM düzenleme eklentisi ile kendi bilgilerinizi OpenStreetMap.org'a kolayca katkıda bulunabilirsiniz; örneğin [İÇN'leri oluşturmak veya değiştirmek](#create--modify-poi), [notlar eklemek veya yorumlamak](#create--modify-osm-note) ve kaydedilen GPX [izlerini yüklemek](#upload-gps-track) gibi.
+OsmAnd ve OSM düzenleme eklentisi ile OpenStreetMap.org'a kendi bilgilerinizi kolayca katkıda bulunabilirsiniz; örneğin [İÇN'ler oluşturabilir veya değiştirebilir](#create--modify-poi), [notlar](#create--modify-osm-note) ekleyebilir veya yorumlayabilir ve kaydedilmiş GPX [izlerini](#upload-gps-track) yükleyebilirsiniz.
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
 *OpenStreetMap düzenleme* eklentisini kullanmak için aşağıdaki ayarları yapmanız gerekir:
 
 1. [Eklentiyi](../plugins/index.md#enable--disable) etkinleştirin.
-2. Herhangi bir [profilde](../personal/profiles.md) OpenStreetMap düzenlemesini ayarlayın.
+2. Herhangi bir [profile](../personal/profiles.md) OpenStreetMap düzenlemeyi ayarlayın.
 3. [Haritayı Yapılandır menüsünde](../map/configure-map-menu) *OSM notlarının (çevrimiçi)* veya *OSM düzenlemelerinin* haritada görüntülenmesini etkinleştirin.
 
 ## Ayarlar {#settings}
@@ -53,17 +53,17 @@ OsmAnd ve OSM düzenleme eklentisi ile kendi bilgilerinizi OpenStreetMap.org'a k
 </Tabs>
 
 :::note
-Eklenti ayarları küreseldir ve tüm profiller için geçerlidir.
+Eklenti ayarları geneldir ve tüm profiller için geçerlidir.
 :::
 
-- [OpenStreetMap'e giriş yapın](#authorization). Yeni veya değiştirilmiş değişiklikleri yüklemek için giriş yapın. Güvenli *OAuth 2.0 yöntemini* kullanın veya [OSM sitesinde oturum açın](https://www.openstreetmap.org/login). iOS için, OAuth yöntemi düğmesi yalnızca iOS 16.4 destekli sürüme sahip kullanıcılar için kullanılabilir.
-- **<Translate android="true" ids="offline_edition"/>**. Bu ayar etkinleştirilirse, değişiklikler önce yerel olarak (*Kaydet* düğmesi) kaydedilir ve istek üzerine yüklenir. Ayar devre dışı bırakılırsa, değişiklikler hemen yüklenir (*Yükle* düğmesi).
-- **<Translate android="true" ids="use_dev_url"/>** *(Yalnızca Android)*. OSM Notu, İÇN veya GPS izlerini yüklemeyi test etmek için [openstreetmap.org](http://openstreetmap.org/) yerine [dev.openstreetmap.org](https://dev.openstreetmap.org/) adresini etkinleştirmenizi sağlar. Etkinleştirildiğinde, OpenStreetMap.org'dan otomatik olarak çıkış yaparsınız. Bu ayar, yalnızca *OsmAnd geliştirme eklentisi* etkinleştirildiğinde listede kullanılabilir.
+- [OpenStreetMap'e giriş yapın](#authorization). Yeni veya değiştirilmiş değişiklikleri yüklemek için giriş yapın. Güvenli *OAuth 2.0 yöntemini* kullanın veya [OSM sitesinde oturum açın](https://www.openstreetmap.org/login). iOS için, OAuth yöntemi düğmesi yalnızca desteklenen iOS sürümü 16.4 olan kullanıcılar için kullanılabilir.
+- **<Translate android="true" ids="offline_edition"/>**. Bu ayar etkinleştirilirse, değişiklikler önce yerel olarak kaydedilir (*Kaydet* düğmesi) ve istek üzerine yüklenir. Ayar devre dışı bırakılırsa, değişiklikler hemen yüklenir (*Yükle* düğmesi).
+- **<Translate android="true" ids="use_dev_url"/>** *(Yalnızca Android)*. OSM Notu, İÇN veya GPS izlerini yüklemeyi test etmek için [openstreetmap.org](http://openstreetmap.org/) yerine [dev.openstreetmap.org](https://dev.openstreetmap.org/) adresini etkinleştirmenizi sağlar. Etkinleştirildiğinde, OpenStreetMap.org'dan otomatik olarak çıkış yaparsınız. Bu ayar yalnızca *OsmAnd geliştirme eklentisi* etkinleştirildiğinde listede kullanılabilir.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. [*Menü → Yerlerim → OSM düzenlemeleri*](../personal/myplaces.md) bölümünü açmak için dokunun. Bu sekme, düzenlenmemiş OSM notlarınızı listeler. Not ile aşağıdaki eylemler kullanılabilir: *Yükle*, *Haritada göster*, *OSM notunu değiştir*, *Sil*. Yüklenen veya silinen notlar artık listede görüntülenmez.
+- **<Translate android="true" ids="layer_osm_edits"/>**. [*Menü → Yerlerim → OSM düzenlemeleri*](../personal/myplaces.md) bölümünü açmak için dokunun. Bu sekme, düzenlenmemiş OSM notlarınızı listeler. Not ile aşağıdaki eylemler mevcuttur: *Yükle*, *Haritada göster*, *OSM notunu değiştir*, *Sil*. Yüklenen veya silinen notlar artık listede görüntülenmez.
 
 :::note
-Bir [OsmAnd Pro](../purchases/android.md#pro-features) aboneliğiniz varsa, OSM'de yapılan değişiklikler bir saat içinde OsmAnd haritanızda görünecektir. [Canlı güncellemelerin](../personal/maps-resources.md#osmand-live) etkinleştirildiğinden emin olun.
+Bir [OsmAnd Pro](../purchases/android.md#pro-features) aboneliğiniz varsa, OSM'de yapılan değişiklikler bir saat içinde OsmAnd haritanızda görünecektir. [Canlı güncellemelerin](../personal/maps-resources.md#live-updates) etkinleştirildiğinden emin olun.
 :::
 
 ### Yetkilendirme {#authorization}
@@ -72,13 +72,13 @@ Bir [OsmAnd Pro](../purchases/android.md#pro-features) aboneliğiniz varsa, OSM'
 
 <TabItem value="android" label="Android">
 
-![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/osm_authorization_andr.png)
+![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/osm_authorization_ios.png)
+![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -95,19 +95,19 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 <TabItem value="android" label="Android">
 
-![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/map_updates_mappers_login_andr.png) ![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/map_updates_mappers.png)
+![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_login_andr.png) ![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/map_updates_mappers_login_ios.png) ![OsmAnd haritacılar için canlı](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_login_ios.png) ![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-<Translate android="true" ids="map_updates_for_mappers"/> ayarı, aktif bir OpenStreetMap katılımcısıysanız **[OsmAnd canlı](../personal/maps-resources.md#free-for-osm-mappers)** özelliğini etkinleştirmenizi sağlar. Bu sayede standart aylık güncellemelerin aksine ücretsiz saatlik harita güncellemelerinden yararlanabilirsiniz. OpenStreetMap.org'a aktif katkıda bulunanlar, sınırsız saatlik harita güncellemelerine hak kazanabilirler. Sınırsız aylık ve saatlik harita güncellemelerine uygunluğunuzu kontrol etmek için OpenStreetMap'e giriş yapın.
+<Translate android="true" ids="map_updates_for_mappers"/> ayarı, aktif bir OpenStreetMap katkıda bulunanıysanız **[canlı güncellemeleri](../personal/maps-resources.md#free-for-osm-mappers)** etkinleştirmenizi sağlar. Bu şekilde, standart aylık güncellemelerin aksine ücretsiz saatlik harita güncellemelerinin keyfini çıkarabilirsiniz. OpenStreetMap.org'a aktif katkıda bulunanlar, sınırsız saatlik harita güncellemelerine hak kazanabilirler. Sınırsız aylık ve saatlik harita güncellemeleri için uygunluğunuzu kontrol etmek üzere OpenStreetMap'e giriş yapın.
 
 ### OSM Düzenleme Katmanı {#osm-editing-layer}
 
@@ -115,7 +115,7 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
 ![OSM düzenleme katmanı Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM düzenleme katmanı Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -123,7 +123,7 @@ Git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
 
 ![OSM düzenleme katmanı iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -131,15 +131,15 @@ Git: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offl
 
 </Tabs>
 
-*Ana Menü*'nün [Haritayı Yapılandır](../map/configure-map-menu.md) bölümünde *OSM notları* (çevrimiçi), *OSM düzenlemeleri*, *Düzeltme etiketleri*, *Not etiketleri*, *Düşük yakınlaştırmalarda simgeler* gibi OSM değişikliklerinin görüntülenmesini ayrı bir katman olarak etkinleştirebilir veya devre dışı bırakabilirsiniz.
+*Ana Menü*'nün [Haritayı Yapılandır](../map/configure-map-menu.md) bölümünde *OSM notları* (çevrimiçi), *OSM düzenlemeleri*, *Fixme etiketleri*, *Not etiketleri*, *Düşük yakınlaştırmalarda simgeler* gibi OSM değişikliklerinin görüntülenmesini ayrı bir katman olarak etkinleştirebilir veya devre dışı bırakabilirsiniz.
 
 ## İÇN Oluştur / Değiştir {#create--modify-poi}
 
-OpenStreetMap düzenleme eklentisi, haritada [ilgi çekici noktalar veya İÇN'ler](../map/point-layers-on-map.md#points-of-interest-pois) olarak adlandırılan yeni nesneler oluşturmanıza olanak tanır. İnsanların bulabilmesi için yeni bir mağaza, favori bir dönüm noktası, bank veya barınak haritalayabilirsiniz.
+OpenStreetMap düzenleme eklentisi, haritada [ilgi çekici noktalar veya İÇN'ler](../map/point-layers-on-map.md#points-of-interest-pois) adı verilen yeni nesneler oluşturmanıza olanak tanır. Yeni bir mağaza, favori bir dönüm noktası, bank veya barınak haritalayarak insanların bunları bulmasını sağlayabilirsiniz.
 
 1. Yeni bir İÇN yerleştirmek için haritaya dokunun veya henüz yüklenmemiş bir İÇN'ye dokunun.
 2. [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions) öğesine dokunun.
-3. [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) öğesini seçin ve adını ve çalışma saatleri, web sitesi vb. gibi diğer bilgileri ekleyin. Yüklenmemiş bir İÇN seçtiğinizde, *İÇN Oluştur* *İÇN'yi Değiştir* olarak değişir.
+3. [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) öğesini seçin ve adını ve çalışma saatleri, web sitesi gibi diğer bilgileri ekleyin. Yüklenmemiş bir İÇN seçtiğinizde, *İÇN Oluştur* *İÇN'yi Değiştir* olarak değişir.
 4. [Çevrimdışı düzenleme](#settings) ayarına bağlı olarak, verileri yerel olarak kaydedebilir veya [yükleyebilirsiniz](../map/map-context-menu#-upload-poi--osm-note).
 
 ### Etiket Ekle {#add-tags}
@@ -167,9 +167,9 @@ OpenStreetMap düzenleme eklentisi, haritada [ilgi çekici noktalar veya İÇN'l
 
 ### Desteklenmeyen İÇN türleri ekle {#add-unsupported-poi-types}
 
-*Gelişmiş* sekmesinde, belirli göreviniz için faydalı olabilecek desteklenmeyen İÇN türleri ekleyebilirsiniz. Bu seçenek, İÇN verilerini manuel olarak girmenize olanak tanıyarak uygulamanın işlevselliğini genişletir.
+*Gelişmiş* sekmesinde, özel göreviniz için yararlı olabilecek desteklenmeyen İÇN türleri ekleyebilirsiniz. Bu seçenek, İÇN verilerini manuel olarak girmenize olanak tanıyarak uygulamanın işlevselliğini genişletir.
 
-Ekleyebileceğiniz desteklenmeyen İÇN türlerine bir örnek *amenity=freeshops*'tur. Bu tür, ücretsiz mağazaları veya ücretsiz ürünler sağlayan yerleri işaretlemek istiyorsanız faydalı olabilir.
+Ekleyebileceğiniz desteklenmeyen İÇN türlerine bir örnek *amenity=freeshops*'tur. Bu tür, ücretsiz mağazaları veya ücretsiz ürünler sağlayan yerleri işaretlemek istiyorsanız yararlı olabilir.
 
 Desteklenmeyen İÇN türlerini eklemek için şu adımları izleyin:
 
@@ -179,7 +179,7 @@ Desteklenmeyen İÇN türlerini eklemek için şu adımları izleyin:
 4. Bu İÇN için gerekli diğer verileri doldurun.
 5. Yeni İÇN'yi veritabanınıza eklemek için *Etiket Ekle*'ye dokunun.
 
-Desteklenmeyen İÇN türlerini eklerken, uygulamanın doğru çalışmasını ve bilgilerin sonraki işlenmesini sağlamak için verilerin doğru girildiğinden emin olmanın önemli olduğunu unutmayın.
+Desteklenmeyen İÇN türlerini eklerken, uygulamanın doğru çalışmasını ve bilgilerin daha sonra işlenmesini sağlamak için verilerin doğru girildiğinden emin olmanın önemli olduğunu unutmayın.
 
 ## OSM Notu Oluştur / Değiştir {#create--modify-osm-note}
 
@@ -187,7 +187,7 @@ Desteklenmeyen İÇN türlerini eklerken, uygulamanın doğru çalışmasını v
 
 <TabItem value="android" label="Android">
 
-Git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
 ![OSM Notu Aç Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png) ![OSM Notu Aç Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
@@ -195,7 +195,7 @@ Git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_
 
 <TabItem value="ios" label="iOS">
 
-Git: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*
 
 ![OSM Notu Aç iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
@@ -213,7 +213,7 @@ Bir not oluşturmak için OpenStreetMap.org'a giriş yapmanıza gerek yoktur, an
 
 - Yeni OSM notunun yerleştirileceği haritaya dokunun (veya yüklenmemiş bir nota dokunun) ve [Eylemler](../map/map-context-menu.md#actions) öğesini seçin.
 - Mevcut bir nota veya yüklenmemiş bir nota bilgi eklemek, bir yorumu düzenlemek veya bir notu kapatmak istiyorsanız, haritadaki OSM notuna dokunun ve [gerekli eylemi](../map/map-context-menu.md#-comment--close-osm-note) seçin.
-- Çevrimiçi olduğunuzda değişiklikleri yükleyebilirsiniz. Ayrıca yüklenmeden önce değişiklikleri geri alabilirsiniz.
+- Çevrimiçi olduğunuz anda değişiklikleri yükleyebilirsiniz. Yüklenmeden önce değişiklikleri geri alabilirsiniz.
 
 :::info
 Yüklenen OSM Notları, çevrimdışı modda OsmAnd haritalarında görünmez.
@@ -221,14 +221,14 @@ Yüklenen OSM Notları, çevrimdışı modda OsmAnd haritalarında görünmez.
 
 ## GPS İzi {#gps-track}
 
-Kaydettiğiniz GPS izleri şunlar için faydalıdır:
+Kaydettiğiniz GPS izleri şunlar için kullanışlıdır:
 
 - **Haritacılar**. İzler, her türlü yolu haritalamak için kullanılabilir.
 - **Navigasyon**. Yüklediğiniz GPX dosya verilerine dayanarak, navigasyon uygulamaları ve özel cihazlar izleri hesaplayabilir.
 - [OpenStreetMap tabanlı haritalarda](https://wiki.openstreetmap.org/wiki/Track_drawing_websites) kaydettiğiniz izler ve rotalar hakkındaki **bilgileri paylaşmak**.
 
 :::info NOT
-İzleriniz bir saat içinde [OSM izlerine](https://www.openstreetmap.org/traces) eklenecek ve burada sizin ve başkalarının görüntülemesi, araması ve kullanması için kullanılabilir olacaktır.
+İzleriniz bir saat içinde [OSM izlerine](https://www.openstreetmap.org/traces) eklenecek ve burada sizin ve başkalarının görüntülemesi, araması ve kullanması için hazır olacaktır.
 :::
 
 ### GPS izi yükle {#upload-gps-track}
@@ -251,7 +251,7 @@ Kaydettiğiniz GPS izleri şunlar için faydalıdır:
 
 [GPS izini yüklemek](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks) için aşağıdaki adımları izleyin:
 
-- Gerekli izi [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesinde*](../personal/tracks/manage-tracks.md) bulun.
+- [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesinde*](../personal/tracks/manage-tracks.md) gerekli izi bulun.
 - İz adının yanındaki *üç nokta menüsüne* dokunun ve *Dışa Aktar*'ı seçin.
 
 **Ayarlar:**
@@ -259,10 +259,10 @@ Kaydettiğiniz GPS izleri şunlar için faydalıdır:
 - **<Translate android="true" ids="shared_string_description"/>**. İze bir açıklama eklemenizi sağlar. Açıklama, seçilen tüm izler için geçerlidir. Alana hiçbir şey girmezseniz, her ayrı iz için iz adları açıklama olarak kullanılır.
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Ayarlar bölümündeki bu öğe, izi tanımlamak için etiketler eklemenizi sağlar. Varsayılan etiket "osmand"dır, virgülle ayrılmış ek etiketler girebilirsiniz.
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. OSM kullanıcıları için iz görünürlüğü:
-   - *Herkese Açık*, izin herkese açık olduğu ve GPS izlerinizde, GPS iz listelerinizde ve zaman damgalı iz listelerinizde ham biçimde görüntülendiği anlamına gelir. API aracılığıyla iletilen veriler, iz sayfanızla referans alınmaz. İz noktası zaman damgaları, genel GPS API aracılığıyla kullanılamaz ve iz noktaları kronolojik olarak sıralanmaz.
-   - *Tanımlanabilir*, izin GPS iz noktalarınızda ve genel GPS iz listelerinde herkese açık olarak görüntüleneceği anlamına gelir, bu da diğer kullanıcıların ham izi indirebileceği ve kullanıcı adınızla ilişkilendirebileceği anlamına gelir. GPS API'sinden iz noktaları API'si aracılığıyla geçen genel zaman damgalı iz noktaları verileri, orijinal iz sayfanıza bağlanacaktır.
-   - *İzlenebilir*, izin genel listelerde görüntülenmediği, ancak ondan işlenmiş iz noktalarının (doğrudan sizinle bağlantılı olamayan) genel GPS API'sinden yüklendiği anlamına gelir.
-   - *Özel*, izin genel listelerde görüntülenmediği, ancak ondan gelen iz noktalarının kronolojik olmayan sırayla zaman damgası olmadan genel GPS API aracılığıyla kullanılabildiği anlamına gelir.
+   - *Herkese açık*, izin herkese açık olduğu ve GPS izlerinizde, GPS iz listelerinizde ve zaman damgalı iz listelerinizde ham biçimde görüntülendiği anlamına gelir. API aracılığıyla iletilen veriler iz sayfanızla referans alınmaz. Genel GPS API aracılığıyla iz noktası zaman damgaları kullanılamaz ve iz noktaları kronolojik olarak sıralanmaz.
+   - *Tanımlanabilir*, izin GPS iz noktalarınızda ve genel GPS iz listelerinizde herkese açık olarak görüntüleneceği anlamına gelir, bu da diğer kullanıcıların ham izi indirip kullanıcı adınızla ilişkilendirebileceği anlamına gelir. GPS API'sinden iz noktaları API'si aracılığıyla geçen genel zaman damgalı iz noktaları verileri orijinal iz sayfanıza bağlanacaktır.
+   - *İzlenebilir*, izin genel listelerde görüntülenmediği, ancak ondan gelen zaman damgalı işlenmiş iz noktalarının (doğrudan sizinle ilişkilendirilemeyen) genel GPS API aracılığıyla yüklendiği anlamına gelir.
+   - *Özel*, izin genel listelerde görüntülenmediği, ancak ondan gelen kronolojik olmayan sıradaki iz noktalarının zaman damgaları olmadan genel GPS API aracılığıyla kullanılabileceği anlamına gelir.
 - **<Translate android="true" ids="login_account"/>** - [OSM hesabı](https://www.openstreetmap.org/login).
 
 :::info
@@ -271,12 +271,10 @@ OSM'ye yüklemek için birden fazla iz seçebilirsiniz. Bunu yapmak için, ekran
 
 ### OBF dosyası oluştur {#generate-obf-file}
 
-Büyük bir GPX iz veritabanınız varsa [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) ile bir OBF dosyası oluşturabilirsiniz. Bu, osmand.net'ten 'gpsies' etiketiyle bir iz koleksiyonu, OpenStreetMap'ten indirilen izlerin bir koleksiyonu veya kendi koleksiyonunuzdur.
+Büyük bir GPX iz veritabanınız varsa [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) ile bir OBF dosyası oluşturabilirsiniz. Bu, osmand.net'ten 'gpsies' etiketiyle izlerin bir koleksiyonu, OpenStreetMap'ten indirilen izlerin bir koleksiyonu veya kendi koleksiyonunuzdur.
 
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Küresel Ayarlar](../../user/personal/global-settings.md)
-- [Vektör Haritaları (Harita Stilleri)](../../user/map/vector-maps.md)
-
-> *Son güncelleme: Mayıs 2024*
+- [Genel Ayarlar](../../user/personal/global-settings.md)
+- [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)

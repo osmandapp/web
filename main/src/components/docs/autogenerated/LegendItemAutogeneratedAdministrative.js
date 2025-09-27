@@ -5,9 +5,9 @@ import LegendItem from "../LegendItem";
 
 export default function Render() {
     return LegendItem({itemsMap: {
-        'Embassy' : 'administrative/administrative_office_diplomatic',
-        'Townhall' : 'administrative/administrative_amenity_townhall',
-        'Courthouse' : 'administrative/administrative_amenity_courthouse',
-        'Prison' : 'administrative/administrative_amenity_prison',
+        'Embassy' : {poiName:'office_diplomatic', poiName2:null, folderName:'administrative/administrative_office_diplomatic'},
+        'Townhall' : {poiName:'townhall', poiName2:null, folderName:'administrative/administrative_amenity_townhall'},
+        'Courthouse' : {poiName:'courthouse', poiName2:null, folderName:'administrative/administrative_amenity_courthouse'},
+        'Prison' : {poiName:'prison', poiName2:null, folderName:'administrative/administrative_amenity_prison'},
     }});
 }

@@ -1,5 +1,5 @@
 ---
-source-hash: 0cd7fc222e201abda3ee41c3278fe75817181ab14d975d85f25fdb51e7498eae
+source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -55,15 +55,15 @@ OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purc
 
 ## OsmAnd'a Hoş Geldiniz {#welcome-to-osmand}
 
-Çevrimdışı ve çevrimiçi olarak çeşitli amaçlar için kullanılabilecek tam işlevli, harita odaklı bir uygulama oluşturmayı hedefliyoruz. Uygulama birçok özelliğe sahiptir, bu nedenle farklı uygulamalar arasında geçiş yapmak zorunda kalmazsınız ve her şey parmaklarınızın ucunda olur.
+Çeşitli amaçlar için çevrimdışı ve çevrimiçi olarak kullanılabilecek tam işlevli, harita odaklı bir uygulama oluşturmayı hedefliyoruz. Uygulama birçok özelliğe sahiptir, böylece farklı uygulamalar arasında geçiş yapmak zorunda kalmazsınız ve her şey parmaklarınızın ucunda olur.
 
-- [Farklı harita stillerinde](../map/vector-maps.md) görüntülenen birçok ayrıntıyla Dünya Çapında bir Harita görüntüleyin.
+- [Farklı harita stillerinde](../map/vector-maps.md) görüntülenen birçok ayrıntıyla Dünya Çapında bir Haritayı görüntüleyin.
 - Çeşitli [İlgi Çekici Noktaları](../map/point-layers-on-map.md) görüntüleyin, [arayın](../search/search-poi.md) ve kaydedin.
-- Araba, bisiklet, yaya olarak [bir rota planlayın](../plan-route/create-route.md) ve çok modlu rotalar halinde birleştirin.
-- Ekranı açıp kapatırken [sesli yönlendirmeli navigasyonu](../navigation/guidance/voice-navigation.md) başlatın.
+- Araba, bisiklet, yaya olarak [bir rota planlayın](../plan-route/create-route.md) ve bunları çok modlu rotalarda birleştirin.
+- Ekran açık ve kapalıyken [sesli yönlendirmeli navigasyonu](../navigation/guidance/voice-navigation.md) başlatın.
 - Çevrimdışı [Wikipedia](../plugins/wikipedia.md) ve [Wikivoyage](../plan-route/travel-guides.md) ile turistik gezinizi zenginleştirin.
 - [Haritanın nasıl görüntülendiğini](../map/configure-map-menu.md) ve üzerinde hangi [widget'ların](../widgets/index.md) görüntülendiğini tamamen özelleştirin.
-- [Rota ile](../navigation/setup/route-navigation.md), [belirli bir iz ile](../navigation/setup/gpx-navigation.md), [toplu taşıma ile](../navigation/routing/public-transport-navigation.md) ve [arazi dışında](../navigation/setup/markers-navigation.md) gezinin.
+- [Rota ile](../navigation/setup/route-navigation.md), [belirli bir iz ile](../navigation/setup/gpx-navigation.md), [toplu taşıma ile](../navigation/routing/public-transport-navigation.md) ve [arazi dışı](../navigation/setup/markers-navigation.md) navigasyon yapın.
 - Her şey **Çevrimdışı** çalışır.
 - Ve [OSM Düzenleme Eklentisi](../plugins/osm-editing.md) ile [OpenStreetMap'e](https://www.openstreetmap.org/) katkıda bulunmayı unutmayın.
 
@@ -88,7 +88,7 @@ OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purc
 
 </Tabs>
 
-OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneririz. Özel bilgilerinizi toplamaz, kullanmaz veya paylaşmayız, bu nedenle arama, navigasyon ve diğer OsmAnd işlevlerinin doğru çevrimdışı çalışması için hassas coğrafi konuma erişim gereklidir.
+OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneririz. Özel bilgilerinizi toplamıyor, kullanmıyor veya paylaşmıyoruz, bu nedenle arama, navigasyon ve diğer OsmAnd işlevlerinin doğru çevrimdışı çalışması için hassas coğrafi konuma erişim gereklidir.
 
 
 ### Haritalar nasıl indirilir {#how-to-download-maps}
@@ -113,30 +113,30 @@ OsmAnd uygulaması farklı harita türleriyle çalışır, ancak yalnızca indir
 Mevcut diğer harita indirme seçenekleri için [Haritaları İndir](../start-with/download-maps.md) makalesine bakın.
 
 :::note Çevrimdışı haritalarla çalışmaya başlayın
-OsmAnd, indirilen çevrimdışı haritalar olmadan doğru çalışamaz. Uygulama [Vektör](../map/vector-maps.md) ve [Raster](../map/raster-maps.md) haritaları desteklese de, [Arama](../search/index.md), [Navigasyon](../navigation/index.md) ve [Bağlam menüsü](../map/map-context-menu.md) gibi tüm işlevlerin düzgün çalışması için vektör çevrimdışı haritalarla çalışmaya başlamanız şiddetle tavsiye edilir.
+OsmAnd, indirilen çevrimdışı haritalar olmadan doğru şekilde çalışamaz. Uygulama [Vektör](../map/vector-maps.md) ve [Raster](../map/raster-maps.md) haritaları desteklese de, [Arama](../search/index.md), [Navigasyon](../navigation/index.md) ve [Bağlam menüsü](../map/map-context-menu.md) gibi tüm işlevlerin düzgün çalışması için vektör çevrimdışı haritalarla çalışmaya başlamanız şiddetle tavsiye edilir.
 :::
 
 
 ### Tüm dünya için haritalar nasıl indirilir {#how-download-maps-for-the-whole-world}
 
-OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm dünyayı bir kerede indirmek için tek bir paket yoktur. Bunun yerine, ihtiyaçlarınıza göre tek tek ülke veya bölge haritalarını indirebilirsiniz.
+OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm dünyayı tek seferde indirmek için tek bir paket yoktur. Bunun yerine, ihtiyaçlarınıza göre tek tek ülke veya bölge haritalarını indirebilirsiniz.
 
-***Temel noktalar:***
+***Ana noktalar:***
 
-- **OsmAnd Pro** ve **Maps+**, **sınırsız harita indirme** sağlar, ancak yine de haritaları her seferinde bir bölge indirmeniz gerekir.
+- **OsmAnd Pro** ve **Maps+** **sınırsız harita indirme** sağlar, ancak yine de haritaları tek tek indirmeniz gerekir.
 - **Depolama sınırlamaları.** Birden fazla bölge indirmeden önce cihazınızda yeterli alan olduğundan emin olun.
-- **Otomatik güncellemeler.** İndirildikten sonra, haritalar *Menü → Haritalar ve Kaynaklar → Güncellemeler* aracılığıyla güncellenebilir.
+- **Otomatik güncellemeler.** İndirildikten sonra haritalar *Menü → Haritalar ve Kaynaklar → Güncellemeler* aracılığıyla güncellenebilir.
 
 
 ### Uygulama dili nasıl değiştirilir {#how-to-change-app-language}
 
-*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13'ten itibaren ve iOS cihazlarda, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir (uygulama başına dil tercihlerini [Android](https://developer.android.com/guide/topics/resources/app-languages) ve [iOS](https://developer.apple.com/news/?id=u2cfuj88) için nasıl değiştireceğinize bakın).
+*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13 ve iOS cihazlardan itibaren, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir (Android'de [uygulama başına dil tercihlerini](https://developer.android.com/guide/topics/resources/app-languages) ve iOS'ta [nasıl değiştireceğinizi](https://developer.apple.com/news/?id=u2cfuj88) görün).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *Ayarlar → Uygulamalar → OsmAnd → Dil*
+Şuraya gidin: *Ayarlar → Uygulamalar → OsmAnd → Dil*
 
 ![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
 
@@ -144,7 +144,7 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *Ayarlar → OsmAnd Haritalar → Dil*
+Şuraya gidin: *Ayarlar → OsmAnd Haritalar → Dil*
 
 ![Genel Ayarlar Dil iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
@@ -153,7 +153,7 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 </Tabs>
 
 :::note Uygulama dillerini ayarlama seçeneği yok
-Bazı Android cihazlarda (Muiu 14'lü Xiaomi), sistem ayarlarında uygulama dillerini ayrı ayrı ayarlama seçeneği yoktur, bu nedenle OsmAnd'ın dili yalnızca tüm sistemin diliyle değiştirilebilir. Ek bilgi için [GitHub tartışmasını](https://github.com/osmandapp/OsmAnd/issues/16990) inceleyebilirsiniz.
+Bazı Android cihazlarda (Muiu 14'lü Xiaomi), sistem ayarlarında uygulama dillerini ayrı ayrı ayarlama seçeneği yoktur, bu nedenle OsmAnd'ın dili yalnızca tüm sistemin diliyle değiştirilebilir. Ek bilgi için [GitHub tartışmasına](https://github.com/osmandapp/OsmAnd/issues/16990) göz atabilirsiniz.
 :::
 
 
@@ -185,7 +185,7 @@ Profil ayarları hakkında [daha fazla bilgi edinin](../personal/profiles.md).
 
 [Eklentiler](../plugins/index.md#configure-plugin) uygulama işlevselliğini büyük ölçüde genişletir. Neredeyse tüm eklentilerin kendi [Harita Eylemleri](../map/map-context-menu.md), [Harita Katmanları](../map/configure-map-menu.md), [Harita İndirmeleri](../start-with/download-maps.md) ve [Ayarları](../plugins/#plugin-settings) vardır.
 
-[Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/index.md#configure-plugin) aracılığıyla eklentileri etkinleştirebilir / devre dışı bırakabilirsiniz.
+Eklentileri [Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/index.md#configure-plugin) aracılığıyla etkinleştirebilir/devre dışı bırakabilirsiniz.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -193,7 +193,7 @@ Profil ayarları hakkında [daha fazla bilgi edinin](../personal/profiles.md).
 
 ![Eklentileri etkinleştir Android](@site/static/img/settings/plugins_enable_android.png) ![Eklenti örneği Android](@site/static/img/settings/plugin_example_android.png)
 
-Eklentileri etkinleştirmek / devre dışı bırakmak için şuraya gidin:
+Eklentileri etkinleştirmek/devre dışı bırakmak için şuraya gidin:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Etkinleştir
 
 </TabItem>
@@ -202,7 +202,7 @@ Eklentileri etkinleştirmek / devre dışı bırakmak için şuraya gidin:
 
 ![Eklentileri etkinleştir iOS](@site/static/img/settings/plugins_enable_ios.png) ![Eklenti örneği iOS](@site/static/img/settings/plugin_example_ios.png)
 
-Eklentileri etkinleştirmek / devre dışı bırakmak için şuraya gidin:
+Eklentileri etkinleştirmek/devre dışı bırakmak için şuraya gidin:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
 
 </TabItem>
@@ -214,7 +214,7 @@ OsmAnd eklentileri hakkında [daha fazla bilgi edinin](../plugins/index.md#confi
 
 ### Harita nasıl kullanılır {#how-to-use-a-map}
 
-Harita, OsmAnd'ın temel bir öğesidir ve [nasıl kullanılacağını](../map/interact-with-map.md) (hareketler, düğmeler vb.) bilmek önemlidir. Haritayı ihtiyaçlarınıza göre [yapılandırabilirsiniz](../map/configure-map-menu.md): [harita stilini değiştirin](../map/configure-map-menu.md#map-style-parameters), sık kullanılanlar, POI, toplu taşıma, izler, eş yükselti eğrileri, tepe gölgelendirme ve diğerleri gibi farklı [harita katmanlarını](../map/configure-map-menu.md#map-layers) yapılandırın.
+Harita, OsmAnd'ın temel bir öğesidir ve [nasıl kullanılacağını](../map/interact-with-map.md) (hareketler, düğmeler vb.) bilmek önemlidir. Haritayı ihtiyaçlarınıza göre [yapılandırabilirsiniz](../map/configure-map-menu.md): [harita stilini değiştirin](../map/configure-map-menu.md#map-style-parameters), favoriler, İÇN, toplu taşıma, izler, kontur çizgileri, tepe gölgelendirme ve diğerleri gibi farklı [harita katmanlarını](../map/configure-map-menu.md#map-layers) yapılandırın.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -237,7 +237,7 @@ Harita yapılandırması hakkında [daha fazla bilgi edinin](../map/configure-ma
 
 ### Ekran nasıl yapılandırılır {#how-to-configure-screen}
 
-[Ekranı yapılandır](../widgets/configure-screen.md), [Bilgilendirici](../widgets/info-widgets.md) (irtifa, hız, geçerli saat vb.) ve [Navigasyonel](../widgets/nav-widgets.md) (hedef, yön, varış zamanı vb.) widget'ları, [Hızlı eylem](../widgets/quick-action.md) ve Harita üzerinde görüntülenecek diğer öğeleri etkinleştirmenizi sağlar.
+[Ekranı yapılandır](../widgets/configure-screen.md), [Bilgilendirici](../widgets/info-widgets.md) (rakım, hız, geçerli saat vb.) ve [Navigasyonel](../widgets/nav-widgets.md) (hedef, yön, varış zamanı vb.) widget'ları, [Hızlı eylem](../widgets/quick-action.md) ve Harita üzerinde görüntülenecek diğer öğeleri etkinleştirmenizi sağlar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -266,13 +266,13 @@ OsmAnd, kişisel ihtiyaçlarınız için Harita üzerinde çeşitli işaretler y
 
 <TabItem value="android" label="Android">
 
-![Kişisel verileri ekle Android](@site/static/img/settings/personal_data_android.png)
+![Kişisel veri ekle Android](@site/static/img/settings/personal_data_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kişisel verileri ekle iOS](@site/static/img/settings/personal_data_ios.png)
+![Kişisel veri ekle iOS](@site/static/img/settings/personal_data_ios.png)
 
 </TabItem>
 
@@ -281,38 +281,38 @@ OsmAnd, kişisel ihtiyaçlarınız için Harita üzerinde çeşitli işaretler y
 Haritadaki noktalar hakkında [daha fazla bilgi edinin](../map/point-layers-on-map.md).
 
 
-### İlgi çekici noktaları nasıl tarar ve bulursunuz {#how-to-browse--find-point-of-interest}
+### İlgi çekici nokta nasıl aranır ve bulunur {#how-to-browse--find-point-of-interest}
 
-[İlgi Çekici Noktalar (POI)](../map/point-layers-on-map.md#points-of-interest-pois), haritada aranabilen veya vurgulanabilen olanaklardır. İlginç veya faydalı yerleri temsil ederler ve [Vektör Haritalarının](../map/vector-maps.md) bir parçası olarak dağıtılırlar. Bunları haritada [görüntülemek](../map/point-layers-on-map.md#points-of-interest-pois), [gezinmek](../navigation/index.md) ve haritadaki ilgi çekici noktaları [aramak](../search/search-poi.md) için kullanabilirsiniz.
+[İlgi çekici noktalar (İÇN)](../map/point-layers-on-map.md#points-of-interest-pois), haritada aranabilen veya vurgulanabilen olanaklardır. İlginç veya faydalı yerleri temsil ederler ve [Vektör Haritalarının](../map/vector-maps.md) bir parçası olarak dağıtılırlar. Bunları haritada [görüntülemek](../map/point-layers-on-map.md#points-of-interest-pois), [gezinmek](../navigation/index.md) ve haritadaki ilgi çekici noktaları [aramak](../search/search-poi.md) için kullanabilirsiniz.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Çoklu POI Seçimi](@site/static/img/map/multiple_selection_android.png) ![POI Android'i ara ve görüntüle](@site/static/img/map/search_display_poi_android.png)
+![Çoklu İÇN Seçimi](@site/static/img/map/multiple_selection_android.png) ![İÇN Ara ve Görüntüle Android](@site/static/img/map/search_display_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Çoklu POI Seçimi](@site/static/img/settings/multiple_selection_iOS.png) ![POI iOS'u ara ve görüntüle](@site/static/img/settings/search_display_poi_iOS.png)
+![Çoklu İÇN Seçimi](@site/static/img/settings/multiple_selection_iOS.png) ![İÇN Ara ve Görüntüle iOS](@site/static/img/settings/search_display_poi_iOS.png)
 
 </TabItem>
 
 </Tabs>
 
-POI araması hakkında [daha fazla bilgi edinin](../search/search-poi.md).
+İÇN araması hakkında [daha fazla bilgi edinin](../search/search-poi.md).
 
 
 ### Rota nasıl planlanır {#how-to-plan-a-route}
 
-[Rota planla](../plan-route/create-route.md), bir gezi oluşturmanıza, mevcut bir izi düzenlemenize ve yerinde mesafeyi ölçmenize olanak tanıyan güçlü bir araçtır. Ara noktaları hızlı bir şekilde yerleştirebilir ve bunları çeşitli navigasyon hatlarıyla (bisiklet, yaya, düz çizgi vb.) bağlayabilirsiniz. Sonuçlar bir GPX dosyasına kaydedilebilir, böylece daha sonra [paylaşılabilir](../personal/tracks/index.md) veya [navigasyon tarafından kullanılabilir](../navigation/setup/gpx-navigation.md).
+[Rota planlama](../plan-route/create-route.md), bir gezi oluşturmanıza, mevcut bir izi düzenlemenize ve yerinde mesafeyi ölçmenize olanak tanıyan güçlü bir araçtır. Ara noktaları hızlı bir şekilde yerleştirebilir ve bunları çeşitli navigasyon hatlarıyla (bisiklet, yaya, düz çizgi vb.) bağlayabilirsiniz. Sonuçlar bir GPX dosyasına kaydedilebilir, böylece daha sonra [paylaşılabilir](../personal/tracks/index.md) veya [navigasyon tarafından kullanılabilir](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rota planla Android](@site/static/img/settings/plan_route_android.png) ![Rota grafiği Android](@site/static/img/settings/plan_route_graph_android.png)
+![Rota planla Android](@site/static/img/settings/plan_route_android.png) ![Rota grafiği planla Android](@site/static/img/settings/plan_route_graph_android.png)
 
 </TabItem>
 
@@ -329,26 +329,26 @@ Rota planlama özelliği hakkında [daha fazla bilgi edinin](../plan-route/creat
 
 ### Adrese göre nasıl arama yapılır {#how-to-search-by-address}
 
-OsmAnd, adres araması da dahil olmak üzere birçok arama yeteneği sunar. Varsayılan olarak, [OpenStreetMap verilerini](https://nominatim.openstreetmap.org/ui/search.html) kullanır ve Hızlı Arama girişini kullanarak tüm adresleri bulabilmelidir. Ayrıca, şehir, cadde, posta kodu ve koordinatlara göre [arama yapabilirsiniz](../search/search-address.md).
+OsmAnd, adres araması da dahil olmak üzere birçok arama yeteneği sunar. Varsayılan olarak, [OpenStreetMap verilerini](https://nominatim.openstreetmap.map/ui/search.html) kullanır ve Hızlı Arama girişini kullanarak tüm adresleri bulabilmelidir. Ayrıca, şehir, cadde, posta kodu ve koordinatlara göre [arama yapabilirsiniz](../search/search-address.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Adres arama Android](@site/static/img/settings/address_search_android.png) ![Arama sonucu Android](@site/static/img/settings/address_search_result_android.png)
+![Adres ara Android](@site/static/img/settings/address_search_android.png) ![Arama sonucu Android](@site/static/img/settings/address_search_result_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Adres arama iOS](@site/static/img/settings/address_search_ios.png) ![Arama sonucu iOS](@site/static/img/settings/address_search_result_ios.png)
+![Adres ara iOS](@site/static/img/settings/address_search_ios.png) ![Arama sonucu iOS](@site/static/img/settings/address_search_result_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-Bir adres aramadan önce haritayı indirmeniz gerekir. Ayrıca, mevcut konumunuz aradığınız adresten çok uzaksa, arama yarıçapını artırmanız gerekebilir.
+Bir adres aramadan önce haritayı indirmeniz gerekir. Ayrıca, mevcut konumunuz aradığınız adresten çok uzaktaysa, arama yarıçapını artırmanız gerekebilir.
 :::
 
 Adres araması hakkında [daha fazla bilgi edinin](../search/search-address.md).
@@ -356,7 +356,7 @@ Adres araması hakkında [daha fazla bilgi edinin](../search/search-address.md).
 
 ### Navigasyon nasıl başlatılır {#how-to-start-navigation}
 
-[Navigasyon](../navigation/index.md), rotayı görüntüleyerek, adım adım talimatlar, yüzey, düzgünlük vb. hakkında ek yol bilgileri ve isteğe bağlı sesli yönlendirme sunarak hedefinize adım adım rehberlik sağlar.
+[Navigasyon](../navigation/index.md), rotayı görüntüleyerek, adım adım talimatlar, yüzey, düzgünlük vb. hakkında ek yol bilgileri ve isteğe bağlı sesli rehberlik sunarak hedefinize adım adım rehberlik sağlar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -379,13 +379,13 @@ Navigasyon hakkında [daha fazla bilgi edinin](../navigation/index.md).
 
 ### Seyahatinizi nasıl kaydedersiniz {#how-to-record-your-trip}
 
-[Seyahat kaydı](../plugins/trip-recording.md), cihazın GPS'ini kullanarak bir iz üzerindeki tüm hareketleri kaydetmenizi sağlayan bir OsmAnd eklentisi olarak paketlenmiş özel bir araçtır.
+[Seyahat kaydı](../plugins/trip-recording.md), cihazın GPS'ini kullanarak bir iz üzerindeki tüm hareketleri kaydetmenize olanak tanıyan bir OsmAnd eklentisi olarak paketlenmiş özel bir araçtır.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Seyahat kaydı Android](@site/static/img/settings/trip_recording_android.png) ![Genel bakış seyahat kaydı Android](@site/static/img/settings/trip_recording_overview_android.png)
+![Seyahat kaydı Android](@site/static/img/settings/trip_recording_android.png) ![Seyahat kaydına genel bakış Android](@site/static/img/settings/trip_recording_overview_android.png)
 
 </TabItem>
 
@@ -408,13 +408,13 @@ OsmAnd, [OpenStreetMap](https://www.openstreetmap.org/) verileriyle desteklenmek
 
 <TabItem value="android" label="Android">
 
-![OSM notu Android](@site/static/img/settings/osm_note_android.png) ![POI Android oluştur](@site/static/img/settings/create_poi_menu_android.png)
+![OSM notu Android](@site/static/img/settings/osm_note_android.png) ![İÇN oluştur Android](@site/static/img/settings/create_poi_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OSM notu iOS](@site/static/img/settings/osm_note_ios.png) ![POI iOS oluştur](@site/static/img/settings/create_poi_ios.png)
+![OSM notu iOS](@site/static/img/settings/osm_note_ios.png) ![İÇN oluştur iOS](@site/static/img/settings/create_poi_ios.png)
 
 </TabItem>
 
@@ -429,14 +429,14 @@ OSM düzenlemesi hakkında [daha fazla bilgi edinin](../plugins/osm-editing.md).
 
 <TabItem value="android" label="Android">
 
-OsmAnd'ı kapatmanın iki farklı yolu vardır.
+OsmAnd'ı kapatmanın iki yolu vardır.
 
-1. Uygulamayı yukarı kaydırarak ve ekranın dışına çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
+1. Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
 
-2. Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam edecektir:
+2. Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam eder:
     - [Navigasyonu kapat](../navigation/setup/route-navigation.md#start--stop-navigation)
-    - [Harita indirmeyi ve güncellemeyi durdur](../start-with/download-maps.md)
-    - [Seyahat kaydını durdur](../plugins/trip-recording.md#create-new-track)
+    - [Harita indirme ve güncellemeyi durdur](../start-with/download-maps.md)
+    - [Seyahat kaydını durdur](../plugins/trip-recording.md#new-track-recording)
     - [Sesli/görüntülü not kaydını durdur](../plugins/audio-video-notes.md)
 
 3. *Zorla durdur* işlevi:
@@ -447,13 +447,13 @@ OsmAnd'ı kapatmanın iki farklı yolu vardır.
 
 <TabItem value="ios" label="iOS">
 
-Uygulamayı yukarı kaydırarak ve ekranın dışına çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
+Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
 
-Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam edecektir:
+Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam eder:
 
 - [Navigasyonu iptal et](../navigation/setup/route-navigation.md)
-- [Harita indirmeyi ve güncellemeyi durdur](../start-with/download-maps.md)
-- [Seyahat kaydını durdur](../plugins/trip-recording.md#create-new-track)
+- [Harita indirme ve güncellemeyi durdur](../start-with/download-maps.md)
+- [Seyahat kaydını durdur](../plugins/trip-recording.md#new-track-recording)
 - [Sesli/görüntülü not kaydını durdur](../plugins/audio-video-notes.md)
 
 </TabItem>
@@ -465,7 +465,7 @@ Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdi
 
 <InfoAndroidOnly/>
 
-[Uygulama kısayolları](https://support.google.com/android/answer/9450271) OsmAnd simgesi için mevcuttur. Cihazınızın ekranındaki OsmAnd simgesine uzun dokunarak uygulama kısayolları menüsünü açmanız yeterlidir. Burada, aşağıdaki eylemleri seçmek için kısa basabilirsiniz: *Ana Sayfaya Git*, *İşe Git*, *Kaydı Başlat*, *Ara*, *Yerlerim*, *Git*. Bir eyleme uzun dokunmak, cihazınızın ekranına yeni bir eylem simgesi eklemenizi sağlar.
+[Uygulama kısayolları](https://support.google.com/android/answer/9450271) OsmAnd simgesi için mevcuttur. Cihazınızın ekranındaki OsmAnd simgesine uzun dokunarak uygulama kısayolları menüsünü açın. Burada, aşağıdaki eylemleri seçmek için kısa basabilirsiniz: *Eve Git*, *İşe Git*, *Kaydı Başlat*, *Ara*, *Yerlerim*, *Git*. Bir eyleme uzun dokunmak, cihazınızın ekranına yeni bir eylem simgesi eklemenizi sağlar.
 
 Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
@@ -492,7 +492,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 *Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.
 İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.
-*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine yararlı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve kilitlenme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.
+*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.
 
 ### Menü {#menu}
 
@@ -512,10 +512,10 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 </Tabs>
 
-- **Kilitlenme günlüğünü gönder** (*Android için*). Kullanıcıların uygulama kilitlenme raporlarını geliştiricilere göndermesine olanak tanır, bu da sorunların belirlenmesine ve çözülmesine yardımcı olur.
-- **Logcat günlüğünü gönder** (*Android için*). Kullanıcılara uygulama kilitlenmelerinin ayrıntılı günlüklerini geliştiricilere gönderme yeteneği sağlar, bu da daha derinlemesine analiz ve sorun gidermeyi kolaylaştırır.
-- **Günlük gönder** (*iOS için*). Android için *Kilitlenme günlüğünü gönder* özelliğine benzer bir işlev görür, iOS cihazlardaki kullanıcıların hata ayıklama amacıyla uygulama kilitlenmelerini geliştiricilere bildirmesini sağlar.
-- **Yapı sürümünü kopyala**. Kullanıcıların sorunları bildirirken uygulamanın mevcut sürümünü geliştiricilere hızlı ve doğru bir şekilde iletmesini sağlar, teşhis ve çözüm sürecini basitleştirir.
+- **Çökme günlüğü gönder** (*Android için*). Kullanıcıların uygulama çökmeleriyle ilgili raporları geliştiricilere göndermesine olanak tanır, bu da sorunların belirlenmesine ve çözülmesine yardımcı olur.
+- **Logcat günlüğü gönder** (*Android için*). Kullanıcılara uygulama çökmelerinin ayrıntılı günlüklerini geliştiricilere gönderme yeteneği sağlar, bu da daha derinlemesine analiz ve sorun gidermeyi kolaylaştırır.
+- **Günlük gönder** (*iOS için*). Android için *Çökme günlüğü gönder* özelliğine benzer bir işlev görür, iOS cihazlardaki kullanıcıların hata ayıklama amacıyla uygulama çökmelerini geliştiricilere bildirmesini sağlar.
+- **Yapı sürümünü kopyala**. Kullanıcıların sorunları bildirirken uygulamanın mevcut sürümünü geliştiricilere hızlı ve doğru bir şekilde iletmesini sağlar, bu da teşhis ve çözüm sürecini basitleştirir.
 
 
 ### En Çok Görüntülenen {#most-viewed}
@@ -536,7 +536,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 </Tabs>
 
-Kullanıcılarımız arasında en çok görüntülenen makaleler, uygulamada veya sitede en çok görüntülenen veya kullanıcı etkileşimi alan makaleleri ifade eder. Bu metrik, kullanıcılarınız için özellikle ilginç veya faydalı olan içeriği belirlemeye yardımcı olur. Kullanıcı tercihlerine ve ilgi alanlarına değerli bilgiler sağlayarak, geliştiricilerin ve içerik oluşturucuların gelecekteki içeriği izleyici ihtiyaçlarını daha iyi karşılayacak şekilde uyarlamasına olanak tanır. Ayrıca, popüler makaleleri vurgulamak, yeni kullanıcıların uygulama içinde değerli kaynaklar bulmasına yardımcı olabilir.
+Kullanıcılarımız arasında en çok görüntülenen makaleler, uygulamada veya sitede en çok görüntülenen veya kullanıcı etkileşimi alan makaleleri ifade eder. Bu metrik, kullanıcılarınız için özellikle ilginç veya faydalı olan içeriği belirlemeye yardımcı olur. Kullanıcı tercihlerine ve ilgi alanlarına ilişkin değerli bilgiler sağlayabilir, geliştiricilerin ve içerik oluşturucuların gelecekteki içeriği hedef kitlenin ihtiyaçlarını daha iyi karşılayacak şekilde uyarlamasına olanak tanır. Ayrıca, popüler makaleleri vurgulamak, yeni kullanıcıların uygulama içinde değerli kaynaklar bulmasına yardımcı olabilir.
 
 
 ### Kullanıcı Kılavuzu {#user-guide}
@@ -557,7 +557,7 @@ Kullanıcılarımız arasında en çok görüntülenen makaleler, uygulamada vey
 
 </Tabs>
 
-Yardım menüsünün **Kullanıcı Kılavuzu** bölümü, OsmAnd web sitesinin yapısını takip eden eksiksiz bir kılavuzdur ve platformlar arasında bilgi tutarlılığı ve gezinme kolaylığı sağlar. Yardım'ı kullanarak, uygulamadan web sitesine kolayca gidebilir, aynı içeriği tanıdık bir şekilde düzenlenmiş olarak bulabilirsiniz. Bu tutarlılık, sorulara yanıt bulmak ve sorunları hızlı bir şekilde gidermek için tek bir destek kaynağı sağlayarak kullanılabilirliği artırır.
+Yardım menüsünün **Kullanıcı Kılavuzu** bölümü, OsmAnd web sitesinin yapısını takip eden, platformlar arasında bilgi tutarlılığı ve gezinme kolaylığı sağlayan eksiksiz bir kılavuzdur. Yardım'ı kullanarak, uygulamadan web sitesine kolayca gezinebilir, aynı içeriği tanıdık bir şekilde düzenlenmiş olarak bulabilirsiniz. Bu tutarlılık, soruların yanıtlarını ve sorun giderme işlemlerini hızlı bir şekilde bulmak için tek bir destek kaynağı sağlayarak kullanılabilirliği artırır.
 
 
 ### Sorun Giderme {#troubleshooting}
@@ -583,9 +583,9 @@ Yaygın sorunları çözmek için çözümler ve ipuçları. Belirli bir sorunuz
 - [Kurulum](../troubleshooting/setup.md). Bir uygulama kurulurken en sık ortaya çıkan sorunlar bunlardır.
 - [Haritalar ve veriler](../troubleshooting/maps-data.md). Haritalar, arama ve diğer verilerle ilgili sorunlar.
 - [Navigasyon](../troubleshooting/navigation.md). Navigasyon modunda ortaya çıkan en yaygın sorunlar.
-- [İz kaydı](../troubleshooting/track-recording-issues.md). Gürültüler, boşluklar ve yanlışlıklar gibi iz kaydıyla ilgili yaygın sorunlar.
+- [İz kaydı](../troubleshooting/track-recording-issues.md). Gürültü, boşluklar ve yanlışlıklar gibi iz kaydıyla ilgili yaygın sorunlar.
 - [Genel](../troubleshooting/general.md). Çeşitli OsmAnd özellikleriyle ilişkili yaygın sorunlar.
-- [Kilitlenme günlükleri](../troubleshooting/crash-logs.md). Kilitlenme günlüklerini OsmAnd ekibine nasıl göndereceğiniz.
+- [Çökme günlükleri](../troubleshooting/crash-logs.md). Çökme günlüklerini OsmAnd ekibine nasıl göndereceğiniz.
 - [Android Auto](../troubleshooting/android_auto.md) (*yalnızca Android için*). Otomatik navigasyon sorunları.
 
 ### Bize Ulaşın {#contact-us}
@@ -606,7 +606,7 @@ Yaygın sorunları çözmek için çözümler ve ipuçları. Belirli bir sorunuz
 
 </Tabs>
 
-Soru sormanıza veya öneride bulunmanıza olanak tanır.
+Soru sormanıza veya önerilerde bulunmanıza olanak tanır.
 
 ### Sorunları Bildir {#report-issues}
 
@@ -626,9 +626,9 @@ Soru sormanıza veya öneride bulunmanıza olanak tanır.
 
 </Tabs>
 
-- **GitHub'da sorun aç**. [Android sürümü GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS sürümü GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): soru sorun, hataları yazın ve özellikler önerin.
-- **Kilitlenme günlüğünü gönder** (*Android için*). Yalnızca kilitlenmeler hakkında bilgi içerir.
-- [Logcat günlüğünü gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Günlük gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Ayrıntılı günlük dosyası.
+- **GitHub'da sorun aç**. [Android sürümü GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS sürümü GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): sorular sorun, hatalar hakkında yazın ve özellikler önerin.
+- **Çökme günlüğü gönder** (*Android için*). Yalnızca çökmeler hakkında bilgi içerir.
+- [Logcat günlüğü gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Günlük gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Ayrıntılı günlük dosyası.
 
 ### OsmAnd Hakkında {#about-osmand}
 
@@ -648,12 +648,12 @@ Soru sormanıza veya öneride bulunmanıza olanak tanır.
 
 </Tabs>
 
-Ekibimiz hakkında bilgi edinebilir, uygulamanın mevcut sürümünü ve yenilikleri görebilir ve uygulamanın beta sürümünü indirebilirsiniz.
+Ekibimiz hakkında bilgi edinebilir, uygulamanın güncel sürümünü ve yenilikleri görebilir, uygulamanın beta sürümünü indirebilirsiniz.
 
 
 ## Gizlilik {#privacy}
 
-Bu, [açık kaynaklı](https://github.com/osmandapp/osmand), reklamsız / izleyici içermeyen, gizliliğe odaklanmış bir uygulamadır. Maksimum gizliliği korumak için OsmAnd, ilk olarak Çevrimdışı haritalar sunar, böylece cihazınızdan hiçbir etkileşim veya coğrafi bilgi sızmaz. Hangi verilerin toplandığına ve hangi verilerin ağ tarafından aktarıldığına çok dikkat ediyoruz, daha fazla bilgiyi [Gizlilik politikamızda](https://osmand.net/help-online/privacy-policy) okuyabilirsiniz.
+Bu, [açık kaynaklı](https://github.com/osmandapp/osmand), reklamsız/izleyici içermeyen, gizlilik odaklı bir uygulamadır. Maksimum gizliliği korumak için OsmAnd, çevrimdışı haritaları ilk sıraya koyar, böylece cihazınızdan hiçbir etkileşim veya coğrafi bilgi sızdırılmaz. Hangi verilerin toplandığına ve hangi verilerin ağ tarafından aktarıldığına çok dikkat ediyoruz, daha fazla bilgiyi [Gizlilik politikamızda](https://osmand.net/help-online/privacy-policy) okuyabilirsiniz.
 
 
 ## İzinler {#permissions}
@@ -662,12 +662,9 @@ OsmAnd'ın iOS / Android sürümünde herhangi bir zorunlu izni yoktur.
 
 **Temel**:
 
-- **İnternet**. İlk indirme / çevrimdışı haritaları güncelleme. Ayrıca, [Sokak Seviyesi Görüntüleri](../map/point-layers-on-map.md#-street-level-imagery), [Çevrimiçi fotoğraflar](../map/map-context-menu.md#online-photos) veya [Çevrimiçi haritalar](../map/raster-maps.md) gibi çevrimiçi özelliklere erişmek için gerekebilir.
+- **İnternet**. Çevrimdışı haritaları ilk indirme / güncelleme. Ayrıca, [Sokak Seviyesi Görüntüleri](../map/point-layers-on-map.md#-street-level-imagery), [Çevrimiçi fotoğraflar](../map/map-context-menu.md#online-photos) veya [Çevrimiçi haritalar](../map/raster-maps.md) gibi çevrimiçi özelliklere erişmek için de gerekebilir.
 - **GPS** / **GSM Ağı**. Konumunuzu belirleyin, navigasyon modunda sizi takip edin ve seyahatinizi kaydedin (isteğe bağlı). Bu izin, [konumum düğmesine](../widgets/map-buttons.md#my-location-and-zoom) tıkladığınızda veya [navigasyonu başlattığınızda](../navigation/setup/route-navigation.md#start--stop-navigation) istenir.
 
-**İsteğe bağlı**:
+**İsteğe Bağlı**:
 
-- **Kamera/ses kaydı** (*Android*). Yalnızca [Sesli/Görüntülü notlar](../plugins/audio-video-notes.md) tarafından kullanılır. Bu özellik bir eklenti olarak paketlenmiştir ve varsayılan olarak devre dışıdır. Bir gezi sırasında konuma bağlı sesli/görüntülü notları hızlı bir şekilde oluşturmanıza olanak tanır.
-
-
-> *Son güncelleme: Ocak 2025*
+- **Kamera/ses kaydı** (*Android*). Yalnızca [Sesli/Görüntülü notlar](../plugins/audio-video-notes.md) tarafından kullanılır. Bu özellik bir eklenti olarak paketlenmiştir ve varsayılan olarak devre dışıdır. Bir gezi sırasında konumla ilgili sesli/görüntülü notları hızlı bir şekilde oluşturmanıza olanak tanır.

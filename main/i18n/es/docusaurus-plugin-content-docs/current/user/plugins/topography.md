@@ -1,5 +1,5 @@
 ---
-source-hash: 191954c813f34f798ce26abb0d68f5443817e0370f9497817d385e2fbd80105e
+source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
 sidebar_position: 14
 title: Topografía
 ---
@@ -16,22 +16,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Generalidades {#overview}
+## Vista general {#overview}
 
 :::info Función de pago
 El complemento Topografía es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
 :::
 
 La topografía es una característica importante de la cartografía que proporciona información para evaluar visualmente el relieve del terreno.
-La información topográfica como las [Curvas de nivel](#contour-lines), el [Terreno](#terrain) (*Sombreado* y *Pendiente*), y el [Relieve 3D](#3d-relief) ayuda a realizar una evaluación visual de la disposición del terreno al mostrar la elevación, el relieve, los extremos, la inclinación o los puntos de igual altura.
+La información topográfica como [Curvas de nivel](#contour-lines), [Terreno](#terrain) (*Sombreado de relieve* y *Pendiente*), y [Relieve 3D](#3d-relief) ayuda a realizar una evaluación visual de la disposición del terreno al ver la elevación, el relieve, los extremos, la inclinación o los puntos de igual altura.
 
-Cada característica proporcionada por este complemento es una capa de mapa independiente que, cuando se activa, se puede mostrar encima o debajo de la fuente del mapa principal, dependiendo de la [configuración](../map/raster-maps.md#overlay-layer).
+Cada función proporcionada por este complemento es una capa de mapa independiente que, cuando está habilitada, se puede mostrar por encima o por debajo de la fuente del mapa principal dependiendo de la [configuración](../map/raster-maps.md#overlay-layer).
 
 El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 
 - [Curvas de nivel](#contour-lines). Este es un [mapa vectorial](../map/vector-maps.md) representado en [**metros** o **pies**](#contour-lines-meters-or-feet). Las curvas de nivel muestran los niveles de elevación y ayudan a visualizar el terreno.
-- [Sombreado](#hillshade-slope-and-altitude-layers). Los tipos de mapas con sombreado de colinas y pendientes hacen que el relieve sea más visible y ayudan a interpretar visualmente el terreno.
-- [Pendiente](#hillshade-slope-and-altitude-layers). Capa [ráster](../map/raster-maps.md) que proporciona información sobre la inclinación de las pendientes, lo que puede ser importante para la planificación de rutas y la seguridad.
+- [Sombreado de relieve](#hillshade-slope-and-altitude-layers). Tipos de mapas con sombreado de colinas y pendientes que hacen el relieve más visible y ayudan a interpretar visualmente el terreno.
+- [Pendiente](#hillshade-slope-and-altitude-layers). Capa [raster](../map/raster-maps.md) que proporciona información sobre la inclinación de las pendientes, lo cual puede ser importante para la planificación de rutas y la seguridad.
 - [Relieve 3D](#3d-relief). Es un [mapa vectorial](../map/vector-maps.md) que proporciona una representación tridimensional del terreno, disponible solo con la [suscripción a OsmAnd Pro](../purchases/index.md).
 
 
@@ -39,59 +39,59 @@ El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 
 <TabItem value="android" label="Android">
 
-| Curvas de nivel | Sombreado | Pendiente |
+| Curvas de nivel | Sombreado de relieve | Pendiente |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Curvas_de_nivel_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Sombreado_de_relieve_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Pendientes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-| Curvas de nivel | Sombreado | Pendiente |
+| Curvas de nivel | Sombreado de relieve | Pendiente |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Curvas_de_nivel_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Sombreados_de_relieve_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Pendientes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
 </Tabs>
 
-#### Licencia de los datos DEM utilizados por OsmAnd para la detección del terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
+### Licencia para los datos DEM utilizados por OsmAnd para la detección del terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Los datos de altitud en el mapa (entre 70 grados de latitud norte y 70 grados de latitud sur) se obtuvieron de mediciones realizadas como parte de la *Misión Topográfica del Radar del Transbordador (SRTM)*. Se utilizó el *Radiómetro Avanzado de Emisión y Reflexión Térmica Espacial (ASTER)*, la herramienta de imágenes principal en el *Sistema de Observación de la Tierra de la NASA*.
+Los datos de altitud en el mapa (entre 70 grados de latitud norte y 70 grados de latitud sur) se obtuvieron de mediciones realizadas como parte de la *Shuttle Radar Topography Mission (SRTM)*. Utilizó el *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, la principal herramienta de imágenes del *Sistema de Observación de la Tierra de la NASA*.
 Para obtener información completa, consulte la [Licencia](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
 <details>
 <summary>Datos DEM (DSM)</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Los datos originales utilizados para este producto fueron proporcionados por AW3D de JAXA.<br/>
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Los datos originales utilizados para este producto fueron suministrados por AW3D de JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Modelos digitales de terreno (MDT) LiDAR de Sonny de Europa</a>.
+	- <a href="https://sonny.4lima.de">Modelos Digitales de Terreno (DTM) LiDAR de Europa de Sonny</a>.
 
 </details>
 
 
-## Parámetros de configuración necesarios {#required-setup-parameters}
+## Parámetros de configuración requeridos {#required-setup-parameters}
 
-Para mostrar los datos de **Curvas de nivel** y **Terreno (Sombreado, Pendiente)** en el mapa:
+Para mostrar datos de **Curvas de nivel** y **Terreno (Sombreado de relieve, Pendiente)** en el mapa:
 
 1. **Compra**: [Plan de compra OsmAnd+, OsmAnd Maps+ o OsmAnd Pro](../plugins/index.md#purchase)
-2. [Activar](../plugins/index.md#enable--disable) el complemento Topografía en la sección Complementos del *Menú principal*.
-3. [Descargar](#download-maps): Curvas de nivel, Sombreado, Pendiente o mapas de Terreno (3D).
-4. **Activar y ajustar**: Curvas de nivel, Sombreado o Pendiente para la vista del mapa.
+2. [Habilitar](../plugins/index.md#enable--disable) el complemento Topografía en la sección Complementos del *Menú principal*.
+3. [Descargar mapas](#download-maps): Mapas de Curvas de nivel, Sombreado de relieve, Pendiente o Terreno (3D).
+4. **Habilitar y ajustar**: Curvas de nivel, Sombreado de relieve o Pendiente para la vista del mapa.
 5. También puedes ver el [tutorial de YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
 
-Para mostrar el [**Relieve 3D**](#3d-relief) necesitas adquirir el plan *OsmAnd Pro*, que incluye acceso al complemento Topografía.
+Para mostrar [**Relieve 3D**](#3d-relief) necesitas comprar el plan *OsmAnd Pro*, que incluye acceso al complemento Topografía.
 
 
 ## Descargar mapas {#download-maps}
 
-Para empezar a trabajar con la funcionalidad del complemento, necesitas descargar los mapas que te interesan. Algunos mapas, como las Curvas de Nivel para regiones montañosas, pueden ser bastante grandes, superando los 2 GB, y pueden no ser compatibles con dispositivos obsoletos.
+Para comenzar a trabajar con la funcionalidad del complemento, necesitas descargar los mapas que te interesan. Algunos mapas, como las Curvas de nivel para regiones montañosas, pueden ser bastante grandes, superando los 2 GB, y pueden no ser compatibles con dispositivos obsoletos.
 
-Para un trabajo estable y para ahorrar recursos, puedes descargar un mapa no de todo el país, sino de sus regiones específicas, si dichas regiones se ofrecen en la aplicación. La información sobre el tamaño de cada tipo de mapa se lista debajo de su nombre.
+Para un trabajo estable y para ahorrar recursos, puedes descargar un mapa no de todo el país, sino de sus regiones específicas, si dichas regiones se ofrecen en la aplicación. La información sobre el tamaño de cada tipo de mapa se encuentra debajo de su nombre.
 
 
-### Mapas de relieve 3D {#3d-relief-maps}
+### Mapas de Relieve 3D {#3d-relief-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -99,23 +99,23 @@ Para un trabajo estable y para ahorrar recursos, puedes descargar un mapa no de 
 
 Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png) ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Necesitas descargar mapas de **Terreno (3D)** para mostrar Sombreado, Pendiente y Relieve 3D. Después de descargar los mapas, puedes mostrar las **Curvas de nivel** y el **Terreno** usando la sección [Configurar mapa](../map/configure-map-menu.md) del *Menú principal*.
+Necesitas descargar mapas de **Terreno (3D)** para mostrar Sombreado de relieve, Pendiente y Relieve 3D. Después de descargar los mapas, puedes mostrar **Curvas de nivel** y **Terreno** usando la sección [Configurar mapa](../map/configure-map-menu.md) del *Menú principal*.
 
-Si el mapa que se muestra en pantalla no está descargado, en *Menú → Configurar mapa → Sección Topografía → Terreno*, en la parte inferior de la lista de características, se mostrará la sección *Descargar mapas* con mapas adicionales sugeridos.
+Si el mapa que se muestra en la pantalla no está descargado, entonces en *Menú → Configurar mapa → sección Topografía → Terreno* en la parte inferior de la lista de funciones se mostrará la sección *Descargar mapas* con mapas adicionales sugeridos.
 
 
 ### Curvas de nivel (metros o pies) {#contour-lines-meters-or-feet}
@@ -124,19 +124,19 @@ Si el mapa que se muestra en pantalla no está descargado, en *Menú → Configu
 
 <TabItem value="android" label="Android">
 
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Diálogo de descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Diálogo de descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Para las [**Curvas de nivel**](#contour-lines), debes determinar en qué [unidades](../personal/profiles.md#units--formats) (metros o pies) se mostrarán en el mapa y descargar la versión adecuada del mapa en tu dispositivo.
+Para las [**Curvas de nivel**](#contour-lines), necesitas determinar en qué [unidades](../personal/profiles.md#units--formats) (metros o pies) se mostrarán en el mapa y descargar la versión apropiada del mapa en tu dispositivo.
 
 **Las opciones de unidades no son intercambiables**, por lo que si necesitas cambiar de metros a pies o viceversa, debes desinstalar la versión anterior del mapa de Curvas de nivel para descargar la nueva versión.
 
@@ -149,7 +149,7 @@ Para las [**Curvas de nivel**](#contour-lines), debes determinar en qué [unidad
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menú de curvas de nivel Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -157,18 +157,18 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Curvas de nivel*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menú de curvas de nivel iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Las [Curvas de nivel](../map/vector-maps.md#-contour-lines) son una representación gráfica de las elevaciones en un mapa y están disponibles como mapas vectoriales. Forman líneas que corresponden a puntos con la misma altitud, las cuales forman contornos que permiten determinar en qué dirección y cuánto se inclina la superficie.
+Las [Curvas de nivel](../map/vector-maps.md#-contour-lines) son una representación gráfica de las elevaciones en un mapa y están disponibles como mapas vectoriales. Forman líneas que corresponden a puntos con la misma altitud, que forman contornos que permiten determinar en qué dirección y cuánto se inclina la superficie.
 
-Al usar el [motor de renderizado de mapas](../personal/global-settings.md#map-rendering-engine):
+Al usar el [Motor de renderizado de mapas](../personal/global-settings.md#map-rendering-engine):
 
 - **Versión 2 (OpenGL)**. Las curvas de nivel son compatibles tanto en la vista 3D como en el modo de relieve 3D.
-- **Versión 1**. Las curvas de nivel no son compatibles cuando se utilizan mapas de mosaico obtenidos de Internet.
+- **Versión 1**. Las curvas de nivel no son compatibles cuando se utilizan mapas de teselas procedentes de Internet.
 
 **Configuración de apariencia**:
 
@@ -177,7 +177,7 @@ Al usar el [motor de renderizado de mapas](../personal/global-settings.md#map-re
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Elige el color para mostrar las curvas de nivel.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Ajusta el ancho de las curvas de nivel.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selecciona la densidad de las curvas de nivel (Baja, Media, Alta). Las densidades más altas pueden afectar la velocidad de carga.
-- *<Translate android="true" ids="maps_and_resources"/>*. Visualiza y descarga mapas de curvas de nivel para la región actual y áreas cercanas.
+- *<Translate android="true" ids="maps_and_resources"/>*. Ver y descargar mapas de curvas de nivel para la región actual y áreas cercanas.
 
 
 ## Terreno {#terrain}
@@ -188,61 +188,61 @@ Al usar el [motor de renderizado de mapas](../personal/global-settings.md#map-re
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png) ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menú de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menú de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png) ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-La opción **Terreno** habilita y permite personalizar tres características como *Sombreado*, *Pendiente* y *Altitud*.
+La opción **Terreno** habilita y permite personalizar tres características como *Sombreado de relieve*, *Pendiente* y *Altitud*.
 Características específicas:
 
-- Solo se puede habilitar una opción a la vez, ya sea Sombreado, Pendiente o Altitud.
+- Solo se puede habilitar una opción a la vez, ya sea Sombreado de relieve, Pendiente o Altitud.
 - Si no ves ningún cambio después de descargar y habilitar el mapa correspondiente, se recomienda reiniciar la aplicación.
 
-El menú **Terreno** incluye la selección de [esquema de color](#default-color-scheme) con la opción de [modificarlo](#modify-color-scheme) (para [suscriptores Pro](../../user/purchases/index.md)), la capacidad de cambiar la transparencia de la capa en el mapa ([visibilidad](#visibility)), y seleccionar el [nivel de zoom](#zoom-levels) para su visualización, información sobre el tamaño de los [datos en caché](#cache-size), y una lista de [mapas](../../user/personal/maps-resources.md) necesarios para mostrar la capa.
+El menú **Terreno** incluye la selección del [esquema de color](#default-color-scheme) con la opción de [modificarlo](#modify-color-scheme) (para [suscriptores Pro](../../user/purchases/index.md)), la capacidad de cambiar la transparencia de la capa en el mapa ([visibilidad](#visibility)), y seleccionar el [nivel de zoom](#zoom-levels) para su visualización, información sobre el tamaño de los [datos en caché](#cache-size), y una lista de [mapas](../../user/personal/maps-resources.md) necesarios para mostrar la capa.
 
 
-## Capas de sombreado, pendiente y altitud {#hillshade-slope-and-altitude-layers}
+## Capas de Sombreado, Pendiente y Altitud {#hillshade-slope-and-altitude-layers}
 
-| Sombreado | Pendiente | Altitud |
+| Sombreado de relieve | Pendiente | Altitud |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Sombreado de relieve](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-El **Sombreado** se basa en la simulación de la iluminación de la superficie utilizando datos del terreno. Este método implica la creación de sombras y luces en función del ángulo de la superficie con respecto a la fuente de luz. Como resultado, se ven colinas, valles y otros detalles del terreno naturales en el mapa.
+**Sombreado de relieve** se basa en la simulación de la iluminación de la superficie utilizando datos del terreno. Este método implica la creación de sombras y luces basadas en el ángulo de la superficie con respecto a la fuente de luz. Como resultado, ves colinas, valles y otros detalles del terreno de forma natural en el mapa.
 
-La **Pendiente** determina el ángulo de inclinación de la superficie basándose en los datos de elevación de los puntos en el mapa. Los cálculos del ángulo de pendiente se realizan considerando los cambios de elevación y las distancias entre los puntos, y representando este cambio como un ángulo de pendiente.
+**Pendiente** determina el ángulo de inclinación de la superficie basándose en los datos de elevación de los puntos del mapa. Los cálculos del ángulo de pendiente se realizan considerando los cambios de elevación y las distancias entre los puntos, y representando este cambio como un ángulo de pendiente.
 
-La **Altitud** representa la elevación de los puntos en el mapa con respecto al nivel del mar. Te ayuda a comprender cómo cambia la altura del terreno. Esta característica es particularmente útil para actividades como el senderismo o el ciclismo de montaña, donde conocer la altitud puede ayudar a planificar rutas y gestionar el esfuerzo físico. Los datos de altitud se derivan de modelos de elevación y proporcionan una vista clara de los puntos altos y bajos, lo que facilita la evaluación de la dificultad de una ruta o la identificación de picos y valles a lo largo de tu viaje.
+**Altitud** representa la elevación de los puntos en el mapa con respecto al nivel del mar. Ayuda a comprender cómo cambia el terreno en altura. Esta característica es particularmente útil para actividades como el senderismo o el ciclismo de montaña, donde conocer la altitud puede ayudar a planificar rutas y gestionar el esfuerzo físico. Los datos de altitud se derivan de modelos de elevación y proporcionan una vista clara de los puntos altos y bajos, lo que facilita la evaluación de la dificultad de una ruta o la identificación de picos y valles a lo largo de su viaje.
 
-Los mapas ráster de **Sombreado**, **Pendiente** y **Altitud** se crean a partir de datos ráster del terreno, como los Modelos Digitales de Elevación (MDE).
+Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se crean a partir de datos de terreno raster como los Modelos Digitales de Elevación (DEM).
 
 **Uso:**
 
-- *Navegación.* Ayuda a identificar pendientes pronunciadas, tanto cuesta abajo como cuesta arriba, lo que puede ser crucial para una navegación segura.
+- *Navegación.* Ayuda a identificar pendientes pronunciadas, tanto de bajada como de subida, lo que puede ser crucial para una navegación segura.
 - *Planificar rutas.* Ayuda a elegir las rutas más adecuadas, considerando el terreno.
-- *Estimación del terreno.* Es conveniente para visualizar el paisaje, especialmente si vas a pie o en bicicleta.
+- *Estimación del terreno.* Es conveniente para visualizar el paisaje, especialmente si estás caminando o en bicicleta.
 
 
-### Esquema de color predeterminado {#default-color-scheme}
+### Esquema de color por defecto {#default-color-scheme}
 
-| Sombreado | Pendiente | Altitud |
+| Sombreado de relieve | Pendiente | Altitud |
 | ------ | ------- | ------- |
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Sombreado de relieve](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Pendiente](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menú](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
-- *Sombreado* utiliza tonos oscuros para mostrar pendientes, picos y tierras bajas. El Sol virtual tiene un azimut (dirección) fijo de 315 grados.
+- *Sombreado de relieve* utiliza tonos oscuros para mostrar pendientes, picos y tierras bajas. El Sol virtual tiene un azimut (dirección) fijo de 315 grados.
 
-- *Pendiente* utiliza el color para visualizar la inclinación del terreno. Puedes leer más sobre esto [aquí](https://en.wikipedia.org/wiki/Grade_(slope)). Cada color corresponde a un ángulo de desviación de la horizontal. Un esquema de color *Pendiente* adicional, ***Avalancha***, está disponible en el menú **Modificar**.
+- *Pendiente* utiliza el color para visualizar la inclinación del terreno. Puedes leer más sobre ello [aquí](https://en.wikipedia.org/wiki/Grade_(slope)). Cada color corresponde a un ángulo de desviación de la horizontal. Un esquema de color adicional para *Pendiente*, ***Avalancha***, está disponible en el menú **Modificar**.
 
-- *Altitud*. El mapa de altitud colorea cada píxel según la altura calculada del mapa utilizando el gradiente de un esquema de color definido. Por lo general, los esquemas de altitud dependen mucho de la ubicación. En áreas montañosas, preferirías distribuir los colores en un rango de altitud más amplio y en áreas planas, seleccionarías un esquema de color con un rango pequeño entre la altitud mínima/máxima.
+- *Altitud*. El mapa de altitud colorea cada píxel según la altura calculada del mapa utilizando el gradiente de un esquema de color definido. Por lo general, los esquemas de altitud dependen mucho de la ubicación. En áreas montañosas, preferirás distribuir los colores en un rango de altitud más amplio y en áreas planas, seleccionarás un esquema de color con un rango pequeño entre la altitud mínima y máxima.
 
 > *Por favor, lee el artículo [Esquema de color](../personal/color-palette-schemes.md) para más información.*
 
@@ -257,13 +257,13 @@ Los mapas ráster de **Sombreado**, **Pendiente** y **Altitud** se crean a parti
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png) ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png) ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
+![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
 
 </TabItem>
 
@@ -272,7 +272,7 @@ Los mapas ráster de **Sombreado**, **Pendiente** y **Altitud** se crean a parti
 La función *Modificar esquema de color* te permite seleccionar un esquema de color:
 
 - De una [lista predefinida](#default-color-scheme).
-- De archivos de paleta de colores que hayas creado en tu ordenador. Los archivos personalizados se pueden añadir a OsmAnd utilizando la [herramienta de importación/exportación](../personal/import-export.md).
+- De archivos de paleta de colores que hayas creado en tu ordenador. Los archivos personalizados se pueden agregar a OsmAnd utilizando la [herramienta de importación/exportación](../personal/import-export.md).
 
 Puedes [editar estas paletas](../personal/color-palette-schemes.md#edit-palette-file) para personalizar la apariencia de los mapas y las rutas.
 
@@ -281,45 +281,45 @@ Puedes [editar estas paletas](../personal/color-palette-schemes.md#edit-palette-
 
 | Visibilidad 31% | Visibilidad 74% |
 | ------ | ------- |
-| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Visibilidad ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilidad ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La función *Visibilidad* se utiliza para ajustar la transparencia de las sombras para el Sombreado y los colores utilizados para representar el ángulo en el parámetro Pendiente.
+La función *Visibilidad* se utiliza para ajustar la transparencia de las sombras para el Sombreado de relieve y los colores utilizados para representar el ángulo en el parámetro de Pendiente.
 
 ### Niveles de zoom {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-La función *Niveles de escala* te permite establecer los valores mínimos y máximos de los niveles de zoom del mapa, que van del 4 al 19, en los que se mostrarán las capas del mapa de Sombreado o Pendiente.
+La función *Niveles de escala* te permite establecer los valores mínimos y máximos de los niveles de zoom del mapa, que van de 4 a 19, en los que se mostrarán las capas de mapa de Sombreado de relieve o Pendiente.
 
 ### Tamaño de la caché {#cache-size}
 
-El **tamaño de la caché** es una sección informativa que muestra la cantidad de memoria de tu dispositivo que se utiliza actualmente para los datos de *Terreno*. Cada vez que visualizas información de *Sombreado* o *Pendiente* en un mapa, todos estos datos se almacenan temporalmente en la caché para un acceso rápido y un uso posterior, evitando una carga adicional en el procesador de tu dispositivo.
+**Tamaño de la caché** es una sección informativa que muestra la cantidad de memoria en tu dispositivo actualmente utilizada para los datos de *Terreno*. Cada vez que ves información de *Sombreado de relieve* o *Pendiente* en un mapa, todos estos datos se almacenan temporalmente en la caché para un acceso rápido y uso posterior, evitando una carga adicional en el procesador de tu dispositivo.
 
-**Borrar la caché** es a veces necesario para liberar espacio en tu dispositivo o para resolver posibles problemas de rendimiento. Para borrar la caché, debes ir a la *Configuración del sistema* del dispositivo, y luego la ruta puede ser la siguiente: *Aplicaciones → OsmAnd → Almacenamiento → Borrar caché*.
+**Limpiar la caché** a veces es necesario para liberar espacio en tu dispositivo o para resolver posibles problemas de rendimiento. Para limpiar la caché, necesitas ir a los *Ajustes del sistema* del dispositivo, luego la ruta puede ser la siguiente: *Aplicaciones → OsmAnd → Almacenamiento → Limpiar caché*.
 
 
 ### Motor de renderizado (Android) {#rendering-engine-android}
 
-El **Sombreado** y la **Pendiente** se muestran y ajustan en cualquier [motor de renderizado de mapas](../personal/global-settings.md#map-rendering-engine) seleccionado.
+**Sombreado de relieve** y **Pendiente** se muestran y ajustan en cualquier [Motor de renderizado de mapas](../personal/global-settings.md#map-rendering-engine) seleccionado.
 
-1. Si utilizas el **motor de renderizado de mapas Versión 1**, necesitas utilizar la [descarga](../start-with/download-maps.md) normal de mapas ráster de Sombreado y Pendiente.
+1. Si utilizas el **Motor de renderizado de mapas Versión 1**, necesitas usar la [descarga](../start-with/download-maps.md) normal de mapas raster de Sombreado de relieve y Pendiente.
 
-2. Si utilizas el **motor de renderizado de mapas Versión 2 (OpenGL)**:
-    - Puedes seguir utilizando el tipo de descarga normal de mapas ráster de Sombreado y Pendiente. Sin embargo, para hacerlo, deberás activar el [complemento de desarrollo de OsmAnd](../plugins/development.md) y habilitar la configuración [Usar formato SQLite ráster para sombreado y pendiente](../plugins/development.md#terrain).
+2. Si utilizas el **Motor de renderizado de mapas Versión 2 (OpenGL)**:
+    - Puedes continuar usando el tipo de descarga normal de mapas raster de Sombreado de relieve y Pendiente. Sin embargo, para hacerlo, necesitarás activar el [complemento de desarrollo de OsmAnd](../plugins/development.md) y habilitar la configuración [Usar formato SQLite raster para sombreado de relieve y pendiente](../plugins/development.md#terrain).
 
-    - Alternativamente, puedes utilizar la descarga de [Mapa de terreno (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location). Esto ahorra espacio de memoria en tu dispositivo, y los efectos de Sombreado, Pendiente y Relieve 3D se generarán a partir de ellos utilizando tu dispositivo.
+    - Alternativamente, puedes usar la descarga de [Mapa de terreno (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location). Esto ahorra espacio de memoria en tu dispositivo, y los efectos de Sombreado de relieve, Pendiente y Relieve 3D se generarán a partir de ellos utilizando tu dispositivo.
 
 
 ### Acciones rápidas {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Acción rápida para Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Puedes usar los botones de *Acción rápida* en la pantalla del mapa para cambiar la visibilidad de las capas de [Curvas de nivel](#contour-lines), [Terreno](#terrain) y el [esquema de color del Terreno](#default-color-scheme). Dependiendo de la capa seleccionada en el menú Configurar mapa, asignar una acción de *Terreno* al botón mostrará *Sombreado*, *Pendiente* o *Altitud*.
+Puedes usar los botones de *Acción rápida* en la pantalla del mapa para cambiar la visibilidad de las capas de [Curvas de nivel](#contour-lines), [Terreno](#terrain) y el [esquema de color del Terreno](#default-color-scheme). Dependiendo de la capa seleccionada en el menú Configurar mapa, asignar una acción de *Terreno* al botón mostrará *Sombreado de relieve*, *Pendiente* o *Altitud*.
 
 La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra en la sección Topografía del menú Configurar mapa. En el artículo [Acción rápida](../widgets/quick-action.md#configure-map), puedes encontrar una lista de capas disponibles para mostrar. Si necesitas acceso rápido a esta configuración de mapa, utiliza la herramienta *Botón personalizado*.
 
-- Ve a [Añadir acción](../widgets/quick-action.md#custom-buttons): *Menú → Configurar pantalla → Botones personalizados → Acción rápida → Añadir acción → Configurar mapa*.
-- Añade uno o más botones de QA para cambiar la visibilidad de una capa topográfica en particular.
+- Ir a [Añadir acción](../widgets/quick-action.md#custom-buttons): *Menú → Configurar pantalla → Botones personalizados → Acción rápida → Añadir acción → Configurar mapa*.
+- Añade uno o más botones de Acción rápida para cambiar la visibilidad de una capa de topografía en particular.
 
 
 ## Relieve 3D {#3d-relief}
@@ -334,47 +334,47 @@ El Relieve 3D es una función de pago de [**OsmAnd Pro**](../purchases/index.md)
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-La función de Relieve 3D produce un relieve elevado y proporciona una representación tridimensional del paisaje. El Relieve 3D funciona sin conexión y se puede utilizar con [mapas vectoriales de OsmAnd](../map/vector-maps.md) o cualquier [mapa ráster](../map/raster-maps.md#select-raster-maps) como [Fuente de mapa](../map/raster-maps.md#main) o como [Capa de superposición/subyacente](../map/raster-maps.md#overlay-layer).
+La función de Relieve 3D produce un relieve elevado y proporciona una representación tridimensional del paisaje. El Relieve 3D funciona sin conexión y se puede usar con [mapas vectoriales de OsmAnd](../map/vector-maps.md) o cualquier [mapa raster](../map/raster-maps.md#select-raster-maps) como [Fuente de mapa](../map/raster-maps.md#main) o como [Subcapa/Superposición](../map/raster-maps.md#overlay-layer).
 
 ***Cómo mostrar el Relieve 3D en el mapa.***
 
-- Adquiere una suscripción a **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) o [Android](../purchases/android.md#pro-features).
+- Compra la suscripción a **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) o [Android](../purchases/android.md#pro-features).
 
-- Ve a [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
-    - **Android**: desplázate hasta la sección *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*.
-    - **iOS**: desplázate hasta la sección *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
+- Ir a [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
+    - **Android**: desplázate a la sección *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*.
+    - **iOS**: desplázate a la sección *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
 
-- Descarga el [mapa de Terreno (3D)](#3d-relief-maps) de las regiones, si es necesario.
+- Descarga el [Mapa de terreno (3D)](#3d-relief-maps) de las regiones, si es necesario.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-| Capa de mapa vectorial | Capa de mapa ráster |
+| Capa de mapa vectorial | Capa de mapa raster |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-| Capa de mapa vectorial | Capa de mapa ráster |
+| Capa de mapa vectorial | Capa de mapa raster |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -389,35 +389,35 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Exageración vertical*
 
-![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Exageración vertical Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Exageración vertical*
 
-![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Exageración vertical iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
 </Tabs>
 
-La *exageración vertical* es un coeficiente especial para el *relieve 3D*. Puedes cambiar la escala (*exageración vertical*) de x1 a x3. Esta función te permite ver contornos de terreno más suaves con mayor detalle.
+La *Exageración vertical* es un coeficiente especial para el *Relieve 3D*. Puedes cambiar la escala (*Exageración vertical*) de x1 a x3. Esta función te permite ver contornos de terreno más suaves con mayor detalle.
 
 
-### Sombreado y Relieve 3D {#hillshade-and-3d-relief}
+### Sombreado de relieve y Relieve 3D {#hillshade-and-3d-relief}
 
-| Sombreado | Relieve 3D |
+| Sombreado de relieve | Relieve 3D |
 |--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-El **Sombreado** es un tipo de mapa que muestra el terreno utilizando sombras, creando una representación visual de la pendiente y la forma de la superficie terrestre.
-El **Relieve 3D** es una función que añade efectos tridimensionales al mapa.
+**Sombreado de relieve** es un tipo de mapa que muestra el terreno usando sombras, creando una representación visual de la pendiente y la forma de la superficie terrestre.
+**Relieve 3D** es una función que añade efectos tridimensionales al mapa.
 
-Si **desactivas** el *Sombreado* y **activas** el *Relieve 3D*, las sombras del relieve seguirán siendo visibles porque el *Sombreado* y el *Relieve 3D* son dos formas diferentes de visualizar un mapa. El *Sombreado* crea sombras basadas en el terreno y las añade al mapa, mientras que el *Relieve 3D* modela elementos 3D para mostrar la profundidad y la forma del terreno, y las sombras son parte de la visualización. Estas funciones pueden trabajar en paralelo, y desactivar el *Sombreado* no afecta cómo se muestran los efectos 3D.
+Si **desactivas** *Sombreado de relieve* y **activas** *Relieve 3D*, las sombras del relieve seguirán siendo visibles porque *Sombreado de relieve* y *Relieve 3D* son dos formas diferentes de visualizar un mapa. *Sombreado de relieve* crea sombras basadas en el terreno y las añade al mapa, mientras que *Relieve 3D* modela elementos 3D para mostrar la profundidad y la forma del terreno, y las sombras son parte de la visualización. Estas funciones pueden funcionar en paralelo, y desactivar *Sombreado de relieve* no afecta a cómo se muestran los efectos 3D.
 
-Cuando el **Sombreado** está **activado**, una imagen con sombras de relieve aparece más detallada, oscura y escalonada que una imagen de *Relieve 3D*. La explicación es que el *Sombreado* enfatiza los gradientes y contrastes del terreno, creando una imagen más nítida y detallada. La función de *Relieve 3D* le da al mapa una apariencia más fluida y suavizada, suavizando el terreno y potencialmente reduciendo la visibilidad de algunos detalles más finos.
+Cuando **Sombreado de relieve** está **activado**, una imagen con sombras de relieve parece más detallada, más oscura y más escalonada que una imagen de *Relieve 3D*. La explicación es que *Sombreado de relieve* enfatiza los gradientes y contrastes del terreno, creando una imagen más nítida y detallada. La función *Relieve 3D* le da al mapa una apariencia más fluida y suavizada, suavizando el terreno y reduciendo potencialmente la visibilidad de algunos detalles más finos.
 
 
 ## Combinar tipos de capa {#combine-layer-types}
@@ -426,23 +426,23 @@ Cuando el **Sombreado** está **activado**, una imagen con sombras de relieve ap
 
 <TabItem value="android" label="Android">
 
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Curvas de nivel combinadas con Sombreado de relieve](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Curvas de nivel combinadas con Pendiente](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Curvas de nivel combinadas con Sombreado de relieve en iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Curvas de nivel combinadas con Pendiente en iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd te permite combinar varios tipos de capas de mapa para una visualización más visual.
+OsmAnd te permite combinar múltiples tipos de capas de mapa para una visualización más completa.
 
-- La combinación de **Curvas de nivel** y **Sombreado** es óptima para estimar visual y numéricamente la inclinación de las laderas de las montañas.
+- La combinación de **Curvas de nivel** y **Sombreado de relieve** es óptima para estimar visual y numéricamente la inclinación de las pendientes montañosas.
 - La combinación de las capas de **Curvas de nivel** y **Pendiente** es la mejor para estimar la inclinación de la pendiente y encontrar puntos con la misma altura.
-- La combinación de las capas de **Relieve 3D** y **Sombreado** te permite obtener una representación más realista y visual del terreno, el relieve y los detalles del paisaje. Esta combinación es especialmente adecuada para terrenos montañosos y con colinas.
+- La combinación de las capas de **Relieve 3D** y **Sombreado de relieve** te permite obtener una representación más realista y visual del terreno, el relieve y los detalles del paisaje. Esta combinación es especialmente adecuada para terrenos montañosos y accidentados.
 
 
 ## Artículos relacionados {#related-articles}
@@ -455,10 +455,8 @@ OsmAnd te permite combinar varios tipos de capas de mapa para una visualización
 
 <!-- Troubleshooting Steps-->
 
-1. Cómo restaurar la compra del complemento Topografía (anteriormente Curvas de nivel). [(ver)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
-2. Las curvas de nivel, los datos de elevación o el relieve 3D no se muestran. [(ver)](../troubleshooting/setup.md#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
+1. Cómo restaurar la compra del complemento Topografía (anteriormente Curvas de nivel). [(verificar)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+2. Las Curvas de nivel, los datos de Elevación o el Relieve 3D no se muestran. [(verificar)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
 3. El mapa cambia automáticamente al modo 3D durante la navegación:
-    - Asegúrate de que el botón **Modo 3D** esté deshabilitado en **Menú → Configurar pantalla → Botones → Botones predeterminados**.
-    - Comprueba si hay alguna función de Terreno habilitada en **Menú → Configurar mapa → Topografía** que pueda activar un efecto 3D.
-
-> *Última actualización: enero de 2025*
+    - Asegúrate de que el botón **Modo 3D** esté desactivado en **Menú → Configurar pantalla → Botones → Botones predeterminados**.
+    - Comprueba si alguna función de Terreno está habilitada en **Menú → Configurar mapa → Topografía** que pueda activar un efecto 3D.

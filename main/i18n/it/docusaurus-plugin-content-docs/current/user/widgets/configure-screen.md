@@ -1,5 +1,5 @@
 ---
-source-hash: cbfcf0aa9a07f3ab40e670385d79d1a04431696bcbef518decc18f41ef282921
+source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -18,17 +18,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Il menu **Configura schermata** in OsmAnd ti permette di personalizzare l'interfaccia della mappa aggiungendo e organizzando widget, pulsanti e azioni rapide su più pannelli.
+Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfaccia della mappa aggiungendo e disponendo widget, pulsanti e azioni rapide su più pannelli.
 
-Puoi:
+È possibile:
 
-- Aggiungere widget [informativi](../widgets/info-widgets.md), [di navigazione](../widgets/nav-widgets.md) e [relativi ai marcatori](../widgets/markers.md).
-- Aggiungere o modificare [Azioni rapide](../widgets/quick-action.md), [Pulsanti personalizzati](../widgets/quick-action.md#custom-buttons) e [Pulsanti predefiniti](../widgets/map-buttons.md).
+- Aggiungere widget [informativi](../widgets/info-widgets.md), [di navigazione](../widgets/nav-widgets.md) e [relativi ai preferiti](../widgets/markers.md).
+- Aggiungere o modificare [Azioni Rapide](../widgets/quick-action.md), [Pulsanti personalizzati](../widgets/quick-action.md#custom-buttons) e [Pulsanti predefiniti](../widgets/map-buttons.md).
 - Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
 - Creare più **pagine** all'interno dei pannelli laterali, scegliere la dimensione dei widget.
 - Scegliere l'altezza della riga e attivare/disattivare le icone dei widget.
 
-Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md) — ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
+Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -74,8 +74,8 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 </Tabs>
 
-OsmAnd ti permette di organizzare l'interfaccia della mappa usando pannelli widget personalizzabili.  
-Puoi aggiungere, riordinare, raggruppare e rimuovere widget nei seguenti pannelli:
+OsmAnd consente di organizzare l'interfaccia della mappa utilizzando pannelli di widget personalizzabili.  
+È possibile aggiungere, riordinare, raggruppare e rimuovere widget nei seguenti pannelli:
 
 - **Pannello superiore**
 - **Pannello inferiore**
@@ -84,8 +84,8 @@ Puoi aggiungere, riordinare, raggruppare e rimuovere widget nei seguenti pannell
 
 Ogni pannello supporta diversi comportamenti di layout:
 
-- I **pannelli superiore e inferiore** visualizzano i widget in righe. Puoi posizionare uno o due widget per riga e aggiungere più righe se necessario.
-- I **pannelli sinistro e destro** supportano più pagine. Puoi raggruppare i widget in pagine separate e passare da una all'altra.
+- I **pannelli Superiore e Inferiore** visualizzano i widget in righe. È possibile posizionare uno o due widget per riga e aggiungere più righe se necessario.
+- I **pannelli Sinistro e Destro** supportano più pagine. È possibile raggruppare i widget in pagine separate e passare da una all'altra.
 
 
 ### Catalogo Widget {#widgets-catalog}
@@ -108,76 +108,76 @@ Ogni pannello supporta diversi comportamenti di layout:
 
 ***Widget di navigazione:***  
 
-- [Rilevamento](../widgets/nav-widgets.md#bearing).  
-    Questo set mostra il rilevamento assoluto o relativo a un obiettivo in unità angolari.  
-    Sono inclusi 3 widget: *Rilevamento relativo*, *Rilevamento magnetico*, *Rilevamento vero*.
+- [Rilevamento](../widgets/nav-widgets.md#bearing-widget).  
+    Questo set mostra il rilevamento assoluto o relativo verso un obiettivo in unità angolari.  
+    Sono inclusi 3 widget: *Rilevamento relativo*, *Rilevamento magnetico*, *Rilevamento geografico*.
 
-- [Profilo altimetrico](../widgets/nav-widgets#elevation-widget) (*Solo superiore/inferiore*, *Solo Android*).  
+- [Profilo altimetrico](../widgets/nav-widgets#elevation-widget) (*Solo Superiore/Inferiore*, *Solo Android*).  
     Visualizza l'altitudine e la pendenza del percorso.
 
-- [Corsie](../widgets/nav-widgets#lanes) (*Solo superiore/inferiore*).  
-    Guida visiva delle corsie.
+- [Corsie](../widgets/nav-widgets#lanes) (*Solo Superiore/Inferiore*).  
+    Guida visiva alle corsie.
 
-- [Barra dei marcatori della mappa](../widgets/markers.md#configure-marker-widgets-android) (*Solo superiore/inferiore*).  
-    Mostra distanza/direzione ai marcatori salvati.  
-    Configurabile per 1 o 2 marcatori.
+- [Barra dei preferiti sulla mappa](../widgets/markers.md#configure-marker-widgets) (*Solo Superiore/Inferiore*).  
+    Mostra la distanza/direzione verso i preferiti salvati.  
+    Configurabile per 1 o 2 preferiti.
 
 - [Punto di navigazione](../widgets/nav-widgets.md#navigation-points).  
-    Il set mostra la distanza rimanente a una destinazione, un punto intermedio, l'ora di arrivo a un punto intermedio o il tempo di viaggio per un percorso calcolato.  
-    Sono inclusi 4 widget: [Distanza dalla destinazione](../widgets/nav-widgets.md#distance-to-destination), [Distanza dal punto intermedio](../widgets/nav-widgets.md#distance-to-intermediate), [Tempo al punto intermedio](../widgets/nav-widgets.md#time-to-intermediate), [Tempo alla destinazione](../widgets/nav-widgets.md#time-to-destination).
+    Il set mostra la distanza rimanente fino a una destinazione, un punto intermedio, l'orario di arrivo a un punto intermedio o il tempo di percorrenza per un percorso calcolato.  
+    Sono inclusi 4 widget: [Distanza dalla destinazione](../widgets/nav-widgets.md#distance-to-destination), [Distanza dall'intermedio](../widgets/nav-widgets.md#distance-to-intermediate), [Tempo all'intermedio](../widgets/nav-widgets.md#time-to-intermediate), [Tempo alla destinazione](../widgets/nav-widgets.md#time-to-destination).
 
-- [Manovre del percorso](../widgets/nav-widgets.md#next-turn) (*Solo pannello sinistro/destro*).  
-    Questo set si attiva durante la navigazione e mostra la distanza e la freccia per la prossima manovra.  
-    Sono inclusi 3 widget: *Prossima svolta*, *Prossima svolta (piccola)*, *Seconda prossima svolta*.
+- [Manovre del percorso](../widgets/nav-widgets.md#next-turn) (*Solo pannello Sinistro/Destro*).  
+    Questo set si attiva durante la navigazione e mostra la distanza e la freccia per la manovra successiva.  
+    Sono inclusi 3 widget: *Svolta successiva*, *Svolta successiva (piccolo)*, *Seconda svolta successiva*.
 
 - [Limite di velocità](../widgets/nav-widgets.md#speed-limit).  
     Visualizza il limite di velocità attuale per la strada.
 
 - [Tachimetro](../widgets/info-widgets.md#speedometer).  
-    Mostra la velocità attuale basata sui dati GPS e la velocità limitata basata sui [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+    Mostra la velocità attuale basata sui dati GPS e la velocità limitata basata sui [dati di OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
-- [Nome della strada](../widgets/nav-widgets#street-name) (*Solo superiore/inferiore*).  
-    Visualizza la strada attuale o successiva.
+- [Nome della via](../widgets/nav-widgets#street-name) (*Solo Superiore/Inferiore*).  
+    Visualizza la via attuale o imminente.
 
 <br/>
 
 ***Widget informativi:***
 
 - [Altitudine](../widgets/info-widgets.md#altitude-widgets).  
-    Il set visualizza l'altitudine sul livello del mare per la posizione attuale o per il centro della mappa attuale.  
-    Sono inclusi 2 widget: *Altitudine: posizione attuale*, *Altitudine: centro mappa*.
+    Il set visualizza l'altitudine sul livello del mare per la posizione corrente o per il centro della mappa corrente.  
+    Sono inclusi 2 widget: *Altitudine: posizione corrente*, *Elevazione: centro mappa*.
 
-- [Velocità media](../widgets/info-widgets.md#average-speed-widget).  
-    Mostra la velocità media del viaggio attuale.
+- [Velocità media](../widgets/info-widgets.md#average-speed).  
+    Mostra la velocità media del viaggio corrente.
 
 - [Livello batteria](../widgets/info-widgets.md#battery-level).  
     Visualizza il livello della batteria del dispositivo.
 
-- [Widget coordinate](../widgets/info-widgets#coordinates-widget) (*Solo superiore/inferiore*).  
-    Questo set visualizza le coordinate geografiche della geolocalizzazione attuale.  
-    Sono inclusi 2 widget: *Coordinate: centro mappa*, *Coordinate: posizione attuale*.
+- [Widget Coordinate](../widgets/info-widgets#coordinates-widget) (*Solo Superiore/Inferiore*).  
+    Questo set visualizza le coordinate geografiche della geolocalizzazione corrente.  
+    Sono inclusi 2 widget: *Coordinate: centro mappa*, *Coordinate: posizione corrente*.
 
-- [Velocità attuale](../widgets/info-widgets.md#speed).  
+- [Velocità attuale](../widgets/info-widgets.md#current-speed).  
     Visualizza la velocità dal sensore GPS.
 
 - [Ora attuale](../widgets/info-widgets.md#current-time).  
-    Visualizza l'ora di sistema attuale.
+    Visualizza l'ora di sistema corrente.
 
 - [Rapporto di planata](../widgets/info-widgets.md#glide-ratio).  
-    I widget mostrano il rapporto di planata verso l'obiettivo e il rapporto di planata medio per il volo attuale.  
+    I widget mostrano il rapporto di planata verso l'obiettivo e il rapporto di planata medio per il volo corrente.  
     Sono inclusi 2 widget: *Rapporto di planata verso l'obiettivo*, *Rapporto di planata medio*.
 
 - [Info GPS](../widgets/info-widgets.md#gps-info) (*Solo Android*).  
     Mostra il numero di satelliti rilevati.
 
-- [Marcatori mappa](../widgets/markers.md).  
-    Il set mostra la distanza o l'ora di arrivo stimata (ETA) per i primi due marcatori nell'[elenco itinerario](https://osmand.net/docs/user/personal/markers#itinerary-list).  
-    Sono inclusi 2 widget: *Primo marcatore*, *Secondo marcatore*.
+- [Preferiti sulla mappa](../widgets/markers.md).  
+    Il set mostra la distanza o l'orario di arrivo previsto (ETA) per i primi due preferiti [nella lista](https://osmand.net/docs/user/personal/markers#itinerary-list).  
+    Sono inclusi 2 widget: *Primo preferito*, *Secondo preferito*.
 
-- [Righello raggio](../widgets/info-widgets.md#radius-ruler).  
-    Mostra la distanza tra la tua posizione e un punto sulla mappa, cerchiato dallo [strumento righello raggio](../widgets/radius-ruler.md).
+- [Righello radiale](../widgets/info-widgets.md#radius-ruler).  
+    Mostra la distanza tra la tua posizione e un punto sulla mappa, cerchiato dallo [strumento Righello radiale](../widgets/radius-ruler.md).
 
-- [Alba, tramonto](../widgets/info-widgets.md#sunset-and-sunrise).  
+- [Alba, tramonto](../widgets/info-widgets.md#sun-position).  
     Mostra l'ora della prossima alba o tramonto per il centro della mappa.  
     Sono inclusi 2 widget: *Alba*, *Tramonto*.
 
@@ -186,28 +186,28 @@ Ogni pannello supporta diversi comportamenti di layout:
 ***Widget basati su plugin:***  
 
 - [Note audio/video](../widgets/info-widgets.md#audiovideo-notes-widget).  
-    Accesso rapido per acquisire media.  
+    Accesso rapido per catturare media.  
     Sono inclusi 4 widget: *Su richiesta*, *Registra audio*, *Registra video*, *Scatta una foto*.
 
 - [Widget sviluppatore](../widgets/info-widgets.md#developer-widgets).  
     Visualizza informazioni opzionali.  
-    Sono inclusi 5 widget: *FPS rendering mappa*, *Inclinazione telecamera*, *Elevazione telecamera*, *Livello zoom*, *Distanza dalla telecamera all'obiettivo*, *RAM disponibile*.  
+    Sono inclusi 5 widget: *FPS rendering mappa*, *Inclinazione camera*, *Elevazione camera*, *Livello di zoom*, *Distanza dalla camera all'obiettivo*, *RAM disponibile*.  
 
-- [Widget sensori esterni](../widgets/info-widgets.md#external-sensors-widgets).  
-    Il set aiuta a tracciare i dati dei sensori BLE/ANT+ in tempo reale.  
+- [Widget Sensori esterni](../widgets/info-widgets.md#external-sensors-widgets).  
+    Il set aiuta a tracciare i dati dai sensori BLE/ANT+ in tempo reale.  
     Sono inclusi 6 widget: *Frequenza cardiaca*, *Potenza bicicletta* (*Solo Android*), *Cadenza bicicletta*, *Velocità bicicletta*, *Distanza bicicletta*, *Temperatura*.
 
 - [Mapillary](../widgets/info-widgets.md#mapillary-widget).  
     Apre l'app Mapillary per le immagini a livello stradale.
 
-- [Stato OsmAnd Tracker](../widgets/info-widgets.md#tracker-widget).  
+- [Stato di OsmAnd Tracker](../widgets/info-widgets.md#tracker-widget).  
     Accesso rapido all'[applicazione OsmAnd Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram).
 
-- [Widget parcheggio](../widgets/info-widgets.md#parking-widget).  
+- [Widget Parcheggio](../widgets/info-widgets.md#parking-widget).  
     Distanza dal centro dello schermo alla posizione di parcheggio salvata.
 
 - [Registrazione viaggio](../widgets/info-widgets.md#trip-recording-widgets).  
-    Avvia e interrompe la registrazione della traccia e visualizza i dati di registrazione della traccia.  
+    Avvia e interrompe la registrazione della traccia e visualizza i dati della registrazione della traccia.  
     Sono inclusi 4 widget: *Distanza*, *Durata*, *Salita*, *Discesa*.
 
 - [Meteo](../widgets/info-widgets.md#weather-widgets).  
@@ -216,8 +216,8 @@ Ogni pannello supporta diversi comportamenti di layout:
 
 :::note Widget dipendenti dal pannello
 
-- Disponibili solo nei **pannelli superiore e inferiore** e devono essere posizionati in righe separate: *Widget coordinate, Widget profilo altimetrico, Widget corsie, Barra marcatori mappa, Widget nome strada*.
-- Disponibili solo nei **pannelli sinistro e destro**: *Manovre del percorso*.
+- Disponibili solo nei **pannelli Superiore e Inferiore** e devono essere posizionati in righe separate: *Widget Coordinate, Widget Profilo altimetrico, Widget Corsie, Barra dei preferiti sulla mappa, Widget Nome della via*.
+- Disponibili solo nei **pannelli Sinistro e Destro**: *Manovre del percorso*.
 
 :::
 
@@ -243,31 +243,31 @@ Ogni pannello supporta diversi comportamenti di layout:
 
 
 
-La funzione **Modalità riga** ti permette di aggiungere tutte le righe necessarie ai pannelli superiore e inferiore. Puoi visualizzare più widget per riga, aumentando la quantità di informazioni visibili.
+La funzione **Modalità riga** consente di aggiungere tutte le righe necessarie ai pannelli superiore e inferiore. È possibile visualizzare più widget per riga, aumentando la quantità di informazioni visibili.
 
 ***Come configurare le righe:***
 
 - **Aggiungi widget**: Tocca il pulsante *Più* (Android) o *Aggiungi widget* (iOS), quindi seleziona dall'elenco dei widget disponibili.
 - **Riordina widget**: Tocca il pulsante *Matita* (Android) o *Modifica* (iOS) per riorganizzare i widget.
 - **Aggiungi righe**: Tocca il pulsante *Aggiungi riga* per creare nuove righe per i tuoi widget.
-- **Sposta widget**: Trascina i widget tra le diverse righe.
-- **Accedi alle impostazioni del widget**: Tocca l'icona *"i"* (Android) o la freccia *">"* (iOS) per aprire le impostazioni del widget.
+- **Sposta widget**: Trascina i widget tra righe diverse.
+- **Accedi alle impostazioni del widget**: Tocca l'icona *\"i\"* (Android) o la freccia *\">\"* (iOS) per aprire le impostazioni del widget.
 - **Salva modifiche**: Tocca *Applica* (Android) o *Fatto* (iOS) per salvare il layout.
 
 
-#### Tipi di widget e restrizioni {#widget-types-and-restrictions}
+#### Tipi di Widget e Restrizioni {#widget-types-and-restrictions}
 
-La modalità ti permette di aggiungere **più di un widget in una singola riga** sui pannelli superiore e inferiore per visualizzare quante più informazioni necessarie.  
+La modalità consente di aggiungere **più di un widget in una singola riga** sui pannelli superiore e inferiore per visualizzare tutte le informazioni necessarie.  
 
-- **Widget complessi**. Solo un widget complesso può essere aggiunto per riga. Questi includono:
-    - [Barra marcatori mappa (*Solo Android*)](../widgets/markers.md#configure-marker-widgets-android)
-    - [Nome strada](../widgets/nav-widgets#street-name)
-    - [Widget coordinate](../widgets/info-widgets#coordinates-widget)
+- **Widget complessi**. È possibile aggiungere un solo widget complesso per riga. Questi includono:
+    - [Barra dei preferiti sulla mappa (*Solo Android*)](../widgets/markers.md#configure-marker-widgets)
+    - [Nome della via](../widgets/nav-widgets#street-name)
+    - [Widget Coordinate](../widgets/info-widgets#coordinates-widget)
     - [Corsie](../widgets/nav-widgets#lanes)
     - [Profilo altimetrico (*Solo Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manovre del percorso](../widgets/nav-widgets.md#next-turn)
 
-- **Widget semplici**. Possono essere aggiunti più widget semplici a una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*.
+- **Widget semplici**. È possibile aggiungere più widget semplici in una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*.
 
 
 ### Pagine {#pages}
@@ -292,34 +292,34 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_w
 
 </Tabs>
 
-I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**. La funzione **Modalità pagine** ti permette di aggiungere 5 pagine ai pannelli sinistro e destro.
+I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**. La funzione **Modalità pagine** consente di aggiungere 5 pagine ai pannelli sinistro e destro.
 
 ***Come configurare le righe:***
 
-- **Aggiungi una pagina**. Vai alle impostazioni del pannello sinistro/destro e tocca *Modifica → Aggiungi pagina*.
-- **Organizza i widget per pagina**. Questa funzione è utile quando sono necessari diversi set di widget per diverse attività, come la navigazione rispetto alla navigazione sulla mappa.
-- Le pagine ti permettono di creare **set di widget** per scenari specifici, migliorando il flusso di lavoro e riducendo il disordine.
+- **Aggiungi una Pagina**. Vai alle impostazioni del Pannello Sinistro/Destro e tocca *Modifica → Aggiungi pagina*.
+- **Organizza i widget per Pagina**. Questa funzione è utile quando sono necessari diversi set di widget per compiti diversi, come la navigazione rispetto alla consultazione della mappa.
+- Le pagine consentono di creare **set di widget** per scenari specifici, migliorando il flusso di lavoro e riducendo il disordine.
 
 
 ## Impostazioni Widget {#widget-settings}
 
 ![Menu Configura schermata](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Configura schermata](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
-1. **Opzioni dimensione widget** (*per tutti i pannelli*):  
-    Puoi personalizzare la dimensione dei **widget semplici** nei **pannelli superiore, inferiore, sinistro e destro**:
+1. **Opzioni di dimensione del widget** (*per tutti i pannelli*):  
+    È possibile personalizzare la dimensione dei **Widget semplici** nei **pannelli Superiore, Inferiore, Sinistro e Destro**:
 
-    - **Piccolo**. Ideale per display compatti, risparmiando più spazio sullo schermo per le mappe.
-    - **Medio** (*dimensione widget predefinita*). Bilancia visibilità e utilizzo dello spazio.
-    - **Grande**. Fornisce informazioni widget più grandi e visibili.  
+    - **Piccolo**. Ideale per schermi compatti, risparmiando più spazio sullo schermo per le mappe.
+    - **Medio** (*dimensione predefinita del widget*). Bilancia visibilità e utilizzo dello spazio.
+    - **Grande**. Fornisce informazioni del widget più grandi e visibili.  
 
 2. **Nascondere le icone dei widget** (*per i pannelli superiore e inferiore*):
 
     - Migliora la chiarezza e massimizza lo spazio per i dati importanti.
     - Particolarmente utile quando si visualizzano molti widget sulla stessa **riga**.
 
-3. **Dimensione individuale per diverse righe** (*per tutti i pannelli*):
+3. **Dimensione individuale per righe diverse** (*per tutti i pannelli*):
 
-    - I widget possono essere dimensionati individualmente regolando la dimensione di riga e colonna.
+    - I widget possono essere dimensionati individualmente regolando la dimensione della riga e della colonna.
     - **NOTA:** La modifica della dimensione di un widget in una riga/colonna ridimensionerà tutti i widget in quella riga/colonna.
 
 4. **Per modificare la dimensione del widget e la visibilità dell'icona:**
@@ -332,60 +332,54 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
 
 ## Personalizzazione Pannelli {#panels-customization}
 
-### Menu contestuale del widget {#widget-context-menu}
+### Menu Contestuale del Widget {#widget-context-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Duplicato widget](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Duplicato widget](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Il **menu contestuale del widget** fornisce un modo rapido per gestire e configurare i widget direttamente dalla schermata della mappa. Puoi accedervi ***toccando a lungo*** qualsiasi widget per personalizzare il layout dei widget senza lasciare la mappa.
+Il **menu contestuale del widget** fornisce un modo rapido per gestire e configurare i widget direttamente dalla schermata della mappa. È possibile accedervi con un ***tocco prolungato*** su qualsiasi widget per personalizzare il layout dei widget senza lasciare la mappa.
 
-**Per i pannelli superiore e inferiore**  
 
-- *Aggiungi widget a destra/sinistra:*
+- **Aggiungi widget a Destra/Sinistra** (solo per i *pannelli Superiore e Inferiore*)
+    - Seleziona una posizione per il nuovo widget rispetto a quello corrente.
+    - Scegli il widget dall'elenco [Widget disponibili](#widgets-catalog).
 
-    - Seleziona una posizione per il nuovo widget rispetto a quello attuale.
-    - Scegli il widget dall'elenco [Widget disponibili](#widgets-for-all-panels).
-
-**Per i pannelli sinistro e destro**  
-
-- *Aggiungi widget sopra/sotto:*
-
-    - Seleziona se posizionare il nuovo widget sopra o sotto il widget attuale.
+- **Aggiungi widget Sopra/Sotto** (solo per i *pannelli Sinistro e Destro*)
+    - Seleziona se posizionare il nuovo widget sopra o sotto il widget corrente.
     - Tocca il widget richiesto nell'elenco per aggiungerlo alla posizione specificata.
 
-**Azioni generali per tutti i pannelli**  
-
-- *Impostazioni*.
+- **Impostazioni**
     - Accedi alle impostazioni del widget (se disponibili) per personalizzarne l'aspetto o il comportamento.
 
-- *Reset velocità media*.
-    - Disponibile per il widget [Velocità media](../widgets/info-widgets.md#average-speed).
-    - Tocca a lungo per reimpostare istantaneamente il valore della velocità durante un viaggio.
-
-- *Elimina*.
+- **Elimina**
     - Rimuovi il widget dal pannello.
-    - Un prompt di conferma assicura che l'azione sia intenzionale.
+    - Una richiesta di conferma assicura che l'azione sia intenzionale.
 
-### Copie di widget {#copies-of-widgets}
+- **Azzera velocità media** (esempio di *Azioni specifiche del widget*)
+    - Disponibile per il widget [Velocità media](../widgets/info-widgets.md#average-speed).
+    - Tocco prolungato per azzerare istantaneamente il valore della velocità durante un viaggio.
+
+
+### Copie di Widget {#copies-of-widgets}
 
 *Menu OsmAnd → Configura schermata → Widget → Pannello*  
 
-![Duplicato widget](@site/static/img/widgets/widget_dublicate.png)  
+![Duplica widget](@site/static/img/widgets/widget_dublicate.png)  
 
-OsmAnd ti permette di aggiungere più istanze dello stesso widget a pannelli o pagine diverse. Questa funzione è particolarmente utile quando hai bisogno di informazioni coerenti tra diverse visualizzazioni o profili.  
+OsmAnd consente di aggiungere più istanze dello stesso widget a diversi pannelli o pagine. Questa funzione è particolarmente utile quando si necessita di informazioni coerenti su diverse viste o profili.  
 
 ***Come duplicare i widget:***
 
@@ -416,12 +410,12 @@ OsmAnd ti permette di aggiungere più istanze dello stesso widget a pannelli o p
 
 
 
-Puoi riorganizzare o rimuovere i widget dalla schermata dell'applicazione usando la modalità **Modifica**.  
+È possibile riorganizzare o rimuovere i widget dalla schermata dell'applicazione utilizzando la modalità **Modifica**.  
 
 ***Come spostare un widget:***
 
 - Vai a: *Menu OsmAnd → Configura schermata → Widget → Pannello → Pulsante Modifica*.
-- Tocca a lungo l'**icona a destra** del widget.
+- Tocco prolungato sull'**icona a destra** del widget.
 - Trascinalo nella posizione desiderata nell'elenco dei widget.
 
 ***Come eliminare un widget:***  
@@ -433,7 +427,7 @@ Puoi riorganizzare o rimuovere i widget dalla schermata dell'applicazione usando
 
 ## Pulsanti {#buttons}
 
-### Pulsanti personalizzati {#custom-buttons}
+### Pulsanti Personalizzati {#custom-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -455,9 +449,9 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-**Azione rapida (Pulsanti personalizzati)** ti permette di aggiungere un elenco di singole azioni da tutte le [Azioni rapide](../widgets/quick-action.md#custom-buttons) disponibili. Queste azioni possono essere assegnate a uno o più pulsanti widget sulla schermata della mappa. I pulsanti personalizzati forniscono un accesso rapido alle azioni usate frequentemente.
+**Azione Rapida (Pulsanti personalizzati)** consente di aggiungere un elenco di singole azioni da tutte le [Azioni rapide](../widgets/quick-action.md#custom-buttons) disponibili. Queste azioni possono essere assegnate a uno o più pulsanti widget sulla schermata della mappa. I pulsanti personalizzati forniscono un accesso rapido alle azioni utilizzate di frequente.
 
-### Pulsanti predefiniti {#default-buttons}
+### Pulsanti Predefiniti {#default-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -479,16 +473,16 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-1. I **pulsanti predefiniti** ti permettono di personalizzare quali pulsanti mappa preimpostati sono visibili sulla schermata della mappa. Puoi scegliere di nascondere o mostrare i seguenti pulsanti:
+1. I **Pulsanti predefiniti** consentono di personalizzare quali pulsanti mappa preimpostati sono visibili sulla schermata della mappa. È possibile scegliere di nascondere o mostrare i seguenti pulsanti:
 
     - [Modalità 3D](../widgets/map-buttons.md#3d-mode). Per iOS, il pulsante è sempre disponibile. Per Android, appare nell'elenco ed è disponibile per l'impostazione se è selezionato il motore di rendering della mappa [Versione 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
-    - [Bussola](../widgets/map-buttons.md#display-options). Indica come la mappa è orientata sul dispositivo.  
-    3 visualizzazioni: *Sempre visibile*, *Sempre nascosta*, *Visibile se la mappa è ruotata*.
+    - [Bussola](../widgets/map-buttons.md#display-options). Indica come è orientata la mappa sul dispositivo.  
+    3 viste: *Sempre visibile*, *Sempre nascosta*, *Visibile se la mappa è ruotata*.
 
-    - [Configura mappa](../map/configure-map-menu.md). Accedi alle opzioni per modificare lo stile, i livelli e le impostazioni aggiuntive della mappa.
+    - [Configura mappa](../map/configure-map-menu.md). Accedi alle opzioni per modificare lo stile della mappa, i livelli e le impostazioni aggiuntive.
 
-    - [Menu](../widgets/map-buttons.md#main-menu). Apre il menu principale dell'applicazione per accedere a tutte le funzioni.
+    - [Menu](../widgets/map-buttons.md#main-menu). Apre il menu principale dell'applicazione per accedere a tutte le funzionalità.
 
     - [La mia posizione](../widgets/map-buttons.md#my-location-and-zoom). Centra la mappa sulla tua posizione attuale.
 
@@ -498,28 +492,28 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
     - [Zoom avanti / indietro](../widgets/map-buttons.md#my-location-and-zoom). Regola il livello di zoom della mappa per mostrare più o meno dettagli.
 
-2. Il **menu a tre punti** nella schermata dei pulsanti predefiniti contiene azioni come:
+2. Il **menu a tre punti** sulla schermata dei Pulsanti predefiniti contiene azioni come:
 
-    - *Ripristina predefiniti*. Ti permette di riportare le impostazioni dei pulsanti al loro aspetto originale.
-    - *Copia da un altro profilo*. Seleziona da quale profilo dall'elenco offerto vuoi copiare le impostazioni dei pulsanti.
+    - *Ripristina predefiniti*. Consente di riportare le impostazioni dei pulsanti al loro aspetto originale.
+    - *Copia da un altro profilo*. Seleziona da quale profilo dell'elenco offerto desideri copiare le impostazioni dei pulsanti.
 
-3. L'**aspetto predefinito dei pulsanti** (*Solo Android*) offre una varietà di opzioni di personalizzazione per questi tipi di pulsanti. Per modificare l'aspetto di un pulsante, tocca il pulsante richiesto dall'elenco e seleziona l'opzione [Aspetto](#button-appearance).
+3. **L'aspetto del pulsante predefinito** (*Solo Android*) offre una varietà di opzioni di personalizzazione per questo tipo di pulsanti. Per modificare l'aspetto di un pulsante, tocca il pulsante richiesto dall'elenco e seleziona l'opzione [Aspetto](#button-appearance).
 
 
-### Aspetto del pulsante {#button-appearance}
+### Aspetto del Pulsante {#button-appearance}
 
 <InfoAndroidOnly/>
 
-![Aspetto del pulsante](@site/static/img/widgets/button_appearance_settings_andr.png)
+![Aspetto del Pulsante](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-La funzione *Aspetto del pulsante* ti permette di personalizzare completamente l'aspetto dei pulsanti sulla tua interfaccia mappa. Queste opzioni di personalizzazione sono disponibili sia per i *Pulsanti rapidi (Pulsanti personalizzati)* che per i *Pulsanti predefiniti*, fornendo un controllo completo sull'aspetto dell'interfaccia mappa e consentendo regolazioni precise al design dei pulsanti.
+La funzione *Aspetto del pulsante* consente di personalizzare completamente l'aspetto dei pulsanti sull'interfaccia della mappa. Queste opzioni di personalizzazione sono disponibili sia per *Azione Rapida (Pulsanti personalizzati)* che per *Pulsanti predefiniti*, fornendo un controllo completo sull'aspetto dell'interfaccia della mappa e consentendo regolazioni precise del design dei pulsanti.
 
 ***Opzioni di personalizzazione***:
 
 - **Icona**. Seleziona da un elenco di icone che rappresentano le azioni che hai già aggiunto, rendendo facile identificare le funzioni a colpo d'occhio.
-- **Raggio d'angolo**. Regola questa impostazione per cambiare la forma del pulsante, da angoli acuti e quadrati a bordi lisci e arrotondati.
-- **Dimensione**. Scegli la dimensione del pulsante che meglio si adatta al tuo schermo e che risalta come necessario. Per i *Pulsanti predefiniti*, le dimensioni sono preimpostate e non possono essere regolate.
-- **Opacità dello sfondo**. Controlla la visibilità dello sfondo del pulsante. Puoi impostarlo completamente visibile o parzialmente trasparente, o visualizzare solo l'ombra del bordo e l'icona.
+- **Raggio dell'angolo**. Regola questa impostazione per cambiare la forma del pulsante, da angoli acuti e quadrati a bordi lisci e arrotondati.
+- **Dimensione**. Scegli la dimensione del pulsante che meglio si adatta al tuo schermo e che risalta secondo necessità. Per i *Pulsanti predefiniti*, le dimensioni sono preimpostate e non possono essere regolate.
+- **Opacità dello sfondo**. Controlla la visibilità dello sfondo del pulsante. Puoi impostarlo per essere completamente visibile o parzialmente trasparente, oppure visualizzare solo l'ombra della cornice e l'icona.
 
 
 ## Altro {#other}
@@ -545,11 +539,11 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distanza al tocco](../widgets/radius-ruler.md#distance-by-tap). Permette di misurare la distanza dalla tua posizione al punto selezionato.
-- [Tachimetro](../widgets/info-widgets.md#speedometer). Mostra la velocità attuale basata sui dati GPS e la velocità limitata basata sui [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). I dati visualizzati dipendono anche dall'impostazione [Tolleranza limite di velocità](../navigation/guidance/voice-navigation.md#speed-limit) di OsmAnd.
+- [Distanza al tocco](../widgets/radius-ruler.md#distance-by-tap). Dà la possibilità di misurare la distanza dalla tua posizione al punto selezionato.
+- [Tachimetro](../widgets/info-widgets.md#speedometer). Mostra la velocità attuale basata sui dati GPS e la velocità limitata basata sui [dati di OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). I dati visualizzati dipendono anche dall'impostazione [Tolleranza limite di velocità](../navigation/guidance/voice-navigation.md#speed-limit) di OsmAnd.
 
 
-### Posizione visualizzazione (Posizione della posizione sullo schermo) {#display-position-location-position-on-screen}
+### Posizione Visualizzata (Posizione sulla schermata) {#display-position-location-position-on-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -567,13 +561,13 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 </Tabs>
 
-> *Posizione della posizione sullo schermo* è il nome di questa impostazione nella versione iOS di OsmAnd.  
+> *Posizione sulla schermata* è il nome di questa impostazione nella versione iOS di OsmAnd.  
 
-Ti permette di impostare il posizionamento del cursore su *[La mia posizione](../map/interact-with-map.md#my-location-and-zoom)* sulla mappa di OsmAnd. Sono disponibili tre opzioni:  
+Consente di impostare il posizionamento del cursore su *[La mia posizione](../map/interact-with-map.md#my-location-and-zoom)* sulla mappa di OsmAnd. Sono disponibili tre opzioni:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Il cursore è sempre posizionato al centro dello schermo.
-- **<Translate android="true" ids="position_on_map_bottom"/>**. *La mia posizione* è posizionata leggermente sotto il centro dello schermo. Questa modalità ti permette di vedere più informazioni sulla mappa davanti al tuo movimento, il che è utile durante la navigazione.
-- **<Translate android="true" ids="shared_string_automatic"/>**. Posiziona *La mia posizione* a seconda dell'[Orientamento mappa](../map/interact-with-map.md#map-orientation-modes) (*In basso* - per la direzione di movimento, *Centro* - per tutti gli altri).
+- **<Translate android="true" ids="position_on_map_bottom"/>**. *La mia posizione* è posizionata leggermente sotto il centro dello schermo. Questa modalità consente di vedere più informazioni sulla mappa davanti al proprio movimento, il che è utile durante la navigazione.
+- **<Translate android="true" ids="shared_string_automatic"/>**. Posiziona *La mia posizione* a seconda dell'*[Orientamento della mappa](../map/interact-with-map.md#map-orientation-modes)* (*In basso* - per la direzione di movimento, *Al centro* - per tutti gli altri).
 
 
 ## Azioni {#actions}
@@ -598,18 +592,18 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> �
 
 </Tabs>
 
-L'accesso ad azioni aggiuntive nella schermata Configura si trova:
+L'accesso ad azioni aggiuntive nella schermata Configura sono:
 
-- *Android*. Nella schermata Configura, in fondo alla schermata, nella sezione *Azioni*: *Menu → Configura schermata → Azioni*.
-- *Android / iOS*. Nelle schermate di ogni Pannello nel *menu a tre punti* nell'angolo in alto a destra dello schermo.
+- *Android*. Situato nella schermata Configura in fondo allo schermo nella sezione *Azioni*: *Menu → Configura schermata → Azioni*.
+- *Android / iOS*. Situato nelle schermate di ogni Pannello nel *menu a tre punti* nell'angolo in alto a destra dello schermo.
 
 Azioni disponibili:
 
-- **Ripristina predefiniti**. Questa funzione ti permette di ripristinare tutte le impostazioni ai valori predefiniti se vuoi ricominciare da capo, o usare solo quelli preimpostati all'avvio di OsmAnd.
-- **Copia da un altro profilo**. Questa funzione ti permette di importare rapidamente le impostazioni da un altro profilo, selezionando quelle richieste dall'elenco e copiandole.
+- **Ripristina predefiniti**. Questa funzione consente di ripristinare tutte le impostazioni ai valori predefiniti se si desidera ricominciare da capo o utilizzare solo quelle preimpostate all'avvio di OsmAnd.
+- **Copia da un altro profilo**. Questa funzione consente di importare rapidamente le impostazioni da un altro profilo, selezionare quelle richieste dall'elenco e copiare.
 
 
-## Cambia profilo {#switch-profile}
+## Cambia Profilo {#switch-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -627,19 +621,17 @@ Azioni disponibili:
 
 </Tabs>
 
-- Per i dispositivi **Android**, puoi cambiare profilo nella parte superiore della schermata iniziale di Configura Schermata usando le icone del profilo disponibili.  
-- Se stai usando un dispositivo **iOS**, tocca l'icona del profilo nell'angolo in alto della schermata iniziale di Configura Schermata e seleziona il profilo richiesto dall'elenco per attivarlo.  
+- Per i dispositivi **Android**, è possibile cambiare profilo nella parte superiore della schermata principale di Configura Schermata utilizzando le icone dei profili disponibili.  
+- Se si utilizza un dispositivo **iOS**, toccare l'icona del profilo nell'angolo superiore della schermata principale di Configura Schermata e selezionare il profilo richiesto dall'elenco per attivarlo.  
 
-**Nota bene**. L'opzione *Cambia profilo* non visualizza tutti i profili esistenti, ma solo quelli che sono stati *attivati* nel menu Impostazioni.
+**Nota**: L'opzione *Cambia profilo* non visualizza tutti i profili esistenti, ma solo quelli che sono stati *attivati* nel menu Impostazioni.
 
 
-## Articoli correlati {#related-articles}
+## Articoli Correlati {#related-articles}
 
-- [Pulsanti mappa](./map-buttons.md)
+- [Pulsanti della mappa](./map-buttons.md)
 - [Widget informativi](./info-widgets.md)
 - [Widget di navigazione](./nav-widgets.md)
-- [Righello raggio e Righello](./radius-ruler.md)
-- [Widget marcatore](./markers.md)
-- [Azione rapida](./quick-action.md)
-
-> *Ultimo aggiornamento: Luglio 2025*
+- [Righello radiale e Righello](./radius-ruler.md)
+- [Widget Preferiti](./markers.md)
+- [Azione Rapida](./quick-action.md)

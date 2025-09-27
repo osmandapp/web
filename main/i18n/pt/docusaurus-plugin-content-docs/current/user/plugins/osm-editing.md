@@ -1,7 +1,7 @@
 ---
-source-hash: 46f8bd9f97c636e1d4eed0afa1bdf6ebb5963b97004fdc01d9e05197cf654281
+source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
 sidebar_position: 9
-title: Edição OpenStreetMap
+title: Edição do OpenStreetMap
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,17 +16,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão geral {#overview}
 
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) é uma comunidade global que visa criar um mapa geográfico gratuito e detalhado do mundo e fornecer dados de código aberto atualizados para cada usuário. O plugin de edição do OpenStreetMap permite que você contribua para a comunidade.
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) é uma comunidade global que visa criar um mapa geográfico detalhado e gratuito do mundo e fornecer dados de código aberto atualizados para cada utilizador. O plugin de edição do OpenStreetMap permite-lhe contribuir para a comunidade.
 
-Com o OsmAnd e o plugin de edição do OSM, você pode facilmente contribuir com suas próprias informações para o OpenStreetMap.org, como criar ou modificar [POIs](#create--modify-poi), adicionar ou comentar [notas](#create--modify-osm-note) e carregar [trilhas](#upload-gps-track) GPX gravadas.
+Com o OsmAnd e o plugin de edição do OSM, pode facilmente contribuir com as suas próprias informações para o OpenStreetMap.org, como criar ou modificar [POIs](#create--modify-poi), adicionar ou comentar [notas](#create--modify-osm-note) e carregar [trilhas](trilhas) GPX gravadas.
 
 ## Parâmetros de configuração necessários {#required-setup-parameters}
 
-Para usar o plugin *Edição OpenStreetMap*, você deve fazer as seguintes configurações:
+Para usar o plugin *Edição do OpenStreetMap*, deve fazer as seguintes configurações:
 
 1. Ativar [Plugin](../plugins/index.md#enable--disable).
 2. Definir a edição do OpenStreetMap em qualquer [perfil](../personal/profiles.md).
-3. Ativar a exibição de *notas OSM (online)* ou *edições OSM* no mapa no [menu Configurar mapa](../map/configure-map-menu).
+3. Ativar a exibição de *Notas OSM (online)* ou *Edições OSM* no mapa no [menu Configurar mapa](../map/configure-map-menu).
 
 
 ## Configurações {#settings}
@@ -38,7 +38,7 @@ Para usar o plugin *Edição OpenStreetMap*, você deve fazer as seguintes confi
 - *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![Configurações do plugin de edição OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,24 +47,24 @@ Para usar o plugin *Edição OpenStreetMap*, você deve fazer as seguintes confi
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![Configurações do plugin de edição OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-As configurações do plugin são globais e se aplicam a todos os perfis.
+As configurações do plugin são globais e aplicam-se a todos os perfis.
 :::
 
-- [Login no OpenStreetMap](#authorization). Faça login para carregar alterações novas ou modificadas. Use o método seguro *OAuth 2.0* ou [faça login no site do OSM](https://www.openstreetmap.org/login). Para iOS, o botão para o método OAuth está disponível apenas para usuários com uma versão suportada do iOS, 16.4
-- **<Translate android="true" ids="offline_edition"/>**. Se esta configuração estiver ativada, as alterações são primeiro salvas localmente (botão *Salvar*) e carregadas mediante solicitação. Se a configuração estiver desativada, as alterações são carregadas imediatamente (botão *Carregar*).
-- **<Translate android="true" ids="use_dev_url"/>** *(somente Android)*. Permite ativar [dev.openstreetmap.org](https://dev.openstreetmap.org/) em vez de [openstreetmap.org](http://openstreetmap.org/) para testar o upload de Notas OSM, POIs ou trilhas GPS. Quando ativado, você é automaticamente desconectado do OpenStreetMap.org. Esta configuração está disponível na lista apenas quando o *plugin de desenvolvimento OsmAnd* está ativado.
+- [Login no OpenStreetMap](#authorization). Faça login para carregar alterações novas ou modificadas. Use o método seguro *OAuth 2.0* ou [faça login no site do OSM](https://www.openstreetmap.org/login). Para iOS, o botão para o método OAuth está disponível apenas para utilizadores com uma versão suportada do iOS, 16.4
+- **<Translate android="true" ids="offline_edition"/>**. Se esta configuração estiver ativada, as alterações são primeiro guardadas localmente (botão *Guardar*) e carregadas a pedido. Se a configuração estiver desativada, as alterações são carregadas imediatamente (botão *Carregar*).
+- **<Translate android="true" ids="use_dev_url"/>** *(apenas Android)*. Permite ativar [dev.openstreetmap.org](https://dev.openstreetmap.org/) em vez de [openstreetmap.org](http://openstreetmap.org/) para testar o carregamento de Notas OSM, POIs ou trilhas GPS. Quando ativado, é automaticamente desconectado do OpenStreetMap.org. Esta configuração está disponível na lista apenas quando o *plugin de desenvolvimento do OsmAnd* está ativado.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Toque para abrir [*Menu → Meus Locais → Edições OSM*](../personal/myplaces.md). Esta aba lista suas notas OSM não editadas. As seguintes ações estão disponíveis com a nota: *Carregar*, *Mostrar no mapa*, *Modificar nota OSM*, *Excluir*. Notas carregadas ou excluídas não são mais exibidas na lista.
+- **<Translate android="true" ids="layer_osm_edits"/>**. Toque para abrir [*Menu → Meus locais → Edições OSM*](../personal/myplaces.md). Esta aba lista as suas notas OSM não editadas. As seguintes ações estão disponíveis com a nota: *Carregar*, *Mostrar no mapa*, *Modificar nota OSM*, *Excluir*. Notas carregadas ou excluídas não são mais exibidas na lista.
 
 :::note
-Se você tiver uma assinatura [OsmAnd Pro](../purchases/android.md#pro-features), as alterações feitas no OSM aparecerão no seu mapa OsmAnd em uma hora. Certifique-se de que as [atualizações ao vivo](../personal/maps-resources.md#osmand-live) estejam ativadas.
+Se tiver uma subscrição [OsmAnd Pro](../purchases/android.md#pro-features), as alterações feitas no OSM aparecerão no seu mapa OsmAnd dentro de uma hora. Certifique-se de que as [Atualizações em tempo real](../personal/maps-resources.md#live-updates) estão ativadas.
 :::
 
 
@@ -74,13 +74,13 @@ Se você tiver uma assinatura [OsmAnd Pro](../purchases/android.md#pro-features)
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live para mapeadores](@site/static/img/personal/maps/osm_authorization_andr.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live para mapeadores](@site/static/img/personal/maps/osm_authorization_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -88,8 +88,8 @@ Se você tiver uma assinatura [OsmAnd Pro](../purchases/android.md#pro-features)
 
 Faça login para contribuir com alterações e arquivos GPX.
 
-- Vá para [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550) e *faça login* ou *cadastre-se*.
-- Toque no campo *Login no OpenStreetMap* no aplicativo OsmAnd e, em seguida, toque no botão *Entrar com OpenStreetMap*.
+- Vá para [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550) e *faça login* ou *registe-se*.
+- Toque no campo *Login no OpenStreetMap* na aplicação OsmAnd e, em seguida, toque no botão *Entrar com OpenStreetMap*.
 
 
 ### Atualizações de mapa gratuitas para mapeadores {#free-map-updates-for-mappers}
@@ -98,22 +98,22 @@ Faça login para contribuir com alterações e arquivos GPX.
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live para mapeadores](@site/static/img/personal/maps/map_updates_mappers_login_andr.png) ![OsmAnd live para mapeadores](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png) ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live para mapeadores](@site/static/img/personal/maps/map_updates_mappers_login_ios.png) ![OsmAnd live para mapeadores](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png) ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-A configuração <Translate android="true" ids="map_updates_for_mappers"/> permite que você ative o **[OsmAnd live](../personal/maps-resources.md#free-for-osm-mappers)** se você for um colaborador ativo do OpenStreetMap. Dessa forma, você pode desfrutar de atualizações de mapa gratuitas por hora, ao contrário das atualizações mensais padrão. Colaboradores ativos do OpenStreetMap.org podem ter direito a atualizações de mapa ilimitadas por hora. Faça login no OpenStreetMap para verificar sua elegibilidade para atualizações de mapa mensais e horárias ilimitadas.
+A configuração <Translate android="true" ids="map_updates_for_mappers"/> permite ativar **[atualizações em tempo real](../personal/maps-resources.md#free-for-osm-mappers)** se for um contribuinte ativo do OpenStreetMap. Desta forma, pode desfrutar de atualizações de mapa gratuitas a cada hora, ao contrário das atualizações mensais padrão. Contribuintes ativos do OpenStreetMap.org podem ter direito a atualizações de mapa ilimitadas a cada hora. Faça login no OpenStreetMap para verificar a sua elegibilidade para atualizações de mapa mensais e horárias ilimitadas.
 
 
-### Camada de Edição OSM {#osm-editing-layer}
+### Camada de edição OSM {#osm-editing-layer}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -121,7 +121,7 @@ A configuração <Translate android="true" ids="map_updates_for_mappers"/> permi
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
-![Camada de edição OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Camada de edição OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
@@ -129,22 +129,22 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
 
-![Camada de edição OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Você pode ativar ou desativar como uma camada separada a exibição de modificações OSM, como *notas OSM* (online), *edições OSM*, *tags Fixme*, *tags Note*, *Ícones em zooms baixos*, na seção [Configurar mapa](../map/configure-map-menu.md) do *Menu Principal*.
+Pode ativar ou desativar como uma camada separada a exibição de modificações OSM, como *Notas OSM* (online), *Edições OSM*, *Tags Fixme*, *Tags de nota*, *Ícones em zooms baixos*, na seção [Configurar mapa](../map/configure-map-menu.md) do *Menu Principal*.
 
 
 ## Criar / Modificar POI {#create--modify-poi}
 
-O plugin de edição do OpenStreetMap permite que você crie novos objetos no mapa chamados [pontos de interesse ou POI](../map/point-layers-on-map.md#points-of-interest-pois). Você pode mapear uma nova loja, um marco favorito, um banco ou um abrigo para que as pessoas possam encontrá-los.
+O plugin de edição do OpenStreetMap permite criar novos objetos no mapa chamados [pontos de interesse ou POI](../map/point-layers-on-map.md#points-of-interest-pois). Pode mapear uma nova loja, um marco favorito, um banco ou um abrigo para que as pessoas os possam encontrar.
 
-1. Toque no mapa para colocar um novo POI, ou toque em um POI ainda não carregado.2. Toque em [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-2. Escolha [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), e adicione seu nome e outras informações, como horário de funcionamento, site, etc. Quando você seleciona um POI não carregado, *Criar POI* muda para *Modificar POI*.
-3. Dependendo da configuração [Edição offline](#settings), você pode salvar os dados localmente ou [carregá-los](../map/map-context-menu#-upload-poi--osm-note).
+1. Toque no mapa para colocar um novo POI, ou toque num POI ainda não carregado.2. Toque em [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+2. Escolha [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), e adicione o seu nome e outras informações, como horário de funcionamento, site, etc. Quando seleciona um POI não carregado, *Criar POI* muda para *Modificar POI*.
+3. Dependendo da configuração [Edição offline](#settings), pode guardar os dados localmente ou [carregá-los](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Adicionar tags {#add-tags}
@@ -153,38 +153,38 @@ O plugin de edição do OpenStreetMap permite que você crie novos objetos no ma
 
 <TabItem value="android" label="Android">
 
-![Adicionar tag POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Adicionar tag POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Adicionar tag POI ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Você pode facilmente adicionar [tags](https://wiki.openstreetmap.org/wiki/Tags) OSM ao POI. Ao digitar vários caracteres na barra de pesquisa, o programa sugere tags possíveis.
+Pode facilmente adicionar [tags](https://wiki.openstreetmap.org/wiki/Tags) OSM ao POI. Ao inserir vários caracteres na barra de pesquisa, o programa sugere possíveis tags.
 
 **Modificações offline.**
-Você pode visualizar, carregar para o OSM ou excluir POIs em *Meus Locais → Edições OSM*. Você também pode exportar suas alterações de POIs OSM para um [arquivo OSC](https://wiki.openstreetmap.org/wiki/OsmChange) e importá-lo para o [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).
+Pode visualizar, carregar para o OSM ou excluir POIs em *Meus locais → Edições OSM*. Também pode exportar as suas alterações de POIs OSM para um [arquivo OSC](https://wiki.openstreetmap.org/wiki/OsmChange) e importá-lo para o [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).
 
 ### Adicionar tipos de POI não suportados {#add-unsupported-poi-types}
 
-Na aba *Avançado*, você pode adicionar tipos de POI não suportados que podem ser úteis para sua tarefa específica. Esta opção permite que você insira dados de POI manualmente, estendendo assim a funcionalidade do aplicativo.
+Na aba *Avançado*, pode adicionar tipos de POI não suportados que podem ser úteis para a sua tarefa específica. Esta opção permite inserir dados de POI manualmente, estendendo assim a funcionalidade da aplicação.
 
-Um exemplo de tipos de POI não suportados que você pode adicionar é *amenity=freeshops*. Este tipo pode ser útil se você quiser marcar lojas gratuitas ou locais que fornecem produtos gratuitos.
+Um exemplo de tipos de POI não suportados que pode adicionar é *amenity=freeshops*. Este tipo pode ser útil se quiser marcar lojas gratuitas ou locais que fornecem produtos gratuitos.
 
-Para adicionar tipos de POI não suportados, siga estas etapas:
+Para adicionar tipos de POI não suportados, siga estes passos:
 
 1. Abra a aba *Avançado*.
 2. Toque em *Tipo de POI*.
 3. Insira a chave *amenity* e o valor *freeshops* nos campos apropriados.
 4. Preencha o restante dos dados necessários para este POI.
-5. Toque em *Adicionar Tag* para adicionar o novo POI ao seu banco de dados.
+5. Toque em *Adicionar Tag* para adicionar o novo POI à sua base de dados.
 
-Lembre-se de que, ao adicionar tipos de POI não suportados, é importante garantir que os dados sejam inseridos corretamente para garantir o funcionamento correto do aplicativo e o processamento subsequente das informações.
+Lembre-se que, ao adicionar tipos de POI não suportados, é importante garantir que os dados são inseridos corretamente para garantir o funcionamento correto da aplicação e o processamento subsequente das informações.
 
 
 ## Criar / Modificar Nota OSM {#create--modify-osm-note}
@@ -195,7 +195,7 @@ Lembre-se de que, ao adicionar tipos de POI não suportados, é importante garan
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
-![Abrir Nota OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png) ![Abrir Nota OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png) ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
@@ -203,23 +203,23 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*
 
-![Abrir Nota OSM iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Para editar, comentar ou fechar notas OSM, ative sua exibição no mapa no [menu Configurar mapa](../map/configure-map-menu.md).
+Para editar, comentar ou fechar notas OSM, ative a sua exibição no mapa no [menu Configurar mapa](../map/configure-map-menu.md).
 
-- O recurso Notas OSM permite que você adicione notas ao mapa. Nessas notas, você pode descrever erros ou escrever sobre informações ausentes nos dados do OpenStreetMap. Você e outros usuários podem deixar comentários em suas notas.
-- Você pode ajudar outros usuários verificando suas perguntas ou problemas, dando comentários e, em seguida, fechando as notas resolvidas.
+- O recurso Notas OSM permite adicionar notas ao mapa. Nestas notas, pode descrever erros ou escrever sobre informações ausentes nos dados do OpenStreetMap. Você e outros utilizadores podem deixar comentários nas suas notas.
+- Pode ajudar outros utilizadores verificando as suas perguntas ou problemas, dando comentários e, em seguida, fechando as notas resolvidas.
 - Leia mais sobre as Notas do OpenStreetMap [aqui](https://wiki.openstreetmap.org/wiki/Notes).
 
-Para criar uma nota, você não precisa fazer login no OpenStreetMap.org, você pode enviá-la anonimamente.
+Para criar uma nota, não precisa fazer login no OpenStreetMap.org, pode enviá-la anonimamente.
 
-- Toque no mapa onde a nova nota OSM deve ser colocada (ou toque em uma nota não carregada) e selecione [Ações](../map/map-context-menu.md#actions).
-- Se você quiser adicionar informações a uma nota existente ou não carregada, editar um comentário ou fechar uma nota, toque na nota OSM no mapa e selecione a [ação necessária](../map/map-context-menu.md#-comment--close-osm-note).
-- Você pode carregar as alterações assim que estiver online. Você também pode desfazer as alterações antes que sejam carregadas.
+- Toque no mapa onde a nova nota OSM deve ser colocada (ou toque numa nota não carregada) e selecione [Ações](../map/map-context-menu.md#actions).
+- Se quiser adicionar informações a uma nota existente ou não carregada, editar um comentário ou fechar uma nota, toque na nota OSM no mapa e selecione a [ação necessária](../map/map-context-menu.md#-comment--close-osm-note).
+- Pode carregar as alterações assim que estiver online. Também pode desfazer as alterações antes de serem carregadas.
 
 :::info
 As Notas OSM carregadas não são visíveis nos mapas OsmAnd no modo offline.
@@ -228,14 +228,14 @@ As Notas OSM carregadas não são visíveis nos mapas OsmAnd no modo offline.
 
 ## Trilha GPS {#gps-track}
 
-As trilhas GPS que você gravou são úteis para:
+As trilhas GPS que gravou são úteis para:
 
 - **Mapeadores**. As trilhas podem ser usadas para mapear todos os tipos de caminhos.
-- **Navegação**. Com base nos dados do arquivo GPX que você carregou, aplicativos de navegação e dispositivos especiais podem calcular trilhas.
-- **Para compartilhar informações** sobre as trilhas e rotas que você gravou em [mapas baseados no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
+- **Navegação**. Com base nos dados do arquivo GPX que carregou, as aplicações de navegação e dispositivos especiais podem calcular trilhas.
+- **Para partilhar informações** sobre as trilhas e rotas que gravou em [mapas baseados no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
 
 :::info NOTA
-Suas trilhas serão adicionadas aos [rastros do OSM](https://www.openstreetmap.org/traces) em uma hora, onde estarão disponíveis para você e outros visualizarem, pesquisarem e usarem.
+As suas trilhas serão adicionadas aos [rastros OSM](https://www.openstreetmap.org/traces) dentro de uma hora, onde estarão disponíveis para você e outros visualizarem, pesquisarem e usarem.
 :::
 
 
@@ -246,13 +246,13 @@ Suas trilhas serão adicionadas aos [rastros do OSM](https://www.openstreetmap.o
 
 <TabItem value="android" label="Android">
 
-![Plugin de edição OpenStreetMap GPX para OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plugin de edição OpenStreetMap GPX para OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)
 
 </TabItem>
 
@@ -265,22 +265,22 @@ Para [carregar a trilha GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_trac
 
 **Configurações:**
 
-- **<Translate android="true" ids="shared_string_description"/>**. Permite adicionar uma descrição à trilha. A descrição se aplica a todas as trilhas selecionadas. Se você não digitar nada no campo, os nomes das trilhas para cada trilha separada serão usados como descrições.
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Este item na seção de configurações permite adicionar tags para identificar a trilha. A tag padrão é "osmand", você pode inserir tags adicionais separadas por vírgulas.
-- **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilidade da trilha para usuários OSM:
-   - *Público* significa que a trilha está publicamente disponível e exibida em formato bruto em suas trilhas GPS, listas de trilhas GPS e listas de trilhas com carimbo de data/hora. Os dados transmitidos através da API não são referenciados com sua página de trilha. Os carimbos de data/hora dos pontos de rastreamento não estão disponíveis através da API GPS pública e os pontos de trilha não são ordenados cronologicamente.
-   - *Identificável* significa que a trilha será exibida publicamente em seus pontos de trilha GPS e listas de trilhas GPS públicas, o que significa que outros usuários poderão baixar a trilha bruta e associá-la ao seu nome de usuário. Os dados públicos de pontos de trilha com carimbo de data/hora da API GPS passados através da API de pontos de trilha serão vinculados à sua página de trilha original.
+- **<Translate android="true" ids="shared_string_description"/>**. Permite adicionar uma descrição à trilha. A descrição aplica-se a todas as trilhas selecionadas. Se não inserir nada no campo, os nomes das trilhas para cada trilha separada são usados como descrições.
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Este item na seção de configurações permite adicionar tags para identificar a trilha. A tag padrão é "osmand", pode inserir tags adicionais separadas por vírgulas.
+- **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilidade da trilha para utilizadores OSM:
+   - *Público* significa que a trilha está publicamente disponível e exibida em formato bruto nas suas trilhas GPS, listas de trilhas GPS e listas de trilhas com carimbo de data/hora. Os dados transmitidos através da API não são referenciados com a sua página de trilha. Os carimbos de data/hora dos pontos de rastro não estão disponíveis através da API GPS pública e os pontos de rastro não são ordenados cronologicamente.
+   - *Identificável* significa que a trilha será exibida publicamente nos seus pontos de trilha GPS e listas de trilhas GPS públicas, o que significa que outros utilizadores poderão baixar a trilha bruta e associá-la ao seu nome de utilizador. Os dados de pontos de trilha com carimbo de data/hora públicos da API GPS passados através da API de pontos de trilha serão vinculados à sua página de trilha original.
    - *Rastreável* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha processados com carimbos de data/hora dela (que não podem ser vinculados diretamente a você) são carregados da API GPS pública.
    - *Privado* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha dela em ordem não cronológica estão disponíveis através da API GPS pública sem carimbos de data/hora.
 - **<Translate android="true" ids="login_account"/>** - [Conta OSM](https://www.openstreetmap.org/login).
 
 :::info
-Você pode selecionar mais de uma trilha para carregar no OSM. Para fazer isso, toque no ícone *Carregar para OpenStreetMap* na parte inferior da tela, selecione as trilhas usando a caixa de seleção, toque em *Carregar* e, em seguida, em *Continuar*.
+Pode selecionar mais de uma trilha para carregar para o OSM. Para fazer isso, toque no ícone *Carregar para OpenStreetMap* na parte inferior da tela, selecione as trilhas usando a caixa de seleção, toque em *Carregar* e, em seguida, em *Continuar*.
 :::
 
 ### Gerar arquivo OBF {#generate-obf-file}
 
-Você pode criar um arquivo OBF com [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) se tiver um grande banco de dados de trilhas GPX. Esta é uma coleção de trilhas do osmand.net com a tag 'gpsies', uma coleção de trilhas baixadas do OpenStreetMap ou sua própria coleção.
+Pode criar um arquivo OBF com [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) se tiver uma grande base de dados de trilhas GPX. Esta é uma coleção de trilhas de osmand.net com a tag 'gpsies', uma coleção de trilhas baixadas do OpenStreetMap ou a sua própria coleção.
 
 
 ## Artigos relacionados {#related-articles}
@@ -288,5 +288,3 @@ Você pode criar um arquivo OBF com [OsmAndMapCreator](../../technical/map-creat
 - [Interagir com o Mapa](../../user/map/interact-with-map.md)
 - [Configurações Globais](../../user/personal/global-settings.md)
 - [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
-
-> *Última atualização: maio de 2024*

@@ -1,7 +1,7 @@
 ---
-source-hash: 3633198fddb7fe35a05678692319490fc58e0d27eeeb3150a2ae252eba8bd136
+source-hash: 46a1886051c86f82be8c7760e97112a93aa73290d7f57d40189238af7d9e4f39
 sidebar_position: 4
-title:  Rutas para ciclomotores
+title:  Navegación para ciclomotor
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,32 +15,32 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Generalidades {#overview}
+## Resumen {#overview}
 
-La *ruta para ciclomotores* permite a los conductores construir una ruta óptima (la más rápida), teniendo en cuenta las especificidades de la conducción de un vehículo como un ciclomotor o scooter. El proceso de enrutamiento considera varios factores para un movimiento seguro, cómodo y legal en carreteras o carriles bici.
+*La navegación para ciclomotor* permite a los conductores construir una ruta óptima (la más rápida), teniendo en cuenta las especificidades de la conducción de un vehículo como un ciclomotor o scooter. El proceso de enrutamiento considera varios factores para un desplazamiento seguro, cómodo y legal en carreteras o carriles bici.
 
 :::note
-Por defecto, el *perfil de ciclomotor* está desactivado. Para utilizar este perfil para el enrutamiento, debe activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+Por defecto, el *Perfil de ciclomotor* está desactivado. Para usar este perfil para la navegación, necesita activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
 
 ## Parámetros de ruta - Ciclomotor {#route-parameters---moped}
 
-La *ruta para ciclomotores* se puede configurar según sus necesidades en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de la configuración de Navegación.
+*La navegación para ciclomotor* se puede configurar según sus necesidades en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de los Ajustes de navegación.
 
-La configuración de enrutamiento del ciclomotor es muy sencilla y consta de unas pocas opciones.
+Los ajustes de enrutamiento del ciclomotor son muy simples y constan de solo unas pocas opciones.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Configuración de ruta para ciclomotores Android](@site/static/img/navigation/routing/moped_routing_andr.png)
+![Ajustes de navegación para ciclomotor Android](@site/static/img/navigation/routing/moped_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configuración de ruta para ciclomotores iOS](@site/static/img/navigation/routing/moped_routing_ios.png)
+![Ajustes de navegación para ciclomotor iOS](@site/static/img/navigation/routing/moped_routing_ios.png)
 
 </TabItem>
 
@@ -48,20 +48,5 @@ La configuración de enrutamiento del ciclomotor es muy sencilla y consta de una
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* | <details><summary> Seleccione las carreteras que desea evitar durante la navegación. </summary>![Evitar carreteras Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details> | Puede [seleccionar una carretera en el mapa](../../map/map-context-menu/#avoid-road) o elegir el(los) tipo(s) de carretera de la lista: <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un tipo de transporte acuático que transporta vehículos a través de cuerpos de agua)</li></ul>|
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* | Las restricciones de acceso privado se ignorarán al calcular la ruta. | La etiqueta *[private](https://wiki.openstreetmap.org/wiki/Key:access)* se utiliza en OSM para describir las restricciones de uso de carreteras y otras rutas de transporte, así como edificios, entradas, servicios y entidades de ocio. |
-
-
-## Otras configuraciones de ruta {#other-routing-settings}
-
-- El algoritmo de enrutamiento también puede considerar las limitaciones temporales especificadas en OpenStreetMap. Esto se puede hacer utilizando la opción *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)*. Tenga en cuenta que, en algunos casos, la información de OSM puede estar desactualizada.
-
-- En la sección [*Recalcular ruta*](../../navigation/guidance/navigation-settings.md#recalculate-route) de los *Parámetros de ruta*, puede habilitar y ajustar las opciones de recálculo de ruta.
-
-- En la sección [*Desarrollo*](../guidance/navigation-settings.md#development-settings) de los *Parámetros de ruta*, puede probar nuevas funciones de enrutamiento que se encuentran actualmente en fase de prueba. Tenga en cuenta que estas configuraciones solo están disponibles cuando el [complemento de desarrollo de OsmAnd](../../plugins/development.md) está habilitado.
-
-- La configuración *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* en la versión *iOS* de OsmAnd se encuentra en *Configuración de navegación → Parámetros de ruta* (para *Android*, en *Parámetros del vehículo → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Esta configuración se utiliza en carreteras desconocidas sin límites de velocidad. Esto suele ocurrir al navegar por una pista o una ruta en línea. Debe configurarse de acuerdo con los parámetros de su vehículo.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. La configuración adecuada de los ajustes le ayudará a evitar problemas al crear una ruta. Puede seleccionar la ruta más adecuada en función del tipo de vehículo y las restricciones de la carretera, así como calcular el tiempo de viaje.
-
-> *Última actualización: junio de 2024*
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Seleccione las carreteras que desea evitar durante la navegación.  </summary>![Evitar carreteras Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details>  | Puede [seleccionar una carretera en el mapa](../../map/map-context-menu/#avoid-road) o elegir tipo(s) de carretera de la lista:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un tipo de transporte acuático que transporta vehículos a través de cuerpos de agua)</li></ul>|
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Las restricciones de acceso privado se ignorarán al calcular la ruta.  | La etiqueta *[private](https://wiki.openstreetmap.org/wiki/Key:access)* se usa en OSM para describir restricciones en el uso de autopistas y otras rutas de transporte, así como edificios, entradas, servicios y entidades de ocio.   |

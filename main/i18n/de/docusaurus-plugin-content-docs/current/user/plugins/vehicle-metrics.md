@@ -1,7 +1,7 @@
 ---
-source-hash: 7cce24b2cd87bfae38687f74d452a20648b7bb08c58e4e9a6b8489cb8398e2a2
+source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
 sidebar_position: 16
-title: Fahrzeug-Metriken
+title:  Fahrzeugmetriken
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,18 +15,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
 
-
-## Überblick {#overview}
+## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
-Das Fahrzeug-Metriken-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App. Fahrzeuggeschwindigkeit und Motordrehzahl sind für OsmAnd Free verfügbar.
+Das Fahrzeugmetriken-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind in der kostenlosen Version von OsmAnd verfügbar.
 :::
 
-Das **Fahrzeug-Metriken-Plugin** ermöglicht die Echtzeitüberwachung von Fahrzeugdaten über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Metriken wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.
+Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.
 
-[OBD-II-Scanner](https://en.wikipedia.org/wiki/ELM327) sind ein wesentlicher Bestandteil der modernen Automobildiagnostik. Mit Echtzeit-Datenstreaming erhalten Benutzer sofortige Einblicke in Fahrzeugsysteme, was präventive Wartung erleichtert und Reparaturkosten senkt. Diese Tools sind sowohl für den persönlichen Gebrauch als auch für professionelle Automobildienste unerlässlich.
+[OBD-II-Scanner](https://en.wikipedia.org/wiki/ELM327) sind ein wesentlicher Bestandteil der modernen Fahrzeugdiagnose. Durch das Streamen von Echtzeitdaten erhalten Benutzer sofortige Einblicke in die Fahrzeugsysteme, was die vorbeugende Wartung erleichtert und die Reparaturkosten senkt. Diese Werkzeuge sind sowohl für den privaten Gebrauch als auch für professionelle Kfz-Dienstleistungen von entscheidender Bedeutung.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -49,23 +47,23 @@ Das **Fahrzeug-Metriken-Plugin** ermöglicht die Echtzeitüberwachung von Fahrze
 
 Um Daten von einem OBD-II-Scanner zu verwenden:
 
-1. [Kaufen Sie](../purchases/) ein **OsmAnd Pro-Abonnement**. (Fahrzeuggeschwindigkeit und Motordrehzahl sind kostenlos.)
-2. [Aktivieren Sie](../plugins/index.md#enable--disable) das Fahrzeug-Metriken-Plugin im Bereich Plugins des *Hauptmenüs*.
+1. [Erwerben](../purchases/) Sie ein **OsmAnd Pro-Abonnement**. (*Fahrzeuggeschwindigkeit* und *Motordrehzahl* sind kostenlos.)
+2. [Aktivieren](../plugins/index.md#enable--disable) Sie das Fahrzeugmetriken-Plugin im Abschnitt „Plugins“ des *Hauptmenüs*.
 3. **Schalten Sie** Bluetooth auf Ihrem Gerät **ein**.
-4. [Verbinden Sie](#pair-odb-ii-scanner) den OBD-II-Scanner mit dem Anschluss Ihres Fahrzeugs.
-5. [Konfigurieren Sie](#scanner-settings) die **Scanner-Einstellungen**.
-6. [Fügen Sie](#widgets) **Fahrzeug-Metriken-Widgets** für die Anzeige von Daten auf dem Bildschirm hinzu (optional).
-7. [Verwenden Sie](#trip-recording) das **Aufzeichnungs-Plugin**, um Fahrzeugdaten aufzuzeichnen.
+4. [Verbinden](#pair-odb-ii-scanner) Sie den OBD-II-Scanner mit dem Anschluss Ihres Fahrzeugs.
+5. [Konfigurieren](#scanner-settings) Sie die **Scanner-Einstellungen**.
+6. [Fügen Sie](#widgets) **Fahrzeugmetriken-Widgets** für die Datenanzeige auf dem Bildschirm hinzu (optional).
+7. [Verwenden](#trip-recording) Sie das **Reiseaufzeichnungs-Plugin**, um Fahrzeugdaten aufzuzeichnen.
 
 
-### OBD-II-Scanner koppeln {#pair-odb-ii-scanner}
+### ODB-II-Scanner koppeln {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-| | |
+|  |  |
 |--|--|
 |![OBD-Verbindung](@site/static/img/plugins/obd/obd_connect.png)|![OBD-Verbindung](@site/static/img/plugins/obd/obd_connect_2.png)|
 
@@ -73,7 +71,7 @@ Um Daten von einem OBD-II-Scanner zu verwenden:
 
 <TabItem value="ios" label="iOS">
 
-| | |
+|  |  |
 |--|--|
 |![OBD-Verbindung](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD-Verbindung](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
@@ -83,10 +81,10 @@ Um Daten von einem OBD-II-Scanner zu verwenden:
 
 Verbinden Sie den Scanner mit dem Anschluss Ihres Fahrzeugs und koppeln Sie ihn über die App:
 
-- Navigieren Sie zu *Menü → Plugins → Fahrzeug-Metriken → Einstellungen → Verbinden* oder **+**.
-- Wenn Fahrzeug-Metriken im *Hauptmenü* ist: *Menü → Fahrzeug-Metriken → Einstellungen → Verbinden* oder **+**.
+- Navigieren Sie zu *Menü → Plugins → Fahrzeugmetriken → Einstellungen → Verbinden* oder **+**.
+- Wenn sich Fahrzeugmetriken im *Hauptmenü* befindet: *Menü → Fahrzeugmetriken → Einstellungen → Verbinden* oder **+**.
 
-Wählen Sie Ihr OBD-II-Gerät aus der Liste und stellen Sie die Verbindung her.
+Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung her.
 
 
 ## Scanner-Einstellungen {#scanner-settings}
@@ -95,9 +93,9 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste und stellen Sie die Verbindung her.
 
 <TabItem value="android" label="Android">
 
-**Android.** Gehen Sie zu: *Menü → Plugins → Fahrzeug-Metriken → OBD → Drei-Punkte-Menü*
+**Android.** Gehen Sie zu: *Menü → Plugins → Fahrzeugmetriken → OBD → Drei-Punkte-Menü*
 
-| | |
+|  |  |
 |--|--|
 |![OBD-Einstellungen](@site/static/img/plugins/obd/obd_settings.png)|![OBD-Einstellungen](@site/static/img/plugins/obd/obd_settings_1.png)|
 
@@ -106,9 +104,9 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste und stellen Sie die Verbindung her.
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Gehen Sie zu: *Menü → Plugins → Fahrzeug-Metriken → OBD → Drei-Punkte-Menü*
+**iOS.** Gehen Sie zu: *Menü → Plugins → Fahrzeugmetriken → OBD → Drei-Punkte-Menü*
 
-| | |
+|  |  |
 |--|--|
 |![OBD-Einstellungen](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD-Einstellungen](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
@@ -117,43 +115,43 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste und stellen Sie die Verbindung her.
 </Tabs>
 
 - **Verbinden / Trennen**. Stellt die Verbindung mit dem OBD-II-Sensor her oder beendet sie.
-- **Einstellungen**. Öffnet den OBD-II-Einstellungsbildschirm, der die Verbindungsverwaltung und den Zugriff auf verfügbare Fahrzeugparameter ermöglicht.
-- **Umbenennen**. Ermöglicht es Ihnen, dem Sensor einen benutzerdefinierten Namen zur einfacheren Identifizierung zuzuweisen.
-- **Vergessen**. Entfernt den zuvor gekoppelten OBD-II-Sensor aus der Liste, wodurch bei Bedarf eine erneute Kopplung erforderlich wird.
+- **Einstellungen**. Öffnet den Bildschirm für die OBD-II-Einstellungen, der die Verbindungsverwaltung und den Zugriff auf verfügbare Fahrzeugparameter ermöglicht.
+- **Umbenennen**. Ermöglicht es Ihnen, dem Sensor zur leichteren Identifizierung einen benutzerdefinierten Namen zuzuweisen.
+- **Vergessen**. Entfernt den zuvor gekoppelten OBD-II-Sensor aus der Liste, sodass bei Bedarf eine erneute Kopplung erforderlich ist.
 
 
-## Metriken-Liste {#metrics-list}
+## Metrikenliste {#metrics-list}
 
-Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittliche Diagnosewerkzeuge ermöglichen präventive Wartung durch die Interpretation dieser Parameter:
+Die Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittliche Diagnosewerkzeuge ermöglichen eine vorbeugende Wartung durch die Interpretation dieser Parameter:
 
 *Temperatur:*
 
-- **Ansauglufttemperatur**. Zeigt die Temperatur der Luft an, die in den Ansaugkrümmer gelangt.
-- **Umgebungstemperatur**. Überwacht die externen Bedingungen.
+- **Ansaugtemperatur**. Zeigt die Temperatur der in den Ansaugkrümmer eintretenden Luft an.
+- **Umgebungstemperatur**. Überwacht die äußeren Bedingungen.
 - **Kühlmitteltemperatur**. Verfolgt die Effizienz der Motorkühlung.
-- **Motoröltemperatur**. Zeigt den Ölzustand während des Betriebs an.
+- **Motoröltemperatur**. Zeigt den Zustand des Öls während des Betriebs an.
 
 *Motor:*
 
-- **Motordrehzahl**. Überwacht die Motordrehzahl pro Minute (U/min).
-- **Motorlaufzeit**. Verfolgt die Betriebszeit des Motors.
-- **Berechnete Motorlast**. Zeigt den prozentualen Arbeitsaufwand des Motors an.
+- **Motordrehzahl**. Überwacht die Umdrehungen des Motors pro Minute (RPM).
+- **Motorlaufzeit**. Verfolgt die Betriebsdauer des Motors.
+- **Berechnete Motorlast**. Gibt die prozentuale Auslastung des Motors an.
 
 *Kraftstoff:*
 
-- **Kraftstoffdruck**. Zeigt den Druck des Kraftstoffsystems an.
+- **Kraftstoffdruck**. Zeigt den Druck im Kraftstoffsystem an.
 - **Kraftstoffverbrauch**. Berechnet den Kraftstoffverbrauch des Fahrzeugs.
-- **Restkraftstoff**. Zeigt den Kraftstoffstand im Fahrzeug an.
+- **Verbleibender Kraftstoff**. Zeigt den Kraftstoffstand im Fahrzeug an.
 
-*Sonstiges:*
+*Andere:*
 
 - **Batteriestand**. Zeigt den Spannungspegel der Fahrzeugbatterie an.
 - **Fahrzeuggeschwindigkeit**. Zeigt Daten des Fahrzeuggeschwindigkeitssensors (VSS) an.
-- **Drosselklappenstellung**. Bestimmt die Motorluftzufuhr über den Drosselklappenwinkel.
-  **VIN**. Zeigt die 17-stellige Fahrzeugidentifikationsnummer an.
+- **Drosselklappenstellung**. Bestimmt die Luftzufuhr zum Motor über den Winkel der Drosselklappe.
+  **FIN**. Zeigt die 17-stellige Fahrzeug-Identifizierungsnummer an.
 
 
-## Fahrtenaufzeichnung {#trip-recording}
+## Reiseaufzeichnung {#trip-recording}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -183,17 +181,17 @@ Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittliche Di
 
 
 
-Um OBD-II-Daten in eine GPX-Datei aufzunehmen, müssen Sie die gewünschten Parameter für die Aufzeichnung mit dem [Aufzeichnungs-Plugin](../plugins/trip-recording.md#recording-settings) auswählen. Dies ermöglicht Ihnen, Fahrzeugmetriken zusammen mit Ihren Fahrtdaten zu analysieren.
+Um OBD-II-Daten in eine GPX-Datei aufzunehmen, müssen Sie die gewünschten Parameter für die Aufzeichnung mit dem [Reiseaufzeichnungs-Plugin](../plugins/trip-recording.md#recording-settings) auswählen. Dies ermöglicht es Ihnen, Fahrzeugmetriken zusammen mit Ihren Reisedaten zu analysieren.
 
-#### Tags {#tags}
+### Tags {#tags}
 
-OsmAnd wendet benutzerdefinierte Tag-Namen für Fahrzeugmetriken in der [GPX-Datei](../plugins/trip-recording.md#recorded-gpx-file) an. Zum Beispiel:
+OsmAnd verwendet benutzerdefinierte Tag-Namen für Fahrzeugmetriken in der [GPX-Datei](../plugins/trip-recording.md#recorded-gpx-file). Zum Beispiel:
 
 - `vm_eotemp`: Motoröltemperatur.
 - `vm_fpress`: Kraftstoffdruck.
 - `vm_espeed`: Motordrehzahl.
 
-Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdaten beim Überprüfen der aufgezeichneten GPX-Datei.
+Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdaten bei der Überprüfung der aufgezeichneten GPX-Datei.
 
 
 ## Widgets {#widgets}
@@ -202,7 +200,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 <TabItem value="android" label="Android">
 
-**Android.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Panel auswählen → Fahrzeug-Metriken*
+**Android.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Ein Panel auswählen → Fahrzeugmetriken*
 
 | | |
 |--|--|
@@ -213,7 +211,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Panel auswählen → Fahrzeug-Metriken*
+**iOS.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Ein Panel auswählen → Fahrzeugmetriken*
 
 | | |
 |--|--|
@@ -225,22 +223,20 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 
 
-Die [Fahrzeug-Metriken-Widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) werden automatisch hinzugefügt, wenn Sie das Plugin aktivieren. Wenn sie nicht sichtbar sind, können Sie sie manuell über das Menü [Bildschirm konfigurieren](../widgets/configure-screen.md) hinzufügen.
+Die [Fahrzeugmetriken-Widgets](../widgets/info-widgets.md#vehicle-metrics-widgets) werden automatisch hinzugefügt, wenn Sie das Plugin aktivieren. Wenn sie nicht sichtbar sind, können Sie sie manuell über das Menü [Bildschirm konfigurieren](../widgets/configure-screen.md) hinzufügen.
 
 ### Widget-Einstellungen {#widget-settings}
 
-Die Widgets zeigen wichtige Daten Ihres verbundenen OBD-II-Geräts in Echtzeit an, wie Geschwindigkeit, Motormetriken und Kraftstoffverbrauch. Stellen Sie sicher, dass sie sichtbar sind, bevor Sie Ihre Fahrt beginnen, um Metriken nahtlos zu verfolgen.
+Die Widgets zeigen wichtige Daten von Ihrem verbundenen OBD-II-Gerät in Echtzeit an, wie z. B. Geschwindigkeit, Motormetriken und Kraftstoffverbrauch. Stellen Sie sicher, dass sie vor Beginn Ihrer Reise sichtbar sind, um die Metriken nahtlos zu verfolgen.
 
 Einige Widgets bieten Optionen für den Anzeigemodus:
 
-- **Sofort**. Zeigt Echtzeitdaten für die ausgewählte Metrik an.
+- **Momentan**. Zeigt Echtzeitdaten für die ausgewählte Metrik an.
 - **Durchschnitt**. Zeigt Durchschnittswerte über ein konfigurierbares Zeitintervall (15 Sekunden bis 60 Minuten) an.
 
 
 ## Verwandte Artikel {#related-articles}
 
-- [Interaktion mit der Karte](../../user/map/interact-with-map.md)
-- [Globale Einstellungen](../../user/personal/global-settings.md)
+- [Mit der Karte interagieren](../../user/map/interact-with-map.md)
+- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)
-
-> *Zuletzt aktualisiert: August 2025*

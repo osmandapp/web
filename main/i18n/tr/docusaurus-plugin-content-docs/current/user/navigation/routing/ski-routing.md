@@ -1,5 +1,5 @@
 ---
-source-hash: 27acdc622e2e460a91c82997ca3c6a46ddff094dce1fb89a1f2d05a529a31216
+source-hash: 2428f76d4d2b174f4096091771998583d1804e3fbc62cf63cf7e6bf40e95cc8c
 sidebar_position: 6
 title: Kayak rotası
 ---
@@ -17,10 +17,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Genel Bakış {#overview}
 
 :::note
-Kayak rotası ve kayak profili yalnızca [Kayak haritaları eklentisi](../../plugins/ski-maps.md) etkinleştirildiğinde kullanılabilir.
+Kayak rotası ve kayak profili yalnızca [Kayak haritası görünümü eklentisi](../../plugins/ski-maps.md) etkinleştirildiğinde kullanılabilir.
 :::
 
-*Kayak rotası*, özellikle arazi kayakçıları, dağ kayakçıları ve yeni alanları keşfetmek ve gezilerini önceden planlamak isteyen diğer kış sporları meraklıları için faydalı olabilir. *Kayak rotası* ile OsmAnd kullanıcıları, kış manzaralarının güzelliğinin tadını çıkarırken rotaları planlayabilir ve güvenli bir şekilde gezinebilirler.
+*Kayak rotası*, yeni alanları keşfetmek ve gezilerini önceden planlamak isteyen arazi kayakçıları, dağ kayakçıları ve diğer kış sporları meraklıları için özellikle yararlı olabilir. *Kayak rotası* ile OsmAnd kullanıcıları, kış manzaralarının güzelliğinin tadını çıkarırken rotaları planlayabilir ve güvenli bir şekilde gezinebilir.
 
 *Kayak rotası*, Navigasyon ayarlarının [Rota parametreleri bölümünde](../guidance/navigation-settings.md#route-parameters) ihtiyaçlarınıza göre yapılandırılabilir.
 
@@ -30,7 +30,7 @@ Kayak rotası ve kayak profili yalnızca [Kayak haritaları eklentisi](../../plu
 ## Rota Parametreleri - Kayak {#route-parameters---ski}
 
 :::note
-Varsayılan olarak, *Kayak profili* devre dışıdır. Bu profili yönlendirme için kullanmak üzere, *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde açmanız gerekir.
+Varsayılan olarak, *Kayak profili* devre dışıdır. Bu profili rota belirleme için kullanmak üzere, *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde açmanız gerekir.
 :::
 
 *Kayak rotası* ayarları, kullanıcıların istedikleri zorluk seviyesini ve keşfetmek istedikleri arazi türünü seçerek rotalarını planlamalarına olanak tanır. Pistlerde veya serbest sürüş sırasında güvenli, konforlu ve keyifli hareket için çeşitli seçenekler mevcuttur.
@@ -51,31 +51,16 @@ Varsayılan olarak, *Kayak profili* devre dışıdır. Bu profili yönlendirme i
 
 </Tabs>
 
-| Parametre | Yönlendirme için kullanılmasına izin verir | Not |
+| Parametre | Rota belirleme için kullanılmasına izin verir | Not |
 |:------------|:---------------|:---------------|
 |*<Translate android="true" ids="routing_attr_allow_skating_only_name"/>* | <Translate android="true" ids="routing_attr_allow_skating_only_description"/> | `https://wiki.openstreetmap.org/wiki/Piste_Maps#Type` |
-|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Kuzey tırmanışı ve arazi inişi amacıyla bir sezonda birçok kayakçı tarafından genel olarak kullanılan önerilen bir [kayak turu yolu](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) veya alanı. |
-|*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* | <Translate android="true" ids="routing_attr_allow_advanced_description"/> | Daha [zorlu rotalara](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) yönlendirme için izin verilecektir. |
-|*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* | <details><summary> Serbest kayak için seçeneklerden birini seçin. </summary>![Pist dışı Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
-|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | [Kayak liftleri](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) kullanılacaktır |
+|*<Translate android="true" ids="app_mode_ski_touring"/>* | <Translate android="true" ids="routing_attr_piste_type_skitour_description"/> | Birçok kayakçı tarafından bir sezon boyunca Kuzey tırmanışı ve arazi inişi amacıyla kullanılan önerilen bir [kayak turu yolu](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) veya alanı. |
+|*<Translate android="true" ids="routing_attr_allow_advanced_name"/>* | <Translate android="true" ids="routing_attr_allow_advanced_description"/> | Rota belirleme için daha [zorlu rotalara](https://wiki.openstreetmap.org/wiki/Piste_Maps#Difficulty) izin verilecektir. |
+|*<Translate android="true" ids="routing_attr_freeride_policy_name"/>* | <details><summary> Serbest sürüş kayağı için seçeneklerden birini seçin. </summary>![Pist dışı Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
+|*<Translate android="true" ids="routing_attr_piste_type_downhill_name"/>* | <Translate android="true" ids="routing_attr_piste_type_downhill_description"/> | [Kayak asansörlerinin](https://wiki.openstreetmap.org/wiki/Piste_Maps#Ski_lifts) kullanılması açılacaktır |
 |*<Translate android="true" ids="routing_attr_piste_type_nordic_name"/>*&nbsp;(Android) *<Translate ios="true" ids="routeInfo_piste_type_name"/>*&nbsp;(iOS) | <Translate android="true" ids="routing_attr_piste_type_nordic_description"/>| |
 |*<Translate android="true" ids="routing_attr_allow_classic_only_name"/>* | <Translate android="true" ids="routing_attr_allow_classic_only_description"/>| |
 |*<Translate android="true" ids="routing_attr_allow_expert_name"/>* | <Translate android="true" ids="routing_attr_allow_expert_description"/>| |
-|*<Translate android="true" ids="routing_attr_piste_type_sled_name"/>* | <Translate android="true" ids="routing_attr_piste_type_sled_description"/> | [Kızaklar](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type), insan tarafından çekilen veya sadece yerçekimi ile hareket eden daha küçük araçlardır. Etkinleştirildiğinde, [kızak pistleri](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) kayak rotası için kullanılacaktır |
+|*<Translate android="true" ids="routing_attr_piste_type_sled_name"/>* | <Translate android="true" ids="routing_attr_piste_type_sled_description"/> | [Kızaklar](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type), bir insan tarafından çekilen veya yalnızca yerçekimi ile hareket eden daha küçük araçlardır. Etkinleştirildiğinde, [kızak pistleri](https://wiki.openstreetmap.org/wiki/Piste_Maps#Type) kayak rotası için kullanılacaktır |
 |*<Translate android="true" ids="routing_attr_allow_intermediate_name"/>* | <Translate android="true" ids="routing_attr_allow_intermediate_description"/>| |
 |*<Translate android="true" ids="routing_attr_difficulty_preference_name"/>* | <details><summary> <Translate android="true" ids="routing_attr_difficulty_preference_description"/> </summary>![Pist dışı Android](@site/static/img/navigation/routing/offpiste_android.png) </details> | |
-
-
-## Diğer Rota Ayarları {#other-routing-settings}
-
-- Yönlendirme algoritması, OpenStreetMap'te belirtilen geçici kısıtlamaları da dikkate alabilir. Bu, *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* seçeneği kullanılarak yapılabilir. Bazı durumlarda OSM'deki bilgilerin güncel olmayabileceğini unutmayın.
-
-- *Rota parametrelerinin* [*Rotayı yeniden hesapla bölümünde*](../../navigation/guidance/navigation-settings.md#recalculate-route), rota yeniden hesaplama seçeneklerini etkinleştirebilir ve ayarlayabilirsiniz.
-
-- *Rota parametrelerinin* [*Geliştirme bölümünde*](../guidance/navigation-settings.md#development-settings), şu anda test aşamasında olan yeni yönlendirme özelliklerini deneyebilirsiniz. Bu ayarların yalnızca [OsmAnd geliştirme eklentisi](../../plugins/development.md) etkinleştirildiğinde kullanılabileceğini unutmayın.
-
-- OsmAnd'ın *iOS* sürümündeki *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* ayarı *Navigasyon ayarları → Rota parametreleri* bölümünde bulunur (*Android* için, *Araç parametreleri → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* bölümünde). Bu ayar, hız sınırı olmayan bilinmeyen yollarda kullanılır. Bu durum genellikle bir parkurda veya çevrimiçi rotada gezinirken ortaya çıkar. Aracınızın parametrelerine göre ayarlanmalıdır.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Ayarları doğru yapılandırmak, rota oluştururken sorunlardan kaçınmanıza yardımcı olacaktır. Araç tipine ve yol kısıtlamalarına bağlı olarak en uygun rotayı seçebilir, ayrıca seyahat süresini hesaplayabilirsiniz.
-
-> *Son güncelleme: Haziran 2024*

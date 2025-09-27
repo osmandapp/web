@@ -1,7 +1,7 @@
 ---
-source-hash: c79e974f36d7aa431b244d904400ae8e4b3fa0f00f5d843333d559e34b86a4b7
+source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
 sidebar_position: 4
-title: تفاصيل المسار
+title:  تفاصيل المسار
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -14,36 +14,41 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+
 ## نظرة عامة {#overview}
 
-يتيح لك OsmAnd العثور على أفضل مسار واستكشاف تفاصيله. يوفر التطبيق معلومات مفصلة حول المسار مثل المسافة، [وقت السفر](#distance--time--co2)، [ونوع السطح](#road-attributes)، [واختلافات الارتفاع](#elevation-info)، [وبيانات بصمة الكربون (CO2)](#distance--time--co2)، [ومعلومات الانعطاف](#turn-by-turn-information). يمكنك أيضًا [تحليل](#analyze-on-map) المسار على الخريطة، ومعرفة معلومات حول أجزاء المسار، [وطباعة](#print) خطة المسار، [وحفظ](#share--export-actions) المسار، ومشاركته مع الآخرين. باستخدام هذه الوظيفة، ستعرف دائمًا تفاصيل المسار ويمكنك تخطيط رحلتك بكفاءة أكبر.
+يسمح لك OsmAnd بالعثور على أفضل مسار واستكشاف تفاصيله. يوفر التطبيق معلومات مفصلة حول المسار مثل المسافة، [وقت الرحلة](#distance--time--co2)، [نوع السطح](#road-attributes)، [فروق الارتفاع](#elevation-info)، [بيانات البصمة الكربونية لثاني أكسيد الكربون](#distance--time--co2)، و[معلومات الانعطافات](#turn-by-turn-information). يمكنك أيضًا [تحليل](#analyze-on-map) المسار على الخريطة، ومعرفة معلومات حول مقاطع المسار، و[طباعة](#print) خطة المسار، و[حفظ](#share--export-actions) المسار، ومشاركته مع الآخرين. مع هذه الوظيفة، ستعرف دائمًا تفاصيل المسار ويمكنك التخطيط لرحلتك بكفاءة أكبر.
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
+![تفاصيل المسار أندرويد](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
+![تفاصيل المسار iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+
 ### كيفية الوصول {#how-to-access}
 
-بعد حساب مسار في [قائمة التنقل](./route-navigation.md#start--stop-navigation)، يمكنك الوصول إلى "التفاصيل" حول هذا المسار. هذه المعلومات مفيدة للاستخدام قبل بدء الرحلة لتحسين تخطيط المسار أو للتحقق من معلومات حول الطريق أمامك أثناء القيادة.
-هناك ثلاث طرق للوصول إلى قائمة *تفاصيل المسار*.
+بعد حساب مسار في [قائمة الملاحة](./route-navigation.md#start--stop-navigation)، يمكنك الوصول إلى "التفاصيل" حول هذا المسار. هذه المعلومات مفيدة للاستخدام قبل بدء الرحلة لتحسين تخطيط المسار أو للتحقق من المعلومات حول الطريق أمامك أثناء القيادة.
+هناك ثلاث طرق للوصول إلى *قائمة تفاصيل المسار*.
 
-1. انتقل إلى *القائمة الرئيسية ← التنقل*، اضبط المسار، ثم اضغط على زر *التفاصيل*.
-2. اضغط على أيقونة *التنقل* على شاشة الخريطة، اضبط المسار، ثم اضغط على زر *التفاصيل*.
-3. انتقل إلى قائمة *أماكني*، اضغط على أي مسار متاح في القائمة *القائمة الرئيسية ← أماكني ← المسارات*، حدد أيقونة *التنقل* في قائمة سياق المسار في *نظرة عامة*، ثم اضغط على *التفاصيل*.
+1. اذهب إلى *القائمة الرئيسية ← الملاحة*، قم بتعيين المسار، وانقر على زر *التفاصيل*.
+2. انقر على أيقونة *الملاحة* على شاشة الخريطة، قم بتعيين المسار، وانقر على زر *التفاصيل*.
+3. اذهب إلى قائمة *أماكني*، انقر على أي مسار متاح في القائمة *القائمة ← أماكني ← المسارات*، حدد أيقونة *الملاحة* في قائمة سياق المسار في *نظرة عامة* وانقر على *التفاصيل*.
 
-اعتمادًا على [إعدادات الملف الشخصي](../../personal/profiles.md) المحددة ونوع [التوجيه](../../navigation/routing/osmand-routing.md#routing-types) المحدد، قد لا يتم عرض بعض تفاصيل المسار. بالإضافة إلى ذلك، تعتمد تفاصيل المسار بشكل كبير على *تغطية بيانات OpenStreetMap*.
+اعتمادًا على [إعدادات الملف الشخصي](../../personal/profiles.md) المحددة و[نوع التوجيه](../../navigation/routing/osmand-routing.md#routing-types) المحدد، قد لا يتم عرض بعض تفاصيل المسار. بالإضافة إلى ذلك، تعتمد تفاصيل المسار بشكل كبير على *تغطية بيانات OpenStreetMap*.
+
 
 ## المسافة / الوقت / ثاني أكسيد الكربون {#distance--time--co2}
 
@@ -51,25 +56,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
+![تفاصيل المسار](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- ***المسافة الإجمالية*** تُحسب بين جميع أجزاء المسار، بما في ذلك النقاط الوسيطة في [الوحدات](../../personal/profiles.md#units--formats) المحددة.
+- ***المسافة الإجمالية*** تُحسب بين جميع مقاطع المسار، بما في ذلك النقاط المتوسطة بالـ [وحدات](../../personal/profiles.md#units--formats) المحددة.
 
-- ***الوقت المقدر للسفر*** يُحسب كمجموع الأوقات على كل جزء وعقوبات الوقت في نقاط محددة. لكل ملف تعريف تنقل قواعد مختلفة لحساب السرعة على جزء وما هي العقوبات التي يجب تضمينها (مُكوّنة في [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). على سبيل المثال، تأخذ ملفات تعريف السيارة والدراجة متوسط السرعة لكل جزء من بيانات OpenStreetMap، ولكن ملفات تعريف المشاة والقوارب والطائرات تستخدم سرعة *افتراضية* من [إعدادات التنقل](../guidance/navigation-settings.md#default-speed--road-speeds).
+- ***وقت الرحلة المقدر*** يُحسب كمجموع الأوقات في كل مقطع والعقوبات الزمنية في نقاط محددة. لكل ملف تعريف ملاحة قواعد مختلفة لحساب السرعة في مقطع وأي عقوبات يجب تضمينها (تُكوّن في [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). على سبيل المثال، تأخذ ملفات تعريف السيارة والدراجة متوسط السرعة لكل مقطع من بيانات OpenStreetMap، لكن ملفات تعريف المشاة والقوارب والطائرات تستخدم السرعة *الافتراضية* من [إعدادات الملاحة](../guidance/vehicle-parameters.md#default-speed).
 
-- ***الوقت المقدر للوصول*** يُحسب كوقت من الآن بالتوقيت المحلي للمنطقة الأصلية باستخدام *الوقت المقدر للسفر*.
+- ***وقت الوصول المقدر*** يُحسب كوقت من الآن بالتوقيت المحلي للمنطلق باستخدام *وقت الرحلة المقدر*.
 
-- ***بيانات بصمة الكربون (CO2)*** تُقدّر تقريبًا كمية ثاني أكسيد الكربون التي ستُنتج أثناء اتباع المسار. تحتاج إلى تكوين [نوع محرك الوقود](../guidance/navigation-settings.md#fuel-used-by-motor) في معلمات المركبة للحصول على تقدير أكثر دقة.
+- ***بيانات البصمة الكربونية لثاني أكسيد الكربون*** تقدر تقريبًا كمية ثاني أكسيد الكربون التي سيتم إنتاجها أثناء اتباع المسار. تحتاج إلى تكوين [نوع محرك الوقود](../guidance/vehicle-parameters.md#fuel-used-by-motor) في معلمات المركبة للحصول على تقدير أكثر دقة.
+
 
 ## معلومات الارتفاع {#elevation-info}
 
@@ -77,97 +83,104 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
+![تفاصيل المسار](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**معلومات الارتفاع** متوفرة في جميع ملفات تعريف مسارات OsmAnd غير المتصلة بالإنترنت، باستثناء الملفات التعريفية التي تستخدم [التنقل بخط مستقيم](../routing/straight-line-routing.md). بيانات الارتفاع هي جزء من خرائط OsmAnd غير المتصلة بالإنترنت ويتم حسابها بناءً على [مصادر SRTM العامة](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
+**معلومات الارتفاع** متوفرة في جميع ملفات تعريف المسار غير المتصلة بالإنترنت في OsmAnd، باستثناء ملفات التعريف التي تستخدم [الملاحة بخط مستقيم](../routing/straight-line-routing.md). بيانات الارتفاع هي جزء من خرائط OsmAnd غير المتصلة بالإنترنت ويتم حسابها بناءً على [مصادر SRTM العامة](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
 
 - *نطاق الارتفاع*. يعرض الحد الأدنى / الأقصى للارتفاع على المسار.
 - *متوسط الارتفاع*. يعرض متوسط الارتفاع المرجح على المسار.
-- *صعودًا / نزولًا*. يعرض نسبة المسار إلى الأفقي، حيث يشير الصفر إلى الأفقية ويشير عدد الدرجات إلى درجة ميل أعلى أو أكثر انحدارًا. يوضح الميل أقصى انحدار للطريق بالنسبة المئوية من نقطة موقعك إلى نهاية الرسم البياني المرئي، أو للجزء المحدد من المسار بدون نقطة الموقع المرئية على الشاشة.
+- *صعود / هبوط*. يعرض نسبة المسار إلى الأفقي، حيث يشير الصفر إلى الأفقية ويشير عدد الدرجات إلى درجة ميل أعلى أو أكثر انحدارًا. يُظهر الانحدار أقصى ميل للطريق بالنسبة المئوية من موقعك إلى نهاية الرسم البياني المرئي، أو للقسم المحدد من المسار دون أن تكون نقطة الموقع مرئية على الشاشة.
 
-***ترخيص بيانات DEM المستخدمة بواسطة OsmAnd للكشف عن التضاريس***
-تم الحصول على بيانات الارتفاع على الخريطة (بين 70 درجة شمال خط العرض و 70 درجة جنوب خط العرض) من القياسات التي تمت كجزء من *مهمة تضاريس الرادار المكوكية (SRTM)*. وقد استخدمت *مقياس الإشعاع الحراري والانبعاثات الفضائية المتقدم (ASTER)*، الأداة الرئيسية للتصوير في *نظام مراقبة الأرض التابع لناسا*. للحصول على معلومات كاملة، راجع [الترخيص](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+
+***ترخيص لبيانات DEM المستخدمة بواسطة OsmAnd للكشف عن التضاريس***
+تم الحصول على بيانات الارتفاع على الخريطة (بين خط عرض 70 درجة شمالًا و 70 درجة جنوبًا) من قياسات أُجريت كجزء من *مهمة طبوغرافيا الرادار المكوكية (SRTM)*. استخدمت *مقياس الإشعاع الحراري والانعكاس المتقدم المحمول في الفضاء (ASTER)*، وهو أداة التصوير الرئيسية في *نظام مراقبة الأرض التابع لناسا*. للحصول على معلومات كاملة، راجع [الترخيص](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+
 
 <details>
 <summary>بيانات DEM (DSM)</summary>
- - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. تم توفير البيانات الأصلية المستخدمة لهذا المنتج بواسطة AW3D من JAXA.<br/>
+<div dir="rtl">
+ - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. تم توفير البيانات الأصلية المستخدمة لهذا المنتج بواسطة AW3D التابع لـ JAXA.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
- - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: بورتر، كلير؛ مورين، بول؛ هاوات، إيان؛ نوه، ميونغ-جون؛ بيتس، براين؛ بيترمان، كينيث؛ كيسي، سكوت؛ شلينك، ماثيو؛ غاردينر، جوديث؛ تومكو، كارين؛ ويليس، مايكل؛ كيليهير، كول؛ كلوتييه، مايكل؛ هاسبي، إريك؛ فوغا، ستيفن؛ ناكامورا، هيتومي؛ بلاتسون، ميليسا؛ ويذينغتون، مايكل، الابن؛ ويليامسون، كاثلين؛ باور، غريغوري؛ إينوس، جيريمي؛ أرنولد، غالن؛ كرامر، ويليام؛ بيكر، بيتر؛ دوشي، أبهيجيت؛ دي سوزا، كريستيل؛ كومنز، بات؛ لورييه، فابيان؛ بوجيسن، ميكيل، 2018، “ArcticDEM”، هارفارد داتافيرس، V1.<br/>
- - <a href="https://sonny.4lima.de">نماذج التضاريس الرقمية LiDAR من سوني لأوروبا</a> (DTM).
-
+ - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
+ - <a href="https://sonny.4lima.de">نماذج التضاريس الرقمية LiDAR لسوني في أوروبا</a> (DTM).
+</div>
 </details>
 
-### رسم بياني للارتفاع {#elevation-graph}
+
+### الرسم البياني للارتفاع {#elevation-graph}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
+![تفاصيل المسار](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تعرض [الرسوم البيانية](../../map/tracks/track-context-menu.md#altitude--speed-graphs) معلومات مرئية حول ارتفاع وميل مسار التنقل الخاص بك وموقعك الحالي على هذا الرسم البياني مع الارتفاع والميل الحاليين. يتم رسم الرسم البياني على محورين. المحور السيني هو المسافة على مسارك. المحور الصادي الأول هو الارتفاع فوق مستوى سطح البحر، وتعتمد قيمته على التضاريس، والمحور الصادي الثاني هو [الميل](https://en.wikipedia.org/wiki/Grade_(slope)) التقريبي. يمكنك عرض رسم بياني للارتفاع للمسار بأكمله أو لفاصل زمني محدد فقط عن طريق تغيير حجم الرسم البياني.
+تعرض [الرسوم البيانية](../../map/tracks/track-context-menu.md#altitude--speed-graphs) بصريًا معلومات حول الارتفاع والانحدار لمسار الملاحة الخاص بك وموقعك الحالي على هذا الرسم البياني مع الارتفاع والانحدار الحاليين. يتم رسم الرسم البياني على محورين. المحور السيني (X) هو المسافة على مسارك. المحور الصادي الأول (Y) هو الارتفاع فوق مستوى سطح البحر، وتعتمد قيمته على التضاريس، والمحور الصادي الثاني (Y) هو [الانحدار](https://en.wikipedia.org/wiki/Grade_(slope)) التقريبي. يمكنك عرض الرسم البياني للارتفاع للمسار بأكمله أو فقط لفترة محددة عن طريق تغيير مقياس الرسم البياني.
 
-- ***تكبير/تصغير***. بشكل افتراضي، يعرض الرسم البياني المسار من الموقع الحالي إلى نقطة وجهتك. يمكنك استخدام [حركات الإصبعين](../../map/interact-with-map.md#gestures) للتكبير والتصغير للحصول على عرض أكثر تفصيلاً. يمكنك أيضًا تحريك الرسم البياني إلى اليمين، إلى الأمام على المسار، وإلى الخلف إلى الموقع الحالي. *تنطبق هذه التلاعبات أيضًا على الكتلة المرئية للمعلومات في كتلة [سمات الطريق](#road-attributes).*
+- ***تكبير/تصغير***. بشكل افتراضي، يعرض الرسم البياني المسار من الموقع الحالي إلى وجهتك. يمكنك استخدام [حركات إصبعين](../../map/interact-with-map.md#gestures) للتكبير والتصغير للحصول على عرض أكثر تفصيلاً. يمكنك أيضًا تحريك الرسم البياني إلى اليمين، للأمام على المسار، وللخلف إلى الموقع الحالي. *تشير هذه التلاعبات أيضًا إلى الكتلة المرئية للمعلومات في كتلة [سمات الطريق](#road-attributes).*
 
-- ***دبوس الموقع***. إذا كنت ترغب في رؤية المعلومات في نقطة معينة أمامك على مسارك، يمكنك النقر في أي مكان على الرسم البياني وسيظهر مؤشر مع الارتفاع ونسبة الميل.
+- ***دبوس الموقع***. إذا كنت ترغب في رؤية المعلومات في نقطة معينة أمامك على مسارك، يمكنك النقر في أي مكان على الرسم البياني وسيظهر مؤشر مع نسبة الارتفاع والانحدار.
 
-## تحليل على الخريطة {#analyze-on-map}
+
+## التحليل على الخريطة {#analyze-on-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
+![تفاصيل المسار أندرويد](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
+![تفاصيل المسار iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-أداة **التحليل على الخريطة** تشبه أداة عرض [تفاصيل المسار](../../map/tracks/index.md#analyze-track-on-map) على الخريطة. تسمح لك بعرض والتفاعل بصريًا مع الرسوم البيانية المختلفة ورؤية النقطة المحددة على الخريطة.
+أداة **التحليل على الخريطة** تشبه أداة عرض [تفاصيل المسار](../../map/tracks/index.md#analyze-track-on-map) على الخريطة. تتيح لك عرض الرسوم البيانية المختلفة والتفاعل معها بصريًا ورؤية النقطة المحددة على الخريطة.
 
 إذا كانت البيانات موجودة، يمكنك تحديد أحد الأنواع التالية:
 
-- *المحور الصادي*:
-   - [*الارتفاع*](../../map/tracks/track-context-menu.md#altitude). هذه هي [العملية](https://wiki.openstreetmap.org/wiki/Altitude) للحصول على الارتفاع فوق مستوى ثابت.
-   - [*الميل*](https://wiki.openstreetmap.org/wiki/Key:incline). [ميل التضاريس](https://en.wikipedia.org/wiki/Grade_(slope)) يعني ظل زاوية ميل السطح إلى الأفقي.
+- *المحور الصادي (Y)*:
+   - [*الارتفاع*](../../map/tracks/track-context-menu.md#altitude). هذه هي [عملية](https://wiki.openstreetmap.org/wiki/Altitude) الحصول على الارتفاع فوق مستوى ثابت.
+   - [*الانحدار*](https://wiki.openstreetmap.org/wiki/Key:incline). [انحدار التضاريس](https://en.wikipedia.org/wiki/Grade_(slope)) يعني ظل زاوية ميل السطح إلى الأفقي.
    - [*السرعة*](../../map/tracks/track-context-menu.md#speed). قيم السرعة عند القيادة على مسار.
-   - رسوم بيانية بنوعين من البيانات: &nbsp;*الارتفاع/الميل*، &nbsp;*الارتفاع/السرعة*، &nbsp;*الميل/السرعة*، &nbsp;*تكبير متحرك/السرعة*.
-- *المحور السيني*:
+   - رسوم بيانية بنوعين من البيانات: &nbsp;*الارتفاع/الانحدار*، &nbsp;*الارتفاع/السرعة*، &nbsp;*الانحدار/السرعة*، &nbsp;*تكبير متحرك/السرعة*.
+- *المحور السيني (X)*:
    - *المسافة*. يمكنك عرض بيانات المسار التي تتعلق بطول المسار.
    - *الوقت*. يمكنك عرض بيانات المسار التي تتعلق بالوقت المحسوب لذلك المسار.
    - *وقت اليوم*. يمكنك عرض بيانات المسار في أوقات معينة من اليوم.
 
+
 ### أنواع التفاعلات {#type-of-interactions}
 
-- *الضغط والتمرير*. اضغط على الرسم البياني لعرض معلومات حول نقطة المسار والحركة على طولها. يبرز الرسم البياني موقع النقطة على الخريطة ويعرض معلومات عنها على المسطرة.
-- *القياس*. قم بقياس الرسم البياني بواسطة [إيماءة إصبعين](../../map/interact-with-map.md#gestures).
-- *اتبع موقعي* (*أندرويد فقط*). يمكنك النقر على [موقعي](../../map/interact-with-map.md#my-location-and-zoom) لمزامنة عرض الخريطة والرسم البياني مع موقعك. أثناء تحركك، سينتقل الرسم البياني من اليسار إلى اليمين، ويعرض معلومات أمام مسارك.
+- *النقر والسحب*. انقر على الرسم البياني لعرض معلومات حول نقطة المسار والحركة على طوله. يبرز الرسم البياني موقع النقطة على الخريطة ويعرض معلومات عنها على المسطرة.
+- *تغيير المقياس*. قم بتغيير مقياس الرسم البياني بـ [إيماءة إصبعين](../../map/interact-with-map.md#gestures).
+- *متابعة موقعي* (*أندرويد فقط*). يمكنك النقر على [موقعي](../../map/interact-with-map.md#my-location-and-zoom) لمزامنة عرض الخريطة والرسم البياني مع موقعك. أثناء تحركك، سينتقل الرسم البياني من اليسار إلى اليمين، ويعرض المعلومات أمام مسارك.
+
 
 ## سمات الطريق {#road-attributes}
 
@@ -175,67 +188,69 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
-![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> علامة التبويب*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكن الوصول إلى سمات الطريق في [تفاصيل المسار](#how-to-access) وتعرض معلومات متعلقة بالقطاعات من OpenStreetMap وبيانات الارتفاع. يشير اللون إلى كيفية عرض سمات محددة على الخريطة (انظر [مفتاح الخريطة](../../map-legend/osmand.md#surface-smoothness)). الرسوم البيانية الشريطية تفاعلية أيضًا، ومن الممكن رؤية المعلومات في موقع محدد عن طريق النقر على الرسم البياني.
+يمكن الوصول إلى سمات الطريق في [تفاصيل المسار](#how-to-access) وتعرض معلومات متعلقة بالمقاطع من بيانات OpenStreetMap وبيانات الارتفاع. يرتبط مؤشر اللون بكيفية عرض سمات معينة على الخريطة (انظر [مفتاح الخريطة](../../map-legend/osmand.md#surface-smoothness)). الرسوم البيانية الشريطية تفاعلية أيضًا، ومن الممكن رؤية المعلومات في موقع محدد عن طريق النقر على الرسم البياني.
 
-- [**نوع الطريق**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). يتم تحديد نوع الطريق بناءً على غرضه الوظيفي وخصائصه، مثل عدد المسارات، وحدود السرعة، وقدرة التحميل، ووجود مسارات للمشاة والدراجات، وحواف الطرق، ومعلمات أخرى. قد يكون لأنواع الطرق المختلفة قيود وقواعد مرور مختلفة.
+- [**نوع الطريق**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). يتم تحديد نوع الطريق بناءً على غرضه الوظيفي وخصائصه، مثل عدد الحارات، وحدود السرعة، والقدرة الاستيعابية للحمولة، ووجود مسارات للمشاة والدراجات، وجوانب الطرق، وغيرها من المعلمات. قد يكون لأنواع الطرق المختلفة قيود وقواعد مرور مختلفة.
 
-   على سبيل المثال، عادة ما تكون [الطرق السريعة](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) الرئيسية ذات حد سرعة عالٍ ويمكن تقسيمها إلى مسارات، ويمكن أن تكون [الطرق المحلية](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) ذات حد سرعة منخفض ومسار واحد في كل اتجاه.
+   على سبيل المثال، عادةً ما يكون لـ [الطرق السريعة](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) الرئيسية حد سرعة مرتفع ويمكن تقسيمها إلى حارات، ويمكن أن يكون لـ [الطرق المحلية](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) حد سرعة منخفض وحارة واحدة في كل اتجاه.
 
-- [**السطح**](https://wiki.openstreetmap.org/wiki/Key:surface). أسطح الطرق هي الطبقة العلوية من الرصيف التي تتلامس مع عجلات المركبات. يمكن أن تكون من أنواع مختلفة حسب خصائصها وغرضها الوظيفي.
+- [**السطح**](https://wiki.openstreetmap.org/wiki/Key:surface). أسطح الطرق هي الطبقة العليا من الرصيف التي تتلامس مع عجلات المركبات. يمكن أن تكون من أنواع مختلفة اعتمادًا على خصائصها وغرضها الوظيفي.
 
-   على سبيل المثال، يوفر رصيف [الأسفلت](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) تماسكًا جيدًا وعزلًا للضوضاء، ورصيف [الخرسانة](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) أكثر متانة وله قدرة تحميل أكبر. يمكن أيضًا استخدام مواد أخرى مثل الحصى والحجر المكسر والألواح الخشبية وغيرها لإنشاء سطح طريق.
+   على سبيل المثال، يوفر رصيف [الأسفلت](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) احتكاكًا جيدًا وعزلًا للضوضاء، ورصيف [الخرسانة](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) أكثر متانة وله قدرة استيعابية أكبر للحمولة. يمكن أيضًا استخدام مواد أخرى مثل الحصى والحجر المكسر والألواح الخشبية وغيرها لإنشاء سطح طريق.
 
-- [**الانحدار**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). هذا قياس لزاوية ميل الطريق، معبرًا عنها كنسبة مئوية. يشير إلى مدى انحدار الطريق صعودًا أو نزولًا بالنسبة للأفق، ويتم حسابه عن طريق قياس التغير الرأسي في ارتفاع الطريق بالمسافة الأفقية وضرب القيمة الناتجة في 100%.
+- [**الانحدار**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). هذا قياس لزاوية ميل الطريق، معبرًا عنه كنسبة مئوية. يشير إلى مدى انحدار الطريق صعودًا أو هبوطًا بالنسبة للأفق، ويتم حسابه عن طريق قياس التغير الرأسي في ارتفاع الطريق على المسافة الأفقية وضرب القيمة الناتجة في 100٪.
 
-   على سبيل المثال، إذا كان انحدار الطريق 10%، فهذا يعني أنه لكل 100 متر من المسافة الأفقية على طول الطريق، فإنك تصعد أو تنزل 10 أمتار. يمكن أن يؤثر انحدار الطريق على سرعة سيارتك، والفرملة، واستهلاك الوقود، وسلامة القيادة، خاصة على الطرق الزلقة في الشتاء.
+   على سبيل المثال، إذا كان انحدار الطريق 10٪، فهذا يعني أنه لكل 100 متر من المسافة الأفقية على طول الطريق، فإنك تصعد أو تهبط 10 أمتار. يمكن أن يؤثر انحدار الطريق على سرعة مركبتك، والفرملة، واستهلاك الوقود، وسلامة القيادة، خاصة على الطرق الزلقة في فصل الشتاء.
 
 - [**صلابة السطح**](https://wiki.openstreetmap.org/wiki/Key:tracktype). يمكن لسطح الطريق أن يتعافى من التشوه أو الحمل. كلما زادت صلابة السطح، قل احتمال تلف المركبة وزادت راحة الطريق. يمكن أن تؤثر صلابة السطح أيضًا على سرعة المركبة واستهلاك الوقود.
 
 - [**الميل**](https://wiki.openstreetmap.org/wiki/Key:incline). يشير إلى النسبة المئوية للمنحدرات الموجودة على مسارك.
 
-- [**النعومة**](https://wiki.openstreetmap.org/wiki/Key:smoothness). تنطبق على جميع أنواع المسارات والمناطق، مثل الطرق السريعة ومواقف السيارات والشواطئ والمسارات، وتشير إلى مدى قابلية استخدام المسار. تمنحك معلومات تفيد بأنه يمكنك القيادة دون خطر كبير من التلف، مثل الجزء السفلي من السيارة، أو الإصابة، مثل السقوط.
+- [**النعومة**](https://wiki.openstreetmap.org/wiki/Key:smoothness). ينطبق على جميع أنواع المسارات والمناطق، مثل الطرق السريعة ومواقف السيارات والشواطئ والممرات، ويشير إلى قابلية استخدام المسار. يمنحك معلومات تفيد بأنه يمكنك القيادة دون مخاطر كبيرة من التلف، مثل الهيكل السفلي للمركبة، أو الإصابة، مثل السقوط.
 
-- [**طرق الشتاء والجليد**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). يعرض نظام الألوان للمسار وفقًا لتصنيف [طرق الشتاء](../../map/vector-maps.md#winter-and-ski).
+- [**الطرق الشتوية والجليدية**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). يعرض نظام ألوان المسار وفقًا لتصنيف [الطرق الشتوية](../../map/vector-maps.md#winter-and-ski).
 
-- [**صعوبة مسارات الخيل**](https://wiki.openstreetmap.org/wiki/Riding). تشير هذه السمة للطريق إلى صعوبة المسار أثناء ركوب الخيل. مناسبة [لتوجيه الخيل](../../navigation/routing/horse-routing.md).
+- [**صعوبة مسارات الخيل**](https://wiki.openstreetmap.org/wiki/Riding). تشير سمة الطريق هذه إلى صعوبة المسار أثناء ركوب الخيل. مناسب لـ [توجيه ركوب الخيل](../../navigation/routing/horse-routing.md).
 
-## معلومات التوجيه خطوة بخطوة {#turn-by-turn-information}
+
+## معلومات الانعطافات {#turn-by-turn-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_route_android_turn.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر معلومات التوجيه خطوة بخطوة [تعليمات](#instructions) مفصلة حول كيفية التنقل في المسار. بالإضافة إلى قائمة *التفاصيل*، يتم عرضها أيضًا في أدوات [*مناورات المسار*](../../widgets/nav-widgets.md#route-maneuvers) و[*المسارات*](../../widgets/nav-widgets.md#lanes). تساعدك هذه المعلومات على التنقل بشكل أفضل في مسارك وتسمح لك بالتخطيط المسبق.
+توفر معلومات الانعطافات [تعليمات](#instructions) مفصلة حول كيفية التنقل في المسار. بالإضافة إلى قائمة *التفاصيل*، يتم عرضها أيضًا في ودجات [*مناورات المسار*](../../widgets/nav-widgets.md#route-guidance) و[*الحارات*](../../widgets/nav-widgets.md#lanes). تساعدك هذه المعلومات على التنقل بشكل أفضل في مسارك وتسمح لك بالتخطيط المسبق.
 
-اضغط على قسم معين من المسار في القائمة لعرض معلومات مفصلة أو إجراء تغييرات حسب الحاجة. تتسع الخريطة وتفتح [قائمة السياق](../../map/map-context-menu.md).
+انقر على قسم معين من المسار في القائمة لعرض معلومات مفصلة أو إجراء تغييرات حسب الحاجة. يتم تكبير الخريطة وفتح [قائمة السياق](../../map/map-context-menu.md).
+
 
 ### التعليمات {#instructions}
 
@@ -243,13 +258,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
@@ -257,42 +272,45 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تتضمن التعليمات معلومات حول التحرك على طول المسار، مثل:
 
-- [سهم الانعطاف التالي](../../widgets/nav-widgets.md#next-turn) و*اتجاهه*.
+- [*سهم الانعطاف التالي*](../../widgets/nav-widgets.md#next-turn) و*اتجاهه*.
 - *المسافة إلى المناورة*.
-- وصف *ما يجب فعله*، والذي يتضمن *اسم الشارع أو المسار*.
+- وصف *ما يجب فعله*، والذي يتضمن *اسم الشارع أو الممر*.
 - *المسافة الإجمالية* و*وقت المسار*.
-- تخطيط [المسارات](../../widgets/nav-widgets.md#lanes) للطريق الحالي.
-- [مؤشر جانب الطريق](#roadside-indicator) (*iOS فقط*).
+- *تخطيط [الحارات](../../widgets/nav-widgets.md#lanes)* للطريق الحالي.
+- [*مؤشر جانب الطريق*](#roadside-indicator) (*iOS فقط*).
+
 
 ### مؤشر جانب الطريق {#roadside-indicator}
 
 :::caution iOS فقط
-هذا النوع من التعليمات *غير متاح حاليًا لإصدار أندرويد* من تطبيق OsmAnd.
+هذا النوع من التعليمات *غير متوفر حاليًا* لنسخة أندرويد من تطبيق OsmAnd.
 :::
 
-![Side indication](@site/static/img/navigation/route/side_indication.png)
+![مؤشر الجانب](@site/static/img/navigation/route/side_indication.png)
 
-في قائمة التعليمات، يشير **مؤشر جانب الطريق** إلى الاتجاه من موقعك الحالي واتجاه الحركة إلى نقطة وجهتك، يمكن أن يكون هذا يسارًا أو يمينًا أو مستقيمًا للأمام.
+في قائمة التعليمات، يوضح **مؤشر جانب الطريق** الاتجاه من موقعك الحالي واتجاه الحركة إلى وجهتك النهائية، يمكن أن يكون هذا يسارًا ويمينًا ومستقيمًا للأمام.
 
-يتم قياس الزاوية بين وجهتك (*[الاتجاه](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) من آخر نقطة*) والجزء الأخير (*الاتجاه إلى آخر نقطتين من المسار*)، وتقسيمها إلى 3 قطاعات من 120 درجة، والنتيجة هي أنه يمكنك رؤية الاتجاه الذي توجد فيه وجهتك.
+يتم قياس الزاوية بين وجهتك (*[الاتجاه](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) من آخر نقطة*) وآخر مقطع (*الاتجاه إلى آخر نقطتين من المسار*)، وتقسيمها إلى 3 قطاعات من 120 درجة، والنتيجة هي أنه يمكنك رؤية الاتجاه الذي تقع فيه وجهتك.
 
-- `-60 °` &nbsp; &nbsp; &nbsp; إلى &nbsp; &nbsp;`60 °` &nbsp; &nbsp; &nbsp; - معلمة على أنها **مستقيم للأمام**.
-- `-180 °` &nbsp; &nbsp; إلى &nbsp; &nbsp;`-60 °` &nbsp; &nbsp; - معلمة على أنها جانب **يسار**.
-- `60 °` &nbsp; &nbsp; &nbsp; &nbsp; إلى &nbsp; &nbsp;`180 °` &nbsp; &nbsp; - معلمة على أنها جانب **يمين**.
+- `-60 °`&nbsp; &nbsp; &nbsp; إلى &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - تُحدد كـ **للأمام مباشرة**.
+- `-180 °`&nbsp; &nbsp; إلى &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - تُحدد كـ جانب **أيسر**.
+- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; إلى &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - تُحدد كـ جانب **أيمن**.
+
 
 ### طباعة {#print}
 
 <InfoAndroidOnly/>
 
-![route details](@site/static/img/navigation/route/route_details_print-2.png)
+![تفاصيل المسار](@site/static/img/navigation/route/route_details_print-2.png)
 
-يمكن أن تكون ميزة **الطباعة** لوصف المسار خطوة بخطوة مفيدة إذا كنت تفضل الحصول على نسخة ورقية من وصف المسار بدلاً من استخدام الأجهزة الإلكترونية، أو إذا لم يكن لديك وصول إلى تطبيقات التنقل أو أجهزة تحديد المواقع (GPS)، أو لا يوجد اتصال بالإنترنت، أو إذا كنت بحاجة إلى معلومات لأشخاص آخرين يسافرون معك.
+يمكن أن تكون ميزة **الطباعة** لوصف مسار منعطف بمنعطف مفيدة إذا كنت تفضل الحصول على نسخة مادية من وصف مسارك بدلاً من استخدام الأجهزة الإلكترونية، أو إذا لم يكن لديك وصول إلى تطبيقات الملاحة أو أجهزة الملاحة GPS، أو لا يوجد اتصال بالإنترنت، أو إذا كنت بحاجة إلى معلومات لأشخاص آخرين يسافرون معك.
 
-يوفر وصف المسار المطبوع *تعليمات مفصلة خطوة بخطوة* حول كيفية التنقل في مسارك، بما في ذلك المسافة إلى الانعطاف التالي، واتجاه القيادة، وأسماء الشوارع أو المسارات، بالإضافة إلى معلومات المسافة ووقت السفر.
+يوفر وصف المسار المطبوع *تعليمات مفصلة منعطف بمنعطف* حول كيفية التنقل في مسارك، بما في ذلك المسافة إلى الانعطاف التالي، واتجاه القيادة، وأسماء الشوارع أو الممرات، بالإضافة إلى معلومات المسافة ووقت الرحلة.
 
-يمكن أن تكون هذه المعلومات مفيدة عند التخطيط لرحلة وترغب في تقدير الوقت والمسافة بين نقاط مختلفة على المسار وتحديد الوقت المتوقع للوصول.
+يمكن أن تكون هذه المعلومات مفيدة عند التخطيط لرحلة وترغب في تقدير الوقت والمسافة بين نقاط مختلفة على المسار وتحديد وقت الوصول المتوقع.
 
-تعد القدرة على **طباعة** أو **حفظ** معلومات التوجيه خطوة بخطوة **بتنسيق PDF** مفيدة بشكل خاص عند السفر لمسافات طويلة أو في أماكن غير مألوفة عندما تحتاج إلى فكرة أكثر تفصيلاً عن المسار والوقت الذي يستغرقه الوصول إلى هناك.
+تعد القدرة على **طباعة** أو **حفظ** معلومات الانعطافات **بتنسيق PDF** مفيدة بشكل خاص عند السفر لمسافات طويلة أو في أماكن غير مألوفة عندما تحتاج إلى فكرة أكثر تفصيلاً عن المسار والوقت الذي يستغرقه للوصول إلى هناك.
+
 
 ## مشاركة / تصدير (إجراءات) {#share--export-actions}
 
@@ -300,34 +318,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_route_share_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يحتوي قسم التنقل في تفاصيل المسار على خيارات تسمح لك بتنفيذ إجراءات معينة باستخدام معلومات المسار.
+يحتوي قسم الملاحة في تفاصيل المسار على خيارات تتيح لك تنفيذ إجراءات معينة بمعلومات المسار.
 
-- [**طباعة**](#print). يسمح لك بطباعة أو حفظ معلومات المسار خطوة بخطوة.
-- **تصدير/حفظ**. يسمح لك بحفظ معلومات المسار **كمسار جديد** للاستخدام لاحقًا دون اتصال بالإنترنت. يحتوي المسار المصدر على جميع المعلومات حول سمات الطريق وتعليمات الانعطاف. لذا، يجب أن يوفر [التنقل بهذا المسار](./gpx-navigation.md) جميع الميزات كتنقل بالمسار.
-- **مشاركة**. يشارك مسارًا مصدرًا أو رابطًا إلى المسار يمكن فتحه على جهاز آخر باستخدام OsmAnd.
+- [**طباعة**](#print). يسمح لك بطباعة أو حفظ معلومات المسار منعطف بمنعطف.
+- **تصدير/حفظ**. يسمح لك بحفظ معلومات المسار **كمسار جديد** للاستخدام لاحقًا دون اتصال بالإنترنت. يحتوي المسار المصدر على جميع المعلومات حول سمات الطريق وتعليمات الانعطاف. لذا، يجب أن توفر [الملاحة بواسطة هذا المسار](./gpx-navigation.md) جميع الميزات مثل الملاحة بواسطة المسار.
+- **مشاركة**. يشارك مسارًا مصدرًا أو رابطًا إلى المسار يمكن فتحه على جهاز آخر مثبت عليه OsmAnd.
+
 
 ## مقالات ذات صلة {#related-articles}
 
 - [معلمات المسار](../routing/osmand-routing.md#routing-types)
 - [إعداد المسار](./route-navigation.md)
-- [التنقل بالمسار](./gpx-navigation.md)
-- [التنقل بالعلامات](./markers-navigation.md)
-- [إعدادات التنقل](../guidance/navigation-settings.md)
-- [شاشة الخريطة أثناء التنقل](../guidance/map-during-navigation.md)
+- [الملاحة بواسطة مسار](./gpx-navigation.md)
+- [الملاحة بواسطة العلامات](./markers-navigation.md)
+- [إعدادات الملاحة](../guidance/navigation-settings.md)
+- [شاشة الخريطة أثناء الملاحة](../guidance/map-during-navigation.md)
 - [التوجيهات الصوتية / الإشعارات](../guidance/voice-navigation.md)
 - [أندرويد أوتو](../auto-car.md)
 - [كار بلاي](../car-play.md)
-
-> *آخر تحديث: نوفمبر 2024*

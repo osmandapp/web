@@ -1,7 +1,7 @@
 ---
-source-hash: f1b6ce88c16188825c1c750fdab6393efc13e796dac9b76318385c1908db3134
+source-hash: 18d9873a363946b476ae9c98d895b7afc2dcac45571f524bfe437e0a7bba8153
 sidebar_position: 3
-title: Nawigacja za pomocą znaczników
+title:  Nawigacja według znaczników
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,21 +18,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-[Znaczniki mapy](../../personal/markers.md) to punkty na mapie oznaczone flagami. Mogą być używane do różnych celów, takich jak wskazywanie miejsca, które chcesz odwiedzić, punktu zainteresowania, który chcesz zapamiętać, lub do tworzenia niestandardowej trasy.
+[Znaczniki mapy](../../personal/markers.md) to punkty na mapie oznaczone flagami. Mogą być używane do różnych celów, takich jak wskazanie lokalizacji, którą chcesz odwiedzić, interesującego miejsca, które chcesz zapamiętać, lub do stworzenia niestandardowej trasy.  
 
-Mogą być szczególnie pomocne dla turystów, rowerzystów lub każdego, kto eksploruje nowy obszar i chce zaznaczyć interesujące miejsca lub punkty odniesienia na mapie. Główna różnica w stosunku do [punktów ulubionych](../../personal/favorites.md) polega na tym, że znaczniki są szybsze w tworzeniu, ponieważ nie wymagają nazwy.
+Mogą być szczególnie pomocne dla turystów pieszych, rowerzystów lub każdego, kto eksploruje nowy obszar i chce zaznaczyć na mapie interesujące lokalizacje lub punkty odniesienia. Główna różnica w stosunku do [punktów ulubionych](../../personal/favorites.md) polega na tym, że znaczniki tworzy się szybciej, ponieważ nie wymagają one nazwy.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png)
+![Znacznik nawigacyjny Android](@site/static/img/navigation/marker/navigation_marker_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
+![Znacznik nawigacyjny iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
 
 </TabItem>
 
@@ -43,132 +43,132 @@ Mogą być szczególnie pomocne dla turystów, rowerzystów lub każdego, kto ek
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
- ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
+ ![Różnica w nawigacji po znacznikach Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Różnica w nawigacji po znacznikach Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Difference marker navigation iOS 2](@site/static/img/navigation/marker/markers_ex_ios_2.png) ![Difference marker navigation iOS 1](@site/static/img/navigation/marker/markers_ex_ios_1.png)
+![Różnica w nawigacji po znacznikach iOS 2](@site/static/img/navigation/marker/markers_ex_ios_2.png) ![Różnica w nawigacji po znacznikach iOS 1](@site/static/img/navigation/marker/markers_ex_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-*Znaczniki mapy* mogą służyć jako [punkty docelowe](./route-navigation#set-destinations) podczas tworzenia trasy. Są szczególnie wygodne, gdy trzeba wyznaczyć trasę z punktami pośrednimi.
+*Znaczniki mapy* mogą służyć jako [cele podróży](./route-navigation#set-destinations) podczas tworzenia trasy. Są szczególnie wygodne, gdy trzeba wyznaczyć trasę z punktami pośrednimi.
 
-Jednak *znaczniki mapy* zapewniają również różne funkcje, takie jak [widżety](../../widgets/markers.md), kierunek ruchu, linie na mapie, dzięki czemu można używać tych narzędzi do nawigacji bez tworzenia linii trasy i włączania pełnej nawigacji głosowej.
+Jednak *znaczniki mapy* zapewniają również różne funkcje, takie jak [widżety](../../widgets/markers.md), kierunek ruchu, linie na mapie, dzięki czemu można używać tych narzędzi do nawigacji bez tworzenia linii trasy i wchodzenia w pełną nawigację z przewodnikiem głosowym.
 
-W przypadku, gdy potrzebujesz prostej nawigacji punkt-punkt wyświetlanej jako linie proste, możesz zbudować i posortować ***listę trasy*** składającą się ze znaczników jako punktów pośrednich i użyć widżetów do prostej nawigacji.
+W przypadku, gdy potrzebujesz prostej nawigacji od punktu do punktu wyświetlanej jako linie proste, możesz zbudować i posortować ***Listę planu podróży*** składającą się ze znaczników jako punktów pośrednich i użyć widżetów do prostej nawigacji.
 
 
-#### Zalecenia {#recommendations}
+### Zalecenia {#recommendations}
 
-Oto proste zalecenia dotyczące *nawigacji za pomocą znaczników*:
+Oto proste kroki z zaleceniami, jak *nawigować według znaczników*:
 
-1. Twórz znaczniki. Znajdź żądany obiekt(y) na mapie, dotknij go i wybierz *[przycisk znacznika](../../personal/markers.md#add--edit-markers)* w *[menu kontekstowym mapy](../../map/map-context-menu.md#add--edit-marker)*. Możesz również tworzyć znaczniki z [ulubionych](#add-group-of-favorite) lub [ścieżek GPX](#add-group-of-track-waypoints).
-2. [*Sortuj znaczniki*](#sort-markers) w preferowany sposób, w jaki chcesz je przechodzić.
+1. Utwórz znaczniki. Znajdź żądany obiekt (obiekty) na mapie, dotknij go i wybierz *[przycisk Znacznik](../../personal/markers.md#add--edit-markers)* w *[menu kontekstowym mapy](../../map/map-context-menu.md#add--edit-marker)*. Możesz także tworzyć znaczniki z [ulubionych](#add-group-of-favorite) lub [tras GPX](#add-group-of-track-waypoints).
+2. [*Sortuj znaczniki*](#sort-markers) w preferowany sposób, w jaki chcesz je mijać
 3. Dostosuj *widok znaczników mapy*, jeśli chcesz używać znaczników bez uruchamiania nawigacji. Włącz opcje **Strzałki na mapie** i **Linia kierunku** w sekcji *[Wygląd](../../personal/markers.md#appearance-on-the-map)* w *[menu znaczników mapy](../../personal/markers.md#actions)*.
-4. Dodaj *[widżety znaczników](../../personal/markers.md#markers)* w *[menu konfiguracji ekranu](../../widgets/configure-screen.md)* (opcjonalnie).
-5. [*Oznacz jako przebyte*](#pass-markers) już odwiedzone znaczniki lub przywróć je z historii, jeśli chcesz je ponownie przejść.
+4. Dodaj *[widżety znaczników](../../personal/markers.md#markers)* w *[menu Konfiguruj ekran](../../widgets/configure-screen.md)* (opcjonalnie).
+5. [*Oznacz jako minięty*](#pass-markers) już odwiedzone znaczniki lub przywróć je z historii, jeśli chcesz je ponownie minąć.
 
 :::note
-Gdy opcje **Strzałki na mapie** i **Linia kierunku** są włączone w sekcji *Wygląd* w [menu znaczników mapy](../../personal/markers.md#appearance-on-the-map), zobaczysz strzałkę lub linię przerywaną na mapie. Strzałka pokazuje kierunek do aktywnego znacznika, gdy znajduje się on poza bieżącym ekranem mapy. Linia kierunku jest rysowana, gdy Twoja geolokalizacja i znacznik znajdują się na tym samym ekranie.
+Gdy opcje **Strzałki na mapie** i **Linia kierunku** są włączone w sekcji *Wygląd* w [menu znaczników mapy](../../personal/markers.md#appearance-on-the-map), na mapie pojawi się strzałka lub linia przerywana. Strzałka pokazuje kierunek do aktywnego znacznika, gdy znajduje się on poza bieżącym ekranem mapy. Linia kierunku jest rysowana, gdy zarówno Twoja geolokalizacja, jak i znacznik znajdują się na tym samym ekranie.  
 :::
 
 
-## Lista trasy {#itinerary-list}
+## Lista planu podróży {#itinerary-list}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Markers list Android](@site/static/img/navigation/marker/markers_list_andr.png)
+![Lista znaczników Android](@site/static/img/navigation/marker/markers_list_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Markers list iOS](@site/static/img/navigation/marker/markers_list_ios.png)
+![Lista znaczników iOS](@site/static/img/navigation/marker/markers_list_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Lista trasy przedstawia uporządkowaną listę *przechodnich* znaczników, które są widoczne na mapie. Możesz dodawać i usuwać punkty pojedynczo lub zbiorczo, używając wcześniej przygotowanego [pliku GPX](#add-group-of-track-waypoints) lub [grupy ulubionych](#add-group-of-favorite). W przypadku lokalnych zawodów lub przygód może być przydatne utworzenie listy punktów z współrzędnych za pomocą [narzędzia do wprowadzania współrzędnych](../../plan-route/coordinate-input.md).
+Lista planu podróży reprezentuje uporządkowaną listę *możliwych do minięcia* znaczników, które są widoczne na mapie. Możesz dodawać i usuwać punkty pojedynczo lub robić to wsadowo, używając wcześniej przygotowanego [pliku GPX](#add-group-of-track-waypoints) lub [grupy ulubionych](#add-group-of-favorite). W przypadku lokalnych zawodów lub przygód przydatne może być utworzenie listy punktów na podstawie współrzędnych za pomocą [narzędzia do wprowadzania współrzędnych](../../plan-route/coordinate-input.md).
 
 
-### Dodaj pojedyncze znaczniki {#add-single-markers}
+### Dodawanie pojedynczych znaczników {#add-single-markers}
 
-*Znaczniki* można dodawać lub usuwać z mapy, pojedynczo dotykając ekranu w wybranym miejscu. Następnie należy postępować zgodnie z instrukcjami z artykułu *[menu kontekstowego mapy](../../map/map-context-menu.md#add--edit-marker)*.
+*Znaczniki* można dodawać lub usuwać z mapy, dotykając ekranu w wybranym miejscu. Następnie należy postępować zgodnie z instrukcjami z artykułu *[menu kontekstowe mapy](../../map/map-context-menu.md#add--edit-marker)*.  
 
 
-### Dodaj grupę ulubionych {#add-group-of-favorite}
+### Dodawanie grupy ulubionych {#add-group-of-favorite}
 
 <InfoAndroidOnly />
 
-![Favorites to markers 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Favorites to markers 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
+![Ulubione do znaczników 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Ulubione do znaczników 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
 
-Możesz tworzyć *znaczniki mapy* z *[ulubionych](../../personal/favorites.md)* za pomocą:
+Możesz tworzyć *znaczniki mapy* z *[ulubionych](../../personal/favorites.md)* używając:
 
 - *[Menu grup ulubionych](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Moje ulubione)*.
-- Ikony &#128681; w menu Ulubione na stronie *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Moje ulubione→&#128681;)*.
-- Opcji **'+'** (dodaj) w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu znaczników mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- Ikona &#128681; w menu na stronie Ulubione *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Moje ulubione→&#128681;)*.
+- Opcja **'+'** (dodaj) w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu Znaczniki mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.  
 
 
-### Dodaj grupę punktów trasy {#add-group-of-track-waypoints}
+### Dodawanie grupy punktów trasy {#add-group-of-track-waypoints}
 
 <InfoAndroidOnly />
 
-![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
+![GPX do znaczników 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
 
-Ścieżki GPX z punktami trasy mogą być używane jako *znaczniki mapy* i szybko wyłączane:
+Trasy GPX z punktami trasy mogą być używane jako *znaczniki mapy* i szybko wyłączane:
 
-- Użyj opcji **'+'** (dodaj) w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu znaczników mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-- Włącz przełącznik obok ścieżki w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu znaczników mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Użyj opcji **'+'** (dodaj) w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu Znaczniki mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+- Włącz przełącznik obok trasy w *[zakładce Grupy](../../personal/markers.md#marker-groups)* w menu Znaczniki mapy *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
 
 :::note
-Tylko ścieżki z punktami trasy mogą być dodawane do *listy znaczników mapy*. Ścieżka, którą zamierzasz dodać, powinna być również widoczna (aktywna) na mapie.
+Do *listy znaczników mapy* można dodawać tylko trasy z punktami trasy. Trasa, którą zamierzasz dodać, powinna być również widoczna (aktywna) na mapie.
 :::
 
-![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
+![GPX do znaczników 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX do znaczników 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
-- Możesz również tworzyć *znaczniki* ze ścieżki z punktami trasy, używając *[menu kontekstowego ścieżki](../../map/tracks/track-context-menu.md#points--waypoints)*: *Dotknij widocznej ścieżki na mapie → w menu kontekstowym ścieżki wybierz Punkty → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- Możesz także tworzyć *znaczniki* z trasy z punktami trasy, korzystając z *[menu kontekstowego trasy](../../map/tracks/track-context-menu.md#points--waypoints)*: *Dotknij widocznej trasy na mapie → w menu kontekstowym trasy wybierz Punkty → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 
-## Sortuj znaczniki {#sort-markers}
+## Sortowanie znaczników {#sort-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Sort Markers in a list Android](@site/static/img/navigation/marker/sort_markers_andr.png)
+![Sortowanie znaczników na liście Android](@site/static/img/navigation/marker/sort_markers_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sort Markers in a list iOS](@site/static/img/navigation/marker/sort_markers_ios.png)
+![Sortowanie znaczników na liście iOS](@site/static/img/navigation/marker/sort_markers_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Naciskając na lewy róg (*Android*) lub prawy róg (*iOS*) karty *znacznika mapy* w *[liście znaczników mapy](../../personal/markers.md#itinerary-list)* i przesuwając ją w górę lub w dół, możesz zmienić jej kolejność w *liście nawigacji* (podczas przesuwania karty znacznika zobaczysz linię wskazującą, gdzie znacznik zostanie umieszczony).
+Naciskając lewy róg (*Android*) lub prawy róg (*iOS*) zakładki *Znacznik mapy* na *[liście znaczników mapy](../../personal/markers.md#itinerary-list)* i przesuwając ją w górę lub w dół, można zmienić jej kolejność na *liście nawigacyjnej* (podczas przesuwania karty znacznika zobaczysz linię wskazującą, gdzie znacznik zostanie umieszczony).
 
-W wersji Android aplikacji OsmAnd dostępne są inne opcje sortowania *znaczników mapy* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Sortuj według* lub *Zaplanuj trasę*).
+W wersji aplikacji OsmAnd na Androida dostępne są inne opcje sortowania *znaczników mapy* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Sortuj według* lub *Zaplanuj trasę*).
 
 
-### Sortuj według atrybutów {#sort-by-attributes}
+### Sortowanie według atrybutów {#sort-by-attributes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Alternative Markers sorting Android 1](@site/static/img/navigation/marker/sorting_markers_andr_1.png) ![Alternative Markers sorting Android 2](@site/static/img/navigation/marker/sorting_markers_andr_2.png)
+![Alternatywne sortowanie znaczników Android 1](@site/static/img/navigation/marker/sorting_markers_andr_1.png) ![Alternatywne sortowanie znaczników Android 2](@site/static/img/navigation/marker/sorting_markers_andr_2.png)
 
 </TabItem>
 
@@ -182,59 +182,57 @@ W wersji Android aplikacji OsmAnd dostępne są inne opcje sortowania *znacznik�
 
 Możesz sortować *znaczniki* według:
 
-- **Nazwy** (*alfabetycznie*) — Jeśli znaczniki mają opisowe nazwy, może to być przydatny sposób na szybkie znalezienie szukanego znacznika.
-- **Odległości** (*najbliżej lub najdalej najpierw*) - Ta opcja posortuje znaczniki według ich odległości od Twojej bieżącej lokalizacji.
-- **Daty** (*ostatnio lub dawno temu*) - To posortuje znaczniki według daty ich dodania. Jeśli dodałeś wiele znaczników w czasie, może to być przydatny sposób, aby zobaczyć, które z nich są najnowsze.
+- **Nazwy** (*alfabetycznie*) — jeśli znaczniki mają opisowe nazwy, może to być przydatny sposób na szybkie znalezienie szukanego znacznika.
+- **Odległości** (*najpierw najbliższe lub najdalsze*) - ta opcja posortuje znaczniki według odległości od bieżącej lokalizacji.
+- **Daty** (*ostatnio lub dawno temu*) - ta opcja posortuje znaczniki według daty ich dodania. Jeśli z biegiem czasu dodałeś wiele znaczników, może to być przydatny sposób, aby zobaczyć, które z nich są najnowsze.
 
 
-### Zmień kolejność za pomocą narzędzia Planuj trasę {#reorder-with-a-plan-route-tool}
+### Zmiana kolejności za pomocą narzędzia Plan trasy {#reorder-with-a-plan-route-tool}
 
 <InfoAndroidOnly />
 
-![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
+![Alternatywne sortowanie znaczników Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternatywne sortowanie znaczników Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
 
-Korzystając z funkcji Planuj trasę w narzędziu listy znaczników, możesz sortować *znaczniki* *od drzwi do drzwi*, ustawić je w odwrotnej kolejności lub utworzyć *trasę okrężną*. Jeśli wybierzesz opcję *Nawigacja*, *znaczniki* zostaną użyte jako [punkty pośrednie](../setup/route-navigation.md#intermediate-destinations).
+Korzystając z funkcji Plan trasy na liście znaczników, można sortować *znaczniki* *od drzwi do drzwi*, umieszczać je w odwrotnej kolejności lub tworzyć *trasę okrężną*. Jeśli dotkniesz opcji *Nawigacja*, *znaczniki* zostaną użyte jako [pośrednie cele podróży](../setup/route-navigation.md#intermediate-destinations).
 
 
-## Przechodzenie znaczników {#pass-markers}
+## Mijanie znaczników {#pass-markers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Pass Marker Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Pass Marker Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png)
+![Mijanie znacznika Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Mijanie znacznika Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pass Marker iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) ![Pass Marker iOS 2](@site/static/img/navigation/marker/pass_markers_ios_2.png)
+![Mijanie znacznika iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) ![Mijanie znacznika iOS 2](@site/static/img/navigation/marker/pass_markers_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-*Znacznik* może zostać oznaczony jako przebyty (*Android*) lub odrzucony (*iOS*).
+*Znacznik* można oznaczyć jako minięty (*Android*) lub odrzucony (*iOS*).
 
-- Poprzez *[menu kontekstowe mapy](../../map/map-context-menu.md#add--edit-marker)*.
-- Gdy zbliżysz się do *znacznika* na odległość mniejszą niż 40 metrów (*Android*) lub 50 metrów (*iOS*), przełącznik w pasku *[widżetów znaczników](../../widgets/markers.md#top-bar-widget)* staje się aktywny.
+- Poprzez *[menu kontekstowe mapy](../../map/map-context-menu.md#add--edit-marker)*.  
+- Gdy zbliżysz się do *znacznika* na odległość mniejszą niż 40 metrów (*Android*) lub 50 metrów (*iOS*), przełącznik na pasku *[widżetów znaczników](../../widgets/markers.md#top-bar-widget)* staje się aktywny.  
 
-Po przejściu *znacznika* przenosi się on do folderu [Historia](../../personal/markers.md#history), skąd można go przywrócić w razie potrzeby. Następny znacznik na [liście](#itinerary-list) staje się aktywny. W zależności od Twoich [ustawień](#use-markers-in-navigation), możesz być do niego prowadzony strzałką lub przerywaną linią.
+Po minięciu *znacznika* jest on przenoszony do folderu [Historia](../../personal/markers.md#history), skąd w razie potrzeby można go przywrócić. Następny znacznik na [liście](#itinerary-list) staje się aktywny. W zależności od [ustawień](#use-markers-in-navigation), możesz być do niego prowadzony za pomocą strzałki lub linii przerywanej.
 
 
 ## Powiązane artykuły {#related-articles}
 
-- [Informacje o znacznikach mapy](../../personal/markers.md).
-- [Widżet znacznika](../../widgets/markers.md).
+- [O znacznikach mapy](../../personal/markers.md).
+- [Widżet znaczników](../../widgets/markers.md).  
 __
 - [Parametry trasy](../routing/osmand-routing.md#routing-types)
 - [Przygotowanie trasy](./route-navigation.md)
 - [Szczegóły trasy](./route-details.md)
-- [Nawigacja po śladzie](./gpx-navigation.md)
+- [Nawigacja po trasie GPX](./gpx-navigation.md)
 - [Ustawienia nawigacji](../guidance/navigation-settings.md)
 - [Ekran mapy podczas nawigacji](../guidance/map-during-navigation.md)
 - [Komunikaty głosowe / Powiadomienia](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Ostatnia aktualizacja: czerwiec 2025*

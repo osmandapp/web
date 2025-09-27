@@ -1,5 +1,5 @@
 ---
-source-hash: c406b4c0fcaa397722ffd39164023525d4248abb42fb6a6add45bac6f360f5b8
+source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -39,15 +39,15 @@ O menu de contexto do mapa fornece informações sobre o objeto selecionado no m
 
 </Tabs>
 
-O **menu de contexto** aparece quando você **toca uma vez** em um objeto marcado no mapa. Este menu de contexto exibe informações essenciais sobre o objeto selecionado, incluindo seu *nome, ícone* (conforme representado no mapa), *endereço, distância* e *direção* de sua posição atual.
+O **menu de contexto** aparece quando você **toca uma vez** em um objeto marcado no mapa. Este menu de contexto exibe informações essenciais sobre o objeto selecionado, incluindo seu *nome*, *ícone* (conforme representado no mapa), *endereço, distância*, *limites* e *direção* de sua posição atual.  
 
 Você pode selecionar vários tipos de objetos do mapa, como *POIs*, *favoritos*, *paradas de transporte*, *marcadores*, *picos de montanhas* ou outros *objetos do mapa*.
 
 :::note
-Os objetos do mapa selecionados correspondem a [**nós**](https://wiki.openstreetmap.org/wiki/Node) ou [**caminhos**](https://wiki.openstreetmap.org/wiki/Way) do OpenStreetMap.
+- Os objetos do mapa selecionados e seus limites correspondem a [**nós**](https://wiki.openstreetmap.org/wiki/Node) ou [**caminhos**](https://wiki.openstreetmap.org/wiki/Way) do OpenStreetMap.
+- *A altura dos picos das montanhas é exibida em metros ou pés, dependendo das [unidades de comprimento](../personal/profiles.md#units--formats) selecionadas nas configurações do perfil.*
 :::
 
-> *A altura dos picos das montanhas é exibida em metros ou pés, dependendo das [unidades de comprimento](../personal/profiles.md#units--formats) selecionadas nas configurações do perfil.*
 
 
 ### Selecionar Qualquer Ponto (Toque Longo) {#select-any-point-long-tap}
@@ -70,10 +70,8 @@ Os objetos do mapa selecionados correspondem a [**nós**](https://wiki.openstree
 
 Quando você **toca longamente** em qualquer lugar do mapa, um **menu de contexto** aparece, fornecendo informações sobre o local selecionado. Isso inclui o endereço, a distância e a direção de sua posição atual.
 
-> **NOTA**. *Tocar longamente em um **número de edifício** destaca seu contorno e abre o menu de contexto do mapa*
 
-
-### Selecionar Rota {#select-route}
+### Selecionar Rota GPX {#select-gpx-route}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -92,6 +90,15 @@ Quando você **toca longamente** em qualquer lugar do mapa, um **menu de context
 </Tabs>
 
 Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contexto da trilha](../map/tracks/track-context-menu.md), onde você pode acessar opções adicionais relacionadas à trilha.
+
+
+
+### Rotas, Pistas de Esqui e Trilhas {#routes-and-trails}
+
+![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb.png)  ![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb_2.png)
+
+Você pode tocar em elementos do mapa, como **pistas de esqui**, **rotas de mountain bike (MTB)** e **trilhas de moto suja**, para abrir seu menu de contexto com informações detalhadas. Consulte o [artigo Rotas](../map/routes.md#actions-with-routes) para obter mais informações.
+
 
 
 ### Ocultar Menu de Contexto {#hide-context-menu}
@@ -120,27 +127,27 @@ Para fechar o **menu de contexto**:
 
 </Tabs>
 
-Para informações mais detalhadas sobre um objeto, toque no botão **Detalhes** no menu de contexto ou deslize o painel para cima para expandi-lo.
+Para obter informações mais detalhadas sobre um objeto, toque no botão **Detalhes** no menu de contexto ou deslize o painel para cima para expandi-lo.
 
 
 ### Informações do Objeto {#object-info}
 
-O painel **Informações do Objeto** fornece detalhes adicionais sobre o objeto selecionado. Você pode tocar em qualquer entrada para copiar a informação para a área de transferência.
+O painel **Informações do Objeto** fornece detalhes adicionais sobre o objeto selecionado. Você pode tocar em qualquer entrada para copiar as informações para a área de transferência.  
 
-Detalhes disponíveis incluem:
+Os detalhes disponíveis incluem:
 
 - [Nomes alternativos](#alternative-names)
-- [Coordenadas](../map/map-context-menu.md#coordinates)
-- [POIs Próximos / Wikipedia](../map/map-context-menu.md#nearby-pois--wikipedia-nearby-pois--wikipedia)
-- [Rotas de Transporte Público](../map/map-context-menu.md#public-transport-routes) (para paradas de transporte)
-- [Favoritos / Pontos de Trilha do mesmo grupo](../map/map-context-menu.md#favorites--track-points-from-the-group)
-- [Link do OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)
-- [Imagem / descrição do artigo](../map/map-context-menu.md#article-description-article-description)
-- [Fotos online](../map/map-context-menu.md#online-photos)
+- [Coordenadas](#coordinates)
+- [Dentro de áreas](#polygon-information)
+- [POIs próximos / Wikipedia](#nearby-pois--wikipedia)
+- [Rotas de Transporte Público para paradas](#public-transport-routes)
+- [Favoritos / Pontos de trilha do mesmo grupo](#favorites--track-points-from-the-group)
+- [Link do OpenStreetMap](#openstreetmap-link)
+- [Fotos online](#online-photos)
 
 Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features), como:
 
-- [Website](https://wiki.openstreetmap.org/wiki/Key:website)
+- [Site](https://wiki.openstreetmap.org/wiki/Key:website)
 - [Número de telefone](https://wiki.openstreetmap.org/wiki/Key:contact)
 - [Horário de funcionamento](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Taxa](https://wiki.openstreetmap.org/wiki/Key:fee)
@@ -166,67 +173,48 @@ Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.open
 
 </Tabs>
 
-O OsmAnd exibe **nomes de POI adicionais** no *menu de contexto do mapa*, priorizando o nome no *idioma de exibição* ou na lista de idiomas preferidos do sistema. Se várias traduções estiverem disponíveis, elas são agrupadas em tags categorizadas, como *nome, marca, operador* ou *POIs próximos*.
+O OsmAnd exibe **nomes de POI adicionais** no *menu de contexto do mapa*, priorizando o nome no *idioma de exibição* ou na lista de idiomas preferidos do sistema. Se várias traduções estiverem disponíveis, elas são agrupadas em tags categorizadas, como *nome, marca, operador* ou *POIs próximos*.  
 
 Recursos de exibição de nomes alternativos:
 
 - Traduções adicionais podem ser acessadas por meio de uma *lista suspensa*.
 
-- Os nomes são categorizados em diferentes grupos, como a *lista de nomes em outros idiomas*, *Regional*, *Local*, *Nacional*, *Internacional*, *Curto*, *Antigo*, *Oficial* e *Nomes Alternativos*.
+- Os nomes são categorizados em diferentes grupos, como a *lista de nomes em outros idiomas*, *Regional*, *Local*, *Nacional*, *Internacional*, *Curto*, *Antigo*, *Oficial* e *Nomes alternativos*.
 
 - Outras categorias incluem *tradução específica da região* ou *configurações padrão*.
 
-- Se uma tradução específica *não estiver disponível*, o OsmAnd padroniza o nome **local** para garantir precisão e consistência em regiões multilíngues.
+- Se uma tradução específica *não estiver disponível*, o OsmAnd usa o nome **local** por padrão para garantir precisão e consistência em regiões multilíngues.
 
 
-### Informações do Polígono {#polygon-information}
+### Dentro da área {#polygon-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Informações do Polígono Android](@site/static/img/map/polygon_information_andr.png)
+![Informações do polígono Android](@site/static/img/map/polygon_information_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Informações do Polígono Android](@site/static/img/map/polygon_information_ios.png)
+![Informações do polígono Android](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-O recurso **Informações do Polígono** fornece dados detalhados sobre **polígonos** próximos exibidos no mapa. Isso inclui características geográficas, limites administrativos e outras áreas mapeadas.
-
-**Dentro da seção**:
-
-- Exibe uma *lista de polígonos circundantes*, classificados *do menor para o maior* com base no tamanho da área.
-
-- Cada entrada mostra o *tipo e nome do polígono*, permitindo fácil identificação de regiões e limites.
-
-**Detalhes adicionais**:
-
-- Ao selecionar um ponto no mapa ou um POI, o painel de **informações do polígono** exibe uma lista de todos os polígonos que contêm o local selecionado.
-
-- As entradas na lista incluem **divisões administrativas, áreas de uso da terra, características naturais e outras regiões categorizadas**.
-
-- O painel permite que os usuários **copiem o nome e os detalhes do polígono** para referência.
-
-- Para visualizar esta informação, vá para *Menu de Contexto do Mapa → Detalhes → Dentro*.
-
-Este recurso ajuda você a entender sua *localização atual* em relação a divisões administrativas mapeadas, áreas naturais ou outras características geográficas importantes.
-
+O recurso **Dentro da Área** lista as **áreas** em que um objeto está localizado. Isso inclui características geográficas, limites administrativos, áreas de uso da terra, características naturais e outras áreas categorizadas. Uma *lista de polígonos circundantes*, classificados *do menor para o maior* com base no tamanho da área.
 
 ### Coordenadas {#coordinates}
 
-|Formato das Coordenadas| |
+|Formato das coordenadas| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Graus Decimais Simples)</li><li>DDD.DDDDD (N/S, E/W vírgula)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Padrão](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Código de Localização Aberto](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 e CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Link Web do OsmAnd](https://osmand.net/map)</li><li>[Link Web do OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Graus Decimais Simples)</li><li>DDD.DDDDD (N/S, E/W vírgula)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Padrão](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Código de Localização Aberta](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 e CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Link da Web do OsmAnd](https://osmand.net/map)</li><li>[Link da Web do OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-No menu de contexto, você pode encontrar [coordenadas geográficas](../search/search-coordinates.md#coordinate-format) de um ponto em vários formatos e também links compartilháveis do OsmAnd e [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (a última opção está disponível apenas quando o [plugin de edição do OpenStreetMap](../plugins/osm-editing.md) está ativado). Se você expandir a seção de coordenadas e tocar longamente em qualquer linha da lista, seus valores serão automaticamente copiados para a área de transferência (**Android**) ou a opção *Copiar* estará disponível na mensagem pop-up (**iOS**).
+No menu de contexto, você pode encontrar [coordenadas geográficas](../search/search-coordinates.md#coordinate-format) de um ponto em vários formatos e também links compartilháveis do OsmAnd e [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (a última opção está disponível apenas quando o [plugin de edição do OpenStreetMap](../plugins/osm-editing.md) está ativado). Se você expandir a seção de coordenadas e tocar longamente em qualquer linha da lista, seus valores serão copiados automaticamente para a área de transferência (**Android**) ou a opção *Copiar* ficará disponível na mensagem pop-up (**iOS**).  
 
-O Link Web do OsmAnd pode ser automaticamente reconhecido pelo OsmAnd (exemplo: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Ambos os links do OsmAnd e do [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) são abertos nos sites correspondentes com um marcador de pino no local de interesse.
+O link da Web do OsmAnd pode ser reconhecido automaticamente pelo OsmAnd (exemplo: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Tanto o OsmAnd quanto os [links do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) são abertos nos sites correspondentes com um marcador de pino para o local de interesse.  
 
 
 ### POIs Próximos / Wikipedia {#nearby-pois--wikipedia}
@@ -235,9 +223,9 @@ O Link Web do OsmAnd pode ser automaticamente reconhecido pelo OsmAnd (exemplo: 
 
 Essas seções exibem [artigos da Wikipedia](../plugins/wikipedia.md) ou [Pontos de Interesse](../map/point-layers-on-map.md#points-of-interest-pois) próximos com *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* para exibir e [pesquisar](../search/search-poi.md) todos os outros POIs e artigos da Wikipedia.
 
-Tocar em *POIs Próximos / Artigos da Wikipedia* abre uma lista de pontos (POIs ou Wikipedia). Um toque em um desses pontos de uma lista de pontos move o mapa para este ponto (POIs ou Wikipedia) com a abertura do menu de contexto do mapa do ponto.
+Tocar em *POIs próximos / artigos da Wikipedia* abre uma lista de pontos (POIs ou Wikipedia). Um toque em um desses pontos de uma lista de pontos move o mapa para este ponto (POIs ou Wikipedia) com a abertura do menu de contexto do mapa do ponto.
 
-> **NOTA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) aparecerá apenas se você tiver baixado anteriormente mapas especiais com [artigos da Wikipedia para esta área](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages)*.
+> **NOTA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) aparecerá apenas se você tiver baixado anteriormente mapas especiais com [artigos da Wikipedia para esta área](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Rotas de Transporte Público {#public-transport-routes}
@@ -258,7 +246,7 @@ Tocar em *POIs Próximos / Artigos da Wikipedia* abre uma lista de pontos (POIs 
 
 </Tabs>
 
-Informações mostradas sobre rotas de transporte público para a parada de transporte escolhida. Informações sobre o menu de contexto do transporte público e ações com ele, leia no [artigo](../map/public-transport.md#transport-routes-context-menu).
+Informações exibidas sobre rotas de transporte público para a parada de transporte escolhida. Informações sobre o menu de contexto do transporte público e ações com ele, leia no [artigo](../map/public-transport.md#transport-routes-context-menu).
 
 
 ### Favoritos / Pontos de Trilha do Grupo {#favorites--track-points-from-the-group}
@@ -268,31 +256,6 @@ Informações mostradas sobre rotas de transporte público para a parada de tran
 Esta é uma lista de todos os pontos em um grupo para um Favorito ou Ponto de Referência. Ao tocar, toda a lista de pontos de um grupo se expande, ao tocar em um ponto da lista, o mapa se move para o ponto selecionado.
 
 
-### Objeto Linear {#linear-object}
-
-![Lista de favoritos](@site/static/img/map/linear_object_andr.png)
-
-Para **objetos lineares**, como *barreiras, degraus, portões, bancos, rampas, açudes, pilares ou coupures*, o menu de contexto exibe detalhes adicionais. Isso inclui o tipo de POI e o endereço associados a eles, ou o tipo de objeto se nenhum nome for atribuído.
-
-
-### Área de Escalada e Detalhes do Penhasco {#climbing-area-and-crag-details}
-
-![Lista de favoritos](@site/static/img/map/climbing_andr.png)
-
-Ao selecionar uma [área de escalada ou penhasco](../map/routes.md#climbing-routes), o OsmAnd fornece um resumo detalhado do local de escalada, incluindo: nome e localização, classificação de dificuldade de escalada (UIAA, Francês, YDS, etc.), tipo de rocha, altura e comprimento da rota, qualidade da escalada e condições da superfície.
-
-
-### Pistas de Esqui, Rotas de MTB e Trilhas de Moto Cross {#ski-slopes-mtb-routes-and-dirt-bike-trails}
-
-![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb.png) ![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb_2.png)
-
-Você pode tocar em elementos do mapa, como **pistas de esqui**, **rotas de mountain bike (MTB)** e **trilhas de moto cross**, para abrir seu menu de contexto com informações detalhadas. As informações disponíveis incluem: nome da rota ou pista (se disponível nos dados OSM), ID do objeto OSM ou ID de relação, nível de dificuldade, comprimento da trilha, tipo de terreno e muito mais.
-
-**Tags Suportadas:** `piste:type=*` (pistas de esqui), `route=mtb`, `route=atv` ou `route=dirt_bike` (trilhas off-road de motocicleta)
-
-:::note
-Use os estilos de mapa [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ou [Offroad](../map/vector-maps.md#offroad) para melhor visibilidade.
-:::
 
 
 ### Descrição do Artigo {#article-description}
@@ -320,7 +283,7 @@ Esta parte contém uma parte da descrição do [artigo da Wikipedia](../plugins/
 
 ![Link OSM](@site/static/img/map/context_menu_osm_link.png) ![Link OSM](@site/static/img/map/context_menu_osm_link_1.png)
 
-O link do OpenStreetMap fornece um link direto para o objeto do OpenStreetMap onde você pode encontrar informações completas sobre ele:
+O link do OpenStreetMap fornece um link direto para o objeto do OpenStreetMap, onde você pode encontrar informações completas sobre ele:  
 [nó](https://wiki.openstreetmap.org/wiki/Node) ou [caminho](https://wiki.openstreetmap.org/wiki/Way).
 
 
@@ -330,14 +293,14 @@ O link do OpenStreetMap fornece um link direto para o objeto do OpenStreetMap on
 
 <TabItem value="android" label="Android">  
 
-![Menu de contexto de Fotos Online Android](@site/static/img/map/images_nearby_1_andr.png)
+![Menu de contexto de fotos online Android](@site/static/img/map/images_nearby_1_andr.png)
 ![Menu da galeria Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu de contexto de Fotos Online iOS](@site/static/img/map/online_photo_ios.png)
+![Menu de contexto de fotos online iOS](@site/static/img/map/online_photo_ios.png)
 ![Menu da galeria iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -363,25 +326,25 @@ Para mais informações, consulte: [Fotos Online](https://osmand.net/docs/user/m
 
 <TabItem value="android" label="Android">  
 
-![Imagens de Nível de Rua Android](@site/static/img/map/street_level_imagery_andr.png)
+![Imagens de nível de rua Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Imagens de Nível de Rua iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Imagens de nível de rua iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-O OsmAnd suporta a integração com o [Mapillary](https://www.mapillary.com/), uma plataforma global para imagens de nível de rua colaborativas. Este recurso permite que você visualize e explore sequências de fotos do mundo real diretamente no mapa.
+O OsmAnd suporta a integração com o [Mapillary](https://www.mapillary.com/), uma plataforma global para imagens de nível de rua colaborativas. Este recurso permite visualizar e explorar sequências de fotos do mundo real diretamente no mapa.
 
 As imagens do Mapillary aparecem como ícones de fotos direcionais, alinhados com a estrada ou caminho onde foram capturadas. Isso pode ajudá-lo a entender melhor seus arredores, especialmente em áreas desconhecidas.
 
 Você pode:
 
-- Usar o botão **Explorar** para abrir o visualizador do Mapillary e navegar por imagens de nível de rua próximas.
+- Usar o botão **Explorar** para abrir o visualizador do Mapillary e navegar pelas imagens de nível de rua próximas.
 - Tocar no botão **Adicionar Fotos** para contribuir com suas próprias fotos para a plataforma Mapillary.
 
 > *Saiba mais sobre como ativar e usar este recurso no [guia do plugin Mapillary](../plugins/mapillary.md).*
@@ -393,7 +356,7 @@ Você pode:
 
 ![Lista de imagens](@site/static/img/map/image_list_android.png) ![Lista de vídeos](@site/static/img/map/video_list_android.png)
 
-Informações de [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md), como data, coordenadas, pré-visualização e outras, estão disponíveis no menu **Detalhes**. Você pode abrir as notas em um software secundário tocando no botão **Reproduzir / Mostrar** no menu de contexto da nota.
+Informações de [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md), como data, coordenadas, pré-visualização e outras, estão disponíveis no menu **Detalhes**. Você pode abrir as notas em software secundário tocando no botão **Reproduzir / Mostrar** no menu de contexto da nota.
 
 
 ## Ações {#actions}
@@ -402,13 +365,13 @@ Informações de [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md), como
 
 <TabItem value="android" label="Android">  
 
-![Menu de ações Android](@site/static/img/map/actions_menu_android.png) ![Menu adicional de ações Android](@site/static/img/map/actions_additional_menu_android.png)
+![Menu de ações Android](@site/static/img/map/actions_menu_android.png) ![Menu de ações adicionais Android](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu de ações iOS](@site/static/img/map/actions_menu_ios.png) ![Menu adicional de ações iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Menu de ações iOS](@site/static/img/map/actions_menu_ios.png)  ![Menu de ações adicionais iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
@@ -423,25 +386,25 @@ Informações de [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md), como
 
 <TabItem value="android" label="Android">  
 
-![Adicionar ação de favorito Android](@site/static/img/map/add_favorite_android.png)
+![Ação Adicionar Editar favorito Android](@site/static/img/map/add_favorite_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Adicionar ação de favorito iOS](@site/static/img/map/add_favorite_ios.png)
+![Ação Adicionar Editar favorito iOS](@site/static/img/map/add_favorite_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-No menu de contexto, há opções para **adicionar** ou **editar** o ponto/objeto selecionado à [lista de favoritos](../personal/myplaces.md).
+No menu de contexto, há opções para **adicionar** ou **editar** o ponto / objeto selecionado à [lista de favoritos](../personal/myplaces.md).
 
-- Para **Adicionar**, você precisa selecionar um ponto/objeto, tocar no ícone de *Estrela* (com a assinatura Adicionar) e inserir todas as informações necessárias.
+- Para **Adicionar**, você precisa selecionar um ponto / objeto, tocar no ícone *Estrela* (com a assinatura Adicionar) e inserir todas as informações necessárias.  
 
-- Para **Editar** informações sobre um ponto favorito, você precisa ativar *Mostrar no mapa* (*Menu → Meus locais → Favoritos*) e, em seguida, tocar nele. No menu de Contexto, em vez do ícone de *Estrela*, aparecerá um ícone de *Lápis* (com a assinatura Editar).
+- Para **Editar** informações sobre o ponto favorito, você precisa ativar *Mostrar no mapa* (*Menu → Meus lugares → Favoritos*), em seguida, pressionar nele e no menu de contexto, em vez do ícone *Estrela*, aparecerá o ícone *Lápis* (com a assinatura Editar).
 
-- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - adiciona um ponto selecionado à lista de favoritos.
+- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - adiciona um ponto selecionado à lista de favoritos.
 
 
 ### Adicionar / Editar Marcador {#add--edit-marker}
@@ -450,23 +413,23 @@ No menu de contexto, há opções para **adicionar** ou **editar** o ponto/objet
 
 <TabItem value="android" label="Android">  
 
-![Adicionar ação de marcador Android](@site/static/img/map/add_marker_android.png) ![Ação de passar marcador Android](@site/static/img/map/action_pass_marker_android.png)
+![Ação Adicionar Editar marcador Android](@site/static/img/map/add_marker_android.png) ![Ação Passar marcador Android](@site/static/img/map/action_pass_marker_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Adicionar ação de marcador iOS](@site/static/img/map/add_marker_ios.png) ![Ação de restaurar marcador Android](@site/static/img/map/action_restore_marker_android.png)
+![Ação Adicionar Editar marcador iOS](@site/static/img/map/add_marker_ios.png)  ![Ação Restaurar marcador Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-É possível marcar um ponto ou um objeto para facilitar o planejamento da navegação. Basta tocar no ícone de **bandeira** no menu (*Android*), **seta** (*iOS*) - exibe a direção e a distância para o ponto selecionado a partir da sua localização atual.
+É possível marcar um ponto ou um objeto para facilitar o planejamento da navegação. Basta tocar no ícone da **bandeira** no menu (*Android*), **seta** (*iOS*) - exibe a direção e a distância até o ponto selecionado a partir da sua localização atual.
 
 Ações:
 
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md). Coloca um novo marcador no ponto selecionado.
-- **Marcar como passado** (*Android*) / *Ignorar* (*iOS*). Desativa o marcador e o coloca no Histórico.
+- **Marcar como passado** (*Android*) / *Descartar* (*iOS*). Desativa o marcador e o coloca no Histórico.
 - **Tornar ativo** (*Android*). Move o marcador para a posição superior (no painel superior).
 - **Restaurar marcador** (*Android*). Move o marcador do Histórico para a lista ativa.
 
@@ -481,32 +444,32 @@ Leia mais sobre [marcadores aqui](../personal/markers.md).
 
 | Versões até Android 14 | 14+ Android |
 |:------------|:---------------|
-| ![Ação de compartilhamento Android](@site/static/img/map/action_share_1_andr.png) | ![Ação de compartilhamento Android](@site/static/img/map/action_share_2_andr.png) |
+| ![Ação Compartilhar Android](@site/static/img/map/action_share_1_andr.png) | ![Ação Compartilhar Android](@site/static/img/map/action_share_2_andr.png) |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Ação de compartilhamento iOS](@site/static/img/map/action_share_1_ios.png)
+![Ação Compartilhar iOS](@site/static/img/map/action_share_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-O aplicativo OsmAnd permite que você **<Translate android="true" ids="shared_string_share"/>** *Minha Localização* ou qualquer localização selecionada no mapa com mensageiros, e-mails ou mídias sociais.
+O aplicativo OsmAnd permite que você **<Translate android="true" ids="shared_string_share"/>** *Minha Localização* ou qualquer local selecionado no mapa com mensageiros, e-mails ou mídias sociais.  
 
 Opções disponíveis para compartilhar a localização:
 
 - ***Enviar***. Envia texto através de aplicativos disponíveis em seu dispositivo. Inclui todas as informações sobre a localização: nome da Minha localização ou o nome do POI selecionado, endereço, coordenadas e geolocalização como um link.
-- ***Copiar***. Copia todas as informações de localização (nome da Minha localização ou nome do POI selecionado, endereço, coordenadas e geolocalização como um link) para a área de transferência.
+- ***Copiar***. Copia todas as informações de localização (nome da Minha localização ou nome do POI selecionado, endereço, coordenadas e geolocalização como um link) para a área de transferência.  
 - ***Copiar endereço***. Copia apenas as informações de endereço para a área de transferência.
 - ***Copiar nome do POI***. Copia apenas o nome do POI ou o endereço se não houver nome para a área de transferência.
 - ***Copiar coordenadas***. Copia apenas as informações de coordenadas para a área de transferência.
-- ***geo***. Abre uma lista de aplicativos disponíveis que suportam geolocalizações. <!-- (info about [geo urls Android](https://developers.google.com/maps/documentation/urls/android-intents)). -->
+- ***geo***. Abre uma lista de aplicativos disponíveis que suportam geolocalizações. <!-- (informações sobre [URLs geo Android](https://developers.google.com/maps/documentation/urls/android-intents)). -->
 - ***QR-code*** (*Android*). Gera um link para o local selecionado em um código QR.
 
 <!--
-- ***Salvar Imagem*** (*iOS*) - salva uma captura de tela com o mapa e o ponto selecionado na galeria de imagens.
+- ***Salvar Imagem*** (*iOS*) - salva uma captura de tela com mapa e ponto selecionado na galeria de imagens.
 - ***Atribuir a Contato*** (*iOS*) - cria um ícone para o contato escolhido a partir da captura de tela do mapa.
 - ***Imprimir*** (*iOS*) - abre as Opções de Impressora para imprimir a captura de tela do mapa.
 - ***Salvar em arquivos*** (*iOS*) - salva a captura de tela do mapa no iCloud Drive ou no armazenamento do seu dispositivo. -->
@@ -534,12 +497,12 @@ Opções disponíveis para compartilhar a localização:
 
 Para iniciar a navegação ou o planejamento de rotas, você precisa selecionar o destino primeiro com [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Caso você já tenha um ponto de destino, o menu sugerirá que você substitua o ponto de destino ou o insira como outro ponto intermediário ou inicial.
 
-Também é possível selecionar *De* Destino primeiro via menu de contexto do mapa (<Translate android="true" ids="context_menu_item_directions_from"/>).
+Também é possível selecionar *De* Destino primeiro através do menu de contexto do mapa (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
 Leia mais sobre [navegação aqui](../navigation/setup/route-navigation.md).
 
 :::note Toque em Iniciar navegação
-Se você tocar em **Iniciar navegação** - o ponto *De* será descartado, pois o aplicativo entra no modo de Navegação. Para preservar uma rota, não toque em *Iniciar navegação* e [**deslize para baixo**](#hide-context-menu) o menu *Preparação da rota*.
+Se você tocar em **Iniciar navegação** - o ponto *De* será descartado, pois o aplicativo entra no modo de navegação. Para preservar uma rota, não toque em *Iniciar navegação* e [**deslize para baixo**](#hide-context-menu) o menu *Preparação da rota*.
 :::
 
 
@@ -549,19 +512,19 @@ Se você tocar em **Iniciar navegação** - o ponto *De* será descartado, pois 
 
 <TabItem value="android" label="Android">  
 
-![Ação de pesquisa Android](@site/static/img/map/action_search_android.png)
+![Ação Pesquisar Android](@site/static/img/map/action_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Ação de pesquisa iOS](@site/static/img/map/action_search_ios.png)
+![Ação Pesquisar iOS](@site/static/img/map/action_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Com esta ação do menu de contexto, é possível pesquisar em torno de um local específico no mapa.
+Com esta ação do menu de contexto, é possível pesquisar em torno de um local específico no mapa.  
 
 Leia mais sobre a funcionalidade de [pesquisa](../search/index.md).
 
@@ -584,11 +547,11 @@ Leia mais sobre a funcionalidade de [pesquisa](../search/index.md).
 
 </Tabs>
 
-Usando o menu de contexto do mapa, você pode adicionar uma estrada específica à lista de estradas não utilizadas para roteamento. Isso afetará o [planejamento da rota](../navigation/setup/route-navigation.md).
+Usando o menu de contexto do mapa, você pode adicionar uma estrada específica à lista de estradas não utilizadas para roteamento. Isso afetará a [preparação da rota](../navigation/setup/route-navigation.md).  
 Para excluir estradas previamente selecionadas da *[lista de estradas a evitar](../navigation/routing/osmand-routing.md#avoid-roads-menu)*, toque em um sinal, escolha *Remover* (**Android**) ou *Descartar* (**iOS**).
 
 :::note
-A função Evitar estradas é global e afeta todos os *[tipos de roteamento](../navigation/routing/osmand-routing.md#routing-types)* (exceto *[roteamento online](../navigation/routing/online-routing.md)*).
+A função de evitar estradas é global e afeta todos os *[tipos de roteamento](../navigation/routing/osmand-routing.md#routing-types)* (exceto *[roteamento online](../navigation/routing/online-routing.md)*).  
 :::
 
 
@@ -600,7 +563,7 @@ A função Evitar estradas é global e afeta todos os *[tipos de roteamento](../
 
 ![Ação Alterar posição Android](@site/static/img/map/action_change_position_android.png)
 
-![Ação Alterar interface do usuário de posição Android](@site/static/img/map/action_change_position_ui_android.png)
+![Ação Alterar posição UI Android](@site/static/img/map/action_change_position_ui_android.png)
 
 </TabItem>
 
@@ -608,13 +571,13 @@ A função Evitar estradas é global e afeta todos os *[tipos de roteamento](../
 
 ![Ação Alterar posição iOS](@site/static/img/map/action_change_position_ios.png)
 
-![Ação Alterar interface do usuário de posição iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+![Ação Alterar posição UI iOS](@site/static/img/map/action_change_position_ui_iOS.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Quase todo objeto criado pelo usuário é móvel, ou seja, Marcador, Favorito, POI Criado, Nota de Áudio/Vídeo ou Ponto de Referência de Trilha. Primeiro selecione um objeto no mapa e, em seguida, use *<Translate android="true" ids="change_markers_position"/>* o menu para movê-lo para um novo local.
+Quase todo objeto criado pelo usuário é móvel, ou seja, Marcador, Favorito, POI Criado, Nota de Áudio/Vídeo ou Ponto de Referência de Trilha. Primeiro, selecione um objeto no mapa e, em seguida, use o menu *<Translate android="true" ids="change_markers_position"/>* para movê-lo para um novo local.
 
 
 ### Planejar uma Rota {#plan-a-route}
@@ -644,12 +607,12 @@ Leia mais sobre a ferramenta [Planejar uma rota](../plan-route/create-route.md).
 
 </Tabs>
 
-Para atualizar ou baixar mapas online (blocos) em um local específico, você pode usar o menu de contexto do objeto:
+Para atualizar ou baixar mapas online (tiles) em um local específico, você pode usar o menu de contexto do objeto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e para *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e para *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.  
 
-Por favor, leia a [instrução completa](../map/raster-maps.md#download--update-tiles).
+Por favor, leia a [instrução completa](../map/raster-maps.md#download--update-tiles).  
 
 
 ### Atualizar / Baixar Mapas Vetoriais {#update--download-vector-maps}
@@ -674,9 +637,9 @@ Por favor, leia a [instrução completa](../map/raster-maps.md#download--update-
 
 </Tabs>
 
-Caso não haja mapa offline presente no local selecionado, por exemplo, o menu do objeto do mapa foi aberto via Pesquisa ou via Favorito específico, então o menor mapa offline possível será sugerido para [download](../start-with/download-maps.md#select-on-the-map).
+Caso não haja mapa offline presente no local selecionado, por exemplo, o menu de objeto do mapa foi aberto via Pesquisa ou via Favorito específico, então o menor mapa offline possível será sugerido para [download](../start-with/download-maps.md#select-on-the-map).  
 
-**iOS**. Se você já [baixou](../map/map-context-menu.md) mapas OsmAnd (vetoriais ou de terreno), é possível atualizá-los via menu de contexto. Você precisará selecionar a região no mapa primeiro - toque em qualquer local no zoom mundial 3-7.
+**iOS**. Se você já [baixou](../map/map-context-menu.md) mapas OsmAnd (vetoriais ou de terreno), é possível atualizá-los via menu de contexto. Você precisará selecionar a região no mapa primeiro - toque em qualquer local no zoom mundial 3-7.  
 
 > **NOTA**. *Se você abriu o menu de contexto para a região do mapa (a região está destacada), você poderá ver ***<Translate android="true" ids="rendering_category_details"/>*** sobre ela: tipo e tamanho de um mapa disponível, link para uma página da Wikipedia, idioma, população e outros.*
 
@@ -685,7 +648,7 @@ Caso não haja mapa offline presente no local selecionado, por exemplo, o menu d
 
 :::note
 Para adicionar/excluir pontos de estacionamento, ative o [**plugin de posição de estacionamento**](../plugins/parking.md) do OsmAnd.
-:::
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -714,7 +677,7 @@ Qualquer local selecionado no mapa pode ser marcado como [uma posição de estac
 
 :::note
 Para adicionar/editar pontos de trilha, ative o [**plugin de gravação de viagem**](../plugins/trip-recording.md) do OsmAnd.
-:::
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -736,12 +699,12 @@ Para adicionar/editar pontos de trilha, ative o [**plugin de gravação de viage
 
 </Tabs>
 
-Você pode adicionar pontos de referência a uma trilha gravada ou à gravação da trilha atual usando o menu de contexto do mapa.
+Você pode adicionar pontos de referência a uma trilha gravada ou à gravação de trilha atual usando o menu de contexto do mapa.  
 
 - Selecione um local no mapa com um [toque longo](../map/map-context-menu.md#select-any-point-long-tap).
 - No *menu de contexto do mapa* que se abre, escolha *Ações → Adicionar ponto de referência da trilha*.
-- A lista exibe as [trilhas](../map/tracks/index.md#display-tracks-on-the-map) gravadas e mostradas no mapa, bem como a [gravação da trilha atual](../plugins/trip-recording.md), à qual você pode adicionar o ponto de referência selecionado.
-- Você pode adicionar pontos de referência a uma trilha que ainda não está ativa para gravação, caso em que a trilha inativa muda do *estado Inicial* para o *estado de Retomada*.
+- A lista exibe as [trilhas](../map/tracks/index.md#display-tracks-on-the-map) gravadas e mostradas no mapa, bem como a [gravação de trilha atual](../plugins/trip-recording.md), à qual você pode adicionar o ponto de referência selecionado.
+- Você pode adicionar pontos de referência a uma trilha que ainda não está ativa para gravação, caso em que a trilha inativa muda do *estado Inicial* para o *estado Retomar*.
 - [Preencha](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) os dados necessários e salve o ponto de referência.
 - Você pode configurar as [Ações Rápidas](../widgets/quick-action.md) adicionando um ponto de referência ao *Adicionar ponto de referência da trilha*.
 
@@ -749,7 +712,7 @@ Você pode adicionar pontos de referência a uma trilha gravada ou à gravação
 ### * Criar / Modificar POI {#-create--modify-poi}
 
 :::note
-Para adicionar criar/modificar POIs, ative o [**plugin de edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para adicionar criar/modificar POIs, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -777,7 +740,7 @@ Com o plugin de Edição OSM, você pode criar e modificar a maioria dos POIs pr
 ### * Abrir Nota OSM {#-open-osm-note}
 
 :::note
-Para adicionar abrir nota OSM, ative o [**plugin de edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para abrir a nota OSM, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -806,24 +769,24 @@ Você pode **relatar** erros de dados do mapa em um local específico para a [co
 ### * Comentar / Fechar Nota OSM {#-comment--close-osm-note}
 
 :::note
-Para comentar/fechar nota OSM, ative o [**plugin de edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para comentar/fechar a nota OSM, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 ![Comentar Nota OSM Android](@site/static/img/map/action_comment_note_android.png) ![Reabrir Nota OSM Android](@site/static/img/map/action_reopen_note_android.png)
 
 Você pode [comentar](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [resolver](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) e reabrir
-Notas do OpenStreetMap via menu de contexto do objeto.
+Notas do OpenStreetMap através do menu de contexto do objeto.
 
 
 ### * Carregar POI / Nota OSM {#-upload-poi--osm-note}
 
 :::note
-Para carregar POI / nota OSM, ative o [**plugin de edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para carregar POI / nota OSM, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 ![Carregar POI Android](@site/static/img/map/action_poi_upload_android.png) ![Carregar Nota OSM Android](@site/static/img/map/action_note_upload_android.png)
 
-Caso você use o *modo Offline* para adicionar/editar POI ou Nota OSM, você precisará carregar as alterações para o OpenStreetMap. Por padrão, o *modo Offline* está ativado para evitar alterações acidentais do banco de dados público. Você pode carregar ou excluir alterações via menu de contexto do objeto criado.
+Caso você use o *modo offline* para adicionar/editar POI ou Nota OSM, você precisará carregar as alterações para o OpenStreetMap. Por padrão, o *modo offline* está ativado para evitar alterações acidentais no banco de dados público. Você pode carregar ou excluir alterações através do menu de contexto do objeto criado.
 
 
 ### * Gravar Nota AV {#-record-av-note}
@@ -845,32 +808,30 @@ Grava ou tira uma nota de mídia em um ponto selecionado no mapa.
 
 ## Personalizar {#customize}
 
-<InfoAndroidOnly/>
+<InfoAndroidOnly/>  
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_1.png) <!-- ![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_2.png) --> ![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_3.png)
+![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Menu de contexto do mapa Personalizar](@site/static/img/map/map_context_menu_customize_3.png)
 
-Você pode alterar a ordem ou ocultar itens do menu *Ações* no *menu de contexto do mapa*. Um total de 16 ações são sugeridas.
+Você pode alterar a ordem ou ocultar itens do menu *Ações* no *menu de contexto do mapa*. Um total de 16 ações são sugeridas.  
 
 - Você pode mover as três ações mais úteis para o topo da lista de *Ações principais*.
-- O restante do menu pode ser personalizado para cada perfil separadamente nas seções *Ações adicionais* e *Ocultas*.
+- O restante do menu pode ser personalizado para cada perfil separadamente nas seções *Ações adicionais* e *Ocultas*.  
 
 Tipos de ações disponíveis:
 
-- **<Translate android="true" ids="main_actions"/>**. A seção possui apenas 4 botões, três dos quais podem ser personalizados, e Ações, que permanece inalterado.
-- **<Translate android="true" ids="additional_actions"/>**. Você pode acessar essas ações tocando no botão *Ações*.
-- **<Translate android="true" ids="shared_string_hidden"/>**. Mover ações para esta seção não impede que elas funcionem. Elas simplesmente não aparecem no menu Ações.
+- **<Translate android="true" ids="main_actions"/>**. A seção tem apenas 4 botões, três dos quais podem ser personalizados, e Ações, que permanece inalterada.  
+- **<Translate android="true" ids="additional_actions"/>**. Você pode acessar essas ações tocando no botão *Ações*.  
+- **<Translate android="true" ids="shared_string_hidden"/>**. Mover ações para esta seção não as impede de funcionar. Elas simplesmente não aparecem no menu Ações.  
 
 
 ## Artigos Relacionados {#related-articles}
 
-- [Mapas vetoriais (Estilos de mapa)](./vector-maps.md)
+- [Mapas Vetoriais (Estilos de Mapa)](./vector-maps.md)
 - [Mapas Raster (Online / Offline)](./raster-maps.md)
 - [Pontos no mapa](./point-layers-on-map.md)
 - [Menu de contexto de trilhas](./tracks/track-context-menu.md)
 - [Transporte público](./public-transport.md)
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de Paleta de Cores](../personal/color-palette-schemes.md)
-
-> *Última atualização: Junho de 2025*

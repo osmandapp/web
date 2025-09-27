@@ -1,5 +1,5 @@
 ---
-source-hash: 13f229400445a81db544afbadce1fb85746267eecddcd8299384d384de2a58b5
+source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
 sidebar_position: 3
 title: Histórico de Pesquisa
 ---
@@ -46,13 +46,13 @@ O OsmAnd oferece várias maneiras de visualizar seu histórico de pesquisa.
 
 O histórico de pesquisa serve para fornecer informações relevantes sobre suas ações anteriores.
 
-- *Pesquisar novamente*. Você pode usar o histórico de pesquisa para pesquisar novamente lugares ou endereços pesquisados anteriormente sem ter que digitar a consulta novamente.
+- *Repesquisar*. Você pode usar o histórico de pesquisa para pesquisar novamente lugares ou endereços pesquisados anteriormente sem ter que reinserir a consulta.
 
-- *Acesso rápido a lugares frequentemente visitados*. Se você visita certos lugares com frequência, como sua casa, trabalho ou lugares favoritos, o Histórico de Pesquisa salva esses lugares, proporcionando acesso rápido a eles.
+- *Acesso rápido a lugares frequentemente visitados*. Se você visita certos lugares com frequência, como sua casa, trabalho ou lugares favoritos, o Histórico de Pesquisa salva esses lugares, fornecendo acesso rápido a eles.
 
 - *Rastrear viagens anteriores*. O histórico de pesquisa pode ser útil para rastrear viagens e rotas anteriores. Você pode rastrear rotas que você já fez antes, ou [planejar sua próxima rota](../plan-route/create-route.md) com base nas anteriores.
 
-- *Pesquisar lugares em um determinado período de tempo*. Para o aplicativo Android, você precisa usar um toque longo, depois encontrar o mês em que fez a viagem, sair do menu de exclusão e definir o nome no campo de pesquisa. Para o aplicativo iOS, a lista de histórico de pesquisa já está dividida em blocos por mês.
+- *Pesquisar lugares durante um certo período de tempo*. Para o aplicativo Android, você precisa usar um toque longo, depois encontrar o mês em que você fez a viagem, sair do menu de exclusão e definir o nome no campo de pesquisa. Para o aplicativo iOS, a lista de histórico de pesquisa já está dividida em blocos por mês.
 
 - *Excluir entradas*. O Histórico de Pesquisa oferece a capacidade de [excluir](#delete) entradas anteriores, o que pode ser útil para confidencialidade ou para manter seu histórico organizado.
 
@@ -85,20 +85,20 @@ Cada campo na lista do Histórico de Pesquisa contém algumas das **informaçõe
 ### Ordem dos Itens {#order-of-items}
 
 - **Itens Recentes**. As solicitações ou localizações mais recentes são exibidas no topo da lista. Isso permite acesso rápido aos itens usados recentemente.
-- **Ordem Cronológica**. Os itens na lista do Histórico de Pesquisa são organizados em ordem cronológica, começando pelas entradas mais antigas e terminando com as mais recentes. Itens antigos gradualmente descem na lista à medida que novas entradas são adicionadas, a menos que itens antigos no histórico de pesquisa tenham sido usados, caso em que serão movidos para o topo da lista.
+- **Ordem cronológica**. Os itens na lista do Histórico de Pesquisa são organizados em ordem cronológica, começando com as entradas mais antigas e terminando com as mais recentes. Itens antigos gradualmente descem na lista à medida que novas entradas são adicionadas, a menos que itens antigos no histórico de pesquisa tenham sido usados, caso em que serão movidos para o topo da lista.
 - No iOS, a lista é classificada por mês.
 
 ### Tipo de Objetos {#type-of-objects}
 
 Os seguintes **tipos de objetos** entram na lista do Histórico de Pesquisa:
 
-- **Localizações**. Isso pode ser um endereço, nome de empresa, número de rota, coordenadas, marcadores, pontos de interesse, notas OSM ou lugares que você tocou no mapa.
+- **Localizações**. Isso pode ser um endereço, nome de empresa, número de rota, coordenadas, marcadores, pontos de interesse, notas OSM ou lugares em que você tocou no mapa.
 - **Trilhas e Pontos de Passagem**. A lista inclui trilhas que você criou, gravou ou baixou que você usou em rotas anteriores, e pontos de passagem se você navegou para eles separadamente.
 
 
 ## Ações {#actions}
 
-Na ferramenta Histórico de Pesquisa, você pode [excluir](#delete) consultas desnecessárias, todas de uma vez ou por itens individuais. Você pode usar o Histórico [exportar](#export-and-share). O aplicativo Android oferece uma ação adicional de [compartilhamento](#share-android) de itens de pesquisa como um arquivo [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
+Na ferramenta Histórico de Pesquisa, você pode [excluir](#delete) consultas desnecessárias, todas de uma vez ou por itens individuais. Você pode usar a [exportação](#export-and-share) do Histórico. O aplicativo Android oferece uma ação adicional de [compartilhamento](#share-android) de itens de pesquisa como um arquivo [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
 
 Você pode **desativar ou ativar** a exibição de todo o histórico de pesquisa. Neste caso, as consultas não são excluídas do dispositivo. No Android, o interruptor está localizado na tela principal da ferramenta na [aba Histórico](#overview). No iOS, ele está localizado em *Menu → Configurações → Configurações do OsmAnd → Histórico → Histórico de Pesquisa*.
 
@@ -121,9 +121,9 @@ Você pode **desativar ou ativar** a exibição de todo o histórico de pesquisa
 
 </Tabs>
 
-Após usar o OsmAnd por muito tempo, a lista do *Histórico de Pesquisa* pode ficar muito longa, então a exclusão de consultas de pesquisa ajuda a limpar a lista. Você pode excluir consultas que não são mais relevantes ou que você não pretende mais usar no futuro, o que facilita a busca na lista, especialmente quando você precisa encontrar consultas de pesquisa específicas rapidamente.
+Após usar o OsmAnd por um longo tempo, a lista do *Histórico de Pesquisa* pode ficar muito longa, então a exclusão de consultas de pesquisa ajuda a limpar a lista. Você pode excluir consultas que não são mais relevantes ou que você não pretende mais usar no futuro, o que facilita a pesquisa na lista, especialmente quando você precisa encontrar consultas de pesquisa específicas rapidamente.
 
-Você precisa **tocar e segurar qualquer um dos itens de consulta na lista** para abrir a tela Excluir.
+Você precisa **tocar e segurar qualquer um dos itens de consulta na lista** para abrir a tela de Exclusão.
 
 - *Selecionar ou desmarcar itens aleatórios* - toque no item desejado na lista.
 - *Selecionar o período disponível para exclusão*, como dia, últimos 7 dias ou mês - marque a caixa com o subtítulo na lista.
@@ -153,7 +153,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>
 
-Existem várias opções disponíveis para exportar o histórico de pesquisa. Todos os arquivos são exportados no formato `.osf` (OsmAnd settings File).
+Existem várias opções disponíveis para exportar o histórico de pesquisa. Todos os arquivos são exportados no formato `.osf` (Arquivo de configurações do OsmAnd).
 
 1. *Menu → Configurações → Configurações do OsmAnd → Histórico → Histórico de pesquisa*.
     A exportação está disponível usando o menu de configurações do OsmAnd. Para Android, seguir este caminho leva você à tela de exclusão, onde o [Compartilhar histórico](#share-android) está disponível. No caso do iOS, você pode selecionar itens individuais ou todo o histórico na tela, e após tocar no botão *Exportar*, ir para o menu *Backup Local*.
@@ -173,17 +173,17 @@ Existem várias opções disponíveis para exportar o histórico de pesquisa. To
 
 A exportação de itens ou de todo o histórico de pesquisa pode ser útil nos seguintes casos:
 
-- *Backup*. Você pode fazer backup do seu histórico de pesquisa para salvar as informações antes de excluí-las e restaurá-las se necessário.
+- *Backup*. Você pode fazer backup do seu histórico de pesquisa para salvar as informações antes de excluí-las e restaurá-las, se necessário.
 - *Transferência para outro dispositivo*. Ao trocar de dispositivo, você pode usar a função de exportação ou a Nuvem para transferir seu histórico de pesquisa para um novo dispositivo sem ter que pesquisar e inserir dados novamente.
 - *Analisar e processar dados*. Você pode exportar seu histórico de pesquisa para análise de dados ou usá-lo em outros aplicativos.
 - [Compartilhar](#share-android) histórico de pesquisa com outros usuários do OsmAnd.
 
 
-#### Compartilhar (Android) {#share-android}
+### Compartilhar (Android) {#share-android}
 
 ![Histórico de Configurações](@site/static/img/search/history_search_share_andr.png)
 
-Os passos para compartilhar itens do histórico de pesquisa são semelhantes à [exportação](#export-and-share), com a diferença de que você exporta todo o histórico de uma vez como um arquivo [osf](../../technical/osmand-file-formats/osmand-osf.md), enquanto você pode compartilhar arquivos selecionados individualmente no formato gpx.
+As etapas para compartilhar itens do histórico de pesquisa são semelhantes à [exportação](#export-and-share), com a diferença de que você exporta todo o histórico de uma vez como um arquivo [osf](../../technical/osmand-file-formats/osmand-osf.md), enquanto você pode compartilhar arquivos individuais selecionados no formato gpx.
 
 Na tela de [exclusão](#delete), selecione os itens desejados na lista do Histórico de Pesquisa. No canto superior direito da tela, há um ícone indicando compartilhamento. Selecione um aplicativo ou ação disponível na lista para compartilhar.
 
@@ -194,6 +194,3 @@ Na tela de [exclusão](#delete), selecione os itens desejados na lista do Histó
 - [Pesquisar Endereço](./search-address.md)
 - [Pesquisar POI](./search-poi.md)
 - [Pesquisar Coordenadas](./search-coordinates.md)
-
-
-> *Última atualização: Julho de 2024*
