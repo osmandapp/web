@@ -14,7 +14,7 @@ import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { createShareLocations, directionFrom, directionTo } from './locationActions';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 
-export default function FavoriteActionsButtons({ wpt, isDetails }) {
+export default function FavoriteActionsButtons({ wpt }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -106,16 +106,10 @@ export default function FavoriteActionsButtons({ wpt, isDetails }) {
                     setEditFavoritesDialogOpen={setEditWptDialogOpen}
                     deleteFavoritesDialogOpen={deleteWptDialogOpen}
                     setDeleteFavoritesDialogOpen={setDeleteWptDialogOpen}
-                    isDetails={isDetails}
                 />
             )}
             {deleteWptDialogOpen && (
-                <DeleteWptDialog
-                    dialogOpen={deleteWptDialogOpen}
-                    setDialogOpen={setDeleteWptDialogOpen}
-                    isDetails={isDetails}
-                    wpt={wpt}
-                />
+                <DeleteWptDialog dialogOpen={deleteWptDialogOpen} setDialogOpen={setDeleteWptDialogOpen} wpt={wpt} />
             )}
         </>
     );

@@ -21,17 +21,17 @@ import AppContext, {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_WEATHER,
     OBJECT_TRACK_ANALYZER,
+    OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
-import PlanRouteMenu from './planroute/PlanRouteMenu';
+import PlanRouteMenu, { openSelectedLocalTrack } from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WeatherIcon } from '../assets/menu/ic_action_umbrella.svg';
 import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg';
@@ -75,6 +75,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
     EXPLORE_URL,
+    POI_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -134,6 +135,7 @@ export default function MainMenu({
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
 
     const timerRef = useRef(null);
+    const lastMenuUrlsRef = useRef({});
 
     const [selectedType, setSelectedType] = useState(null);
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
@@ -182,7 +184,7 @@ export default function MainMenu({
                     return;
                 }
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-
+                file.mapObj = true;
                 if (location.pathname.includes(SHARE_MENU_URL)) {
                     // open share menu
                     if (!ctx.shareFile) {
@@ -207,6 +209,9 @@ export default function MainMenu({
     }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
 
     useEffect(() => {
+        if (location.pathname.includes(POI_URL)) {
+            return;
+        }
         if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
             setSavePrevState(false);
             return;
@@ -223,6 +228,7 @@ export default function MainMenu({
         }
 
         closeSubPages({ ctx, ltx, wptDetails: false });
+
         openShareFileByLink();
 
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
@@ -271,6 +277,7 @@ export default function MainMenu({
             show: true,
             id: 'se-show-menu-search',
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
+            otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
         },
         {
             name: t('configure_map'),
@@ -359,37 +366,38 @@ export default function MainMenu({
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
 
-    //open main menu if infoblock was opened
+    // url caching for every menu type
     useEffect(() => {
-        if (showInfoBlock && !menuInfo) {
-            selectMenuInfoByObjectType();
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        const menuByUrl = items.find(
+            (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
+        );
+        if (menuByUrl) {
+            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + location.hash;
         }
-    }, [showInfoBlock]);
+    }, [location.pathname, location.search, location.hash]);
+
+    // open menu after closing map object if any selected before
+    useEffect(() => {
+        if (ctx.closeMapObj) {
+            if (!selectedType) {
+                ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
+            } else {
+                const saved = lastMenuUrlsRef.current[selectedType];
+                if (saved) {
+                    navigate(saved);
+                    openMenuObject();
+                }
+            }
+            ctx.setCloseMapObj(false);
+        }
+    }, [ctx.closeMapObj]);
 
     useEffect(() => {
+        openMenuObject();
+
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
-        }
-        if (selectedType === OBJECT_TYPE_FAVORITE) {
-            if (ctx.selectedFavoriteObj) {
-                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
-            }
-        }
-
-        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
-            if (ctx.selectedCloudTrackObj) {
-                processDisplayTrack({
-                    visible: true,
-                    showOnMap: true,
-                    showInfo: true,
-                    zoomToTrack: true,
-                    file: ctx.selectedCloudTrackObj,
-                    ctx,
-                    fileStorage: ctx.gpxFiles,
-                    setFileStorage: ctx.setGpxFiles,
-                    recentSaver,
-                }).then();
-            }
         }
 
         if (selectedType === OBJECT_TYPE_WEATHER) {
@@ -415,9 +423,6 @@ export default function MainMenu({
         });
 
         if (selectedType === OBJECT_SEARCH) {
-            if (ctx.selectedPoiObj) {
-                openPoiObj(ctx, ctx.selectedPoiObj);
-            }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
                 return;
@@ -451,7 +456,7 @@ export default function MainMenu({
         return () => clearTimeout(timerRef.current);
     }, [ctx.updatedRequestList]);
 
-    //open main menu if currentObjectType was changed
+    // Select menu by object type. Only for actions from map context menu.
     useEffect(() => {
         if (ctx.currentObjectType) {
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
@@ -468,11 +473,58 @@ export default function MainMenu({
                         selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }
                 }, 100);
-            } else if (selectedType !== ctx.currentObjectType) {
-                selectMenuInfoByObjectType(); // process all other object types
+            } else if (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack?.enable) {
+                selectMenuInfoByObjectType(OBJECT_TYPE_LOCAL_TRACK);
             }
         }
     }, [ctx.currentObjectType]);
+
+    // Open info block if it was closed
+    useEffect(() => {
+        if (ctx.currentObjectType && ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
+            ctx.setInfoBlockWidth(`${MENU_INFO_OPEN_SIZE}px`);
+        }
+    }, [ctx.currentObjectType]);
+
+    useEffect(() => {
+        if (ctx.saveTrackToCloud) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+            selectMenuInfoByObjectType(OBJECT_TYPE_CLOUD_TRACK);
+            ctx.setSaveTrackToCloud(false);
+        }
+    }, [ctx.saveTrackToCloud]);
+
+    function openMenuObject() {
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            if (ctx.selectedFavoriteObj) {
+                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+            }
+        }
+
+        if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctx.selectedCloudTrackObj) {
+                processDisplayTrack({
+                    visible: true,
+                    showOnMap: true,
+                    showInfo: true,
+                    zoomToTrack: true,
+                    file: ctx.selectedCloudTrackObj,
+                    ctx,
+                    fileStorage: ctx.gpxFiles,
+                    setFileStorage: ctx.setGpxFiles,
+                    recentSaver,
+                }).then();
+            }
+        }
+
+        if (selectedType === OBJECT_SEARCH && ctx.selectedPoiObj) {
+            openPoiObj(ctx, ctx.selectedPoiObj);
+        }
+
+        if (selectedType === OBJECT_TYPE_LOCAL_TRACK && ctx.selectedLocalTrackObj && !ctx.createTrack?.enable) {
+            openSelectedLocalTrack(ctx);
+        }
+    }
 
     function selectMenuInfoByObjectType(force = null) {
         const currentMenu = items.find((item) => {

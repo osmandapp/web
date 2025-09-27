@@ -59,6 +59,7 @@ export default function ExploreLayer() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
+    const [selectFromMap, setSelectFromMap] = useState(false);
 
     const zoom = map.getZoom();
 
@@ -103,7 +104,7 @@ export default function ExploreLayer() {
 
         removeTooltip(map, ctx.searchTooltipRef);
 
-        if (ctx.searchPointerRef && ctx.searchPointerRef.current) {
+        if (ctx.searchPointerRef?.current) {
             ctx.searchPointerRef.current.remove();
         }
     }
@@ -122,9 +123,10 @@ export default function ExploreLayer() {
             });
             const key = item.properties?.osmid ?? item.geometry.coordinates[1] + item.geometry.coordinates[0];
             const poi = response?.data ?? null;
-            const obj = { poi, wikidata: item, key };
+            const obj = { poi, wikidata: item, key, mapObj: selectFromMap };
             recentSaver(EXPLORE_OBJS_KEY, obj);
             ctx.setSelectedWpt(obj);
+            setSelectFromMap(false);
         }
 
         if (item) {
@@ -244,6 +246,7 @@ export default function ExploreLayer() {
             openedPoiRef.current = feature;
             ctx.setLoadingContextMenu(true);
             map.spin(true, { color: '#1976d2' });
+            setSelectFromMap(true);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
 

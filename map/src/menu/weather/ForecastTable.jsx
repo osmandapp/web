@@ -6,7 +6,8 @@ import {
     dayFormatter,
     timeFormatter,
     PRECIP_LAYER_KEY,
-    TEMP_LAYER_KEY, ECWMF_WEATHER_TYPE,
+    TEMP_LAYER_KEY,
+    ECWMF_WEATHER_TYPE,
 } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';

@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
-import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import AppContext, { isCloudTrack } from '../../context/AppContext';
 import TracksManager, {
     DEFAULT_GROUP_NAME,
     getAllGroupNames,
@@ -38,10 +38,8 @@ export default function SaveTrackDialog() {
 
     const closeDialog = ({ uploaded }) => {
         setProcess(false);
-        if (uploaded) {
-            if (isRouteTrack(ctx)) {
-                ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-            }
+        if (uploaded && !isCloudTrack(ctx)) {
+            ctx.setSaveTrackToCloud(true);
         }
         const updatedSelectedGpxFile = {
             ...ctx.selectedGpxFile,
@@ -82,6 +80,7 @@ export default function SaveTrackDialog() {
                     fileName: preparedName,
                     type: TracksManager.GPX_FILE_TYPE,
                 }));
+
                 closeDialog({ uploaded });
             } else {
                 setExistTrack(true);

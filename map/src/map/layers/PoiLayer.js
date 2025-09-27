@@ -248,12 +248,12 @@ export default function PoiLayer() {
                     lat: data.geometry.coordinates[1],
                     lng: data.geometry.coordinates[0],
                 },
+                mapObj: true,
             };
             ctx.setCurrentObjectType(OBJECT_TYPE_POI);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setSelectedWpt({ poi });
-            ctx.setSelectedPoiObj({ ...poi });
             return data;
         } else {
             return null;
@@ -475,12 +475,12 @@ export default function PoiLayer() {
         prevSelectedPoi.current = selectMarker(e.sourceTarget, prevSelectedPoi.current);
 
         const poi = {
+            mapObj: true,
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        ctx.setSelectedPoiObj({ ...poi });
         navigateToPoi(poi, navigate);
     }
 

@@ -12,13 +12,7 @@ import PointManager from '../../manager/PointManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
-export default function DeleteWptDialog({
-    dialogOpen,
-    setDialogOpen,
-    wpt = null,
-    isDetails = false,
-    setOpenActions = null,
-}) {
+export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null, setOpenActions = null }) {
     const ctx = useContext(AppContext);
 
     const useSelected = !isEmpty(ctx.selectedGpxFile) && ctx.selectedGpxFile.markerCurrent;
@@ -36,10 +30,10 @@ export default function DeleteWptDialog({
                 const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
                 const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
                 const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt.lat === lat && wpt.lon === lng);
-                PointManager.deleteWpt(ind, ctx, !isDetails);
+                PointManager.deleteWpt(ind, ctx, wpt.mapObj);
                 ctx.setSelectedWpt(null);
                 ctx.setSelectedFavoriteObj(null);
-                if (!isDetails) {
+                if (wpt.mapObj) {
                     ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
                 }
                 closeDialog();
@@ -49,7 +43,7 @@ export default function DeleteWptDialog({
             deleteFavorite().then(() => {
                 ctx.setSelectedWpt(null);
                 ctx.setSelectedFavoriteObj(null);
-                if (!isDetails) {
+                if (wpt.mapObj) {
                     ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
                 }
                 closeDialog();

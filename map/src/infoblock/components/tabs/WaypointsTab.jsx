@@ -127,7 +127,7 @@ const WaypointRow = ({ point, index, ctx }) => {
     function showPoint(point) {
         ctx.setSelectedWpt({
             ...point.wpt,
-            trackWptItem: true,
+            trackWpt: true,
         });
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }

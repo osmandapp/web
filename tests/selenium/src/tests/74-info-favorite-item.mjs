@@ -56,7 +56,7 @@ export default async function test() {
     await clickBy(By.id('se-edit-fav-item-submit'));
     await matchTextBy(By.id('se-wpt-name'), `${wptName}${suffix}`);
     await matchTextBy(By.id('se-wpt-address'), `test address${suffix}`);
-    await clickBy(By.id('se-close-wpt-details'));
+    await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}${suffix}`));
     await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
 

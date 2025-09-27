@@ -64,6 +64,7 @@ export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
             simplifyWpts: file?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
         });
         tracks.push(file);
+        ctx.setSelectedLocalTrackObj(file);
         return tracks;
     });
 }

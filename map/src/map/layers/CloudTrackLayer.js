@@ -3,8 +3,8 @@ import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions, getTracksArrBounds } from '../../manager/track/TracksManager';
-import { useMutator } from '../../util/Utils';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { encodeString, useMutator } from '../../util/Utils';
+import { INFO_MENU_URL, MAIN_URL_WITH_SLASH, MENU_INFO_OPEN_SIZE, TRACKS_URL } from '../../manager/GlobalManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
@@ -13,29 +13,37 @@ import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 import { addLayerToMap } from '../util/MapManager';
 import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { useNavigate } from 'react-router-dom';
 
-function clickHandler({ ctx, file, layer, recentSaver }) {
-    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
-        file.analysis = TracksManager.prepareAnalysis(file.analysis);
-        recentSaver(TRACKS_KEY, file);
-        ctx.setSelectedCloudTrackObj({ ...file });
-        ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
-        ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-        if (ctx.selectedWpt) {
-            ctx.setSelectedWpt(null);
-        }
-        ctx.setUpdateInfoBlock(true);
-        layer.off('click'); // once
+function clickHandler({ ctx, file, navigate, recentSaver }) {
+    if (file.name === ctx.selectedCloudTrackObj?.name) return;
+
+    file.analysis = TracksManager.prepareAnalysis(file.analysis);
+    file.mapObj = true;
+    recentSaver(TRACKS_KEY, file);
+    ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
+    ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+    if (ctx.selectedWpt) {
+        ctx.setSelectedWpt(null);
     }
+    navigate(
+        {
+            pathname: MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(file.name)),
+            hash: window.location.hash,
+        },
+        { replace: true }
+    );
+    ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+    ctx.setUpdateInfoBlock(true);
 }
 
-export function addTrackToMap({ ctx, file, map, fit = false, recentSaver } = {}) {
+export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, navigate } = {}) {
     const ID = 'add-cloud-track-to-map';
     let layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
         return null;
     }
-    layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver }));
+    layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver, navigate }));
 
     if (fit || file.zoomToTrack) {
         map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
@@ -138,6 +146,8 @@ const CloudTrackLayer = () => {
 
     const map = useMap();
 
+    const navigate = useNavigate();
+
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
@@ -160,7 +170,7 @@ const CloudTrackLayer = () => {
                             ctx,
                             useMapBounds: true,
                         });
-                        layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver }));
+                        layer.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
                         file.gpx = layer;
                         addLayerToMap(map, file.gpx, 'add-cloud-track-to-map-zoom-move');
                         processed++;
@@ -203,16 +213,16 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         for (const l in ctx.gpxFiles) {
             const file = ctx.gpxFiles[l];
-            if (file && file.url && file.gpx && map.hasLayer(file.gpx)) {
+            if (file?.url && file.gpx && map.hasLayer(file.gpx)) {
                 file.gpx.off('click');
-                file.gpx.on('click', () => clickHandler({ ctx, file, layer: file.gpx, recentSaver }));
+                file.gpx.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
             }
         }
-    }, [ctx.selectedGpxFile.name, ctx.infoBlockWidth]);
+    }, [ctx.selectedGpxFile?.name, ctx.infoBlockWidth]);
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
-        if (ctxTrack && ctxTrack.gpx && isCloudTrack(ctx)) {
+        if (ctxTrack?.gpx && isCloudTrack(ctx)) {
             if (ctxTrack.zoom) {
                 map.fitBounds(ctxTrack.gpx.getBounds(), fitBoundsOptions(ctx));
                 ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
@@ -260,7 +270,7 @@ const CloudTrackLayer = () => {
         Object.values(newFiles).forEach((file) => {
             if (file.url && !file.gpx && (file.showOnMap || file.zoomToTrack)) {
                 processed++;
-                file.gpx = addTrackToMap({ ctx, file, map, recentSaver });
+                file.gpx = addTrackToMap({ ctx, file, map, recentSaver, navigate });
                 if (file.name === ctxTrack.name) {
                     ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }

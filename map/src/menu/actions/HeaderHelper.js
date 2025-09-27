@@ -21,5 +21,4 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
         });
     }
     ctx.setCurrentObjectType(null);
-    ctx.setSelectedPoiObj(null);
 }

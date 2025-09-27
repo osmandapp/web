@@ -369,7 +369,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
 
     ctx.setCreateTrack({ ...createState });
 
-    const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+    const newGpxFiles = { ...ctx.gpxFiles };
 
     newGpxFiles[file.name] = preparedGpxFile({ file });
 
@@ -391,7 +391,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
         newGpxFiles[file.name].showOnMap = showOnMap;
         ctx.setGpxFiles(newGpxFiles);
-        ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
+        ctx.setSelectedGpxFile({ ...newGpxFiles[file.name] });
         ctx.setProcessingSaveTrack(false);
     }
 }

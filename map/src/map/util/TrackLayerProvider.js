@@ -437,6 +437,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
                 marker.on('click', (e) => {
                     const wpt = {
                         trackWpt: true,
+                        mapObj: true,
                         trackData: data,
                         ...e,
                         ...point,

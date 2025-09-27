@@ -1,10 +1,9 @@
 import { useContext, useMemo } from 'react';
-import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import AppContext, { isLocalTrack } from '../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager from '../../manager/track/TracksManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import TrackInfo from './TrackInfo';
+import TrackInfo from '../tracks/TrackInfo';
+import { startEdit, updateLocalTrack, updateTrackInfoBlock } from './PlanRouteMenu';
 
 export default function LocalTrackItem({ track }) {
     const ctx = useContext(AppContext);
@@ -49,41 +48,10 @@ export default function LocalTrackItem({ track }) {
 
     function addTrackToMap() {
         if (isAlreadyEdit() === false) {
-            startEdit();
-            updateLocalTrack();
-            updateTrackInfoBlock();
-        }
-    }
-
-    function updateLocalTrack() {
-        ref.zoom = true;
-        ref.selected = true;
-        ref.wpts?.length > 0 && (ref.localRedrawWpts = true);
-        ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
-        TracksManager.addDistance(ref); // recalc-distance-local
-        ctx.setLocalTracks([...ctx.localTracks]);
-        ctx.setSelectedGpxFile({ ...track });
-    }
-
-    function updateTrackInfoBlock() {
-        ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-        ctx.setUpdateInfoBlock(true);
-    }
-
-    function startEdit() {
-        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-            ctx.setCreateTrack({
-                enable: true, // start-editor
-                edit: true,
-                closePrev: {
-                    file: cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
-                },
-            });
-        } else {
-            ctx.setCreateTrack({
-                enable: true, // start-editor
-                edit: true,
-            });
+            startEdit(ctx);
+            updateLocalTrack(ref, ctx, track);
+            updateTrackInfoBlock(ctx);
+            ctx.setSelectedLocalTrackObj({ ...track });
         }
     }
 
