@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "One-time purchase",
   "label_pricing": "Pricing",
   "subtitle_choose_your_ideal_osmand_plan": "Choose your ideal OsmAnd plan: Get started for free, select a flexible subscription, or make a one-time purchase",
-  "notice_fastspring_purchase_info": "Online purchases are provided by FastSpring, an authorized reseller. Subscriptions automatically renew unless canceled before the renewal date. You can cancel or renew your subscription on the FastSpring account management portal.",
+  "notice_fastspring_purchase_info": "Online purchases are provided by FastSpring, an authorized reseller. Subscriptions automatically renew unless canceled before the renewal date. You can cancel or renew your subscription on the <portalLink>FastSpring account management portal</portalLink>.",
   "feature_offline_navigation_desc": "Turn-by-turn voice guidance, traffic warnings, and lane guidance, all available offline",
   "feature_navigation_by_planned_tracks": "Navigation by planned tracks",
   "feature_navigation_by_planned_tracks_desc": "Follow your GPX tracks with turn-by-turn guidance, or snap to roads for detailed navigation and road information",
