@@ -1,4 +1,5 @@
 ---
+source-hash: f9fda369841f870ed0f7bff2008618ae04b8b11b5d9458b488f463164740e1e7
 source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
 sidebar_position: 4
 title:  Контекстне меню треку
@@ -129,7 +130,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="join_segments"/>** (*Лише для Android*) – Об'єднує сегменти треку для заповнення прогалин.
 - **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на мапі](../tracks/index.md#analyze-track-on-map) для перевірки висоти, швидкості та відстані треку.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](./track-context-menu.md#split-interval) часу або відстані.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](./track-context-menu.md#analyze-by-intervals) часу або відстані.
 
 <br/>
 
@@ -296,7 +297,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
   - *Редагувати* відкриває трек в інструменті [Планування маршруту](../../plan-route/index.md).
   - *Видалити* дозволяє видалити вибраний елемент треку.
-  - *Розділити інтервал* відкриває [функцію Розділити інтервал](#split-interval) для треку.
+  - *Розділити інтервал* відкриває [функцію Розділити інтервал](#analyze-by-intervals) для треку.
 
 
 ### Швидкість {#speed}
@@ -629,16 +630,47 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 **Теги зручностей**, які описують додаткову інформацію, таку як години роботи або номер телефону, специфічні для POI, беруть цю інформацію з даних OpenStreetMap або даних, які ви ввели при створенні POI. Ви можете редагувати такі теги та [користувацькі теги](#display-custom-gpx-tags) лише в коді файлу GPX, який ви можете відкрити будь-яким текстовим редактором на вашому пристрої.
 
 
-## Розділити інтервал {#split-interval}
+## Розділити інтервал {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-Ви можете розділити трек на інтервали, такі як відстань та час, і проаналізувати його.  
+![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Розділіть трек за відстанню або часовим інтервалом.  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+Опція **Аналізувати за інтервалами** дозволяє розділити трек на ділянки та переглянути детальну статистику для кожної частини маршруту. Треки можна розділити за параметрами ***відстані***, ***часу*** або ***підйому/спуску***. 
 
-![Екран розділення інтервалу треку Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Екран розділення інтервалу треку за часом Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+Щоб відкрити цю опцію:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → виберіть потрібний режим розділення 
+
+
+### Розділити за відстанню {#split-by-distance}
+
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Ця опція дозволяє розділити трек на фіксовані інтервали відстані та проаналізувати детальну статистику для кожного сегмента. Доступні інтервали відстані: ***20 м***, ***50 м***, ***100 м***, ***200 м***, ***500 м***, ***1 км***, ***2 км***, ***5 км*** та ***10 км***. Після вибору інтервалу відстані трек відображається як список сегментів. 
+
+Для кожного сегмента ви можете переглянути:
+- пройдену відстань.
+- проміжок часу.
+- середню, мінімальну та максимальну висоту.
+- підйом та спуск.
+- час у русі.
+- середню та максимальну швидкість.
+
+Коли ви торкаєтеся будь-якого сегмента у списку, на мапі відображається повний трек з його інтервалами та відкривається контекстне меню для треку внизу екрана.
+
+
+### Розділити за часом {#split-by-time}
+
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+Опція **Розділити за часом** ділить трек на інтервали однакової тривалості. Ви можете вибрати між ***1 хв***, ***2 хв***, ***2.5 хв***, ***5 хв***, ***10 хв***, ***15 хв***, ***30 хв*** та ***60 хв***. Спосіб відображення інтервалів, надана статистика для кожного сегмента та їх вигляд на мапі такі ж, як у розділі [Розділити за відстанню](#split-by-distance).
+
+
+### Розділити за підйомом/спуском {#split-by-uphill-downhill}
+
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Ця опція ділить трек на сегменти на основі змін висоти. Кожен інтервал класифікується як ***підйом***, ***спуск*** або ***рівнина***. Спосіб відображення інтервалів, надана статистика для кожного сегмента та їх вигляд на мапі також такі ж, як у розділі [Розділити за відстанню](#split-by-distance).
 
 
 ## GPS-фільтр {#gps-filter}

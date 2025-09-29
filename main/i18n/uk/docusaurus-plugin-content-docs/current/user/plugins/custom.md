@@ -1,4 +1,5 @@
 ---
+source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
 sidebar_position: 4
 title:  Власний пакет
@@ -277,7 +278,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Типи імпорту {#import-types}
 
-Існує багато типів імпорту для файлу *items.JSON* OsmAnd. Усі типи можна знайти [тут](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), а в цій статті описано лише деякі з них.
+Існує багато типів імпорту для файлу OsmAnd *items.JSON*. Усі типи можна знайти [тут](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), а в цій статті описано лише деякі з них.
 
 ### Опис плагіна {#plugin-description}
 

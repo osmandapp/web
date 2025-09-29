@@ -1,4 +1,5 @@
 ---
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
 sidebar_position: 10
 title:  Розробка OsmAnd

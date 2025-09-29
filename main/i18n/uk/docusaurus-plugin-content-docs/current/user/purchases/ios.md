@@ -1,4 +1,5 @@
 ---
+source-hash: 7661b3402845f8d1d0131cde21795230c0848240ce77a9e370eff00d6bb95c89
 source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
 sidebar_position: 2
 title:  Покупки в iOS
@@ -44,7 +45,7 @@ import Translate from '@site/src/components/Translate.js';
 
 1. **Maps+** — це *оновлення* для безплатної версії OsmAnd, що розблоковує більшість функцій.
 
-2. **OsmAnd Pro**, **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**, **OsmAnd+** та **Maps+** є *кросплатформенними* покупками. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 3. Ви можете додати **Maps+** до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088), щоб поділитися покупкою з членами родини.  
 
@@ -92,7 +93,7 @@ import Translate from '@site/src/components/Translate.js';
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Усі Pro функції](#pro-features) | **-** | **-** | ✔ |
 | [Завантаження мап](../start-with/download-maps.md) |  <details><summary>**5 завантажень мап** <br /> (оновлення мапи рахується як завантаження):</summary> <br /> - Завантаження або оновлення мапи означає лише завантаження-оновлення мапи країни (регіону).<br /> - **Оглядова мапа світу**, **Світова корекція висот**, **Шрифти мапи** та **Голосові підказки** не враховуються в 5 можливостей для завантаження.</details> | ✔ | ✔ |
-| [Щомісячні оновлення мап](../personal/maps-resources.md#updates) |  <details><summary>**Раз на місяць** <br /> (із затримкою у 2 дні):</summary> * обмежено 5 завантаженнями (оновлення мапи рахується як завантаження) </details> |  ✔ | ✔ |
+| [Щомісячні оновлення мап](../personal/maps-resources.md#updates-menu) |  <details><summary>**Раз на місяць** <br /> (із затримкою у 2 дні):</summary> * обмежено 5 завантаженнями (оновлення мапи рахується як завантаження) </details> |  ✔ | ✔ |
 | [Щогодинні оновлення мап](../personal/maps-resources.md#live-updates)<br/>Live-оновлення (затримка 1 година) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |

@@ -1,4 +1,5 @@
 ---
+source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
 source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
 sidebar_position: 8
 title:  Маршрути для човнів
@@ -51,13 +52,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <TabItem value="android" label="Android">
 
 
-![Налаштування маршрутизації для човна Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
+![Налаштування маршрутизації для човна Android](@site/static/img/navigation/routing/boat_route_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування маршрутизації для човна iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
+![Налаштування маршрутизації для човна iOS](@site/static/img/navigation/routing/boat_route_ios.png)  
 
 </TabItem>
 
@@ -67,7 +68,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Дозволяє використовувати струмки та дренажні канали для навігації човнів. Увімкнення цієї опції може бути корисним для невеликих човнів, таких як каное, каяки, плоти, гребні човни. | [Струмки](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) - це природні водні шляхи, занадто вузькі, щоб називатися річкою. [Дренажні канали](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) - це штучні водні шляхи, зазвичай облицьовані бетоном або подібним матеріалом, що використовуються для відведення зайвої води, наприклад, зливової або стічної. |
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | Увімкнення цієї опції дозволяє використовувати пересихаючі водні шляхи для навігації човном. | Тег [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) використовується для позначення водного шляху, який не постійно містить воду. |
-
+| *Дозволити пороми* | Дозволяє маршрутизацію по поромних маршрутах. | Використовує `route=ferry`, якщо є в OSM. Нові карти не потрібні. |
 
 :::note Навігація по воді та обмеження
 
@@ -76,12 +77,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
     - `waterway=canal`
     - `natural=water` і т.д.
 
-2. Профіль "Човен" **не підтримує поромні маршрути (`route=ferry`)**. Це означає, що поромні маршрути, навіть якщо вони є на карті, **не будуть використовуватися** при розрахунку маршрутів для човнів.
+2. Профіль "Човен" також підтримує **поромні маршрути (`route=ferry`)**, якщо увімкнено опцію **Дозволити пороми**. Це означає, що якщо поромні маршрути присутні на карті, вони будуть використовуватися при розрахунку маршрутів для човнів.
 
-3. Щоб слідувати поромною лінією вручну:
-
-    - Використовуйте інструмент [Планування маршруту](../../plan-route/create-route.md) та розставляйте проміжні точки вручну.
-    - Використовуйте профіль "Автомобіль", який підтримує поромні маршрути
+3. Якщо в OSM не нанесено відповідних водних шляхів або поромних маршрутів, механізм маршрутизації може не змогти побудувати правильний маршрут. У таких випадках ви можете використовувати інструмент [Планування маршруту](../../plan-route/create-route.md) та розставляти проміжні точки вручну.
 
 :::
 
