@@ -141,6 +141,8 @@ The **Smart Autoannounce** feature provides *audio notifications* when you devia
 
 - Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
 
+- A long tap on **My location** opens a menu with the options ***Show your position*** and ***Show details***. Selecting Show details displays additional route information and provides button ***Start/Stop autoannouncement***.
+
 
 ### Direction Style {#direction-style}
 
