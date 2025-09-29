@@ -40,6 +40,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
 
     async function save() {
         setProcess(true);
+        ctx.setUsedIcons((prev) => new Set([groupIcon, ...prev]));
         if (ctx.addFavorite.editTrack) {
             saveTrackWptGroup();
         } else {
