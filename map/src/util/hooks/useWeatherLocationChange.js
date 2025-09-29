@@ -23,8 +23,9 @@ export const useWeatherLocationChange = ({
     enabled = true,
 }) => {
     useEffect(() => {
-        if (!enabled) return;
-        if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+        if (!enabled || !currentLoc) return;
+
+        if (currentLoc !== LOCATION_UNAVAILABLE && ctx.visibleBounds?.contains(currentLoc)) {
             const useCache = getWeatherDataFromCache({ lat: currentLoc.lat, lon: currentLoc.lng });
             if (!useCache) {
                 fetchAddress({ point: currentLoc }).then((obj) => {
@@ -34,7 +35,7 @@ export const useWeatherLocationChange = ({
                     }
                 });
             }
-        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
+        } else {
             const center = getCenterMapLoc(delayedHash);
             if (center) {
                 fetchAddress({ point: center, useMapBbox: true }).then((obj) => {
