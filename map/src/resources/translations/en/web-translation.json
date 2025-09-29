@@ -195,5 +195,8 @@
   "terrain_color_scheme": "Color scheme",
   "terrain_desc": "Select one of visualization options: Altitude, Hillshade, Slope.",
   "terrain_visibility": "Visibility",
-  "dev_issues" : "Issues"
+  "dev_issues" : "Issues",
+  "plan_route" : "Plan route",
+  "create_track" : "Create track",
+  "import_track" : "Import track"
 }

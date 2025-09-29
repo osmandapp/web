@@ -475,7 +475,11 @@ export const AppContextProvider = (props) => {
 
     const [selectedFavoriteObj, setSelectedFavoriteObj] = useState(null);
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
+    const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
+
+    const [closeMapObj, setCloseMapObj] = useState(false);
+    const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
     useEffect(() => {
         async function loadSort() {
@@ -869,6 +873,12 @@ export const AppContextProvider = (props) => {
                 setZoomToCoords,
                 poiByUrl,
                 setPoiByUrl,
+                closeMapObj,
+                setCloseMapObj,
+                saveTrackToCloud,
+                setSaveTrackToCloud,
+                selectedLocalTrackObj,
+                setSelectedLocalTrackObj,
             }}
         >
             {props.children}

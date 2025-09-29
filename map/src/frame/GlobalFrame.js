@@ -141,7 +141,7 @@ const GlobalFrame = () => {
     }, [ctx.shareWithMeFiles]);
 
     useEffect(() => {
-        if (location.pathname.includes(POI_URL) && !ctx.selectedPoiId) {
+        if (location.pathname.includes(POI_URL) && (!ctx.selectedPoiId || ctx.selectedPoiId?.id === -1)) {
             const name = searchParams.get('name');
             const type = searchParams.get('type');
             const lat = parseFloat(searchParams.get('lat'));
