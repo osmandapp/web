@@ -189,6 +189,9 @@
     .icon {
         fill: #237bff !important;
     }
+    &.disabled .icon {
+        fill: var(--svg-icon-color) !important;
+    }
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;

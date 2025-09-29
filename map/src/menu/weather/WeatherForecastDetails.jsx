@@ -193,7 +193,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     }
 
     function setForecastButtonStyles(item) {
-        let res = [];
+        const res = [];
         if (item.key === currentWeatherType) {
             res.push(styles.forecastButtonItemSelected);
         } else {
@@ -202,22 +202,26 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         return res.join(' ');
     }
 
-    function setForecastButtonIconStyles(item) {
-        let res = [];
+    function setForecastButtonIconStyles(item, disabled) {
+        const res = [];
         if (item.key === currentWeatherType) {
             res.push(styles.forecastButtonItemIconSelected);
         } else {
             res.push(styles.forecastButtonItemIcon);
         }
+        if (disabled) {
+            res.push(styles.disabled);
+        }
         return res.join(' ');
     }
 
     const ForecastButtonItem = ({ item, index }) => {
+        const disabled = ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
         return (
             <Button
                 key={index}
                 className={setForecastButtonStyles(item)}
-                disabled={ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS}
+                disabled={disabled}
                 onClick={() => {
                     setCurrentWeatherType(item.key);
                     setCurrentWeatherUnits(item.units);
@@ -225,7 +229,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
                 }}
             >
-                <Icon className={setForecastButtonIconStyles(item)}>{item.icon}</Icon>
+                <Icon className={setForecastButtonIconStyles(item, disabled)}>{item.icon}</Icon>
             </Button>
         );
     };
