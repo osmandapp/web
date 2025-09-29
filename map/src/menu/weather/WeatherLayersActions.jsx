@@ -39,7 +39,7 @@ const WeatherLayersActions = forwardRef((props, ref) => {
                     <FormControl sx={{ width: '257px' }}>
                         <MenuItem className={weatherStyles.titleItem}>
                             <Typography className={weatherStyles.titleText} noWrap>
-                                {t('web:weather:map_layers')}
+                                {t('menu_layers')}
                             </Typography>
                         </MenuItem>
                         {ctx.weatherLayers &&

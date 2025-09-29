@@ -192,7 +192,6 @@
   "weather_current": "Current location",
   "weather_generated": "Weather generated",
   "weather_source": "Source",
-  "weather:map_layers": "Map layers",
   "terrain_color_scheme": "Color scheme",
   "terrain_desc": "Select one of visualization options: Altitude, Hillshade, Slope.",
   "terrain_visibility": "Visibility",

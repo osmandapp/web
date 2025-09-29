@@ -5308,5 +5308,6 @@
   "empty_tracks": "You don\\'t have track files.",
   "empty_tracks_description": "You can import, create, or record track files using OsmAnd.",
   "shared_string_hillshade": "Hillshade",
-  "shared_string_none": "None"
+  "shared_string_none": "None",
+  "menu_layers": "Map layers"
 }
