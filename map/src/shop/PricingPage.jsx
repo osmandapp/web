@@ -7,7 +7,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { purchase } from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
-import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
+import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));

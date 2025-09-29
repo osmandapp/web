@@ -84,7 +84,6 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     async function save() {
         setProcess(true);
-        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
         if (ctx.addFavorite.editTrack) {
             saveTrackWpt();
             setProcess(false);
@@ -100,6 +99,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                 closeDialog();
             }
         }
+        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
     }
 
     function saveTrackWpt() {

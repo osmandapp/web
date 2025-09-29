@@ -70,13 +70,13 @@ export default function EditWptDialog({
 
     async function save() {
         setProcess(true);
-        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
         if (wpt) {
             if (ctx.addFavorite.editTrack) {
                 saveTrackWpt();
             } else {
                 await saveFavorite();
             }
+            ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
         } else {
             setEditFavoritesDialogOpen(false);
             if (setOpenActions) {
