@@ -48,7 +48,6 @@ export default function FavoriteIcon({
                                 selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === defaultIcon)}
                                 onClick={() => {
                                     setSelectFavoriteIcon(true);
-                                    ctx.setUsedIcons((prev) => new Set([icon, ...prev]));
                                     setFavoriteIcon(icon);
                                 }}
                             >
