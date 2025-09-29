@@ -90,9 +90,22 @@ Adjust track width to improve visibility on the map.
 
 ### Split Interval {#split-interval}
 
-![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Select whether to split the interval on the track **by distance or by time**. To analyze intervals with detailed statistics, see [Analyze by Intervals](../../map/tracks/track-context-menu.md#analyze-by-intervals).
+<TabItem value="android" label="Android">
+
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Select whether to split the track into intervals by **distance**, **time**, or **uphill/downhill** (Android), or by **distance** or **time** (iOS). To view detailed per-interval statistics, see [Analyze by Intervals](../../map/tracks/track-context-menu.md#analyze-by-intervals) (Android only).
 
 
 ### Direction Arrows {#direction-arrows}
