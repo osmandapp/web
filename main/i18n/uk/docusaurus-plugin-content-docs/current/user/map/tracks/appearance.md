@@ -1,6 +1,5 @@
 ---
 source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
 sidebar_position: 5
 title:  Зовнішній вигляд треку
 ---

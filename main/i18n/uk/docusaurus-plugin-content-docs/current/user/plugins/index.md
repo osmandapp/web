@@ -1,6 +1,5 @@
 ---
 source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
 sidebar_position: 18
 title:  Плагіни
 ---

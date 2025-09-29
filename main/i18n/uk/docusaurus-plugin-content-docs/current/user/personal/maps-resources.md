@@ -1,6 +1,5 @@
 ---
 source-hash: 96c19eed244ae8e23b225b79e192f6ab15334e38a9e882b113d53dea103f93b7
-source-hash: 40a50d2d81edfe301807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
 sidebar_position: 2
 title: Карти та ресурси
 ---

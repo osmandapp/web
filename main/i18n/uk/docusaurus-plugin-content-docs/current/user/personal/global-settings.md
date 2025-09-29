@@ -1,6 +1,5 @@
 ---
 source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
-source-hash: e0b9c6c47f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
 sidebar_position: 3
 title:  Глобальні налаштування
 ---

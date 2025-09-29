@@ -1,6 +1,5 @@
 ---
 source-hash: 46bbbfa9f2a4b9ae84b958f8aebabc44cba85df4d97589ff741b36e31fd6fb82
-source-hash: c674aa26de62610f142ef441eaa008b20c3b4a69dd7617b13ccd27ccf7f2234
 sidebar_position: 7
 title:  Обране
 ---

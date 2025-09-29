@@ -1,6 +1,5 @@
 ---
 source-hash: f9fda369841f870ed0f7bff2008618ae04b8b11b5d9458b488f463164740e1e7
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
 sidebar_position: 4
 title:  Контекстне меню треку
 ---

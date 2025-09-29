@@ -1,6 +1,5 @@
 ---
 source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
 sidebar_position: 18
 title:  Вікіпедія
 ---

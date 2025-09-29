@@ -1,6 +1,5 @@
 ---
 source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
-source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
 title:  Спеціальні можливості
 ---

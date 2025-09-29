@@ -1,6 +1,5 @@
 ---
 source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
 sidebar_position: 2
 title:  Кнопки на мапі
 ---

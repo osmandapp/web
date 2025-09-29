@@ -1,6 +1,5 @@
 ---
 source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
 sidebar_position: 4
 title: Пошук POI
 ---

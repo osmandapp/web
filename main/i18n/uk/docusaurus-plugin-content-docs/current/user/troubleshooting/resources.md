@@ -1,6 +1,5 @@
 ---
 source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
 sidebar_position: 9
 title: Ресурси та налаштування
 ---

@@ -1,6 +1,5 @@
 ---
 source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
-source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
 sidebar_position: 8
 title:  Маршрути для човнів
 ---

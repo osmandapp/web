@@ -1,6 +1,5 @@
 ---
 source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
-source-hash: 166c161e033aab6f7ca0b049fcfab98226fb4a490c7abb63ece62fd6edca3314
 sidebar_position: 1
 title:  Покупки в Android
 ---

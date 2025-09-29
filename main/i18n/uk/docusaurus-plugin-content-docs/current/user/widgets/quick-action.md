@@ -1,6 +1,5 @@
 ---
 source-hash: cf0423dde10a7ca433bb7c3e8608756683a6e4cd33976dbe8b893d1b6e85cfed
-source-hash: 6ed7b2af27dd55f412539bc8c15f73cc2d55449aac9a5bc6af5328ccd31ec35b
 sidebar_position: 7
 title:  Швидка дія (Користувацькі кнопки)
 ---

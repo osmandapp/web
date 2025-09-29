@@ -1,6 +1,5 @@
 ---
 source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
 sidebar_position: 2
 title:  Завантаження мап
 ---

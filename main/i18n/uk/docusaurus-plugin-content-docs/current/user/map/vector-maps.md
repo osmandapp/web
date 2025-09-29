@@ -1,6 +1,5 @@
 ---
 source-hash: 92f8f29e51b5bed4213af308f878a61ece505f97e7c5f8d454af33c97210b34c
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
 sidebar_position: 5
 title:  Векторні карти (Стилі карти)
 ---

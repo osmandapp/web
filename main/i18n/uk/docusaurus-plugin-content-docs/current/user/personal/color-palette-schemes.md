@@ -1,6 +1,5 @@
 ---
 source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
 sidebar_position: 5
 title:  Колірні схеми
 ---

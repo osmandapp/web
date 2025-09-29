@@ -1,6 +1,5 @@
 ---
 source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
 
 sidebar_position: 3
 title: Інформаційні віджети
