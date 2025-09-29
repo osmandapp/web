@@ -1,5 +1,5 @@
 ---
-source-hash: 100d908b7334f94fa58c6e50f580170815bc0544acdf8e49f048fef77daafbc2
+source-hash: 1ca5ebf392132069b1b5beabb8bfe492c629807a3258b756d15d406a2613de59
 sidebar_position: 10
 title:  Ruta en línea recta (Aeronave)
 ---
@@ -18,35 +18,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Resumen {#overview}
 
-A diferencia de los algoritmos de enrutamiento tradicionales que utilizan carreteras, senderos o rutas predefinidas, el enrutamiento en línea recta calcula la distancia más corta entre dos puntos en el mapa como una línea recta. Esta característica puede ser útil para excursionistas activos que desean alejarse de los senderos o explorar áreas remotas donde las rutas tradicionales pueden no estar disponibles. Para pilotos de aeronaves ligeras y capitanes de barco, usar el *tipo de enrutamiento en línea recta* puede ser muy útil en la navegación.
+A diferencia de los algoritmos de enrutamiento tradicionales que utilizan carreteras, senderos o rutas predefinidas, el enrutamiento en línea recta calcula la distancia más corta entre dos puntos del mapa como una línea recta. Esta función puede ser útil para los excursionistas activos que deseen desviarse de los senderos o explorar zonas remotas en las que las rutas tradicionales pueden no estar disponibles. Para los pilotos de aeronaves ligeras y los capitanes de barco, el uso del *tipo de ruta en línea recta* puede ser muy útil para la navegación.
 
-<!-- ![Ejemplo de navegación en línea recta Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Ejemplo de navegación en línea recta Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png) -->
+<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
 
-- El enrutamiento *en línea recta* no considera ningún obstáculo o barrera que pueda estar presente en el terreno, como montañas, ríos o bosques densos.
-- No proporciona ninguna información sobre la calidad del terreno, el nivel de dificultad de la ruta o cualquier otro factor relevante que pueda afectar la seguridad o viabilidad de la ruta (la sección [Detalles de la ruta](../setup/route-details.md) está vacía).
+- El enrutamiento en *Línea recta* no tiene en cuenta los obstáculos o barreras que puedan existir en el terreno, como montañas, ríos o bosques densos.
+- No proporciona ninguna información sobre la calidad del terreno, el nivel de dificultad de la ruta ni ningún otro factor relevante que pueda afectar a la seguridad o viabilidad de la ruta (la sección [Detalles de la ruta](../setup/route-details.md) está vacía).
 
-![Tipo de navegación en línea recta Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
+![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
 ## Parámetros de ruta - Línea recta {#route-parameters---straight-line}
 
 :::note
-El enrutamiento en línea recta está vinculado al *perfil de aeronave*. Por defecto, este perfil está desactivado. Para usar este perfil para el enrutamiento, debes activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+La ruta en línea recta está vinculada al *Perfil de aeronave*. Por defecto, este perfil está desactivado. Para utilizar este perfil para el enrutamiento, debe activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-El enrutamiento *en línea recta* se puede configurar según tus necesidades en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de la configuración de navegación.
+El enrutamiento en *Línea recta* se puede configurar según sus necesidades en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de los ajustes de Navegación.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Configuración de enrutamiento en línea recta Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png)
+![Straight line routing settings Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configuración de enrutamiento en línea recta iOS 1](@site/static/img/navigation/routing/straight_line_ios.png)
+![Straight line routing settings iOS 1](@site/static/img/navigation/routing/straight_line_ios.png)
 
 </TabItem>
 
@@ -54,17 +54,4 @@ El enrutamiento *en línea recta* se puede configurar según tus necesidades en 
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="recalc_angle_dialog_title"/>* | <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/> </summary>![Recálculo en línea recta Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details> | Cuando el ángulo entre la ruta calculada y la geolocalización real es mayor que el que has establecido, se construirá el camino más corto desde tu posición actual hasta la ruta calculada. En otras palabras, OsmAnd calculará un segmento de ruta adicional a la ruta previamente calculada. |
-
-
-## Otras configuraciones de enrutamiento {#other-routing-settings}
-
-- En la sección [*Recalcular ruta*](../../navigation/guidance/navigation-settings.md#recalculate-route) de los *Parámetros de ruta*, la distancia a la que se recalculará la ruta para el *enrutamiento en línea recta* se establece en 500 metros por defecto.
-
-- En la sección [*Desarrollo*](../guidance/navigation-settings.md#development-settings) de los *Parámetros de ruta*, puedes probar nuevas características de enrutamiento que actualmente están en fase de prueba. Ten en cuenta que estas configuraciones solo están disponibles cuando el [complemento de desarrollo de OsmAnd](../../plugins/development.md) está habilitado.
-
-- La configuración *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* en la versión *iOS* de OsmAnd se encuentra en *Configuración de navegación → Parámetros de ruta* (para *Android*, en *Parámetros del vehículo → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). Estas configuraciones también se pueden establecer para el enrutamiento *Directo al punto*. Se utiliza para calcular la hora estimada de llegada.
-
-- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Configurar correctamente los ajustes te ayudará a evitar problemas al crear una ruta. Puedes seleccionar la ruta más adecuada según el tipo de vehículo y las restricciones de la carretera, así como calcular el tiempo de viaje.
-
-> *Última actualización: junio de 2024*
+| *<Translate android="true" ids="recalc_angle_dialog_title"/>* |  <details><summary> <Translate android="true" ids="recalc_angle_dialog_descr"/>  </summary>![Straight line recalculation Android](@site/static/img/navigation/routing/straight_line_recalculation_andr.png) </details>  | Cuando el ángulo entre la ruta calculada y la geolocalización real es superior al establecido por usted, se construirá el camino más corto desde su posición actual hasta la ruta calculada. En otras palabras, OsmAnd calculará un segmento de ruta adicional a la ruta calculada previamente. |

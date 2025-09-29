@@ -1,5 +1,5 @@
 ---
-source-hash: dde8250578460772829e966968add9c68eaa6a84529c9781ca298152f25ce984
+source-hash: d91382fd90471c35f09518fffca8df6e01494de94a597a6b8006d0c7f62c249d
 sidebar_position: 3
 sidebar_label: Harita
 title: Web Sitesindeki Küresel Harita
@@ -22,13 +22,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *[osmand.net/map](https://osmand.net/map/)* sitesi şu anda geliştirilmekte ve test edilmektedir.
 **Bu nedenle, sitedeki bazı işlevlerin düzeni ve çalışması bu makalede açıklananlardan farklı olabilir.**
 
-Geri bildirim bırakabilmeniz için GitHub'ımızda [Tartışma teması](https://github.com/osmandapp/OsmAnd/discussions/16567) oluşturduk.
+Geri bildirimlerinizi bırakabilmeniz için GitHub'ımızda [Tartışma teması](https://github.com/osmandapp/OsmAnd/discussions/16567) oluşturduk.
 :::
 
 
 ## Genel Bakış {#overview}
 
-OsmAnd web haritası, [OpenStreetMap (OSM)](https://www.openstreetmap.org/) verilerine dayalı küresel bir haritadır. Kullanıcıların kendi verilerini (izler ve favoriler gibi) görüntülemesine, herhangi bir profil için navigasyon rotaları oluşturmasına ve hava durumu, genel GPX izleri, POI'ler ve Wikimedia resimleri gibi ek özelliklere erişmesine olanak tanır. Veri deneyiminizi doğrudan tarayıcınızda keşfedin ve özelleştirin.
+OsmAnd web haritası, [OpenStreetMap (OSM)](https://www.openstreetmap.org/) verilerine dayalı küresel bir haritadır. Kullanıcıların kendi verilerini (örneğin, parkurlar ve favoriler) görüntülemesine, herhangi bir profil için navigasyon rotaları oluşturmasına ve hava durumu, genel GPX parkurları, POI'ler ve Wikimedia görselleri gibi ek özelliklere erişmesine olanak tanır. Veri deneyiminizi doğrudan tarayıcınızda keşfedin ve özelleştirin.
 
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
@@ -39,12 +39,12 @@ Açmak için haritada herhangi bir yere sağ tıklayın. Bu menü aşağıdaki e
 
 - **Neredeyim** – Haritadaki mevcut konumunuzu hızla bulun. Bu özellik, haritada seçilen noktaya en yakın adresleri görüntüler.
 - **Hava durumunu aç** – Hava durumu ayrıntılarını görüntülemek için [Hava durumu menüsüne](#weather-on-the-web) erişin.
-- **Yeni rota oluştur** – Seçilen konumun başlangıç veya varış noktası olarak ayarlandığı [*Rota planla* aracını](../web/planner.md#create-track-and-local) açar.
-- **Favori ekle** – Kolay erişim için haritadaki herhangi bir noktada bir [favori](../web/web-userdata.mdx#add--edit-favorite) oluşturmanıza ve kaydetmenize olanak tanır.
-- **Yol tarifi buradan** – Seçilen noktayı navigasyon için [başlangıç konumu](../web/planner.md#navigation-route) olarak ayarlar.
-- **Yol tarifi buraya** – Seçilen noktayı [navigasyon için varış noktası](../web/planner.md#navigation-route) olarak ayarlar.
+- **Yeni rota oluştur** – Seçilen konumu başlangıç veya varış noktası olarak kullanarak [*Rota planla* aracını](../web/planner.md#navigation-route) açar.
+- **Favori Ekle** – Haritadaki herhangi bir noktada kolay erişim için bir [favori](../web/web-userdata.mdx#add--edit-favorite) oluşturmanıza ve kaydetmenize olanak tanır.
+- **Buradan yol tarifi** – Seçilen noktayı navigasyon için [başlangıç konumu](../web/planner.md#navigation-route) olarak ayarlar.
+- **Buraya yol tarifi** – Seçilen noktayı navigasyon için [varış noktası](../web/planner.md#navigation-route) olarak ayarlar.
 - **Koordinatları kopyala** – Seçilen noktanın koordinatlarını harici kullanım için kopyalar.
-- **İğne ekle** – Haritada bir konumu işaretlemek için bir iğne yerleştirir. ([Örnek](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
+- **Sabitle** – Haritada bir konumu işaretlemek için bir iğne yerleştirir. ([Örnek](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Bölgeleri göster** – Seçilen konumla ilişkili bölgeleri görüntüler.
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
@@ -57,11 +57,11 @@ OsmAnd Web, iki tahmin kaynağından hava durumu bilgisi sağlar:
 - **GFS (varsayılan)**
 - **ECMWF**
 
-Bu tahmin kaynakları arasında geçiş yapmak için Hava durumu menüsündeki **şemsiye düğmesine** tıklayın.
+Bu tahmin kaynakları arasında geçiş yapmak için Hava Durumu menüsündeki **şemsiye düğmesine** tıklayın.
 
 ***Hava durumu menüsünün özellikleri:***
 
-- **Mevcut Hava Durumu Verileri**: Koordinatlarınızla birlikte aşağıdaki verileri görüntüler:
+- **Mevcut Hava Durumu Verileri**: Koordinatlarınızı aşağıdaki verilerle birlikte görüntüler:
 
   - Sıcaklık.
   - Yağış.
@@ -69,11 +69,17 @@ Bu tahmin kaynakları arasında geçiş yapmak için Hava durumu menüsündeki *
   - Hava Basıncı.
   - Bulut Örtüsü.
 
-- **Zaman Ayarı**: Belirli bir an için hava durumunu görüntülemek üzere Hava durumu menüsündeki **zaman aracını** kullanarak tarih ve saati değiştirin.
+- **Zaman Ayarı**: Belirli bir an için hava durumunu görüntülemek üzere Hava Durumu menüsündeki **zaman aracını** kullanarak tarih ve saati değiştirin.
 
 ***Haritadaki hava durumu katmanları:***
 
-- Sıcaklık, Basınç, Rüzgar, Bulut Örtüsü ve Yağış gibi hava durumu katmanlarını seçmek ve etkinleştirmek için **katmanlar düğmesini** kullanın.
+- Aşağıdaki gibi hava durumu katmanlarını seçmek ve etkinleştirmek için **katmanlar düğmesini** kullanın:
+
+  - Sıcaklık.
+  - Basınç.
+  - Rüzgar.
+  - Bulut Örtüsü.
+  - Yağış.
 
 ***Tahminleri görüntüleme:***
 
@@ -96,13 +102,13 @@ Konumunuz için **7 günlük tahmini** görüntülemek üzere menüdeki tahmin v
 
 ## Harita Menüsünü Yapılandır {#configure-map-menu}
 
-Haritayı Yapılandır menüsü, POI katmanları, Favoriler, izler ve arazi gibi harita verileri için görüntüleme ayarlarını yönetmenizi sağlar. Bu menü bölümünü kullanmak için lütfen OsmAnd hesabınıza giriş yapın.
+Haritayı Yapılandır menüsü, POI katmanları, Favoriler, parkurlar ve arazi gibi harita verileri için görüntüleme ayarlarını yönetmenize olanak tanır. Bu menü bölümünü kullanmak için lütfen OsmAnd hesabınıza giriş yapın.
 
 Bu menüyü açmak için **sol üst köşedeki** düğmeye tıklayın veya **Menü** aracılığıyla erişin.
 
 - [POI katmanı...](#poi-overlay-section). Haritada gerekli POI kategorilerini seçmenize ve göstermenize olanak tanır.
-- [Favoriler](#favorites-section). Favorilerin haritada görüntülenmesini açıp kapatın.
-- [İzler](#tracks-section). Haritada görünen GPX izlerini içerir.
+- [Favoriler](#favorites-section). Haritada favorilerin görüntülenmesini açıp kapatın.
+- [Parkurlar](#tracks-section). Haritada görünen GPX parkurlarını içerir.
 - [Arazi](#terrain-section). Haritada arazi renk şemasını etkinleştirin veya devre dışı bırakın.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
@@ -121,36 +127,36 @@ Alternatif olarak, istediğiniz yeri bulmak için [**Arama bölümünü**](web-s
 
 ### Favoriler Bölümü {#favorites-section}
 
-Tek bir tıklamayla, favorileri haritada açıp kapatabilirsiniz. Ancak, yalnızca [**Haritada göster etkin**](../web/web-userdata.mdx##favorites-on-the-web) olan favoriler görüntülenecektir.
+Tek bir tıklamayla, haritada favorileri açıp kapatabilirsiniz. Ancak, yalnızca [**Haritada göster etkin**](../web/web-userdata.mdx#favorites-on-the-web) olan favoriler görüntülenecektir.
 
 
-### İzler bölümü {#tracks-section}
+### Parkurlar bölümü {#tracks-section}
 
-Bu bölüm, [**haritada görünen GPX izlerinizin**](../web/web-userdata.mdx#visible-on-the-map) ve **Son Görünür** izlerinizin bir listesini içerir.
+Bu bölüm, [**haritada görünen GPX parkurlarınızın**](../web/web-userdata.mdx#visible-on-the-map) ve **Son Görünür** parkurların bir listesini içerir.
 
-- İzleri doğrudan açıp kapatabilirsiniz.
-- **Son Görünür** listesinden izleri açıp kapatın.
+- Parkurları doğrudan açıp kapatabilirsiniz.
+- **Son Görünür** listesinden parkurları açıp kapatın.
 
-Her izde, aşağıdaki komutları içeren bir **Bağlam Menüsü** (⋮ düğmesi aracılığıyla erişilebilir) bulunur:
+Her parkurun, aşağıdaki komutları içeren bir **Bağlam Menüsü** (⋮ düğmesi aracılığıyla erişilebilir) vardır:
 
-- **İzi gizle**: Şu anda görünür olan izi haritadan gizler.
-- **İzi görünür yap**: Son Görünür listesindeki bir izi haritada görüntüler.
-- **Yeniden adlandır**: İzi daha kolay tanımlamak için yeniden adlandırmanıza olanak tanır.
-- **Çoğalt**: İzin bir kopyasını oluşturur.
-- **İndir**: İzi yerel cihazınıza kaydeder.
-- **Sil**: İzi listeden kalıcı olarak kaldırır.
+- **Parkuru gizle**: Haritada şu anda görünen parkuru gizler.
+- **Parkuru görünür yap**: Son Görünür listesindeki bir parkuru haritada görüntüler.
+- **Yeniden adlandır**: Daha kolay tanımlama için parkuru yeniden adlandırmanıza olanak tanır.
+- **Çoğalt**: Parkurun bir kopyasını oluşturur.
+- **İndir**: Parkuru yerel cihazınıza kaydeder.
+- **Sil**: Parkuru listeden kalıcı olarak kaldırır.
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
 ### Arazi bölümü {#terrain-section}
 
-**Arazi** bölümü ücretli bir özelliktir <ProFeature/>. Bu özelliği kullanmak için önce OsmAnd Pro hesabınıza giriş yapmalısınız.
+**Arazi** bölümü ücretli bir özelliktir <ProFeature/>. Bu özelliği kullanmak için öncelikle OsmAnd Pro hesabınıza giriş yapmanız gerekir.
 
 Bu bölümde şunları yapabilirsiniz:
 
 - Arazi için bir **renk şeması** seçin:
-  - **Tepe Gölgelendirme**
+  - **Tepe Gölgesi**
   - **Eğim**
   - **Yükseklik**
 - Seçilen arazi katmanının görünürlüğünü **%0'dan %100'e** ayarlayın.
@@ -161,7 +167,7 @@ Bu bölümde şunları yapabilirsiniz:
 <!--
 ## Map style {#map-style}
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
+In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
 **Some examples:**
 
 - Nautical map style
@@ -176,17 +182,17 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## URL Şemaları {#url-schemes}
 
-OsmAnd web hizmetini (ve uygulamasını) kolayca kullanmak için doğrudan bağlantılardan yararlanabilirsiniz. Bunlar, konum verilerini aktarmanıza ve iğneler, izler, hava durumu ve daha fazlası hakkında ayrıntılar eklemenize olanak tanıyan özel URL'lerdir.
+OsmAnd web hizmetini (ve uygulamasını) kolayca kullanmak için doğrudan bağlantılardan yararlanabilirsiniz. Bunlar, konum verilerini aktarmanıza ve iğneler, parkurlar, hava durumu ve daha fazlası hakkında ayrıntılar eklemenize olanak tanıyan özel URL'lerdir.
 
 Bu URL'ler, cihazınız tarafından desteklenen herhangi bir ortam kullanılarak kopyalanabilir ve paylaşılabilir ve OsmAnd'ın hem Android hem de iOS sürümleriyle uyumludur.
 
-1. **Haritada iğneli URL:**
+1. **Haritada bir iğne bulunan URL:**
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
-2. **Haritada iğnesiz URL:**
+2. **Haritada iğne bulunmayan URL:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
@@ -215,7 +221,7 @@ Belirtilen parametrelere bağlı olarak, URL dizeleri şunları içerebilir:
 
 6. **Haritayı Yapılandır**&nbsp; – &nbsp;`osmand.net/map/configure/`
 
-7. **İzler**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+7. **Parkurlar**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
 
 8. **Favoriler**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
 
@@ -224,6 +230,3 @@ Belirtilen parametrelere bağlı olarak, URL dizeleri şunları içerebilir:
 10. **Rota Planla**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Mevcut [**Keşfet sayfasına**](https://osmand.net/docs/user/web/web-search#explore) doğrudan bağlantı&nbsp; - &nbsp;`osmand.net/map/search`
-
-
-> *Son güncelleme: Ocak 2025*

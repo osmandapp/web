@@ -1,5 +1,5 @@
 ---
-source-hash: cf00228b0959bc2aae53ebe181345d3b69c04b3d0d42a49a8ed5ebc376ca2673
+source-hash: e574b157e1460483991973a8f0aa82032a697bf0c8250d5dbada1a787ff155e0
 sidebar_position: 4
 title:  Navigatiewidgets
 ---
@@ -17,45 +17,45 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Navigatiewidgets worden tijdens de navigatie ingeschakeld om informatie weer te geven zoals afstand, aankomst- of resterende tijd, volgende afslagen, peiling, huidige straatnaam, rijstrookinformatie, maximale snelheid, naderende waarschuwingen, POI's en waypoints.
+Navigatiewidgets worden ingeschakeld tijdens de navigatie om informatie weer te geven zoals afstand, aankomst- of resterende tijd, volgende afslagen, peiling, huidige straatnaam, rijstrookinformatie, maximale snelheid, naderingswaarschuwingen, POI's en routepunten.
 
-![Navigatiewidgets allemaal](@site/static/img/widgets/navigational_widgets_all.png)
+![Alle navigatiewidgets](@site/static/img/widgets/navigational_widgets_all.png)
 
 
-## Actieve en passieve navigatie {#active-and-passive-navigation}
+## Actieve en Passieve Navigatie {#active-and-passive-navigation}
 
-Navigatiewidgets in OsmAnd zijn ontworpen om zowel **actieve** als **passieve** navigatiemodi te verbeteren. Deze widgets bieden waardevolle informatie zoals routebeschrijvingen, weginformatie en snelheidslimieten, afhankelijk van het geselecteerde **navigatieprofiel**.
+Navigatiewidgets in OsmAnd zijn ontworpen om zowel de **actieve** als **passieve** navigatiemodi te verbeteren. Deze widgets bieden waardevolle informatie zoals routeaanwijzingen, wegdetails en snelheidslimieten, afhankelijk van het geselecteerde **navigatieprofiel**.
 
-#### Actieve navigatie {#active-navigation}
+#### Actieve Navigatie {#active-navigation}
 
 - **Vereisten:**
   - Stel een **bestemming** in.
   - Bereken de **route** met de functie *Routebeschrijving*.
-  - **Start** navigatie (stembegeleiding is optioneel).
-  - Alleen beschikbaar bij het volgen van de route.
+  - **Start** de navigatie (spraakbegeleiding is optioneel).
+  - Alleen beschikbaar wanneer u zich langs de route verplaatst.
 
 - **Ondersteunde widgets:**
   - Alle **navigatiewidgets** zijn beschikbaar.
 
-- **Belangrijkste voordelen:**
-  - Biedt **stap-voor-stap instructies**, **rijstrookbegeleiding** en **ETA**.
+- **Belangrijkste Voordelen:**
+  - Biedt **afslag-voor-afslag instructies**, **rijstrookbegeleiding** en **verwachte aankomsttijd (ETA)**.
   - Zorgt voor nauwkeurige en dynamische updates tijdens de reis.
 
-#### Passieve navigatie {#passive-navigation}
+#### Passieve Navigatie {#passive-navigation}
 
 - **Hoe het werkt:**
-  - Geen bestemming nodig.
-  - Werkt automatisch wanneer u een **navigatieprofiel** selecteert (bijv. *Rijden*, *Fietsen*).
+  - Er is geen bestemming nodig.
+  - Werkt automatisch wanneer u een **navigatieprofiel** selecteert (bijv. *Autorijden*, *Fietsen*).
 
 - **Functionaliteit:**
   - Probeert de weg die u volgt te bepalen met behulp van GPS-gegevens.
-  - Toont **basisweginformatie**, zoals [straatnaam](#street-name), [rijstrookinformatie](#lanes), [maximale snelheid](#speed-limit).
+  - Toont **basis-weginformatie**, zoals [straatnaam](#street-name), [rijstrookinformatie](#lanes), [maximale snelheid](#speed-limit).
 
 - **Beperkingen:**
   - Sommige geavanceerde functies werken mogelijk niet correct zonder een ingestelde bestemming.
   - De verstrekte informatie is mogelijk niet altijd **precies**, vooral op complexe wegennetwerken.
 
-> **OPMERKING.** *Houd er rekening mee dat het profiel **Kaart bladeren** geen navigatiewidgets ondersteunt in beide modi. Schakel over naar een relevant **navigatieprofiel** om deze functies in te schakelen.*
+> **OPMERKING.** *Houd er rekening mee dat het **Kaart bekijken**-profiel in geen van beide modi navigatiewidgets ondersteunt. Schakel over naar een relevant **navigatieprofiel** om deze functies in te schakelen.*
 
 
 <!--
@@ -76,61 +76,61 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 :::
 
-De Hoogtewidget toont een grafiek met de hoogte en helling van uw navigatieroute en uw huidige locatie op deze grafiek met de huidige hoogte en helling. De grafiek is uitgezet op twee assen. De X-as is de afstand van uw route. De Y-as is de hoogte, de waarde is afhankelijk van het reliëf, en de helling wordt weergegeven als een percentage.
+De Hoogtewidget toont een grafiek met de hoogte en helling van uw navigatieroute en uw huidige locatie op deze grafiek met de huidige hoogte en helling. De grafiek wordt uitgezet op twee assen. De X-as is de afstand van uw route. De Y-as is de hoogte, de waarde hangt af van het reliëf, en de helling wordt weergegeven als een percentage.
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
 ![Hoogtewidget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
-#### Interacties met de grafiek {#interactions-with-the-graph}
+#### Interacties met de Grafiek {#interactions-with-the-graph}
 
-- *In-/uitzoomen*. Standaard toont de grafiek de route vanaf de huidige locatie tot 10 km vooruit. U kunt [tweevingerbewegingen](../map/interact-with-map#gestures) gebruiken om in en uit te zoomen voor een gedetailleerder beeld van hoogteverschillen op uw route. U kunt de grafiek ook naar rechts verplaatsen, vooruit op de route, en terug naar de huidige locatie.
-- *Plaats een punt op de grafiek*. Als u de hoogte- en gradenwaarde op een bepaald punt vooruit op uw route wilt zien, kunt u ergens op de grafiek tikken en verschijnt er een aanwijzer met de waarden.
+- *In-/uitzoomen*. Standaard toont de grafiek de route vanaf de huidige locatie tot 10 km vooruit. U kunt [beweging met twee vingers](../map/interact-with-map.md#gestures) gebruiken om in en uit te zoomen voor een meer gedetailleerde weergave van hoogteveranderingen op uw route. U kunt de grafiek ook naar rechts verplaatsen, vooruit op de route, en achteruit naar de huidige locatie.
+- *Een punt op de grafiek plaatsen*. Als u de hoogte- en gradenwaarde op een bepaald punt voor u op uw route wilt zien, kunt u overal op de grafiek tikken en er verschijnt een aanwijzer met de waarden.
 
 
 #### Wat zit erin {#whats-in}
 
-Wanneer u een route selecteert en op de knop **Start** drukt, opent de kaart met uw huidige locatie, de route en de widget onderaan het scherm. De widget heeft de grafiek en informatie over *Omhoog*, *Omlaag*, *Helling*, afstand, hoogte en hellingshoek. U kunt de *optimale schaal* selecteren en alle mogelijke obstakels op uw route zien.
+Wanneer u een route selecteert en op de **Start**-knop drukt, wordt de kaart geopend met uw huidige locatie, de route en de widget onderaan het scherm. De widget heeft de grafiek en informatie over *Stijgen*, *Dalen*, *Helling*, afstand, hoogte en hellingshoek. U kunt de *optimale schaal* selecteren en alle mogelijke obstakels op uw route zien.
 
 - Alle waarden worden aangegeven voor de hele route of alleen voor het geselecteerde interval door de grafiek te schalen.
-- Lees over de [licentie voor de DEM-gegevens](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) die door OsmAnd worden gebruikt voor terreindetectie.
+- Lees over de [licentie voor de DEM-gegevens](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection) die door OsmAnd worden gebruikt om de hoogte te bepalen.
 
-| |
+|  |
 |:------------|
 | ***Locatiepin*** |
-| Uw ***Huidige locatie*** op de grafiek omvat een locatiepictogram, hoogte en hellingspercentage. De rechterkant van de widget bevat de hoogste hoogte en helling, de gemiddelde waarde daarvoor, en de laagste waarde op het geselecteerde gedeelte van de route dat zichtbaar is op de grafiek. |
+| Uw ***Huidige Locatie*** op de grafiek omvat een locatiepictogram, hoogte en hellingspercentage. De rechterkant van de widget bevat de hoogste hoogte en helling, de gemiddelde waarde daarvan, en de laagste waarde op het geselecteerde deel van de route dat zichtbaar is in de grafiek. |
 | ![punt](@site/static/img/widgets/sch_1-1.png)|
 | ***Aanvullende informatie*** |
-| De rechterkant van de widget bevat gegevens over de hoogste hoogte en helling, de gemiddelde waarde voor beide, en de laagste hoogte en helling op het geselecteerde routegedeelte dat zichtbaar is op de grafiek. |
-| ![gegevens](@site/static/img/widgets/sch_1-2.png)|
-|De waarden ***Omhoog*** en ***Omlaag*** zijn de sommen van de afstanden vanaf uw locatiepunt tot het einde van de zichtbare grafiek. Als er geen locatiepunt op de grafiek is, dan is het de som van de gehele zichtbare grafiek op het scherm (dit kan gebeuren wanneer u de schaal wijzigt en de locatie buiten de grafiek valt).|
-| **Omhoog** – toont de som van alle afstanden met toenemende hoogte vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde gedeelte van de route zonder het locatiepunt zichtbaar op het scherm. |
-| ![omhoog schema](@site/static/img/widgets/sch_uphill_1.png) ![omhoog schema](@site/static/img/widgets/sch_uphill_2.png)|
-| **Omlaag** – toont de som van alle afstanden met afnemende hoogte vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde gedeelte van de route zonder het locatiepunt zichtbaar op het scherm.|
-| ![omlaag schema](@site/static/img/widgets/sch_downhill_1.png) ![omlaag schema](@site/static/img/widgets/sch_downhill_2.png)|
-|***Helling*** is de verhouding van het pad tot de horizontaal, waarbij nul horizontaal aangeeft en het aantal graden een hogere of steilere hellingsgraad aangeeft.|
-| **Helling** – toont de maximale weghelling in procenten vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde gedeelte van de route zonder het locatiepunt zichtbaar op het scherm. |
-|![helling schema](@site/static/img/widgets/sch_grade_1.png) ![helling schema](@site/static/img/widgets/sch_grade_2.png)|
+| De rechterkant van de widget bevat gegevens over de hoogste hoogte en helling, de gemiddelde waarde voor beide, en de laagste hoogte en helling op het geselecteerde routegedeelte dat zichtbaar is in de grafiek. |
+|  ![gegevens](@site/static/img/widgets/sch_1-2.png)|
+|De waarden ***Stijgen*** en ***Dalen*** zijn de som van de afstanden vanaf uw locatiepunt tot het einde van de zichtbare grafiek. Als er geen locatiepunt op de grafiek staat, is het de som van de gehele zichtbare grafiek op het scherm (dit kan gebeuren wanneer u de schaal wijzigt en de locatie buiten de grafiek valt).|
+| **Stijgen** – toont de som van alle afstanden met toenemende hoogte vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde deel van de route zonder het locatiepunt zichtbaar op het scherm. |
+| ![stijgingsschema](@site/static/img/widgets/sch_uphill_1.png) ![stijgingsschema](@site/static/img/widgets/sch_uphill_2.png)|
+| **Dalen** – toont de som van alle afstanden met afnemende hoogte vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde deel van de route zonder het locatiepunt zichtbaar op het scherm.|
+| ![dalingsschema](@site/static/img/widgets/sch_downhill_1.png) ![dalingsschema](@site/static/img/widgets/sch_downhill_2.png)|
+|***Helling*** is de verhouding van het pad tot de horizontaal, waarbij nul horizontaliteit aangeeft en het aantal graden een hogere of steilere hellingsgraad aangeeft.|
+| **Helling** – toont de maximale helling van de weg in procenten vanaf uw locatiepunt tot het einde van de zichtbare grafiek of voor het geselecteerde deel van de route zonder het locatiepunt zichtbaar op het scherm. |
+|![hellingsschema](@site/static/img/widgets/sch_grade_1.png) ![hellingsschema](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## Peilingwidget {#bearing-widget}
 
-Peiling is de richting naar een doel buiten uw voertuig, zoals een bestemming of vertrekpunt. Een peiling kan *Relatief* zijn (volgens uw koers) of *Magnetisch* (volgens het kompas). Een magnetische peiling van 180° is bijvoorbeeld de richting naar het zuiden, en een relatieve peiling van 180° is recht achter u. De windstreken zijn de vier hoofdrichtingen van het kompas. Dit zijn Noord (*N* - 0° of 360°), Oost (*E* - 90°), Zuid (*Z* - 180°) en West (*W* - 270°).
+Peiling is de richting naar een doel buiten uw voertuig, zoals een bestemming of een vertrekpunt. Een peiling kan *Relatief* zijn (ten opzichte van uw koers) of *Magnetisch* (ten opzichte van het kompas). Bijvoorbeeld, een magnetische peiling van 180° is de richting naar het zuiden, en een relatieve peiling van 180° is recht achter u. De kardinale punten zijn de vier hoofdrichtingen van het kompas. Dit zijn Noord (*N* - 0° of 360°), Oost (*O* - 90°), Zuid (*Z* - 180°), en West (*W* - 270°).
 
-![Reisopnamewidget](@site/static/img/widgets/bearing.png)
+![Ritregistratiewidget](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Reisopnamewidget](@site/static/img/widgets/bearing_widget.png) ![Reisopnamewidget](@site/static/img/widgets/bearing_widget_1.png)
+![Ritregistratiewidget](@site/static/img/widgets/bearing_widget.png) ![Ritregistratiewidget](@site/static/img/widgets/bearing_widget_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reisopnamewidget](@site/static/img/widgets/bearing_widget_ios_3.png)
+![Ritregistratiewidget](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -139,26 +139,26 @@ Peiling is de richting naar een doel buiten uw voertuig, zoals een bestemming of
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="shared_string_bearing"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="shared_string_bearing"/>* |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
-| Formaat | **Android:** U kunt het weergaveformaat van de gegevens voor hoekeenheden wijzigen: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
-| | **iOS:** U kunt het weergaveformaat van de gegevens voor hoekeenheden wijzigen: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="shared_string_bearing"/>* |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+| Formaat | **Android:** U kunt het weergaveformaat voor hoekeenheden wijzigen: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
+|  | **iOS:** U kunt het weergaveformaat voor hoekeenheden wijzigen: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |
 
 
 #### Hoe het werkt {#how-it-works}
 
-Om de peiling weer te geven, moet een **doelpunt** worden geselecteerd. Als een **bestemmingspunt** (of het **eerste tussenpunt**, indien aanwezig) is geselecteerd voor navigatie, wordt dit gebruikt als het doelpunt. Anders wordt de **bovenste geselecteerde markering** gebruikt.
+Om de peiling weer te geven, moet een **doelpunt** worden geselecteerd. Als een **bestemmingspunt** (of het **eerste tussenpunt**, indien aanwezig) is geselecteerd voor navigatie, wordt dit als doelpunt gebruikt. Anders wordt de **bovenste geselecteerde markering** gebruikt.
 
-- [Relatieve peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) is de hoek tussen uw voorwaartse bewegingsrichting en het doelpunt. De **voorwaartse bewegingsrichting** is ofwel de **richting van uw beweging** verkregen van de GPS-sensoren, of als u stilstaat **waar u uw apparaat hebt gericht** (d.w.z. de oriëntatie van uw apparaat volgens het magnetische kompas). Voorbeeld: Een object met een relatieve peiling van 0° bevindt zich recht voor u en een object met een relatieve peiling van 180° bevindt zich recht achter u. De **relatieve peiling** is de hoek tussen uw voorwaartse richting en het doelpunt.
+- [Relatieve peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) is de hoek tussen uw voorwaartse bewegingsrichting en het doelpunt. De **voorwaartse bewegingsrichting** is ofwel de **richting van uw beweging** verkregen van de GPS-sensoren, of als u stilstaat, **waar u uw apparaat op richt** (d.w.z. de oriëntatie van uw apparaat volgens het magnetische kompas). Voorbeeld: Een object met een relatieve peiling van 0° bevindt zich recht voor u en een object met een relatieve peiling van 180° bevindt zich recht achter u. De **relatieve peiling** is de hoek tussen uw voorwaartse richting en het doelpunt.
 
-- [Magnetische peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is de hoek met de klok mee (horizontaal) tussen het magnetische noorden en het doelpunt waargenomen vanaf uw locatie. U moet deze magnetische kompaswaarde volgen om uw doel te bereiken. Voorbeeld: Als de **magnetische peiling** wordt weergegeven als 0° M, moet u strikt naar het magnetische noorden bewegen om het doelpunt te bereiken.
+- [Magnetische peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is de hoek met de klok mee (horizontaal) tussen het magnetische noorden en het doelpunt, waargenomen vanaf uw locatie. U moet deze magnetische kompaswaarde volgen om uw doel te bereiken. Voorbeeld: Als de **magnetische peiling** wordt weergegeven als 0° M, moet u zich strikt naar het magnetische noorden bewegen om het doelpunt te bereiken.
 
-- [Ware peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) wordt uitgedrukt als de horizontale hoek tussen de geografische meridiaan en een lijn op aarde. Specifiek is **ware puntpeiling** de hoek gemeten in graden met de klok mee vanaf de ware noordlijn. OsmAnd-software toont u de ware peiling en koers in onze gebruiksvriendelijke interface, waardoor u vroegtijdig de juiste beslissing kunt nemen.
+- [Ware peiling](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) wordt uitgedrukt als de horizontale hoek tussen de geografische meridiaan en een lijn op aarde. Specifiek is **ware puntpeiling** de hoek gemeten in graden met de klok mee vanaf de Ware Noord-lijn. OsmAnd-software toont u de ware peiling en koers in onze gebruiksvriendelijke interface, waardoor het voor u gemakkelijk is om vroegtijdig de juiste beslissing te nemen.
 
-### Navigatie langs de loxodroom {#navigation-along-the-rhumb-line}
+### Navigatie langs de Loxodroom {#navigation-along-the-rhumb-line}
 
-- **Relatieve peiling**. Als u zich aan een relatieve peiling van 0 graden houdt en vooruit beweegt, komt u op het bestemmingspunt aan, maar niet via de kortste route ([Loxodroom](https://en.wikipedia.org/wiki/Rhumb_line)).
-- **Magnetische peiling**. Als u het kompas op uw boot/voertuig uitlijnt met de widgetwaarde en vooruit rijdt, komt u op uw bestemming aan, maar niet via de kortste route ([Loxodroom](https://en.wikipedia.org/wiki/Rhumb_line)).
+- **Relatieve peiling**. Als u een relatieve peiling van 0 graden aanhoudt en vooruit beweegt, komt u aan op het bestemmingspunt, maar niet via de kortste route ( [Loxodroom](https://en.wikipedia.org/wiki/Rhumb_line) ).
+- **Magnetische peiling**. Als u het kompas op uw boot/voertuig uitlijnt met de waarde van de widget en vooruit vaart, komt u aan op uw bestemming, maar niet via de kortste route ( [Loxodroom](https://en.wikipedia.org/wiki/Rhumb_line) ).
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
@@ -178,18 +178,18 @@ De widgetgroep *Navigatiepunt* toont de resterende afstand tot uw bestemming, he
 
 ![Bestemmingswidget](@site/static/img/widgets/route_information_widget.png)
 
-De widget *Route-informatie* biedt realtime gegevens over de lopende navigatieroute en een snelle manier om [een actieve route te beheren](../navigation/setup/route-navigation.md#start--stop-navigation). Het helpt om belangrijke routedetails bij te houden en stelt u in staat om de huidige navigatiesessie met minimale interactie te stoppen of te hervatten.
+De widget *Route-informatie* biedt realtime gegevens over de lopende navigatieroute en een snelle manier om [een actieve route te beheren](../navigation/setup/route-navigation.md#start--stop-navigation). Het helpt om belangrijke routegegevens bij te houden en stelt u in staat de huidige navigatiesessie met minimale interactie te stoppen of te hervatten.
 
 **Weergegeven informatie:**
 
 - **Geschatte aankomsttijd (ETA)**. Toont de verwachte aankomsttijd op de eindbestemming.
-- **Resterende reistijd**. Geeft de geschatte resterende tijd weer om de bestemming te bereiken.
+- **Resterende reistijd**. Toont de geschatte resterende tijd om de bestemming te bereiken.
 - **Afstand tot bestemming**. Geeft de totale resterende afstand tot de eindbestemming en afstanden tot tussenpunten aan.
 
 **Instellingenmenu**:
 
-- Selecteer een **Standaardweergave** om een van de volgende waarden te prioriteren: *Geschatte aankomsttijd*, *Tijd te gaan*, *Afstand*.
-- Selecteer in **Weergaveprioriteit** tussen *Bestemming eerst (standaard)* of *Tussenpunt eerst* om de meest relevante route-informatie te prioriteren.
+- Selecteer een **Standaardweergave** om een van de volgende waarden prioriteit te geven: *Geschatte aankomsttijd*, *Resterende tijd*, *Afstand*.
+- Selecteer in **Weergaveprioriteit** tussen *Bestemming eerst (standaard)* of *Tussenpunt eerst* om de meest relevante route-informatie prioriteit te geven.
 
 > OPMERKING: De widget is alleen zichtbaar tijdens navigatie.
 
@@ -197,11 +197,11 @@ De widget *Route-informatie* biedt realtime gegevens over de lopende navigatiero
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen →<Translate android="true" ids="map_widget_route_information"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Widget toevoegen →Route-informatie* |
-| Door te tikken | Tik op de knop met de pijl om het [Start/Stop Navigatiepaneel](../navigation/setup/route-navigation.md#start--stop-navigation) te openen |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+| Door te tikken | Tik op de knop met pijl om het [Start/Stop Navigatiepaneel](../navigation/setup/route-navigation.md#start--stop-navigation) te openen |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
 
-### Afstand tot bestemming {#distance-to-destination}
+### Afstand tot Bestemming {#distance-to-destination}
 
 ![Bestemmingswidget](@site/static/img/widgets/destination_widget.png)
 
@@ -210,11 +210,11 @@ De widget toont de resterende afstand tot het laatste bestemmingspunt bij het vo
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | Door te tikken | Verplaatst de kaart naar het bestemmingspunt. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Afstand tot tussenpunt {#distance-to-intermediate}
+### Afstand tot Tussenpunt {#distance-to-intermediate}
 
 ![Tussenbestemmingswidget](@site/static/img/widgets/intermediate_destination_widget.png)
 
@@ -223,170 +223,156 @@ De widget toont de afstand tot het eerste tussenpunt langs de berekende route. N
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | Door te tikken | **Eén tussenpunt** - verplaats de kaart naar het tussenpunt. <br /> **Twee of meer tussenpunten** - opent het menu Bestemmingenlijst. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
-### Tijd tot tussenpunt {#time-to-intermediate}
+### Tijd tot Tussenpunt {#time-to-intermediate}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Aankomsttijd Tijd te gaan widget](@site/static/img/widgets/arrival_time_widget_android.png) ![Aankomsttijd Tijd te gaan widget](@site/static/img/widgets/time_to_go_widget_android.png)
+![Aankomsttijd Resterende tijd widget](@site/static/img/widgets/arrival_time_widget_android.png) ![Aankomsttijd Resterende tijd widget](@site/static/img/widgets/time_to_go_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aankomsttijd Tijd te gaan widget](@site/static/img/widgets/arrival_time_widget_ios.png) ![Aankomsttijd Tijd te gaan widget](@site/static/img/widgets/time_to_go_widget_ios.png)
+![Aankomsttijd Resterende tijd widget](@site/static/img/widgets/arrival_time_widget_ios.png) ![Aankomsttijd Resterende tijd widget](@site/static/img/widgets/time_to_go_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De widget toont de *Aankomsttijd* of *Tijd te gaan* naar het eerste tussenpunt. Tijdens de navigatie wordt de tijd constant bijgewerkt, en zodra een tussenpunt is gepasseerd, wordt de tijd bijgewerkt naar het volgende waypoint. Als u bijvoorbeeld de navigatie stopt, blijft de *Tijd te gaan* ongewijzigd en is de *Aankomsttijd* gelijk aan de *Tijd te gaan* plus de *Huidige tijd*.
+De widget toont de *Aankomsttijd* of *Resterende tijd* tot het eerste tussenpunt. Tijdens de navigatie wordt de tijd constant bijgewerkt, en zodra een tussenpunt is gepasseerd, wordt de tijd bijgewerkt naar het volgende routepunt. Als u bijvoorbeeld de navigatie stopt, blijft de *Resterende tijd* ongewijzigd en is de *Aankomsttijd* gelijk aan de *Resterende tijd* plus de *Huidige Tijd*.
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Door te tikken | Wisselt tussen *Aankomsttijd* en *Tijd te gaan* en omgekeerd. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| Door te tikken | Wisselt tussen *Aankomsttijd* en *Resterende tijd* en omgekeerd. |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Tijd tot bestemming {#time-to-destination}
+### Tijd tot Bestemming {#time-to-destination}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Tussenliggende aankomsttijd Tijdwidget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Tussenliggende Aankomsttijd Tijd widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tussenliggende aankomsttijd Tijdwidget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Tussenliggende Aankomsttijd Tijd widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 </Tabs>
 
-De widget toont de *Aankomsttijd* of *Tijd te gaan* naar het laatste bestemmingspunt. De tijd wordt constant bijgewerkt tijdens de navigatie en is gelijk aan de routetijd vanaf uw huidige locatie.
+De widget toont de *Aankomsttijd* of *Resterende tijd* tot het laatste bestemmingspunt. De tijd wordt tijdens de navigatie constant bijgewerkt en is gelijk aan de routetijd vanaf uw huidige locatie.
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Door te tikken | Wisselt tussen *Aankomsttijd* en *Tijd te gaan* en omgekeerd. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| Door te tikken | Wisselt tussen *Aankomsttijd* en *Resterende tijd* en omgekeerd. |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## Snelheidslimiet {#speed-limit}
 
 ![Snelheidslimietwidget](@site/static/img/widgets/speed_limit_widget_2.png)
 
-De widget *Snelheidslimiet* toont de huidige snelheidslimiet op basis van de kaartgegevens voor uw route.
+De *Snelheidslimiet*-widget toont de huidige snelheidslimiet op basis van de kaartgegevens voor uw route.
 
-- Gegevens zijn afkomstig van [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+- Gegevens zijn afkomstig van het [OpenStreetMap-project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 - Widget werkt in passieve en actieve navigatiemodi.
-- Als snelheidslimietgegevens niet beschikbaar zijn voor een specifieke weg of gebied, *verschijnt de widget niet*.
+- Als er geen snelheidslimietgegevens beschikbaar zijn voor een specifieke weg of gebied, *zal de widget niet verschijnen*.
 
-> OPMERKING: Zorg ervoor dat uw [kaarten up-to-date zijn](../personal/maps-resources.md#updates) en dat u alle benodigde regionale gegevens hebt gedownload om toegang te krijgen tot de nieuwste snelheidslimietinformatie.
+> OPMERKING: Zorg ervoor dat uw [kaarten up-to-date zijn](../personal/maps-resources.md#updates) en dat u alle benodigde regionale gegevens hebt gedownload om toegang te krijgen tot de meest recente informatie over snelheidslimieten.
 
-| | |
+| |  |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_max_speed"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_max_speed"/>* |
+|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate ios="true" ids="map_widget_max_speed"/>* |
 | Door te tikken | Geen wijzigingen |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
-
-
-## Routemanouvres {#route-maneuvers}
-
-![Volgende afslagen widget](@site/static/img/widgets/next_turns_widget.png)
-
-Deze set navigatiewidgets wordt geactiveerd tijdens de navigatie en toont informatie over de afstand tot de volgende manoeuvre.
-
-| | |
-|:------------|:------------|
-| Inschakelen | **Android:** *Menu → Scherm configureren → Links / Rechts paneel → Widget toevoegen → Routemanouvres → Volgende afslag, Volgende afslag (klein), Tweede volgende afslag* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Links / Rechts paneel → Widget toevoegen → Routemanouvres → Volgende afslag, Volgende afslag (klein), Tweede volgende afslag* |
-| Door te tikken | Als [gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) zijn ingeschakeld, worden de volgende manoeuvre en de afstand ernaartoe uitgesproken. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
-
-
-### Volgende afslag {#next-turn}
-
-![Volgende afslagen widget](@site/static/img/widgets/next_turns_widgets_andr.png)
-
-De widgets *Routemanouvres* bevatten informatie over:
-
-- **Volgende afslag** - de volgende afslag met een grote pijl die de manoeuvre voorstelt en met gegevens over de afstand ernaartoe.
-- **Volgende afslag (klein)** - de volgende afslag met een kleine pijl die de manoeuvre voorstelt en met afstandsgegevens naast de pijl.
-- **Tweede volgende afslag** - de volgende afslag na de eerste afslag, die wordt geactiveerd als deze binnen de naderingsafstand ligt.
-
-| | |
-|:------------|:------------|
-| Inschakelen | **Android:** *Menu → Scherm configureren → Links / Rechts paneel → Widget toevoegen → Volgende afslag, Volgende afslag (klein), Tweede volgende afslag* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Links / Rechts paneel → Widget toevoegen → Volgende afslag, Volgende afslag (klein), Tweede volgende afslag* |
-| Door te tikken | Als [gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) zijn ingeschakeld, worden de volgende manoeuvre en de afstand ernaartoe uitgesproken. |
-| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
-
-
-### Kleurprompts voor volgende afslag {#color-prompts-for-next-turn}
-
-Deze tabel toont de geschatte tijd totdat de prompts worden geactiveerd en de bijbehorende kleurindicatie van de pijlen om de manoeuvre uit te voeren. Voor meer informatie, raadpleeg de [technische documentatie](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) of het artikel [Gesproken aanwijzingen](../navigation/guidance/voice-navigation.md).
-
-| Kleur | ~ Trigger Tijd | Afstand | Prompt type |
-| :-------- | :------------- | :--------- | :-------------- |
-| 🟢 Groen | 5 seconden | Dichtbij | Nu afslaan |
-| 🟡 Geel | 20 seconden | Nadert | Afslaan over `x` m |
-| ⚪ Grijs | > 100 seconden | Ver weg | Voorbereiden op afslaan |
-
-
-## Rijstroken {#lanes}
-
-![Rijstroken widgets](@site/static/img/widgets/lanes_widget.png)
-
-De widget **Rijstroken** markeert de huidige rijstrook wanneer navigatie actief is en toont de rijstrookindeling voor de daadwerkelijke weg wanneer navigatie passief is. De gegevens zijn afkomstig van [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-| | |
-|:------------|:------------|
-| Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="route_guidance"/> → Widget toevoegen → <Translate android="true" ids="show_lanes"/>* |
-| | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="show_lanes"/>* |
-| Door te tikken | Geen wijzigingen |
-
-### Kleurprompts voor rijstroken {#color-prompts-for-lanes}
-
-Toont een widget op basis van de instellingen voor de naderingstijd. De kleur van de rijstrook is gekoppeld aan [gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) en de resterende tijd om de manoeuvre uit te voeren.
-
-| Kleur | ~ Trigger Tijd | Afstand | Prompt type |
-| :-------- | :------------- | :---------- | :---------- |
-| 🟢 Groen | 5 seconden | Dichtbij | [Nu afslaan](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
-| 🟡 Geel | 20 seconden | Nadert | [Afslaan over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) |
+| Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## Routebegeleiding {#route-guidance}
 
-<InfoAndroidOnly />
 
-![routebegeleiding widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+![Volgende afslagen widget](@site/static/img/widgets/next_turns_widget.png)
 
-Biedt realtime routebegeleiding, inclusief afstand tot de volgende afslag, wegnaam, huidige straatnaam en rijstrookinformatie. Widgets zijn actief tijdens navigatie.
+Biedt realtime routebegeleiding, inclusief afstand tot de volgende afslag, wegnaam, huidige straatnaam en rijstrookinformatie. Widgets zijn actief tijdens de navigatie.
 
-De widgets *Routebegeleiding* bevatten informatie over:
+De *Routebegeleiding*-widgets bevatten informatie over:
 
-- [Rijstroken](#lanes) - toont de huidige locatie van de rijstroken en markeert de rijstroken waarop u moet rijden.
-- **Volgende afslag** - de volgende afslag met een grote pijl die de manoeuvre voorstelt en met gegevens over de afstand ernaartoe.
-- **Tweede volgende afslag** is de volgende afslag na de eerste afslag, die wordt geactiveerd als deze binnen de naderingsafstand ligt.
+- [Rijstroken](#lanes) - toont de huidige locatie van rijstroken en markeert degene waarop u moet rijden. (alleen voor _Boven-/Onderpanelen_)
+- [Volgende afslag](#next-turn) - de volgende afslag met een grote pijl die de manoeuvre vertegenwoordigt en met gegevens over de afstand ernaartoe.
+- [Volgende afslag (klein)](#next-turn) - de volgende afslag met een kleine pijl die de manoeuvre vertegenwoordigt en met afstandsgegevens naast de pijl. (alleen voor _Linker-/Rechterpanelen_)
+- [Tweede volgende afslag](#next-turn) is de volgende afslag na de eerste afslag, die wordt geactiveerd als deze binnen naderingsafstand is.
 
 | | |
 |:------------|:------------|
-| Inschakelen | **Android:** *Menu → Scherm configureren → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → Rijstrook, Volgende afslag, Tweede volgende afslag* |
-| Door te tikken | **Volgende afslag**: Als [gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) zijn ingeschakeld, worden de volgende manoeuvre en de afstand ernaartoe uitgesproken. <br/> **Rijstrook**: Geen wijzigingen. |
-| Lang tikken | **Volgende afslag**: Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Rijstrook**: Geen wijzigingen. |
+| Inschakelen | **Android:** *Menu → Scherm configureren → Linker- / Rechter- / Boven- / Onderpaneel → Routebegeleiding → Widget toevoegen → Rijstrook, Volgende afslag, Tweede volgende afslag* |
+| | **iOS:** *Menu → Scherm configureren → Linker- / Rechter- / Boven- / Onderpaneel → Routebegeleiding → Widget toevoegen → Rijstrook, Volgende afslag, Tweede volgende afslag* |
+| Door te tikken | **Volgende afslag**: Als [spraakbegeleiding](../navigation/guidance/voice-navigation.md) is ingeschakeld, worden de volgende manoeuvre en de afstand ernaartoe uitgesproken. <br/> **Rijstrook**: Geen wijzigingen. |
+| Lang indrukken | **Volgende afslag**: Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Rijstroken**: Geen wijzigingen. |
+
+
+### Volgende afslag {#next-turn}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![routebegeleidingswidget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Naderende POI's/Favorieten ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- **Volgende afslag** - de volgende afslag met een grote pijl die de manoeuvre vertegenwoordigt en met gegevens over de afstand ernaartoe.
+- **Volgende afslag (klein)** - de volgende afslag met een kleine pijl die de manoeuvre vertegenwoordigt en met afstandsgegevens naast de pijl. (alleen voor _Linker- / Rechterpaneel_)
+- **Tweede volgende afslag** - de volgende afslag na de eerste afslag, die wordt geactiveerd als deze binnen naderingsafstand is.
+
+### Kleuraanwijzingen voor Volgende Afslag {#color-prompts-for-next-turn}
+
+Deze tabel toont de geschatte tijd totdat de aanwijzingen worden geactiveerd en de bijbehorende kleurindicatie van de pijlen om de manoeuvre uit te voeren. Voor meer informatie, raadpleeg de [technische documentatie](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) of het artikel [Spraakbegeleiding](../navigation/guidance/voice-navigation.md).
+
+| Kleur | ~ Activeringstijd | Afstand | Type aanwijzing |
+| :-------- | :------------- | :--------- | :-------------- |
+| 🟢 Groen | 5 seconden | Dichtbij | Sla nu af |
+| 🟡 Geel | 20 seconden | Naderend | Sla af over `x` m |
+| ⚪ Grijs | > 100 seconden | Ver weg | Bereid u voor om af te slaan |
+
+
+### Rijstroken {#lanes}
+
+![Rijstrokenwidgets](@site/static/img/widgets/lanes_widget.png)
+
+De **Rijstroken**-widget markeert de huidige rijstrook wanneer de navigatie actief is en toont de rijstrookindeling voor de huidige weg wanneer de navigatie passief is. Deze widget is alleen beschikbaar voor de Boven- en Onderpanelen. De gegevens zijn afkomstig van het [OpenStreetMap-project](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+### Kleuraanwijzingen voor Rijstroken {#color-prompts-for-lanes}
+
+Toont een widget op basis van de naderingstijdinstellingen. De kleur van de rijstrook is gekoppeld aan [spraakbegeleiding](../navigation/guidance/voice-navigation.md) en de resterende tijd om de manoeuvre uit te voeren.
+
+| Kleur | ~ Activeringstijd | Afstand | Type aanwijzing |
+| :-------- | :------------- | :---------- | :---------- |
+| 🟢 Groen | 5 seconden | Dichtbij | [Sla nu af](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Geel | 20 seconden | Naderend | [Sla af over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+
 
 
 ## Waarschuwingswidget {#alert-widget}
@@ -395,87 +381,89 @@ De widgets *Routebegeleiding* bevatten informatie over:
 
 De **Waarschuwingswidget** combineert verschillende soorten waarschuwingen die in de linkerbenedenhoek worden weergegeven terwijl u navigeert.
 
-- U kunt waarschuwingen zoals *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* en *<Translate android="true" ids="show_tunnels"/>* in- en uitschakelen. Andere waarschuwingen zijn standaard actief als de widget is ingeschakeld.
+- U heeft de mogelijkheid om waarschuwingen zoals *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* en *<Translate android="true" ids="show_tunnels"/>* in en uit te schakelen. Andere waarschuwingen zijn standaard actief als de widget is ingeschakeld.
 
-- Voor het waarschuwingstype *Snelheidslimiet* kunt u de <Translate android="true" ids="speed_limit_exceed"/>-waarde [overschrijden](../navigation/guidance/voice-navigation.md#speed-limit) aanpassen in de instellingen voor gesproken aanwijzingen om beter aan te sluiten bij de voertuigsnelheid en GPS-snelheid.
+- Voor het waarschuwingstype *Snelheidslimiet* kunt u de waarde <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) aanpassen in de instellingen voor spraakbegeleiding om beter aan te sluiten bij de snelheid van het voertuig en de GPS-snelheid.
 
-- De meeste waarschuwingen worden op het scherm weergegeven en gedurende 15 seconden via gesproken aanwijzingen aangekondigd, evenals de triggertijd voor het passeren van een Waypoint, Favoriet punt of POI. Lees meer [hier](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+- De meeste waarschuwingen worden 15 seconden op het scherm weergegeven en met een spraakbericht aangekondigd, evenals de activeringstijd voor het passeren van een Routepunt, Favoriet Punt of POI. Lees hier meer [hier](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 | | |
 |:------------|:------------|
 | Inschakelen | **<Translate android="true" ids="android_button_seq"/>** *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* |
-| | **<Translate ios="true" ids="ios_button_seq"/>** *<Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>* |
+|  | **<Translate ios="true" ids="ios_button_seq"/>** *<Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>* |
 
 
-### Waarschuwingstypen {#alert-types}
+### Waarschuwingstypes {#alert-types}
 
-Waarschuwingstypen hebben een ander visueel ontwerp, dat afhankelijk is van de **<Translate android="true" ids="driving_region"/>** en kan worden geconfigureerd via *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd streeft er niet naar om 100% identieke verkeersborden weer te geven, maar wijst op enkele overeenkomsten.
+Waarschuwingstypes hebben een verschillend visueel ontwerp, dat afhangt van de **<Translate android="true" ids="driving_region"/>** en kan worden geconfigureerd via *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd streeft er niet naar om 100% identieke verkeersborden weer te geven, maar wijst op enkele overeenkomsten.
 
 | | | |
 |:------------|:------------|:------------|
 | Naam | Beschrijving | Pictogram |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | [Verkeersremmende maatregelen](https://en.wikipedia.org/wiki/Traffic_calming) maken gebruik van fysiek ontwerp en andere maatregelen om de veiligheid voor automobilisten, voetgangers en fietsers te verbeteren. | ![Waarschuwing verkeersremmende widgets](@site/static/img/widgets/warnings_traffic_calming.png) ![Waarschuwing verkeersremmende widgets VS](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Een [voetgangersoversteekplaats](https://en.wikipedia.org/wiki/Pedestrian_crossing) (voornamelijk Brits Engels) of zebrapad is een plaats die is aangewezen voor voetgangers om een weg, straat of laan over te steken. OsmAnd toont de waarschuwing voor de ongeregelde voetgangersoversteekplaats. | ![Waarschuwing verkeersremmende widgets](@site/static/img/widgets/warnings_pedestrian.png) ![Waarschuwing verkeersremmende widgets VS](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In de meeste landen stellen de [snelheidslimieten](https://en.wikipedia.org/wiki/Speed_limit) de wettelijke maximale, gemiddelde of minimale snelheid vast waarmee wegvoertuigen op een bepaald weggedeelte mogen rijden. In OsmAnd wordt de waarschuwing weergegeven wanneer u de snelheid overschrijdt. U kunt parameters voor snelheidsoverschrijding instellen (0, 5, 10.. km/u). ![Waarschuwing ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png) | ![Waarschuwing snelheidslimiet widgets](@site/static/img/widgets/warnings_limit.png) ![Waarschuwing snelheidslimiet CA widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Waarschuwing snelheidslimiet VS widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Een tunnel is een ondergrondse doorgang, die onder een berg, rivier of een dichtbevolkt stedelijk gebied doorloopt. In OsmAnd heeft de waarschuwing *Tunnels* informatie over de tunnellengte. Als u zich in een tunnel bevindt, toont deze de afstand tot het einde van de tunnel. ![Waarschuwing ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png) | ![Waarschuwingen tunnel widgets](@site/static/img/widgets/warnings_tunnel.png) ![Waarschuwingen tunnel VS widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | [Verkeershandhavingscamera's](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) en [flitspalen](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registreren verkeersovertredingen, waaronder te hard rijden, door rood licht rijden en andere soorten illegaal gedrag. <br />**OPMERKING:** Flitspaalwaarschuwingen zijn in sommige landen verboden of illegaal. Om flitspalen volledig [te verwijderen](../personal/global-settings.md#legal) uit OsmAnd, gaat u naar het hoofdmenu *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Waarschuwing verkeersremmende widgets](@site/static/img/widgets/warnings_speed_camera.png) |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | Een [stopbord](https://en.wikipedia.org/wiki/Stop_sign) is een verkeersbord dat is ontworpen om bestuurders te waarschuwen dat ze volledig tot stilstand moeten komen en ervoor moeten zorgen dat de kruising veilig vrij is van voertuigen en voetgangers voordat ze verder rijden. | ![Waarschuwing stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |Deze waarschuwing betekent dat er een [spoorwegovergang](https://en.wikipedia.org/wiki/Crossbuck) voor u ligt. | ![Waarschuwingen spoorwegen widgets](@site/static/img/widgets/warnings_railways.png) ![Waarschuwingen spoorwegen CA widgets](@site/static/img/widgets/warnings_railways_ca.png) ![Waarschuwingen spoorwegen VS widgets](@site/static/img/widgets/warnings_railways_us.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |Deze waarschuwing geeft aan dat er een grensovergang voor u ligt.| ![Waarschuwing grensovergang widgets](@site/static/img/widgets/warnings_border_control.png) |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Gevarensymbolen of waarschuwingssymbolen](https://en.wikipedia.org/wiki/Hazard_symbol) zijn herkenbare symbolen die zijn ontworpen om te waarschuwen voor gevaarlijke materialen, locaties of objecten, waaronder elektrische stromen, gifstoffen en radioactiviteit. | ![Waarschuwingen gevaar widgets](@site/static/img/widgets/warnings_hazard.png) ![Waarschuwingen gevaar VS widgets](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | Deze waarschuwing geeft aan dat er een tolhuisje voor een tolweg voor u ligt. ![Waarschuwing tolhuisje widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Waarschuwing snelheidslimiet widgets](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | [Verkeersdrempels](https://nl.wikipedia.org/wiki/Verkeersdrempel) gebruiken fysiek ontwerp en andere maatregelen om de veiligheid voor automobilisten, voetgangers en fietsers te verbeteren. | ![Waarschuwing verkeersdrempels widgets](@site/static/img/widgets/warnings_traffic_calming.png) ![Waarschuwing verkeersdrempels VS widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Een [voetgangersoversteekplaats](https://nl.wikipedia.org/wiki/Voetgangersoversteekplaats) (voornamelijk Brits Engels) of zebrapad is een plaats die is aangewezen voor voetgangers om een weg, straat of laan over te steken. OsmAnd toont de waarschuwing voor de onbewaakte voetgangersoversteekplaats. | ![Waarschuwing verkeersdrempels widgets](@site/static/img/widgets/warnings_pedestrian.png) ![Waarschuwing verkeersdrempels VS widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In de meeste landen stellen de [snelheidslimieten op de weg](https://nl.wikipedia.org/wiki/Snelheidslimiet) de wettelijke maximum-, midden- of minimumsnelheid vast waarmee wegvoertuigen op een bepaald stuk weg mogen rijden. In OsmAnd wordt de waarschuwing getoond wanneer u de snelheid overschrijdt. U kunt parameters voor snelheidsoverschrijding instellen (0, 5, 10.. km/u). ![Waarschuwing snelheidsoverschrijding widgets](@site/static/img/widgets/ex_warning_speed.png) | ![Waarschuwing snelheidslimiet widgets](@site/static/img/widgets/warnings_limit.png) ![Waarschuwing snelheidslimiet CA widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Waarschuwing snelheidslimiet VS widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Een tunnel is een ondergrondse doorgang, die onder een berg, rivier of een druk stedelijk gebied doorgaat. In OsmAnd bevat de waarschuwing *Tunnels* informatie over de lengte van de tunnel. Als u zich in een tunnel bevindt, toont het de afstand tot het einde van de tunnel. ![Waarschuwing tunnel voorbeeld widgets](@site/static/img/widgets/ex_warning_tunnel.png) | ![Waarschuwing tunnel widgets](@site/static/img/widgets/warnings_tunnel.png) ![Waarschuwing tunnel VS widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [Verkeershandhavingscamera's](https://nl.wikipedia.org/wiki/Flitspaal) en [snelheidscamera's](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registreren verkeersovertredingen, waaronder te hard rijden, door rood licht rijden en andere soorten illegaal gedrag. <br />**OPMERKING:** Waarschuwingen voor snelheidscamera's zijn in sommige landen verboden of illegaal. Om snelheidscamera's volledig uit OsmAnd te [verwijderen](../personal/global-settings.md#legal), ga naar het hoofdmenu *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* | ![Waarschuwing verkeersdrempels widgets](@site/static/img/widgets/warnings_speed_camera.png) |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | Een [stopbord](https://nl.wikipedia.org/wiki/Stopbord) is een verkeersbord dat is ontworpen om bestuurders te informeren dat ze volledig moeten stoppen en ervoor moeten zorgen dat de kruising veilig vrij is van voertuigen en voetgangers voordat ze het bord passeren. | ![Waarschuwing stop widgets](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Deze waarschuwing betekent dat er een [spoorwegovergang](https://nl.wikipedia.org/wiki/Andreaskruis) voor u ligt. | ![Waarschuwing spoorwegen widgets](@site/static/img/widgets/warnings_railways.png) ![Waarschuwing spoorwegen CA widgets](@site/static/img/widgets/warnings_railways_ca.png) ![Waarschuwing spoorwegen VS widgets](@site/static/img/widgets/warnings_railways_us.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Deze waarschuwing geeft aan dat er een grenscontrole voor u ligt.| ![Waarschuwing grenscontrole widgets](@site/static/img/widgets/warnings_border_control.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Gevaarsymbolen of waarschuwingssymbolen](https://nl.wikipedia.org/wiki/Gevaarsymbool) zijn herkenbare symbolen die zijn ontworpen om te waarschuwen voor gevaarlijke materialen, locaties of objecten, inclusief elektrische stromen, vergiften en radioactiviteit. | ![Waarschuwing gevaar widgets](@site/static/img/widgets/warnings_hazard.png) ![Waarschuwing gevaar VS widgets](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | Deze waarschuwing geeft aan dat er een tolhokje voor een tolweg voor u ligt. ![Waarschuwing tolhokje voorbeeld widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Waarschuwing snelheidslimiet widgets](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## Straatnaam {#street-name}
 
-De widget Straatnaam toont **de huidige straatnaam** met een rechte pijl, of **de volgende straatnaam** met de uit te voeren manoeuvre. De straatnaam bestaat meestal uit een snelwegschild, een [naam](https://wiki.openstreetmap.org/wiki/Key:name), een [ref](https://wiki.openstreetmap.org/wiki/Key:ref), een [internationale ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), en een [bestemming](https://wiki.openstreetmap.org/wiki/Key:destination). Het wisselen tussen de huidige straatnaam en de volgende straatnaam gebeurt wanneer u de plaats nadert waar u de manoeuvre wilt uitvoeren (~20 seconden), vergelijkbaar met de gesproken aanwijzing [Afslaan over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+De Straatnaam-widget toont **de huidige straatnaam** met een rechte pijl, of **de volgende straatnaam** met de uit te voeren manoeuvre. De straatnaam bestaat meestal uit een wegschild, een [naam](https://wiki.openstreetmap.org/wiki/Key:name), een [ref](https://wiki.openstreetmap.org/wiki/Key:ref), een [internationale ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), en een [bestemming](https://wiki.openstreetmap.org/wiki/Key:destination).
 
-- Wanneer u over een straat of snelweg rijdt, toont de widget de naam of aanduiding van de huidige straat (weg) met een blauwe pijl.
+In de **Instellingen** van de widget kunt u selecteren om altijd **de huidige straatnaam** weer te geven en deze te gebruiken met de [**Volgende afslag**](#next-turn) widget. Als u **Informatie volgende afslag** inschakelt, gebeurt het wisselen tussen de huidige straatnaam en de volgende straatnaam wanneer u de plaats nadert waar u de manoeuvre wilt uitvoeren (~20 seconden), vergelijkbaar met de spraakbegeleiding [Sla af over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+
+- Wanneer u langs een straat of snelweg rijdt, toont de widget de naam of aanduiding van de huidige straat (weg) met een blauwe pijl.
 
   ![Straatnaam POI's widget_2](@site/static/img/widgets/street_name_widget_2.png)
 
-- Wanneer u van richting verandert, toont de widget het schema van de manoeuvre en de naam (aanduiding) van de straat (weg) waarnaar u moet afslaan.
+- Wanneer u van richting verandert, toont de widget het schema van de manoeuvre en de naam (aanduiding) van de straat (weg) waar u naartoe moet afslaan.
 
   ![Straatnaam POI's widget](@site/static/img/widgets/street_name_widget.png)
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="map_widget_top_text"/>* |
-| | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="map_widget_top_text"/>* |
 | Door te tikken | Geen wijzigingen |
 
 
-## POI's / Favorieten naderen {#approach-pois--favorites}
+## Naderende POI's / Favorieten {#approach-pois--favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![POI's/Favorieten Android naderen](@site/static/img/widgets/street_name_poi_widget_android.png)
+![Naderende POI's/Favorieten android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI's/Favorieten iOS naderen](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![Naderende POI's/Favorieten ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-De widget **POI's/Favorieten/Waypoints naderen** is gecombineerd met [Straatnaam](#street-name) en toont naderende en passerende Nuttige Plaatsen, Waypoints van gevolgde routes en Favorieten langs de route.
+De widget **Naderende POI's/Favorieten/Routepunten** wordt gecombineerd met [Straatnaam](#street-name) en toont naderende en passerende Nuttige Plaatsen, Routepunten van een gevolgde track en Favorieten langs de route.
 
 Het toont de **naam**, het **pictogram van het punt**, en 2 **afstanden**:
 
-- **Routeafstand** (boven) toont hoeveel afstand moet worden afgelegd door de volgende route.
+- **Routeafstand** (boven) toont hoeveel afstand er nog moet worden afgelegd volgens de route.
 - **Afwijkingsafstand** is een rechte afstand van het dichtstbijzijnde routepunt tot het punt zelf.
 
-**iOS** - Naast de afstand tot het dichtstbijzijnde waypoint wordt ook de zijde (links of rechts) van de route waarop het waypoint zich bevindt, weergegeven.
+**iOS** - Naast de afstand tot het dichtstbijzijnde routepunt wordt ook de kant (links of rechts) van de route waarop het routepunt zich bevindt, weergegeven.
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Navigatie starten → potloodknop* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Navigatie starten → potloodknop* |
 | Door te tikken | Geen wijzigingen |
 
 
@@ -483,10 +471,8 @@ Het toont de **naam**, het **pictogram van het punt**, en 2 **afstanden**:
 
 - [Scherm configureren](./configure-screen.md)
 - [Kaartknoppen](./map-buttons.md)
-- [Informatiewidgets](./info-widgets.md)
+- [Informatieve widgets](./info-widgets.md)
 - [Navigatiewidgets](./nav-widgets.md)
 - [Radiusliniaal en Liniaal](./radius-ruler.md)
 - [Markeringswidgets](./markers.md)
 - [Snelle actie](./quick-action.md)
-
-> *Laatst bijgewerkt: april 2025*

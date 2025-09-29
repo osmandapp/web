@@ -1,7 +1,7 @@
 ---
-source-hash: a37206b0786e0c2a77928c36df15a5b99385e8522ae259e744dfd7222696eb76
+source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
 sidebar_position: 1
-title: Buscar todo
+title:  Buscar todo
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Resumen {#overview}
 
-**Buscar** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar la Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (POI) o búsquedas anteriores. La [Búsqueda de dirección](#search-address) le permite ingresar la dirección para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [POI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. El [Historial de búsqueda](#search-history) guarda búsquedas anteriores para un acceso rápido a lugares encontrados previamente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de POI cercanos.
+**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar la Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI) o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La búsqueda en el [Historial](#search-history) guarda las búsquedas anteriores para un acceso rápido a los lugares encontrados previamente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
 
 
 ## Cómo usar {#how-to-use}
@@ -28,23 +28,23 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Lista de POI de búsqueda Android](@site/static/img/search/poi_list_android.png)
+![Lista de PDI de búsqueda Android](@site/static/img/search/poi_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Lista de POI de búsqueda iOS](@site/static/img/search/poi_list_1_ios.png)  
+![Lista de PDI de búsqueda iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Debe seguir uno de los pasos para iniciar su búsqueda:
+Debe seguir uno de los siguientes pasos para iniciar su búsqueda:
 
-- Toque el [botón de Búsqueda](../widgets/map-buttons.md#search) en la pantalla de la aplicación del mapa e ingrese su consulta.
+- Toque el [botón de Búsqueda](../widgets/map-buttons.md#search) en la pantalla de la aplicación de mapas e introduzca su consulta.
 
-- Vaya al *Menú principal → Buscar → ingrese su consulta de búsqueda*.
+- Vaya al *Menú principal → Búsqueda → introduzca su consulta de búsqueda*.
 
 - Al prepararse para iniciar una ruta, toque [*Navegación → Establecer destino → Campo de búsqueda*](../navigation/setup/route-navigation.md#set-target-point) *→ consulta de búsqueda*.  
 
@@ -59,22 +59,22 @@ Información importante:
 
 ***Lista de consultas*:**
 
-- Coordenadas todos los formatos disponibles.
+- Coordenadas en todos los formatos disponibles.
 - Dirección:
     - Calle, Número de casa;
     - Ciudad, Calle;
     - Intersecciones de calles;
     - Ciudad;
-    - Datos de Tiger;
+    - Datos Tiger;
     - Código postal, Número de casa;
     - Código postal, Calle, Número de casa.
-- Buscar POI por nombre y por categoría con filtros adicionales.
-- Buscar rutas OSM por nombre y por categoría con filtros adicionales.
-- Buscar por picos y volcanes más prominentes.
-- Buscar por Favoritos y Puntos de referencia.
-- Buscar iconos por nombres de subcategorías de POI.
-- Buscar por pistas.
-- Buscar por lugares de negocios y nombres de marcas.
+- Búsqueda de PDI por nombre y por categoría con filtros adicionales.
+- Búsqueda de rutas OSM por nombre y por categoría con filtros adicionales.
+- Búsqueda por los picos y volcanes más prominentes.
+- Búsqueda por Favoritos y Waypoints.
+- Búsqueda de iconos por nombres de subcategorías de PDI.
+- Búsqueda por tracks.
+- Búsqueda por locales comerciales y nombres de marcas.
 - Búsqueda en línea (Nominatim).
 - Búsqueda de URL (Google y OsmAnd).
 - Historial de búsqueda.
@@ -89,11 +89,11 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Ordenar resultados de búsqueda {#sorting-search-results}
 
-OsmAnd ordena automáticamente los resultados de búsqueda según tres criterios principales:
+OsmAnd ordena automáticamente los resultados de la búsqueda según tres criterios principales:
 
-1. **Consultas coincidentes** — Los resultados que contienen coincidencias exactas o parciales con las palabras que ingresó se muestran más arriba.
+1. **Coincidencia de consultas** — Los resultados que contienen coincidencias exactas o parciales con las palabras que introdujo se muestran más arriba.
 
-2. **Tipo de objeto** - Al ordenar por nombre, las ciudades y calles tienen prioridad sobre los POI al mostrar los resultados.
+2. **Tipo de objeto** - Al ordenar por nombre, las ciudades y calles tienen prioridad sobre los PDI al mostrar los resultados.
 
 3. **Distancia** - Cuando los resultados tienen criterios de coincidencia y tipos de objeto similares, los resultados más cercanos a la ubicación actual del usuario se muestran primero.
 
@@ -103,7 +103,7 @@ OsmAnd ordena automáticamente los resultados de búsqueda según tres criterios
 
 - No hay una configuración manual para cambiar el orden de clasificación de los resultados de búsqueda.
 - El proceso de clasificación es **gestionado automáticamente** por OsmAnd, basándose en los criterios enumerados anteriormente.
-- En los casos en que los resultados de búsqueda son demasiado amplios, OsmAnd puede **limitar los resultados mostrados** a aquellos con la mayor precisión de coincidencia de palabras.
+- En los casos en que los resultados de la búsqueda son demasiado amplios, OsmAnd puede **limitar los resultados mostrados** a aquellos con la mayor precisión de coincidencia de palabras.
 
 
 ### Búsqueda de texto completo {#full-text-search}
@@ -124,21 +124,21 @@ OsmAnd ordena automáticamente los resultados de búsqueda según tres criterios
 
 </Tabs>
 
-Puede encontrar la ubicación requerida en el mapa de la lista de puntos que aparecen a medida que ingresa una consulta.
+Puede encontrar la ubicación requerida en el mapa a partir de la lista de puntos que aparecen a medida que introduce una consulta.
 
 1. Comience a escribir el nombre o la dirección en la barra de búsqueda.
 
 2. A medida que escribe, la lista muestra los puntos más cercanos a la consulta, aproximadamente en este orden:
-    - Categorías de POI
-    - Favoritos, POI, Rutas y Puntos de referencia
-    - Pistas
+    - Categorías de PDI
+    - Favoritos, PDI, Rutas y Waypoints
+    - Tracks
     - Direcciones
     - Mapas para descargar
 
-3. Si ingresa un [nombre de marca](../search/search-poi.md#how-to-use), la lista comenzará con los resultados por este nombre, ordenados por la distancia más cercana.
+3. Si introduce un [nombre de marca](../search/search-poi.md#how-to-use), la lista comenzará con los resultados por este nombre, ordenados por la distancia más cercana.
 
 :::note Limitaciones de los datos TIGER en las búsquedas de direcciones
-OsmAnd ha integrado [**datos TIGER**](../../technical/algorithms/trace-address-search-issues.md#trace-address-search-issues#us-address-search-and-tiger-data) en los mapas de EE. UU. para proporcionar información sobre las direcciones de EE. UU. El conjunto de datos TIGER se basa en **rangos** y no contiene números de casa precisos, por lo que algunas direcciones pueden faltar o ser inexactas.
+OsmAnd ha integrado los [**datos TIGER**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) en los mapas de EE. UU. para proporcionar información sobre las direcciones de EE. UU. El conjunto de datos TIGER se basa en **rangos** y no contiene números de casa precisos, por lo que algunas direcciones pueden faltar o ser inexactas.
 :::
 
 
@@ -148,21 +148,21 @@ OsmAnd ha integrado [**datos TIGER**](../../technical/algorithms/trace-address-s
 
 <TabItem value="android" label="Android">
 
-![Buscar POI Android](@site/static/img/search/poi_overlay_android.png)
+![Buscar PDI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Buscar POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Buscar PDI iOS](@site/static/img/search/poi_overlay_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd le permite buscar puntos mostrados en un mapa en la pantalla de su dispositivo. Para hacer esto:
+OsmAnd le permite buscar puntos que se muestran en un mapa en la pantalla de su dispositivo. Para hacer esto:
 
-- Use [una de las formas](#how-to-use) para acceder a la herramienta de Búsqueda.
+- Utilice [una de las formas](#how-to-use) para acceder a la herramienta de Búsqueda.
 - Comience a escribir el nombre o la dirección en el cuadro de búsqueda.
 - Aparecerá un cuadro con el botón *Mostrar en el mapa* debajo del campo de entrada de búsqueda.
 - Toque este botón para ir al mapa.
@@ -171,30 +171,30 @@ OsmAnd le permite buscar puntos mostrados en un mapa en la pantalla de su dispos
 
 ### Buscar cerca {#search-nearby}
 
-![Buscar Android](@site/static/img/search/search_all_near_location_andr.png)
+![Búsqueda Android](@site/static/img/search/search_all_near_location_andr.png)
 
-Puede usar la búsqueda en las cercanías de una ubicación específica. Para hacer esto, seleccione el punto requerido [de la lista en el menú de búsqueda](#full-text-search) o selecciónelo directamente en el mapa. En el [menú contextual del mapa](../map/map-context-menu.md#actions), seleccione *Acciones → Buscar cerca*.
+Puede utilizar la búsqueda en las proximidades de una ubicación específica. Para ello, seleccione el punto requerido [de la lista en el menú de búsqueda](#full-text-search) o selecciónelo directamente en el mapa. En el [menú contextual del mapa](../map/map-context-menu.md#actions), seleccione *Acciones → Buscar cerca*.
 
 
-## Buscar dirección {#search-address}
+## Búsqueda de dirección {#search-address}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Buscar Android](@site/static/img/search/search_address_2_andr.png)
+![Búsqueda Android](@site/static/img/search/search_address_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Buscar iOS](@site/static/img/search/street_search_ios.png)  
+![Búsqueda iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-**Buscar dirección** utiliza datos de OpenStreetMap. Este tipo de búsqueda le permite encontrar la ubicación y la dirección a una dirección específica de una lista ya ordenada. Lea más en el artículo [Buscar dirección](./search-address.md).
+La **Búsqueda de dirección** utiliza datos de OpenStreetMap. Este tipo de búsqueda le permite encontrar la ubicación y la dirección a una dirección específica a partir de una lista ya ordenada. Lea más en el artículo [Búsqueda de dirección](./search-address.md).
 
 
 ## Historial de búsqueda {#search-history}
@@ -203,76 +203,74 @@ Puede usar la búsqueda en las cercanías de una ubicación específica. Para ha
 
 <TabItem value="android" label="Android">
 
-![Historial de búsqueda](@site/static/img/search/history_search_android.png)
+![Búsqueda en el historial](@site/static/img/search/history_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Historial de búsqueda](@site/static/img/search/history_search_ios.png)
+![Búsqueda en el historial](@site/static/img/search/history_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Puede usar el **Historial de búsqueda** para buscar nuevamente lugares, direcciones o lugares visitados con frecuencia sin volver a ingresar la consulta. Puede encontrar más detalles en el artículo [Historial de búsqueda](./search-history.md).
+Puede utilizar el **Historial de búsqueda** para buscar de nuevo lugares, direcciones o lugares visitados con frecuencia encontrados anteriormente sin volver a introducir la consulta. Se pueden encontrar más detalles en el artículo [Historial de búsqueda](./search-history.md).
 
 
-## Buscar POI {#search-poi}
+## Búsqueda de PDI {#search-poi}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Buscar POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Buscar PDI Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Buscar POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![Buscar PDI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La **Búsqueda de POI** es una lista, ordenada por categoría, con la que puede encontrar fácilmente lugares y servicios cerca de su ubicación actual o de un área seleccionada en el mapa.
+La **Búsqueda de PDI** es una lista, ordenada por categoría, con la que puede encontrar fácilmente lugares y servicios cerca de su ubicación actual o de un área seleccionada en el mapa.
 
-- La [búsqueda de POI personalizada](./search-poi.md#custom-poi-search) le permite combinar diferentes categorías de POI para simplificar y personalizar su búsqueda.  
+- La [búsqueda personalizada de PDI](./search-poi.md#custom-poi-search) le permite combinar diferentes categorías de PDI para simplificar y personalizar su búsqueda.  
 Por ejemplo, si necesita encontrar varios tipos de servicios en un área determinada o en una sección determinada de una ruta.
 
-- OsmAnd proporciona una [búsqueda en línea](./search-poi.md#online-search) que funciona en tiempo real, lo que le brinda acceso rápido a los resultados de búsqueda.  
-Es conveniente usarlo cuando los mapas de la región no están disponibles, pero se requiere una conexión a Internet constante y estable.
+- OsmAnd proporciona una [búsqueda en línea](./search-poi.md#online-search) que funciona en tiempo real, dándole acceso rápido a los resultados de la búsqueda.  
+Es conveniente de usar cuando los mapas de la región no están disponibles, pero se requiere una conexión a Internet constante y estable.
 
-- Lea el artículo [Buscar POI](./search-poi.md) para obtener más información.
+- Lea el artículo [Búsqueda de PDI](./search-poi.md) para obtener más información.
 
 
-## Buscar coordenadas {#search-coordinates}
+## Búsqueda de coordenadas {#search-coordinates}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Buscar coordenadas Android](@site/static/img/search/coordinates_search_android.png)
+![Búsqueda de coordenadas Android](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Buscar coordenadas iOS](@site/static/img/search/coordinates_search_ios.png)
+![Búsqueda de coordenadas iOS](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La búsqueda de coordenadas proporciona una ubicación precisa. Puede ingresar coordenadas precisas obtenidas, por ejemplo, de otras fuentes como un mapa, un dispositivo GPS o servicios en línea, lo que es particularmente útil cuando se trata de lugares que no tienen una dirección exacta. Para obtener más información, consulte el artículo [Buscar coordenadas](./search-coordinates.md).
+La búsqueda de coordenadas proporciona una ubicación precisa. Puede introducir coordenadas precisas obtenidas, por ejemplo, de otras fuentes como un mapa, un dispositivo GPS o servicios en línea, lo que es particularmente útil cuando se trata de lugares que no tienen una dirección exacta. Para obtener más información, consulte el artículo [Búsqueda de coordenadas](./search-coordinates.md).
 
 
 ## Artículos relacionados {#related-articles}
 
-- [Buscar dirección](./search-address.md)
+- [Búsqueda de dirección](./search-address.md)
 - [Historial de búsqueda](./search-history.md)
-- [Buscar POI](./search-poi.md)
-- [Buscar coordenadas](./search-coordinates.md)
-
-> *Última actualización: abril de 2025*
+- [Búsqueda de PDI](./search-poi.md)
+- [Búsqueda de coordenadas](./search-coordinates.md)

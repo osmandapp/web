@@ -1,5 +1,5 @@
 ---
-source-hash: 7cce24b2cd87bfae38687f74d452a20648b7bb08c58e4e9a6b8489cb8398e2a2
+source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
 sidebar_position: 16
 title: Métricas do Veículo
 ---
@@ -15,30 +15,28 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
 
-
-## Visão geral {#overview}
+## Visão Geral {#overview}
 
 :::info Recurso pago
-O plugin Métricas do Veículo é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd. As informações de velocidade do veículo e velocidade do motor estão disponíveis gratuitamente no OsmAnd.
+O plugin Métricas do Veículo é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd. As informações de velocidade do veículo e rotações do motor estão disponíveis gratuitamente no OsmAnd.
 :::
 
 O **plugin Métricas do Veículo** permite o monitoramento de dados do veículo em tempo real via [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Os usuários podem rastrear métricas essenciais, como desempenho do motor, eficiência de combustível e velocidade, permitindo a manutenção proativa do veículo e a solução de problemas.
 
-Os [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante do diagnóstico automotivo moderno. Com o streaming de dados em tempo real, os usuários obtêm informações instantâneas sobre os sistemas do veículo, facilitando a manutenção preventiva e reduzindo os custos de reparo. Essas ferramentas são vitais tanto para uso pessoal quanto para serviços automotivos profissionais.
+Os [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante do diagnóstico automotivo moderno. Com a transmissão de dados em tempo real, os usuários obtêm informações instantâneas sobre os sistemas do veículo, facilitando a manutenção preventiva e reduzindo os custos de reparo. Essas ferramentas são vitais tanto para uso pessoal quanto para serviços automotivos profissionais.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
+![Configurações OBD](@site/static/img/plugins/obd/obd_overview_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OBD settings](@site/static/img/plugins/obd/obd_overview_ios.png)
+![Configurações OBD](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
@@ -49,7 +47,7 @@ Os [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante
 
 Para usar dados de um scanner OBD-II:
 
-1. [Adquira](../purchases/) uma **assinatura OsmAnd Pro**. (A *velocidade do veículo* e a *velocidade do motor* são gratuitas.)
+1. [Adquira](../purchases/) uma **assinatura OsmAnd Pro**. (*Velocidade do veículo* e *Rotações do motor* são gratuitos.)
 2. [Ative](../plugins/index.md#enable--disable) o plugin Métricas do Veículo na seção Plugins do *Menu Principal*.
 3. **Ligue** o Bluetooth no seu dispositivo.
 4. [Conecte](#pair-odb-ii-scanner) o scanner OBD-II à porta do seu veículo.
@@ -67,7 +65,7 @@ Para usar dados de um scanner OBD-II:
 
 | | |
 |--|--|
-|![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
+|![Conexão OBD](@site/static/img/plugins/obd/obd_connect.png)|![Conexão OBD](@site/static/img/plugins/obd/obd_connect_2.png)|
 
 </TabItem>
 
@@ -75,7 +73,7 @@ Para usar dados de um scanner OBD-II:
 
 | | |
 |--|--|
-|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+|![Conexão OBD](@site/static/img/plugins/obd/obd_connect_ios.png)|![Conexão OBD](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
 </TabItem>
 
@@ -99,7 +97,7 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
+|![Configurações OBD](@site/static/img/plugins/obd/obd_settings.png)|![Configurações OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
 
 
 </TabItem>
@@ -110,32 +108,32 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+|![Configurações OBD](@site/static/img/plugins/obd/obd_settings_ios.png)|![Configurações OBD](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
 </TabItem>
 
 </Tabs>
 
 - **Conectar / Desconectar**. Estabelece ou encerra a conexão com o sensor OBD-II.
-- **Configurações**. Abre a tela de configurações OBD-II, permitindo o gerenciamento da conexão e o acesso aos parâmetros disponíveis do veículo.
+- **Configurações**. Abre a tela de configurações do OBD-II, permitindo o gerenciamento da conexão e o acesso aos parâmetros disponíveis do veículo.
 - **Renomear**. Permite atribuir um nome personalizado ao sensor para facilitar a identificação.
-- **Esquecer**. Remove o sensor OBD-II previamente emparelhado da lista, exigindo um novo emparelhamento se necessário posteriormente.
+- **Esquecer**. Remove o sensor OBD-II emparelhado anteriormente da lista, exigindo um novo emparelhamento, se necessário posteriormente.
 
 
 ## Lista de Métricas {#metrics-list}
 
-As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico avançadas permitem a manutenção preventiva interpretando esses parâmetros:
+As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico avançadas permitem a manutenção preventiva, interpretando esses parâmetros:
 
 *Temperatura:*
 
 - **Temperatura de Admissão**. Exibe a temperatura do ar que entra no coletor de admissão.
 - **Temperatura Ambiente**. Monitora as condições externas.
-- **Temperatura do Líquido de Arrefecimento**. Rastreia a eficiência de resfriamento do motor.
+- **Temperatura do Líquido de Arrefecimento**. Rastreia a eficiência do resfriamento do motor.
 - **Temperatura do Óleo do Motor**. Exibe a condição do óleo durante a operação.
 
 *Motor:*
 
-- **Velocidade do Motor**. Monitora as rotações por minuto (RPM) do motor.
+- **Rotações do Motor**. Monitora as rotações por minuto (RPM) do motor.
 - **Tempo de Funcionamento do Motor**. Rastreia o tempo de operação do motor.
 - **Carga Calculada do Motor**. Indica a porcentagem de carga de trabalho do motor.
 
@@ -164,7 +162,7 @@ As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico 
 
 | | |
 |--|--|
-|![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
+|![Gravação OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Gravação OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
 
 
 </TabItem>
@@ -175,7 +173,7 @@ As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico 
 
 | | |
 |--|--|
-|![OBD recording](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+|![Gravação OBD](@site/static/img/plugins/obd/obd_recording_ios.png)| ![Gravação OBD](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
 
 </TabItem>
 
@@ -185,13 +183,13 @@ As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico 
 
 Para incluir dados OBD-II em um arquivo GPX, você precisa selecionar os parâmetros desejados para gravação usando o [plugin Gravação de Viagem](../plugins/trip-recording.md#recording-settings). Isso permite analisar as métricas do veículo junto com os dados da sua viagem.
 
-#### Tags {#tags}
+### Tags {#tags}
 
 O OsmAnd aplica nomes de tags personalizados para métricas do veículo no [arquivo GPX](../plugins/trip-recording.md#recorded-gpx-file). Por exemplo:
 
 - `vm_eotemp`: Temperatura do Óleo do Motor.
 - `vm_fpress`: Pressão do Combustível.
-- `vm_espeed`: Velocidade do Motor.
+- `vm_espeed`: Rotações do Motor.
 
 Essas tags facilitam a identificação e utilização de dados específicos do veículo ao revisar o arquivo GPX gravado.
 
@@ -202,22 +200,22 @@ Essas tags facilitam a identificação e utilização de dados específicos do v
 
 <TabItem value="android" label="Android">
 
-**Android.** Vá para: *Menu → Configurar tela → Widgets → Escolha um painel → Métricas do Veículo*
+**Android.** Vá para: *Menu → Configurar tela → Widgets → Escolher um painel → Métricas do Veículo*
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
+|![Configurações OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Configurações OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Vá para: *Menu → Configurar tela → Widgets → Escolha um painel → Métricas do Veículo*
+**iOS.** Vá para: *Menu → Configurar tela → Widgets → Escolher um painel → Métricas do Veículo*
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Configurações OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Configurações OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
@@ -229,7 +227,7 @@ Os [widgets de Métricas do Veículo](../widgets/info-widgets.md#vehicle-metrics
 
 ### Configurações do Widget {#widget-settings}
 
-Os widgets exibem dados chave do seu dispositivo OBD-II conectado em tempo real, como velocidade, métricas do motor e consumo de combustível. Certifique-se de que eles estejam visíveis antes de iniciar sua viagem para rastrear as métricas sem problemas.
+Os widgets exibem dados chave do seu dispositivo OBD-II conectado em tempo real, como velocidade, métricas do motor e consumo de combustível. Certifique-se de que estejam visíveis antes de iniciar sua viagem para rastrear as métricas sem problemas.
 
 Alguns widgets oferecem opções de modo de exibição:
 
@@ -237,10 +235,8 @@ Alguns widgets oferecem opções de modo de exibição:
 - **Média**. Exibe valores médios em um intervalo de tempo configurável (15 segundos a 60 minutos).
 
 
-## Artigos relacionados {#related-articles}
+## Artigos Relacionados {#related-articles}
 
 - [Interagir com o Mapa](../../user/map/interact-with-map.md)
 - [Configurações Globais](../../user/personal/global-settings.md)
 - [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
-
-> *Última atualização: Agosto de 2025*

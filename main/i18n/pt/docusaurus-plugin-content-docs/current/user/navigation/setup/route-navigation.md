@@ -1,7 +1,7 @@
 ---
-source-hash: 5614ff96c05b150dc149ccfc7296cdeb953b69993517dcf326e81979e07d4a0f
+source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
 sidebar_position: 1
-title: Preparação de Rotas
+title: Preparação de Rota
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O recurso **Preparação de Rotas** no OsmAnd oferece orientação de navegação passo a passo para vários [tipos de roteamento](./../routing/osmand-routing.md#routing-types), incluindo [direção](./../routing/car-based-routing.md), [caminhada](./../routing/pedestrian-routing.md), ciclismo, [equitação](./../routing/horse-routing.md) e [esqui](./../routing/ski-routing.md). Os usuários podem personalizar as configurações de navegação, adicionar destinos e otimizar rotas para maior eficiência.
+O recurso **Preparação de rota** no OsmAnd oferece orientação de navegação passo a passo para vários [tipos de roteamento](./../routing/osmand-routing.md#routing-types), incluindo [condução](./../routing/car-based-routing.md), [caminhada](./../routing/pedestrian-routing.md), ciclismo, [equitação](./../routing/horse-routing.md) e [esqui](./../routing/ski-routing.md). Os usuários podem personalizar as configurações de navegação, adicionar destinos e otimizar rotas para maior eficiência.
 
 :::tip
 
@@ -29,7 +29,7 @@ O recurso **Preparação de Rotas** no OsmAnd oferece orientação de navegaçã
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Tela de navegação Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png) ![Tela de navegação Android 3](@site/static/img/navigation/route/navigation_by_route_andr_3.png)
 
@@ -48,15 +48,15 @@ O recurso **Preparação de Rotas** no OsmAnd oferece orientação de navegaçã
 
 **Passo 1: Baixar mapas.**
 
-Antes de usar a navegação offline, certifique-se de que os [mapas necessários estejam baixados](../../start-with/download-maps.md). Vá para *Menu → Mapas e Recursos → Baixar Mapas* para instalar mapas para sua região.
+Antes de usar a navegação offline, certifique-se de que os [mapas necessários foram baixados](../../start-with/download-maps.md). Vá para *Menu → Mapas e Recursos → Baixar Mapas* para instalar mapas para sua região.
 
 **Passo 2: Configurar perfis de navegação.**
 
 [Configure os perfis](../../personal/profiles.md) que você pretende usar:
 
-- Defina [parâmetros do veículo](../guidance/navigation-settings.md#size-parameters) (*importante para caminhoneiros*), selecione o [tipo de motor](../guidance/navigation-settings.md#fuel-used-by-motor) (*opcional*).
+- Defina [parâmetros do veículo](../guidance/vehicle-parameters.md#size-parameters) (*importante para motoristas de caminhão*), selecione o [tipo de motor](../guidance/vehicle-parameters.md#fuel-used-by-motor) (*opcional*).
 
-- Configure a [aparência da linha da rota](../guidance/map-during-navigation#route-line-appearance) (*opcional*, disponível para usuários Pro ([Android](../../purchases/android.md#pro-features-pro-features) / [iOS](../../purchases/ios.md#pro-features-pro-features))).
+- Configure a [aparência da linha da rota](../guidance/map-during-navigation#route-line-appearance) (*opcional*, disponível para usuários Pro ([Android](../../purchases/android.md#pro-features) / [iOS](../../purchases/ios.md#pro-features))).
 
 - Configure [avisos de voz](../guidance/voice-navigation.md).
 
@@ -68,13 +68,13 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
     - Aguarde até que a rota seja calculada. Depois disso, você poderá obter informações adicionais sobre sua rota na *[seção Detalhes](./route-details.md#overview)*.
     - Você pode alternar entre diferentes [tipos de roteamento](./../routing/osmand-routing.md#routing-types) (perfis) para obter o melhor resultado.
     - Adicione [destinos intermediários](#intermediate-destinations) (opcional).
-    - Você também pode alterar o ponto de partida da [localização atual](../../map/interact-with-map#my-location-and-zoom) para a localização desejada.
+    - Você também pode alterar o ponto de partida da [localização atual](../../map/interact-with-map.md#my-location-and-zoom) para a desejada.
 
-2. [Configurações de Navegação](#settings) adicionais podem ser usadas dependendo dos seus propósitos (você pode configurar quais estradas evitar ou preferir, economizar combustível ou escolher a rota mais rápida, etc.).
+2. [Configurações de Navegação](#settings) adicionais podem ser usadas dependendo de seus propósitos (você pode configurar quais estradas evitar ou preferir, economizar combustível ou escolher a rota mais rápida, etc.).
 
 3. [Inicie](#start--stop-navigation) a navegação ou primeiro [simule a navegação](#simulated-navigation) (com esta função você pode testar sua rota antes de realmente percorrê-la).
 
-4. Enquanto estiver na rota, você pode [*Pausar/Retomar*](#pause--resume-navigation) a navegação e [*Parar*](#start--stop-navigation).
+4. Enquanto estiver na rota, você pode [*Pausar/Retomar*](#pause--resume-navigation) a navegação e [*Parar*](#start--stop-navigation) ela.
 
 
 :::note
@@ -88,9 +88,9 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
 
 Existem 3 maneiras de acessar o menu de navegação:
 
-- O [*botão de Navegação*](../../widgets/map-buttons.md#directions) na tela do mapa.
-- *Direção para/de* em um [*menu de contexto do mapa*](../../map/map-context-menu.md#directions-to--from).
-- Seção de Navegação no [*Menu Principal*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- O [*botão Navegação*](../../widgets/map-buttons.md#directions) na tela do mapa.  
+- *Direção para/de* em um [*menu de contexto do mapa*](../../map/map-context-menu.md#directions-to--from).  
+- Seção de navegação no [*Menu Principal*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -102,13 +102,13 @@ Existem 3 maneiras de acessar o menu de navegação:
 
 <TabItem value="ios" label="iOS">
 
-![Menu de navegação iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)
+![Menu de navegação iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)  
 
 </TabItem>
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Define o local de partida (padrão: [*Minha localização atual*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Define a localização inicial (padrão: [*Minha Localização Atual*](../../map/interact-with-map.md#my-location-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Usado para [definir seu ponto de destino](#set-target-point).
 - **Adicionar** &nbsp;&#43; - Insere [pontos intermediários](../../widgets/nav-widgets.md#distance-to-intermediate) ao longo da rota.
 - **Trocar** &nbsp;&#8595;&#8593; - Inverte os pontos de *Início* e *Fim*.
@@ -120,11 +120,11 @@ Defina seu destino no *Menu de Navegação* usando:
 - Pontos favoritos especiais [Casa / Trabalho](#use-home-or-work-points).
 - Rota anterior ou [Histórico](../../personal/global-settings.md#history).
 - O botão **Cancelar** leva de volta à tela principal.
-- O [botão Iniciar](#start--stop-navigation) inicia a navegação após o cálculo da rota ter terminado.
-
+- O [botão Iniciar](#start--stop-navigation) inicia a navegação após o término do cálculo da rota.
+  
 ### Selecionar Ponto de Partida {#select-starting-point}
 
-Quanto ao ponto de partida, você pode escolher sua localização atual, a localização de um [ponto Favorito](../../map/point-layers-on-map.md#favorites), selecionar um ponto no mapa ou usar a [Pesquisa](../../search/index.md). Você também pode definir um ponto de partida no [menu de contexto do mapa](../../map/map-context-menu.md) selecionando a função [Direções de](../../map/map-context-menu.md#directions-to--from).
+Quanto ao ponto de partida, você pode escolher sua localização atual, a localização de um [ponto Favorito](../../map/point-layers-on-map.md#favorites), selecionar um ponto no mapa ou usar a [Pesquisa](../../search/index.md). Você também pode definir um ponto de partida no [menu de contexto do mapa](../../map/map-context-menu.md) selecionando a função [Direções de](../../map/map-context-menu.md#directions-to--from).  
 
 
 ### Definir Ponto de Destino {#set-target-point}
@@ -144,10 +144,10 @@ Quanto ao ponto de partida, você pode escolher sua localização atual, a local
 
 </Tabs>
 
-O mais importante para iniciar a navegação é determinar seu destino. O ponto de destino pode ser encontrado usando a função [*Pesquisar*](../../search/index.md#overview), ou simplesmente em um mapa. Você também pode definir o ponto de destino no [*Menu de Navegação*](#navigation-menu):
+O mais importante para iniciar a navegação é determinar seu destino. O ponto de destino pode ser encontrado usando a função [*Pesquisar*](../../search/index.md#overview) ou simplesmente em um mapa. Você também pode definir o ponto de destino no [*Menu de Navegação*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Abre [o menu de pesquisa](../../search/index.md).
-- **<Translate android="true" ids="shared_string_address"/>** - Abre o [menu de pesquisa de endereço](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Abre [o menu de pesquisa de endereço](../../search/search-address.md).
 - **<Translate android="true" ids="shared_string_select_on_map"/>** - Abre o mapa para escolher um ponto de destino tocando no mapa.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Permite usar [Favorito](../../personal/favorites.md) como destino.
 - **<Translate android="true" ids="shared_string_markers"/>** - Permite escolher um dos [Marcadores de mapa](../../personal/markers.md) como ponto de destino.
@@ -179,7 +179,7 @@ O mais importante para iniciar a navegação é determinar seu destino. O ponto 
 - *&nbsp;&#43; Adicionar* - abre o menu de contexto *Adicionar intermediário*.
 - *&nbsp;&#9776; Limpar tudo* - permite limpar todos os pontos intermediários.
 
-Se você escolher **Ordenar** (*Android*) ou **Opções** (*iOS*) na lista de destinos, você terá acesso a opções especiais para ajustar a ordem da navegação para pontos intermediários.
+Se você escolher **Ordenar** (*Android*) ou **Opções** (*iOS*) na lista de destinos, você terá acesso a opções especiais para ajustar a ordem de navegação para pontos intermediários.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -197,7 +197,7 @@ Se você escolher **Ordenar** (*Android*) ou **Opções** (*iOS*) na lista de de
 
 </Tabs>
 
-Neste menu, você pode encontrar opções adicionais para gerenciar os pontos de destino:
+Neste menu você pode encontrar opções adicionais para gerenciar os pontos de destino:
 
 - **<Translate android="true" ids="intermediate_items_sort_by_distance"/>** - O OsmAnd oferecerá a rota mais curta entre todos os seus destinos, no entanto, a ordem da visita pode ser editada. O ponto de partida e o destino final não serão alterados.
 
@@ -227,33 +227,33 @@ Neste menu, você pode encontrar opções adicionais para gerenciar os pontos de
 
 </Tabs>
 
-As abas **Casa** e **Trabalho** (ou [Pontos especiais](../../personal/favorites.md#special-favorites-personal) para Favoritos) podem ser usadas para definir rapidamente pontos de destino no menu de navegação. Se você não inseriu os endereços dos Favoritos Especiais, essas células permanecerão vazias. Se você tocar neste campo, será solicitado a criar esses POIs.
+As abas **Casa** e **Trabalho** (ou [Pontos especiais](../../personal/favorites.md#special-favorites-personal) para Favoritos) podem ser usadas para definir rapidamente pontos de destino no menu de navegação. Se você não inseriu os endereços dos Favoritos especiais, essas células permanecerão vazias. Se você tocar neste campo, será solicitado a criar esses POIs.  
 
 
 ### Histórico de Rotas Anteriores {#history-of-previous-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Rota anterior Android](@site/static/img/navigation/route/previous_andr.png)
+![Rota anterior Android](@site/static/img/navigation/route/previous_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota anterior iOS](@site/static/img/navigation/route/previous_ios.png)
+![Rota anterior iOS](@site/static/img/navigation/route/previous_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Se a gravação do [Histórico de Navegação](../../personal/global-settings.md#history) estiver ativada, você poderá usar as rotas ou destinos anteriores da lista de histórico para navegação. Esta opção pode ser útil para acesso rápido a rotas frequentemente usadas. Os itens na lista de histórico são classificados pelo uso mais recente, começando pelo mais novo.
+Se o registro do [Histórico de Navegação](../../personal/global-settings.md#history) estiver ativado, você poderá usar as rotas ou destinos anteriores da lista de histórico para navegação. Esta opção pode ser útil para acesso rápido a rotas frequentemente usadas. Os itens na lista de histórico são classificados pelo uso mais recente, começando pelo mais novo.  
 
 :::note
 
-- Quando o [registro de dados do Histórico](../../personal/global-settings.md#history-options) está desativado, você não será solicitado a usar rotas anteriores para navegação.
-- Você pode excluir alguns ou todos os registros de histórico sobre suas rotas anteriores. Isso pode ser feito na guia *[Histórico de navegação](../../personal/global-settings.md#history-options)* da opção Histórico (*Menu → Configurações → Configurações do OsmAnd → Histórico*).
+- Quando o [registro de dados do Histórico](../../personal/global-settings.md#history) estiver desativado, você não será solicitado a usar rotas anteriores para navegação.
+- Você pode excluir alguns ou todos os registros de histórico sobre suas rotas anteriores. Isso pode ser feito na aba *[Histórico de navegação](../../personal/global-settings.md#history)* da opção Histórico (*Menu → Configurações → Configurações do OsmAnd → Histórico*).
 
 :::
 
@@ -264,7 +264,7 @@ Se a gravação do [Histórico de Navegação](../../personal/global-settings.md
 
 <TabItem value="android" label="Android">
 
-![Início da tela de navegação Android](@site/static/img/navigation/route/navigation_start_andr.png)
+![Tela de navegação iniciar Android](@site/static/img/navigation/route/navigation_start_andr.png)  
 
 </TabItem>
 
@@ -278,7 +278,7 @@ Se a gravação do [Histórico de Navegação](../../personal/global-settings.md
 
 Uma vez selecionados os pontos de início e fim, o aplicativo criará uma rota entre eles usando um perfil ativo. O [perfil do aplicativo](../../personal/profiles.md) e o conjunto de [widgets](../../widgets/index.md) só serão alterados quando você tocar no botão *Iniciar* da navegação.
 
-- **Toque em Iniciar** para iniciar a navegação.
+- **Toque em Iniciar** para começar a navegação.
 - [Pause](#pause--resume-navigation) a navegação ao fazer uma pausa. (*Somente Android*)
 - **Pare** a navegação selecionando **Parar** (*Android*) ou **Cancelar** (*iOS*).
 
@@ -288,13 +288,13 @@ Informações adicionais sobre a rota criada, como altitude, instruções passo 
 
 ### Recálculo de Rota {#route-recalculation}
 
-A rota pode ser recalculada automaticamente em caso de desvio dela. Você pode alterar os parâmetros do recálculo nas [Configurações de Navegação](../guidance/navigation-settings.md#recalculate-route). Você também pode desativar a notificação sobre o recálculo de rota nas configurações de [Avisos de voz](../guidance/voice-navigation.md#voice-settings).
+A rota pode ser recalculada automaticamente em caso de desvio. Você pode alterar os parâmetros do recálculo nas [Configurações de Navegação](../guidance/navigation-settings.md#recalculate-route). Você também pode desativar a notificação sobre o recálculo da rota nas configurações de [Avisos de voz](../guidance/voice-navigation.md#voice-settings).
 
 ### Pausar / Retomar Navegação {#pause--resume-navigation}
 
 <InfoAndroidOnly/>
 
-Se você quiser parar para uma pausa e desviar da rota por um curto período, você pode usar a função *Pausar/Retomar* navegação para pausar os avisos de voz e parar de recalcular a rota.
+Se você quiser parar para uma pausa e desviar da rota por um curto período, você pode usar a função *Pausar/Retomar* navegação para pausar os avisos de voz e parar de recalcular a rota.  
 Esta opção está disponível na versão Android do aplicativo na *[lista de Notificações](../guidance/voice-navigation.md#text-notifications)* ou no *[menu de Ações rápidas](../../widgets/quick-action.md)*.
 
 ![Tela de notificação Android](@site/static/img/navigation/route/navigation_pause_android.png)
@@ -302,7 +302,7 @@ Esta opção está disponível na versão Android do aplicativo na *[lista de No
 Para retomar a navegação:
 
 - Use a mensagem do OsmAnd na barra de notificação.
-- Use o *menu Ações rápidas* ou a caixa de diálogo que aparece ao tocar no *[botão Navegação](../../widgets/map-buttons.md#directions)* (veja a captura de tela).
+- Use o *menu de Ações rápidas* ou a caixa de diálogo que aparece ao tocar no *[botão Navegação](../../widgets/map-buttons.md#directions)* (veja a captura de tela).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -321,15 +321,15 @@ Para retomar a navegação:
 </Tabs>
 
 :::note
-Ao **tocar no botão Navegação** enquanto estiver na sua rota, a navegação **não para e os avisos de voz continuam sendo emitidos**, embora as opções propostas Retomar ou Iniciar possam ser confusas.
+Quando você **toca no botão Navegação** enquanto está em sua rota, a navegação **não para, e os avisos de voz continuam a ser emitidos**, embora as opções propostas Retomar ou Iniciar possam ser confusas.
 :::
 
 
-### Dicas para Economia de Energia {#power-saving-tips}
+### Dicas de Economia de Energia {#power-saving-tips}
 
 A navegação usa GPS e processamento em segundo plano, o que pode esgotar a bateria. Para otimizar o uso de energia:
 
-- **Desligue a tela** enquanto confia nos avisos de voz.
+- **Desligue a tela** enquanto confia nos avisos de voz.  
 - Ative o [Controle de tela](../guidance/voice-navigation.md#screen-control) (*somente Android*) em *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>*.
 
 
@@ -342,12 +342,12 @@ A navegação usa GPS e processamento em segundo plano, o que pode esgotar a bat
 
 Para acessar as configurações de navegação, siga um dos passos abaixo:
 
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.
-- *Botão de navegação → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.  
+- *Botão de navegação → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
 
 :::info
-Não há configurações de navegação no perfil *Navegar no mapa*.
+Não há configurações de navegação no perfil *Navegar mapa*.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -366,20 +366,20 @@ Não há configurações de navegação no perfil *Navegar no mapa*.
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determina como as rotas são calculadas. Por exemplo, seu perfil de bicicleta tem um tipo de navegação Ciclismo, que define as regras de roteamento. Você pode importar essas regras (como arquivo routing.xml) no OsmAnd. Mais sobre roteamento você pode ler em nossa página [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determina como as rotas são calculadas. Por exemplo, seu perfil de bicicleta tem um tipo de navegação Ciclismo, que define as regras de roteamento. Você pode importar essas regras (como arquivo routing.xml) no OsmAnd. Mais sobre roteamento você pode ler em nossa página do [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing).&nbsp;  
 
 - &nbsp;**<Translate android="true" ids="route_parameters"/>** controla quais parâmetros serão usados durante o roteamento (este é o processo de seleção de uma rota para navegação).
 
 Por favor, leia sobre os parâmetros de rota para o tipo de navegação correspondente.
 
-Como configurar o [tipo de roteamento](../routing/osmand-routing.md#routing-types) e os [parâmetros de rota](../guidance/navigation-settings.md#route-parameters) você pode ler no [artigo de configurações de navegação](../guidance/navigation-settings.md) ou em artigos sobre tipos específicos de roteamento na [seção Parâmetros de Rota](../routing/osmand-routing.md#routing-types).
+Como configurar o [tipo de roteamento](../routing/osmand-routing.md#routing-types) e os [parâmetros de rota](../guidance/navigation-settings.md#route-parameters) você pode ler no [artigo de configurações de navegação](../guidance/navigation-settings.md) ou em artigos sobre tipos específicos de roteamento na [seção Parâmetros de Rota](../routing/osmand-routing.md#routing-types).  
 
 
-### Navegação Simulada {#simulated-navigation}
+## Navegação Simulada {#simulated-navigation}
 
-A ferramenta **Navegação Simulada** permite que você visualize uma rota antes de viajar. Isso ajuda no planejamento, familiarização e teste do sistema de navegação do OsmAnd.
+A ferramenta **Navegação simulada** permite que você visualize uma rota antes de viajar. Isso ajuda no planejamento, familiarização e teste do sistema de navegação do OsmAnd.
 
-#### Iniciar / Parar Simulação {#start--stop-simulation}
+### Iniciar / Parar Simulação {#start--stop-simulation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -397,21 +397,21 @@ A ferramenta **Navegação Simulada** permite que você visualize uma rota antes
 
 </Tabs>
 
-Quando uma rota de navegação é construída, você pode iniciar a simulação da navegação usando a opção **<Translate android="true" ids="simulate_navigation"/>**.
+Quando uma rota de navegação é construída, você pode iniciar a simulação de navegação usando a opção **<Translate android="true" ids="simulate_navigation"/>**.  
 
-- No [Menu de Navegação](#navigation-menu), vá para *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
-- Ative a chave para habilitar a opção.
+- No [Menu de Navegação](#navigation-menu) vá para *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
+- Alterne o interruptor para ativar a opção.
 - Toque no botão [Iniciar](#start--stop-navigation) navegação para iniciar a simulação.
 - Para [Parar](#start--stop-navigation) a simulação de navegação, toque em **Parar** (*Android*) ou **Cancelar** (*iOS*).
 
 
-#### Modo de Velocidade {#speed-mode}
+### Modo de Velocidade {#speed-mode}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
+Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
 ![Simular navegação Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
@@ -419,7 +419,7 @@ Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/> →* &#x2699
+Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
 ![Simular navegação iOS](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
@@ -429,7 +429,7 @@ Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string
 
 - **<Translate android="true" ids="simulation_preview_mode_title"/>** - Acelera a simulação em caminhos retos, diminuindo a velocidade em cruzamentos.
 
-- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Executa em uma velocidade fixa.
+- **<Translate android="true" ids="simulation_constant_mode_title"/>** - Executa a uma velocidade fixa.
 - **<Translate android="true" ids="simulation_real_mode_title"/>**:
     - **Em trechos retos** da estrada, a velocidade será próxima da velocidade máxima permitida.
     - **Em cruzamentos**, o simulador reduzirá a velocidade.
@@ -438,13 +438,13 @@ Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string
 
 ## Mapas Ausentes ou Não Sincronizados {#maps-missing-or-not-synchronized}
 
-Para construir uma rota, todos os **mapas necessários** precisam ser baixados e ter a mesma data de lançamento. Observe que, em algumas situações, a mensagem de mapas ausentes pode estar oculta no menu de preparação de rota. Se você puxar o menu de navegação para cima, verá os possíveis motivos pelos quais sua rota não pôde ser calculada.
+Para construir uma rota, todos os **mapas necessários** precisam ser baixados e ter a mesma data de lançamento. Observe que, em algumas situações, a mensagem de mapas ausentes pode estar oculta no menu de preparação de rota. Se você puxar o menu de navegação para cima, verá as possíveis razões pelas quais sua rota não pôde ser calculada.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mensagem sem mapas ao construir navegação Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
+![Mensagem sem mapas ao construir navegação Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
 
 </TabItem>
 
@@ -455,9 +455,9 @@ Para construir uma rota, todos os **mapas necessários** precisam ser baixados e
 
 </Tabs>
 
-#### Mapas Necessários {#required-maps}
+### Mapas Necessários {#required-maps}
 
-Na caixa de diálogo de mapas necessários, você verá sugestões de mapas para baixar ou atualizar. A lista de mapas usados pode não ser precisa, pois calcula uma rota muito básica; para obter a lista precisa de mapas, você pode clicar em **Calcular online**. Se você selecionar **Usar mapas baixados**, o cálculo da rota tentará usar os mapas já baixados e ignorará a mensagem de aviso.
+Na caixa de diálogo de mapas necessários, você verá sugestões de mapas a serem baixados ou atualizados. A lista de mapas usados pode não ser precisa, pois calcula uma rota muito básica; para obter a lista precisa de mapas, você pode clicar em **Calcular online**. Se você selecionar **Usar mapas baixados**, o cálculo da rota tentará usar os mapas já baixados e ignorará a mensagem de aviso.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -497,5 +497,3 @@ Para mais etapas de solução de problemas, consulte [problemas de navegação](
 - [Avisos de voz / Notificações](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
-
-> *Última atualização: Fevereiro de 2025*

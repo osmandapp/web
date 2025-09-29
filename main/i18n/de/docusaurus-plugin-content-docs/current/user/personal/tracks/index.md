@@ -1,5 +1,5 @@
 ---
-source-hash: 7ffc8bb6ad320c2fba120a64fe501c64d5fa3b56d0addef5a691228269465d64
+source-hash: 28febb1cf298185f4b2bf097fc5f78d04f8a8d32250654cda70ab0217322430f
 title:  Tracks
 sidebar_position: 8
 ---
@@ -18,10 +18,10 @@ Eine einfache Möglichkeit, virtuelle Ordner für Tracks mit beliebigen Filtern 
 
 Lesen Sie, was ein Track ist und welche verschiedenen Arten von Tracks es gibt.
 
-### [Tracks anzeigen](../../map/tracks/index.md#display-tracks) {#display-tracks}
+### [Tracks anzeigen](../../map/tracks/index.md#display-tracks-on-the-map) {#display-tracks-on-the-map}
 
 Lesen Sie, wie Sie Tracks und deren Optionen in OsmAnd anzeigen können.
 
-### [Navigation anhand von Tracks](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
+### [Nach Track navigieren](../../navigation/setup/gpx-navigation.md) {#navigate-by-track}
 
-Lesen Sie mehr darüber, wie Sie Tracks in der Navigation verwenden können.
+Lesen Sie mehr darüber, wie Sie einen Track für die Navigation verwenden können.

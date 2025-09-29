@@ -1,7 +1,7 @@
 ---
-source-hash: 9e178d46c34474107d426605f944341538b486f2bc4997dab4e5643b50cb3990
+source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
 sidebar_position: 6
-title: Widget Segnaposto
+title:  Widget Marcatori
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,36 +15,36 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-I segnaposto sono punti temporanei indicati sulla mappa sotto forma di bandierine. I widget mostrano la *Direzione*, la *Distanza*, l'*Indirizzo* e l'*Ora di arrivo stimata* al segnaposto. Ti consentono di trovare rapidamente i segnaposto sulla mappa, nonché di modificarne la posizione. Puoi leggere ulteriori informazioni sui segnaposto in questo [articolo](../personal/markers).
+I marcatori sono punti temporanei indicati sulla mappa sotto forma di bandierine. I widget mostrano la *Direzione*, la *Distanza*, l'*Indirizzo* e l'*Orario di arrivo previsto* al marcatore. Permettono di trovare rapidamente i marcatori sulla mappa e di modificarne la posizione. Per saperne di più sui marcatori, consultare questo [articolo](../personal/markers).
 
 
 ## Widget Barra Superiore {#top-bar-widget}
 
-Il widget **Barra segnaposto mappa** (Android) / **Indicazione distanza - Barra superiore** (iOS) visualizza:
+Il widget **Barra marcatori mappa** (Android) / **Indicazione distanza - Barra superiore** (iOS) visualizza:
 
-- Distanza dalla tua posizione attuale (o dal punto centrale della mappa / dal punto di contatto iniziale della mappa quando la Posizione è disattivata) al punto selezionato indicato dal Segnaposto sulla mappa ([Unità di lunghezza](../personal/profiles/#general-settings) possono essere scelte nelle impostazioni del Profilo).
-- Una freccia dello stesso colore del segnaposto indica la direzione dalla posizione attuale (o dal punto centrale della mappa / dal punto di contatto iniziale della mappa quando la Posizione è disattivata) e l'orientamento nello spazio del tuo dispositivo (direzione) verso il segnaposto.
+- Distanza dalla posizione corrente (o dal punto centrale della mappa / dal punto iniziale di tocco della mappa quando la Posizione è disattivata) al punto selezionato indicato dal Marcatore sulla mappa (le [Unità di lunghezza](../personal/profiles/#general-settings) possono essere scelte nelle impostazioni del Profilo).
+- Una freccia dello stesso colore del marcatore indica la direzione dalla posizione corrente (o dal punto centrale della mappa / dal punto iniziale di tocco della mappa quando la Posizione è disattivata) e l'orientamento nello spazio del dispositivo (direzione) verso il marcatore.
 - Indirizzo della posizione.
-- Icona del menu che porta all'[Elenco segnaposto mappa](../personal/markers/#map-markers-menu).
+- Icona del menu che porta a [Elenco marcatori mappa](../navigation/setup/markers-navigation.md#itinerary-list).
 
-Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni sulle impostazioni del widget in questo [articolo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+È anche possibile selezionare la visualizzazione di uno o due marcatori. Per saperne di più sulle impostazioni dei widget, consultare questo [articolo](https://osmand.net/docs/user/personal/markers#appearance-on-the-map).
 :::info
-*La distanza dal segnaposto* è la lunghezza della linea retta tra la tua posizione (o il punto centrale della mappa / il punto di contatto iniziale della mappa quando la Posizione è disattivata) e il segnaposto.
+*La distanza dal marcatore* è la lunghezza della linea retta tra la propria posizione (o il punto centrale della mappa / il punto iniziale di tocco della mappa quando la Posizione è disattivata) e il marcatore.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Segnaposto mappa sul widget della barra superiore](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
+![Marcatori mappa sul widget della barra superiore](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
 
 
 | | |
 |------------|------------|
 | Abilita | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="map_markers_bar"/>* |
-| Toccando | La parte visibile della mappa si sposta sulla posizione del segnaposto. |
-| Tocco prolungato + sposta | Per misurare la distanza e vedere la direzione da un punto particolare della mappa al segnaposto tracciato, è necessario effettuare un tocco prolungato e spostare immediatamente leggermente la posizione della mappa (il menu contestuale non dovrebbe apparire). |
-| Avvicinamento al segnaposto | Nel caso in cui la tua posizione si trovi entro un piccolo raggio dal segnaposto della mappa (**< 50 m**), nel campo del widget puoi vedere un pulsante di spunta per eliminare rapidamente il segnaposto della mappa (segna come passato). Il segnaposto selezionato viene sostituito dal segnaposto successivo nell'elenco dei segnaposto. |
+| Con un tocco | La parte visibile della mappa si sposta sulla posizione del marcatore. |
+| Tocco lungo + spostamento | Per misurare la distanza e vedere la direzione da un punto particolare della mappa al marcatore tracciato, è necessario effettuare un tocco lungo e spostare immediatamente e leggermente la posizione della mappa (il menu contestuale non deve apparire). |
+| Avvicinamento al marcatore | Se la vostra posizione si trova entro un piccolo raggio dal marcatore della mappa (**< 50 m**), nel campo del widget è possibile visualizzare un pulsante di spunta per eliminare rapidamente il marcatore della mappa (contrassegnarlo come superato). Il marcatore spuntato viene sostituito dal marcatore successivo nell'elenco dei marcatori. |
 | Formato distanza | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -52,14 +52,14 @@ Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni
 
 <TabItem value="ios" label="iOS">
 
-![Segnaposto mappa sul widget della barra superiore](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
+![Marcatori mappa sul widget della barra superiore](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
 
 | | |
 |------------|------------|
 | Abilita | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="map_markers_bar"/>*|
-| Toccando | La parte visibile della mappa si sposta sulla posizione del segnaposto. |
-| Toccando | Passaggio tra "Distanza" / "Ora di arrivo stimata" (Modalità di commutazione). |
-| Avvicinamento al segnaposto | Nel caso in cui la tua posizione si trovi entro un piccolo raggio dal segnaposto della mappa (**< 50 m**), nel campo del widget puoi vedere un pulsante di spunta per eliminare rapidamente il segnaposto della mappa (segna come passato). Il segnaposto selezionato viene sostituito dal segnaposto successivo nell'elenco dei segnaposto. |
+| Con un tocco | La parte visibile della mappa si sposta sulla posizione del marcatore. |
+| Con un tocco | Passaggio da "Distanza" a "Orario di arrivo previsto" (modalità di commutazione). |
+| Avvicinamento al marcatore | Se la vostra posizione si trova entro un piccolo raggio dal marcatore della mappa (**< 50 m**), nel campo del widget è possibile visualizzare un pulsante di spunta per eliminare rapidamente il marcatore della mappa (contrassegnarlo come superato). Il marcatore spuntato viene sostituito dal marcatore successivo nell'elenco dei marcatori. |
 | Formato distanza | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 </TabItem>
@@ -67,18 +67,18 @@ Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni
 </Tabs>
 
 
-## Widget Pannello {#panel-widgets}
+## Widget del Pannello {#panel-widgets}
 
-Il widget **Segnaposto mappa** *(per Android)* e **Indicazione distanza - Widget** *(per iOS)* visualizza:
+Il widget **Marcatori mappa** *(per Android)* e **Indicazione distanza - Widget** *(per iOS)* visualizza:
 
-- *Distanza dalla tua posizione attuale* al punto selezionato indicato dal Segnaposto sulla mappa ([Unità di lunghezza](../personal/profiles/#general-settings) possono essere scelte nelle impostazioni del Profilo).
-- *Ora di arrivo stimata o ETA*.
-Questo è il tempo (hh:mm) in cui il veicolo o la persona dovrebbe arrivare a destinazione. Viene calcolato come la distanza dal segnaposto divisa per la velocità media.
-La velocità media viene calcolata come la media di tutti i valori di velocità ricevuti dai punti di posizione per l'intervallo di tempo selezionato da 15 secondi a 60 minuti.
+- *Distanza dalla posizione corrente* al punto selezionato indicato dal Marcatore sulla mappa (le [Unità di lunghezza](../personal/profiles/#general-settings) possono essere scelte nelle impostazioni del Profilo).
+- *Orario di arrivo previsto o ETA*.
+È l'ora (hh:mm) in cui il veicolo o la persona dovrebbe arrivare a destinazione. Viene calcolato come la distanza dal marcatore divisa per la velocità media.
+La velocità media è calcolata come la media di tutti i valori di velocità ricevuti dai punti di localizzazione per l'intervallo di tempo selezionato da 15 secondi a 60 minuti.
 
-Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni sulle impostazioni del widget in questo [articolo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+È anche possibile selezionare la visualizzazione di uno o due marcatori. Per saperne di più sulle impostazioni dei widget, consultare questo [articolo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
 :::info
-*La distanza dal segnaposto* è la lunghezza della linea retta tra la tua posizione (o un punto particolare sulla mappa) e il segnaposto.
+*La distanza dal marcatore* è la lunghezza della linea retta tra la propria posizione (o un punto particolare della mappa) e il marcatore.
 :::
 
 
@@ -86,14 +86,14 @@ Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni
 
 <TabItem value="android" label="Android">
 
-![Widget pannello](@site/static/img/widgets/map_markers_widget-02.png)
+![Widget del pannello](@site/static/img/widgets/map_markers_widget-02.png)
 
 | | |
 |------------|------------|
 | Abilita | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>* |
-| Toccando 1 | Passaggio tra "Distanza" / "Ora di arrivo stimata" (Modalità di commutazione). |
-| Toccando 2 | La parte visibile della mappa si sposta sulla posizione del segnaposto (Modalità vai alla posizione del segnaposto) |
-| Tocco prolungato + sposta | Per misurare la distanza e vedere la direzione da un punto particolare della mappa al segnaposto tracciato, è necessario effettuare un tocco prolungato e spostare immediatamente leggermente la posizione della mappa (il menu contestuale non dovrebbe apparire). |
+| Con un tocco 1 | Passaggio da "Distanza" a "Orario di arrivo previsto" (modalità di commutazione). |
+| Con un tocco 2 | La parte visibile della mappa si sposta sulla posizione del marcatore (Vai alla modalità di localizzazione del marcatore) |
+| Tocco lungo + spostamento | Per misurare la distanza e vedere la direzione da un punto particolare della mappa al marcatore tracciato, è necessario effettuare un tocco lungo e spostare immediatamente e leggermente la posizione della mappa (il menu contestuale non deve apparire). |
 | Formato distanza | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -101,13 +101,13 @@ Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni
 
 <TabItem value="ios" label="iOS">
 
-![Widget pannello](@site/static/img/widgets/map_markers_widget_ios-02.png)
+![Widget del pannello](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
 | | |
 |------------|------------|
 | Abilita | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="map_markers_bar"/>* |
-| Toccando | La parte visibile della mappa si sposta sulla posizione del segnaposto. |
-| Toccando | Passaggio tra "Distanza" / "Ora di arrivo stimata" (Modalità di commutazione). |
+| Con un tocco | La parte visibile della mappa si sposta sulla posizione del marcatore. |
+| Con un tocco | Passaggio da "Distanza" a "Orario di arrivo previsto" (modalità di commutazione). |
 | Formato distanza | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 </TabItem>
@@ -115,30 +115,30 @@ Puoi anche scegliere di visualizzare uno o due segnaposto. Maggiori informazioni
 </Tabs>
 
 
-## Configura Widget Segnaposto {#configure-marker-widgets}
+## Configurare i Widget Marcatori {#configure-marker-widgets}
 
-Puoi leggere informazioni generali sulle impostazioni del widget Segnaposto mappa in questa [pagina](../personal/markers#map-markers-widgets).
+È possibile leggere le informazioni generali sulle impostazioni del widget Marcatori mappa in questa [pagina](../personal/markers#appearance-on-the-map).
 
-**Barra segnaposto mappa**
-Il widget della barra superiore visualizza la distanza e la direzione al prossimo segnaposto mappa dalla tua posizione attuale. Nelle impostazioni, puoi scegliere se uno o due segnaposto verranno visualizzati nella parte superiore dello schermo.
+### Barra marcatori mappa {#map-markers-bar}
+Il widget della barra superiore visualizza la distanza e la direzione rispetto al marcatore mappa successivo dalla posizione corrente. Nelle impostazioni è possibile scegliere se visualizzare uno o due marcatori nella parte superiore dello schermo.
 
 ![aspetto_sulla_mappa](@site/static/img/widgets/configure-marker-wid-02.png)
 
-**Segnaposto mappa**
-Il widget mostra la distanza o l'ora di arrivo stimata (ETA) per il primo o il secondo segnaposto nell'elenco dei segnaposto mappa. Puoi scegliere: un segnaposto, il primo o il secondo, da visualizzare sullo schermo o entrambi.
+### Marcatori mappa {#map-markers}
+Il widget mostra la distanza o l'orario di arrivo previsto (ETA) per il primo o il secondo marcatore nell'elenco dei marcatori mappa. È possibile scegliere: un marcatore, il primo o il secondo, da visualizzare sullo schermo o entrambi.
 
 ![aspetto_sulla_mappa](@site/static/img/widgets/configure-marker-wid-01.png) ![aspetto_sulla_mappa](@site/static/img/widgets/settings-marker-wid-first-01.png)
 
 | | |
 | :------------- | :------------- |
-| Mostra | Questa modalità ti consente di scegliere quali informazioni visualizzerà il widget: *Distanza* o *Ora di arrivo stimata*. |
-| Intervallo | Se *Ora di arrivo stimata* è selezionata in 'Mostra', questa opzione appare con una scelta di tempi (da 15 secondi a 60 minuti) per il calcolo dell'ETA. |
-| Clic sul widget | Questa impostazione ti consente di scegliere quale azione verrà eseguita quando fai clic sul widget: *Cambia modalità* o *Vai alla posizione del segnaposto*. |
+| Mostra | Questa modalità consente di scegliere quali informazioni visualizzerà il widget: *Distanza* o *Orario di arrivo previsto*. |
+| Intervallo | Se in 'Mostra' è selezionato *Orario di arrivo previsto*, questa opzione appare con una scelta di tempi (da 15 secondi a 60 minuti) per il calcolo dell'ETA. |
+| Clicca sul widget | Questa impostazione consente di scegliere quale azione verrà eseguita quando si fa clic sul widget: *Cambia modalità* o *Vai alla posizione del marcatore*. |
 
 
-## Aspetto sulla Mappa {#appearance-on-the-map}
+## Aspetto sulla mappa {#appearance-on-the-map}
 
-La configurazione dell'aspetto dei segnaposto mappa è disponibile sia nelle versioni Android che iOS di OsmAnd. Il menu "Aspetto sulla Mappa" è un'impostazione generale per i segnaposto mappa e si applica indipendentemente dal fatto che i widget siano abilitati o meno. Puoi leggere le informazioni dettagliate in questa [pagina](../personal/markers.md#appearance-on-the-map).
+La configurazione dell'aspetto dei marcatori mappa è disponibile sia nella versione Android che in quella iOS di OsmAnd. Il menu "Aspetto sulla mappa" è un'impostazione generale per i marcatori mappa e si applica indipendentemente dal fatto che i widget siano abilitati o meno. È possibile leggere le informazioni dettagliate in questa [pagina](../personal/markers.md#appearance-on-the-map).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -150,11 +150,11 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_markers_item,share
 
 | | |
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Mostra informazioni sui primi uno o due segnaposto nell'elenco dei segnaposto mappa. |
-| <Translate android="true" ids="show_arrows_on_the_map"/> | Indica la direzione al segnaposto tracciato (uno o due) come una freccia sulla mappa. Se il segnaposto si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia. |
-| <Translate android="true" ids="show_guide_line"/> | Mostra la direzione, come una linea tratteggiata, da un punto particolare della mappa al segnaposto tracciato in linea retta. |
-| <Translate android="true" ids="one_tap_active"/> | Con un solo tocco il segnaposto richiesto sulla mappa, questo segnaposto si sposta in cima all'elenco dei segnaposto mappa attivi senza aprire il menu contestuale. |
-| <Translate android="true" ids="keep_passed_markers"/> | I segnaposto aggiunti come gruppo di Preferiti o waypoint GPX contrassegnati come Passati rimarranno sulla mappa. Se il gruppo non è attivo, i segnaposto scompariranno dalla mappa. |
+| <Translate android="true" ids="active_markers"/> | Mostra le informazioni sul primo o sui primi due marcatori nell'elenco dei marcatori mappa. |
+| <Translate android="true" ids="show_arrows_on_the_map"/> | Indica la direzione del marcatore tracciato (uno o due) con una freccia sulla mappa. Se il marcatore si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia. |
+| <Translate android="true" ids="show_guide_line"/> | Mostra la direzione, come una linea tratteggiata, da un punto particolare della mappa al marcatore tracciato in linea retta. |
+| <Translate android="true" ids="one_tap_active"/> | Con un solo tocco sul marcatore desiderato sulla mappa, questo marcatore si sposta in cima all'elenco dei marcatori mappa attivi senza aprire il menu contestuale. |
+| <Translate android="true" ids="keep_passed_markers"/> | I marcatori aggiunti come gruppo di Preferiti o waypoint GPX contrassegnati come Superati rimarranno sulla mappa. Se il gruppo non è attivo, i marcatori scompariranno dalla mappa. |
 
 </TabItem>
 
@@ -162,14 +162,14 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_markers_item,share
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>*
 
-![Aspetto segnaposto mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Aspetto Marcatori Mappa iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 | | |
 | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Mostra informazioni sui primi uno o due segnaposto nell'elenco dei segnaposto mappa. |
-| <Translate android="true" ids="show_direction"/> | Ti consente di scegliere se visualizzare o meno i widget e come appariranno: sopra la mappa (<Translate android="true" ids="shared_string_topbar"/>) o sul lato destro dello schermo (<Translate android="true" ids="shared_string_widgets"/>). |
-| Frecce sulla mappa | Indica la direzione al segnaposto tracciato (uno o due) come una freccia sulla mappa. Se il segnaposto si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia. |
-| Linea di direzione | Mostra la direzione, come una linea tratteggiata, da un punto particolare della mappa al segnaposto tracciato in linea retta. |
+| <Translate android="true" ids="active_markers"/> | Mostra le informazioni sul primo o sui primi due marcatori nell'elenco dei marcatori mappa. |
+| <Translate android="true" ids="show_direction"/> | Consente di scegliere se visualizzare o meno i widget e come appariranno: sopra la mappa (<Translate android="true" ids="shared_string_topbar"/>) o sul lato destro dello schermo (<Translate android="true" ids="shared_string_widgets"/>). |
+| Frecce sulla mappa | Indica la direzione del marcatore tracciato (uno o due) con una freccia sulla mappa. Se il marcatore si trova nella parte visibile della mappa, non viene visualizzata alcuna freccia. |
+| Linea di direzione | Mostra la direzione, come una linea tratteggiata, da un punto particolare della mappa al marcatore tracciato in linea retta. |
 
 </TabItem>
 
@@ -179,11 +179,8 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_
 ## Articoli Correlati {#related-articles}
 
 - [Configura Schermo](./configure-screen.md)
-- [Pulsanti mappa](./map-buttons.md)
-- [Widget informativi](./info-widgets.md)
-- [Widget di navigazione](./nav-widgets.md)
+- [Pulsanti Mappa](./map-buttons.md)
+- [Widget Informativi](./info-widgets.md)
+- [Widget di Navigazione](./nav-widgets.md)
 - [Righello-raggio e Righello](./radius-ruler.md)
-- [Azione rapida](./quick-action.md)
-
-
-> *Ultimo aggiornamento: Ottobre 2023*
+- [Azione Rapida](./quick-action.md)

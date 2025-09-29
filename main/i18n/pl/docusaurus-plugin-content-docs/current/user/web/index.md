@@ -1,6 +1,6 @@
 ---
-source-hash: 031332cc05f6bde50803b1daa7d1151c6c43aae368e3c520b62af5ad5547457d
-title: Przeglądarka map internetowych
+source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+title: Planer internetowy
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,24 +16,24 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Przegląd {#overview}
 
-W tej sekcji znajdziesz opis naszej [usługi map internetowych](https://osmand.net/map).
+W tej sekcji znajdziesz opis naszego [Planera internetowego](https://osmand.net/map).
 
-### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
+### [Chmura OsmAnd](./web-cloud.md) {#osmand-cloud}
 
-Ta sekcja wyjaśnia, jak zalogować się i zarejestrować na stronie [www.osmand.net/map](https://osmand.net/map/) oraz przedstawia korzyści, jakie użytkownicy otrzymują po rejestracji.
+W tej sekcji wyjaśniono, jak zalogować się i zarejestrować na stronie [www.osmand.net/map](https://osmand.net/map/) oraz jakie korzyści otrzymują użytkownicy po rejestracji.
 
 ### [Mapa](./web-map.md) {#map}
 
-Ta sekcja zawiera szczegółowe informacje o dodatkowych danych mapy, takich jak Ulubione, Osobiste ślady i Warstwy pogodowe.
+W tej sekcji szczegółowo opisano dodatkowe dane mapy, takie jak Ulubione, Trasy osobiste i Warstwy pogodowe.
 
 ### [Dane użytkownika](../web/web-userdata.mdx) {#user-data}
 
-Ślady GPX i Ulubione użytkownika na mapie.
+Trasy GPX i Ulubione użytkownika na mapie.
 
-### [Planowanie trasy](./planner.md) {#plan-route}
+### [Planuj trasę](./planner.md) {#plan-route}
 
 Ta sekcja zawiera informacje na temat planowania tras lub tworzenia nawigacji przy użyciu różnych profili.
 
 ### [Wyszukiwanie](./web-search.md) {#search}
 
-Ta sekcja wyjaśnia, jak znaleźć punkty POI z różnych kategorii na mapie, wykonać klasyczne wyszukiwanie i wyświetlić ikony kategorii na mapie.
+W tej sekcji wyjaśniono, jak znaleźć na mapie interesujące miejsca (POI) z różnych kategorii, przeprowadzić klasyczne wyszukiwanie i wyświetlić ikony kategorii na mapie.

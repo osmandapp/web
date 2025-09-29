@@ -1,5 +1,5 @@
 ---
-source-hash: e5fd3ea3059108d94fc75d50becf312a8c006b80209c72a142b97f415bb426ca
+source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
 sidebar_position: 17
 title: Hava Durumu
 ---
@@ -22,14 +22,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  <ProFeature/> Hava Durumu eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).
 :::
 
-OsmAnd uygulamasındaki etkileşimli hava durumu harita katmanları, şehrinizdeki veya başka herhangi bir konumdaki sıcaklığı, atmosferik basıncı, bulutluluğu, rüzgar hızını ve yağışı etkileşimli bir küresel harita üzerinde izlemenizi sağlar. Hava Durumu eklentisi, OsmAnd haritasında doğrudan 7 gün öncesine kadar saatlik hava durumu tahminleri sunar. Hava durumu bilgileri çevrimdışı kullanım için de indirilebilir.
+OsmAnd uygulamasındaki etkileşimli hava durumu harita katmanları, şehrinizdeki veya etkileşimli bir küresel harita üzerindeki herhangi bir konumdaki sıcaklığı, atmosfer basıncını, bulutluluğu, rüzgar hızını ve yağışı izlemenizi sağlar. Hava Durumu eklentisi, doğrudan OsmAnd haritası üzerinde 7 gün öncesine kadar saatlik hava durumu tahminleri sunar. Hava durumu bilgileri çevrimdışı kullanım için de indirilebilir.
 
-Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Durumu Servisi (NWS) tarafından işletilen [Küresel Tahmin Sistemi](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.
+Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Servisi (NWS) tarafından işletilen [Küresel Tahmin Sistemi](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
-OsmAnd haritasında Hava Durumunu görüntülemek için aşağıdaki ayarlar *gereklidir*:
+OsmAnd haritasında Hava Durumu'nu görüntülemek için aşağıdaki ayarlar *gereklidir*:
 
 **1.** [**OsmAnd Pro aboneliği** satın alın](../purchases/).
 
@@ -37,13 +37,13 @@ OsmAnd haritasında Hava Durumunu görüntülemek için aşağıdaki ayarlar *ge
 
 **3.** Hava durumu olayları için [**ölçü birimlerini** seçin](#weather-settings).
 
-**4.** Harita Yapılandırma menüsündeki Hava Durumu menü öğesini kullanarak [**Hava Durumu katmanlarını**](#customize-weather-layers) harita üzerinde görüntüleyin (uzaklaştırmayı unutmayın).
+**4.** Harita Yapılandırma menüsündeki Hava Durumu menü öğesini kullanarak harita üzerinde [**Hava Durumu katmanlarını** görüntüleyin](#customize-weather-layers) (uzaklaştırmayı unutmayın).
 
-**5.** Seçilen alan için [**Hava Durumu tahminini**](#weather-forecast-screen) görüntüleyin (bu menü, OsmAnd haritasının ana ekranının hava durumu katmanlarıyla dağınıklığını önler).
+**5.** Seçilen alan için [**Hava Durumu tahminini** görüntüleyin](#weather-forecast-screen) (bu menü, OsmAnd haritasının ana ekranının hava durumu katmanlarıyla dağınık olmamasını sağlar).
 
 **6.** Çevrimdışı kullanmayı planlıyorsanız hava durumu tahminini [indirin](#offline-forecast).
 
-**7.** Güncel hava durumu bilgilerini günlük olarak görmek istiyorsanız [**Hava Durumu widget'larını**](#weather-widgets) etkinleştirin.
+**7.** Güncel hava durumu bilgilerini günlük olarak görmek istiyorsanız [**Hava Durumu widget'larını** etkinleştirin](#weather-widgets).
 
 :::caution Gerekli oluşturma
 Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal/global-settings/#map-rendering-engine) (OpenGL) ile kullanılabilir.
@@ -58,7 +58,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
+Şuraya git: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)
 
@@ -66,7 +66,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
+Şuraya git: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
@@ -74,7 +74,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 </Tabs>
 
-Ana yan menüde, tüm hava durumu araçlarına hızlı erişim sağlayan özel bir **Hava Durumu** menü öğesi bulunur. *Hava Durumu tahmin ekranı*, *sıcaklık*, *atmosferik basınç*, *rüzgar hızı*, *bulutluluk* ve *yağış* hakkında bilgi görüntüler.
+Ana yan menüde, tüm hava durumu araçlarına hızlı erişim sağlayan özel bir **Hava Durumu** menü öğesi bulunur. *Hava Durumu tahmin ekranı*, *sıcaklık*, *atmosfer basıncı*, *rüzgar hızı*, *bulutluluk* ve *yağış* hakkında bilgi görüntüler.
 
 Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin görüntüleneceği tam zamanı ayarlamak için gün düğmelerini ve zaman kaydırıcısını kullanabilirsiniz.
 
@@ -84,7 +84,7 @@ Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin g
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
+Şuraya git: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
 ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)
 
@@ -92,7 +92,7 @@ Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin g
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
+Şuraya git: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
@@ -100,9 +100,9 @@ Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin g
 
 </Tabs>
 
-OsmAnd harita ekranında hava durumu katmanlarını görüntülemek için *Harita Yapılandırma menüsünü* kullanmanız gerekir. Menüye gidin, listeden *Hava Durumu* öğesini bulun (yalnızca eklenti etkinleştirildiğinde kullanılabilir) ve üzerine dokunun.
+OsmAnd harita ekranında hava durumu katmanlarını görüntülemek için *Haritayı Yapılandır menüsünü* kullanmanız gerekir. Menüye gidin, listede *Hava Durumu* öğesini bulun (yalnızca eklenti etkinleştirildiğinde kullanılabilir) ve üzerine dokunun.
 
-Bu menüde, her katmanın **görünürlüğünü** ve [ayarlarını](#weather-settings) değiştirebilir, kontur çizgilerinin türünü seçebilir ve [çevrimdışı 7 günlük hava durumu tahminini](#offline-forecast) indirebilirsiniz (*yalnızca Android için burada mevcuttur*).
+Bu menüde, her katman için **görünürlüğü** ve [ayarları](#weather-settings) değiştirebilir, kontur çizgilerinin türünü seçebilir ve [çevrimdışı 7 günlük hava durumu tahminini](#offline-forecast) indirebilirsiniz (*yalnızca Android için burada mevcuttur*).
 
 
 ### Hava Durumu Ayarları {#weather-settings}
@@ -128,29 +128,29 @@ Bu menüde, her katmanın **görünürlüğünü** ve [ayarlarını](#weather-se
 
 </Tabs>
 
-Harita üzerinde ve ekranın [Hava Durumu widget'ları](#weather-widgets) bölümünde [Hava Durumu verilerini](#weather-layers) hangi ölçü birimlerinde görmenin sizin için uygun olduğuna karar vermek önemlidir. Her parametre için uygun ölçü birimlerini seçebilir veya varsayılan değerleri kullanabilirsiniz (*yalnızca iOS*). OsmAnd uygulamasının iOS sürümünde, seyahat ederken mobil trafiği kullanmaktan kaçınmak için çevrimdışı tahmin seçeneğini de etkinleştirebilirsiniz.
+Harita üzerindeki [Hava Durumu verilerini](#weather-layers) ve ekranın [Hava Durumu widget'ları](#weather-widgets) bölümünü hangi ölçü birimlerinde görmenin sizin için uygun olduğuna karar vermek önemlidir. Her parametre için uygun ölçü birimlerini seçebilir veya varsayılan değerleri kullanabilirsiniz (*yalnızca iOS*). OsmAnd uygulamasının iOS sürümünde, seyahat ederken mobil trafiği kullanmaktan kaçınmak için çevrimdışı tahmin seçeneğini de etkinleştirebilirsiniz.
 
 :::note
-OsmAnd'ın iOS sürümünde, ölçü birimlerini ve şeffaflık seviyesini, gerekli harita katmanının simgesine uzun süre dokunduktan sonra açılan menüde değiştirebilirsiniz.
+OsmAnd'ın iOS sürümünde, gerekli harita katmanının simgesine uzun dokunuşla açılan menüde ölçü birimlerini ve şeffaflık seviyesini değiştirebilirsiniz.
 :::
 
 ### Hava Durumu Katmanları {#weather-layers}
 
-Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzerinde hava durumu katmanlarını görmek için uzaklaştırmanız gerekir, bunlar yalnızca 2-12 yakınlaştırma ölçeklerinde kullanılabilir. Hava durumu katmanları, haritayı renklendirmek için [hava durumu paletlerini](../personal/color-palette-schemes.md#weather) kullanır, bu paletler gerekirse [değiştirilebilir](../personal/color-palette-schemes.md#edit-palette-file).
+Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzerinde hava durumu katmanlarını görmek için uzaklaştırmanız gerekir, bunlar yalnızca 2-12 yakınlaştırma ölçeklerinde mevcuttur. Hava durumu katmanları, haritayı renklendirmek için [hava durumu paletlerini](../personal/color-palette-schemes.md#weather) kullanır, bu paletler gerekirse [değiştirilebilir](../personal/color-palette-schemes.md#edit-palette-file).
 
 | |
 |------------|
-| **Yağış katmanı**, suyun farklı agregat hallerinde gökyüzünden yere düştüğü hava olayları hakkında bilgi görüntüler. Yağış, yağmur, kar, sulu kar veya doludur. Yağış ölçeği, 24 saatte 1 metrekareye düşen suyun milimetre (veya inç) cinsinden derecelendirilmiştir. 1 mm yağmur, 1 metrekareye 1 litre suya karşılık gelir. |
+| **Yağış katmanı**, suyun farklı hallerde gökyüzünden yere düştüğü hava olayları hakkında bilgi görüntüler. Yağış, yağmur, kar, sulu kar veya dolu olabilir. Yağış ölçeği, 24 saatte 1 metrekareye düşen milimetre (veya inç) su cinsinden derecelendirilmiştir. 1 mm yağmur, 1 metrekareye 1 litre suya karşılık gelir. |
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|
-| **Sıcaklık**, sıcak ve soğuğun nicel algısını ifade eder. Derece cinsinden ölçülür. OsmAnd'da Santigrat ve Fahrenhayt ölçeği arasında seçim yapabilirsiniz. |
+| **Sıcaklık**, sıcak ve soğuk algısının nicel ifadesidir. Derece cinsinden ölçülür. OsmAnd'da Celsius ve Fahrenheit ölçeği arasında seçim yapabilirsiniz. |
 |![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|
-| **Rüzgar**, Dünya'nın güneş tarafından düzensiz ısınması ve kendi dönüşü nedeniyle havanın hareketidir. Rüzgarlar hafif esintilerden kasırgalar ve hortumlar gibi doğal afetlere kadar değişebilir. OsmAnd'da rüzgar hızı metre/saniye (m/s), kilometre/saat (km/sa), mil/saat (mph) ve knot (kt) olarak görüntülenebilir. |
+| **Rüzgar**, Dünya'nın güneş tarafından düzensiz ısınması ve kendi dönüşü nedeniyle havanın hareketidir. Rüzgarlar hafif esintilerden kasırga ve hortum gibi doğal afetlere kadar değişebilir. OsmAnd'da rüzgar hızı metre/saniye (m/s), kilometre/saat (km/sa), mil/saat (mph) ve knot (kt) olarak görüntülenebilir. |
 |![Wind sheme](@site/static/img/plugins/weather/wind.png)|
-| **Bulutluluk**, belirli bir konumdan bakıldığında gökyüzünün bulutlarla kaplı ortalama kesiridir. % olarak ölçülür. |
+| **Bulutluluk**, belirli bir konumdan gözlemlendiğinde gökyüzünün bulutlarla kaplı ortalama oranıdır. % cinsinden ölçülür. |
 |![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|
-| **Atmosferik basınç**, ölçüm noktasının üzerindeki havanın ağırlığından kaynaklanır. Yükseklik arttıkça azalır. Atmosferik basınç hektopaskal (hPa), milimetre cıva (mmHg) ve inç cıva (inHg) olarak görüntülenebilir. |
+| **Atmosfer basıncı**, ölçüm noktasının üzerindeki havanın ağırlığından kaynaklanır. Yükseklik arttıkça azalır. Atmosfer basıncı hektopaskal (hPa), milimetre cıva (mmHg) ve inç cıva (inHg) olarak görüntülenebilir. |
 | ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
-| **Rüzgar animasyonu**, bölgedeki rüzgar yönünü ve hızını gösteren dinamik temsilleri içerir. |
+| **Rüzgar animasyonu**, bölge genelinde rüzgar yönünü ve hızını gösteren dinamik temsilleri içerir. |
 | ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
 
 
@@ -172,7 +172,7 @@ Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzeri
 
 </Tabs>
 
-Kapsamlı hava durumu bilgisi almak için harita katmanlarını ayrı ayrı kullanabilir veya kolayca birleştirebilirsiniz. Belirli bir türdeki izolinler de Hava Durumu katmanına eklenebilir. Sadece ekrandaki *Katmanlar* veya *İzolinler* düğmesine dokunun.
+Kapsamlı hava durumu bilgileri almak için harita katmanlarını ayrı ayrı kullanabilir veya kolayca birleştirebilirsiniz. Belirli bir türdeki izolinler de Hava Durumu katmanına eklenebilir. Sadece ekrandaki *Katmanlar* veya *İzolinler* düğmesine dokunun.
 
 
 ### Katmanlar için Hızlı Eylemler {#quick-actions-for-layers}
@@ -181,7 +181,7 @@ Kapsamlı hava durumu bilgisi almak için harita katmanlarını ayrı ayrı kull
 
 Hava durumu katmanlarının görünürlüğünü değiştirmek için harita ekranındaki *Hızlı Eylem* düğmelerini kullanabilirsiniz. Katmanları gösterme veya gizleme genel ayarları, *Ana Menü*'nün ayrı [Hava Durumu bölümünde](#weather-forecast-screen) bulunabilir. [Hızlı Eylem](../widgets/quick-action.md#configure-map) makalesinde, görüntülenebilecek katmanların bir listesini bulacaksınız. Bu harita yapılandırmasına hızlı erişime ihtiyacınız varsa, *Özel Düğme* aracını kullanın.
 
-- [Eylem Ekle](../widgets/quick-action.md#custom-buttons) bölümüne gidin: *Menü → Ekranı yapılandır → Özel düğmeler → Hızlı eylem → Eylem ekle → Haritayı yapılandır*.
+- [Eylem ekle](../widgets/quick-action.md#custom-buttons) bölümüne gidin: *Menü → Ekranı yapılandır → Özel düğmeler → Hızlı eylem → Eylem ekle → Haritayı yapılandır*.
 - Belirli bir hava durumu katmanının görünürlüğünü değiştirmek için bir veya daha fazla QA düğmesi ekleyin.
 
 
@@ -189,10 +189,10 @@ Hava durumu katmanlarının görünürlüğünü değiştirmek için harita ekra
 
 ### Önbellek {#cache}
 
-Hava Durumu sekmesi açıkken, aksi belirtilmedikçe, gerekli hava durumu bilgileri ağdan indirilir. Cihazlarınızda önceden yüklenmiş [Hava durumu tahminini](#download-forecast) kullanabilirsiniz. Hava durumu bilgileri indirildikten sonra otomatik olarak önbelleğe alınır ve tahmin süresi dolana kadar çevrimdışı olarak kullanılabilir.
+Hava Durumu sekmesi açıkken, aksi belirtilmedikçe, gerekli hava durumu bilgileri ağdan indirilir. Cihazlarınızda önceden yüklenmiş [Hava Durumu tahminini](#download-forecast) kullanabilirsiniz. Hava durumu bilgileri indirildikten sonra otomatik olarak önbelleğe alınır ve tahmin süresi dolana kadar çevrimdışı kullanılabilir.
 
 :::tip
-Android cihazlarda, *Hava Durumu widget*'ına dokunarak hava durumu verilerinin ne zaman indirildiğini kontrol edebilirsiniz. OsmAnd Geliştirme eklentisi etkinleştirilmiş olmalıdır.
+Android cihazlarda, *Hava durumu widget'ına* dokunarak hava durumu verilerinin ne zaman indirildiğini kontrol edebilirsiniz. OsmAnd Geliştirme eklentisi etkinleştirilmelidir.
 ![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)
 :::
 
@@ -214,21 +214,21 @@ Android cihazlarda, *Hava Durumu widget*'ına dokunarak hava durumu verilerinin 
 
 </Tabs>
 
-Her ülke için **Çevrimdışı Tahmin** (7 güne kadar) indirebilirsiniz. Güncel tarihe ne kadar yakın olursa, o kadar doğru olacaktır. Hava durumu tahminini çevrimdışı kullanmak istiyorsanız, hava durumu verilerini önceden indirmeniz gerekir.
+Her ülke için **Çevrimdışı Tahmin** (7 güne kadar) indirebilirsiniz. Mevcut tarihe ne kadar yakınsa, o kadar doğru olacaktır. Hava durumu tahminini çevrimdışı kullanmak istiyorsanız, hava durumu verilerini önceden indirmeniz gerekir.
 
 Tahmin indirme menüsünde, hava durumu verilerini güncel tutmak için bilgi alabilir ve parametreleri ayarlayabilirsiniz.
 
 - **Oluşturuldu** (*Android*) / **Güncellendi** (*iOS*). Son güncellemenin ne zaman yapıldığını gösterir.
 - **Sonraki güncelleme** (*iOS*). Bir sonraki güncellemenin ne zaman kullanılabilir olacağını gösterir.
 - **Boyut** (*Android*) / **Güncelleme boyutu** (*iOS*). Tüm güncellemelerin boyutunu gösterir.
-- **Güncelle** düğmesi (*Android*) / **Şimdi güncelle** (*iOS*). Etkin olduğunda, otomatik güncellemeyi beklemeden hava durumu verilerini manuel olarak güncellemenizi sağlar.
+- **Güncelle** düğmesi (*Android*) / **Şimdi güncelle** (*iOS*). Etkin olduğunda, otomatik bir güncellemeyi beklemeden hava durumu verilerini manuel olarak güncellemenizi sağlar.
 - **Güncelleme sıklığı** (*iOS*). 12 saatlik, 24 saatlik veya haftalık olarak ayarlanabilir.
 - *Yalnızca Wi-Fi üzerinden güncelle* (*iOS*). İndirmeler için mobil veri kullanmak istemiyorsanız bu seçeneği etkinleştirin.
-- **Kaldır** *çöp kutusu* düğmesi (*Android*) / **Tahmini kaldır** (*iOS*). Bu bölgeye ait tüm tahmin verilerini silmenizi sağlar.
+- **Kaldır** *çöp kutusu* düğmesi (*Android*) / **Tahmini kaldır** (*iOS*). Bu bölge için tüm tahmin verilerini silmenizi sağlar.
 - **Düzenle** *kalem* düğmesi (*Android*). Hava durumu dosyasını yeniden adlandırmanızı sağlar.
 
 :::info
-OsmAnd her 6 saatte bir yeni bir tahmin oluşturur.
+Hava durumu verileri her 6 saatte bir güncellenir ([GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast)'den 4 ve [ECMWF](https://www.ecmwf.int/)'den 3 güncelleme) ve yayınlanmadan önce hesaplama süreci birkaç saat sürdüğü için (genellikle UTC 07:00 civarında) kısa bir gecikmeyle OsmAnd'da kullanılabilir hale gelir.
 :::
 
 
@@ -238,7 +238,7 @@ OsmAnd her 6 saatte bir yeni bir tahmin oluşturur.
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="shared_string_weather"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)
 
@@ -246,7 +246,7 @@ OsmAnd her 6 saatte bir yeni bir tahmin oluşturur.
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate ios="true" ids="shared_string_weather"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate ios="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)
 
@@ -254,10 +254,10 @@ OsmAnd her 6 saatte bir yeni bir tahmin oluşturur.
 
 </Tabs>
 
-Sıcaklık, Hava Basıncı, Rüzgar, Bulut ve Yağış gibi [Hava Durumu widget'ları](../widgets/info-widgets.md#weather-widgets), **haritadaki merkezi nokta** için güncel hava durumu verilerini gösterir.
+Sıcaklık, Hava Basıncı, Rüzgar, Bulut ve Yağış gibi [Hava Durumu widget'ları](../widgets/info-widgets.md#weather-widgets), **haritadaki merkez nokta** için mevcut hava durumu verilerini gösterir.
 
 - Hava durumu widget'ları yalnızca [Hava Durumu ekranı](#weather-forecast-screen) açıkken görüntülenir.
-- Hava durumu widget'larını etkinleştirmek için *Ekranı Yapılandır* Ana Menü öğesini, yerleştirilecek paneli ve listeden gerekli widget'ları seçin.
+- Hava durumu widget'larını etkinleştirmek için *Ekranı Yapılandır* Ana Menü öğesini, bunları yerleştireceğiniz paneli ve listeden gerekli widget'ları seçin.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -265,5 +265,3 @@ Sıcaklık, Hava Basıncı, Rüzgar, Bulut ve Yağış gibi [Hava Durumu widget'
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
 - [Küresel Ayarlar](../../user/personal/global-settings.md)
 - [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
-
-> *Son güncelleme: Kasım 2024*

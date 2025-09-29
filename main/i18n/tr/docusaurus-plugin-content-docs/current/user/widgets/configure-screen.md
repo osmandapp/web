@@ -1,5 +1,5 @@
 ---
-source-hash: cbfcf0aa9a07f3ab40e670385d79d1a04431696bcbef518decc18f41ef282921
+source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd'daki **Ekranı Yapılandır** menüsü, birden fazla panelde widget'lar, düğmeler ve hızlı eylemler ekleyerek ve düzenleyerek harita arayüzünü özelleştirmenizi sağlar.
+OsmAnd'daki **Ekranı Yapılandır** menüsü, birden çok panelde widget'lar, düğmeler ve hızlı eylemler ekleyerek ve düzenleyerek harita arayüzünü özelleştirmenize olanak tanır.
 
 Şunları yapabilirsiniz:
 
-- [Bilgilendirici](../widgets/info-widgets.md), [gezinme](../widgets/nav-widgets.md) ve [işaretleyiciyle ilgili](../widgets/markers.md) widget'lar ekleyin.
+- [Bilgilendirici](../widgets/info-widgets.md), [navigasyonel](../widgets/nav-widgets.md) ve [işaretçiyle ilgili](../widgets/markers.md) widget'lar ekleyin.
 - [Hızlı Eylemler](../widgets/quick-action.md), [Özel düğmeler](../widgets/quick-action.md#custom-buttons) ve [Varsayılan düğmeler](../widgets/map-buttons.md) ekleyin veya düzenleyin.
 - Widget'ları panellerde (üst, alt, sol, sağ, orta) düzenleyin.
-- Yan panellerde birden fazla **sayfa** oluşturun, widget'ların boyutunu seçin.
+- Yan panellerde birden çok **sayfa** oluşturun, widget'ların boyutunu seçin.
 - Satır yüksekliğini seçin ve widget simgelerini açıp kapatın.
 
 Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profilin kendi düzeni, sırası, görünürlüğü ve ayarları vardır.
@@ -74,8 +74,8 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 </Tabs>
 
-OsmAnd, özelleştirilebilir widget panellerini kullanarak harita arayüzünü düzenlemenizi sağlar.  
-Aşağıdaki panellere widget ekleyebilir, yeniden sıralayabilir, gruplayabilir ve kaldırabilirsiniz:
+OsmAnd, özelleştirilebilir widget panellerini kullanarak harita arayüzünü düzenlemenize olanak tanır.  
+Aşağıdaki panellerde widget'ları ekleyebilir, yeniden sıralayabilir, gruplayabilir ve kaldırabilirsiniz:
 
 - **Üst panel**
 - **Alt panel**
@@ -84,8 +84,8 @@ Aşağıdaki panellere widget ekleyebilir, yeniden sıralayabilir, gruplayabilir
 
 Her panel farklı düzen davranışlarını destekler:
 
-- **Üst ve Alt paneller** widget'ları satırlarda görüntüler. Her satıra bir veya iki widget yerleştirebilir ve gerektiğinde birden fazla satır ekleyebilirsiniz.
-- **Sol ve Sağ paneller** birden fazla sayfayı destekler. Widget'ları ayrı sayfalarda gruplayabilir ve aralarında geçiş yapabilirsiniz.
+- **Üst ve Alt paneller** widget'ları satırlar halinde görüntüler. Satır başına bir veya iki widget yerleştirebilir ve gerekirse birden çok satır ekleyebilirsiniz.
+- **Sol ve Sağ paneller** birden çok sayfayı destekler. Widget'ları ayrı sayfalarda gruplayabilir ve aralarında geçiş yapabilirsiniz.
 
 
 ### Widget Kataloğu {#widgets-catalog}
@@ -108,76 +108,76 @@ Her panel farklı düzen davranışlarını destekler:
 
 ***Navigasyon widget'ları:***  
 
-- [Kerteriz](../widgets/nav-widgets.md#bearing).  
-    Bu set, bir hedefe olan mutlak veya göreceli kerterizi açısal birimlerde gösterir.  
+- [Kerteriz](../widgets/nav-widgets.md#bearing-widget).  
+    Bu set, açısal birimlerde bir hedefe olan mutlak veya göreceli kerterizi gösterir.  
     3 widget dahildir: *Göreceli kerteriz*, *Manyetik kerteriz*, *Gerçek kerteriz*.
 
 - [Yükseklik profili](../widgets/nav-widgets#elevation-widget) (*Yalnızca Üst/Alt*, *Yalnızca Android*).  
-    Rota yüksekliğini ve eğimini gösterir.
+    Rota yüksekliğini ve eğimini görüntüler.
 
 - [Şeritler](../widgets/nav-widgets#lanes) (*Yalnızca Üst/Alt*).  
-    Görsel şerit kılavuzu.
+    Görsel şerit rehberliği.
 
-- [Harita işaretçileri çubuğu](../widgets/markers.md#configure-marker-widgets-android) (*Yalnızca Üst/Alt*).  
+- [Harita işaretçileri çubuğu](../widgets/markers.md#configure-marker-widgets) (*Yalnızca Üst/Alt*).  
     Kaydedilen işaretçilere olan mesafeyi/yönü gösterir.  
     1 veya 2 işaretçi için yapılandırılabilir.
 
 - [Navigasyon noktası](../widgets/nav-widgets.md#navigation-points).  
-    Set, bir hedefe, ara noktaya kalan mesafeyi, ara noktaya varış süresini veya hesaplanan bir rota için seyahat süresini gösterir.  
+    Set, bir hedefe kalan mesafeyi, ara noktayı, ara noktaya varış zamanını veya hesaplanan bir rota için seyahat süresini gösterir.  
     4 widget dahildir: [Hedefe mesafe](../widgets/nav-widgets.md#distance-to-destination), [Ara noktaya mesafe](../widgets/nav-widgets.md#distance-to-intermediate), [Ara noktaya süre](../widgets/nav-widgets.md#time-to-intermediate), [Hedefe süre](../widgets/nav-widgets.md#time-to-destination).
 
 - [Rota manevraları](../widgets/nav-widgets.md#next-turn) (*Yalnızca Sol/Sağ panel*).  
-    Bu set navigasyon sırasında etkinleşir ve bir sonraki manevraya olan mesafeyi ve oku gösterir.  
+    Bu set navigasyon sırasında etkinleştirilir ve bir sonraki manevraya olan mesafeyi ve oku gösterir.  
     3 widget dahildir: *Sonraki dönüş*, *Sonraki dönüş (küçük)*, *İkinci sonraki dönüş*.
 
 - [Hız sınırı](../widgets/nav-widgets.md#speed-limit).  
-    Yol için mevcut hız sınırını gösterir.
+    Yol için mevcut hız sınırını görüntüler.
 
 - [Hız göstergesi](../widgets/info-widgets.md#speedometer).  
     GPS verilerine dayalı mevcut hızı ve [OpenStreetMap verilerine](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dayalı sınırlı hızı gösterir.
 
 - [Sokak Adı](../widgets/nav-widgets#street-name) (*Yalnızca Üst/Alt*).  
-    Mevcut veya gelecek sokağı gösterir.
+    Mevcut veya yaklaşan sokağı görüntüler.
 
 <br/>
 
 ***Bilgilendirici widget'lar:***
 
 - [Rakım](../widgets/info-widgets.md#altitude-widgets).  
-    Set, mevcut konum veya mevcut harita merkezi için deniz seviyesinden yüksekliği gösterir.  
+    Set, mevcut konum veya mevcut harita merkezi için deniz seviyesinden yüksekliği görüntüler.  
     2 widget dahildir: *Rakım: mevcut konum*, *Yükseklik: harita merkezi*.
 
-- [Ortalama hız](../widgets/info-widgets.md#average-speed-widget).  
+- [Ortalama hız](../widgets/info-widgets.md#average-speed).  
     Mevcut seyahatin ortalama hızını gösterir.
 
 - [Pil seviyesi](../widgets/info-widgets.md#battery-level).  
-    Cihazın pil seviyesini gösterir.
+    Cihazın pil seviyesini görüntüler.
 
 - [Koordinatlar widget'ları](../widgets/info-widgets#coordinates-widget) (*Yalnızca Üst/Alt*).  
-    Bu set, mevcut coğrafi konumun coğrafi koordinatlarını gösterir.  
+    Bu set, mevcut coğrafi konumun coğrafi koordinatlarını görüntüler.  
     2 widget dahildir: *Koordinatlar: harita merkezi*, *Koordinatlar: mevcut konum*.
 
-- [Mevcut Hız](../widgets/info-widgets.md#speed).  
-    GPS sensöründen hızı gösterir.
+- [Mevcut Hız](../widgets/info-widgets.md#current-speed).  
+    GPS sensöründen hızı görüntüler.
 
-- [Mevcut saat](../widgets/info-widgets.md#current-time).  
-    Mevcut sistem saatini gösterir.
+- [Mevcut zaman](../widgets/info-widgets.md#current-time).  
+    Mevcut sistem saatini görüntüler.
 
 - [Süzülme oranı](../widgets/info-widgets.md#glide-ratio).  
-    Widget'lar, hedefe süzülme oranını ve mevcut uçuş için ortalama süzülme oranını gösterir.  
+    Widget'lar, hedefe olan süzülme oranını ve mevcut uçuş için ortalama süzülme oranını gösterir.  
     2 widget dahildir: *Hedefe süzülme oranı*, *Ortalama süzülme oranı*.
 
 - [GPS bilgisi](../widgets/info-widgets.md#gps-info) (*Yalnızca Android*).  
     Algılanan uydu sayısını gösterir.
 
 - [Harita işaretçileri](../widgets/markers.md).  
-    Set, [listede](https://osmand.net/docs/user/personal/markers#itinerary-list) ilk iki işaretçi için mesafeyi veya tahmini varış süresini (ETA) gösterir.  
+    Set, [listede](https://osmand.net/docs/user/personal/markers#itinerary-list) ilk iki işaretçi için mesafeyi veya tahmini varış zamanını (ETA) gösterir.  
     2 widget dahildir: *İlk işaretçi*, *İkinci işaretçi*.
 
 - [Yarıçap cetveli](../widgets/info-widgets.md#radius-ruler).  
-    Konumunuz ile [Yarıçap cetveli aracı](../widgets/radius-ruler.md) ile daire içine alınan haritadaki bir nokta arasındaki mesafeyi gösterir.
+    Konumunuz ile [Yarıçap cetveli aracı](../widgets/radius-ruler.md) ile daire içine alınmış haritadaki bir nokta arasındaki mesafeyi gösterir.
 
-- [Gün doğumu, gün batımı](../widgets/info-widgets.md#sunset-and-sunrise).  
+- [Gün doğumu, gün batımı](../widgets/info-widgets.md#sun-position).  
     Haritanın merkezi için bir sonraki gün doğumu veya gün batımı zamanını gösterir.  
     2 widget dahildir: *Gün doğumu*, *Gün batımı*.
 
@@ -187,10 +187,10 @@ Her panel farklı düzen davranışlarını destekler:
 
 - [Ses/video notları](../widgets/info-widgets.md#audiovideo-notes-widget).  
     Medya yakalamak için hızlı erişim.  
-    4 widget dahildir: *İsteğe bağlı*, *Ses kaydet*, *Video kaydet*, *Fotoğraf çek*.
+    4 widget dahildir: *İstek üzerine*, *Ses kaydet*, *Video kaydet*, *Fotoğraf çek*.
 
 - [Geliştirici widget'ları](../widgets/info-widgets.md#developer-widgets).  
-    İsteğe bağlı bilgileri gösterir.  
+    İsteğe bağlı bilgileri görüntüler.  
     5 widget dahildir: *Harita oluşturma FPS'si*, *Kamera eğimi*, *Kamera yüksekliği*, *Yakınlaştırma seviyesi*, *Kameradan hedefe uzaklık*, *Kullanılabilir RAM*.  
 
 - [Harici Sensörler widget'ları](../widgets/info-widgets.md#external-sensors-widgets).  
@@ -207,14 +207,14 @@ Her panel farklı düzen davranışlarını destekler:
     Ekranın merkezinden kaydedilen park konumuna olan mesafe.
 
 - [Yolculuk kaydı](../widgets/info-widgets.md#trip-recording-widgets).  
-    Parça kaydını başlatır ve durdurur ve parça kayıt verilerini gösterir.  
+    Rota kaydını başlatır ve durdurur ve rota kayıt verilerini görüntüler.  
     4 widget dahildir: *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*.
 
-- [Hava Durumu](../widgets/info-widgets.md#weather-widgets).  
-    Ayrıntılı hava durumu bilgilerini gösterir.  
+- [Hava durumu](../widgets/info-widgets.md#weather-widgets).  
+    Ayrıntılı hava durumu bilgilerini görüntüler.  
     5 widget dahildir: *Sıcaklık*, *Hava Basıncı*, *Rüzgar*, *Bulut*, *Yağış*.
 
-:::not Panel bağımlı widget'lar
+:::note Panele bağımlı widget'lar
 
 - Yalnızca **Üst ve Alt panellerde** mevcuttur ve ayrı satırlara yerleştirilmelidir: *Koordinatlar widget'ları, Yükseklik Profili widget'ı, Şeritler widget'ı, Harita işaretçileri çubuğu, Sokak Adı widget'ı*.
 - Yalnızca **Sol ve Sağ panellerde** mevcuttur: *Rota manevraları*.
@@ -243,13 +243,13 @@ Her panel farklı düzen davranışlarını destekler:
 
 
 
-**Satır modu** özelliği, üst ve alt panellere gerektiği kadar satır eklemenizi sağlar. Her satırda birden fazla widget görüntüleyerek görünür bilgi miktarını artırabilirsiniz.
+**Satır modu** özelliği, üst ve alt panellere gerektiği kadar satır eklemenize olanak tanır. Satır başına birden çok widget görüntüleyebilir, böylece görünür bilgi miktarını artırabilirsiniz.
 
 ***Satırlar nasıl yapılandırılır:***
 
-- **Widget ekle**: *Artı* düğmesine (Android) veya *Widget ekle* (iOS) dokunun, ardından mevcut widget listesinden seçin.
+- **Widget ekle**: *Artı* düğmesine (Android) veya *Widget ekle* (iOS) dokunun, ardından mevcut widget'lar listesinden seçin.
 - **Widget'ları yeniden sırala**: Widget'ları yeniden düzenlemek için *Kalem* düğmesine (Android) veya *Düzenle* (iOS) dokunun.
-- **Satır ekle**: Widget'larınız için yeni satırlar oluşturmak üzere *Satır ekle* düğmesine dokunun.
+- **Satır ekle**: Widget'larınız için yeni satırlar oluşturmak için *Satır ekle* düğmesine dokunun.
 - **Widget'ları taşı**: Widget'ları farklı satırlar arasında sürükleyin.
 - **Widget ayarlarına erişin**: Widget ayarlarını açmak için *"i"* simgesine (Android) veya *">"* okuna (iOS) dokunun.
 - **Değişiklikleri kaydet**: Düzeni kaydetmek için *Uygula* (Android) veya *Bitti* (iOS) dokunun.
@@ -257,17 +257,17 @@ Her panel farklı düzen davranışlarını destekler:
 
 #### Widget Türleri ve Kısıtlamaları {#widget-types-and-restrictions}
 
-Bu mod, üst ve alt panellerde **tek bir satıra birden fazla widget** eklemenize olanak tanır ve gerektiği kadar bilgi görüntülemenizi sağlar.  
+Mod, gerektiği kadar bilgi görüntülemek için üst ve alt panellerde **tek bir satıra birden fazla widget** eklemenize olanak tanır.  
 
-- **Karmaşık widget'lar**. Her satıra yalnızca bir karmaşık widget eklenebilir. Bunlar şunları içerir:
-    - [Harita işaretçileri çubuğu (*Yalnızca Android*)](../widgets/markers.md#configure-marker-widgets-android)
+- **Karmaşık widget'lar**. Satır başına yalnızca bir karmaşık widget eklenebilir. Bunlar şunları içerir:
+    - [Harita işaretçileri çubuğu (*Yalnızca Android*)](../widgets/markers.md#configure-marker-widgets)
     - [Sokak adı](../widgets/nav-widgets#street-name)
     - [Koordinatlar widget'ları](../widgets/info-widgets#coordinates-widget)
     - [Şeritler](../widgets/nav-widgets#lanes)
     - [Yükseklik profili (*Yalnızca Android*)](../widgets/nav-widgets#elevation-widget)
     - [Rota manevraları](../widgets/nav-widgets.md#next-turn)
 
-- **Basit widget'lar**. Tek bir satıra birden fazla basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir.
+- **Basit widget'lar**. Tek bir satıra birden çok basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir.
 
 
 ### Sayfalar {#pages}
@@ -292,12 +292,12 @@ Bu mod, üst ve alt panellerde **tek bir satıra birden fazla widget** eklemeniz
 
 </Tabs>
 
-Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. **Sayfalar modu** özelliği, sol ve sağ panellere 5 sayfa eklemenizi sağlar.
+Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. **Sayfalar modu** özelliği, sol ve sağ panellere 5 sayfa eklemenize olanak tanır.
 
 ***Satırlar nasıl yapılandırılır:***
 
 - **Sayfa Ekle**. Sol/Sağ Panel ayarlarına gidin ve *Düzenle → Sayfa Ekle* öğesine dokunun.
-- **Widget'ları Sayfaya göre düzenleyin**. Bu özellik, navigasyon veya harita tarama gibi farklı görevler için farklı widget setlerine ihtiyaç duyulduğunda kullanışlıdır.
+- **Widget'ları Sayfaya göre düzenle**. Bu özellik, navigasyon veya harita tarama gibi farklı görevler için farklı widget setleri gerektiğinde kullanışlıdır.
 - Sayfalar, belirli senaryolar için **widget setleri** oluşturmanıza olanak tanır, iş akışını iyileştirir ve dağınıklığı azaltır.
 
 
@@ -308,8 +308,8 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 1. **Widget boyutu seçenekleri** (*tüm paneller için*):  
     **Üst, Alt, Sol ve Sağ panellerdeki** **Basit widget'ların** boyutunu özelleştirebilirsiniz:
 
-    - **Küçük**. Kompakt ekranlar için idealdir, haritalar için daha fazla ekran alanı tasarrufu sağlar.
-    - **Orta** (*varsayılan widget boyutu*). Görünürlük ve alan kullanımı arasında denge sağlar.
+    - **Küçük**. Kompakt ekranlar için idealdir, haritalar için daha fazla ekran alanı sağlar.
+    - **Orta** (*varsayılan widget boyutu*). Görünürlük ve alan kullanımını dengeler.
     - **Büyük**. Daha büyük, daha görünür widget bilgileri sağlar.  
 
 2. **Widget simgelerini gizleme** (*üst ve alt paneller için*):
@@ -320,17 +320,17 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 3. **Farklı satırlar için bireysel boyut** (*tüm paneller için*):
 
     - Widget'lar, satır ve sütun boyutu ayarlanarak ayrı ayrı boyutlandırılabilir.
-    - **NOT:** Bir satır/sütundaki bir widget'ın boyutunu değiştirmek, o satır/sütundaki tüm widget'ları yeniden boyutlandırır.
+    - **NOT:** Bir satır/sütundaki bir widget'ın boyutunu değiştirmek, o satır/sütundaki tüm widget'ları yeniden boyutlandıracaktır.
 
 4. **Widget boyutunu ve simge görünürlüğünü değiştirmek için:**
 
     - Panele zaten eklediğiniz bir widget'ı seçin.  
     - Widget alanının sağ tarafındaki *Ayarlar* simgesine dokunun.
     - *Boyut* ayarına dokunun ve mevcut boyutlardan birini seçin.
-    - *Simgeleri göster* alanında Kapalı konumuna geçin.
+    - *Simgeyi göster* alanında Kapalı konumuna geçin.
 
 
-## Panellerin Özelleştirilmesi {#panels-customization}
+## Panelleri Özelleştirme {#panels-customization}
 
 ### Widget Bağlam Menüsü {#widget-context-menu}
 
@@ -338,65 +338,59 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 <TabItem value="android" label="Android">  
 
-![Widget kopyası](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget kopyası](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Widget bağlam menüsü**, widget'ları doğrudan harita ekranından yönetmek ve yapılandırmak için hızlı bir yol sağlar. Harita düzenini haritadan ayrılmadan özelleştirmek için herhangi bir widget'a ***uzun dokunarak*** erişebilirsiniz.
+**Widget bağlam menüsü**, widget'ları doğrudan harita ekranından yönetmek ve yapılandırmak için hızlı bir yol sağlar. Haritadan ayrılmadan widget'ların düzenini özelleştirmek için herhangi bir widget'a ***uzun dokunarak*** erişebilirsiniz.
 
-**Üst ve Alt paneller için**  
 
-- *Sağa/Sola widget ekle:*
-
+- **Sağa/Sola widget ekle** (yalnızca *Üst ve Alt paneller için*)
     - Yeni widget için mevcut olana göre bir konum seçin.
-    - [Mevcut widget'lar](#widgets-for-all-panels) listesinden widget'ı seçin.
+    - [Mevcut widget'lar](#widgets-catalog) listesinden widget'ı seçin.
 
-**Sol ve Sağ paneller için**  
-
-- *Yukarı/Aşağı widget ekle:*
-
+- **Yukarı/Aşağı widget ekle** (yalnızca *Sol ve Sağ paneller için*)
     - Yeni widget'ı mevcut widget'ın üstüne mi yoksa altına mı konumlandıracağınızı seçin.
     - Belirtilen konuma eklemek için listedeki gerekli widget'a dokunun.
 
-**Tüm paneller için genel eylemler**  
+- **Ayarlar**
+    - Görünümünü veya davranışını özelleştirmek için widget'ın ayarlarına (varsa) erişin.
 
-- *Ayarlar*.
-    - Widget'ın görünümünü veya davranışını özelleştirmek için widget'ın ayarlarına (varsa) erişin.
-
-- *Ortalama hızı sıfırla*.
-    - [Ortalama Hız](../widgets/info-widgets.md#average-speed) widget'ı için kullanılabilir.
-    - Bir yolculuk sırasında hız değerini anında sıfırlamak için uzun dokunun.
-
-- *Sil*.
+- **Sil**
     - Widget'ı panelden kaldırın.
     - Bir onay istemi, eylemin kasıtlı olmasını sağlar.
 
+- **Ortalama hızı sıfırla** (*Widget'a özel eylemler örneği*)
+    - [Ortalama Hız](../widgets/info-widgets.md#average-speed) widget'ı için kullanılabilir.
+    - Bir yolculuk sırasında hız değerini anında sıfırlamak için uzun dokunun.
+
+
 ### Widget Kopyaları {#copies-of-widgets}
 
-*OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel*  
+*OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel*  
 
 ![Widget kopyası](@site/static/img/widgets/widget_dublicate.png)  
 
-OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalara eklemenizi sağlar. Bu özellik, farklı görünümlerde veya profillerde tutarlı bilgilere ihtiyaç duyduğunuzda özellikle kullanışlıdır.  
+OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara eklemenize olanak tanır. Bu özellik, farklı görünümler veya profiller arasında tutarlı bilgilere ihtiyacınız olduğunda özellikle kullanışlıdır.  
 
-***Widget'lar nasıl çoğaltılır:***
+***Widget'ları çoğaltma:***
 
-- **Widget'ı ekleyin**. Şuraya gidin: *OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel →* **Ekle** *widget*.
+- **Widget'ı ekle**. Şuraya gidin: *OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel →* **Widget** *ekle*.
 - **Bağlam menüsünü kullanarak çoğaltın**. Widget'a dokunun ve eylemler listesinden **Çoğalt** öğesini seçin.
 - **Alternatif yöntem**. *Mevcut widget'lar* listesinden aynı widget'ı seçin ve *Ekle* öğesine dokunun.
 
 
 ### Taşı veya Sil {#move-or-delete}
 
-*OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel*  
+*OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel*  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -416,15 +410,15 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 
 
-**Düzenleme** modunu kullanarak widget'ları uygulama ekranından yeniden düzenleyebilir veya kaldırabilirsiniz.  
+**Düzenle** modunu kullanarak widget'ları uygulama ekranından yeniden düzenleyebilir veya kaldırabilirsiniz.  
 
-***Bir widget nasıl taşınır:***
+***Bir widget'ı taşıma:***
 
 - Şuraya gidin: *OsmAnd Menüsü → Ekranı Yapılandır → Widget'lar → Panel → Düzenle düğmesi*.
 - Widget'ın **sağındaki simgeye** uzun dokunun.
-- Widget listesinde istenen konuma sürükleyin.
+- Widget listesindeki gerekli konuma sürükleyin.
 
-***Bir widget nasıl silinir:***  
+***Bir widget'ı silme:***  
 
 - Yukarıdaki adımları izleyin.
 - Widget adının solundaki **eksi simgesine** dokunun.
@@ -455,7 +449,7 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 </Tabs>
 
-**Hızlı Eylem (Özel düğmeler)**, tüm mevcut [Hızlı eylemlerden](../widgets/quick-action.md#custom-buttons) tek eylemlerin bir listesini eklemenizi sağlar. Bu eylemler, harita ekranındaki bir veya daha fazla widget düğmesine atanabilir. Özel düğmeler, sık kullanılan eylemlere hızlı erişim sağlar.
+**Hızlı Eylem (Özel düğmeler)**, tüm mevcut [Hızlı eylemlerden](../widgets/quick-action.md#custom-buttons) tek eylemlerin bir listesini eklemenize olanak tanır. Bu eylemler, harita ekranındaki bir veya daha fazla widget düğmesine atanabilir. Özel düğmeler, sık kullanılan eylemlere hızlı erişim sağlar.
 
 ### Varsayılan Düğmeler {#default-buttons}
 
@@ -479,9 +473,9 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 </Tabs>
 
-1. **Varsayılan düğmeler**, harita ekranında hangi önceden ayarlanmış harita düğmelerinin görünür olduğunu özelleştirmenizi sağlar. Aşağıdaki düğmeleri gizlemeyi veya göstermeyi seçebilirsiniz:
+1. **Varsayılan düğmeler**, harita ekranında hangi önceden ayarlanmış harita düğmelerinin görünür olduğunu özelleştirmenize olanak tanır. Aşağıdaki düğmeleri gizlemeyi veya göstermeyi seçebilirsiniz:
 
-    - [3B mod](../widgets/map-buttons.md#3d-mode). iOS için düğme her zaman kullanılabilir. Android için, harita oluşturma motoru [Sürüm 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) seçiliyse listede görünür ve ayarlanabilir.
+    - [3B mod](../widgets/map-buttons.md#3d-mode). iOS için düğme her zaman kullanılabilir. Android için listede görünür ve harita oluşturma motoru [Sürüm 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) seçilirse ayar için kullanılabilir.
 
     - [Pusula](../widgets/map-buttons.md#display-options). Haritanın cihazda nasıl yönlendirildiğini gösterir.  
     3 görünüm: *Her zaman görünür*, *Her zaman gizli*, *Harita döndürülürse görünür*.
@@ -492,15 +486,15 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
     - [Konumum](../widgets/map-buttons.md#my-location-and-zoom). Haritayı mevcut konumunuza ortalar.
 
-    - [Navigasyon](../widgets/map-buttons.md#directions). Rota planlama ve navigasyonu başlatmak için önemlidir.
+    - [Navigasyon](../widgets/map-buttons.md#directions). Rota planlama ve navigasyonu başlatmak için gereklidir.
 
     - [Ara](../widgets/map-buttons.md#search). Konumları bulmak için arama aracını açar.
 
-    - [Yakınlaştır / Uzaklaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın yakınlaştırma seviyesini ayarlayarak daha fazla veya daha az ayrıntı gösterir.
+    - [Yakınlaştır / Uzaklaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın yakınlaştırma seviyesini daha fazla veya daha az ayrıntı göstermek için ayarlar.
 
 2. Varsayılan düğmeler ekranındaki **üç nokta menüsü** aşağıdaki eylemleri içerir:
 
-    - *Varsayılana sıfırla*. Düğme ayarlarını orijinal görünümlerine döndürmenizi sağlar.
+    - *Varsayılana sıfırla*. Düğme ayarlarını orijinal görünümlerine döndürmenize olanak tanır.
     - *Başka bir profilden kopyala*. Sunulan listeden hangi profilden düğme ayarlarını kopyalamak istediğinizi seçin.
 
 3. **Varsayılan düğme görünümü** (*Yalnızca Android*), bu tür düğmeler için çeşitli özelleştirme seçenekleri sunar. Bir düğmenin görünümünü değiştirmek için listeden gerekli düğmeye dokunun ve [Görünüm](#button-appearance) seçeneğini seçin.
@@ -516,8 +510,8 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 ***Özelleştirme seçenekleri***:
 
-- **Simge**. Önceden eklediğiniz eylemleri temsil eden simgeler listesinden seçim yapın, böylece işlevleri bir bakışta kolayca tanımlayabilirsiniz.
-- **Köşe yarıçapı**. Bu ayarı, düğmenin şeklini değiştirmek için ayarlayın; keskin, kare köşelerden pürüzsüz, yuvarlak kenarlara kadar.
+- **Simge**. Önceden eklediğiniz eylemleri temsil eden simgeler listesinden seçim yapın, işlevleri bir bakışta tanımlamayı kolaylaştırın.
+- **Köşe yarıçapı**. Düğmenin şeklini değiştirmek için bu ayarı yapın, keskin, kare köşelerden pürüzsüz, yuvarlak kenarlara kadar.
 - **Boyut**. Ekranınıza en uygun ve gerektiği gibi öne çıkan düğme boyutunu seçin. *Varsayılan düğmeler* için boyutlar önceden ayarlanmıştır ve ayarlanamaz.
 - **Arka plan opaklığı**. Düğmenin arka planının görünürlüğünü kontrol edin. Tamamen görünür veya kısmen şeffaf olarak ayarlayabilir veya yalnızca çerçeve gölgesini ve simgeyi görüntüleyebilirsiniz.
 
@@ -569,11 +563,11 @@ OsmAnd, aynı widget'ın birden fazla örneğini farklı panellere veya sayfalar
 
 > *Ekrandaki konum konumu*, OsmAnd'ın iOS sürümündeki bu ayarın adıdır.  
 
-OsmAnd haritasında imlecin [Konumum](../map/interact-with-map.md#my-location-and-zoom) konumunu ayarlamanızı sağlar. Üç seçenek mevcuttur:  
+OsmAnd haritasında imlecin *[Konumum](../map/interact-with-map.md#my-location-and-zoom)* konumunu ayarlamanıza olanak tanır. Üç seçenek mevcuttur:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. İmleç her zaman ekranın ortasında konumlandırılır.
-- **<Translate android="true" ids="position_on_map_bottom"/>**. *Konumum*, ekranın biraz altında konumlandırılır. Bu mod, hareketinizin önünde daha fazla harita bilgisi görmenizi sağlar, bu da navigasyon sırasında kullanışlıdır.
-- **<Translate android="true" ids="shared_string_automatic"/>**. *Konumum*'u [Harita yönlendirmesine](../map/interact-with-map.md#map-orientation-modes) bağlı olarak konumlandırır (*Alt* - hareket yönü için, *Merkez* - diğer tüm durumlar için).
+- **<Translate android="true" ids="position_on_map_bottom"/>**. *Konumum* ekranın ortasının biraz altına yerleştirilir. Bu mod, hareketinizin önünde daha fazla harita bilgisi görmenizi sağlar, bu da navigasyon sırasında kullanışlıdır.
+- **<Translate android="true" ids="shared_string_automatic"/>**. *Konumum*'u *[Harita yönü](../map/interact-with-map.md#map-orientation-modes)*'na bağlı olarak yerleştirir (*Alt* - hareket yönü için, *Merkez* - diğer tüm durumlar için).
 
 
 ## Eylemler {#actions}
@@ -600,13 +594,13 @@ OsmAnd haritasında imlecin [Konumum](../map/interact-with-map.md#my-location-an
 
 Ekranı Yapılandır'daki ek eylemlere erişim şunlardır:
 
-- *Android*. Ekranı Yapılandır'da ekranın alt kısmında *Eylemler* bölümünde bulunur: *Menü → Ekranı Yapılandır → Eylemler*.
+- *Android*. Ekranı Yapılandır'da ekranın altındaki *Eylemler* bölümünde bulunur: *Menü → Ekranı Yapılandır → Eylemler*.
 - *Android / iOS*. Her Panel'in ekranlarında, ekranın sağ üst köşesindeki *üç nokta menüsünde* bulunur.
 
 Mevcut eylemler:
 
-- **Varsayılana sıfırla**. Bu özellik, baştan başlamak veya OsmAnd'ı başlatırken yalnızca önceden ayarlanmış olanları kullanmak istiyorsanız tüm ayarları varsayılan değerlere sıfırlamanızı sağlar.
-- **Başka bir profilden kopyala**. Bu özellik, başka bir profilden ayarları hızlı bir şekilde içe aktarmanızı, listeden gerekli olanları seçmenizi ve kopyalamanızı sağlar.
+- **Varsayılana sıfırla**. Bu özellik, baştan başlamak veya OsmAnd'ı başlatırken yalnızca önceden ayarlanmış olanları kullanmak isterseniz tüm ayarları varsayılan değerlere sıfırlamanıza olanak tanır.
+- **Başka bir profilden kopyala**. Bu özellik, başka bir profilden ayarları hızlı bir şekilde içe aktarmanıza, listeden gerekli olanları seçmenize ve kopyalamanıza olanak tanır.
 
 
 ## Profili Değiştir {#switch-profile}
@@ -627,10 +621,10 @@ Mevcut eylemler:
 
 </Tabs>
 
-- **Android** cihazlar için, Ekranı Yapılandır ana ekranının üst kısmında mevcut profil simgelerini kullanarak profilleri değiştirebilirsiniz.  
-- Bir **iOS** cihaz kullanıyorsanız, Ekranı Yapılandır ana ekranının üst köşesindeki profil simgesine dokunun ve etkinleştirmek için listeden gerekli profili seçin.  
+- **Android** cihazlar için, Ekranı Yapılandır ana ekranının üst kısmında bulunan profil simgelerini kullanarak profilleri değiştirebilirsiniz.  
+- Bir **iOS** cihazı kullanıyorsanız, Ekranı Yapılandır ana ekranının üst köşesindeki profil simgesine dokunun ve etkinleştirmek için listeden gerekli profili seçin.  
 
-**Dikkat**. *Profili değiştir seçeneği* mevcut tüm profilleri değil, yalnızca Ayarlar menüsünde *açık* olanları gösterir.
+**Not alın**: *Profili değiştir seçeneği* mevcut tüm profilleri değil, yalnızca Ayarlar menüsünde *açık* olanları görüntüler.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -641,5 +635,3 @@ Mevcut eylemler:
 - [Yarıçap cetveli ve Cetvel](./radius-ruler.md)
 - [İşaretçi widget'ları](./markers.md)
 - [Hızlı Eylem](./quick-action.md)
-
-> *Son güncelleme: Temmuz 2025*

@@ -1,7 +1,7 @@
 ---
-source-hash: e005142473200bc1f9ed4e7e38e90fe7a2db323071277cbdb521ac266234d560
+source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
 sidebar_position: 7
-title: Pontos no Mapa
+title:  Pontos no Mapa
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,9 +13,9 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-## Visão geral {#overview}
+## Visão Geral {#overview}
 
-O mapa pode exibir pontos como [Favoritos](#favorites), [Pontos de Interesse](#points-of-interest-pois), [Marcadores](#markers), [Wikipedia](#-wikipedia--wikipedia), [Resultados de Pesquisa](#search-results-poi), [Notas de Áudio e Vídeo](#-audio--video-points-android--audio--video-points-android) e [Edição OSM](#-osm-edit-points--osm-edit-points).
+O mapa pode exibir pontos como [Favoritos](#favorites), [Pontos de Interesse](#points-of-interest-pois), [Marcadores](#markers), [Wikipedia](#-wikipedia), [Resultados da Pesquisa](#search-results-poi), [Notas de Áudio e Vídeo](#-audio--video-points-android) e [Edição OSM](#-osm-edit-points).
 
 
 ## Favoritos {#favorites}
@@ -26,7 +26,7 @@ O mapa pode exibir pontos como [Favoritos](#favorites), [Pontos de Interesse](#p
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![Favotires layer Android](@site/static/img/map/favorites_layer.png)  
+![Camada de Favoritos Android](@site/static/img/map/favorites_layer.png)  
 
 </TabItem>
 
@@ -34,7 +34,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,share
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)  
+![Camada de Favoritos iOS](@site/static/img/map/favorites_layer_ios.png)  
 
 </TabItem>
 
@@ -43,11 +43,11 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_st
 [Favoritos](../personal/favorites.md) são pontos especiais marcados pelos usuários. Por padrão, eles aparecem como estrelas amarelas no mapa, embora possam ser personalizados com qualquer cor, forma e ícone. Eles se tornam visíveis no mapa a partir do nível de zoom 6.
 
 :::info
-Na versão Android do OsmAnd, você pode exibir apenas alguns grupos de favoritos no mapa e durante a pesquisa. Vá para *Menu → Meus Lugares → Favoritos*, toque em &#8942; e escolha *Mostrar no mapa* ou não.
+Na versão Android do OsmAnd, você pode exibir apenas alguns favoritos de grupo no mapa e durante a pesquisa. Vá para *Menu → Meus Locais → Favoritos*, toque em &#8942; e escolha *Mostrar no mapa* ou não.
 :::
 
 
-## Nomes de Favoritos e POI {#favorite-and-poi-names}
+## Nomes de Favoritos e POIs {#favorite-and-poi-names}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -55,7 +55,7 @@ Na versão Android do OsmAnd, você pode exibir apenas alguns grupos de favorito
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
+![Camada de rótulos de favoritos](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
@@ -63,13 +63,13 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
+![Camada de rótulos de favoritos](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
 </Tabs>
 
-Por padrão, Favoritos e pontos de interesse (POI) são exibidos sem nomes, para não sobrecarregar o mapa com texto. Você pode habilitar os nomes no menu Configurar mapa.  
+Por padrão, Favoritos e pontos de interesse (POI) são exibidos sem nomes, para não sobrecarregar o mapa com texto. Você pode ativar os nomes no menu Configurar mapa.  
 
 
 ## Pontos de Interesse (POIs) {#points-of-interest-pois}
@@ -80,7 +80,7 @@ Por padrão, Favoritos e pontos de interesse (POI) são exibidos sem nomes, para
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
-![POI overlay Android](@site/static/img/map/poi_overlay_android.png)
+![Sobreposição de POI Android](@site/static/img/map/poi_overlay_android.png)
 
 </TabItem>
 
@@ -88,7 +88,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*
 
-![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+![Sobreposição de POI iOS](@site/static/img/map/poi_overlay_ios.png)  
 
 </TabItem>
 
@@ -103,14 +103,14 @@ Informações detalhadas sobre um ponto de interesse podem ser encontradas no [M
 
 ### Tipos de POI {#poi-types}
 
-![Single POI Selection](@site/static/img/map/single_selection_android.png) ![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png)
+![Seleção de POI único](@site/static/img/map/single_selection_android.png) ![Seleção de múltiplos POIs](@site/static/img/map/multiple_selection_android.png)
 
-Você pode selecionar um ou vários dos tipos de POI padrão do OsmAnd, ou criar seu próprio [filtro de POI](../search/search-poi.md) e selecioná-lo para exibir POIs no mapa.
+Você pode selecionar um ou muitos dos tipos de POI padrão do OsmAnd, ou criar seu próprio [filtro de POI](../search/search-poi.md) e selecioná-lo para exibir POIs no mapa.
 
 **Android**. Toque no botão inferior esquerdo para alternar entre a seleção de um ou mais pontos de interesse.
 
 
-### POI de Estilo de Mapa {#map-style-poi}
+### POI do Estilo do Mapa {#map-style-poi}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -118,7 +118,7 @@ Você pode selecionar um ou vários dos tipos de POI padrão do OsmAnd, ou criar
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
 
-![POI on map style](@site/static/img/map/poi_layer.png)
+![POI no estilo do mapa](@site/static/img/map/poi_layer.png)
 
 </TabItem>
 
@@ -126,7 +126,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,rendering_category_hide"/>*
 
-![POI on topo style](@site/static/img/map/poi_layer_topo_style.png)  
+![POI no estilo topográfico](@site/static/img/map/poi_layer_topo_style.png)  
 
 </TabItem>
 
@@ -145,7 +145,7 @@ Cada tipo de POI no OsmAnd recebe um ícone e uma cor específicos. O [nível de
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*
 
-![Map markers Android](@site/static/img/map/map_markers_android.png)
+![Marcadores de mapa Android](@site/static/img/map/map_markers_android.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*
 
-![Map markers iOS](@site/static/img/map/map_markers_ios.png)  
+![Marcadores de mapa iOS](@site/static/img/map/map_markers_ios.png)  
 
 </TabItem>
 
@@ -166,16 +166,16 @@ Você pode ler mais sobre a aparência dos marcadores neste [artigo](../personal
 
 ## Pontos de Rota da Trilha {#track-waypoints}
 
-![Track on map](@site/static/img/map/track_point_on_map.png)
+![Trilha no mapa](@site/static/img/map/track_point_on_map.png)
 
-Os pontos de trilha (waypoints) fazem parte dos arquivos de trilha (GPX). Esses pontos são exibidos automaticamente se a trilha estiver no mapa. Eles se parecem e podem ser configurados de forma semelhante aos [Favoritos](#favorites) - ícone, nomes, cor, forma. Para criar e adicionar um Waypoint, leia o [artigo](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
+Os pontos de trilha (waypoints) fazem parte dos arquivos de trilha (GPX). Esses pontos são exibidos automaticamente se a trilha estiver no mapa. Eles se parecem e podem ser configurados de forma semelhante aos [Favoritos](#favorites) - ícone, nomes, cor, forma. Como criar e adicionar um Waypoint, leia no [artigo](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
 
 [Leia mais](../map/tracks/index.md) sobre trilhas no mapa.
 
 
 ## Resultados da Pesquisa (POI) {#search-results-poi}
 
-![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
+![Pesquisa de POI](@site/static/img/map/poi_search.png) ![Resultado da pesquisa de POI](@site/static/img/map/poi_search_result.png)
 
 Os resultados da pesquisa podem ser exibidos no mapa como uma camada especial de POIs. Durante a pesquisa, toque em uma linha especial (**<Translate android="true" ids="shared_string_show_on_map"/>**) para exibir os POIs no mapa.  
 
@@ -192,7 +192,7 @@ Leia mais sobre [pesquisa](../search/index.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-![Mapillary filter](@site/static/img/map/mapillary_filter.png)
+![Filtro Mapillary](@site/static/img/map/mapillary_filter.png)
 
 </TabItem>
 
@@ -200,24 +200,24 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,stree
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-![Mapillary street view](@site/static/img/map/mapillary_street-view.png)
+![Vista de rua Mapillary](@site/static/img/map/mapillary_street-view.png)
 
 </TabItem>
 
 </Tabs>
 
-[Imagens de nível de rua (Mapillary)](../plugins/mapillary.md) são exibidas como pontos verdes no mapa. Fotos da vista da rua são anexadas a esses pontos. Você pode criar um [filtro](../plugins/mapillary.md#data-filtering) e selecionar as fotos que deseja exibir no mapa. Para abrir uma foto de vista da rua, toque no ponto verde.  
+[Imagens de nível de rua (Mapillary)](../plugins/mapillary.md) são exibidas como pontos verdes no mapa. Fotos da vista da rua são anexadas a esses pontos. Você pode criar um [filtro](../plugins/mapillary.md#data-filtering) e selecionar as fotos que deseja exibir no mapa. Para abrir uma foto de vista de rua, toque no ponto verde.  
 
 Requer o [plugin Mapillary](../plugins/mapillary.md).
 
 
 ## * Ponto de Estacionamento {#-parking-point}
 
-![Limited parking](@site/static/img/map/context_menu_limited_parking.png) ![Unlimited parking](@site/static/img/map/context_menu_unlimited_parking.png)
+![Estacionamento limitado](@site/static/img/map/context_menu_limited_parking.png) ![Estacionamento ilimitado](@site/static/img/map/context_menu_unlimited_parking.png)
 
-Um [Ponto de estacionamento](../plugins/parking.md) é um ponto marcado pelos usuários no mapa para armazenar informações sobre a localização exata do veículo. Pode ser dividido em zonas de estacionamento restrito e irrestrito.  
+Um [Ponto de estacionamento](../plugins/parking.md) é um ponto marcado pelos usuários no mapa para armazenar informações sobre a localização exata do veículo. Pode ser dividido em zonas de estacionamento restritas e irrestritas.  
 
-Requer o [plugin Posição de Estacionamento](../plugins/parking.ing.md).
+Requer o [plugin Posição de estacionamento](../plugins/parking.md).
 
 
 ## * Wikipedia {#-wikipedia}
@@ -228,7 +228,7 @@ Requer o [plugin Posição de Estacionamento](../plugins/parking.ing.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png)
+![Wikipedia no mapa](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
@@ -236,7 +236,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,poi_o
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
+![Idioma da Wikipedia - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
 
 </TabItem>
 
@@ -255,7 +255,7 @@ O OsmAnd possui pontos de interesse especiais marcados com um logotipo "W" e vin
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![AV POI](@site/static/img/map/av_poi.png)
+![POI AV](@site/static/img/map/av_poi.png)
 
 </TabItem>
 
@@ -263,7 +263,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Notas de Áudio / Vídeo são pontos com dados de áudio, foto e vídeo no mapa criados pelos usuários.  
 
-Requer o [plugin de Notas de Áudio / Vídeo](../plugins/audio-video-notes.md).
+Requer o [plugin Notas de Áudio / Vídeo](../plugins/audio-video-notes.md).
 
 
 ## * Pontos de Edição OSM {#-osm-edit-points}
@@ -274,7 +274,7 @@ Requer o [plugin de Notas de Áudio / Vídeo](../plugins/audio-video-notes.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
-![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
+![POI de edição OSM](@site/static/img/map/osm_edit_poi.png)
 
 </TabItem>
 
@@ -282,7 +282,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_edits_title"/>*
 
-![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
+![POI de edição OSM](@site/static/img/map/osm_edit_poi.png)
 
 </TabItem>
 
@@ -290,7 +290,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,configure
 
 Pontos de edição OSM são POIs criados por usuários para serem adicionados ao [projeto OpenStreetMap](https://www.openstreetmap.org/).  
 
-Requer o [plugin de Edição OSM](../plugins/osm-editing.md).
+Requer o [plugin Edição OSM](../plugins/osm-editing.md).
 
 
 ## * Notas OSM {#-osm-notes}
@@ -301,7 +301,7 @@ Requer o [plugin de Edição OSM](../plugins/osm-editing.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
-![OSM notes](@site/static/img/map/osm_note.png)
+![Notas OSM](@site/static/img/map/osm_note.png)
 
 </TabItem>
 
@@ -309,28 +309,28 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_notes_online_layer"/>*
 
-![OSM notes](@site/static/img/map/osm_note.png)
+![Notas OSM](@site/static/img/map/osm_note.png)
 
 </TabItem>
 
 </Tabs>
 
-As notas OSM são POIs criados por usuários para relatar problemas com dados de mapa no [OpenStreetMap](https://www.openstreetmap.org/). Novas notas (ainda não carregadas para o OpenStreetMap) são marcadas em verde com um **+**, notas fechadas são marcadas em verde com um "V", e notas abertas são marcadas em vermelho. Você pode personalizar o nível de zoom para exibir notas e escolher se deseja mostrar ou ocultar notas fechadas.  
+Notas OSM são POIs criados por usuários para relatar problemas com dados de mapa no [OpenStreetMap](https://www.openstreetmap.org/). Novas notas (ainda não carregadas no OpenStreetMap) são marcadas em verde com um **+**, notas fechadas são marcadas em verde com um "V" e notas abertas são marcadas em vermelho. Você pode personalizar o nível de zoom para exibir notas e escolher se deseja mostrar ou ocultar notas fechadas.  
 
-Requer o [plugin de Edição OSM](../plugins/osm-editing.md).
+Requer o [plugin Edição OSM](../plugins/osm-editing.md).
 
 
 ## Pontos ao Longo da Rota {#points-along-the-route}
 
-Waypoints, POIs, pontos Favoritos e notas de áudio/vídeo referem-se ao conceito de salvar locais e rotas em [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Você pode usar [as mesmas tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) para descrevê-los e editá-los.  
+Waypoints, POIs, pontos favoritos e notas de áudio/vídeo referem-se ao conceito de salvar locais e rotas em [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Você pode usar [as mesmas tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) para descrevê-los e editá-los.  
 
 [Waypoints](#track-waypoints) são pontos individuais em um mapa ou rota. Eles podem ser usados para marcar certos lugares que podem ser importantes para navegar ou registrar suas viagens. Por exemplo, você pode criar um waypoint no mapa para indicar um cruzamento importante ou uma mudança de direção.  
 
-[Pontos de interesse (POIs)](#points-of-interest-pois) são lugares de interesse especial para os usuários. Podem ser pontos de referência, restaurantes, hotéis, postos de gasolina e outros lugares de interesse que você possa querer anotar ou visitar.  
+[Pontos de interesse (POIs)](#points-of-interest-pois) são lugares de interesse especial para os usuários. Podem ser pontos de referência, restaurantes, hotéis, postos de gasolina e outros locais de interesse que você pode querer anotar ou visitar.  
 
 [Pontos favoritos](#favorites) são lugares que os usuários consideram particularmente importantes ou interessantes e salvam em sua lista de lugares favoritos. Os lugares podem incluir qualquer local que você possa querer encontrar e retornar mais tarde.
 
-[Notas de áudio/vídeo](#-audio--video-points-android--audio--video-points-android). No formato GPX, você pode salvar gravações de áudio e vídeo como waypoints. Isso permite associar arquivos de mídia a locais específicos no mapa ou rota.  
+[Notas de áudio/vídeo](#-audio--video-points-android). No formato GPX, você pode salvar gravações de áudio e vídeo como waypoints. Isso permite associar arquivos de mídia a locais específicos no mapa ou rota.  
 
 Todos esses tipos de pontos podem ser salvos no formato GPX para fornecer informações de localização e ajudar na navegação e planejamento de rotas. Eles servem a propósitos diferentes, mas a ideia geral é armazenar e transmitir informações geográficas para que você possa usá-las em suas tarefas de navegação.
 
@@ -338,7 +338,5 @@ Todos esses tipos de pontos podem ser salvos no formato GPX para fornecer inform
 ## Artigos Relacionados {#related-articles}
 
 - [Menu Configurar mapa](../map/configure-map-menu.md)
-- [Mapas vetoriais (Estilos de mapa)](./vector-maps.md)
+- [Mapas Vetoriais (Estilos de Mapa)](./vector-maps.md)
 - [Mapas Raster (Online / Offline)](./raster-maps.md)
-
-> *Última atualização: Junho de 2025*

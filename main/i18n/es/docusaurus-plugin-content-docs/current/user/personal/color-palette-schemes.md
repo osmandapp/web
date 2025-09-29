@@ -1,5 +1,5 @@
 ---
-source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
+source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
 sidebar_position: 5
 title:  Esquemas de color
 ---
@@ -16,11 +16,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Descripción general {#overview}
+## Resumen {#overview}
 
 :::info Función de pago
 
-Los esquemas de color se utilizan como parte de las funciones de pago [Maps+](../purchases/index.md) y Pro <ProFeature />.
+Los esquemas de color se utilizan como parte de las funciones de pago [Maps+](../purchases/index.md) y Pro <ProFeature />.  
 
 :::
 
@@ -70,22 +70,22 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 ### Terreno {#terrain}
 
-Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Sombreado, Pendiente* y *Altitud*. Para cada tipo, puede tener varias paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
+Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relieve, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
 
 ### Rutas {#routes}
 
-Las visualizaciones de gradiente de línea utilizan archivos de paleta (`route_<type_name>_<palette_name>.txt`) para colorear las pistas y rutas GPX:
+Las visualizaciones de gradiente de línea utilizan archivos de paleta (`route_<type_name>_<palette_name>.txt`) para colorear las pistas GPX y las Rutas:
 
 - Para [Rutas](../navigation/guidance/map-during-navigation.md#color): *Velocidad, Pendiente* y *Elevación (Altitud)*.
 - Para [Pistas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidad, Pendiente* y *Elevación (Altitud), o información de sensores externos*.
 
-### Clima {#weather}
+### Meteorología {#weather}
 
-Los archivos de paleta meteorológica (`weather_<type_name>.txt`) definen la visualización de las [capas meteorológicas](../plugins/weather.md#weather-layers).
+Los archivos de paleta meteorológica (`weather_<type_name>.txt`) definen la visualización para las [capas meteorológicas](../plugins/weather.md#weather-layers).
 
 ### Colores {#colors}
 
-La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para asignar colores predefinidos a [Favoritos](./favorites.md) y [Pistas](./tracks/).
+La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para colores predefinidos para asignar a [Favoritos](./favorites.md), [Pistas](./tracks/).
 
 
 ## Leyenda de la paleta {#palette-legend}
@@ -99,16 +99,16 @@ La paleta de colores (`user_palette_default.txt`) se utiliza simplemente para as
 </table>
 
 
-La leyenda proporciona una forma sencilla de ver y comprender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** de las pistas](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** de las rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y la pendiente** del terreno](../plugins/topography.md#default-color-scheme) y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
+La leyenda proporciona una forma fácil de ver y entender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** para las pistas](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** para las rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y pendiente** para el terreno](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
 
 
 ## Editar archivo de paleta {#edit-palette-file}
 
-Puedes editar las paletas para personalizar el aspecto de los mapas y las rutas. Se pueden añadir archivos de paleta de colores propios a OsmAnd utilizando la [herramienta de importación/exportación](./import-export.md).
+Puede editar las paletas para personalizar el aspecto de los mapas y las rutas. Se pueden añadir archivos de paleta de colores propios a OsmAnd utilizando la herramienta de [importación/exportación](./import-export.md).
 
 - *Rutas*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
 - *Terreno*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
-- *Clima*: `weather_<type_name>.txt`.
+- *Meteorología*: `weather_<type_name>.txt`.
 - *Color*: `user_palette_default.txt`.
 
 Cada línea representa un valor numérico (para la paleta de colores, es un índice) y un color RGB. Por ejemplo:
@@ -153,17 +153,18 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 </Tabs>
 
-**Acción rápida** para cambiar la paleta del Terreno. Se añadió la capacidad de alternar entre esquemas de color de terreno, similar a alternar entre capas. Esto se puede hacer usando la herramienta [Acciones rápidas](../widgets/quick-action.md#configure-map).
+**Acción rápida** para cambiar la paleta para el Terreno. Se ha añadido la posibilidad de cambiar entre esquemas de color del terreno, de forma similar a como se cambia entre capas. Esto se puede hacer utilizando la herramienta [Acciones rápidas](../widgets/quick-action.md#configure-map).  
 
-### Importar / Exportar colores {#import--export-colors}
+
+### Importar / Exportar Colores {#import--export-colors}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Acciones de perfiles Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Acciones de perfiles Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -171,25 +172,23 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Puedes importar y exportar todas las paletas de colores predeterminadas y personalizadas disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
+Puede importar y exportar todas las paletas de colores personalizadas y por defecto disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
 
-- Abre el *Menú* principal, *Ajustes*, desplázate hasta la sección **Importar/exportar** (*Android*) o **Copia de seguridad local** (*iOS*), y selecciona la acción requerida.
-- Selecciona uno o más elementos de la lista *Color* o la opción *Seleccionar todo*.
+- Abra el *Menú* principal, *Ajustes*, desplácese hasta la sección **Importar/exportar** (*Android*) o **Copia de seguridad local** (*iOS*), y seleccione la acción requerida.
+- Seleccione uno o más elementos de la lista *Color* o la opción *Seleccionar todo*.
 - Todos los archivos exportados se guardan en formato `.osf`.
-- Si el tamaño de los datos seleccionados es significativo, la aplicación tardará un tiempo en preparar el archivo `.osf`.
-- Consulta el artículo [*Importar/Exportar*](../personal/import-export.md) para obtener información más detallada.
+- Si el tamaño de los datos seleccionados es significativo, la aplicación tardará algún tiempo en preparar el archivo `.osf`.
+- Consulte el artículo [*Importar / Exportar*](../personal/import-export.md) para obtener información más detallada.
 
 
 ## Artículos relacionados {#related-articles}
 
 - [Interactuar con el mapa](../../user/map/interact-with-map.md)
-- [Configuración global](../../user/personal/global-settings.md)
+- [Ajustes globales](../../user/personal/global-settings.md)
 - [Mapas vectoriales (Estilos de mapa)](../../user/map/vector-maps.md)
-
-> *Última actualización: Enero de 2025*

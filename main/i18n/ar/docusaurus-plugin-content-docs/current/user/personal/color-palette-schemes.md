@@ -1,5 +1,5 @@
 ---
-source-hash: 1c2dbd1648b5f88680eb1ade2c212d6275bae4f84aadcd626344d490380768e5
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  أنظمة الألوان
 ---
@@ -20,48 +20,48 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info ميزة مدفوعة
 
-تُستخدم أنظمة الألوان كجزء من ميزات [Maps+](../purchases/index.md) و Pro <ProFeature /> المدفوعة.
+تُستخدم أنظمة الألوان كجزء من ميزات [الخرائط+](../purchases/index.md) المدفوعة وميزات Pro <ProFeature />.
 
 :::
 
-تُستخدم أنظمة الألوان في [تلوين المسارات](#routes)، و[تضاريس الخريطة](#terrain)، و[خريطة الطقس](#weather)، ويتم تمثيلها كجزء منفصل من المعلومات التي يمكن تصديرها واستيرادها وتعديلها لتغيير نظام ألوان الخريطة وتصور البيانات.
+تُستخدم أنظمة الألوان في [تلوين المسار](#routes)، و[تضاريس الخريطة](#terrain)، و[خريطة الطقس](#weather)، وتُمثل كجزء منفصل من المعلومات التي يمكن تصديرها واستيرادها وتعديلها لتغيير نظام ألوان الخريطة وتصور البيانات.
 
-تتوفر بيانات لوحة الألوان في قائمة [*الخرائط والموارد*](../personal/maps-resources.md#local).
+تتوفر بيانات لوحة الألوان في قائمة [*الخرائط والموارد*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-انتقل إلى: *القائمة ← الخرائط والموارد ← محلي ← الألوان*
+اذهب إلى: *القائمة ← الخرائط والموارد ← محلي ← الألوان*
 
-![Palettes](@site/static/img/personal/color-schemes/colors.png)
+![لوحات الألوان](@site/static/img/personal/color-schemes/colors.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *القائمة ← الخرائط والموارد ← محلي ← الألوان*
+اذهب إلى: *القائمة ← الخرائط والموارد ← محلي ← الألوان*
 
-![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
+![لوحة الألوان](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## أنواع المخططات {#scheme-types}
+## أنواع الأنظمة {#scheme-types}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![Palettes](@site/static/img/personal/color-schemes/palette.png)
+![لوحات الألوان](@site/static/img/personal/color-schemes/palette.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/color_altitude.png)
+![لوحة الألوان](@site/static/img/personal/color-schemes/color_altitude.png)
 
 </TabItem>
 
@@ -70,36 +70,36 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التضاريس {#terrain}
 
-تحدد ملفات التضاريس (`height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`) 3 [تصورات للتضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers): *تظليل التلال، المنحدر*، و*الارتفاع*. لكل نوع يمكنك الحصول على لوحات متعددة، على سبيل المثال، يتم توفير *منحدر الانهيار الجليدي* افتراضيًا.
+تُعرّف ملفات التضاريس (`height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`) ثلاثة أنواع من [تصورات التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers): *تظليل التلال، والانحدار*، و*الارتفاع*. لكل نوع، يمكنك الحصول على لوحات ألوان متعددة، على سبيل المثال، يتم توفير *انحدار الانهيار الجليدي* بشكل افتراضي.
 
 ### المسارات {#routes}
 
-تستخدم تصورات تدرج الخط ملفات لوحة الألوان (`route_<type_name>_<palette_name>.txt`) لتلوين مسارات GPX والمسارات:
+تستخدم تصورات التدرج الخطي ملفات لوحة الألوان (`route_<type_name>_<palette_name>.txt`) لتلوين مسارات GPX والمسارات:
 
-- لـ [المسارات](../navigation/guidance/map-during-navigation.md#color): *السرعة، المنحدر*، و*الارتفاع*.
-- لـ [مسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، المنحدر*، و*الارتفاع، أو معلومات من أجهزة استشعار خارجية*.
+- بالنسبة [للمسارات](../navigation/guidance/map-during-navigation.md#color): *السرعة، والانحدار،* و*الارتفاع*.
+- بالنسبة [لمسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، والانحدار،* و*الارتفاع، أو معلومات من أجهزة استشعار خارجية*.
 
 ### الطقس {#weather}
 
-تحدد ملفات لوحة ألوان الطقس (`weather_<type_name>.txt`) تصور [طبقات الطقس](../plugins/weather.md#weather-layers).
+تُعرّف ملفات لوحة ألوان الطقس (`weather_<type_name>.txt`) التصور لـ [طبقات الطقس](../plugins/weather.md#weather-layers).
 
 ### الألوان {#colors}
 
-تُستخدم لوحة الألوان (`user_palette_default.txt`) ببساطة للألوان المحددة مسبقًا لتعيينها لـ [المفضلة](./favorites.md)، [المسارات](./tracks/).
+تُستخدم لوحة الألوان (`user_palette_default.txt`) ببساطة للألوان المحددة مسبقًا لتعيينها إلى [المفضلة](./favorites.md)، و[المسارات](./tracks/).
 
 
 ## مفتاح لوحة الألوان {#palette-legend}
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="لون"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="لون"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="لون"/></td>
     </tr>
 </table>
 
 
-يوفر المفتاح طريقة سهلة لعرض وفهم العلامات المختلفة على الخريطة. تمت إضافة لوحات ألوان جديدة لعرض [**السرعة** للمسارات](../map/tracks/appearance#track-colors-in-gpx-files)، [**نوع الخط** للمسارات](../navigation/guidance/map-during-navigation.md#color)، [**الارتفاع والمنحدر** للتضاريس](../plugins/topography.md#default-color-scheme)، وجميع لوحات ألوان [**طبقة الطقس**](../plugins/weather.md#weather-layers).
+يوفر مفتاح الخريطة طريقة سهلة لعرض وفهم العلامات المختلفة على الخريطة. تمت إضافة لوحات ألوان جديدة لعرض [**السرعة** للمسارات](../map/tracks/appearance#track-colors-in-gpx-files)، و[**نوع الخط** للمسارات](../navigation/guidance/map-during-navigation.md#color)، و[**الارتفاع والانحدار** للتضاريس](../plugins/topography.md#default-color-scheme)، وجميع لوحات ألوان [**طبقة الطقس**](../plugins/weather.md#weather-layers).
 
 
 ## تعديل ملف لوحة الألوان {#edit-palette-file}
@@ -111,17 +111,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *الطقس*: `weather_<type_name>.txt`.
 - *اللون*: `user_palette_default.txt`.
 
-يمثل كل سطر قيمة رقمية (للوحة الألوان، هو فهرس) ولون RGB. على سبيل المثال:
+يمثل كل سطر قيمة رقمية (بالنسبة للوحة الألوان، هو فهرس) ولون RGB. على سبيل المثال:
 
 ```xml
-# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 degree RGBA {#0---90-degree-rgba}
+# ملف TXT باسم *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 درجة RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# yellow  {#yellow-}
+# أصفر {#yellow-}
 100,255,222,2,227
-# red {#red}
+# أحمر {#red}
 200,255,1,1,255
-# violet {#violet}
+# بنفسجي {#violet}
 220,130,1,255,255
 
 ```
@@ -137,23 +137,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate ios="true" ids="add_button"/>*  *← إضافة إجراء ← تضاريس ← تغيير نظام ألوان التضاريس*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate ios="true" ids="add_button"/>*  *← إضافة إجراء ← التضاريس ← تغيير نظام ألوان التضاريس*
 
-![Color Scheme](@site/static/img/widgets/color_scheme.png)
+![نظام الألوان](@site/static/img/widgets/color_scheme.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate ios="true" ids="add_button"/>*  *← إضافة إجراء ← تضاريس ← تغيير نظام ألوان التضاريس*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate ios="true" ids="add_button"/>*  *← إضافة إجراء ← التضاريس ← تغيير نظام ألوان التضاريس*
 
-![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
+![لوحة الألوان](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**إجراء سريع** لتغيير لوحة ألوان التضاريس. تمت إضافة القدرة على التبديل بين أنظمة ألوان التضاريس، على غرار التبديل بين الطبقات. يمكن القيام بذلك باستخدام أداة [الإجراءات السريعة](../widgets/quick-action.md#configure-map).
+**إجراء سريع** لتغيير لوحة الألوان للتضاريس. تمت إضافة القدرة على التبديل بين أنظمة ألوان التضاريس، على غرار التبديل بين الطبقات. يمكن القيام بذلك باستخدام أداة [الإجراءات السريعة](../widgets/quick-action.md#configure-map).
 
 
 ### استيراد / تصدير الألوان {#import--export-colors}
@@ -162,35 +162,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![تصدير إجراءات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![نسخ احتياطي محلي أندرويد](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![تصدير إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكنك استيراد وتصدير جميع لوحات الألوان الافتراضية والمخصصة المتاحة باستخدام أداة استعادة ونسخ ملفات OsmAnd الاحتياطي.
+يمكنك استيراد وتصدير جميع لوحات الألوان الافتراضية والمخصصة المتاحة باستخدام أداة استعادة ونسخ الملفات الاحتياطية في OsmAnd.
 
-- افتح *القائمة* الرئيسية، *الإعدادات*، ثم قم بالتمرير لأسفل إلى قسم **الاستيراد/التصدير** (*أندرويد*) أو **النسخ الاحتياطي المحلي** (*iOS*)، وحدد الإجراء المطلوب.
+- افتح *القائمة* الرئيسية، *الإعدادات*، مرر لأسفل إلى قسم **استيراد/تصدير** (*أندرويد*) أو **نسخ احتياطي محلي** (*iOS*)، وحدد الإجراء المطلوب.
 - حدد عنصرًا واحدًا أو أكثر من قائمة *الألوان* أو خيار *تحديد الكل*.
 - يتم حفظ جميع الملفات المصدرة بتنسيق `.osf`.
 - إذا كان حجم البيانات المحددة كبيرًا، فسيستغرق التطبيق بعض الوقت لإعداد ملف `.osf`.
-- راجع مقالة [*الاستيراد / التصدير*](../personal/import-export.md) للحصول على معلومات أكثر تفصيلاً.
+- عرض مقال [*استيراد / تصدير*](../personal/import-export.md) لمزيد من المعلومات التفصيلية.
 
 
 ## مقالات ذات صلة {#related-articles}
 
 - [التفاعل مع الخريطة](../../user/map/interact-with-map.md)
 - [الإعدادات العامة](../../user/personal/global-settings.md)
-- [خرائط المتجهات (أنماط الخرائط)](../../user/map/vector-maps.md)
-
-> *آخر تحديث: يناير 2025*
+- [الخرائط المتجهة (أنماط الخرائط)](../../user/map/vector-maps.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
+source-hash: 4a76625c2bb84dea3475d937395b2dcabeed514e2bbf68736a1f6e8649b066f9
 sidebar_position: 8
 title:  Markierungen
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Markierungen sind spezielle Punkte, die auf der Karte als Flaggen markiert sind und schnell mit einem einzigen Tipp erstellt werden können, ohne Name und andere Informationen anzugeben, im Gegensatz zu [Favoritenpunkten](./favorites.md). Markierungen bieten auch zusätzliche Funktionen mit [Widgets](../widgets/markers.md), **Pfeilen** (<Translate android="true" ids="show_arrows_on_the_map"/>) und **Entfernungsanzeige** (<Translate android="true" ids="show_direction"/>).
+Markierungen sind spezielle Punkte, die auf der Karte als Fähnchen markiert werden und im Gegensatz zu [Favoriten](./favorites.md) mit einem einzigen Fingertipp schnell erstellt werden können, ohne einen Namen und andere Informationen angeben zu müssen. Markierungen bieten auch zusätzliche Funktionen mit [Widgets](../widgets/markers.md), **Pfeilen** (<Translate android="true" ids="show_arrows_on_the_map"/>) und **Entfernungsanzeige** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,33 +43,33 @@ Markierungen sind spezielle Punkte, die auf der Karte als Flaggen markiert sind 
 
 <TabItem value="android" label="Android">
 
-Kurz oder lang auf die Karte tippen und die gewünschte Aktion aus dem [Kartenkontextmenü](../map/map-context-menu.md#add--edit-marker) auswählen.
+Tippen Sie kurz oder lang auf die Karte und wählen Sie die gewünschte Aktion aus dem [Kartenkontextmenü](../map/map-context-menu.md#add--edit-marker).
 
-![Markierungsaktion hinzufügen/bearbeiten Android](@site/static/img/map/add_marker_android.png) ![Markierungsaktion übergeben Android](@site/static/img/map/action_pass_marker_android.png)
+![Aktion Markierung hinzufügen/bearbeiten Android](@site/static/img/map/add_marker_android.png) ![Aktion Markierung passieren Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Kurz oder lang auf die Karte tippen und die gewünschte Aktion im [Kartenkontextmenü](../map/map-context-menu.md#add--edit-marker) auswählen.
+Tippen Sie kurz oder lang auf die Karte und wählen Sie die gewünschte Aktion im [Kartenkontextmenü](../map/map-context-menu.md#add--edit-marker).
 
-![Markierungsaktion hinzufügen/bearbeiten iOS](@site/static/img/map/add_marker_ios.png) ![Markierungsaktion wiederherstellen Android](@site/static/img/map/action_restore_marker_android.png)
+![Aktion Markierung hinzufügen/bearbeiten iOS](@site/static/img/map/add_marker_ios.png) ![Aktion Markierung wiederherstellen Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Es ist möglich, einen Punkt oder ein Objekt zu markieren, um die Planung der Navigation zu erleichtern. Sie müssen nur auf das *Flaggen*- (*Android*) oder *Pfeil*-Symbol (*iOS*) im Menü tippen, um Richtung und Entfernung zum ausgewählten Punkt von Ihrem aktuellen Standort (oder dem Kartenmittelpunkt / dem ursprünglichen Berührungspunkt auf der Karte, wenn der Standort ausgeschaltet ist) anzuzeigen.
+Es ist möglich, einen Punkt oder ein Objekt zu markieren, um die Navigationsplanung zu erleichtern. Sie müssen nur auf das *Fähnchen*- (*Android*) oder *Pfeil*-Symbol (*iOS*) im Menü tippen, um die Richtung und Entfernung zum ausgewählten Punkt von Ihrem aktuellen Standort (oder dem Kartenmittelpunkt / dem anfänglichen Berührungspunkt der Karte, wenn der Standort deaktiviert ist) anzuzeigen.
 
 ***Aktionen***:
 
 - **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Setzt eine neue Markierung auf den ausgewählten Punkt.
-- **Als passiert markieren** (*Android*) / Verwerfen (iOS). Deaktiviert die Markierung und legt sie in den Verlauf.
-- **Aktivieren** (*Android*). Verschiebt die Markierung an die oberste Position (im oberen Bereich).
+- **Als passiert markieren** (*Android*) / Verwerfen (iOS). Deaktiviert die Markierung und verschiebt sie in den Verlauf.
+- **Aktivieren** (*Android*). Verschiebt die Markierung an die oberste Position (im oberen Bedienfeld).
 - **Markierung wiederherstellen** (*Android*). Verschiebt die Markierung aus dem Verlauf in die aktive Liste.
 
 :::note
-Sie können eine Markierung nicht sofort löschen, Sie müssen sie zuerst deaktivieren (als passiert markieren), damit sie in den [Verlauf](#history) verschoben wird, und dann können Sie sie dauerhaft aus dem Verlauf löschen. Sobald die Markierung deaktiviert ist, wird sie von der Karte und der Reiseroutenliste entfernt.
+Sie können eine Markierung nicht sofort löschen. Sie müssen sie zuerst deaktivieren (als passiert markieren), damit sie in den [Verlauf](#history) verschoben wird. Anschließend können Sie sie endgültig aus dem Verlauf löschen. Sobald eine Markierung deaktiviert ist, wird sie von der Karte und aus der Routenliste entfernt.
 :::
 
 
@@ -89,17 +89,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Reiseroutenliste {#itinerary-list}
+### Routenliste {#itinerary-list}
 
-Die Reiseroutenliste stellt eine geordnete Liste von Markierungen dar, wobei die oberste 1. Markierung in Widgets für die Navigation verwendet wird. Lesen Sie mehr darüber im Artikel [Navigation nach Markierungen](../navigation/setup/markers-navigation.md#itinerary-list).
+Die Routenliste stellt eine geordnete Liste von Markierungen dar, wobei die oberste (erste) Markierung in Widgets für die Navigation verwendet wird. Lesen Sie mehr darüber im Artikel [Navigation nach Markierungen](../navigation/setup/markers-navigation.md#itinerary-list).
 
 ### Markierungsgruppen {#marker-groups}
 
 <InfoAndroidOnly />
 
-![Kartenmarkierungen Gruppen Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
+![Kartenmarkierungsgruppen Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Markierungen können als ganze Gruppe aus der Favoritengruppe oder einer GPX-Datei mit Wegpunkten hinzugefügt und gelöscht werden. Das macht sie sehr praktisch für die Verwendung in einem speziellen Navigationsmodus - [Navigation nach Markierungen](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Markierungen können als ganze Gruppe aus einer Favoritengruppe oder einer GPX-Datei mit Wegpunkten hinzugefügt und gelöscht werden. Das macht ihre Verwendung in einem speziellen Navigationsmodus sehr praktisch - [Navigation nach Markierungen](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Verlauf {#history}
 
@@ -107,19 +107,19 @@ Markierungen können als ganze Gruppe aus der Favoritengruppe oder einer GPX-Dat
 
 <TabItem value="android" label="Android">
 
-![Kartenmarkierungen Verlauf Android](@site/static/img/personal/markers/map_markers_history_android.png)
+![Verlauf der Kartenmarkierungen Android](@site/static/img/personal/markers/map_markers_history_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmarkierungen Verlauf iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
+![Verlauf der Kartenmarkierungen iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Der Verlauf ist eine Liste aller deaktivierten (passierten) Markierungen. Aus dieser Liste ist es möglich, eine Markierung dauerhaft zu löschen oder wiederherzustellen.
+Der Verlauf ist eine Liste aller deaktivierten (passierten) Markierungen. Aus dieser Liste ist es möglich, eine Markierung endgültig zu löschen oder wiederherzustellen.
 
 
 ## Darstellung auf der Karte {#appearance-on-the-map}
@@ -128,31 +128,31 @@ Der Verlauf ist eine Liste aller deaktivierten (passierten) Markierungen. Aus di
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
-![Darstellung auf der Karte](@site/static/img/widgets/appearence_on_the_map-01.png) ![Darstellung auf der Karte](@site/static/img/widgets/appearence_on_the_map-02.png)
+![darstellung_auf_der_karte](@site/static/img/widgets/appearence_on_the_map-01.png) ![darstellung_auf_der_karte](@site/static/img/widgets/appearence_on_the_map-02.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
-![Kartenmarkierungen Darstellung iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Kartenmarkierungen Darstellung iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Darstellung der Kartenmarkierungen iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Darstellung der Kartenmarkierungen iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 </TabItem>
 
 </Tabs>
 
-Das Menü *Darstellung auf der Karte* ist eine allgemeine Einstellung zur Anzeige von Markierungen und zusätzlichen Zeigern darauf.
-In der iOS-Version von OsmAnd ist *Darstellung auf der Karte* auch eine Einstellung zur Anzeige von Widgets. Es gibt auch zusätzliche Einstellungen zur [Konfiguration der Widgets mit Markierungen](../widgets/markers.md#configure-marker-widgets).
+Das Menü *Darstellung auf der Karte* ist eine allgemeine Einstellung für die Anzeige von Markierungen und zusätzlichen Hinweisen darauf.
+In der iOS-Version von OsmAnd ist *Darstellung auf der Karte* auch eine Einstellung für die Anzeige von Widgets. Es gibt auch zusätzliche Einstellungen zur [Konfiguration der Widgets mit Markierungen](../widgets/markers.md#configure-marker-widgets).
 
-- **Aktive Markierungen**. Zeigt Informationen über die erste oder zweite Markierung in der Kartenmarkierungsliste an.
-- **Entfernungsanzeige** *(für iOS)*. Ermöglicht die Auswahl, ob Widgets angezeigt werden sollen und wie sie erscheinen sollen: über der Karte (Obere Leiste) oder auf der rechten Seite des Bildschirms (Widgets).
-- **Pfeile auf der Karte**. Zeigt die Richtung zur verfolgten Markierung (eine oder zwei) als Pfeil auf der Karte an. Befindet sich die Markierung im sichtbaren Bereich der Karte, wird kein Pfeil angezeigt.
+- **Aktive Markierungen**. Zeigt Informationen über die erste oder die ersten beiden Markierungen in der Kartenmarkierungsliste an.
+- **Entfernungsanzeige** *(für iOS)*. Ermöglicht Ihnen die Auswahl, ob Widgets angezeigt werden sollen und wie sie erscheinen: über der Karte (obere Leiste) oder auf der rechten Seite des Bildschirms (Widgets).
+- **Pfeile auf der Karte**. Zeigt die Richtung zur verfolgten Markierung (eine oder zwei) als Pfeil auf der Karte an. Befindet sich die Markierung im sichtbaren Teil der Karte, wird kein Pfeil angezeigt.
 - **Richtungslinie**. Zeigt die Richtung als gestrichelte Linie von einem bestimmten Punkt auf der Karte zur verfolgten Markierung in einer geraden Linie an.
-- ***Einmal tippen*** aktiv (*für Android*). Mit einem einmaligen Tippen auf die gewünschte Markierung auf der Karte wird diese Markierung an den Anfang der Liste der aktiven Kartenmarkierungen verschoben, ohne das Kontextmenü zu öffnen.
-- **Passierte Markierungen auf der Karte behalten** *(für Android)*. Markierungen, die als Gruppe von Favoriten oder GPX-Wegpunkten hinzugefügt und als passiert markiert wurden, bleiben auf der Karte. Wenn die Gruppe nicht aktiv ist, verschwinden die Markierungen von der Karte.
+- ***Einmaliges Tippen*** aktiv (*für Android*). Mit einem einzigen Tippen auf die gewünschte Markierung auf der Karte wird diese Markierung an den Anfang der Liste der aktiven Kartenmarkierungen verschoben, ohne das Kontextmenü zu öffnen.
+- **Passierte Markierungen auf der Karte behalten** *(für Android)*. Markierungen, die als Gruppe von Favoriten oder GPX-Wegpunkten hinzugefügt und als "Passiert" markiert wurden, bleiben auf der Karte. Wenn die Gruppe nicht aktiv ist, verschwinden die Markierungen von der Karte.
 
 
 ## Route für Markierungen planen {#plan-route-for-markers}
@@ -161,9 +161,9 @@ In der iOS-Version von OsmAnd ist *Darstellung auf der Karte* auch eine Einstell
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Kartenmarkierungen Routenpunkte Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Kartenmarkierungen Routenoptionen Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Kartenmarkierungen Routenpunkte planen Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Kartenmarkierungen Routenoptionen planen Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Mit der Funktion "Route planen" in der Markierungsliste können Sie *Markierungen* *Tür-zu-Tür* sortieren, in umgekehrter Reihenfolge anordnen oder eine *Rundreise* erstellen. Wenn Sie die Option *Navigation* auswählen, werden die *Markierungen* als [Zwischenziele](../navigation/setup/route-navigation.md#intermediate-destinations) verwendet.
+Mit der Funktionalität des Werkzeugs "Route planen" in der Markierungsliste können Sie *Markierungen* *von Tür zu Tür* sortieren, sie in umgekehrter Reihenfolge anordnen oder eine *Rundreise* erstellen. Wenn Sie auf die Option *Navigation* tippen, werden die *Markierungen* als [Zwischenziele](../navigation/setup/route-navigation.md#intermediate-destinations) verwendet.
 
 
 ## Aktionen {#actions}
@@ -172,10 +172,10 @@ Mit der Funktion "Route planen" in der Markierungsliste können Sie *Markierunge
 
 ![Kartenmarkierungen Mehr Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. Markierungen können in der Liste nach Name, Nähe, Hinzufügezeit sortiert werden.
+- **<Translate android="true" ids="sort_by"/>**. Markierungen können in der Liste nach Name, Nähe oder Zeitpunkt des Hinzufügens sortiert werden.
 - **<Translate android="true" ids="appearance_on_the_map"/>** oder **<Translate ios="true" ids="shared_string_appearance"/>**. [Einstellungen für Kartenmarkierungen](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Fügt Markierungen durch [Koordinateneingabe](../plan-route/coordinate-input.md) hinzu.
-- **<Translate android="true" ids="plan_route"/>**. Erstellt eine Route [für die Navigation](../navigation/setup/markers-navigation.md) unter Verwendung ausgewählter Markierungen.
+- **<Translate android="true" ids="plan_route"/>**. Erstellt eine Route [zur Navigation](../navigation/setup/markers-navigation.md) unter Verwendung der ausgewählten Markierungen.
 - **<Translate android="true" ids="marker_save_as_track"/>**. Speichert aktive Markierungen in einer GPX-Datei.
 - **<Translate android="true" ids="move_all_to_history"/>**. Deaktiviert alle Markierungen und verschiebt sie in den [Verlauf](#history).
 
@@ -184,5 +184,3 @@ Mit der Funktion "Route planen" in der Markierungsliste können Sie *Markierunge
 
 - [Navigation nach Markierungen](../navigation/setup/markers-navigation.md)
 - [Markierungs-Widgets](../widgets/markers.md)
-
-> *Zuletzt aktualisiert: August 2024*

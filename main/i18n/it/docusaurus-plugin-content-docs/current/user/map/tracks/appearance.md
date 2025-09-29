@@ -1,7 +1,7 @@
 ---
-source-hash: c714e52890d474392987e42babe6eed754ad1dbbaa5e4c8fe091171e272426fe
+source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
 sidebar_position: 5
-title: Aspetto della traccia
+title:  Aspetto della traccia
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,19 +18,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-La funzione **Aspetto della traccia** consente agli utenti di personalizzare la visualizzazione delle tracce sulla mappa. Ciò include la regolazione di colore, larghezza, indicatori di direzione e altri elementi visivi. La personalizzazione dell'aspetto della traccia aiuta a differenziare più tracce, evidenziare percorsi specifici e migliorare la leggibilità della mappa.
+La funzione **Aspetto della traccia** consente agli utenti di personalizzare la modalità di visualizzazione delle tracce sulla mappa. Ciò include la regolazione del colore, della larghezza, degli indicatori di direzione e di altri elementi visivi. La personalizzazione dell'aspetto della traccia aiuta a differenziare più tracce, a evidenziare percorsi specifici e a migliorare la leggibilità della mappa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Panoramica dell'aspetto della traccia Android](@site/static/img/map/track-appear-and-1.png)  ![Menu Aspetto della traccia Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Panoramica dell'aspetto della traccia Android](@site/static/img/map/track-appear-and-1.png)  ![Menu traccia Aspetto Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Aspetto della traccia iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu Aspetto della traccia iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Menu traccia Aspetto iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu traccia Aspetto iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -41,38 +41,38 @@ La funzione **Aspetto della traccia** consente agli utenti di personalizzare la 
 
 È possibile modificare l'aspetto della traccia utilizzando uno dei seguenti metodi:
 
-- **Da I miei luoghi**. Apri *Menu → I miei luoghi → Tracce*, seleziona una traccia, tocca l'*icona Aspetto* nel [menu contestuale della traccia](../../map/tracks/track-context-menu.md#overview).
-- **Dalla mappa**. Tocca una traccia direttamente sulla mappa, quindi tocca l'*icona Aspetto* nella sezione *Panoramica*.
-- **Dalla registrazione della traccia**. Modifica l'aspetto della traccia attualmente registrata tramite il [menu contestuale di registrazione della traccia](../../plugins/trip-recording.md#сurrent-track-recording).  
-- **Dal menu Configura mappa**. Vai a *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* per le tracce visualizzate.
+- **Da I miei luoghi**. Aprire *Menu → I miei luoghi → Tracce*, selezionare una traccia, toccare l'icona *Aspetto* nel [menu contestuale della traccia](../../map/tracks/track-context-menu.md#overview).
+- **Dalla mappa**. Toccare una traccia direttamente sulla mappa, quindi toccare l'icona *Aspetto* nella sezione *Panoramica*.
+- **Dalla registrazione della traccia**. Modificare l'aspetto della traccia attualmente registrata tramite il [menu contestuale di registrazione della traccia](../../plugins/trip-recording.md#current-track-recording).  
+- **Dal menu Configura mappa**. Andare su *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* per le tracce visualizzate.
 
 
-## Impostazioni aspetto traccia {#track-appearance-settings}
+## Impostazioni dell'aspetto della traccia {#track-appearance-settings}
 
 ### Colore {#color}
 
 :::tip acquisti
-Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funzioni gratuite e a pagamento.
+Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. Funzionalità gratuite e a pagamento per <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
 :::
 
 ![Aspetto](@site/static/img/map/appearance_color_andr.png)
 
-È possibile impostare il colore della traccia manualmente o utilizzare la **visualizzazione dei dati basata sul colore** (ad esempio, velocità, altitudine, pendenza). Se una traccia non dispone di determinati dati, OsmAnd visualizza le sezioni mancanti in grigio.
+È possibile impostare il colore della traccia manualmente o utilizzare la **visualizzazione dei dati basata sul colore** (ad esempio, velocità, altitudine, pendenza). Se una traccia è priva di alcuni dati, OsmAnd visualizza le sezioni mancanti in grigio.
 
 **Opzioni di colore disponibili:**
 
-- **Impostazioni gratuite**: *<Translate android="true" ids="track_coloring_solid"/> colore*, *<Translate android="true" ids="shared_string_speed"/>* (se registrato) e *<Translate android="true" ids="altitude"/>* (se registrato).
+- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).
 
-    ![Menu Aspetto della traccia Colore della traccia Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aspetto Colore della traccia Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+    ![Menu traccia Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
 
-- [Funzione Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+- [Funzionalità Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colore](../../personal/color-palette-schemes.md#routes).
+Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata della mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colori](../../personal/color-palette-schemes.md#routes).
 
 
 ### Larghezza {#width}
 
-![Menu Aspetto della traccia Spessore della traccia Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Aspetto della traccia](@site/static/img/map/track_appearance_width_andr.png)  
+![Menu traccia Aspetto Spessore traccia Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Aspetto della traccia](@site/static/img/map/track_appearance_width_andr.png)  
 
 È possibile personalizzare l'aspetto della traccia in diversi menu dell'applicazione:
 
@@ -80,36 +80,36 @@ Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del perco
 - [*Impostazioni di navigazione → Personalizza linea del percorso*](../../navigation/guidance/navigation-settings.md#customize-route-line).
 - [*I miei luoghi → Scheda Tracce → qualsiasi cartella → Aspetto predefinito*](../../personal/tracks/manage-tracks.md#track-folder).
 
-Regola la larghezza della traccia per migliorare la visibilità sulla mappa.
+Regolare la larghezza della traccia per migliorare la visibilità sulla mappa.
 
-- **Opzioni predefinite**: **Sottile, Media** e **Grassetto**.
+- **Opzioni preimpostate**: **Sottile, Media** e **Grassetto**.
 
-- **Larghezza personalizzata**: Regolabile da 1 a 24 px utilizzando un cursore.
+- **Larghezza personalizzata**: regolabile da 1 a 24 px tramite un cursore.
 
-- **Larghezza basata sul profilo**: Può essere impostata tramite *Impostazioni di navigazione → [Personalizza linea del percorso](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
+- **Larghezza basata sul profilo**: può essere impostata tramite *Impostazioni di navigazione → [Personalizza linea del percorso](../../navigation/guidance/navigation-settings.md#customize-route-line)*.
 
 
 ### Intervallo di divisione {#split-interval}
 
-![Menu Aspetto della traccia Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+![Menu traccia Aspetto Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
-Seleziona se dividere l'intervallo sulla traccia **per distanza o per tempo**.
+Selezionare se dividere l'intervallo sulla traccia **per distanza o per tempo**.
 
 ### Frecce di direzione {#direction-arrows}
 
-![Menu Aspetto della traccia Frecce di direzione Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Menu traccia Aspetto frecce di direzione Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Aggiunge **indicatori a freccia** lungo la traccia per indicare la direzione del movimento.
 
 ### Icone di inizio e fine {#start-and-finish-icons}
 
-![Menu Aspetto della traccia Icone di inizio e fine Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Menu traccia Aspetto icone di inizio e fine Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Consente di selezionare se mostrare le **icone di inizio e fine** per i segmenti di traccia.
 
 ### Unisci interruzioni {#join-gaps}
 
-Collega **segmenti di traccia** che sono stati interrotti a causa della perdita di GPS o di una pausa nella registrazione. La funzione **<Translate android="true" ids="join_segments"/>** (*Android*) o **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) consente di collegare queste interruzioni nella traccia GPX selezionata utilizzando linee rette.
+Collega i **segmenti di traccia** che sono stati interrotti a causa della perdita del segnale GPS o di una pausa nella registrazione. La funzione **<Translate android="true" ids="join_segments"/>** (*Android*) o **<Translate ios="true" ids="gpx_join_gaps"/>** (*iOS*) consente di collegare queste interruzioni nella traccia GPX selezionata utilizzando linee rette.
 
 ### Ripristina originale {#reset-to-original}
 
@@ -118,72 +118,72 @@ Ripristina tutte le **impostazioni dell'aspetto della traccia** ai loro valori p
 
 ## Traccia 3D {#3d-track}
 
-:::info Funzione a pagamento
-La **Traccia 3D** è una funzione a pagamento di **OsmAnd Pro** per [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::info Funzionalità a pagamento
+**Traccia 3D** è una funzionalità a pagamento di **OsmAnd Pro** per [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Menu Aspetto della traccia Visualizzazione 3D](@site/static/img/map/3d_track_appearance_android.png)
+![Menu traccia Aspetto Visualizzazione 3D](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Aspetto della traccia Visualizzazione 3D](@site/static/img/map/3d_track_appearance_ios.png)
+![Menu traccia Aspetto Visualizzazione 3D](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La funzione **Traccia 3D** genera una visualizzazione tridimensionale integrando i dati di elevazione nelle tracce 2D standard. Questa funzionalità crea una rappresentazione con profondità migliorata, consentendo un'analisi precisa della traccia rispetto al terreno. Incorporando i dettagli di elevazione, la traccia 3D offre una visione più completa della topografia e del contesto geografico del percorso.
+La funzione **Traccia 3D** genera una visualizzazione tridimensionale integrando i dati di elevazione nelle tracce 2D standard. Questa funzionalità crea una rappresentazione con maggiore profondità, consentendo un'analisi precisa della traccia rispetto al terreno. Incorporando i dettagli dell'elevazione, la traccia 3D offre una visione più completa della topografia e del contesto geografico del percorso.
 
 ### Impostazioni traccia 3D {#3d-track-settings}
 
-**Altezza del muro**  
-È possibile visualizzare una traccia 3D per altitudine e altri dati disponibili all'interno della traccia, o per altitudine fissa.
+**Altezza parete**  
+È possibile visualizzare una traccia 3D in base all'altitudine e ad altri dati disponibili all'interno della traccia, o in base a un'altitudine fissa.
 
-- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitudine*, &nbsp;*Velocità*, &nbsp;*Altezza fissa*. Dati del sensore 3D: &nbsp;*Frequenza cardiaca*, &nbsp;*Cadenza bici*, &nbsp;*Potenza bici*, &nbsp;*Temperatura*, &nbsp;*Velocità bici*.
+- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitudine*, &nbsp;*Velocità*, &nbsp;*Altezza fissa*. Dati del sensore 3D: &nbsp;*Frequenza cardiaca*, &nbsp;*Cadenza bicicletta*, &nbsp;*Potenza bicicletta*, &nbsp;*Temperatura*, &nbsp;*Velocità bicicletta*.
 
-- **<Translate android="true" ids="vertical_exaggeration"/>**. Se visualizzato per *Altitudine* o *Velocità*, è possibile scalare i dati 3D per ottenere una visualizzazione più prominente per la traccia 3D nell'intervallo da *Nessuno* a *x3.0*.
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Se visualizzato per *Altitudine* o *Velocità*, è possibile scalare i dati 3D per ottenere una visualizzazione più evidente per la traccia 3D nell'intervallo da *Nessuna* a *x3.0*.
 
-- **<Translate android="true" ids="wall_height"/>**. Se visualizzato per *Altezza fissa*, imposta l'altezza fissa per la traccia 3D definendo la sua elevazione sulla mappa nell'intervallo da *Nessuno* a *2000 m*.
+- **<Translate android="true" ids="wall_height"/>**. Se visualizzato per *Altezza fissa*, impostare l'altezza fissa per la traccia 3D definendo la sua elevazione sulla mappa nell'intervallo da *Nessuna* a *2000 m*.
 
-- È possibile combinarlo con [Rilievo 3D](../../plugins/topography.md#3d-relief). Se la sorgente dei dati 3D non è l'altitudine, la rappresentazione 3D sarà una combinazione dell'altitudine del rilievo e dei dati selezionati, come la velocità o la frequenza cardiaca.
+- È possibile combinarlo con [Rilievo 3D](../../plugins/topography.md#3d-relief). Se la fonte dei dati 3D non è l'altitudine, la rappresentazione 3D sarà una combinazione dell'altitudine del rilievo e dei dati selezionati, come la velocità o la frequenza cardiaca.
 
 **<Translate android="true" ids="wall_color"/>**  
-Personalizza il **colore della traccia 3D** utilizzando gradienti o visualizzazione basata sui dati.  
-Le opzioni includono: *Nessuno*, &nbsp;*Solido*, &nbsp;*Gradiente verso il basso*, &nbsp;*Gradiente verso l'alto*, &nbsp;*Altitudine*, &nbsp;*Pendenza*, &nbsp;*Velocità*.
+Personalizza il **colore della traccia 3D** utilizzando gradienti o visualizzazioni basate sui dati.  
+Le opzioni includono: *Nessuno*, &nbsp;*Tinta unita*, &nbsp;*Gradiente verso il basso*, &nbsp;*Gradiente verso l'alto*, &nbsp;*Altitudine*, &nbsp;*Pendenza*, &nbsp;*Velocità*.
 
 **<Translate android="true" ids="track_line"/>**  
 Aggiunge una [linea evidenziata](#color) alla parte superiore o inferiore della traccia 3D.  
 Le opzioni includono: *Superiore*, &nbsp;*Inferiore*, &nbsp;*Superiore e inferiore*.
 
-> **NOTA**: *La **versione Android** dell'app richiede che il motore di rendering della mappa [Versione 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) sia abilitato per utilizzare la visualizzazione della traccia 3D.*
+> **NOTA**: *La versione **Android** dell'app richiede che il motore di rendering della mappa [Versione 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) sia abilitato per utilizzare la visualizzazione della traccia 3D.*
 
 
 ### Casi d'uso {#use-cases}
 
-La funzione traccia 3D è molto utile per attività come il parapendio, dove la visualizzazione del percorso di volo può offrire approfondimenti più profondi. Rendendo la traccia in 3D, è possibile sfruttare funzionalità come **Altezza del muro** e **Colore del muro** per estrarre preziose informazioni visive per l'analisi.
+La funzione di traccia 3D è molto utile per attività come il parapendio, dove la visualizzazione della traiettoria di volo può offrire approfondimenti maggiori. Rendendo la traccia in 3D, è possibile sfruttare funzionalità come **Altezza parete** e **Colore parete** per estrarre preziose informazioni visive per l'analisi.
 
-1. **Visualizza per velocità con 3D**.  
+1. **Visualizza per Velocità con 3D**.  
     Un caso d'uso comune è l'utilizzo di tracce 3D per visualizzare le variazioni di velocità. Ciò consente di individuare sezioni specifiche della traccia in cui si è rallentato o accelerato.  
 
-    Con il colore del muro basato sulla pendenza, è possibile osservare come il terreno, in particolare colline e pendenze, abbia influenzato la velocità. Questa combinazione di visualizzazione di velocità e pendenza fornisce una comprensione dettagliata delle prestazioni durante l'attività.
+    Con il Colore parete basato sulla Pendenza, è possibile osservare come il terreno, in particolare colline e pendenze, abbia influito sulla velocità. Questa combinazione di visualizzazione della velocità e della pendenza fornisce una comprensione dettagliata delle prestazioni durante l'attività.
 
-2. **Visualizza per sensore cardiaco con rilievo 3D**.  
-    Un'altra applicazione interessante è la combinazione dei dati del sensore di frequenza cardiaca con le mappe di rilievo 3D. Ciò consente di mappare le fluttuazioni della frequenza cardiaca direttamente sul terreno, fornendo una visione completa di come i cambiamenti di altitudine possano aver influenzato lo sforzo fisico.  
+2. **Visualizza per sensore cardiaco con Rilievo 3D**.  
+    Un'altra applicazione interessante è la combinazione dei dati del sensore di frequenza cardiaca con le mappe a rilievo 3D. Ciò consente di mappare le fluttuazioni della frequenza cardiaca direttamente sul terreno, offrendo una visione completa di come i cambiamenti di altitudine possano aver influenzato lo sforzo fisico.  
 
-    La funzione di rilievo 3D, che esagera l'altitudine, funziona indipendentemente dalla vista della traccia 3D. Due parametri di esagerazione verticale possono essere regolati per comprendere meglio la correlazione tra frequenza cardiaca ed elevazione del terreno.
+    La funzione di rilievo 3D, che esagera l'altitudine, funziona indipendentemente dalla visualizzazione della traccia 3D. È possibile regolare due parametri di esagerazione verticale per comprendere meglio la correlazione tra frequenza cardiaca ed elevazione del terreno.
 
-3. **Visualizza altezza della traccia e linea di colore della pendenza su una vista a terra piatta.**  
-    Quando si visualizzano i dati di altitudine, si consiglia di utilizzare una vista a terra piatta per evitare problemi come errori GPS, che potrebbero far apparire sezioni della traccia sottoterra.  
+3. **Visualizza l'altezza della traccia e la linea di colore della pendenza su una vista piana della terra.**  
+    Quando si visualizzano i dati di altitudine, si consiglia di utilizzare una vista piana della terra per evitare problemi come errori GPS, che potrebbero far apparire sezioni della traccia sottoterra.  
 
-    In questo scenario, i cambiamenti di pendenza possono essere visualizzati separatamente lungo la linea della traccia, mentre il colore del muro viene utilizzato per rappresentare l'altitudine. Questo metodo garantisce che, anche con potenziali imprecisioni dei dati, si riceva comunque una visualizzazione chiara e accurata di pendenza ed elevazione.
+    In questo scenario, le variazioni di pendenza possono essere visualizzate separatamente lungo la linea della traccia, mentre il Colore parete viene utilizzato per rappresentare l'altitudine. Questo metodo garantisce che, anche con potenziali imprecisioni dei dati, si riceva comunque una visualizzazione chiara e accurata della pendenza e dell'elevazione.
 
-## Modifica dell'aspetto per più tracce {#change-appearance-for-multiple-tracks}
+## Modifica dell'aspetto di più tracce {#change-appearance-for-multiple-tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -201,16 +201,16 @@ La funzione traccia 3D è molto utile per attività come il parapendio, dove la 
 
 </Tabs>  
 
-La scheda [Tracce](../../personal/tracks/manage-tracks.md) visualizza automaticamente tutte le tracce mai registrate, create o importate. Sono organizzate per cartella o visualizzate come un elenco sotto di esse.  
+La scheda [Tracce](../../personal/tracks/manage-tracks.md) visualizza automaticamente tutte le tracce mai registrate, create o importate. Sono organizzate per cartella o visualizzate come un elenco sottostante.  
 
 Modifica l'aspetto di più tracce in *I miei luoghi → Tracce*:
 
-- **Modifica aspetto predefinito** - Applica le impostazioni a tutte le tracce in una [cartella](../../personal/tracks/manage-tracks.md#track-folder).
-- **Ripristina originale** - Ripristina le impostazioni della singola traccia.
+- **Cambia aspetto predefinito** - Applica le impostazioni a tutte le tracce in una [cartella](../../personal/tracks/manage-tracks.md#track-folder).
+- **Ripristina originale** - Ripristina le impostazioni individuali della traccia.
 
-- [Modalità di selezione](../../personal/tracks/manage-tracks.md#selection-mode) - Modifica l'aspetto di tracce specifiche nella cartella selezionata o dell'intero elenco nella scheda Tracce.
-    - Seleziona il *menu a tre puntini* nell'angolo in alto a destra della scheda Tracce e tocca *Seleziona*.
-    - Quindi tocca il *menu a tre puntini* nella parte superiore dello schermo e seleziona *Modifica aspetto*.  
+- [Modalità di selezione](../../personal/tracks/manage-tracks.md#selection-mode) - Cambia l'aspetto di tracce specifiche nella cartella selezionata o dell'intero elenco nella scheda Tracce.
+    - Selezionare il *menu a tre punti* nell'angolo in alto a destra della scheda Tracce e toccare *Seleziona*.
+    - Quindi toccare il *menu a tre punti* nella parte superiore dello schermo e selezionare *Modifica aspetto*.  
 
 Opzioni di personalizzazione dell'aspetto in blocco:
 
@@ -224,8 +224,8 @@ Opzioni di personalizzazione dell'aspetto in blocco:
 
 - **Larghezza** – Regola la [larghezza della linea della traccia](#width) utilizzando preimpostazioni o manualmente.
 
-- **Intervallo di divisione** – [Imposta intervallo](#split-interval) per indicatori di distanza / tempo.  
-    Stati: *Invariato*, &nbsp;*Originale*, &nbsp;*Seleziona*: *Ora* o *Distanza*.
+- **Intervallo di divisione** – [Imposta intervallo](#split-interval) per indicatori di distanza/tempo.  
+    Stati: *Invariato*, &nbsp;*Originale*, &nbsp;*Seleziona*: *Tempo* o *Distanza*.
 
 Originale e invariato:
 
@@ -236,13 +236,13 @@ Originale e invariato:
 
 ## Colori delle tracce nei file GPX {#track-colors-in-gpx-files}
 
-OsmAnd supporta i **colori personalizzati delle tracce** nei file GPX utilizzando il tag `<osmand:color>` all'interno della sezione `<extensions>` di un elemento `<trk>`. Ciò consente agli utenti di definire i colori per le singole tracce, migliorando la differenziazione visiva quando più tracce vengono visualizzate sulla mappa.
+OsmAnd supporta **colori di traccia personalizzati** nei file GPX utilizzando il tag `<osmand:color>` all'interno della sezione `<extensions>` di un elemento `<trk>`. Ciò consente agli utenti di definire i colori per le singole tracce, migliorando la differenziazione visiva quando più tracce vengono visualizzate sulla mappa.
 
 Per specificare un colore per una traccia, utilizzare il seguente formato:  
 
 ```xml
 <trk>
-  <name>Traccia di esempio</name>
+  <name>Example Track</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>
@@ -250,38 +250,38 @@ Per specificare un colore per una traccia, utilizzare il seguente formato:
 ```
 
 - Il tag `<osmand:color>` accetta **codici colore esadecimali** (ad esempio, `#FF0000` per il rosso).
-- Se esistono più tracce in un file GPX, ogni traccia può avere il proprio tag `<osmand:color>`.
+- Se in un file GPX esistono più tracce, ogni traccia può avere il proprio tag `<osmand:color>`.
 
 
 **Comportamento in OsmAnd:**
 
 1. **Assegnazione del colore predefinito**:  
 
-    - Quando una **traccia GPX viene importata come singola traccia** (opzione ***Importa come una traccia***), all'intera traccia viene assegnato il **colore GPX predefinito** (rosso).  
-    - In OsmAnd **4.9.10 e versioni successive**, questo problema è stato risolto: i colori delle singole tracce vengono ora mantenuti all'importazione.
+    - Quando una **traccia GPX viene importata come traccia singola** (opzione ***Importa come una traccia***), all'intera traccia viene assegnato il **colore GPX predefinito** (rosso).  
+    - In OsmAnd **4.9.10 e versioni successive**, questo problema è stato risolto: i colori delle singole tracce vengono ora conservati durante l'importazione.
 
-2. **Visualizzazione a colore singolo per tracce unite:**  
+2. **Visualizzazione a colore singolo per le tracce unite:**  
 
-    - Se le tracce vengono **unite** utilizzando ***Unisci segmenti***, la traccia risultante viene trattata come **un'unica traccia continua con un singolo segmento**.
+    - Se le tracce vengono **unite** utilizzando ***Unisci segmenti***, la traccia risultante viene trattata come **una traccia continua con un unico segmento**.
     - La rappresentazione multicolore **non è supportata** per le tracce unite.
-    - La traccia unita verrà visualizzata utilizzando il **colore GPX principale** (predefinito: rosso), anche se i singoli segmenti della traccia avevano originariamente colori diversi.
+    - La traccia unita verrà visualizzata utilizzando il **colore GPX principale** (predefinito: rosso), anche se i singoli segmenti di traccia avevano originariamente colori diversi.
 
 3. **Priorità delle impostazioni di aspetto:**  
 
-    - OsmAnd attualmente supporta le **impostazioni di colore e larghezza solo per l'intera traccia**.
-    - Queste impostazioni di aspetto sono memorizzate nelle **estensioni GPX di livello superiore**.
-    - Se un colore o una larghezza è **impostato a livello superiore** (nel file GPX o manualmente in OsmAnd), questa impostazione avrà la precedenza sui colori assegnati ai singoli segmenti della traccia.
+    - OsmAnd attualmente supporta **impostazioni di colore e larghezza solo per l'intera traccia**.
+    - Queste impostazioni di aspetto sono memorizzate nelle **estensioni GPX di primo livello**.
+    - Se un colore o una larghezza sono **impostati al livello superiore** (nel file GPX o manualmente in OsmAnd), questa impostazione avrà la precedenza sui colori assegnati ai singoli segmenti di traccia.
 
-**Soluzione alternativa per tracce multicolore:**
+**Soluzione alternativa per le tracce multicolore:**
 
 - Per preservare i **colori individuali per più tracce**, **importare le tracce separatamente** invece di unirle.
 
-- Regolare manualmente i colori delle tracce in **Impostazioni aspetto traccia**:
+- Regolare manualmente i colori della traccia in **Impostazioni aspetto traccia**:
 
-  - Apri la traccia in OsmAnd.
-  - Tocca la traccia per aprire il **Menu contestuale**.
-  - Seleziona **Aspetto**.
-  - Scegli il colore preferito.
+  - Aprire la traccia in OsmAnd.
+  - Toccare la traccia per aprire il **Menu contestuale**.
+  - Selezionare **Aspetto**.
+  - Scegliere il colore preferito.
 
 - Ciò garantisce che ogni traccia mantenga la sua **rappresentazione cromatica prevista**, anche se il file GPX conteneva originariamente più segmenti con colori diversi.
 
@@ -294,5 +294,3 @@ Per specificare un colore per una traccia, utilizzare il seguente formato:
 - [Tracce](../tracks/index.md)
 - [Menu contestuale delle tracce](../tracks/track-context-menu.md)
 - [Registrazione del viaggio](../../plugins/trip-recording.md)
-
-> *Ultimo aggiornamento: Febbraio 2025*

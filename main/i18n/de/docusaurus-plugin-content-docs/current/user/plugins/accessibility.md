@@ -1,5 +1,5 @@
 ---
-source-hash: f88b26c81cd85ceae10dd091bfd8f3587782fc1e066bd79fe00de8a7ce769b72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
 title:  Barrierefreiheit
 ---
@@ -15,97 +15,97 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Hinweis
-Das Barrierefreiheits-Plugin ist nur in der **Android-Version** von OsmAnd verfügbar. Die [iOS-Version](#how-to-use-ios) verwendet die Standard-Barrierefreiheitseinstellungen des Systems.
+Das Barrierefreiheits-Plugin ist nur für die **Android-Version** von OsmAnd verfügbar. Die [iOS-Version](#how-to-use-ios) stützt sich auf die standardmäßigen Barrierefreiheitseinstellungen des Systems.
 :::
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
-Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbehinderte Benutzer durch die Integration mit den [Android-Barrierefreiheits-Tools](https://www.android.com/accessibility/). Das Plugin bietet **Text-to-Speech, Gestensteuerung, automatische Ansagen** und **haptisches Feedback**, um die Navigation zugänglicher zu machen. Auf iOS verwendet OsmAnd die integrierten Barrierefreiheitsfunktionen von Apple wie VoiceOver.
+Die Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbehinderte Benutzer durch die Integration mit den [Android-Barrierefreiheitswerkzeugen](https://www.android.com/accessibility/). Das Plugin bietet **Text-zu-Sprache, Gestensteuerung, automatische Ansagen** und **haptisches Feedback**, um die Navigation zugänglicher zu machen. Unter iOS nutzt OsmAnd die in Apple integrierten Barrierefreiheitsfunktionen wie VoiceOver.
 
 
-### Verwendung (Android) {#how-to-use-android}
+### Wie zu verwenden (Android) {#how-to-use-android}
 
 ![Barrierefreiheit](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-***Barrierefreiheits-Plugin aktivieren:***
+***Aktivieren Sie das Barrierefreiheits-Plugin:***  
 
 1. **Aktivieren Sie das Plugin**: *Menü → Plugins → Barrierefreiheit → Aktivieren*.
 
-2. **Schalten Sie den Barrierefreiheitsmodus ein**:
-   - Navigieren Sie auf Ihrem Android-Gerät zu *Systemeinstellungen → Barrierefreiheit*.
-   - Aktivieren Sie TalkBack oder einen anderen Screenreader.
+2. **Schalten Sie den Barrierefreiheitsmodus ein**:  
+   - Navigieren Sie zu *Systemeinstellungen → Barrierefreiheit* auf Ihrem Android-Gerät.
+   - Aktivieren Sie TalkBack oder einen anderen Bildschirmleser.
 
-3. **Plugin-Einstellungen anpassen**:
-   - Öffnen Sie die [Barrierefreiheits-Einstellungen](#plugin-settings) in der OsmAnd-App.
-   - Konfigurieren Sie Funktionen wie Sprechgeschwindigkeit, automatische Ansage und haptisches Feedback.
+3. **Passen Sie die Plugin-Einstellungen an**:  
+   - Öffnen Sie die [Barrierefreiheitseinstellungen](#plugin-settings) in der OsmAnd-App.
+   - Konfigurieren Sie Funktionen wie Sprechgeschwindigkeit, automatische Ansagen und haptisches Feedback.
 
 <br/>
 
-***Funktionen und Funktionalität:***
+***Merkmale und Funktionalität:***
 
 - **Gestensteuerung**:
-   - Unterstützt alle Standard-[OsmAnd-Gesten](../map/interact-with-map#gestures).
-   - Passt Gesten an die Anweisungen von Android **TalkBack** an.
+   - Unterstützt alle standardmäßigen [OsmAnd-Gesten](../map/interact-with-map.md#gestures).
+   - Passt Gesten an die Anweisungen von Androids **TalkBack** an.
 
 - **TalkBack-Integration**:
-   - Der TalkBack-Screenreader bietet Audio-Anleitungen für die Navigation und Menü-Interaktionen.
-   - Erfahren Sie mehr über TalkBack-Gesten [hier](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+   - Der TalkBack-Bildschirmleser bietet Audioführung für die Navigation und Menüinteraktionen.
+   - Erfahren Sie mehr über TalkBack-Gesten [hier](https://support.google.com/accessibility/android/answer/6151827?hl=de&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
-- **Hintergrundoperationen**. Audio- und haptisches Feedback werden auch bei ausgeschaltetem oder gesperrtem Bildschirm fortgesetzt.
+- **Hintergrundbetrieb**. Audio- und haptisches Feedback werden auch bei ausgeschaltetem oder gesperrtem Bildschirm fortgesetzt.
 
-- **Aktionen der Kompass-Taste**:
+- **Aktionen der Kompass-Schaltfläche**:
 
 | Geste | Aktion | TalkBack-Äquivalent |
 |-----|-----|-----|
-| **Einmaliges Tippen** | Karte nach **Norden** drehen | **Doppeltes Tippen** |
-| **Langes Tippen** | Öffnet die Liste der [Kartenorientierungen](../map/interact-with-map.md#map-orientation-modes) | **Doppeltes Tippen und Halten** |
-| **Doppeltes Tippen** | *Nicht verfügbar im Barrierefreiheitsmodus* | *Nicht unterstützt* |
+| **Einfaches Tippen** | Dreht die Karte nach **Norden** | **Doppeltes Tippen** |
+| **Langes Tippen** | Öffnet die Liste der [Kartenausrichtungen](../map/interact-with-map.md#map-orientation-modes) | **Doppeltippen und halten** |
+| **Doppeltes Tippen** | *Nicht im Barrierefreiheitsmodus verfügbar* | *Nicht unterstützt* |
 
 
-### Verwendung (iOS) {#how-to-use-ios}
+### Wie zu verwenden (iOS) {#how-to-use-ios}
 
-Die iOS-Version von OsmAnd verwendet die **integrierten Barrierefreiheits-Tools** des Systems.
+Die iOS-Version von OsmAnd verwendet die **integrierten Barrierefreiheitswerkzeuge** des Systems.
 
-1. **VoiceOver aktivieren**:
-   - Gehen Sie zu *Einstellungen → Barrierefreiheit → VoiceOver*.
-   - Konfigurieren Sie **VoiceOver-Gesten** zur Verwendung mit OsmAnd.
+1. **Aktivieren Sie VoiceOver**:
+   - Gehen Sie zu *Einstellungen → Bedienungshilfen → VoiceOver*.
+   - Konfigurieren Sie **VoiceOver-Gesten** für die Verwendung mit OsmAnd.
 
 2. **Unterstützte Funktionen**:
-   - **Screenreader-Unterstützung** für Karteninteraktionen.
+   - **Unterstützung für Bildschirmleser** bei Karteninteraktionen.
    - **Anpassbare Gesten** über die iOS-Einstellungen.
-   - Alle Standard-[OsmAnd-Gesten](../map/interact-with-map#gestures) sind verfügbar.
+   - Alle standardmäßigen [OsmAnd-Gesten](../map/interact-with-map.md#gestures) sind verfügbar.
 
-3. **Mehr erfahren**:
-   - Lesen Sie mehr über iOS Vision Accessibility-Funktionen [hier](https://www.apple.com/accessibility/vision/).
-   - Erkunden Sie VoiceOver-Gesten für iPhone [hier](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
+3. **Erfahren Sie mehr**:
+   - Lesen Sie hier über die iOS Vision-Barrierefreiheitsfunktionen [hier](https://www.apple.com/de/accessibility/vision/).
+   - Entdecken Sie VoiceOver-Gesten für das iPhone [hier](https://support.apple.com/de-de/guide/iphone/iph3e2e2281/ios).
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
 Um die Barrierefreiheitsfunktionen des Geräts in OsmAnd zu aktivieren, müssen Sie die folgenden Einstellungen vornehmen:
 
-1. **Aktivieren Sie das** [Barrierefreiheits-Plugin](../plugins/index.md#enable--disable): *Menü → Plugins → Barrierefreiheit → Aktivieren*.
+1. **Aktivieren Sie das** [Barrierefreiheits-Plugin](../plugins/index.md#enable--disable):  *Menü → Plugins → Barrierefreiheit → Aktivieren*.  
 2. **Aktivieren Sie den Barrierefreiheitsmodus** auf Ihrem Gerät.
-3. Konfigurieren Sie die [Einstellungen](#plugin-settings) des Barrierefreiheits-Plugins.
+3. Konfigurieren Sie die [Plugin-Einstellungen](#plugin-settings) für die Barrierefreiheit.
 
 
 ## Plugin-Einstellungen {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Barrierefreiheit](@site/static/img/plugins/Accessibility/access_.png)
+![Barrierefreiheit](@site/static/img/plugins/Accessibility/access_.png)  
 
-Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen zur Personalisierung der Navigation und Interaktion für Benutzer mit Behinderungen. Diese Einstellungen werden pro [Profil](../personal/profiles.md) in OsmAnd angewendet.
+Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigation und Interaktion für Benutzer mit Behinderungen zu personalisieren. Diese Einstellungen werden pro [Profil](../personal/profiles.md) in OsmAnd angewendet.
 
-| Einstellung                   | Beschreibung |
-|---------------------------|-------------|
-| **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |
-| **Sprechgeschwindigkeit**           | Steuert die *Text-to-Speech-Geschwindigkeit* im Bereich von **50% bis 200%**. |
-| [Intelligente automatische Ansage](#smart-autoannounce-and-clockwise-directions)    | Bietet *Sprachführung*, wenn Sie von der Route abweichen. |
-| **Zeitraum für automatische Ansage**   | Legt die Mindestzeit zwischen Ansagen fest, von **5 Sekunden bis 5 Minuten**. |
-| **Richtungsstil**       | Wählen Sie zwischen *seitlich (8 Richtungen)* oder [im Uhrzeigersinn](#smart-autoannounce-and-clockwise-directions) (12 Richtungen)*. |
-| **Audio-Anweisungen**      | Spielt *Audio-Anweisungen* zur Angabe der Richtung ab. |
-| **Haptische Anweisungen**     | Bietet *Vibrationsfeedback* bei Abbiegungen und Abweichungen.|
+| Einstellung                   | Beschreibung |  
+|---------------------------|-------------|  
+| **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |  
+| **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit* im Bereich von **50 % bis 200 %**. |  
+| [Intelligente automatische Ansage](#smart-autoannounce-and-clockwise-directions)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
+| **Intervall für automatische Ansagen**   | Legt die Mindestzeit zwischen den Ansagen fest, von **5 Sekunden bis 5 Minuten**. |  
+| **Richtungsstil**       | Wählen Sie zwischen *Seitwärts (8 Richtungen)* oder [Im Uhrzeigersinn](#smart-autoannounce-and-clockwise-directions) (12 Richtungen)*. |  
+| **Audio-Richtungsanweisungen**      | Spielt *Audio-Anweisungen* ab, die die Richtung angeben. |  
+| **Haptische Richtungsanweisungen**     | Bietet *Vibrationsfeedback* für Abbiegungen und Abweichungen.|  
 
 <!--
 - **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
@@ -125,28 +125,26 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen zur Personalisier
 
 <br/>
 
-***Tipps für optimierte Barrierefreiheit:***
+***Tipps für eine optimierte Barrierefreiheit:***
 
-- **Screenreader** - Verwenden Sie TalkBack (*Android*) oder VoiceOver (*iOS*) für verbesserte Karteninteraktion.
-- **Audio-Navigation** - Aktivieren Sie die automatische Ansage, um Sprachansagen zu erhalten, während der Bildschirm ausgeschaltet ist.
-- **Haptisches Feedback** - Ideal für Umgebungen mit schlechter Sicht oder wenn Audio-Anleitungen unpraktisch sind.
+- **Bildschirmleser** - Verwenden Sie TalkBack (*Android*) oder VoiceOver (*iOS*) für eine verbesserte Karteninteraktion.
+- **Audio-Navigation** - Aktivieren Sie die automatische Ansage, um Sprachanweisungen zu erhalten, während der Bildschirm ausgeschaltet ist.
+- **Haptisches Feedback** - Ideal für Umgebungen mit schlechter Sicht oder wenn Audio-Anweisungen unpraktisch sind.
 
 
-#### Intelligente automatische Ansage und Richtungen im Uhrzeigersinn {#smart-autoannounce-and-clockwise-directions}
+### Intelligente automatische Ansage und Richtungen im Uhrzeigersinn {#smart-autoannounce-and-clockwise-directions}
 
-Die Funktion **Intelligente automatische Ansage** liefert *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen, während der **Richtungsstil im Uhrzeigersinn** *Uhrzeit-basierte Navigationsanweisungen* bietet. Diese Funktionen wurden entwickelt, um sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.
+Die Funktion **Intelligente automatische Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen, während der **Richtungsstil im Uhrzeigersinn** *Navigationsanweisungen basierend auf dem Zifferblatt einer Uhr* bietet. Diese Funktionen sind darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
 
-- Wenn **TalkBack nicht aktiviert ist**, zeigen sowohl die *intelligente automatische Ansage* als auch die *Richtungen im Uhrzeigersinn* nur *Textbenachrichtigungen* auf dem Bildschirm an.
+- Wenn **TalkBack nicht aktiviert ist**, zeigen sowohl die *Intelligente automatische Ansage* als auch die *Richtungen im Uhrzeigersinn* nur *Textbenachrichtigungen* auf dem Bildschirm an.  
 
-- **Sprachbenachrichtigungen** werden nur aktiviert, wenn *TalkBack* in den **Systemeinstellungen des Geräts** aktiviert ist.
+- **Sprachbenachrichtigungen** werden nur aktiviert, wenn *TalkBack* in den **Systemeinstellungen des Geräts** aktiviert ist.  
 
-- Stellen Sie den **Zeitraum für automatische Ansage** ein (z. B. *10 Sekunden*), um die Häufigkeit der Ansagen zu steuern.
+- Stellen Sie das **Intervall für automatische Ansagen** (z. B. *10 Sekunden*) ein, um die Häufigkeit der Ansagen zu steuern.
 
 
 ## Verwandte Artikel {#related-articles}
 
-- [Interaktion mit der Karte](../../user/map/interact-with-map.md)
-- [Globale Einstellungen](../../user/personal/global-settings.md)
+- [Mit der Karte interagieren](../../user/map/interact-with-map.md)
+- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)
-
-> *Zuletzt aktualisiert: Februar 2025*

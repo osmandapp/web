@@ -1,5 +1,5 @@
 ---
-source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
+source-hash: 4a76625c2bb84dea3475d937395b2dcabeed514e2bbf68736a1f6e8649b066f9
 sidebar_position: 8
 title: Marcadores
 ---
@@ -15,9 +15,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Visão Geral {#overview}
+## Visão geral {#overview}
 
-Marcadores são pontos especiais marcados no mapa como bandeiras que podem ser rapidamente criados com um único toque sem especificar nome e outras informações, em contraste com [Pontos Favoritos](./favorites.md). Além disso, os marcadores fornecem funcionalidade adicional com [widgets](../widgets/markers.md), **setas** (<Translate android="true" ids="show_arrows_on_the_map"/>) e **indicação de distância** (<Translate android="true" ids="show_direction"/>).
+Marcadores são pontos especiais marcados no mapa como bandeiras que podem ser rapidamente criados com um único toque, sem especificar nome e outras informações, em contraste com os [Pontos Favoritos](./favorites.md). Além disso, os marcadores fornecem funcionalidade adicional com [widgets](../widgets/markers.md), **setas** (<Translate android="true" ids="show_arrows_on_the_map"/>) e **indicação de distância** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -45,7 +45,7 @@ Marcadores são pontos especiais marcados no mapa como bandeiras que podem ser r
 
 Toque curto ou longo no mapa e selecione a ação necessária no [menu de contexto do mapa](../map/map-context-menu.md#add--edit-marker).
 
-![Ação de adicionar/editar marcador Android](@site/static/img/map/add_marker_android.png) ![Ação de passar marcador Android](@site/static/img/map/action_pass_marker_android.png)
+![Adicionar ação de marcador Editar Android](@site/static/img/map/add_marker_android.png) ![Ação de marcador de passagem Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
@@ -53,18 +53,18 @@ Toque curto ou longo no mapa e selecione a ação necessária no [menu de contex
 
 Toque curto ou longo no mapa e escolha a ação necessária no [menu de contexto do mapa](../map/map-context-menu.md#add--edit-marker).
 
-![Ação de adicionar/editar marcador iOS](@site/static/img/map/add_marker_ios.png) ![Ação de restaurar marcador Android](@site/static/img/map/action_restore_marker_android.png)
+![Adicionar ação de marcador Editar iOS](@site/static/img/map/add_marker_ios.png) ![Restaurar ação de marcador Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-É possível marcar um ponto ou um objeto para facilitar o planejamento da navegação. Basta tocar no ícone *bandeira* (*Android*) ou *seta* (*iOS*) no menu para exibir a direção e a distância até o ponto selecionado a partir da sua localização atual (ou o ponto central do mapa / o ponto inicial de toque no mapa quando a Localização está desativada).
+É possível marcar um ponto ou um objeto para facilitar o planejamento da navegação. Basta tocar no ícone de *bandeira* (*Android*) ou *seta* (*iOS*) no menu para exibir a direção e a distância até o ponto selecionado a partir da sua localização atual (ou o ponto central do mapa / o ponto inicial de toque do mapa quando a Localização está desativada).
 
 ***Ações***:
 
 - **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Coloca um novo marcador no ponto selecionado.
-- **Marcar como passado** (*Android*) / Dispensar (iOS). Desativa o marcador e o coloca no Histórico.
+- **Marcar como passado** (*Android*) / Descartar (iOS). Desativa o marcador e o coloca no Histórico.
 - **Tornar ativo** (*Android*). Move o marcador para a posição superior (no painel superior).
 - **Restaurar marcador** (*Android*). Move o marcador do Histórico para a lista ativa.
 
@@ -91,7 +91,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ### Lista de Itinerários {#itinerary-list}
 
-A lista de itinerários representa uma lista ordenada de marcadores onde o primeiro marcador superior é usado em widgets para navegação. Leia mais sobre isso no artigo [Navegar por marcadores](../navigation/setup/markers-navigation.md#itinerary-list).
+A lista de itinerários representa uma lista ordenada de marcadores, onde o primeiro marcador é usado em widgets para navegação. Leia mais sobre isso no artigo [Navegar por marcadores](../navigation/setup/markers-navigation.md#itinerary-list).
 
 ### Grupos de Marcadores {#marker-groups}
 
@@ -99,7 +99,7 @@ A lista de itinerários representa uma lista ordenada de marcadores onde o prime
 
 ![Grupos de marcadores de mapa Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Os marcadores podem ser adicionados e excluídos como um grupo inteiro de um grupo de Favoritos ou de um arquivo GPX com pontos de passagem. Isso os torna muito convenientes para serem usados em um modo de navegação especial - [Navegar por marcadores](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Os marcadores podem ser adicionados e excluídos como um grupo inteiro de um grupo de Favoritos ou de um arquivo GPX com pontos de passagem. Isso o torna muito conveniente para ser usado em um modo de navegação especial - [Navegar por marcadores](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Histórico {#history}
 
@@ -147,7 +147,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_
 O menu *Aparência no Mapa* é uma configuração geral para exibir marcadores e ponteiros adicionais para eles.
 Na versão iOS do OsmAnd, *Aparência no Mapa* também é uma configuração para exibir widgets. Existem também configurações adicionais para [configurar os widgets com marcadores](../widgets/markers.md#configure-marker-widgets).
 
-- **Marcadores ativos**. Mostra informações sobre o primeiro ou dois marcadores na lista de marcadores do mapa.
+- **Marcadores ativos**. Mostra informações sobre o primeiro ou os dois primeiros marcadores na lista de marcadores do mapa.
 - **Indicação de distância** *(para iOS)*. Permite escolher se deseja exibir widgets e como eles aparecerão: acima do mapa (Barra superior) ou no lado direito da tela (Widgets).
 - **Setas no mapa**. Indica a direção para o marcador rastreado (um ou dois) como uma seta no mapa. Se o marcador estiver na parte visível do mapa, nenhuma seta é exibida.
 - **Linha de direção**. Mostra a direção, como uma linha tracejada, de um ponto específico no mapa para o marcador rastreado em linha reta.
@@ -161,7 +161,7 @@ Na versão iOS do OsmAnd, *Aparência no Mapa* também é uma configuração par
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Pontos de planejamento de rota de marcadores de mapa Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Opções de planejamento de rota de marcadores de mapa Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Marcadores de mapa Planejar pontos de rota Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Marcadores de mapa Planejar opções de rota Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
 Usando a funcionalidade da ferramenta Planejar uma rota na lista de Marcadores, você pode classificar os *Marcadores* *Porta a porta*, colocá-los em ordem inversa ou criar uma *Viagem de ida e volta*. Se você tocar na opção *Navegação*, os *Marcadores* serão usados como [destinos intermediários](../navigation/setup/route-navigation.md#intermediate-destinations).
 
@@ -184,5 +184,3 @@ Usando a funcionalidade da ferramenta Planejar uma rota na lista de Marcadores, 
 
 - [Navegação por marcadores](../navigation/setup/markers-navigation.md)
 - [Widgets de marcador](../widgets/markers.md)
-
-> *Última atualização: Agosto de 2024*

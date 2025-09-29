@@ -1,7 +1,7 @@
 ---
-source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
+source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
 sidebar_position: 8
-title: Mappe Online
+title:  Mappe Online
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,32 +16,32 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-Le mappe online di OsmAnd sono un'ampia aggiunta al database OpenStreetMap già presente nell'applicazione. Con questo plugin, puoi aggiungere livelli alla tua mappa con informazioni da una fonte diversa, a partire dalla visualizzazione satellitare o dei percorsi escursionistici e terminando con dati molto specifici, come la posizione degli idranti. Puoi anche cambiare la fonte principale della mappa da mappe vettoriali a tessere online.
+Le mappe online di OsmAnd sono un'ampia aggiunta al database di OpenStreetMap già presente nell'applicazione. Con questo plugin, è possibile aggiungere livelli alla mappa con informazioni provenienti da una fonte diversa, a partire dalla vista satellitare o dai percorsi escursionistici fino a dati molto specifici, come la posizione degli idranti. È anche possibile cambiare la fonte principale della mappa da mappe vettoriali a tasselli online.
 
 
-## Parametri di configurazione richiesti {#required-setup-parameters}
+## Parametri di Configurazione Richiesti {#required-setup-parameters}
 
-La possibilità di utilizzare le mappe online è abilitata automaticamente nella versione iOS di OsmAnd. Per visualizzare le mappe online in Android, è necessario effettuare le seguenti impostazioni:
+La possibilità di utilizzare le mappe online è abilitata automaticamente nella versione iOS di OsmAnd. Per visualizzare le mappe online su Android, è necessario effettuare le seguenti impostazioni:
 
-1. [Abilita](../plugins/index.md#enable--disable) il plugin **Mappe Online** in *Menu Principale → Plugin → Mappe Online*.
+1. [Abilita](../plugins/index.md#enable--disable) il plugin **Mappe Online** nel *Menu principale → Plugin → Mappe Online*.
 2. Effettua le impostazioni necessarie nella sezione [Sorgente mappa](../map/raster-maps.md#select-raster-maps) del menu Configura mappa.
-3. Imposta la *Sorgente mappa*, *Sovrapposizione* e *Sottoposto*. Seleziona il tuo provider di mappe satellitari preferito.
-4. Scarica la [mappa online](#how-to-prepare-raster-maps) selezionata, se necessario.
+3. Imposta la mappa *Sorgente mappa*, *Sovrapposizione* e *Sottoposizione*. Seleziona il tuo fornitore di mappe satellitari preferito.
+4. Scarica la [mappa Online](#how-to-prepare-raster-maps) selezionata se necessario.
 
 
-## Utilizzare le mappe raster sul dispositivo {#use-raster-maps-on-device}
+## Utilizzare le Mappe Raster sul Dispositivo {#use-raster-maps-on-device}
 
-Puoi trovare informazioni dettagliate sulla visualizzazione e la personalizzazione delle mappe raster nell'articolo [Mappe raster](../map/raster-maps.md). Come usarle:
+Puoi trovare informazioni dettagliate sulla visualizzazione e personalizzazione delle mappe raster nell'articolo [Mappe Raster](../map/raster-maps.md). Come usare:
 
-1. [Seleziona](../map/raster-maps.md#select-raster-maps) la mappa raster come livello *Principale*, *Sottoposto* o *Sovrapposizione*.
+1. [Seleziona](../map/raster-maps.md#select-raster-maps) la mappa raster come livello *Principale*, *Sottostante* o *Sovrapposto*.
     - [Modifica](../map/raster-maps.md#how-to-use-raster-maps) i parametri del livello (trasparenza).
 
-2. [Prepara/copia](../map/raster-maps.md#prepare--copy-raster-maps-to-device) le mappe raster sul dispositivo.
+2. [Prepara / copia](../map/raster-maps.md#preparecopy-raster-maps-to-device) le mappe raster sul dispositivo.
     - [Aggiungi una nuova sorgente di mappe raster online](../map/raster-maps.md#add-new-online-raster-map-source)
-    - [Aggiungi Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) per installare la sorgente della mappa.
+    - [Aggiungi URL Magico](../map/raster-maps.md#magic-url-to-install-map-source) per installare la sorgente della mappa.
 
 3. [Gestisci](../map/raster-maps.md#manage-raster-maps) le mappe raster.
-    - [Scarica/aggiorna tessere](../map/raster-maps.md#download--update-tiles).
+    - [Scarica / aggiorna tasselli](../map/raster-maps.md#download--update-tiles).
     - [Modifica](../map/raster-maps.md#change-raster-map-parameters) i parametri della mappa raster.
 
 
@@ -51,7 +51,7 @@ Puoi trovare informazioni dettagliate sulla visualizzazione e la personalizzazio
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configura sottoposto / sovrapposizione Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configura sottostrato / sovrapposizione Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,48 +59,46 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configura sottoposto / sovrapposizione iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configura sottostrato / sovrapposizione iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Come preparare le mappe raster {#how-to-prepare-raster-maps}
+## Come Preparare le Mappe Raster {#how-to-prepare-raster-maps}
 
 :::info
-Articolo principale per preparare le mappe [leggi qui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+L'articolo principale per preparare le mappe [si può leggere qui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Nonostante il plugin si chiami *Mappe Online*, è possibile utilizzare le mappe anche senza connessione internet. Basta salvare le parti delle mappe (spesso chiamate tessere) per usarle in seguito. Per farlo, scarica uno specifico [strumento di creazione mappe](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) sviluppato dal team di OsmAnd.
+Nonostante il plugin si chiami *Mappe Online*, è possibile utilizzare le mappe anche senza connessione a internet. È sufficiente salvare le parti delle mappe (spesso chiamate tasselli) per utilizzarle in seguito. Per farlo, scarica uno specifico [strumento per la creazione di mappe](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) sviluppato dal team di OsmAnd.
 
-Seleziona l'area che desideri scaricare, fai clic su Preload area, quindi imposta i livelli di zoom più piccoli e più grandi che desideri visualizzare e scarica le tessere.
-Per la <b>versione Android</b> puoi copiarle nella cartella <i>osmand/tiles/*tipo di tessera*</i> del tuo telefono. Dovrai anche aprire <i>Configura mappa -> Mappa di sovrapposizione</i> e scegliere le tessere online di OsmAnd.
+Seleziona l'area che devi scaricare, clicca su Preload area, quindi imposta i livelli di zoom più piccolo e più grande che vuoi visualizzare e scarica i tasselli.
+Per la <b>versione Android</b> puoi copiarli nella cartella <i>osmand/tiles/*tipo_tassello*</i> del tuo telefono. Dovrai anche aprire <i>Configura mappa → Mappa sovrapposta</i> e scegliere i tasselli online di OsmAnd.
 
-Per la <b>versione iOS</b> puoi scegliere il file SQ Lite nel tuo telefono (qualsiasi messenger o dropbox), OsmAnd ti suggerirà di aggiungerlo. Dovrai anche aprire <i>Mappa → Sovrapposizione / Sottoposto o Tipo di mappa</i> e scegliere la nuova sorgente della mappa.
+Per la <b>versione iOS</b> puoi scegliere il file SQ Lite nel tuo telefono (qualsiasi messenger o dropbox), OsmAnd suggerirà di aggiungerlo. Dovrai anche aprire <i>Mappa → Sovrapposizione / Sottostrato o Tipo di mappa</i> e scegliere la nuova sorgente della mappa.
 
-Come aggiungere il file SQ Lite nelle versioni Android e iOS di OsmAnd puoi leggere nel <a href="https://anygis.ru/Web/Html/Osmand_en"><b>progetto Anygis</b></a>.
+Come aggiungere un file SQ Lite nelle versioni Android e iOS di OsmAnd si può leggere nel <a href="https://anygis.ru/Web/Html/Osmand_en"><b>progetto Anygis</b></a>.
 
 
-Le tessere online possono essere utili quando hai bisogno solo di una piccola sezione della mappa o di un tipo specifico di essa da utilizzare in un'area limitata, ma non vuoi scaricare l'intera regione. Possono tornare utili in infinite situazioni.
+I tasselli online possono essere utili quando hai bisogno solo di una piccola sezione della mappa o di un tipo specifico di essa da utilizzare in un'area limitata, ma non vuoi scaricare l'intera regione. Possono tornare utili in infinite situazioni.
 
 ![Mappe Online](@site/static/img/plugins/online-maps/map_creator.jpg)
 
 ![Mappe Online](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
-## Articoli correlati {#related-articles}
+## Articoli Correlati {#related-articles}
 
-- [Interagire con la mappa](../../user/map/interact-with-map.md)
-- [Impostazioni globali](../../user/personal/global-settings.md)
-- [Mappe vettoriali (stili mappa)](../../user/map/vector-maps.md)
+- [Interagire con la Mappa](../../user/map/interact-with-map.md)
+- [Impostazioni Globali](../../user/personal/global-settings.md)
+- [Mappe Vettoriali (Stili Mappa)](../../user/map/vector-maps.md)
 
-### Problemi comuni e soluzioni {#common-issues-and-solutions}
+### Problemi Comuni e Soluzioni {#common-issues-and-solutions}
 
-1. Le mappe online non appaiono nel menu Sorgente mappa:  
+1. Le Mappe Online non appaiono nel menu Sorgente Mappa:  
   
-    - Verifica che il plugin Mappe online sia abilitato: *Menu → Plugin → Mappe online*.  
+    - Verifica che il plugin Mappe Online sia abilitato: *Menu → Plugin → Mappe Online*.  
     - Assicurati di avere una connessione internet attiva per accedere alle immagini satellitari.  
-    - Controlla se la mappa online selezionata è scaricata o richiede [impostazioni aggiuntive](../map/raster-maps.md#select-raster-maps).
-
-> *Ultimo aggiornamento: Gennaio 2025*
+    - Controlla se la Mappa Online selezionata è stata scaricata o richiede [impostazioni aggiuntive](../map/raster-maps.md#select-raster-maps).

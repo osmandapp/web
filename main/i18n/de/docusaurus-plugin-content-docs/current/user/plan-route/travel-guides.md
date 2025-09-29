@@ -1,7 +1,7 @@
 ---
-source-hash: 0890149ad782b462cb3c62cceac41b86ca265c6bf722b509b91f1be130761689
+source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
 sidebar_position: 2
-title: Reiseführer
+title:  Reiseführer
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,22 +15,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Überblick {#overview}
+## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
 Die Reiseführer sind eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
 :::
 
-Virtuelle Reiseführer in OsmAnd bieten Nutzern wertvolle Informationen, Empfehlungen und Tipps. Sie ermöglichen Reisenden auch den Zugriff auf umfassende Navigationsinformationen zu Sehenswürdigkeiten in der App.
+Virtuelle Reiseführer in OsmAnd bieten Nutzern wertvolle Informationen, Empfehlungen und Tipps. Sie ermöglichen es Reisenden auch, auf umfassende Navigationsinformationen über Sehenswürdigkeiten in der App zuzugreifen.
 
-OsmAnd-Reiseführer basieren auf Daten von [Wikivoyage](https://www.wikivoyage.org/), einem Gemeinschaftsprojekt ähnlich Wikipedia, bei dem ehrenamtliche Autoren aktuelle Artikel erstellen.
-Wikivoyage-Informationen umfassen die wichtigsten Fakten über einen Ort, Transport, Sehenswürdigkeiten, Einkaufsmöglichkeiten und vieles mehr.
+Die OsmAnd-Reiseführer basieren auf Daten von [Wikivoyage](https://www.wikivoyage.org/), einem Gemeinschaftsprojekt ähnlich wie Wikipedia, bei dem freiwillige Autoren aktuelle Artikel erstellen.  
+Die Informationen von Wikivoyage umfassen die wichtigsten Fakten über einen Ort, Transportmittel, Sehenswürdigkeiten, Einkaufsmöglichkeiten und mehr.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Ansicht Allgemein](@site/static/img/guides/travel_guides_view_android.png)
+![Reiseführer-Ansicht Allgemein](@site/static/img/guides/travel_guides_view_android.png)
 
 </TabItem>
 
@@ -43,20 +43,20 @@ Wikivoyage-Informationen umfassen die wichtigsten Fakten über einen Ort, Transp
 </Tabs>
 
 
-## Verwendung {#how-to-use}
+## Wie man sie benutzt {#how-to-use}
 
-- [Reiseführer-Artikel](#download-articles) herunterladen.
-- [Artikel](#browse-articles) über ein Land, eine Region, eine Stadt, eine Sehenswürdigkeit durchsuchen.
-    - Alternativ können Sie Reiseführer-Artikel und/oder Punkte auf der Karte über das Menü „Karte konfigurieren“ [anzeigen](#travel-routes).
-    - Sehenswürdigkeiten auf der Karte durchsuchen, sie zu *[Kartenmarkierungen](../personal/markers.md#add--edit-markers)* oder *[Favoriten](../personal/favorites.md#favorite-group-actions)* hinzufügen.
-    - Mit der Schaltfläche *[Vollständig lesen](#manage-as-gpx-track)* gelangen Sie zum *[Artikel](#travel-article) innerhalb der Reiseführer*.
-- Artikel [als Lesezeichen speichern](#explore-and-bookmark), um sie später zu lesen.
-- [Punkte](#points) aus Artikeln auswählen, die Sie besuchen möchten, und sie zur OsmAnd-Karte hinzufügen.
-- Weitere Informationen zu Orten, die Sie besuchen möchten, finden Sie in Offline-[Wikipedia-Artikeln](#combine-with-wikipedia).
-- [Eine Route erstellen](../navigation/setup/route-navigation.md#set-destinations) zu ausgewählten touristischen Attraktionen oder einen freien Spaziergang zwischen Punkten.
+- [Herunterladen](#download-articles) von *Reiseführern*.
+- [Artikel](#browse-articles) über ein Land, eine Region, eine Stadt oder eine Sehenswürdigkeit durchsuchen.
+    - Alternativ können Sie [Reiseführerartikel und/oder -punkte auf der Karte anzeigen](#travel-routes) lassen, indem Sie das Menü "Karte konfigurieren" verwenden.
+    - Sehenswürdigkeiten auf der Karte durchsuchen und sie zu *[Kartenmarkierungen](../personal/markers.md#add--edit-markers)* oder *[Favoriten](../personal/favorites.md#favorite-group-actions)* hinzufügen.
+    - Über die Schaltfläche *[Vollständig lesen](#manage-as-gpx-track)* zum *[Artikel](#travel-article)* in den *Reiseführern* wechseln.
+- Artikel [mit einem Lesezeichen versehen](#explore-and-bookmark), um sie später zu lesen.
+- [Punkte](#points) aus Artikeln zum Besuchen auswählen und zur OsmAnd-Karte hinzufügen.
+- Weitere Informationen über zu besuchende Orte aus offline verfügbaren [Wikipedia-Artikeln](#combine-with-wikipedia) erhalten.
+- Eine [Route](../navigation/setup/route-navigation.md#set-destinations) zu ausgewählten touristischen Attraktionen oder einen freien Spaziergang zwischen Punkten erstellen.
 
 :::note
-Reiseführer-Artikel werden in OsmAnd als GPX-Tracks mit Wegpunkten gespeichert. Nachdem Sie diese Tracks zur Karte hinzugefügt haben (siehe Abschnitte *[Punkte](#points)* oder *[Reiserouten](#travel-routes)* dieses Artikels), können Sie sie über das Menü *[Meine Orte](../personal/myplaces.md)* verwalten.
+Die Artikel der *Reiseführer* werden in OsmAnd als GPX-Tracks mit Wegpunkten gespeichert. Nachdem Sie diese Tracks zur Karte hinzugefügt haben (siehe Abschnitte *[Punkte](#points)* oder *[Reiserouten](#travel-routes)* dieses Artikels), können Sie sie über das Menü *[Meine Orte](../personal/myplaces.md)* verwalten.
 :::
 
 ### Artikel herunterladen {#download-articles}
@@ -65,15 +65,15 @@ Reiseführer-Artikel werden in OsmAnd als GPX-Tracks mit Wegpunkten gespeichert.
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
-![Reiseführer Download-Menü](@site/static/img/guides/travel_guides_download.png)
+![Menü zum Herunterladen von Reiseführern](@site/static/img/guides/travel_guides_download.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehe zu: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
 ![Kartenmenü iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
@@ -81,17 +81,18 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
 </Tabs>
 
-Bevor Sie Reiseführer verwenden, müssen Sie diese über das [Karten-Download-Menü](../start-with/download-maps.md#main-menu) herunterladen (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*). Die Artikel sind nach Regionen gruppiert: *Afrika, Asien, Australien und Ozeanien, Mittelamerika, Europa, Nordamerika, Russland und Südamerika*, sodass Sie keine Reiseführer für eine einzelne Stadt oder ein Land herunterladen müssen. Indem Sie die benötigten Regionen auf Ihrem Gerät speichern, können Sie die Artikel mit OsmAnd auch dann durchsuchen, wenn Sie im Ausland oder außerhalb der Reichweite Ihres Mobilfunknetzes sind.
+Bevor Sie die Reiseführer verwenden können, müssen Sie sie über das Menü [Karten herunterladen](../start-with/download-maps.md#maps-and-resources) (*<Translate android="true" ids="shared_string_menu,maps_and_resources,shared_string_travel_guides"/>*) herunterladen. Die Artikel sind nach Regionen gruppiert: *Afrika, Asien, Australien und Ozeanien, Mittelamerika, Europa, Nordamerika, Russland und Südamerika*, sodass Sie keine Reiseführer für eine einzelne Stadt oder ein einzelnes Land herunterladen müssen.  
+Indem Sie die gewünschten Regionen auf Ihrem Gerät speichern, können Sie die Artikel mit OsmAnd auch im Ausland oder außerhalb der Reichweite Ihres Mobilfunknetzes durchsuchen.
 
 :::note
-Neben Reiseführern zu Ländern, Regionen oder Städten finden Sie auch Führer zu Orten aus Filmen, Büchern, Computerspielen, Gedenkstätten großer Persönlichkeiten und so weiter.
+Zusätzlich zu Führern für Länder, Regionen oder Städte finden Sie auch Führer zu Orten aus Filmen, Büchern, Computerspielen, Gedenkstätten großer Persönlichkeiten und so weiter.
 Es gibt auch spezialisierte Führer, wie die Liste des UNESCO Global Geoparks Network oder die größten und komplexesten internationalen Flughäfen der Welt.
 :::
 
 ## Artikel durchsuchen {#browse-articles}
 
-Der Bildschirm *Reiseführer* besteht aus zwei allgemeinen Teilen: einem [*Suchfeld*](#search) und einer *Reiseführerliste* mit zwei Registerkarten: *[<Translate android="true" ids="shared_string_explore"/> und <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. Sie können mit einem einzigen Tippen auf eine Registerkarte zwischen ihnen wechseln.
-Wenn Sie *Reiseführer* öffnen (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), zeigt OsmAnd Ihnen Artikel über interessante Orte an, die sich in der Nähe der geografischen Koordinaten des aktuellen Kartenzentrums befinden. Wenn Sie auf ein Element aus der Liste tippen, öffnet sich der [Reiseführer-Artikel](#travel-article). Am unteren Bildschirmrand befindet sich ein Schalter zur Registerkarte *Lesezeichen*.
+Der Bildschirm *Reiseführer* besteht aus zwei Hauptteilen: einem [*Suchfeld*](#search) und einer *Reiseführer*-Liste mit zwei Registerkarten: *[<Translate android="true" ids="shared_string_explore"/> und <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. Sie können durch einmaliges Tippen auf eine Registerkarte zwischen ihnen wechseln.
+Wenn Sie die *Reiseführer* öffnen (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), zeigt OsmAnd Ihnen Artikel über interessante Orte in der Nähe der geografischen Koordinaten des aktuellen Kartenzentrums an. Wenn Sie auf einen Eintrag in der Liste tippen, öffnet sich der [Reiseführerartikel](#travel-article). Am unteren Bildschirmrand befindet sich ein Schalter zur Registerkarte *Lesezeichen*.
 
 ### Erkunden und Lesezeichen setzen {#explore-and-bookmark}
 
@@ -99,23 +100,23 @@ Wenn Sie *Reiseführer* öffnen (*<Translate android="true" ids="shared_string_m
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Hauptbildschirm](@site/static/img/guides/travel_guides_main_screen_1.png) ![Reiseführer Hauptbildschirm 2](@site/static/img/guides/travel_guides_main_screen_2.png)
+![Hauptbildschirm Reiseführer](@site/static/img/guides/travel_guides_main_screen_1.png) ![Hauptbildschirm Reiseführer 2](@site/static/img/guides/travel_guides_main_screen_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Hauptbildschirm](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Reiseführer Hauptbildschirm 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Hauptbildschirm Reiseführer](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Hauptbildschirm Reiseführer 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Auf der Registerkarte **Erkunden** oder **<Translate android="true" ids="popular_destinations"/>** werden die Top 30 Artikel über Reiseziele aufgelistet, die sich in der Nähe des Bildschirmzentrums befinden (außerhalb des Standorts). Durch Tippen auf ein Element aus der Liste mit einem Titel und einer kurzen Beschreibung des Artikels können Sie den vollständigen Text dieses Artikels anzeigen.
-Wenn Sie auf die Schaltfläche *Lesezeichen* tippen, wird der Artikel zum späteren Lesen gespeichert und ist auf der Registerkarte Lesezeichen verfügbar. Auf der Registerkarte *Gespeicherte Artikel* sind die Artikel in der Reihenfolge ihrer Speicherung angeordnet, wobei die neuesten Artikel oben stehen.
+Auf der Registerkarte **Erkunden** oder **<Translate android="true" ids="popular_destinations"/>** werden die 30 wichtigsten Artikel über Reiseziele in der Nähe des Bildschirmzentrums aufgelistet (unabhängig vom Standort). Durch Tippen auf einen Eintrag in der Liste mit Titel und kurzer Beschreibung des Artikels können Sie den vollständigen Text dieses Artikels anzeigen.  
+Wenn Sie auf die *Lesezeichen-Schaltfläche* tippen, wird der Artikel zum späteren Lesen gespeichert und ist auf der Registerkarte "Lesezeichen" verfügbar. Auf der Registerkarte *Gespeicherte Artikel* sind die Artikel in der Reihenfolge ihrer Speicherung angeordnet, wobei die neuesten Artikel ganz oben stehen.
 
 - &nbsp;**<Translate android="true" ids="shared_string_read"/>**. Öffnet den [Reiseartikel](#travel-article).
-- &nbsp;**<Translate android="true" ids="shared_string_bookmark"/>**. Verschiebt den ausgewählten Artikel nach <Translate android="true" ids="saved_articles"/>.
+- &nbsp;**<Translate android="true" ids="shared_string_bookmark"/>**. Verschiebt den ausgewählten Artikel zu <Translate android="true" ids="saved_articles"/>.
 - &nbsp;**<Translate android="true" ids="shared_string_remove"/>**. Entfernt den ausgewählten Artikel aus <Translate android="true" ids="saved_articles"/>.
 
 ### Suche {#search}
@@ -124,27 +125,27 @@ Wenn Sie auf die Schaltfläche *Lesezeichen* tippen, wird der Artikel zum späte
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_search_android.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Das Suchfeld befindet sich oben auf dem Bildschirm <Translate android="true" ids="shared_string_travel_guides"/>. Wenn Sie die ersten Buchstaben eines Landes, einer Stadt oder eines berühmten Ortes eingeben, erscheint eine Liste von Artikeln unter dem Suchfeld. Durch Berühren des gewünschten Artikels können Sie mit dem Lesen beginnen.
-Neben jedem Suchergebnis werden die 3 am häufigsten verwendeten Sprachen aufgelistet, in denen der ausgewählte Artikel gelesen werden kann. Beliebte Artikel sind jedoch in mehr Sprachen verfügbar als die 3 aufgeführten.
+Das Suchfeld befindet sich oben auf dem Bildschirm <Translate android="true" ids="shared_string_travel_guides"/>. Wenn Sie die ersten Buchstaben eines Landes, einer Stadt oder eines berühmten Ortes eingeben, erscheint eine Liste von Artikeln unter dem Suchfeld. Durch Berühren des gewünschten Artikels können Sie mit dem Lesen beginnen.  
+Neben jedem Suchergebnis werden die ersten 3 am häufigsten verwendeten Sprachen aufgeführt, in denen der ausgewählte Artikel gelesen werden kann. Beliebte Artikel sind jedoch in mehr als den 3 aufgelisteten Sprachen verfügbar.
 
-**Zusätzliche Funktionen:**
+**Zusätzliche Funktionen:**  
 
 - Sie können nach speziellen kulturellen Attraktionen suchen, wie z.B. *Harry-Potter-Tourismus*, *Geisterstädte*, *Monarchien* und andere.
 - Um den Suchverlauf zu löschen, müssen Sie die Schaltfläche [<Translate android="true" ids="shared_string_options"/>](#options) verwenden.
 
-<!--
+<!-- 
 - Search is complete only when you hit &#128269; or space at the end of the word. - doesn't work as it should be
 -->
 
@@ -154,23 +155,23 @@ Neben jedem Suchergebnis werden die 3 am häufigsten verwendeten Sprachen aufgel
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Optionsmenü](@site/static/img/guides/travel_guides_options_android.png)
+![Optionsmenü Reiseführer](@site/static/img/guides/travel_guides_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_options_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In diesem Menü können Sie das Erscheinungsbild der Artikel bei der Offline-Arbeit anpassen. Beachten Sie, dass *[heruntergeladene](#download-articles)* Reiseführer keine Bilder enthalten. Sie erscheinen nur, wenn Sie Artikel mit einer aktiven Internetverbindung anzeigen.
-Im Optionsmenü können Sie wählen, ob Bilder in den angezeigten Artikeln gespeichert werden sollen, um sie offline zu verwenden. Sie können auch den vorhandenen Bild-Cache leeren oder den Suchverlauf löschen (funktioniert nur bei der Suche in *Reiseführern*).
+In diesem Menü können Sie das Erscheinungsbild von Artikeln für die Offline-Nutzung anpassen. BEACHTEN SIE, dass *[heruntergeladene](#download-articles)* Reiseführer keine Bilder enthalten. Sie erscheinen nur, wenn Sie Artikel mit einer aktiven Internetverbindung ansehen.  
+Im Optionsmenü können Sie wählen, ob Bilder in den angesehenen Artikeln gespeichert werden sollen, um sie offline zu verwenden. Sie können auch den vorhandenen Bilder-Cache leeren oder den Suchverlauf löschen (funktioniert nur bei der Suche in *Reiseführern*).
 
-- &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Bilder in Artikeln können für die Offline-Nutzung heruntergeladen werden.
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Löscht den Bild-Cache, um Speicherplatz freizugeben.
+- &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Bilder in Artikeln können für die Offline-Nutzung heruntergeladen werden.  
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Leert den Bilder-Cache, um Speicher freizugeben.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Löscht den [Suchverlauf](#search).
 
 ## Reiseartikel {#travel-article}
@@ -179,31 +180,31 @@ Im Optionsmenü können Sie wählen, ob Bilder in den angezeigten Artikeln gespe
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Artikel](@site/static/img/guides/travel_guides_article.png)
+![Reiseführerartikel](@site/static/img/guides/travel_guides_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_article_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Sie können einen Artikel aus den vorgeschlagenen Optionen auf der Registerkarte *[Erkunden](#explore-and-bookmark)* oder über die Option *[Suchen](#search)* öffnen. Wenn Sie touristische Attraktionen, sogenannte *[Punkte](#points)*, aus einem *Reiseführer-Artikel* zur OsmAnd-Karte hinzufügen, können Sie den Artikel auch über die Schaltfläche *Vollständig lesen* im [Beschreibungsbereich](../map/tracks/track-context-menu.md#description-and-info) des Wegpunkts öffnen.
+Sie können einen Artikel aus den vorgeschlagenen Optionen auf der Registerkarte *[Erkunden](#explore-and-bookmark)* oder über die Option *[Suche](#search)* öffnen. Wenn Sie touristische Attraktionen, sogenannte *[Punkte](#points)*, aus einem *Reiseführerartikel* zur OsmAnd-Karte hinzufügen, können Sie den Artikel auch über die Schaltfläche *Vollständig lesen* im [Beschreibungsabschnitt](../map/tracks/track-context-menu.md#description-and-info) des Wegpunkts öffnen.
 
 Die folgenden Steuerelemente befinden sich oben auf dem Bildschirm:
 
-- Schalter zum Ändern der Sprache des Artikels. Die Sprache kann aus den verfügbaren Optionen ausgewählt werden. Die Systemsprache wird standardmäßig verwendet.
-- Mit der Schaltfläche &#8942; können Sie den Artikel mit Ihren Freunden teilen. Der Link öffnet sich in der OsmAnd-App, die entsprechende Reiseführer-Datei sollte auf dem Gerät des Empfängers oder auf der [Wikivoyage](https://www.wikivoyage.org/)-Website heruntergeladen werden, falls der Empfänger die OsmAnd-App nicht hat oder für iOS-Geräte.
-- Durch Tippen auf die Navigationsleiste wird das *[Reiseführer-Navigationsmenü](#navigation-menu)* geöffnet.
+- Schalter zum Ändern der Sprache des Artikels. Die Sprache kann aus den verfügbaren Optionen ausgewählt werden. Standardmäßig wird die Systemsprache verwendet.
+- Mit der Schaltfläche &#8942; können Sie den Artikel mit Ihren Freunden teilen. Der Link öffnet sich in der OsmAnd-App, die entsprechende Reiseführerdatei sollte auf dem Gerät des Empfängers heruntergeladen werden, oder auf der [Wikivoyage](https://www.wikivoyage.org/)-Website, falls der Empfänger die OsmAnd-App nicht hat oder für iOS-Geräte.
+- Durch Tippen auf die Navigationsleiste öffnet sich das *[Navigationsmenü der Reiseführer](#navigation-menu)*.
 
 Am unteren Bildschirmrand befinden sich Schaltflächen wie:
 
-- [Inhaltsverzeichnis](#table-of-contents). Öffnet das Inhaltsverzeichnis des Artikels.
-- [Punkte](#points). Zeigt touristische Attraktionen, die mit dem Artikel zusammenhängen, auf einer Karte an.
-- [Lesezeichen](#explore-and-bookmark). Ermöglicht das Hinzufügen eines Artikels zu den Lesezeichen zum späteren Lesen.
+- [Inhalt](#table-of-contents). Öffnet das Inhaltsverzeichnis des Artikels.
+- [Punkte](#points). Zeigt touristische Attraktionen, die mit dem Artikel in Verbindung stehen, auf einer Karte an.
+- [Lesezeichen](#explore-and-bookmark). Ermöglicht es Ihnen, einen Artikel zu den Lesezeichen für späteres Lesen hinzuzufügen.
 
 
 ### Navigationsmenü {#navigation-menu}
@@ -212,20 +213,20 @@ Am unteren Bildschirmrand befinden sich Schaltflächen wie:
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Inhaltsmenü](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Inhaltsmenü Reiseführer](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Um in den *Reiseführer-Artikeln* von einem Artikel zum nächsten zu wechseln, verwenden Sie das **Navigationsmenü**. Sie können es aufrufen, indem Sie auf das Adressfeld über dem Bild tippen. Beachten Sie, dass die Artikel in den Reiseführern wie folgt gruppiert sind: *Kontinent → Region → Land → Provinz (Region) → Stadt*.
-Wenn Sie auf den Pfeil in der oberen linken Ecke des Bildschirms tippen, gelangen Sie direkt zur Registerkarte *Erkunden* oder *Gespeicherte Artikel* (je nachdem, welche Registerkarte Sie zuvor geöffnet haben).
+Um von einem Artikel zu einem anderen in den *Reiseführerartikeln* zu wechseln, verwenden Sie das **Navigationsmenü**. Sie können darauf zugreifen, indem Sie auf das Adressfeld über dem Bild tippen. BEACHTEN SIE, dass die Artikel in den Reiseführern wie folgt gruppiert sind: *Kontinent → Region → Land → Provinz (Region) → Stadt*.
+Wenn Sie auf den Pfeil in der oberen linken Ecke des Bildschirms tippen, gelangen Sie direkt zur Registerkarte *Erkunden* oder *Gespeicherte Artikel* (je nachdem, welche Registerkarte Sie zuvor geöffnet hatten).
 
 
 ### Inhaltsverzeichnis {#table-of-contents}
@@ -234,29 +235,29 @@ Wenn Sie auf den Pfeil in der oberen linken Ecke des Bildschirms tippen, gelange
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Inhaltsmenü](@site/static/img/guides/travel_guides_contents_menu_android.png)
+![Inhaltsmenü Reiseführer](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Die meisten *Reiseführer-Artikel* haben die gleiche Inhaltsstruktur: *Einleitung* (Bilder und Beschreibung der Touristenattraktion) und *nachfolgende Kapitel*.
+Die meisten *Reiseführerartikel* haben die gleiche Inhaltsstruktur: *Einleitung* (Bilder und Beschreibung der Touristenattraktion) und *nachfolgende Kapitel*.
 
-- &nbsp;*Verstehen*. Details über lokale Kultur und Gewohnheiten.
-- &nbsp;*Anreise*. Details zur Anreise zu bestimmten Orten und wie viel diese Route kosten wird.
+- &nbsp;*Verstehen*. Details über die lokale Kultur und Gewohnheiten.
+- &nbsp;*Anreise*. Details, wie man zu bestimmten Orten gelangt und wie viel diese Route kosten wird.
 - &nbsp;*Sehen*. Eine Liste von Attraktionen (Museen, historische Stätten usw.) mit vollständigen Beschreibungen: Ticketpreise, Öffnungszeiten, nützliche Links und Telefonnummern.
-- &nbsp;*Machen*. Orte, an denen man Zeit verbringen kann.
-- &nbsp;*Kaufen*. Orte zum Einkaufen.
-- &nbsp;*Essen*. Gastronomiebetriebe (nach Budget unterteilt: Budget, Mittelklasse, Luxus).
+- &nbsp;*Aktivitäten*. Orte, an denen man Zeit verbringen kann.
+- &nbsp;*Kaufen*. Einkaufsmöglichkeiten.
+- &nbsp;*Essen*. Gastronomiebetriebe (unterteilt nach Budget: günstig, mittelpreisig, teuer).
 - &nbsp;*Trinken*. Bars und Cafés.
-- &nbsp;*Schlafen*. Unterkünfte sind nach Budget unterteilt (Budget, Mittelklasse, Luxus).
-- &nbsp;*Weiterreise*. Nächstgelegene Orte von Wikivoyage.
+- &nbsp;*Schlafen*. Unterkünfte, unterteilt nach Budget (günstig, mittelpreisig, teuer).
+- &nbsp;*Nächste Ziele*. Nächstgelegene Orte aus Wikivoyage.
 
 ### Punkte {#points}
 
@@ -264,25 +265,25 @@ Die meisten *Reiseführer-Artikel* haben die gleiche Inhaltsstruktur: *Einleitun
 
 <TabItem value="android" label="Android">
 
-![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_articles_three_dots_point.png)
+![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-*Reiseführer-Artikel* enthalten oft touristische Attraktionen, die nach Themen gruppiert sind. Durch einmaliges Tippen auf die Schaltfläche *Punkte* am unteren Rand des *[Artikels](#travel-article)* werden alle Attraktionen, die mit dem Thema zusammenhängen (Gaststätten, Unterkunftsmöglichkeiten, Flughäfen, Geschäfte, historische Denkmäler usw.), zur Karte hinzugefügt und können *[als Track verwaltet werden](#manage-as-gpx-track)*.
+*Reiseführerartikel* enthalten oft touristische Attraktionen, die nach Themen gruppiert sind. Durch einmaliges Tippen auf die Schaltfläche *Punkte* am unteren Rand des *[Artikels](#travel-article)* werden alle zum Thema gehörenden Attraktionen (Restaurants, Unterkunftsmöglichkeiten, Flughäfen, Geschäfte, historische Denkmäler usw.) zur Karte hinzugefügt und können *[als Track verwaltet](#manage-as-gpx-track)* werden.  
 
-Standardmäßig sind Attraktionsgruppen mit bestimmten Symbolen gekennzeichnet: *Essen und Trinken* mit Messer und Gabel in einem roten Kreis, *Machen und Sehen* mit einer Kamera in einem grünen Kreis und andere. Sie können Gruppen von Punkten mit &#8942; wie einen *[Wegpunkt-Ordner](../map/tracks/track-context-menu.md#points--waypoints)* verwalten.
+Standardmäßig sind die Gruppen von Attraktionen mit bestimmten Symbolen gekennzeichnet: die Kategorien *Essen und Trinken* mit Messer und Gabel in einem roten Kreis, *Aktivitäten und Sehen* mit einer Kamera in einem grünen Kreis und andere. Sie können Punktgruppen mit &#8942; wie einen *[Wegpunktordner](../map/tracks/track-context-menu.md#points--waypoints)* verwalten.  
 
 :::note
-Punkte in *Reiseartikeln* beziehen sich auf Wegpunkte auf einem GPX-Track.
-Sie können auch *[Punkte zur Karte hinzufügen](#travel-routes)* im Menü *Karte konfigurieren*. Sie können alle anzeigen oder eine bestimmte Kategorie auswählen.
+Punkte in *Reiseartikeln* beziehen sich auf Wegpunkte auf einem GPX-Track.  
+Sie können auch *[Punkte zur Karte hinzufügen](#travel-routes)* im Menü *Karte konfigurieren*. Sie können alle anzeigen oder eine bestimmte Kategorie auswählen.  
 :::
 
 
@@ -290,20 +291,20 @@ Sie können auch *[Punkte zur Karte hinzufügen](#travel-routes)* im Menü *Kart
 
 *<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>*
 
-Eine alternative Möglichkeit, *Reiseführer* zu durchsuchen, besteht darin, sie über das Menü *Karte konfigurieren* auf der Karte anzuzeigen. Diese Funktion bezieht sich nicht auf die von OsmAnd bereitgestellte Möglichkeit, Wikivoyage zu verwenden, sondern nur auf Tracks. Weitere Informationen finden Sie in unserem [Blog](https://osmand.net/blog/routes#generated-travel-routes).
+Eine alternative Möglichkeit, *Reiseführer* zu durchsuchen, besteht darin, sie über das Menü *Karte konfigurieren* auf der Karte anzuzeigen. Diese Funktion bezieht sich nicht auf die von OsmAnd bereitgestellte Möglichkeit, Wikivoyage zu nutzen, sondern nur auf Tracks. Mehr dazu können Sie in unserem [Blog](https://osmand.net/blog/routes#generated-travel-routes) lesen.
 
-![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Reiserouten und Artikel auf der Karte {#travel-routes-and-articles-on-the-map}
 
-![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Reiseführer Punkte Menü](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)
+![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Menü Reiseführerpunkte](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
-Nachdem Sie die Anzeige der *Reiserouten* im Menü *Karte konfigurieren* aktiviert haben, erscheinen Kreise in verschiedenen Farben auf der Karte. Die orangefarbenen Kreise stellen Routen-Tracks, Routen-Artikel und einige Wegpunkte dar. Tippen Sie auf eine bestimmte Route, einen Artikel oder einen Punkt und dann auf die Schaltfläche *Herunterladen* (&#9047;), und Sie können sie [als Track verwalten](#manage-as-gpx-track).
+Nachdem Sie die Anzeige von *Reiserouten* im Menü *Karte konfigurieren* aktiviert haben, erscheinen Kreise in verschiedenen Farben auf der Karte. Die orangefarbenen stehen für Routen-Tracks, Routenartikel und einige Wegpunkte. Tippen Sie auf eine bestimmte Route, einen Artikel oder einen Punkt und dann auf die Schaltfläche *Herunterladen* (&#9047;), und Sie können sie [als Track verwalten](#manage-as-gpx-track).
 
-### Benutzerdefinierte Reiseführer {#custom-travel-guides}
+### Eigene Reiseführer {#custom-travel-guides}
 
-Wir empfehlen Ihnen, neue Artikel oder Bearbeitungen zu [Wikivoyage](https://en.wikivoyage.org/) hinzuzufügen. Wir aktualisieren die Reiseführer etwa alle 6 Monate, und Sie können neue Artikel herunterladen. Sie können auch Ihr eigenes *Reisebuch* erstellen. Wie das geht, wird in der technischen Dokumentation beschrieben (siehe Artikel *[Benutzerdefinierten Reiseführer erstellen](../../technical/map-creation/create_travel_guide.md)*).
+Wir empfehlen Ihnen, neue Artikel oder Bearbeitungen zu [Wikivoyage](https://en.wikivoyage.org/) hinzuzufügen. Wir aktualisieren die Reiseführer etwa alle 6 Monate, und Sie können neue Artikel herunterladen. Sie können auch Ihr eigenes *Reisebuch* erstellen. Wie das geht, wird in der technischen Dokumentation beschrieben (siehe Artikel *[Eigenen Reiseführer erstellen](../../technical/map-creation/create_travel_guide.md)*).
 
 <!--
 ### Collections of tracks {#collections-of-tracks}
@@ -314,18 +315,18 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Als GPX-Track verwalten {#manage-as-gpx-track}
 
-![Reiseführer Punkte Menü 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Reiseführer Punkte Menü 2](@site/static/img/guides/travel_guides_articles_my_places.png)
+![Menü Reiseführerpunkte 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Menü Reiseführerpunkte 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
-Nachdem Sie *Reiseführer* zur Karte hinzugefügt haben, können *Reiseartikel* als GPX-Track gespeichert und über das Menü *[Meine Orte](../personal/myplaces.md)* verwaltet werden (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Sie können auf der Karte angezeigt, geteilt, umbenannt, in einen anderen Ordner verschoben, exportiert oder gelöscht werden.
+Nachdem Sie *Reiseführer* zur Karte hinzugefügt haben, können *Reiseartikel* als GPX-Track gespeichert und über das Menü *[Meine Orte](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*) verwaltet werden. Sie können auf der Karte angezeigt, geteilt, umbenannt, in einen anderen Ordner verschoben, exportiert oder gelöscht werden.  
 
-- &nbsp;In der *[Übersicht](../map/tracks/track-context-menu.md#overview)* können Sie eine kurze Beschreibung lesen oder den [Reiseführer-Artikel](#travel-article) durch Tippen auf die Schaltfläche *Vollständig lesen* öffnen. *Bearbeiten* ermöglicht es Ihnen, den Artikel zu korrigieren.
-- &nbsp;Im Abschnitt *[Track](../map/tracks/track-context-menu.md#altitude--speed-graphs)* gibt es keine Informationen, die GPX-Dateien der *Reiseführer* enthalten nur Wegpunkte.
-- &nbsp;Unter *[Punkte](../map/tracks/track-context-menu.md#points--waypoints)* sehen Sie Ordner mit nach Namen gruppierten Punkten (Kaufen, Machen, Trinken usw.).
-- &nbsp;Die Schaltfläche *[Option](../map/tracks/track-context-menu.md#options)* führt die gleichen Funktionen aus wie beim regulären Track.
+- &nbsp;In der *[Übersicht](../map/tracks/track-context-menu.md#overview)* können Sie eine kurze Beschreibung lesen oder den [Reiseführerartikel](#travel-article) öffnen, indem Sie auf die Schaltfläche *Vollständig lesen* tippen. *Bearbeiten* ermöglicht es Ihnen, den Artikel zu korrigieren.
+- &nbsp;Im Abschnitt *[Track](../map/tracks/track-context-menu.md#altitude--speed-graphs)* gibt es keine Informationen, da die GPX-Dateien der *Reiseführer* nur Wegpunkte enthalten.  
+- &nbsp;Unter *[Punkte](../map/tracks/track-context-menu.md#points--waypoints)* sehen Sie Ordner mit Punkten, die nach Namen gruppiert sind (Kaufen, Aktivitäten, Trinken usw.).
+- &nbsp;Die Schaltfläche *[Optionen](../map/tracks/track-context-menu.md#options)* hat die gleichen Funktionen wie bei einem normalen Track.
 
 :::info
-*Punkte* werden in einer [GPX-Datei](../../technical/osmand-file-formats/osmand-gpx.md) (einem häufig verwendeten Format für Tracks) als [Wegpunkte](../map/point-layers-on-map.md#track-waypoints) gespeichert. Die Anzahl der Punkte (Wegpunkte) im Track ist neben dem Symbol &#128681; im Track-Feld markiert.
-Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei finden Sie allgemeine Informationen zu dem Artikel, zu dem dieser Track gehört.
+*Punkte* werden in einer [GPX-Datei](../../technical/osmand-file-formats/osmand-gpx.md) (einem gebräuchlichen Format für Tracks) als [Wegpunkte](../map/point-layers-on-map.md#track-waypoints) gespeichert. Die Anzahl der im Track enthaltenen Punkte (Wegpunkte) wird neben dem Symbol &#128681; im Track-Feld angezeigt.  
+Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei finden Sie allgemeine Informationen über den Artikel, zu dem dieser Track gehört.  
 :::
 
 ## Mit Wikipedia kombinieren {#combine-with-wikipedia}
@@ -340,15 +341,15 @@ Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei fin
 
 <TabItem value="ios" label="iOS">
 
-![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_wikipedia_1_ios.png) ![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Suchmenü Reiseführer](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In den *Reiseführer-Artikeln* finden Sie nützliche Informationen zu touristischen Attraktionen (Kontaktinformationen, Weblinks, Preise usw.). Viele Artikel haben eine *Wikipedia*-Schaltfläche, die das Öffnen eines *[Wikipedia-Artikels](../plugins/wikipedia.md)* (online oder offline) über den interessierenden Ort ermöglicht.
+In den *Reiseführerartikeln* finden Sie nützliche Informationen über touristische Attraktionen (Kontaktinformationen, Weblinks, Preise usw.). Viele Artikel haben eine *Wikipedia*-Schaltfläche, die es ermöglicht, einen *[Wikipedia-Artikel](../plugins/wikipedia.md)* (online oder offline) über den betreffenden Ort zu öffnen.  
 
-In einigen Fällen fordert Sie die *[Lesezeichen-Registerkarte](#explore-and-bookmark)* von OsmAnd auf, die [Wikipedia-Kartenebene](../plugins/wikipedia.md#download-wikipedia-packages-download-wikipedia-packages) herunterzuladen, um verwandte Artikel offline zu durchsuchen.
+In einigen Fällen werden Sie auf der Registerkarte *[Lesezeichen](#explore-and-bookmark)* von OsmAnd aufgefordert, die [Wikipedia-Kartenebene](../plugins/wikipedia.md#download-wikipedia-packages) herunterzuladen, um verwandte Artikel offline zu durchsuchen.
 
 ![Reiseführer Wikipedia herunterladen](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
@@ -358,8 +359,6 @@ Das [Wikipedia-Plugin](../plugins/wikipedia.md) ist eine [kostenpflichtige Funkt
 
 ## Verwandte Artikel {#related-articles}
 
-- [Interaktion mit der Karte](../../user/map/interact-with-map.md)
+- [Mit der Karte interagieren](../../user/map/interact-with-map.md)
 - [Globale Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)
-
-> *Zuletzt aktualisiert: Januar 2025*

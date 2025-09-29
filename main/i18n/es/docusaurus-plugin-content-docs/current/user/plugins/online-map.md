@@ -1,5 +1,5 @@
 ---
-source-hash: e0f816c2ee06112779d7dbcf8e23176de7256a523ebca82309dd4e8a0dd894d4
+source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
 sidebar_position: 8
 title:  Mapas en línea
 ---
@@ -14,52 +14,52 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Descripción general {#overview}
+## Resumen {#overview}
 
-Los mapas en línea de OsmAnd son una amplia adición a la base de datos de OpenStreetMap ya presente en la aplicación. Con este complemento, puedes añadir capas a tu mapa con información de una fuente diferente, empezando por la vista de satélite o de rutas de senderismo y terminando con datos muy específicos, como la ubicación de las bocas de incendio. También puedes cambiar la fuente principal del mapa de mapas vectoriales a mosaicos en línea.
+Los mapas en línea de OsmAnd son una amplia adición a la base de datos de OpenStreetMap ya presente en la aplicación. Con este complemento, puede agregar capas a su mapa con información de una fuente diferente, comenzando con la vista de satélite o rutas de senderismo y terminando con datos muy específicos, como la ubicación de las bocas de incendio. También puede cambiar la fuente principal del mapa de mapas vectoriales a teselas en línea.
 
 
 ## Parámetros de configuración requeridos {#required-setup-parameters}
 
-La capacidad de usar mapas en línea se habilita automáticamente en la versión de iOS de OsmAnd. Para mostrar mapas en línea en Android, debes realizar las siguientes configuraciones:
+La capacidad de usar mapas en línea se habilita automáticamente en la versión iOS de OsmAnd. Para mostrar mapas en línea en Android, debe realizar los siguientes ajustes:
 
-1. [Habilitar](../plugins/index.md#enable--disable) el complemento **Mapas en línea** en el *Menú principal → Complementos → Mapas en línea*.
-2. Realiza las configuraciones necesarias en la sección [Fuente del mapa](../map/raster-maps.md#select-raster-maps) del menú Configurar mapa.
-3. Establece la *Fuente del mapa*, el *Superpuesto* y el *Subyacente*. Selecciona tu proveedor de mapas satelitales preferido.
-4. Descarga el [mapa en línea](#how-to-prepare-raster-maps) seleccionado si es necesario.
+1. [Habilitar](../plugins/index.md#enable--disable) el complemento **Mapas en línea** en *Menú principal → Complementos → Mapas en línea*.
+2. Realice los ajustes necesarios en la sección [Fuente del mapa](../map/raster-maps.md#select-raster-maps) del menú Configurar mapa.
+3. Establezca el mapa *Fuente del mapa*, *Superposición* y *Subcapa*. Seleccione su proveedor de mapas satelitales preferido.
+4. Descargue el [mapa en línea](#how-to-prepare-raster-maps) seleccionado si es necesario.
 
 
 ## Usar mapas ráster en el dispositivo {#use-raster-maps-on-device}
 
-Puedes encontrar información detallada sobre la visualización y personalización de mapas ráster en el artículo [Mapas ráster](../map/raster-maps.md). Cómo usar:
+Puede encontrar información detallada sobre la visualización y personalización de mapas ráster en el artículo [Mapas ráster](../map/raster-maps.md). Cómo usar:
 
-1. [Selecciona](../map/raster-maps.md#select-raster-maps) el mapa ráster como capa *Principal*, *Subyacente* o *Superpuesta*.
-    - [Cambiar](../map/raster-maps.md#how-to-use-raster-maps) parámetros de capa (transparencia).
+1. [Seleccione](../map/raster-maps.md#select-raster-maps) el mapa ráster como capa *Principal*, *Subcapa* o *Superposición*.
+    - [Cambie](../map/raster-maps.md#how-to-use-raster-maps) los parámetros de la capa (transparencia).
 
-2. [Prepara/copia](../map/raster-maps.md#prepare--copy-raster-maps-to-device) mapas ráster al dispositivo.
+2. [Prepare / copie](../map/raster-maps.md#preparecopy-raster-maps-to-device) mapas ráster en el dispositivo.
     - [Añadir nueva fuente de mapa ráster en línea](../map/raster-maps.md#add-new-online-raster-map-source)
     - [Añadir URL mágica](../map/raster-maps.md#magic-url-to-install-map-source) para instalar la fuente del mapa.
 
 3. [Gestionar](../map/raster-maps.md#manage-raster-maps) mapas ráster.
-    - [Descargar/actualizar mosaicos](../map/raster-maps.md#download--update-tiles).
-    - [Cambiar](../map/raster-maps.md#change-raster-map-parameters) parámetros del mapa ráster.
+    - [Descargar / actualizar teselas](../map/raster-maps.md#download--update-tiles).
+    - [Cambiar](../map/raster-maps.md#change-raster-map-parameters) los parámetros del mapa ráster.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configurar subyacente/superpuesto Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configurar subyacente/superpuesto iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -69,20 +69,20 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_
 ## Cómo preparar mapas ráster {#how-to-prepare-raster-maps}
 
 :::info
-Artículo principal para preparar mapas [leer aquí](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Artículo principal para preparar mapas [lea aquí](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-A pesar de que el complemento se llama *Mapas en línea*, también puedes usar los mapas sin conexión a internet. Solo necesitas guardar las partes de los mapas (a menudo llamados mosaicos) para usarlos más tarde. Para hacer eso, descarga una [herramienta de creación de mapas](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) específica desarrollada por el equipo de OsmAnd.
+A pesar de que el complemento se llama *Mapas en línea*, también puede usar los mapas sin conexión a Internet. Solo necesita guardar las partes de los mapas (a menudo llamadas teselas) para usarlas más tarde. Para hacerlo, descargue una herramienta específica [Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desarrollada por el equipo de OsmAnd.
 
-Selecciona el área que necesitas descargar, haz clic en Preload area (Cargar área previamente), luego establece los niveles de zoom más pequeños y más grandes que deseas mostrar y descarga los mosaicos.
-Para la **versión de Android** puedes copiarlos a la carpeta *osmand/tiles/*tipo de mosaico** de tu teléfono. También deberás abrir *Configurar mapa - Mapa superpuesto* y elegir los mosaicos en línea de OsmAnd.
+Seleccione el área que necesita descargar, haga clic en el área de precarga, luego establezca los niveles de zoom más pequeños y más grandes que desea mostrar y descargue las teselas.
+Para la <b>versión de Android</b>, puede copiarlos en la carpeta <i>osmand/tiles/*tipo_de_tesela*</i> de su teléfono. También deberá abrir <i>Configurar mapa-. Capa de superposición</i> y elegir las teselas en línea de OsmAnd.
 
-Para la **versión de iOS** puedes elegir un archivo SQ Lite en tu teléfono (cualquier mensajero o Dropbox), OsmAnd sugerirá añadirlo. También deberás abrir *Mapa → Superponer/Subyacer o Tipo de mapa* y elegir una nueva fuente de mapa.
+Para la <b>versión de iOS</b>, puede elegir el archivo SQ Lite en su teléfono (cualquier mensajero o dropbox), OsmAnd sugerirá agregarlo. También deberá abrir <i>Mapa → Superposición / Subcapa o Tipo de mapa</i> y elegir la nueva fuente de mapa.
 
-Cómo añadir un archivo SQ Lite en la versión de Android e iOS de OsmAnd puedes leerlo en el proyecto **Anygis**.
+Cómo agregar un archivo SQ Lite en la versión de Android e iOS de OsmAnd puede leerlo en el <a href="https://anygis.ru/Web/Html/Osmand_en"><b>proyecto Anygis</b></a>.
 
 
-Los mosaicos en línea pueden ser útiles cuando solo necesitas una pequeña sección del mapa o un tipo específico de este para usar en un área limitada, pero no quieres descargar toda la región. Pueden ser útiles en un sinfín de situaciones.
+Las teselas en línea pueden ser útiles cuando solo necesita una pequeña sección del mapa o un tipo específico de él para usar en un área limitada, pero no quiere descargar toda la región. Pueden ser útiles en un sinfín de situaciones.
 
 ![Mapas en línea](@site/static/img/plugins/online-maps/map_creator.jpg)
 
@@ -92,15 +92,13 @@ Los mosaicos en línea pueden ser útiles cuando solo necesitas una pequeña sec
 ## Artículos relacionados {#related-articles}
 
 - [Interactuar con el mapa](../../user/map/interact-with-map.md)
-- [Configuración global](../../user/personal/global-settings.md)
-- [Mapas vectoriales (estilos de mapa)](../../user/map/vector-maps.md)
+- [Ajustes globales](../../user/personal/global-settings.md)
+- [Mapas vectoriales (Estilos de mapa)](../../user/map/vector-maps.md)
 
 ### Problemas comunes y soluciones {#common-issues-and-solutions}
 
 1. Los mapas en línea no aparecen en el menú Fuente del mapa:  
   
-    - Verifica que el complemento Mapas en línea esté habilitado: *Menú → Complementos → Mapas en línea*.  
-    - Asegúrate de tener una conexión a internet activa para acceder a las imágenes satelitales.  
-    - Comprueba si el mapa en línea seleccionado está descargado o requiere [configuraciones adicionales](../map/raster-maps.md#select-raster-maps).
-
-> *Última actualización: enero de 2025*
+    - Verifique que el complemento Mapas en línea esté habilitado: *Menú → Complementos → Mapas en línea*.  
+    - Asegúrese de tener una conexión a Internet activa para acceder a las imágenes de satélite.  
+    - Verifique si el mapa en línea seleccionado está descargado o requiere [ajustes adicionales](../map/raster-maps.md#select-raster-maps).

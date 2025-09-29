@@ -1,7 +1,7 @@
 ---
-source-hash: 60b188c51e17690f3a3d5d8e4970eb6bd2391e27d4fafaddb68b30a36313f979
+source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
 sidebar_position: 3
-title: ملاحظات الصوت / الفيديو
+title:  الملاحظات الصوتية / المرئية
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,33 +13,36 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoAndroidOnly />
 
 ## نظرة عامة {#overview}
 
-يمكن أن تكون تسجيلات الصوت والفيديو مفيدة في المستقبل، مثل ذكريات الأماكن التي زرتها. وهي متوفرة في قائمة [أماكني](../personal/myplaces.md) وتكون مرئية عند تمكين إضافة ملاحظات الصوت/الفيديو.
+يمكن أن تكون تسجيلاتك الصوتية والمرئية مفيدة في المستقبل، كذكريات للأماكن التي زرتها. وهي متاحة في قائمة [أماكني](../personal/myplaces.md) وتكون مرئية عند تمكين إضافة الملاحظات الصوتية/المرئية.
 
-توسع إضافة ملاحظات الصوت/الفيديو وظائف OsmAnd من خلال السماح لك بإنشاء ملاحظاتك الخاصة بتنسيقات مختلفة، مثل الصور أو الفيديو أو الصوت، وربطها بموقعها الجغرافي أو موقعها الحالي. يمكنك إجراء التسجيلات فقط عندما تكون الإضافة قيد التشغيل، باستخدام [أداة ملاحظات الصوت/الفيديو](../widgets/info-widgets.md#-audio-video-notes-widget) و/أو [قائمة سياق الخريطة](../map/map-context-menu.md#-audiovideo-note). يتم حفظ البيانات المستلمة تلقائيًا في [أماكني](../personal/myplaces.md)، حيث يمكن إدارتها ومشاركتها بسهولة.
+توسع إضافة الملاحظات الصوتية/المرئية من وظائف OsmAnd من خلال السماح لك بإنشاء ملاحظاتك الخاصة بتنسيقات مختلفة، مثل الصور أو الفيديو أو الصوت، وربطها بموقعها الجغرافي أو موقعك الحالي. يمكنك إجراء التسجيلات فقط عند تشغيل الإضافة، باستخدام [ويدجت الملاحظات الصوتية/المرئية](../widgets/info-widgets.md#audiovideo-notes-widget) و/أو [قائمة سياق الخريطة](../map/map-context-menu.md#-audiovideo-note). يتم حفظ البيانات المستلمة تلقائيًا في [أماكني](../personal/myplaces.md)، حيث يمكن إدارتها ومشاركتها بسهولة.
 
-تشكل جميع ملاحظات الصوت والفيديو التي تم إنشاؤها طبقة التسجيل. عند تمكينها على الخريطة، فإنها تغير عرض البيانات المسجلة وهناك المزيد من الإعدادات لإدارة التسجيلات. في طبقة التسجيل، يتم وضع ملاحظات الصوت والفيديو كنقاط اهتمام على الخريطة، وبالتالي إنشاء سرد للمستخدم مرئي فقط لمالك الجهاز.
+تشكل جميع الملاحظات الصوتية والمرئية التي تم إنشاؤها طبقة التسجيل. عند تمكينها على الخريطة، فإنها تغير عرض البيانات المسجلة وهناك المزيد من الإعدادات لإدارة التسجيلات. في طبقة التسجيل، يتم وضع الملاحظات الصوتية والمرئية كنقاط اهتمام (POIs) على الخريطة، مما ينشئ سردًا للمستخدم لا يراه إلا مالك الجهاز.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![مقدمة ملاحظات الصوت والفيديو](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+![مقدمة الملاحظات الصوتية والمرئية](@site/static/img/plugins/audio-video-notes/widgets_view.png)
 
 </TabItem>
 
 </Tabs>
 
+
 ## معلمات الإعداد المطلوبة {#required-setup-parameters}
 
-يتم توفير ملاحظات الصوت/الفيديو مع إضافة ملاحظات الصوت/الفيديو، وتتطلب الإعداد التالي:
+يتم توفير الملاحظات الصوتية/المرئية مع إضافة الملاحظات الصوتية/المرئية، وتتطلب الإعداد التالي:
 
-1. قم بتمكين [إضافة ملاحظات الصوت/الفيديو](../plugins/index.md#enable--disable) في قسم الإضافات من *القائمة الرئيسية*.
-2. أضف [أداة](../widgets/info-widgets.md#-audio-video-notes-widget) إلى شاشة الخريطة للاستخدام الأكثر ملاءمة.
-3. قم بتخصيص [إعدادات التسجيل](#plugin-settings) لكل ملف تعريف، إذا لزم الأمر.
+١. تمكين [إضافة الملاحظات الصوتية/المرئية](../plugins/index.md#enable--disable) في قسم الإضافات من *القائمة الرئيسية*.
+٢. إضافة [ويدجت](../widgets/info-widgets.md#audiovideo-notes-widget) إلى شاشة الخريطة للاستخدام الأكثر ملاءمة.
+٣. تخصيص [إعدادات التسجيل](#plugin-settings) لكل ملف شخصي، إذا لزم الأمر.
+
 
 ## إعدادات الإضافة {#plugin-settings}
 
@@ -55,85 +58,76 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-لكل ملف تعريف، يمكنك تكوين *خيارات تسجيل الصوت والفيديو*.
+لكل ملف شخصي، يمكنك تكوين *خيارات تسجيل الصوت والفيديو*.
 
-| المعلمة | الوصف |
+| المَعلمة | الوصف |
 | --- | --- |
-| **<Translate android="true" ids="camera_app"/>** | يمكنك اختيار ما إذا كنت تريد استخدام تطبيق النظام أو كاميرا OsmAnd لالتقاط <Translate android="true" ids="photo_notes"/>.|
-| **<Translate android="true" ids="av_camera_pic_size"/>** | يحدد حجم الصور المراد التقاطها. تحدد إمكانيات الكاميرا بالجهاز عدد الخيارات المتاحة. إذا لم يتم تحديد أي خيار، يستخدم التطبيق الحجم من إعدادات نظام كاميرا الجهاز. |
-| **<Translate android="true" ids="av_camera_focus"/>** | يحدد طريقة ضبط تركيز الكاميرا. يتم تحديد عدد الخيارات المتاحة من خلال إمكانيات كاميرا الجهاز. بشكل أساسي، هناك ثلاثة خيارات تالية: *<Translate android="true" ids="av_camera_focus_auto"/>*؛ *<Translate android="true" ids="av_camera_focus_continuous"/>*؛ و *<Translate android="true" ids="av_camera_focus_infinity"/>*. **التركيز التلقائي** هو الأكثر شيوعًا ويحدد الوضع التلقائي للكاميرا؛ **المستمر** يجعل الكاميرا تكتشف الحركات وتعيد التركيز وفقًا لذلك؛ وخيار **اللانهاية** يجعل العدسة تركز على مسافة وبالتالي تحافظ على وضوح الكائنات بغض النظر عن مدى بعدها. |
-| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | إذا تم تمكينه، يتم إصدار صوت عند التقاط الكاميرا لقطة. يرجى ملاحظة أنه، كما هو مطلوب بموجب قانون الخصوصية، **في بعض البلدان لن تحتوي الأجهزة على مفتاح كتم صوت غالق الكاميرا**. إذا كنت تستخدم تطبيق النظام، فيجب تعطيل الصوت في تطبيق الكاميرا. |
-| **<Translate android="true" ids="av_audio_format"/>** | يوفر اختيارًا للتنسيقات لملف صوتي. يتم تحديد عدد الخيارات المتاحة، وأيها يستخدم افتراضيًا، من خلال معلمات جهاز معين. |
-| **<Translate android="true" ids="av_audio_bitrate"/>** | يوفر هذا الخيار اختيارًا لخيارات معدل البت لملف صوتي ليتم إنشاؤه. تتراوح خيارات معدل البت المتاحة من 16 كيلوبت في الثانية إلى 128 كيلوبت في الثانية، أو خيار الافتراضي. يتم تحديد معلمة الافتراضي من خلال إعدادات الميكروفون "الافتراضية" لجهازك. |
+| **<Translate android="true" ids="camera_app"/>** | يمكنك اختيار ما إذا كنت تريد استخدام تطبيق النظام أو كاميرا OsmAnd لالتقاط <Translate android="true" ids="photo_notes"/>. |
+| **<Translate android="true" ids="av_camera_pic_size"/>** | يحدد حجم الصور التي سيتم التقاطها. تحدد إمكانيات كاميرا الجهاز عدد الخيارات المتاحة. إذا لم يتم تحديد أي خيار، يستخدم التطبيق الحجم من إعدادات النظام لكاميرا الجهاز. |
+| **<Translate android="true" ids="av_camera_focus"/>** | يحدد طريقة ضبط تركيز الكاميرا. يتم تحديد عدد الخيارات المتاحة من خلال إمكانيات كاميرا الجهاز. بشكل أساسي، هناك ثلاثة خيارات تالية: *<Translate android="true" ids="av_camera_focus_auto"/>*؛ *<Translate android="true" ids="av_camera_focus_continuous"/>*؛ و *<Translate android="true" ids="av_camera_focus_infinity"/>*. **التركيز التلقائي (Autofocus)** هو الأكثر شيوعًا ويضبط الوضع التلقائي للكاميرا؛ **المستمر (continuous)** يجعل الكاميرا تكتشف الحركات وتعيد التركيز وفقًا لذلك؛ وخيار **اللانهاية (infinity)** يجعل العدسة تركز على مسافة وبالتالي تبقي الأشياء في نطاق التركيز بغض النظر عن بعدها. |
+| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | إذا تم تمكينه، يتم إصدار صوت عندما تلتقط الكاميرا لقطة. يرجى ملاحظة أنه، كما هو مطلوب بموجب قانون الخصوصية، **في بعض البلدان لن تحتوي الأجهزة على مفتاح كتم صوت غالق الكاميرا**. إذا كنت تستخدم تطبيق النظام، فيجب تعطيل الصوت في تطبيق الكاميرا. |
+| **<Translate android="true" ids="av_audio_format"/>** | يوفر خيارًا من التنسيقات لملف صوتي. يتم تحديد عدد الخيارات المتاحة، وأيها يُستخدم افتراضيًا، بواسطة معلمات جهاز معين. |
+| **<Translate android="true" ids="av_audio_bitrate"/>** | يوفر هذا الخيار مجموعة من خيارات معدل البت لملف صوتي سيتم إنشاؤه. تتراوح خيارات معدل البت المتاحة من ١٦ كيلوبت في الثانية إلى ١٢٨ كيلوبت في الثانية، أو الخيار الافتراضي. يتم تحديد المعلمة الافتراضية من خلال إعدادات الميكروفون "الافتراضية" لجهازك. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | إذا تم تمكينه، يستخدم OsmAnd تطبيق النظام لتسجيل الفيديو في <Translate android="true" ids="video_notes"/>. |
-| **<Translate android="true" ids="av_video_quality"/>** | يوفر هذا اختيارًا للخيارات التي تحدد تنسيق الصورة الناتجة. يتم تحديد نطاق الخيارات المتاحة من خلال معلمات جهاز معين. الخيار الافتراضي هو خيار *أعلى جودة*. |
-| **<Translate android="true" ids="multimedia_rec_split_title"/>** | إذا تم تمكينه، سيتم إعادة كتابة تسجيلات الفيديو القديمة تلقائيًا واستبدالها بتسجيلات فيديو جديدة إذا وصل حجم التخزين إلى حد الحجم. |
-| **<Translate android="true" ids="rec_split_clip_length"/>** | يحدد هذا الحد الزمني الأعلى لمقاطع الفيديو المسجلة. هناك خيارات تتراوح من دقيقة واحدة إلى 30 دقيقة. |
-| **<Translate android="true" ids="rec_split_storage_size"/>** | يحدد هذا حجم التخزين المخصص للفيديو المسجل. هناك خيارات تتراوح من 1024 ميجابايت إلى 62 جيجابايت. يتم تحديد نطاق معين من الخيارات، والخيار الافتراضي، من خلال معلمات جهاز معين. ستذكرك رسالة نظام بأن حجم التخزين يقترب من الحد المحدد. |
-| **<Translate android="true" ids="notes"/>** | يعيد هذا الخيار توجيهك إلى [ملاحظات الصوت/الفيديو في أماكني](../personal/myplaces.md) - التخزين المركزي لجميع ملاحظات الصوت/الفيديو التي تم إنشاؤها في التطبيق. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | يمكنك تعيين القيم الافتراضية لجميع إعدادات ملاحظات الصوت/الفيديو. |
-| **<Translate android="true" ids="copy_from_other_profile"/>** | يفتح مربع حوار لتحديد ملف تعريف لنسخ تكوين تسجيل ملاحظات الصوت/الفيديو منه، وتعيينه للملف الشخصي الحالي. |
+| **<Translate android="true" ids="av_video_quality"/>** | يوفر هذا خيارًا من الخيارات التي تحدد تنسيق الصورة الناتجة. يتم تحديد نطاق الخيارات المتاحة بواسطة معلمات جهاز معين. الخيار الافتراضي هو خيار *أعلى جودة*. |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | إذا تم تمكينه، سيتم إعادة كتابة تسجيلات الفيديو القديمة تلقائيًا واستبدالها بتسجيلات فيديو جديدة إذا وصل حجم التخزين إلى الحد الأقصى للحجم. |
+| **<Translate android="true" ids="rec_split_clip_length"/>** | يحدد هذا الحد الزمني الأعلى لمقاطع الفيديو المسجلة. هناك خيارات بنطاق من دقيقة واحدة إلى ٣٠ دقيقة. |
+| **<Translate android="true" ids="rec_split_storage_size"/>** | يحدد هذا حجم التخزين المخصص للفيديو المسجل. هناك خيارات بنطاق من ١٠٢٤ ميجابايت إلى ٦٢ جيجابايت. يتم تحديد نطاق معين من الخيارات، والخيار الافتراضي، بواسطة معلمات جهاز معين. ستذكرك رسالة نظام بوصول حجم التخزين إلى الحد المحدد. |
+| **<Translate android="true" ids="notes"/>** | يعيد هذا الخيار توجيهك إلى [الملاحظات الصوتية/المرئية في أماكني](../personal/myplaces.md) - التخزين المركزي لجميع الملاحظات الصوتية/المرئية التي تم إنشاؤها في التطبيق. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | يمكنك تعيين القيم الافتراضية لجميع إعدادات الملاحظات الصوتية/المرئية. |
+| **<Translate android="true" ids="copy_from_other_profile"/>** | يفتح مربع حوار لتحديد ملف شخصي لنسخ تكوين تسجيل الملاحظات الصوتية/المرئية منه، وتعيينه للملف الشخصي الحالي. |
 
-## إدارة ملاحظة واحدة {#manage-a-single-note}
 
-يمكنك إدارة معلوماتك وأفكارك وما إلى ذلك المرتبطة بمكان جغرافي، على النحو التالي:
+## إنشاء ملاحظة واحدة {#create-a-single-note}
 
-- إنشاء ملاحظة.
-- عرض جميع الملاحظات كقائمة في [أماكني](../personal/myplaces.md).
-- إظهار الملاحظة المحددة على الخريطة.
-- إعادة تسمية ملاحظة في أماكني.
-- إظهار جميع الملاحظات [على الخريطة](../map/configure-map-menu.md#map-data-layers).
-- تشغيل الملاحظة.
-- إنشاء نقاط طريق في [مسار](../plugins/trip-recording.md#gpx-file-details).
-- التصدير إلى [JOSM](https://josm.openstreetmap.de/).
+يمكنك إنشاء ملاحظة صورة أو فيديو أو صوت بأي من الطرق التالية:
 
-### إنشاء {#create}
+- باستخدام [الويدجت](../widgets/info-widgets.md#audiovideo-notes-widget). إذا كان يجب ربط الملاحظة بموقعك الجغرافي الحالي.
+- باستخدام [قائمة السياق](../map/map-context-menu.md#overview) لنقطة على الخريطة. إذا كان يجب ربط الملاحظة بالنقطة المحددة على الخريطة.
 
-يمكنك إنشاء ملاحظة صورية أو فيديو أو صوتية بأي من الطرق التالية:
 
-- باستخدام [الأداة](../widgets/info-widgets.md#-audio-video-notes-widget-android). إذا كان يجب ربط الملاحظة بموقعك الجغرافي الحالي.
-- باستخدام [قائمة السياق](../map/map-context-menu.md#-record-av-note-android) لنقطة على الخريطة. إذا كان يجب ربط الملاحظة بالنقطة المحددة على الخريطة.
-
-#### 1. الإنشاء والربط بموقعك الحالي {#1-create-and-tie-to-your-current-position}
+### إنشاء وتثبيت الموقع الحالي {#create-&-pin-current-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![أداة إضافة الصوت والفيديو أندرويد](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
+![ويدجت إضافة الصوت والفيديو أندرويد](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 </TabItem>
 
 </Tabs>
 
-تُستخدم أداة <Translate android="true" ids="map_widget_av_notes"/> لإنشاء ملاحظة مرتبطة بموقعك الحالي، وبالتالي تجنب أي بحث عن نقطة مناسبة للملاحظة على الخريطة. ما عليك سوى النقر على الأداة وإنشاء الملاحظة.
+يُستخدم ويدجت <Translate android="true" ids="map_widget_av_notes"/> لإنشاء ملاحظة مرتبطة بموقعك الحالي، وبالتالي، تجنب أي بحث عن نقطة مناسبة للملاحظة على الخريطة. ما عليك سوى النقر على الويدجت وإنشاء الملاحظة.
 
-تعتمد الوظائف التي توفرها أداة <Translate android="true" ids="map_widget_av_notes"/> على كيفية تكوينها في قائمة [شاشة التكوين](../widgets/info-widgets.md#-audio-video-notes-widget-android). تفتح الأداة إما الكاميرا على الفور لإنشاء ملاحظة، وفقًا للإعدادات المحددة، أو تطلب أولاً التنسيق الذي تريد إنشاء الملاحظة به ثم تفتح مربع حوار المسجل المناسب.
+تعتمد الوظائف التي يوفرها ويدجت <Translate android="true" ids="map_widget_av_notes"/> على كيفية تكوينه في قائمة [شاشة التكوين](../widgets/info-widgets.md#audiovideo-notes-widget). يفتح الويدجت إما الكاميرا على الفور لإنشاء ملاحظة، وفقًا للإعدادات المحددة، أو يسأل أولاً عن التنسيق الذي سيتم إنشاء الملاحظة به ثم يفتح مربع حوار المسجل المعني.
 
-#### 2. الإنشاء والربط بموقع جغرافي محدد {#2-create-and-tie-to-selected-geolocation}
+
+### إنشاء وتثبيت الموقع المحدد {#create-&-pin-selected-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![إضافة الصوت والفيديو قائمة السياق التقاط ملاحظة](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
+![قائمة سياق إضافة الصوت والفيديو تدوين ملاحظة](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
 
 </TabItem>
 
 </Tabs>
 
-لإنشاء ملاحظة مرتبطة بنقطة محددة على الخريطة، استخدم [قائمة السياق](../map/map-context-menu.md#-record-av-note-android) للنقطة:
+لإنشاء ملاحظة مرتبطة بنقطة محددة على الخريطة، استخدم [قائمة السياق](../map/map-context-menu.md#-record-av-note) للنقطة:
 
-1. اضغط مطولاً على نقطة على الخريطة، وستفتح [قائمة السياق](../map/map-context-menu.md).
-2. انقر على **إجراءات**، وحدد أحد الخيارات المتاحة من القائمة:
+١. انقر نقرًا طويلاً على نقطة على الخريطة، وستفتح [قائمة السياق](../map/map-context-menu.md).
+٢. انقر على **إجراءات**، واختر أحد الخيارات المتاحة من القائمة:
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - لإنشاء ملاحظة صوتية وربطها بالنقطة المحددة على الخريطة؛
     - **<Translate android="true" ids="recording_context_menu_vrecord"/>** - لإنشاء ملاحظة فيديو وربطها بالنقطة المحددة على الخريطة؛
-    - **<Translate android="true" ids="recording_context_menu_precord"/>** - لإنشاء ملاحظة صورية وربطها بالنقطة المحددة على الخريطة.
+    - **<Translate android="true" ids="recording_context_menu_precord"/>** - لإنشاء ملاحظة صورة وربطها بالنقطة المحددة على الخريطة.
 
-3. اعتمادًا على التنسيق المحدد للملاحظة، يفتح مربع حوار المسجل المناسب.
+٣. بناءً على التنسيق المحدد للملاحظة، يفتح مربع حوار المسجل المعني.
 
-#### مربع حوار المسجل {#recorder-dialog}
+
+### مربع حوار المسجل {#recorder-dialog}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -145,17 +139,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-بالنسبة *لملاحظات الصوت والفيديو*، يتم عرض مسجل الصوت أو الفيديو على التوالي. يمكنك:
+بالنسبة *للملاحظات الصوتية والمرئية*، يتم عرض مسجل الصوت أو الفيديو على التوالي. يمكنك:
 
-- إيقاف التسجيل باستخدام أيقونة *إيقاف*.
+- إيقاف التسجيل برمز *الإيقاف*.
 - عرض مدة التسجيل.
 - إظهار أو إخفاء شاشة الفيديو.
 
-من الممكن إيقاف التسجيل بنقرة على أداة <Translate android="true" ids="map_widget_av_notes"/>، بغض النظر عما إذا كانت قائمة السياق أو الأداة قد بدأت التسجيل. بالنسبة *لملاحظة صورية*، تظهر وظيفة الكاميرا، ويمكنك التقاط صورة، وعرض النتيجة، وقبولها وحفظها، أو التقاط صورة جديدة.
+من الممكن إيقاف التسجيل بنقرة على ويدجت <Translate android="true" ids="map_widget_av_notes"/>، بغض النظر عما إذا كانت قائمة السياق أو الويدجت هي التي بدأت التسجيل. بالنسبة *لملاحظة الصورة*، تظهر وظيفة الكاميرا، ويمكنك التقاط صورة، وعرض النتيجة، وقبولها وحفظها، أو التقاط صورة جديدة.
 
 :::info ملاحظة
-تُحفظ جميع سجلات الصور والصوت والفيديو تلقائيًا في: علامة تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+تلقائيًا، يتم حفظ جميع سجلات الصور والصوت والفيديو في: علامة تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
 :::
+
+
+## إدارة ملاحظة واحدة {#manage-a-single-note}
+
+يمكنك إدارة معلوماتك وأفكارك وما إلى ذلك المرتبطة بمكان جغرافي، على النحو التالي:
+
+- عرض جميع الملاحظات كقائمة في [أماكني](../personal/myplaces.md).
+- إظهار الملاحظة المحددة على الخريطة.
+- إعادة تسمية ملاحظة في أماكني.
+- إظهار جميع الملاحظات [على الخريطة](../map/configure-map-menu.md#map-data-layers).
+- تشغيل الملاحظة.
+- إنشاء نقاط طريق في [مسار](../plugins/trip-recording.md#new-track-recording).
+- تصدير إلى [JOSM](https://josm.openstreetmap.de/).
+
 
 ### العرض في أماكني {#view-in-my-places}
 
@@ -165,27 +173,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![قائمة إضافة الصوت والفيديو أماكني](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
+![قائمة أماكني لإضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 </TabItem>
 
 </Tabs>
 
-[أماكني](../personal/myplaces.md) هو مستودع مركزي لجميع ملاحظاتك. يسمح لك بعرض جميع ملاحظاتك في قائمة مرتبة، وعرض ملاحظة محددة على الخريطة، وإدارة قائمة ملاحظاتك بالكامل.
+[أماكني](../personal/myplaces.md) هو مستودع مركزي لجميع ملاحظاتك. يسمح لك بعرض جميع ملاحظاتك في قائمة مرتبة، وعرض ملاحظة معينة على الخريطة، وإدارة قائمة ملاحظاتك بأكملها.
 
-### العرض على الخريطة {#show-on-the-map}
+
+### الإظهار على الخريطة {#show-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة إضافة الصوت والفيديو أماكني السياق](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
+![سياق قائمة أماكني لإضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 </TabItem>
 
 </Tabs>
 
-لعرض ملاحظة محددة على الخريطة، استخدم قائمة الملاحظات في أماكني، وابحث عن الملاحظة المطلوبة، وانقر عليها. ونتيجة لذلك، تظهر الخريطة، وتبرز موقع الملاحظة، وتفتح [قائمة السياق](../plugins/audio-video-notes.md#actions-in-map-context-menu). من الممكن العمل مع الملاحظة عن طريق تحديد الخيارات في قائمة السياق.
+لإظهار ملاحظة معينة على الخريطة، استخدم قائمة الملاحظات في أماكني، وابحث عن الملاحظة المطلوبة، وانقر عليها. نتيجة لذلك، تظهر الخريطة، وتبرز موقع الملاحظة، وتفتح قائمة السياق. من الممكن التعامل مع الملاحظة عن طريق تحديد الخيارات في قائمة السياق.
+
 
 ### تشغيل {#play}
 
@@ -194,18 +204,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <TabItem value="android" label="أندرويد">
 
 ![قائمة سياق إضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
-![إجراءات قائمة إضافة الصوت والفيديو أماكني](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![إجراءات قائمة أماكني لإضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
 </Tabs>
 
-لتشغيل ملاحظة، استخدم الخيار المناسب في [قائمة السياق](../map/map-context-menu#-audiovideo-note-android) المفتوحة للملاحظة:
+لتشغيل ملاحظة، استخدم الخيار المعني في [قائمة السياق](../map/map-context-menu#overview) المفتوحة للملاحظة:
 
 - على الخريطة؛
 - في أماكني.
 
-يوفر قسم [التفاصيل](../map/map-context-menu#-audiovideo-note-android) المزيد من البيانات حول الملاحظات، مثل خط العرض وخط الطول، وتاريخ ووقت الملاحظة، والصور.
+يوفر قسم [التفاصيل](../map/map-context-menu#details) المزيد من البيانات حول الملاحظات، مثل خطوط الطول والعرض، وتاريخ ووقت الملاحظة، والصور.
+
 
 ### إعادة التسمية، الحذف، المشاركة {#rename-delete-share}
 
@@ -213,44 +224,45 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![إجراءات قائمة إضافة الصوت والفيديو أماكني](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![إجراءات قائمة أماكني لإضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
 </Tabs>
 
-لإدارة ملاحظة في أماكني، انقر على النقاط الثلاث العمودية للملاحظة في القائمة، وستظهر الخيارات المتاحة، على النحو التالي:
+لإدارة ملاحظة في أماكني، انقر على النقاط الثلاث الرأسية للملاحظة في القائمة، وستظهر الخيارات المتاحة، على النحو التالي:
 
-- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. فتح وعرض الفيديو المحدد أو تشغيل الملاحظة الصوتية.
-- **<Translate android="true" ids="shared_string_share"/>**. مشاركة الملاحظة المحددة بسهولة مع الآخرين عبر منصات مختلفة.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. يعرض الموقع الدقيق و[قائمة السياق](../plugins/audio-video-notes#actions-in-map-context-menu) للملاحظة على الخريطة.
-- **<Translate android="true" ids="shared_string_rename"/>**. تغيير اسم الملاحظة لتسهيل التعرف عليها.
+- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. افتح واعرض الفيديو المحدد أو قم بتشغيل الملاحظة الصوتية.
+- **<Translate android="true" ids="shared_string_share"/>**. شارك الملاحظة المحددة بسهولة مع الآخرين عبر منصات مختلفة.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. يعرض الموقع الدقيق وقائمة السياق للملاحظة على الخريطة.
+- **<Translate android="true" ids="shared_string_rename"/>**. غير اسم الملاحظة لتسهيل التعرف عليها.
 - **<Translate android="true" ids="shared_string_delete"/>**. يزيل الملاحظات بشكل دائم من التطبيق.
 
-## أداة التسجيل {#recording-widget}
+
+## ويدجت التسجيل {#recording-widget}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![الأداة](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![الويدجت](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
 
 </TabItem>
 
 </Tabs>
 
-تنشئ [أداة ملاحظات الصوت/الفيديو](../widgets/info-widgets.md#audiovideo-notes-widget) ملاحظات وصورًا وملفات صوت وفيديو وتربطها بموقعك الحالي. تحتوي الأداة على عدة خيارات يمكن تعيينها كإجراء افتراضي يتم تنفيذه بواسطة الأداة عند لمس الشاشة.
+يقوم [ويدجت الملاحظات الصوتية/المرئية](../widgets/info-widgets.md#audiovideo-notes-widget) بإنشاء الملاحظات والصور وملفات الصوت والفيديو وربطها بموقعك الحالي. يحتوي الويدجت على عدة خيارات يمكن تعيينها كإجراء افتراضي يقوم به الويدجت عند لمس الشاشة.
 
-إضافة أداة إلى الشاشة ضرورية إذا كنت تفضل تجنب البحث عن موقع جغرافي على الخريطة وربط الملاحظات بموقعك الافتراضي الحالي. لإضافة أو تخصيص أداة، اتبع الخطوات أدناه:
+إضافة ويدجت إلى الشاشة ضروري إذا كنت تفضل تجنب البحث عن الموقع الجغرافي على الخريطة وربط الملاحظات بموقعك الافتراضي الحالي. لإضافة أو تخصيص ويدجت، اتبع الخطوات أدناه:
 
-1. اذهب إلى:
+١. اذهب إلى:
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-2. حدد **<Translate android="true" ids="map_widget_left"/>** أو **<Translate android="true" ids="map_widget_right"/>**.
+٢. حدد **<Translate android="true" ids="map_widget_left"/>** أو **<Translate android="true" ids="map_widget_right"/>**.
 
-3. انقر على **<Translate android="true" ids="map_widget_av_notes"/>**، وستفتح قائمة سياق الأداة.
+٣. انقر على **<Translate android="true" ids="map_widget_av_notes"/>**، وستفتح قائمة سياق الويدجت.
 
-4. حدد الخيار الذي تفضل استخدامه افتراضيًا عن طريق النقر على الأداة:
+٤. حدد الخيار الذي تفضل استخدامه افتراضيًا عن طريق النقر على الويدجت:
 
     - **<Translate android="true" ids="av_def_action_choose"/>** - فتح مجموعة من الخيارات.
 
@@ -260,7 +272,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - بدء التقاط الصور.
 
-    ![الأداة](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![الويدجت](@site/static/img/plugins/audio-video-notes/widget.png)
+
 
 ## إدارة ملاحظات متعددة {#manage-multiple-notes}
 
@@ -270,13 +283,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة إضافة الصوت والفيديو أماكني ثلاثة إجراءات](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+![ثلاثة إجراءات في قائمة أماكني لإضافة الصوت والفيديو](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
 </TabItem>
 
 </Tabs>
 
 يمكن استخدام الخيارات الموجودة في الشريط السفلي لإدارة قائمة الملاحظات في قائمة [أماكني](../personal/myplaces.md#audiovideo-notes).
+
 
 ### المشاركة مع نقاط طريق GPX {#share-with-gpx-waypoints}
 
@@ -292,10 +306,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكنك مشاركة جميع الملاحظات بما في ذلك [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) الذي يحتوي على الملاحظات المحددة كنقاط طريق على شاشة [أماكني](../personal/myplaces.md#audiovideo-notes) بالنقر على زر قائمة المشاركة السفلي. سيظهر مربع اختيار بجانب كل ملاحظة لتحديد ملاحظات معينة. يوجد مربعا اختيار فوق الملاحظات: *ملاحظات الصوت/الفيديو حسب التاريخ* لتحديد جميع الملاحظات ومربع اختيار *المواقع*. يسمح لك مربع اختيار *المواقع* بإضافة ملف GPX منفصل يحتوي على الإحداثيات والبيانات.
+يمكنك مشاركة جميع الملاحظات بما في ذلك [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) الذي يحتوي على ملاحظات محددة كنقاط طريق على شاشة [أماكني](../personal/myplaces.md#audiovideo-notes) عن طريق النقر على زر المشاركة في القائمة السفلية. سيظهر مربع اختيار بجوار كل ملاحظة لتحديد ملاحظات معينة. يوجد مربعا اختيار فوق الملاحظات: *ملاحظات صوتية/مرئية حسب التاريخ* لتحديد جميع الملاحظات ومربع اختيار *المواقع*. يسمح لك مربع اختيار *المواقع* بإضافة ملف GPX منفصل مع الإحداثيات والبيانات.
 
-تحتوي كل ملاحظة على وقت إنشائها، وكمية البيانات، وإذا كانت تسجيلًا، وقت التسجيل، وبيانات الموقع، يمكنك إضافة بيانات GPX.
-تنسيقات الملفات المدعومة: الصوت - **3gp**، الفيديو - **mp4**، الصورة - **jpg**.
+تحتوي كل ملاحظة على وقت إنشائها، وكمية البيانات، وإذا كانت تسجيلاً، فوقت التسجيل، وبيانات الموقع، ويمكنك إضافة بيانات GPX.
+تنسيقات الملفات المدعومة: صوت - **3gp**، فيديو - **mp4**، صورة - **jpg**.
+
 
 ### إظهار الكل على الخريطة {#show-all-on-the-map}
 
@@ -311,13 +326,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكن للملاحظات المعروضة على الخريطة أن تروي قصتك، أين رأيت اللافتات، أي باب تحتاج إلى فتحه، أين المخرج، المسار الأمثل، والمزيد. يمكنك إظهار الملاحظات [واحدة تلو الأخرى](#show-on-the-map) أو كلها مرة واحدة.
+يمكن للملاحظات المعروضة على الخريطة أن تحكي قصتك، أين رأيت علامات، أي باب كنت بحاجة لفتحه، أين المخرج، المسار الأمثل، والمزيد. يمكنك إظهار الملاحظات [واحدة تلو الأخرى](#show-on-the-map) أو كلها مرة واحدة.
 
 استخدم طبقة خريطة [التسجيل](../map/point-layers-on-map#-audio--video-points-android) لإظهار أو إخفاء جميع الملاحظات. إذا قمت بتشغيلها في قائمة [تكوين الخريطة](../map/configure-map-menu)، فإن طبقة التسجيل تعرض جميع الملاحظات على الخريطة.
 
 ![لا توجد ملاحظات على الخريطة](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![الملاحظات على الخريطة](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
-## نقاط الطريق التي تم إنشاؤها من الملاحظات {#waypoints-created-from-notes}
+
+## نقاط الطريق المنشأة من الملاحظات {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -330,19 +346,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يتم إنشاء نقطة طريق عند إضافة ملاحظة صوتية أو فيديو أو صورية إلى مسار. توجد نقاط الطريق داخل المسار. إذا كان المسار مرئيًا، فإن نقاط طريقه تكون مرئية أيضًا. وبالتالي، يمكن أن تكون هذه الملاحظات مرئية على الخريطة كلها مرة واحدة أو فقط على مسار مرئي محدد. في الحالة الأخيرة، يتم عرض الملاحظات كنقاط طريق للمسار.
+يتم إنشاء نقطة طريق عند إضافة ملاحظة صوتية أو فيديو أو صورة إلى مسار. توجد نقاط الطريق داخل المسار. إذا كان المسار مرئيًا، فإن نقاط طريقه تكون مرئية أيضًا. وبالتالي، يمكن أن تكون هذه الملاحظات مرئية على الخريطة كلها مرة واحدة أو فقط على مسار مرئي معين. في الحالة الأخيرة، يتم عرض الملاحظات كنقاط طريق للمسار.
 
 :::note
-إذا تم تصدير مسار، فلا يمكن عرض نقاط الطريق أو تشغيلها، لأن ملاحظات الصوت/الفيديو/الصور تُخزن على الجهاز فقط، وهي متاحة لك فقط على هذا الجهاز.
+إذا تم تصدير المسار، فلا يمكن عرض نقاط الطريق أو تشغيلها، لأن الملاحظات الصوتية/المرئية/الصور يتم تخزينها على الجهاز فقط، ومتاحة لك فقط على هذا الجهاز.
 :::
 
-### إنشاء نقاط طريق {#create-waypoints}
+
+### إنشاء نقاط الطريق {#create-waypoints}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">
 
-![إضافة نقطة طريق يدويًا إلى المسار](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
+![إضافة نقطة طريق إلى المسار يدويًا](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
 
 </TabItem>
 
@@ -350,13 +367,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 هناك طريقتان لإنشاء نقطة طريق: تلقائيًا ويدويًا.
 
-1. **تلقائيًا**، يتم إنشاء نقطة طريق، في حال أخذت ملاحظة صوتية/فيديو/صورية عندما يكون [تسجيل الرحلة](../plugins/trip-recording) قيد التقدم، بغض النظر عن الموقع الجغرافي إذا كان مرتبطًا بالموقع الحالي أو أي مكان، وبالتالي، بغض النظر عن الوسيلة المستخدمة لذلك: سواء كانت [الأداة](../widgets/info-widgets#-audio-video-notes-widget-android)، أو [قائمة السياق](../map/map-context-menu#-audiovideo-note-android).
+١. **تلقائيًا**، يتم إنشاء نقطة طريق، في حال قمت بتدوين ملاحظة صوتية/مرئية/صورة أثناء تقدم [تسجيل الرحلة](../plugins/trip-recording)، بغض النظر عن الموقع الجغرافي إذا كانت مرتبطة بالموقع الحالي أو أي مكان، وبالتالي، بغض النظر عن الوسيلة المستخدمة لذلك: سواء كانت [الويدجت](../widgets/info-widgets#audiovideo-notes-widget)، أو [قائمة السياق](../map/map-context-menu#-audiovideo-note).
 
-    تحصل جميع نقاط الطريق المضافة تلقائيًا على اسم يتم تعيينه تلقائيًا. يتم إنشاء الاسم، وفقًا للتنسيق المحدد أدناه لملف صوتي/فيديو/صوري، ويحتوي على [رابط قصير](https://wiki.openstreetmap.org/wiki/Shortlink). يوضح مثال نقاط الطريق في الشكل أعلاه نقاط الطريق التي تم إنشاؤها تلقائيًا ويدويًا، حيث تم إنشاء الأربعة الأولى تلقائيًا، والأخيرة - يدويًا.
+    تحصل جميع نقاط الطريق المضافة تلقائيًا على اسم معين تلقائيًا. يتم إنشاء الاسم، وفقًا للتنسيق المحدد أدناه لملف صوت/فيديو/صورة، وله [رابط قصير](https://wiki.openstreetmap.org/wiki/Shortlink). يوضح مثال نقاط الطريق في الشكل أعلاه نقاط طريق تم إنشاؤها تلقائيًا ويدويًا، حيث تم إنشاء الأربعة الأولى تلقائيًا، والأخيرة - يدويًا.
 
-2. **يدويًا**، يتم إنشاء نقطة طريق عبر [قائمة السياق](../map/map-context-menu#-audiovideo-note-android)، على النحو التالي:
+٢. **يدويًا**، يتم إنشاء نقطة طريق عبر [قائمة السياق](../map/map-context-menu#-audiovideo-note)، على النحو التالي:
 
-    - حدد ملاحظة الصوت/الفيديو/الصورة المطلوبة على الخريطة.
+    - حدد الملاحظة الصوتية/المرئية/الصورة المطلوبة على الخريطة.
     - انقر على **إجراءات**، ثم انقر على **إضافة مسار**.
     - حدد المسار الذي تنوي إضافة نقطة طريق إليه.
     - يفتح مربع حوار *<Translate android="true" ids="quick_action_add_gpx"/>*، ويسمح لك بتعيين بعض الخصائص، مثل اسم نقطة الطريق، وأيقونة، ولون، وغيرها. بمجرد الانتهاء، انقر على **حفظ**.
@@ -365,49 +382,52 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكنك تحديد أسماء لكل نقطة طريق تم إنشاؤها يدويًا.
 :::
 
+
 ### عرض نقاط الطريق {#view-waypoints}
 
-- تتوفر نقطة الطريق للعرض كنقطة طريق على الخريطة وفي قائمة [نقاط طريق مسار محدد](../map/tracks/track-context-menu.md#points--waypoints). حذف نقطة الطريق لا يحذف ملاحظة الصوت/الفيديو/الصورة ذات الصلة.
+- تتوفر نقطة الطريق للعرض كنقطة طريق على الخريطة وفي قائمة [نقاط الطريق لمسار معين](../map/tracks/track-context-menu.md#points--waypoints). لا يؤدي حذف نقطة الطريق إلى حذف الملاحظة الصوتية/المرئية/الصورة المقابلة.
 
-- تتوفر ملاحظة الصوت أو الفيديو أو الصورة للعرض على الخريطة وفي قائمة ملاحظات الصوت/الفيديو في [أماكني](../plugins/audio-video-notes#view-in-my-places). حذف ملاحظة الصوت أو الفيديو أو الصورة لا يحذف نقطة الطريق ذات الصلة.
+- تتوفر ملاحظة صوتية أو فيديو أو صورة للعرض على الخريطة وفي قائمة الملاحظات الصوتية/المرئية في [أماكني](../plugins/audio-video-notes#view-in-my-places). لا يؤدي حذف الملاحظة الصوتية أو الفيديو أو الصورة إلى حذف نقطة الطريق المقابلة.
 
-- على الخريطة، قد تكون نقطة الطريق وملاحظة الصوت أو الفيديو أو الصورة مرئية أو غير مرئية على الخريطة. يتم تحديد ذلك من خلال الطبقة التي تم تبديلها حاليًا للملف الشخصي.
+- على الخريطة، قد تكون نقطة الطريق والملاحظة الصوتية أو الفيديو أو الصورة مرئية أو غير مرئية على الخريطة. يتم تحديد ذلك من خلال الطبقة التي يتم تبديلها حاليًا للملف الشخصي.
 
-- عندما لا يتم تبديل طبقة المسارات ولا طبقة التسجيل، يمكن عرض كل من نقاط الطريق والملاحظات بالنقر عليها في أماكني. في هذه الحالة، تعرض الخريطة مواقع الملاحظة التي تم النقر عليها، أو على التوالي، مواقع جميع نقاط طريق المسار الذي تم النقر عليه.
+- عندما لا يتم تبديل طبقة المسارات ولا طبقة التسجيل، يمكن عرض كل من نقاط الطريق والملاحظات عن طريق النقر عليها في أماكني. في هذه الحالة، تعرض الخريطة مواقع الملاحظة التي تم النقر عليها، أو على التوالي، مواقع جميع نقاط الطريق للمسار الذي تم النقر عليه.
 
-| مرئي | الطبقة التي تم تبديلها |
+| مرئي | الطبقة المفعلة |
 | --- | --- |
-| نقاط طريق فقط | طبقة المسارات |
-| نقاط طريق وملاحظات | طبقة المسارات وطبقة التسجيل |
-| ملاحظات فقط | طبقة التسجيل |
+| نقاط الطريق فقط | طبقة المسارات |
+| نقاط الطريق والملاحظات | طبقة المسارات والتسجيل |
+| الملاحظات فقط | طبقة التسجيل |
 | لا شيء | لا طبقة المسارات ولا طبقة التسجيل. |
 
-### ملف GPX مع نقاط طريق {#gpx-file-with-waypoints}
+
+### ملف GPX مع نقاط الطريق {#gpx-file-with-waypoints}
 
 ![نقطة طريق في ملف GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
-إذا كنت تعرض ملف GPX للمسار المضاف بنقطة طريق من ملاحظة صوتية/فيديو/صورية، فستكون نقطة الطريق كما في المثال أدناه، تحتوي على الإحداثيات، والطابع الزمني، واسم الملاحظة ذات الصلة، والرابط القصير.
+إذا كنت تعرض ملف GPX للمسار المضاف مع نقطة طريق من ملاحظة صوتية/مرئية/صورة، فستكون نقطة الطريق كما في المثال أدناه، مع الإحداثيات، والطابع الزمني، واسم الملاحظة المقابلة، والرابط القصير.
 
-## متنوع {#miscellaneous}
+
+## متفرقات {#miscellaneous}
 
 ### تفاصيل اسم الملف {#file-name-details}
 
-تنشئ إضافة <Translate android="true" ids="audionotes_plugin_name"/> ملفات صوت/فيديو/صور بالتنسيق التالي:
+تنشئ إضافة <Translate android="true" ids="audionotes_plugin_name"/> ملفات صوت/فيديو/صورة بالتنسيق التالي:
 
     `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
-حيث تحدد `SHORTLINK_LOCATION` خط العرض وخط الطول للموقع الذي يرتبط به الملف. يتم ترميز `SHORTLINK_LOCATION`، وفقًا لمواصفات [الرابط القصير](https://wiki.openstreetmap.org/wiki/Shortlink).
+حيث يحدد `SHORTLINK_LOCATION` خط العرض وخط الطول للموقع الذي يرتبط به الملف. يتم ترميز `SHORTLINK_LOCATION`، وفقًا لمواصفات [الرابط القصير](https://wiki.openstreetmap.org/wiki/Shortlink).
+
 
 ### التصدير إلى JOSM {#export-to-josm}
 
-![ملاحظات الصوت والفيديو في JOSM](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![الملاحظات الصوتية والمرئية في Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
 
-لعرض كل شيء لاحقًا، يمكنك تصدير المسار مع جميع ملفات الوسائط وعرضها في [محرر JOSM](https://josm.openstreetmap.de/). لاحظ أنه يجب وضع ملفات الوسائط في المجلد المناسب. يمكنك معرفة أي مجلد بالنقر على الفيديو. سيظهر إشعار يوضح عدم توفر الملف، ضع الملف الصحيح في المجلد المحدد.
+لعرض كل شيء لاحقًا، يمكنك تصدير المسار مع جميع ملفات الوسائط وعرضها في [محرر JOSM](https://josm.openstreetmap.de/). لاحظ أنه يجب وضع ملفات الوسائط في المجلد المناسب. يمكنك معرفة أي واحد بالنقر على الفيديو. سيظهر إشعار يوضح أنه لا يوجد ملف متاح، ضع الملف الصحيح في المجلد المحدد.
+
 
 ## مقالات ذات صلة {#related-articles}
 
 - [التفاعل مع الخريطة](../../user/map/interact-with-map.md)
 - [الإعدادات العامة](../../user/personal/global-settings.md)
-- [خرائط المتجهات (أنماط الخرائط)](../../user/map/vector-maps.md)
-
-> *آخر تحديث: مايو 2023*
+- [الخرائط المتجهية (أنماط الخرائط)](../../user/map/vector-maps.md)

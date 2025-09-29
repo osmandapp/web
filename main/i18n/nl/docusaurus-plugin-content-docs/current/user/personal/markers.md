@@ -1,7 +1,7 @@
 ---
-source-hash: fac05f4f13c5bd5f7843d69f6e63dcd842a9f677768496e4a171674d0bf80050
+source-hash: 4a76625c2bb84dea3475d937395b2dcabeed514e2bbf68736a1f6e8649b066f9
 sidebar_position: 8
-title: Markeringen
+title:  Markeringen
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Markeringen zijn speciale punten die op de kaart zijn gemarkeerd als vlaggen en die snel kunnen worden aangemaakt met een enkele tik, zonder dat een naam en andere informatie hoeven te worden opgegeven, in tegenstelling tot [Favoriete punten](./favorites.md). Markeringen bieden ook extra functionaliteit met [widgets](../widgets/markers.md), **pijlen** (<Translate android="true" ids="show_arrows_on_the_map"/>) en **afstandsaanduiding** (<Translate android="true" ids="show_direction"/>).
+Markeringen zijn speciale punten die op de kaart worden gemarkeerd als vlaggen en die snel met een enkele tik kunnen worden gemaakt zonder een naam en andere informatie op te geven, in tegenstelling tot [Favoriete punten](./favorites.md). Markeringen bieden ook extra functionaliteit met [widgets](../widgets/markers.md), **pijlen** (<Translate android="true" ids="show_arrows_on_the_map"/>) en **afstandsindicatie** (<Translate android="true" ids="show_direction"/>).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,9 +43,9 @@ Markeringen zijn speciale punten die op de kaart zijn gemarkeerd als vlaggen en 
 
 <TabItem value="android" label="Android">
 
-Tik kort of lang op de kaart en selecteer de gewenste actie uit het [kaartcontextmenu](../map/map-context-menu.md#add--edit-marker).
+Tik kort of lang op de kaart en selecteer de gewenste actie in het [kaartcontextmenu](../map/map-context-menu.md#add--edit-marker).
 
-![Markering toevoegen bewerken actie Android](@site/static/img/map/add_marker_android.png) ![Markering passeren actie Android](@site/static/img/map/action_pass_marker_android.png)
+![Actie markering toevoegen/bewerken Android](@site/static/img/map/add_marker_android.png) ![Actie markering passeren Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
@@ -53,23 +53,23 @@ Tik kort of lang op de kaart en selecteer de gewenste actie uit het [kaartcontex
 
 Tik kort of lang op de kaart en kies de gewenste actie in het [kaartcontextmenu](../map/map-context-menu.md#add--edit-marker).
 
-![Markering toevoegen bewerken actie iOS](@site/static/img/map/add_marker_ios.png) ![Markering herstellen actie Android](@site/static/img/map/action_restore_marker_android.png)
+![Actie markering toevoegen/bewerken iOS](@site/static/img/map/add_marker_ios.png) ![Actie markering herstellen Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Het is mogelijk om een punt of object te markeren om het plannen van de navigatie te vergemakkelijken. U hoeft alleen maar op het *vlag*-pictogram (*Android*) of *pijl*-pictogram (*iOS*) in het menu te tikken om de richting en afstand tot het geselecteerde punt vanaf uw huidige locatie (of het middelpunt van de kaart / het initiële aanraakpunt van de kaart wanneer Locatie is uitgeschakeld) weer te geven.
+Het is mogelijk om een punt of een object te markeren om het plannen van de navigatie te vergemakkelijken. U hoeft alleen maar op het *vlag*- (*Android*) of *pijl*- (*iOS*) icoon in het menu te tikken om de richting en afstand tot het geselecteerde punt vanaf uw huidige locatie (of het middelpunt van de kaart / het beginpunt van de aanraking van de kaart wanneer Locatie is uitgeschakeld) weer te geven.
 
 ***Acties***:
 
 - **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Plaatst een nieuwe markering op het geselecteerde punt.
-- **Gepasseerd markeren** (*Android*) / Verwijderen (iOS). Deactiveert de markering en plaatst deze in de Geschiedenis.
-- **Actief maken** (*Android*). Verplaatst de markering naar de bovenste positie (op het bovenste paneel).
-- **Markering herstellen** (*Android*). Verplaatst de markering van Geschiedenis naar de actieve lijst.
+- **Mark passed** (*Android*) / Verwijderen (iOS). Deactiveert de markering en plaatst deze in de Geschiedenis.
+- **Make active** (*Android*). Verplaatst de markering naar de bovenste positie (op het bovenste paneel).
+- **Restore marker** (*Android*). Verplaatst de markering van Geschiedenis naar de actieve lijst.
 
 :::note
-U kunt een markering niet direct verwijderen; u moet deze eerst deactiveren (als gepasseerd markeren), zodat deze naar [Geschiedenis](#history) wordt verplaatst en u deze vervolgens permanent uit de geschiedenis kunt verwijderen. Zodra een markering is gedeactiveerd, wordt deze van de kaart en de reislijst verwijderd.
+U kunt een markering niet onmiddellijk verwijderen, u moet deze eerst deactiveren (markeren als gepasseerd), zodat deze wordt verplaatst naar [Geschiedenis](#history) en dan kunt u deze permanent uit de geschiedenis verwijderen. Zodra de markering is gedeactiveerd, wordt deze van de kaart en de routebeschrijvingslijst verwijderd.
 :::
 
 
@@ -89,9 +89,9 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 -->
 
 
-### Reislijst {#itinerary-list}
+### Routebeschrijvingslijst {#itinerary-list}
 
-De reislijst is een geordende lijst van markeringen, waarbij de bovenste 1e markering wordt gebruikt in widgets voor navigatie. Lees hier meer over in het artikel [Navigeren met markeringen](../navigation/setup/markers-navigation.md#itinerary-list).
+De routebeschrijvingslijst is een geordende lijst van markeringen waarbij de bovenste, eerste markering wordt gebruikt in widgets voor navigatie. Lees er meer over in het artikel [Navigeren op basis van markeringen](../navigation/setup/markers-navigation.md#itinerary-list).
 
 ### Markeringsgroepen {#marker-groups}
 
@@ -99,7 +99,7 @@ De reislijst is een geordende lijst van markeringen, waarbij de bovenste 1e mark
 
 ![Kaartmarkeringen Groepen Android](@site/static/img/personal/markers/map_markers_groups_add_android.png)
 
-Markeringen kunnen als een hele groep worden toegevoegd en verwijderd uit een Favorietengroep of een GPX-bestand met waypoints. Dit maakt het erg handig om te gebruiken in een speciale navigatiemodus - [Navigeren met markeringen](../navigation/setup/markers-navigation.md#add-group-of-favorite).
+Markeringen kunnen als een hele groep worden toegevoegd en verwijderd uit een Favorietengroep of een GPX-bestand met waypoints. Dat maakt het erg handig om te gebruiken in een speciale navigatiemodus - [Navigeren op basis van markeringen](../navigation/setup/markers-navigation.md#add-group-of-favorite).
 
 ### Geschiedenis {#history}
 
@@ -144,15 +144,15 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_o
 
 </Tabs>
 
-Het menu *Weergave op kaart* is een algemene instelling voor het weergeven van markeringen en aanvullende aanwijzers ernaartoe.
-In de iOS-versie van OsmAnd is *Weergave op kaart* ook een instelling voor het weergeven van widgets. Er zijn ook aanvullende instellingen voor het [configureren van de widgets met markeringen](../widgets/markers.md#configure-marker-widgets).
+Het menu *Weergave op kaart* is een algemene instelling voor het weergeven van markeringen en extra aanwijzingen daarvoor.
+In de iOS-versie van OsmAnd is *Weergave op kaart* ook een instelling voor het weergeven van widgets. Er zijn ook extra instellingen voor het [configureren van de widgets met markeringen](../widgets/markers.md#configure-marker-widgets).
 
-- **Actieve markeringen**. Toont informatie over de eerste of twee markeringen in de lijst met kaartmarkeringen.
-- **Afstandsaanduiding** *(voor iOS)*. Hiermee kunt u kiezen of widgets wel of niet worden weergegeven en hoe ze worden weergegeven: boven de kaart (Bovenbalk) of aan de rechterkant van het scherm (Widgets).
-- **Pijlen op de kaart**. Geeft de richting aan naar de gevolgde markering (één of twee) als een pijl op de kaart. Als de markering in het zichtbare deel van de kaart ligt, wordt er geen pijl weergegeven.
-- **Richtinglijn**. Toont de richting, als een stippellijn, van een bepaald punt op de kaart naar de gevolgde markering in een rechte lijn.
-- ***Eén tik*** actief (*voor Android*). Met één tik op de gewenste markering op de kaart, verplaatst deze markering naar de bovenkant van de lijst met actieve kaartmarkeringen zonder het contextmenu te openen.
-- **Gepasseerde markeringen op de kaart houden** *(voor Android)*. Markeringen die zijn toegevoegd als een groep Favorieten of GPX-waypoints die als Gepasseerd zijn gemarkeerd, blijven op de kaart staan. Als de groep niet actief is, verdwijnen de markeringen van de kaart.
+- **Actieve markeringen**. Toont informatie over de eerste één of twee markeringen in de lijst met kaartmarkeringen.
+- **Afstandsindicatie** *(voor iOS)*. Hiermee kunt u kiezen of u widgets wilt weergeven en hoe ze worden weergegeven: boven de kaart (Bovenbalk) of aan de rechterkant van het scherm (Widgets).
+- **Pijlen op de kaart**. Geeft de richting naar de gevolgde markering (één of twee) aan als een pijl op de kaart. Als de markering zich in het zichtbare deel van de kaart bevindt, wordt er geen pijl weergegeven.
+- **Richtingslijn**. Toont de richting, als een stippellijn, van een bepaald punt op de kaart naar de gevolgde markering in een rechte lijn.
+- ***Eén tik*** actief (*voor Android*). Met een enkele tik op de vereiste markering op de kaart, wordt deze markering naar de bovenkant van de lijst met actieve kaartmarkeringen verplaatst zonder het contextmenu te openen.
+- **Houd gepasseerde markeringen op de kaart** *(voor Android)*. Markeringen die zijn toegevoegd als een groep Favorieten of GPX-waypoints die als Gepasseerd zijn gemarkeerd, blijven op de kaart staan. Als de groep niet actief is, verdwijnen de markeringen van de kaart.
 
 
 ## Route plannen voor markeringen {#plan-route-for-markers}
@@ -161,9 +161,9 @@ In de iOS-versie van OsmAnd is *Weergave op kaart* ook een instelling voor het w
 
 *<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
-![Kaartmarkeringen Route plannen punten Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Kaartmarkeringen Route plannen opties Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+![Kaartmarkeringen Route plannen punten Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Kaartmarkeringen Route plannen Opties Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
-Met de functionaliteit van de tool 'Route plannen' in de lijst met markeringen kunt u *Markeringen* sorteren op *Deur-tot-deur*, ze in omgekeerde volgorde plaatsen of een *Rondreis* maken. Als u op de optie *Navigatie* tikt, worden *Markeringen* gebruikt als [tussenbestemmingen](../navigation/setup/route-navigation.md#intermediate-destinations).
+Met de functionaliteit van de tool Route plannen in de lijst Markeringen kunt u *Markeringen* sorteren *van deur tot deur*, ze in omgekeerde volgorde plaatsen of een *Rondrit* maken. Als u op een *Navigatie*-optie tikt, worden *Markeringen* gebruikt als [tussenliggende bestemmingen](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Acties {#actions}
@@ -172,17 +172,15 @@ Met de functionaliteit van de tool 'Route plannen' in de lijst met markeringen k
 
 ![Kaartmarkeringen Meer Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
-- **<Translate android="true" ids="sort_by"/>**. Markeringen kunnen in de lijst worden gesorteerd op naam, nabijheid, toevoegtijd.
+- **<Translate android="true" ids="sort_by"/>**. Markeringen kunnen in de lijst worden gesorteerd op naam, nabijheid, tijd van toevoeging.
 - **<Translate android="true" ids="appearance_on_the_map"/>** of **<Translate ios="true" ids="shared_string_appearance"/>**. [Instellingen voor kaartmarkeringen](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Voegt markeringen toe via [coördinateninvoer](../plan-route/coordinate-input.md).
-- **<Translate android="true" ids="plan_route"/>**. Bouwt een route [voor navigatie](../navigation/setup/markers-navigation.md) met behulp van gekozen markeringen.
+- **<Translate android="true" ids="plan_route"/>**. Bouwt een route [voor navigatie](../navigation/setup/markers-navigation.md) met behulp van de gekozen markeringen.
 - **<Translate android="true" ids="marker_save_as_track"/>**. Slaat actieve markeringen op in een GPX-bestand.
 - **<Translate android="true" ids="move_all_to_history"/>**. Deactiveert alle markeringen en verplaatst ze naar [Geschiedenis](#history).
 
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Navigatie met markeringen](../navigation/setup/markers-navigation.md)
+- [Navigeren op basis van markeringen](../navigation/setup/markers-navigation.md)
 - [Markeringswidgets](../widgets/markers.md)
-
-> *Laatst bijgewerkt: augustus 2024*

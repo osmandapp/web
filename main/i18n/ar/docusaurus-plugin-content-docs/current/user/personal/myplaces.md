@@ -1,5 +1,5 @@
 ---
-source-hash: 566a34a786c324ed799dd4550956785a23a8faec4a926d7a4a840c0d7ef44518
+source-hash: b7a4c8980154722bb0d724edafe0ab0e8ba822222cf5fbe7b64f264c2fb4b1a8
 sidebar_position: 6
 title:  أماكني
 ---
@@ -18,23 +18,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-**أماكني** هي المحور المركزي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم وضع علامة عليها كمهمة أو تمت زيارتها بشكل متكرر. تتيح لك علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits) الخاصة بك، مما يسهل المساهمة في تحسينات وتحديثات الخرائط. يتيح المكون الإضافي [ملاحظات الصوت/الفيديو](#audiovideo-notes) والأدوات المصغرة لمستخدمي Android إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم.
+**أماكني** هو المركز الرئيسي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم تمييزها على أنها مهمة أو يتم زيارتها بشكل متكرر. تتيح لك علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits) الخاصة بك، مما يسهل المساهمة في تحسينات الخريطة وتحديثاتها. يتيح ملحق [الملاحظات الصوتية/المرئية](#audiovideo-notes) والأدوات المصغرة لمستخدمي أندرويد إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu"/> ← أماكني*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu"/> ← أماكني*
 
-![My Places android](@site/static/img/personal/my_places_android.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
+![أماكني أندرويد](@site/static/img/personal/my_places_android.png) ![قائمة أماكني أندرويد](@site/static/img/personal/my_places_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu"/> ← أماكني*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu"/> ← أماكني*
 
-![My Places ios](@site/static/img/personal/my_places_ios.png) ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
+![أماكني iOS](@site/static/img/personal/my_places_ios.png) ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios.png)
 
 </TabItem>
 
@@ -42,59 +42,61 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [***استيراد وتصدير البيانات***](../personal/import-export.md):
 
-    يمكن نقل جميع البيانات المخزنة في قائمة *أماكني* باستخدام تنسيق `.osf` خاص من خلال التطبيقات على جهازك. تبسط هذه العملية حفظ ونقل البيانات بين الأجهزة وتتيح لك مشاركتها مع مستخدمي OsmAnd الآخرين.
+    يمكن نقل جميع البيانات المخزنة في قائمة *أماكني* باستخدام تنسيق خاص `.osf` من خلال التطبيقات الموجودة على جهازك. تبسط هذه العملية حفظ البيانات ونقلها بين الأجهزة وتسمح لك بمشاركتها مع مستخدمي OsmAnd الآخرين.
 
-    **انتقل إلى** قسم *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* وحدد ما إذا كنت تريد تصدير البيانات أو استيرادها. إذا اخترت *تصدير*، فستحتاج إلى توسيع *مجموعة أماكني* وتحديد البيانات المطلوبة.
+    **اذهب إلى** قسم *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* وحدد ما إذا كنت تريد تصدير البيانات أو استيرادها. إذا اخترت *تصدير*، فستحتاج إلى توسيع مجموعة *أماكني* والتحقق من البيانات المطلوبة.
 
 - [***الخرائط والموارد***](../personal/maps-resources.md):
 
-    يوفر عنصر *الخرائط والموارد* في *القائمة الرئيسية* لتطبيق OsmAnd الوصول إلى إدارة البيانات من قسم *أماكني*. تعرض علامة التبويب [*المحلية*](../personal/maps-resources.md#local) مقدار المساحة التي تشغلها جميع بيانات OsmAnd الموجودة على جهازك، وقسم *أماكني* على وجه الخصوص. يمكنك استخدامها للحصول على معلومات مفصلة حول بياناتك والوصول إلى إدارتها. يمكن أن يحتوي القسم فقط على العناصر التي تم تنزيل البيانات لها.
+    يوفر عنصر *القائمة الرئيسية* *الخرائط والموارد* في تطبيق OsmAnd إمكانية الوصول إلى إدارة البيانات من قسم *أماكني*. تعرض لك علامة التبويب [*محلي*](../personal/maps-resources.md#local-menu) مقدار المساحة التي تشغلها جميع بيانات OsmAnd الموجودة على جهازك، وقسم *أماكني* على وجه الخصوص. يمكنك استخدامه للحصول على معلومات مفصلة حول بياناتك والوصول إلى إدارتها. يمكن أن يحتوي القسم فقط على العناصر التي تم تنزيل بياناتها.
 
-    **انتقل إلى** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. تحقق من بياناتك وقم بإدارتها.
+    **اذهب إلى** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. تحقق من بياناتك وأدرها.
+
 
 ## المفضلة {#favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![قائمة المفضلة أندرويد](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تتيح لك **المفضلة** وضع إشارة مرجعية على المواقع المهمة أو التي تتم زيارتها بشكل متكرر. يتم تنظيم هذه النقاط المفضلة في مجلدات ويمكن تخصيصها بألوان وأشكال وأيقونات مختلفة. يمكنك التنقل بسرعة إلى أي مكان مفضل من خلال قائمة **أماكني** دون الحاجة إلى البحث عنه بشكل متكرر.
+تتيح لك **المفضلة** وضع إشارة مرجعية على المواقع المهمة أو التي تتم زيارتها بشكل متكرر. يتم تنظيم هذه النقاط المفضلة في مجلدات ويمكن تخصيصها بألوان وأشكال وأيقونات مختلفة. يمكنك الانتقال بسرعة إلى أي مكان مفضل من خلال قائمة **أماكني** دون الحاجة إلى البحث عنه بشكل متكرر.
 
-1. ***أزرار الإجراءات***. تتيح لك *أزرار الإجراءات* في أسفل شاشة أماكني إدارة قائمة المجلدات التي تحتوي على مفضلاتك:
 
-    - **استيراد** (زر *إضافة*) — يتيح لك استيراد ملفات *favorite.gpx* من تخزين جهازك.
+١. ***أزرار الإجراءات***. تتيح لك *أزرار الإجراءات* الموجودة أسفل شاشة أماكني إدارة قائمة المجلدات التي تحتوي على مفضلاتك:
 
-    - **تصدير** — احفظ نقاطك المفضلة كملف *favorites.gpx* للاستخدام الخارجي أو النسخ الاحتياطي.
+    - **استيراد** (زر *إضافة*) — يسمح لك باستيراد ملفات *favorite.gpx* من مساحة تخزين جهازك.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Android فقط*) — يمكنك إضافة أي نقطة مفضلة أو القائمة الكاملة للنقاط المفضلة في مجلد إلى [قائمة علامات الخريطة](../personal/markers.md).
+    - **تصدير** — احفظ نقاطك المفضلة كملف *favorites.gpx* للاستخدام الخارجي أو للنسخ الاحتياطي.
 
-    - **حذف** (*على iOS، يوجد هذا الخيار في قائمة التعديل*) — يحذف النقاط المفضلة واحدة تلو الأخرى أو مجلدات المفضلة المحددة وجميع النقاط الموجودة فيها.
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*أندرويد فقط*) — يمكنك إضافة أي نقطة مفضلة أو القائمة الكاملة للنقاط المفضلة في مجلد إلى [قائمة علامات الخريطة](../personal/markers.md).
 
-2. ***قائمة النقاط الثلاث*** (*Android*) و***الضغط المطول*** (*iOS*). استخدم قائمة *النقاط الثلاث* بجوار كل مجلد أو *الضغط المطول* على المجلد لإدارة مجموعات المفضلة:
+    - **حذف** (*في iOS، يوجد هذا الخيار في قائمة التحرير*) — يحذف النقاط المفضلة واحدة تلو الأخرى أو المجلدات المفضلة المحددة وجميع النقاط الموجودة فيها.
+
+٢. ***قائمة النقاط الثلاث*** (*أندرويد*) و***الضغط المطول*** (*iOS*). استخدم قائمة *النقاط الثلاث* بجوار كل مجلد أو *اضغط مطولاً* على المجلد لإدارة مجموعات المفضلة:
 
     <Tabs groupId="operating-systems" queryString="current-os">
 
-    <TabItem value="android" label="أندرويد">
+    <TabItem value="android" label="Android">
 
-    ![Three-dot menu](@site/static/img/personal/favorites_three-dot_menu.png)
+    ![قائمة النقاط الثلاث](@site/static/img/personal/favorites_three-dot_menu.png)
 
     </TabItem>
 
     <TabItem value="ios" label="iOS">
 
-    ![Favorites menu iOS](@site/static/img/personal/favorites_long-tap_ios.png)
+    ![قائمة المفضلة iOS](@site/static/img/personal/favorites_long-tap_ios.png)
 
     </TabItem>
 
@@ -104,137 +106,143 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **<Translate android="true" ids="change_default_appearance"/>** — خصص كيفية ظهور النقاط المفضلة في المجلد على الخريطة عن طريق تغيير أيقوناتها أو ألوانها أو تسمياتها.
 
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** أو **إخفاء على الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء النقاط المفضلة من المجلد على الخريطة.
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** أو **إخفاء من الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء النقاط المفضلة من المجلد على الخريطة.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** أو **إزالة من علامات الخريطة** (*Android فقط*) — أضف جميع النقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو أزلها حسب الحاجة للرجوع إليها بسهولة.
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** أو **إزالة من علامات الخريطة** (*أندرويد فقط*) — أضف جميع النقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو قم بإزالتها حسب الحاجة لسهولة الرجوع إليها.
 
     - **<Translate android="true" ids="shared_string_share"/>** — شارك النقاط المفضلة في المجلد عن طريق تصديرها كملف *Favorites.gpx*، مما يسهل نقل بياناتك أو نسخها احتياطيًا.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — احذف مجلد المفضلة المحدد وجميع النقاط الموجودة فيه بشكل دائم.
 
-للحصول على تعليمات أكثر تفصيلاً، ارجع إلى مقال [المفضلة](../personal/favorites.md).
+للحصول على إرشادات أكثر تفصيلاً، راجع مقالة [المفضلة](../personal/favorites.md).
+
 
 ## المسارات {#tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
+اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر **المسارات** أدوات قوية لتسجيل وإنشاء وإدارة المسارات داخل OsmAnd. يمكن استخدامها [للتنقل](../navigation/setup/gpx-navigation.md)، [تسجيل الرحلات](../plugins/trip-recording.md)، أو [دمج](../personal/tracks/manage-tracks.md#import) ملفات GPX الخارجية.
+توفر **المسارات** أدوات قوية لتسجيل وإنشاء وإدارة المسارات داخل OsmAnd. يمكن استخدامها في [الملاحة](../navigation/setup/gpx-navigation.md)، أو [تسجيل الرحلة](../plugins/trip-recording.md)، أو [دمج](../personal/tracks/manage-tracks.md#import) ملفات GPX الخارجية.
 
-- **علامة تبويب المسارات** — يتم عرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد *أماكني* في علامة تبويب *المسارات*. يتم تنظيمها حسب المجلد أو عرضها في قائمة أسفلها.
+- **تبويب المسارات** — يتم عرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد *أماكني* في تبويب *المسارات*. يتم تنظيمها حسب المجلد أو عرضها في قائمة أسفلها.
 
-- **إنشاء مسار** — ابدأ التسجيل باستخدام **علامة تبويب المسارات** أو [المكون الإضافي لتسجيل الرحلات](../plugins/trip-recording.md).
+- **إنشاء مسار** — ابدأ التسجيل باستخدام **تبويب المسارات** أو [ملحق تسجيل الرحلة](../plugins/trip-recording.md).
 
-- **عرض وتعديل** — الوصول إلى قائمة المسارات من خلال *أماكني* وإدارتها باستخدام *قائمة النقاط الثلاث* [للمجلدات](../personal/tracks/manage-tracks.md#track-folder) أو قائمة [المسار الفردي](../personal/tracks/manage-tracks.md#single-track-menu).
+- **عرض وتحرير** — يمكنك الوصول إلى قائمة المسارات من خلال *أماكني* وإدارتها باستخدام قائمة *النقاط الثلاث* لـ [المجلدات](../personal/tracks/manage-tracks.md#track-folder) أو قائمة [المسار الفردي](../personal/tracks/manage-tracks.md#search).
 
-- **إدارة** — استخدم أدوات [التصفية](../personal/tracks/smart-folder.md#filter) و[المجلد الذكي](../personal/tracks/smart-folder.md#smart-folder) لتنظيم المسارات بناءً على معلمات محددة.
+- **إدارة** — استخدم أدوات [التصفية](../personal/tracks/smart-folder.md#available-filters) و [المجلد الذكي](../personal/tracks/smart-folder.md#smart-folder) لتنظيم المسارات بناءً على معلمات محددة.
 
-- **المظهر والتحليل** — [تخصيص](../map/tracks/appearance.md) النمط المرئي للمسارات و[تحليلها](../map/tracks/index.md#analyze-track-on-map) باستخدام أداة OsmAnd [تخطيط مسار](../plan-route/create-route.md).
+- **المظهر والتحليل** — [خصص](../map/tracks/appearance.md) النمط المرئي للمسارات و [حللها](../map/tracks/index.md#analyze-track-on-map) باستخدام أداة [تخطيط مسار](../plan-route/create-route.md) من OsmAnd.
 
-للحصول على إرشادات شاملة، راجع مقال [إدارة المسارات](../personal/tracks/manage-tracks.md).
+للحصول على إرشادات شاملة، راجع مقالة [إدارة المسارات](../personal/tracks/manage-tracks.md).
+
 
 ## تعديلات OpenStreetMap {#openstreetmap-edits}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
 </Tabs>
 
-تتيح لك ميزة **تعديلات OpenStreetMap** في OsmAnd المساهمة في مجتمع رسم الخرائط العالمي عن طريق إضافة أو تعديل أو التعليق على بيانات الخريطة.
+تتيح لك ميزة **تعديلات OpenStreetMap** في OsmAnd المساهمة في مجتمع رسم الخرائط العالمي عن طريق إضافة بيانات الخريطة أو تعديلها أو التعليق عليها.
 
-1. ***أزرار الإجراءات***. يمكنك استخدام *أزرار الإجراءات* على شاشة أماكني لإدارة قائمة ملاحظاتك:
+١. ***أزرار الإجراءات***. يمكنك استخدام *أزرار الإجراءات* على شاشة أماكني لإدارة قائمة ملاحظاتك:
 
-    ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
+    ![مشاركة](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
 
-    - **تحميل الملفات إلى OSM** — أرسل ملاحظاتك وبياناتك إلى OpenStreetMap للمساهمة في المجتمع.
+    - **رفع الملفات إلى OSM** — أرسل ملاحظاتك وبياناتك إلى OpenStreetMap للمساهمة في المجتمع.
 
-    - **تصدير** (*Android فقط*) — احفظ ملاحظاتك ونقاط الاهتمام كملفات للاستخدام الخارجي أو النسخ الاحتياطي، مع خيارات التصدير كملاحظات OSM أو نقاط اهتمام أو جميع البيانات مجتمعة.
+    - **تصدير** (*أندرويد فقط*) — احفظ ملاحظاتك ونقاط الاهتمام كملفات للاستخدام الخارجي أو للنسخ الاحتياطي، مع خيارات للتصدير كملاحظات OSM أو نقاط اهتمام أو جميع البيانات مجتمعة.
 
-    - **حذف** — إزالة العناصر المحددة من قائمتك بشكل دائم.
+    - **حذف** — قم بإزالة العناصر المحددة من قائمتك بشكل دائم.
 
-2. ***قائمة النقاط الثلاث***. يمكنك إدارة نقاط اهتمام أو ملاحظات محددة باستخدام *قائمة النقاط الثلاث* بجوار كل ملاحظة:
 
-    ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
+٢. ***قائمة النقاط الثلاث***. يمكنك إدارة نقاط اهتمام أو ملاحظات محددة باستخدام قائمة *النقاط الثلاث* بجوار كل ملاحظة:
 
-    - **تحميل التعديل إلى OSM** — أرسل تغييراتك أو تعديلاتك إلى OpenStreetMap ليراها الآخرون.
+    ![قائمة النقاط الثلاث](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
-    - **إظهار على الخريطة** — عرض الموقع المحدد لنقطة الاهتمام أو الملاحظة على الخريطة.
+    - **رفع التعديل إلى OSM** — أرسل تغييراتك أو تعديلاتك إلى OpenStreetMap ليراها الآخرون.
 
-    - **تعديل تغيير/ملاحظة OSM** — قم بإجراء المزيد من التعديلات على نقطة الاهتمام أو الملاحظة التي تمت إضافتها بالفعل إلى OpenStreetMap.
+    - **عرض على الخريطة** — اعرض الموقع المحدد لنقطة الاهتمام أو الملاحظة على الخريطة.
 
-    - **حذف** — إزالة نقطة الاهتمام أو الملاحظة المحددة من قائمتك.
+    - **تعديل تغيير/ملاحظة OSM** — قم بإجراء تعديلات إضافية على نقطة الاهتمام أو الملاحظة التي تمت إضافتها بالفعل إلى OpenStreetMap.
 
-راجع [المكون الإضافي لتحرير OSM](../plugins/osm-editing.md) للحصول على تعليمات خطوة بخطوة.
+    - **حذف** — قم بإزالة نقطة الاهتمام أو الملاحظة المحددة من قائمتك.
 
-## ملاحظات الصوت/الفيديو {#audiovideo-notes}
+راجع [ملحق تحرير OSM](../plugins/osm-editing.md) للحصول على إرشادات خطوة بخطوة.
+
+
+## الملاحظات الصوتية/المرئية {#audiovideo-notes}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)
+![ملحق الصوت والفيديو قائمة أماكني ثلاثة إجراءات](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)
 
-يتيح لك **المكون الإضافي لملاحظات الصوت/الفيديو** إنشاء ملاحظات وسائط متعددة مرتبطة بمواقع خرائط محددة. يتم تخزين هذه الملاحظات في **أماكني** ضمن **علامة تبويب ملاحظات الصوت/الفيديو**.
+يتيح لك **ملحق الملاحظات الصوتية/المرئية** إنشاء ملاحظات وسائط متعددة مرتبطة بمواقع محددة على الخريطة. يتم تخزين هذه الملاحظات في **أماكني** ضمن **تبويب الملاحظات الصوتية/المرئية**.
 
-1. ***أزرار الإجراءات***. يمكنك استخدام *أزرار الإجراءات* في أسفل شاشة أماكني لإدارة قائمة ملاحظاتك:
+١. ***أزرار الإجراءات***. يمكنك استخدام *أزرار الإجراءات* الموجودة أسفل شاشة أماكني لإدارة قائمة ملاحظاتك:
 
-    ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
+    ![مشاركة](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
-    - **<Translate android="true" ids="shared_string_sort"/>** — يفتح تحديدًا لطرق الفرز، *حسب النوع* أو *حسب التاريخ*، وعند التحديد، يتم فرز القائمة وفقًا لذلك.
+    - **<Translate android="true" ids="shared_string_sort"/>** — يفتح مجموعة مختارة من طرق الفرز، *حسب النوع* أو *حسب التاريخ*، وعند تحديده، يقوم بفرز القائمة وفقًا لذلك.
 
-    - **<Translate android="true" ids="shared_string_share"/>** — يعرض قائمة تحقق بجميع الملاحظات، بما في ذلك تلك المضافة إلى ملفات GPX كنقاط طريق. أولاً، يتم تحديد الملاحظات المطلوبة، ثم يقترح رمز *المشاركة* في الزاوية اليمنى العليا من الشاشة خيارات المشاركة المتاحة، وأخيرًا، تصبح هذه الملاحظات متاحة وفقًا للخيار المحدد.
+    - **<Translate android="true" ids="shared_string_share"/>** — يعرض قائمة تحقق لجميع الملاحظات، بما في ذلك تلك المضافة إلى ملفات GPX كنقاط طريق. أولاً، يتم تحديد الملاحظات المطلوبة، ثم يقترح رمز *المشاركة* في الزاوية اليمنى العليا من الشاشة خيارات المشاركة المتاحة، وأخيرًا، تصبح هذه الملاحظات متاحة وفقًا للخيار المحدد.
 
-    - **مشاركة مع نقاط طريق GPX** — يمكنك مشاركة الملاحظات المحددة كنقاط طريق في قائمة *أماكني* عن طريق إضافة [بيانات GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) إليها باستخدام زر **مشاركة** في أسفل شاشة علامة تبويب *ملاحظات الصوت/الفيديو*.
+    - **المشاركة مع نقاط طريق GPX** — يمكنك مشاركة الملاحظات المحددة كنقاط طريق في قائمة *أماكني* عن طريق إضافة [بيانات GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) إليها باستخدام زر **المشاركة** أسفل شاشة تبويب *الملاحظات الصوتية/المرئية*.
 
-    - **<Translate android="true" ids="shared_string_delete"/>** — يعرض قائمة تحقق بملاحظات الصوت والصور والفيديو فقط. أولاً، تحقق من الملاحظات غير الضرورية، ثم انقر فوق رمز *الحذف* في الزاوية اليمنى العليا من الشاشة، وبعد التأكيد، سيتم حذف الملاحظات المحددة بشكل دائم.
+    - **<Translate android="true" ids="shared_string_delete"/>** — يعرض قائمة تحقق للملاحظات الصوتية والصور والفيديو فقط. أولاً، حدد الملاحظات غير الضرورية، ثم انقر على أيقونة *الحذف* في الزاوية اليمنى العليا من الشاشة، بعد التأكيد، سيتم حذف الملاحظات المحددة بشكل دائم.
 
-2. ***قائمة النقاط الثلاث***. يمكنك إدارة ملاحظات صوت أو فيديو أو صور محددة باستخدام *قائمة النقاط الثلاث* بجوار كل ملاحظة:
 
-    ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+٢. ***قائمة النقاط الثلاث***. يمكنك إدارة ملاحظات صوتية أو فيديو أو صور محددة باستخدام قائمة *النقاط الثلاث* بجوار كل ملاحظة:
 
-    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — يعرض أو يستمع إلى ملاحظة الصوت أو الفيديو أو الصورة المحددة مباشرة.
+    ![قائمة النقاط الثلاث](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+
+    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — يعرض أو يستمع إلى الملاحظة الصوتية أو الفيديو أو الصورة المحددة مباشرة.
 
     - **<Translate android="true" ids="shared_string_share"/>** — يشارك الملاحظة مع الآخرين من خلال تطبيقات أو منصات مختلفة.
 
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** — يعرض الموقع المرتبط و[قائمة السياق](../plugins/audio-video-notes#actions-in-map-context-menu) للملاحظة على الخريطة.
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** — يعرض الموقع ذي الصلة و [قائمة السياق](../plugins/audio-video-notes#show-on-the-map) للملاحظة على الخريطة.
 
-    - **<Translate android="true" ids="shared_string_rename"/>** — تغيير اسم الملاحظة إلى شيء أكثر وصفًا أو صلة.
+    - **<Translate android="true" ids="shared_string_rename"/>** — قم بتغيير اسم الملاحظة إلى شيء أكثر وصفًا أو صلة.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — يتم حذف الملاحظات المحددة بشكل دائم من مجموعتك.
 
-لمزيد من المعلومات، قم بزيارة صفحة [المكون الإضافي لملاحظات الصوت/الفيديو](../plugins/audio-video-notes.md).
+لمزيد من المعلومات، قم بزيارة صفحة [ملحق الملاحظات الصوتية/المرئية](../plugins/audio-video-notes.md).
+
 
 <!--
 ### Share with GPX Waypoints {#share-with-gpx-waypoints}
@@ -260,6 +268,4 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 
 - [إدارة المسارات](../personal/tracks/manage-tracks.md#import--export-track)
 - [سجل البحث](../search/search-history.md#export-and-share)
-- [أنظمة لوحة الألوان](../personal/color-palette-schemes.md)
-
-> *آخر تحديث: مارس 2025*
+- [مخططات لوحة الألوان](../personal/color-palette-schemes.md)

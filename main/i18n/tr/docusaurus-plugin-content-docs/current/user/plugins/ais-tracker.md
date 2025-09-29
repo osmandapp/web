@@ -1,5 +1,5 @@
 ---
-source-hash: eafb2c57934c3fbb3a094db82d063658f9ebd6dc575f16b51dfce4826f7df701
+source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
 sidebar_position: 2
 title: AIS Gemi Takipçisi
 ---
@@ -14,13 +14,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
 
 <InfoAndroidOnly />
 
 ## Genel Bakış {#overview}
 
-**AIS Gemi Takipçisi** eklentisi, yakındaki gemilerin [Otomatik Tanımlama Sistemi (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) konumlarını ve ayrıntılı bilgilerini görüntüler. AIS verileri, harici bir AIS alıcısından ağ bağlantısı aracılığıyla alınır.
+**AIS Gemi Takipçisi** eklentisi, yakındaki gemiler hakkında [Otomatik Tanımlama Sistemi (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) konumlarını ve ayrıntılı bilgileri görüntüler. AIS verileri, harici bir AIS alıcısından bir ağ bağlantısı aracılığıyla alınır.
 
 :::caution YASAL UYARI
 **Bu eklenti bir hobi projesidir ve güvenilirlik veya doğruluk için tasarlanmamıştır. Navigasyon veya can güvenliği için bu yazılıma GÜVENMEYİN.**
@@ -29,10 +28,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
-Çevrimiçi haritaları kullanma yeteneği OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilir. Çevrimiçi haritaları Android'de görüntülemek için aşağıdaki ayarları yapmanız gerekir:
+Çevrimiçi haritaları kullanma yeteneği, OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilir. Android'de Çevrimiçi haritaları görüntülemek için aşağıdaki ayarları yapmanız gerekir:
 
 1. *Ana Menü → Eklentiler → AIS gemi takipçisi* bölümünde **AIS gemi takipçisi** eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
-2. [AIS ayarlarını](../map/raster-maps.md#select-raster-maps) yapılandırın
+2. [AIS ayarlarını](../map/raster-maps.md#select-raster-maps) yapılandırın.
 3. Bir **AIS sunucu bağlantısı** yapılandırın veya **harici bir AIS alıcısı** bağlayın.
 4. Gemilerin OsmAnd haritasında görüntülendiğini kontrol edin.
 
@@ -51,7 +50,7 @@ AIS, *VHF frekanslarında* (161.975 MHz ve 162.025 MHz) çalışır ve görüş 
 
 <TabItem value="android" label="Android">
 
-![AIS gemi takipçisi](@site/static/img/plugins/ais/ais.png)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
 </TabItem>
 
@@ -70,8 +69,8 @@ Doğru şekilde ayarlandığında, gemi konumları haritada görünecektir. Teme
 
 <TabItem value="android" label="Android">
 
-![AIS gemi takipçisi](@site/static/img/plugins/ais/ais_menu.png)  
-![AIS gemi takipçisi](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
 </TabItem>
 
@@ -88,7 +87,7 @@ AIS gemileri üç tür veri iletir:
     - **Çağrı İşareti**  
     - **Gemi Tipi** (*örn. Kargo, Yolcu, Balıkçı Gemisi*)  
     - **Gemi Boyutları** (*Uzunluk ve Genişlik*)  
-    - **AIS Anten Konumu** (*Gemi gövdesine göre*)  
+    - **AIS Anten Konumu** (*Geminin gövdesine göre*)  
 
 2. Dinamik Bilgiler (gerçek zamanlı veriler).  
     *Hız ve manevraya bağlı olarak farklı aralıklarla gönderilir.*
@@ -96,23 +95,23 @@ AIS gemileri üç tür veri iletir:
     - **Gemi Koordinatları (Enlem ve Boylam)**  
     - **Yere Göre Rota (COG)**  
     - **Yere Göre Hız (SOG)**  
-    - **Pruva** (*Pruvanın işaret ettiği yön*)
+    - **Başlık** (*Pruvanın işaret ettiği yön*)
     - **Gemi Durumu** (*Seyirde, Demirlemiş, Manevra Yapıyor vb.*)  
     - **Dönüş Hızı (ROT)** (*Rota değişim hızı*)  
     - **Son Güncelleme Zamanı**  
 
-3. Seyir Bilgileri (mürettebat tarafından manuel olarak ayarlanır).  
+3. Sefer Bilgileri (mürettebat tarafından manuel olarak ayarlanır).  
     *Her **6 dakikada bir** gönderilir, mürettebat tarafından manuel olarak ayarlanır*
 
     - **Varış Limanı**
     - **Tahmini Varış Zamanı (ETA)**  
-    - **Draft** (*Geminin su yüzeyinin altındaki su derinliği*)  
-    - **Kargo Tipi** (*iletilmişse*)
+    - **Su Çekimi** (*Geminin su altındaki derinliği*)  
+    - **Kargo Tipi** (*iletilirse*)
     - **Gemideki Kişi Sayısı** (*isteğe bağlı*)  
 
 ### AIS Sembolleri ve Lejantları {#ais-symbols-and-legends}
 
-[AIS Sembol Sunumu İçin Kılavuzlar](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[AIS Sembol Sunumu İçin Yönergeler](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Semboller             | Açıklama   |
 |---------------------|---------------|
@@ -123,9 +122,9 @@ AIS gemileri üç tür veri iletir:
 | *Siyah üçgen*    | Balıkçı gemisi |
 | *Sarı üçgen*   | Römorkör       |
 | *Kırmızı üçgen*      | Tanker        |
-| *Beyaz üçgen*   | Askeri gemi |
-| *Yanıp Sönen Kırmızı üçgen* | Tehlikede olan gemi |
-| *Turuncu üçgen*   | Özel tekne (örn. pilot, buz kırıcı) |
+| *Beyaz üçgen*    | Askeri gemi |
+| *Turuncu üçgen*   | Özel tekne (örn. kılavuz, buz kırıcı) |
+| *Yanıp sönen Kırmızı üçgen* | Tehlikede olan gemi |
 | | |
 | **Seyir Yardımcıları Sembolleri** |    |
 | *Yeşil Şamandıra*              | Sancak işareti (kanalın sağ tarafı) |
@@ -139,7 +138,7 @@ AIS gemileri üç tür veri iletir:
 | *Dolu üçgen*  | Hareketli gemi |
 | *İçi boş üçgen* | Demirlemiş veya Bağlı |
 | *Dönen ok*  | Manevra yapıyor |
-| *Kırmızı Yanıp Sönen simge* | Acil durum uyarısı |
+| *Kırmızı Yanıp sönen simge* | Acil durum uyarısı |
 | *Turuncu Ünlem işareti* | AIS güvenlik mesajı |
 | | |
 | **Rota ve Hız Göstergeleri** |    |
@@ -156,16 +155,16 @@ AIS gemileri üç tür veri iletir:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS ayarları](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
 
 </TabItem>
 
 </Tabs>
 
-*AIS gemi takipçisi* eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek üzere çeşitli ayarlar sunar. Bu ayarlar OsmAnd'daki tüm [profiller](../personal/profiles.md) için geçerlidir.
+*AIS gemi takipçisi* eklentisi, engelli kullanıcılar için navigasyonu ve etkileşimi kişiselleştirmek üzere çeşitli ayarlar sunar. Bu ayarlar OsmAnd'daki tüm [profiller](../personal/profiles.md) için uygulanır.
 
 | Ayar | Açıklama | Örnek |
-|---|---|---|
+|---------|---------------|----------|
 | | | |
 | **IP adresi ayarları** | | |
 | Protokol | AIS verilerini almak için protokol seçin | `UDP/TCP` |
@@ -174,11 +173,11 @@ AIS gemileri üç tür veri iletir:
 | UDP bağlantı noktası | OsmAnd AIS alımı için UDP bağlantı noktasını tanımlayın | `10110` |
 | | | |
 | **AIS Sinyal alım zaman aşımı** | | |
-| Kayıp AIS nesneleri için zaman aşımı | Belirli bir süre sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
-| Gemi görünürlüğü için zaman aşımı | Sinyal alınmadığında gemi simgeleri durum değiştirecektir | `2 - 15 dk / Devre dışı` |
+| Kayıp AIS nesneleri için zaman aşımı | Belirli bir süre boyunca sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
+| Gemi görünürlüğü için zaman aşımı | Sinyal alınmadığında gemi simgeleri durum değiştirecektir | `2 - 15 dk / Devre Dışı` |
 | | | |
 | **En Yakın Yaklaşma Noktası (CPA) Uyarıları** | | |
-| CPA Uyarı Süresi | CPA'ya kalan süre bu limitin altındaysa gemi kırmızı renkle işaretlenir | `1 - 60 dk / Devre dışı` |
+| CPA Uyarı Süresi | CPA'ya kadar olan süre bu limitin altındaysa gemi kırmızı renkle işaretlenir | `1 - 60 dk / Devre Dışı` |
 | CPA Uyarı Mesafesi | CPA'ya olan mesafe bu limitin altındaysa gemi kırmızı renkle işaretlenir | `0.02 - 2 deniz mili` |
 
 
@@ -202,8 +201,6 @@ Simüle edilmiş verilere göre gemi simgeleri görünecektir. Ayrıntılı bilg
 ## İlgili Makaleler {#related-articles}
 
 - [Harita ile Etkileşim](../../user/map/interact-with-map.md)
-- [Genel Ayarlar](../../user/personal/global-settings.md)
+- [Küresel Ayarlar](../../user/personal/global-settings.md)
 - [Vektör Haritalar (Harita Stilleri)](../../user/map/vector-maps.md)
 - [Denizcilik Eklentisi](../../user/plugins/nautical-charts.md)
-
-> *Son güncelleme: Mart 2025*

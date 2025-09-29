@@ -1,7 +1,7 @@
 ---
-source-hash: bb881e5f5e3ae59000cd2ff1cbc2577904cfc5eb14f2e1c143e6366ecb6952f1
+source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
 sidebar_position: 3
-title: Carpeta inteligente (Filtro)
+title: Carpeta Inteligente (Filtro)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,30 +16,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Descripción general {#overview}
+## Resumen {#overview}
 
-La función **Carpeta inteligente** proporciona herramientas potentes para organizar y administrar tus rutas. Una de las características clave es la capacidad de filtrar archivos en la *pestaña Rutas* del menú *Mis lugares* según criterios como la duración, la longitud o la velocidad.
+La función **Carpeta Inteligente** proporciona potentes herramientas para organizar y gestionar sus pistas. Una de las características clave es la capacidad de filtrar archivos en la pestaña *Pistas* del menú *Mis Lugares* basándose en criterios como la duración, la longitud o la velocidad.
 
-Esta función te permite encontrar rápidamente rutas específicas que coincidan con tus requisitos. Los resultados filtrados se pueden guardar como una **Carpeta inteligente**, lo que ofrece un acceso conveniente a colecciones de rutas actualizadas dinámicamente.
+Esta función le permite encontrar rápidamente pistas específicas que coincidan con sus requisitos. Los resultados filtrados se pueden guardar como una **Carpeta Inteligente**, ofreciendo un acceso conveniente a colecciones de pistas actualizadas dinámicamente.
 
 
-## Filtro de búsqueda {#search-filter}
+## Filtro de Búsqueda {#search-filter}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ve a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> pestaña*
+Ir a: *pestaña <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Mis lugares rutas](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
+![Pistas de Mis lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ve a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> pestaña*
+Ir a: *pestaña <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mis lugares rutas](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
+![Pistas de Mis lugares](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
 </TabItem>
 
@@ -47,172 +47,170 @@ Ve a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sha
 
 ***Cómo aplicar un filtro:***
 
-- Toca el icono *Buscar*, luego toca *Filtrar* en la fila [*Ordenar por*](./manage-tracks.md#sort-by).
+- Pulse el icono *Buscar* y, a continuación, pulse *Filtro* en la fila [*Ordenar por*](./manage-tracks.md#sort-by).
 
-- **Elige la configuración de filtro requerida** para refinar tu búsqueda de rutas.
+- **Elija los ajustes de filtro necesarios** para refinar su búsqueda de pistas.
 
-- Toca **Mostrar** en la esquina inferior derecha para ver los resultados filtrados. El número de rutas coincidentes aparece entre paréntesis.
+- Pulse **Mostrar** en la esquina inferior derecha para ver los resultados filtrados. El número de pistas coincidentes aparece entre paréntesis.
 
-- **Para borrar** todos los filtros activos, toca **Restablecer todo**.
+- **Para borrar** todos los filtros activos, pulse **Restablecer todo**.
 
-- **Para guardar** el conjunto de filtros actual como una nueva **Carpeta inteligente**, toca el icono de guardar en la esquina superior derecha de la pantalla.
+- **Para guardar** el conjunto de filtros actual como una nueva **Carpeta Inteligente**, pulse el icono de guardar en la esquina superior derecha de la pantalla.
 
 
-### Filtros disponibles {#available-filters}
+### Filtros Disponibles {#available-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mis lugares rutas](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
+![Pistas de Mis lugares](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mis lugares rutas](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
+![Pistas de Mis lugares](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Nombre** — Busca rutas por título. Introduce un nombre completo o parcial para mostrar las rutas coincidentes.
-- **Carpeta** — Selecciona una o más carpetas para filtrar las rutas por su ubicación de almacenamiento.
-- **Duración** — Filtra las rutas por su duración registrada, estableciendo un rango en horas y minutos.
-- **Tiempo en movimiento** — Especifica el rango de tiempo transcurrido en movimiento durante la grabación.
-- **Longitud** — Establece un rango específico en kilómetros o millas para encontrar rutas de una longitud determinada.
-- **Velocidad media** — Filtra las rutas por [velocidad media](../../widgets/info-widgets.md#average-speed).
+- **Nombre** — Buscar pistas por título. Introduzca un nombre completo o parcial para mostrar las pistas coincidentes.
+- **Carpeta** — Seleccione una o más carpetas para filtrar las pistas por su ubicación de almacenamiento.
+- **Duración** — Filtrar pistas por su duración grabada, estableciendo un rango en horas y minutos.
+- **Tiempo en movimiento** — Especifique el rango de tiempo en movimiento durante la grabación.
+- **Longitud** — Establezca un rango específico en kilómetros o millas para encontrar pistas de una longitud particular.
+- **Velocidad media** — Filtrar pistas por [velocidad media](../../widgets/info-widgets.md#average-speed).
 - **Grupo de datos del sensor.**
-    Aplica filtros basados en datos de sensores externos, incluyendo:
+    Aplicar filtros basados en datos de sensores externos, incluyendo:
     - Velocidad del sensor, media.
-    - Velocidad del sensor, máxima.
+    - Velocidad del sensor, máx.
     - Frecuencia cardíaca, media.
-    - Frecuencia cardíaca, máxima.
+    - Frecuencia cardíaca, máx.
     - Cadencia de bicicleta, media.
-    - Cadencia de bicicleta, máxima.
+    - Cadencia de bicicleta, máx.
     - Potencia de bicicleta, media.
-    - Potencia de bicicleta, máxima.
+    - Potencia de bicicleta, máx.
     - Temperatura, media.
-    - Temperatura, máxima.
-- **Velocidad máxima** — Selecciona rutas con rangos de velocidad máxima específicos.
-- **Subida** y **Bajada** — Filtra las rutas según los cambios de elevación positivos o negativos.
-- **Altitud media** y **Altitud máxima** — Encuentra rutas con datos de altitud media o máxima específicos.
-- **Fecha de creación** — Filtra las rutas creadas dentro de un rango de fechas determinado.
-- **Ciudades cercanas** — Muestra las rutas que pasan cerca de las ciudades o localidades seleccionadas.
-- **Tipo de actividad** — Filtra las rutas según el tipo de [actividades](../../map/tracks/track-context-menu.md#track-information-activity) registradas en el archivo GPX (por ejemplo, ciclismo, senderismo).
-- **País** — Filtra las rutas por el país o la región donde se grabaron.
-- **Color** y **Ancho** — Selecciona rutas por el color o el ancho de línea asignados.
-- **Otros** — Filtros adicionales para características especiales:
-    - *Visible en el mapa*. Muestra solo las rutas que se muestran en el mapa.
-    - *Con puntos de interés*. Muestra las rutas que contienen puntos de interés específicos.
+    - Temperatura, máx.
+- **Velocidad máxima** — Seleccionar pistas con rangos de velocidad máxima específicos.
+- **Ascenso** y **Descenso** — Filtrar pistas basadas en cambios de elevación positivos o negativos.
+- **Altitud media** y **Altitud máxima** — Encontrar pistas con datos de altitud media o máxima específicos.
+- **Fecha de creación** — Filtrar pistas creadas dentro de un rango de fechas particular.
+- **Ciudades más cercanas** — Mostrar pistas que pasan cerca de ciudades o localidades seleccionadas.
+- **Tipo de actividad** — Filtrar pistas basadas en el tipo de [actividades](../../map/tracks/track-context-menu.md#ttrack-activity-type) registradas en el archivo GPX (p. ej., ciclismo, senderismo).
+- **País** — Filtrar pistas por el país o región donde fueron grabadas.
+- **Color** y **Ancho** — Seleccionar pistas por color o ancho de línea asignado.
+- **Otro** — Filtros adicionales para características especiales:
+    - *Visible en el mapa*. Muestra solo las pistas que se muestran en el mapa.
+    - *Con Waypoints*. Muestra pistas que contienen waypoints específicos.
 
 
-## Carpeta inteligente {#smart-folder}
+## Carpeta Inteligente {#smart-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Función de clasificación de rutas de Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![Función de ordenación de pistas de Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mis lugares rutas](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+![Pistas de Mis lugares](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Una **Carpeta inteligente** es una colección dinámica de rutas que se actualiza automáticamente según criterios de filtro específicos. Ofrece herramientas avanzadas para organizar, buscar y administrar rutas de manera eficiente.
+Una **Carpeta Inteligente** es una colección dinámica de pistas que se actualiza automáticamente en función de criterios de filtro específicos. Ofrece herramientas avanzadas para organizar, buscar y gestionar pistas de forma eficiente.
 
-***Beneficios de las Carpetas inteligentes:***
+***Beneficios de las Carpetas Inteligentes:***
 
 1. **Organización automatizada.**
-    Incluye automáticamente las rutas que coinciden con reglas predefinidas, como la fecha de creación o el rango de duración.
+    Incluye automáticamente las pistas que coinciden con reglas predefinidas, como la fecha de creación o el rango de duración.
 2. **Filtrado y búsqueda.**
-    Permite búsquedas rápidas dentro de las rutas utilizando filtros avanzados y palabras clave.
+    Permite búsquedas rápidas dentro de las pistas utilizando filtros avanzados y palabras clave.
 3. **Actualización dinámica.**
-    Actualiza automáticamente el contenido para mostrar las últimas rutas que coinciden con los criterios.
+    Actualiza automáticamente el contenido para mostrar las últimas pistas que coinciden con los criterios.
 4. **Personalizar reglas.**
-    Crea colecciones de rutas personalizadas definiendo reglas de filtro personalizadas.
+    Cree colecciones de pistas personalizadas definiendo reglas de filtro personalizadas.
 
 
-### Cómo crear una carpeta inteligente {#how-to-create-smart-folder}
+### Cómo Crear una Carpeta Inteligente {#how-to-create-smart-folder}
 
-Para crear una **Carpeta inteligente**, sigue estos pasos:
+Para crear una **Carpeta Inteligente**, siga estos pasos:
 
-1. Toca el icono del ***menú de tres puntos*** en la pestaña *Rutas* del menú *Mis lugares*.
+1. Pulse el icono del ***menú de tres puntos*** en la pestaña *Pistas* del menú *Mis Lugares*.
 
-2. Selecciona **Añadir carpeta inteligente** en el menú desplegable.
+2. Seleccione **Añadir carpeta inteligente** en el menú desplegable.
 
-3. Configura los ajustes:
-   - **Nombra la carpeta**. Introduce un nombre para identificar la carpeta.
-   - Especifica los **parámetros del filtro de rutas**. Aplica los filtros requeridos utilizando las opciones de [Filtro](#available-filters) disponibles.
+3. Configure los ajustes:
+   - **Nombre la carpeta**. Introduzca un nombre para identificar la carpeta.
+   - Especifique los **parámetros de filtro de pista**. Aplique los filtros necesarios utilizando las opciones de [Filtro](#available-filters) disponibles.
 
-4. **Guarda** los ajustes.
-    - Toca **Mostrar** para previsualizar las rutas.
-    - Selecciona el botón **Guardar** para finalizar la *Carpeta inteligente*.
+4. **Guarde** los ajustes.
+    - Pulse **Mostrar** para previsualizar las pistas.
+    - Seleccione el botón **Guardar** para finalizar la *Carpeta Inteligente*.
 
-La **Carpeta inteligente** recién creada actualizará automáticamente su contenido con las rutas que coincidan con los criterios seleccionados.
+La **Carpeta Inteligente** recién creada actualizará automáticamente su contenido con las pistas que coincidan con los criterios seleccionados.
 
 
-### Gestión de carpetas inteligentes {#managing-smart-folders}
+### Gestión de Carpetas Inteligentes {#managing-smart-folders}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mis lugares Gestión de carpetas inteligentes Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Mis lugares Gestión de carpetas inteligentes Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mis lugares Gestión de carpetas inteligentes iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Gestión de Carpetas Inteligentes en Mis lugares iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Mis lugares Gestión de carpetas inteligentes iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Gestión de Carpetas Inteligentes en Mis lugares iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La **Carpeta inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Rutas. Para gestionar la carpeta, toca el *menú de tres puntos* junto a ella (*Android*) y *mantén pulsado* (*iOS*) o abre la carpeta y utiliza el icono en la esquina superior derecha.
+La **Carpeta Inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Pistas. Para gestionar la carpeta, pulse el *menú de tres puntos* junto a ella (*Android*) y haga una *pulsación larga* (*iOS*) o abra la carpeta y utilice el icono de la esquina superior derecha.
 
 ***Acciones disponibles:***
 
-- **Detalles** — Ver la lista completa de rutas contenidas en la carpeta.
+- **Detalles** — Ver la lista completa de pistas contenidas en la carpeta.
 
-- **Mostrar todas las rutas en el mapa** (*Solo Android*) — Muestra todas las rutas de la carpeta en el mapa.
-    *NOTA: Cargar muchas rutas puede afectar el rendimiento.*
+- **Mostrar todas las pistas en el mapa** (*solo Android*) — Muestra todas las pistas de la carpeta en el mapa.
+    *NOTA: La carga de muchas pistas puede afectar al rendimiento.*
 
 - **Editar nombre** (*Android*) / **Renombrar** (*iOS*) — Cambia el nombre de la carpeta para facilitar su identificación.
 
-- **Actualizar** — Actualiza manualmente el contenido de la carpeta para asegurarte de que incluye las últimas rutas.
+- **Actualizar** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
 
-- **Cambiar apariencia predeterminada** (*Android*) — Cambia la apariencia de visualización de todas las rutas de la carpeta.
+- **Cambiar apariencia predeterminada** (*Android*) — Cambia la apariencia de visualización de todas las pistas de la carpeta.
 
-- **Editar filtro** — Modifica la configuración del filtro de rutas para la Carpeta inteligente actual. Consulta [Filtro de búsqueda](#search-filter) para obtener más detalles.
+- **Editar filtro** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
 
-- **Exportar** — Exporta todas las rutas de la Carpeta inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Serás redirigido a *Menú → Ajustes → Pestaña Acciones*.
+- **Exportar** — Exporta todas las pistas de la Carpeta Inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Será redirigido a *Menú → Ajustes → pestaña Acciones*.
 
-- **Eliminar carpeta** — Elimina la Carpeta inteligente sin eliminar sus rutas.
-    *ADVERTENCIA: Esta acción es irreversible y solicitará un mensaje de confirmación.*
+- **Eliminar carpeta** — Elimina la Carpeta Inteligente sin eliminar sus pistas.
+    *ADVERTENCIA: Esta acción es irreversible y le pedirá un mensaje de confirmación.*
 
-- **Mover** (*iOS*) — Te permite mover la carpeta a otra carpeta existente o crear una nueva.
+- **Mover** (*iOS*) — Le permite mover la carpeta a otra carpeta existente o crear una nueva.
 
-- **Seleccionar** — Utiliza el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de rutas dentro de la carpeta.
+- **Seleccionar** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
 
 
-## Artículos relacionados {#related-articles}
+## Artículos Relacionados {#related-articles}
 
-- [Mostrar ruta en el mapa](../../map/tracks/index.md)
+- [Mostrar pista en el mapa](../../map/tracks/index.md)
 - [Analizar en el mapa](../../map/tracks/index.md#analyze-track-on-map)
-- [Menú contextual de ruta](../../map/tracks/track-context-menu.md)
-- [Navegación por ruta](../../navigation/setup/gpx-navigation.md)
-- [Grabación de viajes](../../plugins/trip-recording.md)
-
-> *Última actualización: marzo de 2025*
+- [Menú contextual de la pista](../../map/tracks/track-context-menu.md)
+- [Navegación por pista](../../navigation/setup/gpx-navigation.md)
+- [Grabación de viaje](../../plugins/trip-recording.md)

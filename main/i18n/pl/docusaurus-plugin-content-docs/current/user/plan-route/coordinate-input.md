@@ -1,7 +1,7 @@
 ---
-source-hash: 263596e04f0705ae1c8c57f5afa60aa2cbe3498370962ed69729ec73d60d14f6
+source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
 sidebar_position: 3
-title: Wprowadzanie współrzędnych
+title:  Wprowadzanie współrzędnych
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,44 +13,42 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
 <InfoAndroidOnly />
 
 ## Przegląd {#overview}
 
-*Wprowadzanie współrzędnych* to proste i łatwe w użyciu narzędzie do tworzenia punktów trasy poprzez określenie ich położenia geograficznego. Funkcja ta może być przydatna do nawigacji do określonych miejsc, które znasz tylko po ich współrzędnych: dodane punkty mogą być [zapisane](#save-as-track) jako ślad GPX i używane później do [nawigacji GPX](../navigation/setup/gpx-navigation.md) lub [nawigacji po znacznikach](../navigation/setup/markers-navigation.md#add-gpx).
+*Wprowadzanie współrzędnych* to proste i łatwe w użyciu narzędzie do tworzenia punktów trasy poprzez określenie ich położenia geograficznego. Ta funkcja może być przydatna do nawigacji do określonych miejsc, które znasz tylko po ich współrzędnych: dodane punkty można [zapisać](#save-as-track) jako trasę GPX i wykorzystać później do [nawigacji GPX](../navigation/setup/gpx-navigation.md) lub [nawigacji według znaczników](../navigation/setup/markers-navigation.md#overview).
 
 ![Przegląd wprowadzania współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png)
 
 ## Jak używać {#how-to-use}
 
-Możesz tworzyć punkty trasy z menu *[Znaczniki mapy](../personal/markers.md#actions)* lub z [Moje miejsca](../personal/myplaces.md) (patrz zrzuty ekranu). Aby uzyskać dostęp do opcji wprowadzania współrzędnych, wykonaj następujące kroki:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Przycisk Ziemia na dole ekranu*
+Możesz tworzyć punkty trasy z menu *[Znaczniki na mapie](../personal/markers.md#actions)* lub z [Moje miejsca](../personal/myplaces.md) (zobacz zrzuty ekranu). Aby dotrzeć do opcji wprowadzania współrzędnych, postępuj zgodnie z poniższymi ścieżkami:
+  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Przycisk Ziemi na dole ekranu*
   - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Wprowadzanie współrzędnych - jak znaleźć](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Wprowadzanie współrzędnych - jak znaleźć](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Jak znaleźć wprowadzanie współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Jak znaleźć wprowadzanie współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
 
 Po otwarciu ekranu wprowadzania współrzędnych:
 
 - &nbsp;Upewnij się, że używane są prawidłowe [jednostki miary](#coordinates-format). Jeśli nie, zmień format współrzędnych w menu [Opcje](#options).
-- &nbsp;Wprowadź współrzędne punktu, używając [szablonu](#add-a-point). Po naciśnięciu przycisku *[Dodaj](#add-a-point)*, Twój punkt zostanie dodany do *[listy punktów](#points-list)*. W razie potrzeby możesz wprowadzić dodatkowe punkty.
-- &nbsp;Zapisz swój punkt(y) jako *[Ślad](../personal/tracks/manage-tracks.md)*, używając *[menu Opcje](#options)* lub &#8592; (przycisk *Wstecz*).
+- &nbsp;Wprowadź współrzędne punktu za pomocą [szablonu](#add-a-point). Po naciśnięciu przycisku *[Dodaj](#add-a-point)*, punkt zostanie dodany do *[listy punktów](#points-list)*. W razie potrzeby możesz wprowadzić dodatkowe punkty.
+- &nbsp;Zapisz swój punkt (lub punkty) jako *[Trasę](../personal/tracks/manage-tracks.md)* za pomocą *[menu Opcje](#options)* lub przycisku &#8592; *(Wstecz)*.
 
 :::note
-Wyniki tworzenia punktów za pomocą współrzędnych - *[ślad GPX](../personal/tracks/manage-tracks.md)* z punktami trasy - można znaleźć w menu [Moje miejsca](../personal/myplaces.md) (folder *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*).
+Wyniki tworzenia punktów według współrzędnych - *[trasa GPX](../personal/tracks/manage-tracks.md)* z punktami trasy - można znaleźć w menu [Moje miejsca](../personal/myplaces.md) (*folder <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*).
 :::
 
 ## Opcje {#options}
 
-Korzystając z menu opcji, możesz [zapisać](#save-as-track) dodane punkty jako ślad, aktywować zaawansowane opcje wprowadzania (klawiatura systemowa i dwucyfrowa długość geograficzna) lub zmienić format współrzędnych.
+Korzystając z menu opcji, możesz [zapisać](#save-as-track) dodany punkt (lub punkty) jako trasę, aktywować zaawansowane opcje wprowadzania (klawiatura systemowa i dwucyfrowa długość geograficzna) lub zmienić format współrzędnych.
 
-![Menu opcji wprowadzania współrzędnych Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)
+![Menu Opcje wprowadzania współrzędnych na Androidzie](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)
 
-- &nbsp;*<Translate android="true" ids="coord_input_save_as_track"/>* - otwiera okno dialogowe, które pozwala zapisać utworzony punkt (lub punkty) jako ślad GPX. Możesz zmienić nazwę śladu lub pozostawić domyślną.
-- &nbsp;*<Translate android="true" ids="use_system_keyboard"/>* - pozwala używać klawiatury systemowej Android do wprowadzania współrzędnych.
-- &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - umożliwia wprowadzanie danych długości geograficznej tylko z dwoma cyframi. Może to być przydatne dla długości geograficznych od 0° do 99° (na przykład w Europie).
-- &nbsp;*<Translate android="true" ids="coordinates_format"/>* - pozwala zmienić format współrzędnych do wprowadzania.
+- &nbsp;*<Translate android="true" ids="coord_input_save_as_track"/>* - otwiera okno dialogowe, które pozwala zapisać utworzony punkt (lub punkty) jako trasę GPX. Możesz zmienić nazwę trasy lub pozostawić ją jako domyślną.
+- &nbsp;*<Translate android="true" ids="use_system_keyboard"/>* - pozwala na użycie klawiatury systemowej Androida do wprowadzania współrzędnych.
+- &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - umożliwia wprowadzanie danych o długości geograficznej za pomocą tylko dwóch cyfr. Może to być przydatne dla długości geograficznych od 0° do 99° (na przykład w Europie).
+- &nbsp;*<Translate android="true" ids="coordinates_format"/>* - pozwala na zmianę formatu wprowadzania współrzędnych.
 
 ### Format współrzędnych {#coordinates-format}
 
@@ -66,42 +64,42 @@ Podczas wprowadzania współrzędnych ważne jest, aby upewnić się, że używa
 
 ## Dodaj punkt {#add-a-point}
 
-Po wybraniu prawidłowych jednostek, możesz wprowadzić współrzędne przyszłych punktów trasy.
+Po wybraniu prawidłowych jednostek możesz przystąpić do wprowadzania współrzędnych przyszłych punktów trasy.
 Ekran wprowadzania współrzędnych składa się z następujących elementów:
 
-![Menu wprowadzania współrzędnych Android](@site/static/img/plan-route/coordinates_input/coordinates_input_add_point.png)
+![Menu wprowadzania współrzędnych na Androidzie](@site/static/img/plan-route/coordinates_input/coordinates_input_add_point.png)
 
 - &nbsp;*<Translate android="true" ids="shared_string_options"/>*. Otwiera menu *[Opcje](#options)* (opisane powyżej).
-- &nbsp;*<Translate android="true" ids="navigate_point_latitude"/> / <Translate android="true" ids="navigate_point_longitude"/>*. Służy do wprowadzania danych w wybranym formacie (D - stopnie, M - minuty, S - sekundy). Możesz zmienić format współrzędnych w menu *[<Translate android="true" ids="shared_string_options"/>](#options)*.
-- &nbsp;Przyciski półkuli *<Translate android="true" ids="navigate_point_latitude"/> i <Translate android="true" ids="navigate_point_longitude"/>*. Pozwalają zmieniać strony horyzontu: *Południe - Północ* i *Zachód - Wschód*.
+- &nbsp;*<Translate android="true" ids="navigate_point_latitude"/> / <Translate android="true" ids="navigate_point_longitude"/>*. Służy do wprowadzania danych w wybranym formacie (D - stopnie, M - minuty, S - sekundy). Możesz zmienić format współrzędnych w *[menu <Translate android="true" ids="shared_string_options"/>](#options)*.
+- &nbsp;Przyciski półkul *<Translate android="true" ids="navigate_point_latitude"/> i <Translate android="true" ids="navigate_point_longitude"/>*. Pozwalają na zmianę stron horyzontu: *Południe - Północ* i *Zachód - Wschód*.
 - &nbsp;Pole *Nazwa punktu*. Możesz pozostawić domyślną nazwę lub wymyślić własną.
 - &nbsp;Przycisk *X*. Czyści pole wprowadzania odpowiedniej linii.
 
-### Krótka klawiatura {#short-keyboard}
+### Skrócona klawiatura {#short-keyboard}
 
-Do wprowadzania danych można używać krótkiej klawiatury (domyślnej) lub klawiatury systemowej (Android). Aby zmienić metodę wprowadzania, przejdź do menu *[Opcje](#options)*. Po wprowadzeniu szerokości i długości geograficznej możesz dodać punkt do *[listy](#points-list)* za pomocą przycisku *+Dodaj*.
+Do wprowadzania danych można użyć skróconej klawiatury (domyślnie) lub klawiatury systemowej (Android). Aby zmienić metodę wprowadzania, przejdź do menu *[Opcje](#options)*. Po wprowadzeniu szerokości i długości geograficznej możesz dodać punkt do *[listy](#points-list)* za pomocą przycisku *+Dodaj*.
 
-![Wprowadzanie współrzędnych Dodaj punkt Android](@site/static/img/plan-route/coordinates_input/coordinates_input_keyboard.png)
+![Dodawanie punktu przez wprowadzanie współrzędnych na Androidzie](@site/static/img/plan-route/coordinates_input/coordinates_input_keyboard.png)
 
-- Przycisk *<Translate android="true" ids="shared_string_add"/>* pozwala zapisać punkt w *[Liście punktów](#points-list)*.
+- Przycisk *<Translate android="true" ids="shared_string_add"/>* pozwala zapisać punkt na *[Liście punktów](#points-list)*.
 - Przycisk *<Translate android="true" ids="shared_string_clear"/>* resetuje wszystkie wprowadzone dane.
-- &#9032; pozwala przejść do następnej wartości.
-- *Przyciski klawiatury* pozwalają wprowadzać dane, usuwać je, przechodzić do następnej wartości współrzędnej, ukrywać klawiaturę.
+- &#9032; pozwala przeskoczyć do następnej wartości.
+- *Przyciski klawiatury* pozwalają na wprowadzanie danych, ich usuwanie, przeskakiwanie do następnej wartości współrzędnych, ukrywanie klawiatury.
 
 ### Lista punktów {#points-list}
 
 Pokazuje już utworzone punkty: nazwę, odległość i kierunek do tego punktu.
 
-![Wprowadzanie współrzędnych zapisz punkt Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_1.png) ![Wprowadzanie współrzędnych zapisz punkt Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_2.png)
+![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 1](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_1.png) ![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 2](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_2.png)
 
 Przycisk **⁝** otwiera menu akcji do edycji lub usuwania wybranego punktu.
-Po dotknięciu punktu, możliwe staje się zmienianie jego współrzędnych. Dotknij przycisku *Zastosuj*, aby zapisać zmiany.
+Po dotknięciu punktu staje się możliwe zmienienie jego współrzędnych. Dotknij przycisku *Zastosuj*, aby zapisać zmiany.
 
-## Zapisz jako ślad {#save-as-track}
+## Zapisz jako trasę {#save-as-track}
 
-Aby zapisać punkty jako ślad, dotknij przycisku *Wstecz* ( &#8592; ) lub użyj menu *[Opcje](#options)*.
+Aby zapisać swoje punkty jako trasę, dotknij przycisku *Wstecz* ( &#8592; ) lub użyj menu *[Opcje](#options)*.
 
-![Wprowadzanie współrzędnych zapisz punkt Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Wprowadzanie współrzędnych zapisz punkt Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
 
-W wyskakującym menu możesz wprowadzić własną nazwę śladu lub zapisać go domyślnie. Dotknij <Translate android="true" ids="shared_string_save"/>, aby zapisać dodane punkty jako nowy ślad.
-Swój ślad znajdziesz w [menu Moje miejsca](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).
+W wyskakującym menu możesz wprowadzić własną nazwę trasy lub zapisać ją jako domyślną. Dotknij <Translate android="true" ids="shared_string_save"/>, aby zapisać dodane punkty jako nową trasę.
+Swoją trasę znajdziesz w menu [Moje miejsca](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

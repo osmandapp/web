@@ -1,5 +1,5 @@
 ---
-source-hash: e35d8bb8c463024a373522c4e8114cf2ea9c85d3dca5ea142e9e2507d2330c58
+source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
 sidebar_position: 3
 title: Menu Principal
 ---
@@ -18,7 +18,7 @@ import Translate from '@site/src/components/Translate.js';
 
 O **Menu Principal** é uma lista primária de opções disponíveis para uso no aplicativo. Ele fornece acesso rápido à configuração do perfil, configurações globais, pesquisa, dados pessoais, navegação e outros recursos.
 
-O ícone do [Menu Principal](../widgets/map-buttons.md#main-menu) '&#8801;' está localizado no canto inferior esquerdo da tela do Mapa. No modo de navegação, este botão não é visível por padrão. Ele aparece após um breve toque no mapa.
+O ícone do [Menu Principal](../widgets/map-buttons.md#main-menu) '&#8801;' está localizado no canto inferior esquerdo da tela do Mapa. No modo de navegação, este botão não é visível por padrão. Ele aparece após um toque curto no mapa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -42,7 +42,7 @@ O ícone do [Menu Principal](../widgets/map-buttons.md#main-menu) '&#8801;' est�
 ### Recursos {#features}
 
 - [Marcadores de mapa](../personal/markers.md) é uma ferramenta que permite marcar um local no mapa.
-- [Meus lugares](../personal/myplaces.md) é um menu que inclui por padrão Favoritos e trilhas e, adicionalmente, pode incluir [notas de áudio/vídeo](../plugins/audio-video-notes.md) e [edições OSM](../plugins/osm-editing.md) (se tais plugins estiverem ativados).
+- [Meus locais](../personal/myplaces.md) é um menu que inclui por padrão Favoritos e trilhas e, adicionalmente, pode incluir [Notas A/V](../plugins/audio-video-notes.md) e [Edições OSM](../plugins/osm-editing.md) (se esses plugins estiverem ativados).
 - [Pesquisar](../search/index.md) (Android) é uma ferramenta que permite encontrar o local ou objeto que existe no mapa.
 - O botão [Direções](../widgets/map-buttons.md#directions) permite criar uma rota e iniciar a navegação.
 - [Configurar mapa](../map/configure-map-menu.md) é um menu que permite configurar a visualização do mapa.
@@ -60,11 +60,11 @@ O ícone do [Menu Principal](../widgets/map-buttons.md#main-menu) '&#8801;' est�
 
 ### Perfil Ativo (Android) {#active-profile-android}
 
-O *Menu Principal* fornece acesso rápido para alternar e [personalizar o perfil](../personal/profiles.md). O principal objetivo dos perfis é ter uma aparência e preenchimento de aplicativo diferentes para navegação. No entanto, você pode usá-lo para personalizar a tela e os widgets e alternar perfis para diferentes propósitos de visualização. Todas as [configurações](../personal/profiles.md) são configuradas separadamente para cada perfil.
+O *Menu Principal* fornece acesso rápido para alternar e [personalizar o perfil](../personal/profiles.md). O principal objetivo dos perfis é ter uma aparência e preenchimento de aplicativo diferentes para navegação. Embora você possa usá-lo para personalizar a tela e os widgets e alternar perfis para diferentes propósitos de visualização. Todas as [configurações](../personal/profiles.md) são configuradas separadamente para cada perfil.
 
 ![profile_menu](@site/static/img/menu/profile_menu.png)
 
-Neste menu você pode **alternar** o perfil ativo, **configurar** (alterar configurações) para o perfil ativo ou **gerenciar** todos os perfis do aplicativo.
+Neste menu, você pode **alternar** o perfil ativo, **configurar** (alterar configurações) para o perfil ativo ou **gerenciar** todos os perfis do aplicativo.
 
 
 ### Personalizar (Uso Avançado do Android) {#customize-advanced-use-of-android}
@@ -79,5 +79,3 @@ Neste menu você pode **alternar** o perfil ativo, **configurar** (alterar confi
 
 - Os itens movidos para a seção *Ocultos* não são exibidos no menu da Gaveta, mas todas as opções, configurações ou plugins desta lista continuam funcionando. Você pode restaurar os itens tocando no botão verde à esquerda de seus nomes.  
     ![Itens ocultos do menu da gaveta ](@site/static/img/settings/drawer_menu_hidden_items.png)
-
-> *Última atualização: julho de 2022*
