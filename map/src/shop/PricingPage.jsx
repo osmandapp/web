@@ -1,9 +1,9 @@
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress, Link, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
 import React, { Suspense, useContext, useEffect, useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { purchase } from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
@@ -109,7 +109,9 @@ export default function PricingPage() {
                             ))}
                         </Box>
                     )}
-                    <Typography className={styles.pricingDesc}>{t('web:notice_fastspring_purchase_info')}</Typography>
+                    <Typography className={styles.pricingDesc}>
+                        <Trans i18nKey="web:notice_fastspring_purchase_info" components={{ portalLink: <Link href="https://osmand.onfastspring.com/account" /> }} />
+                    </Typography>
                     <Suspense fallback={<CircularProgress />}>
                         <FeaturesTable />
                     </Suspense>
