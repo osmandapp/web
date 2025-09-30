@@ -392,14 +392,12 @@ export default function NavigationMenu() {
                     </MenuItem>
                 )}
                 <Box sx={{ mx: 3, mt: 2 }}>
-                    {
-                        /*ctx.develFeatures && */ <RouteProfileSettings
-                            key="routesettingsembed"
-                            embed={true}
-                            resetSettings={resetSettings}
-                            setResetSettings={setResetSettings}
-                        />
-                    }
+                    <RouteProfileSettings
+                        key="routesettingsembed"
+                        embed={true}
+                        resetSettings={resetSettings}
+                        setResetSettings={setResetSettings}
+                    />
                     {routeObject.getRoute() &&
                         routeOptions.map((opt) => (
                             <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
