@@ -8,7 +8,7 @@
   </g>
   <g id="wood_unmaintained">
     <defs>
-      <pattern id="wood_unmaintained-pattern" y="35" width="48" height="64" patternUnits="userSpaceOnUse" viewBox="16 0 48 64">
+      <pattern id="wood_unmaintained-pattern-night" y="35" width="48" height="64" patternUnits="userSpaceOnUse" viewBox="16 0 48 64">
         <g stroke="#67bf4c" stroke-linecap="round" fill="none">
           <path d="m60 51v11h2.3"/>
           <path d="m57.3 52.4 2.7-1.3 2.7 1.3"/>
@@ -23,11 +23,11 @@
       </pattern>
     </defs>
     <rect x="55" y="148" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="148" width="275" height="40" fill="url(#wood_unmaintained-pattern)"/>
+    <rect x="55" y="148" width="275" height="40" fill="url(#wood_unmaintained-pattern-night-night)"/>
   </g>
   <g id="broadleaved_wood">
     <defs>
-      <pattern id="broadleaved_wood-pattern" y="-8" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="broadleaved_wood-pattern-night" y="-8" width="64" height="64" patternUnits="userSpaceOnUse">
         <g stroke="#67bf4c" stroke-linecap="round" fill="none">
           <path d="m36 11v11h2.4" stroke-linecap="round" fill="none"/>
           <path d="m36 11c-0.66-0.00038-1.2 0.63-1.2 1.4 0.0004 0.29 0.076 0.56 0.21 0.8-0.046-0.006-0.092-0.009-0.14-0.01-0.73-0.00038-1.3 0.7-1.3 1.6 0 0.4 0.13 0.79 0.37 1.1-0.87 0.0008-1.6 0.83-1.6 1.8-0.0002 1 0.71 1.8 1.6 1.8 0.72-0.001 2.4-0.012 2.5-0.012h0.031c0.043 0.0003 1.8 0.011 2.5 0.012 0.87 0.0003 1.6-0.83 1.6-1.8 0.0002-1-0.7-1.8-1.6-1.8 0.24-0.29 0.37-0.68 0.37-1.1-0.0006-0.86-0.59-1.6-1.3-1.6-0.047 0.001-0.092 0.004-0.14 0.01 0.14-0.23 0.21-0.51 0.21-0.8-0.0006-0.77-0.53-1.4-1.2-1.4-0.63 0.00068-0.45 0.015-0.43 0.016 0.013-0.001 0.2-0.015-0.43-0.016z" stroke-linejoin="round"/>
@@ -44,11 +44,11 @@
       </pattern>
     </defs>
     <rect x="55" y="212" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="212" width="275" height="40" fill="url(#broadleaved_wood-pattern)"/>
+    <rect x="55" y="212" width="275" height="40" fill="url(#broadleaved_wood-pattern-night)"/>
   </g>
     <g id="needleleaved_wood">
     <defs>
-      <pattern id="needleleaved_wood-pattern" y="-8" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="needleleaved_wood-pattern-night" y="-8" width="64" height="64" patternUnits="userSpaceOnUse">
         <g fill="none" stroke="#67bf4c" stroke-linecap="round">
           <path d="m59.5 51.46v11h2.3"/>
           <path d="m56.5 52.46 2.7-1.3 2.7 1.3"/>
@@ -66,40 +66,40 @@
       </pattern>
     </defs>
     <rect x="55" y="276" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="276" width="275" height="40" fill="url(#needleleaved_wood-pattern)"/>
+    <rect x="55" y="276" width="275" height="40" fill="url(#needleleaved_wood-pattern-night)"/>
   </g>
   <g id="mixed_wood">
     <rect x="55" y="340" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="340" width="275" height="40" fill="url(#wood_unmaintained-pattern)"/>
+    <rect x="55" y="340" width="275" height="40" fill="url(#wood_unmaintained-pattern-night)"/>
   </g>
   <g id="forest_maintained_by_human">
     <rect x="55" y="404" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="404" width="275" height="40" fill="url(#wood_unmaintained-pattern)"/>
+    <rect x="55" y="404" width="275" height="40" fill="url(#wood_unmaintained-pattern-night)"/>
   </g>
   <g id="broadleaved_forest">
     <rect x="55" y="468" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="468" width="275" height="40" fill="url(#broadleaved_wood-pattern)"/>
+    <rect x="55" y="468" width="275" height="40" fill="url(#broadleaved_wood-pattern-night)"/>
   </g>
   <g id="needleleaved_forest">
     <rect x="55" y="532" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="532" width="275" height="40" fill="url(#needleleaved_wood-pattern)"/>
+    <rect x="55" y="532" width="275" height="40" fill="url(#needleleaved_wood-pattern-night)"/>
   </g>
   <g id="mixed_forest">
     <rect x="55" y="596" width="275" height="40" fill="#84cf73"/>
-    <rect x="55" y="596" width="275" height="40" fill="url(#wood_unmaintained-pattern)"/>
+    <rect x="55" y="596" width="275" height="40" fill="url(#wood_unmaintained-pattern-night)"/>
   </g>
   <g id="scrub">
     <defs>
-      <pattern id="scrub-pattern" y="-1" width="32" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 32 25">
+      <pattern id="scrub-pattern-night" y="-1" width="32" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 32 25">
         <path d="m11.4 10h-7v0.943h7v-0.943z m-4.86 0-1.03-1.06v-1.98h0.972l0.028 1 1.4 2.03h-1.37z m3.94 0 1.03-1.06v-1.98h-1v1l-1.43 2.03h1.4z m-1.12-5.06h-0.915v5.52h0.915v-5.52z m17.9 14.7h-7.03v0.915h7.03v-0.915z m-5.9-0.98v-2l0.97 0.029v1l1.43 2.03h-1.4l-1-1.06z m5 0 0.03-2-1 0.029v1l-1.43 2.03h1.4l1-1.06z m-2.1-4.02h-0.914v5.55h0.914v-5.55z" fill="#84C780"/>
       </pattern>
     </defs>
     <rect x="55" y="660" width="275" height="40" fill="#ade7a5"/>
-    <rect x="55" y="660" width="275" height="40" fill="url(#scrub-pattern)"/>
+    <rect x="55" y="660" width="275" height="40" fill="url(#scrub-pattern-night)"/>
   </g>
   <g id="orchard">
     <defs>
-      <pattern id="orchard-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <pattern id="orchard-pattern-night" width="20" height="20" patternUnits="userSpaceOnUse">
         <path d="m18 4.7c0.66 0 1.2-0.54 1.2-1.2s-0.54-1.2-1.2-1.2-1.2 0.54-1.2 1.2 0.54 1.2 1.2 1.2zm0 13.3c0.66 0 1.2-0.54 1.2-1.2s-0.54-1.2-1.2-1.2-1.2 0.54-1.2 1.2 0.54 1.2 1.2 1.2zm0-7c0.66 0 1.2-0.54 1.2-1.2s-0.54-1.2-1.2-1.2-1.2 0.54-1.2 1.2 0.54 1.2 1.2 1.2z" fill="#94D37D"/>
         <path d="m9.1 5.3v9.5h2.1" stroke="#94D37D" stroke-linecap="round" fill="none"/>
         <path d="m7.2 6.4c-0.077 0.24 0.086 0.49 0.24 0.69-0.053-5e-3 -0.1-7e-3 -0.16-8e-3 -0.83-3.2e-4 -1.5 0.5-1.5 1.2-7e-5 0.35 0.23 0.93 0.71 1-0.99 6.9e-4 -1.3 1.3-1.3 1.6-2.1e-4 0.88 0.93 1.6 1.7 1.6 0.75-8e-4 2.2-9e-3 2.1-0.01 0 0 0.018-2.1e-5 0.027 0 0.7 0.0017 1.5 9e-3 2.1 0.01 0.75 3e-4 1.7-0.71 1.7-1.6 0-0.23-0.24-1.6-1.2-1.6 0.52-0.19 0.67-0.76 0.67-1.1-7e-4 -0.74-0.68-1.2-1.5-1.2-0.053 8.7e-4 -0.11 3e-3 -0.16 8e-3 0.16-0.2 0.24-0.44 0.24-0.69-7e-4 -0.67-0.91-1.2-1.5-1.2-0.54 5.8e-4 -0.38 0.013-0.37 0.013 0.011-8.6e-4 0.17-0.013-0.37-0.013l5e-5 -3e-5c-0.85 0.1-1.2 0.57-1.4 1.3z" stroke="#94d37d" stroke-linejoin="round" fill="none"/>
@@ -107,46 +107,46 @@
       </pattern>
     </defs>
     <rect x="55" y="724" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="724" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="724" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="plant_nursery">
     <rect x="55" y="788" width="275" height="40" fill="#f7e7d6"/>
-    <rect x="55" y="788" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="788" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="olive_orchard">
     <rect x="55" y="852" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="852" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="852" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="apple_orchard">
     <rect x="55" y="916" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="916" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="916" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="almond_orchard">
     <rect x="55" y="980" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="980" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="980" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="oil_palms_orchard">
     <rect x="55" y="1044" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="1044" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="1044" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="orange_orchard">
     <rect x="55" y="1108" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="1108" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="1108" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="banana_plants">
     <rect x="55" y="1172" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="1172" width="275" height="40" fill="url(#orchard-pattern)"/>
+    <rect x="55" y="1172" width="275" height="40" fill="url(#orchard-pattern-night)"/>
   </g>
   <g id="vineyard">
       <defs>
-      <pattern id="vineyard-pattern" x="5" y="3" width="13" height="14" patternUnits="userSpaceOnUse" >
+      <pattern id="vineyard-pattern-night" x="5" y="3" width="13" height="14" patternUnits="userSpaceOnUse" >
         <path d="m6 6.1c-0.014 0.26-0.13 0.51-0.33 0.69s-0.46 0.27-0.72 0.25c-0.26-0.014-0.51-0.13-0.69-0.33-0.18-0.2-0.27-0.46-0.26-0.72s0.13-0.51 0.33-0.69c0.2-0.18 0.46-0.27 0.72-0.26 0.26 0.014 0.51 0.13 0.69 0.33s0.27 0.46 0.26 0.72" fill="#7ABA85"/>
         <path d="m9 6.1c-0.014 0.26-0.13 0.51-0.33 0.69-0.2 0.18-0.46 0.27-0.72 0.25s-0.51-0.13-0.69-0.33c-0.18-0.2-0.27-0.46-0.26-0.72s0.13-0.51 0.33-0.69 0.46-0.27 0.72-0.26c0.26 0.014 0.51 0.13 0.69 0.33s0.27 0.46 0.26 0.72" fill="#7ABA85"/>
         <path d="m7.5 8.4c-0.014 0.26-0.13 0.51-0.33 0.69-0.2 0.18-0.46 0.27-0.72 0.25-0.26-0.014-0.51-0.13-0.69-0.33-0.18-0.2-0.27-0.46-0.26-0.72 0.014-0.26 0.13-0.51 0.33-0.69 0.2-0.18 0.46-0.27 0.72-0.26 0.26 0.014 0.51 0.13 0.69 0.33 0.18 0.2 0.27 0.46 0.26 0.72" fill="#7ABA85"/>
       </pattern>
     </defs>
     <rect x="55" y="1236" width="275" height="40" fill="#a5e794"/>
-    <rect x="55" y="1236" width="275" height="40" fill="url(#vineyard-pattern)"/>
+    <rect x="55" y="1236" width="275" height="40" fill="url(#vineyard-pattern-night)"/>
   </g>
   <g id="heath">
     <rect x="55" y="1300" width="275" height="40" fill="#D3EBC6"/>
@@ -171,7 +171,7 @@
   </g>
   <g id="logging">
     <defs>
-    <pattern id="logging-pattern" width="32" height="32" patternUnits="userSpaceOnUse">
+    <pattern id="logging-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse">
       <g fill="#B5C79E">
         <path d="m14 25c1.2 0.55 3 0.92 3 0.92l0.48 1.3c-0.043-0.064-2.7-0.061-3.1-0.14-1.6-0.32-2.8 0.22-2.8 0.22s0.65-1.2 0.84-1.3 1.6-0.99 1.6-0.99z"/>
         <path d="m13 21-1.8-0.12s-0.15 2.2-0.22 3.7c-0.055 1.2-1.2 1.9-2.2 2.3 0.15-0.02 0.24 0.2 0.38 0.19 1.9-0.25 2.1-0.46 2.3 0.031 0.15 0.32 0.66 0.59 0.66 0.59 0.99-0.9 1.7-1 2.6-0.31 0.13 0.095 0.24-0.015 0.38 0-0.37-0.53-0.59-1-1.4-1.6-0.3-0.23-0.5-0.64-0.62-1.2-0.12-0.51-0.17-1.1-0.19-1.7-0.022-0.97 0.067-1.6 0.094-1.8v1e-4z"/>
@@ -186,11 +186,11 @@
     </pattern>
   </defs>
     <rect x="55" y="1748" width="275" height="40" fill="#dee3c6"/>
-    <rect x="55" y="1748" width="275" height="40" fill="url(#logging-pattern)"/>
+    <rect x="55" y="1748" width="275" height="40" fill="url(#logging-pattern-night)"/>
   </g>
   <g id="windfall">
     <defs>
-      <pattern id="windfall-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="windfall-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <path d="m5.6 20c0.79 0.28 1.3 0.067 1.3 0.067 2.3 0.17 4.9 0.15 6.8 0.5-1.7 0.42-7.6 0.72-8 0.6-1.2-0.41-1.7 0.23-1.7 0.23s-0.5-0.65-1.3-0.85-1-0.049-0.76-0.9l3.6 0.36z" fill="#C9D2BE"/>
         <path d="m1.9 19c-0.64 0.28-1.1 0.22-1.9 0.088 0.11 0.047 0.084 0.24 0.18 0.28 1.4 0.59 1.6 0.5 1.6 0.93-0.027 0.28 0.22 0.67 0.22 0.67 1-0.22 1.6-0.035 1.9 0.83 0.049 0.12 0.17 0.085 0.26 0.15-0.045-0.51 4e-3 -0.94-0.3-1.7 1.1-1.4 8.8-7.3 9.7-9-3.7 1.4-8.8 6.6-12 7.7z" fill="#92AC73"/>
         <path d="m16 8.2c0.79 0.28 1.3 0.067 1.3 0.067 2.3 0.17 5.9 0.46 7.9 0.81-1.7 0.42-8.7 0.41-9.1 0.29-1.2-0.41-2.3 0.34-2.3 0.34s-0.37-1.1-1.1-1.3-0.8-0.025-0.29-0.52l3.6 0.28z" fill="#C9D2BE"/>
@@ -200,11 +200,11 @@
       </pattern>
     </defs>
     <rect x="55" y="1812" width="275" height="40" fill="#dee3c6"/>
-    <rect x="55" y="1812" width="275" height="40" fill="url(#windfall-pattern)"/>
+    <rect x="55" y="1812" width="275" height="40" fill="url(#windfall-pattern-night)"/>
   </g>
   <g id="dead_wood">
     <defs>
-      <pattern id="dead_wood-pattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <pattern id="dead_wood-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse">
         <path d="m11.7 27.1c0.968 0.433 1.33 0.812 1.33 0.812l3.82 0.898c-0.0341-0.0512-4.52-0.0151-4.84-0.0793-1.27-0.256-2.25 0.176-2.25 0.176s0.514-0.94 0.667-1.02 1.27-0.789 1.27-0.789z" fill="#879972"/>
         <path d="m8.73 20.6-5.14-1.92s-0.0971 0.816 2.12 2.08c1.31 0.746 2.7 1.02 2.97 2.02 0.4 1.53 0.236 3.22 0.216 3.66-0.0434 0.951-0.988 1.53-1.74 1.81 0.121-0.0156 0.191 0.162 0.298 0.149 1.53-0.196 1.63-0.365 1.81 0.0247 0.118 0.258 0.521 0.472 0.521 0.472 0.783-0.712 1.33-0.811 2.08-0.248 0.1 0.0752 0.191-0.0121 0.298 0-0.293-0.419-0.468-0.82-1.09-1.29-0.239-0.18-0.399-0.51-0.496-0.918s0.402-1.1 0.391-1.56c0.0335-0.347 7e-4 -0.271-0.0712-0.937-0.0119-0.11 1.48-0.691 2.98-1.28 1.53-0.602 3.08-1.21 3.06-1.34-5.1 0.566-6.21 1.25-6.26 0.888-0.0872-0.659-0.242-1.57-0.472-3.01-0.0263-0.164 3.19-2.96 3.16-3.13-1.79 0.571-3.34 1.91-3.37 1.73-0.321-1.97-0.682-4.11-0.941-5.49-0.452 2.32-0.557 6.47-0.332 8.29z" fill="#92AC73"/>
         <path d="m10.5 24c-0.0217 0.202-0.128 0.398-0.11 1.16 0.0102 0.455 0.0518 0.931 0.149 1.34s0.258 0.738 0.496 0.918c0.624 0.471 0.798 0.871 1.09 1.29 0.232 0.0263 0.67 0.0258 0.833-0.0404 0 0-1.53-1.75-1.58-2.47-0.466-0.974-0.346-2.37-0.34-2.37-0.2-0.0182-0.35 0.207-0.542 0.161z" fill="#879972"/>
@@ -214,44 +214,44 @@
       </pattern>
     </defs>
     <rect x="55" y="1876" width="275" height="40" fill="#dee3c6"/>
-    <rect x="55" y="1876" width="275" height="40" fill="url(#dead_wood-pattern)"/>
+    <rect x="55" y="1876" width="275" height="40" fill="url(#dead_wood-pattern-night)"/>
   </g>
   <g id="aquaculture">
     <defs>
-      <pattern id="aquaculture-pattern" width="8" height="6" patternUnits="userSpaceOnUse">
+      <pattern id="aquaculture-pattern-night" width="8" height="6" patternUnits="userSpaceOnUse">
         <circle cx="1.62" cy="3" r="0.58" fill="#7DAFBB"/>
         <circle cx="6.32" cy="3" r="0.58" fill="#7DAFBB"/>
       </pattern>
     </defs>
     <rect x="55" y="1940" width="275" height="40" fill="none"/>
-    <rect x="55" y="1940" width="275" height="40" fill="url(#aquaculture-pattern)"/>
+    <rect x="55" y="1940" width="275" height="40" fill="url(#aquaculture-pattern-night)"/>
   </g>
   <!-- Column 2 -->
   <g id="greenhouse_horticulture">
     <defs>
-      <pattern id="greenhouse_horticulture-pattern" width="8" height="4" patternUnits="userSpaceOnUse">
+      <pattern id="greenhouse_horticulture-pattern-night" width="8" height="4" patternUnits="userSpaceOnUse">
         <path d="m5.8 2c0-.32.26-.58.58-.58s.58.26.58.58-.26.58-.58.58-.58-.26-.58-.58zm-4.7 0c0-.32.26-.58.58-.58s.58.26.58.58-.26.58-.58.58-.58-.26-.58-.58z" fill="#93d193"/>
       </pattern>
     </defs>
     <rect x="370" y="20" width="275" height="40" fill="#f7e7d6"/>
-    <rect x="370" y="20" width="275" height="40" fill="url(#greenhouse_horticulture-pattern)"/>
+    <rect x="370" y="20" width="275" height="40" fill="url(#greenhouse_horticulture-pattern-night)"/>
   </g>
   <g id="conservation">
     <rect x="370" y="81" width="275" height="40" fill="#ceefad"/>
   </g>
   <g id="glacier">
     <defs>
-      <pattern id="glacier-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="glacier-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <rect width="32" height="32" fill="#DDECEC"/>
         <path d="M8.21467 29.6356H7.20267V30.6466H8.21467V29.6356ZM2.11454 24.807H1.10053V25.818H2.11454V24.807ZM6.50654 18.3184H5.49253V19.3293H6.50654V18.3184ZM19.6624 28.5489H18.6504V29.5599H19.6624V28.5489ZM2.22474 17.0277H1.21073V18.0387H2.22474V17.0277ZM3.26865 28.2128H2.25465V29.2238H3.26865V28.2128ZM12.3672 27.8235H11.3532V28.8346H12.3672V27.8235ZM10.8959 14.4604H9.88194V15.4714H10.8959V14.4604ZM5.33253 9.59003H4.31852V10.601H5.33253V9.59003ZM16.8946 17.4164H15.8806V18.4274H16.8946V17.4164ZM21.3086 13.8894H20.2946V14.9004H21.3086V13.8894ZM7.84324 2.59155H6.82923V3.60254H7.84324V2.59155ZM9.25745 3.7406H8.24345V4.75159H9.25745V3.7406ZM17.2124 1.00049H16.1984V2.01147H17.2124V1.00049ZM15.0027 7.27612H13.9887V8.28711H15.0027V7.27612ZM24.3719 1.53088H23.3579V2.54187H24.3719V1.53088ZM25.7861 2.59155H24.7721V3.60254H25.7861V2.59155ZM27.1119 8.42517H26.0979V9.43616H27.1119V8.42517ZM31.6197 23.8931H30.6057V24.9041H31.6197V23.8931ZM21.897 22.2137H20.883V23.2247H21.897V22.2137ZM28.6145 15.673H27.6005V16.684H28.6145V15.673ZM28.1726 29.1964H27.1585V30.2074H28.1726V29.1964ZM30.2055 0.116638H29.1915V1.12766H30.2055V0.116638Z" fill="#999999"/>
       </pattern>
     </defs>
     <rect x="370" y="142" width="275" height="40" fill="#84cf73"/>
-    <rect x="370" y="142" width="275" height="40" fill="url(#glacier-pattern)" stroke-dasharray="4,2" stroke="#9ccfff" stroke-width="1"/>
+    <rect x="370" y="142" width="275" height="40" fill="url(#glacier-pattern-night)" stroke-dasharray="4,2" stroke="#9ccfff" stroke-width="1"/>
   </g>
   <g id="scree">
     <defs>
-      <pattern id="scree-pattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <pattern id="scree-pattern-night" width="16" height="16" patternUnits="userSpaceOnUse">
         <circle cx="6.5" cy="4.5" r="0.5" fill="#B5B5B5"/>
         <circle cx="3.5" cy="7.5" r="0.5" fill="#B5B5B5"/>
         <circle cx="12" cy="7.5" r="0.5" fill="#B5B5B5"/>
@@ -268,11 +268,11 @@
       </pattern>
     </defs>
     <rect x="370" y="203" width="275" height="40" fill="#FAF9F6"/>
-    <rect x="370" y="203" width="275" height="40" fill="url(#scree-pattern)"/>
+    <rect x="370" y="203" width="275" height="40" fill="url(#scree-pattern-night)"/>
   </g>
   <g id="fell">
     <defs>
-      <pattern id="fell-pattern" patternUnits="userSpaceOnUse" width="64" height="64" viewBox="0 0 64 64">
+      <pattern id="fell-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64" viewBox="0 0 64 64">
         <rect width="64" height="64" fill="none"/>
         <path d="m41 42 1 0.51 0.38 0.82s-0.14 0.77-0.3 0.82c-0.16 0.051-1.2 0.41-1.2 0.41l-0.12-1.5 0.19-1.1zm-23-19 0.26-0.18 0.72 0.42s0.39 1.1 0.19 1.2c-0.21 0.058-1.1 0.22-1.1 0.22l-0.16-1.7 0.12 0.033zm-8.8 34 0.29-0.19 0.8 0.45s0.44 1.2 0.21 1.3-1.3 0.23-1.3 0.23l-0.18-1.8 0.14 0.035zm47.8-50.3 0.26-0.18 0.72 0.42s0.39 1.1 0.19 1.2c-0.21 0.058-1.1 0.22-1.1 0.22l-0.16-1.7 0.12 0.033z" fill="#666"/>
         <path d="M4.8 62h1v1h-1z" fill="#7A7A7A"/>
@@ -290,11 +290,11 @@
         <path d="m12 42s-2.3 0.087-2.4-0.028c-0.024-0.051-0.36-0.7-0.36-0.7l0.73-0.76 0.69 0.21c0.27-0.1 0.24-0.68 0.81-0.31l0.56 0.24 0.15 0.4 0.27 0.2-0.48 0.75zm34 20s-0.78 0.19-1.4 0.19c-0.52 2e-4 -0.9-0.19-0.94-0.22-0.92-0.65-0.43-1.2-0.43-1.2l0.64-0.42 0.61 0.055c0.27-0.1 0.48-0.39 1-0.022l0.56 0.24 0.15 0.4 0.27 0.2-0.48 0.75zm-22-56.3s-2.3 0.087-2.4-0.028c-0.024-0.051-0.36-0.7-0.36-0.7l0.73-0.76 0.69 0.21c0.27-0.1 0.24-0.68 0.81-0.31l0.56 0.24 0.15 0.4 0.27 0.2-0.48 0.75z" fill="#B2B2B2"/>
       </pattern>
     </defs>
-    <rect x="370" y="264" width="275" height="40" fill="url(#fell-pattern)"/>
+    <rect x="370" y="264" width="275" height="40" fill="url(#fell-pattern-night)"/>
   </g>
   <g id="bare_rock">
     <defs>
-      <pattern id="bare_rock-pattern" width="32" height="32" patternUnits="userSpaceOnUse" fill="none">
+      <pattern id="bare_rock-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse" fill="none">
         <path d="m2.7 22 3.1-9.1 4.9 0.35 3.6-6.1 7.4-4.7" stroke="#CDCDCD" stroke-width="1.3" />
         <path d="m9.4 32 0.67-7.3 8.9-5.6 7.1-12 5.9-5.1" stroke="#CDCDCD" stroke-width="1.3" />
         <path d="m-0.2 3.1 1.2-2.7" stroke="#CDCDCD" stroke-width="1.3" />
@@ -309,11 +309,11 @@
       </pattern>
     </defs>
     <rect x="370" y="325" width="275" height="40" fill="#FAF9F6" />
-    <rect x="370" y="325" width="275" height="40" fill="url(#bare_rock-pattern)" />
+    <rect x="370" y="325" width="275" height="40" fill="url(#bare_rock-pattern-night)" />
   </g>
   <g id="reef">
     <defs>
-      <pattern id="reef-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="reef-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <path d="m13 1.99c0.194-0.17 0.295-0.908 0.44-0.908 0.135 0 0.361 0.193 0.314 0.628-0.0666 0.614-0.718 0.861-0.718 1.1 0 0.555 0.335 1.36 0.518 2.76 0.244 1.86-0.722 2.91-0.167 3.42 0.211 0.196 0.807 0.355 0.807 0.804l-3.79-0.00302c0-0.597 0.549-0.517 0.8-0.818 1.75-2.09 1.11-5.92 0.889-6.31-0.189-0.332-0.618-0.493-0.618-1.23 0-0.242 0.162-0.563 0.314-0.563 0.486 0 0.204 1.05 0.724 1.2 0.141 0.0431 0.308 0.0666 0.484-0.0875v0.00131z" fill="#ABABAB"/>
         <path d="m16.6 2.25c-0.204 0-0.201 0.365-0.219 0.454-0.0379 0.188-0.101 0.58-0.37 0.58-0.276 0-0.379-0.248-0.41-0.393-0.0306-0.146-0.124-0.423-0.401-0.392-0.227 0.0252-0.201 0.332-0.165 0.465 0.2 0.732 0.762 0.644 0.517 1.47-0.436 1.47-1.81 2.12-2.64 1.79-0.161 0.762 3e-3 1.25 3e-3 1.25 2.57-0.064 3.36-2.27 3.47-3.36 0.0297-0.292 0.105-0.489 0.226-0.68 0.116-0.184 0.227-0.281 0.269-0.496 0.0575-0.297 0.0417-0.69-0.278-0.69h-0.0013z" fill="#ABABAB"/>
         <path d="m8.21 4.64c0.171 0 0.222 0.273 0.237 0.338 0.032 0.136 0.191 0.482 0.442 0.482 0.251 0 0.379-0.208 0.422-0.642 0.0111-0.11 0.151-0.171 0.269-0.147 0.11 0.0224 0.238 0.127 0.238 0.228 0 0.977-0.764 0.781-0.452 1.35 0.408 0.748 2.6 0.944 3.23 0.638 0.136 0.552-0.373 1.18-0.373 1.18-2.73-0.121-3.41-0.993-3.69-2.09-0.0978-0.394-0.553-0.483-0.553-0.997 3.3e-4 -0.289 0.125-0.342 0.223-0.342z" fill="#ABABAB"/>
@@ -345,11 +345,11 @@
       </pattern>
     </defs>
     <rect x="370" y="386" width="275" height="40" fill="#71D1ED" stroke-dasharray="4,2" stroke="#4ab29c" stroke-width="1"/>
-    <rect x="370" y="386" width="275" height="40" fill="url(#reef-pattern)"/>
+    <rect x="370" y="386" width="275" height="40" fill="url(#reef-pattern-night)"/>
   </g>
   <g id="coral_reef">
     <defs>
-      <pattern id="coral_reef-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="coral_reef-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <path d="m13 1.99c0.194-0.17 0.295-0.908 0.44-0.908 0.135 0 0.361 0.193 0.314 0.628-0.0666 0.614-0.718 0.861-0.718 1.1 0 0.555 0.335 1.36 0.518 2.76 0.244 1.86-0.722 2.91-0.167 3.42 0.211 0.196 0.807 0.355 0.807 0.804l-3.79-0.00302c0-0.597 0.549-0.517 0.8-0.818 1.75-2.09 1.11-5.92 0.889-6.31-0.189-0.332-0.618-0.493-0.618-1.23 0-0.242 0.162-0.563 0.314-0.563 0.486 0 0.204 1.05 0.724 1.2 0.141 0.0431 0.308 0.0666 0.484-0.0875v0.00131z" fill="#869993"/>
         <path d="m16.6 2.25c-0.204 0-0.201 0.365-0.219 0.454-0.0379 0.188-0.101 0.58-0.37 0.58-0.276 0-0.379-0.248-0.41-0.393-0.0306-0.146-0.124-0.423-0.401-0.392-0.227 0.0252-0.201 0.332-0.165 0.465 0.2 0.732 0.762 0.644 0.517 1.47-0.436 1.47-1.81 2.12-2.64 1.79-0.161 0.762 3e-3 1.25 3e-3 1.25 2.57-0.064 3.36-2.27 3.47-3.36 0.0297-0.292 0.105-0.489 0.226-0.68 0.116-0.184 0.227-0.281 0.269-0.496 0.0575-0.297 0.0417-0.69-0.278-0.69h-0.0013z" fill="#869993"/>
         <path d="m8.21 4.64c0.171 0 0.222 0.273 0.237 0.338 0.032 0.136 0.191 0.482 0.442 0.482 0.251 0 0.379-0.208 0.422-0.642 0.0111-0.11 0.151-0.171 0.269-0.147 0.11 0.0224 0.238 0.127 0.238 0.228 0 0.977-0.764 0.781-0.452 1.35 0.408 0.748 2.6 0.944 3.23 0.638 0.136 0.552-0.373 1.18-0.373 1.18-2.73-0.121-3.41-0.993-3.69-2.09-0.0978-0.394-0.553-0.483-0.553-0.997 3.3e-4 -0.289 0.125-0.342 0.223-0.342z" fill="#869993"/>
@@ -381,11 +381,11 @@
       </pattern>
     </defs>
     <rect x="370" y="447" width="275" height="40" fill="#71D1ED" stroke-dasharray="4,2" stroke="#4ab29c" stroke-width="1"/>
-    <rect x="370" y="447" width="275" height="40" fill="url(#coral_reef-pattern)"/>
+    <rect x="370" y="447" width="275" height="40" fill="url(#coral_reef-pattern-night)"/>
   </g>
   <g id="rocky_reef">
     <defs>
-      <pattern id="rocky_reef-pattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <pattern id="rocky_reef-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse">
         <path d="m15.6 3.99c-0.0298-0.071-0.0623-0.142-0.0995-0.211-0.0831-0.156-0.239-0.272-0.307-0.436-0.0602-0.145-0.0197-0.3-0.0974-0.437-0.284-0.498-0.424-0.951-1.06-1.04 0.276 0.185 0.356 0.841 0.326 1.19-0.0162 0.187-0.094 0.34-0.0744 0.545 0.0186 0.191 0.0978 0.35 0.0991 0.545 0.0031 0.461-0.21 0.736-0.0548 1.2 0.137 0.408 0.195 0.732-0.292 0.944-0.176 0.0764-0.37 0.0913-0.528 0.185-0.207 0.122-0.249 0.182-0.489 0.23-0.367 0.073-0.713 0.257-0.71 0.675 2e-3 0.227 0.072 0.317-0.0723 0.503-0.113 0.145-0.31 0.343-0.502 0.364-0.147 0.0162-0.208-0.104-0.338-0.147-0.154-0.0504-0.302 0.00778-0.436 0.0872-0.446 0.264-1.19 0.958-1.74 0.62-0.239-0.149-0.352-0.376-0.488-0.586-0.261 0.319-0.241 0.768 0.143 0.939 0.331 0.148 0.754 0.121 1.11 0.197 0.359 0.0764 0.622 0.349 0.992 0.428 0.666 0.142 1.21-0.132 1.82-0.302 0.294-0.0822 0.594-0.0764 0.887-0.149 0.264-0.0656 0.509-0.226 0.767-0.324 0.295-0.112 0.402-0.334 0.669-0.526 0.233-0.168 0.389-0.305 0.552-0.538 0.36-0.515 0.189-1.06 0.0044-1.6-0.0727-0.214-0.188-0.49-0.157-0.732 0.0308-0.236 0.252-0.349 0.318-0.563 0.103-0.33-0.126-0.757-0.252-1.06z" fill="#B6B6B6"/>
         <path d="m13.7 2.12 0.0048 0.00271 0.0784 0.0216c0.0521 0.0145 0.106 0.0287 0.159 0.0429 0.132 0.0352 0.341 0.091 0.431 0.141 0 0.00237-3e-4 0.00474-3e-4 0.0071-0.0656 0.647 0.204 1.09 0.823 1.35 0.0142 0.00609 0.0406 0.0172 0.0684 0.0298-0.042 0.161-0.0974 0.412 3e-4 0.688 0.0737 0.21 0.206 0.338 0.278 0.404 0.0159 0.0352 0.0368 0.0916 0.0538 0.154-0.0082 0.0382-0.0342 0.107-0.0687 0.162-0.0206 0.0328-0.0477 0.0659-0.0784 0.105-0.142 0.176-0.474 0.587-0.154 1.23l0.0612 0.122c0.103 0.203 0.138 0.271 0.157 0.449 0.0257 0.235 0.0423 0.502-0.0301 0.704-0.0098 0.0277-0.123 0.106-0.191 0.152-0.189 0.13-0.447 0.306-0.626 0.627-0.0643 0.116-0.0937 0.168-0.381 0.221-0.157 0.0288-0.316 0.0507-0.486 0.0741-0.28 0.0386-0.569 0.0781-0.869 0.153-0.0977 0.0244-0.212 0.0453-0.333 0.0673-0.0924 0.0166-0.183 0.0335-0.269 0.0514-0.239 0.0507-0.46 0.113-0.675 0.172-0.362 0.1-0.681 0.189-1.01 0.21-0.0481-0.0636-0.11-0.129-0.191-0.19-0.278-0.211-0.584-0.215-0.767-0.217-0.0284-3.3e-4 -0.0565 3.4e-4 -0.0849-0.0027-0.134-0.0196-0.285-0.0494-0.43-0.0781l-0.113-0.0227c-0.301-0.0592-0.293-0.122-0.27-0.311 0.00913-0.0751 0.0203-0.143 0.0304-0.208 0.0409-0.26 0.0872-0.555 0.00676-0.961-0.0193-0.0947-0.0416-0.188-0.0639-0.281-0.0642-0.266-0.0987-0.423-0.0565-0.555 0.021-0.0646 0.0818-0.148 0.153-0.245 0.0852-0.116 0.191-0.26 0.275-0.44 0.196-0.425 0.149-0.825 0.112-1.15l-0.00981-0.0774c-0.0108-0.096-0.0291-0.2-0.048-0.307-0.024-0.135-0.0609-0.34-0.0497-0.402 0.0145-0.02 0.0764-0.07 0.121-0.106 0.0646-0.0524 0.131-0.108 0.198-0.17 0.23-0.217 0.372-0.461 0.487-0.657 0.177-0.304 0.212-0.332 0.326-0.35 0.0761-0.0118 0.167-0.0179 0.272-0.0179 0.205 0 0.423 0.0223 0.634 0.0436l0.0662 0.0071c0.141 0.0142 0.281 0.0213 0.416 0.0213 0.616 0 1.18-0.151 1.66-0.45 0.0341-0.021 0.0693-0.0433 0.106-0.067 0.073-0.047 0.198-0.127 0.276-0.159zm0.0274-0.688c-0.274 0-0.554 0.209-0.763 0.336-0.406 0.249-0.845 0.35-1.31 0.35-0.115 0-0.231-0.00643-0.348-0.0179-0.234-0.0233-0.504-0.0538-0.768-0.0538-0.129 0-0.256 0.0071-0.376 0.026-0.705 0.111-0.728 0.765-1.17 1.18-0.213 0.2-0.435 0.298-0.507 0.598-0.0717 0.298 0.0443 0.666 0.0764 0.955 0.0335 0.3 0.0835 0.59-0.0446 0.867-0.125 0.271-0.362 0.462-0.458 0.763-0.13 0.407 0.0223 0.777 0.101 1.17 0.0744 0.373 3.4e-4 0.592-0.0446 0.953-0.0754 0.6 0.222 0.942 0.81 1.06 0.19 0.0372 0.388 0.0795 0.578 0.107 0.169 0.0254 0.392-0.0226 0.539 0.0886 0.173 0.13 0.0815 0.321 0.347 0.331 0.0348 0.0014 0.0693 2e-3 0.104 2e-3 0.706 0 1.3-0.257 1.98-0.402 0.197-0.0419 0.426-0.0744 0.626-0.124 0.435-0.109 0.876-0.138 1.31-0.218 0.4-0.0734 0.65-0.199 0.849-0.557 0.219-0.393 0.707-0.446 0.863-0.88 0.113-0.317 0.104-0.658 0.0656-1.01-0.0379-0.349-0.137-0.5-0.285-0.798-0.171-0.342 0.0287-0.408 0.198-0.677 0.105-0.167 0.211-0.442 0.163-0.642-0.0318-0.134-0.094-0.319-0.17-0.433-0.0565-0.0845-0.154-0.125-0.191-0.229-0.0609-0.172 0.071-0.38 0.0629-0.559-0.0156-0.336-0.24-0.445-0.506-0.558-0.348-0.148-0.45-0.303-0.414-0.661 0.0673-0.669-0.556-0.763-1.08-0.91-0.0774-0.0443-0.158-0.0626-0.238-0.0626z" fill="#B6B6B6"/>
         <path d="m11.7 4.28c-0.0031-0.103 0.0683-0.31 0.14-0.384 0.117-0.12 0.325-0.0781 0.464-0.176 0.15-0.104 0.757-0.567 0.891-0.262 0.0964 0.219-0.139 0.411 0.0781 0.601 0.102 0.0889 0.191 0.09 0.152 0.238-0.0264 0.101-0.134 0.189-0.14 0.293-0.0064 0.0991 0.107 0.161 0.107 0.243 7e-4 0.145-0.191 0.171-0.287 0.224-0.167 0.0926-0.339 0.22-0.472 0.357-0.136 0.139-0.251 0.292-0.47 0.282-0.445-0.0226-0.251-0.554-0.288-0.833-0.0263-0.202-0.168-0.376-0.174-0.584z" fill="#B6B6B6"/>
@@ -406,14 +406,14 @@
       </pattern>
     </defs>
     <rect x="370" y="508" width="275" height="41" fill="#71D1ED" stroke-dasharray="4,2" stroke="#4ab29c" stroke-width="1"/>
-    <rect x="370" y="508" width="275" height="40" fill="url(#rocky_reef-pattern)"/>
+    <rect x="370" y="508" width="275" height="40" fill="url(#rocky_reef-pattern-night)"/>
   </g>
   <g id="crater_sinkhole">
     <rect x="370" y="569" width="275" height="40" fill="#d6cbc6" stroke="#8c696b" stroke-width="4"/>
   </g>
 <g id="sand">
     <defs>
-      <pattern id="sand-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="sand-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <g fill="#999">
           <circle cx="2.36" cy="15.7" r="0.54"/>
           <circle cx="4.58" cy="18.1" r="0.54"/>
@@ -559,11 +559,11 @@
       </pattern>
     </defs>
     <rect x="370" y="630" width="275" height="40" fill="#FFE3BA"/>
-    <rect x="370" y="630" width="275" height="40" fill="url(#sand-pattern)"/>
+    <rect x="370" y="630" width="275" height="40" fill="url(#sand-pattern-night)"/>
   </g>
   <g id="shoal">
     <defs>
-      <pattern id="shoal-pattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <pattern id="shoal-pattern-night" width="24" height="24" patternUnits="userSpaceOnUse">
         <path d="m21 17h-1v1h1v-1z" fill="#6C6C6C"/>
         <path d="m11 2h-1v1h1v-1z" fill="#6C6C6C"/>
         <path d="m20 13h-1v1h1v-1z" fill="#6C6C6C"/>
@@ -594,14 +594,14 @@
         <path d="m17 5h-1v1h1v-1z" fill="#6C6C6C"/>
       </pattern>
     </defs>
-    <rect x="370" y="691" width="275" height="40" fill="url(#shoal-pattern)"/>
+    <rect x="370" y="691" width="275" height="40" fill="url(#shoal-pattern-night)"/>
   </g>
   <g id="garden">
     <rect x="370" y="752" width="275" height="40" fill="#c6e7a5"/>
   </g>
   <g id="nature_reserve">
     <defs>
-      <pattern id="nature_reserve-pattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <pattern id="nature_reserve-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse">
         <path d="M20 5H19V10H20V6.5L23 10H24V5H23V8.5L20 5Z" fill="#6DE783"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M25 5H28.5L29 5.5V7.5L28.5 8H27.5L29 9.5V10H28L26 8L26.0087 10H25V5ZM26.0087 7H27.9912V6H26.0087V7Z" fill="#6DE783"/>
         <path d="M4 22H3V27H4V23.5L7 27H8V22H7V25.5L4 22Z" fill="#6DE783"/>
@@ -609,11 +609,11 @@
       </pattern>
     </defs>
     <rect x="370" y="813" width="275" height="40" fill="none" stroke="#94e7a5" stroke-width="3"/>
-    <rect x="370" y="813" width="275" height="40" fill="url(#nature_reserve-pattern)"/>
+    <rect x="370" y="813" width="275" height="40" fill="url(#nature_reserve-pattern-night)"/>
   </g>
   <g id="beach">
     <defs>
-      <pattern id="beach-pattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <pattern id="beach-pattern-night" width="32" height="32" patternUnits="userSpaceOnUse">
         <rect width="32" height="32" fill="#FFF1BA"/>
         <path d="M4.01201 30H3.00002V31.011H4.01201V30Z" fill="#999999"/>
         <path d="M3.00002 16.989H1.98601V18H3.00002V16.989Z" fill="#999999"/>
@@ -645,11 +645,11 @@
         <path d="M6.01402 23H5.00002V24.011H6.01402V23Z" fill="#999999"/>
       </pattern>
     </defs>
-    <rect x="370" y="874" width="275" height="40" fill="url(#beach-pattern)"/>
+    <rect x="370" y="874" width="275" height="40" fill="url(#beach-pattern-night)"/>
   </g>
   <g id="wetland">
     <defs>
-      <pattern id="wetland-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="wetland-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path d="M37 22H22V23H37V22Z" fill="#2F91EA"/>
         <path d="M49 12H34V13H49V12Z" fill="#2F91EA"/>
         <path d="M16 53H1V54H16V53Z" fill="#2F91EA"/>
@@ -679,11 +679,11 @@
         <path d="M60 59H55V60H60V59Z" fill="#2F91EA"/>
       </pattern>
     </defs>
-    <rect x="370" y="935" width="275" height="40" fill="url(#wetland-pattern)"/>
+    <rect x="370" y="935" width="275" height="40" fill="url(#wetland-pattern-night)"/>
   </g>
   <g id="tidal_flat_mud_flat">
     <defs>
-      <pattern id="tidal_flat_mud_flat-pattern" width="64" height="64" patternUnits="userSpaceOnUse" viewBox="0 0 64 64">
+      <pattern id="tidal_flat_mud_flat-pattern-night" width="64" height="64" patternUnits="userSpaceOnUse" viewBox="0 0 64 64">
         <path d="m37 21h-15v1h15v-1z" fill="#9E937C"/>
         <path d="m47 14h-15v1h15v-1z" fill="#9E937C"/>
         <path d="M16 53H1V54H16V53Z" fill="#9E937C"/>
@@ -738,11 +738,11 @@
       </pattern>
     </defs>
     <rect x="370" y="996" width="275" height="40" fill="#C2C2C2"/>
-    <rect x="370" y="996" width="275" height="40" fill="url(#tidal_flat_mud_flat-pattern)"/>
+    <rect x="370" y="996" width="275" height="40" fill="url(#tidal_flat_mud_flat-pattern-night)"/>
   </g>
   <g id="bog">
     <defs>
-      <pattern id="bog-pattern" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="bog-pattern-night" width="64" height="64" patternUnits="userSpaceOnUse">
         <path d="M64 0H0V64H64V0Z" fill="#9DDD87" opacity=".411"/>
         <path d="m37 20h-15v1h15v-1z" fill="#2F91EA"/>
         <path d="m46 13h-14v1h14v-1z" fill="#2F91EA"/>
@@ -833,11 +833,11 @@
         <circle cx="3.91" cy="35.47" r="0.83" fill="#2F91EA"/>
       </pattern>
     </defs>
-    <rect x="370" y="1057" width="275" height="40" fill="url(#bog-pattern)"/>
+    <rect x="370" y="1057" width="275" height="40" fill="url(#bog-pattern-night)"/>
   </g>
   <g id="marsh">
     <defs>
-      <pattern id="marsh-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="marsh-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path opacity="0.411067" d="M64 0H0V64H64V0Z" fill="#9DDD87"/>
         <path d="M37 22H22V23H37V22Z" fill="#2F91EA"/>
         <path d="M48 10H33V11H48V10Z" fill="#2F91EA"/>
@@ -891,11 +891,11 @@
         <path d="M60.4505 11.4263L59.8891 14.4359" stroke="#2F91EA" stroke-linecap="round"/>
       </pattern>
     </defs>
-    <rect x="370" y="1118" width="275" height="40" fill="url(#marsh-pattern)"/>
+    <rect x="370" y="1118" width="275" height="40" fill="url(#marsh-pattern-night)"/>
   </g>
   <g id="swamp">
     <defs>
-      <pattern id="swamp-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="swamp-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path opacity="0.411" d="M64 0H0V64H64V0Z" fill="#9DDD87"/>
         <path opacity="0.233" d="M31.5 12C31.500 12.546 31.392 13.086 31.181 13.591C30.970 14.095 30.662 14.553 30.272 14.939C29.883 15.325 29.421 15.631 28.912 15.840C28.403 16.049 27.858 16.156 27.307 16.156C26.757 16.156 26.211 16.049 25.703 15.840C25.194 15.631 24.732 15.325 24.342 14.939C23.953 14.553 23.644 14.095 23.433 13.591C23.223 13.086 23.114 12.546 23.114 12C23.114 11.454 23.223 10.914 23.433 10.409C23.644 9.905 23.953 9.447 24.342 9.061C24.732 8.675 25.194 8.369 25.703 8.160C26.211 7.951 26.757 7.844 27.307 7.844C27.858 7.844 28.403 7.951 28.912 8.160C29.421 8.369 29.883 8.675 30.272 9.061C30.662 9.447 30.970 9.905 31.181 10.409C31.392 10.914 31.500 11.454 31.5 12V12Z" fill="#81B4E1" stroke="#81B4E1"/>
         <path d="M35 24H20V25H35V24Z" fill="#2F91EA"/>
@@ -938,11 +938,11 @@
         <path opacity="0.233202" d="M25.516 52.504C25.516 52.939 25.429 53.370 25.261 53.772C25.093 54.174 24.847 54.540 24.536 54.847C24.226 55.155 23.857 55.399 23.452 55.566C23.046 55.732 22.611 55.818 22.172 55.818C21.733 55.818 21.298 55.732 20.892 55.566C20.486 55.399 20.118 55.155 19.807 54.847C19.497 54.540 19.250 54.174 19.082 53.772C18.914 53.370 18.828 52.939 18.828 52.504C18.828 52.069 18.914 51.638 19.082 51.236C19.250 50.834 19.497 50.469 19.807 50.161C20.118 49.853 20.486 49.609 20.892 49.443C21.298 49.276 21.733 49.190 22.172 49.190C22.611 49.190 23.046 49.276 23.452 49.443C23.857 49.609 24.226 49.853 24.536 50.161C24.847 50.469 25.093 50.834 25.261 51.236C25.429 51.638 25.516 52.069 25.516 52.504V52.504Z" fill="#81B4E1" stroke="#81B4E1"/>
       </pattern>
     </defs>
-    <rect x="370" y="1179" width="275" height="40" fill="url(#swamp-pattern)"/>
+    <rect x="370" y="1179" width="275" height="40" fill="url(#swamp-pattern-night)"/>
   </g>
   <g id="reedbed">
     <defs>
-      <pattern id="reedbed-pattern" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="reedbed-pattern-night" width="64" height="64" patternUnits="userSpaceOnUse">
         <path opacity="0.411" d="M64 0H0V64H64V0Z" fill="#9DDD87"/>
         <path d="M36 21H22V22H36V21Z" fill="#2F91EA"/>
         <path d="M47 14H32V15H47V14Z" fill="#2F91EA"/>
@@ -994,11 +994,11 @@
         <path d="M24 61H19V62H24V61Z" fill="#2F91EA"/>
       </pattern>
     </defs>
-    <rect x="370" y="1240" width="275" height="40" fill="url(#reedbed-pattern)"/>
+    <rect x="370" y="1240" width="275" height="40" fill="url(#reedbed-pattern-night)"/>
   </g>
   <g id="wet_meadow">
     <defs>
-      <pattern id="wet_meadow-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="wet_meadow-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path d="M37 20H22V21H37V20Z" fill="#2F91EA"/>
         <path d="M48 12H33V13H48V12Z" fill="#2F91EA"/>
         <path d="M16 52H1V53H16V52Z" fill="#2F91EA"/>
@@ -1049,14 +1049,14 @@
       </pattern>
     </defs>
     <rect x="370" y="1301" width="275" height="40" opacity="0.411" fill="#9DDD87"/>
-    <rect x="370" y="1301" width="275" height="40" fill="url(#wet_meadow-pattern)"/>
+    <rect x="370" y="1301" width="275" height="40" fill="url(#wet_meadow-pattern-night)"/>
   </g>
   <g id="saltmarsh">
-    <rect x="370" y="1362" width="275" height="40" fill="url(#wetland-pattern)"/>
+    <rect x="370" y="1362" width="275" height="40" fill="url(#wetland-pattern-night)"/>
   </g>
   <g id="string_bog">
     <defs>
-      <pattern id="string_bog-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="string_bog-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <rect width="64" height="64" fill="#9DDD87" opacity="0.411"/>
         <path d="M38.966 22H23.966V23H38.966V22Z" fill="#2F91EA"/>
         <path d="M56.938 10.663H42.568V11.663H56.938V10.663Z" fill="#2F91EA"/>
@@ -1125,11 +1125,11 @@
         <path d="M44.529 53.775L43.884 57.275" stroke="#2F91EA" stroke-linecap="round"/>
       </pattern>
     </defs>
-    <rect x="370" y="1423" width="275" height="40" fill="url(#string_bog-pattern)"/>
+    <rect x="370" y="1423" width="275" height="40" fill="url(#string_bog-pattern-night)"/>
   </g>
   <g id="mangrove">
     <defs>
-      <pattern id="mangrove-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="mangrove-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path opacity="0.328" d="M55.367 43.643C55.367 43.981 55.262 44.316 55.059 44.628C54.856 44.94 54.558 45.223 54.183 45.462C53.807 45.701 53.362 45.891 52.871 46.02C52.381 46.149 51.855 46.216 51.324 46.216C50.793 46.216 50.268 46.149 49.777 46.02C49.287 45.891 48.841 45.701 48.466 45.462C48.09 45.223 47.792 44.94 47.589 44.628C47.386 44.316 47.282 43.981 47.282 43.643C47.282 43.305 47.386 42.971 47.589 42.659C47.792 42.347 48.09 42.063 48.466 41.824C48.841 41.585 49.287 41.396 49.777 41.266C50.268 41.137 50.793 41.071 51.324 41.071C51.855 41.071 52.381 41.137 52.871 41.266C53.362 41.396 53.807 41.585 54.183 41.824C54.558 42.063 54.856 42.347 55.059 42.659C55.262 42.971 55.367 43.305 55.367 43.643V43.643Z" fill="#81B4E1" stroke="#2F91EA"/>
         <path d="M37 21H22V22H37V21Z" fill="#2F91EA"/>
         <path d="M47 13H32V14H47V13Z" fill="#2F91EA"/>
@@ -1186,11 +1186,11 @@
       </pattern>
     </defs>
     <rect x="370" y="1484" width="275" height="40" fill="#9DDD87" opacity="0.411"/>
-    <rect x="370" y="1484" width="275" height="40" fill="url(#mangrove-pattern)"/>
+    <rect x="370" y="1484" width="275" height="40" fill="url(#mangrove-pattern-night)"/>
   </g>
 <g id="fen">
     <defs>
-      <pattern id="fen-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="fen-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path opacity="0.411" d="M64 0H0V64H64V0Z" fill="#9DDD87"/>
         <path d="M36 21H22V22H36V21Z" fill="#2F91EA"/>
         <path d="M47 14H32V15H47V14Z" fill="#2F91EA"/>
@@ -1242,11 +1242,11 @@
         <path d="M20.996 39.2L19.486 43.225" stroke="#2F91EA"/>
       </pattern>
     </defs>
-    <rect x="370" y="1545" width="275" height="40" fill="url(#fen-pattern)"/>
+    <rect x="370" y="1545" width="275" height="40" fill="url(#fen-pattern-night)"/>
   </g>
   <g id="palsa_bog">
     <defs>
-      <pattern id="palsa_bog-pattern" x="0" y="0" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="palsa_bog-pattern-night" x="0" y="0" width="64" height="64" patternUnits="userSpaceOnUse">
         <path opacity="0.411" d="M64 0H0V64H64V0Z" fill="#9DDD87"/>
         <path d="M28 23H19V24H28V23Z" fill="#2F91EA"/>
         <path d="M46 13H32V14H46V13Z" fill="#2F91EA"/>
@@ -1297,15 +1297,15 @@
         <path d="M57.444 53.471L56.929 56.181" stroke="#2F91EA" stroke-linecap="round"/>
       </pattern>
     </defs>
-    <rect x="370" y="1606" width="275" height="40" fill="url(#palsa_bog-pattern)"/>
+    <rect x="370" y="1606" width="275" height="40" fill="url(#palsa_bog-pattern-night)"/>
   </g>
   <g id="intermittent_wetland">
     <rect x="370" y="1667" width="275" height="40" fill="none" stroke-dasharray="12,5" stroke="#737de7" stroke-width="1"/>
-    <rect x="370" y="1667" width="275" height="40" fill="url(#wetland-pattern)"/>
+    <rect x="370" y="1667" width="275" height="40" fill="url(#wetland-pattern-night)"/>
   </g>
   <g id="mud">
     <defs>
-      <pattern id="mud-pattern" patternUnits="userSpaceOnUse" width="32" height="32">
+      <pattern id="mud-pattern-night" patternUnits="userSpaceOnUse" width="32" height="32">
         <path d="M32 0H0V32H32V0Z" fill="#E6DCD1"/>
         <path d="M8.56 19.115C5.221 22.487 4.865 30.008 11.286 26.792C9.501 31.977 17.012 32.638 21.169 26.837C21.781 35.139 29.803 30.703 31.134 26.483" stroke="#CFBEAC"/>
         <path d="M9.953 15.41C9.953 15.527 9.907 15.64 9.824 15.723C9.741 15.806 9.628 15.852 9.511 15.852C9.393 15.852 9.281 15.806 9.198 15.723C9.115 15.64 9.068 15.527 9.068 15.41C9.068 15.292 9.115 15.18 9.198 15.097C9.281 15.014 9.393 14.967 9.511 14.967C9.628 14.967 9.741 15.014 9.824 15.097C9.907 15.18 9.953 15.292 9.953 15.41V15.41Z" stroke="#CFBEAC"/>
@@ -1322,11 +1322,11 @@
         <path d="M20.676 32.064C20.676 32.182 20.63 32.294 20.547 32.377C20.464 32.46 20.351 32.507 20.234 32.507C20.116 32.507 20.004 32.46 19.921 32.377C19.838 32.294 19.791 32.182 19.791 32.064C19.791 31.947 19.838 31.834 19.921 31.751C20.004 31.668 20.116 31.622 20.234 31.622C20.351 31.622 20.464 31.668 20.547 31.751C20.63 31.834 20.676 31.947 20.676 32.064V32.064Z" stroke="#CFBEAC"/>
       </pattern>
     </defs>
-    <rect x="370" y="1728" width="275" height="40" fill="url(#mud-pattern)"/>
+    <rect x="370" y="1728" width="275" height="40" fill="url(#mud-pattern-night)"/>
   </g>
   <g id="saltpond">
     <defs>
-      <pattern id="saltpond-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
+      <pattern id="saltpond-pattern-night" patternUnits="userSpaceOnUse" width="64" height="64">
         <path d="M37 22H22V23H37V22Z" fill="#2992ef"/>
         <path d="M47 14H32V15H47V14Z" fill="#2992ef"/>
         <path d="M33 53H18V54H33V53Z" fill="#2992ef"/>
@@ -1360,11 +1360,11 @@
       </pattern>
     </defs>
     <rect x="370" y="1789" width="275" height="40" fill="#d6e3ef"/>
-    <rect x="370" y="1789" width="275" height="40" fill="url(#saltpond-pattern)" stroke="#7379ef" stroke-width="1"/>
+    <rect x="370" y="1789" width="275" height="40" fill="url(#saltpond-pattern-night)" stroke="#7379ef" stroke-width="1"/>
   </g>
   <g id="protected_area">
     <defs>
-      <pattern id="protected_area-pattern" x="5" y="34" width="64" height="64" patternUnits="userSpaceOnUse">
+      <pattern id="protected_area-pattern-night" x="5" y="34" width="64" height="64" patternUnits="userSpaceOnUse">
         <rect width="64" height="64" fill="white"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M26 10.5V8.5L25.5 8H22V13H23V11H25.5L26 10.5ZM25 10H23V9H25V10Z" fill="#00AE3D" fill-opacity="0.18"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M26 10.5V8.5L25.5 8H22V13H23V11H25.5L26 10.5ZM25 10H23V9H25V10Z" fill="#00AE3D" fill-opacity="0.18"/>
@@ -1376,7 +1376,7 @@
         <path fill-rule="evenodd" clip-rule="evenodd" d="M60 10.5V8.5L59.5 8H56V13H57V11H59.5L60 10.5ZM59 10H57V9H59V10Z" fill="#00AE3D" fill-opacity="0.18"/>
       </pattern>
     </defs>
-    <rect x="370" y="1850" width="275" height="40" fill="url(#protected_area-pattern)"/>
+    <rect x="370" y="1850" width="275" height="40" fill="url(#protected_area-pattern-night)"/>
     <rect x="370" y="1850" width="275" height="40" fill="none" stroke-dasharray="12,9" stroke="#add7b5" stroke-width="6"/>
   </g>
 </svg>
