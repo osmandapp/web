@@ -34,6 +34,9 @@ export default function RouteProfileSettings({
     const ctx = useContext(AppContext);
     const useDevelFeatures = ctx.develFeatures;
 
+    const AVOID_UNPAVED = 'avoid_unpaved';
+    const PREFER_UNPAVED = 'prefer_unpaved';
+
     const [unfoldedSections, mutateUnfoldedSections] = useMutator({}); // all sections are folded by default
 
     geoRouter = geoRouter || ctx.routeObject; // `trackRouter` callers should specify distinct geoRouter
@@ -156,6 +159,9 @@ export default function RouteProfileSettings({
         if (opts[APPROXIMATION]?.value === false) {
             return true;
         }
+        if (key === AVOID_UNPAVED && opts[PREFER_UNPAVED]?.value === true) return true;
+        if (key === PREFER_UNPAVED && opts[AVOID_UNPAVED]?.value === true) return true;
+
         return false;
     }
 
@@ -249,7 +255,6 @@ export default function RouteProfileSettings({
                                 >
                                     {s ?? 'General options'}
                                 </MenuItem>
-                                {/* <Collapse key={'collapse_' + s} in={unfoldedSections[s]}> */}
                                 <div style={{ display: unfoldedSections[s] ? '' : 'none' }}>
                                     {Object.values(opts)
                                         .filter((o) => o.section === s)
@@ -257,7 +262,6 @@ export default function RouteProfileSettings({
                                             <OptFlatItem key={'opt_' + opt.key} opt={opt} />
                                         ))}
                                 </div>
-                                {/* </Collapse> */}
                             </React.Fragment>
                         ))}
                     {showReset() && (
