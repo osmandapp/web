@@ -81,7 +81,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
             groups = byTime(smartf.files, true, true);
         }
         if (groups) {
-            groups.map((g, index) => {
+            groups.forEach((g, index) => {
                 items.push(
                     <FavoriteGroup
                         key={g + index}
@@ -98,17 +98,18 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
     }, [smartf, sortGroups, ctx.openFavGroups]);
 
     useEffect(() => {
-        if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+        if (!currentLoc) return;
+        if (currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
             if (refMarkers.current.length > 0) {
                 const updatedMarkers = addLocDist({ location: currentLoc, markers: refMarkers.current });
                 setMarkers(updatedMarkers);
             }
-        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && refMarkers.current?.length > 0) {
+        } else if (refMarkers.current?.length > 0) {
             const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc, refMarkers.current]);
+    }, [currentLoc?.lat, currentLoc?.lng, refMarkers.current]);
 
     useEffect(() => {
         if (folder) {
