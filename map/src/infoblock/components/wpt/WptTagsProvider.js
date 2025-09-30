@@ -43,6 +43,7 @@ const MOBILE = 'mobile';
 const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
+export const CUISINE_PREFIX = 'cuisine_';
 const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';

@@ -2,7 +2,7 @@ import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Toolt
 import styles from './wptDetails.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
+import { CUISINE_PREFIX, openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
@@ -131,12 +131,30 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function prepareValue(item, addPrefix, POI_PREFIX) {
-        const prefix = addPrefix && !item.startsWith('cuisine_') ? 'cuisine_' : '';
-        const keyWithPrefix = `${POI_PREFIX}${prefix}${item}`;
-        const keyWithoutPrefix = `${prefix}${item}`;
-        // Check if translation with POI_PREFIX exists, if not use without POI_PREFIX
-        const key = i18n.exists(keyWithPrefix) ? keyWithPrefix : keyWithoutPrefix;
-        return translateWithSplit(t, key);
+        const hasCuisine = item.startsWith(CUISINE_PREFIX);
+        const cuisinePrefix = addPrefix && !hasCuisine ? CUISINE_PREFIX : '';
+        const base = hasCuisine ? item.slice(CUISINE_PREFIX.length) : item;
+
+        const preparedItem = cuisinePrefix + item;
+
+        const keyWithPrefix = POI_PREFIX + preparedItem;
+        const keyWithoutPrefix = preparedItem;
+        const poiOnly = POI_PREFIX + base;
+        const noPrefix = base;
+
+        let key = null;
+
+        if (i18n.exists(keyWithPrefix)) {
+            key = keyWithPrefix;
+        } else if (i18n.exists(keyWithoutPrefix)) {
+            key = keyWithoutPrefix;
+        } else if (i18n.exists(poiOnly)) {
+            key = poiOnly;
+        } else if (i18n.exists(noPrefix)) {
+            key = noPrefix;
+        }
+
+        return key ? translateWithSplit(t, key) : base;
     }
 
     function prepareValueFromList(tag) {
