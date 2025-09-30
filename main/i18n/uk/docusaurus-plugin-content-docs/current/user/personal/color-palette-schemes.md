@@ -1,7 +1,7 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
-title:  Колірні схеми
+title: Колірні схеми
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Колірні схеми використовуються для [колоризації маршрутів](#routes), [рельєфу мапи](#terrain) та [карти погоди](#weather) і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
 
-Дані колірної палітри доступні в меню [*Карти та ресурси*](../personal/maps-resources.md#local).
+Дані колірної палітри доступні в меню [*Карти та ресурси*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

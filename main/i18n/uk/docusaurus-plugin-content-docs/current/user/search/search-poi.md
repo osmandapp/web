@@ -1,7 +1,7 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
-title:  Пошук POI
+title: Пошук POI
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Рядок пошуку дозволяє вводити ключові слова, пов'язані з місцями, які вас цікавлять. Пошук POI також представляє зручний список, відсортований за [категорією](#poi-search-by-categories), щоб допомогти вам швидко знайти те, що ви шукаєте, а [фільтр](#save-new-custom-filters) дозволяє вибрати конкретні характеристики POI для відображення тільки релевантних результатів.
 
-[Користувацький пошук](#custom-poi-search) розширює функціональність пошуку, дозволяючи вибирати кілька категорій та підкатегорій. Ви можете зберігати створені фільтри для подальшого використання, що полегшує швидкий пошук POI, які відповідають певним критеріям або вподобанням. Для отримання додаткової інформації зверніться до розділу про збереження користувацьких фільтрів [тут](#save-new-custom-filters).
+[Користувацький пошук](#customize-poi-search) розширює функціональність пошуку, дозволяючи вибирати кілька категорій та підкатегорій. Ви можете зберігати створені фільтри для подальшого використання, що полегшує швидкий пошук POI, які відповідають певним критеріям або вподобанням. Для отримання додаткової інформації зверніться до розділу про збереження користувацьких фільтрів [тут](#save-new-custom-filters).
 
 OsmAnd надає кілька способів доступу до інструменту Пошук, де знаходиться розділ **Пошук за категоріями**.
 
@@ -243,7 +243,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 - *Щоб приховати* непотрібні категорії, торкніться іконки **мінус**.
 - **Доступні**. Раніше *Приховані* категорії можна повернути до списку, що відображається, торкнувшись іконки **плюс**.
 - Використовуйте кнопку **Скинути** до стандартних, щоб повернути список до попередньо встановленого стану.
-- Категорії, створені за допомогою [Користувацького пошуку](#custom-poi-search) або [Фільтрів](#save-new-custom-filters), можна видалити за допомогою іконки **Видалити**.
+- Категорії, створені за допомогою [Користувацького пошуку](#customize-poi-search) або [Фільтрів](#save-new-custom-filters), можна видалити за допомогою іконки **Видалити**.
 
 ![Пошук POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)
 
@@ -274,7 +274,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 ![Пошук POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)
 
-Щоб покращити результати, перед використанням інструменту Пошук збільште масштаб карти, щоб наблизитися до місця, де потрібно знайти певне місцезнаходження. А під час пошуку ви можете **збільшити радіус пошуку**, щоб знайти місця, які знаходяться далі від вашого місцезнаходження. При пошуку в автономному режимі, якщо необхідні результати недоступні, OsmAnd пропонує скористатися онлайн-пошуком.
+Щоб покращити результати, перед використанням інструменту Пошук збільште масштаб карти, щоб наблизитися до місця, де потрібно знайти певне місцезнаходження. А під час пошуку ви можете **збільшити радіус пошуку**, щоб знайти місця, які знаходяться далі від вашого місцезнаходження. Коли ви шукаєте офлайн, якщо необхідні результати недоступні, OsmAnd пропонує скористатися онлайн-пошуком.
 
 Ви можете дізнатися інформацію про онлайн-навігацію у статті [Онлайн-маршрутизація](../navigation/routing/online-routing.md).
 
@@ -298,7 +298,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![Користувацький пошук Android](@site/static/img/search/search_custom_filter_andr.png)   ![Користувацький пошук Android](@site/static/img/search/search_custom_filter_second_andr.png)
+![Користувацький пошук Android](@site/static/img/search/search_custom_filter_andr.png) ![Користувацький пошук Android](@site/static/img/search/search_custom_filter_second_andr.png)
 
 </TabItem>
 
@@ -308,7 +308,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 ![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
 -->
 
-![Користувацький POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![Типи користувацьких POI iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
+![Користувацький POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png) ![Типи користувацьких POI iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
+source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
 
 sidebar_position: 3
 title:  Інформаційні віджети
@@ -36,7 +36,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 На деяких пристроях Android висота може відображатися неточно. Щоб вирішити цю проблему, завантажте карту з корекцією висот.
 
 - Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Для отримання додаткової інформації відвідайте [Карти та ресурси](../personal/maps-resources.md#downloads).
+- Для отримання додаткової інформації відвідайте [Карти та ресурси](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

@@ -1,7 +1,7 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
-title:  Місце паркування
+title: Місце паркування
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -54,7 +54,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Місце паркування на мапі {#parking-spot-on-the-map}
 
-Коли ви позначаєте місце для паркування, OsmAnd зберігає його географічні координати разом із часовою міткою. За потреби можна також додати обмеження за часом і нагадування в календарі.
+Коли ви позначаєте місце для паркування, OsmAnd зберігає його географічні координати разом із часовою міткою. За потреби можна також додати обмеження за часом і нагадування в календарі. Місця паркування зберігаються як **Вибрані точки**. Щоб маркер паркування був видимим на мапі, необхідно увімкнути [Вибрані](../personal/favorites.md).
 
 
 ### Встановити місце {#set-a-spot}
@@ -71,7 +71,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <TabItem value="ios" label="iOS">
 
-![Вибір паркування в діях на iOS](@site/static/img/plugins/parking/ios_set_p_point2.png)  ![Встановлення точки паркування на iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
+![Вибір паркування в діях на iOS](@site/static/img/plugins/parking/ios_set_p_point2.png) ![Встановлення точки паркування на iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
 
 </TabItem>
 
@@ -147,15 +147,15 @@ import Translate from '@site/src/components/Translate.js';
 
 **Через меню Навігація**:
 
-  1. Натисніть кнопку **Навігація**.
-  2. Виберіть профіль.
-  3. Натисніть **Встановити пункт призначення** та виберіть **Паркування** зі списку збережених точок.
+1. Натисніть кнопку **Навігація**.
+2. Виберіть профіль.
+3. Натисніть **Встановити пункт призначення** та виберіть **Паркування** зі списку збережених точок.
 
 **Через віджет Паркування**:
 
-  1. Натисніть **віджет Паркування**.
-  2. Натисніть на маркер місця паркування.
-  3. Виберіть **Навігація** та профіль, який ви хочете використовувати.
+1. Натисніть **віджет Паркування**.
+2. Натисніть на маркер місця паркування.
+3. Виберіть **Навігація** та профіль, який ви хочете використовувати.
 
 
 ### Видалити місце {#remove-a-spot}
@@ -171,7 +171,7 @@ import Translate from '@site/src/components/Translate.js';
 <TabItem value="ios" label="iOS">
 
 <!-- ![Action Delete Parking in Android](@site/static/img/map/context_menu_limited_parking.png) -->
-  
+
 ![Дія Видалити паркування на iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>

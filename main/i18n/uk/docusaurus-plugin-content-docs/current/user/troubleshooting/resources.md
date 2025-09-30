@@ -1,5 +1,5 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -106,7 +106,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | Виділені адміністративні межі | Стиль рендерингу карти заснований на стандартному стилі OsmAnd, з більш виділеними адміністративними межами для кращої видимості. |[Виділені адміністративні межі](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Карта Open Fiets | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) — це стиль карти, орієнтований на велосипедистів, що виділяє велосипедні доріжки (червоним), велосипедні маршрути (синім пунктиром), велосипедні стежки (червоним пунктиром) та дороги з обмеженим рухом транспортних засобів, такі як велосипедні вулиці (суцільні червоні межі). |[Стиль OpenFietsMap на GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Стиль карти "Вибір" | [Стиль карти "Вибір"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) — це стиль карти від Holder Tamm, який дозволяє вам обирати, приховувати певні об'єкти чи ні. |[Стиль карти "Вибір"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-
+| ExplorerRS | [Стиль рендерингу ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) в основному базується на UniMap та routes.addon.render.xml |["ExplorerRS" Стиль карти](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 ### Офлайн-карти {#offline-maps}
 

@@ -192,12 +192,14 @@
   "weather_current": "Поточне місцезнаходження",
   "weather_generated": "Прогноз згенеровано",
   "weather_source": "Джерело",
-  "weather:map_layers": "Шари мапи",
   "terrain_color_scheme": "Колірна схема",
   "terrain_desc": "Виберіть один з варіантів візуалізації: Висота, Відтінення рельєфу, Ухил.",
   "terrain_visibility": "Видимість",
   "dev_issues": "Проблеми",
+  "plan_route": "Планувати маршрут",
+  "create_track": "Створити трек",
+  "import_track": "Імпортувати трек",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "f04415458a8e01656d9c5cb136e017c402c52406966ec5d45ca775a1e95d6a25"
   }
 }

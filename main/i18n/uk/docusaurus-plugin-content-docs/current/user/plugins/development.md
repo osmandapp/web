@@ -1,7 +1,7 @@
 ---
-source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 sidebar_position: 10
-title:  Розробка OsmAnd
+title: Розробка OsmAnd
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -62,10 +62,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Рельєф {#terrain}
 
-- **Використовувати растровий [формат SQLIte](../../technical/osmand-file-formats/osmand-sqlite) для затінення пагорбів та схилів** (*Android*). Завантажувати растрові мапи старого формату.
+- **Використовувати растровий [формат SQLIte](../../technical/osmand-file-formats/osmand-sqlite) для затінення пагорбів та схилів** (*Android*). При використанні механізму рендерингу V2, замість розрахунку затінення пагорбів або схилів з 3D-мапи рельєфу, використовуйте для цієї мети растрові мапи старого формату. Може значно прискорити рендеринг.
 
 
-### Усунення несправностей {#troubleshotting}
+### Усунення несправностей {#troubleshooting}
 
 - **Симулювати ваше місцезнаходження** (*Android* / *iOS*). [Симулювати](#gpx-track-simulation) місцезнаходження та рух за допомогою GPX-треку.
 - **Режим економії заряду батареї** (*Android* / *iOS*). Цей параметр зменшує [частоту оновлення екрана](#map-rendering-fps-widget) на 20 кадрів на секунду, щоб заощадити заряд батареї під час використання програм.
@@ -134,7 +134,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджет FPS рендерингу мапи {#map-rendering-fps-widget}
 
-:::info  Важливо
+:::info Важливо
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
@@ -163,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Віджети положення камери {#camera-position-widgets}
 
-:::info  Важливо
+:::info Важливо
 Віджети розробника OsmAnd можна додати на екран лише тоді, коли увімкнено плагін розробки OsmAnd.
 :::
 
