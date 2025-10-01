@@ -26,7 +26,7 @@ To claim your subscription:
 
 1. Enter your email in the form below.
 
-<RegisterUserPromoBlock  promoKey='eurovelo'/>
+<RegisterUserPromoBlock  promoKey='eurovelo1'/>
 
 2. Submit before September 30, 2025 (offer expires).
 
