@@ -1,5 +1,5 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Колірні схеми
 ---
@@ -20,19 +20,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Платна функція
 
-Колірні схеми використовуються як частина платних функцій [Maps+](../purchases/index.md) та Pro <ProFeature />.
+Колірні схеми використовуються як частина платних [Maps+](../purchases/index.md) and Pro <ProFeature /> функцій.  
 
 :::
 
-Колірні схеми використовуються для [колоризації маршрутів](#routes), [рельєфу мапи](#terrain) та [карти погоди](#weather) і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
+Колірні схеми використовуються в [колоризації маршрутів](#routes), [рельєфі мапи](#terrain), та [мапі погоди](#weather), і представлені як окрема частина інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
 
-Дані колірної палітри доступні в меню [*Карти та ресурси*](../personal/maps-resources.md#local).
+Дані колірної палітри доступні в меню [*Maps & Resources*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *Меню → Карти та ресурси → Локальні → Кольори*
+Перейдіть до: *Menu → Maps & Resources → Local → Colors*
 
 ![Палітри](@site/static/img/personal/color-schemes/colors.png)
 
@@ -40,7 +40,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *Меню → Карти та ресурси → Локальні → Кольори*
+Перейдіть до: *Menu → Maps & Resources → Local → Colors*
 
 ![Колірна палітра](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-## Типи схем {#scheme-types}
+## Scheme Types {#scheme-types}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -68,127 +68,127 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-### Рельєф {#terrain}
+### Terrain {#terrain}
 
-Файли рельєфу (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) визначають 3 [візуалізації рельєфу](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Відтінення рельєфу, Ухил* та *Висота*. Для кожного типу можна мати кілька палітр, наприклад, *лавинний схил* надається за замовчуванням.
+Файли рельєфу (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) визначають 3 [візуалізації рельєфу](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. Для кожного типу можна мати кілька палітр, наприклад, *avalanche slope* надається за замовчуванням.
 
-### Маршрути {#routes}
+### Routes {#routes}
 
-Для візуалізації лінійного градієнта використовуються файли палітри (`route_<type_name>_<palette_name>.txt`) для забарвлення GPX-треків та маршрутів:
+Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
-- Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість, Ухил* та *Висота (над рівнем моря)*.
-- Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил* та *Висота (над рівнем моря) або інформація із зовнішніх датчиків*.
+- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
+- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
-### Погода {#weather}
+### Weather {#weather}
 
-Файли палітри погоди (`weather_<type_name>.txt`) визначають візуалізацію для [шарів погоди](../plugins/weather.md#weather-layers).
+Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
-### Кольори {#colors}
+### Colors {#colors}
 
-Колірна палітра (`user_palette_default.txt`) використовується для попередньо визначених кольорів, які можна призначити [Обраним](./favorites.md), [Трекам](./tracks/).
+Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
 
 
-## Легенда палітри {#palette-legend}
+## Palette Legend {#palette-legend}
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="колір"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="колір"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="колір"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
     </tr>
 </table>
 
 
-Легенда надає простий спосіб перегляду та розуміння різних позначень на мапі. Були додані нові колірні палітри для відображення [**швидкості** для треків](../map/tracks/appearance#track-colors-in-gpx-files), [**типу лінії** для маршрутів](../navigation/guidance/map-during-navigation.md#color), [**висоти та ухилу** для рельєфу](../plugins/topography.md#default-color-scheme) та всіх колірних палітр [**шару погоди**](../plugins/weather.md#weather-layers).
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 
-## Редагувати файл палітри {#edit-palette-file}
+## Edit Palette file {#edit-palette-file}
 
-Ви можете редагувати палітри, щоб персоналізувати вигляд мап та маршрутів. Власні файли колірних палітр можна додати в OsmAnd за допомогою [інструменту імпорту/експорту](./import-export.md).
+You can edit palettes to personalize the look for maps, and routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
-- *Маршрути*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
-- *Рельєф*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
-- *Погода*: `weather_<type_name>.txt`.
-- *Колір*: `user_palette_default.txt`.
+- *Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
+- *Weather*: `weather_<type_name>.txt`.
+- *Color*: `user_palette_default.txt`.
 
-Кожен рядок представляє числове значення (для колірної палітри це індекс) та колір RGB. Наприклад:
+Each line represents a numerical value (for the color palette, it's an index) and RGB color. For example:
 
 ```xml
-# TXT-файл з назвою *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 градусів RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 degree RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# жовтий  {#yellow-}
+# yellow  {#yellow-}
 100,255,222,2,227
-# червоний {#red}
+# red {#red}
 200,255,1,1,255
-# фіолетовий {#violet}
+# violet {#violet}
 220,130,1,255,255
 
 ```
 
-Після переміщення цього TXT-файлу до *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, нова палітра з'явиться в меню "Колірна схема".
+After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
 
-## Читайте також {#read-more}
+## Read more {#read-more}
 
-### Швидкі дії {#quick-actions}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Додати дію → Топографія → Змінити колірну схему рельєфу*
-
-![Колірна схема](@site/static/img/widgets/color_scheme.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Додати дію → Топографія → Змінити колірну схему рельєфу*
-
-![Колірна палітра](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**Швидка дія** для зміни палітри рельєфу. Додано можливість перемикатися між колірними схемами рельєфу, подібно до перемикання між шарами. Це можна зробити за допомогою інструменту [Швидкі дії](../widgets/quick-action.md#configure-map).
-
-
-### Імпорт / Експорт кольорів {#import--export-colors}
+### Quick actions {#quick-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
-![Експорт дій профілю Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Локальне резервне копіювання Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Color Scheme](@site/static/img/widgets/color_scheme.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
-![Експорт дій профілю iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Експорт дій профілю iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Ви можете імпортувати та експортувати всі доступні стандартні та власні колірні палітри за допомогою інструменту відновлення та резервного копіювання файлів OsmAnd.
-
-- Відкрийте головне *Меню*, *Налаштування*, прокрутіть вниз до розділу **Імпорт/експорт** (*Android*) або **Локальне резервне копіювання** (*iOS*) та виберіть потрібну дію.
-- Виберіть один або кілька елементів зі списку *Колір* або опцію *Вибрати все*.
-- Усі експортовані файли зберігаються у форматі `.osf`.
-- Якщо розмір вибраних даних значний, програмі знадобиться деякий час для підготовки файлу `.osf`.
-- Перегляньте статтю [*Імпорт / Експорт*](../personal/import-export.md) для отримання більш детальної інформації.
+**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
 
 
-## Пов'язані статті {#related-articles}
+### Import / Export Colors {#import--export-colors}
 
-- [Взаємодія з картою](../../user/map/interact-with-map.md)
-- [Загальні налаштування](../../user/personal/global-settings.md)
-- [Векторні карти (Стилі карти)](../../user/map/vector-maps.md)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
+
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
+
+- Open the main *Menu*, *Settings*, scroll down to the **Import/export** (*Android*) or **Local Backup** (*iOS*) section, and select the required action.
+- Select one or more items from the *Color* list or the *Select All* option.
+- All exported files are saved in `.osf` format.
+- If the size of your selected data is significant, it will take some time for the application to prepare the `.osf` file.
+- View [*Import / Export*](../personal/import-export.md) article for more detailed information.
+
+
+## Related Articles {#related-articles}
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)

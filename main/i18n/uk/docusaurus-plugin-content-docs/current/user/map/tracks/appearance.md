@@ -1,5 +1,5 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
 sidebar_position: 5
 title:  Зовнішній вигляд треку
 ---
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Колір {#color}
 
 :::tip purchases
-Деякі налаштування можна використовувати лише з *OsmAnd Pro*. Безкоштовні та платні функції для <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> та <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
+Деякі налаштування можна використовувати лише з *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> та <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Безкоштовні та платні функції.
 :::
 
 ![Вигляд](@site/static/img/map/appearance_color_andr.png)
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Доступні варіанти кольору:**
 
-- **Безкоштовні налаштування**: *колір <Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).
+- **Безкоштовні налаштування**: *<Translate android="true" ids="track_coloring_solid"/> колір*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).
 
     ![Меню треку Вигляд Колір треку Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Вигляд Колір треку Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
 
@@ -91,9 +91,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Інтервал поділу {#split-interval}
 
-![Меню треку Вигляд Інтервал поділу](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Інтервал поділу](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Виберіть, чи розділяти інтервал на треку **за відстанню чи за часом**.
+<TabItem value="android" label="Android">
+
+![Меню треку Вигляд Інтервал поділу Android](@site/static/img/map/split_interval_android.png)  ![Інтервал поділу Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Меню треку Вигляд Інтервал поділу](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Інтервал поділу](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Виберіть, чи розділяти трек на інтервали **за відстанню**, **часом** або **підйом/спуск** (Android), або **за відстанню** чи **часом** (iOS). Щоб переглянути детальну статистику по інтервалах, див. [Аналіз за інтервалами](../../map/tracks/track-context-menu.md#analyze-by-intervals) (лише Android).
+
 
 ### Стрілки напрямку {#direction-arrows}
 
@@ -215,4 +229,82 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Параметри масового налаштування зовнішнього вигляду:
 
 - **Стрілки напрямку** - додає [індикатори руху](#direction-arrows).  
-    Стани: *Без змін*, &nbsp;*Оригінал*, &nbsp;*Увімк.*, &nbsp;*
+    Стани: *Без змін*, &nbsp;*Оригінал*, &nbsp;*Увімкнено*, &nbsp;*Вимкнено*.
+
+- **Показувати іконки старту та фінішу** - [відображає маркери](#start-and-finish-icons) для початкових і кінцевих точок треку.  
+    Стани: *Без змін*, &nbsp;*Оригінал*, &nbsp;*Увімкнено*, &nbsp;*Вимкнено*.
+
+- **Колір** – Застосувати ручне або на основі даних [кольорування](#color).
+
+- **Ширина** – Налаштувати [ширину лінії треку](#width) за допомогою попередніх налаштувань або вручну.
+
+- **Інтервал поділу** – [Встановити інтервал](#split-interval) для маркерів відстані / часу.  
+    Стани: *Без змін*, &nbsp;*Оригінал*, &nbsp;*Вибрати*: *Час* або *Відстань*.
+
+Оригінал та без змін:
+
+- **Оригінал** - Відновлює оригінальні параметри з файлу треку.
+
+- **Без змін** - Зберігає поточні налаштування під час сеансу редагування.
+
+
+## Кольори треків у файлах GPX {#track-colors-in-gpx-files}
+
+OsmAnd підтримує **власні кольори треків** у файлах GPX за допомогою тегу `<osmand:color>` у розділі `<extensions>` елемента `<trk>`. Це дозволяє користувачам визначати кольори для окремих треків, покращуючи візуальне розрізнення, коли кілька треків відображаються на мапі.
+
+Щоб вказати колір для треку, використовуйте такий формат:  
+
+```xml
+<trk>
+  <name>Example Track</name>
+  <extensions>
+    <osmand:color>#FF0000</osmand:color>
+  </extensions>
+</trk>
+```
+
+- Тег `<osmand:color>` приймає **шістнадцяткові коди кольорів** (наприклад, `#FF0000` для червоного).
+- Якщо в файлі GPX існує кілька треків, кожен трек може мати власний тег `<osmand:color>`.
+
+
+**Поведінка в OsmAnd:**
+
+1. **Призначення кольору за замовчуванням**:  
+
+    - Коли **GPX-трек імпортується як єдиний трек** (опція ***Import as one track***), весь трек призначається **типовим кольором GPX** (червоний).  
+    - У OsmAnd **4.9.10 та пізніших версіях** ця проблема вирішена — кольори окремих треків тепер зберігаються під час імпорту.
+
+2. **Відображення єдиного кольору для об’єднаних треків:**  
+
+    - Якщо треки **об’єднуються** за допомогою ***Join Segments***, результуючий трек розглядається як **єдиний безперервний трек з одним сегментом**.
+    - Багатокольорове представлення **не підтримується** для об’єднаних треків.
+    - Об’єднаний трек відображатиметься за допомогою **основного кольору GPX** (за замовчуванням: червоний), навіть якщо окремі сегменти треків спочатку мали різні кольори.
+
+3. **Пріоритет налаштувань зовнішнього вигляду:**  
+
+    - OsmAnd наразі підтримує **налаштування кольору та ширини лише для всього треку**.
+    - Ці налаштування зовнішнього вигляду зберігаються в **розширеннях GPX верхнього рівня**.
+    - Якщо колір або ширина **встановлені на верхньому рівні** (як у файлі GPX, так і вручну в OsmAnd), це налаштування матиме пріоритет над кольорами, призначеними окремим сегментам треку.
+
+**Обхідний шлях для багатоколірних треків:**
+
+- Щоб зберегти **окремі кольори для кількох треків**, **імпортуйте треки окремо**, а не об’єднуйте їх.
+
+- Налаштуйте кольори треків вручну в **Налаштуваннях зовнішнього вигляду треку**:
+
+  - Відкрийте трек в OsmAnd.
+  - Торкніться треку, щоб відкрити **Контекстне меню**.
+  - Виберіть **Вигляд**.
+  - Оберіть бажаний колір.
+
+- Це гарантує, що кожен трек збереже своє **бажане кольорове представлення**, навіть якщо файл GPX спочатку містив кілька сегментів з різними кольорами.
+
+
+## Пов’язані статті {#related-articles}
+
+- [Контекстне меню мапи](../map-context-menu.md)
+- [Налаштувати мапу](../configure-map-menu.md)
+- [Точки на мапі](../point-layers-on-map.md)
+- [Треки](../tracks/index.md)
+- [Контекстне меню треків](../tracks/track-context-menu.md)
+- [Запис поїздки](../../plugins/trip-recording.md)

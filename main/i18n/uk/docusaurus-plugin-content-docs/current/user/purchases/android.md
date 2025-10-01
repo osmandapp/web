@@ -1,5 +1,5 @@
 ---
-source-hash: 166c161e033aab6f7ca0b049fcfab98226fb4a490c7abb63ece62fd8edca3314
+source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -67,7 +67,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 2. **Android Auto** підтримується лише для OsmAnd, завантаженого з **Google Play**. Він **недоступний** для Maps+, завантаженого з *Huawei AppGallery*.
 
-3. **OsmAnd Pro**, **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати їх в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro**,  **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати їх в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 4. Ви можете додати **OsmAnd+** до **[Сімейної бібліотеки Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)**, щоб поділитися покупкою з членами сім'ї.  
 
@@ -96,7 +96,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 -->
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Внутрішня покупка | [Maps+](#install-osmand-android) Підписка | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Підписка | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Тип покупки** | **Безкоштовно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
@@ -110,7 +110,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 У таблиці нижче детально описано функції, що входять як до безкоштовного, так і до платного пакетів OsmAnd, а також їхні відповідні ціни.
 
-|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (внутрішня&#8209;покупка та підписка) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -119,7 +119,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Усі Pro-функції](#pro-features) | **-** | **-** | ✔ |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Необмежені завантаження мап](../start-with/download-maps.md) | <details><summary>**7 завантажень мап**</summary>  - Завантаження або оновлення мапи означає лише завантаження-оновлення мапи країни (регіону). <br/> - **Оглядова мапа світу**, **Світова корекція висот**, **Шрифти мапи** та **Голосові підказки** не враховуються як 7 можливостей для завантаження. </details> | ✔ | ✔ |
-| [Щомісячні оновлення мап](../personal/maps-resources.md#updates)<br/>Раз на місяць (із затримкою 2 дні) | <details><summary>**7 завантажень мап**</summary> Оновлення мапи рахується як завантаження.</details> | ✔ | ✔ |
+| [Щомісячні оновлення мап](../personal/maps-resources.md#updates-menu)<br/>Раз на місяць (із затримкою 2 дні) | <details><summary>**7 завантажень мап**</summary> Оновлення мапи рахується як завантаження.</details> | ✔ | ✔ |
 | [Щогодинні оновлення мап](../personal/maps-resources.md#live-updates)<br/>Живі оновлення (затримка 1 година) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх сенсорів](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
