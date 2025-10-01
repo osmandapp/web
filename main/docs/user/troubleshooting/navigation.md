@@ -23,6 +23,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
 
 
+### Incorrect or Broken Routes {#incorrect-or-broken-routes}
+
+Sometimes OsmAnd may display unexpected navigation results. Instead of following the road network, the route may appear as a straight dotted line to an unrelated point, or navigation may fail entirely. This usually indicates that routing to the selected location is not possible with the current configuration. Similar issues have been reported by users on [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) and [more](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Causes:**
+
+- Outdated or duplicated maps. Maps with different update dates or duplicates can break connectivity (especially across regions/borders).
+- Damaged profile settings. Custom/modified profiles (e.g., Bicycle) can cause inconsistent behavior.
+- Routing engine mismatch: Different engines (HH × Java vs HH × C++) may handle the same maps differently.
+
+**Solutions:**
+
+1. Reset your profile.
+- Open *Menu* → *Settings* → *App profile (Browse map)*.
+- Select *Reset to default*.
+
+2. Remove and reinstall maps.
+- Open *Menu* → *Maps & Resources* → *Local* and delete all maps for the affected region(s).
+- Then go to *Menu* → *Maps & Resources* → *Downloads* and download the maps again.
+- Optionally check *Menu* → *Maps & Resources* → *Updates* to ensure all regions share the same update date.
+
+3. Switch routing engine.
+- Enable the plugin: *Menu* → *Plugins* → *OsmAnd development*.
+- Then open *Menu* → *Settings* → *App profile* → *Navigation settings* → *Route parameters* → *Development* → *Routing type* and switch *HH × C++* ↔ *HH × Java* (you may also try A* classic or A* 2-phase).
+
+4. As a last resort.
+- Reinstall the app and download maps again (helps when hidden conflicts persist).
+
+
 ### How to calculate routes longer than 250km? {#how-to-calculate-routes-longer-than-250km}
 
 1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
