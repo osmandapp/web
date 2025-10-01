@@ -28,7 +28,7 @@ This article describes how to configure the appearance of the map during navigat
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Map screen during navigation](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -36,7 +36,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Map screen during navigation](@site/static/img/navigation/map_during_navigation_ios.png)
 
 </TabItem>
 
