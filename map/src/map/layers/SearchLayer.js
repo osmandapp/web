@@ -94,8 +94,6 @@ export default function SearchLayer() {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
 
-    const [selectedCategory, setSelectedCategory] = useState(null);
-
     const searchLayers = useRef(null);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
@@ -130,13 +128,12 @@ export default function SearchLayer() {
     useEffect(() => {
         if (ctx.searchQuery?.search) {
             removeOldSearchLayer();
-            //remove old categories
+            //remove old categories from search
             ctx.setShowPoiCategories([]);
             const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
                 const category = PoiManager.formattingPoiFilter(searchData?.query, true);
                 searchByCategory(category, searchData.key, ctx.searchQuery.lang);
-                setSelectedCategory(category);
             } else {
                 if (ctx.searchQuery.latlng) {
                     searchByWord(searchData.query, ctx.searchQuery.latlng, ctx.searchQuery.baseSearch).then();
@@ -145,8 +142,10 @@ export default function SearchLayer() {
                 }
             }
         } else {
-            if (selectedCategory) {
-                removeCategory(selectedCategory);
+            if (ctx.configureMapState.pois) {
+                ctx.setShowPoiCategories([...ctx.configureMapState.pois]);
+            } else {
+                ctx.setShowPoiCategories([]);
             }
         }
     }, [ctx.searchQuery]);
@@ -390,12 +389,11 @@ export default function SearchLayer() {
 
     function searchByCategory(category, key, catLang) {
         const newCategory = { key, category, lang: catLang };
-        ctx.setShowPoiCategories([newCategory]);
+        ctx.setShowPoiCategories((prev) => [...prev, newCategory]);
     }
 
     function removeCategory(category) {
         const index = ctx.showPoiCategories.findIndex((item) => item.category === category);
-
         if (index > -1) {
             ctx.showPoiCategories.splice(index, 1);
         }

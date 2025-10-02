@@ -162,7 +162,6 @@ export default function PoiLayer() {
     const navigate = useNavigate();
 
     const [prevZoom, setPrevZoom] = useState(null);
-    const [prevTypesLength, setPrevTypesLength] = useState(null);
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
     const [poiList, setPoiList] = useState({
@@ -175,7 +174,7 @@ export default function PoiLayer() {
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
     const [bbox, setBbox] = useState(null);
-    const [prevCategoriesCount, setPrevCategoriesCount] = useState(null);
+    const [prevCategories, setPrevCategories] = useState(null);
     const [openAddDialog, setOpenAddDialog] = useState(false);
     const [selectedPoi, setSelectedPoi] = useState(false);
 
@@ -222,6 +221,23 @@ export default function PoiLayer() {
         }
     }, [ctx.poiByUrl]);
 
+    useEffect(() => {
+        ctx.setShowPoiCategories((prev) => {
+            const configCats = ctx.configureMapState.pois.map((x) => x.category);
+
+            // drop config-origin items that no longer exist in Configure Map
+            const kept = prev.filter((o) => !(o.fromConfig && !configCats.includes(o.category)));
+
+            const prevConfigCats = new Set(kept.filter((o) => o.fromConfig).map((o) => o.category));
+
+            const toAdd = ctx.configureMapState.pois
+                .filter((o) => !prevConfigCats.has(o.category))
+                .map((o) => ({ ...o, fromConfig: true }));
+
+            return toAdd.length || kept.length !== prev.length ? [...kept, ...toAdd] : prev;
+        });
+    }, [ctx.configureMapState.pois]);
+
     async function openPoiByUrl() {
         const { lat, lng, name, type } = ctx.poiByUrl.params;
 
@@ -264,8 +280,8 @@ export default function PoiLayer() {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
-        let catArr = [];
-        let catArrLang = {};
+        const catArr = [];
+        const catArrLang = {};
         //add fields for restoring the previous search result
         let prevSearchRes;
         let prevSearchCategory;
@@ -291,11 +307,11 @@ export default function PoiLayer() {
             southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
             savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
-            prevCategoriesCount: prevCategoriesCount,
+            prevCategoriesCount: prevCategories ? prevCategories.length : 0,
             prevSearchRes: prevSearchRes,
             prevSearchCategory: prevSearchCategory,
         };
-        let response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
+        const response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
             params: {
                 locale: i18n.language,
                 lat: map.getCenter().lat,
@@ -318,7 +334,14 @@ export default function PoiLayer() {
                 // always clear the old poi list
                 return true;
             }
-            if (prevTypesLength !== ctx.showPoiCategories?.length) {
+            if (!prevCategories) {
+                return true;
+            }
+            // compare previous and current categories
+            const prev = prevCategories.map((c) => c.category).sort();
+            const current = ctx.showPoiCategories.map((c) => c.category).sort();
+
+            if (JSON.stringify(prev) !== JSON.stringify(current)) {
                 return true;
             }
         }
@@ -333,14 +356,14 @@ export default function PoiLayer() {
                 poiList,
                 showPoiCategories,
                 savedBbox,
-                prevCategoriesCount,
+                prevCategories,
                 poiIconCache,
                 zoom,
             }) => {
                 map.spin(true, { color: '#1976d2' });
                 const bbox = getVisibleBbox(map, ctx);
                 const notifyTimeout = showProcessingNotification(ctx);
-                await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then(async (res) => {
+                await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategories).then(async (res) => {
                     map.spin(false);
                     clearTimeout(notifyTimeout);
                     if (res && !ignore) {
@@ -360,7 +383,7 @@ export default function PoiLayer() {
                                 };
                                 setPoiList(newPoiList);
                                 setBbox(bbox);
-                                setPrevCategoriesCount(showPoiCategories.length);
+                                setPrevCategories(showPoiCategories);
                                 setUseLimit(res.useLimit);
                             }
                         }
@@ -394,7 +417,6 @@ export default function PoiLayer() {
         let controller = new AbortController();
 
         async function getPoiList() {
-            setPrevTypesLength(cloneDeep(ctx.showPoiCategories.length));
             if (
                 (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
                 move ||
@@ -412,7 +434,7 @@ export default function PoiLayer() {
                         poiList,
                         showPoiCategories: ctx.showPoiCategories,
                         savedBbox: bbox,
-                        prevCategoriesCount,
+                        prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                     });

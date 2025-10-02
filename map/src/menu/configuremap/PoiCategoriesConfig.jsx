@@ -18,6 +18,7 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import PoiManager, { translatePoi } from '../../manager/PoiManager';
 import { changeIconSizeWpt, getPoiCategoryIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
+import { updateConfigureMapCache } from './ConfigureMap';
 
 export const CategoryIcon = ({ color, background, icon, iconSize, shieldSize }) => {
     let svgHtml = getPoiCategoryIcon({ icon, color, background }).options.html;
@@ -40,8 +41,8 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     const activePoiFilters = ctx.poiCategory?.filters;
 
     useEffect(() => {
-        if (ctx.showPoiCategories.length > 0) {
-            const categories = ctx.showPoiCategories.map((item) => item.category);
+        if (ctx.configureMapState.pois.length > 0) {
+            const categories = ctx.configureMapState.pois.map((item) => item.category);
             setSelectedCategories(new Set(categories));
         }
     }, []);
@@ -66,9 +67,16 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     function selectCheckedCategories() {
         const updatedCategories = Array.from(selectedCategories).map((category) => ({
             key: null,
+            fromConfig: true,
             category,
         }));
-        ctx.setShowPoiCategories([...updatedCategories]);
+
+        ctx.setConfigureMapState((prev) => {
+            const next = { ...prev, pois: updatedCategories };
+            updateConfigureMapCache(next);
+            return next;
+        });
+
         setOpenPoiConfig(false);
     }
 
