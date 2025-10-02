@@ -124,7 +124,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
     if (layers.length) {
         return L.featureGroup(layers, {
-            id: type === OBJECT_SEARCH ? SEARCH_LAYER_ID : null,
+            id: type === OBJECT_SEARCH ? SEARCH_LAYER_ID : POI_LAYER_ID,
         });
     } else {
         return L.featureGroup(); // return an empty layer group if there are no layers
@@ -159,6 +159,9 @@ export default function PoiLayer() {
     const ltx = useContext(LoginContext);
     const map = useMap();
 
+    // for fixing dead layers
+    const reqIdRef = useRef(0);
+
     const navigate = useNavigate();
 
     const [prevZoom, setPrevZoom] = useState(null);
@@ -180,6 +183,16 @@ export default function PoiLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
+
+    function findFeatureGroupById(id) {
+        let found = null;
+        map.eachLayer((layer) => {
+            if (layer instanceof L.FeatureGroup && layer.options?.id === id) {
+                found = layer;
+            }
+        });
+        return found;
+    }
 
     useSelectMarkerOnMap({
         ctx,
@@ -359,39 +372,45 @@ export default function PoiLayer() {
                 prevCategories,
                 poiIconCache,
                 zoom,
+                reqId,
             }) => {
                 map.spin(true, { color: '#1976d2' });
                 const bbox = getVisibleBbox(map, ctx);
                 const notifyTimeout = showProcessingNotification(ctx);
-                await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategories).then(async (res) => {
-                    map.spin(false);
-                    clearTimeout(notifyTimeout);
-                    if (res && !ignore) {
-                        if (!res.alreadyFound) {
-                            if (res.features) {
-                                const layer = await createPoiLayer({
-                                    ctx,
-                                    poiList: res.features.features,
-                                    globalPoiIconCache: poiIconCache,
-                                    map,
-                                    zoom,
-                                });
-                                const newPoiList = {
-                                    prevLayer: cloneDeep(poiList?.layer),
-                                    layer: layer,
-                                    listFeatures: res.features,
-                                };
-                                setPoiList(newPoiList);
-                                setBbox(bbox);
-                                setPrevCategories(showPoiCategories);
-                                setUseLimit(res.useLimit);
+                try {
+                    const res = await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategories);
+                    if (reqId !== reqIdRef.current || ignore) return;
+                    if (res) {
+                        if (!res.alreadyFound && res.features) {
+                            const layer = await createPoiLayer({
+                                ctx,
+                                poiList: res.features.features,
+                                globalPoiIconCache: poiIconCache,
+                                map,
+                                zoom,
+                            });
+                            const existing = findFeatureGroupById(POI_LAYER_ID);
+                            if (existing) {
+                                map.removeLayer(existing);
                             }
+                            const newPoiList = {
+                                prevLayer: cloneDeep(poiList?.layer),
+                                layer,
+                                listFeatures: res.features,
+                            };
+                            setPoiList(newPoiList);
+                            setBbox(bbox);
+                            setPrevCategories(showPoiCategories);
+                            setUseLimit(res.useLimit);
                         }
                     } else {
                         setPoiList(null);
                     }
+                } finally {
+                    map.spin(false);
+                    clearTimeout(notifyTimeout);
                     ctx.setProcessingSearch(false);
-                });
+                }
             },
             1000
         )
@@ -428,6 +447,7 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(cloneDeep(zoom));
                 if (ctx.showPoiCategories.length > 0) {
+                    reqIdRef.current += 1;
                     debouncedGetPoi({
                         controller,
                         ignore,
@@ -437,6 +457,7 @@ export default function PoiLayer() {
                         prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
+                        reqId: reqIdRef.current,
                     });
                 }
             } else {
@@ -472,12 +493,17 @@ export default function PoiLayer() {
         }
         return () => {
             ignore = true;
+            controller.abort?.();
         };
     }, [zoom, move, ctx.showPoiCategories]);
 
     // add search result to the map and to the left panel
     useEffect(() => {
         if (!ctx.processingSearch) {
+            const existing = findFeatureGroupById(POI_LAYER_ID);
+            if (existing) {
+                map.removeLayer(existing);
+            }
             if (poiList?.prevLayer) {
                 map.removeLayer(poiList?.prevLayer);
             }
@@ -489,6 +515,16 @@ export default function PoiLayer() {
             setMove(false);
         }
     }, [poiList, ctx.processingSearch]);
+
+    useEffect(() => {
+        return () => {
+            const existing = findFeatureGroupById(POI_LAYER_ID);
+            if (existing) {
+                map.removeLayer(existing);
+            }
+            prevController?.abort?.();
+        };
+    }, []);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
