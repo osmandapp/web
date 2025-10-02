@@ -125,7 +125,7 @@ Set your destination in the *Navigation menu* using:
 
 ![Select on the map](@site/static/img/navigation/route/select_on_map.png)
 
-As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
+As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). When you select a point on the map, a dialog opens. The map is centered with a marker, the coordinates of the map center are displayed, and you move the map under the marker instead of tapping directly on a spot. To confirm, press the *Select* button. You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
 
 
 ### Set Target Point {#set-target-point}
@@ -149,7 +149,7 @@ The most important thing to start navigation is to determine your destination. T
 
 - **<Translate android="true" ids="search_button"/>** - Opens [the search menu](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Opens [address search menu](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Opens the map to choose a destination point by tapping on the map.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Opens a dialog where the map is centered with a marker. Coordinates of the map center are shown, you move the map under the marker, and confirm the choice by pressing *Select*.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Allows to use [Favorite](../../personal/favorites.md) as a destination.
 - **<Translate android="true" ids="shared_string_markers"/>** - Allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
 - **Swap Starting point and Destination** &nbsp;&#8595;&#8593; - Allows to swap *Start* and *Finish* points.
@@ -206,7 +206,7 @@ In this menu you can find additional options for managing the destination points
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Android only*) - All points will be put in the reverse direction.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. You can add intermediate destinations from this menu.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. You can add intermediate destinations from this menu. The process of selecting an intermediate destination on the map is the same as for the start and target points.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. All the intermediate destinations will be removed from the map.
 
