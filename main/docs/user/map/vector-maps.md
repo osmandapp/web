@@ -106,7 +106,7 @@ Designed for off-road navigation, this style is based on the [Topo](#topo) map l
 
 ![Snowmobile map style](@site/static/img/map/snowmobile.png)
 
-Tailored for snowmobile navigation, this style highlights snowmobile-friendly paths, roads, and tracks. It highlights specialized paths in snowy regions, offering clear navigation across snow-covered terrains where standard roads may not be available.
+Tailored for snowmobile navigation, this style highlights snowmobile-friendly paths, roads, and tracks. It highlights specialized paths in snowy regions, offering clear navigation across snow-covered terrains where standard roads may not be available. Snowmobile trails are clickable. After selecting a trail, information such as its name, total distance, uphill and downhill meters, and altitude range is displayed. Trails can also be used for track-based navigation.
 
 
 ## Map Legend {#map-legend}
