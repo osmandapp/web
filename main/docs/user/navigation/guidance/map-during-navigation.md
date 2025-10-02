@@ -94,7 +94,11 @@ When you create a route, you can set the types of points to be displayed along t
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) are associated with the **Show along the route** setting. This is essentially an additional setting for displaying POIs on the map, directly related to the created route.  
+POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) are associated with the **Show along the route** setting. 
+
+:::info note
+The **Show along the route** option affects only the POI list, not the map itself. POI icons are displayed everywhere on the map regardless of their distance from the route.
+:::
 
 When you specify the display of certain POIs on the *Configure map*, they are all displayed on the maps you have downloaded, whether you have selected categories or, if you do not care which category, selected nearby POIs.  
 
