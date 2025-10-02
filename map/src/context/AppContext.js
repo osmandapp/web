@@ -412,6 +412,7 @@ export const AppContextProvider = (props) => {
 
     //poi
     const [showPoiCategories, setShowPoiCategories] = useState([]);
+    const [showPoiConfig, setShowPoiConfig] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
     const [poiIconCache, setPoiIconCache] = useState({});
     const [categoryIcons, setCategoryIcons] = useState({});
@@ -879,6 +880,7 @@ export const AppContextProvider = (props) => {
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,
                 setSelectedLocalTrackObj,
+                showPoiConfig, setShowPoiConfig,
             }}
         >
             {props.children}

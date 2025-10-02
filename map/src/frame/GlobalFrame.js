@@ -60,9 +60,6 @@ const GlobalFrame = () => {
         if (!ctx.configureMapState.showTracks) {
             hideAllTracks(ctx);
         }
-        if (isEmpty(ctx.configureMapState.pois)) {
-            ctx.setShowPoiCategories([]);
-        }
     }, [ctx.configureMapState]);
 
     useEffect(() => {

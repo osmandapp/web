@@ -43,10 +43,13 @@ import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import isEmpty from 'lodash-es/isEmpty';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
+
+export function updateConfigureMapCache(conf) {
+    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
+}
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -59,10 +62,6 @@ export default function ConfigureMap() {
     const [openedTracks, setOpenedTracks] = useState(null);
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
-
-    function updateConfigureMapCache(conf) {
-        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
-    }
 
     const handleFavoritesSwitchChange = () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -91,15 +90,6 @@ export default function ConfigureMap() {
             ctx.setHeightmap(ctx.configureMapState.terrain);
         }
     }, [ctx.configureMapState.terrain]);
-
-    useEffect(() => {
-        if (JSON.stringify(ctx.showPoiCategories) === JSON.stringify(ctx.configureMapState.pois)) return;
-        ctx.setConfigureMapState((prev) => {
-            const next = { ...prev, pois: ctx.showPoiCategories };
-            updateConfigureMapCache(next);
-            return next;
-        });
-    }, [ctx.showPoiCategories]);
 
     function setDefaultConfigureMap() {
         const defaultConfigureMap = defaultConfigureMapStateValues;
@@ -159,7 +149,7 @@ export default function ConfigureMap() {
                                         setOpenPoiConfig(true);
                                     }}
                                 >
-                                    <ListItemIcon className={setIconStyles(ctx.showPoiCategories.length > 0)}>
+                                    <ListItemIcon className={setIconStyles(ctx.configureMapState.pois.length > 0)}>
                                         <PoiIcon />
                                     </ListItemIcon>
                                     <ListItemText>
@@ -173,9 +163,9 @@ export default function ConfigureMap() {
                                             <Typography variant="inherit" noWrap>
                                                 {t('layer_poi')}
                                             </Typography>
-                                            {ctx.showPoiCategories.length > 0 && (
+                                            {ctx.configureMapState.pois.length > 0 && (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                    {ctx.showPoiCategories.length}
+                                                    {ctx.configureMapState.pois.length}
                                                 </Typography>
                                             )}
                                         </div>
