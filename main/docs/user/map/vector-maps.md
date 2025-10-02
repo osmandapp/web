@@ -104,7 +104,7 @@ Designed for off-road navigation, this style is based on the [Topo](#topo) map l
 
 ### Snowmobile {#snowmobile}
 
-![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
+![Snowmobile map style](@site/static/img/map/snowmobile.png)
 
 Tailored for snowmobile navigation, this style highlights snowmobile-friendly paths, roads, and tracks. It highlights specialized paths in snowy regions, offering clear navigation across snow-covered terrains where standard roads may not be available.
 
