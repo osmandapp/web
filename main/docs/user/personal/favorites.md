@@ -151,7 +151,7 @@ A wide range of icons for POIs and waypoints is available in OsmAnd. You can:
 
 ### Special Favorites (Personal) {#special-favorites-personal}
 
-The *Personal folder* contains special points like **<Translate android="true" ids="favorite_home_category"/>** and **<Translate android="true" ids="work_button"/>**, often used in [navigation](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*, and its parameters cannot be changed.
+The *Personal folder* contains special points like **<Translate android="true" ids="favorite_home_category"/>** and **<Translate android="true" ids="work_button"/>**, often used in [navigation](../navigation/setup/route-navigation.md#select-start-point). This folder does not have a *three-dot menu*, and its parameters cannot be changed.
 
 
 ## Manage Favorites {#manage-favorites}

@@ -170,7 +170,7 @@ By default, the **Attach to the roads** feature runs **automatically** when a tr
 
 ### Start / Finish Point {#start--finish-point}
 
-You can specify the start and finish point for a route other than the start/finish specified in the GPX file. Just change it the same as you do for [Navigation](../setup/route-navigation.md#select-starting-point).
+You can specify the start and finish point for a route other than the start/finish specified in the GPX file. Just change it the same as you do for [Navigation](../setup/route-navigation.md#select-start-point).
 
 In the [Follow track menu](#follow-track-options), you can choose whether you want to navigate from your current location to the start point of the track or to the nearest point on the GPX track.  Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) that will be used for the start and end segment of your route.  
 

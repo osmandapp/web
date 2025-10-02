@@ -121,9 +121,11 @@ Set your destination in the *Navigation menu* using:
 - The **Cancel** button leads back to the main screen.
 - [Start button](#start--stop-navigation) starts navigation after route calculation has ended.
   
-### Select Starting Point {#select-starting-point}
+### Select Start Point {#select-start-point}
 
-As for the starting point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
+![Select on the map](@site/static/img/navigation/route/select_on_map.png)
+
+As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
 
 
 ### Set Target Point {#set-target-point}
