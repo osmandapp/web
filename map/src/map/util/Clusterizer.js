@@ -356,6 +356,7 @@ export function createSecondaryMarker(obj) {
     }
 
     return new SimpleDotMarker(latlng, obj, {
+        ...obj.properties,
         id: obj.properties.id,
         idObj: getObjIdSearch(obj),
         simple: true,
