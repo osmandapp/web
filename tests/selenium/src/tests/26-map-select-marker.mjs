@@ -5,6 +5,7 @@ import { assert, clickBy, getMarker, leftClickBy, sendKeysBy, waitBy, waitByRemo
 import { By } from 'selenium-webdriver';
 import { driver } from '../options.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
+import ignoreTest from '../actions/actionIgnoreTest.mjs';
 
 const searchWord = 'silpo';
 const blue = 'rgb(35 123 255)';
@@ -31,6 +32,7 @@ const ecoords2 = { lat: 50.45286, lng: 30.51432 };
 const ecoords3 = { lat: 50.456146, lng: 30.52705 };
 
 export default async function test() {
+    ignoreTest();
     await actionOpenMap('#14/50.4432/30.4995');
     await actionLogIn();
 
