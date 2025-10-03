@@ -117,6 +117,18 @@ Some road segments could be part of many routes, but they could be individually 
 Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
 
 
+### Snowmobile trails {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_route.png)
+
+Snowmobile routes are mapped in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) as `route=snowmobile`. They are used for winter recreation and to connect remote areas during the snow season. In OsmAnd, snowmobile trails are clickable: you can tap on a trail and view its information in the context menu.
+
+Steps to use:
+- Enable the Snowmobile map style *Menu* → *Configure map* → *Map style* → *Snowmobile*
+- Tap a snowmobile trail on the map.
+- View its information in the context menu such as name, distance, uphill/downhill, altitude.
+
+
 ### Horse routes {#horse-routes}
 
 ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
