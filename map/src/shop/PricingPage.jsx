@@ -64,7 +64,8 @@ export default function PricingPage() {
                         if (
                             allPurchases.find((p) => {
                                 p.type = p.type ?? 'one-time';
-                                return p.valid === true && p.name === item.name && p.type === type;
+                                const isValid = p.valid === true || p.valid === 'true';
+                                return isValid && p.name === item.name && p.type === type;
                             })
                         ) {
                             item.show = false;
@@ -110,7 +111,10 @@ export default function PricingPage() {
                         </Box>
                     )}
                     <Typography className={styles.pricingDesc}>
-                        <Trans i18nKey="web:notice_fastspring_purchase_info" components={{ portalLink: <Link href="https://osmand.onfastspring.com/account" /> }} />
+                        <Trans
+                            i18nKey="web:notice_fastspring_purchase_info"
+                            components={{ portalLink: <Link href="https://osmand.onfastspring.com/account" /> }}
+                        />
                     </Typography>
                     <Suspense fallback={<CircularProgress />}>
                         <FeaturesTable />
