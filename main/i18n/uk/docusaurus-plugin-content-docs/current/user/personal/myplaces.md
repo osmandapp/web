@@ -243,3 +243,4 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - [Історія пошуку](../search/search-history.md#export-and-share)
 - [Схеми палітри кольорів](../personal/color-palette-schemes.md)
 
+</parameter
