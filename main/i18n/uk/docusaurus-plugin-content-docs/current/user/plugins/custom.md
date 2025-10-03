@@ -1,5 +1,5 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
+source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
 sidebar_position: 4
 title:  Власний пакет
 ---
@@ -303,7 +303,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Завантаження {#downloads}
 
 Ви можете додати будь-які файли, такі як *SQLite, OBF або шрифти* для завантаження, використовуючи тип **"DOWNLOADS"**. Основні типи файлів, що завантажуються, можна знайти [тут](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої мапи з [Мапи та ресурси](../personal/maps-resources.md#local-menu) OsmAnd.  У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу, назву, опис вашого файлу тощо.  
+   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої мапи з розділу [Мапи та ресурси](../personal/maps-resources.md#local) OsmAnd.  У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу, назву, опис вашого файлу тощо.  
 
    ![Власний пакет](@site/static/img/plugins/custom/3.jpg)
 
