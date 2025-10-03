@@ -242,5 +242,3 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - [Керування треками](../personal/tracks/manage-tracks.md#import--export-track)
 - [Історія пошуку](../search/search-history.md#export-and-share)
 - [Схеми палітри кольорів](../personal/color-palette-schemes.md)
-
-</parameter
