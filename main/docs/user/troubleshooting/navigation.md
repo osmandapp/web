@@ -36,7 +36,7 @@ Sometimes OsmAnd may display unexpected navigation results. Instead of following
 **Solutions:**
 
 1. Reset your profile.
-- Open *Menu* → *Settings* → *App profile (Navigation)*.
+- Open *Menu* → *Settings* → *App profile (Navigation Profile)*.
 - Select *Reset to default*.
 
 2. Remove and reinstall maps.
