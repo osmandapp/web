@@ -123,10 +123,23 @@ Set your destination in the *Navigation menu* using:
   
 ### Select Start Point {#select-start-point}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Select on the map](@site/static/img/navigation/route/select_on_map.png)
 
-As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). When you select a point on the map, a dialog opens. The map is centered with a marker, the coordinates of the map center are displayed, and you move the map under the marker instead of tapping directly on a spot. To confirm, press the *Select* button. You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
+As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). When you select a point on the map, a dialog opens. The map is centered with a marker, the coordinates of the map center are displayed, and you move the map under the marker instead of tapping directly on a spot. To confirm, press the *Select* button. You can also set a start point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
+</TabItem>
 
+<TabItem value="ios" label="iOS">
+
+![Select on the map iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+As for the start point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). When selecting a point on the map, you can freely move and zoom the map, then tap on the desired location. A flag appears at the chosen spot. You can also set a start point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function. 
+</TabItem>
+
+</Tabs>
 
 ### Set Target Point {#set-target-point}
 
@@ -135,15 +148,6 @@ As for the start point, you can choose your current location, the location of a 
 <TabItem value="android" label="Android">
 
 ![Navigation menu Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Navigation menu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
-
-</TabItem>
-
-</Tabs>
 
 The most important thing to start navigation is to determine your destination. The destination point can be found using a [*Search*](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [*Navigation menu*](#navigation-menu):  
 
@@ -153,6 +157,23 @@ The most important thing to start navigation is to determine your destination. T
 - **<Translate android="true" ids="shared_string_favorites"/>** - Allows to use [Favorite](../../personal/favorites.md) as a destination.
 - **<Translate android="true" ids="shared_string_markers"/>** - Allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
 - **Swap Starting point and Destination** &nbsp;&#8595;&#8593; - Allows to swap *Start* and *Finish* points.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation menu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
+
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [*Search*](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [*Navigation menu*](#navigation-menu):  
+
+- **<Translate android="true" ids="search_button"/>** - Opens [the search menu](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Opens [address search menu](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Allows you to move and zoom the map, then tap on the desired location. A flag appears at the chosen spot and marks the destination.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Allows to use [Favorite](../../personal/favorites.md) as a destination.
+- **<Translate android="true" ids="shared_string_markers"/>** - Allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
+- **Swap Starting point and Destination** &nbsp;&#8595;&#8593; - Allows to swap *Start* and *Finish* points.
+</TabItem>
+
+</Tabs>
 
 
 ### Intermediate Destinations {#intermediate-destinations}
