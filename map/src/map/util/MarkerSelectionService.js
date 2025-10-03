@@ -69,11 +69,8 @@ export function updateSelectedMarkerOnMap({ marker, type = null, updatePrev = fa
         return null;
     }
     if (marker.options?.simple) {
-        // simple dot marker
-        marker.setStyle({
-            fillColor: newBackgroundColor,
-            selected: !updatePrev,
-        });
+        marker.paintDot(newBackgroundColor);
+        marker.options.selected = !updatePrev;
     } else {
         if (type && type === EXPLORE_LAYER_ID) {
             marker.options.hover = new HoverMarker(marker).build();

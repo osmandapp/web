@@ -356,8 +356,10 @@ export function createSecondaryMarker(obj) {
     }
 
     return new SimpleDotMarker(latlng, obj, {
+        ...obj.properties,
         id: obj.properties.id,
         idObj: getObjIdSearch(obj),
+        simple: true,
         [FINAL_POI_ICON_NAME]: finalIconName,
     }).build();
 }
@@ -386,9 +388,7 @@ export function createHoverMarker({
             setSelectedId({ id: marker.options.idObj });
         }
         if (!mainStyle) {
-            marker.setStyle({
-                fillColor: COLOR_POINTER,
-            });
+            marker.paintDot(COLOR_POINTER);
         }
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
@@ -416,9 +416,7 @@ export function createHoverMarker({
                 setSelectedId({ id: -1 });
             }
             if (!mainStyle) {
-                marker.setStyle({
-                    fillColor: DEFAULT_POI_COLOR,
-                });
+                marker.paintDot(DEFAULT_POI_COLOR);
             }
         }
         if (pointerRef?.current) {
@@ -445,6 +443,7 @@ export function createHoverMarker({
         } else {
             newMarker = new SimpleDotMarker(latlng, marker, {
                 fillColor: COLOR_POINTER,
+                simple: true,
             }).build();
             pointerRef.current = newMarker.addTo(map);
         }

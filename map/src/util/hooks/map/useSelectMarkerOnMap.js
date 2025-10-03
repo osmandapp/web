@@ -51,8 +51,7 @@ export function useSelectMarkerOnMap({
                     const circle = createSecondaryMarker(ctx.selectedPoiId.obj);
                     if (circle) {
                         ctx.setSelectedSearchMarker(circle);
-                        circle.options.fillColor = COLOR_POINTER;
-                        circle.options.pane = createPane();
+                        circle.paintDot(COLOR_POINTER);
                         circle.addTo(map);
                     }
                 } else if (!ctx.selectedPoiId.show && ctx.selectedSearchMarker) {
@@ -107,10 +106,8 @@ export function useSelectMarkerOnMap({
                     if (prevSelectedMarker.current.options?.hover) {
                         prevSelectedMarker.current.options.hover.remove();
                         prevSelectedMarker.current.options.hover = null;
-                        layer.setStyle({
-                            fillColor: SELECTED_POI_COLOR,
-                        });
                     }
+                    layer.paintDot(SELECTED_POI_COLOR);
                 }
             });
         };
@@ -132,14 +129,5 @@ export function useSelectMarkerOnMap({
             map.removeLayer(ctx.selectedSearchMarker);
             ctx.setSelectedSearchMarker(null);
         }
-    }
-
-    function createPane() {
-        const paneName = 'selectedPane';
-        if (!map.getPane(paneName)) {
-            map.createPane(paneName);
-            map.getPane(paneName).style.zIndex = '1000';
-        }
-        return paneName;
     }
 }
