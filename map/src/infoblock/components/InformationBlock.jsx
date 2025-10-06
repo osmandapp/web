@@ -355,9 +355,11 @@ export default function InformationBlock({
                                         if (!isTrackAnalyzer(ctx)) {
                                             ctx.setCurrentObjectType(null);
                                         }
-
                                         if (ctx.selectedGpxFile.mapObj) {
                                             ctx.setCloseMapObj(true);
+                                            if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+                                                ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
+                                            }
                                         } else if (isCloudTrack(ctx)) {
                                             hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
                                             if (!isEmpty(ctx.selectedGpxFile)) {
