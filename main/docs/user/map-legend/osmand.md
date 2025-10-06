@@ -9,6 +9,3 @@ import OsmandTable from './_osmand-table.mdx';
 <Translate android="yes" id="default_render_descr" />
 
 <OsmandTable/>
-
-## Icons for "Icons at low zooms" option {#icons-at-low-zooms}
-<img src={require('@site/static/img/map-legend/osmand-icons-at-low-zooms.png').default} alt="OsmAnd Map style" />
