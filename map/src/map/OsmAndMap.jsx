@@ -24,6 +24,7 @@ import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
+import { MENU_INFO_CLOSE_SIZE, MENU_INFO_OPEN_SIZE } from '../manager/GlobalManager';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -70,6 +71,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 );
             }
             detectGeoByIp({ map, hash });
+
+            map.on('click', () => {
+                ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+            });
         }
     };
 
