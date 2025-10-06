@@ -6,6 +6,7 @@ import HoverMarker, {
     isNewSelectedExploreMarker,
     selectMarker,
 } from '../../../map/util/MarkerSelectionService';
+import { MENU_INFO_CLOSE_SIZE } from '../../../manager/GlobalManager';
 
 export const COLOR_POINTER = '#237bff';
 export const SELECTED_POI_COLOR = '#237bff';
@@ -90,6 +91,12 @@ export function useSelectMarkerOnMap({
             }
         });
     }, [ctx.selectedWpt, layers]);
+
+    useEffect(() => {
+        if (ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
+            hideSelectedMarker(prevSelectedMarker.current, type);
+        }
+    }, [ctx.infoBlockWidth]);
 
     useEffect(() => {
         const onLayersUpdated = () => {

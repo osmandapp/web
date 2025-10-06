@@ -18,6 +18,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
+import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 
 export function restoreOriginalIcon(layer) {
     if (layer.options.originalIcon) {
@@ -322,6 +323,7 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.mapObj = true;
 
             openFavoriteObj(ctx, ctx.selectedGpxFile);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         },
         [ctx, selectedGpxFileRef]
     );
