@@ -4,7 +4,7 @@ sidebar_position: 1
 title: Стиль карти OsmAnd
 ---
 import Translate from '@site/src/components/Translate.js';
-import OsmandTable from './_osmand-table.mdx';
+import OsmandTable from './osmand-table.mdx';
 
 # Стиль карти OsmAnd {#osmand-map-style}
 <Translate android="yes" id="default_render_descr" />
