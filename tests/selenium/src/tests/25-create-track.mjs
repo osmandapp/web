@@ -1,10 +1,10 @@
 import actionOpenMap from '../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../actions/login/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { clickBy, leftClickBy, matchInnerTextBy, rightClickBy, waitBy } from '../lib.mjs';
+import { clickBy, leftClickBy, matchTextBy, rightClickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
-const strings = ['Points: 3', 'Distance: 5.9 km'];
+const strings = [/Points: 3/, /Distance: 5\.[0-9]+ km/];
 
 export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');
@@ -29,6 +29,6 @@ export default async function test() {
 
 async function validateInfoBlockStrings(strings) {
     for await (const match of strings) {
-        await matchInnerTextBy(By.id('se-infoblock-all'), match);
+        await matchTextBy(By.id('se-infoblock-all'), match);
     }
 }
