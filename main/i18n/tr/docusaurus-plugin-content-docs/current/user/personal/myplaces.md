@@ -1,5 +1,5 @@
 ---
-source-hash: b7a4c8980154722bb0d724edafe0ab0e8ba822222cf5fbe7b64f264c2fb4b1a8
+source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
 sidebar_position: 6
 title: Yerlerim
 ---
@@ -84,35 +84,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **Sil** (*iOS'ta bu seçenek Düzenle menüsünde bulunur*) — Favori noktaları tek tek veya seçilen favori klasörleri ve içerdikleri tüm noktaları siler.
 
-2. ***Üç noktalı menü*** (*Android*) ve ***uzun dokunuş*** (*iOS*). Her klasörün yanındaki *üç noktalı* menüyü veya klasöre *uzun dokunuşu* kullanarak favori gruplarını yönetin:  
+2. ***Üç noktalı menü*** (*Android*) ve ***uzun dokunuş*** (*iOS*). Her klasörün yanındaki *üç noktalı* menüyü veya klasöre *uzun dokunuşu* kullanarak favori gruplarını yönetin. Ayrıntılar için [Favori Grup Eylemleri](../personal/favorites.md#favorite-group-actions) bölümüne bakın.  
 
-    <Tabs groupId="operating-systems" queryString="current-os">
-
-    <TabItem value="android" label="Android">
-
-    ![Üç noktalı menü](@site/static/img/personal/favorites_three-dot_menu.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favoriler menüsü iOS](@site/static/img/personal/favorites_long-tap_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
-
-    - **<Translate android="true" ids="change_default_appearance"/>** — Simgelerini, renklerini veya etiketlerini değiştirerek klasördeki favori noktaların haritada nasıl göründüğünü özelleştirin.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** veya **Haritada gizle** — Klasördeki favori noktaları haritada görüntülemek veya gizlemek için bu seçeneği açıp kapatın.
-
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** veya **Harita işaretçilerinden kaldır** (*Yalnızca Android*) — Kolay başvuru için klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak klasördeki favori noktaları paylaşın, böylece verilerinizi aktarmayı veya yedeklemeyi kolaylaştırın.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favori klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
 
 Daha ayrıntılı talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
@@ -245,23 +218,23 @@ Daha fazla bilgi için [Sesli/Görüntülü Notlar eklentisi](../plugins/audio-v
 
 
 <!--
-### GPX Ara Noktalarıyla Paylaş {#share-with-gpx-waypoints}
+### Share with GPX Waypoints {#share-with-gpx-waypoints}
 
-![Paylaş](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
-*Yerlerim* menüsünde ara nokta olarak seçilen notları, *A/V notları* sekmesi ekranının altındaki **Paylaş** düğmesini kullanarak bunlara [GPX verileri](../plugins/audio-video-notes.md#share-with-gpx-waypoints) ekleyerek paylaşabilirsiniz.
+You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
 
-### Tek Notu Yönet {#manage-single-note}
+### Manage Single Note {#manage-single-note}
 
-![Üç noktalı menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-Her notun yanındaki **üç noktalı menüyü** kullanarak belirli sesli, görüntülü veya fotoğraflı notları yönetebilirsiniz:
+You can manage specific audio, video, or photo notes using the **three-dot menu** next to each note:
 
-- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Seçilen sesli, görüntülü veya fotoğraflı notu doğrudan görüntüler veya dinler.
-- **<Translate android="true" ids="shared_string_share"/>**. Notu çeşitli uygulamalar veya platformlar aracılığıyla başkalarıyla paylaşır.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Notun ilgili konumunu ve [Bağlam menüsünü](../plugins/audio-video-notes#actions-in-map-context-menu) haritada görüntüler.
-- **<Translate android="true" ids="shared_string_rename"/>**. Notun adını daha açıklayıcı veya ilgili bir şeyle değiştirin.
-- **<Translate android="true" ids="shared_string_delete"/>**. Seçilen notlar koleksiyonunuzdan kalıcı olarak silinir.
+- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Views or listens to the selected audio, video, or photo note directly.
+- **<Translate android="true" ids="shared_string_share"/>**. Shares the note with others through various apps or platforms.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Displays the related location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
+- **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the note to something more descriptive or relevant.
+- **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
 ## İlgili Makaleler {#related-articles}

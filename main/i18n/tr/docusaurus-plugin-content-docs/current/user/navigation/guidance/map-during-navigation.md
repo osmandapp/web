@@ -1,5 +1,5 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: d92262bf5d5474ab4446ea8f18794757667c1f706818d88d5160e3b0edc9ad46
 sidebar_position: 2
 title: Navigasyon Sırasında Harita Ekranı
 ---
@@ -29,7 +29,7 @@ Bu makale, navigasyon sırasında haritanın görünümünü nasıl yapılandır
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Navigasyon sırasında harita ekranı](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Navigasyon sırasında harita ekranı](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,13 +37,13 @@ Bu makale, navigasyon sırasında haritanın görünümünü nasıl yapılandır
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Navigasyon sırasında harita ekranı](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Navigasyon sırasında harita ekranı](@site/static/img/navigation/map_during_navigation_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Navigasyon sırasında harita, konumunuzu bulmak, hedef planınızı belirlemek ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
+Navigasyon sırasında, harita konumunuzu bulmak, hedef planınızı belirlemek, rotanızı planlamak ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
 
 Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline göre ayarlanır. Navigasyona başlamadan önce, haritanın görünümünün sürüş sırasında nasıl çalışması gerektiğine ilişkin tercihlerinize uygun olduğundan emin olun.
 
@@ -51,8 +51,9 @@ Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline g�
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Harita görünümünün hareket ettikten sonra mevcut konumla senkronize edildiği süre. | *Değer:* <br /> Asla, 5 sn, 10 sn, 15 sn, 20 sn, 25 sn, 30 sn, 45 sn, 60 sn, 50 sn. |
 | *<Translate android="true" ids="auto_zoom_map"/>* | Harita mevcut konumunuzla senkronize olduğu sürece, haritayı hızınıza göre otomatik olarak ölçeklendirin. | *Değer:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manuel yakınlaştırma. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - yakınlaştırma 200 m'dir.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - yakınlaştırma 100 m'dir. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - yakınlaştırma 5 m'dir. |
-| *<Translate android="true" ids="snap_to_road"/>* | Mevcut konum simgesi, mevcut navigasyon rotasıyla ilişkilendirilecektir. | Bu seçeneği kapatabilirsiniz, ancak şerit gösterimi gibi yolla ilgili tüm seçenekler de navigasyon sırasında görünmeyecektir. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Takip ettiğiniz navigasyon rotasına göre yönü belirler. | Ayar yalnızca [OsmAnd geliştirme eklentisi](../../plugins/development.md) etkinleştirildiğinde görünür. <br /> [Android Auto](../auto-car.md#common-issues-and-solutions) kullanırken yönlü haritanın yönü ters çevrilirse veya titrerse bu ayarlar etkinleştirilmelidir. |
+| *Otomatik yakınlaştırma 3D açısı* | Navigasyon sırasında 3D görünüme geçerken haritanın eğimini ayarlar. Daha yüksek bir açı, ufku daha uzak gösterir ve daha fazla ileri görüş sağlar. | Varsayılan: 25°. Derece cinsinden ayarlanabilir.   |
+| *Sonraki dönüşü önizle* | Navigasyon sırasında bir sonraki dönüşü veya manevrayı göstermek için haritayı biraz önceden otomatik olarak döndürür. Yaklaşan eylemleri öngörmeye yardımcı olur.  | Varsayılan olarak etkin. Bir profili dışa aktarıp yeniden içe aktarırsanız, bu ayarı doğruladığınızdan emin olun; bazı eski sürümlerde "etkin" olarak sıfırlanabilir.   |
+| *<Translate android="true" ids="snap_to_road"/>* | Mevcut konum simgesi, mevcut navigasyon rotasıyla ilişkilendirilecektir. | Bu seçeneği kapatabilirsiniz, ancak şerit gösterimi gibi yolla ilgili tüm seçenekler de navigasyon sırasında görünmeyecektir.  |
 
 
 ## Rota Boyunca Noktaları Göster {#show-points-along-the-route}
@@ -62,6 +63,10 @@ Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline g�
 - Rota boyunca yakın noktalara farklı mesafeler (belirlediğiniz [uzunluk birimine](../../personal/profiles.md#units--formats) bağlı olarak 5 km'ye veya 3,11 mile kadar) ayarlama yeteneği, [Düz Çizgi](../routing/straight-line-routing.md) veya [Noktadan Noktaya](../routing/direct-to-point-routing.md) gibi rota türlerini kullanırken faydalıdır.
 - *Rota boyunca göster* ayarı için, navigasyon için [Sesli komutlar](../guidance/voice-navigation.md) kullanılması önerilir.
 - *İÇN'ler, Favoriler ve Trafik uyarıları*, zaten kat ettiğiniz bir rota için listede görüntülenmez.
+
+:::info note
+**Rota boyunca göster** seçeneği yalnızca İÇN ve Favorilerim listelerini etkiler, haritayı değil. İÇN ve Favori simgeleri, rotadan uzaklıklarına bakılmaksızın haritanın her yerinde görüntülenir.
+:::
 
 
 ### Noktaları Görüntüle ve Seç {#view-and-select-points}
@@ -93,7 +98,7 @@ Bir rota oluşturduğunuzda, *Navigasyon* bölümünde rota boyunca görüntüle
 
 ![İÇN katmanı Android](@site/static/img/map/poi_overlay_android.png) ![İÇN katmanı iOS](@site/static/img/map/poi_overlay_ios.png)
 
-[*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) içindeki İÇN ayarları, **Rota boyunca göster** ayarıyla ilişkilidir. Bu, esasen haritada İÇN'leri görüntülemek için, oluşturulan rotayla doğrudan ilgili ek bir ayardır.  
+[*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) içindeki İÇN ayarları, **Rota boyunca göster** ayarıyla ilişkilidir. 
 
 *Haritayı yapılandır* bölümünde belirli İÇN'lerin görüntülenmesini belirttiğinizde, seçtiğiniz kategoriler olsun veya hangi kategorinin önemli olmadığı durumlarda yakındaki İÇN'leri seçmiş olun, indirdiğiniz haritalarda hepsi görüntülenir.  
 
@@ -150,7 +155,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Trafik uyarıları veya hız limitleri gibi bildirimler, siz gezinirken ekranın sol alt köşesinde bir widget olarak görünecektir. | [Uyarı widget'ı türleri](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Trafik uyarıları veya hız limitleri gibi bildirimler, gezinirken ekranın sol alt köşesinde bir widget olarak görünecektir. | [Uyarı widget'ı türleri](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Rota Çizgisi Görünümü {#route-line-appearance}
@@ -169,7 +174,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigasyon rotası Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Navigasyon rotası iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 

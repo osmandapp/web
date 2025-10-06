@@ -1,5 +1,5 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title: Harita Düğmeleri
 ---
@@ -173,7 +173,7 @@ Harita düğmesi görünümü ayarları aşağıdaki menüler aracılığıyla k
 - *Menü → Ekranı Yapılandır → Düğmeler → Varsayılan düğmeler*
 - *Menü → Ekranı Yapılandır → Özel düğmeler → Hızlı eylem → üç nokta menüsü → Görünüm*
 
-Düğmelerin görünümünü özelleştirmek, hem [Hızlı Eylem (Özel düğmeler)](../widgets/quick-action.md#quick-action-button-appearance) hem de [Varsayılan düğmeler](../widgets/configure-screen.md#button-appearance) için boyutu, şekli, simgeyi ve arka plan opaklığını ayarlamanıza olanak tanır. Bu esneklik, arayüzü tercihlerinize göre kişiselleştirmenize ve kullanılabilirliği artırmanıza olanak tanır.
+Düğmelerin görünümünü özelleştirmek, hem [Hızlı Eylem (Özel düğmeler)](../widgets/quick-action.md#button-appearance) hem de [Varsayılan düğmeler](../widgets/configure-screen.md#button-appearance) için boyutu, şekli, simgeyi ve arka plan opaklığını ayarlamanıza olanak tanır. Bu esneklik, arayüzü tercihlerinize göre kişiselleştirmenize ve kullanılabilirliği artırmanıza olanak tanır.
 
 ## İlgili Makaleler {#related-articles}
 
