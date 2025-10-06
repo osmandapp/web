@@ -130,6 +130,7 @@ const App = () => {
                                     </Route>
                                 </Route>
                                 <Route path={FAVORITES_URL} element={<FavoritesMenu />}>
+                                    <Route path={INFO_MENU_URL + ':favgroup/:favname'} element={<InformationBlock />}/>
                                     <Route
                                         path={INFO_MENU_URL + ':filename' + '/' + SHARE_MENU_URL}
                                         element={<ShareFileMenu />}

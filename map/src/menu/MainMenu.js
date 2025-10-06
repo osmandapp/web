@@ -89,11 +89,13 @@ import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
-import { openFavoriteObj } from '../manager/FavoritesManager';
+import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 import { openPoiObj } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
+import { addFavoriteToMap } from './favorite/FavoriteItem';
+import { useGeoLocation } from '../util/hooks/useGeoLocation';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -124,13 +126,14 @@ export default function MainMenu({
 
     const { t } = useTranslation();
     const location = useLocation();
+    const currentLoc = useGeoLocation(ctx);
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
     const showShareOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + SHARE_FILE_MAIN_URL + '*' }, location.pathname);
 
     const [, height] = useWindowSize();
-    const { filename } = useParams();
+    const { filename, favgroup, favname } = useParams();
 
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
 
@@ -176,33 +179,58 @@ export default function MainMenu({
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && ctx.favorites?.groups) {
-            if (filename && isEmpty(ctx.selectedGpxFile)) {
-                const decodeFilename = decodeString(filename);
-                const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeFilename);
-                if (!file) {
-                    return;
-                }
-                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                file.mapObj = true;
-                if (location.pathname.includes(SHARE_MENU_URL)) {
-                    // open share menu
-                    if (!ctx.shareFile) {
-                        getShareFileInfo({ file, ctx }).then();
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles) {
+            if (isEmpty(ctx.selectedGpxFile)) {
+                if (filename) {
+                    const decodeFilename = decodeString(filename);
+                    const file = ctx.listFiles.uniqueFiles.find((file) => file.name === decodeFilename);
+                    if (!file) {
+                        return;
                     }
-                } else {
-                    // open track info
-                    processDisplayTrack({
-                        visible: true,
-                        showOnMap: true,
-                        showInfo: true,
-                        zoomToTrack: true,
-                        file,
+                    ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                    file.mapObj = true;
+                    if (location.pathname.includes(SHARE_MENU_URL)) {
+                        // open share menu
+                        if (!ctx.shareFile) {
+                            getShareFileInfo({ file, ctx }).then();
+                        }
+                    } else {
+                        // open track info
+                        processDisplayTrack({
+                            visible: true,
+                            showOnMap: true,
+                            showInfo: true,
+                            zoomToTrack: true,
+                            file,
+                            ctx,
+                            fileStorage: ctx.gpxFiles,
+                            setFileStorage: ctx.setGpxFiles,
+                            recentSaver,
+                        }).then();
+                    }
+                } else if (favgroup && favname && ctx.favorites?.groups) {
+                    const group = ctx.favorites.groups.find((g) => g.name === decodeString(favgroup));
+                    if (!group) return;
+
+                    const markerList = getFavMenuListByLayers(
+                        ctx.favorites.mapObjs[group.id].markers._layers,
+                        ctx.favorites.mapObjs[group.id].wpts,
+                        currentLoc
+                    );
+                    if (markerList.length === 0) return;
+
+                    const marker = markerList.find((m) => m.name === decodeString(favname));
+
+                    if (!marker) return;
+
+                    ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                    addFavoriteToMap({
+                        group,
+                        marker,
                         ctx,
-                        fileStorage: ctx.gpxFiles,
-                        setFileStorage: ctx.setGpxFiles,
-                        recentSaver,
-                    }).then();
+                        sharedFile: location.pathname.includes(SHARE_MENU_URL),
+                        mapObj: true,
+                    });
                 }
             }
         }
