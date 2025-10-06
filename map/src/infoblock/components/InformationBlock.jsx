@@ -144,6 +144,22 @@ export default function InformationBlock({
         }
     }, [trackName]);
 
+    useEffect(() => {
+        if (ctx.selectedGpxFile.file?.type === FAVOURITES && !ctx.shareFile) {
+            const favName = ctx.selectedGpxFile.name;
+            const favGroup = ctx.selectedGpxFile.nameGroup;
+            const fullName =
+                encodeURIComponent(encodeString(favGroup)) + '/' + encodeURIComponent(encodeString(favName));
+            navigate(
+                {
+                    pathname: MAIN_URL_WITH_SLASH + FAVORITES_URL + INFO_MENU_URL + fullName,
+                    hash: window.location.hash,
+                },
+                { replace: true }
+            );
+        }
+    }, [ctx.selectedGpxFile.name]);
+
     // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
         if (ctx.currentObjectType && isLocalTrack(ctx) === false && ctx.createTrack) {
