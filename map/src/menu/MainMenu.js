@@ -107,6 +107,10 @@ export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }
         ltx.setOpenLoginMenu(false);
     }
     ctx.setSelectedPhotoInd(-1);
+
+    if (ctx.selectedGpxFile?.mapObj) {
+        ctx.setSelectedGpxFile({});
+    }
 }
 
 export default function MainMenu({
