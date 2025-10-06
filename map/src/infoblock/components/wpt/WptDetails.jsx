@@ -230,7 +230,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
         const type = getWptType(ctx.selectedWpt);
 
-        if (type?.isFav || type?.isShareFav) {
+        if ((type?.isFav && !ctx.selectedWpt.mapObj) || type?.isShareFav) {
             recentSaver(FAVORITES_KEY, ctx.selectedWpt);
             ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
         }
