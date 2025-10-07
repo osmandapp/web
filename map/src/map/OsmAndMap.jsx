@@ -56,6 +56,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
 
+    const CLICK_DELAY = 280; // ms
+
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
@@ -72,8 +74,29 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             }
             detectGeoByIp({ map, hash });
 
-            map.on('click', () => {
-                ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+            let clickTimer = null;
+
+            const onClick = () => {
+                if (clickTimer) clearTimeout(clickTimer);
+                clickTimer = setTimeout(() => {
+                    clickTimer = null;
+                    ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+                }, CLICK_DELAY);
+            };
+
+            const onDblClick = () => {
+                if (clickTimer) {
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
+                }
+            };
+
+            map.on('click', onClick);
+            map.on('dblclick', onDblClick);
+
+            map.on('unload', () => {
+                map.off('click', onClick);
+                map.off('dblclick', onDblClick);
             });
         }
     };
