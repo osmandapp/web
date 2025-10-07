@@ -324,7 +324,7 @@ export function navigateToPoi(poi, navigate) {
     const type = poi.options.amenity_subtype;
     navigate({
         pathname: POI_URL,
-        search: `?name=${name}&type=${type}&lat=${poi.latlng.lat}&lng=${poi.latlng.lng}`,
+        search: name ? `?name=${name}&type=${type}&lat=${poi.latlng.lat}&lng=${poi.latlng.lng}` : '',
         hash: window.location.hash,
     });
 }
