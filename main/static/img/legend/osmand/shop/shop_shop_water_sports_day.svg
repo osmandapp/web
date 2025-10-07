@@ -1,4 +1,4 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
@@ -6,15 +6,13 @@
 <path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#BA37DD"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(138.000000, 8.000000) scale(0.750000 0.750000) "> 
 
-<g id="surface1">
-<path style="fill-rule:nonzero;fill:rgb(52.156866%,20.784314%,20.784314%);fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 42 44 L 6 38 " transform="matrix(0.25,0,0,0.25,0,0)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 9 3 C 9.550781 3.003906 10.003906 2.558594 10.003906 2.003906 C 10.003906 1.738281 9.898438 1.484375 9.710938 1.296875 C 9.519531 1.109375 9.265625 1.007812 9 1.007812 C 8.734375 1.007812 8.480469 1.109375 8.289062 1.296875 C 8.101562 1.484375 7.996094 1.738281 7.996094 2.003906 C 7.996094 2.558594 8.449219 3.003906 9 3 Z M 9 3 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 2 10 L 1.5 11 C 1.5 11 3.492188 10.988281 4 10.328125 Z M 2 10 "/>
-<path style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 42 22 L 30.15625 13.09375 L 20 10 L 18 4 " transform="matrix(0.25,0,0,0.25,0,0)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 4.765625 4.835938 L 6.449219 5.851562 L 8.671875 3.820312 L 7.5 3 L 6.796875 2.882812 Z M 4.765625 4.835938 "/>
-<path style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 28 36 L 30 28 L 20 20.6875 L 20 30 L 12 32 " transform="matrix(0.25,0,0,0.25,0,0)"/>
-</g>
+<path fill-rule="nonzero" fill="rgb(52.156863%, 20.784314%, 20.784314%)" fill-opacity="1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(100%, 100%, 100%)" stroke-opacity="1" stroke-miterlimit="10" d="M 42 43.998047 L 6 37.998047 " transform="matrix(0.666667, 0, 0, 0.666667, 0, 0)"/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 24 8 C 25.472656 8.007812 26.671875 6.820312 26.679688 5.347656 C 26.679688 4.636719 26.394531 3.960938 25.890625 3.460938 C 25.390625 2.960938 24.707031 2.683594 24 2.6875 C 23.292969 2.683594 22.609375 2.960938 22.109375 3.460938 C 21.605469 3.960938 21.320312 4.636719 21.320312 5.347656 C 21.328125 6.820312 22.527344 8.007812 24 8 Z M 24 8 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 5.332031 26.667969 L 4 29.332031 C 4 29.332031 9.3125 29.308594 10.667969 27.539062 Z M 5.332031 26.667969 "/>
+<path fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(100%, 100%, 100%)" stroke-opacity="1" stroke-miterlimit="10" d="M 42 22.001953 L 30.158203 13.101562 L 19.998047 10.001953 L 18 4.001953 " transform="matrix(0.666667, 0, 0, 0.666667, 0, 0)"/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 12.714844 12.894531 L 17.191406 15.601562 L 23.125 10.1875 L 20 8 L 18.125 7.6875 Z M 12.714844 12.894531 "/>
+<path fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(100%, 100%, 100%)" stroke-opacity="1" stroke-miterlimit="10" d="M 28.001953 36 L 30 28.001953 L 19.998047 20.689453 L 19.998047 30 L 12 31.998047 " transform="matrix(0.666667, 0, 0, 0.666667, 0, 0)"/>
 
 </g>%n%n</svg>

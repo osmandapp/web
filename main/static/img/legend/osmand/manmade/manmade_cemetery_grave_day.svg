@@ -1,44 +1,46 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
 <path opacity="0.7" d="M8 1.56201C6.61431 1.56201 5.44924 2.46879 5 3.70801H4.781C4.18843 3.70807 3.70806 4.18843 3.708 4.78101V11.219C3.11543 11.2191 2.63506 11.6994 2.635 12.292V13.365C2.63506 13.9576 3.11543 14.438 3.708 14.438H12.292C12.8846 14.438 13.3649 13.9576 13.365 13.365V12.292C13.3649 11.6994 12.8846 11.2191 12.292 11.219V4.78101C12.2919 4.18843 11.8116 3.70807 11.219 3.70801H11C10.5508 2.46879 9.38568 1.56201 8 1.56201Z" fill="white"/>
 
 </g>%n%n
-<g transform="translate(139.000000, 9.000000) scale(1.833333 1.833333) "> 
+<g transform="translate(139.000000, 9.000000) scale(0.687500 0.687500) "> 
 
 <defs>
-<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
-  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+<filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
+<feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
 </filter>
-<mask id="mask0">
-  <g filter="url(#alpha)">
-<rect x="0" y="0" width="12" height="12" style="fill:rgb(0%,0%,0%);fill-opacity:0.7;stroke:none;"/>
-  </g>
-</mask>
-<clip100Path id="clip1001">
-  <rect x="0" y="0" width="12" height="12"/>
-</clip100Path>
-<g id="surface5" clip100-path="url(#clip1001)">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(24.705882%,24.705882%,24.705882%);fill-opacity:1;" d="M 2 10 L 10 10 L 10 11 L 2 11 Z M 2 10 "/>
+<mask id="mask-0">
+<g filter="url(#filter-remove-color)">
+<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.7"/>
 </g>
-<mask id="mask1">
-  <g filter="url(#alpha)">
-<rect x="0" y="0" width="12" height="12" style="fill:rgb(0%,0%,0%);fill-opacity:0.2;stroke:none;"/>
-  </g>
 </mask>
-<clip100Path id="clip1002">
-  <rect x="0" y="0" width="12" height="12"/>
+<clip100Path id="clip100-0">
+<rect x="0" y="0" width="32" height="32"/>
 </clip100Path>
-<g id="surface8" clip100-path="url(#clip1002)">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(24.705882%,24.705882%,24.705882%);fill-opacity:1;" d="M 8 4 L 4 4 L 4 5 L 8 5 Z M 8 4 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(24.705882%,24.705882%,24.705882%);fill-opacity:1;" d="M 8 6 L 4 6 L 4 8 L 8 8 Z M 8 6 "/>
+<g id="source-6" clip100-path="url(#clip100-0)">
+<path fill-rule="nonzero" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 5.332031 26.667969 L 26.667969 26.667969 L 26.667969 29.332031 L 5.332031 29.332031 Z M 5.332031 26.667969 "/>
+</g>
+<mask id="mask-1">
+<g filter="url(#filter-remove-color)">
+<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.2"/>
+</g>
+</mask>
+<clip100Path id="clip100-1">
+<rect x="0" y="0" width="32" height="32"/>
+</clip100Path>
+<g id="source-12" clip100-path="url(#clip100-1)">
+<path fill-rule="nonzero" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 21.332031 10.667969 L 10.667969 10.667969 L 10.667969 13.332031 L 21.332031 13.332031 Z M 21.332031 10.667969 "/>
+<path fill-rule="nonzero" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 21.332031 16 L 10.667969 16 L 10.667969 21.332031 L 21.332031 21.332031 Z M 21.332031 16 "/>
 </g>
 </defs>
-<g id="surface1">
-<use xlink:href="#surface5" mask="url(#mask0)"/>
-<path style=" stroke:none;fill-rule:evenodd;fill:rgb(24.705882%,24.705882%,24.705882%);fill-opacity:1;" d="M 4 3 L 3 3 L 3 10 L 9 10 L 9 3 L 8 3 C 8 1.894531 7.105469 1 6 1 C 4.894531 1 4 1.894531 4 3 Z M 4 4 L 8 4 L 8 5 L 4 5 Z M 4 6 L 8 6 L 8 8 L 4 8 Z M 4 6 "/>
-<use xlink:href="#surface8" mask="url(#mask1)"/>
+<g mask="url(#mask-0)">
+<use xlink:href="#source-6"/>
+</g>
+<path fill-rule="evenodd" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 10.667969 8 L 8 8 L 8 26.667969 L 24 26.667969 L 24 8 L 21.332031 8 C 21.332031 5.054688 18.945312 2.667969 16 2.667969 C 13.054688 2.667969 10.667969 5.054688 10.667969 8 Z M 10.667969 10.667969 L 21.332031 10.667969 L 21.332031 13.332031 L 10.667969 13.332031 Z M 10.667969 16 L 21.332031 16 L 21.332031 21.332031 L 10.667969 21.332031 Z M 10.667969 16 "/>
+<g mask="url(#mask-1)">
+<use xlink:href="#source-12"/>
 </g>
 
 </g>%n%n</svg>

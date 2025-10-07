@@ -1,61 +1,12 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
-  <metadata
-     id="metadata10">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs8" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1014"
-     id="namedview6"
-     showgrid="true"
-     inkscape:zoom="29.5"
-     inkscape:cx="5.11007"
-     inkscape:cy="9.1135773"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg4">
-    <inkscape:grid
-       type="xygrid"
-       id="grid825"
-       spacingx="1"
-       spacingy="1" />
-  </sodipodi:namedview>
-  <path
-     sodipodi:type="inkscape:offset"
-     inkscape:radius="1.0152938"
-     inkscape:original="M 14.666016 2.6660156 L 9.3339844 6.6660156 L 1.3339844 6.6660156 L 1.3339844 12 L 2.6660156 12 L 2.6660156 9.3339844 L 10 9.3339844 L 13.333984 6.6660156 L 13.333984 12 L 14.666016 12 L 14.666016 2.6660156 z "
-     style="opacity:0.8;vector-effect:none;fill:#ebe7e4;fill-opacity:1;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="path2-3"
-     d="m 14.636719,1.6503906 a 1.0153954,1.0153954 0 0 0 -0.580078,0.203125 L 8.9960938,5.6503906 H 1.3339844 A 1.0153954,1.0153954 0 0 0 0.31835938,6.6660156 V 12 A 1.0153954,1.0153954 0 0 0 1.3339844,13.015625 H 2.6660156 A 1.0153954,1.0153954 0 0 0 3.6816406,12 V 10.349609 H 10 a 1.0153954,1.0153954 0 0 0 0.634766,-0.222656 L 12.318359,8.7792969 V 12 a 1.0153954,1.0153954 0 0 0 1.015625,1.015625 h 1.332032 A 1.0153954,1.0153954 0 0 0 15.681641,12 V 2.6660156 a 1.0153954,1.0153954 0 0 0 -1.044922,-1.015625 z"
-     transform="matrix(0.8,0,0,0.8,1.6000001,1.4665586)" />
+ <path transform="matrix(.8 0 0 .8 1.6 1.4666)" d="m14.637 1.6504a1.0154 1.0154 0 0 0-0.58008 0.20312l-5.0605 3.7969h-7.6621a1.0154 1.0154 0 0 0-1.0156 1.0156v5.334a1.0154 1.0154 0 0 0 1.0156 1.0156h1.332a1.0154 1.0154 0 0 0 1.0156-1.0156v-1.6504h6.3184a1.0154 1.0154 0 0 0 0.63477-0.22266l1.6836-1.3477v3.2207a1.0154 1.0154 0 0 0 1.0156 1.0156h1.332a1.0154 1.0154 0 0 0 1.0156-1.0156v-9.334a1.0154 1.0154 0 0 0-1.0449-1.0156z" fill="#ebe7e4" opacity=".8" stroke-width="1.25"/>
 
 </g>%n%n
-<g transform="translate(139.000000, 9.000000) scale(1.833333 1.833333) "> 
+<g transform="translate(139.000000, 9.000000) scale(0.687500 0.687500) "> 
 
-<g id="surface1">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(33.333334%,33.333334%,33.333334%);fill-opacity:1;" d="M 1 5 L 7 5 L 11 2 L 11 9 L 10 9 L 10 5 L 7.5 7 L 2 7 L 2 9 L 1 9 Z M 1 5 "/>
-</g>
+<path fill-rule="nonzero" fill="rgb(33.333333%, 33.333333%, 33.333333%)" fill-opacity="1" d="M 2.667969 13.332031 L 18.667969 13.332031 L 29.332031 5.332031 L 29.332031 24 L 26.667969 24 L 26.667969 13.332031 L 20 18.667969 L 5.332031 18.667969 L 5.332031 24 L 2.667969 24 Z M 2.667969 13.332031 "/>
 
 </g>%n%n</svg>
