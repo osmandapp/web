@@ -23,6 +23,32 @@ const translationParsePlugin = {
     },
 };
 
+export async function handleLanguageChange(lng) {
+    try {
+        const translation = await import(`./resources/translations/${lng}/translation.json`);
+        if (translation) {
+            i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+        }
+    } catch (error) {
+        if (process.env.NODE_ENV === 'development') {
+            console.error(`Could not load translation.json for language: ${lng}`);
+        }
+    }
+
+    try {
+        const webTranslation = await import(`./resources/translations/${lng}/web-translation.json`);
+        if (webTranslation) {
+            i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
+        }
+    } catch (error) {
+        if (process.env.NODE_ENV === 'development') {
+            console.error(`Could not load web-translation.json for language: ${lng}`);
+        }
+    }
+    await i18n.changeLanguage(lng);
+    localStorage.setItem('i18nextLng', lng);
+}
+
 i18n.use(translationParsePlugin)
     .use({
         type: 'languageDetector',
