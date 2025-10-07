@@ -33,6 +33,7 @@ import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
+import i18n from 'i18next';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -45,7 +46,12 @@ export function preparedType(type, t) {
     return capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
 }
 
-export function getPropsFromSearchResultItem(props, t) {
+export function getPropsFromSearchResultItem(props, t = null, lang = null) {
+    let restoreLang;
+    if (t && lang) {
+        restoreLang = i18n.language;
+        i18n.changeLanguage(lang);
+    }
     let type, name, city;
     if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
@@ -82,6 +88,10 @@ export function getPropsFromSearchResultItem(props, t) {
             return addressParts.join(', ');
         }
         return undefined;
+    }
+
+    if (restoreLang) {
+        i18n.changeLanguage(restoreLang);
     }
 
     return { name, type, info, city };

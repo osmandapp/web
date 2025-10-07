@@ -23,6 +23,7 @@ import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import { POI_URL } from './GlobalManager';
+import { getPropsFromSearchResultItem } from '../menu/search/search/SearchResultItem';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -321,7 +322,8 @@ export function translateWithSplit(t, string) {
 
 export function navigateToPoi(poi, navigate) {
     const name = poi.options.amenity_name;
-    const type = poi.options.amenity_subtype;
+    const { type: objType } = name ? getPropsFromSearchResultItem(poi.options, i18n?.t, 'en') : {};
+    const type = objType;
     const lat = poi.latlng.lat;
     const lng = poi.latlng.lng;
 
