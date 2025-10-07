@@ -1,5 +1,5 @@
 ---
-source-hash: c7965bba11bfebefb7a7ebb48e38d67d59375b38e78aec5ef620bd64d1712c15
+source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
 sidebar_position: 3
 title:  Navigasyon
 ---
@@ -20,37 +20,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. OsmAnd iki farklı **çevrimdışı yönlendirme motoru** kullanır: bir *Java tabanlı motor* ve bir *Yerel (C++) motor*.
 
-- *Java tabanlı motor* [Güvenli Mod'da](../plugins/development.md#overview) kullanılır, ancak yerel motordan yaklaşık 10 kat daha yavaştır. Ayrıca, *Hesaplamak için yeterli bellek yok* gibi hatalara yol açabilecek katı bellek sınırlamaları vardır. Bu sorunla karşılaşırsanız, *Eklentiler → OsmAnd geliştirme → Ayarlar →* [*Güvenli Mod*](../plugins/development.md#overview)'a gidin ve bu seçeneğin devre dışı bırakıldığından emin olun.
+- *Java tabanlı motor* [Güvenli Mod'da](../plugins/development.md#overview) kullanılır, ancak yerel motordan yaklaşık 10 kat daha yavaştır. Ayrıca, *Hesaplamak için yeterli bellek yok* gibi hatalara yol açabilecek katı bellek sınırlamaları vardır. Bu sorunla karşılaşırsanız, *Eklentiler → OsmAnd geliştirme → Ayarlar →* [*Güvenli Mod'a*](../plugins/development.md#overview) gidin ve bu seçeneğin devre dışı bırakıldığından emin olun.
 - *Yerel (C++) motor* daha iyi performans sunar, ancak verimliliği cihazınızın belleğine ve işlemci yeteneklerine bağlıdır. Genellikle, yerel yönlendirme 300 km'nin altındaki rotalar için iyi performans gösterir ve rota hesaplama süreleri 15 saniyeden 4 dakikaya kadar değişir. İşlem 4 dakikadan uzun sürerse, uygulamanın çökebileceği için durdurulması tavsiye edilir.
-
-
-### Yanlış veya Kırık Rotalar {#incorrect-or-broken-routes}
-
-Bazen OsmAnd beklenmedik navigasyon sonuçları gösterebilir. Yol ağına uymak yerine, rota ilgisiz bir noktaya düz çizgili kesikli bir çizgi olarak görünebilir veya navigasyon tamamen başarısız olabilir. Bu genellikle, seçilen konuma mevcut yapılandırma ile yönlendirmenin mümkün olmadığını gösterir. Benzer sorunlar kullanıcılar tarafından [Reddit'te](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) ve [daha fazla](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/) rapor edilmiştir.
-
-**Nedenler:**
-
-- Güncel olmayan veya kopyalanmış haritalar. Farklı güncelleme tarihlerine sahip haritalar veya kopyalar bağlantıyı bozabilir (özellikle bölgeler/sınırlar arasında).
-- Hasarlı profil ayarları. Özel/değiştirilmiş profiller (örneğin, Bisiklet) tutarsız davranışlara neden olabilir.
-- Yönlendirme motoru uyumsuzluğu: Farklı motorlar (HH × Java vs HH × C++) aynı haritaları farklı şekilde işleyebilir.
-
-**Çözümler:**
-
-1. Profil ayarlarınızı sıfırlayın.
-- *Menü* → *Ayarlar* → *Uygulama profili (Haritayı Tarama)*'yı açın.
-- *Varsayılana Sıfırla*'yı seçin.
-
-2. Haritaları kaldırın ve yeniden yükleyin.
-- *Menü* → *Haritalar & Kaynaklar* → *Yerel*'i açın ve etkilenen bölge(ler) için tüm haritaları silin.
-- Ardından *Menü* → *Haritalar & Kaynaklar* → *İndirmeler*'e gidin ve haritaları yeniden indirin.
-- İsteğe bağlı olarak *Menü* → *Haritalar & Kaynaklar* → *Güncellemeler*'i kontrol ederek tüm bölgelerin aynı güncelleme tarihine sahip olduğundan emin olun.
-
-3. Yönlendirme motorunu değiştirin.
-- Eklentiyi etkinleştirin: *Menü* → *Eklentiler* → *OsmAnd geliştirme*.
-- Ardından *Menü* → *Ayarlar* → *Uygulama profili* → *Navigasyon ayarları* → *Rota parametreleri* → *Geliştirme* → *Yönlendirme türü*'nü açın ve *HH × C++* ↔ *HH × Java* arasında geçiş yapın (A* klasik veya A* 2 aşamalı da deneyebilirsiniz).
-
-4. Son çare olarak.
-- Uygulamayı yeniden yükleyin ve haritaları tekrar indirin (gizli çatışmalar devam ettiğinde yardımcı olur).
 
 
 ### 250 km'den uzun rotalar nasıl hesaplanır? {#how-to-calculate-routes-longer-than-250km}
@@ -114,7 +85,7 @@ Sesli Komutları ayarlama ve düzenleme hakkında ayrıntılı talimatlar için 
 
 ### TTS düzgün çalışmıyor mu? Düzeltmek için şu adımları izleyin {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-**Metin Okuma (TTS)** ile ilgili sorunlar genellikle OsmAnd uygulamasının kendisiyle değil, **Android sistem ayarlarıyla** ilgilidir.  
+**Metin Okuma (TTS)** ile ilgili sorunlar genellikle OsmAnd uygulamasının kendisiyle değil, **Android sistem ayarlarıyla** ilgilidir.
 
 1. Bir TTS motorunun yüklü olduğundan emin olun.
 
@@ -137,17 +108,17 @@ Sesli Komutları ayarlama ve düzenleme hakkında ayrıntılı talimatlar için 
 
 #### Ek Adımlar {#additional-steps}
 
-- *Google TTS'yi güncelleyin*. Google Play Store'u açın, **Google Metin Okuma**'yı arayın ve güncelleyin.  
-- *Navigasyonu Simüle Et*. Sesli rehberliğin çalıp çalmadığını kontrol etmek için *Navigasyon düğmesi → Ayarlar → Navigasyonu Simüle Et*'e dokunun.  
-- *OsmAnd'ı yeniden yükleyin*:  
-   - **Ayarları yedekleyin:** *Menü → Ayarlar → Dosyaya Aktar*.  
-   - OsmAnd'ı kaldırın, ardından uygulama mağazasından yeniden yükleyin.  
+- *Google TTS'yi güncelleyin*. Google Play Store'u açın, **Google Metin Okuma**'yı arayın ve güncelleyin.
+- *Navigasyonu Simüle Et*. Sesli rehberliğin çalıp çalmadığını kontrol etmek için *Navigasyon düğmesi → Ayarlar → Navigasyonu Simüle Et*'e dokunun.
+- *OsmAnd'ı yeniden yükleyin*:
+   - **Ayarları yedekleyin:** *Menü → Ayarlar → Dosyaya Aktar*.
+   - OsmAnd'ı kaldırın, ardından uygulama mağazasından yeniden yükleyin.
    - Ayarları geri yükleyin: *Menü → Ayarlar → Dosyayı İçe Aktar*.
 
 Ek sorun giderme için ziyaret edin:
 
-- [Sesli Navigasyon Kılavuzu](../navigation/guidance/voice-navigation.md)  
-- [Ayarları İçe/Dışa Aktar](../personal/import-export.md)  
+- [Sesli Navigasyon Kılavuzu](../navigation/guidance/voice-navigation.md)
+- [Ayarları İçe/Dışa Aktar](../personal/import-export.md)
 
 
 ## Diğer {#other}
