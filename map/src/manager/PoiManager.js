@@ -322,9 +322,21 @@ export function translateWithSplit(t, string) {
 export function navigateToPoi(poi, navigate) {
     const name = poi.options.amenity_name;
     const type = poi.options.amenity_subtype;
+    const lat = poi.latlng.lat;
+    const lng = poi.latlng.lng;
+
+    const search = name
+        ? `?${new URLSearchParams({
+              name,
+              type: type ?? '',
+              lat: String(lat),
+              lng: String(lng),
+          }).toString()}`
+        : '';
+
     navigate({
         pathname: POI_URL,
-        search: name ? `?name=${name}&type=${type}&lat=${poi.latlng.lat}&lng=${poi.latlng.lng}` : '',
+        search,
         hash: window.location.hash,
     });
 }
