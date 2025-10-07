@@ -119,7 +119,7 @@ i18n.use(translationParsePlugin)
         },
         resources,
         detection: {
-            order: ['navigator', 'localStorage'],
+            order: ['localStorage', 'navigator'],
             lookupQuerystring: 'lng',
             lookupCookie: 'i18next',
             lookupLocalStorage: 'i18nextLng',
