@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: c674aa26de62610f1442ef441eaa008b20c3b4a69dd7617b13ccd27ccf7f2234
 sidebar_position: 7
 title:  Favoriler
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Favoriler** OsmAnd'ın harita üzerinde yer imleri (notlar) oluşturmanıza olanak tanıyan özelliğidir. Bu favori noktalar varsayılan olarak sarı yıldızlar olarak görüntülenir, ancak bunları farklı renkler, şekiller ve simgelerle tamamen özelleştirebilirsiniz. Favoriler, *6. yakınlaştırma seviyesinden* itibaren görünür hale gelen özel bir harita katmanında gruplandırılır.  
+**Favoriler** OsmAnd'ın harita üzerinde yer imleri (notlar) oluşturmanıza olanak tanıyan özelliğidir. Bu favori noktalar varsayılan olarak sarı yıldızlar olarak görüntülenir, ancak bunları farklı renkler, şekiller ve simgelerle tamamen özelleştirebilirsiniz. Favoriler, *6. yakınlaştırma seviyesinden* itibaren görünür hale gelen özel bir harita katmanında gruplandırılır.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerinde [gösterebilir veya gizleyebilirsiniz](../map/point-layers-on-map.md#favorites) [adlarıyla](../map/point-layers-on-map.md#favorite-and-poi-names) birlikte. Bir favori noktaya dokunmak, ayrıntıları görüntülemenize ve noktayı [düzenlemenize veya silmenize](../map/map-context-menu.md#add--edit-favorite) olanak tanıyan [Bağlam menüsünü](../map/map-context-menu.md#favorites--track-points-from-the-group) açar.
+Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerinde [adlarıyla](../map/point-layers-on-map.md#favorite-and-poi-names) birlikte [gösterebilir veya gizleyebilirsiniz](../map/point-layers-on-map.md#favorites). Bir favori noktaya dokunmak, ayrıntıları görüntülemenize ve noktayı [düzenlemenize veya silmenize](../map/map-context-menu.md#add--edit-favorite) olanak tanıyan [Bağlam menüsünü](../map/map-context-menu.md#favorites--track-points-from-the-group) açar.
 
 
 ### Oluştur {#create}
@@ -64,13 +64,13 @@ Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerin
 
 <TabItem value="android" label="Android">
 
-![Favori ekle açıklaması Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favori grubu Android](@site/static/img/personal/favorite_group_android.png)
+![Favori ekle açıklaması Android](@site/static/img/personal/favorite_add_descr_android.png) ![Favori grubu Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favori ekle açıklaması iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favori grubu iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favori ekle açıklaması iOS](@site/static/img/personal/favorite_add_descr_ios.png) ![Favori grubu iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerin
 
 Bir favori nokta eklemek için:
 
-1. Haritada bir [İÇN](../map/point-layers-on-map.md#points-of-interest-pois) veya bir yapı seçin.  
+1. Haritada bir [İÇN](../map/point-layers-on-map.md#points-of-interest-pois) veya bir yapı seçin.
     Bir İÇN için kısa dokunuş veya genel bir harita noktası için uzun dokunuş.
 2. Harita bağlam menüsünden [Ekle (☆)](../map/map-context-menu.md#add--edit-favorite) öğesini seçin.
 
@@ -152,7 +152,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 ### Özel Favoriler (Kişisel) {#special-favorites-personal}
 
-*Kişisel klasör*, genellikle [navigasyonda](../navigation/setup/route-navigation.md#select-start-point) kullanılan **<Translate android="true" ids="favorite_home_category"/>** ve **<Translate android="true" ids="work_button"/>** gibi özel noktaları içerir. Bu klasörün bir *üç nokta menüsü* yoktur ve parametreleri değiştirilemez.
+*Kişisel klasör*, genellikle [navigasyonda](../navigation/setup/route-navigation.md#select-starting-point) kullanılan **<Translate android="true" ids="favorite_home_category"/>** ve **<Translate android="true" ids="work_button"/>** gibi özel noktaları içerir. Bu klasörün bir *üç nokta menüsü* yoktur ve parametreleri değiştirilemez.
 
 
 ## Favorileri Yönet {#manage-favorites}
@@ -225,7 +225,6 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 2. Toplu işlemler için tek tek favorileri veya tüm klasörleri seçin.
 3. **Mevcut seçenekler** — Android ve iOS için *Sil*, *Favori Grubuna Taşı*, *Paylaş* ve iOS için *Rengi Değiştir*.
 
-
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
 
@@ -256,7 +255,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *Klasöre uzun dokun → Varsayılan görünüm*
+Şuraya git: *Klasöre uzun dokunun → Varsayılan görünüm*
 
 ![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -268,7 +267,7 @@ Her klasörün yanındaki ***Üç nokta menüsünü*** (*Android*) ve klasöre *
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
 
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
+- **<Translate android="true" ids="change_default_appearance"/>** — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** veya **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
 
@@ -277,6 +276,8 @@ Her klasörün yanındaki ***Üç nokta menüsünü*** (*Android*) ve klasöre *
 - **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
 
 - **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favoriler klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
+
+Daha fazla ayrıntı [Yerlerim](../personal/myplaces.md#favorites) makalesinde.
 
 
 
@@ -298,19 +299,11 @@ Her klasörün yanındaki ***Üç nokta menüsünü*** (*Android*) ve klasöre *
 
 </Tabs>
 
-**Grup Görünümünü Değiştir** seçeneği, bir klasördeki tüm favoriler için varsayılan bir stil ayarlamanıza olanak tanır. Aşağıdaki parametreleri ayarlayabilirsiniz:
+*Grup Görünümünü Değiştir* ayarları:
 
-- **Simge** — Mevcut kategorilerden bir simge seçin.
-- **Renk** — Favorileri vurgulamak için düz bir renk seçin.
-- **Şekil** — Bir işaretçi şekli seçin (daire, kare, sekizgen).
-
-Bir klasördeki favoriler zaten farklı simgeler, renkler veya şekillere sahipse, *Orijinal durum* görüntülenir. Bu, her favorinin mevcut stilini koruduğu anlamına gelir, yeni bir tane seçmediğiniz sürece. Kaydederken, değişikliklerin nasıl uygulanacağını seçmeniz için ayrıca sorulacaktır:
-
-- **Yalnızca yeni noktalara uygula** — Mevcut favoriler değişmez; yeni favoriler varsayılan görünümü miras alır.
-- **Mevcut noktalara uygula** — Yalnızca klasördeki mevcut favorileri güncelleyin.
-- **Tüm noktalara uygula** — Yeni stili hem mevcut hem de gelecekteki favorilere uygulayın.
-
-Bu esneklik, bir klasörün görünümünü standartlaştırmanıza veya benzersiz özelleştirmeleri korurken yeni noktalar için varsayılanlar ayarlamanıza olanak tanır.
+- **Simge, renk, şekil** — Bir gruptaki tüm favoriler için varsayılan bir stil ayarlayın.
+- **Tutarlılık** — Gruba eklenen yeni favoriler varsayılan görünümü otomatik olarak devralır.
+- **Özelleştirme** — Klasördeki mevcut noktalar, yalnızca yeni favoriler için varsayılan ayarları geçersiz kılın veya hepsine uygulayın.
 
 
 ## Dışa Aktar / İçe Aktar {#export--import}
@@ -344,13 +337,13 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 </Tabs>
 
-[Ücretsiz Favoriler Yedekleme](../personal/osmand-cloud.md#osmand-start), OsmAnd uygulamasında **Android, iOS** veya **Web** sürümleri için favori noktalarınızı (konumlarınızı) yedeklemenize ve bunları OsmAnd Cloud'dan geri yüklemenize olanak tanıyan özel bir satın alma planıdır. Bu plan, [OsmAnd Free veya Maps+](../purchases/index.md) kullanıcıları için mevcuttur.  
+[Ücretsiz Favoriler Yedekleme](../personal/osmand-cloud.md#osmand-start), OsmAnd uygulamasında **Android, iOS** veya **Web** sürümleri için favori noktalarınızı (konumlarınızı) yedeklemenize ve bunları OsmAnd Cloud'dan geri yüklemenize olanak tanıyan özel bir satın alma planıdır. Bu plan, [OsmAnd Free veya Maps+](../purchases/index.md) kullanıcıları için mevcuttur.
 
 *Ücretsiz Favoriler Yedekleme* şu avantajları sunar:
 
 - **Ödeme gerekmez**. Ücretli abonelik satın almadan yedekleme özelliğini kullanın.
 - **Favori noktaları kaydedin**. Cihazınız çökerse veya uygulama silinirse kaybetmemek için OsmAnd'daki favori noktalarınızı düzenli olarak kaydedin.
-- **Favori noktaları aktarın**. Birden fazla cihazda OsmAnd kullanıyorsanız, *Ücretsiz Favoriler Yedekleme* özelliği ile favori noktalarınızı yeni bir cihaza aktarın.  
+- **Favori noktaları aktarın**. Birden fazla cihazda OsmAnd kullanıyorsanız, *Ücretsiz Favoriler Yedekleme* özelliği ile favori noktalarınızı yeni bir cihaza aktarın.
 
 
 ### Yedekleme Nasıl Oluşturulur {#how-to-create-a-backup}
@@ -375,12 +368,12 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 </Tabs>
 
-*Ücretsiz Favoriler Yedekleme* özelliğini kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız var. *OsmAnd Pro* hesabınız veya aktif bir *OsmAnd Cloud hesabınız* varsa, tanıtım banner'ını görmezsiniz.  
+*Ücretsiz Ayarlar Yedekleme* özelliğini kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız var. *OsmAnd Pro* hesabınız veya aktif bir *OsmAnd Cloud hesabınız* varsa, tanıtım banner'ını görmezsiniz.
 
 - *Ücretsiz Favoriler Yedekleme banner'ı*. Yedekleme işlemini başlatmak için bu banner'a dokunun.
-- Bir OsmAnd Cloud hesabınız yoksa [kayıt kılavuzundaki](../personal/osmand-cloud.md#login) talimatları izleyerek *kayıt adımını tamamlayın*.
+- [Kayıt kılavuzundaki](../personal/osmand-cloud.md#login) talimatları izleyerek bir OsmAnd Cloud hesabınız yoksa *kayıt adımını tamamlayın*.
 - *OsmAnd Satın Almalar* menüsüne gidin (*Menü → Ayarlar → Satın Almalar*).
-- *[OsmAnd Başlangıç paketi](../personal/osmand-cloud.md#osmand-start)*. Ücretsiz Favoriler Yedekleme özelliğine erişmek için bu seçeneği seçin.
+- *[OsmAnd Başlangıç paketi](../personal/osmand-cloud.md#osmand-start)*. Ücretsiz Ayarlar Yedekleme özelliğine erişmek için bu seçeneği seçin.
 - Ayarlarınızın *bir yedeğini oluşturun*.
 
 
@@ -396,7 +389,7 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 <TabItem value="ios" label="iOS">
 
-![Favoriler dışa aktar içe aktar ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
+![Favoriler dışa aktar içe aktar ios](@site/static/img/personal/favorites_export_import_3_ios.png)
 
 </TabItem>
 
@@ -420,14 +413,14 @@ Favoriler ekranının altındaki özel düğmeleri kullanarak favorilerinizi dı
 
 <TabItem value="ios" label="iOS">
 
-![Favoriler eylemleri ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+![Favoriler eylemleri ios](@site/static/img/personal/favorites_actions_1_ios.png) ![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 - Seçilen favoriler klasörünün **Üç nokta menüsüne** (*Android*) veya **Düzenle** düğmesine (*iOS'ta kalem simgesi*) veya klasöre **uzun dokunun** (*iOS*).
-- *Favorites.gpx* dosyasını cihazınızın belleğine göndermek veya mesajlaşma uygulamaları aracılığıyla paylaşmak için **Paylaş** düğmesini seçin.  
+- *Favorites.gpx* dosyasını cihazınızın belleğine göndermek veya mesajlaşma uygulamaları aracılığıyla paylaşmak için **Paylaş** düğmesini seçin.
 
 
 ### Otomatik Favoriler Yedekleme {#automatic-favorites-backup}
@@ -438,15 +431,15 @@ Favoriler ekranının altındaki özel düğmeleri kullanarak favorilerinizi dı
 
 Şuraya git: *Android → data → net.osmand → files → backup*
 
-![Favoriler yedekleme dışa aktarma Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favoriler otomatik yedekleme android](@site/static/img/personal/favorites_autobackup_andr.png)  
+![Favoriler yedekleme dışa aktarma Android](@site/static/img/personal/favorites_backup_export_andr.png) ![Favoriler otomatik yedekleme android](@site/static/img/personal/favorites_autobackup_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *Files → On my iPhone → OsmAnd Maps → favourites_backup*
+Şuraya git: *Dosyalar → iPhone'umda → OsmAnd Haritaları → favourites_backup*
 
-![Favoriler otomatik yedekleme ios](@site/static/img/personal/favorites_autobackup.png)  
+![Favoriler otomatik yedekleme ios](@site/static/img/personal/favorites_autobackup.png)
 
 </TabItem>
 
@@ -456,22 +449,21 @@ OsmAnd, favoriler her düzenlendiğinde bir **yedekleme dosyası** oluşturur.
 
 - **Android**: Yedeklemeler *Android → data → net.osmand → files → backup* konumunda saklanır. Bunlara erişmek için üçüncü taraf bir dosya yöneticisi kullanın.
 
-- **iOS**: Dosyalar *Files → On my iPhone → OsmAnd Maps → favourites_backup* konumunda bulunur.
+- **iOS**: Dosyalar *Dosyalar → iPhone'umda → OsmAnd Haritaları → favourites_backup* konumunda bulunur.
 
-**Manuel yedekleme dışa aktarma**  
+**Manuel yedekleme dışa aktarma**
 
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>* adresine gidin.
 - `.osf` dosyasını yerel depolamaya, bulut hizmetlerine aktarın veya doğrudan paylaşın.
 
 :::caution
-***Android'in*** en son sürümlerinde sistem dizinlerine erişim kısıtlıdır. Ancak, favoriler dosyası arşivden çıkarıldıktan sonra, mesajlaşma uygulamalarına veya bulut hizmetlerine vb. iletilmesi hala mümkündür.  
+***Android'in*** en son sürümlerinde sistem dizinlerine erişim kısıtlıdır. Ancak, favoriler dosyası arşivden çıkarıldıktan sonra, mesajlaşma uygulamalarına veya bulut hizmetlerine vb. iletilmesi hala mümkündür.
 :::
 
 
 ### GPX Dosyasındaki Favoriler {#favorites-in-gpx-file}
 
-Bir Favori hakkındaki tüm bilgiler etiketler kullanılarak saklanır ve açıklanır. Bir Favori noktası oluştururken, kendi [açıklamanızı](#favorite-point) yazabilir veya noktanızın oluşturulduğu OSM [ilgi çekici nokta (İÇN)](../map/point-layers-on-map.md#points-of-interest-pois) verilerinden bilgileri kullanabilirsiniz. Favori noktaları, İÇN'ler ve Ara noktalar, bilgileri depolamak için aynı **etiketleri** kullanır ve **GPX dosya biçiminde** kaydedilir.  
-
+Bir Favori hakkındaki tüm bilgiler etiketler kullanılarak saklanır ve açıklanır. Bir Favori noktası oluştururken, kendi [açıklamanızı](#favorite-point) yazabilir veya noktanızın oluşturulduğu OSM [ilgi çekici nokta (İÇN)](../map/point-layers-on-map.md#points-of-interest-pois) verilerinden bilgileri kullanabilirsiniz. Favori noktaları, İÇN'ler ve Ara noktalar, bilgileri depolamak için aynı **etiketleri** kullanır ve **GPX dosya biçiminde** kaydedilir.
 
 ```xml
 <gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -492,7 +484,7 @@ Bir Favori hakkındaki tüm bilgiler etiketler kullanılarak saklanır ve açık
         </extensions>
     </wpt>
 </gpx>
-```  
+```
 
 
 ## İlgili Makaleler {#related-articles}
