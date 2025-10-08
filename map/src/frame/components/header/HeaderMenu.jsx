@@ -16,12 +16,13 @@ import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import styles from './header.module.css';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 import { handleLanguageChange } from '../../../i18n';
+import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 
 const pages = ({ t }) => [
     {
@@ -47,6 +48,7 @@ const pages = ({ t }) => [
 ];
 
 export const DEFAULT_LANG = 'en';
+const LANG_PARAM = 'lang';
 
 export default function HeaderMenu({ showInstallBanner = null }) {
     const location = useLocation();
@@ -56,6 +58,20 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     const anchorRef = useRef(null);
     const [openLang, setOpenLang] = useState(false);
     const [availableLanguages, setAvailableLanguages] = useState([]);
+
+    const [searchParams] = useSearchParams();
+    const updateQueryParam = useUpdateQueryParam();
+
+    useEffect(() => {
+        const lang = searchParams.get(LANG_PARAM);
+        if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
+            (async () => {
+                await handleLanguageChange(lang);
+                setCurrentLangLabel(getTransLanguage(lang));
+            })();
+        }
+        updateQueryParam(LANG_PARAM, null);
+    }, [searchParams]);
 
     const handleOpen = () => setOpenLang(true);
     const handleClose = () => setOpenLang(false);
