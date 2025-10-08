@@ -74,30 +74,31 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             }
             detectGeoByIp({ map, hash });
 
-            let clickTimer = null;
-
-            const onClick = () => {
-                if (clickTimer) clearTimeout(clickTimer);
-                clickTimer = setTimeout(() => {
-                    clickTimer = null;
-                    ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
-                }, CLICK_DELAY);
-            };
-
-            const onDblClick = () => {
-                if (clickTimer) {
-                    clearTimeout(clickTimer);
-                    clickTimer = null;
-                }
-            };
-
-            map.on('click', onClick);
-            map.on('dblclick', onDblClick);
-
-            map.on('unload', () => {
-                map.off('click', onClick);
-                map.off('dblclick', onDblClick);
-            });
+            /// TODO: fix click
+            // let clickTimer = null;
+            //
+            // const onClick = () => {
+            //     if (clickTimer) clearTimeout(clickTimer);
+            //     clickTimer = setTimeout(() => {
+            //         clickTimer = null;
+            //         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+            //     }, CLICK_DELAY);
+            // };
+            //
+            // const onDblClick = () => {
+            //     if (clickTimer) {
+            //         clearTimeout(clickTimer);
+            //         clickTimer = null;
+            //     }
+            // };
+            //
+            // map.on('click', onClick);
+            // map.on('dblclick', onDblClick);
+            //
+            // map.on('unload', () => {
+            //     map.off('click', onClick);
+            //     map.off('dblclick', onDblClick);
+            // });
         }
     };
 

@@ -11,17 +11,18 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import styles from './header.module.css';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../../context/AppContext';
 import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
+import { handleLanguageChange } from '../../../i18n';
+import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 
 const pages = ({ t }) => [
     {
@@ -47,9 +48,9 @@ const pages = ({ t }) => [
 ];
 
 export const DEFAULT_LANG = 'en';
+const LANG_PARAM = 'lang';
 
 export default function HeaderMenu({ showInstallBanner = null }) {
-    const ctx = useContext(AppContext);
     const location = useLocation();
 
     const { i18n, t } = useTranslation();
@@ -57,6 +58,20 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     const anchorRef = useRef(null);
     const [openLang, setOpenLang] = useState(false);
     const [availableLanguages, setAvailableLanguages] = useState([]);
+
+    const [searchParams] = useSearchParams();
+    const updateQueryParam = useUpdateQueryParam();
+
+    useEffect(() => {
+        const lang = searchParams.get(LANG_PARAM);
+        if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
+            (async () => {
+                await handleLanguageChange(lang);
+                setCurrentLangLabel(getTransLanguage(lang));
+            })();
+        }
+        updateQueryParam(LANG_PARAM, null);
+    }, [searchParams]);
 
     const handleOpen = () => setOpenLang(true);
     const handleClose = () => setOpenLang(false);
@@ -112,30 +127,6 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     function getTransLanguage(lang) {
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
-    }
-
-    async function handleLanguageChange(lng) {
-        try {
-            const translation = await import(`../../../resources/translations/${lng}/translation.json`);
-            if (translation) {
-                i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
-            }
-        } catch (error) {
-            if (process.env.NODE_ENV === 'development') console.error(`Could not load translation.json for ${lng}`);
-        }
-        try {
-            const webTranslation = await import(`../../../resources/translations/${lng}/web-translation.json`);
-            if (webTranslation) {
-                i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
-            }
-        } catch (error) {
-            if (process.env.NODE_ENV === 'development') console.error(`Could not load web-translation.json for ${lng}`);
-        }
-
-        await i18n.changeLanguage(lng);
-
-        localStorage.setItem('i18nextLng', lng);
-        setCurrentLangLabel(t(`lang_${lng}`));
     }
 
     return (

@@ -13,9 +13,9 @@
 </defs>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.750000 0.750000) "> 
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 14 6 L 18 6 L 18 29.332031 L 14 29.332031 Z M 14 6 "/>
-<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 16 2.667969 C 11.371094 2.675781 7.148438 4.605469 4 8 L 28 8 C 24.851562 4.605469 20.632812 2.671875 16 2.667969 Z M 16 2.667969 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 5.25 2.25 L 6.75 2.25 L 6.75 11 L 5.25 11 Z M 5.25 2.25 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 6 1 C 4.265625 1.003906 2.679688 1.726562 1.5 3 L 10.5 3 C 9.320312 1.726562 7.738281 1.003906 6 1 Z M 6 1 "/>
 
 </g>%n%n</svg>

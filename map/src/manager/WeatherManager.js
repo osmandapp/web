@@ -32,6 +32,7 @@ export const CLOUD_LAYER_KEY = 'cloud';
 export function getWeatherLayers(type) {
     const layers = [
         {
+            id: 'temperature',
             key: TEMP_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_temp'),
             opacity: 0.5,
@@ -41,6 +42,7 @@ export function getWeatherLayers(type) {
             checkValue: (value) => value,
         },
         {
+            id: 'precip',
             key: PRECIP_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_precip'),
             opacity: 0.7,
@@ -50,6 +52,7 @@ export function getWeatherLayers(type) {
             checkValue: (value) => value,
         },
         {
+            id: 'wind',
             key: WIND_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_wind'),
             opacity: 0.6,
@@ -60,6 +63,7 @@ export function getWeatherLayers(type) {
             checkValue: (value) => value,
         },
         {
+            id: 'pressure',
             key: PRESS_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_air_pressure'),
             opacity: 0.6,
@@ -69,6 +73,7 @@ export function getWeatherLayers(type) {
             checkValue: (value) => value,
         },
         {
+            id: 'cloud',
             key: CLOUD_LAYER_KEY,
             name: () => i18n?.t('map_settings_weather_cloud'),
             opacity: 0.5,
@@ -80,7 +85,7 @@ export function getWeatherLayers(type) {
         },
     ];
     layers.map((item) => {
-        item.url = getWeatherUrl(item.key, type);
+        item.url = getWeatherUrl(item.id, type);
         item.maxNativeZoom = 3;
         item.maxZoom = 11;
         item.checked = false;

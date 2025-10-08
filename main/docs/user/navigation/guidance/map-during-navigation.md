@@ -64,6 +64,10 @@ The *Show along the route* setting allows you to configure additional route para
 - For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
 - *POIs, Favorite, and Traffic warnings* are not displayed in the list for a route you have already traveled.
 
+:::info note
+The **Show along the route** option affects only the POI and My Favorites lists, not the map itself. Icons of POI and Favorites are displayed everywhere on the map regardless of their distance from the route.
+:::
+
 
 ### View and Select Points {#view-and-select-points}
 
@@ -95,10 +99,6 @@ When you create a route, you can set the types of points to be displayed along t
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
 POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) are associated with the **Show along the route** setting. 
-
-:::info note
-The **Show along the route** option affects only the POI list, not the map itself. POI icons are displayed everywhere on the map regardless of their distance from the route.
-:::
 
 When you specify the display of certain POIs on the *Configure map*, they are all displayed on the maps you have downloaded, whether you have selected categories or, if you do not care which category, selected nearby POIs.  
 

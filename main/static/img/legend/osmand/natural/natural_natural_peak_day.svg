@@ -5,8 +5,8 @@
 <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M7.99999 2.11319L14.8042 13H1.19574L7.99999 2.11319Z" fill="#F1EAE4"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.750000 0.750000) "> 
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path fill-rule="nonzero" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 16 5.332031 L 29.332031 26.667969 L 2.667969 26.667969 Z M 16 5.332031 "/>
+<path fill-rule="nonzero" fill="rgb(24.705882%, 24.705882%, 24.705882%)" fill-opacity="1" d="M 6 2 L 11 10 L 1 10 Z M 6 2 "/>
 
 </g>%n%n</svg>
