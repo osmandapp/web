@@ -184,7 +184,7 @@ The parameters in the **Development** section are mainly for advanced users and 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -206,6 +206,16 @@ Audio instructions during navigation help you as a driver or pedestrian get to y
 If you select a track as your destination point, you need to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-the-roads) option for the voice prompts to work correctly.
 
 *Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/osmand-routing.md#routing-types).
+
+In the **Announce** section, you can choose which types of notifications should be played or shown during navigation:
+
+- **Turn-by-Turn directions** (Android only) – allows standard navigation instructions such as *“Turn left”*, *“Turn right”*, or *“In 200 meters…”* to be enabled or disabled. When the option is disabled, turn and street name announcements are not provided, while notifications for waypoints, user points, and route events remain active. This mode is intended for activities like rafting, hiking, or cycling along pre-recorded tracks, when only alerts for manually added waypoints are required.
+- **Street names** (TTS) – announces the names of streets along your route.
+- **Exit number** – announces the exit number when driving on motorways.
+- **Traffic warnings** – provides alerts about important road events such as congestion or restrictions.
+- **Pedestrian crosswalks** – warns you when approaching pedestrian crossings.
+- **Speed cameras** – alerts about speed camera locations (where legally permitted).
+- **Tunnels** – informs you when entering a tunnel.
 
 
 ## Screen Alerts {#screen-alerts}
