@@ -25,7 +25,7 @@ Vector maps represent spatial data, such as roads, buildings, points, and polygo
 Since vector data is not stored as fixed images, its appearance, including color, line width, transparency, or pattern, can be easily modified. This approach enables efficient rendering, low memory usage, and smooth scaling at any zoom level without quality loss.
 
 :::info note
-Very small polygons may be simplified or distorted during map data generation. Objects with an area smaller than approximately one square meter might not be displayed. For correct visualization, small features — such as areas tagged with `hazard=*` — should be mapped as single nodes instead of polygons.
+Very small polygons may be simplified or distorted during map data generation. Objects with an area smaller than approximately one square meter might not be displayed. For correct visualization, small features should be mapped as single nodes instead of polygons.
 :::
 
 
