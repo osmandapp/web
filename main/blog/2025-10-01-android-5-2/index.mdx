@@ -46,10 +46,92 @@ Thanks for using OsmAnd — safe travels!
 - Added inverted screen orientations
 - Improved the UI for specifying truck metrics
 
+
+## New Nautical Map Style
+
+""Marine" is a new nautical map style designed for maritime navigation. 
+
+## Search Improvements
+
+Search results now include street and city details, making it easier to find specific locations.
+
+## New Trip Recording Widgets
+
+New widgets for Trip Recording include Max Speed, Average Slope, and an improved Uphill/Downhill widget that now shows total ascent and descent.
+
+## Map Rendering Speed
+
+We have optimized the map rendering engine (OpenGL) to improve performance, especially on devices with lower specifications.
+
+## Improved OBDII Connectivity
+
+Now, [OBDII BLE adapters](https://github.com/osmandapp/OsmAnd/issues/21441) can be connected to OsmAnd.
+
+### Battery and Adapter Voltage
+
+[Added battery and adapter voltage display](https://github.com/osmandapp/OsmAnd/issues/23196) when connected to an OBDII adapter.
+
+![OBDII](./img/obd.png)
+
+
+## Heart Rate Metrics for "Analyze by Interval"
+
+Added heart rate metrics to the "Analyze by Interval" feature, allowing users to monitor their heart rate during activities.
+
+## Duration Display for Planned Tracks
+
+Planned tracks now display the estimated duration, helping users better plan their trips.
+
+## Altitude Units Setting
+
+Users can now set altitude units (meters or feet) separately from distance units in the settings.
+
+## Map Orientation Quick Action
+
+The map orientation quick action has been improved, allowing users to select between different compass modes.
+
+## Android Auto Enhancements
+
+Now dialogues show about missing maps and private roads before starting navigation like in the mobile app.
+
+![Android Auto](./img/aa1.png) ![Android Auto](./img/aa2.png)
+
+## Inverted Screen Orientations
+
+Added support for inverted screen orientations, allowing users to use the app in various device orientations.
+
+## Improved UI for Truck Metrics
+
+The user interface for specifying truck metrics has been improved for better usability.
+
+## Other Improvements and Bug Fixes
+
+### Updates copying Waypoints
+
+Added [option](https://osmand.net/docs/user/map/tracks/track-context-menu?current-os=android#actions-with-groups) to copy waypoints between different Favorites folders or create new ones.
+
+![Waypoints](./img/waypoints.png)
+
+### Improved Plan a Route Tool
+
+Added the ability to add POI / Favorite as a via point directly from the map when using the ["Plan a Route" tool](https://osmand.net/docs/user/plan-route/create-route).
+
+### Popular Places for Point Context Menu
+
+The context menu for POIs and Favorites now includes a "Popular Places" section, making it easier to find and navigate to frequently visited locations.
+
+![Popular Places](./img/popular_places.png)
+
 ### Bug fixes
 
 
+- Fixed [wrong radius location](https://github.com/osmandapp/OsmAnd/issues/23302) for Android Auto
 
+<!--
+
+- Fixed issue with [Plugin "Trip recording"](https://github.com/osmandapp/OsmAnd/issues/23027): "Auto-split recordings after gap" parameter disabled
+
+-->
 
 _______________________
 
