@@ -5,7 +5,7 @@
 <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M4.00003 3H6.58538C6.7913 2.4174 7.34692 2 8.00003 2C8.65314 2 9.20876 2.4174 9.41468 3H10.9142L13.4142 5.5L11.9142 7H12V12H9.50003V14H6.50003V12H5.08582L2.58582 9.5L4.08582 8H4.00003V3Z" fill="#EBE7E4"/>
 
 </g>%n%n
-<g transform="translate(139.000000, 9.000000) scale(0.687500 0.687500) "> 
+<g transform="translate(139.000000, 9.000000) scale(1.833333 1.833333) "> 
 
 <defs>
 <filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
@@ -13,20 +13,20 @@
 </filter>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
-<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.7"/>
+<rect x="-1.2" y="-1.2" width="14.4" height="14.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.7"/>
 </g>
 </mask>
 <clip100Path id="clip100-0">
-<rect x="0" y="0" width="32" height="32"/>
+<rect x="0" y="0" width="12" height="12"/>
 </clip100Path>
 <g id="source-6" clip100-path="url(#clip100-0)">
-<path fill-rule="evenodd" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 16 2.667969 C 16.738281 2.667969 17.332031 3.261719 17.332031 4 L 17.332031 29.332031 L 14.667969 29.332031 L 14.667969 4 C 14.667969 3.261719 15.261719 2.667969 16 2.667969 Z M 16 2.667969 "/>
+<path fill-rule="evenodd" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 6 1 C 6.277344 1 6.5 1.222656 6.5 1.5 L 6.5 11 L 5.5 11 L 5.5 1.5 C 5.5 1.222656 5.722656 1 6 1 Z M 6 1 "/>
 </g>
 </defs>
 <g mask="url(#mask-0)">
 <use xlink:href="#source-6"/>
 </g>
-<path fill-rule="nonzero" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 8 5.332031 L 22.667969 5.332031 L 26.667969 9.332031 L 22.667969 13.332031 L 8 13.332031 Z M 8 5.332031 "/>
-<path fill-rule="nonzero" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 24 16 L 9.332031 16 L 5.332031 20 L 9.332031 24 L 24 24 Z M 24 16 "/>
+<path fill-rule="nonzero" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 3 2 L 8.5 2 L 10 3.5 L 8.5 5 L 3 5 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(34.901961%, 22.352941%, 2.352941%)" fill-opacity="1" d="M 9 6 L 3.5 6 L 2 7.5 L 3.5 9 L 9 9 Z M 9 6 "/>
 
 </g>%n%n</svg>

@@ -59,7 +59,6 @@ export default function Render() {
         'Historic tank' : {poiName:'historic_tank', poiName2:null, folderName:'tourism/tourism_historic_tank'},
         'Historic spacecraft' : {poiName:'null', poiName2:null, folderName:'tourism/tourism_historic_spacecraft'},
         'Historic pillory' : {poiName:'pillory', poiName2:null, folderName:'tourism/tourism_historic_pillory'},
-        'Historic pyramid' : {poiName:'null', poiName2:null, folderName:'tourism/tourism_building_pyramid_object_type_node'},
         'Historic manor' : {poiName:'historic_manor', poiName2:null, folderName:'tourism/tourism_historic_manor'},
         'Historic locomotive' : {poiName:'locomotive', poiName2:null, folderName:'tourism/tourism_historic_locomotive'},
         'Historic aircraft' : {poiName:'historic_aircraft', poiName2:null, folderName:'tourism/tourism_historic_aircraft'},
