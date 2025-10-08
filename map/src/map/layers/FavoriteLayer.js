@@ -183,7 +183,7 @@ const FavoriteLayer = () => {
                 file.markers.eachLayer((layer) => {
                     if (!layer) return;
 
-                    const markerLatLng = layer?.getLatLng();
+                    const markerLatLng = layer.getLatLng?.();
                     if (!markerLatLng) return;
 
                     if (!mapBounds.contains(markerLatLng)) {
