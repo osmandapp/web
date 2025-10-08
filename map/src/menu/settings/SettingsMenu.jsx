@@ -14,7 +14,7 @@ import {
 import styles from './settings.module.css';
 import headerStyles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useMemo, useRef, useState } from 'react';
 import langList from '../../resources/translations/supportedLanguages.json';
 import enList from '../../resources/translations/en/translation.json';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -31,6 +31,7 @@ import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
+import { handleLanguageChange } from '../../i18n';
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
@@ -46,42 +47,6 @@ export default function SettingsMenu() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         ctx.setCurrentObjectType(null);
     }
-
-    useEffect(() => {
-        async function handleLanguageChange(lng) {
-            try {
-                const translation = await import(`../../resources/translations/${lng}/translation.json`);
-                if (translation) {
-                    i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
-                }
-            } catch (error) {
-                if (process.env.NODE_ENV === 'development') {
-                    console.error(`Could not load translation.json for language: ${lng}`);
-                }
-            }
-
-            try {
-                const webTranslation = await import(`../../resources/translations/${lng}/web-translation.json`);
-                if (webTranslation) {
-                    i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
-                }
-            } catch (error) {
-                if (process.env.NODE_ENV === 'development') {
-                    console.error(`Could not load web-translation.json for language: ${lng}`);
-                }
-            }
-
-            localStorage.setItem('i18nextLng', lng);
-            setCurrentLang(t(`lang_${lng}`));
-        }
-
-        i18n.on('languageChanged', handleLanguageChange);
-        handleLanguageChange(i18n.language).then();
-
-        return () => {
-            i18n.off('languageChanged', handleLanguageChange);
-        };
-    }, [i18n, t]);
 
     function selectLanguage() {
         setOpenLangList(true);
@@ -105,16 +70,15 @@ export default function SettingsMenu() {
                 const transB = getTransLanguage(b);
                 return collator.compare(transA, transB);
             });
-            sortedLangList.map((lang, index) => {
+            sortedLangList.forEach((lang, index) => {
                 const transLang = getTransLanguage(lang);
                 if (transLang) {
                     res.push(
                         <MenuItem
-                            key={lang}
+                            key={lang + index}
                             onClick={async () => {
-                                await i18n.changeLanguage(lang).then(() => {
-                                    setCurrentLang(t(`lang_${i18n.language}`));
-                                });
+                                await handleLanguageChange(lang);
+                                setCurrentLang(t(`lang_${lang}`));
                                 setOpenLangList(false);
                                 ctx.setOpenedPopper(null);
                             }}
