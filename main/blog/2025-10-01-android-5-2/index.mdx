@@ -65,7 +65,9 @@ We have optimized the map rendering engine (OpenGL) to improve performance, espe
 
 ## Improved OBDII Connectivity
 
-Now, [OBDII BLE adapters](https://github.com/osmandapp/OsmAnd/issues/21441) can be connected to OsmAnd.
+- [OBDII BLE adapters](https://github.com/osmandapp/OsmAnd/issues/21441) can be connected to OsmAnd.
+
+- [OsmAnd reconnects automatically](https://github.com/osmandapp/OsmAnd/issues/23370) to OBDII adapters.
 
 ### Battery and Adapter Voltage
 
@@ -74,9 +76,17 @@ Now, [OBDII BLE adapters](https://github.com/osmandapp/OsmAnd/issues/21441) can 
 ![OBDII](./img/obd.png)
 
 
-## Heart Rate Metrics for "Analyze by Interval"
+## Improvements for "Analyze by Interval"
 
-Added heart rate metrics to the "Analyze by Interval" feature, allowing users to monitor their heart rate during activities.
+### Added Heart Rate Metrics
+
+If your GPX track contains info about heart rate, you can now monitor your heart rate during activities with the "Analyze by Interval" feature. You can see your average, maximum, and minimum heart rate for each interval and for the entire track.
+
+### Added Downhills/Uphills Analyze
+
+Now, you can split your track for [analyzing downhills, uphills and flats](https://osmand.net/docs/user/map/tracks/track-context-menu#split-by-uphill-downhill) segments. 
+
+![Analyze by Intervals](./img/analyze1.png) ![Analyze by Intervals](./img/analyze2.png)
 
 ## Duration Display for Planned Tracks
 
@@ -122,10 +132,23 @@ The context menu for POIs and Favorites now includes a "Popular Places" section,
 
 ![Popular Places](./img/popular_places.png)
 
+### Improved Actions for Audio Note 
+
+The [stop record action](https://github.com/osmandapp/OsmAnd/issues/22683) for audio notes have been added with external device, and the ability to start-stop record audio notes only with external device.
+
+### Improved UI for Multiregion Download
+
+The UI for downloading multiple regions has been improved for better usability and fixing issue with routing for large files. For example, Baden-Wurttemberg in Germany can be downloaded as multiple regions with 4 files instead of one large file: _Regierungsbezirk Stuttgart, Regierungsbezirk Karlsruhe, Regierungsbezirk Freiburg, Regierungsbezirk Tübingen_.
+
+![Multiregion Download](./img/multi_download.png)
+
 ### Bug fixes
 
 
-- Fixed [wrong radius location](https://github.com/osmandapp/OsmAnd/issues/23302) for Android Auto
+- Fixed [wrong radius location](https://github.com/osmandapp/OsmAnd/issues/23302) for Android Auto;
+- Fixed issues with [not updated ETA](https://github.com/osmandapp/OsmAnd/issues/23558) while not moving;
+- Fixed [crash while adding OSM Note](https://github.com/osmandapp/OsmAnd/issues/23577);
+- Fixed [issue with Track appearance synchronization](https://github.com/osmandapp/OsmAnd/issues/21928) with Cloud;
 
 <!--
 
