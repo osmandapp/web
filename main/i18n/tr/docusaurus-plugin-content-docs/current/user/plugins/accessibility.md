@@ -1,5 +1,5 @@
 ---
-source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
+source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
 sidebar_position: 1
 title: Erişilebilirlik
 ---
@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-:::caution Not
+:::caution Note
 Erişilebilirlik eklentisi yalnızca OsmAnd'ın **Android sürümünde** mevcuttur. [iOS Sürümü](#how-to-use-ios) sistemin varsayılan erişilebilirlik ayarlarına dayanır.
 :::
 
@@ -27,15 +27,15 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
 
 ![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
-***Erişilebilirlik eklentisini etkinleştirin:***
+***Erişilebilirlik eklentisini etkinleştirin:***  
 
 1. **Eklentiyi etkinleştirin**: *Menü → Eklentiler → Erişilebilirlik → Etkinleştir*.
 
-2. **Erişilebilirlik modunu açın**:
+2. **Erişilebilirlik modunu açın**:  
    - Android cihazınızda *Sistem Ayarları → Erişilebilirlik*'e gidin.
    - TalkBack'i veya başka bir ekran okuyucuyu etkinleştirin.
 
-3. **Eklenti ayarlarını yapın**:
+3. **Eklenti ayarlarını yapın**:  
    - OsmAnd uygulamasında [Erişilebilirlik ayarlarına](#plugin-settings) gidin.
    - Konuşma hızı, otomatik duyuru ve dokunsal geri bildirim gibi özellikleri yapılandırın.
 
@@ -84,7 +84,7 @@ OsmAnd'ın iOS sürümü, sistemin **yerleşik erişilebilirlik araçlarını** 
 
 OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağıdaki ayarları yapmanız gerekir:
 
-1. **[Erişilebilirlik eklentisini](../plugins/index.md#enable--disable) etkinleştirin**: *Menü → Eklentiler → Erişilebilirlik → Etkinleştir*.
+1. **[Erişilebilirlik eklentisini](../plugins/index.md#enable--disable) etkinleştirin**:  *Menü → Eklentiler → Erişilebilirlik → Etkinleştir*.  
 2. Cihazınızda **erişilebilirlik modunu etkinleştirin**.
 3. Erişilebilirlik eklentisi [ayarlarını](#plugin-settings) yapılandırın.
 
@@ -93,34 +93,34 @@ OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağ�
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_.png)
+![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_.png)  
 
 Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek için çeşitli ayarlar sunar. Bu ayarlar OsmAnd'da [profile](../personal/profiles.md) göre uygulanır.
 
-| Ayar | Açıklama |
-|---------------------------|-------------|
-| **Erişilebilirlik Modu** | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |
-| **Konuşma Hızı** | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |
-| [Akıllı Otomatik Duyuru](#smart-autoannounce-and-clockwise-directions) | Rotadan sapıldığında *sesli rehberlik* sağlar. |
-| **Otomatik Duyuru Periyodu** | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |
-| **Yön Stili** | *Yana doğru (8 yön)* veya [Saat yönünde](#smart-autoannounce-and-clockwise-directions) (12 yön)* arasında seçim yapın. |
-| **Sesli Yönlendirmeler** | Yönü gösteren *sesli rehberlikler* çalar. |
-| **Dokunsal Yönlendirmeler** | Dönüşler ve sapmalar için *titreşim geri bildirimi* sağlar. |
+| Ayar | Açıklama |  
+|---------------------------|-------------|  
+| **Erişilebilirlik Modu**    | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |  
+| **Konuşma Hızı**           | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |  
+| [Akıllı Otomatik Duyuru](#smart-autoannounce)    | Rotadan sapıldığında *sesli rehberlik* sağlar. |  
+| **Otomatik Duyuru Periyodu**   | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |  
+| [Yön Stili](#direction-style)       | *Yana doğru (8 yön)* veya *Saat yönünde (12 yön)* arasında seçim yapın. |  
+| **Sesli Yönlendirmeler**      | Yönü gösteren *sesli rehberlikler* çalar. |  
+| **Dokunsal Yönlendirmeler**     | Dönüşler ve sapmalar için *titreşim geri bildirimi* sağlar.|  
 
 <!--
-- **Erişilebilirlik Modu**. Engelli kişilerin OsmAnd uygulamasıyla etkileşim kurmasına yardımcı olan özel araçları etkinleştirin. Üç mod vardır: *Açık* - yerleşik OsmAnd özelliklerini açar, *Kapalı* - tüm eklenti özelliklerini kapatır ve *Android sistem ayarlarına göre* - Android sistem ayarlarını açar.
+- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
 
-- **Konuşma hızı**. Metin okuma hızını %50'den %200'e kadar ayarlayın.
+- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
 
-- **Akıllı otomatik duyuru**. Etkinleştirilirse, belirlenen rotadan saptığınızda sesli duyurular alırsınız.
+- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
 
-- **Otomatik duyuru periyodu**. Bu, hedefinize olan yön ve mesafenin otomatik duyurusudur. Duyurular arasında 5 saniyeden 5 dakikaya kadar minimum bir süre seçebilirsiniz.
+- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
 
-- **Yön stili**. OsmAnd uygulamasının sizi yönler hakkında nasıl bilgilendireceğini seçin. *Yana doğru* - dünyanın yanlarına doğru yönü gösterir (8 yön), *Saat yönünde* - saat yüzüne göre yönleri gösterir (12 yön).
+- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
 
-- **Sesli yönlendirmeler**. Hedef noktaya olan yönü sesle belirterek navigasyon sırasında geri bildirim sağlar.
+- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
 
-- **Dokunsal yönlendirmeler**. Bu ayar, navigasyon sırasında dokunsal geri bildirim sağlar. Titreşim, hedef noktaya olan yönü ve yoldan sapmaları gösterir.
+- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
 -->
 
 <br/>
@@ -132,16 +132,34 @@ Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşi
 - **Dokunsal geri bildirim** - Düşük görüşlü ortamlar veya sesli rehberliklerin pratik olmadığı durumlar için idealdir.
 
 
-### Akıllı Otomatik Duyuru ve Saat Yönünde Yönlendirmeler {#smart-autoannounce-and-clockwise-directions}
+### Akıllı Otomatik Duyuru {#smart-autoannounce}
 
-**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlarken, **Saat Yönünde Yönlendirme Stili** *saat yüzüne dayalı navigasyon rehberlikleri* sunar. Bu özellikler, *sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.
+**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlar. Bu özellik, *sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.  
 
-- **TalkBack etkin değilse**, hem *Akıllı Otomatik Duyuru* hem de *Saat Yönünde Yönlendirmeler* yalnızca ekranda *metin bildirimleri* gösterecektir.
+- **TalkBack etkin değilse**, *Akıllı Otomatik Duyuru* yalnızca ekranda *metin bildirimleri* gösterecektir.  
 
-- **Sesli bildirimler** yalnızca *TalkBack* **cihazın sistem ayarlarında** etkinleştirildiğinde etkinleştirilir.
+- **Sesli bildirimler** yalnızca *TalkBack* **cihazın sistem ayarlarında** etkinleştirildiğinde etkinleştirilir.  
 
 - Duyuruların sıklığını kontrol etmek için **Otomatik Duyuru Periyodunu** (örn. *10 saniye*) ayarlayın.
 
+- **Konumum** üzerine uzun dokunuş, ***Konumunuzu göster*** ve ***Detayları göster*** seçenekleriyle bir menü açar. Detayları göster'i seçmek ek rota bilgilerini görüntüler ve ***Otomatik duyuruyu başlat/durdur*** düğmesini sağlar.
+
+
+### Yön Stili {#direction-style}
+
+**Yön Stili** ayarı, navigasyon talimatlarının nasıl sunulacağını tanımlar:
+
+- Yana doğru (8 yön) – klasik sol/sağ veya ana/ara yönleri kullanır.
+- Saat yönünde (12 yön) – saat yüzüne dayalı rehberlik kullanır, örneğin “saat 3’te” veya “saat 10’da”.
+
+Bu özellik, özellikle saat tabanlı yönelimi tercih eden görme engelli kullanıcılar için mekansal farkındalığı artırmak amacıyla tasarlanmıştır.
+
+Etkinleştirmek için:
+*Menü* → *Eklentiler* → *Erişilebilirlik* → *Ayarlar* → *Yön Stili* → **Yana doğru** veya **Saat yönünde** seçin.
+
+:::info note
+Yön Stili bağımsız bir seçenektir. Akıllı Otomatik Duyuru'ya bağlı değildir ve Akıllı Otomatik Duyuru etkin olsun veya olmasın çalışır.
+:::
 
 ## İlgili Makaleler {#related-articles}
 
