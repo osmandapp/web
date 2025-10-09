@@ -49,19 +49,42 @@ Thanks for using OsmAnd — safe travels!
 
 ## New Nautical Map Style
 
-""Marine" is a new nautical map style designed for maritime navigation. 
+"Marine" is a new nautical map style designed for maritime navigation. 
 
 ## Search Improvements
 
-Search results now include street and city details, making it easier to find specific locations.
+[Search results](https://osmand.net/docs/user/search/search-all) now include city info and address details, making it easier to find specific locations.
+
+![Search Improvements](./img/search_result.png) ![Search Improvements](./img/search_result2.png)
 
 ## New Trip Recording Widgets
 
-New widgets for Trip Recording include Max Speed, Average Slope, and an improved Uphill/Downhill widget that now shows total ascent and descent.
+New widgets for [Trip Recording](https://osmand.net/docs/user/plugins/trip-recording#widgets) include Max Speed, Average Slope, and an improved Uphill/Downhill widget that now shows total ascent and descent:
+
+- Average Slope widget displays average slope for the last downhill or uphill section of the recorded track (can be set in settings or by tap to the widget).
+
+![Trip Recording Widgets](./img/slope1.png)
+
+- Max Speed widget shows the maximum speed reached during the recording. Tap to switch between the overall max speed and the max speed of the last uphill or downhill (or choose modes in settings).
+
+![Trip Recording Widgets](./img/speed.png)
+
+- Improved [Uphill/Downhill widgets](https://osmand.net/docs/user/plugins/trip-recording#duration-uphill-downhill), now its can show or the sum of all ascents/descents, or the last ascent/descent of the currently recorded trip.
+
+![Trip Recording Widgets](./img/downhill.png)
+
+- [Distance widget](https://osmand.net/docs/user/plugins/trip-recording?current-os=android#distance-start-stop) shows total distance of the recorded track, with modes to view the distance of the last ascent and descent.
+
+![Trip Recording Widgets](./img/distance.png)
+
 
 ## Map Rendering Speed
 
-We have optimized the map rendering engine (OpenGL) to improve performance, especially on devices with lower specifications.
+We have optimized the [map rendering engine (OpenGL)](https://osmand.net/docs/user/personal/global-settings#map-rendering-engine) to improve performance for rendering maps and map elements, resulting in a smoother experience when navigating and interacting with the map.
+
+## Base Autosync to Cloud
+
+OsmAnd now supports base automatic synchronization of your Favorites (and Tracks, OSM notes) to the OsmAnd cloud, ensuring that your data is always backed up and accessible from any device.
 
 ## Improved OBDII Connectivity
 
@@ -88,17 +111,26 @@ Now, you can split your track for [analyzing downhills, uphills and flats](https
 
 ![Analyze by Intervals](./img/analyze1.png) ![Analyze by Intervals](./img/analyze2.png)
 
-## Duration Display for Planned Tracks
+### Improved Plan a Route Tool
 
-Planned tracks now display the estimated duration, helping users better plan their trips.
+- Added the ability to add POI / Favorite as a via point directly from the map when using the ["Plan a Route" tool](https://osmand.net/docs/user/plan-route/create-route).
+
+- Show duration for the entire route in the Graph section.
+
+![Plan a Route](./img/route.png) ![Plan a Route](./img/route2.png)
 
 ## Altitude Units Setting
 
-Users can now set altitude units (meters or feet) separately from distance units in the settings.
+Users can now set [altitude units (meters or feet)](https://osmand.net/docs/user/personal/profiles#units--formats) separately from distance units in the settings:
+
+_Menu → Profile Settings → General Settings → Units & formats → Altitude (Meters or Feet)_
 
 ## Map Orientation Quick Action
 
-The map orientation quick action has been improved, allowing users to select between different compass modes.
+[The map orientation quick action](https://osmand.net/docs/user/widgets/quick-action#settings) has been improved, allowing users to select between different compass modes: _Manually rotated, Movement direction, Compass direction, and North is up_.
+
+![Map Orientation](./img/orientation.png)
+
 
 ## Android Auto Enhancements
 
@@ -122,10 +154,6 @@ Added [option](https://osmand.net/docs/user/map/tracks/track-context-menu?curren
 
 ![Waypoints](./img/waypoints.png)
 
-### Improved Plan a Route Tool
-
-Added the ability to add POI / Favorite as a via point directly from the map when using the ["Plan a Route" tool](https://osmand.net/docs/user/plan-route/create-route).
-
 ### Popular Places for Point Context Menu
 
 The context menu for POIs and Favorites now includes a "Popular Places" section, making it easier to find and navigate to frequently visited locations.
@@ -142,6 +170,25 @@ The UI for downloading multiple regions has been improved for better usability a
 
 ![Multiregion Download](./img/multi_download.png)
 
+### Target Android 15-16 (API level 35)
+
+OsmAnd now targets [Android 15-16](https://developer.android.com/about/versions/15/behavior-changes-15) (API level 35), ensuring compatibility with the latest Android features and improvements.
+
+### Improved Search for US addresses (Tiger)
+
+[The search functionality for US addresses](https://github.com/osmandapp/OsmAnd/issues/22059) using the Tiger dataset has been improved for better accuracy and results.
+
+### Improvements for Ski Slopes and Routes
+
+- Clickable ski slopes and routes on the map have been added, allowing users to easily access information about ski areas.
+- Suggest to switch on "Winter and ski" map style when clicking on ski slopes/routes on the Configure map menu.
+
+### First Implementation of Round Earth Projection
+
+OsmAnd has implemented a round Earth projection for improved map accuracy and representation:
+- Choose [Map rendering Engine](https://osmand.net/docs/user/personal/global-settings#map-rendering-engine): OpenGL in settings;
+- Enable "Show spherical map" in settings of [OsmAnd development plugin](https://osmand.net/docs/user/plugins/development).
+
 ### Bug fixes
 
 
@@ -149,6 +196,9 @@ The UI for downloading multiple regions has been improved for better usability a
 - Fixed issues with [not updated ETA](https://github.com/osmandapp/OsmAnd/issues/23558) while not moving;
 - Fixed [crash while adding OSM Note](https://github.com/osmandapp/OsmAnd/issues/23577);
 - Fixed [issue with Track appearance synchronization](https://github.com/osmandapp/OsmAnd/issues/21928) with Cloud;
+- Fixed bug with [intermitted Map Reset to Current Location](https://github.com/osmandapp/OsmAnd/issues/23495) When Zooming After Searching for a Place;
+- Fixed issues with [landscape grid layout](https://github.com/osmandapp/OsmAnd/issues/23431);
+- Fixed bug [with importing of large GPX files](https://github.com/osmandapp/OsmAnd/issues/23595) while using OpenGL engine;
 
 <!--
 
