@@ -252,6 +252,7 @@ export default function SearchMenu() {
                             {isSearchResultRoute && <SearchResults />}
                             {isPoiCategoriesRoute && (
                                 <PoiCategoriesList
+                                    setSearchValue={setSearchValue}
                                     categories={searchCategories}
                                     categoriesIcons={searchCategoriesIcons}
                                     loadingIcons={loadingIcons}
