@@ -118,7 +118,7 @@ export default class EditablePolyline {
     }
 
     mousemovePolyline(e, marker) {
-        let coordinates = this.map.mouseEventToLatLng(e.originalEvent);
+        const coordinates = this.map.mouseEventToLatLng(e.originalEvent);
         marker.setLatLng(coordinates);
         if (!this.map.hasLayer(marker)) {
             marker.addTo(this.map);
