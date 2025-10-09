@@ -36,6 +36,7 @@ import { addLayerToMap } from '../util/MapManager';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
+const REFRESH_ANALYTICS_DEBOUNCER_MS = 1000;
 export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
 
 export default function LocalClientTrackLayer() {
@@ -70,6 +71,15 @@ export default function LocalClientTrackLayer() {
     }, [ctx.processingSaveTrack]);
 
     let ctxTrack = ctx.selectedGpxFile;
+
+    useEffect(() => {
+        if (startedRouterJobs === 0) {
+            setTimeout(
+                () => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }),
+                REFRESH_ANALYTICS_DEBOUNCER_MS
+            );
+        }
+    }, [startedRouterJobs]);
 
     const geoRouter = ctx.trackRouter;
 
@@ -379,6 +389,7 @@ export default function LocalClientTrackLayer() {
     }
 
     function refreshAnalytics() {
+        if (startedRouterJobs > 0) return;
         requestAnalytics({ ctx, track: ctxTrack, debouncerTimer });
         ctx.setSelectedGpxFile({ ...ctxTrack, refreshAnalytics: false });
     }
@@ -564,6 +575,7 @@ export default function LocalClientTrackLayer() {
         }
 
         const analysis = () => {
+            if (startedRouterJobs > 0) return;
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
                 (res) => {
                     if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));

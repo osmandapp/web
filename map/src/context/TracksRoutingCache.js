@@ -144,7 +144,6 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
     dropOutdatedCache({ ctx, validKeys, killLayers: false });
 
     if (updated > 0) {
-        requestAnalytics({ ctx, track, debouncerTimer });
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
     }
 
