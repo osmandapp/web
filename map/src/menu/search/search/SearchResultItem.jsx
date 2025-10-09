@@ -42,8 +42,19 @@ export function getFirstSubstring(inputString) {
     return inputString;
 }
 
-export function preparedType(type, t) {
-    return capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+export function preparedType(type, t, lang = null) {
+    let restoreLang;
+    if (t && lang) {
+        restoreLang = i18n.language;
+        i18n.changeLanguage(lang);
+    }
+
+    const res = capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+
+    if (restoreLang) {
+        i18n.changeLanguage(restoreLang);
+    }
+    return res;
 }
 
 export function getPropsFromSearchResultItem(props, t = null, lang = null) {

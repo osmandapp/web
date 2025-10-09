@@ -23,7 +23,7 @@ import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import { POI_URL } from './GlobalManager';
-import { getPropsFromSearchResultItem } from '../menu/search/search/SearchResultItem';
+import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -320,12 +320,26 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function navigateToPoi(poi, navigate) {
-    const name = poi.options.amenity_name;
-    const { type: objType } = name ? getPropsFromSearchResultItem(poi.options, i18n?.t, 'en') : {};
-    const type = objType;
-    const lat = poi.latlng.lat;
-    const lng = poi.latlng.lng;
+export function navigateToPoi(poi, navigate, isWiki = false) {
+    if (!poi) return;
+
+    function getWikiPoiType() {
+        const type = poi.properties.poitype ?? poi.properties.subtype;
+        return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
+    }
+
+    const name = isWiki ? poi.properties.wikiTitle : poi.options.amenity_name;
+    let type = null;
+    if (name) {
+        if (isWiki) {
+            type = getWikiPoiType();
+        } else {
+            const { type: objType } = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
+            type = objType;
+        }
+    }
+    const lat = isWiki ? poi.geometry.coordinates[1] : poi.latlng.lat;
+    const lng = isWiki ? poi.geometry.coordinates[0] : poi.latlng.lng;
 
     const search = name
         ? `?${new URLSearchParams({
