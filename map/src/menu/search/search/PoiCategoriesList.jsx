@@ -70,7 +70,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
             {loadingIcons ? (
                 <Loading />
             ) : (
-                <Box className={gStyles.scrollActiveBlock}>
+                <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
                         const catName = getCatName(category);
