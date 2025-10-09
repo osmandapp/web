@@ -106,7 +106,7 @@ export default class EditablePolyline {
     }
 
     createBasePolyline() {
-        let polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt());
+        const polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt(this.map));
         if (this.style) {
             polyline.setStyle(this.style);
         } else {
@@ -118,7 +118,7 @@ export default class EditablePolyline {
     }
 
     mousemovePolyline(e, marker) {
-        let coordinates = this.map.mouseEventToLatLng(e.originalEvent);
+        const coordinates = this.map.mouseEventToLatLng(e.originalEvent);
         marker.setLatLng(coordinates);
         if (!this.map.hasLayer(marker)) {
             marker.addTo(this.map);

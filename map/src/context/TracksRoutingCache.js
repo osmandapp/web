@@ -144,7 +144,6 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
     dropOutdatedCache({ ctx, validKeys, killLayers: false });
 
     if (updated > 0) {
-        requestAnalytics({ ctx, track, debouncerTimer });
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
     }
 
@@ -184,7 +183,7 @@ function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
         const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
-        tempLine.setStyle({ color, dashArray: null, weight: DEFAULT_TRACK_LINE_WEIGHT });
+        tempLine.setStyle({ color, dashArray: null });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
     } else {
