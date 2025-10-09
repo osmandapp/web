@@ -210,11 +210,11 @@ If you select a track as your destination point, you need to use the [Attach to 
 In the **Announce** section, you can choose which types of notifications should be played or shown during navigation:
 
 - **Turn-by-Turn directions** (Android only) – allows standard navigation instructions such as *“Turn left”*, *“Turn right”*, or *“In 200 meters…”* to be enabled or disabled. When the option is disabled, turn and street name announcements are not provided, while notifications for waypoints, user points, and route events remain active. This mode is intended for activities like rafting, hiking, or cycling along pre-recorded tracks, when only alerts for manually added waypoints are required.
-- **Street names** (TTS) – announces the names of streets along your route.
+- **Street names(TTS)** – announces the names of streets along your route.
 - **Exit number** – announces the exit number when driving on motorways.
 - **Traffic warnings** – provides alerts about important road events such as congestion or restrictions.
 - **Pedestrian crosswalks** – warns you when approaching pedestrian crossings.
-- **Speed cameras** – alerts about speed camera locations (where legally permitted).
+- **[Speed cameras](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – alerts about speed camera locations (where legally permitted).
 - **Tunnels** – informs you when entering a tunnel.
 
 
