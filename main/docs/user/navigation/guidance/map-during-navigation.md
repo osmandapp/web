@@ -36,7 +36,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Map screen during navigation](@site/static/img/navigation/map_during_navigation_ios.png)
+![Map screen during navigation](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -50,7 +50,7 @@ During navigation, the map's appearance adjusts based on the selected navigation
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* |  The time for which the map view is synchronized with the current position after moving.  |  *Value:* <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatically scale the map according to your speed, as long as the map is synchronized with your current position. | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
-| *Auto zoom 3D angle* | Sets the tilt of the map when switching to 3D view during navigation. A higher angle makes the horizon appear further away, giving more forward visibility. | Default: 25°. Adjustable in degrees.   |
+| *Auto zoom 3D angle* | Sets the tilt of the map when switching to 3D view during navigation. A higher angle makes the horizon appear further away, giving more forward visibility. |It is applied only when Auto zoom is enabled. Values: 20°, 25°, 30°, 35°, 40°. Default: 25°.  |
 | *Preview next turn* | Automatically rotates the map slightly ahead of time to show the next turn or maneuver during navigation. Helps anticipate upcoming actions.  | Enabled by default. If you export and re-import a profile, make sure to verify this setting, as in some earlier versions it could reset to “enabled.”   |
 | *<Translate android="true" ids="snap_to_road"/>*  | The current position icon will be associated with the current navigation route.  | You can turn this option off, but all road-related options, such as lane display, will also not be visible during navigation.  |
 
