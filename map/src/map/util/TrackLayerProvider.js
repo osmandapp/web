@@ -278,7 +278,6 @@ function renderArrows({ polyline, lineWidth, coords, map, arrowSettings }) {
 }
 
 function getPolylineWeight(width, zoom) {
-    console.log('getPolylineWeight', width, zoom);
     if (width === 'thin') {
         if (zoom <= 10) return 2;
         if (zoom <= 13) return 3;
