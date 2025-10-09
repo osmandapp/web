@@ -38,12 +38,16 @@ export default function CustomInput({
                         features: [],
                     };
                 });
-                ctx.setSearchQuery((prev) => ({
-                    ...prev,
-                    search: { query: '' },
-                    type: null,
-                }));
-                navigateToSearchResults({ query: '', type: null });
+                if (setSearchValue) {
+                    setSearchValue(null);
+                } else {
+                    ctx.setSearchQuery((prev) => ({
+                        ...prev,
+                        search: { query: '' },
+                        type: null,
+                    }));
+                    navigateToSearchResults({ query: '', type: null });
+                }
             }
         } else {
             setIsInitialRender(false);

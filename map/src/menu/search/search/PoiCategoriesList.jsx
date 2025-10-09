@@ -17,7 +17,7 @@ import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 
-export default function PoiCategoriesList({ categories, categoriesIcons, loadingIcons }) {
+export default function PoiCategoriesList({ categories, setSearchValue, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -65,12 +65,12 @@ export default function PoiCategoriesList({ categories, categoriesIcons, loading
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <CustomInput type={SEARCH_TYPE_CATEGORY} />
+            <CustomInput setSearchValue={setSearchValue} type={SEARCH_TYPE_CATEGORY} />
             {sortedCategories?.length === 0 && <EmptySearch />}
             {loadingIcons ? (
                 <Loading />
             ) : (
-                <Box className={gStyles.scrollActiveBlock}>
+                <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
                         const catName = getCatName(category);
