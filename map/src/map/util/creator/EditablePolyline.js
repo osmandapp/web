@@ -106,7 +106,7 @@ export default class EditablePolyline {
     }
 
     createBasePolyline() {
-        let polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt());
+        const polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt(this.map));
         if (this.style) {
             polyline.setStyle(this.style);
         } else {
