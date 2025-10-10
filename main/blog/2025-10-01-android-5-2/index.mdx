@@ -134,17 +134,24 @@ _Menu → Profile Settings → General Settings → Units & formats → Altitude
 
 ## Android Auto Enhancements
 
-Now dialogues show about missing maps and private roads before starting navigation like in the mobile app.
+- Now dialogues show about missing maps and private roads before starting navigation like in the mobile app.
 
 ![Android Auto](./img/aa1.png) ![Android Auto](./img/aa2.png)
 
+- Added support for pinch to zoom gesture on the map.
+
 ## Inverted Screen Orientations
 
-Added support for inverted screen orientations, allowing users to use the app in various device orientations.
+Added support for inverted screen orientations, allowing users to use the app in [various device orientations](https://osmand.net/docs/user/personal/profiles#appearance):
+
+_OsmAnd menu → Configure profile → General Settings → Screen orientation → Landscape (inverted), Portrait (inverted)_
 
 ## Improved UI for Truck Metrics
 
-The user interface for specifying truck metrics has been improved for better usability.
+Now, you can add special truck metrics for Truck profile directly from [the profile settings](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters):
+
+_Menu → Configure profile→ Navigation Settings → Vehicle parameters: Max axle load, Max weight at full load_
+
 
 ## Other Improvements and Bug Fixes
 
@@ -189,7 +196,17 @@ OsmAnd has implemented a round Earth projection for improved map accuracy and re
 - Choose [Map rendering Engine](https://osmand.net/docs/user/personal/global-settings#map-rendering-engine): OpenGL in settings;
 - Enable "Show spherical map" in settings of [OsmAnd development plugin](https://osmand.net/docs/user/plugins/development).
 
-### Bug fixes
+### Update Follow Track Mode
+
+The ["Follow Track"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#follow-track-options) mode has been updated to improve the user experience when navigating along a recorded track with Reverse mode. Now it supports two options: 
+- _Original track_: follows the exact track back to the start.
+- _Calculate route_: calculates a new, optimized route back to the start.
+
+### New Screen for Add Track Waypoints
+
+A new screen for [adding waypoints](https://osmand.net/docs/user/map/map-context-menu?current-os=android#-add--edit-track-waypoint) to a track has been introduced, allowing users to easily add and manage waypoints while recording a track or for an existing tracks on the map.
+
+### Bug Fixes
 
 
 - Fixed [wrong radius location](https://github.com/osmandapp/OsmAnd/issues/23302) for Android Auto;
@@ -199,6 +216,8 @@ OsmAnd has implemented a round Earth projection for improved map accuracy and re
 - Fixed bug with [intermitted Map Reset to Current Location](https://github.com/osmandapp/OsmAnd/issues/23495) When Zooming After Searching for a Place;
 - Fixed issues with [landscape grid layout](https://github.com/osmandapp/OsmAnd/issues/23431);
 - Fixed bug [with importing of large GPX files](https://github.com/osmandapp/OsmAnd/issues/23595) while using OpenGL engine;
+- Fixed issue with [missing option to download](https://github.com/osmandapp/OsmAnd/issues/22438) standard map, contour lines map for entire USA;
+- Fixed [text color](https://github.com/osmandapp/OsmAnd/issues/22468) for the track appearance legend;
 
 <!--
 
