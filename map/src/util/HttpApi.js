@@ -122,14 +122,7 @@ export async function apiGet(url, options = null) {
     }
     const qs = '?' + new URLSearchParams(options?.params || {}).toString();
     const fullURL = url + (qs === '?' ? '' : qs);
-    const keyOptions = options?.apiCache
-        ? (() => {
-              const o = { ...options };
-              if (o) delete o.signal;
-              return o;
-          })()
-        : null;
-    const cacheKey = options?.apiCache ? await generateCacheKey(fullURL, keyOptions) : null;
+    const cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
 
     if (cacheKey && cache[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
@@ -343,7 +336,7 @@ export async function digest(string) {
 
 // hash deeply through FormData and File objects
 async function generateCacheKey(url, options = null) {
-    const opts = options ? await digest(JSON.stringify(options)) : '';
+    const opts = options ? await digest(JSON.stringify({ ...options, signal: null })) : '';
 
     let form = '';
     const body = options?.body;
