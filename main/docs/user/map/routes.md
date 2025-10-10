@@ -110,11 +110,11 @@ Some road segments could be part of many routes, but they could be individually 
 2. [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Ski routes {#ski-routes}
+### Ski slopes and routes {#ski-slopes-and-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes). If another map style is active, a banner is shown suggesting a switch to **Winter and Ski** (*Android only*). Tap ***Switch*** to change the map style without leaving the current screen, or ***Later*** to hide the banner.
+Ski slopes and routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically, these routes could be used with [Winter and Ski](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes). If another map style is active, a banner is shown suggesting a switch to **Winter and Ski** (*Android only*). Tap ***Switch*** to change the map style without leaving the current screen, or ***Later*** to hide the banner.
 
 
 ### Snowmobile trails {#snowmobile-trails}
