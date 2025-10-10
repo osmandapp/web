@@ -138,7 +138,8 @@ Available details include:
 - [Alternative names](#alternative-names)
 - [Coordinates](#coordinates)
 - [Within areas](#polygon-information)
-- [Nearby POIs / Wikipedia](#nearby-pois--wikipedia)
+- [Nearby POIs](#nearby-pois)
+- [Nearby Popular Places](#nearby-popular-places)
 - [Public Transport routes for stops](#public-transport-routes)
 - [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
 - [OpenStreetMap link](#openstreetmap-link)
@@ -216,7 +217,7 @@ In the context menu, you can find [geographical coordinates](../search/search-co
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Both OsmAnd and [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
 
-### Nearby POIs / Wikipedia {#nearby-pois--wikipedia}
+### Nearby POIs {#nearby-pois}
 
 ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
 
@@ -225,6 +226,10 @@ These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [
 Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
 
 > **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+
+
+### Nearby Popular Places {#nearby-popular-places}
 
 
 ### Public Transport Routes {#public-transport-routes}
