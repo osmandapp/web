@@ -1,7 +1,7 @@
 import md5 from 'blueimp-md5';
 import { globalNavigate } from '../App';
 import { LOGIN_LOGOUT_URL } from '../manager/AccountManager';
-import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
+import { quickNaNfix, seleniumUpdateActivity } from './Utils';
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
@@ -83,7 +83,7 @@ import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
         TODO: write doc about returns for each case (catch-error, http-error, redirect, ok)
 */
 
-const inflightControllers = Object.create(null);
+const abortControllers = Object.create(null);
 
 export async function apiGet(url, options = null) {
     seleniumUpdateActivity(); // update activity timestamp (before and after apiGet)
@@ -131,30 +131,39 @@ export async function apiGet(url, options = null) {
     }
 
     let response = null;
+    let inflightKey;
 
     try {
         const fullOptions = { redirect: 'manual', ...options };
 
-        const optsForKey = { ...fullOptions };
-        delete optsForKey.signal;
-        const inflightKey = await generateCacheKey(fullURL, optsForKey);
+        if (options?.apiCache) {
+            const optsForKey = { ...fullOptions };
+            delete optsForKey.signal;
 
-        if (inflightControllers[inflightKey]) {
-            try {
-                inflightControllers[inflightKey].abort();
-            } catch {}
-        }
+            inflightKey = cacheKey || (await generateCacheKey(fullURL, optsForKey));
 
-        const controller = new AbortController();
-        inflightControllers[inflightKey] = controller;
-        fullOptions.signal = controller.signal;
+            if (abortControllers[inflightKey]) {
+                try {
+                    abortControllers[inflightKey].abort();
+                } catch {}
+            }
 
-        response = await fetch(fullURL, fullOptions);
+            const controller = new AbortController();
+            abortControllers[inflightKey] = controller;
+            fullOptions.signal = controller.signal;
 
-        if (inflightControllers[inflightKey] === controller) {
-            delete inflightControllers[inflightKey];
+            response = await fetch(fullURL, fullOptions);
+
+            if (abortControllers[inflightKey] === controller) {
+                delete abortControllers[inflightKey];
+            }
+        } else {
+            response = await fetch(fullURL, fullOptions);
         }
     } catch (e) {
+        if (inflightKey && abortControllers[inflightKey]) {
+            delete abortControllers[inflightKey];
+        }
         if (e?.name === 'AbortError') {
             return;
         }
