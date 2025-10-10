@@ -83,6 +83,8 @@ import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
         TODO: write doc about returns for each case (catch-error, http-error, redirect, ok)
 */
 
+const inflightControllers = Object.create(null);
+
 export async function apiGet(url, options = null) {
     seleniumUpdateActivity(); // update activity timestamp (before and after apiGet)
 
@@ -131,9 +133,31 @@ export async function apiGet(url, options = null) {
     let response = null;
 
     try {
-        const fullOptions = Object.assign({}, { redirect: 'manual' }, options);
+        const fullOptions = { redirect: 'manual', ...options };
+
+        const optsForKey = { ...fullOptions };
+        delete optsForKey.signal;
+        const inflightKey = await generateCacheKey(fullURL, optsForKey);
+
+        if (inflightControllers[inflightKey]) {
+            try {
+                inflightControllers[inflightKey].abort();
+            } catch {}
+        }
+
+        const controller = new AbortController();
+        inflightControllers[inflightKey] = controller;
+        fullOptions.signal = controller.signal;
+
         response = await fetch(fullURL, fullOptions);
+
+        if (inflightControllers[inflightKey] === controller) {
+            delete inflightControllers[inflightKey];
+        }
     } catch (e) {
+        if (e?.name === 'AbortError') {
+            return;
+        }
         // got general error (have no response)
         console.debug('fetch-catch-error', url, e);
         const ret = { ok: false, text: () => null, json: () => null, blob: () => null, data: null };
