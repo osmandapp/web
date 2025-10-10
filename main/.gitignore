@@ -29,3 +29,9 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+venv/
+main/venv/
+node_modules/
+.yarn/
+.docusaurus/
+build/
