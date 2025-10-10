@@ -110,7 +110,7 @@ Some road segments could be part of many routes, but they could be individually 
 2. [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Ski slopes and routes {#ski-slopes-and-routes}
+### Ski slopes routes {#ski-slopes-and-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
