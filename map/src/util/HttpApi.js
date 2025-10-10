@@ -1,7 +1,7 @@
 import md5 from 'blueimp-md5';
 import { globalNavigate } from '../App';
 import { LOGIN_LOGOUT_URL } from '../manager/AccountManager';
-import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
+import { quickNaNfix, seleniumUpdateActivity } from './Utils';
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
@@ -83,6 +83,8 @@ import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
         TODO: write doc about returns for each case (catch-error, http-error, redirect, ok)
 */
 
+const abortControllers = Object.create(null);
+
 export async function apiGet(url, options = null) {
     seleniumUpdateActivity(); // update activity timestamp (before and after apiGet)
 
@@ -120,8 +122,7 @@ export async function apiGet(url, options = null) {
     }
     const qs = '?' + new URLSearchParams(options?.params || {}).toString();
     const fullURL = url + (qs === '?' ? '' : qs);
-
-    let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
+    const cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
 
     if (cacheKey && cache[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
@@ -129,11 +130,33 @@ export async function apiGet(url, options = null) {
     }
 
     let response = null;
-
+    const abortKey = options?.abortControllerKey ?? cacheKey;
     try {
-        const fullOptions = Object.assign({}, { redirect: 'manual' }, options);
-        response = await fetch(fullURL, fullOptions);
+        const fullOptions = { redirect: 'manual', ...options };
+        if (abortKey && !options?.signal) {
+            if (abortControllers[abortKey]) {
+                abortControllers[abortKey].abort();
+            }
+
+            const controller = new AbortController();
+            abortControllers[abortKey] = controller;
+            fullOptions.signal = controller.signal;
+
+            response = await fetch(fullURL, fullOptions);
+
+            if (abortControllers[abortKey] === controller) {
+                delete abortControllers[abortKey];
+            }
+        } else {
+            response = await fetch(fullURL, fullOptions);
+        }
     } catch (e) {
+        if (abortKey && abortControllers[abortKey]) {
+            delete abortControllers[abortKey];
+        }
+        if (e?.name === 'AbortError') {
+            return;
+        }
         // got general error (have no response)
         console.debug('fetch-catch-error', url, e);
         const ret = { ok: false, text: () => null, json: () => null, blob: () => null, data: null };
@@ -313,10 +336,11 @@ export async function digest(string) {
 
 // hash deeply through FormData and File objects
 async function generateCacheKey(url, options = null) {
-    const opts = options ? await digest(JSON.stringify(options)) : '';
+    const { signal, body, ...rest } = options;
+
+    const opts = await digest(JSON.stringify(rest));
 
     let form = '';
-    const body = options?.body;
 
     if (body && isFormData(body)) {
         for (const [k, v] of body.entries()) {
