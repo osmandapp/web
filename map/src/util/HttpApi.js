@@ -122,8 +122,14 @@ export async function apiGet(url, options = null) {
     }
     const qs = '?' + new URLSearchParams(options?.params || {}).toString();
     const fullURL = url + (qs === '?' ? '' : qs);
-
-    let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
+    const keyOptions = options?.apiCache
+        ? (() => {
+              const o = { ...options };
+              if (o) delete o.signal;
+              return o;
+          })()
+        : null;
+    const cacheKey = options?.apiCache ? await generateCacheKey(fullURL, keyOptions) : null;
 
     if (cacheKey && cache[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
@@ -131,38 +137,30 @@ export async function apiGet(url, options = null) {
     }
 
     let response = null;
-    let inflightKey;
 
     try {
         const fullOptions = { redirect: 'manual', ...options };
 
-        if (options?.apiCache) {
-            const optsForKey = { ...fullOptions };
-            delete optsForKey.signal;
-
-            inflightKey = cacheKey || (await generateCacheKey(fullURL, optsForKey));
-
-            if (abortControllers[inflightKey]) {
-                try {
-                    abortControllers[inflightKey].abort();
-                } catch {}
+        if (cacheKey && !options?.signal) {
+            if (abortControllers[cacheKey]) {
+                abortControllers[cacheKey].abort();
             }
 
             const controller = new AbortController();
-            abortControllers[inflightKey] = controller;
+            abortControllers[cacheKey] = controller;
             fullOptions.signal = controller.signal;
 
             response = await fetch(fullURL, fullOptions);
 
-            if (abortControllers[inflightKey] === controller) {
-                delete abortControllers[inflightKey];
+            if (abortControllers[cacheKey] === controller) {
+                delete abortControllers[cacheKey];
             }
         } else {
             response = await fetch(fullURL, fullOptions);
         }
     } catch (e) {
-        if (inflightKey && abortControllers[inflightKey]) {
-            delete abortControllers[inflightKey];
+        if (cacheKey && abortControllers[cacheKey]) {
+            delete abortControllers[cacheKey];
         }
         if (e?.name === 'AbortError') {
             return;
