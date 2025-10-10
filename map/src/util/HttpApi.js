@@ -137,30 +137,29 @@ export async function apiGet(url, options = null) {
     }
 
     let response = null;
-
+    const abortKey = options?.abortControllerKey ?? cacheKey;
     try {
         const fullOptions = { redirect: 'manual', ...options };
-
-        if (cacheKey && !options?.signal) {
-            if (abortControllers[cacheKey]) {
-                abortControllers[cacheKey].abort();
+        if (abortKey && !options?.signal) {
+            if (abortControllers[abortKey]) {
+                abortControllers[abortKey].abort();
             }
 
             const controller = new AbortController();
-            abortControllers[cacheKey] = controller;
+            abortControllers[abortKey] = controller;
             fullOptions.signal = controller.signal;
 
             response = await fetch(fullURL, fullOptions);
 
-            if (abortControllers[cacheKey] === controller) {
-                delete abortControllers[cacheKey];
+            if (abortControllers[abortKey] === controller) {
+                delete abortControllers[abortKey];
             }
         } else {
             response = await fetch(fullURL, fullOptions);
         }
     } catch (e) {
-        if (cacheKey && abortControllers[cacheKey]) {
-            delete abortControllers[cacheKey];
+        if (abortKey && abortControllers[abortKey]) {
+            delete abortControllers[abortKey];
         }
         if (e?.name === 'AbortError') {
             return;

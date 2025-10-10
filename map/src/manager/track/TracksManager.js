@@ -945,6 +945,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             pnts: getAllPoints(cloneFile.points).length,
         },
         apiCache: true,
+        abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         headers: {
             'Content-Type': 'application/json',
         },
