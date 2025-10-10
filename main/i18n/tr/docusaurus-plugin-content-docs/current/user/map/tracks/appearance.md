@@ -1,5 +1,5 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -82,7 +82,7 @@ Uygulamanın çeşitli menülerinde izin görünümünü özelleştirebilirsiniz
 
 Haritada görünürlüğü artırmak için iz genişliğini ayarlayın.
 
-- **Ön ayarlı seçenekler**: **İnce, Orta** ve **Kalın**.
+- **Ön ayarlı seçenekler**: **İnce, Orta,** ve **Kalın**.
 
 - **Özel genişlik**: Bir kaydırıcı kullanarak 1 ila 24 piksel arasında ayarlanabilir.
 
@@ -91,9 +91,23 @@ Haritada görünürlüğü artırmak için iz genişliğini ayarlayın.
 
 ### Bölme Aralığı {#split-interval}
 
-![İz menüsü Görünüm Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-İzdeki aralığı **mesafeye göre mi yoksa zamana göre mi** böleceğinizi seçin.
+<TabItem value="android" label="Android">
+
+![İz menüsü Görünüm Bölme aralığı Android](@site/static/img/map/split_interval_android.png)  ![Bölme aralığı Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![İz menüsü Görünüm Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+İzdeki aralığı **mesafeye**, **zamana** veya **yokuş yukarı/aşağı** (Android) göre mi yoksa **mesafeye** veya **zamana** (iOS) göre mi böleceğinizi seçin. Ayrıntılı aralık başına istatistikleri görüntülemek için [Aralıklara Göre Analiz'e](../../map/tracks/track-context-menu.md#analyze-by-intervals) bakın (yalnızca Android).
+
 
 ### Yön Okları {#direction-arrows}
 
@@ -173,7 +187,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
     Eğime dayalı Duvar Rengi ile, arazinin, özellikle tepelerin ve eğimlerin hızınızı nasıl etkilediğini gözlemleyebilirsiniz. Hız ve eğim görselleştirmesinin bu kombinasyonu, aktivite boyunca performansın ayrıntılı bir şekilde anlaşılmasını sağlar.
 
-2. **3B Rölyef ile Kalp Sensörü ile Görselleştirme**.  
+2. **Kalp sensörü ile 3B Rölyef ile Görselleştirme**.  
     Başka bir bilgilendirici uygulama, kalp atış hızı sensör verilerini 3B rölyef haritalarıyla birleştirmektir. Bu, kalp atış hızı dalgalanmalarını doğrudan araziye eşlemenizi sağlayarak, rakım değişikliklerinin fiziksel çabanızı nasıl etkilemiş olabileceğine dair kapsamlı bir görünüm sunar.  
 
     Rakımı abartan 3B rölyef özelliği, 3B iz görünümünden bağımsız olarak çalışır. Kalp atış hızı ve arazi yüksekliği arasındaki korelasyonu daha iyi anlamak için iki dikey abartma parametresi ayarlanabilir.
@@ -289,7 +303,7 @@ Bir iz için renk belirtmek için aşağıdaki formatı kullanın:
 ## İlgili Makaleler {#related-articles}
 
 - [Harita Bağlam menüsü](../map-context-menu.md)
-- [Haritayı Yapılandır menüsü](../configure-map-menu.md)
+- [Haritayı Yapılandır](../configure-map-menu.md)
 - [Haritadaki noktalar](../point-layers-on-map.md)
 - [İzler](../tracks/index.md)
 - [İzler Bağlam menüsü](../tracks/track-context-menu.md)

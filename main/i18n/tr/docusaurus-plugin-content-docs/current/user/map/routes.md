@@ -1,5 +1,5 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: f77c79aa8ba6ee804a435593d76621a2ddd13c5337cf7c503ad33e4dd0b4451a
 sidebar_position: 10
 title: Rotalar
 ---
@@ -47,8 +47,8 @@ MTB rotaları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmt
 <!--
 | | | |
 |------------|------------|------------|
-| ***<Translate android="true" ids="mtb_scale"/>*** | MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Lejantı](../map-legend/index.md) makalesindedir. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb-trails.png) |
-| ***<Translate android="true" ids="mtb_imba"/>*** | Uluslararası Dağ Bisikleti Birliği, [MTB IMBA](https://www.imba.com/) 'ya göre MTB parkurlarını gösterir. Daha fazla bilgi [Harita lejantı](../map-legend/index.md) makalesindedir. | ![Harita rotaları - MTB parkurları](@site/static/img/map/map-routes-mtb_imba-trails.png) |
+| ***<Translate android="true" ids="mtb_scale"/>*** | Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article. | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png) |
+| ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
 - ***<Translate android="true" ids="mtb_scale"/>***.  MTB ölçeğine göre parkurları gösterir. Daha fazla bilgi [Harita Lejantı](../map-legend/index.md) makalesindedir.  
@@ -115,7 +115,14 @@ Bazı yol segmentleri birçok rotanın bir parçası olabilir, ancak dağlık al
 
 ![Harita rotaları - kayak pistleri](@site/static/img/map/map-routes-ski-slopes.png)
 
-Kayak rotaları, OpenStreetMap'teki belirli bir [rota](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) grubudur. Genellikle, bu rotalar tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) harita stiliyle kullanılabilir.  
+Kayak rotaları, OpenStreetMap'teki belirli bir [rota](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) grubudur. Genellikle, bu rotalar tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) harita stiliyle kullanılabilir. Başka bir harita stili etkinse, **Kış ve Kayak**'a geçişi öneren bir afiş gösterilir (*yalnızca Android*). Harita stilini mevcut ekrandan ayrılmadan değiştirmek için ***Değiştir***'e dokunun veya afişi gizlemek için ***Sonra***'ya dokunun.
+
+
+### Kar motosikleti parkurları {#snowmobile-trails}
+
+![Harita rotaları - kar motosikleti](@site/static/img/map/snowmobile_trail.png)
+
+Kar motosikleti parkurları, [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile)'te `route=snowmobile` olarak eşlenir. Kış rekreasyonu ve kar mevsimi sırasında uzak alanları bağlamak için kullanılır. OsmAnd'da kar motosikleti parkurları tıklanabilir, bkz. [Rotalarla İşlemler](#actions-with-routes) bölümü.
 
 
 ### At rotaları {#horse-routes}
@@ -248,7 +255,7 @@ Bağlam menüsünde aşağıdaki bilgiler görünür olacaktır:
 - **Rota bilgisi**: Rota adı, OSM bağlantısı (OSM Düzenleme eklentisi gerekli), Tür, Açıklama, Mesafe, Yön, Yokuş yukarı/Yokuş aşağı, Rakım aralığı, Ağ, Operatör, Durum, Renk, Gidiş-dönüş, Başlangıç/Bitiş noktaları ve daha fazlası.
 - **Genel**: Boyut, Konum, Oluşturulma tarihi.
 - **Ek Bilgi**. Etkinlik türünü görüntüler.
-- eylem düğmeleri: [Kaydet](#save-as-a-track) ve [Navigasyonu Başlat](#start-navigation).
+- eylem düğmeleri: [İz Olarak Kaydet](#save-as-a-track) ve [Navigasyonu Başlat](#start-navigation).
 - [Yükseklik bilgisi](../navigation/setup/route-details.md#elevation-info). Rota üzerindeki yükseklik verileri hakkında bilgi görüntüler.
 - [Haritada İzi Analiz Et](../map/tracks/index.md#analyze-track-on-map). Grafikler ve haritalar kullanarak iz verilerinin ayrıntılı analizini görüntüler.
 

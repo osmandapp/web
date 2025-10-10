@@ -1,7 +1,7 @@
 ---
-source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 sidebar_position: 10
-title:  OsmAnd Geliştirme
+title:  OsmAnd Development
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -47,13 +47,13 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 <TabItem value="android" label="Android">
 
-![Geliştirme Ayarları Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Geliştirme Ayarları 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
+![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Geliştirme Ayarları iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
 
 </TabItem>
 
@@ -62,10 +62,10 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 ### Arazi {#terrain}
 
-- **Gölgelendirme ve eğim için raster [SQLIte formatını](../../technical/osmand-file-formats/osmand-sqlite) kullan** (*Android*). Eski format raster haritaları yükleyin.
+- **Gölgelendirme ve eğim için raster [SQLIte formatını](../../technical/osmand-file-formats/osmand-sqlite) kullan** (*Android*). V2 oluşturma motoru kullanıldığında, 3B Arazi haritasından gölgelendirme veya eğimleri hesaplamak yerine, bu amaçla eski format raster haritalarını kullanın. Oluşturmayı önemli ölçüde hızlandırabilir.
 
 
-### Sorun Giderme {#troubleshotting}
+### Sorun Giderme {#troubleshooting}
 
 - **Konumunuzu simüle edin** (*Android* / *iOS*). Bir GPX parkuru kullanarak konumu ve hareketi [simüle edin](#gpx-track-simulation).
 - **Pil tasarrufu modu** (*Android* / *iOS*). Bu ayar, uygulamaları kullanırken pil gücünden tasarruf etmeye yardımcı olmak için [ekran yenileme hızını](#map-rendering-fps-widget) saniyede 20 kare azaltır.
@@ -129,7 +129,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 - **Eklenti ayarlarını varsayılana sıfırla**. Tüm eklenti ayarlarını varsayılan değerlerine sıfırlar.
 
-    ![Geliştirme Ayarları Android](@site/static/img/plugins/development/devplugin_stat_and.png)
+    ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
 ## Harita Oluşturma FPS Widget'ı {#map-rendering-fps-widget}
@@ -144,7 +144,7 @@ OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinle�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Geliştirme widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Geliştirme widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinle�
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Geliştirme widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -173,7 +173,7 @@ OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinle�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
 
-![Kamera konumu Widget'ları 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Kamera konumu Widget'ları 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
@@ -181,7 +181,7 @@ OsmAnd geliştirici Widget'ları yalnızca OsmAnd geliştirme eklentisi etkinle�
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![Kamera konumu Widget'ları 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Kamera konumu Widget'ları 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
@@ -196,13 +196,13 @@ OsmAnd haritasına gerçekçi bir görünüm kazandırmak ve hem yukarıdan hem 
 
 <TabItem value="android" label="Android">
 
-![Kamera eğimi widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Kamera eğimi widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
+![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kamera eğimi widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Kamera eğimi widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
+![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
 
 </TabItem>
 
@@ -222,13 +222,13 @@ Aynı zamanda, izleyicinin hayali hareketi nedeniyle, kameradan yüzeye olan mes
 
 <TabItem value="android" label="Android">
 
-![Kamera yüksekliği widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Kamera yüksekliği widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
+![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kamera yüksekliği widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Kamera yüksekliği widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
+![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
 
 </TabItem>
 
@@ -243,13 +243,13 @@ Kamera Yüksekliği widget'ı, kameranın yüzey seviyesinin üzerindeki yüksek
 
 <TabItem value="android" label="Android">
 
-![Yakınlaştırma seviyesi widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Yakınlaştırma seviyesi widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yakınlaştırma seviyesi widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Yakınlaştırma seviyesi widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
 
 </TabItem>
 
@@ -273,13 +273,13 @@ Widget'ın, üzerine dokunarak değiştirilen iki görünümü vardır:
 
 <TabItem value="android" label="Android">
 
-![Hedefe uzaklık widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Hedefe uzaklık widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Hedefe uzaklık widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Hedefe uzaklık widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
 </TabItem>
 
 </Tabs>
@@ -289,7 +289,7 @@ Kameradan hedefe uzaklık widget'ı, kamera (izleyici) ile haritanın merkezi ar
 
 ### Uydu Görüntüleri ile Karşılaştırma {#comparison-with-a-satellite-imagery}
 
-![Karşılaştırma](@site/static/img/plugins/development/comparison.png)
+![Comparison](@site/static/img/plugins/development/comparison.png)
 
 OsmAnd haritası ile Dünya yüzeyinin karşılaştırılması aşağıdaki desenleri ortaya koymaktadır:
 
@@ -299,20 +299,20 @@ OsmAnd haritası ile Dünya yüzeyinin karşılaştırılması aşağıdaki dese
 
 Aşağıdaki tablo, kamera eğimi ve hedefe olan mesafe ile OsmAnd harita bozulmalarının görünür hale geldiği yakınlaştırma seviyesi hakkında bilgi içermektedir. Kamera hedeften uzaklaşmaya devam ederse, gözlemlenen OsmAnd harita bozulması artacaktır.
 
-|Eğim (90) |Enlem |Maks Yakınlaştırma |Yükseklik, km |Bozulma|
+|Incline (90) |Latitude |Max Zoom |Height, km |Distortion|
 |-----|-----|-----|-----|-----|
 |90|26|6|5500|5%|
 |90|50|6|2500|5%|
 |90|66|7|1300|5%|
-|**Eğim (60)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|**Incline (60)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |65|26|8|1100|6.5%|
 |65|50|8|800|6.5%|
 |65|66|9|630|6.5%|
-|**Eğim (45)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|**Incline (45)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |45|26|9|350|7.5%|
 |45|50|9|320|7.5%|
 |45|66|8|210|7.5%|
-|**Eğim (20)** |**Enlem** |**Maks Yakınlaştırma** |**Yükseklik, km** |**Bozulma**|
+|**Incline (20)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |20| 26|12|30|10%|
 |20| 50|11|30|10%|
 |20| 66|11|30|10%|
@@ -336,13 +336,13 @@ OsmAnd, bir GPX parkuru kullanarak cihazınızın konumunu ve hareketini simüle
 
 <TabItem value="android" label="Android">
 
-![Geliştirme Ayarları Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Geliştirme Ayarları Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Geliştirme Ayarları iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Geliştirme Ayarları iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)
 
 </TabItem>
 
