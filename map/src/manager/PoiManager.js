@@ -54,6 +54,13 @@ const poiFilters = {
     tourism: ['Tourism'],
     water_filter: ['Water filter', 'Water'],
 };
+export const poiUrlParams = {
+    name: 'name',
+    type: 'type',
+    wikidataId: 'wikidataId',
+    lat: 'lat',
+    lng: 'lng',
+};
 
 async function getPoiCategories() {
     let categories = JSON.parse(localStorage.getItem(POI_CATEGORIES));
@@ -323,36 +330,41 @@ export function translateWithSplit(t, string) {
 export function navigateToPoi(poi, navigate, isWiki = false) {
     if (!poi) return;
 
-    function getWikiPoiType() {
-        const type = poi.properties.poitype ?? poi.properties.subtype;
-        return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
+    const params = {};
+
+    if (isWiki) {
+        function getWikiPoiType() {
+            const type = poi.properties.poitype ?? poi.properties.subtype;
+            return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
+        }
+
+        params.name = poi.properties.wikiTitle;
+        params.type = getWikiPoiType();
+        params.wikidataId = poi.properties?.id;
+        params.lat = poi.geometry.coordinates?.[1];
+        params.lng = poi.geometry.coordinates?.[0];
+    } else {
+        const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
+
+        params.name = poi.options.amenity_name || poi.options.name;
+        params.type = props.type;
+        params.wikidataId = poi.options.wikidata_id;
+        params.lat = poi.latlng?.lat;
+        params.lng = poi.latlng?.lng;
     }
 
-    const name = isWiki ? poi.properties.wikiTitle : poi.options.amenity_name;
-    let type = null;
-    if (name) {
-        if (isWiki) {
-            type = getWikiPoiType();
-        } else {
-            const { type: objType } = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
-            type = objType;
+    const keys = Object.keys(poiUrlParams);
+    const search = new URLSearchParams();
+    for (const key of keys) {
+        const v = params[key];
+        if (v != null && v !== '') {
+            search.append(key, v);
         }
     }
-    const lat = isWiki ? poi.geometry.coordinates[1] : poi.latlng.lat;
-    const lng = isWiki ? poi.geometry.coordinates[0] : poi.latlng.lng;
-
-    const search = name
-        ? `?${new URLSearchParams({
-              name,
-              type: type ?? '',
-              lat: String(lat),
-              lng: String(lng),
-          }).toString()}`
-        : '';
 
     navigate({
         pathname: POI_URL,
-        search,
+        search: search.size ? `?${search}` : '',
         hash: window.location.hash,
     });
 }
