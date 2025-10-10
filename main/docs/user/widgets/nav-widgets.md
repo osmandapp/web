@@ -420,21 +420,49 @@ Alert types have a different visual design, which depends on the **<Translate an
 
 The Street name widget shows **the current street name** with a straight arrow, or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). 
 
-In widget **Settings** you can select to always display **the current street name** and use it with [**Next turn**](#next-turn) widget. If you enable **Next turn information**, then switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), same to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+In widget **Settings** you can select to always display **the current street name** and use it with [**Next turn**](#next-turn) widget. **Next turn information** is OFF by default. If you enable it, then switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), same to the voice prompt [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
-  ![Street name POIs widget_2](@site/static/img/widgets/street_name_widget_2.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-- When you change direction, the widget shows the scheme of the maneuver and the name (designation) of the street (road) to which you need to turn.  
+<TabItem value="android" label="Android">  
 
-  ![Street name POIs widget](@site/static/img/widgets/street_name_widget.png)
+ ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+ ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+- When you change direction, the widget shows the scheme of the maneuver and the name (designation) of the street (road) to which you need to turn with a yellow arrow (Next turn information = ON).
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+ ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+ ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
-| By tapping | No changes |
+| By tapping | Opens a context menu with Settings (toggle Next turn information ON/OFF) and Delete |
 
 
 ## Approach POIs / Favorites {#approach-pois--favorites}

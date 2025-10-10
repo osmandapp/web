@@ -20,6 +20,14 @@ Vector maps are intended to be used as the default map data source for OsmAnd, s
 
 Each map style can be customized to highlight or hide specific objects, and to switch between day and night modes. Vector map data can be augmented by vector data and displayed in the default Map style, such as *Contour line* information. You can *create your own OsmAnd map style* to demonstrate the required information.
 
+Vector maps represent spatial data, such as roads, buildings, points, and polygons, using mathematical geometry stored in binary format. Each element (node, line, or polygon) is defined by coordinates and rendered dynamically according to the zoom level and map style.
+
+Since vector data is not stored as fixed images, its appearance, including color, line width, transparency, or pattern, can be easily modified. This approach enables efficient rendering, low memory usage, and smooth scaling at any zoom level without quality loss.
+
+:::info note
+Very small polygons may be simplified or distorted during map data generation. Objects with an area smaller than approximately one square meter might not be displayed. For correct visualization, small features should be mapped as single nodes instead of polygons.
+:::
+
 
 ## Use Cases {#use-cases}
 

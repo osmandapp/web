@@ -46,6 +46,7 @@ export default async function test() {
     await waitBy(By.id('se-search-categories-list'));
 
     await sendKeysBy(By.id('se-search-input'), 'Accom' + '\n');
+    await waitBy(By.id('se-search-categories-box'));
     await waitBy(By.id(`se-search-categories-list-item-${searchCategory}`));
 
     await actionFinish();

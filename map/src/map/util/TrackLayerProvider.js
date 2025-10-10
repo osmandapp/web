@@ -499,9 +499,10 @@ function addStartEndMarkers(points, layers) {
     );
 }
 
-function getPolylineOpt() {
+function getPolylineOpt(map) {
     return {
         color: '#1976d2',
+        weight: getPolylineWeight('medium', map?.getZoom() ?? 9),
     };
 }
 

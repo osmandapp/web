@@ -51,7 +51,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -68,9 +68,9 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 **[Language](#voice-prompt-language)**. Select your preferred language and type.
 
-**Announcement**. Allows you to configure the following types of prompts:
+**Announcement**. Allows you to configure the following [types of prompts](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Street names (TTS), Exit numbers, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
+- *Turn-by-Turn directions, Street names (TTS), Exit numbers, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
 - *[Speed cameras](#speed-cameras)*.
 - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
 
