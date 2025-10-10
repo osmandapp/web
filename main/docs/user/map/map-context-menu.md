@@ -114,13 +114,13 @@ To close the **context menu**:
 
 <TabItem value="android" label="Android">  
 
-![Context menu Android](@site/static/img/map/context_menu_android.png)
+![Context menu Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Context menu iOS](@site/static/img/map/context_menu_ios.png)
+![Context menu iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
