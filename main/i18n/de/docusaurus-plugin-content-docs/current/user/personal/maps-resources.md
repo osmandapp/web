@@ -1,7 +1,7 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: 96c19eed244ae8e23b225b79e192f6ab15334e38a9e882b113d53dea103f93b7
 sidebar_position: 2
-title:  Karten & Ressourcen
+title:  Maps & Resources
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Im Bereich **Karten und Ressourcen** können Sie sowohl *Online*- als auch *Offline*-Karten und andere in OsmAnd verwendete Ressourcen verwalten. Sie können zum Beispiel verschiedene Aktionen durchführen, wie herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und die Größe überprüfen.
+Im Bereich **Karten und Ressourcen** können Sie sowohl *Online*- als auch *Offline*-Karten und andere in OsmAnd verwendete Ressourcen verwalten. Sie können zum Beispiel herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und die Größe überprüfen sowie verschiedene Aktionen durchführen.
 
-OsmAnd arbeitet mit zwei Arten von Karten: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Reiter [Lokal](#local) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können über den Reiter [Downloads](#downloads) heruntergeladen werden. Im Reiter [Aktualisierungen](#updates) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#live-updates) nutzen. Sie können auch auf die Funktion [Zusätzliche Karten](#extra-maps) zugreifen, um Ihre eigenen Kartentypen zu erstellen.
+OsmAnd arbeitet mit zwei Arten von Karten: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Reiter [Lokal](#local-menu) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können über den Reiter [Downloads](#downloads-menu) heruntergeladen werden. Im Reiter [Aktualisierungen](#updates-menu) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#live-updates) nutzen. Sie können auch auf die Funktion [Zusätzliche Karten](#extra-maps) zugreifen, um Ihre eigenen Kartentypen zu erstellen.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -105,11 +105,11 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 </Tabs>
 
-Der Reiter **Download** ermöglicht es Ihnen, verschiedene Kartentypen von den OsmAnd-Servern herunterzuladen, was eine aktive Internetverbindung erfordert.
+Der Reiter **Downloads** ermöglicht es Ihnen, verschiedene Kartentypen von den OsmAnd-Servern herunterzuladen, was eine aktive Internetverbindung erfordert.
 
 ***So laden Sie eine Karte herunter:***
 
-- **Öffnen Sie den Reiter Download**, suchen Sie den gewünschten Abschnitt und tippen Sie auf den entsprechenden Ordner, um verfügbare Karten anzuzeigen.
+- **Öffnen Sie den Reiter Downloads**, suchen Sie den gewünschten Abschnitt und tippen Sie auf den entsprechenden Ordner, um verfügbare Karten anzuzeigen.
 
 - **Verfügbare Karten** zeigen Download-Symbole an, für eine einzelne Karte oder für [mehrere Karten](#multiple-map-loading).
 
@@ -153,7 +153,7 @@ So importieren Sie eine Datei:
 1. Suchen Sie die `.osf`-Datei im Speicher Ihres Geräts, in einem Messenger oder in einer E-Mail.
 2. Tippen Sie darauf, um sie mit OsmAnd zu öffnen.
 3. Das Plugin erscheint im Abschnitt **Plugin-Liste**, wo es aktiviert werden kann.
-4. Ein entsprechender Ordner erscheint dann im Abschnitt **Zusätzliche Karten** des Reiters [Downloads](#downloads).
+4. Ein entsprechender Ordner erscheint dann im Abschnitt **Zusätzliche Karten** des Reiters [Downloads](#downloads-menu).
 
 Lesen Sie mehr im Artikel [**Benutzerdefiniertes Paket**](../plugins/custom).
 
@@ -192,7 +192,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 Der Reiter 'Lokal' bietet eine Übersicht über die Speichernutzung aller OsmAnd-Daten auf Ihrem Gerät. Die Daten sind zur besseren Übersicht in drei farbcodierte Abschnitte unterteilt, wobei die Elemente nach Größe von groß nach klein sortiert sind. Jeder Abschnitt zeigt nur Elemente mit heruntergeladenen Daten an:
 
 - ***Ressourcen*** (*blau*).  
-    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/vector-maps.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
+    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/vector-maps.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
 
 - ***Meine Orte*** (*gelb*).  
     Umfasst [Favoriten](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM-Notizen](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM-Bearbeitungen](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Verlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.  

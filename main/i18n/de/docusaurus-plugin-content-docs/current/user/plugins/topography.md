@@ -1,5 +1,5 @@
 ---
-source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
+source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topografie
 ---
@@ -23,13 +23,13 @@ Das Topografie-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md
 :::
 
 Topografie ist eine wichtige Funktion der Kartografie, die Informationen zur visuellen Beurteilung des Geländereliefs liefert.
-Topografische Informationen wie [Höhenlinien](#contour-lines), [Gelände](#terrain) (*Schummerung* und *Neigung*) und [3D-Relief](#3d-relief) helfen bei der visuellen Einschätzung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit oder Punkte gleicher Höhe anzeigen.
+Topografische Informationen wie [Höhenlinien](#contour-lines), [Gelände](#terrain) (*Schummerung* und *Neigung*), und [3D-Relief](#3d-relief) helfen bei der visuellen Einschätzung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit oder Punkte gleicher Höhe anzeigen.
 
-Jede von diesem Plugin bereitgestellte Funktion ist eine unabhängige Kartenebene, die, wenn sie aktiviert ist, je nach den [Einstellungen](../map/raster-maps.md#overlay-layer) über oder unter der Hauptkartenquelle angezeigt werden kann.
+Jede von diesem Plugin bereitgestellte Funktion ist eine unabhängige Kartenebene, die, wenn sie aktiviert ist, je nach den [Einstellungen](../map/raster-maps.md#overlay-layer) über oder unter der Hauptkartenquelle angezeigt werden kann.  
 
-Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
+Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:  
 
-- [Höhenlinien](#contour-lines). Dies ist eine [Vektorkarte](../map/vector-maps.md), die in [**Metern** oder **Fuß**](#contour-lines-meters-or-feet) dargestellt wird. Höhenlinien zeigen Höhenstufen an und helfen, das Gelände zu visualisieren.
+- [Höhenlinien](#contour-lines). Dies ist eine [Vektorkarte](../map/vector-maps.md) dargestellt in [**Metern** oder **Fuß**](#contour-lines-meters-or-feet). Höhenlinien zeigen Höhenstufen an und helfen, das Gelände zu visualisieren.
 - [Schummerung](#hillshade-slope-and-altitude-layers). Kartentypen mit Schattierung von Hügeln und Hängen machen das Relief besser sichtbar und helfen bei der visuellen Interpretation des Geländes.
 - [Neigung](#hillshade-slope-and-altitude-layers). [Rasterebene](../map/raster-maps.md), die Informationen über die Steilheit von Hängen liefert, was für die Routenplanung und Sicherheit wichtig sein kann.
 - [3D-Relief](#3d-relief). Dies ist eine [Vektorkarte](../map/vector-maps.md), die eine dreidimensionale Darstellung des Geländes bietet und nur mit dem [OsmAnd Pro-Abonnement](../purchases/index.md) verfügbar ist.
@@ -57,7 +57,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 ### Lizenz für DEM-Daten, die von OsmAnd zur Geländeerkennung verwendet werden {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite) wurden aus Messungen im Rahmen der *Shuttle Radar Topography Mission (SRTM)* gewonnen. Dabei wurde der *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, das primäre Bildgebungsinstrument im *Earth Observation System der NASA*, verwendet.
+Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite) wurden aus Messungen im Rahmen der *Shuttle Radar Topography Mission (SRTM)* gewonnen. Dabei wurde der *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, das primäre Bildgebungsinstrument im *Earth Observation System der NASA*, verwendet.  
 Für vollständige Informationen siehe die [Lizenz](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -79,7 +79,7 @@ Um **Höhenlinien** und **Gelände (Schummerung, Neigung)** auf der Karte anzuze
 2. [Aktivieren](../plugins/index.md#enable--disable) Sie das Topografie-Plugin im Bereich Plugins des *Hauptmenüs*.
 3. [Herunterladen](#download-maps): Höhenlinien-, Schummerungs-, Neigungs- oder Geländekarten (3D).
 4. **Aktivieren und anpassen**: Höhenlinien, Schummerung oder Neigung für die Kartenansicht.
-5. Sie können sich auch das [YouTube-Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg) ansehen.
+5. Sie können sich auch das [YouTube-Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg) ansehen.  
 
 Um [**3D-Relief**](#3d-relief) anzuzeigen, müssen Sie den *OsmAnd Pro*-Plan erwerben, der den Zugang zum Topografie-Plugin beinhaltet.
 
@@ -202,8 +202,8 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 
 </Tabs>  
 
-Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*.
-Spezifische Merkmale:
+Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*.  
+Spezifische Merkmale:  
 
 - Es kann immer nur eine Option gleichzeitig aktiviert sein, entweder Schummerung, Neigung oder Höhe.
 - Wenn Sie nach dem Herunterladen und Aktivieren der entsprechenden Karte keine Änderungen sehen, wird empfohlen, die Anwendung neu zu starten.
@@ -215,11 +215,11 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 | Schummerung | Neigung | Höhe |
 | ------ | ------- | ------- |
-| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Höhe](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**Schummerung** basiert auf der Simulation der Oberflächenbeleuchtung unter Verwendung von Geländedaten. Diese Methode beinhaltet die Erzeugung von Schatten und Lichtern basierend auf dem Winkel der Oberfläche zur Lichtquelle. Als Ergebnis sehen Sie natürliche Hügel, Täler und andere Geländedetails auf der Karte.
+**Schummerung** basiert auf der Simulation der Oberflächenbeleuchtung unter Verwendung von Geländedaten. Diese Methode beinhaltet die Erzeugung von Schatten und Lichtern basierend auf dem Winkel der Oberfläche zur Lichtquelle. Als Ergebnis sehen Sie natürliche Hügel, Täler und andere Geländedetails auf der Karte.  
 
-**Neigung** bestimmt den Neigungswinkel der Oberfläche basierend auf den Höhendaten von Punkten auf der Karte. Die Berechnungen des Neigungswinkels werden unter Berücksichtigung von Höhenänderungen und Abständen zwischen den Punkten durchgeführt und diese Änderung als Neigungswinkel dargestellt.
+**Neigung** bestimmt den Neigungswinkel der Oberfläche basierend auf den Höhendaten von Punkten auf der Karte. Die Berechnungen des Neigungswinkels werden unter Berücksichtigung von Höhenänderungen und Abständen zwischen den Punkten durchgeführt und diese Änderung als Neigungswinkel dargestellt.  
 
 **Höhe** stellt die Höhe von Punkten auf der Karte relativ zum Meeresspiegel dar. Sie hilft Ihnen zu verstehen, wie sich das Gelände in der Höhe verändert. Diese Funktion ist besonders nützlich für Aktivitäten wie Wandern oder Mountainbiken, bei denen das Wissen um die Höhe bei der Planung von Routen und der Steuerung der körperlichen Anstrengung helfen kann. Höhendaten werden aus Höhenmodellen abgeleitet und bieten eine klare Sicht auf hohe und tiefe Punkte, was es einfacher macht, die Schwierigkeit einer Route zu beurteilen oder Gipfel und Täler entlang Ihrer Reise zu identifizieren.
 
@@ -240,7 +240,7 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 - *Schummerung* verwendet dunkle Farbtöne, um Hänge, Gipfel und Tiefebenen darzustellen. Die virtuelle Sonne hat einen festen Azimut (Richtung) von 315 Grad.
 
-- *Neigung* verwendet Farben, um die Steilheit des Geländes zu visualisieren. Mehr darüber können Sie [hier](https://de.wikipedia.org/wiki/Steigung) lesen. Jede Farbe entspricht einem Winkel der Abweichung von der Horizontalen. Ein zusätzliches *Neigungs*-Farbschema, ***Lawine***, ist im Menü **Ändern** verfügbar.
+- *Neigung* verwendet Farben, um die Steilheit des Geländes zu visualisieren. Mehr darüber können Sie [hier](https://en.wikipedia.org/wiki/Grade_(slope)) lesen. Jede Farbe entspricht einem Winkel der Abweichung von der Horizontalen. Ein zusätzliches *Neigungs*-Farbschema, ***Lawine***, ist im Menü **Ändern** verfügbar.
 
 - *Höhe*. Die Höhenkarte färbt jedes Pixel entsprechend der berechneten Kartenhöhe unter Verwendung des Gradienten aus einem definierten Farbschema. Normalerweise sind Höhenschemata sehr ortsabhängig. In Berggebieten würden Sie es vorziehen, Farben auf einen breiteren Höhenbereich zu verteilen, und in flachen Gebieten würden Sie ein Farbschema mit einem kleinen Bereich zwischen minimaler/maximaler Höhe wählen.
 
@@ -289,11 +289,11 @@ Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-Die Funktion *Skalierungsstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
+Die Funktion *Zoomstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
 
 ### Cache-Größe {#cache-size}
 
-**Cache-Größe** ist ein Informationsbereich, der die Menge an Speicher auf Ihrem Gerät anzeigt, die derzeit für *Gelände*-Daten verwendet wird. Jedes Mal, wenn Sie *Schummerungs*- oder *Neigungs*-Informationen auf einer Karte anzeigen, werden all diese Daten vorübergehend im Cache gespeichert, um einen schnellen Zugriff und eine spätere Verwendung zu ermöglichen und zusätzliche Belastungen für den Prozessor Ihres Geräts zu vermeiden.
+**Cache-Größe** ist ein Informationsbereich, der die Menge an Speicher auf Ihrem Gerät anzeigt, die derzeit für *Gelände*-Daten verwendet wird. Jedes Mal, wenn Sie *Schummerungs*- oder *Neigungs*-Informationen auf einer Karte anzeigen, werden all diese Daten vorübergehend im Cache gespeichert, um einen schnellen Zugriff und eine spätere Verwendung zu ermöglichen und zusätzliche Belastungen für den Prozessor Ihres Geräts zu vermeiden.  
 
 **Das Leeren des Caches** ist manchmal notwendig, um Speicherplatz auf Ihrem Gerät freizugeben oder um potenzielle Leistungsprobleme zu beheben. Um den Cache zu leeren, müssen Sie zu den *Systemeinstellungen* des Geräts gehen, der Pfad kann dann wie folgt lauten: *Anwendungen → OsmAnd → Speicher → Cache leeren*.
 
@@ -307,14 +307,14 @@ Die Funktion *Skalierungsstufen* ermöglicht es Ihnen, die minimalen und maximal
 2. Wenn Sie die **Karten-Rendering-Engine Version 2 (OpenGL)** verwenden:
     - Sie können weiterhin den normalen Download-Typ für Schummerungs- und Neigungs-Rasterkarten verwenden. Dazu müssen Sie jedoch das [OsmAnd-Entwickler-Plugin](../plugins/development.md) aktivieren und die Einstellung [Raster-SQLite-Format für Schummerung und Neigung verwenden](../plugins/development.md#terrain) aktivieren.
 
-    - Alternativ können Sie den Download [Geländekarte (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) verwenden. Dies spart Speicherplatz auf Ihrem Gerät, und die Effekte für Schummerung, Neigung und 3D-Relief werden daraus mit Ihrem Gerät generiert.
+    - Alternativ können Sie den Download [Geländekarte (3D)](../personal/maps-resources.md#paid-map-content) verwenden. Dies spart Speicherplatz auf Ihrem Gerät, und die Effekte für Schummerung, Neigung und 3D-Relief werden daraus mit Ihrem Gerät generiert.
 
 
 ### Schnellaktionen {#quick-actions}
 
 ![QA für Gelände](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Sie können die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden, um die Sichtbarkeit der Ebenen [Höhenlinien](#contour-lines), [Gelände](#terrain) und des [Gelände-Farbschemas](#default-color-scheme) umzuschalten. Abhängig von der im Menü "Karte konfigurieren" ausgewählten Ebene wird durch Zuweisen einer *Gelände*-Aktion zur Schaltfläche *Schummerung*, *Neigung* oder *Höhe* angezeigt.
+Sie können die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden, um die Sichtbarkeit der Ebenen [Höhenlinien](#contour-lines), [Gelände](#terrain) und des [Gelände-Farbschemas](#default-color-scheme) umzuschalten. Abhängig von der im Menü "Karte konfigurieren" ausgewählten Ebene wird durch Zuweisen einer *Gelände*-Aktion zur Schaltfläche *Schummerung*, *Neigung* oder *Höhe* angezeigt.  
 
 Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich im Abschnitt Topografie des Menüs "Karte konfigurieren". Im Artikel [Schnellaktion](../widgets/quick-action.md#configure-map) finden Sie eine Liste der zur Anzeige verfügbaren Ebenen. Wenn Sie schnellen Zugriff auf diese Kartenkonfiguration benötigen, verwenden Sie das Werkzeug *Benutzerdefinierte Schaltfläche*.
 
@@ -412,10 +412,10 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 |--------|---------|
 | ![Geländeebenen](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Geländeebenen](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Schummerung** ist ein Kartentyp, der das Gelände mithilfe von Schatten darstellt und so eine visuelle Darstellung der Neigung und Form der Erdoberfläche erzeugt.
-**3D-Relief** ist eine Funktion, die der Karte dreidimensionale Effekte hinzufügt.
+**Schummerung** ist ein Kartentyp, der das Gelände mithilfe von Schatten darstellt und so eine visuelle Darstellung der Neigung und Form der Erdoberfläche erzeugt.  
+**3D-Relief** ist eine Funktion, die der Karte dreidimensionale Effekte hinzufügt.  
 
-Wenn Sie *Schummerung* **deaktivieren** und *3D-Relief* **aktivieren**, sind Reliefschatten weiterhin sichtbar, da *Schummerung* und *3D-Relief* zwei verschiedene Arten der Visualisierung einer Karte sind. *Schummerung* erzeugt Schatten basierend auf dem Gelände und fügt sie der Karte hinzu, während *3D-Relief* 3D-Elemente modelliert, um die Tiefe und Form des Geländes zu zeigen, und die Schatten Teil der Visualisierung sind. Diese Funktionen können parallel arbeiten, und das Deaktivieren von *Schummerung* hat keinen Einfluss darauf, wie 3D-Effekte angezeigt werden.
+Wenn Sie *Schummerung* **deaktivieren** und *3D-Relief* **aktivieren**, sind Reliefschatten weiterhin sichtbar, da *Schummerung* und *3D-Relief* zwei verschiedene Arten der Visualisierung einer Karte sind. *Schummerung* erzeugt Schatten basierend auf dem Gelände und fügt sie der Karte hinzu, während *3D-Relief* 3D-Elemente modelliert, um die Tiefe und Form des Geländes zu zeigen, und die Schatten Teil der Visualisierung sind. Diese Funktionen können parallel arbeiten, und das Deaktivieren von *Schummerung* hat keinen Einfluss darauf, wie 3D-Effekte angezeigt werden.  
 
 Wenn **Schummerung** **aktiviert** ist, erscheint ein Bild mit Reliefschatten detaillierter, dunkler und stufiger als ein *3D-Relief*-Bild. Die Erklärung ist, dass *Schummerung* die Gradienten und Kontraste des Geländes hervorhebt und ein schärferes und detaillierteres Bild erzeugt. Die *3D-Relief*-Funktion verleiht der Karte ein flüssigeres und geglättetes Aussehen, was das Gelände weicher macht und möglicherweise die Sichtbarkeit einiger feinerer Details reduziert.
 
@@ -457,6 +457,6 @@ OsmAnd ermöglicht es Ihnen, mehrere Arten von Kartenebenen für eine visuellere
 
 1. Wie man den Kauf des Topografie-Plugins (ehemals Höhenlinien) wiederherstellt. [(prüfen)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Höhenlinien, Höhendaten oder 3D-Relief werden nicht angezeigt. [(prüfen)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Die Karte schaltet während der Navigation automatisch in den 3D-Modus:
-    - Stellen Sie sicher, dass die Schaltfläche **3D-Modus** in **Menü → Bildschirm konfigurieren → Schaltflächen → Standard-Schaltflächen** deaktiviert ist.
+3. Die Karte schaltet während der Navigation automatisch in den 3D-Modus:  
+    - Stellen Sie sicher, dass die Schaltfläche **3D-Modus** in **Menü → Bildschirm konfigurieren → Schaltflächen → Standard-Schaltflächen** deaktiviert ist.  
     - Überprüfen Sie, ob in **Menü → Karte konfigurieren → Topografie** Geländefunktionen aktiviert sind, die einen 3D-Effekt auslösen können.
