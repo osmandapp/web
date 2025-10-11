@@ -1,5 +1,5 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  إعدادات الملاحة
 ---
@@ -185,7 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-settings.png)
+![إعدادات التوجيه الصوتي أندرويد](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -194,7 +194,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *زر <Translate ios="true" ids="routing_settings"/>* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختر الملف الشخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![إعدادات الملاحة الصوتية iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![إعدادات التوجيه الصوتي iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 إذا اخترت مسارًا كنقطة وجهة، فأنت بحاجة إلى استخدام خيار [إرفاق بالطرق](../setup/gpx-navigation.md#attach-to-the-roads) لكي تعمل التوجيهات الصوتية بشكل صحيح.
 
 تسمح لك *التوجيهات الصوتية* بالتركيز على الطريق وعدم تشتيت انتباهك بالخريطة أو جهاز الملاحة. كما أنها تحسن سلامة القيادة، وتقلل من الوقت المستغرق للتنقل في التضاريس غير المألوفة، ويمكن أن تكون مفيدة لمختلف [أنواع المسارات](../routing/osmand-routing.md#routing-types).
+
+في قسم **الإعلان**، يمكنك اختيار أنواع الإشعارات التي يجب تشغيلها أو عرضها أثناء الملاحة:
+
+- **اتجاهات منعطف تلو الآخر** (*أندرويد فقط*) – تسمح بتمكين أو تعطيل التعليمات الملاحية القياسية مثل *“انعطف يسارًا”*، *“انعطف يمينًا”*، أو *“في ٢٠٠ متر...”*. عند تعطيل الخيار، لا يتم تقديم إعلانات المنعطفات وأسماء الشوارع، بينما تظل الإشعارات للنقاط الوسيطة، ونقاط المستخدم، وأحداث المسار نشطة. هذا الوضع مخصص للأنشطة مثل ركوب الزوارق الشراعية، أو المشي لمسافات طويلة، أو ركوب الدراجات على طول مسارات مسجلة مسبقًا، عندما تكون التنبيهات مطلوبة فقط للنقاط الوسيطة المضافة يدويًا.
+- **أسماء الشوارع (TTS)** – يعلن أسماء الشوارع على طول مسارك.
+- **رقم المخرج** – يعلن رقم المخرج عند القيادة على الطرق السريعة.
+- **تحذيرات المرور** – يقدم تنبيهات حول أحداث الطريق المهمة مثل الازدحام أو القيود.
+- **ممرات المشاة** – يحذرك عند الاقتراب من ممرات المشاة.
+- **[كاميرات السرعة](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)** – ينبه إلى مواقع كاميرات السرعة (حيث يُسمح قانونيًا).
+- **الأنفاق** – يُبلغك عند الدخول إلى نفق.
 
 
 ## تنبيهات الشاشة {#screen-alerts}
