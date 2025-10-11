@@ -1,8 +1,7 @@
 ---
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
-
+source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
 sidebar_position: 3
-title:  Informations-Widgets
+title: Informations-Widgets
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -27,7 +26,7 @@ Informations-Widgets bieten Ihnen schnellen Zugriff auf wichtige Daten. Dies kö
 
 ## Höhen-Widgets   {#altitude-widgets}
 
-Höhen-Widgets zeigen die Höhe des aktuellen geografischen Standorts über dem Meeresspiegel und die Höhe des Kartenzentrums an.
+Höhen-Widgets zeigen die Höhe des aktuellen geografischen Standorts über dem Meeresspiegel und die Höhe des Kartenzentrums an.  
 
 
 ### Höhe: Aktueller Standort   {#altitude-current-location}
@@ -36,7 +35,7 @@ Höhen-Widgets zeigen die Höhe des aktuellen geografischen Standorts über dem 
 Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses Problem zu lösen, laden Sie eine Karte mit Höhenkorrektur herunter.
 
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads).
+- Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -218,7 +217,7 @@ Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-D
 
 </Tabs>  
 
-Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*-Widgets liefern wertvolle Informationen zum Gleitverhältnis, um fundierte Entscheidungen bei der Planung von Flugrouten zu treffen. Das *Gleitverhältnis*-Widget in OsmAnd hilft Ihnen, die Effizienz Ihres Sink- oder Steigflugs zu bewerten, wenn Sie zu einem bestimmten Ort navigieren (Position eines [Markers](../personal/markers.md) auf der Karte). Es berechnet das Gleitverhältnis als das Verhältnis der Entfernung zur Höhendifferenz zwischen Ihrer aktuellen Position und Ihrem beabsichtigten Ziel. Mehr dazu können Sie [hier](https://de.wikipedia.org/wiki/Gleitzahl) lesen.
+Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*-Widgets liefern wertvolle Informationen zum Gleitverhältnis, um fundierte Entscheidungen bei der Planung von Flugrouten zu treffen. Das *Gleitverhältnis*-Widget in OsmAnd hilft Ihnen, die Effizienz Ihres Sink- oder Steigflugs zu bewerten, wenn Sie zu einem bestimmten Ort navigieren (Position eines [Markers](../personal/markers.md) auf der Karte). Es berechnet das Gleitverhältnis als das Verhältnis der Entfernung zur Höhendifferenz zwischen Ihrer aktuellen Position und Ihrem beabsichtigten Ziel. Mehr dazu können Sie [hier](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio) lesen.
 
 
 **Verwendung der Widgets:**
@@ -502,7 +501,7 @@ Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren 
 
 <TabItem value="ios" label="iOS">
 
-![Reiseaufzeichnungs-Widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widgets für externe Sensoren iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 

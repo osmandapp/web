@@ -1,5 +1,5 @@
 ---
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
+source-hash: f9fda369841f870ed0f7bff2008618ae04b8b11b5d9458b488f463164740e1e7
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/tracks/index.md)* sowohl in Text- als auch in [grafischer](#altitude--speed-graphs) Form. Es ermöglicht Ihnen, Informationen hinzuzufügen, Änderungen vorzunehmen, zu bearbeiten und verschiedene andere Aktionen mit dem Track durchzuführen. Sie können das *Track-Kontextmenü* aufrufen, indem Sie einfach auf den gewünschten Track auf der Karte tippen oder das Menü *[Meine Orte](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) verwenden. Möglicherweise müssen Sie den Track-Ordner öffnen und den gewünschten Track durch Antippen auswählen.
+Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/tracks/index.md)* sowohl in Text- als auch in [grafischer](#altitude--speed-graphs) Form. Es ermöglicht Ihnen, Informationen hinzuzufügen, Änderungen vorzunehmen, zu bearbeiten und verschiedene andere Aktionen mit dem Track durchzuführen. Sie können das *Track-Kontextmenü* aufrufen, indem Sie einfach auf den gewünschten Track auf der Karte tippen oder das Menü *[Meine Orte](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* ) verwenden. Möglicherweise müssen Sie den Track-Ordner öffnen und den gewünschten Track durch Antippen auswählen.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -64,17 +64,17 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Oben im Infobereich sehen Sie den Namen des Tracks und das Symbol, mit dem er markiert ist (*nur Android*). Der Trackname kann mit der Umbenennungsfunktion im [Optionsmenü](#options) geändert werden. Einige Tracks (meistens die *[Reiseführer](../../plan-route/travel-guides.md#manage-as-gpx-track)*) können eine kurze *[Beschreibung](#description-and-info)* und/oder ein Bild unter dem *Tracknamen* haben. Ein Pfeil zeigt die *Richtung zum nächstgelegenen Punkt des Tracks* von [Mein Standort](../../map/interact-with-map.md#my-location-and-zoom) aus an.
+Oben im Infobereich sehen Sie den Namen des Tracks und das Symbol, mit dem er markiert ist (*nur Android*). Der Trackname kann mit der Umbenennungsfunktion im [Optionsmenü](#options) geändert werden. Einige Tracks (meistens die *[Reiseführer](../../plan-route/travel-guides.md#manage-as-gpx-track)*) können eine kurze *[Beschreibung](#description-and-info)* und/oder ein Bild unter dem *Tracknamen* haben. Ein Pfeil zeigt die *Richtung zum nächstgelegenen Punkt des Tracks* von [Mein Standort](../../map/interact-with-map.md#my-location-and-zoom) aus an.  
 
 Der Infobereich bietet auch Informationen über Folgendes:
 
 - *<Translate android="true" ids="distance"/>*. Zeigt die Tracklänge an.
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Zeigt die Gesamtsumme der Auf- und Abstiege während der Tour an.
-- *<Translate android="true" ids="altitude_range"/>*. Gibt die minimale und maximale Höhe auf einem Track an.
+- *<Translate android="true" ids="altitude_range"/>*. Gibt die minimale und maximale Höhe auf einem Track an.  
 
 :::note
-Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass seine Punkte [`time`- und `speed`](../../plugins/trip-recording#recorded-gpx-file)-Tags haben), enthält der Infobereich auch Informationen über *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) oder *<Translate ios="true" ids="total_time"/>* (*iOS*) (die Zeitspanne zwischen dem Start- und Endpunkt des Tracks), *<Translate android="true" ids="shared_string_time_moving"/>* (die Gesamtzeit während der Fahrt).
-:::
+Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass seine Punkte [`time` und  `speed`](../../plugins/trip-recording#recorded-gpx-file)-Tags haben), enthält der Infobereich auch Informationen über *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) oder *<Translate ios="true" ids="total_time"/>* (*iOS*) (die Zeitspanne zwischen dem Start- und Endpunkt des Tracks), *<Translate android="true" ids="shared_string_time_moving"/>* (die Gesamtzeit während der Fahrt).
+:::  
 
 ### Track-Aktionen {#track-actions}
 
@@ -107,29 +107,29 @@ Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_android.png)
+![Track-Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Optionen iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)
+![Track-Menü Optionen Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschiedenen Werkzeugen und Einstellungen zu verwalten und zu ändern.
+Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschiedenen Werkzeugen und Einstellungen zu verwalten und zu ändern.  
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – Steuert die Sichtbarkeit des Tracks auf der Karte.
 - **<Translate android="true" ids="shared_string_appearance"/>** – Öffnet das [Menü Darstellung](../tracks/appearance.md), um Farbe, Breite und Transparenz des Tracks anzupassen.
-- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – Startet die [Navigation entlang des Tracks](../../navigation/setup/gpx-navigation.md) und richtet Ihre Route am ausgewählten Track aus.
+- **<Translate android="true" ids="follow_track"/>** (*Android*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – Startet die [Navigation entlang des Tracks](../../navigation/setup/gpx-navigation.md), und richtet Ihre Route am ausgewählten Track aus.
 
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Nur Android*) – Führt Track-Segmente zusammen, um Lücken zu füllen.
 - **<Translate android="true" ids="analyze_on_map"/>**. Öffnet das Werkzeug [Auf Karte analysieren](../tracks/index.md#analyze-track-on-map), um Höhe, Geschwindigkeit und Entfernung des Tracks zu überprüfen.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Nur Android*) - Analysiert den Track nach Zeit- oder Distanz-[Intervallen](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Nur Android*) - Analysiert den Track nach Zeit- oder Entfernungs-[Intervallen](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -174,7 +174,7 @@ Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschi
 
 Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgemeinen Informationen*** an.
 
-- **Beschreibung**. Die Schaltfläche *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) wird verwendet, um die Track-Beschreibung zu bearbeiten. Tag `desc`.
+- **Beschreibung**.  *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) Schaltfläche wird verwendet, um die Track-Beschreibung zu bearbeiten. Tag `desc`.
 
 - **Allgemein**. Enthält Informationen über die *GPX-Dateigröße*, den *Dateiordner* und das *Erstellungsdatum* mit dem `time`-Tag.
 
@@ -270,13 +270,13 @@ Interaktion mit dem Diagramm:
 
 <TabItem value="android" label="Android">
 
-![Kontextmenü Track-Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Kontext Track-Menü Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontextmenü Track-Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Kontext Track-Menü Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
 
 </TabItem>
 
@@ -296,7 +296,7 @@ Die aktiven **Schaltflächen** ermöglichen den Zugriff auf Aktionen wie:
 
   - *Bearbeiten* öffnet den Track im Werkzeug [Route planen](../../plan-route/index.md).
   - *Löschen* ermöglicht es Ihnen, das ausgewählte Track-Element zu entfernen.
-  - *Intervall teilen* öffnet die [Funktion Intervall teilen](#split-interval) für den Track.
+  - *Intervall teilen* öffnet die [Funktion Intervall teilen](#analyze-by-intervals) für den Track.
 
 
 ### Geschwindigkeit {#speed}
@@ -372,15 +372,15 @@ Die Funktion zur Offline-Berechnung der Höhe ist nur für [**OsmAnd Pro-Abonnen
 Diese Funktion ermöglicht es Ihnen, das Höhenprofil für einen GPX-Track offline für jedes Gelände zwischen 70 Grad nördlicher und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) müssen zuvor heruntergeladen werden*.
 
 1. Laden Sie [Geländekarten (3D)](../../plugins/topography.md#download-maps) für die erforderliche Region herunter.
-2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track-Kontextmenü (*Track-Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.
+2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track-Kontextmenü (*Track-Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.  
 
-    ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
+    ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. Wenn Sie eine Route mit dem Werkzeug [Route planen](../../plan-route/create-route.md#graph) unter Verwendung der Methode *Gerade Linie* erstellen und keine Höhendaten im Diagramm vorhanden sind, müssen Sie:
     - Tippen Sie auf *Höhendaten abrufen* und wählen Sie dann *Geländekarten verwenden*.
-    - Nach der Berechnung erhalten Sie das vollständige Höhen-/Steigungsdiagramm Ihrer Route basierend auf den Geländedaten.
+    - Nach der Berechnung erhalten Sie das vollständige Höhen-/Steigungsdiagramm Ihrer Route basierend auf den Geländedaten.  
 
-  ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+  ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Punkte / Wegpunkte {#points--waypoints}
@@ -391,13 +391,13 @@ Wegpunkte sind eine der Arten von Punkten, die auf der Karte verfügbar sind. Im
 
 <TabItem value="android" label="Android">
 
-![Kontextmenü Track-Punkte Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontextmenü Track-Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -455,7 +455,7 @@ Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur E
     - Wählen Sie die **Farbe** des Symbols.
     - Wählen Sie dann die **Form** des Symbols: *Kreis, Achteck, Quadrat*.
 
-4. **Ersetzen** Sie bei Bedarf einen anderen Punkt durch diesen.
+4. **Ersetzen** Sie bei Bedarf einen anderen Punkt durch diesen.  
 
 
 ### Aktionen mit Gruppen {#actions-with-groups}
@@ -485,7 +485,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das *Gruppenmenü* des Wegpunkts.
 - **<Translate android="true" ids="change_default_appearance"/>** - Ändern Sie die Anzeigeoptionen für eine Gruppe von Wegpunkten.
 - **<Translate android="true" ids="add_group_to_markers"/>** oder **Entfernen** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte in die Liste der [Kartenmarkierungen](../../personal/markers.md).
 - **<Translate android="true" ids="copy_to_map_favorites"/>** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte zu den [Favoriten](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*Nur Android*) - Erstellt eine Route zwischen Wegpunkten. Der erste und letzte Punkt werden zum Start und Ziel der Route, und die restlichen werden zu Zwischenpunkten.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Nur Android*) - Erstellt eine Route zwischen Wegpunkten. Der erste und letzte Punkt werden zum Start und Ziel der Route, und die restlichen werden zu Zwischenpunkten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Löschen Sie eine Gruppe von Wegpunkten.
 
 
@@ -507,7 +507,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das *Gruppenmenü* des Wegpunkts.
 
 </Tabs>
 
-Verwalten Sie die Sichtbarkeit von Gruppen auf der Karte: Wenn Sie einen Track ausblenden, wird auch die gesamte Gruppe ausgeblendet.
+Verwalten Sie die Sichtbarkeit von Gruppen auf der Karte: Wenn Sie einen Track ausblenden, wird auch die gesamte Gruppe ausgeblendet.  
 
 Sie können Gruppenwegpunkte auf der Karte ein- oder ausschalten, indem Sie die Schaltfläche in der oberen rechten Ecke des Kontextmenüs des Tracks auf der Karte verwenden. Tippen Sie darauf und wählen Sie die gewünschte Aktion aus.
 
@@ -588,14 +588,14 @@ Sie können Gruppenwegpunkte auf der Karte ein- oder ausschalten, indem Sie die 
 
 </details>
 
-**Tags:**
+**Tags:**  
 
 | Parameter | Beschreibung |
 | --- | --- |
 | `lat` | **Breitengrad** ist eine der geografischen Koordinaten, mit denen Sie einen Ort bestimmen können. |
 | `lon` | **Längengrad** ist eine weitere der geografischen Koordinaten, mit denen Sie einen Ort bestimmen können. |
 | `time` | **Zeitstempel** ist das Datum und die Uhrzeit, zu der der Punkt aufgezeichnet wurde. |
-| `name` | **Name** ist der Name des Punktes. Alle Zeichen sind erlaubt. |
+| `name` | **Name** ist der Name des Punktes. Alle Zeichen sind erlaubt.  |
 | `desc` | **Beschreibung** enthält zusätzliche Informationen über den Punkt. |
 | `type` | **Gruppe auswählen** ist der Name des OsmAnd-Ordners, in dem dieser Wegpunkt gespeichert ist. |
 | `cmt` | **Kommentar** ist ein kurzer Kommentar zu einem Punkt. |
@@ -603,42 +603,73 @@ Sie können Gruppenwegpunkte auf der Karte ein- oder ausschalten, indem Sie die 
 | `ele` | **Höhe** ist die Höhe eines Punktes. |
 
 
-**Erweiterungen:**
+**Erweiterungen:**  
 
 | Erweiterung | Beschreibung |
 | --- | --- |
 | `osmand:icon` | **Symbol** ist der Name des von Ihnen ausgewählten Symbols. |
-| `osmand:color` | **Farbe** ist die Farbe im HEX-Format. |
+| `osmand:color` | **Farbe** ist die Farbe im HEX-Format.  |
 | `osmand:background` | **Hintergrund** ist die Form des Symbols, wie z. B. ein Kreis, Achteck oder Quadrat. |
-| `osmand:country` | **Land** ist der Name des Landes. |
-| `osmand:address` | **Adresse** ist die Adresse. |
-| `osmand:postcode` | **Postleitzahl** ist die Postleitzahl. |
-| `osmand:telephone` | **Telefon** ist die Telefonnummer. |
-| `osmand:state` | **Bundesland** ist der Name des Bundeslandes. |
-| `osmand:start_date` | **Startdatum** sind die Plandaten eines Punktes. |
+| `osmand:country` | **Land** ist der Name des Landes.  |
+| `osmand:address` | **Adresse** ist die Adresse.  |
+| `osmand:postcode` | **Postleitzahl** ist die Postleitzahl.  |
+| `osmand:telephone` | **Telefon** ist die Telefonnummer.  |
+| `osmand:state` | **Bundesland** ist der Name des Bundeslandes.  |
+| `osmand:start_date` | **Startdatum** sind die Plandaten eines Punktes.  |
 
-Wegpunkte werden mit dem Track in der [GPX-Datei](../../../technical/osmand-file-formats/osmand-gpx.md) aufgezeichnet. Jeder dieser Wegpunkte hat seinen eigenen Satz von Tags zur Beschreibung. Alle Tags, die sich direkt auf die Beschreibung von Wegpunkten beziehen und direkt in der OsmAnd-Anwendung bearbeitet werden können, sind in diesem Abschnitt aufgeführt.
+Wegpunkte werden mit dem Track in der [GPX-Datei](../../../technical/osmand-file-formats/osmand-gpx.md) aufgezeichnet. Jeder dieser Wegpunkte hat seinen eigenen Satz von Tags zur Beschreibung. Alle Tags, die sich direkt auf die Beschreibung von Wegpunkten beziehen und direkt in der OsmAnd-Anwendung bearbeitet werden können, sind in diesem Abschnitt aufgeführt.  
 Um die Wegpunktbeschreibung zu ändern, können Sie einen der folgenden Wege gehen:
-
+  
 1. Finden Sie den gewünschten Track in der Liste des Tabs *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 2. Tippen Sie auf den Track auf der Karte, wenn er in der [Liste der sichtbaren Tracks](../tracks/index.md#display-tracks-on-the-map) enthalten ist.
-3. Tippen Sie auf den gewünschten Wegpunkt, wenn er auf der Karte [sichtbar](../../personal/tracks/manage-tracks.md#track-menu) ist.
+3. Tippen Sie auf den gewünschten Wegpunkt, wenn er auf der Karte [sichtbar](../../personal/tracks/manage-tracks.md#track-menu) ist.  
 
-    Tippen Sie dann im [Track-Kontextmenü](./track-context-menu.md) auf *Punkte*, das Feld des gewünschten Ordners mit verfügbaren Wegpunkten und den gesuchten Wegpunkt. Wählen Sie das Menü *Aktionen →* **GPX-Wegpunkt bearbeiten** und nehmen Sie Änderungen vor. Sie können das Erstellungsdatum eines Punktes, den *Zeitstempel*, in der Anwendung nicht ändern.
+    Tippen Sie dann im [Track-Kontextmenü](./track-context-menu.md) auf *Punkte*, das Feld des gewünschten Ordners mit verfügbaren Wegpunkten und den gesuchten Wegpunkt. Wählen Sie das Menü *Aktionen →* **GPX-Wegpunkt bearbeiten** und nehmen Sie Änderungen vor. Sie können das Erstellungsdatum eines Punktes, den *Zeitstempel*, in der Anwendung nicht ändern.  
 
 **Einrichtungs-Tags**, die zusätzliche Informationen wie Öffnungszeiten oder Telefonnummern beschreiben, die für den POI spezifisch sind, entnehmen diese Informationen den OpenStreetMap-Daten oder den Daten, die Sie bei der Erstellung des POI eingegeben haben. Sie können solche Tags und [benutzerdefinierte Tags](#display-custom-gpx-tags) nur im Code der GPX-Datei bearbeiten, die Sie mit einem beliebigen Texteditor auf Ihrem Gerät öffnen können.
 
 
-## Intervall teilen {#split-interval}
+## Nach Intervallen analysieren {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-Sie können den Track in Intervalle wie Entfernung und Zeit unterteilen und analysieren.
+![Track-Aufteilung Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Teilen Sie den Track nach Entfernungs- oder Zeitintervall.
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
+Die Option **Nach Intervallen analysieren** ermöglicht es Ihnen, einen Track in Abschnitte zu unterteilen und detaillierte Statistiken für jeden Teil der Route anzuzeigen. Tracks können nach ***Entfernung***, ***Zeit*** oder ***Bergauf/Bergab***-Parametern aufgeteilt werden. 
 
-![Track-Intervall teilen Bildschirm Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track-Intervall teilen Zeit Bildschirm Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
+Um diese Option zu öffnen:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → Wählen Sie den gewünschten Aufteilungmodus 
+
+
+### Nach Entfernung aufteilen {#split-by-distance}
+
+![Track-Aufteilung nach Entfernung Tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track-Aufteilung nach Entfernung Karte](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Diese Option ermöglicht es Ihnen, einen Track in feste Entfernungsintervalle zu unterteilen und detaillierte Statistiken für jedes Segment zu analysieren. Verfügbare Entfernungsintervalle sind ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** und ***10 km***. Nach der Auswahl eines Entfernungsintervalls wird der Track als Liste von Segmenten angezeigt. 
+
+Für jedes Segment können Sie anzeigen:
+- zurückgelegte Entfernung.
+- Zeitspanne.
+- durchschnittliche, minimale und maximale Höhe.
+- Auf- und Abstieg.
+- Zeit in Bewegung.
+- durchschnittliche und maximale Geschwindigkeit.
+
+Wenn Sie auf ein beliebiges Segment in der Liste tippen, zeigt die Kartenansicht den vollständigen Track mit seinen Intervallen und öffnet das Kontextmenü für den Track am unteren Rand des Bildschirms.
+
+
+### Nach Zeit aufteilen {#split-by-time}
+
+![Track-Aufteilung nach Zeit Tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track-Aufteilung nach Zeit Karte](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+Die Option **Nach Zeit aufteilen** teilt einen Track in Intervalle gleicher Dauer auf. Sie können zwischen ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** und ***60 min*** wählen. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
+
+
+### Nach Bergauf/Bergab aufteilen {#split-by-uphill-downhill}
+
+![Track-Aufteilung nach Bergauf/Bergab Tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track-Aufteilung nach Bergauf/Bergab Karte](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind ebenfalls dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
 
 
 ## GPS-Filter {#gps-filter}
@@ -647,11 +678,11 @@ Teilen Sie den Track nach Entfernungs- oder Zeitintervall.
 
 *<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>*
 
-![GPS-Filter Bildschirm Android](@site/static/img/personal/tracks/gps_filter_android.png)
+![GPS-Filter-Bildschirm Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Dieser Filter ermöglicht es Ihnen, Ihre Track-Statistiken zu verbessern, indem Sie unnötige oder falsche Daten ausschließen. Sie können Trackpunkte herausfiltern, die nicht zu Ihren Track-Parametern passen, und erhalten so ein genaueres Diagramm und eine visuelle Routenlinie ohne Verzerrungen oder Aufzeichnungsrauschen. Sie können Änderungen mit Filtern wie *Glättung*, *Geschwindigkeit*, *Höhe* und *GPS-Genauigkeit* vornehmen, die gefilterte Punkte aus dem aktuellen Track ausblenden. Außerdem können Sie im Menü *Statistik* überprüfen, wie Ihre Änderungen im Diagramm angezeigt werden, bevor Sie sie speichern. Sie können Ihren Track in diesem Filter auch *Auf Original zurücksetzen* und *Als Kopie speichern*, ohne das Original zu speichern.
+Dieser Filter ermöglicht es Ihnen, Ihre Track-Statistiken zu verbessern, indem Sie unnötige oder falsche Daten ausschließen. Sie können Trackpunkte herausfiltern, die nicht zu Ihren Track-Parametern passen, und erhalten so ein genaueres Diagramm und eine visuelle Routenlinie ohne Verzerrungen oder Aufzeichnungsrauschen. Sie können Änderungen mit Filtern wie *Glättung*, *Geschwindigkeit*, *Höhe* und *GPS-Genauigkeit* vornehmen, die gefilterte Punkte aus dem aktuellen Track ausblenden. Außerdem können Sie im Menü *Statistik* überprüfen, wie Ihre Änderungen im Diagramm angezeigt werden, bevor Sie sie speichern. Sie können Ihren Track in diesem Filter auch *Auf Original zurücksetzen* und *Als Kopie speichern*, ohne das Original zu speichern.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -659,11 +690,11 @@ Dieser Filter ermöglicht es Ihnen, Ihre Track-Statistiken zu verbessern, indem 
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-Die Android-GPS-Filter-App-Seite enthält Folgendes:
+Die Android-GPS-Filter-App-Seite enthält Folgendes:  
 
 - Eine Karte mit einem gespeicherten Track und einer zusätzlichen Schaltfläche, *Mein Track-Standort* (richtet einen Track in der Mitte einer Karte aus).
 - Schaltflächen *Aktualisieren* und *Menü* oben (*Menü* öffnet das Feld *Aktion* am unteren Rand der Seite).
-- Blöcke *Filter*, *Statistik*, *Aktion*.
+- Blöcke *Filter*, *Statistik*, *Aktion*.  
 
 
 ### Filtermenü {#filter-menu}
@@ -673,7 +704,7 @@ In diesem Menü können Sie einige Parameter Ihres Tracks wie *Glättung*, *Gesc
 | ***Punkte*** |
 |:------------|
 |Dieser Teil zeigt die Anzahl der Punkte nach dem Filtern und die Gesamtzahl der Punkte auf dem ausgewählten Track, bevor Filter verwendet wurden.|
-|![GPS-Filter Bildschirm Punktzahlen Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
+|![GPS-Filter-Bildschirm Punktzahlen Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Aktionen*** |
 |*Glättung*. Legt den Schwellenwert für den Abstand zwischen den Punkten fest. Trackpunkte, die mindestens diesen Abstand vom letzten sichtbaren Punkt haben, werden ausgeblendet. Alle Punkte auf dem Track, die einen geringeren Abstand zueinander haben als der durch den Filter gewählte Abstand, werden ausgeblendet. Die Trackpunkte werden vom letzten sichtbaren Punkt aus gezählt. Beachten Sie, dass hohe Schwellenwerte die Track-Geometrie zu stark vereinfachen können.|
 |![GPS-Filter Glättungszahlen Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
@@ -682,16 +713,16 @@ In diesem Menü können Sie einige Parameter Ihres Tracks wie *Glättung*, *Gesc
 |*Höhe*. Nur die Trackpunkte, die dem ausgewählten Höhenintervall entsprechen, werden im Diagramm und auf der Karte angezeigt, die anderen werden ausgeblendet.|
 |![GPS-Filter Höhenzahlen Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*GPS-Genauigkeit*. Legt den maximal zulässigen Wert für HDOP fest. Punkte mit einem höheren Wert werden ausgeblendet.|
-|![GPS-Filter Genauigkeitszahlen Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
+|![GPS-Filter Genauigkeitszahlen Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
 ### Statistik {#statistics}
 
-![GPS-Filter Diagramm Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS-Filter-Diagramm Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
 Der Tab "Statistik" zeigt Informationen über den **geänderten** Track an, d. h. den Track ohne die gefilterten Werte. Er wird in den Statistikblöcken und Diagrammdaten angezeigt.
-
-- Der Teil *Daten* zeigt Statistiken ähnlich dem [Filtermenü](#filter-menu).
+  
+- Der Teil *Daten* zeigt Statistiken ähnlich dem [Filtermenü](#filter-menu).  
 - Der Teil *Diagramm* zeigt drei Arten von Diagrammen nach Parametern an: Übersicht, Höhe und Geschwindigkeit. Diese Funktionalität ist eine Kopie des [Track-Diagramms](#altitude--speed-graphs).
 
 ### Aktionen {#actions}
@@ -700,9 +731,9 @@ Der Tab "Statistik" zeigt Informationen über den **geänderten** Track an, d. h
 
 Die Liste der Aktionen ist am unteren Rand des Tabs **Filter** oder **Statistik** verfügbar. OsmAnd wendet alle am Track vorgenommenen Änderungen an, ohne die Datei zu aktualisieren, aber Sie können die Änderungen manuell speichern.
 
-- *<Translate android="true" ids="reset_to_original"/>*. Ermöglicht es Ihnen, die Parameter auf ihren ursprünglichen Zustand zurückzusetzen.
+- *<Translate android="true" ids="reset_to_original"/>*. Ermöglicht es Ihnen, die Parameter auf ihren ursprünglichen Zustand zurückzusetzen.  
 - *<Translate android="true" ids="save_as_copy"/>*. Ermöglicht es Ihnen, den Track als neuen zu speichern.
-- *<Translate android="true" ids="save_changes_into_file"/>*. Ermöglicht es Ihnen, den Track mit den neuen Parametern zu überschreiben.
+- *<Translate android="true" ids="save_changes_into_file"/>*. Ermöglicht es Ihnen, den Track mit den neuen Parametern zu überschreiben.  
 
 
 ## Verwandte Artikel {#related-articles}

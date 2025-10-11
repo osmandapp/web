@@ -1,5 +1,5 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Karten herunterladen
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das Hochladen von Karten in die OsmAnd-App ist ein wichtiger Schritt, um einen reibungslosen Betrieb und die Nutzung der Offline-Navigation zu gewährleisten. Ohne Offline-Karten kann die App nicht voll funktionsfähig sein. Das Herunterladen von Karten ermöglicht Ihnen den Zugriff auf Karten verschiedener Regionen, sodass Sie ohne Internetverbindung navigieren können.  
+Das Herunterladen von Karten in die OsmAnd-App ist ein wichtiger Schritt, um einen reibungslosen Betrieb und die Nutzung der Offline-Navigation zu gewährleisten. Ohne Offline-Karten kann die App nicht voll funktionsfähig sein. Das Herunterladen von Karten ermöglicht Ihnen den Zugriff auf Karten verschiedener Regionen, sodass Sie ohne Internetverbindung navigieren können.  
 
 Sie haben zwei *Hauptmöglichkeiten*, Karten herunterzuladen: **1)** Beginnen Sie auf dem [Bildschirm für die Ersteinrichtung](#initial-setup-screen) oder sehen Sie sich die Liste der Regionen im *Hauptmenü* an ([Karten & Ressourcen](#maps-and-resources)), oder **2)** [wählen Sie die gewünschte Region direkt auf der Karte aus](#select-on-the-map). Dies gibt Ihnen die Flexibilität, die gewünschten Regionen auszuwählen und sicherzustellen, dass die Karten zu Ihren Plänen passen.  
 
@@ -69,7 +69,7 @@ Wenn Sie ein VPN verwenden, schlägt OsmAnd möglicherweise eine Karte vor, die 
 
 **Standortmenü:**
 
-- *Eine andere Region auswählen.* Öffnet das Menü [Karten herunterladen](#maps-and-resources).
+- *Eine andere Region auswählen.* Öffnet das [Karten herunterladen](#maps-and-resources) Menü.
 - *Erlauben Sie uns, Ihren Standort zu bestimmen.* [Fordert die Berechtigung](../start-with/first-steps.md#permission-to-access-the-location) zum Zugriff auf den Standort an und findet die erforderliche Karte anhand dieser Daten.
 
 **Anderes Menü:**
@@ -100,11 +100,11 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 </Tabs>
 
-Der Bildschirm [Karten & Ressourcen](../personal/maps-resources.md) bietet Zugriff auf die folgenden Abschnitte:
+Der [Karten & Ressourcen](../personal/maps-resources.md)-Bildschirm bietet Zugriff auf die folgenden Abschnitte:
 
-- [Downloads](../personal/maps-resources.md#downloads). Bietet eine umfassende Auswahl an [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types).
-- [Lokal](../personal/maps-resources.md#local). Zeigt alle Kartendaten an, die derzeit auf Ihrem Gerät gespeichert sind, einschließlich benutzerdefinierter und importierter Ressourcen.
-- [Aktualisierungen](../personal/maps-resources.md#updates). Ermöglicht es Ihnen, Karten monatlich zu aktualisieren, um Ihre Daten auf dem neuesten Stand zu halten.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Bietet eine umfassende Auswahl an [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types).
+- [Lokal](../personal/maps-resources.md#local-menu). Zeigt alle Kartendaten an, die derzeit auf Ihrem Gerät gespeichert sind, einschließlich benutzerdefinierter und importierter Ressourcen.
+- [Aktualisierungen](../personal/maps-resources.md#updates-menu). Ermöglicht es Ihnen, Karten monatlich zu aktualisieren, um Ihre Daten auf dem neuesten Stand zu halten.
 
 ### Karten herunterladen {#downloading-maps}
 
@@ -114,7 +114,7 @@ So laden Sie einen bestimmten Kartentyp für ein Land oder eine Region herunter:
 - Wählen Sie Ihr bevorzugtes Land oder Ihre bevorzugte Region aus der Liste aus.
 - Überprüfen und wählen Sie auf dem nächsten Bildschirm aus den verfügbaren Kartentypen für dieses Gebiet.
 
-Informationen zu anderen Kartentypen finden Sie im Abschnitt [Downloads](../personal/maps-resources.md#downloads) des Artikels **Karten**.
+Informationen zu anderen Kartentypen finden Sie im Abschnitt [Downloads](../personal/maps-resources.md#downloads-menu) des Artikels **Karten**.
 
 ## Weltkarten-Optionen {#world-map-options}
 

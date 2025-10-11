@@ -1,5 +1,5 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 7661b3402845f8d1d0131cde21795230c0848240ce77a9e370eff00d6bb95c89
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -36,17 +36,17 @@ Sie können die App über diesen Link herunterladen - [OsmAnd Maps im Apple App 
 
 | Plan | Beschreibung | Verfügbarkeit | Anmerkungen |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitung/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen Version von OsmAnd. | Beschränkt auf grundlegende Cloud-Funktionen und **5 MB** Speicherplatz. |
+| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitung/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen Version von OsmAnd. | Beschränkt auf grundlegende Cloud-Funktionen und **5MB** Speicherplatz. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Ein **In-App-Kauf** oder **Abonnement**, das erweiterte Funktionen für die kostenlose OsmAnd-App freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kann zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzugefügt werden. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnement**, das zusätzliche erweiterte und [Pro-Funktionen](#pro-features) freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Es bietet vollen Zugriff auf die Funktionen von OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnementplan**, das zusätzliche erweiterte und [Pro-Funktionen](#pro-features) freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Es bietet vollen Zugriff auf die Funktionen von OsmAnd Cloud. |
 
 ### Wichtige Hinweise {#important-notes}
 
 1. **Maps+** ist ein *Upgrade* für die kostenlose Version von OsmAnd, das die meisten Funktionen freischaltet.
 
-2. **OsmAnd Pro**, **OsmAnd+** und **Maps+** sind *plattformübergreifende* Käufe. Das bedeutet, Sie können es in einem Store kaufen (z. B. *Google Play, Huawei AppGallery, AppStore* und *osmand.net*) und in einem anderen wiederherstellen, indem Sie [Ihren Kauf mit dem OsmAnd Cloud-Konto verknüpfen](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** und **Maps+** sind *plattformübergreifende* Käufe. Das bedeutet, Sie können es in einem Store kaufen (z. B. *Google Play, Huawei AppGallery, AppStore* und *osmand.net*) und in einem anderen wiederherstellen, indem Sie [Ihren Kauf mit dem OsmAnd Cloud-Konto verknüpfen](../personal/osmand-cloud.md#cross-platform).
 
-3. Sie können **Maps+** zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzufügen, um den Kauf mit Familienmitgliedern zu teilen.
+3. Sie können **Maps+** zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzufügen, um den Kauf mit Familienmitgliedern zu teilen.  
 
 
 ## Preise {#prices}
@@ -92,7 +92,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Alle Pro-Funktionen](#pro-features) | **-** | **-** | ✔ |
 | [Karten-Downloads](../start-with/download-maps.md) |  <details><summary>**5 Karten-Downloads** <br /> (Kartenaktualisierung zählt als Download):</summary> <br /> - Karten-Download oder -Update bedeutet nur das Herunterladen/Aktualisieren einer Länder- (Regionen-) Karte.<br /> - **Weltübersichtskarte**, **Welt-Höhenkorrektur**, **Kartenschriftarten** und **Sprachansagen** werden nicht als 5 Download-Möglichkeiten gezählt.</details> | ✔ | ✔ |
-| [Monatliche Kartenupdates](../personal/maps-resources.md#updates) |  <details><summary>**Einmal im Monat** <br /> (mit 2 Tagen Verzögerung):</summary> * beschränkt auf 5 Downloads (Kartenaktualisierung zählt als Download) </details> |  ✔ | ✔ |
+| [Monatliche Kartenupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Einmal im Monat** <br /> (mit 2 Tagen Verzögerung):</summary> * beschränkt auf 5 Downloads (Kartenaktualisierung zählt als Download) </details> |  ✔ | ✔ |
 | [Stündliche Kartenupdates](../personal/maps-resources.md#live-updates)<br/>Live-Updates (1 Stunde Verzögerung) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -143,7 +143,7 @@ Ein einfacher Weg, den benötigten Plan auszuwählen und zu kaufen, ist über da
 
 ### OsmAnd Pro-Kauf {#osmand-pro-purchase}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* Abonnement. Hier können Sie ein [monatliches oder jährliches Abonnement](#prices) wählen:
+![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* Abonnementplan. Hier können Sie ein [monatliches oder jährliches Abonnement](#prices) wählen:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Weiter mit OsmAnd Pro*
 
@@ -164,7 +164,7 @@ oder
 
 ## Alte Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}
 
-Neue Abonnements wurden ab OsmAnd 4.3 (Dezember 2022) aktiv. Alle früheren Abonnements sind veraltet und technisch gleichwertig mit dem "Karten-Abonnement", obwohl alte Abonnements Anspruch auf stündliche Kartenupdates haben. Benutzer können keine alten Abonnements mehr kaufen, aber alte Abonnements werden automatisch verlängert, bis Sie sich abmelden (der Preis für sie könnte sich in Zukunft ändern).
+Neue Abonnements wurden ab OsmAnd 4.3 (Dezember 2022) aktiv. Alle früheren Abonnements sind veraltet und technisch gleichwertig mit dem „Maps-Abonnement“, obwohl alte Abonnements Anspruch auf stündliche Kartenupdates haben. Benutzer können keine alten Abonnements mehr kaufen, aber alte Abonnements werden automatisch verlängert, bis Sie sich abmelden (der Preis für sie könnte sich in Zukunft ändern).
 
 
 ## Käufe wiederherstellen {#restore-purchases}

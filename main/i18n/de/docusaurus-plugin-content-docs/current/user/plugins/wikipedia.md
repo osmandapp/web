@@ -1,5 +1,5 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -22,15 +22,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Das Wikipedia-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.  
 :::
 
-Mit Wikipedia auf Ihrer Reise können Sie mehr über die Orte erfahren, die Sie besuchen. Es ist offline verfügbar und zeigt beliebte Orte (Android) / Wikipedia-Artikel (iOS) zu den Sonderzielen direkt auf der Karte an.  
+Mit Wikipedia auf Ihrer Reise können Sie mehr über die Orte erfahren, die Sie besuchen. Es ist offline verfügbar und zeigt beliebte Orte (Android) / Wikipedia-Artikel (iOS), die mit den Sonderzielen in Verbindung stehen, direkt auf der Karte an.  
 
-Das Wikipedia-Plugin ist eine separate Funktion, die bei Bedarf aktiviert/deaktiviert werden kann. Nach der Aktivierung können Sie für jede geografische Region [heruntergeladene](../personal/maps-resources#maps--resources) Wikipedia-Daten hochladen. Die Karte enthält zwei Arten von hochgeladenem Wissen aus Wikipedia: eine Kurzinformation und einen vollständigen Artikel.  
-
-
-Kurzinformationen werden durch Wikipedia-POIs (eine Abkürzung für "[Sonderziel](../map/point-layers-on-map.md)") bereitgestellt. Wenn die Wikipedia-Option im Menü aktiviert ist, erscheint ein Wikipedia-POI auf der Karte. Wenn Sie auf einen Sonderziel tippen, wird er erweitert, um eine kurze Information aus Wikipedia anzuzeigen und die Möglichkeit zu bieten, einen vollständigen Artikel zu öffnen. Der Wikipedia-POI sowie die zugehörigen Artikel sind offline verfügbar. Sie können sie bei Bedarf lesen, die Sprache wechseln und nach anderen Informationen auf Wikipedia suchen.  
+Das Wikipedia-Plugin ist eine separate Funktion, die bei Bedarf aktiviert/deaktiviert werden kann. Nach der Aktivierung können Sie Wikipedia-Daten [heruntergeladen](../personal/maps-resources#downloads-menu) für jede geografische Region hochladen. Die Karte enthält zwei Arten von hochgeladenem Wissen aus Wikipedia: eine Kurzinformation und einen vollständigen Artikel.  
 
 
-[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) ist eine kostenlose, mehrsprachige, kollaborative Online-Enzyklopädie, die von einer Gemeinschaft freiwilliger Autoren unter Verwendung eines Wiki-basierten Bearbeitungssystems erstellt und gepflegt wird.  
+Kurzinformationen werden durch Wikipedia-POIs (eine Abkürzung für „[point of interest](../map/point-layers-on-map.md)“) bereitgestellt. Wenn die Wikipedia-Option im Menü aktiviert ist, erscheint ein Wikipedia-POI auf der Karte. Wenn Sie auf ein Sonderziel tippen, wird es erweitert, um eine kurze Information aus Wikipedia anzuzeigen und die Möglichkeit zu bieten, einen vollständigen Artikel zu öffnen. Der Wikipedia-POI sowie die zugehörigen Artikel sind offline verfügbar. Sie können sie bei Bedarf lesen, die Sprache wechseln und nach anderen Informationen auf Wikipedia suchen.  
+
+
+[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) ist eine kostenlose, mehrsprachige, offen kollaborative Online-Enzyklopädie, die von einer Gemeinschaft freiwilliger Bearbeiter unter Verwendung eines wiki-basierten Bearbeitungssystems erstellt und gepflegt wird.  
 
 &nbsp;  
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
@@ -40,29 +40,29 @@ Kurzinformationen werden durch Wikipedia-POIs (eine Abkürzung für "[Sonderziel
 
 Um Wikipedia-Daten auf der Karte anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
-1. [Kaufen](../plugins/index.md#purchase) und [aktivieren](../plugins/index.md#enable--disable) Sie das Wikipedia-Plugin im Bereich Plugins des *Hauptmenüs*.
-2. Laden Sie die [Wikipedia-Pakete](#download-wikipedia-packages) für die gewünschten Regionen herunter.  
-3. Zeigen Sie die [Wikipedia-POIs](#display-wikipedia-on-the-map) auf der Karte für das gewünschte Profil an.  
-4. Konfigurieren Sie die bevorzugten [Sprachen](#set-preferred-language) zum Lesen von Artikeln.
+1. [Kaufen](../plugins/index.md#purchase) und [Aktivieren](../plugins/index.md#enable--disable) Sie das Wikipedia-Plugin im Bereich Plugins des *Hauptmenüs*.
+2. Laden Sie die [Wikipedia-Pakete](#download-wikipedia-packages) für die erforderlichen Regionen herunter.  
+3. Zeigen Sie die [Wikipedia-POIs](#display-wikipedia-on-the-map) auf der Karte für das erforderliche Profil an.  
+4. Konfigurieren Sie bevorzugte [Sprachen](#set-preferred-language) zum Lesen von Artikeln.
 
 
 ## Wikipedia-Pakete herunterladen {#download-wikipedia-packages}
 
 Wikipedia-Daten sind für jede geografische Region verfügbar. Wenn sie für eine Region geladen sind und für eine andere nicht, können Sie im ersten Fall mit Wikipedia-Informationen arbeiten, wenn Sie die Region auf einer Karte betrachten, und im anderen Fall wird die Region keine Wikipedia-Informationen haben. Einmal geladen, werden die Wikipedia-Daten allgemein und auch offline verfügbar.
 
-Um die Wikipedia-Daten für eine Region herunterzuladen, gehen Sie zu den [verfügbaren Paketen zum Herunterladen im *Hauptmenü*](../start-with/download-maps.md#download), suchen Sie die gewünschte Region und öffnen Sie sie. Die Wikipedia-Daten befinden sich unter den anderen Paketen.
+Um die Wikipedia-Daten für eine Region herunterzuladen, gehen Sie zu den [verfügbaren Paketen zum Herunterladen im *Hauptmenü*](../start-with/download-maps.md#downloading-maps), suchen Sie die benötigte Region und öffnen Sie sie. Die Wikipedia-Daten befinden sich unter den anderen Paketen.
 
 Sie können Wikipedia-Daten zum Herunterladen nach Regionen wie folgt öffnen:
 
 1. **Android**. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 2. **iOS**. Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
-3. Wählen Sie die gewünschte Region aus. Sobald die Region geöffnet ist, befinden sich die Wikipedia-Daten unter den anderen Paketen.
+3. Wählen Sie die erforderliche Region aus. Sobald die Region geöffnet ist, befinden sich die Wikipedia-Daten unter den anderen Paketen.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
+Um zu sehen, welche Daten bereits heruntergeladen wurden, gehen Sie zu *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
 ![Wikipedia in Android herunterladen](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -70,7 +70,7 @@ Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate a
 
 <TabItem value="ios" label="iOS">
 
-Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
+Um zu sehen, welche Daten bereits heruntergeladen wurden, gehen Sie zu *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
 ![Wikipedia in iOS herunterladen](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
@@ -81,7 +81,7 @@ Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate i
 
 ## Wikipedia auf der Karte anzeigen {#display-wikipedia-on-the-map}
 
-Durch das Laden von Wikipedia-Daten für die gewünschten Regionen können Sie die Sichtbarkeit dieser Daten auf der Karte steuern. Die Sichtbarkeit wird durch [Beliebte Orte (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **für Android** / [Wikipedia-POIs](../map/point-layers-on-map.md#-wikipedia) **für iOS** gesteuert, die für alle hochgeladenen Regionen durch ein bestimmtes [Profil](../personal/profiles.md) ein- oder ausgeblendet werden können, z. B. ein Profil für Autofahren, ein Profil für Radfahren, ein anderes Profil zur Anzeige öffentlicher Verkehrsmittel und andere.  
+Durch das Laden von Wikipedia-Daten für die erforderlichen Regionen können Sie die Sichtbarkeit dieser Daten auf der Karte steuern. Die Sichtbarkeit wird durch [Beliebte Orte (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **für Android** / [Wikipedia-POIs](../map/point-layers-on-map.md#-wikipedia) **für iOS** gesteuert, die für alle hochgeladenen Regionen durch ein bestimmtes [Profil](../personal/profiles.md) ein- oder ausgeblendet werden können, z. B. ein Profil für Autofahren, ein Profil für Radfahren, ein anderes Profil zur Anzeige öffentlicher Verkehrsmittel und andere.  
 
 Um Wikipedia-POIs ein- oder auszublenden, wählen Sie zuerst ein Profil und schalten Sie dann die **Wikipedia**-Option ein/aus.
 
@@ -93,8 +93,8 @@ Um Wikipedia-POIs ein-/auszublenden, gehen Sie wie folgt vor:
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-2. Wählen Sie ein Profil und suchen Sie im Menü den Einstellungsbereich *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>*.  
-3. Schalten Sie *<Translate android="true" ids="poi_osmwiki"/>* **für Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **für iOS** ein.  
+2. Wählen Sie ein Profil aus und suchen Sie im Menü den Abschnitt *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* für Einstellungen.  
+3. Schalten Sie  *<Translate android="true" ids="poi_osmwiki"/>* **für Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **für iOS** ein.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -117,7 +117,7 @@ Um Wikipedia-POIs ein-/auszublenden, gehen Sie wie folgt vor:
 
 Mit hochgeladenen Wikipedia-Daten ist es unabhängig vom Sichtbarkeitsmodus der [Wikipedia-POIs](../map/point-layers-on-map.md#-wikipedia) auf der Karte möglich, nach beliebigen Informationen aus Wikipedia zu [suchen](../search/search-poi.md).
 
-Wenn Sie auf die Schaltfläche "Suchen" tippen, erscheint ein zusätzliches Panel, mit dem Sie den gesamten Text und/oder eine bestimmte Kategorie [durchsuchen](../search/index.md) können. Im ersten Fall zeigen die Suchergebnisse Wikipedia-POIs mit entsprechenden Wikipedia-Artikeln neben anderen Arten von Informationen an. Im Falle einer [Wikipedia-Kategoriensuche](../search/search-poi.md#poi-search-by-categories) zeigen die Suchergebnisse nur Wikipedia-Informationen an, sortiert nach der nächstgelegenen Position zum aktuell auf dem Bildschirm angezeigten Kartenbereich.  
+Wenn Sie auf die Schaltfläche „Suchen“ tippen, erscheint ein zusätzliches Panel, mit dem Sie den gesamten Text und/oder eine bestimmte Kategorie [durchsuchen](../search/index.md) können. Im ersten Fall zeigen die Suchergebnisse Wikipedia-POIs mit entsprechenden Wikipedia-Artikeln neben anderen Arten von Informationen an. Im Falle einer [Wikipedia-Kategoriensuche](../search/search-poi.md#poi-search-by-categories) zeigen die Suchergebnisse nur Wikipedia-Informationen an, sortiert nach der nächstgelegenen Position zum aktuell auf dem Bildschirm angezeigten Kartenbereich.  
 
 - In der **Android**-Version können Sie die [Suche](../search/index.md) öffnen, indem Sie auf das *Suchsymbol* in der oberen linken Ecke des Bildschirms tippen und/oder auf die *Suchoption* im Menü tippen.
 - In der **iOS**-Version befindet sich das Suchsymbol zum Öffnen der [Suche](../search/index.md) in der oberen linken Ecke des Bildschirms.
@@ -159,7 +159,7 @@ Wenn Sie auf die Schaltfläche "Suchen" tippen, erscheint ein zusätzliches Pane
 
 </Tabs>
 
-- Tippen Sie bei Bedarf auf die Option **Wikipedia auf der Karte anzeigen** oben im Suchfeld, und die Suchergebnisse aus der Wikipedia-Kategorie werden auf der Karte angezeigt.  
+- Tippen Sie bei Bedarf auf die Option **Wikipedia auf der Karte anzeigen** oben im Suchpanel, und die Suchergebnisse aus der Wikipedia-Kategorie werden auf der Karte angezeigt.  
 
 
 ## Wikipedia-Artikel {#wikipedia-article}
@@ -167,8 +167,8 @@ Wenn Sie auf die Schaltfläche "Suchen" tippen, erscheint ein zusätzliches Pane
 So öffnen Sie den Wikipedia-Artikel:
 
 1. Aktivieren Sie die [Wikipedia-POI-Ebene](../map/point-layers-on-map.md#-wikipedia) für ein bestimmtes Profil.
-2. Tippen Sie auf einen POI auf der Karte.
-3. Tippen Sie im [Kontextmenü](../map/map-context-menu.md) eines POIs auf *Details* (oder ziehen Sie das *Kontextmenü* einfach nach oben), um eine Zusammenfassung des ausgewählten Wikipedia-Artikels anzuzeigen.
+2. Tippen Sie auf ein POI auf der Karte.
+3. Tippen Sie im [Kontextmenü](../map/map-context-menu.md) eines POIs auf *Details* (oder ziehen Sie das *Kontextmenü* einfach nach oben), um einen Auszug des ausgewählten Wikipedia-Artikels anzuzeigen.
 4. Wenn Sie auf diesen Text tippen (für die iOS-Version), werden Sie zum Offline-Wikipedia-Artikel weitergeleitet.
 5. Verwenden Sie die Schaltfläche *Artikel lesen* oder *Vollständigen Artikel lesen*, um die Vollversion des Wikipedia-Artikels zu öffnen.
 
@@ -193,16 +193,16 @@ So öffnen Sie den Wikipedia-Artikel:
 
 ## Wikipedia-Einstellungen {#wikipedia-settings}
 
-Sie können die [Sprache(n) festlegen](#set-preferred-language), in der Sie [Artikel](#wikipedia-article) bevorzugt lesen möchten, und auch die [Optionen zum Herunterladen von Bildern](#download-images) für jedes [Profil](../personal/profiles.md) konfigurieren.
+Sie können die [Sprache(n)](#set-preferred-language) festlegen, in der Sie [Artikel](#wikipedia-article) bevorzugt lesen möchten, und auch die [Optionen zum Herunterladen von Bildern](#download-images) für jedes [Profil](../personal/profiles.md) konfigurieren.
 
 ### Bevorzugte Sprache einstellen {#set-preferred-language}
 
-In den **Android**- und **iOS**-Versionen der OsmAnd-App können Sie Ihre bevorzugte Sprache (oder Sprachen) für die Anzeige von Wikipedia-Artikeln über das Menü *Karte konfigurieren* einstellen. Wenn Sie mehr als eine Sprache auswählen, werden die *Wikipedia*-Artikel auf der Karte in jeder dieser Sprachen angezeigt. Gehen Sie zu:
+In den **Android**- und **iOS**-Versionen der OsmAnd-App können Sie Ihre bevorzugte Sprache (oder Sprachen) für die Anzeige von Wikipedia-Artikeln über das Menü *Karte konfigurieren* einstellen. Wenn Sie mehr als eine Sprache auswählen, werden die *Wikipedia*-Artikel auf der Karte in einer von ihnen angezeigt. Gehen Sie zu:
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
-2. Wählen Sie das gewünschte Profil und im Abschnitt *<Translate android="true" ids="shared_string_show"/>* wählen Sie *<Translate android="true" ids="poi_osmwiki"/>* für Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* für iOS.  
+2. Wählen Sie das benötigte Profil und im Abschnitt *<Translate android="true" ids="shared_string_show"/>* wählen Sie *<Translate android="true" ids="poi_osmwiki"/>* für Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* für iOS.  
 3. Deaktivieren Sie die Option *<Translate android="true" ids="shared_string_all_languages"/>*.  
-4. Wählen Sie eine oder mehrere bestimmte Sprachen in der geöffneten Liste aus.  
+4. Wählen Sie spezifische Sprache(n) in der geöffneten Liste aus.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -283,5 +283,5 @@ In der **iOS**-Version der App können Sie auch über die *Wikipedia-Plugin-Eins
 ## Verwandte Artikel {#related-articles}
 
 - [Mit der Karte interagieren](../../user/map/interact-with-map.md)
-- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
+- [Globale Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)
