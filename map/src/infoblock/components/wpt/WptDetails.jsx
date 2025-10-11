@@ -84,6 +84,7 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
+import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -137,6 +138,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const hash = window.location.hash;
 
     const recentSaver = useRecentDataSaver();
+
+    const updateQueryParam = useUpdateQueryParam();
 
     const [devWikiContent, setDevWikiContent] = useState(null);
 
@@ -255,6 +258,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 const currentPoi = ctx.selectedWpt.poi;
                 if (currentPoi) {
                     tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                    if (ctx.selectedWpt?.poi?.properties?.web_poi_name) {
+                        updateQueryParam('name', ctx.selectedWpt.poi.properties.web_poi_name);
+                    }
                 } else if (newWpt?.wikidata) {
                     const fallbackTags = [];
                     const wikidataTag = addWikidataTags('wikidata', 'Q' + newWpt.wikidata, {

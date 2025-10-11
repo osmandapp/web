@@ -140,6 +140,10 @@ const GlobalFrame = () => {
     useEffect(() => {
         if (location.pathname.includes(POI_URL) && (!ctx.selectedPoiId || ctx.selectedPoiId?.id === -1)) {
             const name = searchParams.get('name');
+            if (!name) {
+                navigate(MAIN_URL_WITH_SLASH + location.hash);
+            }
+
             const type = searchParams.get('type');
             const lat = parseFloat(searchParams.get('lat'));
             const lng = parseFloat(searchParams.get('lng'));
