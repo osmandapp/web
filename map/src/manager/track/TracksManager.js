@@ -953,10 +953,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             'Content-Type': 'application/json',
         },
     });
-
+    setLoading(false);
     if (resp.data) {
-        setLoading(false);
-
         // data will be mutated, use cloneDeep to avoid apiCache mutations
         const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
@@ -990,7 +988,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
         return newGpxFile;
     } else {
-        setLoading(false);
         console.error('getTrackWithAnalysis fallback', path);
         return ctx.selectedGpxFile;
     }

@@ -73,7 +73,7 @@ export default function LocalClientTrackLayer() {
     let ctxTrack = ctx.selectedGpxFile;
 
     useEffect(() => {
-        if (startedRouterJobs === 0) {
+        if (startedRouterJobs === 0 && !isEmpty(ctxTrack) && isLocalTrack(ctx)) {
             setTimeout(
                 () => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }),
                 REFRESH_ANALYTICS_DEBOUNCER_MS
