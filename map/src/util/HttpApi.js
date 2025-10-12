@@ -336,11 +336,10 @@ export async function digest(string) {
 
 // hash deeply through FormData and File objects
 async function generateCacheKey(url, options = null) {
-    const { signal, body, ...rest } = options;
-
-    const opts = await digest(JSON.stringify(rest));
+    const opts = options ? await digest(JSON.stringify({ ...options, signal: null })) : '';
 
     let form = '';
+    const body = options?.body;
 
     if (body && isFormData(body)) {
         for (const [k, v] of body.entries()) {
