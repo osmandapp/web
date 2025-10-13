@@ -33,6 +33,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { addLayerToMap } from '../util/MapManager';
+import { addClicksToMap } from '../OsmAndMap';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -659,6 +660,7 @@ export default function LocalClientTrackLayer() {
     function deleteClickOnMap() {
         map.getContainer().style.cursor = '';
         map.off('click');
+        addClicksToMap(map, ctx);
     }
 
     useEffect(() => {
