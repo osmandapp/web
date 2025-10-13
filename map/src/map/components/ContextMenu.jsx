@@ -23,7 +23,7 @@ import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_
 import { useTranslation } from 'react-i18next';
 import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
-import { addClicksToMap, removeClicksToMap } from '../OsmAndMap';
+import { addClicksToMap } from '../OsmAndMap';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -40,7 +40,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
 
     useEffect(() => {
         if (ctx.openContextMenu) {
-            removeClicksToMap(map);
+            map.off('click');
         } else {
             addClicksToMap(map, ctx);
         }
