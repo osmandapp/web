@@ -252,7 +252,7 @@ export default function PoiLayer() {
     }, [ctx.configureMapState.pois]);
 
     async function openPoiByUrl() {
-        const { lat, lng, name, type } = ctx.poiByUrl.params;
+        const { lat, lng, name, type, osmId, wikidataId } = ctx.poiByUrl.params;
 
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
             params: {
@@ -260,6 +260,8 @@ export default function PoiLayer() {
                 lng,
                 name,
                 type,
+                osmId,
+                wikidataId,
             },
             apiCache: true,
         });

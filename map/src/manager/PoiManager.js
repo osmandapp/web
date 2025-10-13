@@ -57,6 +57,7 @@ const poiFilters = {
 export const poiUrlParams = {
     name: 'name',
     type: 'type',
+    osmId: 'osmId',
     wikidataId: 'wikidataId',
     lat: 'lat',
     lng: 'lng',
@@ -345,8 +346,8 @@ export function navigateToPoi(poi, navigate, isWiki = false) {
         params.lng = poi.geometry.coordinates?.[0];
     } else {
         const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
-
         params.name = poi.options.amenity_name || poi.options.name;
+        params.osmId = params.name ? null : poi.options.web_poi_id;
         params.type = props.type;
         params.wikidataId = poi.options.wikidata_id;
         params.lat = poi.latlng?.lat;
