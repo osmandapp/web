@@ -144,6 +144,9 @@ async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
     const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
+        params: {
+            name: file.name,
+        },
         apiCache: true,
         method: 'POST',
         credentials: 'include',
@@ -939,20 +942,21 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
 
+    const pointsArr = cloneFile?.points ?? getTrackPoints(cloneFile);
+
     const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         params: {
-            dist: ctx.selectedGpxFile?.analysis?.totalDistance.toFixed(0) ?? 0,
-            pnts: getAllPoints(cloneFile.points).length,
+            dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
+            pnts: pointsArr?.length ?? 0,
         },
         apiCache: true,
+        abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         headers: {
             'Content-Type': 'application/json',
         },
     });
-
+    setLoading(false);
     if (resp.data) {
-        setLoading(false);
-
         // data will be mutated, use cloneDeep to avoid apiCache mutations
         const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
@@ -986,7 +990,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
         return newGpxFile;
     } else {
-        setLoading(false);
         console.error('getTrackWithAnalysis fallback', path);
         return ctx.selectedGpxFile;
     }

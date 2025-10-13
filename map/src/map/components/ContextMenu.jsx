@@ -23,6 +23,7 @@ import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_
 import { useTranslation } from 'react-i18next';
 import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
+import { addClicksToMap } from '../OsmAndMap';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -36,6 +37,14 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const [clickLatLng, setClickLatLng] = useState(null);
     const anchorEl = useRef(document.createElement('div'));
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        if (ctx.openContextMenu) {
+            map.off('click');
+        } else {
+            addClicksToMap(map, ctx);
+        }
+    }, [ctx.openContextMenu]);
 
     const handleContextMenu = (event) => {
         event.originalEvent.preventDefault();

@@ -218,7 +218,7 @@ export default function SearchLayer() {
                 baseSearch,
             },
         });
-        if (response.ok) {
+        if (response?.ok) {
             const data = await response.json();
             ctx.setSearchResult(data);
         } else {

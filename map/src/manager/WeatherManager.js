@@ -189,7 +189,7 @@ export const fetchDayForecast = async ({ lat, lon, ctx, setDayForecast = null })
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
-    if (responseDay.ok) {
+    if (responseDay?.ok) {
         const forecast = await responseDay.json();
         localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY, JSON.stringify(forecast));
         if (setDayForecast) {
@@ -210,7 +210,7 @@ export const fetchWeekForecast = async ({ lat, lon, ctx, setWeekForecast = null 
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
-    if (responseWeek.ok) {
+    if (responseWeek?.ok) {
         const forecast = await responseWeek.json();
         localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK, JSON.stringify(forecast));
         if (setWeekForecast) {
