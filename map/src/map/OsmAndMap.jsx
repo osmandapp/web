@@ -48,7 +48,7 @@ export function addClicksToMap(map, ctx) {
     const hasMyClick = map._events?.click?.some?.((e) => e.fn.mapClick);
     const hasMyDblClick = map._events?.dblclick?.some?.((e) => e.fn.mapClick);
 
-    const onClick = (ctx) => {
+    const onClick = () => {
         if (ctx.createTrack?.enable) return;
         if (ctx.openContextMenu) return;
 
@@ -69,11 +69,11 @@ export function addClicksToMap(map, ctx) {
     onClick.mapClick = true;
     onDblClick.mapClick = true;
 
-    if (!hasMyClick) map.on('click', () => onClick(ctx));
+    if (!hasMyClick) map.on('click', onClick);
     if (!hasMyDblClick) map.on('dblclick', onDblClick);
 
     map.on('unload', () => {
-        map.off('click', () => onClick(ctx));
+        map.off('click', onClick);
         map.off('dblclick', onDblClick);
     });
 }
