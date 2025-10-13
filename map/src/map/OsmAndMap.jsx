@@ -40,10 +40,20 @@ const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     }
 };
 
+export function removeClicksToMap(map) {
+    map.off('click');
+    map.off('dblclick');
+}
+
 export function addClicksToMap(map, ctx) {
     const CLICK_DELAY = 280; // ms
 
     let clickTimer = null;
+
+    const hasMyClick = map._events?.click?.some?.((e) => e.fn.mapClick);
+    const hasMyDblClick = map._events?.dblclick?.some?.((e) => e.fn.mapClick);
+
+    if (hasMyClick || hasMyDblClick) return;
 
     const onClick = (ctx) => {
         if (ctx.createTrack?.enable) return;
@@ -62,6 +72,10 @@ export function addClicksToMap(map, ctx) {
             clickTimer = null;
         }
     };
+
+    onClick.mapClick = true;
+    onDblClick.mapClick = true;
+
     map.on('click', () => onClick(ctx));
     map.on('dblclick', onDblClick);
 

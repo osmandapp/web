@@ -33,7 +33,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { addLayerToMap } from '../util/MapManager';
-import { addClicksToMap } from '../OsmAndMap';
+import { addClicksToMap, removeClicksToMap } from '../OsmAndMap';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -653,7 +653,7 @@ export default function LocalClientTrackLayer() {
 
     function setupClickOnMap() {
         map.getContainer().style.cursor = 'crosshair';
-        map.off('click'); // !!!
+        removeClicksToMap(map);
         map.on('click', clickMap);
     }
 
