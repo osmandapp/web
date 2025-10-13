@@ -171,6 +171,46 @@ Nautical map can be included in any profile. However, it is most valuable in the
 
 The Nautical plugin in OsmAnd extends the vector layer map styles with the Nautical map style. It allows you to display map data according to Nautical map rules, for example: yellow areas for land and shoals, light blue areas for shallow waters, etc. For more information, see [Map legend](../../user/map-legend/nautical-map.md).  
 
+### Marine Map Style {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Marine Android](@site/static/img/plugins/nautical-charts/marine.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Marine iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Go to: *Menu* → *Map* → *Configure map* → *Map style → Marine*
+
+After enabling the Marine style, open *Other map attributes* to adjust additional options:
+
+- **ENC markers** – *Enabled*  
+- **Light detail** – *Detailed*  
+- **Seabed detail** – *Simple*  
+- **Water color** – *Default*  
+- **Fairway color** – *White*  
+- **Tidal flat style** – *Light green*  
+- **Dashed depth contours** – *Enabled (optional)*  
+- **Depth color scheme** – *PAPER*  
+- **Safety depth contour** – *On*  
+
+This style adds visual elements for maritime navigation, including navigation lights with INT-1 light characteristics, which describe the type, color, and rhythm of a light signal (for example, whether it flashes, its color, and the interval between flashes), and colored sector lights that indicate the direction and color of the light visible from sea.
+
+In the Marine style, light sectors are displayed around lighthouses and beacons: white (shown in yellow on the map) indicates the safe direction for navigation, red marks dangerous or restricted areas, and green shows auxiliary or lateral directions.
+
+:::info
+To display this information, the Nautical plugin must be enabled, and the World Seamarks map (or World_seamarks_2.obf) must be downloaded. Information is not for official navigation use.
+:::
+
 
 ### Depth Points {#depth-points}
 
