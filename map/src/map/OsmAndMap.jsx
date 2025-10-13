@@ -24,7 +24,7 @@ import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
-import { MENU_INFO_CLOSE_SIZE, MENU_INFO_OPEN_SIZE } from '../manager/GlobalManager';
+import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -39,6 +39,44 @@ const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
         ctx.setGraphHighlightedPoint(null);
     }
 };
+
+export function addClicksToMap(map, ctx) {
+    const CLICK_DELAY = 280; // ms
+
+    let clickTimer = null;
+
+    const hasMyClick = map._events?.click?.some?.((e) => e.fn.mapClick);
+    const hasMyDblClick = map._events?.dblclick?.some?.((e) => e.fn.mapClick);
+
+    const onClick = (ctx) => {
+        if (ctx.createTrack?.enable) return;
+        if (ctx.openContextMenu) return;
+
+        if (clickTimer) clearTimeout(clickTimer);
+        clickTimer = setTimeout(() => {
+            clickTimer = null;
+            ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+        }, CLICK_DELAY);
+    };
+
+    const onDblClick = () => {
+        if (clickTimer) {
+            clearTimeout(clickTimer);
+            clickTimer = null;
+        }
+    };
+
+    onClick.mapClick = true;
+    onDblClick.mapClick = true;
+
+    if (!hasMyClick) map.on('click', () => onClick(ctx));
+    if (!hasMyDblClick) map.on('dblclick', onDblClick);
+
+    map.on('unload', () => {
+        map.off('click', () => onClick(ctx));
+        map.off('dblclick', onDblClick);
+    });
+}
 
 const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mapRef = useRef(null);
@@ -56,8 +94,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
 
-    const CLICK_DELAY = 280; // ms
-
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
@@ -73,32 +109,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 );
             }
             detectGeoByIp({ map, hash });
-
-            /// TODO: fix click
-            // let clickTimer = null;
-            //
-            // const onClick = () => {
-            //     if (clickTimer) clearTimeout(clickTimer);
-            //     clickTimer = setTimeout(() => {
-            //         clickTimer = null;
-            //         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
-            //     }, CLICK_DELAY);
-            // };
-            //
-            // const onDblClick = () => {
-            //     if (clickTimer) {
-            //         clearTimeout(clickTimer);
-            //         clickTimer = null;
-            //     }
-            // };
-            //
-            // map.on('click', onClick);
-            // map.on('dblclick', onDblClick);
-            //
-            // map.on('unload', () => {
-            //     map.off('click', onClick);
-            //     map.off('dblclick', onDblClick);
-            // });
+            addClicksToMap(map, ctx);
         }
     };
 
