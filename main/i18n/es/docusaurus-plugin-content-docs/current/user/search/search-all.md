@@ -1,5 +1,5 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Buscar todo
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Resumen {#overview}
 
-**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar la Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI) o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La búsqueda en el [Historial](#search-history) guarda las búsquedas anteriores para un acceso rápido a los lugares encontrados previamente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
+**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar la Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI), o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La búsqueda en el [Historial](#search-history) guarda las búsquedas anteriores para un acceso rápido a los lugares encontrados previamente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
 
 
 ## Cómo usar {#how-to-use}
@@ -40,7 +40,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Debe seguir uno de los siguientes pasos para iniciar su búsqueda:
+Debe seguir uno de los pasos para iniciar su búsqueda:
 
 - Toque el [botón de Búsqueda](../widgets/map-buttons.md#search) en la pantalla de la aplicación de mapas e introduzca su consulta.
 
@@ -238,7 +238,7 @@ Puede utilizar el **Historial de búsqueda** para buscar de nuevo lugares, direc
 
 La **Búsqueda de PDI** es una lista, ordenada por categoría, con la que puede encontrar fácilmente lugares y servicios cerca de su ubicación actual o de un área seleccionada en el mapa.
 
-- La [búsqueda personalizada de PDI](./search-poi.md#custom-poi-search) le permite combinar diferentes categorías de PDI para simplificar y personalizar su búsqueda.  
+- La [búsqueda personalizada de PDI](./search-poi.md#customize-poi-search) le permite combinar diferentes categorías de PDI para simplificar y personalizar su búsqueda.  
 Por ejemplo, si necesita encontrar varios tipos de servicios en un área determinada o en una sección determinada de una ruta.
 
 - OsmAnd proporciona una [búsqueda en línea](./search-poi.md#online-search) que funciona en tiempo real, dándole acceso rápido a los resultados de la búsqueda.  

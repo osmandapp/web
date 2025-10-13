@@ -1,5 +1,5 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Descargar Mapas
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Vista general {#overview}
 
-Subir mapas a la aplicación OsmAnd es un paso clave para garantizar un funcionamiento fluido y el uso de la navegación sin conexión. Sin mapas sin conexión, la aplicación no puede funcionar plenamente. La descarga de mapas le da acceso a mapas de diferentes regiones, lo que le permite navegar sin conexión a Internet.  
+Cargar mapas en la aplicación OsmAnd es un paso clave para garantizar un funcionamiento fluido y el uso de la navegación sin conexión. Sin mapas sin conexión, la aplicación no puede funcionar plenamente. La descarga de mapas le da acceso a mapas de diferentes regiones, lo que le permite navegar sin conexión a Internet.  
 
 Tiene dos formas *principales* de descargar mapas: **1)** empezar desde la [pantalla de configuración inicial](#initial-setup-screen) o [ver la lista de regiones en el *Menú principal*](#maps-and-resources), o **2)** [seleccionar la región requerida directamente en el mapa](#select-on-the-map). Esto le da la flexibilidad de seleccionar las regiones que desee y garantiza que los mapas se ajustarán a sus planes.  
 
@@ -102,9 +102,9 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 La pantalla [Mapas y Recursos](../personal/maps-resources.md) da acceso a las siguientes secciones:
 
-- [Descargas](../personal/maps-resources.md#downloads). Ofrece una completa selección de [tipos de mapas OsmAnd](../personal/maps-resources.md#map-types).
-- [Local](../personal/maps-resources.md#local). Muestra todos los datos de mapas almacenados actualmente en su dispositivo, incluidos los recursos personalizados e importados.
-- [Actualizaciones](../personal/maps-resources.md#updates). Le permite actualizar los mapas mensualmente para mantener sus datos al día.
+- [Descargas](../personal/maps-resources.md#downloads-menu). Ofrece una completa selección de [tipos de mapas OsmAnd](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local-menu). Muestra todos los datos de mapas almacenados actualmente en su dispositivo, incluidos los recursos personalizados e importados.
+- [Actualizaciones](../personal/maps-resources.md#updates-menu). Le permite actualizar los mapas mensualmente para mantener sus datos al día.
 
 ### Descargando Mapas {#downloading-maps}
 
@@ -114,7 +114,7 @@ Para descargar un tipo de mapa específico para un país o región:
 - Seleccione su país o región preferida de la lista.
 - En la siguiente pantalla, revise y elija entre los tipos de mapa disponibles para esa zona.
 
-Puede encontrar información sobre otros tipos de mapas en la sección [Descargas](../personal/maps-resources.md#downloads) del artículo **Mapas**.
+Puede encontrar información sobre otros tipos de mapas en la sección [Descargas](../personal/maps-resources.md#downloads-menu) del artículo **Mapas**.
 
 ## Opciones del Mapa Mundial {#world-map-options}
 
@@ -175,7 +175,7 @@ En la pantalla pequeña, el mapa seleccionado para descargar se resaltará en am
 
 La búsqueda facilita la localización de un mapa o una región específicos, proporcionando una forma cómoda y rápida de descargar los datos que necesita. Puede encontrar y descargar el mapa utilizando la [función de búsqueda](../search/index.md).
 
-- Inicie una búsqueda introduciendo el nombre de un país o región en el campo de búsqueda. A continuación, seleccione el mapa deseado de la lista que aparece.
+- Inicie una búsqueda introduciendo el nombre de un país o región en el campo de búsqueda. A continuación, seleccione el mapa requerido de la lista que aparece.
 - Los mapas disponibles para descargar se muestran en gris con un icono de descarga, los mapas descargados tienen un color verde y un botón de menú.
 - Toque el nombre del resultado requerido y se abrirá la lista de mapas de toda la región.
 - Seleccione [tipos de mapa](../personal/maps-resources.md#map-types): *Mapa estándar, Mapa solo de carreteras, Curvas de nivel, Wikipedia*.

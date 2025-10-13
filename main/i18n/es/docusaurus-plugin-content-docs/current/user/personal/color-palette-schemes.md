@@ -1,5 +1,5 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Esquemas de color
 ---
@@ -26,7 +26,7 @@ Los esquemas de color se utilizan como parte de las funciones de pago [Maps+](..
 
 Los esquemas de color se utilizan en la [coloración de rutas](#routes), el [terreno del mapa](#terrain) y el [mapa meteorológico](#weather), y se representan como una parte separada de la información que se puede exportar, importar y editar para cambiar el esquema de color del mapa y la visualización de datos.
 
-Los datos de la paleta de colores están disponibles en el menú [*Mapas y recursos*](../personal/maps-resources.md#local).
+Los datos de la paleta de colores están disponibles en el menú [*Mapas y recursos*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,7 +70,7 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 ### Terreno {#terrain}
 
-Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relieve, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
+Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Sombreado de relieve, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
 
 ### Rutas {#routes}
 
@@ -117,7 +117,7 @@ Cada línea representa un valor numérico (para la paleta de colores, es un índ
 # Archivo TXT llamado *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 grados RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# amarillo {#yellow-}
+# amarillo  {#yellow-}
 100,255,222,2,227
 # rojo {#red}
 200,255,1,1,255
@@ -178,7 +178,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loca
 
 </Tabs>
 
-Puede importar y exportar todas las paletas de colores personalizadas y por defecto disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
+Puede importar y exportar todas las paletas de colores por defecto y personalizadas disponibles utilizando la herramienta de restauración y copia de seguridad de archivos de OsmAnd.
 
 - Abra el *Menú* principal, *Ajustes*, desplácese hasta la sección **Importar/exportar** (*Android*) o **Copia de seguridad local** (*iOS*), y seleccione la acción requerida.
 - Seleccione uno o más elementos de la lista *Color* o la opción *Seleccionar todo*.

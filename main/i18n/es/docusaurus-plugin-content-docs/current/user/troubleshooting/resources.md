@@ -1,5 +1,5 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Recursos y personalizaciones
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Explora OsmAnd {#explore-osmand}
 
-OsmAnd es una potente aplicación con una amplia base de usuarios y, más allá de su documentación oficial, existen numerosos recursos creados por la comunidad.
+OsmAnd es una potente aplicación con una amplia base de usuarios y, más allá de su documentación oficial, existen numerosos recursos creados por la comunidad.  
 
 Este artículo recopila enlaces a manuales de usuario personalizados, grupos de redes sociales, plugins, estilos de mapa y más. Explora estos recursos para ampliar tus conocimientos, personalizar tu experiencia con OsmAnd y conectar con otros usuarios.
 
@@ -57,7 +57,7 @@ La siguiente lista proporciona conversores para varios tipos de datos compatible
 
 ### Manuales {#manuals}
 
-La documentación oficial de OsmAnd es exhaustiva, pero la comunidad también ha producido una variedad de manuales personalizados para ayudar a los usuarios con funciones y casos de uso específicos.
+La documentación oficial de OsmAnd es exhaustiva, pero la comunidad también ha producido una variedad de manuales personalizados para ayudar a los usuarios con funciones y casos de uso específicos.  
 
 Estos manuales, disponibles en varios idiomas, a menudo proporcionan ideas, consejos y trucos únicos que podrían no estar cubiertos en las guías oficiales. Estos recursos son adiciones convenientes a la [Guía de usuario de OsmAnd](https://osmand.net/docs/user/) oficial, ofreciendo más información sobre las características de la aplicación.
 
@@ -106,7 +106,7 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Límites administrativos resaltados | El estilo de renderizado del mapa se basa en el predeterminado de OsmAnd, con límites administrativos más resaltados para una mejor visibilidad. |[Límites administrativos resaltados](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Mapa Open Fiets | [El Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) es un estilo de mapa centrado en el ciclismo, que resalta los carriles bici (en rojo), las rutas ciclistas (azul discontinuo), los caminos para bicicletas (rojo discontinuo) y las carreteras con tráfico de vehículos limitado, como las calles para bicicletas (bordes rojos continuos).  |[Estilo OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Estilo de mapa de selección | El [Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |[Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-
+| ExplorerRS | [El estilo de renderizado ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) está principalmente basado en UniMap y routes.addon.render.xml  |[Estilo de mapa "ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 ### Mapas sin conexión {#offline-maps}
 

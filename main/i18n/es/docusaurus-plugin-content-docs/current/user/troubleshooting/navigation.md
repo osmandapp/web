@@ -1,5 +1,5 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Navegación
 ---
@@ -20,8 +20,37 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. OsmAnd utiliza dos **motores de enrutamiento sin conexión** diferentes: un *motor basado en Java* y un *motor Nativo (C++)*.
 
-- El *motor basado en Java* se utiliza en el [Modo seguro](../plugins/development.md#overview), pero es aproximadamente 10 veces más lento que el motor nativo. También tiene limitaciones estrictas de memoria, lo que puede provocar errores como *Memoria insuficiente para calcular*. Si se encuentra con este problema, vaya a *Complementos → Desarrollo de OsmAnd → Ajustes →* [*Modo seguro*](../plugins/development.md#overview) y asegúrese de que esta opción está desactivada.
+- El *motor basado en Java* se utiliza en [Modo seguro](../plugins/development.md#overview), pero es aproximadamente 10 veces más lento que el motor nativo. También tiene limitaciones estrictas de memoria, lo que puede provocar errores como *Memoria insuficiente para calcular*. Si se encuentra con este problema, vaya a *Complementos → Desarrollo de OsmAnd → Ajustes →* [*Modo seguro*](../plugins/development.md#overview) y asegúrese de que esta opción está desactivada.
 - El *motor Nativo (C++)* ofrece un mejor rendimiento, pero su eficiencia depende de la memoria y la capacidad del procesador de su dispositivo. Por lo general, el enrutamiento nativo funciona bien para rutas de menos de 300 km, con tiempos de cálculo de ruta que van de 15 segundos a 4 minutos. Si el proceso dura más de 4 minutos, es aconsejable detenerlo, ya que la aplicación podría bloquearse.
+
+
+### Rutas incorrectas o rotas {#incorrect-or-broken-routes}
+
+A veces, OsmAnd puede mostrar resultados de navegación inesperados. En lugar de seguir la red de carreteras, la ruta puede aparecer como una línea punteada recta hacia un punto no relacionado, o la navegación puede fallar por completo. Esto suele indicar que el enrutamiento hacia la ubicación seleccionada no es posible con la configuración actual. Problemas similares han sido reportados por usuarios en [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) y [más](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Causas:**
+
+- Mapas desactualizados o duplicados. Mapas con fechas de actualización diferentes o duplicados pueden romper la conectividad (especialmente a través de regiones/fronteras).
+- Ajustes de perfil dañados. Perfiles personalizados/modificados (p. ej., Bicicleta) pueden causar un comportamiento inconsistente.
+- Desajuste del motor de enrutamiento: Diferentes motores (HH × Java vs HH × C++) pueden manejar los mismos mapas de manera diferente.
+
+**Soluciones:**
+
+1. Restablecer su perfil.
+- Abra *Menú* → *Ajustes* → *Perfil de la aplicación (Perfil de Navegación)*.
+- Seleccione *Restablecer a los valores predeterminados*.
+
+2. Eliminar y reinstalar mapas.
+- Abra *Menú* → *Mapas y Recursos* → *Local* y elimine todos los mapas de la(s) región(es) afectada(s).
+- Luego vaya a *Menú* → *Mapas y Recursos* → *Descargas* y descargue los mapas nuevamente.
+- Opcionalmente, verifique *Menú* → *Mapas y Recursos* → *Actualizaciones* para asegurar que todas las regiones compartan la misma fecha de actualización.
+
+3. Cambiar el motor de enrutamiento.
+- Active el complemento: *Menú* → *Complementos* → *Desarrollo de OsmAnd*.
+- Luego abra *Menú* → *Ajustes* → *Perfil de la aplicación* → *Ajustes de navegación* → *Parámetros de ruta* → *Desarrollo* → *Tipo de enrutamiento* y cambie *HH × C++* ↔ *HH × Java* (también puede probar A* clásico o A* de dos fases).
+
+4. Como último recurso.
+- Reinstale la aplicación y descargue los mapas nuevamente (ayuda cuando persisten conflictos ocultos).
 
 
 ### ¿Cómo calcular rutas de más de 250 km? {#how-to-calculate-routes-longer-than-250km}

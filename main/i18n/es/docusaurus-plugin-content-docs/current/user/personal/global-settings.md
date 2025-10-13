@@ -1,5 +1,5 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Ajustes globales
 ---
@@ -59,7 +59,7 @@ Esta sección contiene los ajustes básicos de OsmAnd, como la selección de un 
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes generales Perfil predeterminado iOS](@site/static/img/personal/profiles/default_profile_ios.png)
+![Ajustes generales Perfil predeterminado Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ Esta función está disponible para la versión de iOS de la aplicación OsmAnd.
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Ajustes generales Perfil predeterminado iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Ajustes generales Perfil predeterminado Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 El [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) se utiliza cuando se conecta al [software CarPlay](https://support.apple.com/en-gb/HT205634) de su vehículo y le ayuda a aprovechar al máximo la versión optimizada de la aplicación OsmAnd utilizando los sistemas de audio y video para mostrar datos en su teléfono.
 
@@ -94,7 +94,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 ![Ajustes de almacenamiento de perfiles Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Memoria del dispositivo** muestra cuánto espacio libre queda en su dispositivo. Toque un campo para acceder al menú [*Mapas y Recursos*](../personal/maps-resources.md#maps--resources), donde puede ver y gestionar información detallada sobre sus datos de OsmAnd.
+1. **Memoria del dispositivo** muestra cuánto espacio libre queda en su dispositivo. Toque un campo para acceder al menú [*Mapas y Recursos*](../personal/maps-resources.md#local-menu), donde puede ver y gestionar información detallada sobre sus datos de OsmAnd.
 
 2. En **<Translate android="true" ids="change_data_storage_folder"/>**, puede seleccionar una carpeta para guardar los datos de OsmAnd en su dispositivo.  
 
@@ -303,7 +303,7 @@ El ajuste **<Translate android="true" ids="dialogs_and_notifications_title"/>** 
 
 - *Mensaje de inicio* incluye promociones, cuestionarios, eventos y más.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) suprime la visualización de descuentos de la aplicación y mensajes de eventos locales especiales.
-- El [*Diálogo de descarga de mapa*](../start-with/download-maps.md#download) le informa que se pueden descargar mapas específicos.
+- El [*Diálogo de descarga de mapa*](../start-with/download-maps.md#downloading-maps) le informa que se pueden descargar mapas específicos.
 
 
 ### Fuente de ubicación {#location-source}
@@ -365,7 +365,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![Ajustes generales Cámaras iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Ajustes generales Cámaras iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Ajustes generales Cámaras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Ajustes generales Cámaras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 
