@@ -59,6 +59,7 @@ import WptTagsProvider, {
     WIKIDATA,
     WIKIPEDIA,
     addWikidataTags,
+    getOsmId,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -957,7 +958,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         name: 'OSM ID',
                                         link: (
                                             <Link href={wpt.osmUrl} target="_blank" rel="noopener noreferrer">
-                                                {wpt.osmUrl.split('/').pop()}
+                                                {getOsmId(wpt.osmUrl)}
                                             </Link>
                                         ),
                                     }}

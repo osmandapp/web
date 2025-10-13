@@ -684,6 +684,10 @@ export const otherImgTags = (tag) => {
     return tag === IMAGE_OSM_TAG || tag === MAPILLARY_OSM_TAG;
 };
 
+export function getOsmId(url) {
+    return url.split('/').pop();
+}
+
 const WptTagsProvider = {
     getWptTags,
 };

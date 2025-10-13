@@ -10,6 +10,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
     SEPARATOR,
+    getOsmId,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -347,7 +348,7 @@ export function navigateToPoi(poi, navigate, isWiki = false) {
     } else {
         const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
         params.name = poi.options.amenity_name || poi.options.name;
-        params.osmId = params.name ? null : poi.options.web_poi_id;
+        params.osmId = params.name ? null : getOsmId(poi.options.web_poi_osmUrl);
         params.type = props.type;
         params.wikidataId = poi.options.wikidata_id;
         params.lat = poi.latlng?.lat;
