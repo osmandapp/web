@@ -942,10 +942,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
 
+    const pointsArr = cloneFile?.points ?? getTrackPoints(cloneFile);
+
     const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         params: {
             dist: ctx.selectedGpxFile?.analysis?.totalDistance.toFixed(0) ?? 0,
-            pnts: getAllPoints(cloneFile.points).length,
+            pnts: pointsArr?.length ?? 0,
         },
         apiCache: true,
         abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
