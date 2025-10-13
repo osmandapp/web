@@ -114,13 +114,13 @@ To close the **context menu**:
 
 <TabItem value="android" label="Android">  
 
-![Context menu Android](@site/static/img/map/context_menu_android.png)
+![Context menu Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Context menu iOS](@site/static/img/map/context_menu_ios.png)
+![Context menu iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -138,7 +138,8 @@ Available details include:
 - [Alternative names](#alternative-names)
 - [Coordinates](#coordinates)
 - [Within areas](#polygon-information)
-- [Nearby POIs / Wikipedia](#nearby-pois--wikipedia)
+- [Nearby POIs](#nearby-pois)
+- [Nearby Popular Places](#nearby-popular-places)
 - [Public Transport routes for stops](#public-transport-routes)
 - [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
 - [OpenStreetMap link](#openstreetmap-link)
@@ -216,15 +217,52 @@ In the context menu, you can find [geographical coordinates](../search/search-co
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Both OsmAnd and [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
 
-### Nearby POIs / Wikipedia {#nearby-pois--wikipedia}
+### Nearby POIs {#nearby-pois}
 
-![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs & Wikipedia articles.
+<TabItem value="android" label="Android">  
 
-Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
+![Nearby POI Android](@site/static/img/map/nearby_poi_android.png)
 
-> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This section displays nearby [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs within the same category.
+
+Tap *Nearby POIs* opens a points list. A tap to one of these points from a point list moves the map to this point with the opening point map context menu.
+
+
+### Nearby Popular Places {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This section highlights popular places that helps you discover interesting destinations and landmarks around your current location. Use *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to browse and search all popular places. 
+
+Tapping **Nearby Popular Places** opens a list of nearby locations. Selecting any item centers the map on that place and opens its context menu, where you can read a short description or tap ***Read full article*** to view the complete guide.
+
+> **NOTE (iOS only)**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Public Transport Routes {#public-transport-routes}
