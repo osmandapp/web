@@ -262,7 +262,7 @@ This section highlights popular places that helps you discover interesting desti
 
 Tapping **Nearby Popular Places** opens a list of nearby locations. Selecting any item centers the map on that place and opens its context menu, where you can read a short description or tap ***Read full article*** to view the complete guide.
 
-> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+> **NOTE (iOS only)**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Public Transport Routes {#public-transport-routes}
