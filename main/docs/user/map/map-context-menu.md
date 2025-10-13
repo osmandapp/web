@@ -219,17 +219,30 @@ OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osm
 
 ### Nearby POIs {#nearby-pois}
 
-![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-These sections display nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs & Wikipedia articles.
+<TabItem value="android" label="Android">  
 
-Tap *Nearby POIs / Wikipedia articles* opens a points list (POIs or Wikipedia). A tap to one of these points from a point list moves the map to this point (POIs or Wikipedia) with the opening point map context menu.
+![Nearby POI Android](@site/static/img/map/nearby_poi_android.png)
 
-> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+</TabItem>
 
+<TabItem value="ios" label="iOS">
+
+![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This section displays nearby [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) with *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to display and [search](../search/search-poi.md) all other POIs within the same category.
+
+Tap *Nearby POIs* opens a points list. A tap to one of these points from a point list moves the map to this point with the opening point map context menu.
 
 
 ### Nearby Popular Places {#nearby-popular-places}
+
+> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Public Transport Routes {#public-transport-routes}
