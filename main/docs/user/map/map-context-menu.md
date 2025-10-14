@@ -248,21 +248,25 @@ Tap *Nearby POIs* opens a points list. A tap to one of these points from a point
 
 ![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
 
+This section highlights popular places that helps you discover interesting destinations and landmarks around your current location. Use *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to browse and search all popular places. 
+
+Tapping *Nearby [Popular Places](https://osmand.net/docs/user/map/popular_places)* opens a list of nearby locations. Selecting any item centers the map on that place and opens its context menu, where you can read a short description or tap ***Read full article*** to view the complete guide.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
 
+This section highlights popular places that helps you discover interesting destinations and landmarks around your current location. Use *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to browse and search all popular places. 
+
+Tapping *Nearby [Popular Places](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* opens a list of nearby locations. Selecting any item centers the map on that place and opens its context menu, where you can read a short description or tap ***Read full article*** to view the complete guide.
+
+> **NOTE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
 </TabItem>
 
 </Tabs>
-
-This section highlights popular places that helps you discover interesting destinations and landmarks around your current location. Use *<Translate android="true" ids="shared_string_show_on_map"/>* and *<Translate android="true" ids="search_more"/>* to browse and search all popular places. 
-
-Tapping **Nearby Popular Places** opens a list of nearby locations. Selecting any item centers the map on that place and opens its context menu, where you can read a short description or tap ***Read full article*** to view the complete guide.
-
-> **NOTE (iOS only)**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 
 ### Public Transport Routes {#public-transport-routes}
