@@ -37,7 +37,7 @@ import { addClicksToMap } from '../OsmAndMap';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
-const REFRESH_ANALYTICS_DEBOUNCER_MS = 1000;
+const REFRESH_ANALYTICS_DEBOUNCER_MS = 3000;
 export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
 
 export default function LocalClientTrackLayer() {
@@ -75,10 +75,8 @@ export default function LocalClientTrackLayer() {
 
     useEffect(() => {
         if (startedRouterJobs === 0 && !isEmpty(ctxTrack) && isLocalTrack(ctx)) {
-            setTimeout(
-                () => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }),
-                REFRESH_ANALYTICS_DEBOUNCER_MS
-            );
+            const timeout = ctxTrack?.analysis ? REFRESH_ANALYTICS_DEBOUNCER_MS : GET_ANALYSIS_DEBOUNCE_MS;
+            setTimeout(() => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }), timeout);
         }
     }, [startedRouterJobs]);
 
