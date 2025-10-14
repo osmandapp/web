@@ -140,6 +140,7 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         if (location.pathname.includes(POI_URL) && (!ctx.selectedPoiId || ctx.selectedPoiId?.id === -1)) {
+            ctx.setProcessingPoiByUrl(true);
             const params = {};
             Object.keys(poiUrlParams).forEach((key) => {
                 params[key] = searchParams.get(poiUrlParams[key]);
@@ -151,6 +152,7 @@ const GlobalFrame = () => {
                 };
             });
         } else {
+            ctx.setProcessingPoiByUrl(false);
             ctx.setPoiByUrl((prev) => {
                 return prev ? { ...prev, open: false } : prev;
             });

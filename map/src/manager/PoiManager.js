@@ -62,6 +62,7 @@ export const poiUrlParams = {
     wikidataId: 'wikidataId',
     lat: 'lat',
     lng: 'lng',
+    lang: 'lang',
 };
 
 async function getPoiCategories() {
@@ -345,6 +346,7 @@ export function navigateToPoi(poi, navigate, isWiki = false) {
         params.wikidataId = poi.properties?.id;
         params.lat = poi.geometry.coordinates?.[1];
         params.lng = poi.geometry.coordinates?.[0];
+        params.lang = i18n.language;
     } else {
         const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
         params.name = poi.options.amenity_name || poi.options.name;

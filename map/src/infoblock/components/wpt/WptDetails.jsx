@@ -176,7 +176,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
             const mapObj = ctx.selectedWpt.mapObj;
-            const wikiObj = ctx.searchSettings.getPoi;
+            const wikiObj = ctx.searchSettings.getPoi ?? ctx.selectedWpt.wikidata;
             const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
             const poiType = getCategory(wikiObj.properties);
@@ -484,6 +484,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
+            if (wpt.mapObj) {
+                closeObjectFromMap();
+            }
         } else if (type.isFav) {
             ctx.setSelectedFavoriteObj(null);
             !wpt.mapObj ? closeOnlyFavDetails() : closeObjectFromMap();

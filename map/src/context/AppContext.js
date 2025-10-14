@@ -479,6 +479,8 @@ export const AppContextProvider = (props) => {
     const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
+    const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
+
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
@@ -880,7 +882,10 @@ export const AppContextProvider = (props) => {
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,
                 setSelectedLocalTrackObj,
-                showPoiConfig, setShowPoiConfig,
+                showPoiConfig,
+                setShowPoiConfig,
+                processingPoiByUrl,
+                setProcessingPoiByUrl,
             }}
         >
             {props.children}
