@@ -76,7 +76,13 @@ UniRS and LightRS styles are author styles that render the basic map information
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-This is a style of nautical navigation featuring buoys, lighthouses, river routes, sea lanes, marks, harbors, nautical marks, and depth contours. Read more in the article [Nautical Map View](../plugins/nautical-charts.md).
+This is a style of nautical navigation featuring buoys, lighthouses, river routes, sea lanes, marks, harbors, nautical marks, and depth contours. Read more in the section [Nautical Map Style](../plugins/nautical-charts.md#nautical-map-style).
+
+### Marine {#marine}
+
+![Marine map style](@site/static/img/map/map-style-marine.png)
+
+This is an advanced nautical map style with detailed depth contours, light sectors, and full lighthouse characteristics for realistic and accurate marine navigation. For more details read section [Marine Map Style](../plugins/nautical-charts.md#marine-map-style).
 
 ### Winter and Ski {#winter-and-ski}
 
