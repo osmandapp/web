@@ -1,5 +1,5 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Explorer OsmAnd {#explore-osmand}
 
-OsmAnd est une application puissante avec une large base d'utilisateurs, et au-delà de sa documentation officielle, il existe de nombreuses ressources créées par la communauté.
+OsmAnd est une application puissante avec une large base d'utilisateurs, et au-delà de sa documentation officielle, il existe de nombreuses ressources créées par la communauté.  
 
 Cet article rassemble des liens vers des manuels d'utilisation personnalisés, des groupes sur les réseaux sociaux, des plugins, des styles de carte, et plus encore. Explorez ces ressources pour approfondir vos connaissances, personnaliser votre expérience OsmAnd et vous connecter avec d'autres utilisateurs.
 
@@ -27,16 +27,16 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 
 | Plateforme | Nom du groupe | Description | Lien |
 | :-- | :-- | :-- | :-- |
-| Facebook | Communauté des utilisateurs d'OsmAnd (*Anglais*) | C'est un groupe où les utilisateurs d'OsmAnd peuvent aider d'autres utilisateurs. | [Facebook](https://www.facebook.com/groups/osmandusers/) |
-| Facebook | Osmand-gebruikers (*Néerlandais*) | Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom. | [Facebook](https://www.facebook.com/groups/1734792863427411) |
-| Facebook | OSMAND+ Aide Partage et Astuces (*Français*) | Aide Partage et Astuces | [Facebook](https://www.facebook.com/groups/584042065963135) |
-| Facebook | Groupe d'utilisateurs LC8 Rally OsmAnd (*Anglais*) | Pour échanger des expériences sur l'utilisation d'OsmAnd. | [Facebook](https://www.facebook.com/groups/1848734328597008) |
-| Facebook | Amis italiens d'Osmand (*Italien*) | Pour échanger des expériences sur l'utilisation d'OsmAnd. | [Facebook](https://www.facebook.com/groups/231397842534959/) |
-| Google Groups | Osmand (*Anglais*) | Un groupe où les utilisateurs partagent des conseils, répondent aux questions et discutent des fonctionnalités d'OsmAnd. | [Google Groups](https://groups.google.com/g/osmand) |
-| Reddit | OsmAnd - discussion et support | La communauté Reddit pour les utilisateurs d'OsmAnd. Posez des questions, partagez vos expériences ou présentez vos styles de carte personnalisés. | [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-| Telegram | Canal d'actualités OsmAnd (*Anglais*) | Le groupe officiel d'OsmAnd pour les annonces et les mises à jour directement des développeurs. | [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-| Twitter | Canal d'actualités OsmAnd | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [Twitter OsmAnd](https://x.com/osmandapp/) |
-| Instagram | Canal d'actualités OsmAnd | Une communauté où vous pouvez discuter, partager des conseils et obtenir de l'aide sur les fonctionnalités d'OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+| Facebook | Communauté des utilisateurs d'OsmAnd (*English*)  |  C'est un groupe où les utilisateurs d'OsmAnd peuvent aider d'autres utilisateurs.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | Un groupe où les utilisateurs partagent des conseils, répondent aux questions et discutent des fonctionnalités d'OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
+|  Reddit | OsmAnd - discussion and support  | La communauté Reddit pour les utilisateurs d'OsmAnd. Posez des questions, partagez vos expériences ou présentez vos styles de carte personnalisés. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | Le groupe officiel d'OsmAnd pour les annonces et les mises à jour directement des développeurs. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  Twitter | OsmAnd news channel  | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | Une communauté où vous pouvez discuter, partager des conseils et obtenir de l'aide sur les fonctionnalités d'OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Convertisseurs {#converters}
@@ -45,35 +45,35 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 
 | Type | Description | Lien |
 |-- | -- | --|
-| KMZ vers GPX | Script Python pour convertir les fichiers *KMZ* au format *GPX*, y compris les icônes. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML vers GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Script Python pour convertir les fichiers *KMZ* au format *GPX*, y compris les icônes. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| KML to GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Outil pour convertir les fichiers Garmin Basecamp vers OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
-| GeoPDF/Tiff, ozi vers OsmAnd | Conversion des formats de carte geoPDF, geoTiff et ozi vers OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX vers KML | Outil pour convertir les fichiers *GPX* d'OsmAnd au format *KML*, en préservant les icônes. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX vers OsmAnd | Script Python pour convertir les fichiers *GPX* iOverlander exportés vers OsmAnd avec des icônes. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Carte topographique en version imprimable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GeoPDF/Tiff, ozi to OsmAnd | Conversion des formats de carte geoPDF, geoTiff et ozi vers OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
+| GPX to KML | Outil pour convertir les fichiers *GPX* d'OsmAnd au format *KML*, en préservant les icônes. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Script Python pour convertir les fichiers *GPX* iOverlander exportés vers OsmAnd avec des icônes. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo map into printable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Ressources personnalisées {#custom-resources}
 
 ### Manuels {#manuals}
 
-La documentation officielle d'OsmAnd est complète, mais la communauté a également produit une série de manuels personnalisés pour aider les utilisateurs avec des fonctionnalités et des cas d'utilisation spécifiques.
+La documentation officielle d'OsmAnd est complète, mais la communauté a également produit une série de manuels personnalisés pour aider les utilisateurs avec des fonctionnalités et des cas d'utilisation spécifiques.  
 
-Ces manuels, disponibles en plusieurs langues, fournissent souvent des aperçus uniques, des conseils et des astuces qui ne sont pas forcément couverts dans les guides officiels. Ces ressources sont des compléments pratiques au [Guide de l'utilisateur OsmAnd](https://osmand.net/docs/user/) officiel, offrant plus d'informations sur les fonctionnalités de l'application.
+Ces manuels, disponibles en plusieurs langues, fournissent souvent des aperçus uniques, des conseils et des astuces qui ne sont pas forcément couverts dans les guides officiels. Ces ressources sont des compléments pratiques au [Guide de l'utilisateur OsmAnd](https://osmand.net/docs/user/), offrant plus d'informations sur les fonctionnalités de l'application.
 
 | Langue | Description | Lien |
 | :-- | :-- | :-- |
-| Espagnol | ¿Qué es OsmAnd y para qué sirve? | [Goiena](https://www.goiena.org/osmand) |
-| Espagnol | Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. | [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
-| Espagnol | OSMAnd, alternativa libre a Google Maps con muchas funciones. | [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
-| Tchèque | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze. | [OsmAnd CZ](https://osmand.cz/) |
-| Français | Ces tutoriels sont désormais disponible sur cette chaîne YouTube. | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/) |
-| Italien | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano! | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand) |
-| Néerlandais | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf) |
-| Néerlandais | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk) |
-| Néerlandais | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA) |
-| Allemand | Osmand Anleitung: Kostenlose Karten- und Navigations App | [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
-| Russe | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки! | [Drive2](https://www.drive2.ru/l/533880791202005393/) |
+| Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
+| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
+| French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
+| Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
+| Dutch | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
+| Dutch | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
+| Deutsch | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
+| Русский  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
 
 
 ### Plugins {#plugins}
@@ -82,14 +82,14 @@ Ce qui suit est une liste de [plugins personnalisés](../plugins/custom.md) dév
 
 | Nom | Description | Lien du plugin |
 |--|--|--|
-| Rendu OsmAnd | Le plugin ajoute les styles de carte Enduro, CycloRoute et Randonnée (plus d'infos [ici](../map/vector-maps.md#default-map-styles)) et 5 nouveaux [profils](https://osmand.net/docs/user/personal/profiles) (Piéton, Vélo et trois profils Moto). Il fournit également des cartes en ligne pour l'Espagne, la France, la Norvège, la Suisse, l'Autriche, la Belgique et l'Argentine via le menu [Cartes et ressources](../personal/maps-resources.md#extra-maps) dans le dossier *OsmAnd rendering online maps*. | [Rendu OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) |
-| Carte de l'Arabie Saoudite par l'équipe Rahal | Une carte hors ligne professionnelle du Royaume d'Arabie Saoudite, incluant les caractéristiques topographiques, les routes, les villes, les villages et les sources d'eau. Parfait pour les excursions dans le désert. Visitez [Rahal Maps](https://rahalteam.com) pour plus d'informations. | [🇸🇦 Cartes de l'Arabie Saoudite par l'équipe Rahal](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf) |
-| Modèle 3D | Ce paquet ajoute une option de modèle 3D pour les profils. Personnalisez l'apparence via le menu : [*Menu OsmAnd → Paramètres → Profil → Apparence du profil → choisissez les 4ème-5ème icônes de l'icône de position*](../personal/profiles.md#profile-appearance). | [Modèle 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) |
-| Collection de cartes en ligne AnyGIS | Une collection de diverses sources de cartes en ligne, y compris des cartes satellites, touristiques et historiques, entre autres. | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) |
-| Légende de la carte | Ce paquet ajoute une légende de carte hors ligne (version 1.01 ; 03-04-2024), accessible via *Menu → Mes lieux → Favoris → Légende de la carte*. La légende de la carte est également disponible à [cet emplacement](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059) | [Légende de la carte](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) |
-| 🇺🇸 Les cartes des États-Unis | Une collection de cartes des États-Unis comprenant les [terres publiques (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), les [sentiers et routes de l'USFS](https://www.fs.usda.gov/visit/maps), le [Bureau of Land Management (BLM)](https://www.blm.gov) et les [données parcellaires (terres privées)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) pour certains États. Toutes les cartes des terres publiques et privées ont été classées par État. Les données cartographiques du BLM et de l'USFS ont été divisées en *Routes et sentiers* et *POI* pour l'ensemble du territoire des États-Unis. Les cartes sont au format OBF pour OsmAnd. Plus d'infos sur [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Les cartes des États-Unis](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) |
-| 🇵🇱 Carte UMP de la Pologne | [UMP](https://ump.waw.pl/) couvre la majeure partie de la Pologne avec un effort de développement continu. Pendant longtemps, le nom UMP-pcPL (mapą prawie całej Polski) a été utilisé. | [Carte UMP de la Pologne](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) |
-| Explorateur de plein air | Ce plugin inclut un style de carte léger qui améliore la visibilité des routes non goudronnées et des sentiers dans OsmAnd. | [Explorateur de plein air](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) |
+| OsmAnd Rendering  | Le plugin ajoute les styles de carte Enduro, CycloRoute et Randonnée (plus d'infos [ici](../map/vector-maps.md#default-map-styles)) et 5 nouveaux [profils](https://osmand.net/docs/user/personal/profiles) (Piéton, Vélo et trois profils Moto). Il fournit également des cartes en ligne pour l'Espagne, la France, la Norvège, la Suisse, l'Autriche, la Belgique et l'Argentine via le menu [Cartes et ressources](../personal/maps-resources.md#extra-maps) dans le dossier *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Rahal Team map of Saudi Arabia  | Une carte hors ligne professionnelle du Royaume d'Arabie Saoudite, incluant les caractéristiques topographiques, les routes, les villes, les villages et les sources d'eau. Parfait pour les excursions dans le désert. Visitez [Rahal Maps](https://rahalteam.com) pour plus d'informations. | [🇸🇦 Saudi Arabia maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
+| 3D model  | Ce paquet ajoute une option de modèle 3D pour les profils. Personnalisez l'apparence via le menu : [*Menu OsmAnd → Paramètres → Profil → Apparence du profil → choisissez les 4ème-5ème icônes de l'icône de position*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
+| AnyGIS online maps collection | Une collection de diverses sources de cartes en ligne, y compris des cartes satellites, touristiques et historiques, entre autres.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
+| Map Legend  | Ce paquet ajoute une légende de carte hors ligne (version 1.01 ; 03-04-2024), accessible via *Menu → Mes lieux → Favoris → Légende de la carte*. La légende de la carte est également disponible à [cet emplacement](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
+| 🇺🇸 The USA Maps | Une collection de cartes des États-Unis comprenant les [terres publiques (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), les [sentiers et routes de l'USFS](https://www.fs.usda.gov/visit/maps), le [Bureau of Land Management (BLM)](https://www.blm.gov), et les [données parcellaires (terres privées)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) pour certains États. Toutes les cartes des terres publiques et privées ont été classées par État. Les données cartographiques du BLM et de l'USFS ont été divisées en *Routes et sentiers* et *POI* pour l'ensemble du territoire des États-Unis. Les cartes sont au format OBF pour OsmAnd. Plus d'infos sur [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [The USA maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱 UMP map of Poland | [UMP](https://ump.waw.pl/) couvre la majeure partie de la Pologne avec un effort de développement continu. Pendant longtemps, le nom UMP-pcPL (mapą prawie całej Polski) a été utilisé. | [UMP map of Poand](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| Outdoor Explorer  |  Ce plugin inclut un style de carte léger qui améliore la visibilité des routes non goudronnées et des sentiers dans OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
 ### Styles de carte {#map-styles}
@@ -98,15 +98,15 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 
 | Nom de la source | Description | Lien |
 | -- | -- | --|
-| Gravel Roads Seeker | Style de carte offrant une meilleure visualisation du revêtement routier, distinguant les routes goudronnées des routes non goudronnées (page web en *français*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| Rendu OsmAnd | Une collection d'accès à des cartes en ligne, des cartes topographiques, des orthophotos et d'autres ressources géographiques disponibles auprès de certains des principaux instituts géographiques de différents pays. Les mises à jour sont en cours, mais si des fichiers sont obsolètes, les utilisateurs sont encouragés à le signaler. | [Cartes en ligne : ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| Gravel Roads Seeker | Style de carte offrant une meilleure visualisation du revêtement routier, distinguant les routes goudronnées des routes non goudronnées (page web en *French*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
+| OsmAnd Rendering | Une collection d'accès à des cartes en ligne, des cartes topographiques, des orthophotos et d'autres ressources géographiques disponibles auprès de certains des principaux instituts géographiques de différents pays. Les mises à jour sont en cours, mais si des fichiers sont obsolètes, les utilisateurs sont encouragés à le signaler. | [Online Maps: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Une carte topographique avec une option *Cacher toute l'eau*, contribuée par [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
-| UniMap | Le dépôt est conçu pour fournir des styles de carte personnalisés créés par les utilisateurs pour d'autres utilisateurs. |[UniMap depuis GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
+| UniMap | Le dépôt est conçu pour fournir des styles de carte personnalisés créés par les utilisateurs pour d'autres utilisateurs. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | Styles de carte hors ligne axés sur les chemins de fer, utilisant une palette de couleurs similaire à [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
-| Limites administratives mises en évidence | Le style de rendu de carte est basé sur celui par défaut d'OsmAnd, avec des limites administratives plus mises en évidence pour une meilleure visibilité. |[Limites administratives mises en évidence](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
-| Carte Open Fiets | [La carte Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) est un style de carte axé sur le cyclisme, mettant en évidence les pistes cyclables (en rouge), les itinéraires cyclables (en tirets bleus), les chemins cyclables (en tirets rouges) et les routes à circulation automobile limitée, telles que les rues cyclables (bordures rouges pleines). |[Style OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
-| Style de carte de sélection | Le ["Style de carte de sélection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets. |["Style de carte de sélection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-
+| Highlighted Admin Boundaries | Le style de rendu de carte est basé sur celui par défaut d'OsmAnd, avec des limites administratives plus mises en évidence pour une meilleure visibilité. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
+| Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) est un style de carte axé sur le cyclisme, mettant en évidence les pistes cyclables (en rouge), les itinéraires cyclables (en tirets bleus), les chemins cyclables (en tirets rouges) et les routes à circulation automobile limitée, telles que les rues cyclables (bordures rouges pleines).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
+| Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 ### Cartes hors ligne {#offline-maps}
 
@@ -115,7 +115,7 @@ Cartes vectorielles personnalisées (fichiers OBF) générées par les utilisate
 | Nom de la source | Description | Lien|
 | -- | -- | --|
 | OpenSuperMaps | Cartes générées par [pnoll1](https://github.com/pnoll1), offrant des cartes vectorielles détaillées. |[OpenSuperMap](https://opensupermaps.com/)|
-| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - une carte alternative de la Pologne. |[Plugin UMP-PL](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
+| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - une carte alternative de la Pologne. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
 
 
 ### Collection de cartes en ligne {#online-maps-collection}
@@ -124,12 +124,12 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 
 | Nom | Description | Lien|
 | -- | -- | --|
-| Gravel Roads Seeker | Carte des routes de gravier (page web en *français*). Une carte en ligne générée en temps réel à partir de serveurs de tuiles, tels que WMTS (Web Map Tile Service) ou WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
-| Rendu OsmAnd | Une collection de cartes en ligne, y compris des cartes topographiques, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [Rendu OsmAnd GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
-| RainViewer | Carte [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) avec divers [schémas de couleurs](https://www.rainviewer.com/api/color-schemes.html) |[Données RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
+| Gravel Roads Seeker | Carte des routes de gravier (page web en *French*). Une carte en ligne générée en temps réel à partir de serveurs de tuiles, tels que WMTS (Web Map Tile Service) ou WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
+| OsmAnd Rendering | Une collection de cartes en ligne, y compris des cartes topographiques, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
+| RainViewer | [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) map with various [color schema](https://www.rainviewer.com/api/color-schemes.html) |[RainViewer-osf data](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | L'ensemble de cartes de l'Autriche basé sur [basemap.at WMTS](https://basemap.at/en/) créé par mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
-| Cartes OsmAnd IGN (FR) | L'ensemble de cartes fournies par l'institut géographique français IGN. | [Cartes OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
-| Collection de cartes AnyGis | Le site propose une collection de cartes pour les vacances à la campagne, y compris des cartes touristiques, de montagne, nautiques et bien d'autres. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| OsmAnd maps IGN (FR) | L'ensemble de cartes fournies par l'institut géographique français IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
+| AnyGis maps collection | Le site propose une collection de cartes pour les vacances à la campagne, y compris des cartes touristiques, de montagne, nautiques et bien d'autres. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
 
 
 <!-- Hardware
@@ -144,8 +144,8 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 
 Si vous avez des suggestions pour de nouveaux styles de carte, des plugins, ou si vous souhaitez contribuer avec vos propres créations pour enrichir les ressources de la communauté OsmAnd, n'hésitez pas à nous contacter. Nous apprécions et accueillons vos contributions pour continuer à développer la base de données d'OsmAnd.
 
-- **Suivez**: <LinksSocial/>  
+- **Follow**: <LinksSocial/>  
 
-- **Rejoignez**: <LinksTelegram/>  
+- **Join**: <LinksTelegram/>  
 
-- **Obtenez**: <AllStores/>
+- **Get**: <AllStores/>

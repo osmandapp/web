@@ -1,5 +1,5 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Écran de la carte pendant la navigation
 ---
@@ -29,7 +29,7 @@ Cet article décrit comment configurer l'apparence de la carte pendant la naviga
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Écran de la carte pendant la navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Écran de la carte pendant la navigation](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Écran de la carte pendant la navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Écran de la carte pendant la navigation](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,10 @@ Pendant la navigation, l'apparence de la carte s'ajuste en fonction du profil de
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* |  La durée pendant laquelle la vue de la carte est synchronisée avec la position actuelle après un déplacement.  |  *Valeur :* <br /> Jamais, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Met automatiquement à l'échelle la carte en fonction de votre vitesse, tant que la carte est synchronisée avec votre position actuelle. | *Valeur :* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuel. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - le zoom est de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - le zoom est de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - le zoom est de 5 m. |
+| *Angle de zoom automatique 3D* | Définit l'inclinaison de la carte lors du passage en vue 3D pendant la navigation. Un angle plus élevé fait apparaître l'horizon plus éloigné, offrant une meilleure visibilité vers l'avant. |Il est appliqué uniquement lorsque le Zoom automatique est activé. Valeurs : 20°, 25°, 30°, 35°, 40°. Par défaut : 25°.  |
+| *Aperçu du prochain virage* | Fait pivoter automatiquement la carte légèrement à l'avance pour montrer le prochain virage ou manœuvre pendant la navigation. Aide à anticiper les actions à venir.  | Activé par défaut. Si vous exportez et réimportez un profil, assurez-vous de vérifier ce paramètre, car dans certaines versions antérieures, il pouvait se réinitialiser à « activé ».   |
 | *<Translate android="true" ids="snap_to_road"/>*  | L'icône de la position actuelle sera associée à l'itinéraire de navigation en cours.  | Vous pouvez désactiver cette option, mais toutes les options liées à la route, comme l'affichage des voies, ne seront pas non plus visibles pendant la navigation.  |
-| *<Translate android="true" ids="approximate_bearing"/>* | Détermine le relèvement en fonction de l'itinéraire de navigation que vous suivez.  | Le paramètre n'est visible que lorsque le [plugin de développement OsmAnd](../../plugins/development.md) est activé. <br /> Ces paramètres doivent être activés si l'orientation de la carte directionnelle est inversée ou saccadée lors de l'utilisation d'[Android Auto](../auto-car.md#common-issues-and-solutions).   |
+
 
 
 ## Afficher les points le long de l'itinéraire {#show-points-along-the-route}
@@ -62,6 +64,10 @@ Le paramètre *Afficher le long de l'itinéraire* vous permet de configurer des 
 - La possibilité de définir différentes distances (jusqu'à 5 km, ou 3,11 miles, selon l'[unité de longueur](../../personal/profiles.md#units--formats) que vous avez définie) de l'itinéraire aux points à proximité est utile lors de l'utilisation de types de routage tels que [Ligne droite](../routing/straight-line-routing.md) ou [Direct-au-point](../routing/direct-to-point-routing.md).
 - Pour le paramètre *Afficher le long de l'itinéraire*, il est recommandé d'utiliser les [Instructions vocales](../guidance/voice-navigation.md) pour la navigation.
 - *Les POI, Favoris et Avertissements de trafic* ne sont pas affichés dans la liste pour un itinéraire que vous avez déjà parcouru.
+
+:::info note
+L'option **Afficher le long de l'itinéraire** n'affecte que les listes de POI et Mes Favoris, pas la carte elle-même. Les icônes des POI et des Favoris sont affichées partout sur la carte, indépendamment de leur distance par rapport à l'itinéraire.
+:::
 
 
 ### Voir et sélectionner des points {#view-and-select-points}
@@ -93,7 +99,7 @@ Lorsque vous créez un itinéraire, vous pouvez définir les types de points à 
 
 ![Superposition de POI Android](@site/static/img/map/poi_overlay_android.png) ![Superposition de POI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sont associés au paramètre **Afficher le long de l'itinéraire**. Il s'agit essentiellement d'un paramètre supplémentaire pour l'affichage des POI sur la carte, directement lié à l'itinéraire créé.  
+Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sont associés au paramètre **Afficher le long de l'itinéraire**. 
 
 Lorsque vous spécifiez l'affichage de certains POI sur la *Carte de configuration*, ils sont tous affichés sur les cartes que vous avez téléchargées, que vous ayez sélectionné des catégories ou, si la catégorie vous importe peu, que vous ayez sélectionné des POI à proximité.  
 
@@ -169,7 +175,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Itinéraire de navigation Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -239,17 +245,17 @@ Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la r
 Le paramètre Flèches de virage vous permet de choisir si les flèches de virage sont affichées sur la ligne d'itinéraire.  
 
 - ***Sur la carte***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![flèches_virage_ios_carte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Flèches de virage sur la carte Android](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Flèches de virage sur la carte iOS](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Dans l'application***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![flèches_virage_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Flèches de virage dans l'application Android](@site/static/img/navigation/route/turn_arr.png)   ![Flèches de virage dans l'application iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Articles connexes {#related-articles}
 
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
 - [Préparation de l'itinéraire](../setup/route-navigation.md)
-- [Navigation par trace GPX](../setup/gpx-navigation.md)
+- [Navigation par trace](../setup/gpx-navigation.md)
 - [Navigation par marqueurs](../setup/markers-navigation.md)
 - [Détails de l'itinéraire](../setup/route-details.md)
 - [Paramètres de navigation](./navigation-settings.md)

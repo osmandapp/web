@@ -1,5 +1,5 @@
 ---
-source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
+source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topographie
 ---
@@ -25,9 +25,9 @@ Le plugin Topographie est une [fonctionnalité payante](../purchases/index.md) d
 La topographie est une caractéristique importante de la cartographie qui fournit des informations pour évaluer visuellement le relief du terrain.
 Les informations topographiques comme les [Lignes de niveau](#contour-lines), le [Terrain](#terrain) (*Estompage* et *Pente*), et le [Relief 3D](#3d-relief) aident à évaluer visuellement la configuration du terrain en visualisant l'altitude, le relief, les extrêmes, l'inclinaison ou les points de même hauteur.
 
-Chaque fonctionnalité fournie par ce plugin est une couche de carte indépendante qui, lorsqu'elle est activée, peut être affichée au-dessus ou en dessous de la source de carte principale en fonction des [paramètres](../map/raster-maps.md#overlay-layer).
+Chaque fonctionnalité fournie par ce plugin est une couche de carte indépendante qui, lorsqu'elle est activée, peut être affichée au-dessus ou en dessous de la source de carte principale en fonction des [paramètres](../map/raster-maps.md#overlay-layer).  
 
-Le plugin Topographie donne accès aux types de cartes suivants :
+Le plugin Topographie donne accès aux types de cartes suivants :  
 
 - [Lignes de niveau](#contour-lines). Il s'agit d'une [carte vectorielle](../map/vector-maps.md) représentée en [**mètres** ou **pieds**](#contour-lines-meters-or-feet). Les lignes de niveau indiquent les niveaux d'altitude et aident à visualiser le terrain.
 - [Estompage](#hillshade-slope-and-altitude-layers). Types de cartes avec ombrage des collines et des pentes qui rendent le relief plus visible et aident à interpréter visuellement le terrain.
@@ -57,12 +57,12 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 
 ### Licence pour les données MNE utilisées par OsmAnd pour la détection du terrain {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'instrument *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, l'outil d'imagerie principal du *Système d'Observation de la Terre de la NASA*.
+Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'instrument *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, l'outil d'imagerie principal du *Système d'Observation de la Terre de la NASA*.  
 Pour des informations complètes, consultez la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
 <details>
-<summary>Données MNE (MNS)</summary>
+<summary>Données DEM (DSM)</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
@@ -79,7 +79,7 @@ Pour afficher les données de **Lignes de niveau** et de **Terrain (Estompage, P
 2. [Activer](../plugins/index.md#enable--disable) le plugin Topographie dans la section Plugins du *Menu principal*.
 3. [Télécharger](#download-maps) : Cartes de lignes de niveau, d'estompage, de pente ou de terrain (3D).
 4. **Activer et ajuster** : Lignes de niveau, Estompage ou Pente pour la vue de la carte.
-5. Vous pouvez également regarder le [tutoriel YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
+5. Vous pouvez également regarder le [tutoriel YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 Pour afficher le [**Relief 3D**](#3d-relief), vous devez acheter le plan *OsmAnd Pro*, qui inclut l'accès au plugin Topographie.
 
@@ -202,8 +202,8 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </Tabs>  
 
-L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*.
-Fonctionnalités spécifiques :
+L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*.  
+Fonctionnalités spécifiques :  
 
 - Une seule option peut être activée à la fois, soit l'Estompage, la Pente ou l'Altitude.
 - Si vous ne voyez aucun changement après avoir téléchargé et activé la carte correspondante, il est recommandé de redémarrer l'application.
@@ -217,15 +217,15 @@ Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-sch
 | ------ | ------- | ------- |
 | ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**L'estompage** est basé sur la simulation de l'éclairage de la surface à l'aide de données de terrain. Cette méthode consiste à créer des ombres et des rehauts en fonction de l'angle de la surface par rapport à la source de lumière. En conséquence, vous voyez des collines, des vallées et d'autres détails du terrain naturels sur la carte.
+**L'estompage** est basé sur la simulation de l'éclairage de la surface à l'aide de données de terrain. Cette méthode consiste à créer des ombres et des rehauts en fonction de l'angle de la surface par rapport à la source de lumière. En conséquence, vous voyez des collines, des vallées et d'autres détails du terrain naturels sur la carte.  
 
-**La pente** détermine l'angle d'inclinaison de la surface en fonction des données d'altitude des points sur la carte. Les calculs de l'angle de pente sont effectués en tenant compte des changements d'altitude et des distances entre les points, et en représentant ce changement comme un angle de pente.
+**La pente** détermine l'angle d'inclinaison de la surface en fonction des données d'altitude des points sur la carte. Les calculs de l'angle de pente sont effectués en tenant compte des changements d'altitude et des distances entre les points, et en représentant ce changement comme un angle de pente.  
 
 **L'altitude** représente l'élévation des points sur la carte par rapport au niveau de la mer. Elle vous aide à comprendre comment le terrain change en hauteur. Cette fonctionnalité est particulièrement utile pour des activités comme la randonnée ou le VTT, où la connaissance de l'altitude peut aider à planifier les itinéraires et à gérer l'effort physique. Les données d'altitude sont dérivées de modèles d'élévation et fournissent une vue claire des points hauts et bas, ce qui facilite l'évaluation de la difficulté d'un itinéraire ou l'identification des sommets et des vallées le long de votre parcours.
 
 Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées à partir de données de terrain raster telles que les Modèles Numériques d'Élévation (MNE).
 
-**Utilisation** :
+**Utilisation :**
 
 - *Navigation.* Aide à identifier les pentes raides, en descente comme en montée, ce qui peut être crucial pour une navigation sûre.
 - *Planifier des itinéraires.* Aide à choisir les itinéraires les plus appropriés, en tenant compte du terrain.
@@ -293,7 +293,7 @@ La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales e
 
 ### Taille du cache {#cache-size}
 
-**La taille du cache** est une section d'information qui affiche la quantité de mémoire de votre appareil actuellement utilisée pour les données de *Terrain*. Chaque fois que vous consultez des informations d'*Estompage* ou de *Pente* sur une carte, toutes ces données sont temporairement stockées dans le cache pour un accès rapide et une utilisation ultérieure, évitant ainsi une charge supplémentaire sur le processeur de votre appareil.
+**La taille du cache** est une section d'information qui affiche la quantité de mémoire de votre appareil actuellement utilisée pour les données de *Terrain*. Chaque fois que vous consultez des informations d'*Estompage* ou de *Pente* sur une carte, toutes ces données sont temporairement stockées dans le cache pour un accès rapide et une utilisation ultérieure, évitant ainsi une charge supplémentaire sur le processeur de votre appareil.  
 
 **Vider le cache** est parfois nécessaire pour libérer de l'espace sur votre appareil ou pour résoudre d'éventuels problèmes de performance. Pour vider le cache, vous devez vous rendre dans les *Paramètres système* de l'appareil, puis le chemin peut être le suivant : *Applications → OsmAnd → Stockage → Vider le cache*.
 
@@ -314,7 +314,7 @@ L'**Estompage** et la **Pente** sont affichés et ajustés dans n'importe quel [
 
 ![QA pour le Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Vous pouvez utiliser les boutons *Action rapide* sur l'écran de la carte pour basculer la visibilité des couches de [Lignes de niveau](#contour-lines), de [Terrain](#terrain) et du [jeu de couleurs du Terrain](#default-color-scheme). Selon la couche sélectionnée dans le menu Configurer la carte, l'attribution d'une action *Terrain* au bouton affichera *Estompage*, *Pente* ou *Altitude*.
+Vous pouvez utiliser les boutons *Action rapide* sur l'écran de la carte pour basculer la visibilité des couches de [Lignes de niveau](#contour-lines), de [Terrain](#terrain) et du [jeu de couleurs du Terrain](#default-color-scheme). Selon la couche sélectionnée dans le menu Configurer la carte, l'attribution d'une action *Terrain* au bouton affichera *Estompage*, *Pente* ou *Altitude*.  
 
 Les principaux paramètres pour *Afficher ou Masquer les types de carte* se trouvent dans la section Topographie du menu Configurer la carte. Dans l'article [Action rapide](../widgets/quick-action.md#configure-map), vous trouverez une liste des couches disponibles pour l'affichage. Si vous avez besoin d'un accès rapide à cette configuration de carte, utilisez l'outil *Bouton personnalisé*.
 
@@ -412,10 +412,10 @@ L'*Exagération verticale* est un coefficient spécial pour le *Relief 3D*. Vous
 |--------|---------|
 | ![Couches de terrain](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Couches de terrain](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-L'**Estompage** est un type de carte qui affiche le terrain en utilisant des ombres, créant une représentation visuelle de la pente et de la forme de la surface terrestre.
-Le **Relief 3D** est une fonctionnalité qui ajoute des effets tridimensionnels à la carte.
+**L'estompage** est un type de carte qui affiche le terrain en utilisant des ombres, créant une représentation visuelle de la pente et de la forme de la surface terrestre.  
+**Le Relief 3D** est une fonctionnalité qui ajoute des effets tridimensionnels à la carte.  
 
-Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et les ajoute à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés.
+Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et les ajoute à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés.  
 
 Lorsque l'**Estompage** est **activé**, une image avec des ombres de relief apparaît plus détaillée, plus sombre et plus étagée qu'une image de *Relief 3D*. L'explication est que l'*Estompage* accentue les gradients et les contrastes du terrain, créant une image plus nette et plus détaillée. La fonction *Relief 3D* donne à la carte une apparence plus fluide et lissée, adoucissant le terrain et réduisant potentiellement la visibilité de certains détails plus fins.
 
@@ -457,6 +457,6 @@ OsmAnd vous permet de combiner plusieurs types de couches de carte pour un affic
 
 1. Comment restaurer l'achat du plugin Topographie (anciennement Lignes de niveau). [(vérifier)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Les lignes de niveau, les données d'altitude ou le relief 3D ne s'affichent pas. [(vérifier)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. La carte passe automatiquement en mode 3D pendant la navigation :
-    - Assurez-vous que le bouton **Mode 3D** est désactivé dans **Menu → Configurer l'écran → Boutons → Boutons par défaut**.
+3. La carte passe automatiquement en mode 3D pendant la navigation :  
+    - Assurez-vous que le bouton **Mode 3D** est désactivé dans **Menu → Configurer l'écran → Boutons → Boutons par défaut**.  
     - Vérifiez si des fonctionnalités de Terrain sont activées dans **Menu → Configurer la carte → Topographie** qui pourraient déclencher un effet 3D.

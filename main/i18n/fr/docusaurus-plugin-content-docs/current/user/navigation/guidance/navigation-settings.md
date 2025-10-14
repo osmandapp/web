@@ -1,5 +1,5 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Paramètres de navigation
 ---
@@ -185,7 +185,7 @@ Les paramètres de la section **Développement** sont principalement destinés a
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ Les instructions audio pendant la navigation vous aident, en tant que conducteur
 Si vous sélectionnez une trace comme point de destination, vous devez utiliser l'option [Attacher aux routes](../setup/gpx-navigation.md#attach-to-the-roads) pour que les invites vocales fonctionnent correctement.
 
 Les *invites vocales* vous permettent de vous concentrer sur la route et de ne pas être distrait par la carte ou l'appareil de navigation. Elles améliorent également la sécurité de la conduite, réduisent le temps nécessaire pour naviguer en terrain inconnu et peuvent être utiles pour différents [types d'itinéraires](../routing/osmand-routing.md#routing-types).
+
+Dans la section **Annoncer**, vous pouvez choisir quels types de notifications doivent être joués ou affichés pendant la navigation :
+
+- **Directions virage par virage** (Android uniquement) – permet d'activer ou de désactiver les instructions de navigation standard telles que *« Tournez à gauche »*, *« Tournez à droite »* ou *« Dans 200 mètres… »*. Lorsque l'option est désactivée, les annonces de virages et de noms de rues ne sont pas fournies, tandis que les notifications pour les points de passage, les points utilisateur et les événements d'itinéraire restent actives. Ce mode est destiné aux activités comme le rafting, la randonnée ou le cyclisme le long de traces préenregistrées, lorsque seules les alertes pour les points de passage ajoutés manuellement sont requises.
+- **Noms de rues (TTS)** – annonce les noms des rues le long de votre itinéraire.
+- **Numéro de sortie** – annonce le numéro de sortie lors de la conduite sur les autoroutes.
+- **Avertissements de circulation** – fournit des alertes sur les événements routiers importants tels que les embouteillages ou les restrictions.
+- **Passages piétons** – vous avertit lorsque vous approchez des passages piétons.
+- **[Radars](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – alerte sur les emplacements des radars (là où cela est légalement permis).
+- **Tunnels** – vous informe lorsque vous entrez dans un tunnel.
 
 
 ## Alertes à l'écran {#screen-alerts}
@@ -316,7 +326,7 @@ Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Allez dans : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Paramètres de navigation iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 

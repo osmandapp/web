@@ -1,5 +1,5 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title:  Boutons de la carte
 ---
@@ -23,7 +23,7 @@ Les boutons de la carte, notamment *Zoom*, *Rechercher*, *Itinéraire*, *Boussol
 
 ## Ma position et Zoom {#my-location-and-zoom}
 
-![Menu de l'écran de configuration](@site/static/img/widgets/location_zoom_buttons.png)
+![Menu de configuration de l'écran](@site/static/img/widgets/location_zoom_buttons.png)
 
 Utilisez ces boutons pour contrôler l'affichage de la carte sur l'écran de votre appareil :
 
@@ -40,7 +40,7 @@ Le bouton **Itinéraire** est essentiel pour la planification d'itinéraire et l
 
 - [Construire un itinéraire](../navigation/index.md). Utilisez ce bouton pour créer un itinéraire.
 - [Démarrer la navigation](../navigation/index.md). Lancez la navigation virage par virage.
-- En mode navigation, le bouton *Itinéraire* n'est pas visible par défaut mais apparaît après une courte pression sur la carte.
+- En mode navigation, le bouton *Itinéraire* n'est pas visible par défaut mais apparaît après un court appui sur la carte.
 
 États indicatifs du bouton *Itinéraire* :
 
@@ -60,7 +60,7 @@ Le bouton **Configurer la carte** donne accès au menu [Configurer la carte](../
 
 ![Bouton du menu principal](@site/static/img/widgets/main_menu_button.png)
 
-Le bouton [**Menu principal**](../start-with/main-menu.md) ouvre le menu général, donnant accès à [toutes les fonctionnalités de l'application](../start-with/main-menu.md). En mode navigation, ce bouton est masqué par défaut et devient visible après une courte pression sur la carte.
+Le bouton [**Menu principal**](../start-with/main-menu.md) ouvre le menu général, donnant accès à [toutes les fonctionnalités de l'application](../start-with/main-menu.md). En mode navigation, ce bouton est masqué par défaut et devient visible après un court appui sur la carte.
 
 
 ## Rechercher {#search}
@@ -93,11 +93,11 @@ Le bouton Boussole indique l'orientation de la carte sur l'écran de votre appar
 
 Le bouton de la boussole offre plusieurs actions pour contrôler l'orientation de la carte :
 
-- **Simple pression**. Une *simple pression* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (situé dans le coin supérieur gauche de l'écran lorsqu'il est [visible](../widgets/map-buttons.md#display-options)) réoriente instantanément la carte *vers le Nord* dans tous les modes d'orientation de la carte. Même si la carte est en mode *Direction de la boussole*, elle pivote quand même un instant puis revient à l'orientation dynamique de ce mode.
+- **Appui simple**. Un *appui simple* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (situé dans le coin supérieur gauche de l'écran lorsqu'il est [visible](../widgets/map-buttons.md#display-options)) réoriente instantanément l'orientation de la carte *vers le Nord* dans tous les modes d'orientation de la carte. Même si la carte est en mode *Direction de la boussole*, elle pivote quand même un instant puis revient à l'orientation dynamique de ce mode.
 
-- **Double pression**. Pour basculer rapidement entre les modes d'orientation de la carte, comme suivre la direction GPS ou pivoter avec l'appareil, *appuyez deux fois* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)).
+- **Double appui**. Pour basculer rapidement entre les modes d'orientation de la carte, comme suivre la direction GPS ou pivoter avec l'appareil, *appuyez deux fois* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)).
 
-- **Pression longue**. Avec une *pression longue* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)), vous pouvez ouvrir une liste de tous les modes d'orientation de la carte et sélectionner celui requis. Cette liste peut également être ouverte dans les [Paramètres du profil](../personal/profiles.md#appearance).
+- **Appui long**. Avec un *appui long* sur le [bouton Boussole](../widgets/map-buttons.md#compass) (lorsqu'il est [visible](../widgets/map-buttons.md#display-options)), vous pouvez ouvrir une liste de tous les modes d'orientation de la carte et sélectionner celui requis. Cette liste peut également être ouverte dans les [Paramètres du profil](../personal/profiles.md#appearance).
 
 
 ### Options d'affichage {#display-options}
@@ -126,7 +126,7 @@ L'icône de la boussole sur le bouton pointe toujours vers le Nord. Vous pouvez 
 
 - **Toujours visible**. Le bouton ne disparaît pas de l'écran.
 - **Toujours masqué**. Dans ce cas, vous ne pouvez pas changer rapidement l'orientation de la carte, mais le bouton ne prendra pas de place sur l'écran.
-- **Visible si la carte est pivotée**. Le bouton n'est pas visible tant que la boussole pointe vers le Nord en haut de votre appareil.
+- **Visible si la carte est pivotée**. Le bouton n'est pas visible tant que la boussole pointe vers le Nord en haut de votre appareil.  
 
 
 ## Mode 3D {#3d-mode}
@@ -186,7 +186,7 @@ Les paramètres d'apparence des boutons de la carte sont disponibles via les men
 - *Menu → Configurer l'écran → Boutons → Boutons par défaut*
 - *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → menu à trois points → Apparence*
 
-La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, la forme, l'icône et l'opacité de l'arrière-plan pour les [Actions rapides (Boutons personnalisés)](../widgets/quick-action.md#quick-action-button-appearance) et les [Boutons par défaut](../widgets/configure-screen.md#button-appearance). Cette flexibilité vous permet de personnaliser l'interface selon vos préférences et d'améliorer l'ergonomie.
+La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, la forme, l'icône et l'opacité de l'arrière-plan pour les [Action rapide (Boutons personnalisés)](../widgets/quick-action.md#button-appearance) et les [Boutons par défaut](../widgets/configure-screen.md#button-appearance). Cette flexibilité vous permet de personnaliser l'interface selon vos préférences et d'améliorer l'ergonomie.
 
 
 ## Articles connexes {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: f83e190bfec9a24ba91f8854af79a3c931b22468f01136978f5937e9c2a59156
 sidebar_position: 10
 title:  Itinéraires
 ---
@@ -105,17 +105,24 @@ Pour activer les sites d'escalade sur la carte, allez dans : *Menu → Configure
 
 ![Itinéraires sur la carte - randonnée alpine](@site/static/img/map/map-routes-alpine-hiking.png)
 
-Certains segments de chemin peuvent faire partie de nombreux itinéraires, mais ils peuvent être colorés individuellement pour représenter la difficulté du segment dans les zones montagneuses. Actuellement, OsmAnd prend en charge les classifications italienne et suisse, et chacune a une liste spécifique d'exigences en matière d'équipement pour accéder à ce segment.  
+Certains segments de route peuvent faire partie de nombreux itinéraires, mais ils peuvent être colorés individuellement pour représenter la difficulté du segment dans les zones montagneuses. Actuellement, OsmAnd prend en charge les classifications italienne et suisse, et chacune a une liste spécifique d'exigences en matière d'équipement pour accéder à ce segment.  
 
 1. [Échelle SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [Échelle CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Itinéraires de ski {#ski-routes}
+### Pistes et itinéraires de ski {#ski-slopes-and-routes}
 
 ![Itinéraires sur la carte - pistes de ski](@site/static/img/map/map-routes-ski-slopes.png)
 
-Les itinéraires de ski sont un groupe spécifique d'[itinéraires](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) dans OpenStreetMap. Typiquement, ces itinéraires peuvent être utilisés avec le style de carte [Hiver et ski](../map/vector-maps.md#winter-and-ski) avec toutes les [pistes](https://wiki.openstreetmap.org/wiki/Pistes) visibles.  
+Les pistes et itinéraires de ski sont un groupe spécifique d'[itinéraires](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) dans OpenStreetMap. Typiquement, ces itinéraires peuvent être utilisés avec le style de carte [Hiver et ski](../map/vector-maps.md#winter-and-ski) avec toutes les [pistes](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si un autre style de carte est actif, une bannière s'affiche suggérant un passage à **Hiver et ski** (*Android uniquement*). Appuyez sur ***Passer à*** pour changer le style de carte sans quitter l'écran actuel, ou ***Plus tard*** pour masquer la bannière.
+
+
+### Pistes de motoneige {#snowmobile-trails}
+
+![Itinéraires sur la carte - motoneige](@site/static/img/map/snowmobile_trail.png)
+
+Les pistes de motoneige sont cartographiées dans [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) comme `route=snowmobile`. Elles sont utilisées pour les loisirs hivernaux et pour relier des zones isolées pendant la saison des neiges. Dans OsmAnd, les pistes de motoneige sont cliquables, voir la section [Actions avec les itinéraires](#actions-with-routes).
 
 
 ### Itinéraires équestres {#horse-routes}

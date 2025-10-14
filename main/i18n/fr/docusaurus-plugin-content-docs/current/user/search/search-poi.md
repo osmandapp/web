@@ -1,5 +1,5 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
 title:  Recherche de POI
 ---
@@ -19,17 +19,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-La fonctionnalité de [Point d'Intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux, des itinéraires et des services intéressants près de votre position actuelle ou d'une zone sélectionnée sur la carte.
+La fonctionnalité de [Point d'Intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux, des itinéraires et des services intéressants près de votre position actuelle ou d'une zone sélectionnée sur la carte.  
 
-La barre de recherche vous permet de saisir des mots-clés liés aux lieux qui vous intéressent. La recherche de POI présente également une liste pratique triée par [catégorie](#poi-search-by-categories) pour vous aider à trouver rapidement ce que vous cherchez, et le [filtre](#save-new-custom-filters) vous permet de sélectionner des caractéristiques spécifiques de POI pour n'afficher que les résultats pertinents.
+La barre de recherche vous permet de saisir des mots-clés liés aux lieux qui vous intéressent. La recherche de POI présente également une liste pratique triée par [catégorie](#poi-search-by-categories) pour vous aider à trouver rapidement ce que vous cherchez, et le [filtre](#save-new-custom-filters) vous permet de sélectionner des caractéristiques spécifiques de POI pour n'afficher que les résultats pertinents.  
 
-La [Recherche personnalisée](#custom-poi-search) améliore la fonctionnalité de recherche en permettant de choisir plusieurs catégories et sous-catégories. Vous pouvez enregistrer les filtres créés pour une utilisation future, ce qui facilite la localisation rapide des POI répondant à des critères ou préférences spécifiques. Pour plus de détails, consultez la section sur l'enregistrement des filtres personnalisés [ici](#save-new-custom-filters).
+La [Recherche personnalisée](#customize-poi-search) améliore la fonctionnalité de recherche en permettant de choisir plusieurs catégories et sous-catégories. Vous pouvez enregistrer les filtres créés pour une utilisation future, ce qui facilite la localisation rapide des POI répondant à des critères ou préférences spécifiques. Pour plus de détails, consultez la section sur l'enregistrement des filtres personnalisés [ici](#save-new-custom-filters).  
 
 OsmAnd offre plusieurs moyens d'accéder à l'outil de recherche où se trouve la section **Recherche par catégories**.
 
 - Le [bouton Recherche](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et en appuyant dessus, vous accéderez à l'[écran général](#how-to-use) de l'outil, où vous trouverez l'onglet *Catégories*.
 - Allez dans le *Menu principal → Recherche → onglet Catégories*.
-- Lors de la préparation d'un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche → onglet Catégories*](../navigation/setup/route-navigation.md#set-target-point).
+- Lors de la préparation d'un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche → onglet Catégories*](../navigation/setup/route-navigation.md#set-target-point).  
 - Allez dans le *Menu principal → Configurer la carte → Calque des POI → Recherche*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
@@ -62,10 +62,10 @@ OsmAnd offre plusieurs moyens d'accéder à l'outil de recherche où se trouve l
     
 - **Rechercher des POI sur la carte** - Afficher sur la carte :
     1. Vous pouvez sélectionner les catégories requises dans la [**liste**](../map/point-layers-on-map.md#points-of-interest-pois) dans *Configurer la carte → Afficher le calque des POI...* et rechercher par icônes à l'emplacement prévu.
-    2. Vous pouvez d'abord saisir une requête de recherche ou commencer à rechercher des POI dans *Menu → Recherche → Catégories*, puis cliquer sur **Afficher sur la carte**.
+    2. Vous pouvez d'abord saisir une requête de recherche ou commencer à rechercher des POI dans *Menu → Recherche → Catégories*, puis cliquer sur **Afficher sur la carte** .
 
 - **Recherche par marque** :
-    - La recherche d'un lieu commercial par nom de marque (comme Audi, Starbucks ou Aldi) est très similaire à la recherche de différents POI par type, la principale différence étant que la liste des marques est fournie à l'intérieur de la carte et sujette à des modifications à chaque mise à jour.
+    - La recherche d'un lieu commercial par nom de marque (comme Audi, Starbucks ou Aldi) est très similaire à la recherche de différents POI par type, la principale différence étant que la liste des marques est fournie à l'intérieur de la carte et sujette à des modifications à chaque mise à jour. 
     - La marque est définie par l'étiquette OSM [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) et OsmAnd collecte des types limités de marques par carte avec un maximum de 1000 marques par carte, mais s'assure que la liste des marques est alignée sur les cartes voisines.
 
 ![Recherche POI Android](@site/static/img/search/brand_search_andr.png)
@@ -145,73 +145,73 @@ Avec la fonction **Filtre**, vous pouvez sélectionner les caractéristiques né
 
 Un filtre peut comporter un grand nombre d'éléments, dont la présence dépend de la catégorie sélectionnée. Chaque catégorie dispose d'un certain nombre de filtres qui lui sont propres, organisés en dossiers par type. Il y a un total de *22 catégories par défaut*. Certaines d'entre elles sont listées ici :
 
- 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. L'[Hébergement](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) comprend les établissements qui fournissent un logement temporaire tels que les hôtels, les motels, les auberges de jeunesse, les maisons d'hôtes et les terrains de camping. Ces lieux offrent des équipements et des services pour un séjour confortable en voyage.
+ 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. L'[Hébergement](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) comprend les établissements qui fournissent un logement temporaire tels que les hôtels, les motels, les auberges de jeunesse, les maisons d'hôtes et les terrains de camping. Ces lieux offrent des équipements et des services pour un séjour confortable en voyage.  
         Comprend *9* types de filtres : **Réfrigérateur** (a *2* valeurs), **Chauffage** (a *7* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Matelas** (a *2* valeurs), **Type de paiement** (plus de *10* valeurs), **Douche** (a *1* valeur), **Fumeur** (a *6* valeurs), **Classement par étoiles** (a *10* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.
 
- 2. **Café et restaurant**. [Café](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) et [restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) représentent des lieux de restauration.
-        Comprend *16* types de filtres : **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Cuisine** (plus de *10* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Plat** (plus de *10* valeurs), **Remplissage d'eau potable** (a *1* valeur), **Service au volant** (a *1* valeur), **Type d'accès à Internet** (a *3* valeurs), **Microbrasserie** (a *1* valeur), **Produits bio** (a *2* valeurs), **Terrasse extérieure** (a *1* valeur), **Type de paiement** (plus de *10* valeurs), **Fumeur** (a *6* valeurs), **À emporter** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.
+ 2. **Café et restaurant**. [Café](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) et [restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) représentent des lieux de restauration.  
+        Comprend *16* types de filtres : **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Cuisine** (plus de *10* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Plat** (plus de *10* valeurs), **Remplissage d'eau potable** (a *1* valeur), **Service au volant** (a *1* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Microbrasserie** (a *1* valeur), **Produits bio** (a *2* valeurs), **Terrasse extérieure** (a *1* valeur), **Type de paiement** (plus de *10* valeurs), **Fumeur** (a *6* valeurs), **À emporter** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.
 
  3. **Station de recharge**. Une [station de recharge](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) est une installation d'infrastructure où les propriétaires de véhicules électriques peuvent recharger leurs voitures, motos ou autres véhicules électriques. Ces points fournissent des chargeurs et des connexions appropriées pour fournir de l'énergie aux batteries des véhicules.
-        Comprend *35* types de filtres : **Accès vélo** (a *1* valeur), **Accès bus** (a *1* valeur), **Accès poids lourds** (a *5* valeurs), **Accès voiture** (a *1* valeur), **Accès scooter** (a *1* valeur), **Authentification par application** (a *1* valeur), **Authentification par carte à puce** (a *1* valeur), **Authentification sans contact** (a *1* valeur), **Authentification par clé** (a *1* valeur), **Authentification requise** (a *1* valeur), **Authentification par appel téléphonique** (a *1* valeur), **Authentification par message court** (a *1* valeur), **Frais** (a *2* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7, et autres.
+        Comprend *35* types de filtres : **Accès vélo** (a *1* valeur), **Accès bus** (a *1* valeur), **Accès poids lourds** (a *5* valeurs), **Accès voiture** (a *1* valeur), **Accès scooter** (a *1* valeur), **Authentification par application** (a *1* valeur), **Authentification par carte à puce** (a *1* valeur), **Authentification sans contact** (a *1* valeur), **Authentification par clé** (a *1* valeur), **Authentification requise** (a *1* valeur), **Authentification par appel téléphonique** (a *1* valeur) **Authentification par message court** (a *1* valeur), **Frais** (a *2* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Type d'accès à Internet** (a *3* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7, et autres.  
 
  4. **Supérette et supermarché**. [Supérette](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) et [supermarché](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) représentent des établissements de vente au détail.
         Comprend *13* types de filtres : **Achat en gros** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Table à langer** (a *3* valeurs), **Café** (a *2* valeurs), **Livraison** (a *1* valeur), **Régime** (a *8* valeurs), **Glace** (a *1* valeur), **Produits bio** (a *2* valeurs), **Type de paiement** (plus de *10* valeurs), **Filtre d'occasion** (a *2* valeurs), **Caisse en libre-service** (a *2* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.
 
- 5. **<Translate android="true" ids="poi_filter_emergency"/>**. L'[Urgence](https://wiki.openstreetmap.org/wiki/Key:emergency) comprend les installations et les lieux associés aux services d'urgence tels que les hôpitaux, les postes de police, les casernes de pompiers et les centres de premiers secours.
+ 5. **<Translate android="true" ids="poi_filter_emergency"/>**. L'[Urgence](https://wiki.openstreetmap.org/wiki/Key:emergency) comprend les installations et les lieux associés aux services d'urgence tels que les hôpitaux, les postes de police, les casernes de pompiers et les centres de premiers secours.  
         Ne contient aucun filtre.
 
- 6. **Station-service**. Une [station-service](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), également connue sous le nom de station-essence ou garage-station. C'est l'établissement de type commercial où les véhicules à moteur peuvent être ravitaillés.
-        Comprend *13* types de filtres : **Lavage auto** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Air comprimé** (a *1* valeur), **Type de carburant (avia)** (a plus de *20* valeurs), **Cartes carburant** (a *5* valeurs), **Type de paiement** (a plus de *20* valeurs), **Caisse en libre-service** (a *2* valeurs), **Accès motoneige** (a *3* valeurs), **Toilettes** (plus de *1* valeur), **Aspirateur** (a *1* valeur), **Distributeur automatique de carburant** (a *1* valeur), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.
+ 6. **Station-service**. Une [station-service](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), également connue sous le nom de station-essence ou garage-station. C'est l'établissement de type commercial où les véhicules à moteur peuvent être ravitaillés.  
+        Comprend *13* types de filtres : **Lavage auto** (a *2* valeurs), **Retrait d'espèces** (a *5* valeurs), **Air comprimé** (a *1* valeurs), **Type de carburant (avia)** (a plus de *20* valeurs), **Cartes carburant** (a *5* valeur), **Type de paiement** (a plus de *20* valeurs), **Caisse en libre-service** (a *2* valeur), **Accès motoneige** (a *3* valeurs), **Toilettes** (plus de *1* valeurs), **Aspirateur** (a *1* valeurs), **Distributeur automatique de carburant** (a *1* valeurs), **Accessibilité en fauteuil roulant** (a *4* valeurs), Ouvert maintenant / Ouvert 24/7.  
 
- 7. **Finance**. [Finance](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) est utilisé pour les bureaux d'entreprises du secteur financier.
-        Comprend *5* types de filtres.
+ 7. **Finance**. [Finance](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) est utilisé pour les bureaux d'entreprises du secteur financier.  
+        Comprend *5* types de filtres.  
 
- 8. **Alimentation**. L'[Alimentation](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) comprend tous les lieux proposant de la nourriture et des boissons.
+ 8. **Alimentation**. L'[Alimentation](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) comprend tous les lieux proposant de la nourriture et des boissons.  
         Comprend *24* types de filtres.
 
- 9. **Santé**. La [Santé](https://wiki.openstreetmap.org/wiki/Healthcare) comprend les services fournis par différents professionnels dans différents types d'établissements.
+ 9. **Santé**. La [Santé](https://wiki.openstreetmap.org/wiki/Healthcare)  comprend les services fournis par différents professionnels dans différents types d'établissements.  
         Comprend *13* types de filtres.
 
- 10. **Loisirs**. Les [Loisirs](https://wiki.openstreetmap.org/wiki/Category:Leisure) comprennent divers types de lieux et d'installations de divertissement.
+ 10. **Loisirs**. Les [Loisirs](https://wiki.openstreetmap.org/wiki/Category:Leisure) comprennent divers types de lieux et d'installations de divertissement.  
         Comprend *15* types de filtres.
 
- 11. **Nautique**. Comprend les POI liés aux types nautiques.
+ 11. **Nautique**. Comprend les POI liés aux types nautiques.  
         Ne contient aucun filtre.
 
- 12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Inclut les POI qui sont proches de vous.
+ 12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Inclut les POI qui sont proches de vous.  
         Comprend *216* types de filtres.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. Le [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) comprend les installations utilisées par le public, les clients ou d'autres utilisateurs autorisés pour garer des véhicules tels que des voitures et des camions, communément appelé parking.
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. Le [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) comprend les installations utilisées par le public, les clients ou d'autres utilisateurs autorisés pour garer des véhicules tels que des voitures et des camions, communément appelé parking.  
         Comprend *34* types de filtres.
 
- 14. **Transport personnel**. Tous les [types de véhicules](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) que vous pouvez posséder.
+ 14. **Transport personnel**. Tous les [types de véhicules](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) que vous pouvez posséder.  
         Comprend *38* types de filtres.
 
- 15. **Lieux populaires (Wikipédia)**. Pour rechercher dans cette catégorie, vous devez télécharger la [carte Wikipédia](../plugins/wikipedia.md#overview) de la région qui vous intéresse.
+ 15. **Lieux populaires (Wikipédia)**. Pour rechercher dans cette catégorie, vous devez télécharger la [carte Wikipédia](../plugins/wikipedia.md#overview) de la région qui vous intéresse.  
         Ne contient aucun filtre.
 
- 16. **Accès privé**.
+ 16. **Accès privé**.  
         Comprend *6* types de filtres.
 
- 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. C'est un système de transport conçu pour transporter des personnes à des fins publiques, accessible à tous les résidents et visiteurs d'une ville ou d'une région.
+ 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. C'est un système de transport conçu pour transporter des personnes à des fins publiques, accessible à tous les résidents et visiteurs d'une ville ou d'une région.  
         Comprend *9* types de filtres.
 
- 18. **Itinéraires**. Comprend les [itinéraires OSM](../map/routes.md) pour divers types d'activités.
+ 18. **Itinéraires**. Comprend les [itinéraires OSM](../map/routes.md) pour divers types d'activités.  
         Comprend *14* types de filtres : **Point de contrôle**, **Nœud de réseau cyclable**, **Nœud de réseau de randonnée**, **Réseau d'itinéraires (cyclisme)**, **Réseau d'itinéraires (randonnée)**, **Catégorie de point d'itinéraire**, **Sports aériens**, **Cyclisme**, **Conduite**, **À pied**, **Moto**, **Autres itinéraires**, **Sports nautiques**, **Sports d'hiver**.
 
- 19. **Tourisme**. C'est une activité au cours de laquelle les gens visitent des lieux ou des sites intéressants pour se familiariser avec eux et apprécier leur beauté, leur histoire ou leur importance.
+ 19. **Tourisme**. C'est une activité au cours de laquelle les gens visitent des lieux ou des sites intéressants pour se familiariser avec eux et apprécier leur beauté, leur histoire ou leur importance.  
         Comprend *8* types de filtres.
 
- 20. **Sport**. Comprend des zones pour les activités sportives.
+ 20. **Sport**. Comprend des zones pour les activités sportives.  
         Comprend *11* types de filtres.
 
- 21. **Magasin**. [Magasin](https://wiki.openstreetmap.org/wiki/Key:shop) fait référence à une variété d'établissements et d'entreprises qui proposent divers biens ou services à la vente, tels que les épiceries, les magasins de vêtements, les magasins d'électronique, et autres.
+ 21. **Magasin**. [Magasin](https://wiki.openstreetmap.org/wiki/Key:shop) fait référence à une variété d'établissements et d'entreprises qui proposent divers biens ou services à la vente, tels que les épiceries, les magasins de vêtements, les magasins d'électronique, et autres.  
         Comprend *36* types de filtres.
 
- 22. **Tourisme**. Le [Tourisme](https://wiki.openstreetmap.org/wiki/Key:tourism) comprend les lieux et les choses d'intérêt spécifique pour les touristes, y compris les lieux à voir, les lieux où séjourner, et les choses et lieux fournissant des informations et un soutien aux touristes.
+ 22. **Tourisme**. Le [Tourisme](https://wiki.openstreetmap.org/wiki/Key:tourism) comprend les lieux et les choses d'intérêt spécifique pour les touristes, y compris les lieux à voir, les lieux où séjourner, et les choses et lieux fournissant des informations et un soutien aux touristes.  
         Comprend *32* types de filtres.
 
- 23. **Eau**. Sources d'[eau potable](https://wiki.openstreetmap.org/wiki/Key:drinking_water) créées ou aménagées par l'homme.
+ 23. **Eau**. Sources d'[eau potable](https://wiki.openstreetmap.org/wiki/Key:drinking_water) créées ou aménagées par l'homme.  
         Ne contient aucun filtre.
 
 
@@ -237,13 +237,13 @@ La fonction Réorganiser les catégories vous permet de lister uniquement les ca
 
 Description et comment l'utiliser :
 
-- Initialement, *la liste est triée par ordre alphabétique*. Les catégories créées sont également ajoutées par ordre alphabétique.
+- Initialement, *la liste est triée par ordre alphabétique.* Les catégories créées sont également ajoutées par ordre alphabétique.
 - Les modifications dans la liste des catégories sont effectuées pour chaque profil séparément.
 - Déplacez les catégories par glisser-déposer à la bonne position dans la liste.
 - *Pour masquer* les catégories inutiles, appuyez sur l'icône **moins**.
 - **Disponible**. Les catégories précédemment *Masquées* peuvent être remises dans la liste affichée en appuyant sur l'icône **plus**.
 - Utilisez le bouton **Réinitialiser par défaut** pour ramener la liste à son état prédéfini.
-- Les catégories créées avec la [Recherche personnalisée](#custom-poi-search) ou les [Filtres](#save-new-custom-filters) peuvent être supprimées à l'aide de l'icône **Supprimer**.
+- Les catégories créées avec la [Recherche personnalisée](#customize-poi-search) ou les [Filtres](#save-new-custom-filters) peuvent être supprimées à l'aide de l'icône **Supprimer**.  
 
 ![Recherche POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
@@ -254,7 +254,7 @@ Description et comment l'utiliser :
 
 ![Recherche POI Android](@site/static/img/search/search_online_2_andr.png)  
 
-La **Recherche en ligne** permet de trouver des lieux, des adresses et des points d'intérêt en temps réel. OsmAnd utilise [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), un géocodeur en ligne développé par OpenStreetMap qui traduit les requêtes textuelles des utilisateurs en coordonnées géographiques et vice-versa.
+La **Recherche en ligne** permet de trouver des lieux, des adresses et des points d'intérêt en temps réel. OsmAnd utilise [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), un géocodeur en ligne développé par OpenStreetMap qui traduit les requêtes textuelles des utilisateurs en coordonnées géographiques et vice-versa.  
 
 La recherche en ligne comprend les fonctionnalités suivantes :
 
@@ -270,11 +270,11 @@ Utilisation de la recherche en ligne :
 - Les recherches en ligne sont en temps réel, offrant un accès rapide aux résultats de recherche.
 - Utile dans les villes et sur les autoroutes avec une bonne couverture Internet.
 - La recherche en ligne est pratique à utiliser s'il n'y a pas de cartes de la région et s'il est impossible de les télécharger.
-- *Nécessite une connexion Internet constante et stable.*
+- *Nécessite une connexion Internet constante et stable.*  
 
 ![Recherche POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
-Pour améliorer les résultats, avant d'utiliser l'outil de recherche, zoomez sur la carte pour vous rapprocher de l'endroit où vous devez trouver un lieu spécifique. Et pendant la recherche, vous pouvez **augmenter le rayon de recherche** pour trouver des lieux plus éloignés de votre position. Lors d'une recherche hors ligne, si les résultats requis ne sont pas disponibles, OsmAnd suggère d'utiliser la recherche en ligne.
+Pour améliorer les résultats, avant d'utiliser l'outil de recherche, zoomez sur la carte pour vous rapprocher de l'endroit où vous devez trouver un lieu spécifique. Et pendant la recherche, vous pouvez **augmenter le rayon de recherche** pour trouver des lieux plus éloignés de votre position. Lors d'une recherche hors ligne, si les résultats requis ne sont pas disponibles, OsmAnd suggère d'utiliser la recherche en ligne.  
 
 Vous pouvez trouver des informations sur la navigation en ligne dans l'article [Routage en ligne](../navigation/routing/online-routing.md).
 
@@ -282,11 +282,11 @@ Vous pouvez trouver des informations sur la navigation en ligne dans l'article [
 
 ## Personnaliser la recherche de POI {#customize-poi-search}
 
-La personnalisation de la recherche de POI est une fonction de recherche avancée qui vous permet de trouver des POI de différentes catégories et de les combiner pour une recherche plus précise et personnalisée. Contrairement à la recherche de POI standard, qui est limitée à certaines catégories prédéfinies, la recherche de POI personnalisée offre la flexibilité de sélectionner et de combiner différents types de POI.
+La personnalisation de la recherche de POI est une fonction de recherche avancée qui vous permet de trouver des POI de différentes catégories et de les combiner pour une recherche plus précise et personnalisée. Contrairement à la recherche de POI standard, qui est limitée à certaines catégories prédéfinies, la recherche de POI personnalisée offre la flexibilité de sélectionner et de combiner différents types de POI.  
 
-Par exemple, vous pouvez rechercher simultanément des restaurants et des pharmacies pour trouver l'endroit le plus proche pour dîner, puis prendre vos médicaments. Ou rechercher la station-service et le garage les plus proches lorsque vous avez un problème avec votre voiture.
+Par exemple, vous pouvez rechercher simultanément des restaurants et des pharmacies pour trouver l'endroit le plus proche pour dîner, puis prendre vos médicaments. Ou rechercher la station-service et le garage les plus proches lorsque vous avez un problème avec votre voiture.  
 
-Cette fonctionnalité est particulièrement utile dans divers cas :
+Cette fonctionnalité est particulièrement utile dans divers cas :  
 
 - *Voyage*. En voyage, l'utilisation de la recherche personnalisée vous permet de trouver rapidement différents lieux d'intérêt et de les combiner pour créer un itinéraire optimal.
 - *Urgences*. Si vous avez besoin de trouver rapidement plusieurs types de services, vous pouvez utiliser une recherche de POI personnalisée pour obtenir toutes les informations dont vous avez besoin.
@@ -314,45 +314,45 @@ Cette fonctionnalité est particulièrement utile dans divers cas :
 
 </Tabs>  
 
-Le *filtre de POI personnalisé* comprend des ensembles de catégories de commodités constitués de valeurs pertinentes. OsmAnd vous permet de collecter et de combiner les types de POI requis à partir d'une ou plusieurs catégories suggérées.
+Le *filtre de POI personnalisé* comprend des ensembles de catégories de commodités constitués de valeurs pertinentes. OsmAnd vous permet de collecter et de combiner les types de POI requis à partir d'une ou plusieurs catégories suggérées.  
 
 Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sélectionnez les catégories et sous-catégories d'intérêt pertinentes. Vous pouvez [enregistrer](#save-new-custom-filters) ces filtres pour une utilisation ultérieure ou les [modifier](#edit-an-existing-filter) si nécessaire. Alternativement, vous pouvez afficher les données filtrées sans les enregistrer en appuyant sur le bouton *Afficher*. Cependant, notez que si vous n'enregistrez pas les filtres, toutes les sélections seront annulées une fois que vous changerez de recherche ou quitterez l'outil de recherche.
 
 - Chaque catégorie de commodité contient une liste de valeurs génériques disponibles pour les types de POI.
 - Vous avez la possibilité de les sélectionner ou de les désélectionner individuellement en appuyant sur le champ du type qui vous intéresse.
 - *Tout sélectionner* - Pour ce faire, sélectionnez le bouton à bascule.
-- Affinez la liste en excluant ceux qui ne sont pas nécessaires - Commencez à taper le nom suggéré dans le champ *Rechercher des types de POI*.
+- Affinez la liste en excluant ceux qui ne sont pas nécessaires - Commencez à taper le nom suggéré dans le champ *Rechercher des types de POI*.  
 
 ### Catégories et leurs filtres {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Comprend 25 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Comprend 25 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.  
 
-2. **Noël**. Comprend 5 types de filtres :
+2. **Noël**. Comprend 5 types de filtres :  
     *Événement de Noël, Marché de Noël, Pyramide de Noël, Boutique de Noël, Sapin de Noël*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Comprend 16 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.
+3. **<Translate android="true" ids="amenity_type_education"/>**. Comprend 16 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.  
 
-4. **<Translate android="true" ids="amenity_type_emergency"/>**. Comprend 14 types de filtres.
+4. **<Translate android="true" ids="amenity_type_emergency"/>**. Comprend 14 types de filtres.  
 
-5. **Infrastructure d'urgence**. Comprend 12 types de filtres.
+5. **Infrastructure d'urgence**. Comprend 12 types de filtres.  
 
 6. **<Translate android="true" ids="amenity_type_finance"/>**. Comprend 12 types de filtres.
 
-7. **Alimentation**. Comprend 12 types de filtres.
+7. **Alimentation**. Comprend 12 types de filtres.  
 
-8. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondation, Risque nucléaire, Route glissante*.
+8. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondation, Risque nucléaire, Route glissante*.  
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Comprend 31 types de filtres.
 
-10. **<Translate android="true" ids="amenity_type_leisure"/>**. Comprend 148 types de filtres.
+10. **<Translate android="true" ids="amenity_type_leisure"/>**. Comprend 148 types de filtres.  
 
-11. **<Translate android="true" ids="amenity_type_man_made"/>**. Comprend 121 types de filtres.
+11. **<Translate android="true" ids="amenity_type_man_made"/>**. Comprend 121 types de filtres.  
 
-12. **<Translate android="true" ids="amenity_type_military"/>**. Comprend 7 types : *Zone de danger, Bunker militaire, Base navale militaire, Bureau militaire, Champ de tir militaire, Zone militaire, Site d'explosion nucléaire*.
+12. **<Translate android="true" ids="amenity_type_military"/>**. Comprend 7 types : *Zone de danger, Bunker militaire, Base navale militaire, Bureau militaire, Champ de tir militaire, Zone militaire, Site d'explosion nucléaire*.  
 
-13. **<Translate android="true" ids="amenity_type_natural"/>**. Comprend 50 types de filtres.
+13. **<Translate android="true" ids="amenity_type_natural"/>**. Comprend 50 types de filtres.  
 
-14. **Nautique**. Comprend 41 types de filtres.
+14. **Nautique**. Comprend 41 types de filtres.  
 
 15. **<Translate android="true" ids="amenity_type_office"/>**. Comprend 39 types de filtres.
 
@@ -360,17 +360,17 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 
 17. **Accès privé**. Ne comprend aucun filtre.
 
-18. **Itinéraires**. Comprend 15 types de filtres.
+18. **Itinéraires**. Comprend 15 types de filtres.  
 
 19. **Service**. Comprend 111 types de filtres.
 
-20. **<Translate android="true" ids="amenity_type_sport"/>**. Comprend 119 types de filtres.
+20. **<Translate android="true" ids="amenity_type_sport"/>**. Comprend 119 types de filtres.  
 
-21. **Magasin**. Comprend 156 types de filtres.
+21. **Magasin**. Comprend 156 types de filtres.  
 
 22. **<Translate android="true" ids="amenity_type_tourism"/>**. Comprend 103 types de filtres.
 
-23. **Transport**. Comprend 97 types de filtres.
+23. **Transport**. Comprend 97 types de filtres.  
 
 24. **Défini par l'utilisateur**. Comprend 1 type : *Autre code postal défini par l'utilisateur*.
 
@@ -406,7 +406,7 @@ Pour **enregistrer** un filtre personnalisé, sélectionnez les types de filtres
 
 - Appuyez sur le bouton *Afficher* et sélectionnez le bouton *Enregistrer* pour iOS ou le bouton avec l'*icône indiquant l'action d'enregistrement* pour Android.
 - Saisissez un nom pour la nouvelle catégorie.
-- Votre filtre apparaîtra dans la liste de l'onglet *Catégories* de l'outil de recherche.
+- Votre filtre apparaîtra dans la liste de l'onglet *Catégories* de l'outil de recherche.  
 
 Autre façon d'**enregistrer** :
 
@@ -439,7 +439,7 @@ Depuis l'écran principal :
 - Appuyez sur l'icône *Filtre* à côté de *Afficher sur la carte* pour ouvrir l'écran *Filtres*.
 - Appuyez sur le *menu à trois points*.
 - Dans le menu déroulant, sélectionnez **Modifier le filtre**.
-- Pour enregistrer une recherche de POI personnalisée après modification :
+- Pour enregistrer une recherche de POI personnalisée après modification :  
     - Sélectionnez les catégories de POI et les types de filtres pour celles-ci *→* appuyez sur *Afficher → menu à trois points → Enregistrer sous →* saisissez un nouveau nom de filtre ou *enregistrez* les modifications dans le filtre actuel.
 
 
@@ -478,7 +478,7 @@ Une option supplémentaire uniquement pour l'application iOS est **Supprimer les
 
 - Cet élément se trouve à la fin de la liste de l'onglet *Catégories*.
 - Sélectionnez les catégories inutiles une par une ou *Tout sélectionner*.
-- Appuyez sur le bouton **Supprimer**.
+- Appuyez sur le bouton **Supprimer**.  
 
 
 ## Articles connexes {#related-articles}

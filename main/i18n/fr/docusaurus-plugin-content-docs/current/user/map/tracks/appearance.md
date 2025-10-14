@@ -1,5 +1,5 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -52,7 +52,7 @@ Vous pouvez modifier l'apparence de la trace en utilisant l'une des méthodes su
 ### Couleur {#color}
 
 :::tip purchases
-Certains paramètres ne peuvent être utilisés qu'avec *OsmAnd Pro*. Fonctionnalités gratuites et payantes pour <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> et <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
+Certains paramètres ne peuvent être utilisés qu'avec *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> et <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Fonctionnalités gratuites et payantes.
 :::
 
 ![Apparence](@site/static/img/map/appearance_color_andr.png)
@@ -91,9 +91,23 @@ Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
 ### Intervalle de division {#split-interval}
 
-![Menu de la trace Apparence Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Sélectionnez si vous souhaitez diviser l'intervalle sur la trace **par distance ou par temps**.
+<TabItem value="android" label="Android">
+
+![Menu de la trace Apparence Intervalle de division Android](@site/static/img/map/split_interval_android.png)  ![Intervalle de division Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu de la trace Apparence Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Sélectionnez si vous souhaitez diviser la trace en intervalles par **distance**, **temps** ou **montée/descente** (Android), ou par **distance** ou **temps** (iOS). Pour afficher des statistiques détaillées par intervalle, consultez [Analyser par intervalles](../../map/tracks/track-context-menu.md#analyze-by-intervals) (Android uniquement).
+
 
 ### Flèches de direction {#direction-arrows}
 
@@ -242,7 +256,7 @@ Pour spécifier une couleur pour une trace, utilisez le format suivant :
 
 ```xml
 <trk>
-  <name>Exemple de trace</name>
+  <name>Example Track</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>

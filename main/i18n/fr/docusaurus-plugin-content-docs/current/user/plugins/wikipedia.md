@@ -1,5 +1,5 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipédia
 ---
@@ -24,7 +24,7 @@ Le plugin Wikipédia est une [fonctionnalité payante](../purchases/index.md) de
 
 Avoir Wikipédia pendant votre voyage vous aide à en apprendre davantage sur les lieux que vous visitez. Il est disponible hors ligne et affiche les Lieux populaires (Android) / articles Wikipédia (iOS) liés aux points d'intérêt directement sur la carte.  
 
-Le plugin Wikipédia est une fonctionnalité distincte qui peut être activée/désactivée selon les besoins. Une fois activé, il vous permet de télécharger les données Wikipédia [téléchargées](../personal/maps-resources#maps--resources) pour chaque région géographique. La carte dispose de deux types de connaissances téléchargées depuis Wikipédia : des informations brèves et un article complet.  
+Le plugin Wikipédia est une fonctionnalité distincte qui peut être activée/désactivée selon les besoins. Une fois activé, il vous permet de télécharger les données Wikipédia [téléchargées](../personal/maps-resources#downloads-menu) pour chaque région géographique. La carte dispose de deux types de connaissances téléchargées depuis Wikipédia : des informations brèves et un article complet.  
 
 
 Les informations brèves sont fournies par les POI Wikipédia (une abréviation pour "[point d'intérêt](../map/point-layers-on-map.md)"). Si l'option Wikipédia est activée dans le menu, un POI Wikipédia apparaît sur la carte. Lorsque vous appuyez sur un point d'intérêt, il se développe pour fournir de brèves informations de Wikipédia, ainsi que la possibilité d'ouvrir un article complet. Le POI Wikipédia, ainsi que les articles connexes, sont disponibles hors ligne. Vous pouvez les lire selon vos besoins, changer de langue et rechercher d'autres informations sur Wikipédia.  
@@ -50,7 +50,7 @@ Pour afficher les données Wikipédia sur la carte, vous devez effectuer les ré
 
 Les données Wikipédia sont disponibles pour chaque région géographique. Si elles sont chargées pour une région et pas pour une autre, dans le premier cas, vous pouvez travailler avec les informations Wikipédia en visualisant la région sur une carte, et dans l'autre cas, la région n'aura aucune information Wikipédia. Une fois chargées, les données Wikipédia deviennent disponibles en général, ainsi que hors ligne.
 
-Pour télécharger les données Wikipédia d'une région, allez dans les [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#download), trouvez la région souhaitée et ouvrez-la. Les données Wikipédia se trouveront parmi les autres paquets.
+Pour télécharger les données Wikipédia d'une région, allez dans les [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#downloading-maps), trouvez la région souhaitée et ouvrez-la. Les données Wikipédia se trouveront parmi les autres paquets.
 
 Vous pouvez ouvrir les données Wikipédia à télécharger par région comme suit :
 
@@ -93,7 +93,7 @@ Pour afficher/masquer les POI Wikipédia, procédez comme suit :
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-2. Sélectionnez un profil, et cherchez la section *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* des paramètres dans le menu.  
+2. Sélectionnez un Profil, et cherchez la section *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* des paramètres dans le menu.  
 3. Activez *<Translate android="true" ids="poi_osmwiki"/>* **pour Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **pour iOS**.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -200,7 +200,7 @@ Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelle
 Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez définir votre ou vos langues préférées pour l'affichage des articles Wikipédia en utilisant le menu *Configurer la carte*. Si vous sélectionnez plus d'une langue, les articles *Wikipédia* sur la carte seront affichés dans l'une d'entre elles. Allez à :
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
-2. Sélectionnez le profil souhaité et dans la section *<Translate android="true" ids="shared_string_show"/>*, choisissez *<Translate android="true" ids="poi_osmwiki"/>* pour Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* pour iOS.  
+2. Sélectionnez le profil requis et dans la section *<Translate android="true" ids="shared_string_show"/>* choisissez *<Translate android="true" ids="poi_osmwiki"/>* pour Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* pour iOS.  
 3. Désactivez l'option *<Translate android="true" ids="shared_string_all_languages"/>*.  
 4. Sélectionnez une ou plusieurs langues spécifiques dans la liste qui s'ouvre.  
 
@@ -260,13 +260,13 @@ Vous pouvez choisir de télécharger ou non les images de Wikipédia sur votre a
 
 <TabItem value="android" label="Android">
 
-![Changer d'images](@site/static/img/plugins/wikipedia/images_android.png)
+![Télécharger les images](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Changer d'images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+![Télécharger les images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
 
 </TabItem>
 
@@ -277,7 +277,7 @@ Dans la version **iOS** de l'application, vous pouvez également accéder aux op
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
-![Changer d'images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+![Télécharger les images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
 
 
 ## Articles connexes {#related-articles}
