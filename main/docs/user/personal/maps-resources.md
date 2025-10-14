@@ -77,6 +77,7 @@ Please note that monthly map updates are considered another map download and are
 - [Contour lines](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
 - [Terrain map (Hillshade and Slope)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
 - [Terrain map (3D)](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
+- [Nautical maps and contours](../plugins/nautical-charts.md). Marine charts showing coastlines, depths, navigation aids, harbors, and hazards for safe boating and sailing.
 - [Wikipedia](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
 - [Wikivoyage](../plan-route/travel-guides.md). It provides vector maps with virtual travel guides, offering users valuable information, recommendations, and tips.
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
