@@ -252,18 +252,43 @@ To display this information, the Nautical plugin must be enabled, and the World 
 :::
 
 
-### Map Atributes {#map-atributes}
-After enabling the Marine style, open *Other map attributes* to adjust additional options:
+### Map Attributes {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
 
-- **ENC markers** – *Enabled*  
-- **Light detail** – *Detailed*  
-- **Seabed detail** – *Simple*  
-- **Water color** – *Default*  
-- **Fairway color** – *White*  
-- **Tidal flat style** – *Light green*  
-- **Dashed depth contours** – *Enabled (optional)*  
-- **Depth color scheme** – *PAPER*  
-- **Safety depth contour** – *On*  
+<TabItem value="android" label="Android">  
+
+![Attributes Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+Go to: *Menu* → *Configure map* → *Map style Marine* → *Other map attributes*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attributes iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+Go to: *Menu* → *Configure map* → *Map type Marine* → *Details* → *Light detail/Seabed detail*
+
+Go to: *Menu* → *Configure map* → *Map type Marine* → Choose other options
+
+</TabItem>
+
+</Tabs>
+
+After enabling the Marine map style, you can fine-tune additional visual elements. These options allow you to control how navigation aids, depth contours, seabed details, and colors appear on the map.
+
+- **[Light detail](../plugins/nautical-charts/#light-detail)**. Defines how seamark light information is displayed. Options: **Default* (full name with light characteristics), *Small* (compact format), *Name only* (light name only), or *Omit* (hide labels).
+- **[Seabed detail](../plugins/nautical-charts/#seabed-detail)**. Controls the level of textual information about the seabed. Options: Simple (basic info), Category (surface type), All (full data), or Omit (no text).
+- **Water color**. Sets the base color for water areas. Options: *Default, Blue, White*, or *Gray* — useful for adjusting visibility and contrast under different lighting modes.
+- **Fairway color**. Changes the color of navigational fairways and channels. Options: *White, Whiter, Gray, Green*, or *Yellow* to improve readability depending on chart background.
+- **Tidal flat style**. Adjusts the color and texture used for tidal flats. Options: *Light green, Dark green, Wetland*, or *Tidal* — each highlights shallow intertidal zones differently.
+- **ENC markers**. Toggle *On/Off*. When enabled, shows Electronic Navigational Chart (ENC) markers such as buoys, beacons, and other navigation aids.
+- **Shells style**. Defines how shells or bottom surface features appear on the seabed. Options: *Gray, Rocks, Stones*, or *Red*, depending on the visual style preferred.
+- **Dashed depth contours**. Toggle *On/Off*. When enabled, displays depth contour lines as dashed, enhancing readability in dense areas.
+- **Depth color scheme**. Selects the color scheme for depth zones. Options: *PAPER* (traditional paper chart colors) or *ECDIS* (standard electronic navigation system palette).
+- **Spot sounding size**. Sets the font size for spot sounding numbers (depth values). Options: *Default, 10, 12, 14*, or *16* — larger values improve visibility on high-resolution screens.
+- **Spot sounding distance**. Controls how frequently depth soundings appear on the map. Options: *Default, 0, 5, 10, 15, 30, 60*, or *120*, determining the spacing between displayed depth points.
+- **Safety depth contour**. Highlights the contour line marking the safety depth threshold. Options: *Off, 0 m, 1 m, 2 m, 3 m, 4 m, 5 m*, or *10 m*. Useful for distinguishing safe navigation areas from shallow zones.
 
 
 ## Additional Nautical Data {#additional-nautical-data}
