@@ -273,15 +273,15 @@ You can help the OsmAnd app increase the Depth contours database by adding your 
 :::
 
 
-
-
 ## Marine Map Style {#marine-map-style}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Marine Android](@site/static/img/plugins/nautical-charts/marine.png)
+![Marine Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+Go to: *Menu* → *Configure map* → *Map style* → *Marine*
 
 </TabItem>
 
@@ -289,12 +289,22 @@ You can help the OsmAnd app increase the Depth contours database by adding your 
 
 ![Marine iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
 
+Go to: *Menu* → *Configure map* → *Map type* → *Marine*
+
 </TabItem>
 
 </Tabs>
 
-Go to: *Menu* → *Configure map* → *Map style → Marine*
+This style adds visual elements for maritime navigation, including navigation lights with INT-1 light characteristics, which describe the type, color, and rhythm of a light signal (for example, whether it flashes, its color, and the interval between flashes), and colored sector lights that indicate the direction and color of the light visible from sea.
 
+In the Marine style, light sectors are displayed around lighthouses and beacons: white (shown in yellow on the map) indicates the safe direction for navigation, red marks dangerous or restricted areas, and green shows auxiliary or lateral directions.
+
+:::info
+To display this information, the Nautical plugin must be enabled, and the World Seamarks map (or World_seamarks_2.obf) must be downloaded. Information is not for official navigation use.
+:::
+
+
+### Map Atributes {#map-atributes}
 After enabling the Marine style, open *Other map attributes* to adjust additional options:
 
 - **ENC markers** – *Enabled*  
@@ -306,14 +316,6 @@ After enabling the Marine style, open *Other map attributes* to adjust additiona
 - **Dashed depth contours** – *Enabled (optional)*  
 - **Depth color scheme** – *PAPER*  
 - **Safety depth contour** – *On*  
-
-This style adds visual elements for maritime navigation, including navigation lights with INT-1 light characteristics, which describe the type, color, and rhythm of a light signal (for example, whether it flashes, its color, and the interval between flashes), and colored sector lights that indicate the direction and color of the light visible from sea.
-
-In the Marine style, light sectors are displayed around lighthouses and beacons: white (shown in yellow on the map) indicates the safe direction for navigation, red marks dangerous or restricted areas, and green shows auxiliary or lateral directions.
-
-:::info
-To display this information, the Nautical plugin must be enabled, and the World Seamarks map (or World_seamarks_2.obf) must be downloaded. Information is not for official navigation use.
-:::
 
 
 ## Related Articles {#related-articles}
