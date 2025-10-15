@@ -162,6 +162,11 @@ export function getPhotoTitle(photo) {
 }
 
 export function openPoiObj(ctx, object) {
-    ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-    ctx.setSelectedWpt((prev) => ({ ...prev, poi: object }));
+    if (object.wikidata) {
+        ctx.setSelectedWpt((prev) => ({ ...prev, ...object }));
+        ctx.setCurrentObjectType(null);
+    } else {
+        ctx.setSelectedWpt((prev) => ({ ...prev, poi: object }));
+        ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+    }
 }

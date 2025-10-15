@@ -100,6 +100,7 @@ export function useSelectMarkerOnMap({
 
     useEffect(() => {
         const onLayersUpdated = () => {
+            if (!prevSelectedMarker.current) return;
             mainIconsLayerRef?.current?.getLayers().forEach((layer) => {
                 if (layer.options.idObj === selectedObjId) {
                     if (!prevSelectedMarker.current.options.hover) {
