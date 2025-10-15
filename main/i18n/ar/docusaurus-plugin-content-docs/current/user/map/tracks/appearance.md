@@ -1,5 +1,5 @@
 ---
-source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
+source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
 sidebar_position: 5
 title:  مظهر المسار
 ---
@@ -51,8 +51,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### اللون {#color}
 
-:::tip purchases
-بعض الإعدادات لا يمكنك استخدامها إلا مع *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">أندرويد</a> و <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> المجانية والمدفوعة.
+:::tip عمليات الشراء
+بعض الإعدادات لا يمكنك استخدامها إلا مع *OsmAnd Pro*. ميزات <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">أندرويد</a> و <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> المجانية والمدفوعة.
 :::
 
 ![المظهر](@site/static/img/map/appearance_color_andr.png)
@@ -91,23 +91,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الفاصل الزمني للتقسيم {#split-interval}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+![قائمة المسار - المظهر - الفاصل الزمني للتقسيم](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![الفاصل الزمني للتقسيم](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
-<TabItem value="android" label="Android">
-
-![قائمة المسار - المظهر - الفاصل الزمني للتقسيم في أندرويد](@site/static/img/map/split_interval_android.png)  ![الفاصل الزمني في أندرويد](@site/static/img/map/split_interval_2_android.png)
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![قائمة المسار - المظهر - الفاصل الزمني للتقسيم](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![الفاصل الزمني](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-حدد ما إذا كنت تريد تقسيم المسار إلى فواصل حسب **المسافة**، **الوقت**، أو **الصعود/الهبوط** (أندرويد)، أو حسب **المسافة** أو **الوقت** (iOS). لعرض إحصاءات مفصلة لكل فاصل، راجع [التحليل حسب الفواصل](../../map/tracks/track-context-menu.md#analyze-by-intervals) (أندرويد فقط).
-
+حدد ما إذا كنت تريد تقسيم الفاصل الزمني على المسار **حسب المسافة أو حسب الوقت**.
 
 ### أسهم الاتجاه {#direction-arrows}
 
@@ -132,7 +118,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## مسار ثلاثي الأبعاد {#3d-track}
 
-:::info Paid feature
+:::info ميزة مدفوعة
 **المسار ثلاثي الأبعاد** هي ميزة مدفوعة في **OsmAnd Pro** لنظامي [iOS](../../purchases/ios.md#pro-features) و [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 

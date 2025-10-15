@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
 sidebar_position: 1
 title:  إعداد المسار
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::tip
 
-- **الملاحة دون اتصال بالإنترنت** مُمكَّنة افتراضيًا. ومع ذلك، يمكنك أيضًا استخدام [محركات التوجيه عبر الإنترنت](./../routing/online-routing.md).
+- يتم تمكين **الملاحة دون اتصال بالإنترنت** افتراضيًا. ومع ذلك، يمكنك أيضًا استخدام [محركات التوجيه عبر الإنترنت](./../routing/online-routing.md).
 
 - **يتطلب OsmAnd إذنًا** للوصول إلى [الموقع الدقيق](../../start-with/first-steps.md#permission-to-access-the-location) للملاحة الدقيقة. قم بتمكين هذا في إعدادات الجهاز إذا لزم الأمر.
 
@@ -48,7 +48,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **الخطوة 1: تنزيل الخرائط.**
 
-قبل استخدام الملاحة دون اتصال بالإنترنت، تأكد من [تنزيل الخرائط المطلوبة](../../start-with/download-maps.md). اذهب إلى *القائمة ← الخرائط والموارد ← تنزيل الخرائط* لتثبيت الخرائط لمنطقتك.
+قبل استخدام الملاحة دون اتصال بالإنترنت، تأكد من [تنزيل الخرائط](../../start-with/download-maps.md) المطلوبة. اذهب إلى *القائمة ← الخرائط والموارد ← تنزيل الخرائط* لتثبيت الخرائط لمنطقتك.
 
 **الخطوة 2: تكوين ملفات تعريف الملاحة.**
 
@@ -122,25 +122,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - زر **إلغاء** يعود إلى الشاشة الرئيسية.
 - [زر البدء](#start--stop-navigation) يبدأ الملاحة بعد انتهاء حساب المسار.
   
-### تحديد نقطة البداية {#select-start-point}
+### تحديد نقطة البداية {#select-starting-point}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+بالنسبة لنقطة البداية، يمكنك اختيار موقعك الحالي، أو موقع [نقطة مفضلة](../../map/point-layers-on-map.md#favorites)، أو تحديد نقطة على الخريطة، أو استخدام [البحث](../../search/index.md). يمكنك أيضًا تعيين نقطة بداية في [قائمة سياق الخريطة](../../map/map-context-menu.md) عن طريق تحديد وظيفة [الاتجاهات من](../../map/map-context-menu.md#directions-to--from).  
 
-<TabItem value="android" label="أندرويد">
-
-![الاختيار على الخريطة](@site/static/img/navigation/route/select_on_map.png)
-
-بالنسبة لنقطة البداية، يمكنك اختيار موقعك الحالي، أو موقع [نقطة مفضلة](../../map/point-layers-on-map.md#favorites)، أو تحديد نقطة على الخريطة، أو استخدام [البحث](../../search/index.md). عندما تقوم بتحديد نقطة على الخريطة، يفتح حوار. يتم توسيط الخريطة بعلامة، ويتم عرض إحداثيات مركز الخريطة، وتقوم بتحريك الخريطة تحت العلامة بدلاً من النقر مباشرة على مكان. للتأكيد، اضغط على زر *الاختيار*. يمكنك أيضًا تعيين نقطة بداية في [قائمة سياق الخريطة](../../map/map-context-menu.md) عن طريق تحديد وظيفة [الاتجاهات من](../../map/map-context-menu.md#directions-to--from).  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![الاختيار على الخريطة iOS](@site/static/img/navigation/route/select_on_map_ios.png)
-
-بالنسبة لنقطة البداية، يمكنك اختيار موقعك الحالي، أو موقع [نقطة مفضلة](../../map/point-layers-on-map.md#favorites)، أو تحديد نقطة على الخريطة، أو استخدام [البحث](../../search/index.md). عند تحديد نقطة على الخريطة، يمكنك تحريك الخريطة وتكبيرها بحرية، ثم النقر على الموقع المطلوب. تظهر علامة في المكان المختار. يمكنك أيضًا تعيين نقطة بداية في [قائمة سياق الخريطة](../../map/map-context-menu.md) عن طريق تحديد وظيفة [الاتجاهات من](../../map/map-context-menu.md#directions-to--from). 
-</TabItem>
-
-</Tabs>
 
 ### تعيين نقطة الهدف {#set-target-point}
 
@@ -149,32 +134,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <TabItem value="android" label="أندرويد">
 
 ![قائمة الملاحة أندرويد 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
-
-أهم شيء لبدء الملاحة هو تحديد وجهتك. يمكن العثور على نقطة الوجهة باستخدام وظيفة [*البحث*](../../search/index.md#overview)، أو ببساطة على الخريطة. يمكنك أيضًا تعيين نقطة الهدف في [*قائمة الملاحة*](#navigation-menu):  
-
-- **<Translate android="true" ids="search_button"/>** - يفتح [قائمة البحث](../../search/index.md).
-- **<Translate android="true" ids="shared_string_address"/>** - يفتح [قائمة البحث عن عنوان](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - يفتح حوارًا حيث يتم توسيط الخريطة بعلامة. يتم عرض إحداثيات مركز الخريطة، تقوم بتحريك الخريطة تحت العلامة، وتؤكد الاختيار بالضغط على *الاختيار*.
-- **<Translate android="true" ids="shared_string_favorites"/>** - يسمح باستخدام [المفضلة](../../personal/favorites.md) كوجهة.
-- **<Translate android="true" ids="shared_string_markers"/>** - يسمح باختيار إحدى [علامات الخريطة](../../personal/markers.md) كنقطة وجهة.
-- **تبديل نقطة البداية والوجهة** &nbsp;&#8595;&#8593; - يسمح بتبديل نقاط *البداية* و*النهاية*.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![قائمة الملاحة iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
+</TabItem>
+
+</Tabs>
+
 أهم شيء لبدء الملاحة هو تحديد وجهتك. يمكن العثور على نقطة الوجهة باستخدام وظيفة [*البحث*](../../search/index.md#overview)، أو ببساطة على الخريطة. يمكنك أيضًا تعيين نقطة الهدف في [*قائمة الملاحة*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - يفتح [قائمة البحث](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - يفتح [قائمة البحث عن عنوان](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - يسمح لك بتحريك الخريطة وتكبيرها، ثم النقر على الموقع المطلوب. تظهر علامة في المكان المختار وتشير إلى الوجهة.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - يفتح الخريطة لاختيار نقطة وجهة بالنقر على الخريطة.
 - **<Translate android="true" ids="shared_string_favorites"/>** - يسمح باستخدام [المفضلة](../../personal/favorites.md) كوجهة.
 - **<Translate android="true" ids="shared_string_markers"/>** - يسمح باختيار إحدى [علامات الخريطة](../../personal/markers.md) كنقطة وجهة.
 - **تبديل نقطة البداية والوجهة** &nbsp;&#8595;&#8593; - يسمح بتبديل نقاط *البداية* و*النهاية*.
-</TabItem>
-
-</Tabs>
 
 
 ### الوجهات الوسيطة {#intermediate-destinations}
@@ -228,7 +205,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*أندرويد فقط*) - سيتم وضع جميع النقاط في الاتجاه العكسي.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. يمكنك إضافة وجهات وسيطة من هذه القائمة. عملية اختيار وجهة وسيطة على الخريطة هي نفسها لنقاط البداية والهدف.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. يمكنك إضافة وجهات وسيطة من هذه القائمة.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. ستتم إزالة جميع الوجهات الوسيطة من الخريطة.
 
@@ -299,7 +276,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-بمجرد تحديد نقاط البداية والنهاية، سيقوم التطبيق بإنشاء مسار بينهما باستخدام ملف تعريف نشط. [ملف تعريف التطبيق](../../personal/profiles.md) ومجموعة [الودجات](../../widgets/index.md) لن يتم تبديلها إلا بعد النقر على زر *البدء* للملاحة.
+بمجرد تحديد نقاط البداية والنهاية، سيقوم التطبيق بإنشاء مسار بينهما باستخدام ملف تعريف نشط. لن يتم تبديل [ملف تعريف التطبيق](../../personal/profiles.md) ومجموعة [الودجات](../../widgets/index.md) إلا بعد النقر على زر *البدء* للملاحة.
 
 - **انقر على ابدأ** لبدء الملاحة.
 - [إيقاف مؤقت](#pause--resume-navigation) للملاحة عند أخذ استراحة. (*أندرويد فقط*)

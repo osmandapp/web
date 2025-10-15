@@ -1,8 +1,8 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
-title:  البحث عن نقاط الاهتمام
+title:  Search POI
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,97 +16,97 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## نظرة عامة {#overview}
+## Overview {#overview}
 
-وظيفة [نقاط الاهتمام في OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) توفر الدقة والرؤية والراحة في العثور على الأماكن والمسارات والخدمات المهمة بالقرب من موقعك الحالي أو منطقة محددة على الخريطة.  
+[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places, routes and services near your current location or a selected area on the map.  
 
-يسمح شريط البحث بإدخال كلمات مفتاحية متعلقة بالأماكن التي تهتم بها. كما يقدم البحث عن POI قائمة مريحة مصنفة حسب [الفئة](#poi-search-by-categories) لمساعدتك على العثور بسرعة على ما تبحث عنه، ويسمح [الفلتر](#save-new-custom-filters) باختيار خصائص POI محددة لعرض النتائج ذات الصلة فقط.  
+The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#poi-search-by-categories) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
 
-[البحث المخصص](#customize-poi-search) يعزز وظيفة البحث من خلال السماح باختيار فئات وفئات فرعية متعددة. يمكنك حفظ الفلاتر المُنشأة للاستخدام المستقبلي، مما يجعل من السهل العثور بسرعة على نقاط الاهتمام التي تلبي معايير أو تفضيلات محددة. لمزيد من التفاصيل، راجع القسم الخاص بحفظ الفلاتر المخصصة [هنا](#save-new-custom-filters).  
+[Custom Search](#customize-poi-search) enhances search functionality by allowing multiple category and subcategory choices. You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).  
 
-يوفر OsmAnd عدة طرق للوصول إلى أداة البحث حيث يوجد قسم **البحث حسب الفئات**.
+OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
-- يُعرض [زر البحث](../widgets/map-buttons.md#search) دائمًا على الخريطة، ولمسه سيأخذك إلى [الشاشة العامة للأداة](#how-to-use)، حيث يمكنك العثور على علامة التبويب *الفئات*.
-- اذهب إلى القائمة الرئيسية *القائمة → البحث → علامة التبويب الفئات*.
-- عند التحضير لبدء مسار، اضغط على [*التنقل → تعيين الوجهة → حقل البحث → علامة التبويب الفئات*](../navigation/setup/route-navigation.md#set-target-point).  
-- اذهب إلى [*القائمة → تكوين الخريطة → طبقة POI → البحث*](../map/point-layers-on-map.md#points-of-interest-pois).
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
+- Go to the main *Menu → Search → Categories tab*.
+- When preparing to start a route, tap [*Navigation → Set destination → Search field → Categories tab*](../navigation/setup/route-navigation.md#set-target-point).  
+- Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
-## كيفية الاستخدام {#how-to-use}
+## How to Use {#how-to-use}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI في أندرويد](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![البحث عن POI في iOS](@site/static/img/search/poi_overlay_ios.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-*يمكنك العثور على جميع أنواع POI في OsmAnd هنا:* [رابط جيت هاب](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
+*All POI types in OsmAnd you can find here:* [github link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
-- **البحث عن نقاط الاهتمام (POI) حسب النوع والاسم**:
-    - يسمح لك بالبحث:
-       - عن نقاط الاهتمام (POI) القريبة أو فئات POI محددة.
-       - عن [مسارات OSM](../map/routes.md) حسب الاسم وحسب رقم المرجع.
-       - عن [الأماكن الشائعة (ويكيبيديا)](../map/map-context-menu.md#details).
-    - يمكن تصفية النتائج وترتيبها حسب الفئة أو المسافة أو التقييم.
+- **Point of Interest (POI) search by type and name**:
+    - Allows you to search:
+       - For nearby points of interest (POI) or specific categories of POI.
+       - For [OSM routes](../map/routes.md) by name and by ref number.
+       - For [Popular places (Wikipedia)](../map/map-context-menu.md#details).
+    - Filters and sorting results by category, distance, or rating are possible.
     
-- **البحث عن POIs على الخريطة** - عرض على الخريطة:
-    1. يمكنك اختيار الفئات المطلوبة من [القائمة](../map/point-layers-on-map.md#points-of-interest-pois) في *تكوين الخريطة → عرض طبقة POI...* والبحث حسب الأيقونات في الموقع المتوقع.
-    2. يمكنك إدخال استعلام بحث أولاً أو البدء في البحث عن POIs في *القائمة → البحث → الفئات* ثم النقر على **عرض على الخريطة** .
+- **Search POIs on the map** - Show on map:
+    1. You can select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
+    2. You can enter a search query first or can start searching for POIs in *Menu → Search → Categories* and then click **Show on map** .
 
-- **البحث حسب العلامة التجارية**:
-    - البحث عن مكان تجاري حسب اسم العلامة التجارية (مثل Audi أو Starbucks أو Aldi) مشابه جدًا للبحث عن POIs مختلفة حسب النوع، الفرق الرئيسي هو أن قائمة العلامات التجارية متوفرة داخل الخريطة وتخضع للتغيير مع كل تحديث. 
-    - يُعرف العلامة التجارية بواسطة علامة OSM [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) ويجمع OsmAnd أنواعًا محدودة من العلامات التجارية لكل خريطة بحد أقصى 1000 علامة تجارية لكل خريطة، ومع ذلك يضمن أن قائمة العلامات التجارية متطابقة عبر الخرائط المجاورة.
+- **Brand search**:
+    - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to changed during each updates. 
+    - Brand is defined by OSM tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) and OsmAnd collects limited types of brands per map with a maximum 1000 brands per map, however it makes sure that list of brands is aligned across the neighbor maps.
 
-![البحث عن POI في أندرويد](@site/static/img/search/brand_search_andr.png)
+![Search POI Android](@site/static/img/search/brand_search_andr.png)
 
 
 :::note
-لإنجاز بعض هذه المهام (تحديد العناوين، POI) ستحتاج إلى وجود ملف الخريطة المتجهية غير المتصلة. في البداية، يعتمد البحث على البيانات الموجودة على الخريطة في المنطقة المرئية على شاشة الجهاز. إذا لم تجد شيئًا، يقترح OsmAnd زيادة نصف قطر البحث.
+To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you find nothing, OsmAnd proposes to increase the search radius.
 :::  
 
 
-## البحث عن POI حسب الفئات {#poi-search-by-categories}
+## POI Search by Categories {#poi-search-by-categories}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_categoties_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن POI في iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تسمح أداة **البحث حسب الفئات** بالعثور بسرعة على الكائنات والأماكن والمسارات المصنفة في فئات مختلفة. لكل فئة مجموعة فريدة من الخصائص، وتحتوي هذه الأداة على فلاتر تسمح بتحسين نتائج البحث من خلال اختيار قيم مختلفة للخصائص الإضافية.
+The **Search by Categories** tool allows you to quickly find objects, places, and routes classified into different categories. Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
-كيفية عملها:
+How it works:
 
-- *اختيار الفئة* - تقوم باختيار الفئة التي تهتم بها، مثل المطاعم أو الفنادق أو المتاجر أو مسارات OSM أو الأماكن الشائعة في ويكيبيديا وغيرها، من قائمة مقترحة للفئات.
-- *فلاتر الخصائص* - بعد اختيار فئة، تعرض التطبيق خصائص إضافية يمكن استخدامها لتحسين البحث. على سبيل المثال، بالنسبة لفئة المطاعم، يمكنك اختيار فلاتر مثل نوع المطبخ (إيطالي، صيني، إلخ)، نطاق السعر، التقييم، وتوافر المواقف.
-- *تطبيق الفلاتر* - تقوم باختيار القيم المطلوبة في الفلاتر، ثم يطبق التطبيق هذه الفلاتر على نتائج البحث لعرض الخصائص التي تطابق الخصائص المحددة فقط.
-- *عرض النتائج* - بعد تطبيق الفلاتر، يعرض OsmAnd قائمة بمعلومات موجزة تطابق الفئة والخصائص المحددة.
+- *Category Selection* - You select the category you are interested in, such as restaurants, hotels, stores, OSM routes, popular Wikipedia places and others, from a suggested list of categories.
+- *Characteristic Filters* - After selecting a category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
+- *Applying Filters* - You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
+- *Displaying results* - After applying filters, the OsmAnd displays a list with brief information matching the category and characteristics set.
 
-الفوائد:
+Benefits:
 
-- *تخصيص المستخدم* - تسمح فلاتر الميزات بتخصيص عمليات البحث لتلبية احتياجاتهم وتفضيلاتهم المحددة.
-- *نتائج محسنة* - تساعد الفلاتر في تحسين نتائج البحث، مما يجعلها أكثر صلة ودقة.
-- *فئات متعددة* - تحتوي قاعدة بيانات OpenStreetMap على مجموعة واسعة من فئات POI، مما يسمح بالعثور على مواقع من أنواع وفئات مختلفة.
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
 
 <!--
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
@@ -116,188 +116,188 @@ OsmAnd starts to find names and categories of POI by entered words. First result
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
 -->
 
-### أنواع الفلاتر {#types-of-filters}
+### Types of Filters {#types-of-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_filter_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن POI في iOS](@site/static/img/search/search_poi_filter_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_filter_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-مع وظيفة **الفلتر**، يمكنك اختيار الخصائص الضرورية وبالتالي الحصول على قائمة تحتوي على الكائنات ذات الصلة فقط. لاستخدام الفلتر:
+With the **Filter** function, you can select the necessary characteristics and as a result get a list containing only relevant objects. To use the filter:
 
-- اختر الفئة التي تهتم بها من قائمة الفئات.
-- على الشاشة التي تفتح، اضغط على الأيقونة التي تعرض الفلتر. إنها موجودة أسفل حقل الإدخال، بجانب *عرض على الخريطة*.
-- في الفلتر، اختر نوع الخصائص.
+- Select the category you are interested in from the category list.
+- On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to *Show on the map*.
+- In the filter, select the type of characteristics.
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
-يمكن أن يتكون الفلتر من عدد كبير من العناصر، وجودها يعتمد على الفئة المحددة. لكل فئة عدد من الفلاتر الخاصة بها، منظمة في مجلدات حسب النوع. هناك إجمالي *22 فئة افتراضية*. بعضها مدرج هنا:
+A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of *22 default categories*. Some of them are listed here:
 
- 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [الإقامة](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) تشمل المنشآت التي توفر إقامة مؤقتة مثل الفنادق والموتيلات والشاليهات ومنازل الضيافة وأماكن التخييم. توفر هذه الأماكن وسائل الراحة والخدمات لإقامة مريحة أثناء السفر.  
-        تشمل *9* أنواع من الفلاتر: **ثلاجة** (لديها *2* قيم)، **تدفئة** (لديها *7* قيم)، **نوع الوصول إلى الإنترنت** (لديها *3* قيم)، **مرتبة** (لديها *2* قيم)، **نوع الدفع** (أكثر من *10* قيم)، **دش** (لديها *1* قيمة)، **التدخين** (لديها *6* قيم)، **تصنيف النجوم** (لديها *10* قيم)، **إمكانية الوصول للكراسي المتحركة** (لديها *4* قيم)، مفتوح الآن / مفتوح 24/7.
+ 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Accommodation](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) includes facilities that provide temporary lodging such as hotels, motels, hostels, guesthouses, and campgrounds. These places provide amenities and services for a comfortable stay while traveling.  
+        Includes *9* types of filters: **Fridge** (has *2* values), **Heating** (has *7* values), **Internet access type** (has *3* values), **Mattress** (has *2* values), **Payment type** (more than *10* values), **Shower** (has *1* value), **Smoking** (has *6* values), **Star rating** (has *10* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.
 
- 2. **المقهى والمطعم**. [المقهى](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) و[المطاعم](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) تمثل أماكن تقديم الطعام.  
-        تشمل *16* أنواع من الفلاتر: **طاولة تغيير** (لديها *3* قيم)، **قهوة** (لديها *2* قيم)، **المطبخ** (أكثر من *10* قيم)، **التوصيل** (لديها *1* قيمة)، **نظام غذائي** (لديها *8* قيم)، **طبق** (أكثر من *10* قيم)، **إعادة تعبئة مياه الشرب** (لديها *1* قيمة)، **دخول السيارات** (لديها *1* قيم)، **نوع الوصول إلى الإنترنت** (لديها *3* قيم)، **مصنع بيرة صغير** (لديها *1* قيمة)، **منتجات عضوية** (لديها *2* قيم)، **مقاعد خارجية** (لديها *1* قيمة)، **نوع الدفع** (أكثر من *10* قيم)، **التدخين** (لديها *6* قيم)، **للأخذ بعيدًا** (لديها *1* قيمة)، **إمكانية الوصول للكراسي المتحركة** (لديها *4* قيم)، مفتوح الآن / مفتوح 24/7.
+ 2. **Cafe and restaurant**. [Cafe](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) and [restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) represent places of food service.  
+        Includes *16* types of filters: **Changing table** (has *3* values), **Coffee** (has *2* values), **Cuisine** (more than *10* values), **Delivery** (has *1* value), **Diet** (has *8* values), **Dish** (more than *10* values), **Drinking water refill** (has *1* value), **Drive-in** (has *1* values), **Internet access type** (has *3* values), **Microbrewery** (has *1* value), **Organic products** (has *2* values), **Outdoor seating** (has *1* value), **Payment type** (more than *10* values), **Smoking** (has *6* values), **Takeaway** (has *1* value), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.
 
- 3. **محطة شحن**. [محطة الشحن](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) هي منشأة بنية تحتية حيث يمكن لأصحاب السيارات الكهربائية إعادة شحن سياراتهم أو دراجاتهم النارية أو غيرها من المركبات الكهربائية. توفر هذه النقاط شواحن واتصالات مناسبة لتوفير الطاقة للبطاريات.
-        تشمل *35* أنواع من الفلاتر: **وصول الدراجات** (لديها *1* قيمة)، **وصول الحافلات** (لديها *1* قيمة)، **وصول HGV** (لديها *5* قيم)، **وصول السيارات** (لديها *1* قيمة)، **وصول الدراجات النارية الصغيرة** (لديها *1* قيمة)، **التحقق عبر التطبيق** (لديها *1* قيمة)، **التحقق عبر بطاقة الشريحة** (لديها *1* قيمة)، **التحقق بدون تلامس** (لديها *1* قيمة)، **التحقق عبر المفتاح** (لديها *1* قيمة)، **التحقق مطلوب** (لديها *1* قيمة)، **التحقق عبر مكالمة هاتفية** (لديها *1* قيمة) **التحقق عبر رسالة قصيرة** (لديها *1* قيمة)، **الرسوم** (لديها *2* قيم)، **نوع الوصول إلى الإنترنت** (لديها *3* قيم)، **نوع الوصول إلى الإنترنت** (لديها *3* قيم)، **إمكانية الوصول للكراسي المتحركة** (لديها *4* قيم)، مفتوح الآن / مفتوح 24/7، وغيرها.  
+ 3. **Charging station**. A [charging station](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) is an infrastructure facility where owners of electric vehicles can recharge their cars, motorcycles or other electric vehicles. These points provide chargers and appropriate connections to provide energy to vehicle batteries.
+        Includes *35* types of filters: **Bicycle access** (has *1* value), **Bus access** (has *1* value), **HGV access** (has *5* values), **Motorcar access** (has *1* value), **Scooter access** (has *1* value), **Auth by app** (has *1* value), **Auth by chip card** (has *1* value), **Contactless auth** (has *1* value), **Auth by key** (has *1* value), **Auth by required** (has *1* value), **Auth by phone call** (has *1* value) **Auth by short message** (has *1* value), **Fee** (has *2* values), **Internet access type** (has *3* values), **Internet access type** (has *3* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7, and other.  
 
- 4. **متجر مريح وسوبرماركت**. [متجر مريح](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) و[السوبرماركت](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) تمثلان منشآت تجزئة.
-        تشمل *13* أنواع من الفلاتر: **شراء بالجملة** (لديها *2* قيم)، **سحب النقد** (لديها *5* قيم)، **طاولة تغيير** (لديها *3* قيم)، **قهوة** (لديها *2* قيم)، **التوصيل** (لديها *1* قيمة)، **نظام غذائي** (لديها *8* قيم)، **آيس كريم** (لديها *1* قيمة)، **منتجات عضوية** (لديها *2* قيم)، **نوع الدفع** (أكثر من *10* قيم)، **فلتر اليد الثانية** (لديها *2* قيم)، **الدفع الذاتي** (لديها *2* قيم)، **إمكانية الوصول للكراسي المتحركة** (لديها *4* قيم)، مفتوح الآن / مفتوح 24/7.
+ 4. **Convenience store and supermarket**. [Convenience store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) and [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) represent retail facilities.
+        Includes *13* types of filters: **Bulk purchase** (has *2* values), **Cash withdrawal** (has *5* values), **Changing table** (has *3* values), **Coffee** (has *2* values), **Delivery** (has *1* value), **Diet** (has *8* values), **Ice cream** (has *1* value), **Organic products** (has *2* values), **Payment type** (more than *10* values), **Second Hand Filter** (has *2* values), **Self checkout** (has *2* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.
 
- 5. **<Translate android="true" ids="poi_filter_emergency"/>**. [الطوارئ](https://wiki.openstreetmap.org/wiki/Key:emergency) تشمل المنشآت والمواقع المرتبطة بخدمات الطوارئ مثل المستشفيات ومراكز الشرطة ومحطات الإطفاء ومراكز الإسعاف الطبي الأولي.  
-        لا تحتوي على أي فلاتر.
+ 5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Emergency](https://wiki.openstreetmap.org/wiki/Key:emergency) includes facilities and locations associated with emergency services such as hospitals, police stations, fire stations, and first aid medical centers.  
+        Does not contain any filters.
 
- 6. **محطة وقود**. [محطة الوقود](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel)، والمعروفة أيضًا باسم محطة التعبئة أو محطة البنزين أو محطة الغاز وجراج البنزين. إنها المنشأة من نوع التجزئة حيث يمكن إعادة تعبئة المركبات النارية.  
-        تشمل *13* أنواع من الفلاتر: **غسيل السيارات** (لديها *2* قيم)، **سحب النقد** (لديها *5* قيم)، **هواء مضغوط** (لديها *1* قيم)، **نوع الوقود (طيران)** (لديها أكثر من *20* قيم)، **بطاقات الوقود** (لديها *5* قيم)، **نوع الدفع** (لديها أكثر من *20* قيم)، **الدفع الذاتي** (لديها *2* قيم)، **وصول الدراجات الثلجية** (لديها *3* قيم)، **غرفة راحة** (أكثر من *1* قيم)، **مكنسة كهربائية** (لديها *1* قيم)، **موزع وقود آلي** (لديها *1* قيم)، **إمكانية الوصول للكراسي المتحركة** (لديها *4* قيم)، مفتوح الآن / مفتوح 24/7.  
+ 6. **Filling station**. A [fuel station](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), also known as a filling station, petrol station, gas station and petrol garage. It is the retail-type facility where motor vehicles can be refueled.  
+        Includes *13* types of filters: **Car wash** (has *2* values), **Cash withdrawal** (has *5* values), **Compressed air** (has *1* values), **Fuel type (avia)** (has more than *20* values), **Fuel cards** (has *5* value), **Payment type** (has more than *20* values), **Self checkout** (has *2* value), **Snowmobile access** (has *3* values), **Rest room** (more than *1* values), **Vacuum cleaner** (has *1* values), **Automatic fuel dispenser** (has *1* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.  
 
- 7. **المالية**. [المالية](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) تستخدم لمكاتب الشركات في القطاع المالي.  
-        تشمل *5* أنواع من الفلاتر.  
+ 7. **Finance**. [Finance](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) used for offices of companies in the financial sector.  
+        Includes *5* types of filters.  
 
- 8. **الطعام**. [الطعام](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) يشمل جميع الأماكن التي تقدم الطعام والمشروبات.  
-        تشمل *24* أنواع من الفلاتر.
+ 8. **Food**. [Food](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) includes all places delivering food and beverages.  
+        Includes *24* types of filters.
 
- 9. **الرعاية الصحية**. [الرعاية الصحية](https://wiki.openstreetmap.org/wiki/Healthcare)  تشمل الخدمات التي يقدمها متخصصون مختلفون في أنواع مختلفة من المنشآت.  
-        تشمل *13* أنواع من الفلاتر.
+ 9. **Healthcare**. [Healthcare](https://wiki.openstreetmap.org/wiki/Healthcare)  include services provided by different professionals in different types of facilities.  
+        Includes *13* types of filters.
 
- 10. **الترفيه**. [الترفيه](https://wiki.openstreetmap.org/wiki/Category:Leisure) يشمل أنواعًا مختلفة من الأماكن والمنشآت للترفيه.  
-        تشمل *15* أنواع من الفلاتر.
+ 10. **Leisure**. [Leisure](https://wiki.openstreetmap.org/wiki/Category:Leisure) includes various types of places and facilities for entertainment.  
+        Includes *15* types of filters.
 
- 11. **الملاحة البحرية**. تشمل POIs المتعلقة بأنواع الملاحة البحرية.  
-        لا تحتوي على أي فلاتر.
+ 11. **Nautical**. Includes POIs related to Nautical types.  
+        Does not contain any filters.
 
- 12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. تشمل POIs التي قريبة منك.  
-        تشمل *216* أنواع من الفلاتر.
+ 12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Includes POIs that are close to you.  
+        Includes *216* types of filters.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. [المواقف](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) تشمل المنشآت التي يستخدمها الجمهور أو العملاء أو المستخدمون المصرح لهم لوقوف المركبات مثل السيارات والشاحنات، والمعروفة عادة باسم موقف سيارات (الإنجليزية البريطانية) أو موقف سيارات (الإنجليزية الأمريكية).  
-        تشمل *34* أنواع من الفلاتر.
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) includes facilities used by the public, customers, or other authorized users to park vehicles such as cars and trucks, commonly known as a car park (British English) or parking lot (American English).  
+        Includes *34* types of filters.
 
- 14. **النقل الشخصي**. جميع [أنواع المركبات](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) قد تكون في حوزتك.  
-        تشمل *38* أنواع من الفلاتر.
+ 14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) may be in the possession of you.  
+        Includes *38* types of filters.
 
- 15. **الأماكن الشائعة (ويكيبيديا)**. للبحث في هذه الفئة، تحتاج إلى تنزيل [خريطة ويكيبيديا](../plugins/wikipedia.md#overview) للمنطقة التي تهتم بها.  
-        لا تحتوي على أي فلاتر.
+ 15. **Popular places (Wikipedia)**. To search in this category, you need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in.  
+        Does not contain any filters.
 
- 16. **الوصول الخاص**.  
-        تشمل *6* أنواع من الفلاتر.
+ 16. **Private access**.  
+        Includes *6* types of filters.
 
- 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. إنها نظام نقل مصمم لنقل الأشخاص لأغراض عامة، متاح لجميع السكان والزوار في مدينة أو منطقة.  
-        تشمل *9* أنواع من الفلاتر.
+ 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
+        Includes *9* types of filters.
 
- 18. **المسارات**. تشمل [مسارات OSM](../map/routes.md) لأنواع مختلفة من الأنشطة.  
-        تشمل *14* أنواع من الفلاتر: **نقطة تفتيش**، **عقدة شبكة الدراجات**، **عقدة شبكة المشي**، **شبكة المسارات (الدراجات)**، **شبكة المسارات (المشي)**، **فئة نقطة المسار**، **رياضة الجو**، **الدراجات**، **القيادة**، **القدم**، **الدراجات النارية**، **مسارات أخرى**، **رياضة المياه**، **رياضة الشتاء**.
+ 18. **Routes**. Includes [OSM routes](../map/routes.md) for various types of activities.  
+        Includes *14* types of filters: **Checkpoint**, **Cycling network node**, **Hiking network node**, **Routes network (cycling)**, **Routes network (hiking)**, **Route point category**, **Air Sports**, **Cycling**, **Driving**, **Foot**, **Motorcycling**, **Other routes**, **Water sports**, **Winter sports**.
 
- 19. **السياحة**. إنها نشاط يزور فيه الناس أماكن أو مواقع مثيرة للاهتمام للتعرف عليها واستمتاع بجمالها أو تاريخها أو أهميتها.  
-        تشمل *8* أنواع من الفلاتر.
+ 19. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
+        Includes *8* types of filters.
 
- 20. **الرياضة**. تشمل المناطق لأنشطة الرياضة.  
-        تشمل *11* أنواع من الفلاتر.
+ 20. **Sport**. Includes areas for sports activities.  
+        Includes *11* types of filters.
 
- 21. **المتجر**. [المتجر](https://wiki.openstreetmap.org/wiki/Key:shop) يشير إلى مجموعة متنوعة من المؤسسات والأعمال التي تقدم سلعًا أو خدمات متنوعة للبيع، مثل متاجر البقالة ومتاجر الملابس ومتاجر الإلكترونيات وغيرها.  
-        تشمل *36* أنواع من الفلاتر.
+ 21. **Store**. [Store](https://wiki.openstreetmap.org/wiki/Key:shop) refers to a variety of establishments and businesses that offer various goods or services for sale, such as grocery stores, clothing stores, electronics stores, and others.  
+        Includes *36* types of filters.
 
- 22. **السياحة**. [السياحة](https://wiki.openstreetmap.org/wiki/Key:tourism) تشمل الأماكن والأشياء ذات الاهتمام الخاص للسياح بما في ذلك الأماكن التي يجب رؤيتها والأماكن التي يمكن الإقامة فيها والأشياء والأماكن التي تقدم معلومات ودعمًا للسياح.  
-        تشمل *32* أنواع من الفلاتر.
+ 22. **Tourism**. [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) includes places and things of specific interest to tourists including places to see, places to stay, and things and places providing information and support to tourists.  
+        Includes *32* types of filters.
 
- 23. **المياه**. مصادر [مياه الشرب](https://wiki.openstreetmap.org/wiki/Key:drinking_water) التي أنشأها الإنسان أو رتبها.  
-        لا تحتوي على أي فلاتر.
+ 23. **Water**. Sources of [drinking water](https://wiki.openstreetmap.org/wiki/Key:drinking_water) created or arranged by man.  
+        Does not contain any filters.
 
 
-### إعادة ترتيب الفئات {#rearrange-categories}
+### Rearrange Categories {#rearrange-categories}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_rearrange_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_rearrange_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن POI في iOS](@site/static/img/search/search_poi_rearrange_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_rearrange_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تسمح ميزة إعادة ترتيب الفئات بسرد الفئات التي تحتاجها فقط وترتيبها بالترتيب الذي تشعر بالراحة في استخدامه.
+The Rearrange Categories feature allows you to list only the categories you need and arrange them in the order you are most comfortable using them.
 
-الوصف وكيفية الاستخدام:
+Description and how to use:
 
-- في البداية، *تُرتب القائمة أبجديًا.* تُضاف الفئات المُنشأة أيضًا بالترتيب الأبجدي.
-- تُجرى التغييرات في قائمة الفئات لكل ملف تعريف على حدة.
-- انقل الفئات بسحبها وإسقاطها في الموضع الصحيح في القائمة.
-- *لإخفاء* الفئات غير الضرورية، اضغط على أيقونة **الطرح**.
-- **متاح**. يمكن إعادة الفئات *المخفية* سابقًا إلى القائمة المعروضة بالنقر على أيقونة **الجمع**.
-- استخدم **إعادة تعيين** إلى الافتراضي لإعادة القائمة إلى الحالة المُعدة مسبقًا.
-- يمكن حذف الفئات المُنشأة باستخدام [البحث المخصص](#customize-poi-search) أو [الفلاتر](#save-new-custom-filters) باستخدام أيقونة **الحذف**.  
+- Initially, *the list is sorted alphabetically.* Created categories are also added in alphabetical order.
+- Changes in the list of categories are made for each profile separately.
+- Move categories by dragging and dropping them to the right position in the list.
+- *To hide* unnecessary categories, tap the **minus** icon.
+- **Available**. Previously *Hidden* categories can be returned to the displayed list by tapping the **plus** icon.
+- Use the **Reset** to default button to return the list to the preset state.
+- Categories created with [Custom Search](#customize-poi-search) or [Filters](#save-new-custom-filters) can be deleted using the **Delete** icon.  
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_rearrange_del_andr.png)  
+![Search POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
 
-### البحث عبر الإنترنت {#online-search}
+### Online Search {#online-search}
 
 <InfoAndroidOnly />
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_online_2_andr.png)  
+![Search POI Android](@site/static/img/search/search_online_2_andr.png)  
 
-يسمح **البحث عبر الإنترنت** بالعثور على المواقع والعناوين ونقاط الاهتمام في الوقت الفعلي. يستخدم OsmAnd [Nominatim](https://nominatim.openstreetmap.org/ui/search.html)، وهو مُحوّل موقعي عبر الإنترنت تم تطويره بواسطة OpenStreetMap يترجم استفسارات النصوص للمستخدمين إلى إحداثيات جغرافية وعكس ذلك.  
+**Online Search** allows finding locations, addresses, and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back.  
 
-يشمل البحث عبر الإنترنت الميزات التالية:
+Online Search includes the following features:
 
-1. **البحث حسب الموقع** - يمكنك إدخال اسم مدينة أو شارع أو حي أو موقع آخر وسيقدم OsmAnd نتائج تطابق الاستعلام.
-2. **التحويل الموقعي** - يحول البحث عبر الإنترنت استفسارات النصوص إلى إحداثيات جغرافية، مما يسمح بتحديد الموقع بدقة.
-3. **التحويل الموقعي العكسي** - يمكنك إدخال إحداثيات جغرافية وسيعيد البحث الموقع المقابل كاسم مدينة أو اسم شارع أو مكان على الخريطة.
-4. **البحث حسب نقاط الاهتمام** - يسمح بالبحث عن نقاط مختلفة حسب الاسم أو الفئة.
+1. **Search by location** - You can enter the name of a city, street, neighborhood, or other location and OsmAnd will provide results matching the query.
+2. **Geocoding** - Online search converts your text queries into geographic coordinates, allowing precise location.
+3. **Reverse geocoding** - You can enter geographic coordinates and Search will return the corresponding location as a city name, street name, or place on the map.
+4. **Search by Points of Interest** - Allows you to search for different points by name or category.
 
-استخدام البحث عبر الإنترنت:
+Use of Online Search:
 
-- يضمن البحث عبر الإنترنت أن البيانات محدثة ومتاحة التحديثات، حيث يتم تحديث الخدمة باستمرار ويستخدم مصادر بيانات مفتوحة.
-- يوفر تغطية واسعة للأماكن والكائنات، مما يسمح بالعثور على أماكن الاهتمام في مناطق مختلفة من العالم.
-- عمليات البحث عبر الإنترنت في الوقت الفعلي، مما يوفر وصولًا سريعًا إلى نتائج البحث.
-- مفيد في المدن وعلى الطرق السريعة مع تغطية إنترنت جيدة.
-- البحث عبر الإنترنت مريح للاستخدام إذا لم تكن هناك خرائط للمنطقة وإذا كان من المستحيل تنزيلها.
-- *يتطلب اتصال إنترنت مستمر ومستقر.*  
+- Online search ensures that data is up-to-date and updates are available, as the service is constantly updated and uses open data sources.
+- It provides a wide coverage of places and objects, allowing you to find places of interest in different regions of the world.
+- Online searches are real-time, providing quick access to search results.
+- Useful in cities and on highways with good Internet coverage.
+- Online search is convenient to use if there are no maps of the region and if it is impossible to download them.
+- *Requires a constant and stable Internet connection.*  
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_online_increase2_andr.png)  
+![Search POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
-لتحسين النتائج، قبل استخدام أداة البحث، قم بتكبير الخريطة للاقتراب من المكان الذي تحتاج إلى العثور على موقع محدد. وعند البحث، يمكنك **زيادة نصف قطر البحث** للعثور على أماكن أبعد عن موقعك. عند البحث غير المتصل، إذا لم تكن النتائج المطلوبة متاحة، يقترح OsmAnd استخدام البحث عبر الإنترنت.  
+To improve results, before using the Search tool, zoom in on the map to get closer to where you need to find a specific location. And while searching, you can **increase the search radius** to find places that are farther away from your location. When searching offline, if the required results are not available, OsmAnd suggests using the online search.  
 
-يمكنك العثور على معلومات حول التنقل عبر الإنترنت في مقالة [التوجيه عبر الإنترنت](../navigation/routing/online-routing.md).
+You can find out information about Online Navigation in [Online routing](../navigation/routing/online-routing.md) article.
 
 
 
-## تخصيص البحث عن POI {#customize-poi-search}
+## Customize POI Search {#customize-poi-search}
 
-تخصيص البحث عن POI هو ميزة بحث متقدمة تسمح بالعثور على POIs من فئات مختلفة ودمجها للحصول على بحث أكثر دقة وشخصية. على عكس البحث القياسي عن POI، الذي يقتصر على بعض الفئات المحددة مسبقًا، يوفر البحث المخصص عن POI المرونة في اختيار ودمج أنواع مختلفة من POIs.  
+POI Search Customization is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
 
-على سبيل المثال، يمكنك البحث عن المطاعم والصيدليات في وقت واحد للعثور على المكان الأقرب لتناول الطعام ثم أخذ الدواء. أو البحث عن أقرب محطة وقود وخدمة سيارات عندما تواجه مشكلة في سيارتك.  
+For example, you can search restaurants and pharmacies simultaneously to find the nearest place to dine and then take your medicine. Or search for the nearest gas station and car service when you have a problem with your car.  
 
-هذه الوظيفة مفيدة بشكل خاص في حالات مختلفة:  
+This functionality is especially useful in various cases:  
 
-- *السفر*. أثناء السفر، باستخدام البحث المخصص يمكنك العثور بسرعة على أماكن اهتمام مختلفة ودمجها لإنشاء مسار مثالي.
-- *الطوارئ*. إذا كنت بحاجة إلى العثور على عدة أنواع من الخدمات بسرعة، يمكنك استخدام البحث المخصص عن POI للحصول على جميع المعلومات التي تحتاجها.
-- *البحث عن خدمات قريبة*. يسمح البحث المخصص بدمج فئات POI المختلفة للبحث السهل إذا كنت بحاجة إلى العثور على عدة أنواع من الخدمات في حي معين أو في قسم معين من المسار.
+- *Travel*. When traveling, using custom search you can quickly find different places of interest and combine them to create an optimal route.
+- *Emergencies*. If you need to find several types of services quickly, you can use a custom POI search to get all the information you need.
+- *Search for nearby services*. Custom Search allows you to combine different POI categories for easy search if you need to find several types of services in a certain neighborhood or on a certain section of the route.
 
-### فلتر POI المخصص {#custom-poi-filter}
+### Custom POI Filter {#custom-poi-filter}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث المخصص في أندرويد](@site/static/img/search/search_custom_filter_andr.png)   ![البحث المخصص في أندرويد](@site/static/img/search/search_custom_filter_second_andr.png)
+![Custom search Android](@site/static/img/search/search_custom_filter_andr.png)   ![Custom search Android](@site/static/img/search/search_custom_filter_second_andr.png)
 
 </TabItem>
 
@@ -307,71 +307,71 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 ![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
 -->
 
-![فلتر POI المخصص في iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![أنواع POI المخصصة في iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
+![Custom POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-يشمل *فلتر POI المخصص* مجموعات من فئات الخدمات المؤلفة من قيم ذات صلة. يسمح OsmAnd لك بجمع ودمج أنواع POI المطلوبة من فئة واحدة أو أكثر مقترحة.  
+*Custom POI filter* includes sets of amenity categories consisting of relevant values. OsmAnd allows you to collect and combine the required POI types from one or more suggested categories.  
 
-لإنشاء فلاتر مخصصة للعثور على أماكن على الخريطة، اختر الفئات والفئات الفرعية ذات الصلة. يمكنك [حفظ](#save-new-custom-filters) هذه الفلاتر للاستخدام لاحقًا أو [تحرير](#edit-an-existing-filter)ها إذا لزم الأمر. بديلًا عن ذلك، يمكنك عرض البيانات المفلترة دون حفظ بالنقر على زر *عرض*. ومع ذلك، لاحظ أنه إذا لم تحفظ الفلاتر، سيتم إلغاء جميع الاختيارات بمجرد تبديل عمليات البحث أو الخروج من أداة البحث.
+To create custom filters for finding places on the map, select relevant categories and subcategories of interest. You can [save](#save-new-custom-filters) these filters for later use or [edit](#edit-an-existing-filter) them if needed. Alternatively, you can view the filtered data without saving by tapping the *Show* button. However, note that if you don't save the filters, all selections will be canceled once you switch searches or exit the search tool.
 
-- تحتوي كل فئة خدمات على قائمة بالقيم العامة المتاحة لأنواع POI.
-- لديك الخيار لاختيار أو إلغاء اختيارها بشكل فردي بالنقر على حقل النوع الذي تهتم به.
-- *اختيار الكل* - للقيام بذلك، اختر زر التبديل.
-- تحسين القائمة باستبعاد غير الضروري - ابدأ بكتابة الاسم المقترح في حقل *البحث عن أنواع POI*.  
+- Each amenity category contains a list of available generic values for POI types.
+- You have the option to select or deselect them individually by tapping the field of the type you are interested in.
+- *Select all* - To do this, select the toggle button.
+- Refine the list by excluding unnecessary ones - Start typing the suggested name in the *Search for POI types* field.  
 
-### الفئات وفلاترها {#categories-and-their-filters}
+### Categories and their Filters {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. تشمل 25 نوعًا: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
-2. **عيد الميلاد**. تشمل 5 أنواع من الفلاتر:  
-    *حدث عيد الميلاد، سوق عيد الميلاد، هرم عيد الميلاد، متجر عيد الميلاد، شجرة عيد الميلاد*.
+2. **Сhristmas**. Includes 5 types types of filters:  
+    *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. تشمل 16 نوعًا: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 16 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
-4. **<Translate android="true" ids="amenity_type_emergency"/>**. تشمل 14 أنواع من الفلاتر.  
+4. **<Translate android="true" ids="amenity_type_emergency"/>**. Includes 14 types of filters.  
 
-5. **بنية الطوارئ**. تشمل 12 أنواع من الفلاتر.  
+5. **Emergency infrastructure**. Includes 12 types of filters.  
 
-6. **<Translate android="true" ids="amenity_type_finance"/>**. تشمل 12 أنواع من الفلاتر.
+6. **<Translate android="true" ids="amenity_type_finance"/>**. Includes 12 types of filters.
 
-7. **الطعام**. تشمل 12 أنواع من الفلاتر.  
+7. **Food**. Includes 12 types of filters.  
 
-8. **المخاطر**. تشمل 5 أنواع: *مخاطر الانهيار الثلجي، مخاطر التآكل، مخاطر الفيضان، مخاطر النووي، طريق زلق*.  
+8. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*.  
 
-9. **<Translate android="true" ids="amenity_type_healthcare"/>**. تشمل 31 أنواع من الفلاتر.
+9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Includes 31 types of filters.
 
-10. **<Translate android="true" ids="amenity_type_leisure"/>**. تشمل 148 أنواع من الفلاتر.  
+10. **<Translate android="true" ids="amenity_type_leisure"/>**. Includes 148 types of filters.  
 
-11. **<Translate android="true" ids="amenity_type_man_made"/>**. تشمل 121 أنواع من الفلاتر.  
+11. **<Translate android="true" ids="amenity_type_man_made"/>**. Includes 121 types of filters.  
 
-12. **<Translate android="true" ids="amenity_type_military"/>**. تشمل 7 أنواع: *منطقة خطر، مخبأ عسكري، قاعدة بحرية عسكرية، مكتب عسكري، منطقة عسكرية، منطقة عسكرية، موقع انفجار نووي*.  
+12. **<Translate android="true" ids="amenity_type_military"/>**. Includes 7 types: *Danger area, Military bunker, Military naval base, Military office, Military range, Military zone, Nuclear explosion site*.  
 
-13. **<Translate android="true" ids="amenity_type_natural"/>**. تشمل 50 أنواع من الفلاتر.  
+13. **<Translate android="true" ids="amenity_type_natural"/>**. Includes 50 types of filters.  
 
-14. **الملاحة البحرية**. تشمل 41 أنواع من الفلاتر.  
+14. **Nautical**. Includes 41 types of filters.  
 
-15. **<Translate android="true" ids="amenity_type_office"/>**. تشمل 39 أنواع من الفلاتر.
+15. **<Translate android="true" ids="amenity_type_office"/>**. Includes 39 types of filters.
 
-16. **الأماكن الشائعة (ويكيبيديا)**. تشمل 1 نوع: *ويكيبيديا*.
+16. **Popular places (Wikipedia)**. Includes 1 type: *Wikipedia*.
 
-17. **الوصول الخاص**. لا تشمل أي فلاتر.
+17. **Private access**. Does not include any filters.
 
-18. **المسارات**. تشمل 15 أنواع من الفلاتر.  
+18. **Routes**. Includes 15 types of filters.  
 
-19. **الخدمة**. تشمل 111 أنواع من الفلاتر.
+19. **Service**. Includes 111 types of filters.
 
-20. **<Translate android="true" ids="amenity_type_sport"/>**. تشمل 119 أنواع من الفلاتر.  
+20. **<Translate android="true" ids="amenity_type_sport"/>**. Includes 119 types of filters.  
 
-21. **المتجر**. تشمل 156 أنواع من الفلاتر.  
+21. **Store**. Includes 156 types of filters.  
 
-22. **<Translate android="true" ids="amenity_type_tourism"/>**. تشمل 103 أنواع من الفلاتر.
+22. **<Translate android="true" ids="amenity_type_tourism"/>**. Includes 103 types of filters.
 
-23. **النقل**. تشمل 97 أنواع من الفلاتر.  
+23. **Transportation**. Includes 97 types of filters.  
 
-24. **محدد من قبل المستخدم**. تشمل 1 نوع: *رمز بريدي آخر محدد من قبل المستخدم*.
+24. **User defined**. Includes 1 type: *User Defined Other Postcode*.
 
 <!--
 :::note since OsmAnd 5.0 for Android
@@ -382,107 +382,110 @@ Available for search:
 :::
 -->
 
-### حفظ فلاتر مخصصة جديدة {#save-new-custom-filters}
+### Save New Custom Filters {#save-new-custom-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 
-![حفظ POI المخصص في أندرويد](@site/static/img/search/custom_poi_save_android.png) ![حفظ POI المخصص في أندرويد](@site/static/img/search/custom_poi_save_1_android.png)
+![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![حفظ POI المخصص في iOS](@site/static/img/search/custom_poi_save_2_ios.png)
+![Custom POI save iOS](@site/static/img/search/custom_poi_save_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-لحفظ فلتر مخصص، اختر أنواع الفلتر، ثم:
+To **save** a custom filter, select filter types, and then:
 
-- اضغط على زر *عرض* واختر زر *حفظ* لـ iOS أو الزر مع *الأيقونة التي تشير إلى إجراء الحفظ* لأندرويد.
-- أدخل اسمًا للفئة الجديدة.
-- سيظهر فلترك في قائمة علامة التبويب *الفئات* في أداة البحث.  
+- Tap the *Show* button and select the *Save* button for iOS or the button with the *icon indicating the save action* for Android.
+- Enter a name for the new category.
+- Your filter will appear in the *Categories tab* list in the Search tool.  
 
-طريقة أخرى لحفظ:
+Another way to **save**:
 
-- اختر *[الفئة](#poi-search-by-categories) → [أيقونة الفلتر](#types-of-filters) →* اختر *أنواع* الخصائص *→ قائمة النقاط الثلاث → حفظ الفلتر*.
+- Select *[category](#poi-search-by-categories) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ three-dot menu → Save filter*.
 
 
-### تحرير فلتر موجود {#edit-an-existing-filter}
+### Edit an Existing Filter {#edit-an-existing-filter}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![حذف POI المخصص في أندرويد](@site/static/img/search/custom_poi_delete_5_andr.png)
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![حذف POI المخصص في iOS](@site/static/img/search/custom_poi_delete_4_ios.png)
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_4_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-من الشاشة الرئيسية:
+From the main screen:
 
-- اضغط على زر *العدسة المكبرة* في الزاوية العلوية اليسرى من شاشة الجهاز لفتح قائمة *البحث*.
-- اختر علامة التبويب *الفئات*.
-- اختر فئة مخصصة محفوظة، وستظهر شاشة نتائج البحث.
-- اضغط على أيقونة *الفلتر* بجانب *عرض على الخريطة* لفتح شاشة *الفلاتر*.
-- اضغط على *قائمة النقاط الثلاث*.
-- في القائمة المنسدلة، اختر **تحرير الفلتر**.
-- لحفظ بحث POI المخصص بعد التحرير:  
-    - اختر فئات POI وأنواع الفلاتر لها *→* اضغط *عرض → قائمة النقاط الثلاث → حفظ باسم →* أدخل اسم فلتر جديد أو *احفظ* التغييرات في الحالية.
+- Tap the *Magnifying Glass* button in the upper left corner of the device screen to open the *Search* menu.
+- Select the *Categories* tab.
+- Select a saved custom category, and the search results screen appears.
+- Tap the *Filter* icon next to *Show on Map* to open the *Filters* screen.
+- Tap the *three-dot menu*.
+- In the drop-down menu, select **Edit filter**.
+- To save a custom POI search after editing:  
+    - Select POI categories and filter types for them *→* tap *Show → three-dot menu → Save As →* enter a new filter name or *save* changes to the current one.
 
 
-### حذف فلتر POI المخصص {#delete-custom-poi-filter}
+### Delete Custom POI Filter {#delete-custom-poi-filter}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![حذف POI المخصص في أندرويد](@site/static/img/search/custom_poi_delete_4_andr.png)
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![حذف POI المخصص في iOS](@site/static/img/search/custom_poi_delete_2_ios.png)
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكنك حذف الفئات التي تم إنشاؤها باستخدام الفلاتر أو البحث المخصص فقط.
+You can only delete categories that were created using filters or custom search.
 
-- اذهب إلى علامة التبويب [الفئات](#poi-search-by-categories) واختر المطلوبة.
-- في الحقل بجانب *عرض على الخريطة*، اضغط على الأيقونة التي تمثل *الفلتر*.
-- في قائمة *الفلاتر*، اضغط على *قائمة النقاط الثلاث* ( &#8285; ) الموجودة في الزاوية العلوية اليمنى من الشاشة.
-- اختر **حذف الفلتر**.
-- ***لا يمكن التراجع عن الحذف.***
-
-
-### حذف الفئات المخصصة (iOS) {#delete-custom-categories-ios}
-
-![حذف POI المخصص في iOS](@site/static/img/search/custom_poi_delete_3_ios.png)  
-
-خيار إضافي فقط لتطبيق iOS هو **حذف الفئات المخصصة**.
-
-- هذا العنصر في نهاية قائمة علامة التبويب *الفئات*.
-- اختر الفئات غير الضرورية عنصرًا عنصرًا أو *اختيار الكل*.
-- اضغط على زر **حذف**.  
+- Go to the [Categories](#poi-search-by-categories) tab and select the required one.
+- In the field next to *Show on Map*, tap the icon representing the *filter*.
+- In the *Filters* menu, tap the *three-dot menu* ( &#8285; ) located in the upper right corner of the screen.
+- Select **Delete Filter**.
+- ***You cannot undo the deletion.***
 
 
-## المقالات ذات الصلة {#related-articles}
+### Delete Custom Categories (iOS) {#delete-custom-categories-ios}
 
-- [البحث عن الكل](./search-all.md)
-- [البحث عن العنوان](./search-address.md)
-- [تاريخ البحث](./search-history.md)
-- [البحث عن الإحداثيات](./search-coordinates.md)
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_3_ios.png)  
+
+An additional option only for the iOS app is **Delete Custom Categories**.
+
+- This item is at the end of the *Categories* tab list.
+- Select the unneeded categories by item one by one or *Select all*.
+- Tap **Delete** button.  
+
+
+## Related Articles {#related-articles}
+
+- [Search All](./search-all.md)
+- [Search Address](./search-address.md)
+- [Search History](./search-history.md)
+- [Search Coordinates](./search-coordinates.md)
+
+
+
