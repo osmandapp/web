@@ -1,5 +1,5 @@
 ---
-source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
+source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
 sidebar_position: 5
 title:  Schémas de couleurs
 ---
@@ -18,13 +18,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Fonctionnalité payante
 
-Les schémas de couleurs font partie des fonctionnalités payantes [Maps+](../purchases/index.md) et Pro <ProFeature />.  
+Les schémas de couleurs font partie des fonctionnalités payantes [Maps+](../purchases/index.md) et Pro <ProFeature />.
 
 :::
 
 Les schémas de couleurs sont utilisés pour la [coloration des itinéraires](#routes), le [terrain de la carte](#terrain) et la [carte météo](#weather), et représentent une partie distincte des informations qui peuvent être exportées, importées et modifiées pour changer le schéma de couleurs de la carte et la visualisation des données.
 
-Les données de la palette de couleurs sont disponibles dans le menu [*Cartes et ressources*](../personal/maps-resources.md#local-menu).
+Les données de la palette de couleurs sont disponibles dans le menu [*Cartes et ressources*](../personal/maps-resources.md#local).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -46,7 +46,6 @@ Allez à : *Menu → Cartes et ressources → Local → Couleurs*
 
 </Tabs>
 
-
 ## Types de schémas {#scheme-types}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -65,17 +64,16 @@ Allez à : *Menu → Cartes et ressources → Local → Couleurs*
 
 </Tabs>
 
-
 ### Terrain {#terrain}
 
-Les fichiers de terrain (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) définissent 3 [visualisations de terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) : *Ombrage, Pente*, et *Altitude*. Pour chaque type, vous pouvez avoir plusieurs palettes, par exemple, la *pente d'avalanche* est fournie par défaut.
+Les fichiers de terrain (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) définissent 3 [visualisations de terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) : *Ombrage, Pente* et *Altitude*. Pour chaque type, vous pouvez avoir plusieurs palettes, par exemple, la *pente d'avalanche* est fournie par défaut.
 
 ### Itinéraires {#routes}
 
 Les visualisations de dégradé de ligne utilisent des fichiers de palette (`route_<type_name>_<palette_name>.txt`) pour colorer les traces GPX et les itinéraires :
 
-- Pour les [itinéraires](../navigation/guidance/map-during-navigation.md#color) : *Vitesse, Pente,* et *Élévation (Altitude)*.
-- Pour les [traces GPX](../map/tracks/appearance#track-colors-in-gpx-files) : *Vitesse, Pente,* et *Élévation (Altitude), ou informations provenant de capteurs externes*.
+- Pour les [itinéraires](../navigation/guidance/map-during-navigation.md#color) : *Vitesse, Pente* et *Élévation (Altitude)*.
+- Pour les [traces GPX](../map/tracks/appearance#track-colors-in-gpx-files) : *Vitesse, Pente* et *Élévation (Altitude), ou informations provenant de capteurs externes*.
 
 ### Météo {#weather}
 
@@ -83,8 +81,7 @@ Les fichiers de palette météo (`weather_<type_name>.txt`) définissent la visu
 
 ### Couleurs {#colors}
 
-La palette de couleurs (`user_palette_default.txt`) est simplement utilisée pour des couleurs prédéfinies à assigner aux [favoris](./favorites.md), [traces](./tracks/).
-
+La palette de couleurs (`user_palette_default.txt`) est simplement utilisée pour des couleurs prédéfinies à assigner aux [favoris](./favorites.md), aux [traces](./tracks/).
 
 ## Légende de la palette {#palette-legend}
 
@@ -96,9 +93,7 @@ La palette de couleurs (`user_palette_default.txt`) est simplement utilisée pou
     </tr>
 </table>
 
-
-La légende offre un moyen simple de visualiser et de comprendre les différentes marques sur la carte. De nouvelles palettes de couleurs ont été ajoutées pour afficher la [**vitesse** pour les traces](../map/tracks/appearance#track-colors-in-gpx-files), le [**type de ligne** pour les itinéraires](../navigation/guidance/map-during-navigation.md#color), l'[**altitude et la pente** pour le terrain](../plugins/topography.md#default-color-scheme), et toutes les palettes de couleurs des [**couches météo**](../plugins/weather.md#weather-layers).
-
+La légende offre un moyen simple de visualiser et de comprendre les différentes marques sur la carte. De nouvelles palettes de couleurs ont été ajoutées pour afficher la [**vitesse** pour les traces](../map/tracks/appearance#track-colors-in-gpx-files), le [**type de ligne** pour les itinéraires](../navigation/guidance/map-during-navigation.md#color), l'**altitude et la pente** pour le terrain](../plugins/topography.md#default-color-scheme), et toutes les palettes de couleurs des [**couches météo**](../plugins/weather.md#weather-layers).
 
 ## Modifier le fichier de palette {#edit-palette-file}
 
@@ -115,7 +110,7 @@ Chaque ligne représente une valeur numérique (pour la palette de couleurs, c'e
 # Fichier TXT nommé *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 degrés RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# jaune  {#yellow-}
+# jaune {#yellow-}
 100,255,222,2,227
 # rouge {#red}
 200,255,1,1,255
@@ -126,7 +121,6 @@ Chaque ligne représente une valeur numérique (pour la palette de couleurs, c'e
 
 Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, une nouvelle palette apparaîtra dans le menu Schéma de couleurs.
 
-
 ## En savoir plus {#read-more}
 
 ### Actions rapides {#quick-actions}
@@ -135,7 +129,7 @@ Après avoir déplacé ce fichier TXT vers *..Android/data/net.osmand/files/colo
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
+Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp; "**＋**" &nbsp;*→ <Translate ios="true" ids="add_button"/>* *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
 
 ![Schéma de couleurs](@site/static/img/widgets/color_scheme.png)
 
@@ -143,7 +137,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
+Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp; "**＋**" &nbsp;*→ <Translate ios="true" ids="add_button"/>* *→ Ajouter une action → Topographie → Changer le schéma de couleurs du terrain*
 
 ![Palette de couleurs](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
@@ -151,8 +145,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 </Tabs>
 
-**Action rapide** pour changer la palette du Terrain. Ajout de la possibilité de basculer entre les schémas de couleurs du terrain, de manière similaire au basculement entre les couches. Cela peut être fait en utilisant l'outil [Actions rapides](../widgets/quick-action.md#configure-map).  
-
+**Action rapide** pour changer la palette du Terrain. Ajout de la possibilité de basculer entre les schémas de couleurs du terrain, de manière similaire au basculement entre les couches. Cela peut être fait en utilisant l'outil [Actions rapides](../widgets/quick-action.md#configure-map).
 
 ### Importer / Exporter les couleurs {#import--export-colors}
 
@@ -160,9 +153,9 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
 
-![Exportation des actions de profil Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Sauvegarde locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Exportation des actions de profil Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Sauvegarde locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -170,7 +163,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -183,7 +176,6 @@ Vous pouvez importer et exporter toutes les palettes de couleurs par défaut et 
 - Tous les fichiers exportés sont enregistrés au format `.osf`.
 - Si la taille de vos données sélectionnées est importante, l'application mettra un certain temps à préparer le fichier `.osf`.
 - Consultez l'article [*Importer / Exporter*](../personal/import-export.md) pour des informations plus détaillées.
-
 
 ## Articles connexes {#related-articles}
 

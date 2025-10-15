@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
 sidebar_position: 3
 title:  Guidage vocal / Notifications
 ---
@@ -52,7 +52,7 @@ Pour plus d'informations sur comment et quand les invites vocales sont déclench
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Pour plus d'informations sur comment et quand les invites vocales sont déclench
 
 **[Langue](#voice-prompt-language)**. Sélectionnez votre langue et votre type préférés.
 
-**Annonce**. Permet de configurer les [types d'invite](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts) suivants :
+**Annonce**. Permet de configurer les types d'invites suivants :
 
-- *Instructions virage par virage, Noms de rue (TTS), Numéros de sortie, Avertissements de trafic, Passages piétons* et *Tunnels.*
+- *Noms de rue (TTS), Numéros de sortie, Avertissements de trafic, Passages piétons* et *Tunnels.*
 - *[Radars de vitesse](#speed-cameras)*.
 - Configurez également le **[Widget d'alerte](../../widgets/nav-widgets.md#alert-widget)** à utiliser avec les annonces.
 
@@ -226,7 +226,7 @@ Pour plus de détails, consultez :
 5. Testez la voix en utilisant **Énoncer la sélection** ou **Énoncer le contenu de l'écran**.
 
 Pour plus de détails, consultez :  
-[Support Apple – Réglages de la parole sur l'iPhone](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
+[Support Apple – Réglages de la parole sur l'iPhone](https://support.apple.com/fr-fr/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
 
 ***Test des invites vocales :***
 
@@ -272,11 +272,10 @@ OsmAnd propose deux types d'invites vocales :
 - **<Translate android="true" ids="shared_string_recorded"/>** (*Android uniquement*)
     - Utilise des invites vocales pré-enregistrées pour la navigation.
     - Sonne plus naturel que le TTS mais a des limitations.
-    - Ne lit pas les noms de rue ou les noms de POI
+    - Ne lit pas les noms de rue ou les noms de POI.
     - Fournit uniquement des instructions de virage de base.
 
 > *Le TTS est recommandé pour un guidage de navigation détaillé.*
-
 
 ### Paramètres d'invite vocale au niveau du système {#system-level-voice-prompt-settings}
 
@@ -304,18 +303,18 @@ Il y a actuellement un total de 45 langues. Toutes les langues listées ci-desso
 | :--- | :--- |
 | **А** | Arabe |
 | **B** | Biélorusse, Bulgare |
-| **C** | Catalan, Chinois, Chinois(Hong Kong), Chinois(Traditionnel), Croate, Tchèque |  
+| **C** | Catalan, Chinois, Chinois (Hong Kong), Chinois (Traditionnel), Croate, Tchèque |  
 | **D** | Danois, Néerlandais |
-| **E** | Anglais, Anglais(Royaume-Uni), Estonien |
+| **E** | Anglais, Anglais (Royaume-Uni), Estonien |
 | **F** | Finnois, Français |
-| **G** | Allemand, Allemand(informel), Grec, Guarani |
-| **H** | Hindi, Hongrois, Hongrois(formel), Hébreu |
+| **G** | Allemand, Allemand (informel), Grec, Guarani |
+| **H** | Hindi, Hongrois, Hongrois (formel), Hébreu |
 | **I** | Indonésien, Italien |
 | **J** | Japonais |
 | **K** | Coréen  |
 | **L** | Letton |
 | **N** | Norvégien Bokmål  |
-| **P** | Persan, Polonais, Portugais, Portugais(Brésil) |  
+| **P** | Persan, Polonais, Portugais, Portugais (Brésil) |  
 | **R** | Roumain, Russe  |
 | **S** | Sarde, Serbe (Cyrillique), Slovaque, Slovène, Espagnol, Espagnol (Argentine), Swahili, Suédois  |
 | **T** | Turc  |
@@ -359,8 +358,6 @@ Vous pouvez configurer un profil OsmAnd pour qu'il émette des bips au lieu de p
 
 ## Notifications textuelles {#text-notifications}
 
-<InfoAndroidOnly />
-
 Une fois que vous avez commencé un itinéraire, vous pouvez afficher les informations dans le menu système déroulant de la liste des notifications. Les notifications silencieuses d'OsmAnd contiennent des informations telles que les instructions détaillées, les flèches de direction de virage, l'heure d'arrivée et le temps restant, la vitesse actuelle et la distance jusqu'à la destination.  
 
 ![Notification d'itinéraire de navigation Android](@site/static/img/navigation/route/navigation_notifications_android.png)
@@ -375,7 +372,7 @@ Boutons actifs dans le menu système déroulant pour votre navigation :
 
 Vous pouvez modifier les paramètres de notification pour l'application OsmAnd dans les paramètres système de votre appareil. Les notifications peuvent être affichées sur l'écran de verrouillage, l'écran d'accueil, dans le menu déroulant ou en haut de l'application.  
 
-Lisez comment le contrôle des notifications est implémenté sur Android dans cet [article](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Pour iOS - [ici](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
+Lisez comment le contrôle des notifications est implémenté sur Android dans cet [article](https://support.google.com/android/answer/9079661?hl=fr#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Pour iOS - [ici](https://support.apple.com/fr-fr/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Contrôle de l'écran {#screen-control}
@@ -413,7 +410,7 @@ Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste
 
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
 - [Préparation de l'itinéraire](../setup/route-navigation.md)
-- [Navigation par trace](../setup/gpx-navigation.md)
+- [Navigation par trace GPX](../setup/gpx-navigation.md)
 - [Navigation par marqueurs](../setup/markers-navigation.md)
 - [Détails de l'itinéraire](../setup/route-details.md)
 - [Paramètres de navigation](./navigation-settings.md)
