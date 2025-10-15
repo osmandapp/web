@@ -1,5 +1,5 @@
 ---
-source-hash: 96c19eed244ae8e23b225b79e192f6ab15334e38a9e882b113d53dea103f93b7
+source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 En la sección **Mapas y Recursos**, puede gestionar tanto mapas *En línea* como *Sin conexión*, y otros recursos utilizados en OsmAnd. Por ejemplo, puede descargar, eliminar, renombrar, borrar caché, actualizar y comprobar el tamaño, y realizar diferentes acciones.
 
-OsmAnd funciona con dos tipos de mapas: [mapas vectoriales](../map/vector-maps.md) y [mapas rasterizados](../map/raster-maps.md). La pestaña [Local](#local-menu) almacena todos los mapas y recursos. Los tipos de mapa disponibles se pueden descargar desde la pestaña [Descargas](#downloads-menu). En la pestaña [Actualizaciones](#updates-menu), puede descargar los mapas que están disponibles para actualizar y usar las [Actualizaciones en vivo](#live-updates). También puede acceder a la función [Mapa adicional](#extra-maps) para crear sus propios tipos de mapa.
+OsmAnd funciona con dos tipos de mapas: [mapas vectoriales](../map/vector-maps.md) y [mapas rasterizados](../map/raster-maps.md). La pestaña [Local](#local) almacena todos los mapas y recursos. Los tipos de mapa disponibles se pueden descargar desde la pestaña [Descargas](#downloads). En la pestaña [Actualizaciones](#updates), puede descargar los mapas que están disponibles para actualizar y usar las [Actualizaciones en vivo](#live-updates). También puede acceder a la función [Mapa adicional](#extra-maps) para crear sus propios tipos de mapa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -153,7 +153,7 @@ Para importar un archivo:
 1. Localice el archivo `.osf` en el almacenamiento de su dispositivo, mensajería o correo electrónico.
 2. Toque para abrirlo con OsmAnd.
 3. El complemento aparecerá en la sección **Lista de complementos**, donde se puede activar.
-4. A continuación, aparecerá una carpeta correspondiente en la sección **Mapas adicionales** de la pestaña [Descargas](#downloads-menu).
+4. A continuación, aparecerá una carpeta correspondiente en la sección **Mapas adicionales** de la pestaña [Descargas](#downloads).
 
 Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
@@ -176,7 +176,7 @@ Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
 </Tabs>
 
-Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar.
+Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo of de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar.
 
 
 ## Menú local {#local-menu}
@@ -524,4 +524,4 @@ Mantenga al menos [**30 ediciones**](https://github.com/osmandapp/OsmAnd/blob/ma
 
 - Navegación por voz. [(verificar)](../troubleshooting/navigation.md#voice-navigation)
 - Cómo eliminar el historial de búsqueda. [(verificar)](../troubleshooting/general.md#how-to-delete-search-history)
-- Para solución de problemas adicional, visite: [Mapas y Datos](../troubleshooting/maps-data.md)
+- Para solución de problemas adicionales, visite: [Mapas y Datos](../troubleshooting/maps-data.md)

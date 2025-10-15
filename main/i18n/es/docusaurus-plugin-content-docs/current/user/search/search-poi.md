@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
 sidebar_position: 4
 title:  Buscar PDI
 ---
@@ -23,7 +23,7 @@ La funcionalidad de [Puntos de Interés (PDI) de OsmAnd](https://wiki.openstreet
 
 La barra de búsqueda le permite introducir palabras clave relacionadas con los lugares que le interesan. La búsqueda de PDI también presenta una cómoda lista ordenada por [categoría](#poi-search-by-categories) para ayudarle a encontrar rápidamente lo que busca, y el [filtro](#save-new-custom-filters) le permite seleccionar características específicas de los PDI para mostrar sólo los resultados relevantes.  
 
-La [Búsqueda personalizada](#customize-poi-search) mejora la funcionalidad de búsqueda al permitir la selección de múltiples categorías y subcategorías. Puede guardar los filtros creados para su uso futuro, lo que facilita la localización rápida de PDI que cumplan criterios o preferencias específicas. Para más detalles, consulte la sección sobre cómo guardar filtros personalizados [aquí](#save-new-custom-filters).  
+La [Búsqueda personalizada](#custom-poi-search) mejora la funcionalidad de búsqueda al permitir la selección de múltiples categorías y subcategorías. Puede guardar los filtros creados para su uso futuro, lo que facilita la localización rápida de PDI que cumplan criterios o preferencias específicas. Para más detalles, consulte la sección sobre cómo guardar filtros personalizados [aquí](#save-new-custom-filters).  
 
 OsmAnd proporciona varias formas de acceder a la herramienta de Búsqueda donde se encuentra la sección de **Búsqueda por categorías**.
 
@@ -110,11 +110,11 @@ Ventajas:
 - *Múltiples categorías* - La base de datos de OpenStreetMap tiene un amplio conjunto de categorías de PDI, lo que le permite encontrar sitios de diferentes tipos y categorías.
 
 <!--
-POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+La búsqueda por categorías de PDI le permite encontrar y seleccionar rápidamente lugares de interés en función de sus necesidades. Es una herramienta muy útil para viajar, encontrar servicios o lugares de interés cercanos y planificar rutas basadas en las categorías de PDI seleccionadas.  
 
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+OsmAnd empieza a buscar nombres y categorías de PDI por las palabras introducidas. Los primeros resultados serán categorías, los segundos resultados serán PDI con información adicional, nombre completo, nombre de la categoría, dirección y distancia al PDI, horario de trabajo. Al pulsar sobre la categoría deseada se abre la lista de PDI de esta categoría. 
 
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+Al pulsar sobre el PDI elegido en la lista se abre el [Menú contextual del mapa](../map/map-context-menu.md#select-an-object-single-tap) del PDI.   
 -->
 
 ### Tipos de filtros {#types-of-filters}
@@ -149,7 +149,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
         Incluye *9* tipos de filtros: **Frigorífico** (tiene *2* valores), **Calefacción** (tiene *7* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Colchón** (tiene *2* valores), **Tipo de pago** (más de *10* valores), **Ducha** (tiene *1* valor), **Fumar** (tiene *6* valores), **Clasificación por estrellas** (tiene *10* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
 
  2. **Cafetería y restaurante**. [Cafetería](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) y [restaurantes](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) representan lugares de servicio de comidas.  
-        Incluye *16* tipos de filtros: **Cambiador** (tiene *3* valores), **Café** (tiene *2* valores), **Cocina** (más de *10* valores), **A domicilio** (tiene *1* valor), **Dieta** (tiene *8* valores), **Plato** (más de *10* valores), **Recarga de agua potable** (tiene *1* valor), **Drive-in** (tiene *1* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Microcervecería** (tiene *1* valor), **Productos ecológicos** (tiene *2* valores), **Terraza** (tiene *1* valor), **Tipo de pago** (más de *10* valores), **Fumar** (tiene *6* valores), **Para llevar** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
+        Incluye *16* tipos de filtros: **Cambiador** (tiene *3* valores), **Café** (tiene *2* valores), **Cocina** (más de *10* valores), **A domicilio** (tiene *1* valor), **Dieta** (tiene *8* valores), **Plato** (más de *10* valores), **Recarga de agua potable** (tiene *1* valor), **Drive-in** (tiene *1* valor), **Tipo de acceso a Internet** (tiene *3* valores), **Microcervecería** (tiene *1* valor), **Productos ecológicos** (tiene *2* valores), **Terraza** (tiene *1* valor), **Tipo de pago** (más de *10* valores), **Fumar** (tiene *6* valores), **Para llevar** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
 
  3. **Estación de carga**. Una [estación de carga](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) es una instalación de infraestructura donde los propietarios de vehículos eléctricos pueden recargar sus coches, motocicletas u otros vehículos eléctricos. Estos puntos proporcionan cargadores y las conexiones adecuadas para suministrar energía a las baterías de los vehículos.
         Incluye *35* tipos de filtros: **Acceso para bicicletas** (tiene *1* valor), **Acceso para autobuses** (tiene *1* valor), **Acceso para vehículos pesados** (tiene *5* valores), **Acceso para automóviles** (tiene *1* valor), **Acceso para scooters** (tiene *1* valor), **Autenticación por aplicación** (tiene *1* valor), **Autenticación por tarjeta con chip** (tiene *1* valor), **Autenticación sin contacto** (tiene *1* valor), **Autenticación por llave** (tiene *1* valor), **Autenticación requerida** (tiene *1* valor), **Autenticación por llamada telefónica** (tiene *1* valor) **Autenticación por mensaje corto** (tiene *1* valor), **Tarifa** (tiene *2* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7, y otros.  
@@ -160,8 +160,8 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Emergencia](https://wiki.openstreetmap.org/wiki/Key:emergency) incluye instalaciones y lugares asociados a servicios de emergencia como hospitales, comisarías de policía, parques de bomberos y centros médicos de primeros auxilios.  
         No contiene ningún filtro.
 
- 6. **Gasolinera**. Una [estación de servicio](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio, estación de gasolina, gasolinera y garaje de gasolina. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
-        Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valores), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valores), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valores), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valores), **Aspiradora** (tiene *1* valores), **Surtidor automático de combustible** (tiene *1* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
+ 6. **Gasolinera**. Una [gasolinera](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
+        Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valor), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valores), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valores), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valor), **Aspiradora** (tiene *1* valor), **Surtidor automático de combustible** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
 
  7. **Finanzas**. [Finanzas](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) se utiliza para las oficinas de las empresas del sector financiero.  
         Incluye *5* tipos de filtros.  
@@ -181,7 +181,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Incluye los PDI que están cerca de usted.  
         Incluye *216* tipos de filtros.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Aparcamiento](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) incluye instalaciones utilizadas por el público, clientes u otros usuarios autorizados para aparcar vehículos como coches y camiones, comúnmente conocido como aparcamiento (inglés británico) o estacionamiento (inglés americano).  
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Aparcamiento](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) incluye instalaciones utilizadas por el público, clientes u otros usuarios autorizados para aparcar vehículos como coches y camiones, comúnmente conocido como aparcamiento.  
         Incluye *34* tipos de filtros.
 
  14. **Transporte personal**. Todos los [tipos de vehículos](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) pueden estar en su posesión.  
@@ -243,7 +243,7 @@ Descripción y modo de empleo:
 - *Para ocultar* las categorías innecesarias, pulse el icono **menos**.
 - **Disponibles**. Las categorías previamente *Ocultas* pueden devolverse a la lista mostrada pulsando el icono **más**.
 - Utilice el botón **Restablecer** a los valores predeterminados para devolver la lista al estado preestablecido.
-- Las categorías creadas con [Búsqueda personalizada](#customize-poi-search) o [Filtros](#save-new-custom-filters) pueden eliminarse utilizando el icono **Eliminar**.  
+- Las categorías creadas con [Búsqueda personalizada](#custom-poi-search) o [Filtros](#save-new-custom-filters) pueden eliminarse utilizando el icono **Eliminar**.  
 
 ![Buscar PDI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
@@ -325,12 +325,12 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 ### Categorías y sus filtros {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Barrio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Distrito, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
 2. **Navidad**. Incluye 5 tipos de filtros:  
     *Evento de Navidad, Mercado de Navidad, Pirámide de Navidad, Tienda de Navidad, Árbol de Navidad*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Barrio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Distrito, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Incluye 14 tipos de filtros.  
 

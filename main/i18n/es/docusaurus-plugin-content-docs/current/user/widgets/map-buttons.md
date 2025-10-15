@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
 sidebar_position: 2
 title:  Botones del mapa
 ---
@@ -23,7 +23,7 @@ Los botones del mapa, incluyendo *Zoom*, *Buscar*, *Direcciones*, *Brújula*, *M
 
 ## Mi ubicación y Zoom {#my-location-and-zoom}
 
-![Menú de configuración de pantalla](@site/static/img/widgets/location_zoom_buttons.png)
+![Menú de la pantalla de configuración](@site/static/img/widgets/location_zoom_buttons.png)
 
 Utilice estos botones para controlar cómo se muestra el mapa en la pantalla de su dispositivo:
 
@@ -186,7 +186,7 @@ Los ajustes para la apariencia de los botones del mapa están disponibles a trav
 - *Menú → Configurar pantalla → Botones → Botones predeterminados*
 - *Menú → Configurar pantalla → Botones personalizados → Acción rápida → menú de tres puntos → Apariencia*
 
-Personalizar la apariencia de los botones le permite ajustar el tamaño, la forma, el icono y la opacidad del fondo tanto para la [Acción rápida (Botones personalizados)](../widgets/quick-action.md#button-appearance) como para los [Botones predeterminados](../widgets/configure-screen.md#button-appearance). Esta flexibilidad le permite personalizar la interfaz para adaptarla a sus preferencias y mejorar la usabilidad.
+Personalizar la apariencia de los botones le permite ajustar el tamaño, la forma, el icono y la opacidad del fondo tanto para la [Acción rápida (Botones personalizados)](../widgets/quick-action.md#quick-action-button-appearance) como para los [Botones predeterminados](../widgets/configure-screen.md#button-appearance). Esta flexibilidad le permite personalizar la interfaz para adaptarla a sus preferencias y mejorar la usabilidad.
 
 
 ## Artículos relacionados {#related-articles}

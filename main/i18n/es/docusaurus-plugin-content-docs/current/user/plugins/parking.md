@@ -1,5 +1,5 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
+source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
 sidebar_position: 12
 title:  Posición de estacionamiento
 ---
@@ -54,7 +54,7 @@ Para utilizar un lugar de estacionamiento en el mapa, debe realizar los siguient
 
 ## Lugar de estacionamiento en el mapa {#parking-spot-on-the-map}
 
-Cuando marca un lugar de estacionamiento, OsmAnd guarda sus coordenadas geográficas junto con una marca de tiempo. Si es necesario, también se puede añadir un límite de tiempo y un recordatorio en el calendario. Los lugares de estacionamiento se guardan como **puntos favoritos**. Para asegurarse de que el marcador de estacionamiento sea visible en el mapa, debe habilitar [Favoritos](../personal/favorites.md).
+Cuando marca un lugar de estacionamiento, OsmAnd guarda sus coordenadas geográficas junto con una marca de tiempo. Si es necesario, también se puede añadir un límite de tiempo y un recordatorio en el calendario.
 
 
 ### Establecer un lugar {#set-a-spot}
@@ -214,7 +214,7 @@ El [widget de estacionamiento](../widgets/info-widgets.md#parking-widget) muestr
 - El widget solo es visible después de que se haya establecido una posición de estacionamiento.
 - Si aún no está en la pantalla, puede añadirlo a través del menú [Configurar pantalla](../widgets/configure-screen.md).
 
-Para saber más, consulte: [Informational Widgets – Parking Widget](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
+Para saber más, consulte: [Widgets informativos – Widget de estacionamiento](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
 
 
 ## Artículos relacionados {#related-articles}

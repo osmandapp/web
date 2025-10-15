@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
 title:  Accesibilidad
 ---
@@ -101,9 +101,9 @@ El plugin de Accesibilidad ofrece varios ajustes para personalizar la navegació
 |---------------------------|-------------|  
 | **Modo de accesibilidad**    | Activa las *funciones integradas de OsmAnd* o utiliza los **ajustes del sistema**. |  
 | **Velocidad de la voz**           | Controla la *velocidad del texto a voz*, desde el **50% al 200%**. |  
-| [Anuncio automático inteligente](#smart-autoannounce)    | Proporciona *guía por voz* al desviarse de la ruta. |  
+| [Anuncio automático inteligente](#smart-autoannounce-and-clockwise-directions)    | Proporciona *guía por voz* al desviarse de la ruta. |  
 | **Período de anuncio automático**   | Establece el tiempo mínimo entre anuncios, de **5 segundos a 5 minutos**. |  
-| [Estilo de dirección](#direction-style)       | Elija entre *Lateral (8 direcciones)* o *Sentido horario (12 direcciones)*. |  
+| **Estilo de dirección**       | Elija entre *Lateral (8 direcciones)* o [Sentido horario](#smart-autoannounce-and-clockwise-directions) (12 direcciones)*. |  
 | **Indicaciones de audio**      | Reproduce *guías de audio* que indican la dirección. |  
 | **Indicaciones hápticas**     | Proporciona *retroalimentación por vibración* para giros y desviaciones.|  
 
@@ -132,34 +132,16 @@ El plugin de Accesibilidad ofrece varios ajustes para personalizar la navegació
 - **Retroalimentación háptica** - Ideal para entornos de baja visibilidad o cuando las guías de audio no son prácticas.
 
 
-### Anuncio automático inteligente {#smart-autoannounce}
+### Anuncio automático inteligente y direcciones en sentido horario {#smart-autoannounce-and-clockwise-directions}
 
-La función **Anuncio automático inteligente** proporciona *notificaciones de audio* cuando se desvía de la ruta planificada. Está diseñada para apoyar a los usuarios con discapacidad visual que dependen de la *guía por voz*.  
+La función **Anuncio automático inteligente** proporciona *notificaciones de audio* cuando se desvía de la ruta planificada, mientras que el **Estilo de dirección en sentido horario** ofrece *guías de navegación basadas en la esfera del reloj*. Estas funciones están diseñadas para ayudar a los usuarios con discapacidad visual que dependen de la *guía por voz*.  
 
-- Si **TalkBack no está activado**, el *Anuncio automático inteligente* solo mostrará *notificaciones de texto* en la pantalla.  
+- Si **TalkBack no está activado**, tanto el *Anuncio automático inteligente* como las *Direcciones en sentido horario* solo mostrarán *notificaciones de texto* en la pantalla.  
 
 - Las **notificaciones de voz** se activan solo cuando *TalkBack* está habilitado en los **ajustes del sistema del dispositivo**.  
 
 - Establezca el **Período de anuncio automático** (p. ej., *10 segundos*) para controlar la frecuencia de los anuncios.
 
-- Un toque largo en **Mi ubicación** abre un menú con las opciones ***Mostrar su posición*** y ***Mostrar detalles***. Seleccionar Mostrar detalles muestra información adicional de la ruta y proporciona el botón ***Iniciar/Detener anuncio automático***.
-
-
-### Estilo de dirección {#direction-style}
-
-El ajuste **Estilo de dirección** define cómo se presentan las instrucciones de navegación:
-
-- Lateral (8 direcciones) – utiliza direcciones clásicas izquierda/derecha o cardinales/intercardinales.
-- Sentido horario (12 direcciones) – utiliza guía basada en la esfera del reloj, como “a las 3 en punto” o “a las 10 en punto”.
-
-Esta función está diseñada para mejorar la conciencia espacial, especialmente para usuarios con discapacidad visual que prefieren la orientación basada en el reloj.
-
-Para activar:
-*Menú* → *Plugins* → *Accesibilidad* → *Ajustes* → *Estilo de dirección* → elija **Lateral** o **Sentido horario**.
-
-:::info note
-El Estilo de dirección es una opción independiente. No está vinculado al Anuncio automático inteligente y funciona independientemente de si el Anuncio automático inteligente está activado.
-:::
 
 ## Artículos relacionados {#related-articles}
 

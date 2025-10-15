@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
 sidebar_position: 3
 title:  Indicaciones de voz / Notificaciones
 ---
@@ -52,7 +52,7 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 
 **[Idioma](#voice-prompt-language)**. Seleccione su idioma y tipo preferidos.
 
-**Anuncio**. Le permite configurar los siguientes [tipos de indicaciones](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
+**Anuncio**. Le permite configurar los siguientes tipos de indicaciones:
 
 - *Nombres de calles (TTS), Números de salida, Advertencias de tráfico, Pasos de peatones* y *Túneles.*
 - *[Radares de tráfico](#speed-cameras)*.
@@ -196,4 +196,231 @@ Para pasos adicionales de solución de problemas, consulte la [guía de solució
 
 ## TTS (Texto a voz) {#tts-text-to-speech}
 
-OsmAnd admite voces de **Texto
+OsmAnd admite voces de **Texto a voz (TTS)**, que proporcionan una guía de voz dinámica y detallada, que incluye instrucciones de giro, nombres de calles y anuncios de PDI. Las voces TTS están incluidas en la aplicación, pero requieren un [motor de texto a voz](https://en.wikipedia.org/wiki/Speech_synthesis) instalado en el dispositivo.  
+
+La mayoría de los dispositivos Android e iOS modernos incluyen un motor TTS predeterminado, pero se pueden instalar motores e idiomas adicionales por separado.  
+
+Para obtener una lista de los **motores TTS disponibles y los idiomas admitidos** en Android, consulte:
+[Lista de idiomas con motores TTS disponibles en Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+
+***Configuración de TTS en su dispositivo:***
+
+**Android:**
+
+1. Abra Ajustes.
+2. Vaya a *Accesibilidad → Salida de texto a voz*.
+3. Seleccione un **motor TTS** (Google TTS u otro motor instalado).
+4. Elija un **idioma preferido** (algunos pueden requerir descargas adicionales).
+5. Ajuste la velocidad del habla, el tono y la velocidad de reproducción según sea necesario.
+6. Toque **Escuchar un ejemplo** para probar la salida de voz.
+
+Para más detalles, consulte:  
+[Soporte de Google – Ajustes de texto a voz de Android](https://support.google.com/accessibility/android/answer/6006983?hl=es).
+
+**iOS:**
+
+1. Abra Ajustes.
+2. Vaya a *Accesibilidad → Contenido hablado*.
+3. Toque **Voces** para seleccionar una voz preferida.
+4. Ajuste la **Velocidad de habla**, **Pronunciaciones** y otros ajustes.
+5. Pruebe la voz usando **Leer selección** o **Leer pantalla**.
+
+Para más detalles, consulte:  
+[Soporte de Apple – Ajustes de voz del iPhone](https://support.apple.com/es-es/guide/iphone/iph96b214f0/ios).
+
+***Prueba de las indicaciones de voz:***
+
+Para verificar si TTS funciona correctamente dentro de OsmAnd:
+
+- Habilite el **Plugin de desarrollo**: *Menú → Ajustes → Plugins → Desarrollo de OsmAnd*.
+- Abra [Probar indicaciones de voz](../../plugins/development.md#application-testing): *Menú → Ajustes → Plugins → Desarrollo de OsmAnd → Probar indicaciones de voz*.
+
+Para la solución de problemas, consulte:  
+[Solución de problemas de navegación por voz](../../troubleshooting/navigation.md#voice-navigation).
+
+
+### Idioma de las indicaciones de voz {#voice-prompt-language}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
+
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd ofrece dos tipos de indicaciones de voz:
+
+- **<Translate android="true" ids="tts_title"/>**
+    - Utiliza el motor TTS del dispositivo para generar indicaciones de voz dinámicamente.
+    - Lee nombres de calles, instrucciones de giro, nombres de PDI y otros detalles.
+    - Admite múltiples idiomas y ajustes de pronunciación.
+    - Se puede personalizar con ajustes de velocidad de habla, tono y pronunciación.
+
+- **<Translate android="true" ids="shared_string_recorded"/>** (*solo Android*)
+    - Utiliza indicaciones de voz pregrabadas para la navegación.
+    - Suena más natural que el TTS pero tiene limitaciones.
+    - No lee nombres de calles ni nombres de PDI.
+    - Solo proporciona instrucciones básicas de giro.
+
+> *Se recomienda TTS para una guía de navegación detallada.*
+
+### Ajustes de indicaciones de voz a nivel de sistema {#system-level-voice-prompt-settings}
+
+El comportamiento de las indicaciones de voz, incluida la *velocidad de reproducción, el tono y las pausas*, solo se puede ajustar en la configuración del sistema del dispositivo.
+
+**Android:**
+
+1. Abra *Ajustes del dispositivo → Accesibilidad → Salida de texto a voz*.
+2. Elija su motor TTS e idioma preferidos.
+3. Ajuste la velocidad del habla, el tono y la velocidad de reproducción.
+
+**iOS:**
+
+1. Abra *Ajustes del dispositivo → Accesibilidad → Contenido hablado*.
+2. Ajuste: idioma, voces, velocidad de habla, pronunciaciones.
+
+> *Para voces adicionales, descargue paquetes de idioma desde los ajustes del sistema.*
+
+
+### Idiomas TTS disponibles {#available-tts-languages}
+
+Actualmente hay un total de 45 idiomas. No todos los idiomas enumerados a continuación pueden ser compatibles con todos los motores TTS. Consulte [aquí](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+
+| | |
+| :--- | :--- |
+| **А** | Árabe |
+| **B** | Bielorruso, Búlgaro |
+| **C** | Catalán, Chino, Chino (Hong Kong), Chino (Tradicional), Croata, Checo |  
+| **D** | Danés, Neerlandés |
+| **E** | Inglés, Inglés (Reino Unido), Estonio |
+| **F** | Finlandés, Francés |
+| **G** | Alemán, Alemán (informal), Griego, Guaraní |
+| **H** | Hindi, Húngaro, Húngaro (formal), Hebreo |
+| **I** | Indonesio, Italiano |
+| **J** | Japonés |
+| **K** | Coreano  |
+| **L** | Letón |
+| **N** | Noruego Bokmål  |
+| **P** | Persa, Polaco, Portugués, Portugués (Brasil) |  
+| **R** | Rumano, Ruso  |
+| **S** | Sardo, Serbio (Cirílico), Eslovaco, Esloveno, Español, Español (Argentina), Suajili, Sueco  |
+| **T** | Turco  |
+| **U** | Ucraniano  |
+| **V** | Vietnamita  |
+
+
+## Indicaciones de voz grabadas {#recorded-voice-prompts}
+
+### Descargar paquetes de voz {#download-voice-packages}
+
+<InfoAndroidOnly />
+
+El uso de voces grabadas en OsmAnd debe ser solo una alternativa. Son bastante limitadas y no pueden pronunciar nombres de calles, nombres de lugares, etc. Puede descargar indicaciones de voz de dos conjuntos diferentes de la lista.
+
+- El primer tipo, estos son los recomendados:
+
+    *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
+
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+
+- El segundo tipo son indicaciones de voz grabadas, con un conjunto incompleto de funciones:
+
+    *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
+
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+
+### Modos de pitido {#beep-modes}
+
+<InfoAndroidOnly />
+
+Puede configurar un perfil de OsmAnd para que emita pitidos en lugar de hablar, de manera similar a un ciclocomputador. Hay tres patrones básicos: *mínimo*, *simple* y *complejo*. Los patrones simple y complejo tienen variantes *fuertes*, que serán considerablemente más fáciles de escuchar en un entorno ruidoso pero pueden sonar desagradablemente ásperas.
+  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
+
+- **Mínimo**. Adecuado para seguir una ruta conocida a pie con mínimas distracciones, este patrón le alertará al pasar por destinos intermedios, favoritos y PDI, y cuando se haya desviado o regresado a la ruta. No proporcionará ninguna advertencia de audio para los giros.
+- **Simple**. Además de las alertas para destinos, favoritos, PDI y otros, el patrón simple le alerta con un pitido más largo cuando necesita girar.
+- **Complejo**. Adecuado para el ciclismo de carretera, el patrón complejo utiliza pitidos de diferentes longitudes y tonos para informarle sobre los próximos giros.
+    - Un pitido bajo significa giro a la izquierda, mientras que un pitido alto significa giro a la derecha. Una serie de pitidos de tono medio representa la salida a tomar en una rotonda. Los tres tonos en secuencia representan un giro en U. En todos estos casos, los pitidos cortos significan prepararse para hacer algo, mientras que los pitidos largos significan hacer algo ahora.
+
+
+## Notificaciones de texto {#text-notifications}
+
+Una vez que inicia una ruta, puede ver la información en el menú desplegable del sistema en la lista de notificaciones. Las notificaciones silenciosas de OsmAnd contienen información como instrucciones giro a giro, flechas de dirección de giro, hora de llegada y tiempo restante, velocidad actual y distancia al destino.  
+
+![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
+
+Botones activos en el menú desplegable del sistema para su navegación:
+
+- *<Translate android="true" ids="stop_navigation_service"/>*. Permite detener su navegación.
+- *<Translate android="true" ids="shared_string_pause"/>*. Permite pausar su navegación.
+- *<Translate android="true" ids="shared_string_resume"/>*. Permite reanudar su navegación.  
+
+### Configurar notificaciones {#configure-notifications}
+
+Puede cambiar la configuración de notificaciones para la aplicación OsmAnd en la configuración del sistema de su dispositivo. Las notificaciones se pueden mostrar en la pantalla de bloqueo, la pantalla de inicio, en el menú desplegable o en la parte superior de la aplicación.  
+
+Lea sobre cómo se implementa el control de notificaciones en Android en este [artículo](https://support.google.com/android/answer/9079661?hl=es#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Para iOS - [aquí](https://support.apple.com/es-es/HT201925).
+
+
+## Control de pantalla {#screen-control}
+
+<InfoAndroidOnly/>
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
+
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
+
+Puede controlar la pantalla de su dispositivo para ahorrar energía. Este modo tiene dos ajustes generales: *<Translate android="true" ids="screen_timeout"/>* y *<Translate android="true" ids="turn_screen_on"/>*.
+
+### Tiempo de espera de la pantalla {#screen-timeout}
+
+1. **<Translate android="true" ids="system_screen_timeout"/>**. La pantalla se apaga dependiendo de la configuración del sistema de su dispositivo. El botón *Cambiar ajustes* proporciona acceso rápido al menú del sistema, como *Pantalla y brillo*, donde puede ajustar el tiempo de espera de la pantalla.
+
+    ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
+
+2. **<Translate android="true" ids="wake_time"/>**. Si *Mantener pantalla encendida* está activado, la pantalla del dispositivo no aplica un tiempo de espera después de activarse. Si está desactivado, puede establecer el tiempo después del cual la pantalla del dispositivo se apagará si no interactúa con ella, de 5 a 60 segundos.  
+
+    ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+
+### Encender pantalla {#turn-screen-on}
+
+![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+
+Seleccione las opciones de activación de la pantalla y asegúrese de que OsmAnd permanezca en primer plano cuando el dispositivo esté bloqueado.
+
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+
+
+## Artículos relacionados {#related-articles}
+
+- [Parámetros de ruta](../routing/osmand-routing.md#routing-types)
+- [Preparación de la ruta](../setup/route-navigation.md)
+- [Navegación por track](../setup/gpx-navigation.md)
+- [Navegación por marcadores](../setup/markers-navigation.md)
+- [Detalles de la ruta](../setup/route-details.md)
+- [Ajustes de navegación](./navigation-settings.md)
+- [Pantalla del mapa durante la navegación](./map-during-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
+
+### Problemas comunes y soluciones {#common-issues-and-solutions}
+
+1. [Problemas de audio.](#solving-audio-issues)
+2. [Prueba de las indicaciones de voz.](#testing-of-voice-prompts)
+3. [¿Por qué debería usar una voz TTS en lugar de una voz grabada?](../../troubleshooting/navigation.md#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice)
+4. [¿El TTS no funciona correctamente? Siga estos pasos para solucionarlo.](../../troubleshooting/navigation.md#tts-does-not-function-properly-follow-these-steps-to-fix-it)

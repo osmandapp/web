@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
 sidebar_position: 4
 title:  Mapas y Datos
 ---
@@ -26,7 +26,7 @@ Debido a las nuevas [reglas de acceso al almacenamiento introducidas en Android 
 
 En este momento, las siguientes soluciones están disponibles:
 
-#### 1. Migrar la carpeta de almacenamiento de datos de OsmAnd a “Memoria interna de la aplicación” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrar la carpeta de almacenamiento de datos de OsmAnd a la "Memoria interna de la aplicación" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Puede cambiar la carpeta de almacenamiento seleccionando la opción ***Memoria interna de la aplicación*** en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos*.
 
@@ -34,7 +34,7 @@ En este momento, las siguientes soluciones están disponibles:
 
 El equipo de desarrollo está buscando activamente soluciones más eficientes para mejorar el rendimiento de la tarjeta SD bajo las nuevas políticas de almacenamiento de Android.
 
-#### 2. Usar la carpeta “Download” de la tarjeta SD {#2-use-the-sd-cards-download-folder}
+#### 2. Usar la carpeta "Download" de la tarjeta SD {#2-use-the-sd-cards-download-folder}
 
 Puede intentar resolver el problema de la carga lenta de mapas especificando la carpeta **Download** de la tarjeta SD para el almacenamiento de OsmAnd en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Especificada manualmente*. Las siguientes rutas son posibles:
 
@@ -46,11 +46,11 @@ Puede intentar resolver el problema de la carga lenta de mapas especificando la 
 
 El "XXXX-XXXX" representa el número de identificación único de su tarjeta SD, que a veces se puede encontrar en la ruta de la carpeta en las opciones de *Almacenamiento externo 2* o localizarse mediante otros métodos. Hay más investigación y detalles sobre esta solución disponibles [aquí](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. Opción de almacenamiento “Multimedia” {#3-media-storage-option}
+#### 3. Opción de almacenamiento "Multimedia" {#3-media-storage-option}
 
 Si las soluciones anteriores no funcionan o parecen limitadas, puede intentar usar la opción de almacenamiento "Multimedia" para resolver problemas de carga lenta de mapas o de acceso al almacenamiento. Este método permite seleccionar una carpeta que sea accesible para OsmAnd y otras aplicaciones, lo que es particularmente útil para el almacenamiento externo o extraíble.
 
-### Elegir una carpeta de almacenamiento de datos de OsmAnd “Generalmente Accesible” usando el Almacenamiento “Multimedia” {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
+### Elegir una carpeta de almacenamiento de datos de OsmAnd "Generalmente Accesible" usando el Almacenamiento "Multimedia" {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
 Android se ha vuelto más estricto con los permisos de almacenamiento, limitando a menudo el acceso a carpetas específicas de la aplicación, especialmente con nuevas instalaciones o actualizaciones del sistema. El almacenamiento de datos predeterminado de OsmAnd puede estar restringido, haciéndolo invisible para otras aplicaciones o incluso para los gestores de archivos. Muchos usuarios desean almacenar mapas y datos en un almacenamiento externo accesible para copias de seguridad, sincronización o gestión manual de archivos.
 
@@ -62,9 +62,9 @@ Sin embargo, OsmAnd no tiene el permiso de *Acceso a todos los archivos* (debido
 
 Una ruta correcta no provocará ningún error de permiso de escritura en OsmAnd. Antes de realizar estos cambios, asegúrese de que OsmAnd tenga los permisos de almacenamiento adecuados, incluido el permiso de almacenamiento "Multimedia", en los ajustes de **Aplicaciones** de Android. En versiones más recientes de Android, estos permisos pueden estar ubicados en menús avanzados u ocultos.
 
-### Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona “Almacenamiento multiusuario 1”) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona "Almacenamiento multiusuario 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-En la versión de Android de OsmAnd, seleccionar *Almacenamiento multiusuario 1* como ubicación de almacenamiento puede provocar la eliminación de todos los [mapas locales](../personal/maps-resources.md#local-menu) cada vez que la aplicación se actualiza automáticamente, como de la versión 4.1.9 a la 4.1.10, 4.1.11 o posterior (**Android 11, 12**). Este problema está documentado en [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+En la versión de Android de OsmAnd, seleccionar *Almacenamiento multiusuario 1* como ubicación de almacenamiento puede provocar la eliminación de todos los [mapas locales](../personal/maps-resources.md#local) cada vez que la aplicación se actualiza automáticamente, como de la versión 4.1.9 a la 4.1.10, 4.1.11 o posterior (**Android 11, 12**). Este problema está documentado en [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Para evitar perder los datos de sus mapas durante las actualizaciones, considere estas soluciones:
 
@@ -120,7 +120,7 @@ Sí, las curvas de nivel se pueden mostrar en pies en lugar de metros. Antes de 
 
 ### Las curvas de nivel, los datos de elevación o el relieve 3D no se muestran {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
 
-- Verifique si se han descargado los datos de la región correcta. Vaya a ***Menú → Mapas y Recursos → Descargas → Su región***. [Cómo descargar mapas](../start-with/first-steps.md#how-to-download-maps).
+- Verifique si se han descargado los datos de la región correcta. Vaya a ***Menú → Mapas y recursos → Descargas → Su región***. [Cómo descargar mapas](../start-with/first-steps.md#how-to-download-maps).
 - Compruebe que el [complemento](../plugins/topography.md#required-setup-parameters) esté activado y visible en ***Menú → Complementos → Topografía***.
 - Compruebe que los elementos de la sección Topografía estén activados en ***Menú → Configurar mapa → Topografía → Curvas de nivel / Terreno / Relieve 3D***.
 - Compruebe sus compras: [Android](../purchases/android.md#free-and-paid-features) / [iOS](../purchases/ios.md#free-and-paid-features).
