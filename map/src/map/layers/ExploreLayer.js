@@ -129,7 +129,7 @@ export default function ExploreLayer() {
             const poi = response?.data ?? null;
             const obj = { poi, wikidata: item, key, mapObj: selectFromMap };
             recentSaver(EXPLORE_OBJS_KEY, obj);
-            navigateToPoi(item, navigate, true);
+            navigateToPoi(obj, navigate, true);
             ctx.setSelectedWpt(obj);
             if (!selectFromMap) {
                 ctx.setSelectedPoiObj(obj);
@@ -255,7 +255,6 @@ export default function ExploreLayer() {
             ctx.setLoadingContextMenu(true);
             map.spin(true, { color: '#1976d2' });
             setSelectFromMap(true);
-            navigateToPoi(feature, navigate, true);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
 

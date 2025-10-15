@@ -330,22 +330,24 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function navigateToPoi(poi, navigate, isWiki = false) {
-    if (!poi) return;
+export function navigateToPoi(obj, navigate, isWiki = false) {
+    if (!obj) return;
 
     const params = {};
 
+    const wiki = obj.wikidata;
+    const poi = obj.poi;
+
     if (isWiki) {
         function getWikiPoiType() {
-            const type = poi.properties.poitype ?? poi.properties.subtype;
+            const type = wiki.properties.poitype ?? wiki.properties.subtype;
             return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
         }
-
-        params.name = poi.properties.wikiTitle;
+        params.name = poi?.properties.web_poi_name;
         params.type = getWikiPoiType();
-        params.wikidataId = poi.properties?.id;
-        params.lat = poi.geometry.coordinates?.[1];
-        params.lng = poi.geometry.coordinates?.[0];
+        params.wikidataId = wiki.properties?.id;
+        params.lat = wiki.geometry.coordinates?.[1];
+        params.lng = wiki.geometry.coordinates?.[0];
         params.lang = i18n.language;
     } else {
         const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');

@@ -564,7 +564,7 @@ export default function PoiLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        navigateToPoi(poi, navigate);
+        navigateToPoi({ poi }, navigate);
     }
 
     useEffect(() => {
