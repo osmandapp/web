@@ -1,8 +1,8 @@
----
-source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
+--- 
 sidebar_position: 3
 title:  Informational Widgets
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,26 +16,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
+## Overview {#overview}
 
-## نظرة عامة {#overview}
-
-توفر الأدوات المعلوماتية الوصول السريع إلى البيانات المهمة. يمكن أن تكون هذه البيانات حول السرعة، والطقس، وموقع الوقوف، وبيانات من أجهزة الاستشعار الخارجية، وغير ذلك الكثير. يمكن تكوين الأدوات وفقًا لمتطلباتك الخاصة، مما يتيح إظهارها على شاشة التطبيق أو تعطيلها إذا لزم الأمر.
+Informational widgets provide you with quick access to important data. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to your specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## أدوات الارتفاع   {#altitude-widgets}
+## Altitude Widgets   {#altitude-widgets}
 
-تعرض أدوات الارتفاع الارتفاع فوق مستوى سطح البحر للموقع الجغرافي الحالي وارتفاع مركز الخريطة.  
+Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
 
-### الارتفاع: الموقع الحالي   {#altitude-current-location}
+### Altitude: Current Location   {#altitude-current-location}
   
-:::note  تحميل تصحيح الارتفاع العالمي
-على بعض أجهزة أندرويد، قد يظهر الارتفاع بشكل غير دقيق. لحل هذه المشكلة، قم بتحميل خريطة مع تصحيح الارتفاع.
+:::note  Download World altitude correction
+On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
 
-- اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- لمزيد من التفاصيل، قم بزيارة [الخرائط والموارد](../personal/maps-resources.md#downloads-menu).
+- Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -56,17 +55,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *القائمة → الإعدادات → ملفات التطبيق → الإعدادات العامة → الوحدات والتنسيقات → وحدات الطول* |  
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
-### الارتفاع: مركز الخريطة {#elevation-map-center}
+### Elevation: Map Center {#elevation-map-center}
 
-:::info ميزة مدفوعة
-&nbsp;<ProFeature/> للحصول على الوصول إلى استخدام أداة *الارتفاع: مركز الخريطة*، اشترك في OsmAnd Pro لـ [Android](../purchases/android.md#pro-features) أو [iOS](../purchases/ios.md#pro-features).  
+:::info Paid feature
+&nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -85,48 +84,48 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يمكنك استخدام الأداة لمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر. يجب تحميل [خريطة التضاريس (Hillshade وSlope)](../plugins/topography.md#download-maps) للمنطقة المطلوبة لعرض المعلومات في **أداة الارتفاع: مركز الخريطة**.  
+You can use the widget to find out the elevation of the current map center above sea level. A [Terrain map (Hillshade and Slope)](../plugins/topography.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
 
 | | |
 |:------------|:------------|
-| تمكين |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *القائمة → الإعدادات → ملفات التطبيق → الإعدادة العامة → الوحدات والتنسيقات → وحدات الطول* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |
 
 
-## الوقت الحالي {#current-time}
+## Current Time {#current-time}
 
 ![Current time widget](@site/static/img/widgets/current_time_widget.png)
 
-تعرض هذه الأداة الوقت الحالي المأخوذ من جهازك.  
+This widget displays the current time taken from your device.  
 
 | | |
 |:------------|:------------|
-| تمكين |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_plain_time"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_plain_time"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | إعدادات الجهاز تكوّن الوقت والتنسيق. |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_plain_time"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_plain_time"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | Device settings configure Time & Format. |
 
 
-## السرعة الحالية {#current-speed}
+## Current Speed {#current-speed}
 
 ![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
 
-تعرض الأداة السرعة الحالية المكتشفة بواسطة مستشعر GPS.  
+The widget shows the current speed detected by the GPS sensor.  
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_current_speed"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_current_speed"/>* |
-| بالنقر  | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_current_speed"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_current_speed"/>* |
+| By tapping  | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 
-## السرعة المتوسطة {#average-speed}
+## Average Speed {#average-speed}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -144,31 +143,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-تحسب أداة **السرعة المتوسطة** وتعرض سرعتك المتوسطة على مدار فترة زمنية محددة دون الحاجة إلى التنقل أو تسجيل المسار. إنها مفيدة لمراقبة الامتثال للسرعة على الطرق السريعة أو تتبع السرعة المتوسطة خلال الدقائق القليلة الأخيرة من ركوب الدراجات.
+The **Average Speed** widget calculates and displays your average speed over a selected time interval without requiring navigation or track recording. It is useful for monitoring speed compliance on highways or tracking average speed over the last few minutes of cycling.
 
-1. ***تكوين الأداة.***  
-   لضبط الإعدادات، انقر على زر **الإعدادات** (*Android*) أو **حقل الأداة** (*iOS*). تشمل الخيارات المتاحة:
+1. ***Configuring the widget.***  
+   To adjust settings, tap the **Settings** button (*Android*) or the **widget field** (*iOS*). Available options include:
 
-2. ***فترة زمنية.***
+2. ***Time interval.***
 
-   - يتم حساب السرعة المتوسطة بناءً على الفترة الزمنية المحددة، والتي يمكن أن تتراوح من **15 ثانية إلى 60 دقيقة**.  
+   - The average speed is calculated based on the selected time interval, which can range from **15 seconds to 60 minutes**.  
 
-   - يعتمد الحساب على بيانات GPS باستخدام الصيغة:  
+   - The calculation is based on GPS data using the formula:  
    `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
-3. ***أخذ التوقفات في الاعتبار.***
+3. ***Take stops into account.***
 
-   **مُمَكَّن** — إذا كانت السرعة المسجلة أقل من 1 وحدة في الساعة، فسيتم تجاهلها، مما يمنع انخفاض السرعة المتوسطة غير الضروري عند التوقف عند إشارات المرور أو أخذ فترات راحة قصيرة.  
+   **Enabled** — If the recorded speed is below 1 unit per hour, it is ignored, preventing unnecessary drops in average speed when stopping at traffic lights or taking short breaks.  
 
-   **مُعَطَّل** — يتم تضمين التوقفات في الحساب، مما يعني أن الوقفات الطويلة ستقلل من السرعة المتوسطة الإجمالية.
+   **Disabled** — Stops are included in the calculation, meaning long pauses will reduce the overall average speed.
 
-4. ***إعادة تعيين السرعة المتوسطة.***  
-   يمكنك إعادة تعيين حساب السرعة المتوسطة بطريقتين:
+4. ***Reset average speed.***
+   You can reset the average speed calculation in two ways:
 
-   - انقر مطولاً على الأداة لفتح [قائمة السياق](../widgets/configure-screen.md#widget-context-menu)، واختر *إعادة تعيين السرعة المتوسطة*.
-   - افتح *إعدادات الأداة* عبر [قائمة تكوين الشاشة](../widgets/configure-screen.md#widget-settings) واختر خيار إعادة التعيين.
+   - Long tap the widget to open the [Context menu](../widgets/configure-screen.md#widget-context-menu), and select *Reset average speed*.
+   - Open the *widget settings* via the [Configure Screen menu](../widgets/configure-screen.md#widget-settings) and select the reset option.
 
-بعد إعادة التعيين، يتم إعادة حساب السرعة المتوسطة من بيانات GPS الجديدة. هذه الميزة مفيدة لمراقبة السرعة في الوقت الفعلي، مثل تتبع السرعة في المناطق التي تحتوي على **كاميرات فرض السرعة المتوسطة**.
+After reset, the average speed is recalculated from the new GPS data. This feature is useful for real-time speed monitoring, such as tracking speed in areas with **average speed enforcement cameras**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -188,13 +187,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_average_speed"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_average_speed"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu). <br/> يمكن استخدامه لإعادة تعيين السرعة المتوسطة. |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_average_speed"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_average_speed"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). <br/> Can be used to reset average speed. |
 
 
-## نسبة الانزلاق {#glide-ratio}
+## Glide Ratio {#glide-ratio}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -217,79 +216,79 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-توفر أداة *نسبة الانزلاق* البسيطة [../widgets/configure-screen.md#widget-panels] معلومات قيمة عن نسبة الانزلاق لمساعدتك في اتخاذ قرارات مدروسة عند التخطيط لمسارات الجو. تساعد أداة *نسبة الانزلاق* في OsmAnd على تقييم كفاءة هبوطك أو صعودك عند التنقل إلى موقع محدد (موقع [العلامة](../personal/markers.md) على الخريطة). تحسب نسبة الانزلاق كنسبة المسافة إلى الفرق في الارتفاع بين موقعك الحالي ووجهتك المقصودة. يمكنك قراءة المزيد عن ذلك [هنا](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+The [simple](../widgets/configure-screen.md#widget-panels) *Glide Ratio* widgets provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you evaluate the efficiency of your descent or ascent when navigating to a specific location ([marker](../personal/markers.md) position on the map). It calculates the glide ratio as the ratio of distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
-**استخدام الأدوات:**
+**Widgets use:**
 
-- *تخطيط رحلات الارتفاع.* بالنسبة لطياري الارتفاع، تصبح أداة *نسبة الانزلاق إلى الهدف* أداة لا غنى عنها عند التخطيط وتنفيذ رحلات الارتفاع. يمكن للطيارين تقدير مدى يمكنهم الطيران إلى هدفهم بناءً على الظروف الحالية والنسبة المطلوبة للانزلاق.
-- *تحسين الصعود والهبوط.* تسمح نسبة الانزلاق المتوسطة للطيارين بتحسين الصعود والهبوط بناءً على الظروف الحالية. يمكن للطيارين اختيار التوقيت الأمثل للصعود لتعظيم وقت الطيران، أو للهبوط للوصول إلى نقطة هدف.
-- *الرد على الظروف المتغيرة.* توفر الأداة تحديثات مستمرة لنسبة الانزلاق، مما يسمح للطيارين بالرد فورًا على التغييرات في الظروف الجوية أو المسارات. يمكنهم تعديل خطة الطيران لضمان السلامة والكفاءة.
-- *الاستفادة القصوى من المسافة الأفقية.* معرفة نسبة الانزلاق تسمح للطيارين بتعظيم استخدام المسافة الأفقية للانتقال إلى الهدف، وهو أمر مهم بشكل خاص عند التخطيط لرحلات طويلة.
-- *تقليل المخاطر*. تساعد أداة *نسبة الانزلاق إلى الهدف* الطيارين على تجنب المواقف التي يصبح فيها الوصول إلى الهدف مستحيلاً بسبب عدم كفاية نسبة الانزلاق. هذا يساعد في تقليل المخاطر وتحسين سلامة الطيران.
-
-
-**القيم الإيجابية والسلبية:**
-
-- **القيم الإيجابية** تشير إلى أن وجهتك في ارتفاع أقل من موقعك الحالي، مما يتطلب هبوطًا.
-- **القيم السلبية** تشير إلى أن وجهتك في ارتفاع أعلى، مما يستلزم صعودًا. على سبيل المثال، "-90:1" تعني أنه بعد قطع مسافة 90 كيلومترًا، يجب عليك الصعود 1 كيلومتر للوصول إلى وجهتك.
+- *Planning soaring flights.* For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
+- *Optimize climbs and descents.* The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time, or for descents to reach a target point.
+- *Reacting to changing conditions.* The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or routes. They can adjust their flight plan to ensure safety and efficiency.
+- *Maximum use of horizontal distance.* Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
+- *Risk reduction*. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
 
 
-**التقريب/التنسيق:**
+**Positive and Negative Values:**
 
-- القيمة **≤ 0.1**:  
-  - "0.05" يتم عرضها كـ "0".
-- القيمة **> 0.1 و< 100**:  
-  - على سبيل المثال، "50.7643" يتم عرضها كـ "50.8:1".
-- القيمة **> 100:**  
-  - "102.35" يتم عرضها كـ "102:1."
+- **Positive values** indicate that your destination is at a lower altitude than your current position, requiring descent.
+- **Negative values** indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
 
 
-### نسبة الانزلاق إلى الهدف {#glide-ratio-to-target}
+**Rounding/Formatting:**
 
-- **نسبة الانزلاق إلى الهدف** تعرض النسبة الدقيقة للانزلاق المطلوبة للوصول إلى نقطة الهدف.
-- **ارتفاع الهدف** يعرض ارتفاع نقطة الهدف. يجب استخدام [علامة الخريطة](../personal/markers.md) كنقطة هدف.
-
-| | |
-|:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → Glide ratio* |
-| بالنقر | تغيير *نسبة الانزلاق إلى الهدف* أو *ارتفاع الهدف*  |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+- Value **≤ 0.1**:  
+  - "0.05" is displayed as "0".
+- Value **> 0.1 and < 100**:  
+  - for example, "50.7643" is displayed as "50.8:1".
+- Value **> 100:**  
+  - "102.35" is displayed as "102:1."
 
 
-### نسبة الانزلاق المتوسطة {#average-glide-ratio}
+### Glide Ratio to Target {#glide-ratio-to-target}
 
-- **نسبة الانزلاق المتوسطة** تعرض النسبة المتوسطة للانزلاق لفترة زمنية محددة.
-- **السرعة العمودية المتوسطة** تشير إلى معدل صعود أو هبوط الجسم على مدار فترة زمنية. يتم النظر فقط في النقطتين الأولى والأخيرة من الفترة الزمنية للتقييم. يمكنك تعيين الفترة الزمنية لهذه الأداة من 15 ثانية إلى 60 دقيقة. يجب استخدام [علامة الخريطة](../personal/markers.md) كنقطة هدف.
+- **Glide ratio to target** shows the exact glide ratio required to reach the target point.
+- **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → Glide ratio* |
-| بالنقر | تغيير *نسبة الانزلاق المتوسطة* أو *السرعة العمودية المتوسطة*  |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
+| By tapping | Changes *Glide ratio to target* or *Target elevation*  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## مستوى البطارية {#battery-level}
+### Average Glide Ratio {#average-glide-ratio}
+
+- **Average glide ratio** shows the average glide ratio for a specified time interval.
+- **Average vertical speed** indicates the rate at which an object ascends or descends over a while. Only the first and last points of the time interval are considered for evaluation. You can set the time interval for this widget from 15 seconds to 60 minutes. You should use the [Map marker](../personal/markers.md) as the target point.
+
+| | |
+|:------------|:------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
+| By tapping | Changes *Average glide ratio* or *Average vertical speed*  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+
+
+## Battery Level {#battery-level}
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
-تعرض أداة **مستوى البطارية** نسبة بطارية جهازك مباشرة على شاشة الخريطة وتحدث تلقائيًا على الأقل مرة واحدة في الدقيقة.
+The **Battery Level** widget displays your device's battery percentage right on the map screen and updates automatically at least once a minute.
 
-- **iOS 17 وما بعدها** — بسبب **قيود الخصوصية**، تكون بيانات مستوى البطارية متاحة فقط بزيادات 5% (مثل 35%، 60%، أو 85%). هذا قيد نظامي فرضته Apple.
+- **iOS 17 and later** — Due to **privacy restrictions**, battery level data is only available in 5% increments (e.g., 35%, 60%, or 85%). This is a system limitation imposed by Apple.
 
-- أجهزة **Android** — تعرض الأداة النسبة الدقيقة للبطارية كما يبلغ عنها النظام، دون تقريب.
+- **Android** devices — The widget displays the exact battery percentage as reported by the system, without rounding.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_battery"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_battery"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_battery"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_battery"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## أداة الإحداثيات {#coordinates-widget}
+## Coordinates Widget {#coordinates-widget}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -307,40 +306,40 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يقدم OsmAnd نوعين من أدوات الإحداثيات:
+OsmAnd offers two types of coordinate widgets:
 
-- **الإحداثيات: مركز الخريطة** - تعرض الإحداثيات الجغرافية لمركز الخريطة الحالي.
-- **الإحداثيات: الموقع الحالي** - تعرض الإحداثيات الجغرافية للموقع الجغرافي الحالي.
+- **Coordinates: map center** - shows the geographic coordinates of the current map center.
+- **Coordinates: current location** - shows the geographic coordinates of current geolocation.
 
-تُعرض أدوات الإحداثيات في أعلى الشاشة. تعرض الأيقونات ذات الخلفية الخضراء خط العرض وخط الطول للنقطة في مركز الجزء المرئي من الخريطة، وتلك ذات الخلفية الزرقاء تعرض إحداثيات موقعك الحالي. يمكن العثور على معلومات حول *تنسيقات الإحداثيات المدعومة* في مقالة *[البحث عن الإحداثيات](../search/search-coordinates.md#coordinate-format)*.
+Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Coordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
-| بالنقر | ينسخ الإحداثيات إلى الحافظة. |
-| التنسيق | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) أو <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| By tapping | Copies the coordinates to the clipboard. |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## معلومات GPS   {#gps-info}
+## GPS Info   {#gps-info}
 
 <InfoAndroidOnly />
 
 ![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
 
-تعرض أداة معلومات GPS (نظام التموضج العالمي) عدد الأقمار الصناعية التي يكتشفها الجهاز ويستخدمها حاليًا. يمكنك استخدامها للتحقق من حالة GPS في حالة إشارة ضعيفة.  
+The GPS (Global Positioning System) information widget shows the number of satellites that the device is currently detecting and using. You can use it to check the GPS status in case of a poor signal.  
 
-يمكنك إعادة تعيين ذاكرة التخزين المؤقت الحالية لـ GPS من خلال:
+You can reset the current GPS cache through:
 *<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.  
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_gps_info"/>* |  
-| بالنقر | يفتح قائمة حالة GPS مع أدوات خارجية لتكوين جهاز GPS الداخلي. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_gps_info"/>* |  
+| By tapping | Opens the GPS status menu with third-party tools to configure the onboard GPS device. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## موقع الشمس {#sun-position}
+## Sun Position {#sun-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -358,7 +357,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-تعرض أدوات موقع الشمس أوقات شروق الشمس وغروبها التالية لمركز الخريطة. عند النقر عليها، تعرض الوقت المتبقي حتى غروب الشمس أو شروقها المتوقع. في كلا الحالتين، يعتمد الوقت على الوقت المكوّن لجهازك.
+Sun position widgets show the next sunrise and sunset times for the center of the map. When tapped, they display the time remaining until the expected sunset or sunrise. In both cases, the time is based on the configured time of your device.
 
 - **<Translate ios="true" ids="map_widget_sun_position"/>**. <Translate ios="true" ids="map_widget_sun_position_desc"/>
 - **<Translate ios="true" ids="map_widget_sunrise"/>**. <Translate ios="true" ids="map_widget_sunrise_desc"/>
@@ -366,16 +365,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
-| بالنقر | التبديل بين الوقت المتبقي والوقت للشروق/الغروب التالي. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
+| By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## مسطرة النصف القطر {#radius-ruler}
+## Radius Ruler {#radius-ruler}
 
 :::note  
-يمكنك قراءة وصف أكثر تفصيلاً هنا: **[مسطرة النصف القطر والمسطرة](../widgets/radius-ruler)**.  
+You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler)**.  
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -400,18 +399,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تعرض أداة مسطرة النصف القطر المسافة بين موقعك ونقطة المركز لمسطرة النصف القطر. يساوي نصف قطر الدائرة الأولى [مقياس الخريطة](../widgets/radius-ruler.md#ruler).
+The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="radius_ruler_item"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="map_widget_ruler_control"/>* |
-| بالنقر | تغيير حالة الأداة بين مقياس أسود، ودرجات رمادي، وأوضاع غير مرئية. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="radius_ruler_item"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_ruler_control"/>* |
+| By tapping | Changes the state of the widget between black scale, grayscale, and invisible modes. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
-## عداد السرعة {#speedometer}
+## Speedometer {#speedometer}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -429,10 +428,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-**أداة عداد السرعة** هي عرض رسومي لسرعة المركبة الحالية بناءً على *البيانات المستلمة من GPS*. تسمح لك بمراقبة الامتثال في الوقت الفعلي بين سرعتك والحد الأقصى للسرعة المسموح به. يتم توفير الحد الأقصى للسرعة المسموح به من قبل [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) لقسم طريق معين وإعداد [تحمل حد السرعة في OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit).  
+**Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
-- في *إعدادات عداد السرعة*، يمكنك اختيار حجم (**الارتفاع**) للأداة على شاشة التطبيق كـ *صغير*، *متوسط* أو *كبير*.
-- يمكنك تحديد متى تتلقى **تحذير حد السرعة**، باختيار *دائمًا* أو *عند التجاوز*.
+- In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*.
+- You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*.
 
 <table class="blogimage">
     <tr>
@@ -443,20 +442,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
 |        | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Speedometer* |
-| التنسيق | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
-## أدوات الإضافات {#plugin-widgets}
+## Plugin Widgets {#plugin-widgets}
 
-تُمَكَّن هذه الأدوات وتعمل بالاشتراك مع الإضافات المقابلة لها.
+These widgets are enabled and work in combination with their corresponding plugins.
 
 
-### أدوات تسجيل الرحلة   {#trip-recording-widgets}
+### Trip Recording Widgets   {#trip-recording-widgets}
 
 :::note  
-يمكنك قراءة وصف أكثر تفصيلاً هنا: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
+You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -475,20 +474,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تشير أدوات تسجيل الرحلة إلى [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). يمكنك استخدام الأدوات لعرض معلومات موجزة عن تسجيل المسار على الشاشة. مثل *المسافة*، *المدة*، *الصعود* و*الهبوط*.
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_monitoring"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_monitoring"/>* |
-| بالنقر | بدء/إيقاف تسجيل المسار أو عرض الرسم البياني. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_monitoring"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_monitoring"/>* |
+| By tapping | Starts/Stop track recording or View the graph. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### أدوات أجهزة الاستشعار الخارجية {#external-sensors-widgets}
+### External Sensors Widgets {#external-sensors-widgets}
 
 :::note
-لإضافة أدوات أجهزة الاستشعار الخارجية إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md).
+To add External Sensors widgets to the map screen, enable the OsmAnd [External Sensors plugin](../plugins/external-sensors.md).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -507,35 +506,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تشير الأدوات إلى [إضافة أجهزة الاستشعار الخارجية](../plugins/external-sensors.md#widgets). يمكنك استخدامها لعرض معلومات موجزة من أجهزة الاستشعار الخارجية الخاصة بك، مثل: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android فقط*)، **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** و**<Translate android="true" ids="external_device_characteristic_temperature"/>**. يمكنك أيضًا اختيار **مستوى البطارية** لأجهزة الاستشعار BLE المتصلة ليتم عرضه مباشرة في الأداة.  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**. You can also select the **battery level** of connected BLE sensors to be displayed directly in the widget.  
 
-- لإضافة أداة — [تمكين](../plugins/index.md#enable--disable) إضافة OsmAnd أجهزة الاستشعار الخارجية.
+- To add widget — [enable](../plugins/index.md#enable--disable) OsmAnd External Sensors plugin.
 
-- لإضافة أجهزة استشعار، اختر إحدى الخيارات:
-  - اذهب إلى *القائمة → الإضافات → أجهزة الاستشعار الخارجية → الإعدادات → ربط جهاز استشعار جديد*.
-  - اذهب إلى *القائمة → تكوين الشاشة → اختر لوحة → إضافة أداة → أجهزة الاستشعار الخارجية → اختر الجهاز → الإعدادات → ربط جهاز استشعار جديد*.
+- To add sensors, select one of the options:
+  - Go to *Menu → Plugins → External Sensors → Settings → Pair new sensor*.
+  - Go to *Menu → Configure screen → Choose a panel → Add widget → External Sensors → Choose sensor → Settings → Pair new sensor*.
 
-- أضف الأدوات حتى لو لم يكن هناك جهاز استشعار خارجي متصل.
+- Add widgets even if there is no external sensor connected.
 
-- **جميع الأدوات المضافة مرئية** حتى لو لم يكن هناك جهاز استشعار خارجي متصل.
+- **All added widgets are visible** even if no external sensor is connected.
 
-- استخدم [إضافة تسجيل الرحلة](../plugins/trip-recording.md#recording-settings) لتسجيل بيانات الجهاز.
+- Use the [Trip recording plugin](../plugins/trip-recording.md#recording-settings) to record sensor data.
 
-- اقرأ عن كيفية اختيار أي جهاز استشعار (من نفس النوع) ليتم عرضه في الأداة [هنا](../plugins/external-sensors.md#widget-settings).
+- Read about how to choose which sensor (of the same type) to show in the widget [here](../plugins/external-sensors.md#widget-settings).
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="external_sensor_widgets"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
-| بالنقر | لا تغييرات (*Android*) / التبديل بين وضع بيانات الجهاز ومستوى البطارية (*iOS*). |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="external_sensor_widgets"/>* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
+| By tapping | No changes (*Android*) / Switches the mode between Sensor data and Battery level (*iOS*). |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### أدوات مقاييس المركبة {#vehicle-metrics-widgets}
+### Vehicle Metrics Widgets {#vehicle-metrics-widgets}
 
 
 :::note
-لإضافة أدوات مقاييس المركبة إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [مقاييس المركبة](../plugins/vehicle-metrics.md).
+To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [Vehicle Metrics plugin](../plugins/vehicle-metrics.md).
 :::
 
 
@@ -556,25 +555,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-تنتمي الأدوات إلى [إضافة مقاييس المركبة](../plugins/vehicle-metrics.md#widgets). يمكنك استخدامها لعرض معلومات من ماسح OBD-II المتصل، مثل (*13 مقياسًا*): **درجة حرارة المدخل**،&nbsp; **درجة الحرارة المحيطة**،&nbsp; **درجة حرارة سائل التبريد**،&nbsp; **درجة حرارة زيت المحرك**،&nbsp; **سرعة المحرك** (*مجاني*)،&nbsp; **وقت تشغيل المحرك**،&nbsp; **الحمل المحسوب للمحرك**،&nbsp; **ضغط الوقود**،&nbsp; **استهلاك الوقود**،&nbsp; **الوقود المتبقي**،&nbsp; **مستوى البطارية**،&nbsp; **سرعة المركبة** (*مجاني*)، و**موضع الخانق**.  
+The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*13 metrics*): **Intake Temperature**,&nbsp; **Ambient Temperature**,&nbsp; **Coolant Temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Speed** (*free*),&nbsp; **Engine Runtime**,&nbsp; **Calculated Engine Load**,&nbsp; **Fuel Pressure**,&nbsp; **Fuel Consumption**,&nbsp; **Remaining Fuel**,&nbsp; **Battery Level**,&nbsp; **Vehicle Speed** (*free*), and **Throttle Position**.  
 
-- لإضافة أدوات مقاييس المركبة إلى شاشة الخريطة، [تمكين](../plugins/index.md#enable--disable) **إضافة مقاييس المركبة**.
-- يمكنك إضافة الأدوات حتى لو لم يكن ماسح OBD-II متصلًا.
-- جميع الأدوات المضافة مرئية سواء كان ماسح OBD-II متصلًا أم لا.
-- لتحرير أداة، انقر على الأداة المضافة إلى اللوحة، ثم انقر على *الإعدادات*، أو انقر مباشرة على *أيقونة الإعدادات* في حقل الأداة.
+- To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
+- You can add widgets even if no OBD-II scanner is connected.
+- All added widgets are visible whether an OBD-II scanner is connected or not.
+- To edit a widget, tap the widget added to the panel, then tap *Settings*, or directly tap the *Settings icon* in the widget field.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة →  <Translate android="true" ids="obd_widget_group"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة →  <Translate ios="true" ids="obd_plugin_name"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget →  <Translate android="true" ids="obd_widget_group"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate ios="true" ids="obd_plugin_name"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### أدوات الطقس {#weather-widgets}
+### Weather Widgets {#weather-widgets}
 
 :::note
-لإضافة أدوات الطقس إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [الطقس](../plugins/weather.md).
+To add Weather widgets to the map screen, enable the OsmAnd [Weather plugin](../plugins/weather.md).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -593,117 +592,117 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-تعرض أدوات الطقس معلومات الطقس الحالية لنقطة مركزية على الخريطة. تُمَكَّن تلقائيًا على الشاشة عند عرضها مع الإضافة (*القائمة → الطقس*)، ويمكنك اختيار أيها تضعها على الشاشة الرئيسية للاستخدام اليومي (*القائمة → تخصيص الشاشة*). يمكنك قراءة المزيد عن ذلك في مقالة [إضافة الطقس](../plugins/weather.md).
+Weather widgets display current weather information for a central point on the map. They are automatically enabled on the screen when viewed with the plugin (*Menu → Weather*), and you can choose which ones to put on the home screen for everyday use (*Menu → Customize Screen*). You can read more about this in the article [Weather plugin](../plugins/weather.md).
 
-- **درجة الحرارة**. <Translate android="true" ids="temperature_widget_desc"/>
-- **ضغط الهواء**. <Translate android="true" ids="air_pressure_widget_desc"/>
-- **الرياح**. <Translate android="true" ids="wind_widget_desc"/>
-- **الغيوم**. <Translate android="true" ids="clouds_widget_desc"/>
-- **الهطول**. <Translate android="true" ids="precipitation_widget_desc"/>
+- **Temperature**. <Translate android="true" ids="temperature_widget_desc"/>
+- **Air Pressure**. <Translate android="true" ids="air_pressure_widget_desc"/>
+- **Wind**. <Translate android="true" ids="wind_widget_desc"/>
+- **Cloud**. <Translate android="true" ids="clouds_widget_desc"/>
+- **Precipitation**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="shared_string_weather"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="shared_string_weather"/>* |  
-| بالنقر | يعرض في مربع حوار منبثق التاريخ والوقت الذي تكون فيه معلومات الطقس ذات صلة. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *القائمة → الإضافات → الطقس → الإعدادات* أو *القائمة → الإعدادات → ملف التطبيق → الطقس* |  
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="shared_string_weather"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="shared_string_weather"/>* |  
+| By tapping | Shows in a pop-up dialog box the date and time when the weather information is relevant. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
-### أداة الوقوف {#parking-widget}
+### Parking Widget {#parking-widget}
 
 :::note
-لإضافة أدوات الوقوف إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [موقع الوقوف](../plugins/parking.md).
+To add Parking widgets to the map screen, enable the OsmAnd [Parking position plugin](../plugins/parking.md).
 :::  
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
 
-تعرض أداة إضافة الوقوف المسافة من مركز الشاشة إلى موقع الوقوف. لتعيين مكان وقوف على الخريطة، قم بالتكبير إلى المستوى المطلوب، ثم انقر مطولاً على المكان على الخريطة لفتح قائمة السياق. اتبع [هذه الإعدادات](../plugins/parking.md#set-a-spot).  
+The Parking plugin widget shows the distance from the center of the screen to the parking location. To set a parking spot on the map, zoom in to the required level, then long tap on the place on the map to open the context menu. Follow [these settings](../plugins/parking.md#set-a-spot).  
 
-**ملاحظة:** ستظهر أداة الوقوف فقط إذا تم إضافة موقع وقوف إلى الخريطة. بدون موقع وقوف محفوظ، لن تكون الأداة مرئية.
+**Note:** The Parking Widget will only appear if a parking position has been added to the map. Without a saved parking position, the widget will not be visible.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_parking"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="parking_place"/>* |
-| بالنقر | ينقل عرض الخريطة إلى موقع الوقوف. |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_parking"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="parking_place"/>* |
+| By tapping | Moves map view to the parking position. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-### أداة Mapillary {#mapillary-widget}
+### Mapillary Widget {#mapillary-widget}
 
 :::note  
-لإضافة أداة Mapillary إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [Mapillary](../plugins/mapillary.md).  
+To add the Mapillary widget to the map screen, enable the OsmAnd [Mapillary plugin](../plugins/mapillary.md).  
 :::  
 
 ![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
 
-هذه أداة إضافة Mapillary التي توفر الوصول السريع إلى تطبيق Mapillary، الذي يمكنك من إضافة [*صور مستوى الشارع*](../plugins/mapillary.md#enable-layer). تُضاف الأداة إلى الخريطة تلقائيًا عند تمكين الإضافة.
+This is a Mapillary plugin widget that provides quick access to the Mapillary application, which enables you to add [*street-level imagery*](../plugins/mapillary.md#enable-layer). The widget is added to the map automatically when the plugin is enabled.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="mapillary"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="mapillary"/>* |
-| بالنقر | يفتح تطبيق [Mapillary](https://www.mapillary.com/). |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="mapillary"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="mapillary"/>* |
+| By tapping | Opens [Mapillary](https://www.mapillary.com/) application. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### أداة الملاحظات الصوتية/الفيديو {#audiovideo-notes-widget}
+### Audio/Video Notes Widget {#audiovideo-notes-widget}
 
 <InfoAndroidOnly />
 
 :::note
-لإضافة أدوات الملاحظات الصوتية/الفيديو إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [الملاحظات الصوتية/الفيديو](../plugins/audio-video-notes.md).
+To add Audio/Video Notes widgets to the map screen, enable the OsmAnd [Audio/Video Notes plugin](../plugins/audio-video-notes.md).
 :::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
-هذه أدوات إضافة الملاحظات الصوتية/الفيديو التي توفر الوصول السريع لبدء/إيقاف تسجيل الملاحظات الصوتية أو الفيديو أو الصور.  
+These are Audio/video notes plugin widgets that provide quick access to start/stop taking audio, video, or photo notes.  
 
-يمكنك تكوين الإجراء المحدد افتراضيًا:
+You can configure which action is selected by default:
 
-- *عند الطلب*. الحالة الافتراضية. كل مرة يتم عرض حوار اختيار الإجراء.
-- *تسجيل صوتي* - يسجل ملاحظة صوتية.
-- *تسجيل فيديو* - يسمح لك بتسجيل فيديو.
-- *التقاط صورة* - يسمح لك بالتقاط صورة.  
+- *On request*. Default state. Every time the action selection dialog is displayed.
+- *Record audio* - records an audio note.
+- *Record video* - allows you to record a video.
+- *Take a photo* - allows you to take a photo.  
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_av_notes"/>*  |
-| بالنقر | بدء / إيقاف أخذ ملاحظة  |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_av_notes"/>*  |
+| By tapping | Start / stops taking a note  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### أداة التتبع {#tracker-widget}
+### Tracker Widget {#tracker-widget}
 
 <InfoAndroidOnly />
 
 :::note
-لإضافة أداة التتبع إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [التتبع](../plugins/osmand-tracker.md).
+To add the Tracker widget to the map screen, enable the OsmAnd [Tracker plugin](../plugins/osmand-tracker.md).
 :::  
 
-لعمل الإضافة والأداة، يجب تثبيت [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) من Google Play أو مصادر أخرى.  
+For the plugin and widget to work, you need to install [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) from Google Play or other sources.  
 
-تُستخدم أداة إضافة تتبع OsmAnd للوصول السريع إلى تطبيق OsmAnd Tracker ومشاركة معلومات موقعك مع مستخدمين آخرين. يرسل التطبيق رسائل *الموقع الحي* إلى الدردشات المحددة خلال فترة زمنية معينة، يعرض قائمة بالجهات الاتصال والمجموعات، ويتحقق من الدردشات بحثًا عن رسائل تحتوي على موقعك، والتي يتم عرضها ثم على الخريطة في OsmAnd.  
+This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker app and share your location information with other users. The app sends *Live Location* messages to selected chats within a certain time, displays a list of contacts and groups, and checks chats for messages with your location, which are then displayed on a map in OsmAnd.  
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="tracker_item"/>* |
-| بالنقر | يفتح تطبيق OsmAnd Online GPS Tracker. |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="tracker_item"/>* |
+| By tapping | Opens OsmAnd Online GPS Tracker app. |
 
 
-### أدوات المطور {#developer-widgets}
+### Developer Widgets {#developer-widgets}
 
 :::note
-لإضافة أدوات المطور إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [تطوير OsmAnd](../plugins/development.md).
+To add Developer widgets to the map screen, enable the OsmAnd [OsmAnd development plugin](../plugins/development.md).
 :::
 
-توفر **أدوات المطور** معلومات حول سرعة [عرض الخريطة](../plugins/development.md#map-rendering-fps-widget) ومعاملات موضع الكاميرا الافتراضية، بما في ذلك [مستوى التكبير](../plugins/development.md#zoom-level)، [المسافة](../plugins/development.md#distance-to-target) إلى مركز الخريطة، [ارتفاع الكاميرا](../plugins/development.md#camera-elevation) و[زاوية الإمالة](../plugins/development.md#camera-tilt).  
+**Developer widgets** provide information about map [rendering speed](../plugins/development.md#map-rendering-fps-widget) and virtual camera position parameters, including [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, [camera elevation](../plugins/development.md#camera-elevation) and [tilt angle](../plugins/development.md#camera-tilt).  
 
-#### سرعة عرض الخريطة FPS {#map-rendering-fps}
+#### Map Rendering FPS {#map-rendering-fps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -721,17 +720,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تعرض [أداة عرض الخريطة FPS](../plugins/development.md#map-rendering-fps-widget) سرعة عرض الخريطة وعناصرها، مقاسة بالإطارات في الثانية (FPS). تشير قيمة FPS أعلى إلى عرض أسرع وأداء بصري أكثر سلاسة.
+The [Map rendering FPS widget](../plugins/development.md#map-rendering-fps-widget) displays the rendering speed of the map and its elements, measured in frames per second (FPS). A higher FPS value indicates faster rendering and smoother visual performance.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="map_widget_rendering_fps"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_rendering_fps"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### أدوات الكاميرا {#camera-widgets}
+#### Camera Widgets {#camera-widgets}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -749,49 +748,52 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تسمح **أدوات الكاميرا** لك بمراقبة التوافق بين خريطة OsmAnd وسطح الأرض.
+The **Camera widgets** allow you to monitor the alignment between the OsmAnd map and the earth's surface.
 
-- [إمالة الكاميرا](../plugins/development.md#camera-tilt). تعرض زاوية إمالة الكاميرا في وضع المنظور. القيمة الافتراضية هي 90° (لا إمالة).
-- [ارتفاع الكاميرا](../plugins/development.md#camera-elevation). تشير إلى ارتفاع الكاميرا فوق مستوى السطح.
-- [مستوى التكبير](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
-- [المسافة من الكاميرا إلى الهدف](../plugins/development.md#distance-to-target). تقيس المسافة بين الكاميرا وموقع الهدف على الخريطة.
+- [Camera tilt](../plugins/development.md#camera-tilt). Displays the camera's tilt angle in perspective mode. The default value is 90° (no tilt).
+- [Camera Elevation](../plugins/development.md#camera-elevation). Indicates the camera's elevation above the surface level.
+- [Zoom level](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
+- [Distance from camera to target](../plugins/development.md#distance-to-target). Measures the distance between the camera and the target location on the map.
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="developer_widgets"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة أداة → <Translate ios="true" ids="developer_widgets"/>* |
-| بالنقر | التبديل بين الأوضاع (*مستوى التكبير*)  / لا تغييرات (*الآخرين*) |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="developer_widgets"/>* |
+| By tapping | Switch between modes (*Zoom Level*)  / No changes (*Others*) |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### الذاكرة المتاحة RAM {#available-ram}
+#### Available RAM {#available-ram}
 
 <InfoAndroidOnly />
 
 ![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
 
-**أداة الذاكرة المتاحة RAM** هي أداة لمراقبة استخدام ذاكرة جهازك فيما يتعلق بـ OsmAnd. توفر بيانات مفصلة لمساعدتك في تحسين أداء التطبيق.
+The **Available RAM** widget is a tool for monitoring your device's memory usage in relation to OsmAnd. It provides detailed data to help optimize application performance.
 
-- **ذاكرة RAM المتاحة للتطبيق.** تعرض كمية الذاكرة RAM المتاحة لـ OsmAnd للاستخدام دون التسبب في مشكلات أداء.
+- **Application RAM Available.** Displays the amount of RAM available for OsmAnd to use without causing performance issues.
 
-- **استخدام ذاكرة RAM للتطبيق** — تعرض استهلاك الذاكرة RAM الحالي بواسطة OsmAnd.
+- **Application RAM Usage** — Shows the current RAM consumption by OsmAnd.
 
-- **إجمالي ذاكرة RAM للتطبيق** — تشير إلى الذاكرة الإجمالية المخصصة لـ OsmAnd، بما في ذلك الذاكرة المستخدمة والمتاحة.
+- **Total Application RAM** — Indicates the total memory allocated to OsmAnd, including both used and available memory.
 
-> **ملاحظة**. *قد تختلف *الذاكرة RAM المتاحة الإجمالية* اعتمادًا على العمليات الخلفية والتطبيقات الأخرى التي تعمل على جهازك. هذه القيم ديناميكية وتوفر طريقة لتتبع وإدارة استخدام الذاكرة لأداء OsmAnd مستقر وفعال.*
+> **NOTE**. *The *total available RAM* may vary depending on background processes and other applications running on your device. These values are dynamic and offer a way to track and manage memory usage for consistent and efficient OsmAnd performance.*
 
 | | |
 |:------------|:------------|
-| تمكين | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة أداة → <Translate android="true" ids="developer_widgets"/> → *Available RAM* |
-| بالنقر | لا تغييرات |
-| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets"/> → *Available RAM* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-## المقالات ذات الصلة {#related-articles}
+## Related Articles {#related-articles}
 
-- [تكوين الشاشة](./configure-screen.md)
-- [أزرار الخريطة](./map-buttons.md)
-- [أدوات التنقل](./nav-widgets.md)
-- [مسطرة النصف القطر والمسطرة](./radius-ruler.md)
-- [أدوات العلامات](./markers.md)
-- [الإجراء السريع](./quick-action.md)
+- [Configure Screen](./configure-screen.md)
+- [Map buttons](./map-buttons.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)
+
+
+
