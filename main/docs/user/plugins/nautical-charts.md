@@ -186,7 +186,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *Menu → Configure map → Map type Nautical → Details → Seabed detail*
+Go to: *Menu → Configure map → Map style → Details → Seabed detail*
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
