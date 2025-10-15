@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
 sidebar_position: 1
 title:  Alles durchsuchen
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Übersicht {#overview}
 
-**Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der [Suchverlauf](#search-history) speichert vergangene Suchen für einen schnellen Zugriff auf zuvor gefundene Orte. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
+Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der [Suchverlauf](#search-history) speichert vergangene Suchen für einen schnellen Zugriff auf zuvor gefundene Orte. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
 
 
 ## Wie zu verwenden {#how-to-use}
@@ -28,13 +28,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Suche POI-Liste Android](@site/static/img/search/poi_list_android.png)
+![POI-Suchliste Android](@site/static/img/search/poi_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suche POI-Liste iOS](@site/static/img/search/poi_list_1_ios.png)  
+![POI-Suchliste iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
@@ -148,13 +148,13 @@ OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-iss
 
 <TabItem value="android" label="Android">
 
-![Suche POI Android](@site/static/img/search/poi_overlay_android.png)
+![POI-Suche Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Suche POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![POI-Suche iOS](@site/static/img/search/poi_overlay_ios.png)
 
 </TabItem>
 
@@ -194,7 +194,7 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 </Tabs>
 
-**Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer bereits sortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
+Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer bereits sortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
 
 
 ## Suchverlauf {#search-history}
@@ -224,13 +224,13 @@ Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten
 
 <TabItem value="android" label="Android">
 
-![Suche POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![POI-Suche Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suche POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![POI-Suche iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
@@ -238,7 +238,7 @@ Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten
 
 Die **POI-Suche** ist eine nach Kategorien sortierte Liste, mit der Sie leicht Orte und Dienstleistungen in der Nähe Ihres aktuellen Standorts oder eines ausgewählten Bereichs auf der Karte finden können.
 
-- Die [Benutzerdefinierte POI-Suche](./search-poi.md#customize-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
+- Die [Benutzerdefinierte POI-Suche](./search-poi.md#custom-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
 Zum Beispiel, wenn Sie mehrere Arten von Dienstleistungen in einem bestimmten Gebiet oder auf einem bestimmten Abschnitt einer Route finden müssen.
 
 - OsmAnd bietet eine [Online-Suche](./search-poi.md#online-search), die in Echtzeit funktioniert und Ihnen schnellen Zugriff auf Suchergebnisse ermöglicht.  

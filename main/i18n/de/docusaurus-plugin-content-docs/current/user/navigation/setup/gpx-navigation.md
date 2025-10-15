@@ -1,5 +1,5 @@
 ---
-source-hash: 41206f7aa105ab8fa59a5f824c1e0374750b7232835e5fadfb76637ff0469e77
+source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
 sidebar_position: 2
 title:  Navigation entlang eines Tracks
 ---
@@ -17,13 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Die Option *Navigation entlang eines Tracks* (GPX) ermöglicht es Ihnen, einer vordefinierten Route oder einem Track auf einer Karte zu folgen. Dies kann besonders nützlich für Outdoor-Aktivitäten wie Wandern, Radfahren oder Geländefahrten sein, bei denen eine geplante Route die Sicherheit und Effizienz verbessert. Wenn Sie in einer organisierten Gruppe reisen, hilft diese Funktion Ihnen und jedem Mitglied der Gruppe, die gleichen Routeninformationen wie die anderen zu haben.  
+Die Option *Navigation entlang eines Tracks* (GPX) ermöglicht es Ihnen, einer vordefinierten Route oder einem Track auf einer Karte zu folgen. Dies kann besonders nützlich für Outdoor-Aktivitäten wie Wandern, Radfahren oder Geländefahrten sein, bei denen eine geplante Route die Sicherheit und Effizienz verbessert. Wenn Sie in einer organisierten Gruppe reisen, hilft diese Funktion Ihnen und jedem Mitglied der Gruppe, die gleichen Routeninformationen wie die anderen zu haben.
 
-Die Option *Navigation entlang eines Tracks* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](../../../../blog/routes/) zur Navigation verwenden. Wie man sie auf der Karte hervorhebt und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.  
+Die Option *Navigation entlang eines Tracks* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](../../../../blog/routes/) zur Navigation verwenden. Wie man sie auf der Karte hervorhebt und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Navigationsbildschirm entlang eines Tracks Android](@site/static/img/navigation/gpx/navigation_gpx_android.png)
 
@@ -37,11 +37,9 @@ Die Option *Navigation entlang eines Tracks* kann auch im Alltag verwendet werde
 
 </Tabs>
 
-
 ## Auswahl des Tracks {#select-the-track}
 
 Bevor Sie die Option *Navigation entlang eines Tracks* verwenden können, müssen Sie [den Track auf der Karte anzeigen](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd unterstützt Tracks als Linie (**Geometry**) und Tracks als Route (**Route**) oder eine Kombination aus beiden (**OsmAnd** durch [Route planen](../../plan-route/create-route.md)). Wenn Sie einen Track als Sammlung von **Wegpunkten** haben, können Sie die [Marker-Navigation](./markers-navigation.md) verwenden.
-
 
 - **Geometry**-Tracks haben standardmäßig eine sehr einfache Navigation und liefern keine genauen Abbiegehinweise, Straßennamen und Fahrspuren. Um fehlende Informationen zu erhalten, müssen Sie das Werkzeug [An Straßen anheften](#attach-to-the-roads) verwenden.
 
@@ -49,12 +47,11 @@ Bevor Sie die Option *Navigation entlang eines Tracks* verwenden können, müsse
 
 - **OsmAnd**-Tracks bestehen sowohl aus Geometrie- als auch aus Routenteilen und eignen sich, um genau die gleiche Führung wie bei der Standardnavigation zu bieten. Diese Tracks werden durch [Route planen](../../plan-route/create-route.md) oder die [Webversion](../../web/index.md) erstellt. Es ist möglich, diesen Track als reinen **Geometry**-Track als [**Vereinfacht**](../../plan-route/create-route.md#save-route) zu speichern, um ihn in Programmen von Drittanbietern zu verwenden.
 
-
 ### GPX-Navigation starten {#start-gpx-navigation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Track zur Navigation auswählen Android 1](@site/static/img/navigation/gpx/follow_track_andr_1.png) ![Track zur Navigation auswählen Android 2](@site/static/img/navigation/gpx/follow_track_andr_2.png)
 
@@ -70,15 +67,15 @@ Bevor Sie die Option *Navigation entlang eines Tracks* verwenden können, müsse
 
 Die Navigation auf einem Track kann über die Schnellaktion im [Track-Kontextmenü](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) gestartet werden (geöffnet durch Auswahl eines der [hervorgehobenen Tracks](./route-navigation.md#history-of-previous-routes) auf der Karte oder durch Antippen einer Track-Datei im Abschnitt [Meine Orte](../../personal/myplaces.md) des *Hauptmenüs*) oder aus dem Navigationsmenü, das durch Antippen geöffnet wird:
 
-- [*Navigations-Schaltfläche*](../../widgets/map-buttons.md#directions) auf dem Kartenbildschirm.  
+- *Navigations-Schaltfläche* auf dem Kartenbildschirm.
 - *Navigationsbereich* im *Hauptmenü* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- Im [*Navigationsmenü*](./route-navigation.md#navigation-menu) gehen Sie zu *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
+- Im [*Navigationsmenü*](./route-navigation.md#navigation-menu) gehen Sie zu *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
 
 ### Segmente auswählen {#choose-segments}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![Segmente Android](@site/static/img/navigation/gpx/segments_andr.png)
 
@@ -94,12 +91,11 @@ Die Navigation auf einem Track kann über die Schnellaktion im [Track-Kontextmen
 
 Wenn der ausgewählte Track aus mehreren Segmenten oder Tracks besteht, können Sie für die Navigation entweder ein bestimmtes Segment oder die gesamte GPX-Track-Datei auswählen. Beim **[Importieren](../../personal/tracks/manage-tracks.md#import)** können Sie wählen, ob Sie ihn in einer einzelnen Datei oder in mehreren Dateien speichern möchten.
 
-
 ### Optionen zum Folgen des Tracks {#follow-track-options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 - *<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 - *<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>*
@@ -111,7 +107,6 @@ Wenn der ausgewählte Track aus mehreren Segmenten oder Tracks besteht, können 
 <TabItem value="ios" label="iOS">
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
-
 
 ![Navigationsbildschirm entlang eines Tracks iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)
 
@@ -126,12 +121,11 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_navigation,shared_string
 - **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — Sie können auswählen, wie Sie von Ihrem Standort zum Track navigieren möchten: zum *<Translate android="true" ids="start_of_the_track"/>* oder zum *<Translate android="true" ids="nearest_point"/>* auf dem Track.
 - Wählen Sie den **Navigationstyp** für das erste und letzte Segment: entweder eine [*gerade Linie*](../routing/straight-line-routing.md) erstellen oder den [*Routing-Typ*](../routing/osmand-routing.md#routing-types) aus dem aktuellen Profil verwenden.
 
-
 ### An Straßen anheften {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
 ![An Straßen anheften 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
 
@@ -149,7 +143,7 @@ Die Funktion **An Straßen anheften** richtet Ihren Track an der nächstgelegene
 
 ***Wie es funktioniert:***
 
-- OsmAnd gleicht jeden Trackpunkt mit der **nächstgelegenen Straße** innerhalb der eingestellten **Schwellenentfernung** (Standard: **50 Meter**) ab.  
+- OsmAnd gleicht jeden Trackpunkt mit der **nächstgelegenen Straße** innerhalb der eingestellten **Schwellenentfernung** (Standard: **50 Meter**) ab.
 - Die **Schwellenentfernung** definiert den maximal zulässigen Abstand zwischen einem GPS-Trackpunkt und einer Straße für das Anheften.
 - **Automatisches erneutes Anheften** — Beim Wechseln des **Navigationsprofils** heftet OsmAnd den Track automatisch erneut an Straßen an, die für das neue Profil geeignet sind.
 - Bei großen Tracks mit vielen Punkten kann der Anheftungsprozess etwas länger dauern. Sie sehen eine **Fortschrittsanzeige** (*orangefarbene Statusleiste*), die den Anheftungsstatus anzeigt.
@@ -165,14 +159,13 @@ OsmAnd heftet Routen automatisch an Straßen an, wenn das Werkzeug **Route plane
 
 Standardmäßig wird die Funktion **An Straßen anheften** **automatisch** ausgeführt, wenn ein Track für die Navigation ausgewählt wird. Sie können diese Einstellung bei Bedarf ändern. Weitere Einzelheiten finden Sie unter [Detaillierte Track-Führung](../guidance/navigation-settings.md#detailed-track-guidance) im Artikel *Navigationseinstellungen*.
 
-
 ## Punkte {#points}
 
 ### Start-/Zielpunkt {#start--finish-point}
 
-Sie können einen anderen Start- und Zielpunkt für eine Route angeben als den in der GPX-Datei angegebenen. Ändern Sie ihn einfach genauso wie bei der [Navigation](../setup/route-navigation.md#select-start-point).
+Sie können einen anderen Start- und Zielpunkt für eine Route angeben als den in der GPX-Datei angegebenen. Ändern Sie ihn einfach genauso wie bei der [Navigation](../setup/route-navigation.md#select-starting-point).
 
-Im Menü [Track folgen](#follow-track-options) können Sie wählen, ob Sie von Ihrem aktuellen Standort zum Startpunkt des Tracks oder zum nächstgelegenen Punkt auf dem GPX-Track navigieren möchten. Außerdem können Sie den [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) auswählen, der für das Start- und Endsegment Ihrer Route verwendet wird.  
+Im Menü [Track folgen](#follow-track-options) können Sie wählen, ob Sie von Ihrem aktuellen Standort zum Startpunkt des Tracks oder zum nächstgelegenen Punkt auf dem GPX-Track navigieren möchten. Außerdem können Sie den [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) auswählen, der für das Start- und Endsegment Ihrer Route verwendet wird.
 
 ### Wegpunkte {#waypoints}
 
@@ -184,10 +177,9 @@ Bei der Vorbereitung oder Navigation eines GPX-Tracks können Sie keine Zwischen
 
 ## Zielführung {#guidance}
 
-*Navigation entlang eines GPX-Tracks* enthält die gleichen [Sprachanweisungen](../guidance/voice-navigation.md) wie die Routennavigation. Einige Abbiegungen oder Kreisverkehre werden jedoch möglicherweise nicht korrekt interpretiert, da in GPX keine Informationen über Straßenkreuzungen enthalten sind, außer bei GPX-Dateien, die von OsmAnd erstellt wurden. Um diese Probleme zu beseitigen, sollten Sie die Funktion [An Straßen anheften](#attach-to-the-roads) verwenden.  
+*Navigation entlang eines GPX-Tracks* enthält die gleichen [Sprachanweisungen](../guidance/voice-navigation.md) wie die Routennavigation. Einige Abbiegungen oder Kreisverkehre werden jedoch möglicherweise nicht korrekt interpretiert, da in GPX keine Informationen über Straßenkreuzungen enthalten sind, außer bei GPX-Dateien, die von OsmAnd erstellt wurden. Um diese Probleme zu beseitigen, sollten Sie die Funktion [An Straßen anheften](#attach-to-the-roads) verwenden.
 
-Während der Navigation können Sie verschiedene Optionen nutzen, wie z. B. das Vergrößern oder Verkleinern, das Verschieben der Karte oder das Umschalten auf einen anderen Kartenstil. Wenn Sie vom Track abweichen, berechnet OsmAnd die Route automatisch neu, um Sie wieder auf den richtigen Weg zu bringen. Sie können auch die Geschwindigkeit des Tracks anpassen und akustische Warnungen für sich nähernde Punkte oder Abweichungen von der Route einstellen.  
-
+Während der Navigation können Sie verschiedene Optionen nutzen, wie z. B. das Vergrößern oder Verkleinern, das Verschieben der Karte oder das Umschalten auf einen anderen Kartenstil. Wenn Sie vom Track abweichen, berechnet OsmAnd die Route automatisch neu, um Sie wieder auf den richtigen Weg zu bringen. Sie können auch die Geschwindigkeit des Tracks anpassen und akustische Warnungen für sich nähernde Punkte oder Abweichungen von der Route einstellen.
 
 ## Verwandte Artikel {#related-articles}
 

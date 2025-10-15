@@ -1,5 +1,5 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
+source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
 sidebar_position: 4
 title:  Benutzerdefiniertes Paket
 ---
@@ -303,7 +303,7 @@ HINWEIS: Beginnen Sie mit der Erstellung eines Navigationsprofils mit allen Para
 ### Downloads {#downloads}
 
 Mit dem Typ **"DOWNLOADS"** können Sie beliebige Dateien wie *SQLite, OBF oder Schriftarten* zum Herunterladen hinzufügen. Die Haupttypen herunterladbarer Dateien finden Sie [hier](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>HINWEIS</u>*. Das Tag **"isHidden":"true"** (standardmäßig ist es *false*) kann Ihre Kartendaten in [Karten & Ressourcen](../personal/maps-resources.md#local-menu) von OsmAnd ausblenden. In **"scope-id"** können Sie alle notwendigen Informationen über die URL, den Namen, die Beschreibung Ihrer Datei und mehr hinzufügen.  
+   *<u>HINWEIS</u>*. Das Tag **"isHidden":"true"** (standardmäßig ist es *false*) kann Ihre Kartendaten in [Karten & Ressourcen](../personal/maps-resources.md#local) von OsmAnd ausblenden. In **"scope-id"** können Sie alle notwendigen Informationen über die URL, den Namen, die Beschreibung Ihrer Datei und mehr hinzufügen.  
 
    ![Benutzerdefiniertes Paket](@site/static/img/plugins/custom/3.jpg)
 

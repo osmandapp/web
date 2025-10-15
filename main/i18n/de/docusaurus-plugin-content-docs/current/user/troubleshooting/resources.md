@@ -1,5 +1,5 @@
 ---
-source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
+source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## OsmAnd erkunden {#explore-osmand}
 
-OsmAnd ist eine leistungsstarke App mit einer breiten Nutzerbasis, und über die offizielle Dokumentation hinaus gibt es zahlreiche von der Community erstellte Ressourcen.  
+OsmAnd ist eine leistungsstarke App mit einer breiten Nutzerbasis, und über die offizielle Dokumentation hinaus gibt es zahlreiche von der Community erstellte Ressourcen.
 
 Dieser Artikel sammelt Links zu benutzerdefinierten Handbüchern, Social-Media-Gruppen, Plugins, Kartenstilen und mehr. Erkunden Sie diese Ressourcen, um Ihr Wissen zu erweitern, Ihr OsmAnd-Erlebnis anzupassen und sich mit anderen Nutzern zu vernetzen.
 
@@ -27,14 +27,14 @@ Um sich mit anderen OsmAnd-Nutzern zu vernetzen, Fragen zu stellen und Ihre Erfa
 
 | Plattform | Gruppenname | Beschreibung | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*English*)  |  Dies ist eine Gruppe, in der OsmAnd-Nutzer anderen Nutzern helfen können.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
-|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italian*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*English*)  | Eine Gruppe, in der Nutzer Tipps teilen, Fragen beantworten und die Funktionalitäten von OsmAnd diskutieren. | [Google Groups](https://groups.google.com/g/osmand)  |
+| Facebook | OsmAnd users community (*Englisch*)  |  Dies ist eine Gruppe, in der OsmAnd-Nutzer anderen Nutzern helfen können.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Niederländisch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*Französisch*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | LC8 Rally OsmAnd user group (*Englisch*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italienisch*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*Englisch*)  | Eine Gruppe, in der Nutzer Tipps teilen, Fragen beantworten und die Funktionalitäten von OsmAnd diskutieren. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - Diskussion und Support  | Die Reddit-Community für OsmAnd-Nutzer. Stellen Sie Fragen, teilen Sie Erfahrungen oder präsentieren Sie Ihre benutzerdefinierten Kartenstile. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*English*)  | Die offizielle OsmAnd-Gruppe für Ankündigungen und Updates direkt von den Entwicklern. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  Telegram | OsmAnd News channel (*Englisch*)  | Die offizielle OsmAnd-Gruppe für Ankündigungen und Updates direkt von den Entwicklern. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
 |  Twitter | OsmAnd-Nachrichtenkanal  | Offizielle OsmAnd-Gruppe für Live-Diskussionen, Ankündigungen und Updates. | [Twitter OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | OsmAnd-Nachrichtenkanal | Eine Community, in der Sie chatten, Tipps austauschen und Hilfe zu OsmAnd-Funktionen erhalten können. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
@@ -57,7 +57,7 @@ Die folgende Liste enthält Konverter für verschiedene von OsmAnd unterstützte
 
 ### Handbücher {#manuals}
 
-Die offizielle Dokumentation von OsmAnd ist umfassend, aber die Community hat auch eine Reihe von benutzerdefinierten Handbüchern erstellt, um Nutzern bei spezifischen Funktionen und Anwendungsfällen zu helfen.  
+Die offizielle Dokumentation von OsmAnd ist umfassend, aber die Community hat auch eine Reihe von benutzerdefinierten Handbüchern erstellt, um Nutzern bei spezifischen Funktionen und Anwendungsfällen zu helfen.
 
 Diese Handbücher, die in mehreren Sprachen verfügbar sind, bieten oft einzigartige Einblicke, Tipps und Tricks, die in den offiziellen Anleitungen möglicherweise nicht behandelt werden. Diese Ressourcen sind praktische Ergänzungen zum offiziellen [OsmAnd-Benutzerhandbuch](https://osmand.net/docs/user/), und bieten weitere Informationen zu den Funktionen der App.
 
@@ -106,7 +106,7 @@ Die Standarddatei [render.xml](https://github.com/osmandapp/OsmAnd-resources/blo
 | Highlighted Admin Boundaries | Der Karten-Rendering-Stil basiert auf dem OsmAnd-Standard, mit stärker hervorgehobenen Verwaltungsgrenzen für eine bessere Sichtbarkeit. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [Die Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) ist ein auf Radfahren ausgerichteter Kartenstil, der Radwege (in rot), Radrouten (blau gestrichelt), Radpfade (rot gestrichelt) und Straßen mit begrenztem Fahrzeugverkehr, wie z. B. Fahrradstraßen (durchgezogene rote Ränder), hervorhebt.  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) ist ein Kartenstil von Holder Tamm, der es Ihnen ermöglicht, auszuwählen, ob bestimmte Objekte ausgeblendet werden sollen oder nicht.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-| ExplorerRS | [Der ExplorerRS-Rendering-Stil](https://github.com/sykoram/OsmAnd-ExplorerRS) basiert hauptsächlich auf UniMap und routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+
 
 ### Offline-Karten {#offline-maps}
 

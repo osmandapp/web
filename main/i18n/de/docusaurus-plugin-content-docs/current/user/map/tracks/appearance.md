@@ -1,5 +1,5 @@
 ---
-source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
+source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
 sidebar_position: 5
 title:  Darstellung von Tracks
 ---
@@ -52,7 +52,7 @@ Sie können die Darstellung von Tracks mit einer der folgenden Methoden ändern:
 ### Farbe {#color}
 
 :::tip Käufe
-Einige Einstellungen können nur mit *OsmAnd Pro* verwendet werden. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> und <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Kostenlose und kostenpflichtige Funktionen.
+Einige Einstellungen können nur mit *OsmAnd Pro* verwendet werden. Kostenlose und kostenpflichtige Funktionen für <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> und <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
 :::
 
 ![Darstellung](@site/static/img/map/appearance_color_andr.png)
@@ -91,23 +91,9 @@ Passen Sie die Track-Breite an, um die Sichtbarkeit auf der Karte zu verbessern.
 
 ### Teilungsintervall {#split-interval}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+![Track-Menü Darstellung Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
-<TabItem value="android" label="Android">
-
-![Track-Menü Darstellung Teilungsintervall Android](@site/static/img/map/split_interval_android.png)  ![Teilungsintervall Android](@site/static/img/map/split_interval_2_android.png)
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track-Menü Darstellung Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Wählen Sie, ob das Intervall auf dem Track **nach Entfernung**, **nach Zeit** oder **Bergauf/Bergab** (Android) aufgeteilt werden soll, oder nach **Entfernung** oder **Zeit** (iOS). Um detaillierte Statistiken pro Intervall anzuzeigen, siehe [Analyse nach Intervallen](../../map/tracks/track-context-menu.md#analyze-by-intervals) (nur Android).
-
+Wählen Sie, ob das Intervall auf dem Track **nach Entfernung oder nach Zeit** aufgeteilt werden soll.
 
 ### Richtungspfeile {#direction-arrows}
 

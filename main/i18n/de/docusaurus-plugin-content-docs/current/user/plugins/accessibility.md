@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
 sidebar_position: 1
 title:  Barrierefreiheit
 ---
@@ -20,7 +20,7 @@ Das Barrierefreiheits-Plugin ist nur für die **Android-Version** von OsmAnd ver
 
 ## Übersicht {#overview}
 
-Die Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbehinderte Benutzer durch die Integration mit [Android Accessibility](https://www.android.com/accessibility/) tools. Das Plugin bietet **Text-zu-Sprache, Gestensteuerung, automatische Ansagen** und **haptisches Feedback**, um die Navigation zugänglicher zu machen. Unter iOS nutzt OsmAnd die in Apple integrierten Barrierefreiheitsfunktionen wie VoiceOver.
+Die Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbehinderte Benutzer durch die Integration mit den [Android-Barrierefreiheitswerkzeugen](https://www.android.com/accessibility/). Das Plugin bietet **Text-zu-Sprache, Gestensteuerung, automatische Ansagen** und **haptisches Feedback**, um die Navigation zugänglicher zu machen. Unter iOS nutzt OsmAnd die in Apple integrierten Barrierefreiheitsfunktionen wie VoiceOver.
 
 
 ### Wie zu verwenden (Android) {#how-to-use-android}
@@ -49,7 +49,7 @@ Die Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbe
 
 - **TalkBack-Integration**:
    - Der TalkBack-Bildschirmleser bietet Audioführung für die Navigation und Menüinteraktionen.
-   - Erfahren Sie mehr über TalkBack-Gesten [hier](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+   - Erfahren Sie mehr über TalkBack-Gesten [hier](https://support.google.com/accessibility/android/answer/6151827?hl=de&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
 - **Hintergrundbetrieb**. Audio- und haptisches Feedback werden auch bei ausgeschaltetem oder gesperrtem Bildschirm fortgesetzt.
 
@@ -76,8 +76,8 @@ Die iOS-Version von OsmAnd verwendet die **integrierten Barrierefreiheitswerkzeu
    - Alle standardmäßigen [OsmAnd-Gesten](../map/interact-with-map.md#gestures) sind verfügbar.
 
 3. **Erfahren Sie mehr**:
-   - Lesen Sie über die iOS Vision-Barrierefreiheitsfunktionen [hier](https://www.apple.com/accessibility/vision/).
-   - Entdecken Sie VoiceOver-Gesten für das iPhone [hier](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
+   - Lesen Sie hier über die iOS Vision-Barrierefreiheitsfunktionen [hier](https://www.apple.com/de/accessibility/vision/).
+   - Entdecken Sie VoiceOver-Gesten für das iPhone [hier](https://support.apple.com/de-de/guide/iphone/iph3e2e2281/ios).
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
@@ -86,7 +86,7 @@ Um die Barrierefreiheitsfunktionen des Geräts in OsmAnd zu aktivieren, müssen 
 
 1. **Aktivieren Sie das** [Barrierefreiheits-Plugin](../plugins/index.md#enable--disable):  *Menü → Plugins → Barrierefreiheit → Aktivieren*.  
 2. **Aktivieren Sie den Barrierefreiheitsmodus** auf Ihrem Gerät.
-3. Konfigurieren Sie die [Einstellungen](#plugin-settings) des Barrierefreiheits-Plugins.
+3. Konfigurieren Sie die [Plugin-Einstellungen](#plugin-settings) für die Barrierefreiheit.
 
 
 ## Plugin-Einstellungen {#plugin-settings}
@@ -101,9 +101,9 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigatio
 |---------------------------|-------------|  
 | **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |  
 | **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit* im Bereich von **50 % bis 200 %**. |  
-| [Intelligente automatische Ansage](#smart-autoannounce)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
+| [Intelligente automatische Ansage](#smart-autoannounce-and-clockwise-directions)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
 | **Intervall für automatische Ansagen**   | Legt die Mindestzeit zwischen den Ansagen fest, von **5 Sekunden bis 5 Minuten**. |  
-| [Richtungsstil](#direction-style)       | Wählen Sie zwischen *Seitwärts (8 Richtungen)* oder *Im Uhrzeigersinn (12 Richtungen)*. |  
+| **Richtungsstil**       | Wählen Sie zwischen *Seitwärts (8 Richtungen)* oder [Im Uhrzeigersinn](#smart-autoannounce-and-clockwise-directions) (12 Richtungen)*. |  
 | **Audio-Richtungsanweisungen**      | Spielt *Audio-Anweisungen* ab, die die Richtung angeben. |  
 | **Haptische Richtungsanweisungen**     | Bietet *Vibrationsfeedback* für Abbiegungen und Abweichungen.|  
 
@@ -132,34 +132,16 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigatio
 - **Haptisches Feedback** - Ideal für Umgebungen mit schlechter Sicht oder wenn Audio-Anweisungen unpraktisch sind.
 
 
-### Intelligente automatische Ansage {#smart-autoannounce}
+### Intelligente automatische Ansage und Richtungen im Uhrzeigersinn {#smart-autoannounce-and-clockwise-directions}
 
-Die Funktion **Intelligente automatische Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen. Sie ist darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
+Die Funktion **Intelligente automatische Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen, während der **Richtungsstil im Uhrzeigersinn** *Navigationsanweisungen basierend auf dem Zifferblatt einer Uhr* bietet. Diese Funktionen sind darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
 
-- Wenn **TalkBack nicht aktiviert ist**, zeigt die *Intelligente automatische Ansage* nur *Textbenachrichtigungen* auf dem Bildschirm an.  
+- Wenn **TalkBack nicht aktiviert ist**, zeigen sowohl die *Intelligente automatische Ansage* als auch die *Richtungen im Uhrzeigersinn* nur *Textbenachrichtigungen* auf dem Bildschirm an.  
 
 - **Sprachbenachrichtigungen** werden nur aktiviert, wenn *TalkBack* in den **Systemeinstellungen des Geräts** aktiviert ist.  
 
 - Stellen Sie das **Intervall für automatische Ansagen** (z. B. *10 Sekunden*) ein, um die Häufigkeit der Ansagen zu steuern.
 
-- Ein langes Tippen auf **Meine Position** öffnet ein Menü mit den Optionen ***Ihre Position anzeigen*** und ***Details anzeigen***. Die Auswahl von Details anzeigen zeigt zusätzliche Routeninformationen an und bietet den Button ***Automatische Ansage starten/stoppen***.
-
-
-### Richtungsstil {#direction-style}
-
-Die Einstellung **Richtungsstil** definiert, wie Navigationsanweisungen präsentiert werden:
-
-- Seitwärts (8 Richtungen) – verwendet klassische links/rechts oder Himmelsrichtungen/Zwischenhimmelsrichtungen.
-- Im Uhrzeigersinn (12 Richtungen) – verwendet Führung basierend auf dem Zifferblatt, wie „um 3 Uhr“ oder „um 10 Uhr“.
-
-Diese Funktion ist darauf ausgelegt, das räumliche Bewusstsein zu verbessern, insbesondere für sehbehinderte Benutzer, die eine uhrenbasierte Orientierung bevorzugen.
-
-Zum Aktivieren:
-*Menü* → *Plugins* → *Barrierefreiheit* → *Einstellungen* → *Richtungsstil* → wählen Sie **Seitwärts** oder **Im Uhrzeigersinn**.
-
-:::info Hinweis
-Der Richtungsstil ist eine unabhängige Option. Er ist nicht mit der Intelligenten automatischen Ansage verknüpft und funktioniert unabhängig davon, ob die Intelligente automatische Ansage aktiviert ist.
-:::
 
 ## Verwandte Artikel {#related-articles}
 

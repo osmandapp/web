@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
 sidebar_position: 1
 title:  Navigationseinstellungen
 ---
@@ -185,14 +185,14 @@ Die Parameter im Abschnitt **Entwicklung** sind hauptsächlich für fortgeschrit
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/>-Schaltfläche* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -207,16 +207,6 @@ Audioanweisungen während der Navigation helfen Ihnen als Fahrer oder Fußgänge
 Wenn Sie einen Track als Zielpunkt auswählen, müssen Sie die Option [An Straßen ausrichten](../setup/gpx-navigation.md#attach-to-the-roads) verwenden, damit die Sprachansagen korrekt funktionieren.
 
 *Sprachansagen* ermöglichen es Ihnen, sich auf die Straße zu konzentrieren und nicht durch die Karte oder das Navigationsgerät abgelenkt zu werden. Sie verbessern auch die Fahrsicherheit, verkürzen die Zeit, die für die Navigation in unbekanntem Gelände benötigt wird, und können für verschiedene [Routentypen](../routing/osmand-routing.md#routing-types) nützlich sein.
-
-Im Abschnitt **Ankündigen** können Sie auswählen, welche Arten von Benachrichtigungen während der Navigation abgespielt oder angezeigt werden sollen:
-
-- **Abbiegeanweisungen** (nur Android) – ermöglicht das Aktivieren oder Deaktivieren standardmäßiger Navigationsanweisungen wie *„Links abbiegen“*, *„Rechts abbiegen“* oder *„In 200 Metern…“*. Wenn die Option deaktiviert ist, werden Abbiege- und Straßennamenansagen nicht bereitgestellt, während Benachrichtigungen für Wegpunkte, Benutzerpunkte und Routenereignisse aktiv bleiben. Dieser Modus ist für Aktivitäten wie Rafting, Wandern oder Radfahren entlang vorausaufgezeichneter Tracks gedacht, wenn nur Warnungen für manuell hinzugefügte Wegpunkte erforderlich sind.
-- **Straßennamen(TTS)** – kündigt die Namen der Straßen entlang Ihrer Route an.
-- **Ausfahrtnummer** – kündigt die Ausfahrtnummer an, wenn Sie auf Autobahnen fahren.
-- **Verkehrswarnungen** – gibt Warnungen über wichtige Straßenereignisse wie Staus oder Beschränkungen.
-- **Fußgängerüberwege** – warnt Sie, wenn Sie sich Fußgängerüberwegen nähern.
-- **[Geschwindigkeitskameras](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – warnt vor Geschwindigkeitskamerastandorten (wo gesetzlich erlaubt).
-- **Tunnel** – informiert Sie, wenn Sie in einen Tunnel fahren.
 
 
 ## Bildschirmwarnungen {#screen-alerts}
@@ -253,7 +243,7 @@ Sie können ***auswählen, welche Warnungen*** Sie während der Navigation auf d
 - **Geschwindigkeitsbegrenzung** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Speed_limits)). In der Einstellung "Bildschirmwarnungen" wird die *Geschwindigkeitsbegrenzung* nur auf dem Bildschirm mit aktivierten *Verkehrswarnungen* angezeigt. Wenn Sie Geschwindigkeitsbegrenzungen während der Navigation ohne andere Warnungen sehen möchten, verwenden Sie das [Widget](../../widgets/nav-widgets.md#speed-limit).
 - **Verkehrswarnungen** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Zusätzliche Informationen finden Sie im Artikel [Kartenbildschirm während der Navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
 - **Fußgängerüberwege** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Geschwindigkeitskameras** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Weitere Informationen zur Einstellung "Geschwindigkeitskamera" in OsmAnd finden Sie unter [Warnungstypen](../../widgets/nav-widgets.md#alert-types) und im Artikel *Globale Einstellungen*, Abschnitt [Rechtliches](../../personal/global-settings.md#legal).
+- **Radarkameras** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Weitere Informationen zur Einstellung "Radarkamera" in OsmAnd finden Sie unter [Warnungstypen](../../widgets/nav-widgets.md#alert-types) und im Artikel *Globale Einstellungen*, Abschnitt [Rechtliches](../../personal/global-settings.md#legal).
 - **Tunnel** ([OSM Wiki Info](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
@@ -349,7 +339,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detaillierte Track-Führung*
 
 ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
