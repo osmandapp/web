@@ -1,5 +1,5 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Ajustes de navegación
 ---
@@ -46,10 +46,10 @@ Hay tres formas de acceder al menú de Ajustes de navegación.
 
 - Toque el icono de *Navegación* en la pantalla del mapa, luego seleccione el *icono de Ajustes → Ajustes de navegación*.
 
-- Vaya al *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
+- Vaya al *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
 
 :::info
-El perfil predeterminado *Explorar mapa* no tiene ajustes de navegación.
+El perfil predeterminado *Explorar mapa* no tiene ajustes de navegación.  
 :::
 
 
@@ -69,17 +69,17 @@ El perfil predeterminado *Explorar mapa* no tiene ajustes de navegación.
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-La navegación es una parte importante de un viaje, y elegir *el tipo correcto* de navegación puede facilitar mucho su trayecto. El tipo de navegación que elija puede depender de cómo viaje y de si tiene conexión a Internet.
+La navegación es una parte importante de un viaje, y elegir *el tipo correcto* de navegación puede facilitar mucho su trayecto. El tipo de navegación que elija puede depender de cómo viaje y de si tiene conexión a Internet.  
 
 - **Navegación en línea**
-    Utiliza principalmente un sistema de enrutamiento especial o un sitio web que permite a la aplicación OsmAnd trazar una ruta basada en información actual y otros factores. Puede leer sobre cómo elegir la mejor ruta en línea en el artículo [Enrutamiento en línea](../routing/online-routing.md). Este tipo de navegación solo está disponible para la *versión de Android* de la aplicación.
+    Utiliza principalmente un sistema de enrutamiento especial o un sitio web que permite a la aplicación OsmAnd trazar una ruta basada en información actual y otros factores. Puede leer sobre cómo elegir la mejor ruta en línea en el artículo [Enrutamiento en línea](../routing/online-routing.md). Este tipo de navegación solo está disponible para la *versión de Android* de la aplicación.  
 
 - **Navegación sin conexión**
-No requiere acceso a internet y ofrece una selección más amplia de [tipos de navegación](../routing/osmand-routing.md#routing-types) que se pueden utilizar para calcular una ruta. Entre ellos se encuentran *bicicleta, barco, coche, a pie, esquí* y *línea recta*. Actualmente existen 13 tipos básicos de enrutamiento, así como un tipo de enrutamiento externo [BRouter](../routing/brouter.md) que ofrece oportunidades de enrutamiento adicionales.
+No requiere acceso a internet y ofrece una selección más amplia de [tipos de navegación](../routing/osmand-routing.md#routing-types) que se pueden utilizar para calcular una ruta. Entre ellos se encuentran *bicicleta, barco, coche, a pie, esquí* y *línea recta*. Actualmente existen 13 tipos básicos de enrutamiento, así como un tipo de enrutamiento externo [BRouter](../routing/brouter.md) que ofrece oportunidades de enrutamiento adicionales.  
 
-El tipo de navegación determina qué reglas se utilizan para calcular las rutas. Si necesita un tipo específico de navegación, puede **importar su propio archivo de enrutamiento *XML* modificado**. Lea más sobre las reglas de enrutamiento en nuestra [página de GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). Y hay un artículo separado sobre el formato XML y cómo usarlo, [Estilo de renderizado de mapa](../../../technical/osmand-file-formats/osmand-rendering-style.md), que puede ayudarle a crear un archivo de ruta.
+El tipo de navegación determina qué reglas se utilizan para calcular las rutas. Si necesita un tipo específico de navegación, puede **importar su propio archivo de enrutamiento *XML* modificado**. Lea más sobre las reglas de enrutamiento en nuestra [página de GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). Y hay un artículo separado sobre el formato XML y cómo usarlo, [Estilo de renderizado de mapa](../../../technical/osmand-file-formats/osmand-rendering-style.md), que puede ayudarle a crear un archivo de ruta.  
 
 
 ## Parámetros de ruta {#route-parameters}
@@ -98,14 +98,14 @@ El tipo de navegación determina qué reglas se utilizan para calcular las rutas
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-**<Translate android="true" ids="route_parameters"/>** son ajustes que determinan cómo la aplicación calculará una ruta para llegar a un destino, considerando factores como el tipo de transporte, las prioridades de enrutamiento, las condiciones de la ruta, la complejidad de la ruta y las preferencias del usuario.
+**<Translate android="true" ids="route_parameters"/>** son ajustes que determinan cómo la aplicación calculará una ruta para llegar a un destino, considerando factores como el tipo de transporte, las prioridades de enrutamiento, las condiciones de la ruta, la complejidad de la ruta y las preferencias del usuario.  
 
-Para cada [perfil](../../personal/global-settings.md#default-profile), excepto *Explorar mapa*, OsmAnd selecciona por defecto el [Tipo de navegación](#navigation-type) óptimo y los [parámetros de ruta](../routing/osmand-routing.md#routing-types) relevantes. Sin embargo, puede elegir el tipo que desee y cambiar los parámetros según sus preferencias y las condiciones externas del próximo viaje.
+Para cada [perfil](../../personal/global-settings.md#default-profile), excepto *Explorar mapa*, OsmAnd selecciona por defecto el [Tipo de navegación](#navigation-type) óptimo y los [parámetros de ruta](../routing/osmand-routing.md#routing-types) relevantes. Sin embargo, puede elegir el tipo que desee y cambiar los parámetros según sus preferencias y las condiciones externas del próximo viaje.  
 
-Todos los parámetros de ruta se describen en detalle en las secciones correspondientes de la documentación:
-*[Enrutamiento para coche (Camión, Motocicleta)](../routing/car-based-routing.md), [Enrutamiento para bicicleta (MTB)](../routing/bicycle-based-routing.md), [Enrutamiento para ciclomotor](../routing/moped-routing.md), [Enrutamiento para peatones](../routing/pedestrian-routing.md), [Enrutamiento para transporte público](../routing/public-transport-navigation.md), [Enrutamiento a caballo](../routing/horse-routing.md), [Enrutamiento para esquí](../routing/ski-routing.md), [Enrutamiento para tren](../routing/train-routing.md), [Enrutamiento para barco](../routing/boat-navigation.md), [Enrutamiento directo al punto](../routing/direct-to-point-routing.md), [Enrutamiento en línea recta](../routing/straight-line-routing.md), [Enrutamiento en línea](../routing/online-routing.md), [Enrutamiento con BRouter](../routing/brouter.md)*.
+Todos los parámetros de ruta se describen en detalle en las secciones correspondientes de la documentación:  
+*[Enrutamiento para coche (Camión, Motocicleta)](../routing/car-based-routing.md), [Enrutamiento para bicicleta (MTB)](../routing/bicycle-based-routing.md), [Enrutamiento para ciclomotor](../routing/moped-routing.md), [Enrutamiento para peatones](../routing/pedestrian-routing.md), [Enrutamiento para transporte público](../routing/public-transport-navigation.md), [Enrutamiento a caballo](../routing/horse-routing.md), [Enrutamiento para esquí](../routing/ski-routing.md), [Enrutamiento para tren](../routing/train-routing.md), [Enrutamiento para barco](../routing/boat-navigation.md), [Enrutamiento directo al punto](../routing/direct-to-point-routing.md), [Enrutamiento en línea recta](../routing/straight-line-routing.md), [Enrutamiento en línea](../routing/online-routing.md), [Enrutamiento con BRouter](../routing/brouter.md)*.  
 
 
 ### Recalcular ruta {#recalculate-route}
@@ -126,9 +126,9 @@ Todos los parámetros de ruta se describen en detalle en las secciones correspon
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-El parámetro **Cálculo de ruta** cambia automáticamente la ruta calculada cuando se desvía de ella o conduce en la dirección opuesta. En ambos casos, este ajuste le ayuda a mantener su dirección de viaje y llegar a su destino sin perder tiempo buscando manualmente una nueva ruta.
+El parámetro **Cálculo de ruta** cambia automáticamente la ruta calculada cuando se desvía de ella o conduce en la dirección opuesta. En ambos casos, este ajuste le ayuda a mantener su dirección de viaje y llegar a su destino sin perder tiempo buscando manualmente una nueva ruta.  
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
@@ -156,9 +156,9 @@ Ir a: *Menú → Ajustes → perfil de la aplicación → Ajustes de navegación
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Los parámetros en la sección **Desarrollo** son principalmente para usuarios avanzados y solo están disponibles cuando el [plugin de desarrollo de OsmAnd](../../plugins/development.md) está habilitado.
+Los parámetros en la sección **Desarrollo** son principalmente para usuarios avanzados y solo están disponibles cuando el [plugin de desarrollo de OsmAnd](../../plugins/development.md) está habilitado.  
 
 | Parámetro | Descripción |
 |:------------|:---------------|
@@ -185,14 +185,14 @@ Los parámetros en la sección **Desarrollo** son principalmente para usuarios a
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Ajustes de navegación por voz Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Ajustes de navegación por voz Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *Botón <Translate ios="true" ids="routing_settings"/>* *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Elegir perfil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *Botón <Translate ios="true" ids="routing_settings"/> * *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Elegir perfil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Ajustes de navegación por voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -200,13 +200,23 @@ Los parámetros en la sección **Desarrollo** son principalmente para usuarios a
 
 </Tabs>
 
-La primera parte del artículo *[Indicaciones de voz / Notificaciones](./voice-navigation.md)* describe cómo configurar las indicaciones de voz en detalle.
+La primera parte del artículo *[Indicaciones de voz / Notificaciones](./voice-navigation.md)* describe cómo configurar las indicaciones de voz en detalle.  
 
-Las instrucciones de audio durante la navegación le ayudan como conductor o peatón a llegar a su destino mientras [navega por una ruta seleccionada](../setup/route-navigation.md). Contienen información sobre giros, direcciones de conducción, señales de tráfico, distancias a su destino y otros factores que pueden afectar su navegación.
+Las instrucciones de audio durante la navegación le ayudan como conductor o peatón a llegar a su destino mientras [navega por una ruta seleccionada](../setup/route-navigation.md). Contienen información sobre giros, direcciones de conducción, señales de tráfico, distancias a su destino y otros factores que pueden afectar su navegación.  
 
 Si selecciona una pista como punto de destino, necesita usar la opción [Ajustar a las carreteras](../setup/gpx-navigation.md#attach-to-the-roads) para que las indicaciones de voz funcionen correctamente.
 
 *Las indicaciones de voz* le permiten concentrarse en la carretera y no distraerse con el mapa o el dispositivo de navegación. También mejoran la seguridad en la conducción, reducen el tiempo necesario para navegar por terrenos desconocidos y pueden ser útiles para diferentes [tipos de rutas](../routing/osmand-routing.md#routing-types).
+
+En la sección **Anunciar**, puede elegir qué tipos de notificaciones deben reproducirse o mostrarse durante la navegación:
+
+- **Direcciones giro a giro** (solo Android) – permite activar o desactivar las instrucciones de navegación estándar como *“Gire a la izquierda”*, *“Gire a la derecha”* o *“En 200 metros…”*. Cuando la opción está desactivada, no se proporcionan anuncios de giros y nombres de calles, mientras que las notificaciones para puntos de ruta, puntos de usuario y eventos de ruta permanecen activas. Este modo está destinado a actividades como rafting, senderismo o ciclismo a lo largo de pistas pregrabadas, cuando solo se requieren alertas para puntos de ruta añadidos manualmente.
+- **Nombres de calles (TTS)** – anuncia los nombres de las calles a lo largo de su ruta.
+- **Número de salida** – anuncia el número de salida al conducir por autopistas.
+- **Advertencias de tráfico** – proporciona alertas sobre eventos importantes en la carretera como congestiones o restricciones.
+- **Pasos de peatones** – le avisa cuando se acerca a pasos de peatones.
+- **[Radares de velocidad](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – alerta sobre las ubicaciones de radares de velocidad (donde esté legalmente permitido).
+- **Túneles** – le informa cuando entra en un túnel.
 
 
 ## Alertas en pantalla {#screen-alerts}
@@ -215,7 +225,7 @@ Si selecciona una pista como punto de destino, necesita usar la opción [Ajustar
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Ajustes de navegación](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
@@ -223,19 +233,19 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Ajustes de navegación](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 El ajuste de navegación **Alerta en pantalla** activa el [**Widget de Alertas**](../../widgets/nav-widgets.md#alert-widget). *Detalles:*
 
 - Cuando se acerca a uno de los obstáculos soportados en la carretera, aparecen notificaciones en la esquina inferior izquierda del mapa.
 - Si configura las [*indicaciones de voz y texto*](../../navigation/guidance/voice-navigation.md) disponibles en la aplicación OsmAnd, tendrá un viaje más cómodo y seguro.
-- La apariencia y el momento de las indicaciones dependen de sus ajustes de velocidad. Puede encontrarlos [en el artículo](../../../technical/algorithms/voice-prompt-triggering.md).
+- La apariencia y el momento de las indicaciones dependen de sus ajustes de velocidad. Puede encontrarlos [en el artículo](../../../technical/algorithms/voice-prompt-triggering.md).  
 - El comportamiento de las *Alertas en pantalla* también se ve afectado por el ajuste [Mostrar puntos a lo largo de la ruta](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route).
 
 Puede ***seleccionar qué alertas*** desea ver en la pantalla de la aplicación mientras navega:
@@ -247,7 +257,7 @@ Puede ***seleccionar qué alertas*** desea ver en la pantalla de la aplicación 
 - **Túneles** ([info de OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
-Los tipos de advertencias tienen una apariencia visual diferente, que depende de la región del viaje. OsmAnd no pretende presentar señales de tráfico 100% idénticas, pero señala algunas similitudes.
+Los tipos de advertencias tienen una apariencia visual diferente, que depende de la región del viaje. OsmAnd no pretende presentar señales de tráfico 100% idénticas, pero señala algunas similitudes.  
 :::
 
 
@@ -257,13 +267,13 @@ Los tipos de advertencias tienen una apariencia visual diferente, que depende de
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -273,7 +283,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 El **mapa se utiliza durante la navegación** para determinar su ubicación, planificar su ruta y orientarse en el terreno. Durante la navegación, puede ver el mapa con *centrado automático*, moverlo y *acercar y alejar* para ver el área requerida. El mapa también puede mostrar marcadores que indican puntos de interés, rutas, condiciones climáticas, señales de tráfico y otros objetos para ayudarle a navegar. El mapa se puede actualizar en *tiempo real* y muestra *información actualizada* que puede afectar la planificación de la ruta.
 
-Puede aprender cómo cambia el comportamiento del mapa durante la navegación en el artículo [Pantalla del mapa durante la navegación](../guidance/map-during-navigation.md).
+Puede aprender cómo cambia el comportamiento del mapa durante la navegación en el artículo [Pantalla del mapa durante la navegación](../guidance/map-during-navigation.md).  
 
 ## Personalizar línea de ruta {#customize-route-line}
 
@@ -281,13 +291,13 @@ Puede aprender cómo cambia el comportamiento del mapa durante la navegación en
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*
+Ir a: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Ajustes de navegación](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
@@ -295,7 +305,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Con el ajuste **Personalizar línea de ruta**, puede elegir la apariencia de la línea de ruta que será visible en el mapa durante la navegación. Puede seleccionar el *color*, el *ancho de la línea* y la visualización de las *flechas de giro* en ella. Para cada perfil, puede elegir una vista de línea diferente. Todos estos parámetros se describen en detalle en el artículo *Pantalla del mapa durante la navegación* en la sección [Apariencia de la línea de ruta](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
@@ -306,7 +316,7 @@ Con el ajuste **Personalizar línea de ruta**, puede elegir la apariencia de la 
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -314,13 +324,13 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 ![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Para asegurar que OsmAnd calcule la ruta más óptima, es crucial configurar los parámetros de su vehículo —incluyendo su velocidad, dimensiones, peso y tipo de combustible— lo que permite a la aplicación estimar con precisión el tiempo de viaje, evitar restricciones de carretera y hacer un seguimiento del consumo de combustible, como se explica en nuestra guía completa sobre [Parámetros del vehículo](./vehicle-parameters.md).
 

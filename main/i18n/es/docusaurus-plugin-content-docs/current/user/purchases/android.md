@@ -1,5 +1,5 @@
 ---
-source-hash: 166c161e033aab6f7ca0b049fcfab98226fb4a490c7abb63ece62fd8edca3314
+source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -67,9 +67,9 @@ Para dispositivos Android, puedes descargar las versiones **Gratuita** y de **Pa
 
 2. **Android Auto** solo es compatible con OsmAnd descargado de **Google Play**. **No está disponible** para Maps+ descargado de *Huawei AppGallery*.
 
-3. **OsmAnd Pro**, **OsmAnd+** y **Maps+** son compras *multiplataforma*. Esto significa que puedes comprarlo en una tienda (por ejemplo, *Google Play, Huawei AppGallery, AppStore* y *osmand.net*) y restaurarlo en otra [vinculando tu compra con la cuenta de OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro**,  **OsmAnd+** y **Maps+** son compras *multiplataforma*. Esto significa que puedes comprarlo en una tienda (por ejemplo, *Google Play, Huawei AppGallery, AppStore*, y *osmand.net*) y restaurarlo en otra [vinculando tu compra con la cuenta de OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-4. Puedes añadir **OsmAnd+** a la **[Biblioteca familiar de Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** para compartir la compra con los miembros de tu familia.  
+4. Puedes añadir **OsmAnd+** a **[Biblioteca familiar de Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** para compartir la compra con los miembros de tu familia.  
 
 
 ## Precios {#prices}
@@ -119,7 +119,7 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Todas las funciones Pro](#pro-features) | **-** | **-** | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Descargas ilimitadas de mapas](../start-with/download-maps.md) | <details><summary>**7 descargas de mapas**</summary>  - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización del mapa de un país (región). <br/> - El **mapa general del mundo**, la **corrección de altitud mundial**, las **fuentes de mapa** y las **indicaciones de voz** no se cuentan como parte de las 7 posibilidades de descarga. </details> | ✔ | ✔ |
-| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates)<br/>Una vez al mes (con 2 días de retraso) | <details><summary>**7 descargas de mapas**</summary> La actualización de un mapa cuenta como una descarga.</details> | ✔ | ✔ |
+| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu)<br/>Una vez al mes (con 2 días de retraso) | <details><summary>**7 descargas de mapas**</summary> La actualización de un mapa cuenta como una descarga.</details> | ✔ | ✔ |
 | [Actualizaciones de mapas por hora](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |

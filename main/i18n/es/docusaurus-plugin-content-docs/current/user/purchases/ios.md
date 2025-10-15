@@ -1,5 +1,5 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 7661b3402845f8d1d0131cde21795230c0848240ce77a9e370eff00d6bb95c89
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -37,8 +37,8 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 | Plan | Descripción | Disponibilidad | Notas |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **plan gratuito** que proporciona acceso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Ajustes* y *edición/notas de OSM*. | Disponible para todos los usuarios de la versión gratuita de OsmAnd. | Limitado a las funciones básicas de la nube y **5MB** de almacenamiento. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Una **compra dentro de la aplicación** o **suscripción** que desbloquea funciones avanzadas para la aplicación gratuita OsmAnd. | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Se puede añadir a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas y [profesionales](#pro-features) adicionales. | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Una **compra dentro de la aplicación** o **suscripción** que desbloquea funciones avanzadas adicionales y [profesionales](#pro-features) para la aplicación gratuita OsmAnd. | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Se puede añadir a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas adicionales y [profesionales](#pro-features). | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
 
 ### Notas importantes {#important-notes}
 
@@ -46,7 +46,7 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 
 2. **OsmAnd Pro**, **OsmAnd+** y **Maps+** son compras *multiplataforma*. Esto significa que puedes comprarlo en una tienda (por ejemplo, *Google Play, Huawei AppGallery, AppStore* y *osmand.net*) y restaurarlo en otra [vinculando tu compra con la cuenta de OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-3. Puedes añadir **Maps+** a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088) para compartir la compra con los miembros de tu familia.
+3. Puedes añadir **Maps+** a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088) para compartir la compra con los miembros de tu familia.  
 
 
 ## Precios {#prices}
@@ -92,7 +92,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Todas las funciones Pro](#pro-features) | **-** | **-** | ✔ |
 | [Descargas de mapas](../start-with/download-maps.md) |  <details><summary>**5 descargas de mapas** <br /> (la actualización del mapa cuenta como descarga):</summary> <br /> - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización de un mapa de un país (región).<br /> - El **mapa general del mundo**, la **corrección de altitud mundial**, las **fuentes de mapa** y las **indicaciones de voz** no se cuentan como 5 posibilidades de descarga.</details> | ✔ | ✔ |
-| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates) |  <details><summary>**Una vez al mes** <br /> (con 2 días de retraso):</summary> * limitado a 5 descargas (la actualización del mapa cuenta como descarga) </details> |  ✔ | ✔ |
+| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu) |  <details><summary>**Una vez al mes** <br /> (con 2 días de retraso):</summary> * limitado a 5 descargas (la actualización del mapa cuenta como descarga) </details> |  ✔ | ✔ |
 | [Actualizaciones horarias de mapas](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -122,7 +122,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 ### Funciones Pro {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) Las *Funciones Pro* están disponibles para la suscripción a [OsmAnd Pro](#prices). Esto significa que necesitas tener una suscripción a [OsmAnd Pro](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) Las *Funciones Pro* están disponibles para la [suscripción a OsmAnd Pro](#prices). Esto significa que necesitas tener una [suscripción a OsmAnd Pro](#install-osmand-ios).
 
 Por el momento, la suscripción Pro tiene las siguientes características:
 
@@ -147,7 +147,7 @@ Una forma fácil de elegir y comprar el plan necesario es a través del menú **
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continuar con OsmAnd Pro*
 
-o
+o  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar con OsmAnd Pro*
 
@@ -169,7 +169,7 @@ Las nuevas suscripciones se activaron a partir de OsmAnd 4.3 (diciembre de 2022)
 
 ## Restaurar compras {#restore-purchases}
 
-El usuario puede controlar todas las compras y suscripciones desde la [cuenta de Apple](https://appleid.apple.com/).
+El usuario puede controlar todas las compras y suscripciones desde la [cuenta de Apple](https://appleid.apple.com/).  
 
 Utiliza el mismo ID de Apple para restaurar tus compras.
 

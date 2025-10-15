@@ -1,5 +1,5 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -24,7 +24,7 @@ El complemento de Wikipedia es una [función de pago](../purchases/index.md) de 
 
 Tener Wikipedia en tu viaje te ayuda a aprender más sobre los lugares que visitas. Está disponible sin conexión y muestra Lugares populares (Android) / artículos de Wikipedia (iOS) relacionados con los puntos de interés directamente en el mapa.  
 
-El complemento de Wikipedia es una función independiente que se puede activar/desactivar según sea necesario. Una vez activado, te permite cargar datos de Wikipedia [descargados](../personal/maps-resources#maps--resources) para cada región geográfica. El mapa tiene dos tipos de conocimiento cargado desde Wikipedia: información breve y un artículo completo.  
+El complemento de Wikipedia es una función independiente que se puede activar/desactivar según sea necesario. Una vez activado, te permite cargar datos de Wikipedia [descargados](../personal/maps-resources#downloads-menu) para cada región geográfica. El mapa tiene dos tipos de conocimiento cargado desde Wikipedia: información breve y un artículo completo.  
 
 
 La información breve es proporcionada por los PDI de Wikipedia (una abreviatura de "[punto de interés](../map/point-layers-on-map.md)"). Si la opción de Wikipedia está activada en el menú, aparece un PDI de Wikipedia en el mapa. Cuando tocas un punto de interés, se expande para proporcionar información breve de Wikipedia, así como la posibilidad de abrir un artículo completo. El PDI de Wikipedia, así como los artículos relacionados, están disponibles sin conexión. Puedes leerlos según sea necesario, cambiar de idioma y buscar otra información en Wikipedia.  
@@ -50,7 +50,7 @@ Para mostrar los datos de Wikipedia en el mapa, debes realizar los siguientes aj
 
 Los datos de Wikipedia están disponibles para cada región geográfica. Si se carga para una región y no para otra, en el primer caso podrás trabajar con la información de Wikipedia al ver la región en un mapa, y en el otro caso, la región no tendrá ninguna información de Wikipedia. Una vez cargados, los datos de Wikipedia están disponibles en general, así como sin conexión.
 
-Para descargar los datos de Wikipedia de una región, ve a los [paquetes disponibles para descargar en el *Menú principal*](../start-with/download-maps.md#download), busca la región necesaria y ábrela. Los datos de Wikipedia estarán entre otros paquetes.
+Para descargar los datos de Wikipedia de una región, ve a los [paquetes disponibles para descargar en el *Menú principal*](../start-with/download-maps.md#downloading-maps), busca la región necesaria y ábrela. Los datos de Wikipedia estarán entre otros paquetes.
 
 Puedes abrir los datos de Wikipedia para descargar por región de la siguiente manera:
 

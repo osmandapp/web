@@ -1,5 +1,5 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Pantalla del mapa durante la navegación
 ---
@@ -29,7 +29,7 @@ Este artículo describe cómo configurar la apariencia del mapa durante la naveg
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Pantalla del mapa durante la navegación](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Pantalla del mapa durante la navegación](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Pantalla del mapa durante la navegación](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Pantalla del mapa durante la navegación](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -49,10 +49,12 @@ Durante la navegación, la apariencia del mapa se ajusta según el perfil de nav
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | El tiempo durante el cual la vista del mapa se sincroniza con la posición actual después de moverse. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | El tiempo durante el cual la vista del mapa se sincroniza con la posición actual después de moverse.  |  *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Escala automáticamente el mapa según su velocidad, siempre que el mapa esté sincronizado con su posición actual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - el zoom es de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - el zoom es de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - el zoom es de 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | El icono de la posición actual se asociará con la ruta de navegación actual. | Puede desactivar esta opción, pero todas las opciones relacionadas con la carretera, como la visualización de carriles, tampoco serán visibles durante la navegación. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Determina el rumbo basándose en la ruta de navegación que está siguiendo. | La configuración solo es visible cuando el [plugin de desarrollo de OsmAnd](../../plugins/development.md) está habilitado. <br /> Estos ajustes deben habilitarse si la orientación del mapa direccional se invierte o tiembla al usar [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *Ángulo de zoom automático 3D* | Establece la inclinación del mapa al cambiar a vista 3D durante la navegación. Un ángulo más alto hace que el horizonte aparezca más lejos, proporcionando mayor visibilidad hacia adelante. |Se aplica solo cuando el Zoom automático está habilitado. Valores: 20°, 25°, 30°, 35°, 40°. Predeterminado: 25°.  |
+| *Vista previa de la siguiente vuelta* | Rota automáticamente el mapa ligeramente con antelación para mostrar la siguiente vuelta o maniobra durante la navegación. Ayuda a anticipar las acciones próximas.  | Habilitado por defecto. Si exporta e importa nuevamente un perfil, asegúrese de verificar esta configuración, ya que en algunas versiones anteriores podría restablecerse a “habilitado.”   |
+| *<Translate android="true" ids="snap_to_road"/>*  | El icono de la posición actual se asociará con la ruta de navegación actual.  | Puede desactivar esta opción, pero todas las opciones relacionadas con la carretera, como la visualización de carriles, tampoco serán visibles durante la navegación.  |
+
 
 
 ## Mostrar puntos a lo largo de la ruta {#show-points-along-the-route}
@@ -61,7 +63,11 @@ El ajuste *Mostrar a lo largo de la ruta* le permite configurar parámetros de r
 
 - La capacidad de establecer diferentes distancias (hasta 5 km, o 3.11 millas, dependiendo de la [unidad de longitud](../../personal/profiles.md#units--formats) que establezca) desde la ruta hasta los puntos cercanos es útil cuando se utilizan tipos de enrutamiento como [Línea recta](../routing/straight-line-routing.md) o [Directo al punto](../routing/direct-to-point-routing.md).
 - Para el ajuste *Mostrar a lo largo de la ruta*, se recomienda usar [Indicaciones de voz](../guidance/voice-navigation.md) para la navegación.
-- *PDI, Favoritos y Advertencias de tráfico* no se muestran en la lista de una ruta que ya ha recorrido.
+- *PDI, Favorito y Advertencias de tráfico* no se muestran en la lista de una ruta que ya ha recorrido.
+
+:::info note
+La opción **Mostrar a lo largo de la ruta** afecta solo a las listas de PDI y Mis Favoritos, no al mapa en sí. Los iconos de PDI y Favoritos se muestran en todas partes del mapa independientemente de su distancia a la ruta.
+:::
 
 
 ### Ver y seleccionar puntos {#view-and-select-points}
@@ -93,7 +99,7 @@ Cuando crea una ruta, puede establecer los tipos de puntos que se mostrarán a l
 
 ![Superposición de PDI en Android](@site/static/img/map/poi_overlay_android.png) ![Superposición de PDI en iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Los ajustes de PDI en [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) están asociados con el ajuste **Mostrar a lo largo de la ruta**. Esto es esencialmente un ajuste adicional para mostrar PDI en el mapa, directamente relacionado con la ruta creada.  
+Los ajustes de PDI en [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) están asociados con el ajuste **Mostrar a lo largo de la ruta**. 
 
 Cuando especifica la visualización de ciertos PDI en *Configurar mapa*, todos se muestran en los mapas que ha descargado, ya sea que haya seleccionado categorías o, si no le importa qué categoría, haya seleccionado PDI cercanos.  
 
@@ -150,7 +156,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Las notificaciones, como advertencias de tráfico o límites de velocidad, aparecerán en la pantalla como un widget. Aparecen en la esquina inferior izquierda mientras navega. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Las notificaciones, como advertencias de tráfico o límites de velocidad, aparecerán en la pantalla como un widget. Aparecen en la esquina inferior izquierda mientras navega. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Apariencia de la línea de ruta {#route-line-appearance}
