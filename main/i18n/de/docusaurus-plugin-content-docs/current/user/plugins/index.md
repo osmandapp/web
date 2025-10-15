@@ -1,5 +1,5 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Plugins
 ---
@@ -78,7 +78,7 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 | [Wetter](../plugins/weather.md) | [Kartenebene](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Bildschirm](../plugins/weather.md#weather-forecast-screen) |
 | [Seekartenansicht](#nautical-map-view) | [Kartenstil](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikartenansicht](#ski-map-view) | [Kartenstil](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
-|[Audio-/Videonotizen](#audiovideo-notes) 🤖  | [Kartenebene](../plugins/audio-video-notes.md#show-all-on-the-map), [Kontextmenü](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Audio-/Videonotizen](#audiovideo-notes) 🤖  | [Kartenebene](../plugins/audio-video-notes.md#show-all-on-the-map), [Kontextmenü](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| [Kartenebene](../plugins/osm-editing.md#authorization) |
 |[Parkposition](#parking-position) | [Kontextmenü](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Kartenebene](../plugins/mapillary.md#map-layer), [Kontextmenü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
