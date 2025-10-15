@@ -129,7 +129,11 @@ export default function ExploreLayer() {
             const poi = response?.data ?? null;
             const obj = { poi, wikidata: item, key, mapObj: selectFromMap };
             recentSaver(EXPLORE_OBJS_KEY, obj);
+            navigateToPoi(item, navigate, true);
             ctx.setSelectedWpt(obj);
+            if (!selectFromMap) {
+                ctx.setSelectedPoiObj(obj);
+            }
             setSelectFromMap(false);
         }
 

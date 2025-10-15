@@ -23,7 +23,7 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
-import { POI_URL } from './GlobalManager';
+import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
 import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
 
 const POI_CATEGORIES = 'poiCategories';
@@ -365,9 +365,8 @@ export function navigateToPoi(poi, navigate, isWiki = false) {
             search.append(key, v);
         }
     }
-
     navigate({
-        pathname: POI_URL,
+        pathname: MAIN_URL_WITH_SLASH + POI_URL,
         search: search.size ? `?${search}` : '',
         hash: window.location.hash,
     });

@@ -96,6 +96,7 @@ import { openPoiObj } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from './favorite/FavoriteItem';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
+import { navigateToPoi } from '../manager/PoiManager';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -455,6 +456,14 @@ export default function MainMenu({
         });
 
         if (selectedType === OBJECT_SEARCH) {
+            if (ctx.selectedPoiObj) {
+                if (ctx.selectedPoiObj.wikidata) {
+                    navigateToPoi(ctx.selectedPoiObj.wikidata, navigate, true);
+                } else {
+                    navigateToPoi(ctx.selectedPoiObj, navigate);
+                }
+                return;
+            }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
                 return;

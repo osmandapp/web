@@ -85,7 +85,7 @@ export default function ExploreMenu() {
                 {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
             </AppBar>
             <Box sx={{ flex: 1, overflowY: 'auto' }}>
-                {zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
+                {zoom !== null && zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
                 {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
                     <Loading id={'se-loading-page'} />
                 ) : (

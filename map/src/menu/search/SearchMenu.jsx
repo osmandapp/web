@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { MAX_RECENT_OBJS } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -13,7 +13,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_URL,
 } from '../../manager/GlobalManager';
-import { matchPath, useNavigate, useOutlet } from 'react-router-dom';
+import { matchPath, useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getCatPoiIconName,
@@ -34,14 +34,13 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
 import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import ExploreMenu from './explore/ExploreMenu';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
-
-    const outlet = useOutlet();
 
     const [, height] = useWindowSize();
 
@@ -51,6 +50,8 @@ export default function SearchMenu() {
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
         location.pathname
     );
+
+    const hasWikidata = new URLSearchParams(location.search).has('wikidataId');
 
     const isPoiCategoriesRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + '*' },
@@ -238,8 +239,8 @@ export default function SearchMenu() {
         <>
             {ltx.isLoggedIn() ? (
                 <>
-                    {showExploreOutlet && outlet ? (
-                        outlet
+                    {showExploreOutlet ? (
+                        <ExploreMenu />
                     ) : (
                         <Box
                             sx={{

@@ -13,9 +13,10 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
+import { cleanHtml, getIconNameForPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
 import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
+import { useNavigate } from 'react-router-dom';
 
 export function getCategory(props) {
     const category = props.categories?.replace(/^\[|\]$/g, '').trim();
@@ -24,6 +25,8 @@ export function getCategory(props) {
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
+
+    const navigate = useNavigate();
 
     const { ref, inView } = useInView();
     const anchorEl = useRef(null);
