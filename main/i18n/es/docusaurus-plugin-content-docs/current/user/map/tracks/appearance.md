@@ -1,5 +1,5 @@
 ---
-source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
+source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -52,7 +52,7 @@ Puede modificar la apariencia de la pista utilizando uno de los siguientes méto
 ### Color {#color}
 
 :::tip purchases
-Algunos ajustes solo se pueden usar con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funciones gratuitas y de pago.
+Algunos ajustes solo se pueden usar con *OsmAnd Pro*. Funciones gratuitas y de pago para <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
 :::
 
 ![Apariencia](@site/static/img/map/appearance_color_andr.png)
@@ -91,23 +91,9 @@ Ajuste el ancho de la pista para mejorar la visibilidad en el mapa.
 
 ### Intervalo de división {#split-interval}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+![Menú de pista Apariencia Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
 
-<TabItem value="android" label="Android">
-
-![Menú de pista Apariencia Intervalo de división Android](@site/static/img/map/split_interval_android.png)  ![Intervalo de división Android](@site/static/img/map/split_interval_2_android.png)
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Menú de pista Apariencia Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Seleccione si desea dividir la pista en intervalos por **distancia**, **tiempo** o **subida/bajada** (Android), o por **distancia** o **tiempo** (iOS). Para ver estadísticas detalladas por intervalo, consulte [Analizar por intervalos](../../map/tracks/track-context-menu.md#analyze-by-intervals) (solo Android).
-
+Seleccione si desea dividir el intervalo en la pista **por distancia o por tiempo**.
 
 ### Flechas de dirección {#direction-arrows}
 
@@ -286,7 +272,7 @@ Para especificar un color para una pista, use el siguiente formato:
     - Estos ajustes de apariencia se almacenan en las **extensiones GPX de nivel superior**.
     - Si se **establece un color o ancho en el nivel superior** (ya sea en el archivo GPX o manualmente en OsmAnd), este ajuste tendrá prioridad sobre los colores asignados a los segmentos de pista individuales.
 
-**Solución alternativa para pistas multicolores:**
+**Solución para pistas multicolor:**
 
 - Para preservar los **colores individuales para múltiples pistas**, **importe las pistas por separado** en lugar de fusionarlas.
 

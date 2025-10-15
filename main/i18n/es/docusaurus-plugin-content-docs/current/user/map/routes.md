@@ -1,5 +1,5 @@
 ---
-source-hash: f83e190bfec9a24ba91f8854af79a3c931b22468f01136978f5937e9c2a59156
+source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
 sidebar_position: 10
 title:  Rutas
 ---
@@ -98,7 +98,7 @@ OsmAnd admite *zonas de escalada* (`climbing=area`) y *peñascos de escalada* (`
     - *Calidad de la escalada* (sólida, suelta, mixta).
     - *Disponibilidad de libro de cumbre*.
 
-Para habilitar los lugares de escalada en el mapa, vaya a: *Menú → Configurar Mapa → Rutas → Vías de escalada*.
+Para habilitar los lugares de escalada en el mapa, vaya a: *Menú → Configurar mapa → Rutas → Vías de escalada*.
 
 
 ### Grado de dificultad de las rutas de senderismo {#hiking-trails-difficulty-grade}
@@ -111,18 +111,11 @@ Algunos segmentos de camino pueden formar parte de muchas rutas, pero pueden col
 2. [Escala CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Pistas y rutas de esquí {#ski-slopes-and-routes}
+### Rutas de esquí {#ski-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Las pistas y rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si está activo otro estilo de mapa, se muestra un banner que sugiere cambiar a **Invierno y Esquí** (*solo Android*). Toque ***Cambiar*** para cambiar el estilo de mapa sin salir de la pantalla actual, o ***Más tarde*** para ocultar el banner.
-
-
-### Senderos para motos de nieve {#snowmobile-trails}
-
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
-
-Los senderos para motos de nieve están mapeados en [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) como `route=snowmobile`. Se utilizan para la recreación invernal y para conectar áreas remotas durante la temporada de nieve. En OsmAnd, los senderos para motos de nieve son clicables, consulte la sección [Acciones con Rutas](#actions-with-routes).
+Las rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles.  
 
 
 ### Rutas ecuestres {#horse-routes}
@@ -252,14 +245,14 @@ En el **menú contextual**, puede:
 
 La siguiente información será visible en el menú contextual:
 
-- **Información de la ruta**: Nombre de la ruta, enlace OSM (se requiere el plugin de Edición OSM), Tipo, Descripción, Distancia, Dirección, Subida/Bajada, Rango de altitud, Red, Operador, Estado, Color, Ida y vuelta, Puntos de inicio/fin, y más.
+- **Información de la ruta**: Nombre de la ruta, enlace OSM (se requiere el plugin de Edición OSM), Tipo, Descripción, Distancia, Dirección, Ascenso/Descenso, Rango de altitud, Red, Operador, Estado, Color, Ida y vuelta, Puntos de inicio/fin, y más.
 - **General**: Tamaño, Ubicación, Creado el.
 - **Información adicional**. Muestra el tipo de actividad.
 - botones de acción: [Guardar como](#save-as-a-track) e [Iniciar navegación](#start-navigation).
 - [Información de elevación](../navigation/setup/route-details.md#elevation-info). Muestra información sobre los datos de elevación en la ruta.
 - [Analizar pista en el mapa](../map/tracks/index.md#analyze-track-on-map). Muestra un análisis detallado de los datos de la pista utilizando gráficos y mapas.
 
-Para ver el gráfico de los detalles de elevación, pendiente o altitud de una ruta seleccionada, simplemente toque cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Subida**, **Bajada** o **Altitud**.
+Para ver el gráfico de los detalles de elevación, pendiente o altitud de una ruta seleccionada, simplemente toque cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Ascenso**, **Descenso** o **Altitud**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
