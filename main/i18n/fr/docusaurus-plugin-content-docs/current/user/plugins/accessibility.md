@@ -3,6 +3,7 @@ source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
 sidebar_position: 1
 title:  Accessibilité
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 :::caution Remarque
 Le plugin Accessibilité est disponible uniquement sur la **version Android** d'OsmAnd. La [version iOS](#how-to-use-ios) s'appuie sur les paramètres d'accessibilité par défaut du système.
@@ -25,7 +25,7 @@ L'accessibilité améliore l'ergonomie pour les utilisateurs aveugles et malvoya
 
 ### Comment utiliser (Android) {#how-to-use-android}
 
-![Accessibilité](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Activer le plugin Accessibilité :***  
 
@@ -93,7 +93,7 @@ Pour activer les fonctionnalités d'accessibilité de l'appareil dans OsmAnd, vo
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibilité](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
 
 Le plugin Accessibilité offre divers paramètres pour personnaliser la navigation et l'interaction pour les utilisateurs en situation de handicap. Ces paramètres sont appliqués par [profil](../personal/profiles.md) dans OsmAnd.
 

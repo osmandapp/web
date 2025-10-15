@@ -3,6 +3,7 @@ source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipédia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -30,7 +30,7 @@ Le plugin Wikipédia est une fonctionnalité distincte qui peut être activée/d
 Les informations brèves sont fournies par les POI Wikipédia (une abréviation pour "[point d'intérêt](../map/point-layers-on-map.md)"). Si l'option Wikipédia est activée dans le menu, un POI Wikipédia apparaît sur la carte. Lorsque vous appuyez sur un point d'intérêt, il se développe pour fournir de brèves informations de Wikipédia, ainsi que la possibilité d'ouvrir un article complet. Le POI Wikipédia, ainsi que les articles connexes, sont disponibles hors ligne. Vous pouvez les lire selon vos besoins, changer de langue et rechercher d'autres informations sur Wikipédia.  
 
 
-[Wikipédia](https://en.wikipedia.org/wiki/Wikipedia) est une encyclopédie en ligne gratuite, multilingue et collaborative, créée et maintenue par une communauté de rédacteurs bénévoles utilisant un système d'édition basé sur un wiki.  
+[Wikipédia](https://en.wikipedia.org/wiki/Wikipedia) est une encyclopédie en ligne gratuite, multilingue et collaborative ouverte, créée et maintenue par une communauté de rédacteurs bénévoles utilisant un système d'édition basé sur un wiki.  
 
 &nbsp;  
 ![Wikipédia](@site/static/img/map/map-wikipedia.png)

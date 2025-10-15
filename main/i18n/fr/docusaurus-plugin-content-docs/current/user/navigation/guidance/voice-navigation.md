@@ -3,6 +3,7 @@ source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Guidage vocal / Notifications
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
 La fonction de navigation vocale d'OsmAnd fournit des instructions et des alertes vocales en temps réel qui vous aident à rester informé et en sécurité lors de vos déplacements. Vous pouvez adapter le guidage à vos préférences et à vos besoins. Pour ce faire, sélectionnez un profil vocal approprié, soit un [moteur de synthèse vocale (TTS)](#tts-text-to-speech) qui peut annoncer dynamiquement les noms de rue, les distances et les limitations de vitesse, soit une [voix pré-enregistrée](#recorded-voice-prompts) offrant des instructions concises.  
 
-En plus des instructions détaillées, la navigation vocale d'OsmAnd peut vous informer des points d'intérêt à venir, des changements de conditions de circulation et lorsque vous dépassez une limitation de vitesse prédéfinie. Pour en savoir plus sur la personnalisation de ces alertes, consultez les [paramètres de temps d'annonce](#announcement-time) et les [avertissements de limitation de vitesse](#speed-limit).  
+En plus des instructions virage par virage, la navigation vocale d'OsmAnd peut vous informer des points d'intérêt à venir, des changements de conditions de circulation et lorsque vous dépassez une limitation de vitesse prédéfinie. Pour en savoir plus sur la personnalisation de ces alertes, consultez les [paramètres de temps d'annonce](#announcement-time) et les [avertissements de limitation de vitesse](#speed-limit).  
 
 Avec la bonne combinaison d'options vocales, de paramètres d'alerte et de réglages sonores de l'appareil, vous recevrez des informations de navigation claires et opportunes tout au long de votre itinéraire.
 

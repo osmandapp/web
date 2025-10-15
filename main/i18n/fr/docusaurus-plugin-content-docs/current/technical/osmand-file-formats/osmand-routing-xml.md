@@ -2,15 +2,16 @@
 source-hash: 9a57e167f8c6266f28b4788f50b92e7a169d7f2af0bccb7d225582142c315b68
 sidebar_position: 5
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Configuration du routage - .routing.xml {#routing-configuration---routingxml}
 
 <IncompleteArticle/>
 
-Routing.xml est un fichier de configuration qui stocke plusieurs profils de routage. Chaque profil est indépendant et n'a que le profil de base OsmAnd comme référence, c'est pourquoi il n'est pas possible de créer une hiérarchie de profils et vous devrez copier toutes les sections de règles. Chacune est entièrement configurable via routing.xml, ce qui signifie qu'il n'y a pas de constantes dans le code et que toutes les pénalités sont calculées à l'aide de cette configuration.
+Routing.xml est un fichier de configuration qui stocke plusieurs profils de routage. Chaque profil est indépendant et n'a que le profil de base OsmAnd comme référence, c'est pourquoi il n'est pas possible de créer une hiérarchie de profils et vous devrez copier toutes les sections de règles. Chacune est entièrement configurable via routing.xml, ce qui signifie qu'il n'y a aucune constante dans le code et que toutes les pénalités sont calculées à l'aide de cette configuration.
 
-Dans l'application, vous pouvez utiliser plusieurs fichiers routing.xml personnalisés et profils que vous pouvez sélectionner dans Paramètres -> Profil -> Paramètres de navigation -> Paramètres de routage.
+Dans l'application, vous pouvez utiliser plusieurs fichiers routing.xml personnalisés et des profils que vous pouvez sélectionner dans Paramètres -> Profil -> Paramètres de navigation -> Paramètres de routage.
 
 Veuillez consulter la documentation dans routing.xml :
 

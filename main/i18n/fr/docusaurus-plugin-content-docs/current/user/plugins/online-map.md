@@ -3,6 +3,7 @@ source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
 sidebar_position: 8
 title:  Cartes en ligne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Aperçu {#overview}
 
-Les cartes en ligne d'OsmAnd sont une extension considérable de la base de données OpenStreetMap déjà présente dans l'application. Avec ce plugin, vous pouvez ajouter des couches à votre carte avec des informations provenant d'une source différente, en commençant par la vue satellite ou les itinéraires de randonnée et en terminant par des données très spécifiques, comme l'emplacement des bouches d'incendie. Vous pouvez également changer la source principale de la carte, passant des cartes vectorielles aux tuiles en ligne.
+Les cartes en ligne d'OsmAnd sont une extension considérable de la base de données OpenStreetMap déjà présente dans l'application. Avec ce plugin, vous pouvez ajouter des couches à votre carte avec des informations provenant d'une source différente, en commençant par la vue satellite ou des itinéraires de randonnée et en terminant par des données très spécifiques, comme l'emplacement des bouches d'incendie. Vous pouvez également changer la source principale de la carte, passant des cartes vectorielles aux tuiles en ligne.
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}

@@ -2,27 +2,28 @@
 source-hash: c95e1035173b21e1b1b5458c275dbed73d3f2f0447aa7b379c4057ef2e86720b
 sidebar_position: 5
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Comment compiler la version Android {#how-to-compile-the-android-version}
 
 
-**Android SDK**:
+**Android SDK** :
 Version SDK minimale : [21](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L38)
 Version SDK cible : [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
 Outils SDK cible : [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build-common.gradle#L6)
 
-**Android NDK**: 23.
+**Android NDK** : 23.
 
 
-## Compiler l'apk Android {#compile-android-apk}
+## Compiler l'APK Android {#compile-android-apk}
 1. Configurez d'abord l'**[environnement de développement](setup-the-dev-environment.md)**.
 2. **Gradle** (ligne de commande) :
     - Spécifiez les **variables d'environnement**. ANDROID_SDK et ANDROID_HOME sont les emplacements où Android Studio place les éléments :
     ```
-    export ANDROID_SDK=/[votre-chemin]/Android/sdk
-    export ANDROID_NDK=/[votre-chemin]/android-ndk-23
-    export ANDROID_HOME=/[votre-chemin]/Android/sdk
+    export ANDROID_SDK=/[your-path]/Android/sdk
+    export ANDROID_NDK=/[your-path]/android-ndk-23
+    export ANDROID_HOME=/[your-path]/Android/sdk
     ```
     - Compilez avec la ligne de commande
     ```
@@ -32,16 +33,16 @@ Outils SDK cible : [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/b
  ```
  import android project and run module flavor `android.OsmAnd`
  ```
-4. Vous pouvez utiliser notre [debug.keystore](https://github.com/osmandapp/Osmand/tree/master/keystores) pour rendre les builds compatibles avec la nightly build.
+4. Vous pouvez utiliser notre [debug.keystore](https://github.com/osmandapp/Osmand/tree/master/keystores) pour rendre les builds compatibles avec la build nocturne.
 
 
 ### Tâches / saveurs Gradle {#gradle-tasks--flavors}
 
-La tâche Gradle **assembleNightlyFreeLegacyFatDebug** produira l'apk dans *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Le nom de la tâche *assembleNightlyFreeLegacyFatDebug* se compose de :
-- assemble - tâche standard pour construire l'apk
+La tâche Gradle **assembleNightlyFreeLegacyFatDebug** produira l'APK dans *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Le nom de la tâche *assembleNightlyFreeLegacyFatDebug* se compose de :
+- assemble - tâche standard pour construire l'APK
 - nightlyFree - saveur de build décrite ci-dessous
-- legacy - legacy / opengl / opengldebug - définit si l'apk produit aura des bibliothèques natives pour utiliser le rendu de carte opengl ou non. Plus d'informations dans le plugin de développement OsmAnd.
-- fat - fat (toutes les cibles natives) / armv7 / arm64 / x86 / armonly - sélectionne les bibliothèques natives qui seront dans l'apk.
+- legacy - legacy / opengl / opengldebug - définit si l'APK produit aura des bibliothèques natives pour utiliser le rendu de carte OpenGL ou non. Plus d'informations dans le plugin de développement OsmAnd.
+- fat - fat (toutes les cibles natives) / armv7 / arm64 / x86 / armonly - sélectionne les bibliothèques natives qui seront dans l'APK.
 - debug - debug / release - tâche standard
 
 Pour construire un bundle, vous pouvez utiliser **`bundle${FLAVOR}LegacyFatRelease`**.
@@ -69,7 +70,7 @@ Ajoutez des symboles de débogage dans la configuration du projet Android Studio
 
 ## Compiler la bibliothèque OpenGL {#compile-opengl-library}
 
-La bibliothèque Opengl est nécessaire pour des cibles comme assembleNightlyFree**Opengl**FatDebug et est par défaut téléchargée depuis le [répertoire ivy d'OsmAnd](https://builder.osmand.net/ivy/net.osmand/) - [tâche gradle](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). Pour le développement local, vous pourriez avoir besoin de compiler ces bibliothèques et de les publier dans un répertoire ivy local.
+La bibliothèque OpenGL est nécessaire pour des cibles comme assembleNightlyFree**Opengl**FatDebug et est par défaut téléchargée depuis le [répertoire ivy d'OsmAnd](https://builder.osmand.net/ivy/net.osmand/) - [tâche gradle](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). Pour le développement local, vous pourriez avoir besoin de compiler ces bibliothèques et de les publier dans un répertoire ivy local.
 
 1. Configurez d'abord l'**environnement de développement**, voir [environnement de développement](./setup-the-dev-environment).
 2. Installez les outils.
@@ -82,15 +83,15 @@ La bibliothèque Opengl est nécessaire pour des cibles comme assembleNightlyFre
 3. **Gradle** (ligne de commande) :
     - Spécifiez les **variables d'environnement**. ANDROID_SDK et ANDROID_HOME sont les emplacements où Android Studio place les éléments :
     ```
-    export ANDROID_SDK=/[votre-chemin]/Android/sdk
-    export ANDROID_NDK=/[votre-chemin]/android-ndk-23
-    export ANDROID_HOME=/[votre-chemin]/Android/sdk
+    export ANDROID_SDK=/[your-path]/Android/sdk
+    export ANDROID_NDK=/[your-path]/android-ndk-23
+    export ANDROID_HOME=/[your-path]/Android/sdk
     ```
     - Compilez avec la [tâche de build gradle](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.gradle)
     ```
     cd core/wrappers/android && ../gradlew build
     ```
-
+    
 **Astuce** : La compilation peut prendre beaucoup de temps et vous n'aurez probablement pas besoin de toutes les plateformes, vous pouvez donc [commenter](https://github.com/osmandapp/OsmAnd-core/blob/master/wrappers/android/build.sh#L64) les architectures indésirables dans le script et ne construire que pour 1 plateforme (x86, x86_64, arm, arm64) en mode debug ou release.
 
 ### Débogage {#debug}

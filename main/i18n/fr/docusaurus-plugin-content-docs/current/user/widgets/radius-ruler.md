@@ -3,6 +3,7 @@ source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
 sidebar_position: 5
 title:  Règle de rayon et Règle
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -139,7 +139,7 @@ Lorsque la **Règle de rayon** est active, la carte affiche une superposition de
 - Tenir l'appareil horizontalement améliore la précision et la visualisation.
 - Si le **triangle bleu** et la **flèche rouge** (Nord) pointent tous deux vers le haut, l'appareil est aligné sur le Nord géographique.
 
-Cette superposition est utile pour la navigation en extérieur, vous permettant de faire correspondre l'[orientation de la carte](../map/interact-with-map.md#map-orientation-modes) avec l'environnement réel.
+Cette superposition est utile pour la navigation en extérieur, vous permettant de faire correspondre l'[orientation de la carte](../map/interact-with-map.md#map-orientation-modes) avec l'environnement réel.  
 
 | | |
 |------------|------------|
@@ -170,7 +170,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/
 
 </Tabs>
 
-Pour augmenter le rayon visible autour de votre position, vous pouvez changer la position de la Règle de rayon en sélectionnant l'option *Centre* ou *Bas*.
+Pour augmenter le rayon visible autour de votre position, vous pouvez changer la position de la Règle de rayon en sélectionnant l'option *Centre* ou *Bas*.  
 
 Pour plus d'informations sur *la position sur l'écran*, consultez l'article [Configurer l'écran](../widgets/configure-screen.md#display-position-location-position-on-screen).
 

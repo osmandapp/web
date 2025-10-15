@@ -3,6 +3,7 @@ source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
 sidebar_position: 7
 title:  Favoris
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -64,13 +64,13 @@ Les favoris font partie d'une couche de carte spéciale, et vous pouvez les [aff
 
 <TabItem value="android" label="Android">
 
-![Ajouter une description au favori Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Groupe de favoris Android](@site/static/img/personal/favorite_group_android.png)
+![Ajouter une description au favori Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Groupe de favori Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ajouter une description au favori iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Groupe de favoris iOS](@site/static/img/personal/favorite_group_ios.png)
+![Ajouter une description au favori iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Groupe de favori iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ Le *dossier Personnel* contient des points spéciaux comme **<Translate android=
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Mes lieux Android](@site/static/img/personal/my_places_android.png)
+![Mes lieux favoris Android](@site/static/img/personal/my_places_android.png)
 
 </TabItem>
 
@@ -329,7 +329,7 @@ OsmAnd propose plusieurs méthodes pour [sauvegarder](./import-export.md) et [re
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Sauvegarde gratuite des favoris Android](@site/static/img/personal/favorites_free_backup_andr.png)
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
@@ -337,7 +337,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Sauvegarde gratuite des favoris iOS](@site/static/img/personal/favorites_free_backup_2_ios.png)
+![Actions sur les favoris iOS](@site/static/img/personal/favorites_free_backup_2_ios.png)
 
 </TabItem>
 
@@ -360,7 +360,7 @@ La [Sauvegarde gratuite des favoris](../personal/osmand-cloud.md#osmand-start) e
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Achat de la sauvegarde gratuite des favoris Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -368,7 +368,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Achat de la sauvegarde gratuite des favoris iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Actions sur les favoris iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 

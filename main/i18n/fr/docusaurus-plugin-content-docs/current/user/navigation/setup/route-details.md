@@ -3,6 +3,7 @@ source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
-OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails. L'application fournit des informations détaillées sur l'itinéraire telles que la distance, [le temps de trajet](#distance--time--co2), [le type de surface](#road-attributes), [les dénivelés](#elevation-info), [les données sur l'empreinte CO2](#distance--time--co2) et [les informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de la trace, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.  
+OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails. L'application fournit des informations détaillées sur l'itinéraire telles que la distance, [le temps de trajet](#distance--time--co2), [le type de surface](#road-attributes), [les dénivelés](#elevation-info), [les données sur l'empreinte CO2](#distance--time--co2), et [les informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de la trace, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -43,9 +43,9 @@ OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails
 Après avoir calculé un itinéraire dans le [menu Navigation](./route-navigation.md#start--stop-navigation), vous avez accès aux "Détails" de cet itinéraire. Ces informations sont utiles à utiliser avant de commencer un voyage pour améliorer la planification de l'itinéraire ou pour vérifier les informations sur la route à venir pendant la conduite.  
 Il y a trois façons d'accéder au menu *Détails de l'itinéraire*.  
 
-1. Allez dans le *Menu principal → Navigation*, définissez l'itinéraire et appuyez sur le bouton *Détails*.
+1. Allez dans le *Menu → Navigation*, définissez l'itinéraire et appuyez sur le bouton *Détails*.
 2. Appuyez sur l'icône *Navigation* sur l'écran de la carte, définissez l'itinéraire et appuyez sur le bouton *Détails*.
-3. Allez dans le menu *Mes lieux*, appuyez sur n'importe quelle trace disponible dans la liste *Menu → Mes lieux → Traces*, sélectionnez l'icône *Navigation* dans le menu contextuel de la trace dans l'onglet *Aperçu* et appuyez sur *Détails*.  
+3. Allez dans le menu *Mes lieux*, appuyez sur n'importe quelle trace disponible dans la liste *Menu → Mes lieux → Traces*, sélectionnez l'icône *Navigation* dans le menu contextuel de la trace dans l'*Aperçu* et appuyez sur *Détails*.  
 
 Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et le [type de routage](../../navigation/routing/osmand-routing.md#routing-types) choisi, certains détails de l'itinéraire peuvent ne pas être affichés. De plus, les détails de l'itinéraire dépendent fortement de la *couverture des données OpenStreetMap*.
 
@@ -102,7 +102,7 @@ Selon les [paramètres de profil](../../personal/profiles.md) sélectionnés et 
 - *Montée / descente*. Affiche le rapport du chemin par rapport à l'horizontale, où zéro indique l'horizontalité et le nombre de degrés indique un degré de pente plus élevé ou plus raide. La pente indique la pente maximale de la route en pourcentage depuis votre point de localisation jusqu'à la fin du graphique visible, ou pour la section sélectionnée de l'itinéraire sans le point de localisation visible à l'écran.
 
 
-***Une licence pour les données MNE (Modèle Numérique d'Élévation) utilisées par OsmAnd pour la détection du terrain***  
+***Une licence pour les données MNE utilisées par OsmAnd pour la détection du terrain***  
 Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l' *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, l'outil d'imagerie principal du *Système d'Observation de la Terre de la NASA*. Pour des informations complètes, consultez la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -213,9 +213,9 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
    Par exemple, le revêtement en [asphalte](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) offre une bonne adhérence et une bonne isolation phonique, et le revêtement en [béton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) est plus durable et a une plus grande capacité de charge. D'autres matériaux tels que le gravier, la pierre concassée, les planches de bois et autres peuvent également être utilisés pour créer une surface de route.  
 
-- [**Déclivité**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). C'est une mesure de l'angle de la pente de la route, exprimée en pourcentage. Elle indique à quel point la route est en pente ascendante ou descendante par rapport à l'horizon, et elle est calculée en mesurant le changement vertical de l'altitude de la route par la distance horizontale et en multipliant la valeur résultante par 100 %.  
+- [**Pente**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). C'est une mesure de l'angle de la pente de la route, exprimée en pourcentage. Elle indique à quel point la route est en pente ascendante ou descendante par rapport à l'horizon, et elle est calculée en mesurant le changement vertical de l'altitude de la route par la distance horizontale et en multipliant la valeur résultante par 100 %.  
 
-   Par exemple, si la déclivité de la route est de 10 %, cela signifie que pour chaque 100 mètres de distance horizontale le long de la route, vous montez ou descendez de 10 mètres. La déclivité de la route peut affecter la vitesse de votre véhicule, le freinage, la consommation de carburant et la sécurité de conduite, en particulier sur les routes glissantes en hiver.  
+   Par exemple, si la pente de la route est de 10 %, cela signifie que pour chaque 100 mètres de distance horizontale le long de la route, vous montez ou descendez de 10 mètres. La pente de la route peut affecter la vitesse de votre véhicule, le freinage, la consommation de carburant et la sécurité de conduite, en particulier sur les routes glissantes en hiver.  
 
 - [**Fermeté de la surface**](https://wiki.openstreetmap.org/wiki/Key:tracktype). La surface de la route peut se remettre d'une déformation ou d'une charge. Plus la fermeté de la surface est élevée, moins il y a de risques de dommages au véhicule et plus la route sera confortable. La fermeté de la surface peut également affecter la vitesse du véhicule et la consommation de carburant.  
 

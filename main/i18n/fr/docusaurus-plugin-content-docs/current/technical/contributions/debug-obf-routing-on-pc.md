@@ -10,7 +10,7 @@ sidebar_position: 5
 - copiez le fichier OBF de votre téléphone ou tablette dans ce dossier,
 - démarrez OsmandMapCreator via le fichier bat ou sh,
 - assurez-vous d'avoir une connexion Internet afin que mapcreator puisse télécharger les tuiles de carte, vérifiez tous les menus et paramètres dans mapcreator,
-- définissez le répertoire de travail de mapcreator sur le dossier où se trouvent mapcreator lui-même et le fichier OBF.
+- définissez le répertoire de travail de mapcreator sur le dossier où se trouve mapcreator lui-même et le fichier OBF.
 - déplacez et zoomez la carte à l'endroit où vous avez des problèmes de routage et qui est couvert par le fichier OBF mentionné,
 - faites des clics droits sur la carte pour définir les points de départ et d'arrivée et les différents moteurs de routage
 
@@ -21,4 +21,4 @@ Trouver le nom du lieu auquel une rue est associée dans les cartes OBF hors lig
 - Démarrez OsmAndMapCreator sur votre PC en exécutant `OsmAndMapCreator.bat` ou `OsmAndMapCreator.sh`
 - Assurez-vous d'avoir un accès Internet sur votre PC, et que les paramètres de Mapcreator sont tels que les tuiles sont téléchargées lorsque vous faites glisser et zoomez la carte jusqu'à l'endroit où se trouve votre problème.
 - Si vous avez zoomé sur votre zone, faites un clic droit avec la souris sur la carte et choisissez "afficher l'adresse" dans le menu contextuel.
-- Normalement, tous les noms de rue devraient maintenant être affichés à partir du fichier OBF, ainsi que le nom du lieu auquel chaque rue est associée dans la recherche hors ligne d'OsmAnd.
+- Normalement, maintenant tous les noms de rue devraient être affichés à partir du fichier OBF, ainsi que le nom du lieu auquel chaque rue est associée dans la recherche hors ligne d'OsmAnd.

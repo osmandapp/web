@@ -4,6 +4,7 @@ sidebar_position: 5
 sidebar_label:  Planifier un itinéraire
 title: Planifier un itinéraire sur le site web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -28,7 +28,7 @@ Le planificateur d'itinéraires web d'OsmAnd vous permet de créer des itinérai
 
 Pour créer un itinéraire de navigation, suivez ces étapes :
 
-- **Faites un clic droit** sur la carte pour ajouter des points de cheminement :
+- **Clic droit** sur la carte pour ajouter des points de cheminement :
 
   - *Naviguer depuis*. Définir le point de départ.
   - *Naviguer vers*. Définir la destination.
@@ -61,7 +61,7 @@ L'outil [**Planifier un itinéraire**](../plan-route/create-route.md) d'OsmAnd W
 
 ***Création d'un nouvel itinéraire :***
 
-- *Faites un clic droit* sur la carte et sélectionnez **Créer un nouvel itinéraire**.
+- *Clic droit* sur la carte et sélectionnez **Créer un nouvel itinéraire**.
 - Alternativement, utilisez le bouton **Créer une trace** dans le menu *Local* (situé sur le côté droit avec les boutons *Crayon* et *Télécharger*).
 
 
@@ -93,7 +93,7 @@ Le menu **Trace locale** propose trois panneaux pour l'édition : **Infos**, **T
 - *Recalculer*. Ajoutez ou mettez à jour les données d'altitude.
 - *Altitude*. Affichez le profil d'altitude.
 - *Graphique de vitesse*. Affichez les données de vitesse le long de la trace.
-- *Graphique de pente*. Affichez les changements de pente le long de l'itinéraire.
+- *Graphique de pente*. Affichez les changements de pente le long de l'itinéraire.  
 - *Détails de la route*. Affichez des informations détaillées telles que le type de route, la surface et la pente.
 - *Télécharger en GPX*. Exportez la trace en tant que fichier GPX ([Fonctionnalité Pro](../purchases/index.md)).
 - *Fermer la trace*. Fermez la vue d'édition de la trace.

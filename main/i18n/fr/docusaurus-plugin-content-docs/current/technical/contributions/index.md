@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Les contributions sont les bienvenues ! {#contributions-are-welcome}
 
-Vous pouvez également utiliser les fonctionnalités et les plugins d'OsmAnd pour contribuer directement aux données de projets collaboratifs tels qu'OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
+Vous pouvez également utiliser les fonctionnalités et les plugins d'OsmAnd pour contribuer directement des données à des projets collaboratifs tels qu'OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
 
 * [Créer une expérience utilisateur cohérente](./creating-consistent-ux.md)
 * [Comment traduire OsmAnd](./translating-osmand.md)

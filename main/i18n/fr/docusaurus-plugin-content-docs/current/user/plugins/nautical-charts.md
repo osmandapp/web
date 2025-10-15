@@ -3,6 +3,7 @@ source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
 sidebar_position: 7
 title:  Vue Carte marine
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
@@ -23,7 +23,7 @@ Le plugin Vue Carte marine est une [fonctionnalité payante](../purchases/index.
 
 La Vue Carte marine est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières qui vous aide à naviguer sur l'eau et à connaître les routes populaires, les obstacles sur votre voie navigable, les ports les plus proches, les mouillages et autres points de repère importants.  
 
-Une carte marine est une carte topographique très détaillée qui aide les skippers à naviguer un navire sur un cap choisi sur l'eau. Elle est similaire à une carte routière pour ceux qui voyagent en voiture. Souvent appelée une *'Carte'* (Chart en anglais) pour des raisons historiques, c'est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières.  
+Une carte marine est une carte topographique très détaillée qui aide les skippers à naviguer un navire sur un cap choisi sur l'eau. Elle est similaire à une carte routière pour ceux qui voyagent en voiture. Souvent appelée une *'Chart'* pour des raisons historiques, c'est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières.  
 
 Les cartes marines sont importantes pour les marins professionnels et les amateurs qui louent un bateau pour naviguer sur les canaux de la ville. Les cartes leur fournissent diverses informations telles que les routes de navigation, les feux de navigation, les zones de danger, les zones où il est autorisé ou interdit de naviguer ou d'accoster, etc.  
 

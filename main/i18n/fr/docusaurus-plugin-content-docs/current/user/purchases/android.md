@@ -3,6 +3,7 @@ source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
 sidebar_position: 1
 title:  Achats Android
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## Installer OsmAnd (Android) {#install-osmand-android}
@@ -25,18 +25,18 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 
 **Versions de l'application OsmAnd :**
 
-|  App  | Google Play | Huawei AppGallery | Gratuit / Payant |
+|  App  | Google Play | Huawei AppGallery | Free / Paid |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Installer](https://appgallery.huawei.com/#/app/C101486545) | Gratuit |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Payant |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Paid |
 
-**Types d'achats :**
+**Types of purchases:**
 
-| Achat  | Google Play  | Huawei AppGallery | App |
+| Purchase  | Google Play  | Huawei AppGallery | App |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Achat intégré Maps+ | ✔ | ✔ | OsmAnd |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Abonnement Maps+ | ✔ | ✔ | OsmAnd |
-| ![Pro](@site/static/img/svg/pro_icon.svg) Abonnement OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-app Maps+ | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 <!--
 ### Types of subscriptions {#types-of-subscriptions}
@@ -54,7 +54,7 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 
 ### Différence entre les achats (Android) {#difference-between-purchases-android}
 
-| Plan | Description | Disponibilité | Remarques |
+| Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et les *éditions/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités cloud de base et à **5 Mo** de stockage. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Une **application payante distincte** qui inclut des fonctionnalités avancées. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Peut être ajouté à la [Bibliothèque famille Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
@@ -96,7 +96,7 @@ La liste contient des informations sur les prix des produits OsmAnd pour les ré
 -->
 
 
-|    | OsmAnd Gratuit   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Achat intégré | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
@@ -110,7 +110,7 @@ L'application OsmAnd offre une large gamme de fonctionnalités et d'outils, dont
 
 Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits gratuits et payants d'OsmAnd, ainsi que leurs prix respectifs.
 
-|  | OsmAnd Gratuit | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (achat intégré et abonnement) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -218,8 +218,8 @@ Pour restaurer l'achat, veuillez vérifier quel plan OsmAnd vous avez acheté.
 
 |  App  | Google Play  | Huawei AppGallery |
 | :------------- | :------------- | :------------- |
-| OsmAnd  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Installer](https://appgallery.huawei.com/#/app/C101486545) |
-| OsmAnd+  | ✔  &nbsp;&nbsp;[Installer](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
+| OsmAnd  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) |
+| OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
 ### Restaurer l'abonnement / Achat intégré {#restore-subscription--in-app}
 

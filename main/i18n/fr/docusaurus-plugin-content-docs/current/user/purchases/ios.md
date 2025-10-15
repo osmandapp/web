@@ -3,6 +3,7 @@ source-hash: 7661b3402845f8d1d0131cde21795230c0848240ce77a9e370eff00d6bb95c89
 sidebar_position: 2
 title:  Achats iOS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Installer OsmAnd (iOS) {#install-osmand-ios}
@@ -84,7 +84,7 @@ Dans la liste, il y a des informations sur les prix des produits OsmAnd pour les
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
-|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat intégré&nbsp;& subscription) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat intégré et abonnement) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -178,7 +178,7 @@ Utilisez le même identifiant Apple pour restaurer vos achats.
 - Ouvrez OsmAnd Maps avec une connexion Internet active.
 - Pour restaurer les achats, suivez ces étapes : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran, il devrait apparaître que Maps+ (Pro, Live) est activé.
 
-![Formule Pro](@site/static/img/purchases/maps_purchases_ios.png)
+![Restaurer les achats](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Si aucune des méthodes n'a fonctionné :**
 

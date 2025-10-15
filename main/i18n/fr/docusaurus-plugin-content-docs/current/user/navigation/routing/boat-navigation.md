@@ -3,6 +3,7 @@ source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
 sidebar_position: 8
 title:  Itinéraire pour bateau
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Aperçu {#overview}
 
-La navigation pour bateau peut être un outil précieux pour tous ceux qui aiment naviguer ou faire de la voile sur des canaux, des rivières ou des chenaux. En raison de l'absence de la plupart des chenaux dans les données OpenStreetMap, la navigation pour bateau est *non recommandée* pour la **navigation en eaux libres**. Il est suggéré d'utiliser plutôt la **[navigation directe vers un point](#direct-to-point-routing-for-boat)**. Avec les lignes de contour de profondeur activées, cela peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.  
+La navigation pour bateau peut être un outil précieux pour tous ceux qui aiment naviguer ou faire de la voile sur des canaux, des rivières ou des chenaux. En raison de l'absence de la plupart des chenaux dans les données OpenStreetMap, la navigation pour bateau est *non recommandée* pour la **navigation en eaux libres**, il est suggéré d'utiliser plutôt la **[navigation directe vers un point](#direct-to-point-routing-for-boat)**. Avec les lignes de contour de profondeur activées, cela peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.  
 Le moteur de routage pour bateau d'OsmAnd prend également en compte les caractéristiques des voies navigables et du bateau lui-même.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -100,13 +100,13 @@ Ces types de routage pour le profil bateau peuvent être activés en suivant le 
 Lorsque vous utilisez les types de navigation Direct vers un point et Bateau, vous aurez besoin des [données de contours de profondeur](../../plugins/nautical-charts.md#nautical-map-style), qui peuvent être activées et définies dans *Configurer la carte*.
 :::
 
-Le [type de routage direct vers un point](./direct-to-point-routing.md) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer en eaux libres sans suivre d'itinéraire ou de voie navigable spécifique. Ce type de routage vous permet de définir un point de destination et OsmAnd calculera un chemin direct vers ce point depuis votre position actuelle. Ce type de routage ne prend pas en compte les caractéristiques de votre bateau telles que les vitesses minimale et maximale, la hauteur et la largeur. Votre itinéraire ne sera pas recalculé en cas d'écart.
+Le [type de routage direct vers un point](./direct-to-point-routing.md) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer votre bateau en eaux libres sans suivre d'itinéraire ou de voie navigable spécifique. Ce type de routage vous permet de définir un point de destination et OsmAnd calculera un chemin direct vers ce point depuis votre position actuelle. Ce type de routage ne prend pas en compte les caractéristiques de votre bateau telles que les vitesses minimale et maximale, la hauteur et la largeur. Votre itinéraire ne sera pas recalculé en cas d'écart.
 
 ![Type de navigation direct vers un point Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 
 ### Routage en ligne droite pour bateau {#straight-line-routing-for-boat}
 
-Le [type de routage en ligne droite](./straight-line-routing) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer en eaux libres mais préférez suivre une ligne droite plutôt qu'un itinéraire courbe jusqu'à votre point de destination. Cela peut être utile lors de la navigation vers un point éloigné, visible à l'horizon, par exemple.
+Le [type de routage en ligne droite](./straight-line-routing) peut être utilisé avec le profil bateau lorsque vous souhaitez naviguer votre bateau en eaux libres mais préférez suivre une ligne droite plutôt qu'un itinéraire courbe jusqu'à votre point de destination. Cela peut être utile lors de la navigation vers un point éloigné, visible à l'horizon, par exemple.
 
 ![Type de navigation en ligne droite Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)

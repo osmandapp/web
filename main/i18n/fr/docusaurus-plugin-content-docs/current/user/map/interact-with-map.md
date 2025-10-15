@@ -3,6 +3,7 @@ source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
 sidebar_position: 2
 title:  Interagir avec la carte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,13 +15,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
-Cet article explique comment personnaliser et interagir avec la carte à l'aide de divers boutons et gestes. Il explique comment faire pivoter, zoomer, ajuster l'angle de vue, et changer l'angle de vue de la carte, la faire pivoter manuellement ou automatiquement à l'aide de la boussole, ou selon le relèvement.
+Cet article explique comment personnaliser et interagir avec la carte à l'aide de divers boutons et gestes. Il couvre comment faire pivoter, zoomer, ajuster l'angle de vue, et changer l'angle de vue de la carte, la faire pivoter manuellement ou automatiquement à l'aide de la boussole, ou selon le relèvement.
 
 
-## Gestes {#gestes}
+## Gestes {#gestures}
 
 Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivement.
 
@@ -31,7 +31,7 @@ Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivemen
 | **Zoom avant** | Appuyez deux fois sur la carte avec **un** doigt. <br/> Appuyez deux fois avec **un** doigt et balayez vers le bas. <br/> Pincez avec **deux** doigts pour zoomer en avant. |
 | **Zoom arrière**| Appuyez deux fois avec **deux** doigts. <br/> Appuyez deux fois avec **un** doigt et balayez vers le haut. <br/> Pincez avec **deux** doigts pour zoomer en arrière. |
 | **Pivoter**  | Appuyez sur la carte avec **deux** doigts, puis faites pivoter vos doigts dans un mouvement circulaire. |
-| **Inclinaison (3D)** | Appuyez avec **deux** doigts et déplacez-les vers le haut ou vers le bas. <br/> Disponible uniquement avec la version 2 du [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine). |
+| **Inclinaison (3D)** | Appuyez avec **deux** doigts et déplacez-les vers le haut ou vers le bas. <br/> Disponible uniquement avec la version 2 (OpenGL) du [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine). |
 
 Les animations de glissement peuvent être désactivées dans les paramètres avec une [option spéciale](#no-animations).
 
@@ -216,7 +216,7 @@ Crée un effet de panoramique fluide de la carte par rapport à l'icône *[Ma Po
 
 ## Périphériques d'entrée externes {#external-input-devices}
 
-Les boutons des périphériques d'entrée externes offrent un moyen pratique et efficace d'interagir avec la carte et l'interface de l'application OsmAnd. Ils sont situés sur des appareils externes, tels que des **claviers Bluetooth ou d'autres types de claviers**, des **boutons spécialisés sur les appareils de navigation de véhicule**, ou les contrôleurs [WunderLINQ](https://blackboxembedded.com/) et [Parrot](https://www.parrot.com/en).  
+Les boutons des périphériques d'entrée externes offrent un moyen pratique et efficace d'interagir avec la carte et l'interface de l'application OsmAnd.  Ils sont situés sur des appareils externes, tels que des **claviers Bluetooth ou d'autres types de claviers**, des **boutons spécialisés sur les appareils de navigation de véhicule**, ou les contrôleurs [WunderLINQ](https://blackboxembedded.com/) et [Parrot](https://www.parrot.com/en).  
 
 L'une des principales fonctions des boutons sur les périphériques d'entrée externes est de zoomer en avant et en arrière sur la carte. Ils permettent également de naviguer sur la carte et de changer son orientation sans avoir à toucher l'écran. Les boutons sur les périphériques d'entrée externes prennent en charge de nombreuses autres fonctions, comme l'ouverture du *Menu principal*.
 
@@ -271,12 +271,12 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 |**&#8594;**| *Clavier*   | Déplacer - Carte vers la droite  |
 |**&#43;** **=**| *Clavier*  | Carte - [Zoom avant](#my-location-and-zoom) |
 |**&#8722;**| *Clavier*  | Carte - [Zoom arrière](#my-location-and-zoom) |
-|**Retour**| *Clavier*   | Naviguer – Écran précédent  |
+|**Appui sur Retour**| *Clavier*   | Naviguer – Écran précédent  |
 |**&#8595;**| *Wunderlinq*  | Carte - [Zoom arrière](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Carte - [Zoom avant](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Ouvrir la grille de données WunderLINQ |
-| **M** <br/> (*ancien Android*) | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
-| **Appui sur le joystick** <br/> (*ancien Android*) | *Clavier*  | Déplacer - [Vers Ma position](#my-location-and-zoom) |
+| **M** <br/> (*Android hérité*) | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
+| **Appui sur le joystick** <br/> (*Android hérité*) | *Clavier*  | Déplacer - [Vers Ma position](#my-location-and-zoom) |
 | **Bouton Média** <br/> (*Android uniquement*)| *Clavier*  | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*Android uniquement*)| *Parrot*  | Carte - [Zoom arrière](#my-location-and-zoom) |
 | **&#8594;** <br/> (*Android uniquement*) | *Parrot*  | Carte - [Zoom avant](#my-location-and-zoom) |

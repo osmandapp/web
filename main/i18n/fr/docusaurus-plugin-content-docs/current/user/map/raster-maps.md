@@ -3,6 +3,7 @@ source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
 sidebar_position: 6
 title:  Cartes raster (en ligne / hors ligne)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -67,7 +67,7 @@ Dans OsmAnd, les cartes en ligne sont composées de données raster, qui consist
 
 **Activer le plugin**.
 
-- **iOS**. Pour *iOS*, cette fonctionnalité est activée par défaut.
+- **iOS**. Pour *iOS*, cette fonctionnalité fonctionne par défaut.
 - **Android**. Pour *Android*, pour utiliser les cartes raster dans OsmAnd, vous devez activer le [plugin Cartes en ligne](../plugins/online-map.md). Suivez ces étapes : *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
 **Modifier les paramètres de la couche**. Pour améliorer la visibilité et le mélange des couches de carte raster, vous pouvez ajuster la transparence de la couche à l'aide du curseur à l'écran. De plus, vous pouvez modifier le style de la carte vectorielle en masquant les polygones, rendant les couches de sous-couche plus visibles. Ceci est particulièrement utile lors de la visualisation d'images satellites.
@@ -145,7 +145,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 
 </Tabs>
 
-1. *Activer/désactiver* la carte de sous-couche.
+1. *Activer/désactiver* la carte de sur-couche.
 2. *Transparence de la sur-couche* (*Android*) / *Transparence* de la carte de sur-couche (*iOS*).
 3. *Afficher le curseur de transparence* (*Android*) / *Afficher le curseur sur la carte* (*iOS*). Accès rapide au réglage de la transparence.
 4. *Source de la carte de sur-couche* (*Android*) / *Couches disponibles* (*iOS*). Vous pouvez choisir une carte de tuiles à installer ou à mettre à jour.
@@ -189,7 +189,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 
 ![Couches de terrain](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-**L'ombrage du relief** et la **Pente** sont des cartes raster hors ligne qui montrent le relief du terrain. Elles sont affichées comme une couche de carte spéciale, une deuxième superposition sur la carte de base. Les cartes contiennent des informations d'altitude supplémentaires pour vous aider à comprendre plus précisément la pente et les ombres du paysage. Les informations d' *Ombrage du relief* et de *Pente* sont basées sur les données d'une seule source, le *Fichier global de la planète*, et sont divisées en régions.  
+**Ombrage du relief** et **Pente** sont des cartes raster hors ligne qui montrent le relief du terrain. Elles sont affichées comme une couche de carte spéciale, une deuxième superposition sur la carte de base. Les cartes contiennent des informations d'altitude supplémentaires pour vous aider à comprendre plus précisément la pente et les ombres du paysage. Les informations d' *Ombrage du relief* et de *Pente* sont basées sur les données d'une seule source, le *Fichier global de la planète*, et sont divisées en régions.  
 
 Vous n'avez pas besoin de basculer entre les couches Ombrage du relief et Pente, car elles sont fusionnées automatiquement. Vous pouvez sélectionner une seule de ces couches à afficher sur la carte, mais vous avez également la possibilité de les combiner toutes les deux [en sous-couche ou en sur-couche](#select-raster-maps) sur d'autres couches pour une représentation plus visuelle du terrain.
 
@@ -239,7 +239,7 @@ Vous pouvez personnaliser le niveau de zoom pour l'affichage et la transparence 
 ## Relief 3D {#3d-relief}
 
 :::note
-Le [Relief 3D](../plugins/topography.md#3d-relief) est une fonctionnalité payante de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+[Relief 3D](../plugins/topography.md#3d-relief) est une fonctionnalité payante de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 ![Couches de terrain](@site/static/img/plugins/online-maps/raster_maps_3d.png)
@@ -409,7 +409,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_t
 
 </Tabs>
 
-Les cartes raster peuvent être utilisées telles quelles si les tuiles sont déjà cartographiées. Si les cartes raster sont fournies en ligne, il y a toujours une URL de base qui doit être configurée. Il y a quelques autres paramètres de base qui peuvent être modifiés pour les cartes raster, vous pouvez en lire plus à ce sujet dans [cette section](#add-new-online-raster-map-source) de l'article. Des paramètres plus complexes sont encodés dans les composants internes du [format SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
+Les cartes raster peuvent être utilisées telles quelles si les tuiles sont déjà mappées. Si les cartes raster sont fournies en ligne, il y a toujours une URL de base qui doit être configurée. Il y a quelques autres paramètres de base qui peuvent être modifiés pour les cartes raster, vous pouvez en lire plus à ce sujet dans [cette section](#add-new-online-raster-map-source) de l'article. Des paramètres plus complexes sont encodés dans les composants internes du [format SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
 ## Articles connexes {#related-articles}

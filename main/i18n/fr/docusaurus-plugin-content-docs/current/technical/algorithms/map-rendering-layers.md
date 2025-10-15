@@ -5,19 +5,19 @@ sidebar_position: 5
 
 # Rendu des couches de carte {#map-layers-rendering}
 
-La carte OsmAnd est rendue par couches, de bas en haut. Certaines couches couvrent tout l'écran de la carte, tandis que d'autres sont rendues avec transparence. L'ordre des couches est toujours le même, il est donc important de savoir ce qui est affiché et dans quel ordre.
+La carte OsmAnd est rendue par couches, de bas en haut. Certaines couches couvrent tout l'écran de la carte, tandis que d'autres sont rendues avec transparence. L'ordre des couches est toujours le même, il est donc important de suivre ce qui est affiché et dans quel ordre.
 
 ## Ordre des couches {#order-of-layers}
 
 OsmAnd utilise trois types de couches : raster, symboles et contrôles. Tout d'abord, les [couches raster sont rendues](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) en OpenGL, suivies des [couches de symboles](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Les couches de contrôle sont rendues indépendamment d'OpenGL dans l'interface utilisateur des appareils Android ou iOS, par-dessus la carte.
 
-**Android :**  
+**Android:**  
 La plupart des couches sur Android sont instanciées dans la méthode [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) de la classe `MapLayers`.
 
 L'ordre de chaque couche dépend de sa propriété `zOrder` lors de l'instanciation et est défini dans la méthode [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) de la classe `OsmAndMapLayer`.  
 D'autres couches peuvent être instanciées dans des plugins.
 
-**iOS :**  
+**iOS:**  
 La plupart des couches sur iOS sont instanciées dans la méthode [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) de `OAMapLayers`.
 
 L'ordre de chaque couche est défini directement par la propriété `baseOrder` dans `createLayers`.  
@@ -40,7 +40,7 @@ D'autres couches peuvent être instanciées dans des plugins.
 
 | Couche / symboles                 | Ordre/Plage  | Type     | Description                                                        |
 | --------------------------------- | -----------: | -------- | ------------------------------------------------------------------ |
-| DownloadedRegionsLayer            | -1 100 000   | Polygons | Affiche les régions téléchargées          |
+| DownloadedRegionsLayer            | -1 100 000   | Polygones | Affiche les régions téléchargées          |
 | Icônes (MapVectorLayer)           | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (lignes)                 | -500 000     | Lignes   | Lignes de trace             |
 | RouteLayer (point de surbrillance du graphique)| -197 900 | Point    | Analyse de l'itinéraire de navigation sur la carte  |
@@ -111,7 +111,7 @@ D'autres couches peuvent être instanciées dans des plugins.
 | Icônes                       | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | Texte                        | 1 - 255      | Texte    | Carte vectorielle, textOrder dans le style, 100 par défaut             |
 | Boucliers                     | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
-| OADownloadedRegionsLayer     | 10 000       | Polygons | Affiche les régions vertes téléchargées |
+| OADownloadedRegionsLayer     | 10 000       | Polygones | Affiche les régions vertes téléchargées |
 | Icône POI (OAPOILayer)       | 90 000       | Points   | Superposition de POI                 |
 | Nom POI (OAPOILayer)         | 90 000       | Texte    | Nom de la superposition de POI            |
 | Lignes de trace GPX (OAGPXLayer) | 100 000    | Lignes   | Lignes de trace                 |

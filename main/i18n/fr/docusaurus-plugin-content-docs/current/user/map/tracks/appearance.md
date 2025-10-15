@@ -3,6 +3,7 @@ source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
 sidebar_position: 5
 title:  Apparence de la trace
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -82,7 +82,7 @@ Vous pouvez personnaliser l'apparence de la trace dans plusieurs menus de l'appl
 
 Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
-- **Options prédéfinies** : **Fine, Moyenne** et **Grasse**.
+- **Options prédéfinies** : **Fine, Moyenne,** et **Grasse**.
 
 - **Largeur personnalisée** : Réglable de 1 à 24 px à l'aide d'un curseur.
 
@@ -106,7 +106,7 @@ Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
 </Tabs>
 
-Sélectionnez si vous souhaitez diviser la trace en intervalles par **distance**, **temps** ou **montée/descente** (Android), ou par **distance** ou **temps** (iOS). Pour afficher des statistiques détaillées par intervalle, consultez [Analyser par intervalles](../../map/tracks/track-context-menu.md#analyze-by-intervals) (Android uniquement).
+Sélectionnez si vous souhaitez diviser la trace en intervalles par **distance**, **temps**, ou **montée/descente** (Android), ou par **distance** ou **temps** (iOS). Pour afficher des statistiques détaillées par intervalle, consultez [Analyser par intervalles](../../map/tracks/track-context-menu.md#analyze-by-intervals) (Android uniquement).
 
 
 ### Flèches de direction {#direction-arrows}

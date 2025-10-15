@@ -3,6 +3,7 @@ source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
 sidebar_position: 2
 title:  Achats et paiements
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Achats multiplateformes {#cross-platform-purchases}
@@ -58,7 +58,7 @@ Techniquement, cela fonctionne comme suit : l'achat lui-même appartient à votr
 
 Pour restaurer l'achat sur le bon compte (`compte OsmAnd Cloud A`), vous devez effectuer l'action inverse. Sur le même appareil où l'achat a été effectué, vous devez vous déconnecter du mauvais `compte OsmAnd Cloud B` et vous reconnecter au `compte OsmAnd Cloud A`. Ce processus forcera le système à revérifier le reçu d'achat et à relier la licence au bon `compte OsmAnd Cloud A`, restaurant ainsi son statut multiplateforme.
 
-> Pour plus d'informations, lisez les articles sur les [Achats multiplateformes](../purchases/cross.md).
+> Pour plus d'informations, lisez les articles [Achats multiplateformes](../purchases/cross.md).
 
 ## Comment acheter et restaurer OsmAnd dans la Huawei AppGallery sans les services mobiles Huawei {#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services}
 

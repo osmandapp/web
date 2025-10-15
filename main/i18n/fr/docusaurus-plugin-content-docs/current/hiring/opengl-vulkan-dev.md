@@ -7,7 +7,7 @@ title: Développeur OpenGL / Vulkan
 Nous recherchons un développeur enthousiaste qui peut nous aider à amener notre moteur de carte à un nouveau niveau.
 
 ## Description du poste {#job-description}
-OsmAnd recherche un développeur de logiciels open source passionné et enthousiaste, ayant une bonne connaissance d'au moins un des langages OpenGL ou Vulkan, pour rejoindre notre équipe en pleine croissance.
+OsmAnd recherche un développeur de logiciels open source passionné et enthousiaste, ayant une bonne connaissance d'au moins un des OpenGL ou Vulkan, pour rejoindre notre équipe en pleine croissance.
 
 ## Qualifications {#qualifications}
 
@@ -32,12 +32,12 @@ OsmAnd recherche un développeur de logiciels open source passionné et enthousi
 - Travail dans une atmosphère amicale et détendue créée par de nombreux événements et activités de cohésion
 
 ### Ce que nous offrons {#what-do-we-offer}
-- Développer la meilleure application de carte hors ligne 3D
+- Développer la meilleure des meilleures applications de carte hors ligne 3D
 - Salaire compétitif adapté à vos compétences et à vos performances
 - Horaires de travail flexibles
 - 15 jours de vacances payées + 15 jours à vos frais
 - Congé de maladie payé
-- Travail à distance (bureaux possibles à Cracovie, Pologne, et Kiev, Ukraine)
+- Travail à distance (bureaux possibles à Cracovie, Pologne, et Kyiv, Ukraine)
 - Garantie d'équilibre vie professionnelle-vie privée
 - Travail stable dans une entreprise en développement dynamique
 - Développement entièrement open source (https://github.com/osmandapp/)

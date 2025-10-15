@@ -3,6 +3,7 @@ source-hash: 48c5e6f13784edff49c333ea15e886aea39fcdceb920359ff47525133b96f5c9
 sidebar_position: 5
 title:  Cartes vectorielles (Styles de carte)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -169,7 +169,7 @@ Les lignes de contour sont compatibles avec tous les styles de carte et peuvent 
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![largeur_profondeur_marine_and](@site/static/img/map/nautical_depth_width_and.png)  ![couleur_profondeur_marine_and](@site/static/img/map/nautical_depth_color_and.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -177,7 +177,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![largeur_profondeur_marine_ios](@site/static/img/map/nautical_depth_width_ios.png)  ![couleur_profondeur_marine_ios](@site/static/img/map/nautical_depth_color_ios.png)
+![nautical_depth_width_ios](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_ios](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -214,7 +214,7 @@ Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des
 
 Par défaut, les frontières des cartes apparaîtront lorsque vous zoomez au niveau 7 et disparaîtront au niveau de zoom 3 et inférieur.
 
-:::tip Couleur d'affichage des frontières des cartes téléchargées
+:::tip Couleur Afficher les frontières des cartes téléchargées
 Lorsque la fonctionnalité *Afficher les frontières des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.  
 
 Sur Android, les cartes archivées sont affichées en **Orange**. Sur iOS, les cartes qui peuvent être mises à jour sont également marquées en **Orange**.
@@ -421,7 +421,7 @@ Lors de la navigation en ville, vous avez besoin d'une vue plus contrastée des 
 - **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Affiche les itinéraires de tramway et de train.  
     ![Tram de transport sur la carte](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires de métro.  
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires souterrains.  
     ![Métro de transport sur la carte](@site/static/img/map/map-transport-subway.png)
 
 ### Masquer {#hide}

@@ -3,35 +3,35 @@ source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
 title: Créer un guide de voyage personnalisé
 versions: '*'
 ---
-import Translate from '@site/src/components/Translate.js';
 
+import Translate from '@site/src/components/Translate.js';
 
 
 **_Cet article doit être révisé_**
 
-À l'aide d'[OsmAnd MapCreator](../../versions/map-creator.md), vous pouvez créer votre propre [guide de voyage](../../user/plan-route/travel-guides.md) personnalisé unique en son genre. Vous pouvez utiliser du texte provenant de n'importe quelle source (de Wikipédia au blog de votre ami) comme base pour un guide et l'associer à la trace GPX.
+À l'aide d'OsmAnd [MapCreator](../../versions/map-creator.md), vous pouvez créer votre propre [guide de voyage](../../user/plan-route/travel-guides.md) personnalisé unique en son genre. Vous pouvez utiliser du texte provenant de n'importe quelle source (de Wikipédia au blog de votre ami) comme base pour un guide et l'associer à la trace GPX.
 
 ### Préparer les fichiers {#prepare-the-files}
 
-Enregistrez votre trace avec l'extension *[.GPX](../osmand-file-formats/osmand-gpx.md)* et le fichier texte au format *.html*. Pour créer votre *guide de voyage* personnalisé avec succès, les noms du fichier GPX et du fichier html doivent être identiques. Par exemple, *Milan.gpx* et *Milan.html*.
-Les traces GPX peuvent être téléchargées depuis Internet ou vous pouvez en créer une [à l'aide d'OsmAnd](../../user/plan-route/create-route.md) ou de tout autre outil de création GPX (Brouter, ou un outil similaire).
-Ajoutez les points que vous souhaitez visiter à votre itinéraire, puis enregistrez cet itinéraire en tant que trace GPX.
+Enregistrez votre trace avec l'extension *[.GPX](../osmand-file-formats/osmand-gpx.md)* et le fichier texte au format *.html*. Pour créer votre *guide de voyage* personnalisé avec succès, les noms du fichier GPX et du fichier html doivent être identiques. Par exemple, *Milan.gpx* et *Milan.html*.  
+Les traces GPX peuvent être téléchargées depuis Internet ou vous pouvez en créer une [à l'aide d'OsmAnd](../../user/plan-route/create-route.md) ou de tout autre outil de création GPX (Brouter, ou un outil similaire).  
+Ajoutez les points que vous souhaitez visiter à votre itinéraire, puis enregistrez cet itinéraire en tant que trace GPX.  
 
 Le choix de la source du texte de votre guide vous appartient entièrement. Il peut s'agir d'un article de blog de voyage, d'une page Wikipédia, etc. Copiez simplement le texte, puis collez-le dans un éditeur de texte et enregistrez-le avec une extension *.html*. Assurez-vous que le nom de la trace GPX et du fichier HTML sont identiques.
 
 ### Lancer l'outil {#launch-the-tool}
 
-Téléchargez la dernière version d'[OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) et extrayez les fichiers de l'archive.
+Téléchargez la dernière version de [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) et extrayez les fichiers de l'archive.  
 
 :::note
-La manière d'utiliser cet outil est décrite dans l'article [Créer des cartes raster et vectorielles hors ligne vous-même](./create-offline-maps-yourself.md#osmandmapcreator).
+La manière d'utiliser cet outil est décrite dans l'article [Créer des cartes raster et vectorielles hors ligne](./create-offline-maps-yourself.md#osmandmapcreator).
 :::
 
 Démarrez votre console et ouvrez le dossier MapCreator.
 
 Exemple : `cd /home/user/OsmAndMapCreator-main/`
 
-Pour *Linux*, exécutez ./utilites.sh (fichier utilities.bat pour *Windows*) travel-guide-creator.
+Pour *Linux*, exécutez ./utilites.sh (*Windows* : fichier utilities.bat) travel-guide-creator.  
 
 Lorsque vous êtes invité à fournir le chemin, veuillez coller le chemin du dossier où vous avez préparé vos fichiers.
 

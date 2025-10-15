@@ -12,7 +12,7 @@ OsmAnd ne prend pas en charge le KML nativement, mais OsmAnd peut en importer ce
 
 ## Conversion de KML (ou d'autres formats) au format OSM {#converting-kml-or-other-formats-into-the-osm-format}
 
-Pour effectuer cette tâche, nous devons utiliser gpsbabel. Il est très utile pour convertir des points de cheminement, des tracés et des itinéraires entre les récepteurs GPS et les programmes de cartographie populaires. La syntaxe est très simple, et GPS Babel dispose d'une interface pour créer la syntaxe pour vous :
+Pour effectuer cette tâche, nous devons utiliser gpsbabel. Il est très utile pour convertir des points de cheminement, des tracés et des itinéraires entre les récepteurs GPS populaires et les programmes de cartographie. La syntaxe est très simple, et GPS Babel dispose d'une interface pour créer la syntaxe pour vous :
 
 ```
 $ gpsbabel -i kml -f my_places.kml -o osm,tagnd="tourism:museum",​created_by -F my_places.osm
@@ -45,4 +45,4 @@ Vous êtes maintenant prêt à effectuer l'étape finale. La conversion sera eff
 - Sélectionnez le répertoire de travail (File/Specify working directory…)
 - Chargez my_places.osm (File/Select osm file…)
 
-Si tout est correct, vous trouverez My\_places.obf dans votre dossier de travail. Téléchargez simplement ce fichier dans le dossier des tracés OsmAnd de vos appareils.
+Si tout est correct, vous trouverez My_places.obf dans votre dossier de travail. Placez simplement ce fichier dans le dossier des tracés OsmAnd de vos appareils.

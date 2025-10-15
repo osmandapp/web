@@ -3,6 +3,7 @@ source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 sidebar_position: 4
 title:  Paquet personnalisé
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
 Dans l'application OsmAnd, vous pouvez créer de nombreuses personnalisations et les exporter dans un fichier `.osf`. Après avoir ajouté une description, une image et une icône, ces personnalisations deviennent un plugin entièrement indépendant. Ce plugin peut inclure :
 
-- Tous les [paramètres de profil](../personal/profiles.md) avec un nouveau profil.
+- Tous les [Paramètres de profil](../personal/profiles.md) avec un nouveau profil.
 - Un ensemble spécifique d'actions rapides et de dispositions de menu pour le *Tiroir* et le *Menu contextuel*.
 - Une carte hors ligne personnalisée à l'intérieur du plugin ou suggérée au téléchargement.
 - Des types de routage en ligne et des cartes en ligne spécifiques.

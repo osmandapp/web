@@ -3,6 +3,7 @@ source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Aperçu {#overview}
 
@@ -65,7 +65,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 1. Ouvrez le [*Menu de navigation*](#navigation-menu) :
 
     - Spécifiez le [point de destination](#set-target-point).
-    - Attendez que l'itinéraire soit calculé. Ensuite, vous pourrez obtenir des informations supplémentaires sur votre itinéraire dans la section *[Détails](../setup/route-details.md)*.
+    - Attendez que l'itinéraire soit calculé. Ensuite, vous pourrez obtenir des informations supplémentaires sur votre itinéraire dans la section *[Détails](./route-details.md#overview)*.
     - Vous pouvez basculer entre différents [types d'itinéraires](./../routing/osmand-routing.md#routing-types) (profils) pour obtenir le meilleur résultat.
     - Ajoutez des [destinations intermédiaires](#intermediate-destinations) (facultatif).
     - Vous pouvez également changer le point de départ de la [position actuelle](../../map/interact-with-map.md#my-location-and-zoom) à celui souhaité.

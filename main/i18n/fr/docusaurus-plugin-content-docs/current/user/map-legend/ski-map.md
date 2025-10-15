@@ -3,6 +3,7 @@ source-hash: bb22bcf1fdaa828b07cfccd05959b1c7d957608a4bc40163f0ca9a3600f43560
 sidebar_position: 2
 title: Style de carte de ski
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # Style de carte de ski {#ski-map-style}

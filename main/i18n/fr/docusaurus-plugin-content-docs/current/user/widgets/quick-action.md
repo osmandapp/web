@@ -3,6 +3,7 @@ source-hash: cf0423dde10a7ca433bb7c3e8608756683a6e4cd33976dbe8b893d1b6e85cfed
 sidebar_position: 7
 title:  Action rapide (Boutons personnalisés)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,7 +69,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Appuyez sur Modifier (icône Crayon dans le coin supérieur droit) → Sélectionnez les actions*
 
-![Widget d'action rapide_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Bouton personnalisé Android](@site/static/img/widgets/add_action_screen_ios.png)
+![Widget d'action rapide_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Bouton personnalisé iOS](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Les actions assignées à un bouton d'action rapide sont regroupées en écrans.
 
 **Pour iOS**.
 
-- Allez à *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
+- Naviguez vers *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Appuyez sur *Modifier* (icône crayon), puis *Maintenir et faire glisser* sur l'icône des trois lignes verticales pour réorganiser les actions.
 
 :::info note
@@ -151,7 +151,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Bouton personnalisé Android](@site/static/img/widgets/custom_button_ios.png)  
+![Bouton personnalisé iOS](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
@@ -189,7 +189,7 @@ Le widget *Action rapide* apparaît dans le coin inférieur de l'écran de la ca
 
 - **Plusieurs [Boutons personnalisés](#custom-buttons)**. Vous pouvez ajouter plusieurs boutons d'action rapide à l'écran de la carte. Ces boutons peuvent également être personnalisés et repositionnés individuellement en utilisant la même méthode de glisser-déposer.
 
-    ![Widget d'action rapide_déplacement](@site/static/img/widgets/quick_action_widget_multi.png)
+    ![Widget d'action rapide_multi](@site/static/img/widgets/quick_action_widget_multi.png)
 
 ### Disposition en grille pour les boutons {#grid-layout-for-buttons}
 
@@ -233,7 +233,7 @@ Cette disposition aide à maintenir les boutons visuellement cohérents et évit
 | Afficher / Masquer <br /> [**Transports en commun**](../map/vector-maps.md#transport) | Activer ou désactiver la couche de carte des transports en commun <br /> - *Type de transport*. Au premier appui, vous pouvez sélectionner un ou plusieurs types de transport, y compris *Arrêts de transport*, *Itinéraires de bus, trolleybus et navettes*, *Itinéraires de tram et de train*, *Itinéraires de métro*. |
 | Changer <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que superposition de carte et parcourez-les. <br /> - *Note*. Pour changer les superpositions de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs superpositions de carte, soit créer plusieurs actions rapides distinctes, chacune pour une superposition de carte spécifique. |
 | Changer <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que fond de carte et parcourez-les. <br /> - *Note*. Pour changer les fonds de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs fonds de carte, soit créer plusieurs actions rapides distinctes, chacune pour un fond de carte spécifique.  |
-| Changer <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Créez une liste de styles de carte pour les cartes vectorielles et parcourez-les. <br /> - *Note*. Pour changer les styles de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs superpositions de carte, soit créer plusieurs actions rapides distinctes, chacune pour un style de carte spécifique. |
+| Changer <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Créez une liste de styles de carte pour les cartes vectorielles et parcourez-les. <br /> - *Note*. Pour changer les styles de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs styles de carte, soit créer plusieurs actions rapides distinctes, chacune pour un style de carte spécifique. |
 | Afficher / Masquer <br/> [**Couche Mapillary**](../plugins/mapillary.md) | Permet de visualiser les couches de carte avec des images au niveau de la rue fournies par Mapillary. |
 | Afficher / Masquer <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | Vous pouvez choisir d'afficher ou de masquer toutes les notes OSM sur la carte d'un simple appui sur le bouton. |
 

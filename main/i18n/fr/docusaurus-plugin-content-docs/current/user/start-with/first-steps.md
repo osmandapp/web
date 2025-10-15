@@ -3,6 +3,7 @@ source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
 sidebar_position: 1
 title:  Premiers Pas
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -434,7 +434,7 @@ Il existe deux variantes disponibles pour fermer OsmAnd.
 1. Fermez une application en la balayant vers le haut et hors de l'écran. Pour une liste verticale d'applications, balayez vers la gauche ou la droite.  
 
 2. Vous devrez peut-être effectuer les étapes suivantes avant de le faire, sinon OsmAnd s'exécutera en arrière-plan :
-    - [Arrêter la navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Annuler la navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Arrêter le téléchargement et la mise à jour des cartes](../start-with/download-maps.md)
     - [Arrêter l'enregistrement du trajet](../plugins/trip-recording.md#new-track-recording)
     - [Arrêter l'enregistrement de notes audio/vidéo](../plugins/audio-video-notes.md)

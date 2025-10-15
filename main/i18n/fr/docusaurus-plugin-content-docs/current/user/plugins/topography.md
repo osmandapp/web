@@ -3,6 +3,7 @@ source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topographie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -215,7 +215,7 @@ Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-sch
 
 | Estompage | Pente | Altitude |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Estompage](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pente](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **L'estompage** est basé sur la simulation de l'éclairage de la surface à l'aide de données de terrain. Cette méthode consiste à créer des ombres et des rehauts en fonction de l'angle de la surface par rapport à la source de lumière. En conséquence, vous voyez des collines, des vallées et d'autres détails du terrain naturels sur la carte.  
 

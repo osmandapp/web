@@ -3,6 +3,7 @@ source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Explorer OsmAnd {#explore-osmand}
@@ -64,7 +64,7 @@ Ces manuels, disponibles en plusieurs langues, fournissent souvent des aperçus 
 | Langue | Description | Lien |
 | :-- | :-- | :-- |
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtenir más herramientas pour la navigation virtuelle et que sirva comme outil pour les travaux géodésiques. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -125,7 +125,7 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 | Nom | Description | Lien|
 | -- | -- | --|
 | Gravel Roads Seeker | Carte des routes de gravier (page web en *French*). Une carte en ligne générée en temps réel à partir de serveurs de tuiles, tels que WMTS (Web Map Tile Service) ou WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
-| OsmAnd Rendering | Une collection de cartes en ligne, y compris des cartes topographiques, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
+| OsmAnd Rendering | Une collection de cartes en ligne, y compris des cartes topo, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) map with various [color schema](https://www.rainviewer.com/api/color-schemes.html) |[RainViewer-osf data](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | L'ensemble de cartes de l'Autriche basé sur [basemap.at WMTS](https://basemap.at/en/) créé par mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | L'ensemble de cartes fournies par l'institut géographique français IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|

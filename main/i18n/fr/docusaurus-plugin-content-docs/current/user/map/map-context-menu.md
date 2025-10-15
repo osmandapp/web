@@ -3,6 +3,7 @@ source-hash: d29a320941c3d14727ce2b8aa4ee45ac1629acf1b80e72c0d29616d0617f46b5
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -460,7 +460,7 @@ Dans le menu contextuel, il y a des options pour **ajouter** ou **modifier** le 
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur Android](@site/static/img/map/action_restore_marker_android.png)
+![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur iOS](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 

@@ -3,6 +3,7 @@ source-hash: 3dec85df69c420226b8c54879684140abadd0d8245c7f1124584d502de7a8674
 sidebar_position: 5
 title:  Cadeau
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 Vous pouvez obtenir OsmAnd gratuitement grâce à l'un de nos cadeaux réguliers. Lisez la suite pour savoir comment vous inscrire et participer.
 

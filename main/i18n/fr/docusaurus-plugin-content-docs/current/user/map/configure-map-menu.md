@@ -3,6 +3,7 @@ source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
 sidebar_position: 4
 title:  Configurer la carte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,30 +13,29 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Aperçu {#overview}
 
-Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte selon vos besoins. Vous pouvez mettre en évidence des points favoris, des marqueurs de navigation ou des points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations de terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports en commun et changer le style de la carte.
+Le menu **Configurer la carte** est un élément important du *Menu principal* d'OsmAnd, où vous pouvez personnaliser l'affichage de la carte selon vos besoins. Vous pouvez mettre en évidence des points favoris, des marqueurs de navigation ou des points d'intérêt spéciaux sur la carte, afficher des itinéraires spécifiques ou des fichiers GPX tiers, superposer des informations de terrain, des images satellite ou toute autre image raster disponible, afficher des informations sur les transports en commun et changer le style de la carte.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Section **Afficher** :
+Section **Afficher** :  
 
-![Configurer la carte Android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurer la carte Android](@site/static/img/map/configure_map_show2_andr.png)
+![Configurer la carte android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurer la carte android](@site/static/img/map/configure_map_show2_andr.png)  
 
-Section **Topographie** :
+Section **Topographie** :  
 
-![Configurer la carte Android](@site/static/img/map/configure_map_topography_andr.png)
+![Configurer la carte android](@site/static/img/map/configure_map_topography_andr.png)  
 
-Section **OpenStreetMap** :
+Section **OpenStreetMap** :  
 
-![Configurer la carte Android](@site/static/img/map/configure_map_osm_andr.png)
+![Configurer la carte android](@site/static/img/map/configure_map_osm_andr.png)  
 
-Sections **Itinéraires et Rendu de la carte** :
+Sections **Itinéraires et Rendu de la carte** :  
 
-![Configurer la carte Android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configurer la carte android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
@@ -50,14 +50,14 @@ Sections **Itinéraires et Rendu de la carte** :
 
 Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux catégories :
 
-- [Paramètres de style de carte](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) est un groupe de paramètres qui vous permettent de modifier la manière dont la carte principale est affichée.
-- [Couches de la carte](#map-layers). Ces couches vous permettent de placer des informations par-dessus (ou par-dessous) la couche de la carte principale, mais ne modifient pas l'affichage de la carte elle-même.
+- [Paramètres de style de carte](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (ou **<Translate ios="true" ids="map_widget_renderer"/>**) est un groupe de paramètres qui vous permettent de modifier la manière dont la carte principale est affichée.  
+- [Couches de la carte](#map-layers). Ces couches vous permettent de placer des informations par-dessus (ou par-dessous) la couche de la carte principale, mais ne modifient pas l'affichage de la carte elle-même.  
 
 **Remarques :**
 
 - Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
 - Les paramètres de Configurer la carte dépendent de votre [profil](../personal/profiles.md).
-- Attention - le menu Configurer la carte **se ferme** lorsque vous appuyez sur la zone de la carte.
+- Attention - le menu Configurer la carte **se ferme** lorsque vous touchez le champ de la carte.
 
 ## Couches de la carte {#map-layers}
 
@@ -91,13 +91,13 @@ Les paramètres de style de carte dépendent du style de carte principal affich�
    - [Langue de la carte](../map/vector-maps.md#map-language) - permet de sélectionner la langue préférée affichée sur la carte.
    - [Détails](../map/vector-maps.md#details) - affiche des objets spécifiques.
    - [Masquer](../map/vector-maps.md#hide) - masque des objets spécifiques.
-   - [Itinéraires](../map/vector-maps.md#routes) - permet de mettre en évidence les itinéraires et leurs symboles.
+   - [Itinéraires](../map/vector-maps.md#routes) - permet de mettre en évidence les itinéraires et leurs symboles.  
 
 
 ## Personnalisation de l'interface utilisateur (Android) {#ui-customization-android}
 
-Pour chaque profil sélectionné dans le système Android, vous pouvez modifier l'ordre des éléments du menu <Translate android="true" ids="configure_map"/>, masquer les éléments, réinitialiser les paramètres par défaut ou les copier depuis un autre profil. Cela contribuera à améliorer votre interaction avec l'application OsmAnd.
+Pour chaque profil sélectionné dans le système Android, vous pouvez modifier l'ordre des éléments du menu <Translate android="true" ids="configure_map"/>, masquer les éléments, réinitialiser les paramètres par défaut ou les copier depuis un autre profil. Cela contribuera à améliorer votre interaction avec l'application OsmAnd.  
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Éléments de configuration de la carte](@site/static/img/settings/configure-screen-ui-customization.png)
+![Éléments de configuration de la carte ](@site/static/img/settings/configure-screen-ui-customization.png)

@@ -1,3 +1,7 @@
+---
+source-hash: f04415458a8e01656d9c5cb136e017c402c52406966ec5d45ca775a1e95d6a25
+
+---
 {
   "download_as_osf": "Télécharger en tant que fichier OSF",
   "download_as_obf": "Télécharger en tant que collection OBF",
@@ -111,7 +115,7 @@
   "purchase_type_one_time_purchase": "Achat unique",
   "label_pricing": "Tarifs",
   "subtitle_choose_your_ideal_osmand_plan": "Choisissez votre plan OsmAnd idéal : Commencez gratuitement, sélectionnez un abonnement flexible ou effectuez un achat unique",
-  "notice_fastspring_purchase_info": "Les achats en ligne sont fournis par FastSpring, un revendeur agréé. Les abonnements sont automatiquement renouvelés sauf annulation avant la date de renouvellement. Vous pouvez annuler ou renouveler votre abonnement sur le portail de gestion de compte FastSpring.",
+  "notice_fastspring_purchase_info": "Les achats en ligne sont fournis par FastSpring, un revendeur agréé. Les abonnements sont automatiquement renouvelés sauf annulation avant la date de renouvellement. Vous pouvez annuler ou renouveler votre abonnement sur le <portalLink>portail de gestion de compte FastSpring</portalLink>.",
   "feature_offline_navigation_desc": "Guidage vocal virage par virage, avertissements de trafic et guidage de voie, le tout disponible hors ligne",
   "feature_navigation_by_planned_tracks": "Navigation par traces planifiées",
   "feature_navigation_by_planned_tracks_desc": "Suivez vos traces GPX avec un guidage virage par virage, ou suivez les routes pour une navigation détaillée et des informations routières",
@@ -192,12 +196,14 @@
   "weather_current": "Position actuelle",
   "weather_generated": "Météo générée",
   "weather_source": "Source",
-  "weather:map_layers": "Couches de carte",
   "terrain_color_scheme": "Schéma de couleurs",
   "terrain_desc": "Sélectionnez l'une des options de visualisation : Altitude, Ombrage, Pente.",
   "terrain_visibility": "Visibilité",
   "dev_issues": "Problèmes",
+  "plan_route": "Planifier l'itinéraire",
+  "create_track": "Créer une trace",
+  "import_track": "Importer une trace",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "f04415458a8e01656d9c5cb136e017c402c52406966ec5d45ca775a1e95d6a25"
   }
 }

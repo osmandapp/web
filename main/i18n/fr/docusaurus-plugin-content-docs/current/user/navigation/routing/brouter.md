@@ -3,6 +3,7 @@ source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -49,7 +49,7 @@ L'algorithme de routage tiers BRouter n'est disponible que pour la version Andro
 
 Suivez ce guide pour installer et configurer l'application tierce *BRouter Offline Navigation* pour une utilisation dans OsmAnd.
 
-**1.** Pour commencer, vous devez installer l'application BRouter sur votre appareil Android depuis [F-Droid](https://f-droid.org/packages/btools.routingapp) ou le [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sur votre appareil.
+**1.** Pour commencer, vous devez installer l'application BRouter sur votre appareil Android depuis [F-Droid](https://f-droid.org/packages/btools.routingapp) ou le [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sur votre appareil.  
 **2.** Ensuite, pour naviguer en utilisant l'application OsmAnd le long d'itinéraires pré-calculés avec BRouter, vous devez :
 
 
@@ -105,7 +105,7 @@ Cliquez sur "Mode Service". Ensuite, cochez les cases des modes de routage pour 
 **5.** Lorsque vous avez chargé les segments de carte requis avec BRouter et sélectionné un profil de routage, tous les paramètres suivants de ce type de navigation sont effectués dans l'application OsmAnd.
 
 **6.** Vous pouvez créer un "Profil d'application" dans OsmAnd qui utilisera BRouter pour le routage hors ligne.
-Utilisez le type de routage *BRouter (hors ligne)* avec n'importe quel [profil](../../personal/profiles.md) dans l'application OsmAnd. Pour ce faire, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>* et créez un nouveau profil basé sur le profil de base de votre choix (ici, cyclisme, pour le routage à vélo), avec un nom personnalisé de votre choix ("BRouter" sur la capture d'écran ci-dessous) et en utilisant "BRouter (hors ligne)" pour la navigation.
+Utilisez le type de routage *BRouter (hors ligne)* avec n'importe quel [profil](../../personal/profiles.md) dans l'application OsmAnd. Pour ce faire, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>* et créez un nouveau profil basé sur le profil de base de votre choix (cyclisme ici, pour le routage à vélo), avec un nom personnalisé de votre choix ("BRouter" sur la capture d'écran ci-dessous) et en utilisant "BRouter (hors ligne)" pour la navigation.
 
 
 <table class="blogimage">
@@ -119,14 +119,14 @@ L'application BRouter doit être lancée avant OsmAnd pour que cette entrée sp�
 
 ## Version 4.7.1 d'OsmAnd {#osmand-version-471}
 
-À partir de la version 4.7.1, OsmAnd prend en charge le paramètre de profil pour le mappage : Depuis la version 3 d'OsmAnd, de nombreux profils peuvent être définis dans OsmAnd et vous pouvez facilement basculer entre ces profils. Un nouveau profil doit être créé, par exemple en copiant le profil *Cyclisme* existant et en lui donnant un nouveau nom au format Brouter[fastbike]. Vous pouvez utiliser n'importe lequel des profils BRouter existants dans le nom qui sont installés sur votre appareil. Tous les fichiers de profil ont un format de nommage 'xxxxxxx.brf'. Ou vous pourriez créer un nouveau profil personnel, comme 'monprofil.brf'.
+À partir de la version 4.7.1, OsmAnd prend en charge le paramètre de profil pour le mappage : Depuis la version 3 d'OsmAnd, de nombreux profils peuvent être définis dans OsmAnd et vous pouvez facilement basculer entre ces profils. Un nouveau profil doit être créé, par exemple en copiant le profil *Cyclisme* existant et en lui donnant un nouveau nom au format Brouter[fastbike]. Vous pouvez utiliser n'importe lequel des profils BRouter existants dans le nom qui sont installés sur votre appareil. Tous les fichiers de profil ont un format de nommage 'xxxxxxx.brf'. Ou vous pourriez créer un nouveau profil personnel, comme 'myprofile.brf'.
 
 La convention de nommage dans le profil OsmAnd est importante car le profil BRouter inclus dans ce profil établit le pont réel entre OsmAnd et BRouter.
 
 - Si dans OsmAnd un profil a *BRouter* défini comme service de navigation
-- ET que le nom du profil ressemble à "Brouter[machaine]"
+- ET que le nom du profil ressemble à "Brouter[mystring]"
 
-Alors le profil "machaine" sera utilisé dans l'application Brouter. Ce nouveau mappage remplace dans ce cas le mappage de base défini ci-dessus et basé sur le fichier "serviceconfig.dat".
+Alors le profil "mystring" sera utilisé dans l'application Brouter. Ce nouveau mappage remplace dans ce cas le mappage de base défini ci-dessus et basé sur le fichier "serviceconfig.dat".
 
 ### Exemples : nom de profil OsmAnd et application Brouter {#examples-osmand-profile-name-brouter-app}
 
@@ -137,7 +137,7 @@ Brouter[fastbike] le profil "fastbike" sera utilisé fichier : fastbike.brf
 ```
 
 Remarque :
-Actuellement, OsmAnd ne vérifie pas le nom défini (sensible à la casse) pour le profil Brouter (machaine).
+Actuellement, OsmAnd ne vérifie pas le nom défini (sensible à la casse) pour le profil Brouter (mystring).
 Si aucun profil n'est trouvé, le routage échouera avec "Impossible de calculer l'itinéraire...".
 
 <table class="blogimage">
@@ -150,7 +150,7 @@ Si aucun profil n'est trouvé, le routage échouera avec "Impossible de calculer
 
 Cette section décrit une comparaison de BRouter avec le routage interne de l'application OsmAnd.
 
-Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul des données de routage de BRouter avec le routage interne d'OsmAnd. Choisissons deux points au hasard aux Pays-Bas et commençons à calculer le trajet. Pour cela, nous définissons un style de conduite équilibré sans utiliser de données d'altitude pour le profil de base. Le temps de calcul pour ce trajet est de 14,5 secondes pour notre itinéraire interne OsmAnd. Le temps de calcul de l'itinéraire lors de l'utilisation du routage BRouter est inférieur à 1 seconde.
+Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul des données de routage de BRouter avec le routage interne d'OsmAnd. Choisissons deux points au hasard aux Pays-Bas et commençons à calculer le trajet. Pour cela, nous définissons un style de conduite équilibré sans utiliser de données d'altitude pour le profil de base. Le temps de calcul pour ce trajet est de 14,5 s pour notre itinéraire interne OsmAnd. Le temps de calcul de l'itinéraire lors de l'utilisation du routage BRouter est inférieur à 1 seconde.
 
 <table class="blogimage">
     <tr>

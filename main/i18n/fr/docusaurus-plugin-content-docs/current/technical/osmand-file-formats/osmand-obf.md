@@ -15,19 +15,19 @@ Les données cartographiques hors ligne d'OsmAnd sont contenues dans des fichier
 * Partie Carte
 * Partie Adresse
 
-> Q : Comment mapcreator génère-t-il sa liste de tous les lieux qui apparaîtront plus tard dans la recherche d'adresses hors ligne d'OsmAnd ? Quels objets sont utilisés en détail pour cela ? Quels nœuds avec une balise de lieu sont inclus et lesquels sont exclus ?
+> Q: How does mapcreator generate its list of all places that will appear later in OsmAnd's offline address search? What objects are used in detail for that? What nodes with a place tag are included, and which are excluded?
 >
 > R : Tous les lieux visibles dans OsmAnd en tant que villes sont tirés des nœuds qui ont la balise "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Actuellement, city, town, suburb, village, hamlet sont utilisés.
 >
-> Q : Comment mapcreator gère-t-il un polygone de zone donné via une relation avec boundary=administrative ? Comment associez-vous un lieu donné comme un nœud à sa limite lorsqu'il est présent dans les données OSM ?
+> Q: How does mapcreator handle an area polygon that is given via a relation with boundary=administrative? How do you associate a place given as a node with its boundary when it is present in the OSM data?
 >
-> R : En termes simples : cela fonctionne actuellement par nom. Mapcreator essaie de visiter toutes les limites et crée une limite fermée (!) à partir de la relation ou de chemins séparés et l'associe à un seul nom. Après cela, il essaie de faire correspondre \*place\* avec \*boundary name\* en utilisant l'algorithme \*contains of\*. Il y a aussi une vérification supplémentaire si cette limite contient le lieu. S'il y a de nombreuses limites de différents admin\_level avec le même nom (se contenant mutuellement comme district/ville/région ayant le même nom), le plus haut admin\_level avec une correspondance exacte sera choisi. TODO Plus de détails devraient être ici (sur les districts de la ville...) ...
+> R : En termes simples : cela fonctionne actuellement par nom. Mapcreator essaie de visiter toutes les limites et crée une limite fermée (!) à partir de la relation ou de chemins séparés et l'associe à un seul nom. Après cela, il essaie de faire correspondre \*place\* avec \*boundary name\* en utilisant l'algorithme \*contains of\*. Il y a aussi une vérification supplémentaire si cette limite contient le lieu. S'il y a de nombreuses limites de différents admin\_level avec le même nom (se contenant mutuellement comme district/ville/région ayant le même nom), le plus haut admin\_level avec une correspondance exacte sera choisi. TODO Plus de détails devraient être ici (sur les districts de la ville ...) ...
 >
-> Q : Où se trouve la documentation décrivant quel niveau d'administration est approprié pour établir une association avec un certain nœud de lieu ? Quels pays préfèrent quel niveau d'administration ?
+> Q: Where is documentation describing what admin level is right to build an association to a certain place node? What countries prefer what admin level?
 >
 > R : Actuellement, l'association entre la relation admin\_level et admin\_centre n'est pas utilisée. Car seules quelques relations fournissent cette information.
 >
-> Q : Comment MapCreator sait-il quelle rue appartient à quel lieu ? Y a-t-il différents cas lorsqu'un polygone de limite est donné et lorsqu'il n'y en a pas ?
+> Q: How does MapCreator know what street belongs to what place? Are there different cases when a boundary polygon is given and when there is none?
 >
 > R : Il existe de nombreuses stratégies à vérifier et elles sont classées par ordre de priorité :
 > - Les plus importantes sont les lieux et leurs limites. Pour que l'algorithme de gestion des rues fonctionne correctement, les limites correspondant aux lieux doivent être correctes. Si la rue appartient à plusieurs limites, elle sera enregistrée dans tous les lieux appropriés.

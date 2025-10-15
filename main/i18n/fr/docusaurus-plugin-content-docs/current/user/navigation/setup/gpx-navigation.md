@@ -3,6 +3,7 @@ source-hash: 41206f7aa105ab8fa59a5f824c1e0374750b7232835e5fadfb76637ff0469e77
 sidebar_position: 2
 title:  Naviguer par trace
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -40,12 +40,12 @@ L'option *Navigation par trace* peut également être utilisée dans la vie de t
 
 ## Sélectionner la trace {#select-the-track}
 
-Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace sur la carte](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd prend en charge la trace en tant que ligne (**Géométrie**) et la trace en tant qu'itinéraire (**Itinéraire**) ou une combinaison des deux (**OsmAnd** par [Planifier un itinéraire](../../plan-route/create-route.md)). Si vous avez une trace sous forme de collection de **Points de passage**, vous pouvez utiliser la [Navigation par marqueurs](./markers-navigation.md).
+Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace sur la carte](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd prend en charge la trace en tant que ligne (**Géométrie**) et la trace en tant qu'itinéraire (**Itinéraire**) ou une combinaison des deux (**OsmAnd** par [Planifier un itinéraire](../../plan-route/create-route.md)). Si vous avez une trace sous forme de collection **Points de passage**, vous pouvez utiliser la [Navigation par marqueurs](./markers-navigation.md).
 
 
 - La trace **Géométrie** aura une navigation très basique par défaut et ne fournira pas de virages précis, de noms de rue et de voies de circulation. Pour obtenir les informations manquantes, vous devez utiliser l'outil [Attacher aux routes](#attach-to-the-roads).
 
-- La trace **Itinéraire** calculera l'itinéraire entre les points de l'itinéraire selon le profil sélectionné. Fondamentalement, tous les points de l'itinéraire seront considérés comme des points intermédiaires. Si votre itinéraire contient plus de 50 points, il est très probable qu'il s'agisse d'une trace **Géométrie** mal configurée.
+- La trace **Itinéraire** calculera l'itinéraire entre les points de l'itinéraire selon le profil sélectionné. Fondamentalement, tous les points de l'itinéraire seront considérés comme des points intermédiaires. Si votre itinéraire est composé de > 50 points, il est très probable qu'il s'agisse d'une trace **Géométrie** mal configurée.
 
 - La trace **OsmAnd** se compose à la fois de parties géométriques et d'itinéraire, et elle est adaptée pour fournir exactement le même guidage que la navigation par défaut. Ces traces sont produites par [Planifier un itinéraire](../../plan-route/create-route.md) ou la [Version Web](../../web/index.md). Il est possible de réenregistrer cette trace en trace **Géométrie** uniquement en tant que [**Simplifié**](../../plan-route/create-route.md#save-route) pour être utilisée dans des programmes tiers.
 

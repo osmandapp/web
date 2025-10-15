@@ -10,9 +10,9 @@ Si vous souhaitez inspecter le contenu d'un fichier obf, vous devez télécharge
 
 Exemple et étape par étape pour les utilisateurs de Windows :
 - Avoir Java Runtime Environment installé
-- Télécharger ou copier n'importe quelle carte hors ligne Osmand de votre appareil vers votre PC, placer ce fichier obf idéalement dans le dossier contenant tous les fichiers Mapcreator décompressés
+- Télécharger ou copier n'importe quelle carte hors ligne OsmAnd de votre appareil vers votre PC, placer ce fichier obf idéalement dans le dossier contenant tous les fichiers Mapcreator décompressés
 - Ouvrir l'invite de commande Windows (par exemple, en appuyant sur la touche Windows et "r", puis en entrant cmd et en appuyant sur Entrée)
-- Aller dans le dossier où vous avez décompressé Osmand-Mapcreator par la commande cd et le nom du dossier
+- Aller dans le dossier où vous avez décompressé OsmAndMapCreator par la commande cd et le nom du dossier
 - Taper `dir` pour voir si vous êtes dans le bon dossier avec le fichier inspector.bat
 - Taper `inspector -h` pour voir un texte d'aide
 - Taper `inspector -vaddress name_of_your_map.obf \>output.csv`

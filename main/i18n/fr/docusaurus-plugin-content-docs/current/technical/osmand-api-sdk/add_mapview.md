@@ -41,7 +41,7 @@ Ouvrez le fichier de mise en page XML de l'activité et ajoutez ce qui suit :
 		android:orientation="vertical" />		
 ```
 
-MapViewWithLayers contient ses propres méthodes de cycle de vie. Pour que votre application appelle correctement les méthodes de cycle de vie de MapView, vous devez remplacer les méthodes de cycle de vie suivantes dans l'activité qui contient MapViewWithLayers et appeler ces méthodes.
+La MapViewWithLayers contient ses propres méthodes de cycle de vie. Pour que votre application appelle correctement les méthodes de cycle de vie de MapView, vous devez surcharger les méthodes de cycle de vie suivantes dans l'activité qui contient la MapViewWithLayers et appeler ces méthodes.
 
 ```
 

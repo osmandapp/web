@@ -16,7 +16,7 @@ Web 1.02 est la dernière version web d'OsmAnd, qui inclut de nouvelles fonction
 - Analyse de segment
 
 
-- [Mises à jour optionnelles](#optional-updates). Mises à jour et améliorations supplémentaires pour la version.
+- [Mises à jour optionnelles](#optional-updates). Mises à jour et affinements supplémentaires pour la version.
 
 
 ## Mises à jour optionnelles {#optional-updates}

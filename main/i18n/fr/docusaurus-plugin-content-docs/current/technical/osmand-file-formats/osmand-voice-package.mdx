@@ -2,6 +2,7 @@
 source-hash: f33e1e0ea0b176046b9f06a32f2877fe76847e29b7ba025d18f055347afadff1
 sidebar_position: 10
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Paquets vocaux {#voice-packages}
@@ -10,9 +11,9 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 OsmAnd prend en charge deux types de paquets vocaux :
 - **Synthèse vocale** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) disponible sur les App Stores ou préinstallée
-- **Paquets vocaux enregistrés**, qui incluent des voix enregistrées.
+- **Paquets vocaux enregistrés** , qui incluent des voix enregistrées.
 
-Si vous n'avez pas trouvé le paquet vocal dont vous avez besoin, veuillez suivre les exemples suivants et créer votre propre paquet vocal. Exemples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, paquet allemand [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), paquet anglais [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+Si vous n'avez pas pu trouver le paquet vocal dont vous avez besoin, veuillez suivre les exemples suivants et créer votre propre paquet vocal. Exemples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, paquet allemand [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), paquet anglais [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
 
 ### Différence entre les paquets TTS et enregistrés {#difference-between-tts-and-recorded-packages}
 
@@ -24,7 +25,7 @@ Si vous n'avez pas trouvé le paquet vocal dont vous avez besoin, veuillez suivr
 
 ### Structure du paquet {#package-structure}
 
-Un paquet vocal est généralement distribué sous forme de .voice.zip, où le zip contient un dossier avec [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (fichier de **configuration** principal), et des fichiers sonores s'ils sont présents.
+Un paquet vocal est généralement distribué sous forme de .voice.zip, où le zip contient un dossier avec [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (fichier de **configuration** principal), et des fichiers sonores s'ils sont présents. 
 
 Les fichiers de configuration sont écrits en langage JavaScript. Tous les fichiers de configuration sont par défaut des paquets TTS, même s'il n'y a pas encore de TTS pour prendre en charge la langue. Et plus tard, la configuration est étendue en mappant les « phrases du dictionnaire » aux « noms de fichiers enregistrés ».
 

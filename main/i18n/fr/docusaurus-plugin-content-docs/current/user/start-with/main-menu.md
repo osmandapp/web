@@ -3,6 +3,7 @@ source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
 sidebar_position: 3
 title:  Menu principal
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -69,13 +69,13 @@ Dans ce menu, vous pouvez **changer** de profil actif, **configurer** (modifier 
 
 ### Personnaliser (Utilisation avancée d'Android) {#customize-advanced-use-of-android}
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> → &#65049; → Activer*.
+*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Activer*.  
 
-![Éléments du menu latéral](@site/static/img/settings/drawer_menu_correct.png)
+![Éléments du menu latéral](@site/static/img/settings/drawer_menu_correct.png)  
 
-- Ce menu vous permet de changer l'ordre, de masquer ou d'afficher des éléments du [Menu latéral](../personal/profiles.md#drawer), de copier une liste d'éléments d'un autre profil et de réinitialiser les paramètres par défaut.
+- Ce menu vous permet de changer l'ordre, de masquer ou d'afficher des éléments du [Menu latéral](../personal/profiles.md#drawer), de copier une liste d'éléments d'un autre profil et de réinitialiser les paramètres par défaut.  
 
-- Le bouton *Moins* supprime un élément du *Menu principal* dans le menu latéral et le déplace vers la section *Masqués*. Le bouton *Déplacer* change la position de l'élément sélectionné dans la liste.
+- Le bouton *Moins* supprime un élément du *Menu principal* dans le menu latéral et le déplace vers la section *Masqués*. Le bouton *Déplacer* change la position de l'élément sélectionné dans la liste.  
 
-- Les éléments déplacés vers la section *Masqués* ne sont pas affichés dans le menu latéral, mais toutes les options, paramètres ou plugins de cette liste continuent de fonctionner. Vous pouvez restaurer les éléments en appuyant sur le bouton vert à gauche de leur nom.
+- Les éléments déplacés vers la section *Masqués* ne sont pas affichés dans le menu latéral, mais toutes les options, paramètres ou plugins de cette liste continuent de fonctionner. Vous pouvez restaurer les éléments en appuyant sur le bouton vert à gauche de leur nom.  
     ![Éléments masqués du menu latéral](@site/static/img/settings/drawer_menu_hidden_items.png)

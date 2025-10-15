@@ -3,6 +3,7 @@ source-hash: c8f39d23c520f3d8eb8713729cf8047052d90c32210529157c5a7347608706bb
 sidebar_position: 2
 title:  Itinéraire voiture (Camion, Moto)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,25 +14,24 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Aperçu {#overview}
 
 Le calcul d'itinéraire pour voiture est conçu pour aider les conducteurs à naviguer sur les routes de manière efficace, sûre et confortable, en fournissant des instructions personnalisées adaptées aux besoins et préférences uniques de chaque conducteur. Des paramètres d'itinéraire appropriés peuvent aider les conducteurs à économiser du temps et du carburant, et à éviter les dangers sur la route. L'itinéraire le plus rapide est proposé par défaut.
 
 :::info
-Le mécanisme de calcul d'itinéraire pour les véhicules terrestres motorisés ne diffère que par quelques paramètres. Les paramètres communs sont décrits dans la section [Voiture](#route-parameters---car) de cet article. Les sections [Camion](#route-parameters---truck) et [Moto](#route-parameters---motorcycle) ont leurs propres particularités.
+Le mécanisme de calcul d'itinéraire pour les véhicules terrestres motorisés ne diffère que par quelques paramètres. Les paramètres communs sont décrits dans la section [Voiture](#route-parameters---car) de cet article. [Camion](#route-parameters---truck) et [Moto](#route-parameters---motorcycle) ont leurs propres particularités.  
 :::
 
-Le calcul d'itinéraire peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../../navigation/guidance/navigation-settings.md#route-parameters) des paramètres de navigation du profil correspondant (*Conduite, Camion, Moto*).
+Le calcul d'itinéraire peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../../navigation/guidance/navigation-settings.md#route-parameters) des paramètres de navigation du profil correspondant (*Conduite, Camion, Moto*).  
 
 
 ## Paramètres d'itinéraire - Voiture {#route-parameters---car}
 
-Le calcul d'itinéraire pour voiture est conçu pour aider les conducteurs à trouver les itinéraires les plus efficaces et directs vers leurs destinations. Il prend en compte les restrictions de conduite courantes, telles que les rues à sens unique, les interdictions de tourner, les zones piétonnes, et aide également à éviter les routes qui ne sont pas adaptées aux voitures, comme les routes étroites ou les routes avec des limitations de poids.
+Le calcul d'itinéraire pour voiture est conçu pour aider les conducteurs à trouver les itinéraires les plus efficaces et directs vers leurs destinations. Il prend en compte les restrictions de conduite courantes, telles que les rues à sens unique, les interdictions de tourner, les zones piétonnes, et aide également à éviter les routes qui ne sont pas adaptées aux voitures, comme les routes étroites ou les routes avec des limitations de poids.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -64,11 +64,11 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 Par défaut, le *profil Camion* est désactivé. Pour utiliser ce profil pour le calcul d'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Le calcul d'itinéraire pour camion est similaire à celui pour voiture, mais il est spécifiquement conçu pour les conducteurs de grands véhicules commerciaux. Il prend en compte des facteurs supplémentaires tels que les restrictions de [hauteur, poids et largeur](../guidance/vehicle-parameters.md#size-parameters) du véhicule et la possibilité de transporter des matières dangereuses (voir le tableau ci-dessous). Tous les autres paramètres d'itinéraire sont identiques à ceux du [calcul d'itinéraire pour voiture](#route-parameters---car).
+Le calcul d'itinéraire pour camion est similaire à celui pour voiture, mais il est spécifiquement conçu pour les conducteurs de grands véhicules commerciaux. Il prend en compte des facteurs supplémentaires tels que les restrictions de [hauteur, poids et largeur](../guidance/vehicle-parameters.md#size-parameters) du véhicule et la possibilité de transporter des matières dangereuses (voir le tableau ci-dessous). Tous les autres paramètres d'itinéraire sont identiques à ceux du [calcul d'itinéraire pour voiture](#route-parameters---car).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 

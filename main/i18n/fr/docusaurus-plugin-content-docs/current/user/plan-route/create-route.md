@@ -3,6 +3,7 @@ source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -41,7 +42,7 @@ Un itinéraire se compose d'un ensemble de segments entre des points spécifiés
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
 ![Planifier un itinéraire Android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
@@ -49,7 +50,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
+Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
 ![Planifier un itinéraire iOS](@site/static/img/plan-route/plan-route-menu-ios.png)
 
@@ -59,9 +60,9 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 ### Créer un nouvel itinéraire {#create-new-route}
 
-Pour créer une nouvelle trace au format GPX, utilisez la fonction principale de l'outil *Planifier un itinéraire*. La pré-création d'un itinéraire présente de nombreux avantages, contrairement à l'enregistrement de la trace actuelle avec le *[plugin Enregistrement de trajet](../plugins/trip-recording.md)*. Vous pouvez [ajouter](#adding-points) autant de points que vous le souhaitez à l'itinéraire, les [supprimer et les déplacer](#point-context-menu), changer les types d'itinéraire par [segments](#route-between-points), et obtenir des [informations détaillées sur l'itinéraire](#graph).
+Pour créer une nouvelle trace au format GPX, utilisez la fonction principale de l'outil *Planifier un itinéraire*. La pré-création d'un itinéraire présente de nombreux avantages, contrairement à l'enregistrement de la trace actuelle avec le *[plugin Enregistrement de trajet](../plugins/trip-recording.md)*. Vous pouvez [ajouter](#adding-points) autant de points que vous le souhaitez à l'itinéraire, les [supprimer et les déplacer](#point-context-menu), changer les types d'itinéraire par [segments](#route-between-points), et obtenir des [informations détaillées sur l'itinéraire](#graph).  
 
-Par défaut, le type de routage correspondra au profil précédemment sélectionné. Appuyez sur l'icône de routage pour sélectionner comment l'application doit calculer le segment pour connecter les points. Le profil disponible doit être configuré [séparément](../navigation/routing/osmand-routing.md#routing-types).
+Par défaut, le type de routage correspondra au profil précédemment sélectionné. Appuyez sur l'icône de routage pour sélectionner comment l'application doit calculer le segment pour connecter les points. Le profil disponible doit être configuré [séparément](../navigation/routing/osmand-routing.md#routing-types).  
 
 Vous pouvez **zoomer et dézoomer** pour faciliter le placement des points lors de la création ou de la modification d'une trace. Lorsque vous **dézoomez**, les points de la trace deviennent invisibles pour une meilleure vue de toute la longueur de la trace et de la carte dans son ensemble. Seuls le dernier point ajouté et le pointeur pour l'ajout du point suivant restent visibles.
 
@@ -81,13 +82,13 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 L'outil *Planifier un itinéraire* permet de modifier une trace GPX existante ainsi qu'une [trace importée](../personal/tracks/manage-tracks.md#import). Cependant, si vous devez exclure un grand nombre de points sur la base de critères génériques, le [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) pourrait être un outil plus approprié.
 
 ### Mesure de distance {#distance-measurement}
 
-![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_lines_andr.png)
+![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_lines_andr.png)  
 
 *Planifier un itinéraire* est un moyen rapide et facile de mesurer la distance entre des points.
 
@@ -103,12 +104,12 @@ La *Ligne droite* est nécessaire et sera utilisée pour les zones non couvertes
 
 <InfoAndroidOnly />
 
-![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
 
 Si les [données d'altitude](../map/tracks/track-context-menu.md#calculate-missing-elevation) sont manquantes dans une trace existante, il est possible de les ajouter en utilisant les outils suivants :
 
-- [Utiliser les routes à proximité](#attach-track-to-roads). Ce mode utilise les cartes hors ligne pour trouver les routes les plus proches afin de construire une trace, de sorte que les données d'altitude seront récupérées à partir des routes attachées. La géométrie de la trace peut être ajustée.
-- [Utiliser les cartes de terrain](../map/tracks/track-context-menu.md#calculate-missing-elevation). (Fonctionnalité [OsmAnd Pro](../purchases/android.md#pro-features)) Ce mode calcule l'altitude en se basant sur les données des cartes de terrain (3D). La différence entre les altitudes enregistrées par votre appareil peut être utilisée pour la correction de l'altitude. La géométrie de la trace reste inchangée.
+- [Utiliser les routes à proximité](#attach-track-to-roads). Ce mode utilise les cartes hors ligne pour trouver les routes les plus proches afin de construire une trace, de sorte que les données d'altitude seront récupérées à partir des routes attachées. La géométrie de la trace peut être ajustée.  
+- [Utiliser les cartes de terrain](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Ce mode calcule l'altitude en se basant sur les données des cartes de terrain (3D). La différence entre les altitudes enregistrées par votre appareil peut être utilisée pour la correction de l'altitude.  La géométrie de la trace reste inchangée.
 
 ### Attacher la trace aux routes {#attach-track-to-roads}
 
@@ -116,7 +117,7 @@ Si les [données d'altitude](../map/tracks/track-context-menu.md#calculate-missi
 
 <TabItem value="android" label="Android">
 
-![Planifier un itinéraire attacher-route-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Planifier un itinéraire attacher-route-android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -126,7 +127,7 @@ Si les [données d'altitude](../map/tracks/track-context-menu.md#calculate-missi
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Le paramètre **Attacher aux routes** permet d'attacher une trace enregistrée ou importée aux routes des cartes hors ligne d'OsmAnd pour obtenir des informations supplémentaires :
 
@@ -174,21 +175,21 @@ To generate navigation instructions:
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Ajouter un point*. En accédant à la **liste des points** ci-dessous, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique.
 
 :::note
 Vous pouvez également **Annuler**/**Rétablir** chaque action que vous avez effectuée dans la planification d'itinéraire.
 :::
-
+  
 ### Itinéraire entre les points {#route-between-points}
 
 Les points ajoutés dans l'éditeur peuvent être connectés par une ligne droite ou comme un itinéraire entre les points d'un profil sélectionné. L'*Itinéraire entre les points* est accessible de plusieurs manières :
 
 1. Depuis le menu *Options* *→* *Itinéraire entre les points*.
 2. Appuyez sur l'*icône de profil* dans le coin inférieur gauche de l'écran de la carte. Pas sur l'icône du haut, qui ouvrira le menu Configurer la carte.
-3. Dans le *[Menu contextuel du point](#point-context-menu) → Changer le type d'itinéraire avant/après*.
+3. Dans le *[Menu contextuel du point](#point-context-menu) → Changer le type d'itinéraire avant/après*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -209,9 +210,9 @@ Les points ajoutés dans l'éditeur peuvent être connectés par une ligne droit
 Vous pouvez changer l'itinéraire entre 2 points spécifiques ou entre plusieurs points :
 
 - *Trace entière*. La trace entière sera recalculée en utilisant le profil sélectionné.
-- *Segment suivant*. Seul le segment suivant sera recalculé en utilisant le profil sélectionné.
+- *Segment suivant*. Seul le segment suivant sera recalculé en utilisant le profil sélectionné.  
 - *Changer le type d'itinéraire avant/après le point*. Dans le *menu contextuel du point*, vous pouvez changer la manière dont l'itinéraire est calculé pour la section de ce point au point le plus proche ou au point extrême. Le paramètre fournit des informations sur la distance de ce point au début ou à la fin de l'itinéraire, ou au point suivant/précédent.
-- *Recalculer les itinéraires*. Vous pouvez utiliser le recalcul d'itinéraire sans changer le type de profil. L'icône de profil affichée sur l'itinéraire planifié dans l'outil ne changera pas, mais le type d'itinéraire correspondra à celui sélectionné. Vous pourriez en avoir besoin pour trouver des itinéraires alternatifs.
+- *Recalculer les itinéraires*. Vous pouvez utiliser le recalcul d'itinéraire sans changer le type de profil. L'icône de profil affichée sur l'itinéraire planifié dans l'outil ne changera pas, mais le type d'itinéraire correspondra à celui sélectionné. Vous pourriez en avoir besoin pour trouver des itinéraires alternatifs.  
 
 ### Segments {#segments}
 
@@ -240,27 +241,27 @@ Un segment de trace est un ensemble de points connectés sans **interruption**. 
 
 Chaque point de votre itinéraire a son propre menu contextuel. Il affiche le *numéro de séquence* du point, la *distance depuis le début de l'itinéraire*, la fonction pour le déplacer sur la carte et le supprimer, ainsi qu'un ensemble d'actions avec les sections de l'itinéraire avant et après ce point. Pour modifier, appuyez sur le point requis dans la [liste des points](#adding-points) ou directement sur la carte.
 
-- ***Information sur le point***. Le nombre de points dans la liste. La distance jusqu'au premier point est basée sur le type de routage défini ; la distance peut changer lors d'un recalcul vers un nouveau type si le paramètre *Itinéraire entre les points* est modifié.
+- ***Information sur le point***. Le nombre de points dans la liste. La distance jusqu'au premier point est basée sur le type de routage défini ; la distance peut changer lors d'un recalcul vers un nouveau type si le paramètre *Itinéraire entre les points* est modifié.  
 
-- ***<Translate ios="true" ids="move_point"/>***. Permet de changer la position d'un point sur la carte. Déplacez la carte en utilisant des gestes pour changer l'emplacement du point. L'indicateur de point sera au centre de la partie visible de la carte.
+- ***<Translate ios="true" ids="move_point"/>***. Permet de changer la position d'un point sur la carte. Déplacez la carte en utilisant des gestes pour changer l'emplacement du point. L'indicateur de point sera au centre de la partie visible de la carte.  
 
-- ***<Translate ios="true" ids="add_point_after"/>***. Déplacez la carte pour ajouter un point après le point sélectionné. Vous pouvez ajouter autant de points que nécessaire jusqu'à ce que vous appuyiez sur Annuler ou Appliquer.
+- ***<Translate ios="true" ids="add_point_after"/>***. Déplacez la carte pour ajouter un point après le point sélectionné. Vous pouvez ajouter autant de points que nécessaire jusqu'à ce que vous appuyiez sur Annuler ou Appliquer.  
 
-- ***<Translate ios="true" ids="add_point_before"/>***. Déplacez la carte pour ajouter autant de points que nécessaire après le point sélectionné sur le segment entre ce point et le suivant.
+- ***<Translate ios="true" ids="add_point_before"/>***. Déplacez la carte pour ajouter autant de points que nécessaire après le point sélectionné sur le segment entre ce point et le suivant.  
 
-- ***<Translate ios="true" ids="trim_before"/>***. Vous pouvez couper toute la section de l'itinéraire, points et segments, de son début jusqu'au point sélectionné. La distance à couper est indiquée sous le nom de l'option.
+- ***<Translate ios="true" ids="trim_before"/>***. Vous pouvez couper toute la section de l'itinéraire, points et segments, de son début jusqu'au point sélectionné. La distance à couper est indiquée sous le nom de l'option.  
 
-- ***<Translate ios="true" ids="trim_after"/>***. Vous pouvez couper un itinéraire, des points et des segments, du dernier point ajouté jusqu'au point sélectionné. La distance à couper est indiquée sous le nom de l'option.
+- ***<Translate ios="true" ids="trim_after"/>***. Vous pouvez couper un itinéraire, des points et des segments, du dernier point ajouté jusqu'au point sélectionné. La distance à couper est indiquée sous le nom de l'option.  
 
 - ***<Translate ios="true" ids="plan_route_split_before"/>***. Permet de diviser l'itinéraire avant le point sélectionné en segments séparés et non connectés.
 
-- ***<Translate ios="true" ids="plan_route_split_after"/>***. Permet de diviser l'itinéraire après le point sélectionné en segments séparés et non connectés.
+- ***<Translate ios="true" ids="plan_route_split_after"/>***. Permet de diviser l'itinéraire après le point sélectionné en segments séparés et non connectés.  
 
-- ***<Translate ios="true" ids="join_segments"/>***. Le dernier point sur l'un des segments divisés et le suivant dans la liste des points sur l'autre segment ont ce paramètre de connexion.
+- ***<Translate ios="true" ids="join_segments"/>***. Le dernier point sur l'un des segments divisés et le suivant dans la liste des points sur l'autre segment ont ce paramètre de connexion.  
 
-- ***<Translate ios="true" ids="change_route_type_before"/>***. Vous pouvez changer le type de routage configuré pour un profil disponible, entre les points du segment précédent, ou pour tous les segments du début de l'itinéraire jusqu'au point sélectionné.
+- ***<Translate ios="true" ids="change_route_type_before"/>***. Vous pouvez changer le type de routage configuré pour un profil disponible, entre les points du segment précédent, ou pour tous les segments du début de l'itinéraire jusqu'au point sélectionné.  
 
-- ***<Translate ios="true" ids="change_route_type_after"/>***. Vous pouvez changer le type de routage entre les points du segment suivant, ou pour tous les segments du point sélectionné jusqu'au dernier point ajouté.
+- ***<Translate ios="true" ids="change_route_type_after"/>***. Vous pouvez changer le type de routage entre les points du segment suivant, ou pour tous les segments du point sélectionné jusqu'au dernier point ajouté.  
 
 - ***<Translate ios="true" ids="delete_point"/>***. Supprime le point sélectionné de l'itinéraire. Similaire à la suppression d'un point dans une liste.
 
@@ -302,9 +303,10 @@ En utilisant l'outil *Planifier un itinéraire* et l'option [Itinéraire entre l
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Après avoir [ajouté](#adding-points) au moins un point sur la carte, vous pouvez utiliser l'option d'enregistrement. Toutes les traces enregistrées dans *Planifier un itinéraire* se trouvent dans le menu principal *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.
+
+Après avoir [ajouté](#adding-points) au moins un point sur la carte, vous pouvez utiliser l'option d'enregistrement. Toutes les traces enregistrées dans *Planifier un itinéraire* se trouvent dans le menu principal *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
 Il y a quatre façons d'enregistrer :
 
@@ -365,12 +367,12 @@ Lors de l'enregistrement d'une nouvelle trace, vous pouvez sélectionner l'optio
 
 </Tabs>
 
-Pendant la planification de l'itinéraire, le [graphique](../navigation/setup/route-details.md#elevation-graph) affiche des informations sur l'altitude de l'itinéraire et le pourcentage de pente. De plus, vous pouvez appuyer n'importe où sur le graphique pour afficher un pointeur avec des données particulières.
+Pendant la planification de l'itinéraire, le [graphique](../navigation/setup/route-details.md#elevation-graph) affiche des informations sur l'altitude de l'itinéraire et le pourcentage de pente. De plus, vous pouvez appuyer n'importe où sur le graphique pour afficher un pointeur avec des données particulières.  
 
 - Pour **Android**, le graphique est affiché dans l'onglet *Graphique* lors de la création ou de l'ouverture d'une trace, et lors de la [Navigation](../navigation/setup/gpx-navigation.md) en utilisant *Planifier un itinéraire*.
 - Pour **iOS**, le graphique n'est disponible que via le menu *[Options](#options) → Navigation*.
 
-Lors du calcul d'un itinéraire pour la navigation dans *Planifier un itinéraire*, vous pouvez trouver des informations supplémentaires sur la trace telles que les [informations sur l'altitude](../navigation/setup/route-details.md#elevation-info) et les [attributs de la route](../navigation/setup/route-details.md#road-attributes), et utiliser l'outil [Analyser sur la carte](../navigation/setup/route-details.md#analyze-on-map). Appuyez sur le bouton *Détails* sous le graphique.
+Lors du calcul d'un itinéraire pour la navigation dans *Planifier un itinéraire*, vous pouvez trouver des informations supplémentaires sur la trace telles que les [informations sur l'altitude](../navigation/setup/route-details.md#elevation-info) et les [attributs de la route](../navigation/setup/route-details.md#road-attributes), et utiliser l'outil [Analyser sur la carte](../navigation/setup/route-details.md#analyze-on-map). Appuyez sur le bouton *Détails* sous le graphique.  
 
 ## Articles connexes {#related-articles}
 
