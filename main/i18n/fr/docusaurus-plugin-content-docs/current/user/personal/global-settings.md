@@ -1,7 +1,7 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
 sidebar_position: 3
-title:  Global Settings
+title:  Paramètres généraux
 ---
 
 import Tabs from '@theme/Tabs';
@@ -81,7 +81,7 @@ Cette fonctionnalité est disponible pour la version iOS de l'application OsmAnd
 
 ![Profil CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-Le [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) est utilisé lors de la connexion au [logiciel CarPlay](https://support.apple.com/en-gb/HT205634) de votre véhicule et vous aide à tirer le meilleur parti de la version optimisée de l'application OsmAnd en utilisant les systèmes audio et vidéo pour afficher les données sur votre téléphone.
+Le [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) est utilisé lors de la connexion au [logiciel CarPlay](https://support.apple.com/fr-fr/HT205634) de votre véhicule et vous aide à tirer le meilleur parti de la version optimisée de l'application OsmAnd en utilisant les systèmes audio et vidéo pour afficher les données sur votre téléphone.
 
 
 ### Dossier de stockage des données {#data-storage-folder}
@@ -94,7 +94,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 ![Paramètres de stockage des profils Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **La mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#local-menu), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
+1. **La mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#maps--resources), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
 
 2. Dans le **<Translate android="true" ids="change_data_storage_folder"/>**, vous pouvez sélectionner un dossier pour enregistrer les données OsmAnd sur votre appareil.  
 
@@ -104,7 +104,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
     - *Stockage multi-utilisateurs*. Seule l'application OsmAnd y a accès, mais il est partagé entre plusieurs utilisateurs Android.
     - *Spécifié manuellement*. Dépend du chemin d'accès.
 
-:::note Android 12+ (change storage folder)
+:::note Android 12+ (changer de dossier de stockage)
 De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions 11-12 d'Android. Consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) pour plus de détails.
 :::
 
@@ -116,13 +116,13 @@ Allez à : *Appareil iOS → Réglages → Général → Stockage de l'iPhone �
 
 ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/us/app/files/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
+Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/fr/app/fichiers/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
 
 Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 
 <!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
-![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-1.png) ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-2.png)
+![Fichiers dans iOS](@site/static/img/personal/profiles/files-1.png) ![Fichiers dans iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
@@ -274,7 +274,7 @@ L'application enregistre l'historique des données précédemment saisies (histo
 
 ![Paramètres généraux Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
-Le paramètre **<Translate android="true" ids="proxy_pref_title"/>** vous permet de configurer un [proxy HTTP](https://en.wikipedia.org/wiki/Proxy_server) pour toutes les requêtes réseau. Vous pouvez définir l'*Hôte du proxy* et le *Port du proxy*.  
+Le paramètre **<Translate android="true" ids="proxy_pref_title"/>** vous permet de configurer un [proxy HTTP](https://fr.wikipedia.org/wiki/Serveur_proxy) pour toutes les requêtes réseau. Vous pouvez définir l'*Hôte du proxy* et le *Port du proxy*.  
 
 
 ## Autre {#other}
@@ -303,14 +303,14 @@ Le paramètre **<Translate android="true" ids="dialogs_and_notifications_title"/
 
 - *Message de démarrage* inclut des promotions, des quiz, des événements, et plus encore.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) supprime l'affichage des réductions de l'application et des messages d'événements locaux spéciaux.
-- [*Boîte de dialogue de téléchargement de carte*](../start-with/download-maps.md#downloading-maps) vous informe que des cartes spécifiques peuvent être téléchargées.
+- La [*boîte de dialogue de téléchargement de carte*](../start-with/download-maps.md#download) vous informe que des cartes spécifiques peuvent être téléchargées.
 
 
 ### Source de localisation {#location-source}
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*Android uniquement*)
 
-![Source de localisation Android](@site/static/img/personal/profiles/location_source_andr.png)
+![Sauvegarde automatique](@site/static/img/personal/profiles/location_source_andr.png)
 
 OsmAnd vous offre un choix de services pour déterminer votre position. Il est recommandé de lire plus d'informations sur l'[autorisation de localisation](../start-with/first-steps.md#permission-to-access-the-location) et le [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) pour cette section.
 
@@ -323,14 +323,14 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 - Le système iOS utilise l'*API iOS* pour déterminer la localisation.  
 - Tous les paramètres de localisation d'OsmAnd se trouvent dans les réglages de l'appareil iOS : *Réglages → OsmAnd Maps → Position*  
-- Confidentialité des services de localisation : *Réglages → Confidentialité → Services de localisation*
+- Confidentialité des services de localisation : *Réglages → Confidentialité → Service de localisation*
 
 
 ### Sauvegarde automatique {#auto-backup}
 
 <InfoAndroidOnly />
 
-![Paramètres généraux Sauvegarde automatique Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![Paramètres généraux notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
 - Android ou OsmAnd Cloud peuvent enregistrer vos données et les paramètres de l'application.
 
@@ -346,7 +346,7 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 ## Légal {#legal}
 
-OsmAnd peut [vous avertir des radars](../navigation/guidance/navigation-settings.md#screen-alerts), mais seulement si les lois de votre pays le permettent.
+OsmAnd peut vous [avertir des radars](../navigation/guidance/navigation-settings.md#screen-alerts), mais seulement si les lois de votre pays le permettent.
 
 
 ### Désinstaller les radars {#uninstall-speed-cameras}
@@ -386,6 +386,6 @@ Lisez à propos des alertes pour les radars sur votre itinéraire dans l'article
 
 ### Dépannage {#troubleshooting}
 
-- **Android 12+ (change storage folder)**. De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions 11-12 d'Android. Ces changements affectent particulièrement le stockage des cartes sur les cartes SD, entraînant des performances d'accès aux fichiers considérablement plus lentes et des limitations d'accès plus strictes aux dossiers des cartes SD sur Android 11 et 12. Pour savoir comment résoudre ce problème, consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **Android 12+ (changer de dossier de stockage)**. De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions 11-12 d'Android. Ces changements affectent particulièrement le stockage des cartes sur les cartes SD, entraînant des performances d'accès aux fichiers considérablement plus lentes et des limitations d'accès plus strictes aux dossiers des cartes SD sur Android 11 et 12. Pour savoir comment résoudre ce problème, consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
 - **Source de localisation pour les problèmes d'altitude**. Google Play a modifié sa politique et, pour s'y conformer, OsmAnd, à partir de la version 3.9, doit utiliser les services Google Play pour obtenir des corrections de localisation lorsqu'il fonctionne en arrière-plan. Lisez plus d'informations dans la section [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).

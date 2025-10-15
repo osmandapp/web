@@ -36,7 +36,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
-import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
 
@@ -227,10 +227,12 @@ export default function PoiLayer() {
                     layer: poiLayer,
                     open: true,
                 });
+                ctx.setProcessingPoiByUrl(false);
             });
         } else if (ctx.poiByUrl?.layer && !ctx.poiByUrl?.open) {
             map.removeLayer(ctx.poiByUrl.layer);
             ctx.setPoiByUrl(null);
+            ctx.setProcessingPoiByUrl(false);
         }
     }, [ctx.poiByUrl]);
 
@@ -252,15 +254,13 @@ export default function PoiLayer() {
     }, [ctx.configureMapState.pois]);
 
     async function openPoiByUrl() {
-        const { lat, lng, name, type } = ctx.poiByUrl.params;
+        const { lat, lng, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
+
+        const params = { lat, lng, name, type, osmId, wikidataId, lang };
+        const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
 
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
-            params: {
-                lat,
-                lng,
-                name,
-                type,
-            },
+            params: cleanParams,
             apiCache: true,
         });
         if (response?.data) {
@@ -271,6 +271,7 @@ export default function PoiLayer() {
                 typeOsmValue: data.properties[TYPE_OSM_VALUE],
                 iconName: data.properties[POI_ICON_NAME],
             });
+
             const poi = {
                 options: { ...data.properties },
                 latlng: {
@@ -279,10 +280,34 @@ export default function PoiLayer() {
                 },
                 mapObj: true,
             };
-            ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+
+            if (wikidataId) {
+                // open wiki poi
+                const key = data.properties?.osmid ?? data.geometry.coordinates[1] + data.geometry.coordinates[0];
+                const wiki = response?.data ?? null;
+                const poiTags = wiki?.properties.poiTags;
+                const poi = poiTags
+                    ? {
+                          properties: { ...poiTags },
+                          latlng: {
+                              lat: wiki.geometry.coordinates[1],
+                              lng: wiki.geometry.coordinates[0],
+                          },
+                          mapObj: true,
+                      }
+                    : null;
+
+                const obj = { poi, wikidata: wiki, key, mapObj: true };
+                ctx.setSelectedWpt(obj);
+                recentSaver(EXPLORE_OBJS_KEY, obj);
+            } else {
+                // open normal poi
+                ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+                ctx.setSelectedWpt({ poi });
+                recentSaver(POI_OBJECTS_KEY, poi);
+            }
+
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-            recentSaver(POI_OBJECTS_KEY, poi);
-            ctx.setSelectedWpt({ poi });
             return data;
         } else {
             return null;
@@ -539,7 +564,7 @@ export default function PoiLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        navigateToPoi(poi, navigate);
+        navigateToPoi({ poi }, navigate);
     }
 
     useEffect(() => {

@@ -1,5 +1,6 @@
 ---
-source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
+source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
+
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -21,34 +22,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Les widgets d'information vous donnent un accès rapide à des données importantes. Il peut s'agir de données sur la vitesse, la météo, la position de stationnement, des données de capteurs externes, et bien plus encore. Les widgets peuvent être configurés selon vos besoins spécifiques, en activant leur visibilité sur l'écran de l'application ou en les désactivant si nécessaire.
 
-![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
+![Widgets d'information](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Widgets d'altitude   {#altitude-widgets}
+## Widgets d'altitude {#altitude-widgets}
 
-Les widgets d'altitude affichent la hauteur au-dessus du niveau de la mer de la géolocalisation actuelle et l'élévation du centre de la carte.  
+Les widgets d'altitude affichent la hauteur au-dessus du niveau de la mer de la géolocalisation actuelle et l'élévation du centre de la carte.
 
 
-### Altitude : Position actuelle   {#altitude-current-location}
+### Altitude : Position actuelle {#altitude-current-location}
   
-:::note  Télécharger la correction d'altitude mondiale
+:::note Télécharger la correction d'altitude mondiale
 Sur certains appareils Android, l'altitude peut s'afficher de manière inexacte. Pour résoudre ce problème, téléchargez une carte avec correction d'altitude.
 
 - Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Pour plus de détails, visitez [Cartes et ressources](../personal/maps-resources.md#downloads-menu).
+- Pour plus de détails, visitez [Cartes et ressources](../personal/maps-resources.md#downloads).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
+![Widget d'altitude Android](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+![Widget d'altitude iOS](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
@@ -73,13 +74,13 @@ Sur certains appareils Android, l'altitude peut s'afficher de manière inexacte.
 
 <TabItem value="android" label="Android">
 
-![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
+![Widget d'élévation Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
+![Widget d'élévation iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
@@ -98,7 +99,7 @@ Vous pouvez utiliser le widget pour connaître l'élévation du centre actuel de
 
 ## Heure actuelle {#current-time}
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)
+![Widget de l'heure actuelle](@site/static/img/widgets/current_time_widget.png)
 
 Ce widget affiche l'heure actuelle de votre appareil.  
 
@@ -113,7 +114,7 @@ Ce widget affiche l'heure actuelle de votre appareil.
 
 ## Vitesse actuelle {#current-speed}
 
-![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
+![Widget de vitesse](@site/static/img/widgets/current_speed_widget.png)  
 
 Le widget affiche la vitesse actuelle détectée par le capteur GPS.  
 
@@ -132,13 +133,13 @@ Le widget affiche la vitesse actuelle détectée par le capteur GPS.
 
 <TabItem value="android" label="Android">
 
-![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png)
+![Widget de vitesse moyenne Android](@site/static/img/widgets/average_speed_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
+![Widget de vitesse moyenne iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
 
 </TabItem>
 
@@ -154,7 +155,7 @@ Le widget **Vitesse moyenne** calcule et affiche votre vitesse moyenne sur un in
    - La vitesse moyenne est calculée sur la base de l'intervalle de temps sélectionné, qui peut aller de **15 secondes à 60 minutes**.  
 
    - Le calcul est basé sur les données GPS en utilisant la formule :  
-   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
+   `Vitesse moyenne = MOYENNE(LOCALISATION_GPS.vitesse)`.
 
 3. ***Prendre en compte les arrêts.***
 
@@ -174,13 +175,13 @@ Après la réinitialisation, la vitesse moyenne est recalculée à partir des no
 
 <TabItem value="android" label="Android">
 
-![Average speed](@site/static/img/widgets/average_speed_widget_4.png)  
+![Vitesse moyenne](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![Widgets de vitesse moyenne](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Widgets de vitesse moyenne](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
@@ -200,24 +201,24 @@ Après la réinitialisation, la vitesse moyenne est recalculée à partir des no
 
 <TabItem value="android" label="Android">
 
-|Widgets| Widgets on the screen|
+|Widgets| Widgets à l'écran|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Finesse](@site/static/img/widgets/glide_ratio_3.png)|![Finesse](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-|Widgets| Widgets on the screen|
+|Widgets| Widgets à l'écran|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+|![Finesse](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Finesse](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
 </TabItem>
 
 </Tabs>  
 
-Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse* fournissent des informations précieuses sur la finesse pour aider à prendre des décisions éclairées lors de la planification de routes aériennes. Le widget *Finesse* dans OsmAnd vous aide à évaluer l'efficacité de votre descente ou de votre montée lors de la navigation vers un emplacement spécifique (position d'un [marqueur](../personal/markers.md) sur la carte). Il calcule la finesse comme le rapport de la distance à la différence d'altitude entre votre position actuelle et votre destination prévue. Vous pouvez en savoir plus à ce sujet [ici](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse* fournissent des informations précieuses sur la finesse pour aider à prendre des décisions éclairées lors de la planification de routes aériennes. Le widget *Finesse* dans OsmAnd vous aide à évaluer l'efficacité de votre descente ou de votre montée lors de la navigation vers un emplacement spécifique (position d'un [marqueur](../personal/markers.md) sur la carte). Il calcule la finesse comme le rapport de la distance à la différence d'altitude entre votre position actuelle et votre destination prévue. Vous pouvez en savoir plus à ce sujet [ici](https://fr.wikipedia.org/wiki/Finesse_(a%C3%A9rodynamique)).
 
 
 **Utilisation des widgets :**
@@ -273,7 +274,7 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 
 ## Niveau de la batterie {#battery-level}
 
-![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
+![Widget de niveau de batterie](@site/static/img/widgets/battery_level_widget.png)  
 
 Le widget **Niveau de la batterie** affiche le pourcentage de batterie de votre appareil directement sur l'écran de la carte et se met à jour automatiquement au moins une fois par minute.
 
@@ -295,13 +296,13 @@ Le widget **Niveau de la batterie** affiche le pourcentage de batterie de votre 
 
 <TabItem value="android" label="Android">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
+![Widget Coordonnées Android](@site/static/img/widgets/coordinates_widget_1.png) ![Widget Coordonnées Android](@site/static/img/widgets/coordinates_widget_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Widget Coordonnées Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -322,11 +323,11 @@ Les widgets de coordonnées sont affichés en haut de l'écran. Les icônes avec
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) ou <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## Infos GPS   {#gps-info}
+## Infos GPS {#gps-info}
 
 <InfoAndroidOnly />
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
+![Widget Infos GPS Android](@site/static/img/widgets/gps_info_widget.png)
 
 Le widget d'information GPS (Global Positioning System) indique le nombre de satellites que l'appareil détecte et utilise actuellement. Vous pouvez l'utiliser pour vérifier l'état du GPS en cas de signal faible.  
 
@@ -346,13 +347,13 @@ Vous pouvez réinitialiser le cache GPS actuel via :
 
 <TabItem value="android" label="Android">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_1.png)
+![Widgets de lever et coucher du soleil](@site/static/img/widgets/sun_position.png) ![Widgets de lever et coucher du soleil](@site/static/img/widgets/sun_position_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
+![Widgets de lever et coucher du soleil](@site/static/img/widgets/sun_position_4_ios.png) ![Widgets de lever et coucher du soleil](@site/static/img/widgets/sun_position_3_ios.png)
 
 </TabItem>
 
@@ -382,7 +383,7 @@ Vous pouvez lire une description plus détaillée ici : **[Règle de rayon et R�
 
 <TabItem value="android" label="Android">
 
-![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
+![Écran de la règle de rayon](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -390,9 +391,9 @@ Vous pouvez lire une description plus détaillée ici : **[Règle de rayon et R�
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Règle de rayon"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Règle de rayon"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Règle de rayon"/></td>
     </tr>
 </table>
 
@@ -417,13 +418,13 @@ Le widget Règle de rayon indique la distance entre votre position et le point c
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Compteur de vitesse](@site/static/img/widgets/speedometer_1_andr.png)   ![Compteur de vitesse](@site/static/img/widgets/speedometer_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Compteur de vitesse](@site/static/img/widgets/speedometer_1_ios.png)   ![Compteur de vitesse](@site/static/img/widgets/speedometer_2_ios.png)
 
 </TabItem>
 
@@ -436,8 +437,8 @@ Le **widget Compteur de vitesse** est un affichage graphique de la vitesse actue
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Speedometer"/></td>
-        <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Speedometer"/></td>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Compteur de vitesse"/></td>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Compteur de vitesse"/></td>
     </tr>
 </table>
 
@@ -453,23 +454,23 @@ Le **widget Compteur de vitesse** est un affichage graphique de la vitesse actue
 Ces widgets sont activés et fonctionnent en combinaison avec leurs extensions correspondantes.
 
 
-### Widgets d'enregistrement de trajet   {#trip-recording-widgets}
+### Widgets d'enregistrement de trajet {#trip-recording-widgets}
 
 :::note  
-Vous pouvez lire une description plus détaillée ici : **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
+Vous pouvez lire une description plus détaillée ici : **[Extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.  
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
+![widget_enregistrement_trajet](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![widget_enregistrement_trajet](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -495,13 +496,13 @@ Pour ajouter des widgets de capteurs externes à l'écran de la carte, activez l
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
+![Widgets de capteurs externes Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widgets de capteurs externes iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -543,13 +544,13 @@ Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, act
 
 <TabItem value="android" label="Android">  
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+![Widgets de métriques du véhicule Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Widgets de métriques du véhicule iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -581,13 +582,13 @@ Pour ajouter des widgets Météo à l'écran de la carte, activez l'extension [M
 
 <TabItem value="android" label="Android">
 
-![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png)
+![Widget Météo Android](@site/static/img/widgets/weather_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
+![Widget Météo iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
 
@@ -616,7 +617,7 @@ Les widgets météo affichent les informations météorologiques actuelles pour 
 Pour ajouter des widgets de stationnement à l'écran de la carte, activez l'extension [Position de stationnement](../plugins/parking.md) d'OsmAnd.
 :::  
 
-![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
+![Widget de stationnement](@site/static/img/plugins/parking/parking_widget.png)  
 
 Le widget de l'extension Stationnement indique la distance entre le centre de l'écran et l'emplacement de stationnement. Pour définir une place de stationnement sur la carte, zoomez au niveau requis, puis appuyez longuement sur l'endroit sur la carte pour ouvrir le menu contextuel. Suivez [ces paramètres](../plugins/parking.md#set-a-spot).  
 
@@ -637,7 +638,7 @@ Le widget de l'extension Stationnement indique la distance entre le centre de l'
 Pour ajouter le widget Mapillary à l'écran de la carte, activez l'extension [Mapillary](../plugins/mapillary.md) d'OsmAnd.  
 :::  
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
+![Widget Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
 Il s'agit d'un widget de l'extension Mapillary qui offre un accès rapide à l'application Mapillary, vous permettant d'ajouter des [*images au niveau de la rue*](../plugins/mapillary.md#enable-layer). Le widget est ajouté à la carte automatiquement lorsque l'extension est activée.
 
@@ -657,7 +658,7 @@ Il s'agit d'un widget de l'extension Mapillary qui offre un accès rapide à l'a
 Pour ajouter des widgets de notes audio/vidéo à l'écran de la carte, activez l'extension [Notes audio/vidéo](../plugins/audio-video-notes.md) d'OsmAnd.
 :::
 
-![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Widget de notes audio-vidéo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 Ce sont des widgets de l'extension Notes audio/vidéo qui permettent un accès rapide pour démarrer/arrêter la prise de notes audio, vidéo ou photo.  
 
@@ -687,7 +688,7 @@ Pour que l'extension et le widget fonctionnent, vous devez installer [OsmAnd Onl
 
 Ce widget de l'extension OsmAnd Tracker est utilisé pour accéder rapidement à l'application OsmAnd Tracker et partager vos informations de localisation avec d'autres utilisateurs. L'application envoie des messages de *Localisation en direct* aux discussions sélectionnées pendant un certain temps, affiche une liste de contacts et de groupes, et vérifie les discussions pour les messages avec votre localisation, qui sont ensuite affichés sur une carte dans OsmAnd.  
 
-![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
+![Widget Tracker](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
@@ -709,13 +710,13 @@ Les **widgets pour développeurs** fournissent des informations sur la [vitesse 
 
 <TabItem value="android" label="Android">
 
-![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
+![Widget IPS Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
+![Widget IPS iOS](@site/static/img/widgets/fps_widget_ios.png)
 
 </TabItem>
 
@@ -737,13 +738,13 @@ Le [widget IPS du rendu de la carte](../plugins/development.md#map-rendering-fps
 
 <TabItem value="android" label="Android">
 
-![Camera position widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
+![Widgets de position de la caméra](@site/static/img/widgets/camera_position_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
+![Widgets de position de la caméra 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
 
 </TabItem>
 
@@ -760,7 +761,7 @@ Les **widgets de la caméra** vous permettent de surveiller l'alignement entre l
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → <Translate android="true" ids="developer_widgets"/>* |
 |   |  **iOS** : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisissez un panneau → Ajouter un widget → <Translate ios="true" ids="developer_widgets"/>* |
-| Par appui | Bascule entre les modes (*Niveau de zoom*)  / Pas de changement (*Autres*) |
+| Par appui | Bascule entre les modes (*Niveau de zoom*) / Pas de changement (*Autres*) |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -768,7 +769,7 @@ Les **widgets de la caméra** vous permettent de surveiller l'alignement entre l
 
 <InfoAndroidOnly />
 
-![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
+![RAM disponible](@site/static/img/widgets/available_RAM_2_andr.png)
 
 Le widget **RAM disponible** est un outil pour surveiller l'utilisation de la mémoire de votre appareil par rapport à OsmAnd. Il fournit des données détaillées pour aider à optimiser les performances de l'application.
 

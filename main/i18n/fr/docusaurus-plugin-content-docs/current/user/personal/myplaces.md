@@ -1,5 +1,5 @@
 ---
-source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
+source-hash: 479b492a4c86a0646befd8187d85091dd523d1e848bf8bd1a5f10175948ab1bf
 sidebar_position: 6
 title:  Mes Lieux
 ---
@@ -48,7 +48,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*
 
 - [***Cartes et ressources***](../personal/maps-resources.md):  
 
-    L'élément *Cartes et ressources* du *Menu principal* de l'application OsmAnd donne accès à la gestion des données de la section *Mes Lieux*. L'onglet [*Local*](../personal/maps-resources.md#local-menu) vous montre l'espace occupé par toutes les données OsmAnd existantes sur votre appareil, et la section *Mes Lieux* en particulier. Vous pouvez l'utiliser pour obtenir des informations détaillées sur vos données et y accéder pour les gérer. La section ne peut contenir que des éléments pour lesquels des données ont été téléchargées.  
+    L'élément *Cartes et ressources* du *Menu principal* de l'application OsmAnd donne accès à la gestion des données de la section *Mes Lieux*. L'onglet [*Local*](../personal/maps-resources.md#local) vous montre l'espace occupé par toutes les données OsmAnd existantes sur votre appareil, et la section *Mes Lieux* en particulier. Vous pouvez l'utiliser pour obtenir des informations détaillées sur vos données et y accéder pour les gérer. La section ne peut contenir que des éléments pour lesquels des données ont été téléchargées.  
 
     **Allez dans** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Vérifiez et gérez vos données.
 
@@ -84,10 +84,37 @@ Aller à : *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*
 
     - **Supprimer** (*sur iOS, cette option se trouve dans le menu Modifier*) — Supprime les points favoris un par un ou les dossiers de favoris sélectionnés et tous les points qu'ils contiennent.
 
-2. ***Menu à trois points*** (*Android*) et ***appui long*** (*iOS*). Utilisez le menu *à trois points* à côté de chaque dossier ou faites un *appui long* sur le dossier pour gérer les groupes de favoris. Consultez [Actions du groupe de favoris](../personal/favorites.md#favorite-group-actions) pour plus de détails.  
+2. ***Menu à trois points*** (*Android*) et ***appui long*** (*iOS*). Utilisez le menu *à trois points* à côté de chaque dossier ou faites un *appui long* sur le dossier pour gérer les groupes de favoris :  
 
+    <Tabs groupId="operating-systems" queryString="current-os">
 
-Pour des instructions complètes, reportez-vous à l'article [Favoris](../personal/favorites.md).
+    <TabItem value="android" label="Android">
+
+    ![Menu à trois points](@site/static/img/personal/favorites_three-dot_menu.png)
+
+    </TabItem>
+
+    <TabItem value="ios" label="iOS">
+
+    ![Menu Favoris iOS](@site/static/img/personal/favorites_long-tap_ios.png)
+
+    </TabItem>
+
+    </Tabs>
+
+    - **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
+
+    - **<Translate android="true" ids="change_default_appearance"/>** — Personnalisez l'apparence des points favoris du dossier sur la carte en changeant leurs icônes, couleurs ou étiquettes.
+
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** ou **Cacher sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
+
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** ou **Retirer des marqueurs de carte** (*Android uniquement*) — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.
+
+    - **<Translate android="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
+
+    - **<Translate android="true" ids="shared_string_delete"/>** — Supprime définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
+
+Pour des instructions plus détaillées, consultez l'article [Favoris](../personal/favorites.md).
 
 
 ## Traces {#tracks}

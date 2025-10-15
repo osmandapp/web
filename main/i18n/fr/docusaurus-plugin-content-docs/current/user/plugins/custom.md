@@ -1,5 +1,5 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
+source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
 sidebar_position: 4
 title:  Paquet personnalisé
 ---
@@ -44,7 +44,7 @@ Vous pourriez avoir besoin de lire :
 ### items.json {#itemsjson}
 
 <details>
-<summary> Le fichier <b>items.json</b> d'OsmAnd. </summary> 
+<summary> Fichier <b>items.json</b> d'OsmAnd. </summary> 
 
 ```
 {
@@ -303,7 +303,7 @@ NOTE : Commencez par créer un profil de navigation avec tous les paramètres. P
 ### Téléchargements {#downloads}
 
 Vous pouvez ajouter n'importe quel fichier tel que *SQLite, OBF, ou des polices* à télécharger en utilisant le type **"DOWNLOADS"**. Les principaux types de fichiers téléchargeables peuvent être trouvés [ici](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est à *false*) peut masquer vos données de carte dans [Cartes et ressources](../personal/maps-resources.md#local-menu) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.  
+   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est à *false*) peut masquer vos données de carte dans [Cartes et ressources](../personal/maps-resources.md#local) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.  
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/3.jpg)
 
@@ -319,7 +319,7 @@ Dans le type **"SUGGESTED_DOWNLOADS"**, vous pouvez télécharger les cartes qu'
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/8.jpg)
 
-Lorsque le fichier *items.JSON* et tous les fichiers du dossier sont prêts, vous pouvez les compresser dans un seul document. Après cela, le *fichier .zip* doit être renommé en *.osf*, et alors votre *PLUGIN.osf* sera prêt à être ajouté à l'application OsmAnd.
+Lorsque le fichier *items.JSON* et tous les fichiers du dossier sont prêts, vous pouvez les compresser dans un seul document. Après cela, le *fichier .zip* doit être renommé en *.os*f*, et alors votre *PLUGIN.osf* sera prêt à être ajouté à l'application OsmAnd.
 
 
 ## Exemples {#examples}
@@ -329,7 +329,7 @@ Vous pouvez jeter un œil à certains des plugins que les utilisateurs d'OsmAnd 
  - Le plugin personnalisé [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) (données PAD-US, sentiers et routes USFS, loisirs USFS).
  - Le plugin personnalisé [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf).
  - Le plugin personnalisé [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf).
- - La [carte UMP-PL](https://ump.waw.pl/) de Pologne, [plugin personnalisé de carte](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
+ - La [carte UMP-PL](https://ump.waw.pl/) de Pologne, [plugin personnalisé](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
  - Le plugin personnalisé [OsmAnd Rendering plugin](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf).
  - Le plugin personnalisé [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf).
 

@@ -172,6 +172,127 @@ Nautical map can be included in any profile. However, it is most valuable in the
 The Nautical plugin in OsmAnd extends the vector layer map styles with the Nautical map style. It allows you to display map data according to Nautical map rules, for example: yellow areas for land and shoals, light blue areas for shallow waters, etc. For more information, see [Map legend](../../user/map-legend/nautical-map.md).  
 
 
+### Seabed Detail {#seabed-detail}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+
+![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *Menu → Configure map → Map style → Details → Seabed detail*
+
+![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+Seabed data contains information about vegetation and general surface material such as rocky rocks, shells, gravel, coral, silt, etc. Due to the international classification of seafloor data, there are options for displaying such details on a map: *simple*, *category*, *all* or *omit*. Use the [Seabed area map legend](../map-legend/nautical-map.md#seabed-area) for more information.
+
+- **Simple** (*for Android version*)- shows the seamark symbols in accordance with INT-1 Ref, indicating the nature of the seabed surface.  
+- **Category** - in addition to the seamark symbol, also shows the relevant seamark tag, indicating the natural material, or the seaweed and seagrass category.
+- **All** - in addition to the seamark symbol, tag, or category, also shows qualifications such as fine, sticky, coarse, etc. For seagrass and seaweed, shows data marked with the *taxon* and *genus* tags.  
+- **Omit** - does not show details of the seafloor.  
+
+:::info NOTE
+For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::
+
+### Light Detail {#light-detail}
+
+Android Go to: *Menu → Configure map → Map style Nautical → Other map attributes → Light detail*
+
+IOS Go to: *Menu → Configure map → Map type Nautical → Details → Light detail*
+
+This option вisplays the level of information for navigational lights. You can choose how detailed the light characteristics appear near each lighthouse or beacon.
+
+- **Simple** – shows the default seamark name and light characteristic .
+- **Sectors** – displays full sector arcs and details for all visible light sectors.
+- **Sector 1–5** – shows details for a specific sector number only.
+- **Small** – uses a compact label format for light characteristics.
+- **Name only** – shows only the name of the seamark without light data.
+- **Omit** – hides all light information.
+
+
+## Marine Map Style {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Marine Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+Go to: *Menu* → *Configure map* → *Map style* → *Marine*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Marine iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+Go to: *Menu* → *Configure map* → *Map type* → *Marine*
+
+</TabItem>
+
+</Tabs>
+
+This style adds visual elements for maritime navigation, including navigation lights with INT-1 light characteristics, which describe the type, color, and rhythm of a light signal (for example, whether it flashes, its color, and the interval between flashes), and colored sector lights that indicate the direction and color of the light visible from sea.
+
+In the Marine style, light sectors are displayed around lighthouses and beacons: white (shown in yellow on the map) indicates the safe direction for navigation, red marks dangerous or restricted areas, and green shows auxiliary or lateral directions.
+
+:::info
+To display this information, the Nautical plugin must be enabled, and the World Seamarks map (or World_seamarks_2.obf) must be downloaded. Information is not for official navigation use.
+:::
+
+
+### Map Attributes {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Attributes Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+Go to: *Menu* → *Configure map* → *Map style Marine* → *Other map attributes*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attributes iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+Go to: *Menu* → *Configure map* → *Map type Marine* → *Details* → *Light detail/Seabed detail*
+
+Go to: *Menu* → *Configure map* → *Map type Marine* → Choose other options
+
+</TabItem>
+
+</Tabs>
+
+After enabling the Marine map style, you can fine-tune additional visual elements. These options allow you to control how navigation aids, depth contours, seabed details, and colors appear on the map.
+
+- **[Light detail](../plugins/nautical-charts/#light-detail)**. Defines how seamark light information is displayed. Options: **Default* (full name with light characteristics), *Small* (compact format), *Name only* (light name only), or *Omit* (hide labels).
+- **[Seabed detail](../plugins/nautical-charts/#seabed-detail)**. Controls the level of textual information about the seabed. Options: Simple (basic info), Category (surface type), All (full data), or Omit (no text).
+- **Water color**. Sets the base color for water areas. Options: *Default, Blue, White*, or *Gray* — useful for adjusting visibility and contrast under different lighting modes.
+- **Fairway color**. Changes the color of navigational fairways and channels. Options: *White, Whiter, Gray, Green*, or *Yellow* to improve readability depending on chart background.
+- **Tidal flat style**. Adjusts the color and texture used for tidal flats. Options: *Light green, Dark green, Wetland*, or *Tidal* — each highlights shallow intertidal zones differently.
+- **ENC markers**. Toggle *On/Off*. When enabled, shows Electronic Navigational Chart (ENC) markers such as buoys, beacons, and other navigation aids.
+- **Shells style**. Defines how shells or bottom surface features appear on the seabed. Options: *Gray, Rocks, Stones*, or *Red*, depending on the visual style preferred.
+- **Dashed depth contours**. Toggle *On/Off*. When enabled, displays depth contour lines as dashed, enhancing readability in dense areas.
+- **Depth color scheme**. Selects the color scheme for depth zones. Options: *PAPER* (traditional paper chart colors) or *ECDIS* (standard electronic navigation system palette).
+- **Spot sounding size**. Sets the font size for spot sounding numbers (depth values). Options: *Default, 10, 12, 14*, or *16* — larger values improve visibility on high-resolution screens.
+- **Spot sounding distance**. Controls how frequently depth soundings appear on the map. Options: *Default, 0, 5, 10, 15, 30, 60*, or *120*, determining the spacing between displayed depth points.
+- **Safety depth contour**. Highlights the contour line marking the safety depth threshold. Options: *Off, 0 m, 1 m, 2 m, 3 m, 4 m, 5 m*, or *10 m*. Useful for distinguishing safe navigation areas from shallow zones.
+
+
+## Additional Nautical Data {#additional-nautical-data}
+
 ### Depth Points {#depth-points}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -222,40 +343,6 @@ When a Nautical map is displayed on the screen, you can adjust what you see:
 
 :::info NOTE
 You can help the OsmAnd app increase the Depth contours database by adding your information using [OpenSeaMap](https://map.openseamap.org/)
-:::
-
-
-### Seabed Details {#seabed-details}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
-
-![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
-
-![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
-
-</TabItem>
-
-</Tabs>
-
-Seabed data contains information about vegetation and general surface material such as rocky rocks, shells, gravel, coral, silt, etc. Due to the international classification of seafloor data, there are options for displaying such details on a map: *simple*, *category*, *all* or *omit*. Use the [Seabed area map legend](../map-legend/nautical-map.md#seabed-area) for more information.
-
-- **Simple** (*for Android version*)- shows the seamark symbols in accordance with INT-1 Ref, indicating the nature of the seabed surface.  
-- **Category** - in addition to the seamark symbol, also shows the relevant seamark tag, indicating the natural material, or the seaweed and seagrass category.
-- **All** - in addition to the seamark symbol, tag, or category, also shows qualifications such as fine, sticky, coarse, etc. For seagrass and seaweed, shows data marked with the *taxon* and *genus* tags.  
-- **Omit** - does not show details of the seafloor.  
-
-:::info NOTE
-For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
 
 

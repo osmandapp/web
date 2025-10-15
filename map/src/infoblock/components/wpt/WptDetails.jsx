@@ -59,6 +59,7 @@ import WptTagsProvider, {
     WIKIDATA,
     WIKIPEDIA,
     addWikidataTags,
+    getOsmIdFromOsmUrl,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -81,7 +82,7 @@ import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/set
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
-import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
 
@@ -172,7 +173,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
             const mapObj = ctx.selectedWpt.mapObj;
-            const wikiObj = ctx.searchSettings.getPoi;
+            const wikiObj = ctx.searchSettings.getPoi ?? ctx.selectedWpt.wikidata;
             const wikidataId = wikiObj.properties?.id || ctx.selectedWpt.wikidata.properties.id;
             const coords = wikiObj.geometry.coordinates;
             const poiType = getCategory(wikiObj.properties);
@@ -380,7 +381,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
-        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
+        const mainPhoto = wpt.photos.features?.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
         if (mainPhoto) {
             mainPhoto.properties.rowNum = 0;
             wpt.photos.features.unshift(mainPhoto);
@@ -475,8 +476,22 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isWpt) {
             !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
         } else if (type.isWikiPoi) {
+            if (ctx.selectedPoiId) {
+                ctx.setSelectedPoiId((prev) => {
+                    return { ...prev, show: false };
+                });
+            }
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
+            if (wpt.mapObj) {
+                closeObjectFromMap();
+            } else {
+                ctx.setSelectedPoiObj(null);
+                navigate({
+                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL,
+                    hash: window.location.hash,
+                });
+            }
         } else if (type.isFav) {
             ctx.setSelectedFavoriteObj(null);
             !wpt.mapObj ? closeOnlyFavDetails() : closeObjectFromMap();
@@ -951,7 +966,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         name: 'OSM ID',
                                         link: (
                                             <Link href={wpt.osmUrl} target="_blank" rel="noopener noreferrer">
-                                                {wpt.osmUrl.split('/').pop()}
+                                                {getOsmIdFromOsmUrl(wpt.osmUrl)}
                                             </Link>
                                         ),
                                     }}

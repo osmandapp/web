@@ -24,6 +24,8 @@ import { getVisibleBbox } from '../util/MapManager';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { navigateToPoi } from '../../manager/PoiManager';
+import { useNavigate } from 'react-router-dom';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -43,6 +45,8 @@ export function getImgByProps(props) {
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const navigate = useNavigate();
 
     const GET_OBJ_DEBOUNCE_MS = 500;
 
@@ -125,7 +129,11 @@ export default function ExploreLayer() {
             const poi = response?.data ?? null;
             const obj = { poi, wikidata: item, key, mapObj: selectFromMap };
             recentSaver(EXPLORE_OBJS_KEY, obj);
+            navigateToPoi(obj, navigate, true);
             ctx.setSelectedWpt(obj);
+            if (!selectFromMap) {
+                ctx.setSelectedPoiObj(obj);
+            }
             setSelectFromMap(false);
         }
 

@@ -10,6 +10,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
     SEPARATOR,
+    getOsmIdFromOsmUrl,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -22,7 +23,8 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
-import { POI_URL } from './GlobalManager';
+import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
+import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -52,6 +54,15 @@ const poiFilters = {
     sustenance: ['Sustenance', 'Food'],
     tourism: ['Tourism'],
     water_filter: ['Water filter', 'Water'],
+};
+export const poiUrlParams = {
+    name: 'name',
+    type: 'type',
+    osmId: 'osmId',
+    wikidataId: 'wikidataId',
+    lat: 'lat',
+    lng: 'lng',
+    lang: 'lang',
 };
 
 async function getPoiCategories() {
@@ -319,12 +330,46 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function navigateToPoi(poi, navigate) {
-    const name = poi.options.amenity_name;
-    const type = poi.options.amenity_subtype;
+export function navigateToPoi(obj, navigate, isWiki = false) {
+    if (!obj) return;
+
+    const params = {};
+
+    const wiki = obj.wikidata;
+    const poi = obj.poi;
+
+    if (isWiki) {
+        function getWikiPoiType() {
+            const type = wiki.properties.poitype ?? wiki.properties.subtype;
+            return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
+        }
+        params.name = poi?.properties.web_poi_name;
+        params.type = getWikiPoiType();
+        params.wikidataId = wiki.properties?.id;
+        params.lat = wiki.geometry.coordinates?.[1];
+        params.lng = wiki.geometry.coordinates?.[0];
+        params.lang = i18n.language;
+    } else {
+        const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
+        params.name = poi.options.amenity_name || poi.options.name;
+        params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);
+        params.type = props.type;
+        params.wikidataId = poi.options.wikidata_id;
+        params.lat = poi.latlng?.lat;
+        params.lng = poi.latlng?.lng;
+    }
+
+    const keys = Object.keys(poiUrlParams);
+    const search = new URLSearchParams();
+    for (const key of keys) {
+        const v = params[key];
+        if (v != null && v !== '') {
+            search.append(key, v);
+        }
+    }
     navigate({
-        pathname: POI_URL,
-        search: `?name=${name}&type=${type}&lat=${poi.latlng.lat}&lng=${poi.latlng.lng}`,
+        pathname: MAIN_URL_WITH_SLASH + POI_URL,
+        search: search.size ? `?${search}` : '',
         hash: window.location.hash,
     });
 }

@@ -1,5 +1,5 @@
 ---
-source-hash: 41206f7aa105ab8fa59a5f824c1e0374750b7232835e5fadfb76637ff0469e77
+source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
 sidebar_position: 2
 title:  Naviguer par trace
 ---
@@ -123,7 +123,7 @@ Allez à : *<Translate ios="true" ids="shared_string_navigation,shared_string_se
 - **<Translate android="true" ids="select_another_track"/>** — Sélectionner un autre fichier GPX pour la navigation.
 - **<Translate android="true" ids="gpx_option_reverse_route"/>** — Si ce paramètre est activé, la direction du mouvement le long de la trace est inversée.
 - **<Translate android="true" ids="attach_to_the_roads"/>** — Configure [l'attachement d'une trace aux routes](#attach-to-the-roads).
-- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — Vous pouvez choisir comment naviguer depuis votre position jusqu'à la trace :
+- **<Translate android="true" ids="pass_whole_track_descr"/>** (*Android*) / **<Translate ios="true" ids="point_to_navigate"/>** (*iOS*) — Vous pouvez choisir comment naviguer depuis ma position jusqu'à la trace :
 vers le *<Translate android="true" ids="start_of_the_track"/>* ou vers le *<Translate android="true" ids="nearest_point"/>* sur la trace.
 - Choisissez le **Type de navigation** pour le premier et le dernier segment : soit construire une [*ligne droite*](../routing/straight-line-routing.md), soit utiliser le [*type d'itinéraire*](../routing/osmand-routing.md#routing-types) du profil actuel.
 
@@ -171,7 +171,7 @@ Par défaut, la fonctionnalité **Attacher aux routes** s'exécute **automatique
 
 ### Point de départ / d'arrivée {#start--finish-point}
 
-Vous pouvez spécifier un point de départ et d'arrivée pour un itinéraire autre que le départ/l'arrivée spécifié dans le fichier GPX. Il suffit de le changer de la même manière que pour la [Navigation](../setup/route-navigation.md#select-start-point).
+Vous pouvez spécifier un point de départ et d'arrivée pour un itinéraire autre que le départ/l'arrivée spécifié dans le fichier GPX. Il suffit de le changer de la même manière que pour la [Navigation](../setup/route-navigation.md#select-starting-point).
 
 Dans le [menu Suivre la trace](#follow-track-options), vous pouvez choisir si vous souhaitez naviguer depuis votre position actuelle jusqu'au point de départ de la trace ou jusqu'au point le plus proche sur la trace GPX. De plus, vous pouvez choisir le [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) qui sera utilisé pour le segment de départ et d'arrivée de votre itinéraire.  
 
