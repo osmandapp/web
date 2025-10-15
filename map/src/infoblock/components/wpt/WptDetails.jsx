@@ -82,16 +82,9 @@ import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/set
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
-import {
-    EXPLORE_URL,
-    MAIN_URL_WITH_SLASH,
-    POI_URL,
-    SEARCH_RESULT_URL,
-    SEARCH_URL,
-} from '../../../manager/GlobalManager';
+import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
+import { useNavigate } from 'react-router-dom';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
@@ -141,13 +134,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
-    const location = useLocation();
 
     const hash = window.location.hash;
 
     const recentSaver = useRecentDataSaver();
-
-    const updateQueryParam = useUpdateQueryParam();
 
     const [devWikiContent, setDevWikiContent] = useState(null);
 
@@ -246,12 +236,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
         }
     }, [ctx.selectedWpt]);
-
-    useEffect(() => {
-        if (ctx.selectedWpt?.poi?.properties?.web_poi_name) {
-            updateQueryParam('name', ctx.selectedWpt.poi.properties.web_poi_name, MAIN_URL_WITH_SLASH + POI_URL);
-        }
-    }, [ctx.selectedWpt?.poi, location.pathname]);
 
     useEffect(() => {
         if (!newWpt || !ctx.selectedWpt) return;
@@ -397,7 +381,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
-        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
+        const mainPhoto = wpt.photos.features?.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
         if (mainPhoto) {
             mainPhoto.properties.rowNum = 0;
             wpt.photos.features.unshift(mainPhoto);
