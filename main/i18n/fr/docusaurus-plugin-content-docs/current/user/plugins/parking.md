@@ -1,5 +1,5 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Position de stationnement
 ---
@@ -23,6 +23,8 @@ Ce plugin est gratuit et fonctionne hors ligne avec les cartes OsmAnd téléchar
 - Si le stationnement est à durée limitée, le plugin enregistre l'heure de début et de fin.
 - L'heure de fin peut déclencher un rappel dans le calendrier de votre appareil.
 - Les détails du stationnement peuvent être consultés ultérieurement ou utilisés pour la navigation.
+
+Les places de stationnement sont enregistrées en tant que **points favoris**. Pour vous assurer que le marqueur de stationnement est visible sur la carte, les [Favoris](../personal/favorites.md) doivent être activés.
 
 Le marqueur est temporaire et facile à supprimer une fois qu'il n'est plus nécessaire.
 
