@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -74,7 +74,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 
 3. Navigasyonu [başlatın](#start--stop-navigation) veya önce [simüle edilmiş navigasyonu](#simulated-navigation) yapın (bu fonksiyonla rotanızı gerçekten seyahat etmeden önce test edebilirsiniz).
 
-4. Rota üzerindeyken navigasyonu [*Duraklat/Devam Ettir*](#pause--resume-navigation) ve [*Durdur*](#start--stop-navigation) yapabilirsiniz.
+4. Rota üzerindeyken navigasyonu [*Duraklat/Devam Ettir*](#pause--resume-navigation) ve [*Durdur*](#start--stop-stop-navigation) yapabilirsiniz.
 
 
 :::note
@@ -122,25 +122,10 @@ Navigasyon menüsünde hedefinizi kullanarak ayarlayın:
 - **İptal** düğmesi ana ekrana geri döner.
 - [Başlat düğmesi](#start--stop-navigation) rota hesaplaması bittikten sonra navigasyonu başlatır.
   
-### Başlangıç Noktası Seç {#select-start-point}
+### Başlangıç Noktası Seç {#select-starting-point}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Başlangıç noktası olarak mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Ara](../../search/index.md) özelliğini kullanabilirsiniz. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirme](../../map/map-context-menu.md#directions-to--from) işlevini seçerek bir başlangıç noktası ayarlayabilirsiniz.  
 
-<TabItem value="android" label="Android">
-
-![Haritada seç Android](@site/static/img/navigation/route/select_on_map.png)
-
-Başlangıç noktası için mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Ara](../../search/index.md) özelliğini kullanabilirsiniz. Harita üzerinde bir nokta seçtiğinizde bir iletişim kutusu açılır. Harita bir işaretçi ile merkezlenir, harita merkezinin koordinatları görüntülenir ve doğrudan bir noktaya dokunmak yerine işaretçi altında haritayı hareket ettirirsiniz. Onaylamak için *Seç* düğmesine basın. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirme'den](../../map/map-context-menu.md#directions-to--from) işlevini seçerek bir başlangıç noktası ayarlayabilirsiniz.  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Haritada seç iOS](@site/static/img/navigation/route/select_on_map_ios.png)
-
-Başlangıç noktası için mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Ara](../../search/index.md) özelliğini kullanabilirsiniz. Harita üzerinde bir nokta seçerken haritayı serbestçe hareket ettirebilir ve yakınlaştırabilirsiniz, ardından istenen konuma dokunabilirsiniz. Seçilen noktada bir bayrak görünür. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirme'den](../../map/map-context-menu.md#directions-to--from) işlevini seçerek bir başlangıç noktası ayarlayabilirsiniz. 
-</TabItem>
-
-</Tabs>
 
 ### Hedef Noktası Ayarla {#set-target-point}
 
@@ -149,32 +134,24 @@ Başlangıç noktası için mevcut konumunuzu, bir [Favori noktanın](../../map/
 <TabItem value="android" label="Android">
 
 ![Navigasyon menüsü Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
-
-Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. Varış noktası bir [*Arama*](../../search/index.md#overview) işlevi kullanılarak veya basitçe bir harita üzerinde bulunabilir. Ayrıca [*Navigasyon menüsünde*](#navigation-menu) hedef noktayı ayarlayabilirsiniz:  
-
-- **<Translate android="true" ids="search_button"/>** - [Arama menüsünü](../../search/index.md) açar.
-- **<Translate android="true" ids="shared_string_address"/>** - [Adres arama menüsünü](../../search/search-address.md) açar.
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Haritayı bir işaretçi ile merkezleyen bir iletişim kutusu açar. Harita merkezinin koordinatları gösterilir, işaretçi altında haritayı hareket ettirirsiniz ve *Seç* düğmesine basarak seçimi onaylarsınız.
-- **<Translate android="true" ids="shared_string_favorites"/>** - [Favori](../../personal/favorites.md) olarak bir varış noktası kullanılmasına izin verir.
-- **<Translate android="true" ids="shared_string_markers"/>** - [Harita işaretçilerinden](../../personal/markers.md) birini varış noktası olarak seçmeye izin verir.
-- **Başlangıç noktasını ve Varış noktasını değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını değiştirmeye izin verir.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Navigasyon menüsü iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
+</TabItem>
+
+</Tabs>
+
 Navigasyonu başlatmak için en önemli şey varış noktanızı belirlemektir. Varış noktası bir [*Arama*](../../search/index.md#overview) işlevi kullanılarak veya basitçe bir harita üzerinde bulunabilir. Ayrıca [*Navigasyon menüsünde*](#navigation-menu) hedef noktayı ayarlayabilirsiniz:  
 
 - **<Translate android="true" ids="search_button"/>** - [Arama menüsünü](../../search/index.md) açar.
 - **<Translate android="true" ids="shared_string_address"/>** - [Adres arama menüsünü](../../search/search-address.md) açar.
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Haritayı hareket ettirmenize ve yakınlaştırmanıza izin verir, ardından istenen konuma dokunabilirsiniz. Seçilen noktada bir bayrak görünür ve varış noktasını işaretler.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Haritaya dokunarak bir varış noktası seçmek için haritayı açar.
 - **<Translate android="true" ids="shared_string_favorites"/>** - [Favori](../../personal/favorites.md) olarak bir varış noktası kullanılmasına izin verir.
 - **<Translate android="true" ids="shared_string_markers"/>** - [Harita işaretçilerinden](../../personal/markers.md) birini varış noktası olarak seçmeye izin verir.
 - **Başlangıç noktasını ve Varış noktasını değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını değiştirmeye izin verir.
-</TabItem>
-
-</Tabs>
 
 
 ### Ara Varış Noktaları {#intermediate-destinations}
@@ -228,7 +205,7 @@ Bu menüde, varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Yalnızca Android*) - Tüm noktalar ters yönde yerleştirilecektir.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Bu menüden ara varış noktaları ekleyebilirsiniz. Harita üzerinde ara varış noktası seçme işlemi, başlangıç ve hedef noktaları için aynıdır.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Bu menüden ara varış noktaları ekleyebilirsiniz.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Tüm ara varış noktaları haritadan kaldırılacaktır.
 

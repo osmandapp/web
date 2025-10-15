@@ -1,5 +1,5 @@
 ---
-source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
+source-hash: b7a4c8980154722bb0d724edafe0ab0e8ba822222cf5fbe7b64f264c2fb4b1a8
 sidebar_position: 6
 title: Yerlerim
 ---
@@ -84,10 +84,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **Sil** (*iOS'ta bu seçenek Düzenle menüsünde bulunur*) — Favori noktaları tek tek veya seçilen favori klasörleri ve içerdikleri tüm noktaları siler.
 
-2. ***Üç noktalı menü*** (*Android*) ve ***uzun dokunuş*** (*iOS*). Her klasörün yanındaki *üç noktalı* menüyü veya klasöre *uzun dokunuşu* kullanarak favori gruplarını yönetin. Ayrıntılar için [Favori Grup Eylemleri](../personal/favorites.md#favorite-group-actions) bölümüne bakın.  
+2. ***Üç noktalı menü*** (*Android*) ve ***uzun dokunuş*** (*iOS*). Her klasörün yanındaki *üç noktalı* menüyü veya klasöre *uzun dokunuşu* kullanarak favori gruplarını yönetin:  
 
+    <Tabs groupId="operating-systems" queryString="current-os">
 
-Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
+    <TabItem value="android" label="Android">
+
+    ![Üç noktalı menü](@site/static/img/personal/favorites_three-dot_menu.png)
+
+    </TabItem>
+
+    <TabItem value="ios" label="iOS">
+
+    ![Favoriler menüsü iOS](@site/static/img/personal/favorites_long-tap_ios.png)
+
+    </TabItem>
+
+    </Tabs>
+
+    - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
+
+    - **<Translate android="true" ids="change_default_appearance"/>** — Simgelerini, renklerini veya etiketlerini değiştirerek klasördeki favori noktaların haritada nasıl göründüğünü özelleştirin.
+
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** veya **Haritada gizle** — Klasördeki favori noktaları haritada görüntülemek veya gizlemek için bu seçeneği açıp kapatın.
+
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** veya **Harita işaretçilerinden kaldır** (*Yalnızca Android*) — Kolay başvuru için klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın.
+
+    - **<Translate android="true" ids="shared_string_share"/>** — Favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak klasördeki favori noktaları paylaşın, böylece verilerinizi aktarmayı veya yedeklemeyi kolaylaştırın.
+
+    - **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favori klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
+
+Daha ayrıntılı talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
 
 ## Parkurlar {#tracks}
