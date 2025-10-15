@@ -1,5 +1,5 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
+source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
 sidebar_position: 12
 title:  Parkposition
 ---
@@ -26,8 +26,6 @@ Dieses Plugin ist kostenlos und funktioniert offline mit heruntergeladenen OsmAn
 
 Die Markierung ist temporär und lässt sich leicht entfernen, wenn sie nicht mehr benötigt wird.
 
-Parkplätze werden als **Favoritenpunkte** gespeichert. Um sicherzustellen, dass die Parkmarkierung auf der Karte sichtbar ist, muss [Favoriten](../personal/favorites.md) aktiviert sein.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -49,19 +47,19 @@ Parkplätze werden als **Favoritenpunkte** gespeichert. Um sicherzustellen, dass
 
 Um einen Parkplatz auf der Karte zu verwenden, müssen Sie die folgenden Einstellungen vornehmen:
 
-1. Aktivieren Sie das [Parkpositions-Plugin](../plugins/index.md#enable--disable) über *Hauptmenü → Plugins*.  
-2. Legen Sie einen [Parkplatz](#set-a-spot) auf der Karte über das Kontextmenü fest.
-3. (Optional) Fügen Sie das [Park-Widget](#parking-widget) für einen schnelleren Zugriff zum Bildschirm hinzu.  
+1. Aktivieren Sie das [Parkpositions-Plugin](../plugins/index.md#enable--disable) über *Hauptmenü → Plugins*.
+2. Setzen Sie einen [Parkplatz](#set-a-spot) auf der Karte über das Kontextmenü.
+3. (Optional) Fügen Sie das [Park-Widget](#parking-widget) für einen schnelleren Zugriff zum Bildschirm hinzu.
 
 
 ## Parkplatz auf der Karte {#parking-spot-on-the-map}
 
-Wenn Sie einen Parkplatz markieren, speichert OsmAnd dessen geografische Koordinaten zusammen mit einem Zeitstempel. Wenn benötigt, kann auch eine Zeitbegrenzung und eine Kalendererinnerung hinzugefügt werden. Parkplätze werden als **Favoritenpunkte** gespeichert. Um sicherzustellen, dass die Parkmarkierung auf der Karte sichtbar ist, muss [Favoriten](../personal/favorites.md) aktiviert sein.
+Wenn Sie einen Parkplatz markieren, speichert OsmAnd dessen geografische Koordinaten zusammen mit einem Zeitstempel. Bei Bedarf können auch ein Zeitlimit und eine Kalendererinnerung hinzugefügt werden.
 
 
 ### Einen Parkplatz festlegen {#set-a-spot}
 
-Um einen Parkplatz auf der Karte festzulegen, zoomen Sie auf die erforderliche Stufe heran, tippen Sie dann lange auf die Stelle auf der Karte und nehmen Sie im sich öffnenden [Kontextmenü](../map/map-context-menu.md) die Einstellungen vor.
+Um einen Parkplatz auf der Karte zu markieren, zoomen Sie auf die erforderliche Stufe heran, tippen Sie dann lange auf die Stelle auf der Karte und nehmen Sie im sich öffnenden [Kontextmenü](../map/map-context-menu.md) die Einstellungen vor.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -88,7 +86,7 @@ Um eine Parkmarkierung zu platzieren, zoomen Sie auf der Karte heran, tippen Sie
    - **Zeitlich begrenztes Parken** – ermöglicht es Ihnen, eine Endzeit festzulegen und optional eine Erinnerung im Kalender Ihres Geräts zu erstellen.
 4. Bestätigen Sie, um die Markierung zu platzieren. Die Startzeit wird automatisch gespeichert.
 
-:::info Start Time
+:::info Startzeit
 Die Startzeit wird immer automatisch eingestellt. Wenn Sie die Endzeit ändern müssen, müssen Sie den Parkplatz löschen und neu erstellen. Erinnerungen werden nur dann zu Ihrem Kalender hinzugefügt, wenn Sie diese Option bei der Einrichtung ausgewählt haben.
 :::
 
@@ -149,14 +147,14 @@ Sie können den Parkplatz als Navigationsziel verwenden, um einfach zu Ihrem Fah
 
 **Über das Navigationsmenü**:
 
-  1. Tippen Sie auf die Schaltfläche **Navigation**.  
-  2. Wählen Sie ein Profil.  
+  1. Tippen Sie auf die Schaltfläche **Navigation**.
+  2. Wählen Sie ein Profil.
   3. Tippen Sie auf **Ziel festlegen** und wählen Sie **Parken** aus der Liste der gespeicherten Punkte.
 
 **Über das Park-Widget**:
 
-  1. Tippen Sie auf das **Park-Widget**.  
-  2. Tippen Sie auf die Parkplatzmarkierung.  
+  1. Tippen Sie auf das **Park-Widget**.
+  2. Tippen Sie auf die Parkplatzmarkierung.
   3. Wählen Sie **Navigation** und das Profil, das Sie verwenden möchten.
 
 
@@ -195,7 +193,7 @@ Wenn eine Kalendererinnerung eingestellt war, wird diese ebenfalls automatisch e
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Einen Bereich auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_parking"/>*  
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Einen Bereich auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_parking"/>*
 
 ![Park-Widget in Android hinzufügen](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
 
@@ -203,7 +201,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Einen Bereich auswählen → Widget hinzufügen → <Translate ios="true" ids="parking_place"/>*  
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Einen Bereich auswählen → Widget hinzufügen → <Translate ios="true" ids="parking_place"/>*
 
 ![Park-Widget in iOS hinzufügen](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 
@@ -222,5 +220,5 @@ Um mehr zu erfahren, siehe: [Informations-Widgets – Park-Widget](https://osman
 ## Verwandte Artikel {#related-articles}
 
 - [Mit der Karte interagieren](../../user/map/interact-with-map.md)
-- [Globale Einstellungen](../../user/personal/global-settings.md)
+- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)

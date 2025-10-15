@@ -1,5 +1,5 @@
 ---
-source-hash: f83e190bfec9a24ba91f8854af79a3c931b22468f01136978f5937e9c2a59156
+source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
 sidebar_position: 10
 title:  Routen
 ---
@@ -111,18 +111,11 @@ Einige Straßenabschnitte können Teil vieler Routen sein, aber sie können indi
 2. [CAI-Skala](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Skirouten und -pisten {#ski-slopes-and-routes}
+### Skirouten {#ski-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Skirouten und -pisten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/vector-maps.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden. Wenn ein anderer Kartenstil aktiv ist, wird ein Banner angezeigt, das einen Wechsel zu **Winter und Ski** vorschlägt (*nur Android*). Tippen Sie auf ***Wechseln***, um den Kartenstil zu ändern, ohne den aktuellen Bildschirm zu verlassen, oder auf ***Später***, um das Banner zu verstecken.
-
-
-### Schneemobil-Wege {#snowmobile-trails}
-
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
-
-Schneemobil-Wege werden in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) als `route=snowmobile` kartiert. Sie werden für Winterrekreation und zur Verbindung entfernter Gebiete während der Schneesaison verwendet. In OsmAnd sind Schneemobil-Wege anklickbar, siehe Abschnitt [Aktionen mit Routen](#actions-with-routes).
+Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/vector-maps.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden.  
 
 
 ### Reitwege {#horse-routes}
@@ -159,9 +152,9 @@ Ein [Fitnesspfad](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Reiserouten sind Teil von benutzerdefinierten [Reisebüchern](../plan-route/travel-guides.md) (`travel.obf`), die aus den [Routen des Benutzers](https://osmand.net/blog/routes#generated-travel-routes) generiert werden können oder Teil von zusätzlichen [Plugins](../plugins/index.md) sind.  
+Reiserouten sind Teil von benutzerdefinierten [Reiseführer](../plan-route/travel-guides.md)-Dateien (`travel.obf`), die aus den [Routen des Benutzers](https://osmand.net/blog/routes#generated-travel-routes) generiert werden können oder Teil von zusätzlichen [Plugins](../plugins/index.md) sind.  
 
-Sie können die Anzeige bestimmter ***Reisebücher*** und Arten von ***Tracks*** anpassen, Tracks als Punkte oder ***Punktgruppen*** anzeigen (zum Beispiel für Wikivoyage-Reisebücher). Erfahren Sie mehr über [Reiseführer hier](../plan-route/travel-guides.md).
+Sie können die Anzeige bestimmter ***Reiseführer*** und Arten von ***Tracks*** anpassen, Tracks als Punkte oder ***Punktgruppen*** anzeigen (zum Beispiel für Wikivoyage-Reiseführer). Erfahren Sie mehr über [Reiseführer hier](../plan-route/travel-guides.md).
 
 
 ## Routen auf der Karte anzeigen {#display-routes-on-the-map}
@@ -252,7 +245,7 @@ Im **Kontextmenü** können Sie:
 
 Die folgenden Informationen werden im Kontextmenü sichtbar sein:
 
-- **Routeninfo**: Routenname, OSM-Link (OSM-Bearbeitungs-Plugin erforderlich), Typ, Beschreibung, Entfernung, Richtung, Anstieg/Abstieg, Höhenbereich, Netzwerk, Betreiber, Zustand, Farbe, Rundweg, Start-/Endpunkte und mehr.
+- **Routeninfo**: Routenname, OSM-Link (OSM-Bearbeitungs-Plugin erforderlich), Typ, Beschreibung, Entfernung, Richtung, Aufstieg/Abstieg, Höhenbereich, Netzwerk, Betreiber, Zustand, Farbe, Rundweg, Start-/Endpunkte und mehr.
 - **Allgemein**: Größe, Ort, Erstellt am.
 - **Zusätzliche Info**. Zeigt die Art der Aktivität an.
 - Aktionsschaltflächen: [Speichern als](#save-as-a-track) und [Navigation starten](#start-navigation).
@@ -350,7 +343,7 @@ Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"
 
 </Tabs>  
 
-Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
+Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

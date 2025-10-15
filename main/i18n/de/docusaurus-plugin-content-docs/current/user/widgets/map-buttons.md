@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
 sidebar_position: 2
 title:  Kartenschaltflächen
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Kartenschaltflächen, einschließlich *Zoom*, *Suche*, *Richtungen*, *Kompass*, *Mein Standort*, *3D-Modus* und *Menü*, sind die Hauptsteuerelemente für die Interaktion mit der Karte. Jede Schaltfläche bietet spezifische Funktionen, um Ihr Navigations- und Kartennutzungserlebnis zu verbessern.
+Kartenschaltflächen, einschließlich *Zoom*, *Suche*, *Route*, *Kompass*, *Mein Standort*, *3D-Modus* und *Menü*, sind die Hauptsteuerelemente für die Interaktion mit der Karte. Jede Schaltfläche bietet spezifische Funktionen, um Ihr Navigations- und Kartennutzungserlebnis zu verbessern.
 
 
 ## Mein Standort und Zoom {#my-location-and-zoom}
@@ -32,17 +32,17 @@ Verwenden Sie diese Schaltflächen, um zu steuern, wie die Karte auf dem Bildsch
 Wenn Sie weitere Informationen zur Verwendung dieser Schaltflächen wünschen, lesen Sie den Artikel [Mit der Karte interagieren](../map/interact-with-map.md#my-location-and-zoom).
 
 
-## Richtungen {#directions}
+## Route {#directions}
 
-![Richtungsschaltfläche ermöglicht](@site/static/img/widgets/directions_button_allows.png)
+![Routenschaltfläche ermöglicht](@site/static/img/widgets/directions_button_allows.png)
 
-Die Schaltfläche **Richtungen** ist für die Routenplanung und Navigation unerlässlich:
+Die Schaltfläche **Route** ist für die Routenplanung und Navigation unerlässlich:
 
 - [Eine Route erstellen](../navigation/index.md). Verwenden Sie diese Schaltfläche, um eine Route zu erstellen.
 - [Navigation starten](../navigation/index.md). Starten Sie die Turn-by-Turn-Navigation.
-- Im Navigationsmodus ist die Schaltfläche *Richtungen* standardmäßig nicht sichtbar, erscheint aber nach einem kurzen Tippen auf die Karte.
+- Im Navigationsmodus ist die Schaltfläche *Route* standardmäßig nicht sichtbar, erscheint aber nach einem kurzen Tippen auf die Karte.
 
-Anzeigestatus der Schaltfläche *Richtungen*:
+Anzeigestatus der Schaltfläche *Route*:
 
 - Das *graue Standardsymbol* zeigt an, dass die Route noch nicht erstellt wurde. Durch Tippen auf dieses Symbol wird die Funktion [Routeneinrichtung](../navigation/setup/route-navigation.md) geöffnet.
 - Das *blaue Standardsymbol* zeigt an, dass die Route erstellt, die Navigation aber noch nicht gestartet wurde. Durch Tippen auf dieses Symbol wird die Funktion [Routeneinrichtung](../navigation/setup/route-navigation.md#start--stop-navigation) geöffnet.
@@ -186,7 +186,7 @@ Einstellungen für das Erscheinungsbild der Kartenschaltflächen sind über die 
 - *Menü → Bildschirm konfigurieren → Schaltflächen → Standardschaltflächen*
 - *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte-Menü → Erscheinungsbild*
 
-Die Anpassung des Erscheinungsbilds von Schaltflächen ermöglicht es Ihnen, die Größe, Form, das Symbol und die Hintergrunddeckkraft sowohl für [Schnellaktion (Benutzerdefinierte Schaltflächen)](../widgets/quick-action.md#button-appearance) als auch für [Standardschaltflächen](../widgets/configure-screen.md#button-appearance) anzupassen. Diese Flexibilität ermöglicht es Ihnen, die Benutzeroberfläche an Ihre Vorlieben anzupassen und die Benutzerfreundlichkeit zu verbessern.
+Die Anpassung des Erscheinungsbilds von Schaltflächen ermöglicht es Ihnen, die Größe, Form, das Symbol und die Hintergrunddeckkraft sowohl für [Schnellaktion (Benutzerdefinierte Schaltflächen)](../widgets/quick-action.md#quick-action-button-appearance) als auch für [Standardschaltflächen](../widgets/configure-screen.md#button-appearance) anzupassen. Diese Flexibilität ermöglicht es Ihnen, die Benutzeroberfläche an Ihre Vorlieben anzupassen und die Benutzerfreundlichkeit zu verbessern.
 
 
 ## Verwandte Artikel {#related-articles}

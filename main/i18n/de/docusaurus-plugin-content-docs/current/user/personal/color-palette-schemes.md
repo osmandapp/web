@@ -1,5 +1,5 @@
 ---
-source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
+source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
 sidebar_position: 5
 title:  Farbschemata
 ---
@@ -20,13 +20,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Kostenpflichtige Funktion
 
-Farbschemata werden als Teil der kostenpflichtigen [Maps+](../purchases/index.md) und Pro <ProFeature /> Funktionen verwendet.  
+Farbschemata sind Teil der kostenpflichtigen Funktionen [Maps+](../purchases/index.md) und Pro <ProFeature />.  
 
 :::
 
 Farbschemata werden bei der [Einfärbung von Routen](#routes), dem [Kartengelände](#terrain) und der [Wetterkarte](#weather) verwendet und stellen einen separaten Teil der Informationen dar, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
 
-Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local-menu) verfügbar.
+Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local) verfügbar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

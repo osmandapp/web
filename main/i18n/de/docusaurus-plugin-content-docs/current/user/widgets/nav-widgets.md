@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: e574b157e1460483991973a8f0aa82032a697bf0c8250d5dbada1a787ff155e0
 sidebar_position: 4
 title:  Navigations-Widgets
 ---
@@ -24,35 +24,35 @@ Navigations-Widgets werden während der Navigation aktiviert, um Informationen w
 
 ## Aktive und passive Navigation {#active-and-passive-navigation}
 
-Navigations-Widgets in OsmAnd sind so konzipiert, dass sie sowohl den **aktiven** als auch den **passiven** Navigationsmodus verbessern. Diese Widgets liefern wertvolle Informationen wie Routenanweisungen, Straßendetails und Geschwindigkeitsbegrenzungen, abhängig vom ausgewählten **Navigationsprofil**.  
+Navigations-Widgets in OsmAnd sind so konzipiert, dass sie sowohl den **aktiven** als auch den **passiven** Navigationsmodus verbessern. Diese Widgets liefern wertvolle Informationen wie Routenanweisungen, Straßendetails und Geschwindigkeitsbegrenzungen, abhängig vom ausgewählten **Navigationsprofil**.
 
 #### Aktive Navigation {#active-navigation}
 
-- **Anforderungen:**  
-  - Ein **Ziel** festlegen.  
-  - Die **Route** mit der Funktion *Route* berechnen.  
+- **Anforderungen:**
+  - Ein **Ziel** festlegen.
+  - Die **Route** mit der Funktion *Route* berechnen.
   - Navigation **starten** (Sprachführung ist optional).
   - Nur verfügbar, wenn man sich entlang der Route bewegt.
 
-- **Unterstützte Widgets:**  
-  - Alle **Navigations-Widgets** sind verfügbar.  
+- **Unterstützte Widgets:**
+  - Alle **Navigations-Widgets** sind verfügbar.
 
-- **Wichtigste Vorteile:**  
-  - Bietet **Abbiegehinweise**, **Fahrspurassistent** und **ETA**.  
-  - Gewährleistet genaue und dynamische Aktualisierungen während der Fahrt.  
+- **Wichtigste Vorteile:**
+  - Bietet **Abbiegehinweise**, **Fahrspurassistent** und **voraussichtliche Ankunftszeit (ETA)**.
+  - Gewährleistet genaue und dynamische Aktualisierungen während der Fahrt.
 
 #### Passive Navigation {#passive-navigation}
 
-- **So funktioniert es:**  
-  - Es wird kein Ziel benötigt.  
-  - Funktioniert automatisch, wenn Sie ein **Navigationsprofil** auswählen (z. B. *Auto*, *Fahrrad*).  
+- **So funktioniert es:**
+  - Es wird kein Ziel benötigt.
+  - Funktioniert automatisch, wenn Sie ein **Navigationsprofil** auswählen (z. B. *Auto*, *Fahrrad*).
 
-- **Funktionalität:**  
-  - Versucht, die Straße, der Sie folgen, anhand von GPS-Daten zu bestimmen.  
+- **Funktionalität:**
+  - Versucht, die Straße, der Sie folgen, anhand von GPS-Daten zu bestimmen.
   - Zeigt **grundlegende Straßeninformationen** an, wie [Straßenname](#street-name), [Fahrspurinformationen](#lanes), [Höchstgeschwindigkeit](#speed-limit).
 
-- **Einschränkungen:**  
-  - Einige erweiterte Funktionen funktionieren möglicherweise ohne ein festgelegtes Ziel nicht korrekt.  
+- **Einschränkungen:**
+  - Einige erweiterte Funktionen funktionieren möglicherweise ohne ein festgelegtes Ziel nicht korrekt.
   - Die bereitgestellten Informationen sind möglicherweise nicht immer **präzise**, insbesondere in komplexen Straßennetzen.
 
 > **HINWEIS.** *Beachten Sie, dass das Profil **Karte durchsuchen** in keinem der beiden Modi Navigations-Widgets unterstützt. Wechseln Sie zu einem relevanten **Navigationsprofil**, um diese Funktionen zu aktivieren.*
@@ -76,7 +76,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 :::
 
-Das Höhenprofil-Widget zeigt ein Diagramm mit der Höhe und der Steigung Ihrer Navigationsroute sowie Ihre aktuelle Position auf diesem Diagramm mit aktueller Höhe und Steigung. Das Diagramm wird auf zwei Achsen dargestellt. Die X-Achse ist die Entfernung Ihrer Route. Die Y-Achse ist die Höhe, der Wert hängt vom Relief ab, und die Steigung wird in Prozent angezeigt.  
+Das Höhenprofil-Widget zeigt ein Diagramm mit der Höhe und der Steigung Ihrer Navigationsroute sowie Ihre aktuelle Position auf diesem Diagramm mit aktueller Höhe und Steigung. Das Diagramm wird auf zwei Achsen dargestellt. Die X-Achse ist die Entfernung Ihrer Route. Die Y-Achse ist die Höhe, der Wert hängt vom Relief ab, und die Steigung wird in Prozent angezeigt.
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
@@ -85,13 +85,13 @@ Das Höhenprofil-Widget zeigt ein Diagramm mit der Höhe und der Steigung Ihrer 
 
 #### Interaktionen mit dem Diagramm {#interactions-with-the-graph}
 
-- *Vergrößern/Verkleinern*. Standardmäßig zeigt das Diagramm die Route vom aktuellen Standort bis zu 10 km voraus. Sie können mit einer [Zwei-Finger-Bewegung](../map/interact-with-map.md#gestures) hinein- und herauszoomen, um eine detailliertere Ansicht der Höhenänderungen auf Ihrer Route zu erhalten. Sie können das Diagramm auch nach rechts, auf der Route vorwärts und zurück zum aktuellen Standort verschieben.  
-- *Einen Punkt auf dem Diagramm platzieren*. Wenn Sie die Höhe und den Gradwert an einem bestimmten Punkt vor Ihnen auf Ihrer Route sehen möchten, können Sie auf eine beliebige Stelle im Diagramm tippen, und ein Zeiger mit den Werten wird angezeigt.  
+- *Vergrößern/Verkleinern*. Standardmäßig zeigt das Diagramm die Route vom aktuellen Standort bis zu 10 km voraus. Sie können mit einer [Zwei-Finger-Bewegung](../map/interact-with-map.md#gestures) hinein- und herauszoomen, um eine detailliertere Ansicht der Höhenänderungen auf Ihrer Route zu erhalten. Sie können das Diagramm auch nach rechts, auf der Route vorwärts und zurück zum aktuellen Standort verschieben.
+- *Einen Punkt auf dem Diagramm platzieren*. Wenn Sie die Höhe und den Gradwert an einem bestimmten Punkt vor Ihnen auf Ihrer Route sehen möchten, können Sie auf eine beliebige Stelle im Diagramm tippen, und ein Zeiger mit den Werten wird angezeigt.
 
 
 #### Inhalte {#whats-in}
 
-Wenn Sie eine Route auswählen und die **Start**-Schaltfläche drücken, öffnet sich die Karte mit Ihrem aktuellen Standort, der Route und dem Widget am unteren Bildschirmrand. Das Widget enthält das Diagramm und Informationen über *Anstieg*, *Gefälle*, *Steigung*, Entfernung, Höhe und Neigungswinkel. Sie können den *optimalen Maßstab* auswählen und alle möglichen Hindernisse auf Ihrer Route sehen.  
+Wenn Sie eine Route auswählen und die **Start**-Schaltfläche drücken, öffnet sich die Karte mit Ihrem aktuellen Standort, der Route und dem Widget am unteren Bildschirmrand. Das Widget enthält das Diagramm und Informationen über *Anstieg*, *Gefälle*, *Steigung*, Entfernung, Höhe und Neigungswinkel. Sie können den *optimalen Maßstab* auswählen und alle möglichen Hindernisse auf Ihrer Route sehen.
 
 - Alle Werte werden entweder für die gesamte Route oder nur für das durch Skalierung des Diagramms ausgewählte Intervall angegeben.
 - Lesen Sie mehr über die [Lizenz für die DEM-Daten](../plugins/topography.md#license-for-dem-data-used-by-osmand-for-terrain-detection), die von OsmAnd zur Höhenbestimmung verwendet werden.
@@ -114,9 +114,9 @@ Wenn Sie eine Route auswählen und die **Start**-Schaltfläche drücken, öffnet
 |![Steigungsschema](@site/static/img/widgets/sch_grade_1.png) ![Steigungsschema](@site/static/img/widgets/sch_grade_2.png)|
 
 
-## Peilungs-Widget   {#bearing-widget}
+## Peilungs-Widget {#bearing-widget}
   
-Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. einem Ziel- oder Ausgangspunkt. Eine Peilung kann *relativ* (entsprechend Ihrem Kurs) oder *magnetisch* (entsprechend dem Kompass) sein. Zum Beispiel ist eine magnetische Peilung von 180° die Richtung nach Süden, und eine relative Peilung von 180° ist direkt hinter Ihnen. Die Himmelsrichtungen sind die vier Hauptrichtungen des Kompasses. Sie sind Nord (*N* - 0° oder 360°), Ost (*O* - 90°), Süd (*S* - 180°) und West (*W* - 270°).  
+Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. einem Ziel- oder Ausgangspunkt. Eine Peilung kann *relativ* (entsprechend Ihrem Kurs) oder *magnetisch* (entsprechend dem Kompass) sein. Zum Beispiel ist eine magnetische Peilung von 180° die Richtung nach Süden, und eine relative Peilung von 180° ist direkt hinter Ihnen. Die Himmelsrichtungen sind die vier Hauptrichtungen des Kompasses. Sie sind Nord (*N* - 0° oder 360°), Ost (*O* - 90°), Süd (*S* - 180°) und West (*W* - 270°).
 
 ![Widget für Routenaufzeichnung](@site/static/img/widgets/bearing.png)
 
@@ -147,7 +147,7 @@ Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. ein
 
 #### Funktionsweise {#how-it-works}
 
-Um die Peilung anzuzeigen, muss ein **Zielpunkt** ausgewählt werden. Wenn ein **Zielpunkt** (oder der **erste Zwischenpunkt**, falls vorhanden) für die Navigation ausgewählt ist, wird dieser als Zielpunkt verwendet. Andernfalls wird der **oberste ausgewählte Marker** verwendet.  
+Um die Peilung anzuzeigen, muss ein **Zielpunkt** ausgewählt werden. Wenn ein **Zielpunkt** (oder der **erste Zwischenpunkt**, falls vorhanden) für die Navigation ausgewählt ist, wird dieser als Zielpunkt verwendet. Andernfalls wird der **oberste ausgewählte Marker** verwendet.
 
 - [Relative Peilung](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) ist der Winkel zwischen Ihrer Vorwärtsbewegungsrichtung und dem Zielpunkt. Die **Vorwärtsbewegungsrichtung** ist entweder die **Richtung Ihrer Bewegung**, die von den GPS-Sensoren erfasst wird, oder, wenn Sie stehen, **wohin Sie Ihr Gerät gerichtet haben** (d. h. die Ausrichtung Ihres Geräts gemäß seinem Magnetkompass). Beispiel: Ein Objekt mit einer relativen Peilung von 0° befindet sich direkt vor Ihnen und ein Objekt mit einer relativen Peilung von 180° befindet sich direkt hinter Ihnen. Die **relative Peilung** ist der Winkel zwischen Ihrer Vorwärtsrichtung und dem Zielpunkt.
 
@@ -205,7 +205,7 @@ Das Widget *Routeninformationen* liefert Echtzeitdaten über die laufende Naviga
 
 ![Ziel-Widget](@site/static/img/widgets/destination_widget.png)  
 
-Das Widget zeigt die verbleibende Entfernung zum letzten Zielpunkt an, wenn einer berechneten Route gefolgt wird.  
+Das Widget zeigt die verbleibende Entfernung zum letzten Zielpunkt an, wenn einer berechneten Route gefolgt wird.
 
 | | |
 |:------------|:------------|
@@ -273,7 +273,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *verbleibende Zeit* bis zum ersten 
 
 </Tabs>
 
-Das Widget zeigt die *Ankunftszeit* oder die *verbleibende Zeit* bis zum letzten Zielpunkt an. Die Zeit wird während der Navigation ständig aktualisiert und entspricht der Routenzeit von Ihrem aktuellen Standort.  
+Das Widget zeigt die *Ankunftszeit* oder die *verbleibende Zeit* bis zum letzten Zielpunkt an. Die Zeit wird während der Navigation ständig aktualisiert und entspricht der Routenzeit von Ihrem aktuellen Standort.
 
 | | |
 |:------------|:------------|
@@ -293,7 +293,7 @@ Das Widget *Geschwindigkeitsbegrenzung* zeigt die aktuelle Geschwindigkeitsbegre
 - Das Widget funktioniert im passiven und aktiven Navigationsmodus.
 - Wenn für eine bestimmte Straße oder ein bestimmtes Gebiet keine Daten zur Geschwindigkeitsbegrenzung verfügbar sind, *wird das Widget nicht angezeigt*.
 
-> HINWEIS: Stellen Sie sicher, dass Ihre [Karten auf dem neuesten Stand sind](../personal/maps-resources.md#updates-menu) und dass Sie alle erforderlichen regionalen Daten heruntergeladen haben, um auf die neuesten Informationen zu Geschwindigkeitsbegrenzungen zugreifen zu können.
+> HINWEIS: Stellen Sie sicher, dass Ihre [Karten auf dem neuesten Stand sind](../personal/maps-resources.md#updates) und dass Sie alle erforderlichen regionalen Daten heruntergeladen haben, um auf die neuesten Informationen zu Geschwindigkeitsbegrenzungen zugreifen zu können.
 
 | |  |
 |:------------|:------------|
@@ -308,13 +308,13 @@ Das Widget *Geschwindigkeitsbegrenzung* zeigt die aktuelle Geschwindigkeitsbegre
 
 ![Widget für nächste Abbiegungen](@site/static/img/widgets/next_turns_widget.png)
 
-Bietet Echtzeit-Routenführung, einschließlich der Entfernung zur nächsten Abbiegung, des Straßennamens, des aktuellen Straßennamens und der Fahrspurinformationen. Widgets sind während der Navigation aktiv.
+Bietet Echtzeit-Routenführung, einschließlich der Entfernung zur nächsten Abbiegung, des Straßennamens, des aktuellen Straßennamens und der Fahrspurinformationen. Die Widgets sind während der Navigation aktiv.
 
 Die *Routenführungs*-Widgets enthalten Informationen über:
 
-- [Fahrspuren](#lanes) - zeigt die aktuelle Position der Fahrspuren an und hebt diejenigen hervor, auf denen Sie fahren sollten. (nur für _Obere / Untere Leisten_)
+- [Fahrspuren](#lanes) - zeigt die aktuelle Position der Fahrspuren an und hebt diejenigen hervor, auf denen Sie fahren sollten. (nur für _obere / untere Leiste_)
 - [Nächste Abbiegung](#next-turn) - die nächste Abbiegung mit einem großen Pfeil, der das Manöver darstellt, und mit Daten zur Entfernung dorthin.
-- [Nächste Abbiegung (klein)](#next-turn) - die nächste Abbiegung mit einem kleinen Pfeil, der das Manöver darstellt, und mit Entfernungsdaten neben dem Pfeil. (nur für _Linke / Rechte Leisten_)
+- [Nächste Abbiegung (klein)](#next-turn) - die nächste Abbiegung mit einem kleinen Pfeil, der das Manöver darstellt, und mit Entfernungsdaten neben dem Pfeil. (nur für _linke / rechte Leiste_)
 - [Zweite nächste Abbiegung](#next-turn) ist die nächste Abbiegung nach der ersten Abbiegung, die aktiviert wird, wenn sie sich in Annäherungsdistanz befindet.
 
 | | |
@@ -343,14 +343,9 @@ Die *Routenführungs*-Widgets enthalten Informationen über:
 
 </Tabs>
 
-Die Navigations-Widgets **Nächste Abbiegung**, **Nächste Abbiegung (klein)**, **Zweite nächste Abbiegung** können auf jeder Leiste für die Benutzerfreundlichkeit platziert werden. Allerdings unterscheidet sich die angezeigte Information je nach Widget-Typ und Platzierung. Die folgende Tabelle fasst das Verhalten zusammen:
-
-|   Widget/Leiste   | Linke Leiste    | Rechte Leiste   | Obere Leiste              | Untere Leiste           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Nächste Abbiegung**        | Nur Entfernung | Nur Entfernung | Straßenname + Entfernung | Straßenname + Entfernung |
-| **Nächste Abbiegung (klein)**| Nur Entfernung | Nur Entfernung | Nicht verfügbar          | Nicht verfügbar          |
-| **Zweite nächste Abbiegung** | Nur Entfernung | Nur Entfernung | Straßenname + Entfernung | Straßenname + Entfernung |
-
+- **Nächste Abbiegung** - die nächste Abbiegung mit einem großen Pfeil, der das Manöver darstellt, und mit Daten zur Entfernung dorthin.
+- **Nächste Abbiegung (klein)** - die nächste Abbiegung mit einem kleinen Pfeil, der das Manöver darstellt, und mit Entfernungsdaten neben dem Pfeil. (nur für _linke / rechte Leiste_)
+- **Zweite nächste Abbiegung** - die nächste Abbiegung nach der ersten Abbiegung, die aktiviert wird, wenn sie sich in Annäherungsdistanz befindet.
 
 ### Farbhinweise für die nächste Abbiegung {#color-prompts-for-next-turn}
 
@@ -367,7 +362,7 @@ Diese Tabelle zeigt die ungefähre Zeit bis zur Aktivierung der Ansagen und die 
 
 ![Fahrspur-Widgets](@site/static/img/widgets/lanes_widget.png)
 
-Das **Fahrspur**-Widget hebt die aktuelle Fahrspur bei aktiver Navigation hervor und zeigt das Fahrspurlayout für die tatsächliche Straße bei passiver Navigation an. Ein Entfernungsindikator wird auch unter dem Fahrspurdiagramm angezeigt, der angibt, wie weit es noch bis zum Manöver ist, auf das sich die Fahrspurführung bezieht. Dieses Widget ist nur für die oberen und unteren Leisten verfügbar. Die Daten stammen aus dem [OpenStreetMap-Projekt](https://wiki.openstreetmap.org/wiki/Key:turn).
+Das **Fahrspur**-Widget hebt die aktuelle Fahrspur bei aktiver Navigation hervor und zeigt das Fahrspurlayout für die tatsächliche Straße bei passiver Navigation an. Dieses Widget ist nur für die obere und untere Leiste verfügbar. Die Daten stammen aus dem [OpenStreetMap-Projekt](https://wiki.openstreetmap.org/wiki/Key:turn).
 
 ### Farbhinweise für Fahrspuren {#color-prompts-for-lanes}
 
@@ -384,11 +379,11 @@ Zeigt ein Widget gemäß den Annäherungszeiteinstellungen an. Die Farbe der Fah
 
 ![Warnungsinformations-Widgets](@site/static/img/widgets/alert_information_widget.png)
 
-Das **Warnungs-Widget** kombiniert verschiedene Arten von Warnungen, die während der Navigation in der unteren linken Ecke angezeigt werden.  
+Das **Warnungs-Widget** kombiniert verschiedene Arten von Warnungen, die während der Navigation in der unteren linken Ecke angezeigt werden.
 
-- Sie haben die Möglichkeit, Warnungen wie *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* und *<Translate android="true" ids="show_tunnels"/>* ein- und auszuschalten. Andere Warnungen sind standardmäßig aktiv, wenn das Widget aktiviert ist.  
+- Sie haben die Möglichkeit, Warnungen wie *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* und *<Translate android="true" ids="show_tunnels"/>* ein- und auszuschalten. Andere Warnungen sind standardmäßig aktiv, wenn das Widget aktiviert ist.
 
-- Für den Warnungstyp *Geschwindigkeitsbegrenzung* können Sie den Wert <Translate android="true" ids="speed_limit_exceed"/> in den Einstellungen für Sprachansagen anpassen, um die Fahrzeuggeschwindigkeit und die GPS-Geschwindigkeit besser abzugleichen.  
+- Für den Warnungstyp *Geschwindigkeitsbegrenzung* können Sie den Wert <Translate android="true" ids="speed_limit_exceed"/> in den Einstellungen für Sprachansagen anpassen, um die Fahrzeuggeschwindigkeit und die GPS-Geschwindigkeit besser abzugleichen.
 
 - Die meisten Warnungen werden 15 Sekunden lang auf dem Bildschirm angezeigt und per Sprachansage angekündigt, ebenso wie die Auslösezeit für das Passieren eines Wegpunkts, Favoritenpunkts oder POIs. Lesen Sie mehr [hier](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
@@ -419,51 +414,23 @@ Warnungstypen haben ein unterschiedliches visuelles Design, das von der **<Trans
 
 ## Straßenname {#street-name}
 
-Das Straßenname-Widget zeigt **den aktuellen Straßennamen** mit einem geraden Pfeil oder **den nächsten Straßennamen** mit dem auszuführenden Manöver an. Der Straßenname besteht normalerweise aus einem Straßenschild, einem [Namen](https://wiki.openstreetmap.org/wiki/Key:name), einer [Referenz](https://wiki.openstreetmap.org/wiki/Key:ref), einer [internationalen Referenz](https://wiki.openstreetmap.org/wiki/Key:int_ref) und einem [Ziel](https://wiki.openstreetmap.org/wiki/Key:destination). 
+Das Straßenname-Widget zeigt **den aktuellen Straßennamen** mit einem geraden Pfeil oder **den nächsten Straßennamen** mit dem auszuführenden Manöver an. Der Straßenname besteht normalerweise aus einem Straßenschild, einem [Namen](https://wiki.openstreetmap.org/wiki/Key:name), einer [Referenz](https://wiki.openstreetmap.org/wiki/Key:ref), einer [internationalen Referenz](https://wiki.openstreetmap.org/wiki/Key:int_ref) und einem [Ziel](https://wiki.openstreetmap.org/wiki/Key:destination).
 
-In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der aktuelle Straßenname** angezeigt wird und es mit dem Widget [**Nächste Abbiegung**](#next-turn) verwenden. **Informationen zur nächsten Abbiegung** ist standardmäßig AUS. Wenn Sie es aktivieren, erfolgt der Wechsel zwischen dem aktuellen und dem nächsten Straßennamen, wenn Sie sich dem Ort nähern, an dem Sie das Manöver ausführen möchten (~20 Sekunden), analog zur Sprachansage [In X m abbiegen](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der aktuelle Straßenname** angezeigt wird und es mit dem Widget [**Nächste Abbiegung**](#next-turn) verwenden. Wenn Sie **Informationen zur nächsten Abbiegung** aktivieren, erfolgt der Wechsel zwischen dem aktuellen und dem nächsten Straßennamen, wenn Sie sich dem Ort nähern, an dem Sie das Manöver ausführen möchten (~20 Sekunden), analog zur Sprachansage [In X m abbiegen](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - Wenn Sie auf einer Straße oder Autobahn fahren, zeigt das Widget den Namen oder die Bezeichnung der aktuellen Straße (Straße) mit einem blauen Pfeil an.
 
-<Tabs groupId="operating-systems" queryString="current-os">
+  ![Straßenname POI-Widget 2](@site/static/img/widgets/street_name_widget_2.png)
 
-<TabItem value="android" label="Android">  
+- Wenn Sie die Richtung ändern, zeigt das Widget das Schema des Manövers und den Namen (Bezeichnung) der Straße (Straße), in die Sie abbiegen müssen.
 
- ![Straßenname ohne nächste Abbiegung](@site/static/img/widgets/without_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Straßenname ohne nächste Abbiegung iOS](@site/static/img/widgets/without_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-- Wenn Sie die Richtung ändern, zeigt das Widget das Schema des Manövers und den Namen (Bezeichnung) der Straße (Straße), in die Sie abbiegen müssen, mit einem gelben Pfeil (Informationen zur nächsten Abbiegung = EIN).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Straßenname mit nächste Abbiegung](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Straßenname mit nächste Abbiegung iOS](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
+  ![Straßenname POI-Widget](@site/static/img/widgets/street_name_widget.png)
 
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
-| Durch Tippen | Öffnet ein Kontextmenü mit Einstellungen (Umschalten von Informationen zur nächsten Abbiegung EIN/AUS) und Löschen |
+| Durch Tippen | Keine Änderungen |
 
 
 ## Annäherung an POIs / Favoriten {#approach-pois--favorites}
@@ -484,7 +451,7 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 
 </Tabs>
 
-Das Widget **Annäherung an POIs/Favoriten/Wegpunkte** wird mit dem [Straßennamen](#street-name) kombiniert und zeigt die Annäherung an und das Passieren von Points of Interest, Wegpunkten eines verfolgten Tracks und Favoriten entlang der Route an.  
+Das Widget **Annäherung an POIs/Favoriten/Wegpunkte** wird mit dem [Straßennamen](#street-name) kombiniert und zeigt die Annäherung an und das Passieren von Points of Interest, Wegpunkten eines verfolgten Tracks und Favoriten entlang der Route an.
 
 Es zeigt den **Namen**, das **Symbol des Punktes** und 2 **Entfernungen** an:
 
