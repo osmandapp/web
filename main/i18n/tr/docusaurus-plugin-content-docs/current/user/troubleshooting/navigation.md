@@ -1,7 +1,7 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
 sidebar_position: 3
-title:  Navigation
+title:  Navigasyon
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -14,144 +14,115 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-## Route Calculation {#route-calculation}
+## Rota Hesaplama {#route-calculation}
 
-### Route calculation is slow {#route-calculation-is-slow}
+### Rota hesaplaması yavaş {#route-calculation-is-slow}
 
-*Android*. OsmAnd uses two different **offline routing engines**: a *Java-based engine* and a *Native (C++) engine*.
+*Android*. OsmAnd iki farklı **çevrimdışı yönlendirme motoru** kullanır: bir *Java tabanlı motor* ve bir *Yerel (C++) motor*.
 
-- The *Java-based engine* is used in [Safe Mode](../plugins/development.md#overview), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#overview) and ensure this option is disabled.
-- The *Native (C++) engine* offers better performance, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
-
-
-### Incorrect or Broken Routes {#incorrect-or-broken-routes}
-
-Sometimes OsmAnd may display unexpected navigation results. Instead of following the road network, the route may appear as a straight dotted line to an unrelated point, or navigation may fail entirely. This usually indicates that routing to the selected location is not possible with the current configuration. Similar issues have been reported by users on [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) and [more](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
-
-**Causes:**
-
-- Outdated or duplicated maps. Maps with different update dates or duplicates can break connectivity (especially across regions/borders).
-- Damaged profile settings. Custom/modified profiles (e.g., Bicycle) can cause inconsistent behavior.
-- Routing engine mismatch: Different engines (HH × Java vs HH × C++) may handle the same maps differently.
-
-**Solutions:**
-
-1. Reset your profile.
-- Open *Menu* → *Settings* → *App profile (Navigation Profile)*.
-- Select *Reset to default*.
-
-2. Remove and reinstall maps.
-- Open *Menu* → *Maps & Resources* → *Local* and delete all maps for the affected region(s).
-- Then go to *Menu* → *Maps & Resources* → *Downloads* and download the maps again.
-- Optionally check *Menu* → *Maps & Resources* → *Updates* to ensure all regions share the same update date.
-
-3. Switch routing engine.
-- Enable the plugin: *Menu* → *Plugins* → *OsmAnd development*.
-- Then open *Menu* → *Settings* → *App profile* → *Navigation settings* → *Route parameters* → *Development* → *Routing type* and switch *HH × C++* ↔ *HH × Java* (you may also try A* classic or A* 2-phase).
-
-4. As a last resort.
-- Reinstall the app and download maps again (helps when hidden conflicts persist).
+- *Java tabanlı motor* [Güvenli Mod'da](../plugins/development.md#overview) kullanılır, ancak yerel motordan yaklaşık 10 kat daha yavaştır. Ayrıca, *Hesaplamak için yeterli bellek yok* gibi hatalara yol açabilecek katı bellek sınırlamaları vardır. Bu sorunla karşılaşırsanız, *Eklentiler → OsmAnd geliştirme → Ayarlar →* [*Güvenli Mod'a*](../plugins/development.md#overview) gidin ve bu seçeneğin devre dışı bırakıldığından emin olun.
+- *Yerel (C++) motor* daha iyi performans sunar, ancak verimliliği cihazınızın belleğine ve işlemci yeteneklerine bağlıdır. Genellikle, yerel yönlendirme 300 km'nin altındaki rotalar için iyi performans gösterir ve rota hesaplama süreleri 15 saniyeden 4 dakikaya kadar değişir. İşlem 4 dakikadan uzun sürerse, uygulamanın çökebileceği için durdurulması tavsiye edilir.
 
 
-### How to calculate routes longer than 250km? {#how-to-calculate-routes-longer-than-250km}
+### 250 km'den uzun rotalar nasıl hesaplanır? {#how-to-calculate-routes-longer-than-250km}
 
-1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
+1. Uygulama 7-8 dakikalık hesaplama süresinden sonra bir rota göstermezse, [ara noktalar yerleştirmeyi](../navigation/setup/route-navigation.md#route-recalculation) düşünün (örneğin otoyollardaki yerleri seçin). 3-4 ara nokta, 1000 km'lik rotaları bile hesaplamak için yeterli olacaktır.
 
-2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-settings).
+2. Üst düzey cihazlar için belleği 512 MB veya 1024 MB'a kadar artırabilirsiniz - [Bellek ayrılmış cihazlar](../plugins/development.md#memory-settings).
 
-3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
+3. Android sürümü için Çevrimiçi veya Üçüncü taraf yönlendirme (BRouter) ile bir Navigasyon Profili oluşturabilirsiniz. Daha fazla bilgiyi [burada](../navigation/routing/brouter.md) okuyun.
 
-### Calculation of 50 km routes for pedestrians {#calculation-of-50-km-routes-for-pedestrians}
+### Yayalar için 50 km'lik rotaların hesaplanması {#calculation-of-50-km-routes-for-pedestrians}
 
-If you are using the **Walking** profile in OsmAnd, the application may crash when calculating routes over 50 km. This issue occurs specifically when the [**Standard Routing A***](../navigation/guidance/navigation-settings.md#development-settings) is selected in the navigation settings. Several factors can contribute to this problem:
+OsmAnd'da **Yürüme** profilini kullanıyorsanız, uygulama 50 km'den uzun rotaları hesaplarken çökebilir. Bu sorun, navigasyon ayarlarında [**Standart Yönlendirme A***](../navigation/guidance/navigation-settings.md#development-settings) seçildiğinde özellikle ortaya çıkar. Bu soruna çeşitli faktörler katkıda bulunabilir:
 
-- The route length exceeds 50 km.
-- The number of direct points on the route is greater than 1 million.
-- You are using a mobile device to calculate the route, which is not recommended for routes of this length. Consider using the web version for better performance.
+- Rota uzunluğu 50 km'yi aşıyor.
+- Rotadaki doğrudan nokta sayısı 1 milyondan fazla.
+- Rotayı hesaplamak için mobil bir cihaz kullanıyorsunuz, bu uzunluktaki rotalar için önerilmez. Daha iyi performans için web sürümünü kullanmayı düşünün.
 
-To avoid crashes with routes of similar distances, you may want to switch to other profile types like **Bicycle**.
-
-
-## The Calculated Route does not Seem Correct {#the-calculated-route-does-not-seem-correct}
-
-To track down issues with wrong or sub-optimum routes, please open a new posting in [Github discussions](https://github.com/osmandapp/OsmAnd/discussions) or [Github issue](https://github.com/osmandapp/Osmand/issues) and specify as detailed as possible the following information:
-
-- What version of OsmAnd are you using, on what device?
-- Do you use the offline maps offered within the OsmAnd app for download, or online (tile / raster) maps?
-- If you use offline maps, tell us the exact name of the map file where the routing issue occurs, and its edition date.
-- Tell us whether you have used OsmAnd's in-app offline routing, or any online routing provider like YOURS, OpenRouteService or OSRM.
-- What routing profile is choosen in OsmAnd app (car, bike or pedestrian)?
-- Please specify as exactly as possible the start and end point of your route. If possible, tell us city name and street name for each. Also a [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) from openstreetmap.org can be helpful.
-- Tell us your expected routing, and how OsmAnd routes.
-
-## Road Information {#road-information}
-
-### OsmAnd only shows some speed cams {#osmand-only-shows-some-speed-cams}
-
-Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
-
-- A point (called "node" in OSM terminology) of a way is tagged with "highway=speed_camera", see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- A group of OSM data elements are joined together in a so called "relation" that contains more elements than a single node to describe the direction that is covered by the speed trap. See [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
-
-Currently, OsmAnd can only make use of the elements that consists of a single node. Analyzing of relations is to come in a future release.
+Benzer mesafelerdeki rotalarda çökmeleri önlemek için **Bisiklet** gibi diğer profil türlerine geçmek isteyebilirsiniz.
 
 
-## Voice Navigation {#voice-navigation}
+## Hesaplanan Rota Doğru Görünmüyor {#the-calculated-route-does-not-seem-correct}
 
-### Why should I use a TTS voice instead of a recorded voice? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
+Yanlış veya optimum olmayan rotalarla ilgili sorunları takip etmek için lütfen [Github tartışmalarında](https://github.com/osmandapp/OsmAnd/discussions) veya [Github sorununda](https://github.com/osmandapp/Osmand/issues) yeni bir gönderi açın ve aşağıdaki bilgileri mümkün olduğunca ayrıntılı belirtin:
 
-**Text-to-Speech (TTS)** voices generate spoken prompts dynamically, allowing them to pronounce street names, place names, and highway numbers. In contrast, **recorded voices** are limited to pre-recorded phrases and cannot pronounce specific names or numbers.
+- Hangi OsmAnd sürümünü kullanıyorsunuz, hangi cihazda?
+- OsmAnd uygulamasında indirmek için sunulan çevrimdışı haritaları mı, yoksa çevrimiçi (döşeme / raster) haritaları mı kullanıyorsunuz?
+- Çevrimdışı haritalar kullanıyorsanız, yönlendirme sorununun meydana geldiği harita dosyasının tam adını ve düzenleme tarihini bize bildirin.
+- OsmAnd'ın uygulama içi çevrimdışı yönlendirmesini mi, yoksa YOURS, OpenRouteService veya OSRM gibi herhangi bir çevrimiçi yönlendirme sağlayıcısını mı kullandığınızı bize bildirin.
+- OsmAnd uygulamasında hangi yönlendirme profili seçili (araba, bisiklet veya yaya)?
+- Rotanızın başlangıç ve bitiş noktasını mümkün olduğunca kesin olarak belirtin. Mümkünse, her biri için şehir adını ve sokak adını bize bildirin. Ayrıca openstreetmap.org'dan bir [Kalıcı Bağlantı](https://wiki.openstreetmap.org/wiki/Permalink) da yardımcı olabilir.
+- Beklediğiniz yönlendirmeyi ve OsmAnd'ın nasıl yönlendirdiğini bize bildirin.
 
-*Advantages of TTS over recorded voices:*
+## Yol Bilgileri {#road-information}
 
-- Pronounces street names and dynamic information.
-- Regularly updated with new features.
-- Offers better flexibility for navigation.
+### OsmAnd sadece bazı hız kameralarını gösteriyor {#osmand-only-shows-some-speed-cams}
 
-To use TTS in OsmAnd, your device must have a **TTS engine** installed. Many devices come with a pre-installed TTS engine, but additional ones can be manually installed if needed. [List of supported TTS engines and languages for Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+OpenStreetMap projesinden alınan coğrafi veriler nedeniyle, hız kameralarının ham OSM verilerine entegre edildiği şu anda iki yöntem vardır:
 
-For detailed instructions on setting up and adjusting Voice Prompts, refer to: [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
+- Bir yolun bir noktası (OSM terminolojisinde "düğüm" olarak adlandırılır) "highway=speed_camera" ile etiketlenir, bkz. OSM wiki'de [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Bir grup OSM veri öğesi, hız tuzağının kapsadığı yönü açıklamak için tek bir düğümden daha fazla öğe içeren "ilişki" adı verilen bir yapıda birleştirilir. Bkz. [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-### TTS does not function properly? Follow these steps to fix it {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
-
-Issues with **Text-to-Speech (TTS)** are typically related to **Android system settings**, not the OsmAnd app itself.  
-
-1. Ensure a TTS engine is installed.
-
-    - Open *Device Settings → Language & Input → Text-to-Speech Options*.
-    - Check if a **TTS engine** is installed (e.g., Google TTS, Samsung TTS, Pico).
-    - If no engine is installed, select *“Install more…”* and download a compatible one.
-    - [List of supported TTS engines and languages.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
-
-2. Verify TTS language settings.
-
-    - Select the language you want to use in *Android Settings → Text-to-Speech Options*.
-    - Tap *“Listen to an example”* to test if the TTS engine is working.
-    - If you don’t hear anything, update or reinstall the TTS engine.
-
-3. Adjust OsmAnd voice navigation settings.
-
-    - Open *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
-    - Select a compatible *Language → TTS*.
-    - Test the voice prompts by navigating to *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
-
-#### Additional Steps {#additional-steps}
-
-- *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
-- *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
-- *Reinstall OsmAnd*:  
-   - **Back up settings:** *Menu → Settings → Export to File*.  
-   - Uninstall OsmAnd, then reinstall it from the app store.  
-   - Restore settings: *Menu → Settings → Import File*.
-
-For additional troubleshooting, visit:
-
-- [Voice Navigation Guide](../navigation/guidance/voice-navigation.md)  
-- [Import/Export Settings](../personal/import-export.md)  
+Şu anda OsmAnd, yalnızca tek bir düğümden oluşan öğeleri kullanabilir. İlişkilerin analizi gelecekteki bir sürümde gelecektir.
 
 
-## Other {#other}
+## Sesli Navigasyon {#voice-navigation}
 
-### Navigation stops while screen is off {#navigation-stops-while-screen-is-off}
+### Neden kaydedilmiş bir ses yerine bir TTS sesi kullanmalıyım? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
 
-- [The same issue](../troubleshooting/track-recording-issues.md#overview) with track recording in the background.
+**Metin Okuma (TTS)** sesleri, konuşulan komutları dinamik olarak oluşturarak sokak adlarını, yer adlarını ve otoyol numaralarını telaffuz etmelerine olanak tanır. Buna karşılık, **kaydedilmiş sesler** önceden kaydedilmiş ifadelere sınırlıdır ve belirli adları veya numaraları telaffuz edemez.
+
+*TTS'nin kaydedilmiş seslere göre avantajları:*
+
+- Sokak adlarını ve dinamik bilgileri telaffuz eder.
+- Düzenli olarak yeni özelliklerle güncellenir.
+- Navigasyon için daha iyi esneklik sunar.
+
+OsmAnd'da TTS kullanmak için cihazınızda bir **TTS motoru** yüklü olmalıdır. Birçok cihazda önceden yüklenmiş bir TTS motoru bulunur, ancak gerekirse ek motorlar manuel olarak yüklenebilir. [Android için desteklenen TTS motorları ve dillerinin listesi](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+
+Sesli Komutları ayarlama ve düzenleme hakkında ayrıntılı talimatlar için bkz: [Sesli Navigasyon Kurulum Kılavuzu](../navigation/guidance/voice-navigation.md).
+
+### TTS düzgün çalışmıyor mu? Düzeltmek için şu adımları izleyin {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
+
+**Metin Okuma (TTS)** ile ilgili sorunlar genellikle OsmAnd uygulamasının kendisiyle değil, **Android sistem ayarlarıyla** ilgilidir.
+
+1. Bir TTS motorunun yüklü olduğundan emin olun.
+
+    - *Cihaz Ayarları → Dil ve Giriş → Metin Okuma Seçenekleri*'ni açın.
+    - Bir **TTS motorunun** yüklü olup olmadığını kontrol edin (örn. Google TTS, Samsung TTS, Pico).
+    - Hiçbir motor yüklü değilse, *“Daha fazla yükle…”* seçeneğini seçin ve uyumlu bir tane indirin.
+    - [Desteklenen TTS motorları ve dillerinin listesi.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
+
+2. TTS dil ayarlarını doğrulayın.
+
+    - *Android Ayarları → Metin Okuma Seçenekleri*'nde kullanmak istediğiniz dili seçin.
+    - TTS motorunun çalışıp çalışmadığını test etmek için *“Bir örnek dinle”*'ye dokunun.
+    - Hiçbir şey duymuyorsanız, TTS motorunu güncelleyin veya yeniden yükleyin.
+
+3. OsmAnd sesli navigasyon ayarlarını yapın.
+
+    - *OsmAnd → Menü → Profili Yapılandır → Navigasyon Ayarları → Sesli Komutlar*'ı açın.
+    - Uyumlu bir *Dil → TTS* seçin.
+    - *Menü → Eklentiler → OsmAnd Geliştirmeyi Etkinleştir → Ayarlar → Sesli Komutları Test Et*'e giderek sesli komutları test edin.
+
+#### Ek Adımlar {#additional-steps}
+
+- *Google TTS'yi güncelleyin*. Google Play Store'u açın, **Google Metin Okuma**'yı arayın ve güncelleyin.
+- *Navigasyonu Simüle Et*. Sesli rehberliğin çalıp çalmadığını kontrol etmek için *Navigasyon düğmesi → Ayarlar → Navigasyonu Simüle Et*'e dokunun.
+- *OsmAnd'ı yeniden yükleyin*:
+   - **Ayarları yedekleyin:** *Menü → Ayarlar → Dosyaya Aktar*.
+   - OsmAnd'ı kaldırın, ardından uygulama mağazasından yeniden yükleyin.
+   - Ayarları geri yükleyin: *Menü → Ayarlar → Dosyayı İçe Aktar*.
+
+Ek sorun giderme için ziyaret edin:
+
+- [Sesli Navigasyon Kılavuzu](../navigation/guidance/voice-navigation.md)
+- [Ayarları İçe/Dışa Aktar](../personal/import-export.md)
+
+
+## Diğer {#other}
+
+### Ekran kapalıyken navigasyon duruyor {#navigation-stops-while-screen-is-off}
+
+- [Aynı sorun](../troubleshooting/track-recording-issues.md#overview) arka planda iz kaydı ile.
