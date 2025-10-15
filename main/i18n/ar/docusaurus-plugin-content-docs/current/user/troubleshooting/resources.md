@@ -1,5 +1,5 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: الموارد والتخصيصات
 ---
@@ -53,7 +53,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | iOverlander GPX إلى OsmAnd | نص برمجي بايثون لتحويل ملفات *GPX* المصدرة من iOverlander إلى OsmAnd مع الأيقونات. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | خريطة طبوغرافية قابلة للطباعة | هذه [أداة](https://github.com/acui/osmand_topo_map_generator) لإنشاء خريطة طبوغرافية قابلة للطباعة باستخدام لقطات شاشة من OsmAnd (https://osmand.net). تستخدم الخريطة شبكة UTM وتحتوي على معلومات الانحراف. يتم استخدامها مع بوصلة أو جهاز GPS بإحداثيات UTM. | [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
-## موارد مخصصة {#custom-resources}
+## الموارد المخصصة {#custom-resources}
 
 ### الأدلة {#manuals}
 
@@ -106,6 +106,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Highlighted Admin Boundaries | يعتمد نمط عرض الخريطة على نمط OsmAnd الافتراضي، مع حدود إدارية أكثر بروزًا لتحسين الرؤية. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) هو نمط خريطة يركز على ركوب الدراجات، ويسلط الضوء على ممرات الدراجات (باللون الأحمر)، ومسارات الدراجات (خطوط زرقاء متقطعة)، ومسارات الدراجات (خطوط حمراء متقطعة)، والطرق ذات حركة مرور المركبات المحدودة، مثل شوارع الدراجات (حدود حمراء صلبة). |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) هو نمط خريطة من Holder Tamm يسمح لك باختيار إخفاء كائنات معينة أم لا. |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 
 ### الخرائط غير المتصلة بالإنترنت {#offline-maps}

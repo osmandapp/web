@@ -1,5 +1,5 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  التوجيهات الصوتية / الإشعارات
 ---
@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - <Translate android="true" ids="voice_announces_info"/>
 - تعكس الإشعارات النصية بالكامل وقت التشغيل ورسائل التوجيهات الصوتية.
 
-:::  
+:::
 
 
 ## إعداد التوجيهات الصوتية {#setting-up-voice-prompts}
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-settings.png)
+![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *زر <Translate ios="true" ids="routing_settings"/>* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختر الملف الشخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![إعدادات الملاحة الصوتية في iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![إعدادات الملاحة الصوتية iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -71,7 +71,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **الإعلان**. يسمح لك بتكوين الأنواع التالية من التوجيهات:
 
-- *أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، ممرات المشاة* و*الأنفاق*.
+- *توجيهات خطوة بخطوة، أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، ممرات المشاة* و*الأنفاق*.
 - *[كاميرات السرعة](#speed-cameras)*.
 - قم أيضًا بتكوين **[ودجة التنبيه](../../widgets/nav-widgets.md#alert-widget)** لاستخدامها مع الإعلانات.
 
@@ -108,7 +108,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### كاميرات السرعة {#speed-cameras}
 
-![توقيت إعلان الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+![توقيت إعلان الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 تسمح لك [تنبيهات كاميرات السرعة](../../personal/global-settings.md#uninstall-speed-cameras) بتنشيط أو إلغاء تنشيط نقاط الاهتمام بكاميرات السرعة. ستحتاج إلى إعادة تشغيل تطبيق OsmAnd لتطبيق التغييرات.
 
@@ -135,8 +135,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يسمح خيار **حد السرعة** لـ OsmAnd بإعلامك عندما تتجاوز سرعتك الحالية عتبة محددة. يتم الحصول على بيانات حدود السرعة القصوى القانونية من OpenStreetMap.
 
-**الإعلان عند التجاوز**
-يتيح لك *هامش تحمل حد السرعة* تحديد انحراف مسموح به (على سبيل المثال، من -10 كم/ساعة إلى +20 كم/ساعة) عن [حد السرعة الأقصى القانوني](https://wiki.openstreetmap.org/wiki/Key:maxspeed) على الطريق الحالي. عندما تتجاوز سرعتك هذا الهامش، يصدر OsmAnd توجيهًا صوتيًا.
+**الإعلان عند التجاوز**  
+يسمح لك *هامش تحمل حد السرعة* بتحديد انحراف مسموح به (على سبيل المثال، من -10 كم/ساعة إلى +20 كم/ساعة) عن [حد السرعة الأقصى القانوني](https://wiki.openstreetmap.org/wiki/Key:maxspeed) على الطريق الحالي. عندما تتجاوز سرعتك هذا الهامش، يصدر OsmAnd توجيهًا صوتيًا.
 
 *قواعد تفعيل التوجيهات الصوتية* عند تجاوز حد السرعة:
 
@@ -149,7 +149,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### وقت الإعلان {#announcement-time}
 
-![توقيت إعلان الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+![توقيت إعلان الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
 يعتمد وقت إعلان التوجيهات الصوتية المختلفة على الملف الشخصي المحدد، ونوع التوجيه، وسرعة الملاحة الحالية، وسرعة الملاحة الافتراضية. باستخدام هذا الإعداد، يمكنك تغيير المسافة قبل تفعيل التوجيهات الصوتية عن طريق تطبيق مضاعف المسافة: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0، *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5، *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5، *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
 
@@ -160,7 +160,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-![الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-1.png)
+![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-1.png)
 
 لتجنب تشغيل الصوت في نفس دفق الإخراج في نفس الوقت، يتم تنفيذ تركيز الصوت في أندرويد. سيستخدم OsmAnd مكبر الصوت المحدد من القائمة في هذا الإعداد لإخراج الصوت. ستقوم التطبيقات الأخرى بإيقاف التشغيل مؤقتًا أو خفض مستوى الصوت لتسهيل سماع توجيهات OsmAnd الصوتية.
 
@@ -247,7 +247,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-tts.png)  ![الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-tts.png)  ![الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/voice_promt-recorded.png)  
 
 </TabItem>
 
@@ -255,7 +255,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![إعدادات الملاحة الصوتية في iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+![إعدادات الملاحة الصوتية iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
 </TabItem>
 
@@ -303,23 +303,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | :--- | :--- |
 | **А** | العربية |
 | **B** | البيلاروسية، البلغارية |
-| **C** | الكاتالونية، الصينية، الصينية (هونغ كونغ)، الصينية (التقليدية)، الكرواتية، التشيكية |  
+| **C** | الكاتالونية، الصينية، الصينية(هونغ كونغ)، الصينية(التقليدية)، الكرواتية، التشيكية |  
 | **D** | الدنماركية، الهولندية |
-| **E** | الإنجليزية، الإنجليزية (المملكة المتحدة)، الإستونية |
+| **E** | الإنجليزية، الإنجليزية(المملكة المتحدة)، الإستونية |
 | **F** | الفنلندية، الفرنسية |
-| **G** | الألمانية، الألمانية (غير رسمية)، اليونانية، الغوارانية |
-| **H** | الهندية، المجرية، المجرية (رسمية)، العبرية |
+| **G** | الألمانية، الألمانية(غير رسمية)، اليونانية، الغوارانية |
+| **H** | الهندية، المجرية، المجرية(رسمية)، العبرية |
 | **I** | الإندونيسية، الإيطالية |
 | **J** | اليابانية |
-| **K** | الكورية |
+| **K** | الكورية  |
 | **L** | اللاتفية |
-| **N** | النرويجية بوكمال |
-| **P** | الفارسية، البولندية، البرتغالية، البرتغالية (البرازيل) |  
-| **R** | الرومانية، الروسية |
-| **S** | السردينية، الصربية (السيريلية)، السلوفاكية، السلوفينية، الإسبانية، الإسبانية (الأرجنتين)، السواحيلية، السويدية |
-| **T** | التركية |
-| **U** | الأوكرانية |
-| **V** | الفيتنامية |
+| **N** | النرويجية بوكمال  |
+| **P** | الفارسية، البولندية، البرتغالية، البرتغالية(البرازيل) |  
+| **R** | الرومانية، الروسية  |
+| **S** | السردينية، الصربية (السيريلية)، السلوفاكية، السلوفينية، الإسبانية، الإسبانية (الأرجنتين)، السواحيلية، السويدية  |
+| **T** | التركية  |
+| **U** | الأوكرانية  |
+| **V** | الفيتنامية  |
 
 
 ## التوجيهات الصوتية المسجلة {#recorded-voice-prompts}
@@ -334,13 +334,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+    ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
 - النوع الثاني هو التوجيهات الصوتية المسجلة، مع مجموعة غير كاملة من الميزات:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
-    ![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/TTS-recorded.png)  
+    ![إعدادات الملاحة الصوتية أندرويد](@site/static/img/navigation/voice/TTS-recorded.png)  
 
 ### أوضاع التنبيه الصوتي (Beep) {#beep-modes}
 
@@ -358,9 +358,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## الإشعارات النصية {#text-notifications}
 
+<InfoAndroidOnly />
+
 بمجرد بدء المسار، يمكنك عرض المعلومات في قائمة النظام المنسدلة في قائمة الإشعارات. تحتوي إشعارات OsmAnd الصامتة على معلومات مثل التعليمات خطوة بخطوة، وأسهم اتجاهات المنعطفات، ووقت الوصول والوقت المتبقي، والسرعة الحالية والمسافة إلى الوجهة.
 
-![إشعار مسار الملاحة في أندرويد](@site/static/img/navigation/route/navigation_notifications_android.png)
+![إشعار مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_notifications_android.png)
 
 الأزرار النشطة في قائمة النظام المنسدلة للملاحة الخاصة بك:
 
@@ -381,7 +383,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![قائمة التحكم في الشاشة في أندرويد](@site/static/img/navigation/route/screen_control_android.png)
+![قائمة التحكم في الشاشة أندرويد](@site/static/img/navigation/route/screen_control_android.png)
 
 يمكنك التحكم في شاشة جهازك لتوفير الطاقة. يحتوي هذا الوضع على إعدادين عامين: *<Translate android="true" ids="screen_timeout"/>* و *<Translate android="true" ids="turn_screen_on"/>*.
 
@@ -389,15 +391,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 1. **<Translate android="true" ids="system_screen_timeout"/>**. يتم إيقاف تشغيل الشاشة اعتمادًا على إعدادات نظام جهازك. يوفر زر *تغيير الإعدادات* وصولاً سريعًا إلى قائمة النظام مثل *العرض والسطوع* حيث يمكنك ضبط مهلة الشاشة.
 
-    ![التحكم في مهلة شاشة النظام في أندرويد](@site/static/img/navigation/route/system_timeout_android.png)
+    ![التحكم في مهلة شاشة النظام أندرويد](@site/static/img/navigation/route/system_timeout_android.png)
 
 2. **<Translate android="true" ids="wake_time"/>**. إذا تم تشغيل *إبقاء الشاشة قيد التشغيل*، فلن تطبق شاشة الجهاز مهلة بعد الاستيقاظ. إذا تم تعطيله، يمكنك ضبط الوقت الذي سيتم بعده إيقاف تشغيل شاشة الجهاز إذا لم تتفاعل معها، من ٥ إلى ٦٠ ثانية.
 
-    ![مهلة بعد الاستيقاظ في أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![مهلة بعد الاستيقاظ في أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+    ![مهلة بعد الاستيقاظ أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![مهلة بعد الاستيقاظ أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### تشغيل الشاشة {#turn-screen-on}
 
-![تشغيل الشاشة في أندرويد](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![تشغيل الشاشة أندرويد](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
 حدد خيارات تنشيط الشاشة وتأكد من بقاء OsmAnd في المقدمة عند قفل الجهاز.
 

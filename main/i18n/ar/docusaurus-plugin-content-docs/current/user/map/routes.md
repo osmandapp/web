@@ -1,5 +1,5 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: f83e190bfec9a24ba91f8854af79a3c931b22468f01136978f5937e9c2a59156
 sidebar_position: 10
 title:  المسارات
 ---
@@ -111,11 +111,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. [مقياس CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### مسارات التزلج {#ski-routes}
+### مسارات التزلج ومنحدراته {#ski-slopes-and-routes}
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-مسارات التزلج هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية.  
+مسارات التزلج ومنحدراته هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية. إذا كان نمط خريطة آخر نشطًا، يتم عرض لافتة تقترح التبديل إلى **الشتاء والتزلج** (*أندرويد فقط*). انقر على ***التبديل*** لتغيير نمط الخريطة دون مغادرة الشاشة الحالية، أو ***لاحقًا*** لإخفاء اللافتة.
+
+
+### مسارات الدراجات الثلجية {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+يتم رسم مسارات الدراجات الثلجية في [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) كـ `route=snowmobile`. يتم استخدامها للترفيه الشتوي ولربط المناطق النائية خلال موسم الثلج. في OsmAnd، تكون مسارات الدراجات الثلجية قابلة للنقر، انظر قسم [الإجراءات مع المسارات](#actions-with-routes).
 
 
 ### مسارات الخيل {#horse-routes}
@@ -163,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+انتقل إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
 
@@ -171,7 +178,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+انتقل إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
@@ -252,7 +259,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [معلومات الارتفاع](../navigation/setup/route-details.md#elevation-info). يعرض معلومات حول بيانات الارتفاع على المسار.
 - [تحليل المسار على الخريطة](../map/tracks/index.md#analyze-track-on-map). يعرض تحليلًا مفصلاً لبيانات المسار باستخدام الرسوم البيانية والخرائط.
 
-لعرض الرسم البياني للارتفاع أو الانحدار أو تفاصيل الارتفاع لمسار محدد، ما عليك سوى النقر على أي من القيم التالية في القائمة السياقية: **المسافة**، **صعود**، **نزول**، أو **الارتفاع**.
+لعرض الرسم البياني للارتفاع أو الانحدار أو تفاصيل الارتفاع لمسار محدد، ما عليك سوى النقر على أي من القيم التالية في القائمة السياقية: **المسافة**، **الصعود**، **النزول**، أو **الارتفاع**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
