@@ -8,10 +8,12 @@ export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
 export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
     if (ctx.processingAnalytics) {
+        console.debug('Skip routing while processingAnalytics');
         return false;
     }
 
     if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
+        console.debug('Too many startedRouterJobs', startedRouterJobs);
         return false;
     }
 
