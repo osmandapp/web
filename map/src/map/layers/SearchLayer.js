@@ -40,11 +40,13 @@ export const SEARCH_LAYER_ID = 'search-layer';
 export const SEARCH_ICON_MAP_OBJ = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';
 export const SEARCH_ICON_MAP_STREET = 'street';
+export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
 
 export const ZOOM_TO_MAP = 17;
 
 export const searchTypeMap = {
     LOCATION: 'LOCATION',
+    INTERSECTION: 'STREET_INTERSECTION',
     HOUSE: 'HOUSE',
     STREET: 'STREET',
     POI: 'POI',
@@ -58,12 +60,14 @@ export const iconPathMap = {
     [SEARCH_ICON_MAP_OBJ]: '/map/images/map_icons/ic_action_marker_dark.svg',
     [SEARCH_ICON_MAP_BUILDING]: '/map/images/map_icons/ic_action_building.svg',
     [SEARCH_ICON_MAP_STREET]: '/map/images/map_icons/ic_action_street_name.svg',
+    [SEARCH_ICON_MAP_INTERSECTION]: '/map/images/map_icons/ic_action_intersection.svg',
 };
 
 export const typeIconMap = {
     [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_OBJ,
     [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
     [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
+    [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
 };
 
 export function findFeatureGroupById(map, id) {
