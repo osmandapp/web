@@ -399,6 +399,7 @@ export async function getGpxFileFromTrackData(file, routeTypes) {
         apiCache: true,
         headers: {
             'Content-Type': 'application/json',
+            'X-Payload-Encoding': 'gzip+base64',
         },
     });
 }
