@@ -24,6 +24,7 @@ import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
+import { compressFromJSON } from '../../util/GzipBase64.mjs';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -392,10 +393,13 @@ export function addDistanceToPoints(points) {
 export async function getGpxFileFromTrackData(file, routeTypes) {
     const trackData = prepareTrackData({ file, routeTypes });
 
-    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
+    const gz = await compressFromJSON(trackData);
+
+    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, gz, {
         apiCache: true,
         headers: {
             'Content-Type': 'application/json',
+            'X-Payload-Encoding': 'gzip+base64',
         },
     });
 }
@@ -944,7 +948,9 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
     ctx.setProcessingAnalytics(true);
 
-    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
+    const gz = await compressFromJSON(postData);
+
+    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, gz, {
         params: {
             dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
         },
@@ -952,6 +958,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         headers: {
             'Content-Type': 'application/json',
+            'X-Payload-Encoding': 'gzip+base64',
         },
     });
     setLoading(false);
