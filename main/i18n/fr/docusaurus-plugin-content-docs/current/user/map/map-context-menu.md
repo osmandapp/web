@@ -1,5 +1,5 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: d29a320941c3d14727ce2b8aa4ee45ac1629acf1b80e72c0d29616d0617f46b5
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -115,13 +115,13 @@ Pour fermer le **menu contextuel** :
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel Android](@site/static/img/map/context_menu_android.png)
+![Menu contextuel Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel iOS](@site/static/img/map/context_menu_ios.png)
+![Menu contextuel iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Les détails disponibles incluent :
 - [Noms alternatifs](#alternative-names)
 - [Coordonnées](#coordinates)
 - [Dans les zones](#polygon-information)
-- [POI / Wikipedia à proximité](#nearby-pois--wikipedia)
+- [POI à proximité](#nearby-pois)
+- [Lieux populaires à proximité](#nearby-popular-places)
 - [Itinéraires de transport public pour les arrêts](#public-transport-routes)
 - [Favoris / Points de trace du même groupe](#favorites--track-points-from-the-group)
 - [Lien OpenStreetMap](#openstreetmap-link)
@@ -173,15 +174,15 @@ De plus, le panneau peut inclure des [Détails OpenStreetMap](https://wiki.opens
 
 </Tabs>
 
-OsmAnd affiche des **noms de POI supplémentaires** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la *langue d'affichage* ou dans la liste des langues préférées du système. Si plusieurs traductions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur* ou *POI à proximité*.  
+OsmAnd affiche des **noms de POI supplémentaires** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la *langue d'affichage* ou dans la liste des langues préférées du système. Si plusieurs traductions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur,* ou *POI à proximité*.  
 
 Caractéristiques de l'affichage des noms alternatifs :
 
 - Des traductions supplémentaires sont accessibles via une *liste déroulante*.
 
-- Les noms sont classés en différents groupes tels que la *liste des noms dans d'autres langues*, les noms *régionaux*, *locaux*, *nationaux*, *internationaux*, *courts*, *anciens*, *officiels* et *alternatifs*.
+- Les noms sont classés en différents groupes tels que la *liste des noms dans d'autres langues*, les noms *Régionaux*, *Locaux*, *Nationaux*, *Internationaux*, *Courts*, *Anciens*, *Officiels* et *Alternatifs*.
 
-- D'autres catégories incluent la *traduction spécifique à la région* ou les *paramètres par défaut*.
+- D'autres catégories incluent la *traduction spécifique à la région*, ou les *paramètres par défaut*.
 
 - Si une traduction spécifique n'est *pas disponible*, OsmAnd utilise par défaut le nom **local** pour garantir l'exactitude et la cohérence dans les régions multilingues.
 
@@ -217,15 +218,56 @@ Dans le menu contextuel, vous pouvez trouver les [coordonnées géographiques](.
 Le lien Web OsmAnd peut être automatiquement reconnu par OsmAnd (exemple : `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Les liens OsmAnd et [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) s'ouvrent sur les sites correspondants avec une épingle marquant le lieu d'intérêt.  
 
 
-### POI / Wikipedia à proximité {#nearby-pois--wikipedia}
+### POI à proximité {#nearby-pois}
 
-![Articles Wikipedia à proximité](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Articles Wikipedia à proximité](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ces sections affichent les [articles Wikipedia](../plugins/wikipedia.md) ou les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-pois) à proximité avec *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour afficher et [rechercher](../search/search-poi.md) tous les autres POI et articles Wikipedia.
+<TabItem value="android" label="Android">  
 
-Appuyer sur *POI / Articles Wikipedia à proximité* ouvre une liste de points (POI ou Wikipedia). Un appui sur l'un de ces points dans la liste déplace la carte vers ce point (POI ou Wikipedia) en ouvrant le menu contextuel du point sur la carte.
+![POI à proximité Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![POI à proximité iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Cette section affiche les [Points d'intérêt](../map/point-layers-on-map.md#points-of-interest-pois) à proximité avec *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour afficher et [rechercher](../search/search-poi.md) tous les autres POI de la même catégorie.
+
+Appuyer sur *POI à proximité* ouvre une liste de points. Un appui sur l'un de ces points dans la liste déplace la carte vers ce point en ouvrant le menu contextuel du point sur la carte.
+
+
+### Lieux populaires à proximité {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Lieux à proximité Android](@site/static/img/map/nearby_places_android.png)
+
+Cette section met en avant des lieux populaires qui vous aident à découvrir des destinations et des sites d'intérêt intéressants autour de votre emplacement actuel. Utilisez *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour parcourir et rechercher tous les lieux populaires. 
+
+Appuyer sur *[Lieux populaires à proximité](https://osmand.net/docs/user/map/popular_places)* ouvre une liste d'emplacements à proximité. Sélectionner un élément centre la carte sur ce lieu et ouvre son menu contextuel, où vous pouvez lire une brève description ou appuyer sur ***Lire l'article complet*** pour afficher le guide complet.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Lieux à proximité iOS](@site/static/img/map/nearby_places_ios.png)
+
+Cette section met en avant des lieux populaires qui vous aident à découvrir des destinations et des sites d'intérêt intéressants autour de votre emplacement actuel. Utilisez *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour parcourir et rechercher tous les lieux populaires. 
+
+Appuyer sur *[Lieux populaires à proximité](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* ouvre une liste d'emplacements à proximité. Sélectionner un élément centre la carte sur ce lieu et ouvre son menu contextuel, où vous pouvez lire une brève description ou appuyer sur ***Lire l'article complet*** pour afficher le guide complet.
 
 > **REMARQUE**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) n'apparaîtra que si vous avez préalablement téléchargé des cartes spéciales avec des [articles Wikipedia pour cette zone](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Itinéraires de transport public {#public-transport-routes}
@@ -418,7 +460,7 @@ Dans le menu contextuel, il y a des options pour **ajouter** ou **modifier** le 
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur iOS](@site/static/img/map/action_restore_marker_android.png)
+![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 

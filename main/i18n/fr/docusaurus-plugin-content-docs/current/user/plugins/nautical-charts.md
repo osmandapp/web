@@ -1,5 +1,5 @@
 ---
-source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
+source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
 sidebar_position: 7
 title:  Vue Carte marine
 ---
@@ -124,7 +124,7 @@ Lorsque vous [téléchargez](../start-with/download-maps.md) une carte marine, p
     Les données nautiques des paquets de points de profondeur sont représentées par des nombres affichés sur l'eau qui indiquent la profondeur la moins profonde à un endroit particulier. Les points de profondeur sont disponibles pour chaque hémisphère et certaines régions.
 
 - **Isobathes.**  
-    Les paquets d'isobathes permettent de définir des zones de profondeur égale. Ils sont destinés à visualiser les changements de relief sous la surface de l'eau. Les isobathes peuvent être téléchargées pour certaines zones, puis désactivées si vous n'en avez pas besoin.
+    Les paquets d'isobathes permettent de définir des zones de profondeur égale.  Ils sont destinés à visualiser les changements de relief sous la surface de l'eau. Les isobathes peuvent être téléchargées pour certaines zones, puis désactivées si vous n'en avez pas besoin.
 
 :::info Nombres de profondeur
 Tous les nombres de profondeur sur les cartes marines sont indiqués en mètres.
@@ -172,6 +172,127 @@ La carte marine peut être incluse dans n'importe quel profil. Cependant, elle e
 
 Le plugin Nautique dans OsmAnd étend les styles de carte de la couche vectorielle avec le style de carte Nautique. Il vous permet d'afficher les données de la carte selon les règles de la carte marine, par exemple : des zones jaunes pour la terre et les hauts-fonds, des zones bleu clair pour les eaux peu profondes, etc. Pour plus d'informations, consultez la [Légende de la carte](../../user/map-legend/nautical-map.md).  
 
+
+### Détail du fond marin {#seabed-detail}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+
+![Détails du fond marin](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Allez à : *Menu → Configurer la carte → Style de carte → Détails → Détail du fond marin*
+
+![Détails du fond marin](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+Les données sur le fond marin contiennent des informations sur la végétation et les matériaux de surface généraux tels que les roches, les coquillages, le gravier, le corail, le limon, etc. En raison de la classification internationale des données sur le fond marin, il existe des options pour afficher ces détails sur une carte : *simple*, *catégorie*, *tout* ou *omettre*. Utilisez la [légende de la carte de la zone du fond marin](../map-legend/nautical-map.md#seabed-area) pour plus d'informations.
+
+- **Simple** (*pour la version Android*) - affiche les symboles des amers conformément à la référence INT-1, indiquant la nature de la surface du fond marin.  
+- **Catégorie** - en plus du symbole de l'amer, affiche également l'étiquette de l'amer correspondante, indiquant le matériau naturel, ou la catégorie d'algues et d'herbes marines.
+- **Tout** - en plus du symbole de l'amer, de l'étiquette ou de la catégorie, affiche également des qualifications telles que fin, collant, grossier, etc. Pour les herbes marines et les algues, affiche les données marquées avec les étiquettes *taxon* et *genus*.  
+- **Omettre** - n'affiche pas les détails du fond marin.  
+
+:::info REMARQUE
+Pour plus de détails sur la classification des détails de surface et les options de rendu, consultez le [wiki des amers d'OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::
+
+### Détail des feux {#light-detail}
+
+Android Allez à : *Menu → Configurer la carte → Style de carte Nautique → Autres attributs de carte → Détail des feux*
+
+iOS Allez à : *Menu → Configurer la carte → Type de carte Nautique → Détails → Détail des feux*
+
+Cette option affiche le niveau d'informations pour les feux de navigation. Vous pouvez choisir à quel point les caractéristiques des feux apparaissent près de chaque phare ou balise.
+
+- **Simple** – affiche le nom par défaut de l'amer et la caractéristique du feu .
+- **Secteurs** – affiche les arcs de secteurs complets et les détails pour tous les secteurs de feu visibles.
+- **Secteur 1–5** – affiche les détails pour un numéro de secteur spécifique seulement.
+- **Petit** – utilise un format d'étiquette compact pour les caractéristiques des feux.
+- **Nom seulement** – affiche uniquement le nom de l'amer sans les données de feu.
+- **Omettre** – masque toutes les informations sur les feux.
+
+
+## Style de carte Marine {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Marine Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+Allez à : *Menu* → *Configurer la carte* → *Style de carte* → *Marine*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Marine iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+Allez à : *Menu* → *Configurer la carte* → *Type de carte* → *Marine*
+
+</TabItem>
+
+</Tabs>
+
+Ce style ajoute des éléments visuels pour la navigation maritime, y compris les feux de navigation avec les caractéristiques des feux INT-1, qui décrivent le type, la couleur et le rythme d'un signal lumineux (par exemple, s'il clignote, sa couleur et l'intervalle entre les clignotements), et les feux sectoriels colorés qui indiquent la direction et la couleur de la lumière visible depuis la mer.
+
+Dans le style Marine, les secteurs de feu sont affichés autour des phares et des balises : blanc (affiché en jaune sur la carte) indique la direction sûre pour la navigation, rouge marque les zones dangereuses ou restreintes, et vert montre les directions auxiliaires ou latérales.
+
+:::info
+Pour afficher ces informations, le plugin Nautique doit être activé, et la carte World Seamarks (ou World_seamarks_2.obf) doit être téléchargée. Les informations ne sont pas destinées à un usage de navigation officiel.
+:::
+
+
+### Attributs de carte {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Attributs Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+Allez à : *Menu* → *Configurer la carte* → *Style de carte Marine* → *Autres attributs de carte*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attributs iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+Allez à : *Menu* → *Configurer la carte* → *Type de carte Marine* → *Détails* → *Détail des feux/Détail du fond marin*
+
+Allez à : *Menu* → *Configurer la carte* → *Type de carte Marine* → Choisir d'autres options
+
+</TabItem>
+
+</Tabs>
+
+Après avoir activé le style de carte Marine, vous pouvez affiner les éléments visuels supplémentaires. Ces options vous permettent de contrôler comment les aides à la navigation, les isobathes, les détails du fond marin et les couleurs apparaissent sur la carte.
+
+- **[Détail des feux](../plugins/nautical-charts/#light-detail)**. Définit comment les informations sur les feux des amers sont affichées. Options : **Par défaut** (nom complet avec caractéristiques des feux), *Petit* (format compact), *Nom seulement* (nom du feu seulement), ou *Omettre* (masquer les étiquettes).
+- **[Détail du fond marin](../plugins/nautical-charts/#seabed-detail)**. Contrôle le niveau d'informations textuelles sur le fond marin. Options : Simple (infos de base), Catégorie (type de surface), Tout (données complètes), ou Omettre (pas de texte).
+- **Couleur de l'eau**. Définit la couleur de base pour les zones d'eau. Options : *Par défaut, Bleu, Blanc*, ou *Gris* — utile pour ajuster la visibilité et le contraste sous différents modes d'éclairage.
+- **Couleur des chenaux**. Change la couleur des chenaux et voies de navigation. Options : *Blanc, Plus blanc, Gris, Vert*, ou *Jaune* pour améliorer la lisibilité en fonction de l'arrière-plan de la carte.
+- **Style des vasières**. Ajuste la couleur et la texture utilisées pour les vasières. Options : *Vert clair, Vert foncé, Marais*, ou *Vasière* — chacune met en évidence les zones intertidales peu profondes différemment.
+- **Marques ENC**. Bascule *Activé/Désactivé*. Lorsque activé, affiche les marques de Carte Électronique de Navigation (ENC) telles que les bouées, les balises et autres aides à la navigation.
+- **Style des coquillages**. Définit comment les coquillages ou les caractéristiques de surface du fond apparaissent sur le fond marin. Options : *Gris, Roches, Pierres*, ou *Rouge*, en fonction du style visuel préféré.
+- **Isobathes en pointillés**. Bascule *Activé/Désactivé*. Lorsque activé, affiche les lignes d'isobathes en pointillés, améliorant la lisibilité dans les zones denses.
+- **Schéma de couleurs de profondeur**. Sélectionne le schéma de couleurs pour les zones de profondeur. Options : *PAPER* (couleurs traditionnelles des cartes papier) ou *ECDIS* (palette standard du système de navigation électronique).
+- **Taille des sondes ponctuelles**. Définit la taille de police pour les nombres de sondes ponctuelles (valeurs de profondeur). Options : *Par défaut, 10, 12, 14*, ou *16* — des valeurs plus grandes améliorent la visibilité sur les écrans haute résolution.
+- **Distance des sondes ponctuelles**. Contrôle la fréquence d'apparition des sondes de profondeur sur la carte. Options : *Par défaut, 0, 5, 10, 15, 30, 60*, ou *120*, déterminant l'espacement entre les points de profondeur affichés.
+- **Isobathe de profondeur de sécurité**. Met en évidence la ligne d'isobathe marquant le seuil de profondeur de sécurité. Options : *Désactivé, 0 m, 1 m, 2 m, 3 m, 4 m, 5 m*, ou *10 m*. Utile pour distinguer les zones de navigation sûres des zones peu profondes.
+
+
+## Données nautiques supplémentaires {#additional-nautical-data}
 
 ### Points de profondeur {#depth-points}
 
@@ -223,40 +344,6 @@ Lorsqu'une carte marine est affichée à l'écran, vous pouvez ajuster ce que vo
 
 :::info REMARQUE
 Vous pouvez aider l'application OsmAnd à enrichir la base de données des isobathes en ajoutant vos informations via [OpenSeaMap](https://map.openseamap.org/)
-:::
-
-
-### Détails du fond marin {#seabed-details}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
-
-![Détails du fond marin](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
-
-![Détails du fond marin](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
-
-</TabItem>
-
-</Tabs>
-
-Les données sur le fond marin contiennent des informations sur la végétation et les matériaux de surface généraux tels que les roches, les coquillages, le gravier, le corail, le limon, etc. En raison de la classification internationale des données sur le fond marin, il existe des options pour afficher ces détails sur une carte : *simple*, *catégorie*, *tout* ou *omettre*. Utilisez la [légende de la carte de la zone du fond marin](../map-legend/nautical-map.md#seabed-area) pour plus d'informations.
-
-- **Simple** (*pour la version Android*) - affiche les symboles des amers conformément à la référence INT-1, indiquant la nature de la surface du fond marin.  
-- **Catégorie** - en plus du symbole de l'amer, affiche également l'étiquette de l'amer correspondante, indiquant le matériau naturel, ou la catégorie d'algues et d'herbes marines.
-- **Tout** - en plus du symbole de l'amer, de l'étiquette ou de la catégorie, affiche également des qualifications telles que fin, collant, grossier, etc. Pour les herbes marines et les algues, affiche les données marquées avec les étiquettes *taxon* et *genus*.  
-- **Omettre** - n'affiche pas les détails du fond marin.  
-
-:::info REMARQUE
-Pour plus de détails sur la classification des détails de surface et les options de rendu, consultez le [wiki des amers d'OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
 
 

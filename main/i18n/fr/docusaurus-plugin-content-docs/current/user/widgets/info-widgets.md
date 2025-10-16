@@ -1,6 +1,5 @@
 ---
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
-
+source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -25,18 +24,18 @@ Les widgets d'information vous donnent un accès rapide à des données importan
 ![Widgets d'information](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Widgets d'altitude {#altitude-widgets}
+## Widgets d'altitude   {#altitude-widgets}
 
-Les widgets d'altitude affichent la hauteur au-dessus du niveau de la mer de la géolocalisation actuelle et l'élévation du centre de la carte.
+Les widgets d'altitude affichent la hauteur au-dessus du niveau de la mer de la géolocalisation actuelle et l'élévation du centre de la carte.  
 
 
-### Altitude : Position actuelle {#altitude-current-location}
+### Altitude : Position actuelle   {#altitude-current-location}
   
-:::note Télécharger la correction d'altitude mondiale
+:::note  Télécharger la correction d'altitude mondiale
 Sur certains appareils Android, l'altitude peut s'afficher de manière inexacte. Pour résoudre ce problème, téléchargez une carte avec correction d'altitude.
 
 - Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Pour plus de détails, visitez [Cartes et ressources](../personal/maps-resources.md#downloads).
+- Pour plus de détails, visitez [Cartes et ressources](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -302,7 +301,7 @@ Le widget **Niveau de la batterie** affiche le pourcentage de batterie de votre 
 
 <TabItem value="ios" label="iOS">
 
-![Widget Coordonnées Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Widget Coordonnées iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -323,7 +322,7 @@ Les widgets de coordonnées sont affichés en haut de l'écran. Les icônes avec
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) ou <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## Infos GPS {#gps-info}
+## Infos GPS   {#gps-info}
 
 <InfoAndroidOnly />
 
@@ -454,7 +453,7 @@ Le **widget Compteur de vitesse** est un affichage graphique de la vitesse actue
 Ces widgets sont activés et fonctionnent en combinaison avec leurs extensions correspondantes.
 
 
-### Widgets d'enregistrement de trajet {#trip-recording-widgets}
+### Widgets d'enregistrement de trajet   {#trip-recording-widgets}
 
 :::note  
 Vous pouvez lire une description plus détaillée ici : **[Extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.  

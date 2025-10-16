@@ -1,5 +1,5 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Cartes & Données
 ---
@@ -26,7 +26,7 @@ En raison des nouvelles [règles d'accès au stockage introduites dans Android 1
 
 Pour le moment, les solutions suivantes sont disponibles :
 
-#### 1. Migrer le dossier de stockage des données OsmAnd vers la "Mémoire interne de l'application" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrer le dossier de stockage des données OsmAnd vers la « Mémoire interne de l'application » {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Vous pouvez changer le dossier de stockage en sélectionnant l'option ***Mémoire interne de l'application*** dans *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données*.
 
@@ -34,7 +34,7 @@ Pour le moment, les solutions suivantes sont disponibles :
 
 L'équipe de développement recherche activement des solutions plus efficaces pour améliorer les performances de la carte SD dans le cadre des nouvelles politiques de stockage d'Android.
 
-#### 2. Utiliser le dossier "Download" de la carte SD {#2-use-the-sd-cards-download-folder}
+#### 2. Utiliser le dossier « Download » de la carte SD {#2-use-the-sd-cards-download-folder}
 
 Vous pouvez essayer de résoudre le problème de chargement lent des cartes en spécifiant le dossier **Download** de la carte SD pour le stockage OsmAnd sous *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données → Spécifié manuellement*. Les chemins suivants sont possibles :
 
@@ -46,23 +46,23 @@ Vous pouvez essayer de résoudre le problème de chargement lent des cartes en s
 
 "XXXX-XXXX" représente le numéro d'identification unique de votre carte SD, qui peut parfois être trouvé dans le chemin du dossier sous les options *Stockage externe 2* ou localisé à l'aide d'autres méthodes. Plus de recherches et de détails sur cette solution sont disponibles [ici](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. Option de stockage "Média" {#3-media-storage-option}
+#### 3. Option de stockage « Média » {#3-media-storage-option}
 
-Si les solutions précédentes ne fonctionnent pas ou semblent limitées, vous pouvez essayer d'utiliser l'option de stockage "Média" pour résoudre les problèmes de chargement lent des cartes ou d'accès au stockage. Cette méthode permet de sélectionner un dossier accessible pour OsmAnd et d'autres applications, ce qui est particulièrement utile pour le stockage externe ou amovible.
+Si les solutions précédentes ne fonctionnent pas ou semblent limitées, vous pouvez essayer d'utiliser l'option de stockage « Média » pour résoudre les problèmes de chargement lent des cartes ou d'accès au stockage. Cette méthode permet de sélectionner un dossier accessible pour OsmAnd et d'autres applications, ce qui est particulièrement utile pour le stockage externe ou amovible.
 
-### Choisir un dossier de stockage de données OsmAnd "généralement accessible" en utilisant le stockage "Média" {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
+### Choisir un dossier de stockage de données OsmAnd « généralement accessible » en utilisant le stockage « Média » {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
 Android est devenu plus strict avec les autorisations de stockage, limitant souvent l'accès aux dossiers spécifiques aux applications, en particulier avec les nouvelles installations ou les mises à niveau du système. Le stockage de données par défaut d'OsmAnd peut être restreint, le rendant invisible pour d'autres applications ou même pour les gestionnaires de fichiers. De nombreux utilisateurs souhaitent stocker des cartes et des données dans un stockage externe accessible pour la sauvegarde, la synchronisation ou la gestion manuelle des fichiers.
 
-Cependant, OsmAnd n'a pas l'autorisation *Accès à tous les fichiers* (en raison des restrictions de Google), ce qui limite le choix des dossiers. Une solution de contournement consiste à utiliser le dossier de stockage "Média", auquel Android accorde généralement un accès en lecture/écriture plus large. Pour ce faire :
+Cependant, OsmAnd n'a pas l'autorisation *Accès à tous les fichiers* (en raison des restrictions de Google), ce qui limite le choix des dossiers. Une solution de contournement consiste à utiliser le dossier de stockage « Média », auquel Android accorde généralement un accès en lecture/écriture plus large. Pour ce faire :
 
 - Allez dans *Paramètres d'OsmAnd → Paramètres OsmAnd → Dossier de stockage des données* et examinez les zones de stockage disponibles. Utilisez l'indicateur d'espace libre pour identifier le stockage cible, souvent étiqueté *Stockage externe 2*.
 - Notez le chemin d'accès actuel du dossier, qui pourrait ressembler à */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
 - Passez à l'option *Spécifié manuellement* et modifiez le chemin vers un dossier accessible aux médias. Sur de nombreux systèmes, changer */Android/data/* en */media/* (par exemple, ***/storage/xxxx-xxxx/media***) fonctionne. Certains systèmes peuvent nécessiter des modifications de chemin différentes.
 
-Un chemin correct ne provoquera aucune erreur d'autorisation d'écriture de la part d'OsmAnd. Avant d'effectuer ces modifications, assurez-vous qu'OsmAnd dispose des autorisations de stockage appropriées, y compris l'autorisation de stockage "Média", dans les paramètres **Applications** d'Android. Dans les versions plus récentes d'Android, ces autorisations peuvent se trouver dans des menus avancés ou cachés.
+Un chemin correct ne provoquera aucune erreur d'autorisation d'écriture de la part d'OsmAnd. Avant d'effectuer ces modifications, assurez-vous qu'OsmAnd dispose des autorisations de stockage appropriées, y compris l'autorisation de stockage « Média », dans les paramètres **Applications** d'Android. Dans les versions plus récentes d'Android, ces autorisations peuvent se trouver dans des menus avancés ou cachés.
 
-### Suppression des données cartographiques après la mise à jour de l'application (si "Stockage multi-utilisateurs 1" est sélectionné) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Suppression des données cartographiques après la mise à jour de l'application (si « Stockage multi-utilisateurs 1 » est sélectionné) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
 Dans la version Android d'OsmAnd, la sélection de *Stockage multi-utilisateurs 1* comme emplacement de stockage peut entraîner la suppression de toutes les [cartes locales](../personal/maps-resources.md#local) chaque fois que l'application est mise à jour automatiquement, par exemple de la version 4.1.9 à 4.1.10, 4.1.11, ou ultérieure (**Android 11, 12**). Ce problème est documenté sur [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
@@ -131,7 +131,7 @@ Oui, les lignes de contour peuvent être affichées en pieds au lieu de mètres.
 
 ## Recherche {#search}
 
-### La recherche d'adresse structurée (ville → rue → maison) ne trouve pas la maison {#structured-city--street--house-address-search-doesnt-find-the-house}
+### La recherche d'adresse structurée (ville *→* rue *→* maison) ne trouve pas la maison {#structured-city--street--house-address-search-doesnt-find-the-house}
 
 Si vous essayez de rechercher un lieu en utilisant la structure *Ville → Rue → Numéro de maison* et qu'aucun résultat n'est retourné, considérez les conseils et les causes potentielles suivants :
 

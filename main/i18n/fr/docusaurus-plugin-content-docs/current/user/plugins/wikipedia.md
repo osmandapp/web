@@ -1,5 +1,5 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipédia
 ---
@@ -24,7 +24,7 @@ Le plugin Wikipédia est une [fonctionnalité payante](../purchases/index.md) de
 
 Avoir Wikipédia pendant votre voyage vous aide à en apprendre davantage sur les lieux que vous visitez. Il est disponible hors ligne et affiche les Lieux populaires (Android) / articles Wikipédia (iOS) liés aux points d'intérêt directement sur la carte.  
 
-Le plugin Wikipédia est une fonctionnalité distincte qui peut être activée/désactivée selon les besoins. Une fois activé, il vous permet de télécharger les données Wikipédia [téléchargées](../personal/maps-resources#maps--resources) pour chaque région géographique. La carte dispose de deux types de connaissances téléchargées depuis Wikipédia : des informations brèves et un article complet.  
+Le plugin Wikipédia est une fonctionnalité distincte qui peut être activée/désactivée selon les besoins. Une fois activé, il vous permet de télécharger les données Wikipédia [téléchargées](../personal/maps-resources#downloads-menu) pour chaque région géographique. La carte dispose de deux types de connaissances téléchargées depuis Wikipédia : des informations brèves et un article complet.  
 
 
 Les informations brèves sont fournies par les POI Wikipédia (une abréviation pour "[point d'intérêt](../map/point-layers-on-map.md)"). Si l'option Wikipédia est activée dans le menu, un POI Wikipédia apparaît sur la carte. Lorsque vous appuyez sur un point d'intérêt, il se développe pour fournir de brèves informations de Wikipédia, ainsi que la possibilité d'ouvrir un article complet. Le POI Wikipédia, ainsi que les articles connexes, sont disponibles hors ligne. Vous pouvez les lire selon vos besoins, changer de langue et rechercher d'autres informations sur Wikipédia.  
@@ -50,7 +50,7 @@ Pour afficher les données Wikipédia sur la carte, vous devez effectuer les ré
 
 Les données Wikipédia sont disponibles pour chaque région géographique. Si elles sont chargées pour une région et pas pour une autre, dans le premier cas, vous pouvez travailler avec les informations Wikipédia en visualisant la région sur une carte, et dans l'autre cas, la région n'aura aucune information Wikipédia. Une fois chargées, les données Wikipédia deviennent disponibles en général, ainsi que hors ligne.
 
-Pour télécharger les données Wikipédia d'une région, allez dans les [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#download), trouvez la région souhaitée et ouvrez-la. Les données Wikipédia se trouveront parmi les autres paquets.
+Pour télécharger les données Wikipédia d'une région, allez dans les [paquets disponibles au téléchargement dans le *Menu principal*](../start-with/download-maps.md#downloading-maps), trouvez la région souhaitée et ouvrez-la. Les données Wikipédia se trouveront parmi les autres paquets.
 
 Vous pouvez ouvrir les données Wikipédia à télécharger par région comme suit :
 

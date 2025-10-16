@@ -1,5 +1,5 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Greffons
 ---
@@ -68,7 +68,7 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 
 🤖 *- uniquement pour la version Android d'OsmAnd.*
 
-| Nom du greffon | Fonctionnalités |
+| Nom du greffon |Fonctionnalités |
 |:------------|:-------|
 | [Wikipédia](#wikipedia) | [Calque de carte](../plugins/wikipedia.md#download-wikipedia-packages), [Menu contextuel](../plugins/wikipedia.md#wikipedia-settings) |
 | [Cartes en ligne](#online-maps) |[Calque de carte](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -78,7 +78,7 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 | [Météo](../plugins/weather.md) | [Calque de carte](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Écran](../plugins/weather.md#weather-forecast-screen) |
 | [Vue carte marine](#nautical-map-view) | [Style de carte](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vue carte de ski](#ski-map-view) | [Style de carte](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
-|[Notes audio/vidéo](#audiovideo-notes) 🤖  | [Calque de carte](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contextuel](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Notes audio/vidéo](#audiovideo-notes) 🤖  | [Calque de carte](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contextuel](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[Édition OpenStreetMap](#openstreetmap-editing)| [Calque de carte](../plugins/osm-editing.md#authorization) |
 |[Position de stationnement](#parking-position) | [Menu contextuel](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Calque de carte](../plugins/mapillary.md#map-layer), [Menu contextuel](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
@@ -91,13 +91,13 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 
 ### Paramètres des greffons {#plugin-settings}
 
-:::caution REMARQUE
-Seuls le greffon de développement OsmAnd et le greffon d'édition OSM modifient les paramètres pour tous les profils. Les autres greffons sont configurés séparément pour chaque profil.  
+:::caution NOTE
+Only the OsmAnd development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
 La plupart des greffons fournissent des paramètres de profil spécifiques ou des paramètres globaux, accessibles via :
 
-- *Menu principal → Plugins → Nom du greffon → Paramètres (&#x2699 pour iOS)* ou  
+- *Menu principal → Plugins → Nom du greffon → Paramètres (&#x2699 pour ios)* ou  
 - *Menu principal → Paramètres → Profil → [Paramètres des greffons](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -125,7 +125,7 @@ Les greffons suivants fournissent leurs propres paramètres :
 | [Enregistrement de trajet](#trip-recording) | Configurer les [modes de fonctionnement](../plugins/trip-recording.md#required-setup-parameters) de l'enregistrement de trajet |
 | [Météo](#weather) | Configurer les unités de mesure pour l'affichage des événements météorologiques |
 |[Notes audio/vidéo](#audiovideo-notes) 🤖  | Sélectionner le [format vidéo, la durée de stockage, etc.](../plugins/audio-video-notes.md#plugin-settings) |
-|[Édition OpenStreetMap](#openstreetmap-editing)| Spécifier les [identifiants](../plugins/osm-editing.md#settings) de l'utilisateur  |
+|[Édition OpenStreetMap](#openstreetmap-editing)| Spécifier l'[identifiant](../plugins/osm-editing.md#settings) de l'utilisateur  |
 |  [Capteurs externes](#external-sensors) 🤖  | Se connecter aux [paramètres](../plugins/external-sensors.md#required-setup-parameters) de l'appareil externe |
 |  [Accessibilité](#accessibility) 🤖  | Les [paramètres](../plugins/accessibility.md#plugin-settings) vous permettent d'utiliser les [fonctionnalités d'accessibilité d'Android](https://www.android.com/accessibility/) dans OsmAnd. |
 | [Développement OsmAnd](#osmand-development) | Les [paramètres du greffon](../plugins/development.md#plugin-settings) vous permettent d'activer des fonctionnalités spéciales pour les développeurs ou les utilisateurs expérimentés |

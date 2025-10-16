@@ -1,5 +1,5 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Dans la section **Cartes et ressources**, vous pouvez gérer les cartes *en ligne* et *hors ligne*, ainsi que d'autres ressources utilisées dans OsmAnd. Par exemple, vous pouvez télécharger, supprimer, renommer, vider le cache, mettre à jour, vérifier la taille et effectuer différentes actions.
+Dans la section **Cartes et ressources**, vous pouvez gérer les cartes *en ligne* et *hors ligne*, ainsi que d'autres ressources utilisées dans OsmAnd. Par exemple, vous pouvez télécharger, supprimer, renommer, vider le cache, mettre à jour et vérifier la taille, et effectuer différentes actions.
 
-OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes matricielles](../map/raster-maps.md). L'onglet [Local](#local) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés depuis l'onglet [Téléchargements](#downloads). Dans l'onglet [Mises à jour](#updates), vous pouvez télécharger les cartes disponibles pour une mise à jour et utiliser les [mises à jour en direct](#live-updates). Vous pouvez également accéder à la fonctionnalité [Cartes supplémentaires](#extra-maps) pour créer vos propres types de cartes.
+OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes matricielles](../map/raster-maps.md). L'onglet [Local](#local-menu) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés depuis l'onglet [Téléchargements](#downloads-menu). Dans l'onglet [Mises à jour](#updates-menu), vous pouvez télécharger les cartes disponibles pour une mise à jour et utiliser les [mises à jour en direct](#live-updates). Vous pouvez également accéder à la fonctionnalité [Cartes supplémentaires](#extra-maps) pour créer vos propres types de cartes.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -78,6 +78,7 @@ Veuillez noter que les mises à jour mensuelles des cartes sont considérées co
 - [Lignes de contour](../plugins/topography.md#contour-lines). Une carte contenant des lignes de contour d'altitude pour visualiser le relief.
 - [Carte du relief (Ombrage et Pente)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Les cartes avec ombrage ou pentes fournissent des informations supplémentaires sur le relief.
 - [Carte du relief (3D)](../plugins/topography.md#3d-relief). Représentation tridimensionnelle du terrain pour une meilleure compréhension de votre environnement. Le [moteur de rendu de carte Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) doit être activé.
+- [Profondeurs et contours nautiques](../plugins/nautical-charts.md). Cartes marines montrant les lignes de côte, les profondeurs, les aides à la navigation, les ports et les dangers pour une navigation et une voile en toute sécurité.
 - [Wikipédia](../plugins/wikipedia.md). Carte vectorielle avec des articles [Wikipédia](https://wikipedia.org/) géolocalisés sur des points de repère ou des informations supplémentaires sur des lieux.
 - [Wikivoyage](../plan-route/travel-guides.md). Fournit des cartes vectorielles avec des guides de voyage virtuels, offrant aux utilisateurs des informations, des recommandations et des conseils précieux.
 - [Prévisions météo](../plugins/weather.md). Informations météorologiques sur une carte pour faciliter la planification d'itinéraires.
@@ -153,9 +154,9 @@ Pour importer un fichier :
 1. Localisez le fichier `.osf` dans le stockage de votre appareil, une messagerie ou un e-mail.
 2. Appuyez pour l'ouvrir avec OsmAnd.
 3. Le plugin apparaîtra dans la section **Liste des plugins**, où il pourra être activé.
-4. Un dossier correspondant apparaîtra alors dans la section **Cartes supplémentaires** de l'onglet [Téléchargements](#downloads).
+4. Un dossier correspondant apparaîtra alors dans la section **Cartes supplémentaires** de l'onglet [Téléchargements](#downloads-menu).
 
-Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugins/custom).
+Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugins/custom.md).
 
 
 ### Chargement de plusieurs cartes {#multiple-map-loading}
@@ -192,7 +193,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 L'onglet Local fournit un aperçu de l'utilisation du stockage pour toutes les données OsmAnd sur votre appareil. Les données sont divisées en trois sections codées par couleur pour plus de clarté, avec les éléments triés par taille du plus grand au plus petit. Chaque section n'affiche que les éléments avec des données téléchargées :
 
 - ***Ressources*** (*bleu*).  
-    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Marines](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Météo](../plugins/weather.md)), &nbsp;[Wikipédia](../plugins/wikipedia.md) et les [Guides de voyage](../plan-route/travel-guides.md), &nbsp;les [Mises à jour en direct](../personal/maps-resources.md#live-updates), &nbsp;**Routes seules**,  &nbsp;les [Sources de carte](../map/raster-maps.md), &nbsp;les [Styles de rendu](../map/vector-maps.md#default-map-styles), &nbsp;**Polices de carte, &nbsp;Instructions vocales (enregistrées et TTS), &nbsp;Cache**.  
+    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Météo](../plugins/weather.md)), &nbsp;[Wikipédia](../plugins/wikipedia.md) et les [Guides de voyage](../plan-route/travel-guides.md), &nbsp;[Mises à jour en direct](../personal/maps-resources.md#live-updates), &nbsp;**Routes seules**,  &nbsp;[Sources de carte](../map/raster-maps.md), &nbsp;[Styles de rendu](../map/vector-maps.md#default-map-styles), &nbsp;**Polices de carte, &nbsp;Instructions vocales (enregistrées et TTS), &nbsp;Cache**.  
 
 - ***Mes lieux*** (*jaune*).  
     Inclut les [Favoris](../personal/favorites.md), &nbsp;les [Traces](../personal/tracks/manage-tracks.md), &nbsp;les [Notes OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;les [Modifications OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;les [Notes A/V](../plugins/audio-video-notes.md), &nbsp;les [Marqueurs de carte](../personal/markers.md), &nbsp;l'[Historique](../personal/global-settings.md#history), &nbsp;*Itinéraire*.  

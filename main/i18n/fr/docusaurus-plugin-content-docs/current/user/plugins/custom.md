@@ -1,5 +1,5 @@
 ---
-source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
+source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 sidebar_position: 4
 title:  Paquet personnalisé
 ---
@@ -288,7 +288,7 @@ Pour commencer, vous créez et ajoutez votre plugin à *items.JSON*. Le premier 
 
 ### Images du plugin {#plugin-images}
 
-Pour importer les images d'icônes de votre plugin dans OsmAnd, créez un dossier (dans notre exemple, c'est le dossier *"res"*) où les fichiers image seront stockés. Le nom de ce type est **"RESOURCES"**.  
+Pour importer les images d'icônes de votre plugin dans OsmAnd, créez un dossier (dans notre exemple c'est le dossier *"res"*) où les fichiers image seront stockés. Le nom de ce type est **"RESOURCES"**.  
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/4.jpg)
 
@@ -303,7 +303,7 @@ NOTE : Commencez par créer un profil de navigation avec tous les paramètres. P
 ### Téléchargements {#downloads}
 
 Vous pouvez ajouter n'importe quel fichier tel que *SQLite, OBF, ou des polices* à télécharger en utilisant le type **"DOWNLOADS"**. Les principaux types de fichiers téléchargeables peuvent être trouvés [ici](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est à *false*) peut masquer vos données de carte dans [Cartes et ressources](../personal/maps-resources.md#local) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.  
+   *<u>NOTE</u>*. La balise **"isHidden":"true"** (par défaut, elle est à *false*) peut masquer vos données de carte dans [Cartes et ressources](../personal/maps-resources.md#local-menu) d'OsmAnd. Dans **"scope-id"**, vous pouvez ajouter toutes les informations nécessaires sur l'URL, le nom, la description de votre fichier, et plus encore.  
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/3.jpg)
 
