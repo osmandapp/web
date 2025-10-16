@@ -2646,7 +2646,7 @@
   "rendering_attr_alpineHiking_description": "Difficulty classification types for the routes.",
   "rendering_attr_highway_class_bridleway_name": "Bridleway",
   "routing_attr_avoid_share_taxi_name": "No share taxi",
-  "rendering_attr_pisteRoutes_name": "Ski slopes",
+  "rendering_attr_pisteRoutes_name": "Ski slopes and routes",
   "rendering_attr_piste_type_sled_name": "Sled",
   "rendering_attr_noPolygons_description": "Make all areal land features on map transparent.",
   "routing_attr_allow_classic_only_description": "Routes groomed for classic style only without skating trails. This includes routes groomed by a smaller snowmobile with looser piste and tracks made manually by skiers.",

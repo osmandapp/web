@@ -942,6 +942,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
 
+    ctx.setProcessingAnalytics(true);
+
     const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         params: {
             dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
@@ -953,14 +955,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         },
     });
     setLoading(false);
-    if (resp.data) {
+    if (resp?.data) {
         // data will be mutated, use cloneDeep to avoid apiCache mutations
         const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
         // restore previously saved time
-        if (data.data && data.data.analysis) {
+        if (data.data?.analysis) {
             if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
                 data.data.analysis.startTime = saveStartTime;
             }
@@ -984,10 +986,10 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
                 return applySrtmElevation({ track, setLoading });
             }
         }
-
+        ctx.setProcessingAnalytics(false);
         return newGpxFile;
     } else {
-        console.error('getTrackWithAnalysis fallback', path);
+        ctx.setProcessingAnalytics(false);
         return ctx.selectedGpxFile;
     }
 }

@@ -458,7 +458,7 @@ export default function MainMenu({
         if (selectedType === OBJECT_SEARCH) {
             if (ctx.selectedPoiObj) {
                 if (ctx.selectedPoiObj.wikidata) {
-                    navigateToPoi(ctx.selectedPoiObj.wikidata, navigate, true);
+                    navigateToPoi(ctx.selectedPoiObj, navigate, true);
                 } else {
                     navigateToPoi(ctx.selectedPoiObj, navigate);
                 }

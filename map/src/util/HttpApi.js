@@ -129,29 +129,28 @@ export async function apiGet(url, options = null) {
         return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
+    let controller;
+
     let response = null;
     const abortKey = options?.abortControllerKey ?? cacheKey;
     try {
         const fullOptions = { redirect: 'manual', ...options };
         if (abortKey && !options?.signal) {
-            if (abortControllers[abortKey]) {
-                abortControllers[abortKey].abort();
-            }
-
-            const controller = new AbortController();
+            abortControllers[abortKey]?.abort();
+            controller = new AbortController();
             abortControllers[abortKey] = controller;
             fullOptions.signal = controller.signal;
 
             response = await fetch(fullURL, fullOptions);
 
-            if (abortControllers[abortKey] === controller) {
+            if (controller && abortControllers[abortKey] === controller) {
                 delete abortControllers[abortKey];
             }
         } else {
             response = await fetch(fullURL, fullOptions);
         }
     } catch (e) {
-        if (abortKey && abortControllers[abortKey]) {
+        if (abortKey && controller && abortControllers[abortKey] === controller) {
             delete abortControllers[abortKey];
         }
         if (e?.name === 'AbortError') {

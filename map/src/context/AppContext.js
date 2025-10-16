@@ -484,6 +484,8 @@ export const AppContextProvider = (props) => {
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
+    const [processingAnalytics, setProcessingAnalytics] = useState(false);
+
     useEffect(() => {
         async function loadSort() {
             try {
@@ -886,6 +888,8 @@ export const AppContextProvider = (props) => {
                 setShowPoiConfig,
                 processingPoiByUrl,
                 setProcessingPoiByUrl,
+                processingAnalytics,
+                setProcessingAnalytics,
             }}
         >
             {props.children}

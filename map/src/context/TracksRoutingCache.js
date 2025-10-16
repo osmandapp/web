@@ -7,6 +7,10 @@ const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
 export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
+    if (ctx.processingAnalytics) {
+        return false;
+    }
+
     if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
         return false;
     }
