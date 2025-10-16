@@ -127,6 +127,38 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 - Choose **Navigation type** for the first and last segment: either build a [*straight line*](../routing/straight-line-routing.md) or use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
 
 
+### Reverse Track Direction {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Reverse Mode](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Navigate To](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+The **Reverse track direction** option lets you navigate a saved GPX track in the opposite direction — from the end point back to the start. When this setting is turned on, the navigation algorithm automatically reverses the GPX geometry and recalculates directions accordingly. Once enabled, the parameter **Reverse mode** becomes available:
+
+- **Calculate route**. Recommended for car and bicycle profiles. A new, optimized route is recalculated along the reversed GPX track according to the selected navigation profile. Road rules such as one-way streets and turn restrictions are observed to ensure safe navigation.
+- **Original track**. The GPX line is followed strictly in reverse without recalculating the route. This mode is useful for walking, hiking, or off-road navigation where road rules do not apply.
+
+When the reverse direction is enabled, the start and end points of the track are swapped automatically, and navigation is built from the current or nearest position on the reversed track. The option *Point of the track to navigate = Nearest point* refers to the closest point on the reversed GPX line, and both voice guidance and the Attach to the roads feature function in the same way as during forward navigation.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![navigate To ios](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+The **Reverse track direction** option allows a saved GPX track to be navigated in the opposite direction — from its endpoint back to the start. When this setting is enabled, the track geometry is automatically reversed and the route is recalculated according to the selected navigation profile.
+
+The start and end points of the track are swapped, and navigation is built from the current or nearest position on the reversed line. The option *Navigate to = Nearest point* refers to the closest point on the reversed GPX track.
+
+A new, optimized route is recalculated along the reversed track with full consideration of road rules such as one-way streets and turn restrictions. Voice guidance, visual instructions, and the Attach to the roads feature operate as in standard forward navigation, ensuring accurate and safe routing.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Attach to the Roads {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
