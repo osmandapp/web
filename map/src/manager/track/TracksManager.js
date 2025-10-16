@@ -24,7 +24,6 @@ import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
-import { compressFromJSON } from '../../util/GzipBase64.mjs';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -948,9 +947,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
     ctx.setProcessingAnalytics(true);
 
-    const gz = await compressFromJSON(postData);
-
-    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, gz, {
+    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         params: {
             dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
         },
@@ -958,7 +955,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         headers: {
             'Content-Type': 'application/json',
-            'X-Payload-Encoding': 'gzip+base64',
         },
     });
     setLoading(false);
