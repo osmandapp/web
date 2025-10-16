@@ -393,7 +393,9 @@ export function addDistanceToPoints(points) {
 export async function getGpxFileFromTrackData(file, routeTypes) {
     const trackData = prepareTrackData({ file, routeTypes });
 
-    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
+    const gz = await compressFromJSON(trackData);
+
+    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, gz, {
         apiCache: true,
         headers: {
             'Content-Type': 'application/json',
