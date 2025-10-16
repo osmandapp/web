@@ -3,6 +3,7 @@ source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
 sidebar_position: 8
 title: Lieux populaires
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -48,7 +48,7 @@ Seuls les POI avec un **ID Wikidata** lié sont affichés. Ces ID connectent les
 
 Vous pouvez voir le lien Wikidata directement dans le [Menu contextuel de la carte](../map/map-context-menu.md). Appuyer sur l'étiquette Wikidata ouvre la page complète de l'objet sur le site web de Wikidata.
 
-Apprenez à trouver un ID Wikidata : [Wikipedia: Trouver un ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Apprenez à trouver un ID Wikidata : [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Comment l'utiliser {#how-to-use}
@@ -185,11 +185,12 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 ### Actions {#actions}
 
-Dans le menu contextuel de la carte, comment y accéder :
+Dans le menu contextuel de la carte Comment y accéder :
 
 - Appuyez sur le bouton **Tout afficher** (Android) / **Voir tout** (iOS) pour ouvrir la [galerie](#gallery) en mode plein écran, où vous pouvez faire défiler toutes les photos disponibles pour le lieu sélectionné.
 
-- Appuyez sur n'importe quelle photo pour la voir en [plein écran](#gallery) et accéder aux actions disponibles : **Partager**, **Détails**, **Ouvrir dans le navigateur** et **Télécharger**.
+- Appuyez sur n'importe quelle photo pour la voir en [plein écran](#gallery) et accéder aux actions disponibles :  
+  **Partager**, **Détails**, **Ouvrir dans le navigateur**, et **Télécharger**.
 
 
 ### Galerie {#gallery}
@@ -221,7 +222,7 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
   Partagez l'image sélectionnée en utilisant n'importe quelle application compatible installée sur votre appareil (par ex., messagerie, e-mail ou réseaux sociaux). Le contenu partagé inclut l'image et son lien source (si disponible).
 
 - **Détails**  
-  Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source* et *Lien direct*
+  Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
 
 - **Ouvrir dans le navigateur**  
   Lancez la page source de l'image (généralement sur [Wikimedia Commons](https://commons.wikimedia.org/)) dans votre navigateur par défaut. Cela vous permet de voir l'image complète, les informations de licence et le contenu associé.
@@ -274,7 +275,7 @@ Sur **iOS**, un appui long sur une photo ouvre un menu contextuel avec des actio
 
 </Tabs>
 
-L'écran **Détails** fournit les métadonnées complètes de la photo sélectionnée, y compris : *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source* et *Lien direct*
+L'écran **Détails** fournit les métadonnées complètes de la photo sélectionnée, y compris : *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
 
 
 ## Articles connexes

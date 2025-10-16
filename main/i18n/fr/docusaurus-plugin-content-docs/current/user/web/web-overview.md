@@ -2,8 +2,9 @@
 source-hash: 468554af76614d225c0a6d533461ed0e21450d49977ff9641eba44e245d32a09
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction au site web
+title: Introduction sur le site web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -31,8 +31,8 @@ OsmAnd Web s'intègre étroitement avec le service **OsmAnd Cloud**, qui permet 
 ## Fonctionnalités clés
 
 - Carte avec couverture mondiale et données vectorielles de haute qualité
-- Planification d'itinéraire utilisant les profils piéton, voiture, vélo et autres
-- Aperçu de la navigation avec instructions détaillées
+- Planification d'itinéraire utilisant les profils à pied, voiture, vélo et autres
+- Aperçu de la navigation avec instructions au virage par virage
 - Recherche et exploration des lieux populaires à proximité
 - Affichage des Favoris, Traces et POI sur la carte
 - Superpositions météo : vent, température et pression

@@ -1,8 +1,9 @@
 ---
-source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
+source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
 sidebar_position: 1
 title:  Accessibilité
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 :::caution Remarque
 Le plugin Accessibilité est disponible uniquement sur la **version Android** d'OsmAnd. La [version iOS](#how-to-use-ios) s'appuie sur les paramètres d'accessibilité par défaut du système.
@@ -25,7 +25,7 @@ L'accessibilité améliore l'ergonomie pour les utilisateurs aveugles et malvoya
 
 ### Comment utiliser (Android) {#how-to-use-android}
 
-![Accessibilité](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Activer le plugin Accessibilité :***  
 
@@ -49,7 +49,7 @@ L'accessibilité améliore l'ergonomie pour les utilisateurs aveugles et malvoya
 
 - **Intégration de TalkBack** :
    - Le lecteur d'écran TalkBack offre un guidage audio pour la navigation et les interactions avec les menus.
-   - En savoir plus sur les gestes TalkBack [ici](https://support.google.com/accessibility/android/answer/6151827?hl=fr&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
+   - En savoir plus sur les gestes TalkBack [ici](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation).
 
 - **Opérations en arrière-plan**. Le retour audio et haptique continue même lorsque l'écran est éteint ou verrouillé.
 
@@ -76,8 +76,8 @@ La version iOS d'OsmAnd utilise les **outils d'accessibilité intégrés** du sy
    - Tous les [gestes OsmAnd](../map/interact-with-map.md#gestures) standards sont disponibles.
 
 3. **En savoir plus** :
-   - Lisez à propos des fonctionnalités d'accessibilité visuelle d'iOS [ici](https://www.apple.com/fr/accessibility/vision/).
-   - Explorez les gestes VoiceOver pour iPhone [ici](https://support.apple.com/fr-fr/guide/iphone/iph3e2e2281/ios).
+   - Lisez à propos des fonctionnalités d'accessibilité visuelle d'iOS [ici](https://www.apple.com/accessibility/vision/).
+   - Explorez les gestes VoiceOver pour iPhone [ici](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}
@@ -93,7 +93,7 @@ Pour activer les fonctionnalités d'accessibilité de l'appareil dans OsmAnd, vo
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibilité](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
 
 Le plugin Accessibilité offre divers paramètres pour personnaliser la navigation et l'interaction pour les utilisateurs en situation de handicap. Ces paramètres sont appliqués par [profil](../personal/profiles.md) dans OsmAnd.
 
@@ -101,9 +101,9 @@ Le plugin Accessibilité offre divers paramètres pour personnaliser la navigati
 |---------------------------|-------------|  
 | **Mode Accessibilité**    | Active les *fonctionnalités intégrées d'OsmAnd* ou utilise les **paramètres système**. |  
 | **Débit de la parole**           | Contrôle la *vitesse de la synthèse vocale*, allant de **50 % à 200 %**. |  
-| [Annonce automatique intelligente](#smart-autoannounce-and-clockwise-directions)    | Fournit un *guidage vocal* en cas d'écart par rapport à l'itinéraire. |  
+| [Annonce automatique intelligente](#smart-autoannounce)    | Fournit un *guidage vocal* en cas d'écart par rapport à l'itinéraire. |  
 | **Période d'annonce automatique**   | Définit le temps minimum entre les annonces, de **5 secondes à 5 minutes**. |  
-| **Style de direction**       | Choisissez entre *Latéral (8 directions)* ou [Horaire](#smart-autoannounce-and-clockwise-directions) (12 directions)*. |  
+| [Style de direction](#direction-style)       | Choisissez entre *Latéral (8 directions)* ou *Horaire (12 directions)*. |  
 | **Directions audio**      | Joue des *guidages audio* indiquant la direction. |  
 | **Directions haptiques**     | Fournit un *retour par vibration* pour les virages et les écarts.|  
 
@@ -132,16 +132,34 @@ Le plugin Accessibilité offre divers paramètres pour personnaliser la navigati
 - **Retour haptique** - Idéal pour les environnements à faible visibilité ou lorsque les guidages audio ne sont pas pratiques.
 
 
-### Annonce automatique intelligente et directions horaires {#smart-autoannounce-and-clockwise-directions}
+### Annonce automatique intelligente {#smart-autoannounce}
 
-La fonction **Annonce automatique intelligente** fournit des *notifications audio* lorsque vous vous écartez de l'itinéraire prévu, tandis que le **Style de direction horaire** offre des *guidages de navigation basés sur le cadran d'une horloge*. Ces fonctionnalités sont conçues pour aider les utilisateurs malvoyants qui dépendent du *guidage vocal*.  
+La fonction **Annonce automatique intelligente** fournit des *notifications audio* lorsque vous vous écartez de l'itinéraire prévu. Elle est conçue pour aider les utilisateurs malvoyants qui dépendent du *guidage vocal*.  
 
-- Si **TalkBack n'est pas activé**, l'*Annonce automatique intelligente* et les *Directions horaires* n'afficheront que des *notifications textuelles* à l'écran.  
+- Si **TalkBack n'est pas activé**, l'*Annonce automatique intelligente* n'affichera que des *notifications textuelles* à l'écran.  
 
 - Les **notifications vocales** ne sont activées que lorsque *TalkBack* est activé dans les **paramètres système de l'appareil**.  
 
 - Réglez la **Période d'annonce automatique** (par exemple, *10 secondes*) pour contrôler la fréquence des annonces.
 
+- Un appui long sur **Ma position** ouvre un menu avec les options ***Afficher votre position*** et ***Afficher les détails***. Sélectionner Afficher les détails affiche des informations supplémentaires sur l'itinéraire et fournit le bouton ***Démarrer/Arrêter l'annonce automatique***.
+
+
+### Style de direction {#direction-style}
+
+Le paramètre **Style de direction** définit la façon dont les instructions de navigation sont présentées :
+
+- Latéral (8 directions) – utilise les directions classiques gauche/droite ou les directions cardinales/intercardinales.
+- Horaire (12 directions) – utilise un guidage basé sur le cadran d'une horloge, comme « à 3 heures » ou « à 10 heures ».
+
+Cette fonctionnalité est conçue pour améliorer la conscience spatiale, en particulier pour les utilisateurs malvoyants qui préfèrent l'orientation basée sur l'horloge.
+
+Pour activer :
+*Menu* → *Plugins* → *Accessibilité* → *Paramètres* → *Style de direction* → choisissez **Latéral** ou **Horaire**.
+
+:::info note
+Le Style de direction est une option indépendante. Il n'est pas lié à l'Annonce automatique intelligente et fonctionne indépendamment de son activation.
+:::
 
 ## Articles connexes {#related-articles}
 

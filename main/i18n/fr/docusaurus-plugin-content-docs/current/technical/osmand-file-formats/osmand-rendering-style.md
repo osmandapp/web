@@ -6,9 +6,9 @@ sidebar_position: 6
 # Style de rendu de carte - .render.xml {#map-rendering-style---renderxml}
 
 
-Si vous souhaitez modifier le style de rendu par défaut, vous devez consulter la [définition sur GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml). Vous trouverez toutes sortes de styles à ce [lien](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles), donc si vous souhaitez créer votre propre style, vous pouvez trouver l'exemple le plus simple.
+Si vous souhaitez modifier le style de rendu par défaut, vous devez consulter la [définition sur GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml). Vous trouverez toutes sortes de styles à ce [lien](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles), donc si vous allez créer votre propre style, vous pouvez trouver l'exemple le plus simple.
 
-Si vous décidez de créer votre style de rendu personnalisé, vous devrez peut-être créer [vos propres cartes](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) pour ajouter l'affichage de fonctionnalités personnalisées.
+Si vous décidez de créer votre style de rendu personnalisé, vous pourriez avoir besoin de créer [vos propres cartes](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) pour ajouter l'affichage de fonctionnalités personnalisées.
 
 ## Sections de style de carte {#map-style-sections}
 
@@ -42,9 +42,9 @@ Règles d'évaluation :
 
 
 ## Attributs (spéciaux) et Constantes {#attributes-special--constants}
-Les constantes de rendu et les attributs de rendu sont interchangeables et peuvent être utilisés pour simplifier le style de rendu et éviter de copier/coller des valeurs ou des blocs de code. Si un attribut comme `color` est une valeur unique, il est **préférable** d'utiliser une **constante de rendu** car cela accélère considérablement les performances du style de rendu.
+Les constantes de rendu et les attributs de rendu sont interchangeables et peuvent être utilisés pour simplifier le style de rendu et éviter de copier/coller des valeurs ou des blocs de code. Si un attribut comme `color` est une valeur unique, il est **préférable** d'utiliser une **constante de rendu** car cela accélère considérablement les performances du style de rendu. 
 
-Les constantes de rendu ne peuvent être utilisées qu'avec une seule valeur donnée : `<renderingConstant name="motorwayShadowRadius" value="1.6"/>` et plus tard dans les sélecteurs de fonctionnalités comme `<apply_if shadowRadius="$motorwayShadowRadius"/>`.
+Les constantes de rendu ne peuvent être utilisées qu'avec une seule valeur donnée : `<renderingConstant name="motorwayShadowRadius" value="1.6"/>` et plus tard dans les sélecteurs de fonctionnalités comme `<apply_if shadowRadius="$motorwayShadowRadius"/>`. 
 
 Les attributs de rendu peuvent avoir une structure intégrée avec des sélecteurs supplémentaires et produire l'un des attributs suivants (`attrColorValue`, `attrBoolValue`, `attrFloatValue`, `attrIntValue`, `attrStringValue`). Exemple :
 ```
@@ -57,7 +57,7 @@ Les attributs de rendu peuvent avoir une structure intégrée avec des sélecteu
 
 ### Attributs spéciaux {#special-attributes}
 
-Les attributs spéciaux sont `<renderingAttribute >` qui ne sont pas utilisés par les sélecteurs mais utilisés directement par le code pour interroger une fonctionnalité spécifique qui est dessinée dans l'application comme un itinéraire de navigation, une règle, une trace gpx, etc.
+Les attributs spéciaux sont `<renderingAttribute >` qui ne sont pas utilisés par les sélecteurs mais utilisés directement par le code pour interroger une fonctionnalité spécifique qui est dessinée dans l'application comme un itinéraire de navigation, une règle de mesure, une trace GPX, etc.
 
 
 | Attribut spécial | Description |
@@ -70,17 +70,17 @@ Les attributs spéciaux sont `<renderingAttribute >` qui ne sont pas utilisés p
 | `walkingRouteLine` | Rendu d'une navigation de transport public : itinéraire piétonnier entre les arrêts | 
 | `rulerLineFont`, `rulerLine`, `rulerCircleAlt`, `rulerCircle` | Comment rendre le widget Règle-Rayon et mesurer la distance par tap | 
 |||
-| `defaultColor` | Couleur par défaut pour remplir la carte (bascule le mode nuit/jour) |
+| `defaultColor` | Couleur par défaut pour remplir la carte (bascule le mode nuit / jour) |
 | `shadowRendering` | Interne comment rendre l'ombre avec Skia |
 ||| 
 | `routeInfo_*` | Exemple : `routeInfo_surface`, `routeInfo_roadClass` produisent des classes de routes à afficher dans la légende de l'itinéraire. | 
 |||
-| `polygonMinSizeToDisplay` | Interne comment rendre les petites lignes et les petits polygones | 
-| `roadDensityZoomTile` | Interne comment rendre les petites lignes et les petits polygones |
-| `roadsDensityLimitPerTile` | Interne comment rendre les petites lignes et les petits polygones |
-| `defaultSymbolPathSpacing` | Interne comment rendre les petites lignes et les petits polygones |
-| `defaultBlockPathSpacing` | Interne comment rendre les petites lignes et les petits polygones |
-| `globalPathPadding` | Interne comment rendre les petites lignes et les petits polygones |
+| `polygonMinSizeToDisplay` | Internes comment rendre les petites lignes et les petits polygones | 
+| `roadDensityZoomTile` | Internes comment rendre les petites lignes et les petits polygones |
+| `roadsDensityLimitPerTile` | Internes comment rendre les petites lignes et les petits polygones |
+| `defaultSymbolPathSpacing` | Internes comment rendre les petites lignes et les petits polygones |
+| `defaultBlockPathSpacing` | Internes comment rendre les petites lignes et les petits polygones |
+| `globalPathPadding` | Internes comment rendre les petites lignes et les petits polygones |
 |||
 | `debugTextDisplayBBox` | Attributs pour déboguer le rendu et le positionnement du texte | 
 | `debugTextDisplayShieldBBox` | Attributs pour déboguer le rendu et le positionnement du texte |
@@ -90,7 +90,7 @@ Les attributs spéciaux sont `<renderingAttribute >` qui ne sont pas utilisés p
 
 ## Paramètres de style de carte {#map-style-parameters}
 
-Les paramètres de style de carte permettent de combiner plusieurs styles de rendu dans une seule définition de fichier, c'est-à-dire qu'il n'est pas nécessaire d'avoir un fichier séparé 'my_custom_style_night_mode.render.xml', il est possible de définir un paramètre comme `night_mode` (activé par défaut) et de personnaliser certaines règles (comme les couleurs) en utilisant ce paramètre. Plus tard dans l'interface utilisateur, il est possible de changer facilement ce paramètre et d'avoir un style de carte différent dans OsmAnd.
+Les paramètres de style de carte permettent de combiner plusieurs styles de rendu dans une seule définition de fichier, c'est-à-dire qu'il n'est pas nécessaire d'avoir un fichier séparé 'my_custom_style_night_mode.render.xml', il est possible de définir un paramètre comme `night_mode` (activé par défaut) et de personnaliser certaines règles (comme les couleurs) en utilisant ce paramètre. Plus tard dans l'interface utilisateur, il est possible de basculer facilement ce paramètre et d'avoir un style de carte différent dans OsmAnd.
 
 Voici une définition du paramètre `baseAppMode`. `possibleValues` sont les valeurs qui seront affichées dans l'interface utilisateur d'OsmAnd, `category` aide à déterminer à quelle catégorie d'interface utilisateur cette propriété appartient.
 ```
@@ -109,4 +109,4 @@ Plus tard dans le style de sélection, vous pouvez spécifier quand ce sélecteu
 	</renderingAttribute>
 ```
 
-Donc, si l'utilisateur sélectionne `moreDetailed=true`, la valeur de sortie pour la densité sera `55` et si `baseAppMode=pedestrian` (un autre paramètre), elle sera `40`, sinon 60.
+Donc, si l'utilisateur sélectionne `moreDetailed=true`, la valeur de sortie pour la densité sera `55` et si `baseAppMode=pedestrian` (un autre paramètre) elle sera `40`, sinon 60.

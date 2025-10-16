@@ -3,6 +3,7 @@ source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
 sidebar_position: 2
 title:  Généralités
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 Problèmes généraux liés aux diverses fonctionnalités d'OsmAnd.
 
@@ -61,7 +61,7 @@ Lors de l'utilisation d'OsmAnd, plusieurs fonctionnalités peuvent influencer la
 ## Confidentialité {#privacy}
 
 <!--
-Problèmes liés à la confidentialité (supprimer l'historique / vérifier l'utilisation d'Internet / autorisations).
+Privacy related issues (delete history / check internet usage / permissions).
 -->
 
 ### Comment supprimer l'historique de recherche {#how-to-delete-search-history}
@@ -96,8 +96,8 @@ Pour résoudre les problèmes de connexion GPS, suivez ces étapes :
 ### Problème de non-concordance d'e-mail lors de l'achat d'OsmAnd Pro {#email-mismatch-issue-during-osmand-pro-purchase}
 
 <!-- ???
-ou ce titre :
-### Résolution des problèmes de synchronisation de l'e-mail de l'application et du compte de paiement dans OsmAnd {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
+or this title:
+### Resolving payment account and app email sync issues in OsmAnd {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
 -->
 
 Si vous rencontrez un problème où l'e-mail associé à votre achat d'OsmAnd Pro ne correspond pas à l'e-mail de l'application OsmAnd, suivez ces étapes pour résoudre le problème :

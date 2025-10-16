@@ -3,6 +3,7 @@ source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
 sidebar_position: 7
 title:  Points sur la carte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Aperçu {#overview}
@@ -168,7 +168,7 @@ Vous pouvez en savoir plus sur l'apparence des marqueurs dans cet [article](../p
 
 ![Trace sur la carte](@site/static/img/map/track_point_on_map.png)
 
-Les points de trace (points de cheminement) font partie des fichiers de trace (GPX). Ces points sont affichés automatiquement si la trace est sur la carte. Leur apparence peut être configurée de la même manière que les [Favoris](#favorites) - icône, nom, couleur, forme. Pour savoir comment créer et ajouter un point de cheminement, lisez l'[article](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
+Les points de trace (points de cheminement) font partie des fichiers de trace (GPX). Ces points sont affichés automatiquement si la trace est sur la carte. Leur apparence peut être configurée de la même manière que les [Favoris](#favorites) - icône, noms, couleur, forme. Pour savoir comment créer et ajouter un point de cheminement, lisez l'[article](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
 
 [En savoir plus](../map/tracks/index.md) sur les traces sur la carte.
 
@@ -330,7 +330,7 @@ Les [points d'intérêt (POI)](#points-of-interest-pois) sont des lieux d'un int
 
 Les [points favoris](#favorites) sont des lieux que les utilisateurs trouvent particulièrement importants ou intéressants et qu'ils enregistrent dans leur liste de lieux favoris. Les lieux peuvent inclure n'importe quel emplacement que vous pourriez vouloir retrouver et auquel vous pourriez vouloir retourner plus tard.
 
-[Notes audio/vidéo](#-audio--video-points-android). Au format GPX, vous pouvez enregistrer des enregistrements audio et vidéo en tant que points de cheminement. Cela vous permet d'associer des fichiers multimédias à des emplacements spécifiques sur la carte ou l'itinéraire.  
+Les [notes audio/vidéo](#-audio--video-points-android). Au format GPX, vous pouvez enregistrer des enregistrements audio et vidéo en tant que points de cheminement. Cela vous permet d'associer des fichiers multimédias à des emplacements spécifiques sur la carte ou l'itinéraire.  
 
 Tous ces types de points peuvent être enregistrés au format GPX pour vous fournir des informations de localisation et vous aider dans la navigation et la planification d'itinéraires. Ils servent à des fins différentes, mais l'idée générale est de stocker et de transmettre des informations géographiques afin que vous puissiez les utiliser dans leurs tâches de navigation.
 

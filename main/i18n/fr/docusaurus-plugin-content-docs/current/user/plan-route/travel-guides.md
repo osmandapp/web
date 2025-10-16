@@ -3,6 +3,7 @@ source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
 sidebar_position: 2
 title:  Guides de voyage
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -346,7 +346,7 @@ Dans le *[menu contextuel de la trace](../map/tracks/track-context-menu.md)* du 
 
 </Tabs>
 
-Dans les *articles des guides de voyage*, vous pouvez trouver des informations utiles sur les attractions touristiques (coordonnées, liens web, prix, etc.). De nombreux articles ont un bouton *Wikipédia* qui permet d'ouvrir un *[article Wikipédia](../plugins/wikipedia.md)* (en ligne ou hors ligne) sur le lieu d'intérêt.  
+Dans les *articles des guides de voyage*, vous pouvez trouver des informations utiles sur les attractions touristiques (informations de contact, liens web, prix, etc.). De nombreux articles ont un bouton *Wikipédia* qui permet d'ouvrir un *[article Wikipédia](../plugins/wikipedia.md)* (en ligne ou hors ligne) sur le lieu d'intérêt.  
 
 Dans certains cas, l'*[onglet Favoris](#explore-and-bookmark)* d'OsmAnd vous invitera à télécharger la [couche de carte Wikipédia](../plugins/wikipedia.md#download-wikipedia-packages) pour parcourir les articles connexes hors ligne.
 

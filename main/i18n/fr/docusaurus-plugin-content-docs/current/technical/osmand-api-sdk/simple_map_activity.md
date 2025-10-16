@@ -2,6 +2,7 @@
 source-hash: b0d4df0d26006bdcd73d5a61e61eb6a0f02f801c3e18c78ff8eade7f6d929014
 sidebar_position: 2
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Activité de carte simple {#simple-map-activity}

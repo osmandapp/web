@@ -3,6 +3,7 @@ source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
 sidebar_position: 5
 title:  Itinéraire en transport en commun
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-
 ## Aperçu {#overview}
 
 La navigation en transport en commun dans l'application OsmAnd vous permet de calculer des itinéraires en utilisant les transports publics, ce qui vous aidera certainement à vous déplacer plus rapidement dans la "jungle de béton".
 
-Les données sur les itinéraires de transport en commun proviennent du projet [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilise le [schéma PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) pour la navigation. OsmAnd prend en charge le suivi des itinéraires OpenStreetMap pour la navigation en *bus*, *trolleybus*, *taxi collectif*, *funiculaire*, *métro*, *métro léger*, *monorail*, *train*, *tramway*, *ferry*. La vitesse par défaut pour chaque type de véhicule est configurée dans le [fichier XML de routage](../../../technical/build-osmand/routing.md) et est utilisée pour trouver les itinéraires les plus rapides.
+Les données sur les itinéraires de transport en commun proviennent du projet [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilise le [schéma PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) pour la navigation.  OsmAnd prend en charge le suivi des itinéraires OpenStreetMap pour la navigation en *bus*, *trolleybus*, *taxi collectif*, *funiculaire*, *métro*, *métro léger*, *monorail*, *train*, *tram*, *ferry*. La vitesse par défaut pour chaque type de véhicule est configurée dans le [fichier XML de routage](../../../technical/build-osmand/routing.md) et est utilisée pour trouver les itinéraires les plus rapides.
 
 :::note
 Le routage en transport en commun est en phase de test. Pour l'instant, vous pouvez créer et visualiser votre itinéraire sans la fonction de navigation complète.

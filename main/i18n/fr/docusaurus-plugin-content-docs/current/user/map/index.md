@@ -23,7 +23,7 @@ Le menu Configurer la carte est un élément important du *Menu principal* d'Osm
 
 Les cartes vectorielles sont conçues pour être une source de données cartographiques par défaut pour OsmAnd, elles doivent donc être téléchargées sur l'appareil. Les cartes vectorielles prennent en charge une large gamme de styles de carte pour de nombreuses activités comme le cyclisme, la randonnée, la conduite en voiture ou en motoneige, etc. Chaque style de carte peut être réglé pour mettre en évidence ou masquer des objets spécifiques et basculer entre le mode jour et nuit. Les données vectorielles de la carte peuvent être augmentées par des données vectorielles et affichées avec le style de carte par défaut, par exemple, les informations sur les courbes de niveau. Vous pouvez créer votre propre style de carte OsmAnd pour afficher les informations requises.
 
-## [Cartes raster (en ligne / hors ligne)](./raster-maps.md) {#raster-maps-online--offline}
+## [Cartes raster (En ligne / Hors ligne)](./raster-maps.md) {#raster-maps-online--offline}
 
 Les cartes raster sont un ajout important aux cartes vectorielles OpenStreetMap hors ligne que l'application utilise par défaut. Les cartes raster permettent de combiner différentes sources de cartes avec les cartes vectorielles. Par exemple, des informations utiles sur l'ombrage des collines / la pente peuvent être affichées sous forme de couche raster. Vous pouvez afficher une superposition d'itinéraires de randonnée, de cartes de pluie en direct, de données de trafic en direct et une sous-couche d'images satellite mélangées à une carte vectorielle de base semi-transparente. Vous pouvez également basculer les cartes par défaut vers des tuiles raster web en ligne.
 

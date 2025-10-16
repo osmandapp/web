@@ -26,18 +26,18 @@ version standard du Google Play Store.
 
 Inscrivez-vous en tant que testeur pour la version de test gratuite d'OsmAnd via le [Groupe Google OsmAnd](https://play.google.com/apps/testing/net.osmand) suivant. Inscrivez-vous pour la version de test payante *OsmAnd+* via le [Groupe Google OsmAnd+](https://play.google.com/apps/testing/net.osmand.plus/testing) suivant (note : cela n'est possible que si vous êtes un utilisateur enregistré de la version payante).
 
-- Lorsque vous cliquez sur le lien pour vous inscrire, vous verrez un grand panneau bleu ou vert annonçant "Devenez un utilisateur de test" (dans votre langue définie).
-- Après avoir cliqué sur le "bouton", vous verrez le message "Vous êtes maintenant un testeur" avec une coche verte devant (et lors d'actions répétitives, il affichera "Vous êtes un testeur").
+- Lorsque vous cliquez sur le lien pour vous inscrire, vous verrez un grand panneau bleu ou vert annonçant « Devenez un utilisateur de test » (dans votre langue définie).
+- Après avoir cliqué sur le « bouton », vous verrez le message « Vous êtes maintenant un testeur » avec une coche verte devant (et lors d'actions répétitives, il affichera « Vous êtes un testeur »).
 - Laissez à Google le temps de se synchroniser, ce qui peut prendre entre 10 secondes et 60 minutes.
 - Vous pouvez maintenant télécharger la version de test, soit directement depuis le Google Play Store, soit via votre téléphone/tablette.
 
 ### Retour à la version standard d'OsmAnd du Google Play Store {#returning-to-the-standard-google-play-store-osmand-version}
 
-Notez que le même écran d'inscription, après vous être inscrit, contient également un lien "Quitter la version de test". Si, après un certain temps, vous souhaitez à nouveau utiliser la version standard actuelle du Google Play Store, procédez comme suit :
+Notez que le même écran d'inscription, après vous être inscrit, contient également un lien « Quitter la version de test ». Si, après un certain temps, vous souhaitez à nouveau utiliser la version standard actuelle du Google Play Store, procédez comme suit :
 
-- Utilisez à nouveau le lien ci-dessus (il est donc préférable d'en faire un signet/favori dans votre navigateur). La page indiquera toujours "Vous êtes un testeur".
-- La page contient également le lien "Quitter la version de test".
-- Cliquez sur ce lien pour voir ensuite "Vous avez quitté la version de test".
+- Utilisez à nouveau le lien ci-dessus (il est donc préférable d'en faire un signet/favori dans votre navigateur). La page indiquera toujours « Vous êtes un testeur ».
+- La page contient également le lien « Quitter la version de test ».
+- Cliquez sur ce lien pour voir ensuite « Vous avez quitté la version de test ».
 - Désinstallez manuellement la version de test, soit via le Google Play Store, soit sur votre téléphone/tablette.
 - (Ré)installez manuellement la version actuelle, soit via le Google Play Store, soit sur votre téléphone/tablette.
 
@@ -45,7 +45,7 @@ Notez que le même écran d'inscription, après vous être inscrit, contient ég
 
 ## Builds Android Nightly (quotidiennes) {#android-nightly-builds-nightly}
 
-Différentes builds d'OsmAnd doivent être installées sur toute autre build de la même souche (plus ancienne ou plus récente) sans aucun problème, et avec toutes les données hors ligne préservées. La dernière build de développement (*pas nécessairement stable !*) pour les tests peut être trouvée [ici](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). Celle-ci sera généralement mise à jour sur toute autre build de développement de la même génération de développement. Si la tentative de mise à niveau entraîne une erreur de signature ou "non installée" (par exemple, si vous utilisez actuellement le marché ou si vous souhaitez passer à une build plus ancienne), veuillez
+Différentes builds d'OsmAnd doivent être installées sur toute autre build de la même souche (plus ancienne ou plus récente) sans aucun problème, et avec toutes les données hors ligne préservées. La dernière build de développement (*pas nécessairement stable !*) pour les tests peut être trouvée [ici](https://download.osmand.net/latest-night-build/OsmAnd-default.apk). Celle-ci sera généralement mise à jour sur toute autre build de développement de la même génération de développement. Si la tentative de mise à niveau entraîne une erreur de signature ou « non installée » (par exemple, si vous utilisez actuellement le marché ou si vous souhaitez passer à une build plus ancienne), veuillez
 
 - exporter d'abord vos Favoris (Menu/Exporter dans la liste des favoris),
 - exporter les profils de navigation,

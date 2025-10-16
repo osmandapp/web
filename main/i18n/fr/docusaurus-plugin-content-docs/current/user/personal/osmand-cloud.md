@@ -3,6 +3,7 @@ source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -32,22 +32,22 @@ OsmAnd Cloud vous permet de **stocker et de synchroniser les paramètres personn
 
 ## Multiplateforme {#cross-platform}
 
-OsmAnd Cloud vous permet de sauvegarder, restaurer et synchroniser vos données entre Android, iOS et la [version web](../web/index.md). Grâce aux capacités multiplateformes, vous pouvez transférer les **paramètres de profil**, les **traces**, les **favoris**, les **éditions/notes OSM**, et plus encore entre les appareils. De plus, la **version web** vous permet de planifier des itinéraires et de les enregistrer pour une utilisation ultérieure sur les appareils connectés.
+OsmAnd Cloud vous permet de sauvegarder, de restaurer et de synchroniser vos données entre Android, iOS et la [version web](../web/index.md). Grâce aux capacités multiplateformes, vous pouvez transférer les **paramètres de profil**, les **traces**, les **favoris**, les **éditions/notes OSM**, et plus encore entre les appareils. De plus, la **version web** vous permet de planifier des itinéraires et de les enregistrer pour une utilisation ultérieure sur les appareils connectés.  
 
 OsmAnd prend en charge l'**utilisation multiplateforme** sur *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* en suivant les étapes suivantes :
 
 1. **Créez un [compte](#login) sur OsmAnd Cloud** :
-
-    1.1 **Abonnez-vous à OsmAnd Pro pour un accès complet au Cloud.**
+ 
+    1.1 **Abonnez-vous à OsmAnd Pro pour un accès complet au Cloud.**  
    Apprenez-en plus sur l'achat pour [Android](../purchases/android.md#how-to-buy) ou [iOS](../purchases/ios.md#how-to-buy).
 
-    2.1 **Utilisez le plan gratuit OsmAnd Start** pour les sauvegardes dans le cloud des favoris, des paramètres et des éditions/notes OSM.
+    2.1 **Utilisez le plan gratuit OsmAnd Start** pour les sauvegardes dans le cloud des favoris, des paramètres et des éditions/notes OSM.  
    La limite de stockage gratuit est de **5 Mo**.
 
 2. **Utilisez l'e-mail enregistré** comme identifiant pour activer [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) ou OsmAnd Start sur d'autres plateformes.
 
-:::note
-**OsmAnd Pro** est un abonnement multiplateforme qui inclut toutes les fonctionnalités d'OsmAnd. Vous pouvez l'acheter dans une boutique (par exemple, Google Play, Huawei AppGallery) et l'utiliser également sur **iOS**. Votre **[e-mail enregistré](#login)** est votre identifiant pour activer OsmAnd Pro [sur plusieurs plateformes](../purchases/cross.md).
+:::note  
+**OsmAnd Pro** est un abonnement multiplateforme qui inclut toutes les fonctionnalités d'OsmAnd. Vous pouvez l'acheter dans une boutique (par exemple, Google Play, Huawei AppGallery) et l'utiliser également sur **iOS**. Votre **[e-mail enregistré](#login)** est votre identifiant pour activer OsmAnd Pro [sur plusieurs plateformes](../purchases/cross.md). 
 :::
 
 
@@ -55,15 +55,15 @@ OsmAnd prend en charge l'**utilisation multiplateforme** sur *([Android](../purc
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
 ![Connexion à OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Connexion à OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="register_opr_have_account"/>*
 
@@ -73,25 +73,25 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Pour sauvegarder et restaurer des données, vous devez être connecté à votre compte OsmAnd Cloud.
+Pour sauvegarder et restaurer des données, vous devez être connecté à votre compte OsmAnd Cloud.  
 
-- Pour vous inscrire ou vous connecter, vous avez besoin d'un abonnement actif [OsmAnd Pro](#cross-platform) ou [OsmAnd Start](#osmand-start). Vous pouvez vérifier le statut de votre abonnement dans l'application OsmAnd :
+- Pour vous inscrire ou vous connecter, vous avez besoin d'un abonnement actif [OsmAnd Pro](#cross-platform) ou [OsmAnd Start](#osmand-start). Vous pouvez vérifier le statut de votre abonnement dans l'application OsmAnd :  
   *Menu → Paramètres → Achats*.
 
 - Votre compte Cloud **doit être enregistré sur l'appareil où l'achat a été effectué à l'origine**.
 
-- *Processus de connexion* :
-  - Entrez votre adresse e-mail et appuyez sur **Continuer**.
+- *Processus de connexion* :  
+  - Entrez votre adresse e-mail et appuyez sur **Continuer**.  
   - Un code de vérification sera envoyé à votre e-mail pour confirmation.
-  - Lisez [ici](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) ce qu'il faut faire si vous ne recevez pas de code de vérification.
+  - Lisez [ici](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) ce qu'il faut faire si vous ne recevez pas de code de vérification.  
   - Utilisez ce compte pour vous connecter à OsmAnd Cloud sur d'autres appareils.
 
-- Si vous avez un abonnement **OsmAnd Pro**, vous pouvez continuer à accéder à votre compte OsmAnd Cloud pendant **une année supplémentaire** après l'expiration de votre abonnement.
+- Si vous avez un abonnement **OsmAnd Pro**, vous pouvez continuer à accéder à votre compte OsmAnd Cloud pendant **une année supplémentaire** après l'expiration de votre abonnement.  
 
 :::tip Dépannage des problèmes de connexion
 Si vous rencontrez des problèmes lors de l'inscription :
 
-- Assurez-vous que vous vous inscrivez sur le **même appareil** où l'achat a été effectué.
+- Assurez-vous que vous vous inscrivez sur le **même appareil** où l'achat a été effectué.  
 - Vérifiez votre **connexion Internet** avant de réessayer.
 
 :::
@@ -103,7 +103,7 @@ Si vous rencontrez des problèmes lors de l'inscription :
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
 
 ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
 
@@ -113,18 +113,18 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Le plan **OsmAnd Start** offre un accès gratuit à **OsmAnd Cloud** avec des fonctionnalités de base limitées et 5 Mo de stockage pour stocker et synchroniser vos **Favoris, Paramètres et éditions et notes OpenStreetMap (OSM)**. Ce plan est disponible pour les utilisateurs de [OsmAnd Free ou Maps+](../purchases/index.md).
+Le plan **OsmAnd Start** offre un accès gratuit à **OsmAnd Cloud** avec des fonctionnalités de base limitées et 5 Mo de stockage pour stocker et synchroniser vos **Favoris, Paramètres et éditions et notes OpenStreetMap (OSM)**. Ce plan est disponible pour les utilisateurs de [OsmAnd Free ou Maps+](../purchases/index.md).  
 
 Fonctionnalités incluses dans OsmAnd Start :
 
-- [Sauvegarde gratuite des favoris](../personal/favorites.md#free-cloud-backup) – Stockez les lieux et itinéraires importants dans vos Favoris et accédez-y depuis n'importe quel appareil connecté à OsmAnd Cloud.
-- [Sauvegarde gratuite des paramètres](../personal/profiles.md#free-cloud-backup) – Enregistrez les paramètres de votre application OsmAnd sur OsmAnd Cloud et restaurez-les sur d'autres appareils pour une expérience transparente.
+- [Sauvegarde gratuite des favoris](../personal/favorites.md#free-cloud-backup) – Stockez les lieux et itinéraires importants dans vos Favoris et accédez-y depuis n'importe quel appareil connecté à OsmAnd Cloud.  
+- [Sauvegarde gratuite des paramètres](../personal/profiles.md#free-cloud-backup) – Enregistrez les paramètres de votre application OsmAnd sur OsmAnd Cloud et restaurez-les sur d'autres appareils pour une expérience transparente.  
 - [Éditions/Notes OSM](../plugins/osm-editing.md) – Contribuez à OpenStreetMap en créant et en modifiant des données cartographiques, en ajoutant des notes et en enregistrant les modifications directement sur OsmAnd Cloud.
 
 ### Comment activer OsmAnd Start {#how-to-activate-osmand-start}
@@ -153,7 +153,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 Pour utiliser OsmAnd Start, suivez ces étapes :
 
-- **Créez un compte OsmAnd Cloud** - Voir la section [Connexion](#login) pour les instructions.
+- **Créez un compte OsmAnd Cloud** - Voir la section [Connexion](#login) pour les instructions..
 - Ouvrez *Menu → Paramètres → Achats*.
 - Sélectionnez **OsmAnd Start** parmi les options disponibles.
 - **Créez une sauvegarde** pour commencer à stocker vos données dans OsmAnd Cloud.
@@ -169,7 +169,7 @@ Si vous avez déjà un abonnement **OsmAnd Pro** ou un **compte OsmAnd Cloud act
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
 ![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png)
 
@@ -179,18 +179,18 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 **Dernière synchronisation** est un menu déroulant qui indique depuis combien de temps les données ont été synchronisées pour la dernière fois entre cet appareil et le cloud.
 
 - *Modifications locales*. Affiche le nombre total de modifications locales non téléversées sur le cloud.
 - *Modifications du cloud*. Le nombre total de modifications téléversées sur le cloud depuis d'autres appareils depuis la dernière synchronisation.
 - *Conflits*. Le nombre total d'incohérences entre les modifications locales et celles du cloud.
-- *Synchroniser maintenant*. Sélectionnez cette option pour synchroniser toutes les sections de données sélectionnées dans le menu [paramètres](#settings) que vous avez modifiées sur cet appareil et dans le cloud.
+- *Synchroniser maintenant*. Sélectionnez cette option pour synchroniser toutes les sections de données sélectionnées dans le menu [paramètres](#settings) que vous avez modifiées sur cet appareil et dans le cloud.  
 
 **Synchroniser maintenant** combine les boutons *Tout téléverser* et *Tout télécharger* dans le menu Modifications, dans les sections [Local et Cloud](#local-and-cloud). Les **conflits** ne sont pas synchronisés de cette manière.
 
@@ -222,7 +222,7 @@ To use this feature:
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
 
-![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)
+![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
 </TabItem>
 
@@ -234,20 +234,20 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 La fonctionnalité **Corbeille** vous permet de visualiser et de gérer les fichiers qui ont été supprimés d'OsmAnd Cloud. Elle est conçue pour éviter la suppression accidentelle de fichiers et la perte irréversible de vos données.
 
 - **Voir les fichiers**. La *Corbeille* liste tous les fichiers précédemment supprimés du dossier *Modifications du Cloud*. Tous les fichiers contiennent des informations sur la date et l'heure de leur suppression. Ils sont regroupés par mois et triés de la suppression la plus récente aux fichiers les plus anciens restant dans la Corbeille.
-- **Vider la Corbeille**.
+- **Vider la Corbeille**.  
 
-    ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)
+    ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
 
     Pour libérer de l'espace de tous les fichiers supprimés du Cloud, vous pouvez utiliser la fonctionnalité *Vider la Corbeille*. Elle est disponible depuis le *menu à trois points* dans le coin supérieur droit de l'écran de la Corbeille. Les fichiers sont supprimés de manière permanente, sans possibilité de les restaurer.
 
-- **Gestion des fichiers séparés**.
+- **Gestion des fichiers séparés**.  
 
-    ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)
+    ![Corbeille OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
     - *<Translate ios="true" ids="restore_from_trash"/>*. Avec cette fonctionnalité, vous pouvez restaurer des fichiers sur OsmAnd Cloud. Après avoir appuyé, le fichier sélectionné est déplacé de la Corbeille dans la section *Modifications* vers le dossier *Cloud*.
     - *<Translate ios="true" ids="download_to_device"/>*. Cette fonctionnalité vous permet de télécharger un fichier sur l'appareil. Si le fichier sélectionné avec le même nom est présent dans le dossier, la boîte de dialogue *Le fichier existe déjà* s'affiche, dans laquelle vous pouvez sélectionner une option d'action : *Remplacer* ou *Garder les deux*.
@@ -262,7 +262,7 @@ La fonctionnalité **Corbeille** vous permet de visualiser et de gérer les fich
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
 
 </TabItem>
 
@@ -270,20 +270,20 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
 
 </TabItem>
 
 </Tabs>
 
-Cette section est destinée à l'édition et à la gestion de votre OsmAnd Cloud.
+Cette section est destinée à l'édition et à la gestion de votre OsmAnd Cloud.  
 
 
 ### Sélectionner les données à sauvegarder {#select-data-to-back-up}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
@@ -291,11 +291,11 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
 
 </TabItem>
 
@@ -320,7 +320,7 @@ Toutes les [cartes](../start-with/download-maps.md) sont stockées sur l'apparei
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
 
 </TabItem>
 
@@ -328,13 +328,13 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Écran de sauvegarde des données iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)
+![Écran de sauvegarde des données iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-La section de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) affiche des informations sur la quantité de mémoire utilisée sur les 3,15 gigaoctets dans *Paramètres*, *Mes lieux* et *Ressources*. Vous pouvez supprimer les modifications de types de données distincts d'OsmAnd Cloud, mais dans ce cas, l'action ne peut pas être annulée.
+La section de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) affiche des informations sur la quantité de mémoire utilisée sur les 3,15 gigaoctets dans *Paramètres*, *Mes lieux* et *Ressources*. Vous pouvez supprimer les modifications de types de données distincts d'OsmAnd Cloud, mais dans ce cas, l'action ne peut pas être annulée.  
 
 
 ### Compte {#account}
@@ -352,7 +352,7 @@ Cette section contient des informations sur le compte connecté à OsmAnd Cloud 
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
@@ -364,7 +364,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Les actions que vous pouvez effectuer dans la section **Zone de danger** du menu Paramètres sont irréversibles et nécessitent donc une attention particulière.
 
@@ -375,7 +375,7 @@ Les actions que vous pouvez effectuer dans la section **Zone de danger** du menu
 3. **Supprimer le compte**. Pour supprimer un compte, vous devez passer par un processus de vérification. Un mot de passe à usage unique pour confirmation sera envoyé à votre adresse e-mail enregistrée sur OsmAnd Cloud.
     - Toutes les données d'OsmAnd Cloud seront supprimées. Les données sur l'appareil restent intactes.
     - Votre compte et tous les détails du compte seront supprimés.
-    - Les appareils secondaires seront déconnectés d'OsmAnd Cloud et perdront l'accès aux fonctionnalités payantes.
+    - Les appareils secondaires seront déconnectés d'OsmAnd Cloud et perdront l'accès aux fonctionnalités payantes.  
 
     ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
 
@@ -386,17 +386,17 @@ Les actions que vous pouvez effectuer dans la section **Zone de danger** du menu
 
 <TabItem value="android" label="Android">
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Dans la section [Dernière synchronisation](#last-sync) du menu déroulant, appuyez sur n'importe quel élément pour ouvrir la section Modifications. Cette section contient trois onglets affichant toutes les modifications disponibles pour l'édition. Si la liste est vide, aucune modification n'a eu lieu depuis la dernière synchronisation.
 
@@ -415,7 +415,7 @@ Dans la section [Dernière synchronisation](#last-sync) du menu déroulant, appu
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
 
 </TabItem>
 
@@ -423,17 +423,17 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
 </TabItem>
 
 </Tabs>
 
-- **Local** - Vous pouvez synchroniser toutes les modifications locales qui ne sont pas encore dans le cloud en appuyant sur **Tout téléverser**. Alternativement, vous pouvez téléverser des modifications spécifiques en les sélectionnant dans la liste et en choisissant **Téléverser la version locale**.
+- **Local** - Vous pouvez synchroniser toutes les modifications locales qui ne sont pas encore dans le cloud en appuyant sur **Tout téléverser**. Alternativement, vous pouvez téléverser des modifications spécifiques en les sélectionnant dans la liste et en choisissant **Téléverser la version locale**.  
 
-    Les modifications qui sont téléversées avec succès sur le cloud sont automatiquement supprimées de l'onglet *Modifications → Local* après une période définie.
+    Les modifications qui sont téléversées avec succès sur le cloud sont automatiquement supprimées de l'onglet *Modifications → Local* après une période définie.  
 
-- **Cloud** - L'onglet **Cloud** affiche une liste des modifications disponibles au téléchargement depuis le stockage cloud. Vous pouvez télécharger toutes les modifications en une seule fois en utilisant le bouton en bas de l'écran ou les télécharger individuellement.
+- **Cloud** - L'onglet **Cloud** affiche une liste des modifications disponibles au téléchargement depuis le stockage cloud. Vous pouvez télécharger toutes les modifications en une seule fois en utilisant le bouton en bas de l'écran ou les télécharger individuellement.  
 
 
 ### Conflits {#conflicts}
@@ -444,7 +444,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
 
 </TabItem>
 
@@ -452,13 +452,13 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 
 </TabItem>
 
 </Tabs>
 
-Un **conflit** se produit lorsque la **version locale** et la **version Cloud** d'un fichier ne correspondent pas.
+Un **conflit** se produit lorsque la **version locale** et la **version Cloud** d'un fichier ne correspondent pas.  
 
 - Vous pouvez soit **remplacer la version Cloud** par les modifications locales, soit **télécharger la version Cloud** sur votre appareil.
 
@@ -466,8 +466,8 @@ Un **conflit** se produit lorsque la **version locale** et la **version Cloud** 
 
 - Appuyer sur un fichier dans le dossier **Conflits** affiche des détails sur les versions **Locale** et **Cloud**, y compris les heures de dernière modification et de téléversement.
 
-- Vous pouvez choisir l'une des actions suivantes :
-  - **Téléverser la version locale** – Remplace la version Cloud par le fichier local.
+- Vous pouvez choisir l'une des actions suivantes :  
+  - **Téléverser la version locale** – Remplace la version Cloud par le fichier local.  
   - **Télécharger la version Cloud** – Remplace le fichier local par la version Cloud.
 
 

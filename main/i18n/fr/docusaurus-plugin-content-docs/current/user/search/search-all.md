@@ -1,8 +1,9 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Recherche globale
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 <InfoIncompleteArticle/>
@@ -44,7 +44,7 @@ Vous devez suivre l'une des étapes pour commencer votre recherche :
 
 - Appuyez sur le [bouton Recherche](../widgets/map-buttons.md#search) sur l'écran de l'application de carte et saisissez votre requête.
 
-- Allez dans le *Menu principal → Recherche → saisissez votre requête de recherche*.
+- Allez dans le *Menu → Recherche → saisissez votre requête de recherche*.
 
 - Lors de la préparation d'un itinéraire, appuyez sur [*Navigation → Définir la destination → Champ de recherche*](../navigation/setup/route-navigation.md#set-target-point) *→ requête de recherche*.  
 
@@ -215,7 +215,7 @@ La **Recherche d'adresse** utilise les données d'OpenStreetMap. Ce type de rech
 
 </Tabs>
 
-Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau des lieux, des adresses ou des endroits fréquemment visités précédemment trouvés sans avoir à saisir à nouveau la requête. Plus de détails peuvent être trouvés dans l'article [Historique de recherche](./search-history.md).
+Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau des lieux, des adresses ou des endroits fréquemment visités précédemment trouvés sans avoir à saisir à nouveau la requête.. Plus de détails peuvent être trouvés dans l'article [Historique de recherche](./search-history.md).
 
 
 ## Recherche de POI {#search-poi}
@@ -238,7 +238,7 @@ Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau de
 
 La **Recherche de POI** est une liste, triée par catégorie, avec laquelle vous pouvez facilement trouver des lieux et des services près de votre emplacement actuel ou d'une zone sélectionnée sur la carte.
 
-- La [recherche de POI personnalisée](./search-poi.md#custom-poi-search) vous permet de combiner différentes catégories de POI pour simplifier et personnaliser votre recherche.  
+- La [recherche de POI personnalisée](./search-poi.md#customize-poi-search) vous permet de combiner différentes catégories de POI pour simplifier et personnaliser votre recherche.  
 Par exemple, si vous avez besoin de trouver plusieurs types de services dans une certaine zone ou sur une certaine section d'un itinéraire.
 
 - OsmAnd propose une [recherche en ligne](./search-poi.md#online-search) qui fonctionne en temps réel, vous donnant un accès rapide aux résultats de recherche.  

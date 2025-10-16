@@ -2,6 +2,7 @@
 source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -20,7 +21,7 @@ Liens directs vers les versions gratuites d'OsmAnd.
 
 ### Version 5.1 {#version-51}
 
-Date de publication 06/2025:
+Date de publication 06/2025 :
 
 - Ajout de la prise en charge des achats web et multiplateformes.
 - Déplacement des unités de température vers les paramètres généraux pour un accès plus facile.
@@ -34,7 +35,7 @@ Date de publication 06/2025:
 
 ### Version 5.0 {#version-50}
 
-Date de publication 04/2025:
+Date de publication 04/2025 :
 
 - Découvrez les POI les mieux classés avec le nouveau mode Explorer
 - Tous les itinéraires OSM, désormais consultables ! Randonnée, cyclisme, VTT, et plus encore
@@ -48,7 +49,7 @@ Date de publication 04/2025:
 - Les sommets proéminents sont désormais découvrables via la carte et la recherche
 - Hauteurs des sommets en pieds
 - Ajout : falaises et zones d'escalade sur la carte
-- La recherche d'adresses aux États-Unis a été améliorée
+- La recherche d'adresses aux États-Unis a été améliorée  
 - Ajout de la synthèse vocale hébraïque pour la navigation
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -57,7 +58,7 @@ Date de publication 04/2025:
 
 ### Version 4.9 {#version-49}
 
-Date de publication 11/2024:
+Date de publication 11/2024 :
 
 - Ajout d'une visionneuse de galerie plein écran pour les images Wikimedia.
 - Introduction d'un nouveau plugin "Vehicle Metrics" pour surveiller les performances du véhicule à l'aide du protocole OBD-II.
@@ -76,9 +77,10 @@ Date de publication 11/2024:
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
 
+
 ### Version 4.8 {#version-48}
 
-Date de publication 08/2024:
+Date de publication 08/2024 :
 
 - Nouvelle option de colorisation du terrain "Altitude".
 - Palettes de couleurs personnalisées pour le terrain, les pistes et les itinéraires.
@@ -96,7 +98,7 @@ Date de publication 08/2024:
 
 ### Version 4.7 {#version-47}
 
-Date de publication 04/2024:
+Date de publication 04/2024 :
 
 - Nouveau widget "Compteur de vitesse" compatible avec Android Auto.
 - Configurez l'écran de la carte en ajoutant plusieurs boutons "Action rapide".
@@ -112,7 +114,7 @@ Date de publication 04/2024:
 
 ### Version 4.6 {#version-46}
 
-Date de publication 12/2023:
+Date de publication 12/2023 :
 
 - Android Auto : Ajout du mode 3D et amélioration de l'écran de recherche.
 - Pistes : Introduction de filtres et de dossiers intelligents, optimisation de la mémoire pour les fichiers plus volumineux.
@@ -130,7 +132,7 @@ Date de publication 12/2023:
 
 ### Version 4.5 {#version-45}
 
-Date de publication 08/2023:
+Date de publication 08/2023 :
 
 - Capteurs BLE/ANT+ : connexion retravaillée, écriture et visualisation des données reçues vers GPX.
 - Sauvegarde gratuite des favoris et des paramètres sur OsmAnd Cloud.
@@ -156,7 +158,7 @@ Date de publication 08/2023:
 
 ### Version 4.4 {#version-44}
 
-Date de publication 03/2023:
+Date de publication 03/2023 :
 
 - Menu "Pistes" amélioré dans "Configurer la carte"
 - Le menu contextuel affiche désormais les noms localisés des POI
@@ -176,9 +178,10 @@ Date de publication 03/2023:
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
+
 ### Version 4.3 {#version-43}
 
-Date de publication 12/2022:
+Date de publication 12/2022 :
 
 - Nouveau moteur de rendu de carte Version 2 (OpenGL) plus rapide, avec vue 2.5D
 - Animation fluide des changements de position en mouvement
@@ -224,7 +227,7 @@ Date de publication : 12/2021
 
 ### Version 4.0 {#version-40}
 
-Date de publication 08/2021:
+Date de publication 08/2021 :
 
 - Sauvegarde cloud
 - Ajout du mode nuit pour le style de rendu Topo
@@ -248,13 +251,14 @@ Date de publication 08/2021:
 
 <DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
+
 <hr></hr>
 
 ## Version 3 {#version-3}
 
 ### Version 3.9 {#version-39}
 
-Date de publication 02/2021:
+Date de publication 02/2021 :
 
 - Ajout de l'option d'exporter et d'importer toutes les données, y compris les paramètres, les ressources, mes lieux.
 - Planifier l'itinéraire : graphiques pour les segments de piste avec itinéraire, et ajout de la possibilité de créer et de modifier plusieurs segments de piste.
@@ -263,9 +267,10 @@ Date de publication 02/2021:
 
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
+
 ### Version 3.8 {#version-38}
 
-Date de publication 09/2020:
+Date de publication 09/2020 :
 
 - Fonction "Planifier un itinéraire" mise à jour : permet d'utiliser différents types de navigation par segment et l'inclusion de pistes
 - Nouveau menu "Apparence" pour les pistes : sélection de la couleur, de l'épaisseur, affichage des flèches de direction, icônes de début/fin
@@ -277,9 +282,10 @@ Date de publication 09/2020:
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
 
+
 ### Version 3.7 {#version-37}
 
-Date de publication 05/2020:
+Date de publication 05/2020 :
 
 - Nouvelles cartes hors ligne de pente
 - Personnalisation complète des favoris et des points de passage GPX – couleurs, icônes, formes personnalisées
@@ -293,9 +299,10 @@ Date de publication 05/2020:
 
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
 
+
 ### Version 3.6 {#version-36}
 
-Date de publication 02/2020:
+Date de publication 02/2020 :
 
 - Profils : vous pouvez maintenant changer l'ordre, définir une icône pour la carte, modifier tous les paramètres des profils de base et les restaurer par défaut
 - Ajout du numéro de sortie dans la navigation
@@ -312,6 +319,8 @@ Date de publication 02/2020:
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
+
+
 ### Version 3.5 {#version-35}
 
 Date de publication : 11/2019
@@ -326,6 +335,8 @@ Date de publication : 11/2019
 - Corrections de bugs
 
 <DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
+
+
 
 ### Version 3.4 {#version-34}
 
@@ -343,6 +354,8 @@ Date de publication : 07/2019
 
 <DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
+
+
 ### Version 3.3 {#version-33}
 
 Date de publication : 03/2019
@@ -358,20 +371,25 @@ Date de publication : 03/2019
 
 <DownloadRelease blog="osmand-3-3" release="net.osmand-3.3.8.apk" />
 
+
+
 ### Version 3.2 {#version-32}
 
-Date de publication 09/2018:
+Date de publication 09/2018 :
 
 - Correction du plantage au démarrage qui se produisait avec les cartes non latines
 - Amélioration des problèmes de vitesse de rendu sur les appareils Android 8.0
 - Prise en charge de l'édition d'objets polygonaux (non-aménités)
 - Mesurer la distance : ajout du bouton Mesurer aux Actions dans le menu contextuel
 
+
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
+
+
 
 ### Version 3.1 {#version-31}
 
-Date de publication 08/2018:
+Date de publication 08/2018 :
 
 - Navigation : Correction de la barre de progression, échange rapide des points de départ et d'arrivée de l'itinéraire
 - Marqueurs de carte : correction de l'activation/désactivation des groupes, possibilité de masquer les marqueurs de la carte
@@ -382,10 +400,11 @@ Date de publication 08/2018:
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
+
 ### Version 3.0 {#version-30}
 
 Date de publication : 05/2018
-
+  
 - Nouveau menu Voyage : consultez les articles WikiVoyage sans utiliser Internet
 - Wikipédia : nouveau look, liens actifs, images
 - Ouvrir l'interface utilisateur de la piste : afficher les groupes de points de passage
@@ -394,6 +413,7 @@ Date de publication : 05/2018
 
 <DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
 
+
 <hr></hr>
 
 ## Version 2 {#version-2}
@@ -401,7 +421,7 @@ Date de publication : 05/2018
 ### Version 2.9 {#version-29}
 
 Date de publication : 02/2018
-
+  
 - Menu contextuel mis à jour : affiche l'heure d'ouverture/fermeture du POI
 - Menu Transport : tous les itinéraires disponibles sont désormais en haut
 - Wikipédia : ajout du bouton pour ouvrir l'article original, mise à jour de l'apparence des articles
@@ -412,9 +432,12 @@ Date de publication : 02/2018
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
 
+
+
+
 ### Version 2.8 {#version-28}
 
-Date de publication 10/2017:
+Date de publication 10/2017 :
 
 - Marqueurs de carte entièrement retravaillés avec des lignes directrices et une planification d'itinéraire
 - Outil de mesure de distance, offrant une fonction d'accrochage à la route et l'enregistrement des points en tant que piste
@@ -422,15 +445,21 @@ Date de publication 10/2017:
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
 
+  
+
+
 ### Version 2.7 {#version-27}
 
-Date de publication 07/2017:
-
+Date de publication 07/2017 :
+  
 - Imagerie au niveau de la rue dans le plugin Mapillary
 - Outil de règle pour mesurer les distances directes sur la carte
 - Intervalle de fractionnement GPX affichant les détails des sections de piste
 
 <DownloadRelease blog="osmand-2-7" release="net.osmand-2.7.5.apk" />
+
+  
+
 
 ### Version 2.6 {#version-26}
 
@@ -445,10 +474,13 @@ Date de publication : 04/2017
 
 <DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
+
+
+
 ### Version 2.5 {#version-25}
 
 Date de publication : 11/2016
-
+  
 - Icônes cliquables sur la carte. Obtenez des informations sans la couche POI
 - Recherche de POI très détaillée. Trouvez des emplacements par plusieurs caractéristiques
 - Masquage de la boussole. Ne voyez la boussole que lorsque vous en avez besoin
@@ -458,16 +490,19 @@ Date de publication : 11/2016
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
+
 ### Version 2.4 {#version-24}
 
 Date de publication : 08/2016
-
+  
 - Recherche rapide. Tous les types de requêtes dans un seul champ de recherche
 - Intégration du système audio de la voiture. Utilisez le système audio de votre voiture pour la navigation vocale
 - Meilleures informations sur les transports en commun. Affichez les itinéraires complets des transports en commun liés aux arrêts
 - Autres améliorations. Meilleures indications vocales, nouvelle indication de voie de virage et corrections de stockage
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
+
+
 
 ### Version 2.3 {#version-23}
 
@@ -482,6 +517,8 @@ Date de publication : 03/2016
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
 
+
+
 ### Version 2.2 {#version-22}
 
 Date de publication : 11/2015
@@ -495,9 +532,11 @@ Date de publication : 11/2015
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
 
+
+
 ### Version 2.1 {#version-21}
 
-Date de publication 06/2015:
+Date de publication 06/2015 :
 
 - Nouvelles données Wikipédia structurées par pays et contenant beaucoup plus de points qu'auparavant
 - Meilleur recalcul d'itinéraire (après plusieurs tentatives, le moteur suggère un itinéraire différent)
@@ -509,9 +548,11 @@ Date de publication 06/2015:
 
 <DownloadRelease blog="osmand-2-1" release="net.osmand-2.1.0.apk" />
 
+
+
 ### Version 2.0 {#version-20}
 
-Date de publication 04/2015:
+Date de publication 04/2015 :
 
 - Conception matérielle
 - Nouvel écran de carte
@@ -566,6 +607,8 @@ Simplification de l'enregistrement de trajet en arrière-plan et de la navigatio
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />
 
+
+
 ### Version 1.8 {#version-18}
 
 Date de publication : 07/2014
@@ -595,9 +638,11 @@ Navigation :
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
+
+
 ### Version 1.7 {#version-17}
 
-Date de publication 03/2014:
+Date de publication 03/2014 :
 
 - Routage entièrement mis à jour (rapide et précis)
 - Nouvel écran avec planification d'itinéraire (plus intuitif et plus puissant)
@@ -608,9 +653,12 @@ Date de publication 03/2014:
 
 <DownloadRelease blog="osmand-1-7" release="net.osmand-1.7.5-175.apk" />
 
+
+
+
 ### Version 1.6 {#version-16}
 
-Date de publication 10/2013:
+Date de publication 10/2013 :
 
 - Prise en charge des appareils Full HD
 - Prise en charge du fond de carte transparent
@@ -636,9 +684,12 @@ Date de publication : 07/2013
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
 
+
+
 ### Version 1.4 {#version-14}
 
 Date de publication : 05/2013
+
 
 - Ordonner les points de passage de manière optimale pour tous les visiter (Voyageur de commerce, porte-à-porte)
 - Rechercher une rue par nom (dans le quartier)
@@ -650,9 +701,11 @@ Date de publication : 05/2013
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
 
+
+
 ### Version 1.3 {#version-13}
 
-Date de publication 03/2013:
+Date de publication 03/2013 :
 
 - Réimplémentation de la prise en charge des tablettes et des grands écrans
 - Thème Holo (personnalisation)
@@ -661,9 +714,10 @@ Date de publication 03/2013:
 
 <Download link="net.osmand-1.3%20beta-137.apk" />
 
+
 ### Version 1.2 {#version-12}
 
-Date de publication 02/2013:
+Date de publication 02/2013 :
 
 - Nouveau widget (infos GPS)
 - Prise en charge de la montre Pebble
@@ -674,9 +728,10 @@ Date de publication 02/2013:
 
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
 
+
 ### Version 1.1 {#version-11}
 
-Date de publication 12/2012:
+Date de publication 12/2012 :
 
 - Amélioration du plugin audio/vidéo (photos avec informations EXIF)
 - Plugin de courbes de niveau réorganisé et corrigé pour une meilleure convivialité
@@ -691,15 +746,18 @@ Date de publication 12/2012:
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
 
+
+
 ### Version 1.0 {#version-10}
 
-Date de publication 09/2012:
+Date de publication 09/2012 :
 
 - Routage amélioré : plus rapide, plus précis, jusqu'à 250 km.
 - Introduction de cartes routières uniquement.
 - Activation du service GPS en continu pendant la navigation.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
+
 
 ## Version 0.8 {#version-08}
 
@@ -720,10 +778,11 @@ Date de publication : 07/2012
 
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
+
 ## Version 0.7 {#version-07}
 
-Date de publication 04/2012:
-
+Date de publication 04/2012 :
+  
 - Édition de POI hors ligne
 - Option de suivi en ligne - envoyer périodiquement les coordonnées à un service web
 - Afficher la piste en cours d'enregistrement sur la carte
@@ -733,11 +792,12 @@ Date de publication 04/2012:
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
+
 ## Version 0.6 {#version-06}
 
-Date de publication 09/2011:
+Date de publication 09/2011 :
 
-- Implémentation de la recherche de POI par nom dans de grandes zones (pays)
+- Implémentation de la recherche de POI par nom dans de grandes zones (pays)  
 - Gestionnaire de données hors ligne (télécharger, supprimer, activer/désactiver les données hors ligne directement dans OsmAnd)
 - Points et groupes favoris (catégoriser, supprimer, gérer les favoris)
 - Informations d'altitude

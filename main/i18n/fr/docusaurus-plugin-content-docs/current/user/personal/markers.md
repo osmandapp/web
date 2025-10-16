@@ -3,6 +3,7 @@ source-hash: 4a76625c2bb84dea3475d937395b2dcabeed514e2bbf68736a1f6e8649b066f9
 sidebar_position: 8
 title:  Marqueurs
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Aperçu {#overview}
 
@@ -43,17 +43,17 @@ Les marqueurs sont des points spéciaux marqués sur la carte sous forme de drap
 
 <TabItem value="android" label="Android">
 
-Appuyez brièvement ou longuement sur la carte et sélectionnez l'action requise dans le [menu contextuel de la carte](../map/map-context-menu.md#add--edit-marker).
+Appuyez brièvement ou longuement sur la carte et sélectionnez l'action requise dans le [menu contextuel de la carte](../map/map-context-menu.md#add--edit-marker).  
 
 ![Action Ajouter Modifier marqueur Android](@site/static/img/map/add_marker_android.png) ![Action Marquer comme passé Android](@site/static/img/map/action_pass_marker_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Appuyez brièvement ou longuement sur la carte et choisissez l'action nécessaire dans le [menu contextuel de la carte](../map/map-context-menu.md#add--edit-marker).
+Appuyez brièvement ou longuement sur la carte et choisissez l'action nécessaire dans le [menu contextuel de la carte](../map/map-context-menu.md#add--edit-marker).  
 
-![Action Ajouter Modifier marqueur iOS](@site/static/img/map/add_marker_ios.png) ![Action Restaurer marqueur Android](@site/static/img/map/action_restore_marker_android.png)
+![Action Ajouter Modifier marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer marqueur Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Il est possible de marquer un point ou un objet pour faciliter la planification 
 - **<Translate android="true" ids="shared_string_marker"/>** / **<Translate android="true" ids="edit_map_marker"/>**. Place un nouveau marqueur sur le point sélectionné.
 - **Marquer comme passé** (*Android*) / Rejeter (iOS). Désactive le marqueur et le place dans l'Historique.
 - **Rendre actif** (*Android*). Déplace le marqueur en première position (dans le panneau supérieur).
-- **Restaurer le marqueur** (*Android*). Déplace le marqueur de l'Historique vers la liste active.
+- **Restaurer le marqueur** (*Android*). Déplace le marqueur de l'Historique vers la liste active.  
 
 :::note
 Vous ne pouvez pas supprimer un marqueur immédiatement. Vous devez d'abord le désactiver (le marquer comme passé), il est alors déplacé vers l'[Historique](#history) et vous pouvez ensuite le supprimer définitivement de l'historique. Une fois le marqueur désactivé, il sera retiré de la carte et de la liste d'itinéraire.
@@ -126,32 +126,32 @@ L'historique est une liste de tous les marqueurs désactivés (passés). À part
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
-![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-01.png) ![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-02.png)
+![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-01.png)   ![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>*
 
-![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png) ![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Apparence des marqueurs de carte iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 
 </TabItem>
 
 </Tabs>
 
 Le menu *Apparence sur la carte* est un paramètre général pour l'affichage des marqueurs et des pointeurs supplémentaires vers eux.
-Dans la version iOS d'OsmAnd, *Apparence sur la carte* est également un paramètre pour l'affichage des widgets. Il existe également des paramètres supplémentaires pour [configurer les widgets avec des marqueurs](../widgets/markers.md#configure-marker-widgets).
+Dans la version iOS d'OsmAnd, *Apparence sur la carte* est également un paramètre pour l'affichage des widgets. Il existe également des paramètres supplémentaires pour [configurer les widgets avec des marqueurs](../widgets/markers.md#configure-marker-widgets].  
 
-- **Marqueurs actifs**. Affiche des informations sur le premier ou les deux premiers marqueurs de la liste des marqueurs de carte.
-- **Indication de distance** *(pour iOS)*. Permet de choisir d'afficher ou non les widgets et comment ils apparaîtront : au-dessus de la carte (Barre supérieure) ou sur le côté droit de l'écran (Widgets).
-- **Flèches sur la carte**. Indique la direction vers le marqueur suivi (un ou deux) sous la forme d'une flèche sur la carte. Si le marqueur se trouve dans la partie visible de la carte, aucune flèche n'est affichée.
-- **Ligne de direction**. Affiche la direction, sous forme de ligne pointillée, d'un point particulier de la carte au marqueur suivi en ligne droite.
-- ***Un seul appui*** actif (*pour Android*). D'un simple appui sur le marqueur requis sur la carte, ce marqueur se déplace en haut de la liste des marqueurs de carte actifs sans ouvrir le menu contextuel.
+- **Marqueurs actifs**. Affiche des informations sur le premier ou les deux premiers marqueurs de la liste des marqueurs de carte.  
+- **Indication de distance** *(pour iOS)*. Permet de choisir d'afficher ou non les widgets et comment ils apparaîtront : au-dessus de la carte (Barre supérieure) ou sur le côté droit de l'écran (Widgets).  
+- **Flèches sur la carte**. Indique la direction vers le marqueur suivi (un ou deux) sous la forme d'une flèche sur la carte. Si le marqueur se trouve dans la partie visible de la carte, aucune flèche n'est affichée.  
+- **Ligne de direction**. Affiche la direction, sous forme de ligne pointillée, d'un point particulier de la carte au marqueur suivi en ligne droite.  
+- ***Un seul appui*** actif (*pour Android*). D'un simple appui sur le marqueur requis sur la carte, ce marqueur se déplace en haut de la liste des marqueurs de carte actifs sans ouvrir le menu contextuel.  
 - **Conserver les marqueurs passés sur la carte** *(pour Android)*. Les marqueurs ajoutés en tant que groupe de favoris ou de points de cheminement GPX marqués comme Passés resteront sur la carte. Si le groupe n'est pas actif, les marqueurs disparaîtront de la carte.
 
 
@@ -173,7 +173,7 @@ En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la list
 ![Plus de marqueurs de carte Android](@site/static/img/personal/markers/map_markers_more_android.png)
 
 - **<Translate android="true" ids="sort_by"/>**. Les marqueurs peuvent être triés dans la liste par nom, proximité, heure d'ajout.
-- **<Translate android="true" ids="appearance_on_the_map"/>** ou **<Translate ios="true" ids="shared_string_appearance"/>**. [Paramètres pour les marqueurs de carte](#appearance-on-the-map).
+- **<Translate android="true" ids="appearance_on_the_map"/>**  ou **<Translate ios="true" ids="shared_string_appearance"/>**. [Paramètres pour les marqueurs de carte](#appearance-on-the-map).
 - **<Translate android="true" ids="coordinate_input"/>**. Ajoute des marqueurs par [saisie de coordonnées](../plan-route/coordinate-input.md).
 - **<Translate android="true" ids="plan_route"/>**. Construit un itinéraire [pour la navigation](../navigation/setup/markers-navigation.md) en utilisant les marqueurs choisis.
 - **<Translate android="true" ids="marker_save_as_track"/>**. Enregistre les marqueurs actifs dans un fichier GPX.

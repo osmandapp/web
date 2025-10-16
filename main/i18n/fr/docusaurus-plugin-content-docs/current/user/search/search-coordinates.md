@@ -3,6 +3,7 @@ source-hash: f338192d8b8c1dbdc1b08667fb4caff3b45c57bc128f5f53a297f3ace1a6b7fa
 sidebar_position: 6
 title:  Recherche par coordonnées
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -20,7 +21,8 @@ OsmAnd offre plusieurs moyens d'accéder à l'*Outil de recherche → [Onglet Re
 
 - Le [bouton Recherche](../widgets/map-buttons.md#search) sur l'écran de l'application cartographique.
 - Allez au *Menu* principal d'Android → *Recherche* → Onglet *Adresse* → *Recherche par coordonnées*.
-- Lors de la préparation d'un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche → Onglet Adresse → Recherche par coordonnées*.
+- Lors de la préparation d'un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche → Onglet Adresse → Recherche par coordonnées*.  
+
 
 ## Comment utiliser {#how-to-use}
 
@@ -47,11 +49,13 @@ Les coordonnées peuvent être saisies dans n'importe quel format disponible, ma
 - Appuyez sur l'emplacement suggéré et le [menu contextuel de la carte](../map/map-context-menu.md#select-any-point-long-tap) s'ouvre.
 - Plus d'informations peuvent être trouvées ici [Coordonnées géographiques](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
 
+
 **Portée de la fonction de recherche par coordonnées** :
 
 - *Emplacement précis*. La recherche par coordonnées fournit un emplacement précis. Vous pouvez entrer des coordonnées précises obtenues, par exemple, à partir d'autres sources telles qu'une carte, un appareil GPS ou des services en ligne.
 - *Lieux sans adresse*. Les coordonnées sont particulièrement utiles lorsqu'il s'agit de lieux qui n'ont pas d'adresse exacte, ou lorsque l'adresse est inconnue. Par exemple, il peut s'agir d'une zone reculée, d'un point en mer ou d'un sommet de montagne. En entrant des coordonnées, vous pouvez trouver et naviguer vers de tels emplacements sans avoir à connaître l'adresse.
 - *Partage de l'emplacement*. La recherche par coordonnées offre un moyen pratique de saisir des informations. Vous pouvez entrer les coordonnées manuellement ou les copier à partir d'autres sources. Cela peut être utile lors du partage d'emplacements avec d'autres personnes ou de l'utilisation de coordonnées obtenues précédemment.
+
 
 ## Format des coordonnées {#coordinate-format}
 
@@ -90,7 +94,7 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
     - *Règles de saisie*. Les coordonnées sont enregistrées dans un format qui utilise la zone UTM et les décalages Est et Nord.
     - *Utilisation la plus courante*. Le format UTM est souvent utilisé en arpentage, en cartographie et dans les systèmes d'information géographique pour la mesure et la navigation.
 
-5. **<Translate android="true" ids="navigate_point_format_olc"/>** ((OLC) - 9F2X4WFJ+7W (Open Location Code représente une zone de 9m x 14m))  
+5. **<Translate android="true" ids="navigate_point_format_olc"/>**  ((OLC) - 9F2X4WFJ+7W (Open Location Code représente une zone de 9m x 14m))  
 
     ![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
 
@@ -102,7 +106,7 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
         - Pour clarifier l'emplacement, des lettres et des chiffres sont complétés par d'autres caractères dans le code OLC.  
     - *Utilisation la plus courante*. L'OLC est souvent utilisé dans les zones où les adresses précises ne sont pas disponibles ou sont difficiles à déterminer, comme les zones reculées, les déserts ou les océans. Il est également largement utilisé dans les applications et services liés à la géolocalisation, à la livraison, aux services d'urgence et à d'autres domaines où une localisation précise est requise sans l'utilisation d'adresses traditionnelles.  
 
-6. **<Translate android="true" ids="navigate_point_mgrs"/>**  
+6. **<Translate android="true" ids="navigate_point_format_mgrs"/>**  
 
     ![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
 
@@ -123,7 +127,9 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
         - Le CH1903+ inclut des corrections pour tenir compte des décalages de coordonnées causés par les changements des mouvements tectoniques en Suisse.
     - *Utilisation la plus courante*. Les formats Grille suisse (CH1903) et Grille suisse (CH1903+) sont utilisés en Suisse pour les mesures géodésiques, la cartographie, les systèmes d'information géographique, ainsi que la construction et l'ingénierie. Ces formats fournissent un système de coordonnées local spécifique à la Suisse.
 
+
 > Pour chaque profil, vous pouvez définir séparément un format de coordonnées différent. Pour ce faire, allez dans *Paramètres généraux → [Format des coordonnées](../personal/profiles.md#units--formats)*.
+
 
 <!--
 
@@ -136,6 +142,7 @@ https://github.com/osmandapp/OsmAnd/issues/16114
 https://github.com/osmandapp/OsmAnd/issues/14081  
 
 -->
+
 
 ## Articles connexes {#related-articles}
 

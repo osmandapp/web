@@ -26,29 +26,29 @@ sidebar_position: 6
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  # pour intel
+  # for intel
   $ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/usr/local/bin/brew shellenv)"
 
-  # pour m1
+  # for m1
   $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
   $ brew install svn
-  $ brew install cmake # testé sur 3.25.2, 3.19, 3.11
+  $ brew install cmake # tested on 3.25.2, 3.19, 3.11
 
-  # pour intel
+  # for intel
   $ sudo gem install cocoapods
 
-  # pour m1
+  # for m1
   $ brew install cocoapods
   ```
 6. Téléchargez et installez Java jdk 17
   ```
-  # pour intel
+  # for intel
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
 
-  # pour m1
+  # for m1
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
   ```
 

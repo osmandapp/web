@@ -19,7 +19,7 @@ Si vous souhaitez utiliser OsmAnd comme bibliothèque pour votre application, vo
 * [Comment compiler OsmAndMapCreator et les outils](./how-to-compile-mapcreator-and-tools.md)
 
 ### Licence {#license}
-Vous pouvez vérifier la [licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
+Vous pourriez vouloir vérifier à nouveau la [licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
 
 ### Pour aller plus loin {#further-reading}
 - Comment personnaliser le routage

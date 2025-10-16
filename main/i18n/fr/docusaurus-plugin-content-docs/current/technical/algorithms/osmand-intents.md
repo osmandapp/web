@@ -20,7 +20,7 @@ Description de l'URL :
 - "?pin=52.491143,7.116394" - Coordonnées de l'épingle.
 - "#9/52.3924/6.3116" - Zoom et centre de la carte.
 
-![URL avec épingle](@site/static/img/technical/url_pin.png)
+![URL avec épingle](@site/static/img/technical/url_pin.png) 
 
 2. **Localisation sans épingle** : [https://osmand.net/map/#9/52.3924/6.3116](https://osmand.net/map/#9/52.3924/6.3116)
 
@@ -28,7 +28,7 @@ Description de l'URL :
 - "https://osmand.net/map" - Ressource web OsmAnd.
 - "#9/52.3924/6.3116" - Zoom et centre de la carte.
 
-![URL sans épingle](@site/static/img/technical/url_without_pin.png)
+![URL sans épingle](@site/static/img/technical/url_without_pin.png) 
 
 3. **Navigation** : [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
 
@@ -40,7 +40,7 @@ Description de l'URL :
 - "pin=52.491143,7.116394" - Coordonnées de l'épingle.
 - "#9/52.3873/5.2570" - Zoom et centre de la carte.
 
-![URL avec navigation](@site/static/img/technical/url_navigation.png)
+![URL avec navigation](@site/static/img/technical/url_navigation.png) 
 
 ### Google : {#google}
 * google.navigation:q=34.99393,-106.61568
@@ -68,7 +68,7 @@ Description de l'URL :
 * http://maps.apple.com/?daddr=Bargou,+Tunisien
 * http://maps.apple.com/?lsp=7618&q=40.738065,-73.988898&sll=40.738065,-73.988898
 * http://ge0.me/44TvlEGXf-/Kyiv
-
+  
 ### Le code et les tests sont ici : {#code-and-tests-are-here}
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/util/GeoPointParserUtil.java
 * https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/test/java/net/osmand/util/GeoPointParserUtilTest.java

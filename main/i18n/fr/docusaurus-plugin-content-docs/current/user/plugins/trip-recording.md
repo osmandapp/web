@@ -3,6 +3,7 @@ source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
 sidebar_position: 15
 title:  Enregistrement de trajet
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}

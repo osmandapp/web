@@ -2,8 +2,8 @@
 source-hash: ce62f6fd113ba54378f5dc39e541fa7e711306a641c814ab9db60c61a6c63dd1
 sidebar_position: 4
 ---
-import Translate from '@site/src/components/Translate.js';
 
+import Translate from '@site/src/components/Translate.js';
 
 # Déclenchement des invites vocales de navigation {#navigation-voice-prompt-triggering}
 
@@ -39,7 +39,7 @@ Les déclencheurs se trouvent [ici dans le code](https://github.com/osmandapp/Os
 
 Type d'invite | Temps d'avance [s] :<br/>Distance d'avance correspondante @ Vitesse par défaut [m] | Distance d'avance ajustée par la vitesse réelle ? | Réglable par le paramètre d'arrivée ? | Commentaire |
 --- | --- | --- | --- | --- |
-Tourner maintenant | **6,7 s / 3,2 s / 2 s :**<br/>Conduite : 83 m<br/>Cyclisme : 12(8) m<br/>Marche : 12(2) m | :heavy_check_mark: (Proportionnel à *vitesse réelle / Vitesse par défaut*) | :heavy_check_mark: | Temps d'avance (heuristique) = _max(8, sqrt(Vitesse par défaut * 3,6))_. La distance d'avance correspondante est arrondie à 12 m pour tenir compte de l'imprécision de la position. |
+Tourner maintenant | **6,7 s / 3,2 s / 2 s :**<br/>Conduite : 83 m<br/>Cyclisme : 12(8) m<br/>Marche : 12(2) m | :heavy_check_mark: (Proportionnel à *vitesse réelle / Vitesse par défaut*) | :heavy_check_mark: | Temps d'avance (heuristique) = _max(8, sqrt(Vitesse par défaut * 3,6))_. La distance d'avance correspondante est tronquée à 12 m pour tenir compte de l'imprécision de la position. |
 Tourner dans X m | **22 s :**<br/>Conduite : 275 m<br/>Cyclisme : 61 m<br/>Marche : 24 m | :heavy_check_mark: (Augmentation uniquement) |  | Ignoré si < 15 s avant le virage |
 Préparez-vous à tourner dans X m | **115 s :**<br/>Conduite : 1438 m<br/>Cyclisme : 319 m<br/>Marche : - |  |  | Ignoré si < 150 m avant "Tourner dans", ignoré pour _Vitesse par défaut_ < 8 km/h |
 Longue préparation pour tourner dans X m | **300 s :**<br/>Conduite : -<br/>Cyclisme : -<br/>Marche : - |  |  | Ignoré pour _Vitesse par défaut_ < 108 km/h |

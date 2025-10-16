@@ -1,8 +1,9 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Télécharger des cartes
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -102,9 +102,9 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 L'écran [Cartes et ressources](../personal/maps-resources.md) donne accès aux sections suivantes :
 
-- [Téléchargements](../personal/maps-resources.md#downloads). Offre une sélection complète de [types de cartes OsmAnd](../personal/maps-resources.md#map-types).
-- [Local](../personal/maps-resources.md#local). Affiche toutes les données cartographiques actuellement stockées sur votre appareil, y compris les ressources personnalisées et importées.
-- [Mises à jour](../personal/maps-resources.md#updates). Vous permet de rafraîchir les cartes mensuellement pour maintenir vos données à jour.
+- [Téléchargements](../personal/maps-resources.md#downloads-menu). Offre une sélection complète de [types de cartes OsmAnd](../personal/maps-resources.md#map-types).
+- [Local](../personal/maps-resources.md#local-menu). Affiche toutes les données cartographiques actuellement stockées sur votre appareil, y compris les ressources personnalisées et importées.
+- [Mises à jour](../personal/maps-resources.md#updates-menu). Vous permet de rafraîchir les cartes mensuellement pour maintenir vos données à jour.
 
 ### Téléchargement de cartes {#downloading-maps}
 
@@ -114,7 +114,7 @@ Pour télécharger un type de carte spécifique pour un pays ou une région :
 - Sélectionnez votre pays ou région préféré(e) dans la liste.
 - Sur l'écran suivant, examinez et choisissez parmi les types de cartes disponibles pour cette zone.
 
-Vous pouvez trouver des informations sur d'autres types de cartes dans la section [Téléchargements](../personal/maps-resources.md#downloads) de l'article **Cartes**.
+Vous pouvez trouver des informations sur d'autres types de cartes dans la section [Téléchargements](../personal/maps-resources.md#downloads-menu) de l'article **Cartes**.
 
 ## Options de la carte du monde {#world-map-options}
 

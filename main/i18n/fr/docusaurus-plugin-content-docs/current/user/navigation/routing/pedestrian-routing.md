@@ -3,6 +3,7 @@ source-hash: 627c2c21830d1233dba44cacd666d91b7c9653f1681b66a17ad59c7b8df6029b
 sidebar_position: 4
 title:  Itinéraire piéton
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,15 +17,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Le calcul d'itinéraire piéton désigne le processus de recherche du meilleur itinéraire pour un piéton se déplaçant d'un lieu à un autre, en tenant compte de facteurs tels que les zones piétonnes, les trottoirs, les passages pour piétons et les intersections adaptées aux piétons. Il peut également prendre en compte d'autres facteurs tels que les *escaliers*, ce qui peut être utile pour l'accessibilité en fauteuil roulant. OsmAnd utilise toujours les données d'altitude pour calculer l'heure d'arrivée estimée (temps pour parcourir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 
-Pour configurer l'*Itinéraire piéton*, allez à la section [Paramètres de l'itinéraire](../guidance/navigation-settings#route-parameters) des paramètres de Navigation.
-
+Pour configurer l'*Itinéraire piéton*, allez dans la section [Paramètres de l'itinéraire](../guidance/navigation-settings#route-parameters) des paramètres de Navigation.
+  
 ### Paramètres de l'itinéraire - Marche {#route-parameters---walking}
 
-Le calcul d'itinéraire piéton peut être utile non seulement dans les zones urbaines, où les piétons peuvent rencontrer divers obstacles pour se rendre d'un endroit à un autre. Vous pouvez également utiliser ce type d'itinéraire pour le jogging, la randonnée et la marche nordique en dehors de la ville ou en montagne. Ajustez simplement les paramètres de l'itinéraire en fonction de vos besoins.
+Le calcul d'itinéraire piéton peut être utile non seulement dans les zones urbaines, où les piétons peuvent rencontrer divers obstacles pour se rendre d'un endroit à un autre. Vous pouvez également utiliser ce type d'itinéraire pour le jogging, la randonnée et la marche nordique en dehors de la ville ou en montagne. Ajustez simplement les paramètres de l'itinéraire en fonction de vos besoins.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Paramètres itinéraire piéton Android 2](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_2.png)
 

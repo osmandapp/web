@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Navigation
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Calcul d'itinéraire {#route-calculation}
 
 ### Le calcul d'itinéraire est lent {#route-calculation-is-slow}
@@ -22,6 +22,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - Le *moteur basé sur Java* est utilisé en [Mode sans échec](../plugins/development.md#overview), mais il est environ 10 fois plus lent que le moteur natif. Il a également des limitations de mémoire strictes, ce qui peut entraîner des erreurs telles que *Not enough memory to compute*. Si vous rencontrez ce problème, allez dans *Extensions → Développement OsmAnd → Paramètres →* [*Mode sans échec*](../plugins/development.md#overview) et assurez-vous que cette option est désactivée.
 - Le *moteur natif (C++)* offre de meilleures performances, mais son efficacité dépend de la mémoire et des capacités du processeur de votre appareil. En général, le routage natif fonctionne bien pour les itinéraires de moins de 300 km, avec des temps de calcul d'itinéraire allant de 15 secondes à 4 minutes. Si le processus prend plus de 4 minutes, il est conseillé de l'arrêter, car l'application pourrait planter.
+
+
+### Itinéraires incorrects ou défectueux {#incorrect-or-broken-routes}
+
+Parfois, OsmAnd peut afficher des résultats de navigation inattendus. Au lieu de suivre le réseau routier, l'itinéraire peut apparaître comme une ligne pointillée droite vers un point non lié, ou la navigation peut échouer complètement. Cela indique généralement que le routage vers l'emplacement sélectionné n'est pas possible avec la configuration actuelle. Des problèmes similaires ont été signalés par les utilisateurs sur [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) et [plus](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Causes :**
+
+- Cartes obsolètes ou dupliquées. Des cartes avec des dates de mise à jour différentes ou des doublons peuvent rompre la connectivité (surtout à travers les régions/frontières).
+- Paramètres de profil endommagés. Des profils personnalisés/modifiés (par exemple, Vélo) peuvent causer un comportement incohérent.
+- Incompatibilité de moteur de routage : Différents moteurs (HH × Java vs HH × C++) peuvent gérer les mêmes cartes différemment.
+
+**Solutions :**
+
+1. Réinitialisez votre profil.
+- Ouvrez *Menu* → *Paramètres* → *Profil de l'application (Profil de navigation)*.
+- Sélectionnez *Réinitialiser par défaut*.
+
+2. Supprimez et réinstallez les cartes.
+- Ouvrez *Menu* → *Cartes & Ressources* → *Local* et supprimez toutes les cartes pour la(les) région(s) concernée(s).
+- Allez ensuite dans *Menu* → *Cartes & Ressources* → *Téléchargements* et téléchargez à nouveau les cartes.
+- Vérifiez optionnellement *Menu* → *Cartes & Ressources* → *Mises à jour* pour vous assurer que toutes les régions partagent la même date de mise à jour.
+
+3. Changez de moteur de routage.
+- Activez l'extension : *Menu* → *Extensions* → *Développement OsmAnd*.
+- Ouvrez ensuite *Menu* → *Paramètres* → *Profil de l'application* → *Paramètres de navigation* → *Paramètres d'itinéraire* → *Développement* → *Type de routage* et basculez *HH × C++* ↔ *HH × Java* (vous pouvez aussi essayer A* classique ou A* en deux phases).
+
+4. En dernier recours.
+- Réinstallez l'application et téléchargez à nouveau les cartes (aide en cas de conflits cachés persistants).
 
 
 ### Comment calculer des itinéraires de plus de 250 km ? {#how-to-calculate-routes-longer-than-250km}
@@ -85,7 +114,7 @@ Pour des instructions détaillées sur la configuration et le réglage des instr
 
 ### Le TTS ne fonctionne pas correctement ? Suivez ces étapes pour le réparer {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-Les problèmes avec la **synthèse vocale (TTS)** sont généralement liés aux **paramètres du système Android**, et non à l'application OsmAnd elle-même.
+Les problèmes avec la **synthèse vocale (TTS)** sont généralement liés aux **paramètres du système Android**, et non à l'application OsmAnd elle-même.  
 
 1. Assurez-vous qu'un moteur TTS est installé.
 
@@ -108,17 +137,17 @@ Les problèmes avec la **synthèse vocale (TTS)** sont généralement liés aux 
 
 #### Étapes supplémentaires {#additional-steps}
 
-- *Mettre à jour Google TTS*. Ouvrez le Google Play Store, recherchez **Synthèse vocale Google** et mettez-la à jour.
-- *Simuler la navigation*. Appuyez sur *Bouton de navigation → Paramètres → Simuler la navigation* pour vérifier si le guidage vocal fonctionne.
+- *Mettre à jour Google TTS*. Ouvrez le Google Play Store, recherchez **Synthèse vocale Google**, et mettez-la à jour.  
+- *Simuler la navigation*. Appuyez sur *Bouton de navigation → Paramètres → Simuler la navigation* pour vérifier si le guidage vocal fonctionne.  
 - *Réinstaller OsmAnd* :
-   - **Sauvegardez les paramètres :** *Menu → Paramètres → Exporter vers un fichier*.
-   - Désinstallez OsmAnd, puis réinstallez-le depuis la boutique d'applications.
+   - **Sauvegardez les paramètres :** *Menu → Paramètres → Exporter vers un fichier*.  
+   - Désinstallez OsmAnd, puis réinstallez-le depuis la boutique d'applications.  
    - Restaurez les paramètres : *Menu → Paramètres → Importer un fichier*.
 
 Pour un dépannage supplémentaire, visitez :
 
-- [Guide du guidage vocal](../navigation/guidance/voice-navigation.md)
-- [Importer/Exporter les paramètres](../personal/import-export.md)
+- [Guide du guidage vocal](../navigation/guidance/voice-navigation.md)  
+- [Importer/Exporter les paramètres](../personal/import-export.md)  
 
 
 ## Autre {#other}

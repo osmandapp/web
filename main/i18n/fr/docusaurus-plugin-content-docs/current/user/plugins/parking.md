@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Position de stationnement
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Aperçu {#overview}
@@ -54,7 +54,7 @@ Pour utiliser une place de stationnement sur la carte, vous devez effectuer les 
 
 ## Place de stationnement sur la carte {#parking-spot-on-the-map}
 
-Lorsque vous marquez une place de stationnement, OsmAnd enregistre ses coordonnées géographiques ainsi qu'un horodatage. Si nécessaire, une limite de temps et un rappel de calendrier peuvent également être ajoutés.
+Lorsque vous marquez une place de stationnement, OsmAnd enregistre ses coordonnées géographiques ainsi qu'un horodatage. Si nécessaire, une limite de temps et un rappel de calendrier peuvent également être ajoutés. Les places de stationnement sont enregistrées en tant que **points favoris**. Pour vous assurer que le marqueur de stationnement est visible sur la carte, les [Favoris](../personal/favorites.md) doivent être activés.
 
 
 ### Définir une place {#set-a-spot}

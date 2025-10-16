@@ -3,6 +3,7 @@ source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
 sidebar_position: 3
 title: Style de carte nautique
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # Style de carte nautique {#nautical-map-style}

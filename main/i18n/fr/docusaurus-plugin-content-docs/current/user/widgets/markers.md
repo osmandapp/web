@@ -3,6 +3,7 @@ source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
 sidebar_position: 6
 title:  Widgets de marqueur
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Aperçu {#overview}
 
@@ -122,12 +122,12 @@ Vous pouvez lire des informations générales sur les paramètres du widget Marq
 ### Barre des marqueurs de carte {#map-markers-bar}
 Le widget de la barre supérieure affiche la distance et la direction jusqu'au prochain marqueur de carte depuis votre position actuelle. Dans les paramètres, vous pouvez choisir si un ou deux marqueurs seront affichés en haut de l'écran.
 
-![apparence_sur_la_carte](@site/static/img/widgets/configure-marker-wid-02.png)  
+![Apparence sur la carte](@site/static/img/widgets/configure-marker-wid-02.png)  
 
 ### Marqueurs de carte {#map-markers} 
 Le widget affiche la distance ou l'heure d'arrivée estimée (HAE) pour le premier ou le deuxième marqueur de la liste des marqueurs de carte. Vous pouvez choisir : un marqueur, le premier ou le deuxième, à afficher à l'écran, ou les deux.
 
-![apparence_sur_la_carte](@site/static/img/widgets/configure-marker-wid-01.png)  ![apparence_sur_la_carte](@site/static/img/widgets/settings-marker-wid-first-01.png)  
+![Apparence sur la carte](@site/static/img/widgets/configure-marker-wid-01.png)  ![Apparence sur la carte](@site/static/img/widgets/settings-marker-wid-first-01.png)  
 
 |    |     |  
 | :------------- | :------------- |
@@ -146,7 +146,7 @@ La configuration de l'apparence des marqueurs de carte est disponible dans les v
 
 Aller à : *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>*
 
-![apparence_sur_la_carte](@site/static/img/widgets/appearence_on_the_map-02.png)  
+![Apparence sur la carte](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
 |    |    |
 | :------------- | :------------- |
@@ -182,5 +182,5 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,map_markers,shared_str
 - [Boutons de la carte](./map-buttons.md)
 - [Widgets d'information](./info-widgets.md)
 - [Widgets de navigation](./nav-widgets.md)
-- [Règle et règle-rayon](./radius-ruler.md)
+- [Règle-rayon et Règle](./radius-ruler.md)
 - [Action rapide](./quick-action.md)

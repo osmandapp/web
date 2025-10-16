@@ -3,6 +3,7 @@ source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
 title:  Traces
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte. Les itinéraires peuvent être construits dans le cadre de la Navigation, créés via Planifier un itinéraire, importés en tant que traces GPX, enregistrés via l'extension Enregistrement de trajet, ou parcourus et sélectionnés à partir des données OpenStreetMap.
 
@@ -24,11 +24,11 @@ OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher divers it
 
 [Traces (GPX)](#display-tracks-on-the-map) - trajet enregistré ou planifié sauvegardé au [format GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Ce type d'itinéraire peut être importé d'une source externe, créé dans l'application, ou enregistré par vous. Un GPX peut contenir un des 3 types de données différents, ou tous :
 
-- Trace sous forme de ligne (***Géométrie***). Le fichier contient un tableau de points ```<trkpt>```, chaque point ayant l'emplacement et éventuellement l'heure, la vitesse, l'altitude et d'autres attributs. Ces traces sont affichées sur la carte sous forme de lignes pleines.
-- Trace sous forme d'itinéraire (***Itinéraire***). Le fichier contient un tableau de points ```<rtept>```, chaque point étant décrit comme un point intermédiaire de l'itinéraire. La manière dont les points d'un itinéraire doivent être connectés dépend de s'ils doivent l'être par de petits segments d'itinéraire ou par une ligne droite. Ces traces sont affichées sur la carte sous forme de lignes pointillées.
+- Trace sous forme de ligne (***Geometry***). Le fichier contient un tableau de points ```<trkpt>```, chaque point ayant l'emplacement et éventuellement l'heure, la vitesse, l'altitude et d'autres attributs. Ces traces sont affichées sur la carte sous forme de lignes pleines.
+- Trace sous forme d'itinéraire (***Route***). Le fichier contient un tableau de points ```<rtept>```, chaque point étant décrit comme un point intermédiaire de l'itinéraire. La manière dont les points d'un itinéraire doivent être connectés dépend de s'ils doivent l'être par de petits segments d'itinéraire ou par une ligne droite. Ces traces sont affichées sur la carte sous forme de lignes pointillées.
 - Points de cheminement (***Points***). Le fichier contient des points ```<wpt>``` avec des attributs. Les points de cheminement sont affichés comme des points circulaires sur la carte. Vous pouvez les toucher pour obtenir des informations supplémentaires.
 
-OsmAnd peut créer des traces avec 1 à 3 combinaisons. [Planifier un itinéraire](../../plan-route/create-route.md) crée une trace avec ***Géométrie*** et ***Itinéraire*** ; si vous l'enregistrez en tant que ***Trace simplifiée***, seule la ***Géométrie*** sera conservée. [L'enregistrement de trace](../../plugins/trip-recording.md#new-track-recording) ne crée que la ***Géométrie***, mais vous pouvez également y ajouter des ***Points*** via le menu contextuel.
+OsmAnd peut créer des traces avec 1–3 combinaisons. [Planifier un itinéraire](../../plan-route/create-route.md) crée une trace avec ***Geometry*** et ***Route*** ; si vous l'enregistrez en tant que ***Trace simplifiée***, seule la ***Geometry*** sera conservée. [L'enregistrement de trace](../../plugins/trip-recording.md#new-track-recording) ne crée que la ***Geometry***, mais vous pouvez également y ajouter des ***Points*** via le menu contextuel.
 
 
 ## Afficher les traces sur la carte {#display-tracks-on-the-map}
@@ -159,9 +159,9 @@ Cet outil fournit une analyse détaillée des données de la [trace](../../map/t
 Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position.
 
 - L'**échelle du graphique** reste la même, et les **informations de la barre** sont fixées à 1/4 du côté gauche.
-- Au fur et à mesure que vous vous déplacez, le **graphique glissera** de gauche à droite, affichant les informations en amont de votre trace.
+- Au fur et à mesure que vous vous déplacez, le **graphique glissera** de gauche à droite, affichant les informations en avant de votre trace.
 - Aucun autre widget n'est affiché sur cet écran.
-- Cette fonctionnalité est utile pour la randonnée et le cyclisme lorsque vous suivez la trace.  
+- Cette fonctionnalité est utile pour la randonnée et le cyclisme lorsque vous naviguez sur la trace.  
 
 
 ## Articles connexes {#related-articles}

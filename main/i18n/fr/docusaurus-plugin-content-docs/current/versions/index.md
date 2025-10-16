@@ -14,7 +14,7 @@ Chaque jour, OsmAnd publie plusieurs versions prêtes à l'emploi, vous permetta
 
 ### [OsmAnd MapCreator](/docs/versions/map-creator) {#osmand-mapcreator}
 
-OsmAnd Map Creator est utilisé pour créer vous-même toutes les cartes prises en charge par OsmAnd.
+OsmAnd Map Creator est utilisé pour créer vous-même toutes les cartes prises en charge par OsmAnd.  
 
 ### [Prochaine version Android](/docs/versions/future-android) {#next-android-release}
 

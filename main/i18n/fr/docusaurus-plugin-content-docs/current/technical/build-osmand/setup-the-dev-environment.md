@@ -16,7 +16,7 @@ repo init -u https://github.com/osmandapp/OsmAnd-manifest -m readonly.xml
 repo sync
 ```
 
-Vous pouvez également utiliser simplement git et extraire les dépôts git suivants dans les noms de dossiers corrects :
+Vous pouvez également utiliser simplement git et cloner les dépôts git suivants dans les dossiers corrects :
 * Dossier **android** - **[Osmand](https://github.com/osmandapp/Osmand.git)**
     * ```git clone https://github.com/osmandapp/Osmand.git android```
 * Dossier **ios** - **[OsmAnd-ios](https://github.com/osmandapp/OsmAnd-ios.git)**
@@ -39,4 +39,4 @@ Vous pouvez également utiliser simplement git et extraire les dépôts git suiv
     * ```git clone https://github.com/osmandapp/OsmAnd-misc.git misc```
 
 
-Vous n'aurez peut-être pas besoin de tous les dépôts pour faire fonctionner les outils / Android ou iOS. Vous pouvez toujours vérifier les branches correspondantes dans [repo-configurations](https://github.com/osmandapp/OsmAnd-manifest).
+Vous n'aurez peut-être pas besoin de tous les dépôts pour faire fonctionner les outils / android ou ios. Vous pouvez toujours vérifier les branches correspondantes dans [repo-configurations](https://github.com/osmandapp/OsmAnd-manifest).

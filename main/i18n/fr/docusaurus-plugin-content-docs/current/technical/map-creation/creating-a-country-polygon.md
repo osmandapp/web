@@ -5,7 +5,7 @@ versions: '*'
 ---
 **_Cet article doit être révisé_**
 
-Cet article décrit comment créer un poly(gone) pour un pays manquant dans geofabrik.de et comment ajouter ce polygone au serveur de génération de cartes d'OsmAnd.
+Cet article décrit comment créer un poly(gone) pour un pays manquant dans geofabrik.de et comment ajouter ce poly au serveur de génération de cartes d'OsmAnd.
 
 ## Introduction {#introduction}
 
@@ -17,7 +17,7 @@ Geofabrik.de a pour stratégie de fournir des cartes pour les pays qui sont dema
 En raison de cette décision stratégique de geofabrik, OsmAnd a une option pour générer des cartes pour ces pays et les outils [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) et [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) sont utilisés à cette fin. Pour OsmAndMapCreator, il s'agit d'un processus en trois étapes :
 - OsmAndMapCreator a besoin d'un polygone qui entoure la frontière extérieure du pays.
 - OsmAndMapCreator a besoin de la *"carte de données brutes"* du niveau supérieur suivant incorporant ce pays. Pour le Burundi, cela signifie qu'OsmAndMapCreator a besoin de la carte de l'Afrique. Pour la Rhénanie-du-Nord-Westphalie, cela signifie qu'OsmAndMapCreator a besoin de la carte de l'Allemagne.
-- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) créera une carte de *"données brutes"* à partir du polygone en extrayant les données de la carte de la carte *"parente"*.
+- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) créera une carte de *"données brutes"* à partir du poly en extrayant les données de la carte de la carte *"parente"*.
 - OsmAndMapCreator créera une carte OsmAnd obf basée sur la carte de *"données brutes"* intermédiaire générée par osmconvert.
 
 ## Actions nécessaires {#necessary-actions}
@@ -32,11 +32,11 @@ Selon la complexité du polygone (généré), cette chaîne complète d'actions 
 ### 2. Générer le polygone {#2-generate-the-polygon}
 - Allez sur [polygons.openstreetmap.fr](http://polygons.openstreetmap.fr/)
 - Remplissez (ou collez) le numéro d'identification de la "OSM: relation " que vous avez récupéré de Nominatim pour le pays souhaité dans le champ "Id of relation".
-- Cela créera un polygone par défaut, composé de 250 à 3500 nœuds (NPoints). Le polygone lui-même se trouve dans la colonne "poly".
+- Cela créera un polygone par défaut, composé de 250 à 3500 nœuds (NPoints). Le poly lui-même se trouve dans la colonne "poly".
 - En cas de plus de 350 nœuds, vous devrez simplifier le polygone. Plus le polygone est simple, plus la carte du pays peut être créée rapidement (bien sûr, cela dépend du contenu).
 
 ### 3. Simplifier le polygone {#3-simplify-the-polygon}
-Le nombre de points de nœud (NPoints) doit être aussi bas que possible pour une création de carte la plus rapide possible par OsmAndMapCreator. Comme mentionné : En cas de plus de 350 points de nœud, essayez de les réduire en "jouant" avec la variable X (selon mon expérience, les autres n'ont pas vraiment d'importance).
+Le nombre de points de nœud (NPoints) doit être aussi bas que possible pour une création de carte la plus rapide possible par OsmAndMapCreator. Comme mentionné : En cas de plus de 350 points de nœud, essayez de les réduire en simplifiant le polygone.
 - En cas de plus de 350 nœuds, essayez de les réduire en "jouant" avec la variable X (selon mon expérience, les autres n'ont pas vraiment d'importance).
 - Parfois, vous obtenez d'excellents résultats (90 NPoints, 200 NPoints, 270 NPoints) et vous avez terminé cette étape. Parfois, vous ne pouvez tout simplement pas descendre en dessous de 450 NPoints environ. Dans ce cas, vous devez appliquer d'autres étapes manuelles.
 - Enregistrez votre polygone final dans un fichier. Utilisez le nom par défaut correct, comme france.poly. Respectez les caractères minuscules.
@@ -44,7 +44,7 @@ Le nombre de points de nœud (NPoints) doit être aussi bas que possible pour un
 ### 4. Modification et simplification supplémentaires du polygone {#4-further-modification-and-simplification-of-the-polygon}
 - Ouvrez JOSM (téléchargez si nécessaire) et ouvrez le fichier polygone que vous avez créé (avez-vous fait une copie/sauvegarde du polygone original que vous avez enregistré ?).
 - Ajoutez un arrière-plan à partir du menu "Images" et sélectionnez l'arrière-plan par défaut "OpenStreetMap (Mapnik)".
-- Supprimez manuellement les points de nœud si possible. \*Note :\* Gardez le polygone aussi près que possible de la frontière. Vous avez besoin d'un certain chevauchement, mais essayez de le maintenir en dessous de 2 à 5 kilomètres. Le chevauchement dans les pays sera généré deux fois pour chaque pays. Moins de chevauchement signifie moins de temps de rendu et moins d'erreurs de rendu. Sur les côtes et autour des îles, essayez de garder plus de distance (20 kilomètres). C'est largement accepté et la mer est de toute façon "vide".
+- Supprimez manuellement les points de nœud si possible. \*Note:\* Gardez le polygone aussi près que possible de la frontière. Vous avez besoin d'un certain chevauchement, mais essayez de le maintenir en dessous de 2 à 5 kilomètres. Le chevauchement dans les pays sera généré deux fois pour chaque pays. Moins de chevauchement signifie moins de temps de rendu et moins d'erreurs de rendu. Sur les côtes et autour des îles, essayez de garder plus de distance (20 kilomètres). C'est largement accepté et la mer est de toute façon "vide".
 - Lorsque vous avez fait de votre mieux, vous pouvez enregistrer le polygone mis à jour et corrigé. Comme dit : essayez d'obtenir le moins de points de nœud possible, mais parfois une frontière de pays est si compliquée que vous avez simplement besoin de plus de points de nœud pour la décrire et pour garder le polygone aussi près que possible de la frontière : qu'il en soit ainsi.
 - **Ne téléchargez pas le polygone sur OSM**. JOSM vous demandera de télécharger votre travail sur OpenStreetMap. Ne le faites pas pour ces polygones, sauf si vous savez exactement ce que vous faites. Presque tous les pays du monde sont déjà parfaitement couverts dans OpenStreetMap (sinon nominatim ne pourrait pas vous donner les détails sur le pays, et polygons.openstreetmap.fr ne pourrait pas générer le polygone basé sur l'identifiant de relation OSM).
 
@@ -72,17 +72,17 @@ Ajouter la création de carte à la liste de lots
 - Ajoutez votre pays à l'emplacement pertinent et enregistrez le fichier.
 - Créez une demande de tirage (pull request).
 
-## Créer vos propres cartes personnelles à partir d'un polygone {#creating-your-own-personal-maps-from-a-poly}
+## Créer vos propres cartes personnelles à partir d'un poly {#creating-your-own-personal-maps-from-a-poly}
 
 Vous pouvez créer par exemple des polygones à partir de pays, de comtés/provinces/états, de régions et de villes.
 
-Supposons que votre fille aille à Paris pour quelques jours avec une amie. Elle n'est pas intéressée par la navigation, la marche ou le vélo (sauf si absolument nécessaire), mais elle veut savoir où elle se trouve, où aller et où trouver les lieux intéressants (POIs). De plus, elle a un petit téléphone (CPU bas de gamme, peu de mémoire) et une petite carte SD (remplie de musique). La carte doit donc être aussi petite que possible : à la fois pour le stockage et pour les performances. Vous pouvez bien sûr télécharger la carte de france\_ile-de-france.obf contenant Paris, mais vous pouvez également générer une carte de Paris "sur mesure".
+Supposons que votre fille aille à Paris pour quelques jours avec une amie. Elle n'est pas intéressée par la navigation, la marche ou le vélo (sauf si absolument nécessaire), mais elle veut savoir où elle se trouve, où aller et où trouver les lieux intéressants (POIs). De plus, elle a un petit téléphone (CPU bas de gamme, peu de mémoire) et une petite carte SD (remplie de musique). La carte doit donc être aussi petite que possible : à la fois pour le stockage et pour les performances. Vous pouvez bien sûr télécharger la carte de france_ile-de-france.obf contenant Paris, mais vous pouvez également générer une carte de Paris "sur mesure".
 - Laissez votre fille télécharger OsmAnd, ou mieux encore : laissez-la acheter OsmAnd+
 - Obtenez l'identifiant de relation OSM pour Paris auprès de Nominatim.
-- Obtenez le polygone (simplifié) pour l'identifiant de Paris à partir de polygons.openstreetmap.fr
+- Obtenez le poly (simplifié) pour l'identifiant de Paris à partir de polygons.openstreetmap.fr
 - téléchargez ou compilez [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert)
 - téléchargez la carte de "données brutes" d'Île-de-France depuis geofabrik.de
-- créez une carte de données brutes de Paris à partir de la carte d'Île-de-France et du polygone de Paris comme suit :
+- créez une carte de données brutes de Paris à partir de la carte d'Île-de-France et du poly de Paris comme suit :
 <pre>
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
