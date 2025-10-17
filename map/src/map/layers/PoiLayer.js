@@ -215,7 +215,6 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
-                        console.log('POI Layer created from URL:', poiLayer);
                         // remove old poi marker
                         if (ctx.poiByUrl.layer) {
                             map.removeLayer(ctx.poiByUrl.layer);
