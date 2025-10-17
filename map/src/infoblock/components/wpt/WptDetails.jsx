@@ -414,7 +414,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     useEffect(() => {
-        if (!wpt || isAddressAdded) return;
+        if (!wpt || wpt.address || isAddressAdded) return;
 
         setIsAddressAdded(true);
         getPoiAddress(wpt).then((addressData) => {
