@@ -141,7 +141,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Sets and locks the screen position in the OsmAnd application. This feature is not supported on iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait"/> (inverted)*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape"/> (inverted)*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android only*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
@@ -153,13 +155,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 <TabItem value="android" label="Android">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -213,6 +215,8 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
+|  |  |  |
+| **Units of altitude** | <ul><li>Meters</li><li>Feet</li></ul> | 1 m / 3.28 ft |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
