@@ -215,6 +215,7 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
+                        console.log('POI Layer created from URL:', poiLayer);
                         // remove old poi marker
                         if (ctx.poiByUrl.layer) {
                             map.removeLayer(ctx.poiByUrl.layer);
@@ -265,6 +266,7 @@ export default function PoiLayer() {
         });
         if (response?.data) {
             const data = response.data;
+
             data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
                 iconKeyName: data.properties[ICON_KEY_NAME],
                 typeOsmTag: data.properties[TYPE_OSM_TAG],
@@ -272,19 +274,10 @@ export default function PoiLayer() {
                 iconName: data.properties[POI_ICON_NAME],
             });
 
-            const poi = {
-                options: { ...data.properties },
-                latlng: {
-                    lat: data.geometry.coordinates[1],
-                    lng: data.geometry.coordinates[0],
-                },
-                mapObj: true,
-            };
-
             if (wikidataId) {
                 // open wiki poi
                 const key = data.properties?.osmid ?? data.geometry.coordinates[1] + data.geometry.coordinates[0];
-                const wiki = response?.data ?? null;
+                const wiki = data ?? null;
                 const poiTags = wiki?.properties.poiTags;
                 const poi = poiTags
                     ? {
@@ -303,6 +296,16 @@ export default function PoiLayer() {
             } else {
                 // open normal poi
                 ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+
+                const poi = {
+                    options: { ...data.properties },
+                    latlng: {
+                        lat: data.geometry.coordinates[1],
+                        lng: data.geometry.coordinates[0],
+                    },
+                    mapObj: true,
+                };
+
                 ctx.setSelectedWpt({ poi });
                 recentSaver(POI_OBJECTS_KEY, poi);
             }
