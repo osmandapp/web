@@ -53,8 +53,8 @@ Be cautious when sending logcat logs, as they may contain private information su
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
-    - Go to iOS *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file* (up to iOS 17).
-    - iOS *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file* (starting from iOS 18).
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
     - Then, using your email app, we recommend sending the logs to `crash@osmand.net`.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
