@@ -30,6 +30,26 @@ export function getPhotoUrl({ photo = null, photoTitle = null, size = 320 }) {
     }
 }
 
+export function filterPhotos(photos) {
+    return photos?.features
+        ?.filter((photo) => {
+            if (otherImgTags(photo?.properties?.osmTag)) {
+                return true;
+            }
+            const title = getPhotoTitle(photo);
+            return hasExtension(title);
+        })
+        .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
+        .reduce((acc, photo) => {
+            const uniqueKey = photo.properties.mediaId || photo.properties.imageTitle;
+            if (!acc.find((item) => (item.properties.mediaId || item.properties.imageTitle) === uniqueKey)) {
+                photo.properties.imageTitle = photo.properties.imageTitle.replaceAll(' ', '_');
+                acc.push(photo);
+            }
+            return acc;
+        }, []);
+}
+
 export function hasExtension(imgName) {
     const imageExtensions = ['.jpeg', '.jpg', '.png', '.gif'];
     const extension = imgName.slice(imgName.lastIndexOf('.')).toLowerCase();
@@ -46,7 +66,7 @@ export default function PhotoGallery({ photos }) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState({});
 
-    const filteredPhotos = filterPhotos(photos).slice(0, MAX_PHOTOS);
+    const filteredPhotos = filterPhotos(photos)?.slice(0, MAX_PHOTOS);
 
     const handleImageLoad = () => {
         setLoading(false);
@@ -63,29 +83,9 @@ export default function PhotoGallery({ photos }) {
         ctx.setPhotoGallery(filteredPhotos);
     };
 
-    function filterPhotos(photos) {
-        return photos.features
-            .filter((photo) => {
-                if (otherImgTags(photo?.properties?.osmTag)) {
-                    return true;
-                }
-                const title = getPhotoTitle(photo);
-                return hasExtension(title);
-            })
-            .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
-            .reduce((acc, photo) => {
-                const uniqueKey = photo.properties.mediaId || photo.properties.imageTitle;
-                if (!acc.find((item) => (item.properties.mediaId || item.properties.imageTitle) === uniqueKey)) {
-                    photo.properties.imageTitle = photo.properties.imageTitle.replaceAll(' ', '_');
-                    acc.push(photo);
-                }
-                return acc;
-            }, []);
-    }
-
     return (
         <>
-            {filteredPhotos.length > 0 && (
+            {filteredPhotos?.length > 0 && (
                 <Box id={'se-wpt-photos'} sx={{ width: '100%' }}>
                     <MenuItem className={styles.photoTitle}>
                         <ListItemText>
@@ -107,7 +107,7 @@ export default function PhotoGallery({ photos }) {
                                 );
                             } else {
                                 return (
-                                    <Grid item xs={12} sm={6} key={index}>
+                                    <Grid item xs={12} sm={6} key={index + photo.properties.mediaId}>
                                         {!error[index] && (
                                             <img
                                                 id={`se-photo-${photo.properties.mediaId}`}
