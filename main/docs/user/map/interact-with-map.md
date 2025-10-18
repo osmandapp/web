@@ -32,7 +32,7 @@ Gestures are essential for navigating the map easily and intuitively.
 | **Rotate**  | Tap the map with **two** fingers, then rotate your fingers in a circular motion. |
 | **Tilt (3D)** | Tap with **two** fingers and move them up or down. <br/> Available only with [Map Rendering Engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL). |
 
-Slide animations can be disabled in the settings with a [special option](#no-animations).
+Slide animations can be disabled in the settings with a [special option](#remove-animations).
 
 
 ## My Location and Zoom {#my-location-and-zoom}
@@ -197,7 +197,7 @@ Clear on-screen messages will guide you when locking or unlocking the screen.
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### No Animations {#no-animations}
+### Remove Animations {#remove-animations}
 
 <InfoAndroidOnly/>  
 
