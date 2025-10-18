@@ -2699,7 +2699,7 @@
   "move_all_to_history": "Move all to history",
   "show_direction": "Distance indication",
   "sort_by": "Sort by",
-  "do_not_use_animations": "No animations",
+  "do_not_use_animations": "Remove animations",
   "do_not_use_animations_descr": "Turns off map animations.",
   "keep_showing_on_map": "Keep showing on map",
   "exit_without_saving": "Exit without saving?",

@@ -207,7 +207,7 @@ async function getWptTags(obj, type, ctx) {
         typeTag = tags[AMENITY_PREFIX + TYPE] ?? tags[TYPE];
         subtypeTag = tags[AMENITY_PREFIX + SUBTYPE] ?? tags[SUBTYPE_POI];
         id = tags[POI_ID];
-        let isWikipediaLink = false;
+
         let hasCuisine = false;
 
         if (type.isFav || type.isWpt || type.isWikiPoi) {
@@ -233,77 +233,69 @@ async function getWptTags(obj, type, ctx) {
                     tagObj.value = value;
                 }
                 tagObj.isUrl = isUrl(tagObj.value);
-
                 if (!tagObj.isUrl) {
                     tagObj.hiddenUrl = getSocialMediaUrl(key, value);
                     if (tagObj.hiddenUrl != null) {
                         tagObj.isUrl = true;
                     }
-                } else if (key.includes(WIKIPEDIA)) {
-                    tagObj = addWikipediaTags(key, value, tagObj);
-                    isWikipediaLink = true;
                 }
 
-                if (typeTag === OSM_WIKI) {
-                    // add wiki content
-                } else {
-                    switch (key) {
-                        case CUISINE:
-                            tagObj.icon = <CuisineIcon />;
-                            break;
-                        case SERVICE_TIMES:
-                        case COLLECTION_TIMES:
-                            tagObj.icon = <TimeIcon />;
-                            tagObj.needLinks = false;
-                            tagObj.textPrefix = value;
-                            break;
-                        case OPENING_HOURS:
-                            tagObj.icon = <TimeIcon />;
-                            break;
-                        case PHONE:
-                            tagObj.icon = <CallIcon />;
-                            tagObj.isPhoneNumber = true;
-                            break;
-                        case MOBILE:
-                            tagObj.icon = <PhoneIcon />;
-                            tagObj.isPhoneNumber = true;
-                            break;
-                        case WEBSITE:
-                            tagObj.icon = <WebsiteIcon />;
-                            tagObj.isUrl = true;
-                            break;
-                        case DESCRIPTION:
-                            tagObj.icon = <DescriptionIcon />;
-                            tagObj.desc = true;
-                            break;
-                        case INSTAGRAM:
-                            tagObj.icon = <InstagramIcon />;
-                            break;
-                        case EMAIL:
-                            tagObj.isEmail = true;
-                            tagObj.icon = <EmailIcon />;
-                            break;
-                        default:
-                            if (isWikipediaLink) {
-                                tagObj.icon = <WikipediaIcon />;
-                                isWikipediaLink = false;
-                            } else if (key === 'addr:housename' || key === 'whitewater:rapid_name') {
-                                tagObj.icon = <PoiNameIcon />;
-                            } else if (key.startsWith('operator') || key.startsWith('brand')) {
-                                tagObj.icon = <BrandIcon />;
-                            } else if (key === 'internet_access_fee_yes') {
-                                tagObj.icon = <InternetIcon />;
-                            } else if (key.includes('internet_access')) {
-                                const prepValue = value.replace(TYPE, '').replace('__', '_');
-                                const svgData = await getSvgIcon({ value: prepValue, ctx });
-                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-                            } else if (parseTagWithLang(key).lang || key.includes('_name')) {
-                                tagObj.icon = <DisplayLanguageIcon />;
-                            } else {
-                                const svgData = await getSvgIcon({ key, value, ctx });
-                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-                            }
-                    }
+                switch (key) {
+                    case WIKIPEDIA:
+                        tagObj.icon = <WikipediaIcon />;
+                        break;
+                    case CUISINE:
+                        tagObj.icon = <CuisineIcon />;
+                        break;
+                    case SERVICE_TIMES:
+                    case COLLECTION_TIMES:
+                        tagObj.icon = <TimeIcon />;
+                        tagObj.needLinks = false;
+                        tagObj.textPrefix = value;
+                        break;
+                    case OPENING_HOURS:
+                        tagObj.icon = <TimeIcon />;
+                        break;
+                    case PHONE:
+                        tagObj.icon = <CallIcon />;
+                        tagObj.isPhoneNumber = true;
+                        break;
+                    case MOBILE:
+                        tagObj.icon = <PhoneIcon />;
+                        tagObj.isPhoneNumber = true;
+                        break;
+                    case WEBSITE:
+                        tagObj.icon = <WebsiteIcon />;
+                        tagObj.isUrl = true;
+                        break;
+                    case DESCRIPTION:
+                        tagObj.icon = <DescriptionIcon />;
+                        tagObj.desc = true;
+                        break;
+                    case INSTAGRAM:
+                        tagObj.icon = <InstagramIcon />;
+                        break;
+                    case EMAIL:
+                        tagObj.isEmail = true;
+                        tagObj.icon = <EmailIcon />;
+                        break;
+                    default:
+                        if (key === 'addr:housename' || key === 'whitewater:rapid_name') {
+                            tagObj.icon = <PoiNameIcon />;
+                        } else if (key.startsWith('operator') || key.startsWith('brand')) {
+                            tagObj.icon = <BrandIcon />;
+                        } else if (key === 'internet_access_fee_yes') {
+                            tagObj.icon = <InternetIcon />;
+                        } else if (key.includes('internet_access')) {
+                            const prepValue = value.replace(TYPE, '').replace('__', '_');
+                            const svgData = await getSvgIcon({ value: prepValue, ctx });
+                            tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+                        } else if (parseTagWithLang(key).lang) {
+                            tagObj.icon = <DisplayLanguageIcon />;
+                        } else {
+                            const svgData = await getSvgIcon({ key, value, ctx });
+                            tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+                        }
                 }
 
                 const formattedPrefixAndText = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag);
@@ -331,7 +323,6 @@ async function getWptTags(obj, type, ctx) {
                 if (key.includes(WIKIDATA)) {
                     tagObj = addWikidataTags(key, value, tagObj);
                 }
-
                 res.push(tagObj);
             }
         }
@@ -574,7 +565,7 @@ function isUrl(value) {
 function getWikipediaURL(key, value) {
     if (value) {
         value = value.replace(/ /g, '_');
-        if (!value.startsWith('http://')) {
+        if (!value.startsWith('http://') && !value.startsWith('https://')) {
             const keyArr = key.split('_-_');
             if (keyArr.length === 1) {
                 value = 'https://en.wikipedia.org/wiki/' + value;
@@ -677,7 +668,7 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== 'svg';
+    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== 'svg' && tag.key !== 'type';
 }
 
 export const otherImgTags = (tag) => {

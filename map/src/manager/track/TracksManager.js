@@ -942,7 +942,9 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
 
-    ctx.setProcessingAnalytics(true);
+    if (ctx.setProcessingAnalytics) {
+        ctx.setProcessingAnalytics(true);
+    }
 
     const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         params: {
@@ -986,10 +988,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
                 return applySrtmElevation({ track, setLoading });
             }
         }
-        ctx.setProcessingAnalytics(false);
+        if (ctx.setProcessingAnalytics) {
+            ctx.setProcessingAnalytics(false);
+        }
         return newGpxFile;
     } else {
-        ctx.setProcessingAnalytics(false);
+        if (ctx.setProcessingAnalytics) {
+            ctx.setProcessingAnalytics(false);
+        }
         return ctx.selectedGpxFile;
     }
 }

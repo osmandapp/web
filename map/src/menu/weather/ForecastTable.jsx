@@ -25,6 +25,13 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
 
     const NOT_AVAILABLE = t('data_is_not_available');
 
+    function normalizePrecipValue(key, value) {
+        if (key === PRECIP_LAYER_KEY && value < 0) {
+            return Math.abs(value);
+        }
+        return value;
+    }
+
     function getForecastValue(item) {
         function formatting(value) {
             return item.checkValue(value).toFixed(item.fixed);
@@ -39,8 +46,11 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                 if ((ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS) || res[0][item.key] === undefined) {
                     return NOT_AVAILABLE;
                 }
+
+                const value = normalizePrecipValue(item.key, res[0][item.key]);
                 const units = item.key === PRECIP_LAYER_KEY ? i18n?.t('web:weather_precip_mmh') : item.units;
-                return `${formatting(res[0][item.key])} ${units}`;
+
+                return `${formatting(value)} ${units}`;
             }
         }
     }
