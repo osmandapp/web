@@ -369,7 +369,9 @@ export const AppContextProvider = (props) => {
     let pinInit;
     if (searchParams.get(PIN_PARAM) && !globalThis.location.pathname.includes(POI_URL)) {
         const arr = searchParams.get(PIN_PARAM).split(',');
-        pinInit = { lat: Number.parseFloat(arr[0]), lng: Number.parseFloat(arr[1]) };
+        if (arr.length === 2 && !Number.isNaN(Number.parseFloat(arr[0])) && !Number.isNaN(Number.parseFloat(arr[1]))) {
+            pinInit = { lat: Number.parseFloat(arr[0]), lng: Number.parseFloat(arr[1]) };
+        }
     }
     const [pinPoint, setPinPoint] = useState(pinInit);
 
