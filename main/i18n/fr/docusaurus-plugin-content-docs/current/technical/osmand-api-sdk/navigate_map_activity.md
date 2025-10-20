@@ -2,10 +2,11 @@
 source-hash: c04ca618d3358afda1016b282a182e90d180da8a4be9bb6b7bf6b059af6893e6
 sidebar_position: 4
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Activité de carte de navigation {#navigate-map-activity}
-Il y a une carte et un commutateur pour le rendu opengl, il a un longClickListener sur mapView, après le premier appui, le point de départ est sélectionné, après le deuxième appui, il sélectionne la fin et commence le calcul de l'itinéraire.
+Il y a une carte et un commutateur pour le rendu OpenGL, il a un longClickListener sur mapView, après le premier appui, le point de départ est sélectionné, après le deuxième appui, il sélectionne la fin et commence le calcul de l'itinéraire.
 
   ```
   public class NavigateMapActivity extends AppCompatActivity  {

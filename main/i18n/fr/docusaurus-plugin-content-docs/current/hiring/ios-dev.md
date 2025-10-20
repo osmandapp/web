@@ -33,7 +33,7 @@ Nous recherchons un développeur expérimenté et enthousiaste capable de faire 
 
 ### Ce que vous pouvez attendre de nous {#what-you-can-expect-from-us}
 - Travailler dans un secteur passionnant et en pleine croissance
-- Une opportunité de combiner travail et loisirs (si vous êtes un voyageur)
+- Une opportunité de combiner travail et loisirs (si vous êtes une personne voyageuse)
 - Apprentissage par la pratique – vous travaillerez avec des experts du secteur désireux de partager leurs connaissances et leur expérience
 - Améliorer vos compétences en participant à des programmes de formation et de mentorat
 - Faire progresser votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)

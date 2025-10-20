@@ -3,6 +3,7 @@ source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Aperçu {#overview}
 
@@ -220,7 +220,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Exemple : 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Exemple : 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemple : 9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) représente une zone de 9m x 14m)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemple :  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) représente une zone de 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (version Android uniquement) | Exemple : 2 215 227.87, 830 915.9 ([Système de coordonnées suisse](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (version Android uniquement) | Exemple : 4 215 227.87, 1 830 915.9 ([Système de coordonnées suisse](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
@@ -244,7 +244,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Pour des mesures précises*, choisissez comment les informations de distance sont affichées dans les widgets de navigation, comme la distance jusqu'à un point, le prochain virage ou une voie spécifique. |
-|          | <Translate android="true" ids="round_up"/> | *Pour une meilleure lisibilité*, les nombres affichés dans les widgets de navigation (distance jusqu'à un point, prochain virage ou voie) seront arrondis pour avoir moins de chiffres. <br/> Par exemple : 3672 m *→* 3,6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+|          | <Translate android="true" ids="round_up"/> | *Pour une meilleure lisibilité*, les nombres affichés dans les widgets de navigation (distance jusqu'à un point, prochain virage ou voie) seront arrondis à la baisse pour avoir moins de chiffres. <br/> Par exemple : 3672 m *→* 3,6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Autre {#other}

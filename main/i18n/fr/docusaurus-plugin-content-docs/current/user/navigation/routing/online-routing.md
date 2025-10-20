@@ -3,6 +3,7 @@ source-hash: ad9c1155352c7c8fc6705861acfb7f006ba101d59528a256c0205ba34b62fd80
 sidebar_position: 11
 title:  Itinéraire en ligne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -26,12 +27,12 @@ L'itinéraire en ligne est un outil puissant qui peut aider les utilisateurs à 
 *L'itinéraire en ligne* peut être activé dans la section [Type de navigation](../guidance/navigation-settings.md#overview) des paramètres de navigation du *Profil* sélectionné. Dans OsmAnd, il existe deux *moteurs d'itinéraire en ligne* prédéfinis ([ZLZK](https://zlzk.biz/) et [OSM DE](https://routing.openstreetmap.de)), qui proposent trois types d'*itinéraire en ligne* : *Vélo, Voiture et À pied*.
 
 :::note
-Les types d'itinéraire en ligne sont conçus pour les profils *Conduite, Vélo et Marche*, bien qu'ils puissent également être utilisés avec d'autres profils OsmAnd (Camion, Moto, Ski, Équitation). Ils sont fournis "tels quels", vous ne pouvez donc pas les personnaliser selon vos besoins en utilisant différentes options de navigation.
+Les types d'itinéraire en ligne sont conçus pour les profils *Conduite, Vélo et Marche*, bien qu'ils puissent également être utilisés avec d'autres profils OsmAnd (Camion, Moto, Ski, Équitation). Ils sont fournis « tels quels », vous ne pouvez donc pas les personnaliser selon vos besoins en utilisant différentes options de navigation.
 :::
 
 ### Itinéraire en ligne personnalisé {#custom-online-routing}
 
-En plus des types d'itinéraire en ligne prédéfinis, vous pouvez configurer d'autres mécanismes d'itinéraire en ligne.
+En plus des types d'itinéraire en ligne prédéfinis, vous pouvez configurer d'autres mécanismes d'itinéraire en ligne.  
 Appuyez sur le bouton **+ Ajouter un moteur d'itinéraire en ligne** et choisissez l'un des types d'itinéraire en ligne proposés ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Sélectionnez le véhicule approprié et appuyez sur *tester l'itinéraire* avant d'enregistrer vos modifications.
 
 ![Itinéraire en ligne personnalisé Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Itinéraire en ligne personnalisé Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)
@@ -52,4 +53,4 @@ Lorsque l'itinéraire en ligne est sélectionné pour la navigation, une option 
 
 ![Paramètres de l'itinéraire en ligne Android](@site/static/img/navigation/routing/settings_online_routing_1.png)
 
-- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>* - Permet d'utiliser l'itinéraire hors ligne d'OsmAnd, lorsque l'itinéraire en ligne est sélectionné dans les paramètres de navigation. Cette option peut être utile si un itinéraire a déjà été calculé en ligne, mais qu'il y a eu ensuite une déviation de l'itinéraire et que la connexion Internet a été perdue en même temps. Dans ce cas, l'itinéraire hors ligne sera utilisé pour revenir à l'itinéraire précédemment calculé en ligne.
+- *<Translate android="true" ids="calculate_osmand_route_without_internet"/>*  - Permet d'utiliser l'itinéraire hors ligne d'OsmAnd, lorsque l'itinéraire en ligne est sélectionné dans les paramètres de navigation. Cette option peut être utile si un itinéraire a déjà été construit en ligne, mais qu'il y a eu ensuite une déviation de l'itinéraire et que la connexion Internet a été perdue en même temps. Dans ce cas, l'itinéraire hors ligne sera utilisé pour revenir à l'itinéraire précédemment calculé en ligne.

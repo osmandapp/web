@@ -3,6 +3,7 @@ source-hash: 46a1886051c86f82be8c7760e97112a93aa73290d7f57d40189238af7d9e4f39
 sidebar_position: 4
 title:  Guidage pour mobylette
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -26,7 +26,7 @@ Par défaut, le *Profil Mobylette* est désactivé. Pour utiliser ce profil pour
 
 ## Paramètres d'itinéraire - Mobylette {#route-parameters---moped}
 
-Le *guidage pour mobylette* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de Navigation.
+Le *guidage pour mobylette* peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../guidance/navigation-settings.md#route-parameters) des paramètres de Navigation.  
 
 Les paramètres de guidage pour mobylette sont très simples et ne comportent que quelques options.
 

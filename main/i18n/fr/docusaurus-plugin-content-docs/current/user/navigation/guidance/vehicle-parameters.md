@@ -3,6 +3,7 @@ source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
 sidebar_position: 4
 title:  Paramètres du véhicule
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Aperçu
@@ -114,13 +114,13 @@ Les limites sur les paramètres du véhicule peuvent être importantes pour la n
 
 <TabItem value="android" label="Android">
 
-![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Paramètres de navigation Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Paramètres de navigation iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
 
 </TabItem>
 

@@ -5,14 +5,14 @@ sidebar_position: 3
 
 # Personnaliser le moteur de routage {#customize-routing-engine}
 
-Dans certains cas, vous pourriez vouloir étendre ou ajuster l'expérience de routage d'OsmAnd, afin de pouvoir ajouter des paramètres supplémentaires, ajouter des obstacles supplémentaires ou modifier certaines pénalités. Veuillez consulter [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml). Le routage d'OsmAnd utilise un algorithme A* bidirectionnel basé sur le temps le plus rapide (= distance/(vitesse*priorité) + pénalités). C'est un format assez simple. Il est divisé en 7 sections (groupes d'évaluation) :
+Dans certains cas, vous pourriez vouloir étendre ou ajuster l'expérience de routage d'OsmAnd, afin de pouvoir ajouter des paramètres supplémentaires, ajouter des barrières supplémentaires ou modifier certaines pénalités. Veuillez jeter un œil à [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml). Le routage d'OsmAnd utilise un algorithme A* bidirectionnel basé sur le temps le plus rapide (= distance/(speed*priority) + penalties) . C'est un format assez simple. Il est divisé en 7 sections (groupes d'évaluation) :
 
-* access (1 autoriser, -1 ne pas autoriser)
-* speed (nombre représentant la vitesse en km/h)
-* priority (nombre entre 0 et 1) - un multiplicateur de la vitesse qui est toujours lié à la vitesse maximale, donc le minimum (vitesse * multiplicateur, vitesse maximale) sera utilisé pour A*
-* oneway (1, -1 ou 0) - utilisé pour clarifier l'accès en fonction de la direction du mouvement
-* penalty_transition (pénalité en secondes) - utilisée pour définir une pénalité lorsque l'utilisateur passe d'une route de classe supérieure à une route de classe inférieure. Par exemple, autoroute - 10, route principale - 15, si l'utilisateur passe d'une autoroute à une route principale, la pénalité sera de 5 secondes (=10 - 15). Cette pénalité sera utilisée par l'algorithme A*. Il n'y a pas de pénalité si l'utilisateur passe d'une autoroute à une route principale et il n'y a pas de pénalité si l'itinéraire continue d'une autoroute à une autoroute.
-* obstacle (pénalité en secondes) - définit une pénalité qui s'ajoute au temps de routage
-* obstacle_time (pénalité en secondes) - définit une pénalité qui est affichée à l'utilisateur mais qui n'est pas prise en compte par le moteur de routage, c'est-à-dire obstacle_time - 2 heures, obstacle - 1 minute, sur l'itinéraire le plus court, le moteur trouvera un itinéraire en utilisant l'obstacle de 1 minute mais l'utilisateur verra que le temps de l'itinéraire est de 2 heures.
+* access (1 allow, -1 not allow)
+* speed (number that presents speed in kmh)
+* priority (number between 0 and 1) - a multiplier to the speed and it is still bound to maxSpeed, so minimum (speed * multiplier, maxSpeed) will be used for A*
+* oneway (1, -1 or 0) - used to clarify access based on direction of the movement
+* penalty_transition (penalty in seconds) - used to define penalty when user goes from high class road to low class road. For example, motorway - 10, trunk - 15, if user goes from motorway to trunk penalty will be 5 seconds (=10 - 15). This penalty will be used by A* algorithm. There is no penalty if user goes from motorway to trunk and there is no penalty if route continues from motorway to motorway.
+* obstacle (penalty in seconds) - defines penalty which is to the routing time
+* obstacle_time (penalty in seconds) - defines penalty which is displayed to the user but it is not considered by routing engine i.e. obstacle_time - 2 hours, obstacle - 1 minute, on the shortest route engine will find a route using 1 minute obstacle but user will see that route time is 2 hours.
 
-Pour tester [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), vous pouvez utiliser [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Pour tester routing.xml sur l'appareil, vous pouvez simplement remplacer le fichier routing.xml par défaut dans le dossier racine d'OsmAnd sur la carte SD.
+Pour tester [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), vous pouvez utiliser [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Pour tester routing.xml sur l'appareil, vous pouvez simplement remplacer le fichier routing.xml par défaut dans le dossier racine d'OsmAnd avec la carte SD.

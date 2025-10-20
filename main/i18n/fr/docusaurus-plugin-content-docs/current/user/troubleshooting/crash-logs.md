@@ -3,6 +3,7 @@ source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
 sidebar_position: 5
 title:  Journaux de plantage
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Aperçu {#overview}
@@ -27,7 +27,7 @@ OsmAnd vous permet d'envoyer deux types de données aux développeurs :
 - **Journaux Logcat**. Un enregistrement du flux de journaux OsmAnd capturant divers événements et messages. Ces journaux aident les développeurs à surveiller le comportement de l'application, à suivre le flux d'exécution, à tracer des actions spécifiques et à enquêter sur les problèmes non liés aux plantages. Les journaux Logcat contiennent généralement des enregistrements d'activité depuis le dernier démarrage de l'application.
 
 :::caution Vos informations privées
-Soyez prudent lorsque vous envoyez des journaux logcat, car ils peuvent contenir des informations privées telles que la localisation de l'appareil, les requêtes de recherche, les résultats de construction d'itinéraire et les données de navigation.
+Soyez prudent lorsque vous envoyez des journaux Logcat, car ils peuvent contenir des informations privées telles que la localisation de l'appareil, les requêtes de recherche, les résultats de construction d'itinéraire et les données de navigation.
 :::
 
 
@@ -53,7 +53,7 @@ Soyez prudent lorsque vous envoyez des journaux logcat, car ils peuvent contenir
 
     ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. Envoyez les journaux au format [IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) et les données d'autorisation :
+2. Envoyez les journaux et les données d'autorisation au [format IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) :
     - Allez dans *Réglages iOS → Analyse → Données d'analyse → Fichier au format ips OsmAnd Maps* (jusqu'à iOS 17).
     - *Réglages iOS → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse → Fichier au format ips OsmAnd Maps* (à partir d'iOS 18).
     - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `crash@osmand.net`.
@@ -106,12 +106,12 @@ Ensuite, connectez votre appareil à votre poste de travail via USB. S'il s'agit
 
 #### Générer un rapport de bogue {#generate-bug-report}
 
-1. Ouvrez un terminal en ligne de commande. Sur Mac ou Linux, utilisez l'application *Terminal*, et sur Windows, utilisez la *Ligne de commande*.
+1. Ouvrez un terminal en ligne de commande. Sur Mac ou Linux, utilisez l'application *Terminal*, et sur Windows, utilisez l'*Invite de commandes*.
 2. Naviguez vers le dossier platform-tools où se trouve ADB à l'aide de la commande *cd* (par exemple, « cd /Users/NomUtilisateur/Téléchargements/Outils »).
 3. Générez le rapport de bogue :
    - Sur Mac : ```adb bugreport```
    - Sur Windows : ```adb.exe bugreport```
-4. Attendez quelques minutes que le rapport soit généré. Le fichier résultant sera enregistré dans le dossier platform tools.
+4. Attendez quelques minutes que le rapport soit généré. Le fichier résultant sera enregistré dans le dossier platform-tools.
 5. Décompressez le fichier.
 6. Trouvez le dossier *tombstones* avec des fichiers comme *tombstone_00*, *tombstone_01*, et similaires.
 7. Envoyez les fichiers tombstone à `crash@osmand.net`.

@@ -3,6 +3,7 @@ source-hash: 18d9873a363946b476ae9c98d895b7afc2dcac45571f524bfe437e0a7bba8153
 sidebar_position: 3
 title:  Naviguer par marqueurs
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,8 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-```
 
 ## Aperçu {#overview}
 
@@ -74,7 +73,7 @@ Voici des étapes simples recommandées pour *Naviguer par marqueurs* :
 5. [*Marquez comme passés*](#pass-markers) les marqueurs déjà visités ou restaurez-les depuis l'historique si vous souhaitez les passer à nouveau.
 
 :::note
-Lorsque les options **Flèches sur la carte** et **Ligne de direction** sont activées dans la section *Apparence* du [menu des marqueurs de carte](../../personal/markers.md#appearance-on-the-map), vous verrez une flèche ou une ligne en pointillés sur la carte. La flèche indique la direction du marqueur actif lorsqu'il est en dehors de l'écran de carte actuel. La ligne de direction est dessinée lorsque votre géolocalisation et le marqueur sont tous deux sur le même écran.
+Lorsque les options **Flèches sur la carte** et **Ligne de direction** sont activées dans la section *Apparence* du [menu des marqueurs de carte](../../personal/markers.md#appearance-on-the-map), vous verrez une flèche ou une ligne en pointillés sur la carte. La flèche indique la direction du marqueur actif lorsqu'il est en dehors de l'écran de carte actuel. La ligne de direction est dessinée lorsque votre géolocalisation et le marqueur sont tous deux sur le même écran.  
 :::
 
 
@@ -102,7 +101,7 @@ La liste d'itinéraire représente une liste ordonnée de marqueurs *franchissab
 
 ### Ajouter des marqueurs uniques {#add-single-markers}
 
-Les *marqueurs* peuvent être ajoutés ou supprimés de la carte par un simple appui sur l'écran à l'emplacement souhaité. Vous devez ensuite suivre les instructions de l'article sur le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.
+Les *marqueurs* peuvent être ajoutés ou supprimés de la carte par un simple appui sur l'écran à l'emplacement souhaité. Vous devez ensuite suivre les instructions de l'article sur le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.  
 
 
 ### Ajouter un groupe de favoris {#add-group-of-favorite}
@@ -113,9 +112,9 @@ Les *marqueurs* peuvent être ajoutés ou supprimés de la carte par un simple a
 
 Vous pouvez créer des *marqueurs de carte* à partir de *[Favoris](../../personal/favorites.md)* en utilisant :
 
-- Le *[menu des groupes de favoris](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris)*.
-- L'icône &#128681; dans le menu de la page des favoris *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→Mes favoris→&#128681;)*.
-- L'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#marker-groups)* du menu des marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.
+- Le *[menu des groupes de favoris](../../personal/favorites.md#favorite-group-actions)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites)*.
+- L'icône &#128681; dans le menu de la page des favoris *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites→&#128681;)*.
+- L'option **'+'** (ajouter) dans l'*[onglet Groupes](../../personal/markers.md#marker-groups)* du menu des marqueurs de carte *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.  
 
 
 ### Ajouter un groupe de points de cheminement de trace {#add-group-of-track-waypoints}
@@ -158,7 +157,7 @@ Seules les traces avec des points de cheminement peuvent être ajoutées à la *
 
 En appuyant sur le coin gauche (*Android*) ou le coin droit (*iOS*) d'un onglet de *marqueur de carte* dans la *[liste des marqueurs de carte](../../personal/markers.md#itinerary-list)* et en le déplaçant vers le haut ou vers le bas, vous pouvez changer son ordre dans la *liste de navigation* (en déplaçant une carte de marqueur, vous verrez une ligne indiquant où le marqueur sera placé).
 
-Dans la version Android de l'application OsmAnd, il existe d'autres options de tri pour les *marqueurs de carte* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Trier par* ou *Planifier un itinéraire*).
+Dans la version Android de l'application OsmAnd, il existe d'autres options de tri pour les *marqueurs de carte* (*<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/> →* *Sort by* or *Plan a route*).
 
 
 ### Trier par attributs {#sort-by-attributes}
@@ -215,8 +214,8 @@ En utilisant la fonctionnalité de l'outil Planifier un itinéraire dans la list
 
 Un *marqueur* peut être marqué comme passé (*Android*) ou ignoré (*iOS*).
 
-- Via le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.
-- Lorsque vous vous approchez d'un *marqueur* à une distance inférieure à 40 mètres (*Android*) ou 50 mètres (*iOS*), un interrupteur dans la barre des *[widgets de marqueurs](../../widgets/markers.md#top-bar-widget)* devient actif.
+- Via le *[menu contextuel de la carte](../../map/map-context-menu.md#add--edit-marker)*.  
+- Lorsque vous vous approchez d'un *marqueur* à une distance inférieure à 40 mètres (*Android*) ou 50 mètres (*iOS*), un interrupteur dans la barre des *[widgets de marqueurs](../../widgets/markers.md#top-bar-widget)* devient actif.  
 
 Après avoir passé un *marqueur*, il est déplacé vers le dossier [Historique](../../personal/markers.md#history), d'où il peut être restauré si nécessaire. Le marqueur suivant dans la [liste](#itinerary-list) devient actif. Selon vos [paramètres](#use-markers-in-navigation), vous pouvez être guidé vers lui par une flèche ou une ligne en pointillés.
 
@@ -224,7 +223,7 @@ Après avoir passé un *marqueur*, il est déplacé vers le dossier [Historique]
 ## Articles connexes {#related-articles}
 
 - [À propos des marqueurs de carte](../../personal/markers.md).
-- [Widget Marqueur](../../widgets/markers.md).
+- [Widget Marqueur](../../widgets/markers.md).  
 __
 - [Paramètres d'itinéraire](../routing/osmand-routing.md#routing-types)
 - [Préparation de l'itinéraire](./route-navigation.md)

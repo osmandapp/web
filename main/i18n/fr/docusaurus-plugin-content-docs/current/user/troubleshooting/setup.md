@@ -3,6 +3,7 @@ source-hash: da8767bf5368b88ca2820e7585237507258e046e1e07f73d6fe233dc66687628
 sidebar_position: 1
 title: Configuration
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Configuration initiale {#initial-setup}
@@ -117,13 +117,13 @@ errors (e.g. if the SD card is too full).
 
 <TabItem value="android" label="Android">
 
-![Importer sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
+![Import sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Importer sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
+![Import sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
 
 </TabItem>
 

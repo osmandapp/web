@@ -3,6 +3,7 @@ source-hash: c08c6419ce4eb37eaeeedc1186f95e9b81ac6219dcfadc6455d0a16f81b7bdd4
 sidebar_position: 10
 title:  Transports en commun
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Aperçu {#overview}
@@ -62,7 +62,7 @@ L'arrêt de transport en commun fournit des détails supplémentaires par rappor
 - Accessibilité pour les fauteuils roulants
 - Nom de l'opérateur
 
-**Note** : vous pouvez filtrer les arrêts selon certains critères. Par exemple, développez et appuyez sur "Banc" / "Oui" et vous pourrez voir la liste des arrêts avec des bancs. Ils peuvent également être [affichés sur la carte](../map/point-layers-on-map.md#points-of-interest-pois).
+**Note** : vous pouvez filtrer les arrêts selon certains critères. Par exemple, développez et appuyez sur "Banc" / "Yes" et vous pourrez voir la liste des arrêts avec des bancs. Ils peuvent également être [affichés sur la carte](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
 ### Itinéraires {#routes}
@@ -73,7 +73,7 @@ Les itinéraires de transport sont tous les itinéraires de transport en commun 
 
 **Couleur du pictogramme** :
 
-- Métro - couleur propre à la ligne
+- Métro - couleur propre à la ligne 
 - Train - marron
 - Bus et autres - rouge
 - Tram - bleu

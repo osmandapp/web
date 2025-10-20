@@ -4,6 +4,7 @@ sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -83,16 +83,16 @@ Pour basculer entre ces sources de prévisions, cliquez sur le **bouton paraplui
 
 ***Visualisation des prévisions :***  
 
-- Les prévisions météorologiques sont disponibles pour les **7 prochains jours**.
-- Les mises à jour des prévisions sont fournies par **intervalles de 3 heures** pour des informations détaillées.
+- Les prévisions météorologiques sont disponibles pour la **prévision à 7 jours**.
+- Les mises à jour des prévisions sont fournies par **pas de 3 heures** pour des informations détaillées.
 
 Pour accéder ou personnaliser ces fonctionnalités, utilisez les menus sur le côté gauche ou droit de l'interface.
 
   ![Météo Web OsmAnd](@site/static/img/web/web_weather.png)
 
-***Prévisions à 7 jours*** :  
+***Prévision à 7 jours*** :  
 
-Cliquez sur les données de prévision dans le menu pour afficher les **prévisions à 7 jours** pour votre emplacement. La prévision est disponible en :
+Cliquez sur les données de prévision dans le menu pour afficher la **prévision à 7 jours** pour votre emplacement. La prévision est disponible en :
 
 - **Format graphique**  
 - **Format liste**
@@ -158,7 +158,7 @@ Dans cette section, vous pouvez :
 - Choisir un **schéma de couleurs** pour le terrain :
   - **Relief ombré**
   - **Pente**
-  - **Altitude**
+  - **Hauteur**
 - Ajuster la visibilité de la couche de terrain sélectionnée de **0 % à 100 %**.
 
 ![Menu Configurer la carte Terrain](@site/static/img/web/configure_map_terrain.png)
@@ -229,4 +229,4 @@ Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 
 10. **Planifier un itinéraire**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11. Lien direct vers la [**page Explorer**](https://osmand.net/docs/user/web/web-search#explore) actuelle&nbsp; - &nbsp;`osmand.net/map/search`
+11. Lien direct vers la page Explorer actuelle&nbsp;[**page Explorer**](https://osmand.net/docs/user/web/web-search#explore) - &nbsp;`osmand.net/map/search`

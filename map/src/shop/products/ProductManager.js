@@ -4,6 +4,7 @@ import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_p
 import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
 
 const PURCHASE_OSMAND_PRO = 'OsmAnd Pro';
+const PURCHASE_OSMAND_VX = 'OsmAnd XV';
 const PURCHASE_OSMAND_MAPS_PLUS = 'OsmAnd Maps+';
 
 export const products = [
@@ -117,7 +118,7 @@ export const purchase = {
         },
         {
             id: 'osmand-15-years',
-            name: PURCHASE_OSMAND_PRO,
+            name: PURCHASE_OSMAND_VX,
             oldPrice: '399',
             oldPriceDisplay: '€399',
             newPrice: '249',

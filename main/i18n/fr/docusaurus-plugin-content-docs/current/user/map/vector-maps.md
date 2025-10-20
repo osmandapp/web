@@ -1,8 +1,9 @@
 ---
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
+source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
 sidebar_position: 5
 title:  Cartes vectorielles (Styles de carte)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
 Les cartes vectorielles sont conçues pour être la source de données cartographiques par défaut pour OsmAnd, vous **devez donc les télécharger sur votre appareil**. Les cartes vectorielles prennent en charge un grand nombre de styles de carte pour différentes activités telles que le cyclisme, la randonnée, la conduite en voiture ou en motoneige, et autres.  
 
 Chaque style de carte peut être personnalisé pour mettre en évidence ou masquer des objets spécifiques, et pour basculer entre les modes jour et nuit. Les données des cartes vectorielles peuvent être enrichies par des données vectorielles et affichées dans le style de carte par défaut, comme les informations sur les *lignes de contour*. Vous pouvez *créer votre propre style de carte OsmAnd* pour afficher les informations requises.
+
+Les cartes vectorielles représentent des données spatiales, telles que les routes, les bâtiments, les points et les polygones, en utilisant une géométrie mathématique stockée au format binaire. Chaque élément (nœud, ligne ou polygone) est défini par des coordonnées et rendu dynamiquement en fonction du niveau de zoom et du style de carte.
+
+Puisque les données vectorielles ne sont pas stockées sous forme d'images fixes, leur apparence, y compris la couleur, la largeur de ligne, la transparence ou le motif, peut être facilement modifiée. Cette approche permet un rendu efficace, une faible utilisation de la mémoire et un scaling fluide à tout niveau de zoom sans perte de qualité.
+
+:::info note
+Très petits polygones peuvent être simplifiés ou déformés lors de la génération des données de carte. Les objets avec une surface inférieure à environ un mètre carré pourraient ne pas être affichés. Pour une visualisation correcte, les petites fonctionnalités devraient être cartographiées comme des nœuds uniques au lieu de polygones.
+:::
 
 
 ## Cas d'utilisation {#use-cases}
@@ -69,7 +77,13 @@ Les styles UniRS et LightRS sont des styles d'auteur qui rendent les information
 
 ![Style de carte Nautique](@site/static/img/map/map-style-nautical.png)
 
-C'est un style de navigation maritime qui présente les bouées, les phares, les routes fluviales, les voies maritimes, les amers, les ports, les marques nautiques et les isobathes. Pour en savoir plus, consultez l'article [Vue Carte marine](../plugins/nautical-charts.md).
+C'est un style de navigation nautique qui présente les bouées, les phares, les routes fluviales, les voies maritimes, les amers, les ports et les marques nautiques. Pour en savoir plus, lisez la section [Style de carte nautique](../plugins/nautical-charts.md#nautical-map-style).
+
+### Marine {#marine}
+
+![Style de carte Marine](@site/static/img/map/map-style-marine.png)
+
+Ceci est un style de carte marine avancé avec des secteurs lumineux, les caractéristiques complètes des phares, et d'autres fonctionnalités maritimes détaillées pour une navigation marine réaliste et précise. Pour plus de détails, lisez la section [Style de carte Marine](../plugins/nautical-charts.md#marine-map-style).
 
 ### Hiver et Ski {#winter-and-ski}
 
@@ -107,7 +121,7 @@ Conçu pour la navigation tout-terrain, ce style est basé sur la disposition de
 
 ![Style de carte Motoneige](@site/static/img/map/map-style-snowmobile.png)
 
-Adapté à la navigation en motoneige, ce style met en évidence les chemins, routes et pistes praticables en motoneige. Il met en lumière les sentiers spécialisés dans les régions enneigées, offrant une navigation claire sur des terrains couverts de neige où les routes standard peuvent ne pas être disponibles.
+Adapté à la navigation en motoneige, ce style met en évidence les chemins, routes et pistes praticables en motoneige. Il met en lumière les sentiers spécialisés dans les régions enneigées, offrant une navigation claire sur des terrains couverts de neige où les routes standard peuvent ne pas être disponibles. 
 
 
 ## Légende de la carte {#map-legend}
@@ -161,7 +175,7 @@ Les lignes de contour sont compatibles avec tous les styles de carte et peuvent 
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![largeur_profondeur_marine_and](@site/static/img/map/nautical_depth_width_and.png)  ![couleur_profondeur_marine_and](@site/static/img/map/nautical_depth_color_and.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -169,7 +183,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![largeur_profondeur_marine_ios](@site/static/img/map/nautical_depth_width_ios.png)  ![couleur_profondeur_marine_ios](@site/static/img/map/nautical_depth_color_ios.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -188,7 +202,7 @@ Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte 
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![afficher-frontieres-andr](@site/static/img/map/show-borders-andr.png)  
+![afficher-frontières-android](@site/static/img/map/show-borders-andr.png)  
 
 </TabItem>
 
@@ -196,7 +210,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![afficher-frontieres-ios](@site/static/img/map/show-borders-ios.png)
+![afficher-frontières-ios](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -206,7 +220,7 @@ Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des
 
 Par défaut, les frontières des cartes apparaîtront lorsque vous zoomez au niveau 7 et disparaîtront au niveau de zoom 3 et inférieur.
 
-:::tip Couleur d'affichage des frontières des cartes téléchargées
+:::tip Couleur Afficher les frontières des cartes téléchargées
 Lorsque la fonctionnalité *Afficher les frontières des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.  
 
 Sur Android, les cartes archivées sont affichées en **Orange**. Sur iOS, les cartes qui peuvent être mises à jour sont également marquées en **Orange**.
@@ -229,14 +243,20 @@ Aller à : *Menu → Configurer la carte → Afficher → Grille de coordonnées
 
 <TabItem value="ios" label="iOS">  
 
-![afficher-frontieres-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![Paramètres grille de coordonnées iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. Vous pouvez sélectionner les ***Paramètres de niveau de zoom :*** pour un affichage entre 2 et 22, la ***Position des étiquettes*** - **Bords**/**Centre** et la ***Couleur de la grille*** séparément pour le mode Jour/Nuit.
+La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
+
+Vous pouvez configurer les options suivantes :
+- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
+- **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
+- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. La personnalisation de la couleur de la grille est une fonctionnalité payante.
+- **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
 
 
 ***Formats de coordonnées disponibles :***
@@ -247,7 +267,9 @@ La fonctionnalité **Grille de coordonnées** superpose une grille de référenc
 - **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
 - **MGRS** (Military Grid Reference System)
 
-Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats).
+Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le changer directement dans ce menu.
+
+[Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
 
 ## Configurer le style de carte {#configure-map-style}
 
@@ -405,7 +427,7 @@ Lors de la navigation en ville, vous avez besoin d'une vue plus contrastée des 
 - **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Affiche les itinéraires de tramway et de train.  
     ![Tram de transport sur la carte](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires de métro.  
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires souterrains.  
     ![Métro de transport sur la carte](@site/static/img/map/map-transport-subway.png)
 
 ### Masquer {#hide}
@@ -471,10 +493,10 @@ Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Le contraste élevé des routes.  
 ![Style de route à contraste élevé](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pâle**. Couleurs moins contrastées des routes.  
-![Style de route contour gras](@site/static/img/map/map-road-style-pale.png)
+![Style de route à contour gras](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour gras pour les routes.  
-![Style de route contour gras](@site/static/img/map/map-road-style-bold-outline.png)
+![Style de route à contour gras](@site/static/img/map/map-road-style-bold-outline.png)
 
 
 ### Taille du texte {#text-size}
@@ -565,7 +587,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,shared_s
 - **Langue préférée** (ukrainien)
     ![Langue de la carte ukrainien](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Afficher les noms locaux** (ajoute une 2ème étiquette si le nom local est différent)
+- **Afficher les noms locaux**  (ajoute une 2ème étiquette si le nom local est différent)
     ![Langue de la carte local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Translittérer les noms**  

@@ -3,6 +3,7 @@ source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
 sidebar_position: 4
 title:  Achats multiplateformes
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Achats multiplateformes pris en charge {#supported-cross-platform-purchases}
 
 Les produits OsmAnd suivants prennent actuellement en charge une utilisation sur plusieurs plateformes (Android, iOS et Web) :
@@ -23,7 +23,7 @@ Les produits OsmAnd suivants prennent actuellement en charge une utilisation sur
 - Abonnement **Maps+**  
 - Achat unique intégré **Maps+**
 
-À partir de la **version 5.1 d'OsmAnd**, publiée pour célébrer notre **15e anniversaire**, l'accès multiplateforme a été étendu à **Maps+** (anciennement connu sous le nom d'*Illimité*). Auparavant, seul l'abonnement [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) était multiplateforme.  
+À partir de la **version 5.1 d'OsmAnd**, publiée pour célébrer notre **15e anniversaire**, l'accès multiplateforme a été étendu à **Maps+** (anciennement connu sous le nom d'*Unlimited*). Auparavant, seul l'abonnement [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) était multiplateforme.  
 
 Pour activer l'accès multiplateforme, les achats doivent être liés à votre compte [OsmAnd Cloud](../personal/osmand-cloud.md#login).  
 Vous pouvez comparer tous les produits OsmAnd ici : [différence entre les achats](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
@@ -38,7 +38,7 @@ Vous pouvez comparer tous les produits OsmAnd ici : [différence entre les achat
 
 ## Comment ça marche {#how-it-works}
 
-Pour utiliser votre achat **OsmAnd Pro** ou **Maps+** sur différentes plateformes (Android, iOS ou Web), vous devez **le lier à votre compte OsmAnd Cloud**.
+Pour utiliser votre achat **OsmAnd Pro**, **Maps+** sur différentes plateformes (Android, iOS ou Web), vous devez **le lier à votre compte OsmAnd Cloud**.
 
 ### Lier votre achat {#link-your-purchase}
 

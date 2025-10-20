@@ -60,6 +60,7 @@ import WptTagsProvider, {
     WIKIPEDIA,
     addWikidataTags,
     getOsmIdFromOsmUrl,
+    POI_ID,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -197,19 +198,24 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 mapObj,
             };
         } else if (type?.isWpt) {
-            return getDataFromWpt(type, ctx.selectedWpt);
+            const newWpt = getDataFromWpt(type, ctx.selectedWpt);
+            newWpt.id = ctx.selectedWpt.id;
+            return newWpt;
         } else if (type?.isFav || type?.isShareFav) {
             const markerName = ctx.selectedWpt.markerCurrent.name;
             const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
             const currentWpt = wpts.find((p) => p.name === markerName);
             if (currentWpt) {
-                return getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+                const newWpt = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+                newWpt.id = ctx.selectedWpt.id;
+                return newWpt;
             }
         } else if (type?.isSearch || type?.isPoi) {
             const currentPoi = ctx.selectedWpt.poi;
             const { options: objOptions, latlng, mapObj } = currentPoi;
             const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
             return {
+                id: objOptions[POI_ID],
                 type,
                 poiType: objType,
                 name,
@@ -408,36 +414,32 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     useEffect(() => {
-        if (objWithPhotos(wpt) && !isAddressAdded) {
-            setIsAddressAdded(true);
-            getPoiAddress(wpt).then((addressData) => {
-                setWpt((prevWpt) => {
-                    if (prevWpt?.id !== wpt?.id) return prevWpt;
+        if (!wpt || wpt.address || isAddressAdded) return;
 
-                    let updatedWpt = { ...prevWpt, address: addressData ? addressData : ADDRESS_NOT_FOUND };
-
-                    if (!isPhotosAdded) {
-                        setIsPhotosAdded(true);
-                        if (objWithPhotos(prevWpt)) {
-                            getPhotos(prevWpt).then((photosData) => {
-                                setWpt((finalWpt) => {
-                                    if (finalWpt?.id !== prevWpt?.id) return finalWpt;
-
-                                    let newWpt = { ...finalWpt, photos: photosData || [] };
-                                    if (finalWpt?.type?.isWikiPoi) {
-                                        newWpt = addFirstPhoto(newWpt);
-                                    }
-                                    return newWpt;
-                                });
-                            });
-                        }
-                    }
-
-                    return updatedWpt;
-                });
+        setIsAddressAdded(true);
+        getPoiAddress(wpt).then((addressData) => {
+            setWpt((prev) => {
+                if (prev?.id !== wpt?.id) return prev;
+                return { ...prev, address: addressData || ADDRESS_NOT_FOUND };
             });
-        }
-    }, [wpt, isAddressAdded, isPhotosAdded]);
+        });
+    }, [wpt?.id]);
+
+    useEffect(() => {
+        if (!wpt || !objWithPhotos(wpt) || isPhotosAdded) return;
+
+        setIsPhotosAdded(true);
+        getPhotos(wpt).then((photosData) => {
+            setWpt((prev) => {
+                if (prev?.id !== wpt?.id) return prev;
+                let newWpt = { ...prev, photos: photosData || [] };
+                if (prev?.type?.isWikiPoi) {
+                    newWpt = addFirstPhoto(newWpt);
+                }
+                return newWpt;
+            });
+        });
+    }, [wpt?.id]);
 
     function getWptType(wpt) {
         return {
@@ -538,14 +540,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     async function getPoiAddress(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
+        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
             apiCache: true,
             params: {
                 lat: wpt.latlon.lat,
                 lon: wpt.latlon.lon,
             },
         });
-        if (response && response.data) {
+        if (response?.data) {
             return response.data
                 .replace(/ str\./g, '')
                 .replace(/ city/g, ',')
@@ -558,7 +560,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     async function getPhotos(wpt) {
         let tags;
         const objTags = wpt.tags?.res;
-        const wikidataId = wpt.id;
+        const wikidataId = wpt.wikidata;
         if (!objTags && wikidataId) {
             tags = {
                 wikidata: wikidataId,
@@ -577,7 +579,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         });
 
         let result;
-        if (response && response.data) {
+        if (response?.data) {
             result = response.data;
         } else {
             return null;

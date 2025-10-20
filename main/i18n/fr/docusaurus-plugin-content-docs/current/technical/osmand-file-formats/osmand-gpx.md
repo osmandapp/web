@@ -190,12 +190,12 @@ Pour éviter les conflits avec la syntaxe XML, remplacez les caractères spécia
 <metadata>
   <desc>
     &lt;p&gt;
-        Le premier paragraphe sera affiché comme une description &lt;b&gt;brève&lt;/b&gt;.
-        Les balises HTML sont supprimées dans les descriptions brèves.
+        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
+        HTML tags are stripped in brief descriptions.
     &lt;/p&gt;
     &lt;p&gt;
-      &lt;h3&gt;Deuxième paragraphe&lt;/h3&gt;
-        &lt;b&gt;Bonjour, le monde !&lt;/b&gt;&lt;br/&gt;
+      &lt;h3&gt;Second paragraph&lt;/h3&gt;
+        &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
         &lt;img src="..."/&gt;&lt;br/&gt;
         &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
         &lt;table&gt; ... &lt;/table&gt;

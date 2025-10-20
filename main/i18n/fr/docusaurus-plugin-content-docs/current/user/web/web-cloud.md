@@ -4,6 +4,7 @@ sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
 title: OsmAnd Cloud sur le site web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -105,7 +105,7 @@ Pour supprimer définitivement votre compte :
 
 La capacité multiplateforme vous permet d'utiliser OsmAnd Pro sur toutes les plateformes *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. Pour ce faire, vous devez :
 
-1. Vous abonner à **OsmAnd Pro**. Pour en savoir plus sur la manière de le faire pour [Android, cliquez ici](../purchases/android.md#how-to-buy), et pour [iOS, cliquez ici](../purchases/ios.md#how-to-buy).
+1. Vous abonner à **OsmAnd Pro**. Pour en savoir plus sur la manière de le faire pour [Android ici](../purchases/android.md#how-to-buy), et pour [iOS ici](../purchases/ios.md#how-to-buy).
 2. Pour savoir comment créer un compte **OsmAnd Start**, lisez plus [ici](https://osmand.net/blog/start#how-to-create-an-account).
 3. Enregistrez votre [compte Pro ou Start](/docs/user/personal/osmand-cloud/#cross-platform) sur le serveur OsmAnd à l'intérieur de l'application OsmAnd.
 4. L'e-mail enregistré sera votre identifiant pour activer OsmAnd Pro sur la plateforme web. La première fois, il est nécessaire de choisir un mot de passe pour les futures connexions au portail web (veuillez suivre les instructions sur le portail web).

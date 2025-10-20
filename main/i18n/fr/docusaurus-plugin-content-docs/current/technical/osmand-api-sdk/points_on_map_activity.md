@@ -2,9 +2,10 @@
 source-hash: a6a2962fac79b5b611b34ace226be31abf031030ebb6b44b2b975b95131b70d6
 sidebar_position: 3
 ---
+
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Points sur l'activité de la carte {#points-on-map-activity}
+# Activité des points sur la carte {#points-on-map-activity}
 Les points favoris sont affichés sur la carte
 
   ```

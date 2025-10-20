@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # Débuter avec OsmAnd {#begin-with-osmand}
 
-Débuter avec OsmAnd (OpenStreetMap Automated Navigation Directions) : comment installer et télécharger des cartes. Accédez à toutes les fonctionnalités via le *Menu principal*. Les premières étapes font également référence aux fonctionnalités clés d'OsmAnd via une liste de questions simples.
+Débuter avec OsmAnd (OpenStreetMap Automated Navigation Directions) : comment installer et télécharger des cartes. Accédez à toutes les fonctionnalités via le *Menu principal*. Les premières étapes font également référence aux fonctionnalités clés d'OsmAnd via une liste de questions simples.
 
 ### [Premiers pas](./first-steps.md) {#first-steps}
 
-Bienvenue sur OsmAnd ! Découvrez comment télécharger des cartes, comment configurer l'application, comment utiliser la carte et construire un itinéraire, comment démarrer la navigation et comment rechercher des points d'intérêt. Familiarisez-vous avec les points clés de la politique de confidentialité d'OsmAnd et les autorisations requises.
+Bienvenue sur OsmAnd ! Découvrez comment télécharger des cartes, comment configurer l'application, comment utiliser la carte et construire un itinéraire, comment démarrer la navigation et comment rechercher des points d'intérêt. Familiarisez-vous avec les points clés de la politique de confidentialité d'OsmAnd et les autorisations requises.
 
 ### [Télécharger des cartes](./download-maps.md) {#download-maps}
 

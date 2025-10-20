@@ -3,6 +3,7 @@ source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
 sidebar_position: 16
 title:  Métriques du véhicule
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -20,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
 :::
 
-Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, la consommation de carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.
+Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité du carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.
 
 Les [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) font partie intégrante du diagnostic automobile moderne. Grâce à la diffusion de données en temps réel, les utilisateurs obtiennent des informations instantanées sur les systèmes du véhicule, ce qui facilite la maintenance préventive et réduit les coûts de réparation. Ces outils sont essentiels tant pour un usage personnel que pour les services automobiles professionnels.
 
@@ -44,7 +45,7 @@ Les [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) font partie intégra
 
 Pour utiliser les données d'un scanner OBD-II :
 
-1. [Achetez](../purchases/) un **abonnement OsmAnd Pro**. (*Vitesse du véhicule* et *Régime moteur* sont gratuits.)
+1. [Achetez](../purchases/) un **abonnement OsmAnd Pro**. (*Vitesse du véhicule* et *Régime moteur* sont gratuits.)  
 2. [Activez](../plugins/index.md#enable--disable) le plugin Métriques du véhicule dans la section Plugins du *Menu principal*.
 3. **Activez** le Bluetooth sur votre appareil.
 4. [Connectez](#pair-odb-ii-scanner) le scanner OBD-II au port de votre véhicule.
@@ -77,7 +78,7 @@ Pour utiliser les données d'un scanner OBD-II :
 Connectez le scanner au port de votre véhicule et appairez-le via l'application :
 
 - Naviguez vers *Menu → Plugins → Métriques du véhicule → Paramètres → Connecter* ou **+**.
-- Si Métriques du véhicule est dans le *Menu principal* : *Menu → Métriques du véhicule → Paramètres → Connecter* ou **+**.
+- Si Métriques du véhicule est dans le *Menu principal* :  *Menu → Métriques du véhicule → Paramètres → Connecter* ou **+**.
 
 Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
@@ -139,7 +140,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 - **Niveau de la batterie**. Indique le niveau de tension de la batterie du véhicule.
 - **Vitesse du véhicule**. Affiche les données du capteur de vitesse du véhicule (VSS).
-- **Position de l'accélérateur**. Détermine l'admission d'air du moteur via l'angle du papillon des gaz.
+- **Position de l'accélérateur**. Détermine l'admission d'air du moteur via l'angle du papillon des gaz.  
   **VIN**. Affiche le numéro d'identification à 17 caractères du véhicule.
 
 ## Enregistrement de trajet {#trip-recording}

@@ -3,6 +3,7 @@ source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
 sidebar_position: 3
 title:  Notes audio/vidéo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -414,9 +414,9 @@ Si vous visualisez le fichier GPX de la trace ajoutée avec un point de cheminem
 
 Le plugin <Translate android="true" ids="audionotes_plugin_name"/> génère des fichiers audio/vidéo/photo au format suivant :
 
-    `{EMPLACEMENT_LIENCOURT}_Description.{avi,mp3,jpg}`
+    `{LIENCOURT_EMPLACEMENT}_Description.{avi,mp3,jpg}`
 
-où `EMPLACEMENT_LIENCOURT` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. L'`EMPLACEMENT_LIENCOURT` est encodé, conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
+où `LIENCOURT_EMPLACEMENT` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. Le `LIENCOURT_EMPLACEMENT` est encodé, conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Exporter vers JOSM {#export-to-josm}

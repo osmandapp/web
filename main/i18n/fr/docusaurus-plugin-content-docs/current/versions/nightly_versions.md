@@ -9,7 +9,7 @@ OsmAnd produit plusieurs versions prêtes à l'emploi chaque jour, ce qui vous p
 
 ## Android {#android}
 ### Versions bêta de Google Play {#google-play-beta-builds}
-Vous pouvez participer aux tests des versions bêta d'OsmAnd via Google Play.
+Vous pouvez participer aux tests des versions bêta d'OsmAnd par le biais de Google Play. 
 
 <div class="button-row">
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand.plus">OsmAnd+</a>
@@ -20,14 +20,14 @@ Vous pouvez participer aux tests des versions bêta d'OsmAnd via Google Play.
 #### Version OpenGL {#opengl-build}
 
 #### Version gratuite {#free-version}
-OsmAnd-default.apk — version nocturne d'OsmAnd gratuit.
+OsmAnd-default.apk — version nocturne d'OsmAnd gratuit. 
 <div>
   <a class="button button--active" href="https://download.osmand.net/latest-night-build/OsmAnd-default.apk">Télécharger</a>
 </div>
 
 ## iOS {#ios}
 ### TestFlight {#testflight}
-Les versions bêta iOS (TestFlight) sont généralement fournies chaque semaine. Elles n'ont pas de description et peuvent avoir une numérotation de version continue. Elles sont censées être stables et prêtes à l'emploi.
+Les versions bêta iOS (TestFlight) sont généralement fournies chaque semaine. Elles n'ont pas de description et pourraient avoir une numérotation de version continue. Elles sont censées être stables et prêtes à l'emploi.
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Rejoindre TestFlight</a>

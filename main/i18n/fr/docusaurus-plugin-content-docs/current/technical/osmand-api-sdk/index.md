@@ -3,7 +3,7 @@ source-hash: 4d2b414b19a5309ab189a4b85deee780fc65f5fbe7b235b81ae54779300d0e0a
 
 ---
 # OsmAnd API, SDK - Exemples {#osmand-api-sdk---samples}
-Si vous souhaitez utiliser OsmAnd comme bibliothèque pour votre application, vous pouvez envisager de l'utiliser via SDK ou via API. Actuellement, ces options ne sont disponibles que pour Android.
+Si vous souhaitez utiliser OsmAnd comme bibliothèque pour votre application, vous pourriez envisager de l'utiliser via SDK ou via API. Actuellement, ces options ne sont disponibles que pour Android.
 
 Il existe 2 façons principales de réutiliser la puissance d'OsmAnd dans votre application :
 - Android OsmAnd AIDL API
@@ -18,11 +18,11 @@ Voici la liste des exemples d'utilisation du SDK dans votre produit.
 [Carte simple](./add_mapview.md) - comment ajouter la carte à une application simple.
 
 ## Android OsmAnd AIDL API {#android-osmand-aidl-api}
-Le concept principal derrière cette approche est que l'application cible communique avec OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) ou l'API intents. OsmAnd dispose d'une grande variété de méthodes prises en charge par l'[interface AIDL](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). Plusieurs applications ont été construites en utilisant cette approche et le concept principal est que l'application contient plusieurs écrans et un bouton "Aller à la carte". En arrière-plan, l'application reconfigure complètement OsmAnd et fournit un rappel pour les opérations principales telles que la navigation, l'acquisition de la position GPS, et inclut également des éléments d'interface utilisateur tels que des widgets / boutons de tiroir, afin que l'utilisateur puisse naviguer de la carte vers l'API cible.
+Le concept principal derrière cette approche est que l'application cible communique avec OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) ou l'API intents. OsmAnd dispose d'une grande variété de méthodes prises en charge par l'[interface AIDL](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). Plusieurs applications ont été construites en utilisant cette approche et le concept principal est que l'application contient plusieurs écrans et un bouton « Aller à la carte ». En arrière-plan, l'application reconfigure complètement OsmAnd et fournit un rappel pour les opérations principales telles que la navigation, l'acquisition de la position GPS, et inclut également des éléments d'interface utilisateur tels que des widgets / boutons de tiroir, afin que l'utilisateur puisse naviguer de la carte vers l'API cible.
 
 La liste des API est assez longue et vous pouvez vous familiariser avec elle dans l'[application de démonstration](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
 
-**Avantages**
+**Avantages** 
 - Pas de problèmes de licence - disponible pour tous les usages possibles
 - Toujours pris en charge, versionné et maintenu par l'équipe OsmAnd
 - L'intégration la plus simple nécessite le moins de lignes de code
@@ -56,4 +56,4 @@ Veuillez consulter l'exemple sur le [dépôt Github](https://github.com/osmandap
 Application de démonstration [OsmAnd-map-sample.apk](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk).
 
 ## Licence {#license}
-Vous pouvez consulter la [licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).
+Vous pourriez vouloir vérifier à nouveau la [licence d'OsmAnd](https://osmand.net/help-online/license) et la [version complète](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE).

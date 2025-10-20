@@ -21,7 +21,7 @@ Les widgets d'information fournissent des informations sur la position actuelle,
 
 ### [Widgets de navigation](./nav-widgets.md) {#navigational-widgets}
 
-Les widgets de navigation sont activés pendant la navigation pour afficher des informations telles que la distance, l'heure d'arrivée ou de départ, les prochains virages, le relèvement, le nom de la rue actuelle, les informations sur les voies, la vitesse maximale, les alertes d'approche, les POI et les points de passage.
+Les widgets de navigation sont activés pendant la navigation pour afficher des informations telles que la distance, le temps d'arrivée ou le temps restant, les prochains virages, le relèvement, le nom de la rue actuelle, les informations sur les voies, la vitesse maximale, les alertes d'approche, les POI et les points de passage.
 
 ### [Règle de rayon et règle](./radius-ruler.md) {#radius-ruler-and-ruler}
 
@@ -33,4 +33,4 @@ Les marqueurs de carte sont des points sélectionnés marqués sur la carte comm
 
 ### [Action rapide](./quick-action.md) {#quick-action}
 
-Le widget Action rapide est un bouton d'action rapide personnalisable sur la carte, avec lequel les actions sélectionnées sont disponibles *en seulement deux clics*.
+Le widget Action rapide est un bouton d'action rapide personnalisable sur la carte, avec lequel les actions sélectionnées sont disponibles *en seulement deux appuis*.

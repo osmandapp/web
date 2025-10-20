@@ -19,16 +19,17 @@ Il y a beaucoup de problèmes pour calculer la **montée** car il n'y a pas de n
 
 OsmAnd utilise un algorithme en 3 étapes :
 
-- Filtrer les données bruitées.
+- Filtrer les données bruitées. 
 - Trouver les extremums locaux (minimums et maximums).
 - Calculer la somme des différences entre min et max.
 
-Certaines traces contiennent beaucoup de données bruitées qui doivent être filtrées en premier. Pour l'instant, nous appliquons le filtrage à toutes les traces, mais pour les traces préparées telles que celles construites par l'outil Planifier un itinéraire, l'outil de navigation ou après correction SRTM, le filtrage ne devrait avoir aucun effet.
+Certaines traces contiennent beaucoup de données bruitées qui doivent être filtrées en premier. Pour l'instant, nous appliquons le filtrage à toutes les traces, mais pour les traces préparées telles que celles construites par 
+l'outil Planifier un itinéraire, l'outil de navigation ou après correction SRTM, le filtrage ne devrait avoir aucun effet.
 
 
 ### Filtrer la pente à 70 % {#filter-70-slope}
 
-Le filtrage est basé sur la recherche de **points extrêmes** qui sont significativement plus hauts ou plus bas qu'un point voisin à gauche et un point voisin à droite sur le graphique.
+Le filtrage est basé sur la recherche de **points extrêmes** qui sont significativement plus hauts ou plus bas qu'un point voisin à gauche et un point voisin à droite sur le graphique. 
 Ces **points extrêmes** sont exclus des calculs ultérieurs. Le ```seuil``` est une [pente de 70 %](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
 **Exemple 1**. (tous les points distribués par 10 m), altitude - [5, 3, 10, 3, 5]. 10 est un point extrême : car 10 > 3 (pente de 70 %).
@@ -62,18 +63,18 @@ Les extremums sont affichés sur le graphique sous forme de points bleus avec le
 ### Calcul de la montée / descente entre les extremums {#calculate-uphill--downhill-between-extremums}
 
 Par exemple, si vous avez une trace simple qui monte et descend, vous n'avez qu'un seul maximum sur votre chemin, donc la
-  ```
-  Différence d'altitude de départ = <altitude de départ> - <altitude de l'extremum> :
-  Différence d'altitude de fin = <altitude de l'extremum> - <altitude de fin> : si positive - **montée**, si négative - **descente**
+  ``` 
+  Différence d'altitude de départ = <altitude de départ> - <altitude de l'extremum>    : 
+  Différence d'altitude de fin = <altitude de l'extremum> - <altitude de fin>      : si positive - **montée**, si négative - **descente**
   ```
 
 1. Si *Différence d'altitude de départ* > 0
-  - **montée** = *différence d'altitude de départ*
-  - **descente** = *différence d'altitude de fin*
+  - **montée** = *différence d'altitude de départ*  
+  - **descente** = *différence d'altitude de fin*  
 
 2. Si *Différence d'altitude de fin* > 0
-  - **montée** = *différence d'altitude de fin*
-  - **descente** = *différence d'altitude de départ*
+  - **montée** = *différence d'altitude de fin*   
+  - **descente** = *différence d'altitude de départ*  
 
 
 Plus d'exemples seront ajoutés.
@@ -83,9 +84,9 @@ Plus d'exemples seront ajoutés.
 
 Il existe 2 alternatives possibles à utiliser dans OsmAnd pour obtenir une correction d'altitude.
 
-1. Ouvrez la trace dans OsmAnd Android et trouvez, *Modifier la trace → Options → Correction d'altitude*
-1.1 **En ligne** traitera la trace via le serveur et les données OsmAnd.
-1.2 **Hors ligne** traitera la trace sur l'appareil si les fichiers geotifs 3D sont téléchargés.
+1. Ouvrez la trace dans OsmAnd Android et trouvez, *Modifier la trace → Options → Correction d'altitude* 
+1.1 **En ligne**  traitera la trace via le serveur OsmAnd et les données.
+1.2 **Hors ligne**  traitera la trace sur l'appareil si les fichiers geotifs 3D sont téléchargés.
 2. Ouvrez le site web https://osmand.net/map et téléchargez la trace pour voir l'altitude SRTM.
 
 

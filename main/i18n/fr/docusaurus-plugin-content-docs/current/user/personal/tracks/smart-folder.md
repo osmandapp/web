@@ -3,6 +3,7 @@ source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Aperçu {#overview}
 
-La fonctionnalité **Dossier intelligent** fournit des outils puissants pour organiser et gérer vos traces. L'une des fonctionnalités clés est la possibilité de filtrer les fichiers dans l'onglet *Traces* du menu *Mes lieux* en fonction de critères tels que la durée, la longueur ou la vitesse.
+La fonctionnalité **Dossier intelligent** fournit des outils puissants pour organiser et gérer vos traces. L'une des fonctionnalités clés est la possibilité de filtrer les fichiers dans l'onglet *Traces* du menu *Mes lieux* en fonction de critères tels que la durée, la longueur ou la vitesse.  
 
 Cette fonctionnalité vous permet de trouver rapidement des traces spécifiques qui correspondent à vos exigences. Les résultats filtrés peuvent être enregistrés en tant que **Dossier intelligent**, offrant un accès pratique à des collections de traces mises à jour dynamiquement.
 
@@ -51,7 +51,7 @@ Allez à : onglet *<Translate ios="true" ids="shared_string_menu,shared_string_m
 
 - **Choisissez les paramètres de filtre requis** pour affiner votre recherche de traces.
 
-- Appuyez sur **Afficher** dans le coin inférieur droit pour voir les résultats filtrés. Le nombre de traces correspondantes apparaît entre parenthèses.
+- Appuyez sur **Afficher** dans le coin inférieur droit pour voir les résultats filtrés. Le nombre de traces correspondantes apparaît entre crochets.
 
 - **Pour effacer** tous les filtres actifs, appuyez sur **Réinitialiser tout**.
 
@@ -88,10 +88,10 @@ Allez à : onglet *<Translate ios="true" ids="shared_string_menu,shared_string_m
     - Vitesse du capteur, max.
     - Fréquence cardiaque, moyenne.
     - Fréquence cardiaque, max.
-    - Cadence de pédalage, moyenne.
-    - Cadence de pédalage, max.
-    - Puissance de pédalage, moyenne.
-    - Puissance de pédalage, max.
+    - Cadence de bicyclette, moyenne.
+    - Cadence de bicyclette, max.
+    - Puissance de bicyclette, moyenne.
+    - Puissance de bicyclette, max.
     - Température, moyenne.
     - Température, max.
 - **Vitesse maximale** — Sélectionnez des traces avec des plages de vitesse maximale spécifiques.
@@ -125,7 +125,7 @@ Allez à : onglet *<Translate ios="true" ids="shared_string_menu,shared_string_m
 
 </Tabs>
 
-Un **Dossier intelligent** est une collection dynamique de traces automatiquement mise à jour en fonction de critères de filtre spécifiques. Il offre des outils avancés pour organiser, rechercher et gérer efficacement les traces.
+Un **Dossier intelligent** est une collection dynamique de traces automatiquement mise à jour en fonction de critères de filtre spécifiques. Il offre des outils avancés pour organiser, rechercher et gérer efficacement les traces.  
 
 ***Avantages des Dossiers intelligents :***
 
@@ -164,17 +164,17 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 <TabItem value="android" label="Android">
 
-![Gestion des Dossiers intelligents Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Gestion des Dossiers intelligents Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gestion des Dossiers intelligents iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Gestion des Dossiers intelligents iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
 
 </TabItem>
 

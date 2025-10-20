@@ -1,8 +1,9 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Paramètres généraux
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -94,7 +94,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 ![Paramètres de stockage des profils Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **La mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#maps--resources), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
+1. **La mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#local-menu), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
 
 2. Dans le **<Translate android="true" ids="change_data_storage_folder"/>**, vous pouvez sélectionner un dossier pour enregistrer les données OsmAnd sur votre appareil.  
 
@@ -122,7 +122,7 @@ Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 
 <!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
-![Fichiers dans iOS](@site/static/img/personal/profiles/files-1.png) ![Fichiers dans iOS](@site/static/img/personal/profiles/files-2.png)
+![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-1.png) ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
@@ -303,14 +303,14 @@ Le paramètre **<Translate android="true" ids="dialogs_and_notifications_title"/
 
 - *Message de démarrage* inclut des promotions, des quiz, des événements, et plus encore.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) supprime l'affichage des réductions de l'application et des messages d'événements locaux spéciaux.
-- La [*boîte de dialogue de téléchargement de carte*](../start-with/download-maps.md#download) vous informe que des cartes spécifiques peuvent être téléchargées.
+- [*Boîte de dialogue de téléchargement de carte*](../start-with/download-maps.md#downloading-maps) vous informe que des cartes spécifiques peuvent être téléchargées.
 
 
 ### Source de localisation {#location-source}
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*Android uniquement*)
 
-![Sauvegarde automatique](@site/static/img/personal/profiles/location_source_andr.png)
+![Source de localisation Android](@site/static/img/personal/profiles/location_source_andr.png)
 
 OsmAnd vous offre un choix de services pour déterminer votre position. Il est recommandé de lire plus d'informations sur l'[autorisation de localisation](../start-with/first-steps.md#permission-to-access-the-location) et le [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) pour cette section.
 
@@ -323,14 +323,14 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 - Le système iOS utilise l'*API iOS* pour déterminer la localisation.  
 - Tous les paramètres de localisation d'OsmAnd se trouvent dans les réglages de l'appareil iOS : *Réglages → OsmAnd Maps → Position*  
-- Confidentialité des services de localisation : *Réglages → Confidentialité → Service de localisation*
+- Confidentialité des services de localisation : *Réglages → Confidentialité → Services de localisation*
 
 
 ### Sauvegarde automatique {#auto-backup}
 
 <InfoAndroidOnly />
 
-![Paramètres généraux notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![Sauvegarde automatique Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
 - Android ou OsmAnd Cloud peuvent enregistrer vos données et les paramètres de l'application.
 
