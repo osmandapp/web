@@ -68,14 +68,14 @@ This tool is helpful when you need a quick understanding of object sizes or dist
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Display position Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Display position Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Display position Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Display position Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -86,6 +86,9 @@ The [Radius Ruler Widget](../widgets/info-widgets.md#radius-ruler) shows the dis
 - Display concentric circles centered on the selected point.
 - The first circle reflects the current [map scale](#ruler) for quick visual reference.
 - Automatically adjusts when zooming to maintain accurate radius values.
+- Tap on the widget to switch between three display modes: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, and <Translate android="true" ids="dark_theme"/>.
+- Long-tap opens the widget’s context menu with additional options.
+- The widget settings include two adjustable parameters: *<Translate android="true" ids="shared_string_height"/>* — controls the visual height of the widget on the screen; *<Translate android="true" ids="shared_string_show_icon"/>* — toggles the visibility of the widget’s icon.
 
 Use this widget to estimate proximity to points of interest or plan around a defined area.
 
