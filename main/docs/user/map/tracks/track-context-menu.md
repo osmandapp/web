@@ -675,9 +675,9 @@ This option divides a track into segments based on elevation changes. Each inter
 
 ![Heart Rate Metrics](@site/static/img/personal/tracks/heart_rate.png)
 
-This option allows you to view average, minimum, and maximum heart rate values (beats per minute, bpm) for each interval of your track. Heart rate data is taken from the track GPX file or recorded directly from a connected external heart rate sensor (BLE). If no heart rate data is available, this row is hidden in the interval table.
+This option allows you to view average, minimum, and maximum heart rate values (beats per minute, bpm) for each interval of your track. Heart rate data is taken from the track GPX file or recorded directly from a connected [external heart rate sensor](https://osmand.net/docs/user/plugins/external-sensors) (BLE). If no heart rate data is available, this row is hidden in the interval table.
 
-**Note:** You can connect a BLE heart rate monitor via *Plugins → External sensors* to record HR data directly in OsmAnd.
+**Note:** You can connect a BLE heart rate monitor via *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* to record HR data directly in OsmAnd.
 
 
 ## GPS Filter {#gps-filter}
