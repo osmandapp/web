@@ -360,7 +360,7 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
         lng = poi.latlng?.lng;
     }
 
-    params.pin = lat && lng ? `${lat},${lng}` : null;
+    params.pin = Number.isFinite(lat) && Number.isFinite(lng) ? `${lat},${lng}` : null;
 
     const keys = Object.keys(poiUrlParams);
     const search = new URLSearchParams();
