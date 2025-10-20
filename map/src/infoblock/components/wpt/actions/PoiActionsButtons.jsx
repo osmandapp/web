@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { createShareLocations, directionFrom, directionTo } from './locationActions';
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../../manager/GlobalManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, POI_URL } from '../../../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../../context/LoginContext';
@@ -48,11 +48,11 @@ export default function PoiActionsButtons({ wpt }) {
             return;
         }
         const geoLink = shareLinks.geoLink;
-        const mapUrl = shareLinks.mapUrl;
+        const mapUrl = globalThis.location.pathname.includes(POI_URL) ? globalThis.location.href : shareLinks.mapUrl;
 
         const name = wpt.name ? `${wpt.name}\n` : '';
         const poiType = wpt.poiType ? `${wpt.poiType}\n` : '';
-        const address = wpt?.address !== ADDRESS_NOT_FOUND ? `${wpt.address}\n` : '';
+        const address = wpt?.address === ADDRESS_NOT_FOUND ? '' : `${wpt.address}\n`;
 
         const shareText = `${name}${poiType}${address}Location: ${geoLink}\n${mapUrl}`;
 
