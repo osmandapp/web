@@ -18,7 +18,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 **OsmAnd Pro per "Dallara"**
 
-Ciao a tutti gli amanti delle due ruote!
+Ciao a tutti gli amanti delle quattro ruote!
 
 OsmAnd e "Dallara" presentano e vi presentano gli abbonamenti OsmAnd Pro per 1 anno.  Potrete utilizzare tutte le funzioni di OsmAnd per [tutte le piattaforme](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android e Web.
 
@@ -42,7 +42,7 @@ ______________________________
 
 **OsmAnd Pro for "Dallara"**
 
-Hello funs of two wheels!
+Hello funs of four wheels!
 
 OsmAnd and "Dallara" introduce and present you OsmAnd Pro subscriptions for 1 annual.  
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
