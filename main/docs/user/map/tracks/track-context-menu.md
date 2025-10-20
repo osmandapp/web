@@ -671,6 +671,15 @@ The **Split by Time** option divides a track into intervals of equal duration. Y
 This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are also the same as in [Split by Distance](#split-by-distance) section.
 
 
+### Heart Rate Metrics {#heart-rate-metrics}
+
+![Heart Rate Metrics](@site/static/img/personal/tracks/heart_rate.png)
+
+This option allows you to view average, minimum, and maximum heart rate values (beats per minute, bpm) for each interval of your track. Heart rate data is taken from the track GPX file or recorded directly from a connected [external heart rate sensor](https://osmand.net/docs/user/plugins/external-sensors) (BLE). If no heart rate data is available, this row is hidden in the interval table.
+
+**Note:** You can connect a BLE heart rate monitor via *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* to record HR data directly in OsmAnd.
+
+
 ## GPS Filter {#gps-filter}
 
 <InfoAndroidOnly />
