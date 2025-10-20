@@ -676,7 +676,7 @@ export const otherImgTags = (tag) => {
 };
 
 export function getOsmIdFromOsmUrl(url) {
-    return url.split('/').pop();
+    return url ? url.split('/').pop() : null;
 }
 
 const WptTagsProvider = {

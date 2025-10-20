@@ -18,6 +18,7 @@ import PoiManager, {
 import 'leaflet.markercluster';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import {
+    CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
@@ -26,7 +27,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
+import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
@@ -566,7 +567,9 @@ export default function PoiLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
-        navigateToPoi({ poi }, navigate);
+        if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
+            navigateToPoi({ poi }, navigate);
+        }
     }
 
     useEffect(() => {
