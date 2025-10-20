@@ -57,7 +57,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loc
 
 </Tabs>
 
-All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. You can select the files you want to export in each folder, one at a time or all at once. **All exported files are saved in `.osf` format**.  
+All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. For example, in the Resources section, maps are grouped by type into *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, and *<Translate android="true" ids="topography_maps"/>* for easier navigation and selective export. You can select the files you want to export in each folder, one at a time or all at once. **All exported files are saved in `.osf` format**.  
 
 
 ### Import {#import}
