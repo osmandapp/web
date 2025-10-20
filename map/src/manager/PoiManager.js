@@ -60,8 +60,7 @@ export const poiUrlParams = {
     type: 'type',
     osmId: 'osmId',
     wikidataId: 'wikidataId',
-    lat: 'lat',
-    lng: 'lng',
+    pin: 'pin',
     lang: 'lang',
 };
 
@@ -337,6 +336,8 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
 
     const wiki = obj.wikidata;
     const poi = obj.poi;
+    let lat;
+    let lng;
 
     if (isWiki) {
         function getWikiPoiType() {
@@ -346,8 +347,8 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
         params.name = poi?.properties.web_poi_name;
         params.type = getWikiPoiType();
         params.wikidataId = wiki.properties?.id;
-        params.lat = wiki.geometry.coordinates?.[1];
-        params.lng = wiki.geometry.coordinates?.[0];
+        lat = wiki.geometry.coordinates?.[1];
+        lng = wiki.geometry.coordinates?.[0];
         params.lang = i18n.language;
     } else {
         const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
@@ -355,9 +356,11 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
         params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);
         params.type = props.type;
         params.wikidataId = poi.options.wikidata_id;
-        params.lat = poi.latlng?.lat;
-        params.lng = poi.latlng?.lng;
+        lat = poi.latlng?.lat;
+        lng = poi.latlng?.lng;
     }
+
+    params.pin = lat && lng ? `${lat},${lng}` : null;
 
     const keys = Object.keys(poiUrlParams);
     const search = new URLSearchParams();

@@ -19,7 +19,7 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
-import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX } from '../manager/GlobalManager';
+import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX, POI_URL } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
@@ -51,6 +51,8 @@ export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
+
+const PIN_PARAM = 'pin';
 
 export const MAX_RECENT_OBJS = 5;
 
@@ -308,7 +310,7 @@ export const AppContextProvider = (props) => {
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
 
-    const searchParams = new URLSearchParams(window.location.search);
+    const searchParams = new URLSearchParams(globalThis.location.search);
     // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(new Date());
@@ -365,9 +367,9 @@ export const AppContextProvider = (props) => {
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
 
     let pinInit;
-    if (searchParams.get('pin')) {
-        let arr = searchParams.get('pin').split(',');
-        pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
+    if (searchParams.get(PIN_PARAM) && !globalThis.location.pathname.includes(POI_URL)) {
+        const arr = searchParams.get(PIN_PARAM).split(',');
+        pinInit = { lat: Number.parseFloat(arr[0]), lng: Number.parseFloat(arr[1]) };
     }
     const [pinPoint, setPinPoint] = useState(pinInit);
 
