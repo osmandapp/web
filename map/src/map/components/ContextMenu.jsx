@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
 import { apiGet } from '../../util/HttpApi';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
@@ -21,7 +21,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
-import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH, POI_URL } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
 import { addClicksToMap } from '../OsmAndMap';
 
@@ -31,6 +31,8 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
 
     const map = useMap();
     const navigate = useNavigate();
+    const location = useLocation();
+
     const { t } = useTranslation();
 
     const [menuPosition, setMenuPosition] = useState(null);
@@ -354,7 +356,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         </MenuItem>
                         <Divider className={styles.dividerMenu} />
                         {/*Add pin */}
-                        {showMenuItem() && (
+                        {ctx.develFeatures && !location.pathname.includes(POI_URL) && showMenuItem() && (
                             <MenuItem
                                 id={'se-add-pin-action'}
                                 className={styles.contextMenuItem}
