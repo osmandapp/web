@@ -205,7 +205,21 @@ The radius circles will appear with depth, which is particularly useful for rout
 
 ## Distance by Tap {#distance-by-tap}
 
-![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 The **Distance by Tap** tool allows you to measure distances between points on the map without using the Radius Ruler or creating a route.
 
@@ -217,11 +231,13 @@ There are two use cases:
 - **Distance between any two points**  
   Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
 
+You can also adjust the text size of the distance label. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
+
 | | |
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Text size (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
