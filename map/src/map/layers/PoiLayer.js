@@ -273,12 +273,13 @@ export default function PoiLayer() {
                 typeOsmValue: data.properties[TYPE_OSM_VALUE],
                 iconName: data.properties[POI_ICON_NAME],
             });
+            // if it has poiTags, then it has info from both wiki and osm
+            const poiTags = data.properties.poiTags;
 
-            if (wikidataId) {
+            if (wikidataId || poiTags) {
                 // open wiki poi
                 const key = data.properties?.osmid ?? data.geometry.coordinates[1] + data.geometry.coordinates[0];
                 const wiki = data ?? null;
-                const poiTags = wiki?.properties.poiTags;
                 const poi = poiTags
                     ? {
                           properties: { ...poiTags },

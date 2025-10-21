@@ -11,6 +11,7 @@ import {
     TYPE_OSM_VALUE,
     SEPARATOR,
     getOsmIdFromOsmUrl,
+    OSM_WIKI,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -61,7 +62,6 @@ export const poiUrlParams = {
     osmId: 'osmId',
     wikidataId: 'wikidataId',
     pin: 'pin',
-    lang: 'lang',
 };
 
 async function getPoiCategories() {
@@ -336,31 +336,12 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
 
     const wiki = obj.wikidata;
     const poi = obj.poi;
-    let lat;
-    let lng;
 
     if (isWiki) {
-        function getWikiPoiType() {
-            const type = wiki.properties.poitype ?? wiki.properties.subtype;
-            return type ? preparedType(type, i18n?.t, 'en') : 'osmwiki';
-        }
-        params.name = poi?.properties.web_poi_name;
-        params.type = getWikiPoiType();
-        params.wikidataId = wiki.properties?.id;
-        lat = wiki.geometry.coordinates?.[1];
-        lng = wiki.geometry.coordinates?.[0];
-        params.lang = i18n.language;
+        Object.assign(params, getWikiPoiParams(poi, wiki));
     } else {
-        const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
-        params.name = poi.options.amenity_name || poi.options.name;
-        params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);
-        params.type = props.type;
-        params.wikidataId = poi.options.wikidata_id;
-        lat = poi.latlng?.lat;
-        lng = poi.latlng?.lng;
+        Object.assign(params, getPoiParams(poi));
     }
-
-    params.pin = Number.isFinite(lat) && Number.isFinite(lng) ? `${lat},${lng}` : null;
 
     const keys = Object.keys(poiUrlParams);
     const search = new URLSearchParams();
@@ -373,8 +354,42 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
     navigate({
         pathname: MAIN_URL_WITH_SLASH + POI_URL,
         search: search.size ? `?${search}` : '',
-        hash: window.location.hash,
+        hash: globalThis.location.hash,
     });
+}
+
+function getWikiPoiParams(poi, wiki) {
+    const params = {};
+    // from wiki properties
+    params.type = getWikiPoiType(wiki.properties);
+    params.pin = getPinParam(wiki.geometry.coordinates?.[1], wiki.geometry.coordinates?.[0]);
+    // from poi properties
+    params.name = poi?.properties.web_poi_name;
+
+    const wikidataIdFromOsm = poi?.properties.osm_tag_wikidata;
+    params.wikidataId = wikidataIdFromOsm ? null : wiki.properties?.id;
+
+    return params;
+}
+
+function getPoiParams(poi) {
+    const params = {};
+    const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
+    params.type = props.type;
+    params.pin = getPinParam(poi.latlng?.lat, poi.latlng?.lng);
+    params.name = poi.options.amenity_name || poi.options.name;
+    params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);
+
+    return params;
+}
+
+function getPinParam(lat, lon) {
+    return Number.isFinite(lat) && Number.isFinite(lon) ? `${lat},${lon}` : null;
+}
+
+function getWikiPoiType(props) {
+    const type = props.poitype ?? props.subtype;
+    return type ? preparedType(type, i18n?.t, 'en') : OSM_WIKI;
 }
 
 const PoiManager = {
