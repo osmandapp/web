@@ -578,7 +578,14 @@ function getWikipediaURL(key, value) {
 }
 
 function shouldSkipKey(key) {
-    return key === 'idObj' || key === 'subway_region' || key === 'note' || key === 'lang_yes' || key.includes(ROUTE);
+    return (
+        key === 'idObj' ||
+        key === 'name' ||
+        key === 'subway_region' ||
+        key === 'note' ||
+        key === 'lang_yes' ||
+        key.includes(ROUTE)
+    );
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {

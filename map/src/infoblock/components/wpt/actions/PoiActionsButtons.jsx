@@ -52,7 +52,7 @@ export default function PoiActionsButtons({ wpt }) {
 
         const name = wpt.name ? `${wpt.name}\n` : '';
         const poiType = wpt.poiType ? `${wpt.poiType}\n` : '';
-        const address = wpt?.address === ADDRESS_NOT_FOUND ? '' : `${wpt.address}\n`;
+        const address = wpt?.address !== ADDRESS_NOT_FOUND ? `${wpt.address}\n` : '';
 
         const shareText = `${name}${poiType}${address}Location: ${geoLink}\n${mapUrl}`;
 
