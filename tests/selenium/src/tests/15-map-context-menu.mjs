@@ -4,7 +4,6 @@ import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import setView from '../actions/setView.mjs';
-import { getUrl } from '../lib.mjs';
 import actionOpenContextMenu from '../actions/map/actionOpenContextMenu.mjs';
 
 export default async function test() {
@@ -44,20 +43,10 @@ export default async function test() {
     await waitBy(By.id('se-route-info'));
     await clickBy(By.id('se-show-menu-navigation'));
 
-    // Add pin
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-add-pin-action'));
-    await checkPin();
-
     //Show regions
     await actionOpenContextMenu();
     await clickBy(By.id('se-show-regions-action'));
     await waitBy(By.className('leaflet-popup'));
 
     await actionFinish();
-}
-
-async function checkPin() {
-    const url = await getUrl();
-    return url.includes('pin');
 }

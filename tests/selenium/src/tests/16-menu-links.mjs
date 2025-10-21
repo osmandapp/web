@@ -87,27 +87,15 @@ export default async function test() {
     url = await getUrl();
     await assert(!url.includes(SETTINGS_URL));
 
-    // check pin
-    await clickOnMapCenter();
-    await waitBy(By.id('se-context-menu'));
-    await clickBy(By.id('se-add-pin-action'));
-    url = await getUrl();
-    await assert(url.includes('pin'));
-    await clickBy(By.id('se-show-menu-navigation'));
-    url = await getUrl();
-    await assert(url.includes('pin'));
-
     // check navigation
     await clickOnMapCenter();
     await waitBy(By.id('se-context-menu'));
     await clickBy(By.id('se-direction-action-from'));
     url = await getUrl();
-    await assert(url.includes('pin'));
     await assert(url.includes(NAVIGATE_URL));
     await assert(url.includes('start'));
     await clickBy(By.id('se-show-menu-navigation'));
     url = await getUrl();
-    await assert(url.includes('pin'));
     await assert(!url.includes(NAVIGATE_URL));
     await assert(!url.includes('start'));
 

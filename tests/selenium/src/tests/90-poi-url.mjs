@@ -19,7 +19,7 @@ export default async function test() {
 
     let currentUrl =
         url.split('#')[0] +
-        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent(type)}&lat=${lat}&lng=${lng}#16/50.4435/30.5190`;
+        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent(type)}&pin=${lat}%2C${lng}#16/50.4435/30.5190`;
 
     await driver.get(currentUrl);
 
@@ -34,12 +34,7 @@ export default async function test() {
     await actionCheckPoi({ iconWpt, name, hidden: true });
 
     currentUrl = await driver.getCurrentUrl();
-    await assert(
-        !currentUrl.includes('poi/?name=') &&
-            !currentUrl.includes('&type=') &&
-            !currentUrl.includes('&lat=') &&
-            !currentUrl.includes('&lng=')
-    );
+    await assert(!currentUrl.includes('poi/?name=') && !currentUrl.includes('&type=') && !currentUrl.includes('&pin='));
 
     await actionFinish();
 }
