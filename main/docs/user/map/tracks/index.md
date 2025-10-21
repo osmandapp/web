@@ -134,6 +134,7 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 - **Graph data (Y-axis)** displays: *Altitude*, *Slope*, *Speed*, [*External sensor data*](../../plugins/external-sensors.md), and combinations of up to two options if contained in the track data.
 - **Graph dimension (X-axis)** represents: *Distance*, *Time*, and *Time of day*.
 - **Tap/slide interaction**. Tap a graph to display information about a specific point on the track. Sliding on the graph highlights the appropriate location on the map and shows details in the information bar.
+- **Distance label**. When tapping or sliding along the graph, the tooltip also displays the exact distance along the track. The value follows the current profile unit settings (<Translate android="true" ids="km"/> or <Translate android="true" ids="mile"/>). Use it to quickly estimate how far a point is from the track start, or to calculate the distance between two positions by comparing their values.
 - **Scaling**. Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
 
 
