@@ -6,6 +6,7 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
+    navigateToPoi,
     updatePoiCache,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
@@ -33,6 +34,7 @@ import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox } from '../util/MapManager';
 import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { useNavigate } from 'react-router-dom';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -92,6 +94,8 @@ export function getObjIdSearch(obj) {
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const navigate = useNavigate();
 
     const prevSelectedRes = useRef(null);
 
@@ -273,6 +277,9 @@ export default function SearchLayer() {
         };
         recentSaver(POI_OBJECTS_KEY, poi);
         ctx.setSelectedWpt({ poi });
+        if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
+            navigateToPoi({ poi }, navigate);
+        }
     }
 
     async function createSearchLayer({ objList }) {

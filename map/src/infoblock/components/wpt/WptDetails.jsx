@@ -215,7 +215,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             const { options: objOptions, latlng, mapObj } = currentPoi;
             const { name, type: objType } = getPropsFromSearchResultItem(objOptions, t);
             return {
-                id: objOptions[POI_ID],
+                id: objOptions[POI_ID] ?? currentPoi.key,
                 type,
                 poiType: objType,
                 name,

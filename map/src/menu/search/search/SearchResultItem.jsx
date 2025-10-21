@@ -205,7 +205,9 @@ export default function SearchResultItem({ item, typeItem }) {
                     obj: item,
                 };
             });
-            navigateToPoi({ poi }, navigate);
+            if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
+                navigateToPoi({ poi }, navigate);
+            }
         } else {
             // click on category
             const category = item.properties['web_keyName'];
