@@ -7,11 +7,13 @@ import { ReactComponent as InappIcon } from '../../assets/icons/ic_action_osmand
 import { useTranslation } from 'react-i18next';
 import { typeMap } from './SubscriptionItem';
 import { fmt } from '../../util/dateFmt';
+import { products } from '../../shop/products/ProductManager';
 
 export default function InAppItem({ id, onClick, name, purchaseTime }) {
     const { t } = useTranslation();
 
     const purchaseDate = purchaseTime ? fmt.MMMdY(Number(purchaseTime)) : 'N/A';
+    const icon = products.find((product) => name.includes(product.name))?.icon || <InappIcon />;
 
     return (
         <MenuItem
@@ -22,7 +24,7 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
             divider
         >
             <ListItemIcon className={styles.icon}>
-                <InappIcon />
+                {icon}
             </ListItemIcon>
             <ListItemText>
                 <Typography className={loginStyles.purchaseName} noWrap>
