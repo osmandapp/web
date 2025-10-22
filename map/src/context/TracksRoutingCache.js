@@ -33,9 +33,9 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
                     (result) => {
                         setStartedRouterJobs((x) => x - 1);
                         if (result) {
-                            updateTrackRouteTypes(result, ctx);
+                            updateTrackRouteTypes(result.points, result.routeTypes, ctx);
                         }
-                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result));
+                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result?.points));
                     },
                     (error) => {
                         // keep busy=true till next init
@@ -59,48 +59,47 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
     return false;
 }
 
-function updateTrackRouteTypes(newGeo, ctx) {
-    const updatedTypes = processGeometryPoints(newGeo, ctx.selectedGpxFile.routeTypes ?? []);
+function updateTrackRouteTypes(newGeo, routeTypes, ctx) {
+    const updatedTypes = processGeometryPoints(newGeo, routeTypes ?? ctx.selectedGpxFile.routeTypes ?? []);
     ctx.setSelectedGpxFile((prev) => {
         return { ...prev, routeTypes: updatedTypes };
     });
 }
 
 function processGeometryPoints(result, routeTypes) {
-    let segmentRouteTypes = null;
     result.forEach((point) => {
         if (point.segment) {
             const segment = point.segment;
-
-            segmentRouteTypes = segmentRouteTypes || segment.routeTypes;
 
             const segmentTypes = segment.ext.types ?? null;
             const segmentPointTypes = segment.ext.pointTypes ?? null;
             const segmentNames = segment.ext.names ?? null;
 
-            let updatedSegmentRouteTypes = new Map();
-            segmentRouteTypes.map((type, oldIndex) => {
-                let newIndex;
-                const existingTypeIndex = routeTypes.findIndex(
-                    (globalType) => globalType.tag === type.tag && globalType.value === type.value
-                );
-                if (existingTypeIndex !== -1) {
-                    newIndex = existingTypeIndex;
-                } else {
-                    routeTypes.push(type);
-                    newIndex = routeTypes.length - 1;
-                }
-                updatedSegmentRouteTypes.set(oldIndex, newIndex);
-            });
+            if (routeTypes && routeTypes.length > 0) {
+                let updatedSegmentRouteTypes = new Map();
+                routeTypes.map((type, oldIndex) => {
+                    let newIndex;
+                    const existingTypeIndex = routeTypes.findIndex(
+                        (globalType) => globalType.tag === type.tag && globalType.value === type.value
+                    );
+                    if (existingTypeIndex !== -1) {
+                        newIndex = existingTypeIndex;
+                    } else {
+                        routeTypes.push(type);
+                        newIndex = routeTypes.length - 1;
+                    }
+                    updatedSegmentRouteTypes.set(oldIndex, newIndex);
+                });
 
-            if (segmentTypes) {
-                segment.ext.types = updateIndexes(segmentTypes, updatedSegmentRouteTypes);
-            }
-            if (segmentPointTypes) {
-                segment.ext.pointTypes = updateIndexes(segmentPointTypes, updatedSegmentRouteTypes);
-            }
-            if (segmentNames) {
-                segment.ext.names = updateIndexes(segmentNames, updatedSegmentRouteTypes);
+                if (segmentTypes) {
+                    segment.ext.types = updateIndexes(segmentTypes, updatedSegmentRouteTypes);
+                }
+                if (segmentPointTypes) {
+                    segment.ext.pointTypes = updateIndexes(segmentPointTypes, updatedSegmentRouteTypes);
+                }
+                if (segmentNames) {
+                    segment.ext.names = updateIndexes(segmentNames, updatedSegmentRouteTypes);
+                }
             }
 
             delete segment.routeTypes;

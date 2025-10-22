@@ -19,7 +19,7 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
         const result = await routers[type].call(this, { ctx, start, end, geoProfile });
 
         // don't allow empty geometry
-        if (result && result.length > 0) {
+        if (result?.points?.length > 0) {
             return result;
         } else {
             // console.error('Router error, Line used');
@@ -70,7 +70,7 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
             TracksManager.updateGapProfileOneSegment(end, points);
 
             if (totalDistance > process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000) {
-                return points;
+                return { points };
             }
 
             const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
@@ -87,8 +87,8 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
             });
 
             return approximateResult && approximateResult.data?.points?.length >= 2
-                ? approximateResult.data.points
-                : points;
+                ? { points: approximateResult.data.points }
+                : { points };
         }
         if (points.message) {
             ctx.setRoutingErrorMsg(points.message);
@@ -109,10 +109,12 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
 
 async function updateRouteBetweenPointsLine({ start, end }) {
     const distance = Utils.getDistance(start.lat, start.lng, end.lat, end.lng);
-    return [
-        { lat: start.lat, lng: start.lng, distance: 0, ...defaultPointExtras },
-        { lat: end.lat, lng: end.lng, distance, ...defaultPointExtras },
-    ];
+    return {
+        points: [
+            { lat: start.lat, lng: start.lng, distance: 0, ...defaultPointExtras },
+            { lat: end.lat, lng: end.lng, distance, ...defaultPointExtras },
+        ],
+    };
 }
 
 async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
@@ -133,7 +135,7 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
     });
     clearTimeout(notifyTimeout);
     if (result) {
-        let data = result?.data; // points
+        let data = result?.data;
         if (typeof result?.data === 'string') {
             data = JSON.parse(quickNaNfix(result.data));
         }
@@ -143,7 +145,7 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
             ctx.setRoutingErrorMsg(null);
         }
         TracksManager.updateGapProfileOneSegment(end, data?.points);
-        return data?.points;
+        return data;
     }
 
     return null;
