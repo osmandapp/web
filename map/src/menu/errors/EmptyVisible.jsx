@@ -11,7 +11,10 @@ export default function EmptyVisible({ id = null }) {
     const ctx = useContext(AppContext);
 
     function showAllTracks() {
-        ctx.setOpenVisibleMenu(false);
+        ctx.setOpenVisibleMenu((prev) => ({
+            ...prev,
+            open: false,
+        }));
     }
 
     return (

@@ -43,6 +43,19 @@ export const INFO_MENU_URL = 'info/';
 export const SHARE_MENU_URL = 'share/';
 export const PRICING_URL = 'pricing/';
 
+export const MENU_IDS = {
+    search: 'se-show-menu-search',
+    config: 'se-show-menu-configuremap',
+    weather: 'se-show-menu-weather',
+    tracks: 'se-show-menu-tracks',
+    favorites: 'se-show-menu-favorites',
+    navigation: 'se-show-menu-navigation',
+    planroute: 'se-show-menu-planroute',
+    settings: 'se-show-menu-settings',
+    trackanalyzer: 'se-show-menu-track-analyzer',
+    travel: 'se-show-menu-travel',
+};
+
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;
 }
