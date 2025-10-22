@@ -18,12 +18,13 @@ import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
-import { getFileStorage, GPX, MENU_INFO_OPEN_SIZE } from '../GlobalManager';
+import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
 import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
+import { compressJSONToBlob } from '../../util/GzipCompression';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -946,14 +947,16 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         ctx.setProcessingAnalytics(true);
     }
 
-    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
+    const compressedData = compressJSONToBlob(postData);
+
+    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, compressedData, {
         params: {
             dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
         },
         apiCache: true,
         abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/gzip',
         },
     });
     setLoading(false);

@@ -262,7 +262,7 @@ export async function apiGet(url, options = null) {
 /*
     axios post() wrapper
 
-    Support: data autodetect = text | FormData | json
+    Support: data autodetect = text | FormData | Blob | json
 */
 
 export async function apiPost(url, data = '', options = null) {
@@ -276,6 +276,10 @@ export async function apiPost(url, data = '', options = null) {
     } else if (isFormData(data)) {
         // FormData, keep type=null
         body = data; // type is formed by fetch()
+    } else if (data instanceof Blob) {
+        // binary data like compressed gzip
+        body = data;
+        type = data.type || 'application/octet-stream';
     } else {
         // finally, try to convert from json
         if (typeof data === 'object') {
