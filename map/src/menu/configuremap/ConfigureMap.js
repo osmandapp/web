@@ -41,7 +41,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { HEADER_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MENU_IDS } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export const DYNAMIC_RENDERING = 'dynamic';
@@ -200,8 +200,11 @@ export default function ConfigureMap() {
                                 <MenuItem
                                     className={styles.item}
                                     onClick={() => {
-                                        ctx.setOpenVisibleMenu(true);
-                                        ctx.setOpenMenu({ id: 'se-show-menu-tracks' });
+                                        ctx.setOpenVisibleMenu({
+                                            open: true,
+                                            source: MENU_IDS.config,
+                                        });
+                                        ctx.setOpenMenu({ id: MENU_IDS.tracks });
                                     }}
                                 >
                                     <ListItemIcon className={styles.iconEnabled}>

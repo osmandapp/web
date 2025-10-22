@@ -276,7 +276,7 @@ const GlobalFrame = () => {
     };
 
     useEffect(() => {
-        if (ctx.openVisibleMenu) {
+        if (ctx.openVisibleMenu.open) {
             let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
             let newVisFilesNames = {
                 old: savedVisible.old || [],
@@ -289,7 +289,7 @@ const GlobalFrame = () => {
                 addCloseTracksToRecently(ctx);
             }
         }
-    }, [ctx.openVisibleMenu]);
+    }, [ctx.openVisibleMenu.open]);
     // create track groups
     useEffect(() => {
         if (!isEmpty(ctx.listFiles)) {

@@ -19,6 +19,7 @@ import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
+import { MENU_IDS } from '../../manager/GlobalManager';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -90,7 +91,7 @@ export default function TracksMenu() {
     }, [defaultGroup?.groupFiles]);
 
     // open visible tracks
-    if (ctx.openVisibleMenu) {
+    if (ctx.openVisibleMenu.open) {
         return <VisibleTracks />;
     }
 
@@ -132,7 +133,12 @@ export default function TracksMenu() {
                                 id={'se-visible-tracks-menu'}
                                 divider
                                 className={styles.item}
-                                onClick={() => ctx.setOpenVisibleMenu(true)}
+                                onClick={() =>
+                                    ctx.setOpenVisibleMenu({
+                                        open: true,
+                                        source: MENU_IDS.tracks,
+                                    })
+                                }
                             >
                                 <ListItemIcon className={styles.icon}>
                                     <VisibleIcon />

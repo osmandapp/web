@@ -21,7 +21,13 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
-import { GLOBAL_GRAPH_HEIGHT_SIZE, LOGIN_URL, MAIN_URL_WITH_SLASH, POI_URL } from '../../manager/GlobalManager';
+import {
+    GLOBAL_GRAPH_HEIGHT_SIZE,
+    LOGIN_URL,
+    MAIN_URL_WITH_SLASH,
+    MENU_IDS,
+    POI_URL,
+} from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
 import { addClicksToMap } from '../OsmAndMap';
 
@@ -157,7 +163,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     }
 
     function openWeather(latlng) {
-        ctx.setOpenMenu({ id: 'se-show-menu-weather', latlng: latlng });
+        ctx.setOpenMenu({ id: MENU_IDS.weather, latlng: latlng });
     }
 
     const showMenuItem = () => {

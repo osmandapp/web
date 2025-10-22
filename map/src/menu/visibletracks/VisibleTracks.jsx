@@ -14,6 +14,7 @@ import { hideAllTracks, showAllVisibleTracks } from '../../manager/track/DeleteT
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { MENU_IDS } from '../../manager/GlobalManager';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -199,7 +200,15 @@ export default function VisibleTracks() {
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
-                            onClick={() => ctx.setOpenVisibleMenu(false)}
+                            onClick={() => {
+                                if (ctx.openVisibleMenu.source === MENU_IDS.config) {
+                                    ctx.setOpenMenu({ id: MENU_IDS.config });
+                                }
+                                ctx.setOpenVisibleMenu((prev) => ({
+                                    ...prev,
+                                    open: false,
+                                }));
+                            }}
                         >
                             <CloseIcon />
                         </IconButton>

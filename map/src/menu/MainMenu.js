@@ -76,6 +76,7 @@ import {
     SEARCH_RESULT_URL,
     EXPLORE_URL,
     POI_URL,
+    MENU_IDS,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -308,7 +309,7 @@ export default function MainMenu({
             component: <SearchMenu />,
             type: OBJECT_SEARCH,
             show: true,
-            id: 'se-show-menu-search',
+            id: MENU_IDS.search,
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
             otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
         },
@@ -318,7 +319,7 @@ export default function MainMenu({
             component: <ConfigureMap />,
             type: OBJECT_CONFIGURE_MAP,
             show: true,
-            id: 'se-show-menu-configuremap',
+            id: MENU_IDS.config,
             url: MAIN_URL_WITH_SLASH + CONFIGURE_URL,
         },
         {
@@ -327,7 +328,7 @@ export default function MainMenu({
             component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
             show: true,
-            id: 'se-show-menu-weather',
+            id: MENU_IDS.weather,
             url: MAIN_URL_WITH_SLASH + WEATHER_URL,
         },
         {
@@ -336,7 +337,7 @@ export default function MainMenu({
             component: <TracksMenu />,
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
-            id: 'se-show-menu-tracks',
+            id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
         },
         {
@@ -345,7 +346,7 @@ export default function MainMenu({
             component: <FavoritesMenu />,
             type: OBJECT_TYPE_FAVORITE,
             show: true,
-            id: 'se-show-menu-favorites',
+            id: MENU_IDS.favorites,
             url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
         },
         {
@@ -354,7 +355,7 @@ export default function MainMenu({
             component: <NavigationMenu />,
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
             show: true,
-            id: 'se-show-menu-navigation',
+            id: MENU_IDS.navigation,
             url: MAIN_URL_WITH_SLASH + NAVIGATE_URL,
         },
         {
@@ -363,7 +364,7 @@ export default function MainMenu({
             component: <PlanRouteMenu />,
             type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
-            id: 'se-show-menu-planroute',
+            id: MENU_IDS.planroute,
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
@@ -372,7 +373,7 @@ export default function MainMenu({
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
             show: ctx.develFeatures,
-            id: 'se-show-menu-travel',
+            id: MENU_IDS.travel,
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
         {
@@ -381,7 +382,7 @@ export default function MainMenu({
             component: <SettingsMenu />,
             type: OBJECT_GLOBAL_SETTINGS,
             show: true,
-            id: 'se-show-menu-settings',
+            id: MENU_IDS.settings,
             url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
         },
         {
@@ -390,7 +391,7 @@ export default function MainMenu({
             component: <TrackAnalyzerMenu />,
             type: OBJECT_TRACK_ANALYZER,
             show: true,
-            id: 'se-show-menu-track-analyzer',
+            id: MENU_IDS.trackanalyzer,
             url: MAIN_URL_WITH_SLASH + TRACK_ANALYZER_URL,
         },
     ];
