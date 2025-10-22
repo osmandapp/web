@@ -49,10 +49,10 @@ Log in using your Telegram registered phone number to enable the following:
 
 ## Required Setup Parameters {#required-setup-parameters}
 
-Install OsmAnd Online GPS Tracker APK:
+You can install the OsmAnd Online GPS Tracker:
 
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- from the [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- or from the [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (APK file)
 
 
 ## Plugin Settings {#plugin-settings}
