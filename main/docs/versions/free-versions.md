@@ -30,7 +30,7 @@ Release date 06/2025:
 - Added Uphills/Downhills analyzer.
 - Expanded Wikipedia & Wikivoyage integration for more POIs.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Version 5.0 {#version-50}
 
