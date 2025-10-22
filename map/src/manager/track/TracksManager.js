@@ -955,9 +955,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         },
         apiCache: true,
         abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
-        headers: {
-            'Content-Type': 'application/gzip',
-        },
     });
     setLoading(false);
     if (resp?.data) {
