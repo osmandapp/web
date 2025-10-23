@@ -175,7 +175,14 @@ You can customize the display of certain ***Travelbooks*** and types of ***track
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
+- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
+- The main route types can also be filtered by classes and subclasses, allowing you to display only specific groups within each type. For example, you can show hiking routes by **OSMC symbols** as classes, and by *international, national, regional*, or *local networks* as subclasses.
+- You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -185,15 +192,16 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
 - OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
 - You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ## Climbing Area and Crag Details {#climbing-area-and-crag-details}
 
