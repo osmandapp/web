@@ -262,7 +262,7 @@ export async function apiGet(url, options = null) {
 /*
     axios post() wrapper
 
-    Support: data autodetect = text | FormData | json
+    Support: data autodetect = text | FormData | Blob | json
 */
 
 export async function apiPost(url, data = '', options = null) {
@@ -276,6 +276,10 @@ export async function apiPost(url, data = '', options = null) {
     } else if (isFormData(data)) {
         // FormData, keep type=null
         body = data; // type is formed by fetch()
+    } else if (data instanceof Blob) {
+        // binary data like compressed gzip
+        body = data;
+        type = data.type || 'application/octet-stream';
     } else {
         // finally, try to convert from json
         if (typeof data === 'object') {
@@ -296,10 +300,12 @@ export async function apiPost(url, data = '', options = null) {
     }
     // console.debug('post-data', url, type, typeof data, data);
 
-    // parse headers from options, override optional Content-Type
-    const contentType = type ? { 'Content-Type': type } : {}; // null?
-    const headers = Object.assign({}, options?.headers || {}, contentType);
-    const fullOptions = Object.assign({}, options, { method: 'POST' }, { headers }, { body });
+    // parse headers from options
+    // auto-detected Content-Type from data.type is used as default
+    // explicit options.headers['Content-Type'] takes precedence if set
+    const contentType = type ? { 'Content-Type': type } : {};
+    const headers = { ...contentType, ...options?.headers };
+    const fullOptions = { ...options, method: 'POST', headers, body };
 
     // console.debug('fetch-post', url, fullOptions);
     return apiGet(url, fullOptions);
