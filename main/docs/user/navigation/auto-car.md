@@ -59,7 +59,7 @@ When you open the application, a list of categories is displayed. For easy navig
 - [Settings](#voice-prompts). This button is responsible for: 1. access to turn *voice prompts* on/off when you are navigating the selected route; 2. show route details (time and distance) for the next stop.
 - [Search](#search). Tapping the button opens a screen with access to the search functions.
 - [My Location](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map. Pinch-to-zoom gesture is available for map scaling. If not supported by the head unit, zoom adjustment is performed by double-tap and swipe gesture.
 - [Compass](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
 
 
