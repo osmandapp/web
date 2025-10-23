@@ -60,13 +60,31 @@ You can set the track color manually or use **color-based data visualization** (
 
 **Available Color Options:**
 
-- **Free settings**: *<Translate android="true" ids="track_coloring_solid"/> color*, *<Translate android="true" ids="shared_string_speed"/>* (if recorded) and *<Translate android="true" ids="altitude"/>* (if recorded).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
-- [Pro feature](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
 
-For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color)and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#routes).
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
+
+The **Coloring list** opens as a context menu. Items can appear in three states: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Can be applied to the current track.
+2. <Translate ios="true" ids="weather_update_disabled"/>. The track lacks the required data.
+3. PRO. Available for the current track but requires a subscription; tapping opens the [<Translate ios="true" ids="purchase_dialog_title"/> screen](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Free settings**: *<Translate android="true" ids="track_coloring_solid"/> color*, *<Translate android="true" ids="shared_string_speed"/>* (if recorded) and *<Translate android="true" ids="altitude"/>* (if recorded).   
+- [Pro feature](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+
+For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color) and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#routes).
 
 
 ### Width {#width}
