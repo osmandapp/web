@@ -724,9 +724,7 @@ To add add/edit track points, enable the OsmAnd [**Trip recording plugin**](../p
 
 <TabItem value="android" label="Android">  
 
-![Action Waypoint Android](@site/static/img/map/action_waypoint_android.png)
-
-![Select Track to add Waypoint Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Select Track to add Waypoint Android](@site/static/img/map/tracks_tab_android.png) ![Add Track Waypoint Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -744,7 +742,7 @@ You can add waypoints to a recorded track or to the current track recording usin
 
 - Select a location on the map with a [long tap](../map/map-context-menu.md#select-any-point-long-tap).
 - In the *map context menu* that opens, choose *Actions → Add track waypoint*.
-- The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md), to which you can add the selected waypoint.
+- The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md), to which you can add the selected waypoint (*on Android*, the list is grouped into tabs: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.
 - [Fill in](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) the required data and save the waypoint.
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*.
