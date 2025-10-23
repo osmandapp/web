@@ -202,7 +202,6 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmAnd provides a detailed summary of the climbing location, including: name and location, climbing difficulty rating (UIAA, French, YDS, etc.), rock type, height and route length, climbing quality and surface conditions.
 
 
-
 ## Actions with Routes {#actions-with-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -215,13 +214,13 @@ When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmA
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-On the map, you can select routes for [hiking, cycle, travel, and more](#type-of-routes), which are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) where applicable.
+On the map, you can select routes for [hiking, cycle, ski, MTB, dirt bike, travel, and more](#type-of-routes), which are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) where applicable.
 
 When you tap a **route symbol** on the map:
 
