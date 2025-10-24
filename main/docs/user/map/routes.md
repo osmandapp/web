@@ -220,7 +220,7 @@ When selecting a [climbing area or crag](../map/routes.md#climbing-routes), OsmA
 
 </Tabs>
 
-On the map, you can select routes for [hiking, cycle, ski, MTB, dirt bike, travel, and more](#type-of-routes), which are marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) where applicable.
+On the map, you can select routes for [hiking, cycle, ski, MTB, dirt bike, travel, and more](#type-of-routes). Where available, hiking routes display their waymarks using [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); other route types use their own markings.
 
 When you tap a **route symbol** on the map:
 
