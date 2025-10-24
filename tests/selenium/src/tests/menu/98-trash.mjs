@@ -7,8 +7,8 @@ import { deleteTrack, getFiles } from '../../util.mjs';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import { readdirSync } from 'node:fs';
 import actionDeleteFolder from '../../actions/actionDeleteFolder.mjs';
-import { UPLOAD_SORT } from './14-sort-tracks.mjs';
-import { UPLOAD_TRACK } from './13-uploud-track-to-cloud.mjs';
+import { UPLOAD_SORT } from '../tracks/14-sort-tracks.mjs';
+import { UPLOAD_TRACK } from '../tracks/13-uploud-track-to-cloud.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 

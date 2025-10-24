@@ -2,7 +2,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import { clickBy, matchInnerTextBy, sendKeysBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { selectProfile } from './42-route-info-block.mjs';
+import { selectProfile } from '../navigation/42-route-info-block.mjs';
 
 const routes = [
     {
