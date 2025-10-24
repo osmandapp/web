@@ -303,6 +303,7 @@ This layout helps keep buttons visually consistent and avoids overlapping. For e
 | Change <br/> [**App profile to next**](../personal/profiles.md) | Switches to the next profile in the list. |
 | Change <br/> [**App profile to previous**](../personal/profiles.md) | Switches to the previous profile in the list. |
 | Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Location position on screen**)  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
+| Change <br/> [**Map orientation**](../map/interact-with-map#map-orientation-modes) | Allows you to change the map rotation mode and switch between selected orientation types. You can choose which modes to include in the cycle. |
 
 
 ## Use Keyboard for Actions {#use-keyboard-for-actions}
