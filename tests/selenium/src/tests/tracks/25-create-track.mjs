@@ -15,7 +15,7 @@ export default async function test() {
     await clickBy(By.id('se-create-route-action'));
 
     await leftClickBy(50.496149, 30.514956);
-    await leftClickBy(50.501308,30.514183);
+    await leftClickBy(50.501308, 30.514183);
 
     await waitBy(By.className('leaflet-interactive'));
     await waitBy(By.id('se-infoblock-all'));
