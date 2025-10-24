@@ -1,6 +1,5 @@
 import { getDistance } from '../../../util/Utils';
 import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager';
-import { processGeometryPoints, updateTrackRouteTypes } from '../../../context/TracksRoutingCache'; // jest: 99999, 'line'
 
 export const defaultPointExtras = {
     srtmEle: null,

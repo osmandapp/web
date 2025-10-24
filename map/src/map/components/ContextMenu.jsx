@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
+import AppContext, {
+    OBJECT_TRACK_ANALYZER,
+    OBJECT_TYPE_NAVIGATION_ALONE,
+    OBJECT_TYPE_NAVIGATION_TRACK,
+} from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
@@ -293,6 +297,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                             return { ...prev, start: latlng };
                                         });
                                     } else {
+                                        ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
                                         navigateSetStartOrFinish({ latlng, target: 'route.points.start' });
                                     }
                                 })
@@ -335,6 +340,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                             return { ...prev, finish: latlng };
                                         });
                                     } else {
+                                        ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
                                         navigateSetStartOrFinish({ latlng, target: 'route.points.finish' });
                                     }
                                 })

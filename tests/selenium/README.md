@@ -1,14 +1,61 @@
-# TODO
+# OsmAnd Web Selenium Tests
+
+## Quick Start
+
+```bash
+yarn test                # Run all tests on localhost
+yarn test:test           # Run on test.osmand.net
+yarn test:main           # Run on osmand.net
+```
+
+## Test Organization
+
+Tests are organized into categories. See [TESTS_STRUCTURE.md](./TESTS_STRUCTURE.md) for detailed information.
+
+```
+src/tests/
+├── base/           # Basic tests (8 tests)
+├── tracks/         # Track management (21 tests)
+├── navigation/     # Navigation and routing (4 tests)
+├── favorites/      # Favorites and waypoints (10 tests)
+├── weather/        # Weather functionality (4 tests)
+├── search/         # Search and POI (8 tests)
+├── map/            # Map operations (2 tests)
+├── purchases/      # Purchases (1 test)
+└── plan-route/     # Route planning (1 test)
+```
+
+## Running Tests
+
+```bash
+# Run all tests
+yarn test
+
+# Run tests by category (pass folder name as argument)
+yarn test weather                    # All tests in weather/ directory
+yarn test tracks                     # All tests in tracks/ directory
+yarn test favorites                  # All tests in favorites/ directory
+
+# Run specific tests
+yarn test 70-75                      # Tests numbered 70-75
+yarn test *wiki*                     # Tests matching 'wiki'
+yarn test base/00-load-site.mjs      # Specific test file
+```
+
+## Options
+
+```bash
+yarn test --list            # List all available tests
+yarn test --headless        # Run in headless mode
+yarn test --mobile          # Run in mobile emulation
+yarn test --stop            # Stop after first failure
+yarn test --longtimeout     # Use 5 minute timeout
+yarn test --help            # Show all options
+```
+
+## TODO
 
 - split timeouts by soft/hard limit (soft should grow up to hard, raising with window.seActivityTimestamp)
-
-# Test groups
-
-- 00 base (load site, login, ...)
-- 10 local tracks (upload gpx, ...)
-- 20 cloud tracks (save to cloud, ...)
-- 30 track visualisation (local, cloud, ...)
-- 40 routing (osrm-profiles, osmand-profiles, ...)
 
 # Apple MacOS (m1/arm64) install fix for node-canvas
 

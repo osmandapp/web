@@ -1,8 +1,11 @@
 'use strict';
 
 import { Builder } from 'selenium-webdriver';
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for logging
+
+const TESTS_DIR = 'src/tests/';
 
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
@@ -33,7 +36,7 @@ export let headless = false;
 export const tests = []; // used by main
 
 export function parseArgs() {
-    process.argv.slice(2).forEach((a) => {
+    for (const a of process.argv.slice(2)) {
         if (a === '-h' || a === '--help') {
             showUsage();
             process.kill(process.pid);
@@ -55,43 +58,64 @@ export function parseArgs() {
         } else {
             findTestsByMask(a);
         }
-    });
+    }
     if (tests.length === 0) {
-        readdirSync('src/tests/')
-            .sort()
-            .forEach((file) => file.match(/\.mjs$/) && tests.push(file));
+        findAllTests();
     }
 }
 
-function findTestsByMask(mask) {
-    let found = 0;
+function scanTestsDir(startDir, filterFn = null) {
+    const found = [];
+    const scanDir = (dir) => {
+        const entries = readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = join(dir, entry.name);
+            if (entry.isDirectory()) {
+                scanDir(fullPath);
+            } else if (entry.name.endsWith('.mjs')) {
+                const relativePath = fullPath.replace(TESTS_DIR, '');
+                if (!filterFn || filterFn(entry.name, relativePath)) {
+                    found.push(relativePath);
+                }
+            }
+        }
+    };
+    scanDir(startDir);
+    return found;
+}
 
+function findAllTests() {
+    const allTests = scanTestsDir(TESTS_DIR);
+    allTests.sort((a, b) => a.localeCompare(b));
+    tests.push(...allTests);
+}
+
+function findTestsByMask(mask) {
+    const testDir = `${TESTS_DIR}${mask}`;
+    if (existsSync(testDir) && statSync(testDir).isDirectory()) {
+        const found = scanTestsDir(testDir);
+        found.sort((a, b) => a.localeCompare(b));
+        tests.push(...found);
+        return;
+    }
+
+    let found;
     const rangeMatch = mask.match(/^(\d+)-(\d+)$/);
     if (rangeMatch) {
         const [, from, to] = rangeMatch.map(Number);
-        readdirSync('src/tests/')
-            .sort()
-            .forEach((file) => {
-                if (!file.endsWith('.mjs')) return;
-                const nums = [...file.matchAll(/\d+/g)].map((m) => parseInt(m[0], 10));
-                if (nums.some((n) => n >= from && n <= to)) {
-                    tests.push(file);
-                    found++;
-                }
-            });
+        found = scanTestsDir(TESTS_DIR, (filename) => {
+            const nums = [...filename.matchAll(/\d+/g)].map((m) => parseInt(m[0], 10));
+            return nums.some((n) => n >= from && n <= to);
+        });
     } else {
         const regexp = mask2regexp(mask);
-        readdirSync('src/tests/')
-            .sort()
-            .forEach((file) => {
-                if (file.match(/\.mjs$/) && file.match(regexp)) {
-                    tests.push(file);
-                    found++;
-                }
-            });
+        found = scanTestsDir(TESTS_DIR, (filename) => filename.match(regexp));
     }
 
-    if (found === 0) {
+    found.sort((a, b) => a.localeCompare(b));
+    tests.push(...found);
+
+    if (found.length === 0) {
         throw Error('test not found');
     }
 }
@@ -103,9 +127,19 @@ export function mask2regexp(mask) {
 }
 
 function showList() {
-    readdirSync('src/tests/')
-        .sort()
-        .forEach((file) => file.match(/\.mjs$/) && console.log(file));
+    const scanDir = (dir, indent = '') => {
+        const entries = readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
+        for (const entry of entries) {
+            const fullPath = join(dir, entry.name);
+            if (entry.isDirectory()) {
+                console.log(indent + entry.name + '/');
+                scanDir(fullPath, indent + '  ');
+            } else if (entry.name.endsWith('.mjs')) {
+                console.log(indent + entry.name);
+            }
+        }
+    };
+    scanDir(TESTS_DIR);
 }
 
 function showUsage() {
@@ -129,7 +163,18 @@ Options:
     --list (--ls)   List tests and exit
     --help          Help and exit
 
-Tests: specify distinct test(s) to run (wildcards are ok)
+Tests: 
+    - No argument: run all tests
+    - Directory name: run all tests in that directory (e.g., 'weather', 'tracks')
+    - Test name: run specific test(s) (wildcards are ok)
+    - Number range: run tests matching number range (e.g., '70-75')
+
+Examples:
+    yarn test weather                  Run all weather tests
+    yarn test tracks                   Run all tracks tests
+    yarn test *wiki*                   Run all tests matching 'wiki'
+    yarn test 70-75                    Run tests 70 through 75
+    yarn test base/00-load-site.mjs    Run specific test
 
 Defaults: run all tests using foreground desktop mode
 `);
