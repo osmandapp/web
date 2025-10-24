@@ -98,6 +98,8 @@ import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from './favorite/FavoriteItem';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import { navigateToPoi } from '../manager/PoiManager';
+import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
+import { searchTypeMap } from '../map/layers/SearchLayer';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -460,10 +462,12 @@ export default function MainMenu({
             if (ctx.selectedPoiObj) {
                 if (ctx.selectedPoiObj.wikidata) {
                     navigateToPoi(ctx.selectedPoiObj, navigate, true);
-                } else {
-                    navigateToPoi(ctx.selectedPoiObj, navigate);
+                    return;
                 }
-                return;
+                if (ctx.selectedPoiObj.options?.[CATEGORY_TYPE] === searchTypeMap.POI) {
+                    navigateToPoi({ poi: ctx.selectedPoiObj }, navigate);
+                    return;
+                }
             }
             if (ctx.poiCatMenu) {
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
@@ -486,7 +490,7 @@ export default function MainMenu({
 
         const menu = items.find((item) => isSelectedMenuItem(item));
         menu && navigateToUrl({ menu, params: ctx.pageParams });
-    }, [selectedType, ctx.pageParams]);
+    }, [selectedType]);
 
     useEffect(() => {
         const updateRequests = () => {
