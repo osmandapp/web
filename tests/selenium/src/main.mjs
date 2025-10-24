@@ -93,7 +93,12 @@ async function manageScreenshot({ file, error = false }) {
     const ss = await driver.takeScreenshot();
 
     const tag = (process.env.npm_lifecycle_event ?? 'test').replace(/[^a-z]/g, '-') + '-'; // yarn command as tag
-    const name = tag + (mobile ? 'mobile-' : '') + (headless ? 'headless-' : '') + file.replaceAll('.mjs', '') + '.png';
+    const name =
+        tag +
+        (mobile ? 'mobile-' : '') +
+        (headless ? 'headless-' : '') +
+        file.replaceAll('.mjs', '').replaceAll('/', '-') +
+        '.png';
 
     const diff = 'screenshots/diff/' + name;
     const failed = 'screenshots/failed/' + name;
