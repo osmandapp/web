@@ -310,6 +310,8 @@ In this menu, you can select which data and folders to upload to the Cloud:
 
 All [maps](../start-with/download-maps.md) are stored on the device on which they were previously downloaded. OsmAnd Cloud only stores information about which maps you have and the date they were last modified.
 
+Disabling backup for a specific data type simply stops syncing it with the Cloud. Your existing data remains stored and can be backed up again later if needed.
+
 
 ### Manage Storage {#manage-storage}
 
@@ -333,7 +335,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 </Tabs>  
 
-The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menu section displays information about how much of the 3.15 gigabytes of memory in *Settings*, *My Places*, and *Resources* are being used. You can delete changes to separate data types from OsmAnd Cloud, but in this case, the action cannot be undone.  
+The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menu section displays information about how much of the 3.15 gigabytes of memory in *Settings*, *My Places*, and *Resources* are being used. You can view the storage size of each data type and delete it from OsmAnd Cloud if needed. 
+
+Deleting data from the Cloud does not affect its backup status or local copies on your device. All removed items remain available in the Trash for 30 days and can be restored during that period.
 
 
 ### Account {#account}
