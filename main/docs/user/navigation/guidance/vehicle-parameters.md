@@ -97,6 +97,14 @@ Vehicle parameters affect navigation and route construction because they determi
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+**5.** [**Max axle load limit**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Provide your vehicle’s maximum axle load to avoid roads and bridges with axle weight restrictions. This parameter is only available in navigation types such as [*Truck*](../../navigation/routing/car-based-routing.md).  
+
+![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Max weight at full load**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Provide your vehicle’s maximum total weight when fully loaded to avoid roads and bridges with overall weight restrictions. This parameter is only available in navigation types such as [*Truck*](../../navigation/routing/car-based-routing.md).  
+
+![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
+
 Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
 
 1. Restrictions on vehicles moving in certain urban areas.  
