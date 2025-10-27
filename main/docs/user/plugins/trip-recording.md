@@ -372,7 +372,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -380,7 +380,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
