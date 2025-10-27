@@ -355,7 +355,7 @@ The app icon badge appears next to the OsmAnd icon when the track recording is a
 
 ## Widgets {#widgets}
 
-Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*.
+Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*. On Android, you can also add *Max Speed* and *Average Slope* widgets.
 
 To start using *Trip recording widgets*, you need to make all the following settings:
 
