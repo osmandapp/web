@@ -206,7 +206,17 @@ export default function VisibleTracks({ source, open }) {
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
-                            id="se-close-visible-tracks"
+                            id={
+                                source
+                                    ? `se-visible-tracks-button-back-${
+                                          source === MENU_IDS.config
+                                              ? 'config'
+                                              : source === MENU_IDS.tracks
+                                                ? 'tracks'
+                                                : source
+                                      }`
+                                    : 'se-visible-tracks-button-close'
+                            }
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}

@@ -204,6 +204,7 @@ export default function ConfigureMap() {
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
                                 <MenuItem
+                                    id={'se-configure-map-visible-tracks'}
                                     className={styles.item}
                                     onClick={() => {
                                         setOpenVisibleTracks(true);
