@@ -397,8 +397,8 @@ To customize your interface, you can add or remove the Trip Recording widget and
 
 <TabItem value="android" label="Android">  
 
-![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
 ![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -416,13 +416,18 @@ The *Distance* widget displays the total distance of your current recorded trip 
 - The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
 - If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
 
-In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes three other widgets: *Duration*, *Uphill*, and *Downhill*. These provide additional information about your trip, helping you track the real-time progress.
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes three other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope* (the last two are available on Android only). These provide additional information about your trip, helping you track the real-time progress.
 
 | |
 |-----------|
 | **Distance/Start-Stop**. This widget displays the distance of your ongoing trip recording. It is automatically added when the Trip Recording plugin is enabled, but you can hide it through the Configure Screen menu. The widget features three distinct states: *Recording*, *Paused*, and *Inactive*, each indicating the current status of your trip recording. |
 | ![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| To open the [Trip Recording dialog](#start-a-dialog) when tapping an inactive widget, enable the *Show Startup Dialog* option in the Trip Recording plugin settings. If the option is disabled, recording will start immediately after tapping the widget without opening the dialog.|  
+| To open the [Trip Recording dialog](#start-a-dialog) when tapping an inactive widget, enable the *Show Startup Dialog* option in the Trip Recording plugin settings. If the option is disabled, recording will start immediately after tapping the widget without opening the dialog.| 
+
+On Android, the Distance widget supports multiple display modes:
+- **Total distance** – total distance of the current recording (default).
+- **Last uphill** – distance of the most recent ascent section.
+- **Last downhill** – distance of the most recent descent section.
 
 
 ### Duration, Uphill, Downhill {#duration-uphill-downhill}
