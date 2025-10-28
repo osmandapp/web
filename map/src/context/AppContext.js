@@ -392,7 +392,11 @@ export const AppContextProvider = (props) => {
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
-    const [openVisibleMenu, setOpenVisibleMenu] = useState({ open: false, source: null });
+    const [openVisibleMenu, setOpenVisibleMenu] = useState({
+        open: false,
+        showTracks: false,
+        showConfig: false,
+    });
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: { text: '' },

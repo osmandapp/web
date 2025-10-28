@@ -27,6 +27,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
+import VisibleTracks from './visibletracks/VisibleTracks';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
@@ -63,6 +64,7 @@ import {
     PLANROUTE_URL,
     SETTINGS_URL,
     TRACKS_URL,
+    VISIBLE_TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
     SHARE_FILE_MAIN_URL,
@@ -157,6 +159,8 @@ export default function MainMenu({
 
     const menuDots = useMenuDots(ctx);
     const recentSaver = useRecentDataSaver();
+    const openVisibleTracks = location.pathname === MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL;
+    const aloneVisibleTracks = openVisibleTracks && !ctx.openVisibleMenu.showTracks && !ctx.openVisibleMenu.showConfig;
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -254,6 +258,10 @@ export default function MainMenu({
         }
         if (location.pathname.includes(LOGIN_URL)) {
             ltx.setOpenLoginMenu(true);
+            return;
+        }
+        if (openVisibleTracks) {
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             return;
         }
         if (!menuInfo) {
@@ -432,6 +440,10 @@ export default function MainMenu({
     useEffect(() => {
         openMenuObject();
 
+        if (openVisibleTracksPage()) {
+            return;
+        }
+
         if (selectedType === OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TRACK_ANALYZER);
         }
@@ -491,6 +503,16 @@ export default function MainMenu({
         const menu = items.find((item) => isSelectedMenuItem(item));
         menu && navigateToUrl({ menu, params: ctx.pageParams });
     }, [selectedType]);
+
+    function openVisibleTracksPage() {
+        const openFromConfig = selectedType === OBJECT_CONFIGURE_MAP && ctx.openVisibleMenu.showConfig;
+        const openFromTracks = selectedType === OBJECT_TYPE_CLOUD_TRACK && ctx.openVisibleMenu.showTracks;
+        if (openFromConfig || openFromTracks) {
+            navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + globalThis.location.hash);
+            return true;
+        }
+        return false;
+    }
 
     useEffect(() => {
         const updateRequests = () => {
@@ -756,7 +778,7 @@ export default function MainMenu({
     }
 
     function isOpenSubMenu() {
-        return showInfoBlock || openCloudSettings;
+        return showInfoBlock || openCloudSettings || aloneVisibleTracks;
     }
 
     return (
@@ -901,6 +923,7 @@ export default function MainMenu({
             >
                 <Toolbar sx={{ mb: '-3px' }} />
                 {(showDeleteOutlet || showShareOutlet) && outlet}
+                {aloneVisibleTracks && <VisibleTracks />}
                 {!isOpenSubMenu() && (
                     <>
                         {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen && outlet ? outlet : null}

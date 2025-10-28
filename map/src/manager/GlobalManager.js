@@ -27,7 +27,10 @@ export const POI_URL = 'poi/';
 export const CONFIGURE_URL = 'configure/';
 export const WEATHER_URL = 'weather/';
 export const WEATHER_FORECAST_URL = 'forecast/';
+
 export const TRACKS_URL = 'mydata/tracks/';
+export const VISIBLE_TRACKS_URL = 'visible-tracks/';
+
 export const FAVORITES_URL = 'mydata/favorites/';
 export const NAVIGATE_URL = 'navigate/';
 export const PLANROUTE_URL = 'plan/';

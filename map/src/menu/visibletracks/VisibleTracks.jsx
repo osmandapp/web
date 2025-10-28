@@ -1,20 +1,23 @@
-import { AppBar, Box, Divider, IconButton, MenuItem, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Divider, IconButton, MenuItem, Toolbar, Typography, Button } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import visibleStyles from './visibletracks.module.css';
 import headerStyles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import CloudTrackItem from '../tracks/CloudTrackItem';
 import EmptyVisible from '../errors/EmptyVisible';
 import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_GROUP_NAME, getFileName, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
-import { Button } from '@mui/material/';
 import { hideAllTracks, showAllVisibleTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
-import { MENU_IDS } from '../../manager/GlobalManager';
+import LoginContext from '../../context/LoginContext';
+import Loading from '../errors/Loading';
+import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -95,8 +98,13 @@ export function addCloseTracksToRecently(ctx) {
     }
 }
 
-export default function VisibleTracks() {
+export default function VisibleTracks({ source, open }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const { t } = useTranslation();
 
     const recentSaver = useRecentDataSaver();
@@ -106,6 +114,8 @@ export default function VisibleTracks() {
     useEffect(() => {
         setAllTracksHidden(allVisibleTracksHidden());
     }, [ctx.visibleTracks]);
+
+    const isLoading = ctx.gpxLoading;
 
     const trackItems = useMemo(() => {
         const items = [];
@@ -131,7 +141,7 @@ export default function VisibleTracks() {
 
     const trackItemsOld = useMemo(() => {
         const items = [];
-        ctx.visibleTracks?.old.map((file, index) => {
+        ctx.visibleTracks?.old?.map((file, index) => {
             const trackName = getFileName(file);
             const smartf = file.sharedWithMe ? { type: SHARE_TYPE } : null;
             const isLastItem = !isEmpty(ctx.visibleTracks?.old) ? index === ctx.visibleTracks?.old.length - 1 : false;
@@ -196,61 +206,86 @@ export default function VisibleTracks() {
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
-                            id="se-close-visible-tracks"
+                            id={
+                                source
+                                    ? `se-visible-tracks-button-back-${
+                                          source === MENU_IDS.config
+                                              ? 'config'
+                                              : source === MENU_IDS.tracks
+                                                ? 'tracks'
+                                                : source
+                                      }`
+                                    : 'se-visible-tracks-button-close'
+                            }
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
                             onClick={() => {
-                                if (ctx.openVisibleMenu.source === MENU_IDS.config) {
-                                    ctx.setOpenMenu({ id: MENU_IDS.config });
-                                }
                                 ctx.setOpenVisibleMenu((prev) => ({
                                     ...prev,
                                     open: false,
+                                    ...(source === MENU_IDS.config && { showConfig: false }),
+                                    ...(source === MENU_IDS.tracks && { showTracks: false }),
                                 }));
+
+                                if (source === MENU_IDS.config) {
+                                    navigate(MAIN_URL_WITH_SLASH + CONFIGURE_URL + location.hash);
+                                } else if (source === MENU_IDS.tracks) {
+                                    navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + location.hash);
+                                } else {
+                                    navigate(MAIN_URL_WITH_SLASH + location.hash);
+                                }
+
+                                if (open) open(false);
                             }}
                         >
-                            <CloseIcon />
+                            {source ? <BackIcon /> : <CloseIcon />}
                         </IconButton>
                         <Typography id="se-visible-cloud-track-name" component="div" className={headerStyles.title}>
                             {t('shared_string_tracks')}
                         </Typography>
-                        <ToggleButton />
+                        {!isLoading && <ToggleButton />}
                     </Toolbar>
                 </AppBar>
-                {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}
-                {hasVisibleTracks() && (
-                    <Box
-                        sx={{
-                            flex: 1,
-                            overflowY: 'auto',
-                            overflowX: 'hidden',
-                        }}
-                    >
-                        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                            {trackItems}
-                        </Box>
-                        {trackItemsOld.length > 0 && (
-                            <>
-                                <Divider />
-                                <MenuItem className={visibleStyles.item}>
-                                    <Typography className={visibleStyles.title} noWrap>
-                                        {t('web:recently_visible')}
-                                    </Typography>
-                                </MenuItem>
+                {isLoading ? (
+                    <Loading />
+                ) : (
+                    <>
+                        {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}
+                        {hasVisibleTracks() && (
+                            <Box
+                                sx={{
+                                    flex: 1,
+                                    overflowY: 'auto',
+                                    overflowX: 'hidden',
+                                }}
+                            >
                                 <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                                    {trackItemsOld}
+                                    {trackItems}
                                 </Box>
-                            </>
+                                {trackItemsOld.length > 0 && (
+                                    <>
+                                        <Divider />
+                                        <MenuItem className={visibleStyles.item}>
+                                            <Typography className={visibleStyles.title} noWrap>
+                                                {t('web:recently_visible')}
+                                            </Typography>
+                                        </MenuItem>
+                                        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
+                                            {trackItemsOld}
+                                        </Box>
+                                    </>
+                                )}
+                            </Box>
                         )}
-                    </Box>
-                )}
-                {!hasVisibleTracks() && !hasTracks() && (
-                    <Empty
-                        title={'You don’t have track files'}
-                        text={'You can import, create track files using OsmAnd.'}
-                        folder={DEFAULT_GROUP_NAME}
-                    />
+                        {!hasVisibleTracks() && !hasTracks() && (
+                            <Empty
+                                title={"You don't have track files"}
+                                text={'You can import, create track files using OsmAnd.'}
+                                folder={DEFAULT_GROUP_NAME}
+                            />
+                        )}
+                    </>
                 )}
             </Box>
         </>

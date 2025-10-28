@@ -19,7 +19,8 @@ import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
-import { MENU_IDS } from '../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -30,6 +31,12 @@ export default function TracksMenu() {
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+
+    const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
@@ -90,9 +97,8 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
-    // open visible tracks
-    if (ctx.openVisibleMenu.open) {
-        return <VisibleTracks />;
+    if (openVisibleTracks) {
+        return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
 
     // open folders
@@ -133,12 +139,15 @@ export default function TracksMenu() {
                                 id={'se-visible-tracks-menu'}
                                 divider
                                 className={styles.item}
-                                onClick={() =>
-                                    ctx.setOpenVisibleMenu({
+                                onClick={() => {
+                                    setOpenVisibleTracks(true);
+                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                    ctx.setOpenVisibleMenu((prev) => ({
+                                        ...prev,
                                         open: true,
-                                        source: MENU_IDS.tracks,
-                                    })
-                                }
+                                        showTracks: true,
+                                    }));
+                                }}
                             >
                                 <ListItemIcon className={styles.icon}>
                                     <VisibleIcon />

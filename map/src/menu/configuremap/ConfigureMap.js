@@ -41,8 +41,10 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { HEADER_SIZE, MENU_IDS } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import VisibleTracks from '../visibletracks/VisibleTracks';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -57,11 +59,15 @@ export default function ConfigureMap() {
 
     const [, height] = useWindowSize();
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
     const [openedTracks, setOpenedTracks] = useState(null);
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
+    const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
 
     const handleFavoritesSwitchChange = () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -198,13 +204,16 @@ export default function ConfigureMap() {
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
                                 <MenuItem
+                                    id={'se-configure-map-visible-tracks'}
                                     className={styles.item}
                                     onClick={() => {
-                                        ctx.setOpenVisibleMenu({
+                                        setOpenVisibleTracks(true);
+                                        navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                        ctx.setOpenVisibleMenu((prev) => ({
+                                            ...prev,
                                             open: true,
-                                            source: MENU_IDS.config,
-                                        });
-                                        ctx.setOpenMenu({ id: MENU_IDS.tracks });
+                                            showConfig: true,
+                                        }));
                                     }}
                                 >
                                     <ListItemIcon className={styles.iconEnabled}>
@@ -307,6 +316,10 @@ export default function ConfigureMap() {
             </>
         );
     };
+
+    if (openVisibleTracks) {
+        return <VisibleTracks source={MENU_IDS.config} open={setOpenVisibleTracks} />;
+    }
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
