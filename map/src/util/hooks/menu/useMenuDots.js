@@ -23,8 +23,11 @@ export default function useMenuDots(ctx) {
     }, [ctx.openFavGroups, ctx.selectedFavoriteObj]);
 
     useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_CLOUD_TRACK, ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj);
-    }, [ctx.openGroups, ctx.selectedCloudTrackObj]);
+        setActiveMenu(
+            OBJECT_TYPE_CLOUD_TRACK,
+            ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj || ctx.openVisibleMenu?.showTracks
+        );
+    }, [ctx.openGroups, ctx.selectedCloudTrackObj, ctx.openVisibleMenu?.showTracks]);
 
     useEffect(() => {
         const showDetails = selectedForecastDetails(ctx);
