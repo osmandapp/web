@@ -155,7 +155,7 @@ async function getTrackData(file) {
     });
 
     let track = null;
-    if (response.ok) {
+    if (response?.ok) {
         let resp = await response.text();
         if (resp) {
             const data = JSON.parse(quickNaNfix(resp));
@@ -396,6 +396,7 @@ export async function getGpxFileFromTrackData(file, routeTypes) {
 
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, compressedData, {
         apiCache: true,
+        abortControllerKey: 'save-track-data-' + file.name,
     });
 }
 

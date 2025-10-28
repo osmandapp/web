@@ -594,7 +594,7 @@ export default function GeneralInfo({ width }) {
                             </>
                         )}
                     {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
-                        <>
+                        <Box sx={{ mb: 2, ml: '-4px' }}>
                             <Button
                                 id="se-infoblock-button-edit-track"
                                 variant="contained"
@@ -611,8 +611,8 @@ export default function GeneralInfo({ width }) {
                                 <Create fontSize="small" sx={{ mr: '7px' }} />
                                 {isCloudTrack(ctx) ? 'Edit Track' : 'Edit as track'}
                             </Button>
-                            <Divider light sx={{ mt: 2, mb: 1 }} />
-                        </>
+                            {points !== 0 && <Divider sx={{ mt: 2, mb: 1 }} />}
+                        </Box>
                     )}
                     {points !== 0 && (
                         <MenuItem sx={{ ml: -2 }}>
