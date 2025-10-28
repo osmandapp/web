@@ -464,6 +464,16 @@ On Android, the Distance widget supports multiple display modes:
 
 If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* — you can access the same dialog box for each without needing to switch or close it. This unified interface makes it easy to view and manage all related information seamlessly.
 
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png)  
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+
 
 ## Related Articles {#related-articles}
 
