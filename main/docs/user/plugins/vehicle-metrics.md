@@ -145,6 +145,7 @@ Metrics are categorized for clarity. Advanced diagnostic tools enable preventive
 *Other:*
 
 - **Battery Level**. Indicates the voltage level of the vehicle's battery.
+- **Adapter Voltage**. Displays the voltage supplied to the OBD-II adapter (AT RV command).
 - **Vehicle Speed**. Displays Vehicle Speed Sensor (VSS) data.
 - **Throttle Position**. Determines engine air intake via throttle plate angle.  
   **VIN**. Displays the vehicle's 17-character identification number.
