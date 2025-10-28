@@ -155,7 +155,7 @@ async function getTrackData(file) {
     });
 
     let track = null;
-    if (response.ok) {
+    if (response?.ok) {
         let resp = await response.text();
         if (resp) {
             const data = JSON.parse(quickNaNfix(resp));

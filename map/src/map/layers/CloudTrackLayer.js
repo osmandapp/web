@@ -59,6 +59,7 @@ export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, naviga
                 wpts: file.wpts,
                 map,
                 ctx,
+                data: file,
                 useMapBounds: true,
             });
         }
@@ -67,7 +68,7 @@ export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, naviga
     return layer;
 }
 
-function simplifyLayer({ layerGroup, wpts, map, ctx = null, useMapBounds = false }) {
+function simplifyLayer({ layerGroup, wpts, map, ctx = null, data = null, useMapBounds = false }) {
     const zoom = map.getZoom();
     const center = map.getCenter();
     const mapBounds = map.getBounds();
@@ -84,7 +85,7 @@ function simplifyLayer({ layerGroup, wpts, map, ctx = null, useMapBounds = false
     let wptLayerGroup = [];
     if (ctx) {
         // parse wpts if layers already simplified
-        TrackLayerProvider.parseWpt({ points: wpts, layers: wptLayerGroup, ctx, map });
+        TrackLayerProvider.parseWpt({ points: wpts, layers: wptLayerGroup, ctx, map, data });
     }
     if (wptLayerGroup.length > 0) {
         wptLayerGroup.forEach((layer) => {
@@ -168,6 +169,7 @@ const CloudTrackLayer = () => {
                             wpts: file.wpts,
                             map,
                             ctx,
+                            data: file,
                             useMapBounds: true,
                         });
                         layer.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
