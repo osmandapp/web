@@ -17,6 +17,7 @@ import {
     PLANROUTE_URL,
     SETTINGS_URL,
     TRACKS_URL,
+    VISIBLE_TRACKS_URL,
     WEATHER_URL,
     EXPLORE_URL,
     TRAVEL_URL,
@@ -38,6 +39,7 @@ import FavoritesMenu from './menu/favorite/FavoritesMenu';
 import NavigationMenu from './menu/navigation/NavigationMenu';
 import PlanRouteMenu from './menu/planroute/PlanRouteMenu';
 import TracksMenu from './menu/tracks/TracksMenu';
+import VisibleTracks from './menu/visibletracks/VisibleTracks';
 import SettingsMenu from './menu/settings/SettingsMenu';
 import ConfigureMap from './menu/configuremap/ConfigureMap';
 import LoginMenu from './login/LoginMenu';
@@ -129,6 +131,7 @@ const App = () => {
                                         <Route path={SHARE_MENU_URL} element={<ShareFileMenu />} />
                                     </Route>
                                 </Route>
+                                <Route path={VISIBLE_TRACKS_URL} element={<VisibleTracks />}></Route>
                                 <Route path={FAVORITES_URL} element={<FavoritesMenu />}>
                                     <Route path={INFO_MENU_URL + ':favgroup/:favname'} element={<InformationBlock />}/>
                                     <Route
