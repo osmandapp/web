@@ -436,13 +436,18 @@ On Android, the Distance widget supports multiple display modes:
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Duration**. Displays the total time of the current trip recording in hours and minutes. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Uphill**. Shows the total ascent or the last ascent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Downhill**. Indicates the total descent or the last descent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -452,6 +457,10 @@ On Android, the Distance widget supports multiple display modes:
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
 |**Downhill**. Indicates the total descent accumulated during the current trip recording. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
+</TabItem>
+
+</Tabs>
 
 If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* — you can access the same dialog box for each without needing to switch or close it. This unified interface makes it easy to view and manage all related information seamlessly.
 
