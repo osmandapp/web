@@ -48,7 +48,9 @@ export default function PoiActionsButtons({ wpt }) {
             return;
         }
         const geoLink = shareLinks.geoLink;
-        const mapUrl = globalThis.location.pathname.includes(POI_URL) ? globalThis.location.href : shareLinks.mapUrl;
+        const mapUrl = globalThis.location.pathname.includes(POI_URL)
+            ? globalThis.location.origin + globalThis.location.pathname + globalThis.location.search
+            : shareLinks.mapUrl;
 
         const name = wpt.name ? `${wpt.name}\n` : '';
         const poiType = wpt.poiType ? `${wpt.poiType}\n` : '';
