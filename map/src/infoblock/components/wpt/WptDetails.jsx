@@ -151,6 +151,24 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const [isAddressAdded, setIsAddressAdded] = useState(false);
     const [isPhotosAdded, setIsPhotosAdded] = useState(false);
 
+    const renderedTags = useMemo(() => {
+        const tags = wpt?.tags?.res;
+        if (!tags) return [];
+
+        const otherTags = [];
+        let wikidataTag = null;
+
+        for (const tag of tags) {
+            if (tag.key?.includes(WIKIDATA)) {
+                wikidataTag = tag;
+            } else {
+                otherTags.push(tag);
+            }
+        }
+
+        return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
+    }, [wpt?.tags?.res]);
+
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
     // debounce map move/scroll
@@ -955,10 +973,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                     }}
                                 />
                             )}
-                            {wpt?.tags?.res
+                            {renderedTags
                                 ?.filter((t) => filterTag(t))
                                 .map((t, index) => (
-                                    <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />
+                                    <WptTagInfo key={index + t?.key} tag={t} setDevWikiContent={setDevWikiContent} />
                                 ))}
                             {wpt.osmUrl && (
                                 <WptTagInfo
