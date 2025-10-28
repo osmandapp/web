@@ -277,6 +277,7 @@ const CloudTrackLayer = () => {
                 registerCleanupFileLayer(file);
             } else if (file.url && file.zoomToTrack && file.gpx) {
                 map.fitBounds(file.gpx.getBounds(), fitBoundsOptions(ctx));
+                file.zoomToTrack = false;
             } else if (!file.url && file.gpx) {
                 processed++;
                 unregisterCleanupFileLayer(file);
