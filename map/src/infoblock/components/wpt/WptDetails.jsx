@@ -976,7 +976,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             {renderedTags
                                 ?.filter((t) => filterTag(t))
                                 .map((t, index) => (
-                                    <WptTagInfo key={index + t?.key} tag={t} setDevWikiContent={setDevWikiContent} />
+                                    <WptTagInfo key={t?.key ?? index} tag={t} setDevWikiContent={setDevWikiContent} />
                                 ))}
                             {wpt.osmUrl && (
                                 <WptTagInfo
