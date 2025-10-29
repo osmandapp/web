@@ -1,8 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## نظرة عامة {#overview}
 
 يقدم OsmAnd مجموعة متنوعة من الملفات الشخصية الافتراضية المصممة لأنشطة مختلفة، بما في ذلك القيادة وركوب الدراجات والمشي والأنشطة الأكثر تخصصًا مثل التزلج وركوب القوارب. تم تصميم هذه الملفات الشخصية لتعزيز تجربة الملاحة الخاصة بك وفقًا للنشاط الذي تمارسه. يتضمن كل ملف شخصي خيارات قابلة للتكوين، مما يتيح لك ضبط الإعدادات ودمج ملحقات إضافية لتتناسب مع تفضيلاتك.
 
-- بعض الملفات الشخصية، مثل *التزلج* و*القوارب*، لها **ميزات إضافية** لا تتوفر إلا عند تمكين الملحقات المقابلة.
+- بعض الملفات الشخصية، مثل *التزلج* و*القارب*، لها **ميزات إضافية** لا تتوفر إلا عند تمكين الملحقات المقابلة.
 
      - يمكن تفعيل الملحقات بالانتقال إلى *القائمة ← الملحقات ← عرض خريطة التزلج* أو *عرض الخريطة البحرية*.
      - يوفر تمكين الملحقات للملفات الشخصية الميزات الأساسية لتلبية المتطلبات المحددة لهذه الأنشطة.
@@ -142,7 +142,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. يضبط ويقفل وضع الشاشة في تطبيق OsmAnd. هذه الميزة غير مدعومة على iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*أندرويد فقط*). يفتح قائمة التحكم في الشاشة، حيث يمكنك تحديد خيارات لشاشة الجهاز أثناء الملاحة لتوفير استهلاك بطارية الجهاز.  
@@ -154,13 +156,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,12 +217,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ياردة / 0.62 ميل (1000 م) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 ميل بحري / 3280.84 قدم / 1000 م |
 |  |  |  |
+| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | مثال: 50.12333° 19.93233° (خط عرض خط طول) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | مثال: 50°7.393′ 19°55.941′ (خط عرض خط طول)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | مثال: 50°7′23.6″ 19°55′56.4″ (خط عرض خط طول) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (منطقة شمال شرق) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | مثال: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | مثال: 9F2X4WFJ+7W ([رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code) يمثل منطقة 9م × 14م)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | مثال:  9F2X4WFJ+7W ([رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code) يمثل منطقة 9م × 14م)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (إصدار أندرويد فقط) | مثال: 2 215 227.87, 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (إصدار أندرويد فقط) | مثال: 4 215 227.87, 1 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
@@ -255,7 +259,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*أندرويد فقط*) – ينعم دوران الخريطة بـ [حركة تدريجية](https://en.wikipedia.org/wiki/Kalman_filter)، مما يقلل من التحولات المفاجئة في الموقع. هذا يسبب تأخيرًا صغيرًا (*أقل من ثانية واحدة*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*أندرويد فقط*) – يستخدم [المستشعر المغناطيسي](https://en.wikipedia.org/wiki/Kalman_filter) في جهازك لتثبيت دوران الخريطة، مما يقلل من التغييرات المفاجئة. هذا يسبب أيضًا تأخيرًا طفيفًا.
-
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*أندرويد فقط*) – انقر على مساحة فارغة على الخريطة لإخفاء أزرار التحكم والأدوات، مما يزيد من رؤية الخريطة.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*أندرويد فقط*) – تعطيل الرسوم المتحركة في وضع الملاحة لانتقالات أسرع للشاشة.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*أندرويد فقط*) – تعطيل الرسوم المتحركة في وضع الملاحة لانتقالات أسرع للشاشة.
 
 
 

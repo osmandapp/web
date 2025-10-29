@@ -1,8 +1,9 @@
 ---
-source-hash: 6ed7b2af27dd55b412539bc8c15f73cc2d55449aac9a5bc6af5328ccd31ec35b
+source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
 sidebar_position: 7
 title:  الإجراء السريع (الأزرار المخصصة)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  ← انقر على تعديل (أيقونة القلم في الزاوية اليمنى العليا) ← حدد الإجراءات*
 
-![إضافة أداة الإجراء السريع_iOS](@site/static/img/widgets/quick_action_widget_2_ios.png) ![زر مخصص أندرويد](@site/static/img/widgets/add_action_screen_ios.png)
+![إضافة أداة الإجراء السريع_iOS](@site/static/img/widgets/quick_action_widget_2_ios.png) ![زر مخصص iOS](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك تعيين إجراء واحد أو أكثر لزر الإجراء السريع. هناك طريقتان لإضافة الإجراءات.
 
-- **في شاشة الإعدادات**. حدد زرًا من القائمة، وانقر على زر "**＋**". تحتاج إلى تحديد [نوع الإجراء](#action-types) أولاً، ثم تغيير اسمه و[معلماته](#actions-in-loop).
+- **في شاشة الإعدادات**. حدد زرًا من القائمة، وانقر على زر "**＋**". تحتاج إلى تحديد [نوع الإجراء](#action-types) أولاً، ثم تغيير اسمه و[معلماته](#action-parameters).
 - **في لوحة زر الإجراء السريع**. انقر على *زر الإجراء السريع* على شاشة الخريطة. في نهاية القائمة، على آخر شاشة في اللوحة، يوجد مربع "**＋**" *إضافة إجراء*. انقر عليه وحدد إجراءً من [قائمة الأنواع](#action-types).
 
 
@@ -128,38 +128,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - انتقل إلى *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - انقر على *تعديل* (أيقونة القلم)، ثم *اضغط واسحب* على أيقونة الخطوط العمودية الثلاثة لإعادة ترتيب الإجراءات.
 
-#### الإجراءات في حلقة {#actions-in-loop}
-
-![زر مخصص أندرويد](@site/static/img/widgets/actions_in_loop_andr.png)
-
-بالنسبة لبعض الإجراءات، يمكنك تعيين قائمة من الطبقات التي ستتغير في دائرة مع كل نقرة: *مصدر الخريطة*، *نمط الخريطة*، *طبقة علوية*، *طبقة سفلية*، *نظام ألوان التضاريس*، *إضافة ملف شخصي*.
-
-يسمح لك الزر بتعيين طبقة واحدة أو قائمة من الطبقات التي تتغير بشكل دائري عند النقر أو مع مربع حوار مؤقت.
-
-- **إظهار مربع حوار مؤقت**. يعرض مربع حوار بقائمة من الخرائط.
-- **عدم إظهار مربع حوار مؤقت**. تتغير مصادر الخريطة بترتيب محدد.
+:::info
+بعض الإجراءات مثل *مصدر الخريطة*، *نمط الخريطة*، *طبقة علوية*، *طبقة سفلية*، *نظام ألوان التضاريس*، و*إضافة ملف شخصي* يمكن تعيينها كحلقة. كل نقرة على الزر تدور عبر الطبقات المحددة. يمكن إظهار مربع حوار مؤقت للاختيار يدويًا من القائمة، أو إخفاؤه للتبديل بالترتيب المحدد.
+:::
 
 
-### تغيير الموضع على الخريطة {#change-position-on-the-map}
-
-تظهر أداة *الإجراء السريع* في الزاوية السفلية من شاشة الخريطة عند تمكينها لأول مرة. يمكنك نقل الأداة إلى أي جزء من الشاشة عن طريق الضغط والسحب. لوضع الأزرار بدقة على شاشة الخريطة، يتم محاذاتها تلقائيًا إلى أقرب موضع شبكة غير مرئي عند سحبها.
-
-- **المظهر الأولي**. بشكل افتراضي، توضع أداة الإجراء السريع في الزاوية اليمنى السفلية من واجهة الخريطة.
-
-    ![عرض أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_view.png)
-
-- **نقل الأداة**. بالضغط المطول والسحب على الأداة، يمكنك إعادة وضعها على الشاشة، مع محاذاة تلقائية للأعمدة والصفوف.
-
-    ![النقر على أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_tap.png)
-
-- **الموضع الجديد**. بمجرد نقلها، ستبقى الأداة في موضعها الجديد على شاشة الخريطة حتى يتم تعديلها يدويًا مرة أخرى.
-
-    ![نقل أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_move.png)
-
-- **[أزرار مخصصة](#custom-buttons) متعددة**. يمكنك إضافة أزرار إجراء سريع متعددة إلى شاشة الخريطة. يمكن أيضًا تخصيص هذه الأزرار وإعادة وضعها بشكل فردي باستخدام نفس طريقة السحب والإفلات.
-
-    ![نقل أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_multi.png)
-
+## الأزرار على الشاشة {#buttons-on-the-screen}
 
 ### الأزرار المخصصة {#custom-buttons}
 
@@ -187,8 +161,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 جميع [الإجراءات](#action-types) المتاحة مطابقة لتلك التي يمكن تطبيقها على الإجراء السريع الافتراضي. يمكن تكوين الأزرار المخصصة كأزرار ***إجراء واحد***، والتي تطبق الإجراء المحدد فور النقر عليها، دون الحاجة إلى التنقل عبر قائمة إضافية.
 
-
-### مظهر زر الإجراء السريع {#quick-action-button-appearance}
+### مظهر الزر {#button-appearance}
 
 <InfoAndroidOnly/>
 
@@ -197,6 +170,48 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يمكنك تعديل مظهر أزرار الإجراء السريع من خلال: *القائمة ← إعداد الشاشة ← الأزرار المخصصة ← الإجراء السريع ← قائمة النقاط الثلاث ← المظهر*. يوفر هذا الإعداد خيارات لتخصيص حجم الزر وشكله وأيقونته وشفافية الخلفية، مما يوفر تحكمًا أكبر في كيفية ظهور الأزرار على شاشتك.
 
 للحصول على إعدادات تخصيص مفصلة، راجع مقال [إعداد الشاشة](../widgets/configure-screen.md#button-appearance)، حيث يمكنك معرفة كيفية ضبط مظهر كل زر ليتناسب مع تفضيلاتك.
+
+### تغيير موضع الزر {#change-button-position}
+
+تظهر أداة *الإجراء السريع* في الزاوية السفلية من شاشة الخريطة عند تمكينها لأول مرة. يمكنك نقل الأداة إلى أي جزء من الشاشة عن طريق الضغط والسحب. لوضع الأزرار بدقة على شاشة الخريطة، يتم محاذاتها تلقائيًا إلى أقرب موضع شبكة غير مرئي عند سحبها.
+
+- **المظهر الأولي**. بشكل افتراضي، توضع أداة الإجراء السريع في الزاوية اليمنى السفلية من واجهة الخريطة.
+
+    ![عرض أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_view.png)
+
+- **نقل الأداة**. بالضغط المطول والسحب على الأداة، يمكنك إعادة وضعها على الشاشة، مع محاذاة تلقائية للأعمدة والصفوف.
+
+    ![النقر على أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_tap.png)
+
+- **الموضع الجديد**. بمجرد نقلها، ستبقى الأداة في موضعها الجديد على شاشة الخريطة حتى يتم تعديلها يدويًا مرة أخرى.
+
+    ![نقل أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_move.png)
+
+- **أزرار [مخصصة](#custom-buttons) متعددة**. يمكنك إضافة أزرار إجراء سريع متعددة إلى شاشة الخريطة. يمكن أيضًا تخصيص هذه الأزرار وإعادة وضعها بشكل فردي باستخدام نفس طريقة السحب والإفلات.
+
+    ![نقل أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_multi.png)
+
+### تخطيط الشبكة للأزرار {#grid-layout-for-buttons}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![شبكة للأزرار_v_أندرويد](@site/static/img/widgets/grid_buttons_v_and.png) ![شبكة للأزرار_h_أندرويد](@site/static/img/widgets/grid_buttons_h_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![شبكة للأزرار_v_iOS](@site/static/img/widgets/grid_buttons_v_ios.png) ![شبكة للأزرار_h_iOS](@site/static/img/widgets/grid_buttons_h_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+[أزرار الخريطة](../widgets/map-buttons.md#overview) يتم ترتيبها تلقائيًا باستخدام تخطيط شبكة. يتم تعيين كل زر إلى إحدى الزوايا الأربع للشاشة (*أعلى يسار*، *أعلى يمين*، *أسفل يسار*، *أسفل يمين*). إذا لم يكن هناك مساحة كافية في الزاوية المعينة، يتم محاذاة الأزرار أفقيًا أو رأسيًا، اعتمادًا على اتجاه الشاشة.
+
+يساعد هذا التخطيط في الحفاظ على اتساق الأزرار بصريًا وتجنب التداخل. على سبيل المثال، على شاشة أفقية، ستُرتب الأزرار في الزاوية اليمنى أفقيًا في أسفل الشاشة، بينما على شاشة رأسية ستمتد رأسيًا لأعلى أو لأسفل حسب الحاجة.
 
 
 ## أنواع الإجراءات {#action-types}
@@ -289,6 +304,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | تغيير <br/> [**ملف تعريف التطبيق إلى التالي**](../personal/profiles.md) | ينتقل إلى الملف الشخصي التالي في القائمة. |
 | تغيير <br/> [**ملف تعريف التطبيق إلى السابق**](../personal/profiles.md) | ينتقل إلى الملف الشخصي السابق في القائمة. |
 | تغيير <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **موضع الموقع على الشاشة**)  | يسمح لك بتعيين موضع مؤشر *موقعي* على الخريطة. يمكّن أو يعطّل المؤشر ليكون دائمًا في وسط الشاشة. |
+| تغيير <br/> [**اتجاه الخريطة**](../map/interact-with-map#map-orientation-modes) | يسمح لك بتغيير وضع دوران الخريطة والتبديل بين أنواع الاتجاه المحددة. يمكنك اختيار الوضعيات التي تريد تضمينها في الدورة. |
 
 
 ## استخدام لوحة المفاتيح للإجراءات {#use-keyboard-for-actions}

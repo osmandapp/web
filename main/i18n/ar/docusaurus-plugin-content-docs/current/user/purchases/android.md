@@ -1,8 +1,9 @@
 ---
-source-hash: 59105c56151485c124187aec140f9896ef88ba52a652803d2a24f3ef2ca527f0
+source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## تثبيت OsmAnd (أندرويد) {#install-osmand-android}
@@ -78,9 +78,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
@@ -93,15 +93,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |
-| **السعر (يورو)** | ٠ يورو | ٣٩٬٩٩ يورو | ٩٬٩٩ يورو | ٢٬٩٩ يورو / ٢٩٬٩٩ يورو |
-| **السعر (دولار أمريكي)** | ٠ دولار | ٣٩٬٩٩ دولار | ٩٬٩٩ دولار | ٢٬٩٩ دولار / ٢٩٬٩٩ دولار |
+| **السعر (يورو)** | ٠ يورو | ٣٩٬٩٩ يورو | ٩.٩٩ يورو | ٢.٩٩ يورو / ٢٩.٩٩ يورو |
+| **السعر (دولار أمريكي)** | ٠ دولار | ٣٩.٩٩ دولار | ٩.٩٩ دولار | ٢.٩٩ دولار / ٢٩.٩٩ دولار |
+
 
 
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
@@ -164,10 +165,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمنطقتك أو قارة بأكملها ومراقبته. |
 | [تحديثات حية](../personal/maps-resources.md#live-updates) | تتحدث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |
 | [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة قادمة ولمدة ٧ أيام على الخريطة. |
-| [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات مفصلة للمركبة في تطبيق OsmAnd وتخزين المعلومات في سجلات المسار. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني. |
+| [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات مفصلة للمركبة في تطبيق OsmAnd وتخزين المعلومات في سجلات المسار. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني.  |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
-| [ويدجت الارتفاع](../widgets/nav-widgets.md#elevation-widget) | يعرض موقعك على الرسم البياني للارتفاع لمسار الملاحة مع معلومات إضافية. |
-| [ويدجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر. |
+| [ويدجت الارتفاع](../widgets/nav-widgets.md#elevation-widget) | يعرض موقعك على الرسم البياني للارتفاع لمسار الملاحة مع معلومات إضافية.  |
+| [ويدجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [تصحيح الارتفاع (بدون اتصال)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | يسمح لك بحساب رسم بياني للارتفاع لمسارك (تتطلب [خريطة التضاريس](../plugins/topography.md#download-maps) للمنطقة المختارة). |
 
 
@@ -185,15 +186,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → المتابعة مع OsmAnd Pro*
 
-![خطة Pro](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
 ### شراء Maps+ {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) اشتراك / خطة داخل التطبيق *Maps+*. هنا يمكنك اختيار اشتراك سنوي أو دفعة لمرة واحدة:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  اشتراك / خطة داخل التطبيق *Maps+*. هنا يمكنك اختيار اشتراك سنوي أو دفعة لمرة واحدة:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → المتابعة مع Maps+*
 
-![خطة Maps+](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps.png)
 
 
 ## الاشتراكات القديمة (قبل الإصدار ٤.٠) {#legacy-subscriptions-prior-40}
@@ -208,7 +209,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 لاستعادة عملية الشراء، يرجى التحقق من خطة OsmAnd التي اشتريتها.
 
 - **Google Play**: يمكنك التحقق منها في [سجل طلبات Google Play](https://support.google.com/googleplay/answer/2850369).
-- **Huawei App Gallery**: يمكنك التحقق منها في [سجل طلبات Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/).
+- **Huawei App Gallery**: يمكنك التحقق منها في [سجل طلبات Huawei App Gallery](https://consumer.huawei.com/en/support/content/en-us00694318/ ).
 
 ### تثبيت التطبيق {#install-application}
 
@@ -231,7 +232,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - *لفتح استعادة المشتريات*، اتبع الخطوات التالية: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ويجب أن يظهر في أعلى الشاشة أن Maps+ (Pro) قد تم تفعيله.
 - *سجّل ميزات Pro* باشتراك OsmAnd Pro لجميع المنصات (أندرويد و iOS). إذا كان لديك حساب OsmAnd Pro، فأنت بحاجة إلى استخدامه [لتفعيل OsmAnd Pro](../personal/osmand-cloud.md) على جهازك.
 
-![خطة Pro](@site/static/img/purchases/maps_purchases.png)
+![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
 ### حالات أخرى {#other-cases}
 

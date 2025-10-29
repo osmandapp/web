@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  مسطرة نصف القطر والمسطرة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -48,11 +48,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تعرض **المسطرة** مقياس الخريطة الحالي كقطعة مستقيمة تحمل طولها في العالم الحقيقي (على سبيل المثال، ١٠٠ متر أو ٥٠٠ قدم)، في أسفل الشاشة. الخصائص:
+تعرض **المسطرة** مقياس الخريطة الحالي كقطعة مستقيمة تحمل طولها في العالم الحقيقي (على سبيل المثال، ١٠٠ م أو ٥٠٠ قدم)، في أسفل الشاشة. الخصائص:
 
 - يتكيف المقياس ديناميكيًا عند التكبير أو التصغير.
 - يوفر مرجعًا بصريًا لتقدير المسافات في العالم الحقيقي بين الكائنات على الخريطة.
-- يتم تقريب طول القطعة إلى وحدات ملائمة (على سبيل المثال، ١٠٠ متر)، بما يتناسب تقريبًا مع عرض الإبهام للاستخدام البديهي.
+- يتم تقريب طول القطعة إلى وحدات ملائمة (على سبيل المثال، ١٠٠ م)، بما يتناسب تقريبًا مع عرض الإبهام للاستخدام البديهي.
 
 هذه الأداة مفيدة عندما تحتاج إلى فهم سريع لأحجام الكائنات أو المسافات دون وضع علامات أو مسارات.
 
@@ -67,16 +67,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف ودجة ← <Translate android="true" ids="radius_ruler_item"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف ودجة ← <Translate android="true" ids="radius_ruler_item"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - عرض دوائر متحدة المركز تتمحور حول النقطة المحددة.
 - تعكس الدائرة الأولى [مقياس الخريطة](#ruler) الحالي كمرجع بصري سريع.
 - يتم الضبط تلقائيًا عند التكبير للحفاظ على قيم نصف قطر دقيقة.
+- انقر على الودجة للتبديل بين ثلاثة أوضاع عرض: <Translate android="true" ids="shared_string_hide"/>، <Translate android="true" ids="light_theme"/>، و<Translate android="true" ids="dark_theme"/>.
+- الضغط المطول يفتح قائمة السياق للودجة مع خيارات إضافية.
+- تشمل إعدادات الودجة معاملين قابلين للتعديل: *<Translate android="true" ids="shared_string_height"/>* — يتحكم في الارتفاع البصري للودجة على الشاشة؛ *<Translate android="true" ids="shared_string_show_icon"/>* — يتحكم في إظهار أيقونة الودجة.
 
 استخدم هذه الودجة لتقدير القرب من نقاط الاهتمام أو التخطيط حول منطقة محددة.
 
@@ -139,13 +142,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - يؤدي حمل الجهاز أفقيًا إلى تحسين الدقة والتصور.
 - إذا كان **المثلث الأزرق** و**السهم الأحمر** (الشمال) يشيران كلاهما إلى الأعلى، فإن الجهاز يكون محاذيًا للشمال الحقيقي.
 
-هذا التراكب مفيد للملاحة في الهواء الطلق، مما يتيح لك مطابقة [اتجاه الخريطة](../map/interact-with-map.md#map-orientation-modes) مع البيئة الحقيقية.
+هذا التراكب مفيد للملاحة في الهواء الطلق، مما يتيح لك مطابقة [اتجاه الخريطة](../map/interact-with-map.md#map-orientation-modes) مع البيئة الحقيقية.  
 
 | | |
 |------------|------------|
-| تفعيل | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف ودجة ← <Translate android="true" ids="radius_ruler_item"/>* |
-|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← أضف ودجة ← <Translate android="true" ids="radius_ruler_item"/>* |
-| التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (أندرويد)* ← *<Translate ios="true" ids="angular_units"/> (iOS)* |  
+| تفعيل | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>* |
+|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>* |
+| التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (أندرويد)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## موضع الوسط / الأسفل {#center--bottom-position}
@@ -162,7 +165,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *← أخرى ← موضع الموقع على الشاشة*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ أخرى → موضع الموقع على الشاشة*
 
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![مسطرة نصف القطر للأسفل](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
@@ -170,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-لزيادة نصف القطر المرئي حول موقعك، يمكنك تغيير موضع مسطرة نصف القطر عن طريق تحديد خيار *الوسط* أو *الأسفل*.
+لزيادة نصف القطر المرئي حول موقعك، يمكنك تغيير موضع مسطرة نصف القطر عن طريق تحديد خيار *الوسط* أو *الأسفل*.  
 
 لمزيد من المعلومات حول *الموضع على الشاشة*، راجع مقالة [تكوين الشاشة](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المسافة بالنقر {#distance-by-tap}
 
-![المسافة بين نقطتين عشوائيتين على الخريطة](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![المسافة بالنقر أندرويد](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![المسافة بالنقر iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 تتيح لك أداة **المسافة بالنقر** قياس المسافات بين النقاط على الخريطة دون استخدام مسطرة نصف القطر أو إنشاء مسار.
 
@@ -215,11 +232,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **المسافة بين أي نقطتين**  
   انقر على نقطتين على الخريطة في وقت واحد (لمس متعدد). يربط خط بين النقطتين، ويتم عرض المسافة المقاسة.
 
+يمكنك أيضًا تعديل حجم نص تسمية المسافة. اختر بين *<Translate android="true" ids="shared_string_normal"/>* (افتراضي) و*<Translate android="true" ids="shared_string_large"/>* (١٫٥× أكبر). عند اختيار الخيار الكبير، يتم إضافة مسافة إضافية تلقائيًا بين الخط والتسمية لتحسين القراءة. تُطبق التغييرات فورًا دون إعادة تشغيل التطبيق.
+
 | | |
 |------------|------------|
 | تفعيل |  **أندرويد:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| حجم النص (أندرويد) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| حجم النص | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | تنسيق الوحدات | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
+source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
 sidebar_position: 13
 title:  عرض خريطة التزلج
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -43,10 +43,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 الإعداد التالي يجعل خريطة التزلج في OsmAnd تظهر على الشاشة:
 
-١. تمكين [ملحق عرض خريطة التزلج](../plugins/index.md#enable--disable).
-٢. تعيين نمط خريطة [الشتاء والتزلج](#set-winter-and-ski-map-style) [للملف الشخصي](../personal/profiles.md) المطلوب.
-٣. إذا لزم الأمر، [دمج الخرائط](#combine-maps).
-
+١. تمكين [ملحق عرض خريطة التزلج](../plugins/index.md#enable--disable).  
+٢. تعيين نمط خريطة [الشتاء والتزلج](#set-winter-and-ski-map-style) [للملف الشخصي](../personal/profiles.md) المطلوب.  
+٣. إذا لزم الأمر، [دمج الخرائط](#combine-maps).  
+  
 
 ### تعيين نمط خريطة الشتاء والتزلج {#set-winter-and-ski-map-style}
 
@@ -54,7 +54,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![تمكين نمط الشتاء في أندرويد](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![نمط خريطة ملحق خرائط التزلج في أندرويد](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -62,7 +62,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![تمكين نمط الشتاء في iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![نمط خريطة ملحق خرائط التزلج في iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -72,8 +72,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يبرز نمط خريطة الشتاء والتزلج المسارات، ومسارات جولات التزلج، ومسارات التزلج بالزلاجات، والمعلومات المتعلقة بالشتاء والتزلج. لعرض النمط على الخريطة، تحتاج إلى إجراء الإعدادات التالية:
 
-١. حدد [الملف الشخصي](../personal/profiles.md) المطلوب.
-٢. افتح [تكوين الخريطة](../map/configure-map-menu.md).
+١. حدد [الملف الشخصي](../personal/profiles.md) المطلوب.  
+٢. افتح [تكوين الخريطة](../map/configure-map-menu.md).  
 ٣. مرر لأسفل إلى نمط الخريطة/نوع الخريطة، افتحه، وحدد **الشتاء والتزلج**.
 
 :::tip تكوينات
@@ -99,14 +99,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-يمكن استكمال [الخريطة المتجهية](../map/vector-maps.md) التي تتضمن [نمط خريطة الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) بـ [خطوط الكنتور](../plugins/topography.md#contour-lines) و [تظليل التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers). فيما يلي مثالان. تظهر المسارات على الخريطة المتجهية الافتراضية على اليسار، وتظهر المسارات على الخريطة المتجهية المدمجة مع الخريطة النقطية لـ *خطوط الكنتور* و *تظليل التضاريس* على اليمين. في الحالة الثانية، تعرض الخريطة المزيد من بيانات الارتفاع للمساعدة في تقدير الصعوبة والمخاطر والمسافة.
+يمكن استكمال [الخريطة المتجهية](../map/vector-maps.md) التي تتضمن [نمط خريطة الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) بـ [خطوط الكنتور](../plugins/topography.md#contour-lines) و [تظليل التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers). فيما يلي مثالان. تظهر المسارات على الخريطة المتجهية الافتراضية على اليسار، وتظهر المسارات على الخريطة المتجهية المدمجة مع الخريطة النقطية لـ *خطوط الكنتور* و *تظليل التضاريس* على اليمين. في الحالة الثانية، تعرض الخريطة المزيد من بيانات الارتفاع للمساعدة في تقدير الصعوبة والمخاطر والمسافة.  
 
 
 ### تعطيل نمط خريطة التزلج {#disable-ski-map-style}
 
 إذا كنت تفضل إزالة المسارات وألوان الشتاء من الخريطة، أو إذا انتهى موسم التزلج، فقم بأحد الإجراءات التالية:
 
-- قم بإلغاء تحديد نمط خريطة [الشتاء والتزلج](#set-winter-and-ski-map-style) للملف الشخصي المطلوب.
+- قم بإلغاء تحديد نمط خريطة [الشتاء والتزلج](#set-winter-and-ski-map-style) للملف الشخصي المطلوب.  
 - قم بتغيير [ملف التزلج الشخصي](../personal/profiles.md) إلى أي ملف شخصي آخر.
 - قم بتعطيل [ملحق عرض خريطة التزلج](../plugins/index.md#enable--disable).
 
@@ -120,15 +120,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![ملف التزلج الشخصي في أندرويد](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -176,16 +176,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 تختلف مسارات التزلج حسب النوع. يمثل النوع خصائص مختلفة للمسار لتلبية متطلبات الأنشطة المختلفة المتعلقة بالشتاء: التزلج على المنحدرات، والتزلج الكلاسيكي، والتزلج على الجليد، وركوب الزلاجات، والتزلج في المناطق النائية، وجولات التزلج، وتزلج الموغول، والتزلج الليلي، وما إلى ذلك. يساعد فهم [نوع مسار التزلج](https://wiki.openstreetmap.org/wiki/Key:piste:type) على الخريطة في بناء مسار ملاحة مثالي.
 
-- **مسار التزلج على المنحدرات/الألبي.**
+- **مسار التزلج على المنحدرات/الألبي.**  
 يستخدم لملاحة التزلج. يحتوي [نوع المسار هذا](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) على اتجاه وصعوبة، وغالبًا ما يكون محاطًا بحدود منتجع التزلج. عند تحديد مسار منحدر لملاحة التزلج، يتم أخذ اتجاه المسار في الاعتبار. إذا تم تحديد نقطتي المغادرة والوجهة عكس اتجاه المسار، فإن الملاحة تسير على طول أقرب ممر هوائي.
 
-- **مسار التزلج الشمالي/في المناطق النائية.**
+- **مسار التزلج الشمالي/في المناطق النائية.**  
 يستخدم أيضًا لملاحة التزلج. [نوع المسار هذا](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) ليس له صعوبة، وقد يكون له اتجاه أو لا، وغالبًا ما يتجاوز حدود منتجع التزلج. عند الملاحة على طول هذا النوع من المسارات، غالبًا ما يمكن تبديل نقطتي المغادرة والوجهة.
 
-- **مسار جولات التزلج.**
+- **مسار جولات التزلج.**  
 غالبًا ما يستخدمه المتزلجون للصعود الشمالي والنزول على المنحدرات. غالبًا ما يتم تمييز صعوبة مسار جولة التزلج باللون المناسب. يمكن لملاحة التزلج بناء مسار على طول هذا النوع من المسارات، مما يسمح لك بالجمع بين أنواع المسارات.
 
-- **مسارات تزلج أخرى.**
+- **مسارات تزلج أخرى.**  
 يمكن استخدام أنواع المسارات مثل *مسارات المشي لمسافات طويلة* أو *مسارات التزلج بالزلاجات* لملفات التزلج أو المشي لمسافات طويلة الشخصية.
 
 
@@ -211,7 +211,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-للتحقق على الخريطة مما إذا كان مسار معين قد تم تمهيده، تحتاج إلى تمكين خيار **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** في قائمة **<Translate android="true" ids="rendering_category_details"/>** التي يتم فتحها من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
+للتحقق على الخريطة مما إذا كان مسار معين قد تم تمهيده، تحتاج إلى تمكين خيار **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** في قائمة **<Translate android="true" ids="rendering_category_details"/>** التي يتم فتحها من قائمة [تكوين الخريطة](../map/configure-map-menu.md).  
 تقوم آلات خاصة بتمهيد المسارات لإعدادها للنشاط المناسب، مثل التزلج الكلاسيكي، والتزلج على الجليد، وغيرها. يمكن تمهيد نفس المسار بشكل مختلف في مناطق مختلفة.
 
 ### مسارات منحدرات التزلج {#ski-slope-routes}
@@ -220,15 +220,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → منحدرات التزلج ومساراتها*
 
 ![المسارات معطلة في أندرويد](@site/static/img/plugins/ski-maps/and_no_routes.png) ![المسارات ممكّنة في أندرويد](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → منحدرات التزلج ومساراتها*
 
 ![المسارات معطلة في iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![المسارات ممكّنة في iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -236,9 +237,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-لمعرفة أي مسارات خارج منتجع التزلج يمكنك التنقل فيها، تحتاج إلى تمكين خيار **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** في قائمة **<Translate android="true" ids="rendering_category_routes"/>**، التي يتم فتحها من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
+لمعرفة أي مسارات خارج منتجع التزلج يمكنك التنقل فيها، تحتاج إلى تمكين خيار **منحدرات التزلج ومساراتها** في قائمة [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md)، التي يتم فتحها من قائمة [تكوين الخريطة](../map/configure-map-menu.md).  
 
-مع تمكين ملف التزلج الشخصي، وملاحة التزلج، و[نمط خريطة الشتاء والتزلج](../map/vector-maps.md#winter-and-ski)، تعرض مسارات [منحدرات التزلج](../map/vector-maps.md#routes) جميع أنواع المسارات التي يمكن لملاحة التزلج استخدامها لبناء مسارات الملاحة على طولها. يتم تحديد مسارات منحدرات التزلج هذه، إذا تم تمكينها، باللون البنفسجي في الغالب خارج حدود منتجع التزلج.
+مع تمكين ملف التزلج الشخصي، وملاحة التزلج، و[نمط خريطة الشتاء والتزلج](../map/vector-maps.md#winter-and-ski)، تعرض [منحدرات التزلج ومساراتها](../map/vector-maps.md#ski-slopes-and-routes) جميع أنواع المسارات التي يمكن لملاحة التزلج استخدامها لبناء مسارات الملاحة على طولها. يتم تحديد مسارات منحدرات التزلج هذه، إذا تم تمكينها، باللون البنفسجي في الغالب خارج حدود منتجع التزلج.  
+عند تمكين الخيار [منحدرات التزلج ومساراتها](../map/vector-maps.md#ski-slopes-and-routes) لنمط خريطة غير الشتاء والتزلج، يتم عرض المنحدرات فقط. قد لا تظهر الميزات الأخرى المتعلقة بالتزلج في طبقة التصميم هذه.  
+[منحدرات التزلج ومساراتها](_Ski slopes and routes_) [قابلة للنقر](../map/routes.md#actions-with-routes).
 
 
 ### الوضع الليلي والإضاءة {#night-and-lighting}
@@ -259,14 +262,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-يمكن استخدام نمط **الشتاء والتزلج** مع [الوضع الليلي أو وضع شروق/غروب الشمس](../map/vector-maps.md#map-mode). وهو خيار مريح لأولئك الذين يفضلون الألوان الداكنة، أو تعتيم الشاشة في الليل، وكذلك لأولئك الذين يمارسون التزلج الليلي. إلى جانب الوضع الليلي، يمكن لخرائط التزلج في OsmAnd أيضًا إظهار المسارات التي بها إضاءة باستخدام خيار [إضاءة الشوارع](../map/vector-maps.md#details).
+يمكن استخدام نمط **الشتاء والتزلج** مع [الوضع الليلي أو وضع شروق/غروب الشمس](../map/vector-maps.md#map-mode). وهو خيار مريح لأولئك الذين يفضلون الألوان الداكنة، أو تعتيم الشاشة في الليل، وكذلك لأولئك الذين يمارسون التزلج الليلي. إلى جانب الوضع الليلي، يمكن لخرائط التزلج في OsmAnd أيضًا إظهار المسارات التي بها إضاءة باستخدام خيار [إضاءة الشوارع](../map/vector-maps.md#details).  
 
-كلا الخيارين موجودان في قائمة [تكوين الخريطة](../map/configure-map-menu.md).
+كلا الخيارين موجودان في قائمة [تكوين الخريطة](../map/configure-map-menu.md).  
 
-- لتمكين خيار ***الوضع الليلي***، مرر لأسفل القائمة:
-*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
+- لتمكين خيار ***الوضع الليلي***، مرر لأسفل القائمة:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- لتمكين خيار ***إضاءة الشوارع***، افتح قائمة **<Translate android="true" ids="rendering_category_details"/>** وقم بتشغيل الخيار:
+- لتمكين خيار ***إضاءة الشوارع***، افتح قائمة **<Translate android="true" ids="rendering_category_details"/>** وقم بتشغيل الخيار:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 

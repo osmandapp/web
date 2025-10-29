@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  موضع ركن السيارة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## نظرة عامة {#overview}
@@ -47,14 +47,14 @@ import Translate from '@site/src/components/Translate.js';
 
 لاستخدام موضع ركن السيارة على الخريطة، تحتاج إلى إجراء الإعدادات التالية:
 
-1. قم بتمكين [إضافة موضع ركن السيارة](../plugins/index.md#enable--disable) من *القائمة الرئيسية ← الإضافات*.
+1. قم بتمكين [إضافة موضع ركن السيارة](../plugins/index.md#enable--disable) من *القائمة الرئيسية ← الإضافات*.  
 2. قم بتعيين [موضع ركن السيارة](#set-a-spot) على الخريطة عبر قائمة السياق.
-3. (اختياري) أضف [ودجة موقف السيارة](#parking-widget) إلى الشاشة للوصول السريع.
+3. (اختياري) أضف [ودجة موقف السيارة](#parking-widget) إلى الشاشة للوصول السريع.  
 
 
 ## موضع ركن السيارة على الخريطة {#parking-spot-on-the-map}
 
-عندما تحدد موضع ركن السيارة، يحفظ OsmAnd إحداثياته الجغرافية مع طابع زمني. إذا لزم الأمر، يمكن أيضًا إضافة حد زمني وتذكير في التقويم.
+عندما تحدد موضع ركن السيارة، يحفظ OsmAnd إحداثياته الجغرافية مع طابع زمني. إذا لزم الأمر، يمكن أيضًا إضافة حد زمني وتذكير في التقويم. يتم حفظ مواضع الركن كـ**نقاط مفضلة**. للتأكد من ظهور علامة الركن على الخريطة، يجب تمكين [المفضلات](../personal/favorites.md).
 
 
 ### تعيين موضع {#set-a-spot}
@@ -122,4 +122,103 @@ import Translate from '@site/src/components/Translate.js';
 
 - **وقت البدء** – اللحظة التي تم فيها وضع العلامة.
 - **الوقت المتبقي** أو **الوقت المتجاوز** – إذا تم تعيين حد زمني، فهذا يوضح مقدار الوقت المتبقي أو الذي انقضى منذ انتهاء الصلاحية.
-- إذا قمت بتمكين ت
+- إذا قمت بتمكين تذكير التقويم، فسوف يظهر في تطبيق التقويم على جهازك.
+
+
+### التنقل إلى نقطة الطريق {#navigating-to-a-waypoint}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![التوجه إلى نقطة الركن في أندرويد](@site/static/img/plugins/parking/and_navigating_to_parking.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![التوجه إلى نقطة الركن في iOS](@site/static/img/plugins/parking/ios_going_to_parking.png)
+
+</TabItem>
+
+</Tabs>
+
+يمكنك استخدام موضع الركن كنقطة هدف للتنقل للعودة بسهولة إلى سيارتك. يقدم OsmAnd طريقتين رئيسيتين لبدء التنقل إلى موقع الركن المحفوظ:
+
+**عبر قائمة التنقل**:
+
+  1. انقر على زر **التنقل**.  
+  2. اختر ملف تعريف.  
+  3. انقر على **تعيين الوجهة** وحدد **الركن** من قائمة النقاط المحفوظة.
+
+**عبر ودجة الركن**:
+
+  1. انقر على **ودجة الركن**.  
+  2. انقر على علامة موضع الركن.  
+  3. حدد **التنقل** واختر الملف التعريفي الذي تريد استخدامه.
+
+
+### إزالة موضع {#remove-a-spot}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![إجراء حذف الركن في أندرويد](@site/static/img/map/context_menu_limited_parking.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<!-- ![Action Delete Parking in Android](@site/static/img/map/context_menu_limited_parking.png) -->
+  
+![إجراء حذف الركن في iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+لحذف علامة ركن السيارة:
+
+1. حدد موضع الركن على الخريطة أو انقر على **ودجة موقف السيارة**.
+2. انقر على العلامة لفتح قائمة السياق.
+3. حدد **حذف** أو **إلغاء**.
+
+إذا تم تعيين تذكير في التقويم، فسوف يتم إزالته تلقائيًا أيضًا.
+
+
+## ودجة موقف السيارة {#parking-widget}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → إضافة ودجة → <Translate android="true" ids="map_widget_parking"/>*  
+
+![إضافة ودجة موقف السيارة في أندرويد](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → إضافة ودجة → <Translate ios="true" ids="parking_place"/>*  
+
+![إضافة ودجة موقف السيارة في iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
+
+</TabItem>
+
+</Tabs>
+
+تعرض [ودجة موقف السيارة](../widgets/info-widgets.md#parking-widget) المسافة من مركز الشاشة إلى موقع الركن المحفوظ وتسمح لك بتوسيط الخريطة بسرعة على ذلك الموقع.
+
+- تكون الودجة مرئية فقط بعد تعيين موضع ركن.
+- إذا لم تكن موجودة بالفعل على الشاشة، يمكنك إضافتها عبر قائمة [تكوين الشاشة](../widgets/configure-screen.md).
+
+للمزيد من المعلومات، انظر: [الودجات الإعلامية – ودجة موقف السيارة](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
+
+
+## المقالات ذات الصلة {#related-articles}
+
+- [التفاعل مع الخريطة](../../user/map/interact-with-map.md)
+- [الإعدادات العامة](../../user/personal/global-settings.md)
+- [الخرائط المتجهة (أنماط الخريطة)](../../user/map/vector-maps.md)

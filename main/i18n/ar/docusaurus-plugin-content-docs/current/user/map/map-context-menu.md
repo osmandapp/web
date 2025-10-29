@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تظهر **قائمة السياق** عندما **تنقر مرة واحدة** على كائن محدد على الخريطة. تعرض قائمة السياق هذه معلومات أساسية حول الكائن المحدد، بما في ذلك *اسمه*، و*أيقونته* (كما هي ممثلة على الخريطة)، و*عنوانه، والمسافة*، و*الحدود* و*الاتجاه* من موقعك الحالي.
+تظهر **قائمة السياق** عندما **تنقر مرة واحدة** على كائن محدد على الخريطة. تعرض قائمة السياق هذه معلومات أساسية حول الكائن المحدد، بما في ذلك *اسمه*، و*أيقونته* (كما هي ممثلة على الخريطة)، و*عنوانه، والمسافة*، و*الحدود* و*الاتجاه* من موقعك الحالي.  
 
 يمكنك تحديد أنواع مختلفة من كائنات الخريطة، مثل *نقاط الاهتمام*، و*المفضلة*، و*محطات النقل*، و*العلامات*، و*قمم الجبال*، أو *كائنات الخريطة الأخرى*.
 
@@ -115,13 +115,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة السياق في أندرويد](@site/static/img/map/context_menu_android.png)
+![قائمة السياق في أندرويد](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة السياق في iOS](@site/static/img/map/context_menu_ios.png)
+![قائمة السياق في iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -132,14 +132,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### معلومات الكائن {#object-info}
 
-توفر لوحة **معلومات الكائن** تفاصيل إضافية حول الكائن المحدد. يمكنك النقر على أي إدخال لنسخ المعلومات إلى الحافظة.
+توفر لوحة **معلومات الكائن** تفاصيل إضافية حول الكائن المحدد. يمكنك النقر على أي إدخال لنسخ المعلومات إلى الحافظة.  
 
 تشمل التفاصيل المتاحة:
 
 - [الأسماء البديلة](#alternative-names)
 - [الإحداثيات](#coordinates)
 - [ضمن مناطق](#polygon-information)
-- [نقاط الاهتمام القريبة / ويكيبيديا](#nearby-pois--wikipedia)
+- [نقاط الاهتمام القريبة](#nearby-pois)
+- [الأماكن الشائعة القريبة](#nearby-popular-places)
 - [مسارات النقل العام للمحطات](#public-transport-routes)
 - [المفضلة / نقاط المسار من نفس المجموعة](#favorites--track-points-from-the-group)
 - [رابط OpenStreetMap](#openstreetmap-link)
@@ -167,13 +168,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![الأسماء البديلة في iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![الأسماء البديلة في iOS 2](@site/static/img/map/alternative_names_2_ios.png)
+![الأسماء البديلة في iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![الأسماء البديلة في iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يعرض OsmAnd **أسماء نقاط الاهتمام الإضافية** في *قائمة سياق الخريطة*، مع إعطاء الأولوية للاسم بلغة *العرض* أو قائمة اللغات المفضلة في النظام. إذا كانت هناك ترجمات متعددة متاحة، يتم تجميعها في علامات مصنفة مثل *الاسم، العلامة التجارية، المشغل،* أو *نقاط الاهتمام القريبة*.
+يعرض OsmAnd **أسماء نقاط الاهتمام الإضافية** في *قائمة سياق الخريطة*، مع إعطاء الأولوية للاسم بلغة *العرض* أو قائمة اللغات المفضلة في النظام. إذا كانت هناك ترجمات متعددة متاحة، يتم تجميعها في علامات مصنفة مثل *الاسم، العلامة التجارية، المشغل،* أو *نقاط الاهتمام القريبة*.  
 
 ميزات عرض الأسماء البديلة:
 
@@ -212,20 +213,61 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |:------|:------|
 | <ul><li>DDD.DDDDD (درجات عشرية بسيطة)</li><li>DDD.DDDDD (شمال/جنوب، شرق/غرب بفاصلة)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[معيار UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[الشبكة السويسرية CH1903 و CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[رابط ويب OsmAnd](https://osmand.net/map)</li><li>[رابط ويب OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![الإحداثيات](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-في قائمة السياق، يمكنك العثور على [الإحداثيات الجغرافية](../search/search-coordinates.md#coordinate-format) لنقطة بتنسيقات مختلفة وأيضًا روابط OsmAnd و [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) القابلة للمشاركة (الخيار الأخير متاح فقط عند تمكين [ملحق تحرير OpenStreetMap](../plugins/osm-editing.md)). إذا قمت بتوسيع قسم الإحداثيات ونقرت نقرة طويلة على أي سطر من القائمة، فسيتم نسخ قيمه تلقائيًا إلى الحافظة (**أندرويد**) أو يصبح خيار *النسخ* متاحًا في الرسالة المنبثقة (**iOS**).
+في قائمة السياق، يمكنك العثور على [الإحداثيات الجغرافية](../search/search-coordinates.md#coordinate-format) لنقطة بتنسيقات مختلفة وأيضًا روابط OsmAnd و [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) القابلة للمشاركة (الخيار الأخير متاح فقط عند تمكين [ملحق تحرير OpenStreetMap](../plugins/osm-editing.md)). إذا قمت بتوسيع قسم الإحداثيات ونقرت نقرة طويلة على أي سطر من القائمة، فسيتم نسخ قيمه تلقائيًا إلى الحافظة (**أندرويد**) أو يصبح خيار *النسخ* متاحًا في الرسالة المنبثقة (**iOS**).  
 
-يمكن لـ OsmAnd التعرف تلقائيًا على رابط ويب OsmAnd (مثال: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). يتم فتح كل من روابط OsmAnd و [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) على المواقع المقابلة مع علامة دبوس لمكان الاهتمام.
+يمكن لـ OsmAnd التعرف تلقائيًا على رابط ويب OsmAnd (مثال: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). يتم فتح كل من روابط OsmAnd و [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) على المواقع المقابلة مع علامة دبوس لمكان الاهتمام.  
 
 
-### نقاط الاهتمام القريبة / ويكيبيديا {#nearby-pois--wikipedia}
+### نقاط الاهتمام القريبة {#nearby-pois}
 
-![مقالات ويكيبيديا القريبة](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![مقالات ويكيبيديا القريبة](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-تعرض هذه الأقسام [مقالات ويكيبيديا](../plugins/wikipedia.md) القريبة أو [نقاط الاهتمام](../map/point-layers-on-map.md#points-of-interest-pois) مع *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لعرض و[البحث](../search/search-poi.md) عن جميع نقاط الاهتمام ومقالات ويكيبيديا الأخرى.
+<TabItem value="android" label="أندرويد">  
 
-يؤدي النقر على *نقاط الاهتمام القريبة / مقالات ويكيبيديا* إلى فتح قائمة نقاط (نقاط اهتمام أو ويكيبيديا). يؤدي النقر على إحدى هذه النقاط من قائمة النقاط إلى نقل الخريطة إلى هذه النقطة (نقاط اهتمام أو ويكيبيديا) مع فتح قائمة سياق الخريطة للنقطة.
+![نقاط الاهتمام القريبة في أندرويد](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![نقاط الاهتمام القريبة في iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+تعرض هذا القسم [نقاط الاهتمام القريبة](../map/point-layers-on-map.md#points-of-interest-pois) مع *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لعرض و[البحث](../search/search-poi.md) عن جميع نقاط الاهتمام الأخرى ضمن نفس الفئة.
+
+يؤدي النقر على *نقاط الاهتمام القريبة* إلى فتح قائمة نقاط. يؤدي النقر على إحدى هذه النقاط من قائمة النقاط إلى نقل الخريطة إلى هذه النقطة مع فتح قائمة سياق الخريطة للنقطة.
+
+
+### الأماكن الشائعة القريبة {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+![الأماكن القريبة في أندرويد](@site/static/img/map/nearby_places_android.png)
+
+يبرز هذا القسم الأماكن الشائعة التي تساعدك على اكتشاف وجهات ومعالم مثيرة للاهتمام حول موقعك الحالي. استخدم *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لتصفح والبحث عن جميع الأماكن الشائعة. 
+
+يؤدي النقر على *الأماكن الشائعة القريبة [Popular Places](https://osmand.net/docs/user/map/popular_places)* إلى فتح قائمة بالمواقع القريبة. يقوم تحديد أي عنصر بنقل الخريطة إلى ذلك المكان وفتح قائمة السياق الخاصة به، حيث يمكنك قراءة وصف قصير أو النقر على ***قراءة المقال الكامل*** لعرض الدليل الكامل.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الأماكن القريبة في iOS](@site/static/img/map/nearby_places_ios.png)
+
+يبرز هذا القسم الأماكن الشائعة التي تساعدك على اكتشاف وجهات ومعالم مثيرة للاهتمام حول موقعك الحالي. استخدم *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لتصفح والبحث عن جميع الأماكن الشائعة. 
+
+يؤدي النقر على *الأماكن الشائعة القريبة [Popular Places](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* إلى فتح قائمة بالمواقع القريبة. يقوم تحديد أي عنصر بنقل الخريطة إلى ذلك المكان وفتح قائمة السياق الخاصة به، حيث يمكنك قراءة وصف قصير أو النقر على ***قراءة المقال الكامل*** لعرض الدليل الكامل.
 
 > **ملاحظة**. *سيظهر [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) فقط إذا قمت مسبقًا بتنزيل خرائط خاصة مع [مقالات ويكيبيديا لهذه المنطقة](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### مسارات النقل العام {#public-transport-routes}
@@ -283,7 +325,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![رابط OSM](@site/static/img/map/context_menu_osm_link.png) ![رابط OSM](@site/static/img/map/context_menu_osm_link_1.png)
 
-يوفر رابط OpenStreetMap رابطًا مباشرًا إلى كائن OpenStreetMap حيث يمكنك العثور على معلومات كاملة عنه:
+يوفر رابط OpenStreetMap رابطًا مباشرًا إلى كائن OpenStreetMap حيث يمكنك العثور على معلومات كاملة عنه:  
 [عقدة](https://wiki.openstreetmap.org/wiki/Node) أو [طريق](https://wiki.openstreetmap.org/wiki/Way).
 
 
@@ -400,11 +442,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في قائمة السياق، توجد خيارات **لإضافة** أو **لتحرير** النقطة / الكائن المحدد إلى [قائمة المفضلة](../personal/myplaces.md).
 
-- **للإضافة**، تحتاج إلى تحديد نقطة / كائن، والنقر على أيقونة *النجمة* (مع توقيع إضافة) وإدخال جميع المعلومات اللازمة.
+- **للإضافة**، تحتاج إلى تحديد نقطة / كائن، والنقر على أيقونة *النجمة* (مع توقيع إضافة) وإدخال جميع المعلومات اللازمة.  
 
 - **لتحرير** معلومات حول نقطة مفضلة، تحتاج إلى تشغيل *عرض على الخريطة* (*القائمة ← أماكني ← المفضلة*) ثم الضغط عليها وفي قائمة السياق بدلاً من أيقونة *النجمة* ستظهر *أيقونة قلم رصاص* (مع توقيع تحرير).
 
-- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - يضيف نقطة محددة إلى قائمة المفضلة.
+- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - يضيف نقطة محددة إلى قائمة المفضلة.
 
 
 ### إضافة / تحرير علامة {#add--edit-marker}
@@ -456,12 +498,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يسمح لك تطبيق OsmAnd بـ **<Translate android="true" ids="shared_string_share"/>** *موقعي* أو أي موقع محدد على الخريطة مع برامج المراسلة أو رسائل البريد الإلكتروني أو وسائل التواصل الاجتماعي.
+يسمح لك تطبيق OsmAnd بـ **<Translate android="true" ids="shared_string_share"/>** *موقعي* أو أي موقع محدد على الخريطة مع برامج المراسلة أو رسائل البريد الإلكتروني أو وسائل التواصل الاجتماعي.  
 
 الخيارات المتاحة لمشاركة الموقع:
 
 - ***إرسال***. يرسل نصًا عبر التطبيقات المتاحة على جهازك. يتضمن جميع المعلومات حول الموقع: اسم موقعي أو اسم نقطة الاهتمام المحددة، والعنوان، والإحداثيات، والموقع الجغرافي كرابط.
-- ***نسخ***. ينسخ جميع معلومات الموقع (اسم موقعي أو اسم نقطة الاهتمام المحددة، والعنوان، والإحداثيات، والموقع الجغرافي كرابط) إلى الحافظة.
+- ***نسخ***. ينسخ جميع معلومات الموقع (اسم موقعي أو اسم نقطة الاهتمام المحددة، والعنوان، والإحداثيات، والموقع الجغرافي كرابط) إلى الحافظة.  
 - ***نسخ العنوان***. ينسخ معلومات العنوان فقط إلى الحافظة.
 - ***نسخ اسم نقطة الاهتمام***. ينسخ اسم نقطة الاهتمام فقط أو العنوان إذا لم يكن هناك اسم إلى الحافظة.
 - ***نسخ الإحداثيات***. ينسخ معلومات الإحداثيات فقط إلى الحافظة.
@@ -524,7 +566,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-باستخدام هذا الإجراء في قائمة السياق، من الممكن البحث حول موقع معين على الخريطة.
+باستخدام هذا الإجراء في قائمة السياق، من الممكن البحث حول موقع معين على الخريطة.  
 
 اقرأ المزيد عن وظيفة [البحث](../search/index.md).
 
@@ -547,11 +589,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-باستخدام قائمة سياق الخريطة، يمكنك إضافة طريق معين إلى قائمة الطرق غير المستخدمة للتوجيه. سيؤثر ذلك على [إعداد المسار](../navigation/setup/route-navigation.md).
+باستخدام قائمة سياق الخريطة، يمكنك إضافة طريق معين إلى قائمة الطرق غير المستخدمة للتوجيه. سيؤثر ذلك على [إعداد المسار](../navigation/setup/route-navigation.md).  
 لحذف الطرق المحددة مسبقًا من *[قائمة تجنب الطرق](../navigation/routing/osmand-routing.md#avoid-roads-menu)*، انقر على علامة، واختر *إزالة* (**أندرويد**) أو *تجاهل* (**iOS**).
 
 :::note
-وظيفة تجنب الطرق عالمية وتؤثر على جميع *[أنواع التوجيه](../navigation/routing/osmand-routing.md#routing-types)* (باستثناء *[التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)*).
+وظيفة تجنب الطرق عالمية وتؤثر على جميع *[أنواع التوجيه](../navigation/routing/osmand-routing.md#routing-types)* (باستثناء *[التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)*).  
 :::
 
 
@@ -609,10 +651,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لتحديث أو تنزيل الخرائط عبر الإنترنت (البلاطات) في موقع معين، يمكنك استخدام قائمة سياق الكائن:
 
-- **أندرويد**: *<Translate android="true" ids="shared_string_download_map"/>* ولـ *التحديث*، اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* و *<Translate ios="true" ids="update_tile"/>*.
+- **أندرويد**: *<Translate android="true" ids="shared_string_download_map"/>* ولـ *التحديث*، اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* و *<Translate ios="true" ids="update_tile"/>*.  
 
-يرجى قراءة [التعليمات الكاملة](../map/raster-maps.md#download--update-tiles).
+يرجى قراءة [التعليمات الكاملة](../map/raster-maps.md#download--update-tiles).  
 
 
 ### تحديث / تنزيل الخرائط المتجهة {#update--download-vector-maps}
@@ -637,9 +679,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-في حال عدم وجود خريطة غير متصلة بالإنترنت في الموقع المحدد، على سبيل المثال تم فتح قائمة كائن الخريطة عبر البحث أو عبر مفضلة معينة، فسيتم اقتراح أصغر خريطة غير متصلة بالإنترنت ممكنة [للتنزيل](../start-with/download-maps.md#select-on-the-map).
+في حال عدم وجود خريطة غير متصلة بالإنترنت في الموقع المحدد، على سبيل المثال تم فتح قائمة كائن الخريطة عبر البحث أو عبر مفضلة معينة، فسيتم اقتراح أصغر خريطة غير متصلة بالإنترنت ممكنة [للتنزيل](../start-with/download-maps.md#select-on-the-map).  
 
-**iOS**. إذا كنت قد [قمت بتنزيل](../map/map-context-menu.md) خرائط OsmAnd (متجهة أو تضاريس)، فمن الممكن تحديثها عبر قائمة السياق. ستحتاج إلى تحديد المنطقة على الخريطة أولاً - انقر على أي موقع على تكبير عالمي 3-7.
+**iOS**. إذا كنت قد [قمت بتنزيل](../map/map-context-menu.md) خرائط OsmAnd (متجهة أو تضاريس)، فمن الممكن تحديثها عبر قائمة السياق. ستحتاج إلى تحديد المنطقة على الخريطة أولاً - انقر على أي موقع على تكبير عالمي 3-7.  
 
 > **ملاحظة**. *إذا فتحت قائمة السياق لمنطقة خريطة (المنطقة مظللة)، فستتمكن من رؤية ***<Translate android="true" ids="rendering_category_details"/>*** عنها: نوع وحجم الخريطة المتاحة، ورابط إلى صفحة ويكيبيديا، واللغة، والسكان وغيرها.*
 
@@ -683,9 +725,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء نقطة الطريق في أندرويد](@site/static/img/map/action_waypoint_android.png)
-
-![تحديد مسار لإضافة نقطة طريق في أندرويد](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![اختيار مسار لإضافة نقطة طريق في أندرويد](@site/static/img/map/tracks_tab_android.png) ![إضافة نقطة طريق المسار في أندرويد](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -693,17 +733,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إجراء نقطة الطريق في iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![تحديد مسار لإضافة نقطة طريق في iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![اختيار مسار لإضافة نقطة طريق في iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكنك إضافة نقاط طريق إلى مسار مسجل أو إلى تسجيل المسار الحالي باستخدام قائمة سياق الخريطة.
+يمكنك إضافة نقاط طريق إلى مسار مسجل أو إلى تسجيل المسار الحالي باستخدام قائمة سياق الخريطة.  
 
 - حدد موقعًا على الخريطة [بنقرة طويلة](../map/map-context-menu.md#select-any-point-long-tap).
 - في *قائمة سياق الخريطة* التي تفتح، اختر *الإجراءات ← إضافة نقطة طريق للمسار*.
-- تعرض القائمة [المسارات](../map/tracks/index.md#display-tracks-on-the-map) المسجلة والمعروضة على الخريطة، بالإضافة إلى [تسجيل المسار الحالي](../plugins/trip-recording.md)، الذي يمكنك إضافة نقطة الطريق المحددة إليه.
+- تعرض القائمة [المسارات](../map/tracks/index.md#display-tracks-on-the-map) المسجلة والمعروضة على الخريطة، بالإضافة إلى [تسجيل المسار الحالي](../plugins/trip-recording.md)، الذي يمكنك إضافة نقطة الطريق المحددة إليه (*في أندرويد*، يتم تجميع القائمة في علامات تبويب: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - يمكنك إضافة نقاط طريق إلى مسار لم يتم تنشيطه بعد للتسجيل، وفي هذه الحالة ينتقل المسار غير النشط من *حالة البدء* إلى *حالة الاستئناف*.
 - [املأ](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) البيانات المطلوبة واحفظ نقطة الطريق.
 - يمكنك تكوين [الإجراءات السريعة](../widgets/quick-action.md) عن طريق إضافة نقطة طريق إلى *إضافة نقطة طريق للمسار*.
@@ -814,16 +854,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![تخصيص قائمة سياق الخريطة](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![تخصيص قائمة سياق الخريطة](@site/static/img/map/map_context_menu_customize_2.png) -->  ![تخصيص قائمة سياق الخريطة](@site/static/img/map/map_context_menu_customize_3.png)
 
-يمكنك تغيير الترتيب أو إخفاء العناصر من قائمة *الإجراءات* في *قائمة سياق الخريطة*. يُقترح ما مجموعه 16 إجراءً.
+يمكنك تغيير الترتيب أو إخفاء العناصر من قائمة *الإجراءات* في *قائمة سياق الخريطة*. يُقترح ما مجموعه 16 إجراءً.  
 
 - يمكنك نقل الإجراءات الثلاثة الأكثر فائدة إلى أعلى قائمة *الإجراءات الرئيسية*.
-- يمكن تخصيص بقية القائمة لكل ملف شخصي على حدة في قسمي *الإجراءات الإضافية* و*المخفية*.
+- يمكن تخصيص بقية القائمة لكل ملف شخصي على حدة في قسمي *الإجراءات الإضافية* و*المخفية*.  
 
 أنواع الإجراءات المتاحة:
 
-- **<Translate android="true" ids="main_actions"/>**. يحتوي القسم على 4 أزرار فقط، يمكن تخصيص ثلاثة منها، ويبقى زر الإجراءات دون تغيير.
-- **<Translate android="true" ids="additional_actions"/>**. يمكنك الوصول إلى هذه الإجراءات عن طريق النقر على زر *الإجراءات*.
-- **<Translate android="true" ids="shared_string_hidden"/>**. نقل الإجراءات إلى هذا القسم لا يوقف عملها. إنها فقط لا تظهر في قائمة الإجراءات.
+- **<Translate android="true" ids="main_actions"/>**. يحتوي القسم على 4 أزرار فقط، يمكن تخصيص ثلاثة منها، ويبقى زر الإجراءات دون تغيير.  
+- **<Translate android="true" ids="additional_actions"/>**. يمكنك الوصول إلى هذه الإجراءات عن طريق النقر على زر *الإجراءات*.  
+- **<Translate android="true" ids="shared_string_hidden"/>**. نقل الإجراءات إلى هذا القسم لا يوقف عملها. إنها فقط لا تظهر في قائمة الإجراءات.  
 
 
 ## مقالات ذات صلة {#related-articles}
