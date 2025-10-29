@@ -355,7 +355,7 @@ The app icon badge appears next to the OsmAnd icon when the track recording is a
 
 ## Widgets {#widgets}
 
-Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*.
+Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*. On Android, you can also add *Max Speed* and *Average Slope* widgets.
 
 To start using *Trip recording widgets*, you need to make all the following settings:
 
@@ -372,7 +372,7 @@ To start using *Trip recording widgets*, you need to make all the following sett
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -380,7 +380,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -397,8 +397,8 @@ To customize your interface, you can add or remove the Trip Recording widget and
 
 <TabItem value="android" label="Android">  
 
-![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
 ![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -416,13 +416,18 @@ The *Distance* widget displays the total distance of your current recorded trip 
 - The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
 - If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
 
-In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes three other widgets: *Duration*, *Uphill*, and *Downhill*. These provide additional information about your trip, helping you track the real-time progress.
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes three other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope* (the last two are available on Android only). These provide additional information about your trip, helping you track the real-time progress.
 
 | |
 |-----------|
 | **Distance/Start-Stop**. This widget displays the distance of your ongoing trip recording. It is automatically added when the Trip Recording plugin is enabled, but you can hide it through the Configure Screen menu. The widget features three distinct states: *Recording*, *Paused*, and *Inactive*, each indicating the current status of your trip recording. |
 | ![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| To open the [Trip Recording dialog](#start-a-dialog) when tapping an inactive widget, enable the *Show Startup Dialog* option in the Trip Recording plugin settings. If the option is disabled, recording will start immediately after tapping the widget without opening the dialog.|  
+| To open the [Trip Recording dialog](#start-a-dialog) when tapping an inactive widget, enable the *Show Startup Dialog* option in the Trip Recording plugin settings. If the option is disabled, recording will start immediately after tapping the widget without opening the dialog.| 
+
+On Android, the Distance widget supports multiple display modes:
+- **Total distance** – total distance of the current recording (default).
+- **Last uphill** – distance of the most recent ascent section.
+- **Last downhill** – distance of the most recent descent section.
 
 
 ### Duration, Uphill, Downhill {#duration-uphill-downhill}
@@ -431,13 +436,18 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Duration**. Displays the total time of the current trip recording in hours and minutes. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Uphill**. Shows the total ascent or the last ascent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Downhill**. Indicates the total descent or the last descent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -448,7 +458,21 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 |**Downhill**. Indicates the total descent accumulated during the current trip recording. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* — you can access the same dialog box for each without needing to switch or close it. This unified interface makes it easy to view and manage all related information seamlessly.
+
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png)  
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
 
 
 ## Related Articles {#related-articles}
