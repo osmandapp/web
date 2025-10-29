@@ -34,7 +34,7 @@ To connect with other OsmAnd users, ask questions, and share your experience, jo
 |  Google Groups | Osmand (*English*)  | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussion and support  | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | OsmAnd News channel (*English*)  | The official OsmAnd group for announcements and updates directly from the developers. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | OsmAnd news channel  | Official OsmAnd group for live discussions, announcements, and updates. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | OsmAnd news channel  | Official OsmAnd group for live discussions, announcements, and updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | OsmAnd news channel | A community where you can chat, share tips, and get help with OsmAnd features. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 

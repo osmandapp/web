@@ -11,7 +11,7 @@ tags: [event]
 
 <!--truncate-->
 
-Head over to <a href="https://www.facebook.com/osmandapp?ref=aymt_homepage_panel">Facebook</a> to win a unique app build with a feature our developers will introduce specially for you. Just write about your experience of using OsmAnd, tell us why you like the app or share a story about this application, use hashtag #osmandme and #osmandfive to join the giveaway. And don't forget to check out our <a href="https://twitter.com/osmandapp">twitter giveaway</a>, too! Win Osmand+ app today. The celebration won&#39;t be the same without you, so join now!
+Head over to <a href="https://www.facebook.com/osmandapp?ref=aymt_homepage_panel">Facebook</a> to win a unique app build with a feature our developers will introduce specially for you. Just write about your experience of using OsmAnd, tell us why you like the app or share a story about this application, use hashtag #osmandme and #osmandfive to join the giveaway. And don't forget to check out our <a href="https://x.com/osmandapp">twitter giveaway</a>, too! Win Osmand+ app today. The celebration won&#39;t be the same without you, so join now!
 Hard to believe, but it&#39; s been 5 years since OsmAnd app appeared in the market. To recap the highlights of our work so far, we decided to ask OsmAnd team members how do they feel about working here, why they chose to work on a navigation app and more.
 
 **Viktor Shcherb, CEO**

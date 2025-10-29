@@ -202,7 +202,7 @@ async function createConfig(){
                   href: 'https://github.com/osmandapp/OsmAnd/discussions',
                 },
                 {
-                  label: 'Twitter',
+                  label: 'X (Twitter)',
                   href: 'https://x.com/osmandapp',
                 },
                 {

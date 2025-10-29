@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=GitHub Discussions linking to https://github.com/osmandapp/OsmAnd/discussions"
   },
   "link.item.label.Twitter": {
-    "message": "Twitter",
+    "message": "X (Twitter)",
     "description": "The label of footer link with label=Twitter linking to https://x.com/osmandapp"
   },
   "link.item.label.Reddit": {

@@ -68,7 +68,7 @@ Highlight OsmAnd’s key features to differentiate it from competitors:
 
 ### B. Social Media Marketing
 
-- **Platforms**: Focus on [**Facebook**](https://www.facebook.com/osmandapp), [**Instagram**](https://www.instagram.com/osmand.map/), [**Twitter (X)**](https://twitter.com/osmandapp), [**Reddit**](https://www.reddit.com/r/OsmAnd), [**LinkedIn**](https://www.linkedin.com/company/osmand), [**Telegram**](https://t.me/OsmAnd_News), and [**TikTok**](https://www.tiktok.com/@osmandapp).
+- **Platforms**: Focus on [**Facebook**](https://www.facebook.com/osmandapp), [**Instagram**](https://www.instagram.com/osmand.map/), [**Twitter (X)**](https://x.com/osmandapp), [**Reddit**](https://www.reddit.com/r/OsmAnd), [**LinkedIn**](https://www.linkedin.com/company/osmand), [**Telegram**](https://t.me/OsmAnd_News), and [**TikTok**](https://www.tiktok.com/@osmandapp).
 - **Content Ideas**:
   - **User Stories**: Share experiences and testimonials from OsmAnd users.
   - **Release Updates**: Announce new features, updates, and improvements.

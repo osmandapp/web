@@ -224,6 +224,6 @@ El widget tiene varias vistas.
 
 La aplicación OsmAnd tiene su propio bot de Telegram llamado "OsmAnd Assistant", que te ayuda a integrar OsmAnd Telegram con rastreadores o API de terceros. Podrás compartir no solo tu ubicación, sino también la ubicación de tu bicicleta o de un grupo de personas en una carrera disponible a través de la API. OsmAnd Telegram te ofrecerá una buena presentación de tus ubicaciones en el mapa en el propio OsmAnd.
 
-Por favor, comparte con nosotros lo que piensas sobre esta nueva aplicación en [Twitter](https://twitter.com/osmandapp) y otros canales sociales.
+Por favor, comparte con nosotros lo que piensas sobre esta nueva aplicación en [Twitter](https://x.com/osmandapp) y otros canales sociales.
 
 Para ver las posiciones GPS de los contactos en el mapa, necesitas la última versión de [OsmAnd u OsmAnd+](./../purchases/android.md). La versión mínima compatible de OsmAnd u OsmAnd+ es la 3.0.4.
