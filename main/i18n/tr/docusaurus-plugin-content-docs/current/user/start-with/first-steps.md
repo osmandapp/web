@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title: İlk Adımlar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -109,7 +109,7 @@ OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneri
 
 </Tabs>
 
-OsmAnd uygulaması farklı harita türleriyle çalışır, ancak yalnızca indirilen çevrimdışı haritalarla tam olarak işlev görebilir, bu nedenle *<Translate android="true" ids="get_started"/>* ekranından sonra bölgenizin [*haritasını indirmeniz*](../start-with/download-maps.md#initial-setup-screen) istenir. Farklı bir bölge seçebilir, [OsmAnd Cloud'dan](../personal/osmand-cloud.md) geri yükleyebilir veya bu adımı atlayıp haritaları daha sonra indirebilirsiniz.
+OsmAnd uygulaması farklı harita türleriyle çalışır, ancak yalnızca indirilen çevrimdışı haritalarla tam olarak işlev görebilir, bu nedenle *<Translate android="true" ids="get_started"/>* ekranından sonra bölgenizin [*haritasını indirmeniz*](../start-with/download-maps.md#initial-setup-screen) istenir. Farklı bir bölge seçebilir, [OsmAnd Cloud'dan](../personal/osmand-cloud.md) geri yükleyebilir veya bu adımı atlayıp haritaları daha sonra indirebilirsiniz.  
 Mevcut diğer harita indirme seçenekleri için [Haritaları İndir](../start-with/download-maps.md) makalesine bakın.
 
 :::note Çevrimdışı haritalarla çalışmaya başlayın
@@ -138,7 +138,7 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 
 Şuraya gidin: *Ayarlar → Uygulamalar → OsmAnd → Dil*
 
-![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
+![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
 </TabItem>
 
@@ -177,15 +177,15 @@ Uygulama ayarlarını [Ana Menü](../start-with/main-menu.md) aracılığıyla [
 
 </Tabs>
 
-Genel ayarlar hakkında [daha fazla bilgi edinin](../personal/global-settings.md).
-Profil ayarları hakkında [daha fazla bilgi edinin](../personal/profiles.md).
+[Genel ayarlar](../personal/global-settings.md) hakkında [daha fazla bilgi edinin](https://osmand.net/docs/user/settings/global-settings/).
+[Profil ayarları](../personal/profiles.md) hakkında [daha fazla bilgi edinin](https://osmand.net/docs/user/settings/profiles/).
 
 
 ### Eklentiler nasıl yapılandırılır {#how-to-configure-plugins}
 
-[Eklentiler](../plugins/index.md#configure-plugin) uygulama işlevselliğini büyük ölçüde genişletir. Neredeyse tüm eklentilerin kendi [Harita Eylemleri](../map/map-context-menu.md), [Harita Katmanları](../map/configure-map-menu.md), [Harita İndirmeleri](../start-with/download-maps.md) ve [Ayarları](../plugins/#plugin-settings) vardır.
+[Eklentiler](../plugins/index.md#configure-plugin) uygulama işlevselliğini büyük ölçüde genişletir. Neredeyse tüm eklentilerin kendi [Harita Eylemleri](../map/map-context-menu.md), [Harita Katmanları](../map/configure-map-menu.md), [Harita İndirmeleri](../start-with/download-maps.md) ve [Ayarları](../plugins/#plugin-settings) vardır.  
 
-Eklentileri [Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/index.md#configure-plugin) aracılığıyla etkinleştirebilir/devre dışı bırakabilirsiniz.
+Eklentileri [Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/index.md#configure-plugin) aracılığıyla etkinleştirebilir/devre dışı bırakabilirsiniz.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -194,7 +194,7 @@ Eklentileri [Ana Menü](../start-with/main-menu.md) → [Eklentiler](../plugins/
 ![Eklentileri etkinleştir Android](@site/static/img/settings/plugins_enable_android.png) ![Eklenti örneği Android](@site/static/img/settings/plugin_example_android.png)
 
 Eklentileri etkinleştirmek/devre dışı bırakmak için şuraya gidin:
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Etkinleştir
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Etkinleştir
 
 </TabItem>
 
@@ -329,7 +329,7 @@ Rota planlama özelliği hakkında [daha fazla bilgi edinin](../plan-route/creat
 
 ### Adrese göre nasıl arama yapılır {#how-to-search-by-address}
 
-OsmAnd, adres araması da dahil olmak üzere birçok arama yeteneği sunar. Varsayılan olarak, [OpenStreetMap verilerini](https://nominatim.openstreetmap.map/ui/search.html) kullanır ve Hızlı Arama girişini kullanarak tüm adresleri bulabilmelidir. Ayrıca, şehir, cadde, posta kodu ve koordinatlara göre [arama yapabilirsiniz](../search/search-address.md).
+OsmAnd, adres araması da dahil olmak üzere birçok arama yeteneği sunar. Varsayılan olarak, [OpenStreetMap verilerini](https://nominatim.openstreetmap.org/ui/search.html) kullanır ve Hızlı Arama girişini kullanarak tüm adresleri bulabilmelidir. Ayrıca, şehir, cadde, posta kodu ve koordinatlara göre [arama yapabilirsiniz](../search/search-address.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -431,7 +431,7 @@ OSM düzenlemesi hakkında [daha fazla bilgi edinin](../plugins/osm-editing.md).
 
 OsmAnd'ı kapatmanın iki yolu vardır.
 
-1. Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
+1. Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.  
 
 2. Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam eder:
     - [Navigasyonu kapat](../navigation/setup/route-navigation.md#start--stop-navigation)
@@ -447,7 +447,7 @@ OsmAnd'ı kapatmanın iki yolu vardır.
 
 <TabItem value="ios" label="iOS">
 
-Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.
+Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.  
 
 Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam eder:
 
@@ -490,9 +490,9 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 </Tabs>
 
-*Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.
-İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.
-*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.
+*Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.  
+İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. Bu makaleler, uygulama için ayarlanan dilde görüntülenir, eğer bu dil belgemiz web sitesinde destekleniyorsa. Şu anda desteklenen diller: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>* ve *<Translate android="true" ids="lang_uk"/>*. Uygulama dilini değiştirdiğinizde, belgelerin seçilen dilde açılması için lütfen OsmAnd'ı yeniden başlatın. Bir çeviri mevcut olmadığında, sayfanın İngilizce sürümü otomatik olarak görüntülenir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.  
+*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.  
 
 ### Menü {#menu}
 
@@ -510,7 +510,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 - **Çökme günlüğü gönder** (*Android için*). Kullanıcıların uygulama çökmeleriyle ilgili raporları geliştiricilere göndermesine olanak tanır, bu da sorunların belirlenmesine ve çözülmesine yardımcı olur.
 - **Logcat günlüğü gönder** (*Android için*). Kullanıcılara uygulama çökmelerinin ayrıntılı günlüklerini geliştiricilere gönderme yeteneği sağlar, bu da daha derinlemesine analiz ve sorun gidermeyi kolaylaştırır.

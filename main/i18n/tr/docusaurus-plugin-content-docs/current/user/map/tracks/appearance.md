@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  İz Görünümü
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -61,11 +61,29 @@ Bazı ayarları yalnızca *OsmAnd Pro* ile kullanabilirsiniz. <a href="https://o
 
 **Mevcut Renk Seçenekleri:**
 
-- **Ücretsiz ayarlar**: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![İz menüsü Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
-- [Pro özelliği](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+![İz menüsü Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Renklandırma Bağlam Menüsü iOS](@site/static/img/map/colorisation_ios.png)
+
+**Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler üç durumda görünebilir: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Mevcut ize uygulanabilir.
+2. <Translate ios="true" ids="weather_update_disabled"/>. İz gerekli veriyi içermiyor.
+3. PRO. Mevcut iz için kullanılabilir ancak abonelik gerektirir; dokunulduğunda [<Translate ios="true" ids="purchase_dialog_title"/> ekranı](https://osmand.net/docs/user/purchases/ios) açılır.
+
+</TabItem>
+
+</Tabs>
+
+- **Ücretsiz ayarlar**: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).   
+- [Pro özelliği](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [Navigasyon sırasında harita ekranı](../../navigation/guidance/map-during-navigation.md#color) ve özel bir renk seçme ve oluşturma hakkında bilgi için [Renk şemaları](../../personal/color-palette-schemes.md#routes) bölümüne bakın.
 
@@ -91,9 +109,23 @@ Haritada görünürlüğü artırmak için iz genişliğini ayarlayın.
 
 ### Bölme Aralığı {#split-interval}
 
-![İz menüsü Görünüm Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-İzdeki aralığı **mesafeye göre mi yoksa zamana göre mi** böleceğinizi seçin.
+<TabItem value="android" label="Android">
+
+![İz menüsü Görünüm Bölme aralığı Android](@site/static/img/map/split_interval_android.png)  ![Bölme aralığı Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![İz menüsü Görünüm Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Bölme aralığı](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+İzi aralıklara **mesafeye**, **zamana** veya **yokuş yukarı/yokuş aşağı** (Android) göre böleceğinizi seçin, ya da **mesafeye** veya **zamana** göre (iOS). Aralık başına ayrıntılı istatistikleri görüntülemek için [Aralıklara Göre Analiz Et](../../map/tracks/track-context-menu.md#analyze-by-intervals) bölümüne bakın (yalnızca Android).
+
 
 ### Yön Okları {#direction-arrows}
 
@@ -173,7 +205,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
     Eğime dayalı Duvar Rengi ile, arazinin, özellikle tepelerin ve eğimlerin hızınızı nasıl etkilediğini gözlemleyebilirsiniz. Hız ve eğim görselleştirmesinin bu kombinasyonu, aktivite boyunca performansın ayrıntılı bir şekilde anlaşılmasını sağlar.
 
-2. **3B Rölyef ile Kalp Sensörü ile Görselleştirme**.  
+2. **Kalp sensörü ile 3B Rölyef ile Görselleştirme**.  
     Başka bir bilgilendirici uygulama, kalp atış hızı sensör verilerini 3B rölyef haritalarıyla birleştirmektir. Bu, kalp atış hızı dalgalanmalarını doğrudan araziye eşlemenizi sağlayarak, rakım değişikliklerinin fiziksel çabanızı nasıl etkilemiş olabileceğine dair kapsamlı bir görünüm sunar.  
 
     Rakımı abartan 3B rölyef özelliği, 3B iz görünümünden bağımsız olarak çalışır. Kalp atış hızı ve arazi yüksekliği arasındaki korelasyonu daha iyi anlamak için iki dikey abartma parametresi ayarlanabilir.
@@ -242,7 +274,7 @@ Bir iz için renk belirtmek için aşağıdaki formatı kullanın:
 
 ```xml
 <trk>
-  <name>Örnek İz</name>
+  <name>Example Track</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>
@@ -289,7 +321,7 @@ Bir iz için renk belirtmek için aşağıdaki formatı kullanın:
 ## İlgili Makaleler {#related-articles}
 
 - [Harita Bağlam menüsü](../map-context-menu.md)
-- [Haritayı Yapılandır menüsü](../configure-map-menu.md)
+- [Haritayı Yapılandır](../configure-map-menu.md)
 - [Haritadaki noktalar](../point-layers-on-map.md)
 - [İzler](../tracks/index.md)
 - [İzler Bağlam menüsü](../tracks/track-context-menu.md)

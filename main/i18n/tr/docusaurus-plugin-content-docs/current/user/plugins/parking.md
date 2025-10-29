@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title: Park Konumu
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Genel Bakış {#overview}
@@ -23,6 +23,8 @@ Bu eklenti ücretsizdir ve indirilen OsmAnd haritalarıyla çevrimdışı çalı
 - Süre sınırlıysa, eklenti hem başlangıç hem de bitiş zamanını kaydeder.
 - Bitiş zamanı, cihazınızın takviminde bir hatırlatıcıyı tetikleyebilir.
 - Park detayları daha sonra görüntülenebilir veya navigasyon için kullanılabilir.
+
+Park yerleri **Favori noktalar** olarak kaydedilir. Park işaretleyicisinin haritada görünür olduğundan emin olmak için [Favoriler](../personal/favorites.md) etkinleştirilmelidir.
 
 İşaretleyici geçicidir ve artık ihtiyaç duyulmadığında kolayca kaldırılabilir.
 
@@ -47,14 +49,14 @@ Bu eklenti ücretsizdir ve indirilen OsmAnd haritalarıyla çevrimdışı çalı
 
 Haritada bir park yeri kullanmak için aşağıdaki ayarları yapmanız gerekir:
 
-1. *Ana Menü → Eklentiler*'den [Park konumu eklentisini](../plugins/index.md#enable--disable) etkinleştirin.
+1. *Ana Menü → Eklentiler* menüsünden [Park konumu eklentisini](../plugins/index.md#enable--disable) etkinleştirin.  
 2. Bağlam menüsü aracılığıyla harita üzerinde bir [park yeri](#set-a-spot) ayarlayın.
-3. (İsteğe bağlı) Daha hızlı erişim için ekrana [Park widget'ını](#parking-widget) ekleyin.
+3. (İsteğe bağlı) Daha hızlı erişim için ekrana [Park widget'ını](#parking-widget) ekleyin.  
 
 
 ## Haritada Park Yeri {#parking-spot-on-the-map}
 
-Bir park yeri işaretlediğinizde, OsmAnd coğrafi koordinatlarını bir zaman damgasıyla birlikte kaydeder. Gerekirse, bir zaman sınırı ve takvim hatırlatıcısı da eklenebilir.
+Bir park yeri işaretlediğinizde, OsmAnd coğrafi koordinatlarını bir zaman damgasıyla birlikte kaydeder. Gerekirse, bir zaman sınırı ve takvim hatırlatıcısı da eklenebilir. Park yerleri **Favori noktalar** olarak kaydedilir. Park işaretleyicisinin haritada görünür olduğundan emin olmak için [Favoriler](../personal/favorites.md) etkinleştirilmelidir.
 
 
 ### Bir Yer Ayarlayın {#set-a-spot}
@@ -65,13 +67,13 @@ Haritada bir Park yeri ayarlamak için, gerekli seviyeye yakınlaştırın, ard�
 
 <TabItem value="android" label="Android">
 
-![Android'de Park yeri ayarlayın](@site/static/img/plugins/parking/and_set_p_point_limit.png) ![Android'de zaman sınırlarını ayarlayın](@site/static/img/plugins/parking/and_set_p_point4_.png)
+![Android'de park yeri ayarlayın](@site/static/img/plugins/parking/and_set_p_point_limit.png) ![Android'de zaman sınırlarını ayarlayın](@site/static/img/plugins/parking/and_set_p_point4_.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS'ta Eylemlerde Park'ı seçin](@site/static/img/plugins/parking/ios_set_p_point2.png) ![iOS'ta Park noktasını ayarlayın](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
+![iOS'ta Eylemlerde Park'ı seçin](@site/static/img/plugins/parking/ios_set_p_point2.png)  ![iOS'ta park noktasını ayarlayın](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
 
 </TabItem>
 
@@ -131,13 +133,13 @@ Park işaretleyicisine dokunduğunuzda ek ayrıntılar gösterilir:
 
 <TabItem value="android" label="Android">
 
-![Android'de Park noktasına yönlendirme](@site/static/img/plugins/parking/and_navigating_to_parking.png)
+![Android'de park noktasına yönlendirme](@site/static/img/plugins/parking/and_navigating_to_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS'ta Park noktasına gitme](@site/static/img/plugins/parking/ios_going_to_parking.png)
+![iOS'ta park noktasına gitme](@site/static/img/plugins/parking/ios_going_to_parking.png)
 
 </TabItem>
 
@@ -147,14 +149,14 @@ Aracınıza kolayca geri dönmek için park yerini bir navigasyon hedefi olarak 
 
 **Navigasyon menüsü aracılığıyla**:
 
-  1. **Navigasyon** düğmesine dokunun.
-  2. Bir profil seçin.
+  1. **Navigasyon** düğmesine dokunun.  
+  2. Bir profil seçin.  
   3. **Hedef ayarla** öğesine dokunun ve kaydedilen noktalar listesinden **Park** öğesini seçin.
 
 **Park widget'ı aracılığıyla**:
 
-  1. **Park widget'ına** dokunun.
-  2. Park yeri işaretleyicisine dokunun.
+  1. **Park widget'ına** dokunun.  
+  2. Park yeri işaretleyicisine dokunun.  
   3. **Navigasyon** öğesini seçin ve kullanmak istediğiniz profili seçin.
 
 
@@ -164,15 +166,15 @@ Aracınıza kolayca geri dönmek için park yerini bir navigasyon hedefi olarak 
 
 <TabItem value="android" label="Android">
 
-![Android'de Parkı Sil eylemi](@site/static/img/map/context_menu_limited_parking.png)
+![Android'de Park'ı Sil eylemi](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<!-- ![Android'de Parkı Sil eylemi](@site/static/img/map/context_menu_limited_parking.png) -->
-
-![iOS'ta Parkı Sil eylemi](@site/static/img/map/context_menu_limited_parking_ios.png)
+<!-- ![Android'de Park'ı Sil eylemi](@site/static/img/map/context_menu_limited_parking.png) -->
+  
+![iOS'ta Park'ı Sil eylemi](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
@@ -193,7 +195,7 @@ Bir takvim hatırlatıcısı ayarlanmışsa, o da otomatik olarak kaldırılacak
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_parking"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_parking"/>*  
 
 ![Android'de Park widget'ı ekleme](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
 
@@ -201,7 +203,7 @@ Bir takvim hatırlatıcısı ayarlanmışsa, o da otomatik olarak kaldırılacak
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="parking_place"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="parking_place"/>*  
 
 ![iOS'ta Park widget'ı ekleme](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 

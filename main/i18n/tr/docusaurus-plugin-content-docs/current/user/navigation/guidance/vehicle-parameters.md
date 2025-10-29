@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title: Araç parametreleri
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış
@@ -42,7 +42,7 @@ OsmAnd'da optimum rota hesaplaması için aşağıdaki araç parametrelerini gö
 
 1. Aracın [minimum ve maksimum hızı](#road-speeds) olarak [*Varsayılan Hız* veya *Yol Hızları*](#road-speeds) ayarını yapın. Bu, uygulamanın rotayı tamamlamak için gereken süreyi belirlemesine ve farklı yol segmentlerindeki hız sınırlarını göz önünde bulundurarak en iyi rotayı seçmesine yardımcı olacaktır.
 2. Motor tarafından kullanılan yakıtın [*tipini*](#fuel-used-by-motor) belirtin. Bu, uygulamanın CO2 emisyonlarını tahmin etmesini sağlayacaktır.
-3. Yakıt seviyenizi ve tüketiminizi doğru bir şekilde takip etmek için [*deponuzun kapasitesini*](#fuel-tank-capacity) girin.
+3. [*Deponuzun kapasitesini*](#fuel-tank-capacity) girin; bu, yakıt seviyenizi ve tüketiminizi doğru bir şekilde takip etmenizi sağlar.
 4. Aracınızın [*boyut ve ağırlık parametrelerini*](#size-parameters) tanımlayın; bu, uygulamanın optimum rotayı hesaplamasına ve kısıtlamalar nedeniyle yoldaki engellerden kaçınmasına yardımcı olabilir.
 
 OsmAnd uygulamasındaki parametreleri doğru bir şekilde ayarlamak, bir rotada gezinirken sorunlardan kaçınmanıza, araç tipine ve yol kısıtlamalarına göre en uygun olanı seçmenize ve seyahatiniz için süreyi hesaplamanıza yardımcı olacaktır.
@@ -98,6 +98,14 @@ Araç parametreleri, yolların, köprülerin, feribotların, barajların ve diğ
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+**5.** [**Maksimum aks yükü sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Araç aks ağırlığı kısıtlamalarına sahip yollar ve köprülerden kaçınmak için aracınızın maksimum aks yükünü belirtin. Bu parametre yalnızca [*Kamyon*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
+
+![Navigasyon Ayarları Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Tam yüklü maksimum ağırlık**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Genel ağırlık kısıtlamalarına sahip yollar ve köprülerden kaçınmak için tam yüklü aracınızın maksimum toplam ağırlığını belirtin. Bu parametre yalnızca [*Kamyon*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
+
+![Navigasyon Ayarları Android](@site/static/img/navigation/max_weight_at_full_load.png)
+
 Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli olabilir. Bu kısıtlamalardan bazıları şunları içerebilir:  
 
 1. Belirli kentsel alanlarda hareket eden araçlara yönelik kısıtlamalar.  
@@ -127,7 +135,7 @@ Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli
 </Tabs>
 
 Araç parametrelerinde motor tipini seçerseniz, [Rota Detayları](../setup/route-details.md) bölümündeki grafiğin üzerinde [***CO2 ayak izi verileri***](../../navigation/setup/route-details.md#elevation-info) görüntülenecektir.
-Altı yakıt tipi mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik*** ve ***Hibrit***.  
+Altı yakıt tipi mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit***.  
 
 **Uygulanabilirlik:**
 
@@ -179,7 +187,7 @@ Altı yakıt tipi mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik*** ve ***Hibri
 
 </Tabs>  
 
-**Varsayılan hız**, bu ulaşım modu için varsayılan hareket hızıdır ([Varsayılan hız limitleri](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). *Yürüme*, *At binme* ve *Bisiklet* profilleri için 0,1 km/s (mph) ([Birimler ve formatlar](https://osmand.net/docs/user/personal/profiles#units--formats)) eşdeğeri küçük artışlarla, diğer profiller için ise 1 km/s (1 mph) eşdeğeri artışlarla. Kullanılır:
+**Varsayılan hız**, bu ulaşım modu için varsayılan hareket hızıdır ([Varsayılan hız limitleri](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). *Yürüme*, *At binme* ve *Bisiklet* profilleri için 0,1 km/saat (mph) ([Birimler ve formatlar](https://osmand.net/docs/user/personal/profiles#units--formats)) eşdeğeri küçük artışlarla, diğer profiller için ise 1 km/saat (1 mph) eşdeğeri artışlarla. Kullanılır:
 - [GPX Navigasyonu](../setup/gpx-navigation.md), [Kayak rotaları](../routing/ski-routing.md), [Tekne rotaları](../routing/boat-navigation.md), [Yaya](../routing/pedestrian-routing.md) ve diğer benzer profiller gibi yollardan hız belirlenemediğinde [rota süresini](../../widgets/nav-widgets.md#time-to-intermediate) tahmin etmek için.
 - [Sesli anonsların](../guidance/voice-navigation.md) ne zaman etkinleştirileceğini belirlemek için.
 - Ortalama hız henüz hesaplanmadıysa, düz çizgi navigasyonu ile Harita işaretleyicileri için tahmini varış zamanını belirlemek için.

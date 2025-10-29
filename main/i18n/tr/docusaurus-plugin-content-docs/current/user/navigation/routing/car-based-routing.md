@@ -1,8 +1,9 @@
 ---
-source-hash: c8f39d23c520f3d8eb8713729cf8047052d90c32210529157c5a7347608706bb
+source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
 sidebar_position: 2
 title: Araç rotalama (Kamyon, Motosiklet)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,24 +14,24 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
 Araç tabanlı rotalama, sürücülerin yollarda verimli, güvenli ve konforlu bir şekilde gezinmelerine yardımcı olmak için tasarlanmıştır ve her sürücünün benzersiz ihtiyaçlarına ve tercihlerine göre özelleştirilmiş yol tarifleri sağlar. Doğru rotalama ayarları, sürücülerin zamandan ve yakıttan tasarruf etmelerine ve yoldaki tehlikelerden kaçınmalarına yardımcı olabilir. En hızlı rotalama varsayılan olarak sunulur.
 
 :::info
-Motorlu kara taşıtları için rotalama mekanizması yalnızca birkaç ayarda farklılık gösterir. Ortak parametreler bu makalenin [Araç](#route-parameters---car) bölümünde açıklanmıştır. [Kamyon](#route-parameters---truck) ve [Motosiklet](#route-parameters---motorcycle) kendi özelliklerine sahiptir.
+Motorlu kara taşıtları için rotalama mekanizması yalnızca birkaç ayarda farklılık gösterir. Ortak parametreler bu makalenin [Araç](#route-parameters---car) bölümünde açıklanmıştır. [Kamyon](#route-parameters---truck) ve [Motosiklet](#route-parameters---motorcycle) kendi özelliklerine sahiptir.  
 :::
 
-Rotalama, ilgili profilin (*Sürüş, Kamyon, Motosiklet*) Navigasyon ayarlarının [Rota parametreleri bölümünde](../../navigation/guidance/navigation-settings.md#route-parameters) ihtiyaçlarınıza göre yapılandırılabilir.
+Rotalama, ilgili profilin (*Sürüş, Kamyon, Motosiklet*) Navigasyon ayarlarının [Rota parametreleri bölümünde](../../navigation/guidance/navigation-settings.md#route-parameters) ihtiyaçlarınıza göre yapılandırılabilir.  
+
 
 ## Rota Parametreleri - Araç {#route-parameters---car}
 
-Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rotaları bulmalarına yardımcı olmak için tasarlanmıştır. Tek yönlü caddeler, dönüş yasakları, yaya bölgeleri gibi yaygın sürüş kısıtlamalarını dikkate alır ve ayrıca dar yollar veya ağırlık kısıtlamaları olan yollar gibi araçlar için uygun olmayan yollardan kaçınmaya yardımcı olur.
+Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rotaları bulmalarına yardımcı olmak için tasarlanmıştır. Tek yönlü caddeler, dönüş yasakları, yaya bölgeleri gibi yaygın sürüş kısıtlamalarını dikkate alır ve ayrıca dar yollar veya ağırlık kısıtlamaları olan yollar gibi araçlar için uygun olmayan yollardan kaçınmaya yardımcı olur.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -50,11 +51,12 @@ Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rota
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* | <details><summary> Navigasyon sırasında kaçınmak istediğiniz yolları seçin. Harita üzerinde bir yol seçebilir veya listeden yol türlerini seçebilirsiniz. </summary>![Yollardan kaçın Android](@site/static/img/navigation/routing/car_avoid_roads_andr.png) </details> | <ul><li>[<Translate android="true" ids="routing_attr_avoid_toll_name"/>](https://wiki.openstreetmap.org/wiki/Key:toll).</li><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface).</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Başka bir ülkeye sınırı geçmekten kaçının).</li><li>[Buz yollarından](https://wiki.openstreetmap.org/wiki/Key:ice_road) (donmuş su üzerine döşenen soğuk bölgelerdeki mevsimlik yollar) ve [geçitlerden](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (bir su yolunun üzerinden geçtiği otoyolun bölümleri) kaçının. </li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (araçları su kütleleri üzerinden taşıyan bir tür su taşımacılığı).</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway).</li><li>[<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone).</li><li>[<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>](https://wiki.openstreetmap.org/wiki/Proposed_features/shuttle_train) (yol ile birbirine kolayca erişilemeyen iki yeri birbirine bağlayan araç taşıyan trenler).</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel).</li><li>[<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>](https://wiki.openstreetmap.org/wiki/Key:4wd_only) (yalnızca 4WD araçlar için uygundur).</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* | <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> | Araç rotalaması için, aksi belirtilmedikçe yolların yüzeyinin [asfaltlı](https://wiki.openstreetmap.org/wiki/Key:surface) olduğu varsayılır. |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* | Rota hesaplanırken özel erişim kısıtlamaları göz ardı edilecektir. | *[private](https://wiki.openstreetmap.org/wiki/Key:access)* etiketi OSM'de otoyolların ve diğer ulaşım yollarının, binaların, girişlerin, olanakların ve eğlence varlıklarının kullanımındaki kısıtlamaları tanımlamak için kullanılır. |
-| *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (yalnızca&nbsp;araç) | <details><summary> Mal teslimatına kapalı yollardan kaçınılacaktır. </summary>![Mal teslimatı Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Bu seçenek yalnızca 3,5 tondan fazla olmayan malları taşıyan araçlar için geçerlidir. Aracınızın ağırlığı 3,5 tondan fazlaysa, [Kamyon profili](#route-parameters---truck) kullanmalısınız. |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Navigasyon sırasında kaçınmak istediğiniz yolları seçin. Harita üzerinde bir yol [seçebilir](../../map/map-context-menu/#avoid-road) veya listeden yol türlerini seçebilirsiniz.  </summary>![Yollardan kaçın Android](@site/static/img/navigation/routing/car_avoid_roads_andr.png) </details>       | <ul><li>[<Translate android="true" ids="routing_attr_avoid_toll_name"/>](https://wiki.openstreetmap.org/wiki/Key:toll).</li><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface).</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Başka bir ülkeye sınırı geçmekten kaçının).</li><li>[Buz yollarından](https://wiki.openstreetmap.org/wiki/Key:ice_road) (donmuş su üzerine döşenen soğuk bölgelerdeki mevsimlik yollar) ve [geçitlerden](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (bir su yolunun üzerinden geçtiği otoyolun bölümleri) kaçının. </li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (araçları su kütleleri üzerinden taşıyan bir tür su taşımacılığı).</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway).</li><li>[<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone).</li><li>[<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>](https://wiki.openstreetmap.org/wiki/Proposed_features/shuttle_train) (yol ile birbirine kolayca erişilemeyen iki yeri birbirine bağlayan araç taşıyan trenler).</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel).</li><li>[<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>](https://wiki.openstreetmap.org/wiki/Key:4wd_only) (yalnızca 4WD araçlar için uygundur).</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> | Araç rotalaması için, aksi belirtilmedikçe yolların yüzeyinin [asfaltlı](https://wiki.openstreetmap.org/wiki/Key:surface) olduğu varsayılır. |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Rota hesaplanırken özel erişim kısıtlamaları göz ardı edilecektir.  | *[private](https://wiki.openstreetmap.org/wiki/Key:access)* etiketi OSM'de otoyolların ve diğer ulaşım yollarının, binaların, girişlerin, olanakların ve eğlence varlıklarının kullanımındaki kısıtlamaları tanımlamak için kullanılır.   |
+| *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (yalnızca&nbsp;araç) |  <details><summary> Mal teslimatına kapalı yollardan kaçınılacaktır. </summary>![Mal teslimatı Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Bu seçenek yalnızca 3,5 tondan fazla olmayan malları taşıyan araçlar için geçerlidir. Aracınızın ağırlığı 3,5 tondan fazlaysa, [Kamyon profili](#route-parameters---truck) kullanmalısınız.   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Yakıt verimli bir rota hesaplamak için, rotalama motoru hızı dahili olarak 60 km/s ile sınırlar, ancak Tahmini Varış Süresi değişmez. Bu nedenle, aynı başlangıç-bitiş rotalarının 2'si durumunda: otoyol (120 km/s) ve tali (60 km/s) - daha kısa rota seçilecektir. Hız sınırı < 60 km/s olan servis yolları için daha hızlı rota seçilecektir. |
+
 
 ## Rota Parametreleri - Kamyon {#route-parameters---truck}
 
@@ -62,11 +64,11 @@ Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rota
 Varsayılan olarak, *Kamyon profili* devre dışıdır. Bu profili rotalama için kullanmak için, *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* bölümünde etkinleştirmeniz gerekir.
 :::
 
-Kamyon rotalama, araç rotalamasına benzer, ancak büyük ticari araç sürücüleri için özel olarak tasarlanmıştır. Araç [yüksekliği, ağırlığı ve genişlik kısıtlamaları](../guidance/vehicle-parameters.md#size-parameters) ve tehlikeli madde taşıma olasılığı gibi ek faktörleri dikkate alır (aşağıdaki tabloya bakın). Diğer tüm rotalama ayarları [araç rotalamasıyla](#route-parameters---car) aynıdır.
+Kamyon rotalama, araç rotalamasına benzer, ancak büyük ticari araç sürücüleri için özel olarak tasarlanmıştır. Araç [yükseklik, genişlik, ağırlık limitleri, maksimum aks yükü ve tam yük ağırlığı kısıtlamaları](../guidance/vehicle-parameters.md#size-parameters) ve tehlikeli madde taşıma olasılığı gibi ek faktörleri dikkate alır (aşağıdaki tabloya bakın). Diğer tüm rotalama ayarları [araç rotalamasıyla](#route-parameters---car) aynıdır.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -88,6 +90,7 @@ Kamyon rotalama, araç rotalamasına benzer, ancak büyük ticari araç sürüc�
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="transport_hazmat_title"/>* (**AB bölgesi** için) | <details><summary> Yerel yetkililer bazı yollarda veya tünellerde tehlikeli madde taşımacılığını yasaklayabilir. </summary> ![Tehlikeli madde taşımacılığı Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | Etkinleştirildiğinde, kamyon rotalama mekanizması OSM etiketi *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*'ı dikkate alır. **AB kısıtlamalarına** göre beş tehlikeli madde kategorisinden (*A, B, C, D, E*) birini seçebilirsiniz. |
 | *<Translate android="true" ids="dangerous_goods"/>* (yalnızca **ABD bölgesi** seçiliyse) | <details><summary> ABD'deki tehlikeli madde taşıma kuralları AB'den farklıdır. Yalnızca Sürüş Bölgesi ABD olarak ayarlanmışsa görüntülenir. Birden fazla sınıf seçebilirsiniz. </summary> ![Tehlikeli madde taşımacılığı Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | [**ABD kısıtlamalarına**](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system) göre tehlikeli madde türlerinden birini (1'den 9'a kadar) seçin. Bazı yollarda ve tünellerde tehlikeli madde taşımacılığı yasaktır. <ul><li>1. *Patlayıcılar* </li><li> 2. *Gazlar* </li><li> 3. *Yanıcı Sıvılar* </li><li> 4. *Yanıcı Katılar* </li><li> 5. *Oksitleyici Maddeler ve Organik Peroksitler* </li><li> 6. *Zehirli ve Bulaşıcı Maddeler* </li><li> 7. *Radyoaktif Maddeler* </li><li> 8. *Aşındırıcı Maddeler* </li><li> 9. *Çeşitli* </li></ul> |
+
 
 ## Rota Parametreleri - Motosiklet {#route-parameters---motorcycle}
 

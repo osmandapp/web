@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title: Yarıçap Cetveli ve Cetvel
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -52,7 +52,7 @@ Bu araçlar, rotaları planlamak, önemli noktalara yakınlığı tahmin etmek v
 
 - Ölçek, yakınlaştırma veya uzaklaştırma yaptıkça dinamik olarak uyum sağlar.
 - Harita üzerindeki nesneler arasındaki gerçek dünya mesafelerini tahmin etmek için görsel bir referans sağlar.
-- Sezgisel kullanım için segment uzunluğu uygun birimlere (örneğin, 100 m) yuvarlanır ve kabaca bir başparmağın genişliğine denk gelir.
+- Segment uzunluğu uygun birimlere (örneğin, 100 m) yuvarlanır ve kabaca bir başparmağın genişliğine denk gelir.
 
 Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafeler hakkında hızlı bir anlayışa ihtiyacınız olduğunda kullanışlıdır.
 
@@ -69,14 +69,14 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Konum Android'i görüntüle](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Konum Android'i görüntüle](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 - Seçilen noktaya merkezlenmiş eş merkezli daireler görüntüleyin.
 - İlk daire, hızlı görsel referans için mevcut [harita ölçeğini](#ruler) yansıtır.
 - Doğru yarıçap değerlerini korumak için yakınlaştırma yaparken otomatik olarak ayarlanır.
+- Pencere öğesine dokunarak üç görüntüleme modu arasında geçiş yapın: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, ve <Translate android="true" ids="dark_theme"/>.
+- Uzun dokunma, ek seçeneklerle pencere öğesinin bağlam menüsünü açar.
+- Pencere öğesi ayarları iki ayarlanabilir parametre içerir: *<Translate android="true" ids="shared_string_height"/>* — pencere öğesinin ekrandaki görsel yüksekliğini kontrol eder; *<Translate android="true" ids="shared_string_show_icon"/>* — pencere öğesinin simgesinin görünürlüğünü açar/kapar.
 
 Bu pencere öğesini, ilgi çekici noktalara yakınlığı tahmin etmek veya belirli bir alan etrafında plan yapmak için kullanın.
 
@@ -139,13 +142,13 @@ Bu pencere öğesini, ilgi çekici noktalara yakınlığı tahmin etmek veya bel
 - Cihazı yatay tutmak doğruluğu ve görselleştirmeyi artırır.
 - Hem **mavi üçgen** hem de **kırmızı ok** (Kuzey) yukarıyı gösteriyorsa, cihaz gerçek Kuzey'e hizalanmıştır.
 
-Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes) gerçek ortamla eşleştirmenize olanak tanıyan açık hava navigasyonu için kullanışlıdır.
+Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes) gerçek ortamla eşleştirmenize olanak tanıyan açık hava navigasyonu için kullanışlıdır.  
 
 | | |
 |------------|------------|
 | Etkinleştir | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>* |
-| Biçim | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+| Biçim | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Merkez / Alt Konum {#center--bottom-position}
@@ -156,7 +159,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,display_position"/>*
 
-![Konum Android'i görüntüle](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_view_andr.png)
+![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_view_andr.png)
 
 </TabItem>
 
@@ -164,13 +167,13 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Diğer → Ekrandaki konum konumu*
 
-![Konum Android'i görüntüle](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Konumunuz etrafındaki görünür yarıçapı artırmak için, Yarıçap Cetveli'nin konumunu *Merkez* veya *Alt* seçeneğini belirleyerek değiştirebilirsiniz.
+Konumunuz etrafındaki görünür yarıçapı artırmak için, Yarıçap Cetveli'nin konumunu *Merkez* veya *Alt* seçeneğini belirleyerek değiştirebilirsiniz.  
 
 *Ekrandaki konum* hakkında daha fazla bilgi için [Ekranı Yapılandır](../widgets/configure-screen.md#display-position-location-position-on-screen) makalesine bakın.
 
@@ -203,7 +206,21 @@ Yarıçap daireleri derinlikle görünecektir, bu özellikle engebeli alanlarda 
 
 ## Dokunarak Mesafe {#distance-by-tap}
 
-![Harita üzerindeki iki rastgele nokta arasındaki mesafe](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Dokunarak Mesafe Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dokunarak Mesafe iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 **Dokunarak Mesafe** aracı, Yarıçap Cetveli'ni kullanmadan veya bir rota oluşturmadan harita üzerindeki noktalar arasındaki mesafeleri ölçmenizi sağlar.
 
@@ -215,11 +232,13 @@ Yarıçap daireleri derinlikle görünecektir, bu özellikle engebeli alanlarda 
 - **Herhangi iki nokta arasındaki mesafe**  
   Haritada iki noktaya aynı anda dokunun (çoklu dokunuş). İki noktayı bir çizgi birleştirir ve ölçülen mesafe görüntülenir.
 
+Mesafe etiketinin metin boyutunu da ayarlayabilirsiniz. *<Translate android="true" ids="shared_string_normal"/>* (varsayılan) ve *<Translate android="true" ids="shared_string_large"/>* (1,5× daha büyük) arasında seçim yapın. Büyük seçenek seçildiğinde, okunabilirliği artırmak için çizgi ile etiket arasında otomatik olarak ekstra boşluk eklenir. Değişiklikler uygulamayı yeniden başlatmadan anında uygulanır.
+
 | | |
 |------------|------------|
 | Etkinleştir |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Metin boyutu (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Metin boyutu | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Birim Biçimi | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

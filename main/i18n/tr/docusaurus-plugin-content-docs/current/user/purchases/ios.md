@@ -1,8 +1,9 @@
 ---
-source-hash: 7661b3402845f8d1d0131cde21795230c0848240ce77a9e370eff00d6bb95c89
+source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## OsmAnd'ı Yükle (iOS) {#install-osmand-ios}
@@ -44,9 +44,9 @@ Uygulamayı bu bağlantıdan indirebilirsiniz - [Apple App Store'da OsmAnd Harit
 
 1. **Maps+**, OsmAnd'ın ücretsiz sürümü için bir *yükseltmedir* ve çoğu özelliğin kilidini açar.
 
-2. **OsmAnd Pro**, **OsmAnd+** ve **Maps+** *çapraz platform* satın alımlarıdır. Bu, bir mağazadan (örneğin, *Google Play, Huawei AppGallery, AppStore* ve *osmand.net*) satın alıp başka bir mağazada [satın alımınızı OsmAnd Cloud hesabınızla bağlayarak](../personal/osmand-cloud.md#cross-platform) geri yükleyebileceğiniz anlamına gelir.
+2. **OsmAnd Pro**,  **OsmAnd+** ve **Maps+** *çapraz platform* satın alımlarıdır. Bu, bir mağazadan (örneğin, *Google Play, Huawei AppGallery, AppStore* ve *osmand.net*) satın alıp başka bir mağazada [satın alımınızı OsmAnd Cloud hesabınızla bağlayarak](../personal/osmand-cloud.md#cross-platform) geri yükleyebileceğiniz anlamına gelir.
 
-3. Satın alımı aile üyeleriyle paylaşmak için **Maps+**'ı [Apple Aile Paylaşımı](https://support.apple.com/en-us/HT201088) özelliğine ekleyebilirsiniz.
+3. Satın alımı aile üyeleriyle paylaşmak için **Maps+**'ı [Apple Aile Paylaşımı](https://support.apple.com/en-us/HT201088) özelliğine ekleyebilirsiniz.  
 
 
 ## Fiyatlar {#prices}
@@ -55,23 +55,23 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -84,7 +84,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
-|  | OsmAnd Ücretsiz | [OsmAnd Maps+](#install-osmand-ios)<br/>(uygulama içi ve abonelik) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Ücretsiz | [OsmAnd Maps+](#install-osmand-ios)<br/>(uygulama&#8209;ici ve abonelik) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -130,10 +130,10 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
 | [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
-| [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar. |
+| [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
 | [Canlı](../personal/maps-resources.md#live-updates) | OsmAnd haritaları, [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden sonra her 15 dakikada bir güncellenir. |
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Harita üzerinde 24 saatlik saatlik tahmin, 7 gün önceden. |
-| [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur. |
+| [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur.  |
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
 
 
@@ -147,7 +147,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → OsmAnd Pro ile Devam Et*
 
-veya
+veya  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → OsmAnd Pro ile Devam Et*
 
@@ -169,7 +169,7 @@ Yeni abonelikler OsmAnd 4.3'ten (Aralık 2022) itibaren aktif hale geldi. Tüm �
 
 ## Satın Almaları Geri Yükle {#restore-purchases}
 
-Kullanıcı tüm satın alımları ve abonelikleri [Apple hesabından](https://appleid.apple.com/) kontrol edebilir.
+Kullanıcı tüm satın alımları ve abonelikleri [Apple hesabından](https://appleid.apple.com/) kontrol edebilir.  
 
 Satın alımlarınızı geri yüklemek için aynı Apple Kimliğini kullanın.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 96c19eed244ae8e23b225b79e192f6ab15334e38a9e882b113d53dea103f93b7
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -55,7 +55,7 @@ OsmAnd iki tür harita ile çalışır: [Vektör haritaları](../map/vector-maps
 
 <TabItem value="ios" label="iOS">
 
-![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -78,6 +78,7 @@ Aylık harita güncellemelerinin başka bir harita indirmesi olarak kabul edildi
 - [Eşyükselti çizgileri](../plugins/topography.md#contour-lines). Araziyi görselleştirmek için eşyükselti çizgilerini içeren bir harita.
 - [Arazi haritası (Gölgelendirme ve Eğim)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Gölgeler veya eğimlerle birlikte haritalar ek arazi bilgileri sağlar.
 - [Arazi haritası (3D)](../plugins/topography.md#3d-relief). Çevrenizi daha iyi anlamak için arazinin üç boyutlu gösterimi. [Harita oluşturma motoru Sürüm 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) etkinleştirilmelidir.
+- [Deniz derinlikleri ve konturları](../plugins/nautical-charts.md). Kıyı hatları, derinlikler, navigasyon yardımcıları, limanlar ve tehlikeleri gösteren deniz haritaları, güvenli teknecilik ve yelken için.
 - [Wikipedia](../plugins/wikipedia.md). Coğrafi konumlu [Wikipedia](https://wikipedia.org/) makaleleriyle dönüm noktaları veya yerler hakkında ek bilgiler içeren vektör haritası.
 - [Wikivoyage](../plan-route/travel-guides.md). Kullanıcılara değerli bilgiler, öneriler ve ipuçları sunan sanal seyahat rehberleriyle vektör haritaları sağlar.
 - [Hava durumu tahmini](../plugins/weather.md). Kolay rota planlaması için harita üzerinde hava durumu bilgileri.
@@ -119,7 +120,7 @@ Aylık harita güncellemelerinin başka bir harita indirmesi olarak kabul edildi
 
 - **Yükleme sürecindeki haritalar** bunu görselleştiren bir simgeye sahiptir. İndirmeyi iptal etmek için simgeye dokunun. İndirme kuyruğundaki haritaların listesini görüntülemek ve indirmeleri iptal etmek için İndirilenler ve Güncellemeler sekmelerinin Cihaz belleği bilgisi alanındaki İndirme çubuğuna dokunun.
 
-- **Ücretsiz sürümde**, indirilemeyen haritalar, satın alma sayfasına bağlantı veren bir [AL](../purchases/index.md) simgesi gösterir.
+- **Ücretsiz sürümde**, indirilemeyen haritalar, satın alma sayfasına bağlantı veren bir [GET](../purchases/index.md) simgesi gösterir.
 
 ***İndirilenler sekmesi harita gruplarından oluşur:***
 
@@ -164,13 +165,13 @@ Daha fazla bilgi için [**Özel paket**](../plugins/custom) makalesine bakın.
 
 <TabItem value="android" label="Android">
 
-![Genel Android harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_andr.png) ![Android seçimini kaldır menüsü](@site/static/img/personal/maps/multiple_maps_2_andr.png)
+![Genel Android harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_andr.png) ![Seçimi kaldır menüsü Android](@site/static/img/personal/maps/multiple_maps_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![IOS seçimini kaldır menüsü](@site/static/img/personal/maps/multiple_maps_2_ios.png)
+![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![Seçimi kaldır menüsü iOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
@@ -312,86 +313,86 @@ Mevcut **Eylemler** veri türüne bağlıdır:
 </Tabs>
 
 <!--
-Yerel sekmesi, cihazınızdaki tüm OsmAnd verileri için depolama kullanımına genel bir bakış sağlar. Veriler, netlik için üç renk kodlu bölüme ayrılmıştır ve öğeler en büyükten en küçüğe doğru boyuta göre sıralanmıştır. Her bölüm yalnızca indirilen verilere sahip öğeleri görüntüler:
+The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
-- ***Kaynaklar*** (*mavi*).  
-    Haritalar ([Standart](../map/vector-maps.md), &nbsp;[Denizcilik](../plugins/nautical-charts.md), &nbsp;[Topografya](../plugins/topography.md), &nbsp;[Hava Durumu](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) ve [Seyahat rehberleri](../plan-route/travel-guides.md), &nbsp;[Canlı güncellemeler](../personal/maps-resources.md#live-updates), &nbsp;**Yalnızca yol**,  &nbsp;[Harita kaynakları](../map/raster-maps.md), &nbsp;[Oluşturma stilleri](../map/vector-maps.md#default-map-styles), &nbsp;**Harita yazı tipleri, &nbsp;Sesli komutlar (kaydedilmiş ve TTS), &nbsp;Önbellek** içerir.  
+- ***Resources*** (*blue*).  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
-- ***Yerlerim*** (*sarı*).  
-    [Favoriler](../personal/favorites.md), &nbsp;[İzler](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notları](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Düzenlemeleri](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[Geçmiş](../personal/global-settings.md#history), &nbsp;*Seyahat planı* içerir.  
+- ***My Places*** (*yellow*).  
+    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
 
-- ***Ayarlar*** (*yeşil*).  
-    [Profiller](../personal/profiles.md), &nbsp;[Renkler](../personal/color-palette-schemes.md) ve **Diğer** uygulama yapılandırmalarını içerir.
-
-
-#### Verileri Görüntüleme {#viewing-data}
-
-![Yerel kategori genel bakış Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Yerel kategori seçenekleri Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
+- ***Settings*** (*green*).  
+    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
 
 
-**Yerel** sekmesindeki herhangi bir öğeye dokunmak, ayrıntılı listesini açar. Bu listenin üst kısmında, seçilen veri türünün toplam OsmAnd depolama alanına göre ne kadar yer kapladığını gösteren görsel bir panel bulunur.
+#### Viewing Data {#viewing-data}
 
-***Mevcut eylemler:***
-
-- **Ara**. Seçilen klasör içinde belirli verileri ada göre bulun.
-- **Üç nokta menüsü**:  
-    ***Seç***. *Sil*, *Devre Dışı Bırak* veya *Etkinleştir* gibi eylemler için birden çok öğe seçin.  
-    ***İçe Aktar***. Dosyaları içe aktarmak için cihazın depolama alanına erişin.
-- [Sıralama seçeneği](#sorting-options). Öğeleri ada, ülkeye, tarihe veya boyuta göre sıralayın (kullanılabilirlik veri türüne bağlıdır).
+![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
 
-#### Listedeki Öğeler için Menü {#menu-for-items-from-the-list}
+Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
 
-![Yerel kategori öğe eylemleri 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Yerel kategori öğe eylemleri](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
+***Available actions:***
 
-Listedeki her öğe, seçeneklerle birlikte bir *üç nokta menüsü* sunar:
-
-- **Bilgi**. *[veri öğesi](#local-data-item-overview)* hakkında ayrıntılı bilgi görüntüleyin.
-- **Dışa Aktar**. Verileri *Ayarlar → Dosyaya Aktar* aracılığıyla bir dosyaya kaydedin.
-
-***Haritalar için ek seçenekler:***
-
-- **Devre Dışı Bırak**. Vektör haritalarını silmeden devre dışı bırakın. Depolanmış kalırlar ancak navigasyon, arama veya yönlendirme için kullanılmazlar. Cihaz üzerindeki yükü azaltır ve OsmAnd'ı hızlandırır.
-- **Güncelle**. Haritanın en son sürümünü indirin.
-- **Yeniden Adlandır**. Daha iyi tanımlama için haritanın adını özelleştirin.
-- **Kaldır**. Haritayı cihazınızdan silin.
-- **Düzenle** (Çevrimiçi Haritalar için). Çevrimiçi harita yapılandırmasını değiştirin.
-
-#### Harita kaynağı öğeleri menüsü {#map-source-items-menu}
-
-![Harita Kaynağı öğeleri menüsü](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-[Harita kaynağı](../map/raster-maps.md) listesindeki her öğe, cihazınızda depolanan çevrimiçi raster haritasını yönetmek için ayarlar sağlar. Mevcut eylemlere erişmek için *üç nokta menüsünü* açın:
-
-- [Bilgi](#local-data-item-overview). Seçilen harita kaynağı hakkında format ve son güncelleme tarihi dahil genel ayrıntıları görüntüler.  
-- **Boyutu Hesapla**. Bu harita kaynağının önbelleğe alınmış döşemeleri tarafından kaplanan depolama alanını tahmin eder. Önbellek *50MB*'ı aşarsa, boyut tam bir sayı yerine *≥50MB* olarak görüntülenebilir.
-- **Tüm Döşemeleri Temizle**. Seçilen harita kaynağı için tüm önbelleğe alınmış döşemeleri siler, depolama alanını boşaltırken harita kaynağını gelecekteki kullanım için kullanılabilir tutar.  
-- **Dışa Aktar**. Yedekleme veya paylaşım için seçilen harita kaynağı yapılandırmasını kaydeder.  
-- **Kaldır**. Seçilen harita kaynağını siler. Bu eylem indirilen çevrimdışı haritaları etkilemez ancak ilişkili önbelleği temizler.
+- **Search**. Find specific data by name within the selected folder.
+- **Three-dot menu**:  
+    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
+    ***Import***. Access the device's storage to import files.
+- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
 
 
-#### Yerel Veri Öğesi Genel Bakışı {#local-data-item-overview}
+#### Menu for Items from the List {#menu-for-items-from-the-list}
 
-![Yerel veri öğesi genel bakışı](@site/static/img/settings/local_category_overview_2.png) ![Yerel veri öğesi genel bakışı 2](@site/static/img/settings/local_category_overview_1.png)  
+![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
-Yerel bir veri öğesini görüntülerken şunları görürsünüz:
+Each item in the list offers a *three-dot menu* with options:
 
-- **Tür**. **Yerel** listesindeki veri türü.
-- **Oluşturuldu**. Öğenin eklendiği tarih.
-- **Boyut**. Öğenin boyutu MB cinsindendir.
+- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
+- **Export**. Save data to a file via *Settings → Export to File*.
 
-Mevcut **Eylemler** veri türüne bağlıdır ve **Devre Dışı Bırak**, **Güncelle**, **Yeniden Adlandır**, **Dışa Aktar** ve **Sil** içerebilir.
+***Additional options for maps:***
 
-#### Sıralama Seçenekleri {#sorting-options}
+- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
+- **Update**. Download the latest version of the map.
+- **Rename**. Customize the map’s name for better identification.
+- **Remove**. Delete the map from your device.
+- **Edit** (for Online Maps). Modify the online map configuration.
 
-![Yerel veri sıralama seçenekleri](@site/static/img/settings/local_sorting_options_andr_1.png)
+#### Map source items menu {#map-source-items-menu}
 
-Harita verilerini düzenlemek için sıralama seçeneklerini kullanın:
+![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
-- **Ad (A - Z / Z - A)**. Öğeleri alfabetik olarak bulun.
-- **Ülke adı (A - Z / Z - A)**. Haritaları coğrafi olarak düzenleyin.
-- **En yeni tarih önce** / **En eski tarih önce**. Güncellemeleri veya eski sürümleri görün.
-- **Büyük boyut önce** / **Küçük boyut önce**. Depolama alanını boşaltmak için büyük haritaları belirleyin.
+Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
+
+- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
+- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
+- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
+- **Export**. Saves the selected map source configuration for backup or sharing.  
+- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
+
+
+#### Local Data Item Overview {#local-data-item-overview}
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
+
+When viewing a local data item, you see:
+
+- **Type**. The data type from the **Local** list.
+- **Created**. The date the item was added.
+- **Size**. The item’s size is in MB.
+
+Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
+
+#### Sorting Options {#sorting-options}
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+Use sorting options to organize map data:
+
+- **Name (A - Z / Z - A)**. Locate items alphabetically.
+- **Country name (A - Z / Z - A)**. Organize maps geographically.
+- **Newest date first** / **Oldest date first**. See updates or older versions.
+- **Large size first** / **Small size first**. Identify large maps to free storage space.
 
 -->
 
@@ -460,7 +461,7 @@ Canlı güncellemeler ücretli bir özelliktir.
 **Canlı Güncellemeler**, [abonelik](../purchases/index.md) aracılığıyla sık, artımlı harita güncellemeleri sağlar veya [OSM katkıda bulunanlar](#free-for-osm-mappers) için ücretsizdir. Güncellemeler OsmAnd sunucularında her 15 dakikada bir gerçekleşir ve saatlik, günlük veya haftalık olarak indirilebilir. Bu güncellemeler minimum depolama alanı tüketir - ayda tam harita boyutunun yaklaşık %2-4'ü.
 
 <!--
-Her kartın bağımsız bir küçük güncelleme koleksiyonu vardır, bu nedenle çakışan alanlarınız varsa **dikkatli olun**. Orijinal duruma geri dönmek isterseniz, *güncellemeleri devre dışı bırakabilir ve önbelleği temizleyebilirsiniz*.
+Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
 -->
 
 Temel özellikler:

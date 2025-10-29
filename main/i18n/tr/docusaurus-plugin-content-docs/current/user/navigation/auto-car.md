@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
-title: Android Auto
+title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -21,15 +22,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [**Android Auto**](https://www.android.com/auto), Google tarafından geliştirilen ve kullanıcıların Android cihazlarını uyumlu araç multimedya sistemlerine bağlamasına olanak tanıyan bir yazılımdır. *Android Auto*, sürüş sırasında güvenli kullanım için OsmAnd uygulamasının uyarlanmış ve optimize edilmiş bir sürümünü sunarak uygulamanın navigasyon işlevlerine erişimi daha kolay ve güvenli hale getirir.
 
-**Android Auto** işlevi yalnızca [Google Play Store](https://play.com/store/apps/dev?id=8483587772816822023) adresinde bulunan OsmAnd uygulaması kullanıldığında desteklenir.
+**Android Auto** işlevi yalnızca [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023) adresinde bulunan OsmAnd uygulaması kullanıldığında desteklenir.
 
 > **NOT**: *Android Auto, OsmAnd mobil uygulamasının doğrudan bir kopyası değildir. Güvenli sürüş sağlamak için temel navigasyon işlevlerine odaklanan basitleştirilmiş bir arayüze sahiptir. Bazı gelişmiş özellikler platform sınırlamaları nedeniyle desteklenmemektedir.*
+
 
 ### Bağlantı Ekranı {#connection-screen}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)
 
 Cihazınız *Android Auto*'ya bağlıyken, uygulama ekranındaki harita kilitlenir. Bu, navigasyonun yalnızca araç ekranından kontrol edilmesini sağlayarak sürüş sırasında dikkat dağıtıcı unsurları en aza indiren kasıtlı bir güvenlik özelliğidir. Bağlantı ekranıyla ilgili [sıkça sorulan soruları](#common-issues-and-solutions) kontrol edin.
+
 
 ### Açılış Ekranı {#landing-screen}
 
@@ -45,6 +48,7 @@ Uygulamayı açtığınızda, bir kategori listesi görüntülenir. Kolay gezinm
 - Kategori listesini gizlemek için menü düğmesine dokunun.
 - Listeye geri dönmek isterseniz, ekranın sağ üst köşesindeki işlev düğmelerinin yanındaki düğmeye dokunun.
 
+
 ### Harita ile Etkileşim {#interaction-with-the-map}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
@@ -55,8 +59,9 @@ Uygulamayı açtığınızda, bir kategori listesi görüntülenir. Kolay gezinm
 - [Ayarlar](#voice-prompts). Bu düğme şunlardan sorumludur: 1. seçilen rotada gezinirken *sesli komutları* açma/kapama erişimi; 2. bir sonraki durak için rota ayrıntılarını (süre ve mesafe) gösterme.
 - [Ara](#search). Düğmeye dokunmak, arama işlevlerine erişim sağlayan bir ekran açar.
 - [Konumum](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını, mevcut konumunuzun ekranın merkezinde olacak şekilde hareket ettirir.
-- [Yakınlaştır/Uzaklaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır.
+- [Yakınlaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır. Harita ölçeklendirme için yakınlaştırma jesti kullanılabilir. Baş ünite tarafından desteklenmiyorsa, yakınlaştırma ayarı çift dokunma ve kaydırma jesti ile gerçekleştirilir.
 - [Pusula](../widgets/map-buttons.md#compass). Cihazınızın ekranında dört mevcut harita yönlendirme modundan hangisinin seçildiğini gösterir.
+
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
@@ -78,8 +83,8 @@ OsmAnd'ın *Android Auto*'da çalışması için Android cihazınızı araç mul
 
 ### İlk Profil {#profile-first}
 
-Doğrudan araç ekranındaki *Android Auto*'da bir profil seçemezsiniz.
-Cihazınızda zaten *Sürüş*, *Kamyon*, *Araba*, *Motosiklet*, *Moped* gibi araç tipine karşılık gelen bir profil seçiliyse, **uygulama otomatik olarak** Android Auto'ya bağlandığınızda uygun profili etkinleştirecektir. Örneğin, *Kamyon* profiliniz seçiliyse ve cihazınız **Android Auto**'ya bağlanırsa, uygulama bu profili etkinleştirecektir.
+Araç ekranındaki *Android Auto*'da doğrudan bir profil seçemezsiniz.  
+Cihazınızda zaten araç tipine karşılık gelen bir profil seçiliyse, örneğin *Sürüş*, *Kamyon*, *Araba*, *Motosiklet*, *Moped*, **uygulama otomatik olarak** Android Auto'ya bağlandığınızda uygun profili etkinleştirecektir. Örneğin, *Kamyon* profiliniz seçiliyse ve cihazınız **Android Auto**'ya bağlanırsa, uygulama bu profili etkinleştirecektir.
 
 Cihazınızda araç tipinize karşılık gelen herhangi bir *Sürüş* profili seçili değilse, OsmAnd otomatik olarak *Sürüş* profiline geçecektir. Bu, temel navigasyon sağlamak ve belirli bir araç tipi için yanlış profil kullanmaktan kaynaklanan olası sorunları önlemek için yapılır.
 
@@ -91,6 +96,7 @@ Cihazınızda araç tipinize karşılık gelen herhangi bir *Sürüş* profili s
 
 3. **Hata önleme.** Seçilen ulaşım modu için belirli bir profil olmadığında *Sürüş* profiline geçmek, sürüş sırasında olası hataları ve yanlış anlaşılmaları önleyerek size minimum gerekli ayarlara ve bilgilere sürekli erişim sağlar.
 
+
 ## Hedef Noktaları {#destination-points}
 
 ![Android Auto ekranı](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
@@ -98,7 +104,7 @@ Cihazınızda araç tipinize karşılık gelen herhangi bir *Sürüş* profili s
 Önceden ayarlanmış ve eklenmiş [İlgi Çekici Noktaları (POI'ler)](../map/point-layers-on-map.md#points-of-interest-pois), [Favorileri](../personal/favorites.md) veya [İşaretleyicileri](../personal/markers.md) hedef noktası olarak seçebilirsiniz. Ayrıca rota için kaydedilmiş veya indirilmiş bir [İz](../personal/tracks/manage-tracks.md) seçmek, [Ara'yı](../search/index.md) kullanmak veya rota [Geçmişi'nden](../search/search-history.md) bir hedef seçmek veya *Serbest sürüş* yapmak da mümkündür.
 
 1. Haritada belirli bir konumu bitiş noktası olarak istiyorsanız, listeden uygun nokta kategorisini, [POI'ler](#poi-categories), [Favoriler](#favorites) veya [Harita İşaretleyicileri](#map-markers) öğesini seçin.
-
+  
     - Tüm kategoriler, araç multimedya sisteminiz tarafından sağlanan liste öğelerinden daha fazla öğe içeremez. Bu, *Android Auto*'daki listenin eksik olabileceği ve diğer tüm klasörlerin yalnızca cihazınızdaki OsmAnd uygulamasında mevcut olduğu anlamına gelir.
     - [Son değiştirilen](#folder-last-modified) klasörü, eklenme veya değiştirilme tarihine göre sıralanmış son hedeflerin bir listesini içerir.
     - Diğer tüm klasörlerin listesi en son güncellemeye göre sıralanır, yeni klasörler listenin en üstündedir. Sıralarını manuel olarak değiştirmek mümkün değildir.
@@ -110,15 +116,17 @@ Cihazınızda araç tipinize karşılık gelen herhangi bir *Sürüş* profili s
 
 4. Belirli bir bitiş noktası olmadan bir yolculuk yapmak için **Serbest sürüş** öğesini seçin.
 
-:::not
+:::note
 Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde [duyurulabilir](#voice-prompts). Sesli bildirimleri ayarlamak için ilgili makaledeki [Sesli komutlar](../navigation/guidance/voice-navigation.md) ayarlarına bakın.
 :::
+
 
 ### Geçmiş {#history}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)
 
 Geçmiş kategorisinde, bitiş noktaları listesinden bir hedef seçebilirsiniz. En yeni olandan başlayarak en son kullanıma göre sıralanırlar. Bu, sık kullanılan rotalara hızlı erişim için uygun olabilir. Bir hedefi nasıl kullanacağınızı veya sileceğinizi öğrenmek için [Arama Geçmişi](../search/search-history.md) makalesini okuyun.
+
 
 ### POI Kategorileri {#poi-categories}
 
@@ -139,6 +147,7 @@ POI'ler (İlgi Çekici Noktalar), haritada kullanıcılar için önemli veya ilg
 4. OsmAnd rotayı hesaplar ve *Android Auto* ekranında görüntüler. O konuma gitmeye başlamak için **Başlat** düğmesine dokunun.
 5. OsmAnd uygulamanızın [ayarlarına](../navigation/guidance/navigation-settings.md) ve aracınıza bağlı olarak, bir hedefe yönlendirmek için [sesli komutlar](#voice-prompts) alabilirsiniz.
 
+
 ### Favoriler {#favorites}
 
 <table class="image">
@@ -155,11 +164,13 @@ POI'ler (İlgi Çekici Noktalar), haritada kullanıcılar için önemli veya ilg
 1. Bir klasöre dokunmak, favori klasörlerin bir listesini içeren sonraki ekranı açar.
 2. Listedeki bir öğeye dokunmak navigasyonu açar.
 
+
 ### Harita İşaretleyicileri {#map-markers}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
 
 Son hedefinizi bir Harita İşaretleyicisi olarak tanımlamak için, cihazınızı sisteme bağlamadan önce OsmAnd uygulamasında gerekli sayıda işaretleyici oluşturmanız gerekir. İşaretleyicilerin *Menü → Harita işaretleyicisi* listesinde mevcut olması gerekir. Bu, [İşaretleyiciler](../personal/markers.md) makalesinde daha ayrıntılı olarak açıklanmıştır.
+
 
 ### İzler {#tracks}
 
@@ -170,6 +181,7 @@ Bir hedefe rota oluşturmak için OsmAnd uygulamasında mevcut bir izi seçebili
 *Menü → Yerlerim → [İzler](../personal/tracks/manage-tracks.md)* listesindeki izlerden, araç multimedya sistemine bağlanmadan önce gerekli olanı seçin ve rota ya izin başlangıcına kadar oluşturulacak ya da iz boyunca mevcut yönü gösterecektir.
 
 İzler doğrudan araç ekranında *Android Auto*'da da seçilebilir. Oluşturduğunuz klasörlerde düzenlenirler ve yakın zamanda açılan izlere kolay ve hızlı erişim için özel bir klasör olan [Son değiştirilen](#folder-last-modified) bulunur.
+
 
 ### Ara {#search}
 
@@ -183,15 +195,19 @@ Rota planlaması için haritada gerekli yeri bulmak için mevcut herhangi bir ar
 - [POI](../search/search-poi.md) ve [Özel POI](../search/search-poi.md) - yakındaki benzer adların listesi ayrıca POI'leri veya kategorilerini de gösterecektir.
 - [Koordinat araması](../search/search-address#coordinates-search) - haritadaki noktayı bulmak için koordinatları girin.
 
+
 ### Son Değiştirilen Klasör {#folder-last-modified}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)
 
+
 Favoriler ve İzler kategorilerinde özel bir *Son Değiştirilen* klasörü bulunur. Bu kategorilerdeki liste, mevcut tüm favorilerinizi veya izlerinizi içerdiğinden çok büyük olabileceğinden, bu klasör en son hedeflerinize kolay ve hızlı erişim için gereklidir.
+
 
 ## Navigasyon Özellikleri {#navigation-features}
 
 *Android Auto*'daki OsmAnd uygulamasının aracınızda rahat navigasyon sağlayan temel özelliklerine ek olarak, deneyiminizi geliştiren ve navigasyonu daha kişiselleştirilmiş, konforlu ve verimli hale getiren bir dizi ek özellik bulunmaktadır.
+
 
 ### Sonraki Dönüş {#next-turn}
 
@@ -209,6 +225,7 @@ Rota bilgileri şunlardan oluşur:
 
 Etkinleştirildiğinde, **[widget ayarı](#eta-next-stop)** (Rota bilgileri) bir sonraki durak ([ara nokta](../navigation/setup/route-navigation.md#intermediate-destinations)) için rota ayrıntılarını gösterecektir.
 
+
 ### Ekran Uyarı Widget'ı {#screen-alert-widget}
 
 Bu bilgi widget'ı, **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türlerini birleştirir.
@@ -218,15 +235,17 @@ Bu bilgi widget'ı, **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türle
 - Uyarı türlerinin ayrıntılı açıklaması için [bu makaleye](../widgets/nav-widgets.md#alert-types) bakın.
 - Mevcut profiller için ekran uyarılarını ayarlamak için [Navigasyon ayarları](../navigation/guidance/navigation-settings.md#screen-alerts) makalesine bakın.
 
+
 ### Hız Göstergesi {#speedometer}
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
 **Hız göstergesi** widget'ı, GPS verilerini kullanarak *mevcut hızı* ve [OSM veritabanından](https://wiki.openstreetmap.org/wiki/Key:maxspeed) ve [OsmAnd ayarlarından](../navigation/guidance/voice-navigation.md#speed-limit) *hız sınırını* aracın multimedya sistemi ekranında görüntüleyen entegre bir arayüz öğesidir.
 
-- **Hız göstergesi widget'ı** [*profile bağımlıdır*](../personal/profiles.md), bu nedenle bir profil için ayarları değiştirirseniz, bunlar başka bir profile uygulanmaz.
+- **Hız göstergesi widget'ı** [*profil bağımlıdır*](../personal/profiles.md), bu nedenle bir profil için ayarları değiştirirseniz, bunlar başka bir profile uygulanmaz.
 - Doğrudan *Android Auto*'da **Hız göstergesi widget'ının** görüntülenmesini özelleştirme seçeneği yoktur, navigasyonu başlatmadan ve cihazınızı araca bağlamadan önce OsmAnd uygulamasında yapılandırmanız gerekir.
 - *Hız göstergesi* widget'ını ekrana nasıl ekleyeceğiniz ve yapılandıracağınız hakkında daha fazla bilgi için lütfen [Bilgi widget'ları makalesini](../widgets/info-widgets.md#speedometer) okuyun.
+
 
 ### Harita Görünümü (3D) {#map-appearance-3d}
 
@@ -239,6 +258,7 @@ OsmAnd uygulaması, rotanızı ve navigasyonunuzu görüntülemek için *Android
 - Ayarları yapılandırdıktan sonra, hedefler için kategori listesi kapatıldığında **3D düğmesi** *Android Auto* ekranında görüntülenecektir.
 - Bu düğmeye dokunarak 3D / 2D harita modları arasında geçiş yapabilirsiniz.
 
+
 ## Ayarlar {#settings}
 
 ### Sesli Komutlar {#voice-prompts}
@@ -249,6 +269,7 @@ Sesli komutlar, *Android Auto* için navigasyon yaparken OsmAnd'ın en kullanı�
 
 Seçilen profile göre [sesli komutları](../navigation/guidance/voice-navigation.md) yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *Android Auto*'da, tüm seçilen sesli komutları aynı anda kapatma veya açma ayarı mevcuttur (*Ayarlar düğmesi → Sesli komutlar (açık/kapalı)*).
 
+
 ### ETA Sonraki Durak {#eta-next-stop}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
@@ -256,6 +277,7 @@ Seçilen profile göre [sesli komutları](../navigation/guidance/voice-navigatio
 OsmAnd uygulamasında, navigasyon rotası için bir veya daha fazla [ara nokta](../navigation/setup/route-navigation.md#intermediate-destinations) seçebilirsiniz.
 
 Bir ara nokta (sonraki durak) için [**Rota bilgisi**](#next-turn) öğesini etkinleştirmek veya devre dışı bırakmak için *Android Auto (OsmAnd)→ Ayarlar düğmesi → Sonraki durak için rota ayrıntılarını göster → Açık/Kapalı* öğesine gidin. Bu seçenek, [*Rota bilgisi* widget'ında](#route-info) bir sonraki durağa olan süreyi ve mesafeyi görüntüler.
+
 
 ### Harita Modu {#map-mode}
 
@@ -275,6 +297,7 @@ OsmAnd'ın [harita modu](../map/vector-maps.md#map-mode) seçenekleri vardır, a
 
 <!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
 
+
 ### Bölünmüş Ekran {#split-screen}
 
 ![Android Auto ekranı](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
@@ -289,13 +312,15 @@ OsmAnd uygulaması, araç multimedya sistemi ekranında müzik, mesaj veya diğe
 <!--
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
+
 Android Auto ayarlarında, görev çubuğunun konumunu ve ana ekranın düzenini değiştirebilirsiniz:
 
-- **Görev çubuğu konumu:**
+- **Görev çubuğu konumu:**  
   *Android Auto ayarları → Uygulamalar için hızlı kontrolleri göster* öğesine gidin ve anahtarı kapatın. Bu, görev çubuğunu alttan ekranın yanına taşıyacaktır.
 
-- **Ana ekran düzeni:**
+- **Ana ekran düzeni:**  
   Düzeni sürücü koltuğu konumuna göre ayarlamak için *Android Auto ayarları → Düzeni değiştir → Sürücü koltuğu konumunu değiştir* öğesine gidin.
+
 
 ## Sık Karşılaşılan Sorunlar ve Çözümler {#common-issues-and-solutions}
 
@@ -303,10 +328,10 @@ Android Auto ayarlarında, görev çubuğunun konumunu ve ana ekranın düzenini
 2. [Ses kontrol sorunu.](../troubleshooting/android_auto.md#volume-control-issue)
 3. [Konum gecikmeleri (ANR çökmeleri).](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 4. Bağlantı ekranıyla ilgili sıkça sorulan sorular:
-    - *Android Auto'ya bağlıyken uygulamayı telefonumdan neden kontrol edemiyorum?*
+    - *Android Auto'ya bağlıyken uygulamayı telefonumdan neden kontrol edemiyorum?*  
         Güvenlik nedenleriyle, Android Auto'ya bağlıyken telefonunuzdaki OsmAnd uygulama ekranı kilitlenir. Uygulama ile yalnızca araç ekranı aracılığıyla etkileşim kurabilirsiniz.
-    - *Kilitli ekranı devre dışı bırakıp uygulamayı telefonumda kullanabilir miyim?*
+    - *Kilitli ekranı devre dışı bırakıp uygulamayı telefonumda kullanabilir miyim?*  
         Hayır, Android Auto, sürüş sırasında dikkat dağıtıcı unsurları önlemek için bu kısıtlamayı uygular.
-    - *Telefonum ve araç ekranım bağlantısı kesilmiş gibi görünüyorsa ne yapmalıyım?*
-        Cihazınızın USB veya Bluetooth aracılığıyla düzgün şekilde bağlandığından emin olun.
+    - *Telefonum ve araç ekranım bağlantısı kesilmiş gibi görünüyorsa ne yapmalıyım?*  
+        Cihazınızın USB veya Bluetooth aracılığıyla düzgün şekilde bağlandığından emin olun.  
         Bağlantı kararsızsa aracınızın bilgi-eğlence sistemini ve OsmAnd uygulamasını yeniden başlatın.
