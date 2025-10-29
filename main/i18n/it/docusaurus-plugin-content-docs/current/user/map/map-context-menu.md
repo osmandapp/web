@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -115,13 +115,13 @@ Per chiudere il **menu contestuale**:
 
 <TabItem value="android" label="Android">  
 
-![Menu contestuale Android](@site/static/img/map/context_menu_android.png)
+![Menu contestuale Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contestuale iOS](@site/static/img/map/context_menu_ios.png)
+![Menu contestuale iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ I dettagli disponibili includono:
 - [Nomi alternativi](#alternative-names)
 - [Coordinate](#coordinates)
 - [All'interno delle aree](#polygon-information)
-- [POI / Wikipedia nelle vicinanze](#nearby-pois--wikipedia)
+- [POI nelle vicinanze](#nearby-pois)
+- [Luoghi popolari nelle vicinanze](#nearby-popular-places)
 - [Percorsi del trasporto pubblico per le fermate](#public-transport-routes)
 - [Preferiti / Punti traccia dello stesso gruppo](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -217,15 +218,56 @@ Nel menu contestuale è possibile trovare le [coordinate geografiche](../search/
 Il link web di OsmAnd può essere riconosciuto automaticamente da OsmAnd (esempio: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Sia i link di OsmAnd che quelli di [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) vengono aperti sui siti corrispondenti con un segnaposto sul luogo di interesse.  
 
 
-### POI / Wikipedia nelle vicinanze {#nearby-pois--wikipedia}
+### POI nelle vicinanze {#nearby-pois}
 
-![Articoli di Wikipedia nelle vicinanze](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Articoli di Wikipedia nelle vicinanze](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Queste sezioni mostrano gli [articoli di Wikipedia](../plugins/wikipedia.md) o i [Punti di Interesse](../map/point-layers-on-map.md#points-of-interest-pois) vicini con *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* per visualizzare e [cercare](../search/search-poi.md) tutti gli altri POI e articoli di Wikipedia.
+<TabItem value="android" label="Android">  
 
-Toccando *POI / Articoli di Wikipedia nelle vicinanze* si apre un elenco di punti (POI o Wikipedia). Un tocco su uno di questi punti da un elenco di punti sposta la mappa su questo punto (POI o Wikipedia) con l'apertura del menu contestuale del punto sulla mappa.
+![POI vicini Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![POI vicini iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Questa sezione mostra i [Punti di Interesse](../map/point-layers-on-map.md#points-of-interest-pois) vicini con *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* per visualizzare e [cercare](../search/search-poi.md) tutti gli altri POI della stessa categoria.
+
+Toccando *POI nelle vicinanze* si apre un elenco di punti. Un tocco su uno di questi punti da un elenco di punti sposta la mappa su questo punto con l'apertura del menu contestuale del punto sulla mappa.
+
+
+### Luoghi popolari nelle vicinanze {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Luoghi vicini Android](@site/static/img/map/nearby_places_android.png)
+
+Questa sezione evidenzia luoghi popolari che ti aiutano a scoprire destinazioni interessanti e punti di riferimento intorno alla tua posizione corrente. Usa *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* per sfogliare e cercare tutti i luoghi popolari. 
+
+Toccando *Luoghi popolari nelle vicinanze [Popular Places](https://osmand.net/docs/user/map/popular_places)* si apre un elenco di luoghi vicini. Selezionando qualsiasi elemento centra la mappa su quel luogo e apre il suo menu contestuale, dove è possibile leggere una descrizione breve o toccare ***Leggi articolo completo*** per visualizzare la guida completa.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Luoghi vicini iOS](@site/static/img/map/nearby_places_ios.png)
+
+Questa sezione evidenzia luoghi popolari che ti aiutano a scoprire destinazioni interessanti e punti di riferimento intorno alla tua posizione corrente. Usa *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* per sfogliare e cercare tutti i luoghi popolari. 
+
+Toccando *Luoghi popolari nelle vicinanze [Popular Places](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* si apre un elenco di luoghi vicini. Selezionando qualsiasi elemento centra la mappa su quel luogo e apre il suo menu contestuale, dove è possibile leggere una descrizione breve o toccare ***Leggi articolo completo*** per visualizzare la guida completa.
 
 > **NOTA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) apparirà solo se sono state scaricate in precedenza mappe speciali con [articoli di Wikipedia per quest'area](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Percorsi del trasporto pubblico {#public-transport-routes}
@@ -682,9 +724,7 @@ Per aggiungere/modificare punti di traccia, abilitare il [**plugin Registrazione
 
 <TabItem value="android" label="Android">  
 
-![Azione Waypoint Android](@site/static/img/map/action_waypoint_android.png)
-
-![Seleziona Traccia per aggiungere Waypoint Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Seleziona Traccia per aggiungere Waypoint Android](@site/static/img/map/tracks_tab_android.png) ![Aggiungi Waypoint Traccia Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -702,7 +742,7 @@ Per aggiungere/modificare punti di traccia, abilitare il [**plugin Registrazione
 
 - Selezionare una posizione sulla mappa con un [tocco lungo](../map/map-context-menu.md#select-any-point-long-tap).
 - Nel *menu contestuale della mappa* che si apre, scegliere *Azioni → Aggiungi waypoint traccia*.
-- L'elenco mostra le [tracce](../map/tracks/index.md#display-tracks-on-the-map) registrate e visualizzate sulla mappa, così come la [registrazione della traccia corrente](../plugins/trip-recording.md), a cui è possibile aggiungere il waypoint selezionato.
+- L'elenco mostra le [tracce](../map/tracks/index.md#display-tracks-on-the-map) registrate e visualizzate sulla mappa, così come la [registrazione della traccia corrente](../plugins/trip-recording.md), a cui è possibile aggiungere il waypoint selezionato (*su Android*, l'elenco è raggruppato in schede: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - È possibile aggiungere waypoint a una traccia che non è ancora attiva per la registrazione, nel qual caso la traccia inattiva passa dallo stato *Avvia* allo stato *Riprendi*.
 - [Compilare](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) i dati richiesti e salvare il waypoint.
 - È possibile configurare le [Azioni rapide](../widgets/quick-action.md) aggiungendo un waypoint ad *Aggiungi waypoint traccia*.

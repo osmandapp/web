@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Navigazione
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Calcolo del percorso {#route-calculation}
 
 ### Il calcolo del percorso è lento {#route-calculation-is-slow}
@@ -22,6 +22,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - Il *motore basato su Java* viene utilizzato in [Modalità sicura](../plugins/development.md#overview), ma è circa 10 volte più lento del motore nativo. Ha anche limiti di memoria rigidi, che possono portare a errori come *Memoria insufficiente per il calcolo*. Se si riscontra questo problema, navigare su *Plugin → Sviluppo OsmAnd → Impostazioni →* [*Modalità sicura*](../plugins/development.md#overview) e assicurarsi che questa opzione sia disabilitata.
 - Il *motore Nativo (C++)* offre prestazioni migliori, ma la sua efficienza dipende dalla memoria e dalle capacità del processore del dispositivo. Generalmente, il calcolo del percorso nativo funziona bene per percorsi inferiori a 300 km, con tempi di calcolo che vanno da 15 secondi a 4 minuti. Se il processo richiede più di 4 minuti, è consigliabile interromperlo, poiché l'applicazione potrebbe bloccarsi.
+
+
+### Percorsi errati o interrotti {#incorrect-or-broken-routes}
+
+A volte OsmAnd potrebbe mostrare risultati di navigazione inaspettati. Invece di seguire la rete stradale, il percorso potrebbe apparire come una linea tratteggiata dritta verso un punto non correlato, o la navigazione potrebbe fallire completamente. Questo indica solitamente che il routing verso la posizione selezionata non è possibile con la configurazione attuale. Problemi simili sono stati segnalati dagli utenti su [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) e [altri](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Cause:**
+
+- Mappe obsolete o duplicate. Mappe con date di aggiornamento diverse o duplicate possono interrompere la connettività (specialmente attraverso regioni/confini).
+- Impostazioni del profilo danneggiate. Profili personalizzati/modificati (ad es., Bicicletta) possono causare comportamenti incoerenti.
+- Incompatibilità del motore di routing: Motori diversi (HH × Java vs HH × C++) possono gestire le stesse mappe in modo diverso.
+
+**Soluzioni:**
+
+1. Reimposta il profilo.
+- Apri *Menu* → *Impostazioni* → *Profilo app (Profilo di Navigazione)*.
+- Seleziona *Reimposta predefinito*.
+
+2. Rimuovi e reinstalla le mappe.
+- Apri *Menu* → *Mappe e Risorse* → *Locale* ed elimina tutte le mappe per le regioni interessate.
+- Poi vai a *Menu* → *Mappe e Risorse* → *Download* e scarica le mappe di nuovo.
+- Opzionalmente controlla *Menu* → *Mappe e Risorse* → *Aggiornamenti* per assicurarti che tutte le regioni condividano la stessa data di aggiornamento.
+
+3. Cambia motore di routing.
+- Abilita il plugin: *Menu* → *Plugin* → *Sviluppo OsmAnd*.
+- Poi apri *Menu* → *Impostazioni* → *Profilo app* → *Impostazioni di navigazione* → *Parametri del percorso* → *Sviluppo* → *Tipo di routing* e passa da *HH × C++* ↔ *HH × Java* (puoi anche provare A* classico o A* a due fasi).
+
+4. Come ultima risorsa.
+- Reinstalla l'app e scarica le mappe di nuovo (aiuta quando persistono conflitti nascosti).
 
 
 ### Come calcolare percorsi più lunghi di 250 km? {#how-to-calculate-routes-longer-than-250km}
@@ -71,7 +100,7 @@ Attualmente, OsmAnd può utilizzare solo gli elementi che consistono in un singo
 
 ### Perché dovrei usare una voce TTS invece di una voce registrata? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
 
-Le voci **TTS (Sintesi vocale)** generano istruzioni vocali dinamicamente, consentendo loro di pronunciare nomi di strade, nomi di luoghi e numeri di autostrade. Al contrario, le **voci registrate** sono limitate a frasi pre-registrate e non possono pronunciare nomi o numeri specifici.
+Le voci **Text-to-Speech (TTS)** generano prompt vocali dinamicamente, consentendo loro di pronunciare nomi di strade, nomi di luoghi e numeri di autostrade. Al contrario, le **voci registrate** sono limitate a frasi pre-registrate e non possono pronunciare nomi o numeri specifici.
 
 *Vantaggi del TTS rispetto alle voci registrate:*
 
@@ -85,7 +114,7 @@ Per istruzioni dettagliate su come impostare e regolare le istruzioni vocali, fa
 
 ### Il TTS non funziona correttamente? Segui questi passaggi per risolvere il problema {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-I problemi con la **Sintesi vocale (TTS)** sono tipicamente legati alle **impostazioni di sistema di Android**, non all'app OsmAnd stessa.
+I problemi con la **Text-to-Speech (TTS)** sono tipicamente legati alle **impostazioni di sistema di Android**, non all'app OsmAnd stessa.  
 
 1. Assicurarsi che un motore TTS sia installato.
 
@@ -108,17 +137,17 @@ I problemi con la **Sintesi vocale (TTS)** sono tipicamente legati alle **impost
 
 #### Passaggi aggiuntivi {#additional-steps}
 
-- *Aggiornare Google TTS*. Aprire il Google Play Store, cercare **Sintesi vocale di Google** e aggiornarla.
-- *Simulare la navigazione*. Toccare *Pulsante Navigazione → Impostazioni → Simula navigazione* per verificare se la guida vocale viene riprodotta.
-- *Reinstallare OsmAnd*:
-   - **Eseguire il backup delle impostazioni:** *Menu → Impostazioni → Esporta su file*.
-   - Disinstallare OsmAnd, quindi reinstallarlo dall'app store.
+- *Aggiornare Google TTS*. Aprire il Google Play Store, cercare **Sintesi vocale di Google** e aggiornarla.  
+- *Simulare la navigazione*. Toccare *Pulsante Navigazione → Impostazioni → Simula navigazione* per verificare se la guida vocale viene riprodotta.  
+- *Reinstallare OsmAnd*:  
+   - **Eseguire il backup delle impostazioni:** *Menu → Impostazioni → Esporta su file*.  
+   - Disinstallare OsmAnd, quindi reinstallarlo dall'app store.  
    - Ripristinare le impostazioni: *Menu → Impostazioni → Importa da file*.
 
 Per ulteriore risoluzione dei problemi, visitare:
 
-- [Guida alla navigazione vocale](../navigation/guidance/voice-navigation.md)
-- [Importa/Esporta impostazioni](../personal/import-export.md)
+- [Guida alla navigazione vocale](../navigation/guidance/voice-navigation.md)  
+- [Importa/Esporta impostazioni](../personal/import-export.md)  
 
 
 ## Altro {#other}

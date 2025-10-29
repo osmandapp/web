@@ -1,8 +1,9 @@
 ---
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
+source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -52,13 +52,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Panoramica pannello informazioni Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
+![Pannello informazioni panoramica Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Panoramica pannello informazioni iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
+![Pannello informazioni panoramica iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
@@ -129,7 +129,7 @@ Il menu **Opzioni** consente di gestire e modificare la traccia selezionata con 
 
 - **<Translate android="true" ids="join_segments"/>** (*Solo Android*) – Unisce i segmenti di traccia per riempire le lacune.
 - **<Translate android="true" ids="analyze_on_map"/>**. Apre lo strumento [Analizza sulla mappa](../tracks/index.md#analyze-track-on-map) per ispezionare l'altitudine, la velocità e la distanza della traccia.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Solo Android*) - Analizza la traccia per [intervalli](./track-context-menu.md#split-interval) di tempo o distanza.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Solo Android*) - Analizza la traccia per [intervalli](./track-context-menu.md#analyze-by-intervals) di tempo o distanza.
 
 <br/>
 
@@ -250,7 +250,7 @@ La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registra
 - [Tag di attività per tracce GPX](../../plugins/trip-recording.md#recording-settings). Durante la registrazione di una traccia GPX, è possibile assegnare un tipo di attività. Questa etichettatura delle attività aiuta a categorizzare inizialmente le tracce.
 - [Filtro attività](../../personal/tracks/smart-folder.md#search-filter). È possibile filtrare le tracce GPX registrate per attività, il che consente di concentrarsi sulla ricerca di tipi specifici di registrazioni, come tutte le tracce di ciclismo o escursionismo.
 - [Gestisci tipi di attività](../../personal/tracks/manage-tracks.md#selection-mode). È possibile modificare il tipo di attività per cartelle o tracce selezionate utilizzando la modalità di selezione nella scheda Tracce del menu I miei luoghi.
-- **Elenco attività**. Le categorie e i gruppi di attività sono definiti nelle risorse di OsmAnd. Per sviluppatori e contributori, l'elenco delle attività è mantenuto in un formato strutturato su [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), che dettaglia i gruppi e i tipi di attività disponibili.
+- **Elenco attività**. Le categorie e i gruppi di attività sono definiti nelle risorse di OsmAnd. Per sviluppatori e contributori, l'elenco delle attività è mantenuto in un formato strutturato su [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), che dettagli i gruppi e i tipi di attività disponibili.
 
 
 ## Grafici Altitudine / Velocità {#altitude--speed-graphs}
@@ -296,7 +296,7 @@ I **pulsanti** attivi danno accesso ad azioni come:
 
   - *Modifica* apre la traccia nello strumento [Pianifica percorso](../../plan-route/index.md).
   - *Elimina* consente di rimuovere l'elemento della traccia selezionato.
-  - *Dividi intervallo* apre la [funzione Dividi intervallo](#split-interval) per la traccia.
+  - *Dividi intervallo* apre la [funzione Dividi intervallo](#analyze-by-intervals) per la traccia.
 
 
 ### Velocità {#speed}
@@ -629,16 +629,56 @@ Per modificare la descrizione del Waypoint, è possibile procedere in uno dei se
 I **tag Amenity** che descrivono informazioni aggiuntive, come orari di apertura o numero di telefono, specifici per il PDI, prendono tali informazioni dai dati di OpenStreetMap o dai dati inseriti durante la creazione del PDI. È possibile modificare tali tag e i [tag personalizzati](#display-custom-gpx-tags) solo nel codice del file GPX, che può essere aperto con qualsiasi editor di testo sul dispositivo.
 
 
-## Dividi Intervallo {#split-interval}
+## Analizza per Intervalli {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-È possibile dividere la traccia in intervalli, come distanza e tempo, e analizzarla.  
+![Divisione traccia per Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Dividi la traccia per intervallo di distanza o di tempo.  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+L'opzione **Analizza per Intervalli** consente di dividere una traccia in sezioni e visualizzare statistiche dettagliate per ogni parte del percorso. Le tracce possono essere divise in base a parametri come ***distanza***, ***tempo*** o ***salita/discesa***. 
 
-![Schermata dividi intervallo traccia Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Schermata dividi intervallo tempo traccia Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+Per aprire questa opzione:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → scegli la modalità di divisione desiderata 
+
+
+### Dividi per Distanza {#split-by-distance}
+
+![Scheda divisione traccia per distanza](@site/static/img/personal/tracks/split_by_2_tab.png) ![Mappa divisione traccia per distanza](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Questa opzione consente di dividere una traccia in intervalli di distanza fissi e analizzare statistiche dettagliate per ogni segmento. Gli intervalli di distanza disponibili sono ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** e ***10 km***. Dopo aver scelto un intervallo di distanza, la traccia viene visualizzata come un elenco di segmenti. 
+
+Per ogni segmento, è possibile visualizzare:
+- distanza percorsa.
+- intervallo di tempo.
+- altitudine media, minima e massima.
+- salita e discesa.
+- tempo in movimento.
+- velocità media e massima.
+
+Quando si tocca qualsiasi segmento nell'elenco, la vista della mappa mostra la traccia completa con i suoi intervalli e apre il menu contestuale per la traccia in fondo allo schermo.
+
+
+### Dividi per Tempo {#split-by-time}
+
+![Scheda divisione traccia per tempo](@site/static/img/personal/tracks/split_by_3_tab.png) ![Mappa divisione traccia per tempo](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+L'opzione **Dividi per Tempo** divide una traccia in intervalli di durata uguale. È possibile scegliere tra ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** e ***60 min***. Il modo in cui gli intervalli vengono visualizzati, le statistiche fornite per ogni segmento e il modo in cui appaiono sulla mappa sono gli stessi della sezione [Dividi per Distanza](#split-by-distance).
+
+
+### Dividi per Salita/Discesa {#split-by-uphill-downhill}
+
+![Scheda divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_tab.png) ![Mappa divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Questa opzione divide una traccia in segmenti in base alle variazioni di altitudine. Ogni intervallo è classificato come ***salita***, ***discesa*** o ***piano***. Il modo in cui gli intervalli vengono visualizzati, le statistiche fornite per ogni segmento e il modo in cui appaiono sulla mappa sono gli stessi della sezione [Dividi per Distanza](#split-by-distance).
+
+
+### Metriche Frequenza Cardiaca {#heart-rate-metrics}
+
+![Metriche Frequenza Cardiaca](@site/static/img/personal/tracks/heart_rate.png)
+
+Questa opzione consente di visualizzare i valori medi, minimi e massimi della frequenza cardiaca (battiti al minuto, bpm) per ogni intervallo della tua traccia. I dati sulla frequenza cardiaca sono presi dal file GPX della traccia o registrati direttamente da un [sensore di frequenza cardiaca esterno collegato](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Se non sono disponibili dati sulla frequenza cardiaca, questa riga viene nascosta nella tabella degli intervalli.
+
+**Nota:** È possibile collegare un monitor di frequenza cardiaca BLE tramite *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* per registrare i dati HR direttamente in OsmAnd.
 
 
 ## Filtro GPS {#gps-filter}

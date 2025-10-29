@@ -1,8 +1,9 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
 sidebar_position: 2
 title:  Acquisti iOS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Installare OsmAnd (iOS) {#install-osmand-ios}
 
-È possibile scaricare l'app tramite questo link - [OsmAnd Mappe su Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+È possibile scaricare l'app tramite questo link - [OsmAnd Maps su Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -37,16 +37,16 @@ import Translate from '@site/src/components/Translate.js';
 | Piano | Descrizione | Disponibilità | Note |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **piano gratuito** che fornisce l'accesso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) per *Preferiti*, *Impostazioni* e *Modifiche/note OSM*. | Disponibile per tutti gli utenti della versione gratuita di OsmAnd. | Limitato alle funzionalità cloud di base e a **5MB** di spazio di archiviazione. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca le funzionalità avanzate per l'app gratuita OsmAnd. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Può essere aggiunto a [In famiglia di Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca funzionalità avanzate e [professionali](#pro-features) aggiuntive. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornisce accesso completo alle funzionalità di OsmAnd Cloud. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca funzionalità avanzate e [pro](#pro-features) aggiuntive per l'app gratuita OsmAnd. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Può essere aggiunto a [In famiglia di Apple](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca funzionalità avanzate e [pro](#pro-features) aggiuntive. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornisce accesso completo alle funzionalità di OsmAnd Cloud. |
 
 ### Note importanti {#important-notes}
 
 1. **Maps+** è un *aggiornamento* per la versione gratuita di OsmAnd, che sblocca la maggior parte delle funzionalità.
 
-2. **OsmAnd Pro**, **OsmAnd+** e **Maps+** sono acquisti *multipiattaforma*. Ciò significa che è possibile acquistarli in uno store (ad esempio, *Google Play, Huawei AppGallery, AppStore* e *osmand.net*) e ripristinarli in un altro [collegando il proprio acquisto all'account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** e **Maps+** sono acquisti *multipiattaforma*. Ciò significa che è possibile acquistarli in uno store (ad esempio, *Google Play, Huawei AppGallery, AppStore* e *osmand.net*) e ripristinarli in un altro [collegando il proprio acquisto all'account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-3. È possibile aggiungere **Maps+** a [In famiglia di Apple](https://support.apple.com/en-us/HT201088) per condividere l'acquisto con i membri della famiglia.
+3. È possibile aggiungere **Maps+** a [In famiglia di Apple](https://support.apple.com/en-us/HT201088) per condividere l'acquisto con i membri della famiglia.  
 
 
 ## Prezzi {#prices}
@@ -55,23 +55,23 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abbonamento | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -84,15 +84,15 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 ### Funzionalità gratuite e a pagamento {#free-and-paid-features}
 
-|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app e abbonamento) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & abbonamento) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
 | [Accesso senza pubblicità](#free-and-paid-features) | Senza pubblicità | Senza pubblicità | Senza pubblicità |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Tutte le funzionalità Pro](#pro-features) | **-** | **-** | ✔ |
-| [Download delle mappe](../start-with/download-maps.md) |  <details><summary>**5 download di mappe** <br /> (l'aggiornamento della mappa conta come un download):</summary> <br /> - Il download o l'aggiornamento della mappa si intende solo per il download-aggiornamento della mappa di un paese (regione).<br /> - La **mappa panoramica del mondo**, la **correzione dell'altitudine mondiale**, i **caratteri della mappa** e le **istruzioni vocali** non vengono conteggiati come 5 possibilità di download.</details> | ✔ | ✔ |
-| [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates) |  <details><summary>**Una volta al mese** <br /> (con 2 giorni di ritardo):</summary> * limitato a 5 download (l'aggiornamento della mappa conta come un download) </details> |  ✔ | ✔ |
+| [Download delle mappe](../start-with/download-maps.md) |  <details><summary>**5 download di mappe** <br /> (l'aggiornamento della mappa conta come download):</summary> <br /> - Il download o l'aggiornamento della mappa si intende solo per il download-aggiornamento della mappa di un paese (regione).<br /> - **Mappa panoramica del mondo**, **Correzione dell'altitudine mondiale**, **Caratteri della mappa** e **Istruzioni vocali** non vengono conteggiati come 5 possibilità di download.</details> | ✔ | ✔ |
+| [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates-menu) |  <details><summary>**Una volta al mese** <br /> (con 2 giorni di ritardo):</summary> * limitato a 5 download (l'aggiornamento della mappa conta come download) </details> |  ✔ | ✔ |
 | [Aggiornamenti orari delle mappe](../personal/maps-resources.md#live-updates)<br/>Aggiornamenti Live (ritardo di 1 ora) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -147,7 +147,7 @@ Un modo semplice per scegliere e acquistare il piano desiderato è tramite il me
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continua con OsmAnd Pro*
 
-o
+o  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
@@ -169,14 +169,14 @@ I nuovi abbonamenti sono diventati attivi a partire da OsmAnd 4.3 (dicembre 2022
 
 ## Ripristinare gli acquisti {#restore-purchases}
 
-L'utente può controllare tutti gli acquisti e gli abbonamenti dal proprio [account Apple](https://appleid.apple.com/).
+L'utente può controllare tutti gli acquisti e gli abbonamenti dal proprio [account Apple](https://appleid.apple.com/).  
 
 Utilizza lo stesso ID Apple per ripristinare i tuoi acquisti.
 
 - Accedi allo stesso account dell'App Store di Apple che hai utilizzato per acquistare gli acquisti in-app (abbonamenti) di OsmAnd Maps.
-- Installa [OsmAnd Mappe su Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- Apri OsmAnd Mappe con una connessione Internet attiva.
-- Per ripristinare gli acquisti, segui questi passaggi: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+ (Pro, Live) è attivato.
+- Installa [OsmAnd Maps su Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- Apri OsmAnd Maps con una connessione Internet attiva.
+- Per ripristinare gli acquisti, segui questi passaggi: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro, Live) è attivato.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 

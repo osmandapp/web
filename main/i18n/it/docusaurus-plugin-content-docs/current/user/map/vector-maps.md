@@ -1,8 +1,9 @@
 ---
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
+source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
 sidebar_position: 5
 title:  Mappe Vettoriali (Stili Mappa)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 Le mappe vettoriali sono pensate per essere utilizzate come fonte di dati predefinita per OsmAnd, quindi **è necessario scaricarle sul proprio dispositivo**. Le mappe vettoriali supportano un gran numero di stili di mappa per diverse attività come ciclismo, escursionismo, guida in auto o motoslitta e altre.  
 
 Ogni stile di mappa può essere personalizzato per evidenziare o nascondere oggetti specifici e per passare dalla modalità diurna a quella notturna. I dati delle mappe vettoriali possono essere arricchiti da dati vettoriali e visualizzati nello stile di mappa predefinito, come le informazioni sulle *Curve di livello*. È possibile *creare il proprio stile di mappa OsmAnd* per visualizzare le informazioni richieste.
+
+Le mappe vettoriali rappresentano dati spaziali, come strade, edifici, punti e poligoni, utilizzando geometria matematica memorizzata in formato binario. Ogni elemento (nodo, linea o poligono) è definito da coordinate e renderizzato dinamicamente in base al livello di zoom e allo stile della mappa.
+
+Poiché i dati vettoriali non sono memorizzati come immagini fisse, il loro aspetto, inclusi colore, larghezza della linea, trasparenza o motivo, può essere facilmente modificato. Questo approccio consente un rendering efficiente, un basso utilizzo della memoria e una scalatura fluida a qualsiasi livello di zoom senza perdita di qualità.
+
+:::info nota
+I poligoni molto piccoli potrebbero essere semplificati o distorti durante la generazione dei dati della mappa. Gli oggetti con un'area inferiore a circa un metro quadrato potrebbero non essere visualizzati. Per una visualizzazione corretta, le piccole feature dovrebbero essere mappate come singoli nodi invece che come poligoni.
+:::
 
 
 ## Casi d'uso {#use-cases}
@@ -42,7 +50,7 @@ OsmAnd offre di default molti stili di mappa e livelli di dati. Questa sezione d
 
 Lo stile di rendering standard della mappa di OsmAnd bilancia dettaglio e semplicità, rendendolo ideale per l'esplorazione urbana ed extraurbana. Dettaglia le caratteristiche della città come strade, edifici e fermate dei trasporti, semplificando al contempo il disordine visivo e rendendo le mappe più chiare.  
 
-I vantaggi principali includono la mappatura dei percorsi, la qualità della superficie, le restrizioni di accesso, la segnaletica stradale, la rappresentazione dei sentieri in scala SAC e i dettagli topografici come le curve di livello.
+I vantaggi principali includono la mappatura dei percorsi, la qualità della superficie, le restrizioni di accesso, la segnaletica stradale, la rappresentazione dei sentieri in scala SAC, gli impianti sportivi e i dettagli topografici come le curve di livello.
 
 
 ### Touring View {#touring-view}
@@ -69,7 +77,13 @@ Gli stili UniRS e LightRS sono stili d'autore che rendono le informazioni di bas
 
 ![Stile mappa Nautico](@site/static/img/map/map-style-nautical.png)
 
-Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, rotte marittime, segnali, porti, segnalamenti marittimi e curve di profondità. Per saperne di più, consultare l'articolo [Vista Mappa Nautica](../plugins/nautical-charts.md).
+Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, rotte marittime, segnali, porti, segnalamenti marittimi e curve di profondità. Per saperne di più, consultare la sezione [Stile Mappa Nautico](../plugins/nautical-charts.md#nautical-map-style).
+
+### Marine {#marine}
+
+![Stile mappa Marino](@site/static/img/map/map-style-marine.png)
+
+Questo è uno stile mappa nautico avanzato con settori luminosi, caratteristiche complete dei fari e altre feature marittime dettagliate per una navigazione marina realistica e accurata. Per maggiori dettagli leggere la sezione [Stile Mappa Marino](../plugins/nautical-charts.md#marine-map-style).
 
 ### Inverno e Sci {#winter-and-ski}
 
@@ -107,7 +121,7 @@ Progettato per la navigazione fuoristrada, questo stile si basa sul layout della
 
 ![Stile mappa Motoslitta](@site/static/img/map/map-style-snowmobile.png)
 
-Studiato per la navigazione in motoslitta, questo stile evidenzia percorsi, strade e piste adatte alle motoslitte. Evidenzia percorsi specializzati in regioni innevate, offrendo una navigazione chiara su terreni coperti di neve dove le strade standard potrebbero non essere disponibili.
+Studiato per la navigazione in motoslitta, questo stile evidenzia percorsi, strade e piste adatte alle motoslitte. Evidenzia percorsi specializzati in regioni innevate, offrendo una navigazione chiara su terreni coperti di neve dove le strade standard potrebbero non essere disponibili. 
 
 
 ## Legenda Mappa {#map-legend}
@@ -229,25 +243,33 @@ Vai a: *Menu → Configura mappa → Mostra → Griglia coordinate*
 
 <TabItem value="ios" label="iOS">  
 
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![Impostazioni menu Griglia coordinate](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla mappa, consentendo di visualizzare le linee di latitudine e longitudine basate su diversi sistemi di coordinate. Questa funzione è utile per un riferimento preciso della posizione e per la navigazione geospaziale. È possibile selezionare ***Impostazioni livello di zoom:*** per visualizzare tra 2 e 22, ***Posizione etichette*** - **Bordi**/**Centro** e ***Colore griglia*** separatamente per la modalità Giorno/Notte.
+La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla mappa, consentendo di visualizzare le linee di latitudine e longitudine basate su diversi sistemi di coordinate. Questa funzione è utile per un riferimento preciso della posizione e per la navigazione geospaziale. 
+
+È possibile configurare le seguenti opzioni:
+- **Livelli di zoom:** impostare i livelli di zoom minimo e massimo (2 - 22) in cui la griglia è visibile.
+- **Posizione etichette:** scegliere tra *Bordi* (predefinito) o *Centro* per le etichette della griglia.
+- **Colore griglia:** disponibile separatamente per la modalità Giorno/Notte. La personalizzazione del colore della griglia è una funzione a pagamento.
+- **Formato coordinate:** selezionare da diversi formati disponibili (vedere elenco di seguito).
 
 
 ***Formati di coordinate disponibili:***
 
-- **WGS84** (EPSG:4326) -  **GG°MM′SS″** (Gradi, Minuti, Secondi)
-- **WGS84** (EPSG:4326) - **GG.GGGGG°** (Gradi Decimali - formato predefinito WGS84)
-- **WGS84** (EPSG:4326) - **GG°MM.MMM′** (Gradi, Minuti Decimali)
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Gradi, Minuti, Secondi)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Gradi Decimali - formato predefinito WGS84)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Gradi, Minuti Decimali)
 - **UTM** (EPSG:6387, Universal Transverse Mercator - sistema a griglia basato su fusi). Il livello minimo di zoom è 9, viene visualizzato un solo fuso UTM alla volta, poiché i fusi sono separati da meridiani ogni 6°
 - **MGRS** (Military Grid Reference System)
 
-Per impostazione predefinita, l'app utilizza il formato delle coordinate selezionato in [Impostazioni generali](../personal/profiles.md#units--formats).
+Per impostazione predefinita, l'app utilizza il formato delle coordinate selezionato in [Impostazioni generali](../personal/profiles.md#units--formats), ma è possibile cambiarlo direttamente in questo menu.
+
+[Azione rapida](../widgets/quick-action.md#overview): È anche possibile aggiungere un interruttore rapido *Mostra/Nascondi Griglia Coordinate* al gruppo [Configura Mappa](../widgets/quick-action.md#configure-map) per un accesso veloce.
 
 ## Configura Stile Mappa {#configure-map-style}
 
@@ -471,7 +493,7 @@ Impostazioni speciali per le strade, dove è possibile cambiare i colori per abb
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. L'alto contrasto delle strade.  
 ![Stile strada mappa alto contrasto](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pallido**. Colori meno contrastanti delle strade.  
-![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-pale.png)
+![Stile strada mappa pallido](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno spesso per le strade.  
 ![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-bold-outline.png)
@@ -565,7 +587,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_strin
 - **Lingua preferita** (ucraino)
     ![Lingua mappa ucraino](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Mostra nomi locali** (aggiunge una seconda etichetta se il nome locale è diverso)
+- **Mostra nomi locali**  (aggiunge una seconda etichetta se il nome locale è diverso)
     ![Lingua mappa locale](@site/static/img/map/map-language-show-local_2.png)
 
 - **Traslittera nomi**  

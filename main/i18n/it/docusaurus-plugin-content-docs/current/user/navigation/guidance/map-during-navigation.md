@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Schermata della Mappa Durante la Navigazione
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -29,7 +29,7 @@ Questo articolo descrive come configurare l'aspetto della mappa durante la navig
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Schermata della mappa durante la navigazione](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Schermata della mappa durante la navigazione](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Schermata della mappa durante la navigazione](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Schermata della mappa durante la navigazione](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -49,10 +49,12 @@ Durante la navigazione, l'aspetto della mappa si adatta in base al profilo di na
 
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Il tempo per cui la visualizzazione della mappa viene sincronizzata con la posizione corrente dopo lo spostamento. | *Valore:* <br /> Mai, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Ridimensiona automaticamente la mappa in base alla tua velocità, finché la mappa è sincronizzata con la tua posizione attuale. | *Valore:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuale. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - lo zoom è di 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - lo zoom è di 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - lo zoom è di 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | L'icona della posizione corrente sarà associata al percorso di navigazione corrente. | È possibile disattivare questa opzione, ma anche tutte le opzioni relative alla strada, come la visualizzazione delle corsie, non saranno visibili durante la navigazione. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Determina la direzione in base al percorso di navigazione che si sta seguendo. | L'impostazione è visibile solo quando il [plugin Sviluppo di OsmAnd](../../plugins/development.md) è abilitato. <br /> Queste impostazioni dovrebbero essere abilitate se l'orientamento della mappa direzionale è invertito o si muove a scatti quando si utilizza [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *<Translate android="true" ids="choose_auto_follow_route"/>* |  Il tempo per cui la visualizzazione della mappa viene sincronizzata con la posizione corrente dopo lo spostamento.  |  *Valore:* <br /> Mai, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *<Translate android="true" ids="auto_zoom_map"/>*  |  Ridimensiona automaticamente la mappa in base alla tua velocità, finché la mappa è sincronizzata con la tua posizione attuale. | *Valore:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuale. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - lo zoom è di 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - lo zoom è di 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - lo zoom è di 5 m. |
+| *Auto zoom 3D angle* | Imposta l'inclinazione della mappa quando si passa alla vista 3D durante la navigazione. Un angolo più alto fa apparire l'orizzonte più lontano, fornendo maggiore visibilità in avanti. |Viene applicato solo quando Auto zoom è abilitato. Valori: 20°, 25°, 30°, 35°, 40°. Predefinito: 25°.  |
+| *Preview next turn* | Ruota automaticamente la mappa leggermente in anticipo per mostrare la prossima svolta o manovra durante la navigazione. Aiuta ad anticipare le azioni imminenti.  | Abilitato per impostazione predefinita. Se esporti e reimporti un profilo, assicurati di verificare questa impostazione, poiché in alcune versioni precedenti poteva essere reimpostata su “abilitato”.   |
+| *<Translate android="true" ids="snap_to_road"/>*  | L'icona della posizione corrente sarà associata al percorso di navigazione corrente.  | È possibile disattivare questa opzione, ma anche tutte le opzioni relative alla strada, come la visualizzazione delle corsie, non saranno visibili durante la navigazione.  |
+
 
 
 ## Mostra Punti Lungo il Percorso {#show-points-along-the-route}
@@ -62,6 +64,10 @@ L'impostazione *Mostra lungo il percorso* consente di configurare parametri di p
 - La possibilità di impostare distanze diverse (fino a 5 km, o 3,11 miglia, a seconda dell'[unità di lunghezza](../../personal/profiles.md#units--formats) impostata) dal percorso ai punti vicini è utile quando si utilizzano tipi di percorso come [Linea retta](../routing/straight-line-routing.md) o [Diretto al punto](../routing/direct-to-point-routing.md).
 - Per l'impostazione *Mostra lungo il percorso*, si consiglia di utilizzare le [Istruzioni vocali](../guidance/voice-navigation.md) per la navigazione.
 - *PDI, Preferiti e Avvisi sul traffico* non vengono visualizzati nell'elenco di un percorso già percorso.
+
+:::info note
+L'opzione **Mostra lungo il percorso** influisce solo sugli elenchi PDI e I miei Preferiti, non sulla mappa stessa. Le icone di PDI e Preferiti vengono visualizzate ovunque sulla mappa indipendentemente dalla loro distanza dal percorso.
+:::
 
 
 ### Visualizza e Seleziona Punti {#view-and-select-points}
@@ -93,15 +99,15 @@ Quando si crea un percorso, è possibile impostare i tipi di punti da visualizza
 
 ![Sovrapposizione PDI Android](@site/static/img/map/poi_overlay_android.png) ![Sovrapposizione PDI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Le impostazioni dei PDI in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sono associate all'impostazione **Mostra lungo il percorso**. Si tratta essenzialmente di un'impostazione aggiuntiva per la visualizzazione dei PDI sulla mappa, direttamente correlata al percorso creato.  
+Le impostazioni dei PDI in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sono associate all'impostazione **Mostra lungo il percorso**. 
 
 Quando si specifica la visualizzazione di determinati PDI su *Configura mappa*, questi vengono tutti visualizzati sulle mappe scaricate, sia che si siano selezionate delle categorie, sia che, se non si tiene conto della categoria, si siano selezionati i PDI vicini.  
 
-- Il numero e l'identificazione dei PDI *dipendono dalla scala*.
+- Il numero e l'identificazione dei PDI *dipende dalla scala*.
 
 - L'impostazione *Mostra lungo il percorso* visualizza la stessa categoria di *Sovrapposizione PDI*, ma si vede l'*intero elenco* di PDI selezionati in una sola volta, a partire dal punto della posizione corrente alla distanza impostata all'interno del percorso.  
 
-- È possibile rimuovere i PDI non necessari dall'elenco o modificarli nel [menu Contestuale](../../map/map-context-menu.md) toccandone uno.
+- È possibile rimuovere i PDI non necessari dall'elenco o modificarli nel [menu contestuale](../../map/map-context-menu.md) toccandone uno.
 
 - L'elenco contiene i [tipi di PDI](../../map/point-layers-on-map.md#poi-types) selezionati e brevi informazioni su ciascuno di essi, come l'*icona del tipo, il nome, la distanza dal punto di posizione corrente al PDI lungo il percorso* e *le indicazioni su quale lato del percorso in linea retta e a quale distanza si trova il PDI*.  
 
@@ -150,7 +156,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Le notifiche, come gli avvisi sul traffico o i limiti di velocità, appariranno sullo schermo come un widget. Appaiono nell'angolo in basso a sinistra durante la navigazione. | [Tipi di widget di avviso](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Le notifiche, come gli avvisi sul traffico o i limiti di velocità, appariranno sullo schermo come un widget. Appaiono nell'angolo in basso a sinistra durante la navigazione. | [Tipi di widget di avviso](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Aspetto della Linea del Percorso {#route-line-appearance}
@@ -169,7 +175,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Percorso di navigazione Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Percorso di navigazione iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -216,7 +222,7 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Colorazione di una linea di percorso o sentiero in base alla composizione del fondo stradale. Tipicamente, utilizzato quando la rete stradale è in gran parte non asfaltata. Una descrizione dettagliata si trova nell'articolo *Stile mappa OsmAnd - [Consistenza della superficie](../../map-legend/osmand.md#surface-smoothness)* nella sezione *Legenda mappa*.  
     ![Altitudine](@site/static/img/navigation/route/firmness.png)
 
-- ***<ProFeature/> &nbsp;Difficoltà dei sentieri per cavalli***. Renderizza i sentieri in base alla difficoltà dei percorsi per cavalli.  
+- ***<ProFeature/> &nbsp;Difficoltà dei sentieri per cavalli***. Renderizza i sentieri in base alla difficoltà dei sentieri per cavalli.  
     ![Altitudine](@site/static/img/navigation/route/firmness.png)
 
 
@@ -239,10 +245,10 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 L'impostazione Frecce di svolta consente di selezionare se le frecce di svolta vengono visualizzate sulla linea del percorso.  
 
 - ***Sulla mappa***  
-    ![Altitudine](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![frecce_svolta_ios_mappa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Altitudine](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![frecce di svolta iOS mappa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Nell'app***  
-    ![Altitudine](@site/static/img/navigation/route/turn_arr.png)   ![frecce_svolta_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Altitudine](@site/static/img/navigation/route/turn_arr.png)   ![frecce di svolta iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Articoli Correlati {#related-articles}

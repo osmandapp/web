@@ -1,8 +1,9 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
 title:  Ricerca PDI
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,17 +14,16 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
 ## Panoramica {#overview}
 
-La funzionalità [Punto di Interesse (PDI) di OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) in OsmAnd offre precisione, visibilità e convenienza nel trovare luoghi, percorsi e servizi interessanti vicino alla propria posizione attuale o a un'area selezionata sulla mappa.  
+La funzionalità [Punto di Interesse (PDI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) (PDI) di OsmAnd offre precisione, visibilità e convenienza nel trovare luoghi, percorsi e servizi interessanti vicino alla propria posizione attuale o a un'area selezionata sulla mappa.  
 
 La barra di ricerca consente di inserire parole chiave relative ai luoghi di interesse. La ricerca PDI presenta anche un comodo elenco ordinato per [categoria](#poi-search-by-categories) per aiutare a trovare rapidamente ciò che si sta cercando, e il [filtro](#save-new-custom-filters) permette di selezionare caratteristiche specifiche dei PDI per visualizzare solo i risultati pertinenti.  
 
-La [Ricerca personalizzata](#custom-poi-search) migliora la funzionalità di ricerca consentendo la scelta di più categorie e sottocategorie. È possibile salvare i filtri creati per un uso futuro, rendendo più facile individuare rapidamente i PDI che soddisfano criteri o preferenze specifiche. Per maggiori dettagli, consultare la sezione sul salvataggio dei filtri personalizzati [qui](#save-new-custom-filters).  
+[Ricerca personalizzata](#customize-poi-search) migliora la funzionalità di ricerca consentendo la scelta di più categorie e sottocategorie. È possibile salvare i filtri creati per un uso futuro, rendendo più facile individuare rapidamente i PDI che soddisfano criteri o preferenze specifici. Per maggiori dettagli, consultare la sezione sul salvataggio dei filtri personalizzati [qui](#save-new-custom-filters).  
 
 OsmAnd offre diversi modi per accedere allo strumento di Ricerca in cui si trova la sezione **Ricerca per categorie**.
 
@@ -243,7 +243,7 @@ Descrizione e modo d'uso:
 - *Per nascondere* le categorie non necessarie, toccare l'icona **meno**.
 - **Disponibile**. Le categorie precedentemente *Nascoste* possono essere riportate nell'elenco visualizzato toccando l'icona **più**.
 - Utilizzare il pulsante **Ripristina predefiniti** per riportare l'elenco allo stato preimpostato.
-- Le categorie create con [Ricerca personalizzata](#custom-poi-search) o [Filtri](#save-new-custom-filters) possono essere eliminate utilizzando l'icona **Elimina**.  
+- Le categorie create con [Ricerca personalizzata](#customize-poi-search) o [Filtri](#save-new-custom-filters) possono essere eliminate utilizzando l'icona **Elimina**.  
 
 ![Ricerca PDI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
@@ -308,7 +308,7 @@ Questa funzionalità è particolarmente utile in vari casi:
 ![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
 -->
 
-![PDI personalizzato iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![Tipi di PDI personalizzato iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
+![Ricerca personalizzata iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![Tipi di PDI personalizzato iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
 
 </TabItem>
 
@@ -325,12 +325,12 @@ Per creare filtri personalizzati per la ricerca di luoghi sulla mappa, seleziona
 
 ### Categorie e loro Filtri {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Include 25 tipi: *Orti, Atollo, Borgo, Città, Isolato, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Include 25 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
 
 2. **Natale**. Include 5 tipi di filtri:  
     *Evento natalizio, Mercatino di Natale, Piramide natalizia, Negozio natalizio, Albero di Natale*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Include 16 tipi: *Orti, Atollo, Borgo, Città, Isolato, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Include 16 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Include 14 tipi di filtri.  
 

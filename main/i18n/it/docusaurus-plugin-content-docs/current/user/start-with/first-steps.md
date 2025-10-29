@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Primi Passi
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Panoramica {#overview}
 
 Benvenuti in OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
-Scoprite come scaricare le mappe, come configurare l'applicazione, come usare la mappa e costruire un percorso, come avviare la navigazione e come cercare i punti di interesse. Familiarizzate con i punti chiave della politica sulla Privacy di OsmAnd e dei Permessi richiesti.
+Scoprite come scaricare le mappe, come configurare l'applicazione, come usare la mappa e creare un percorso, come avviare la navigazione e come cercare i punti di interesse. Familiarizzate con i punti chiave della politica sulla privacy di OsmAnd e dei permessi richiesti.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -40,7 +40,7 @@ Scoprite come scaricare le mappe, come configurare l'applicazione, come usare la
 
 ## Installare OsmAnd {#install-osmand}
 
-OsmAnd è un'applicazione mobile per Mappe e Navigazione disponibile per **Android** e **iOS**. È possibile scaricarla dai market più popolari.
+OsmAnd è un'applicazione mobile per mappe e navigazione disponibile per **Android** e **iOS**. È possibile scaricarla dai market più popolari.
 
 **Market Android**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
@@ -50,7 +50,7 @@ OsmAnd è un'applicazione mobile per Mappe e Navigazione disponibile per **Andro
 
 <AppleStore/>
 
-[Leggi di più](../purchases/index.md) sulle versioni e gli acquisti di OsmAnd.  
+[Leggi di più](../purchases/index.md) sulle versioni di OsmAnd e sugli acquisti.  
 
 
 ## Benvenuti in OsmAnd {#welcome-to-osmand}
@@ -306,7 +306,7 @@ I [Punti di interesse (PDI)](../map/point-layers-on-map.md#points-of-interest-po
 
 ### Come pianificare un percorso {#how-to-plan-a-route}
 
-[Pianifica percorso](../plan-route/create-route.md) è un potente strumento che consente di creare un viaggio, modificare una traccia esistente e misurare la distanza sul posto. È possibile inserire rapidamente punti intermedi e collegarli con varie linee di navigazione (bicicletta, pedonale, linea retta, ecc.). I risultati possono essere salvati in un file GPX, in modo da poterli [condividere](../personal/tracks/index.md) o [utilizzare per la navigazione](../navigation/setup/gpx-navigation.md) in un secondo momento.
+[Pianifica percorso](../plan-route/create-route.md) è uno strumento potente che consente di creare un viaggio, modificare una traccia esistente e misurare la distanza sul posto. È possibile inserire rapidamente punti intermedi e collegarli con varie linee di navigazione (bicicletta, pedonale, linea retta, ecc.). I risultati possono essere salvati in un file GPX, in modo da poterli [condividere](../personal/tracks/index.md) o [utilizzare per la navigazione](../navigation/setup/gpx-navigation.md) in un secondo momento.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -329,7 +329,7 @@ I [Punti di interesse (PDI)](../map/point-layers-on-map.md#points-of-interest-po
 
 ### Come cercare per indirizzo {#how-to-search-by-address}
 
-OsmAnd offre molte funzionalità di ricerca, inclusa la ricerca per indirizzo. Per impostazione predefinita, utilizza i dati di [OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) e dovrebbe essere in grado di trovare tutti gli indirizzi utilizzando l'input di Ricerca Rapida. Inoltre, è possibile [cercare](../search/search-address.md) per città, via, codice postale e coordinate.
+OsmAnd offre molte funzionalità di ricerca, inclusa la ricerca per indirizzo. Per impostazione predefinita, utilizza i dati di [OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) e dovrebbe essere in grado di trovare tutti gli indirizzi utilizzando l'input di ricerca Rapida. Inoltre, è possibile [cercare](../search/search-address.md) per città, via, codice postale e coordinate.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -434,7 +434,7 @@ Ci sono due varianti disponibili per chiudere OsmAnd.
 1. Chiudere un'app scorrendola verso l'alto e fuori dallo schermo. Per un elenco verticale di app, scorrere a sinistra o a destra.  
 
 2. Potrebbe essere necessario eseguire i seguenti passaggi prima di farlo, altrimenti OsmAnd verrà eseguito in background:
-    - [Interrompere la navigazione](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Annullare la navigazione](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Interrompere il download e l'aggiornamento delle mappe](../start-with/download-maps.md)
     - [Interrompere la registrazione del viaggio](../plugins/trip-recording.md#new-track-recording)
     - [Interrompere la registrazione di note audio/video](../plugins/audio-video-notes.md)
@@ -491,7 +491,7 @@ Tocca un'icona di azione per avviare immediatamente l'applicazione con l'azione 
 </Tabs>
 
 Nel *menu Aiuto* è possibile trovare articoli dal nostro sito [www.osmand.net/docs](https://osmand.net/docs/intro/). Dopo il download iniziale (richiesta connessione a Internet), gli articoli di aiuto sono disponibili offline.  
-La prima sottosezione, *Aiuto offline* contiene gli articoli **Più visti** (o popolari) tra i nostri utenti. Le sezioni **Guida utente** e **Risoluzione problemi** hanno la stessa struttura del sito web.  
+La prima sottosezione, *Aiuto offline* contiene gli articoli **Più visti** (o popolari) tra i nostri utenti. Questi articoli sono visualizzati nella lingua impostata per l'applicazione, se questa lingua è supportata sul nostro sito di documentazione. Le lingue supportate attualmente includono: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, e *<Translate android="true" ids="lang_uk"/>*. Se cambiate la lingua dell'applicazione, riavviate OsmAnd per aprire la documentazione nella lingua selezionata. Quando una traduzione non è disponibile, verrà visualizzata automaticamente la versione inglese della pagina. Le sezioni **Guida utente** e **Risoluzione problemi** hanno la stessa struttura del sito web.  
 Nel *menu Aiuto*, è anche possibile trovare link utili ai social network di OsmAnd, informazioni sulla versione della propria applicazione, note di rilascio e contatti di supporto. Tramite l'Aiuto, è anche possibile inviare [logcat e log di crash](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menu {#menu}

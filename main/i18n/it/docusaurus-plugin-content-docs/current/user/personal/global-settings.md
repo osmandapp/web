@@ -1,8 +1,9 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Impostazioni globali
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -44,7 +44,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 ## Generali {#general}
 
-Questa sezione contiene le impostazioni di base di OsmAnd, come la selezione di un [profilo](#default-profile) al caricamento dell'applicazione, la selezione del [motore di rendering](#map-rendering-engine) e della [cartella](#data-storage-folder) in cui verranno salvati i dati.
+Questa sezione contiene le impostazioni di base di OsmAnd, come la selezione di un [profilo](#default-profile) al caricamento dell'applicazione, la selezione del [motore di rendering](#map-rendering-engine) e della [cartella](#data-storage-folder) in cui verranno salvati i dati.  
 
 
 ### Profilo predefinito {#default-profile}
@@ -68,7 +68,7 @@ Questa sezione contiene le impostazioni di base di OsmAnd, come la selezione di 
 OsmAnd utilizza il profilo predefinito, *Sfoglia mappa*, come primo profilo per i nuovi utenti e, se questo profilo è stato selezionato, verrà utilizzato a ogni riavvio dell'applicazione. È possibile selezionare qualsiasi profilo dall'elenco predefinito, inclusi *Ultimo utilizzato* e *Sfoglia mappa*.
 
 - **<Translate android="true" ids="shared_string_last_used"/>**. Consente di selezionare il profilo utilizzato per ultimo.
-- **<Translate android="true" ids="settings_preset"/>**. Si seleziona il profilo da utilizzare all'avvio di OsmAnd. Può essere modificato nelle [impostazioni](../personal/profiles.md) dell'applicazione.
+- **<Translate android="true" ids="settings_preset"/>**. Si seleziona il profilo da utilizzare all'avvio di OsmAnd. Può essere modificato nelle [impostazioni](../personal/profiles.md) dell'applicazione.  
 
 
 ### Profilo CarPlay {#carplay-profile}
@@ -94,7 +94,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 ![Impostazioni di archiviazione profili Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Memoria dispositivo** mostra quanto spazio libero è rimasto sul dispositivo. Toccare un campo per accedere al menu [*Mappe e risorse*](../personal/maps-resources.md#maps--resources), dove è possibile visualizzare e gestire informazioni dettagliate sui dati di OsmAnd.
+1. **Memoria dispositivo** mostra quanto spazio libero è rimasto sul dispositivo. Toccare un campo per accedere al menu [*Mappe e risorse*](../personal/maps-resources.md#local-menu), dove è possibile visualizzare e gestire informazioni dettagliate sui dati di OsmAnd.
 
 2. In **<Translate android="true" ids="change_data_storage_folder"/>**, è possibile selezionare una cartella per salvare i dati di OsmAnd sul dispositivo.  
 
@@ -133,7 +133,7 @@ Vai a: *File → Sul mio iPhone → OsmAnd Maps*
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (solo Android)*
 
-![Impostazioni generali rendering motore Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
+![Impostazioni generali motore rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
 - Nella versione **Android** dell'app, è possibile passare dal rendering della mappa della Versione 1, originariamente implementato nell'app OsmAnd, alla Versione 2, che utilizza l'interfaccia di programmazione OpenGL (Open Graphics Library) per il rendering di oggetti grafici bidimensionali e tridimensionali.
 
@@ -303,7 +303,7 @@ L'impostazione **<Translate android="true" ids="dialogs_and_notifications_title"
 
 - *Messaggio di avvio* include promozioni, quiz, eventi e altro.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) impedisce la visualizzazione di sconti sull'app e di messaggi su eventi locali speciali.
-- La [*finestra di dialogo per il download della mappa*](../start-with/download-maps.md#download) informa che è possibile scaricare mappe specifiche.
+- [*Finestra di dialogo per il download della mappa*](../start-with/download-maps.md#downloading-maps) informa che è possibile scaricare mappe specifiche.
 
 
 ### Fonte di localizzazione {#location-source}

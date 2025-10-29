@@ -1,8 +1,9 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Plugin
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -68,7 +68,7 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 
 🤖 *- solo per la versione Android di OsmAnd.*
 
-| Nome del plugin | Funzionalità |
+| Nome del plugin |Funzionalità |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Livello mappa](../plugins/wikipedia.md#download-wikipedia-packages), [Menu contestuale](../plugins/wikipedia.md#wikipedia-settings) |
 | [Mappe online](#online-maps) |[Livello mappa](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -78,7 +78,7 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 | [Meteo](../plugins/weather.md) | [Livello mappa](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Schermata](../plugins/weather.md#weather-forecast-screen) |
 | [Vista mappa nautica](#nautical-map-view) | [Stile mappa](../plugins/nautical-charts.md#nautical-map-style), [Profilo](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vista mappa sci](#ski-map-view) | [Stile mappa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profilo](../plugins/ski-maps.md#skiing-profile) |
-|[Note audio/video](#audiovideo-notes) 🤖  | [Livello mappa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contestuale](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Note audio/video](#audiovideo-notes) 🤖  | [Livello mappa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contestuale](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[Modifica OpenStreetMap](#openstreetmap-editing)| [Livello mappa](../plugins/osm-editing.md#authorization) |
 |[Posizione parcheggio](#parking-position) | [Menu contestuale](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Livello mappa](../plugins/mapillary.md#map-layer), [Menu contestuale](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
@@ -97,7 +97,7 @@ Solo il plugin di sviluppo OsmAnd e il plugin di modifica OSM cambiano le impost
 
 La maggior parte dei plugin fornisce impostazioni specifiche per il profilo o globali, a cui si può accedere tramite:
 
-- *Menu principale → Plugin → Nome del plugin → Impostazioni (&#x2699 per iOS)* o  
+- *Menu principale → Plugin → Nome del plugin → Impostazioni (&#x2699 per ios)* o  
 - *Menu principale → Impostazioni → Profilo → [Impostazioni plugin](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -122,7 +122,7 @@ I seguenti plugin forniscono le proprie impostazioni:
 
 | Nome del plugin | Impostazioni |
 |:------------|:-------|
-| [Registrazione viaggio](#trip-recording) | Configura le [modalità operative](../plugins/trip-recording.md#required-setup-parameters) della registrazione del viaggio |
+| [Registrazione viaggio](#trip-recording) | Configura le modalità operative della [registrazione del viaggio](../plugins/trip-recording.md#required-setup-parameters) |
 | [Meteo](#weather) | Configura le unità di misura per la visualizzazione degli eventi meteorologici |
 |[Note audio/video](#audiovideo-notes) 🤖  | Seleziona [formato video, durata di archiviazione, ecc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[Modifica OpenStreetMap](#openstreetmap-editing)| Specifica il [login](../plugins/osm-editing.md#settings) utente  |

@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Posizione parcheggio
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Panoramica {#overview}
@@ -30,13 +30,13 @@ L'indicatore è temporaneo e facile da rimuovere quando non è più necessario.
 
 <TabItem value="android" label="Android">
 
-![Widget Parcheggio Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Widget parcheggio Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget Parcheggio iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![Widget parcheggio iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ Per utilizzare un posto auto sulla mappa, è necessario effettuare le seguenti i
 
 ## Posto auto sulla mappa {#parking-spot-on-the-map}
 
-Quando si contrassegna un posto auto, OsmAnd salva le sue coordinate geografiche insieme a una marca temporale. Se necessario, è possibile aggiungere anche un limite di tempo e un promemoria sul calendario.
+Quando si contrassegna un posto auto, OsmAnd salva le sue coordinate geografiche insieme a una marca temporale. Se necessario, è possibile aggiungere anche un limite di tempo e un promemoria sul calendario. I posti auto vengono salvati come **punti preferiti**. Per assicurarsi che l'indicatore del parcheggio sia visibile sulla mappa, [Preferiti](../personal/favorites.md) devono essere abilitati.
 
 
 ### Impostare un posto auto {#set-a-spot}
@@ -97,7 +97,7 @@ L'ora di inizio viene sempre impostata automaticamente. Se è necessario modific
 
 <TabItem value="android" label="Android">
 
-![Widget Parcheggio Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Widget parcheggio Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
 ![Tempo rimanente in Android](@site/static/img/plugins/parking/and_parking_info_left.png)
 
@@ -105,7 +105,7 @@ L'ora di inizio viene sempre impostata automaticamente. Se è necessario modific
 
 <TabItem value="ios" label="iOS">
 
-![Widget Parcheggio iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![Widget parcheggio iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 ![Informazioni sul parcheggio in iOS](@site/static/img/plugins/parking/ios_parking_info.png)
 

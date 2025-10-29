@@ -1,8 +1,9 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipedia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
@@ -24,13 +24,13 @@ Il plugin Wikipedia è una [funzionalità a pagamento](../purchases/index.md) de
 
 Avere Wikipedia durante il viaggio aiuta a conoscere meglio i luoghi che si visitano. È disponibile offline e mostra i Luoghi Popolari (Android) / gli articoli di Wikipedia (iOS) relativi ai punti di interesse direttamente sulla mappa.  
 
-Il plugin Wikipedia è una funzionalità separata che può essere attivata/disattivata secondo necessità. Una volta attivato, permette di caricare i dati di Wikipedia [scaricati](../personal/maps-resources#maps--resources) per ogni regione geografica. La mappa dispone di due tipi di informazioni caricate da Wikipedia: informazioni brevi e un articolo completo.  
+Il plugin Wikipedia è una funzionalità separata che può essere attivata/disattivata secondo necessità. Una volta attivato, permette di caricare i dati di Wikipedia [scaricati](../personal/maps-resources#downloads-menu) per ogni regione geografica. La mappa dispone di due tipi di informazioni caricate da Wikipedia: informazioni brevi e un articolo completo.  
 
 
 Le informazioni brevi sono fornite dai POI di Wikipedia (un'abbreviazione per "[punto di interesse](../map/point-layers-on-map.md)"). Se l'opzione Wikipedia è attivata nel menu, un POI di Wikipedia appare sulla mappa. Quando si tocca un punto di interesse, questo si espande per fornire brevi informazioni da Wikipedia, oltre alla possibilità di aprire un articolo completo. Il POI di Wikipedia, così come gli articoli correlati, sono disponibili offline. È possibile leggerli secondo necessità, cambiare lingua e cercare altre informazioni su Wikipedia.  
 
 
-[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) è un'enciclopedia online gratuita, multilingue e collaborativa, creata e mantenuta da una comunità di editor volontari che utilizzano un sistema di modifica basato su wiki.  
+[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) è un'enciclopedia online gratuita, multilingue e collaborativa aperta, creata e mantenuta da una comunità di editor volontari che utilizzano un sistema di modifica basato su wiki.  
 
 &nbsp;  
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
@@ -50,7 +50,7 @@ Per visualizzare i dati di Wikipedia sulla mappa, è necessario effettuare le se
 
 I dati di Wikipedia sono disponibili per ogni regione geografica. Se i dati sono caricati per una regione e non per un'altra, nel primo caso è possibile lavorare con le informazioni di Wikipedia visualizzando la regione su una mappa, mentre nel secondo caso la regione non avrà alcuna informazione di Wikipedia. Una volta caricati, i dati di Wikipedia diventano disponibili in generale, anche offline.
 
-Per scaricare i dati di Wikipedia per una regione, andare ai [pacchetti disponibili per il download nel *Menu principale*](../start-with/download-maps.md#download), trovare la regione desiderata e aprirla. I dati di Wikipedia si troveranno tra gli altri pacchetti.
+Per scaricare i dati di Wikipedia per una regione, andare ai [pacchetti disponibili per il download nel *Menu principale*](../start-with/download-maps.md#downloading-maps), trovare la regione desiderata e aprirla. I dati di Wikipedia si troveranno tra gli altri pacchetti.
 
 È possibile aprire i dati di Wikipedia da scaricare per regione come segue:
 

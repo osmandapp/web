@@ -1,8 +1,9 @@
 ---
-source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
+source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
 sidebar_position: 13
 title:  Visualizzazione Mappa Sci
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Panoramica {#overview}
 
 Il plugin Visualizzazione Mappa Sci di OsmAnd mostra piste famose e popolari, aree sciistiche ufficialmente approvate e mappe dei sentieri della maggior parte delle stazioni sciistiche. Le mappe delle piste di [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sono la fonte dei dati per le mappe sciistiche di OsmAnd. Combinando mappe vettoriali con mappe raster, la mappa sciistica di OsmAnd è molto accurata e sarà utile per istruttori, alpinisti e appassionati di sport invernali.
 
-La mappa sciistica di OsmAnd fa parte delle mappe vettoriali e non richiede download aggiuntivi. È disabilitata per impostazione predefinita. La Mappa Sci di OsmAnd è uno degli [Stili mappa](../map/vector-maps.md) che fornisce funzionalità aggiuntive evidenziando alcuni oggetti e rendendone altri meno visibili.
+La mappa sciistica di OsmAnd fa parte delle mappe vettoriali e non richiede download aggiuntivi. È disabilitata per impostazione predefinita. La Mappa Sci di OsmAnd è uno degli [Stili mappa](../map/vector-maps.md) che fornisce funzionalità aggiuntive evidenziando alcuni oggetti e rendendone altri meno visibili.  
 
-Di seguito sono mostrati due profili: quello a sinistra è per lo sci e quello a destra per la guida. Il profilo Sci evidenzia sentieri, funivie, colori invernali e tutti gli oggetti della mappa utili per la navigazione nell'area sciistica.
+Di seguito sono mostrati due profili: quello a sinistra è per lo sci e quello a destra per la guida. Il profilo Sci evidenzia sentieri, aerialways, colori invernali e tutti gli oggetti della mappa utili per la navigazione nell'area sciistica.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -41,12 +41,12 @@ Di seguito sono mostrati due profili: quello a sinistra è per lo sci e quello a
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
-Le seguenti impostazioni fanno apparire la Mappa Sci di OsmAnd sullo schermo:
+L'impostazione seguente fa apparire la Mappa Sci di OsmAnd sullo schermo:
 
-1. Abilitare il [plugin Visualizzazione Mappa Sci](../plugins/index.md#enable--disable).
-2. Impostare lo stile mappa [Inverno e Sci](#set-winter-and-ski-map-style) per il [profilo](../personal/profiles.md) richiesto.
-3. Se necessario, [combinare le mappe](#combine-maps).
-
+1. Abilitare il [plugin Visualizzazione Mappa Sci](../plugins/index.md#enable--disable).  
+2. Impostare lo stile mappa [Inverno e Sci](#set-winter-and-ski-map-style) per il [profilo](../personal/profiles.md) richiesto.  
+3. Se necessario, [combinare le mappe](#combine-maps).  
+  
 
 ### Impostare lo stile mappa Inverno e Sci {#set-winter-and-ski-map-style}
 
@@ -54,7 +54,7 @@ Le seguenti impostazioni fanno apparire la Mappa Sci di OsmAnd sullo schermo:
 
 <TabItem value="android" label="Android">
 
-Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*
+Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Abilita stile Inverno in Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Stile mappa plugin mappe sciistiche Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -62,7 +62,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 <TabItem value="ios" label="iOS">
 
-Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*
+Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![Abilita stile Inverno in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Stile mappa plugin mappe sciistiche iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -72,8 +72,8 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 Lo stile mappa Inverno e Sci evidenzia sentieri, percorsi di scialpinismo, piste da slittino e informazioni relative all'inverno e allo sci. Per visualizzare lo stile sulla mappa, è necessario effettuare le seguenti impostazioni:
 
-1. Selezionare il [profilo](../personal/profiles.md) richiesto.
-2. Aprire [Configura mappa](../map/configure-map-menu.md).
+1. Selezionare il [profilo](../personal/profiles.md) richiesto.  
+2. Aprire [Configura mappa](../map/configure-map-menu.md).  
 3. Scorrere fino a Stile mappa/Tipo di mappa, aprirlo e selezionare **Inverno e Sci**.
 
 :::tip configurazioni
@@ -99,20 +99,20 @@ Il profilo Sci è progettato per essere utilizzato in combinazione con gli stili
 
 </Tabs>
 
-La [mappa vettoriale](../map/vector-maps.md) con lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) incluso può essere completata con le [linee di contorno](../plugins/topography.md#contour-lines) e l'[ombreggiatura del rilievo](../plugins/topography.md#hillshade-slope-and-altitude-layers). Di seguito sono riportati due esempi. A sinistra sono mostrate le piste sulla mappa vettoriale predefinita, a destra le piste sulla mappa vettoriale combinata con la mappa raster *Linee di contorno* e *Ombreggiatura del rilievo*. Nel secondo caso, la mappa mostra più dati di elevazione per aiutare a stimare la difficoltà, il rischio e la distanza.
+La [mappa vettoriale](../map/vector-maps.md) con lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) incluso può essere completata con le [linee di contorno](../plugins/topography.md#contour-lines) e l'[ombreggiatura del rilievo](../plugins/topography.md#hillshade-slope-and-altitude-layers). Di seguito sono riportati due esempi. Le piste sulla mappa vettoriale predefinita sono mostrate a sinistra, e le piste sulla mappa vettoriale combinata con la mappa raster *Linee di contorno* e *Ombreggiatura del rilievo* sono mostrate a destra. Nel secondo caso, la mappa mostra più dati di elevazione per aiutare a stimare la difficoltà, il rischio e la distanza.  
 
 
 ### Disabilitare lo stile Mappa Sci {#disable-ski-map-style}
 
 Se si preferisce rimuovere i sentieri e i colori invernali dalla mappa, o se la stagione sciistica è finita, eseguire una delle seguenti operazioni:
 
-- Deselezionare lo stile mappa [Inverno e Sci](#set-winter-and-ski-map-style) per il profilo richiesto.
+- Deselezionare lo stile mappa [Inverno e Sci](#set-winter-and-ski-map-style) per il profilo richiesto.  
 - Cambiare il [profilo Sci](../personal/profiles.md) con un qualsiasi altro profilo.
 - Disabilitare il [plugin Visualizzazione Mappa Sci](../plugins/index.md#enable--disable).
 
 
 :::info disinstallare il plugin
-Il plugin Visualizzazione Mappa Sci è un'applicazione separata e la disabilitazione della sua visualizzazione non lo rimuove. Se è necessario disinstallarlo, andare alle impostazioni di Android utilizzando *Apri Impostazioni* nel menu del plugin.
+Il plugin Visualizzazione Mappa Sci è un'applicazione separata e la disabilitazione della sua visualizzazione non lo rimuove. Se è necessario disinstallarlo, andare alle impostazioni di Android utilizzando *Apri Impostazioni* nel menu del plugin.  
 :::
 
 
@@ -120,15 +120,15 @@ Il plugin Visualizzazione Mappa Sci è un'applicazione separata e la disabilitaz
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Andare a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Andare a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Profilo Sci in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -143,7 +143,7 @@ Gli stili mappa Inverno e Sci possono essere abilitati in qualsiasi profilo. Ma 
 
 ## Stile Mappa Sci {#ski-map-style}
 
-Utilizzare la [Legenda mappa sci](../../user/map-legend/ski-map.md) per qualsiasi riferimento. Aiuta a identificare i tipi di piste sulla mappa, così come i tipi di funivie e altre caratteristiche che possono essere lette dalla mappa.
+Utilizzare la [Legenda mappa sci](../../user/map-legend/ski-map.md) per qualsiasi riferimento. Aiuta a identificare i tipi di piste sulla mappa, così come i tipi di aerialways e altre caratteristiche che possono essere lette dalla mappa.
 
 Leggendo la mappa, è possibile scoprire i dettagli importanti per voi, come la difficoltà di un particolare sentiero, il tipo di sentiero, se viene effettuata la preparazione e se il sentiero è illuminato di notte.
 
@@ -168,24 +168,24 @@ La Mappa Sci di OsmAnd è costruita come uno degli stili di rendering, che deter
 La difficoltà delle tracce è solitamente indicata da colori specifici. I colori possono essere diversi in diversi paesi e resort. Di seguito sono riportate alcune linee guida pratiche.
 
 :::tip guida
-Per una guida più specifica per ogni tipo di difficoltà di pista, consultare il [riferimento difficoltà piste OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o qualsiasi altra fonte che consideri anche pendenze, ostacoli e pericoli.
+Per una guida più specifica per ogni tipo di difficoltà di pista, consultare il [riferimento difficoltà piste OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o qualsiasi altra fonte che consideri anche pendenze, ostacoli e pericoli.  
 :::
 
 
 ### Piste per tipo {#piste-by-types}
 
-Le piste si differenziano per tipo. Un tipo rappresenta caratteristiche diverse per una pista per soddisfare i requisiti di diverse attività legate all'inverno: sci alpino, sci di fondo, snowboard, slittino, sci fuoripista, scialpinismo, sci su gobbe, sci notturno, ecc. Comprendere il [tipo di pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) sulla mappa aiuta a costruire un percorso di navigazione ottimale.
+Le piste si differenziano per tipo. Un tipo rappresenta caratteristiche diverse per una pista per soddisfare i requisiti di diverse attività legate all'inverno: sci alpino, pattinaggio classico, snowboard, slittino, sci fuoripista, scialpinismo, sci su gobbe, sci notturno, ecc. Comprendere il [tipo di pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) sulla mappa aiuta a costruire un percorso di navigazione ottimale.
 
-- **Pista da sci alpino/discesa.**
-Utilizzata per la navigazione Sci. Questo [tipo di pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) ha una direzione e una difficoltà, e molto spesso è circondata dai confini della stazione sciistica. Quando una pista da discesa viene selezionata per la navigazione Sci, viene presa in considerazione la direzione della pista. Se i punti di Partenza e Destinazione sono stabiliti in senso opposto alla direzione della pista, la navigazione procede lungo la funivia più vicina.
+- **Pista da sci alpino/discesa.**  
+Utilizzata per la navigazione Sci. Questo [tipo di pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) ha una direzione e una difficoltà, e molto spesso è circondata dai confini della stazione sciistica. Quando una pista da discesa viene selezionata per la navigazione Sci, viene presa in considerazione la direzione della pista. Se i punti di Partenza e Destinazione sono stabiliti in senso opposto alla direzione della pista, la navigazione procede lungo l'aerialway più vicina.
 
-- **Pista da sci nordico/fuoripista.**
+- **Pista da sci nordico/fuoripista.**  
 Utilizzata anche per la navigazione Sci. Questo [tipo di pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) non ha difficoltà, può avere o meno una direzione e molto spesso va oltre i confini della stazione sciistica. Durante la navigazione lungo questo tipo di piste, i punti di Partenza e Destinazione possono spesso essere scambiati.
 
-- **Pista da scialpinismo.**
+- **Pista da scialpinismo.**  
 Spesso utilizzata dagli sciatori per una salita nordica e una discesa. La difficoltà di una pista da scialpinismo è spesso contrassegnata dal rispettivo colore. La navigazione Sci può costruire un percorso lungo questo tipo di pista, il che consente di combinare i tipi di pista.
 
-- **Altre piste da sci.**
+- **Altre piste da sci.**  
 Tipi di piste come *Sentieri escursionistici* o *Piste da slittino* possono essere utilizzati per i profili di sci o escursionismo.
 
 
@@ -211,8 +211,8 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widge
 
 </Tabs>
 
-Per verificare sulla mappa se una particolare pista è preparata, è necessario abilitare l'opzione **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** nell'elenco **<Translate android="true" ids="rendering_category_details"/>** aperto dal menu [Configura mappa](../map/configure-map-menu.md).
-Macchine speciali preparano le piste per renderle adatte all'attività appropriata, come lo sci di fondo, il pattinaggio su ghiaccio e altro. La stessa pista può essere preparata in modo diverso in aree diverse.
+Per verificare sulla mappa se una particolare pista è preparata, è necessario abilitare l'opzione **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** nell'elenco **<Translate android="true" ids="rendering_category_details"/>** aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
+Macchine speciali preparano le piste per renderle adatte all'attività appropriata, come il pattinaggio classico, il pattinaggio su ghiaccio e altro. La stessa pista può essere preparata in modo diverso in aree diverse.
 
 ### Percorsi delle piste da sci {#ski-slope-routes}
 
@@ -220,15 +220,16 @@ Macchine speciali preparano le piste per renderle adatte all'attività appropria
 
 <TabItem value="android" label="Android">
 
-Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Piste da sci e percorsi*
 
 ![Percorsi disabilitati in Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Percorsi abilitati in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Piste da sci e percorsi*
 
 ![Percorsi disabilitati in iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Percorsi abilitati in iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -236,9 +237,11 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 </Tabs>
 
-Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** nell'elenco **<Translate android="true" ids="rendering_category_routes"/>**, aperto dal menu [Configura mappa](../map/configure-map-menu.md).
+Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **Piste da sci e percorsi** nell'elenco [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
 
-Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) abilitati, i percorsi delle [Piste da sci](../map/vector-maps.md#routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.
+Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/vector-maps.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
+Quando si abilita l'opzione [Piste da sci e percorsi](../map/vector-maps.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
+_Le piste da sci e i percorsi_ [sono cliccabili](../map/routes.md#actions-with-routes).
 
 
 ### Notte e illuminazione {#night-and-lighting}
@@ -253,20 +256,20 @@ Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/v
 
 <TabItem value="ios" label="iOS">
 
-![Abilitazione modalità Notte e Illuminazione in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Notte e illuminazione in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
+![Abilitazione modalità Notte e Illuminazione in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Notte e Illuminazione in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
 
 </TabItem>
 
 </Tabs>
 
-Lo stile **Inverno e sci** può essere utilizzato con la [modalità Notte o Alba/tramonto](../map/vector-maps.md#map-mode). Una scelta comoda per chi preferisce i colori scuri, o scurire lo schermo di notte, così come per chi pratica lo sci notturno. Insieme alla modalità Notte, le Mappe Sci di OsmAnd possono anche mostrare quali piste hanno l'illuminazione con l'opzione [Illuminazione stradale](../map/vector-maps.md#details).
+Lo stile **Inverno e sci** può essere utilizzato con la [modalità Notte o Alba/tramonto](../map/vector-maps.md#map-mode). Una scelta comoda per chi preferisce i colori scuri, o scurire lo schermo di notte, così come per chi pratica lo sci notturno. Insieme alla modalità Notte, le Mappe Sci di OsmAnd possono anche mostrare quali piste hanno l'illuminazione con l'opzione [Illuminazione stradale](../map/vector-maps.md#details).  
 
-Entrambe le opzioni si trovano nel menu [Configura mappa](../map/configure-map-menu.md).
+Entrambe le opzioni si trovano nel menu [Configura mappa](../map/configure-map-menu.md).  
 
-- Per abilitare l'opzione ***Modalità notte***, scorrere l'elenco:
-*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
+- Per abilitare l'opzione ***Modalità notte***, scorrere l'elenco:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- Per abilitare l'opzione ***Illuminazione stradale***, aprire l'elenco **<Translate android="true" ids="rendering_category_details"/>** e attivare l'opzione:
+- Per abilitare l'opzione ***Illuminazione stradale***, aprire l'elenco **<Translate android="true" ids="rendering_category_details"/>** e attivare l'opzione:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 

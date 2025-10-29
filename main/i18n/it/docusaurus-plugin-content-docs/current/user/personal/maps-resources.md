@@ -1,8 +1,9 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 Nella sezione **Mappe e Risorse**, è possibile gestire sia le mappe *Online* che *Offline* e altre risorse utilizzate in OsmAnd. Ad esempio, è possibile scaricare, eliminare, rinominare, svuotare la cache, aggiornare e controllare le dimensioni, ed eseguire diverse azioni.
 
-OsmAnd funziona con due tipi di mappe: [Mappe vettoriali](../map/vector-maps.md) e [Mappe raster](../map/raster-maps.md). La scheda [Locale](#local) memorizza tutte le mappe e le risorse. I tipi di mappa disponibili possono essere scaricati dalla scheda [Download](#downloads). Nella scheda [Aggiornamenti](#updates), è possibile scaricare le mappe disponibili per l'aggiornamento e utilizzare gli [Aggiornamenti Live](#live-updates). È inoltre possibile accedere alla funzione [Mappa extra](#extra-maps) per creare i propri tipi di mappa.
+OsmAnd funziona con due tipi di mappe: [Mappe vettoriali](../map/vector-maps.md) e [Mappe raster](../map/raster-maps.md). La scheda [Locale](#local-menu) memorizza tutte le mappe e le risorse. I tipi di mappa disponibili possono essere scaricati dalla scheda [Download](#downloads-menu). Nella scheda [Aggiornamenti](#updates-menu), è possibile scaricare le mappe disponibili per l'aggiornamento e utilizzare gli [Aggiornamenti Live](#live-updates). È inoltre possibile accedere alla funzione [Mappa extra](#extra-maps) per creare i propri tipi di mappa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -78,6 +78,7 @@ Si prega di notare che gli aggiornamenti mensili delle mappe sono considerati un
 - [Linee di contorno](../plugins/topography.md#contour-lines). Una mappa contenente linee di contorno di elevazione per visualizzare il terreno.
 - [Mappa del terreno (Ombreggiatura e Pendenza)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Mappe con ombreggiature o pendenze forniscono informazioni aggiuntive sul terreno.
 - [Mappa del terreno (3D)](../plugins/topography.md#3d-relief). Rappresentazione tridimensionale del terreno per una migliore comprensione dell'ambiente circostante. È necessario abilitare il [Motore di rendering della mappa Versione 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
+- [Profondità e contorni nautici](../plugins/nautical-charts.md). Carte nautiche che mostrano linee costiere, profondità, aiuti alla navigazione, porti e pericoli per una navigazione e vela sicure.
 - [Wikipedia](../plugins/wikipedia.md). Mappa vettoriale con articoli di [Wikipedia](https://wikipedia.org/) geolocalizzati su punti di riferimento o informazioni aggiuntive sui luoghi.
 - [Wikivoyage](../plan-route/travel-guides.md). Fornisce mappe vettoriali con guide di viaggio virtuali, offrendo agli utenti informazioni preziose, raccomandazioni e consigli.
 - [Previsioni meteo](../plugins/weather.md). Informazioni meteorologiche su una mappa per una facile pianificazione del percorso.
@@ -153,7 +154,7 @@ Per importare un file:
 1. Individua il file `.osf` nella memoria del tuo dispositivo, in un'app di messaggistica o in un'email.
 2. Tocca per aprirlo con OsmAnd.
 3. Il plugin apparirà nella sezione **Elenco Plugin**, dove potrà essere attivato.
-4. Una cartella corrispondente apparirà quindi nella sezione **Mappe Extra** della scheda [Download](#downloads).
+4. Una cartella corrispondente apparirà quindi nella sezione **Mappe Extra** della scheda [Download](#downloads-menu).
 
 Leggi di più nell'articolo [**Pacchetto personalizzato**](../plugins/custom).
 
@@ -192,7 +193,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 La scheda Locale fornisce una panoramica dell'utilizzo dello spazio di archiviazione per tutti i dati di OsmAnd sul tuo dispositivo. I dati sono suddivisi in tre sezioni codificate a colori per maggiore chiarezza, con gli elementi ordinati per dimensione dal più grande al più piccolo. Ogni sezione mostra solo gli elementi con dati scaricati:
 
 - ***Risorse*** (*blu*).  
-    Include mappe ([Standard](../map/vector-maps.md), &nbsp;[Nautiche](../plugins/nautical-charts.md), &nbsp;[Topografiche](../plugins/topography.md), &nbsp;[Meteo](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) e [Guide di viaggio](../plan-route/travel-guides.md), &nbsp;[Aggiornamenti Live](../personal/maps-resources.md#live-updates), &nbsp;**Solo strade**,  &nbsp;[Sorgenti mappa](../map/raster-maps.md), &nbsp;[Stili di rendering](../map/vector-maps.md#default-map-styles), &nbsp;**Caratteri mappa, &nbsp;Istruzioni vocali (registrate e TTS), &nbsp;Cache**.  
+    Include mappe ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topografiche](../plugins/topography.md), &nbsp;[Meteo](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) e [Guide di viaggio](../plan-route/travel-guides.md), &nbsp;[Aggiornamenti Live](../personal/maps-resources.md#live-updates), &nbsp;**Solo strade**,  &nbsp;[Sorgenti mappa](../map/raster-maps.md), &nbsp;[Stili di rendering](../map/vector-maps.md#default-map-styles), &nbsp;**Caratteri mappa, &nbsp;Istruzioni vocali (registrate e TTS), &nbsp;Cache**.  
 
 - ***I miei luoghi*** (*giallo*).  
     Include [Preferiti](../personal/favorites.md), &nbsp;[Tracce](../personal/tracks/manage-tracks.md), &nbsp;[Note OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Modifiche OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Note A/V](../plugins/audio-video-notes.md), &nbsp;[Segnalibri](../personal/markers.md), &nbsp;[Cronologia](../personal/global-settings.md#history), &nbsp;*Itinerario*.  

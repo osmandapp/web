@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  Percorsi
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -47,8 +47,8 @@ I percorsi MTB hanno una mappatura specifica in [OpenStreetMap](https://wiki.ope
 <!--
 | | | |
 |------------|------------|------------|
-| ***<Translate android="true" ids="mtb_scale"/>*** | Mostra i sentieri secondo la scala MTB. Maggiori informazioni si trovano nell'articolo [Legenda della mappa](../map-legend/index.md). | ![Mappa percorsi - sentieri MTB](@site/static/img/map/map-routes-mtb-trails.png) |
-| ***<Translate android="true" ids="mtb_imba"/>*** | Mostra i sentieri MTB secondo l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Maggiori informazioni si trovano nell'articolo [Legenda della mappa](../map-legend/index.md). | ![Mappa percorsi - sentieri MTB](@site/static/img/map/map-routes-mtb_imba-trails.png) |
+| ***<Translate android="true" ids="mtb_scale"/>*** | Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article. | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png) |
+| ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
 - ***<Translate android="true" ids="mtb_scale"/>***. Mostra i sentieri secondo la scala MTB. Maggiori informazioni si trovano nell'articolo [Legenda della mappa](../map-legend/index.md).  
@@ -111,11 +111,22 @@ Alcuni segmenti di strada potrebbero far parte di molti percorsi, ma potrebbero 
 2. [Scala CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Percorsi sciistici {#ski-routes}
+### Piste da sci e percorsi {#ski-slopes-and-routes}
 
+- _Piste da sci e percorsi_ nello stile di mappa _Invernale e Sci_.  
 ![Mappa percorsi - piste da sci](@site/static/img/map/map-routes-ski-slopes.png)
 
-I percorsi sciistici sono un gruppo specifico di [percorsi](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Tipicamente, questi percorsi possono essere utilizzati con lo stile di mappa [Invernale e Sci](../map/vector-maps.md#winter-and-ski) con tutte le [Piste](https://wiki.openstreetmap.org/wiki/Pistes) visibili.  
+- _Piste da sci e percorsi_ nello stile di mappa _OsmAnd predefinito_.  
+![Mappa percorsi - piste da sci](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Le piste da sci e i percorsi sono un gruppo specifico di [percorsi](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Tipicamente, questi percorsi possono essere utilizzati con lo stile di mappa [Invernale e Sci](../map/vector-maps.md#winter-and-ski) con tutte le [Piste](https://wiki.openstreetmap.org/wiki/Pistes) visibili. Se è attivo un altro stile di mappa, viene mostrato un banner che suggerisce di passare a [Invernale e Sci](../map/vector-maps.md#winter-and-ski) (*solo Android*) e vengono mostrate solo le Piste. Tocca ***Passa a*** per cambiare lo stile di mappa senza lasciare la schermata corrente, o ***Più tardi*** per nascondere il banner.
+
+
+### Sentieri per motoslitta {#snowmobile-trails}
+
+![Mappa percorsi - motoslitta](@site/static/img/map/snowmobile_trail.png)
+
+I sentieri per motoslitta sono mappati in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) come `route=snowmobile`. Sono utilizzati per il tempo libero invernale e per collegare aree remote durante la stagione nevosa. In OsmAnd, i sentieri per motoslitta sono cliccabili, vedere la sezione [Azioni con i percorsi](#actions-with-routes).
 
 
 ### Percorsi a cavallo {#horse-routes}
@@ -165,7 +176,14 @@ I percorsi di viaggio fanno parte di file personalizzati [Guida di viaggio](../p
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Sezione Configura Mappa Percorsi](@site/static/img/map/configure_map_routes_android.png)
+![Sezione Configura Mappa Percorsi](@site/static/img/map/configure_map_routes_android.png) ![Classi di percorsi](@site/static/img/map/routes_classes_android.png)
+
+- Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
+- OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
+- I tipi principali di percorso possono essere filtrati anche per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare i percorsi escursionistici per **simboli OSMC** come classi e per *reti internazionali, nazionali, regionali* o *locali* come sottoclassi.
+- È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md).  
+
+![Mappa percorsi - escursionismo osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Mappa percorsi - reti di nodi ciclabili](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ![Menu Tracce iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
 - È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md).  
 
 ![Mappa percorsi - escursionismo osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Mappa percorsi - reti di nodi ciclabili](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## Dettagli area e falesia di arrampicata {#climbing-area-and-crag-details}
 
 ![Dettagli arrampicata](@site/static/img/map/climbing_andr.png)
 
 Quando si seleziona un'[area o falesia di arrampicata](../map/routes.md#climbing-routes), OsmAnd fornisce un riepilogo dettagliato della località di arrampicata, tra cui: nome e posizione, grado di difficoltà dell'arrampicata (UIAA, Francese, YDS, ecc.), tipo di roccia, altezza e lunghezza della via, qualità dell'arrampicata e condizioni della superficie.
-
 
 
 ## Azioni con i percorsi {#actions-with-routes}
@@ -205,13 +223,13 @@ Quando si seleziona un'[area o falesia di arrampicata](../map/routes.md#climbing
 
 <TabItem value="ios" label="iOS">
 
-![Info percorso](@site/static/img/map/routes_osm_ios.png) ![Info percorso](@site/static/img/map/routes_osm_ios_1.png)
+![Info percorso](@site/static/img/map/routes_osm_ios_new.png) ![Info percorso](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Sulla mappa, è possibile selezionare percorsi per [escursionismo, ciclismo, viaggio e altro](#type-of-routes), che sono contrassegnati con [simboli OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) dove applicabile.
+Sulla mappa, è possibile selezionare percorsi per [escursionismo, ciclismo, sci, MTB, dirt bike, viaggio e altro](#type-of-routes). Dove disponibili, i percorsi escursionistici visualizzano i loro segnavia utilizzando [simboli OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); altri tipi di percorso utilizzano i propri contrassegni.
 
 Quando si tocca un **simbolo del percorso** sulla mappa:
 

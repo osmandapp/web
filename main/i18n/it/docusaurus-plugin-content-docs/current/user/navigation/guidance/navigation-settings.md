@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Impostazioni di navigazione
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
-Per una navigazione di successo, è importante configurare correttamente le impostazioni appropriate in base alle proprie esigenze e al modo in cui si viaggia: in auto, a piedi, a cavallo o con gli sci. Questo articolo descrive i parametri di base del percorso, le [Istruzioni vocali](#voice-prompts), gli [Avvisi sullo schermo](#screen-alerts), il [Comportamento della mappa durante la navigazione](#map-during-navigation) e l'[Aspetto della linea del percorso](#customize-route-line). Vengono inoltre descritte in dettaglio le [Impostazioni del veicolo](#vehicle-parameters), come la velocità predefinita, il tipo di motore per il calcolo della CO2, la capacità del serbatoio e le limitazioni di dimensioni/peso. La regolazione di queste impostazioni vi aiuterà a sfruttare al meglio l'uso di OsmAnd e a raggiungere la vostra meta senza inutili ritardi.
+Per una navigazione di successo, è importante configurare correttamente le impostazioni appropriate in base alle proprie esigenze e al modo in cui si viaggia: in auto, a piedi, a cavallo o con gli sci. Questo articolo descrive i parametri di base del percorso, le [Istruzioni vocali](#voice-prompts), gli [Avvisi sullo schermo](#screen-alerts), il [Comportamento della mappa durante la navigazione](#map-during-navigation) e l'[Aspetto delle linee del percorso](#customize-route-line). Descrive inoltre in dettaglio le [Impostazioni del veicolo](#vehicle-parameters), come la velocità predefinita, il tipo di motore per il calcolo della CO2, la capacità del serbatoio del carburante e le limitazioni di dimensioni/peso. Regolando queste impostazioni, potrete trarre il massimo dall'uso di OsmAnd e raggiungere la vostra destinazione senza ritardi inutili.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -38,7 +38,7 @@ Per una navigazione di successo, è importante configurare correttamente le impo
 
 ### Come aprire {#how-to-open}
 
-Questa sezione presenta le impostazioni di navigazione necessarie per il calcolo e la tracciatura di un percorso, che è possibile impostare per il profilo selezionato. Questo menu include le impostazioni per la [Preparazione del percorso](../setup/route-navigation.md), la [Schermata della mappa durante la navigazione](../guidance/map-during-navigation.md) e ciò che si imposta nelle *Impostazioni di navigazione* influisce direttamente sulla visualizzazione dei dati nei [Dettagli del percorso](../setup/route-details.md).
+Questa sezione presenta le impostazioni di navigazione necessarie per il calcolo e la tracciatura di un percorso, che è possibile impostare per il profilo selezionato. Questo menu include le impostazioni per la [Preparazione del percorso](../setup/route-navigation.md), la [Schermata della mappa durante la navigazione](../guidance/map-during-navigation.md), e ciò che si imposta nelle *Impostazioni di navigazione* influisce direttamente sulla visualizzazione dei dati nei [Dettagli del percorso](../setup/route-details.md).
 
 Esistono tre modi per accedere al menu delle impostazioni di navigazione.
 
@@ -185,7 +185,7 @@ I parametri della sezione **Sviluppo** sono destinati principalmente agli utenti
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ Le istruzioni audio durante la navigazione aiutano il conducente o il pedone a r
 Se si seleziona una traccia come punto di destinazione, è necessario utilizzare l'opzione [Associa alle strade](../setup/gpx-navigation.md#attach-to-the-roads) affinché le istruzioni vocali funzionino correttamente.
 
 Le *Istruzioni vocali* consentono di concentrarsi sulla strada e di non essere distratti dalla mappa o dal dispositivo di navigazione. Inoltre, migliorano la sicurezza di guida, riducono il tempo necessario per navigare su terreni sconosciuti e possono essere utili per diversi [tipi di percorsi](../routing/osmand-routing.md#routing-types).
+
+Nella sezione **Annuncia**, è possibile scegliere quali tipi di notifiche devono essere riprodotte o visualizzate durante la navigazione:
+
+- **Indicazioni passo-passo** (*solo Android*) – consente di abilitare o disabilitare le istruzioni di navigazione standard come *“Gira a sinistra”*, *“Gira a destra”* o *“Tra 200 metri…”*. Quando l'opzione è disabilitata, non vengono fornite le indicazioni di svolta e i nomi delle strade, mentre le notifiche per i waypoint, i punti utente e gli eventi del percorso rimangono attive. Questa modalità è destinata ad attività come il rafting, l'escursionismo o il ciclismo lungo tracce preregistrate, quando sono richieste solo le notifiche per i waypoint aggiunti manualmente.
+- **Nomi delle strade (TTS)** – annuncia i nomi delle strade lungo il percorso.
+- **Numero di uscita** – annuncia il numero di uscita durante la guida sulle autostrade.
+- **Avvisi sul traffico** – fornisce notifiche su eventi stradali importanti come ingorghi o restrizioni.
+- **Attraversamenti pedonali** – avvisa quando ci si avvicina a un attraversamento pedonale.
+- **[Autovelox](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – avvisa sulle posizioni degli autovelox (dove consentito legalmente).
+- **Gallerie** – informa quando si entra in una galleria.
 
 
 ## Avvisi sullo schermo {#screen-alerts}
@@ -347,7 +357,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-La funzione **Guida dettagliata della traccia** migliora la precisione della navigazione del percorso quando si utilizzano **percorsi basati su tracce**. Quando si seleziona una traccia come destinazione, è possibile attivare l'impostazione [Associa alle strade](../setup/gpx-navigation.md#attach-to-the-roads) dal menu [Segui traccia](../setup/gpx-navigation.md#follow-track-options). In questo modo si garantisce che la traccia sia allineata alle strade esistenti, in modo che la navigazione fornisca istruzioni precise su rotatorie, svolte, limiti di velocità, corsie di svolta e nomi delle strade.
+La funzione **Guida dettagliata della traccia** migliora la precisione della navigazione del percorso quando si utilizzano **percorsi basati su tracce**. Quando si seleziona una traccia come destinazione, è possibile attivare l'impostazione [Associa alle strade](../setup/gpx-navigation.md#attach-to-the-roads) dal menu [Segui traccia](../setup/gpx-navigation.md#follow-track-options). In questo modo si garantisce che la traccia sia allineata alle strade esistenti, in modo che la navigazione fornisca istruzioni precise su rotatorie, svolte, limiti di velocità, corsie di svolta e nomi delle strade per le strade.
 
 Esistono due opzioni per l'utilizzo della *Guida dettagliata della traccia*:
 

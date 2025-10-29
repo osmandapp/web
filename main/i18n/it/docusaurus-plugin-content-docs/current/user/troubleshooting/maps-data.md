@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Mappe e Dati
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Mappe {#maps}
@@ -64,7 +64,7 @@ Un percorso corretto non genererà alcun errore di permesso di scrittura da part
 
 ### Cancellazione dei dati delle mappe dopo l'aggiornamento dell'app (se è selezionata "Archiviazione multiutente 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-Nella versione Android di OsmAnd, la selezione di *Archiviazione multiutente 1* come posizione di archiviazione può portare alla cancellazione di tutte le [mappe locali](../personal/maps-resources.md#local) ogni volta che l'app viene aggiornata automaticamente, ad esempio dalla versione 4.1.9 alla 4.1.10, 4.1.11 o successive (**Android 11, 12**). Questo problema è documentato su [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+Nella versione Android di OsmAnd, la selezione di *Archiviazione multiutente 1* come posizione di archiviazione può portare alla cancellazione di tutte le [mappe locali](../personal/maps-resources.md#local-menu) ogni volta che l'app viene aggiornata automaticamente, ad esempio dalla versione 4.1.9 alla 4.1.10, 4.1.11 o successive (**Android 11, 12**). Questo problema è documentato su [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Per evitare di perdere i dati delle mappe durante gli aggiornamenti, considerare queste soluzioni:
 

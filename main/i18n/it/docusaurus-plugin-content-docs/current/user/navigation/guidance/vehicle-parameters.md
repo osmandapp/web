@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  Parametri del veicolo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica
@@ -32,7 +32,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -97,6 +97,14 @@ I parametri del veicolo influenzano la navigazione e la costruzione del percorso
 
 ![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+**5.** [**Limite di carico massimo per asse**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Fornire il carico massimo per asse del veicolo per evitare strade e ponti con restrizioni sul peso per asse. Questo parametro è disponibile solo nei tipi di navigazione come [*Camion*](../../navigation/routing/car-based-routing.md).  
+
+![Impostazioni di navigazione Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Peso massimo a pieno carico**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Fornire il peso totale massimo del veicolo quando è completamente carico per evitare strade e ponti con restrizioni sul peso complessivo. Questo parametro è disponibile solo nei tipi di navigazione come [*Camion*](../../navigation/routing/car-based-routing.md).  
+
+![Impostazioni di navigazione Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 I limiti sui parametri del veicolo possono essere importanti per la navigazione e la sicurezza stradale. Alcune di queste restrizioni possono includere:  
 
@@ -146,7 +154,7 @@ L'impostazione **Carburante utilizzato dal motore** è disponibile solo nella na
 
 <TabItem value="ios" label="iOS">
 
-![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

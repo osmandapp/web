@@ -1,8 +1,9 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Schemi di colori
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
@@ -26,13 +26,13 @@ Gli schemi di colori sono utilizzati come parte delle funzionalità a pagamento 
 
 Gli schemi di colori sono utilizzati nella [colorazione dei percorsi](#routes), nel [terreno della mappa](#terrain) e nella [mappa meteorologica](#weather), e sono rappresentati come una parte separata delle informazioni che possono essere esportate, importate e modificate per cambiare lo schema di colori della mappa e la visualizzazione dei dati.
 
-I dati della palette di colori sono disponibili nel menu [*Mappe e Risorse*](../personal/maps-resources.md#local).
+I dati della palette di colori sono disponibili nel menu [*Maps & Resources*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Andare su: *Menu → Mappe e Risorse → Locale → Colori*
+Andare su: *Menu → Maps & Resources → Local → Colors*
 
 ![Palette](@site/static/img/personal/color-schemes/colors.png)
 
@@ -40,7 +40,7 @@ Andare su: *Menu → Mappe e Risorse → Locale → Colori*
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *Menu → Mappe e Risorse → Locale → Colori*
+Andare su: *Menu → Maps & Resources → Local → Colors*
 
 ![Palette di colori](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
@@ -77,7 +77,7 @@ I file del terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_na
 Le visualizzazioni a gradiente di linea utilizzano file di palette (`route_<type_name>_<palette_name>.txt`) per colorare le tracce GPX e i Percorsi:
 
 - Per i [Percorsi](../navigation/guidance/map-during-navigation.md#color): *Velocità, Pendenza* e *Elevazione (Altitudine)*.
-- Per le [Tracce GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocità, Pendenza* ed *Elevazione (Altitudine), o informazioni da sensori esterni*.
+- Per le [Tracce GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocità, Pendenza* e *Elevazione (Altitudine), o info da sensori esterni*.
 
 ### Meteo {#weather}
 

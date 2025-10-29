@@ -1,8 +1,9 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Cerca Tutto
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,13 +14,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 <InfoIncompleteArticle/>
 
 
 ## Panoramica {#overview}
 
-**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI) o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come bar, hotel o stazioni di servizio. La [Cronologia Ricerche](#search-history) salva le ricerche passate per un rapido accesso ai luoghi trovati in precedenza. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
+**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI) o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come caffè, hotel o stazioni di servizio. La [Cronologia Ricerche](#search-history) salva le ricerche passate per un rapido accesso ai luoghi trovati in precedenza. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
 
 
 ## Come si usa {#how-to-use}
@@ -72,7 +72,7 @@ Informazioni importanti:
 - Ricerca percorsi OSM per nome e per categoria con filtri aggiuntivi.
 - Ricerca delle cime e dei vulcani più importanti.
 - Ricerca per Preferiti e Waypoint.
-- Ricerca di icone per nomi di sottocategorie di PDI.
+- Ricerca icone per nomi di sottocategorie di PDI.
 - Ricerca per tracce.
 - Ricerca per locali commerciali e marchi.
 - Ricerca online (Nominatim).
@@ -194,7 +194,7 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 
 </Tabs>
 
-La **Ricerca Indirizzo** utilizza i dati di OpenStreetMap. Questo tipo di ricerca consente di trovare la posizione e la direzione verso un indirizzo specifico da un elenco già ordinato. Per saperne di più, consultare l'articolo [Ricerca Indirizzo](./search-address.md).
+**Ricerca Indirizzo** utilizza i dati di OpenStreetMap. Questo tipo di ricerca consente di trovare la posizione e la direzione verso un indirizzo specifico da un elenco già ordinato. Per saperne di più, consultare l'articolo [Ricerca Indirizzo](./search-address.md).
 
 
 ## Cronologia Ricerche {#search-history}
@@ -238,7 +238,7 @@ La **Ricerca Indirizzo** utilizza i dati di OpenStreetMap. Questo tipo di ricerc
 
 La **Ricerca PDI** è un elenco, ordinato per categoria, con cui è possibile trovare facilmente luoghi e servizi vicino alla propria posizione attuale o a un'area selezionata sulla mappa.
 
-- La [Ricerca PDI personalizzata](./search-poi.md#custom-poi-search) consente di combinare diverse categorie di PDI per semplificare e personalizzare la ricerca.  
+- La [Ricerca PDI personalizzata](./search-poi.md#customize-poi-search) consente di combinare diverse categorie di PDI per semplificare e personalizzare la ricerca.  
 Ad esempio, se è necessario trovare diversi tipi di servizi in una determinata area o in una determinata sezione di un percorso.
 
 - OsmAnd fornisce una [Ricerca online](./search-poi.md#online-search) che funziona in tempo reale, offrendo un accesso rapido ai risultati della ricerca.  

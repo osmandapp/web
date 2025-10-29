@@ -1,8 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Panoramica {#overview}
 
@@ -142,7 +142,9 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Imposta e blocca la posizione dello schermo nell'applicazione OsmAnd. Questa funzione non è supportata su iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*solo Android*). Apre il menu di controllo dello schermo, dove è possibile selezionare le opzioni per lo schermo del dispositivo durante la navigazione per risparmiare il consumo della batteria del dispositivo.  
@@ -154,13 +156,13 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 <TabItem value="android" label="Android">
 
-![Impostazioni Generali Profili Unità e formati Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Impostazioni Generali Profili Unità e formati Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Impostazioni Generali Profili Unità e formati iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Impostazioni Generali Profili Unità e formati iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,6 +217,8 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
 |  |  |  |
+| **Unità di altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Esempio: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Esempio: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Esempio: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -255,7 +259,7 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Impostazioni Generali Profili Altro Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Impostazioni Generali Profili Altro Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,11 @@ La sezione **Altro** fornisce impostazioni di profilo aggiuntive per personalizz
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*solo Android*) – Smussa la rotazione della mappa con un [movimento graduale](https://en.wikipedia.org/wiki/Kalman_filter), riducendo gli spostamenti improvvisi di posizione. Questo introduce un piccolo ritardo (*meno di 1 secondo*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*solo Android*) – Utilizza il [sensore magnetico](https://en.wikipedia.org/wiki/Kalman_filter) del tuo dispositivo per stabilizzare la rotazione della mappa, riducendo i cambiamenti improvvisi. Anche questo introduce un leggero ritardo.
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*solo Android*) – Utilizza il [sensore magnetico](https://en.wikipedia.org/wiki/Kalman_filter) del tuo dispositivo per stabilizzare la rotazione della mappa, riducendo i cambiamenti improvvisi. Anche questo introduce un leggero ritardo.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*solo Android*) – Tocca uno spazio vuoto sulla mappa per nascondere i pulsanti di controllo e i widget, massimizzando la visibilità della mappa.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*solo Android*) – Disabilita le animazioni in modalità navigazione per transizioni dello schermo più veloci.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*solo Android*) – Disabilita le animazioni in modalità navigazione per transizioni dello schermo più veloci.
 
 
 
@@ -603,7 +607,7 @@ Azioni con il profilo selezionato:
 
 - **Copia da un altro profilo** - Copia tutte le impostazioni da un altro profilo esistente nella tua applicazione OsmAnd.
 
-- **Ripristina predefinito** - Riporta tutte le impostazioni allo stato iniziale.
+- **Reimposta predefinito** - Riporta tutte le impostazioni allo stato iniziale.
 
 - **Elimina profilo**:
     - Questa azione è disponibile solo per *Android* e solo per un *profilo personalizzato*.

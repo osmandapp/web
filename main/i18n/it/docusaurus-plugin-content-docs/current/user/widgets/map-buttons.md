@@ -1,8 +1,9 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title:  Pulsanti della Mappa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -152,7 +152,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 </Tabs>  
 
 - *<Translate android="true" ids="shared_string_hidden"/>*. Se questa modalità è selezionata per un pulsante, è necessario utilizzare un gesto per modificare la visualizzazione della mappa. Tocca la mappa con due dita e muovile su e giù per regolare l'inclinazione della mappa.  
-- *<Translate androids="true" ids="shared_string_visible"/>*. Il pulsante è sempre visualizzato sulla schermata della mappa.
+- *<Translate android="true" ids="shared_string_visible"/>*. Il pulsante è sempre visualizzato sulla schermata della mappa.
 - *<Translate android="true" ids="visible_in_3d_mode"/>*. Il pulsante viene visualizzato sulla schermata della mappa quando si modifica la visualizzazione della mappa con un gesto [*due dita e sposta*](../map/interact-with-map.md#gestures).  
 
 ### Impostazioni aggiuntive {#additional-settings}

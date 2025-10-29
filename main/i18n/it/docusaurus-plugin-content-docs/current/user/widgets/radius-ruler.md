@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Righello del raggio e Righello
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,14 +69,14 @@ Questo strumento è utile quando si ha bisogno di una rapida comprensione delle 
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Mostra posizione Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Mostra posizione Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Mostra posizione Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Mostra posizione Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ Il [Widget Righello del raggio](../widgets/info-widgets.md#radius-ruler) mostra 
 - Visualizza cerchi concentrici centrati sul punto selezionato.
 - Il primo cerchio riflette la [scala della mappa](#ruler) attuale per un rapido riferimento visivo.
 - Si regola automaticamente durante lo zoom per mantenere valori di raggio accurati.
+- Tocca sul widget per passare tra tre modalità di visualizzazione: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, e <Translate android="true" ids="dark_theme"/>.
+- Tocca a lungo per aprire il menu contestuale del widget con opzioni aggiuntive.
+- Le impostazioni del widget includono due parametri regolabili: *<Translate android="true" ids="shared_string_height"/>* — controlla l'altezza visiva del widget sullo schermo; *<Translate android="true" ids="shared_string_show_icon"/>* — attiva/disattiva la visibilità dell'icona del widget.
 
 Usa questo widget per stimare la prossimità a punti di interesse o per pianificare attorno a un'area definita.
 
@@ -119,33 +122,33 @@ Usa questo widget per stimare la prossimità a punti di interesse o per pianific
 
 <TabItem value="android" label="Android">
 
-![Righello bussola](@site/static/img/widgets/compass_ruler_andr.png)
+![Bussola righello](@site/static/img/widgets/compass_ruler_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Righello bussola](@site/static/img/widgets/compass_ruler_ios.png)
+![Bussola righello](@site/static/img/widgets/compass_ruler_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Quando il **Righello del raggio** è attivo, la mappa visualizza una sovrapposizione della bussola per aiutarti a orientarti nello spazio. La sovrapposizione mostra come la mappa è allineata rispetto al Nord geografico e può includere un triangolo blu che indica la direzione attuale del dispositivo.
+Quando il **Righello del raggio** è attivo, la mappa visualizza una sovrapposizione della bussola per aiutarti a orientarti nello spazio. La sovrapposizione mostra come la mappa è allineata rispetto al Nord vero e può includere un triangolo blu che indica la direzione attuale del dispositivo.
 
 - L'anello della bussola mostra l'orientamento della mappa — se il Nord è in alto o ruotato.
 - Un **triangolo blu** indica la direzione in cui è rivolto il tuo dispositivo.
 - Per utilizzare questa funzione, il dispositivo deve supportare e abilitare un **sensore bussola** (bussola GPS, magnetometro).
 - Tenere il dispositivo in posizione orizzontale migliora la precisione e la visualizzazione.
-- Se il **triangolo blu** e la **freccia rossa** (Nord) puntano entrambi verso l'alto, il dispositivo è allineato al Nord geografico.
+- Se il **triangolo blu** e la **freccia rossa** (Nord) puntano entrambi verso l'alto, il dispositivo è allineato al Nord vero.
 
-Questa sovrapposizione è utile per la navigazione all'aperto, consentendoti di abbinare l'[orientamento della mappa](../map/interact-with-map.md#map-orientation-modes) con l'ambiente reale.
+Questa sovrapposizione è utile per la navigazione all'aperto, consentendoti di abbinare l'[orientamento della mappa](../map/interact-with-map.md#map-orientation-modes) con l'ambiente reale.  
 
 | | |
 |------------|------------|
 | Abilita | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>* |
-| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Posizione Centrale / Inferiore {#center--bottom-position}
@@ -170,7 +173,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 </Tabs>
 
-Per aumentare il raggio visibile intorno alla tua posizione, puoi cambiare la posizione del Righello del raggio selezionando l'opzione *Centrale* o *Inferiore*.
+Per aumentare il raggio visibile intorno alla tua posizione, puoi cambiare la posizione del Righello del raggio selezionando l'opzione *Centrale* o *Inferiore*.  
 
 Per maggiori informazioni sulla *posizione sulla schermata*, consulta l'articolo [Configura Schermata](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,23 +206,39 @@ I cerchi del raggio appariranno con profondità, il che è particolarmente utile
 
 ## Distanza tramite tocco {#distance-by-tap}
 
-![Distanza tra due punti casuali sulla mappa](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distanza tramite tocco Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distanza tramite tocco iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Lo strumento **Distanza tramite tocco** ti permette di misurare le distanze tra punti sulla mappa senza usare il Righello del raggio o creare un percorso.
 
 Ci sono due casi d'uso:
 
-- **Distanza dalla tua posizione a un punto**
+- **Distanza dalla tua posizione a un punto**  
   Tocca un punto qualsiasi sulla mappa e apparirà una linea retta dalla tua posizione attuale al punto toccato, insieme a un'etichetta con la distanza. La linea rimane sullo schermo anche se tocchi altrove.
 
-- **Distanza tra due punti qualsiasi**
+- **Distanza tra due punti qualsiasi**  
   Tocca due punti sulla mappa contemporaneamente (multi-touch). Una linea collega i due punti e viene visualizzata la distanza misurata.
+
+Puoi anche regolare la dimensione del testo dell'etichetta della distanza. Scegli tra *<Translate android="true" ids="shared_string_normal"/>* (predefinito) e *<Translate android="true" ids="shared_string_large"/>* (1,5× più grande). Quando è selezionata l'opzione Grande, viene aggiunto automaticamente uno spazio extra tra la linea e l'etichetta per una migliore leggibilità. Le modifiche vengono applicate istantaneamente senza riavviare l'app.
 
 | | |
 |------------|------------|
 | Abilita |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Dimensione testo (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Dimensione testo | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Formato unità | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

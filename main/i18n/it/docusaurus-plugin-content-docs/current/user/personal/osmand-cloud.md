@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -311,6 +311,8 @@ In questo menu, puoi selezionare quali dati e cartelle caricare sul Cloud:
 
 Tutte le [mappe](../start-with/download-maps.md) sono memorizzate sul dispositivo su cui sono state precedentemente scaricate. OsmAnd Cloud memorizza solo le informazioni su quali mappe possiedi e la data dell'ultima modifica.
 
+Disabilitare il backup per un tipo di dati specifico interrompe semplicemente la sincronizzazione con il Cloud. I tuoi dati esistenti rimangono memorizzati e possono essere sottoposti a backup nuovamente in seguito se necessario.
+
 
 ### Gestisci archivio {#manage-storage}
 
@@ -334,7 +336,9 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 </Tabs>
 
-La sezione del menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) mostra informazioni su quanti dei 3,15 gigabyte di memoria in *Impostazioni*, *I miei luoghi* e *Risorse* sono in uso. Puoi eliminare le modifiche a tipi di dati separati da OsmAnd Cloud, ma in questo caso, l'azione non può essere annullata.
+La sezione del menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) mostra informazioni su quanti dei 3,15 gigabyte di memoria in *Impostazioni*, *I miei luoghi* e *Risorse* sono in uso. Puoi visualizzare la dimensione di archiviazione di ciascun tipo di dati ed eliminarlo da OsmAnd Cloud se necessario.
+
+Eliminare i dati dal Cloud non influisce sul loro stato di backup o sulle copie locali sul tuo dispositivo. Tutti gli elementi rimossi rimangono disponibili nel Cestino per 30 giorni e possono essere ripristinati durante quel periodo.
 
 
 ### Account {#account}
@@ -467,8 +471,8 @@ Un **conflitto** si verifica quando la **versione locale** e la **versione Cloud
 - Toccando un file nella cartella **Conflitti** vengono visualizzati i dettagli sulle versioni **Locale** e **Cloud**, inclusi gli orari dell'ultima modifica e dell'ultimo caricamento.
 
 - Puoi scegliere una delle seguenti azioni:
-  - **Carica versione locale** – Sostituisce la versione Cloud con il file locale.
-  - **Scarica versione Cloud** – Sostituisce il file locale con la versione Cloud.
+  - **Carica Versione Locale** – Sostituisce la versione Cloud con il file locale.
+  - **Scarica Versione Cloud** – Sostituisce il file locale con la versione Cloud.
 
 
 <!--

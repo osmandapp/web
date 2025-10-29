@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Aspetto della traccia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -52,7 +52,7 @@ La funzione **Aspetto della traccia** consente agli utenti di personalizzare la 
 ### Colore {#color}
 
 :::tip acquisti
-Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. Funzionalità gratuite e a pagamento per <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
+Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funzionalità gratuite e a pagamento.
 :::
 
 ![Aspetto](@site/static/img/map/appearance_color_andr.png)
@@ -61,11 +61,29 @@ Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. Funzionalit
 
 **Opzioni di colore disponibili:**
 
-- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Menu traccia Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
-- [Funzionalità Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+![Menu traccia Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu contestuale Colorazione iOS](@site/static/img/map/colorisation_ios.png)
+
+La **lista di Colorazione** si apre come un menu contestuale. Gli elementi possono apparire in tre stati: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Può essere applicata alla traccia corrente.
+2. <Translate ios="true" ids="weather_update_disabled"/>. La traccia manca dei dati richiesti.
+3. PRO. Disponibile per la traccia corrente ma richiede un abbonamento; toccando si apre la schermata [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).   
+- [Funzionalità Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata della mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colori](../../personal/color-palette-schemes.md#routes).
 
@@ -91,9 +109,23 @@ Regolare la larghezza della traccia per migliorare la visibilità sulla mappa.
 
 ### Intervallo di divisione {#split-interval}
 
-![Menu traccia Aspetto Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Selezionare se dividere l'intervallo sulla traccia **per distanza o per tempo**.
+<TabItem value="android" label="Android">
+
+![Menu traccia Aspetto Intervallo di divisione Android](@site/static/img/map/split_interval_android.png)  ![Intervallo di divisione Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu traccia Aspetto Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervallo di divisione](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Selezionare se dividere la traccia in intervalli per **distanza**, **tempo** o **salita/discesa** (Android), o per **distanza** o **tempo** (iOS). Per visualizzare statistiche dettagliate per intervallo, vedere [Analizza per intervalli](../../map/tracks/track-context-menu.md#analyze-by-intervals) (solo Android).
+
 
 ### Frecce di direzione {#direction-arrows}
 
