@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -52,7 +52,7 @@ Puede modificar la apariencia de la pista utilizando uno de los siguientes méto
 ### Color {#color}
 
 :::tip purchases
-Algunos ajustes solo se pueden usar con *OsmAnd Pro*. Funciones gratuitas y de pago para <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
+Algunos ajustes solo se pueden usar con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funciones gratuitas y de pago.
 :::
 
 ![Apariencia](@site/static/img/map/appearance_color_andr.png)
@@ -61,11 +61,29 @@ Puede establecer el color de la pista manualmente o usar la **visualización de 
 
 **Opciones de color disponibles:**
 
-- **Ajustes gratuitos**: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Menú de pista Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
-- [Función Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+![Menú de pista Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menú contextual de coloreado iOS](@site/static/img/map/colorisation_ios.png)
+
+La lista de **Coloreado** se abre como un menú contextual. Los elementos pueden aparecer en tres estados: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Se puede aplicar a la pista actual.
+2. <Translate ios="true" ids="weather_update_disabled"/>. A la pista le faltan los datos requeridos.
+3. PRO. Disponible para la pista actual pero requiere una suscripción; al tocar se abre la pantalla [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Ajustes gratuitos**: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).   
+- [Función Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Para más detalles sobre la personalización de la apariencia de la línea de ruta, consulte [Pantalla de mapa durante la navegación](../../navigation/guidance/map-during-navigation.md#color) y sobre la selección y creación de un color personalizado, consulte [Esquemas de color](../../personal/color-palette-schemes.md#routes).
 
@@ -91,9 +109,23 @@ Ajuste el ancho de la pista para mejorar la visibilidad en el mapa.
 
 ### Intervalo de división {#split-interval}
 
-![Menú de pista Apariencia Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Seleccione si desea dividir el intervalo en la pista **por distancia o por tiempo**.
+<TabItem value="android" label="Android">
+
+![Menú de pista Apariencia Intervalo de división Android](@site/static/img/map/split_interval_android.png)  ![Intervalo de división Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menú de pista Apariencia Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de división](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Seleccione si desea dividir la pista en intervalos por **distancia**, **tiempo** o **subida/bajada** (Android), o por **distancia** o **tiempo** (iOS). Para ver estadísticas detalladas por intervalo, consulte [Analizar por intervalos](../../map/tracks/track-context-menu.md#analyze-by-intervals) (solo Android).
+
 
 ### Flechas de dirección {#direction-arrows}
 

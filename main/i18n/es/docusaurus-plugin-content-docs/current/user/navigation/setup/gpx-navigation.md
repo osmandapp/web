@@ -1,8 +1,9 @@
 ---
-source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
+source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
 sidebar_position: 2
 title:  Navegar por Pista
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
-La opción *Navegación por pista* (GPX) le permite seguir una ruta o pista predefinida en un mapa. Puede ser particularmente útil para actividades al aire libre como senderismo, ciclismo o conducción todoterreno, donde tener una ruta planificada mejora la seguridad y la eficiencia. Si viaja en un grupo organizado, esta función le ayuda a usted y a cada miembro del grupo a tener la misma información de ruta que los demás.
+La opción *Navegación por pista* (GPX) le permite seguir una ruta o pista predefinida en un mapa. Puede ser particularmente útil para actividades al aire libre como senderismo, ciclismo o conducción todoterreno, donde tener una ruta planificada mejora la seguridad y la eficiencia. Si viaja en un grupo organizado, esta función le ayuda a usted y a cada miembro del grupo a tener la misma información de ruta que los demás.  
 
-La opción *Navegación por pista* también se puede utilizar en la vida cotidiana. Puede usar una [pista grabada](../../plugins/trip-recording.md) previamente o [crear una pista](../../personal/tracks/manage-tracks.md#create-a-track) y compartirla con su familia o amigos en lugar de explicarles la ruta. También puede usar las [rutas en el mapa de OsmAnd](../../../../blog/routes/) para la navegación. Cómo resaltarlas en el mapa y qué significan sus colores se describe en la [sección Rutas](../../map/vector-maps.md#routes) del artículo *Mapas vectoriales*.
+La opción *Navegación por pista* también se puede utilizar en la vida cotidiana. Puede usar una [pista grabada](../../plugins/trip-recording.md) previamente o [crear una pista](../../personal/tracks/manage-tracks.md#create-a-track) y compartirla con su familia o amigos en lugar de explicarles la ruta. También puede usar las [rutas en el mapa de OsmAnd](../../../../blog/routes/) para la navegación. Cómo resaltarlas en el mapa y qué significan sus colores se describe en la [sección Rutas](../../map/vector-maps.md#routes) del artículo *Mapas vectoriales*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -40,12 +40,12 @@ La opción *Navegación por pista* también se puede utilizar en la vida cotidia
 
 ## Seleccionar la Pista {#select-the-track}
 
-Antes de utilizar la opción *Navegación por pista*, debe [mostrar la pista en el mapa](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd admite pistas como una línea (**Geometría**) y pistas como una ruta (**Ruta**) o una combinación de ambas (**OsmAnd** mediante [Planificar ruta](../../plan-route/create-route.md)). Si tiene una pista como una colección de **Puntos de ruta**, puede usar la [Navegación por marcadores](./markers-navigation.md).
+Antes de utilizar la opción *Navegación por pista*, debe [mostrar la pista en el mapa](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd admite pistas como una línea (**Geometría**) y pistas como una ruta (**Ruta**) o una combinación de ambas (**OsmAnd** mediante [Planificar ruta](../../plan-route/create-route.md)). Si tiene una pista como una colección **Puntos de ruta**, puede usar la [Navegación por marcadores](./markers-navigation.md).
 
 
 - La pista de **Geometría** tendrá una navegación muy básica por defecto y no proporcionará giros precisos, nombres de calles ni carriles de giro. Para obtener la información que falta, debe utilizar la herramienta [Ajustar a las carreteras](#attach-to-the-roads).
 
-- La pista de **Ruta** calculará la ruta entre los puntos de la ruta según el perfil seleccionado. Básicamente, todos los puntos de la ruta se considerarán puntos intermedios. Si su ruta consta de más de 50 puntos, es muy probable que sea una pista de **Geometría** mal configurada.
+- La pista de **Ruta** calculará la ruta entre los puntos de la ruta según el perfil seleccionado. Básicamente, todos los puntos de la ruta se considerarán como puntos intermedios. Si su ruta consta de > 50 puntos, es muy probable que sea una pista de **Geometría** mal configurada.
 
 - La pista de **OsmAnd** consta de partes de geometría y de ruta, y es adecuada para proporcionar exactamente la misma guía que la navegación por defecto. Estas pistas son producidas por [Planificar ruta](../../plan-route/create-route.md) o la [Versión web](../../web/index.md). Es posible volver a guardar esta pista como una pista de solo **Geometría** como [**Simplificada**](../../plan-route/create-route.md#save-route) para ser utilizada en programas de terceros.
 
@@ -70,9 +70,9 @@ Antes de utilizar la opción *Navegación por pista*, debe [mostrar la pista en 
 
 La navegación en una pista se puede iniciar utilizando el botón de acción rápida en el [menú contextual de la pista](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (se abre seleccionando una de las [pistas resaltadas](./route-navigation.md#history-of-previous-routes) en el mapa, o tocando un archivo de pista en la sección [Mis Lugares](../../personal/myplaces.md) del *Menú Principal*) o desde el menú de navegación, que se abre tocando:
 
-- [*Botón de Navegación*](../../widgets/map-buttons.md#directions) en la pantalla del mapa.
+- [*Botón de Navegación*](../../widgets/map-buttons.md#directions) en la pantalla del mapa.  
 - *Sección de Navegación* en el *Menú Principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- En el [*Menú de navegación*](./route-navigation.md#navigation-menu) vaya a *<Translate android="true" ids="shared_string_settings,follow_track"/>*.
+- En el [*Menú de navegación*](./route-navigation.md#navigation-menu) vaya a *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
 ### Elegir Segmentos {#choose-segments}
 
@@ -128,6 +128,38 @@ al *<Translate android="true" ids="start_of_the_track"/>* o al *<Translate andro
 - Elija el **Tipo de navegación** para el primer y último segmento: ya sea construir una [*línea recta*](../routing/straight-line-routing.md) o usar el [*tipo de enrutamiento*](../routing/osmand-routing.md#routing-types) del perfil actual.
 
 
+### Invertir la Dirección de la Pista {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Modo inverso](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Navegar a](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+La opción **Invertir la dirección de la pista** le permite navegar una pista GPX guardada en la dirección opuesta — desde el punto final de vuelta al inicio. Cuando esta configuración está activada, el algoritmo de navegación invierte automáticamente la geometría GPX y recalcula las direcciones en consecuencia. Una vez habilitada, el parámetro **Modo inverso** se hace disponible:
+
+- **Calcular ruta**. Recomendado para perfiles de coche y bicicleta. Se recalcula una nueva ruta optimizada a lo largo de la pista GPX invertida según el perfil de navegación seleccionado. Se observan las normas de tráfico como calles de un solo sentido y restricciones de giro para garantizar una navegación segura.
+- **Pista original**. Se sigue estrictamente la línea GPX en orden inverso sin recalcular la ruta. Este modo es útil para caminar, senderismo o navegación todoterreno donde no se aplican las normas de tráfico.
+
+Cuando se habilita la dirección inversa, los puntos de inicio y fin de la pista se intercambian automáticamente, y la navegación se construye desde la posición actual o más cercana en la pista invertida. La opción *Punto de la pista para navegar = Punto más cercano* se refiere al punto más cercano en la línea GPX invertida, y tanto la guía de voz como la función Ajustar a las carreteras funcionan de la misma manera que durante la navegación hacia adelante.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navegar a iOS](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+La opción **Invertir la dirección de la pista** permite navegar una pista GPX guardada en la dirección opuesta — desde su punto final de vuelta al inicio. Cuando esta configuración está habilitada, la geometría de la pista se invierte automáticamente y la ruta se recalcula según el perfil de navegación seleccionado.
+
+Los puntos de inicio y fin de la pista se intercambian, y la navegación se construye desde la posición actual o más cercana en la línea invertida. La opción *Navegar a = Punto más cercano* se refiere al punto más cercano en la pista GPX invertida.
+
+Se recalcula una nueva ruta optimizada a lo largo de la pista invertida teniendo en cuenta completamente las normas de tráfico como calles de un solo sentido y restricciones de giro. La guía de voz, las instrucciones visuales y la función Ajustar a las carreteras operan como en la navegación hacia adelante estándar, garantizando un enrutamiento preciso y seguro.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Ajustar a las carreteras {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -150,7 +182,7 @@ La función **Ajustar a las carreteras** alinea su pista con la carretera más c
 
 ***Cómo funciona:***
 
-- OsmAnd hace coincidir cada punto de la pista con la **carretera más cercana** dentro de la **distancia umbral** establecida (por defecto: **50 metros**).
+- OsmAnd hace coincidir cada punto de la pista con la **carretera más cercana** dentro de la **distancia umbral** establecida (por defecto: **50 metros**).  
 - La **distancia umbral** define la distancia máxima permitida entre un punto de la pista GPS y una carretera para el ajuste.
 - **Reajuste automático** — Al cambiar de **perfil de navegación**, OsmAnd reajusta automáticamente la pista a las carreteras que son adecuadas para el nuevo perfil.
 - Para pistas grandes con muchos puntos, el proceso de ajuste puede tardar un poco más. Verá un **indicador de progreso** (*línea de estado naranja*) que muestra el estado del ajuste.
@@ -171,9 +203,9 @@ Por defecto, la función **Ajustar a las carreteras** se ejecuta **automáticame
 
 ### Punto de Inicio / Fin {#start--finish-point}
 
-Puede especificar el punto de inicio y fin de una ruta que no sea el inicio/fin especificado en el archivo GPX. Simplemente cámbielo de la misma manera que lo hace para la [Navegación](../setup/route-navigation.md#select-starting-point).
+Puede especificar el punto de inicio y fin de una ruta que no sea el inicio/fin especificado en el archivo GPX. Simplemente cámbielo de la misma manera que lo hace para la [Navegación](../setup/route-navigation.md#select-start-point).
 
-En el [menú Seguir pista](#follow-track-options), puede elegir si desea navegar desde su ubicación actual hasta el punto de inicio de la pista o hasta el punto más cercano en la pista GPX. Además, puede elegir el [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) que se utilizará para el segmento de inicio y fin de su ruta.
+En el [menú Seguir pista](#follow-track-options), puede elegir si desea navegar desde su ubicación actual hasta el punto de inicio de la pista o hasta el punto más cercano en la pista GPX.  Además, puede elegir el [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) que se utilizará para el segmento de inicio y fin de su ruta.  
 
 ### Puntos de ruta {#waypoints}
 
@@ -185,9 +217,9 @@ Al preparar o navegar por una pista GPX, no puede agregar lugares intermedios po
 
 ## Guía {#guidance}
 
-La *Navegación por pista GPX* contiene las mismas [instrucciones de voz](../guidance/voice-navigation.md) que la navegación por ruta. Sin embargo, algunos giros o rotondas pueden no interpretarse correctamente porque no hay información sobre las intersecciones de carreteras en GPX, excepto en los archivos GPX creados por OsmAnd. Para eliminar estos problemas, debe utilizar la función [Ajustar a las carreteras](#attach-to-the-roads).
+La *Navegación por pista GPX* contiene las mismas [instrucciones de voz](../guidance/voice-navigation.md) que la navegación por ruta. Sin embargo, algunos giros o rotondas pueden no interpretarse correctamente porque no hay información sobre las intersecciones de carreteras en GPX, excepto en los archivos GPX creados por OsmAnd. Para eliminar estos problemas, debe utilizar la función [Ajustar a las carreteras](#attach-to-the-roads).  
 
-Durante la navegación, puede usar varias opciones como acercar o alejar, desplazar el mapa o cambiar a un estilo de mapa diferente. Si se desvía de la pista, OsmAnd recalculará automáticamente la ruta para volver a encarrilarlo. También puede ajustar la velocidad de la pista y establecer alertas audibles para puntos que se aproximan o desviaciones de la ruta.
+Durante la navegación, puede usar varias opciones como acercar o alejar, desplazar el mapa o cambiar a un estilo de mapa diferente. Si se desvía de la pista, OsmAnd recalculará automáticamente la ruta para volver a encarrilarlo. También puede ajustar la velocidad de la pista y establecer alertas audibles para puntos que se aproximan o desviaciones de la ruta.  
 
 
 ## Artículos relacionados {#related-articles}

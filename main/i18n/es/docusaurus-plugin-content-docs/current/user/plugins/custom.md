@@ -1,8 +1,9 @@
 ---
-source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
+source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 sidebar_position: 4
 title:  Paquete Personalizado
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -303,7 +303,7 @@ NOTA: Comience a crear un perfil de navegación con todos los parámetros, para 
 ### Descargas {#downloads}
 
 Puede agregar cualquier archivo como *SQLite, OBF o fuentes* para descargar usando el tipo **"DOWNLOADS"**. Los principales tipos de archivos descargables se pueden encontrar [aquí](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>NOTA</u>*. La etiqueta **"isHidden":"true"** (por defecto es *false*) puede ocultar los datos de su mapa de [Mapas y Recursos](../personal/maps-resources.md#local) de OsmAnd.  En **"scope-id"** puede agregar toda la información necesaria sobre la URL, el nombre, la descripción de su archivo y más.  
+   *<u>NOTA</u>*. La etiqueta **"isHidden":"true"** (por defecto es *false*) puede ocultar los datos de su mapa de [Mapas y Recursos](../personal/maps-resources.md#local-menu) de OsmAnd.  En **"scope-id"** puede agregar toda la información necesaria sobre la URL, el nombre, la descripción de su archivo y más.  
 
    ![Paquete personalizado](@site/static/img/plugins/custom/3.jpg)
 

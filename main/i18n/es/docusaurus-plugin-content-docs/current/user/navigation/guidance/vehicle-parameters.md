@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
-title:  Parámetros del vehículo
+title:  Vehicle parameters
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen
@@ -97,6 +97,14 @@ Los parámetros del vehículo afectan a la navegación y a la construcción de l
 
 ![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+**5.** [**Límite de carga máxima por eje**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Proporcione la carga máxima por eje de su vehículo para evitar carreteras y puentes con restricciones de peso por eje. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
+
+![Ajustes de Navegación Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Peso máximo con carga completa**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Proporcione el peso total máximo de su vehículo cuando está completamente cargado para evitar carreteras y puentes con restricciones de peso general. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
+
+![Ajustes de Navegación Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Los límites de los parámetros del vehículo pueden ser importantes para la navegación y la seguridad vial. Algunas de estas restricciones pueden ser:  
 
@@ -195,7 +203,7 @@ La **Velocidad por defecto** es la velocidad de movimiento por defecto para este
 ![Ajustes de Navegación](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Para algunos tipos de navegación se puede establecer la velocidad mínima y máxima permitida. Si se establece, el motor de enrutamiento asume que el vehículo o el modo de transporte no se moverá más rápido que el límite y no se moverá más lento que la velocidad mínima. 
-Por ejemplo, permite crear una ruta de **bajo consumo** en la que el consumo de combustible es óptimo a la **velocidad máxima** establecida y el motor encontrará una ruta más corta evitando carreteras más largas pero más rápidas.
+Por ejemplo, permite crear una ruta **eficiente en combustible** en la que el consumo de combustible es óptimo a la **velocidad máxima** establecida y el motor encontrará una ruta más corta evitando carreteras más largas pero más rápidas.
 
 - **Velocidad mínima**  
     El ajuste establece la velocidad mínima de conducción para todos los tipos de carretera de la ruta. Aumenta la prioridad para las carreteras con una velocidad recomendada inferior a la velocidad mínima.  

@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Primeros Pasos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -491,7 +491,7 @@ Toque un icono de acción para iniciar inmediatamente la aplicación con la acci
 </Tabs>
 
 En el *Menú de Ayuda* puede encontrar artículos de nuestro sitio [www.osmand.net/docs](https://osmand.net/docs/intro/). Después de la descarga inicial (se requiere conexión a Internet), los artículos de ayuda están disponibles sin conexión.  
-La primera subsección, *Ayuda sin conexión* contiene los artículos **Más vistos** (o populares) entre nuestros usuarios. Las secciones **Guía de usuario** y **Solución de problemas** tienen la misma estructura que en el sitio web.  
+La primera subsección, *Ayuda sin conexión* contiene los artículos **Más vistos** (o populares) entre nuestros usuarios. Estos artículos se muestran en el idioma configurado para la aplicación, si este idioma está soportado en nuestro sitio web de documentación. Los idiomas soportados actualmente incluyen: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, y *<Translate android="true" ids="lang_uk"/>*. Si cambia el idioma de la aplicación, reinicie OsmAnd para que la documentación se abra en el idioma seleccionado. Cuando no hay una traducción disponible, se mostrará automáticamente la versión en inglés de la página. Las secciones **Guía de usuario** y **Solución de problemas** tienen la misma estructura que en el sitio web.  
 En el *Menú de Ayuda*, también puede encontrar enlaces útiles a las redes sociales de OsmAnd, información sobre la versión de su aplicación, notas de la versión y contactos de soporte. A través de Ayuda, también puede enviar [registros de logcat y de fallos](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menú {#menu}

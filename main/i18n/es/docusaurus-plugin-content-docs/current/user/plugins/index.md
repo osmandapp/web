@@ -1,8 +1,9 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Plugins
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -68,7 +68,7 @@ Los plugins de OsmAnd pueden aumentar estos grupos de características: **Capas*
 
 🤖 *- solo para la versión de Android de OsmAnd.*
 
-| Nombre del plugin | Características |
+| Nombre del plugin |Características |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Capa de mapa](../plugins/wikipedia.md#download-wikipedia-packages), [Menú contextual](../plugins/wikipedia.md#wikipedia-settings) |
 | [Mapas en línea](#online-maps) |[Capa de mapa](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -78,7 +78,7 @@ Los plugins de OsmAnd pueden aumentar estos grupos de características: **Capas*
 | [Tiempo](../plugins/weather.md) | [Capa de mapa](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Pantalla](../plugins/weather.md#weather-forecast-screen) |
 | [Vista de mapa náutico](#nautical-map-view) | [Estilo de mapa](../plugins/nautical-charts.md#nautical-map-style), [Perfil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vista de mapa de esquí](#ski-map-view) | [Estilo de mapa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Perfil](../plugins/ski-maps.md#skiing-profile) |
-|[Notas de audio/vídeo](#audiovideo-notes) 🤖  | [Capa de mapa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menú contextual](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Notas de audio/vídeo](#audiovideo-notes) 🤖  | [Capa de mapa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menú contextual](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[Edición de OpenStreetMap](#openstreetmap-editing)| [Capa de mapa](../plugins/osm-editing.md#authorization) |
 |[Posición de aparcamiento](#parking-position) | [Menú contextual](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Capa de mapa](../plugins/mapillary.md#map-layer), [Menú contextual](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
@@ -127,7 +127,7 @@ Los siguientes plugins proporcionan sus propios ajustes:
 |[Notas de audio/vídeo](#audiovideo-notes) 🤖  | Seleccionar [formato de vídeo, tiempo de almacenamiento, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[Edición de OpenStreetMap](#openstreetmap-editing)| Especificar el [inicio de sesión](../plugins/osm-editing.md#settings) del usuario |
 |  [Sensores externos](#external-sensors) 🤖  | Conectar a un dispositivo externo [Ajustes](../plugins/external-sensors.md#required-setup-parameters) |
-|  [Accesibilidad](#accessibility) 🤖  | Los [Ajustes](../plugins/accessibility.md#plugin-settings) le permiten usar las [características de Accesibilidad de Android](https://www.android.com/accessibility/) dentro de OsmAnd. |
+|  [Accesibilidad](#accessibility) 🤖  | Los [Ajustes](../plugins/accessibility.md#plugin-settings) le permiten usar las [características de accesibilidad de Android](https://www.android.com/accessibility/) dentro de OsmAnd. |
 | [Desarrollo de OsmAnd](#osmand-development) | Los [Ajustes del plugin](../plugins/development.md#plugin-settings) le permiten habilitar características especiales para desarrolladores o usuarios experimentados |
 |  [OsmAnd Tracker](#osmand-tracker) 🤖  | Todos los ajustes son configurables en una aplicación separada |
 | [Rastreador de embarcaciones AIS](#ais-vessel-tracker) | Los [Ajustes del plugin](../plugins/ais-tracker.md#plugin-settings) le permiten habilitar ajustes especiales |

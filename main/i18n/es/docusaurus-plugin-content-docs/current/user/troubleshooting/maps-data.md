@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Mapas y Datos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Mapas {#maps}
 
 ### ¿Por qué OsmAnd no ofrece acceso a Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
@@ -22,11 +22,11 @@ OsmAnd está diseñado para ser compatible con OpenStreetMap (OSM) y prioriza es
 
 ### Carga lenta de mapas en Android 11, 12 (tarjeta SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-Debido a las nuevas [reglas de acceso al almacenamiento introducidas en Android 11 y 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), los usuarios pueden experimentar un rendimiento más lento al acceder a los mapas almacenados en tarjetas SD. Estos cambios también pueden causar restricciones de visibilidad y acceso a los archivos en las carpetas de la tarjeta SD. Se pueden encontrar más discusiones y detalles técnicos en los siguientes enlaces: [Discusión en Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+Debido a las nuevas [reglas de acceso al almacenamiento introducidas en Android 11 y 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), los usuarios pueden experimentar un rendimiento más lento al acceder a los mapas almacenados en tarjetas SD. Estos cambios también pueden causar restricciones de visibilidad y acceso a los archivos en las carpetas de la tarjeta SD. Se pueden encontrar más discusiones y perspectivas técnicas en los siguientes enlaces: [Discusión en Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 En este momento, las siguientes soluciones están disponibles:
 
-#### 1. Migrar la carpeta de almacenamiento de datos de OsmAnd a la "Memoria interna de la aplicación" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrar la carpeta de almacenamiento de datos de OsmAnd a “Memoria interna de la aplicación” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Puede cambiar la carpeta de almacenamiento seleccionando la opción ***Memoria interna de la aplicación*** en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos*.
 
@@ -34,7 +34,7 @@ En este momento, las siguientes soluciones están disponibles:
 
 El equipo de desarrollo está buscando activamente soluciones más eficientes para mejorar el rendimiento de la tarjeta SD bajo las nuevas políticas de almacenamiento de Android.
 
-#### 2. Usar la carpeta "Download" de la tarjeta SD {#2-use-the-sd-cards-download-folder}
+#### 2. Usar la carpeta “Download” de la tarjeta SD {#2-use-the-sd-cards-download-folder}
 
 Puede intentar resolver el problema de la carga lenta de mapas especificando la carpeta **Download** de la tarjeta SD para el almacenamiento de OsmAnd en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Especificada manualmente*. Las siguientes rutas son posibles:
 
@@ -62,9 +62,9 @@ Sin embargo, OsmAnd no tiene el permiso de *Acceso a todos los archivos* (debido
 
 Una ruta correcta no provocará ningún error de permiso de escritura en OsmAnd. Antes de realizar estos cambios, asegúrese de que OsmAnd tenga los permisos de almacenamiento adecuados, incluido el permiso de almacenamiento "Multimedia", en los ajustes de **Aplicaciones** de Android. En versiones más recientes de Android, estos permisos pueden estar ubicados en menús avanzados u ocultos.
 
-### Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona "Almacenamiento multiusuario 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona “Almacenamiento multiusuario 1”) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-En la versión de Android de OsmAnd, seleccionar *Almacenamiento multiusuario 1* como ubicación de almacenamiento puede provocar la eliminación de todos los [mapas locales](../personal/maps-resources.md#local) cada vez que la aplicación se actualiza automáticamente, como de la versión 4.1.9 a la 4.1.10, 4.1.11 o posterior (**Android 11, 12**). Este problema está documentado en [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+En la versión de Android de OsmAnd, seleccionar *Almacenamiento multiusuario 1* como ubicación de almacenamiento puede provocar la eliminación de todos los [mapas locales](../personal/maps-resources.md#local-menu) cada vez que la aplicación se actualiza automáticamente, como de la versión 4.1.9 a la 4.1.10, 4.1.11 o posterior (**Android 11, 12**). Este problema está documentado en [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Para evitar perder los datos de sus mapas durante las actualizaciones, considere estas soluciones:
 

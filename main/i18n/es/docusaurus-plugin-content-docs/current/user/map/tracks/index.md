@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Pistas
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,14 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
-OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la [Navegación](../../navigation/index.md), crearse a través de [Planificar ruta](../../plan-route/index.md), importarse como pistas GPX, grabarse a través del [plugin de Grabación de viaje](../../plugins/trip-recording.md), o buscarse y seleccionarse a partir de los datos de OpenStreetMap.
+OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la [Navegación](../../navigation/index.md), crearse a través de [Planificar ruta](../../plan-route/index.md), importarse como pistas GPX, grabarse a través del [plugin de Grabación de viaje](../../plugins/trip-recording.md), o navegar y seleccionar a partir de los datos de OpenStreetMap.
 
 
 ## Tipos de Pistas {#types-of-tracks}
 
-[Pistas (GPX)](#display-tracks-on-the-map) - viaje grabado o planificado guardado en [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Este tipo de ruta puede importarse desde una fuente externa, crearse en la aplicación o ser grabada por usted. Un GPX puede contener uno de los 3 tipos diferentes de datos, o todos ellos:
+[Pistas (GPX)](#display-tracks-on-the-map) - viaje grabado o planificado guardado en [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Este tipo de ruta puede importarse desde una fuente externa, crearse en la aplicación o ser grabada por usted. Un GPX puede contener uno de los 3 tipos diferentes de datos, o todos ellos:
 
 - Pista como una línea (***Geometría***). El archivo tiene una matriz de puntos ```<trkpt>```, cada punto tiene la ubicación y opcionalmente tiempo, velocidad, altitud y otros atributos. Estas pistas se muestran en el mapa como líneas continuas.
 - Pista como una ruta (***Ruta***). El archivo tiene una matriz de puntos ```<rtept>```, cada punto descrito como un punto intermedio de la ruta. Depende de cómo se deban conectar los puntos dentro de una ruta, ya sea como pequeños segmentos de ruta o mediante una línea recta. Estas pistas se muestran en el mapa como líneas discontinuas.
@@ -135,6 +135,7 @@ Esta herramienta proporciona un análisis detallado de los datos de la [pista](.
 - **Datos del gráfico (eje Y)** muestra: *Altitud*, *Pendiente*, *Velocidad*, [*Datos de sensores externos*](../../plugins/external-sensors.md), y combinaciones de hasta dos opciones si están contenidas en los datos de la pista.
 - **Dimensión del gráfico (eje X)** representa: *Distancia*, *Tiempo* y *Hora del día*.
 - **Interacción de tocar/deslizar**. Toque un gráfico para mostrar información sobre un punto específico en la pista. Deslizar sobre el gráfico resalta la ubicación apropiada en el mapa y muestra detalles en la barra de información.
+- **Etiqueta de distancia**. Al tocar o deslizar a lo largo del gráfico, el tooltip también muestra la distancia exacta a lo largo de la pista. El valor sigue la configuración de unidades del perfil actual (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Úselo para estimar rápidamente qué tan lejos está un punto del inicio de la pista, o para calcular la distancia entre dos posiciones comparando sus valores.
 - **Escalado**. Use un [gesto con dos dedos](../../map/interact-with-map.md#gestures) para escalar el gráfico para una visualización más detallada.
 
 

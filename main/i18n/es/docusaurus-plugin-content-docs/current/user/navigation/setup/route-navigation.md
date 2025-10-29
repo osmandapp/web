@@ -1,8 +1,9 @@
 ---
-source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
+source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Preparación de la ruta
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Resumen {#overview}
 
@@ -122,10 +122,25 @@ Establezca su destino en el *Menú de navegación* usando:
 - El botón **Cancelar** lo lleva de regreso a la pantalla principal.
 - El [botón de inicio](#start--stop-navigation) inicia la navegación después de que finaliza el cálculo de la ruta.
   
-### Seleccionar punto de partida {#select-starting-point}
+### Seleccionar punto de partida {#select-start-point}
 
-En cuanto al punto de partida, puede elegir su ubicación actual, la ubicación de un [punto Favorito](../../map/point-layers-on-map.md#favorites), seleccionar un punto en el mapa o usar la [Búsqueda](../../search/index.md). También puede establecer un punto de partida en el [menú contextual del mapa](../../map/map-context-menu.md) seleccionando la función [Direcciones desde](../../map/map-context-menu.md#directions-to--from).  
+<Tabs groupId="operating-systems" queryString="current-os">
 
+<TabItem value="android" label="Android">
+
+![Seleccionar en el mapa](@site/static/img/navigation/route/select_on_map.png)
+
+En cuanto al punto de partida, puede elegir su ubicación actual, la ubicación de un [punto Favorito](../../map/point-layers-on-map.md#favorites), seleccionar un punto en el mapa o usar la [Búsqueda](../../search/index.md). Cuando selecciona un punto en el mapa, se abre un diálogo. El mapa se centra con un marcador, se muestran las coordenadas del centro del mapa y mueve el mapa bajo el marcador en lugar de tocar directamente en un lugar. Para confirmar, presione el botón *Seleccionar*. También puede establecer un punto de partida en el [menú contextual del mapa](../../map/map-context-menu.md) seleccionando la función [Direcciones desde](../../map/map-context-menu.md#directions-to--from).  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Seleccionar en el mapa iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+En cuanto al punto de partida, puede elegir su ubicación actual, la ubicación de un [punto Favorito](../../map/point-layers-on-map.md#favorites), seleccionar un punto en el mapa o usar la [Búsqueda](../../search/index.md). Al seleccionar un punto en el mapa, puede mover y hacer zoom en el mapa libremente, luego tocar en la ubicación deseada. Aparece una bandera en el lugar elegido. También puede establecer un punto de partida en el [menú contextual del mapa](../../map/map-context-menu.md) seleccionando la función [Direcciones desde](../../map/map-context-menu.md#directions-to--from). 
+</TabItem>
+
+</Tabs>
 
 ### Establecer punto de destino {#set-target-point}
 
@@ -134,24 +149,32 @@ En cuanto al punto de partida, puede elegir su ubicación actual, la ubicación 
 <TabItem value="android" label="Android">
 
 ![Menú de navegación Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+
+Lo más importante para iniciar la navegación es determinar su destino. El punto de destino se puede encontrar usando una función de [*Búsqueda*](../../search/index.md#overview), o simplemente en un mapa. También puede establecer el punto de destino en el [*Menú de navegación*](#navigation-menu):  
+
+- **<Translate android="true" ids="search_button"/>** - Abre [el menú de búsqueda](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Abre [el menú de búsqueda de direcciones](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Abre un diálogo donde el mapa se centra con un marcador. Se muestran las coordenadas del centro del mapa, mueve el mapa bajo el marcador y confirma la elección presionando *Seleccionar*.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Permite usar un [Favorito](../../personal/favorites.md) como destino.
+- **<Translate android="true" ids="shared_string_markers"/>** - Permite elegir uno de los [Marcadores de mapa](../../personal/markers.md) como punto de destino.
+- **Intercambiar punto de partida y destino** &nbsp;&#8595;&#8593; - Permite intercambiar los puntos de *Inicio* y *Fin*.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Menú de navegación iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
-</TabItem>
-
-</Tabs>
-
 Lo más importante para iniciar la navegación es determinar su destino. El punto de destino se puede encontrar usando una función de [*Búsqueda*](../../search/index.md#overview), o simplemente en un mapa. También puede establecer el punto de destino en el [*Menú de navegación*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Abre [el menú de búsqueda](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Abre [el menú de búsqueda de direcciones](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Abre el mapa para elegir un punto de destino tocando en el mapa.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Permite mover y hacer zoom en el mapa, luego tocar en la ubicación deseada. Aparece una bandera en el lugar elegido y marca el destino.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Permite usar un [Favorito](../../personal/favorites.md) como destino.
 - **<Translate android="true" ids="shared_string_markers"/>** - Permite elegir uno de los [Marcadores de mapa](../../personal/markers.md) como punto de destino.
 - **Intercambiar punto de partida y destino** &nbsp;&#8595;&#8593; - Permite intercambiar los puntos de *Inicio* y *Fin*.
+</TabItem>
+
+</Tabs>
 
 
 ### Destinos intermedios {#intermediate-destinations}
@@ -191,7 +214,7 @@ Si elige **Ordenar** (*Android*) u **Opciones** (*iOS*) en la lista de destinos,
 
 <TabItem value="ios" label="iOS">
 
-![Intermedio de navegación iOS 3](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
+![Intermedio de navegación iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
 
 </TabItem>
 
@@ -205,7 +228,7 @@ En este menú puede encontrar opciones adicionales para gestionar los puntos de 
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Solo Android*) - Todos los puntos se pondrán en la dirección inversa.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Puede añadir destinos intermedios desde este menú.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Puede añadir destinos intermedios desde este menú. El proceso de selección de un destino intermedio en el mapa es el mismo que para los puntos de partida y destino.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Todos los destinos intermedios se eliminarán del mapa.
 
@@ -283,7 +306,7 @@ Una vez que se seleccionan los puntos de inicio y fin, la aplicación creará un
 - **Detener** la navegación seleccionando **Detener** (*Android*) o **Cancelar** (*iOS*).
 
 :::note Detalles de la ruta
-Se puede encontrar información adicional sobre la ruta creada, como altitud, instrucciones paso a paso, herramienta de análisis y otros, en la sección [**Detalles**](../setup/route-details.md).
+Información adicional sobre la ruta creada, como altitud, instrucciones paso a paso, herramienta de análisis y otros, se puede encontrar en la sección [**Detalles**](../setup/route-details.md).
 :::
 
 ### Recálculo de ruta {#route-recalculation}

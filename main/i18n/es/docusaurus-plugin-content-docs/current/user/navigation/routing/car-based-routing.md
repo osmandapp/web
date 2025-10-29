@@ -1,8 +1,9 @@
 ---
-source-hash: c8f39d23c520f3d8eb8713729cf8047052d90c32210529157c5a7347608706bb
+source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
 sidebar_position: 2
 title:  Rutas para coche (Camión, Motocicleta)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,25 +14,24 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Resumen {#overview}
 
 La ruta para coches está diseñada para ayudar a los conductores a navegar por las carreteras de manera eficiente, segura y cómoda, proporcionando indicaciones personalizadas adaptadas a las necesidades y preferencias únicas de cada conductor. Una configuración de ruta adecuada puede ayudar a los conductores a ahorrar tiempo y combustible, y a evitar peligros en la carretera. Por defecto, se ofrece la ruta más rápida.
 
 :::info
-El mecanismo de enrutamiento para vehículos terrestres motorizados difiere solo en algunas configuraciones. Los parámetros comunes se describen en la sección [Coche](#route-parameters---car) de este artículo. [Camión](#route-parameters---truck) y [Motocicleta](#route-parameters---motorcycle) tienen sus propias particularidades.
+El mecanismo de enrutamiento para vehículos terrestres motorizados difiere solo en algunas configuraciones. Los parámetros comunes se describen en la sección [Coche](#route-parameters---car) de este artículo. [Camión](#route-parameters---truck) y [Motocicleta](#route-parameters---motorcycle) tienen sus propias particularidades.  
 :::
 
-La ruta se puede configurar según sus necesidades en la sección [Parámetros de ruta](../../navigation/guidance/navigation-settings.md#route-parameters) de los Ajustes de navegación del perfil correspondiente (*Conducción, Camión, Motocicleta*).
+La ruta se puede configurar según sus necesidades en la sección [Parámetros de ruta](../../navigation/guidance/navigation-settings.md#route-parameters) de los Ajustes de navegación del perfil correspondiente (*Conducción, Camión, Motocicleta*).  
 
 
 ## Parámetros de ruta - Coche {#route-parameters---car}
 
-La ruta para coches está diseñada para ayudar a los conductores a encontrar las rutas más eficientes y directas a sus destinos. Tiene en cuenta las restricciones de conducción comunes, como calles de un solo sentido, prohibición de giros, zonas peatonales, y también ayuda a evitar carreteras que no son adecuadas para coches, como carreteras estrechas o carreteras con limitaciones de peso.
+La ruta para coches está diseñada para ayudar a los conductores a encontrar las rutas más eficientes y directas a sus destinos. Tiene en cuenta las restricciones de conducción comunes, como calles de un solo sentido, prohibición de giros, zonas peatonales, y también ayuda a evitar carreteras que no son adecuadas para coches, como carreteras estrechas o carreteras con limitaciones de peso.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -64,11 +64,11 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 Por defecto, el *perfil de Camión* está desactivado. Para utilizar este perfil para el enrutamiento, debe activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-La ruta para camiones es similar a la ruta para coches, pero está diseñada específicamente para conductores de vehículos comerciales grandes. Considera factores adicionales como las restricciones de [altura, peso y anchura del vehículo](../guidance/vehicle-parameters.md#size-parameters) y la posibilidad de transportar materiales peligrosos (consulte la tabla siguiente). Todos los demás ajustes de ruta son idénticos a los de la [ruta para coches](#route-parameters---car).
+La ruta para camiones es similar a la ruta para coches, pero está diseñada específicamente para conductores de vehículos comerciales grandes. Considera factores adicionales como las restricciones de [altura, anchura, peso, carga máxima por eje y peso máximo con carga completa del vehículo](../guidance/vehicle-parameters.md#size-parameters) y la posibilidad de transportar materiales peligrosos (consulte la tabla siguiente). Todos los demás ajustes de ruta son idénticos a los de la [ruta para coches](#route-parameters---car).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 

@@ -1,8 +1,9 @@
 ---
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
+source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
 sidebar_position: 5
 title:  Mapas vectoriales (Estilos de mapa)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Vista general {#overview}
 
 Los mapas vectoriales están pensados para ser utilizados como la fuente de datos de mapa por defecto para OsmAnd, por lo que **necesitas descargarlos en tu dispositivo**. Los mapas vectoriales admiten un gran número de estilos de mapa para diferentes actividades como ciclismo, senderismo, conducción en coche o moto de nieve, y otras.  
 
 Cada estilo de mapa se puede personalizar para resaltar u ocultar objetos específicos, y para cambiar entre los modos diurno y nocturno. Los datos de los mapas vectoriales se pueden aumentar con datos vectoriales y mostrarse en el estilo de mapa por defecto, como la información de *Líneas de nivel*. Puedes *crear tu propio estilo de mapa de OsmAnd* para mostrar la información requerida.
+
+Los mapas vectoriales representan datos espaciales, como carreteras, edificios, puntos y polígonos, utilizando geometría matemática almacenada en formato binario. Cada elemento (nodo, línea o polígono) se define por coordenadas y se renderiza dinámicamente según el nivel de zoom y el estilo de mapa.
+
+Dado que los datos vectoriales no se almacenan como imágenes fijas, su apariencia, incluyendo color, ancho de línea, transparencia o patrón, se puede modificar fácilmente. Este enfoque permite un renderizado eficiente, bajo uso de memoria y escalado suave en cualquier nivel de zoom sin pérdida de calidad.
+
+:::info note
+Los polígonos muy pequeños pueden simplificarse o distorsionarse durante la generación de datos de mapa. Los objetos con un área menor a aproximadamente un metro cuadrado podrían no mostrarse. Para una visualización correcta, las características pequeñas deben mapearse como nodos individuales en lugar de polígonos.
+:::
 
 
 ## Casos de uso {#use-cases}
@@ -42,7 +50,7 @@ OsmAnd te ofrece muchos estilos de mapa y capas de datos que se ajustan por defe
 
 El estilo de renderizado de mapa estándar de OsmAnd equilibra el detalle y la simplicidad, lo que lo hace ideal para la exploración urbana y al aire libre. Detalla características de la ciudad como calles, edificios y paradas de transporte, mientras que simplifica el desorden visual haciendo los mapas más claros.  
 
-Los beneficios clave incluyen el mapeo de rutas, la calidad de la superficie, las restricciones de acceso, la señalización vial, las representaciones de senderos a escala SAC y los detalles topográficos como las líneas de nivel.
+Los beneficios clave incluyen el mapeo de rutas, la calidad de la superficie, las restricciones de acceso, la señalización vial, las representaciones de senderos a escala SAC, las instalaciones deportivas y los detalles topográficos como las líneas de nivel.
 
 
 ### Vista de viaje {#touring-view}
@@ -69,7 +77,13 @@ Los estilos UniRS y LightRS son estilos de autor que representan la información
 
 ![Estilo de mapa náutico](@site/static/img/map/map-style-nautical.png)
 
-Este es un estilo de navegación náutica que presenta boyas, faros, rutas fluviales, rutas marítimas, marcas, puertos, marcas náuticas y curvas de nivel de profundidad. Lea más en el artículo [Vista de mapa náutico](../plugins/nautical-charts.md).
+Este es un estilo de navegación náutica que presenta boyas, faros, rutas fluviales, rutas marítimas, marcas, puertos y marcas náuticas. Lea más en la sección [Estilo de mapa náutico](../plugins/nautical-charts.md#nautical-map-style).
+
+### Marino {#marine}
+
+![Estilo de mapa marino](@site/static/img/map/map-style-marine.png)
+
+Este es un estilo de mapa náutico avanzado con sectores de luz, características completas de faros y otras características marítimas detalladas para una navegación marina realista y precisa. Para más detalles, lea la sección [Estilo de mapa marino](../plugins/nautical-charts.md#marine-map-style).
 
 ### Invierno y esquí {#winter-and-ski}
 
@@ -107,7 +121,7 @@ Diseñado para la navegación todoterreno, este estilo se basa en el diseño del
 
 ![Estilo de mapa de moto de nieve](@site/static/img/map/map-style-snowmobile.png)
 
-Diseñado para la navegación en moto de nieve, este estilo resalta los caminos, carreteras y pistas aptos para motos de nieve. Destaca los caminos especializados en regiones nevadas, ofreciendo una navegación clara a través de terrenos cubiertos de nieve donde las carreteras estándar pueden no estar disponibles.
+Adaptado para la navegación en moto de nieve, este estilo resalta los caminos, carreteras y pistas aptos para motos de nieve. Destaca los caminos especializados en regiones nevadas, ofreciendo una navegación clara a través de terrenos cubiertos de nieve donde las carreteras estándar pueden no estar disponibles. 
 
 
 ## Leyenda del mapa {#map-legend}
@@ -236,7 +250,13 @@ Ir a: *Menú → Configurar mapa → Mostrar → Cuadrícula de coordenadas*
 </Tabs>
 
 
-La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. Puedes seleccionar ***Ajustes de nivel de zoom:*** para mostrar entre 2 - 22, ***Posición de las etiquetas*** - **Bordes**/**Centro** y ***Color de la cuadrícula*** por separado para el modo Día/Noche.
+La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
+
+Puedes configurar las siguientes opciones:
+- **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (2 - 22) en los que se muestra la cuadrícula.
+- **Posición de las etiquetas:** elige entre *Bordes* (predeterminado) o *Centro* para las etiquetas de la cuadrícula.
+- **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. Personalizar el color de la cuadrícula es una función de pago.
+- **Formato de coordenadas:** selecciona de varios formatos disponibles (ver lista a continuación).
 
 
 ***Formatos de coordenadas disponibles:***
@@ -247,7 +267,9 @@ La función **Cuadrícula de coordenadas** superpone una cuadrícula de referenc
 - **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de cuadrícula basado en zonas). El nivel de zoom mínimo es 9, solo se muestra una zona UTM a la vez, ya que las zonas están separadas por meridianos cada 6°
 - **MGRS** (Sistema de Referencia de Cuadrícula Militar)
 
-Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats).
+Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats), pero puedes cambiarlo directamente en este menú.
+
+[Acción rápida](../widgets/quick-action.md#overview): También puedes agregar un interruptor rápido *Mostrar/Ocultar Cuadrícula de coordenadas* al grupo [Configurar mapa](../widgets/quick-action.md#configure-map) para un acceso rápido.
 
 ## Configurar estilo de mapa {#configure-map-style}
 
@@ -314,7 +336,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widge
 - **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indica la calidad de la carretera. Indica la suavidad (pendiente) de la carretera. Qué tan suaves son tus carreteras: buenas, malas, posiblemente terribles, etc. Mira la [Leyenda del mapa](../map-legend/index.md) para determinar la suavidad de tu carretera.  
     ![Parámetro de mapa - Suavidad de la carretera](@site/static/img/map/map-parameter-road-smoothness.png)
 
-- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Muestra la accesibilidad de la carretera: privada o permitida, solo para emergencias o carretera de peaje. Consulta la [Leyenda del mapa](../map-legend/index.md) para encontrar las carreteras disponibles.  
+- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**.  Muestra la accesibilidad de la carretera: privada o permitida, solo para emergencias o carretera de peaje. Consulta la [Leyenda del mapa](../map-legend/index.md) para encontrar las carreteras disponibles.  
     ![Parámetro de mapa - Acceso a la carretera](@site/static/img/map/map-parameter-road-access.png)
 
 - **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. La función [Zonas de Bajas Emisiones (ZBE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) muestra bordes verdes y etiquetas "ZBE" en los mapas para áreas en ciudades donde el acceso está restringido para ciertos vehículos contaminantes. Las ZBE tienen como objetivo mejorar la calidad del aire limitando la entrada a vehículos que cumplen con estándares de emisiones específicos. El uso de esta función ayuda a los usuarios a evitar multas al identificar y navegar alrededor de estas zonas verdes, asegurando el cumplimiento de las regulaciones ambientales locales mientras viajan por los centros de las ciudades.  
@@ -405,7 +427,7 @@ Al navegar por las ciudades, necesitas una vista más contrastada del transporte
 - **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Muestra las rutas de tranvía y tren.  
     ![Tranvía de transporte en el mapa](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Muestra las rutas de metro.  
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Muestra las rutas subterráneas.  
     ![Metro de transporte en el mapa](@site/static/img/map/map-transport-subway.png)
 
 ### Ocultar {#hide}
@@ -471,7 +493,7 @@ Configuraciones especiales para carreteras, donde puedes cambiar los colores par
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. El alto contraste de las carreteras.  
 ![Estilo de carretera de mapa de alto contraste](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pálido**. Colores menos contrastantes de las carreteras.  
-![Estilo de carretera de mapa con contorno audaz](@site/static/img/map/map-road-style-pale.png)
+![Estilo de carretera de mapa pálido](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno audaz para las carreteras.  
 ![Estilo de carretera de mapa con contorno audaz](@site/static/img/map/map-road-style-bold-outline.png)
@@ -565,7 +587,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string
 - **Idioma preferido** (ucraniano)
     ![Idioma del mapa ucraniano](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Mostrar nombres locales** (añade una segunda etiqueta si el nombre local es diferente)
+- **Mostrar nombres locales**  (añade una segunda etiqueta si el nombre local es diferente)
     ![Idioma del mapa local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Transliterar nombres**  

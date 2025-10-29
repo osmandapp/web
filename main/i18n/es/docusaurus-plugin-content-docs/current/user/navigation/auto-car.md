@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -32,7 +32,7 @@ La función **Android Auto** solo es compatible cuando se utiliza la aplicación
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
 
-Mientras tu dispositivo está conectado a *Android Auto*, el mapa en la pantalla de la aplicación está bloqueado. Esta es una característica de seguridad intencionada para garantizar que la navegación se controle exclusivamente desde la pantalla del coche, minimizando las distracciones durante la conducción. Consulta las [preguntas frecuentes](#common-issues-and-solutions) sobre la pantalla de conexión.
+Mientras tu dispositivo está conectado a *Android Auto*, el mapa en la pantalla de la aplicación está bloqueado. Esta es una característica de seguridad intencionada para garantizar que la navegación se controle exclusivamente desde la pantalla del coche, minimizando las distracciones durante la conducción. Consulta las [preguntas comunes](#common-issues-and-solutions) sobre la pantalla de conexión.
 
 
 ### Pantalla de inicio {#landing-screen}
@@ -60,7 +60,7 @@ Cuando abres la aplicación, se muestra una lista de categorías. Para facilitar
 - [Ajustes](#voice-prompts). Este botón es responsable de: 1. acceder para activar/desactivar las *indicaciones de voz* cuando estás navegando por la ruta seleccionada; 2. mostrar los detalles de la ruta (tiempo y distancia) para la siguiente parada.
 - [Buscar](#search). Al tocar el botón se abre una pantalla con acceso a las funciones de búsqueda.
 - [Mi ubicación](../widgets/map-buttons.md#my-location-and-zoom). Mueve la parte visible del mapa para que tu ubicación actual esté en el centro de la pantalla.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permite acercar y alejar la parte visible del mapa.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permite acercar y alejar la parte visible del mapa. El gesto de pellizco para hacer zoom está disponible para escalar el mapa. Si no es compatible con la unidad principal, el ajuste de zoom se realiza mediante gestos de doble toque y deslizamiento.
 - [Brújula](../widgets/map-buttons.md#compass). Muestra cuál de los cuatro modos de orientación del mapa disponibles en la pantalla de tu dispositivo está seleccionado.
 
 
@@ -102,7 +102,7 @@ Si no tienes ningún perfil de *Conducción* seleccionado en tu dispositivo que 
 
 ![Pantalla de Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Puedes seleccionar [PDI](../map/point-layers-on-map.md#points-of-interest-pois) preestablecidos y añadidos, o [Favoritos](../personal/favorites.md), o [Marcadores](../personal/markers.md) como punto de destino. También es posible seleccionar una [Ruta](../personal/tracks/manage-tracks.md) grabada o descargada para el trayecto, utilizar la [Búsqueda](../search/index.md), o seleccionar un destino del [Historial](../search/search-history.md) de rutas o realizar un *Viaje libre*.
+Puedes seleccionar [PDI](../map/point-layers-on-map.md#points-of-interest-pois) preestablecidos y añadidos, o [Favoritos](../personal/favorites.md), o [Marcadores](../personal/markers.md) como punto de destino. También es posible seleccionar una [Pista](../personal/tracks/manage-tracks.md) grabada o descargada para el trayecto, utilizar la [Búsqueda](../search/index.md), o seleccionar un destino del [Historial](../search/search-history.md) de rutas o realizar un *Viaje libre*.
 
 1. Si deseas una ubicación concreta del mapa como punto final, selecciona la categoría de puntos adecuada de la lista, [PDI](#poi-categories), [Favoritos](#favorites), o [Marcadores de mapa](#map-markers).  
   
@@ -173,15 +173,15 @@ Para crear una ruta a un punto favorito en *Android Auto*, sigue los pasos a con
 Para definir tu destino final como un Marcador de mapa, primero necesitas crear el número requerido de marcadores en la aplicación OsmAnd en tu dispositivo antes de conectarlo al sistema. Los marcadores deben estar disponibles en la lista *Menú → Marcador de mapa*. Esto se describe con más detalle en el artículo [Marcadores](../personal/markers.md).
 
 
-### Rutas {#tracks}
+### Pistas {#tracks}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
 
-Para construir una ruta a un destino, puedes seleccionar una ruta existente disponible en la aplicación OsmAnd. La ruta puede ser [descargada](../personal/tracks/manage-tracks.md#import) con antelación, usada como [grabada](../plugins/trip-recording.md) o creada en [Planificar una ruta](../plan-route/create-route.md).  
+Para construir una ruta a un destino, puedes seleccionar una pista existente disponible en la aplicación OsmAnd. La pista puede ser [descargada](../personal/tracks/manage-tracks.md#import) con antelación, usada como [grabada](../plugins/trip-recording.md) o creada en [Planificar una ruta](../plan-route/create-route.md).  
 
-De la lista de rutas en *Menú → Mis lugares → [Rutas](../personal/tracks/manage-tracks.md)*, selecciona la requerida antes de conectarte al sistema multimedia del vehículo, y la ruta se construirá hasta el inicio de la ruta o mostrará la dirección actual a lo largo de la ruta.
+De la lista de pistas en *Menú → Mis lugares → [Pistas](../personal/tracks/manage-tracks.md)*, selecciona la requerida antes de conectarte al sistema multimedia del vehículo, y la ruta se construirá hasta el inicio de la pista o mostrará la dirección actual a lo largo de la pista.
 
-Las rutas también se pueden seleccionar directamente en la pantalla del vehículo en *Android Auto*. Están organizadas en carpetas que has creado, y para un acceso fácil y rápido a las rutas abiertas recientemente, hay una carpeta especial [Última modificación](#folder-last-modified).  
+Las pistas también se pueden seleccionar directamente en la pantalla del vehículo en *Android Auto*. Están organizadas en carpetas que has creado, y para un acceso fácil y rápido a las pistas abiertas recientemente, hay una carpeta especial [Última modificación](#folder-last-modified).  
 
 
 ### Buscar {#search}
@@ -202,7 +202,7 @@ Puedes usar la herramienta de Búsqueda para encontrar el lugar requerido en el 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
 
 
-Las categorías Favoritos y Rutas tienen una carpeta especial *Última modificación*. Dado que la lista en estas categorías puede ser muy grande ya que contiene todos tus favoritos o rutas existentes, esta carpeta es necesaria para un acceso fácil y rápido a tus destinos más recientes.
+Las categorías Favoritos y Pistas tienen una carpeta especial *Última modificación*. Dado que la lista en estas categorías puede ser muy grande ya que contiene todos tus favoritos o pistas existentes, esta carpeta es necesaria para un acceso fácil y rápido a tus destinos más recientes.
 
 
 ## Funciones de navegación {#navigation-features}
@@ -271,7 +271,7 @@ Las indicaciones de voz son una de las características más útiles de OsmAnd m
 Para configurar las [indicaciones de voz](../navigation/guidance/voice-navigation.md) según el perfil seleccionado, tienes que hacerlo antes de iniciar una ruta en la aplicación OsmAnd de tu dispositivo. En *Android Auto*, solo está disponible el ajuste para activar o desactivar todas las indicaciones de voz seleccionadas al mismo tiempo (*Botón de Ajustes → Indicaciones de voz (activar/desactivar)*).  
 
 
-### HLL Próxima parada {#eta-next-stop}
+### ETA Próxima parada {#eta-next-stop}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
@@ -317,7 +317,7 @@ La aplicación OsmAnd se puede abrir y utilizar para navegar en *Android Auto* e
 En los ajustes de Android Auto, puedes cambiar la posición de la barra de tareas y el diseño de la pantalla de inicio:
 
 - **Posición de la barra de tareas:**  
-  Ve a *Ajustes de Android Auto → Mostrar controles rápidos para aplicaciones* y desactiva el interruptor. Esto moverá la barra de tareas de la parte inferior al lateral de la pantalla.
+  Ve a *Ajustes de Android Auto → Mostrar controles rápidos para Aplicaciones* y desactiva el interruptor. Esto moverá la barra de tareas de la parte inferior al lateral de la pantalla.
 
 - **Diseño de la pantalla de inicio:**  
   Ve a *Ajustes de Android Auto → Cambiar diseño → Cambiar ubicación del asiento del conductor* para ajustar el diseño según la posición del asiento del conductor.
@@ -328,7 +328,7 @@ En los ajustes de Android Auto, puedes cambiar la posición de la barra de tarea
 1. [Problema de orientación del mapa.](../troubleshooting/android_auto.md#map-orientation-issue)
 2. [Problema de control de volumen.](../troubleshooting/android_auto.md#volume-control-issue)
 3. [Retrasos en la ubicación (fallos ANR).](../troubleshooting/android_auto.md#location-delays-anr-crashes)
-4. Preguntas frecuentes sobre la pantalla de conexión:
+4. Preguntas comunes sobre la pantalla de conexión:
     - *¿Por qué no puedo controlar la aplicación desde mi teléfono cuando está conectado a Android Auto?*  
         Por razones de seguridad, la pantalla de la aplicación OsmAnd en tu teléfono se bloquea mientras está conectada a Android Auto. Solo puedes interactuar con la aplicación a través de la pantalla del coche.
     - *¿Puedo desactivar la pantalla bloqueada y usar la aplicación en mi teléfono?*  

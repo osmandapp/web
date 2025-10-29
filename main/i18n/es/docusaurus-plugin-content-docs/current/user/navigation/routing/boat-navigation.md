@@ -1,8 +1,9 @@
 ---
-source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
+source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
 sidebar_position: 8
 title:  Navegación en barco
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,11 +14,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Resumen {#overview}
 
-La navegación en barco puede ser una herramienta valiosa para cualquiera que disfrute de la navegación a vela o en bote por canales, ríos o vías navegables. Debido a la falta de la mayoría de las vías navegables en los datos de OpenStreeetMap, el enrutamiento en barco *no se recomienda* para la **navegación en aguas abiertas**, se sugiere usar en su lugar **[Directo a un punto](#direct-to-point-routing-for-boat)**. Con las líneas de contorno de profundidad habilitadas, puede ayudarle a mantenerse seguro en el agua evitando peligros como aguas poco profundas, rocas u otros obstáculos.
-El motor de enrutamiento en barco de OsmAnd también tiene en cuenta las características de las vías fluviales y de los propios barcos.
+La navegación en barco puede ser una herramienta valiosa para cualquiera que disfrute de la navegación en bote o a vela por canales, ríos o vías navegables. Debido a la falta de la mayoría de las vías navegables en los datos de OpenStreetMap, el enrutamiento en barco *no se recomienda* para la **navegación en aguas abiertas**, se sugiere usar **[Directo a un punto](#direct-to-point-routing-for-boat)** en su lugar. Con las líneas de contorno de profundidad habilitadas, puede ayudarle a mantenerse seguro en el agua evitando peligros como aguas poco profundas, rocas u otros obstáculos.  
+El motor de enrutamiento en barco de OsmAnd también tiene en cuenta las características de las vías fluviales y de los propios barcos.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -27,13 +27,13 @@ El motor de enrutamiento en barco de OsmAnd también tiene en cuenta las caracte
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Pantalla de navegación en barco iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)
+![Pantalla de navegación en barco iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 ## Parámetros de ruta - Barco {#route-parameters---boat}
 
@@ -41,9 +41,9 @@ El motor de enrutamiento en barco de OsmAnd también tiene en cuenta las caracte
 Por defecto, el perfil *Barco* está desactivado. Para usar este perfil para el enrutamiento, necesita activarlo en *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-El enrutamiento en barco se puede configurar según sus necesidades en la sección [Parámetros de ruta](../../navigation/guidance/navigation-settings.md#route-parameters) de los ajustes de Navegación.
+La navegación en barco se puede configurar según sus necesidades en la sección [Parámetros de ruta](../../navigation/guidance/navigation-settings.md#route-parameters) de los ajustes de Navegación.  
 
-Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el último habilitado junto con el [complemento Náutico](../../plugins/nautical-charts.md)). Sin embargo, es posible usar el enrutamiento en barco con otros perfiles también, y diferentes [tipos de enrutamiento](#other-routing-types-for-boat) también se pueden emplear en el perfil de barco.
+Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el último habilitado junto con el [complemento Náutico](../../plugins/nautical-charts.md)).  Sin embargo, es posible usar el enrutamiento en barco con otros perfiles también, y diferentes [tipos de enrutamiento](#other-routing-types-for-boat) también se pueden emplear en el perfil de barco.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -51,13 +51,13 @@ Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el ú
 <TabItem value="android" label="Android">
 
 
-![Ajustes de enrutamiento en barco Android](@site/static/img/navigation/routing/boat_routing_andr.png)
+![Ajustes de enrutamiento en barco Android](@site/static/img/navigation/routing/boat_route_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes de enrutamiento en barco iOS](@site/static/img/navigation/routing/boat_routing_ios.png)
+![Ajustes de enrutamiento en barco iOS](@site/static/img/navigation/routing/boat_route_ios.png)  
 
 </TabItem>
 
@@ -65,9 +65,9 @@ Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el ú
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Le permite usar arroyos y desagües para la navegación en barco. Habilitar esta opción puede ser útil para barcos pequeños como canoas, kayaks, balsas, botes de remos. | [Arroyos](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) son cursos de agua de formación natural que son demasiado estrechos para ser llamados río. [Desagües](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) son cursos de agua artificiales, típicamente revestidos de hormigón o similar, utilizados para transportar agua superflua como agua de tormenta o descarga de aguas grises. |
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | Activar esta opción le permite usar vías fluviales intermitentes para navegar en barco. | La etiqueta [Intermitente](https://wiki.openstreetmap.org/wiki/Key:intermittent) se usa para indicar que una vía fluvial no contiene agua permanentemente. |
-
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Le permite usar arroyos y desagües para la navegación en barco. Habilitar esta opción puede ser útil para barcos pequeños como canoas, kayaks, balsas, botes de remos. |  [Arroyos](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) son cursos de agua de formación natural que son demasiado estrechos para ser llamados río. [Desagües](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) son cursos de agua artificiales, típicamente revestidos de hormigón o similar, utilizados para transportar agua superflua como agua de tormenta o descarga de aguas grises.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Activar esta opción le permite usar vías fluviales intermitentes para navegar en barco.   | La etiqueta [Intermitente](https://wiki.openstreetmap.org/wiki/Key:intermittent) se usa para indicar que una vía fluvial no contiene agua permanentemente.  |
+| *Permitir ferris* | Habilita el enrutamiento a través de rutas de ferry. | Utiliza `route=ferry` donde esté presente en OSM. No se requieren nuevos mapas. |
 
 :::note Navegación acuática y limitaciones
 
@@ -76,23 +76,20 @@ Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el ú
     - `waterway=canal`
     - `natural=water`, etc.
 
-2. El perfil de Barco **no soporta rutas de ferry (`route=ferry`)**. Esto significa que las rutas de ferry, incluso si están presentes en el mapa, **no se utilizarán** al calcular las rutas en barco.
+2. El perfil de Barco también soporta **rutas de ferry (`route=ferry`)** cuando la opción **Permitir ferris** está habilitada. Esto significa que si las rutas de ferry están presentes en el mapa, se utilizarán al calcular las rutas en barco.
 
-3. Para seguir una línea de ferry manualmente:
-
-    - Use la herramienta [Planificar una ruta](../../plan-route/create-route.md) y coloque los puntos de ruta manualmente.
-    - Use el perfil de Coche, que soporta rutas de ferry
+3. Si no hay vías fluviales o rutas de ferry adecuadas mapeadas en OSM, el motor de enrutamiento puede no ser capaz de construir una ruta adecuada. En tales casos, puede usar la herramienta Planificar una ruta y colocar puntos de ruta manualmente.
 
 :::
 
 ## Otros tipos de enrutamiento para barco {#other-routing-types-for-boat}
 
-El tipo de [enrutamiento en barco](#route-parameters---boat) es un algoritmo de enrutamiento predeterminado para el perfil de Barco. Aunque puede elegir otro tipo de enrutamiento, que también es adecuado para la navegación en barco:
+El tipo de [enrutamiento en barco](#route-parameters---boat) es un algoritmo de enrutamiento predeterminado para el perfil de Barco. Aunque puede elegir otro tipo de enrutamiento, que también es adecuado para la navegación en barco:  
 
  - [Enrutamiento directo a un punto para barco](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Enrutamiento en línea recta para barco](./boat-navigation.md#straight-line-routing-for-boat)
 
-Es importante tener en cuenta que los tipos de enrutamiento *Directo a un punto* y *Línea recta* solo deben usarse en aguas abiertas donde no haya obstáculos o peligros para la navegación. Si está navegando en una vía fluvial con un canal o ruta específica, debe usar el tipo de enrutamiento en barco en OsmAnd, que lo guiará a través de los canales de navegación correctos y evitará áreas poco profundas u otros peligros.
+Es importante tener en cuenta que los tipos de enrutamiento *Directo a un punto* y *Línea recta* solo deben usarse en aguas abiertas donde no haya obstáculos o peligros para la navegación. Si está navegando en una vía fluvial con un canal o ruta específica, debe usar el tipo de enrutamiento en barco en OsmAnd, que lo guiará a través de los canales de navegación correctos y evitará áreas poco profundas u otros peligros.  
 
 Estos tipos de enrutamiento para el perfil de barco se pueden activar usando la siguiente ruta: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> u otro) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

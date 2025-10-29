@@ -1,8 +1,9 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
 sidebar_position: 2
 title:  Compras en iOS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Instalar OsmAnd (iOS) {#install-osmand-ios}
@@ -44,9 +44,9 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 
 1. **Maps+** es una *actualización* para la versión gratuita de OsmAnd, que desbloquea la mayoría de las funciones.
 
-2. **OsmAnd Pro**, **OsmAnd+** y **Maps+** son compras *multiplataforma*. Esto significa que puedes comprarlo en una tienda (por ejemplo, *Google Play, Huawei AppGallery, AppStore* y *osmand.net*) y restaurarlo en otra [vinculando tu compra con la cuenta de OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** y **Maps+** son compras *multiplataforma*. Esto significa que puedes comprarlo en una tienda (por ejemplo, *Google Play, Huawei AppGallery, AppStore* y *osmand.net*) y restaurarlo en otra [vinculando tu compra con la cuenta de OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-3. Puedes añadir **Maps+** a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088) para compartir la compra con los miembros de tu familia.
+3. Puedes añadir **Maps+** a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088) para compartir la compra con los miembros de tu familia.  
 
 
 ## Precios {#prices}
@@ -55,23 +55,23 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Suscripción | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -92,7 +92,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Todas las funciones Pro](#pro-features) | **-** | **-** | ✔ |
 | [Descargas de mapas](../start-with/download-maps.md) |  <details><summary>**5 descargas de mapas** <br /> (la actualización del mapa cuenta como descarga):</summary> <br /> - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización de un mapa de un país (región).<br /> - El **mapa general del mundo**, la **corrección de altitud mundial**, las **fuentes de mapa** y las **indicaciones de voz** no se cuentan como 5 posibilidades de descarga.</details> | ✔ | ✔ |
-| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates) |  <details><summary>**Una vez al mes** <br /> (con 2 días de retraso):</summary> * limitado a 5 descargas (la actualización del mapa cuenta como descarga) </details> |  ✔ | ✔ |
+| [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu) |  <details><summary>**Una vez al mes** <br /> (con 2 días de retraso):</summary> * limitado a 5 descargas (la actualización del mapa cuenta como descarga) </details> |  ✔ | ✔ |
 | [Actualizaciones horarias de mapas](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -122,7 +122,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 ### Funciones Pro {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) Las *Funciones Pro* están disponibles para la suscripción a [OsmAnd Pro](#prices). Esto significa que necesitas tener una suscripción a [OsmAnd Pro](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) Las *Funciones Pro* están disponibles para la [suscripción a OsmAnd Pro](#prices). Esto significa que necesitas tener una [suscripción a OsmAnd Pro](#install-osmand-ios).
 
 Por el momento, la suscripción Pro tiene las siguientes características:
 
@@ -147,7 +147,7 @@ Una forma fácil de elegir y comprar el plan necesario es a través del menú **
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continuar con OsmAnd Pro*
 
-o
+o  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar con OsmAnd Pro*
 
@@ -169,7 +169,7 @@ Las nuevas suscripciones se activaron a partir de OsmAnd 4.3 (diciembre de 2022)
 
 ## Restaurar compras {#restore-purchases}
 
-El usuario puede controlar todas las compras y suscripciones desde la [cuenta de Apple](https://appleid.apple.com/).
+El usuario puede controlar todas las compras y suscripciones desde la [cuenta de Apple](https://appleid.apple.com/).  
 
 Utiliza el mismo ID de Apple para restaurar tus compras.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Indicaciones de voz / Notificaciones
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -52,7 +52,7 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 
 **[Idioma](#voice-prompt-language)**. Seleccione su idioma y tipo preferidos.
 
-**Anuncio**. Le permite configurar los siguientes tipos de indicaciones:
+**Anuncio**. Le permite configurar los siguientes [tipos de indicaciones](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Nombres de calles (TTS), Números de salida, Advertencias de tráfico, Pasos de peatones* y *Túneles.*
+- *Indicaciones giro a giro, Nombres de calles (TTS), Números de salida, Advertencias de tráfico, Pasos de peatones* y *Túneles.*
 - *[Radares de tráfico](#speed-cameras)*.
 - Configure también el **[Widget de alerta](../../widgets/nav-widgets.md#alert-widget)** para usar con los anuncios.
 
@@ -215,7 +215,7 @@ Para obtener una lista de los **motores TTS disponibles y los idiomas admitidos*
 6. Toque **Escuchar un ejemplo** para probar la salida de voz.
 
 Para más detalles, consulte:  
-[Soporte de Google – Ajustes de texto a voz de Android](https://support.google.com/accessibility/android/answer/6006983?hl=es).
+[Soporte de Google – Ajustes de texto a voz de Android](https://support.google.com/accessibility/android/answer/6006983).
 
 **iOS:**
 
@@ -226,7 +226,7 @@ Para más detalles, consulte:
 5. Pruebe la voz usando **Leer selección** o **Leer pantalla**.
 
 Para más detalles, consulte:  
-[Soporte de Apple – Ajustes de voz del iPhone](https://support.apple.com/es-es/guide/iphone/iph96b214f0/ios).
+[Soporte de Apple – Ajustes de voz del iPhone](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
 
 ***Prueba de las indicaciones de voz:***
 
@@ -276,6 +276,7 @@ OsmAnd ofrece dos tipos de indicaciones de voz:
     - Solo proporciona instrucciones básicas de giro.
 
 > *Se recomienda TTS para una guía de navegación detallada.*
+
 
 ### Ajustes de indicaciones de voz a nivel de sistema {#system-level-voice-prompt-settings}
 
@@ -342,6 +343,7 @@ El uso de voces grabadas en OsmAnd debe ser solo una alternativa. Son bastante l
 
     ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
+
 ### Modos de pitido {#beep-modes}
 
 <InfoAndroidOnly />
@@ -358,6 +360,8 @@ Puede configurar un perfil de OsmAnd para que emita pitidos en lugar de hablar, 
 
 ## Notificaciones de texto {#text-notifications}
 
+<InfoAndroidOnly />
+
 Una vez que inicia una ruta, puede ver la información en el menú desplegable del sistema en la lista de notificaciones. Las notificaciones silenciosas de OsmAnd contienen información como instrucciones giro a giro, flechas de dirección de giro, hora de llegada y tiempo restante, velocidad actual y distancia al destino.  
 
 ![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
@@ -372,7 +376,7 @@ Botones activos en el menú desplegable del sistema para su navegación:
 
 Puede cambiar la configuración de notificaciones para la aplicación OsmAnd en la configuración del sistema de su dispositivo. Las notificaciones se pueden mostrar en la pantalla de bloqueo, la pantalla de inicio, en el menú desplegable o en la parte superior de la aplicación.  
 
-Lea sobre cómo se implementa el control de notificaciones en Android en este [artículo](https://support.google.com/android/answer/9079661?hl=es#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Para iOS - [aquí](https://support.apple.com/es-es/HT201925).
+Lea sobre cómo se implementa el control de notificaciones en Android en este [artículo](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Para iOS - [aquí](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Control de pantalla {#screen-control}
