@@ -1,8 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
-title:  Profile (Einstellungen)
+title:  Profiles (Settings)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Übersicht {#overview}
 
@@ -142,7 +142,9 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Legt die Bildschirmausrichtung in der OsmAnd-Anwendung fest und sperrt sie. Diese Funktion wird auf dem iPad nicht unterstützt.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Nur Android*). Öffnet das Bildschirmsteuerungsmenü, in dem Sie Optionen für den Gerätebildschirm während der Navigation auswählen können, um den Akkuverbrauch des Geräts zu senken.  
@@ -154,13 +156,13 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 <TabItem value="android" label="Android">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,6 +217,8 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m |
 |  |  |  |
+| **Einheiten für die Höhe** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Beispiel: 50.12333° 19.93233° (Breite Länge) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Beispiel: 50°7.393′ 19°55.941′ (Breite Länge)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Beispiel: 50°7′23.6″ 19°55′56.4″ (Breite Länge) 23°27′30″ |
@@ -255,7 +259,7 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,11 @@ Der Abschnitt **Sonstiges** bietet zusätzliche Profileinstellungen zur Anpassun
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Nur Android*) – Glättet die Kartenrotation mit [allmählicher Bewegung](https://en.wikipedia.org/wiki/Kalman_filter) und reduziert plötzliche Positionsverschiebungen. Dies führt zu einer kleinen Verzögerung (*weniger als 1 Sekunde*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Nur Android*) – Verwendet den [Magnetsensor](https://en.wikipedia.org/wiki/Kalman_filter) Ihres Geräts, um die Kartenrotation zu stabilisieren und abrupte Änderungen zu reduzieren. Dies führt ebenfalls zu einer leichten Verzögerung.
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Nur Android*) – Tippen Sie auf einen leeren Bereich auf der Karte, um Steuerungsschaltflächen und Widgets auszublenden und die Kartensichtbarkeit zu maximieren.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Nur Android*) – Deaktivieren Sie Animationen im Navigationsmodus für schnellere Bildschirmübergänge.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Nur Android*) – Deaktivieren Sie Animationen im Navigationsmodus für schnellere Bildschirmübergänge.
 
 
 
@@ -508,18 +512,18 @@ Mit der Funktion zur UI-Anpassung können Sie die Anzahl der Elemente in Aktione
 
 ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
-- **Menü "Karte konfigurieren"** - Im Abschnitt *UI anpassen* können Sie Elemente aus dem Menü [Karte konfigurieren](../map/configure-map-menu.md) *neu anordnen oder ausblenden*, um schnellen Zugriff auf häufig verwendete Einstellungen zu ermöglichen.
+- **Menü „Karte konfigurieren“** - Im Abschnitt *UI anpassen* können Sie Elemente aus dem Menü [Karte konfigurieren](../map/configure-map-menu.md) *neu anordnen oder ausblenden*, um schnellen Zugriff auf häufig verwendete Einstellungen zu ermöglichen.
 
-- **<Translate android="true" ids="reset_to_default"/>** - Stellt die *ursprüngliche Elementliste* im Menü "Karte konfigurieren" wieder her und entfernt alle Änderungen.
+- **<Translate android="true" ids="reset_to_default"/>** - Stellt die *ursprüngliche Elementliste* im Menü „Karte konfigurieren“ wieder her und entfernt alle Änderungen.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Kopiert das *Layout des Menüs "Karte konfigurieren"* von einem anderen OsmAnd-Profil.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Kopiert das *Layout des Menüs „Karte konfigurieren“* von einem anderen OsmAnd-Profil.
 
 
 ### Kontextmenü-Aktionen {#context-menu-actions}
 
 ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
-- **Karten-Kontextmenü** - Im Abschnitt "UI anpassen" können Sie Elemente im [Karten-Kontextmenü](../map/map-context-menu.md) neu anordnen oder ausblenden, um den Zugriff auf häufig verwendete Funktionen zu optimieren.
+- **Karten-Kontextmenü** - Im Abschnitt *UI anpassen* können Sie Elemente im [Karten-Kontextmenü](../map/map-context-menu.md) neu anordnen oder ausblenden, um den Zugriff auf häufig verwendete Funktionen zu optimieren.
 
 - **<Translate android="true" ids="reset_to_default"/>** – Stellt die *Standard-Elementliste* im Karten-Kontextmenü wieder her und macht alle Änderungen sofort rückgängig.
 

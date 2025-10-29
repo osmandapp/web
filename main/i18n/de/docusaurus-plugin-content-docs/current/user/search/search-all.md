@@ -1,8 +1,9 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Alles durchsuchen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 <InfoIncompleteArticle/>
@@ -238,7 +238,7 @@ Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten
 
 Die **POI-Suche** ist eine nach Kategorien sortierte Liste, mit der Sie leicht Orte und Dienstleistungen in der Nähe Ihres aktuellen Standorts oder eines ausgewählten Bereichs auf der Karte finden können.
 
-- Die [Benutzerdefinierte POI-Suche](./search-poi.md#custom-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
+- Die [Benutzerdefinierte POI-Suche](./search-poi.md#customize-poi-search) ermöglicht es Ihnen, verschiedene POI-Kategorien zu kombinieren, um Ihre Suche zu vereinfachen und zu personalisieren.  
 Zum Beispiel, wenn Sie mehrere Arten von Dienstleistungen in einem bestimmten Gebiet oder auf einem bestimmten Abschnitt einer Route finden müssen.
 
 - OsmAnd bietet eine [Online-Suche](./search-poi.md#online-search), die in Echtzeit funktioniert und Ihnen schnellen Zugriff auf Suchergebnisse ermöglicht.  

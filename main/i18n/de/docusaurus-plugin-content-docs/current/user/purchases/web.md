@@ -1,8 +1,9 @@
 ---
-source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
+source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
 sidebar_position: 3
 title:  Web-Käufe
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Wie man kauft {#how-to-buy}
@@ -27,7 +27,7 @@ Alle über eine dieser Plattformen getätigten Käufe unterstützen den [**platt
 | Plan | Beschreibung | Anmerkungen |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Ein **In-App-Kauf** oder **Abonnement**, das erweiterte Funktionen für die kostenlose OsmAnd-App freischaltet. | Unterstützt **plattformübergreifenden** Zugriff |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnement**, das alle [Pro-Funktionen](#free-and-paid-features) freischaltet, einschließlich CarPlay und 3D-Relief. | Unterstützt **plattformübergreifenden** Zugriff |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnementplan**, das alle [Pro-Funktionen](#free-and-paid-features) freischaltet, einschließlich CarPlay und 3D-Relief. | Unterstützt **plattformübergreifenden** Zugriff |
 
 :::note  
 **Plattformübergreifender Zugriff** bedeutet, dass Sie OsmAnd auf unserer Website oder in einem Store (z. B. *App Store, Google Play oder osmand.net*) kaufen und auf einer anderen Plattform verwenden können, indem Sie [Ihren Kauf mit einem OsmAnd Cloud-Konto verknüpfen](../personal/osmand-cloud.md#cross-platform).
@@ -40,9 +40,9 @@ Nachfolgend finden Sie die Preise für OsmAnd-Produkte in den USA und der EU. Di
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 

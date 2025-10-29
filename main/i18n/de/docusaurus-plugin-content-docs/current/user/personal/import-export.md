@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Import / Export
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Übersicht {#overview}
 
@@ -58,7 +58,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>
 
-Alle von Ihnen konfigurierten und erstellten Daten können über das ***Export-Menü*** exportiert werden. Das Menü besteht aus drei Gruppen: **Einstellungen**, **Meine Orte** und **Ressourcen**, die alle verfügbaren Dateiordner enthalten. Sie können die Dateien, die Sie exportieren möchten, in jedem Ordner einzeln oder alle auf einmal auswählen. **Alle exportierten Dateien werden im `.osf`-Format gespeichert**.  
+Alle von Ihnen konfigurierten und erstellten Daten können über das ***Export-Menü*** exportiert werden. Das Menü besteht aus drei Gruppen: **Einstellungen**, **Meine Orte** und **Ressourcen**, die alle verfügbaren Dateiordner enthalten. Zum Beispiel werden in dem Abschnitt Ressourcen Karten nach Typ in *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, und *<Translate android="true" ids="topography_maps"/>* gruppiert, um die Navigation zu erleichtern und den selektiven Export zu ermöglichen. Sie können die Dateien, die Sie exportieren möchten, in jedem Ordner einzeln oder alle auf einmal auswählen. **Alle exportierten Dateien werden im `.osf`-Format gespeichert**.  
 
 
 ### Importieren {#import}
@@ -119,4 +119,4 @@ Es gibt zwei Möglichkeiten, Ihre Daten vor der Neuinstallation der OsmAnd-App z
 
 1. Wie übertrage ich Favoriten und Tracks auf ein neues Gerät. [(prüfen)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
 2. Ich habe eine GPX-Datei, wie importiere ich sie in OsmAnd? [(prüfen)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Löschen von Kartendaten nach dem App-Update (wenn "Multiuser Storage 1" ausgewählt ist). [(prüfen)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+3. Löschen von Kartendaten nach dem App-Update (wenn „Multiuser Storage 1“ ausgewählt ist). [(prüfen)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

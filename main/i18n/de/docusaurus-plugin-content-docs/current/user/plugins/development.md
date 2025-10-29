@@ -1,8 +1,9 @@
 ---
-source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 sidebar_position: 10
 title:  OsmAnd-Entwicklung
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -62,10 +62,10 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 ### Gelände {#terrain}
 
-- **Raster-[SQLIte-Format](../../technical/osmand-file-formats/osmand-sqlite) für Schummerung und Neigung verwenden** (*Android*). Lädt Rasterkarten im alten Format.
+- **Raster-[SQLIte-Format](../../technical/osmand-file-formats/osmand-sqlite) für Schummerung und Neigung verwenden** (*Android*). Beim Verwenden des V2-Rendering-Engines anstelle der Berechnung von Schummerung oder Neigungen aus der 3D-Geländekarte alte Rasterkarten in diesem Format verwenden. Kann das Rendering erheblich beschleunigen.
 
 
-### Fehlerbehebung {#troubleshotting}
+### Fehlerbehebung {#troubleshooting}
 
 - **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren](#gpx-track-simulation) Sie den Standort und die Bewegung mithilfe eines GPX-Tracks.
 - **Energiesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um die Akkulaufzeit bei der Verwendung von Anwendungen zu verlängern.

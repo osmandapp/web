@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Navigation
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,22 +14,50 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Routenberechnung {#route-calculation}
 
 ### Routenberechnung ist langsam {#route-calculation-is-slow}
 
-*Android*. OsmAnd verwendet zwei verschiedene **Offline-Routing-Engines**: eine *Java-basierte Engine* und eine *native (C++) Engine*.
+*Android*. OsmAnd verwendet zwei verschiedene **Offline-Routing-Engines**: eine *Java-basierte Engine* und eine *Native (C++) Engine*.
 
 - Die *Java-basierte Engine* wird im [Sicheren Modus](../plugins/development.md#overview) verwendet, ist aber etwa 10-mal langsamer als die native Engine. Sie hat auch strenge Speicherbeschränkungen, was zu Fehlern wie *Nicht genügend Speicher für die Berechnung* führen kann. Wenn dieses Problem auftritt, navigieren Sie zu *Plugins → OsmAnd-Entwicklung → Einstellungen →* [*Sicherer Modus*](../plugins/development.md#overview) und stellen Sie sicher, dass diese Option deaktiviert ist.
-- Die *native (C++) Engine* bietet eine bessere Leistung, aber ihre Effizienz hängt von den Speicher- und Prozessorkapazitäten Ihres Geräts ab. Im Allgemeinen funktioniert das native Routing gut für Routen unter 300 km, mit Berechnungszeiten von 15 Sekunden bis 4 Minuten. Wenn der Vorgang länger als 4 Minuten dauert, ist es ratsam, ihn zu stoppen, da die Anwendung abstürzen könnte.
+- Die *Native (C++) Engine* bietet eine bessere Leistung, aber ihre Effizienz hängt von den Speicher- und Prozessorkapazitäten Ihres Geräts ab. Im Allgemeinen funktioniert das native Routing gut für Routen unter 300 km, mit Berechnungszeiten von 15 Sekunden bis 4 Minuten. Wenn der Vorgang länger als 4 Minuten dauert, ist es ratsam, ihn zu stoppen, da die Anwendung abstürzen könnte.
+
+
+### Falsche oder unterbrochene Routen {#incorrect-or-broken-routes}
+
+Manchmal zeigt OsmAnd unerwartete Navigationsergebnisse an. Anstatt dem Straßennetz zu folgen, kann die Route als gerade gepunktete Linie zu einem unzusammenhängenden Punkt erscheinen oder die Navigation kann vollständig fehlschlagen. Dies deutet in der Regel darauf hin, dass eine Routenberechnung zum ausgewählten Ort mit der aktuellen Konfiguration nicht möglich ist. Ähnliche Probleme wurden von Nutzern auf [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) und [weitere](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/) gemeldet.
+
+**Ursachen:**
+
+- Veraltete oder duplizierte Karten. Karten mit unterschiedlichen Aktualisierungsdaten oder Duplikate können die Konnektivität unterbrechen (insbesondere über Regionen/Grenzen hinweg).
+- Beschädigte Profileeinstellungen. Benutzerdefinierte/angepasste Profile (z. B. Fahrrad) können inkonsistentes Verhalten verursachen.
+- Routing-Engine-Mismatch: Verschiedene Engines (HH × Java vs. HH × C++) können dieselben Karten unterschiedlich handhaben.
+
+**Lösungen:**
+
+1. Setzen Sie Ihr Profil zurück.
+- Öffnen Sie *Menü* → *Einstellungen* → *App-Profil (Navigationsprofil)*.
+- Wählen Sie *Auf Standard zurücksetzen*.
+
+2. Entfernen und neu installieren Sie Karten.
+- Öffnen Sie *Menü* → *Karten & Ressourcen* → *Lokal* und löschen Sie alle Karten für die betroffenen Region(en).
+- Gehen Sie dann zu *Menü* → *Karten & Ressourcen* → *Downloads* und laden Sie die Karten erneut herunter.
+- Optional überprüfen Sie *Menü* → *Karten & Ressourcen* → *Updates*, um sicherzustellen, dass alle Regionen dasselbe Aktualisierungsdatum haben.
+
+3. Wechseln Sie die Routing-Engine.
+- Aktivieren Sie das Plugin: *Menü* → *Plugins* → *OsmAnd-Entwicklung*.
+- Öffnen Sie dann *Menü* → *Einstellungen* → *App-Profil* → *Navigations-Einstellungen* → *Routenparameter* → *Entwicklung* → *Routing-Typ* und wechseln Sie *HH × C++* ↔ *HH × Java* (Sie können auch A* classic oder A* 2-Phasen ausprobieren).
+
+4. Als letztes Mittel.
+- Installieren Sie die App neu und laden Sie die Karten erneut herunter (hilft, wenn versteckte Konflikte bestehen bleiben).
 
 
 ### Wie berechnet man Routen, die länger als 250 km sind? {#how-to-calculate-routes-longer-than-250km}
 
 1. Wenn die App nach 7-8 Minuten Berechnungszeit keine Route anzeigt, sollten Sie [Wegpunkte setzen](../navigation/setup/route-navigation.md#route-recalculation) (wählen Sie z.B. Orte auf Autobahnen). 3-4 Wegpunkte reichen aus, um sogar 1000 km lange Routen zu berechnen.
 
-2. Bei High-End-Geräten können Sie den Speicher auf 512 MB oder 1024 MB erhöhen - [Speicher für Geräte zugewiesen](../plugins/development.md#memory-settings).
+2. Bei High-End-Geräten können Sie den Speicher auf 512 MB oder 1024 MB erhöhen - [Zugewiesener Speicher für Geräte](../plugins/development.md#memory-settings).
 
 3. Für die Android-Version können Sie ein Navigationsprofil mit Online- oder Drittanbieter-Routing (BRouter) erstellen. Lesen Sie mehr darüber [hier](../navigation/routing/brouter.md).
 
@@ -85,7 +114,7 @@ Detaillierte Anweisungen zur Einrichtung und Anpassung von Sprachansagen finden 
 
 ### TTS funktioniert nicht richtig? Befolgen Sie diese Schritte, um das Problem zu beheben {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-Probleme mit **Text-zu-Sprache (TTS)** hängen in der Regel mit den **Android-Systemeinstellungen** zusammen, nicht mit der OsmAnd-App selbst.
+Probleme mit **Text-zu-Sprache (TTS)** hängen in der Regel mit den **Android-Systemeinstellungen** zusammen, nicht mit der OsmAnd-App selbst.  
 
 1. Stellen Sie sicher, dass eine TTS-Engine installiert ist.
 
@@ -108,17 +137,17 @@ Probleme mit **Text-zu-Sprache (TTS)** hängen in der Regel mit den **Android-Sy
 
 #### Zusätzliche Schritte {#additional-steps}
 
-- *Google TTS aktualisieren*. Öffnen Sie den Google Play Store, suchen Sie nach **Google Text-to-Speech** und aktualisieren Sie es.
-- *Navigation simulieren*. Tippen Sie auf *Navigations-Button → Einstellungen → Navigation simulieren*, um zu überprüfen, ob die Sprachführung abgespielt wird.
-- *OsmAnd neu installieren*:
-   - **Einstellungen sichern:** *Menü → Einstellungen → In Datei exportieren*.
-   - Deinstallieren Sie OsmAnd und installieren Sie es dann erneut aus dem App Store.
+- *Google TTS aktualisieren*. Öffnen Sie den Google Play Store, suchen Sie nach **Google Text-to-Speech** und aktualisieren Sie es.  
+- *Navigation simulieren*. Tippen Sie auf *Navigations-Button → Einstellungen → Navigation simulieren*, um zu überprüfen, ob die Sprachführung abgespielt wird.  
+- *OsmAnd neu installieren*:  
+   - **Einstellungen sichern:** *Menü → Einstellungen → In Datei exportieren*.  
+   - Deinstallieren Sie OsmAnd und installieren Sie es dann erneut aus dem App Store.  
    - Einstellungen wiederherstellen: *Menü → Einstellungen → Datei importieren*.
 
 Für weitere Fehlerbehebungen besuchen Sie:
 
-- [Anleitung zur Sprachnavigation](../navigation/guidance/voice-navigation.md)
-- [Einstellungen importieren/exportieren](../personal/import-export.md)
+- [Anleitung zur Sprachnavigation](../navigation/guidance/voice-navigation.md)  
+- [Einstellungen importieren/exportieren](../personal/import-export.md)  
 
 
 ## Sonstiges {#other}

@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Tracks
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -28,7 +28,7 @@ OsmAnd verfügt über viele leistungsstarke Funktionen, um verschiedene Routen a
 - Track als eine Route (***Route***). Die Datei hat ein ```<rtept>```-Punkte-Array, jeder Punkt wird als Zwischenpunkt der Route beschrieben. Es hängt davon ab, wie die Punkte innerhalb einer Route verbunden werden sollen, entweder als kleine Routensegmente oder über eine gerade Linie. Diese Tracks werden auf der Karte als gestrichelte Linien dargestellt.
 - Wegpunkte (***Punkte***). Die Datei hat ```<wpt>```-Punkte mit Attributen. Wegpunkte werden als kreisförmige Punkte auf der Karte dargestellt. Sie können sie antippen, um zusätzliche Informationen zu erhalten.
 
-OsmAnd kann Tracks mit 1–3 Kombinationen erstellen. [Route planen](../../plan-route/create-route.md) erstellt einen Track mit ***Geometrie*** und ***Route***. Wenn Sie ihn als ***Vereinfachter Track*** speichern, wird nur die ***Geometrie*** beibehalten. [Track aufzeichnen](../../plugins/trip-recording.md#new-track-recording) erstellt nur die ***Geometrie***, aber Sie können auch ***Punkte*** über das Kontextmenü hinzufügen.
+OsmAnd kann Tracks mit 1–3 Kombinationen erstellen. [Route planen](../../plan-route/create-route.md) erstellt einen Track mit ***Geometrie*** und ***Route***, wenn Sie ihn als ***Vereinfachter Track*** speichern, wird nur die ***Geometrie*** beibehalten. [Track aufzeichnen](../../plugins/trip-recording.md#new-track-recording) erstellt nur ***Geometrie***, aber Sie können auch ***Punkte*** über das Kontextmenü hinzufügen.
 
 
 ## Tracks auf der Karte anzeigen {#display-tracks-on-the-map}
@@ -81,7 +81,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 </Tabs>
 
-Um den Track auf der Karte anzuzeigen, müssen Sie im Tab [Meine Orte *→* Tracks](../../personal/tracks/manage-tracks.md#manage-tracks) Folgendes tun:
+Im [Meine Orte *→* Tracks-Tab](../../personal/tracks/manage-tracks.md#manage-tracks) müssen Sie zum Anzeigen des Tracks auf der Karte Folgendes tun:
 
 - *Android* - tippen Sie auf das *Drei-Punkte-Menü* im Feld mit dem gewünschten Track.
 - *iOS* - tippen Sie lange auf den gewünschten Track in der Liste.
@@ -135,6 +135,7 @@ Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/tr
 - **Diagrammdaten (Y-Achse)** zeigt an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Daten externer Sensoren*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten.
 - **Diagrammdimension (X-Achse)** stellt dar: *Distanz*, *Zeit* und *Tageszeit*.
 - **Tippen/Schieben-Interaktion**. Tippen Sie auf ein Diagramm, um Informationen über einen bestimmten Punkt auf dem Track anzuzeigen. Das Schieben auf dem Diagramm hebt die entsprechende Stelle auf der Karte hervor und zeigt Details in der Informationsleiste an.
+- **Distanzbeschriftung**. Beim Tippen oder Schieben entlang des Diagramms zeigt das Tooltip auch die genaue Distanz entlang des Tracks an. Der Wert folgt den Einstellungen der aktuellen Profil-Einheit (<Translate android="true" ids="km"/> oder <Translate android="true" ids="mile"/>). Verwenden Sie es, um schnell zu schätzen, wie weit ein Punkt vom Track-Start entfernt ist, oder um die Distanz zwischen zwei Positionen zu berechnen, indem Sie ihre Werte vergleichen.
 - **Skalierung**. Verwenden Sie eine [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures), um das Diagramm für eine detailliertere Ansicht zu skalieren.
 
 

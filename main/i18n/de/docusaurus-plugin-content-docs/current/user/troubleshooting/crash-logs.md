@@ -1,8 +1,9 @@
 ---
-source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
+source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
 sidebar_position: 5
-title:  Absturzprotokolle
+title:  Crash Logs
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Überblick {#overview}
 
-Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Probleme und Fehler zu identifizieren und zu beheben, die dazu führen, dass die Anwendung abstürzt oder sich unerwartet verhält. Es ist möglich, Protokolle von Ihrem Android-Gerät mit dem OsmAnd-Entwicklungsteam zu teilen. Derzeit haben iOS-Benutzer nur eine Option zum Senden von Absturzprotokollen.
+Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Probleme und Fehler zu identifizieren und zu beheben, die dazu führen, dass die Anwendung abstürzt oder sich unerwartet verhält. Es ist möglich, Protokolle von Ihrem Android-Gerät mit dem OsmAnd-Entwicklungsteam zu teilen. Derzeit haben iOS-Benutzer nur eine Art von Absturzprotokolloption zum Senden.
 
 
 ## Absturz- und Logcat-Protokolle {#crash-and-logcat-logs}
@@ -33,7 +33,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 
 ### Protokolle aus der OsmAnd-App senden (Android) {#send-logs-from-osmand-app-android}
 
-1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Weitere Informationen zu den Unterschieden zwischen den Protokolltypen finden Sie im Abschnitt [Absturz- und Logcat-Protokolle](#crash-and-logcat-logs).
+1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und Logcat-Protokolle](#crash-and-logcat-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
 2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Die E-Mail wird automatisch generiert.
 3. Tippen Sie auf die Schaltfläche *Senden*.
 
@@ -45,7 +45,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 1. Protokolle von iOS-Geräten können gesendet werden:
 
     - Automatisch.
-        - Navigieren Sie zur OsmAnd-App *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.
+        - Navigieren Sie zur OsmAnd-App *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
         - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `crash@osmand.net` zu senden.
 
     - Manuell.
@@ -53,9 +53,9 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 
     ![Absturzprotokolle iOS senden 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Absturzprotokolle iOS senden 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. Senden Sie Protokolle im [IPS-Format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) und Autorisierungsdaten:
-    - Gehen Sie zu iOS *Einstellungen → Analyse → Analysedaten → OsmAnd Maps ips-Format-Datei* (bis iOS 17).
-    - iOS *Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten → OsmAnd Maps ips-Format-Datei* (ab iOS 18).
+2. Senden Sie [IPS-Format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) von Protokollen und Autorisierungsdaten:
+    - Auf iOS 15 oder älter: *Einstellungen → Analyse → Analysedaten → OsmAnd Maps ips-Format-Datei*.
+    - Auf iOS 16 oder neuer:  *Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten → OsmAnd Maps ips-Format-Datei*.
     - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `crash@osmand.net` zu senden.
 
     ![Absturzprotokolle iOS senden 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Absturzprotokolle iOS senden 2](@site/static/img/troubleshooting/log_1_ios.png)
@@ -81,7 +81,7 @@ Um Tombstone-Dateien zu exportieren, müssen Sie einen Fehlerbericht über die A
 2. Gehen Sie zu den *Entwickleroptionen*, die sich normalerweise am Ende der Einstellungsliste befinden. Sie können auch die Suchfunktion verwenden.
     - Tippen Sie auf die Option *Fehlerbericht erstellen*.
     - Wählen Sie den Typ des Fehlerberichts aus und tippen Sie auf *Bericht*.
-
+  
 Nachdem der Fehlerbericht fertig ist, erhalten Sie eine Benachrichtigung. Tippen Sie auf das Benachrichtigungsfeld, um den Bericht auf Ihr Gerät herunterzuladen. Entpacken Sie die Datei und senden Sie die Tombstone-Dateien an das OsmAnd-Entwicklerteam (E-Mail: `crash@osmand.net`).
 
 ![Absturzprotokolle von Android senden 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Absturzprotokolle von Android senden 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
@@ -117,20 +117,20 @@ Verbinden Sie dann Ihr Gerät über USB mit Ihrer Workstation. Wenn dies die ers
 7. Senden Sie die Tombstone-Dateien an `crash@osmand.net`.
 
 <!--
-* Open the terminal and call the command:
-```adb bugreport ./output.zip```
-where output.zip is the name of the result file
+* Open the terminal and call the command:  
+```adb bugreport ./output.zip```  
+where output.zip is the name of the result file  
 
-* Unzip the result file:
-```unzip file.zip -d destination_folder```
+* Unzip the result file:  
+```unzip file.zip -d destination_folder```  
 
-* Find tombstones folder:
+* Find tombstones folder:  
 ```cd FS/data/tombstones```
 Where you find files like  -->
 
 ### Verwendung von gerooteten Geräten oder Android Studio Emulator {#using-rooted-devices-or-android-studio-emulator}
 
-- Mit Root-Zugriff auf Ihr Gerät können Sie den Ordner */data/tombstones* direkt öffnen.
+- Mit Root-Zugriff auf Ihr Gerät können Sie den Ordner */data/tombstones* direkt öffnen.  
 
 - Verwenden Sie im Android Studio den Emulator, um zum *Geräte-Dateiexplorer* zu navigieren und den Ordner /data/tombstones zu finden. Darin finden Sie Dateien mit Namen wie *tombstone_00*, *tombstone_01* und andere. Laden Sie diese Dateien herunter und senden Sie sie an `crash@osmand.net`.
 

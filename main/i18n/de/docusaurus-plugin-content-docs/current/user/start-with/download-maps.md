@@ -1,8 +1,9 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Karten herunterladen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,7 +69,7 @@ Wenn Sie ein VPN verwenden, schlägt OsmAnd möglicherweise eine Karte vor, die 
 
 **Standortmenü:**
 
-- *Eine andere Region auswählen.* Öffnet das Menü [Karten herunterladen](#maps-and-resources).
+- *Eine andere Region auswählen.* Öffnet das [Karten herunterladen](#maps-and-resources) Menü.
 - *Erlauben Sie uns, Ihren Standort zu bestimmen.* [Fordert die Berechtigung](../start-with/first-steps.md#permission-to-access-the-location) zum Zugriff auf den Standort an und findet die erforderliche Karte anhand dieser Daten.
 
 **Anderes Menü:**
@@ -102,9 +102,9 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Der Bildschirm [Karten & Ressourcen](../personal/maps-resources.md) bietet Zugriff auf die folgenden Abschnitte:
 
-- [Downloads](../personal/maps-resources.md#downloads). Bietet eine umfassende Auswahl an [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types).
-- [Lokal](../personal/maps-resources.md#local). Zeigt alle Kartendaten an, die derzeit auf Ihrem Gerät gespeichert sind, einschließlich benutzerdefinierter und importierter Ressourcen.
-- [Aktualisierungen](../personal/maps-resources.md#updates). Ermöglicht es Ihnen, Karten monatlich zu aktualisieren, um Ihre Daten auf dem neuesten Stand zu halten.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Bietet eine umfassende Auswahl an [OsmAnd-Kartentypen](../personal/maps-resources.md#map-types).
+- [Lokal](../personal/maps-resources.md#local-menu). Zeigt alle Kartendaten an, die derzeit auf Ihrem Gerät gespeichert sind, einschließlich benutzerdefinierter und importierter Ressourcen.
+- [Aktualisierungen](../personal/maps-resources.md#updates-menu). Ermöglicht es Ihnen, Karten monatlich zu aktualisieren, um Ihre Daten auf dem neuesten Stand zu halten.
 
 ### Karten herunterladen {#downloading-maps}
 
@@ -114,7 +114,7 @@ So laden Sie einen bestimmten Kartentyp für ein Land oder eine Region herunter:
 - Wählen Sie Ihr bevorzugtes Land oder Ihre bevorzugte Region aus der Liste aus.
 - Überprüfen und wählen Sie auf dem nächsten Bildschirm aus den verfügbaren Kartentypen für dieses Gebiet.
 
-Informationen zu anderen Kartentypen finden Sie im Abschnitt [Downloads](../personal/maps-resources.md#downloads) des Artikels **Karten**.
+Informationen zu anderen Kartentypen finden Sie im Abschnitt [Downloads](../personal/maps-resources.md#downloads-menu) des Artikels **Karten**.
 
 ## Weltkarten-Optionen {#world-map-options}
 

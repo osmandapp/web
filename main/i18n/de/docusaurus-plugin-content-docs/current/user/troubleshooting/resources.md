@@ -1,8 +1,9 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## OsmAnd erkunden {#explore-osmand}
@@ -106,7 +106,7 @@ Die Standarddatei [render.xml](https://github.com/osmandapp/OsmAnd-resources/blo
 | Highlighted Admin Boundaries | Der Karten-Rendering-Stil basiert auf dem OsmAnd-Standard, mit stärker hervorgehobenen Verwaltungsgrenzen für eine bessere Sichtbarkeit. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [Die Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) ist ein auf Radfahren ausgerichteter Kartenstil, der Radwege (in rot), Radrouten (blau gestrichelt), Radpfade (rot gestrichelt) und Straßen mit begrenztem Fahrzeugverkehr, wie z. B. Fahrradstraßen (durchgezogene rote Ränder), hervorhebt.  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) ist ein Kartenstil von Holder Tamm, der es Ihnen ermöglicht, auszuwählen, ob bestimmte Objekte ausgeblendet werden sollen oder nicht.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-
+| ExplorerRS | [Der ExplorerRS-Rendering-Stil](https://github.com/sykoram/OsmAnd-ExplorerRS) basiert hauptsächlich auf UniMap und routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 ### Offline-Karten {#offline-maps}
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Erste Schritte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -153,7 +153,7 @@ Gehen Sie zu: *Einstellungen → OsmAnd Maps → Sprache*
 </Tabs>
 
 :::note Keine Option zum Einstellen der App-Sprachen
-Auf einigen Android-Geräten (Xiaomi mit Muiu 14) gibt es keine Möglichkeit, die App-Sprachen einzeln in den Systemeinstellungen festzulegen, sodass die Sprache von OsmAnd nur mit der Sprache des gesamten Systems geändert werden kann. Weitere Informationen finden Sie in der Diskussion auf [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990).
+Auf einigen Android-Geräten (Xiaomi mit Muiu 14) gibt es keine Möglichkeit, die App-Sprachen einzeln in den Systemeinstellungen festzulegen, sodass die Sprache von OsmAnd nur mit der Sprache des gesamten Systems geändert werden kann. Weitere Informationen finden Sie in der Diskussion auf [GitHub-Diskussion](https://github.com/osmandapp/OsmAnd/issues/16990).
 :::
 
 
@@ -491,7 +491,7 @@ Tippen Sie auf ein Aktionssymbol, um die Anwendung sofort mit der ausgewählten 
 </Tabs>
 
 Im *Hilfemenü* finden Sie Artikel von unserer Website [www.osmand.net/docs](https://osmand.net/docs/intro/). Nach dem ersten Download (Internetverbindung erforderlich) sind die Hilfeartikel offline verfügbar.  
-Der erste Unterabschnitt, *Offline-Hilfe*, enthält die **Am häufigsten angesehenen** (oder beliebtesten) Artikel unter unseren Benutzern. Die Abschnitte **Benutzerhandbuch** und **Fehlerbehebung** haben die gleiche Struktur wie auf der Website.  
+Der erste Unterabschnitt, *Offline-Hilfe*, enthält die **Am häufigsten angesehenen** (oder beliebtesten) Artikel unter unseren Benutzern. Diese Artikel werden in der für die Anwendung eingestellten Sprache angezeigt, wenn diese Sprache auf unserer Dokumentationswebsite unterstützt wird. Derzeit unterstützte Sprachen umfassen: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, und *<Translate android="true" ids="lang_uk"/>*. Wenn Sie die Sprache der Anwendung ändern, starten Sie OsmAnd bitte neu, damit die Dokumentation in der ausgewählten Sprache geöffnet wird. Wenn keine Übersetzung verfügbar ist, wird automatisch die englische Version der Seite angezeigt. Die Abschnitte **Benutzerhandbuch** und **Fehlerbehebung** haben die gleiche Struktur wie auf der Website.  
 Im *Hilfemenü* finden Sie auch nützliche Links zu den sozialen Netzwerken von OsmAnd, Versionsinformationen zu Ihrer Anwendung, Versionshinweise und Support-Kontakte. Über die Hilfe können Sie auch [Logcat- und Absturzprotokolle](../troubleshooting/crash-logs.md#crash-and-logcat-logs) senden.  
 
 ### Menü {#menu}

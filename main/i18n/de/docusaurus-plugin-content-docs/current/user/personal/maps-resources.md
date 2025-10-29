@@ -1,8 +1,9 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
-Im Bereich **Karten und Ressourcen** können Sie sowohl *Online*- als auch *Offline*-Karten und andere in OsmAnd verwendete Ressourcen verwalten. Sie können zum Beispiel verschiedene Aktionen durchführen, wie herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und die Größe überprüfen.
+Im Bereich **Karten und Ressourcen** können Sie sowohl *Online*- als auch *Offline*-Karten und andere in OsmAnd verwendete Ressourcen verwalten. Sie können zum Beispiel herunterladen, löschen, umbenennen, den Cache leeren, aktualisieren und die Größe überprüfen sowie verschiedene Aktionen durchführen.
 
-OsmAnd arbeitet mit zwei Arten von Karten: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Reiter [Lokal](#local) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können über den Reiter [Downloads](#downloads) heruntergeladen werden. Im Reiter [Aktualisierungen](#updates) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#live-updates) nutzen. Sie können auch auf die Funktion [Zusätzliche Karten](#extra-maps) zugreifen, um Ihre eigenen Kartentypen zu erstellen.
+OsmAnd arbeitet mit zwei Arten von Karten: [Vektorkarten](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md). Der Reiter [Lokal](#local-menu) speichert alle Karten und Ressourcen. Verfügbare Kartentypen können über den Reiter [Downloads](#downloads-menu) heruntergeladen werden. Im Reiter [Aktualisierungen](#updates-menu) können Sie Karten herunterladen, für die Updates verfügbar sind, und [Live-Updates](#live-updates) nutzen. Sie können auch auf die Funktion [Zusätzliche Karten](#extra-maps) zugreifen, um Ihre eigenen Kartentypen zu erstellen.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -55,7 +55,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Karten-Download-Menü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionsweite Karten Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Karten-Download-Menü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionsweite Karten iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -78,6 +78,7 @@ Bitte beachten Sie, dass monatliche Kartenaktualisierungen als weiterer Karten-D
 - [Höhenlinien](../plugins/topography.md#contour-lines). Eine Karte, die Höhenlinien enthält, um das Gelände zu visualisieren.
 - [Geländekarte (Schummerung und Neigung)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Karten mit Schatten oder Neigungen liefern zusätzliche Geländeinformationen.
 - [Geländekarte (3D)](../plugins/topography.md#3d-relief). Dreidimensionale Darstellung des Geländes für ein besseres Verständnis Ihrer Umgebung. Die [Karten-Rendering-Engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) muss aktiviert sein.
+- [Nautische Tiefen und Konturen](../plugins/nautical-charts.md). Seekarten, die Küstenlinien, Tiefen, Navigationshilfen, Häfen und Gefahren für sicheres Bootfahren und Segeln anzeigen.
 - [Wikipedia](../plugins/wikipedia.md). Vektorkarte mit georeferenzierten [Wikipedia](https://wikipedia.org/)-Artikeln über Sehenswürdigkeiten oder zusätzlichen Informationen zu Orten.
 - [Wikivoyage](../plan-route/travel-guides.md). Bietet Vektorkarten mit virtuellen Reiseführern, die den Nutzern wertvolle Informationen, Empfehlungen und Tipps geben.
 - [Wettervorhersage](../plugins/weather.md). Wetterinformationen auf einer Karte zur einfachen Routenplanung.
@@ -153,7 +154,7 @@ So importieren Sie eine Datei:
 1. Suchen Sie die `.osf`-Datei im Speicher Ihres Geräts, in einem Messenger oder in einer E-Mail.
 2. Tippen Sie darauf, um sie mit OsmAnd zu öffnen.
 3. Das Plugin erscheint im Abschnitt **Plugin-Liste**, wo es aktiviert werden kann.
-4. Ein entsprechender Ordner erscheint dann im Abschnitt **Zusätzliche Karten** des Reiters [Downloads](#downloads).
+4. Ein entsprechender Ordner erscheint dann im Abschnitt **Zusätzliche Karten** des Reiters [Downloads](#downloads-menu).
 
 Lesen Sie mehr im Artikel [**Benutzerdefiniertes Paket**](../plugins/custom).
 

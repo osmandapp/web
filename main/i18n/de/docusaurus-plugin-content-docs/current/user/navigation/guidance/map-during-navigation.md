@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Kartenansicht während der Navigation
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -29,7 +29,7 @@ Dieser Artikel beschreibt, wie Sie das Erscheinungsbild der Karte während der N
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Kartenansicht während der Navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Kartenansicht während der Navigation](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Kartenansicht während der Navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Kartenansicht während der Navigation](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,9 @@ Während der Navigation passt sich das Erscheinungsbild der Karte an das ausgew�
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird. | *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 50 Sek.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | Das Symbol für die aktuelle Position wird mit der aktuellen Navigationsroute verknüpft. | Sie können diese Option deaktivieren, aber alle straßenbezogenen Optionen, wie z. B. die Spuranzeige, sind dann während der Navigation ebenfalls nicht sichtbar. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Bestimmt die Peilung basierend auf der Navigationsroute, der Sie folgen. | Die Einstellung ist nur sichtbar, wenn das [OsmAnd-Entwicklungs-Plugin](../../plugins/development.md) aktiviert ist. <br /> Diese Einstellungen sollten aktiviert werden, wenn die Ausrichtung der Richtungskarte bei der Verwendung von [Android Auto](../auto-car.md#common-issues-and-solutions) umgedreht ist oder wackelt. |
+| *Auto-Zoom-3D-Winkel* | Legt den Neigungswinkel der Karte fest, wenn während der Navigation auf die 3D-Ansicht gewechselt wird. Ein höherer Winkel lässt den Horizont weiter entfernt erscheinen und bietet mehr Sicht nach vorn. |Wird nur angewendet, wenn Auto-Zoom aktiviert ist. Werte: 20°, 25°, 30°, 35°, 40°. Standard: 25°.  |
+| *Nächste Abbiegung vorbereiten* | Rotiert die Karte automatisch etwas im Voraus, um die nächste Abbiegung oder das nächste Manöver während der Navigation anzuzeigen. Hilft, bevorstehende Aktionen zu antizipieren.  | Standardmäßig aktiviert. Wenn Sie ein Profil exportieren und erneut importieren, überprüfen Sie diese Einstellung, da sie in einigen früheren Versionen auf „aktiviert“ zurückgesetzt werden konnte.   |
+| *<Translate android="true" ids="snap_to_road"/>*  | Das Symbol für die aktuelle Position wird mit der aktuellen Navigationsroute verknüpft. | Sie können diese Option deaktivieren, aber alle straßenbezogenen Optionen, wie z. B. die Spuranzeige, sind dann während der Navigation ebenfalls nicht sichtbar.  |
 
 
 ## Punkte entlang der Route anzeigen {#show-points-along-the-route}
@@ -62,6 +63,10 @@ Die Einstellung *Entlang der Route anzeigen* ermöglicht es Ihnen, zusätzliche 
 - Die Möglichkeit, unterschiedliche Entfernungen (bis zu 5 km oder 3,11 Meilen, je nach eingestellter [Längeneinheit](../../personal/profiles.md#units--formats)) von der Route zu nahegelegenen Punkten festzulegen, ist nützlich bei der Verwendung von Routing-Typen wie [Luftlinie](../routing/straight-line-routing.md) oder [Direkt zum Punkt](../routing/direct-to-point-routing.md).
 - Für die Einstellung *Entlang der Route anzeigen* wird die Verwendung von [Sprachansagen](../guidance/voice-navigation.md) für die Navigation empfohlen.
 - *POIs, Favoriten und Verkehrswarnungen* werden in der Liste für eine bereits zurückgelegte Route nicht angezeigt.
+
+:::info note
+Die Option **Entlang der Route anzeigen** wirkt sich nur auf die POI- und Meine Favoriten-Listen aus, nicht auf die Karte selbst. Symbole von POIs und Favoriten werden überall auf der Karte angezeigt, unabhängig von ihrer Entfernung zur Route.
+:::
 
 
 ### Punkte anzeigen und auswählen {#view-and-select-points}
@@ -89,11 +94,11 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_navig
 Wenn Sie eine Route erstellen, können Sie im Abschnitt *Navigation* die Arten von Punkten festlegen, die entlang der Route angezeigt werden sollen.
 
 
-### Sonderziele (POIs) {#points-of-interest-pois}
+### Punkte von Interesse (POIs) {#points-of-interest-pois}
 
 ![POI-Overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI-Overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Die POI-Einstellungen unter [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sind mit der Einstellung **Entlang der Route anzeigen** verknüpft. Dies ist im Wesentlichen eine zusätzliche Einstellung für die Anzeige von POIs auf der Karte, die in direktem Zusammenhang mit der erstellten Route steht.  
+Die POI-Einstellungen unter [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) sind mit der Einstellung **Entlang der Route anzeigen** verknüpft. 
 
 Wenn Sie die Anzeige bestimmter POIs unter *Karte konfigurieren* festlegen, werden diese alle auf Ihren heruntergeladenen Karten angezeigt, unabhängig davon, ob Sie Kategorien ausgewählt haben oder, wenn Ihnen die Kategorie egal ist, nahegelegene POIs ausgewählt haben.  
 
@@ -150,7 +155,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 | Parameter | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Benachrichtigungen, wie z. B. Verkehrswarnungen oder Geschwindigkeitsbegrenzungen, werden als Widget auf dem Bildschirm angezeigt. Sie erscheinen während der Navigation in der unteren linken Ecke. | [Arten von Warnungs-Widgets](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Benachrichtigungen, wie z. B. Verkehrswarnungen oder Geschwindigkeitsbegrenzungen, werden als Widget auf dem Bildschirm angezeigt. Sie erscheinen während der Navigation in der unteren linken Ecke. | [Arten von Warnungs-Widgets](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Darstellung der Routenlinie {#route-line-appearance}
@@ -169,7 +174,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigationsroute Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Navigationsroute iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -199,25 +204,25 @@ Die Einstellung **Farbe** ändert die Farbtöne der Routenlinien. Ihre Gesamtfar
     ![Höhe](@site/static/img/navigation/route/Altitude_rl.png)
 
 - ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Die Routenlinie wird je nach Höhenprofil der Route in verschiedenen Farben eingefärbt. Eine detaillierte Beschreibung finden Sie im Artikel *Topographie-Plugin*, Abschnitt [Steigung](../../plugins/topography.md#hillshade-slope-and-altitude-layers).  
-    ![Höhe](@site/static/img/navigation/route/Slope.png)   ![Höhe](@site/static/img/navigation/route/Slope4.png)
+    ![Steigung](@site/static/img/navigation/route/Slope.png)   ![Steigung](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Färbt eine Routen- oder Tracklinie entsprechend der *Straßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Abschnitt *Vektorkarten - [Straßenstil](../../map/vector-maps.md#road-style)*.  
-    ![Höhe](@site/static/img/navigation/route/Roud_type.png)
+    ![Straßentyp](@site/static/img/navigation/route/Roud_type.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Liefert Informationen über die physische Oberfläche der Straße oder des Weges. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Oberfläche](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
-    ![Höhe](@site/static/img/navigation/route/Surface.png)
+    ![Oberfläche](@site/static/img/navigation/route/Surface.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klassifizierung der Manövrierbarkeit von Straßen oder Wegen für Radfahrzeuge, insbesondere im Hinblick auf die Regelmäßigkeit und Glätte der Oberfläche. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Glätte](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
-    ![Höhe](@site/static/img/navigation/route/Smoothness.png)
+    ![Glätte](@site/static/img/navigation/route/Smoothness.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Färbt eine Routen- oder Tracklinie entsprechend der *Winterstraßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Artikel *Vektorkarten*, Abschnitt [Winter- und Eisstraßen](../../map/vector-maps.md#winter-and-ski).  
-    ![Höhe](@site/static/img/navigation/route/Winter.png)
+    ![Winter](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Färbung einer Routen- oder Wegelinie nach der Zusammensetzung des Belags. Wird typischerweise verwendet, wenn das Straßennetz größtenteils unbefestigt ist. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Oberflächenfestigkeit](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
-    ![Höhe](@site/static/img/navigation/route/firmness.png)
+    ![Festigkeit](@site/static/img/navigation/route/firmness.png)
 
 - ***<ProFeature/> &nbsp;Schwierigkeit von Reitwegen***. Darstellung von Wegen entsprechend der Schwierigkeit von Reitwegen.  
-    ![Höhe](@site/static/img/navigation/route/firmness.png)
+    ![Schwierigkeit von Reitwegen](@site/static/img/navigation/route/firmness.png)
 
 
 ### Breite {#width}
@@ -239,10 +244,10 @@ Sie können die Breite der Routenlinie an die auf der Karte angezeigte Straße o
 Die Einstellung "Abbiegepfeile" ermöglicht es Ihnen auszuwählen, ob Abbiegepfeile auf der Routenlinie angezeigt werden.  
 
 - ***Auf der Karte***  
-    ![Höhe](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Abbiegepfeile iOS Karte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Abbiegepfeile auf der Karte Android](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Abbiegepfeile iOS Karte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***In der App***  
-    ![Höhe](@site/static/img/navigation/route/turn_arr.png)   ![Abbiegepfeile iOS](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Abbiegepfeile Android](@site/static/img/navigation/route/turn_arr.png)   ![Abbiegepfeile iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Verwandte Artikel {#related-articles}
