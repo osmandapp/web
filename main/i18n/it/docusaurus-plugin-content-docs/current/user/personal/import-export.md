@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Importa / Esporta
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Panoramica {#overview}
 
@@ -29,7 +29,7 @@ Le funzioni *Importa* ed *Esporta* consentono di salvare i dati da **file** `.os
 **Tipi di dati** disponibili per l'importazione/esportazione:
 
 - **Impostazioni:**  
-        [Profili](../personal/profiles.md#actions), &nbsp;[Impostazioni OsmAnd/Generali](../personal/global-settings.md), &nbsp;[Colori](../personal/color-palette-schemes.md), &nbsp;[Azione rapida](../widgets/quick-action.md), &nbsp;[Tipi di PDI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evita strada](../map/map-context-menu.md#avoid-road).
+        [Profili](../personal/profiles.md#actions), &nbsp;[Impostazioni OsmAnd/Generali](../personal/global-settings.md), &nbsp;[Colori](../personal/color-palette-schemes.md), &nbsp;[Azione rapida](../widgets/quick-action.md), &nbsp;[Tipo POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evita strada](../map/map-context-menu.md#avoid-road).
 - **I miei luoghi:**  
         [Preferiti](../personal/favorites.md#export--import), &nbsp;[Tracce](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Note OSM*, *Modifiche OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Note A/V](../plugins/audio-video-notes.md), &nbsp;[Indicatori mappa](../personal/markers.md), &nbsp;[Cronologia indicatori*, *Cronologia ricerche*, *Cronologia navigazione](../personal/global-settings.md#history), &nbsp;*Itinerario*.
 - **Risorse:**  
@@ -58,7 +58,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Tutti i dati configurati e creati possono essere esportati utilizzando il ***menu Esporta***. Il menu è composto da tre gruppi: **Impostazioni**, **I miei luoghi** e **Risorse**, che contengono tutte le cartelle di file disponibili. È possibile selezionare i file da esportare in ogni cartella, uno alla volta o tutti insieme. **Tutti i file esportati vengono salvati in formato `.osf`**.  
+Tutti i dati configurati e creati possono essere esportati utilizzando il ***menu Esporta***. Il menu è composto da tre gruppi: **Impostazioni**, **I miei luoghi** e **Risorse**, che contengono tutte le cartelle di file disponibili. Ad esempio, nella sezione Risorse, le mappe sono raggruppate per tipo in *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, e *<Translate android="true" ids="topography_maps"/>* per una navigazione più facile e un'esportazione selettiva. È possibile selezionare i file da esportare in ogni cartella, uno alla volta o tutti insieme. **Tutti i file esportati vengono salvati in formato `.osf`**.  
 
 
 ### Importa {#import}

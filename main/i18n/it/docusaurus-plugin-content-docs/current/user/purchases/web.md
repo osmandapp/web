@@ -1,8 +1,9 @@
 ---
-source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
+source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
 sidebar_position: 3
 title:  Acquisti Web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Come acquistare {#how-to-buy}
@@ -40,9 +40,9 @@ Di seguito sono riportati i prezzi dei prodotti OsmAnd negli Stati Uniti e nell'
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 

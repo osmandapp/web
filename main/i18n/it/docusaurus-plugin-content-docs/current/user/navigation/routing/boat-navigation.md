@@ -1,8 +1,9 @@
 ---
-source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
+source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
 sidebar_position: 8
 title:  Navigazione per barca
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,11 +14,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Panoramica {#overview}
 
-La navigazione per barca può essere uno strumento prezioso per chiunque ami navigare in barca o a vela attraverso canali, fiumi o rotte navigabili. A causa della mancanza della maggior parte delle rotte navigabili nei dati di OpenStreetMap, la navigazione per barca *non è raccomandata* per la **navigazione in acque aperte**, si suggerisce invece di utilizzare la **[navigazione verso un punto](#direct-to-point-routing-for-boat)**. Con le linee di contorno di profondità abilitate, può aiutare a rimanere al sicuro in acqua evitando pericoli come acque poco profonde, rocce o altri ostacoli.
-Il motore di navigazione per barca di OsmAnd tiene anche conto delle caratteristiche dei corsi d'acqua e delle imbarcazioni stesse.
+La navigazione per barca può essere uno strumento prezioso per chiunque ami navigare in barca o a vela attraverso canali, fiumi o rotte navigabili. A causa della mancanza della maggior parte delle rotte navigabili nei dati di OpenStreetMap, la navigazione per barca *non è raccomandata* per la **navigazione in acque aperte**, si suggerisce invece di utilizzare la **[Navigazione diretta al punto](#direct-to-point-routing-for-boat)**. Con le linee di contorno di profondità abilitate, può aiutare a rimanere al sicuro in acqua evitando pericoli come acque poco profonde, rocce o altri ostacoli.  
+Il motore di navigazione per barca di OsmAnd tiene anche conto delle caratteristiche dei corsi d'acqua e delle imbarcazioni stesse.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -41,9 +41,9 @@ Il motore di navigazione per barca di OsmAnd tiene anche conto delle caratterist
 Per impostazione predefinita, il profilo *Barca* è disattivato. Per utilizzare questo profilo per la navigazione, è necessario attivarlo in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-La navigazione per barca può essere configurata in base alle proprie esigenze nella sezione [Parametri del percorso](../../navigation/guidance/navigation-settings.md#route-parameters) delle impostazioni di Navigazione.
+La navigazione per barca può essere configurata in base alle proprie esigenze nella sezione [Parametri del percorso](../../navigation/guidance/navigation-settings.md#route-parameters) delle impostazioni di Navigazione.  
 
-Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l'ultimo abilitato insieme al [plugin Nautico](../../plugins/nautical-charts.md)). Tuttavia, è possibile utilizzare la navigazione per barca anche con altri profili, e diversi [tipi di navigazione](#other-routing-types-for-boat) possono essere impiegati anche nel profilo barca.
+Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l'ultimo abilitato insieme al [plugin Nautico](../../plugins/nautical-charts.md)).  Tuttavia, è possibile utilizzare la navigazione per barca anche con altri profili, e diversi [tipi di navigazione](#other-routing-types-for-boat) possono essere impiegati anche nel profilo barca.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -51,13 +51,13 @@ Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l
 <TabItem value="android" label="Android">
 
 
-![Impostazioni di navigazione per barca Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
+![Impostazioni di navigazione per barca Android](@site/static/img/navigation/routing/boat_route_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Impostazioni di navigazione per barca iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
+![Impostazioni di navigazione per barca iOS](@site/static/img/navigation/routing/boat_route_ios.png)  
 
 </TabItem>
 
@@ -65,9 +65,9 @@ Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l
 
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Consente di utilizzare corsi d'acqua e canali di scolo per la navigazione in barca. L'attivazione di questa opzione può essere utile per piccole imbarcazioni come canoe, kayak, zattere, barche a remi. | I [corsi d'acqua (Streams)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sono corsi d'acqua naturali troppo stretti per essere definiti fiumi. I [canali di scolo (Drains)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sono corsi d'acqua artificiali, tipicamente rivestiti di cemento o materiale simile, utilizzati per trasportare l'acqua in eccesso, come l'acqua piovana o di scarico. |
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | L'attivazione di questa opzione consente di utilizzare corsi d'acqua intermittenti per la navigazione in barca. | Il tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) viene utilizzato per indicare che un corso d'acqua non contiene acqua in modo permanente. |
-
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Consente di utilizzare corsi d'acqua e canali di scolo per la navigazione in barca. L'attivazione di questa opzione può essere utile per piccole imbarcazioni come canoe, kayak, zattere, barche a remi. |  I [corsi d'acqua (Streams)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sono corsi d'acqua naturali troppo stretti per essere definiti fiumi. I [canali di scolo (Drains)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sono corsi d'acqua artificiali, tipicamente rivestiti di cemento o materiale simile, utilizzati per trasportare l'acqua in eccesso, come l'acqua piovana o di scarico.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  L'attivazione di questa opzione consente di utilizzare corsi d'acqua intermittenti per la navigazione in barca.   | Il tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) viene utilizzato per indicare che un corso d'acqua non contiene acqua in modo permanente.  |
+| *Consenti traghetti* | Consente la navigazione tramite rotte dei traghetti. | Utilizza `route=ferry` dove presente in OSM. Non sono richieste nuove mappe. |
 
 :::note Navigazione in acqua e limitazioni
 
@@ -76,23 +76,20 @@ Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l
     - `waterway=canal`
     - `natural=water`, ecc.
 
-2. Il profilo Barca **non supporta le rotte dei traghetti (`route=ferry`)**. Ciò significa che le rotte dei traghetti, anche se presenti sulla mappa, **non verranno utilizzate** durante il calcolo dei percorsi in barca.
+2. Il profilo Barca supporta anche le **rotte dei traghetti (`route=ferry`)** quando l'opzione **Consenti traghetti** è abilitata. Ciò significa che se le rotte dei traghetti sono presenti sulla mappa, verranno utilizzate durante il calcolo dei percorsi in barca.
 
-3. Per seguire manualmente una linea di traghetto:
-
-    - Utilizzare lo strumento [Pianifica un percorso](../../plan-route/create-route.md) e posizionare manualmente i punti intermedi.
-    - Utilizzare il profilo Auto, che supporta le rotte dei traghetti.
+3. Se non sono mappati corsi d'acqua o rotte dei traghetti adatti in OSM, il motore di navigazione potrebbe non essere in grado di costruire un percorso appropriato. In tali casi, è possibile utilizzare lo strumento Pianifica un percorso e posizionare manualmente i waypoint.
 
 :::
 
 ## Altri tipi di navigazione per barca {#other-routing-types-for-boat}
 
-Il tipo di [Navigazione per barca](#route-parameters---boat) è l'algoritmo di navigazione predefinito per il profilo Barca. Tuttavia, è possibile scegliere un altro tipo di navigazione, anch'esso adatto alla navigazione in barca:
+Il tipo di [Navigazione per barca](#route-parameters---boat) è l'algoritmo di navigazione predefinito per il profilo Barca. Tuttavia, è possibile scegliere un altro tipo di navigazione, anch'esso adatto alla navigazione in barca:  
 
  - [Navigazione diretta al punto per barca](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Navigazione in linea retta per barca](./boat-navigation.md#straight-line-routing-for-boat)
 
-È importante notare che i tipi di navigazione *Diretta al punto* e *In linea retta* dovrebbero essere utilizzati solo in acque aperte dove non ci sono ostacoli o pericoli per la navigazione. Se si naviga in un corso d'acqua con un canale o un percorso specifico, si dovrebbe utilizzare il tipo di navigazione per barca in OsmAnd, che guiderà attraverso i canali di navigazione corretti ed eviterà aree poco profonde o altri pericoli.
+È importante notare che i tipi di navigazione *Diretta al punto* e *In linea retta* dovrebbero essere utilizzati solo in acque aperte dove non ci sono ostacoli o pericoli per la navigazione. Se si naviga in un corso d'acqua con un canale o un percorso specifico, si dovrebbe utilizzare il tipo di navigazione per barca in OsmAnd, che guiderà attraverso i canali di navigazione corretti ed eviterà aree poco profonde o altri pericoli.  
 
 Questi tipi di navigazione per il profilo barca possono essere attivati tramite il seguente percorso: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> o un altro) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

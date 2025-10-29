@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -29,11 +29,11 @@ I gesti sono essenziali per navigare sulla mappa in modo facile e intuitivo.
 | **Sposta** | Tocca e tieni premuta la mappa con **un** dito, poi trascina per spostarti. |
 | **Scorri** | Scorri la mappa con **un** dito. |
 | **Zoom avanti** | Tocca due volte la mappa con **un** dito. <br/> Tocca due volte con **un** dito e scorri verso il basso. <br/> Pizzica con **due** dita per ingrandire. |
-| **Zoom indietro** | Tocca due volte con **due** dita. <br/> Tocca due volte con **un** dito e scorri verso l'alto. <br/> Pizzica con **due** dita per rimpicciolire. |
-| **Ruota** | Tocca la mappa con **due** dita, poi ruota le dita con un movimento circolare. |
+| **Zoom indietro**| Tocca due volte con **due** dita. <br/> Tocca due volte con **un** dito e scorri verso l'alto. <br/> Pizzica con **due** dita per rimpicciolire. |
+| **Ruota**  | Tocca la mappa con **due** dita, poi ruota le dita con un movimento circolare. |
 | **Inclina (3D)** | Tocca con **due** dita e muovile su o giù. <br/> Disponibile solo con il [Motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) versione 2 (OpenGL). |
 
-Le animazioni di scorrimento possono essere disattivate nelle impostazioni con un'[opzione speciale](#no-animations).
+Le animazioni di scorrimento possono essere disattivate nelle impostazioni con un'[opzione speciale](#remove-animations).
 
 
 ## La mia posizione e Zoom {#my-location-and-zoom}
@@ -47,9 +47,9 @@ Il pulsante *La mia posizione* è un'icona circolare che indica se il centro del
   - *Icona blu piena*. La posizione è stata trovata ma non è sincronizzata con la mappa.
   - *Icona bianca*. La posizione è stata trovata e sincronizzata con la mappa.
   - *Icona grigia*. La posizione non è stata ancora trovata.
-  - *Icona a freccia*. La modalità 3D è attivata.
+  - *Icona a freccia*.  La modalità 3D è attivata.
 
-- Un **tocco lungo** (*Android*) sul pulsante *La mia posizione* apre il [menu contestuale della mappa](../map/map-context-menu.md), permettendoti di condividere la tua posizione.
+- **Tocco lungo** (*Android*) sul pulsante *La mia posizione* apre il [menu contestuale della mappa](../map/map-context-menu.md), permettendoti di condividere la tua posizione.
 
 <br/>
 
@@ -57,7 +57,7 @@ Il pulsante *La mia posizione* è un'icona circolare che indica se il centro del
 I *pulsanti Zoom* sono sempre visibili accanto a *La mia posizione* e ti permettono di controllare il livello di zoom della mappa.
 
 - La modifica del livello di zoom non influisce sulla sincronizzazione della mappa con la tua posizione.
-- Un **tocco lungo** sui *pulsanti Zoom* apre la finestra di dialogo *Lente d'ingrandimento mappa*, che consente di regolare i livelli di dettaglio della mappa.
+- **Tocco lungo** sui *pulsanti Zoom* apre la finestra di dialogo *Lente d'ingrandimento mappa*,che consente di regolare i livelli di dettaglio della mappa.
 - Tieni presente che durante la navigazione, lo zoom può essere controllato automaticamente dall'impostazione **Zoom automatico**:
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
@@ -119,7 +119,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *singolo tocco* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
+Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *tocco singolo* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
 
 
 ## Ruota mappa per direzione {#rotate-map-by-bearing}
@@ -198,7 +198,7 @@ Messaggi chiari sullo schermo ti guideranno durante il blocco o lo sblocco dello
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Leviga la rotazione della mappa con un'animazione di rotazione più lenta, anche se questo introduce un leggero ritardo, non superiore a 1 secondo.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Nessuna animazione {#no-animations}
+### Rimuovi animazioni {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -206,7 +206,7 @@ Messaggi chiari sullo schermo ti guideranno durante il blocco o lo sblocco dello
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Animare la propria posizione {#animate-own-position}
+### Anima la propria posizione {#animate-own-position}
 
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
@@ -216,7 +216,7 @@ Crea un effetto di scorrimento fluido della mappa rispetto all'icona *[La mia po
 
 ## Dispositivi di input esterni {#external-input-devices}
 
-I pulsanti dei dispositivi di input esterni forniscono un modo comodo ed efficiente per interagire con la mappa e l'interfaccia dell'applicazione OsmAnd. Si trovano su dispositivi esterni, come **tastiere Bluetooth o di altro tipo**, **pulsanti specializzati su dispositivi di navigazione per veicoli**, o controller [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en).  
+I pulsanti dei dispositivi di input esterni forniscono un modo comodo ed efficiente per interagire con la mappa e l'interfaccia dell'applicazione OsmAnd.  Si trovano su dispositivi esterni, come **tastiere Bluetooth o di altro tipo**, **pulsanti specializzati su dispositivi di navigazione per veicoli**, o controller [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en).  
 
 Una delle funzioni principali dei pulsanti sui dispositivi di input esterni è quella di ingrandire e rimpicciolire la mappa. Permettono anche di navigare sulla mappa e di cambiarne l'orientamento senza dover toccare e gesticolare sullo schermo. I pulsanti sui dispositivi di input esterni supportano molte altre funzioni, come l'apertura del *Menu principale*.
 

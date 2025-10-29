@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -60,7 +60,7 @@ Quando si apre l'applicazione, viene visualizzato un elenco di categorie. Per fa
 - [Impostazioni](#voice-prompts). Questo pulsante è responsabile di: 1. accesso per attivare/disattivare i *suggerimenti vocali* durante la navigazione del percorso selezionato; 2. mostrare i dettagli del percorso (tempo e distanza) per la fermata successiva.
 - [Cerca](#search). Toccando il pulsante si apre una schermata con accesso alle funzioni di ricerca.
 - [La mia posizione](../widgets/map-buttons.md#my-location-and-zoom). Sposta la parte visibile della mappa in modo che la posizione corrente si trovi al centro dello schermo.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Consente di ingrandire e ridurre la parte visibile della mappa.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Consente di ingrandire e ridurre la parte visibile della mappa. Il gesto pinch-to-zoom è disponibile per ridimensionare la mappa. Se non supportato dall'unità principale, la regolazione dello zoom viene eseguita tramite gesto di doppio tocco e scorrimento.
 - [Bussola](../widgets/map-buttons.md#compass). Mostra quale delle quattro modalità di orientamento della mappa disponibili sullo schermo del dispositivo è selezionata.
 
 
@@ -257,7 +257,7 @@ L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sullo sche
 - Per abilitare questa funzione, è necessario selezionare [Rendering mappa Versione 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 - Aprire il menu principale *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* direttamente nell'app OsmAnd.
 - Dopo aver configurato le impostazioni, il pulsante **3D** verrà visualizzato sullo schermo di *Android Auto* quando l'elenco delle categorie per le destinazioni è chiuso.
-- È possibile passare dalla modalità mappa 3D a quella 2D toccando questo pulsante.
+- È possibile passare tra le modalità mappa 3D / 2D toccando questo pulsante.
 
 
 ## Impostazioni {#settings}

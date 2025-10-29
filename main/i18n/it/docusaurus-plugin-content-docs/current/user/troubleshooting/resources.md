@@ -1,8 +1,9 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
 sidebar_position: 9
 title: Risorse e personalizzazioni
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Esplora OsmAnd {#explore-osmand}
 
-OsmAnd è un'applicazione potente con un'ampia base di utenti e, oltre alla sua documentazione ufficiale, esistono numerose risorse create dalla comunità.
+OsmAnd è un'applicazione potente con un'ampia base di utenti e, oltre alla sua documentazione ufficiale, esistono numerose risorse create dalla comunità.  
 
 Questo articolo raccoglie link a manuali utente personalizzati, gruppi di social media, plugin, stili di mappa e altro ancora. Esplora queste risorse per ampliare le tue conoscenze, personalizzare la tua esperienza con OsmAnd e connetterti con altri utenti.
 
@@ -35,7 +35,7 @@ Per connetterti con altri utenti di OsmAnd, fare domande e condividere la tua es
 |  Google Groups | Osmand (*Inglese*)  | Un gruppo in cui gli utenti condividono consigli, rispondono a domande e discutono delle funzionalità di OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussione e supporto  | La comunità Reddit per gli utenti di OsmAnd. Fai domande, condividi esperienze o mostra i tuoi stili di mappa personalizzati. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | Canale notizie OsmAnd (*Inglese*)  | Il gruppo ufficiale di OsmAnd per annunci e aggiornamenti direttamente dagli sviluppatori. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | Canale notizie OsmAnd  | Gruppo ufficiale di OsmAnd per discussioni dal vivo, annunci e aggiornamenti. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | Canale notizie OsmAnd  | Gruppo ufficiale di OsmAnd per discussioni dal vivo, annunci e aggiornamenti. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | Canale notizie OsmAnd | Una comunità dove puoi chattare, condividere consigli e ricevere aiuto sulle funzionalità di OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -57,7 +57,7 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 
 ### Manuali {#manuals}
 
-La documentazione ufficiale di OsmAnd è completa, ma la comunità ha anche prodotto una serie di manuali personalizzati per aiutare gli utenti con funzionalità e casi d'uso specifici.
+La documentazione ufficiale di OsmAnd è completa, ma la comunità ha anche prodotto una serie di manuali personalizzati per aiutare gli utenti con funzionalità e casi d'uso specifici.  
 
 Questi manuali, disponibili in più lingue, offrono spesso spunti, consigli e trucchi unici che potrebbero non essere trattati nelle guide ufficiali. Queste risorse sono comode aggiunte alla [Guida utente ufficiale di OsmAnd](https://osmand.net/docs/user/), offrendo maggiori informazioni sulle funzionalità dell'app.
 
@@ -106,6 +106,7 @@ Il file predefinito [render.xml](https://github.com/osmandapp/OsmAnd-resources/b
 | Confini amministrativi evidenziati | Lo stile di rendering della mappa si basa su quello predefinito di OsmAnd, con confini amministrativi più evidenziati per una migliore visibilità. |[Confini amministrativi evidenziati](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Mappa Open Fiets | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) è uno stile di mappa incentrato sul ciclismo, che evidenzia le corsie ciclabili (in rosso), i percorsi ciclabili (tratteggiati in blu), le piste ciclabili (tratteggiate in rosso) e le strade a traffico veicolare limitato, come le strade ciclabili (bordi rossi continui).  |[Stile OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Stile di mappa Selection | Lo ["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) è uno stile di mappa di Holder Tamm che consente di scegliere se nascondere o meno determinati oggetti.  |["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [Lo stile di rendering ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) si basa principalmente su UniMap e routes.addon.render.xml  |["Stile di mappa ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 
 ### Mappe offline {#offline-maps}

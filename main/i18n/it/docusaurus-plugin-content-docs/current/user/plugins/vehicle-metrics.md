@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  Metriche veicolo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,14 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
 Il plugin Metriche veicolo è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili gratuitamente su OsmAnd.
 :::
 
-Il **plugin Metriche veicolo** consente il monitoraggio in tempo reale dei dati del veicolo tramite il [protocollo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gli utenti possono tracciare metriche essenziali come le prestazioni del motore, l'efficienza del carburante e la velocità, consentendo una manutenzione proattiva del veicolo e la risoluzione dei problemi.
+Il **plugin Metriche veicolo** consente il monitoraggio in tempo reale dei dati del veicolo tramite il [protocollo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gli utenti possono tracciare metriche essenziali come le prestazioni del motore, l'efficienza del carburante e la velocità, consentendo una manutenzione proattiva del veicolo e la risoluzione dei problemi.  
 
 Gli [scanner OBD-II](https://en.wikipedia.org/wiki/ELM327) sono parte integrante della diagnostica automobilistica moderna. Con lo streaming dei dati in tempo reale, gli utenti ottengono informazioni istantanee sui sistemi del veicolo, facilitando la manutenzione preventiva e riducendo i costi di riparazione. Questi strumenti sono fondamentali sia per l'uso personale che per i servizi automobilistici professionali.
 
@@ -47,7 +47,7 @@ Gli [scanner OBD-II](https://en.wikipedia.org/wiki/ELM327) sono parte integrante
 
 Per utilizzare i dati di uno scanner OBD-II:
 
-1. [Acquista](../purchases/) un **abbonamento OsmAnd Pro**. (*Velocità veicolo* e *Velocità motore* sono gratuiti.)
+1. [Acquista](../purchases/) un **abbonamento OsmAnd Pro**. (*Velocità veicolo* e *Velocità motore* sono gratuiti.)  
 2. [Abilita](../plugins/index.md#enable--disable) il plugin Metriche veicolo nella sezione Plugin del *Menu principale*.
 3. **Attiva** il Bluetooth sul tuo dispositivo.
 4. [Collega](#pair-odb-ii-scanner) lo scanner OBD-II alla porta del tuo veicolo.
@@ -82,7 +82,7 @@ Per utilizzare i dati di uno scanner OBD-II:
 Collega lo scanner alla porta del tuo veicolo e associalo tramite l'app:
 
 - Vai su *Menu → Plugin → Metriche veicolo → Impostazioni → Connetti* o **+**.
-- Se Metriche veicolo è nel *Menu principale*: *Menu → Metriche veicolo → Impostazioni → Connetti* o **+**.
+- Se Metriche veicolo è nel *Menu principale*:  *Menu → Metriche veicolo → Impostazioni → Connetti* o **+**.
 
 Scegli il tuo dispositivo OBD-II dall'elenco e stabilisci la connessione.
 
@@ -146,8 +146,9 @@ Le metriche sono classificate per chiarezza. Strumenti diagnostici avanzati cons
 *Altro:*
 
 - **Livello batteria**. Indica il livello di tensione della batteria del veicolo.
+- **Tensione adattatore**. Mostra la tensione fornita all'adattatore OBD-II (comando AT RV).
 - **Velocità veicolo**. Mostra i dati del sensore di velocità del veicolo (VSS).
-- **Posizione acceleratore**. Determina l'aspirazione dell'aria del motore tramite l'angolo della valvola a farfalla.
+- **Posizione acceleratore**. Determina l'aspirazione dell'aria del motore tramite l'angolo della valvola a farfalla.  
   **VIN**. Mostra il numero di identificazione del veicolo a 17 caratteri.
 
 

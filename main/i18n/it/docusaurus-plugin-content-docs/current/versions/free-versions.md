@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -31,7 +32,7 @@ Data di rilascio 06/2025:
 - Aggiunto analizzatore di salite/discese.
 - Espansa l'integrazione di Wikipedia e Wikivoyage per più POI.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Versione 5.0 {#version-50}
 
@@ -49,7 +50,7 @@ Data di rilascio 04/2025:
 - Le vette prominenti sono ora scopribili tramite mappa e ricerca
 - Altezze delle vette montane in piedi
 - Aggiunto: Falesie e aree di arrampicata sulla mappa
-- La ricerca di indirizzi negli Stati Uniti è stata migliorata
+- La ricerca di indirizzi negli Stati Uniti è stata migliorata  
 - Aggiunto TTS ebraico per la navigazione
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -482,7 +483,7 @@ Data di rilascio: 04/2017
 Data di rilascio: 11/2016
   
 - Icone cliccabili sulla mappa. Ottieni informazioni senza il livello POI
-- Ricerca POI molto dettagliata. Trova posizioni per più caratteristiche
+- Ricerca POI molto dettagliata. Trova posizione per più caratteristiche
 - Nascondere la bussola. Vedi la bussola solo quando ne hai bisogno
 - Compatibilità con Android Wear. Usa OsmAnd sul tuo Android Wear
 - Stile mappa Topo. Uno stile completamente nuovo per escursionisti e turisti
@@ -523,7 +524,7 @@ Data di rilascio: 03/2016
 
 Data di rilascio: 11/2015
 
-- Nuova interfaccia utente sensibile al contesto per toccare le posizioni sulla mappa e su altre schermate
+- Nuova interfaccia utente sensibile al contesto per toccare le posizione sulla mappa e su altre schermate
 - La schermata della mappa viene ora avviata direttamente a meno che non sia selezionata l'opzione "Mostra Dashboard all'avvio dell'app"
 - Nuovi dati Wikipedia, ora scaricabili per paese e con dati molto più completi
 - Migliore ricalcolo del percorso (dopo ripetuti tentativi il motore suggerisce un percorso diverso)
@@ -797,14 +798,14 @@ Data di rilascio 04/2012:
 
 Data di rilascio 09/2011:
 
-- Implementazione della ricerca POI per nome in grandi aree (paesi)
+- Implementazione della ricerca POI per nome in grandi aree (paesi)  
 - Gestore dati offline (scarica, elimina, attiva/disattiva dati offline direttamente in OsmAnd)
 - Punti e gruppi preferiti (categorizza, elimina, gestisci preferiti)
 - Informazioni sull'altitudine
 - GPX Explorer nell'applicazione (visualizza dettagli traccia, distanza, velocità media, altitudine, ecc.)
 - Navigazione GPX (più opzioni, continua la navigazione dopo un crash, supporta le rotonde)
 - Funzione per salvare il percorso come traccia GPX per l'uso offline
-- Miglioramento del monitoraggio GPX (filtra alcune posizioni imprecise e salva precisione/altitudine/velocità)
+- Miglioramento del monitoraggio GPX (filtra alcune posizione imprecise e salva precisione/altitudine/velocità)
 - [Carica GPX](https://download.osmand.net/gpx/) alla comunità OSM
 - Motore Text To Speech per la navigazione vocale
 - Mappa di base per tutto il mondo inclusa nell'app

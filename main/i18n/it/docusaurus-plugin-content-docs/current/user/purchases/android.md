@@ -1,8 +1,9 @@
 ---
-source-hash: 166c161e033aab6f7ca0b049fcfab98226fb4a490c7abb63ece62fd8edca3314
+source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
 sidebar_position: 1
 title:  Acquisti Android
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## Installare OsmAnd (Android) {#install-osmand-android}
@@ -67,7 +67,7 @@ Per i dispositivi Android, è possibile scaricare le versioni **Gratuita** e a *
 
 2. **Android Auto** è supportato solo per OsmAnd scaricato da **Google Play**. **Non è disponibile** per Maps+ scaricato da *Huawei AppGallery*.
 
-3. **OsmAnd Pro**, **OsmAnd+** e **Maps+** sono acquisti *multipiattaforma*. Ciò significa che è possibile acquistarlo in uno store (ad es. *Google Play, Huawei AppGallery, AppStore* e *osmand.net*) e ripristinarlo in un altro [collegando il proprio acquisto all'account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro**,  **OsmAnd+** e **Maps+** sono acquisti *multipiattaforma*. Ciò significa che è possibile acquistarlo in uno store (ad es. *Google Play, Huawei AppGallery, AppStore*, e *osmand.net*) e ripristinarlo in un altro [collegando il proprio acquisto all'account OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 4. È possibile aggiungere **OsmAnd+** alla **[Raccolta di famiglia di Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** per condividere l'acquisto con i membri della famiglia.  
 
@@ -78,9 +78,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
@@ -93,8 +93,8 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | Abbonamento [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -102,6 +102,7 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
 | **Prezzo (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Prezzo (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+
 
 
 ### Funzionalità gratuite e a pagamento {#free-and-paid-features}
@@ -119,7 +120,7 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Tutte le funzionalità Pro](#pro-features) | **-** | **-** | ✔ |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Download illimitati delle mappe](../start-with/download-maps.md) | <details><summary>**7 download di mappe**</summary>  - Per download o aggiornamento di una mappa si intende solo il download-aggiornamento della mappa di un paese (regione). <br/> - **Mappa panoramica del mondo**, **Correzione altitudine mondiale**, **Caratteri mappa** e **Istruzioni vocali** non vengono conteggiati come 7 possibilità di download. </details> | ✔ | ✔ |
-| [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates)<br/>Una volta al mese (con 2 giorni di ritardo) | <details><summary>**7 download di mappe**</summary> L'aggiornamento della mappa conta come un download.</details> | ✔ | ✔ |
+| [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates-menu)<br/>Una volta al mese (con 2 giorni di ritardo) | <details><summary>**7 download di mappe**</summary> L'aggiornamento della mappa conta come un download.</details> | ✔ | ✔ |
 | [Aggiornamenti orari delle mappe](../personal/maps-resources.md#live-updates)<br/>Aggiornamenti live (ritardo di 1 ora) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -185,7 +186,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Piano Pro](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -193,7 +194,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Piano Maps+](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps.png)
 
 
 ## Abbonamenti precedenti (prima della 4.0) {#legacy-subscriptions-prior-40}
@@ -231,7 +232,7 @@ Per ripristinare l'acquisto, controlla quale piano OsmAnd hai acquistato.
 - *Per aprire Ripristina acquisti*, segui questi passaggi: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro) è attivato.
 - *Registra le funzionalità Pro* con l'abbonamento OsmAnd Pro per tutte le piattaforme (Android e iOS). Se hai un account OsmAnd Pro, devi usarlo [per attivare OsmAnd Pro](../personal/osmand-cloud.md) per il tuo dispositivo.
 
-![Piano Pro](@site/static/img/purchases/maps_purchases.png)
+![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
 ### Altri casi {#other-cases}
 

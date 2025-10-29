@@ -1,8 +1,9 @@
 ---
-source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
+source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topografia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
@@ -23,11 +23,11 @@ Il plugin Topografia è una [funzionalità a pagamento](../purchases/index.md) d
 :::
 
 La topografia è una caratteristica importante della cartografia che fornisce informazioni per valutare visivamente il rilievo del terreno.
-Le informazioni topografiche come le [Curve di livello](#contour-lines), il [Terreno](#terrain) (*Ombreggiatura* e *Pendenza*) e il [Rilievo 3D](#3d-relief) aiutano a fare una valutazione visiva della conformazione del terreno vedendo l'elevazione, il rilievo, gli estremi, la ripidità o i punti di uguale altezza.
+Le informazioni topografiche come le [Curve di livello](#contour-lines), il [Terreno](#terrain) (*Ombreggiatura* e *Pendenza*), e il [Rilievo 3D](#3d-relief) aiutano a fare una valutazione visiva della conformazione del terreno vedendo l'elevazione, il rilievo, gli estremi, la ripidità o i punti di uguale altezza.
 
-Ogni funzionalità fornita da questo plugin è un livello mappa indipendente che, quando abilitato, può essere visualizzato sopra o sotto la fonte della mappa principale a seconda delle [impostazioni](../map/raster-maps.md#overlay-layer).
+Ogni funzionalità fornita da questo plugin è un livello mappa indipendente che, quando abilitato, può essere visualizzato sopra o sotto la fonte della mappa principale a seconda delle [impostazioni](../map/raster-maps.md#overlay-layer).  
 
-Il plugin Topografia fornisce l'accesso ai seguenti tipi di mappa:
+Il plugin Topografia fornisce l'accesso ai seguenti tipi di mappa:  
 
 - [Curve di livello](#contour-lines). Si tratta di una [mappa vettoriale](../map/vector-maps.md) rappresentata in [**metri** o **piedi**](#contour-lines-meters-or-feet). Le curve di livello mostrano i livelli di elevazione e aiutano a visualizzare il terreno.
 - [Ombreggiatura](#hillshade-slope-and-altitude-layers). Tipi di mappe con ombreggiatura di colline e pendii che rendono il rilievo più visibile e aiutano a interpretare visivamente il terreno.
@@ -57,7 +57,7 @@ Il plugin Topografia fornisce l'accesso ai seguenti tipi di mappa:
 
 ### Licenza per i dati DEM utilizzati da OsmAnd per il rilevamento del terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-I dati di altitudine sulla mappa (tra 70 gradi di latitudine nord e 70 gradi di latitudine sud) sono stati ottenuti da misurazioni effettuate nell'ambito della *Shuttle Radar Topography Mission (SRTM)*. È stato utilizzato l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, lo strumento di imaging primario del *Sistema di Osservazione della Terra della NASA*.
+I dati di altitudine sulla mappa (tra 70 gradi di latitudine nord e 70 gradi di latitudine sud) sono stati ottenuti da misurazioni effettuate nell'ambito della *Shuttle Radar Topography Mission (SRTM)*. È stato utilizzato l'*Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, lo strumento di imaging primario del *Sistema di Osservazione della Terra della NASA*.  
 Per informazioni complete, consultare la [Licenza](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -79,7 +79,7 @@ Per visualizzare i dati di **Curve di livello** e **Terreno (Ombreggiatura, Pend
 2. [Abilita](../plugins/index.md#enable--disable) il plugin Topografia nella sezione Plugin del *Menu principale*.
 3. [Scarica](#download-maps): Mappe Curve di livello, Ombreggiatura, Pendenza o Terreno (3D).
 4. **Abilita e regola**: Curve di livello, Ombreggiatura o Pendenza per la visualizzazione della mappa.
-5. Puoi anche guardare il [tutorial su YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
+5. Puoi anche guardare il [tutorial su YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 Per visualizzare il [**Rilievo 3D**](#3d-relief) è necessario acquistare il piano *OsmAnd Pro*, che include l'accesso al plugin Topografia.
 
@@ -101,7 +101,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,reg
 
 ![Download curve di livello Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Download curve di livello Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -128,13 +128,13 @@ Se la mappa visualizzata sullo schermo non è stata scaricata, allora in *Menu �
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Finestra di dialogo download curve di livello iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Per le [**Curve di livello**](#contour-lines), è necessario determinare in quali [unità](../personal/profiles.md#units--formats) (metri o piedi) verranno visualizzate sulla mappa e scaricare la versione appropriata della mappa sul proprio dispositivo.
 
@@ -161,7 +161,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Le [Curve di livello](../map/vector-maps.md#-contour-lines) sono una rappresentazione grafica delle elevazioni su una mappa e sono disponibili come mappe vettoriali. Formano linee corrispondenti a punti con la stessa altitudine, che formano contorni che consentono di determinare in quale direzione e di quanto la superficie è inclinata.
 
@@ -192,7 +192,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
@@ -200,10 +200,10 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*.
-Caratteristiche specifiche:
+L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*.  
+Caratteristiche specifiche:  
 
 - È possibile abilitare solo un'opzione alla volta, Ombreggiatura, Pendenza o Altitudine.
 - Se non si notano cambiamenti dopo aver scaricato e abilitato la mappa corrispondente, si consiglia di riavviare l'applicazione.
@@ -217,9 +217,9 @@ Il menu **Terreno** include la selezione dello [schema di colori](#default-color
 | ------ | ------- | ------- |
 | ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**L'ombreggiatura** si basa sulla simulazione dell'illuminazione della superficie utilizzando i dati del terreno. Questo metodo comporta la creazione di ombre e luci in base all'angolo della superficie rispetto alla fonte di luce. Di conseguenza, sulla mappa si vedono colline, valli e altri dettagli del terreno in modo naturale.
+**L'ombreggiatura** si basa sulla simulazione dell'illuminazione della superficie utilizzando i dati del terreno. Questo metodo comporta la creazione di ombre e luci in base all'angolo della superficie rispetto alla fonte di luce. Di conseguenza, sulla mappa si vedono colline, valli e altri dettagli del terreno in modo naturale.  
 
-**La pendenza** determina l'angolo di inclinazione della superficie in base ai dati di elevazione dei punti sulla mappa. I calcoli dell'angolo di pendenza vengono eseguiti considerando le variazioni di elevazione e le distanze tra i punti, e rappresentando questa variazione come un angolo di pendenza.
+**La pendenza** determina l'angolo di inclinazione della superficie in base ai dati di elevazione dei punti sulla mappa. I calcoli dell'angolo di pendenza vengono eseguiti considerando le variazioni di elevazione e le distanze tra i punti, e rappresentando questa variazione come un angolo di pendenza.  
 
 **L'altitudine** rappresenta l'elevazione dei punti sulla mappa rispetto al livello del mare. Aiuta a capire come il terreno cambia in altezza. Questa funzione è particolarmente utile per attività come l'escursionismo o la mountain bike, dove conoscere l'altitudine può aiutare a pianificare i percorsi e a gestire lo sforzo fisico. I dati di altitudine derivano da modelli di elevazione e forniscono una visione chiara dei punti alti e bassi, rendendo più facile valutare la difficoltà di un percorso o identificare cime e valli lungo il tragitto.
 
@@ -261,7 +261,7 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
 
@@ -287,13 +287,13 @@ La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle omb
 
 ### Livelli di zoom {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 La funzione *Livelli di scala* consente di impostare i valori minimo e massimo dei livelli di zoom della mappa, che vanno da 4 a 19, ai quali verranno visualizzati i livelli della mappa Ombreggiatura o Pendenza.
 
 ### Dimensione cache {#cache-size}
 
-**Dimensione cache** è una sezione informativa che visualizza la quantità di memoria sul dispositivo attualmente utilizzata per i dati del *Terreno*. Ogni volta che si visualizzano le informazioni di *Ombreggiatura* o *Pendenza* su una mappa, tutti questi dati vengono temporaneamente memorizzati nella cache per un accesso rapido e un uso successivo, evitando un carico aggiuntivo sul processore del dispositivo.
+**Dimensione cache** è una sezione informativa che visualizza la quantità di memoria sul dispositivo attualmente utilizzata per i dati del *Terreno*. Ogni volta che si visualizzano le informazioni di *Ombreggiatura* o *Pendenza* su una mappa, tutti questi dati vengono temporaneamente memorizzati nella cache per un accesso rapido e un uso successivo, evitando un carico aggiuntivo sul processore del dispositivo.  
 
 **Svuotare la cache** è talvolta necessario per liberare spazio sul dispositivo o per risolvere potenziali problemi di prestazioni. Per svuotare la cache è necessario andare nelle *Impostazioni di sistema* del dispositivo, quindi il percorso può essere il seguente: *Applicazioni → OsmAnd → Archiviazione → Svuota cache*.
 
@@ -307,14 +307,14 @@ La funzione *Livelli di scala* consente di impostare i valori minimo e massimo d
 2. Se si utilizza il **Motore di rendering della mappa Versione 2 (OpenGL)**:
     - È possibile continuare a utilizzare il normale tipo di download delle mappe raster di Ombreggiatura e Pendenza. Tuttavia, per farlo, è necessario attivare il [plugin di sviluppo OsmAnd](../plugins/development.md) e abilitare l'impostazione [Usa formato SQLite raster per ombreggiatura e pendenza](../plugins/development.md#terrain).
 
-    - In alternativa, è possibile utilizzare il download della [Mappa del terreno (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location). Ciò consente di risparmiare spazio di memoria sul dispositivo e gli effetti di Ombreggiatura, Pendenza e Rilievo 3D verranno generati da essi utilizzando il dispositivo.
+    - In alternativa, è possibile utilizzare il download della [Mappa del terreno (3D)](../personal/maps-resources.md#paid-map-content). Ciò consente di risparmiare spazio di memoria sul dispositivo e gli effetti di Ombreggiatura, Pendenza e Rilievo 3D verranno generati da essi utilizzando il dispositivo.
 
 
 ### Azioni rapide {#quick-actions}
 
 ![Azione rapida per Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](#default-color-scheme). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.
+È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](#default-color-scheme). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.  
 
 Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nella sezione Topografia del menu Configura mappa. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map), è possibile trovare un elenco dei livelli disponibili per la visualizzazione. Se è necessario un accesso rapido a questa configurazione della mappa, utilizzare lo strumento *Pulsante personalizzato*.
 
@@ -338,7 +338,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
@@ -346,7 +346,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 La funzione Rilievo 3D produce un rilievo innalzato e fornisce una rappresentazione tridimensionale del paesaggio. Il Rilievo 3D funziona offline e può essere utilizzato con le [mappe vettoriali di OsmAnd](../map/vector-maps.md) o qualsiasi [mappa raster](../map/raster-maps.md#select-raster-maps) come [Sorgente mappa](../map/raster-maps.md#main) o come [Sottolivello/Sovrapposizione](../map/raster-maps.md#overlay-layer).
 
@@ -368,7 +368,7 @@ La funzione Rilievo 3D produce un rilievo innalzato e fornisce una rappresentazi
 | ------ | ------- |
 | ![Rilievo 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Rilievo 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -391,7 +391,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 ![Esagerazione verticale Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -412,10 +412,10 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 |--------|---------|
 | ![Livelli terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Livelli terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**L'ombreggiatura** è un tipo di mappa che visualizza il terreno utilizzando le ombre, creando una rappresentazione visiva della pendenza e della forma della superficie terrestre.
-**Il Rilievo 3D** è una funzione che aggiunge effetti tridimensionali alla mappa.
+**L'ombreggiatura** è un tipo di mappa che visualizza il terreno utilizzando le ombre, creando una rappresentazione visiva della pendenza e della forma della superficie terrestre.  
+**Il Rilievo 3D** è una funzione che aggiunge effetti tridimensionali alla mappa.  
 
-Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *L'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.
+Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *L'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
 
 Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo appare più dettagliata, più scura e più a gradini rispetto a un'immagine di *Rilievo 3D*. La spiegazione è che *l'Ombreggiatura* enfatizza i gradienti e i contrasti del terreno, creando un'immagine più nitida e dettagliata. La funzione *Rilievo 3D* conferisce alla mappa un aspetto più fluido e levigato, ammorbidendo il terreno e riducendo potenzialmente la visibilità di alcuni dettagli più fini.
 
@@ -428,7 +428,7 @@ Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo ap
 
 ![Curve di livello combinate con Ombreggiatura](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Curve di livello combinate con Pendenza](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -440,8 +440,8 @@ Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo ap
 
 OsmAnd consente di combinare più tipi di livelli di mappa per una visualizzazione più visiva.
 
-- La combinazione di **Curve di livello** e **Ombreggiatura** è ottimale per stimare visivamente e numericamente la pendenza dei pendii montuosi.
-- La combinazione dei livelli **Curve di livello** e **Pendenza** è la migliore per stimare la pendenza dei pendii e trovare punti con la stessa altezza.
+- La combinazione di **Curve di livello** e **Ombreggiatura** è ottimale per stimare visivamente e numericamente la ripidità dei pendii montuosi.
+- La combinazione dei livelli **Curve di livello** e **Pendenza** è la migliore per stimare la ripidità dei pendii e trovare punti con la stessa altezza.
 - La combinazione dei livelli **Rilievo 3D** e **Ombreggiatura** consente di ottenere una rappresentazione più realistica e visiva del terreno, del rilievo e dei dettagli del paesaggio. Questa combinazione è particolarmente adatta per terreni montuosi e collinari.
 
 
@@ -457,6 +457,6 @@ OsmAnd consente di combinare più tipi di livelli di mappa per una visualizzazio
 
 1. Come ripristinare l'acquisto del plugin Topografia (precedentemente Curve di livello). [(controlla)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Le curve di livello, i dati di elevazione o il rilievo 3D non vengono visualizzati. [(controlla)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. La mappa passa automaticamente alla modalità 3D durante la navigazione:
-    - Assicurarsi che il pulsante **Modalità 3D** sia disabilitato in **Menu → Configura schermata → Pulsanti → Pulsanti predefiniti**.
+3. La mappa passa automaticamente alla modalità 3D durante la navigazione:  
+    - Assicurarsi che il pulsante **Modalità 3D** sia disabilitato in **Menu → Configura schermata → Pulsanti → Pulsanti predefiniti**.  
     - Verificare se sono abilitate funzionalità del Terreno in **Menu → Configura mappa → Topografia** che potrebbero attivare un effetto 3D.

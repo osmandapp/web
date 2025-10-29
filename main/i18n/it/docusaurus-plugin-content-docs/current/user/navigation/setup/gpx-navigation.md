@@ -1,8 +1,9 @@
 ---
-source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
+source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
 sidebar_position: 2
 title:  Navigazione tramite traccia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
-L'opzione *Navigazione tramite traccia* (GPX) consente di seguire un percorso o una traccia predefinita su una mappa. Può essere particolarmente utile per attività all'aperto come escursionismo, ciclismo o guida fuoristrada, dove avere un percorso pianificato migliora la sicurezza e l'efficienza. Se si viaggia in un gruppo organizzato, questa funzione aiuta voi e ogni membro del gruppo ad avere le stesse informazioni sul percorso degli altri.
+L'opzione *Navigazione tramite traccia* (GPX) consente di seguire un percorso o una traccia predefinita su una mappa. Può essere particolarmente utile per attività all'aperto come escursionismo, ciclismo o guida fuoristrada, dove avere un percorso pianificato migliora la sicurezza e l'efficienza. Se si viaggia in un gruppo organizzato, questa funzione aiuta voi e ogni membro del gruppo ad avere le stesse informazioni sul percorso degli altri.  
 
-L'opzione *Navigazione tramite traccia* può essere utilizzata anche nella vita di tutti i giorni. È possibile utilizzare una [traccia registrata](../../plugins/trip-recording.md) in precedenza o [creare una traccia](../../personal/tracks/manage-tracks.md#create-a-track) e condividerla con la famiglia o gli amici invece di spiegare loro il percorso. È anche possibile utilizzare i [percorsi sulla mappa di OsmAnd](../../../../blog/routes/) per la navigazione. Come evidenziarli sulla mappa e cosa significano i loro colori è descritto nella sezione [Percorsi](../../map/vector-maps.md#routes) dell'articolo *Mappe vettoriali*.
+L'opzione *Navigazione tramite traccia* può essere utilizzata anche nella vita di tutti i giorni. È possibile utilizzare una [traccia registrata](../../plugins/trip-recording.md) in precedenza o [creare una traccia](../../personal/tracks/manage-tracks.md#create-a-track) e condividerla con la famiglia o gli amici invece di spiegare loro il percorso. È anche possibile utilizzare i [percorsi sulla mappa di OsmAnd](../../../../blog/routes/) per la navigazione. Come evidenziarli sulla mappa e cosa significano i loro colori è descritto nella sezione [Percorsi](../../map/vector-maps.md#routes) dell'articolo *Mappe vettoriali*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -45,7 +45,7 @@ Prima di utilizzare l'opzione *Navigazione tramite traccia*, è necessario [visu
 
 - La traccia **Geometria** avrà una navigazione molto basilare per impostazione predefinita e non fornirà svolte accurate, nomi di strade e corsie di svolta. Per ottenere le informazioni mancanti, è necessario utilizzare lo strumento [Collega alle strade](#attach-to-the-roads).
 
-- La traccia **Percorso** calcolerà il percorso tra i punti del percorso in base al profilo selezionato. Fondamentalmente, tutti i punti del percorso saranno considerati come punti intermedi. Se il percorso è composto da più di 50 punti, è molto probabile che si tratti di una traccia **Geometria** configurata in modo errato.
+- La traccia **Percorso** calcolerà il percorso tra i punti del percorso in base al profilo selezionato. Fondamentalmente, tutti i punti del percorso saranno considerati come punti intermedi. Se il percorso è composto da > 50 punti, è molto probabile che si tratti di una traccia **Geometria** configurata in modo errato.
 
 - La traccia **OsmAnd** è composta da parti di geometria e di percorso, ed è adatta a fornire esattamente la stessa guida della navigazione predefinita. Queste tracce sono prodotte da [Pianifica percorso](../../plan-route/create-route.md) o dalla [Versione Web](../../web/index.md). È possibile salvare nuovamente questa traccia come traccia solo **Geometria** come [**Semplificata**](../../plan-route/create-route.md#save-route) per essere utilizzata in programmi di terze parti.
 
@@ -70,7 +70,7 @@ Prima di utilizzare l'opzione *Navigazione tramite traccia*, è necessario [visu
 
 La navigazione su una traccia può essere avviata utilizzando il pulsante di azione rapida nel [menu contestuale della traccia](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (aperto selezionando una delle [tracce evidenziate](./route-navigation.md#history-of-previous-routes) sulla mappa, o toccando un file di traccia nella sezione [I miei luoghi](../../personal/myplaces.md) del *Menu principale*) o dal menu di navigazione, che si apre toccando:
 
-- *Pulsante Navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.  
+- [*Pulsante Navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.  
 - *Sezione Navigazione* nel *Menu principale* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - Nel [*Menu di navigazione*](./route-navigation.md#navigation-menu) vai a *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
@@ -128,6 +128,38 @@ all'*<Translate android="true" ids="start_of_the_track"/>* o al *<Translate andr
 - Scegli il **Tipo di navigazione** per il primo e l'ultimo segmento: costruisci una [*linea retta*](../routing/straight-line-routing.md) o usa il [*tipo di percorso*](../routing/osmand-routing.md#routing-types) dal profilo corrente.
 
 
+### Reverse Track Direction {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Modalità inversa](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Naviga verso](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+L'opzione **Inverti direzione della traccia** consente di navigare una traccia GPX salvata nella direzione opposta — dal punto finale al punto di partenza. Quando questa impostazione è attivata, l'algoritmo di navigazione inverte automaticamente la geometria GPX e ricalcola le direzioni di conseguenza. Una volta abilitata, diventa disponibile il parametro **Modalità inversa**:
+
+- **Calcola percorso**. Raccomandato per i profili auto e bicicletta. Viene ricalcolato un nuovo percorso ottimizzato lungo la traccia GPX invertita in base al profilo di navigazione selezionato. Vengono rispettate le regole stradali come le strade a senso unico e le restrizioni di svolta per garantire una navigazione sicura.
+- **Traccia originale**. La linea GPX viene seguita rigorosamente in senso inverso senza ricalcolare il percorso. Questa modalità è utile per camminate, escursioni o navigazione fuoristrada dove le regole stradali non si applicano.
+
+Quando la direzione inversa è abilitata, i punti di partenza e arrivo della traccia vengono scambiati automaticamente e la navigazione viene costruita dalla posizione corrente o più vicina sulla traccia invertita. L'opzione *Punto della traccia per navigare = Punto più vicino* si riferisce al punto più vicino sulla linea GPX invertita, e sia la guida vocale che la funzione Collega alle strade funzionano allo stesso modo della navigazione in avanti.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Naviga verso iOS](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+L'opzione **Inverti direzione della traccia** consente di navigare una traccia GPX salvata nella direzione opposta — dal suo punto finale al punto di partenza. Quando questa impostazione è abilitata, la geometria della traccia viene invertita automaticamente e il percorso viene ricalcolato in base al profilo di navigazione selezionato.
+
+I punti di partenza e arrivo della traccia vengono scambiati e la navigazione viene costruita dalla posizione corrente o più vicina sulla linea invertita. L'opzione *Naviga verso = Punto più vicino* si riferisce al punto più vicino sulla traccia GPX invertita.
+
+Viene ricalcolato un nuovo percorso ottimizzato lungo la traccia invertita con piena considerazione delle regole stradali come le strade a senso unico e le restrizioni di svolta. La guida vocale, le istruzioni visive e la funzione Collega alle strade operano come nella navigazione standard in avanti, garantendo un routing accurato e sicuro.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Collega alle strade {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -140,7 +172,7 @@ all'*<Translate android="true" ids="start_of_the_track"/>* o al *<Translate andr
 
 <TabItem value="ios" label="iOS">
 
-![Collega alle strade 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Collega alle strade 1 iOS](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 
@@ -162,7 +194,7 @@ OsmAnd aggancia automaticamente i percorsi alle strade quando si utilizza lo str
 
 - I **Waypoint** si allineano automaticamente alla strada disponibile più vicina (*eccetto per il [Percorso in linea retta](../../navigation/routing/straight-line-routing.md) e il [Percorso diretto al punto](../../navigation/routing/direct-to-point-routing.md)*).
 - Se non vengono rilevate strade (ad esempio, in ambienti fuoristrada), il percorso seguirà **segmenti in linea retta**.
-- È possibile **regolare manualmente** il percorso trascinando i waypoint in posizioni diverse.
+- È possibile **regolare manualmente** il percorso trascinando i waypoint in posizione diverse.
 
 Per impostazione predefinita, la funzione **Collega alle strade** viene eseguita **automaticamente** quando viene selezionata una traccia per la navigazione. È possibile modificare questa impostazione secondo necessità. Per maggiori dettagli, fare riferimento a [Guida dettagliata della traccia](../guidance/navigation-settings.md#detailed-track-guidance) nell'articolo *Impostazioni di navigazione*.
 
@@ -171,9 +203,9 @@ Per impostazione predefinita, la funzione **Collega alle strade** viene eseguita
 
 ### Punto di partenza / arrivo {#start--finish-point}
 
-È possibile specificare il punto di partenza e di arrivo di un percorso diverso da quello di partenza/arrivo specificato nel file GPX. Basta cambiarlo come si fa per la [Navigazione](../setup/route-navigation.md#select-starting-point).
+È possibile specificare il punto di partenza e di arrivo di un percorso diverso da quello di partenza/arrivo specificato nel file GPX. Basta cambiarlo come si fa per la [Navigazione](../setup/route-navigation.md#select-start-point).
 
-Nel [menu Segui traccia](#follow-track-options), è possibile scegliere se si desidera navigare dalla posizione corrente al punto di partenza della traccia o al punto più vicino sulla traccia GPX. Inoltre, è possibile scegliere il [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) che verrà utilizzato per il segmento iniziale e finale del percorso.
+Nel [menu Segui traccia](#follow-track-options), è possibile scegliere se si desidera navigare dalla posizione corrente al punto di partenza della traccia o al punto più vicino sulla traccia GPX.  Inoltre, è possibile scegliere il [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) che verrà utilizzato per il segmento iniziale e finale del percorso.  
 
 ### Waypoint {#waypoints}
 
@@ -185,9 +217,9 @@ Quando si prepara o si naviga una traccia GPX, non è possibile aggiungere luogh
 
 ## Guida {#guidance}
 
-La *Navigazione tramite traccia GPX* contiene le stesse [istruzioni vocali](../guidance/voice-navigation.md) della navigazione su percorso. Tuttavia, alcune svolte o rotatorie potrebbero non essere interpretate correttamente perché non ci sono informazioni sugli incroci stradali in GPX, ad eccezione dei file GPX creati da OsmAnd. Per eliminare questi problemi, è necessario utilizzare la funzione [Collega alle strade](#attach-to-the-roads).
+La *Navigazione tramite traccia GPX* contiene le stesse [istruzioni vocali](../guidance/voice-navigation.md) della navigazione su percorso. Tuttavia, alcune svolte o rotatorie potrebbero non essere interpretate correttamente perché non ci sono informazioni sugli incroci stradali in GPX, ad eccezione dei file GPX creati da OsmAnd. Per eliminare questi problemi, è necessario utilizzare la funzione [Collega alle strade](#attach-to-the-roads).  
 
-Durante la navigazione, è possibile utilizzare varie opzioni come lo zoom avanti o indietro, lo spostamento della mappa o il passaggio a uno stile di mappa diverso. Se ci si allontana dalla traccia, OsmAnd ricalcolerà automaticamente il percorso per riportarvi sulla traccia. È anche possibile regolare la velocità della traccia e impostare avvisi sonori per l'avvicinamento a punti o deviazioni dal percorso.
+Durante la navigazione, è possibile utilizzare varie opzioni come lo zoom avanti o indietro, lo spostamento della mappa o il passaggio a uno stile di mappa diverso. Se ci si allontana dalla traccia, OsmAnd ricalcolerà automaticamente il percorso per riportarvi sulla traccia. È anche possibile regolare la velocità della traccia e impostare avvisi sonori per l'avvicinamento a punti o deviazioni dal percorso.  
 
 
 ## Articoli correlati {#related-articles}

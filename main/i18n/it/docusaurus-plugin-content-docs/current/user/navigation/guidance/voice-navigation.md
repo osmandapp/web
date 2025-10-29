@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Istruzioni vocali / Notifiche
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 La funzione di navigazione vocale di OsmAnd fornisce istruzioni e avvisi vocali in tempo reale che aiutano a rimanere informati e sicuri durante gli spostamenti. È possibile personalizzare la guida in base alle proprie preferenze ed esigenze. Per farlo, selezionate un profilo vocale adatto, un [motore Text-to-Speech (TTS)](#tts-text-to-speech) in grado di annunciare dinamicamente i nomi delle strade, le distanze e i limiti di velocità, oppure una [voce preregistrata](#recorded-voice-prompts) che offre istruzioni concise.  
 
-Oltre alle indicazioni stradali, la navigazione vocale di OsmAnd può notificare i punti di interesse imminenti, i cambiamenti delle condizioni del traffico e il superamento di un limite di velocità preimpostato. Per saperne di più sulla personalizzazione di questi avvisi, consultare le sezioni [Impostazioni del tempo di annuncio](#announcement-time) e [Avvisi sui limiti di velocità](#speed-limit).  
+Oltre alle indicazioni stradali passo-passo, la navigazione vocale di OsmAnd può notificare i punti di interesse imminenti, i cambiamenti delle condizioni del traffico e il superamento di un limite di velocità preimpostato. Per saperne di più sulla personalizzazione di questi avvisi, consultare le sezioni [Impostazioni del tempo di annuncio](#announcement-time) e [Avvisi sui limiti di velocità](#speed-limit).  
 
 Con la giusta combinazione di opzioni vocali, impostazioni di avviso e regolazioni del suono del dispositivo, riceverete informazioni di navigazione tempestive e chiare per tutto il percorso.
 
@@ -52,16 +52,16 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *pulsante <Translate ios="true" ids="routing_settings"/>* *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Scegli profilo → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Scegli profilo → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Impostazioni di navigazione vocale iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 
 **[Lingua](#voice-prompt-language)**. Selezionare la lingua e il tipo preferiti.
 
-**Annuncio**. Consente di configurare i seguenti tipi di istruzioni:
+**Annuncio**. Consente di configurare i seguenti [tipi di istruzioni](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Nomi delle strade (TTS), Numeri di uscita, Avvisi sul traffico, Attraversamenti pedonali* e *Gallerie.*
+- *Indicazioni stradali passo-passo, Nomi delle strade (TTS), Numeri di uscita, Avvisi sul traffico, Attraversamenti pedonali* e *Gallerie.*
 - *[Autovelox](#speed-cameras)*.
 - Configurare anche il **[Widget Avvisi](../../widgets/nav-widgets.md#alert-widget)** da utilizzare con gli annunci.
 
@@ -108,7 +108,7 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 
 ### Autovelox {#speed-cameras}
 
-![Tempistica annunci di navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 Gli [Avvisi autovelox](../../personal/global-settings.md#uninstall-speed-cameras) consentono di attivare o disattivare i PDI con autovelox. Per applicare le modifiche è necessario riavviare l'applicazione OsmAnd.
   
@@ -121,13 +121,13 @@ In alcuni Paesi o regioni, l'uso di applicazioni di avviso per gli autovelox è 
 
 <TabItem value="android" label="Android">
 
-![Navigazione vocale](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigazione vocale](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
 
 </TabItem>
 
@@ -149,7 +149,7 @@ Questa impostazione di **Tolleranza limite di velocità** influisce sulla veloci
 
 ### Tempo di annuncio {#announcement-time}
 
-![Tempistica annunci di navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
 Il tempo di annuncio delle diverse istruzioni vocali dipende dal profilo selezionato, dal tipo di istruzione, dalla velocità di navigazione attuale e dalla velocità di navigazione predefinita. Con questa impostazione è possibile modificare la distanza prima dell'attivazione delle istruzioni vocali applicando un moltiplicatore di distanza: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 
@@ -160,7 +160,7 @@ Nell'elenco a discesa *Intervalli di tempo e distanza*, è possibile visualizzar
 
 <InfoAndroidOnly/>
 
-![Navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-1.png)
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 Per evitare di riprodurre l'audio nello stesso flusso di uscita contemporaneamente, in Android è implementato il focus audio. OsmAnd utilizzerà l'altoparlante selezionato dall'elenco in questa impostazione per l'uscita audio. Le altre applicazioni metteranno in pausa la riproduzione o abbasseranno il volume per facilitare l'ascolto delle istruzioni vocali di OsmAnd.  
 
@@ -247,7 +247,7 @@ Per la risoluzione dei problemi, fare riferimento a:
 
 Andare su: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Navigazione vocale Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
 
 </TabItem>
 
@@ -255,7 +255,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,configure_profile,
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Impostazioni di navigazione vocale iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
 </TabItem>
 
@@ -303,21 +303,22 @@ Attualmente ci sono un totale di 45 lingue. Non tutte le lingue elencate di segu
 | :--- | :--- |
 | **А** | Arabo |
 | **B** | Bielorusso, Bulgaro |
-| **C** | Catalano, Ceco, Cinese, Cinese (Hong Kong), Cinese (Tradizionale), Coreano, Croato |  
-| **D** | Danese |
-| **E** | Ebraico, Estone |
+| **C** | Catalano, Cinese, Cinese (Hong Kong), Cinese (Tradizionale), Croato, Ceco |  
+| **D** | Danese, Olandese |
+| **E** | Inglese, Inglese (Regno Unito), Estone |
 | **F** | Finlandese, Francese |
-| **G** | Giapponese, Greco, Guaraní |
-| **H** | Hindi |
-| **I** | Indonesiano, Inglese, Inglese (Regno Unito), Italiano |
+| **G** | Tedesco, Tedesco (informale), Greco, Guaraní |
+| **H** | Hindi, Ungherese, Ungherese (formale), Ebraico |
+| **I** | Indonesiano, Italiano |
+| **J** | Giapponese |
+| **K** | Coreano  |
 | **L** | Lettone |
 | **N** | Norvegese Bokmål  |
-| **O** | Olandese |
 | **P** | Persiano, Polacco, Portoghese, Portoghese (Brasile) |  
 | **R** | Rumeno, Russo  |
-| **S** | Sardo, Serbo (cirillico), Slovacco, Sloveno, Spagnolo, Spagnolo (Argentina), Svedese, Swahili |
-| **T** | Tedesco, Tedesco (informale), Turco |
-| **U** | Ucraino, Ungherese, Ungherese (formale) |
+| **S** | Sardo, Serbo (cirillico), Slovacco, Sloveno, Spagnolo, Spagnolo (Argentina), Swahili, Svedese  |
+| **T** | Turco  |
+| **U** | Ucraino  |
 | **V** | Vietnamita  |
 
 
@@ -333,13 +334,13 @@ L'uso di voci registrate in OsmAnd dovrebbe essere solo una soluzione di ripiego
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
 - Il secondo tipo sono istruzioni vocali registrate, con un set incompleto di funzionalità:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
-    ![Impostazioni di navigazione vocale Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
 ### Modalità segnale acustico {#beep-modes}
 
@@ -357,9 +358,11 @@ L'uso di voci registrate in OsmAnd dovrebbe essere solo una soluzione di ripiego
 
 ## Notifiche di testo {#text-notifications}
 
+<InfoAndroidOnly />
+
 Una volta avviato un percorso, è possibile visualizzare le informazioni nel menu a discesa di sistema nell'elenco delle notifiche. Le notifiche silenziose di OsmAnd contengono informazioni come istruzioni passo-passo, frecce di direzione di svolta, ora di arrivo e tempo rimanente, velocità attuale e distanza dalla destinazione.  
 
-![Notifica percorso di navigazione Android](@site/static/img/navigation/route/navigation_notifications_android.png)
+![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
 Pulsanti attivi nel menu a discesa di sistema per la navigazione:
 
@@ -371,7 +374,7 @@ Pulsanti attivi nel menu a discesa di sistema per la navigazione:
 
 È possibile modificare le impostazioni di notifica per l'app OsmAnd nelle impostazioni di sistema del dispositivo. Le notifiche possono essere visualizzate sulla schermata di blocco, sulla schermata iniziale, nel menu a discesa o nella parte superiore dell'app.  
 
-Leggi come è implementato il controllo delle notifiche su Android in questo [articolo](https://support.google.com/android/answer/9079661?hl=it#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Per iOS - [qui](https://support.apple.com/it-it/HT201925#:~:text=Vai%20su%20Impostazioni%20e%20tocca,nel%20riepilogo%20notifiche%20programmato.).
+Leggi come è implementato il controllo delle notifiche su Android in questo [articolo](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Per iOS - [qui](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Controllo schermo {#screen-control}
@@ -380,7 +383,7 @@ Leggi come è implementato il controllo delle notifiche su Android in questo [ar
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![Menu controllo schermo Android](@site/static/img/navigation/route/screen_control_android.png)
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
 
 È possibile controllare lo schermo del dispositivo per risparmiare energia. Questa modalità ha due impostazioni generali: *<Translate android="true" ids="screen_timeout"/>* e *<Translate android="true" ids="turn_screen_on"/>*.
 
@@ -388,15 +391,15 @@ Leggi come è implementato il controllo delle notifiche su Android in questo [ar
 
 1. **<Translate android="true" ids="system_screen_timeout"/>**. Lo schermo si spegne a seconda delle impostazioni di sistema del dispositivo. Il pulsante *Modifica impostazioni* fornisce un accesso rapido al menu di sistema, come *Schermo e luminosità*, dove è possibile regolare il timeout dello schermo.
 
-    ![Controllo timeout di sistema dello schermo Android](@site/static/img/navigation/route/system_timeout_android.png)
+    ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
 2. **<Translate android="true" ids="wake_time"/>**. Se *Mantieni schermo acceso* è attivato, lo schermo del dispositivo non applica un timeout dopo la riattivazione. Se è disattivato, è possibile impostare il tempo dopo il quale lo schermo del dispositivo si spegnerà se non si interagisce con esso, da 5 a 60 secondi.  
 
-    ![Timeout dopo riattivazione Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout dopo riattivazione Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+    ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### Accensione schermo {#turn-screen-on}
 
-![accensione schermo Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
 Selezionare le opzioni di riattivazione dello schermo e assicurarsi che OsmAnd rimanga in primo piano quando il dispositivo è bloccato.
 

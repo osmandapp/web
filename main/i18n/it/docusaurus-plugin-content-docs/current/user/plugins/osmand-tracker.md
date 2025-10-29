@@ -1,8 +1,9 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Panoramica {#overview}
 
-OsmAnd Tracker è un client Telegram modificato, creato per il monitoraggio flessibile e l'invio di messaggi con posizioni GPS in tempo reale.  
+OsmAnd Tracker è un client Telegram modificato creato per il monitoraggio flessibile e l'invio di messaggi con posizioni GPS in tempo reale.  
 
 [OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) ti aiuta a vedere i tuoi contatti su una mappa in OsmAnd. Ha un aspetto social, il che significa che per usarlo è necessario fornire l'accesso ai propri contatti alla piattaforma scelta da OsmAnd.  
 
@@ -34,7 +34,7 @@ Abbiamo scelto [Telegram](https://telegram.org/) come la piattaforma social più
 
 Abbiamo progettato [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) in modo che tu possa continuare a usare l'app di Telegram e l'app di OsmAnd nel modo in cui sei abituato, senza restrizioni aggiuntive.  
 
-L'applicazione invia messaggi di Posizione in tempo reale alle chat selezionate per il tempo impostato, visualizza un elenco dei tuoi contatti e gruppi e controlla le chat per i messaggi con la tua posizione, che vengono poi visualizzati sulla mappa in OsmAnd.
+L'applicazione invia messaggi di Posizione Live alle chat selezionate per il tempo impostato, visualizza un elenco dei tuoi contatti e gruppi e controlla le chat per i messaggi con la tua posizione, che vengono poi visualizzati sulla mappa in OsmAnd.
 L'applicazione non invia né visualizza i tuoi messaggi di testo.  
 
 Accedi utilizzando il tuo numero di telefono registrato su Telegram per abilitare quanto segue:
@@ -50,15 +50,15 @@ Accedi utilizzando il tuo numero di telefono registrato su Telegram per abilitar
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
-Installa l'APK di OsmAnd Online GPS Tracker:
+Puoi installare OsmAnd Online GPS Tracker:
 
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [Server OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- dal [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- o dal [server OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (file APK)
 
 
 ## Impostazioni del plugin {#plugin-settings}
 
-Ci sono diverse impostazioni per gestire la frequenza di condivisione delle posizioni e controllare la visualizzazione delle posizioni che ti vengono inviate.
+Ci sono diverse impostazioni per gestire la frequenza di condivisione delle posizione e controllare la visualizzazione delle posizioni che ti vengono inviate.
 
 Per aprire il menu *Impostazioni*:  
 
@@ -75,7 +75,7 @@ o
 
 **Non in movimento** — permette di impostare il tempo (da 1 minuto a 1 ora) dopo il quale la posizione di un contatto è considerata obsoleta. Se una posizione diventa obsoleta, diventa grigia.
 
-**Cronologia posizioni** — permette di impostare il tempo (da 5 minuti a 24 ore) dopo il quale il contatto con la posizione cancellata verrà nascosto dall'elenco e dalla mappa di OsmAnd.
+**Cronologia posizione** — permette di impostare il tempo (da 5 minuti a 24 ore) dopo il quale il contatto con la posizione cancellata verrà nascosto dall'elenco e dalla mappa di OsmAnd.
 
 **Invia posizione come** - permette di scegliere una categoria per l'invio di messaggi sulla propria posizione in Telegram (3 tipi di invio): testo, mappa, testo e mappa.
 
@@ -90,7 +90,7 @@ o
 
 ### Unità e formati {#units--formats}
 
-Permette di aggiungere impostazioni per unità e formati. Ora puoi scegliere i valori che preferisci per i messaggi di Telegram quando condividi i dati sulla posizione.  
+Permette di aggiungere impostazioni per unità e formati. Ora puoi scegliere i valori che ti sono comodi per i messaggi di Telegram quando condividi i dati sulla posizione.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
@@ -142,11 +142,11 @@ Qui puoi controllare e condividere i log dettagliati dell'app.
 
 In questa schermata puoi vedere i tuoi contatti di Telegram. Puoi selezionarne uno o più, impostare le opzioni di condivisione e iniziare a condividere la tua posizione.  
 
-Dopo il primo avvio, vedrai un elenco di contatti suggeriti. Questi sono i cinque contatti più recenti con cui hai condiviso la tua posizione. Puoi cliccare una sola volta per continuare a condividere la tua posizione con questi contatti.  
+Dopo il primo avvio, vedrai un elenco di Contatti suggeriti. Questi sono i cinque contatti più recenti con cui hai condiviso la tua posizione. Puoi cliccare una sola volta per continuare a condividere la tua posizione con questi contatti.  
 
 Il tempo di condivisione è l'ultimo tempo di condivisione che hai selezionato per il contatto.  
 
-Quando inizi a condividere, vedrai un elenco di contatti suggeriti e un pulsante *Torna a OsmAnd* nella schermata *La mia posizione*.  
+Quando inizi a condividere, vedrai un elenco di Contatti suggeriti e un pulsante *Torna a OsmAnd* nella schermata *La mia posizione*.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/8.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/9.jpg)
 
@@ -167,7 +167,7 @@ Permette di tracciare la distanza, la velocità e l'angolo di movimento dei tuoi
 
 ## Schermata Cronologia {#timeline-screen}
 
-Questa è la terza scheda dell'applicazione. Qui puoi selezionare un giorno per visualizzare la cronologia delle posizioni condivise con te. Selezionando un giorno vengono visualizzati i contatti che hanno mostrato la loro posizione quel giorno.  
+Questa è la terza scheda dell'applicazione. Qui puoi selezionare un giorno per visualizzare la cronologia delle posizione condivise con te. Selezionando un giorno vengono visualizzati i contatti che hanno mostrato la loro posizione quel giorno.  
 
 Il monitoraggio ti permette di raccogliere informazioni in background quando i tuoi contatti le condividono. Per fare ciò, devi abilitarlo.
 
@@ -224,6 +224,6 @@ Il widget ha diverse visualizzazioni.
 
 L'app OsmAnd ha il suo bot Telegram chiamato "OsmAnd Assistant", che ti aiuta a integrare OsmAnd Telegram con tracker o API di terze parti. Sarai in grado di condividere non solo la tua posizione, ma anche la posizione della tua bici o di un gruppo di persone in gara disponibile tramite l'API. OsmAnd Telegram ti darà una bella presentazione delle tue posizioni sulla mappa in OsmAnd stesso.  
 
-Per favore, condividi con noi cosa ne pensi di questa nuova app su [Twitter](https://twitter.com/osmandapp) e altri canali social.
+Per favore, condividi con noi cosa ne pensi di questa nuova app su [Twitter](https://x.com/osmandapp) e altri canali social.
 
 Per visualizzare le posizioni GPS dei contatti sulla mappa, è necessaria l'ultima versione di [OsmAnd o OsmAnd+](./../purchases/android.md). La versione minima supportata di OsmAnd o OsmAnd+ è la 3.0.4.

@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Tracce
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -135,6 +135,7 @@ Questo strumento fornisce un'analisi dettagliata dei dati della [traccia](../../
 - **Dati del grafico (asse Y)** visualizza: *Altitudine*, *Pendenza*, *Velocità*, [*Dati sensore esterno*](../../plugins/external-sensors.md), e combinazioni di fino a due opzioni se contenute nei dati della traccia.
 - **Dimensione del grafico (asse X)** rappresenta: *Distanza*, *Tempo* e *Ora del giorno*.
 - **Interazione tocco/scorrimento**. Tocca un grafico per visualizzare le informazioni su un punto specifico della traccia. Scorrendo sul grafico si evidenzia la posizione appropriata sulla mappa e si mostrano i dettagli nella barra delle informazioni.
+- **Etichetta distanza**. Quando si tocca o si scorre lungo il grafico, il tooltip visualizza anche la distanza esatta lungo la traccia. Il valore segue le impostazioni dell'unità del profilo corrente (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Utilizzalo per stimare rapidamente quanto è distante un punto dall'inizio della traccia, o per calcolare la distanza tra due posizioni confrontando i loro valori.
 - **Scalatura**. Utilizza un [gesto a due dita](../../map/interact-with-map.md#gestures) per scalare il grafico per una visualizzazione più dettagliata.
 
 
@@ -169,7 +170,7 @@ Tocca il pulsante [La mia posizione](../../map/interact-with-map.md#my-location-
 - [Aspetto della traccia](./appearance.md)
 - [Menu contestuale della traccia](./track-context-menu.md)
 - [Naviga per traccia](../../navigation/setup/gpx-navigation.md)
-- [Articolo del blog Routes on the map (Percorsi sulla mappa)](https://docs.osmand.net/blog/routes)
+- [Routes on the map](https://docs.osmand.net/blog/routes) articolo del blog
 - [Configura mappa](../../map/configure-map-menu.md)  
 - [Tracce GPX](../../personal/tracks/index.md)  
 - [Pianifica percorso](../../plan-route/index.md)  
