@@ -316,12 +316,17 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
     - Improves clarity and maximizes the space for important data.
     - Especially useful when displaying many widgets on the same **row**.
 
-3. **Individual size for different rows** (*for all panels*):
+3. **Hiding widget text labels**:
+
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.   
+
+4. **Individual size for different rows** (*for all panels*):
 
     - Widgets can be individually sized by adjusting the row and column size.
     - **NOTE:** Changing the size of one widget in a row/column will resize all widgets in that row/column.
 
-4. **To change the widget size and icon visibility:**
+5. **To change the widget size and icon visibility:**
 
     - Select a widget that you have already added to the panel.  
     - Tap the *Settings* icon on the right side of the widget field.
