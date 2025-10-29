@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  Fahrzeugparameter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht
@@ -41,7 +41,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 Für eine optimale Routenberechnung in OsmAnd sollten Sie die folgenden Fahrzeugparameter berücksichtigen:
 
 1. Stellen Sie die [*Standardgeschwindigkeit* oder *Straßengeschwindigkeiten*](#road-speeds) als [Mindest- und Höchstgeschwindigkeit](#road-speeds) des Fahrzeugs ein. Dies hilft der Anwendung, die für die Route benötigte Zeit zu ermitteln und die beste Route unter Berücksichtigung der Geschwindigkeitsbegrenzungen auf verschiedenen Straßenabschnitten auszuwählen.
-2. Geben Sie den vom Motor verwendeten [*Kraftstofftyp*](#fuel-used-by-motor) an. Dies ermöglicht der App, die CO2-Emissionen abzuschätzen.
+2. Geben Sie den [*Kraftstofftyp*](#fuel-used-by-motor) an, der vom Motor verwendet wird. Dies ermöglicht der App, die CO2-Emissionen abzuschätzen.
 3. Geben Sie die [*Kapazität Ihres Tanks*](#fuel-tank-capacity) ein, um Ihren Kraftstoffstand und -verbrauch genau zu verfolgen.
 4. Definieren Sie die [*Größen- und Gewichtsparameter*](#size-parameters) Ihres Fahrzeugs, die der App helfen können, die optimale Route zu berechnen und Hindernisse auf der Straße aufgrund von Beschränkungen zu vermeiden.
 
@@ -97,6 +97,14 @@ Fahrzeugparameter beeinflussen die Navigation und den Routenverlauf, da sie die 
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+**5.** [**Achslastgrenze**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Geben Sie die maximale Achslast Ihres Fahrzeugs an, um Straßen und Brücken mit Achsgewichtsbeschränkungen zu vermeiden. Dieser Parameter ist nur in Navigationstypen wie [*LKW*](../../navigation/routing/car-based-routing.md) verfügbar.  
+
+![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Maximalgewicht bei Volllast**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Geben Sie das maximale Gesamtgewicht Ihres Fahrzeugs bei Volllast an, um Straßen und Brücken mit Gesamtgewichtsbeschränkungen zu vermeiden. Dieser Parameter ist nur in Navigationstypen wie [*LKW*](../../navigation/routing/car-based-routing.md) verfügbar.  
+
+![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Beschränkungen der Fahrzeugparameter können für die Navigation und die Verkehrssicherheit wichtig sein. Einige dieser Einschränkungen können sein:  
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  Routen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -111,11 +111,22 @@ Einige Straßenabschnitte können Teil vieler Routen sein, aber sie können indi
 2. [CAI-Skala](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Skirouten {#ski-routes}
+### Skirouten {#ski-slopes-and-routes}
 
+- _Skirouten_ im Kartenstil _Winter und Ski_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/vector-maps.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden.  
+- _Skirouten_ im Kartenstil _OsmAnd Standard_.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/vector-maps.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden. Wenn ein anderer Kartenstil aktiv ist, wird ein Banner angezeigt, das einen Wechsel zu [Winter und Ski](../map/vector-maps.md#winter-and-ski) vorschlägt (*nur Android*) und nur Pisten angezeigt werden. Tippen Sie auf ***Wechseln***, um den Kartenstil zu ändern, ohne den aktuellen Bildschirm zu verlassen, oder ***Später***, um das Banner zu verstecken.
+
+
+### Schneemobil-Strecken {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+Schneemobil-Strecken sind in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) als `route=snowmobile` kartiert. Sie werden für Winterrekreation und zur Verbindung entfernter Gebiete in der Schneesaison verwendet. In OsmAnd sind Schneemobil-Strecken anklickbar, siehe Abschnitt [Aktionen mit Routen](#actions-with-routes).
 
 
 ### Reitwege {#horse-routes}
@@ -165,7 +176,14 @@ Sie können die Anzeige bestimmter ***Reiseführer*** und Arten von ***Tracks***
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- Um die gewünschten Routen auf der Karte anzuzeigen, aktivieren Sie sie in der *Routenliste* des Menüs [Karte konfigurieren](../map/configure-map-menu.md).
+- OsmAnd kann [in OpenStreetMap vorhandene Routen](https://wiki.openstreetmap.org/wiki/Relation:route) hervorheben. Sie können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Menge an Routen korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
+- Die Hauptroutentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur spezifische Gruppen innerhalb jedes Typs anzeigen können. Zum Beispiel können Sie Wanderrouten nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* als Unterklassen anzeigen.
+- Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen.  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rende
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - Um die gewünschten Routen auf der Karte anzuzeigen, aktivieren Sie sie in der *Routenliste* des Menüs [Karte konfigurieren](../map/configure-map-menu.md).
 - OsmAnd kann [in OpenStreetMap vorhandene Routen](https://wiki.openstreetmap.org/wiki/Relation:route) hervorheben. Sie können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Menge an Routen korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
 - Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen.  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## Details zu Klettergebieten und Felsen {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 Bei der Auswahl eines [Klettergebiets oder Felsens](../map/routes.md#climbing-routes) bietet OsmAnd eine detaillierte Zusammenfassung des Kletterortes, einschließlich: Name und Ort, Kletterschwierigkeitsgrad (UIAA, Französisch, YDS usw.), Gesteinsart, Höhe und Routenlänge, Kletterqualität und Oberflächenbedingungen.
-
 
 
 ## Aktionen mit Routen {#actions-with-routes}
@@ -205,13 +223,13 @@ Bei der Auswahl eines [Klettergebiets oder Felsens](../map/routes.md#climbing-ro
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Auf der Karte können Sie Routen für [Wandern, Radfahren, Reisen und mehr](#type-of-routes) auswählen, die gegebenenfalls mit [OSMC-Symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) gekennzeichnet sind.
+Auf der Karte können Sie Routen für [Wandern, Radfahren, Skifahren, MTB, Dirt-Bike, Reisen und mehr](#type-of-routes) auswählen. Wo verfügbar, zeigen Wanderrouten ihre Markierungen mit [OSMC-Symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) an; andere Routentypen verwenden ihre eigenen Markierungen.
 
 Wenn Sie auf ein **Routensymbol** auf der Karte tippen:
 
@@ -343,7 +361,7 @@ Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"
 
 </Tabs>  
 
-Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
+Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

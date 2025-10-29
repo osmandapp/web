@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  التفاعل مع الخريطة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -33,7 +33,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | **تدوير**  | انقر على الخريطة بإصبعين، ثم قم بتدوير أصابعك في حركة دائرية. |
 | **إمالة (ثلاثي الأبعاد)** | انقر بإصبعين وحركهما لأعلى أو لأسفل. <br/> متاح فقط مع [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) الإصدار ٢ (OpenGL). |
 
-يمكن تعطيل الرسوم المتحركة للتمرير في الإعدادات باستخدام [خيار خاص](#no-animations).
+يمكن تعطيل الرسوم المتحركة للتمرير في الإعدادات باستخدام [خيار خاص](#remove-animations).
 
 
 ## موقعي والتكبير/التصغير {#my-location-and-zoom}
@@ -135,13 +135,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![إمالة أندرويد 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![إمالة أندرويد 2](@site/static/img/map/tilt_horizon_andr_2.png)
+![إمالة أندرويد ١](@site/static/img/map/tilt_horizon_andr_1.png)  ![إمالة أندرويد ٢](@site/static/img/map/tilt_horizon_andr_2.png)
   
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![إمالة iOS 1](@site/static/img/map/tilt_horizon_ios_1.png) ![إمالة iOS 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+![إمالة iOS ١](@site/static/img/map/tilt_horizon_ios_1.png) ![إمالة iOS ٢](@site/static/img/map/tilt_horizon_ios_2.png)  
 </TabItem>
 
 </Tabs>  
@@ -198,7 +198,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> ينعم دوران الخريطة برسوم متحركة أبطأ للدوران، على الرغم من أن هذا يسبب تأخيرًا طفيفًا لا يزيد عن ثانية واحدة.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### لا توجد رسوم متحركة {#no-animations}
+### إزالة الرسوم المتحركة {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -260,7 +260,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | المفتاح | الجهاز | الإجراء |
 |:---------|:---------------|:---------------|
 |**C**| *لوحة المفاتيح*   | تحريك - [إلى موقعي](#my-location-and-zoom) |
-|**D**| *لوحة المفاتيح*   | تغيير - [أوضاع توجيه الخريطة](#map-orientation-modes) |
+|**D**| *لوحة المفاتيح*   | تغيير - [توجيه الخريطة](#map-orientation-modes) |
 |**N**| *لوحة المفاتيح*   | إظهار / إخفاء - عرض الملاحة |
 |**S**| *لوحة المفاتيح*   | إظهار / إخفاء - [عرض البحث](../search/index.md) |
 |**P**| *لوحة المفاتيح*   | تغيير - ملف تعريف التطبيق إلى التالي |

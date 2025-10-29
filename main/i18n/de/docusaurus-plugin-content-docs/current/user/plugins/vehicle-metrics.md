@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  Fahrzeugmetriken
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,14 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
-Das Fahrzeugmetriken-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind in der kostenlosen Version von OsmAnd verfügbar.
+Das Fahrzeugmetriken-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App. Fahrzeuggeschwindigkeit und Motordrehzahl-Informationen sind in der kostenlosen OsmAnd-Version verfügbar.
 :::
 
-Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.
+Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.  
 
 [OBD-II-Scanner](https://en.wikipedia.org/wiki/ELM327) sind ein wesentlicher Bestandteil der modernen Fahrzeugdiagnose. Durch das Streamen von Echtzeitdaten erhalten Benutzer sofortige Einblicke in die Fahrzeugsysteme, was die vorbeugende Wartung erleichtert und die Reparaturkosten senkt. Diese Werkzeuge sind sowohl für den privaten Gebrauch als auch für professionelle Kfz-Dienstleistungen von entscheidender Bedeutung.
 
@@ -47,7 +47,7 @@ Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten i
 
 Um Daten von einem OBD-II-Scanner zu verwenden:
 
-1. [Erwerben](../purchases/) Sie ein **OsmAnd Pro-Abonnement**. (*Fahrzeuggeschwindigkeit* und *Motordrehzahl* sind kostenlos.)
+1. [Erwerben](../purchases/) Sie ein **OsmAnd Pro-Abonnement**. (*Fahrzeuggeschwindigkeit* und *Motordrehzahl* sind kostenlos.)  
 2. [Aktivieren](../plugins/index.md#enable--disable) Sie das Fahrzeugmetriken-Plugin im Abschnitt „Plugins“ des *Hauptmenüs*.
 3. **Schalten Sie** Bluetooth auf Ihrem Gerät **ein**.
 4. [Verbinden](#pair-odb-ii-scanner) Sie den OBD-II-Scanner mit dem Anschluss Ihres Fahrzeugs.
@@ -82,7 +82,7 @@ Um Daten von einem OBD-II-Scanner zu verwenden:
 Verbinden Sie den Scanner mit dem Anschluss Ihres Fahrzeugs und koppeln Sie ihn über die App:
 
 - Navigieren Sie zu *Menü → Plugins → Fahrzeugmetriken → Einstellungen → Verbinden* oder **+**.
-- Wenn sich Fahrzeugmetriken im *Hauptmenü* befindet: *Menü → Fahrzeugmetriken → Einstellungen → Verbinden* oder **+**.
+- Wenn sich Fahrzeugmetriken im *Hauptmenü* befindet:  *Menü → Fahrzeugmetriken → Einstellungen → Verbinden* oder **+**.
 
 Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung her.
 
@@ -146,8 +146,9 @@ Die Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittlich
 *Andere:*
 
 - **Batteriestand**. Zeigt den Spannungspegel der Fahrzeugbatterie an.
+- **Adapter-Spannung**. Zeigt die dem OBD-II-Adapter zugeführte Spannung an (AT RV-Befehl).
 - **Fahrzeuggeschwindigkeit**. Zeigt Daten des Fahrzeuggeschwindigkeitssensors (VSS) an.
-- **Drosselklappenstellung**. Bestimmt die Luftzufuhr zum Motor über den Winkel der Drosselklappe.
+- **Drosselklappenstellung**. Bestimmt die Luftzufuhr zum Motor über den Winkel der Drosselklappe.  
   **FIN**. Zeigt die 17-stellige Fahrzeug-Identifizierungsnummer an.
 
 

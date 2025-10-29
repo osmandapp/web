@@ -1,8 +1,9 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: 135ec49c254081b73e19f0be40cdfb7296889f8a4d91b09b4c6be58544461e26
 sidebar_position: 11
 title:  متتبع OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -50,15 +50,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلمات الإعداد المطلوبة {#required-setup-parameters}
 
-تثبيت ملف APK لـ OsmAnd Online GPS Tracker:
+يمكنك تثبيت OsmAnd Online GPS Tracker:
 
-- [متجر Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [خادم OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- من [متجر Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- أو من [خادم OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (ملف APK)
 
 
 ## إعدادات الإضافة {#plugin-settings}
 
-هناك العديد من الإعدادات لإدارة وتيرة مشاركة المواقع والتحكم في عرض المواقع المرسلة إليك.
+هناك عدة إعدادات لإدارة وتيرة مشاركة المواقع والتحكم في عرض المواقع المرسلة إليك.
 
 لفتح قائمة *الإعدادات*:
 
@@ -109,7 +109,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إعدادات GPS {#gps-settings}
 
-إعدادات نقطة الموقع. على سبيل المثال، إذا بقيت في مكان واحد لبعض الوقت دون حركة، فلن يتم إرسال بيانات نقطة موقعك وسيعرض مسار GPX الخاص بك بيانات أكثر دقة وصحة.
+إعدادات نقطة الموقع. على سبيل المثال، إذا بقيت في مكان واحد لبعض الوقت دون حركة، فلن يتم إرسال بيانات نقطة موقعك وسيعرض مسار GPX الخاص بك بيانات أكثر دقة.
 
 ![متتبع OsmAnd](@site/static/img/plugins/online-tracker/5-1.jpg)
 

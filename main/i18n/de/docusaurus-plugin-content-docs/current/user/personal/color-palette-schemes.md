@@ -1,8 +1,9 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Farbschemata
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
@@ -26,7 +26,7 @@ Farbschemata sind Teil der kostenpflichtigen Funktionen [Maps+](../purchases/ind
 
 Farbschemata werden bei der [Einfärbung von Routen](#routes), dem [Kartengelände](#terrain) und der [Wetterkarte](#weather) verwendet und stellen einen separaten Teil der Informationen dar, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
 
-Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local) verfügbar.
+Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local-menu) verfügbar.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -114,14 +114,14 @@ Sie können Paletten bearbeiten, um das Aussehen von Karten und Routen zu person
 Jede Zeile repräsentiert einen numerischen Wert (für die Farbpalette ist es ein Index) und eine RGB-Farbe. Zum Beispiel:
 
 ```xml
-# TXT-Datei mit dem Namen *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 Grad RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 degree RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# gelb {#yellow-}
+# yellow  {#yellow-}
 100,255,222,2,227
-# rot {#red}
+# red {#red}
 200,255,1,1,255
-# violett {#violet}
+# violet {#violet}
 220,130,1,255,255
 
 ```

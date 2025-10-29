@@ -1,8 +1,9 @@
 ---
-source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
+source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
 sidebar_position: 7
-title:  عرض الخريطة البحرية
+title:  Nautical Map View
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -29,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![خرائط بحرية](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)
 
@@ -55,16 +55,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 الإعداد التالي يجعل الخريطة البحرية تظهر على الشاشة:
 
-١. [شراء](../plugins/index.md#purchase) و[تفعيل](../plugins/index.md#enable--disable) ملحق عرض الخريطة البحرية.
-٢. [تنزيل](#download-nautical-maps) الخرائط البحرية.
-٣. ضبط نمط الخريطة [البحري](#set-nautical-map-style) [للملف الشخصي](../personal/profiles.md) المطلوب.
+1. [شراء](../plugins/index.md#purchase) و[تفعيل](../plugins/index.md#enable--disable) ملحق عرض الخريطة البحرية.
+2. [تنزيل](#download-nautical-maps) الخرائط البحرية.
+3. ضبط نمط الخريطة [البحري](#set-nautical-map-style) [للملف الشخصي](../personal/profiles.md).
 
 
 ### ضبط نمط الخريطة البحرية {#set-nautical-map-style}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
@@ -86,16 +86,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 لتغيير نمط الخريطة الحالي إلى النمط البحري، تحتاج إلى إجراء الإعدادات التالية:
 
-١. حدد [الملف الشخصي](../personal/profiles.md) المطلوب.
-٢. افتح [إعدادات الخريطة](../map/configure-map-menu.md).
-٣. مرر لأسفل إلى نمط الخريطة، وافتحه، وحدد **بحري**.
+1. حدد [الملف الشخصي](../personal/profiles.md) المطلوب.
+2. افتح [إعدادات الخريطة](../map/configure-map-menu.md).
+3. مرر لأسفل إلى نمط الخريطة، وافتحه، وحدد **بحري**.
 
 
 ### تنزيل الخرائط البحرية {#download-nautical-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
@@ -147,7 +147,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
@@ -173,11 +173,132 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 يوسع ملحق الخرائط البحرية في OsmAnd أنماط خرائط الطبقات المتجهة بنمط الخريطة البحرية. يسمح لك بعرض بيانات الخريطة وفقًا لقواعد الخرائط البحرية، على سبيل المثال: مناطق صفراء للأرض والمياه الضحلة، ومناطق زرقاء فاتحة للمياه الضحلة، إلخ. لمزيد من المعلومات، راجع [مفتاح الخريطة](../../user/map-legend/nautical-map.md).
 
 
+### تفاصيل قاع البحر {#seabed-detail}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+
+![تفاصيل قاع البحر](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+اذهب إلى: *Menu → Configure map → Map style → Details → Seabed detail*
+
+![تفاصيل قاع البحر](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+تحتوي بيانات قاع البحر على معلومات حول الغطاء النباتي والمواد السطحية العامة مثل الصخور الصخرية، والأصداف، والحصى، والشعاب المرجانية، والطمي، إلخ. نظرًا للتصنيف الدولي لبيانات قاع البحر، هناك خيارات لعرض هذه التفاصيل على الخريطة: *بسيط*، *فئة*، *الكل* أو *حذف*. استخدم [مفتاح خريطة منطقة قاع البحر](../map-legend/nautical-map.md#seabed-area) لمزيد من المعلومات.
+
+- **بسيط** (*لإصدار أندرويد*) - يعرض رموز العلامات البحرية وفقًا لـ INT-1 Ref، مما يشير إلى طبيعة سطح قاع البحر.
+- **فئة** - بالإضافة إلى رمز العلامة البحرية، يعرض أيضًا علامة العلامة البحرية ذات الصلة، مما يشير إلى المادة الطبيعية، أو فئة الأعشاب البحرية.
+- **الكل** - بالإضافة إلى رمز العلامة البحرية أو العلامة أو الفئة، يعرض أيضًا مؤهلات مثل ناعم، لزج، خشن، إلخ. بالنسبة للأعشاب البحرية، يعرض البيانات المميزة بعلامات *taxon* و *genus*.
+- **حذف** - لا يعرض تفاصيل قاع البحر.
+
+:::info ملاحظة
+لمزيد من التفاصيل حول تصنيف تفاصيل السطح وخيارات العرض، راجع [ويكي العلامات البحرية لـ OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::
+
+### تفاصيل الضوء {#light-detail}
+
+أندرويد اذهب إلى: *Menu → Configure map → Map style Nautical → Other map attributes → Light detail*
+
+iOS اذهب إلى: *Menu → Configure map → Map type Nautical → Details → Light detail*
+
+هذا الخيار يعرض مستوى المعلومات لأضواء الملاحة. يمكنك اختيار مدى تفصيل خصائص الضوء بالقرب من كل منارة أو علامة إشارة.
+
+- **بسيط** – يعرض اسم العلامة البحرية الافتراضي وخصائص الضوء.
+- **القطاعات** – يعرض أقواس القطاع الكاملة والتفاصيل لجميع قطاعات الضوء المرئية.
+- **قطاع 1–5** – يعرض التفاصيل لعدد قطاع محدد فقط.
+- **صغير** – يستخدم تنسيق تسمية مدمج لخصائص الضوء.
+- **الاسم فقط** – يعرض اسم العلامة البحرية فقط دون بيانات الضوء.
+- **حذف** – يخفي جميع معلومات الضوء.
+
+
+## نمط الخريطة البحرية {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![بحري أندرويد](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+اذهب إلى: *Menu* → *Configure map* → *Map style* → *Marine*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![بحري iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+اذهب إلى: *Menu* → *Configure map* → *Map type* → *Marine*
+
+</TabItem>
+
+</Tabs>
+
+يضيف هذا النمط عناصر بصرية للملاحة البحرية، بما في ذلك أضواء الملاحة مع خصائص الضوء INT-1، والتي تصف نوع ولون وإيقاع إشارة الضوء (على سبيل المثال، ما إذا كانت تومض، ولونها، والفاصل الزمني بين الومضات)، وأضواء القطاع الملونة التي تشير إلى اتجاه ولون الضوء المرئي من البحر.
+
+في نمط البحري، يتم عرض قطاعات الضوء حول المنارات وعلامات الإشارة: الأبيض (يُظهر بالأصفر على الخريطة) يشير إلى الاتجاه الآمن للملاحة، الأحمر يشير إلى المناطق الخطرة أو المقيدة، والأخضر يظهر الاتجاهات المساعدة أو الجانبية.
+
+:::info
+لعرض هذه المعلومات، يجب تفعيل ملحق الخرائط البحرية، ويجب تنزيل خريطة علامات البحر العالمية (أو World_seamarks_2.obf). المعلومات غير مخصصة للاستخدام الرسمي في الملاحة.
+:::
+
+
+### سمات الخريطة {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![سمات أندرويد](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+اذهب إلى: *Menu* → *Configure map* → *Map style Marine* → *Other map attributes*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![سمات iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+اذهب إلى: *Menu* → *Configure map* → *Map type Marine* → *Details* → *Light detail/Seabed detail*
+
+اذهب إلى: *Menu* → *Configure map* → *Map type Marine* → Choose other options
+
+</TabItem>
+
+</Tabs>
+
+بعد تفعيل نمط الخريطة البحرية، يمكنك تهيئة دقيقة للعناصر البصرية الإضافية. تسمح هذه الخيارات بالتحكم في كيفية ظهور وسائل الملاحة، وخطوط الكفاف للعمق، وتفاصيل قاع البحر، والألوان على الخريطة.
+
+- **[تفاصيل الضوء](../plugins/nautical-charts/#light-detail)**. يحدد كيفية عرض معلومات ضوء العلامة البحرية. الخيارات: **افتراضي** (الاسم الكامل مع خصائص الضوء)، *صغير* (تنسيق مدمج)، *الاسم فقط* (اسم الضوء فقط)، أو *حذف* (إخفاء التسميات).
+- **[تفاصيل قاع البحر](../plugins/nautical-charts/#seabed-detail)**. يتحكم في مستوى المعلومات النصية حول قاع البحر. الخيارات: بسيط (معلومات أساسية)، فئة (نوع السطح)، الكل (بيانات كاملة)، أو حذف (لا نص).
+- **لون الماء**. يحدد اللون الأساسي لمناطق الماء. الخيارات: *افتراضي، أزرق، أبيض*، أو *رمادي* — مفيد لضبط الرؤية والتباين تحت أوضاع الإضاءة المختلفة.
+- **لون الممر**. يغير لون الممرات والقنوات الملاحية. الخيارات: *أبيض، أبيض أكثر، رمادي، أخضر*، أو *أصفر* لتحسين القراءة حسب خلفية الخريطة.
+- **نمط المد المنخفض**. يعدل اللون والملمس المستخدم للمد المنخفض. الخيارات: *أخضر فاتح، أخضر داكن، أراضي مبللة*، أو *مد* — كل منها يبرز المناطق الضحلة بين المد والجزر بشكل مختلف.
+- **علامات ENC**. تبديل *تشغيل/إيقاف*. عند التفعيل، يعرض علامات الخريطة الإلكترونية الملاحية (ENC) مثل العوامات، وعلامات الإشارة، وغيرها من وسائل الملاحة.
+- **نمط الأصداف**. يحدد كيفية ظهور الأصداف أو ميزات سطح القاع. الخيارات: *رمادي، صخور، حجارة*، أو *أحمر*، حسب النمط البصري المفضل.
+- **خطوط الكفاف المنقطة**. تبديل *تشغيل/إيقاف*. عند التفعيل، يعرض خطوط الكفاف للعمق كنقاط منقطة، مما يعزز القراءة في المناطق الكثيفة.
+- **مخطط ألوان العمق**. يختار مخطط الألوان لمناطق العمق. الخيارات: *ورقي* (ألوان الخرائط الورقية التقليدية) أو *ECDIS* (لوحة ألوان نظام الملاحة الإلكتروني القياسي).
+- **حجم القراءة النقطية**. يحدد حجم الخط لأرقام القراءة النقطية (قيم العمق). الخيارات: *افتراضي، 10، 12، 14*، أو *16* — القيم الأكبر تحسن الرؤية على الشاشات عالية الدقة.
+- **مسافة القراءة النقطية**. يتحكم في تكرار ظهور قراءات العمق على الخريطة. الخيارات: *افتراضي، 0، 5، 10، 15، 30، 60*، أو *120*، مما يحدد المسافة بين نقاط العمق المعروضة.
+- **خط الكفاف الآمن للعمق**. يبرز خط الكفاف الذي يشير إلى عتبة العمق الآمن. الخيارات: *إيقاف، 0 م، 1 م، 2 م، 3 م، 4 م، 5 م*، أو *10 م*. مفيد لتمييز مناطق الملاحة الآمنة عن المناطق الضحلة.
+
+
+## بيانات بحرية إضافية {#additional-nautical-data}
+
 ### نقاط العمق {#depth-points}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![خرائط بحرية](@site/static/img/plugins/nautical-charts/and_depth_points.png)
 
@@ -198,7 +319,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
@@ -223,40 +344,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 :::info ملاحظة
 يمكنك مساعدة تطبيق OsmAnd على زيادة قاعدة بيانات خطوط الكفاف للعمق عن طريق إضافة معلوماتك باستخدام [OpenSeaMap](https://map.openseamap.org/)
-:::
-
-
-### تفاصيل قاع البحر {#seabed-details}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="أندرويد">  
-
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
-
-![تفاصيل قاع البحر](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
-
-![تفاصيل قاع البحر](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
-
-</TabItem>
-
-</Tabs>
-
-تحتوي بيانات قاع البحر على معلومات حول الغطاء النباتي والمواد السطحية العامة مثل الصخور الصخرية، والأصداف، والحصى، والشعاب المرجانية، والطمي، إلخ. نظرًا للتصنيف الدولي لبيانات قاع البحر، هناك خيارات لعرض هذه التفاصيل على الخريطة: *بسيط (simple)*، *فئة (category)*، *الكل (all)* أو *حذف (omit)*. استخدم [مفتاح خريطة منطقة قاع البحر](../map-legend/nautical-map.md#seabed-area) لمزيد من المعلومات.
-
-- **بسيط (Simple)** (*لإصدار أندرويد*) - يعرض رموز العلامات البحرية وفقًا لـ INT-1 Ref، مما يشير إلى طبيعة سطح قاع البحر.
-- **فئة (Category)** - بالإضافة إلى رمز العلامة البحرية، يعرض أيضًا علامة العلامة البحرية ذات الصلة، مما يشير إلى المادة الطبيعية، أو فئة الأعشاب البحرية.
-- **الكل (All)** - بالإضافة إلى رمز العلامة البحرية أو العلامة أو الفئة، يعرض أيضًا مؤهلات مثل ناعم، لزج، خشن، إلخ. بالنسبة للأعشاب البحرية، يعرض البيانات المميزة بعلامات *taxon* و *genus*.
-- **حذف (Omit)** - لا يعرض تفاصيل قاع البحر.
-
-:::info ملاحظة
-لمزيد من التفاصيل حول تصنيف تفاصيل السطح وخيارات العرض، راجع [ويكي العلامات البحرية لـ OSM](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
 
 

@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography, Skeleton } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { fetchPhotoProperties } from '../../../manager/SearchManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_forward.svg';
@@ -19,15 +18,13 @@ import { fmt } from '../../../util/dateFmt';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const [open, setOpen] = useState(true);
     const [activeStep, setActiveStep] = useState(ctx.selectedPhotoInd);
     const [width, height] = useWindowSize();
     const [showInfo, setShowInfo] = useState(false);
     const [activePhoto, setActivePhoto] = useState(null);
-
-    const controllerRef = useRef(null);
 
     const HEADER_HEIGHT = 60;
     const LEFT_MARGIN = 423;
@@ -44,19 +41,12 @@ export default function PhotosModal({ photos }) {
                 return;
             }
 
-            if (controllerRef.current) {
-                controllerRef.current.abort();
+            if (hasFooterInfo(currentPhoto)) {
+                setShowInfo(true);
+                setActivePhoto(currentPhoto);
+            } else {
+                setShowInfo(false);
             }
-            controllerRef.current = new AbortController();
-
-            fetchPhotoProperties(currentPhoto, controllerRef.current.signal).then((fetchedPhoto) => {
-                if (hasFooterInfo(fetchedPhoto)) {
-                    setShowInfo(true);
-                    setActivePhoto(fetchedPhoto);
-                } else {
-                    setShowInfo(false);
-                }
-            });
         } else {
             setOpen(false);
         }
@@ -128,6 +118,27 @@ export default function PhotosModal({ photos }) {
         const clean = dateStr?.startsWith('+') ? dateStr.slice(1) : dateStr;
         const d = new Date(clean);
         return isNaN(d) ? dateStr : fmt.dMMMMY(d);
+    };
+
+    const parseDescription = (descriptionStr) => {
+        if (!descriptionStr) {
+            return '';
+        }
+        try {
+            const parsed = JSON.parse(descriptionStr);
+            const currentLang = i18n.language?.split('-')[0] || 'en';
+
+            if (parsed[currentLang]) {
+                return parsed[currentLang];
+            } else if (parsed['en']) {
+                return parsed['en'];
+            } else {
+                const firstKey = Object.keys(parsed)[0];
+                return firstKey ? parsed[firstKey] : descriptionStr;
+            }
+        } catch (e) {
+            return descriptionStr;
+        }
     };
 
     return (
@@ -250,9 +261,9 @@ export default function PhotosModal({ photos }) {
                                 id={'se-photo-description'}
                                 compName={t('shared_string_description')}
                                 className={`${styles.metadata} ${styles.metadatamulti}`}
-                                name={`${t('shared_string_description')}: ${activePhoto.properties.description.trimStart()}`}
+                                name={`${t('shared_string_description')}: ${parseDescription(activePhoto.properties.description).trimStart()}`}
                                 maxLines={1}
-                                showMore={needOpenMoreModal(activePhoto.properties.description)}
+                                showMore={needOpenMoreModal(parseDescription(activePhoto.properties.description))}
                             />
                         ) : (
                             <Typography

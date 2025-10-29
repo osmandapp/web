@@ -1,8 +1,9 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -59,7 +59,7 @@ Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswah
 
 <TabItem value="ios" label="iOS">
 
-![Allgemeine Einstellungen Standardprofil Android](@site/static/img/personal/profiles/default_profile_ios.png)
+![Allgemeine Einstellungen Standardprofil iOS](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ Diese Funktion ist für die iOS-Version der OsmAnd-App verfügbar.
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Allgemeine Einstellungen Standardprofil Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Allgemeine Einstellungen CarPlay-Profil iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 Das [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) wird verwendet, wenn eine Verbindung zur [CarPlay-Software](https://support.apple.com/en-gb/HT205634) Ihres Fahrzeugs besteht. Es hilft Ihnen, die optimierte Version der OsmAnd-App optimal zu nutzen, indem es die Audio- und Videosysteme zur Anzeige von Daten auf Ihrem Telefon verwendet.
 
@@ -94,7 +94,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 ![Profile Speichereinstellungen Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Gerätespeicher** zeigt an, wie viel freier Speicherplatz auf Ihrem Gerät verbleibt. Tippen Sie auf ein Feld, um zum Menü [*Karten und Ressourcen*](../personal/maps-resources.md#maps--resources) zu gelangen, wo Sie detaillierte Informationen zu Ihren OsmAnd-Daten anzeigen und verwalten können.
+1. **Gerätespeicher** zeigt an, wie viel freier Speicherplatz auf Ihrem Gerät verbleibt. Tippen Sie auf ein Feld, um zum Menü [*Karten und Ressourcen*](../personal/maps-resources.md#local-menu) zu gelangen, wo Sie detaillierte Informationen zu Ihren OsmAnd-Daten anzeigen und verwalten können.
 
 2. Im **<Translate android="true" ids="change_data_storage_folder"/>** können Sie einen Ordner zum Speichern von OsmAnd-Daten auf Ihrem Gerät auswählen.  
 
@@ -303,14 +303,14 @@ Die Einstellung **<Translate android="true" ids="dialogs_and_notifications_title
 
 - *Startmeldung* enthält Werbeaktionen, Quizze, Veranstaltungen und mehr.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) unterdrückt die Anzeige von App-Rabatten und Nachrichten zu speziellen lokalen Ereignissen.
-- Der [*Karten-Download-Dialog*](../start-with/download-maps.md#download) informiert Sie darüber, dass bestimmte Karten heruntergeladen werden können.
+- Der [*Karten-Download-Dialog*](../start-with/download-maps.md#downloading-maps) informiert Sie darüber, dass bestimmte Karten heruntergeladen werden können.
 
 
 ### Standortquelle {#location-source}
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (nur Android)
 
-![Automatische Sicherung](@site/static/img/personal/profiles/location_source_andr.png)
+![Standortquelle](@site/static/img/personal/profiles/location_source_andr.png)
 
 OsmAnd bietet Ihnen eine Auswahl an Diensten zur Bestimmung Ihres Standorts. Es wird empfohlen, weitere Informationen zur [Standortberechtigung](../start-with/first-steps.md#permission-to-access-the-location) und zur [Fehlerbehebung](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) für diesen Abschnitt zu lesen.
 
@@ -330,7 +330,7 @@ OsmAnd bietet Ihnen eine Auswahl an Diensten zur Bestimmung Ihres Standorts. Es 
 
 <InfoAndroidOnly />
 
-![Allgemeine Einstellungen Benachrichtigungen Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![Allgemeine Einstellungen Automatische Sicherung Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
 - Android oder OsmAnd Cloud können Ihre Daten und App-Einstellungen speichern.
 
@@ -365,7 +365,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![Allgemeine Einstellungen Kameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Allgemeine Einstellungen Kameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Allgemeine Einstellungen Kameras iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Allgemeine Einstellungen Kameras iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 

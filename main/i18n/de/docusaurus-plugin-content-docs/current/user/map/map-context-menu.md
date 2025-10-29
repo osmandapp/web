@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -115,13 +115,13 @@ Um das **Kontextmenü** zu schließen:
 
 <TabItem value="android" label="Android">  
 
-![Kontextmenü Android](@site/static/img/map/context_menu_android.png)
+![Kontextmenü Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Kontextmenü iOS](@site/static/img/map/context_menu_ios.png)
+![Kontextmenü iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Verfügbare Details umfassen:
 - [Alternative Namen](#alternative-names)
 - [Koordinaten](#coordinates)
 - [Innerhalb von Gebieten](#polygon-information)
-- [Nahegelegene POIs / Wikipedia](#nearby-pois--wikipedia)
+- [Nahegelegene POIs](#nearby-pois)
+- [Nahegelegene beliebte Orte](#nearby-popular-places)
 - [ÖPNV-Routen für Haltestellen](#public-transport-routes)
 - [Favoriten / Trackpunkte aus derselben Gruppe](#favorites--track-points-from-the-group)
 - [OpenStreetMap-Link](#openstreetmap-link)
@@ -167,7 +168,7 @@ Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.or
 
 <TabItem value="ios" label="iOS">
 
-![Alternative Namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternative Namen Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternative Namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternative Namen iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -198,7 +199,7 @@ Merkmale der Anzeige alternativer Namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygon-Informationen Android](@site/static/img/map/polygon_information_ios.png)
+![Polygon-Informationen iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -217,15 +218,56 @@ Im Kontextmenü finden Sie [geografische Koordinaten](../search/search-coordinat
 Der OsmAnd Web-Link kann von OsmAnd automatisch erkannt werden (Beispiel: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Sowohl OsmAnd- als auch [OpenStreetMap-Links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) werden auf den entsprechenden Websites mit einer Markierung am gewünschten Ort geöffnet.  
 
 
-### Nahegelegene POIs / Wikipedia {#nearby-pois--wikipedia}
+### Nahegelegene POIs {#nearby-pois}
 
-![Nahegelegene Wikipedia-Artikel](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nahegelegene Wikipedia-Artikel](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Diese Abschnitte zeigen nahegelegene [Wikipedia-Artikel](../plugins/wikipedia.md) oder [Points of Interest (POIs)](../map/point-layers-on-map.md#points-of-interest-pois) mit *<Translate android="true" ids="shared_string_show_on_map"/>* und *<Translate android="true" ids="search_more"/>* an, um alle anderen POIs & Wikipedia-Artikel anzuzeigen und zu [suchen](../search/search-poi.md).
+<TabItem value="android" label="Android">  
 
-Ein Tippen auf *Nahegelegene POIs / Wikipedia-Artikel* öffnet eine Punkteliste (POIs oder Wikipedia). Ein Tippen auf einen dieser Punkte aus einer Punkteliste verschiebt die Karte zu diesem Punkt (POI oder Wikipedia) und öffnet das Kartenkontextmenü des Punktes.
+![Nahegelegene POI Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nahegelegene POI iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Dieser Abschnitt zeigt nahegelegene [Points of Interest (POIs)](../map/point-layers-on-map.md#points-of-interest-pois) mit *<Translate android="true" ids="shared_string_show_on_map"/>* und *<Translate android="true" ids="search_more"/>* an, um alle anderen POIs in derselben Kategorie anzuzeigen und zu [suchen](../search/search-poi.md).
+
+Ein Tippen auf *Nahegelegene POIs* öffnet eine Punkteliste. Ein Tippen auf einen dieser Punkte aus einer Punkteliste verschiebt die Karte zu diesem Punkt und öffnet das Kartenkontextmenü des Punkts.
+
+
+### Nahegelegene beliebte Orte {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Nahegelegene Orte Android](@site/static/img/map/nearby_places_android.png)
+
+Dieser Abschnitt hebt beliebte Orte hervor, die Ihnen helfen, interessante Ziele und Wahrzeichen in Ihrer Umgebung zu entdecken. Verwenden Sie *<Translate android="true" ids="shared_string_show_on_map"/>* und *<Translate android="true" ids="search_more"/>* , um alle beliebten Orte zu durchsuchen und zu suchen. 
+
+Ein Tippen auf *Nahegelegene [Beliebte Orte](https://osmand.net/docs/user/map/popular_places)* öffnet eine Liste nahegelegener Orte. Die Auswahl eines Elements zentriert die Karte auf diesem Ort und öffnet sein Kontextmenü, in dem Sie eine kurze Beschreibung lesen oder auf ***Vollständigen Artikel lesen*** tippen können, um den vollständigen Leitfaden anzuzeigen.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nahegelegene Orte iOS](@site/static/img/map/nearby_places_ios.png)
+
+Dieser Abschnitt hebt beliebte Orte hervor, die Ihnen helfen, interessante Ziele und Wahrzeichen in Ihrer Umgebung zu entdecken. Verwenden Sie *<Translate android="true" ids="shared_string_show_on_map"/>* und *<Translate android="true" ids="search_more"/>* , um alle beliebten Orte zu durchsuchen und zu suchen. 
+
+Ein Tippen auf *Nahegelegene [Beliebte Orte](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* öffnet eine Liste nahegelegener Orte. Die Auswahl eines Elements zentriert die Karte auf diesem Ort und öffnet sein Kontextmenü, in dem Sie eine kurze Beschreibung lesen oder auf ***Vollständigen Artikel lesen*** tippen können, um den vollständigen Leitfaden anzuzeigen.
 
 > **HINWEIS**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) erscheint nur, wenn Sie zuvor spezielle Karten mit [Wikipedia-Artikeln für dieses Gebiet heruntergeladen haben](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### ÖPNV-Routen {#public-transport-routes}
@@ -284,7 +326,7 @@ Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](.
 ![OSM-Link](@site/static/img/map/context_menu_osm_link.png) ![OSM-Link](@site/static/img/map/context_menu_osm_link_1.png)
 
 Der OpenStreetMap-Link bietet einen direkten Link zum OpenStreetMap-Objekt, wo Sie vollständige Informationen darüber finden können:  
-[Knoten (node)](https://wiki.openstreetmap.org/wiki/Node) oder [Weg (way)](https://wiki.openstreetmap.org/wiki/Way).
+[Knoten](https://wiki.openstreetmap.org/wiki/Node) oder [Weg](https://wiki.openstreetmap.org/wiki/Way).
 
 
 ### Online-Fotos {#online-photos}
@@ -683,9 +725,7 @@ Um Trackpunkte hinzuzufügen/zu bearbeiten, aktivieren Sie das OsmAnd [**Reiseau
 
 <TabItem value="android" label="Android">  
 
-![Aktion Wegpunkt Android](@site/static/img/map/action_waypoint_android.png)
-
-![Track zum Hinzufügen eines Wegpunkts auswählen Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Track zum Hinzufügen eines Wegpunkts auswählen Android](@site/static/img/map/tracks_tab_android.png) ![Track-Wegpunkt hinzufügen Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +743,7 @@ Sie können Wegpunkte zu einem aufgezeichneten Track oder zur aktuellen Trackauf
 
 - Wählen Sie einen Ort auf der Karte durch [langes Antippen](../map/map-context-menu.md#select-any-point-long-tap) aus.
 - Wählen Sie im sich öffnenden *Kartenkontextmenü* *Aktionen → Track-Wegpunkt hinzufügen*.
-- Die Liste zeigt die aufgezeichneten und auf der Karte angezeigten [Tracks](../map/tracks/index.md#display-tracks-on-the-map) sowie die [aktuelle Trackaufzeichnung](../plugins/trip-recording.md) an, zu der Sie den ausgewählten Wegpunkt hinzufügen können.
+- Die Liste zeigt die aufgezeichneten und auf der Karte angezeigten [Tracks](../map/tracks/index.md#display-tracks-on-the-map) sowie die [aktuelle Trackaufzeichnung](../plugins/trip-recording.md) an, zu der Sie den ausgewählten Wegpunkt hinzufügen können (*auf Android* wird die Liste in Registerkarten gruppiert: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Sie können Wegpunkte zu einem Track hinzufügen, der noch nicht für die Aufzeichnung aktiv ist. In diesem Fall wechselt der inaktive Track vom *Startzustand* in den *Fortsetzungszustand*.
 - [Füllen Sie](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) die erforderlichen Daten aus und speichern Sie den Wegpunkt.
 - Sie können die [Schnellaktionen](../widgets/quick-action.md) konfigurieren, indem Sie einen Wegpunkt zu *Track-Wegpunkt hinzufügen* hinzufügen.

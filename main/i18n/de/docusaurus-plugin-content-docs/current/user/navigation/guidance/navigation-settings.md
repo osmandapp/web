@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Navigationseinstellungen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -185,14 +185,14 @@ Die Parameter im Abschnitt **Entwicklung** sind hauptsächlich für fortgeschrit
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/>-Schaltfläche* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -207,6 +207,16 @@ Audioanweisungen während der Navigation helfen Ihnen als Fahrer oder Fußgänge
 Wenn Sie einen Track als Zielpunkt auswählen, müssen Sie die Option [An Straßen ausrichten](../setup/gpx-navigation.md#attach-to-the-roads) verwenden, damit die Sprachansagen korrekt funktionieren.
 
 *Sprachansagen* ermöglichen es Ihnen, sich auf die Straße zu konzentrieren und nicht durch die Karte oder das Navigationsgerät abgelenkt zu werden. Sie verbessern auch die Fahrsicherheit, verkürzen die Zeit, die für die Navigation in unbekanntem Gelände benötigt wird, und können für verschiedene [Routentypen](../routing/osmand-routing.md#routing-types) nützlich sein.
+
+Im Abschnitt **Ankündigen** können Sie auswählen, welche Arten von Benachrichtigungen während der Navigation abgespielt oder angezeigt werden sollen:
+
+- **Abbiege-für-Abbiege-Anweisungen** (nur Android) – ermöglicht das Aktivieren oder Deaktivieren standardmäßiger Navigationsanweisungen wie *„Links abbiegen“*, *„Rechts abbiegen“* oder *„In 200 Metern…“*. Wenn die Option deaktiviert ist, werden Abbiege- und Straßennamenansagen nicht bereitgestellt, während Benachrichtigungen für Wegpunkte, Benutzerpunkte und Routenereignisse aktiv bleiben. Dieser Modus ist für Aktivitäten wie Rafting, Wandern oder Radfahren entlang vorab aufgezeichneter Tracks gedacht, wenn nur Warnungen für manuell hinzugefügte Wegpunkte erforderlich sind.
+- **Straßennamen (TTS)** – kündigt die Namen der Straßen entlang Ihrer Route an.
+- **Ausfahrt-Nummer** – kündigt die Ausfahrtnummer beim Fahren auf Autobahnen an.
+- **Verkehrswarnungen** – gibt Warnungen zu wichtigen Straßenereignissen wie Staus oder Beschränkungen.
+- **Fußgängerüberwege** – warnt Sie, wenn Sie sich Fußgängerüberwegen nähern.
+- **[Geschwindigkeitskameras](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – warnt vor Geschwindigkeitskamerastandorten (wo gesetzlich erlaubt).
+- **Tunnel** – informiert Sie, wenn Sie in einen Tunnel fahren.
 
 
 ## Bildschirmwarnungen {#screen-alerts}

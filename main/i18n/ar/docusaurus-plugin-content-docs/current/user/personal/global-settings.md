@@ -1,4 +1,5 @@
 ---
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Global Settings
 ---
@@ -16,142 +17,142 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-## Overview {#overview}
+## نظرة عامة {#overview}
 
-**Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system, and any changes made will affect the entire application.
+**الإعدادات العامة** هي إعدادات [عامة](../personal/profiles.md) لجميع الملفات الشخصية في تطبيق OsmAnd. هذه هي الإعدادات الأساسية لنظام OsmAnd، وأي تغييرات تُجرى ستؤثر على التطبيق بأكمله.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
+![إعدادات الملفات الشخصية العامة أندرويد](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![إعدادات الملفات الشخصية العامة أندرويد](@site/static/img/personal/profiles/global_sett_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
+![إعدادات الملفات الشخصية العامة iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## General {#general}
+## عام {#general}
 
-This section contains the basic OsmAnd settings, such as selecting a [profile](#default-profile) when loading the application, selecting the [rendering engine](#map-rendering-engine) and the [folder](#data-storage-folder) where the data will be saved.  
+يحتوي هذا القسم على الإعدادات الأساسية لـ OsmAnd، مثل اختيار [الملف الشخصي الافتراضي](#default-profile) عند تحميل التطبيق، واختيار [محرك العرض](#map-rendering-engine) و[مجلد التخزين](#data-storage-folder) حيث سيتم حفظ البيانات.  
 
 
-### Default Profile {#default-profile}
+### الملف الشخصي الافتراضي {#default-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_andr.png)  
+![إعدادات عامة ملف شخصي افتراضي أندرويد](@site/static/img/personal/profiles/default_profile_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_ios.png)
+![إعدادات عامة ملف شخصي افتراضي أندرويد](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd uses the default profile, *Browse map*, as the first profile for new users, and if this profile has been selected by you, it will be used each time the application is restarted. You can select any profile from the default list, including *Last used* and *Browse map*.
+يستخدم OsmAnd الملف الشخصي الافتراضي، *استعراض الخريطة*، كأول ملف شخصي للمستخدمين الجدد، وإذا تم اختيار هذا الملف الشخصي من قبلك، فسيتم استخدامه في كل مرة يتم فيها إعادة تشغيل التطبيق. يمكنك اختيار أي ملف شخصي من القائمة الافتراضية، بما في ذلك *آخر مستخدم* و*استعراض الخريطة*.
 
-- **<Translate android="true" ids="shared_string_last_used"/>**. Allows you to select the profile that was used last.
-- **<Translate android="true" ids="settings_preset"/>**. You select the profile to be used when starting OsmAnd. It can be changed in the application [settings](../personal/profiles.md).  
+- **<Translate android="true" ids="shared_string_last_used"/>**. يسمح لك باختيار الملف الشخصي الذي تم استخدامه آخر مرة.
+- **<Translate android="true" ids="settings_preset"/>**. تقوم باختيار الملف الشخصي الذي سيتم استخدامه عند بدء تشغيل OsmAnd. يمكن تغييره في إعدادات [التطبيق](../personal/profiles.md).  
 
 
-### CarPlay Profile {#carplay-profile}
+### ملف CarPlay الشخصي {#carplay-profile}
 
 :::caution iOS ONLY
-This feature is available for the iOS version of the OsmAnd app.
+هذه الميزة متاحة لإصدار iOS من تطبيق OsmAnd.
 :::
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![إعدادات عامة ملف شخصي افتراضي أندرويد](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) is used when connected to your vehicle's [CarPlay software](https://support.apple.com/en-gb/HT205634) and helps you make the most of the optimized version of the OsmAnd app using the audio and video systems to display data on your phone.
+يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصوى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
 
 
-### Data Storage Folder {#data-storage-folder}
+### مجلد تخزين البيانات {#data-storage-folder}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+![إعدادات تخزين الملفات الشخصية أندرويد](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#local-menu) menu, where you can view and manage detailed information about your OsmAnd data.
+1. **ذاكرة الجهاز** تظهر كمية المساحة الحرة المتبقية على جهازك. اضغط على الحقل للوصول إلى قائمة [*الخرائط والموارد*](../personal/maps-resources.md#local-menu)، حيث يمكنك عرض وإدارة معلومات مفصلة عن بيانات OsmAnd الخاصة بك.
 
-2. In the **<Translate android="true" ids="change_data_storage_folder"/>**, you can select a folder to save OsmAnd data on your device.  
+2. في **<Translate android="true" ids="change_data_storage_folder"/>**، يمكنك اختيار مجلد لحفظ بيانات OsmAnd على جهازك.  
 
-    - *Internal app memory*. Only the OsmAnd app has access to its data and none of the external apps.
-    - *Shared memory*. No longer available.
-    - *External storage 1*. Only 1 OsmAnd app has access and Admin apps and USB.
-    - *Multiuser storage*. Only 1 OsmAnd app has access, but it's shared between multiple Android users.
-    - *Manually specified*. Depends on the path.
+    - *ذاكرة التطبيق الداخلية*. فقط تطبيق OsmAnd لديه الوصول إلى بياناته ولا تطبيقات خارجية.
+    - *الذاكرة المشتركة*. غير متاحة بعد الآن.
+    - *التخزين الخارجي 1*. فقط تطبيق OsmAnd واحد لديه الوصول وتطبيقات الإدارة وUSB.
+    - *التخزين متعدد المستخدمين*. فقط تطبيق OsmAnd واحد لديه الوصول، لكنه مشترك بين عدة مستخدمين أندرويد.
+    - *محدد يدويًا*. يعتمد على المسار.
 
 :::note Android 12+ (change storage folder)
-New storage access guidelines have been implemented in Android versions 11-12. See the [**Troubleshooting**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) section for details.
+تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) للحصول على التفاصيل.
 :::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *iOS device → Settings → General → iPhone storage → OsmAnd Maps*  
+اذهب إلى: *جهاز iOS → الإعدادات → العام → تخزين iPhone → خرائط OsmAnd*  
 
-![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
+![إعدادات عامة تخزين iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). To do this follow the following path:  
+ملفات OsmAnd مرئية في تطبيق [*الملفات*](https://apps.apple.com/us/app/files/id1232058109). يمكنك الوصول إلى جميع ملفات OsmAnd: [المسارات](../personal/tracks/manage-tracks.md)، [المفضلات](../personal/favorites.md)، [الخرائط](../personal/maps-resources.md)، [rendering.xml](../../technical/build-osmand/rendering.md)، [routing.xmlustom](../../technical/build-osmand/routing.md). للقيام بذلك، اتبع المسار التالي:  
 
-Go to: *Files → On My Phone → OsmAnd Maps*
+اذهب إلى: *الملفات → على هاتفي → خرائط OsmAnd*
 
 <!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
-![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
+![إعدادات عامة تخزين iOS](@site/static/img/personal/profiles/files-1.png) ![إعدادات عامة تخزين iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
 </Tabs>
 
 
-### Map Rendering Engine {#map-rendering-engine}
+### محرك عرض الخريطة {#map-rendering-engine}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (Android only)*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (أندرويد فقط)*
 
-![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
+![إعدادات عامة محرك العرض أندرويد](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
-- In the **Android** version of the app, you can switch between Version 1 map rendering, originally implemented in the OsmAnd app, and Version 2, which uses the OpenGL (Open Graphics Library) programming interface for rendering two- and three-dimensional graphical objects.
+- في إصدار **أندرويد** من التطبيق، يمكنك التبديل بين عرض الخريطة الإصدار 1، الذي تم تنفيذه أصلاً في تطبيق OsmAnd، والإصدار 2، الذي يستخدم واجهة البرمجة OpenGL (مكتبة الرسومات المفتوحة) لعرض الكائنات الرسومية ثنائية وثلاثية الأبعاد.
 
-- The **iOS** version uses only OpenGL for map rendering.
+- يستخدم إصدار **iOS** OpenGL فقط لعرض الخريطة.
 
 
-| Features | Version 1 | Version 2 (OpenGL) |
+| الميزات | الإصدار 1 | الإصدار 2 (OpenGL) |
 |:---|:--- |:--- |
-| Cross-platform | Not used in the iOS version. | Fits both versions. |
-| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) and later versions, and in test mode for [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
-| 3D mode | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). | You can view the map in 2D and [3D](../widgets/map-buttons.md#3d-mode). |
-| Map display | The whole map is rendered as a set of tiles, and markers, lines, and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
-| Transparent symbols overlay / underlay | Supports all settings. | It does not support a raster layer on top of vector text. |
-| [3D Terrain](../map/raster-maps.md#3d-relief) | Not supported. | This feature visualizes the terrain on the map by adding elevation information to a normal 2D map, which creates a 3D and depth effect. |
-| [3D Tracks](../map/tracks/appearance.md) | Not supported. | This feature allows you to display tracks by altitude above sea level. |
-| [Online map](../plugins/online-map.md) | It does not support the display of Contour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Contour lines on the map is supported. |
-| [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
+| متعدد المنصات | غير مستخدم في إصدار iOS. | يناسب كلا الإصدارين. |
+| يعتمد على GPU / CPU | موصى به للأجهزة ذات الأداء المنخفض أو القديمة. | محرك عرض قوي. <br /> متاح فقط لـ [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) وإصدارات لاحقة، وفي وضع الاختبار لـ [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| وضع 3D | من الممكن عرض الخريطة في 2D، ويمكنك تغيير زاوية العرض للحصول على [عرض ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). | يمكنك عرض الخريطة في 2D و[3D](../widgets/map-buttons.md#3d-mode). |
+| عرض الخريطة | يتم عرض الخريطة بأكملها كمجموعة من البلاطات، والعلامات والخطوط والنصوص موجودة بالفعل داخل هذه البلاطات. | أولاً، يتم عرض حزمة البلاط بأكملها، ثم يتم تطبيق الرموز المتاحة على الخريطة، [طبقة بطبقة](../../technical/algorithms/map-rendering-layers.md). |
+| تراكب / تحت الرموز الشفافة | يدعم جميع الإعدادات. | لا يدعم طبقة رستر على النص المتجهي. |
+| [التضاريس ثلاثية الأبعاد](../map/raster-maps.md#3d-relief) | غير مدعوم. | تُصور هذه الميزة التضاريس على الخريطة بإضافة معلومات الارتفاع إلى خريطة 2D عادية، مما يخلق تأثيرًا ثلاثي الأبعاد وعمق. |
+| [المسارات ثلاثية الأبعاد](../map/tracks/appearance.md) | غير مدعوم. | تسمح هذه الميزة بعرض المسارات حسب الارتفاع فوق مستوى سطح البحر. |
+| [خريطة عبر الإنترنت](../plugins/online-map.md) | لا يدعم عرض خطوط الارتفاع إذا كان مصدر الخريطة أي خريطة بلاطات عبر الإنترنت. | عندما يكون مصدر الخريطة خريطة عبر الإنترنت، يتم استخدام الخرائط ثلاثية الأبعاد أيضًا، ويتم دعم عرض خطوط الارتفاع على الخريطة. |
+| [إضافة الطقس](../plugins/weather.md) | لا يمكنك استخدام هذه الإضافة. | مريح للاستخدام مع الإضافة. |  
 
-The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware. Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
+يتم تحميل صورة عرض الخريطة ثلاثي الأبعاد بلاطة بلاطة، ثم جميع الرموز. تعتمد سرعة عرض الخريطة على عدد الكائنات الرسومية ثنائية وثلاثية الأبعاد عليها، وعلى أداء الأجهزة الخاصة بك مباشرة. لذلك، لا يمكن استخدام الإصدار 2 (OpenGL) على الأجهزة ذات الأداء المنخفض.
 
 <table class="blogimage">
     <tr>
@@ -162,231 +163,229 @@ The image for the 3D view of the map is loaded tile by tile, then all the symbol
 </table>
 
 
-## Privacy and Security {#privacy-and-security}
+## الخصوصية والأمان {#privacy-and-security}
 
-OsmAnd allows you to choose whether to *[share your in-app activity](#analytics)* and [identifiers](#identifiers) (*Android only*) in the app, the ability to edit your *[history](#history)* and use a *[proxy](#proxy)* (*Android only*) of your choice.  
+يسمح OsmAnd لك باختيار ما إذا كنت تريد *[مشاركة نشاطك داخل التطبيق](#analytics)* و[معرفات](#identifiers) (*أندرويد فقط*) في التطبيق، والقدرة على تحرير *[سجلك](#history)* واستخدام *[وكيل](#proxy)* (*أندرويد فقط*) من اختيارك.  
 
 :::note
-More information can be found in [*OsmAnd Privacy and Security Policy*](../../legal/privacy-policy.md)
+يمكن العثور على مزيد من المعلومات في [*سياسة خصوصية وأمان OsmAnd*](../../legal/privacy-policy.md)
 :::
 
-### Analytics {#analytics}
+### التحليلات {#analytics}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
-![General Settings Analytics Android](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
+![إعدادات عامة التحليلات أندرويد](@site/static/img/personal/profiles/general_settings_analitics_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,send_anonymous_data"/>*
 
-![General Settings Send anonymous data iOS](@site/static/img/personal/profiles/general_settings_send_anonymous_data_ios.png)
+![إعدادات عامة إرسال بيانات مجهولة iOS](@site/static/img/personal/profiles/general_settings_send_anonymous_data_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**<Translate android="true" ids="analytics_pref_title"/>** (*Android*) or **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) setting allows you the choice whether to provide anonymous data about *Downloaded Maps* and *Visited Screens* (*Android*).  
+إعداد **<Translate android="true" ids="analytics_pref_title"/>** (*أندرويد*) أو **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) يسمح لك باختيار ما إذا كنت تريد تقديم بيانات مجهولة حول *الخرائط المحملة* و*الشاشات المزارة* (*أندرويد*).  
 
 :::note
-Data about your location or the places you view on the map is not collected.
+لا يتم جمع بيانات حول موقعك أو الأماكن التي تتصفحها على الخريطة.
 :::  
 
-### Identifiers {#identifiers}
+### المعرفات {#identifiers}
 
 <InfoAndroidOnly />
 
-*Menu → Settings → OsmAnd settings → Privacy and security → Identifiers*  
+*القائمة → الإعدادات → إعدادات OsmAnd → الخصوصية والأمان → المعرفات*  
 
-![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
+![UUID أندرويد](@site/static/img/personal/profiles/uuid_android.png)  
 
-A **UUID** (*Unique User Identifier*) is generated for each installation of the OsmAnd application and sent to the servers during map loading.
+يتم إنشاء **UUID** (*معرف مستخدم فريد*) لكل تثبيت لتطبيق OsmAnd وإرساله إلى الخوادم أثناء تحميل الخريطة.
 
-- A random UUID is used to download offline maps from OsmAnd servers to control the rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads.
-- The UUID changes every 3 months.  
-- Starting with OsmAnd version 4.3, you can disable the collection of user data when using the OsmAnd app. Then the UUID will not be sent with any download request.  
-- You can read more information in the [Terms of Use (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
+- يُستخدم UUID عشوائي لتحميل الخرائط دون اتصال من خوادم OsmAnd للتحكم في الاستخدام الرشيد لموارد الخادم، وتوقع استخدام الحركة المرورية، وتقديم تقارير شهرية عامة حول تحميل الخرائط.
+- يتغير UUID كل 3 أشهر.  
+- بدءًا من إصدار OsmAnd 4.3، يمكنك تعطيل جمع بيانات المستخدم عند استخدام تطبيق OsmAnd. ثم لن يتم إرسال UUID مع أي طلب تحميل.  
+- يمكنك قراءة مزيد من المعلومات في [شروط الاستخدام (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 
-### History {#history}
+### السجل {#history}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
+![إعدادات عامة السجل أندرويد](@site/static/img/personal/profiles/general_settings_history_android.png) ![إعدادات عامة السجل أندرويد](@site/static/img/personal/profiles/general_settings_history_android_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
+![إعدادات عامة السجل iOS](@site/static/img/personal/profiles/history_settings_ios.png) ![إعدادات عامة السجل iOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
 </Tabs>  
 
-The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab, you can *Enable / Disable* logging for certain categories of entries. You can also [manage](#history) (view, delete, and share) previously recorded data.  
+يسجل التطبيق تاريخ البيانات المدخلة سابقًا (السجل) في الفئات التالية: [البحث](../search/search-history.md)، [الملاحة](../navigation/setup/route-navigation.md#history-of-previous-routes)، [علامات الخريطة](../personal/markers.md#history). باستخدام المفتاح في علامة التبويب المناسبة، يمكنك *تفعيل / تعطيل* التسجيل لبعض فئات الإدخالات. كما يمكنك [إدارة](#history) (عرض، حذف، ومشاركة) البيانات المسجلة سابقًا.  
 
-- ***Backup as file*** (*Android*) or ***Export*** (*iOS*) is used to make [a backup file](../personal/import-export.md#export) of your history.
-- ***Clear all history*** (*Android*) or ***Delete all history*** (*iOS*) is used to delete all history entries recorded up to the time of deletion.
+- ***النسخ الاحتياطي كملف*** (*أندرويد*) أو ***التصدير*** (*iOS*) يُستخدم لإنشاء [ملف نسخ احتياطي](../personal/import-export.md#export) لسجلك.
+- ***مسح جميع السجل*** (*أندرويد*) أو ***حذف جميع السجل*** (*iOS*) يُستخدم لحذف جميع إدخالات السجل المسجلة حتى وقت الحذف.
 
 <br/>
 
-**Share and delete history.**
+**مشاركة وحذف السجل.**
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+![إعدادات عامة السجل أندرويد](@site/static/img/personal/profiles/general_settings_history_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+![إعدادات عامة السجل iOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![إعدادات عامة السجل iOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
 </Tabs>
 
-- You can delete one or more items from the history list or share them as a file (to access these functions *in iOS*, tap the ***Edit*** button).  
-- To delete or export multiple records simultaneously, select checkboxes next to the required records and tap the **Export** or **Delete** buttons.  
+- يمكنك حذف عنصر واحد أو أكثر من قائمة السجل أو مشاركتها كملف (للوصول إلى هذه الوظائف *في iOS*، اضغط على زر ***التعديل***).  
+- لحذف أو تصدير سجلات متعددة في وقت واحد، حدد خانات الاختيار بجانب السجلات المطلوبة واضغط على أزرار **التصدير** أو **الحذف**.  
 
 
-### Proxy {#proxy}
+### الوكيل {#proxy}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*  
 
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
+![إعدادات عامة الوكيل أندرويد](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
-**<Translate android="true" ids="proxy_pref_title"/>** setting allows you to configure an [HTTP proxy](https://en.wikipedia.org/wiki/Proxy_server) for all network requests. You can set the *Proxy Host* and *Proxy Port*.  
+إعداد **<Translate android="true" ids="proxy_pref_title"/>** يسمح لك بتكوين [وكيل HTTP](https://en.wikipedia.org/wiki/Proxy_server) لجميع طلبات الشبكة. يمكنك تعيين *مضيف الوكيل* و*منفذ الوكيل*.  
 
 
-## Other {#other}
+## أخرى {#other}
 
-In this section of the OsmAnd settings, you can configure the notifications you receive, the location service, and how your application settings are saved.
+في هذا القسم من إعدادات OsmAnd، يمكنك تكوين الإشعارات التي تتلقاها، وخدمة الموقع، وكيفية حفظ إعدادات التطبيق الخاصة بك.
 
-### Dialogs and notifications {#dialogs-and-notifications}
+### الحوارات والإشعارات {#dialogs-and-notifications}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)  
+![إعدادات عامة الإشعارات أندرويد](@site/static/img/personal/profiles/general_settings_notifications_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_2_ios.png)  
+![إعدادات عامة الحوارات iOS](@site/static/img/personal/profiles/general_settings_dialogs_2_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-The **<Translate android="true" ids="dialogs_and_notifications_title"/>** setting allows you to enable/disable pop-ups, dialogues, and notifications.  
+إعداد **<Translate android="true" ids="dialogs_and_notifications_title"/>** يسمح لك بتفعيل/تعطيل النوافذ المنبثقة، والحوارات، والإشعارات.  
 
-- *Start-up message* includes promotions, quizzes, events, and more.
-- *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) suppresses displaying app discounts and special local event messages.
-- [*Download map dialog*](../start-with/download-maps.md#downloading-maps) informs you that specific maps can be downloaded.
+- *رسالة البدء* تشمل العروض الترويجية، والأسئلة، والأحداث، وغيرها.
+- *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) يمنع عرض خصومات التطبيق ورسائل الأحداث المحلية الخاصة.
+- [*حوار تحميل الخريطة*](../start-with/download-maps.md#downloading-maps) يُبلغك بأن خرائط محددة يمكن تحميلها.
 
 
-### Location Source {#location-source}
+### مصدر الموقع {#location-source}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*Android only*)
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*أندرويد فقط*)
 
-![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
+![النسخ الاحتياطي التلقائي](@site/static/img/personal/profiles/location_source_andr.png)
 
-OsmAnd provides you with a choice of services to determine your location. It is recommended that you read more information about [Location permission](../start-with/first-steps.md#permission-to-access-the-location) and [Troubleshooting](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) for this section.
+يوفر OsmAnd لك خيارًا من الخدمات لتحديد موقعك. يُوصى بقراءة مزيد من المعلومات حول [إذن الموقع](../start-with/first-steps.md#permission-to-access-the-location) و[استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) لهذا القسم.
 
-***Android***:
+***أندرويد***:
 
-- You can choose which *Google Play* or *Android API* services OsmAnd will use to determine your location. This can be useful for devices without *Google Play Services* or in case of inaccurate location or altitude data when recording tracks.
-- OsmAnd receives data from the resources *Google Fused Location Providers* and *Android GPS and Network Providers*. You can switch **<Translate android="true" id="location_source" />** in: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
+- يمكنك اختيار الخدمات *Google Play* أو *Android API* التي سيستخدمها OsmAnd لتحديد موقعك. هذا يمكن أن يكون مفيدًا للأجهزة بدون *خدمات Google Play* أو في حالة عدم دقة الموقع أو بيانات الارتفاع عند تسجيل المسارات.
+- يتلقى OsmAnd البيانات من الموارد *Google Fused Location Providers* و*Android GPS and Network Providers*. يمكنك تبديل **<Translate android="true" id="location_source" />** في: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
 ***iOS***:
 
-- The iOS system uses the *iOS API* to determine location.  
-- All settings for OsmAnd Location can be found in iOS device settings: *Settings → OsmAnd maps → Location*  
-- Privacy of Location services: *Settings → Privacy → Location Services*
+- يستخدم نظام iOS واجهة *iOS API* لتحديد الموقع.  
+- يمكن العثور على جميع إعدادات موقع OsmAnd في إعدادات جهاز iOS: *الإعدادات → خرائط OsmAnd → الموقع*  
+- خصوصية خدمات الموقع: *الإعدادات → الخصوصية → خدمات الموقع*
 
 
-### Auto-Backup {#auto-backup}
+### النسخ الاحتياطي التلقائي {#auto-backup}
 
 <InfoAndroidOnly />
 
-![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![إعدادات عامة الإشعارات أندرويد](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
-- Android or OsmAnd Cloud can save your data and app settings.
+- يمكن لأندرويد أو سحابة OsmAnd حفظ بياناتك وإعدادات التطبيق.
 
-- By default, your *OsmAnd settings* and [*Favorites*](../personal/favorites.md#automatic-favorites-backup) map markers are automatically backed up by the Android system. This allows you to restore them on new devices or after reinstalling the app.
+- افتراضيًا، يتم نسخ *إعدادات OsmAnd* و[*المفضلات*](../personal/favorites.md#automatic-favorites-backup) علامات الخريطة تلقائيًا بواسطة نظام أندرويد. هذا يسمح لك باستعادتهما على أجهزة جديدة أو بعد إعادة تثبيت التطبيق.
 
-- Please note that the backup size is restricted to *25MB*.
+- يرجى ملاحظة أن حجم النسخ الاحتياطي مقيد بـ *25 ميغابايت*.
 
-- To find the backup files, use a third-party file manager app.  
-    *NOTE: You can find the backup files using the Android file manager: Android → data → net.osmand → files → backup, but be aware that in recent versions of Android, access to system directories is limited.*  
+- للعثور على ملفات النسخ الاحتياطي، استخدم تطبيق مدير ملفات خارجي.  
+    *ملاحظة: يمكنك العثور على ملفات النسخ الاحتياطي باستخدام مدير الملفات في أندرويد: أندرويد → data → net.osmand → files → backup، لكن كن على دراية بأن في الإصدارات الحديثة من أندرويد، الوصول إلى المجلدات النظامية محدود.*  
 
-**If you are using [*OsmAnd Cloud*](../personal/osmand-cloud.md), it's recommended to deactivate this default backup option to prevent any confusion during reinstallation.**
-
-
-## Legal {#legal}
-
-OsmAnd can [warn you about speed cameras](../navigation/guidance/navigation-settings.md#screen-alerts), but only if the laws in your country permit it.
+**إذا كنت تستخدم [*سحابة OsmAnd*](../personal/osmand-cloud.md)، فمن الموصى بتعطيل خيار النسخ الاحتياطي الافتراضي هذا لتجنب أي ارتباك أثناء إعادة التثبيت.**
 
 
-### Uninstall Speed Cameras {#uninstall-speed-cameras}
+## قانوني {#legal}
+
+يمكن لـ OsmAnd [تحذيرك من كاميرات السرعة](../navigation/guidance/navigation-settings.md#screen-alerts)، لكن فقط إذا سمحت القوانين في بلدك بذلك.
+
+
+### إلغاء تثبيت كاميرات السرعة {#uninstall-speed-cameras}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
+![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-This setting allows you to activate or deactivate POI with speed cameras, you need to restart the OsmAnd application to make changes.
+يسمح هذا الإعداد بتفعيل أو تعطيل POI مع كاميرات السرعة، وتحتاج إلى إعادة تشغيل تطبيق OsmAnd لتطبيق التغييرات.
   
-In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POI, will be deleted until you completely reinstall OsmAnd.  
+في بعض الدول أو المناطق، استخدام تطبيقات تحذير كاميرات السرعة غير قانوني. يجب عليك اتخاذ خيار بناءً على القوانين في بلدك. حدد **الحفاظ على النشاط**، وستتلقى تنبيهات وإشعارات كاميرات السرعة. حدد **إلغاء التثبيت** وسيتم حذف جميع البيانات المتعلقة بكاميرات السرعة، مثل التحذيرات والإشعارات وPOI، حتى تقوم بإعادة تثبيت OsmAnd بالكامل.  
 
-Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
-
-
-## Related Articles {#related-articles}
-
-- [Profiles (Settings)](./profiles.md)
-- [Import / Export](../personal/import-export.md)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
-
-### Troubleshooting {#troubleshooting}
-
-- **Android 12+ (change storage folder)**. New storage access guidelines have been implemented in Android versions 11-12. These changes particularly affect the storage of maps on SD cards, resulting in significantly slower file access performance and stricter access limitations to SD card folders on Android 11 and 12. For how to solve this problem, see the [**Troubleshooting**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) section.
-
-- **Location source for altitude issues**. Google Play has changed its policy, and to comply, OsmAnd, starting with version 3.9, must use Google Play Services to get location fixes while running in the background. Read more information in [Troubleshooting](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) section.
+اقرأ عن التنبيهات لكاميرات السرعة على مسارك في مقالة أدوات الملاحة في قسم *[أداة التنبيه](../widgets/nav-widgets.md#alert-widget)*.
 
 
+## مقالات ذات صلة {#related-articles}
+
+- [الملفات الشخصية (الإعدادات)](./profiles.md)
+- [الاستيراد / التصدير](../personal/import-export.md)
+- [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
+
+### استكشاف الأخطاء وإصلاحها {#troubleshooting}
+
+- **أندرويد 12+ (تغيير مجلد التخزين)**. تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. تؤثر هذه التغييرات بشكل خاص على تخزين الخرائط على بطاقات SD، مما يؤدي إلى أداء وصول أبطأ بشكل كبير للملفات وقيود أكثر صرامة على الوصول إلى مجلدات بطاقة SD في أندرويد 11 و12. لمعرفة كيفية حل هذه المشكلة، راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+
+- **مصدر الموقع لمشكلات الارتفاع**. غيّر Google Play سياسته، وللامتثال، يجب على OsmAnd، بدءًا من الإصدار 3.9، استخدام خدمات Google Play للحصول على تحديدات الموقع أثناء التشغيل في الخلفية. اقرأ مزيدًا من المعلومات في قسم [استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).

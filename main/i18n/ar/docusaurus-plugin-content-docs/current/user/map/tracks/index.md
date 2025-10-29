@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  المسارات
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,20 +16,19 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## نظرة عامة {#overview}
-يحتوي OsmAnd على العديد من الميزات القوية لعرض مسارات متنوعة على الخريطة. يمكن إنشاء المسارات كجزء من [الملاحة](../../navigation/setup/gpx-navigation.md)، أو إنشاؤها عبر [تخطيط مسار](../../plan-route/index.md)، أو استيرادها كمسارات GPX، أو تسجيلها عبر [إضافة تسجيل الرحلات](../../plugins/trip-recording.md)، أو تصفحها واختيارها من بيانات OpenStreetMap.
+يحتوي OsmAnd على العديد من الميزات القوية لعرض مسارات متنوعة على الخريطة. يمكن إنشاء المسارات كجزء من الملاحة، أو إنشاؤها عبر تخطيط مسار، أو استيرادها كمسارات GPX، أو تسجيلها عبر إضافة تسجيل الرحلات، أو تصفحها واختيارها من بيانات OpenStreetMap.
 
 
 ## أنواع المسارات {#types-of-tracks}
 
-[المسارات (GPX)](#display-tracks-on-the-map) - هي رحلة مسجلة أو مخططة محفوظة [بتنسيق GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). يمكن استيراد هذا النوع من المسارات من مصدر خارجي، أو إنشاؤه في التطبيق، أو تسجيله بواسطتك. يمكن أن يحتوي ملف GPX على واحد من ثلاثة أنواع مختلفة من البيانات، أو جميعها:
+[المسارات (GPX)](#display-tracks-on-the-map) - رحلة مسجلة أو مخططة محفوظة [بتنسيق GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). يمكن استيراد هذا النوع من المسار من مصدر خارجي، أو إنشاؤه في التطبيق، أو تسجيله بواسطتك. يمكن أن يحتوي GPX على واحد من 3 أنواع مختلفة من البيانات، أو جميعها:
 
 - مسار كخط (***هندسي***). يحتوي الملف على مصفوفة نقاط ```<trkpt>```، كل نقطة لها موقع ووقت وسرعة وارتفاع وسمات أخرى اختيارية. تُعرض هذه المسارات على الخريطة كخطوط متصلة.
 - مسار كطريق (***مسار***). يحتوي الملف على مصفوفة نقاط ```<rtept>```، كل نقطة موصوفة كنقطة وسيطة في المسار. يعتمد كيفية توصيل النقاط داخل المسار على ما إذا كان يجب توصيلها كأجزاء صغيرة من المسار أو عبر خط مستقيم. تُعرض هذه المسارات على الخريطة كخطوط متقطعة.
 - نقاط الطريق (***نقاط***). يحتوي الملف على نقاط ```<wpt>``` مع سماتها. تُعرض نقاط الطريق كنقاط دائرية على الخريطة. يمكنك النقر عليها للحصول على معلومات إضافية.
 
-يمكن لـ OsmAnd إنشاء مسارات بواحد إلى ثلاثة من هذه التراكيب. ينشئ [تخطيط مسار](../../plan-route/create-route.md) مسارًا يحتوي على ***هندسي*** و***مسار***، وإذا قمت بحفظه كـ***مسار مبسط***، فسيتم الاحتفاظ بالبيانات ***الهندسية*** فقط. ينشئ [تسجيل المسار](../../plugins/trip-recording.md#new-track-recording) بيانات ***هندسية*** فقط، ولكن يمكنك أيضًا إضافة ***نقاط*** إليه عبر قائمة السياق.
+يمكن لـ OsmAnd إنشاء مسارات بـ1-3 تركيبات. ينشئ [تخطيط مسار](../../plan-route/create-route.md) مسارًا يحتوي على ***هندسي*** و***مسار***، وإذا قمت بحفظه كـ***مسار مبسط***، فسيتم الاحتفاظ بـ***الهندسي*** فقط. ينشئ [تسجيل المسار](../../plugins/trip-recording.md#new-track-recording) ***هندسي*** فقط، ولكن يمكنك أيضًا إضافة ***نقاط*** إليه عبر قائمة السياق.
 
 
 ## عرض المسارات على الخريطة {#display-tracks-on-the-map}
@@ -43,7 +43,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![تخصيص مسارات الخريطة في أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![تخصيص مسارات الخريطة في أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![تخصيص مسارات الخريطة أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![تخصيص مسارات الخريطة أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
 </TabItem>
 
@@ -51,13 +51,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![تخصيص مسارات الخريطة في iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![تخصيص مسارات الخريطة في iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![تخصيص مسارات الخريطة iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![تخصيص مسارات الخريطة iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يمكّنك خيار *تخصيص الخريطة* من إدارة عرض جميع المسارات التي تم عرضها مؤخرًا بسرعة، مما يسمح لك بتبديل الرؤية لمجموعة من المسارات. يتبع فرز المسارات الترتيب الذي تم تكوينه في علامة التبويب *أماكني ← المسارات*. يمكنك الوصول إلى [قائمة المسار](../../personal/tracks/manage-tracks.md#track-menu) عن طريق النقر المطول على عنصر المسار. بالإضافة إلى ذلك، في هذه القائمة، يمكنك تعديل مظهر عدة مسارات محددة في وقت واحد.
+يمكّنك خيار *تخصيص الخريطة* من إدارة عرض جميع المسارات التي تم عرضها مؤخرًا بسرعة، مما يسمح لك بتبديل الرؤية لمجموعة من المسارات. يتبع فرز المسارات الترتيب الذي تم تكوينه في علامة التبويب *أماكني → المسارات*. يمكنك الوصول إلى [قائمة المسار](../../personal/tracks/manage-tracks.md#track-menu) عن طريق النقر المطول على عنصر المسار. بالإضافة إلى ذلك، في هذه القائمة، يمكنك تعديل مظهر عدة مسارات محددة في وقت واحد.
 
 ### أماكني {#my-places}
 
@@ -93,13 +93,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![نظرة عامة على قائمة سياق المسار في أندرويد 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![نظرة عامة على قائمة سياق المسار أندرويد 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![نظرة عامة على قائمة سياق المسار في iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![نظرة عامة على قائمة سياق المسار iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -114,15 +114,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *انقر على المسار ← علامة تبويب المسار ← <Translate android="true" ids="analyze_on_map"/>*  
+اذهب إلى: *انقر على المسار → علامة تبويب المسار → <Translate android="true" ids="analyze_on_map"/>*  
 
-![قائمة المسار تحليل على الخريطة في أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![قائمة المسار تحليل المسافة على الخريطة في أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![قائمة المسار تحليل على الخريطة أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![قائمة المسار تحليل على الخريطة مسافة أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *انقر على المسار ← علامة تبويب المسار ← <Translate ios="true" ids="analyze_on_map"/>*  
+اذهب إلى: *انقر على المسار → علامة تبويب المسار → <Translate ios="true" ids="analyze_on_map"/>*  
 
 ![قائمة المسار تحليل على الخريطة](@site/static/img/personal/tracks/track_analyze_ios.png)  ![قائمة المسار تحليل على الخريطة ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
@@ -135,6 +135,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **بيانات الرسم البياني (المحور الصادي)** تعرض: *الارتفاع*، *الميل*، *السرعة*، [*بيانات المستشعرات الخارجية*](../../plugins/external-sensors.md)، ومجموعات تصل إلى خيارين إذا كانت موجودة في بيانات المسار.
 - **بعد الرسم البياني (المحور السيني)** يمثل: *المسافة*، *الوقت*، و*الوقت من اليوم*.
 - **تفاعل النقر/التمرير**. انقر على الرسم البياني لعرض معلومات حول نقطة معينة على المسار. يؤدي التمرير على الرسم البياني إلى إبراز الموقع المناسب على الخريطة وعرض التفاصيل في شريط المعلومات.
+- **تسمية المسافة**. عند النقر أو التمرير على طول الرسم البياني، يعرض تلميح الأداة أيضًا المسافة الدقيقة على طول المسار. يتبع القيمة إعدادات وحدة الملف الشخصي الحالية (<Translate android="true" ids="km"/> أو <Translate android="true" ids="mile"/>). استخدمها لتقدير سريع لمدى بعيد نقطة عن بداية المسار، أو لحساب المسافة بين موضعين اثنين بمقارنة قيمهما.
 - **التحجيم**. استخدم [إيماءة إصبعين](../../map/interact-with-map.md#gestures) لتكبير الرسم البياني لعرض أكثر تفصيلاً.
 
 
@@ -144,7 +145,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة المسار تحليل على الخريطة 3 في أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![قائمة المسار تحليل على الخريطة 5 في أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![قائمة المسار تحليل على الخريطة 3 أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![قائمة المسار تحليل على الخريطة 5 أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
@@ -158,10 +159,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 انقر على زر [موقعي](../../map/interact-with-map.md#my-location-and-zoom) لمزامنة عرض الخريطة والرسم البياني مع موقعك.
 
-- يظل **مقياس الرسم البياني** كما هو، وتكون **معلومات الشريط** ثابتة عند ربع المسافة إلى اليسار.
+- يظل **مقياس الرسم البياني** كما هو، وتكون **معلومات الشريط** ثابتة عند 1/4 إلى الجانب الأيسر.
 - أثناء تحركك، **سينزلق الرسم البياني** من اليسار إلى اليمين، ويعرض المعلومات أمام مسارك.
 - لا يتم عرض أي أدوات أخرى على هذه الشاشة.
-- هذه الميزة مفيدة للمشي لمسافات طويلة وركوب الدراجات أثناء التنقل على المسار.  
+- هذه الميزة مفيدة للمشي وركوب الدراجات أثناء التنقل على المسار.  
 
 
 ## مقالات ذات صلة {#related-articles}
@@ -169,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [مظهر المسار](./appearance.md)
 - [قائمة سياق المسار](./track-context-menu.md)
 - [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)
-- [مقالة مدونة: المسارات على الخريطة](https://docs.osmand.net/blog/routes)
+- [المسارات على الخريطة](https://docs.osmand.net/blog/routes) مقالة مدونة
 - [تخصيص الخريطة](../../map/configure-map-menu.md)  
 - [مسارات GPX](../../personal/tracks/index.md)  
 - [تخطيط مسار](../../plan-route/index.md)  

@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  المسارات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -111,11 +111,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. [مقياس CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### مسارات التزلج {#ski-routes}
+### مسارات التزلج والمنحدرات {#ski-slopes-and-routes}
 
+- _مسارات التزلج والمنحدرات_ في نمط خريطة _الشتاء والتزلج_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-مسارات التزلج هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية.  
+- _مسارات التزلج والمنحدرات_ في نمط خريطة _OsmAnd الافتراضي_.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+مسارات التزلج والمنحدرات هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية. إذا كان نمط خريطة آخر نشطًا، يتم عرض لافتة تقترح التبديل إلى [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) (*أندرويد فقط*) ويتم عرض المنحدرات فقط. انقر على ***التبديل*** لتغيير نمط الخريطة دون مغادرة الشاشة الحالية، أو ***لاحقًا*** لإخفاء اللافتة.
+
+
+### مسارات الدراجات الثلجية {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+يتم رسم مسارات الدراجات الثلجية في [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) كـ `route=snowmobile`. يتم استخدامها للترفيه الشتوي ولربط المناطق النائية خلال موسم الثلج. في OsmAnd، تكون مسارات الدراجات الثلجية قابلة للنقر، انظر قسم [الإجراءات مع المسارات](#actions-with-routes).
 
 
 ### مسارات الخيل {#horse-routes}
@@ -165,7 +176,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
+- يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
+- يمكن أيضًا تصفية الأنواع الرئيسية للمسارات حسب الفئات والفئات الفرعية، مما يسمح لك بعرض مجموعات محددة فقط داخل كل نوع. على سبيل المثال، يمكنك عرض مسارات المشي لمسافات طويلة حسب **رموز OSMC** كفئات، وحسب *الشبكات الدولية أو الوطنية أو الإقليمية*، أو *الشبكات المحلية* كفئات فرعية.
+- يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
 - يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## تفاصيل منطقة وجرف التسلق {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 عند تحديد [منطقة أو جرف تسلق](../map/routes.md#climbing-routes)، يقدم OsmAnd ملخصًا مفصلاً لموقع التسلق، بما في ذلك: الاسم والموقع، وتصنيف صعوبة التسلق (UIAA، الفرنسية، YDS، إلخ)، ونوع الصخر، والارتفاع وطول المسار، وجودة التسلق وظروف السطح.
-
 
 
 ## الإجراءات مع المسارات {#actions-with-routes}
@@ -205,13 +223,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-على الخريطة، يمكنك تحديد مسارات [للمشي لمسافات طويلة، وركوب الدراجات، والسفر، والمزيد](#type-of-routes)، والتي يتم تمييزها بـ [رموز OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) حيثما ينطبق ذلك.
+على الخريطة، يمكنك تحديد مسارات [للمشي لمسافات طويلة، وركوب الدراجات، والتزلج، وMTB، والدراجات الترابية، والسفر، والمزيد](#type-of-routes). حيثما يتوفر، تعرض مسارات المشي لمسافات طويلة علاماتها باستخدام [رموز OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)؛ تستخدم أنواع المسارات الأخرى علاماتها الخاصة.
 
 عند النقر على **رمز المسار** على الخريطة:
 
@@ -252,7 +270,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [معلومات الارتفاع](../navigation/setup/route-details.md#elevation-info). يعرض معلومات حول بيانات الارتفاع على المسار.
 - [تحليل المسار على الخريطة](../map/tracks/index.md#analyze-track-on-map). يعرض تحليلًا مفصلاً لبيانات المسار باستخدام الرسوم البيانية والخرائط.
 
-لعرض الرسم البياني للارتفاع أو الانحدار أو تفاصيل الارتفاع لمسار محدد، ما عليك سوى النقر على أي من القيم التالية في القائمة السياقية: **المسافة**، **صعود**، **نزول**، أو **الارتفاع**.
+لعرض الرسم البياني للارتفاع أو الانحدار أو تفاصيل الارتفاع لمسار محدد، ما عليك سوى النقر على أي من القيم التالية في القائمة السياقية: **المسافة**، **الصعود**، **النزول**، أو **الارتفاع**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

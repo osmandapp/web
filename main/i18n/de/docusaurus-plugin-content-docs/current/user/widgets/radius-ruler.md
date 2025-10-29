@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Radiuslineal und Maßstab
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,10 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Übersicht {#overview}
 
-Die **Maßstabswerkzeuge** in OsmAnd sind dafür konzipiert, Ihnen zu helfen, Entfernungen zu messen und den [Kartenmaßstab](https://de.wikipedia.org/wiki/Ma%C3%9Fstab_(Karte)) präzise zu verstehen.
+Die **Maßstabswerkzeuge** in OsmAnd sind dafür konzipiert, Ihnen zu helfen, Entfernungen zu messen und den [Kartenmaßstab](https://en.wikipedia.org/wiki/Scale_(map)) präzise zu verstehen.
 
 - Das **Maßstab**-Werkzeug zeigt einen dynamischen Kartenmaßstab in Einheiten wie Metern oder Fuß an und hilft Ihnen, Entfernungen zwischen Objekten auf dem Bildschirm visuell einzuschätzen.
 - Das **Radiuslineal** ermöglicht es Ihnen, einen Radius von einem beliebigen Punkt auf der Karte aus festzulegen und zeigt konzentrische Kreise an, die Entfernungsintervalle darstellen.
@@ -69,14 +69,14 @@ Dieses Werkzeug ist hilfreich, wenn Sie ein schnelles Verständnis für die Grö
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → Widget hinzufügen → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Anzeigeposition Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Anzeigeposition Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → Widget hinzufügen → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Anzeigeposition Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Anzeigeposition Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ Das [Radiuslineal-Widget](../widgets/info-widgets.md#radius-ruler) zeigt die Ent
 - Zeigt konzentrische Kreise an, die auf den ausgewählten Punkt zentriert sind.
 - Der erste Kreis spiegelt den aktuellen [Kartenmaßstab](#ruler) für eine schnelle visuelle Referenz wider.
 - Passt sich beim Zoomen automatisch an, um genaue Radiuswerte beizubehalten.
+- Tippen Sie auf das Widget, um zwischen drei Anzeigemodi zu wechseln: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, und <Translate android="true" ids="dark_theme"/>.
+- Ein langes Antippen öffnet das Kontextmenü des Widgets mit zusätzlichen Optionen.
+- Die Widget-Einstellungen umfassen zwei einstellbare Parameter: *<Translate android="true" ids="shared_string_height"/>* — steuert die visuelle Höhe des Widgets auf dem Bildschirm; *<Translate android="true" ids="shared_string_show_icon"/>* — schaltet die Sichtbarkeit des Widget-Icons ein oder aus.
 
 Verwenden Sie dieses Widget, um die Nähe zu Sehenswürdigkeiten abzuschätzen oder um ein definiertes Gebiet herum zu planen.
 
@@ -131,15 +134,15 @@ Verwenden Sie dieses Widget, um die Nähe zu Sehenswürdigkeiten abzuschätzen o
 
 </Tabs>
 
-Wenn das **Radiuslineal** aktiv ist, zeigt die Karte eine Kompassüberlagerung an, um Ihnen bei der Orientierung im Raum zu helfen. Die Überlagerung zeigt, wie die Karte im Verhältnis zum geografischen Norden ausgerichtet ist, und kann ein blaues Dreieck enthalten, das die aktuelle Richtung des Geräts anzeigt.
+Wenn das **Radiuslineal** aktiv ist, zeigt die Karte eine Kompassüberlagerung an, um Ihnen bei der Orientierung im Raum zu helfen. Die Überlagerung zeigt, wie die Karte im Verhältnis zum wahren Norden ausgerichtet ist, und kann ein blaues Dreieck enthalten, das die aktuelle Richtung des Geräts anzeigt.
 
 - Der Kompassring zeigt die Kartenausrichtung an – ob Norden oben ist oder gedreht wurde.
 - Ein **blaues Dreieck** zeigt die Richtung an, in die Ihr Gerät zeigt.
 - Um diese Funktion zu nutzen, muss das Gerät einen **Kompasssensor** (GPS-Kompass, Magnetometer) unterstützen und aktiviert haben.
 - Das horizontale Halten des Geräts verbessert die Genauigkeit und Visualisierung.
-- Wenn das **blaue Dreieck** und der **rote Pfeil** (Norden) beide nach oben zeigen, ist das Gerät auf den geografischen Norden ausgerichtet.
+- Wenn das **blaue Dreieck** und der **rote Pfeil** (Norden) beide nach oben zeigen, ist das Gerät auf den wahren Norden ausgerichtet.
 
-Diese Überlagerung ist hilfreich für die Outdoor-Navigation und ermöglicht es Ihnen, die [Kartenausrichtung](../map/interact-with-map.md#map-orientation-modes) mit der realen Umgebung abzugleichen.
+Diese Überlagerung ist hilfreich für die Outdoor-Navigation und ermöglicht es Ihnen, die [Kartenausrichtung](../map/interact-with-map.md#map-orientation-modes) mit der realen Umgebung abzugleichen.  
 
 | | |
 |------------|------------|
@@ -170,7 +173,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-Um den sichtbaren Radius um Ihren Standort zu vergrößern, können Sie die Position des Radiuslineals ändern, indem Sie die Option *Mitte* oder *Unten* auswählen.
+Um den sichtbaren Radius um Ihren Standort zu vergrößern, können Sie die Position des Radiuslineals ändern, indem Sie die Option *Mitte* oder *Unten* auswählen.  
 
 Weitere Informationen zur *Position auf dem Bildschirm* finden Sie im Artikel [Bildschirm konfigurieren](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ Die Radiuskreise werden mit Tiefe dargestellt, was besonders nützlich für die 
 
 ## Entfernung durch Antippen {#distance-by-tap}
 
-![Entfernung zwischen zwei beliebigen Punkten auf der Karte](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Entfernung durch Antippen Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Entfernung durch Antippen iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Das Werkzeug **Entfernung durch Antippen** ermöglicht es Ihnen, Entfernungen zwischen Punkten auf der Karte zu messen, ohne das Radiuslineal zu verwenden oder eine Route zu erstellen.
 
@@ -215,11 +232,13 @@ Es gibt zwei Anwendungsfälle:
 - **Entfernung zwischen zwei beliebigen Punkten**  
   Tippen Sie gleichzeitig auf zwei Punkte auf der Karte (Multi-Touch). Eine Linie verbindet die beiden Punkte, und die gemessene Entfernung wird angezeigt.
 
+Sie können auch die Textgröße der Entfernungsbeschriftung anpassen. Wählen Sie zwischen *<Translate android="true" ids="shared_string_normal"/>* (Standard) und *<Translate android="true" ids="shared_string_large"/>* (1,5× größer). Wenn die Große Option ausgewählt ist, wird automatisch zusätzlicher Abstand zwischen der Linie und der Beschriftung hinzugefügt, um die Lesbarkeit zu verbessern. Die Änderungen werden sofort angewendet, ohne dass die App neu gestartet werden muss.
+
 | | |
 |------------|------------|
 | Aktivieren |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Textgröße (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Textgröße | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Einheitenformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
