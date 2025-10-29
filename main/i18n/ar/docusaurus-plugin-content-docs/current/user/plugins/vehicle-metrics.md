@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  مقاييس المركبة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -20,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ملحق مقاييس المركبة هو [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd. تتوفر معلومات سرعة المركبة وسرعة المحرك مجانًا في OsmAnd.
 :::
 
-يمكّن **ملحق مقاييس المركبة** من مراقبة بيانات المركبة في الوقت الفعلي عبر [بروتوكول OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). يمكن للمستخدمين تتبع المقاييس الأساسية مثل أداء المحرك، وكفاءة استهلاك الوقود، والسرعة، مما يسمح بالصيانة الاستباقية للمركبة واستكشاف الأخطاء وإصلاحها.
+يمكّن **ملحق مقاييس المركبة** من مراقبة بيانات المركبة في الوقت الفعلي عبر [بروتوكول OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). يمكن للمستخدمين تتبع المقاييس الأساسية مثل أداء المحرك، وكفاءة استهلاك الوقود، والسرعة، مما يسمح بالصيانة الاستباقية للمركبة واستكشاف الأخطاء وإصلاحها.  
 
 تعتبر [ماسحات OBD-II](https://en.wikipedia.org/wiki/ELM327) جزءًا لا يتجزأ من تشخيصات السيارات الحديثة. مع تدفق البيانات في الوقت الفعلي، يكتسب المستخدمون رؤى فورية حول أنظمة المركبة، مما يسهل الصيانة الوقائية ويقلل من تكاليف الإصلاح. هذه الأدوات حيوية للاستخدام الشخصي والخدمات المهنية للسيارات على حد سواء.
 
@@ -40,11 +41,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
+
 ## معلمات الإعداد المطلوبة {#required-setup-parameters}
 
 لاستخدام البيانات من ماسح OBD-II:
 
-1. [شراء](../purchases/) **اشتراك OsmAnd Pro**. (*سرعة المركبة* و*سرعة المحرك* مجانيتان.)
+1. [شراء](../purchases/) **اشتراك OsmAnd Pro**. (*سرعة المركبة* و*سرعة المحرك* مجانيتان.)  
 2. [تمكين](../plugins/index.md#enable--disable) ملحق مقاييس المركبة في قسم الملحقات من *القائمة الرئيسية*.
 3. **تشغيل** البلوتوث على جهازك.
 4. [توصيل](#pair-odb-ii-scanner) ماسح OBD-II بمنفذ مركبتك.
@@ -52,7 +54,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 6. [إضافة](#widgets) **ودجات مقاييس المركبة** لعرض البيانات على الشاشة (اختياري).
 7. [استخدام](#trip-recording) **ملحق تسجيل الرحلات** لتسجيل بيانات المركبة.
 
+
 ### إقران ماسح ODB-II {#pair-odb-ii-scanner}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -77,9 +81,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 قم بتوصيل الماسح الضوئي بمنفذ مركبتك وإقرانه من خلال التطبيق:
 
 - انتقل إلى *القائمة ← الملحقات ← مقاييس المركبة ← الإعدادات ← اتصال* أو **+**.
-- إذا كانت مقاييس المركبة في *القائمة الرئيسية*: *القائمة ← مقاييس المركبة ← الإعدادات ← اتصال* أو **+**.
+- إذا كانت مقاييس المركبة في *القائمة الرئيسية*:  *القائمة ← مقاييس المركبة ← الإعدادات ← اتصال* أو **+**.
 
 اختر جهاز OBD-II الخاص بك من القائمة وقم بإنشاء الاتصال.
+
 
 ## إعدادات الماسح الضوئي {#scanner-settings}
 
@@ -92,6 +97,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |  |  |
 |--|--|
 |![إعدادات OBD](@site/static/img/plugins/obd/obd_settings.png)|![إعدادات OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
+
 
 </TabItem>
 
@@ -111,6 +117,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **الإعدادات**. يفتح شاشة إعدادات OBD-II، مما يسمح بإدارة الاتصال والوصول إلى معلمات المركبة المتاحة.
 - **إعادة تسمية**. يتيح لك تعيين اسم مخصص للمستشعر لسهولة التعرف عليه.
 - **نسيان**. يزيل مستشعر OBD-II المقترن مسبقًا من القائمة، مما يتطلب إعادة الإقران إذا لزم الأمر لاحقًا.
+
 
 ## قائمة المقاييس {#metrics-list}
 
@@ -138,11 +145,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *أخرى:*
 
 - **مستوى البطارية**. يشير إلى مستوى جهد بطارية المركبة.
+- **جهد المحول**. يعرض الجهد المقدم إلى محول OBD-II (أمر AT RV).
 - **سرعة المركبة**. يعرض بيانات مستشعر سرعة المركبة (VSS).
-- **موضع الخانق**. يحدد كمية الهواء الداخلة للمحرك عبر زاوية لوحة الخانق.
-- **VIN**. يعرض رقم تعريف المركبة المكون من ١٧ حرفًا.
+- **موضع الخانق**. يحدد كمية الهواء الداخلة للمحرك عبر زاوية لوحة الخانق.  
+  **VIN**. يعرض رقم تعريف المركبة المكون من ١٧ حرفًا.
+
 
 ## تسجيل الرحلة {#trip-recording}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -153,6 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | | |
 |--|--|
 |![تسجيل OBD](@site/static/img/plugins/obd/obd_recording.png)| ![تسجيل OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
+
 
 </TabItem>
 
@@ -168,6 +179,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
+
+
 لتضمين بيانات OBD-II في ملف GPX، تحتاج إلى تحديد المعلمات المطلوبة للتسجيل باستخدام [ملحق تسجيل الرحلات](../plugins/trip-recording.md#recording-settings). يتيح لك هذا تحليل مقاييس المركبة إلى جانب بيانات رحلتك.
 
 ### الوسوم {#tags}
@@ -180,6 +193,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تسهل هذه الوسوم تحديد واستخدام بيانات مركبة معينة عند مراجعة ملف GPX المسجل.
 
+
 ## الودجات {#widgets}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -191,6 +205,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | | |
 |--|--|
 |![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget.png)|
+
 
 </TabItem>
 
@@ -206,6 +221,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
+
+
 يتم تضمين [ودجات مقاييس المركبة](../widgets/info-widgets.md#vehicle-metrics-widgets) تلقائيًا عند تمكين الملحق. إذا لم تكن مرئية، يمكنك إضافتها يدويًا عبر قائمة [تكوين الشاشة](../widgets/configure-screen.md).
 
 ### إعدادات الودجت {#widget-settings}
@@ -216,6 +233,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **فوري**. يعرض البيانات في الوقت الفعلي للمقياس المحدد.
 - **المتوسط**. يعرض القيم المتوسطة على فترة زمنية قابلة للتكوين (من ١٥ ثانية إلى ٦٠ دقيقة).
+
 
 ## مقالات ذات صلة {#related-articles}
 

@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  معلمات المركبة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -97,6 +97,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+**٥.** [**حد الحمولة القصوى للمحور**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - قدم الحمولة القصوى للمحور لمركبتك لتجنب الطرق والجسور التي تحتوي على قيود وزن المحور. هذه المعلمة متاحة فقط في أنواع الملاحة مثل [*الشاحنة*](../../navigation/routing/car-based-routing.md).  
+
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/max_axle_load.png)
+
+**٦.** [**الوزن الأقصى عند الحمولة الكاملة**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - قدم الوزن الإجمالي الأقصى لمركبتك عند الحمولة الكاملة لتجنب الطرق والجسور التي تحتوي على قيود وزن إجمالية. هذه المعلمة متاحة فقط في أنواع الملاحة مثل [*الشاحنة*](../../navigation/routing/car-based-routing.md).  
+
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/max_weight_at_full_load.png)
 
 يمكن أن تكون القيود على معلمات المركبة مهمة للملاحة وسلامة الطرق. قد تشمل بعض هذه القيود ما يلي:  
 
@@ -146,7 +154,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

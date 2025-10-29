@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  استيراد / تصدير
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## نظرة عامة {#overview}
 
@@ -58,7 +58,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-يمكن تصدير جميع البيانات التي قمت بتكوينها وإنشائها باستخدام ***قائمة التصدير***. تتكون القائمة من ثلاث مجموعات: **الإعدادات**، و**أماكني**، و**الموارد**، والتي تحتوي على جميع مجلدات الملفات المتاحة. يمكنك تحديد الملفات التي تريد تصديرها في كل مجلد، واحدًا تلو الآخر أو كلها مرة واحدة. **يتم حفظ جميع الملفات المصدرة بتنسيق `.osf`**.  
+يمكن تصدير جميع البيانات التي قمت بتكوينها وإنشائها باستخدام ***قائمة التصدير***. تتكون القائمة من ثلاث مجموعات: **الإعدادات**، و**أماكني**، و**الموارد**، والتي تحتوي على جميع مجلدات الملفات المتاحة. على سبيل المثال، في قسم الموارد، يتم تجميع الخرائط حسب النوع في *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, و *<Translate android="true" ids="topography_maps"/>* لتسهيل التنقل والتصدير الانتقائي. يمكنك تحديد الملفات التي تريد تصديرها في كل مجلد، واحدًا تلو الآخر أو كلها مرة واحدة. **يتم حفظ جميع الملفات المصدرة بتنسيق `.osf`**.  
 
 
 ### استيراد {#import}

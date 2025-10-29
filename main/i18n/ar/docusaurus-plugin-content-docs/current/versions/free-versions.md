@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -22,7 +23,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 تاريخ الإصدار 06/2025:
 
-- تمت إضافة دعم للمشتريات عبر الويب وعبر الأنظمة الأساسية.
+- تمت إضافة دعم للمشتريات عبر الويب ومتعدد المنصات.
 - تم نقل وحدات درجة الحرارة إلى الإعدادات العامة لسهولة الوصول.
 - تمت إضافة مؤشر مستوى البطارية لمستشعرات BLE.
 - واجهة مستخدم جديدة وأكثر سهولة لاختيار النقاط في التنقل.
@@ -30,7 +31,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - تمت إضافة محلل الصعود/النزول.
 - توسيع تكامل ويكيبيديا وويكي فويج لمزيد من نقاط الاهتمام.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### الإصدار 5.0 {#version-50}
 
@@ -48,7 +49,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - أصبحت القمم البارزة قابلة للاكتشاف الآن عبر الخريطة والبحث
 - ارتفاعات قمم الجبال بالقدم
 - تمت إضافة: المنحدرات ومناطق التسلق على الخريطة
-- تم تحسين البحث عن العناوين في الولايات المتحدة الأمريكية
+- تم تحسين البحث عن العناوين في الولايات المتحدة الأمريكية  
 - تمت إضافة تحويل النص إلى كلام باللغة العبرية للتنقل
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -75,6 +76,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - تمت إضافة أيقونة قابلة للنقر لعرض الوصول أو سمات الطريق أو المسار الأخرى.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
+
 
 ### الإصدار 4.8 {#version-48}
 
@@ -116,7 +118,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 - أندرويد أوتو: تمت إضافة وضع ثلاثي الأبعاد وشاشة بحث محسّنة.
 - المسارات: تم تقديم فلاتر ومجلدات ذكية، وتحسين الذاكرة للملفات الأكبر حجمًا.
-- تم تحسين لوحات الأدوات العلوية والسفلية لاستيعاب جميع الأدوات.
+- تم تحسين لوحات الأدوات العلوية والسفلية لاستيعام جميع الأدوات.
 - تحسين إدارة الموارد المحلية.
 - تعيين أزرار قابل للتخصيص لوحدات التحكم الخارجية.
 - أدوات جديدة: "نسبة الانزلاق" و"موضع الشمس".
@@ -175,6 +177,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - تم إصلاح إيماءات الخريطة للإمالة والتكبير والدوران
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
+
 
 ### الإصدار 4.3 {#version-43}
 
@@ -248,6 +251,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
+
 <hr></hr>
 
 ## الإصدار 3 {#version-3}
@@ -263,6 +267,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
+
 ### الإصدار 3.8 {#version-38}
 
 تاريخ الإصدار 09/2020:
@@ -276,6 +281,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - تم إصلاح المشكلات المتعلقة باستيراد/تصدير إعدادات الملف الشخصي
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
+
 
 ### الإصدار 3.7 {#version-37}
 
@@ -292,6 +298,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - إصلاح الأخطاء مع RTL
 
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
+
 
 ### الإصدار 3.6 {#version-36}
 
@@ -312,6 +319,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
+
+
 ### الإصدار 3.5 {#version-35}
 
 تاريخ الإصدار: 11/2019
@@ -326,6 +335,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - إصلاحات الأخطاء
 
 <DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
+
+
 
 ### الإصدار 3.4 {#version-34}
 
@@ -343,6 +354,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
+
+
 ### الإصدار 3.3 {#version-33}
 
 تاريخ الإصدار: 03/2019
@@ -358,6 +371,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-3" release="net.osmand-3.3.8.apk" />
 
+
+
 ### الإصدار 3.2 {#version-32}
 
 تاريخ الإصدار 09/2018:
@@ -367,7 +382,10 @@ import Download from '@site/src/components/buttons/Download.js';
 - دعم تحرير كائنات المضلع (غير المرافق)
 - قياس المسافة: أضف زر القياس إلى الإجراءات في القائمة السياقية
 
+
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
+
+
 
 ### الإصدار 3.1 {#version-31}
 
@@ -382,10 +400,11 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
+
 ### الإصدار 3.0 {#version-30}
 
 تاريخ الإصدار: 05/2018
-
+  
 - قائمة السفر الجديدة: عرض مقالات WikiVoyage دون استخدام الإنترنت
 - ويكيبيديا: مظهر جديد، روابط نشطة، صور
 - واجهة مستخدم المسار المفتوح: عرض مجموعات نقاط الطريق
@@ -394,6 +413,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
 
+
 <hr></hr>
 
 ## الإصدار 2 {#version-2}
@@ -401,7 +421,7 @@ import Download from '@site/src/components/buttons/Download.js';
 ### الإصدار 2.9 {#version-29}
 
 تاريخ الإصدار: 02/2018
-
+  
 - تم تحديث القائمة السياقية: تظهر عند فتح / إغلاق نقطة الاهتمام
 - قائمة النقل: جميع المسارات المتاحة الآن في الأعلى
 - ويكيبيديا: تمت إضافة زر لفتح المقالة الأصلية، تم تحديث مظهر المقالات
@@ -411,6 +431,9 @@ import Download from '@site/src/components/buttons/Download.js';
 - شاشة إدخال إحداثيات سريعة جديدة لإنشاء علامات سريعة
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
+
+
+
 
 ### الإصدار 2.8 {#version-28}
 
@@ -422,15 +445,21 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
 
+  
+
+
 ### الإصدار 2.7 {#version-27}
 
 تاريخ الإصدار 07/2017:
-
+  
 - صور على مستوى الشارع في مكون Mapillary الإضافي
 - أداة مسطرة لقياس المسافات المباشرة على الخريطة
 - فاصل تقسيم GPX يعرض تفاصيل أقسام المسار
 
 <DownloadRelease blog="osmand-2-7" release="net.osmand-2.7.5.apk" />
+
+  
+
 
 ### الإصدار 2.6 {#version-26}
 
@@ -445,10 +474,13 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
+
+
+
 ### الإصدار 2.5 {#version-25}
 
 تاريخ الإصدار: 11/2016
-
+  
 - أيقونات قابلة للنقر على الخريطة. احصل على معلومات بدون طبقة نقاط الاهتمام
 - بحث مفصل للغاية عن نقاط الاهتمام. ابحث عن المواقع حسب ميزات متعددة
 - إخفاء البوصلة. شاهد البوصلة فقط عندما تحتاج إليها
@@ -458,16 +490,19 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
+
 ### الإصدار 2.4 {#version-24}
 
 تاريخ الإصدار: 08/2016
-
+  
 - بحث سريع. جميع أنواع الاستعلامات في حقل بحث واحد
 - تكامل نظام صوت السيارة. استخدم نظام صوت سيارتك للتنقل الصوتي
 - معلومات نقل عام أفضل. عرض مسارات نقل عام كاملة مرتبطة بالمحطات
 - تحسينات أخرى. توجيه صوتي أفضل، مؤشر مسار انعطاف جديد، وإصلاحات تخزين
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
+
+
 
 ### الإصدار 2.3 {#version-23}
 
@@ -482,6 +517,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
 
+
+
 ### الإصدار 2.2 {#version-22}
 
 تاريخ الإصدار: 11/2015
@@ -494,6 +531,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - تم إعادة تصميم بنية وواجهة تنزيل بيانات الخريطة
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
+
+
 
 ### الإصدار 2.1 {#version-21}
 
@@ -508,6 +547,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - نسخة احتياطية إضافية للمفضلة في حالة تلف التطبيق أو مشكلات مختلفة
 
 <DownloadRelease blog="osmand-2-1" release="net.osmand-2.1.0.apk" />
+
+
 
 ### الإصدار 2.0 {#version-20}
 
@@ -566,6 +607,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />
 
+
+
 ### الإصدار 1.8 {#version-18}
 
 تاريخ الإصدار: 07/2014
@@ -595,6 +638,8 @@ GPX (أماكني):
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
+
+
 ### الإصدار 1.7 {#version-17}
 
 تاريخ الإصدار 03/2014:
@@ -607,6 +652,9 @@ GPX (أماكني):
 - إعداد إمكانية الوصول لسرعة الكلام
 
 <DownloadRelease blog="osmand-1-7" release="net.osmand-1.7.5-175.apk" />
+
+
+
 
 ### الإصدار 1.6 {#version-16}
 
@@ -636,9 +684,12 @@ GPX (أماكني):
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
 
+
+
 ### الإصدار 1.4 {#version-14}
 
 تاريخ الإصدار: 05/2013
+
 
 - ترتيب نقاط الطريق بالطريقة المثلى لزيارتها جميعًا (مشكلة البائع المتجول، من الباب إلى الباب)
 - البحث عن الشارع بالاسم (في الحي)
@@ -650,6 +701,8 @@ GPX (أماكني):
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
 
+
+
 ### الإصدار 1.3 {#version-13}
 
 تاريخ الإصدار 03/2013:
@@ -660,6 +713,7 @@ GPX (أماكني):
 - الزر العلوي الأيسر على شاشة الخريطة يحل محل زر القائمة
 
 <Download link="net.osmand-1.3%20beta-137.apk" />
+
 
 ### الإصدار 1.2 {#version-12}
 
@@ -673,6 +727,7 @@ GPX (أماكني):
 - فلتر كالمان للبوصلة
 
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
+
 
 ### الإصدار 1.1 {#version-11}
 
@@ -691,6 +746,8 @@ GPX (أماكني):
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
 
+
+
 ### الإصدار 1.0 {#version-10}
 
 تاريخ الإصدار 09/2012:
@@ -700,6 +757,7 @@ GPX (أماكني):
 - تمكين الحفاظ على خدمة GPS قيد التشغيل أثناء التنقل.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
+
 
 ## الإصدار 0.8 {#version-08}
 
@@ -720,10 +778,11 @@ GPX (أماكني):
 
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
+
 ## الإصدار 0.7 {#version-07}
 
 تاريخ الإصدار 04/2012:
-
+  
 - تحرير نقاط الاهتمام دون اتصال بالإنترنت
 - خيار التتبع عبر الإنترنت - إرسال الإحداثيات إلى خدمة الويب بشكل دوري
 - عرض المسار المسجل حاليًا على الخريطة
@@ -733,11 +792,12 @@ GPX (أماكني):
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
+
 ## الإصدار 0.6 {#version-06}
 
 تاريخ الإصدار 09/2011:
 
-- تنفيذ البحث عن نقاط الاهتمام بالاسم في المناطق الكبيرة (البلدان)
+- تنفيذ البحث عن نقاط الاهتمام بالاسم في المناطق الكبيرة (البلدان)  
 - مدير البيانات غير المتصلة (تنزيل، حذف، تفعيل/إلغاء تفعيل البيانات غير المتصلة مباشرة في OsmAnd)
 - نقاط ومجموعات المفضلة (تصنيف، حذف، إدارة المفضلة)
 - معلومات الارتفاع

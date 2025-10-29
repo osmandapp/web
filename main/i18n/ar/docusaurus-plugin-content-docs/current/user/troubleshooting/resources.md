@@ -1,8 +1,9 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: الموارد والتخصيصات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## استكشف OsmAnd {#explore-osmand}
@@ -27,16 +27,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 | المنصة | اسم المجموعة | الوصف | الرابط |
 | :-- | :-- | :-- | :-- |
-| فيسبوك | مجتمع مستخدمي OsmAnd (*إنجليزية*) | هذه مجموعة حيث يمكن لمستخدمي OsmAnd مساعدة المستخدمين الآخرين. | [فيسبوك](https://www.facebook.com/groups/osmandusers/) |
+| فيسبوك | مجتمع مستخدمي OsmAnd (*إنجليزية*) | This is a group where OsmAnd users can help other users. | [فيسبوك](https://www.facebook.com/groups/osmandusers/) |
 | فيسبوك | Osmand-gebruikers (*هولندية*) | Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom. | [فيسبوك](https://www.facebook.com/groups/1734792863427411) |
 | فيسبوك | OSMAND+ Aide Partage et Astuces (*فرنسية*) | Aide Partage et Astuces | [فيسبوك](https://www.facebook.com/groups/584042065963135) |
-| فيسبوك | مجموعة مستخدمي LC8 Rally OsmAnd (*إنجليزية*) | لتبادل الخبرات في استخدام OsmAnd. | [فيسبوك](https://www.facebook.com/groups/1848734328597008) |
-| فيسبوك | أصدقاء Osmand الإيطاليون (*إيطالية*) | لتبادل الخبرات في استخدام OsmAnd. | [فيسبوك](https://www.facebook.com/groups/231397842534959/) |
-| مجموعات جوجل | Osmand (*إنجليزية*) | مجموعة يشارك فيها المستخدمون النصائح ويجيبون على الأسئلة ويناقشون وظائف OsmAnd. | [مجموعات جوجل](https://groups.google.com/g/osmand) |
-| ريديت | OsmAnd - مناقشة ودعم | مجتمع ريديت لمستخدمي OsmAnd. اطرح الأسئلة، شارك الخبرات، أو استعرض أنماط الخرائط المخصصة لديك. | [ريديت OsmAnd](https://www.reddit.com/r/osmand/) |
-| تيليجرام | قناة أخبار OsmAnd (*إنجليزية*) | مجموعة OsmAnd الرسمية للإعلانات والتحديثات مباشرة من المطورين. | [تيليجرام OsmAnd](https://t.me/OsmAnd_News) |
-| تويتر | قناة أخبار OsmAnd | مجموعة OsmAnd الرسمية للمناقشات المباشرة والإعلانات والتحديثات. | [تويتر OsmAnd](https://x.com/osmandapp/) |
-| انستغرام | قناة أخبار OsmAnd | مجتمع يمكنك من خلاله الدردشة ومشاركة النصائح والحصول على المساعدة بشأن ميزات OsmAnd. | [انستغرام OsmAnd](https://www.instagram.com/osmand.map/) |
+| فيسبوك | مجموعة مستخدمي LC8 Rally OsmAnd (*إنجليزية*) | To exchange experiences with the OsmAnd usage. | [فيسبوك](https://www.facebook.com/groups/1848734328597008) |
+| فيسبوك | أصدقاء Osmand الإيطاليون (*إيطالية*) | To exchange experiences with the OsmAnd usage. | [فيسبوك](https://www.facebook.com/groups/231397842534959/) |
+| مجموعات جوجل | Osmand (*إنجليزية*) | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [مجموعات جوجل](https://groups.google.com/g/osmand) |
+| ريديت | OsmAnd - مناقشة ودعم | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. | [ريديت OsmAnd](https://www.reddit.com/r/osmand/) |
+| تيليجرام | قناة أخبار OsmAnd (*إنجليزية*) | The official OsmAnd group for announcements and updates directly from the developers. | [تيليجرام OsmAnd](https://t.me/OsmAnd_News) |
+| تويتر | قناة أخبار OsmAnd | Official OsmAnd group for live discussions, announcements, and updates. | [تويتر OsmAnd](https://x.com/osmandapp/) |
+| انستغرام | قناة أخبار OsmAnd | A community where you can chat, share tips, and get help with OsmAnd features. | [انستغرام OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## المحولات {#converters}
@@ -51,9 +51,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | GeoPDF/Tiff, ozi إلى OsmAnd | تحويل تنسيقات خرائط geoPDF و geoTiff و ozi إلى OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX إلى KML | أداة لتحويل ملفات *GPX* من OsmAnd إلى تنسيق *KML*، مع الحفاظ على الأيقونات. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX إلى OsmAnd | نص برمجي بايثون لتحويل ملفات *GPX* المصدرة من iOverlander إلى OsmAnd مع الأيقونات. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| خريطة طبوغرافية قابلة للطباعة | هذه [أداة](https://github.com/acui/osmand_topo_map_generator) لإنشاء خريطة طبوغرافية قابلة للطباعة باستخدام لقطات شاشة من OsmAnd (https://osmand.net). تستخدم الخريطة شبكة UTM وتحتوي على معلومات الانحراف. يتم استخدامها مع بوصلة أو جهاز GPS بإحداثيات UTM. | [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| Topo map into printable | هذه [أداة](https://github.com/acui/osmand_topo_map_generator) لإنشاء خريطة طبوغرافية قابلة للطباعة باستخدام لقطات شاشة من OsmAnd (https://osmand.net). تستخدم الخريطة شبكة UTM وتحتوي على معلومات الانحراف. يتم استخدامها مع بوصلة أو جهاز GPS بإحداثيات UTM. | [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
-## موارد مخصصة {#custom-resources}
+## الموارد المخصصة {#custom-resources}
 
 ### الأدلة {#manuals}
 
@@ -87,7 +87,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | نموذج ثلاثي الأبعاد | تضيف هذه الحزمة خيار نموذج ثلاثي الأبعاد للملفات الشخصية. قم بتخصيص المظهر من خلال القائمة: [*قائمة OsmAnd ← الإعدادات ← الملف الشخصي ← مظهر الملف الشخصي ← اختر الأيقونات الرابعة والخامسة من أيقونة الموضع*](../personal/profiles.md#profile-appearance). | [نموذج ثلاثي الأبعاد](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) |
 | مجموعة خرائط AnyGIS عبر الإنترنت | مجموعة من مصادر الخرائط المختلفة عبر الإنترنت بما في ذلك الخرائط الفضائية والسياحية والتاريخية وغيرها. | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) |
 | مفتاح الخريطة | تضيف هذه الحزمة مفتاح خريطة غير متصل بالإنترنت (الإصدار 1.01؛ 03-04-2024)، يمكن الوصول إليه عبر *القائمة ← أماكني ← المفضلة ← مفتاح الخريطة*. مفتاح الخريطة متاح أيضًا في [هذا الموقع](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059) | [مفتاح الخريطة](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) |
-| 🇺🇸 خرائط الولايات المتحدة الأمريكية | مجموعة من خرائط الولايات المتحدة تضم [الأراضي العامة (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview)، و[مسارات وطرق USFS](https://www.fs.usda.gov/visit/maps)، و[مكتب إدارة الأراضي (BLM)](https://www.blm.gov)، و[بيانات الطرود (الأراضي الخاصة)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) لبعض الولايات. تم تصنيف جميع خرائط الأراضي العامة والخاصة حسب الولاية. تم تقسيم بيانات خرائط BLM و USFS إلى *طرق ومسارات* و*نقاط اهتمام* لكامل أراضي الولايات المتحدة. الخرائط بتنسيق OBF لـ OsmAnd. مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [خرائط الولايات المتحدة الأمريكية](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) |
+| 🇺🇸 خرائط الولايات المتحدة | مجموعة من خرائط الولايات المتحدة تضم [الأراضي العامة (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview)، و[مسارات وطرق USFS](https://www.fs.usda.gov/visit/maps)، و[مكتب إدارة الأراضي (BLM)](https://www.blm.gov)، و[بيانات الطرود (الأراضي الخاصة)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) لبعض الولايات. تم تصنيف جميع خرائط الأراضي العامة والخاصة حسب الولاية. تم تقسيم بيانات خرائط BLM و USFS إلى *طرق ومسارات* و*نقاط اهتمام* لكامل أراضي الولايات المتحدة. الخرائط بتنسيق OBF لـ OsmAnd. مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [خرائط الولايات المتحدة](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) |
 | 🇵🇱 خريطة UMP لبولندا | تغطي [UMP](https://ump.waw.pl/) معظم بولندا مع جهد تطوير مستمر. لفترة طويلة، تم استخدام اسم UMP-pcPL (mapą prawie całej Polski). | [خريطة UMP لبولندا](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) |
 | Outdoor Explorer | تتضمن هذه الإضافة نمط خريطة خفيف الوزن يحسن رؤية الطرق غير المعبدة والمسارات في OsmAnd. | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) |
 
@@ -106,6 +106,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Highlighted Admin Boundaries | يعتمد نمط عرض الخريطة على نمط OsmAnd الافتراضي، مع حدود إدارية أكثر بروزًا لتحسين الرؤية. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) هو نمط خريطة يركز على ركوب الدراجات، ويسلط الضوء على ممرات الدراجات (باللون الأحمر)، ومسارات الدراجات (خطوط زرقاء متقطعة)، ومسارات الدراجات (خطوط حمراء متقطعة)، والطرق ذات حركة مرور المركبات المحدودة، مثل شوارع الدراجات (حدود حمراء صلبة). |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) هو نمط خريطة من Holder Tamm يسمح لك باختيار إخفاء كائنات معينة أم لا. |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 
 ### الخرائط غير المتصلة بالإنترنت {#offline-maps}

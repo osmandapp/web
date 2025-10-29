@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  سحابة OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -310,6 +310,8 @@ To use this feature:
 
 يتم تخزين جميع [الخرائط](../start-with/download-maps.md) على الجهاز الذي تم تنزيلها عليه مسبقًا. تخزن سحابة OsmAnd فقط معلومات حول الخرائط التي لديك وتاريخ آخر تعديل لها.
 
+تعطيل النسخ الاحتياطي لنوع بيانات معين يوقف فقط مزامنته مع السحابة. تبقى بياناتك الحالية محفوظة ويمكن نسخها احتياطيًا مرة أخرى لاحقًا إذا لزم الأمر.
+
 
 ### إدارة التخزين {#manage-storage}
 
@@ -333,7 +335,9 @@ To use this feature:
 
 </Tabs>  
 
-يعرض قسم قائمة **<Translate android="true" ids="backup_version_history"/>** (أندرويد) / **<Translate ios="true" ids="manage_storage"/>** (iOS) معلومات حول مقدار الذاكرة المستخدمة من ٣.١٥ جيجابايت في *الإعدادات* و*أماكني* و*الموارد*. يمكنك حذف التغييرات لأنواع بيانات منفصلة من سحابة OsmAnd، ولكن في هذه الحالة، لا يمكن التراجع عن الإجراء.  
+يعرض قسم قائمة **<Translate android="true" ids="backup_version_history"/>** (أندرويد) / **<Translate ios="true" ids="manage_storage"/>** (iOS) معلومات حول مقدار الذاكرة المستخدمة من ٣.١٥ جيجابايت في *الإعدادات* و*أماكني* و*الموارد*. يمكنك عرض حجم التخزين لكل نوع بيانات وحذفها من سحابة OsmAnd إذا لزم الأمر. 
+
+حذف البيانات من السحابة لا يؤثر على حالة النسخ الاحتياطي لها أو النسخ المحلية على جهازك. تبقى جميع العناصر المحذوفة متاحة في سلة المهملات لمدة ٣٠ يومًا ويمكن استعادتها خلال هذه الفترة.
 
 
 ### الحساب {#account}
