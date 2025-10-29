@@ -18,47 +18,6 @@ export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special
 
 export const SEARCH_BRAND = 'brand';
 
-export async function fetchPhotoProperties(photo, signal) {
-    const imageTitle = getPhotoTitle(photo);
-    const lang = i18n.language;
-    try {
-        // Parse image info
-        const parseResponse = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/parse-image-info`, {
-            params: {
-                lang: lang,
-                pageId: photo.properties.mediaId,
-                imageTitle: imageTitle,
-            },
-            apiCache: true,
-            signal,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        const parsedData = parseResponse?.data;
-
-        if (!parsedData) {
-            return photo;
-        }
-
-        return {
-            ...photo,
-            properties: {
-                ...photo.properties,
-                date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
-                author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
-                license: photo.properties.license ?? (parsedData.license !== 'Unknown' ? parsedData.license : null),
-                description:
-                    parsedData.description !== 'Unknown' ? parsedData.description : photo.properties.description,
-            },
-        };
-    } catch (error) {
-        console.error('Failed to fetch photo properties:', error);
-        return photo;
-    }
-}
-
 export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_OBJ;
 }
