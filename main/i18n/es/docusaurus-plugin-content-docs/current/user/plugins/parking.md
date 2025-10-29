@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Posición de estacionamiento
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Resumen {#overview}
@@ -49,12 +49,12 @@ Para utilizar un lugar de estacionamiento en el mapa, debe realizar los siguient
 
 1. Habilite el [complemento Posición de estacionamiento](../plugins/index.md#enable--disable) desde el *Menú principal → Complementos*.  
 2. Establezca un [lugar de estacionamiento](#set-a-spot) en el mapa a través del menú contextual.
-3. (Opcional) Añada el [widget de estacionamiento](#parking-widget) a la pantalla para un acceso más rápido.  
+3. (Opcional) Añada el [Widget de estacionamiento](#parking-widget) a la pantalla para un acceso más rápido.  
 
 
 ## Lugar de estacionamiento en el mapa {#parking-spot-on-the-map}
 
-Cuando marca un lugar de estacionamiento, OsmAnd guarda sus coordenadas geográficas junto con una marca de tiempo. Si es necesario, también se puede añadir un límite de tiempo y un recordatorio en el calendario.
+Cuando marca un lugar de estacionamiento, OsmAnd guarda sus coordenadas geográficas junto con una marca de tiempo. Si es necesario, también se puede añadir un límite de tiempo y un recordatorio en el calendario. Los lugares de estacionamiento se guardan como **Puntos favoritos**. Para asegurarse de que el marcador de estacionamiento sea visible en el mapa, debe habilitar [Favoritos](../personal/favorites.md).
 
 
 ### Establecer un lugar {#set-a-spot}
@@ -116,7 +116,7 @@ La hora de inicio siempre se establece automáticamente. Si necesita cambiar la 
 
 Una vez que se guarda un lugar de estacionamiento, OsmAnd le ayuda a supervisar su ubicación y tiempo a través del menú contextual o del [widget de estacionamiento](#parking-widget) opcional.
 
-Puede ver el marcador de estacionamiento alejando el mapa o pulsando el **widget de estacionamiento**, que centra el mapa en su lugar guardado. El widget también muestra la distancia desde su posición actual (o el centro del mapa) hasta la ubicación del estacionamiento.
+Puede ver el marcador de estacionamiento alejando el mapa o pulsando el **Widget de estacionamiento**, que centra el mapa en su lugar guardado. El widget también muestra la distancia desde su posición actual (o el centro del mapa) hasta la ubicación del estacionamiento.
 
 Se muestran detalles adicionales al pulsar el marcador de estacionamiento:
 
@@ -153,7 +153,7 @@ Puede utilizar el lugar de estacionamiento como destino de navegación para volv
 
 **A través del widget de estacionamiento**:
 
-  1. Pulse el **widget de estacionamiento**.  
+  1. Pulse el **Widget de estacionamiento**.  
   2. Pulse el marcador del lugar de estacionamiento.  
   3. Seleccione **Navegación** y elija el perfil que desea utilizar.
 
@@ -180,7 +180,7 @@ Puede utilizar el lugar de estacionamiento como destino de navegación para volv
 
 Para eliminar un marcador de estacionamiento:
 
-1. Localice el lugar de estacionamiento en el mapa o pulse el **widget de estacionamiento**.
+1. Localice el lugar de estacionamiento en el mapa o pulse el **Widget de estacionamiento**.
 2. Pulse el marcador para abrir el menú contextual.
 3. Seleccione **Eliminar** o **Descartar**.
 
@@ -209,7 +209,7 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> �
 
 </Tabs>
 
-El [widget de estacionamiento](../widgets/info-widgets.md#parking-widget) muestra la distancia desde el centro de la pantalla hasta la ubicación de estacionamiento guardada y le permite centrar rápidamente el mapa en ese lugar.
+El [Widget de estacionamiento](../widgets/info-widgets.md#parking-widget) muestra la distancia desde el centro de la pantalla hasta la ubicación de estacionamiento guardada y le permite centrar rápidamente el mapa en ese lugar.
 
 - El widget solo es visible después de que se haya establecido una posición de estacionamiento.
 - Si aún no está en la pantalla, puede añadirlo a través del menú [Configurar pantalla](../widgets/configure-screen.md).

@@ -1,8 +1,9 @@
 ---
-source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
+source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
 sidebar_position: 1
 title:  Accesibilidad
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 :::caution Nota
 El plugin de Accesibilidad solo está disponible en la **versión para Android** de OsmAnd. La [versión para iOS](#how-to-use-ios) se basa en los ajustes de accesibilidad predeterminados del sistema.
@@ -25,7 +25,7 @@ La accesibilidad mejora la usabilidad para usuarios ciegos y con discapacidad vi
 
 ### Cómo usar (Android) {#how-to-use-android}
 
-![Accesibilidad](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Activar el plugin de Accesibilidad:***  
 
@@ -57,7 +57,7 @@ La accesibilidad mejora la usabilidad para usuarios ciegos y con discapacidad vi
 
 | Gesto | Acción | Equivalente en TalkBack |
 |-----|-----|-----|
-| **Un solo toque** | Gira el mapa hacia el **Norte** | **Doble toque** |
+| **Toque simple** | Gira el mapa hacia el **Norte** | **Doble toque** |
 | **Toque largo** | Abre la lista de [orientaciones del mapa](../map/interact-with-map.md#map-orientation-modes) | **Doble toque y mantener** |
 | **Doble toque** | *No disponible en modo Accesibilidad* | *No soportado* |
 
@@ -93,7 +93,7 @@ Para activar las funciones de accesibilidad del dispositivo en OsmAnd, debe real
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accesibilidad](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
 
 El plugin de Accesibilidad ofrece varios ajustes para personalizar la navegación y la interacción para usuarios con discapacidades. Estos ajustes se aplican por [perfil](../personal/profiles.md) en OsmAnd.
 
@@ -101,9 +101,9 @@ El plugin de Accesibilidad ofrece varios ajustes para personalizar la navegació
 |---------------------------|-------------|  
 | **Modo de accesibilidad**    | Activa las *funciones integradas de OsmAnd* o utiliza los **ajustes del sistema**. |  
 | **Velocidad de la voz**           | Controla la *velocidad del texto a voz*, desde el **50% al 200%**. |  
-| [Anuncio automático inteligente](#smart-autoannounce-and-clockwise-directions)    | Proporciona *guía por voz* al desviarse de la ruta. |  
+| [Anuncio automático inteligente](#smart-autoannounce)    | Proporciona *guía por voz* al desviarse de la ruta. |  
 | **Período de anuncio automático**   | Establece el tiempo mínimo entre anuncios, de **5 segundos a 5 minutos**. |  
-| **Estilo de dirección**       | Elija entre *Lateral (8 direcciones)* o [Sentido horario](#smart-autoannounce-and-clockwise-directions) (12 direcciones)*. |  
+| [Estilo de dirección](#direction-style)       | Elija entre *Lateral (8 direcciones)* o *Sentido horario (12 direcciones)*. |  
 | **Indicaciones de audio**      | Reproduce *guías de audio* que indican la dirección. |  
 | **Indicaciones hápticas**     | Proporciona *retroalimentación por vibración* para giros y desviaciones.|  
 
@@ -132,16 +132,34 @@ El plugin de Accesibilidad ofrece varios ajustes para personalizar la navegació
 - **Retroalimentación háptica** - Ideal para entornos de baja visibilidad o cuando las guías de audio no son prácticas.
 
 
-### Anuncio automático inteligente y direcciones en sentido horario {#smart-autoannounce-and-clockwise-directions}
+### Anuncio automático inteligente {#smart-autoannounce}
 
-La función **Anuncio automático inteligente** proporciona *notificaciones de audio* cuando se desvía de la ruta planificada, mientras que el **Estilo de dirección en sentido horario** ofrece *guías de navegación basadas en la esfera del reloj*. Estas funciones están diseñadas para ayudar a los usuarios con discapacidad visual que dependen de la *guía por voz*.  
+La función **Anuncio automático inteligente** proporciona *notificaciones de audio* cuando se desvía de la ruta planificada. Está diseñada para ayudar a los usuarios con discapacidad visual que dependen de la *guía por voz*.  
 
-- Si **TalkBack no está activado**, tanto el *Anuncio automático inteligente* como las *Direcciones en sentido horario* solo mostrarán *notificaciones de texto* en la pantalla.  
+- Si **TalkBack no está activado**, el *Anuncio automático inteligente* solo mostrará *notificaciones de texto* en la pantalla.  
 
 - Las **notificaciones de voz** se activan solo cuando *TalkBack* está habilitado en los **ajustes del sistema del dispositivo**.  
 
 - Establezca el **Período de anuncio automático** (p. ej., *10 segundos*) para controlar la frecuencia de los anuncios.
 
+- Un toque largo en **Mi ubicación** abre un menú con las opciones ***Mostrar su posición*** y ***Mostrar detalles***. Al seleccionar Mostrar detalles, se muestra información adicional de la ruta y se proporciona el botón ***Iniciar/Detener anuncio automático***.
+
+
+### Estilo de dirección {#direction-style}
+
+El ajuste **Estilo de dirección** define cómo se presentan las instrucciones de navegación:
+
+- Lateral (8 direcciones) – utiliza direcciones clásicas izquierda/derecha o cardinales/intercardinales.
+- Sentido horario (12 direcciones) – utiliza guía basada en la esfera del reloj, como “a las 3 en punto” o “a las 10 en punto”.
+
+Esta función está diseñada para mejorar la conciencia espacial, especialmente para usuarios con discapacidad visual que prefieren la orientación basada en el reloj.
+
+Para activar:
+*Menú* → *Plugins* → *Accesibilidad* → *Ajustes* → *Estilo de dirección* → elija **Lateral** o **Sentido horario**.
+
+:::info note
+El Estilo de dirección es una opción independiente. No está vinculado al Anuncio automático inteligente y funciona independientemente de si el Anuncio automático inteligente está activado.
+:::
 
 ## Artículos relacionados {#related-articles}
 

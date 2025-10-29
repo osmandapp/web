@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  Interactuar con el mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Vista general {#overview}
@@ -26,14 +26,14 @@ Los gestos son esenciales para navegar por el mapa de forma fácil e intuitiva.
 
 | Acción en el mapa | Gesto |
 |:------------|:-------------|
-| **Mover** | Mantenga pulsado el mapa con **un** dedo y arrastre para moverse. |
+| **Mover** | Toque y mantenga pulsado el mapa con **un** dedo, luego arrastre para moverse. |
 | **Deslizar** | Deslice el mapa con **un** dedo. |
 | **Acercar** | Toque dos veces el mapa con **un** dedo. <br/> Toque dos veces con **un** dedo y deslice hacia abajo. <br/> Pellizque con **dos** dedos para acercar. |
-| **Alejar** | Toque dos veces con **dos** dedos. <br/> Toque dos veces con **un** dedo y deslice hacia arriba. <br/> Pellizque con **dos** dedos para alejar. |
-| **Rotar** | Toque el mapa con **dos** dedos y gírelos en un movimiento circular. |
+| **Alejar**| Toque dos veces con **dos** dedos. <br/> Toque dos veces con **un** dedo y deslice hacia arriba. <br/> Pellizque con **dos** dedos para alejar. |
+| **Rotar**  | Toque el mapa con **dos** dedos, luego rote los dedos en un movimiento circular. |
 | **Inclinar (3D)** | Toque con **dos** dedos y muévalos hacia arriba o hacia abajo. <br/> Disponible solo con la versión 2 (OpenGL) del [Motor de renderizado de mapa](../personal/global-settings.md#map-rendering-engine). |
 
-Las animaciones de deslizamiento se pueden desactivar en los ajustes con una [opción especial](#no-animations).
+Las animaciones de deslizamiento se pueden desactivar en los ajustes con una [opción especial](#remove-animations).
 
 
 ## Mi ubicación y Zoom {#my-location-and-zoom}
@@ -47,7 +47,7 @@ El botón *Mi ubicación* es un icono circular que indica si el centro del mapa 
   - *Icono azul completo*. La ubicación se ha encontrado pero no está sincronizada con el mapa.
   - *Icono blanco*. La ubicación se ha encontrado y está sincronizada con el mapa.
   - *Icono gris*. La ubicación aún no se ha encontrado.
-  - *Icono de flecha*. El modo 3D está activado.
+  - *Icono de flecha*.  El modo 3D está activado.
 
 - **Pulsación larga** (*Android*) en el botón *Mi ubicación* abre el [menú contextual del mapa](../map/map-context-menu.md), permitiéndole compartir su ubicación.
 
@@ -198,7 +198,7 @@ Mensajes claros en pantalla le guiarán al bloquear o desbloquear la pantalla.
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Suaviza la rotación del mapa con una animación de rotación más lenta, aunque esto introduce un ligero retraso, no más de 1 segundo.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Sin animaciones {#no-animations}
+### Sin animaciones {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -216,7 +216,7 @@ Crea un efecto de desplazamiento suave del mapa en comparación con el icono *[M
 
 ## Dispositivos de entrada externos {#external-input-devices}
 
-Los botones de dispositivos de entrada externos proporcionan una forma cómoda y eficiente de interactuar con el mapa y la interfaz de la aplicación OsmAnd. Se encuentran en dispositivos externos, como **teclados Bluetooth u otros tipos de teclados**, **botones especializados en dispositivos de navegación de vehículos**, o controladores [WunderLINQ](https://blackboxembedded.com/) y [Parrot](https://www.parrot.com/en).  
+Los botones de dispositivos de entrada externos proporcionan una forma cómoda y eficiente de interactuar con el mapa y la interfaz de la aplicación OsmAnd.  Se encuentran en dispositivos externos, como **teclados Bluetooth u otros tipos de teclados**, **botones especializados en dispositivos de navegación de vehículos**, o controladores [WunderLINQ](https://blackboxembedded.com/) y [Parrot](https://www.parrot.com/en).  
 
 Una de las funciones principales de los botones en los dispositivos de entrada externos es acercar y alejar el mapa. También le permiten navegar por el mapa y cambiar su orientación sin tener que tocar y hacer gestos en la pantalla. Los botones en los dispositivos de entrada externos admiten muchas otras funciones, como abrir el *Menú principal*.
 

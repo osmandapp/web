@@ -1,8 +1,9 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Esquemas de color
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
 :::info Función de pago
@@ -26,7 +26,7 @@ Los esquemas de color se utilizan como parte de las funciones de pago [Maps+](..
 
 Los esquemas de color se utilizan en la [coloración de rutas](#routes), el [terreno del mapa](#terrain) y el [mapa meteorológico](#weather), y se representan como una parte separada de la información que se puede exportar, importar y editar para cambiar el esquema de color del mapa y la visualización de datos.
 
-Los datos de la paleta de colores están disponibles en el menú [*Mapas y recursos*](../personal/maps-resources.md#local).
+Los datos de la paleta de colores están disponibles en el menú [*Mapas y recursos*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,14 +70,14 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 ### Terreno {#terrain}
 
-Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relieve, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
+Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Sombreado, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto.
 
 ### Rutas {#routes}
 
 Las visualizaciones de gradiente de línea utilizan archivos de paleta (`route_<type_name>_<palette_name>.txt`) para colorear las pistas GPX y las Rutas:
 
-- Para [Rutas](../navigation/guidance/map-during-navigation.md#color): *Velocidad, Pendiente* y *Elevación (Altitud)*.
-- Para [Pistas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidad, Pendiente* y *Elevación (Altitud), o información de sensores externos*.
+- Para [Rutas](../navigation/guidance/map-during-navigation.md#color): *Velocidad, Pendiente,* y *Elevación (Altitud)*.
+- Para [Pistas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidad, Pendiente,* y *Elevación (Altitud), o información de sensores externos*.
 
 ### Meteorología {#weather}
 
@@ -117,7 +117,7 @@ Cada línea representa un valor numérico (para la paleta de colores, es un índ
 # Archivo TXT llamado *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 grados RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# amarillo {#yellow-}
+# amarillo  {#yellow-}
 100,255,222,2,227
 # rojo {#red}
 200,255,1,1,255

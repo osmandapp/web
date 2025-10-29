@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Regla de radio y Regla
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,16 +17,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Vista general {#overview}
 
-Las herramientas de **Regla** en OsmAnd están diseñadas para ayudarte a medir distancias y comprender la [escala del mapa](https://en.wikipedia.org/wiki/Scale_(map)) con precisión.
+Las herramientas de **regla** en OsmAnd están diseñadas para ayudarte a medir distancias y comprender la [escala del mapa](https://en.wikipedia.org/wiki/Scale_(map)) con precisión.
 
 - La herramienta **Regla** muestra una escala de mapa dinámica en unidades como metros o pies, ayudándote a evaluar visualmente las distancias entre objetos en la pantalla.
 - La **Regla de radio** te permite establecer un radio desde cualquier punto del mapa, mostrando círculos concéntricos que representan intervalos de distancia.
-- La herramienta **Distancia por toque** te permite medir distancias tocando en el mapa, ya sea desde tu ubicación actual o entre dos ubicaciones cualesquiera.
+- La herramienta **Distancia por toque** te permite medir distancias tocando en el mapa — ya sea desde tu ubicación actual o entre dos ubicaciones cualesquiera.
 
-Estas herramientas son útiles para planificar rutas, estimar la proximidad a puntos de referencia y analizar áreas, ya sea para actividades al aire libre o para una navegación precisa.
+Estas herramientas son útiles para planificar rutas, estimar la proximidad a puntos de referencia y analizar áreas — ya sea para actividades al aire libre o para una navegación precisa.
 
 ![Pantalla de la regla de radio](@site/static/img/widgets/radius_ruler_screen.png)
 
@@ -69,14 +69,14 @@ Esta herramienta es útil cuando se necesita una comprensión rápida del tamañ
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Posición de visualización Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Posición de visualización Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Posición de visualización Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Posición de visualización Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ El [Widget Regla de radio](../widgets/info-widgets.md#radius-ruler) muestra la d
 - Muestra círculos concéntricos centrados en el punto seleccionado.
 - El primer círculo refleja la [escala del mapa](#ruler) actual para una referencia visual rápida.
 - Se ajusta automáticamente al hacer zoom para mantener valores de radio precisos.
+- Toca en el widget para cambiar entre tres modos de visualización: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, y <Translate android="true" ids="dark_theme"/>.
+- Mantén pulsado para abrir el menú contextual del widget con opciones adicionales.
+- Las configuraciones del widget incluyen dos parámetros ajustables: *<Translate android="true" ids="shared_string_height"/>* — controla la altura visual del widget en la pantalla; *<Translate android="true" ids="shared_string_show_icon"/>* — alterna la visibilidad del icono del widget.
 
 Utiliza este widget para estimar la proximidad a puntos de interés o planificar en torno a un área definida.
 
@@ -119,13 +122,13 @@ Utiliza este widget para estimar la proximidad a puntos de interés o planificar
 
 <TabItem value="android" label="Android">
 
-![Regla de brújula](@site/static/img/widgets/compass_ruler_andr.png)
+![Brújula regla](@site/static/img/widgets/compass_ruler_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Regla de brújula](@site/static/img/widgets/compass_ruler_ios.png)
+![Brújula regla](@site/static/img/widgets/compass_ruler_ios.png)
 
 </TabItem>
 
@@ -139,13 +142,13 @@ Cuando la **Regla de radio** está activa, el mapa muestra una superposición de
 - Sostener el dispositivo horizontalmente mejora la precisión y la visualización.
 - Si el **triángulo azul** y la **flecha roja** (Norte) apuntan ambos hacia arriba, el dispositivo está alineado con el Norte verdadero.
 
-Esta superposición es útil para la navegación al aire libre, permitiéndote hacer coincidir la [orientación del mapa](../map/interact-with-map.md#map-orientation-modes) con el entorno real.
+Esta superposición es útil para la navegación al aire libre, permitiéndote hacer coincidir la [orientación del mapa](../map/interact-with-map.md#map-orientation-modes) con el entorno real.  
 
 | | |
 |------------|------------|
 | Activar | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>* |
-| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Posición Central / Inferior {#center--bottom-position}
@@ -170,7 +173,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *�
 
 </Tabs>
 
-Para aumentar el radio visible alrededor de tu ubicación, puedes cambiar la posición de la Regla de radio seleccionando la opción *Centro* o *Inferior*.
+Para aumentar el radio visible alrededor de tu ubicación, puedes cambiar la posición de la Regla de radio seleccionando la opción *Centro* o *Inferior*.  
 
 Para más información sobre *la posición en la pantalla*, consulta el artículo [Configurar pantalla](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ Los círculos de radio aparecerán con profundidad, lo que es particularmente ú
 
 ## Distancia por toque {#distance-by-tap}
 
-![Distancia entre dos puntos aleatorios en el mapa](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distancia por toque Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distancia por toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 La herramienta **Distancia por toque** te permite medir distancias entre puntos del mapa sin utilizar la Regla de radio ni crear una ruta.
 
@@ -215,11 +232,13 @@ Hay dos casos de uso:
 - **Distancia entre dos puntos cualesquiera**  
   Toca dos puntos del mapa simultáneamente (multitáctil). Una línea conecta los dos puntos y se muestra la distancia medida.
 
+También puedes ajustar el tamaño del texto de la etiqueta de distancia. Elige entre *<Translate android="true" ids="shared_string_normal"/>* (predeterminado) y *<Translate android="true" ids="shared_string_large"/>* (1.5× más grande). Cuando se selecciona la opción Grande, se añade automáticamente un espaciado extra entre la línea y la etiqueta para una mejor legibilidad. Los cambios se aplican instantáneamente sin reiniciar la aplicación.
+
 | | |
 |------------|------------|
 | Activar |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Tamaño del texto (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Tamaño del texto | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Formato de unidades | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -231,13 +250,13 @@ Mira estos breves tutoriales para aprender a utilizar la Regla de radio y las he
 
 <TabItem value="android" label="Android">
 
-<iframe  width="900" height="506" src="https://www.youtube.com/embed/MWT20dVtkDc" title="Reproductor de video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  width="900" height="506" src="https://www.youtube.com/embed/MWT20dVtkDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<iframe  width="900" height="506" src="https://www.youtube.com/embed/C9QLQ52ndiA" title="Reproductor de video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  width="900" height="506" src="https://www.youtube.com/embed/C9QLQ52ndiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </TabItem>
 

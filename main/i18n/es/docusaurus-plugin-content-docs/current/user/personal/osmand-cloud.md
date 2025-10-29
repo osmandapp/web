@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -32,7 +32,7 @@ OsmAnd Cloud le permite **almacenar y sincronizar ajustes personales y datos de 
 
 ## Multiplataforma {#cross-platform}
 
-OsmAnd Cloud le permite hacer copias de seguridad, restaurar y sincronizar sus datos entre Android, iOS y la [versión web](../web/index.md). Con las capacidades multiplataforma, puede transferir **ajustes de perfil**, **rutas**, **favoritos**, **ediciones/notas de OSM** y más entre dispositivos. Además, la **versión web** le permite planificar rutas y guardarlas para su uso posterior en dispositivos conectados.  
+OsmAnd Cloud le permite hacer copias de seguridad, restaurar y sincronizar sus datos entre Android, iOS y la [versión web](../web/index.md). Con las capacidades multiplataforma, puede transferir **ajustes de perfil**, **pistas**, **favoritos**, **ediciones/notas de OSM** y más entre dispositivos. Además, la **versión web** le permite planificar rutas y guardarlas para su uso posterior en dispositivos conectados.  
 
 OsmAnd admite el **uso multiplataforma** entre *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* con los siguientes pasos:
 
@@ -305,11 +305,13 @@ En este menú, puede seleccionar qué datos y carpetas subir a la Nube:
 
 1. **Ajustes**. Esta pestaña incluye todos sus ajustes, como preferencias generales, perfiles específicos, acciones rápidas, PDI y ajustes de evitación de carreteras.
 
-2. **Mis Lugares**. Esta pestaña lista los datos del menú [Mis Lugares](../personal/myplaces), incluyendo favoritos, rutas, notas de OSM, marcadores y otros elementos.
+2. **Mis Lugares**. Esta pestaña lista los datos del menú [Mis Lugares](../personal/myplaces), incluyendo favoritos, pistas, notas de OSM, marcadores y otros elementos.
 
 3. **Recursos**. Aquí, puede elegir hacer una copia de seguridad de recursos como favoritos, información de enrutamiento, indicaciones de voz y elementos adicionales.
 
 Todos los [mapas](../start-with/download-maps.md) se almacenan en el dispositivo en el que se descargaron previamente. OsmAnd Cloud solo almacena información sobre qué mapas tiene y la fecha de su última modificación.
+
+Desactivar la copia de seguridad para un tipo de datos específico simplemente detiene su sincronización con la Nube. Sus datos existentes permanecen almacenados y pueden volver a hacer una copia de seguridad más tarde si es necesario.
 
 
 ### Gestionar almacenamiento {#manage-storage}
@@ -334,7 +336,9 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osma
 
 </Tabs>  
 
-La sección del menú **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) muestra información sobre cuánto de los 3.15 gigabytes de memoria en *Ajustes*, *Mis Lugares* y *Recursos* se está utilizando. Puede eliminar cambios de tipos de datos separados de OsmAnd Cloud, pero en este caso, la acción no se puede deshacer.  
+La sección del menú **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) muestra información sobre cuánto de los 3.15 gigabytes de memoria en *Ajustes*, *Mis Lugares* y *Recursos* se está utilizando. Puede ver el tamaño de almacenamiento de cada tipo de datos y eliminarlo de OsmAnd Cloud si es necesario. 
+
+Eliminar datos de la Nube no afecta su estado de copia de seguridad ni las copias locales en su dispositivo. Todos los elementos eliminados permanecen disponibles en la Papelera durante 30 días y pueden restaurarse durante ese período.
 
 
 ### Cuenta {#account}

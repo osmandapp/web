@@ -1,8 +1,9 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
 sidebar_position: 9
 title: Recursos y personalizaciones
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Explora OsmAnd {#explore-osmand}
@@ -106,6 +106,7 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Límites administrativos resaltados | El estilo de renderizado del mapa se basa en el predeterminado de OsmAnd, con límites administrativos más resaltados para una mejor visibilidad. |[Límites administrativos resaltados](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Mapa Open Fiets | [El Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) es un estilo de mapa centrado en el ciclismo, que resalta los carriles bici (en rojo), las rutas ciclistas (azul discontinuo), los caminos para bicicletas (rojo discontinuo) y las carreteras con tráfico de vehículos limitado, como las calles para bicicletas (bordes rojos continuos).  |[Estilo OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Estilo de mapa de selección | El [Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |[Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [El estilo de renderizado ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) se basa principalmente en UniMap y routes.addon.render.xml  |[Estilo de mapa "ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 
 ### Mapas sin conexión {#offline-maps}

@@ -1,8 +1,9 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: 135ec49c254081b73e19f0be40cdfb7296889f8a4d91b09b4c6be58544461e26
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -50,10 +50,10 @@ Inicia sesión con tu número de teléfono registrado en Telegram para habilitar
 
 ## Parámetros de configuración requeridos {#required-setup-parameters}
 
-Instalar el APK de OsmAnd Online GPS Tracker:
+Puedes instalar OsmAnd Online GPS Tracker:
 
-- [Tienda Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [Servidor de OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- desde la [tienda Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- o desde el [servidor de OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (archivo APK)
 
 
 ## Ajustes del complemento {#plugin-settings}
@@ -62,7 +62,7 @@ Hay varias configuraciones para gestionar la frecuencia con la que se comparte l
 
 Para abrir el menú de *Ajustes*:
 
-*Pantalla [Mi ubicación](#my-location-screen) → desplazar pantalla hacia abajo (lista de contactos) → ⋮ → Ajustes*
+*Pantalla [Mi ubicación](#my-location-screen) → deslizar pantalla hacia abajo (lista de contactos) → ⋮ → Ajustes*
 o
 *Pantalla [En vivo ahora](#live-now-screen) → ⋮ → Ajustes*
 
@@ -90,7 +90,7 @@ o
 
 ### Unidades y Formatos {#units--formats}
 
-Permite añadir ajustes para unidades y formatos. Ahora puedes elegir tus valores preferidos para los mensajes de Telegram al compartir datos de ubicación.
+Permite añadir ajustes para unidades y formatos. Ahora puedes elegir tus valores cómodos para los mensajes de Telegram al compartir datos de ubicación.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
@@ -226,4 +226,4 @@ La aplicación OsmAnd tiene su propio bot de Telegram llamado "OsmAnd Assistant"
 
 Por favor, comparte con nosotros lo que piensas sobre esta nueva aplicación en [Twitter](https://twitter.com/osmandapp) y otros canales sociales.
 
-Para ver las posiciones GPS de los contactos en el mapa, necesitas la última versión de [OsmAnd u OsmAnd+](./../purchases/android.md). La versión mínima compatible de OsmAnd u OsmAnd+ es la 3.0.4.
+Para ver las posiciones GPS de los contactos en el mapa, necesitas la última versión de [OsmAnd o OsmAnd+](./../purchases/android.md). La versión mínima compatible de OsmAnd o OsmAnd+ es la 3.0.4.

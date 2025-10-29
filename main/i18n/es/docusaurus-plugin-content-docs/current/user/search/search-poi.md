@@ -1,8 +1,9 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
 title:  Buscar PDI
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ La funcionalidad de [Puntos de Interés (PDI) de OsmAnd](https://wiki.openstreet
 
 La barra de búsqueda le permite introducir palabras clave relacionadas con los lugares que le interesan. La búsqueda de PDI también presenta una cómoda lista ordenada por [categoría](#poi-search-by-categories) para ayudarle a encontrar rápidamente lo que busca, y el [filtro](#save-new-custom-filters) le permite seleccionar características específicas de los PDI para mostrar sólo los resultados relevantes.  
 
-La [Búsqueda personalizada](#custom-poi-search) mejora la funcionalidad de búsqueda al permitir la selección de múltiples categorías y subcategorías. Puede guardar los filtros creados para su uso futuro, lo que facilita la localización rápida de PDI que cumplan criterios o preferencias específicas. Para más detalles, consulte la sección sobre cómo guardar filtros personalizados [aquí](#save-new-custom-filters).  
+[Búsqueda personalizada](#customize-poi-search) mejora la funcionalidad de búsqueda al permitir la selección de múltiples categorías y subcategorías. Puede guardar los filtros creados para su uso futuro, lo que facilita la localización rápida de PDI que cumplan criterios o preferencias específicas. Para más detalles, consulte la sección sobre cómo guardar filtros personalizados [aquí](#save-new-custom-filters).  
 
 OsmAnd proporciona varias formas de acceder a la herramienta de Búsqueda donde se encuentra la sección de **Búsqueda por categorías**.
 
@@ -160,7 +160,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Emergencia](https://wiki.openstreetmap.org/wiki/Key:emergency) incluye instalaciones y lugares asociados a servicios de emergencia como hospitales, comisarías de policía, parques de bomberos y centros médicos de primeros auxilios.  
         No contiene ningún filtro.
 
- 6. **Gasolinera**. Una [gasolinera](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
+ 6. **Gasolinera**. Una [estación de combustible](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio, estación de gasolina y garaje de gasolina. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
         Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valor), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valores), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valores), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valor), **Aspiradora** (tiene *1* valor), **Surtidor automático de combustible** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
 
  7. **Finanzas**. [Finanzas](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) se utiliza para las oficinas de las empresas del sector financiero.  
@@ -181,7 +181,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Incluye los PDI que están cerca de usted.  
         Incluye *216* tipos de filtros.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Aparcamiento](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) incluye instalaciones utilizadas por el público, clientes u otros usuarios autorizados para aparcar vehículos como coches y camiones, comúnmente conocido como aparcamiento.  
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Aparcamiento](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) incluye instalaciones utilizadas por el público, clientes u otros usuarios autorizados para aparcar vehículos como coches y camiones, comúnmente conocido como aparcamiento (inglés británico) o estacionamiento (inglés americano).  
         Incluye *34* tipos de filtros.
 
  14. **Transporte personal**. Todos los [tipos de vehículos](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) pueden estar en su posesión.  
@@ -199,7 +199,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  18. **Rutas**. Incluye [rutas OSM](../map/routes.md) para diversos tipos de actividades.  
         Incluye *14* tipos de filtros: **Punto de control**, **Nodo de red ciclista**, **Nodo de red de senderismo**, **Red de rutas (ciclismo)**, **Red de rutas (senderismo)**, **Categoría de punto de ruta**, **Deportes aéreos**, **Ciclismo**, **Conducción**, **A pie**, **Motociclismo**, **Otras rutas**, **Deportes acuáticos**, **Deportes de invierno**.
 
- 19. **Turismo**. Es una actividad en la que las personas visitan lugares o sitios interesantes para familiarizarse con ellos y disfrutar de su belleza, historia o significado.  
+ 19. **Visitas turísticas**. Es una actividad en la que las personas visitan lugares o sitios interesantes para familiarizarse con ellos y disfrutar de su belleza, historia o significado.  
         Incluye *8* tipos de filtros.
 
  20. **Deporte**. Incluye zonas para actividades deportivas.  
@@ -243,7 +243,7 @@ Descripción y modo de empleo:
 - *Para ocultar* las categorías innecesarias, pulse el icono **menos**.
 - **Disponibles**. Las categorías previamente *Ocultas* pueden devolverse a la lista mostrada pulsando el icono **más**.
 - Utilice el botón **Restablecer** a los valores predeterminados para devolver la lista al estado preestablecido.
-- Las categorías creadas con [Búsqueda personalizada](#custom-poi-search) o [Filtros](#save-new-custom-filters) pueden eliminarse utilizando el icono **Eliminar**.  
+- Las categorías creadas con [Búsqueda personalizada](#customize-poi-search) o [Filtros](#save-new-custom-filters) pueden eliminarse utilizando el icono **Eliminar**.  
 
 ![Buscar PDI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
@@ -325,12 +325,12 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 ### Categorías y sus filtros {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Distrito, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
 2. **Navidad**. Incluye 5 tipos de filtros:  
     *Evento de Navidad, Mercado de Navidad, Pirámide de Navidad, Tienda de Navidad, Árbol de Navidad*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Distrito, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Incluye 14 tipos de filtros.  
 

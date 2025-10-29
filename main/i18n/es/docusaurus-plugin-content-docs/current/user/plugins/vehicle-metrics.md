@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  Métricas del vehículo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,14 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
 :::info Función de pago
 El plugin Métricas del vehículo es una [función de pago](../purchases/index.md) de la aplicación OsmAnd. La información sobre la velocidad del vehículo y la velocidad del motor está disponible de forma gratuita en OsmAnd.
 :::
 
-El **plugin Métricas del vehículo** permite la monitorización de datos del vehículo en tiempo real a través del [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Los usuarios pueden rastrear métricas esenciales como el rendimiento del motor, la eficiencia del combustible y la velocidad, lo que permite un mantenimiento proactivo del vehículo y la resolución de problemas.
+El **plugin Métricas del vehículo** permite la monitorización de datos del vehículo en tiempo real a través del [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Los usuarios pueden rastrear métricas esenciales como el rendimiento del motor, la eficiencia del combustible y la velocidad, lo que permite un mantenimiento proactivo del vehículo y la resolución de problemas.  
 
 Los [escáneres OBD-II](https://en.wikipedia.org/wiki/ELM327) son parte integral del diagnóstico automotriz moderno. Con la transmisión de datos en tiempo real, los usuarios obtienen información instantánea sobre los sistemas del vehículo, lo que facilita el mantenimiento preventivo y reduce los costos de reparación. Estas herramientas son vitales tanto para uso personal como para servicios automotrices profesionales.
 
@@ -47,7 +47,7 @@ Los [escáneres OBD-II](https://en.wikipedia.org/wiki/ELM327) son parte integral
 
 Para usar los datos de un escáner OBD-II:
 
-1. [Compre](../purchases/) una **suscripción a OsmAnd Pro**. (*Velocidad del vehículo* y *Velocidad del motor* son gratuitos.)
+1. [Compre](../purchases/) una **suscripción a OsmAnd Pro**. (*Velocidad del vehículo* y *Velocidad del motor* son gratuitos.)  
 2. [Active](../plugins/index.md#enable--disable) el plugin Métricas del vehículo en la sección Plugins del *Menú principal*.
 3. **Active** el Bluetooth en su dispositivo.
 4. [Conecte](#pair-odb-ii-scanner) el escáner OBD-II al puerto de su vehículo.
@@ -82,7 +82,7 @@ Para usar los datos de un escáner OBD-II:
 Conecte el escáner al puerto de su vehículo y emparéjelo a través de la aplicación:
 
 - Navegue a *Menú → Plugins → Métricas del vehículo → Ajustes → Conectar* o **+**.
-- Si Métricas del vehículo está en el *Menú principal*: *Menú → Métricas del vehículo → Ajustes → Conectar* o **+**.
+- Si Métricas del vehículo está en el *Menú principal*:  *Menú → Métricas del vehículo → Ajustes → Conectar* o **+**.
 
 Elija su dispositivo OBD-II de la lista y establezca la conexión.
 
@@ -146,8 +146,9 @@ Las métricas están categorizadas para mayor claridad. Las herramientas de diag
 *Otros:*
 
 - **Nivel de batería**. Indica el nivel de voltaje de la batería del vehículo.
+- **Voltaje del adaptador**. Muestra el voltaje suministrado al adaptador OBD-II (comando AT RV).
 - **Velocidad del vehículo**. Muestra los datos del Sensor de Velocidad del Vehículo (VSS).
-- **Posición del acelerador**. Determina la entrada de aire del motor a través del ángulo de la placa del acelerador.
+- **Posición del acelerador**. Determina la entrada de aire del motor a través del ángulo de la placa del acelerador.  
   **VIN**. Muestra el número de identificación de 17 caracteres del vehículo.
 
 

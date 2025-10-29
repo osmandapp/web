@@ -1,8 +1,9 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
 En la sección **Mapas y Recursos**, puede gestionar tanto mapas *En línea* como *Sin conexión*, y otros recursos utilizados en OsmAnd. Por ejemplo, puede descargar, eliminar, renombrar, borrar caché, actualizar y comprobar el tamaño, y realizar diferentes acciones.
 
-OsmAnd funciona con dos tipos de mapas: [mapas vectoriales](../map/vector-maps.md) y [mapas rasterizados](../map/raster-maps.md). La pestaña [Local](#local) almacena todos los mapas y recursos. Los tipos de mapa disponibles se pueden descargar desde la pestaña [Descargas](#downloads). En la pestaña [Actualizaciones](#updates), puede descargar los mapas que están disponibles para actualizar y usar las [Actualizaciones en vivo](#live-updates). También puede acceder a la función [Mapa adicional](#extra-maps) para crear sus propios tipos de mapa.
+OsmAnd funciona con dos tipos de mapas: [mapas vectoriales](../map/vector-maps.md) y [mapas rasterizados](../map/raster-maps.md). La pestaña [Local](#local-menu) almacena todos los mapas y recursos. Los tipos de mapa disponibles se pueden descargar desde la pestaña [Descargas](#downloads-menu). En la pestaña [Actualizaciones](#updates-menu), puede descargar los mapas que están disponibles para actualizar y usar las [Actualizaciones en vivo](#live-updates). También puede acceder a la función [Mapa adicional](#extra-maps) para crear sus propios tipos de mapa.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -78,6 +78,7 @@ Tenga en cuenta que las actualizaciones mensuales de mapas se consideran otra de
 - [Curvas de nivel](../plugins/topography.md#contour-lines). Un mapa que contiene líneas de contorno de elevación para visualizar el terreno.
 - [Mapa de terreno (Sombreado y Pendiente)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Los mapas con sombras o pendientes proporcionan información adicional del terreno.
 - [Mapa de terreno (3D)](../plugins/topography.md#3d-relief). Representación tridimensional del terreno para una mejor comprensión de su entorno. El [Motor de renderizado de mapa Versión 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) debe estar habilitado.
+- [Profundidades y contornos náuticos](../plugins/nautical-charts.md). Cartas marinas que muestran líneas costeras, profundidades, ayudas a la navegación, puertos y peligros para una navegación y vela seguras.
 - [Wikipedia](../plugins/wikipedia.md). Mapa vectorial con artículos de [Wikipedia](https://wikipedia.org/) geoposicionados sobre puntos de referencia o información adicional sobre lugares.
 - [Wikivoyage](../plan-route/travel-guides.md). Proporciona mapas vectoriales con guías de viaje virtuales, ofreciendo a los usuarios información valiosa, recomendaciones y consejos.
 - [Pronóstico del tiempo](../plugins/weather.md). Información meteorológica en un mapa para una fácil planificación de rutas.
@@ -153,7 +154,7 @@ Para importar un archivo:
 1. Localice el archivo `.osf` en el almacenamiento de su dispositivo, mensajería o correo electrónico.
 2. Toque para abrirlo con OsmAnd.
 3. El complemento aparecerá en la sección **Lista de complementos**, donde se puede activar.
-4. A continuación, aparecerá una carpeta correspondiente en la sección **Mapas adicionales** de la pestaña [Descargas](#downloads).
+4. A continuación, aparecerá una carpeta correspondiente en la sección **Mapas adicionales** de la pestaña [Descargas](#downloads-menu).
 
 Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
@@ -176,7 +177,7 @@ Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
 </Tabs>
 
-Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo of de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar.
+Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar.
 
 
 ## Menú local {#local-menu}

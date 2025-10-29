@@ -1,8 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  Perfiles (Ajustes)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Resumen {#overview}
 
@@ -142,7 +142,9 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Establece y bloquea la posición de la pantalla en la aplicación OsmAnd. Esta función no es compatible con iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control) (*Solo Android*). Abre el menú de control de pantalla, donde puede seleccionar opciones para la pantalla del dispositivo mientras navega para ahorrar el consumo de batería del dispositivo.  
@@ -154,13 +156,13 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 <TabItem value="android" label="Android">
 
-![Ajustes Generales de Perfiles Unidades y formatos Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Ajustes Generales de Perfiles Unidades y formatos Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes Generales de Perfiles Unidades y formatos iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Ajustes Generales de Perfiles Unidades y formatos iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,6 +217,8 @@ En la sección **Unidades y Formatos**, puede ajustar las unidades de medida y l
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
 |  |  |  |
+| **Unidades de altitud** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Ejemplo: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Ejemplo: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Ejemplo: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -244,7 +248,7 @@ En la sección **Unidades y Formatos**, puede ajustar las unidades de medida y l
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Para mediciones precisas*, elija cómo se muestra la información de distancia en los widgets de navegación, como la distancia a un punto, el próximo giro o un carril específico. |
-|          | <Translate android="true" ids="round_up"/> | *Para una mejor legibilidad*, los números que se muestran en los widgets de navegación (distancia a un punto, próximo giro o carril) se redondearán para tener menos dígitos. <br/> Por ejemplo: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+|          | <Translate android="true" ids="round_up"/> | *Para una mejor legibilidad*, los números que se muestran en los widgets de navegación (distancia a un punto, próximo giro o carril) se redondearán hacia abajo para tener menos dígitos. <br/> Por ejemplo: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Otros {#other}
@@ -255,7 +259,7 @@ En la sección **Unidades y Formatos**, puede ajustar las unidades de medida y l
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Ajustes Generales de Perfiles Otros Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Ajustes Generales de Perfiles Otros Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,11 @@ La sección **Otros** proporciona ajustes de perfil adicionales para personaliza
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Solo Android*) – Suaviza la rotación del mapa con [movimiento gradual](https://en.wikipedia.org/wiki/Kalman_filter), reduciendo los cambios bruscos de posición. Esto introduce un pequeño retraso (*menos de 1 segundo*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Solo Android*) – Utiliza el [sensor magnético](https://en.wikipedia.org/wiki/Kalman_filter) de su dispositivo para estabilizar la rotación del mapa, reduciendo los cambios bruscos. Esto también introduce un ligero retraso.
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Solo Android*) – Toque un espacio vacío en el mapa para ocultar los botones de control y los widgets, maximizando la visibilidad del mapa.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Solo Android*) – Deshabilite las animaciones en el modo de navegación para transiciones de pantalla más rápidas.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Solo Android*) – Deshabilite las animaciones en el modo de navegación para transiciones de pantalla más rápidas.
 
 
 
@@ -325,7 +329,7 @@ Para una descripción detallada de las opciones de navegación, consulte el art�
 
 - [Mapa durante la navegación](../navigation/guidance/navigation-settings.md#map-during-navigation) – Vea el posicionamiento en tiempo real en el mapa, siga el progreso a lo largo de la ruta y mejore la orientación utilizando puntos de referencia.
 
-- [Guía detallada de la ruta](../navigation/guidance/navigation-settings.md) – Mejore la navegación giro a giro alineando su ruta con las carreteras mapeadas. Ajustes disponibles: *Preguntar cada vez* o *Siempre*.
+- [Guía detallada de la pista](../navigation/guidance/navigation-settings.md) – Mejore la navegación giro a giro alineando su ruta con las carreteras mapeadas. Ajustes disponibles: *Preguntar cada vez* o *Siempre*.
 
 :::info
 No hay ajustes de navegación en el perfil *Explorar mapa*.  
@@ -474,7 +478,7 @@ Para una experiencia más personalizada, puede crear y añadir **iconos 3D perso
 
 Puede controlar cómo se comporta el icono de **Mi Ubicación** utilizando diferentes [modos de orientación del mapa](../widgets/map-buttons.md#compass).  
 
-- Si el icono de ubicación **se mueve o rota** mientras está parado, cambie del **Modo de Dirección de Movimiento** ([Rotar Mapa por Rumbo](../map/interact-with-map.md#rotate-map-by-bearing)) a otro modo.  
+- Si el icono de ubicación **tiembla o rota** mientras está parado, cambie del **Modo de Dirección de Movimiento** ([Rotar Mapa por Rumbo](../map/interact-with-map.md#rotate-map-by-bearing)) a otro modo.  
 - Ajuste configuraciones adicionales en *Menú → Ajustes → Perfiles de la aplicación → Apariencia del perfil → Opciones*.
 - Aprenda más sobre el seguimiento de rumbo y dirección en la sección del [Widget de Rumbo](../widgets/nav-widgets#bearing-widget).  
 
@@ -613,6 +617,6 @@ Acciones con el perfil seleccionado:
 
 ## Artículos Relacionados {#related-articles}
 
-- [Gestionar Rutas](../personal/tracks/manage-tracks.md#import--export-track)
+- [Gestionar Pistas](../personal/tracks/manage-tracks.md#import--export-track)
 - [Historial de Búsqueda](../search/search-history.md#export-and-share)
 - [Esquemas de Paleta de Colores](../personal/color-palette-schemes.md)

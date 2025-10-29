@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  Rutas
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Vista general {#overview}
@@ -98,7 +98,7 @@ OsmAnd admite *zonas de escalada* (`climbing=area`) y *peñascos de escalada* (`
     - *Calidad de la escalada* (sólida, suelta, mixta).
     - *Disponibilidad de libro de cumbre*.
 
-Para habilitar los lugares de escalada en el mapa, vaya a: *Menú → Configurar mapa → Rutas → Vías de escalada*.
+Para habilitar los lugares de escalada en el mapa, vaya a: *Menú → Configurar Mapa → Rutas → Vías de escalada*.
 
 
 ### Grado de dificultad de las rutas de senderismo {#hiking-trails-difficulty-grade}
@@ -111,11 +111,22 @@ Algunos segmentos de camino pueden formar parte de muchas rutas, pero pueden col
 2. [Escala CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Rutas de esquí {#ski-routes}
+### Pistas y rutas de esquí {#ski-slopes-and-routes}
 
+- _Pistas y rutas de esquí_ en el estilo de mapa _Invierno y Esquí_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Las rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles.  
+- _Pistas y rutas de esquí_ en el estilo de mapa _OsmAnd predeterminado_.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Las pistas y rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si está activo otro estilo de mapa, se muestra un banner que sugiere cambiar a [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) (*solo Android*) y solo se muestran las Pistas. Toque ***Cambiar*** para cambiar el estilo de mapa sin salir de la pantalla actual, o ***Más tarde*** para ocultar el banner.
+
+
+### Senderos para motos de nieve {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+Los senderos para motos de nieve están mapeados en [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) como `route=snowmobile`. Se utilizan para la recreación invernal y para conectar áreas remotas durante la temporada de nieve. En OsmAnd, los senderos para motos de nieve son clicables, consulte la sección [Acciones con Rutas](#actions-with-routes).
 
 
 ### Rutas ecuestres {#horse-routes}
@@ -165,7 +176,14 @@ Puede personalizar la visualización de ciertas ***Guías de viaje*** y tipos de
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- Para mostrar las rutas deseadas en el mapa, actívelas en la *Lista de rutas* del menú [Configurar mapa](../map/configure-map-menu.md).
+- OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo en la ruta](#save-as-a-track), y si el conjunto visible de rutas está configurado correctamente, puede seguir el color y los iconos.
+- Los tipos de ruta principales también se pueden filtrar por clases y subclases, lo que le permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases, y por *redes internacionales, nacionales, regionales* o *locales* como subclases.
+- Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md).  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_c
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - Para mostrar las rutas deseadas en el mapa, actívelas en la *Lista de rutas* del menú [Configurar mapa](../map/configure-map-menu.md).
 - OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo en la ruta](#save-as-a-track), y si el conjunto visible de rutas está configurado correctamente, puede seguir el color y los iconos.
 - Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md).  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## Detalles de Zonas y Peñascos de Escalada {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 Al seleccionar una [zona o peñasco de escalada](../map/routes.md#climbing-routes), OsmAnd proporciona un resumen detallado del lugar de escalada, que incluye: nombre y ubicación, clasificación de dificultad de escalada (UIAA, Francés, YDS, etc.), tipo de roca, altura y longitud de la vía, calidad de la escalada y condiciones de la superficie.
-
 
 
 ## Acciones con Rutas {#actions-with-routes}
@@ -205,13 +223,13 @@ Al seleccionar una [zona o peñasco de escalada](../map/routes.md#climbing-route
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-En el mapa, puede seleccionar rutas para [senderismo, ciclismo, viajes y más](#type-of-routes), que están marcadas con [símbolos OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) cuando corresponda.
+En el mapa, puede seleccionar rutas para [senderismo, ciclismo, esquí, BTT, motocross, viajes y más](#type-of-routes). Donde esté disponible, las rutas de senderismo muestran sus marcas utilizando [símbolos OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); otros tipos de ruta utilizan sus propias marcas.
 
 Cuando toca un **símbolo de ruta** en el mapa:
 
@@ -245,14 +263,14 @@ En el **menú contextual**, puede:
 
 La siguiente información será visible en el menú contextual:
 
-- **Información de la ruta**: Nombre de la ruta, enlace OSM (se requiere el plugin de Edición OSM), Tipo, Descripción, Distancia, Dirección, Ascenso/Descenso, Rango de altitud, Red, Operador, Estado, Color, Ida y vuelta, Puntos de inicio/fin, y más.
+- **Información de la ruta**: Nombre de la ruta, enlace OSM (se requiere el plugin de Edición OSM), Tipo, Descripción, Distancia, Dirección, Subida/Bajada, Rango de altitud, Red, Operador, Estado, Color, Ida y vuelta, Puntos de inicio/fin, y más.
 - **General**: Tamaño, Ubicación, Creado el.
 - **Información adicional**. Muestra el tipo de actividad.
 - botones de acción: [Guardar como](#save-as-a-track) e [Iniciar navegación](#start-navigation).
 - [Información de elevación](../navigation/setup/route-details.md#elevation-info). Muestra información sobre los datos de elevación en la ruta.
 - [Analizar pista en el mapa](../map/tracks/index.md#analyze-track-on-map). Muestra un análisis detallado de los datos de la pista utilizando gráficos y mapas.
 
-Para ver el gráfico de los detalles de elevación, pendiente o altitud de una ruta seleccionada, simplemente toque cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Ascenso**, **Descenso** o **Altitud**.
+Para ver el gráfico de los detalles de elevación, pendiente o altitud de una ruta seleccionada, simplemente toque cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Subida**, **Bajada** o **Altitud**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

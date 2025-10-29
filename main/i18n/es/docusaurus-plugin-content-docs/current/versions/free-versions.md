@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -31,7 +32,7 @@ Fecha de lanzamiento 06/2025:
 - Añadido analizador de subidas/bajadas.
 - Integración ampliada de Wikipedia y Wikivoyage para más PDI.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Versión 5.0 {#version-50}
 
@@ -48,8 +49,8 @@ Fecha de lanzamiento 04/2025:
 - Android Auto: ver ETA y distancia al siguiente punto de paso; los nombres de las ciudades ahora aparecen en los resultados de búsqueda
 - Los picos prominentes ahora se pueden descubrir a través del mapa y la búsqueda
 - Alturas de los picos de las montañas en pies
-- Añadido: Zonas de escalada y peñascos en el mapa
-- La búsqueda de direcciones en EE. UU. ha sido mejorada
+- Añadido: Peñascos y zonas de escalada en el mapa
+- La búsqueda de direcciones en EE. UU. ha sido mejorada  
 - Añadido TTS hebreo para la navegación
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -60,20 +61,20 @@ Fecha de lanzamiento 04/2025:
 
 Fecha de lanzamiento 11/2024:
 
-- Se añadió un visor de galería a pantalla completa para imágenes de Wikimedia.
-- Se introdujo un nuevo plugin "Métricas del vehículo" para monitorizar el rendimiento del vehículo utilizando el protocolo OBD-II.
-- Se añadió la capacidad de asignar actividades a las pistas y filtrarlas en consecuencia.
-- Se implementaron nuevas acciones rápidas para la grabación de viajes y el bloqueo de la pantalla táctil.
-- Se introdujo una apariencia de botón de mapa personalizable y una cuadrícula precisa.
-- Se añadió un menú contextual y una acción "Restablecer velocidad media" a los widgets.
-- Se añadió una nueva capa de ruta "Senderos para motos de cross".
-- Se corrigió "Grabar pista automáticamente durante la navegación".
-- Se corrigió un problema con las coordenadas invertidas en RTL.
-- Se corrigieron los datos del sensor perdidos para la pista que se está grabando actualmente.
-- Se añadió información sobre las áreas circundantes para el punto seleccionado.
-- Se añadió una acción rápida para controlar la visibilidad de las ediciones de OSM.
-- Se separaron los parámetros de visibilidad para las opciones de coloración del terreno.
-- Se añadió un icono pulsable para mostrar el acceso u otros atributos de la carretera o el camino.
+- Añadido un visor de galería a pantalla completa para imágenes de Wikimedia.
+- Introducido un nuevo plugin "Métricas del vehículo" para monitorizar el rendimiento del vehículo utilizando el protocolo OBD-II.
+- Añadida la capacidad de asignar actividades a las pistas y filtrarlas en consecuencia.
+- Implementadas nuevas acciones rápidas para la grabación de viajes y el bloqueo de la pantalla táctil.
+- Introducida una apariencia de botón de mapa personalizable y una cuadrícula precisa.
+- Añadido un menú contextual y una acción "Restablecer velocidad media" a los widgets.
+- Añadida nueva capa de ruta "Senderos para motos de cross".
+- Corregido "Grabar pista automáticamente durante la navegación".
+- Corregido el problema con las coordenadas invertidas en RTL.
+- Corregidos los datos del sensor perdidos para la pista que se está grabando actualmente.
+- Añadida información sobre las áreas circundantes para el punto seleccionado.
+- Añadida acción rápida para controlar la visibilidad de las ediciones de OSM.
+- Separados los parámetros de visibilidad para las opciones de coloración del terreno.
+- Añadido un icono pulsable para mostrar el acceso u otros atributos de la carretera o el camino.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
 
@@ -149,7 +150,7 @@ Fecha de lanzamiento 08/2023:
 - Añadidas clases de "Materiales peligrosos" para la navegación de camiones en América del Norte.
 - Añadido soporte de "Vía ferrata" para el enrutamiento peatonal.
 - Añadida escala "CAI" para la clasificación de dificultad de las rutas.
-- Se corrigió la selección de idioma por aplicación.
+- Corregida la selección de idioma por aplicación.
 - Añadido soporte para iconos temáticos.
 - OsmAnd Cloud: añadida opción para eliminar la cuenta.
 - Accesibilidad: el tamaño del objetivo táctil para los botones cambió a 48 dp; se corrigió el problema con la interfaz de usuario del mapa visible para los lectores de pantalla.
@@ -188,7 +189,7 @@ Fecha de lanzamiento 12/2022:
 - Nuevos widgets para las coordenadas del centro del mapa y la elevación de las geolocalizaciones
 - "Distancia al toque": opciones de tamaño de texto añadidas
 - Widget "Marcador de mapa": opción añadida para cambiar el comportamiento del clic
-- Se corrigió la opción "Mostrar posición"
+- Corregida la opción "Mostrar posición"
 - GPX: se añadió soporte para las etiquetas "link", "cmt", "desc" y para cualquier extensión personalizada
 - Se reorganizó la lista de "Mapas náuticos"
 - Se añadió soporte para sensores ANT+
@@ -200,7 +201,7 @@ Fecha de lanzamiento 12/2022:
 
 Fecha de lanzamiento: 06/2022
 
-- Rediseño de widgets: nueva apariencia, agrupación por páginas, cambio de orden y combinación a tu gusto.
+- Rediseño de widgets: nueva apariencia y sensación, agrupación por páginas, cambio de orden y combinación a tu gusto.
 - Rutas de senderismo/ciclismo/viaje: toca el símbolo de la ruta y obtén información completa sobre la ruta.
 - Grupos favoritos: establece la apariencia predeterminada para los nuevos puntos del grupo
 - Correcciones: actualización automática de mapas de mosaico en línea
@@ -217,11 +218,11 @@ Fecha de lanzamiento: 12/2021
 - Widget de elevación (Pro)
 - Favoritos: añadida la capacidad de ver iconos usados recientemente
 - Planificación de rutas: utilizará el perfil seleccionado después del lanzamiento
-- Se corrigió la capa de Mapillary, el plugin ahora está deshabilitado por defecto
+- Corregida la capa de Mapillary, el plugin ahora está deshabilitado por defecto
 - Añadida pantalla para gestionar todo el historial en la aplicación
 - La orientación del mapa no se restablece después de reiniciar la aplicación
 - Renderizado mejorado del marcador de altura SRTM
-- Se corrigieron los subtítulos del mapa en árabe
+- Corregidos los subtítulos del mapa en árabe
 
 <DownloadRelease blog="osmand-android-4-1" release="net.osmand-4.1.11.apk" />
 
@@ -404,7 +405,7 @@ Fecha de lanzamiento 08/2018:
 ### Versión 3.0 {#version-30}
 
 Fecha de lanzamiento: 05/2018
-
+  
 - Nuevo menú de Viajes: ver artículos de WikiVoyage sin usar internet
 - Wikipedia: nueva apariencia, enlaces activos, imágenes
 - Interfaz de usuario de pista abierta: muestra grupos de puntos de paso
@@ -421,7 +422,7 @@ Fecha de lanzamiento: 05/2018
 ### Versión 2.9 {#version-29}
 
 Fecha de lanzamiento: 02/2018
-
+  
 - Menú contextual actualizado: muestra cuándo se abre/cierra el PDI
 - Menú de transporte: todas las rutas disponibles ahora están en la parte superior
 - Wikipedia: se añadió el botón para abrir el artículo original, se actualizó la apariencia de los artículos
@@ -451,7 +452,7 @@ Fecha de lanzamiento 10/2017:
 ### Versión 2.7 {#version-27}
 
 Fecha de lanzamiento 07/2017:
-
+  
 - Imágenes a nivel de calle en el plugin Mapillary
 - Herramienta de regla para medir distancias directas en el mapa
 - Intervalo de división GPX que muestra detalles de las secciones de la pista
@@ -480,7 +481,7 @@ Fecha de lanzamiento: 04/2017
 ### Versión 2.5 {#version-25}
 
 Fecha de lanzamiento: 11/2016
-
+  
 - Iconos clicables en el mapa. Obtén información sin la capa de PDI
 - Búsqueda de PDI muy detallada. Encuentra ubicaciones por múltiples características
 - Ocultar brújula. Ver brújula solo cuando la necesites
@@ -494,7 +495,7 @@ Fecha de lanzamiento: 11/2016
 ### Versión 2.4 {#version-24}
 
 Fecha de lanzamiento: 08/2016
-
+  
 - Búsqueda rápida. Todo tipo de consultas en un solo campo de búsqueda
 - Integración con el sistema de audio del coche. Usa el sistema de audio de tu coche para la navegación por voz
 - Mejor información de transporte público. Visualiza rutas completas de transporte público vinculadas a paradas
@@ -600,7 +601,7 @@ Simplificación de la grabación de viajes en segundo plano y la navegación en 
 
 - OsmAnd ahora habilita automáticamente el servicio de modo de suspensión GPS si la navegación o la grabación de viajes se han activado, para que esto siga funcionando mientras la pantalla del dispositivo está apagada. Solo si se desea, el servicio de modo de suspensión GPS aún se puede interrumpir o configurar manualmente tocando el widget "Estado del GPS".
 
-- Plugin OsMo
+- Plugin OsMo  
 - Funcionalidad de inicio/cierre de sesión
 - Descarga automática de grupos y dispositivos para usuarios registrados
 - Mejor manejo de errores
@@ -665,7 +666,7 @@ Fecha de lanzamiento 10/2013:
 - Mostrar mapas descargados y facilitar la descarga de mapas faltantes directamente desde la vista del mapa
 - Archivos de mapa de líneas de contorno ahora agrupados por países/regiones
 - Nuevo mapa base mundial con carreteras principales, ferrocarriles y características aéreas importantes como bosques.
-- Función de lupa de mapa (clic largo en el botón de zoom): útil tanto para mapas de mosaico como vectoriales
+- Función de lupa de mapa (clic largo en el botón de zoom): útil tanto para mapas de mosaico como vectoriales  
 - Definir/editar fuentes de mosaico en línea personalizadas (y especificar tiempo de caducidad)
 - Soporte de límites de velocidad condicionales por tiempo (Países Bajos)
 - Entrada de dirección de búsqueda más rápida
@@ -782,7 +783,7 @@ Fecha de lanzamiento: 07/2012
 ## Versión 0.7 {#version-07}
 
 Fecha de lanzamiento 04/2012:
-
+  
 - Edición de PDI sin conexión
 - Opción de seguimiento en línea: envía coordenadas al servicio web periódicamente
 - Mostrar la pista grabada actualmente en el mapa
@@ -797,7 +798,7 @@ Fecha de lanzamiento 04/2012:
 
 Fecha de lanzamiento 09/2011:
 
-- Implementar búsqueda de PDI por nombre en grandes áreas (países)
+- Implementar búsqueda de PDI por nombre en grandes áreas (países)  
 - Gestor de datos sin conexión (descargar, eliminar, activar/desactivar datos sin conexión directamente en OsmAnd)
 - Puntos y grupos favoritos (categorizar, eliminar, gestionar favoritos)
 - Información de altitud
