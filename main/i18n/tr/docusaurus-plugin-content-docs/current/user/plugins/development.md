@@ -1,8 +1,9 @@
 ---
-source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 sidebar_position: 10
 title:  OsmAnd Geliştirme
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -62,10 +62,10 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 ### Arazi {#terrain}
 
-- **Gölgelendirme ve eğim için raster [SQLIte formatını](../../technical/osmand-file-formats/osmand-sqlite) kullan** (*Android*). Eski format raster haritaları yükleyin.
+- **Gölgelendirme ve eğim için raster [SQLIte formatını](../../technical/osmand-file-formats/osmand-sqlite) kullan** (*Android*). V2 oluşturma motoru kullanıldığında, gölgelendirme veya eğimleri 3B Arazi haritasından hesaplamak yerine bu amaçla eski format raster haritalarını kullanın. Oluşturmayı önemli ölçüde hızlandırabilir.
 
 
-### Sorun Giderme {#troubleshotting}
+### Sorun Giderme {#troubleshooting}
 
 - **Konumunuzu simüle edin** (*Android* / *iOS*). Bir GPX parkuru kullanarak konumu ve hareketi [simüle edin](#gpx-track-simulation).
 - **Pil tasarrufu modu** (*Android* / *iOS*). Bu ayar, uygulamaları kullanırken pil gücünden tasarruf etmeye yardımcı olmak için [ekran yenileme hızını](#map-rendering-fps-widget) saniyede 20 kare azaltır.

@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -29,9 +30,9 @@ Yayın tarihi 06/2025:
 - Navigasyonda nokta seçimi için yeni, daha sezgisel kullanıcı arayüzü.
 - Yeni bir ana hat ile widget görünürlüğü iyileştirildi.
 - Yokuş Yukarı/Yokuş Aşağı analizörü eklendi.
-- Daha fazla POI için Wikipedia ve Wikivoyage entegrasyonu genişletildi.
+- Daha fazla POI için Wikipedia & Wikivoyage entegrasyonu genişletildi.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Sürüm 5.0 {#version-50}
 
@@ -41,15 +42,15 @@ Yayın tarihi 04/2025:
 - Tüm OSM rotaları, artık aranabilir! Yürüyüş, bisiklet, MTB ve daha fazlası
 - Yeni navigasyon widget'ı dönüş okunu ve navigasyon talimatlarını birleştirir
 - Mevcut rota bilgi widget'ı: tahmini varış süresi, varış zamanı ve mesafeyi gösterir
-- Ayrıntılı bilgi için haritada kayak pistlerini ve MTB parkurlarını seçin
+- Haritada kayak pistlerini ve MTB parkurlarını seçin ayrıntılı bilgi için
 - Sol ve sağ paneller için widget boyutunu seçme yeteneği
 - Coğrafi koordinatlarla "Koordinat ızgarası" eklendi
 - Favori grupların varsayılan görünümünü özelleştirme yeteneği eklendi
 - Android Auto: tahmini varış süresi ve bir sonraki ara noktaya mesafeyi görüntüleyin; şehir adları artık arama sonuçlarında görünür
 - Önemli zirveler artık harita ve arama yoluyla keşfedilebilir
-- Fit cinsinden dağ zirve yükseklikleri
+- Dağ zirve yükseklikleri fit cinsinden
 - Eklendi: Haritada kayalıklar ve tırmanma alanları
-- ABD'deki adres araması iyileştirildi
+- ABD'deki adres araması iyileştirildi  
 - Navigasyon için İbranice TTS eklendi
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -797,7 +798,7 @@ Yayın tarihi 04/2012:
 
 Yayın tarihi 09/2011:
 
-- Büyük alanlarda (ülkeler) ada göre POI aramasını uygula
+- Büyük alanlarda (ülkeler) ada göre POI aramasını uygula  
 - Çevrimdışı veri yöneticisi (OsmAnd'da doğrudan çevrimdışı verileri indir, sil, etkinleştir / devre dışı bırak)
 - Favori noktalar ve gruplar (favorileri kategorize et, sil, yönet)
 - Yükseklik bilgisi
@@ -805,7 +806,7 @@ Yayın tarihi 09/2011:
 - GPX navigasyonu (daha fazla seçenek, çökmeden sonra navigasyona devam et, döner kavşakları destekle)
 - Çevrimdışı kullanım için rotayı GPX parkuru olarak kaydetme işlevi
 - GPX izlemeyi iyileştir (bazı yanlış konumları filtrele ve doğruluk/yükseklik/hızı kaydet)
-- GPX'i [OSM topluluğuna](https://download.osmand.net/gpx/) yükle
+- [Upload GPX](https://download.osmand.net/gpx/) to OSM community
 - Sesli navigasyon için Metin Okuma motoru
 - Tüm dünya için temel harita uygulamayla paketlenmiş
 - Çevrimdışı navigasyonu ayarla (hala deneysel)

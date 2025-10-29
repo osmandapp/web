@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -41,10 +41,10 @@ OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iO
     1.1 **Tam Cloud erişimi için OsmAnd Pro'ya abone olun.**  
    [Android](../purchases/android.md#how-to-buy) veya [iOS](../purchases/ios.md#how-to-buy) için satın alma hakkında daha fazla bilgi edinin.
 
-    2.1 Favoriler, ayarlar ve OSM düzenlemeleri/notları için bulut yedeklemeleri için **ücretsiz OsmAnd Başlangıç planını kullanın**.  
+    2.1 Favoriler, ayarlar ve OSM düzenlemeleri/notları için bulut yedeklemeleri için **ücretsiz OsmAnd Start planını kullanın**.  
    Ücretsiz depolama sınırı **5 MB**'tır.
 
-2. Diğer platformlarda [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) veya OsmAnd Başlangıç'ı etkinleştirmek için **kayıtlı e-postayı** giriş olarak kullanın.
+2. Diğer platformlarda [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) veya OsmAnd Start'ı etkinleştirmek için **kayıtlı e-postayı** giriş olarak kullanın.
 
 :::note  
 **OsmAnd Pro**, tüm OsmAnd özelliklerini içeren çapraz platform bir aboneliktir. Tek bir mağazadan (örneğin Google Play, Huawei AppGallery) satın alabilir ve **iOS**'ta da kullanabilirsiniz. **[Kayıtlı e-postanız](#login)**, OsmAnd Pro'yu [platformlar arası](../purchases/cross.md) etkinleştirmek için girişinizdir. 
@@ -75,7 +75,7 @@ OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iO
 
 Verileri yedeklemek ve geri yüklemek için OsmAnd Cloud hesabınıza giriş yapmanız gerekir.  
 
-- Kaydolmak veya giriş yapmak için aktif bir [OsmAnd Pro](#cross-platform) veya [OsmAnd Başlangıç](#osmand-start) aboneliğine ihtiyacınız vardır. Abonelik durumunuzu OsmAnd uygulamasında kontrol edebilirsiniz:  
+- Kaydolmak veya giriş yapmak için aktif bir [OsmAnd Pro](#cross-platform) veya [OsmAnd Start](#osmand-start) aboneliğine ihtiyacınız vardır. Abonelik durumunuzu OsmAnd uygulamasında kontrol edebilirsiniz:  
   *Menü → Ayarlar → Satın Almalar*.
 
 - Cloud hesabınız **satın alma işleminin orijinal olarak yapıldığı cihazda kayıtlı olmalıdır**.
@@ -97,7 +97,7 @@ Kayıt sırasında sorun yaşıyorsanız:
 :::
 
 
-## OsmAnd Başlangıç {#osmand-start}
+## OsmAnd Start {#osmand-start}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -119,15 +119,15 @@ Kayıt sırasında sorun yaşıyorsanız:
 
 </Tabs>  
 
-**OsmAnd Başlangıç** planı, **OsmAnd Cloud**'a sınırlı temel özelliklerle ve **Favorilerinizi, Ayarlarınızı ve OpenStreetMap (OSM) düzenlemelerinizi ve notlarınızı** depolamak ve senkronize etmek için 5MB depolama alanıyla ücretsiz erişim sağlar. Bu plan, [OsmAnd Ücretsiz veya Maps+](../purchases/index.md) kullanıcıları için mevcuttur.  
+**OsmAnd Start** planı, **OsmAnd Cloud**'a sınırlı temel özelliklerle ve **Favorilerinizi, Ayarlarınızı ve OpenStreetMap (OSM) düzenlemelerinizi ve notlarınızı** depolamak ve senkronize etmek için 5MB depolama alanıyla ücretsiz erişim sağlar. Bu plan, [OsmAnd Ücretsiz veya Maps+](../purchases/index.md) kullanıcıları için mevcuttur.  
 
-OsmAnd Başlangıç'a dahil olan özellikler:
+OsmAnd Start'a dahil olan özellikler:
 
 - [Ücretsiz Favoriler Yedeklemesi](../personal/favorites.md#free-cloud-backup) – Önemli konumları ve rotaları Favorilerinize kaydedin ve OsmAnd Cloud'a bağlı herhangi bir cihazdan erişin.  
 - [Ücretsiz Ayarlar Yedeklemesi](../personal/profiles.md#free-cloud-backup) – OsmAnd uygulama ayarlarınızı OsmAnd Cloud'a kaydedin ve sorunsuz bir deneyim için diğer cihazlarda geri yükleyin.  
 - [OSM Düzenlemeleri/Notları](../plugins/osm-editing.md) – Harita verilerini oluşturarak ve düzenleyerek, notlar ekleyerek ve değişiklikleri doğrudan OsmAnd Cloud'a kaydederek OpenStreetMap'e katkıda bulunun.
 
-### OsmAnd Başlangıç Nasıl Etkinleştirilir {#how-to-activate-osmand-start}
+### OsmAnd Start Nasıl Etkinleştirilir {#how-to-activate-osmand-start}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -149,17 +149,17 @@ OsmAnd Başlangıç'a dahil olan özellikler:
 
 </Tabs>
 
-**OsmAnd Başlangıç'ı kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız vardır**.
+**OsmAnd Start'ı kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız vardır**.
 
-OsmAnd Başlangıç'ı kullanmak için şu adımları izleyin:
+OsmAnd Start'ı kullanmak için şu adımları izleyin:
 
 - **Bir OsmAnd Cloud hesabı için kaydolun** - Talimatlar için [Giriş](#login) bölümüne bakın.
 - *Menü → Ayarlar → Satın Almalar*'ı açın.
-- Mevcut seçeneklerden **OsmAnd Başlangıç**'ı seçin.
+- Mevcut seçeneklerden **OsmAnd Start**'ı seçin.
 - Verilerinizi OsmAnd Cloud'da depolamaya başlamak için **bir yedekleme oluşturun**.
 
 :::note Abonelik kısıtlamaları
-Zaten bir **OsmAnd Pro** aboneliğiniz veya **aktif bir OsmAnd Cloud hesabınız** varsa, **OsmAnd Başlangıç** planı kullanılamaz.
+Zaten bir **OsmAnd Pro** aboneliğiniz veya **aktif bir OsmAnd Cloud hesabınız** varsa, **OsmAnd Start** planı kullanılamaz.
 :::
 
 
@@ -311,6 +311,8 @@ Bu menüde, Cloud'a yüklenecek verileri ve klasörleri seçebilirsiniz:
 
 Tüm [haritalar](../start-with/download-maps.md) daha önce indirildikleri cihazda depolanır. OsmAnd Cloud yalnızca hangi haritalara sahip olduğunuz ve en son ne zaman değiştirildikleri hakkında bilgi depolar.
 
+Belirli bir veri türü için yedeklemeyi devre dışı bırakmak, yalnızca senkronizasyonunu Cloud ile durdurur. Mevcut verileriniz depolanmış kalır ve gerekirse daha sonra tekrar yedeklenebilir.
+
 
 ### Depolamayı Yönet {#manage-storage}
 
@@ -334,7 +336,9 @@ Tüm [haritalar](../start-with/download-maps.md) daha önce indirildikleri cihaz
 
 </Tabs>  
 
-**<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menü bölümü, *Ayarlar*, *Yerlerim* ve *Kaynaklar*'daki 3.15 gigabayt belleğin ne kadarının kullanıldığını gösterir. OsmAnd Cloud'dan ayrı veri türlerinin değişikliklerini silebilirsiniz, ancak bu durumda işlem geri alınamaz.  
+**<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menü bölümü, *Ayarlar*, *Yerlerim* ve *Kaynaklar*'daki 3.15 gigabayt belleğin ne kadarının kullanıldığını gösterir. Her veri türünün depolama boyutunu görüntüleyebilir ve gerekirse OsmAnd Cloud'dan silebilirsiniz. 
+
+Cloud'dan veri silmek, yedekleme durumunu veya cihazınızdaki yerel kopyaları etkilemez. Tüm kaldırılan öğeler 30 gün boyunca Çöp Kutusu'nda mevcut kalır ve bu süre içinde geri yüklenebilir.
 
 
 ### Hesap {#account}

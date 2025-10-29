@@ -1,8 +1,9 @@
 ---
-source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
+source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Nasıl Satın Alınır {#how-to-buy}
@@ -29,7 +29,7 @@ Bu platformlardan yapılan tüm satın almalar [**çapraz platform erişimini**]
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Ücretsiz OsmAnd uygulaması için gelişmiş özellikleri açan bir **uygulama içi satın alma** veya **abonelik**. | **Çapraz platform** erişimini destekler |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | CarPlay ve 3D Rölyef dahil tüm [pro özelliklerini](#free-and-paid-features) açan bir **abonelik planı**. | **Çapraz platform** erişimini destekler |
 
-:::note
+:::note  
 **Çapraz platform erişimi**, OsmAnd'ı web sitemizden veya bir mağazadan (örneğin, *App Store, Google Play veya osmand.net*) satın alabileceğiniz ve satın alma işleminizi bir [OsmAnd Cloud hesabına bağlayarak](../personal/osmand-cloud.md#cross-platform) başka bir platformda kullanabileceğiniz anlamına gelir.
 :::
 
@@ -40,9 +40,9 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
@@ -55,21 +55,21 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
 
-:::note
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,
-you receive a 2-year discounted plan.
+:::note 
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
 Starting from the third year, the full price will apply.
 :::
 
 -->
 
 
-| | OsmAnd Ücretsiz | **Maps+** Tek Seferlik | **Maps+** Abonelik | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Ücretsiz   | **Maps+** Tek Seferlik | **Maps+** Abonelik | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-| | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |**Tek Seferlik Satın Alma** (15 Yıl Pro / Maps+ Ömür Boyu) |
-| **Fiyat (EUR)** | €0 | €39.99 | €9.99 | €2.99 / €29.99 |<s>€450</s> €299.00 |
-| **Fiyat (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |<s>$450</s> $299.00 |
+| **Fiyat (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Fiyat (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
 
 
@@ -86,11 +86,11 @@ Satın almalarınız [OsmAnd Cloud hesabınıza](../personal/osmand-cloud.md#log
 
 1. OsmAnd uygulamasını yükleyin (Android veya iOS).
 2. Uygulamayı aktif bir internet bağlantısıyla açın.
-3. Şuraya gidin:
-   **Menü → Ayarlar → OsmAnd Cloud → Zaten bir hesabım var**
+3. Şuraya gidin:  
+   **Menü → Ayarlar → OsmAnd Cloud → Zaten bir hesabım var**  
    [Daha fazla bilgi burada](../personal/osmand-cloud.md#login)
-4. Satın almaları geri yüklemek için:
-   **Menü → Ayarlar → Satın Almalar → Satın almaları geri yükle**'ye gidin.
+4. Satın almaları geri yüklemek için:  
+   **Menü → Ayarlar → Satın Almalar → Satın almaları geri yükle**'ye gidin  
    Ekran, **Maps+**, **Pro** veya **Live**'ın etkinleştirildiğini onaylayacaktır.
 
 **Geri yükleme çalışmazsa:**

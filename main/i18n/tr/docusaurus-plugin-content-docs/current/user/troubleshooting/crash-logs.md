@@ -1,8 +1,9 @@
 ---
-source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
+source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
 sidebar_position: 5
 title:  Kilitlenme Günlükleri
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -49,13 +49,13 @@ Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verile
         - Ardından, e-posta uygulamanızı kullanarak günlükleri `crash@osmand.net` adresine göndermenizi öneririz.
 
     - Manuel olarak.
-        - iOS sistem uygulaması *Dosyalar → iPhone'umda (veya iPad'imde) → OsmAnd Haritalar → Günlükler* bölümüne gidin.
+        - iOS sistem uygulaması *Dosyalar → iPhone'umda (veya iPad'imde) → OsmAnd Maps → Logs* bölümüne gidin.
 
     ![iOS kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![iOS kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. IPS formatında günlükleri ve yetkilendirme verilerini gönderin:
-    - iOS *Ayarlar → Analiz → Analiz Verileri → OsmAnd Haritalar ips-format dosyası* bölümüne gidin (iOS 17'ye kadar).
-    - iOS *Ayarlar → Gizlilik ve Güvenlik → Analiz ve İyileştirmeler → Analiz Verileri → OsmAnd Haritalar ips-format dosyası* bölümüne gidin (iOS 18'den itibaren).
+2. Günlüklerin ve yetkilendirme verilerinin [IPS formatını](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) gönderin:
+    - iOS 15 veya daha eski sürümlerde: *Ayarlar → Analiz → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
+    - iOS 16 veya daha yeni sürümlerde:  *Ayarlar → Gizlilik ve Güvenlik → Analiz ve İyileştirmeler → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
     - Ardından, e-posta uygulamanızı kullanarak günlükleri `crash@osmand.net` adresine göndermenizi öneririz.
 
     ![iOS kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_log_ios.png)  ![iOS kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/log_1_ios.png)
@@ -63,7 +63,7 @@ Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verile
 
 ## Tombstone Dosyaları Gönderme (Android) {#send-tombstone-files-android}
 
-:::caution Çok Önemli
+:::caution Kritik
 Yalnızca ileri düzey kullanıcılar için!
 :::
 
@@ -100,7 +100,7 @@ Android Hata Ayıklama Köprüsü (ADB), geliştiricilerin uygulamalarını hata
 
 - *Ayarlar → Telefon hakkında → Yazılım bilgileri* bölümüne gidin.
 - Geliştirici modunun etkin olduğunu onaylayan bir açılır pencere gelene kadar *Yapı numarasına* yedi kez dokunun.
-- *Geliştirici seçeneklerinde*, *USB hata ayıklamasını* etkinleştirin.
+- *Geliştirici seçeneklerinde*,enable  *USB hata ayıklamasını* etkinleştirin.
 
 Ardından, cihazınızı USB aracılığıyla iş istasyonunuza bağlayın. İlk kez bağlanıyorsanız, hata ayıklamaya izin vermek için bir açılır pencere görünecektir.
 
@@ -117,16 +117,16 @@ Ardından, cihazınızı USB aracılığıyla iş istasyonunuza bağlayın. İlk
 7. Tombstone dosyalarını `crash@osmand.net` adresine gönderin.
 
 <!--
-* Terminali açın ve komutu çağırın:  
+* Open the terminal and call the command:  
 ```adb bugreport ./output.zip```  
-burada output.zip, sonuç dosyasının adıdır  
+where output.zip is the name of the result file  
 
-* Sonuç dosyasını açın:  
+* Unzip the result file:  
 ```unzip file.zip -d destination_folder```  
 
-* Tombstones klasörünü bulun:  
+* Find tombstones folder:  
 ```cd FS/data/tombstones```
-Burada şuna benzer dosyalar bulursunuz:  -->
+Where you find files like  -->
 
 ### Rootlu Cihazları veya Android Studio Emülatörünü Kullanma {#using-rooted-devices-or-android-studio-emulator}
 

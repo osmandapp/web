@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -95,7 +95,7 @@ Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgil
 
 ### Rotalar, Kayak Pistleri ve Patikalar {#routes-and-trails}
 
-![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb.png) ![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb_2.png)
+![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb.png)  ![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb_2.png)
 
 **Kayak pistleri**, **dağ bisikleti (MTB) rotaları** ve **kir bisikleti patikaları** gibi harita öğelerine dokunarak ayrıntılı bilgi içeren bağlam menülerini açabilirsiniz. Daha fazla bilgi için [Rotalar makalesine](../map/routes.md#actions-with-routes) bakın.
 
@@ -115,13 +115,13 @@ Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgil
 
 <TabItem value="android" label="Android">  
 
-![Bağlam menüsü Android](@site/static/img/map/context_menu_android.png)
+![Bağlam menüsü Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Bağlam menüsü iOS](@site/static/img/map/context_menu_ios.png)
+![Bağlam menüsü iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Mevcut ayrıntılar şunları içerir:
 - [Alternatif adlar](#alternative-names)
 - [Koordinatlar](#coordinates)
 - [Alanlar içinde](#polygon-information)
-- [Yakındaki İÇN'ler / Wikipedia](#nearby-pois--wikipedia)
+- [Yakındaki İÇN'ler](#nearby-pois)
+- [Yakındaki Popüler Yerler](#nearby-popular-places)
 - [Duraklar için Toplu Taşıma rotaları](#public-transport-routes)
 - [Aynı gruptan Favoriler / İz Noktaları](#favorites--track-points-from-the-group)
 - [OpenStreetMap bağlantısı](#openstreetmap-link)
@@ -167,13 +168,13 @@ Ek olarak, panel [OpenStreetMap Detaylarını](https://wiki.openstreetmap.org/wi
 
 <TabItem value="ios" label="iOS">
 
-![Alternatif adlar Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatif adlar Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatif adlar iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatif adlar iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd, *harita bağlam menüsünde* **ek İÇN adlarını** görüntüler ve *görüntüleme dilindeki* veya sistemin tercih edilen dil listesindeki adı önceliklendirir. Birden fazla çeviri mevcutsa, bunlar *ad, marka, operatör* veya *yakındaki İÇN'ler* gibi kategorize edilmiş etiketler halinde gruplandırılır.
+OsmAnd, *harita bağlam menüsünde* **ek İÇN adlarını** görüntüler ve *görüntüleme dilindeki* veya sistemin tercih edilen dil listesindeki adı önceliklendirir. Birden fazla çeviri mevcutsa, bunlar *ad, marka, operatör,* veya *yakındaki İÇN'ler* gibi kategorize edilmiş etiketler halinde gruplandırılır.
 
 Alternatif adların görüntülenme özellikleri:
 
@@ -181,7 +182,7 @@ Alternatif adların görüntülenme özellikleri:
 
 - Adlar, *diğer dillerdeki adların listesi*, *Bölgesel*, *Yerel*, *Ulusal*, *Uluslararası*, *Kısa*, *Eski*, *Resmi* ve *Alternatif* adlar gibi farklı gruplara ayrılır.
 
-- Diğer kategoriler arasında *bölgeye özgü çeviri* veya *varsayılan ayarlar* bulunur.
+- Diğer kategoriler arasında *bölgeye özgü çeviri*, veya *varsayılan ayarlar* bulunur.
 
 - Belirli bir çeviri *mevcut değilse*, OsmAnd, çok dilli bölgelerde doğruluk ve tutarlılık sağlamak için varsayılan olarak **yerel** adı kullanır.
 
@@ -198,7 +199,7 @@ Alternatif adların görüntülenme özellikleri:
 
 <TabItem value="ios" label="iOS">
 
-![Çokgen Bilgisi Android](@site/static/img/map/polygon_information_ios.png)
+![Çokgen Bilgisi iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -210,22 +211,63 @@ Alternatif adların görüntülenme özellikleri:
 
 |Koordinat formatı| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Düz Ondalık Dereceler)</li><li>DDD.DDDDD (K/G, D/B virgül)</li><li>DDD DD.DDD</li><li> DDD DD SS.S</li><li>[UTM Standardı](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Açık Konum Kodu](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[İsviçre Izgarası CH1903 ve CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web Bağlantısı](https://osmand.net/map)</li><li>[OpenStreetMap Web Bağlantısı](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinatlar](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Düz Ondalık Dereceler)</li><li>DDD.DDDDD (K/G, D/B virgül)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standardı](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Açık Konum Kodu](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[İsviçre Izgarası CH1903 ve CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web Bağlantısı](https://osmand.net/map)</li><li>[OpenStreetMap Web Bağlantısı](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinatlar](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 Bağlam menüsünde, bir noktanın çeşitli formatlardaki [coğrafi koordinatlarını](../search/search-coordinates.md#coordinate-format) ve ayrıca paylaşılabilir OsmAnd ve [OpenStreetMap Bağlantılarını](../map/map-context-menu.md#openstreetmap-link) bulabilirsiniz (son seçenek yalnızca [OpenStreetMap düzenleme eklentisi](../plugins/osm-editing.md) etkinleştirildiğinde kullanılabilir). Koordinatlar bölümünü genişletir ve listeden herhangi bir satıra uzun dokunursanız, değerleri otomatik olarak panoya kopyalanır (**Android**) veya açılır mesajda *Kopyala* seçeneği kullanılabilir hale gelir (**iOS**).
 
 OsmAnd Web Bağlantısı OsmAnd tarafından otomatik olarak tanınabilir (örnek: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Hem OsmAnd hem de [OpenStreetMap bağlantıları](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) ilgili sitelerde ilgi çekici yere bir işaretleyici ile açılır.
 
 
-### Yakındaki İÇN'ler / Wikipedia {#nearby-pois--wikipedia}
+### Yakındaki İÇN'ler {#nearby-pois}
 
-![Yakındaki Wikipedia makaleleri](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Yakındaki Wikipedia makaleleri](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Bu bölümler, yakındaki [Wikipedia makalelerini](../plugins/wikipedia.md) veya [İlgi Çekici Noktaları](../map/point-layers-on-map.md#points-of-interest-pois) *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* ile görüntülemek ve diğer tüm İÇN'leri ve Wikipedia makalelerini [aramak](../search/search-poi.md) için gösterir.
+<TabItem value="android" label="Android">  
 
-*Yakındaki İÇN'ler / Wikipedia makaleleri*'ne dokunmak bir noktalar listesi (İÇN'ler veya Wikipedia) açar. Bu noktalar listesinden birine dokunmak, haritayı bu noktaya (İÇN'ler veya Wikipedia) taşır ve nokta harita bağlam menüsünü açar.
+![Yakındaki İÇN Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Yakındaki İÇN iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Bu bölüm, yakındaki [İlgi Çekici Noktaları](../map/point-layers-on-map.md#points-of-interest-pois) *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* ile görüntülemek ve aynı kategorideki diğer tüm İÇN'leri [aramak](../search/search-poi.md) için gösterir.
+
+*Yakındaki İÇN'ler*'e dokunmak bir noktalar listesi açar. Bu nokta listesinden birine dokunmak, haritayı bu noktaya taşır ve nokta harita bağlam menüsünü açar.
+
+
+### Yakındaki Popüler Yerler {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Yakındaki Yerler Android](@site/static/img/map/nearby_places_android.png)
+
+Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın.
+
+*Yakındaki [Popüler Yerler](https://osmand.net/docs/user/map/popular_places)*'e dokunmak yakındaki konumların bir listesini açar. Herhangi bir öğeyi seçmek haritayı o yere merkezler ve bağlam menüsünü açar, burada kısa bir açıklama okuyabilir veya tam rehberi görüntülemek için ***Tam makaleyi oku***'ya dokunabilirsiniz.
+
+</TabItem>
+
+<TabItem value="iOS" label="iOS">
+
+![Yakındaki Yerler iOS](@site/static/img/map/nearby_places_ios.png)
+
+Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın.
+
+*Yakındaki [Popüler Yerler](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)*'e dokunmak yakındaki konumların bir listesini açar. Herhangi bir öğeyi seçmek haritayı o yere merkezler ve bağlam menüsünü açar, burada kısa bir açıklama okuyabilir veya tam rehberi görüntülemek için ***Tam makaleyi oku***'ya dokunabilirsiniz.
 
 > **NOT**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) yalnızca bu alan için [Wikipedia makaleleri içeren özel haritaları](../plugins/wikipedia.md#download-wikipedia-packages) daha önce indirdiyseniz görünür*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Toplu Taşıma Rotaları {#public-transport-routes}
@@ -256,6 +298,8 @@ Seçilen ulaşım durağı için Toplu taşıma rotaları hakkında bilgi göste
 Bu, bir Favori veya Yol Noktası için bir gruptaki tüm noktaların bir listesidir. Dokunulduğunda, bir grubun tüm noktalarının listesi genişler, listeden bir noktaya dokunulduğunda harita seçilen noktaya hareket eder.
 
 
+
+
 ### Makale Açıklaması {#article-description}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -281,7 +325,7 @@ Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md), [Favori](../perso
 
 ![OSM bağlantısı](@site/static/img/map/context_menu_osm_link.png) ![OSM bağlantısı](@site/static/img/map/context_menu_osm_link_1.png)
 
-OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap nesnesine doğrudan bağlantı sağlar:
+OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap nesnesine doğrudan bağlantı sağlar:  
 [düğüm](https://wiki.openstreetmap.org/wiki/Node) veya [yol](https://wiki.openstreetmap.org/wiki/Way).
 
 
@@ -299,7 +343,7 @@ OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap 
 <TabItem value="ios" label="iOS">  
 
 ![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/online_photo_ios.png)
-![Galeri menüsü 2 iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Galeri menüsü iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -369,7 +413,7 @@ Mapillary görüntüleri, çekildikleri yol veya patika ile hizalanmış yönlü
 
 <TabItem value="ios" label="iOS">  
 
-![Eylemler menüsü iOS](@site/static/img/map/actions_menu_ios.png) ![Ek eylemler menüsü iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Eylemler menüsü iOS](@site/static/img/map/actions_menu_ios.png)  ![Ek eylemler menüsü iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
@@ -416,7 +460,7 @@ Bağlam menüsünde, seçilen noktayı / nesneyi [favoriler listesine](../person
 
 <TabItem value="ios" label="iOS">  
 
-![İşaretleyici eylemi ekle düzenle iOS](@site/static/img/map/add_marker_ios.png) ![İşaretleyici eylemini geri yükle Android](@site/static/img/map/action_restore_marker_android.png)
+![İşaretleyici eylemi ekle düzenle iOS](@site/static/img/map/add_marker_ios.png)  ![İşaretleyiciyi geri yükle Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
@@ -545,11 +589,11 @@ Bu bağlam menüsü eylemiyle, harita üzerinde belirli bir konumun etrafında a
 
 </Tabs>
 
-Harita bağlam menüsünü kullanarak, belirli bir yolu yönlendirme için kullanılmayan yollar listesine ekleyebilirsiniz. Bu, [rota hazırlığını](../navigation/setup/route-navigation.md) etkileyecektir.
+Harita bağlam menüsünü kullanarak, belirli bir yolu yönlendirme için kullanılmayan yollar listesine ekleyebilirsiniz. Bu, [rota hazırlığını](../navigation/setup/route-navigation.md) etkileyecektir.  
 Daha önce seçilen yolları *[Yollardan kaçın listesinden](../navigation/routing/osmand-routing.md#avoid-roads-menu)* silmek için bir işarete dokunun, *Kaldır* (**Android**) veya *Kapat* (**iOS**) seçeneğini seçin.
 
 :::note
-Yollardan kaçınma işlevi globaldir ve tüm *[yönlendirme türlerini](../navigation/routing/osmand-routing.md#routing-types)* ( *[Çevrimiçi yönlendirme](../navigation/routing/online-routing.md)* hariç) etkiler.
+Yollardan kaçınma işlevi globaldir ve tüm *[yönlendirme türlerini](../navigation/routing/osmand-routing.md#routing-types)* ( *[Çevrimiçi yönlendirme](../navigation/routing/online-routing.md)* hariç) etkiler.  
 :::
 
 
@@ -607,10 +651,10 @@ Nesne bağlam menüsü aracılığıyla seçilen bir noktadan rota planlamaya ba
 
 Belirli bir konumdaki çevrimiçi haritaları (döşemeleri) güncellemek veya indirmek için nesnenin bağlam menüsünü kullanabilirsiniz:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* ve *Güncelleme* için şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* ve *<Translate ios="true" ids="update_tile"/>*.
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* ve *Güncelleme* için şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* ve *<Translate ios="true" ids="update_tile"/>*.  
 
-Lütfen [tam talimatı](../map/raster-maps.md#download--update-tiles) okuyun.
+Lütfen [tam talimatı](../map/raster-maps.md#download--update-tiles) okuyun.  
 
 
 ### Vektör Haritaları Güncelle / İndir {#update--download-vector-maps}
@@ -642,11 +686,11 @@ Seçilen konumda çevrimdışı harita yoksa, örneğin harita nesnesi menüsü 
 > **NOT**. *Harita bölgesi için bağlam menüsünü açtıysanız (bölge vurgulanır), hakkında ***<Translate android="true" ids="rendering_category_details"/>*** görebileceksiniz: mevcut haritanın türü ve boyutu, bir Wikipedia sayfasına bağlantı, dil, nüfus ve diğerleri.*
 
 
-### * Park noktası Ekle / Sil {#-add--delete-parking-point}
+### * Park Noktası Ekle / Sil {#-add--delete-parking-point}
 
 :::note
 Park noktaları eklemek/silmek için OsmAnd [**Park konumu eklentisini**](../plugins/parking.md) etkinleştirin.
-:::
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -671,19 +715,17 @@ Park noktaları eklemek/silmek için OsmAnd [**Park konumu eklentisini**](../plu
 Harita üzerinde seçilen herhangi bir konum [park konumu](../plugins/parking.md) olarak işaretlenebilir. Park konumunu silmek için, park konumuyla ilişkili bağlam menüsünü açabilirsiniz.
 
 
-### * İz yol noktası Ekle / Düzenle {#-add--edit-track-waypoint}
+### * İz Yol Noktası Ekle / Düzenle {#-add--edit-track-waypoint}
 
 :::note
 İz noktaları eklemek/düzenlemek için OsmAnd [**Yolculuk kaydı eklentisini**](../plugins/trip-recording.md) etkinleştirin.
-:::
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Eylem Yol Noktası Android](@site/static/img/map/action_waypoint_android.png)
-
-![Yol Noktası eklemek için İz Seç Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Yol Noktası eklemek için İz Seç Android](@site/static/img/map/tracks_tab_android.png) ![İz Yol Noktası Ekle Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -701,7 +743,7 @@ Harita bağlam menüsünü kullanarak kaydedilmiş bir iz'e veya mevcut iz kayd�
 
 - Harita üzerinde bir konumu [uzun dokunuşla](../map/map-context-menu.md#select-any-point-long-tap) seçin.
 - Açılan *harita bağlam menüsünde*, *Eylemler → İz yol noktası ekle*'yi seçin.
-- Liste, haritada kaydedilen ve gösterilen [izleri](../map/tracks/index.md#display-tracks-on-the-map) ve seçilen yol noktasını ekleyebileceğiniz [mevcut iz kaydını](../plugins/trip-recording.md) görüntüler.
+- Liste, haritada kaydedilen ve gösterilen [izleri](../map/tracks/index.md#display-tracks-on-the-map) ve seçilen yol noktasını ekleyebileceğiniz [mevcut iz kaydını](../plugins/trip-recording.md) görüntüler (*Android*'de liste sekmelere ayrılır: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Henüz kayıt için etkin olmayan bir iz'e yol noktaları ekleyebilirsiniz, bu durumda etkin olmayan iz *Başlangıç durumu*'ndan *Devam durumu*'na geçer.
 - Gerekli verileri [doldurun](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) ve yol noktasını kaydedin.
 - *İz yol noktası ekle*'ye bir yol noktası ekleyerek [Hızlı Eylemleri](../widgets/quick-action.md) yapılandırabilirsiniz.
@@ -747,7 +789,7 @@ OSM notu açmak için OsmAnd [**OSM Düzenleme eklentisini**](../plugins/osm-edi
 
 ![Eylem Not Android](@site/static/img/map/action_note_android.png)
 
-![Eylem Not Ekle Kullanıcı Arayüzü Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+![Eylem Not Ekle Android](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
@@ -755,7 +797,7 @@ OSM notu açmak için OsmAnd [**OSM Düzenleme eklentisini**](../plugins/osm-edi
 
 ![Eylem Not iOS](@site/static/img/map/action_note_ios.png)
 
-![Eylem Not Ekle Kullanıcı Arayüzü iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![Eylem Not Ekle iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 
@@ -809,7 +851,7 @@ Harita üzerinde seçilen bir noktada bir medya notu kaydeder veya çeker.
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_1.png) <!-- ![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_2.png) --> ![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_3.png)
+![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Harita bağlam menüsü Özelleştir](@site/static/img/map/map_context_menu_customize_3.png)
 
 *Harita bağlam menüsündeki* *Eylemler* menüsünden öğelerin sırasını değiştirebilir veya gizleyebilirsiniz. Toplam 16 eylem önerilir.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
+source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
 sidebar_position: 13
 title:  Kayak Haritası Görünümü
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
 OsmAnd Kayak Haritası görünümü eklentisi, ünlü ve popüler yamaçları, resmi olarak onaylanmış kayak alanlarını ve çoğu kayak merkezinin parkur haritalarını gösterir. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) pist haritaları, OsmAnd kayak haritaları için veri kaynağıdır. Raster haritalarla birleştirilmiş vektör haritalar, OsmAnd kayak haritası çok doğrudur ve eğitmenler, dağcılar ve kış sporları meraklıları için faydalı olacaktır.
 
-OsmAnd kayak haritası, vektör haritalarının bir parçasıdır ve ek indirme gerektirmez. Varsayılan olarak devre dışıdır. OsmAnd Kayak Haritası, bazı nesneleri vurgulayarak ve diğerlerini daha az görünür hale getirerek ek özellikler sağlayan [Harita Stillerinden](../map/vector-maps.md) biridir.
+OsmAnd kayak haritası, vektör haritalarının bir parçasıdır ve ek indirme gerektirmez. Varsayılan olarak devre dışıdır. OsmAnd Kayak Haritası, bazı nesneleri vurgulayarak ve diğerlerini daha az görünür hale getirerek ek özellikler sağlayan [Harita Stillerinden](../map/vector-maps.md) biridir.  
 
 Aşağıda iki profil gösterilmiştir: soldaki kayak için, sağdaki ise sürüş içindir. Kayak profili, parkurları, hava yollarını, kış renklerini ve kayak alanında gezinmek için faydalı tüm harita nesnelerini vurgular.
 
@@ -43,10 +43,10 @@ Aşağıda iki profil gösterilmiştir: soldaki kayak için, sağdaki ise sürü
 
 Aşağıdaki ayar, OsmAnd Kayak Haritasının ekranda görünmesini sağlar:
 
-1. [Kayak haritası görünümü eklentisini](../plugins/index.md#enable--disable) etkinleştirin.
-2. Gerekli [profil](../personal/profiles.md) için [Kış ve Kayak](#set-winter-and-ski-map-style) harita stilini ayarlayın.
-3. Gerekirse, [haritaları birleştirin](#combine-maps).
-
+1. [Kayak haritası görünümü eklentisini](../plugins/index.md#enable--disable) etkinleştirin.  
+2. Gerekli [profil](../personal/profiles.md) için [Kış ve Kayak](#set-winter-and-ski-map-style) harita stilini ayarlayın.  
+3. Gerekirse, [haritaları birleştirin](#combine-maps).  
+  
 
 ### Kış ve Kayak Harita Stilini Ayarlayın {#set-winter-and-ski-map-style}
 
@@ -54,7 +54,7 @@ Aşağıdaki ayar, OsmAnd Kayak Haritasının ekranda görünmesini sağlar:
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Android'de Kış stilini etkinleştir](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Kayak haritaları eklentisi harita stili Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -62,7 +62,7 @@ Aşağıdaki ayar, OsmAnd Kayak Haritasının ekranda görünmesini sağlar:
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![iOS'ta Kış stilini etkinleştir](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Kayak haritaları eklentisi harita stili iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -72,8 +72,8 @@ Aşağıdaki ayar, OsmAnd Kayak Haritasının ekranda görünmesini sağlar:
 
 Kış ve Kayak harita stili, parkurları, kayak turu rotalarını, kızak parkurlarını ve kış ve kayakla ilgili bilgileri vurgular. Stili haritada görüntülemek için aşağıdaki ayarları yapmanız gerekir:
 
-1. Gerekli [profili](../personal/profiles.md) seçin.
-2. [Haritayı Yapılandır](../map/configure-map-menu.md) seçeneğini açın.
+1. Gerekli [profili](../personal/profiles.md) seçin.  
+2. [Haritayı Yapılandır](../map/configure-map-menu.md) seçeneğini açın.  
 3. Harita stili/Harita türü'ne ilerleyin, açın ve **Kış ve Kayak** seçeneğini işaretleyin.
 
 :::tip yapılandırmalar
@@ -99,20 +99,20 @@ Kayak profili, Kış ve Kayak stilleriyle birlikte kullanılmak üzere tasarlanm
 
 </Tabs>
 
-[Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) içeren [Vektör haritası](../map/vector-maps.md), [Kontur çizgileri](../plugins/topography.md#contour-lines) ve [Gölgelendirme](../plugins/topography.md#hillshade-slope-and-altitude-layers) ile tamamlanabilir. Aşağıda iki örnek verilmiştir. Varsayılan vektör haritasındaki izler solda, *Kontur Çizgileri* ve *Gölgelendirme* raster haritasıyla birleştirilmiş vektör haritasındaki izler ise sağda gösterilmiştir. İkinci durumda, harita zorluğu, riski ve mesafeyi tahmin etmeye yardımcı olmak için daha fazla yükseklik verisi gösterir.
+[Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) içeren [Vektör haritası](../map/vector-maps.md), [Kontur çizgileri](../plugins/topography.md#contour-lines) ve [Gölgelendirme](../plugins/topography.md#hillshade-slope-and-altitude-layers) ile tamamlanabilir. Aşağıda iki örnek verilmiştir. Varsayılan vektör haritasındaki izler solda, *Kontur Çizgileri* ve *Gölgelendirme* raster haritasıyla birleştirilmiş vektör haritasındaki izler ise sağda gösterilmiştir. İkinci durumda, harita zorluğu, riski ve mesafeyi tahmin etmeye yardımcı olmak için daha fazla yükseklik verisi gösterir.  
 
 
 ### Kayak Haritası Stilini Devre Dışı Bırak {#disable-ski-map-style}
 
 Parkurları ve kış renklerini haritadan kaldırmak tercih edilirse veya kayak sezonu bittiyse, aşağıdakilerden birini yapın:
 
-- Gerekli profil için [Kış ve Kayak](#set-winter-and-ski-map-style) harita stilinin işaretini kaldırın.
+- Gerekli profil için [Kış ve Kayak](#set-winter-and-ski-map-style) harita stilinin işaretini kaldırın.  
 - [Kayak profilini](../personal/profiles.md) başka bir profile değiştirin.
 - [Kayak haritası görünümü eklentisini](../plugins/index.md#enable--disable) devre dışı bırakın.
 
 
 :::info eklentiyi kaldır
-Kayak Haritası Görüntüleyici eklentisi ayrı bir uygulamadır ve ekranının devre dışı bırakılması onu kaldırmaz. Kaldırmanız gerekiyorsa, eklenti menüsündeki *Ayarları Aç* seçeneğini kullanarak Android ayarlarına gidin.
+Kayak Haritası Görüntüleyici eklentisi ayrı bir uygulamadır ve ekranının devre dışı bırakılması onu kaldırmaz. Kaldırmanız gerekiyorsa, eklenti menüsündeki *Ayarları Aç* seçeneğini kullanarak Android ayarlarına gidin.  
 :::
 
 
@@ -120,15 +120,15 @@ Kayak Haritası Görüntüleyici eklentisi ayrı bir uygulamadır ve ekranının
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Android'de Deniz derinlik konturları](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![Android'de Denizcilik derinlik konturları](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -168,7 +168,7 @@ OsmAnd Kayak Haritası, haritada hangi nesnelerin gösterileceğini ve nesneleri
 İzlerin zorluğu genellikle belirli renklerle belirtilir. Renkler farklı ülkelerde ve tatil köylerinde farklılık gösterebilir. Aşağıda bazı pratik yönergeler verilmiştir.
 
 :::tip rehberlik
-Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın.
+Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın.  
 :::
 
 
@@ -176,16 +176,16 @@ Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk re
 
 Pistler türe göre farklılık gösterir. Bir tür, farklı kışla ilgili aktivitelerin gereksinimlerini karşılamak için bir pist için farklı özellikler temsil eder: alp disiplini, klasik paten, snowboard, kızakla kayma, kros kayağı, kayak turu, mogul kayağı, gece kayağı vb. Haritadaki [pist türünü](https://wiki.openstreetmap.org/wiki/Key:piste:type) anlamak, optimum bir navigasyon rotası oluşturmaya yardımcı olur.
 
-- **Yokuş aşağı/alp disiplini kayak pisti.**
+- **Yokuş aşağı/alp disiplini kayak pisti.**  
 Kayak navigasyonu için kullanılır. Bu [pist türü](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) yön ve zorluğa sahiptir ve çoğu zaman kayak merkezinin sınırlarıyla çevrilidir. Kayak navigasyonu için yokuş aşağı bir pist seçildiğinde, pistin yönü dikkate alınır. Kalkış ve Varış noktaları pistin yönüne zıt olarak belirlenirse, navigasyon en yakın hava yolu boyunca ilerler.
 
-- **Kuzey/kros kayağı pisti.**
+- **Kuzey/kros kayağı pisti.**  
 Kayak navigasyonu için de kullanılır. Bu [pist türü](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) zorluğa sahip değildir, yönü olabilir veya olmayabilir ve çoğu zaman kayak merkezinin sınırlarının dışına çıkar. Bu tür pistler boyunca gezinirken, Kalkış ve Varış noktaları genellikle değiştirilebilir.
 
-- **Kayak turu pisti.**
+- **Kayak turu pisti.**  
 Genellikle kayakçılar tarafından kuzey çıkışı ve yokuş aşağı iniş için kullanılır. Bir kayak turu pistinin zorluğu genellikle ilgili renkle işaretlenir. Kayak navigasyonu, pist türlerini birleştirmenize olanak tanıyan bu tür bir pist boyunca bir rota oluşturabilir.
 
-- **Diğer kayak pisti.**
+- **Diğer kayak pisti.**  
 *Yürüyüş Parkurları* veya *Kızak Parkurları* gibi pist türleri kayak veya yürüyüş profilleri için kullanılabilir.
 
 
@@ -211,7 +211,7 @@ Genellikle kayakçılar tarafından kuzey çıkışı ve yokuş aşağı iniş i
 
 </Tabs>
 
-Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan **<Translate android="true" ids="rendering_category_details"/>** listesindeki **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** seçeneğini etkinleştirmeniz gerekir.
+Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan **<Translate android="true" ids="rendering_category_details"/>** listesindeki **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** seçeneğini etkinleştirmeniz gerekir.  
 Özel makineler, klasik paten, buz pateni ve diğerleri gibi uygun aktiviteye hazırlamak için parkurları düzenler. Aynı pist farklı alanlarda farklı şekilde düzenlenebilir.
 
 ### Kayak Pisti Rotaları {#ski-slope-routes}
@@ -220,15 +220,16 @@ Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Kayak yamaçları ve rotaları*
 
 ![Android'de rotalar devre dışı](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Android'de rotalar etkin](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Kayak yamaçları ve rotaları*
 
 ![iOS'ta rotalar devre dışı](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![iOS'ta rotalar etkin](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -236,9 +237,11 @@ Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [
 
 </Tabs>
 
-Kayak merkezi dışındaki hangi pistlerde gezinebileceğinizi öğrenmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan **<Translate android="true" ids="rendering_category_routes"/>** listesindeki **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** seçeneğini etkinleştirmeniz gerekir.
+Kayak merkezi dışındaki hangi pistlerde gezinebileceğinizi öğrenmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) listesindeki **Kayak yamaçları ve rotaları** seçeneğini etkinleştirmeniz gerekir.  
 
-Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) etkinleştirildiğinde, [Kayak pistleri](../map/vector-maps.md#routes) rotaları, Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.
+Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) etkinleştirildiğinde, [Kayak yamaçları ve rotaları](../map/vector-maps.md#ski-slopes-and-routes), Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.  
+Kış ve Kayak dışındaki bir harita stili için [Kayak yamaçları ve rotaları](../map/vector-maps.md#ski-slopes-and-routes) seçeneğini etkinleştirdiğinizde, yalnızca yamaçlar görüntülenir. Diğer kayakla ilgili özellikler bu stil katmanında gösterilmeyebilir.  
+_Kayak yamaçları ve rotaları_ [tıklanabilir](../map/routes.md#actions-with-routes).
 
 
 ### Gece ve Aydınlatma {#night-and-lighting}
@@ -259,14 +262,14 @@ Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/vector-
 
 </Tabs>
 
-**Kış ve kayak** stili, [Gece veya Gün doğumu/gün batımı modu](../map/vector-maps.md#map-mode) ile kullanılabilir. Koyu renkleri tercih edenler veya geceleri ekranı karartanlar, ayrıca gece kayağı yapanlar için rahat bir seçimdir. Gece modu ile birlikte, OsmAnd Kayak Haritaları, [Sokak Aydınlatması](../map/vector-maps.md#details) seçeneği ile hangi pistlerin aydınlatmaya sahip olduğunu da gösterebilir.
+**Kış ve kayak** stili, [Gece veya Gün doğumu/gün batımı modu](../map/vector-maps.md#map-mode) ile kullanılabilir. Koyu renkleri tercih edenler veya geceleri ekranı karartanlar, ayrıca gece kayağı yapanlar için rahat bir seçimdir. Gece modu ile birlikte, OsmAnd Kayak Haritaları, [Sokak Aydınlatması](../map/vector-maps.md#details) seçeneği ile hangi pistlerin aydınlatmaya sahip olduğunu da gösterebilir.  
 
-Her iki seçenek de [Haritayı Yapılandır](../map/configure-map-menu.md) menüsündedir.
+Her iki seçenek de [Haritayı Yapılandır](../map/configure-map-menu.md) menüsündedir.  
 
-- ***Gece modu*** seçeneğini etkinleştirmek için listeyi aşağı kaydırın:
-*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
+- ***Gece modu*** seçeneğini etkinleştirmek için listeyi aşağı kaydırın:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- ***Sokak Aydınlatması*** seçeneğini etkinleştirmek için **<Translate android="true" ids="rendering_category_details"/>** listesini açın ve seçeneği açın:
+- ***Sokak Aydınlatması*** seçeneğini etkinleştirmek için **<Translate android="true" ids="rendering_category_details"/>** listesini açın ve seçeneği açın:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 

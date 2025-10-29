@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  İçe / Dışa Aktar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,13 +13,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 ## Genel Bakış {#overview}
 
 OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetmenizi sağlar. Profillerinizi, favorilerinizi, rotalarınızı ve diğer ayarlarınızı cihazınızdaki uygulamalar aracılığıyla özel bir format kullanarak taşıyabilirsiniz. Bu işlem, verileri cihazlar arasında kaydetmeyi ve aktarmayı basitleştirir ve diğer OsmAnd kullanıcılarıyla paylaşmanıza olanak tanır.
 
-:::note Büyük boyut
-*Seçtiğiniz verilerin boyutu önemliyse, uygulamanın `.osf` dosyasını hazırlaması zaman alacaktır.*
+:::note Large size
+*If the size of your selected data is significant, it will take time for the application to prepare the `.osf` file.*
 :::
 
 
@@ -58,7 +58,7 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetm
 
 </Tabs>
 
-Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüsü*** kullanılarak dışa aktarılabilir. Menü, tüm mevcut dosya klasörlerini içeren üç gruptan oluşur: **Ayarlar**, **Yerlerim** ve **Kaynaklar**. Her klasörde dışa aktarmak istediğiniz dosyaları tek tek veya hepsini birden seçebilirsiniz. **Dışa aktarılan tüm dosyalar `.osf` formatında kaydedilir**.  
+Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüsü*** kullanılarak dışa aktarılabilir. Menü, tüm mevcut dosya klasörlerini içeren üç gruptan oluşur: **Ayarlar**, **Yerlerim** ve **Kaynaklar**. Örneğin, Kaynaklar bölümünde haritalar türüne göre *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, ve *<Translate android="true" ids="topography_maps"/>* olarak gruplandırılmıştır, böylece daha kolay gezinme ve seçici dışa aktarma sağlanır. Her klasörde dışa aktarmak istediğiniz dosyaları tek tek veya hepsini birden seçebilirsiniz. **Dışa aktarılan tüm dosyalar `.osf` formatında kaydedilir**.  
 
 
 ### İçe Aktar {#import}

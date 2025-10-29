@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title: Araç Metrikleri
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -47,7 +47,7 @@ Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](
 
 Bir OBD-II tarayıcısından veri kullanmak için:
 
-1. Bir **OsmAnd Pro aboneliği** [satın alın](../purchases/). (*Araç hızı* ve *Motor devri* ücretsizdir.)
+1. Bir **OsmAnd Pro aboneliği** [satın alın](../purchases/). (*Araç hızı* ve *Motor devri* ücretsizdir.)  
 2. Ana Menü'nün Eklentiler bölümünde Araç Metrikleri eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 3. Cihazınızda Bluetooth'u **açın**.
 4. OBD-II tarayıcısını aracınızın portuna [bağlayın](#pair-odb-ii-scanner).
@@ -63,7 +63,7 @@ Bir OBD-II tarayıcısından veri kullanmak için:
 
 <TabItem value="android" label="Android">
 
-| | |
+|  |  |
 |--|--|
 |![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect.png)|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_2.png)|
 
@@ -71,7 +71,7 @@ Bir OBD-II tarayıcısından veri kullanmak için:
 
 <TabItem value="ios" label="iOS">
 
-| | |
+|  |  |
 |--|--|
 |![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
@@ -95,7 +95,7 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
 **Android.** Şuraya gidin: *Menü → Eklentiler → Araç Metrikleri → OBD → üç nokta menüsü*
 
-| | |
+|  |  |
 |--|--|
 |![OBD ayarları](@site/static/img/plugins/obd/obd_settings.png)|![OBD ayarları](@site/static/img/plugins/obd/obd_settings_1.png)|
 
@@ -106,7 +106,7 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
 **iOS.** Şuraya gidin: *Menü → Eklentiler → Araç Metrikleri → OBD → üç nokta menüsü*
 
-| | |
+|  |  |
 |--|--|
 |![OBD ayarları](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD ayarları](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
@@ -146,8 +146,9 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 *Diğer:*
 
 - **Akü Seviyesi**. Aracın aküsünün voltaj seviyesini gösterir.
+- **Adaptör Voltajı**. OBD-II adaptörüne sağlanan voltajı gösterir (AT RV komutu).
 - **Araç Hızı**. Araç Hız Sensörü (VSS) verilerini gösterir.
-- **Gaz Kelebeği Konumu**. Gaz kelebeği plakası açısı aracılığıyla motor hava girişini belirler.
+- **Gaz Kelebeği Konumu**. Gaz kelebeği plakası açısı aracılığıyla motor hava girişini belirler.  
   **VIN**. Aracın 17 karakterli kimlik numarasını gösterir.
 
 

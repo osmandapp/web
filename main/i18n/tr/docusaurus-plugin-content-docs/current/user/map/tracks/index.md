@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  İzler
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -28,12 +28,12 @@ OsmAnd, harita üzerinde çeşitli rotaları görüntülemek için birçok güç
 - Rota olarak iz (***Rota***). Dosya bir ```<rtept>``` nokta dizisine sahiptir, her nokta rotanın ara noktası olarak tanımlanır. Noktaların bir rota içinde nasıl bağlanması gerektiği, küçük rota segmentleri olarak mı yoksa düz bir çizgiyle mi bağlanacağı buna bağlıdır. Bu izler haritada kesikli çizgiler olarak görüntülenir.
 - Yol Noktaları (***Noktalar***). Dosya niteliklere sahip ```<wpt>``` noktalarına sahiptir. Yol noktaları haritada dairesel noktalar olarak görüntülenir. Ek bilgi almak için onlara dokunabilirsiniz.
 
-OsmAnd, 1-3 kombinasyonlu izler oluşturabilir. [Rota Planla](../../plan-route/create-route.md) ***Geometri*** ve ***Rota*** içeren bir iz oluşturur, eğer bunu ***Basitleştirilmiş İz*** olarak kaydederseniz, sadece ***Geometri*** kalır. [İz kaydetme](../../plugins/trip-recording.md#new-track-recording) sadece ***Geometri*** oluşturur, ancak bağlam menüsü aracılığıyla buna ***Noktalar*** da ekleyebilirsiniz.
+OsmAnd, 1–3 kombinasyonlu izler oluşturabilir. [Rota Planla](../../plan-route/create-route.md) ***Geometri*** ve ***Rota*** içeren bir iz oluşturur, eğer bunu ***Basitleştirilmiş İz*** olarak kaydederseniz, sadece ***Geometri*** kalır. [İz kaydetme](../../plugins/trip-recording.md#new-track-recording) sadece ***Geometri*** oluşturur, ancak bağlam menüsü aracılığıyla buna ***Noktalar*** da ekleyebilirsiniz.
 
 
 ## Haritada İzleri Görüntüle {#display-tracks-on-the-map}
 
-Harita üzerinde çeşitli rotaları görüntülemek için birçok güçlü özelliğe sahiptir. Rotalar, Navigasyonun bir parçası olarak oluşturulabilir, Rota Planla aracılığıyla oluşturulabilir, GPX izleri olarak içe aktarılabilir, Seyahat Kaydı eklentisi aracılığıyla kaydedilebilir veya OpenStreetMap verilerinden göz atılıp seçilebilir.
+Hangi izleri görüntüleyip gizleyeceğinizi seçerek iz görünürlüğünü yönetebilirsiniz: [Yerlerim menüsü](#my-places), [Haritayı Yapılandır menüsü](#configure-map) ve [İz Bağlam menüsü](#track-context-menu). Bu esneklik, farklı izler arasında hızlı geçiş yapmanızı sağlar ve haritanızda her zaman yalnızca ilgili izlerin görünür olmasını sağlar.
 
 ### Haritayı Yapılandır {#configure-map}
 
@@ -135,6 +135,7 @@ Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-
 - **Grafik verileri (Y ekseni)** şunları gösterir: *Rakım*, *Eğim*, *Hız*, [*Harici sensör verileri*](../../plugins/external-sensors.md) ve iz verilerinde bulunuyorsa en fazla iki seçeneğin kombinasyonları.
 - **Grafik boyutu (X ekseni)** şunları temsil eder: *Mesafe*, *Zaman* ve *Günün saati*.
 - **Dokunma/kaydırma etkileşimi**. İz üzerindeki belirli bir nokta hakkında bilgi görüntülemek için bir grafiğe dokunun. Grafikte kaydırma, harita üzerindeki uygun konumu vurgular ve bilgi çubuğunda ayrıntıları gösterir.
+- **Mesafe etiketi**. Grafik boyunca dokunurken veya kaydırırken, araç ipucu iz boyunca tam mesafeyi de görüntüler. Değer, mevcut profil birim ayarlarını takip eder (<Translate android="true" ids="km"/> veya <Translate android="true" ids="mile"/>). Bir noktanın iz başlangıcından ne kadar uzakta olduğunu hızlıca tahmin etmek veya iki konum arasındaki mesafeyi değerlerini karşılaştırarak hesaplamak için kullanın.
 - **Ölçeklendirme**. Daha ayrıntılı görüntüleme için grafiği ölçeklendirmek için [iki parmak hareketi](../../map/interact-with-map.md#gestures) kullanın.
 
 
