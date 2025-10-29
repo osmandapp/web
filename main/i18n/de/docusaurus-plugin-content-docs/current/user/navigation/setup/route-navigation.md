@@ -1,8 +1,9 @@
 ---
-source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
+source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Routenvorbereitung
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Übersicht {#overview}
 
@@ -124,8 +124,23 @@ Legen Sie Ihr Ziel im *Navigationsmenü* fest, indem Sie Folgendes verwenden:
   
 ### Startpunkt auswählen {#select-starting-point}
 
-Als Startpunkt können Sie Ihren aktuellen Standort, den Standort eines [Favoritenpunkts](../../map/point-layers-on-map.md#favorites) wählen, einen Punkt auf der Karte auswählen oder die [Suche](../../search/index.md) verwenden. Sie können auch einen Startpunkt im [Kartenkontextmenü](../../map/map-context-menu.md) festlegen, indem Sie die Funktion [Routenführung von](../../map/map-context-menu.md#directions-to--from) auswählen.  
+<Tabs groupId="operating-systems" queryString="current-os">
 
+<TabItem value="android" label="Android">
+
+![Auf der Karte auswählen](@site/static/img/navigation/route/select_on_map.png)
+
+Als Startpunkt können Sie Ihren aktuellen Standort, den Standort eines [Favoritenpunkts](../../map/point-layers-on-map.md#favorites) wählen, einen Punkt auf der Karte auswählen oder die [Suche](../../search/index.md) verwenden. Wenn Sie einen Punkt auf der Karte auswählen, öffnet sich ein Dialog. Die Karte wird mit einem Marker zentriert, die Koordinaten des Kartenzentrums werden angezeigt, und Sie bewegen die Karte unter dem Marker, anstatt direkt auf eine Stelle zu tippen. Um zu bestätigen, drücken Sie die Schaltfläche *Auswählen*. Sie können auch einen Startpunkt im [Kartenkontextmenü](../../map/map-context-menu.md) festlegen, indem Sie die Funktion [Routenführung von](../../map/map-context-menu.md#directions-to--from) auswählen.  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Auf der Karte auswählen iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+Als Startpunkt können Sie Ihren aktuellen Standort, den Standort eines [Favoritenpunkts](../../map/point-layers-on-map.md#favorites) wählen, einen Punkt auf der Karte auswählen oder die [Suche](../../search/index.md) verwenden. Beim Auswählen eines Punkts auf der Karte können Sie die Karte frei bewegen und zoomen, dann auf den gewünschten Ort tippen. Eine Flagge erscheint an der gewählten Stelle. Sie können auch einen Startpunkt im [Kartenkontextmenü](../../map/map-context-menu.md) festlegen, indem Sie die Funktion [Routenführung von](../../map/map-context-menu.md#directions-to--from) auswählen. 
+</TabItem>
+
+</Tabs>
 
 ### Zielpunkt festlegen {#set-target-point}
 
@@ -134,24 +149,32 @@ Als Startpunkt können Sie Ihren aktuellen Standort, den Standort eines [Favorit
 <TabItem value="android" label="Android">
 
 ![Navigationsmenü Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+
+Das Wichtigste, um die Navigation zu starten, ist die Bestimmung Ihres Ziels. Der Zielpunkt kann über eine [*Suchfunktion*](../../search/index.md#overview) oder einfach auf einer Karte gefunden werden. Sie können den Zielpunkt auch im [*Navigationsmenü*](#navigation-menu) festlegen:  
+
+- **<Translate android="true" ids="search_button"/>** - Öffnet [das Suchmenü](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Öffnet das [Adresssuchmenü](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Öffnet einen Dialog, in dem die Karte mit einem Marker zentriert wird. Die Koordinaten des Kartenzentrums werden angezeigt, Sie bewegen die Karte unter dem Marker und bestätigen die Auswahl durch Drücken von *Auswählen*.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Ermöglicht die Verwendung eines [Favoriten](../../personal/favorites.md) als Ziel.
+- **<Translate android="true" ids="shared_string_markers"/>** - Ermöglicht die Auswahl einer der [Kartenmarkierungen](../../personal/markers.md) als Zielpunkt.
+- **Startpunkt und Ziel vertauschen** &nbsp;&#8595;&#8593; - Ermöglicht das Vertauschen von *Start*- und *Ziel*-Punkten.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Navigationsmenü iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
-</TabItem>
-
-</Tabs>
-
 Das Wichtigste, um die Navigation zu starten, ist die Bestimmung Ihres Ziels. Der Zielpunkt kann über eine [*Suchfunktion*](../../search/index.md#overview) oder einfach auf einer Karte gefunden werden. Sie können den Zielpunkt auch im [*Navigationsmenü*](#navigation-menu) festlegen:  
 
 - **<Translate android="true" ids="search_button"/>** - Öffnet [das Suchmenü](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Öffnet das [Adresssuchmenü](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Öffnet die Karte, um einen Zielpunkt durch Tippen auf die Karte auszuwählen.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Ermöglicht es Ihnen, die Karte zu bewegen und zu zoomen, dann auf den gewünschten Ort zu tippen. Eine Flagge erscheint an der gewählten Stelle und markiert das Ziel.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Ermöglicht die Verwendung eines [Favoriten](../../personal/favorites.md) als Ziel.
 - **<Translate android="true" ids="shared_string_markers"/>** - Ermöglicht die Auswahl einer der [Kartenmarkierungen](../../personal/markers.md) als Zielpunkt.
 - **Startpunkt und Ziel vertauschen** &nbsp;&#8595;&#8593; - Ermöglicht das Vertauschen von *Start*- und *Ziel*-Punkten.
+</TabItem>
+
+</Tabs>
 
 
 ### Zwischenziele {#intermediate-destinations}
@@ -205,7 +228,7 @@ In diesem Menü finden Sie zusätzliche Optionen zur Verwaltung der Zielpunkte:
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*nur Android*) - Alle Punkte werden in umgekehrter Reihenfolge angeordnet.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Sie können aus diesem Menü Zwischenziele hinzufügen.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Sie können aus diesem Menü Zwischenziele hinzufügen. Der Prozess zum Auswählen eines Zwischenziels auf der Karte ist der gleiche wie für Start- und Zielpunkte.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Alle Zwischenziele werden von der Karte entfernt.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Sprachansagen / Benachrichtigungen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
-Die Sprachnavigationsfunktion von OsmAnd bietet gesprochene Anweisungen und Warnungen in Echtzeit, die Ihnen helfen, unterwegs informiert und sicher zu bleiben. Sie können die Führung an Ihre Vorlieben und Bedürfnisse anpassen. Wählen Sie dazu ein passendes Sprachprofil aus, entweder eine [Text-to-Speech (TTS)-Engine](#tts-text-to-speech), die Straßennamen, Entfernungen und Geschwindigkeitsbegrenzungen dynamisch ansagen kann, oder eine [aufgezeichnete Stimme](#recorded-voice-prompts), die prägnante Anweisungen bietet.
+Die Sprachnavigationsfunktion von OsmAnd bietet gesprochene Anweisungen und Warnungen in Echtzeit, die Ihnen helfen, unterwegs informiert und sicher zu bleiben. Sie können die Führung an Ihre Vorlieben und Bedürfnisse anpassen. Wählen Sie dazu ein passendes Sprachprofil aus, entweder eine [Text-to-Speech (TTS)-Engine](#tts-text-to-speech), die Straßennamen, Entfernungen und Geschwindigkeitsbegrenzungen dynamisch ansagen kann, oder eine [voraufgezeichnete Stimme](#recorded-voice-prompts), die prägnante Anweisungen bietet.  
 
-Zusätzlich zu den Abbiegehinweisen kann die Sprachnavigation von OsmAnd Sie über bevorstehende Sonderziele, Änderungen der Verkehrsbedingungen und das Überschreiten einer voreingestellten Geschwindigkeitsbegrenzung informieren. Weitere Informationen zum Anpassen dieser Warnungen finden Sie unter [Zeitpunkt der Ansagen](#announcement-time) und [Warnungen bei Geschwindigkeitsüberschreitung](#speed-limit).
+Zusätzlich zu den Abbiegehinweisen kann die Sprachnavigation von OsmAnd Sie über bevorstehende Sonderziele, Änderungen der Verkehrsbedingungen und das Überschreiten einer voreingestellten Geschwindigkeitsbegrenzung informieren. Weitere Informationen zum Anpassen dieser Warnungen finden Sie unter [Zeitpunkt der Ansagen](#announcement-time) und [Warnungen bei Geschwindigkeitsüberschreitung](#speed-limit).  
 
 Mit der richtigen Kombination aus Sprachoptionen, Alarmeinstellungen und Anpassungen des Gerätetons erhalten Sie während Ihrer gesamten Route zeitnahe und klare Navigationsinformationen.
 
@@ -34,13 +34,13 @@ Mit der richtigen Kombination aus Sprachoptionen, Alarmeinstellungen und Anpassu
 
 ## Einrichten von Sprachansagen {#setting-up-voice-prompts}
 
-OsmAnd bietet verschiedene Optionen zur Steuerung von Sprachansagen, damit Sie Ihrer Route bequem folgen können. Um diese Einstellungen zu konfigurieren, beginnen Sie in den entsprechenden Anwendungsbereichen.
+OsmAnd bietet verschiedene Optionen zur Steuerung von Sprachansagen, damit Sie Ihrer Route bequem folgen können. Um diese Einstellungen zu konfigurieren, beginnen Sie in den entsprechenden Anwendungsbereichen.  
 
 - Aktivieren Sie Sprachansagen im Bereich [Navigation](../guidance/navigation-settings.md), indem Sie auf **Einstellungen** tippen. Sie können Sprachansagen auch über *Profil konfigurieren* und *Navigationseinstellungen* aktivieren und konfigurieren.
 - Schalten Sie Sprachansagen ein oder aus über *Menü → Navigation →* tippen Sie auf die *Schaltfläche Ton*,
     oder *Menü → Navigation →* Schaltfläche Einstellungen *→ Ton →* ein-/ausschalten.
 
-Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, finden Sie in der Dokumentation zur [Auslösung von Sprachansagen bei der Navigation](../../../technical/algorithms/voice-prompt-triggering.md).
+Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, finden Sie in der Dokumentation zur [Auslösung von Sprachansagen bei der Navigation](../../../technical/algorithms/voice-prompt-triggering.md).  
 
 
 ### Spracheinstellungen {#voice-settings}
@@ -52,14 +52,14 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Sprachnavigationseinstellungen Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Sprachnavigationseinstellungen Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *Schaltfläche <Translate ios="true" ids="routing_settings"/>* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Sprachnavigationseinstellungen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -69,9 +69,9 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 **[Sprache](#voice-prompt-language)**. Wählen Sie Ihre bevorzugte Sprache und Art aus.
 
-**Ansage**. Ermöglicht die Konfiguration der folgenden Arten von Ansagen:
+**Ansage**. Ermöglicht die Konfiguration der folgenden [Arten von Ansagen](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Straßennamen (TTS), Ausfahrtsnummern, Verkehrswarnungen, Fußgängerüberwege* und *Tunnel.*
+- *Abbiegehinweise, Straßennamen (TTS), Ausfahrtsnummern, Verkehrswarnungen, Fußgängerüberwege* und *Tunnel.*
 - *[Radarkameras](#speed-cameras)*.
 - Konfigurieren Sie auch das **[Warn-Widget](../../widgets/nav-widgets.md#alert-widget)** zur Verwendung mit Ansagen.
 
@@ -81,7 +81,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 | Ansagetyp | Vorlaufzeit [s]:<br/>Entsprechende<br/>Vorlaufdistanz bei Standardgeschwindigkeit [m] | Limit |
 | :- | :- | :- |
-| Annäherung | **60 s:**<br/>Fahren: 750 m<br/>Radfahren: 167 m<br/>Gehen: 67 m | Nicht mehr als 1 Punkt gleichzeitig |
+| Annäherung  | **60 s:**<br/>Fahren: 750 m<br/>Radfahren: 167 m<br/>Gehen: 67 m  |  Nicht mehr als 1 Punkt gleichzeitig |
 | Vorbeifahren | **15 s:**<br/>Fahren: 188 m<br/>Radfahren: 42 m<br/>Gehen: 17 m | Nicht mehr als 3 Punkte gleichzeitig |
 
 [**Geschwindigkeitsbegrenzung**](#speed-limit):
@@ -91,7 +91,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 **Andere**:
 
-- *GPS-Signalverlust und -wiederherstellung ansagen*. OsmAnd meldet, wenn das GPS-Signal auf dem Gerät verloren geht.
+- *GPS-Signalverlust und -wiederherstellung ansagen*. OsmAnd meldet, wenn das GPS-Signal auf dem Gerät verloren geht.  
 - *Routen-Neuberechnung ansagen*. OsmAnd meldet die Neuberechnung der Route bei einer [Abweichung oder Bewegung in die entgegengesetzte Richtung](./navigation-settings.md#recalculate-route).
 - *Abweichung von der Route ansagen*. Sie erhalten Informationen über Abweichungen von der Route gemäß den [eingestellten Parametern](./navigation-settings.md#recalculate-route).
 
@@ -111,8 +111,8 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 ![Zeitpunkt der Sprachnavigationsansage Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 [Warnungen vor Radarkameras](../../personal/global-settings.md#uninstall-speed-cameras) ermöglichen es Ihnen, POIs mit Radarkameras zu aktivieren oder zu deaktivieren. Sie müssen die OsmAnd-Anwendung neu starten, um die Änderungen zu übernehmen.
-
-In einigen Ländern oder Regionen ist die Verwendung von Anwendungen zur Warnung vor Radarkameras illegal. Sie müssen eine Wahl treffen, die von den Gesetzen in Ihrem Land abhängt. Wählen Sie **Aktiv lassen**, und Sie erhalten Warnungen und Benachrichtigungen zu Radarkameras. Wählen Sie **Deinstallieren**, und alle Daten im Zusammenhang mit Radarkameras, wie Warnungen, Benachrichtigungen und POIs, werden gelöscht, bis Sie OsmAnd vollständig neu installieren.
+  
+In einigen Ländern oder Regionen ist die Verwendung von Anwendungen zur Warnung vor Radarkameras illegal. Sie müssen eine Wahl treffen, die von den Gesetzen in Ihrem Land abhängt. Wählen Sie **Aktiv lassen**, und Sie erhalten Warnungen und Benachrichtigungen zu Radarkameras. Wählen Sie **Deinstallieren**, und alle Daten im Zusammenhang mit Radarkameras, wie Warnungen, Benachrichtigungen und POIs, werden gelöscht, bis Sie OsmAnd vollständig neu installieren.  
 
 
 ### Geschwindigkeitsbegrenzung {#speed-limit}
@@ -135,8 +135,8 @@ In einigen Ländern oder Regionen ist die Verwendung von Anwendungen zur Warnung
 
 Die Option **Geschwindigkeitsbegrenzung** ermöglicht es OsmAnd, Sie zu informieren, wenn Ihre aktuelle Geschwindigkeit einen bestimmten Schwellenwert überschreitet. Daten zu den gesetzlichen Höchstgeschwindigkeiten stammen aus OpenStreetMap.
 
-**Bei Überschreitung ansagen**
-*Toleranz der Geschwindigkeitsbegrenzung* ermöglicht es Ihnen, eine zulässige Abweichung (z. B. -10 km/h bis +20 km/h) von der [gesetzlichen Höchstgeschwindigkeit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) auf der aktuellen Straße auszuwählen. Wenn Ihre Geschwindigkeit diese Toleranz überschreitet, gibt OsmAnd eine Sprachansage aus.
+**Bei Überschreitung ansagen**  
+*Toleranz der Geschwindigkeitsbegrenzung* ermöglicht es Ihnen, eine zulässige Abweichung (z. B. -10 km/h bis +20 km/h) von der [gesetzlichen Höchstgeschwindigkeit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) auf der aktuellen Straße auszuwählen. Wenn Ihre Geschwindigkeit diese Toleranz überschreitet, gibt OsmAnd eine Sprachansage aus.  
 
 *Regeln für die Aktivierung von Sprachansagen* bei Überschreitung der Geschwindigkeitsbegrenzung:
 
@@ -151,7 +151,7 @@ Diese Einstellung der **Toleranz der Geschwindigkeitsbegrenzung** beeinflusst di
 
 ![Zeitpunkt der Sprachnavigationsansage Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
-Der Zeitpunkt der verschiedenen Sprachansagen hängt vom ausgewählten Profil, der Art der Ansage, der aktuellen Navigationsgeschwindigkeit und der Standard-Navigationsgeschwindigkeit ab. Mit dieser Einstellung können Sie die Entfernung ändern, bevor die Sprachansagen aktiviert werden, indem Sie einen Entfernungs-Multiplikator anwenden: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.
+Der Zeitpunkt der verschiedenen Sprachansagen hängt vom ausgewählten Profil, der Art der Ansage, der aktuellen Navigationsgeschwindigkeit und der Standard-Navigationsgeschwindigkeit ab. Mit dieser Einstellung können Sie die Entfernung ändern, bevor die Sprachansagen aktiviert werden, indem Sie einen Entfernungs-Multiplikator anwenden: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 
 In der Dropdown-Liste *Zeit- und Distanzintervalle* können Sie detaillierte Informationen zur Aktivierung von Ansagen für die verschiedenen Entfernungs-Multiplikatoren einsehen. Weitere Informationen finden Sie unter [Auslösung von Sprachansagen bei der Navigation](../../../technical/algorithms/voice-prompt-triggering.md).
 
@@ -162,7 +162,7 @@ In der Dropdown-Liste *Zeit- und Distanzintervalle* können Sie detaillierte Inf
 
 ![Sprachnavigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
-Um zu vermeiden, dass Audio gleichzeitig im selben Ausgabestream abgespielt wird, ist der Audiofokus in Android implementiert. OsmAnd verwendet den in dieser Einstellung aus der Liste ausgewählten Lautsprecher für die Audioausgabe. Andere Anwendungen pausieren die Wiedergabe oder verringern die Lautstärke, damit Sie die Sprachansagen von OsmAnd besser hören können.
+Um zu vermeiden, dass Audio gleichzeitig im selben Ausgabestream abgespielt wird, ist der Audiofokus in Android implementiert. OsmAnd verwendet den in dieser Einstellung aus der Liste ausgewählten Lautsprecher für die Audioausgabe. Andere Anwendungen pausieren die Wiedergabe oder verringern die Lautstärke, damit Sie die Sprachansagen von OsmAnd besser hören können.  
 
 - Medien-/Navigationsaudio.
 - Benachrichtigungsaudio.
@@ -186,19 +186,19 @@ Sie können die Sprachansagen testen mit:
 Wenn Sie keine **Sprachansagen** oder [Warnungen bei Geschwindigkeitsüberschreitung](#speed-limit) hören:
 
 - Stellen Sie sicher, dass die Lautstärke Ihres Geräts eingeschaltet und aufgedreht ist.
-- Bestätigen Sie, dass der Ton während der Navigation aktiviert ist: *Menü → Navigation → Ton ein/aus-Schaltfläche* oder *Menü → Navigation → Einstellungen-Schaltfläche → Ton* für eine detaillierte Audiokonfiguration.
+- Bestätigen Sie, dass der Ton während der Navigation aktiviert ist: *Menü → Navigation → Ton ein/aus-Schaltfläche* oder *Menü → Navigation → Einstellungen-Schaltfläche → Ton* für eine detaillierte Audiokonfiguration.  
 - Wählen Sie aus, welche [Lautsprecher](#voice-guidance-output) verwendet werden sollen.
 - Überprüfen Sie, welche [Sprachführung](#voice-prompt-language) ausgewählt ist, und stellen Sie sicher, dass Sie eine TTS- oder aufgezeichnete Stimme haben, die Warnungen bei Geschwindigkeitsüberschreitung ansagen kann.
-- Überprüfen Sie, ob das Audio nicht an ein unbeabsichtigtes Ausgabegerät (z. B. ein nicht verbundenes Bluetooth-Headset) geleitet wird.
+- Überprüfen Sie, ob das Audio nicht an ein unbeabsichtigtes Ausgabegerät (z. B. ein nicht verbundenes Bluetooth-Headset) geleitet wird.  
 
 Weitere Schritte zur Fehlerbehebung finden Sie im [Leitfaden zur Fehlerbehebung bei der Navigation](../../troubleshooting/navigation.md#voice-navigation).
 
 
 ## TTS (Text-to-Speech) {#tts-text-to-speech}
 
-OsmAnd unterstützt **Text-to-Speech (TTS)**-Stimmen, die eine dynamische und detaillierte Sprachführung bieten, einschließlich Abbiegehinweisen, Straßennamen und POI-Ansagen. TTS-Stimmen sind in der Anwendung enthalten, erfordern jedoch eine auf dem Gerät installierte [Text-to-Speech-Engine](https://de.wikipedia.org/wiki/Sprachsynthese).
+OsmAnd unterstützt **Text-to-Speech (TTS)**-Stimmen, die eine dynamische und detaillierte Sprachführung bieten, einschließlich Abbiegehinweisen, Straßennamen und POI-Ansagen. TTS-Stimmen sind in der Anwendung enthalten, erfordern jedoch eine auf dem Gerät installierte [Text-to-Speech-Engine](https://en.wikipedia.org/wiki/Speech_synthesis).  
 
-Die meisten modernen Android- und iOS-Geräte enthalten eine standardmäßige TTS-Engine, aber zusätzliche Engines und Sprachen können separat installiert werden.
+Die meisten modernen Android- und iOS-Geräte enthalten eine standardmäßige TTS-Engine, aber zusätzliche Engines und Sprachen können separat installiert werden.  
 
 Eine Liste der **verfügbaren TTS-Engines und unterstützten Sprachen** für Android finden Sie unter:
 [Liste der Sprachen mit verfügbaren TTS-Engines auf Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
@@ -214,7 +214,7 @@ Eine Liste der **verfügbaren TTS-Engines und unterstützten Sprachen** für And
 5. Passen Sie bei Bedarf Sprechgeschwindigkeit, Tonhöhe und Wiedergabegeschwindigkeit an.
 6. Tippen Sie auf **Beispiel anhören**, um die Sprachausgabe zu testen.
 
-Weitere Details finden Sie unter:
+Weitere Details finden Sie unter:  
 [Google Support – Android Text-in-Sprache-Einstellungen](https://support.google.com/accessibility/android/answer/6006983).
 
 **iOS:**
@@ -225,8 +225,8 @@ Weitere Details finden Sie unter:
 4. Passen Sie **Sprechtempo**, **Aussprache** und andere Einstellungen an.
 5. Testen Sie die Stimme mit **Auswahl sprechen** oder **Bildschirminhalt sprechen**.
 
-Weitere Details finden Sie unter:
-[Apple Support – iPhone-Spracheinstellungen](https://support.apple.com/de-de/guide/iphone/iph96b214f0/ios#:~:text=Gehe%20zu%20%E2%80%9CEinstellungen%E2%80%9C%20%3E%20%E2%80%9CBedienungshilfen%E2%80%9C%20%3E%20%E2%80%9CGesprochene,oben%20auf%20dem%20Bildschirm%20streichst).
+Weitere Details finden Sie unter:  
+[Apple Support – iPhone-Spracheinstellungen](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen).
 
 ***Testen von Sprachansagen:***
 
@@ -235,7 +235,7 @@ Um zu überprüfen, ob TTS in OsmAnd ordnungsgemäß funktioniert:
 - Aktivieren Sie das **Entwicklungs-Plugin**: *Menü → Einstellungen → Plugins → OsmAnd Entwicklung*.
 - Öffnen Sie [Sprachansagen testen](../../plugins/development.md#application-testing): *Menü → Einstellungen → Plugins → OsmAnd Entwicklung → Sprachansagen testen*.
 
-Zur Fehlerbehebung siehe:
+Zur Fehlerbehebung siehe:  
 [Fehlerbehebung bei der Sprachnavigation](../../troubleshooting/navigation.md#voice-navigation).
 
 
@@ -272,7 +272,7 @@ OsmAnd bietet zwei Arten von Sprachansagen:
 - **<Translate android="true" ids="shared_string_recorded"/>** (*nur Android*)
     - Verwendet voraufgezeichnete Sprachansagen für die Navigation.
     - Klingt natürlicher als TTS, hat aber Einschränkungen.
-    - Liest keine Straßennamen oder POI-Namen vor.
+    - Liest keine Straßennamen oder POI-Namen
     - Bietet nur grundlegende Abbiegehinweise.
 
 > *TTS wird für eine detaillierte Navigationsführung empfohlen.*
@@ -302,24 +302,24 @@ Derzeit gibt es insgesamt 45 Sprachen. Nicht alle unten aufgeführten Sprachen w
 | | |
 | :--- | :--- |
 | **А** | Arabisch |
-| **B** | Bulgarisch, Belarussisch |
-| **C** | Chinesisch, Chinesisch (Hongkong), Chinesisch (Traditionell), Kroatisch |  
-| **D** | Dänisch, Deutsch, Deutsch (informell), Niederländisch |
-| **E** | Englisch, Englisch (Vereinigtes Königreich), Estnisch |
+| **B** | Belarussisch, Bulgarisch |
+| **C** | Katalanisch, Chinesisch, Chinesisch(Hongkong), Chinesisch(Traditionell), Kroatisch, Tschechisch |  
+| **D** | Dänisch, Niederländisch |
+| **E** | Englisch, Englisch(Vereinigtes Königreich), Estnisch |
 | **F** | Finnisch, Französisch |
-| **G** | Griechisch, Guarani |
-| **H** | Hebräisch, Hindi |
+| **G** | Deutsch, Deutsch(umgangssprachlich), Griechisch, Guarani |
+| **H** | Hindi, Ungarisch, Ungarisch(formell), Hebräisch |
 | **I** | Indonesisch, Italienisch |
 | **J** | Japanisch |
-| **K** | Katalanisch, Koreanisch |
+| **K** | Koreanisch  |
 | **L** | Lettisch |
-| **N** | Norwegisch Bokmål |
-| **P** | Persisch, Polnisch, Portugiesisch, Portugiesisch (Brasilien) |  
-| **R** | Rumänisch, Russisch |
-| **S** | Sardisch, Serbisch (Kyrillisch), Slowakisch, Slowenisch, Spanisch, Spanisch (Argentinien), Suaheli, Schwedisch |
-| **T** | Tschechisch, Türkisch |
-| **U** | Ukrainisch, Ungarisch, Ungarisch (formell) |
-| **V** | Vietnamesisch |
+| **N** | Norwegisch Bokmål  |
+| **P** | Persisch, Polnisch, Portugiesisch, Portugiesisch(Brasilien) |  
+| **R** | Rumänisch, Russisch  |
+| **S** | Sardisch, Serbisch (Kyrillisch), Slowakisch, Slowenisch, Spanisch, Spanisch (Argentinien), Suaheli, Schwedisch  |
+| **T** | Türkisch  |
+| **U** | Ukrainisch  |
+| **V** | Vietnamesisch  |
 
 
 ## Aufgezeichnete Sprachansagen {#recorded-voice-prompts}
@@ -347,7 +347,7 @@ Die Verwendung von aufgezeichneten Stimmen in OsmAnd sollte nur eine Ausweichlö
 <InfoAndroidOnly />
 
 Sie können ein OsmAnd-Profil so konfigurieren, dass es anstelle von Sprechen piept, ähnlich wie bei einem Fahrradcomputer. Es gibt drei grundlegende Muster: *minimal*, *einfach* und *komplex*. Die einfachen und komplexen Muster haben *laute* Varianten, die in einer lauten Umgebung erheblich leichter zu hören sind, aber unangenehm harsch klingen können.
-
+  
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
 - **Minimal**. Geeignet für das Verfolgen einer bekannten Route zu Fuß mit minimalen Ablenkungen. Dieses Muster warnt Sie beim Passieren von Zwischenzielen, Favoriten und POIs sowie wenn Sie von der Route abgewichen oder zu ihr zurückgekehrt sind. Es gibt keine akustischen Warnungen für Abbiegungen.
@@ -358,7 +358,9 @@ Sie können ein OsmAnd-Profil so konfigurieren, dass es anstelle von Sprechen pi
 
 ## Textbenachrichtigungen {#text-notifications}
 
-Sobald Sie eine Route starten, können Sie die Informationen im Dropdown-Systemmenü in der Benachrichtigungsliste anzeigen. Die stillen Benachrichtigungen von OsmAnd enthalten Informationen wie Abbiegehinweise, Abbiegepfeile, Ankunftszeit und verbleibende Zeit, aktuelle Geschwindigkeit und Entfernung zum Ziel.
+<InfoAndroidOnly />
+
+Sobald Sie eine Route starten, können Sie die Informationen im Dropdown-Systemmenü in der Benachrichtigungsliste anzeigen. Die stillen Benachrichtigungen von OsmAnd enthalten Informationen wie Abbiegehinweise, Abbiegepfeile, Ankunftszeit und verbleibende Zeit, aktuelle Geschwindigkeit und Entfernung zum Ziel.  
 
 ![Navigationsrouten-Benachrichtigung Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
@@ -366,13 +368,13 @@ Aktive Schaltflächen im Dropdown-Systemmenü für Ihre Navigation:
 
 - *<Translate android="true" ids="stop_navigation_service"/>*. Ermöglicht das Stoppen Ihrer Navigation.
 - *<Translate android="true" ids="shared_string_pause"/>*. Ermöglicht das Pausieren Ihrer Navigation.
-- *<Translate android="true" ids="shared_string_resume"/>*. Ermöglicht das Fortsetzen Ihrer Navigation.
+- *<Translate android="true" ids="shared_string_resume"/>*. Ermöglicht das Fortsetzen Ihrer Navigation.  
 
 ### Benachrichtigungen konfigurieren {#configure-notifications}
 
-Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den Systemeinstellungen Ihres Geräts ändern. Benachrichtigungen können auf dem Sperrbildschirm, dem Startbildschirm, im Dropdown-Menü oder oben in der App angezeigt werden.
+Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den Systemeinstellungen Ihres Geräts ändern. Benachrichtigungen können auf dem Sperrbildschirm, dem Startbildschirm, im Dropdown-Menü oder oben in der App angezeigt werden.  
 
-Lesen Sie in diesem [Artikel](https://support.google.com/android/answer/9079661?hl=de#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications), wie die Benachrichtigungssteuerung auf Android implementiert ist. Für iOS - [hier](https://support.apple.com/de-de/HT201925#:~:text=W%C3%A4hle%20%E2%80%9CEinstellungen%E2%80%9C%20und%20tippe%20auf,in%20der%20geplanten%20Mitteilungs%C3%BCbersicht%20angezeigt.).
+Lesen Sie in diesem [Artikel](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications), wie die Benachrichtigungssteuerung auf Android implementiert ist. Für iOS - [hier](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Bildschirmsteuerung {#screen-control}
@@ -381,7 +383,7 @@ Lesen Sie in diesem [Artikel](https://support.google.com/android/answer/9079661?
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![Menü Bildschirmsteuerung Android](@site/static/img/navigation/route/screen_control_android.png)
+![Bildschirmsteuerungsmenü Android](@site/static/img/navigation/route/screen_control_android.png)
 
 Sie können den Bildschirm Ihres Geräts steuern, um Energie zu sparen. Dieser Modus hat zwei allgemeine Einstellungen: *<Translate android="true" ids="screen_timeout"/>* und *<Translate android="true" ids="turn_screen_on"/>*.
 
@@ -391,7 +393,7 @@ Sie können den Bildschirm Ihres Geräts steuern, um Energie zu sparen. Dieser M
 
     ![System-Timeout Bildschirmsteuerung Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Wenn *Bildschirm eingeschaltet lassen* aktiviert ist, wendet der Bildschirm des Geräts nach dem Aufwachen kein Timeout an. Wenn es deaktiviert ist, können Sie die Zeit einstellen, nach der sich der Bildschirm des Geräts ausschaltet, wenn Sie nicht damit interagieren, von 5 bis 60 Sekunden.
+2. **<Translate android="true" ids="wake_time"/>**. Wenn *Bildschirm eingeschaltet lassen* aktiviert ist, wendet der Bildschirm des Geräts nach dem Aufwachen kein Timeout an. Wenn es deaktiviert ist, können Sie die Zeit einstellen, nach der sich der Bildschirm des Geräts ausschaltet, wenn Sie nicht damit interagieren, von 5 bis 60 Sekunden.  
 
     ![Timeout nach dem Aufwachen Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout nach dem Aufwachen Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 

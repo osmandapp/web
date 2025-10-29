@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -60,7 +60,7 @@ Wenn Sie die Anwendung öffnen, wird eine Liste von Kategorien angezeigt. Zur ei
 - [Einstellungen](#voice-prompts). Diese Schaltfläche ist verantwortlich für: 1. den Zugriff zum Ein-/Ausschalten von *Sprachansagen*, wenn Sie auf der ausgewählten Route navigieren; 2. die Anzeige von Routendetails (Zeit und Entfernung) für den nächsten Halt.
 - [Suche](#search). Durch Tippen auf die Schaltfläche wird ein Bildschirm mit Zugriff auf die Suchfunktionen geöffnet.
 - [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Verschiebt den sichtbaren Teil der Karte, sodass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte. Die Pinch-to-Zoom-Geste ist für die Kartenvergrößerung verfügbar. Wenn sie vom Head Unit nicht unterstützt wird, erfolgt die Zoom-Anpassung durch Doppel-Tipp und Wischgeste.
 - [Kompass](../widgets/map-buttons.md#compass). Zeigt an, welcher der vier verfügbaren Kartenausrichtungsmodi auf dem Bildschirm Ihres Geräts ausgewählt ist.
 
 
@@ -72,7 +72,7 @@ Wenn Sie die Anwendung öffnen, wird eine Liste von Kategorien angezeigt. Zur ei
 
 Damit OsmAnd in *Android Auto* funktioniert, müssen Sie Ihr Android-Gerät mit dem Multimediasystem Ihres Fahrzeugs [verbinden](#connection-screen). Das Android-Betriebssystem muss auf Version 6.0 oder höher aktualisiert sein.
 
-- Um herauszufinden, wie Sie Ihr Gerät verbinden und einrichten, besuchen Sie die [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=de) Webseiten.  
+- Um herauszufinden, wie Sie Ihr Gerät verbinden und einrichten, besuchen Sie die [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) Webseiten.  
 
 - Nicht alle Fahrzeuge unterstützen die Geräteverbindung. Überprüfen Sie die [Liste für *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
@@ -188,7 +188,7 @@ Tracks können auch direkt auf dem Fahrzeugbildschirm in *Android Auto* ausgewä
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Die Suche bietet Ihnen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), in dem alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind.
+Der Übergang zur Suche bietet Ihnen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), in dem alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind.
 
 Sie können das Suchwerkzeug verwenden, um den gewünschten Ort auf der Karte für die Routenplanung aus jeder verfügbaren Suchkategorie zu finden.
 
@@ -305,7 +305,7 @@ OsmAnd verfügt über [Kartenmodus](../map/vector-maps.md#map-mode)-Optionen, ab
 
 Die OsmAnd-App kann in *Android Auto* auf dem Multimediabildschirm des Fahrzeugs gleichzeitig mit Musik-, Nachrichten- oder anderen Benachrichtigungs-Apps geöffnet und zur Navigation verwendet werden. Richten Sie die geteilte Bildschirmanzeige auf einem mit *Android Auto* verbundenen Telefon oder auf dem Bildschirm in Ihrem Fahrzeugsystem ein.  
 
-1. Tippen Sie auf dem Startbildschirm auf Apps.
+1. Tippen Sie vom Startbildschirm auf Apps.
 2. Tippen Sie auf Einstellungen.
 3. Suchen Sie nach Multi-Window und wählen Sie den Schalter.
 4. Kehren Sie zum Startbildschirm zurück.  

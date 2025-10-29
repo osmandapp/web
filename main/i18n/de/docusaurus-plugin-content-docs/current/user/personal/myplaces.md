@@ -1,8 +1,9 @@
 ---
-source-hash: 479b492a4c86a0646befd8187d85091dd523d1e848bf8bd1a5f10175948ab1bf
+source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
 sidebar_position: 6
 title:  Meine Orte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -44,11 +44,11 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Or
 
     Alle im Menü *Meine Orte* gespeicherten Daten können über Anwendungen auf Ihrem Gerät in einem speziellen `.osf`-Format verschoben werden. Dieser Prozess vereinfacht das Speichern und Übertragen von Daten zwischen Geräten und ermöglicht es Ihnen, sie mit anderen OsmAnd-Nutzern zu teilen.  
 
-    **Gehen Sie zum** Abschnitt *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* und wählen Sie, ob Sie Daten exportieren oder importieren möchten. Wenn Sie *Exportieren* wählen, müssen Sie die Gruppe *Meine Orte* erweitern und die erforderlichen Daten markieren.
+    **Gehen Sie zu** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* Abschnitt und wählen Sie, ob Sie Daten exportieren oder importieren möchten. Wenn Sie *Exportieren* wählen, müssen Sie die *Meine Orte*-Gruppe erweitern und die erforderlichen Daten markieren.
 
 - [***Karten & Ressourcen***](../personal/maps-resources.md):  
 
-    Der Menüpunkt *Karten & Ressourcen* im *Hauptmenü* der OsmAnd-Anwendung bietet Zugriff auf die Datenverwaltung aus dem Bereich *Meine Orte*. Der Tab [*Lokal*](../personal/maps-resources.md#local) zeigt Ihnen, wie viel Speicherplatz von allen vorhandenen OsmAnd-Daten auf Ihrem Gerät belegt ist, insbesondere der Bereich *Meine Orte*. Sie können ihn verwenden, um detaillierte Informationen über Ihre Daten zu erhalten und auf deren Verwaltung zuzugreifen. Der Abschnitt kann nur Elemente enthalten, für die Daten heruntergeladen wurden.  
+    Der Menüpunkt *Karten & Ressourcen* im *Hauptmenü* der OsmAnd-Anwendung bietet Zugriff auf die Datenverwaltung aus dem Bereich *Meine Orte*. Der Tab [*Lokal*](../personal/maps-resources.md#local-menu) zeigt Ihnen, wie viel Speicherplatz von allen vorhandenen OsmAnd-Daten auf Ihrem Gerät belegt ist, insbesondere der Bereich *Meine Orte*. Sie können ihn verwenden, um detaillierte Informationen über Ihre Daten zu erhalten und auf deren Verwaltung zuzugreifen. Der Abschnitt kann nur Elemente enthalten, für die Daten heruntergeladen wurden.  
 
     **Gehen Sie zu** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Überprüfen und verwalten Sie Ihre Daten.
 
@@ -76,7 +76,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Or
 
 1. ***Aktionsschaltflächen***. Die *Aktionsschaltflächen* am unteren Rand des Bildschirms "Meine Orte" ermöglichen es Ihnen, die Liste der Ordner mit Ihren Favoriten zu verwalten:  
 
-    - **Importieren** (Schaltfläche *Hinzufügen*) — Ermöglicht den Import von *favorite.gpx*-Dateien aus dem Speicher Ihres Geräts.
+    - **Importieren** (*Hinzufügen*-Schaltfläche) — Ermöglicht den Import von *favorite.gpx*-Dateien aus dem Speicher Ihres Geräts.
 
     - **Exportieren** — Speichern Sie Ihre Favoritenpunkte als *favorites.gpx*-Datei zur externen Verwendung oder als Backup.
 
@@ -84,35 +84,8 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Or
 
     - **Löschen** (*unter iOS befindet sich diese Option im Bearbeiten-Menü*) — Löscht Favoritenpunkte einzeln oder ausgewählte Favoritenordner und alle darin enthaltenen Punkte.
 
-2. ***Drei-Punkte-Menü*** (*Android*) und ***langes Tippen*** (*iOS*). Verwenden Sie das *Drei-Punkte-Menü* neben jedem Ordner oder tippen Sie lange auf den Ordner, um Favoritengruppen zu verwalten:  
+2. ***Drei-Punkte-Menü*** (*Android*) und ***langes Tippen*** (*iOS*). Verwenden Sie das *Drei-Punkte-Menü* neben jedem Ordner oder tippen Sie lange auf den Ordner, um Favoritengruppen zu verwalten. Weitere Details finden Sie unter [Aktionen für Favoritengruppen](../personal/favorites.md#favorite-group-actions).  
 
-    <Tabs groupId="operating-systems" queryString="current-os">
-
-    <TabItem value="android" label="Android">
-
-    ![Drei-Punkte-Menü](@site/static/img/personal/favorites_three-dot_menu.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favoritenmenü iOS](@site/static/img/personal/favorites_long-tap_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
-
-    - **<Translate android="true" ids="change_default_appearance"/>** — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** oder **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
-
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** oder **Von Kartenmarkierungen entfernen** (*nur Android*) — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Löscht den ausgewählten Favoritenordner und alle darin enthaltenen Punkte dauerhaft.
 
 Detailliertere Anweisungen finden Sie im Artikel [Favoriten](../personal/favorites.md).
 

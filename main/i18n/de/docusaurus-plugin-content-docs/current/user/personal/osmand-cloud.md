@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,7 +17,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
 :::tip subscribe  
@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd Cloud ist ein unabhängiger Cloud-Speicherdienst und ist *nicht* an eine bestimmte Android-, iOS- oder Web-Plattformversion gebunden.  
 :::  
 
-OsmAnd Cloud ermöglicht es Ihnen, **persönliche Einstellungen und Anwendungsdaten zu speichern und über mehrere Geräte hinweg zu synchronisieren**. Sie können auf diese Daten auf jedem Gerät zugreifen, auf dem OsmAnd installiert ist, einschließlich der Desktop-App. Alle in der App vorgenommenen Änderungen können **plattformübergreifend synchronisiert** werden, was einen nahtlosen Zugriff auf Ihre gespeicherten Daten gewährleistet.
+OsmAnd Cloud ermöglicht es Ihnen, **persönliche Einstellungen und Anwendungsdaten zu speichern und zu synchronisieren** über mehrere Geräte hinweg. Sie können auf diese Daten auf jedem Gerät zugreifen, auf dem OsmAnd installiert ist, einschließlich der Desktop-App. Alle in der App vorgenommenen Änderungen können **plattformübergreifend synchronisiert** werden, was einen nahtlosen Zugriff auf Ihre gespeicherten Daten gewährleistet.
 
 
 ## Plattformübergreifend {#cross-platform}
@@ -311,6 +311,8 @@ In diesem Menü können Sie auswählen, welche Daten und Ordner in die Cloud hoc
 
 Alle [Karten](../start-with/download-maps.md) werden auf dem Gerät gespeichert, auf dem sie zuvor heruntergeladen wurden. OsmAnd Cloud speichert nur Informationen darüber, welche Karten Sie haben und das Datum ihrer letzten Änderung.
 
+Das Deaktivieren des Backups für einen bestimmten Datentyp stoppt einfach die Synchronisation mit der Cloud. Ihre bestehenden Daten bleiben gespeichert und können bei Bedarf später erneut gesichert werden.
+
 
 ### Speicher verwalten {#manage-storage}
 
@@ -334,7 +336,9 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>  
 
-Der Menüabschnitt **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) zeigt Informationen darüber an, wie viel der 3,15 Gigabyte Speicher in *Einstellungen*, *Meine Orte* und *Ressourcen* belegt ist. Sie können Änderungen an einzelnen Datentypen aus OsmAnd Cloud löschen, aber in diesem Fall kann die Aktion nicht rückgängig gemacht werden.  
+Der Menüabschnitt **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) zeigt Informationen darüber an, wie viel der 3,15 Gigabyte Speicher in *Einstellungen*, *Meine Orte* und *Ressourcen* belegt ist. Sie können die Speichergröße jedes Datentyps anzeigen und sie bei Bedarf aus OsmAnd Cloud löschen. 
+
+Das Löschen von Daten aus der Cloud beeinflusst nicht deren Backup-Status oder lokale Kopien auf Ihrem Gerät. Alle entfernten Elemente bleiben 30 Tage lang im Papierkorb verfügbar und können in diesem Zeitraum wiederhergestellt werden.  
 
 
 ### Konto {#account}

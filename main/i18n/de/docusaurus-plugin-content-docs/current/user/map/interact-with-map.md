@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -33,7 +33,7 @@ Gesten sind unerlässlich, um einfach und intuitiv auf der Karte zu navigieren.
 | **Drehen** | Tippen Sie mit **zwei** Fingern auf die Karte und drehen Sie Ihre Finger in einer kreisförmigen Bewegung. |
 | **Neigen (3D)** | Tippen Sie mit **zwei** Fingern und bewegen Sie sie nach oben oder unten. <br/> Nur mit der [Karten-Rendering-Engine](../personal/global-settings.md#map-rendering-engine) Version 2 (OpenGL) verfügbar. |
 
-Wisch-Animationen können in den Einstellungen mit einer [speziellen Option](#no-animations) deaktiviert werden.
+Wisch-Animationen können in den Einstellungen mit einer [speziellen Option](#remove-animations) deaktiviert werden.
 
 
 ## Mein Standort und Zoom {#my-location-and-zoom}
@@ -198,7 +198,7 @@ Klare Bildschirmnachrichten führen Sie beim Sperren oder Entsperren des Bildsch
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Glättet die Drehung der Karte mit einer langsameren Rotationsanimation, obwohl dies eine leichte Verzögerung von nicht mehr als 1 Sekunde mit sich bringt.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Keine Animationen {#no-animations}
+### Animationen entfernen {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -271,12 +271,12 @@ Um auf die Einstellungen eines externen Eingabegeräts zuzugreifen, müssen Sie 
 |**&#8594;**| *Tastatur* | Verschieben - Karte nach rechts |
 |**&#43;** **=**| *Tastatur* | Karte - [Vergrößern](#my-location-and-zoom) |
 |**&#8722;**| *Tastatur* | Karte - [Verkleinern](#my-location-and-zoom) |
-|**Zurück-Taste**| *Tastatur* | Navigieren – Vorheriger Bildschirm |
+|**Zurück drücken**| *Tastatur* | Navigieren – Vorheriger Bildschirm |
 |**&#8595;**| *Wunderlinq* | Karte - [Verkleinern](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq* | Karte - [Vergrößern](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq* | WunderLINQ Datagrid öffnen |
-| **M** <br/> (*altes Android*) | *Tastatur* | Anzeigen / Ausblenden - [Seitenmenü](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick-Druck** <br/> (*altes Android*) | *Tastatur* | Verschieben - [Zu meinem Standort](#my-location-and-zoom) |
+| **M** <br/> (*Legacy Android*) | *Tastatur* | Anzeigen / Ausblenden - [Seitenmenü](../start-with/main-menu.md#main-menu-side-menu) |
+| **Joystick-Druck** <br/> (*Legacy Android*) | *Tastatur* | Verschieben - [Zu meinem Standort](#my-location-and-zoom) |
 | **Medientaste** <br/> (*nur Android*)| *Tastatur* | Anzeigen / Ausblenden - [AV-Notizen](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*nur Android*)| *Parrot* | Karte - [Verkleinern](#my-location-and-zoom) |
 | **&#8594;** <br/> (*nur Android*) | *Parrot* | Karte - [Vergrößern](#my-location-and-zoom) |

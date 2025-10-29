@@ -1,8 +1,9 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
 sidebar_position: 2
 title:  iOS-Käufe
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## OsmAnd installieren (iOS) {#install-osmand-ios}
@@ -44,9 +44,9 @@ Sie können die App über diesen Link herunterladen - [OsmAnd Maps im Apple App 
 
 1. **Maps+** ist ein *Upgrade* für die kostenlose Version von OsmAnd, das die meisten Funktionen freischaltet.
 
-2. **OsmAnd Pro**, **OsmAnd+** und **Maps+** sind *plattformübergreifende* Käufe. Das bedeutet, Sie können es in einem Store kaufen (z. B. *Google Play, Huawei AppGallery, AppStore* und *osmand.net*) und in einem anderen wiederherstellen, indem Sie [Ihren Kauf mit dem OsmAnd Cloud-Konto verknüpfen](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** und **Maps+** sind *plattformübergreifende* Käufe. Das bedeutet, Sie können es in einem Store kaufen (z. B. *Google Play, Huawei AppGallery, AppStore* und *osmand.net*) und in einem anderen wiederherstellen, indem Sie [Ihren Kauf mit dem OsmAnd Cloud-Konto verknüpfen](../personal/osmand-cloud.md#cross-platform).
 
-3. Sie können **Maps+** zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzufügen, um den Kauf mit Familienmitgliedern zu teilen.
+3. Sie können **Maps+** zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzufügen, um den Kauf mit Familienmitgliedern zu teilen.  
 
 
 ## Preise {#prices}
@@ -55,23 +55,23 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Kostenlos   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -92,7 +92,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Alle Pro-Funktionen](#pro-features) | **-** | **-** | ✔ |
 | [Karten-Downloads](../start-with/download-maps.md) |  <details><summary>**5 Karten-Downloads** <br /> (Kartenaktualisierung zählt als Download):</summary> <br /> - Karten-Download oder -Update bedeutet nur das Herunterladen/Aktualisieren einer Länder- (Regionen-) Karte.<br /> - **Weltübersichtskarte**, **Welt-Höhenkorrektur**, **Kartenschriftarten** und **Sprachansagen** werden nicht als 5 Download-Möglichkeiten gezählt.</details> | ✔ | ✔ |
-| [Monatliche Kartenupdates](../personal/maps-resources.md#updates) |  <details><summary>**Einmal im Monat** <br /> (mit 2 Tagen Verzögerung):</summary> * beschränkt auf 5 Downloads (Kartenaktualisierung zählt als Download) </details> |  ✔ | ✔ |
+| [Monatliche Kartenupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Einmal im Monat** <br /> (mit 2 Tagen Verzögerung):</summary> * beschränkt auf 5 Downloads (Kartenaktualisierung zählt als Download) </details> |  ✔ | ✔ |
 | [Stündliche Kartenupdates](../personal/maps-resources.md#live-updates)<br/>Live-Updates (1 Stunde Verzögerung) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -147,7 +147,7 @@ Ein einfacher Weg, den benötigten Plan auszuwählen und zu kaufen, ist über da
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Weiter mit OsmAnd Pro*
 
-oder  
+or  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Weiter mit OsmAnd Pro*
 

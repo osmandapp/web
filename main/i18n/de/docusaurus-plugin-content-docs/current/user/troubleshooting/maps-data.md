@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Karten & Daten
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Karten {#maps}
@@ -64,7 +64,7 @@ Ein korrekter Pfad wird OsmAnd nicht mit Schreibberechtigungsfehlern konfrontier
 
 ### Löschen von Kartendaten nach dem App-Update (wenn „Multiuser Storage 1“ ausgewählt ist) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-In der Android-Version von OsmAnd kann die Auswahl von *Multiuser Storage 1* als Speicherort dazu führen, dass alle [lokalen Karten](../personal/maps-resources.md#local) gelöscht werden, wenn die App automatisch aktualisiert wird, z. B. von Version 4.1.9 auf 4.1.10, 4.1.11 oder später (**Android 11, 12**). Dieses Problem ist auf [Github](https://github.com/osmandapp/OsmAnd/issues/13404) dokumentiert.
+In der Android-Version von OsmAnd kann die Auswahl von *Multiuser Storage 1* als Speicherort dazu führen, dass alle [lokalen Karten](../personal/maps-resources.md#local-menu) gelöscht werden, wenn die App automatisch aktualisiert wird, z. B. von Version 4.1.9 auf 4.1.10, 4.1.11 oder später (**Android 11, 12**). Dieses Problem ist auf [Github](https://github.com/osmandapp/OsmAnd/issues/13404) dokumentiert.
 
 Um den Verlust Ihrer Kartendaten bei Updates zu vermeiden, ziehen Sie diese Lösungen in Betracht:
 
@@ -131,7 +131,7 @@ Ja, Höhenlinien können in Fuß anstelle von Metern angezeigt werden. Bevor Sie
 
 ## Suche {#search}
 
-### Strukturierte Adresssuche (Stadt → Straße → Haus) findet das Haus nicht {#structured-city--street--house-address-search-doesnt-find-the-house}
+### Strukturierte Adresssuche (Stadt *→* Straße *→* Haus) findet das Haus nicht {#structured-city--street--house-address-search-doesnt-find-the-house}
 
 Wenn Sie versuchen, einen Ort mit der Struktur *Stadt → Straße → Hausnummer* zu suchen und keine Ergebnisse zurückgegeben werden, beachten Sie die folgenden Tipps und möglichen Ursachen:
 
@@ -154,11 +154,11 @@ Wenn Sie versuchen, einen Ort mit der Struktur *Stadt → Straße → Hausnummer
 
 Sie können Notizen hinterlassen und Orte auf der Karte in verschiedenen Formen markieren, die jeweils unterschiedlichen Zwecken dienen:
 
-- *[Favoriten](../personal/favorites.md)*. Dies sind permanente Punkte auf der Karte, denen Sie Beschreibungen hinzufügen können. Um einen Favoriten zu erstellen, machen Sie ein *langes Tippen → Hinzufügen*. Favoriten eignen sich hervorragend, um Orte zu markieren, die Sie häufig besuchen oder für zukünftige Referenzen speichern möchten.
+- *[Favoriten](../personal/favorites.md)*. Dies sind permanente Punkte auf der Karte, denen Sie Beschreibungen hinzufügen können. Um einen Favoriten zu erstellen, machen Sie ein *langes Tippen → Tippen Sie auf Hinzufügen*. Favoriten eignen sich hervorragend, um Orte zu markieren, die Sie häufig besuchen oder für zukünftige Referenzen speichern möchten.
 
-- *[Marker](../personal/markers.md)*. Marker sind temporäre Punkte, die oft zur Navigation oder Planung verwendet werden. Sie können die Entfernung von Ihrem aktuellen Standort oder einem anderen Punkt anzeigen und schnell entfernt werden, wenn sie nicht mehr benötigt werden. Um einen Marker hinzuzufügen, machen Sie ein *langes Tippen → Marker*.
+- *[Marker](../personal/markers.md)*. Marker sind temporäre Punkte, die oft zur Navigation oder Planung verwendet werden. Sie können die Entfernung von Ihrem aktuellen Standort oder einem anderen Punkt anzeigen und schnell entfernt werden, wenn sie nicht mehr benötigt werden. Um einen Marker hinzuzufügen, machen Sie ein *langes Tippen → Tippen Sie auf Marker*.
 
-- *[Wegpunkte](../map/tracks/index.md#types-of-tracks)*. Wegpunkte werden entlang der von Ihnen erstellten Routen platziert und helfen Ihnen, bestimmte Haltepunkte oder Orte auf Ihrer Reise zu markieren. Sie können diesen Punkten auch Beschreibungen hinzufügen. Um einen Wegpunkt hinzuzufügen, machen Sie ein *langes Tippen auf die Karte → Route → als Zwischenziel hinzufügen*.
+- *[Wegpunkte](../map/tracks/index.md#types-of-tracks)*. Wegpunkte werden entlang der von Ihnen erstellten Routen platziert und helfen Ihnen, bestimmte Haltepunkte oder Orte auf Ihrer Reise zu markieren. Sie können diesen Punkten auch Beschreibungen hinzufügen. Um einen Wegpunkt hinzuzufügen, machen Sie ein *langes Tippen auf die Karte → Routen → als Zwischenwegpunkt hinzufügen*.
 
 - *[Audio-/Videonotizen](../plugins/audio-video-notes.md)*. Mit diesen Notizen können Sie Audio-, Video- oder Fotodateien an bestimmten Orten auf der Karte anhängen. Um dies zu aktivieren, aktivieren Sie das Audio-/Videonotizen-Plugin im *OsmAnd-Menü → Plugins*. Um eine hinzuzufügen, machen Sie ein *langes Tippen → Aktionen → gewünschte Datei zum Anhängen auswählen*.
 

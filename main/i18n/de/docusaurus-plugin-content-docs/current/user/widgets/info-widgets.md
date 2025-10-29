@@ -1,9 +1,9 @@
 ---
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
-
+source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
 sidebar_position: 3
-title:  Informations-Widgets
+title: Informations-Widgets
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,7 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Übersicht {#overview}
 
 Informations-Widgets bieten Ihnen schnellen Zugriff auf wichtige Daten. Dies können Daten zur Geschwindigkeit, zum Wetter, zur Parkposition, Daten von externen Sensoren und vieles mehr sein. Widgets können nach Ihren spezifischen Anforderungen konfiguriert werden, sodass sie auf dem Anwendungsbildschirm sichtbar sind oder bei Bedarf deaktiviert werden können.
@@ -27,7 +26,7 @@ Informations-Widgets bieten Ihnen schnellen Zugriff auf wichtige Daten. Dies kö
 
 ## Höhen-Widgets   {#altitude-widgets}
 
-Höhen-Widgets zeigen die Höhe des aktuellen geografischen Standorts über dem Meeresspiegel und die Höhe des Kartenzentrums an.
+Höhen-Widgets zeigen die Höhe über dem Meeresspiegel des aktuellen geografischen Standorts und die Höhe des Kartenzentrums an.  
 
 
 ### Höhe: Aktueller Standort   {#altitude-current-location}
@@ -36,7 +35,7 @@ Höhen-Widgets zeigen die Höhe des aktuellen geografischen Standorts über dem 
 Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses Problem zu lösen, laden Sie eine Karte mit Höhenkorrektur herunter.
 
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads).
+- Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -218,7 +217,7 @@ Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-D
 
 </Tabs>  
 
-Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*-Widgets liefern wertvolle Informationen zum Gleitverhältnis, um fundierte Entscheidungen bei der Planung von Flugrouten zu treffen. Das *Gleitverhältnis*-Widget in OsmAnd hilft Ihnen, die Effizienz Ihres Sink- oder Steigflugs zu bewerten, wenn Sie zu einem bestimmten Ort navigieren (Position eines [Markers](../personal/markers.md) auf der Karte). Es berechnet das Gleitverhältnis als das Verhältnis der Entfernung zur Höhendifferenz zwischen Ihrer aktuellen Position und Ihrem beabsichtigten Ziel. Mehr dazu können Sie [hier](https://de.wikipedia.org/wiki/Gleitzahl) lesen.
+Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*-Widgets liefern wertvolle Informationen zum Gleitverhältnis, um fundierte Entscheidungen bei der Planung von Flugrouten zu treffen. Das *Gleitverhältnis*-Widget in OsmAnd hilft Ihnen, die Effizienz Ihres Sink- oder Steigflugs zu bewerten, wenn Sie zu einem bestimmten Ort navigieren (Position eines [Markers](../personal/markers.md) auf der Karte). Es berechnet das Gleitverhältnis als das Verhältnis der Entfernung zur Höhendifferenz zwischen Ihrer aktuellen Position und Ihrem beabsichtigten Ziel. Mehr dazu können Sie [hier](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio) lesen.
 
 
 **Verwendung der Widgets:**
@@ -262,7 +261,7 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 ### Durchschnittliches Gleitverhältnis {#average-glide-ratio}
 
 - **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
-- **Durchschnittliche Vertikalgeschwindigkeit** gibt die Rate an, mit der ein Objekt über einen bestimmten Zeitraum auf- oder absteigt. Nur der erste und letzte Punkt des Zeitintervalls werden zur Bewertung herangezogen. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen. Sie sollten den [Kartenmarker](../personal/markers.md) als Zielpunkt verwenden.
+- **Durchschnittliche Vertikalgeschwindigkeit** gibt die Rate an, mit der ein Objekt über eine Weile auf- oder absteigt. Nur der erste und letzte Punkt des Zeitintervalls werden zur Bewertung herangezogen. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen. Sie sollten den [Kartenmarker](../personal/markers.md) als Zielpunkt verwenden.
 
 | | |
 |:------------|:------------|
@@ -502,7 +501,7 @@ Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren 
 
 <TabItem value="ios" label="iOS">
 
-![Reiseaufzeichnungs-Widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widgets für externe Sensoren iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -557,7 +556,7 @@ Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das
 </Tabs>
 
 
-Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*13 Metriken*): **Ansaugtemperatur**,&nbsp; **Umgebungstemperatur**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Motorlaufzeit**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kraftstoffdruck**,&nbsp; **Kraftstoffverbrauch**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Batteriestand**,&nbsp; **Fahrzeuggeschwindigkeit** (*kostenlos*), und **Drosselklappenstellung**.  
+Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*14 Metriken*): **Ansaugtemperatur**,&nbsp; **Umgebungstemperatur**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Motorlaufzeit**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kraftstoffdruck**,&nbsp; **Kraftstoffverbrauch**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Batteriestand**,&nbsp; **Adapter-Spannung**,&nbsp; **Fahrzeuggeschwindigkeit** (*kostenlos*), und **Drosselklappenstellung**.  
 
 - Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, [aktivieren](../plugins/index.md#enable--disable) Sie das **Fahrzeugmetrik-Plugin**.
 - Sie können Widgets hinzufügen, auch wenn kein OBD-II-Scanner angeschlossen ist.
@@ -599,7 +598,7 @@ Wetter-Widgets zeigen aktuelle Wetterinformationen für einen zentralen Punkt au
 - **Temperatur**. <Translate android="true" ids="temperature_widget_desc"/>
 - **Luftdruck**. <Translate android="true" ids="air_pressure_widget_desc"/>
 - **Wind**. <Translate android="true" ids="wind_widget_desc"/>
-- **Wolken**. <Translate android="true" ids="clouds_widget_desc"/>
+- **Wolke**. <Translate android="true" ids="clouds_widget_desc"/>
 - **Niederschlag**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |

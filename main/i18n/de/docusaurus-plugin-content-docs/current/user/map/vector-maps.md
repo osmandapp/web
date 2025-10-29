@@ -1,8 +1,9 @@
 ---
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
+source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
 sidebar_position: 5
 title:  Vektorkarten (Kartenstile)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
 Vektorkarten sind als Standard-Kartendatenquelle für OsmAnd vorgesehen, daher **müssen Sie sie auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine große Anzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.
+
+Vektorkarten stellen räumliche Daten dar, wie Straßen, Gebäude, Punkte und Polygone, unter Verwendung mathematischer Geometrie, die in binärem Format gespeichert ist. Jedes Element (Knoten, Linie oder Polygon) wird durch Koordinaten definiert und dynamisch gerendert entsprechend dem Zoomniveau und Kartenstil.
+
+Da Vektordaten nicht als feste Bilder gespeichert sind, kann ihr Erscheinungsbild, einschließlich Farbe, Linienbreite, Transparenz oder Muster, leicht geändert werden. Dieser Ansatz ermöglicht effizientes Rendering, geringen Speicherverbrauch und reibungsloses Skalieren auf jedem Zoomniveau ohne Qualitätsverlust.
+
+:::info Hinweis
+Sehr kleine Polygone können während der Kartendatengenerierung vereinfacht oder verzerrt werden. Objekte mit einer Fläche kleiner als etwa ein Quadratmeter werden möglicherweise nicht angezeigt. Für eine korrekte Visualisierung sollten kleine Merkmale als einzelne Knoten statt als Polygone kartiert werden.
+:::
 
 Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard-Kartenstil angezeigt werden, wie z. B. *Höhenlinien*-Informationen. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die gewünschten Informationen darzustellen.
 
@@ -69,7 +77,13 @@ Die Stile UniRS und LightRS sind Autorenstile, die die grundlegenden Karteninfor
 
 ![Nautischer Kartenstil](@site/static/img/map/map-style-nautical.png)
 
-Dies ist ein Stil für die nautische Navigation, der Bojen, Leuchttürme, Flussrouten, Seewege, Seezeichen, Häfen, nautische Marken und Tiefenlinien darstellt. Lesen Sie mehr im Artikel [Nautische Kartenansicht](../plugins/nautical-charts.md).
+Dies ist ein Stil für die nautische Navigation, der Bojen, Leuchttürme, Flussrouten, Seewege, Seezeichen, Häfen, nautische Marken und Tiefenlinien darstellt. Lesen Sie mehr im Abschnitt [Nautischer Kartenstil](../plugins/nautical-charts.md#nautical-map-style).
+
+### Marine {#marine}
+
+![Marine-Kartenstil](@site/static/img/map/map-style-marine.png)
+
+Dies ist ein fortschrittlicher nautischer Kartenstil mit Lichtsektoren, vollständigen Leuchtturmcharakteristiken und anderen detaillierten maritimen Merkmalen für realistische und genaue marine Navigation. Weitere Details finden Sie im Abschnitt [Marine-Kartenstil](../plugins/nautical-charts.md#marine-map-style).
 
 ### Winter und Ski {#winter-and-ski}
 
@@ -153,7 +167,7 @@ Höhenlinien werden in OsmAnd als Höhenlinien auf Vektorkarten angezeigt. Um si
 Höhenlinien sind mit allen Kartenstilen kompatibel und können über das [Höhenlinien-Menü](../plugins/topography.md#contour-lines) angepasst werden. Weitere Details finden Sie im Artikel zum [Topographie-Plugin](../plugins/topography.md).
 
 
-## * Meerestiefe {#-nautical-depth}
+## * Nautische Tiefe {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -161,7 +175,7 @@ Höhenlinien sind mit allen Kartenstilen kompatibel und können über das [Höhe
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
-![nautische_tiefenbreite_and](@site/static/img/map/nautical_depth_width_and.png) ![nautische_tiefenfarbe_and](@site/static/img/map/nautical_depth_color_and.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -169,13 +183,13 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*
 
-![nautische_tiefenbreite_and](@site/static/img/map/nautical_depth_width_ios.png) ![nautische_tiefenfarbe_and](@site/static/img/map/nautical_depth_color_ios.png)
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png) ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tiefenlinien für die Seefahrt stellen Bereiche gleicher Tiefe dar und helfen, Veränderungen der Unterwassertopographie zu visualisieren. Diese Funktion ist in allen Kartenstilen und -modi verfügbar und kann mit oder ohne aktiviertem Nautische-Kartenansicht-Plugin angepasst werden.
+Nautische Tiefenlinien stellen Bereiche gleicher Tiefe dar und helfen, Veränderungen der Unterwassertopographie zu visualisieren. Diese Funktion ist in allen Kartenstilen und -modi verfügbar und kann mit oder ohne aktiviertem Nautische-Kartenansicht-Plugin angepasst werden.
 
 Weitere Details zur nautischen Kartenansicht finden Sie auf der [Seite des Nautik-Karten-Plugins](../plugins/nautical-charts).
 
@@ -188,7 +202,7 @@ Weitere Details zur nautischen Kartenansicht finden Sie auf der [Seite des Nauti
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![grenzen-anzeigen-andr](@site/static/img/map/show-borders-andr.png)
+![show-borders-andr](@site/static/img/map/show-borders-andr.png)
 
 </TabItem>
 
@@ -196,7 +210,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,show_b
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![grenzen-anzeigen-ios](@site/static/img/map/show-borders-ios.png)
+![show-borders-ios](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -229,25 +243,33 @@ Gehe zu: *Menü → Karte konfigurieren → Anzeigen → Koordinatengitter*
 
 <TabItem value="ios" label="iOS">
 
-![grenzen-anzeigen-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. Sie können ***Zoomstufen-Einstellungen:*** wählen, um zwischen 2 - 22 anzuzeigen, ***Beschriftungsposition*** - **Ränder**/**Mitte** und ***Gitterfarbe*** separat für den Tag-/Nachtmodus.
+Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
+
+Sie können die folgenden Optionen konfigurieren:
+- **Zoomstufen:** Stellen Sie die minimale und maximale Zoomstufe (2 - 22) ein, bei der das Gitter sichtbar ist.
+- **Beschriftungsposition:** Wählen Sie zwischen *Ränder* (Standard) oder *Mitte* für Gitterbeschriftungen.
+- **Gitterfarbe:** Getrennt für Tag-/Nachtmodus verfügbar. Die Anpassung der Gitterfarbe ist eine kostenpflichtige Funktion.
+- **Koordinatenformat:** Wählen Sie aus mehreren verfügbaren Formaten (siehe Liste unten).
 
 
 ***Verfügbare Koordinatenformate:***
 
-- **WGS84** (EPSG:4326) - **DD°MM′SS″** (Grad, Minuten, Sekunden)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Dezimalgrad - WGS84 Standardformat)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grad, Dezimalminuten)
-- **UTM** (EPSG:6387, Universale Transversale Mercator-Projektion - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind.
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grade, Minuten, Sekunden)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Dezimalgrade - WGS84-Standardformat)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grade, Dezimalminuten)
+- **UTM** (EPSG:6387, Universale Transversale Mercator - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind
 - **MGRS** (Military Grid Reference System)
 
-Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat.
+Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat, aber Sie können es direkt in diesem Menü ändern.
+
+[Schnelle Aktion](../widgets/quick-action.md#overview): Sie können auch einen schnellen Schalter *Koordinatengitter anzeigen/ausblenden* zur [Karte konfigurieren](../widgets/quick-action.md#configure-map)-Gruppe für schnellen Zugriff hinzufügen.
 
 ## Kartenstil konfigurieren {#configure-map-style}
 
@@ -546,7 +568,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 - **Lokale Namen**
     ![Kartensprache lokale Namen](@site/static/img/map/map-language-local-names_2.png)
 
-- **Bevorzugte Sprache** (Ukrainisch)
+- **Bevorzugte Sprache** (ukrainisch)
     ![Kartensprache Ukrainisch](@site/static/img/map/map-language-urkanian_2.png)
 
 - **Lateinische Namen verwenden, falls fehlend**
@@ -562,7 +584,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_str
 - **Lokale Namen**
     ![Kartensprache lokale Namen](@site/static/img/map/map-language-local-names_2.png)
 
-- **Bevorzugte Sprache** (Ukrainisch)
+- **Bevorzugte Sprache** (ukrainisch)
     ![Kartensprache Ukrainisch](@site/static/img/map/map-language-urkanian_2.png)
 
 - **Lokale Namen anzeigen** (fügt eine 2. Beschriftung hinzu, wenn der lokale Name anders ist)
