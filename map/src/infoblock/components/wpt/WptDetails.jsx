@@ -400,33 +400,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         };
     }
 
-    function addFirstPhoto(wpt) {
-        const mainPhotoName = wpt.firstPhoto;
-        if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
-            return wpt;
-        }
-        const mainPhoto = wpt.photos.features?.find((photo) => photo.properties.imageTitle.endsWith(mainPhotoName));
-        if (mainPhoto) {
-            mainPhoto.properties.rowNum = 0;
-            wpt.photos.features.unshift(mainPhoto);
-        } else {
-            const mainFeature = {
-                type: 'Feature',
-                properties: {
-                    imageTitle: mainPhotoName,
-                    mediaId: 0,
-                    rowNum: 0,
-                },
-                geometry: {
-                    type: 'Point',
-                    coordinates: [wpt.latlon.lon, wpt.latlon.lat],
-                },
-            };
-            wpt.photos.features.unshift(mainFeature);
-        }
-        return wpt;
-    }
-
     function objWithPhotos(obj) {
         return obj?.type?.isPoi || obj?.type?.isSearch || obj?.type?.isWikiPoi;
     }
@@ -450,11 +423,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         getPhotos(wpt).then((photosData) => {
             setWpt((prev) => {
                 if (prev?.id !== wpt?.id) return prev;
-                let newWpt = { ...prev, photos: photosData || [] };
-                if (prev?.type?.isWikiPoi) {
-                    newWpt = addFirstPhoto(newWpt);
-                }
-                return newWpt;
+                return { ...prev, photos: photosData || [] };
             });
         });
     }, [wpt?.id]);
