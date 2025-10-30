@@ -82,7 +82,7 @@
   "length": "Długość",
   "exclude": "Wyklucz",
   "processing_track_analyzer": "Przetwarzanie danych śladu...",
-  "short_min": "min",
+  "short_min": "m",
   "track_analyzer_empty_result_desc": "Żaden z wybranych śladów nie przechodzi przez wybrane punkty.",
   "track_analyzer_empty_result_title": "Brak przechodzących śladów",
   "purchase_now": "Kup teraz",
@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "Zakup jednorazowy",
   "label_pricing": "Cennik",
   "subtitle_choose_your_ideal_osmand_plan": "Wybierz swój idealny plan OsmAnd: zacznij za darmo, wybierz elastyczną subskrypcję lub dokonaj jednorazowego zakupu",
-  "notice_fastspring_purchase_info": "Zakupy online są realizowane przez FastSpring, autoryzowanego sprzedawcę. Subskrypcje odnawiają się automatycznie, chyba że zostaną anulowane przed datą odnowienia. Możesz anulować lub odnowić subskrypcję na portalu zarządzania kontem FastSpring.",
+  "notice_fastspring_purchase_info": "Zakupy online są realizowane przez FastSpring, autoryzowanego sprzedawcę. Subskrypcje odnawiają się automatycznie, chyba że zostaną anulowane przed datą odnowienia. Możesz anulować lub odnowić subskrypcję na <portalLink>portalu zarządzania kontem FastSpring</portalLink>.",
   "feature_offline_navigation_desc": "Wskazówki głosowe krok po kroku, ostrzeżenia o ruchu drogowym i wskazówki dotyczące pasów ruchu, wszystko dostępne offline",
   "feature_navigation_by_planned_tracks": "Nawigacja po zaplanowanych trasach",
   "feature_navigation_by_planned_tracks_desc": "Podążaj za swoimi śladami GPX z wskazówkami krok po kroku lub dopasuj do dróg, aby uzyskać szczegółową nawigację i informacje o drogach",
@@ -192,12 +192,18 @@
   "weather_current": "Aktualna lokalizacja",
   "weather_generated": "Pogoda wygenerowana",
   "weather_source": "Źródło",
-  "weather:map_layers": "Warstwy mapy",
   "terrain_color_scheme": "Schemat kolorów",
   "terrain_desc": "Wybierz jedną z opcji wizualizacji: Wysokość, Cieniowanie wzgórz, Nachylenie.",
   "terrain_visibility": "Widoczność",
   "dev_issues": "Problemy",
+  "plan_route": "Planuj trasę",
+  "create_track": "Utwórz ślad",
+  "import_track": "Importuj ślad",
+  "download_track": "Pobierz ślad",
+  "download_track_desc": "Możesz pobrać ślad z pełnymi danymi, w tym instrukcjami nawigacji, lub uproszczoną wersję odpowiednią do użycia z innymi aplikacjami.",
+  "download_track_full": "Pełne dane śladu",
+  "download_track_simplified": "Uproszczony ślad",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }
