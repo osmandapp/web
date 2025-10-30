@@ -12,15 +12,15 @@ import AppContext, {
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
+import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager, { downloadGpx, isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import RouteProfileSettings from '../../menu/navigation/RouteProfileSettings';
-import { downloadCurrentGpx } from '../../infoblock/components/tabs/GeneralInfoTab';
 import LoginContext from '../../context/LoginContext';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
@@ -29,6 +29,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
 
     const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
@@ -260,13 +261,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                         variant="contained"
                                         type="button"
                                         disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                        onClick={() => {
-                                            if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
-                                                downloadCurrentGpx(ctx);
-                                            } else {
-                                                downloadGpx(ctx.selectedGpxFile);
-                                            }
-                                        }}
+                                        onClick={() => setOpenDownloadDialog(true)}
                                     >
                                         <Download fontSize="small" />
                                     </IconButton>
@@ -318,6 +313,9 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                 )}
                 {openRoutingSettings && (
                     <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenRoutingSettings} />
+                )}
+                {openDownloadDialog && (
+                    <DownloadTrackDialog dialogOpen={openDownloadDialog} setDialogOpen={setOpenDownloadDialog} />
                 )}
             </div>
         )

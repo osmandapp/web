@@ -7,8 +7,9 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import TracksManager, { DEFAULT_GROUP_NAME, downloadGpx, GPX_FILE_EXT } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, GPX_FILE_EXT } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
+import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
 import AppContext from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +22,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
+    const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
     const { t } = useTranslation();
 
     const sharedFile = smartf?.type === SHARE_TYPE;
@@ -107,13 +109,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                             </ListItemText>
                         </MenuItem>
                     )}
-                    <MenuItem
-                        className={styles.action}
-                        onClick={() => {
-                            downloadGpx(track, sharedFile).then();
-                            setOpenActions(false);
-                        }}
-                    >
+                    <MenuItem className={styles.action} onClick={() => setOpenDownloadDialog(true)}>
                         <ListItemIcon className={styles.iconAction}>
                             <DownloadIcon />
                         </ListItemIcon>
@@ -151,6 +147,15 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
             )}
             {openRenameDialog && (
                 <RenameDialog setOpenDialog={setOpenRenameDialog} track={track} setOpenActions={setOpenActions} />
+            )}
+            {openDownloadDialog && (
+                <DownloadTrackDialog
+                    dialogOpen={openDownloadDialog}
+                    setDialogOpen={setOpenDownloadDialog}
+                    track={track}
+                    sharedFile={sharedFile}
+                    setOpenActions={setOpenActions}
+                />
             )}
         </>
     );
