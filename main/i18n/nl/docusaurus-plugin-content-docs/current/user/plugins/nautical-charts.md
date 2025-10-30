@@ -1,8 +1,9 @@
 ---
-source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
+source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
 sidebar_position: 7
 title:  Zeekaartweergave
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -19,7 +20,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 De Zeekaartweergave-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.
 :::
 
-Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en u informeert over populaire routes, obstakels in uw vaarwater, de dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten.
+Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en u informeert over populaire routes, obstakels in uw vaarwater, dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten.
 
 Een zeekaart is een zeer gedetailleerde topografische kaart die schippers helpt een vaartuig op een gekozen koers op het water te navigeren. Het is vergelijkbaar met een wegenkaart voor wie met de auto reist. Vaak wordt het om historische redenen een *'Chart'* genoemd, het is een gedetailleerde grafische weergave van de oceanen, zeeën, kustgebieden en rivieren.
 
@@ -41,35 +42,38 @@ Zeekaarten zijn belangrijk voor professionele zeilers en amateurs die een boot h
 
 </Tabs>
 
+
 ### Waarom het zeekaartthema belangrijk is {#why-the-nautical-theme-matters}
 
 Alle professionele zeilers zijn verplicht om officiële zeekaarten aan boord van hun schepen te hebben. Deze kaarten worden uitgegeven door geautoriseerde instanties en zijn vrij duur. De instanties investeren veel in het up-to-date houden van de kaarten. Ze geven regelmatig updates uit voor de kaarten, maar omdat het tijd kost om de informatie te verifiëren en de updates te verwerken, zijn zeekaarten nooit volledig up-to-date.
 
 Gebaseerd op [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap)-gegevens, worden OsmAnd-zeekaarten gemaakt door de mensen die ze gebruiken. Elke kaartgebruiker kan bijdragen aan de kaart door informatie toe te voegen die hij belangrijk en nuttig voor zichzelf vindt, waardoor de kaart gedetailleerder en nauwkeuriger wordt, ideaal voor oriëntatie of routeplanning.
 
+
 ## Vereiste instellingen {#required-setup-parameters}
 
 De volgende instellingen zorgen ervoor dat de zeekaart op het scherm verschijnt:
 
-1. [Aankopen](../plugins/index.md#purchase) en [Inschakelen](../plugins/index.md#enable--disable) van de Zeekaartweergave-plugin.
-2. [Downloaden](#download-nautical-maps) van de zeekaarten.
-3. [Stel de Zeekaartstijl in](#set-nautical-map-style) voor het vereiste [profiel](../personal/profiles.md).
+1. [Aankopen](../plugins/index.md#purchase) en [Inschakelen](../plugins/index.md#enable--disable) van de Zeekaartweergave-plugin.  
+2. [Downloaden](#download-nautical-maps) van de zeekaarten.  
+3. Stel de [Zeekaart](#set-nautical-map-style) kaartstijl in voor het vereiste [profiel](../personal/profiles.md).
+
 
 ### Zeekaartstijl instellen {#set-nautical-map-style}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
 ![Zeekaarttype in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
 ![Zeekaarttype in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -77,29 +81,30 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 </Tabs>
 
-Gebruik de [Kaartlegenda](../../user/map-legend/nautical-map.md) voor elke verwijzing naar wat er op de zeekaart wordt getoond. Het legt de symbolische elementen op een zeekaart uit en dient als referentie om u te helpen navigeren bij twijfel. Door de zeekaartstijl in te stellen, krijgt u de beste weergave van de gedownloade en weergegeven nautische gegevens.
+Gebruik de [Kaartlegenda](../../user/map-legend/nautical-map.md) voor elke verwijzing naar wat er op de zeekaart wordt getoond. Het legt de symbolische elementen op een zeekaart uit en dient als referentie om u te helpen navigeren bij twijfel. Door de Zeekaartstijl in te stellen, krijgt u de beste weergave van de gedownloade en weergegeven nautische gegevens.
 
 Om de huidige kaartstijl te wijzigen naar Zeekaart, moet u de volgende instellingen doen:
 
-1. Selecteer het vereiste [profiel](../personal/profiles.md).
-2. Open [Kaart configureren](../map/configure-map-menu.md).
+1. Selecteer het vereiste [profiel](../personal/profiles.md).  
+2. Open [Kaart configureren](../map/configure-map-menu.md).  
 3. Scroll naar beneden naar Kaartstijl, open het en vink **Zeekaart** aan.
+
 
 ### Zeekaarten downloaden {#download-nautical-maps}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
 ![Plugin zeekaarten weergave Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
 
 ![Plugin zeekaarten weergave iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -111,43 +116,45 @@ Voor een optimale presentatie kunnen kaarten worden aangepast aan de huidige beh
 
 Wanneer u een zeekaart [downloadt](../start-with/download-maps.md), verschijnen er meer details met betrekking tot *Boot*-navigatie op de kaart. Sommige soorten [Zeekaarten](../plugins/nautical-charts/#nautical-map-style) bevatten details zoals:
 
-- **Nautische markeringen en symbolen.**
+- **Nautische markeringen en symbolen.**  
     Markeringen en symbolen bevatten alle nautische navigatiemarkeringen voor zowel binnen- als kustnavigatie. Kennis van deze markeringen helpt u de locatie van rotsen, obstakels, ankerplaatsen, boeien, stromingen, diep en ondiep water, en zijkanten van het kanaal te voorspellen, ongeacht de richting, enz. Markeringen en symbolen worden eenmalig voor de hele wereld gedownload.
 
-- **Dieptepunten.**
+- **Dieptepunten.**  
     Nautische gegevens uit de dieptepuntpakketten worden weergegeven door getallen op het water die de geringste diepte op een bepaalde locatie aangeven. Dieptepunten zijn beschikbaar voor elk halfrond en sommige regio's.
 
-- **Dieptecontouren.**
-    Dieptecontourpakketten stellen u in staat om gebieden met gelijke diepte te definiëren. Ze zijn bedoeld om veranderingen in het reliëf onder het wateroppervlak te visualiseren. Dieptecontouren kunnen voor bepaalde gebieden worden gedownload en vervolgens worden uitgeschakeld als u ze niet nodig heeft.
+- **Dieptecontouren.**  
+    Dieptecontourpakketten stellen u in staat om gebieden met gelijke diepte te definiëren.  Ze zijn bedoeld om veranderingen in het reliëf onder het wateroppervlak te visualiseren. Dieptecontouren kunnen voor bepaalde gebieden worden gedownload en vervolgens worden uitgeschakeld als u ze niet nodig heeft.
 
 :::info Dieptegetallen
-Alle dieptegetallen op de zeekaarten zijn aangegeven in meters.
+Alle dieptegetallen op de Zeekaarten zijn aangegeven in meters.
 :::
+
 
 ### Zeekaartstijl uitschakelen {#disable-nautical-map-style}
 
-Om de zeekaart te verwijderen en een van de conventionele kaarten van OsmAnd weer te geven, doet u een van de volgende dingen:
+Om de Zeekaart te verwijderen en een van de conventionele kaarten van OsmAnd weer te geven, doet u een van de volgende dingen:
 
 - Schakel de Zeekaart-plugin uit.
 - Wijzig de kaartstijl naar iets anders dan *Zeekaart*.
 
 :::info OPMERKING
-Het uitschakelen van de Zeekaart-plugin verwijdert geen geladen nautische gegevens, dus zelfs als u de weergavemethode van nautisch naar een andere methode wijzigt wanneer nautische gegevens zijn gedownload, blijven deze zichtbaar op de kaart.
+Het uitschakelen van de Zeekaart-plugin verwijdert geen geladen nautische gegevens, dus zelfs als u de weergavemethode van nautisch naar een andere methode wijzigt wanneer nautische gegevens zijn gedownload, blijven deze zichtbaar op de kaart.  
 :::
+
 
 ## Zeekaartprofiel {#nautical-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Dieptecontouren zeekaart in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -159,9 +166,132 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 De zeekaart kan in elk profiel worden opgenomen. Het is echter het meest waardevol in het [Bootprofiel](../personal/profiles.md) en vooral bij [Bootnavigatie](../navigation/routing/boat-navigation.md).
 
+
 ## Zeekaartstijl {#nautical-map-style}
 
-De Zeekaart-plugin in OsmAnd breidt de kaartstijlen van de vectorlaag uit met de Zeekaartstijl. Hiermee kunt u kaartgegevens weergeven volgens de regels van de zeekaart, bijvoorbeeld: gele gebieden voor land en ondiepten, lichtblauwe gebieden voor ondiep water, enz. Voor meer informatie, zie [Kaartlegenda](../../user/map-legend/nautical-map.md).
+De Zeekaart-plugin in OsmAnd breidt de vectorlaag kaartstijlen uit met de Zeekaartstijl. Hiermee kunt u kaartgegevens weergeven volgens de regels van de zeekaart, bijvoorbeeld: gele gebieden voor land en ondiepten, lichtblauwe gebieden voor ondiep water, enz. Voor meer informatie, zie [Kaartlegenda](../../user/map-legend/nautical-map.md).
+
+
+### Zeebodemdetail {#seabed-detail}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+
+![Zeebodemdetails](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *Menu → Kaart configureren → Kaartstijl → Details → Zeebodemdetail*
+
+![Zeebodemdetails](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+Zeebodemgegevens bevatten informatie over vegetatie en algemeen oppervlaktemateriaal zoals rotsachtige rotsen, schelpen, grind, koraal, slib, enz. Vanwege de internationale classificatie van zeebodemgegevens zijn er opties voor het weergeven van dergelijke details op een kaart: *eenvoudig*, *categorie*, *alles* of *weglaten*. Gebruik de [Zeebodemgebied kaartlegenda](../map-legend/nautical-map.md#seabed-area) voor meer informatie.
+
+- **Eenvoudig** (*voor Android-versie*)- toont de zeekaartsymbolen in overeenstemming met INT-1 Ref, die de aard van het zeebodemoppervlak aangeven.  
+- **Categorie** - toont naast het zeekaartsymbool ook de relevante zeekaarttag, die het natuurlijke materiaal, of de categorie zeewier en zeegras aangeeft.
+- **Alles** - toont naast het zeekaartsymbool, de tag of categorie, ook kwalificaties zoals fijn, kleverig, grof, enz. Voor zeegras en zeewier worden gegevens getoond die gemarkeerd zijn met de tags *taxon* en *genus*.  
+- **Weglaten** - toont geen details van de zeebodem.  
+
+:::info OPMERKING
+Voor meer details over de classificatie van de oppervlaktedetails en de weergaveopties, raadpleeg de [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::
+
+### Lichtdetail {#light-detail}
+
+Android Ga naar: *Menu → Kaart configureren → Kaartstijl Zeekaart → Andere kaartattributen → Lichtdetail*
+
+iOS Ga naar: *Menu → Kaart configureren → Kaarttype Zeekaart → Details → Lichtdetail*
+
+Deze optie toont het niveau van informatie voor navigatielichten. U kunt kiezen hoe gedetailleerd de lichtkenmerken verschijnen bij elke vuurtoren of baken.
+
+- **Eenvoudig** – toont de standaard seamark-naam en lichtkenmerk.
+- **Sectoren** – toont volledige sectorbogen en details voor alle zichtbare lichtsectoren.
+- **Sector 1–5** – toont details voor een specifiek sector nummer alleen.
+- **Klein** – gebruikt een compact labelformaat voor lichtkenmerken.
+- **Alleen naam** – toont alleen de naam van de seamark zonder lichtgegevens.
+- **Weglaten** – verbergt alle lichtinformatie.
+
+
+## Mariene Kaartstijl {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Mariene Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+Ga naar: *Menu* → *Kaart configureren* → *Kaartstijl* → *Marine*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mariene iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+Ga naar: *Menu* → *Kaart configureren* → *Kaarttype* → *Marine*
+
+</TabItem>
+
+</Tabs>
+
+Deze stijl voegt visuele elementen toe voor maritieme navigatie, inclusief navigatielichten met INT-1 lichtkenmerken, die het type, de kleur en het ritme van een lichtsignaal beschrijven (bijvoorbeeld of het knippert, de kleur en het interval tussen knipperingen), en gekleurde sectorlichten die de richting en kleur van het licht aangeven dat vanaf zee zichtbaar is.
+
+In de Mariene stijl worden lichtsectoren weergegeven rond vuurtorens en bakens: wit (getoond in geel op de kaart) geeft de veilige richting voor navigatie aan, rood markeert gevaarlijke of beperkte gebieden, en groen toont hulp- of laterale richtingen.
+
+:::info
+Om deze informatie weer te geven, moet de Zeekaart-plugin zijn ingeschakeld en moet de World Seamarks-kaart (of World_seamarks_2.obf) zijn gedownload. De informatie is niet voor officieel navigatiegebruik.
+:::
+
+
+### Kaartattributen {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Attributen Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+Ga naar: *Menu* → *Kaart configureren* → *Kaartstijl Marine* → *Andere kaartattributen*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attributen iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+Ga naar: *Menu* → *Kaart configureren* → *Kaarttype Marine* → *Details* → *Lichtdetail/Zeebodemdetail*
+
+Ga naar: *Menu* → *Kaart configureren* → *Kaarttype Marine* → Kies andere opties
+
+</TabItem>
+
+</Tabs>
+
+Na het inschakelen van de Mariene kaartstijl kunt u aanvullende visuele elementen fijn afstellen. Deze opties stellen u in staat om te controleren hoe navigatiehulpmiddelen, dieptecontouren, zeebodemdetails en kleuren op de kaart verschijnen.
+
+- **[Lichtdetail](../plugins/nautical-charts/#light-detail)**. Definieert hoe seamark-lichtinformatie wordt weergegeven. Opties: **Standaard** (volledige naam met lichtkenmerken), *Klein* (compact formaat), *Alleen naam* (lichtnaam alleen), of *Weglaten* (verberg labels).
+- **[Zeebodemdetail](../plugins/nautical-charts/#seabed-detail)**. Bestuurt het niveau van tekstuele informatie over de zeebodem. Opties: Eenvoudig (basisinformatie), Categorie (oppervlaktype), Alles (volledige gegevens), of Weglaten (geen tekst).
+- **Waterkleur**. Stelt de basiskleur in voor watergebieden. Opties: *Standaard, Blauw, Wit*, of *Grijs* — nuttig voor het aanpassen van zichtbaarheid en contrast onder verschillende verlichtingsmodi.
+- **Vaargeulkleur**. Verandert de kleur van navigatievaargeulen en kanalen. Opties: *Wit, Witter, Grijs, Groen*, of *Geel* om de leesbaarheid te verbeteren afhankelijk van de kaartachtergrond.
+- **Getijdenvlakte stijl**. Past de kleur en textuur aan die wordt gebruikt voor getijdenvlakten. Opties: *Lichtgroen, Donkergroen, Natuurgebied*, of *Getijde* — elk benadrukt ondiepe intergetijdenzones op verschillende manieren.
+- **ENC-markeringen**. Schakel *Aan/Uit*. Wanneer ingeschakeld, toont Electronic Navigational Chart (ENC) markeringen zoals boeien, bakens en andere navigatiehulpmiddelen.
+- **Schelpenstijl**. Definieert hoe schelpen of bodemoppervlaktes op de zeebodem verschijnen. Opties: *Grijs, Rotsen, Stenen*, of *Rood*, afhankelijk van de voorkeur visuele stijl.
+- **Gestippelde dieptecontouren**. Schakel *Aan/Uit*. Wanneer ingeschakeld, toont dieptecontourlijnen als gestippeld, wat de leesbaarheid verbetert in dichte gebieden.
+- **Diepte kleurenschema**. Selecteert het kleurenschema voor dieptezones. Opties: *PAPER* (traditionele papierkaartkleuren) of *ECDIS* (standaard elektronisch navigatiesysteem palet).
+- **Spot sonderingsgrootte**. Stelt de lettergrootte in voor spot sonderingsgetallen (dieptewaarden). Opties: *Standaard, 10, 12, 14*, of *16* — grotere waarden verbeteren de zichtbaarheid op hoogresolutieschermen.
+- **Spot sonderingsafstand**. Bestuurt hoe vaak diepteson-deringen op de kaart verschijnen. Opties: *Standaard, 0, 5, 10, 15, 30, 60*, of *120*, wat de afstand tussen weergegeven dieptepunten bepaalt.
+- **Veiligheidsdiepte contour**. Benadrukt de contourlijn die de veiligheidsdieptedrempel markeert. Opties: *Uit, 0 m, 1 m, 2 m, 3 m, 4 m, 5 m*, of *10 m*. Nuttig voor het onderscheiden van veilige navigatiegebieden van ondiepe zones.
+
+
+## Aanvullende Nautische Gegevens {#additional-nautical-data}
 
 ### Dieptepunten {#depth-points}
 
@@ -183,19 +313,20 @@ De Zeekaart-plugin in OsmAnd breidt de kaartstijlen van de vectorlaag uit met de
 
 Dieptepunt[pakketten](../start-with/download-maps.md#overview) zijn beschikbaar voor Europa, het noordelijk halfrond en het zuidelijk halfrond en zijn informatief. Dieptepunten geven veranderingen in de topografie onder het wateroppervlak aan, en duiden de geringste diepte aan. Dit is noodzakelijk voor *Boot*-navigatie. Na het downloaden moet u [Dieptecontouren](#depth-contours) inschakelen om het op de kaart weer te geven.
 
+
 ### Dieptecontouren {#depth-contours}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
 ![Dieptecontouren zeekaart in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
@@ -207,45 +338,13 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 Wanneer een zeekaart op het scherm wordt weergegeven, kunt u aanpassen wat u ziet:
 
-- *Dieptecontouren* tonen of verbergen.
-- Het detailniveau van de zeebodeminformatie instellen: [*Lijndikte* en *Lijnkleurenschema*](../map/vector-maps.md#-nautical-depth).
+- Toon of verberg de *Dieptecontouren*.
+- Het detailniveau van de zeebodem informatie instellen: [*Lijndikte* en *Lijnkleurenschema*](../map/vector-maps.md#-nautical-depth).
 
 :::info OPMERKING
-U kunt de OsmAnd-app helpen de database met dieptecontouren uit te breiden door uw informatie toe te voegen via [OpenSeaMap](https://map.openseamap.org/).
+U kunt de OsmAnd-app helpen de database met dieptecontouren uit te breiden door uw informatie toe te voegen via [OpenSeaMap](https://map.openseamap.org/)
 :::
 
-### Zeebodemdetails {#seabed-details}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*
-
-![Zeebodemdetails](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
-
-![Zeebodemdetails](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
-
-</TabItem>
-
-</Tabs>
-
-Zeebodemgegevens bevatten informatie over vegetatie en algemeen oppervlaktemateriaal zoals rotsachtige rotsen, schelpen, grind, koraal, slib, enz. Vanwege de internationale classificatie van zeebodemgegevens zijn er opties voor het weergeven van dergelijke details op een kaart: *eenvoudig*, *categorie*, *alles* of *weglaten*. Gebruik de [Kaartlegenda zeebodemgebied](../map-legend/nautical-map.md#seabed-area) voor meer informatie.
-
-- **Eenvoudig** (*voor Android-versie*) - toont de zeekaartsymbolen in overeenstemming met INT-1 Ref, die de aard van het zeebodemoppervlak aangeven.
-- **Categorie** - toont naast het zeekaartsymbool ook de relevante zeekaarttag, die het natuurlijke materiaal, of de categorie zeewier en zeegras aangeeft.
-- **Alles** - toont naast het zeekaartsymbool, de tag of categorie, ook kwalificaties zoals fijn, kleverig, grof, enz. Voor zeegras en zeewier worden gegevens getoond die gemarkeerd zijn met de tags *taxon* en *genus*.
-- **Weglaten** - toont geen details van de zeebodem.
-
-:::info OPMERKING
-Voor meer details over de classificatie van de oppervlaktedetails en de weergaveopties, raadpleeg de [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
-:::
 
 ## Gerelateerde artikelen {#related-articles}
 

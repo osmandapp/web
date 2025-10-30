@@ -1,8 +1,9 @@
 ---
-source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
+source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
 sidebar_position: 2
 title:  iOS-aankopen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## OsmAnd installeren (iOS) {#install-osmand-ios}
 
-U kunt de app downloaden via deze link - [OsmAnd Maps in de Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+U kunt de app downloaden via deze link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -37,16 +37,16 @@ U kunt de app downloaden via deze link - [OsmAnd Maps in de Apple App Store](htt
 | Pakket | Beschrijving | Beschikbaarheid | Opmerkingen |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Een **gratis pakket** dat toegang geeft tot [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) voor *Favorieten*, *Instellingen* en *OSM-bewerkingen/notities*. | Beschikbaar voor alle gebruikers van de gratis versie van OsmAnd. | Beperkt tot basis cloudfuncties en **5MB** opslag. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies voor de gratis OsmAnd-app ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kan worden toegevoegd aan [Apple Delen met gezin](https://support.apple.com/en-us/HT201088). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies voor de gratis OsmAnd-app ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kan worden toegevoegd aan de [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementspakket** dat extra geavanceerde en [pro-functies](#pro-features) ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Het biedt volledige toegang tot de functies van OsmAnd Cloud. |
 
 ### Belangrijke opmerkingen {#important-notes}
 
 1. **Maps+** is een *upgrade* voor de gratis versie van OsmAnd, waarmee de meeste functies worden ontgrendeld.
 
-2. **OsmAnd Pro**, **OsmAnd+** en **Maps+** zijn *cross-platform* aankopen. Dit betekent dat u het in één winkel kunt kopen (bijv. *Google Play, Huawei AppGallery, AppStore* en *osmand.net*) en het in een andere kunt herstellen door [uw aankoop te koppelen aan uw OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** en **Maps+** zijn *cross-platform* aankopen. Dit betekent dat u het in één winkel kunt kopen (bijv. *Google Play, Huawei AppGallery, AppStore* en *osmand.net*) en het in een andere kunt herstellen door [uw aankoop te koppelen aan uw OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
 
-3. U kunt **Maps+** toevoegen aan [Apple Delen met gezin](https://support.apple.com/en-us/HT201088) om de aankoop met gezinsleden te delen.
+3. U kunt **Maps+** toevoegen aan [Apple Family Sharing](https://support.apple.com/en-us/HT201088) om de aankoop met gezinsleden te delen.  
 
 
 ## Prijzen {#prices}
@@ -55,23 +55,23 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Gratis   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -92,7 +92,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Alle Pro-functies](#pro-features) | **-** | **-** | ✔ |
 | [Kaartdownloads](../start-with/download-maps.md) |  <details><summary>**5 kaartdownloads** <br /> (kaartupdate telt als download):</summary> <br /> - Kaartdownload of -update betekent alleen het downloaden/updaten van een land- (of regio)kaart.<br /> - **Wereldoverzichtskaart**, **Wereldhoogtecorrectie**, **Kaartlettertypen** en **Gesproken aanwijzingen** worden niet meegeteld als 5 downloadmogelijkheden.</details> | ✔ | ✔ |
-| [Maandelijkse kaartupdates](../personal/maps-resources.md#updates) |  <details><summary>**Eenmaal per maand** <br /> (met 2 dagen vertraging):</summary> * beperkt tot 5 downloads (kaartupdate telt als download) </details> |  ✔ | ✔ |
+| [Maandelijkse kaartupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Eenmaal per maand** <br /> (met 2 dagen vertraging):</summary> * beperkt tot 5 downloads (kaartupdate telt als download) </details> |  ✔ | ✔ |
 | [Kaartupdates per uur](../personal/maps-resources.md#live-updates)<br/>Live updates (1 uur vertraging) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
@@ -174,7 +174,7 @@ Gebruikers kunnen alle aankopen en abonnementen beheren via hun [Apple-account](
 Gebruik dezelfde Apple ID om uw aankopen te herstellen.
 
 - Log in op hetzelfde Apple App Store-account dat u gebruikte om in-apps (abonnementen) van OsmAnd Maps te kopen.
-- Installeer [OsmAnd Maps in de Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- Installeer [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Open OsmAnd Maps met een actieve internetverbinding.
 - Volg deze stappen om aankopen te herstellen: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* en bovenaan het scherm zou moeten verschijnen dat Maps+ (Pro, Live) is geactiveerd.
 

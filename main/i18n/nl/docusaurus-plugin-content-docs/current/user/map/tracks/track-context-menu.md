@@ -1,8 +1,9 @@
 ---
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
+source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,10 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Overzicht {#overview}
 
-Het *Contextmenu Spoor* geeft informatie over het *[Spoor](../../personal/tracks/index.md)* in zowel tekst- als [grafische](#altitude--speed-graphs) vorm. Het stelt u in staat om informatie toe te voegen, wijzigingen aan te brengen, te bewerken en diverse andere acties met het spoor uit te voeren. U kunt het *contextmenu van het spoor* openen door simpelweg op het gewenste spoor op de kaart te tikken of via het menu *[Mijn plaatsen](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Mogelijk moet u de sporenmap openen en het gewenste spoor selecteren door erop te tikken.
+Het *Contextmenu Spoor* geeft informatie over het *[Spoor](../../personal/tracks/index.md)* in zowel tekst- als [grafische](#altitude--speed-graphs) vorm. Het stelt u in staat om informatie toe te voegen, wijzigingen aan te brengen, te bewerken en diverse andere acties met het spoor uit te voeren. U kunt het *contextmenu van het spoor* openen door simpelweg op het gewenste spoor op de kaart te tikken of via het menu *[Mijn plaatsen](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Mogelijk moet u de sporenmap openen en het gewenste spoor selecteren door erop te tikken.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -64,17 +64,17 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Bovenaan het informatiepaneel ziet u de naam van het spoor en het symbool dat wordt gebruikt om het te markeren (*alleen Android*). De naam van het spoor kan worden gewijzigd met de hernoemfunctie in het [Opties menu](#options). Sommige sporen (meestal de *[Reisgidsen](../../plan-route/travel-guides.md#manage-as-gpx-track)*) kunnen een korte *[beschrijving](#description-and-info)* en/of een afbeelding onder de *Spoornaam* hebben. Een pijl toont de *Richting naar het dichtstbijzijnde punt van het spoor* vanaf [Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom).
+Bovenaan het informatiepaneel ziet u de naam van het spoor en het symbool dat wordt gebruikt om het te markeren (*alleen Android*). De naam van het spoor kan worden gewijzigd met de hernoemfunctie in het [Opties menu](#options). Sommige sporen (meestal de *[Reisgidsen](../../plan-route/travel-guides.md#manage-as-gpx-track)*) kunnen een korte *[beschrijving](#description-and-info)* en/of een afbeelding onder de *Spoornaam* hebben. Een pijl toont de *Richting naar het dichtstbijzijnde punt van het spoor* vanaf [Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom).  
 
 Het infopaneel geeft ook informatie over het volgende:
 
 - *<Translate android="true" ids="distance"/>*. Toont de lengte van het spoor.
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Toont de totale som van stijgingen en dalingen tijdens de rit.
-- *<Translate android="true" ids="altitude_range"/>*. Geeft de minimale en maximale hoogte op een spoor aan.
+- *<Translate android="true" ids="altitude_range"/>*. Geeft de minimale en maximale hoogte op een spoor aan.  
 
 :::note
-Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebben [`time`- en `speed`-tags](../../plugins/trip-recording#recorded-gpx-file)), zal het informatiepaneel ook informatie bevatten over *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) of *<Translate ios="true" ids="total_time"/>* (*iOS*) (de tijdsduur tussen het begin- en eindpunt van het spoor), *<Translate android="true" ids="shared_string_time_moving"/>* (de som van de tijd tijdens het rijden).
-:::
+Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebben [`time` en  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), zal het informatiepaneel ook informatie bevatten over *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) of *<Translate ios="true" ids="total_time"/>* (*iOS*) (de tijdsduur tussen het begin- en eindpunt van het spoor), *<Translate android="true" ids="shared_string_time_moving"/>* (de som van de tijd tijdens het rijden).
+:::  
 
 ### Spooracties {#track-actions}
 
@@ -107,19 +107,19 @@ Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebb
 
 <TabItem value="android" label="Android">
 
-![Menu-opties spoor Android](@site/static/img/personal/tracks/track_menu_options_android.png)
+![Menu-opties spoor Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu-opties spoor iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)
+![Menu-opties spoor iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aan te passen met verschillende tools en instellingen.
+Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aan te passen met verschillende tools en instellingen.  
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – Regelt de zichtbaarheid van het spoor op de kaart.
 - **<Translate android="true" ids="shared_string_appearance"/>** – Opent het [Uiterlijk menu](../tracks/appearance.md) om de kleur, breedte en transparantie van het spoor aan te passen.
@@ -129,7 +129,7 @@ Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aa
 
 - **<Translate android="true" ids="join_segments"/>** (*Alleen Android*) – Voegt spoorsegmenten samen om gaten op te vullen.
 - **<Translate android="true" ids="analyze_on_map"/>**. Opent de [Analyseer op kaart](../tracks/index.md#analyze-track-on-map) tool om de hoogte, snelheid en afstand van het spoor te inspecteren.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Alleen Android*) - Analyseert het spoor op tijd- of afstands[intervallen](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Alleen Android*) - Analyseert het spoor op tijd- of afstands[intervallen](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -174,7 +174,7 @@ Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aa
 
 Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle algemene informatie***.
 
-- **Beschrijving**. De knop *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) wordt gebruikt om de spoorbeschrijving te bewerken. Tag `desc`.
+- **Beschrijving**.  *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) knop wordt gebruikt om de spoorbeschrijving te bewerken. Tag `desc`.
 
 - **Algemeen**. Bevat informatie over de *GPX-bestandsgrootte*, *bestandsmap* en *aanmaakdatum* met de `time`-tag.
 
@@ -185,7 +185,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 - **Copyright**. Tags: *Copyright* - `copyright`, &nbsp;*Auteur* - `author`, &nbsp;*Jaar* - `year`, &nbsp;*Licentie* - `license`.
 
 - **Aanvullend**. Alle tags uit de sectie ***extensions***:&nbsp; `address`,&nbsp; `icon`,&nbsp; `background`,&nbsp; `color`,&nbsp; `country`,&nbsp; `state`,&nbsp; `telephone`,&nbsp; `postcode`,&nbsp; `start_date`,&nbsp; `desc`.
-
+  
 
 <details>
 
@@ -296,7 +296,7 @@ De actieve **knoppen** geven toegang tot acties zoals:
 
   - *Bewerken* opent het spoor in de [Route plannen tool](../../plan-route/index.md).
   - *Verwijderen* stelt u in staat om het geselecteerde spoorelement te verwijderen.
-  - *Interval splitsen* opent de [Interval splitsen functie](#split-interval) voor het spoor.
+  - *Interval splitsen* opent de [Interval splitsen functie](#analyze-by-intervals) voor het spoor.
 
 
 ### Snelheid {#speed}
@@ -354,7 +354,7 @@ De **Hoogte** grafiek toont statistieken zoals:
 - *<Translate android="true" ids="altitude_ascent"/>*. De cumulatieve winst in hoogte boven zeeniveau langs de route.
 - *<Translate android="true" ids="altitude_descent"/>*. Het cumulatieve verlies van hoogte langs de route.
 
-**Hoogtegegevens ophalen.**
+**Hoogtegegevens ophalen.**  
 Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manieren toevoegen:
 
 - *Knop Hoogte berekenen → [Gebruik nabijgelegen wegen](../../plan-route/create-route.md#get-elevation-data)*. Gebruikt een offline kaart om nabijgelegen wegen en hoogtegegevens te vinden. Hiermee kunt u de geometrie van het spoor aanpassen.
@@ -372,15 +372,15 @@ De functie voor het offline berekenen van hoogte is alleen beschikbaar voor [**O
 Deze functie stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
 
 1. Download [Terreinkaarten (3D)](../../plugins/topography.md#download-maps) voor de vereiste regio.
-2. Als het spoor geen hoogtegegevens bevat, ga dan naar het contextmenu van het spoor (*Contextmenu Spoor → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecteer *Gebruik Terreinkaarten*, en na de berekening krijgt u een spoorgrafiek gebaseerd op de terreingegevens.
+2. Als het spoor geen hoogtegegevens bevat, ga dan naar het contextmenu van het spoor (*Contextmenu Spoor → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecteer *Gebruik Terreinkaarten*, en na de berekening krijgt u een spoorgrafiek gebaseerd op de terreingegevens.  
 
-    ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
+    ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. Als u een route aanmaakt met de [Route plannen](../../plan-route/create-route.md#graph) tool met de methode *Rechte lijn* en er geen hoogtegegevens op de grafiek staan, moet u:
     - Tik op *Hoogtegegevens ophalen* en selecteer vervolgens *Gebruik Terreinkaarten*.
-    - Na de berekening krijgt u de volledige Hoogte/Helling-grafiek van uw route, gebaseerd op terreingegevens.
+    - Na de berekening krijgt u de volledige Hoogte/Helling-grafiek van uw route, gebaseerd op terreingegevens.  
 
-  ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+  ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Punten / Waypoints {#points--waypoints}
@@ -455,7 +455,7 @@ Tik op de knop *Waypoint toevoegen* om het scherm voor het aanmaken van waypoint
     - Selecteer de **Kleur** van het icoon.
     - Selecteer vervolgens de **Vorm** van het icoon: *Cirkel, Octagon, Vierkant*.
 
-4. **Vervang** een ander punt hiermee, indien nodig.
+4. **Vervang** een ander punt hiermee, indien nodig.  
 
 
 ### Acties met Groepen {#actions-with-groups}
@@ -485,7 +485,7 @@ Het *drie-punten-menu* ( &#8285; ) opent het waypoint *Groepsmenu*.
 - **<Translate android="true" ids="change_default_appearance"/>** - Wijzig de weergaveopties voor een groep waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** of **Verwijderen** (*Alleen Android*) - Verplaats groepswaypoints naar de [Kaartmarkeringen](../../personal/markers.md) lijst.
 - **<Translate android="true" ids="copy_to_map_favorites"/>** (*Alleen Android*) - Verplaats groepswaypoints naar [Favorieten](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*Alleen Android*) - Creëert een route tussen waypoints. Het eerste en laatste punt worden het begin en einde van de route, en de rest wordt omgezet in tussenliggende punten.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Alleen Android*) - Creëert een route tussen waypoints. Het eerste en laatste punt worden het begin en einde van de route, en de rest wordt omgezet in tussenliggende punten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Verwijder een groep waypoints.
 
 
@@ -507,7 +507,7 @@ Het *drie-punten-menu* ( &#8285; ) opent het waypoint *Groepsmenu*.
 
 </Tabs>
 
-Beheer de zichtbaarheid van groepen op de kaart: als u één spoor verbergt, wordt de hele groep ook verborgen.
+Beheer de zichtbaarheid van groepen op de kaart: als u één spoor verbergt, wordt de hele groep ook verborgen.  
 
 U kunt groepswaypoints op de kaart in- of uitschakelen met de knop in de rechterbovenhoek van het contextmenu van het spoor op de kaart. Tik erop en selecteer de gewenste actie.
 
@@ -528,7 +528,7 @@ U kunt groepswaypoints op de kaart in- of uitschakelen met de knop in de rechter
 </TabItem>
 
 </Tabs>
-
+  
 
 <details>
 
@@ -588,14 +588,14 @@ U kunt groepswaypoints op de kaart in- of uitschakelen met de knop in de rechter
 
 </details>
 
-**Tags:**
+**Tags:**  
 
 | Parameter | Beschrijving |
 | --- | --- |
 | `lat` | **Breedtegraad** is een van de geografische coördinaten waarmee u een locatie kunt bepalen. |
 | `lon` | **Lengtegraad** is een andere van de geografische coördinaten waarmee u een locatie kunt bepalen. |
 | `time` | **Tijdstempel** is de datum en tijd waarop het punt is opgenomen. |
-| `name` | **Naam** is de naam van het punt. Alle tekens zijn toegestaan. |
+| `name` | **Naam** is de naam van het punt. Alle tekens zijn toegestaan.  |
 | `desc` | **Beschrijving** bevat aanvullende informatie over het punt. |
 | `type` | **Selecteer groep** is de naam van de OsmAnd-map waarin dit waypoint is opgeslagen. |
 | `cmt` | **Commentaar** is een kort commentaar op een punt. |
@@ -603,42 +603,82 @@ U kunt groepswaypoints op de kaart in- of uitschakelen met de knop in de rechter
 | `ele` | **Hoogte** is de hoogte van een punt. |
 
 
-**Extensies:**
+**Extensies:**  
 
 | Extensie | Beschrijving |
 | --- | --- |
 | `osmand:icon` | **Icoon** is de naam van het icoon dat u hebt geselecteerd. |
-| `osmand:color` | **Kleur** is de kleur in HEX-formaat. |
+| `osmand:color` | **Kleur** is de kleur in HEX-formaat.  |
 | `osmand:background` | **Achtergrond** is de vorm van het icoon, zoals een cirkel, achthoek of vierkant. |
-| `osmand:country` | **Land** is de naam van het land. |
-| `osmand:address` | **Adres** is het adres. |
-| `osmand:postcode` | **Postcode** is de postcode. |
-| `osmand:telephone` | **Telefoon** is het telefoonnummer. |
-| `osmand:state` | **Staat** is de naam van de staat. |
-| `osmand:start_date` | **Startdatum** zijn de planningsgegevens van een punt. |
+| `osmand:country` | **Land** is de naam van het land.  |
+| `osmand:address` | **Adres** is het adres.  |
+| `osmand:postcode` | **Postcode** is de postcode.  |
+| `osmand:telephone` | **Telefoon** is het telefoonnummer.  |
+| `osmand:state` | **Staat** is de naam van de staat.  |
+| `osmand:start_date` | **Startdatum** zijn de planningsgegevens van een punt.  |
 
-Waypoints worden samen met het spoor opgenomen in het [GPX-bestand](../../../technical/osmand-file-formats/osmand-gpx.md). Elk van deze waypoints heeft zijn eigen set tags voor beschrijving. Alle tags die direct verband houden met de beschrijving van waypoints en die direct in de OsmAnd-applicatie kunnen worden bewerkt, worden in deze sectie vermeld.
+Waypoints worden samen met het spoor opgenomen in het [GPX-bestand](../../../technical/osmand-file-formats/osmand-gpx.md). Elk van deze waypoints heeft zijn eigen set tags voor beschrijving. Alle tags die direct verband houden met de beschrijving van waypoints en die direct in de OsmAnd-applicatie kunnen worden bewerkt, worden in deze sectie vermeld.  
 Om de beschrijving van een Waypoint te wijzigen, kunt u een van de volgende manieren volgen:
-
-1. Zoek het vereiste spoor in de lijst van het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
+  
+1. Zoek het vereiste spoor in de lijst van het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
 2. Tik op het spoor op de kaart, als het is opgenomen in de [lijst van zichtbare](../tracks/index.md#display-tracks-on-the-map).
-3. Tik op het vereiste waypoint als het [zichtbaar](../../personal/tracks/manage-tracks.md#track-menu) is op de kaart.
+3. Tik op het vereiste waypoint als het [zichtbaar](../../personal/tracks/manage-tracks.md#track-menu) is op de kaart.  
 
-    Tik vervolgens in het [Contextmenu Sporen](./track-context-menu.md) op *punten*, het veld van de vereiste map met beschikbare waypoints en het Waypoint dat u zoekt. Selecteer menu *Acties →* **GPX-waypoint bewerken** en breng wijzigingen aan. U kunt de aanmaakdatum van een punt, *tijdstempel*, niet in de applicatie wijzigen.
+    Tik vervolgens in het [Contextmenu Sporen](./track-context-menu.md) op *punten*, het veld van de vereiste map met beschikbare waypoints en het Waypoint dat u zoekt. Selecteer menu *Acties →* **GPX-waypoint bewerken** en breng wijzigingen aan. U kunt de aanmaakdatum van een punt, *tijdstempel*, niet in de applicatie wijzigen.  
 
 **Voorzieningstags** die aanvullende informatie beschrijven, zoals openingstijden of telefoonnummer, specifiek voor de POI, halen die informatie uit OpenStreetMap-gegevens of gegevens die u hebt ingevoerd bij het aanmaken van de POI. U kunt dergelijke tags en [aangepaste tags](#display-custom-gpx-tags) alleen bewerken in de code van het GPX-bestand, dat u met elke teksteditor op uw apparaat kunt openen.
 
 
-## Interval splitsen {#split-interval}
+## Analyseren per Intervallen {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-U kunt het spoor verdelen in intervallen, zoals afstand en tijd, en het analyseren.
+![Spoor splitsen per Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Splits het spoor op afstand of tijdsinterval.
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
+De optie **Analyseren per intervallen** stelt u in staat om een spoor in secties te verdelen en gedetailleerde statistieken voor elk deel van de route te bekijken. Sporen kunnen worden gesplitst op basis van ***afstand***, ***tijd*** of ***stijging/daling*** parameters. 
 
-![Scherm spoor splitsen interval Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Scherm spoor splitsen interval tijd Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
+Om deze optie te openen:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → kies de gewenste splitsingsmodus 
+
+
+### Splitsen per Afstand {#split-by-distance}
+
+![Tabblad spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_tab.png) ![Kaart spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Deze optie stelt u in staat om een spoor in vaste afstandsintervallen te verdelen en gedetailleerde statistieken voor elk segment te analyseren. Beschikbare afstandsintervallen zijn ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** en ***10 km***. Na het kiezen van een afstandsinterval wordt het spoor weergegeven als een lijst van segmenten. 
+
+Voor elk segment kunt u bekijken:
+- afgelegde afstand.
+- tijdsspanne.
+- gemiddelde, minimale en maximale hoogte.
+- stijging en daling.
+- tijd in beweging.
+- gemiddelde en maximale snelheid.
+
+Wanneer u op een segment in de lijst tikt, toont de kaartweergave het volledige spoor met zijn intervallen en opent het contextmenu voor het spoor onderaan het scherm.
+
+
+### Splitsen per Tijd {#split-by-time}
+
+![Tabblad spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_tab.png) ![Kaart spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+De optie **Splitsen per tijd** verdeelt een spoor in intervallen van gelijke duur. U kunt kiezen tussen ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** en ***60 min***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
+
+
+### Splitsen per Stijging/Daling {#split-by-uphill-downhill}
+
+![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Deze optie verdeelt een spoor in segmenten op basis van hoogteveranderingen. Elk interval wordt geclassificeerd als ***stijging***, ***daling*** of ***vlak***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn ook hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
+
+
+### Hartslagmetrieken {#heart-rate-metrics}
+
+![Hartslagmetrieken](@site/static/img/personal/tracks/heart_rate.png)
+
+Deze optie stelt u in staat om gemiddelde, minimale en maximale hartslagwaarden (slagen per minuut, bpm) voor elk interval van uw spoor te bekijken. Hartslaggegevens worden genomen uit het GPX-bestand van het spoor of direct opgenomen van een verbonden [externe hartslagsensor](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Als er geen hartslaggegevens beschikbaar zijn, wordt deze rij verborgen in de intervallentabel.
+
+**Opmerking:** U kunt een BLE-hartslagmonitor verbinden via *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* om HR-gegevens direct in OsmAnd op te nemen.
 
 
 ## GPS-filter {#gps-filter}
@@ -651,7 +691,7 @@ Splits het spoor op afstand of tijdsinterval.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige of onjuiste gegevens uit te sluiten. U kunt spoorpunten filteren die niet passen bij uw spoorparameters, en als resultaat een nauwkeurigere grafiek en visuele routelijn krijgen zonder vervorming of opnameruis. U kunt wijzigingen aanbrengen met filters zoals *Afvlakking*, *Snelheid*, *Hoogte* en *GPS-precisie*, die gefilterde punten uit het huidige spoor verbergen. Bovendien kunt u in het *Statistieken*-menu controleren hoe uw wijzigingen op de grafiek worden weergegeven voordat u ze opslaat. U kunt ook *Terugzetten naar origineel* en *Opslaan als kopie* van uw spoor in dit filter zonder het origineel op te slaan.
+Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige of onjuiste gegevens uit te sluiten. U kunt spoorpunten filteren die niet passen bij uw spoorparameters, en als resultaat een nauwkeurigere grafiek en visuele routelijn krijgen zonder vervorming of opnameruis. U kunt wijzigingen aanbrengen met filters zoals *Afvlakking*, *Snelheid*, *Hoogte* en *GPS-precisie*, die gefilterde punten uit het huidige spoor verbergen. Bovendien kunt u in het *Statistieken*-menu controleren hoe uw wijzigingen op de grafiek worden weergegeven voordat u ze opslaat. U kunt ook *Terugzetten naar origineel* en *Opslaan als kopie* van uw spoor in dit filter zonder het origineel op te slaan.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -659,11 +699,11 @@ Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige 
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-De Android GPS Filter app-pagina bevat het volgende:
+De Android GPS Filter app-pagina bevat het volgende:  
 
 - Een kaart met een opgeslagen spoor en een extra knop, *Mijn spoorlocatie* (deze lijnt een spoor uit naar het midden van een kaart).
 - Knoppen *Vernieuwen* en *Menu* bovenaan (*Menu* opent het *Actie*-veld onderaan de pagina).
-- Blokken *Filter*, *Statistieken*, *Actie*.
+- Blokken *Filter*, *Statistieken*, *Actie*.  
 
 
 ### Filtermenu {#filter-menu}
@@ -682,7 +722,7 @@ In dit menu kunt u enkele parameters van uw spoor wijzigen, zoals *Afvlakking*, 
 |*Hoogte*. Alleen de spoorpunten die overeenkomen met het geselecteerde hoogte-interval worden weergegeven op de grafiek en de kaart, de andere worden verborgen.|
 |![GPS-filter hoogtegetallen Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*GPS-precisie*. Stelt de maximaal toelaatbare waarde voor HDOP in. Punten met een hogere waarde worden verborgen.|
-|![GPS-filter precisiegetallen Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
+|![GPS-filter precisiegetallen Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
 ### Statistieken {#statistics}
@@ -690,8 +730,8 @@ In dit menu kunt u enkele parameters van uw spoor wijzigen, zoals *Afvlakking*, 
 ![GPS-filter grafiek Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
 Het tabblad Statistieken toont informatie over het **gewijzigde** spoor, wat betekent dat het spoor zonder de gefilterde waarden wordt weergegeven. Dit wordt getoond in de statistiekenblokken en grafiekgegevens.
-
-- Het *Gegevens*-deel toont statistieken vergelijkbaar met het [Filtermenu](#filter-menu).
+  
+- Het *Gegevens*-deel toont statistieken vergelijkbaar met het [Filtermenu](#filter-menu).  
 - Het *Grafiek*-deel toont drie soorten grafieken op basis van parameters: Overzicht, Hoogte en Snelheid. Deze functionaliteit is een kopie van de [spoorgrafiek](#altitude--speed-graphs).
 
 ### Acties {#actions}
@@ -700,9 +740,9 @@ Het tabblad Statistieken toont informatie over het **gewijzigde** spoor, wat bet
 
 De lijst met acties is beschikbaar onderaan het tabblad **Filter** of **Statistieken**. OsmAnd past alle wijzigingen op het spoor toe zonder het bestand bij te werken, maar u kunt de wijzigingen handmatig opslaan.
 
-- *<Translate android="true" ids="reset_to_original"/>*. Hiermee kunt u de parameters terugzetten naar hun oorspronkelijke staat.
+- *<Translate android="true" ids="reset_to_original"/>*. Hiermee kunt u de parameters terugzetten naar hun oorspronkelijke staat.  
 - *<Translate android="true" ids="save_as_copy"/>*. Hiermee kunt u het spoor als een nieuw spoor opslaan.
-- *<Translate android="true" ids="save_changes_into_file"/>*. Hiermee kunt u het spoor overschrijven met de nieuwe parameters.
+- *<Translate android="true" ids="save_changes_into_file"/>*. Hiermee kunt u het spoor overschrijven met de nieuwe parameters.  
 
 
 ## Gerelateerde artikelen {#related-articles}

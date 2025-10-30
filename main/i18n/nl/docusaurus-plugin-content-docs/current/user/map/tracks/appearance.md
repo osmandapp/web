@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-Met de functie **Uiterlijk van de track** kunnen gebruikers aanpassen hoe tracks op de kaart worden weergegeven. Dit omvat het aanpassen van kleur, breedte, richtingaanwijzers en andere visuele elementen. Het aanpassen van het uiterlijk van de track helpt bij het onderscheiden van meerdere tracks, het markeren van specifieke routes en het verbeteren van de leesbaarheid van de kaart.
+De functie **Uiterlijk van de track** stelt gebruikers in staat om aan te passen hoe tracks op de kaart worden weergegeven. Dit omvat het aanpassen van kleur, breedte, richtingaanwijzers en andere visuele elementen. Het aanpassen van het uiterlijk van de track helpt bij het onderscheiden van meerdere tracks, het markeren van specifieke routes en het verbeteren van de leesbaarheid van de kaart.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -61,10 +61,28 @@ U kunt de kleur van de track handmatig instellen of **kleurgebaseerde datavisual
 
 **Beschikbare kleuropties:**
 
-- **Gratis instellingen**: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Trackmenu Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
+![Trackmenu Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kleuringscontextmenu iOS](@site/static/img/map/colorisation_ios.png)
+
+De **lijst met kleuringsopties** opent als een contextmenu. Items kunnen in drie toestanden verschijnen: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Kan worden toegepast op de huidige track.
+2. <Translate ios="true" ids="weather_update_disabled"/>. De track mist de vereiste gegevens.
+3. PRO. Beschikbaar voor de huidige track maar vereist een abonnement; tikken opent het [<Translate ios="true" ids="purchase_dialog_title"/> scherm](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Gratis instellingen**: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).   
 - [Pro-functie](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Kaartscherm tijdens navigatie](../../navigation/guidance/map-during-navigation.md#color) en voor het selecteren en maken van een aangepaste kleur, zie [Kleurenschema's](../../personal/color-palette-schemes.md#routes).
@@ -91,9 +109,23 @@ Pas de breedte van de track aan om de zichtbaarheid op de kaart te verbeteren.
 
 ### Interval splitsen {#split-interval}
 
-![Trackmenu Uiterlijk Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Selecteer of het interval op de track moet worden gesplitst **op afstand of op tijd**.
+<TabItem value="android" label="Android">
+
+![Trackmenu Uiterlijk Interval splitsen Android](@site/static/img/map/split_interval_android.png)  ![Interval splitsen Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trackmenu Uiterlijk Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Selecteer of het interval op de track moet worden gesplitst **op afstand**, **tijd** of **omhoog/omlaag** (Android), of op **afstand** of **tijd** (iOS). Om gedetailleerde statistieken per interval te bekijken, zie [Analyseren per intervallen](../../map/tracks/track-context-menu.md#analyze-by-intervals) (alleen Android).
+
 
 ### Richtingpijlen {#direction-arrows}
 

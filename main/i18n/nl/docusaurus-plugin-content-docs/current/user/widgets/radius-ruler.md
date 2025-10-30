@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Radiusliniaal en Liniaal
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,14 +69,14 @@ Deze tool is handig wanneer u snel inzicht wilt krijgen in de grootte van object
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Weergavepositie Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Weergavepositie Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Weergavepositie Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Weergavepositie Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ De [Radiusliniaal Widget](../widgets/info-widgets.md#radius-ruler) toont de afst
 - Toon concentrische cirkels gecentreerd op het geselecteerde punt.
 - De eerste cirkel weerspiegelt de huidige [kaartschaal](#ruler) voor een snelle visuele referentie.
 - Past zich automatisch aan bij het zoomen om nauwkeurige radiuswaarden te behouden.
+- Tik op de widget om te schakelen tussen drie weergavemodi: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, en <Translate android="true" ids="dark_theme"/>.
+- Lang indrukken opent het contextmenu van de widget met extra opties.
+- De widgetinstellingen omvatten twee aanpasbare parameters: *<Translate android="true" ids="shared_string_height"/>* — stuurt de visuele hoogte van de widget op het scherm aan; *<Translate android="true" ids="shared_string_show_icon"/>* — schakelt de zichtbaarheid van het pictogram van de widget in/uit.
 
 Gebruik deze widget om de nabijheid van interessante punten in te schatten of om te plannen rond een bepaald gebied.
 
@@ -139,13 +142,13 @@ Wanneer de **Radiusliniaal** actief is, toont de kaart een kompas-overlay om u t
 - Het horizontaal houden van het apparaat verbetert de nauwkeurigheid en visualisatie.
 - Als de **blauwe driehoek** en de **rode pijl** (Noord) beide naar boven wijzen, is het apparaat uitgelijnd op het ware noorden.
 
-Deze overlay is handig voor buitennavigatie, waardoor u de [kaartoriëntatie](../map/interact-with-map.md#map-orientation-modes) kunt afstemmen op de echte omgeving.
+Deze overlay is handig voor buitennavigatie, waardoor u de [kaartoriëntatie](../map/interact-with-map.md#map-orientation-modes) kunt afstemmen op de echte omgeving.  
 
 | | |
 |------------|------------|
 | Inschakelen | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>* |
-| Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+| Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Midden / Onder Positie {#center--bottom-position}
@@ -170,7 +173,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 
 </Tabs>
 
-Om de zichtbare radius rond uw locatie te vergroten, kunt u de positie van de Radiusliniaal wijzigen door de optie *Midden* of *Onder* te selecteren.
+Om de zichtbare radius rond uw locatie te vergroten, kunt u de positie van de Radiusliniaal wijzigen door de optie *Midden* of *Onder* te selecteren.  
 
 Voor meer informatie over *de positie op het scherm*, zie het artikel [Scherm configureren](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ De radiuscirkels verschijnen met diepte, wat bijzonder nuttig is voor routeplann
 
 ## Afstand door te tikken {#distance-by-tap}
 
-![Afstand tussen twee willekeurige punten op de kaart](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Afstand door te tikken Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Afstand door te tikken iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 De **Afstand door te tikken**-tool stelt u in staat om afstanden tussen punten op de kaart te meten zonder de Radiusliniaal te gebruiken of een route te maken.
 
@@ -215,11 +232,13 @@ Er zijn twee gebruiksscenario's:
 - **Afstand tussen twee willekeurige punten**  
   Tik tegelijkertijd op twee punten op de kaart (multi-touch). Een lijn verbindt de twee punten en de gemeten afstand wordt weergegeven.
 
+U kunt ook de tekstgrootte van het afstandslabel aanpassen. Kies tussen *<Translate android="true" ids="shared_string_normal"/>* (standaard) en *<Translate android="true" ids="shared_string_large"/>* (1,5× groter). Wanneer de Grote optie is geselecteerd, wordt automatisch extra ruimte toegevoegd tussen de lijn en het label voor betere leesbaarheid. Wijzigingen worden direct toegepast zonder de app te herstarten.
+
 | | |
 |------------|------------|
 | Inschakelen |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Tekstgrootte (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Tekstgrootte | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Eenheden Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

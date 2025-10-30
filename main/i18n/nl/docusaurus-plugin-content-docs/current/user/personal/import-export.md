@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Importeren / Exporteren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -58,7 +58,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,l
 
 </Tabs>
 
-Alle gegevens die u hebt geconfigureerd en aangemaakt, kunnen worden geëxporteerd via het ***Exporteermenu***. Het menu bestaat uit drie groepen: **Instellingen**, **Mijn Plaatsen** en **Bronnen**, die alle beschikbare bestandsmappen bevatten. U kunt de bestanden die u wilt exporteren in elke map selecteren, één voor één of allemaal tegelijk. **Alle geëxporteerde bestanden worden opgeslagen in `.osf`-formaat**.  
+Alle gegevens die u hebt geconfigureerd en aangemaakt, kunnen worden geëxporteerd via het ***Exporteermenu***. Het menu bestaat uit drie groepen: **Instellingen**, **Mijn Plaatsen** en **Bronnen**, die alle beschikbare bestandsmappen bevatten. Bijvoorbeeld, in de sectie Bronnen worden kaarten per type gegroepeerd in *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, en *<Translate android="true" ids="topography_maps"/>* voor eenvoudigere navigatie en selectieve export. U kunt de bestanden die u wilt exporteren in elke map selecteren, één voor één of allemaal tegelijk. **Alle geëxporteerde bestanden worden opgeslagen in `.osf`-formaat**.  
 
 
 ### Importeren {#import}
@@ -100,7 +100,7 @@ Opent en herstelt `.osf`-bestanden. Tik op het bestand in de bestandsbeheerder v
 
 ## Gegevensverlies voorkomen {#preventing-data-loss}
 
-In de *Android*- en *iOS*-versies van OsmAnd wordt, als u de app volledig **verwijdert** of **Gegevens wissen** selecteert in het menu Applicatie-informatie van de Instellingen op uw apparaat, de gegevensmap ook verwijderd uit de bestandsbeheerder van het apparaat. Als u geen voorzorgsmaatregelen neemt, leidt dit tot het **verlies van alle gedownloade kaarten voor OsmAnd-gegevens, alle opgeslagen Favorieten, GPX-tracks, Stembegeleiding (TTS) en [andere gegevens](#export--import-data).**
+In de *Android*- en *iOS*-versies van OsmAnd wordt, als u de app volledig **deïnstalleert** of **Gegevens wissen** selecteert in het menu Applicatie-informatie van de Instellingen op uw apparaat, de gegevensmap ook verwijderd uit de bestandsbeheerder van het apparaat. Als u geen voorzorgsmaatregelen neemt, leidt dit tot het **verlies van alle gedownloade kaarten voor OsmAnd-gegevens, alle opgeslagen Favorieten, GPX-tracks, Stembegeleiding (TTS) en [andere gegevens](#export--import-data).**
 
 Er zijn twee manieren om uw gegevens op te slaan voordat u de OsmAnd-app opnieuw installeert:
 
@@ -119,4 +119,4 @@ Er zijn twee manieren om uw gegevens op te slaan voordat u de OsmAnd-app opnieuw
 
 1. Hoe Favorieten en Tracks over te zetten naar een nieuw apparaat. [(bekijk)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
 2. Ik heb een GPX-bestand, hoe importeer ik dit in OsmAnd? [(bekijk)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Kaartgegevens verwijderen na de app-update (als "Multiuser Storage 1" is geselecteerd). [(bekijk)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+3. Kaartgegevens verwijderen na de app-update (als “Multiuser Storage 1” is geselecteerd). [(bekijk)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

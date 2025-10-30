@@ -1,8 +1,9 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -50,10 +50,10 @@ Log in met uw bij Telegram geregistreerde telefoonnummer om het volgende mogelij
 
 ## Vereiste installatieparameters {#required-setup-parameters}
 
-Installeer OsmAnd Online GPS Tracker APK:
+U kunt OsmAnd Online GPS Tracker installeren:
 
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- van de [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- of van de [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (APK-bestand)
 
 
 ## Plugin-instellingen {#plugin-settings}
@@ -224,6 +224,6 @@ De widget heeft verschillende weergaven.
 
 De OsmAnd-app heeft zijn eigen Telegram-bot genaamd "OsmAnd Assistant", die u helpt OsmAnd Telegram te integreren met trackers of API's van derden. U kunt niet alleen uw locatie delen, maar ook de locatie van uw fiets of een groep mensen die racen, beschikbaar via de API. OsmAnd Telegram geeft u een mooie presentatie van uw locaties op de kaart in OsmAnd zelf.  
 
-Deel alstublieft uw mening over deze nieuwe app met ons op [Twitter](https://twitter.com/osmandapp) en andere sociale kanalen.
+Deel alstublieft uw mening over deze nieuwe app met ons op [Twitter](https://x.com/osmandapp) en andere sociale kanalen.
 
 Om de GPS-posities van contacten op de kaart te bekijken, heeft u de nieuwste versie van [OsmAnd of OsmAnd+](./../purchases/android.md) nodig. De minimaal ondersteunde versie van OsmAnd of OsmAnd+ is 3.0.4.

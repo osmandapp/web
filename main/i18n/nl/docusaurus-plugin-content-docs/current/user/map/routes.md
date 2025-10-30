@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  Routes
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -111,11 +111,22 @@ Sommige wegsegmenten kunnen deel uitmaken van vele routes, maar ze kunnen indivi
 2. [CAI-schaal](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Skiroutes {#ski-routes}
+### Skipistes en -routes {#ski-slopes-and-routes}
 
+- _Skipistes en -routes_ in _Winter en Ski_ kaartstijl.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Skiroutes zijn een specifieke groep [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typisch kunnen deze routes worden gebruikt met de kaartstijl [Winter en Ski](../map/vector-maps.md#winter-and-ski) met alle zichtbare [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
+- _Skipistes en -routes_ in _OsmAnd standaard_ kaartstijl.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Skipistes en -routes zijn een specifieke groep [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typisch kunnen deze routes worden gebruikt met de kaartstijl [Winter en Ski](../map/vector-maps.md#winter-and-ski) met alle zichtbare [Pistes](https://wiki.openstreetmap.org/wiki/Pistes). Als een andere kaartstijl actief is, wordt een banner weergegeven die suggereert om over te schakelen naar [Winter en Ski](../map/vector-maps.md#winter-and-ski) (*Alleen Android*) en worden alleen de pistes weergegeven. Tik op ***Omschakelen*** om de kaartstijl te wijzigen zonder het huidige scherm te verlaten, of ***Later*** om de banner te verbergen.
+
+
+### Sneeuwscooterpaden {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+Sneeuwscooterpaden zijn gemapt in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) als `route=snowmobile`. Ze worden gebruikt voor winterrecreatie en om afgelegen gebieden tijdens het sneeuwseizoen te verbinden. In OsmAnd zijn sneeuwscooterpaden klikbaar, zie de sectie [Acties met routes](#actions-with-routes).
 
 
 ### Ruiterpaden {#horse-routes}
@@ -152,9 +163,9 @@ Een [fitnesstrail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Reisroutes maken deel uit van aangepaste [Reisgids](../plan-route/travel-guides.md) (`travel.obf`) bestanden, die kunnen worden gegenereerd uit de [routes van de gebruiker](https://osmand.net/blog/routes#generated-travel-routes) of deel uitmaken van aanvullende [plugins](../plugins/index.md).  
+Reisroutes maken deel uit van aangepaste [reisboeken](../plan-route/travel-guides.md) (`travel.obf`) bestanden, die kunnen worden gegenereerd uit de [routes van de gebruiker](https://osmand.net/blog/routes#generated-travel-routes) of deel uitmaken van aanvullende [plugins](../plugins/index.md).  
 
-U kunt de weergave van bepaalde ***Reisgidsen*** en soorten ***tracks*** aanpassen, tracks weergeven als punten, of ***Puntgroepen*** (bijvoorbeeld voor Wikivoyage-reisgidsen). Leer [hier meer over Reisgidsen](../plan-route/travel-guides.md).
+U kunt de weergave van bepaalde ***Reisboeken*** en soorten ***tracks*** aanpassen, tracks weergeven als punten, of ***Puntgroepen*** (bijvoorbeeld voor Wikivoyage-reisboeken). Leer [hier meer over reisgidsen](../plan-route/travel-guides.md).
 
 
 ## Routes op de kaart weergeven {#display-routes-on-the-map}
@@ -165,7 +176,14 @@ U kunt de weergave van bepaalde ***Reisgidsen*** en soorten ***tracks*** aanpass
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- Om de gewenste routes op de kaart weer te geven, schakelt u ze in de *Lijst met routes* van het menu [Kaart configureren](../map/configure-map-menu.md) in.
+- OsmAnd kan [routes op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
+- De belangrijkste routetypes kunnen ook worden gefilterd op klassen en subklassen, waardoor u alleen specifieke groepen binnen elk type kunt weergeven. Bijvoorbeeld, u kunt wandelroutes weergeven op basis van **OSMC-symbolen** als klassen, en op basis van *internationale, nationale, regionale* of *lokale netwerken* als subklassen.
+- U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md).  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in de *Lijst met routes* van het menu [Kaart configureren](../map/configure-map-menu.md) in.
 - OsmAnd kan [routes op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
 - U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md).  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## Details van klimgebied en rotswand {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 Bij het selecteren van een [klimgebied of -rotswand](../map/routes.md#climbing-routes), biedt OsmAnd een gedetailleerd overzicht van de klimlocatie, inclusief: naam en locatie, moeilijkheidsgraad van het klimmen (UIAA, Frans, YDS, etc.), rotstype, hoogte en routelengte, klimkwaliteit en oppervlaktecondities.
-
 
 
 ## Acties met routes {#actions-with-routes}
@@ -205,13 +223,13 @@ Bij het selecteren van een [klimgebied of -rotswand](../map/routes.md#climbing-r
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Op de kaart kunt u routes selecteren voor [wandelen, fietsen, reizen en meer](#type-of-routes), die waar van toepassing zijn gemarkeerd met [OSMC-symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol).
+Op de kaart kunt u routes selecteren voor [wandelen, fietsen, ski, MTB, crossmotor, reizen en meer](#type-of-routes). Waar beschikbaar, tonen wandelroutes hun wegmarkeringen met behulp van [OSMC-symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); andere routetypes gebruiken hun eigen markeringen.
 
 Wanneer u op een **routesymbool** op de kaart tikt:
 

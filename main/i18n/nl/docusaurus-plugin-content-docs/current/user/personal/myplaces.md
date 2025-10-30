@@ -1,8 +1,9 @@
 ---
-source-hash: 479b492a4c86a0646befd8187d85091dd523d1e848bf8bd1a5f10175948ab1bf
+source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
 sidebar_position: 6
 title:  Mijn Plaatsen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -48,7 +48,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu"/> → Mijn Plaatsen
 
 - [***Kaarten & Bronnen***](../personal/maps-resources.md):  
 
-    Het *Hoofdmenu*-item *Kaarten & Bronnen* van de OsmAnd-applicatie biedt toegang tot gegevensbeheer vanuit de sectie *Mijn Plaatsen*. Het tabblad [*Lokaal*](../personal/maps-resources.md#local) toont u hoeveel ruimte wordt ingenomen door alle bestaande OsmAnd-gegevens op uw apparaat, en in het bijzonder de sectie *Mijn Plaatsen*. U kunt het gebruiken om gedetailleerde informatie over uw gegevens te krijgen en toegang te krijgen tot het beheer ervan. De sectie kan alleen items bevatten waarvoor gegevens zijn gedownload.  
+    Het *Hoofdmenu*-item *Kaarten & Bronnen* van de OsmAnd-applicatie biedt toegang tot gegevensbeheer vanuit de sectie *Mijn Plaatsen*. Het tabblad [*Lokaal*](../personal/maps-resources.md#local-menu) toont u hoeveel ruimte wordt ingenomen door alle bestaande OsmAnd-gegevens op uw apparaat, en in het bijzonder de sectie *Mijn Plaatsen*. U kunt het gebruiken om gedetailleerde informatie over uw gegevens te krijgen en toegang te krijgen tot het beheer ervan. De sectie kan alleen items bevatten waarvoor gegevens zijn gedownload.  
 
     **Ga naar** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Controleer en beheer uw gegevens.
 
@@ -84,37 +84,10 @@ Ga naar: *<Translate android="true" ids="shared_string_menu"/> → Mijn Plaatsen
 
     - **Verwijderen** (*op iOS bevindt deze optie zich in het menu Bewerken*) — Verwijder favoriete punten één voor één of geselecteerde favoriete mappen en alle punten die ze bevatten.
 
-2. ***Drie-puntenmenu*** (*Android*) en ***lang tikken*** (*iOS*). Gebruik het *drie-puntenmenu* naast elke map of *tik lang* op de map om groepen favorieten te beheren:  
+2. ***Drie-puntenmenu*** (*Android*) en ***lang tikken*** (*iOS*). Gebruik het *drie-puntenmenu* naast elke map of *tik lang* op de map om groepen favorieten te beheren. Zie [Acties voor favorietengroepen](../personal/favorites.md#favorite-group-actions) voor details.  
 
-    <Tabs groupId="operating-systems" queryString="current-os">
 
-    <TabItem value="android" label="Android">
-
-    ![Drie-puntenmenu](@site/static/img/personal/favorites_three-dot_menu.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorieten menu iOS](@site/static/img/personal/favorites_long-tap_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
-
-    - **<Translate android="true" ids="change_default_appearance"/>** — Pas aan hoe de favoriete punten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** of **Verberg op kaart** — Schakel deze optie in of uit om de favoriete punten uit de map op de kaart weer te geven of te verbergen.
-
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** of **Verwijder van kaartmarkeringen** (*Alleen Android*) — Voeg alle favoriete punten uit de map toe aan de *lijst met kaartmarkeringen* of verwijder ze indien nodig voor gemakkelijke referentie.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Deel de favoriete punten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of een back-up te maken.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Verwijder permanent de geselecteerde favorietenmap en alle punten daarin.
-
-Voor meer gedetailleerde instructies, raadpleeg het artikel [Favorieten](../personal/favorites.md).
+Voor volledige instructies, raadpleeg het artikel [Favorieten](../personal/favorites.md).
 
 
 ## Tracks {#tracks}

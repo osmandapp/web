@@ -1,8 +1,9 @@
 ---
-source-hash: c674aa26de62610f1442ef441eaa008b20c3b4a69dd7617b13ccd27ccf7f2234
+source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
 sidebar_position: 7
 title:  Favorieten
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-**Favorieten** is een functie van OsmAnd waarmee u bladwijzers (notities) op de kaart kunt maken. Deze favorietenpunten worden standaard weergegeven als gele sterren, maar u kunt ze volledig aanpassen met verschillende kleuren, vormen en pictogrammen. Favorieten zijn gegroepeerd in een speciale kaartlaag, die zichtbaar wordt vanaf het *6e zoomniveau*.
+**Favorieten** is een functie van OsmAnd waarmee u bladwijzers (notities) op de kaart kunt maken. Deze favorietenpunten worden standaard weergegeven als gele sterren, maar u kunt ze volledig aanpassen met verschillende kleuren, vormen en pictogrammen. Favorieten zijn gegroepeerd in een speciale kaartlaag, die zichtbaar wordt vanaf het *6e zoomniveau*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -78,7 +78,7 @@ Favorieten maken deel uit van een speciale kaartlaag, en u kunt ze [tonen of ver
 
 Om een favorietenpunt toe te voegen:
 
-1. Selecteer een [POI](../map/point-layers-on-map.md#points-of-interest-pois) of een structuur op de kaart.
+1. Selecteer een [POI](../map/point-layers-on-map.md#points-of-interest-pois) of een structuur op de kaart.  
     Korte tik voor een POI of lange tik voor een algemeen kaartpunt.
 2. Selecteer [Toevoegen (☆)](../map/map-context-menu.md#add--edit-favorite) in het contextmenu van de kaart.
 
@@ -152,7 +152,7 @@ Er is een breed scala aan pictogrammen voor POI's en waypoints beschikbaar in Os
 
 ### Speciale Favorieten (Persoonlijk) {#special-favorites-personal}
 
-De map *Persoonlijk* bevat speciale punten zoals **<Translate android="true" ids="favorite_home_category"/>** en **<Translate android="true" ids="work_button"/>**, die vaak worden gebruikt bij [navigatie](../navigation/setup/route-navigation.md#select-starting-point). Deze map heeft geen *drie-puntenmenu* en de parameters ervan kunnen niet worden gewijzigd.
+De map *Persoonlijk* bevat speciale punten zoals **<Translate android="true" ids="favorite_home_category"/>** en **<Translate android="true" ids="work_button"/>**, die vaak worden gebruikt bij [navigatie](../navigation/setup/route-navigation.md#select-start-point). Deze map heeft geen *drie-puntenmenu* en de parameters ervan kunnen niet worden gewijzigd.
 
 
 ## Favorieten Beheren {#manage-favorites}
@@ -177,9 +177,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-In de sectie **Mijn Favorieten** kunt u:
+De sectie **Mijn Favorieten** stelt u in staat om:
 
-- [Zoeken](#order--sorting--search) naar specifieke favorieten of groepen.
+- [Te zoeken](#order--sorting--search) naar specifieke favorieten of groepen.
 - [Bulkoperaties](#bulk-edit--delete) — Hernoemen, verplaatsen of verwijderen van meerdere favorieten tegelijk.
 
 ### Volgorde / Sorteren / Zoeken {#order--sorting--search}
@@ -267,7 +267,7 @@ Gebruik het ***Drie-puntenmenu*** (*Android*) naast elke map en ***tik lang*** (
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
 
-- **<Translate android="true" ids="change_default_appearance"/>** — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** of **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
 
@@ -276,8 +276,6 @@ Gebruik het ***Drie-puntenmenu*** (*Android*) naast elke map en ***tik lang*** (
 - **<Translate android="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
 
 - **<Translate android="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
-
-Meer details in het artikel [Mijn Plaatsen](../personal/myplaces.md#favorites).
 
 
 
@@ -299,11 +297,19 @@ Meer details in het artikel [Mijn Plaatsen](../personal/myplaces.md#favorites).
 
 </Tabs>
 
-Instellingen voor *Uiterlijk van Groep Wijzigen*:
+De optie **Uiterlijk van Groep Wijzigen** stelt u in staat om een standaardstijl in te stellen voor alle favorieten in een map. U kunt de volgende parameters aanpassen:
 
-- **Pictogram, kleur, vorm** — Stel een standaardstijl in voor alle favorieten in een groep.
-- **Consistentie** — Nieuwe favorieten die aan de groep worden toegevoegd, nemen automatisch het standaard uiterlijk over.
-- **Aanpassing** — Overschrijf de standaardinstellingen voor bestaande punten in de map, alleen voor nieuwe favorieten, of pas toe op alles.
+- **Pictogram** — Kies een pictogram uit de beschikbare categorieën.
+- **Kleur** — Selecteer een effen kleur om favorieten te markeren.
+- **Vorm** — Kies een markervorm (cirkel, vierkant, octagon).
+
+Als de favorieten in een map al verschillende pictogrammen, kleuren of vormen hebben, wordt de *Oorspronkelijke staat* weergegeven. Dit betekent dat elke favoriet zijn huidige stijl behoudt tenzij u een nieuwe selecteert. Bij het opslaan wordt u ook gevraagd te kiezen hoe de wijzigingen moeten worden toegepast:
+
+- **Alleen toepassen op nieuwe punten** — Bestaande favorieten blijven ongewijzigd; nieuwe favorieten erven het standaard uiterlijk.
+- **Toepassen op bestaande punten** — Werk alleen de favorieten bij die al in de map staan.
+- **Toepassen op alle punten** — Pas de nieuwe stijl toe op zowel bestaande als toekomstige favorieten.
+
+Deze flexibiliteit stelt u in staat om het uiterlijk van een map te standaardiseren of unieke aanpassingen te behouden terwijl u nog steeds standaardwaarden instelt voor nieuwe punten.
 
 
 ## Exporteren / Importeren {#export--import}
@@ -337,13 +343,13 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-De [Gratis Favorietenback-up](../personal/osmand-cloud.md#osmand-start) is een speciaal aankoopabonnement waarmee u een back-up kunt maken van uw favorietenpunten (locaties) voor de **Android-, iOS**- of **Web**-versies in de OsmAnd-applicatie en deze kunt herstellen vanuit OsmAnd Cloud. Dit abonnement is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).
+De [Gratis Favorietenback-up](../personal/osmand-cloud.md#osmand-start) is een speciaal aankoopabonnement waarmee u een back-up kunt maken van uw favorietenpunten (locaties) voor **Android, iOS**- of **Web**-versies in de OsmAnd-applicatie en deze kunt herstellen vanuit OsmAnd Cloud. Dit abonnement is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).  
 
 *Gratis Favorietenback-up* biedt deze voordelen:
 
 - **Geen betaling vereist**. Gebruik de back-upfunctie zonder betaalde abonnementen aan te schaffen.
 - **Favorietenpunten opslaan**. Sla uw favorietenpunten regelmatig op in OsmAnd om te voorkomen dat u ze verliest als uw apparaat crasht of de app wordt verwijderd.
-- **Favorietenpunten overdragen**. Importeer uw favorietenpunten naar een nieuw apparaat met de functie *Gratis Favorietenback-up* als u OsmAnd op meerdere apparaten gebruikt.
+- **Favorietenpunten overdragen**. Importeer uw favorietenpunten naar een nieuw apparaat met de functie *Gratis Favorietenback-up* als u OsmAnd op meerdere apparaten gebruikt.  
 
 
 ### Hoe een Back-up te Maken {#how-to-create-a-backup}
@@ -368,7 +374,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud*, ziet u de promotiebanner niet.
+U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud*, ziet u de promotiebanner niet.  
 
 - *Banner Gratis Favorietenback-up*. Tik op deze banner om het back-upproces te starten.
 - *Voltooi de registratiestap* als u geen OsmAnd Cloud-account heeft door de instructies in de [registratiegids](../personal/osmand-cloud.md#login) te volgen.
@@ -420,7 +426,7 @@ U kunt uw favorieten exporteren en importeren met de speciale knoppen onderaan h
 </Tabs>
 
 - Tik op het **Drie-puntenmenu** (*Android*) of de **Bewerk**-knop (*potloodpictogram op iOS*) of **tik lang** op de map (*iOS*) van de geselecteerde favorietenmap.
-- Kies de **Deel**-knop om het *Favorites.gpx*-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps.
+- Kies de **Deel**-knop om het *Favorites.gpx*-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps.  
 
 
 ### Automatische Favorietenback-up {#automatic-favorites-backup}
@@ -457,13 +463,13 @@ OsmAnd maakt een **back-upbestand** telkens wanneer favorieten worden bewerkt.
 - Exporteer het `.osf`-bestand naar lokale opslag, clouddiensten of deel het rechtstreeks.
 
 :::caution
-In de nieuwste versies van ***Android*** is de toegang tot systeemmappen beperkt. Na het uitpakken van het favorietenbestand uit het archief, blijft het echter mogelijk om het door te sturen naar messengers of clouddiensten, enz.
+In de nieuwste versies van ***Android*** is de toegang tot systeemmappen beperkt. Na het uitpakken van het favorietenbestand uit het archief, blijft het echter mogelijk om het door te sturen naar messengers of clouddiensten, enz.  
 :::
 
 
 ### Favorieten in GPX-bestand {#favorites-in-gpx-file}
 
-Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van tags. Bij het aanmaken van een Favorietenpunt kunt u uw eigen [beschrijving](#favorite-point) schrijven of informatie gebruiken uit de OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) gegevens waaruit uw punt is gemaakt. Favorietenpunten, POI's en Waypoints gebruiken dezelfde **tags** om informatie op te slaan en worden opgeslagen in **GPX-bestandsformaat**.
+Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van tags. Bij het aanmaken van een Favorietenpunt kunt u uw eigen [beschrijving](#favorite-point) schrijven of informatie gebruiken uit de OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) gegevens waaruit uw punt is gemaakt. Favorietenpunten, POI's en Waypoints gebruiken dezelfde **tags** om informatie op te slaan en worden opgeslagen in **GPX-bestandsformaat**.  
 
 
 ```xml

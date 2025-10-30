@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Navigatie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,15 +14,43 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Routeberekening {#route-calculation}
 
 ### Routeberekening is traag {#route-calculation-is-slow}
 
 *Android*. OsmAnd gebruikt twee verschillende **offline routeberekeningsengines**: een *op Java gebaseerde engine* en een *Native (C++) engine*.
 
-- De *op Java gebaseerde engine* wordt gebruikt in de [Veilige modus](../plugins/development.md#overview), maar is ongeveer 10 keer trager dan de native engine. Het heeft ook strikte geheugenbeperkingen, wat kan leiden tot fouten zoals *Niet genoeg geheugen om te berekenen*. Als u dit probleem tegenkomt, navigeer dan naar *Plugins → OsmAnd ontwikkeling → Instellingen →* [*Veilige modus*](../plugins/development.md#overview) en zorg ervoor dat deze optie is uitgeschakeld.
+- De *op Java gebaseerde engine* wordt gebruikt in [Veilige modus](../plugins/development.md#overview), maar is ongeveer 10 keer trager dan de native engine. Het heeft ook strikte geheugenbeperkingen, wat kan leiden tot fouten zoals *Niet genoeg geheugen om te berekenen*. Als u dit probleem tegenkomt, navigeer dan naar *Plugins → OsmAnd ontwikkeling → Instellingen →* [*Veilige modus*](../plugins/development.md#overview) en zorg ervoor dat deze optie is uitgeschakeld.
 - De *Native (C++) engine* biedt betere prestaties, maar de efficiëntie hangt af van het geheugen en de processormogelijkheden van uw apparaat. Over het algemeen presteert native routeberekening goed voor routes onder de 300 km, met routeberekeningstijden die variëren van 15 seconden tot 4 minuten. Als het proces langer dan 4 minuten duurt, is het raadzaam om te stoppen, omdat de applicatie kan crashen.
+
+
+### Onjuiste of onderbroken routes {#incorrect-or-broken-routes}
+
+Soms kan OsmAnd onverwachte navigatieresultaten weergeven. In plaats van het wegennet te volgen, kan de route verschijnen als een rechte gestippelde lijn naar een niet-gerelateerd punt, of kan de navigatie volledig mislukken. Dit wijst meestal op het feit dat routering naar de geselecteerde locatie niet mogelijk is met de huidige configuratie. Vergelijkbare problemen zijn gemeld door gebruikers op [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) en [meer](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Oorzaken:**
+
+- Verouderde of gedupliceerde kaarten. Kaarten met verschillende updatedatums of duplicaten kunnen de connectiviteit verstoren (vooral over regio's/grenzen).
+- Beschadigde profielinstellingen. Aangepaste/gewijzigde profielen (bijv. Fiets) kunnen inconsistent gedrag veroorzaken.
+- Ongelijke routeberekeningsengine: Verschillende engines (HH × Java vs HH × C++) kunnen dezelfde kaarten anders verwerken.
+
+**Oplossingen:**
+
+1. Herstel uw profiel.
+- Open *Menu* → *Instellingen* → *App-profiel (Navigatieprofiel)*.
+- Selecteer *Herstellen naar standaard*.
+
+2. Verwijder en installeer kaarten opnieuw.
+- Open *Menu* → *Kaarten & Resources* → *Lokaal* en verwijder alle kaarten voor de getroffen regio('s).
+- Ga vervolgens naar *Menu* → *Kaarten & Resources* → *Downloads* en download de kaarten opnieuw.
+- Optioneel controleren in *Menu* → *Kaarten & Resources* → *Updates* om ervoor te zorgen dat alle regio's dezelfde updatedatum hebben.
+
+3. Schakel routeberekeningsengine om.
+- Schakel de plugin in: *Menu* → *Plugins* → *OsmAnd ontwikkeling*.
+- Open vervolgens *Menu* → *Instellingen* → *App-profiel* → *Navigatie-instellingen* → *Routeparameters* → *Ontwikkeling* → *Routetype* en schakel *HH × C++* ↔ *HH × Java* om (u kunt ook A* classic of A* 2-fase proberen).
+
+4. Als laatste redmiddel.
+- Herinstalleer de app en download kaarten opnieuw (helpt bij aanhoudende verborgen conflicten).
 
 
 ### Hoe routes langer dan 250 km berekenen? {#how-to-calculate-routes-longer-than-250km}
@@ -85,7 +114,7 @@ Voor gedetailleerde instructies over het instellen en aanpassen van Spraakaanwij
 
 ### TTS functioneert niet naar behoren? Volg deze stappen om het op te lossen {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-Problemen met **Tekst-naar-spraak (TTS)** zijn doorgaans gerelateerd aan **Android-systeeminstellingen**, niet aan de OsmAnd-app zelf.
+Problemen met **Tekst-naar-spraak (TTS)** zijn doorgaans gerelateerd aan **Android-systeeminstellingen**, niet aan de OsmAnd-app zelf.  
 
 1. Zorg ervoor dat er een TTS-engine is geïnstalleerd.
 
@@ -108,17 +137,17 @@ Problemen met **Tekst-naar-spraak (TTS)** zijn doorgaans gerelateerd aan **Andro
 
 #### Aanvullende stappen {#additional-steps}
 
-- *Update Google TTS*. Open de Google Play Store, zoek naar **Google Tekst-naar-spraak** en update het.
-- *Simuleer Navigatie*. Tik op *Navigatieknop → Instellingen → Simuleer Navigatie* om te controleren of de spraakbegeleiding wordt afgespeeld.
-- *Herinstalleer OsmAnd*:
-   - **Maak een back-up van de instellingen:** *Menu → Instellingen → Exporteren naar bestand*.
-   - Verwijder OsmAnd en installeer het opnieuw vanuit de app store.
+- *Update Google TTS*. Open Google Play Store, zoek naar **Google Tekst-naar-spraak**, en update het.  
+- *Simuleer Navigatie*. Tik op *Navigatieknop → Instellingen → Simuleer Navigatie* om te controleren of de spraakbegeleiding wordt afgespeeld.  
+- *Herinstalleer OsmAnd*:  
+   - **Maak een back-up van de instellingen:** *Menu → Instellingen → Exporteren naar bestand*.  
+   - Verwijder OsmAnd en installeer het opnieuw vanuit de app store.  
    - Herstel de instellingen: *Menu → Instellingen → Importeren uit bestand*.
 
 Voor aanvullende probleemoplossing, bezoek:
 
-- [Gids Spraaknavigatie](../navigation/guidance/voice-navigation.md)
-- [Instellingen Importeren/Exporteren](../personal/import-export.md)
+- [Gids Spraaknavigatie](../navigation/guidance/voice-navigation.md)  
+- [Instellingen Importeren/Exporteren](../personal/import-export.md)  
 
 
 ## Overig {#other}

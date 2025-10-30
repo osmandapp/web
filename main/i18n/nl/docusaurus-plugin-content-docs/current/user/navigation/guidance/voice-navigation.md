@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Stembediening / Meldingen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-De stemnavigatiefunctie van OsmAnd geeft gesproken instructies en waarschuwingen in realtime, zodat u onderweg geïnformeerd en veilig blijft. U kunt de begeleiding aanpassen aan uw voorkeuren en behoeften. Selecteer hiervoor een geschikt stemprofiel, ofwel een [Tekst-naar-spraak (TTS) engine](#tts-text-to-speech) die dynamisch straatnamen, afstanden en snelheidslimieten kan aankondigen, of een [vooraf opgenomen stem](#recorded-voice-prompts) die beknopte instructies biedt.  
+De stemnavigatiefunctie van OsmAnd biedt realtime gesproken instructies en waarschuwingen die u helpen geïnformeerd en veilig te blijven onderweg. U kunt de begeleiding aanpassen aan uw voorkeuren en behoeften. Selecteer hiervoor een geschikt stemprofiel, ofwel een [Tekst-naar-spraak (TTS) engine](#tts-text-to-speech) die dynamisch straatnamen, afstanden en snelheidslimieten kan aankondigen, of een [vooraf opgenomen stem](#recorded-voice-prompts) die beknopte instructies biedt.  
 
 Naast stapsgewijze aanwijzingen kan de stemnavigatie van OsmAnd u op de hoogte stellen van naderende nuttige plaatsen, veranderingen in de verkeerssituatie en wanneer u een vooraf ingestelde snelheidslimiet overschrijdt. Voor meer informatie over het aanpassen van deze waarschuwingen, zie [Instellingen voor aankondigingstijd](#announcement-time) en [Waarschuwingen voor snelheidslimieten](#speed-limit).  
 
@@ -52,7 +52,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Instellingen stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> knop* *(of <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Kies profiel → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Instellingen stemnavigatie iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 
 **[Taal](#voice-prompt-language)**. Selecteer uw voorkeurstaal en -type.
 
-**Aankondiging**. Hiermee kunt u de volgende soorten meldingen configureren:
+**Aankondiging**. Hiermee kunt u de volgende [soorten meldingen](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts) configureren:
 
-- *Straatnamen (TTS), Afritnummers, Verkeerswaarschuwingen, Voetgangersoversteekplaatsen* en *Tunnels.*
+- *Stapsgewijze aanwijzingen, Straatnamen (TTS), Afritnummers, Verkeerswaarschuwingen, Voetgangersoversteekplaatsen* en *Tunnels.*
 - *[Flitsers](#speed-cameras)*.
 - Configureer ook de **[Waarschuwingswidget](../../widgets/nav-widgets.md#alert-widget)** om te gebruiken met aankondigingen.
 
@@ -108,7 +108,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 
 ### Flitsers {#speed-cameras}
 
-![Timing aankondiging stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 [Waarschuwingen voor flitsers](../../personal/global-settings.md#uninstall-speed-cameras) stellen u in staat om POI's met flitsers te activeren of deactiveren. U moet de OsmAnd-applicatie opnieuw opstarten om de wijzigingen toe te passen.
   
@@ -121,13 +121,13 @@ In sommige landen of regio's is het gebruik van applicaties die waarschuwen voor
 
 <TabItem value="android" label="Android">
 
-![Stemnavigatie](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Stemnavigatie](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
 
 </TabItem>
 
@@ -149,7 +149,7 @@ Deze instelling voor **Tolerantie snelheidslimiet** beïnvloedt de snelheid die 
 
 ### Aankondigingstijd {#announcement-time}
 
-![Timing aankondiging stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
 De aankondigingstijd van de verschillende stemberichten is afhankelijk van het geselecteerde profiel, het type melding, de huidige navigatiesnelheid en de standaard navigatiesnelheid. Met deze instelling kunt u de afstand wijzigen voordat de stemberichten worden geactiveerd door een afstandsvermenigvuldiger toe te passen: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 
@@ -160,7 +160,7 @@ In de vervolgkeuzelijst *Tijd- en Afstandsintervallen* kunt u gedetailleerde inf
 
 <InfoAndroidOnly/>
 
-![Stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-1.png)
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 Om te voorkomen dat audio tegelijkertijd in dezelfde uitvoerstroom wordt afgespeeld, is de audiofocus geïmplementeerd in Android. OsmAnd zal de luidspreker gebruiken die in deze instelling uit de lijst is geselecteerd voor de audio-uitvoer. Andere applicaties zullen het afspelen pauzeren of het volume verlagen om het voor u gemakkelijker te maken de stemberichten van OsmAnd te horen.  
 
@@ -247,7 +247,7 @@ Voor probleemoplossing, raadpleeg:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Stemnavigatie Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
 
 </TabItem>
 
@@ -255,7 +255,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Instellingen stemnavigatie iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
 </TabItem>
 
@@ -276,6 +276,7 @@ OsmAnd biedt twee soorten stemberichten:
     - Geeft alleen basisafslagaanwijzingen.
 
 > *TTS wordt aanbevolen voor gedetailleerde navigatiebegeleiding.*
+
 
 ### Systeeminstellingen voor stemberichten {#system-level-voice-prompt-settings}
 
@@ -303,18 +304,18 @@ Er zijn momenteel in totaal 45 talen. Niet alle hieronder vermelde talen worden 
 | :--- | :--- |
 | **А** | Arabisch |
 | **B** | Wit-Russisch, Bulgaars |
-| **C** | Catalaans, Chinees, Chinees (Hong Kong), Chinees (Traditioneel), Kroatisch, Tsjechisch |  
+| **C** | Catalaans, Chinees, Chinees(Hong Kong), Chinees(Traditioneel), Kroatisch, Tsjechisch |  
 | **D** | Deens, Nederlands |
-| **E** | Engels, Engels (Verenigd Koninkrijk), Ests |
+| **E** | Engels, Engels(Verenigd Koninkrijk), Ests |
 | **F** | Fins, Frans |
-| **G** | Duits, Duits (informeel), Grieks, Guarani |
-| **H** | Hindi, Hongaars, Hongaars (formeel), Hebreeuws |
+| **G** | Duits, Duits(informeel), Grieks, Guarani |
+| **H** | Hindi, Hongaars, Hongaars(formeel), Hebreeuws |
 | **I** | Indonesisch, Italiaans |
 | **J** | Japans |
 | **K** | Koreaans  |
 | **L** | Lets |
 | **N** | Noors Bokmål  |
-| **P** | Perzisch, Pools, Portugees, Portugees (Brazilië) |  
+| **P** | Perzisch, Pools, Portugees, Portugees(Brazilië) |  
 | **R** | Roemeens, Russisch  |
 | **S** | Sardijns, Servisch (Cyrillisch), Slowaaks, Sloveens, Spaans, Spaans (Argentinië), Swahili, Zweeds  |
 | **T** | Turks  |
@@ -334,13 +335,13 @@ Het gebruik van opgenomen stemmen in OsmAnd zou alleen een noodoplossing moeten 
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![Instellingen stemnavigatie Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Instellingen stemnavigatie Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
 - Het tweede type zijn opgenomen stemberichten, met een onvolledige set functies:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
-    ![Instellingen stemnavigatie Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
 ### Piepmodi {#beep-modes}
 
@@ -358,9 +359,11 @@ U kunt een OsmAnd-profiel configureren om te piepen in plaats van te spreken, op
 
 ## Tekstmeldingen {#text-notifications}
 
+<InfoAndroidOnly />
+
 Zodra u een route start, kunt u de informatie bekijken in het uitklapbare systeemmenu in de meldingslijst. De stille meldingen van OsmAnd bevatten informatie zoals stapsgewijze instructies, pijlen voor afslagen, aankomsttijd en resterende tijd, huidige snelheid en afstand tot de bestemming.  
 
-![Navigatieroute Melding Android](@site/static/img/navigation/route/navigation_notifications_android.png)
+![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
 Actieve knoppen in het uitklapbare systeemmenu voor uw navigatie:
 
@@ -372,7 +375,7 @@ Actieve knoppen in het uitklapbare systeemmenu voor uw navigatie:
 
 U kunt de meldingsinstellingen voor de OsmAnd-app wijzigen in de systeeminstellingen van uw apparaat. Meldingen kunnen worden weergegeven op het vergrendelscherm, het startscherm, in het uitklapmenu of bovenaan de app.  
 
-Lees hoe meldingsbeheer op Android is geïmplementeerd in dit [artikel](https://support.google.com/android/answer/9079661?hl=nl#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Voor iOS - [hier](https://support.apple.com/nl-nl/HT201925#:~:text=Ga%20naar%20'Instellingen'%20en%20tik,in%20het%20geplande%20meldingenoverzicht.).
+Lees hoe meldingsbeheer op Android is geïmplementeerd in dit [artikel](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Voor iOS - [hier](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Schermbeheer {#screen-control}
@@ -381,7 +384,7 @@ Lees hoe meldingsbeheer op Android is geïmplementeerd in dit [artikel](https://
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![Menu schermbeheer Android](@site/static/img/navigation/route/screen_control_android.png)
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
 
 U kunt het scherm van uw apparaat beheren om energie te besparen. Deze modus heeft twee algemene instellingen: *<Translate android="true" ids="screen_timeout"/>* en *<Translate android="true" ids="turn_screen_on"/>*.
 
@@ -389,15 +392,15 @@ U kunt het scherm van uw apparaat beheren om energie te besparen. Deze modus hee
 
 1. **<Translate android="true" ids="system_screen_timeout"/>**. Het scherm wordt uitgeschakeld afhankelijk van de systeeminstellingen van uw apparaat. De knop *Instellingen wijzigen* biedt snelle toegang tot het systeemmenu zoals *Scherm en helderheid* waar u de scherm-timeout kunt aanpassen.
 
-    ![Systeem-timeout schermbeheer Android](@site/static/img/navigation/route/system_timeout_android.png)
+    ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
 2. **<Translate android="true" ids="wake_time"/>**. Als *Houd scherm aan* is ingeschakeld, past het scherm van het apparaat geen time-out toe na het ontwaken. Als het is uitgeschakeld, kunt u de tijd instellen waarna het scherm van het apparaat wordt uitgeschakeld als u er niet mee interageert, van 5 tot 60 seconden.  
 
-    ![Timeout na ontwaken Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout na ontwaken Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+    ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### Scherm inschakelen {#turn-screen-on}
 
-![scherm inschakelen Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
 Selecteer opties voor het ontwaken van het scherm en zorg ervoor dat OsmAnd op de voorgrond blijft wanneer het apparaat is vergrendeld.
 

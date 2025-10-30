@@ -1,8 +1,9 @@
 ---
-source-hash: 166c161e033aab6f7ca0b049fcfab98226fb4a490c7abb63ece62fd8edca3314
+source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
 sidebar_position: 1
 title:  Android Aankopen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## OsmAnd installeren (Android) {#install-osmand-android}
@@ -59,7 +59,7 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 | **OsmAnd Start** | Een **gratis plan** dat toegang geeft tot [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) voor *Favorieten*, *Instellingen* en *OSM-bewerkingen/notities*. | Beschikbaar voor alle gebruikers van de gratis OsmAnd-versie. | Beperkt tot basis cloudfuncties en **5MB** opslag. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Een **aparte betaalde app** met geavanceerde functies. | Beschikbaar op [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Kan worden toegevoegd aan de [Google Play Familiebibliotheek](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** voor de gratis OsmAnd-app, die dezelfde functies ontgrendelt als OsmAnd+. | Beschikbaar op [Google Play](https://play.google.com/store/apps/details?id=net.osmand) en [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identiek in functies en prijsstelling aan OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnement** dat extra geavanceerde en [pro-functies](#pro-features) ontgrendelt. | Beschikbaar op [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) en [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Het biedt volledige toegang tot de functies van OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementplan** dat extra geavanceerde en [pro-functies](#pro-features) ontgrendelt. | Beschikbaar op [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) en [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Het biedt volledige toegang tot de functies van OsmAnd Cloud. |
 
 ### Belangrijke opmerkingen {#important-notes}
 
@@ -67,7 +67,7 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 
 2. **Android Auto** wordt alleen ondersteund voor OsmAnd gedownload van **Google Play**. Het is **niet beschikbaar** voor Maps+ gedownload van *Huawei AppGallery*.
 
-3. **OsmAnd Pro**, **OsmAnd+** en **Maps+** zijn *cross-platform* aankopen. Dit betekent dat u het in één winkel kunt kopen (bijv. *Google Play, Huawei AppGallery, AppStore* en *osmand.net*) en het in een andere kunt herstellen door [uw aankoop te koppelen aan uw OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
+3. **OsmAnd Pro**,  **OsmAnd+** en **Maps+** zijn *cross-platform* aankopen. Dit betekent dat u het in één winkel kunt kopen (bijv. *Google Play, Huawei AppGallery, AppStore* en *osmand.net*) en het in een andere kunt herstellen door [uw aankoop te koppelen aan uw OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
 
 4. U kunt **OsmAnd+** toevoegen aan de **[Google Play Familiebibliotheek](https://support.google.com/googleplay/answer/7007852?hl=en)** om de aankoop met gezinsleden te delen.  
 
@@ -78,9 +78,9 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
@@ -93,8 +93,8 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
 
+-->
 
 |    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -102,6 +102,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
 | **Prijs (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Prijs (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+
 
 
 ### Gratis en betaalde functies {#free-and-paid-features}
@@ -119,7 +120,7 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Alle Pro-functies](#pro-features) | **-** | **-** | ✔ |
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Onbeperkt kaarten downloaden](../start-with/download-maps.md) | <details><summary>**7 kaartdownloads**</summary>  - Kaartdownload of -update betekent alleen het downloaden/updaten van een landkaart (regio). <br/> - **Wereldoverzichtskaart**, **Wereldhoogtecorrectie**, **Kaartlettertypen** en **Gesproken aanwijzingen** worden niet meegeteld als 7 downloadmogelijkheden. </details> | ✔ | ✔ |
-| [Maandelijkse kaartupdates](../personal/maps-resources.md#updates)<br/>Eens per maand (met 2 dagen vertraging) | <details><summary>**7 kaartdownloads**</summary> Kaartupdate telt als een download.</details> | ✔ | ✔ |
+| [Maandelijkse kaartupdates](../personal/maps-resources.md#updates-menu)<br/>Eens per maand (met 2 dagen vertraging) | <details><summary>**7 kaartdownloads**</summary> Kaartupdate telt als een download.</details> | ✔ | ✔ |
 | [Kaartupdates per uur](../personal/maps-resources.md#live-updates)<br/>Live updates (1 uur vertraging) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -134,7 +135,7 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [GPX-tracks exporteren](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
 | [GPX/KML-tracks importeren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Routeplanner](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Widgets voor voertuigstatistieken](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | ✔ |
+| [Voertuigstatistieken Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratis**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | <details><summary>**2 widgets gratis**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | ✔ |
 | [Kaartmarkeringen](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online kaartbronnen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [SQLitedb-kaart](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
@@ -164,7 +165,7 @@ Het **Pro**-abonnement heeft momenteel de volgende functies:
 | [3D-reliëf](../plugins/topography.md#3d-relief) | Hiermee kunt u een schaalmodel van uw buurt of een heel continent bekijken. |
 | [Live updates](../personal/maps-resources.md#live-updates) | OsmAnd-kaarten worden elke 15 minuten bijgewerkt na een verbetering van [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Weer-plugin](../plugins/weather.md) | 24-uurs voorspelling per uur, 7 dagen vooruit op de kaart. |
-| [Plugin Voertuigstatistieken (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.  |
+| [Voertuigstatistieken Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.  |
 | [Routelijn aanpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | De kleur en breedte van de routelijn wijzigen tijdens de navigatie. |
 | [Hoogtewidget](../widgets/nav-widgets.md#elevation-widget) | Toont uw locatie op de hoogtegrafiek van de navigatieroute met extra informatie.  |
 | [Hoogtewidgets - Hoogte: Kaartcentrum](../widgets/info-widgets.md#elevation-map-center) | Hiermee kunt u de hoogte van het huidige kaartcentrum boven zeeniveau achterhalen.  |
@@ -177,7 +178,7 @@ Een gemakkelijke manier om het benodigde plan te kiezen en te kopen is via het m
 
 ### OsmAnd Pro-aankoop {#osmand-pro-purchase}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* abonnement. Hier kunt u kiezen voor een maandelijks of jaarlijks abonnement:
+![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* abonnementplan. Hier kunt u kiezen voor een maandelijks of jaarlijks abonnement:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Doorgaan met OsmAnd Pro*
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  Voertuigstatistieken
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -146,6 +146,7 @@ Statistieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostis
 *Overig:*
 
 - **Accuniveau**. Geeft het spanningsniveau van de accu van het voertuig aan.
+- **Adapterspanning**. Toont de spanning die aan de OBD-II-adapter wordt geleverd (AT RV-opdracht).
 - **Voertuigsnelheid**. Toont gegevens van de voertuigsnelheidssensor (VSS).
 - **Gaskleppositie**. Bepaalt de luchtinlaat van de motor via de hoek van de gasklepplaat.  
   **VIN**. Toont het 17-cijferige identificatienummer van het voertuig.

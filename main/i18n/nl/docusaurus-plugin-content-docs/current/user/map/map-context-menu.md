@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -95,7 +95,7 @@ Door op een [GPX-track](../map/tracks/index.md) op de kaart te tikken, wordt het
 
 ### Routes, skipistes en paden {#routes-and-trails}
 
-![Skipistes en MTB-routes](@site/static/img/map/ski_mtb.png)  ![Skipistes en MTB-routes](@site/static/img/map/ski_mtb_2.png)
+![Skipistes en MTB-paden](@site/static/img/map/ski_mtb.png)  ![Skipistes en MTB-paden](@site/static/img/map/ski_mtb_2.png)
 
 U kunt op kaartelementen tikken zoals **skipistes**, **mountainbike (MTB) routes** en **crossmotorpaden** om hun contextmenu met gedetailleerde informatie te openen. Bekijk het [Routes-artikel](../map/routes.md#actions-with-routes) voor meer informatie.
 
@@ -115,13 +115,13 @@ Om het **contextmenu** te sluiten:
 
 <TabItem value="android" label="Android">  
 
-![Contextmenu Android](@site/static/img/map/context_menu_android.png)
+![Contextmenu Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contextmenu iOS](@site/static/img/map/context_menu_ios.png)
+![Contextmenu iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Beschikbare details zijn onder andere:
 - [Alternatieve namen](#alternative-names)
 - [Coördinaten](#coordinates)
 - [Binnen gebieden](#polygon-information)
-- [Nabije POI's / Wikipedia](#nearby-pois--wikipedia)
+- [Nabije POI's](#nearby-pois)
+- [Nabije populaire plaatsen](#nearby-popular-places)
 - [Openbaarvervoerroutes voor haltes](#public-transport-routes)
 - [Favorieten / Trackpunten uit dezelfde groep](#favorites--track-points-from-the-group)
 - [OpenStreetMap-link](#openstreetmap-link)
@@ -167,7 +168,7 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen 1 iOS](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen 2 iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -217,15 +218,56 @@ In het contextmenu kunt u [geografische coördinaten](../search/search-coordinat
 OsmAnd Weblink kan automatisch worden herkend door OsmAnd (voorbeeld: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Zowel OsmAnd als [OpenStreetMap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) worden geopend op de overeenkomstige sites met een speldmarkering op de plaats van interesse.  
 
 
-### Nabije POI's / Wikipedia {#nearby-pois--wikipedia}
+### Nabije POI's {#nearby-pois}
 
-![Nabije Wikipedia-artikelen](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nabije Wikipedia-artikelen](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Deze secties tonen nabijgelegen [Wikipedia-artikelen](../plugins/wikipedia.md) of [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) met *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle andere POI's & Wikipedia-artikelen weer te geven en te [zoeken](../search/search-poi.md).
+<TabItem value="android" label="Android">  
 
-Tikken op *Nabije POI's / Wikipedia-artikelen* opent een puntenlijst (POI's of Wikipedia). Een tik op een van deze punten uit een puntenlijst verplaatst de kaart naar dit punt (POI's of Wikipedia) en opent het kaartcontextmenu van het punt.
+![Nabije POI Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nabije POI iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Deze sectie toont nabijgelegen [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois) met *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle andere POI's binnen dezelfde categorie weer te geven en te [zoeken](../search/search-poi.md).
+
+Tik op *Nabije POI's* opent een puntenlijst. Een tik op een van deze punten uit een puntenlijst verplaatst de kaart naar dit punt met het openen van het kaartcontextmenu van het punt.
+
+
+### Nabije populaire plaatsen {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Nabije plaatsen Android](@site/static/img/map/nearby_places_android.png)
+
+Deze sectie benadrukt populaire plaatsen die u helpen interessante bestemmingen en bezienswaardigheden rond uw huidige locatie te ontdekken. Gebruik *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle populaire plaatsen te doorzoeken en te zoeken. 
+
+Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/map/popular_places)* opent een lijst van nabijgelegen locaties. Het selecteren van een item centreert de kaart op die plaats en opent het contextmenu ervan, waar u een korte beschrijving kunt lezen of op ***Volledig artikel lezen*** kunt tikken om de volledige gids te bekijken.
+
+</TabItem>
+
+<TabItem value="iOS" label="iOS">
+
+![Nabije plaatsen iOS](@site/static/img/map/nearby_places_ios.png)
+
+Deze sectie benadrukt populaire plaatsen die u helpen interessante bestemmingen en bezienswaardigheden rond uw huidige locatie te ontdekken. Gebruik *<Translate android="true" ids="shared_string_show_on_map"/>* en *<Translate android="true" ids="search_more"/>* om alle populaire plaatsen te doorzoeken en te zoeken. 
+
+Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* opent een lijst van nabijgelegen locaties. Het selecteren van een item centreert de kaart op die plaats en opent het contextmenu ervan, waar u een korte beschrijving kunt lezen of op ***Volledig artikel lezen*** kunt tikken om de volledige gids te bekijken.
 
 > **OPMERKING**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) verschijnt alleen als u eerder speciale kaarten met [Wikipedia-artikelen voor dit gebied](../plugins/wikipedia.md#download-wikipedia-packages) hebt gedownload*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Openbaarvervoerroutes {#public-transport-routes}
@@ -683,9 +725,7 @@ Om trackpunten toe te voegen/bewerken, schakelt u de OsmAnd [**Tripopname-plugin
 
 <TabItem value="android" label="Android">  
 
-![Actie waypoint Android](@site/static/img/map/action_waypoint_android.png)
-
-![Selecteer track om waypoint toe te voegen Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Selecteer track om waypoint toe te voegen Android](@site/static/img/map/tracks_tab_android.png) ![Trackwaypoint toevoegen Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +743,7 @@ U kunt waypoints toevoegen aan een opgenomen track of aan de huidige trackopname
 
 - Selecteer een locatie op de kaart met een [lange tik](../map/map-context-menu.md#select-any-point-long-tap).
 - Kies in het *kaartcontextmenu* dat opent *Acties → Trackwaypoint toevoegen*.
-- De lijst toont de [tracks](../map/tracks/index.md#display-tracks-on-the-map) die zijn opgenomen en op de kaart worden weergegeven, evenals de [huidige trackopname](../plugins/trip-recording.md), waaraan u het geselecteerde waypoint kunt toevoegen.
+- De lijst toont de [tracks](../map/tracks/index.md#display-tracks-on-the-map) die zijn opgenomen en op de kaart worden weergegeven, evenals de [huidige trackopname](../plugins/trip-recording.md), waaraan u het geselecteerde waypoint kunt toevoegen (*op Android* is de lijst gegroepeerd in tabbladen: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - U kunt waypoints toevoegen aan een track die nog niet actief is voor opname, in welk geval de inactieve track overschakelt van de *Start-status* naar de *Hervat-status*.
 - [Vul](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) de vereiste gegevens in en sla het waypoint op.
 - U kunt de [Snelle Acties](../widgets/quick-action.md) configureren door een waypoint toe te voegen aan de *Trackwaypoint toevoegen*.
@@ -749,7 +789,7 @@ Om een OSM-notitie te openen, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](..
 
 ![Actie notitie Android](@site/static/img/map/action_note_android.png)
 
-![Actie OSM-notitie toevoegen UI Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+![Actie notitie toevoegen Android](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
@@ -757,7 +797,7 @@ Om een OSM-notitie te openen, schakelt u de OsmAnd [**OSM Bewerkingsplugin**](..
 
 ![Actie notitie iOS](@site/static/img/map/action_note_ios.png)
 
-![Actie OSM-notitie toevoegen UI iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![Actie notitie toevoegen iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 

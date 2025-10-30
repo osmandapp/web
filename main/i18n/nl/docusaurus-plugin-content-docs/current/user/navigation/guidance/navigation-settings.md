@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Navigatie-instellingen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-Voor een succesvolle navigatie is het belangrijk om de juiste instellingen te configureren op basis van uw behoeften en hoe u reist - met de auto, te voet, te paard of op ski's. Dit artikel beschrijft de basisrouteparameters, [Spraakinstructies](#voice-prompts), [Schermwaarschuwingen](#screen-alerts), [Kaartgedrag tijdens navigatie](#map-during-navigation) en het [Uiterlijk van routelijnen](#customize-route-line). Het beschrijft ook [Voertuiginstellingen](#vehicle-parameters) zoals standaardsnelheid, motortype voor CO2-berekening, brandstoftankcapaciteit en afmetings-/gewichtsbeperkingen. Het aanpassen van deze instellingen helpt u om het meeste uit OsmAnd te halen en uw doel zonder onnodige vertraging te bereiken.
+Voor een succesvolle navigatie is het belangrijk om de juiste instellingen te configureren op basis van uw behoeften en hoe u reist - met de auto, te voet, te paard of op ski's. Dit artikel beschrijft de basisrouteparameters, [Spraakinstructies](#voice-prompts), [Schermwaarschuwingen](#screen-alerts), [Kaartgedrag tijdens navigatie](#map-during-navigation), en het [Uiterlijk van routelijnen](#customize-route-line). Het beschrijft ook [Voertuiginstellingen](#vehicle-parameters) zoals standaardsnelheid, motortype voor CO2-berekening, brandstoftankcapaciteit en afmetings-/gewichtsbeperkingen. Het aanpassen van deze instellingen helpt u om het meeste uit OsmAnd te halen en uw doel zonder onnodige vertraging te bereiken.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -185,7 +185,7 @@ De parameters in de sectie **Ontwikkeling** zijn voornamelijk voor gevorderde ge
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Instellingen spraaknavigatie Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Instellingen spraaknavigatie Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ Audio-instructies tijdens de navigatie helpen u als bestuurder of voetganger om 
 Als u een track als bestemmingspunt selecteert, moet u de optie [Aan de wegen koppelen](../setup/gpx-navigation.md#attach-to-the-roads) gebruiken om de spraakinstructies correct te laten werken.
 
 *Spraakinstructies* stellen u in staat om u op de weg te concentreren en niet afgeleid te worden door de kaart of het navigatieapparaat. Ze verbeteren ook de rijveiligheid, verkorten de tijd die nodig is om op onbekend terrein te navigeren en kunnen nuttig zijn voor verschillende [soorten routes](../routing/osmand-routing.md#routing-types).
+
+In de sectie **Aankondigen** kunt u kiezen welke soorten meldingen moeten worden afgespeeld of weergegeven tijdens de navigatie:
+
+- **Stap-voor-stap aanwijzingen** (alleen Android) – stelt u in staat om standaard navigatie-instructies zoals *“Sla linksaf”*, *“Sla rechtsaf”* of *“Over 200 meter…”* in- of uit te schakelen. Wanneer de optie is uitgeschakeld, worden er geen aankondigingen gegeven voor bochten en straatnamen, terwijl meldingen voor wegpunten, gebruikerspunten en routegebeurtenissen actief blijven. Deze modus is bedoeld voor activiteiten zoals raften, wandelen of fietsen langs vooropgenomen tracks, wanneer alleen waarschuwingen voor handmatig toegevoegde wegpunten nodig zijn.
+- **Straatnamen (TTS)** – kondigt de namen van straten langs uw route aan.
+- **Uitritnummer** – kondigt het uitritnummer aan bij het rijden op autosnelwegen.
+- **Verkeerswaarschuwingen** – geeft waarschuwingen over belangrijke weggebeurtenissen zoals files of beperkingen.
+- **Voetgangersoversteekplaatsen** – waarschuwt u wanneer u voetgangersoversteekplaatsen nadert.
+- **[Flitspalen](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – waarschuwt voor locaties van flitspalen (waar wettelijk toegestaan).
+- **Tunnels** – informeert u wanneer u een tunnel binnengaat.
 
 
 ## Schermwaarschuwingen {#screen-alerts}
@@ -243,7 +253,7 @@ U kunt ***selecteren welke waarschuwingen*** u op het app-scherm wilt zien tijde
 - **Snelheidslimiet** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Speed_limits)). In de instelling Schermwaarschuwingen wordt de *Snelheidslimiet* alleen op het scherm weergegeven als *Verkeerswaarschuwingen* is ingeschakeld. Als u snelheidslimieten wilt zien tijdens de navigatie zonder andere waarschuwingen, gebruik dan de [widget](../../widgets/nav-widgets.md#speed-limit).
 - **Verkeerswaarschuwingen** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Aanvullende informatie is te vinden in het artikel [Kaartscherm tijdens navigatie](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
 - **Voetgangersoversteekplaatsen** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Flitsers** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Voor meer informatie over de instelling Flitsers in OsmAnd, lees [Waarschuwingstypes](../../widgets/nav-widgets.md#alert-types) en het artikel *Algemene instellingen*, sectie [Juridisch](../../personal/global-settings.md#legal).
+- **Flitspalen** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Voor meer informatie over de instelling Flitspalen in OsmAnd, lees [Waarschuwingstypes](../../widgets/nav-widgets.md#alert-types) en het artikel *Algemene instellingen*, sectie [Juridisch](../../personal/global-settings.md#legal).
 - **Tunnels** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
@@ -271,7 +281,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 ![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
-De **kaart wordt tijdens de navigatie gebruikt** om uw locatie te bepalen, uw route te plannen en voor oriëntatie op het terrein. Tijdens de navigatie kunt u de kaart bekijken met *automatisch centreren*, deze verplaatsen en *in- en uitzoomen* om het vereiste gebied te zien. De kaart kan ook markeringen weergeven die nuttige punten, routes, weersomstandigheden, verkeersborden en andere objecten aangeven om u te helpen navigeren. De kaart kan in *real-time* worden bijgewerkt en toont *actuele informatie* die de routeplanning kan beïnvloeden.
+De **kaart wordt tijdens de navigatie gebruikt** om uw locatie te bepalen, uw route te plannen en oriëntatie op het terrein. Tijdens de navigatie kunt u de kaart bekijken met *automatisch centreren*, deze verplaatsen en *in- en uitzoomen* om het vereiste gebied te zien. De kaart kan ook markeringen weergeven die nuttige punten, routes, weersomstandigheden, verkeersborden en andere objecten aangeven om u te helpen navigeren. De kaart kan in *real-time* worden bijgewerkt en toont *actuele informatie* die de routeplanning kan beïnvloeden.
 
 U kunt leren hoe het gedrag van de kaart verandert tijdens de navigatie in het artikel [Kaartscherm tijdens navigatie](../guidance/map-during-navigation.md).  
 

@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  Voertuigparameters
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht
@@ -98,11 +98,19 @@ Voertuigparameters beïnvloeden de navigatie en routeconstructie omdat ze de bes
 ![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+**5.** [**Maximale aslast limiet**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Geef de maximale aslast van uw voertuig op om wegen en bruggen met asgewichtbeperkingen te vermijden. Deze parameter is alleen beschikbaar in navigatietypes zoals [*Vrachtwagen*](../../navigation/routing/car-based-routing.md).  
+
+![Navigatie-instellingen Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Maximaal gewicht bij volle belading**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Geef het maximale totale gewicht van uw voertuig bij volle belading op om wegen en bruggen met algemene gewichtbeperkingen te vermijden. Deze parameter is alleen beschikbaar in navigatietypes zoals [*Vrachtwagen*](../../navigation/routing/car-based-routing.md).  
+
+![Navigatie-instellingen Android](@site/static/img/navigation/max_weight_at_full_load.png)
+
 Limieten op voertuigparameters kunnen belangrijk zijn voor navigatie en verkeersveiligheid. Enkele van deze beperkingen kunnen zijn:  
 
 1. Beperkingen voor voertuigen die in bepaalde stedelijke gebieden rijden.  
 2. Beperkingen voor voertuigverkeer op specifieke weggedeelten, zoals waar bruggen, tunnels met beperkte ruimte, lage viaducten, complexe bochten of andere constructies zijn.  
-3. Gewichtslimieten per voertuigas kunnen vooral belangrijk zijn voor vrachtwagens.
+3. Gewichtslimieten per voertuig-as kunnen vooral belangrijk zijn voor vrachtwagens.
 4. Beperkingen voor voertuigen die onder bepaalde omstandigheden rijden, zoals bij hoge temperaturen, natte of besneeuwde wegen, 's nachts of bij weersomstandigheden met beperkt zicht.
 
 
@@ -127,7 +135,7 @@ Limieten op voertuigparameters kunnen belangrijk zijn voor navigatie en verkeers
 </Tabs>
 
 Als u het motortype selecteert in de voertuigparameters, worden de [***CO2-voetafdrukgegevens***](../../navigation/setup/route-details.md#elevation-info) boven de grafiek weergegeven in [Routedetails](../setup/route-details.md).
-Beschikbare zes brandstoftypes: ***Benzine, Diesel, LPG, CNG, Elektrisch*** en ***Hybride***.  
+Beschikbare zes brandstoftypes: ***Benzine, Diesel, LPG, CNG, Elektrisch,*** en ***Hybride***.  
 
 **Toepasbaarheid:**
 
@@ -157,7 +165,7 @@ De parameter **Brandstoftankcapaciteit** stelt u in staat om het [brandstofnivea
 
 **Toepasbaarheid:**
 
-De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebaseerde navigatie. Voor navigatietypes zoals *Fiets*, *Paardrijden*, *Te voet* en *Skiën* wordt deze parameter niet weergegeven in de Voertuigparameters.
+De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebaseerde navigatie. Voor navigatietypes zoals *Fiets*, *Paardrijden*, *Te voet* en *Ski* wordt deze parameter niet weergegeven in de Voertuigparameters.
 
 ## Snelheidsparameters
 
@@ -180,7 +188,7 @@ De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebas
 </Tabs>  
 
 De **Standaardsnelheid** is de standaard bewegingssnelheid voor deze vervoersmodus ([Standaard snelheidslimieten](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Voor de profielen *Wandelen*, *Paardrijden* en *Fietsen*, in kleine stappen equivalent aan 0,1 km/u (mph) ([Eenheden & formaten](https://osmand.net/docs/user/personal/profiles#units--formats)), en voor de andere profielen, in stappen equivalent aan 1 km/u (1 mph). Het wordt gebruikt:
-- Om de [routetijd](../../widgets/nav-widgets.md#time-to-intermediate) te schatten wanneer de snelheid niet kan worden bepaald aan de hand van de wegen, zoals bij [GPX-navigatie](../setup/gpx-navigation.md), [Skiroutes](../routing/ski-routing.md), [Bootroutes](../routing/boat-navigation.md), [Voetgangersroutes](../routing/pedestrian-routing.md) en andere vergelijkbare profielen.
+- Om de [routetijd](../../widgets/nav-widgets.md#time-to-intermediate) te schatten wanneer de snelheid niet kan worden bepaald aan de hand van de wegen, zoals bij [GPX-navigatie](../setup/gpx-navigation.md), [Skiroutes](../routing/ski-routing.md), [Bootroutes](../routing/boat-navigation.md), [Voetganger](../routing/pedestrian-routing.md) en andere vergelijkbare profielen.
 - Om te bepalen wanneer [gesproken aanwijzingen](../guidance/voice-navigation.md) worden geactiveerd.
 - Om de geschatte aankomsttijd voor kaartmarkeringen te bepalen via een rechte lijn navigatie als de gemiddelde snelheid nog niet is berekend.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
+source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
 sidebar_position: 2
 title:  Navigeren op een track
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -128,6 +128,38 @@ naar het *<Translate android="true" ids="start_of_the_track"/>* of naar het *<Tr
 - Kies **Navigatietype** voor het eerste en laatste segment: bouw een [*rechte lijn*](../routing/straight-line-routing.md) of gebruik het [*routeringstype*](../routing/osmand-routing.md#routing-types) van het huidige profiel.
 
 
+### Trackrichting omkeren {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Omgekeerde modus](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Navigeren naar](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+De optie **Trackrichting omkeren** stelt u in staat om een opgeslagen GPX-track in de tegenovergestelde richting te navigeren — van het eindpunt terug naar het startpunt. Wanneer deze instelling is ingeschakeld, keert het navigatie-algoritme de GPX-geometrie automatisch om en herberekent het de richtingen dienovereenkomstig. Zodra het is ingeschakeld, wordt de parameter **Omgekeerde modus** beschikbaar:
+
+- **Route berekenen**. Aanbevolen voor auto- en fietsprofielen. Er wordt een nieuwe, geoptimaliseerde route herberekend langs de omgekeerde GPX-track volgens het geselecteerde navigatieprofiel. Verkeersregels zoals eenrichtingsstraten en bochtenbeperkingen worden in acht genomen om veilige navigatie te garanderen.
+- **Originele track**. De GPX-lijn wordt strikt in omgekeerde volgorde gevolgd zonder de route te herberekenen. Deze modus is nuttig voor wandelen, hiken of off-road navigatie waar verkeersregels niet van toepassing zijn.
+
+Wanneer de omgekeerde richting is ingeschakeld, worden het start- en eindpunt van de track automatisch omgewisseld, en wordt de navigatie opgebouwd vanaf de huidige of dichtstbijzijnde positie op de omgekeerde track. De optie *Punt van de track om naar te navigeren = Dichtstbijzijnde punt* verwijst naar het dichtstbijzijnde punt op de omgekeerde GPX-lijn, en zowel de spraakbegeleiding als de functie Aan de weg koppelen werken op dezelfde manier als tijdens de voorwaartse navigatie.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigeren naar iOS](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+De optie **Trackrichting omkeren** stelt u in staat om een opgeslagen GPX-track in de tegenovergestelde richting te navigeren — van het eindpunt terug naar het startpunt. Wanneer deze instelling is ingeschakeld, wordt de trackgeometrie automatisch omgekeerd en wordt de route herberekend volgens het geselecteerde navigatieprofiel.
+
+Het start- en eindpunt van de track worden omgewisseld, en de navigatie wordt opgebouwd vanaf de huidige of dichtstbijzijnde positie op de omgekeerde lijn. De optie *Navigeren naar = Dichtstbijzijnde punt* verwijst naar het dichtstbijzijnde punt op de omgekeerde GPX-track.
+
+Er wordt een nieuwe, geoptimaliseerde route herberekend langs de omgekeerde track met volledige rekening houdend met verkeersregels zoals eenrichtingsstraten en bochtenbeperkingen. Spraakbegeleiding, visuele instructies en de functie Aan de weg koppelen werken zoals bij standaard voorwaartse navigatie, wat nauwkeurige en veilige routering garandeert.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Aan de weg koppelen {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -140,7 +172,7 @@ naar het *<Translate android="true" ids="start_of_the_track"/>* of naar het *<Tr
 
 <TabItem value="ios" label="iOS">
 
-![Aan de weg koppelen 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Aan de weg koppelen 1 iOS](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 
@@ -169,9 +201,9 @@ Standaard wordt de functie **Aan de weg koppelen** **automatisch** uitgevoerd wa
 
 ## Punten {#points}
 
-### Start-/eindpunt {#start--finish-point}
+### Start- / eindpunt {#start--finish-point}
 
-U kunt een ander start- en eindpunt voor een route specificeren dan het start-/eindpunt dat in het GPX-bestand is opgegeven. Wijzig dit op dezelfde manier als u doet voor [Navigatie](../setup/route-navigation.md#select-starting-point).
+U kunt een ander start- en eindpunt voor een route specificeren dan het start-/eindpunt dat in het GPX-bestand is opgegeven. Wijzig dit op dezelfde manier als u doet voor [Navigatie](../setup/route-navigation.md#select-start-point).
 
 In het menu [Track volgen](#follow-track-options) kunt u kiezen of u wilt navigeren vanaf uw huidige locatie naar het startpunt van de track of naar het dichtstbijzijnde punt op de GPX-track. U kunt ook het [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) kiezen dat wordt gebruikt voor het begin- en eindsegment van uw route.  
 

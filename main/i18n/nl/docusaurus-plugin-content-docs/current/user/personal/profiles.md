@@ -1,43 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
-
----
-tracker** (alleen Android). Dit menu opent *[instellingen van de AIS-scheepstracker plug-in](../plugins/ais-tracker.md#plugin-settings)*. Met deze plug-in kunt u een AIS-tracker met OsmAnd verbinden."
-
-    *   **`## Actions {#actions}` section:**
-        *   Image alt text: "Profiles Actions Settings Android" -> "Profielen Acties Instellingen Android". "Profiles Actions Settings iOS" -> "Profielen Acties Instellingen iOS".
-        *   "Actions with selected profile:" -> "Acties met geselecteerd profiel:"
-        *   "[Export profile](https://osmand.net/docs/user/personal/import-export#export) - Export all settings of the selected profile in OSF format." -> "[Profiel exporteren](https://osmand.net/docs/user/personal/import-export#export) - Exporteer alle instellingen van het geselecteerde profiel in OSF-formaat."
-        *   "**Copy from another profile** - Copies all settings from another existing profile in your OsmAnd application." -> "**Kopiëren van een ander profiel** - Kopieert alle instellingen van een ander bestaand profiel in uw OsmAnd-applicatie."
-        *   "**Reset to default** - Returns all settings to the initial state." -> "**Terugzetten naar standaard** - Zet alle instellingen terug naar de beginstaat."
-        *   "**Delete profile**:" -> "**Profiel verwijderen**:"
-        *   "This action is available only for *Android* and only for a *Custom profile*." -> "Deze actie is alleen beschikbaar voor *Android* en alleen voor een *Aangepast profiel*."
-        *   "Default profiles cannot be deleted." -> "Standaardprofielen kunnen niet worden verwijderd."
-        *   "To add a profile, go to *Menu → Settings → App profiles → + New profile*." -> "Om een profiel toe te voegen, ga naar *Menu → Instellingen → App-profielen → + Nieuw profiel*."
-
-    *   **`## Related Articles {#related-articles}` section:**
-        *   Translate the list of links.
-        *   "[Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)" -> "[Tracks beheren](../personal/tracks/manage-tracks.md#import--export-track)"
-        *   "[Search History](../search/search-history.md#export-and-share)" -> "[Zoekgeschiedenis](../search/search-history.md#export-and-share)"
-        *   "[Color Palette Schemes](../personal/color-palette-schemes.md)" -> "[Kleurenpaletschema's](../personal/color-palette-schemes.md)"
-
-4.  **Final Review:**
-    *   Check the YAML frontmatter. `title` is translated. `sidebar_position` is untouched. `---` are present.
-    *   Check all headings. Text is translated, anchors `{#...}` are untouched.
-    *   Check all links. Link text `[...]` is translated, link target `(...)` is untouched.
-    *   Check all image links. Alt text `![...]` is translated, image path `(...)` is untouched.
-    *   Check all JSX/MDX tags (`<TabItem>`, `<Translate>`, etc.). They are untouched. `label` attributes are translated.
-    *   Check the big table. Formatting is preserved. Content is translated. `<ul>` tags are still there.
-    *   Check special phrases ("OsmAnd Pro", "OsmAnd Cloud"). They are untouched.
-    *   Check code blocks and inline code. They are untouched.
-    *   Check blockquotes (`:::...`). Content is translated.
-    *   Check for any accidental translations of non-translatable elements. Everything looks good.
-    *   The translation seems consistent and uses appropriate technical terminology for Dutch.
-
-The plan is solid. I will now generate the final translated Markdown file.---
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -48,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -177,7 +142,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Stelt de schermpositie in de OsmAnd-applicatie in en vergrendelt deze. Deze functie wordt niet ondersteund op de iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Alleen Android*). Opent het menu voor schermbediening, waar u opties kunt selecteren voor het apparaatscherm tijdens het navigeren om het batterijverbruik van het apparaat te verminderen.  
@@ -189,13 +156,13 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 <TabItem value="android" label="Android">
 
-![Algemene profielinstellingen Eenheden & formaten Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Algemene profielinstellingen Eenheden & formaten Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Algemene profielinstellingen Eenheden & formaten iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Algemene profielinstellingen Eenheden & formaten iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -250,6 +217,8 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m |
 |  |  |  |
+| **Eenheden van hoogte** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Voorbeeld: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Voorbeeld: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Voorbeeld: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -290,7 +259,7 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Algemene profielinstellingen Overig Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Algemene profielinstellingen Overig Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -310,15 +279,13 @@ Het gedeelte **Overig** biedt extra profielinstellingen om de interface en invoe
 
 - **<Translate android="true" ids="position_animation"/>** / **Eigen positie animeren** – Het [positie](../map/interact-with-map.md#my-location-and-zoom)-icoon animeert met elk ontvangen GPS-punt (één keer per seconde). Een lichte vertraging in de beweging kan merkbaar zijn, vooral bij snelle bewegingen of fluctuaties in het GPS-signaal. U kunt dit effect aanpassen met de instelling *Voorspellingstijd* (alleen Android): hogere waarden verhogen de vloeiendheid maar voegen vertraging toe, lagere waarden verminderen de vertraging maar kunnen de beweging minder vloeiend maken.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Alleen Android*) – Schakel de mogelijkheid in of uit om de volumeknoppen van uw apparaat te gebruiken voor het in- en uitzoomen op de kaart.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Alleen Android*) – Schakel de mogelijkheid in of uit om de volumeknoppen van uw apparaat te gebruiken voor [in- en uitzoomen](../map/interact-with-map.md#my-location-and-zoom) op de kaart.
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Alleen Android*) – Vloeiende kaartrotatie met [geleidelijke beweging](https://en.wikipedia.org/wiki/Kalman_filter), waardoor plotselinge positieverschuivingen worden verminderd. Dit introduceert een kleine vertraging (*minder dan 1 seconde*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Alleen Android*) – Gebruikt de [magnetische sensor](https://en.wikipedia.org/wiki/Kalman_filter) van uw apparaat om de kaartrotatie te stabiliseren, waardoor abrupte veranderingen worden verminderd. Dit introduceert ook een lichte vertraging.
-
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Alleen Android*) – Tik op een lege ruimte op de kaart om bedieningsknoppen en widgets te verbergen, waardoor de kaart maximaal zichtbaar wordt.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Alleen Android*) – Schakel animaties in de navigatiemodus uit voor snellere schermovergangen.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Alleen Android*) – Schakel animaties in de navigatiemodus uit voor snellere schermovergangen.
 
 
 
@@ -552,7 +519,7 @@ Met de functie voor UI-aanpassing kunt u het aantal items in acties aanpassen, z
 
 ### Contextmenu-acties {#context-menu-actions}
 
-![Profiel Contextmenu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profiel Kaart configureren menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profiel Contextmenu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profiel Contextmenu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Kaartcontextmenu** - In het gedeelte UI aanpassen kunt u items in het [kaartcontextmenu](../map/map-context-menu.md) herordenen of verbergen om de toegang tot veelgebruikte functies te optimaliseren.
 
@@ -608,7 +575,7 @@ Plug-ins ontgrendelen extra functies van de applicatie en kunnen [betaald of gra
 
 - **Wikipedia** (alleen iOS). Dit menu opent *[Wikipedia plug-ininstellingen](../plugins/wikipedia.md#wikipedia-settings)*. U kunt de taal selecteren waarin artikelen worden weergegeven en kiezen of u afbeeldingen van Wikipedia wilt downloaden. Wikipedia tijdens uw reis verbetert uw ervaring door informatie te verstrekken over de plaatsen die u bezoekt. Het werkt offline en toont relevante Wikipedia-artikelen direct op de kaart met betrekking tot nuttige plaatsen.
 
-- **Voertuigstatistieken**. Dit menu opent *[instellingen van de Voertuigstatistieken plug-in](../plugins/vehicle-metrics.md#scanner-settings)*. Hiermee kunt u een OBD-II-scanner met OsmAnd verbinden.
+- **Voertuigmetrics**. Dit menu opent *[instellingen van de Voertuigmetrics plug-in](../plugins/vehicle-metrics.md#scanner-settings)*. Hiermee kunt u een OBD-II-scanner met OsmAnd verbinden.
 
 - **AIS-scheepstracker** (alleen Android). Dit menu opent *[instellingen van de AIS-scheepstracker plug-in](../plugins/ais-tracker.md#plugin-settings)*. Met deze plug-in kunt u een AIS-tracker met OsmAnd verbinden.
 

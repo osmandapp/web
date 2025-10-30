@@ -1,8 +1,9 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,12 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-In de sectie **Kaarten en Bronnen** kunt u zowel *Online* als *Offline* kaarten en andere bronnen die in OsmAnd worden gebruikt, beheren. U kunt bijvoorbeeld downloaden, verwijderen, hernoemen, de cache wissen, bijwerken, de grootte controleren en verschillende acties uitvoeren.
+In de sectie **Kaarten en Bronnen** kunt u zowel *Online* als *Offline* kaarten en andere bronnen die in OsmAnd worden gebruikt, beheren. U kunt bijvoorbeeld downloaden, verwijderen, hernoemen, de cache wissen, bijwerken en de grootte controleren, en verschillende acties uitvoeren.
 
-OsmAnd werkt met twee soorten kaarten: [Vectorkaarten](../map/vector-maps.md) en [Rasterkaarten](../map/raster-maps.md). Het tabblad [Lokaal](#local) bewaart alle kaarten en bronnen. Beschikbare kaarttypes kunnen worden gedownload via het tabblad [Downloads](#downloads). Op het tabblad [Updates](#updates) kunt u kaarten downloaden die beschikbaar zijn voor updates en [Live updates](#live-updates) gebruiken. U kunt ook de functie [Extra kaart](#extra-maps) gebruiken om uw eigen kaarttypes te maken.
+OsmAnd werkt met twee soorten kaarten: [Vectorkaarten](../map/vector-maps.md) en [Rasterkaarten](../map/raster-maps.md). Het tabblad [Lokaal](#local-menu) bewaart alle kaarten en bronnen. Beschikbare kaarttypes kunnen worden gedownload via het tabblad [Downloads](#downloads-menu). Op het tabblad [Updates](#updates-menu) kunt u kaarten downloaden die beschikbaar zijn voor updates en [Live updates](#live-updates) gebruiken. U kunt ook de functie [Extra kaart](#extra-maps) gebruiken om uw eigen kaarttypes te maken.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -55,7 +55,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten Android](@site/static/img/personal/maps/map_type_2_ios.png)
+![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -65,9 +65,9 @@ Het downloaden van kaarten in de OsmAnd-applicatie is een belangrijke stap die d
 
 ### Gratis kaartinhoud {#free-map-content}
 
-- **Standaardkaart**. Biedt een overzicht van het gebied op basis van de [OpenStreetMap](https://www.openstreetmap.org/)-bron en bevat een kaart, routes, adressen, POI en informatie over openbaar vervoer. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's van het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
+- **Standaardkaart**. Biedt een overzicht van het gebied op basis van de [OpenStreetMap](https://www.openstreetmap.org/)-bron en bevat een kaart, routes, adressen, POI en informatie over openbaar vervoer. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's van het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.  
 - **Alleen wegen** (*alleen Android*). De kaart bevat alleen informatie over het wegennet om te focussen op routes en wegeninfrastructuur. Door details zoals gebouwen en nuttige plaatsen te verwijderen, is deze kleiner dan een standaardkaart. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's in het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
-- **Wereldoverzichtskaart**. Versies van OsmAnd tot 3.8 bieden de mogelijkheid om een wereldkaart te downloaden zodat u deze op planetaire schaal kunt bekijken. In nieuwere versies van OsmAnd is een lichtgewicht *Mini Wereldkaart* gebundeld met de applicatie. De app laat u een grotere overzichtswereldkaart downloaden met meer gedetailleerde informatie.
+- **Wereldoverzichtskaart**. Versies van OsmAnd tot 3.8 bieden de mogelijkheid om een wereldkaart te downloaden zodat u deze op planetaire schaal kunt bekijken. In nieuwere versies van OsmAnd is een lichtgewicht *Mini Wereldkaart* gebundeld met de applicatie. De app laat u een grotere overzichtswereldkaart downloaden met meer gedetailleerde informatie. 
 
 :::info maandelijkse kaartupdates
 Houd er rekening mee dat maandelijkse kaartupdates worden beschouwd als een nieuwe kaartdownload en worden afgetrokken van het beschikbare aantal gratis kaartdownloads.
@@ -78,6 +78,7 @@ Houd er rekening mee dat maandelijkse kaartupdates worden beschouwd als een nieu
 - [Hoogtelijnen](../plugins/topography.md#contour-lines). Een kaart met hoogtelijnen om het terrein te visualiseren.
 - [Terreinkaart (Schaduw en Helling)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Kaarten met schaduwen of hellingen bieden aanvullende terreininformatie.
 - [Terreinkaart (3D)](../plugins/topography.md#3d-relief). Driedimensionale weergave van het terrein voor een beter begrip van uw omgeving. [Kaartweergave-engine Versie 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) moet zijn ingeschakeld.
+- [Nautische diepten en hoogtelijnen](../plugins/nautical-charts.md). Marinekaarten met kustlijnen, diepten, navigatiehulpmiddelen, havens en gevaren voor veilig varen en zeilen.
 - [Wikipedia](../plugins/wikipedia.md). Vectorkaart met geo-gepositioneerde [Wikipedia](https://wikipedia.org/)-artikelen over bezienswaardigheden of aanvullende informatie over plaatsen.
 - [Wikivoyage](../plan-route/travel-guides.md). Het biedt vectorkaarten met virtuele reisgidsen, die gebruikers waardevolle informatie, aanbevelingen en tips bieden.
 - [Weersvoorspelling](../plugins/weather.md). Weerinformatie op een kaart voor eenvoudige routeplanning.
@@ -113,8 +114,8 @@ Via het tabblad **Downloaden** kunt u verschillende kaarttypes downloaden van de
 
 - **Beschikbare kaarten** tonen downloadpictogrammen, voor een enkele kaart of voor [meerdere kaarten](#multiple-map-loading).
 
-- **Gedownloade kaarten** tonen een groen pictogram met een menuknop:
-    - *Android*: Driepuntenmenu.
+- **Gedownloade kaarten** tonen een groen pictogram met een menuknop:  
+    - *Android*: Driepuntenmenu.  
     - *iOS*: Info (i)-pictogram.
 
 - **Kaarten die worden geladen** hebben een pictogram dat dit visualiseert. Om het downloaden te annuleren, tikt u op het pictogram. Om de lijst met kaarten in de downloadwachtrij te bekijken en de downloads te annuleren, tikt u op de downloadbalk in het gebied Apparaatgeheugeninfo van de tabbladen Downloads en Updates.
@@ -137,7 +138,7 @@ Via het tabblad **Downloaden** kunt u verschillende kaarttypes downloaden van de
 
 ### Wereldkaarten {#world-maps}
 
-In het menu Kaarten downloaden is er een sectie **Wereldkaarten** die toegang biedt tot het downloaden van verschillende wereldkaarten, wat de functionaliteit van de app aanvult.
+In het menu Kaarten downloaden is er een sectie **Wereldkaarten** die toegang biedt tot het downloaden van verschillende wereldkaarten, wat de functionaliteit van de app aanvult.  
 
 - **Wereldhoogtecorrectie** (*alleen Android*). Dit bestand bevat hoogtecorrecties om de kromming van de planeet te compenseren.
 - **Wereldoverzichtskaart**. Biedt een uitgebreid overzicht van het aardoppervlak, handig voor lange-termijn routeplanning en vrijblijvende verkenning.
@@ -153,7 +154,7 @@ Om een bestand te importeren:
 1. Zoek het `.osf`-bestand in de opslag van uw apparaat, messenger of e-mail.
 2. Tik erop om het met OsmAnd te openen.
 3. De plug-in verschijnt in de sectie **Plug-inlijst**, waar deze kan worden geactiveerd.
-4. Een overeenkomstige map verschijnt dan in de sectie **Extra kaarten** van het tabblad [Downloads](#downloads).
+4. Een overeenkomstige map verschijnt dan in de sectie **Extra kaarten** van het tabblad [Downloads](#downloads-menu).
 
 Lees meer in het artikel [**Aangepast pakket**](../plugins/custom).
 
@@ -183,7 +184,7 @@ Voor landen die bestaan uit **meerdere regiokaarten**, kunt u bulksgewijs meerde
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
@@ -191,18 +192,18 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 
 Het tabblad Lokaal geeft een overzicht van het opslaggebruik voor alle OsmAnd-gegevens op uw apparaat. De gegevens zijn voor de duidelijkheid verdeeld in drie kleurgecodeerde secties, met items gesorteerd op grootte van groot naar klein. Elke sectie toont alleen items met gedownloade gegevens:
 
-- ***Bronnen*** (*blauw*).
-    Bevat kaarten ([Standaard](../map/vector-maps.md), &nbsp;[Nautisch](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Weer](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) en [Reisgidsen](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Alleen wegen**,  &nbsp;[Kaartbronnen](../map/raster-maps.md), &nbsp;[Weergavestijlen](../map/vector-maps.md#default-map-styles), &nbsp;**Kaartlettertypen, &nbsp;Steminstructies (opgenomen en TTS), &nbsp;Cache**.
+- ***Bronnen*** (*blauw*).  
+    Bevat kaarten ([Standaard](../map/vector-maps.md), &nbsp;[Nautisch](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Weer](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) en [Reisgidsen](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Alleen wegen**,  &nbsp;[Kaartbronnen](../map/raster-maps.md), &nbsp;[Weergavestijlen](../map/vector-maps.md#default-map-styles), &nbsp;**Kaartlettertypen, &nbsp;Steminstructies (opgenomen en TTS), &nbsp;Cache**.  
 
-- ***Mijn Plaatsen*** (*geel*).
-    Bevat [Favorieten](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM-notities](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM-bewerkingen](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V-notities](../plugins/audio-video-notes.md), &nbsp;[Kaartmarkeringen](../personal/markers.md), &nbsp;[Geschiedenis](../personal/global-settings.md#history), &nbsp;*Reisplan*.
+- ***Mijn Plaatsen*** (*geel*).  
+    Bevat [Favorieten](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM-notities](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM-bewerkingen](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V-notities](../plugins/audio-video-notes.md), &nbsp;[Kaartmarkeringen](../personal/markers.md), &nbsp;[Geschiedenis](../personal/global-settings.md#history), &nbsp;*Reisplan*.  
 
-- ***Instellingen*** (*groen*).
+- ***Instellingen*** (*groen*).  
     Bevat [Profielen](../personal/profiles.md), &nbsp;[Kleuren](../personal/color-palette-schemes.md) en **Andere** app-configuraties.
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
@@ -225,7 +226,7 @@ Onder de geheugenbalk wordt een lijst van alle gedownloade OsmAnd-kaarten en -br
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Overzicht lokale categorie Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opties lokale categorie Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
@@ -235,8 +236,8 @@ Tik op een item in het tabblad **Lokaal** om de gedetailleerde lijst te openen. 
 ***Beschikbare acties:***
 
 - **Zoeken**. Vind specifieke gegevens op naam binnen de geselecteerde map.
-- **Driepuntenmenu**:
-    ***Selecteren***. Kies meerdere items voor acties zoals *Verwijderen*, *Deactiveren* of *Activeren*.
+- **Driepuntenmenu**:  
+    ***Selecteren***. Kies meerdere items voor acties zoals *Verwijderen*, *Deactiveren* of *Activeren*.  
     ***Importeren***. Krijg toegang tot de opslag van het apparaat om bestanden te importeren.
 - **Sorteeroptie**. Sorteer items op naam, land, datum of grootte (beschikbaarheid hangt af van het gegevenstype).
 
@@ -255,7 +256,7 @@ Elk item in de lijst biedt een *driepuntenmenu* met opties:
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Gegevens bekijken](@site/static/img/personal/maps/viewing_data_ios.png)
 
@@ -276,15 +277,15 @@ Voor online kaarten worden alleen het type en de grootte van de gecachte gegeven
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Menu-items Kaartbron](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
 Elk item in de lijst [Kaartbron](../map/raster-maps.md) biedt instellingen voor het beheren van online rasterkaarten die op uw apparaat zijn opgeslagen. Open het *driepuntenmenu* om toegang te krijgen tot de beschikbare acties:
 
-- **Info**. Toont algemene details over de geselecteerde kaartbron, inclusief formaat en laatste updatedatum.
+- **Info**. Toont algemene details over de geselecteerde kaartbron, inclusief formaat en laatste updatedatum.  
 - **Grootte berekenen**. Schat de opslagruimte die wordt ingenomen door de gecachte tegels van deze kaartbron. Als de cache groter is dan *50MB*, kan de grootte worden weergegeven als *≥50MB* in plaats van een exact getal.
-- **Alle tegels wissen**. Verwijdert alle gecachte tegels voor de geselecteerde kaartbron, waardoor opslagruimte wordt vrijgemaakt terwijl de kaartbron beschikbaar blijft voor toekomstig gebruik.
+- **Alle tegels wissen**. Verwijdert alle gecachte tegels voor de geselecteerde kaartbron, waardoor opslagruimte wordt vrijgemaakt terwijl de kaartbron beschikbaar blijft voor toekomstig gebruik.  
 - **Exporteren**. Slaat de geselecteerde kaartbronconfiguratie op voor back-up of delen.
 - **Verwijderen**. Verwijdert de geselecteerde kaartbron. Deze actie heeft geen invloed op gedownloade offline kaarten, maar wist de bijbehorende cache.
 
@@ -298,7 +299,7 @@ Beschikbare **Acties** zijn afhankelijk van het gegevenstype en kunnen **Deactiv
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Acties iOS](@site/static/img/personal/maps/local_actions_ios.png)
 
@@ -405,7 +406,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 
 ![Kaartenmenu Kaarten bijwerken Android](@site/static/img/personal/maps/maps_update_andr.png)
 
-Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. Weersvoorspellingen hebben hun eigen regelmatige updatecyclus. Voor details, zie [Voorspelling downloaden](../plugins/weather.md#download-forecast).
+Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. Weersvoorspellingen hebben hun eigen regelmatige updatecyclus. Voor details, zie [Voorspelling downloaden](../plugins/weather.md#download-forecast). 
 
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
 
@@ -417,7 +418,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 
 ![Kaartenmenu Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weersvoorspelling Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
-Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen.
+Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. 
 
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
 
@@ -435,13 +436,13 @@ Het tabblad **Updates** bevat ook een sectie Weersvoorspelling. Deze is ontworpe
 ## Live Updates {#live-updates}
 
 :::tip Aankoop
-Live updates is een betaalde functie.
+Live updates is een betaalde functie.  
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
 ![Kaartenmenu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Kaartenmenu OsmAnd live bewerken Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
@@ -477,11 +478,11 @@ Belangrijkste kenmerken:
 
 ### Tijdstempels van updates {#update-timestamps}
 
-- **Laatste OSM-update.**
+- **Laatste OSM-update.**  
     Geeft de laatst verwerkte OpenStreetMap-wijzigingen aan.
-- **Regio bijgewerkt.**
+- **Regio bijgewerkt.**  
     Toont wanneer de updates van de specifieke regio voor het laatst zijn verwerkt.
-- **Volgende update.**
+- **Volgende update.**  
     Toont de geplande tijd voor de volgende updatecontrole.
 
 

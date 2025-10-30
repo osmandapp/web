@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Tracks
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -28,7 +28,7 @@ OsmAnd heeft veel krachtige functies om verschillende routes op de kaart weer te
 - Track als een route (***Route***). Het bestand heeft een ```<rtept>``` punten-array, waarbij elk punt wordt beschreven als een tussenpunt van de route. Het hangt ervan af hoe punten binnen een route moeten worden verbonden, hetzij als kleine routesegmenten of via een rechte lijn. Deze tracks worden op de kaart weergegeven als stippellijnen.
 - Waypoints (***Punten***). Het bestand heeft ```<wpt>``` punten met attributen. Waypoints worden weergegeven als ronde punten op de kaart. U kunt erop tikken voor extra informatie.
 
-OsmAnd kan tracks maken met 1-3 combinaties. [Route plannen](../../plan-route/create-route.md) maakt een track met ***Geometrie*** en ***Route***. Als u het opslaat als ***Vereenvoudigde Track***, wordt alleen de ***Geometrie*** bewaard. [Track opnemen](../../plugins/trip-recording.md#new-track-recording) maakt alleen ***Geometrie***, maar u kunt er ook ***Punten*** aan toevoegen via het contextmenu.
+OsmAnd kan tracks maken met 1–3 combinaties. [Route plannen](../../plan-route/create-route.md) maakt een track met ***Geometrie*** en ***Route***. Als u het opslaat als ***Vereenvoudigde Track***, wordt alleen de ***Geometrie*** bewaard. [Track opnemen](../../plugins/trip-recording.md#new-track-recording) maakt alleen ***Geometrie***, maar u kunt er ook ***Punten*** aan toevoegen via het contextmenu.
 
 
 ## Tracks op de Kaart Weergeven {#display-tracks-on-the-map}
@@ -135,6 +135,7 @@ Deze tool biedt een gedetailleerde analyse van [trackgegevens](../../map/tracks/
 - **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens.
 - **Grafiekdimensie (X-as)** vertegenwoordigt: *Afstand*, *Tijd*, en *Tijdstip van de dag*.
 - **Tik/schuif-interactie**. Tik op een grafiek om informatie over een specifiek punt op de track weer te geven. Schuiven op de grafiek markeert de juiste locatie op de kaart en toont details in de informatiebalk.
+- **Afstandslabel**. Wanneer u tikt of schuift langs de grafiek, toont de tooltip ook de exacte afstand langs de track. De waarde volgt de huidige profiel eenheidsinstellingen (<Translate android="true" ids="km"/> of <Translate android="true" ids="mile"/>). Gebruik het om snel in te schatten hoe ver een punt van de start van de track is, of om de afstand tussen twee posities te berekenen door hun waarden te vergelijken.
 - **Schalen**. Gebruik een [tweevingergebaar](../../map/interact-with-map.md#gestures) om de grafiek te schalen voor een meer gedetailleerde weergave.
 
 

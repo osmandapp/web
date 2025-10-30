@@ -1,8 +1,9 @@
 ---
-source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
+source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topografie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
 :::info Betaalde functie
@@ -25,9 +25,9 @@ De Topografie-plugin is een [betaalde functie](../purchases/index.md) van de Osm
 Topografie is een belangrijk kenmerk van cartografie dat informatie verschaft om het reliëf van het terrein visueel te beoordelen.
 Topografische informatie zoals [Hoogtelijnen](#contour-lines), [Terrein](#terrain) (*Schaduwreliëf* en *Helling*), en [3D-reliëf](#3d-relief) helpt om een visuele inschatting te maken van de ligging van het land door hoogte, reliëf, extremen, steilheid of punten van gelijke hoogte te zien.
 
-Elke functie die door deze plugin wordt geleverd, is een onafhankelijke kaartlaag die, wanneer ingeschakeld, boven of onder de hoofdkaartbron kan worden weergegeven, afhankelijk van de [instellingen](../map/raster-maps.md#overlay-layer).
+Elke functie die door deze plugin wordt geleverd, is een onafhankelijke kaartlaag die, wanneer ingeschakeld, boven of onder de hoofdkaartbron kan worden weergegeven, afhankelijk van de [instellingen](../map/raster-maps.md#overlay-layer).  
 
-De Topografie-plugin biedt toegang tot de volgende kaarttypes:
+De Topografie-plugin biedt toegang tot de volgende kaarttypes:  
 
 - [Hoogtelijnen](#contour-lines). Dit is een [vectorkaart](../map/vector-maps.md) weergegeven in [**meters** of **voeten**](#contour-lines-meters-or-feet). Hoogtelijnen tonen hoogteniveaus en helpen het terrein te visualiseren.
 - [Schaduwreliëf](#hillshade-slope-and-altitude-layers). Soorten kaarten met schaduw van heuvels en hellingen maken het reliëf beter zichtbaar en helpen het terrein visueel te interpreteren.
@@ -57,7 +57,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 ### Licentie voor DEM-gegevens gebruikt door OsmAnd voor terreindetectie {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-De hoogtegegevens op de kaart (tussen 70 graden noorderbreedte en 70 graden zuiderbreedte) zijn verkregen uit metingen die zijn uitgevoerd als onderdeel van de *Shuttle Radar Topography Mission (SRTM)*. Hierbij werd gebruik gemaakt van de *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, het primaire beeldvormingsinstrument in *NASA's Earth Observation System*.
+De hoogtegegevens op de kaart (tussen 70 graden noorderbreedte en 70 graden zuiderbreedte) zijn verkregen uit metingen die zijn uitgevoerd als onderdeel van de *Shuttle Radar Topography Mission (SRTM)*. Hierbij werd gebruik gemaakt van de *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, het primaire beeldvormingsinstrument in *NASA's Earth Observation System*.  
 Voor volledige informatie, zie de [Licentie](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -75,11 +75,11 @@ Voor volledige informatie, zie de [Licentie](https://github.com/osmandapp/OsmAnd
 
 Om **Hoogtelijnen** en **Terrein (Schaduwreliëf, Helling)** gegevens op de kaart weer te geven:
 
-1. **Aankoop**: [OsmAnd+, Maps+ of OsmAnd Pro aankoopplan](../plugins/index.md#purchase)
+1. **Aankoop**: [OsmAnd+, OsmAnd Maps+ of OsmAnd Pro aankoopplan](../plugins/index.md#purchase)
 2. [Inschakelen](../plugins/index.md#enable--disable) van de Topografie-plugin in de sectie Plugins van het *Hoofdmenu*.
 3. [Downloaden](#download-maps): Hoogtelijnen, Schaduwreliëf, Helling of Terrein (3D) kaarten.
 4. **Inschakelen en aanpassen**: Hoogtelijnen, Schaduwreliëf of Helling voor de kaartweergave.
-5. U kunt ook de [YouTube-tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg) bekijken.
+5. U kunt ook de [YouTube-tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg) bekijken.  
 
 Om [**3D-reliëf**](#3d-relief) weer te geven, moet u het *OsmAnd Pro*-plan aanschaffen, inclusief toegang tot de Topografie-plugin.
 
@@ -202,8 +202,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 </Tabs>  
 
-De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*.
-Specifieke kenmerken:
+De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*.  
+Specifieke kenmerken:  
 
 - Er kan slechts één optie tegelijk worden ingeschakeld, ofwel Schaduwreliëf, Helling of Hoogte.
 - Als u geen veranderingen ziet na het downloaden en inschakelen van de betreffende kaart, wordt aanbevolen de applicatie opnieuw te starten.
@@ -217,9 +217,9 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 | ------ | ------- | ------- |
 | ![Schaduwreliëf](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**Schaduwreliëf** is gebaseerd op het simuleren van oppervlakteverlichting met behulp van terreingegevens. Deze methode omvat het creëren van schaduwen en hooglichten op basis van de hoek van het oppervlak ten opzichte van de lichtbron. Als gevolg hiervan ziet u natuurlijke heuvels, valleien en andere terreindetails op de kaart.
+**Schaduwreliëf** is gebaseerd op het simuleren van oppervlakteverlichting met behulp van terreingegevens. Deze methode omvat het creëren van schaduwen en hooglichten op basis van de hoek van het oppervlak ten opzichte van de lichtbron. Als gevolg hiervan ziet u natuurlijke heuvels, valleien en andere terreindetails op de kaart.  
 
-**Helling** bepaalt de hellingshoek van het oppervlak op basis van de hoogtegegevens van punten op de kaart. Berekeningen van de hellingshoek worden uitgevoerd rekening houdend met hoogteveranderingen en afstanden tussen punten, en deze verandering wordt weergegeven als een hellingshoek.
+**Helling** bepaalt de hellingshoek van het oppervlak op basis van de hoogtegegevens van punten op de kaart. Berekeningen van de hellingshoek worden uitgevoerd rekening houdend met hoogteveranderingen en afstanden tussen punten, en deze verandering wordt weergegeven als een hellingshoek.  
 
 **Hoogte** vertegenwoordigt de hoogte van punten op de kaart ten opzichte van zeeniveau. Het helpt u te begrijpen hoe het terrein in hoogte verandert. Deze functie is met name handig voor activiteiten zoals wandelen of mountainbiken, waarbij het kennen van de hoogte kan helpen bij het plannen van routes en het beheren van fysieke inspanning. Hoogtegegevens zijn afgeleid van hoogtemodellen en bieden een duidelijk beeld van hoge en lage punten, waardoor het gemakkelijker wordt om de moeilijkheidsgraad van een route te beoordelen of pieken en dalen langs uw reis te identificeren.
 
@@ -293,7 +293,7 @@ De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de
 
 ### Cachegrootte {#cache-size}
 
-**Cachegrootte** is een informatieve sectie die de hoeveelheid geheugen op uw apparaat weergeeft die momenteel wordt gebruikt voor *Terrein*-gegevens. Elke keer dat u *Schaduwreliëf*- of *Helling*-informatie op een kaart bekijkt, worden al deze gegevens tijdelijk in de cache opgeslagen voor snelle toegang en later gebruik, waardoor extra belasting van de processor van uw apparaat wordt vermeden.
+**Cachegrootte** is een informatieve sectie die de hoeveelheid geheugen op uw apparaat weergeeft die momenteel wordt gebruikt voor *Terrein*-gegevens. Elke keer dat u *Schaduwreliëf*- of *Helling*-informatie op een kaart bekijkt, worden al deze gegevens tijdelijk in de cache opgeslagen voor snelle toegang en later gebruik, waardoor extra belasting van de processor van uw apparaat wordt vermeden.  
 
 **Het wissen van de cache** is soms nodig om ruimte op uw apparaat vrij te maken of om mogelijke prestatieproblemen op te lossen. Om de cache te wissen, moet u naar de *Systeeminstellingen* van het apparaat gaan, waarna het pad als volgt kan zijn: *Applicaties → OsmAnd → Opslag → Cache wissen*.
 
@@ -307,14 +307,14 @@ De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de
 2. Als u de **Kaartweergave-engine Versie 2 (OpenGL)** gebruikt:
     - U kunt doorgaan met het gebruik van de normale download van Schaduwreliëf- en Helling-rasterkaarten. Hiervoor moet u echter de [OsmAnd ontwikkelingsplugin](../plugins/development.md) activeren en de instelling [Gebruik raster SQLite-formaat voor schaduwreliëf en helling](../plugins/development.md#terrain) inschakelen.
 
-    - Als alternatief kunt u de [Terreinkaart (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location) download gebruiken. Dit bespaart geheugenruimte op uw apparaat, en de Schaduwreliëf-, Helling- en 3D-reliëfeffecten worden hiermee gegenereerd met behulp van uw apparaat.
+    - Als alternatief kunt u de [Terreinkaart (3D)](../personal/maps-resources.md#paid-map-content) download gebruiken. Dit bespaart geheugenruimte op uw apparaat, en de Schaduwreliëf-, Helling- en 3D-reliëfeffecten worden hiermee gegenereerd met behulp van uw apparaat.
 
 
 ### Snelle Acties {#quick-actions}
 
 ![QA voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](#default-color-scheme) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.
+U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](#default-color-scheme) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
 
 De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de sectie Topografie van het menu Kaart configureren. In het artikel [Snelle Actie](../widgets/quick-action.md#configure-map) vindt u een lijst met lagen die beschikbaar zijn voor weergave. Als u snelle toegang tot deze kaartconfiguratie nodig heeft, gebruik dan de tool *Aangepaste Knop*.
 
@@ -412,10 +412,10 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 |--------|---------|
 | ![Terreinlagen](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terreinlagen](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Schaduwreliëf** is een type kaart dat terrein weergeeft met behulp van schaduwen, waardoor een visuele weergave van de helling en vorm van het aardoppervlak ontstaat.
-**3D-reliëf** is een functie die driedimensionale effecten aan de kaart toevoegt.
+**Schaduwreliëf** is een type kaart dat terrein weergeeft met behulp van schaduwen, waardoor een visuele weergave van de helling en vorm van het aardoppervlak ontstaat.  
+**3D-reliëf** is een functie die driedimensionale effecten aan de kaart toevoegt.  
 
-Als u *Schaduwreliëf* **uitschakelt** en *3D-reliëf* **inschakelt**, zullen reliëfschaduwen nog steeds zichtbaar zijn omdat *Schaduwreliëf* en *3D-reliëf* twee verschillende manieren zijn om een kaart te visualiseren. *Schaduwreliëf* creëert schaduwen op basis van het terrein en voegt deze toe aan de kaart, terwijl *3D-reliëf* 3D-elementen modelleert om de diepte en vorm van het terrein te tonen, en de schaduwen maken deel uit van de visualisatie. Deze functies kunnen parallel werken, en het uitschakelen van *Schaduwreliëf* heeft geen invloed op hoe 3D-effecten worden weergegeven.
+Als u *Schaduwreliëf* **uitschakelt** en *3D-reliëf* **inschakelt**, zullen reliëfschaduwen nog steeds zichtbaar zijn omdat *Schaduwreliëf* en *3D-reliëf* twee verschillende manieren zijn om een kaart te visualiseren. *Schaduwreliëf* creëert schaduwen op basis van het terrein en voegt deze toe aan de kaart, terwijl *3D-reliëf* 3D-elementen modelleert om de diepte en vorm van het terrein te tonen, en de schaduwen maken deel uit van de visualisatie. Deze functies kunnen parallel werken, en het uitschakelen van *Schaduwreliëf* heeft geen invloed op hoe 3D-effecten worden weergegeven.  
 
 Wanneer **Schaduwreliëf** is **ingeschakeld**, lijkt een afbeelding met reliëfschaduwen gedetailleerder, donkerder en meer getrapt dan een *3D-reliëf*-afbeelding. De verklaring is dat *Schaduwreliëf* de gradiënten en contrasten van het terrein benadrukt, waardoor een scherper en gedetailleerder beeld ontstaat. De *3D-reliëf*-functie geeft de kaart een vloeiender en gladder uiterlijk, waardoor het terrein wordt verzacht en de zichtbaarheid van sommige fijnere details mogelijk wordt verminderd.
 
@@ -457,6 +457,6 @@ OsmAnd stelt u in staat om meerdere soorten kaartlagen te combineren voor een me
 
 1. Hoe de aankoop van de Topografie (voorheen Hoogtelijnen) plugin te herstellen. [(check)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Hoogtelijnen, Hoogtegegevens of 3D-reliëf worden niet weergegeven. [(check)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. De kaart schakelt automatisch over naar 3D-modus tijdens navigatie:
-    - Zorg ervoor dat de **3D-modus** knop is uitgeschakeld in **Menu → Scherm configureren → Knoppen → Standaardknoppen**.
+3. De kaart schakelt automatisch over naar 3D-modus tijdens navigatie:  
+    - Zorg ervoor dat de **3D-modus** knop is uitgeschakeld in **Menu → Scherm configureren → Knoppen → Standaardknoppen**.  
     - Controleer of er Terrein-functies zijn ingeschakeld in **Menu → Kaart configureren → Topografie** die een 3D-effect kunnen veroorzaken.
