@@ -234,6 +234,13 @@ Some widgets offer display mode options:
 - **Instant**. Displays real-time data for the selected metric.
 - **Average**. Displays averaged values over a configurable time interval (15 seconds to 60 minutes).
 
+Several widgets, including *Fuel consumption*, adapt their displayed units and regional metric formats based on the [Profile Settings](https://osmand.net/docs/user/personal/profiles#units--formats). When using volume units other than liters, Fuel consumption supports showing values as Miles per Gallon (MPG). The exact MPG type depends on the selected volume unit:
+
+- US gallons → MPG (US)
+- Imperial gallons → MPG (UK)
+
+The widget automatically selects the appropriate format according to the chosen <Translate android="true" ids="routing_attr_length_name"/> and <Translate android="true" ids="shared_string_volume"/> units in the active profile.
+
 
 ## Related articles {#related-articles}
 
