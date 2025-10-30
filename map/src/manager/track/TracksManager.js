@@ -400,7 +400,7 @@ export async function getGpxFileFromTrackData(file, routeTypes) {
     });
 }
 
-export const downloadGpx = async (track, sharedFile) => {
+export const downloadOriginalGpxFromBase = async (track, sharedFile) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}`;
     const oneGpxFile = {
@@ -436,7 +436,7 @@ export const downloadTravelGpx = async (track) => {
     }
 };
 
-export const downloadCurrentGpx = async (selectedGpxFile, routeTypes, isLocal) => {
+export const downloadCurrentLocalGpx = async (selectedGpxFile, routeTypes, isLocal) => {
     const gpx = await getGpxFileFromTrackData(selectedGpxFile, routeTypes);
     if (gpx) {
         const data = gpx.data;
