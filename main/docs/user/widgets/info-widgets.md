@@ -474,7 +474,7 @@ You can read a more detailed description here: **[<Translate android="true" ids=
 
 </Tabs>
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope* (the last two are available on Android only).
 
 | | |
 |:------------|:------------|
