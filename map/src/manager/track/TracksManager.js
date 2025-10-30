@@ -390,19 +390,22 @@ export function addDistanceToPoints(points) {
     }
 }
 
-export async function getGpxFileFromTrackData(file, routeTypes) {
+export async function getGpxFileFromTrackData(file, routeTypes, simplified) {
     const trackData = prepareTrackData({ file, routeTypes });
     const compressedData = compressJSONToBlob(trackData);
 
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, compressedData, {
+        params: {
+            simplified,
+        },
         apiCache: true,
         abortControllerKey: 'save-track-data-' + file.name,
     });
 }
 
-export const downloadOriginalGpxFromBase = async (track, sharedFile) => {
+export const downloadOriginalGpxFromBase = async ({ track, sharedFile = null, simplified }) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}`;
+    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}&simplified=${simplified ? 'true' : 'false'}`;
     const oneGpxFile = {
         url: urlFile + qs,
         clienttimems: track.clienttimems,
@@ -436,8 +439,8 @@ export const downloadTravelGpx = async (track) => {
     }
 };
 
-export const downloadCurrentLocalGpx = async (selectedGpxFile, routeTypes, isLocal) => {
-    const gpx = await getGpxFileFromTrackData(selectedGpxFile, routeTypes);
+export const downloadCurrentLocalGpx = async ({ selectedGpxFile, routeTypes, isLocal, simplified }) => {
+    const gpx = await getGpxFileFromTrackData(selectedGpxFile, routeTypes, simplified);
     if (gpx) {
         const data = gpx.data;
         const url = document.createElement('a');

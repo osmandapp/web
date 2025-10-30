@@ -6,7 +6,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { ReactComponent as FullTrackIcon } from '../../assets/icons/ic_action_file_routing.svg';
 import { ReactComponent as SimplifiedTrackIcon } from '../../assets/icons/ic_action_save_to_file.svg';
-import { downloadOriginalGpxFromBase, downloadTravelGpx, downloadCurrentLocalGpx } from '../../manager/track/TracksManager';
+import {
+    downloadOriginalGpxFromBase,
+    downloadTravelGpx,
+    downloadCurrentLocalGpx,
+} from '../../manager/track/TracksManager';
 import AppContext, { isLocalTrack, isRouteTrack, isTravelTrack } from '../../context/AppContext';
 import dialogStyles from '../dialog.module.css';
 import DefaultItem from '../../frame/components/items/DefaultItem';
@@ -17,24 +21,21 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
 
     const { t } = useTranslation();
 
-    const handleDownloadFull = async () => {
+    const handleDownload = async (simplified) => {
         if (track) {
-            await downloadOriginalGpxFromBase(track, sharedFile);
+            await downloadOriginalGpxFromBase({ track, sharedFile, simplified });
         } else if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
-            await downloadCurrentLocalGpx(ctx.selectedGpxFile, ctx.selectedGpxFile.routeTypes, isLocalTrack(ctx));
+            await downloadCurrentLocalGpx({
+                selectedGpxFile: ctx.selectedGpxFile,
+                routeTypes: ctx.selectedGpxFile.routeTypes,
+                isLocal: isLocalTrack(ctx),
+                simplified,
+            });
         } else if (isTravelTrack(ctx)) {
             await downloadTravelGpx(ctx.selectedGpxFile);
         } else {
-            await downloadOriginalGpxFromBase(ctx.selectedGpxFile);
+            await downloadOriginalGpxFromBase({ track: ctx.selectedGpxFile, simplified });
         }
-        setDialogOpen(false);
-        if (setOpenActions) {
-            setOpenActions(false);
-        }
-    };
-
-    const handleDownloadSimplified = () => {
-        console.log('Simplified track download not implemented yet');
         setDialogOpen(false);
         if (setOpenActions) {
             setOpenActions(false);
@@ -59,13 +60,13 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
                         id={'download-full-track'}
                         icon={<FullTrackIcon />}
                         name={t('web:download_track_full')}
-                        onClick={handleDownloadFull}
+                        onClick={() => handleDownload(false)}
                     />
                     <DefaultItem
                         id={'download-simplified-track'}
                         icon={<SimplifiedTrackIcon />}
                         name={t('web:download_track_simplified')}
-                        onClick={handleDownloadSimplified}
+                        onClick={() => handleDownload(true)}
                     />
                 </List>
             </DialogContent>
