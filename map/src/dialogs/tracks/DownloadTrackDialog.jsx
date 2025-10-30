@@ -7,7 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import { ReactComponent as FullTrackIcon } from '../../assets/icons/ic_action_file_routing.svg';
 import { ReactComponent as SimplifiedTrackIcon } from '../../assets/icons/ic_action_save_to_file.svg';
 import {
-    downloadOriginalGpxFromBase,
+    downloadOriginalGpxFromCloud,
     downloadTravelGpx,
     downloadCurrentLocalGpx,
 } from '../../manager/track/TracksManager';
@@ -23,7 +23,7 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
 
     const handleDownload = async (simplified) => {
         if (track) {
-            await downloadOriginalGpxFromBase({ track, sharedFile, simplified });
+            await downloadOriginalGpxFromCloud({ track, sharedFile, simplified });
         } else if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
             await downloadCurrentLocalGpx({
                 selectedGpxFile: ctx.selectedGpxFile,
@@ -34,7 +34,7 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
         } else if (isTravelTrack(ctx)) {
             await downloadTravelGpx(ctx.selectedGpxFile);
         } else {
-            await downloadOriginalGpxFromBase({ track: ctx.selectedGpxFile, simplified });
+            await downloadOriginalGpxFromCloud({ track: ctx.selectedGpxFile, simplified });
         }
         setDialogOpen(false);
         if (setOpenActions) {

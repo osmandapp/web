@@ -403,7 +403,7 @@ export async function getGpxFileFromTrackData(file, routeTypes, simplified) {
     });
 }
 
-export const downloadOriginalGpxFromBase = async ({ track, sharedFile = null, simplified }) => {
+export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified }) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}&simplified=${simplified ? 'true' : 'false'}`;
     const oneGpxFile = {
