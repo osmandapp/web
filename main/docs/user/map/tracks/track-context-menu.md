@@ -246,7 +246,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 
 The *Activity* feature in OsmAnd allows you to tag recorded GPX tracks with specific activities for further analysis and organization in folders.
 
-- [Activity tags for GPX tracks](../../plugins/trip-recording.md#recording-settings). When recording a GPX track, you can assign an activity type. This activity tagging helps you initially categorize tracks.
+- [Activity tags for GPX tracks](../../plugins/trip-recording.md#recording-settings). Recorded tracks automatically receive an activity type based on the selected profile, which helps categorize and filter them later. You can change the activity manually if needed.
 - [Activity filter](../../personal/tracks/smart-folder.md#search-filter). You can filter the recorded GPX tracks by activity, which allows you to focus on finding specific types of recordings, such as all biking or hiking tracks.
 - [Manage activity types](../../personal/tracks/manage-tracks.md#selection-mode). You can change the activity type for selected folders or tracks using the selection mode in the Tracks tab of the My Places menu.
 - **Activity list**. The activity categories and groups are defined in OsmAnd's resources. For developers and contributors, the activity list is maintained in a structured format at [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), which details the available activity groups and types.
