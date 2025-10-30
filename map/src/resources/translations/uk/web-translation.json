@@ -1,7 +1,3 @@
----
-source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
-
----
 {
   "download_as_osf": "Завантажити як OSF",
   "download_as_obf": "Завантажити як колекцію OBF ",
@@ -107,7 +103,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "feature_offline_weather_forecast": "Офлайн-прогноз погоди",
   "feature_15_year_access_to_all_pro_features": "15-річний доступ до всіх функцій Pro",
   "feature_lifetime_access_to_all_maps_plus_features": "Довічний доступ до всіх функцій Maps+",
-  "action_subscribe_monthly": "Підписатися щомісяця",
+  "action_subscribe_monthly": "Підписатися на місяць",
   "action_subscribe_annual": "Підписатися на рік",
   "action_complete_purchase": "Завершити покупку",
   "purchase_type_monthly_subscription": "Щомісячна підписка",
@@ -115,7 +111,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "purchase_type_one_time_purchase": "Одноразова покупка",
   "label_pricing": "Ціни",
   "subtitle_choose_your_ideal_osmand_plan": "Оберіть свій ідеальний план OsmAnd: почніть безкоштовно, виберіть гнучку підписку або зробіть одноразову покупку",
-  "notice_fastspring_purchase_info": "Онлайн-покупки надаються FastSpring, авторизованим реселером. Підписки автоматично поновлюються, якщо їх не скасувати до дати поновлення. Ви можете скасувати або поновити свою підписку на <portalLink>порталі керування обліковим записом FastSpring</portalLink>.",
+  "notice_fastspring_purchase_info": "Онлайн-покупки надаються FastSpring, авторизованим реселером. Підписки автоматично поновлюються, якщо їх не скасувати до дати поновлення. Ви можете скасувати або поновити свою підписку на порталі керування обліковим записом FastSpring.",
   "feature_offline_navigation_desc": "Покрокові голосові підказки, попередження про дорожній рух та ведення по смугах, все доступно офлайн",
   "feature_navigation_by_planned_tracks": "Навігація за запланованими треками",
   "feature_navigation_by_planned_tracks_desc": "Слідуйте за своїми GPX-треками з покроковими підказками або прив'язуйтеся до доріг для детальної навігації та інформації про дорогу",
@@ -194,20 +190,14 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "empty_favorites": "У вас немає улюблених файлів",
   "empty_favorites_description": "Ви можете імпортувати або створювати улюблені файли за допомогою додатка OsmAnd.",
   "weather_current": "Поточне місцезнаходження",
-  "weather_generated": "Погода згенеровано",
+  "weather_generated": "Прогноз згенеровано",
   "weather_source": "Джерело",
+  "weather:map_layers": "Шари мапи",
   "terrain_color_scheme": "Колірна схема",
   "terrain_desc": "Виберіть один з варіантів візуалізації: Висота, Відтінення рельєфу, Ухил.",
   "terrain_visibility": "Видимість",
   "dev_issues": "Проблеми",
-  "plan_route": "Планувати маршрут",
-  "create_track": "Створити трек",
-  "import_track": "Імпортувати трек",
-  "download_track": "Завантажити трек",
-  "download_track_desc": "Ви можете завантажити трек з повними даними, включаючи інструкції навігації, або спрощену версію, придатну для використання з іншими додатками.",
-  "download_track_full": "Повні дані треку",
-  "download_track_simplified": "Спрощений трек",
   "sourceHash": {
-    "message": "5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c"
+    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
   }
 }

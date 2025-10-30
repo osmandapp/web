@@ -1,7 +1,3 @@
----
-source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
-
----
 {
   "download_as_osf": "تنزيل كـ OSF",
   "download_as_obf": "تنزيل كمجموعة OBF",
@@ -115,8 +111,8 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "purchase_type_one_time_purchase": "شراء لمرة واحدة",
   "label_pricing": "الأسعار",
   "subtitle_choose_your_ideal_osmand_plan": "اختر خطة OsmAnd المثالية لك: ابدأ مجانًا، اختر اشتراكًا مرنًا، أو قم بشراء لمرة واحدة",
-  "notice_fastspring_purchase_info": "يتم توفير المشتريات عبر الإنترنت بواسطة FastSpring، بائع معتمد. تتجدد الاشتراكات تلقائيًا ما لم يتم إلغاؤها قبل تاريخ التجديد. يمكنك إلغاء أو تجديد اشتراكك في <portalLink>بوابة إدارة حساب FastSpring</portalLink>.",
-  "feature_offline_navigation_desc": "توجيه صوتي خطوة بخطوة، تحذيرات مرورية، وتوجيه الحارات، كل ذلك متاح دون اتصال بالإنترنت",
+  "notice_fastspring_purchase_info": "يتم توفير المشتريات عبر الإنترنت بواسطة FastSpring، بائع معتمد. تتجدد الاشتراكات تلقائيًا ما لم يتم إلغاؤها قبل تاريخ التجديد. يمكنك إلغاء أو تجديد اشتراكك في بوابة إدارة حساب FastSpring.",
+  "feature_offline_navigation_desc": "توجيه صوتي خطوة بخطوة، تحذيرات مرورية، وتوجيه المسار، كل ذلك متاح دون اتصال بالإنترنت",
   "feature_navigation_by_planned_tracks": "الملاحة بواسطة المسارات المخطط لها",
   "feature_navigation_by_planned_tracks_desc": "اتبع مسارات GPX الخاصة بك مع توجيه خطوة بخطوة، أو التزم بالطرق للحصول على ملاحة مفصلة ومعلومات الطريق",
   "feature_cross_platform": "متعدد المنصات",
@@ -143,7 +139,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "feature_terrain_visualization": "تصور التضاريس",
   "feature_terrain_visualization_desc": "تصور التضاريس مع تظليل التلال، الميل، وبيانات الارتفاع لتحسين تحليل المناظر الطبيعية، وتقييم مخاطر الانهيارات الثلجية، والعروض الشخصية عبر لوحات الألوان المخصصة",
   "feature_android_auto_and_apple_carplay": "أندرويد أوتو وأبل كار بلاي",
-  "feature_android_auto_and_apple_carplay_desc": "الملاحة دون اتصال بالإنترنت على شاشة سيارتك، بما في ذلك توجيه الحارات ومقياس السرعة",
+  "feature_android_auto_and_apple_carplay_desc": "الملاحة دون اتصال بالإنترنت على شاشة سيارتك، بما في ذلك توجيه المسار ومقياس السرعة",
   "feature_vehicle_metrics_obd_ii": "مقاييس المركبة (OBD-II)",
   "feature_vehicle_metrics_obd_ii_desc": "تتبع بيانات المركبة الحيوية عبر OBD-II، ومراقبة المقاييس الرئيسية مثل السرعة، دورات المحرك في الدقيقة، واستهلاك الوقود",
   "feature_external_sensors": "المستشعرات الخارجية",
@@ -196,19 +192,12 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "weather_current": "الموقع الحالي",
   "weather_generated": "الطقس المتولد",
   "weather_source": "المصدر",
-  "weather:map_layers": "طبقات خريطة الطقس",
+  "weather:map_layers": "طبقات الخريطة",
   "terrain_color_scheme": "نظام الألوان",
   "terrain_desc": "اختر أحد خيارات التصور: الارتفاع، تظليل التلال، الميل.",
   "terrain_visibility": "الرؤية",
   "dev_issues": "المشكلات",
-  "plan_route": "تخطيط المسار",
-  "create_track": "إنشاء مسار",
-  "import_track": "استيراد مسار",
-  "download_track": "تنزيل مسار",
-  "download_track_desc": "يمكنك تنزيل المسار مع البيانات الكاملة، بما في ذلك تعليمات الملاحة، أو النسخة المبسطة المناسبة للاستخدام مع تطبيقات أخرى.",
-  "download_track_full": "بيانات المسار الكاملة",
-  "download_track_simplified": "مسار مبسط",
   "sourceHash": {
-    "message": "5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c"
+    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
   }
 }

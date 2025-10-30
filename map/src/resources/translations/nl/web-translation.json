@@ -1,7 +1,3 @@
----
-source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
-
----
 {
   "download_as_osf": "Downloaden als OSF",
   "download_as_obf": "Downloaden als OBF-collectie",
@@ -16,13 +12,13 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "OsmAnd_account": "OsmAnd-account",
   "empty_login_desc": "Maak een OsmAnd-account aan of log in om uw tracks en favorieten op al uw apparaten te beheren.",
   "login_btn": "Inloggen",
-  "login_desc": "Voer alstublieft het e-mailadres in dat u hebt gebruikt om uw account aan te maken.",
+  "login_desc": "Voer het e-mailadres in dat u hebt gebruikt om uw account aan te maken.",
   "user_email": "E-mail",
   "email_is_not_registered": "Dit e-mailadres is niet geregistreerd bij OsmAnd Cloud.",
   "incorrect_password": "Onjuist wachtwoord.",
   "change_password": "Ik heb geen wachtwoord of ben het vergeten",
   "change_reset_password": "Wachtwoord wijzigen of opnieuw instellen",
-  "enter_email": "Voer alstublieft het e-mailadres in dat u hebt gebruikt om uw account aan te maken.",
+  "enter_email": "Voer het e-mailadres in dat u hebt gebruikt om uw account aan te maken.",
   "send_code_desc": "Er is een verificatiecode naar uw e-mailadres \\%1$s\\ gestuurd. Voer deze in het onderstaande veld in om verder te gaan.",
   "verification_code": "Verificatiecode",
   "min_8_symbols": "Minimaal 8 symbolen.",
@@ -115,7 +111,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "purchase_type_one_time_purchase": "Eenmalige aankoop",
   "label_pricing": "Prijzen",
   "subtitle_choose_your_ideal_osmand_plan": "Kies uw ideale OsmAnd-plan: Begin gratis, kies een flexibel abonnement of doe een eenmalige aankoop",
-  "notice_fastspring_purchase_info": "Online aankopen worden geleverd door FastSpring, een geautoriseerde wederverkoper. Abonnementen worden automatisch verlengd, tenzij ze vóór de verlengingsdatum worden opgezegd. U kunt uw abonnement opzeggen of verlengen via het <portalLink>FastSpring accountbeheerportaal</portalLink>.",
+  "notice_fastspring_purchase_info": "Online aankopen worden geleverd door FastSpring, een geautoriseerde wederverkoper. Abonnementen worden automatisch verlengd, tenzij ze vóór de verlengingsdatum worden opgezegd. U kunt uw abonnement opzeggen of verlengen via het FastSpring accountbeheerportaal.",
   "feature_offline_navigation_desc": "Turn-by-turn stembegeleiding, verkeerswaarschuwingen en rijstrookbegeleiding, allemaal offline beschikbaar",
   "feature_navigation_by_planned_tracks": "Navigatie via geplande tracks",
   "feature_navigation_by_planned_tracks_desc": "Volg uw GPX-tracks met turn-by-turn begeleiding, of 'snap' naar wegen voor gedetailleerde navigatie en wegeninformatie",
@@ -196,18 +192,12 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "weather_current": "Huidige locatie",
   "weather_generated": "Weer gegenereerd",
   "weather_source": "Bron",
+  "weather:map_layers": "Kaartlagen",
   "terrain_color_scheme": "Kleurenschema",
   "terrain_desc": "Selecteer een van de visualisatieopties: Hoogte, Schaduwreliëf, Helling.",
   "terrain_visibility": "Zichtbaarheid",
   "dev_issues": "Problemen",
-  "plan_route": "Route plannen",
-  "create_track": "Track aanmaken",
-  "import_track": "Track importeren",
-  "download_track": "Track downloaden",
-  "download_track_desc": "U kunt de track downloaden met volledige gegevens, inclusief navigatie-instructies, of een vereenvoudigde versie die geschikt is voor gebruik met andere apps.",
-  "download_track_full": "Volledige trackgegevens",
-  "download_track_simplified": "Vereenvoudigde track",
   "sourceHash": {
-    "message": "5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c"
+    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
   }
 }

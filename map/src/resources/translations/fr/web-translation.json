@@ -1,10 +1,6 @@
----
-source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
-
----
 {
-  "download_as_osf": "Télécharger en tant qu'OSF",
-  "download_as_obf": "Télécharger en tant que collection OBF ",
+  "download_as_osf": "Télécharger en tant que fichier OSF",
+  "download_as_obf": "Télécharger en tant que collection OBF",
   "hide_from_map": "Masquer de la carte",
   "import_favorite_groups": "Importer des groupes favoris",
   "recently_visible": "Récemment visible",
@@ -14,7 +10,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "explore_menu": "Explorer",
   "weather_precip_mmh": "mm/h",
   "OsmAnd_account": "Compte OsmAnd",
-  "empty_login_desc": "Créez ou connectez-vous à votre compte OsmAnd pour gérer vos traces et favoris sur tous vos appareils.",
+  "empty_login_desc": "Créez un compte OsmAnd ou connectez-vous pour gérer vos traces et favoris sur tous vos appareils.",
   "login_btn": "Se connecter",
   "login_desc": "Veuillez saisir l'adresse e-mail que vous avez utilisée pour créer votre compte.",
   "user_email": "E-mail",
@@ -203,11 +199,7 @@ source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
   "plan_route": "Planifier l'itinéraire",
   "create_track": "Créer une trace",
   "import_track": "Importer une trace",
-  "download_track": "Télécharger la trace",
-  "download_track_desc": "Vous pouvez télécharger la trace avec toutes les données, y compris les instructions de navigation, ou une version simplifiée adaptée à une utilisation avec d'autres applications.",
-  "download_track_full": "Données complètes de la trace",
-  "download_track_simplified": "Trace simplifiée",
   "sourceHash": {
-    "message": "5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c"
+    "message": "f04415458a8e01656d9c5cb136e017c402c52406966ec5d45ca775a1e95d6a25"
   }
 }
