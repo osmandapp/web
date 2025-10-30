@@ -1,8 +1,9 @@
 ---
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
+source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,10 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Visão Geral {#overview}
 
-O *menu de contexto da trilha* fornece informações sobre a *[Trilha](../../personal/tracks/index.md)* em formato de texto e [gráfico](#altitude--speed-graphs). Ele permite adicionar informações, fazer alterações, editar e realizar várias outras ações com a trilha. Você pode acessar o *menu de contexto da trilha* simplesmente tocando na trilha desejada no mapa ou usando o menu *[Meus locais](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Pode ser necessário abrir a pasta da trilha e selecionar a trilha desejada tocando nela.
+O *menu de contexto da trilha* fornece informações sobre a *[Trilha](../../personal/tracks/index.md)* em formato de texto e [gráfico](#altitude--speed-graphs). Ele permite adicionar informações, fazer alterações, editar e realizar várias outras ações com a trilha. Você pode acessar o *menu de contexto da trilha* simplesmente tocando na trilha desejada no mapa ou usando o menu *[Meus locais](../../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). Pode ser necessário abrir a pasta da trilha e selecionar a trilha desejada tocando nela.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,7 +43,7 @@ O *menu de contexto da trilha* fornece informações sobre a *[Trilha](../../per
 Ao tocar em uma trilha, a primeira tela do *Menu de contexto da trilha* é aberta - a *aba Visão Geral*. Nesta aba, você pode encontrar um resumo sobre a trilha escolhida (*[Painel de informações](#info-panel)*) e realizar as ações mais comuns com a trilha usando o *[Menu de ações da trilha](#track-actions)*. Você pode ver [descrição e informações de serviço](#description-and-info) sobre sua trilha se você puxar a aba Visão Geral para cima.
 
 <!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map.
+You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
 -->
 
 ### Painel de Informações {#info-panel}
@@ -64,17 +64,17 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Na parte superior do painel de informações, você pode ver o nome da trilha e o símbolo usado para marcá-la (*somente Android*). O nome da trilha pode ser alterado usando a função de renomear no [menu Opções](#options). Algumas trilhas (principalmente os *[Guias de viagem](../../plan-route/travel-guides.md#manage-as-gpx-track)*) podem ter uma breve *[descrição](#description-and-info)* e (ou) uma imagem abaixo do *Nome da trilha*. Uma seta mostra a *Direção para o ponto mais próximo da trilha* a partir de [Minha localização](../../map/interact-with-map.md#my-location-and-zoom).
+Na parte superior do painel de informações, você pode ver o nome da trilha e o símbolo usado para marcá-la (*somente Android*). O nome da trilha pode ser alterado usando a função de renomear no [menu Opções](#options). Algumas trilhas (principalmente os *[Guias de viagem](../../plan-route/travel-guides.md#manage-as-gpx-track)*) podem ter uma breve *[descrição](#description-and-info)* e (ou) uma imagem abaixo do *Nome da trilha*. Uma seta mostra a *Direção para o ponto mais próximo da trilha* a partir de [Minha localização](../../map/interact-with-map.md#my-location-and-zoom).  
 
 O painel de informações também fornece informações sobre o seguinte:
 
 - *<Translate android="true" ids="distance"/>*. Mostra o comprimento da trilha.
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Exibe a soma total de subidas e descidas durante a viagem.
-- *<Translate android="true" ids="altitude_range"/>*. Indica a altitude mínima e máxima em uma trilha.
+- *<Translate android="true" ids="altitude_range"/>*. Indica a altitude mínima e máxima em uma trilha.  
 
 :::note
 Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de rastreamento (portanto, seus pontos possuem tags de [`tempo` e `velocidade`](../../plugins/trip-recording#recorded-gpx-file)), o painel informativo também conterá informações sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) ou *<Translate ios="true" ids="total_time"/>* (*iOS*) (o tempo entre os pontos inicial e final da trilha), *<Translate android="true" ids="shared_string_time_moving"/>* (a soma do tempo em movimento).
-:::
+:::  
 
 ### Ações da Trilha {#track-actions}
 
@@ -97,7 +97,7 @@ Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de r
 - Botões **Mostrar / ocultar**. Altera a visibilidade da trilha no mapa.
 - [Aparência](./appearance.md). Personalize a aparência da sua trilha.
 - **Editar trilha** (*Android*). Abre a trilha na ferramenta [Planejar uma rota](../../plan-route/create-route.md).
-- **Exportar** (*iOS*). Permite [exportar uma trilha](../../personal/tracks/manage-tracks.md#exportar).
+- **Exportar** (*iOS*). Permite [exportar uma trilha](../../personal/tracks/manage-tracks.md#export).
 - **Direções**. Abre a trilha no modo *[Navegação](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)*.
 
 
@@ -107,19 +107,19 @@ Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de r
 
 <TabItem value="android" label="Android">
 
-![Opções do menu da trilha Android](@site/static/img/personal/tracks/track_menu_options_android.png)
+![Opções do menu da trilha Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Opções do menu da trilha Android](@site/static/img/personal/tracks/track_menu_options_ios.png)
+![Opções do menu da trilha iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-O menu **Opções** permite gerenciar e modificar a trilha selecionada com várias ferramentas e configurações.
+O menu **Opções** permite gerenciar e modificar a trilha selecionada com várias ferramentas e configurações.  
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – Controla a visibilidade da trilha no mapa.
 - **<Translate android="true" ids="shared_string_appearance"/>** – Abre o [menu Aparência](../tracks/appearance.md) para personalizar a cor, largura e transparência da trilha.
@@ -129,7 +129,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 
 - **<Translate android="true" ids="join_segments"/>** (*Somente Android*) – Mescla segmentos de trilha para preencher lacunas.
 - **<Translate android="true" ids="analyze_on_map"/>**. Abre a ferramenta [Analisar no mapa](../tracks/index.md#analyze-track-on-map) para inspecionar a elevação, velocidade e distância da trilha.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Somente Android*) - Analisa a trilha por [intervalos](./track-context-menu.md#split-interval) de tempo ou distância.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Somente Android*) - Analisa a trilha por [intervalos](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -160,7 +160,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 
 <TabItem value="android" label="Android">
 
-![Descrição e Informações Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png) ![Descrição e Informações Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
+![Descrição e Informações Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Descrição e Informações Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 
 Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as informações gerais***.
 
-- **Descrição**. O botão *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) é usado para editar a descrição da trilha. Tag `desc`.
+- **Descrição**.  *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) botão é usado para editar a descrição da trilha. Tag `desc`.
 
 - **Geral**. Contém informações sobre o *tamanho do arquivo GPX*, *pasta do arquivo* e *data de criação* com a tag `time`.
 
@@ -185,7 +185,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 - **Direitos autorais**. Tags: *Direitos autorais* - `copyright`, &nbsp;*Autor* - `author`, &nbsp;*Ano* - `year`, &nbsp;*Licença* - `license`.
 
 - **Adicional**. Todas as tags da seção ***extensões***:&nbsp; `address`,&nbsp; `icon`,&nbsp; `background`,&nbsp; `color`,&nbsp; `country`,&nbsp; `state`,&nbsp; `telephone`,&nbsp; `postcode`,&nbsp; `start_date`,&nbsp; `desc`.
-
+  
 
 <details>
 
@@ -255,7 +255,7 @@ O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas co
 
 ## Gráficos de Altitude / Velocidade {#altitude--speed-graphs}
 
-Na aba *<Translate android="true" ids="shared_string_gpx_track"/>*, você pode encontrar informações sobre a trilha em formato gráfico. Usando o seletor, você pode escolher quais dados exibir no gráfico: dados separados sobre *[<Translate android="true" ids="altitude"/>](#altitude)*, sobre a *[Velocidade](#speed)* (esta opção está disponível apenas para trilhas gravadas) ou exibir tudo junto (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
+Na aba *<Translate android="true" ids="shared_string_gpx_track"/>* , você pode encontrar informações sobre a trilha em formato gráfico. Usando o seletor, você pode escolher quais dados exibir no gráfico: dados separados sobre *[<Translate android="true" ids="altitude"/>](#altitude)*, sobre a *[Velocidade](#speed)* (esta opção está disponível apenas para trilhas gravadas) ou exibir tudo junto (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
 
 Interação com o gráfico:
 
@@ -270,13 +270,13 @@ Interação com o gráfico:
 
 <TabItem value="android" label="Android">
 
-![Menu de contexto da trilha Gráficos Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Gráficos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de contexto da trilha Gráficos iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Gráficos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
 
 </TabItem>
 
@@ -296,7 +296,7 @@ Os **botões** ativos dão acesso a ações como:
 
   - *Editar* abre a trilha na ferramenta [Planejar rota](../../plan-route/index.md).
   - *Excluir* permite remover o elemento da trilha selecionado.
-  - *Dividir intervalo* abre a [função Dividir intervalo](#split-interval) para a trilha.
+  - *Dividir intervalo* abre a [função Dividir intervalo](#analyze-by-intervals) para a trilha.
 
 
 ### Velocidade {#speed}
@@ -354,7 +354,7 @@ O gráfico de **Altitude** exibe métricas como:
 - *<Translate android="true" ids="altitude_ascent"/>*. O ganho cumulativo de altitude acima do nível do mar ao longo da rota.
 - *<Translate android="true" ids="altitude_descent"/>*. A perda cumulativa de altitude ao longo da rota.
 
-**Obter dados de elevação.**
+**Obter dados de elevação.**  
 Se não houver *informações de elevação* na rota, você pode adicioná-las das seguintes maneiras:
 
 - *Botão Calcular elevação → [Usar estradas próximas](../../plan-route/create-route.md#get-elevation-data)*. Utiliza um mapa offline para encontrar estradas próximas e dados de elevação. Permite personalizar a geometria da trilha.
@@ -372,15 +372,15 @@ O recurso de cálculo de elevação offline está disponível apenas para [**ass
 Este recurso permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
 
 1. Baixe [Mapas de terreno (3D)](../../plugins/topography.md#download-maps) para a região desejada.
-2. Se a trilha não contiver dados de altitude, vá para o menu de contexto da trilha (*Menu de contexto da trilha → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecione *Usar mapas de terreno* e, após o cálculo, você obterá um gráfico da trilha com base nos dados de terreno.
+2. Se a trilha não contiver dados de altitude, vá para o menu de contexto da trilha (*Menu de contexto da trilha → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecione *Usar mapas de terreno* e, após o cálculo, você obterá um gráfico da trilha com base nos dados de terreno.  
 
-    ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_10.png) <!--![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_4.png) ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
+    ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. Se você estiver criando uma rota com a ferramenta [Planejar uma rota](../../plan-route/create-route.md#graph) usando o método *Linha reta* e não houver dados de elevação no gráfico, você precisa:
     - Tocar em *Obter dados de elevação* e, em seguida, selecionar *Usar mapas de terreno*.
-    - Após o cálculo, você obterá o gráfico completo de Altitude/Inclinação da sua rota com base nos dados de terreno.
+    - Após o cálculo, você obterá o gráfico completo de Altitude/Inclinação da sua rota com base nos dados de terreno.  
 
-  ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_9.png) ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+  ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Pontos / Waypoints {#points--waypoints}
@@ -391,13 +391,13 @@ Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem
 
 <TabItem value="android" label="Android">
 
-![Menu de contexto da trilha Pontos Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de contexto da trilha Pontos iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -422,19 +422,20 @@ Waypoints podem ser adicionados à trilha atualmente gravada ou a qualquer trilh
 
 - Adicione um waypoint como um botão de [Ação rápida](../../widgets/quick-action.md#my-places).
 
+
 ### Criar Waypoint {#create-waypoint}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png) ![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
+![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Adicionar waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png) ![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
+![Adicionar waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Adicionar waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
 
 </TabItem>
 
@@ -455,7 +456,7 @@ Toque no botão *Adicionar Waypoint* para abrir a tela de criação de waypoint 
     - Selecione a **Cor** do ícone.
     - Em seguida, selecione a **Forma** do ícone: *Círculo, Octógono, Quadrado*.
 
-4. **Substitua** outro ponto por este, se necessário.
+4. **Substitua** outro ponto por este, se necessário.  
 
 
 ### Ações com Grupos {#actions-with-groups}
@@ -485,7 +486,7 @@ O *menu de três pontos* ( &#8285; ) abre o *menu de Grupo* de waypoints.
 - **<Translate android="true" ids="change_default_appearance"/>** - Altera as opções de exibição para um grupo de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** ou **Remover** (*Somente Android*) - Move waypoints de grupo para a lista de [Marcadores de mapa](../../personal/markers.md).
 - **<Translate android="true" ids="copy_to_map_favorites"/>** (*Somente Android*) - Move waypoints de grupo para [Favoritos](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*Somente Android*) - Cria uma rota entre waypoints. Os pontos inicial e final se tornam o início e o fim da rota, e o restante é convertido em pontos intermediários.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Somente Android*) - Cria uma rota entre waypoints. Os pontos inicial e final se tornam o início e o fim da rota, e o restante é convertido em pontos intermediários.
 - **<Translate android="true" ids="shared_string_delete"/>** - Exclui um grupo de waypoints.
 
 
@@ -495,19 +496,19 @@ O *menu de três pontos* ( &#8285; ) abre o *menu de Grupo* de waypoints.
 
 <TabItem value="android" label="Android">
 
-![Menu de grupo da trilha Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Menu de grupo da trilha Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![Grupo do menu da trilha no mapa Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Grupo do menu da trilha no mapa Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de grupo da trilha iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Menu de grupo da trilha iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![Grupo do menu da trilha no mapa iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Grupo do menu da trilha no mapa iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Gerencie a visibilidade dos grupos no mapa: se você ocultar uma trilha, o grupo inteiro também será ocultado.
+Gerencie a visibilidade dos grupos no mapa: se você ocultar uma trilha, o grupo inteiro também será ocultado.  
 
 Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no canto superior direito do menu de contexto da trilha no mapa. Toque nele e selecione a ação desejada.
 
@@ -528,7 +529,7 @@ Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no 
 </TabItem>
 
 </Tabs>
-
+  
 
 <details>
 
@@ -588,14 +589,14 @@ Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no 
 
 </details>
 
-**Tags:**
+**Tags:**  
 
 | Parâmetro | Descrição |
 | --- | --- |
 | `lat` | **Latitude** é uma das coordenadas geográficas pelas quais você pode determinar uma localização. |
 | `lon` | **Longitude** é outra das coordenadas geográficas pelas quais você pode determinar uma localização. |
 | `time` | **Timestamp** é a data e hora em que o ponto foi registrado. |
-| `name` | **Nome** é o nome do ponto. Quaisquer caracteres são permitidos. |
+| `name` | **Nome** é o nome do ponto. Quaisquer caracteres são permitidos.  |
 | `desc` | **Descrição** contém informações adicionais sobre o ponto. |
 | `type` | **Selecionar grupo** é o nome da pasta OsmAnd na qual este waypoint é salvo. |
 | `cmt` | **Comentário** é um breve comentário sobre um ponto. |
@@ -603,42 +604,82 @@ Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no 
 | `ele` | **Elevação** é a elevação do ponto. |
 
 
-**Extensões:**
+**Extensões:**  
 
 | Extensão | Descrição |
 | --- | --- |
 | `osmand:icon` | **Ícone** é o nome do ícone que você selecionou. |
-| `osmand:color` | **Cor** é a cor no formato HEX. |
+| `osmand:color` | **Cor** é a cor no formato HEX.  |
 | `osmand:background` | **Fundo** é a forma do ícone, como um círculo, octógono ou quadrado. |
-| `osmand:country` | **País** é o nome do país. |
-| `osmand:address` | **Endereço** é o endereço. |
-| `osmand:postcode` | **CEP** é o código postal. |
-| `osmand:telephone` | **Telefone** é o número de telefone. |
-| `osmand:state` | **Estado** é o nome do estado. |
-| `osmand:start_date` | **Data de início** são os dados de agendamento de um ponto. |
+| `osmand:country` | **País** é o nome do país.  |
+| `osmand:address` | **Endereço** é o endereço.  |
+| `osmand:postcode` | **CEP** é o código postal.  |
+| `osmand:telephone` | **Telefone** é o número de telefone.  |
+| `osmand:state` | **Estado** é o nome do estado.  |
+| `osmand:start_date` | **Data de início** são os dados de agendamento de um ponto.  |
 
-Waypoints são registrados com a trilha no [arquivo GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Cada um desses waypoints tem seu próprio conjunto de tags para descrição. Todas as tags diretamente relacionadas à descrição de waypoints que podem ser editadas diretamente no aplicativo OsmAnd estão listadas nesta seção.
+Waypoints são registrados com a trilha no [arquivo GPX](../../../technical/osmand-file-formats/osmand-gpx.md). Cada um desses waypoints tem seu próprio conjunto de tags para descrição. Todas as tags diretamente relacionadas à descrição de waypoints que podem ser editadas diretamente no aplicativo OsmAnd estão listadas nesta seção.  
 Para alterar a descrição do Waypoint, você pode seguir um dos seguintes caminhos:
-
-1. Encontre a trilha desejada na lista da *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
+  
+1. Encontre a trilha desejada na lista da aba *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 2. Toque na trilha no mapa, se ela estiver incluída na [lista de visíveis](../tracks/index.md#display-tracks-on-the-map).
-3. Toque no waypoint desejado se ele estiver [visível](../../personal/tracks/manage-tracks.md#track-menu) no mapa.
+3. Toque no waypoint desejado se ele estiver [visível](../../personal/tracks/manage-tracks.md#track-menu) no mapa.  
 
-    Em seguida, no [menu de contexto de Trilhas](./track-context-menu.md), toque em *pontos*, no campo da pasta desejada com os waypoints disponíveis e no Waypoint que você está procurando. Selecione o menu *Ações →* **Editar waypoint GPX** e faça as alterações. Você não pode alterar a data de criação de um ponto, *timestamp*, no aplicativo.
+    Em seguida, no [menu de contexto de Trilhas](./track-context-menu.md), toque em *pontos*, no campo da pasta desejada com os waypoints disponíveis e no Waypoint que você está procurando. Selecione o menu *Ações →* **Editar waypoint GPX** e faça as alterações. Você não pode alterar a data de criação de um ponto, *timestamp*, no aplicativo.  
 
 As **tags de amenidade** que descrevem informações adicionais, como horário de funcionamento ou número de telefone, específicas para o POI, obtêm essas informações dos dados do OpenStreetMap ou dos dados que você inseriu ao criar o POI. Você pode editar essas tags e [tags personalizadas](#display-custom-gpx-tags) apenas no código do arquivo GPX, que você pode abrir com qualquer editor de texto em seu dispositivo.
 
 
-## Dividir Intervalo {#split-interval}
+## Analisar por Intervalos {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-Você pode dividir a trilha em intervalos, como distância e tempo, e analisá-la.
+![Dividir trilha por Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Divida a trilha por distância ou intervalo de tempo.
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*
+A opção **Analisar por Intervalos** permite dividir uma trilha em seções e visualizar estatísticas detalhadas para cada parte da rota. As trilhas podem ser divididas por parâmetros de ***distância***, ***tempo*** ou ***subida/descida***. 
 
-![Tela de divisão de intervalo da trilha Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Tela de divisão de intervalo da trilha por tempo Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
+Para abrir esta opção:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → escolha o modo de divisão desejado 
+
+
+### Dividir por Distância {#split-by-distance}
+
+![Aba de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_tab.png) ![Mapa de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Esta opção permite dividir uma trilha em intervalos de distância fixa e analisar estatísticas detalhadas para cada segmento. Os intervalos de distância disponíveis são ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** e ***10 km***. Após escolher um intervalo de distância, a trilha é exibida como uma lista de segmentos. 
+
+Para cada segmento, você pode visualizar:
+- distância percorrida.
+- intervalo de tempo.
+- altitude média, mínima e máxima.
+- subida e descida.
+- tempo em movimento.
+- velocidade média e máxima.
+
+Ao tocar em qualquer segmento na lista, a visualização do mapa mostra a trilha completa com seus intervalos e abre o menu de contexto para a trilha na parte inferior da tela.
+
+
+### Dividir por Tempo {#split-by-time}
+
+![Aba de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_tab.png) ![Mapa de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+A opção **Dividir por Tempo** divide uma trilha em intervalos de duração igual. Você pode escolher entre ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** e ***60 min***. A forma como os intervalos são exibidos, as estatísticas fornecidas para cada segmento e como eles aparecem no mapa são as mesmas da seção [Dividir por Distância](#split-by-distance).
+
+
+### Dividir por Subida/Descida {#split-by-uphill-downhill}
+
+![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. A forma como os intervalos são exibidos, as estatísticas fornecidas para cada segmento e como eles aparecem no mapa também são as mesmas da seção [Dividir por Distância](#split-by-distance).
+
+
+### Métricas de Frequência Cardíaca {#heart-rate-metrics}
+
+![Métricas de Frequência Cardíaca](@site/static/img/personal/tracks/heart_rate.png)
+
+Esta opção permite visualizar os valores de frequência cardíaca média, mínima e máxima (batimentos por minuto, bpm) para cada intervalo da sua trilha. Os dados de frequência cardíaca são obtidos do arquivo GPX da trilha ou gravados diretamente de um [sensor de frequência cardíaca externo conectado](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Se não houver dados de frequência cardíaca disponíveis, esta linha é ocultada na tabela de intervalos.
+
+**Nota:** Você pode conectar um monitor de frequência cardíaca BLE via *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* para gravar dados de FC diretamente no OsmAnd.
 
 
 ## Filtro GPS {#gps-filter}
@@ -651,7 +692,7 @@ Divida a trilha por distância ou intervalo de tempo.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Este filtro permite melhorar as estatísticas da sua trilha, excluindo dados desnecessários ou incorretos. Você pode filtrar pontos da trilha que não se encaixam nos parâmetros da sua trilha e, como resultado, obter um gráfico e uma linha de rota visual mais precisos, sem distorção ou ruído de gravação. Você pode fazer alterações com filtros como *Suavização*, *Velocidade*, *Altitude* e *Precisão GPS*, que ocultam os pontos filtrados da trilha atual. Além disso, no menu *Estatísticas*, você pode verificar como suas alterações são exibidas no gráfico antes de salvá-las. Você também pode *Redefinir para o original* e *Salvar como cópia* da sua trilha neste filtro sem salvar o original.
+Este filtro permite melhorar as estatísticas da sua trilha, excluindo dados desnecessários ou incorretos. Você pode filtrar pontos da trilha que não se encaixam nos parâmetros da sua trilha e, como resultado, obter um gráfico e uma linha de rota visual mais precisos, sem distorção ou ruído de gravação. Você pode fazer alterações com filtros como *Suavização*, *Velocidade*, *Altitude* e *Precisão GPS*, que ocultam os pontos filtrados da trilha atual. Além disso, no menu *Estatísticas*, você pode verificar como suas alterações são exibidas no gráfico antes de salvá-las. Você também pode *Redefinir para o original* e *Salvar como cópia* da sua trilha neste filtro sem salvar o original.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -659,11 +700,11 @@ Este filtro permite melhorar as estatísticas da sua trilha, excluindo dados des
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-A página do aplicativo Filtro GPS para Android inclui o seguinte:
+A página do aplicativo Filtro GPS para Android inclui o seguinte:  
 
 - Um mapa com uma trilha salva e um botão extra, *Minha localização da trilha* (ele alinha uma trilha ao centro de um mapa).
 - Botões *Atualizar* e *Menu* na parte superior (*Menu* abre o campo *Ação* na parte inferior da página).
-- Blocos *Filtro*, *Estatísticas*, *Ação*.
+- Blocos *Filtro*, *Estatísticas*, *Ação*.  
 
 
 ### Menu de Filtro {#filter-menu}
@@ -682,7 +723,7 @@ Neste menu, você pode alterar alguns parâmetros da sua trilha, como *Suavizaç
 |*Altitude*. Apenas os pontos da trilha correspondentes ao intervalo de altitude selecionado são exibidos no gráfico e no mapa, os outros são ocultados.|
 |![Números de altitude do filtro GPS Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*Precisão GPS*. Define o valor máximo permitido para HDOP. Pontos com um valor mais alto são ocultados.|
-|![Números de precisão do filtro GPS Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |
+|![Números de precisão do filtro GPS Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
 ### Estatísticas {#statistics}
@@ -690,8 +731,8 @@ Neste menu, você pode alterar alguns parâmetros da sua trilha, como *Suavizaç
 ![Gráfico de filtro GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
 
 A aba Estatísticas exibe informações sobre a trilha **modificada**, ou seja, a trilha sem valores filtrados. Ela é exibida nos blocos de estatísticas e nos dados do gráfico.
-
-- A parte *Dados* mostra estatísticas semelhantes ao [menu Filtro](#filter-menu).
+  
+- A parte *Dados* mostra estatísticas semelhantes ao [menu Filtro](#filter-menu).  
 - A parte *Gráfico* exibe três tipos de gráficos por parâmetros: Visão Geral, Altitude e Velocidade. Esta funcionalidade é uma cópia do [Gráfico da trilha](#altitude--speed-graphs).
 
 ### Ações {#actions}
@@ -700,9 +741,9 @@ A aba Estatísticas exibe informações sobre a trilha **modificada**, ou seja, 
 
 A lista de ações está disponível na parte inferior da aba **Filtro** ou **Estatísticas**. O OsmAnd aplica todas as alterações feitas na trilha sem atualizar o arquivo, mas você pode salvar as alterações manualmente.
 
-- *<Translate android="true" ids="reset_to_original"/>*. Permite retornar os parâmetros ao seu estado original.
+- *<Translate android="true" ids="reset_to_original"/>*. Permite retornar os parâmetros ao seu estado original.  
 - *<Translate android="true" ids="save_as_copy"/>*. Permite salvar a trilha como uma nova.
-- *<Translate android="true" ids="save_changes_into_file"/>*. Permite reescrever a trilha com os novos parâmetros.
+- *<Translate android="true" ids="save_changes_into_file"/>*. Permite reescrever a trilha com os novos parâmetros.  
 
 
 ## Artigos Relacionados {#related-articles}

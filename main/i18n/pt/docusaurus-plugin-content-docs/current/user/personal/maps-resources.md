@@ -1,8 +1,9 @@
 ---
-source-hash: 96c19eed244ae8e23b225b79e192f6ab15334e38a9e882b113d53dea103f93b7
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title: Mapas e Recursos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão geral {#overview}
@@ -55,7 +55,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu de download de mapa iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas regionais Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu de download de mapa iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas regionais iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Baixar mapas para o aplicativo OsmAnd é um passo importante que determina a fun
 - **Somente estradas** (*somente Android*). O mapa contém apenas informações da grade rodoviária para focar em rotas e infraestrutura rodoviária. Ao remover detalhes como edifícios e pontos de interesse, ele é menor que um mapa padrão. Tocar abre uma tela com uma lista de regiões no país selecionado e informações sobre quanto espaço esses mapas ocuparão no seu dispositivo.
 - **Mapa de visão geral do mundo**. As versões do OsmAnd até 3.8 oferecem o download de um mapa mundial para que você possa visualizá-lo em escala planetária. Em versões mais recentes do OsmAnd, um *Mini Mapa Mundial* leve é incluído no aplicativo. O aplicativo permite que você baixe um mapa mundial de visão geral maior com informações mais detalhadas. 
 
-:::info atualizações mensais de mapas
+:::info monthly map updates
 Observe que as atualizações mensais de mapas são consideradas outro download de mapa e são subtraídas do número disponível de downloads de mapas gratuitos.
 :::
 
@@ -78,6 +78,7 @@ Observe que as atualizações mensais de mapas são consideradas outro download 
 - [Linhas de contorno](../plugins/topography.md#contour-lines). Um mapa contendo linhas de elevação de contorno para visualizar o terreno.
 - [Mapa de terreno (Hillshade e Inclinação)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Mapas com sombras ou inclinações fornecem informações adicionais sobre o terreno.
 - [Mapa de terreno (3D)](../plugins/topography.md#3d-relief). Representação tridimensional do terreno para uma melhor compreensão do seu entorno. O [Mecanismo de renderização de mapa Versão 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) deve estar ativado.
+- [Profundidades e contornos náuticos](../plugins/nautical-charts.md). Cartas marítimas mostrando linhas costeiras, profundidades, auxílios à navegação, portos e perigos para navegação e velejo seguros.
 - [Wikipedia](../plugins/wikipedia.md). Mapa vetorial com artigos da [Wikipedia](https://wikipedia.org/) geoposicionados sobre pontos de referência ou informações adicionais sobre locais.
 - [Wikivoyage](../plan-route/travel-guides.md). Fornece mapas vetoriais com guias de viagem virtuais, oferecendo aos usuários informações valiosas, recomendações e dicas.
 - [Previsão do tempo](../plugins/weather.md). Informações meteorológicas em um mapa para facilitar o planejamento de rotas.
@@ -208,7 +209,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_ta
 
 ![Menu da aba Local iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
-A aba Local fornece uma visão geral do uso de armazenamento para dados de mapas e recursos no seu dispositivo. A barra de memória na parte superior exibe três categorias:
+A aba Local fornece uma visão geral do uso de armazenamento para mapas e recursos no seu dispositivo. A barra de memória na parte superior exibe três categorias:
 
 - ***Verde***. Armazenamento total usado do dispositivo.
 - ***Laranja***. Parte do armazenamento usado ocupado pelos downloads do OsmAnd.
@@ -261,7 +262,7 @@ Cada item na lista oferece um *menu de três pontos* com opções:
 
 Toque em qualquer item offline na aba **Local** para abrir seus dados detalhados, da seguinte forma:
 
-- **Tipo**. O tipo de item de dados como **Mapa padrão**, **Wikipedia**, **Linhas de contorno**, e assim por diante.
+- **Tipo**. O tipo do item de dados como **Mapa padrão**, **Wikipedia**, **Linhas de contorno**, e assim por diante.
 - **Tamanho**. O tamanho do item em MB.
 - **Criado em**. A data em que o item foi adicionado.
 
@@ -312,86 +313,86 @@ As **Ações** disponíveis dependem do tipo de dados:
 </Tabs>
 
 <!--
-A aba Local fornece uma visão geral do uso de armazenamento para todos os dados do OsmAnd no seu dispositivo. Os dados são divididos em três seções codificadas por cores para maior clareza, com os itens classificados por tamanho do maior para o menor. Cada seção exibe apenas itens com dados baixados:
+The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
-- ***Recursos*** (*azul*).  
-    Inclui mapas ([Padrão](../map/vector-maps.md), &nbsp;[Náutico](../plugins/nautical-charts.md), &nbsp;[Topografia](../plugins/topography.md), &nbsp;[Clima](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) e [Guias de viagem](../plan-route/travel-guides.md), &nbsp;[Atualizações ao vivo](../personal/maps-resources.md#live-updates), &nbsp;**Somente estrada**,  &nbsp;[Fontes de mapa](../map/raster-maps.md), &nbsp;[Estilos de renderização](../map/vector-maps.md#default-map-styles), &nbsp;**Fontes de mapa, &nbsp;Comandos de voz (gravados e TTS), &nbsp;Cache**.  
+- ***Resources*** (*blue*).  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
-- ***Meus Lugares*** (*amarelo*).  
-    Inclui [Favoritos](../personal/favorites.md), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md), &nbsp;[Notas OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Edições OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico](../personal/global-settings.md#history), &nbsp;*Itinerário*.  
+- ***My Places*** (*yellow*).  
+    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
 
-- ***Configurações*** (*verde*).  
-    Inclui [Perfis](../personal/profiles.md), &nbsp;[Cores](../personal/color-palette-schemes.md) e **Outras** configurações do aplicativo.
-
-
-#### Visualizando Dados {#viewing-data}
-
-![Visão geral da categoria Local Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opções da categoria Local Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
+- ***Settings*** (*green*).  
+    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
 
 
-Toque em qualquer item na aba **Local** para abrir sua lista detalhada. Na parte superior desta lista, um painel visual exibe quanto espaço o tipo de dados selecionado ocupa em relação ao armazenamento total do OsmAnd.
+#### Viewing Data {#viewing-data}
 
-***Ações disponíveis:***
-
-- **Pesquisar**. Encontre dados específicos por nome dentro da pasta selecionada.
-- **Menu de três pontos**:  
-    ***Selecionar***. Escolha vários itens para ações como *Excluir*, *Desativar* ou *Ativar*.  
-    ***Importar***. Acesse o armazenamento do dispositivo para importar arquivos.
-- [Opção de classificação](#sorting-options). Classifique os itens por nome, país, data ou tamanho (a disponibilidade depende do tipo de dados).
+![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
 
-#### Menu para Itens da Lista {#menu-for-items-from-the-list}
+Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
 
-![Ações de itens da categoria Local 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Ações de itens da categoria Local](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
+***Available actions:***
 
-Cada item na lista oferece um *menu de três pontos* com opções:
-
-- **Informações**. Veja informações detalhadas sobre o *[item de dados](#local-data-item-overview)*.
-- **Exportar**. Salve dados em um arquivo via *Configurações → Exportar para Arquivo*.
-
-***Opções adicionais para mapas:***
-
-- **Desativar**. Desative mapas vetoriais sem excluí-los. Eles permanecem armazenados, mas não são usados para navegação, pesquisa ou roteamento. Reduz a carga no dispositivo e acelera o OsmAnd.
-- **Atualizar**. Baixe a versão mais recente do mapa.
-- **Renomear**. Personalize o nome do mapa para melhor identificação.
-- **Remover**. Exclua o mapa do seu dispositivo.
-- **Editar** (para Mapas Online). Modifique a configuração do mapa online.
-
-#### Menu de itens da fonte do mapa {#map-source-items-menu}
-
-![Menu de itens da fonte do mapa](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Cada item na lista [Fonte do mapa](../map/raster-maps.md) fornece configurações para gerenciar o mapa raster online armazenado no seu dispositivo. Abra o *menu de três pontos* para acessar as ações disponíveis:
-
-- [Informações](#local-data-item-overview). Exibe detalhes gerais sobre a fonte do mapa selecionada, incluindo formato e data da última atualização.  
-- **Calcular Tamanho**. Estima o armazenamento ocupado pelos blocos em cache desta fonte de mapa. Se o cache exceder *50MB*, o tamanho pode ser exibido como *≥50MB* em vez de um número exato.
-- **Limpar Todos os Blocos**. Exclui todos os blocos em cache para a fonte do mapa selecionada, liberando armazenamento enquanto mantém a fonte do mapa disponível para uso futuro.  
-- **Exportar**. Salva a configuração da fonte do mapa selecionada para backup ou compartilhamento.  
-- **Remover**. Exclui a fonte do mapa selecionada. Esta ação não afeta os mapas offline baixados, mas limpa o cache associado.
+- **Search**. Find specific data by name within the selected folder.
+- **Three-dot menu**:  
+    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
+    ***Import***. Access the device's storage to import files.
+- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
 
 
-#### Visão geral do item de dados local {#local-data-item-overview}
+#### Menu for Items from the List {#menu-for-items-from-the-list}
 
-![Visão geral do item de dados local](@site/static/img/settings/local_category_overview_2.png) ![Visão geral do item de dados local 2](@site/static/img/settings/local_category_overview_1.png)  
+![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
-Ao visualizar um item de dados local, você vê:
+Each item in the list offers a *three-dot menu* with options:
 
-- **Tipo**. O tipo de dados da lista **Local**.
-- **Criado**. A data em que o item foi adicionado.
-- **Tamanho**. O tamanho do item em MB.
+- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
+- **Export**. Save data to a file via *Settings → Export to File*.
 
-As **Ações** disponíveis dependem do tipo de dados e podem incluir **Desativar**, **Atualizar**, **Renomear**, **Exportar** e **Excluir**.
+***Additional options for maps:***
 
-#### Opções de Classificação {#sorting-options}
+- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
+- **Update**. Download the latest version of the map.
+- **Rename**. Customize the map’s name for better identification.
+- **Remove**. Delete the map from your device.
+- **Edit** (for Online Maps). Modify the online map configuration.
 
-![Opções de classificação de dados locais](@site/static/img/settings/local_sorting_options_andr_1.png)
+#### Map source items menu {#map-source-items-menu}
 
-Use as opções de classificação para organizar os dados do mapa:
+![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
-- **Nome (A - Z / Z - A)**. Localize itens em ordem alfabética.
-- **Nome do país (A - Z / Z - A)**. Organize mapas geograficamente.
-- **Data mais recente primeiro** / **Data mais antiga primeiro**. Veja atualizações ou versões mais antigas.
-- **Tamanho grande primeiro** / **Tamanho pequeno primeiro**. Identifique mapas grandes para liberar espaço de armazenamento.
+Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
+
+- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
+- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
+- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
+- **Export**. Saves the selected map source configuration for backup or sharing.  
+- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
+
+
+#### Local Data Item Overview {#local-data-item-overview}
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
+
+When viewing a local data item, you see:
+
+- **Type**. The data type from the **Local** list.
+- **Created**. The date the item was added.
+- **Size**. The item’s size is in MB.
+
+Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
+
+#### Sorting Options {#sorting-options}
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+Use sorting options to organize map data:
+
+- **Name (A - Z / Z - A)**. Locate items alphabetically.
+- **Country name (A - Z / Z - A)**. Organize maps geographically.
+- **Newest date first** / **Oldest date first**. See updates or older versions.
+- **Large size first** / **Small size first**. Identify large maps to free storage space.
 
 -->
 
@@ -460,7 +461,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_ta
 **Atualizações ao vivo** fornece atualizações de mapa incrementais e frequentes através de [assinatura](../purchases/index.md) ou é gratuito para [colaboradores OSM](#free-for-osm-mappers). As atualizações ocorrem a cada 15 minutos nos servidores OsmAnd e são baixáveis a cada hora, diariamente ou semanalmente. Essas atualizações consomem armazenamento mínimo — cerca de 2-4% do tamanho total do mapa por mês.
 
 <!--
-Cada cartão tem uma coleção independente de pequenas atualizações, então **tenha cuidado** se você tiver áreas sobrepostas. Se você quiser reverter para o estado original, você pode *desativar as atualizações e limpar o cache*.
+Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
 -->
 
 Principais recursos:

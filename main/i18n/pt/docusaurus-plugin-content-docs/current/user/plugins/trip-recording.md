@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
 sidebar_position: 15
 title: Gravação de Viagem
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão Geral {#overview}
 
-O **plugin de Gravação de Viagem** é uma ferramenta essencial para capturar suas rotas, movimentos e exercícios. Este recurso não só permite gravar suas viagens, mas também possibilita a fácil reutilização, modificação, atualização e compartilhamento de suas trilhas com outras pessoas.
+O **plugin de Gravação de Viagem** é uma ferramenta essencial para capturar suas rotas, movimentos e treinos. Este recurso não só permite gravar suas viagens, mas também possibilita a fácil reutilização, modificação, atualização e compartilhamento de suas trilhas com outras pessoas.  
 
 Com o *plugin de Gravação de Viagem*, você pode criar novas trilhas, exibir as gravadas diretamente no mapa e gerenciar registros existentes. Ele oferece informações valiosas sobre suas viagens, como velocidade, mudanças de elevação, detalhes do terreno e dados de sensores externos. O plugin registra sua rota, permitindo uma análise detalhada e compartilhamento após sua viagem.
 
@@ -42,8 +42,8 @@ Com o *plugin de Gravação de Viagem*, você pode criar novas trilhas, exibir a
 
 Para começar a gravar trilhas, você precisa fazer as seguintes configurações:
 
-1. [Ativar](../plugins/index.md#enable--disable) o **plugin de Gravação de Viagem**.
-2. [Configurar](#recording-settings) as **configurações de gravação** para o [perfil](../personal/profiles.md) necessário.
+1. [Ativar](../plugins/index.md#enable--disable) o **plugin de Gravação de Viagem**.  
+2. [Configurar](#recording-settings) as **configurações de gravação** para o [perfil](../personal/profiles.md) necessário.  
 3. [Adicionar](#widgets) **widgets de Gravação de Viagem** à tela (opcional).
 4. [Gerenciar](../map/tracks/appearance.md) trilhas no mapa (opcional).
 
@@ -63,9 +63,9 @@ Com o plugin de Gravação de Viagem no OsmAnd, você pode facilmente iniciar a 
 - *Somente Android*:
     - Vá para *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/> Principal*.
 
-    - [Notificação do sistema](#notifications) — Use na área de notificação do seu dispositivo.
+    - [Notificação do sistema](#notifications) — Use na área de notificação do seu dispositivo .
 
-    - [Lançador de aplicativos](#launcher-android) — Use para iniciar a gravação.
+    - [Lançador de aplicativos](#launcher-android) — Use para iniciar a gravação .  
 
 **Recomendações:**
 
@@ -84,7 +84,7 @@ Com o plugin de Gravação de Viagem no OsmAnd, você pode facilmente iniciar a 
 
 O diálogo de início é aberto se a opção **<Translate android="true" ids="show_start_dialog"/>** estiver ativada na seção de configurações da caixa de diálogo de início.
 
-![Iniciar gravação no Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)
+![Iniciar gravação no Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 </TabItem>
 
@@ -134,7 +134,7 @@ Para *Parar / Salvar / Pausar*:
 
 - Para **Salvar, Pausar, Iniciar** um novo segmento ou **Finalizar** a gravação, use os botões de [Ação Rápida](../widgets/quick-action.md#add-and-delete-actions). Vá para *Menu → Configurar tela → Botões personalizados → Ação rápida → Adicionar ação → [Meus Lugares](../widgets/quick-action.md#my-places)* e adicione um ou mais botões de ação rápida.
 
-- (*Somente Android*) Para **Pausar** ou **Salvar** uma trilha de gravação, use a [notificação](#notifications) do sistema na área de notificação do seu dispositivo.<br/><br/> ![parar-salvar-pausar](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Somente Android*) Para **Pausar** ou **Salvar** uma trilha de gravação, use a [notificação](#notifications) do sistema na área de notificação do seu dispositivo.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Tela de Visão Geral {#overview-screen}
@@ -143,13 +143,13 @@ Para *Parar / Salvar / Pausar*:
 
 <TabItem value="android" label="Android">
 
-![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png) ![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png) ![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
 
 </TabItem>
 
@@ -157,30 +157,30 @@ Para *Parar / Salvar / Pausar*:
 
 No OsmAnd, as versões **Android** e **iOS** lidam com a interface de gravação de trilhas de forma ligeiramente diferente. No Android, você encontrará um menu dedicado para o contexto de *Gravação de trilhas*, enquanto no iOS, isso é simplificado para o menu de contexto *Trilha atualmente gravando*.
 
-À medida que você grava uma trilha, gráficos dinâmicos são gerados, fornecendo dados visuais em tempo real sobre sua jornada. Esses gráficos podem refletir informações para toda a rota ou apenas para um segmento selecionado, dependendo do seu nível de zoom.
+À medida que você grava uma trilha, gráficos dinâmicos são gerados, fornecendo dados visuais em tempo real sobre sua jornada. Esses gráficos podem refletir informações para toda a rota ou apenas para um segmento selecionado, dependendo do seu nível de zoom.  
 Aqui está o que você pode encontrar neles:
 
 - **Valores de dados**. No lado direito do gráfico estão os valores ***mais altos***, ***mais baixos*** e ***médios*** para a seção visível da trilha.
 
 - **Gráfico para informações chave**:
     - ***Android***. Para o ***eixo Y*** no gráfico, você pode selecionar *até dois parâmetros* de todos os dados disponíveis, como *Altitude*, *Inclinação*, *Velocidade* e [informações de sensores externos](../plugins/external-sensors.md#trip-recording). Para o ***eixo X***, selecione para exibir *Distância*, *Tempo* ou *Hora do Dia*.
-    - ***iOS***. Os parâmetros são organizados em abas *Visão Geral*, *Altitude* e *Velocidade* com os valores apropriados para o eixo Y e *Distância* para o eixo X.
+    - ***iOS***. Os parâmetros são organizados em abas *Visão Geral*, *Altitude*, e *Velocidade* com os valores apropriados para o eixo Y e *Distância* para o eixo X.
 
-- **Estatística**. Para Android, exibe um conjunto constante de dados estatísticos independente das configurações do gráfico: *Distância*, *Período de tempo*, *Subida*, *Descida*, *Velocidade média*. Para iOS, cada aba, Visão Geral, Atitude e Velocidade, tem um conjunto de dados diferente.
+- **Estatística**. Para Android, exibe um conjunto constante de dados estatísticos independente das configurações do gráfico: *Distância*, *Período de tempo*, *Subida*, *Descida*, *Velocidade média*. Para iOS, cada aba, Visão Geral, Altitude, e Velocidade, tem um conjunto de dados diferente.
 
 Para uma visualização mais detalhada, você pode **escalar o gráfico**:
 
 - Use o [gesto de dois dedos](../map/interact-with-map.md#gestures) para aumentar ou diminuir o zoom e focar em intervalos específicos.
 - Toque em qualquer ponto do gráfico para exibir um marcador que mostra os valores exatos para aquele local.
 
-| |
+| |  
 | ------------- |
-| Aba **Visão Geral** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Velocidade* e o parâmetro do eixo X é *Distância*). Esta aba exibe um gráfico mostrando as mudanças de velocidade e altitude ao longo da trilha, e detalhes chave da trilha. Dados da trilha para iOS: *Distância*, *Período de Tempo*, *Hora de Início* e *Hora de Término*. Você pode ver como isso é exibido nas versões Android e iOS abaixo. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_overview_andr.png) ![dados](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
-| Aba **Altitude** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Inclinação* e o parâmetro do eixo X é *Distância*). Esta aba foca no perfil de elevação da sua trilha gravada, fornecendo insights sobre as mudanças de altitude e os graus do terreno. As métricas chave para iOS incluem: *Altitude Média*, *Faixa de Altitude*, *Subida* e *Descida*. Os gráficos abaixo ilustram as diferenças entre as interfaces Android e iOS. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_altitude_andr.png) ![dados](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
-| Aba **Velocidade** iOS (para Android, o parâmetro do eixo Y é *Velocidade* e o parâmetro do eixo X é *Distância*). A aba Velocidade destaca dados relacionados à velocidade ao longo da trilha. Para iOS, inclui informações como *Velocidade Média*, *Velocidade Máxima*, *Tempo em Movimento* e *Distância Corrigida*. As capturas de tela abaixo mostram como esses dados são exibidos em ambas as plataformas. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_speed_andr.png) ![dados](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+|Aba **Visão Geral** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Velocidade*, e o parâmetro do eixo X é *Distância*). Esta aba exibe um gráfico mostrando as mudanças de velocidade e altitude ao longo da trilha, e detalhes chave da trilha. Dados da trilha para iOS: *Distância*, *Período de Tempo*, *Hora de Início* e *Hora de Término*. Você pode ver como isso é exibido nas versões Android e iOS abaixo. |
+| ![dados](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|Aba **Altitude** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Inclinação*, e o parâmetro do eixo X é *Distância*). Esta aba foca no perfil de elevação da sua trilha gravada, fornecendo insights sobre as mudanças de altitude e os graus do terreno. As métricas chave para iOS incluem: *Altitude Média*, *Faixa de Altitude*, *Subida* e *Descida*. Os gráficos abaixo ilustram as diferenças entre as interfaces Android e iOS. |
+| ![dados](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+|Aba **Velocidade** iOS (para Android, o parâmetro do eixo Y é *Velocidade* e o parâmetro do eixo X é *Distância*). A aba Velocidade destaca dados relacionados à velocidade ao longo da trilha. Para iOS, inclui informações como *Velocidade Média*, *Velocidade Máxima*, *Tempo em Movimento* e *Distância Corrigida*. As capturas de tela abaixo mostram como esses dados são exibidos em ambas as plataformas. |
+| ![dados](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
 | Para **Android**, você pode criar mais combinações de dados disponíveis no eixo Y e valores no eixo X. |
 | ![dados](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -201,7 +201,7 @@ Para mais detalhes, você pode explorar o [**Menu de Contexto de Trilhas**](../m
 
 <TabItem value="ios" label="iOS">
 
-![mostrar_tr_no_mapa_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar trilhas do mapa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_no_mapa_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar trilhas do mapa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -228,27 +228,27 @@ O OsmAnd captura sua jornada em um [arquivo GPX](https://en.wikipedia.org/wiki/G
 </extensions>
 ```
 
-<!-- ![Arquivo GPX de uma trilha gravada](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm4.png)
+<!-- ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm4.png)
 
-![Arquivo GPX de uma trilha gravada](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  -->
+![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  -->
 
 
-| Parâmetro | Descrição |
+| Parâmetro  | Descrição |
 |-----------------|----------------|
 | `trkpt` | **Ponto de Trilha** representa uma localização geográfica específica detectada durante sua atividade. Cada ponto de trilha inclui coordenadas de latitude e longitude, formando a base do seu caminho gravado. |
-| `trkseg` | **Segmento de Trilha** agrupa pontos de trilha consecutivos, separados por interrupções na atividade, como pausas ou paradas. Isso ajuda a distinguir o movimento contínuo de períodos de inatividade dentro de uma única gravação. |
-| `lat` | **Latitude** indica a posição norte-sul de um ponto na superfície da Terra. É uma das metades do par de coordenadas usado para localizar sua posição exata. |
-| `lon` | **Longitude** especifica a posição leste-oeste, complementando a latitude, para localizar com precisão um ponto no globo. Juntas, latitude e longitude definem sua posição geográfica precisa. |
-| `ele` | **Elevação** mede a altura de um ponto de trilha acima do nível do mar, registrada em metros. Isso pode ser útil para rastrear mudanças de altitude durante suas atividades, como caminhadas ou passeios de bicicleta. |
-| `time` | **Carimbo de Data/Hora** registra a data e hora exatas em que um ponto de trilha é registrado. Isso permite rastrear a duração e o tempo de sua atividade com precisão. |
-| `hdop` | **Diluição Horizontal da Precisão (HDOP)** é uma medida da precisão do GPS, refletindo o erro potencial na localização devido às posições dos satélites. Ao contrário do HDOP padrão, as trilhas GPX do OsmAnd usam esse valor para representar a precisão horizontal em metros. Observe que esta implementação difere dos padrões típicos de HDOP. [Saiba mais](https://github.com/osmandapp/Osmand/issues/3445). |
-| `speed` | **Velocidade** registra sua taxa de movimento em metros por segundo. Fornece informações sobre seu ritmo durante vários segmentos de sua atividade. |
-| `heading` | **Rumo** indica a direção para a qual seu veículo ou a frente do dispositivo está apontando, medido em graus. É distinto do curso, que é o caminho real do movimento. Diferenças podem ocorrer devido a fatores externos como vento, correntes ou condições da estrada. [Mais sobre rumo](https://en.wikipedia.org/wiki/Heading_(navigation)). |
-| `speed_sensor` | **Velocidade** de [sensores externos](../plugins/external-sensors.md) captura dados de sensores conectados, fornecendo informações de velocidade mais precisas, especialmente útil ao andar de bicicleta. Para mais detalhes, consulte a [documentação do formato de arquivo GPX](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `cadence` | **Cadência** mede o número de rotações do pedal por minuto, registrado usando [sensores externos](../plugins/external-sensors.md). Isso é particularmente útil para ciclistas que desejam monitorar e otimizar sua eficiência de pedalada. [Leia mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `power` | **Potência da Bicicleta** quantifica a potência gerada ao pedalar, capturada de [sensores externos](../plugins/external-sensors.md). É uma métrica essencial para ciclistas sérios que desejam avaliar seu desempenho. [Saiba mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `atemp` | **Temperatura do Ar** registra a temperatura ambiente durante sua atividade, medida usando [sensores externos](../plugins/external-sensors.md). Observe que a temperatura da água não é suportada. [Detalhes aqui](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `hr` | **Frequência Cardíaca** monitora seus batimentos cardíacos por minuto, usando dados de [sensores](../plugins/external-sensors.md) conectados. Esta informação pode ser vital para rastrear seu desempenho cardiovascular durante os treinos. [Saiba mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
+| `trkseg`  | **Segmento de Trilha** agrupa pontos de trilha consecutivos, separados por interrupções na atividade, como pausas ou paradas. Isso ajuda a distinguir o movimento contínuo de períodos de inatividade dentro de uma única gravação.  |
+| `lat` | **Latitude** indica a posição norte-sul de um ponto na superfície da Terra. É uma das metades do par de coordenadas usado para localizar sua posição exata.   |
+| `lon` | **Longitude** especifica a posição leste-oeste, complementando a latitude, para localizar com precisão um ponto no globo. Juntas, latitude e longitude definem sua posição geográfica precisa.    |
+| `ele` | **Elevação** mede a altura de um ponto de trilha acima do nível do mar, registrada em metros. Isso pode ser útil para rastrear mudanças de altitude durante suas atividades, como caminhadas ou passeios de bicicleta.    |
+| `time` | **Carimbo de Data/Hora** registra a data e hora exatas em que um ponto de trilha é registrado. Isso permite rastrear a duração e o tempo de sua atividade com precisão.    |
+| `hdop` | **Diluição Horizontal da Precisão (HDOP)** é uma medida da precisão do GPS, refletindo o erro potencial na localização devido às posições dos satélites. Ao contrário do HDOP padrão, as trilhas GPX do OsmAnd usam esse valor para representar a precisão horizontal em metros. Observe que esta implementação difere dos padrões típicos de HDOP. [Saiba mais](https://github.com/osmandapp/Osmand/issues/3445).   |
+| `speed` | **Velocidade** registra sua taxa de movimento em metros por segundo. Fornece informações sobre seu ritmo durante vários segmentos de sua atividade.  |
+| `heading`  | **Rumo** indica a direção para a qual seu veículo ou a frente do dispositivo está apontando, medido em graus. É distinto do curso, que é o caminho real do movimento. Diferenças podem ocorrer devido a fatores externos como vento, correntes ou condições da estrada. [Mais sobre rumo](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
+| `speed_sensor` | **Velocidade** de [sensores externos](../plugins/external-sensors.md) captura dados de sensores conectados, fornecendo informações de velocidade mais precisas, especialmente útil ao andar de bicicleta. Para mais detalhes, consulte a [documentação do formato de arquivo GPX](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `cadence` | **Cadência** mede o número de rotações do pedal por minuto, registrado usando [sensores externos](../plugins/external-sensors.md). Isso é particularmente útil para ciclistas que desejam monitorar e otimizar sua eficiência de pedalada. [Leia mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `power` | **Potência da Bicicleta** quantifica a potência gerada ao pedalar, capturada de [sensores externos](../plugins/external-sensors.md). É uma métrica essencial para ciclistas sérios que desejam avaliar seu desempenho. [Saiba mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `atemp` | **Temperatura do Ar** registra a temperatura ambiente durante sua atividade, medida usando [sensores externos](../plugins/external-sensors.md). Observe que a temperatura da água não é suportada. [Detalhes aqui](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `hr` | **Frequência Cardíaca** monitora seus batimentos cardíacos por minuto, usando dados de [sensores](../plugins/external-sensors.md) conectados. Esta informação pode ser vital para rastrear seu desempenho cardiovascular durante os treinos. [Saiba mais](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
 ## Configurações de Gravação {#recording-settings}
@@ -266,15 +266,15 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Configurando a Gravação de Viagem no Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png) ![Configurando a Gravação de Viagem no Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Configurando a Gravação de Viagem no Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configurando a Gravação de Viagem no Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configurando a Gravação de Viagem no iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png) ![Configurando a Gravação de Viagem no iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
+![Configurando a Gravação de Viagem no iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Configurando a Gravação de Viagem no iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 
@@ -292,7 +292,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 | **Dividir gravações automaticamente após lacuna** | Divide automaticamente as trilhas com base em lacunas de tempo entre os pontos registrados. <ul><li>Um novo segmento começa após uma lacuna de 6 minutos.</li><li>Uma nova trilha começa após uma lacuna de 2 horas.</li><li>Um novo arquivo começa quando a data muda.</li><li>Lacunas podem resultar de perda de sinal GPS, baixa velocidade ou configurações de configuração.</li></ul><details><summary>*Observação*</summary>Uma lacuna é identificada quando nenhum ponto é registrado. Isso pode acontecer porque a localização não é detectada ou porque é detectada, mas não registrada. Vários fatores podem causar isso, incluindo sinais GPS fracos devido a condições climáticas adversas, ou a velocidade do movimento caindo abaixo do limite configurado. Nesses casos, mesmo que o dispositivo possa detectar a localização, ele não a registra.<br/><br/>Essas lacunas nos dados registrados podem acionar a criação de um novo segmento dentro da mesma trilha, uma nova trilha no mesmo arquivo ou um novo arquivo GPX dentro de uma gravação. Isso é gerenciado dentro de uma única sessão de gravação de início/parada.</details> |
 | **Prevenir registro autônomo** (*Android*) | Pausa a gravação da trilha quando o aplicativo OsmAnd é encerrado (via *aplicativos recentes*). A indicação de segundo plano não é exibida no painel de notificações do Android. |
 | **Incluir rumo** | Registra o rumo (direção do movimento) para cada ponto no arquivo GPX. O rumo é a direção para a qual o dispositivo está virado, o que pode diferir da direção do movimento devido a fatores externos como vento ou derrapagem. |
-| **Atividade** | A opção permite pré-selecionar um [tipo de atividade](../map/tracks/track-context-menu.md#ttrack-activity-type) para um perfil, que é então aplicado automaticamente a todas as trilhas gravadas. |
+| **Atividade**  | A opção permite pré-selecionar um [tipo de atividade](../map/tracks/track-context-menu.md#ttrack-activity-type) para um perfil, que é então aplicado automaticamente a todas as trilhas gravadas. |
 | **Sensores externos** <br/> *Precisa de plugin ativado* | Dados de [sensores externos](../plugins/external-sensors.md#trip-recording) como *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, ou *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* são registrados no arquivo GPX. Dados de *Distância* não são registrados no Android ou iOS. Exibido apenas quando o [plugin de Sensores Externos](../plugins/external-sensors.md) está ativado. |
 | **Métricas do Veículo** <br/> *Precisa de plugin ativado* | Dados do [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) são registrados no arquivo GPX. Exibido apenas quando o [plugin de Métricas do Veículo](../plugins/vehicle-metrics.md) está ativado.<br />*Nota*: Você pode adicionar quais métricas registrar no arquivo GPX da lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Pasta de armazenamento de trilhas** (*Android*) | Define onde, na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*, as trilhas gravadas são armazenadas. As opções incluem armazenar todas as trilhas na pasta Rec ou organizá-las por mês, como Rec/aaaa-mm. |
@@ -307,7 +307,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 
 <InfoAndroidOnly />
 
-![Trilha no mapa iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png) ![Trilha no mapa iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)
+![Trilha no mapa iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Trilha no mapa iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Este recurso permite gerenciar as configurações de otimização de bateria para o OsmAnd para garantir acesso ininterrupto à sua localização, mesmo quando o aplicativo é executado em segundo plano durante a navegação ou gravação de trilhas.
 
@@ -318,7 +318,7 @@ Este recurso permite gerenciar as configurações de otimização de bateria par
 
 ### Notificações {#notifications}
 
-![Notificação de Gravação de Viagem](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)
+![Notificação de Gravação de Viagem](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
 Se a [Notificação](#recording-settings) estiver ativada nas configurações do plugin, as notificações de gravação de viagem sempre serão exibidas na área de notificação do sistema quando a gravação estiver ativa. Esta notificação garante que o processo de gravação não seja interrompido pelo sistema, e não pode ser desativada durante uma gravação ativa.
 
@@ -340,7 +340,7 @@ Este comportamento é exigido pelo Android para que qualquer serviço em primeir
 - O **OsmAnd** também pode aparecer em ***Privacidade → Permissões Especiais → Ligar tela***. Se você quiser evitar que a tela ligue quando uma notificação aparecer, tente remover o OsmAnd desta lista.
 
 <!--
-- OsmAnd não está listado em **Privacidade** *→* **Permissões Especiais** → **Alarmes e lembretes**.
+- OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.
 -->
 
 **Notificação de distintivo**.
@@ -349,14 +349,14 @@ Este comportamento é exigido pelo Android para que qualquer serviço em primeir
 
 O distintivo do ícone do aplicativo aparece ao lado do ícone do OsmAnd quando a gravação da trilha está ativa.
 
-- Este ícone desaparece quando a gravação da trilha é concluída. Para verificar se uma gravação está ativa, você pode ir para *Menu → Meus Lugares → Aba Trilhas* ou tocar no widget para gerenciar a gravação.
-- Se não houver gravação em andamento e o distintivo ainda for exibido, pode significar que uma mensagem do OsmAnd foi deixada no painel de notificações do dispositivo.
+- Este ícone desaparece quando a gravação da trilha é concluída. Para verificar se uma gravação está ativa, você pode ir para *Menu → Meus Lugares → Aba Trilhas* ou tocar no widget para gerenciar a gravação.  
+- Se não houver gravação em andamento e o distintivo ainda for exibido, pode significar que uma mensagem do OsmAnd foi deixada no painel de notificações do dispositivo.  
 - Para desativar os distintivos nas configurações do Android, vá para *Configurações do dispositivo → Aplicativos → OsmAnd → Notificações* e desative a opção de exibição de distintivo para este aplicativo.
 
 
 ## Widgets {#widgets}
 
-Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Distância*, *Duração*, *Subida* e *Descida*.
+Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Distância*, *Duração*, *Subida* e *Descida*. No Android, você também pode adicionar widgets de *Velocidade Máxima* e *Inclinação Média*.
 
 Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer todas as seguintes configurações:
 
@@ -373,15 +373,15 @@ Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer t
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Adicionando widget Distância/Iniciar-Parar no Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Adicionando widget Distância/Iniciar-Parar no Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="map_widget_monitoring"/>*
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adicionando widget Distância/Iniciar-Parar no iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Adicionando widget Distância/Iniciar-Parar no iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -396,34 +396,39 @@ Para personalizar sua interface, você pode adicionar ou remover o widget de Gra
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Widget de gravação de viagem](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
 ![Finalizar gravação no Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Widget de gravação de viagem](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de gravação de viagem](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Widget de gravação de viagem](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)
+![Widget de gravação de viagem](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Widget de gravação de viagem](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Quando os widgets são exibidos no mapa, tocar em qualquer um deles revela detalhes adicionais da trilha e permite a interação com a gravação.
 O widget *Distância* exibe a distância total da sua viagem gravada atual e atua como a interface principal para gerenciar suas gravações. Tocar nele revela o [diálogo de Gravação de Viagem](#start-a-dialog), onde você pode iniciar, parar e visualizar informações detalhadas sobre sua trilha.
 
 - O widget é adicionado automaticamente quando o *plugin de Gravação de Viagem* é ativado, mas pode ser ocultado através do [menu Configurar tela](../widgets/configure-screen.md#overview).
-- Se a opção *Mostrar diálogo de início* estiver desativada nas configurações do plugin de Gravação de Viagem, tocar no widget ativo ainda abrirá a caixa de diálogo *Gravação de Viagem*, permitindo que você acesse outras opções e informações.
+- Se a opção *Mostrar diálogo de início* estiver desativada nas configurações do plugin de Gravação de Viagem, tocar no widget ativo ainda abrirá a caixa de diálogo *Gravação de Viagem*, permitindo que você acesse outras opções e informações.  
 
-Além do widget *Distância/Iniciar-Parar*, o **plugin de Gravação de Viagem** inclui outros três widgets: *Duração*, *Subida* e *Descida*. Estes fornecem informações adicionais sobre sua viagem, ajudando você a rastrear o progresso em tempo real.
+Além do widget *Distância/Iniciar-Parar*, o **plugin de Gravação de Viagem** inclui outros três widgets: *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média* (os dois últimos estão disponíveis apenas no Android). Estes fornecem informações adicionais sobre sua viagem, ajudando você a rastrear o progresso em tempo real.
 
 | |
 |-----------|
 | **Distância/Iniciar-Parar**. Este widget exibe a distância da sua gravação de viagem em andamento. Ele é adicionado automaticamente quando o plugin de Gravação de Viagem é ativado, mas você pode ocultá-lo através do menu Configurar Tela. O widget apresenta três estados distintos: *Gravando*, *Pausado* e *Inativo*, cada um indicando o status atual da sua gravação de viagem. |
 | ![Widget de gravação de viagem (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Para abrir o [diálogo de Gravação de Viagem](#start-a-dialog) ao tocar em um widget inativo, ative a opção *Mostrar Diálogo de Inicialização* nas configurações do plugin de Gravação de Viagem. Se a opção estiver desativada, a gravação começará imediatamente após tocar no widget sem abrir o diálogo.|
+| Para abrir o [diálogo de Gravação de Viagem](#start-a-dialog) ao tocar em um widget inativo, ative a opção *Mostrar Diálogo de Inicialização* nas configurações do plugin de Gravação de Viagem. Se a opção estiver desativada, a gravação começará imediatamente após tocar no widget sem abrir o diálogo.| 
+
+No Android, o widget Distância suporta múltiplos modos de exibição:
+- **Distância total** – distância total da gravação atual (padrão).
+- **Última subida** – distância da seção de ascensão mais recente.
+- **Última descida** – distância da seção de descida mais recente.
 
 
 ### Duração, Subida, Descida {#duration-uphill-downhill}
@@ -432,24 +437,43 @@ Além do widget *Distância/Iniciar-Parar*, o **plugin de Gravação de Viagem**
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Subida**. Mostra a subida total ou a seção de subida mais recente, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Descida**. Indica a descida total ou a seção de descida mais recente, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
 | |
 |------------|
 |**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Subida**. Mostra o ganho de elevação cumulativo para a gravação da viagem atual. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
 |**Descida**. Indica a descida total acumulada durante a gravação da viagem atual. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Se você tiver vários widgets selecionados — *Duração*, *Subida* ou *Descida* — você pode acessar a mesma caixa de diálogo para cada um sem precisar alternar ou fechá-la. Esta interface unificada facilita a visualização e o gerenciamento de todas as informações relacionadas de forma contínua.
+
+### Velocidade Máxima & Inclinação Média {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Velocidade Máxima Android](@site/static/img/widgets/max_speed_android.png) ![Inclinação Média Android](@site/static/img/widgets/average_slope_android.png)  
+
+O widget **Velocidade Máxima** mostra a velocidade máxima para a viagem gravada atualmente. Toque no widget para alternar entre a velocidade máxima geral e a velocidade máxima da última seção de subida ou descida.
+
+O widget **Inclinação Média** exibe a inclinação média para a última seção de subida ou descida da viagem atual. Ele ajuda a estimar o quão íngreme foi a subida ou descida anterior, com base no ganho de elevação e distância.
 
 
 ## Artigos Relacionados {#related-articles}
@@ -471,7 +495,7 @@ Se você tiver vários widgets selecionados — *Duração*, *Subida* ou *Descid
     - Verifique se as *configurações de otimização de bateria do seu dispositivo* estão interrompendo a gravação. Alguns dispositivos podem pausar a atividade em segundo plano para economizar energia. Vá para *Configurações do Dispositivo → Bateria*.
 
 - A distância gravada não corresponde à distância real.
-    - Verifique se o GPS está ativado e tem um sinal ativo.
+    - Verifique se o GPS está ativado e tem um sinal ativo.  
     - Reduza o limite de precisão do GPS: *Menu → Configurar Perfil → Gravação de Viagem → Precisão Mínima*.
 
 - Trilhas Gravadas Estão Ruidosas. [(verificar)](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy).

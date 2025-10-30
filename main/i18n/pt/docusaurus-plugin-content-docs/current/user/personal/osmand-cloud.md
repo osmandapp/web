@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title: OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -32,7 +32,7 @@ O OsmAnd Cloud permite que você **armazene e sincronize configurações pessoai
 
 ## Multiplataforma {#cross-platform}
 
-O OsmAnd Cloud permite que você faça backup, restaure e sincronize seus dados entre Android, iOS e a [versão web](../web/index.md). Com recursos multiplataforma, você pode transferir **configurações de perfil**, **rotas**, **favoritos**, **edições/notas OSM** e muito mais entre dispositivos. Além disso, a **versão web** permite que você planeje rotas e as salve para uso posterior em dispositivos conectados.
+O OsmAnd Cloud permite que você faça backup, restaure e sincronize seus dados entre Android, iOS e a [versão web](../web/index.md). Com recursos multiplataforma, você pode transferir **configurações de perfil**, **trilhas**, **favoritos**, **edições/notas OSM** e muito mais entre dispositivos. Além disso, a **versão web** permite que você planeje rotas e as salve para uso posterior em dispositivos conectados.
 
 O OsmAnd suporta **uso multiplataforma** entre *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* com as seguintes etapas:
 
@@ -86,7 +86,7 @@ Para fazer backup e restaurar dados, você deve estar logado em sua conta OsmAnd
   - Leia [aqui](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) o que fazer se você não receber um código de verificação.
   - Use esta conta para fazer login no OsmAnd Cloud em outros dispositivos.
 
-- Se você tiver uma assinatura **OsmAnd Pro**, poderá continuar acessando sua conta OsmAnd Cloud por **mais um ano** após o vencimento da sua assinatura.
+- Se você tiver uma assinatura **OsmAnd Pro**, poderá continuar acessando sua conta OsmAnd Cloud por **um ano adicional** após o vencimento da sua assinatura.
 
 :::tip Solução de problemas de login
 Se você tiver problemas durante o registro:
@@ -305,11 +305,13 @@ Neste menu, você pode selecionar quais dados e pastas carregar para a Nuvem:
 
 1. **Configurações**. Esta aba inclui todas as suas configurações, como preferências gerais, perfis específicos, ações rápidas, POIs e configurações de desvio de rota.
 
-2. **Meus Lugares**. Esta aba lista dados do [menu Meus Lugares](../personal/myplaces), incluindo favoritos, rotas, notas OSM, marcadores e outros itens.
+2. **Meus Lugares**. Esta aba lista dados do [menu Meus Lugares](../personal/myplaces), incluindo favoritos, trilhas, notas OSM, marcadores e outros itens.
 
 3. **Recursos**. Aqui, você pode optar por fazer backup de recursos como favoritos, informações de roteamento, avisos de voz e itens adicionais.
 
 Todos os [mapas](../start-with/download-maps.md) são armazenados no dispositivo em que foram baixados anteriormente. O OsmAnd Cloud armazena apenas informações sobre quais mapas você possui e a data da última modificação.
+
+Desativar o backup para um tipo específico de dados simplesmente para de sincronizá-lo com a Nuvem. Seus dados existentes permanecem armazenados e podem ser feitos backup novamente mais tarde, se necessário.
 
 
 ### Gerenciar Armazenamento {#manage-storage}
@@ -334,7 +336,9 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-A seção de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) exibe informações sobre quanto dos 3,15 gigabytes de memória em *Configurações*, *Meus Lugares* e *Recursos* estão sendo usados. Você pode excluir alterações em tipos de dados separados do OsmAnd Cloud, mas, neste caso, a ação não pode ser desfeita.
+A seção de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) exibe informações sobre quanto dos 3,15 gigabytes de memória em *Configurações*, *Meus Lugares* e *Recursos* estão sendo usados. Você pode visualizar o tamanho de armazenamento de cada tipo de dados e excluí-lo do OsmAnd Cloud, se necessário.
+
+Excluir dados da Nuvem não afeta seu status de backup ou cópias locais no seu dispositivo. Todos os itens removidos permanecem disponíveis na Lixeira por 30 dias e podem ser restaurados durante esse período.
 
 
 ### Conta {#account}

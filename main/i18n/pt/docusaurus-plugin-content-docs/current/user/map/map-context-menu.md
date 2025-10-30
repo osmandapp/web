@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -115,13 +115,13 @@ Para fechar o **menu de contexto**:
 
 <TabItem value="android" label="Android">  
 
-![Menu de contexto Android](@site/static/img/map/context_menu_android.png)
+![Menu de contexto Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu de contexto iOS](@site/static/img/map/context_menu_ios.png)
+![Menu de contexto iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Os detalhes disponíveis incluem:
 - [Nomes alternativos](#alternative-names)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
-- [POIs próximos / Wikipedia](#nearby-pois--wikipedia)
+- [POIs próximos](#nearby-pois)
+- [Lugares populares próximos](#nearby-popular-places)
 - [Rotas de Transporte Público para paradas](#public-transport-routes)
 - [Favoritos / Pontos de trilha do mesmo grupo](#favorites--track-points-from-the-group)
 - [Link do OpenStreetMap](#openstreetmap-link)
@@ -167,7 +168,7 @@ Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.open
 
 <TabItem value="ios" label="iOS">
 
-![Nomes alternativos Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Nomes alternativos Android](@site/static/img/map/alternative_names_2_ios.png)
+![Nomes alternativos iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nomes alternativos iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -198,7 +199,7 @@ Recursos de exibição de nomes alternativos:
 
 <TabItem value="ios" label="iOS">
 
-![Informações do polígono Android](@site/static/img/map/polygon_information_ios.png)
+![Informações do polígono iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -217,15 +218,56 @@ No menu de contexto, você pode encontrar [coordenadas geográficas](../search/s
 O link da Web do OsmAnd pode ser reconhecido automaticamente pelo OsmAnd (exemplo: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Tanto o OsmAnd quanto os [links do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) são abertos nos sites correspondentes com um marcador de pino para o local de interesse.  
 
 
-### POIs Próximos / Wikipedia {#nearby-pois--wikipedia}
+### POIs Próximos {#nearby-pois}
 
-![Artigos da Wikipedia próximos](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Artigos da Wikipedia próximos](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Essas seções exibem [artigos da Wikipedia](../plugins/wikipedia.md) ou [Pontos de Interesse](../map/point-layers-on-map.md#points-of-interest-pois) próximos com *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* para exibir e [pesquisar](../search/search-poi.md) todos os outros POIs e artigos da Wikipedia.
+<TabItem value="android" label="Android">  
 
-Tocar em *POIs próximos / artigos da Wikipedia* abre uma lista de pontos (POIs ou Wikipedia). Um toque em um desses pontos de uma lista de pontos move o mapa para este ponto (POIs ou Wikipedia) com a abertura do menu de contexto do mapa do ponto.
+![POI Próximo Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![POI Próximo iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Esta seção exibe [Pontos de Interesse próximos](../map/point-layers-on-map.md#points-of-interest-pois) com *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* para exibir e [pesquisar](../search/search-poi.md) todos os outros POIs na mesma categoria.
+
+Tocar em *POIs Próximos* abre uma lista de pontos. Um toque em um desses pontos de uma lista de pontos move o mapa para este ponto com a abertura do menu de contexto do mapa do ponto.
+
+
+### Lugares Populares Próximos {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Lugares Próximos Android](@site/static/img/map/nearby_places_android.png)
+
+Esta seção destaca lugares populares que ajudam você a descobrir destinos interessantes e marcos ao redor da sua localização atual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* para navegar e pesquisar todos os lugares populares. 
+
+Tocar em *[Lugares Populares Próximos](https://osmand.net/docs/user/map/popular_places)* abre uma lista de locais próximos. Selecionar qualquer item centraliza o mapa nesse lugar e abre seu menu de contexto, onde você pode ler uma descrição curta ou tocar em ***Ler artigo completo*** para visualizar o guia completo.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Lugares Próximos iOS](@site/static/img/map/nearby_places_ios.png)
+
+Esta seção destaca lugares populares que ajudam você a descobrir destinos interessantes e marcos ao redor da sua localização atual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* e *<Translate android="true" ids="search_more"/>* para navegar e pesquisar todos os lugares populares. 
+
+Tocar em *[Lugares Populares Próximos](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* abre uma lista de locais próximos. Selecionar qualquer item centraliza o mapa nesse lugar e abre seu menu de contexto, onde você pode ler uma descrição curta ou tocar em ***Ler artigo completo*** para visualizar o guia completo.
 
 > **NOTA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) aparecerá apenas se você tiver baixado anteriormente mapas especiais com [artigos da Wikipedia para esta área](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Rotas de Transporte Público {#public-transport-routes}
@@ -683,9 +725,7 @@ Para adicionar/editar pontos de trilha, ative o [**plugin de gravação de viage
 
 <TabItem value="android" label="Android">  
 
-![Ação Ponto de Referência Android](@site/static/img/map/action_waypoint_android.png)
-
-![Selecionar Trilha para adicionar Ponto de Referência Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Selecionar Trilha para adicionar Ponto de Referência Android](@site/static/img/map/tracks_tab_android.png) ![Adicionar Ponto de Referência da Trilha Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +743,7 @@ Você pode adicionar pontos de referência a uma trilha gravada ou à gravação
 
 - Selecione um local no mapa com um [toque longo](../map/map-context-menu.md#select-any-point-long-tap).
 - No *menu de contexto do mapa* que se abre, escolha *Ações → Adicionar ponto de referência da trilha*.
-- A lista exibe as [trilhas](../map/tracks/index.md#display-tracks-on-the-map) gravadas e mostradas no mapa, bem como a [gravação de trilha atual](../plugins/trip-recording.md), à qual você pode adicionar o ponto de referência selecionado.
+- A lista exibe as [trilhas](../map/tracks/index.md#display-tracks-on-the-map) gravadas e mostradas no mapa, bem como a [gravação de trilha atual](../plugins/trip-recording.md), à qual você pode adicionar o ponto de referência selecionado (no Android, a lista é agrupada em abas: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Você pode adicionar pontos de referência a uma trilha que ainda não está ativa para gravação, caso em que a trilha inativa muda do *estado Inicial* para o *estado Retomar*.
 - [Preencha](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) os dados necessários e salve o ponto de referência.
 - Você pode configurar as [Ações Rápidas](../widgets/quick-action.md) adicionando um ponto de referência ao *Adicionar ponto de referência da trilha*.

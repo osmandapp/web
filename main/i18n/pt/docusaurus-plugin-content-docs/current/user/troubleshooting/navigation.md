@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
-title: Navegação
+title: Navigation
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -20,6 +21,34 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - O *mecanismo baseado em Java* é usado no [Modo de Segurança](../plugins/development.md#overview), mas é aproximadamente 10 vezes mais lento que o mecanismo nativo. Ele também tem limitações de memória rigorosas, o que pode levar a erros como *Memória insuficiente para calcular*. Se você encontrar esse problema, navegue até *Plugins → Desenvolvimento do OsmAnd → Configurações →* [*Modo de Segurança*](../plugins/development.md#overview) e certifique-se de que esta opção esteja desativada.
 - O *mecanismo Nativo (C++)* oferece melhor desempenho, mas sua eficiência depende da memória e da capacidade do processador do seu dispositivo. Geralmente, o roteamento nativo funciona bem para rotas com menos de 300 km, com tempos de cálculo de rota variando de 15 segundos a 4 minutos. Se o processo demorar mais de 4 minutos, é aconselhável parar, pois o aplicativo pode travar.
+
+### Rotas incorretas ou quebradas {#incorrect-or-broken-routes}
+
+Às vezes, o OsmAnd pode exibir resultados de navegação inesperados. Em vez de seguir a rede de estradas, a rota pode aparecer como uma linha pontilhada reta para um ponto não relacionado, ou a navegação pode falhar completamente. Isso geralmente indica que o roteamento para o local selecionado não é possível com a configuração atual. Problemas semelhantes foram relatados por usuários no [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) e [mais](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Causas:**
+
+- Mapas desatualizados ou duplicados. Mapas com datas de atualização diferentes ou duplicatas podem quebrar a conectividade (especialmente entre regiões/fronteiras).
+- Configurações de perfil danificadas. Perfis personalizados/modificados (por exemplo, Bicicleta) podem causar comportamento inconsistente.
+- Incompatibilidade de mecanismo de roteamento: Diferentes mecanismos (HH × Java vs HH × C++) podem lidar com os mesmos mapas de forma diferente.
+
+**Soluções:**
+
+1. Redefina seu perfil.
+- Abra *Menu* → *Configurações* → *Perfil do aplicativo (Perfil de Navegação)*.
+- Selecione *Redefinir para o padrão*.
+
+2. Remova e reinstale os mapas.
+- Abra *Menu* → *Mapas & Recursos* → *Local* e exclua todos os mapas para a(s) região(ões) afetada(s).
+- Em seguida, vá para *Menu* → *Mapas & Recursos* → *Downloads* e baixe os mapas novamente.
+- Opcionalmente, verifique *Menu* → *Mapas & Recursos* → *Atualizações* para garantir que todas as regiões compartilhem a mesma data de atualização.
+
+3. Altere o mecanismo de roteamento.
+- Ative o plugin: *Menu* → *Plugins* → *Desenvolvimento do OsmAnd*.
+- Em seguida, abra *Menu* → *Configurações* → *Perfil do aplicativo* → *Configurações de navegação* → *Parâmetros de rota* → *Desenvolvimento* → *Tipo de roteamento* e alterne *HH × C++* ↔ *HH × Java* (você também pode tentar A* clássico ou A* em duas fases).
+
+4. Como último recurso.
+- Reinstale o aplicativo e baixe os mapas novamente (ajuda quando conflitos ocultos persistem).
 
 ### Como calcular rotas com mais de 250 km? {#how-to-calculate-routes-longer-than-250km}
 
@@ -76,11 +105,11 @@ As vozes **Text-to-Speech (TTS)** geram avisos falados dinamicamente, permitindo
 
 Para usar o TTS no OsmAnd, seu dispositivo deve ter um **mecanismo TTS** instalado. Muitos dispositivos vêm com um mecanismo TTS pré-instalado, mas outros podem ser instalados manualmente, se necessário. [Lista de mecanismos e idiomas TTS suportados para Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-Para instruções detalhadas sobre como configurar e ajustar os avisos de voz, consulte: [Guia de configuração de navegação por voz](../navigation/guidance/voice-navigation.md).
+Para instruções detalhadas sobre como configurar e ajustar os Avisos de Voz, consulte: [Guia de configuração de navegação por voz](../navigation/guidance/voice-navigation.md).
 
 ### O TTS não funciona corretamente? Siga estas etapas para corrigi-lo {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-Problemas com **Text-to-Speech (TTS)** geralmente estão relacionados às **configurações do sistema Android**, e não ao próprio aplicativo OsmAnd.
+Problemas com **Text-to-Speech (TTS)** geralmente estão relacionados às **configurações do sistema Android**, e não ao próprio aplicativo OsmAnd.  
 
 1. Certifique-se de que um mecanismo TTS esteja instalado.
 
@@ -103,17 +132,18 @@ Problemas com **Text-to-Speech (TTS)** geralmente estão relacionados às **conf
 
 #### Etapas adicionais {#additional-steps}
 
-- *Atualizar Google TTS*. Abra a Google Play Store, procure por **Google Text-to-Speech** e atualize-o.
-- *Simular Navegação*. Toque no *botão Navegação → Configurações → Simular Navegação* para verificar se a orientação por voz é reproduzida.
-- *Reinstalar OsmAnd*:
-   - **Fazer backup das configurações:** *Menu → Configurações → Exportar para arquivo*.
-   - Desinstale o OsmAnd e reinstale-o da loja de aplicativos.
+- *Atualizar Google TTS*. Abra a Google Play Store, procure por **Google Text-to-Speech** e atualize-o.  
+- *Simular Navegação*. Toque no *botão Navegação → Configurações → Simular Navegação* para verificar se a orientação por voz é reproduzida.  
+- *Reinstalar OsmAnd*:  
+   - **Fazer backup das configurações:** *Menu → Configurações → Exportar para arquivo*.  
+   - Desinstale o OsmAnd e reinstale-o da loja de aplicativos.  
    - Restaurar configurações: *Menu → Configurações → Importar arquivo*.
 
 Para solução de problemas adicionais, visite:
 
-- [Guia de navegação por voz](../navigation/guidance/voice-navigation.md)
-- [Importar/Exportar configurações](../personal/import-export.md)
+- [Guia de navegação por voz](../navigation/guidance/voice-navigation.md)  
+- [Importar/Exportar configurações](../personal/import-export.md)  
+
 
 ## Outros {#other}
 

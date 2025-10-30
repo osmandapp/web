@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title: Métricas do Veículo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,16 +16,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão Geral {#overview}
 
 :::info Recurso pago
 O plugin Métricas do Veículo é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd. As informações de velocidade do veículo e rotações do motor estão disponíveis gratuitamente no OsmAnd.
 :::
 
-O **plugin Métricas do Veículo** permite o monitoramento de dados do veículo em tempo real via [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Os usuários podem rastrear métricas essenciais, como desempenho do motor, eficiência de combustível e velocidade, permitindo a manutenção proativa do veículo e a solução de problemas.
+O **plugin Métricas do Veículo** permite o monitoramento de dados do veículo em tempo real via [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Os usuários podem rastrear métricas essenciais, como desempenho do motor, eficiência de combustível e velocidade, permitindo a manutenção proativa do veículo e a solução de problemas.  
 
-Os [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante do diagnóstico automotivo moderno. Com a transmissão de dados em tempo real, os usuários obtêm informações instantâneas sobre os sistemas do veículo, facilitando a manutenção preventiva e reduzindo os custos de reparo. Essas ferramentas são vitais tanto para uso pessoal quanto para serviços automotivos profissionais.
+[Scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante do diagnóstico automotivo moderno. Com a transmissão de dados em tempo real, os usuários obtêm informações instantâneas sobre os sistemas do veículo, facilitando a manutenção preventiva e reduzindo os custos de reparo. Essas ferramentas são vitais tanto para uso pessoal quanto para serviços automotivos profissionais.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -47,12 +47,12 @@ Os [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) são parte integrante
 
 Para usar dados de um scanner OBD-II:
 
-1. [Adquira](../purchases/) uma **assinatura OsmAnd Pro**. (*Velocidade do veículo* e *Rotações do motor* são gratuitos.)
+1. [Adquira](../purchases/) uma **assinatura OsmAnd Pro**. (*Velocidade do veículo* e *Rotações do motor* são gratuitos.)  
 2. [Ative](../plugins/index.md#enable--disable) o plugin Métricas do Veículo na seção Plugins do *Menu Principal*.
 3. **Ligue** o Bluetooth no seu dispositivo.
 4. [Conecte](#pair-odb-ii-scanner) o scanner OBD-II à porta do seu veículo.
 5. [Configure](#scanner-settings) as **configurações do scanner**.
-6. [Adicione](#widgets) **widgets de Métricas do Veículo** para dados na tela (opcional).
+6. [Adicione](#widgets) **widgets de Métricas do Veículo** para exibir dados na tela (opcional).
 7. [Use](#trip-recording) o **plugin Gravação de Viagem** para registrar dados do veículo.
 
 
@@ -63,7 +63,7 @@ Para usar dados de um scanner OBD-II:
 
 <TabItem value="android" label="Android">
 
-| | |
+|  |  |
 |--|--|
 |![Conexão OBD](@site/static/img/plugins/obd/obd_connect.png)|![Conexão OBD](@site/static/img/plugins/obd/obd_connect_2.png)|
 
@@ -71,7 +71,7 @@ Para usar dados de um scanner OBD-II:
 
 <TabItem value="ios" label="iOS">
 
-| | |
+|  |  |
 |--|--|
 |![Conexão OBD](@site/static/img/plugins/obd/obd_connect_ios.png)|![Conexão OBD](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
@@ -82,7 +82,7 @@ Para usar dados de um scanner OBD-II:
 Conecte o scanner à porta do seu veículo e emparelhe-o através do aplicativo:
 
 - Navegue até *Menu → Plugins → Métricas do Veículo → Configurações → Conectar* ou **+**.
-- Se Métricas do Veículo estiver no *Menu Principal*: *Menu → Métricas do Veículo → Configurações → Conectar* ou **+**.
+- Se Métricas do Veículo estiver no *Menu Principal*:  *Menu → Métricas do Veículo → Configurações → Conectar* ou **+**.
 
 Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 
@@ -95,7 +95,7 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 
 **Android.** Vá para: *Menu → Plugins → Métricas do Veículo → OBD → menu de três pontos*
 
-| | |
+|  |  |
 |--|--|
 |![Configurações OBD](@site/static/img/plugins/obd/obd_settings.png)|![Configurações OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
 
@@ -106,7 +106,7 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 
 **iOS.** Vá para: *Menu → Plugins → Métricas do Veículo → OBD → menu de três pontos*
 
-| | |
+|  |  |
 |--|--|
 |![Configurações OBD](@site/static/img/plugins/obd/obd_settings_ios.png)|![Configurações OBD](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
@@ -146,9 +146,10 @@ As métricas são categorizadas para maior clareza. Ferramentas de diagnóstico 
 *Outros:*
 
 - **Nível da Bateria**. Indica o nível de voltagem da bateria do veículo.
+- **Voltagem do Adaptador**. Exibe a voltagem fornecida ao adaptador OBD-II (comando AT RV).
 - **Velocidade do Veículo**. Exibe dados do Sensor de Velocidade do Veículo (VSS).
-- **Posição do Acelerador**. Determina a entrada de ar do motor através do ângulo da borboleta.
-- **VIN**. Exibe o número de identificação de 17 caracteres do veículo.
+- **Posição do Acelerador**. Determina a entrada de ar do motor através do ângulo da borboleta.  
+  **VIN**. Exibe o número de identificação de 17 caracteres do veículo.
 
 
 ## Gravação de Viagem {#trip-recording}

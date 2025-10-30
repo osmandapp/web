@@ -1,8 +1,9 @@
 ---
-source-hash: c674aa26de62610f1442ef441eaa008b20c3b4a69dd7617b13ccd27ccf7f2234
+source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
 sidebar_position: 7
 title: Favoritos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão Geral {#overview}
 
-O recurso **Favoritos** do OsmAnd permite criar marcadores (notas) no mapa. Esses pontos favoritos são exibidos como estrelas amarelas por padrão, mas você pode personalizá-los totalmente com diferentes cores, formas e ícones. Os favoritos são agrupados em uma camada de mapa dedicada, que se torna visível a partir do *6º nível de zoom*.
+O recurso **Favoritos** do OsmAnd permite criar marcadores (notas) no mapa. Esses pontos favoritos são exibidos como estrelas amarelas por padrão, mas você pode personalizá-los totalmente com diferentes cores, formas e ícones. Os favoritos são agrupados em uma camada de mapa dedicada, que se torna visível a partir do *6º nível de zoom*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -64,13 +64,13 @@ Os favoritos fazem parte de uma camada de mapa especial, e você pode [mostrar o
 
 <TabItem value="android" label="Android">
 
-![Descrição de adição de favorito Android](@site/static/img/personal/favorite_add_descr_android.png) ![Grupo de favoritos Android](@site/static/img/personal/favorite_group_android.png)
+![Descrição de adição de favorito Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Grupo de favoritos Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Descrição de adição de favorito iOS](@site/static/img/personal/favorite_add_descr_ios.png) ![Grupo de favoritos iOS](@site/static/img/personal/favorite_group_ios.png)
+![Descrição de adição de favorito iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Grupo de favoritos iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Os favoritos fazem parte de uma camada de mapa especial, e você pode [mostrar o
 
 Para adicionar um ponto favorito:
 
-1. Selecione um [POI](../map/point-layers-on-map.md#points-of-interest-pois) ou uma estrutura no mapa.
+1. Selecione um [POI](../map/point-layers-on-map.md#points-of-interest-pois) ou uma estrutura no mapa.  
     Toque curto para um POI ou toque longo para um ponto geral do mapa.
 2. Selecione [Adicionar (☆)](../map/map-context-menu.md#add--edit-favorite) no menu de contexto do mapa.
 
@@ -130,7 +130,7 @@ Para modificar um ponto favorito:
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Ícone de favorito Android](@site/static/img/personal/favorite_icon_andr.png)
+![Meus lugares favoritos Android](@site/static/img/personal/favorite_icon_andr.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ Uma ampla gama de ícones para POIs e waypoints está disponível no OsmAnd. Voc
 
 ### Favoritos Especiais (Pessoais) {#special-favorites-personal}
 
-A *pasta Pessoal* contém pontos especiais como **<Translate android="true" ids="favorite_home_category"/>** e **<Translate android="true" ids="work_button"/>**, frequentemente usados na [navegação](../navigation/setup/route-navigation.md#select-starting-point). Esta pasta não possui um *menu de três pontos*, e seus parâmetros não podem ser alterados.
+A *pasta Pessoal* contém pontos especiais como **<Translate android="true" ids="favorite_home_category"/>** e **<Translate android="true" ids="work_button"/>**, frequentemente usados na [navegação](../navigation/setup/route-navigation.md#select-start-point). Esta pasta não possui um *menu de três pontos*, e seus parâmetros não podem ser alterados.
 
 
 ## Gerenciar Favoritos {#manage-favorites}
@@ -209,7 +209,7 @@ A seção **Meus Favoritos** permite:
 
 <TabItem value="android" label="Android">
 
-![Ações de favoritos Android](@site/static/img/personal/favorites_actions_android.png) ![Excluir ação de favoritos Android](@site/static/img/personal/favorites_delete_android.png)
+![Ações de favoritos Android](@site/static/img/personal/favorites_actions_android.png) ![Ação de exclusão de favoritos Android](@site/static/img/personal/favorites_delete_android.png)
 
 </TabItem>
 
@@ -267,7 +267,7 @@ Use o ***Menu de três pontos*** (*Android*) ao lado de cada pasta e ***toque lo
 
 - **<Translate android="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
 
-- **<Translate android="true" ids="change_default_appearance"/>** — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** ou **Ocultar no mapa** — Alterne esta opção para exibir ou ocultar os pontos favoritos da pasta no mapa.
 
@@ -276,8 +276,6 @@ Use o ***Menu de três pontos*** (*Android*) ao lado de cada pasta e ***toque lo
 - **<Translate android="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
 
 - **<Translate android="true" ids="shared_string_delete"/>** — Exclua permanentemente a pasta de favoritos selecionada e todos os pontos dentro dela.
-
-Mais detalhes no artigo [Meus Lugares](../personal/myplaces.md#favorites).
 
 
 
@@ -299,11 +297,19 @@ Mais detalhes no artigo [Meus Lugares](../personal/myplaces.md#favorites).
 
 </Tabs>
 
-Configurações de *Alterar Aparência do Grupo*:
+A opção **Alterar Aparência do Grupo** permite definir um estilo padrão para todos os favoritos em uma pasta. Você pode ajustar os seguintes parâmetros:
 
-- **Ícone, cor, forma** — Defina um estilo padrão para todos os favoritos em um grupo.
-- **Consistência** — Novos favoritos adicionados ao grupo herdam a aparência padrão automaticamente.
-- **Personalização** — Substitua as configurações padrão para pontos existentes na pasta, apenas novos favoritos ou aplique a todos.
+- **Ícone** — Escolha um ícone das categorias disponíveis.
+- **Cor** — Selecione uma cor sólida para destacar os favoritos.
+- **Forma** — Escolha uma forma de marcador (círculo, quadrado, octógono).
+
+Se os favoritos em uma pasta já tiverem ícones, cores ou formas diferentes, o estado *Original* é exibido. Isso significa que cada favorito mantém seu estilo atual, a menos que você selecione um novo. Ao salvar, você também será solicitado a escolher como as alterações devem ser aplicadas:
+
+- **Aplicar apenas a novos pontos** — Os favoritos existentes permanecem inalterados; os novos favoritos herdarão a aparência padrão.
+- **Aplicar a pontos existentes** — Atualize apenas os favoritos já na pasta.
+- **Aplicar a todos os pontos** — Aplique o novo estilo tanto a favoritos existentes quanto futuros.
+
+Essa flexibilidade permite padronizar a aparência de uma pasta ou manter personalizações únicas enquanto ainda define padrões para novos pontos.
 
 
 ## Exportar / Importar {#export--import}
@@ -337,13 +343,13 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 </Tabs>
 
-O [Backup Gratuito de Favoritos](../personal/osmand-cloud.md#osmand-start) é um plano de compra especial que permite fazer backup de seus pontos favoritos (locais) para as versões **Android, iOS** ou **Web** no aplicativo OsmAnd e restaurá-los do OsmAnd Cloud. Este plano está disponível para usuários do [OsmAnd Gratuito ou Maps+](../purchases/index.md).
+O [Backup Gratuito de Favoritos](../personal/osmand-cloud.md#osmand-start) é um plano de compra especial que permite fazer backup de seus pontos favoritos (locais) para as versões **Android, iOS** ou **Web** no aplicativo OsmAnd e restaurá-los do OsmAnd Cloud. Este plano está disponível para usuários do [OsmAnd Gratuito ou Maps+](../purchases/index.md).  
 
-O *Backup Gratuito de Favoritos* oferece estes benefícios:
+*Backup Gratuito de Favoritos* oferece estes benefícios:
 
 - **Nenhum pagamento é necessário**. Use o recurso de backup sem adquirir assinaturas pagas.
 - **Salvar pontos favoritos**. Salve regularmente seus pontos favoritos no OsmAnd para evitar perdê-los se seu dispositivo travar ou o aplicativo for excluído.
-- **Transferir pontos favoritos**. Importe seus pontos favoritos para um novo dispositivo com o recurso *Backup Gratuito de Favoritos* se você usar o OsmAnd em vários dispositivos.
+- **Transferir pontos favoritos**. Importe seus pontos favoritos para um novo dispositivo com o recurso *Backup Gratuito de Favoritos* se você usar o OsmAnd em vários dispositivos.  
 
 
 ### Como Criar um Backup {#how-to-create-a-backup}
@@ -368,7 +374,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 </Tabs>
 
-Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Configurações*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud*, você não verá o banner de promoção.
+Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Configurações*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud acount*, você não verá o banner de promoção.  
 
 - *Banner de Backup Gratuito de Favoritos*. Toque neste banner para iniciar o processo de backup.
 - *Conclua a etapa de registro* se você não tiver uma conta OsmAnd Cloud, seguindo as instruções no [guia de registro](../personal/osmand-cloud.md#login).
@@ -389,7 +395,7 @@ Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de 
 
 <TabItem value="ios" label="iOS">
 
-![Exportar importar favoritos iOS](@site/static/img/personal/favorites_export_import_3_ios.png)
+![Exportar importar favoritos iOS](@site/static/img/personal/favorites_export_import_3_ios.png)  
 
 </TabItem>
 
@@ -413,14 +419,14 @@ Você pode exportar e importar seus favoritos usando os botões especiais na par
 
 <TabItem value="ios" label="iOS">
 
-![Ações de favoritos iOS](@site/static/img/personal/favorites_actions_1_ios.png) ![Ações de favoritos iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+![Ações de favoritos iOS](@site/static/img/personal/favorites_actions_1_ios.png)   ![Ações de favoritos iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 - Toque no **Menu de três pontos** (*Android*) ou no botão **Editar** (*ícone de lápis no iOS*) ou **toque longo** na pasta (*iOS*) da pasta de favoritos selecionada.
-- Escolha o botão **Compartilhar** para enviar o arquivo *Favorites.gpx* para a memória do seu dispositivo ou compartilhá-lo via aplicativos de mensagens.
+- Escolha o botão **Compartilhar** para enviar o arquivo *Favorites.gpx* para a memória do seu dispositivo ou compartilhá-lo via aplicativos de mensagens.  
 
 
 ### Backup Automático de Favoritos {#automatic-favorites-backup}
@@ -431,7 +437,7 @@ Você pode exportar e importar seus favoritos usando os botões especiais na par
 
 Vá para: *Android → data → net.osmand → files → backup*
 
-![Exportar backup de favoritos Android](@site/static/img/personal/favorites_backup_export_andr.png) ![Backup automático de favoritos Android](@site/static/img/personal/favorites_autobackup_andr.png)
+![Exportar backup de favoritos Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Backup automático de favoritos Android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 </TabItem>
 
@@ -439,7 +445,7 @@ Vá para: *Android → data → net.osmand → files → backup*
 
 Vá para: *Arquivos → No meu iPhone → OsmAnd Maps → favourites_backup*
 
-![Backup automático de favoritos iOS](@site/static/img/personal/favorites_autobackup.png)
+![Backup automático de favoritos iOS](@site/static/img/personal/favorites_autobackup.png)  
 
 </TabItem>
 
@@ -451,19 +457,19 @@ O OsmAnd cria um **arquivo de backup** cada vez que os favoritos são editados.
 
 - **iOS**: Os arquivos estão localizados em *Arquivos → No meu iPhone → OsmAnd Maps → favourites_backup*.
 
-**Exportação manual de backup**
+**Exportação manual de backup**  
 
 - Vá para *<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*.
 - Exporte o arquivo `.osf` para armazenamento local, serviços em nuvem ou compartilhe-o diretamente.
 
 :::caution
-Nas últimas versões do ***Android***, o acesso a diretórios do sistema é limitado. No entanto, após extrair o arquivo de favoritos do arquivo, ainda é possível encaminhá-lo para mensageiros ou serviços em nuvem, etc.
+Nas últimas versões do ***Android***, o acesso a diretórios do sistema é limitado. No entanto, após extrair o arquivo de favoritos do arquivo, ainda é possível encaminhá-lo para mensageiros ou serviços em nuvem, etc.  
 :::
 
 
 ### Favoritos em Arquivo GPX {#favorites-in-gpx-file}
 
-Todas as informações sobre um Favorito são armazenadas e descritas usando tags. Ao criar um ponto Favorito, você pode escrever sua própria [descrição](#favorite-point) ou usar informações dos dados de [ponto de interesse (POI)](../map/point-layers-on-map.md#points-of-interest-pois) do OSM a partir dos quais seu ponto foi criado. Pontos favoritos, POIs e Waypoints usam as mesmas **tags** para armazenar informações e são salvos no **formato de arquivo GPX**.
+Todas as informações sobre um Favorito são armazenadas e descritas usando tags. Ao criar um ponto Favorito, você pode escrever sua própria [descrição](#favorite-point) ou usar informações dos dados de [ponto de interesse (POI)](../map/point-layers-on-map.md#points-of-interest-pois) do OSM a partir dos quais seu ponto foi criado. Pontos favoritos, POIs e Waypoints usam as mesmas **tags** para armazenar informações e são salvos no **formato de arquivo GPX**.  
 
 
 ```xml
@@ -485,7 +491,7 @@ Todas as informações sobre um Favorito são armazenadas e descritas usando tag
         </extensions>
     </wpt>
 </gpx>
-```
+```  
 
 
 ## Artigos Relacionados {#related-articles}

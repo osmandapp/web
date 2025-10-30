@@ -1,8 +1,9 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title: Botões do Mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão geral {#overview}
@@ -186,7 +186,7 @@ As configurações para a aparência do botão do mapa estão disponíveis atrav
 - *Menu → Configurar tela → Botões → Botões padrão*
 - *Menu → Configurar tela → Botões personalizados → Ação rápida → menu de três pontos → Aparência*
 
-A personalização da aparência dos botões permite ajustar o tamanho, a forma, o ícone e a opacidade do plano de fundo para [Ação Rápida (Botões personalizados)](../widgets/quick-action.md#quick-action-button-appearance) e [Botões padrão](../widgets/configure-screen.md#button-appearance). Essa flexibilidade permite personalizar a interface para atender às suas preferências e melhorar a usabilidade.
+A personalização da aparência dos botões permite ajustar o tamanho, a forma, o ícone e a opacidade do plano de fundo para [Ação Rápida (Botões personalizados)](../widgets/quick-action.md#button-appearance) e [Botões padrão](../widgets/configure-screen.md#button-appearance). Essa flexibilidade permite personalizar a interface para atender às suas preferências e melhorar a usabilidade.
 
 
 ## Artigos Relacionados {#related-articles}
