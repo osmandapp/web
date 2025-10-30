@@ -436,6 +436,18 @@ export const downloadTravelGpx = async (track) => {
     }
 };
 
+export const downloadCurrentGpx = async (selectedGpxFile, routeTypes, isLocal) => {
+    const gpx = await getGpxFileFromTrackData(selectedGpxFile, routeTypes);
+    if (gpx) {
+        const data = gpx.data;
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        const name = TracksManager.prepareName(selectedGpxFile.name, isLocal);
+        url.download = `${name}.gpx`;
+        url.click();
+    }
+};
+
 export function updateMetadata({ file, name = null }) {
     if (!file.metaData) {
         file.metaData = {};

@@ -8,28 +8,11 @@ import AppContext, {
 } from '../../../context/AppContext';
 import { Download } from '@mui/icons-material';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
+import DownloadTrackDialog from '../../../dialogs/tracks/DownloadTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
-import TracksManager, {
-    downloadGpx,
-    downloadTravelGpx,
-    getGpxFileFromTrackData,
-    hasSegments,
-    isEmptyTrack,
-} from '../../../manager/track/TracksManager';
+import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 import { useTranslation } from 'react-i18next';
-
-export const downloadCurrentGpx = async (ctx) => {
-    const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile, ctx.selectedGpxFile.routeTypes);
-    if (gpx) {
-        const data = gpx.data;
-        const url = document.createElement('a');
-        url.href = URL.createObjectURL(new Blob([data]));
-        const name = TracksManager.prepareName(ctx.selectedGpxFile.name, isLocalTrack(ctx));
-        url.download = `${name}.gpx`;
-        url.click();
-    }
-};
 
 export default function GeneralInfoTab({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -37,6 +20,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
     const { t } = useTranslation();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
 
     return (
         <>
@@ -97,15 +81,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                                 minWidth: '20px !important',
                                 padding: '3px 5px !important',
                             }}
-                            onClick={() => {
-                                if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
-                                    downloadCurrentGpx(ctx);
-                                } else if (isTravelTrack(ctx)) {
-                                    downloadTravelGpx(ctx.selectedGpxFile);
-                                } else {
-                                    downloadGpx(ctx.selectedGpxFile);
-                                }
-                            }}
+                            onClick={() => setOpenDownloadDialog(true)}
                         >
                             <Download fontSize="small" sx={{ mr: '3px' }} />
                             {t('shared_string_download')}
@@ -156,6 +132,9 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     setDialogOpen={setOpenDeleteDialog}
                     setShowInfoBlock={setShowInfoBlock}
                 />
+            )}
+            {openDownloadDialog && (
+                <DownloadTrackDialog dialogOpen={openDownloadDialog} setDialogOpen={setOpenDownloadDialog} />
             )}
         </>
     );

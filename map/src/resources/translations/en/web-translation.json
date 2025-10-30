@@ -198,5 +198,9 @@
   "dev_issues" : "Issues",
   "plan_route" : "Plan route",
   "create_track" : "Create track",
-  "import_track" : "Import track"
+  "import_track" : "Import track",
+  "download_track" : "Download track",
+  "download_track_desc" : "You can download track with full data, including navigation instructions or Simplified version suitable for using with other apps.",
+  "download_track_full" : "Full track data",
+  "download_track_simplified" : "Simplified track"
 }
