@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title: Régua de Raio e Régua
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,14 +69,14 @@ Esta ferramenta é útil quando você precisa de uma compreensão rápida dos ta
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Posição de exibição Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Posição de exibição Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Posição de exibição Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Posição de exibição iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ O [Widget da Régua de Raio](../widgets/info-widgets.md#radius-ruler) mostra a d
 - Exibe círculos concêntricos centrados no ponto selecionado.
 - O primeiro círculo reflete a [escala atual do mapa](#ruler) para referência visual rápida.
 - Ajusta-se automaticamente ao fazer zoom para manter valores de raio precisos.
+- Toque no widget para alternar entre três modos de exibição: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, e <Translate android="true" ids="dark_theme"/>.
+- Toque longo abre o menu de contexto do widget com opções adicionais.
+- As configurações do widget incluem dois parâmetros ajustáveis: *<Translate android="true" ids="shared_string_height"/>* — controla a altura visual do widget na tela; *<Translate android="true" ids="shared_string_show_icon"/>* — alterna a visibilidade do ícone do widget.
 
 Use este widget para estimar a proximidade de pontos de interesse ou planejar em torno de uma área definida.
 
@@ -139,13 +142,13 @@ Quando a **Régua de Raio** está ativa, o mapa exibe uma sobreposição de bús
 - Segurar o dispositivo horizontalmente melhora a precisão e a visualização.
 - Se o **triângulo azul** e a **seta vermelha** (Norte) apontarem para cima, o dispositivo está alinhado com o Norte verdadeiro.
 
-Esta sobreposição é útil para navegação ao ar livre, permitindo que você combine a [orientação do mapa](../map/interact-with-map.md#map-orientation-modes) com o ambiente real.
+Esta sobreposição é útil para navegação ao ar livre, permitindo que você combine a [orientação do mapa](../map/interact-with-map.md#map-orientation-modes) com o ambiente real.  
 
 | | |
 |------------|------------|
 | Habilitar | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
-| | **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
-| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+|   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
+| Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Posição Central / Inferior {#center--bottom-position}
@@ -164,13 +167,13 @@ Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearanc
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Outros → Posição do local na tela*
 
-![Posição de exibição Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Régua de raio para baixo](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Posição de exibição iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Régua de raio para baixo](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Para aumentar o raio visível ao redor de sua localização, você pode alterar a posição da Régua de Raio selecionando a opção *Centro* ou *Inferior*.
+Para aumentar o raio visível ao redor de sua localização, você pode alterar a posição da Régua de Raio selecionando a opção *Centro* ou *Inferior*.  
 
 Para mais informações sobre *a posição na tela*, consulte o artigo [Configurar Tela](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,23 +206,39 @@ Os círculos de raio aparecerão com profundidade, o que é particularmente úti
 
 ## Distância por Toque {#distance-by-tap}
 
-![Distância entre dois pontos aleatórios no mapa](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distância por Toque Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distância por Toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 A ferramenta **Distância por Toque** permite que você meça distâncias entre pontos no mapa sem usar a Régua de Raio ou criar uma rota.
 
 Existem dois casos de uso:
 
-- **Distância da sua localização a um ponto**
+- **Distância da sua localização a um ponto**  
   Toque em qualquer lugar do mapa e uma linha reta aparecerá da sua localização atual até o ponto tocado, juntamente com um rótulo de distância. A linha permanece na tela mesmo se você tocar em outro lugar.
 
-- **Distância entre quaisquer dois pontos**
+- **Distância entre quaisquer dois pontos**  
   Toque em dois pontos no mapa simultaneamente (multi-toque). Uma linha conecta os dois pontos, e a distância medida é exibida.
+
+Você também pode ajustar o tamanho do texto do rótulo de distância. Escolha entre *<Translate android="true" ids="shared_string_normal"/>* (padrão) e *<Translate android="true" ids="shared_string_large"/>* (1,5× maior). Quando a opção Grande é selecionada, espaçamento extra é adicionado automaticamente entre a linha e o rótulo para melhor legibilidade. As alterações são aplicadas instantaneamente sem reiniciar o aplicativo.
 
 | | |
 |------------|------------|
-| Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Tamanho do texto (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Habilitar |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+|   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
+| Tamanho do texto | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Formato das unidades | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

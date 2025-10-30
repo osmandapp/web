@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title: Primeiros Passos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -42,15 +42,15 @@ Explore como baixar mapas, como configurar o aplicativo, como usar o mapa e cons
 
 OsmAnd é um aplicativo móvel para Mapas e Navegação disponível para **Android** e **iOS**. Você pode baixá-lo nos mercados mais populares.
 
-**Mercados Android**: [Google Play Store](https://play.google.com/store/apps/details?id=net.osmand) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 
-**iOS**: [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+**iOS**: [App store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 <AppleStore/>
 
-[Leia mais](../purchases/index.md) sobre as versões e compras do OsmAnd.
+[Leia mais](../purchases/index.md) about OsmAnd versions and Purchases.  
 
 
 ## Bem-vindo ao OsmAnd {#welcome-to-osmand}
@@ -88,7 +88,7 @@ Nosso objetivo é criar um aplicativo totalmente funcional e orientado a mapas q
 
 </Tabs>
 
-Recomendamos que você conceda ao OsmAnd permissão para receber informações sobre a localização precisa do seu dispositivo. Não coletamos, usamos ou compartilhamos suas informações privadas, portanto, o acesso à geolocalização precisa é necessário para o correto funcionamento offline da pesquisa, navegação e outras funções do OsmAnd.
+Recomendamos que você conceda ao OsmAnd permissão para receber informações sobre a localização precisa do seu dispositivo. Não coletamos, usamos ou compartilhamos suas informações privadas, portanto, o acesso à geolocalização precisa é necessário para o correto funcionamento offline da pesquisa, navegação e outras funções do OsmAnd.  
 
 
 ### Como baixar mapas {#how-to-download-maps}
@@ -109,11 +109,11 @@ Recomendamos que você conceda ao OsmAnd permissão para receber informações s
 
 </Tabs>
 
-O aplicativo OsmAnd funciona com diferentes tipos de mapas, mas só pode funcionar totalmente com mapas offline baixados, então, após a tela *<Translate android="true" ids="get_started"/>*, você é solicitado a [*baixar o mapa*](../start-with/download-maps.md#initial-setup-screen) da sua região. Você pode escolher uma região diferente, restaurar do [OsmAnd Cloud](../personal/osmand-cloud.md) ou pular esta etapa e baixar mapas mais tarde.
+O aplicativo OsmAnd funciona com diferentes tipos de mapas, mas só pode funcionar totalmente com mapas offline baixados, então, após a tela *<Translate android="true" ids="get_started"/>*, você é solicitado a [*baixar o mapa*](../start-with/download-maps.md#initial-setup-screen) da sua região. Você pode escolher uma região diferente, restaurar do [OsmAnd Cloud](../personal/osmand-cloud.md) ou pular esta etapa e baixar mapas mais tarde.  
 Para outras opções de download de mapas disponíveis, consulte o [artigo Baixar mapas](../start-with/download-maps.md).
 
 :::note Comece a trabalhar com mapas offline
-O OsmAnd não pode funcionar corretamente sem mapas offline baixados. Embora o aplicativo suporte mapas [Vetoriais](../map/vector-maps.md) e [Raster](../map/raster-maps.md), é fortemente recomendado começar a trabalhar com mapas vetoriais offline para que todas as funções, como [Pesquisa](../search/index.md), [Navegação](../navigation/index.md) e [Menu de Contexto](../map/map-context-menu.md), funcionem corretamente.
+O OsmAnd não pode funcionar corretamente sem mapas offline baixados. Embora o aplicativo suporte [Vetoriais](../map/vector-maps.md) e [Raster](../map/raster-maps.md) mapas, é fortemente recomendado começar a trabalhar com mapas vetoriais offline para que todas as funções, como [Pesquisa](../search/index.md), [Navegação](../navigation/index.md) e [Menu de Contexto](../map/map-context-menu.md), funcionem corretamente.
 :::
 
 
@@ -130,7 +130,7 @@ Embora o OsmAnd permita baixar mapas para todas as regiões disponíveis, não h
 
 ### Como mudar o idioma do aplicativo {#how-to-change-app-language}
 
-A opção *Idioma de exibição* é usada para alterar o idioma de todo o aplicativo, incluindo avisos pop-up, texto interno, mensagens e muito mais. Até o Android 12, o OsmAnd permite personalizar o idioma de exibição de acordo com suas preferências diretamente no aplicativo. A partir do Android 13 e em dispositivos iOS, o idioma de exibição só pode ser alterado nas configurações do sistema (veja como alterar as preferências de idioma por aplicativo no [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
+A opção *Idioma de exibição* é usada para alterar o idioma de todo o aplicativo, incluindo avisos pop-up, texto interno, mensagens e muito mais. Até o Android 12, o OsmAnd permite personalizar o idioma de exibição de acordo com suas preferências diretamente no aplicativo. A partir do Android 13 e em dispositivos iOS, o idioma de exibição só pode ser alterado nas configurações do sistema (veja como alterar as preferências de idioma por aplicativo no [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -138,7 +138,7 @@ A opção *Idioma de exibição* é usada para alterar o idioma de todo o aplica
 
 Vá para: *Configurações → Aplicativos → OsmAnd → Idioma*
 
-![Idioma das Configurações Gerais Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
+![Idioma das Configurações Gerais Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
 </TabItem>
 
@@ -177,15 +177,15 @@ Você pode gerenciar as configurações do aplicativo como [Configurações Glob
 
 </Tabs>
 
-[Leia mais](../personal/global-settings.md) sobre as Configurações Globais.
-[Leia mais](../personal/profiles.md) sobre as Configurações de Perfil.
+[Leia mais](../personal/global-settings.md) about Global settings.
+[Leia mais](../personal/profiles.md) about Profile settings.
 
 
 ### Como configurar plugins {#how-to-configure-plugins}
 
-[Plugins](../plugins/index.md#configure-plugin) estendem muito a funcionalidade do aplicativo. Quase todos os plugins têm suas próprias [Ações de Mapa](../map/map-context-menu.md), [Camadas de Mapa](../map/configure-map-menu.md), [Downloads de Mapa](../start-with/download-maps.md) e [Configurações](../plugins/#plugin-settings).
+[Plugins](../plugins/index.md#configure-plugin) estendem muito a funcionalidade do aplicativo. Quase todos os plugins têm suas próprias [Ações de Mapa](../map/map-context-menu.md), [Camadas de Mapa](../map/configure-map-menu.md), [Downloads de Mapa](../start-with/download-maps.md) e [Configurações](../plugins/#plugin-settings).  
 
-Você pode ativar/desativar plugins via [Menu Principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).
+Você pode ativar/desativar plugins via [Menu Principal](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -194,7 +194,7 @@ Você pode ativar/desativar plugins via [Menu Principal](../start-with/main-menu
 ![Ativar plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Exemplo de plugin Android](@site/static/img/settings/plugin_example_android.png)
 
 Para ativar/desativar plugins, vá para:
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Ativar
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Ativar
 
 </TabItem>
 
@@ -209,7 +209,7 @@ Para ativar/desativar plugins, vá para:
 
 </Tabs>
 
-[Leia mais](../plugins/index.md#configure-plugin) sobre os plugins do OsmAnd.
+[Leia mais](../plugins/index.md#configure-plugin) about OsmAnd plugins.
 
 
 ### Como usar um mapa {#how-to-use-a-map}
@@ -232,7 +232,7 @@ O mapa é um elemento central do OsmAnd, e é importante saber [como usá-lo](..
 
 </Tabs>
 
-[Leia mais](../map/configure-map-menu.md) sobre a configuração do mapa.
+[Leia mais](../map/configure-map-menu.md) about map configuration.
 
 
 ### Como configurar a tela {#how-to-configure-screen}
@@ -255,7 +255,7 @@ O mapa é um elemento central do OsmAnd, e é importante saber [como usá-lo](..
 
 </Tabs>
 
-[Leia mais](../widgets/configure-screen.md) sobre a configuração da tela.
+[Leia mais](../widgets/configure-screen.md) about Screen configuration.
 
 
 ### Como adicionar dados pessoais aos mapas {#how-to-add-personal-data-to-maps}
@@ -278,7 +278,7 @@ O OsmAnd permite que você faça várias marcações no Mapa para suas necessida
 
 </Tabs>
 
-[Leia mais](../map/point-layers-on-map.md) sobre pontos no mapa.
+[Leia mais](../map/point-layers-on-map.md) about points on the map.
 
 
 ### Como navegar e encontrar pontos de interesse {#how-to-browse--find-point-of-interest}
@@ -301,7 +301,7 @@ O OsmAnd permite que você faça várias marcações no Mapa para suas necessida
 
 </Tabs>
 
-[Leia mais](../search/search-poi.md) sobre a pesquisa de POI.
+[Leia mais](../search/search-poi.md) about POI search.
 
 
 ### Como planejar uma rota {#how-to-plan-a-route}
@@ -324,12 +324,12 @@ O OsmAnd permite que você faça várias marcações no Mapa para suas necessida
 
 </Tabs>
 
-[Leia mais](../plan-route/create-route.md) sobre o recurso de planejamento de rota.
+[Leia mais](../plan-route/create-route.md) about the plan route feature.
 
 
 ### Como pesquisar por endereço {#how-to-search-by-address}
 
-O OsmAnd oferece muitas capacidades de pesquisa, incluindo pesquisa de endereço. Por padrão, ele usa [dados do OpenStreetMap](https://nominatim.openstreetmap.map/ui/search.html) e deve ser capaz de encontrar todos os endereços usando a entrada de Pesquisa Rápida. Além disso, você pode [pesquisar](../search/search-address.md) por cidade, rua, código postal e coordenadas.
+O OsmAnd oferece muitas capacidades de pesquisa, incluindo pesquisa de endereço. Por padrão, ele usa [dados do OpenStreetMap](https://nominatim.openstreetmap.org/ui/search.html) e deve ser capaz de encontrar todos os endereços usando a entrada de Pesquisa Rápida. Além disso, você pode [pesquisar](../search/search-address.md) por cidade, rua, código postal e coordenadas.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -351,12 +351,12 @@ O OsmAnd oferece muitas capacidades de pesquisa, incluindo pesquisa de endereço
 Você precisa baixar o mapa antes de procurar um endereço nele. Além disso, se sua localização atual estiver muito longe do endereço que você está procurando, talvez seja necessário aumentar o raio de busca.
 :::
 
-[Leia mais](../search/search-address.md) sobre a pesquisa de endereço.
+[Leia mais](../search/search-address.md) about address search.
 
 
 ### Como iniciar a navegação {#how-to-start-navigation}
 
-A [Navegação](../navigation/index.md) fornece orientação passo a passo para o seu destino, exibindo a rota, oferecendo instruções curva a curva, informações extras sobre a estrada (superfície, suavidade, etc.) e orientação por voz opcional.
+[A Navegação](../navigation/index.md) fornece orientação passo a passo para o seu destino, exibindo a rota, oferecendo instruções curva a curva, informações extras sobre a estrada (superfície, suavidade, etc.) e orientação por voz opcional.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -374,7 +374,7 @@ A [Navegação](../navigation/index.md) fornece orientação passo a passo para 
 
 </Tabs>
 
-[Leia mais](../navigation/index.md) sobre navegação.
+[Leia mais](../navigation/index.md) about navigation.
 
 
 ### Como gravar sua viagem {#how-to-record-your-trip}
@@ -397,7 +397,7 @@ A [Navegação](../navigation/index.md) fornece orientação passo a passo para 
 
 </Tabs>
 
-[Leia mais](../plugins/trip-recording.md) sobre gravação de viagem.
+[Leia mais](../plugins/trip-recording.md) about trip recording.
 
 
 ### Como editar mapas {#how-to-edit-maps}
@@ -420,7 +420,7 @@ O OsmAnd é alimentado por dados do [OpenStreetMap](https://www.openstreetmap.or
 
 </Tabs>
 
-[Leia mais](../plugins/osm-editing.md) sobre edição OSM.
+[Leia mais](../plugins/osm-editing.md) about OSM editing.
 
 
 ### Como fechar o aplicativo {#how-to-close-the-app}
@@ -431,7 +431,7 @@ O OsmAnd é alimentado por dados do [OpenStreetMap](https://www.openstreetmap.or
 
 Existem duas variantes disponíveis de como fechar o OsmAnd.
 
-1. Feche um aplicativo deslizando para cima e para fora da tela. Para uma lista vertical de aplicativos, deslize para a esquerda ou para a direita.
+1. Feche um aplicativo deslizando para cima e para fora da tela. Para uma lista vertical de aplicativos, deslize para a esquerda ou para a direita.  
 
 2. Você pode precisar executar as seguintes etapas antes de fazer isso, caso contrário, o OsmAnd será executado em segundo plano:
     - [Descartar navegação](../navigation/setup/route-navigation.md#start--stop-navigation)
@@ -447,7 +447,7 @@ Existem duas variantes disponíveis de como fechar o OsmAnd.
 
 <TabItem value="ios" label="iOS">
 
-Feche um aplicativo deslizando para cima e para fora da tela. Para uma lista vertical de aplicativos, deslize para a esquerda ou para a direita.
+Feche um aplicativo deslizando para cima e para fora da tela. Para uma lista vertical de aplicativos, deslize para a esquerda ou para a direita.  
 
 Você pode precisar executar as seguintes etapas antes de fazer isso, caso contrário, o OsmAnd será executado em segundo plano:
 
@@ -490,9 +490,9 @@ Toque em um ícone de ação para iniciar imediatamente o aplicativo com a açã
 
 </Tabs>
 
-No *menu Ajuda*, você pode encontrar artigos do nosso site [www.osmand.net/docs](https://osmand.net/docs/intro/). Após o download inicial (conexão com a Internet necessária), os artigos de ajuda estão disponíveis offline.
-A primeira subseção, *Ajuda Offline*, contém os artigos **Mais vistos** (ou populares) entre nossos usuários. As seções **Guia do usuário** e **Solução de problemas** têm a mesma estrutura do site.
-No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logs de falha e logcat](../troubleshooting/crash-logs.md#crash-and-logcat-logs).
+No *menu Ajuda*, você pode encontrar artigos do nosso site [www.osmand.net/docs](https://osmand.net/docs/intro/). Após o download inicial (conexão com a Internet necessária), os artigos de ajuda estão disponíveis offline.  
+A primeira subseção, *Ajuda Offline*, contém os artigos **Mais vistos** (ou populares) entre nossos usuários. Esses artigos são exibidos no idioma definido para o aplicativo, se esse idioma for suportado em nosso site de documentação. Os idiomas suportados atualmente incluem: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, e *<Translate android="true" ids="lang_uk"/>*. Se você alterar o idioma do aplicativo, reinicie o OsmAnd para que a documentação seja aberta no idioma selecionado. Quando uma tradução não estiver disponível, a versão em inglês da página será exibida automaticamente. As seções **Guia do usuário** e **Solução de problemas** têm a mesma estrutura que no site.  
+No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menu {#menu}
 
@@ -510,7 +510,7 @@ No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 - **Enviar log de falha** (*para Android*). Permite que os usuários enviem relatórios de falhas do aplicativo aos desenvolvedores, auxiliando na identificação e resolução de problemas.
 - **Enviar logcat log** (*para Android*). Fornece aos usuários a capacidade de enviar logs detalhados de falhas do aplicativo aos desenvolvedores, facilitando uma análise e solução de problemas mais aprofundadas.
@@ -562,7 +562,7 @@ A seção **Guia do Usuário** do menu Ajuda é um manual completo que segue a e
 
 ### Solução de Problemas {#troubleshooting}
 
-<Tabs groupId="operating-os" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
@@ -626,9 +626,9 @@ Permite que você faça perguntas ou sugestões.
 
 </Tabs>
 
-- **Abrir problema no GitHub**. [Versão Android GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [Versão iOS GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): faça perguntas, escreva sobre bugs e proponha recursos.
-- **Enviar log de falha** (*para Android*). Contém apenas informações sobre falhas.
-- [Enviar logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Enviar log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Arquivo de log detalhado.
+- **Abrir problema no GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bugs and propose features.
+- **Enviar log de falha** (*para Android*). Contains only information about crashes.
+- [Enviar logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Enviar log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
 
 ### Sobre o OsmAnd {#about-osmand}
 
@@ -653,7 +653,7 @@ Você pode aprender sobre nossa equipe, ver a versão atual do aplicativo e as n
 
 ## Privacidade {#privacy}
 
-É um aplicativo [de código aberto](https://github.com/osmandapp/osmand), sem anúncios/rastreadores e focado na privacidade. Para preservar a máxima privacidade, o OsmAnd oferece mapas offline como prioridade, para que nenhuma interação ou informação geográfica seja vazada do seu dispositivo. Somos muito atentos aos dados coletados e transferidos pela rede, você pode ler mais em nossa [Política de Privacidade](https://osmand.net/help-online/privacy-policy).
+É um aplicativo [de código aberto](https://github.com/osmandapp/osmand), sem anúncios/rastreadores e focado na privacidade. Para preservar a máxima privacidade, o OsmAnd oferece mapas offline como prioridade, para que nenhuma interação ou informação geográfica seja vazada do seu dispositivo. Somos muito atentos aos dados coletados e transferidos pela rede, você pode ler mais em nossa [Política de Privacidade](https://osmand.net/help-online/privacy-policy).  
 
 
 ## Permissões {#permissions}

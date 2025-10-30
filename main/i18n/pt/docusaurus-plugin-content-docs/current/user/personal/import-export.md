@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title: Importar / Exportar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Visão Geral {#overview}
 
@@ -28,11 +28,11 @@ A *Importação* e *Exportação* permitem salvar dados de **arquivos** `.osf` g
 
 **Tipos de dados** disponíveis para importação/exportação:
 
-- **Configurações:**
-        [Perfis](../personal/profiles.md#actions), &nbsp;[Configurações Gerais/OsmAnd](../personal/global-settings.md), &nbsp;[Cores](../personal/color-palette-schemes.md), &nbsp;[Ação rápida](../widgets/quick-action.md), &nbsp;[Tipo de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar estrada](../map/map-context-menu.md#avoid-road).
-- **Meus Lugares:**
+- **Configurações:**  
+        [Perfis](../personal/profiles.md#actions), &nbsp;[OsmAnd/Configurações Gerais](../personal/global-settings.md), &nbsp;[Cores](../personal/color-palette-schemes.md), &nbsp;[Ação rápida](../widgets/quick-action.md), &nbsp;[Tipo de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar estrada](../map/map-context-menu.md#avoid-road).
+- **Meus Lugares:**  
         [Favoritos](../personal/favorites.md#export--import), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Edições OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico de marcadores*, *Histórico de pesquisa*, *Histórico de navegação](../personal/global-settings.md#history), &nbsp;*Itinerário*.
-- **Recursos:**
+- **Recursos:**  
         [Estilo de renderização](../map/vector-maps.md#custom-map-style), &nbsp;[Roteamento](../navigation/routing/osmand-routing.md), &nbsp;[Mecanismos de roteamento online](../navigation/routing/online-routing.md), &nbsp;[Fontes de mapa*, *Mapas padrão/offline](../map/raster-maps.md), &nbsp;[Mapas da Wikipédia e de Viagem](../plan-route/travel-guides.md), &nbsp;[Mapas náuticos](../plugins/nautical-charts.md), &nbsp;[Mapas rodoviários](../map/vector-maps.md#road-style), &nbsp;[Mapas de topografia](../plugins/topography.md), &nbsp;[Comandos de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Comandos de voz (gravados)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Backup de favoritos](../personal/favorites.md#automatic-favorites-backup).
 
 
@@ -42,9 +42,9 @@ A *Importação* e *Exportação* permitem salvar dados de **arquivos** `.osf` g
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Perfis Ações Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)
+![Perfis Ações Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,13 +52,13 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png) ![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Todos os dados que você configurou e criou podem ser exportados usando o ***menu Exportar***. O menu consiste em três grupos: **Configurações**, **Meus Lugares** e **Recursos**, que contêm todas as pastas de arquivos disponíveis. Você pode selecionar os arquivos que deseja exportar em cada pasta, um por vez ou todos de uma vez. **Todos os arquivos exportados são salvos no formato `.osf`**.
+Todos os dados que você configurou e criou podem ser exportados usando o ***menu Exportar***. O menu consiste em três grupos: **Configurações**, **Meus Lugares** e **Recursos**, que contêm todas as pastas de arquivos disponíveis. Por exemplo, na seção Recursos, os mapas são agrupados por tipo em *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, e *<Translate android="true" ids="topography_maps"/>* para uma navegação mais fácil e exportação seletiva. Você pode selecionar os arquivos que deseja exportar em cada pasta, um por vez ou todos de uma vez. **Todos os arquivos exportados são salvos no formato `.osf`**.
 
 
 ### Importar {#import}
@@ -67,21 +67,21 @@ Todos os dados que você configurou e criou podem ser exportados usando o ***men
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-![Perfis Ações Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Perfis Ações Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png)
+![Perfis Ações Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Perfis Ações Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
 
-<!-- ![Perfis Ações Importar 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
+<!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 
-![Perfis Ações Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Perfis Ações Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png)
-<!-- ![Perfis Ações Importar 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
+![Perfis Ações Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Perfis Ações Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+<!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>
 
@@ -100,7 +100,7 @@ Abre e restaura arquivos `.osf`. Toque no arquivo no gerenciador de arquivos do 
 
 ## Prevenindo a Perda de Dados {#preventing-data-loss}
 
-Nas versões *Android* e *iOS* do OsmAnd, se você **desinstalar** completamente o aplicativo ou selecionar **Limpar Dados** em seu dispositivo no menu Configurações, informações do aplicativo, a pasta de dados também será excluída do gerenciador de arquivos do dispositivo. Se você não tomar precauções, isso resultará na **perda de todos os mapas baixados para dados do OsmAnd, todos os Favoritos salvos, trilhas GPX, comandos de voz (TTS) e [outros dados](#export--import-data).**
+Nas versões *Android* e *iOS* do OsmAnd, se você **desinstalar** completamente o aplicativo ou selecionar **Limpar Dados** em seu dispositivo no menu Configurações > Informações do Aplicativo, a pasta de dados também será excluída do gerenciador de arquivos do dispositivo. Se você não tomar precauções, isso resultará na **perda de todos os mapas baixados, dados do OsmAnd, todos os Favoritos salvos, trilhas GPX, comandos de voz (TTS) e [outros dados](#export--import-data).**
 
 Existem duas maneiras de salvar seus dados antes de reinstalar o aplicativo OsmAnd:
 
@@ -119,4 +119,4 @@ Existem duas maneiras de salvar seus dados antes de reinstalar o aplicativo OsmA
 
 1. Como transferir Favoritos e Trilhas para um novo dispositivo. [(verificar)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
 2. Tenho um arquivo GPX, como importá-lo para o OsmAnd? [(verificar)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Excluindo dados do mapa após a atualização do aplicativo (se "Armazenamento multiusuário 1" estiver selecionado). [(verificar)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+3. Excluindo dados do mapa após a atualização do aplicativo (se “Armazenamento multiusuário 1” estiver selecionado). [(verificar)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

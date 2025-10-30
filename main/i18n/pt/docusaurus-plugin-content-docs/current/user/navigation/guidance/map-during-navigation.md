@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Tela do Mapa Durante a Navegação
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão Geral {#overview}
 
-Este artigo descreve como configurar a aparência do mapa durante a navegação. Isso inclui recursos como exibir [PDIs ao longo da rota](#show-points-along-the-route), usar [alertas de tela](#screen-alerts), [aparência da linha da rota](#route-line-appearance), incluindo cor, largura e setas de curva. Esses recursos estão intimamente relacionados às [configurações de navegação de rota](../setup/route-navigation.md#settings).
+Este artigo descreve como configurar a aparência do mapa durante a navegação. Isso inclui recursos como exibir [PDIs ao longo da rota](#show-points-along-the-route), usar [alertas de tela](#screen-alerts), [aparência da linha da rota](#route-line-appearance) incluindo cor, largura e setas de curva. Esses recursos estão intimamente relacionados às [configurações de navegação de rota](../setup/route-navigation.md#settings).
 
 
 ## Mapa Durante a Navegação {#map-during-navigation}
@@ -29,7 +29,7 @@ Este artigo descreve como configurar a aparência do mapa durante a navegação.
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Tela do mapa durante a navegação](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Tela do mapa durante a navegação](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Tela do mapa durante a navegação](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Tela do mapa durante a navegação](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,10 @@ Durante a navegação, a aparência do mapa se ajusta com base no perfil de nave
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | O tempo para o qual a visualização do mapa é sincronizada com a posição atual após o movimento. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
 | *<Translate android="true" ids="auto_zoom_map"/>* | Dimensiona automaticamente o mapa de acordo com sua velocidade, desde que o mapa esteja sincronizado com sua posição atual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom é 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom é 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom é 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>* | O ícone da posição atual será associado à rota de navegação atual. | Você pode desativar esta opção, mas todas as opções relacionadas à estrada, como a exibição de faixas, também não serão visíveis durante a navegação. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Determina a direção com base na rota de navegação que você está seguindo. | A configuração só é visível quando o [plugin de desenvolvimento do OsmAnd](../../plugins/development.md) está ativado. <br /> Essas configurações devem ser ativadas se a orientação do mapa direcional estiver invertida ou tremendo ao usar o [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *Auto zoom ângulo 3D* | Define a inclinação do mapa ao alternar para a visualização 3D durante a navegação. Um ângulo maior faz o horizonte aparecer mais distante, proporcionando maior visibilidade à frente. |É aplicado apenas quando o Auto zoom está ativado. Valores: 20°, 25°, 30°, 35°, 40°. Padrão: 25°.  |
+| *Visualizar próxima curva* | Rotaciona automaticamente o mapa ligeiramente com antecedência para mostrar a próxima curva ou manobra durante a navegação. Ajuda a antecipar ações futuras.  | Ativado por padrão. Se você exportar e reimportar um perfil, verifique esta configuração, pois em algumas versões anteriores ela poderia ser redefinida para “ativado.”   |
+| *<Translate android="true" ids="snap_to_road"/>* | O ícone da posição atual será associado à rota de navegação atual. | Você pode desativar esta opção, mas todas as opções relacionadas à estrada, como a exibição de faixas, também não serão visíveis durante a navegação.  |
+
 
 
 ## Mostrar Pontos ao Longo da Rota {#show-points-along-the-route}
@@ -62,6 +64,10 @@ A configuração *Mostrar ao longo da rota* permite configurar parâmetros adici
 - A capacidade de definir diferentes distâncias (até 5 km, ou 3,11 milhas, dependendo da [unidade de comprimento](../../personal/profiles.md#units--formats) que você definiu) da rota para pontos próximos é útil ao usar tipos de roteamento como [Linha Reta](../routing/straight-line-routing.md) ou [Direto ao ponto](../routing/direct-to-point-routing.md).
 - Para a configuração *Mostrar ao longo da rota*, é recomendável usar [Comandos de voz](../guidance/voice-navigation.md) para navegação.
 - *PDIs, Favoritos e Alertas de trânsito* não são exibidos na lista para uma rota que você já percorreu.
+
+:::info note
+A opção **Mostrar ao longo da rota** afeta apenas as listas de PDI e Meus Favoritos, não o mapa em si. Ícones de PDI e Favoritos são exibidos em todos os lugares no mapa independentemente da distância da rota.
+:::
 
 
 ### Visualizar e Selecionar Pontos {#view-and-select-points}
@@ -93,7 +99,7 @@ Ao criar uma rota, você pode definir os tipos de pontos a serem exibidos ao lon
 
 ![Sobreposição de PDI Android](@site/static/img/map/poi_overlay_android.png) ![Sobreposição de PDI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-As configurações de PDIs em [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) estão associadas à configuração **Mostrar ao longo da rota**. Esta é essencialmente uma configuração adicional para exibir PDIs no mapa, diretamente relacionada à rota criada.  
+As configurações de PDIs em [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) estão associadas à configuração **Mostrar ao longo da rota**. 
 
 Quando você especifica a exibição de certos PDIs no *Configurar mapa*, eles são todos exibidos nos mapas que você baixou, quer você tenha selecionado categorias ou, se não se importa com a categoria, selecionado PDIs próximos.  
 
@@ -150,7 +156,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 | Parâmetro | Descrição | Nota |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Notificações, como alertas de trânsito ou limites de velocidade, aparecerão na tela como um widget. Elas aparecem no canto inferior esquerdo enquanto você está navegando. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Notificações, como alertas de trânsito ou limites de velocidade, aparecerão na tela como um widget. Elas aparecem no canto inferior esquerdo enquanto você está navegando. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Aparência da Linha da Rota {#route-line-appearance}
@@ -169,7 +175,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Rota de navegação Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Rota de navegação iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 

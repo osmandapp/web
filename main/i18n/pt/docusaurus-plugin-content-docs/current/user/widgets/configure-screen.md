@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
 sidebar_position: 1
 title:  Configurar Tela
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -294,7 +294,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,ma
 
 Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. O recurso **Modo de Páginas** permite adicionar 5 páginas aos painéis esquerdo e direito.
 
-***Como configurar linhas:***
+***Como configurar páginas:***
 
 - **Adicionar uma Página**. Navegue até as configurações do Painel Esquerdo/Direito e toque em *Editar → Adicionar Página*.
 - **Organizar widgets por Página**. Este recurso é útil quando diferentes conjuntos de widgets são necessários para diferentes tarefas, como navegar versus explorar o mapa.
@@ -317,12 +317,17 @@ Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. 
     - Melhora a clareza e maximiza o espaço para dados importantes.
     - Especialmente útil ao exibir muitos widgets na mesma **linha**.
 
-3. **Tamanho individual para diferentes linhas** (*para todos os painéis*):
+3. **Ocultar rótulos de texto dos widgets**:
+
+    - Oculta automaticamente os rótulos de texto para manter as informações numéricas totalmente visíveis em layouts compactos.
+    - Ajuda a manter um arranjo de widgets limpo e legível quando o espaço é limitado.   
+
+4. **Tamanho individual para diferentes linhas** (*para todos os painéis*):
 
     - Os widgets podem ser dimensionados individualmente ajustando o tamanho da linha e da coluna.
     - **NOTA:** Alterar o tamanho de um widget em uma linha/coluna redimensionará todos os widgets nessa linha/coluna.
 
-4. **Para alterar o tamanho do widget e a visibilidade do ícone:**
+5. **Para alterar o tamanho do widget e a visibilidade do ícone:**
 
     - Selecione um widget que você já adicionou ao painel.  
     - Toque no ícone *Configurações* no lado direito do campo do widget.

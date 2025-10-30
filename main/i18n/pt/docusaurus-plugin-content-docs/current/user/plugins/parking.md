@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title: Posição de Estacionamento
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -44,13 +45,15 @@ O marcador é temporário e fácil de remover quando não for mais necessário.
 
 Para usar um local de estacionamento no mapa, você precisa fazer as seguintes configurações:
 
-1. Ative o [plugin Posição de estacionamento](../plugins/index.md#enable--disable) no *Menu Principal → Plugins*.
+1. Ative o [plugin Posição de estacionamento](../plugins/index.md#enable--disable) no *Menu Principal → Plugins*.  
 2. Defina um [local de estacionamento](#set-a-spot) no mapa através do menu de contexto.
-3. (Opcional) Adicione o [widget de Estacionamento](#parking-widget) à tela para acesso mais rápido.
+3. (Opcional) Adicione o [widget de Estacionamento](#parking-widget) à tela para acesso mais rápido.  
+
 
 ## Local de estacionamento no mapa {#parking-spot-on-the-map}
 
-Quando você marca um local de estacionamento, o OsmAnd salva suas coordenadas geográficas junto com um carimbo de data/hora. Se necessário, um limite de tempo e um lembrete no calendário também podem ser adicionados.
+Quando você marca um local de estacionamento, o OsmAnd salva suas coordenadas geográficas junto com um carimbo de data/hora. Se necessário, um limite de tempo e um lembrete no calendário também podem ser adicionados. Os locais de estacionamento são salvos como **pontos de Favoritos**. Para garantir que o marcador de estacionamento seja visível no mapa, [Favoritos](../personal/favorites.md) deve estar ativado.
+
 
 ### Definir um local {#set-a-spot}
 
@@ -66,7 +69,7 @@ Para definir um local de estacionamento no mapa, amplie para o nível desejado, 
 
 <TabItem value="ios" label="iOS">
 
-![Selecionar Estacionamento em Ações no iOS](@site/static/img/plugins/parking/ios_set_p_point2.png) ![Definir ponto de estacionamento no iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
+![Selecionar Estacionamento em Ações no iOS](@site/static/img/plugins/parking/ios_set_p_point2.png)  ![Definir ponto de estacionamento no iOS](@site/static/img/plugins/parking/ios_set_p_point3_-2.png)
 
 </TabItem>
 
@@ -84,6 +87,7 @@ Para colocar um marcador de estacionamento, amplie o mapa, toque e segure o loca
 :::info Horário de início
 O horário de início é sempre definido automaticamente. Se você precisar alterar o horário de término, deverá excluir e recriar o local de estacionamento. Os lembretes são adicionados ao seu calendário apenas se você selecionou esta opção durante a configuração.
 :::
+
 
 ### Mantenha-se informado {#stay-informed}
 
@@ -103,6 +107,7 @@ O horário de início é sempre definido automaticamente. Se você precisar alte
 
 ![Informações de estacionamento no iOS](@site/static/img/plugins/parking/ios_parking_info.png)
 
+
 </TabItem>
 
 </Tabs>
@@ -116,6 +121,7 @@ Detalhes adicionais são mostrados ao tocar no marcador de estacionamento:
 - **Horário de início** – o momento em que o marcador foi colocado.
 - **Tempo restante** ou **Tempo excedido** – se um limite de tempo foi definido, isso mostra quanto tempo resta ou passou desde a expiração.
 - Se você ativou o lembrete do calendário, ele aparecerá no aplicativo de calendário do seu dispositivo.
+
 
 ### Navegando para um ponto de passagem {#navigating-to-a-waypoint}
 
@@ -139,15 +145,16 @@ Você pode usar o local de estacionamento como um destino de navegação para re
 
 **Via menu de Navegação**:
 
-1. Toque no botão **Navegação**.
-2. Escolha um perfil.
-3. Toque em **Definir destino** e selecione **Estacionamento** na lista de pontos salvos.
+  1. Toque no botão **Navegação**.  
+  2. Escolha um perfil.  
+  3. Toque em **Definir destino** e selecione **Estacionamento** na lista de pontos salvos.
 
 **Via widget de Estacionamento**:
 
-1. Toque no **widget de Estacionamento**.
-2. Toque no marcador do local de estacionamento.
-3. Selecione **Navegação** e escolha o perfil que deseja usar.
+  1. Toque no **widget de Estacionamento**.  
+  2. Toque no marcador do local de estacionamento.  
+  3. Selecione **Navegação** e escolha o perfil que deseja usar.
+
 
 ### Remover um local {#remove-a-spot}
 
@@ -161,8 +168,8 @@ Você pode usar o local de estacionamento como um destino de navegação para re
 
 <TabItem value="ios" label="iOS">
 
-<!-- ![Ação Excluir Estacionamento no Android](@site/static/img/map/context_menu_limited_parking.png) -->
-
+<!-- ![Action Delete Parking in Android](@site/static/img/map/context_menu_limited_parking.png) -->
+  
 ![Ação Excluir Estacionamento no iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
@@ -177,13 +184,14 @@ Para excluir um marcador de estacionamento:
 
 Se um lembrete do calendário foi definido, ele também será removido automaticamente.
 
+
 ## Widget de Estacionamento {#parking-widget}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_parking"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_parking"/>*  
 
 ![Adicionando widget de Estacionamento no Android](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
 
@@ -191,7 +199,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="parking_place"/>*
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="parking_place"/>*  
 
 ![Adicionando widget de Estacionamento no iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 
@@ -205,6 +213,7 @@ O [widget de Estacionamento](../widgets/info-widgets.md#parking-widget) mostra a
 - Se ainda não estiver na tela, você pode adicioná-lo através do menu [Configurar tela](../widgets/configure-screen.md).
 
 Para saber mais, consulte: [Widgets informativos – Widget de estacionamento](https://osmand.net/docs/user/widgets/info-widgets#parking-widget)
+
 
 ## Artigos relacionados {#related-articles}
 

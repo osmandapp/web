@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -31,7 +32,7 @@ Data de lançamento 06/2025:
 - Adicionado analisador de subidas/descidas.
 - Integração expandida de Wikipedia e Wikivoyage para mais POIs.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Versão 5.0 {#version-50}
 
@@ -49,7 +50,7 @@ Data de lançamento 04/2025:
 - Picos proeminentes agora são descobertos via mapa e pesquisa
 - Alturas de picos de montanhas em pés
 - Adicionado: Desfiladeiros e áreas de escalada no mapa
-- A pesquisa de endereços nos EUA foi aprimorada
+- A pesquisa de endereços nos EUA foi aprimorada  
 - Adicionado TTS hebraico para navegação
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -76,6 +77,7 @@ Data de lançamento 11/2024:
 - Adicionado um ícone tocável para exibir atributos de acesso ou outras estradas ou caminhos.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
+
 
 ### Versão 4.8 {#version-48}
 
@@ -177,6 +179,7 @@ Data de lançamento 03/2023:
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
+
 ### Versão 4.3 {#version-43}
 
 Data de lançamento 12/2022:
@@ -249,6 +252,7 @@ Data de lançamento 08/2021:
 
 <DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
+
 <hr></hr>
 
 ## Versão 3 {#version-3}
@@ -264,6 +268,7 @@ Data de lançamento 02/2021:
 
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
+
 ### Versão 3.8 {#version-38}
 
 Data de lançamento 09/2020:
@@ -277,6 +282,7 @@ Data de lançamento 09/2020:
 - Problemas corrigidos com importação/exportação de configurações de perfil
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
+
 
 ### Versão 3.7 {#version-37}
 
@@ -294,11 +300,12 @@ Data de lançamento 05/2020:
 
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
 
+
 ### Versão 3.6 {#version-36}
 
 Data de lançamento 02/2020:
 
-- Perfis: agora você pode mudar a ordem, definir ícone para o mapa, mudar todas as configurações para perfis base e restaurá-los para os padrões
+- Perfis: agora você pode mudar a ordem, definir ícone para o mapa, mudar todas as configurações para perfis base e restaurá-las para os padrões
 - Adicionado número de saída na navegação
 - Configurações de plugin retrabalhadas
 - Tela de Configurações retrabalhada para acesso rápido a todos os perfis
@@ -312,6 +319,8 @@ Data de lançamento 02/2020:
 - Adicionado mapa da Antártida
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
+
+
 
 ### Versão 3.5 {#version-35}
 
@@ -327,6 +336,8 @@ Data de lançamento: 11/2019
 - Correções de bugs
 
 <DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
+
+
 
 ### Versão 3.4 {#version-34}
 
@@ -344,6 +355,8 @@ Data de lançamento: 07/2019
 
 <DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
+
+
 ### Versão 3.3 {#version-33}
 
 Data de lançamento: 03/2019
@@ -359,6 +372,8 @@ Data de lançamento: 03/2019
 
 <DownloadRelease blog="osmand-3-3" release="net.osmand-3.3.8.apk" />
 
+
+
 ### Versão 3.2 {#version-32}
 
 Data de lançamento 09/2018:
@@ -368,7 +383,10 @@ Data de lançamento 09/2018:
 - Suporte para edição de objetos poligonais (não amenidades)
 - Medir distância: adicionar botão Medir a Ações no menu de contexto
 
+
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
+
+
 
 ### Versão 3.1 {#version-31}
 
@@ -383,6 +401,7 @@ Data de lançamento 08/2018:
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
+
 ### Versão 3.0 {#version-30}
 
 Data de lançamento: 05/2018
@@ -394,6 +413,7 @@ Data de lançamento: 05/2018
 - A assinatura do OsmAnd Live agora inclui todos os recursos do OsmAnd
 
 <DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
+
 
 <hr></hr>
 
@@ -413,6 +433,9 @@ Data de lançamento: 02/2018
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
 
+
+
+
 ### Versão 2.8 {#version-28}
 
 Data de lançamento 10/2017:
@@ -423,6 +446,9 @@ Data de lançamento 10/2017:
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
 
+  
+
+
 ### Versão 2.7 {#version-27}
 
 Data de lançamento 07/2017:
@@ -432,6 +458,9 @@ Data de lançamento 07/2017:
 - Intervalo de divisão GPX mostrando detalhes das seções da trilha
 
 <DownloadRelease blog="osmand-2-7" release="net.osmand-2.7.5.apk" />
+
+  
+
 
 ### Versão 2.6 {#version-26}
 
@@ -446,6 +475,9 @@ Data de lançamento: 04/2017
 
 <DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
+
+
+
 ### Versão 2.5 {#version-25}
 
 Data de lançamento: 11/2016
@@ -459,6 +491,7 @@ Data de lançamento: 11/2016
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
+
 ### Versão 2.4 {#version-24}
 
 Data de lançamento: 08/2016
@@ -469,6 +502,8 @@ Data de lançamento: 08/2016
 - Outras melhorias. Melhor orientação por voz, nova indicação de faixa de viragem e correções de armazenamento
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
+
+
 
 ### Versão 2.3 {#version-23}
 
@@ -483,6 +518,8 @@ Data de lançamento: 03/2016
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
 
+
+
 ### Versão 2.2 {#version-22}
 
 Data de lançamento: 11/2015
@@ -495,6 +532,8 @@ Data de lançamento: 11/2015
 - Estrutura e interface de download de dados de mapa retrabalhadas
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
+
+
 
 ### Versão 2.1 {#version-21}
 
@@ -509,6 +548,8 @@ Data de lançamento 06/2015:
 - Backup adicional de favoritos em caso de corrupção do aplicativo ou diferentes problemas
 
 <DownloadRelease blog="osmand-2-1" release="net.osmand-2.1.0.apk" />
+
+
 
 ### Versão 2.0 {#version-20}
 
@@ -567,6 +608,8 @@ Simplificação da Gravação de Viagem em Segundo Plano e Navegação em Segund
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />
 
+
+
 ### Versão 1.8 {#version-18}
 
 Data de lançamento: 07/2014
@@ -596,6 +639,8 @@ Navegação:
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
+
+
 ### Versão 1.7 {#version-17}
 
 Data de lançamento 03/2014:
@@ -608,6 +653,9 @@ Data de lançamento 03/2014:
 - Configuração de acessibilidade da taxa de fala
 
 <DownloadRelease blog="osmand-1-7" release="net.osmand-1.7.5-175.apk" />
+
+
+
 
 ### Versão 1.6 {#version-16}
 
@@ -637,9 +685,12 @@ Data de lançamento: 07/2013
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
 
+
+
 ### Versão 1.4 {#version-14}
 
 Data de lançamento: 05/2013
+
 
 - Ordenar waypoints de forma otimizada para visitar todos (Caixeiro Viajante, porta a porta)
 - Pesquisar rua por nome (na vizinhança)
@@ -651,6 +702,8 @@ Data de lançamento: 05/2013
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
 
+
+
 ### Versão 1.3 {#version-13}
 
 Data de lançamento 03/2013:
@@ -661,6 +714,7 @@ Data de lançamento 03/2013:
 - Botão superior esquerdo na tela do mapa substitui o botão Menu
 
 <Download link="net.osmand-1.3%20beta-137.apk" />
+
 
 ### Versão 1.2 {#version-12}
 
@@ -674,6 +728,7 @@ Data de lançamento 02/2013:
 - Filtro Kalman para bússola
 
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
+
 
 ### Versão 1.1 {#version-11}
 
@@ -692,6 +747,8 @@ Data de lançamento 12/2012:
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
 
+
+
 ### Versão 1.0 {#version-10}
 
 Data de lançamento 09/2012:
@@ -701,6 +758,7 @@ Data de lançamento 09/2012:
 - Habilitar serviço de manter GPS ligado durante a navegação.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
+
 
 ## Versão 0.8 {#version-08}
 
@@ -721,6 +779,7 @@ Data de lançamento: 07/2012
 
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
+
 ## Versão 0.7 {#version-07}
 
 Data de lançamento 04/2012:
@@ -734,11 +793,12 @@ Data de lançamento 04/2012:
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
+
 ## Versão 0.6 {#version-06}
 
 Data de lançamento 09/2011:
 
-- Implementar pesquisa de POI por nome em grandes áreas (países)
+- Implementar pesquisa de POI por nome em grandes áreas (países)  
 - Gerenciador de dados offline (baixar, excluir, ativar/desativar dados offline diretamente no OsmAnd)
 - Pontos e grupos favoritos (categorizar, excluir, gerenciar favoritos)
 - Informações de altitude

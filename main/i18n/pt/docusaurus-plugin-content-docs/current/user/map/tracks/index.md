@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title: Trilhas
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,9 +16,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão geral {#overview}
-OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou navegadas e selecionadas a partir de dados do OpenStreetMap.
+OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou exploradas e selecionadas a partir de dados do OpenStreetMap.
 
 
 ## Tipos de Trilhas {#types-of-tracks}
@@ -28,7 +28,7 @@ OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As ro
 - Trilha como uma rota (***Rota***). O arquivo possui um array de pontos ```<rtept>```, cada ponto descrito como um ponto intermediário da rota. Depende de como os pontos dentro de uma rota devem ser conectados, seja como pequenos segmentos de rota ou via uma linha reta. Essas trilhas são exibidas no mapa como linhas tracejadas.
 - Pontos de passagem (***Pontos***). O arquivo possui pontos ```<wpt>``` com atributos. Os pontos de passagem são exibidos como pontos circulares no mapa. Você pode tocá-los para obter informações adicionais.
 
-OsmAnd pode criar trilhas com 1 a 3 combinações. [Planejar Rota](../../plan-route/create-route.md) cria uma trilha com ***Geometria*** e ***Rota***, se você salvá-la como ***Trilha Simplificada***, apenas a ***Geometria*** será mantida. [Gravação de trilha](../../plugins/trip-recording.md#new-track-recording) cria apenas ***Geometria***, mas você também pode adicionar ***Pontos*** a ela através do menu de contexto.
+OsmAnd pode criar trilhas com 1–3 combinações. [Planejar Rota](../../plan-route/create-route.md) cria uma trilha com ***Geometria*** e ***Rota***, se você salvá-la como ***Trilha Simplificada***, apenas a ***Geometria*** será mantida. [Gravação de trilha](../../plugins/trip-recording.md#new-track-recording) cria apenas ***Geometria***, mas você também pode adicionar ***Pontos*** a ela através do menu de contexto.
 
 
 ## Exibir Trilhas no Mapa {#display-tracks-on-the-map}
@@ -84,7 +84,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 Em [Meus Lugares *→* aba Trilhas](../../personal/tracks/manage-tracks.md#manage-tracks) para exibir a trilha no mapa, você precisa:
 
 - *Android* - tocar no *menu de três pontos* no campo com a trilha desejada.
-- *iOS* - tocar e segurar a trilha desejada na lista.
+- *iOS* - toque e segure a trilha desejada na lista.
 
 
 ### Menu de Contexto da Trilha {#track-context-menu}
@@ -135,6 +135,7 @@ Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/t
 - Os **dados do gráfico (eixo Y)** exibem: *Altitude*, *Inclinação*, *Velocidade*, [*Dados do sensor externo*](../../plugins/external-sensors.md) e combinações de até duas opções, se contidas nos dados da trilha.
 - A **dimensão do gráfico (eixo X)** representa: *Distância*, *Tempo* e *Hora do dia*.
 - **Interação de toque/deslize**. Toque em um gráfico para exibir informações sobre um ponto específico na trilha. Deslizar no gráfico destaca o local apropriado no mapa e mostra detalhes na barra de informações.
+- **Rótulo de distância**. Ao tocar ou deslizar ao longo do gráfico, a dica de ferramenta também exibe a distância exata ao longo da trilha. O valor segue as configurações de unidade do perfil atual (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Use-o para estimar rapidamente quão longe um ponto está do início da trilha, ou para calcular a distância entre duas posições comparando seus valores.
 - **Escala**. Use um [gesto de dois dedos](../../map/interact-with-map.md#gestures) para dimensionar o gráfico para uma visualização mais detalhada.
 
 
@@ -158,7 +159,7 @@ Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/t
 
 Toque no botão [Minha Localização](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar a visualização do mapa e o gráfico com sua localização.
 
-- A **escala do gráfico** permanece a mesma, e a **informação da barra** é fixada 1/4 à esquerda.
+- A **escala do gráfico** permanece a mesma, e a **informação da barra** é fixada 1/4 no lado esquerdo.
 - Conforme você se move, o **gráfico deslizará** da esquerda para a direita, exibindo informações à frente de sua trilha.
 - Nenhum outro widget é exibido nesta tela.
 - Este recurso é útil para caminhadas e ciclismo enquanto você navega pela trilha.  

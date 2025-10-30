@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title: Parâmetros do veículo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão geral
@@ -98,6 +98,14 @@ Os parâmetros do veículo afetam a navegação e a construção da rota porque 
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+**5.** [**Limite de carga máxima por eixo**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Forneça a carga máxima por eixo do seu veículo para evitar estradas e pontes com restrições de peso por eixo. Este parâmetro está disponível apenas em tipos de navegação como [*Caminhão*](../../navigation/routing/car-based-routing.md).  
+
+![Configurações de Navegação Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Peso máximo com carga total**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Forneça o peso total máximo do seu veículo quando totalmente carregado para evitar estradas e pontes com restrições de peso geral. Este parâmetro está disponível apenas em tipos de navegação como [*Caminhão*](../../navigation/routing/car-based-routing.md).  
+
+![Configurações de Navegação Android](@site/static/img/navigation/max_weight_at_full_load.png)
+
 Os limites nos parâmetros do veículo podem ser importantes para a navegação e a segurança rodoviária. Algumas dessas restrições podem incluir:  
 
 1. Restrições a veículos que se deslocam em certas áreas urbanas.  
@@ -127,7 +135,7 @@ Os limites nos parâmetros do veículo podem ser importantes para a navegação 
 </Tabs>
 
 Se você selecionar o tipo de motor nos parâmetros do veículo, os [***dados de pegada de CO2***](../../navigation/setup/route-details.md#elevation-info) serão exibidos acima do gráfico em [Detalhes da Rota](../setup/route-details.md).
-Estão disponíveis seis tipos de combustível: ***Gasolina, Diesel, GLP, GNV, Elétrico*** e ***Híbrido***.  
+Estão disponíveis seis tipos de combustível: ***Gasolina, Diesel, GLP, GNV, Elétrico,*** e ***Híbrido***.  
 
 **Aplicabilidade:**
 

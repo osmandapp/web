@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Configurações de Navegação
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -38,7 +38,7 @@ Para uma navegação bem-sucedida, é importante configurar corretamente as defi
 
 ### Como Abrir {#how-to-open}
 
-Esta secção apresenta as definições de navegação necessárias para calcular e traçar uma rota, que pode definir para o perfil selecionado. Este menu inclui definições para [Preparação da rota](../setup/route-navigation.md), o [Ecrã do mapa durante a navegação](../guidance/map-during-navigation.md) e o que define nas *Definições de navegação* afeta diretamente a exibição de dados nos [Detalhes da rota](../setup/route-details.md).
+Esta secção apresenta as definições de navegação necessárias para calcular e traçar uma rota, que pode definir para o perfil selecionado. Este menu inclui definições para [Preparação da rota](../setup/route-navigation.md), o [Ecrã do mapa durante a navegação](../guidance/map-during-navigation.md), e o que define nas *Definições de navegação* afeta diretamente a exibição de dados nos [Detalhes da rota](../setup/route-details.md).
 
 Existem três formas de aceder ao menu de Definições de Navegação.
 
@@ -185,7 +185,7 @@ Os parâmetros na secção **Desenvolvimento** são principalmente para utilizad
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ As instruções de áudio durante a navegação ajudam-no, como condutor ou peã
 Se selecionar um trilho como ponto de destino, precisa de usar a opção [Anexar às estradas](../setup/gpx-navigation.md#attach-to-the-roads) para que as instruções de voz funcionem corretamente.
 
 As *instruções de voz* permitem-lhe concentrar-se na estrada e não se distrair com o mapa ou o dispositivo de navegação. Também melhoram a segurança na condução, reduzem o tempo necessário para navegar em terrenos desconhecidos e podem ser úteis para diferentes [tipos de rotas](../routing/osmand-routing.md#routing-types).
+
+Na secção **Anunciar**, pode escolher quais os tipos de notificações que devem ser reproduzidos ou mostrados durante a navegação:
+
+- **Direções viragem a viragem** (apenas Android) – permite ativar ou desativar instruções de navegação padrão como *“Vire à esquerda”*, *“Vire à direita”* ou *“Em 200 metros…”*. Quando a opção está desativada, os anúncios de viragens e nomes de ruas não são fornecidos, enquanto as notificações para pontos de passagem, pontos do utilizador e eventos de rota permanecem ativas. Este modo destina-se a atividades como rafting, caminhadas ou ciclismo ao longo de trilhos pré-gravados, quando apenas são necessários alertas para pontos de passagem adicionados manualmente.
+- **Nomes de ruas (TTS)** – anuncia os nomes das ruas ao longo da sua rota.
+- **Número de saída** – anuncia o número da saída ao conduzir em autoestradas.
+- **Avisos de trânsito** – fornece alertas sobre eventos rodoviários importantes, como congestionamentos ou restrições.
+- **Passadeiras** – avisa-o quando se aproxima de passadeiras.
+- **[Radares de velocidade](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – alerta sobre localizações de radares de velocidade (onde legalmente permitido).
+- **Túneis** – informa-o quando entra num túnel.
 
 
 ## Alertas no Ecrã {#screen-alerts}
@@ -316,7 +326,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 

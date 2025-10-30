@@ -1,9 +1,10 @@
 ---
-source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
+source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
 
 sidebar_position: 3
 title:  Widgets Informativos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -302,7 +302,7 @@ O widget **Nível da Bateria** exibe a porcentagem da bateria do seu dispositivo
 
 <TabItem value="ios" label="iOS">
 
-![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_ios_2.png)
+![Widget de coordenadas iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)
 
 </TabItem>
 
@@ -502,7 +502,7 @@ Para adicionar widgets de Sensores Externos à tela do mapa, ative o plugin OsmA
 
 <TabItem value="ios" label="iOS">
 
-![widget_gravação_de_viagem](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widgets de sensores externos iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -550,14 +550,14 @@ Para adicionar Widgets de Métricas do Veículo à tela do mapa, ative o plugin 
 
 <TabItem value="ios" label="iOS">
 
-![Widgets de métricas do veículo Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Widgets de métricas do veículo iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*13 métricas*): **Temperatura de Admissão**,&nbsp; **Temperatura Ambiente**,&nbsp; **Temperatura do Líquido de Arrefecimento**,&nbsp; **Temperatura do Óleo do Motor**,&nbsp; **Rotação do Motor** (*grátis*),&nbsp; **Tempo de Funcionamento do Motor**,&nbsp; **Carga Calculada do Motor**,&nbsp; **Pressão do Combustível**,&nbsp; **Consumo de Combustível**,&nbsp; **Combustível Restante**,&nbsp; **Nível da Bateria**,&nbsp; **Velocidade do Veículo** (*grátis*), e **Posição do Acelerador**.
+Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Temperatura de Admissão**,&nbsp; **Temperatura Ambiente**,&nbsp; **Temperatura do Líquido de Arrefecimento**,&nbsp; **Temperatura do Óleo do Motor**,&nbsp; **Rotação do Motor** (*grátis*),&nbsp; **Tempo de Funcionamento do Motor**,&nbsp; **Carga Calculada do Motor**,&nbsp; **Pressão do Combustível**,&nbsp; **Consumo de Combustível**,&nbsp; **Combustível Restante**,&nbsp; **Nível da Bateria**,&nbsp; **Voltagem do Adaptador**,&nbsp; **Velocidade do Veículo** (*grátis*), e **Posição do Acelerador**.
 
 - Para adicionar widgets de métricas do veículo à tela do mapa, [ative](../plugins/index.md#enable--disable) o **plugin Métricas do Veículo**.
 - Você pode adicionar widgets mesmo que nenhum scanner OBD-II esteja conectado.
@@ -599,7 +599,7 @@ Os widgets de clima exibem informações meteorológicas atuais para um ponto ce
 - **Temperatura**. <Translate android="true" ids="temperature_widget_desc"/>
 - **Pressão do Ar**. <Translate android="true" ids="air_pressure_widget_desc"/>
 - **Vento**. <Translate android="true" ids="wind_widget_desc"/>
-- **Nuvens**. <Translate android="true" ids="clouds_widget_desc"/>
+- **Nuvem**. <Translate android="true" ids="clouds_widget_desc"/>
 - **Precipitação**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
@@ -769,7 +769,7 @@ Os **widgets da Câmera** permitem monitorar o alinhamento entre o mapa OsmAnd e
 
 <InfoAndroidOnly />
 
-![Widgets de velocidade média](@site/static/img/widgets/available_RAM_2_andr.png)
+![Widgets de RAM disponível](@site/static/img/widgets/available_RAM_2_andr.png)
 
 O widget **RAM Disponível** é uma ferramenta para monitorar o uso da memória do seu dispositivo em relação ao OsmAnd. Ele fornece dados detalhados para ajudar a otimizar o desempenho do aplicativo.
 

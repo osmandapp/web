@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -61,10 +61,28 @@ Você pode definir a cor da trilha manualmente ou usar a **visualização de dad
 
 **Opções de Cores Disponíveis:**
 
-- **Configurações gratuitas**: *<Translate android="true" ids="track_coloring_solid"/> cor*, *<Translate android="true" ids="shared_string_speed"/>* (se gravado) e *<Translate android="true" ids="altitude"/>* (se gravado).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
+![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
+
+A **lista de Coloração** abre como um menu de contexto. Os itens podem aparecer em três estados: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Pode ser aplicado à trilha atual.
+2. <Translate ios="true" ids="weather_update_disabled"/>. A trilha não possui os dados necessários.
+3. PRO. Disponível para a trilha atual, mas requer uma assinatura; ao tocar, abre a tela [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Configurações gratuitas**: *<Translate android="true" ids="track_coloring_solid"/> cor*, *<Translate android="true" ids="shared_string_speed"/>* (se gravado) e *<Translate android="true" ids="altitude"/>* (se gravado).   
 - [Recurso Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Para mais detalhes sobre a personalização da aparência da linha da rota, consulte [Tela do mapa durante a navegação](../../navigation/guidance/map-during-navigation.md#color) e sobre a seleção e criação de uma cor personalizada, consulte [Esquemas de cores](../../personal/color-palette-schemes.md#routes).
@@ -91,9 +109,23 @@ Ajuste a largura da trilha para melhorar a visibilidade no mapa.
 
 ### Intervalo de Divisão {#split-interval}
 
-![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Selecione se deseja dividir o intervalo na trilha **por distância ou por tempo**.
+<TabItem value="android" label="Android">
+
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Selecione se deseja dividir a trilha em intervalos por **distância**, **tempo** ou **subida/descida** (Android), ou por **distância** ou **tempo** (iOS). Para visualizar estatísticas detalhadas por intervalo, consulte [Analisar por Intervalos](../../map/tracks/track-context-menu.md#analyze-by-intervals) (apenas Android).
+
 
 ### Setas de Direção {#direction-arrows}
 
@@ -272,7 +304,7 @@ Para especificar uma cor para uma trilha, use o seguinte formato:
     - Essas configurações de aparência são armazenadas nas **extensões GPX de nível superior**.
     - Se uma cor ou largura for **definida no nível superior** (seja no arquivo GPX ou manualmente no OsmAnd), essa configuração terá precedência sobre as cores atribuídas a segmentos de trilha individuais.
 
-**Solução para Trilhas Multicoloridas:**
+**Solução alternativa para Trilhas Multicoloridas:**
 
 - Para preservar **cores individuais para várias trilhas**, **importe as trilhas separadamente** em vez de mesclá-las.
 

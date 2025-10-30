@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title: Prompts de Voz / Notificações
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -52,7 +52,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 
 **[Idioma](#voice-prompt-language)**. Selecione seu idioma e tipo preferidos.
 
-**Anúncio**. Permite configurar os seguintes tipos de prompts:
+**Anúncio**. Permite configurar os seguintes [tipos de prompts](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Nomes de ruas (TTS), Números de saída, Avisos de tráfego, Faixas de pedestres* e *Túneis.*
+- *Direções passo a passo, Nomes de ruas (TTS), Números de saída, Avisos de tráfego, Faixas de pedestres* e *Túneis.*
 - *[Radares de velocidade](#speed-cameras)*.
 - Configure também o **[widget de Alerta](../../widgets/nav-widgets.md#alert-widget)** para usar com os anúncios.
 
@@ -79,9 +79,9 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 
 - Ative os prompts de voz para os [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favoritos](../../personal/favorites.md) ou [POIs](../../map/point-layers-on-map.md#points-of-interest-pois) predefinidos e adicionados. Ao dirigir, os pontos selecionados serão anunciados quando você se aproximar ou passar por eles.
 
-| Tipo de Prompt | Tempo de Antecedência [s]:<br/>Distância de Antecedência Correspondente @ Velocidade Padrão [m] | Limite |
+| Tipo de Prompt | Tempo de Antecedência [s]:<br/>Distância de Antecedência<br/>Correspondente @ Velocidade Padrão [m] | Limite |
 | :- | :- | :- |
-| Aproximando | **60 s:**<br/>Dirigindo: 750 m<br/>Ciclismo: 167 m<br/>Caminhada: 67 m | Não mais de 1 ponto por vez |
+| Aproximando  | **60 s:**<br/>Dirigindo: 750 m<br/>Ciclismo: 167 m<br/>Caminhada: 67 m  | Não mais de 1 ponto por vez |
 | Passando | **15 s:**<br/>Dirigindo: 188 m<br/>Ciclismo: 42 m<br/>Caminhada: 17 m | Não mais de 3 pontos por vez |
 
 [**Limite de velocidade**](#speed-limit):
@@ -247,7 +247,7 @@ Para solução de problemas, consulte:
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-tts.png) ![Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-recorded.png)
+![Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt-recorded.png)
 
 </TabItem>
 
@@ -277,6 +277,7 @@ O OsmAnd oferece dois tipos de prompts de voz:
 
 > *O TTS é recomendado para orientação de navegação detalhada.*
 
+
 ### Configurações de Prompt de Voz em Nível de Sistema {#system-level-voice-prompt-settings}
 
 O comportamento do prompt de voz, incluindo *velocidade de reprodução, tom e pausas*, pode ser ajustado apenas nas configurações do sistema do dispositivo.
@@ -303,23 +304,23 @@ Atualmente, existem 45 idiomas no total. Nem todos os idiomas listados abaixo po
 | :--- | :--- |
 | **A** | Árabe |
 | **B** | Bielorrusso, Búlgaro |
-| **C** | Catalão, Chinês, Chinês (Hong Kong), Chinês (Tradicional), Croata, Tcheco |
+| **C** | Catalão, Chinês, Chinês(Hong Kong), Chinês(Tradicional), Croata, Tcheco |  
 | **D** | Dinamarquês, Holandês |
-| **E** | Inglês, Inglês (Reino Unido), Estoniano |
+| **E** | Inglês, Inglês(Reino Unido), Estoniano |
 | **F** | Finlandês, Francês |
-| **G** | Alemão, Alemão (casual), Grego, Guarani |
-| **H** | Hindi, Húngaro, Húngaro (formal), Hebraico |
+| **G** | Alemão, Alemão(casual), Grego, Guarani |
+| **H** | Hindi, Húngaro, Húngaro(formal), Hebraico |
 | **I** | Indonésio, Italiano |
 | **J** | Japonês |
-| **K** | Coreano |
+| **K** | Coreano  |
 | **L** | Letão |
-| **N** | Norueguês Bokmål |
-| **P** | Persa, Polonês, Português, Português (Brasil) |
-| **R** | Romeno, Russo |
-| **S** | Sardo, Sérvio (Cirílico), Eslovaco, Esloveno, Espanhol, Espanhol (Argentina), Suaíli, Sueco |
-| **T** | Turco |
-| **U** | Ucraniano |
-| **V** | Vietnamita |
+| **N** | Norueguês Bokmål  |
+| **P** | Persa, Polonês, Português, Português(Brasil) |  
+| **R** | Romeno, Russo  |
+| **S** | Sardo, Sérvio (Cirílico), Eslovaco, Esloveno, Espanhol, Espanhol (Argentina), Suaíli, Sueco  |
+| **T** | Turco  |
+| **U** | Ucraniano  |
+| **V** | Vietnamita  |
 
 
 ## Prompts de Voz Gravados {#recorded-voice-prompts}
@@ -334,13 +335,14 @@ O uso de vozes gravadas no OsmAnd deve ser apenas um recurso de fallback. Elas s
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/TTS-preferred-1.png) ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/TTS-preferred-2.png)
+    ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/TTS-preferred-2.png)
 
 - O segundo tipo são prompts de voz gravados, com um conjunto incompleto de recursos:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*
 
     ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/TTS-recorded.png)
+
 
 ### Modos de Bip {#beep-modes}
 
@@ -358,6 +360,8 @@ Você pode configurar um perfil do OsmAnd para emitir bipes em vez de falar, de 
 
 ## Notificações de Texto {#text-notifications}
 
+<InfoAndroidOnly />
+
 Depois de iniciar uma rota, você pode visualizar as informações no menu suspenso do sistema na lista de notificações. As notificações silenciosas do OsmAnd contêm informações como instruções passo a passo, setas de direção de curva, tempo de chegada e tempo restante, velocidade atual e distância até o destino.
 
 ![Notificação de rota de navegação Android](@site/static/img/navigation/route/navigation_notifications_android.png)
@@ -367,6 +371,7 @@ Botões ativos no menu suspenso do sistema para sua navegação:
 - *<Translate android="true" ids="stop_navigation_service"/>*. Permite parar sua navegação.
 - *<Translate android="true" ids="shared_string_pause"/>*. Permite pausar sua navegação.
 - *<Translate android="true" ids="shared_string_resume"/>*. Permite retomar sua navegação.
+
 
 ### Configurar Notificações {#configure-notifications}
 
