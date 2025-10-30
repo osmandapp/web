@@ -1,3 +1,7 @@
+---
+source-hash: 5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c
+
+---
 {
   "download_as_osf": "OSF olarak indir",
   "download_as_obf": "OBF koleksiyonu olarak indir",
@@ -10,18 +14,18 @@
   "explore_menu": "Keşfet",
   "weather_precip_mmh": "mm/saat",
   "OsmAnd_account": "OsmAnd Hesabı",
-  "empty_login_desc": "Tüm cihazlarınızda parkurlarınızı ve favorilerinizi yönetmek için bir OsmAnd hesabı oluşturun veya oturum açın.",
+  "empty_login_desc": "Parkurlarınızı ve favorilerinizi tüm cihazlarınızda yönetmek için OsmAnd hesabınızı oluşturun veya oturum açın.",
   "login_btn": "Giriş yap",
-  "login_desc": "Hesabınızı oluşturmak için kullandığınız e-postayı girin.",
+  "login_desc": "Lütfen hesabınızı oluşturmak için kullandığınız e-postayı girin.",
   "user_email": "E-posta",
   "email_is_not_registered": "Bu e-posta OsmAnd Cloud'a kayıtlı değil.",
   "incorrect_password": "Yanlış parola.",
   "change_password": "Parolam yok veya unuttum",
   "change_reset_password": "Parolayı değiştir veya sıfırla",
-  "enter_email": "Hesabınızı oluşturmak için kullandığınız e-postayı girin.",
-  "send_code_desc": "E-posta adresinize \\%1$s\\ bir doğrulama kodu gönderildi. Devam etmek için lütfen aşağıdaki alana girin.",
+  "enter_email": "Lütfen hesabınızı oluşturmak için kullandığınız e-postayı girin.",
+  "send_code_desc": "Doğrulama kodu e-posta adresinize \\%1$s\\ gönderildi. Devam etmek için lütfen aşağıdaki alana girin.",
   "verification_code": "Doğrulama kodu",
-  "min_8_symbols": "Minimum 8 karakter.",
+  "min_8_symbols": "Minimum 8 sembol.",
   "new_password": "Yeni parola",
   "repeat_password": "Yeni parolayı tekrarla",
   "change_password_btn": "Parolayı değiştir",
@@ -111,7 +115,7 @@
   "purchase_type_one_time_purchase": "Tek seferlik satın alma",
   "label_pricing": "Fiyatlandırma",
   "subtitle_choose_your_ideal_osmand_plan": "İdeal OsmAnd planınızı seçin: Ücretsiz başlayın, esnek bir abonelik seçin veya tek seferlik satın alma yapın",
-  "notice_fastspring_purchase_info": "Çevrimiçi satın almalar, yetkili bir satıcı olan FastSpring tarafından sağlanmaktadır. Abonelikler, yenileme tarihinden önce iptal edilmediği sürece otomatik olarak yenilenir. Aboneliğinizi FastSpring hesap yönetim portalından iptal edebilir veya yenileyebilirsiniz.",
+  "notice_fastspring_purchase_info": "Çevrimiçi satın almalar, yetkili bir satıcı olan FastSpring tarafından sağlanmaktadır. Abonelikler, yenileme tarihinden önce iptal edilmediği sürece otomatik olarak yenilenir. Aboneliğinizi <portalLink>FastSpring hesap yönetim portalı</portalLink> üzerinden iptal edebilir veya yenileyebilirsiniz.",
   "feature_offline_navigation_desc": "Adım adım sesli rehberlik, trafik uyarıları ve şerit rehberliği, hepsi çevrimdışı kullanılabilir",
   "feature_navigation_by_planned_tracks": "Planlanmış parkurlara göre navigasyon",
   "feature_navigation_by_planned_tracks_desc": "Adım adım rehberlikle GPX parkurlarınızı takip edin veya ayrıntılı navigasyon ve yol bilgileri için yollara yapışın",
@@ -183,7 +187,7 @@
   "header_join_us": "Bize katılın",
   "track_analyzer_desc": "Harita üzerinde bir veya iki nokta seçerek, bu noktalardan geçen parkurları bulun ve analizleri görüntüleyin.",
   "track_analyzer_tips_1": "Sıralama düğmesi, parkurları herhangi bir veri türüne göre sıralamanızı sağlar",
-  "track_analyzer_tips_2": "Görünür veri alanlarını ayarlamak için <strong>Alanlar</strong> düğmesine tıklayın",
+  "track_analyzer_tips_2": "<strong>Alanlar</strong> düğmesine tıklayarak görünür veri alanlarını ayarlayın",
   "track_analyzer_select_tracks": "Parkurları seç",
   "track_analyzer_a": "A Noktası",
   "track_analyzer_b": "B Noktası",
@@ -192,12 +196,18 @@
   "weather_current": "Mevcut konum",
   "weather_generated": "Hava durumu oluşturuldu",
   "weather_source": "Kaynak",
-  "weather:map_layers": "Harita katmanları",
   "terrain_color_scheme": "Renk şeması",
   "terrain_desc": "Görselleştirme seçeneklerinden birini seçin: Rakım, Tepe Gölgeleme, Eğim.",
   "terrain_visibility": "Görünürlük",
   "dev_issues": "Sorunlar",
+  "plan_route": "Rota planla",
+  "create_track": "Parkur oluştur",
+  "import_track": "Parkur içe aktar",
+  "download_track": "Parkur indir",
+  "download_track_desc": "Tam veriyle, navigasyon talimatları dahil parkuru indirebilirsiniz veya diğer uygulamalarla kullanmak için uygun Basitleştirilmiş sürümü.",
+  "download_track_full": "Tam parkur verisi",
+  "download_track_simplified": "Basitleştirilmiş parkur",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "5a50156ec79b28a58f722daa1b1c1359c0d2673f2cf539be1dcced6d6ea0512c"
   }
 }
