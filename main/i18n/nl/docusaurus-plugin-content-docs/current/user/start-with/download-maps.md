@@ -1,8 +1,9 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Kaarten Downloaden
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,14 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Overzicht {#overview}
 
-Het uploaden van kaarten naar de OsmAnd-app is een belangrijke stap om een soepele werking en het gebruik van offline navigatie te garanderen. Zonder offline kaarten kan de app niet volledig functioneren. Door kaarten te downloaden krijgt u toegang tot kaarten van verschillende regio's, zodat u kunt navigeren zonder internetverbinding.  
+Het downloaden van kaarten naar de OsmAnd-app is een belangrijke stap om een soepele werking en het gebruik van offline navigatie te garanderen. Zonder offline kaarten kan de app niet volledig functioneren. Door kaarten te downloaden krijgt u toegang tot kaarten van verschillende regio's, zodat u kunt navigeren zonder internetverbinding.  
 
-U hebt twee *hoofd*manieren om kaarten te downloaden: **1)** begin vanaf het [initiële instellingenscherm](#initial-setup-screen) of [bekijk de lijst met regio's in het *Hoofdmenu*](#maps-and-resources), of **2)** [selecteer de gewenste regio direct op de kaart](#select-on-the-map). Dit geeft u de flexibiliteit om de regio's te selecteren die u wilt en zorgt ervoor dat de kaarten bij uw plannen passen.  
+U hebt twee *hoofd*manieren om kaarten te downloaden: **1)** begin vanaf het [initiële instellingenscherm](#initial-setup-screen) of [bekijk de lijst met regio's in het *Main Menu*](#maps-and-resources), of **2)** [selecteer de gewenste regio direct op de kaart](#select-on-the-map). Dit geeft u de flexibiliteit om de regio's te selecteren die u wilt en zorgt ervoor dat de kaarten bij uw plannen passen.  
 
-Hoewel OsmAnd zowel [Vector-](../map/vector-maps.md) als [Rasterkaarten](../map/raster-maps.md) ondersteunt, wordt aanbevolen om offline met vectorkaarten te beginnen. Dit type kaart (lees hier meer over [OsmAnd-kaarttypen](../personal/maps-resources.md#map-types)) zorgt voor een betrouwbare werking van alle belangrijke functies van de applicatie, inclusief [Zoeken](../search/index.md), [Navigatie](../navigation/index.md) en [Contextmenu](../map/map-context-menu.md). Dit is vooral belangrijk als uw reizen naar afgelegen locaties of plaatsen met beperkte internettoegang gaan.
+Hoewel OsmAnd zowel [Vector](../map/vector-maps.md) als [Raster](../map/raster-maps.md) ondersteunt, wordt aanbevolen om offline met vectorkaarten te beginnen. Dit type kaart (lees hier meer over [OsmAnd-kaarttypen](../personal/maps-resources.md#map-types)) zorgt voor een betrouwbare werking van alle belangrijke functies van de applicatie, inclusief [Zoeken](../search/index.md), [Navigatie](../navigation/index.md) en [Contextmenu](../map/map-context-menu.md). Dit is vooral belangrijk als uw reizen naar afgelegen locaties of plaatsen met beperkte internettoegang gaan.
 
 
 ## Initieel Instellingenscherm {#initial-setup-screen}
@@ -69,12 +69,12 @@ Als u een VPN gebruikt, kan OsmAnd een kaart voorstellen op basis van de virtuel
 
 **Locatiemenu:**
 
-- *Selecteer een andere regio.* Opent het menu [Kaarten downloaden](#maps-and-resources).
+- *Selecteer een andere regio.* Opent het [Kaarten downloaden](#maps-and-resources) menu.
 - *Sta ons toe uw locatie te bepalen.* [Vraagt om toestemming](../start-with/first-steps.md#permission-to-access-the-location) om toegang te krijgen tot de locatie en de vereiste kaart te vinden met behulp van deze gegevens.
 
 **Ander menu:**
 
-- *Herstellen vanuit OsmAnd Cloud.* Opent het hoofdscherm of inlogscherm van [OsmAnd Cloud](../personal/osmand-cloud.md). Dit is handig als u de app opnieuw hebt geïnstalleerd of de vorige gebruikerservaring wilt herstellen zonder opnieuw regio's en instellingen te selecteren.
+- *Herstellen vanuit OsmAnd Cloud.* Opent het [OsmAnd Cloud](../personal/osmand-cloud.md) hoofdscherm of inlogscherm. Dit is handig als u de app opnieuw hebt geïnstalleerd of de vorige gebruikerservaring wilt herstellen zonder opnieuw regio's en instellingen te selecteren.
 - *Herstellen vanuit bestand.* Opent de bestandsbeheerder van het apparaat om een `.osf`-bestand te selecteren en te importeren.  
 
 
@@ -102,9 +102,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Het scherm [Kaarten & Bronnen](../personal/maps-resources.md) geeft toegang tot de volgende secties:
 
-- [Downloads](../personal/maps-resources.md#downloads). Biedt een uitgebreide selectie van [OsmAnd-kaarttypen](../personal/maps-resources.md#map-types).
-- [Lokaal](../personal/maps-resources.md#local). Toont alle kaartgegevens die momenteel op uw apparaat zijn opgeslagen, inclusief aangepaste en geïmporteerde bronnen.
-- [Updates](../personal/maps-resources.md#updates). Hiermee kunt u kaarten maandelijks vernieuwen om uw gegevens actueel te houden.
+- [Downloads](../personal/maps-resources.md#downloads-menu). Biedt een uitgebreide selectie van [OsmAnd-kaarttypen](../personal/maps-resources.md#map-types).
+- [Lokaal](../personal/maps-resources.md#local-menu). Toont alle kaartgegevens die momenteel op uw apparaat zijn opgeslagen, inclusief aangepaste en geïmporteerde bronnen.
+- [Updates](../personal/maps-resources.md#updates-menu). Hiermee kunt u kaarten maandelijks vernieuwen om uw gegevens actueel te houden.
 
 ### Kaarten downloaden {#downloading-maps}
 
@@ -114,7 +114,7 @@ Om een specifiek kaarttype voor een land of regio te downloaden:
 - Selecteer uw gewenste land of regio uit de lijst.
 - Op het volgende scherm, bekijk en kies uit de beschikbare kaarttypen voor dat gebied.
 
-U kunt informatie over andere kaarttypen vinden in de sectie [Downloads](../personal/maps-resources.md#downloads) van het artikel **Kaarten**.
+U kunt informatie over andere kaarttypen vinden in de [Downloads](../personal/maps-resources.md#downloads-menu) sectie van het artikel **Kaarten**.
 
 ## Wereldkaartopties {#world-map-options}
 

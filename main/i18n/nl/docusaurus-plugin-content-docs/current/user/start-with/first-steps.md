@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Eerste Stappen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Overzicht {#overview}
 
 Welkom bij OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
-Ontdek hoe u kaarten kunt downloaden, de applicatie kunt configureren, de kaart kunt gebruiken en een route kunt uitstippelen, hoe u de navigatie start en hoe u naar nuttige plaatsen zoekt. Maak kennis met de belangrijkste punten van het privacybeleid van OsmAnd en de vereiste toestemmingen.
+Ontdek hoe u kaarten kunt downloaden, de applicatie kunt configureren, de kaart kunt gebruiken en een route kunt uitstippelen, hoe u de navigatie start en hoe u nuttige plaatsen zoekt. Maak kennis met de belangrijkste punten van het privacybeleid van OsmAnd en de vereiste toestemmingen.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -50,7 +50,7 @@ OsmAnd is een mobiele applicatie voor kaarten en navigatie, beschikbaar voor **A
 
 <AppleStore/>
 
-[Lees meer](../purchases/index.md) over OsmAnd-versies en aankopen.
+[Lees meer](../purchases/index.md) over OsmAnd-versies en Aankopen.  
 
 
 ## Welkom bij OsmAnd {#welcome-to-osmand}
@@ -88,7 +88,7 @@ Ons doel is om een volledig functionele, op kaarten gerichte applicatie te creë
 
 </Tabs>
 
-We raden u aan OsmAnd toestemming te geven om informatie over de precieze locatie van uw apparaat te ontvangen. We verzamelen, gebruiken of delen uw privégegevens niet, dus toegang tot precieze geolocatie is nodig voor de correcte offline werking van zoek-, navigatie- en andere OsmAnd-functies.
+We raden u aan OsmAnd toestemming te geven om informatie over de precieze locatie van uw apparaat te ontvangen. We verzamelen, gebruiken of delen uw privégegevens niet, dus toegang tot precieze geolocatie is nodig voor de correcte offline werking van zoek-, navigatie- en andere OsmAnd-functies.  
 
 
 ### Hoe kaarten te downloaden {#how-to-download-maps}
@@ -109,7 +109,7 @@ We raden u aan OsmAnd toestemming te geven om informatie over de precieze locati
 
 </Tabs>
 
-De OsmAnd-app werkt met verschillende soorten kaarten, maar kan alleen volledig functioneren met gedownloade offline kaarten. Na het *<Translate android="true" ids="get_started"/>*-scherm wordt u daarom gevraagd om de [*kaart te downloaden*](../start-with/download-maps.md#initial-setup-screen) van uw regio. U kunt een andere regio kiezen, herstellen vanuit [OsmAnd Cloud](../personal/osmand-cloud.md), of deze stap overslaan en later kaarten downloaden.
+De OsmAnd-app werkt met verschillende soorten kaarten, maar kan alleen volledig functioneren met gedownloade offline kaarten, dus na het *<Translate android="true" ids="get_started"/>*-scherm wordt u gevraagd om de [*kaart te downloaden*](../start-with/download-maps.md#initial-setup-screen) van uw regio. U kunt een andere regio kiezen, herstellen vanuit [OsmAnd Cloud](../personal/osmand-cloud.md), of deze stap overslaan en later kaarten downloaden.  
 Voor andere beschikbare opties voor het downloaden van kaarten, zie het artikel [Kaarten downloaden](../start-with/download-maps.md).
 
 :::note Beginnen met offline kaarten
@@ -130,7 +130,7 @@ Hoewel OsmAnd u toestaat kaarten voor alle beschikbare regio's te downloaden, is
 
 ### Hoe de app-taal te wijzigen {#how-to-change-app-language}
 
-De optie *Weergavetaal* wordt gebruikt om de taal van de hele app te wijzigen, inclusief pop-upmeldingen, interne tekst, berichten en meer. Tot en met Android 12 kunt u in OsmAnd de weergavetaal rechtstreeks in de app aanpassen aan uw voorkeuren. Vanaf Android 13 en op iOS-apparaten kan de weergavetaal alleen worden gewijzigd in de systeeminstellingen (zie hoe u de taalvoorkeuren per app kunt wijzigen in [Android](https://developer.android.com/guide/topics/resources/app-languages) en [iOS](https://developer.apple.com/news/?id=u2cfuj88)).
+De optie *Weergavetaal* wordt gebruikt om de taal van de hele app te wijzigen, inclusief pop-upmeldingen, interne tekst, berichten en meer. Tot en met Android 12 kunt u in OsmAnd de weergavetaal rechtstreeks in de app aanpassen aan uw voorkeuren. Vanaf Android 13 en op iOS-apparaten kan de weergavetaal alleen worden gewijzigd in de systeeminstellingen (zie hoe u de taalvoorkeuren per app kunt wijzigen in [Android](https://developer.android.com/guide/topics/resources/app-languages) en [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -138,7 +138,7 @@ De optie *Weergavetaal* wordt gebruikt om de taal van de hele app te wijzigen, i
 
 Ga naar: *Instellingen → Apps → OsmAnd → Taal*
 
-![Algemene Instellingen Taal Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)
+![Algemene Instellingen Taal Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
 </TabItem>
 
@@ -183,9 +183,9 @@ U kunt de applicatie-instellingen beheren als [Algemene instellingen](../persona
 
 ### Hoe plugins te configureren {#how-to-configure-plugins}
 
-[Plugins](../plugins/index.md#configure-plugin) breiden de functionaliteit van de applicatie aanzienlijk uit. Bijna alle plugins hebben hun eigen [Kaartacties](../map/map-context-menu.md), [Kaartlagen](../map/configure-map-menu.md), [Kaartdownloads](../start-with/download-maps.md) en [Instellingen](../plugins/#plugin-settings).
+[Plugins](../plugins/index.md#configure-plugin) breiden de functionaliteit van de applicatie aanzienlijk uit. Bijna alle plugins hebben hun eigen [Kaartacties](../map/map-context-menu.md), [Kaartlagen](../map/configure-map-menu.md), [Kaartdownloads](../start-with/download-maps.md) en [Instellingen](../plugins/#plugin-settings).  
 
-U kunt plugins in- of uitschakelen via [Hoofdmenu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).
+U kunt plugins in- of uitschakelen via [Hoofdmenu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-plugin).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -194,7 +194,7 @@ U kunt plugins in- of uitschakelen via [Hoofdmenu](../start-with/main-menu.md) �
 ![Plugins inschakelen Android](@site/static/img/settings/plugins_enable_android.png) ![Pluginvoorbeeld Android](@site/static/img/settings/plugin_example_android.png)
 
 Om plugins in/uit te schakelen, ga naar:
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Inschakelen
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Inschakelen
 
 </TabItem>
 
@@ -220,13 +220,13 @@ De kaart is een kernelement van OsmAnd, en het is belangrijk om te weten [hoe u 
 
 <TabItem value="android" label="Android">
 
-![Kaart configureren Android](@site/static/img/settings/configure_map_menu_android.png) ![Voorbeeld kaartconfiguratie Android](@site/static/img/settings/configure_map_example_android.png)
+![Kaart configureren Android](@site/static/img/settings/configure_map_menu_android.png) ![Kaartconfiguratievoorbeeld Android](@site/static/img/settings/configure_map_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kaart configureren iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Voorbeeld kaartconfiguratie iOS](@site/static/img/settings/configure_map_example_ios.png)
+![Kaart configureren iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Kaartconfiguratievoorbeeld iOS](@site/static/img/settings/configure_map_example_ios.png)
 
 </TabItem>
 
@@ -243,13 +243,13 @@ De kaart is een kernelement van OsmAnd, en het is belangrijk om te weten [hoe u 
 
 <TabItem value="android" label="Android">
 
-![Scherm configureren Android](@site/static/img/widgets/configure_screen_android.png) ![Voorbeeld schermconfiguratie Android](@site/static/img/settings/configure_screen_example_android.png)
+![Scherm configureren Android](@site/static/img/widgets/configure_screen_android.png) ![Schermconfiguratievoorbeeld Android](@site/static/img/settings/configure_screen_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Scherm configureren iOS](@site/static/img/settings/configure_screen_ios.png) ![Voorbeeld schermconfiguratie iOS](@site/static/img/settings/configure_screen_example_ios.png)
+![Scherm configureren iOS](@site/static/img/settings/configure_screen_ios.png) ![Schermconfiguratievoorbeeld iOS](@site/static/img/settings/configure_screen_example_ios.png)
 
 </TabItem>
 
@@ -260,7 +260,7 @@ De kaart is een kernelement van OsmAnd, en het is belangrijk om te weten [hoe u 
 
 ### Hoe persoonlijke gegevens aan kaarten toe te voegen {#how-to-add-personal-data-to-maps}
 
-Met OsmAnd kunt u verschillende markeringen op de kaart maken voor uw persoonlijke behoeften. Bijvoorbeeld, [Favoriete punten](../personal/favorites.md) - persoonlijke punten met naam, icoon & categorie, [Markers](../personal/markers.md) - snel toegevoegde punten als doel, [Audio/Video-notities](../plugins/audio-video-notes.md) - media-notities opgenomen op een specifiek punt, [Tracks](../personal/tracks/manage-tracks.md) - opgenomen en geïmporteerde tracks & tochten.
+Met OsmAnd kunt u verschillende markeringen op de kaart maken voor uw persoonlijke behoeften. Bijvoorbeeld, [Favoriete punten](../personal/favorites.md) - persoonlijke punten met naam & icoon & categorie, [Markers](../personal/markers.md) - snel toegevoegde punten als doel, [Audio/Video-notities](../plugins/audio-video-notes.md) - media-notities opgenomen op een specifiek punt, [Tracks](../personal/tracks/manage-tracks.md) - opgenomen en geïmporteerde tracks & tochten.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -431,7 +431,7 @@ OsmAnd wordt aangedreven door [OpenStreetMap](https://www.openstreetmap.org/)-da
 
 Er zijn twee manieren om OsmAnd te sluiten.
 
-1. Sluit een app door deze omhoog van het scherm te vegen. Voor een verticale lijst met apps, veegt u naar links of rechts.
+1. Sluit een app door deze omhoog van het scherm te vegen. Voor een verticale lijst met apps, veegt u naar links of rechts.  
 
 2. Mogelijk moet u de volgende stappen uitvoeren voordat u dit doet, anders blijft OsmAnd op de achtergrond draaien:
     - [Navigatie afbreken](../navigation/setup/route-navigation.md#start--stop-navigation)
@@ -447,7 +447,7 @@ Er zijn twee manieren om OsmAnd te sluiten.
 
 <TabItem value="ios" label="iOS">
 
-Sluit een app door deze omhoog van het scherm te vegen. Voor een verticale lijst met apps, veegt u naar links of rechts.
+Sluit een app door deze omhoog van het scherm te vegen. Voor een verticale lijst met apps, veegt u naar links of rechts.  
 
 Mogelijk moet u de volgende stappen uitvoeren voordat u dit doet, anders blijft OsmAnd op de achtergrond draaien:
 
@@ -490,9 +490,9 @@ Tik op een actie-icoon om de applicatie onmiddellijk te starten met de geselecte
 
 </Tabs>
 
-In het *Help-menu* vindt u artikelen van onze site [www.osmand.net/docs](https://osmand.net/docs/intro/). Na de eerste download (internetverbinding vereist) zijn de helpartikelen offline beschikbaar.
-Het eerste subonderdeel, *Offline Help*, bevat de **Meest bekeken** (of populaire) artikelen onder onze gebruikers. De secties **Gebruikershandleiding** en **Probleemoplossing** hebben dezelfde structuur als op de website.
-In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAnd, versie-informatie over uw applicatie, release-opmerkingen en contactgegevens voor ondersteuning. Via Help kunt u ook [logcat- en crashlogs](../troubleshooting/crash-logs.md#crash-and-logcat-logs) verzenden.
+In het *Help-menu* vindt u artikelen van onze site [www.osmand.net/docs](https://osmand.net/docs/intro/). Na de eerste download (internetverbinding vereist) zijn de helpartikelen offline beschikbaar.  
+Het eerste subonderwerp, *Offline Help*, bevat de **Meest bekeken** (of populaire) artikelen onder onze gebruikers. Deze artikelen worden weergegeven in de taal die is ingesteld voor de applicatie, als deze taal wordt ondersteund op onze documentatiewebsite. Momenteel ondersteunde talen zijn: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, en *<Translate android="true" ids="lang_uk"/>*. Als u de applicatietaal wijzigt, start dan OsmAnd opnieuw om de documentatie in de geselecteerde taal te openen. Als een vertaling niet beschikbaar is, wordt automatisch de Engelse versie van de pagina weergegeven. De secties **Gebruikershandleiding** en **Probleemoplossing** hebben dezelfde structuur als op de website.  
+In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAnd, versie-informatie over uw applicatie, release-opmerkingen en contactgegevens voor ondersteuning. Via Help kunt u ook [logcat- en crashlogs](../troubleshooting/crash-logs.md#crash-and-logcat-logs) verzenden.  
 
 ### Menu {#menu}
 
@@ -510,7 +510,7 @@ In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAn
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 - **Crashlog verzenden** (*voor Android*). Stelt gebruikers in staat om rapporten van app-crashes naar ontwikkelaars te sturen, wat helpt bij het identificeren en oplossen van problemen.
 - **Logcat-log verzenden** (*voor Android*). Biedt gebruikers de mogelijkheid om gedetailleerde logs van app-crashes naar ontwikkelaars te sturen, wat diepere analyse en probleemoplossing vergemakkelijkt.
@@ -653,7 +653,7 @@ U kunt meer te weten komen over ons team, de huidige versie van de app en wat er
 
 ## Privacy {#privacy}
 
-Het is een [open source](https://github.com/osmandapp/osmand), advertentievrije / trackervrije, op privacy gerichte applicatie. Om maximale privacy te waarborgen, biedt OsmAnd in de eerste plaats offline kaarten, zodat er geen interactie of geo-informatie van uw apparaat lekt. We zijn zeer attent op welke gegevens worden verzameld en welke gegevens via het netwerk worden overgedragen. U kunt hier meer over lezen in ons [Privacybeleid](https://osmand.net/help-online/privacy-policy).
+Het is een [open source](https://github.com/osmandapp/osmand), advertentievrije / trackervrije, op privacy gerichte applicatie. Om maximale privacy te waarborgen, biedt OsmAnd in de eerste plaats offline kaarten, zodat er geen interactie of geo-informatie van uw apparaat lekt. We zijn zeer attent op welke gegevens worden verzameld en welke gegevens via het netwerk worden overgedragen. U kunt hier meer over lezen in ons [Privacybeleid](https://osmand.net/help-online/privacy-policy).  
 
 
 ## Toestemmingen {#permissions}

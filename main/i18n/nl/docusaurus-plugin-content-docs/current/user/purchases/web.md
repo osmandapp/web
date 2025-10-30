@@ -1,8 +1,9 @@
 ---
-source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
+source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
 sidebar_position: 3
 title:  Webaankopen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Hoe te kopen {#how-to-buy}
@@ -24,12 +24,12 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 
 ### Verschil tussen aankopen {#difference-between-purchases}
 
-| Abonnement | Beschrijving | Opmerkingen |
+| Plan | Beschrijving | Opmerkingen |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies ontgrendelt voor de gratis OsmAnd-app. | Ondersteunt **cross-platform** toegang |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnement** dat alle [pro-functies](#free-and-paid-features) ontgrendelt, inclusief CarPlay en 3D-reliëf. | Ondersteunt **cross-platform** toegang |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementplan** dat alle [pro-functies](#free-and-paid-features) ontgrendelt, inclusief CarPlay en 3D-reliëf. | Ondersteunt **cross-platform** toegang |
 
-:::note
+:::note  
 **Cross-platform toegang** betekent dat u OsmAnd kunt kopen op onze website of in een winkel (bijv. *App Store, Google Play of osmand.net*) en het op een ander platform kunt gebruiken door [uw aankoop te koppelen aan een OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
 :::
 
@@ -40,9 +40,9 @@ Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in a
 
 <!--
 
-:::danger September Sale prices
+:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
+*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
 
 :::
 
@@ -64,7 +64,7 @@ Starting from the third year, the full price will apply.
 -->
 
 
-|    | OsmAnd Gratis   | **Maps+** Eenmalig | **Maps+** Abonnement | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
@@ -86,11 +86,11 @@ Uw aankopen zijn gekoppeld aan uw [OsmAnd Cloud-account](../personal/osmand-clou
 
 1. Installeer de OsmAnd-app (Android of iOS).
 2. Open de app met een actieve internetverbinding.
-3. Ga naar:
-   **Menu → Instellingen → OsmAnd Cloud → Ik heb al een account**
+3. Ga naar:  
+   **Menu → Instellingen → OsmAnd Cloud → Ik heb al een account**  
    [Meer info hier](../personal/osmand-cloud.md#login)
-4. Om aankopen te herstellen:
-   Ga naar **Menu → Instellingen → Aankopen → Aankopen herstellen**
+4. Om aankopen te herstellen:  
+   Ga naar **Menu → Instellingen → Aankopen → Aankopen herstellen**  
    Het scherm zal bevestigen dat **Maps+**, **Pro** of **Live** is geactiveerd.
 
 **Als het herstellen niet werkt:**

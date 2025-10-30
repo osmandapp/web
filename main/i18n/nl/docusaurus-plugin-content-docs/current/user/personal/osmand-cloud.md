@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -311,6 +311,8 @@ In dit menu kunt u selecteren welke gegevens en mappen u naar de Cloud wilt uplo
 
 Alle [kaarten](../start-with/download-maps.md) worden opgeslagen op het apparaat waarop ze eerder zijn gedownload. OsmAnd Cloud slaat alleen informatie op over welke kaarten u heeft en de datum waarop ze voor het laatst zijn gewijzigd.
 
+Het uitschakelen van de back-up voor een specifiek gegevenstype stopt eenvoudigweg de synchronisatie ervan met de Cloud. Uw bestaande gegevens blijven opgeslagen en kunnen later opnieuw worden geback-upt indien nodig.
+
 
 ### Opslag beheren {#manage-storage}
 
@@ -334,7 +336,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 </Tabs>
 
-De menusectie **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) toont informatie over hoeveel van de 3,15 gigabyte aan geheugen in *Instellingen*, *Mijn Plaatsen* en *Bronnen* wordt gebruikt. U kunt wijzigingen in afzonderlijke gegevenstypen uit OsmAnd Cloud verwijderen, maar in dat geval kan de actie niet ongedaan worden gemaakt.
+De menusectie **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) toont informatie over hoeveel van de 3,15 gigabyte aan geheugen in *Instellingen*, *Mijn Plaatsen* en *Bronnen* wordt gebruikt. U kunt de opslaggrootte van elk gegevenstype bekijken en deze verwijderen uit OsmAnd Cloud indien nodig.
+
+Het verwijderen van gegevens uit de Cloud heeft geen invloed op de back-upstatus ervan of op lokale kopieën op uw apparaat. Alle verwijderde items blijven 30 dagen beschikbaar in de Prullenbak en kunnen in die periode worden hersteld.
 
 
 ### Account {#account}

@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -31,7 +32,7 @@ Releasedatum 06/2025:
 - Uphills/Downhills-analysator toegevoegd.
 - Uitgebreide Wikipedia- en Wikivoyage-integratie voor meer POI's.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Versie 5.0 {#version-50}
 
@@ -49,7 +50,7 @@ Releasedatum 04/2025:
 - Prominente toppen zijn nu vindbaar via kaart en zoekfunctie
 - Bergtoppen in voet
 - Toegevoegd: Rotswanden en klimgebieden op de kaart
-- Adreszoekfunctie in de VS is verbeterd
+- Adreszoekfunctie in de VS is verbeterd  
 - Hebreeuwse TTS toegevoegd voor navigatie
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -797,7 +798,7 @@ Releasedatum 04/2012:
 
 Releasedatum 09/2011:
 
-- POI-zoekfunctie op naam in grote gebieden (landen) implementeren
+- POI-zoekfunctie op naam in grote gebieden (landen) implementeren  
 - Offline gegevensbeheer (offline gegevens direct in OsmAnd downloaden, verwijderen, activeren/deactiveren)
 - Favoriete punten en groepen (favorieten categoriseren, verwijderen, beheren)
 - Hoogte-informatie

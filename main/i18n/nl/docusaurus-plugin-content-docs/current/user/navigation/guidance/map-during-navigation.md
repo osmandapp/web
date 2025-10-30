@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Kaartscherm tijdens navigatie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -29,7 +29,7 @@ Dit artikel beschrijft hoe u het uiterlijk van de kaart tijdens de navigatie kun
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Kaartscherm tijdens navigatie](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Kaartscherm tijdens navigatie](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Kaartscherm tijdens navigatie](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Kaartscherm tijdens navigatie](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,9 @@ Tijdens de navigatie past het uiterlijk van de kaart zich aan op basis van het g
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing. | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Schaal de kaart automatisch op basis van uw snelheid, zolang de kaart is gesynchroniseerd met uw huidige positie. | *Waarde:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - handmatig zoomen. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | Het pictogram van de huidige positie wordt gekoppeld aan de huidige navigatieroute. | U kunt deze optie uitschakelen, maar alle weggerelateerde opties, zoals rijstrookweergave, zijn dan ook niet zichtbaar tijdens de navigatie. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Bepaalt de koers op basis van de navigatieroute die u volgt. | De instelling is alleen zichtbaar als de [OsmAnd ontwikkelingsplugin](../../plugins/development.md) is ingeschakeld. <br /> Deze instellingen moeten worden ingeschakeld als de oriëntatie van de richtingkaart wordt omgedraaid of trilt bij gebruik van [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *Auto zoom 3D-hoek* | Stelt de helling van de kaart in bij overschakelen naar de 3D-weergave tijdens de navigatie. Een hogere hoek maakt de horizon verder weg, wat meer zicht naar voren geeft. |Het wordt alleen toegepast wanneer Auto zoom is ingeschakeld. Waarden: 20°, 25°, 30°, 35°, 40°. Standaard: 25°.  |
+| *Volgende bocht voorspellen* | Draait de kaart automatisch iets vooruit om de volgende bocht of manoeuvre tijdens de navigatie te tonen. Helpt om aankomende acties te anticiperen.  | Standaard ingeschakeld. Als u een profiel exporteert en opnieuw importeert, controleer dan deze instelling, omdat deze in sommige eerdere versies kon terugvallen op “ingeschakeld”.   |
+| *<Translate android="true" ids="snap_to_road"/>*  | Het pictogram van de huidige positie wordt gekoppeld aan de huidige navigatieroute.  | U kunt deze optie uitschakelen, maar alle weggerelateerde opties, zoals rijstrookweergave, zijn dan ook niet zichtbaar tijdens de navigatie.  |
 
 
 ## Punten langs de route tonen {#show-points-along-the-route}
@@ -62,6 +63,10 @@ De instelling *Langs de route tonen* stelt u in staat om aanvullende routeparame
 - De mogelijkheid om verschillende afstanden in te stellen (tot 5 km, of 3,11 mijl, afhankelijk van de ingestelde [lengte-eenheid](../../personal/profiles.md#units--formats)) vanaf de route tot nabijgelegen punten is handig bij het gebruik van routeringstypes zoals [Rechte lijn](../routing/straight-line-routing.md) of [Direct-naar-punt](../routing/direct-to-point-routing.md).
 - Voor de instelling *Langs de route tonen* wordt aanbevolen om [Spraakinstructies](../guidance/voice-navigation.md) voor navigatie te gebruiken.
 - *POI's, Favorieten en Verkeerswaarschuwingen* worden niet weergegeven in de lijst voor een route die u al hebt afgelegd.
+
+:::info note
+De optie **Langs de route tonen** beïnvloedt alleen de lijsten met POI's en Mijn Favorieten, niet de kaart zelf. Pictogrammen van POI's en Favorieten worden overal op de kaart weergegeven, ongeacht de afstand tot de route.
+:::
 
 
 ### Punten bekijken en selecteren {#view-and-select-points}
@@ -78,7 +83,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_naviga
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Punten langs de route tonen*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Langs de route tonen*
 
 ![punten langs de route](@site/static/img/navigation/show-points-along-4-ios.png)  
 
@@ -93,7 +98,7 @@ Wanneer u een route maakt, kunt u in de sectie *Navigatie* de typen punten inste
 
 ![POI-overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI-overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
-POI-instellingen in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) zijn gekoppeld aan de instelling **Langs de route tonen**. Dit is in wezen een extra instelling voor het weergeven van POI's op de kaart, direct gerelateerd aan de gemaakte route.  
+POI-instellingen in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) zijn gekoppeld aan de instelling **Langs de route tonen**. 
 
 Wanneer u de weergave van bepaalde POI's specificeert op de *Kaart configureren*, worden ze allemaal weergegeven op de kaarten die u hebt gedownload, of u nu categorieën hebt geselecteerd of, als het u niet uitmaakt welke categorie, nabijgelegen POI's hebt geselecteerd.  
 
@@ -150,7 +155,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 | Parameter | Beschrijving | Opmerking |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Meldingen, zoals verkeerswaarschuwingen of snelheidslimieten, verschijnen op het scherm als een widget. Ze verschijnen linksonder in het scherm terwijl u navigeert. | [Soorten waarschuwingswidgets](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Meldingen, zoals verkeerswaarschuwingen of snelheidslimieten, verschijnen op het scherm als een widget. Ze verschijnen linksonder in het scherm terwijl u navigeert. | [Soorten waarschuwingswidgets](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Uiterlijk van de routelijn {#route-line-appearance}
@@ -169,7 +174,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigatieroute Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Navigatieroute iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -190,10 +195,10 @@ U kunt het uiterlijk van de routelijn selecteren op stijl of handmatig de kleur,
 De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehele kleur verandert afhankelijk van het geselecteerde type uit de OsmAnd-collectie, en volgens de **Kaartlegenda**. Als alternatief wordt hun kleur de kleur en transparantie die u handmatig instelt.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Gebruikt met de standaardkleuren. Voor een volledige beschrijving van de kleuren, ga naar [Standaard kaartstijlen](../../map/vector-maps.md#default-map-styles).  
-    ![kaartstijl](@site/static/img/navigation/route/map_st_2.png)
+    ![Kaartstijl](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Aangepast***. Hiermee kunt u een lijn selecteren in elke gewenste kleur en transparantie. U kunt verschillende instellingen selecteren voor de dagkaart en afzonderlijk voor de nachtkaart.  
-    ![aangepast](@site/static/img/navigation/route/custom.png)   ![aangepast](@site/static/img/navigation/route/custom_ios.png)
+    ![Aangepast](@site/static/img/navigation/route/custom.png)   ![Aangepast](@site/static/img/navigation/route/custom_ios.png)
 
 - ***<Translate android="true" id="altitude"/>***. Het toont de hoogte van het routepunt als een **groen-geel-rood** verloop. **Groen** geeft het laagste punt van de route aan, **geel** geeft de gemiddelde hoogte van het punt aan, en **rood** is het hoogste. Als het hoogteverschil van de route < 100 meter is, wordt het verloop gedeeltelijk of niet toegepast, bijvoorbeeld voor een eenvoudige klim van 100 meter naar 150 meter - het verloop zal **groen-geel** zijn. Merk op dat de kleur niet de absolute waarde van de hoogte vertegenwoordigt.  
     ![Hoogte](@site/static/img/navigation/route/Altitude_rl.png)
@@ -225,13 +230,13 @@ De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehel
 U kunt de breedte van de routelijn aanpassen aan de weg of het pad dat op de kaart wordt weergegeven. Voor een duidelijkere visuele identificatie kunt u de lijnbreedte naar wens handmatig vergroten of verkleinen. Voor meer details, zie het artikel *Tracks en Routes — [Uiterlijk](../../map/tracks/appearance.md)*.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Het wordt gebruikt met de standaardbreedte ingesteld door OsmAnd. Een volledige beschrijving is te vinden in het artikel *Vectorkaarten*, sectie [Kaartstijl](../../map/vector-maps.md#default-map-styles).  
-    ![kaartstijl](@site/static/img/navigation/route/map_st_2.png)
+    ![Kaartstijl](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Dunne, Medium en Dikke breedtes***. U kunt de breedte van de lijn selecteren om overeen te komen met de breedte van de weg, of de routelijn sterker benadrukken op de kaart.  
-    ![breedte](@site/static/img/navigation/route/width_med.png)
+    ![Breedte](@site/static/img/navigation/route/width_med.png)
 
 - ***Aangepast***. Hiermee kunt u een lijn weergeven met de breedte die u nodig heeft. Gebruik de schuifbalk om de breedte te selecteren.  
-    ![aangepast](@site/static/img/navigation/route/custom_2.png)  
+    ![Aangepast](@site/static/img/navigation/route/custom_2.png)  
 
 
 ### Afslagpijlen {#turn-arrows}
@@ -239,10 +244,10 @@ U kunt de breedte van de routelijn aanpassen aan de weg of het pad dat op de kaa
 De instelling Afslagpijlen stelt u in staat om te selecteren of afslagpijlen op de routelijn worden weergegeven.  
 
 - ***Op kaart***  
-    ![Hoogte](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![afslagpijl_ios_kaart](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Hoogte](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Afslagpijl iOS op kaart](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***In app***  
-    ![Hoogte](@site/static/img/navigation/route/turn_arr.png)   ![afslagpijl_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Hoogte](@site/static/img/navigation/route/turn_arr.png)   ![Afslagpijl iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Gerelateerde artikelen {#related-articles}

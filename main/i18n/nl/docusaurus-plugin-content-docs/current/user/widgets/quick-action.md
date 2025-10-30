@@ -1,8 +1,9 @@
 ---
-source-hash: 6ed7b2af27dd55b412539bc8c15f73cc2d55449aac9a5bc6af5328ccd31ec35b
+source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
 sidebar_position: 7
 title:  Snelle Actie (Aangepaste knoppen)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,10 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Overzicht {#overview}
 
-De Snelle Actie widget is een interactief gebruikersinterface-element dat snelle toegang biedt tot belangrijke functies of acties zonder extra instellingen te hoeven openen. Deze widget wordt op het hoofdkaartscherm geplaatst en stelt u in staat de interactie met de applicatie te vereenvoudigen en te versnellen, waardoor deze handiger en efficiënter wordt.
+De Snelle Actie widget is een interactief gebruikersinterface-element dat snelle toegang biedt tot belangrijke functies of acties zonder extra instellingen te hoeven openen. Deze widget wordt op het hoofdkaartscherm geplaatst en stelt u in staat de interactie met de applicatie te vereenvoudigen en te versnellen, waardoor deze handiger en efficiënter wordt.  
 
 ![Snelle actie widget](@site/static/img/widgets/quick_action_widget.png)
 
@@ -28,7 +28,7 @@ De Snelle Actie widget is een interactief gebruikersinterface-element dat snelle
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
@@ -46,11 +46,11 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,cus
 
 </Tabs>
 
-Om de Snelle Actie knop te gebruiken, moet u eerst deze widget inschakelen.
+Om de Snelle Actie knop te gebruiken, moet u eerst deze widget inschakelen.  
 
 <!--
-- Om het Snelle actie menu te openen, tikt u gewoon op de knop.
-- Standaard verschijnt de Snelle actie knop in de rechterhoek (boven de zoomknoppen), maar deze kan naar elk deel van het scherm worden verplaatst door er lang op te tikken. -->
+- To open the Quick action menu, just tap the button.
+- By default, the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to any part of the screen by long tapping it. -->
 
 
 ### Acties Toevoegen en Verwijderen {#add-and-delete-actions}
@@ -79,7 +79,7 @@ Alle acties zijn georganiseerd in het **Actie Toevoegen** menu en gegroepeerd pe
 
 U kunt een of meer [acties](#action-types) toewijzen aan de snelle actie knop. Er zijn twee manieren om acties toe te voegen.
 
-- **In het Configureer scherm**. Selecteer een knop uit de lijst en tik op de&nbsp;  "**＋**"  &nbsp;knop. U moet eerst het [actietype](#action-types) selecteren en vervolgens de naam en [parameters](#actions-in-loop) wijzigen.
+- **In het Configureer scherm**. Selecteer een knop uit de lijst en tik op de&nbsp;  "**＋**"  &nbsp;knop. U moet eerst het [actietype](#action-types) selecteren en vervolgens de naam en [parameters](#action-parameters) wijzigen.
 - **In het paneel van de snelle actie knop**. Tik op de *Snelle Actie knop* op het kaartscherm. Aan het einde van de lijst, op het laatste scherm in het paneel, bevindt zich het "**＋**"  &nbsp;*Actie Toevoegen* vak. Tik erop en selecteer een actie uit de [lijst met types](#action-types).
 
 
@@ -95,7 +95,7 @@ U kunt een of meer [acties](#action-types) toewijzen aan de snelle actie knop. E
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Snelle actie widget_android_volgorde](@site/static/img/widgets/quick_action_widget_android_order.png)
 
@@ -109,7 +109,7 @@ U kunt een of meer [acties](#action-types) toewijzen aan de snelle actie knop. E
 
 </Tabs>
 
-De acties die aan een snelle actie knop zijn toegewezen, zijn gegroepeerd in schermen. Deze groepen acties worden geopend wanneer u op die knop op de kaart tikt. Nieuwe schermen worden automatisch aangemaakt wanneer de lijst met acties meer dan *6 items* bevat. U kunt acties herschikken naar uw voorkeur door deze stappen te volgen:
+De acties die aan een snelle actie knop zijn toegewezen, zijn gegroepeerd in schermen. Deze groepen acties worden geopend wanneer u op die knop op de kaart tikt. Nieuwe schermen worden automatisch aangemaakt wanneer de lijst met acties meer dan *6 items* bevat. U kunt acties herschikken naar uw voorkeur door deze stappen te volgen:  
 
 **Voor Android**.
 
@@ -121,26 +121,57 @@ De acties die aan een snelle actie knop zijn toegewezen, zijn gegroepeerd in sch
 2. Via het snelle actie menu:
 
     - Open het snelle actie menu, tik dan lang op *Actie Toevoegen*.
-    - Gebruik *Ingedrukt houden en slepen* op het icoon met de twee verticale lijnen om acties te herschikken.
+    - Gebruik *Ingedrukt houden en slepen* op het icoon met de twee verticale lijnen om acties te herschikken.  
 
 **Voor iOS**.
 
 - Navigeer naar *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Tik op *Bewerken* (potloodicoon), en gebruik dan *Ingedrukt houden en slepen* op het icoon met de drie verticale lijnen om acties te herschikken.
 
-#### Acties in een Lus {#actions-in-loop}
-
-![Aangepaste knop Android](@site/static/img/widgets/actions_in_loop_andr.png)
-
-Voor sommige acties kunt u een lijst met lagen toewijzen die bij elke tik in een cirkel veranderen: *Kaartbron*, *Kaartstijl*, *Overlay*, *Underlay*, *Terrein kleurenschema*, *Profiel toevoegen*.
-
-De knop stelt u in staat om een enkele laag of een lijst met lagen toe te wijzen die circulair veranderen wanneer erop wordt getikt of met een tussentijds dialoogvenster.
-
-- **Toon een tussentijds dialoogvenster**. Toont een dialoogvenster met een lijst van kaarten.
-- **Toon geen tussentijds dialoogvenster**. De kaartbronnen veranderen in een gedefinieerde volgorde.
+:::info note
+Sommige acties zoals *Kaartbron*, *Kaartstijl*, *Overlay*, *Underlay*, *Terrein kleurenschema* en *Profiel toevoegen* kunnen als een lus worden toegewezen. Elke tik op de knop doorloopt de geselecteerde lagen. Een tussentijds dialoogvenster kan worden weergegeven om handmatig uit de lijst te selecteren, of verborgen om in de gedefinieerde volgorde te schakelen.
+:::
 
 
-### Positie op de Kaart Wijzigen {#change-position-on-the-map}
+## Knoppen op het Scherm {#buttons-on-the-screen}
+
+### Aangepaste knoppen {#custom-buttons}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
+
+![Aangepaste knop Android](@site/static/img/widgets/custom_button_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
+
+![Aangepaste knop iOS](@site/static/img/widgets/custom_button_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+**Aangepaste knoppen** zijn extra knoppen op de kaart die op dezelfde manier werken als de *Snelle Actie* knop. U kunt een knop maken met een of meer acties en deze op het kaartscherm weergeven.  Aangepaste knoppen bevinden zich in de lijst *Configureer scherm → Knoppen → Aangepaste knoppen*. Elke knop heeft een profielonafhankelijke actielijst en moet een unieke ***Naam*** hebben, maar een knop kan voor elk **profiel** afzonderlijk worden in- of uitgeschakeld.
+
+Alle beschikbare [acties](#action-types) zijn identiek aan die welke kunnen worden toegepast op de standaard snelle actie. Aangepaste knoppen kunnen worden geconfigureerd als ***knoppen voor één actie***, die de geselecteerde actie onmiddellijk toepassen wanneer erop wordt getikt, zonder dat er door een extra menu hoeft te worden genavigeerd.
+
+### Uiterlijk van de Knop {#button-appearance}
+
+<InfoAndroidOnly/>
+
+![Uiterlijk snelle actie knop](@site/static/img/widgets/qa_button_appearance_andr.png)
+
+U kunt het uiterlijk van Snelle Actie knoppen aanpassen via: *Menu → Configureer scherm → Aangepaste knoppen → Snelle actie → drie-puntjes menu → Uiterlijk*. Deze instelling biedt opties om de grootte, vorm, het icoon en de achtergronddekking van de knop te personaliseren, wat meer controle geeft over hoe de knoppen op uw scherm eruitzien.  
+
+Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer Scherm](../widgets/configure-screen.md#button-appearance), waar u kunt leren hoe u het uiterlijk van elke knop kunt afstemmen op uw voorkeuren.
+
+### Knoppositie Wijzigen {#change-button-position}
 
 De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wanneer u deze voor het eerst inschakelt. U kunt de widget naar elk deel van het scherm verplaatsen door deze ingedrukt te houden en te slepen. Voor een precieze en nauwkeurige plaatsing van knoppen op het kaartscherm, worden ze automatisch uitgelijnd op de dichtstbijzijnde onzichtbare rasterpositie wanneer ze worden versleept.
 
@@ -148,7 +179,7 @@ De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wann
 
     ![Snelle actie widget_weergave](@site/static/img/widgets/quick_action_widget_view.png)
 
-- **Verplaats de widget**. Door de widget lang in te drukken en te slepen, kunt u deze op het scherm herpositioneren, met automatische uitlijning van kolommen en rijen.
+- **Verplaats de widget**. Door de widget lang in te drukken en te slepen, kunt u deze op het scherm herpositioneren, met automatische uitlijning van kolommen en rijen.  
 
     ![Snelle actie widget_tik](@site/static/img/widgets/quick_action_widget_tap.png)
 
@@ -160,43 +191,27 @@ De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wann
 
     ![Snelle actie widget_meerdere](@site/static/img/widgets/quick_action_widget_multi.png)
 
-
-### Aangepaste knoppen {#custom-buttons}
+### Rasterindeling voor Knoppen {#grid-layout-for-buttons}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*
-
-![Aangepaste knop Android](@site/static/img/widgets/custom_button_andr.png)
+![Raster voor knoppen_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Raster voor knoppen_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*
-
-![Aangepaste knop iOS](@site/static/img/widgets/custom_button_ios.png)
+![Raster voor knoppen_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Raster voor knoppen_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Aangepaste knoppen** zijn extra knoppen op de kaart die op dezelfde manier werken als de *Snelle Actie* knop. U kunt een knop maken met een of meer acties en deze op het kaartscherm weergeven. Aangepaste knoppen bevinden zich in de lijst *Configureer scherm → Knoppen → Aangepaste knoppen*. Elke knop heeft een profielonafhankelijke actielijst en moet een unieke ***Naam*** hebben, maar een knop kan voor elk **profiel** afzonderlijk worden in- of uitgeschakeld.
+[Kaartknoppen](../widgets/map-buttons.md#overview) worden automatisch gerangschikt met behulp van een rasterindeling. Elke knop wordt toegewezen aan een van de vier hoeken van het scherm (*boven-links*, *boven-rechts*, *onder-links*, *onder-rechts*). Als er niet genoeg ruimte is in de toegewezen hoek, worden de knoppen horizontaal of verticaal uitgelijnd, afhankelijk van de schermoriëntatie.
 
-Alle beschikbare [acties](#action-types) zijn identiek aan die welke kunnen worden toegepast op de standaard snelle actie. Aangepaste knoppen kunnen worden geconfigureerd als ***knoppen voor één actie***, die de geselecteerde actie onmiddellijk toepassen wanneer erop wordt getikt, zonder dat er door een extra menu hoeft te worden genavigeerd.
-
-
-### Uiterlijk van de Snelle Actie Knop {#quick-action-button-appearance}
-
-<InfoAndroidOnly/>
-
-![Uiterlijk snelle actie knop](@site/static/img/widgets/qa_button_appearance_andr.png)
-
-U kunt het uiterlijk van Snelle Actie knoppen aanpassen via: *Menu → Configureer scherm → Aangepaste knoppen → Snelle actie → drie-puntjes menu → Uiterlijk*. Deze instelling biedt opties om de grootte, vorm, het icoon en de achtergronddekking van de knop te personaliseren, wat meer controle geeft over hoe de knoppen op uw scherm eruitzien.
-
-Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer Scherm](../widgets/configure-screen.md#button-appearance), waar u kunt leren hoe u het uiterlijk van elke knop kunt afstemmen op uw voorkeuren.
+Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voorkomen. Bijvoorbeeld, op een ligscherm zullen knoppen in de rechterhoek horizontaal onderaan het scherm worden uitgelijnd, terwijl op een staandscherm ze verticaal omhoog of omlaag worden uitgebreid indien nodig.
 
 
 ## Actietypes {#action-types}
@@ -212,12 +227,12 @@ Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer 
 | Openen <br/> [**Weerscherm**](../plugins/weather.md) <br /> *Alleen Android* | Opent het [*Weer* voorspellingsscherm](../plugins/weather.md#weather-forecast-screen) met gedetailleerde informatie. |
 | Tonen / Verbergen <br/> [**Favorieten**](../map/point-layers-on-map.md#favorites) | Toon of verberg de favoriete punten op de kaart. |
 | Tonen / Verbergen <br/> [**Tracks**](../personal/tracks/manage-tracks.md#track-menu) | Toon of verberg de laatst zichtbare tracks op de kaart. |
-| Tonen / Verbergen <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Schakel de weergave van POI-lagen met geselecteerde categorieën op de kaart in of uit.<br/>U kunt meerdere POI-categorieën selecteren. De actie vervangt de POI-categorieën die zijn geselecteerd in Kaart configureren zonder Snelle Acties te gebruiken. |
+| Tonen / Verbergen <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Schakel de weergave van POI-lagen met geselecteerde categorieën op de kaart in of uit.<br/>U kunt meerdere POI-categorieën selecteren. De actie vervangt de POI-categorieën die zijn geselecteerd in Kaart configureren zonder Snelle Acties te gebruiken.  |
 | Wijzigen <br/> [**Kaartmodus**](../map/vector-maps.md#map-mode) | Snelle toegang om te wisselen tussen dag- en nachtmodus. |
 | Wijzigen <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | De knop stelt u in staat om een enkele kaartbron of een lijst met bronnen toe te wijzen die circulair veranderen wanneer erop wordt getikt of met een tussentijds dialoogvenster. <br/> - *Toon een tussentijds dialoogvenster*. Toont een dialoogvenster met een lijst van kaarten. <br/> - *Toon geen tussentijds dialoogvenster*. De kaartbronnen veranderen in een gedefinieerde volgorde. <br/> - *Weergegeven Naam* - *Kaartbron* >. ">" na de kaartnaam geeft aan welke kaartbron momenteel is geselecteerd. <br/> - *Weergegeven Naam* - > *Volgende kaartbron*. ">" voor de kaartnaam geeft aan wat de volgende geselecteerde kaartbron zal zijn als de actie wordt uitgevoerd. <br/> - *Opmerking*. Om kaartbronnen in OsmAnd te wijzigen, kunt u ofwel één snelle actie instellen waarmee u tussen meerdere kaartbronnen kunt wisselen, ofwel meerdere afzonderlijke snelle acties maken, elk voor een specifieke kaartbron. |
 | Tonen / Verbergen <br /> [**Openbaar vervoer**](../map/vector-maps.md#transport) | Schakel de kaartlaag voor openbaar vervoer in of uit <br /> - *Vervoerstype*. Bij de eerste tik kunt u een of meerdere vervoerstypes selecteren, waaronder *Vervoershaltes*, *Bus-, trolleybus- en shuttle-routes*, *Tram- en treinroutes*, *Metroroutes*. |
 | Wijzigen <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Maak een lijst van kaartbronnen als een kaartoverlay en doorloop ze. <br /> - *Opmerking*. Om kaartoverlays in OsmAnd te wijzigen, kunt u ofwel één snelle actie instellen waarmee u tussen meerdere kaartoverlays kunt wisselen, ofwel meerdere afzonderlijke snelle acties maken, elk voor een specifieke kaartoverlay. |
-| Wijzigen <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Maak een lijst van kaartbronnen als een kaartonderlaag en doorloop ze. <br /> - *Opmerking*. Om kaartonderlagen in OsmAnd te wijzigen, kunt u ofwel één snelle actie instellen waarmee u tussen meerdere kaartonderlagen kunt wisselen, ofwel meerdere afzonderlijke snelle acties maken, elk voor een specifieke kaartonderlaag. |
+| Wijzigen <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Maak een lijst van kaartbronnen als een kaartonderlaag en doorloop ze. <br /> - *Opmerking*. Om kaartonderlagen in OsmAnd te wijzigen, kunt u ofwel één snelle actie instellen waarmee u tussen meerdere kaartonderlagen kunt wisselen, ofwel meerdere afzonderlijke snelle acties maken, elk voor een specifieke kaartonderlaag.  |
 | Wijzigen <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Maak een lijst van kaartstijlen voor vectorkaarten en doorloop ze. <br /> - *Opmerking*. Om kaartstijlen in OsmAnd te wijzigen, kunt u ofwel één snelle actie instellen waarmee u tussen meerdere kaartstijlen kunt wisselen, ofwel meerdere afzonderlijke snelle acties maken, elk voor een specifieke kaartstijl. |
 | Tonen / Verbergen <br/> [**Mapillary-laag**](../plugins/mapillary.md) | Hiermee kunt u kaartlagen bekijken met straatbeelden geleverd door Mapillary. |
 | Tonen / Verbergen <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | U kunt ervoor kiezen om alle OSM-notities op de kaart te tonen of te verbergen met een enkele tik op de knop. |
@@ -240,7 +255,7 @@ Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer 
 |:-------------|:-------------|
 | Kaart <br/> [**Inzoomen**](../map/interact-with-map.md) | Inzoomen op de kaart met gelijktijdige toename van de hoeveelheid weergegeven gegevens. |
 | Kaart <br/> [**Uitzoomen**](../map/interact-with-map.md) | De kaart verkleinen. Handig om te gebruiken met [Ontwikkelaarswidget - Zoomniveau](../widgets/info-widgets.md#developer-widgets). |
-| Verplaats <br/> [**Kaart omlaag**](../map/interact-with-map.md) | U kunt de snelle actie knop gebruiken om de kaart omlaag te verplaatsen. |
+| Verplaats <br/> [**Kaart omlaag**](../map/interact-with-map.md) | U kunt de snelle actie knop gebruiken om de kaart omlaag te verplaatsen.  |
 | Verplaats <br/> [**Kaart omhoog**](../map/interact-with-map.md) | Wanneer erop wordt getikt, beweegt het kaartscherm omhoog. |
 | Verplaats <br/> [**Kaart naar links**](../map/interact-with-map.md) | Wanneer u op de knop tikt, beweegt het kaartscherm naar links. |
 | Verplaats <br/> [**Kaart naar rechts**](../map/interact-with-map.md) | Met een snelle actie knop kunt u de kaart naar rechts verplaatsen. |
@@ -252,11 +267,11 @@ Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer 
 | Actie | Beschrijving |
 |:-------------|:-------------|
 | Start / Pauzeer <br/> [**Ritopname**](../plugins/trip-recording.md#new-track-recording) | Begin een opnamesessie van de huidige track of pauzeer om tijdelijk te stoppen zonder de rit te voltooien. |
-| Start <br/> [**Nieuw ritsegment**](../plugins/trip-recording.md#overview-screen) | Start een nieuw segment van de rit zonder de algehele opname te stoppen. |
+| Start  <br/> [**Nieuw ritsegment**](../plugins/trip-recording.md#overview-screen) | Start een nieuw segment van de rit zonder de algehele opname te stoppen. |
 | Opslaan <br/> [**Opgenomen Rit & Doorgaan**](../plugins/trip-recording.md#current-track-recording) | Sla de huidige ritopname op en ga door met opnemen zonder onderbreking. |
 | Voltooi <br/> [**Ritopname**](../plugins/trip-recording.md#current-track-recording) | Beëindig de huidige ritopnamesessie. |
-| Toevoegen <br/> [**Favoriet**](../map/configure-map-menu.md#map-layers) | Voegt een favoriet toe aan de geselecteerde (centrale) kaartlocatie. <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *Groep*. Voegt een favoriet toe aan de geselecteerde groep. <br /> - *Kleur*. Voegt een favoriet toe met een vooraf geselecteerde kleur <br /> - *Naam*. Voegt een favoriet toe met het opgegeven naamvoorvoegsel. |
-| Toevoegen <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Voegt een nieuw Track waypoint toe aan de [huidig opgenomen track](../plugins/trip-recording.md) of [elke track in Mijn Plaatsen](../personal/tracks/manage-tracks.md). <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *Groep*. Voegt een favoriet toe aan de geselecteerde groep. <br /> - *Kleur*. Voegt een favoriet toe met een vooraf geselecteerde kleur <br /> - *Naam*. Voegt een favoriet toe met het opgegeven naamvoorvoegsel. |
+| Toevoegen <br/> [**Favoriet**](../map/configure-map-menu.md#map-layers) | Voegt een favoriet toe aan de geselecteerde (centrale) kaartlocatie. <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *Groep*. Voegt een favoriet toe aan de geselecteerde groep. <br /> - *Kleur*. Voegt een favoriet toe met een vooraf geselecteerde kleur <br /> - *Naam*. Voegt een favoriet toe met het opgegeven naamvoorvoegsel.  |
+| Toevoegen <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Voegt een nieuw Track waypoint toe aan de [huidig opgenomen track](../plugins/trip-recording.md) of [elke track in Mijn Plaatsen](../personal/tracks/manage-tracks.md). <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *Groep*. Voegt een favoriet toe aan de geselecteerde groep. <br /> - *Kleur*. Voegt een favoriet toe met een vooraf geselecteerde kleur <br /> - *Naam*. Voegt een favoriet toe met het opgegeven naamvoorvoegsel.  |
 | Toevoegen <br/> [**Kaartmarkering**](../map/configure-map-menu.md#map-layers) | Voegt een markering toe aan een geselecteerde (centrale) kaartlocatie. |
 | Toevoegen <br/> [**Parkeerplaats**](../plugins/parking.md) | Voegt een parkeerplaats toe aan een geselecteerde (centrale) kaartlocatie. De oude parkeerpositie wordt verwijderd. |
 | Toevoegen <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Voegt POI toe aan een geselecteerde (centrale) kaartlocatie (zelfde als contextmenu-actie). <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *POI Type* (optioneel). Selecteert vooraf het OSM POI-type. <br /> - *Tag/Waarde* (meerdere). Voegt [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / waarden toe |
@@ -272,7 +287,7 @@ Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer 
 | Toevoegen <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | U kunt het midden van het kaartscherm selecteren als het eerste tussenpunt. De vorige bestemming blijft hetzelfde. |
 | Aan / Uit <br/> [**Spraakinstructies**](../navigation/guidance/voice-navigation.md) | Demp of activeer spraakbegeleiding tijdens navigatie. |
 | Instellen <br/> [**Startpunt**](../navigation/setup/route-navigation.md#set-destinations) | Markeer een geselecteerde (centrale) kaartlocatie als vertrekpunt. |
-| Instellen <br/> [**Bestemming**](../navigation/setup/route-navigation.md#set-destinations) | Voeg de geselecteerde (centrale) locatie op de kaart toe als bestemming. De vorige bestemming wordt het laatste tussenpunt. |
+| Instellen <br/> [**Bestemming**](../navigation/setup/route-navigation.md#set-destinations) | Voeg de geselecteerde (centrale) locatie op de kaart toe als bestemming. De vorige bestemming wordt het laatste tussenpunt.  |
 | Vervang <br/> [**Bestemming**](../navigation/setup/route-navigation.md#intermediate-destinations) | Stel / Vervang een geselecteerde (centrale) kaartlocatie in als bestemming. De vorige bestemming wordt verwijderd. |
 | Aan / Uit <br/> [**Auto-zoom kaart**](../map/interact-with-map.md) | Schakel automatisch inzoomen van de kaart tijdens navigatie in of uit. |
 | Start/stop <br/> [**Navigatie**](../navigation/setup/route-navigation.md#start--stop-navigation) | Start navigatie (als er een bestemming aanwezig is) of stop navigatie. |
@@ -285,10 +300,11 @@ Voor gedetailleerde aanpassingsinstellingen, raadpleeg het artikel [Configureer 
 
 | Actie | Beschrijving |
 |:-------------|:-------------|
-| Wijzig <br/> [**App profiel**](../personal/profiles.md) | Maak een lijst van applicatieprofielen en doorloop ze. <br /> - *Toon een tussentijds dialoogvenster*. Toont een dialoogvenster met een lijst van profielen. <br /> - *Toon geen tussentijds dialoogvenster*. De profielen veranderen in een gedefinieerde volgorde. <br /> - *Opmerking*. U kunt een enkele actie aanpassen waarmee u tussen meerdere profielen kunt wisselen, of meerdere afzonderlijke acties maken, elk voor een specifiek profiel. |
+| Wijzig <br/> [**App profiel**](../personal/profiles.md) | Maak een lijst van applicatieprofielen en doorloop ze.  <br /> - *Toon een tussentijds dialoogvenster*. Toont een dialoogvenster met een lijst van profielen. <br /> - *Toon geen tussentijds dialoogvenster*. De profielen veranderen in een gedefinieerde volgorde. <br /> - *Opmerking*. U kunt een enkele actie aanpassen waarmee u tussen meerdere profielen kunt wisselen, of meerdere afzonderlijke acties maken, elk voor een specifiek profiel. |
 | Wijzig <br/> [**App profiel naar volgende**](../personal/profiles.md) | Schakelt over naar het volgende profiel in de lijst. |
 | Wijzig <br/> [**App profiel naar vorige**](../personal/profiles.md) | Schakelt over naar het vorige profiel in de lijst. |
-| Wijzig <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Locatiepositie op scherm**) | Hiermee kunt u de plaatsing van de *Mijn Locatie* cursor op de kaart instellen. Schakelt in of uit dat de cursor altijd in het midden van het scherm staat. |
+| Wijzig <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Locatiepositie op scherm**)  | Hiermee kunt u de plaatsing van de *Mijn Locatie* cursor op de kaart instellen. Schakelt in of uit dat de cursor altijd in het midden van het scherm staat. |
+| Wijzig <br/> [**Kaartoriëntatie**](../map/interact-with-map#map-orientation-modes) | Hiermee kunt u de rotatiemodus van de kaart wijzigen en schakelen tussen geselecteerde oriëntatietypes. U kunt kiezen welke modi in de cyclus worden opgenomen. |
 
 
 ## Toetsenbord Gebruiken voor Acties {#use-keyboard-for-actions}

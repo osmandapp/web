@@ -1,9 +1,9 @@
 ---
-source-hash: 5481e58f1ec9b986e5f1f3646e642685f2ffc395ad646f5e86ad85c6511c1f05
-
+source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -36,7 +35,7 @@ Hoogtewidgets tonen de hoogte boven zeeniveau van de huidige geolocatie en de ho
 Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om dit probleem op te lossen, downloadt u een kaart met hoogtecorrectie.
 
 - Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
-- Voor meer details, bezoek [Kaarten & Bronnen](../personal/maps-resources.md#downloads).
+- Voor meer details, bezoek [Kaarten & Bronnen](../personal/maps-resources.md#downloads-menu).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -86,7 +85,7 @@ Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om d
 
 </Tabs>
 
-U kunt de widget gebruiken om de hoogte van het huidige kaartcentrum boven zeeniveau te achterhalen. Een [Terreinkaart (Schaduwreliëf en Helling)](../plugins/topography.md#download-maps) van het vereiste gebied is nodig om informatie weer te geven in de widget **Hoogte: kaartcentrum**.  
+U kunt de widget gebruiken om de hoogte van het huidige kaartcentrum boven zeeniveau te achterhalen. Een [Terreinkaart (Schaduwreliëf en Helling)](../plugins/topography.md#download-maps) van het vereiste gebied is nodig om informatie weer te geven in de **Hoogte: kaartcentrum widget**.  
 
 | | |
 |:------------|:------------|
@@ -145,7 +144,7 @@ De widget toont de huidige snelheid gedetecteerd door de GPS-sensor.
 
 </Tabs>  
 
-De widget **Gemiddelde Snelheid** berekent en toont uw gemiddelde snelheid over een geselecteerd tijdsinterval zonder dat navigatie of trackopname nodig is. Het is handig voor het controleren van de snelheid op snelwegen of het bijhouden van de gemiddelde snelheid tijdens de laatste paar minuten fietsen.
+De **Gemiddelde Snelheid** widget berekent en toont uw gemiddelde snelheid over een geselecteerd tijdsinterval zonder dat navigatie of trackopname nodig is. Het is handig voor het controleren van de snelheid op snelwegen of het bijhouden van de gemiddelde snelheid tijdens de laatste paar minuten fietsen.
 
 1. ***De widget configureren.***  
    Om de instellingen aan te passen, tikt u op de knop **Instellingen** (*Android*) of op het **widgetveld** (*iOS*). Beschikbare opties zijn onder andere:
@@ -169,7 +168,7 @@ De widget **Gemiddelde Snelheid** berekent en toont uw gemiddelde snelheid over 
    - Tik lang op de widget om het [Contextmenu](../widgets/configure-screen.md#widget-context-menu) te openen en selecteer *Gemiddelde snelheid resetten*.
    - Open de *widgetinstellingen* via het [Scherm configureren menu](../widgets/configure-screen.md#widget-settings) en selecteer de resetoptie.
 
-Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de nieuwe GPS-gegevens. Deze functie is handig voor real-time snelheidsmonitoring, zoals het bijhouden van de snelheid in gebieden met **trajectcontrole**.
+Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de nieuwe GPS-gegevens. Deze functie is handig voor real-time snelheidsmonitoring, zoals het bijhouden van de snelheid in gebieden met **gemiddelde snelheidscontroles**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -276,7 +275,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 
 ![Batterijniveau widget](@site/static/img/widgets/battery_level_widget.png)  
 
-De widget **Batterijniveau** toont het batterijpercentage van uw apparaat direct op het kaartscherm en wordt minstens één keer per minuut automatisch bijgewerkt.
+De **Batterijniveau** widget toont het batterijpercentage van uw apparaat direct op het kaartscherm en wordt minstens één keer per minuut automatisch bijgewerkt.
 
 - **iOS 17 en later** — Vanwege **privacybeperkingen** zijn gegevens over het batterijniveau alleen beschikbaar in stappen van 5% (bijv. 35%, 60% of 85%). Dit is een systeembeperking opgelegd door Apple.
 
@@ -502,7 +501,7 @@ Om Externe Sensoren widgets aan het kaartscherm toe te voegen, schakelt u de Osm
 
 <TabItem value="ios" label="iOS">
 
-![ritregistratie_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Externe sensor widgets iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -557,7 +556,7 @@ Om Voertuigstatistieken Widgets aan het kaartscherm toe te voegen, schakelt u de
 </Tabs>
 
 
-De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*13 statistieken*): **Inlaattemperatuur**,&nbsp; **Omgevingstemperatuur**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Motorlooptijd**,&nbsp; **Berekende motorbelasting**,&nbsp; **Brandstofdruk**,&nbsp; **Brandstofverbruik**,&nbsp; **Resterende brandstof**,&nbsp; **Batterijniveau**,&nbsp; **Voertuigsnelheid** (*gratis*), en **Gaskleppositie**.  
+De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*14 statistieken*): **Inlaattemperatuur**,&nbsp; **Omgevingstemperatuur**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Motorlooptijd**,&nbsp; **Berekende motorbelasting**,&nbsp; **Brandstofdruk**,&nbsp; **Brandstofverbruik**,&nbsp; **Resterende brandstof**,&nbsp; **Batterijniveau**,&nbsp; **Adapterspanning**,&nbsp; **Voertuigsnelheid** (*gratis*), en **Gaskleppositie**.  
 
 - Om voertuigstatistieken widgets aan het kaartscherm toe te voegen, [schakel](../plugins/index.md#enable--disable) de **Voertuigstatistieken plugin** in.
 - U kunt widgets toevoegen, zelfs als er geen OBD-II scanner is aangesloten.
@@ -771,7 +770,7 @@ De **Camerawidgets** stellen u in staat om de uitlijning tussen de OsmAnd-kaart 
 
 ![Beschikbaar RAM widget](@site/static/img/widgets/available_RAM_2_andr.png)
 
-De widget **Beschikbaar RAM** is een hulpmiddel voor het monitoren van het geheugengebruik van uw apparaat in relatie tot OsmAnd. Het biedt gedetailleerde gegevens om de prestaties van de applicatie te optimaliseren.
+De **Beschikbaar RAM** widget is een hulpmiddel voor het monitoren van het geheugengebruik van uw apparaat in relatie tot OsmAnd. Het biedt gedetailleerde gegevens om de prestaties van de applicatie te optimaliseren.
 
 - **Beschikbaar RAM voor applicatie.** Toont de hoeveelheid RAM die beschikbaar is voor OsmAnd om te gebruiken zonder prestatieproblemen te veroorzaken.
 

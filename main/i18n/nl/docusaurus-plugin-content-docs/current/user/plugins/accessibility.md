@@ -1,8 +1,9 @@
 ---
-source-hash: 4db0114e42759ddaed0f65e43eed0a9d1c7cdaa964a48ca19d502843f4cd2bf1
+source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
 sidebar_position: 1
 title:  Toegankelijkheid
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 :::caution Opmerking
 De Toegankelijkheidsplugin is alleen beschikbaar op de **Android-versie** van OsmAnd. De [iOS-versie](#how-to-use-ios) maakt gebruik van de standaard toegankelijkheidsinstellingen van het systeem.
@@ -101,9 +101,9 @@ De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 |---------------------------|-------------|  
 | **Toegankelijkheidsmodus**    | Schakelt *ingebouwde OsmAnd-functies* in of gebruikt **systeeminstellingen**. |  
 | **Spraaksnelheid**           | Regelt de *tekst-naar-spraak-snelheid*, variërend van **50% tot 200%**. |  
-| [Slimme automatische aankondiging](#smart-autoannounce-and-clockwise-directions)    | Biedt *spraakbegeleiding* bij afwijking van de route. |  
+| [Slimme automatische aankondiging](#smart-autoannounce)    | Biedt *spraakbegeleiding* bij afwijking van de route. |  
 | **Periode voor automatische aankondiging**   | Stelt de minimale tijd tussen aankondigingen in, van **5 seconden tot 5 minuten**. |  
-| **Richtingsstijl**       | Kies tussen *Zijdelings (8 richtingen)* of [Kloksgewijs](#smart-autoannounce-and-clockwise-directions) (12 richtingen)*. |  
+| [Richtingsstijl](#direction-style)       | Kies tussen *Zijdelings (8 richtingen)* of *Kloksgewijs (12 richtingen)*. |  
 | **Audio-aanwijzingen**      | Speelt *audiobegeleiding* af die de richting aangeeft. |  
 | **Haptische aanwijzingen**     | Biedt *trilfeedback* voor bochten en afwijkingen.|  
 
@@ -132,16 +132,34 @@ De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 - **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audiobegeleiding onpraktisch is.
 
 
-### Slimme automatische aankondiging en kloksgewijze richtingen {#smart-autoannounce-and-clockwise-directions}
+### Slimme automatische aankondiging {#smart-autoannounce}
 
-De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route, terwijl de **Kloksgewijze richtingsstijl** *navigatiebegeleiding op basis van de wijzerplaat* biedt. Deze functies zijn ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
+De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route. Deze functie is ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
 
-- Als **TalkBack niet is ingeschakeld**, zullen zowel *Slimme automatische aankondiging* als *Kloksgewijze richtingen* alleen *tekstmeldingen* op het scherm weergeven.  
+- Als **TalkBack niet is ingeschakeld**, zal *Slimme automatische aankondiging* alleen *tekstmeldingen* op het scherm weergeven.  
 
 - **Spraakmeldingen** worden alleen geactiveerd wanneer *TalkBack* is ingeschakeld in de **systeeminstellingen van het apparaat**.  
 
 - Stel de **Periode voor automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van de aankondigingen te regelen.
 
+- Een lang tikken op **Mijn locatie** opent een menu met de opties ***Toon uw positie*** en ***Toon details***. Het selecteren van Toon details toont aanvullende route-informatie en biedt de knop ***Start/Stop automatische aankondiging***.
+
+
+### Richtingsstijl {#direction-style}
+
+De instelling **Richtingsstijl** definieert hoe navigatie-instructies worden gepresenteerd:
+
+- Zijdelings (8 richtingen) – gebruikt klassieke links/rechts of kardinale/interkardinale richtingen.
+- Kloksgewijs (12 richtingen) – gebruikt begeleiding op basis van de wijzerplaat, zoals “om 3 uur” of “om 10 uur”.
+
+Deze functie is ontworpen om het ruimtelijk bewustzijn te verbeteren, vooral voor visueel beperkte gebruikers die de voorkeur geven aan oriëntatie op basis van de klok.
+
+Om in te schakelen:
+*Menu* → *Plugins* → *Toegankelijkheid* → *Instellingen* → *Richtingsstijl* → kies **Zijdelings** of **Kloksgewijs**.
+
+:::info note
+Richtingsstijl is een onafhankelijke optie. Het is niet gekoppeld aan Slimme automatische aankondiging en werkt ongeacht of Slimme automatische aankondiging is ingeschakeld.
+:::
 
 ## Gerelateerde artikelen {#related-articles}
 

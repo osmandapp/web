@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-Dit artikel legt uit hoe u de kaart kunt aanpassen en ermee kunt interageren met behulp van verschillende knoppen en gebaren. Het behandelt hoe u de kaart kunt draaien, zoomen, de kijkhoek kunt aanpassen, en de kaartweergave kunt wijzigen, handmatig of automatisch met het kompas, of volgens de peiling.
+Dit artikel legt uit hoe u de kaart kunt aanpassen en ermee kunt interageren met behulp van verschillende knoppen en gebaren. Het behandelt hoe u de kaart kunt draaien, zoomen, de kijkhoek kunt aanpassen, en de kijkhoek van de kaart kunt wijzigen, handmatig of automatisch met het kompas, of volgens de peiling.
 
 
 ## Gebaren {#gestures}
@@ -33,12 +33,12 @@ Gebaren zijn essentieel om gemakkelijk en intuïtief op de kaart te navigeren.
 | **Draaien**  | Tik op de kaart met **twee** vingers en draai uw vingers in een cirkelvormige beweging. |
 | **Kantelen (3D)** | Tik met **twee** vingers en beweeg ze omhoog of omlaag. <br/> Alleen beschikbaar met [Kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) versie 2 (OpenGL). |
 
-Glij-animaties kunnen worden uitgeschakeld in de instellingen met een [speciale optie](#no-animations).
+Glij-animaties kunnen worden uitgeschakeld in de instellingen met een [speciale optie](#remove-animations).
 
 
 ## Mijn locatie en zoom {#my-location-and-zoom}
 
-![Configureer schermmenu](@site/static/img/widgets/location_zoom_buttons.png)
+![Schermmenu configureren](@site/static/img/widgets/location_zoom_buttons.png)
 
 **Mijn locatie**.  
 De knop *Mijn locatie* is een cirkelvormig pictogram dat aangeeft of het midden van de kaart gesynchroniseerd is met de huidige geolocatie van uw apparaat. Vaak de "Waar ben ik?"-knop genoemd, helpt het u snel uw locatie op de kaart te vinden. Tijdens het navigeren blijft de kaart doorgaans gesynchroniseerd met de locatie van het apparaat, dus de knop blijft verborgen. Hij wordt echter zichtbaar als de kaart en uw locatie niet meer synchroon lopen door interactie van de gebruiker. Door op de knop te tikken, wordt de kaart opnieuw gecentreerd op uw huidige locatie, en een dubbele tik schakelt over naar de 3D-modus.
@@ -57,7 +57,7 @@ De knop *Mijn locatie* is een cirkelvormig pictogram dat aangeeft of het midden 
 *Zoomknoppen* zijn altijd zichtbaar naast *Mijn locatie* en stellen u in staat het zoomniveau van de kaart te regelen.
 
 - Het wijzigen van het zoomniveau heeft geen invloed op de synchronisatie van de kaart met uw locatie.
-- **Lang tikken** op de *Zoomknoppen* opent het dialoogvenster *Kaartvergrootglas*, waarmee u de detailniveaus van de kaart kunt aanpassen.
+- **Lang tikken** op de *Zoomknoppen* opent het dialoogvenster *Kaartvergrootglas*,waarmee u de detailniveaus van de kaart kunt aanpassen.
 - Houd er rekening mee dat tijdens het navigeren de zoom automatisch kan worden geregeld door de instelling **Automatisch zoomen**:
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
@@ -198,7 +198,7 @@ Duidelijke berichten op het scherm zullen u begeleiden bij het vergrendelen of o
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Vlakt de rotatie van de kaart af met een langzamere rotatieanimatie, hoewel dit een lichte vertraging introduceert, niet meer dan 1 seconde.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Geen animaties {#no-animations}
+### Animaties verwijderen {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -211,7 +211,7 @@ U kunt alle kaartanimaties tijdens kaartinteracties, inclusief gebaren en knoppe
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
 
-Creëert een vloeiend kaart-pan-effect voor het pictogram *[Mijn Positie](../personal/profiles/#profile-appearance)* wanneer u in beweging bent. Het effect introduceert een lichte vertraging van ongeveer 1 seconde ten opzichte van de werkelijke positie. Het is gemeld dat het inschakelen hiervan onder sommige omstandigheden merkbare vertragingsproblemen kan veroorzaken; schakel het uit als dergelijke problemen zich voordoen.
+Creëert een vloeiend kaart-pan-effect ten opzichte van het pictogram *[Mijn Positie](../personal/profiles/#profile-appearance)* wanneer u in beweging bent. Het effect introduceert een lichte vertraging ten opzichte van de werkelijke positie van ongeveer 1 seconde. Het inschakelen hiervan kan onder bepaalde omstandigheden merkbare vertragingsproblemen veroorzaken; schakel het uit als dergelijke problemen zich voordoen.
 
 
 ## Externe invoerapparaten {#external-input-devices}

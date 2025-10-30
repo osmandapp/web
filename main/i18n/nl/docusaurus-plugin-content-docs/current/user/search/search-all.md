@@ -1,8 +1,9 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Alles Zoeken
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,13 +14,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 <InfoIncompleteArticle/>
 
 
 ## Overzicht {#overview}
 
-**Zoeken** is een handig hulpmiddel om snel locaties te vinden. U kunt Zoeken gebruiken om een locatie te vinden op adres, coördinaten, nuttige plaatsen (POI) of via eerdere zoekopdrachten. Met [Adres zoeken](#search-address) kunt u het gewenste adres invoeren om een exacte locatie te krijgen. [Coördinaten zoeken](#search-coordinates) werkt met geografische coördinaten zoals lengte- en breedtegraad. Met [POI zoeken](#search-poi) kunt u zoeken naar nabijgelegen plaatsen in specifieke categorieën, zoals cafés, hotels of benzinestations. [Geschiedenis zoeken](#search-history) slaat eerdere zoekopdrachten op voor snelle toegang tot eerder gevonden plaatsen. De zoekfunctie maakt het gemakkelijk om reizen te plannen, door onbekend terrein te navigeren en POI's in de buurt te vinden.
+**Zoeken** is een handig hulpmiddel om snel locaties te vinden. U kunt Zoeken gebruiken om een locatie te vinden op adres, coördinaten, nuttige plaatsen (POI) of via eerdere zoekopdrachten. Met [Adres zoeken](#search-address) kunt u het gewenste adres invoeren om een exacte locatie te krijgen. [Coördinaten](#search-coordinates) zoeken werkt met geografische coördinaten zoals lengte- en breedtegraad. Met [POI](#search-poi) zoeken kunt u zoeken naar nabijgelegen plaatsen in specifieke categorieën, zoals cafés, hotels of benzinestations. Zoek [Geschiedenis](#search-history) slaat eerdere zoekopdrachten op voor snelle toegang tot eerder gevonden plaatsen. De zoekfunctie maakt het gemakkelijk om reizen te plannen, door onbekend terrein te navigeren en POI's in de buurt te vinden.
 
 
 ## Hoe te gebruiken {#how-to-use}
@@ -57,7 +57,7 @@ Belangrijke informatie:
 
 ### Basis zoekopdrachten {#basic-queries}
 
-***Lijst met zoekopdrachten***:
+***Lijst met zoekopdrachten*:**
 
 - Coördinaten in alle beschikbare formaten.
 - Adres:
@@ -215,7 +215,7 @@ U kunt de zoekfunctie gebruiken in de buurt van een specifieke locatie. Selectee
 
 </Tabs>
 
-U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevonden plaatsen, adressen of vaak bezochte plaatsen zonder de zoekopdracht opnieuw in te voeren. Meer details vindt u in het artikel [Zoekgeschiedenis](./search-history.md).
+U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevonden plaatsen, adressen of vaak bezochte plaatsen zonder de zoekopdracht opnieuw in te voeren.. Meer details vindt u in het artikel [Zoekgeschiedenis](./search-history.md).
 
 
 ## POI zoeken {#search-poi}
@@ -238,7 +238,7 @@ U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevond
 
 De **POI zoeken** is een lijst, gesorteerd op categorie, waarmee u gemakkelijk plaatsen en diensten kunt vinden in de buurt van uw huidige locatie of een geselecteerd gebied op de kaart.
 
-- [Aangepast POI zoeken](./search-poi.md#custom-poi-search) stelt u in staat om verschillende POI-categorieën te combineren om uw zoekopdracht te vereenvoudigen en te personaliseren.  
+- [Aangepast POI zoeken](./search-poi.md#customize-poi-search) stelt u in staat om verschillende POI-categorieën te combineren om uw zoekopdracht te vereenvoudigen en te personaliseren.  
 Bijvoorbeeld, als u meerdere soorten diensten in een bepaald gebied of op een bepaald deel van een route moet vinden.
 
 - OsmAnd biedt een [Online zoekfunctie](./search-poi.md#online-search) die in realtime werkt, waardoor u snel toegang heeft tot zoekresultaten.  

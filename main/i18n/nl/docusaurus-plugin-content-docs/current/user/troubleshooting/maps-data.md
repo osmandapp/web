@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Kaarten {#maps}
@@ -26,7 +26,7 @@ Vanwege de nieuwe [regels voor opslagtoegang die zijn geïntroduceerd in Android
 
 Op dit moment zijn de volgende oplossingen beschikbaar:
 
-#### 1. Migreer de OsmAnd-gegevensopslagmap naar "Intern app-geheugen" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migreer de OsmAnd-gegevensopslagmap naar “Intern app-geheugen” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - U kunt de opslagmap wijzigen door de optie ***Intern app-geheugen*** te selecteren in *Menu → Instellingen → OsmAnd-instellingen → Gegevensopslagmap*.
 
@@ -62,9 +62,9 @@ OsmAnd heeft echter niet de *Toegang tot alle bestanden*-machtiging (vanwege de 
 
 Een correct pad zal OsmAnd niet vragen om schrijfrechtenfouten. Voordat u deze wijzigingen aanbrengt, moet u ervoor zorgen dat OsmAnd de juiste opslagrechten heeft, inclusief de "Media"-opslagmachtiging, onder de **Apps**-instellingen van Android. In nieuwere Android-versies kunnen deze machtigingen zich in geavanceerde of verborgen menu's bevinden.
 
-### Kaartgegevens verwijderen na de app-update (als "Multiuser Storage 1" is geselecteerd) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Kaartgegevens verwijderen na de app-update (als “Multiuser Storage 1” is geselecteerd) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-In de Android-versie van OsmAnd kan het selecteren van *Multiuser Storage 1* als opslaglocatie leiden tot het verwijderen van alle [lokale kaarten](../personal/maps-resources.md#local) wanneer de app automatisch wordt bijgewerkt, bijvoorbeeld van versie 4.1.9 naar 4.1.10, 4.1.11 of later (**Android 11, 12**). Dit probleem is gedocumenteerd op [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+In de Android-versie van OsmAnd kan het selecteren van *Multiuser Storage 1* als opslaglocatie leiden tot het verwijderen van alle [lokale kaarten](../personal/maps-resources.md#local-menu) wanneer de app automatisch wordt bijgewerkt, bijvoorbeeld van versie 4.1.9 naar 4.1.10, 4.1.11 of later (**Android 11, 12**). Dit probleem is gedocumenteerd op [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Om te voorkomen dat u uw kaartgegevens verliest tijdens updates, kunt u de volgende oplossingen overwegen:
 
@@ -131,7 +131,7 @@ Ja, contourlijnen kunnen in voet in plaats van meters worden weergegeven. Voorda
 
 ## Zoeken {#search}
 
-### Gestructureerd zoeken naar adres (stad → straat → huis) vindt het huis niet {#structured-city--street--house-address-search-doesnt-find-the-house}
+### Gestructureerd (stad *→* straat *→* huisnummer) adreszoeken vindt het huis niet {#structured-city--street--house-address-search-doesnt-find-the-house}
 
 Als u probeert een locatie te zoeken met de structuur *Stad → Straat → Huisnummer* en er geen resultaten worden geretourneerd, overweeg dan de volgende tips en mogelijke oorzaken:
 
@@ -152,7 +152,7 @@ Als u probeert een locatie te zoeken met de structuur *Stad → Straat → Huisn
 
 ### Hoe verschillende plaatsen op de kaart te markeren {#how-to-mark-different-places-on-the-map}
 
-U kunt op verschillende manieren notities achterlaten en locaties op de kaart markeren, elk met een ander doel:
+U kunt notities achterlaten en locaties op de kaart op verschillende manieren markeren, elk met een ander doel:
 
 - *[Favorieten](../personal/favorites.md)*. Dit zijn permanente punten op de kaart waar u beschrijvingen kunt toevoegen. Om een Favoriet te maken, *lang tikken → tik op Toevoegen*. Favorieten zijn ideaal voor het markeren van plaatsen die u vaak bezoekt of wilt bewaren voor toekomstig gebruik.
 

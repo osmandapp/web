@@ -1,8 +1,9 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipedia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-
 ## Overzicht {#overview}
 
 :::info Betaalde functie
@@ -24,7 +24,7 @@ De Wikipedia-plugin is een [betaalde functie](../purchases/index.md) van de OsmA
 
 Wikipedia bij de hand hebben tijdens uw reis helpt u meer te leren over de plaatsen die u bezoekt. Het is offline beschikbaar en toont Populaire Plaatsen (Android) / Wikipedia-artikelen (iOS) gerelateerd aan de nuttige plaatsen direct op de kaart.  
 
-De Wikipedia-plugin is een aparte functie die naar behoefte kan worden in- of uitgeschakeld. Eenmaal ingeschakeld, kunt u Wikipedia-gegevens [downloaden](../personal/maps-resources#maps--resources) voor elke geografische regio. De kaart heeft twee soorten geüploade kennis van Wikipedia: beknopte informatie en een volledig artikel.  
+De Wikipedia-plugin is een aparte functie die naar behoefte kan worden in- of uitgeschakeld. Eenmaal ingeschakeld, kunt u Wikipedia-gegevens [downloaden](../personal/maps-resources#downloads-menu) voor elke geografische regio. De kaart heeft twee soorten geüploade kennis van Wikipedia: beknopte informatie en een volledig artikel.  
 
 
 Beknopte informatie wordt geleverd door Wikipedia POI's (een afkorting voor "[nuttige plaats](../map/point-layers-on-map.md)"). Als de Wikipedia-optie in het menu is ingeschakeld, verschijnt er een Wikipedia POI op de kaart. Wanneer u op een nuttige plaats tikt, wordt deze uitgebreid om beknopte informatie van Wikipedia te geven, evenals de mogelijkheid om een volledig artikel te openen. De Wikipedia POI, evenals gerelateerde artikelen, zijn offline beschikbaar. U kunt ze naar behoefte lezen, van taal wisselen en naar andere informatie op Wikipedia zoeken.  
@@ -43,14 +43,14 @@ Om Wikipedia-gegevens op de kaart weer te geven, moet u de volgende instellingen
 1. [Aankopen](../plugins/index.md#purchase) en [Inschakelen](../plugins/index.md#enable--disable) van de Wikipedia-plugin in de sectie Plugins van het *Hoofdmenu*.
 2. Download de [Wikipedia-pakketten](#download-wikipedia-packages) voor de vereiste regio's.  
 3. Toon de [Wikipedia POI's](#display-wikipedia-on-the-map) op de kaart voor het vereiste profiel.  
-4. Configureer [voorkeurstalen](#set-preferred-language) om artikelen te lezen.
+4. Configureer voorkeurstalen om [artikelen](#set-preferred-language) te lezen.
 
 
 ## Wikipedia-pakketten Downloaden {#download-wikipedia-packages}
 
 Wikipedia-gegevens zijn beschikbaar voor elke geografische regio. Als het voor de ene regio is geladen en voor de andere niet, kunt u in het eerste geval met Wikipedia-informatie werken bij het bekijken van de regio op een kaart, en in het andere geval zal de regio geen Wikipedia-informatie hebben. Eenmaal geladen, wordt Wikipedia-data algemeen beschikbaar, ook offline.
 
-Om de Wikipedia-gegevens voor een regio te downloaden, gaat u naar de [beschikbare pakketten om te downloaden in het *Hoofdmenu*](../start-with/download-maps.md#download), zoekt u de benodigde regio en opent u deze. De Wikipedia-gegevens bevinden zich tussen andere pakketten.
+Om de Wikipedia-gegevens voor een regio te downloaden, gaat u naar de [beschikbare pakketten om te downloaden in het *Hoofdmenu*](../start-with/download-maps.md#downloading-maps), zoekt u de benodigde regio en opent u deze. De Wikipedia-gegevens bevinden zich tussen andere pakketten.
 
 U kunt Wikipedia-gegevens als volgt per regio openen om te downloaden:
 

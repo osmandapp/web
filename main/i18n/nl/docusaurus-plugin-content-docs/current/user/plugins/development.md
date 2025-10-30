@@ -1,8 +1,9 @@
 ---
-source-hash: b19d759436fe929e58af9dc49b00bc63ab8876769325d48b55875835a8238e15
+source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
 sidebar_position: 10
 title:  OsmAnd Ontwikkeling
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -62,15 +62,15 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Terrein {#terrain}
 
-- **Gebruik raster [SQLIte-formaat](../../technical/osmand-file-formats/osmand-sqlite) voor schaduwreliëf en helling** (*Android*). Laad rasterkaarten in het oude formaat.
+- **Gebruik raster [SQLite-formaat](../../technical/osmand-file-formats/osmand-sqlite) voor hillshade en helling** (*Android*). Bij gebruik van de V2-weergavemotor, gebruik in plaats van het berekenen van hillshading of hellingen vanuit de 3D Terrein-kaart, de oude formaat rasterkaarten voor dit doel. Kan de weergave aanzienlijk versnellen.
 
 
-### Probleemoplossing {#troubleshotting}
+### Probleemoplossing {#troubleshooting}
 
 - **Simuleer uw positie** (*Android* / *iOS*). [Simuleer](#gpx-track-simulation) de locatie en beweging met behulp van een GPX-track.
 - **Batterijbesparingsmodus** (*Android* / *iOS*). Deze instelling verlaagt [de verversingssnelheid van het scherm](#map-rendering-fps-widget) met 20 frames per seconde om de batterij te sparen tijdens het gebruik van applicaties.
 - **Gebruik 3D-locatiepositiepictogrammen** (*iOS*). Hiermee kunt u een 3D-pictogram selecteren voor het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance).
-- **Simuleer OBD-gegevens** (*Android*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
+- **Simuleer obd-gegevens** (*Android*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
 - **Prestatie-debug-info** (*Android*). Toont weergave- en navigatieprestaties.
 - **Kaartlagen uitschakelen** (*Android*). Schakelt alle kaartlagen over de vectorkaart uit (herstart vereist).
 - **Logcat-buffer** (*Android*). Controleer en deel gedetailleerde logboeken van de app.
@@ -211,7 +211,8 @@ U kunt [Camerapositie-widgets](../widgets/info-widgets.md#camera-widgets) gebrui
 De Camerakanteling-widget geeft de helling weer tussen de centrale kijkvector van de camera (kijker) en een denkbeeldige vlakke ondergrond van de aarde. De standaardwaarde is 90 graden (geen kanteling).
 
 :::note
-De camerakanteling wordt gewijzigd door de camera (kijker) te bewegen terwijl het middelpunt op de kaart (waar we naar kijken) hetzelfde blijft. De afstand ernaartoe (in feite, zoom) verandert niet. Tegelijkertijd verandert door de denkbeeldige beweging van de kijker de afstand van de camera tot het oppervlak.
+De camerakanteling wordt gewijzigd door de camera (kijker) te bewegen terwijl het middelpunt op de kaart (waar we naar kijken) hetzelfde blijft. De afstand ernaartoe (in feite, zoom) verandert niet.
+Tegelijkertijd verandert door de denkbeeldige beweging van de kijker de afstand van de camera tot het oppervlak.
 :::
 
 

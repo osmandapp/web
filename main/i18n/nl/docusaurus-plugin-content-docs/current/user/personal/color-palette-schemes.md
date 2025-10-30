@@ -1,8 +1,9 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Kleurenschema's
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,18 +16,17 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
 :::info Betaalde functie
 
-Kleurenschema's worden gebruikt als onderdeel van de betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.
+Kleurenschema's worden gebruikt als onderdeel van de betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.  
 
 :::
 
 Kleurenschema's worden gebruikt bij [routekleuring](#routes), [kaartterrein](#terrain) en [weerkaart](#weather), en worden weergegeven als een afzonderlijk deel van de informatie die kan worden geëxporteerd, geïmporteerd en bewerkt om het kleurenschema van de kaart en de datavisualisatie te wijzigen.
 
-Gegevens van het kleurenpalet zijn beschikbaar in het menu [*Kaarten & Bronnen*](../personal/maps-resources.md#local).
+Gegevens van het kleurenpalet zijn beschikbaar in het menu [*Kaarten & Bronnen*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,14 +70,14 @@ Ga naar: *Menu → Kaarten & Bronnen → Lokaal → Kleuren*
 
 ### Terrein {#terrain}
 
-Terreinbestanden (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiëren 3 [terreinvisualisaties](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schaduwreliëf, Helling* en *Hoogte*. Voor elk type kunt u meerdere paletten hebben, bijvoorbeeld *lawinehelling* wordt standaard meegeleverd.
+Terreinbestanden (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiëren 3 [terreinvisualisaties](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schaduwreliëf, Helling,* en *Hoogte*. Voor elk type kunt u meerdere paletten hebben, bijvoorbeeld *lawinehelling* wordt standaard meegeleverd.
 
 ### Routes {#routes}
 
 Visualisaties met lijngradiënt gebruiken paletbestanden (`route_<type_name>_<palette_name>.txt`) om GPX-tracks en Routes te kleuren:
 
-- Voor [Routes](../navigation/guidance/map-during-navigation.md#color): *Snelheid, Helling* en *Hoogte (Altitude)*.
-- Voor [GPX-tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Snelheid, Helling* en *Hoogte (Altitude), of info van externe sensoren*.
+- Voor [Routes](../navigation/guidance/map-during-navigation.md#color): *Snelheid, Helling,* en *Hoogte (Altitude)*.
+- Voor [GPX-tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Snelheid, Helling,* en *Hoogte (Altitude), of info van externe sensoren*.
 
 ### Weer {#weather}
 
@@ -117,7 +117,7 @@ Elke regel vertegenwoordigt een numerieke waarde (voor het kleurenpalet is dit e
 # TXT-bestand met de naam *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
 # 0 - 90 graden RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# geel {#yellow-}
+# geel  {#yellow-}
 100,255,222,2,227
 # rood {#red}
 200,255,1,1,255
@@ -137,7 +137,7 @@ Na het verplaatsen van dit TXT-bestand naar *..Android/data/net.osmand/files/col
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig terrein kleurenschema*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig Terrein kleurenschema*
 
 ![Kleurenschema](@site/static/img/widgets/color_scheme.png)
 
@@ -145,7 +145,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig terrein kleurenschema*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig Terrein kleurenschema*
 
 ![Kleurenpalet](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
 
@@ -153,7 +153,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 </Tabs>
 
-**Snelle actie** om het palet voor Terrein te wijzigen. De mogelijkheid toegevoegd om te schakelen tussen terrein kleurenschema's, vergelijkbaar met het schakelen tussen lagen. Dit kan worden gedaan met de tool [Snelle acties](../widgets/quick-action.md#configure-map).
+**Snelle actie** om het palet voor Terrein te wijzigen. De mogelijkheid toegevoegd om te schakelen tussen terrein kleurenschema's, vergelijkbaar met het schakelen tussen lagen. Dit kan worden gedaan met de tool [Snelle acties](../widgets/quick-action.md#configure-map).  
 
 
 ### Kleuren importeren / exporteren {#import--export-colors}

@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
 sidebar_position: 1
 title:  Scherm configureren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -317,12 +317,17 @@ Widgets in de rechter- en linkerpanelen kunnen worden gegroepeerd in **Pagina's*
     - Verbetert de duidelijkheid en maximaliseert de ruimte voor belangrijke gegevens.
     - Vooral handig bij het weergeven van veel widgets op dezelfde **rij**.
 
-3. **Individuele grootte voor verschillende rijen** (*voor alle panelen*):
+3. **Widget-tekstlabels verbergen**:
+
+    - Verbergt tekstlabels automatisch om numerieke informatie volledig zichtbaar te houden in compacte lay-outs.
+    - Helpt een schone en leesbare widgetindeling te behouden wanneer de ruimte beperkt is.   
+
+4. **Individuele grootte voor verschillende rijen** (*voor alle panelen*):
 
     - Widgets kunnen individueel worden aangepast door de rij- en kolomgrootte aan te passen.
     - **OPMERKING:** Het wijzigen van de grootte van één widget in een rij/kolom zal alle widgets in die rij/kolom van grootte veranderen.
 
-4. **Om de widgetgrootte en pictogramzichtbaarheid te wijzigen:**
+5. **Om de widgetgrootte en pictogramzichtbaarheid te wijzigen:**
 
     - Selecteer een widget die u al aan het paneel hebt toegevoegd.  
     - Tik op het *Instellingen*-pictogram aan de rechterkant van het widgetveld.
@@ -513,7 +518,7 @@ De functie *Uiterlijk van knop* stelt u in staat om het uiterlijk van knoppen op
 - **Pictogram**. Selecteer uit een lijst met pictogrammen die de acties vertegenwoordigen die u al hebt toegevoegd, zodat u functies in één oogopslag kunt identificeren.
 - **Hoekradius**. Pas deze instelling aan om de vorm van de knop te veranderen, variërend van scherpe, vierkante hoeken tot gladde, afgeronde randen.
 - **Grootte**. Kies de knopgrootte die het beste bij uw scherm past en naar wens opvalt. Voor *Standaardknoppen* zijn de groottes vooraf ingesteld en kunnen niet worden aangepast.
-- **Achtergronddekking**. Regel de zichtbaarheid van de achtergrond van de knop. U kunt deze volledig zichtbaar of gedeeltelijk transparant instellen, of alleen de kaderschaduw en het pictogram weergeven.
+- **Achtergrondtransparantie**. Regel de zichtbaarheid van de achtergrond van de knop. U kunt deze volledig zichtbaar of gedeeltelijk transparant instellen, of alleen de kaderschaduw en het pictogram weergeven.
 
 
 ## Overig {#other}
@@ -632,6 +637,6 @@ Beschikbare acties:
 - [Kaartknoppen](./map-buttons.md)
 - [Informatieve widgets](./info-widgets.md)
 - [Navigatiewidgets](./nav-widgets.md)
-- [Radiusliniaal en Liniaal](./radius-ruler.md)
+- [Radiusliniaal en liniaal](./radius-ruler.md)
 - [Markerwidgets](./markers.md)
 - [Snelle actie](./quick-action.md)

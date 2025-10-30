@@ -1,8 +1,9 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Algemene instellingen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -44,7 +44,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 ## Algemeen {#general}
 
-Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een [profiel](#default-profile) bij het laden van de applicatie, het selecteren van de [kaartweergave-engine](#map-rendering-engine) en de [map](#data-storage-folder) waarin de gegevens worden opgeslagen.  
+Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een [profiel](#default-profile) bij het laden van de applicatie, het selecteren van de [weergave-engine](#map-rendering-engine) en de [map](#data-storage-folder) waarin de gegevens worden opgeslagen.  
 
 
 ### Standaardprofiel {#default-profile}
@@ -59,7 +59,7 @@ Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een 
 
 <TabItem value="ios" label="iOS">
 
-![Algemene Instellingen Standaardprofiel Android](@site/static/img/personal/profiles/default_profile_ios.png)
+![Algemene Instellingen Standaardprofiel iOS](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -73,7 +73,7 @@ OsmAnd gebruikt het standaardprofiel, *Kaart bekijken*, als het eerste profiel v
 
 ### CarPlay-profiel {#carplay-profile}
 
-:::caution ALLEEN iOS
+:::caution iOS ALLEEN
 Deze functie is beschikbaar voor de iOS-versie van de OsmAnd-app.
 :::
 
@@ -94,7 +94,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 ![Profielen Opslaginstellingen Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Apparaatgeheugen** toont hoeveel vrije ruimte er nog op uw apparaat is. Tik op een veld om naar het menu [*Kaarten en bronnen*](../personal/maps-resources.md#maps--resources) te gaan, waar u gedetailleerde informatie over uw OsmAnd-gegevens kunt bekijken en beheren.
+1. **Apparaatgeheugen** toont hoeveel vrije ruimte er nog op uw apparaat is. Tik op een veld om naar het menu [*Kaarten en bronnen*](../personal/maps-resources.md#local-menu) te gaan, waar u gedetailleerde informatie over uw OsmAnd-gegevens kunt bekijken en beheren.
 
 2. In de **<Translate android="true" ids="change_data_storage_folder"/>**, kunt u een map selecteren om OsmAnd-gegevens op uw apparaat op te slaan.  
 
@@ -231,7 +231,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
+![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
@@ -256,7 +256,7 @@ De applicatie legt de geschiedenis van eerder ingevoerde gegevens (geschiedenis)
 
 <TabItem value="ios" label="iOS">  
 
-![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
@@ -303,7 +303,7 @@ De instelling **<Translate android="true" ids="dialogs_and_notifications_title"/
 
 - *Opstartbericht* bevat promoties, quizzen, evenementen en meer.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) onderdrukt het weergeven van app-kortingen en speciale lokale evenementberichten.
-- [*Kaart downloaden dialoog*](../start-with/download-maps.md#download) informeert u dat specifieke kaarten kunnen worden gedownload.
+- [*Kaart downloaden dialoog*](../start-with/download-maps.md#downloading-maps) informeert u dat specifieke kaarten kunnen worden gedownload.
 
 
 ### Locatiebron {#location-source}
@@ -365,7 +365,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![Algemene Instellingen Flitsers Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Algemene Instellingen Flitsers Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Algemene Instellingen Flitsers iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Algemene Instellingen Flitsers iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 

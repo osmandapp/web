@@ -1,8 +1,9 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
 title:  POI zoeken
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,23 +14,22 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
 ## Overzicht {#overview}
 
-De functionaliteit van OsmAnd Point of Interest (POI) in OsmAnd biedt nauwkeurigheid, zichtbaarheid en gemak bij het vinden van interessante plaatsen, routes en diensten in de buurt van uw huidige locatie of een geselecteerd gebied op de kaart.
+[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionaliteit in OsmAnd biedt nauwkeurigheid, zichtbaarheid en gemak bij het vinden van interessante plaatsen, routes en diensten in de buurt van uw huidige locatie of een geselecteerd gebied op de kaart.
 
 In de zoekbalk kunt u trefwoorden invoeren die verband houden met de plaatsen waarin u geïnteresseerd bent. De POI-zoekfunctie presenteert ook een handige lijst gesorteerd op [categorie](#poi-search-by-categories) om u te helpen snel te vinden wat u zoekt, en met het [filter](#save-new-custom-filters) kunt u specifieke POI-kenmerken selecteren om alleen relevante resultaten weer te geven.
 
-[Aangepast zoeken](#custom-poi-search) verbetert de zoekfunctionaliteit door meerdere categorie- en subcategoriekeuzes toe te staan. U kunt gemaakte filters opslaan voor toekomstig gebruik, waardoor het gemakkelijker wordt om snel POI's te vinden die aan specifieke criteria of voorkeuren voldoen. Raadpleeg voor meer details de sectie over het opslaan van aangepaste filters [hier](#save-new-custom-filters).
+[Aangepast zoeken](#customize-poi-search) verbetert de zoekfunctionaliteit door meerdere categorie- en subcategoriekeuzes toe te staan. U kunt gemaakte filters opslaan voor toekomstig gebruik, waardoor het gemakkelijker wordt om snel POI's te vinden die aan specifieke criteria of voorkeuren voldoen. Raadpleeg voor meer details de sectie over het opslaan van aangepaste filters [hier](#save-new-custom-filters).
 
 OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de sectie **Zoeken op categorieën** zich bevindt.
 
 - De [Zoekknop](../widgets/map-buttons.md#search) wordt altijd op de kaart weergegeven en als u erop tikt, gaat u naar het [algemene scherm](#how-to-use) van de tool, waar u het tabblad *Categorieën* kunt vinden.
-- Ga naar het hoofdmenu *Menu → Zoeken → tabblad Categorieën*.
-- Wanneer u een route voorbereidt, tikt u op [*Navigatie → Bestemming instellen → Zoekveld → tabblad Categorieën*](../navigation/setup/route-navigation.md#set-target-point).
+- Ga naar het hoofdmenu *Menu → Zoeken → Categorieën tabblad*.
+- Wanneer u een route voorbereidt, tikt u op [*Navigatie → Bestemming instellen → Zoekveld → Categorieën tabblad*](../navigation/setup/route-navigation.md#set-target-point).
 - Ga naar het hoofdmenu [*Menu → Kaart configureren → POI-overlay → Zoeken*](../map/point-layers-on-map.md#points-of-interest-pois).
 
 
@@ -43,7 +43,7 @@ OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de secti
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![POI zoeken iOS](@site/static/img/search/poi_overlay_ios.png)
 
@@ -59,7 +59,7 @@ OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de secti
        - Naar [OSM-routes](../map/routes.md) op naam en op referentienummer.
        - Naar [Populaire plaatsen (Wikipedia)](../map/map-context-menu.md#details).
     - Filters en het sorteren van resultaten op categorie, afstand of beoordeling zijn mogelijk.
-
+    
 - **POI's zoeken op de kaart** - Toon op kaart:
     1. U kunt de vereiste categorieën selecteren uit de [**lijst**](../map/point-layers-on-map.md#points-of-interest-pois) in *Kaart configureren → Toon POI-overlay...* en zoeken op pictogrammen op de verwachte locatie.
     2. U kunt eerst een zoekopdracht invoeren of beginnen met het zoeken naar POI's in *Menu → Zoeken → Categorieën* en vervolgens op **Toon op kaart** klikken.
@@ -73,10 +73,10 @@ OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de secti
 
 :::note
 Om sommige van deze taken uit te voeren (adressen, POI's lokaliseren) heeft u het offline vectorkaartbestand nodig. In eerste instantie is de zoekopdracht gebaseerd op gegevens die zich op de kaart in het zichtbare gebied van het apparaatscherm bevinden. Als u niets vindt, stelt OsmAnd voor om de zoekradius te vergroten.
-:::
+:::  
 
 
-## POI zoeken op categorie {#poi-search-by-categories}
+## POI zoeken op categorieën {#poi-search-by-categories}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -110,7 +110,11 @@ Voordelen:
 - *Meerdere categorieën* - De OpenStreetMap-database heeft een uitgebreide set POI-categorieën, waarmee u sites van verschillende typen en categorieën kunt vinden.
 
 <!--
-Met het zoeken op POI-categorie kunt u snel interessante plaatsen vinden en selecteren op basis van uw behoeften. Het is een handig hulpmiddel voor reizen, het vinden van nabijgelegen diensten of bezienswaardigheden, en het plannen van routes op basis van geselecteerde POI-categorieën. OsmAnd begint met het vinden van namen en categorieën van POI's op basis van ingevoerde woorden. De eerste resultaten zijn categorieën, de tweede resultaten zijn POI's met aanvullende informatie, volledige naam, categorienaam, richting en afstand tot de POI, en openingstijden. Door op de gewenste categorie te drukken, wordt de POI-lijst van deze categorie geopend. Door op de gekozen POI in de lijst te tikken, wordt het [Kaartcontextmenu](../map/map-context-menu.md#select-an-object-single-tap) van de POI geopend.
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
 -->
 
 ### Soorten filters {#types-of-filters}
@@ -134,10 +138,10 @@ Met het zoeken op POI-categorie kunt u snel interessante plaatsen vinden en sele
 Met de **Filter**-functie kunt u de nodige kenmerken selecteren en als resultaat een lijst krijgen met alleen relevante objecten. Om het filter te gebruiken:
 
 - Selecteer de categorie waarin u geïnteresseerd bent uit de categorielijst.
-- Tik op het scherm dat wordt geopend op het pictogram dat het filter weergeeft. Het bevindt zich onder het invoerveld, naast *Toon op de kaart*.
+- Op het scherm dat wordt geopend, tikt u op het pictogram dat het filter weergeeft. Het bevindt zich onder het invoerveld, naast *Toon op de kaart*.
 - Selecteer in het filter het type kenmerken.
 
-![POI zoeken Android](@site/static/img/search/search_poi_filter_icon_andr.png)
+![POI zoeken Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
 Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhangt van de geselecteerde categorie. Elke categorie heeft een aantal specifieke filters, georganiseerd in mappen per type. Er zijn in totaal *22 standaardcategorieën*. Enkele daarvan worden hier vermeld:
 
@@ -145,10 +149,10 @@ Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhan
         Bevat *9* soorten filters: **Koelkast** (heeft *2* waarden), **Verwarming** (heeft *7* waarden), **Type internettoegang** (heeft *3* waarden), **Matras** (heeft *2* waarden), **Betaalmethode** (meer dan *10* waarden), **Douche** (heeft *1* waarde), **Roken** (heeft *6* waarden), **Sterrenclassificatie** (heeft *10* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
 
  2. **Café en restaurant**. [Café](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) en [restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) vertegenwoordigen eetgelegenheden.
-        Bevat *16* soorten filters: **Verschoningstafel** (heeft *3* waarden), **Koffie** (heeft *2* waarden), **Keuken** (meer dan *10* waarden), **Bezorging** (heeft *1* waarde), **Dieet** (heeft *8* waarden), **Gerecht** (meer dan *10* waarden), **Drinkwater bijvullen** (heeft *1* waarde), **Drive-in** (heeft *1* waarde), **Type internettoegang** (heeft *3* waarden), **Microbrouwerij** (heeft *1* waarde), **Biologische producten** (heeft *2* waarden), **Buitenzitplaatsen** (heeft *1* waarde), **Betaalmethode** (meer dan *10* waarden), **Roken** (heeft *6* waarden), **Afhalen** (heeft *1* waarde), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
+        Bevat *16* soorten filters: **Verschoningstafel** (heeft *3* waarden), **Koffie** (heeft *2* waarden), **Keuken** (meer dan *10* waarden), **Bezorging** (heeft *1* waarde), **Dieet** (heeft *8* waarden), **Gerecht** (meer dan *10* waarden), **Drinkwater bijvullen** (heeft *1* waarde), **Drive-in** (heeft *1* waarden), **Type internettoegang** (heeft *3* waarden), **Microbrouwerij** (heeft *1* waarde), **Biologische producten** (heeft *2* waarden), **Buitenzitplaatsen** (heeft *1* waarde), **Betaalmethode** (meer dan *10* waarden), **Roken** (heeft *6* waarden), **Afhalen** (heeft *1* waarde), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
 
  3. **Laadstation**. Een [laadstation](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) is een infrastructuurfaciliteit waar eigenaren van elektrische voertuigen hun auto's, motorfietsen of andere elektrische voertuigen kunnen opladen. Deze punten bieden laders en geschikte aansluitingen om energie te leveren aan de accu's van voertuigen.
-        Bevat *35* soorten filters: **Toegang voor fietsen** (heeft *1* waarde), **Toegang voor bussen** (heeft *1* waarde), **Toegang voor vrachtwagens** (heeft *5* waarden), **Toegang voor auto's** (heeft *1* waarde), **Toegang voor scooters** (heeft *1* waarde), **Authenticatie via app** (heeft *1* waarde), **Authenticatie via chipkaart** (heeft *1* waarde), **Contactloze authenticatie** (heeft *1* waarde), **Authenticatie via sleutel** (heeft *1* waarde), **Authenticatie vereist** (heeft *1* waarde), **Authenticatie via telefoongesprek** (heeft *1* waarde), **Authenticatie via sms** (heeft *1* waarde), **Kosten** (heeft *2* waarden), **Type internettoegang** (heeft *3* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open, en andere.
+        Bevat *35* soorten filters: **Toegang voor fietsen** (heeft *1* waarde), **Toegang voor bussen** (heeft *1* waarde), **Toegang voor vrachtwagens** (heeft *5* waarden), **Toegang voor auto's** (heeft *1* waarde), **Toegang voor scooters** (heeft *1* waarde), **Authenticatie via app** (heeft *1* waarde), **Authenticatie via chipkaart** (heeft *1* waarde), **Contactloze authenticatie** (heeft *1* waarde), **Authenticatie via sleutel** (heeft *1* waarde), **Authenticatie vereist** (heeft *1* waarde), **Authenticatie via telefoongesprek** (heeft *1* waarde), **Authenticatie via sms** (heeft *1* waarde), **Kosten** (heeft *2* waarden), **Type internettoegang** (heeft *3* waarden), **Type internettoegang** (heeft *3* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open, en andere.
 
  4. **Buurtwinkel en supermarkt**. [Buurtwinkel](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) en [supermarkt](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) vertegenwoordigen detailhandelsfaciliteiten.
         Bevat *13* soorten filters: **Bulkaankoop** (heeft *2* waarden), **Geldopname** (heeft *5* waarden), **Verschoningstafel** (heeft *3* waarden), **Koffie** (heeft *2* waarden), **Bezorging** (heeft *1* waarde), **Dieet** (heeft *8* waarden), **IJs** (heeft *1* waarde), **Biologische producten** (heeft *2* waarden), **Betaalmethode** (meer dan *10* waarden), **Tweedehandsfilter** (heeft *2* waarden), **Zelfscankassa** (heeft *2* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
@@ -156,8 +160,8 @@ Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhan
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Noodgeval](https://wiki.openstreetmap.org/wiki/Key:emergency) omvat faciliteiten en locaties die verband houden met nooddiensten zoals ziekenhuizen, politiebureaus, brandweerkazernes en medische eerstehulpcentra.
         Bevat geen filters.
 
- 6. **Tankstation**. Een [tankstation](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), ook bekend als een benzinestation. Het is een detailhandelsfaciliteit waar motorvoertuigen kunnen worden bijgetankt.
-        Bevat *13* soorten filters: **Autowasstraat** (heeft *2* waarden), **Geldopname** (heeft *5* waarden), **Perslucht** (heeft *1* waarde), **Brandstoftype (luchtvaart)** (heeft meer dan *20* waarden), **Tankpassen** (heeft *5* waarden), **Betaalmethode** (heeft meer dan *20* waarden), **Zelfscankassa** (heeft *2* waarden), **Toegang voor sneeuwscooters** (heeft *3* waarden), **Toilet** (meer dan *1* waarde), **Stofzuiger** (heeft *1* waarde), **Automatische brandstofpomp** (heeft *1* waarde), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
+ 6. **Tankstation**. Een [tankstation](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), ook bekend als een benzinestation, tankstation, benzinepomp en garage. Het is een detailhandelsfaciliteit waar motorvoertuigen kunnen worden bijgetankt.
+        Bevat *13* soorten filters: **Autowasstraat** (heeft *2* waarden), **Geldopname** (heeft *5* waarden), **Perslucht** (heeft *1* waarden), **Brandstoftype (luchtvaart)** (heeft meer dan *20* waarden), **Tankpassen** (heeft *5* waarden), **Betaalmethode** (heeft meer dan *20* waarden), **Zelfscankassa** (heeft *2* waarden), **Toegang voor sneeuwscooters** (heeft *3* waarden), **Rustruimte** (meer dan *1* waarden), **Stofzuiger** (heeft *1* waarden), **Automatische brandstofpomp** (heeft *1* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
 
  7. **Financiën**. [Financiën](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) wordt gebruikt voor kantoren van bedrijven in de financiële sector.
         Bevat *5* soorten filters.
@@ -177,7 +181,7 @@ Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhan
  12. **<Translate android="true" ids="poi_filter_closest_poi"/>**. Omvat POI's die dicht bij u in de buurt zijn.
         Bevat *216* soorten filters.
 
- 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parkeren](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) omvat faciliteiten die door het publiek, klanten of andere geautoriseerde gebruikers worden gebruikt om voertuigen zoals auto's en vrachtwagens te parkeren, algemeen bekend als een parkeerplaats.
+ 13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parkeren](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) omvat faciliteiten die door het publiek, klanten of andere geautoriseerde gebruikers worden gebruikt om voertuigen zoals auto's en vrachtwagens te parkeren, algemeen bekend als een parkeerplaats (Brits Engels) of parkeerplaats (Amerikaans Engels).
         Bevat *34* soorten filters.
 
  14. **Persoonlijk vervoer**. Alle [soorten voertuigen](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) kunnen in uw bezit zijn.
@@ -239,16 +243,16 @@ Beschrijving en hoe te gebruiken:
 - *Om* onnodige categorieën *te verbergen*, tikt u op het **min**-pictogram.
 - **Beschikbaar**. Eerder *Verborgen* categorieën kunnen worden teruggezet naar de weergegeven lijst door op het **plus**-pictogram te tikken.
 - Gebruik de knop **Resetten** naar standaard om de lijst terug te zetten naar de vooraf ingestelde staat.
-- Categorieën die zijn gemaakt met [Aangepast zoeken](#custom-poi-search) of [Filters](#save-new-custom-filters) kunnen worden verwijderd met het **Verwijder**-pictogram.
+- Categorieën die zijn gemaakt met [Aangepast zoeken](#customize-poi-search) of [Filters](#save-new-custom-filters) kunnen worden verwijderd met het **Verwijder**-pictogram.
 
-![POI zoeken Android](@site/static/img/search/search_poi_rearrange_del_andr.png)
+![POI zoeken Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 
 
 ### Online zoeken {#online-search}
 
 <InfoAndroidOnly />
 
-![POI zoeken Android](@site/static/img/search/search_online_2_andr.png)
+![POI zoeken Android](@site/static/img/search/search_online_2_andr.png)  
 
 **Online zoeken** maakt het mogelijk om locaties, adressen en points of interest in realtime te vinden. OsmAnd gebruikt [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), een online geocoder ontwikkeld door OpenStreetMap die tekstquery's van gebruikers vertaalt naar geografische coördinaten en terug.
 
@@ -268,7 +272,7 @@ Gebruik van Online zoeken:
 - Online zoeken is handig om te gebruiken als er geen kaarten van de regio zijn en als het onmogelijk is om ze te downloaden.
 - *Vereist een constante en stabiele internetverbinding.*
 
-![POI zoeken Android](@site/static/img/search/search_poi_online_increase2_andr.png)
+![POI zoeken Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
 Om de resultaten te verbeteren, zoomt u in op de kaart voordat u de zoekfunctie gebruikt om dichter bij de plaats te komen waar u een specifieke locatie moet vinden. En tijdens het zoeken kunt u **de zoekradius vergroten** om plaatsen te vinden die verder van uw locatie verwijderd zijn. Bij offline zoeken, als de vereiste resultaten niet beschikbaar zijn, stelt OsmAnd voor om de online zoekfunctie te gebruiken.
 
@@ -308,7 +312,7 @@ Deze functionaliteit is vooral handig in verschillende gevallen:
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 *Aangepast POI-filter* omvat sets van voorzieningencategorieën die bestaan uit relevante waarden. Met OsmAnd kunt u de vereiste POI-types uit een of meer voorgestelde categorieën verzamelen en combineren.
 
@@ -468,7 +472,7 @@ U kunt alleen categorieën verwijderen die zijn gemaakt met filters of aangepast
 
 ### Aangepaste categorieën verwijderen (iOS) {#delete-custom-categories-ios}
 
-![Aangepaste POI verwijderen iOS](@site/static/img/search/custom_poi_delete_3_ios.png)
+![Aangepaste POI verwijderen iOS](@site/static/img/search/custom_poi_delete_3_ios.png)  
 
 Een extra optie alleen voor de iOS-app is **Aangepaste categorieën verwijderen**.
 

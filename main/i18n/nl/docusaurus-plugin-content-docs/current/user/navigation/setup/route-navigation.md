@@ -1,8 +1,9 @@
 ---
-source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
+source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Routevoorbereiding
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -58,7 +58,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 - Configureer de [weergave van de routelijn](../guidance/map-during-navigation#route-line-appearance) (*optioneel*, beschikbaar voor Pro-gebruikers ([Android](../../purchases/android.md#pro-features) / [iOS](../../purchases/ios.md#pro-features))).
 
-- Configureer [gesproken aanwijzingen](../guidance/voice-navigation.md).
+- Configureer de [gesproken aanwijzingen](../guidance/voice-navigation.md).
 
 **Stap 3: Bestemmingen instellen.**
 
@@ -122,10 +122,25 @@ Stel uw bestemming in het *Navigatiemenu* in met:
 - De **Annuleren**-knop leidt terug naar het hoofdscherm.
 - [Startknop](#start--stop-navigation) start de navigatie nadat de routeberekening is voltooid.
   
-### Startpunt selecteren {#select-starting-point}
+### Startpunt selecteren {#select-start-point}
 
-Wat het startpunt betreft, kunt u uw huidige locatie kiezen, de locatie van een [Favoriet punt](../../map/point-layers-on-map.md#favorites), een punt op de kaart selecteren of [Zoeken](../../search/index.md) gebruiken. U kunt ook een startpunt instellen in het [kaartcontextmenu](../../map/map-context-menu.md) door de functie [Richting van](../../map/map-context-menu.md#directions-to--from) te selecteren.  
+<Tabs groupId="operating-systems" queryString="current-os">
 
+<TabItem value="android" label="Android">
+
+![Selecteren op de kaart](@site/static/img/navigation/route/select_on_map.png)
+
+Wat het startpunt betreft, kunt u uw huidige locatie kiezen, de locatie van een [Favoriet punt](../../map/point-layers-on-map.md#favorites), een punt op de kaart selecteren of [Zoeken](../../search/index.md) gebruiken. Wanneer u een punt op de kaart selecteert, opent zich een dialoog. De kaart wordt gecentreerd met een marker, de coördinaten van het kaartcentrum worden weergegeven en u verplaatst de kaart onder de marker in plaats van direct op een plek te tikken. Om te bevestigen, drukt u op de knop *Selecteren*. U kunt ook een startpunt instellen in het [kaartcontextmenu](../../map/map-context-menu.md) door de functie [Richting van](../../map/map-context-menu.md#directions-to--from) te selecteren.  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Selecteren op de kaart iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+Wat het startpunt betreft, kunt u uw huidige locatie kiezen, de locatie van een [Favoriet punt](../../map/point-layers-on-map.md#favorites), een punt op de kaart selecteren of [Zoeken](../../search/index.md) gebruiken. Wanneer u een punt op de kaart selecteert, kunt u de kaart vrij verplaatsen en in- en uitzoomen, en vervolgens tikken op de gewenste locatie. Een vlag verschijnt op de gekozen plek. U kunt ook een startpunt instellen in het [kaartcontextmenu](../../map/map-context-menu.md) door de functie [Richting van](../../map/map-context-menu.md#directions-to--from) te selecteren. 
+</TabItem>
+
+</Tabs>
 
 ### Doelpunt instellen {#set-target-point}
 
@@ -134,24 +149,32 @@ Wat het startpunt betreft, kunt u uw huidige locatie kiezen, de locatie van een 
 <TabItem value="android" label="Android">
 
 ![Navigatiemenu Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+
+Het belangrijkste om de navigatie te starten is het bepalen van uw bestemming. Het bestemmingspunt kan worden gevonden met behulp van een [*Zoekfunctie*](../../search/index.md#overview), of gewoon op een kaart. U kunt ook een doelpunt instellen in het [*Navigatiemenu*](#navigation-menu):  
+
+- **<Translate android="true" ids="search_button"/>** - Opent [het zoekmenu](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Opent [het adreszoekmenu](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Opent een dialoog waarin de kaart is gecentreerd met een marker. De coördinaten van het kaartcentrum worden weergegeven, u verplaatst de kaart onder de marker en bevestigt de keuze door op *Selecteren* te drukken.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Maakt het mogelijk om een [Favoriet](../../personal/favorites.md) als bestemming te gebruiken.
+- **<Translate android="true" ids="shared_string_markers"/>** - Maakt het mogelijk om een van de [Kaartmarkeringen](../../personal/markers.md) als bestemmingspunt te kiezen.
+- **Wissel Startpunt en Bestemming** &nbsp;&#8595;&#8593; - Maakt het mogelijk om *Start*- en *Eind*-punten om te wisselen.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Navigatiemenu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
-</TabItem>
-
-</Tabs>
-
 Het belangrijkste om de navigatie te starten is het bepalen van uw bestemming. Het bestemmingspunt kan worden gevonden met behulp van een [*Zoekfunctie*](../../search/index.md#overview), of gewoon op een kaart. U kunt ook een doelpunt instellen in het [*Navigatiemenu*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Opent [het zoekmenu](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Opent [het adreszoekmenu](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Opent de kaart om een bestemmingspunt te kiezen door op de kaart te tikken.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Maakt het mogelijk om de kaart te verplaatsen en in- en uit te zoomen, en vervolgens te tikken op de gewenste locatie. Een vlag verschijnt op de gekozen plek en markeert de bestemming.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Maakt het mogelijk om een [Favoriet](../../personal/favorites.md) als bestemming te gebruiken.
 - **<Translate android="true" ids="shared_string_markers"/>** - Maakt het mogelijk om een van de [Kaartmarkeringen](../../personal/markers.md) als bestemmingspunt te kiezen.
 - **Wissel Startpunt en Bestemming** &nbsp;&#8595;&#8593; - Maakt het mogelijk om *Start*- en *Eind*-punten om te wisselen.
+</TabItem>
+
+</Tabs>
 
 
 ### Tussenliggende bestemmingen {#intermediate-destinations}
@@ -172,12 +195,12 @@ Het belangrijkste om de navigatie te starten is het bepalen van uw bestemming. H
 
 </Tabs>
 
-- **&nbsp;&#x1F589;** - hiermee opent u de lijst met bestemmingspunten om wijzigingen aan te brengen.
-- **&nbsp;&#8592;** - gaat naar het Navigatiemenuscherm.
-- **&nbsp;&#10005;** - hiermee kunt u een bestemmingspunt uit de puntenlijst verwijderen.
-- **&nbsp;&#61;** - hiermee kunt u de volgorde van de punten in de puntenlijst wijzigen.
-- *&nbsp;&#43; Toevoegen* - opent het contextmenu *Tussenliggend toevoegen*.
-- *&nbsp;&#9776; Alles wissen* - hiermee kunt u alle tussenliggende punten wissen.
+- **&nbsp;&#x1F589;** - Hiermee opent u de lijst met bestemmingspunten om wijzigingen aan te brengen.
+- **&nbsp;&#8592;** - Gaat naar het Navigatiemenuscherm.
+- **&nbsp;&#10005;** - Hiermee kunt u een bestemmingspunt uit de puntenlijst verwijderen.
+- **&nbsp;&#61;** - Hiermee kunt u de volgorde van de punten in de puntenlijst wijzigen.
+- *&nbsp;&#43; Toevoegen* - Opent het contextmenu *Tussenliggend toevoegen*.
+- *&nbsp;&#9776; Alles wissen* - Hiermee kunt u alle tussenliggende punten wissen.
 
 Als u **Sorteren** (*Android*) of **Opties** (*iOS*) kiest in de lijst met bestemmingen, krijgt u speciale opties om de volgorde van de navigatie naar tussenliggende punten aan te passen.
 
@@ -205,7 +228,7 @@ In dit menu vindt u extra opties voor het beheren van de bestemmingspunten:
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Alleen Android*) - Alle punten worden in omgekeerde richting gezet.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. U kunt vanuit dit menu tussenliggende bestemmingen toevoegen.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. U kunt vanuit dit menu tussenliggende bestemmingen toevoegen. Het proces van het selecteren van een tussenliggende bestemming op de kaart is hetzelfde als voor de start- en doelpunt.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Alle tussenliggende bestemmingen worden van de kaart verwijderd.
 

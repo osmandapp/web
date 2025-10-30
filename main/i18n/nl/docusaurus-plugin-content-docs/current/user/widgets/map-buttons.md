@@ -1,8 +1,9 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title:  Kaartknoppen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -186,7 +186,7 @@ Instellingen voor het uiterlijk van de kaartknoppen zijn beschikbaar via de volg
 - *Menu → Scherm configureren → Knoppen → Standaardknoppen*
 - *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → menu met drie stippen → Uiterlijk*
 
-Het aanpassen van het uiterlijk van knoppen stelt u in staat om de grootte, vorm, het pictogram en de achtergronddekking aan te passen voor zowel [Snelle Actie (Aangepaste knoppen)](../widgets/quick-action.md#quick-action-button-appearance) als [Standaardknoppen](../widgets/configure-screen.md#button-appearance). Deze flexibiliteit stelt u in staat de interface te personaliseren naar uw voorkeuren en de bruikbaarheid te verbeteren.
+Het aanpassen van het uiterlijk van knoppen stelt u in staat om de grootte, vorm, het pictogram en de achtergronddekking aan te passen voor zowel [Snelle Actie (Aangepaste knoppen)](../widgets/quick-action.md#button-appearance) als [Standaardknoppen](../widgets/configure-screen.md#button-appearance). Deze flexibiliteit stelt u in staat de interface te personaliseren naar uw voorkeuren en de bruikbaarheid te verbeteren.
 
 
 ## Gerelateerde artikelen {#related-articles}

@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -60,7 +60,7 @@ Wanneer u de applicatie opent, wordt een lijst met categorieën weergegeven. Voo
 - [Instellingen](#voice-prompts). Deze knop is verantwoordelijk voor: 1. toegang tot het in-/uitschakelen van *gesproken aanwijzingen* wanneer u de geselecteerde route navigeert; 2. routegegevens (tijd en afstand) voor de volgende stop weergeven.
 - [Zoeken](#search). Door op de knop te tikken, wordt een scherm geopend met toegang tot de zoekfuncties.
 - [Mijn locatie](../widgets/map-buttons.md#my-location-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart. De pinch-to-zoom-gebaar is beschikbaar voor het schalen van de kaart. Als dit niet wordt ondersteund door de head unit, wordt de zoom-aanpassing uitgevoerd door een dubbel tikken en veeggebaar.
 - [Kompas](../widgets/map-buttons.md#compass). Toont welke van de vier beschikbare kaartoriëntatiemodi op het scherm van uw apparaat is geselecteerd.
 
 
@@ -72,7 +72,7 @@ Wanneer u de applicatie opent, wordt een lijst met categorieën weergegeven. Voo
 
 Om OsmAnd in *Android Auto* te laten werken, moet u uw Android-apparaat [verbinden](#connection-screen) met het multimediasysteem van uw voertuig. Het Android-besturingssysteem moet zijn bijgewerkt naar versie 6.0 of hoger.
 
-- Om te weten hoe u uw apparaat kunt verbinden en instellen, bezoekt u de [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=nl) websites.  
+- Om te weten hoe u uw apparaat kunt verbinden en instellen, bezoekt u de [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites.  
 
 - Niet alle voertuigen ondersteunen de mogelijkheid om een apparaat aan te sluiten. Controleer de [lijst voor *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
@@ -138,7 +138,7 @@ In de categorie Geschiedenis kunt u een bestemming selecteren uit een lijst met 
     </tr>
 </table>
 
-POI's (Nuttige Plaatsen) zijn een type punten die plaatsen of objecten op de kaart identificeren die belangrijk of interessant zijn voor gebruikers. Ze worden gemarkeerd door speciale pictogrammen die worden aangeboden in de [OsmAnd-instellingen](../map/point-layers-on-map.md#poi-types) en zijn gesorteerd in groepen.  
+POI's (Points of Interest) zijn een type punten die plaatsen of objecten op de kaart identificeren die belangrijk of interessant zijn voor gebruikers. Ze worden gemarkeerd door speciale pictogrammen die worden aangeboden in de [OsmAnd-instellingen](../map/point-layers-on-map.md#poi-types) en zijn gesorteerd in groepen.  
 
 Om een route naar een POI in *Android Auto* te maken, volgt u deze stappen:
 
@@ -330,7 +330,7 @@ In de instellingen van Android Auto kunt u de positie van de taakbalk en de inde
 3. [Locatievertragingen (ANR-crashes).](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 4. Veelgestelde vragen over het verbindingsscherm:
     - *Waarom kan ik de app niet bedienen vanaf mijn telefoon wanneer deze is verbonden met Android Auto?*  
-        Om veiligheidsredenen is het scherm van de OsmAnd-app op uw telefoon vergrendeld terwijl deze is verbonden met Android Auto. U kunt de app alleen bedienen via het autoscherm.
+        Om veiligheidsredenen is het scherm van de OsmAnd-app op uw telefoon vergrendeld terwijl deze is verbonden met Android Auto. U kunt met de app alleen interageren via het autoscherm.
     - *Kan ik het vergrendelde scherm uitschakelen en de app op mijn telefoon gebruiken?*  
         Nee, Android Auto legt deze beperking op om afleidingen tijdens het rijden te voorkomen.
     - *Wat moet ik doen als mijn telefoon en het autoscherm niet verbonden lijken te zijn?*  

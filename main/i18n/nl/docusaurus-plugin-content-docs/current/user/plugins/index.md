@@ -1,8 +1,9 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Plugins
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -34,7 +34,7 @@ Om toegang te krijgen tot de functionaliteit van een plugin, moet deze eerst wor
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Inschakelen*
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Inschakelen*
 
 ![Plugins inschakelen Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin-voorbeeld Android](@site/static/img/settings/plugin_example_android.png)
 
@@ -52,7 +52,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> �
 
 ### Aankoop {#purchase}
 
-De meeste plugins zijn gratis beschikbaar, alleen de plugins in de onderstaande lijst vereisen de aankoop van een [OsmAnd+ of OsmAnd Pro](../purchases/index.md) licentie om te gebruiken:
+De meeste plugins zijn gratis beschikbaar, alleen de plugins in de onderstaande lijst vereisen de aankoop van een [OsmAnd+ of OsmAnd Pro](../purchases/index.md) licentie om te gebruiken:  
 
 - [Topografie](../plugins/topography.md)
 - [3D-reliëf](../plugins/topography.md#3d-relief) (functie van de Topografie-plugin)
@@ -78,7 +78,7 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 | [Weer](../plugins/weather.md) | [Kaartlaag](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Scherm](../plugins/weather.md#weather-forecast-screen) |
 | [Nautische kaartweergave](#nautical-map-view) | [Kaartstijl](../plugins/nautical-charts.md#nautical-map-style), [Profiel](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikaartweergave](#ski-map-view) | [Kaartstijl](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profiel](../plugins/ski-maps.md#skiing-profile) |
-|[Audio-/videonotities](#audiovideo-notes) 🤖  | [Kaartlaag](../plugins/audio-video-notes.md#show-all-on-the-map), [Contextmenu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[Audio-/videonotities](#audiovideo-notes) 🤖  | [Kaartlaag](../plugins/audio-video-notes.md#show-all-on-the-map), [Contextmenu](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap bewerken](#openstreetmap-editing)| [Kaartlaag](../plugins/osm-editing.md#authorization) |
 |[Parkeerpositie](#parking-position) | [Contextmenu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Kaartlaag](../plugins/mapillary.md#map-layer), [Contextmenu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
@@ -92,13 +92,13 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 ### Plugin-instellingen {#plugin-settings}
 
 :::caution OPMERKING
-Alleen de OsmAnd development plugin en de OSM editing plugin wijzigen de instellingen voor alle profielen. De overige plugins worden voor elk profiel afzonderlijk geconfigureerd.
+Alleen de OsmAnd development plugin en de OSM editing plugin wijzigen de instellingen voor alle profielen. De overige plugins worden voor elk profiel afzonderlijk geconfigureerd.  
 :::
 
 De meeste plugins bieden specifieke profiel- of algemene instellingen, die toegankelijk zijn via:
 
-- *Hoofdmenu → Plugins → Pluginnaam → Instellingen (&#x2699 voor iOS)* of
-- *Hoofdmenu → Instellingen → Profiel → [Plugin-instellingen](../personal/profiles.md#plugin-settings)*.
+- *Hoofdmenu → Plugins → Pluginnaam → Instellingen (&#x2699 voor iOS)* of  
+- *Hoofdmenu → Instellingen → Profiel → [Plugin-instellingen](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -122,7 +122,7 @@ De volgende plugins bieden hun eigen instellingen:
 
 | Pluginnaam | Instellingen |
 |:------------|:-------|
-| [Ritregistratie](#trip-recording) | Configureer de [bedrijfsmodi](../plugins/trip-recording.md#required-setup-parameters) voor het opnemen van ritten |
+| [Ritregistratie](#trip-recording) | Configureer de ritregistratie [bedrijfsmodi](../plugins/trip-recording.md#required-setup-parameters) |
 | [Weer](#weather) | Configureer meeteenheden voor het weergeven van weersgebeurtenissen |
 |[Audio-/videonotities](#audiovideo-notes) 🤖  | Selecteer [videoformaat, hoe lang op te slaan, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap bewerken](#openstreetmap-editing)| Specificeer gebruikers[login](../plugins/osm-editing.md#settings)  |
@@ -134,7 +134,7 @@ De volgende plugins bieden hun eigen instellingen:
 
 ### Plugin-acties {#plugin-actions}
 
-**<Translate android="true" ids="reset_plugin_to_default"/>** - *met deze optie kunnen de plugin-instellingen worden teruggezet naar de standaardwaarden*.
+**<Translate android="true" ids="reset_plugin_to_default"/>** - *met deze optie kunnen de plugin-instellingen worden teruggezet naar de standaardwaarden*.  
 **<Translate android="true" ids="copy_from_other_profile"/>** - *plugin-instellingen kunnen worden gekopieerd van een ander profiel*.
 
 
@@ -147,15 +147,15 @@ Met Wikipedia tijdens uw reis leert u meer over de plaatsen die u bezoekt. Het i
 
 ### [Online kaarten](./online-map.md) {#online-maps}
 
-OsmAnd Online kaarten zijn een uitgebreide aanvulling op de OpenStreetMap-database die al in de applicatie aanwezig is. Met deze plugin kunt u lagen aan uw kaart toevoegen met informatie uit verschillende bronnen.
+OsmAnd Online kaarten zijn een uitgebreide aanvulling op de OpenStreetMap-database die al in de applicatie aanwezig is. Met deze plugin kunt u lagen aan uw kaart toevoegen met informatie uit verschillende bronnen.  
 
 ### [Ritregistratie](./trip-recording.md) {#trip-recording}
 
-Om een verhaal te vertellen over waar u bent geweest, kunnen GPS-gegevens, zoals de breedte- en lengtegraad van uw locatie, worden opgenomen en opgeslagen in een bestand, en vervolgens opnieuw worden gebruikt, verbeterd, aangevuld met waypoints, gebruikt voor navigatie, gedeeld met vrienden, enz.
+Om een verhaal te vertellen over waar u bent geweest, kunnen GPS-gegevens, zoals de breedte- en lengtegraad van uw locatie, worden opgenomen en opgeslagen in een bestand, en vervolgens opnieuw worden gebruikt, verbeterd, aangevuld met waypoints, gebruikt voor navigatie, gedeeld met vrienden, enz.  
 
 ### [Topografie](./topography.md) {#topography}
 
-Topografische informatie, zoals contourlijnen, schaduwreliëf, helling, 3D-reliëf, helpt bij het visueel beoordelen van het landschap door het zien van hoogte, reliëf, extremen, steilheid, punten van gelijke hoogte, enz.
+Topografische informatie, zoals contourlijnen, schaduwreliëf, helling, 3D-reliëf, helpt bij het visueel beoordelen van het landschap door het zien van hoogte, reliëf, extremen, steilheid, punten van gelijke hoogte, enz.  
 
 ### [Nautische kaartweergave](./nautical-charts.md) {#nautical-map-view}
 
@@ -167,7 +167,7 @@ Skikaartweergave toont winterkleuren en pistes voor afdalingen of langlaufen, ev
 
 ### [Audio-/videonotities](./audio-video-notes.md) {#audiovideo-notes}
 
-Maak audio-/videonotities voor toekomstig gebruik, bijvoorbeeld om een gebeurtenis, scène of interactie te onthouden. Gemaakte audio-/videonotities zijn beschikbaar via *Mijn plaatsen* en op de kaart als een individuele laag van door de gebruiker gemaakte verhalen en gedachten die aan een geolocatie zijn gekoppeld. Alleen voor Android.
+Maak audio-/videonotities voor toekomstig gebruik, bijvoorbeeld om een gebeurtenis, scène of interactie te onthouden. Gemaakte audio-/videonotities zijn beschikbaar via *Mijn plaatsen* en op de kaart als een individuele laag van door de gebruiker gemaakte verhalen en gedachten die aan een geolocatie zijn gekoppeld. Alleen voor Android.  
 
 ### [Parkeerpositie](./parking.md) {#parking-position}
 
@@ -175,35 +175,35 @@ Stel een punt in op de kaart waar uw auto op straat is achtergelaten en laat uw 
 
 ### [OpenStreetMap bewerken](./osm-editing.md) {#openstreetmap-editing}
 
-De OpenStreetMap bewerkingsplugin stelt u in staat bij te dragen aan OpenStreetMap, een wereldwijde gemeenschap die een uitgebreide kaart van de wereld creëert en openbaar beschikbare, actuele, open-source gegevens levert.
+De OpenStreetMap bewerkingsplugin stelt u in staat bij te dragen aan OpenStreetMap, een wereldwijde gemeenschap die een uitgebreide kaart van de wereld creëert en openbaar beschikbare, actuele, open-source gegevens levert.  
 
 ### [Mapillary](./mapillary.md) {#mapillary}
 
-Bekijk straatbeelden van uw routes of interessante plaatsen, geleverd door [Mapillary](https://www.mapillary.com/) (een internetverbinding is vereist).
+Bekijk straatbeelden van uw routes of interessante plaatsen, geleverd door [Mapillary](https://www.mapillary.com/) (een internetverbinding is vereist).  
 
 ### [Toegankelijkheid](./accessibility.md) {#accessibility}
 
-De Toegankelijkheidsplugin maakt de toegankelijkheidsfuncties van het apparaat direct beschikbaar in OsmAnd. Alleen voor Android.
+De Toegankelijkheidsplugin maakt de toegankelijkheidsfuncties van het apparaat direct beschikbaar in OsmAnd. Alleen voor Android.  
 
 ### [Externe sensoren](./external-sensors.md) {#external-sensors}
 
-Verbind externe sensoren om hun gegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.
+Verbind externe sensoren om hun gegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.  
 
 ### [Voertuigstatistieken](./vehicle-metrics.md) {#vehicle-metrics}
 
-Verbind een OBD-II-scanner om voertuiggegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.
+Verbind een OBD-II-scanner om voertuiggegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.  
 
 ### [Weer](./weather.md) {#weather}
 
-Toont de weersvoorspelling per uur voor de huidige dag en voor 7 dagen vooruit.
+Toont de weersvoorspelling per uur voor de huidige dag en voor 7 dagen vooruit.  
 
 ### [OsmAnd ontwikkeling](./development.md) {#osmand-development}
 
-De OsmAnd development plugin is gericht op ontwikkelaars en ervaren gebruikers. Het stelt u in staat om navigatieroutes te simuleren, de prestaties van schermweergave te controleren, enz.
+De OsmAnd development plugin is gericht op ontwikkelaars en ervaren gebruikers. Het stelt u in staat om navigatieroutes te simuleren, de prestaties van schermweergave te controleren, enz.  
 
 ### [OsmAnd Tracker](./osmand-tracker.md) {#osmand-tracker}
 
-OsmAnd Tracker helpt u te zien waar uw contacten zich op de kaart in OsmAnd bevinden. Alleen voor Android.
+OsmAnd Tracker helpt u te zien waar uw contacten zich op de kaart in OsmAnd bevinden. Alleen voor Android.  
 
 ### [AIS vaartuigtracker](./ais-tracker.md) {#ais-vessel-tracker}
 

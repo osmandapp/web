@@ -1,8 +1,9 @@
 ---
-source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
+source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
 sidebar_position: 5
 title: Crash Logs
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -37,7 +37,7 @@ Wees voorzichtig bij het verzenden van logcat-logs, aangezien deze privé-inform
 2. Kies in het pop-upmenu Gmail of uw favoriete e-mailapp. De e-mail wordt automatisch gegenereerd.
 3. Tik op de knop *Verzenden*.
 
-![Crash logs verzenden vanaf Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Crash logs verzenden vanaf Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
 
 
 ### Logs verzenden vanaf iOS-apparaten {#send-logs-from-ios-devices}
@@ -51,14 +51,14 @@ Wees voorzichtig bij het verzenden van logcat-logs, aangezien deze privé-inform
     - Handmatig.
         - Navigeer naar de iOS-systeemapp *Bestanden → Op mijn iPhone (of Op mijn iPad) → OsmAnd Maps → Logs*.
 
-    ![Crash logs verzenden iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Crash logs verzenden iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Stuur [IPS-formaat](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) van logs en autorisatiegegevens:
-    - Ga naar iOS *Instellingen → Analyse → Analysegegevens → OsmAnd Maps ips-formaat bestand* (tot iOS 17).
-    - iOS *Instellingen → Privacy & Beveiliging → Analyse & Verbeteringen → Analysegegevens → OsmAnd Maps ips-formaat bestand* (vanaf iOS 18).
+    - Op iOS 15 of ouder: *Instellingen → Analyse → Analysedata → OsmAnd Maps ips-formaat bestand*.
+    - Op iOS 16 of nieuwer:  *Instellingen → Privacy & Beveiliging → Analyse & Verbeteringen → Analysedata → OsmAnd Maps ips-formaat bestand*.
     - Stuur vervolgens, met behulp van uw e-mailapp, de logs naar `crash@osmand.net`.
 
-    ![Crash logs verzenden iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Crash logs verzenden iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 
 ## Tombstone-bestanden verzenden (Android) {#send-tombstone-files-android}
@@ -84,7 +84,7 @@ Om tombstone-bestanden te exporteren, moet u een bugrapport genereren met behulp
   
 Nadat het bugrapport klaar is, ontvangt u een melding. Tik op het meldingsvak om het rapport naar uw apparaat te downloaden. Pak het bestand uit en stuur de tombstone-bestanden naar het OsmAnd-ontwikkelaarsteam (e-mail: `crash@osmand.net`).
 
-![Crash logs verzenden vanaf Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Crash logs verzenden vanaf Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Houd er rekening mee dat bugrapporten privé-gegevens kunnen bevatten, inclusief app-gebruik of locatie.
@@ -106,7 +106,7 @@ Verbind vervolgens uw apparaat via USB met uw werkstation. Als het de eerste kee
 
 #### Bugrapport genereren {#generate-bug-report}
 
-1. Open een opdrachtregelterminal. Gebruik op Mac of Linux de *Terminal*-app en op Windows de *Opdrachtprompt*.
+1. Open een opdrachtregelterminal. Gebruik op Mac of Linux de *Terminal*-app en op Windows de *Opdrachtregel*.
 2. Navigeer naar de platform-tools-map waar ADB zich bevindt met behulp van de *cd*-opdracht (bijvoorbeeld 'cd /Users/Gebruikersnaam/Downloads/Tools').
 3. Genereer het bugrapport:
    - Op Mac: ```adb bugreport```
@@ -117,16 +117,16 @@ Verbind vervolgens uw apparaat via USB met uw werkstation. Als het de eerste kee
 7. Stuur de tombstone-bestanden naar `crash@osmand.net`.
 
 <!--
-* Open de terminal en roep de opdracht aan:  
+* Open the terminal and call the command:  
 ```adb bugreport ./output.zip```  
-waarbij output.zip de naam van het resultaatbestand is  
+where output.zip is the name of the result file  
 
-* Pak het resultaatbestand uit:  
+* Unzip the result file:  
 ```unzip file.zip -d destination_folder```  
 
-* Zoek de tombstones-map:  
+* Find tombstones folder:  
 ```cd FS/data/tombstones```
-Waar u bestanden vindt zoals  -->
+Where you find files like  -->
 
 ### Geroote apparaten of Android Studio Emulator gebruiken {#using-rooted-devices-or-android-studio-emulator}
 
