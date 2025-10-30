@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "Einmaliger Kauf",
   "label_pricing": "Preise",
   "subtitle_choose_your_ideal_osmand_plan": "Wählen Sie Ihren idealen OsmAnd-Plan: Kostenlos starten, ein flexibles Abonnement wählen oder einen einmaligen Kauf tätigen",
-  "notice_fastspring_purchase_info": "Online-Käufe werden von FastSpring, einem autorisierten Wiederverkäufer, abgewickelt. Abonnements verlängern sich automatisch, sofern sie nicht vor dem Verlängerungsdatum gekündigt werden. Sie können Ihr Abonnement im FastSpring-Kontoverwaltungsportal kündigen oder verlängern.",
+  "notice_fastspring_purchase_info": "Online-Käufe werden von FastSpring, einem autorisierten Wiederverkäufer, abgewickelt. Abonnements verlängern sich automatisch, sofern sie nicht vor dem Verlängerungsdatum gekündigt werden. Sie können Ihr Abonnement im <portalLink>FastSpring-Kontoverwaltungsportal</portalLink> kündigen oder verlängern.",
   "feature_offline_navigation_desc": "Turn-by-Turn-Sprachführung, Verkehrswarnungen und Spurführung, alles offline verfügbar",
   "feature_navigation_by_planned_tracks": "Navigation nach geplanten Tracks",
   "feature_navigation_by_planned_tracks_desc": "Folgen Sie Ihren GPX-Tracks mit Turn-by-Turn-Anweisungen oder halten Sie sich an Straßen für detaillierte Navigation und Straßeninformationen",
@@ -138,7 +138,7 @@
   "feature_contour_lines_desc": "Detaillierte 100 m / 20 ft Höhenlinien mit anpassbarem Aussehen",
   "feature_terrain_visualization": "Geländevisualisierung",
   "feature_terrain_visualization_desc": "Visualisieren Sie Gelände mit Schummerung, Neigung und Höhendaten für eine verbesserte Landschaftsanalyse, Lawinenrisikobewertung und personalisierte Ansichten über benutzerdefinierte Paletten",
-  "feature_android_auto_and_apple_carplay": "Android Auto & Apple CarPlay",
+  "feature_android_auto_and_apple_carplay": "Android Auto und Apple CarPlay",
   "feature_android_auto_and_apple_carplay_desc": "Offline-Navigation auf dem Display Ihres Fahrzeugs, einschließlich Spurführung und Tachometer",
   "feature_vehicle_metrics_obd_ii": "Fahrzeugdaten (OBD-II)",
   "feature_vehicle_metrics_obd_ii_desc": "Verfolgen Sie wichtige Fahrzeugdaten über OBD-II und überwachen Sie wichtige Messwerte wie Geschwindigkeit, Motordrehzahl und Kraftstoffverbrauch",
@@ -192,12 +192,18 @@
   "weather_current": "Aktueller Standort",
   "weather_generated": "Wetter generiert",
   "weather_source": "Quelle",
-  "weather:map_layers": "Kartenebenen",
   "terrain_color_scheme": "Farbschema",
   "terrain_desc": "Wählen Sie eine der Visualisierungsoptionen: Höhe, Schummerung, Neigung.",
   "terrain_visibility": "Sichtbarkeit",
   "dev_issues": "Probleme",
+  "plan_route": "Route planen",
+  "create_track": "Track erstellen",
+  "import_track": "Track importieren",
+  "download_track": "Track herunterladen",
+  "download_track_desc": "Sie können den Track mit vollständigen Daten herunterladen, einschließlich Navigationsanweisungen, oder eine vereinfachte Version, die für die Nutzung mit anderen Apps geeignet ist.",
+  "download_track_full": "Vollständige Track-Daten",
+  "download_track_simplified": "Vereinfachter Track",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }

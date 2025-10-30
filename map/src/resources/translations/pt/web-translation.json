@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "Compra única",
   "label_pricing": "Preços",
   "subtitle_choose_your_ideal_osmand_plan": "Escolha seu plano OsmAnd ideal: Comece gratuitamente, selecione uma assinatura flexível ou faça uma compra única",
-  "notice_fastspring_purchase_info": "As compras online são fornecidas pela FastSpring, um revendedor autorizado. As assinaturas são renovadas automaticamente, a menos que sejam canceladas antes da data de renovação. Você pode cancelar ou renovar sua assinatura no portal de gerenciamento de conta FastSpring.",
+  "notice_fastspring_purchase_info": "As compras online são fornecidas pela FastSpring, um revendedor autorizado. As assinaturas são renovadas automaticamente, a menos que sejam canceladas antes da data de renovação. Você pode cancelar ou renovar sua assinatura no <portalLink>portal de gerenciamento de conta FastSpring</portalLink>.",
   "feature_offline_navigation_desc": "Orientação por voz curva a curva, avisos de tráfego e orientação de faixa, tudo disponível offline",
   "feature_navigation_by_planned_tracks": "Navegação por trilhas planejadas",
   "feature_navigation_by_planned_tracks_desc": "Siga suas trilhas GPX com orientação curva a curva, ou ajuste-se às estradas para navegação detalhada e informações da estrada",
@@ -192,12 +192,18 @@
   "weather_current": "Localização atual",
   "weather_generated": "Clima gerado",
   "weather_source": "Fonte",
-  "weather:map_layers": "Camadas do mapa",
   "terrain_color_scheme": "Esquema de cores",
   "terrain_desc": "Selecione uma das opções de visualização: Altitude, Relevo Sombreado, Inclinação.",
   "terrain_visibility": "Visibilidade",
   "dev_issues": "Problemas",
+  "plan_route": "Planejar rota",
+  "create_track": "Criar trilha",
+  "import_track": "Importar trilha",
+  "download_track": "Baixar trilha",
+  "download_track_desc": "Você pode baixar a trilha com dados completos, incluindo instruções de navegação, ou uma versão simplificada adequada para uso com outros aplicativos.",
+  "download_track_full": "Dados completos da trilha",
+  "download_track_simplified": "Trilha simplificada",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }

@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "Compra única",
   "label_pricing": "Precios",
   "subtitle_choose_your_ideal_osmand_plan": "Elige tu plan OsmAnd ideal: empieza gratis, selecciona una suscripción flexible o realiza una compra única",
-  "notice_fastspring_purchase_info": "Las compras en línea son proporcionadas por FastSpring, un revendedor autorizado. Las suscripciones se renuevan automáticamente a menos que se cancelen antes de la fecha de renovación. Puedes cancelar o renovar tu suscripción en el portal de gestión de cuentas de FastSpring.",
+  "notice_fastspring_purchase_info": "Las compras en línea son proporcionadas por FastSpring, un revendedor autorizado. Las suscripciones se renuevan automáticamente a menos que se cancelen antes de la fecha de renovación. Puedes cancelar o renovar tu suscripción en el <portalLink>portal de gestión de cuentas de FastSpring</portalLink>.",
   "feature_offline_navigation_desc": "Guía por voz paso a paso, advertencias de tráfico y guía de carril, todo disponible sin conexión",
   "feature_navigation_by_planned_tracks": "Navegación por rutas planificadas",
   "feature_navigation_by_planned_tracks_desc": "Sigue tus rutas GPX con guía paso a paso, o ajusta a carreteras para navegación detallada e información de la carretera",
@@ -192,12 +192,18 @@
   "weather_current": "Ubicación actual",
   "weather_generated": "Clima generado",
   "weather_source": "Fuente",
-  "weather:map_layers": "Capas del mapa",
   "terrain_color_scheme": "Esquema de color",
   "terrain_desc": "Selecciona una de las opciones de visualización: Altitud, Sombreado de relieve, Pendiente.",
   "terrain_visibility": "Visibilidad",
   "dev_issues": "Problemas",
+  "plan_route": "Planificar ruta",
+  "create_track": "Crear ruta",
+  "import_track": "Importar ruta",
+  "download_track": "Descargar ruta",
+  "download_track_desc": "Puedes descargar la ruta con datos completos, incluyendo instrucciones de navegación, o una versión simplificada adecuada para usar con otras aplicaciones.",
+  "download_track_full": "Datos completos de la ruta",
+  "download_track_simplified": "Ruta simplificada",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }

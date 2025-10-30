@@ -199,7 +199,11 @@
   "plan_route": "Planifier l'itinéraire",
   "create_track": "Créer une trace",
   "import_track": "Importer une trace",
+  "download_track": "Télécharger une trace",
+  "download_track_desc": "Vous pouvez télécharger la trace avec les données complètes, y compris les instructions de navigation, ou une version simplifiée adaptée à l'utilisation avec d'autres applications.",
+  "download_track_full": "Données de trace complètes",
+  "download_track_simplified": "Trace simplifiée",
   "sourceHash": {
-    "message": "f04415458a8e01656d9c5cb136e017c402c52406966ec5d45ca775a1e95d6a25"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }

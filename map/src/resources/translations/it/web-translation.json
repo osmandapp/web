@@ -96,7 +96,7 @@
   "feature_offline_navigation": "Navigazione offline",
   "feature_settings_favorites_sync": "Sincronizzazione impostazioni e preferiti",
   "feature_unlimited_map_downloads": "Download illimitati di mappe",
-  "feature_android_auto_and_carplay": "Android Auto e CarPlay",
+  "feature_android_auto_and_carplay": "Android Auto e Apple CarPlay",
   "feature_hillshade_and_contour_lines": "Rilievo ombreggiato e curve di livello",
   "feature_osmand_cloud": "OsmAnd Cloud",
   "feature_3d_relief": "Rilievo 3D",
@@ -111,7 +111,7 @@
   "purchase_type_one_time_purchase": "Acquisto una tantum",
   "label_pricing": "Prezzi",
   "subtitle_choose_your_ideal_osmand_plan": "Scegli il tuo piano OsmAnd ideale: inizia gratuitamente, seleziona un abbonamento flessibile o effettua un acquisto una tantum",
-  "notice_fastspring_purchase_info": "Gli acquisti online sono forniti da FastSpring, un rivenditore autorizzato. Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati prima della data di rinnovo. Puoi annullare o rinnovare il tuo abbonamento sul portale di gestione account FastSpring.",
+  "notice_fastspring_purchase_info": "Gli acquisti online sono forniti da FastSpring, un rivenditore autorizzato. Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati prima della data di rinnovo. Puoi annullare o rinnovare il tuo abbonamento sul <portalLink>portale di gestione account FastSpring</portalLink>.",
   "feature_offline_navigation_desc": "Guida vocale passo-passo, avvisi sul traffico e indicazioni di corsia, tutto disponibile offline",
   "feature_navigation_by_planned_tracks": "Navigazione tramite percorsi pianificati",
   "feature_navigation_by_planned_tracks_desc": "Segui i tuoi percorsi GPX con guida passo-passo, o agganciati alle strade per una navigazione dettagliata e informazioni stradali",
@@ -192,12 +192,18 @@
   "weather_current": "Posizione attuale",
   "weather_generated": "Meteo generato",
   "weather_source": "Fonte",
-  "weather:map_layers": "Livelli mappa",
   "terrain_color_scheme": "Schema colori",
   "terrain_desc": "Seleziona una delle opzioni di visualizzazione: Altitudine, Rilievo ombreggiato, Pendenza.",
   "terrain_visibility": "Visibilità",
   "dev_issues": "Problemi",
+  "plan_route": "Pianifica percorso",
+  "create_track": "Crea percorso",
+  "import_track": "Importa percorso",
+  "download_track": "Scarica percorso",
+  "download_track_desc": "Puoi scaricare il percorso con dati completi, incluse le istruzioni di navigazione, o una versione semplificata adatta per l'uso con altre app.",
+  "download_track_full": "Dati percorso completi",
+  "download_track_simplified": "Percorso semplificato",
   "sourceHash": {
-    "message": "a9049666b4073b47adb2fd653d6846c5de03795ebdf15eaddad3f293a557ed29"
+    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
   }
 }
