@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Import / Eksport
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,13 +13,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 ## Przegląd {#overview}
 
 Narzędzia **Import** i **Eksport** w OsmAnd pozwalają na zarządzanie danymi. Możesz przenosić swoje profile, ulubione, trasy i inne ustawienia za pomocą specjalnego formatu poprzez aplikacje na swoim urządzeniu. Proces ten upraszcza zapisywanie i przesyłanie danych między urządzeniami oraz umożliwia udostępnianie ich innym użytkownikom OsmAnd.
 
 :::note Duży rozmiar
-*Jeśli rozmiar wybranych danych jest znaczny, przygotowanie pliku `.osf` przez aplikację zajmie trochę czasu.*
+*Jeśli rozmiar wybranych danych jest znaczny, aplikacja będzie potrzebować czasu na przygotowanie pliku `.osf`.*
 :::
 
 
@@ -29,7 +29,7 @@ Narzędzia **Import** i **Eksport** w OsmAnd pozwalają na zarządzanie danymi. 
 **Typy danych** dostępne do importu/eksportu:
 
 - **Ustawienia:**  
-        [Profile](../personal/profiles.md#actions), &nbsp;[Ustawienia ogólne OsmAnd](../personal/global-settings.md), &nbsp;[Kolory](../personal/color-palette-schemes.md), &nbsp;[Szybka akcja](../widgets/quick-action.md), &nbsp;[Typy POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Unikaj drogi](../map/map-context-menu.md#avoid-road).
+        [Profile](../personal/profiles.md#actions), &nbsp;[OsmAnd/Ustawienia ogólne](../personal/global-settings.md), &nbsp;[Kolory](../personal/color-palette-schemes.md), &nbsp;[Szybka akcja](../widgets/quick-action.md), &nbsp;[Typ POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Unikaj drogi](../map/map-context-menu.md#avoid-road).
 - **Moje miejsca:**  
         [Ulubione](../personal/favorites.md#export--import), &nbsp;[Trasy](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notatki OSM*, *Edycje OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notatki A/V](../plugins/audio-video-notes.md), &nbsp;[Znaczniki na mapie](../personal/markers.md), &nbsp;[Historia znaczników*, *Historia wyszukiwania*, *Historia nawigacji](../personal/global-settings.md#history), &nbsp;*Plan podróży*.
 - **Zasoby:**  
@@ -58,7 +58,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Wszystkie skonfigurowane i utworzone dane można wyeksportować za pomocą ***menu Eksport***. Menu składa się z trzech grup: **Ustawienia**, **Moje miejsca** i **Zasoby**, które zawierają wszystkie dostępne foldery plików. W każdym folderze można wybrać pliki do wyeksportowania, pojedynczo lub wszystkie naraz. **Wszystkie wyeksportowane pliki są zapisywane w formacie `.osf`**.  
+Wszystkie skonfigurowane i utworzone dane można wyeksportować za pomocą ***menu Eksport***. Menu składa się z trzech grup: **Ustawienia**, **Moje miejsca** i **Zasoby**, które zawierają wszystkie dostępne foldery plików. Na przykład, w sekcji Zasoby mapy są pogrupowane według typu w *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, i *<Translate android="true" ids="topography_maps"/>* w celu łatwiejszej nawigacji i selektywnego eksportu. W każdym folderze można wybrać pliki do wyeksportowania, pojedynczo lub wszystkie naraz. **Wszystkie wyeksportowane pliki są zapisywane w formacie `.osf`**.  
 
 
 ### Import {#import}
@@ -100,7 +100,7 @@ Otwiera i przywraca pliki `.osf`. Stuknij plik w menedżerze plików urządzenia
 
 ## Zapobieganie utracie danych {#preventing-data-loss}
 
-W wersjach OsmAnd na *Androida* i *iOS*, jeśli całkowicie **odinstalujesz** aplikację lub wybierzesz **Wyczyść dane** na swoim urządzeniu w menu Ustawienia Informacje o aplikacji, folder z danymi zostanie również usunięty z menedżera plików urządzenia. Jeśli nie podejmiesz środków ostrożności, spowoduje to **utratę wszystkich pobranych map dla danych OsmAnd, wszystkich zapisanych Ulubionych, tras GPX, komunikatów głosowych (TTS) i [innych danych](#export--import-data).**
+W wersjach OsmAnd na *Androida* i *iOS*, jeśli całkowicie **odinstalujesz** aplikację lub wybierzesz **Wyczyść dane** na swoim urządzeniu w menu Ustawienia Informacje o aplikacji, folder z danymi zostanie również usunięty z menedżera plików urządzenia. Jeśli nie podejmiesz środków ostrożności, spowoduje to **utratę wszystkich pobranych map OsmAnd, wszystkich zapisanych Ulubionych, tras GPX, komunikatów głosowych (TTS) i [innych danych](#export--import-data).**
 
 Istnieją dwa sposoby na zapisanie danych przed ponowną instalacją aplikacji OsmAnd:
 

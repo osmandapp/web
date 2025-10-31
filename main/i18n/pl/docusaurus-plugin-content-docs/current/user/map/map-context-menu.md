@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -41,7 +41,7 @@ Menu kontekstowe mapy dostarcza informacji o wybranym obiekcie na mapie. Można 
 
 **Menu kontekstowe** pojawia się po **jednokrotnym dotknięciu** oznaczonego obiektu na mapie. To menu kontekstowe wyświetla podstawowe informacje o wybranym obiekcie, w tym jego *nazwę*, *ikonę* (tak jak jest reprezentowana na mapie), *adres, odległość*, *granice* i *kierunek* od bieżącej pozycji.  
 
-Możesz wybierać różne typy obiektów na mapie, takie jak *POI*, *ulubione*, *przystanki transportu publicznego*, *znaczniki*, *szczyty górskie* lub inne *obiekty mapy*.
+Możesz wybierać różne typy obiektów na mapie, takie jak *POI*, *ulubione*, *przystanki transportu*, *znaczniki*, *szczyty górskie* lub inne *obiekty mapy*.
 
 :::note
 - Wybrane obiekty mapy i ich granice odpowiadają [**węzłom (nodes)**](https://wiki.openstreetmap.org/wiki/Node) lub [**drogom (ways)**](https://wiki.openstreetmap.org/wiki/Way) OpenStreetMap.
@@ -115,13 +115,13 @@ Aby zamknąć **menu kontekstowe**:
 
 <TabItem value="android" label="Android">  
 
-![Menu kontekstowe Android](@site/static/img/map/context_menu_android.png)
+![Menu kontekstowe Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu kontekstowe iOS](@site/static/img/map/context_menu_ios.png)
+![Menu kontekstowe iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ Dostępne szczegóły obejmują:
 - [Alternatywne nazwy](#alternative-names)
 - [Współrzędne](#coordinates)
 - [W obszarach](#polygon-information)
-- [Pobliskie POI / Wikipedia](#nearby-pois--wikipedia)
+- [Pobliskie POI](#nearby-pois)
+- [Pobliskie popularne miejsca](#nearby-popular-places)
 - [Trasy transportu publicznego dla przystanków](#public-transport-routes)
 - [Ulubione / Punkty trasy z tej samej grupy](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -167,7 +168,7 @@ Dodatkowo panel może zawierać [Szczegóły OpenStreetMap](https://wiki.openstr
 
 <TabItem value="ios" label="iOS">
 
-![Alternatywne nazwy Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatywne nazwy Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatywne nazwy iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatywne nazwy iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -198,7 +199,7 @@ Cechy wyświetlania alternatywnych nazw:
 
 <TabItem value="ios" label="iOS">
 
-![Informacje o poligonie Android](@site/static/img/map/polygon_information_ios.png)
+![Informacje o poligonie iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -210,22 +211,63 @@ Funkcja **W obszarze** wyświetla listę **obszarów**, w których znajduje się
 
 |Format współrzędnych| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Stopnie dziesiętne)</li><li>DDD.DDDDD (N/S, E/W z przecinkiem)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Standard UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Szwajcarska siatka CH1903 i CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Link internetowy OsmAnd](https://osmand.net/map)</li><li>[Link internetowy OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Współrzędne](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Stopnie dziesiętne bez przyrostków)</li><li>DDD.DDDDD (N/S, E/W z przecinkiem)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Standard UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Szwajcarska siatka CH1903 i CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Link internetowy OsmAnd](https://osmand.net/map)</li><li>[Link internetowy OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Współrzędne](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 W menu kontekstowym można znaleźć [współrzędne geograficzne](../search/search-coordinates.md#coordinate-format) punktu w różnych formatach, a także udostępniane linki OsmAnd i [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (ostatnia opcja jest dostępna tylko wtedy, gdy włączona jest [wtyczka do edycji OpenStreetMap](../plugins/osm-editing.md)). Jeśli rozwiniesz sekcję współrzędnych i długo dotkniesz dowolnej linii z listy, jej wartości zostaną automatycznie skopiowane do schowka (**Android**) lub opcja *Kopiuj* stanie się dostępna w wyskakującym komunikacie (**iOS**).  
 
 Link internetowy OsmAnd może być automatycznie rozpoznawany przez OsmAnd (przykład: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Zarówno linki OsmAnd, jak i [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) otwierają się na odpowiednich stronach z pinezką wskazującą interesujące miejsce.  
 
 
-### Pobliskie POI / Wikipedia {#nearby-pois--wikipedia}
+### Pobliskie POI {#nearby-pois}
 
-![Pobliskie artykuły z Wikipedii](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Pobliskie artykuły z Wikipedii](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Te sekcje wyświetlają pobliskie [artykuły z Wikipedii](../plugins/wikipedia.md) lub [Użyteczne Miejsca (POI)](../map/point-layers-on-map.md#points-of-interest-pois) z opcjami *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>*, aby wyświetlić i [wyszukać](../search/search-poi.md) wszystkie inne POI i artykuły z Wikipedii.
+<TabItem value="android" label="Android">  
 
-Dotknięcie *Pobliskie POI / artykuły z Wikipedii* otwiera listę punktów (POI lub Wikipedia). Dotknięcie jednego z tych punktów z listy przesuwa mapę do tego punktu (POI lub Wikipedia) z otwarciem menu kontekstowego punktu na mapie.
+![Pobliskie POI Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Pobliskie POI iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Ta sekcja wyświetla pobliskie [Punkty Użyteczności (POI)](../map/point-layers-on-map.md#points-of-interest-pois) z opcjami *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>* , aby wyświetlić i [wyszukać](../search/search-poi.md) wszystkie inne POI w tej samej kategorii.
+
+Dotknięcie *Pobliskie POI* otwiera listę punktów. Dotknięcie jednego z tych punktów z listy przesuwa mapę do tego punktu z otwarciem menu kontekstowego punktu na mapie.
+
+
+### Pobliskie popularne miejsca {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Pobliskie miejsca Android](@site/static/img/map/nearby_places_android.png)
+
+Ta sekcja podkreśla popularne miejsca, które pomagają odkrywać interesujące miejsca docelowe i punkty orientacyjne wokół bieżącej lokalizacji. Użyj *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>* , aby przeglądać i wyszukiwać wszystkie popularne miejsca. 
+
+Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/map/popular_places)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruje mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Pobliskie miejsca iOS](@site/static/img/map/nearby_places_ios.png)
+
+Ta sekcja podkreśla popularne miejsca, które pomagają odkrywać interesujące miejsca docelowe i punkty orientacyjne wokół bieżącej lokalizacji. Użyj *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>* , aby przeglądać i wyszukiwać wszystkie popularne miejsca. 
+
+Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruje mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
 
 > **UWAGA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) pojawi się tylko wtedy, gdy wcześniej pobrałeś specjalne mapy z [artykułami z Wikipedii dla tego obszaru](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Trasy transportu publicznego {#public-transport-routes}
@@ -609,7 +651,7 @@ Przeczytaj więcej o narzędziu [Zaplanuj trasę](../plan-route/create-route.md)
 
 Aby zaktualizować lub pobrać mapy online (kafelki) w określonej lokalizacji, możesz użyć menu kontekstowego obiektu:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>*, a dla *Aktualizacji*, przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* , a dla *Aktualizacji*, przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 - **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* i *<Translate ios="true" ids="update_tile"/>*.  
 
 Proszę przeczytać [pełną instrukcję](../map/raster-maps.md#download--update-tiles).  
@@ -683,9 +725,7 @@ Aby dodać/edytować punkty trasy, włącz wtyczkę OsmAnd [**Nagrywanie podró�
 
 <TabItem value="android" label="Android">  
 
-![Akcja Punkt trasy Android](@site/static/img/map/action_waypoint_android.png)
-
-![Wybierz ślad, aby dodać punkt trasy Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Wybierz ślad, aby dodać punkt trasy Android](@site/static/img/map/tracks_tab_android.png) ![Akcja Dodaj punkt trasy Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +743,7 @@ Możesz dodawać punkty trasy do nagranego śladu lub do bieżącego nagrywania 
 
 - Wybierz lokalizację na mapie [długim dotknięciem](../map/map-context-menu.md#select-any-point-long-tap).
 - W otwartym *menu kontekstowym mapy* wybierz *Akcje → Dodaj punkt trasy*.
-- Lista wyświetla [ślady](../map/tracks/index.md#display-tracks-on-the-map) nagrane i pokazane na mapie, a także [bieżące nagrywanie śladu](../plugins/trip-recording.md), do którego możesz dodać wybrany punkt trasy.
+- Lista wyświetla [ślady](../map/tracks/index.md#display-tracks-on-the-map) nagrane i pokazane na mapie, a także [bieżące nagrywanie śladu](../plugins/trip-recording.md), do którego możesz dodać wybrany punkt trasy (*na Androidzie* lista jest pogrupowana w zakładki: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Możesz dodawać punkty trasy do śladu, który nie jest jeszcze aktywny do nagrywania, w takim przypadku nieaktywny ślad przełącza się ze stanu *Start* do stanu *Wznów*.
 - [Wypełnij](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) wymagane dane i zapisz punkt trasy.
 - Możesz skonfigurować [Szybkie akcje](../widgets/quick-action.md), dodając punkt trasy do *Dodaj punkt trasy*.

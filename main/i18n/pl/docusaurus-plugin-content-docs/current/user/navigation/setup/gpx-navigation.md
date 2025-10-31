@@ -1,8 +1,9 @@
 ---
-source-hash: 7ffc2f81e01f087845308b0e23b9eaeb8284b235849c71743dcd0c92adb43df9
+source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
 sidebar_position: 2
 title:  Nawiguj po śladzie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -45,7 +45,7 @@ Przed użyciem opcji *Nawigacja po śladzie*, musisz [wyświetlić ślad na mapi
 
 - Ślad typu **Geometria** będzie miał domyślnie bardzo podstawową nawigację i nie zapewni dokładnych skrętów, nazw ulic ani pasów ruchu. Aby uzyskać brakujące informacje, należy użyć narzędzia [Dopasuj do dróg](#attach-to-the-roads).
 
-- Ślad typu **Trasa** obliczy trasę między punktami trasy według wybranego profilu. Zasadniczo wszystkie punkty trasy będą traktowane jako punkty pośrednie. Jeśli trasa składa się z > 50 punktów, jest bardzo prawdopodobne, że jest to źle skonfigurowany ślad typu **Geometria**.
+- Ślad typu **Trasa** obliczy trasę między punktami trasy według wybranego profilu. Zasadniczo wszystkie punkty trasy będą traktowane jako punkty pośrednie. Jeśli Twoja trasa składa się z > 50 punktów, jest bardzo prawdopodobne, że jest to źle skonfigurowany ślad typu **Geometria**.
 
 - Ślad typu **OsmAnd** składa się zarówno z części geometrycznej, jak i trasowej, i nadaje się do zapewnienia dokładnie takich samych wskazówek, jak domyślna nawigacja. Te ślady są tworzone przez [Planowanie trasy](../../plan-route/create-route.md) lub [wersję internetową](../../web/index.md). Możliwe jest ponowne zapisanie tego śladu jako śladu tylko typu **Geometria** jako [**Uproszczony**](../../plan-route/create-route.md#save-route), aby można go było używać w programach innych firm.
 
@@ -128,6 +128,38 @@ do *<Translate android="true" ids="start_of_the_track"/>* lub do *<Translate and
 - Wybierz **Typ nawigacji** dla pierwszego i ostatniego segmentu: albo zbuduj [*linię prostą*](../routing/straight-line-routing.md), albo użyj [*typu wyznaczania trasy*](../routing/osmand-routing.md#routing-types) z bieżącego profilu.
 
 
+### Odwróć kierunek śladu {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Tryb odwrotny](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Nawiguj do](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+Opcja **Odwróć kierunek śladu** pozwala na nawigację zapisanego śladu GPX w przeciwnym kierunku — od punktu końcowego z powrotem do punktu początkowego. Gdy to ustawienie jest włączone, algorytm nawigacji automatycznie odwraca geometrię GPX i przelicza kierunki odpowiednio. Po włączeniu parametr **Tryb odwrotny** staje się dostępny:
+
+- **Oblicz trasę**. Zalecane dla profili samochodowych i rowerowych. Nowa, zoptymalizowana trasa jest przeliczana wzdłuż odwróconego śladu GPX zgodnie z wybranym profilem nawigacji. Przestrzegane są zasady ruchu drogowego, takie jak ulice jednokierunkowe i ograniczenia skrętów, aby zapewnić bezpieczną nawigację.
+- **Oryginalny ślad**. Ślad GPX jest ściśle podążany w odwrotnym kierunku bez przeliczania trasy. Ten tryb jest przydatny do nawigacji pieszej, wędrówek lub terenowej, gdzie zasady ruchu drogowego nie mają zastosowania.
+
+Gdy odwrotny kierunek jest włączony, punkty początkowy i końcowy śladu są automatycznie zamieniane, a nawigacja jest budowana od bieżącej lub najbliższej pozycji na odwróconym śladzie. Opcja *Punkt śladu do nawigacji = Najbliższy punkt* odnosi się do najbliższego punktu na odwróconej linii GPX, a zarówno wskazówki głosowe, jak i funkcja Dopasuj do dróg działają w taki sam sposób jak podczas nawigacji w przód.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nawiguj do iOS](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+Opcja **Odwróć kierunek śladu** pozwala na nawigację zapisanego śladu GPX w przeciwnym kierunku — od punktu końcowego z powrotem do punktu początkowego. Gdy to ustawienie jest włączone, geometria śladu jest automatycznie odwracana, a trasa przeliczana zgodnie z wybranym profilem nawigacji.
+
+Punkty początkowy i końcowy śladu są zamieniane, a nawigacja budowana jest od bieżącej lub najbliższej pozycji na odwróconej linii. Opcja *Nawiguj do = Najbliższy punkt* odnosi się do najbliższego punktu na odwróconym śladzie GPX.
+
+Nowa, zoptymalizowana trasa jest przeliczana wzdłuż odwróconego śladu z pełnym uwzględnieniem zasad ruchu drogowego, takich jak ulice jednokierunkowe i ograniczenia skrętów. Wskazówki głosowe, instrukcje wizualne i funkcja Dopasuj do dróg działają jak w standardowej nawigacji w przód, zapewniając dokładne i bezpieczne wyznaczanie trasy.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Dopasuj do dróg {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -140,7 +172,7 @@ do *<Translate android="true" ids="start_of_the_track"/>* lub do *<Translate and
 
 <TabItem value="ios" label="iOS">
 
-![Dopasuj do dróg 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Dopasuj do dróg 1 iOS](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 
@@ -171,7 +203,7 @@ Domyślnie funkcja **Dopasuj do dróg** uruchamia się **automatycznie** po wybr
 
 ### Punkt początkowy / końcowy {#start--finish-point}
 
-Możesz określić punkt początkowy i końcowy trasy inny niż początek/koniec określony w pliku GPX. Wystarczy go zmienić tak samo, jak w przypadku [Nawigacji](../setup/route-navigation.md#select-starting-point).
+Możesz określić punkt początkowy i końcowy trasy inny niż początek/koniec określony w pliku GPX. Wystarczy go zmienić tak samo, jak w przypadku [Nawigacji](../setup/route-navigation.md#select-start-point).
 
 W [menu Podążaj za śladem](#follow-track-options) możesz wybrać, czy chcesz nawigować z bieżącej lokalizacji do punktu początkowego śladu, czy do najbliższego punktu na śladzie GPX. Możesz również wybrać [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types), który będzie używany dla początkowego i końcowego segmentu trasy.  
 

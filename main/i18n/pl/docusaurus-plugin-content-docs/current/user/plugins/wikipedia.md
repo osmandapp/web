@@ -1,8 +1,9 @@
 ---
-source-hash: 7b2a1da92c73d27cbba97c41e64240a1c3762bed230360041039de13eae2fd73
+source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
 sidebar_position: 18
 title:  Wikipedia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,19 +16,18 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
 Wtyczka Wikipedia jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd.  
 :::
 
-Posiadanie Wikipedii podczas podróży pomaga dowiedzieć się więcej o odwiedzanych miejscach. Jest ona dostępna w trybie offline i pokazuje Popularne Miejsca (Android) / artykuły z Wikipedii (iOS) związane z użytecznymi punktami (POI) bezpośrednio na mapie.  
+Posiadanie Wikipedii podczas podróży pomaga dowiedzieć się więcej o odwiedzanych miejscach. Jest ona dostępna w trybie offline i pokazuje Popularne Miejsca (Android) / artykuły z Wikipedii (iOS) związane z punktami zainteresowania bezpośrednio na mapie.  
 
-Wtyczka Wikipedia to oddzielna funkcja, którą można włączać i wyłączać w zależności od potrzeb. Po włączeniu umożliwia przesyłanie danych Wikipedii [pobranych](../personal/maps-resources#maps--resources) dla każdego regionu geograficznego. Mapa zawiera dwa rodzaje wiedzy z Wikipedii: krótkie informacje i pełny artykuł.  
+Wtyczka Wikipedia to oddzielna funkcja, którą można włączać i wyłączać w zależności od potrzeb. Po włączeniu umożliwia przesyłanie danych Wikipedii [pobranych](../personal/maps-resources#downloads-menu) dla każdego regionu geograficznego. Mapa zawiera dwa rodzaje załadowanej wiedzy z Wikipedii: krótkie informacje i pełny artykuł.  
 
 
-Krótkie informacje są dostarczane przez punkty POI Wikipedii (skrót od "[użyteczny punkt](../map/point-layers-on-map.md)"). Jeśli opcja Wikipedia jest włączona w menu, na mapie pojawia się punkt POI Wikipedii. Po dotknięciu punktu POI, rozwija się on, aby dostarczyć krótkich informacji z Wikipedii, a także możliwość otwarcia pełnego artykułu. Punkt POI Wikipedii, jak również powiązane artykuły, są dostępne w trybie offline. Można je czytać w razie potrzeby, przełączać języki i wyszukiwać inne informacje w Wikipedii.  
+Krótkie informacje są dostarczane przez punkty POI Wikipedii (skrót od "[punkt zainteresowania](../map/point-layers-on-map.md)"). Jeśli opcja Wikipedia jest włączona w menu, na mapie pojawia się punkt POI Wikipedii. Po dotknięciu punktu zainteresowania rozwija się on, aby dostarczyć krótkich informacji z Wikipedii, a także możliwość otwarcia pełnego artykułu. Punkt POI Wikipedii, jak również powiązane artykuły, są dostępne w trybie offline. Można je czytać w razie potrzeby, przełączać języki i wyszukiwać inne informacje w Wikipedii.  
 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) to darmowa, wielojęzyczna, otwarta encyklopedia internetowa tworzona i utrzymywana przez społeczność redaktorów-wolontariuszy przy użyciu systemu edycji opartego na wiki.  
@@ -50,7 +50,7 @@ Aby wyświetlić dane Wikipedii na mapie, należy dokonać następujących ustaw
 
 Dane Wikipedii są dostępne dla każdego regionu geograficznego. Jeśli są one załadowane dla jednego regionu, a nie załadowane dla innego, w pierwszym przypadku można pracować z informacjami z Wikipedii podczas przeglądania regionu na mapie, a w drugim przypadku region nie będzie miał żadnych informacji z Wikipedii. Po załadowaniu dane Wikipedii stają się dostępne ogólnie, a także w trybie offline.
 
-Aby pobrać dane Wikipedii dla regionu, przejdź do [dostępnych pakietów do pobrania w *Menu głównym*](../start-with/download-maps.md#download), znajdź potrzebny region i otwórz go. Dane Wikipedii będą znajdować się wśród innych pakietów.
+Aby pobrać dane Wikipedii dla regionu, przejdź do [dostępnych pakietów do pobrania w *Menu głównym*](../start-with/download-maps.md#downloading-maps), znajdź potrzebny region i otwórz go. Dane Wikipedii będą znajdować się wśród innych pakietów.
 
 Możesz otworzyć dane Wikipedii do pobrania według regionu w następujący sposób:
 
@@ -62,7 +62,7 @@ Możesz otworzyć dane Wikipedii do pobrania według regionu w następujący spo
 
 <TabItem value="android" label="Android">
 
-Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
+Aby zobaczyć, jakie dane zostały już pobrane, przejdź do *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
 ![Pobieranie Wikipedii w systemie Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -70,7 +70,7 @@ Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate andr
 
 <TabItem value="ios" label="iOS">
 
-Aby zobaczyć, jakie dane zostały już przesłane, przejdź do *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
+Aby zobaczyć, jakie dane zostały już pobrane, przejdź do *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
 ![Pobieranie Wikipedii w systemie iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
@@ -93,7 +93,7 @@ Aby pokazać/ukryć punkty POI Wikipedii, wykonaj następujące czynności:
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-2. Wybierz profil i poszukaj sekcji ustawień *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* w menu.  
+2. Wybierz profil i poszukaj sekcji *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* w menu.  
 3. Włącz opcję *<Translate android="true" ids="poi_osmwiki"/>* **dla Androida** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **dla iOS**.  
 
 <Tabs groupId="operating-systems" queryString="current-os">

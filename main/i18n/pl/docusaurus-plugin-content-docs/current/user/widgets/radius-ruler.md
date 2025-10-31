@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Linijka promienia i Linijka
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,14 +69,14 @@ To narzędzie jest pomocne, gdy potrzebujesz szybko zrozumieć rozmiary obiektó
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 - Wyświetla koncentryczne okręgi wyśrodkowane na wybranym punkcie.
 - Pierwszy okrąg odzwierciedla bieżącą [skalę mapy](#ruler) w celu szybkiego odniesienia wizualnego.
 - Automatycznie dostosowuje się podczas powiększania, aby zachować dokładne wartości promienia.
+- Dotknij widżetu, aby przełączyć się między trzema trybami wyświetlania: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, i <Translate android="true" ids="dark_theme"/>.
+- Długie dotknięcie otwiera menu kontekstowe widżetu z dodatkowymi opcjami.
+- Ustawienia widżetu obejmują dwa regulowane parametry: *<Translate android="true" ids="shared_string_height"/>* — kontroluje wizualną wysokość widżetu na ekranie; *<Translate android="true" ids="shared_string_show_icon"/>* — przełącza widoczność ikony widżetu.
 
 Użyj tego widżetu, aby oszacować bliskość interesujących miejsc lub planować wokół zdefiniowanego obszaru.
 
@@ -139,13 +142,13 @@ Gdy **Linijka promienia** jest aktywna, mapa wyświetla nakładkę kompasu, któ
 - Trzymanie urządzenia poziomo poprawia dokładność i wizualizację.
 - Jeśli **niebieski trójkąt** i **czerwona strzałka** (północ) wskazują w górę, urządzenie jest wyrównane z prawdziwą północą.
 
-Ta nakładka jest pomocna w nawigacji na zewnątrz, umożliwiając dopasowanie [orientacji mapy](../map/interact-with-map.md#map-orientation-modes) do rzeczywistego otoczenia.
+Ta nakładka jest pomocna w nawigacji na zewnątrz, umożliwiając dopasowanie [orientacji mapy](../map/interact-with-map.md#map-orientation-modes) do rzeczywistego otoczenia.  
 
 | | |
 |------------|------------|
 | Włącz | **Android**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>* |
-| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ## Pozycja na środku / na dole {#center--bottom-position}
@@ -170,7 +173,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Aby zwiększyć widoczny promień wokół swojej lokalizacji, możesz zmienić pozycję Linijki promienia, wybierając opcję *Środek* lub *Dół*.
+Aby zwiększyć widoczny promień wokół swojej lokalizacji, możesz zmienić pozycję Linijki promienia, wybierając opcję *Środek* lub *Dół*.  
 
 Więcej informacji na temat *pozycji na ekranie* można znaleźć w artykule [Konfiguracja ekranu](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ Okręgi promienia pojawią się z głębią, co jest szczególnie przydatne do p
 
 ## Odległość przez dotknięcie {#distance-by-tap}
 
-![Odległość między dwoma losowymi punktami na mapie](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Odległość przez dotknięcie Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Odległość przez dotknięcie iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Narzędzie **Odległość przez dotknięcie** pozwala mierzyć odległości między punktami na mapie bez użycia Linijki promienia lub tworzenia trasy.
 
@@ -215,11 +232,13 @@ Istnieją dwa przypadki użycia:
 - **Odległość między dwoma dowolnymi punktami**  
   Dotknij dwóch punktów na mapie jednocześnie (multi-touch). Linia łączy dwa punkty i wyświetlana jest zmierzona odległość.
 
+Możesz również dostosować rozmiar tekstu etykiety odległości. Wybierz między *<Translate android="true" ids="shared_string_normal"/>* (domyślny) a *<Translate android="true" ids="shared_string_large"/>* (1,5× większy). Gdy wybrana jest opcja Duży, automatycznie dodawane jest dodatkowe odstęp między linią a etykietą dla lepszej czytelności. Zmiany stosowane są natychmiast bez restartowania aplikacji.
+
 | | |
 |------------|------------|
 | Włącz |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Rozmiar tekstu (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Rozmiar tekstu | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Format jednostek | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

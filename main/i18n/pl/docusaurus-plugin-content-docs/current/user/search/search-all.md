@@ -1,8 +1,9 @@
 ---
-source-hash: a5cab3ad1818c1c7bc4ae1ee7f1af9cedba5d3fe1bc5ae7fd341a26b5a6d0063
+source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
 sidebar_position: 1
 title:  Wyszukaj wszystko
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 <InfoIncompleteArticle/>
@@ -57,7 +57,7 @@ Ważne informacje:
 
 ### Podstawowe zapytania {#basic-queries}
 
-***Lista zapytań***:
+***Lista zapytań*:**
 
 - Współrzędne we wszystkich dostępnych formatach.
 - Adres:
@@ -215,7 +215,7 @@ Możesz użyć wyszukiwania w pobliżu określonej lokalizacji. Aby to zrobić, 
 
 </Tabs>
 
-Możesz użyć **Historii wyszukiwania**, aby ponownie wyszukać wcześniej znalezione miejsca, adresy lub często odwiedzane miejsca bez ponownego wprowadzania zapytania. Więcej szczegółów można znaleźć w artykule [Historia wyszukiwania](./search-history.md).
+Możesz użyć **Historii wyszukiwania**, aby ponownie wyszukać wcześniej znalezione miejsca, adresy lub często odwiedzane miejsca bez ponownego wprowadzania zapytania.. Więcej szczegółów można znaleźć w artykule [Historia wyszukiwania](./search-history.md).
 
 
 ## Wyszukaj POI {#search-poi}
@@ -236,7 +236,7 @@ Możesz użyć **Historii wyszukiwania**, aby ponownie wyszukać wcześniej znal
 
 </Tabs>
 
-**Wyszukiwanie POI** to posortowana według kategorii lista, za pomocą której można łatwo znaleźć miejsca i usługi w pobliżu bieżącej lokalizacji lub wybranego obszaru na mapie.
+**Wyszukiwanie POI** to lista posortowana według kategorii, za pomocą której można łatwo znaleźć miejsca i usługi w pobliżu bieżącej lokalizacji lub wybranego obszaru na mapie.
 
 - [Niestandardowe wyszukiwanie POI](./search-poi.md#custom-poi-search) pozwala łączyć różne kategorie POI w celu uproszczenia i personalizacji wyszukiwania.  
 Na przykład, jeśli chcesz znaleźć kilka rodzajów usług w określonym obszarze lub na określonym odcinku trasy.

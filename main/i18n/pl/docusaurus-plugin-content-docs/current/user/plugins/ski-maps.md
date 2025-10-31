@@ -1,8 +1,9 @@
 ---
-source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
+source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
 sidebar_position: 13
 title:  Widok mapy narciarskiej
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Przegląd {#overview}
 
 Wtyczka Widok mapy narciarskiej OsmAnd pokazuje znane i popularne stoki, oficjalnie zatwierdzone tereny narciarskie oraz mapy tras większości ośrodków narciarskich. Mapy tras [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) są źródłem danych dla map narciarskich OsmAnd. Łącząc mapy wektorowe z mapami rastrowymi, mapa narciarska OsmAnd jest bardzo dokładna i będzie przydatna dla instruktorów, wspinaczy i entuzjastów sportów zimowych.
 
-Mapa narciarska OsmAnd jest częścią map wektorowych i nie wymaga dodatkowego pobierania. Domyślnie jest wyłączona. Mapa narciarska OsmAnd to jeden ze [Styli mapy](../map/vector-maps.md), który zapewnia dodatkowe funkcje, podświetlając niektóre obiekty i czyniąc inne mniej widocznymi.
+Mapa narciarska OsmAnd jest częścią map wektorowych i nie wymaga dodatkowego pobierania. Domyślnie jest wyłączona. Mapa narciarska OsmAnd to jeden ze [Styli mapy](../map/vector-maps.md), który zapewnia dodatkowe funkcje, podświetlając niektóre obiekty i czyniąc inne mniej widocznymi.  
 
 Poniżej przedstawiono dwa profile: ten po lewej jest przeznaczony do jazdy na nartach, a ten po prawej do jazdy samochodem. Profil narciarski podświetla trasy, kolejki linowe, kolory zimowe i wszystkie obiekty na mapie przydatne do nawigacji po terenie narciarskim.
 
@@ -43,10 +43,10 @@ Poniżej przedstawiono dwa profile: ten po lewej jest przeznaczony do jazdy na n
 
 Poniższe ustawienie powoduje wyświetlenie mapy narciarskiej OsmAnd na ekranie:
 
-1. Włącz [wtyczkę Widok mapy narciarskiej](../plugins/index.md#enable--disable).
-2. Ustaw styl mapy [Zimowy i narciarski](#set-winter-and-ski-map-style) dla wymaganego [profilu](../personal/profiles.md).
-3. W razie potrzeby [połącz mapy](#combine-maps).
-
+1. Włącz [wtyczkę Widok mapy narciarskiej](../plugins/index.md#enable--disable).  
+2. Ustaw styl mapy [Zimowy i narciarski](#set-winter-and-ski-map-style) dla wymaganego [profilu](../personal/profiles.md).  
+3. W razie potrzeby [połącz mapy](#combine-maps).  
+  
 
 ### Ustaw styl mapy Zimowy i narciarski {#set-winter-and-ski-map-style}
 
@@ -54,7 +54,7 @@ Poniższe ustawienie powoduje wyświetlenie mapy narciarskiej OsmAnd na ekranie:
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Włącz styl zimowy w systemie Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Styl mapy wtyczki map narciarskich w systemie Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -62,7 +62,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,ma
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![Włącz styl zimowy w systemie iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Styl mapy wtyczki map narciarskich w systemie iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -72,8 +72,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 
 Styl mapy Zimowy i narciarski podświetla szlaki, trasy skiturowe, tory saneczkowe oraz informacje związane z zimą i narciarstwem. Aby wyświetlić styl na mapie, należy dokonać następujących ustawień:
 
-1. Wybierz wymagany [profil](../personal/profiles.md).
-2. Otwórz [Konfiguruj mapę](../map/configure-map-menu.md).
+1. Wybierz wymagany [profil](../personal/profiles.md).  
+2. Otwórz [Konfiguruj mapę](../map/configure-map-menu.md).  
 3. Przewiń w dół do Styl mapy/Typ mapy, otwórz i zaznacz **Zimowy i narciarski**.
 
 :::tip konfiguracje
@@ -99,20 +99,20 @@ Profil Narciarstwo jest przeznaczony do użytku w połączeniu ze stylami Zimowy
 
 </Tabs>
 
-[Mapa wektorowa](../map/vector-maps.md) z dołączonym [stylem mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski) może być uzupełniona o [Poziomice](../plugins/topography.md#contour-lines) i [Cieniowanie wzgórz](../plugins/topography.md#hillshade-slope-and-altitude-layers). Poniżej znajdują się dwa przykłady. Po lewej stronie pokazano trasy na domyślnej mapie wektorowej, a po prawej trasy na mapie wektorowej połączonej z mapą rastrową *Poziomice* i *Cieniowanie wzgórz*. W drugim przypadku mapa pokazuje więcej danych o wysokości, co pomaga oszacować trudność, ryzyko i odległość.
+[Mapa wektorowa](../map/vector-maps.md) z dołączonym [stylem mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski) może być uzupełniona o [Poziomice](../plugins/topography.md#contour-lines) i [Cieniowanie wzgórz](../plugins/topography.md#hillshade-slope-and-altitude-layers). Poniżej znajdują się dwa przykłady. Trasy na domyślnej mapie wektorowej są pokazane po lewej stronie, a trasy na mapie wektorowej połączonej z mapą rastrową *Poziomice* i *Cieniowanie wzgórz* po prawej. W drugim przypadku mapa pokazuje więcej danych o wysokości, co pomaga oszacować trudność, ryzyko i odległość.  
 
 
 ### Wyłącz styl mapy narciarskiej {#disable-ski-map-style}
 
 Jeśli wolisz usunąć trasy i kolory zimowe z mapy lub sezon narciarski się skończył, wykonaj jedną z następujących czynności:
 
-- Odznacz styl mapy [Zimowy i narciarski](#set-winter-and-ski-map-style) dla wymaganego profilu.
+- Odznacz styl mapy [Zimowy i narciarski](#set-winter-and-ski-map-style) dla wymaganego profilu.  
 - Zmień [profil Narciarstwo](../personal/profiles.md) na dowolny inny.
 - Wyłącz [wtyczkę Widok mapy narciarskiej](../plugins/index.md#enable--disable).
 
 
 :::info odinstaluj wtyczkę
-Wtyczka Widok mapy narciarskiej jest oddzielną aplikacją, a wyłączenie jej wyświetlania nie powoduje jej usunięcia. Jeśli chcesz ją odinstalować, przejdź do ustawień systemu Android, używając opcji *Otwórz ustawienia* w menu wtyczki.
+Wtyczka Widok mapy narciarskiej jest oddzielną aplikacją, a wyłączenie jej wyświetlania nie powoduje jej usunięcia. Jeśli chcesz ją odinstalować, przejdź do ustawień systemu Android, używając opcji *Otwórz ustawienia* w menu wtyczki.  
 :::
 
 
@@ -120,15 +120,15 @@ Wtyczka Widok mapy narciarskiej jest oddzielną aplikacją, a wyłączenie jej w
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Profil Narciarstwo w systemie Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -160,7 +160,7 @@ Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który
 | Kolor | Opis |
 | --- | --- |
 | ![Trasa dla początkujących](@site/static/img/plugins/ski-maps/1c_green_1.png) | Zielony - Trasa dla początkujących |
-| ![Łatwe wzgórza](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Niebieski - Łatwe wzgórza |
+| ![ Łatwe wzgórza](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Niebieski - Łatwe wzgórza |
 | ![Stoki o średnim stopniu trudności](@site/static/img/plugins/ski-maps/3c_red_1.png) | Czerwony - Stoki o średnim stopniu trudności |
 | ![Zaawansowany stopień trudności](@site/static/img/plugins/ski-maps/4c_black_1.png) | Szary - Stoki o zaawansowanym stopniu trudności |
 | ![Ekspercki stopień trudności](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Żółty - Stoki o eksperckim stopniu trudności |
@@ -168,7 +168,7 @@ Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który
 Trudność tras jest zwykle oznaczona określonymi kolorami. Kolory mogą się różnić w różnych krajach i ośrodkach. Poniżej kilka praktycznych wskazówek.
 
 :::tip wskazówki
-Bardziej szczegółowe wskazówki dla każdego rodzaju trudności trasy można znaleźć w [referencji trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również nachylenie, przeszkody i zagrożenia.
+Bardziej szczegółowe wskazówki dla każdego rodzaju trudności trasy można znaleźć w [referencji trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również nachylenie, przeszkody i zagrożenia.  
 :::
 
 
@@ -176,16 +176,16 @@ Bardziej szczegółowe wskazówki dla każdego rodzaju trudności trasy można z
 
 Trasy różnią się typem. Typ reprezentuje różne cechy trasy, aby sprostać wymaganiom różnych aktywności zimowych: narciarstwa alpejskiego, narciarstwa klasycznego, snowboardu, saneczkarstwa, narciarstwa backcountry, skitouringu, jazdy po muldach, narciarstwa nocnego itp. Zrozumienie [typu trasy](https://wiki.openstreetmap.org/wiki/Key:piste:type) na mapie pomaga zbudować optymalną trasę nawigacyjną.
 
-- **Trasa zjazdowa/alpejska.**
+- **Trasa zjazdowa/alpejska.**  
 Używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) ma kierunek i trudność, i najczęściej jest otoczony granicami ośrodka narciarskiego. Gdy trasa zjazdowa jest wybrana do nawigacji narciarskiej, kierunek trasy jest brany pod uwagę. Jeśli punkty wyjazdu i docelowy są ustalone przeciwnie do kierunku trasy, nawigacja prowadzi wzdłuż najbliższej kolejki linowej.
 
-- **Trasa do narciarstwa biegowego/backcountry.**
+- **Trasa do narciarstwa biegowego/backcountry.**  
 Również używana do nawigacji narciarskiej. Ten [typ trasy](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) nie ma stopnia trudności, może mieć lub nie mieć kierunku i najczęściej wykracza poza granice ośrodka narciarskiego. Podczas nawigacji po tego typu trasach punkty wyjazdu i docelowy często można zamieniać.
 
-- **Trasa skiturowa.**
+- **Trasa skiturowa.**  
 Często używana przez narciarzy do podejścia w stylu klasycznym i zjazdu. Trudność trasy skiturowej jest często oznaczona odpowiednim kolorem. Nawigacja narciarska może zbudować trasę wzdłuż tego typu trasy, co pozwala na łączenie typów tras.
 
-- **Inne trasy narciarskie.**
+- **Inne trasy narciarskie.**  
 Typy tras, takie jak *Szlaki piesze* lub *Tory saneczkowe*, mogą być używane w profilach narciarskich lub pieszych.
 
 
@@ -211,7 +211,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_wi
 
 </Tabs>
 
-Aby sprawdzić na mapie, czy dana trasa jest ratrakowana, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na liście **<Translate android="true" ids="rendering_category_details"/>** otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).
+Aby sprawdzić na mapie, czy dana trasa jest ratrakowana, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** na liście **<Translate android="true" ids="rendering_category_details"/>** otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 Specjalne maszyny (ratraki) przygotowują trasy do odpowiednich aktywności, takich jak narciarstwo klasyczne, łyżwiarstwo i inne. Ta sama trasa może być ratrakowana w różny sposób na różnych obszarach.
 
 ### Trasy narciarskie {#ski-slope-routes}
@@ -220,15 +220,16 @@ Specjalne maszyny (ratraki) przygotowują trasy do odpowiednich aktywności, tak
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Stoki i trasy narciarskie*
 
 ![Trasy wyłączone w systemie Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Trasy włączone w systemie Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Stoki i trasy narciarskie*
 
 ![Trasy wyłączone w systemie iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Trasy włączone w systemie iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -236,9 +237,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 </Tabs>
 
-Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** na liście **<Translate android="true" ids="rendering_category_routes"/>**, otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).
+Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **Stoki i trasy narciarskie** na liście [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 
-Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski), trasy [Stoki narciarskie](../map/vector-maps.md#routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.
+Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski), [stoki i trasy narciarskie](../map/vector-maps.md#ski-slopes-and-routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.  
+Gdy włączysz opcję [Stoki i trasy narciarskie](../map/vector-maps.md#ski-slopes-and-routes) dla stylu mapy innego niż Zimowy i narciarski, wyświetlane są tylko stoki. Inne funkcje związane z narciarstwem mogą nie być pokazywane w tej warstwie stylizacji.  
+_Stoki i trasy narciarskie_ [są klikalne](../map/routes.md#actions-with-routes).
 
 
 ### Noc i oświetlenie {#night-and-lighting}
@@ -259,14 +262,14 @@ Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimow
 
 </Tabs>
 
-Styl **Zimowy i narciarski** może być używany z [trybem nocnym lub wschodu/zachodu słońca](../map/vector-maps.md#map-mode). To wygodny wybór dla tych, którzy preferują ciemne kolory lub przyciemnianie ekranu w nocy, a także dla tych, którzy uprawiają narciarstwo nocne. Wraz z trybem nocnym, mapy narciarskie OsmAnd mogą również pokazywać, które trasy mają oświetlenie za pomocą opcji [Oświetlenie uliczne](../map/vector-maps.md#details).
+Styl **Zimowy i narciarski** może być używany z [trybem nocnym lub wschodu/zachodu słońca](../map/vector-maps.md#map-mode). To wygodny wybór dla tych, którzy preferują ciemne kolory lub przyciemnianie ekranu w nocy, a także dla tych, którzy uprawiają narciarstwo nocne. Wraz z trybem nocnym, mapy narciarskie OsmAnd mogą również pokazywać, które trasy mają oświetlenie za pomocą opcji [Oświetlenie uliczne](../map/vector-maps.md#details).  
 
-Obie opcje znajdują się w menu [Konfiguruj mapę](../map/configure-map-menu.md).
+Obie opcje znajdują się w menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 
-- Aby włączyć opcję ***Tryb nocny***, przewiń listę w dół:
-*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
+- Aby włączyć opcję ***Tryb nocny***, przewiń listę w dół:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- Aby włączyć opcję ***Oświetlenie uliczne***, otwórz listę **<Translate android="true" ids="rendering_category_details"/>** i włącz opcję:
+- Aby włączyć opcję ***Oświetlenie uliczne***, otwórz listę **<Translate android="true" ids="rendering_category_details"/>** i włącz opcję:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 

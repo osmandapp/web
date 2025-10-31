@@ -1,8 +1,9 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
 sidebar_position: 16
 title:  Dane pojazdu
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -20,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Wtyczka Dane pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
 :::
 
-**Wtyczka Dane pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, zużycie paliwa i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.
+**Wtyczka Dane pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, wydajność paliwową i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.  
 
 [Skanery OBD-II](https://en.wikipedia.org/wiki/ELM327) są integralną częścią nowoczesnej diagnostyki samochodowej. Dzięki strumieniowaniu danych w czasie rzeczywistym użytkownicy uzyskują natychmiastowy wgląd w systemy pojazdu, co ułatwia konserwację zapobiegawczą i obniża koszty napraw. Narzędzia te są niezbędne zarówno do użytku osobistego, jak i w profesjonalnych serwisach samochodowych.
 
@@ -40,11 +41,12 @@ Wtyczka Dane pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji O
 
 </Tabs>
 
+
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
 Aby korzystać z danych ze skanera OBD-II:
 
-1. [Kup](../purchases/) subskrypcję **OsmAnd Pro**. (*Prędkość pojazdu* i *Prędkość obrotowa silnika* są bezpłatne).
+1. [Kup](../purchases/) subskrypcję **OsmAnd Pro**. (*Prędkość pojazdu* i *Prędkość obrotowa silnika* są bezpłatne.)  
 2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Dane pojazdu w sekcji Wtyczki w *Menu głównym*.
 3. **Włącz** Bluetooth na swoim urządzeniu.
 4. [Podłącz](#pair-odb-ii-scanner) skaner OBD-II do portu w pojeździe.
@@ -52,7 +54,9 @@ Aby korzystać z danych ze skanera OBD-II:
 6. [Dodaj](#widgets) **widżety Danych pojazdu**, aby wyświetlać dane na ekranie (opcjonalnie).
 7. [Użyj](#trip-recording) **wtyczki Zapis trasy**, aby rejestrować dane pojazdu.
 
+
 ### Parowanie skanera ODB-II {#pair-odb-ii-scanner}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -77,9 +81,10 @@ Aby korzystać z danych ze skanera OBD-II:
 Podłącz skaner do portu w pojeździe i sparuj go za pomocą aplikacji:
 
 - Przejdź do *Menu → Wtyczki → Dane pojazdu → Ustawienia → Połącz* lub **+**.
-- Jeśli Dane pojazdu znajdują się w *Menu głównym*: *Menu → Dane pojazdu → Ustawienia → Połącz* lub **+**.
+- Jeśli Dane pojazdu znajdują się w *Menu głównym*:  *Menu → Dane pojazdu → Ustawienia → Połącz* lub **+**.
 
 Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
+
 
 ## Ustawienia skanera {#scanner-settings}
 
@@ -92,6 +97,7 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 |  |  |
 |--|--|
 |![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings.png)|![Ustawienia OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
+
 
 </TabItem>
 
@@ -111,6 +117,7 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 - **Ustawienia**. Otwiera ekran ustawień OBD-II, umożliwiając zarządzanie połączeniem i dostęp do dostępnych parametrów pojazdu.
 - **Zmień nazwę**. Pozwala przypisać niestandardową nazwę do czujnika w celu łatwiejszej identyfikacji.
 - **Zapomnij**. Usuwa wcześniej sparowany czujnik OBD-II z listy, co wymaga ponownego parowania w razie potrzeby.
+
 
 ## Lista metryk {#metrics-list}
 
@@ -138,11 +145,14 @@ Metryki są podzielone na kategorie dla przejrzystości. Zaawansowane narzędzia
 *Inne:*
 
 - **Poziom naładowania akumulatora**. Wskazuje poziom napięcia akumulatora pojazdu.
+- **Napięcie adaptera**. Wyświetla napięcie dostarczane do adaptera OBD-II (komenda AT RV).
 - **Prędkość pojazdu**. Wyświetla dane z czujnika prędkości pojazdu (VSS).
-- **Położenie przepustnicy**. Określa dopływ powietrza do silnika poprzez kąt otwarcia przepustnicy.
+- **Położenie przepustnicy**. Określa dopływ powietrza do silnika poprzez kąt otwarcia przepustnicy.  
 - **VIN**. Wyświetla 17-znakowy numer identyfikacyjny pojazdu.
 
+
 ## Zapis trasy {#trip-recording}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -153,6 +163,7 @@ Metryki są podzielone na kategorie dla przejrzystości. Zaawansowane narzędzia
 | | |
 |--|--|
 |![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Nagrywanie OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
+
 
 </TabItem>
 
@@ -168,6 +179,8 @@ Metryki są podzielone na kategorie dla przejrzystości. Zaawansowane narzędzia
 
 </Tabs>
 
+
+
 Aby uwzględnić dane OBD-II w pliku GPX, należy wybrać żądane parametry do zapisu za pomocą [wtyczki Zapis trasy](../plugins/trip-recording.md#recording-settings). Pozwala to na analizę metryk pojazdu wraz z danymi z podróży.
 
 ### Tagi {#tags}
@@ -180,6 +193,7 @@ OsmAnd stosuje niestandardowe nazwy tagów dla metryk pojazdu w [pliku GPX](../p
 
 Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu podczas przeglądania zapisanego pliku GPX.
 
+
 ## Widżety {#widgets}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -191,6 +205,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 | | |
 |--|--|
 |![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget.png)|
+
 
 </TabItem>
 
@@ -206,6 +221,8 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 </Tabs>
 
+
+
 [Widżety Danych pojazdu](../widgets/info-widgets.md#vehicle-metrics-widgets) są automatycznie dodawane po włączeniu wtyczki. Jeśli nie są widoczne, można je dodać ręcznie za pomocą menu [Konfiguruj ekran](../widgets/configure-screen.md).
 
 ### Ustawienia widżetu {#widget-settings}
@@ -216,6 +233,7 @@ Niektóre widżety oferują opcje trybu wyświetlania:
 
 - **Chwilowe**. Wyświetla dane w czasie rzeczywistym dla wybranej metryki.
 - **Średnie**. Wyświetla uśrednione wartości w konfigurowalnym przedziale czasowym (od 15 sekund do 60 minut).
+
 
 ## Powiązane artykuły {#related-articles}
 

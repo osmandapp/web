@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Pozycja parkowania
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,12 +13,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Przegląd {#overview}
 
 Wtyczka **Pozycja parkowania** pomaga zapisywać i zarządzać lokalizacją, w której zaparkowałeś samochód. Umożliwia umieszczenie znacznika na mapie, śledzenie czasu parkowania i opcjonalnie ustawienie przypomnienia w kalendarzu o zakończeniu czasu parkowania.
 
-Ta wtyczka jest bezpłatna i działa w trybie offline z pobranymi mapami OsmAnd. Możesz szybko zlokalizować zaparkowany pojazd, oszacować odległość do niego pieszo i w razie potrzeby udostępnić lokalizację parkingu.
+Ta wtyczka jest bezpłatna i działa w trybie offline z pobranymi mapami OsmAnd. Możesz szybko zlokalizować zaparkowany pojazd, oszacować odległość do niego pieszo i udostępnić lokalizację parkingu w razie potrzeby.
 
 - Możesz dodać miejsce parkingowe ręcznie za pomocą menu kontekstowego.
 - W przypadku ograniczenia czasowego wtyczka rejestruje zarówno czas rozpoczęcia, jak i zakończenia.
@@ -47,14 +47,14 @@ Znacznik jest tymczasowy i łatwy do usunięcia, gdy nie jest już potrzebny.
 
 Aby korzystać z miejsca parkingowego na mapie, należy dokonać następujących ustawień:
 
-1. Włącz [wtyczkę Pozycja parkowania](../plugins/index.md#enable--disable) z *Menu główne → Wtyczki*.
+1. Włącz [wtyczkę Pozycja parkowania](../plugins/index.md#enable--disable) z *Menu główne → Wtyczki*.  
 2. Ustaw [miejsce parkingowe](#set-a-spot) na mapie za pomocą menu kontekstowego.
-3. (Opcjonalnie) Dodaj [widżet Parking](#parking-widget) do ekranu, aby mieć do niego szybszy dostęp.
+3. (Opcjonalnie) Dodaj [widżet Parking](#parking-widget) do ekranu, aby mieć do niego szybszy dostęp.  
 
 
 ## Miejsce parkingowe na mapie {#parking-spot-on-the-map}
 
-Gdy zaznaczysz miejsce parkingowe, OsmAnd zapisze jego współrzędne geograficzne wraz ze znacznikiem czasu. W razie potrzeby można również dodać limit czasowy i przypomnienie w kalendarzu.
+Gdy zaznaczysz miejsce parkingowe, OsmAnd zapisze jego współrzędne geograficzne wraz ze znacznikiem czasu. W razie potrzeby można również dodać limit czasowy i przypomnienie w kalendarzu. Miejsca parkingowe są zapisywane jako **Ulubione punkty**. Aby upewnić się, że znacznik parkingu jest widoczny na mapie, [Ulubione](../personal/favorites.md) muszą być włączone.
 
 
 ### Ustawianie miejsca {#set-a-spot}
@@ -147,14 +147,14 @@ Możesz użyć miejsca parkingowego jako celu nawigacji, aby łatwo wrócić do 
 
 **Przez menu Nawigacja**:
 
-  1. Dotknij przycisku **Nawigacja**.
-  2. Wybierz profil.
+  1. Dotknij przycisku **Nawigacja**.  
+  2. Wybierz profil.  
   3. Dotknij **Ustaw cel** i wybierz **Parking** z listy zapisanych punktów.
 
 **Przez widżet Parking**:
 
-  1. Dotknij **widżetu Parking**.
-  2. Dotknij znacznika miejsca parkingowego.
+  1. Dotknij **widżetu Parking**.  
+  2. Dotknij znacznika miejsca parkingowego.  
   3. Wybierz **Nawigacja** i wybierz profil, którego chcesz użyć.
 
 
@@ -193,7 +193,7 @@ Jeśli ustawiono przypomnienie w kalendarzu, zostanie ono również automatyczni
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_parking"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_parking"/>*  
 
 ![Dodawanie widżetu Parking w systemie Android](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
 
@@ -201,7 +201,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="parking_place"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="parking_place"/>*  
 
 ![Dodawanie widżetu Parking w systemie iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 

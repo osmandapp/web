@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
 sidebar_position: 2
 title:  Interakcja z mapą
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -25,15 +25,15 @@ W tym artykule wyjaśniono, jak dostosowywać mapę i wchodzić z nią w interak
 Gesty są niezbędne do łatwego i intuicyjnego poruszania się po mapie.
 
 | Akcja na mapie | Gest |
-|:---|:---|
-| **Przesuń** | Dotknij i przytrzymaj mapę **jednym** palcem, a następnie przeciągnij, aby się poruszać. |
-| **Przesuń** | Przesuń mapę **jednym** palcem. |
+|:---------------|:-------------|
+| **Przesuń**    | Dotknij i przytrzymaj mapę **jednym** palcem, a następnie przeciągnij, aby się poruszać. |
+| **Przesuń**   | Przesuń mapę **jednym** palcem. |
 | **Powiększ** | Stuknij dwukrotnie mapę **jednym** palcem. <br/> Stuknij dwukrotnie **jednym** palcem i przesuń w dół. <br/> Uszczypnij **dwoma** palcami, aby powiększyć. |
-| **Pomniejsz** | Stuknij dwukrotnie **dwoma** palcami. <br/> Stuknij dwukrotnie **jednym** palcem i przesuń w górę. <br/> Uszczypnij **dwoma** palcami, aby pomniejszyć. |
-| **Obróć** | Stuknij mapę **dwoma** palcami, a następnie obróć palce ruchem okrężnym. |
+| **Pomniejsz**| Stuknij dwukrotnie **dwoma** palcami. <br/> Stuknij dwukrotnie **jednym** palcem i przesuń w górę. <br/> Uszczypnij **dwoma** palcami, aby pomniejszyć. |
+| **Obróć**  | Stuknij mapę **dwoma** palcami, a następnie obróć palce ruchem okrężnym. |
 | **Pochyl (3D)** | Stuknij **dwoma** palcami i przesuń je w górę lub w dół. <br/> Dostępne tylko z [silnikiem renderowania mapy](../personal/global-settings.md#map-rendering-engine) w wersji 2 (OpenGL). |
 
-Animacje przesuwania można wyłączyć w ustawieniach za pomocą [specjalnej opcji](#no-animations).
+Animacje przesuwania można wyłączyć w ustawieniach za pomocą [specjalnej opcji](#remove-animations).
 
 
 ## Moja lokalizacja i Powiększenie {#my-location-and-zoom}
@@ -198,7 +198,7 @@ Wyraźne komunikaty na ekranie poprowadzą Cię podczas blokowania lub odblokowy
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Wygładza obrót mapy za pomocą wolniejszej animacji obrotu, chociaż wprowadza to niewielkie opóźnienie, nie większe niż 1 sekunda.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Brak animacji {#no-animations}
+### Usuń animacje {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -258,28 +258,28 @@ Aby uzyskać dostęp do ustawień zewnętrznego urządzenia wejściowego, należ
 - Więcej informacji na temat akcji zewnętrznych urządzeń wejściowych można znaleźć na GitHub w pakiecie [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
 | Klawisz | Urządzenie | Akcja |
-|:---|:---|:---|
-|**C**| *Klawiatura* | Przesuń - [Do Mojej lokalizacji](#my-location-and-zoom) |
-|**D**| *Klawiatura* | Zmień - [Orientacja mapy](#map-orientation-modes) |
-|**N**| *Klawiatura* | Pokaż / Ukryj - Widok nawigacji |
-|**S**| *Klawiatura* | Pokaż / Ukryj - [Widok wyszukiwania](../search/index.md) |
-|**P**| *Klawiatura* | Zmień - Profil aplikacji na następny |
-|**O**| *Klawiatura* | Zmień - Profil aplikacji na poprzedni |
-|**&#8593;**| *Klawiatura* | Przesuń - Mapa w górę |
-|**&#8595;**| *Klawiatura* | Przesuń - Mapa w dół |
-|**&#8592;**| *Klawiatura* | Przesuń - Mapa w lewo |
-|**&#8594;**| *Klawiatura* | Przesuń - Mapa w prawo |
-|**&#43;** **=**| *Klawiatura* | Mapa - [Powiększ](#my-location-and-zoom) |
-|**&#8722;**| *Klawiatura* | Mapa - [Pomniejsz](#my-location-and-zoom) |
-|**Naciśnij Wstecz**| *Klawiatura* | Nawiguj – Poprzedni ekran |
-|**&#8595;**| *Wunderlinq* | Mapa - [Pomniejsz](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq* | Mapa - [Powiększ](#my-location-and-zoom) |
-| **ESC** | *Wunderlinq* | Otwórz siatkę danych WunderLINQ |
-| **M** <br/> (*starszy Android*) | *Klawiatura* | Pokaż / Ukryj - [Menu boczne](../start-with/main-menu.md#main-menu-side-menu) |
-| **Naciśnięcie joysticka** <br/> (*starszy Android*) | *Klawiatura* | Przesuń - [Do Mojej lokalizacji](#my-location-and-zoom) |
-| **Przycisk multimedialny** <br/> (*tylko Android*)| *Klawiatura* | Pokaż / Ukryj - [Notatki AV](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*tylko Android*)| *Parrot* | Mapa - [Pomniejsz](#my-location-and-zoom) |
-| **&#8594;** <br/> (*tylko Android*) | *Parrot* | Mapa - [Powiększ](#my-location-and-zoom) |
+|:---------|:---------------|:---------------|
+|**C**| *Klawiatura*   | Przesuń - [Do Mojej lokalizacji](#my-location-and-zoom) |
+|**D**| *Klawiatura*   | Zmień - [Orientacja mapy](#map-orientation-modes) |
+|**N**| *Klawiatura*   | Pokaż / Ukryj - Widok nawigacji |
+|**S**| *Klawiatura*   | Pokaż / Ukryj - [Widok wyszukiwania](../search/index.md) |
+|**P**| *Klawiatura*   | Zmień - Profil aplikacji na następny |
+|**O**| *Klawiatura*   | Zmień - Profil aplikacji na poprzedni |
+|**&#8593;**| *Klawiatura*   | Przesuń - Mapa w górę  |
+|**&#8595;**| *Klawiatura*   | Przesuń - Mapa w dół  |
+|**&#8592;**| *Klawiatura*   | Przesuń - Mapa w lewo  |
+|**&#8594;**| *Klawiatura*   | Przesuń - Mapa w prawo  |
+|**&#43;** **=**| *Klawiatura*  | Mapa - [Powiększ](#my-location-and-zoom) |
+|**&#8722;**| *Klawiatura*  | Mapa - [Pomniejsz](#my-location-and-zoom) |
+|**Naciśnij Wstecz**| *Klawiatura*   | Nawiguj – Poprzedni ekran  |
+|**&#8595;**| *Wunderlinq*  | Mapa - [Pomniejsz](#my-location-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Mapa - [Powiększ](#my-location-and-zoom) |
+| **ESC** | *Wunderlinq*  | Otwórz siatkę danych WunderLINQ |
+| **M** <br/> (*starszy Android*) | *Klawiatura*  | Pokaż / Ukryj - [Menu boczne](../start-with/main-menu.md#main-menu-side-menu) |
+| **Naciśnięcie joysticka** <br/> (*starszy Android*) | *Klawiatura*  | Przesuń - [Do Mojej lokalizacji](#my-location-and-zoom) |
+| **Przycisk multimedialny** <br/> (*tylko Android*)| *Klawiatura*  | Pokaż / Ukryj - [Notatki AV](../plugins/audio-video-notes.md#manage-a-single-note) |
+| **&#8592;** <br/> (*tylko Android*)| *Parrot*  | Mapa - [Pomniejsz](#my-location-and-zoom) |
+| **&#8594;** <br/> (*tylko Android*) | *Parrot*  | Mapa - [Powiększ](#my-location-and-zoom) |
 
 
 ### Niestandardowy typ urządzenia wejściowego {#custom-input-device-type}

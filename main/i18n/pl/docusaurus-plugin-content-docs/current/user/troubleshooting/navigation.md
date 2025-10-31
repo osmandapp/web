@@ -1,8 +1,9 @@
 ---
-source-hash: d09d9fde432bbd3f15aeedfac72c431ed251bae0335e90e06119b3673629070b
+source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
 sidebar_position: 3
 title:  Nawigacja
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Obliczanie trasy {#route-calculation}
@@ -24,9 +24,38 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *Silnik natywny (C++)* oferuje lepszą wydajność, ale jego efektywność zależy od pamięci i możliwości procesora Twojego urządzenia. Zazwyczaj routing natywny działa dobrze dla tras poniżej 300 km, a czas obliczania trasy waha się od 15 sekund do 4 minut. Jeśli proces trwa dłużej niż 4 minuty, zaleca się jego zatrzymanie, ponieważ aplikacja może ulec awarii.
 
 
-### Jak obliczać trasy dłuższe niż 250 km? {#how-to-calculate-routes-longer-than-250km}
+### Nieprawidłowe lub uszkodzone trasy {#incorrect-or-broken-routes}
 
-1. Jeśli aplikacja nie pokazuje trasy po 7-8 minutach obliczeń, rozważ [umieszczenie punktów pośrednich](../navigation/setup/route-navigation.md#route-recalculation) (wybierz np. miejsca na autostradach). 3-4 punkty pośrednie wystarczą do obliczenia nawet 1000-kilometrowych tras.
+Czasami OsmAnd może wyświetlać nieoczekiwane wyniki nawigacji. Zamiast podążać za siecią dróg, trasa może pojawić się jako prosta przerywana linia do niepowiązanego punktu lub nawigacja może całkowicie zawieść. Zazwyczaj wskazuje to, że routing do wybranego miejsca nie jest możliwy przy obecnej konfiguracji. Podobne problemy zgłaszali użytkownicy na [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) i [więcej](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+
+**Przyczyny:**
+
+- Nieaktualne lub zduplikowane mapy. Mapy z różnymi datami aktualizacji lub duplikaty mogą zakłócać łączność (zwłaszcza między regionami/graniami).
+- Uszkodzone ustawienia profilu. Niestandardowe/modyfikowane profile (np. Rower) mogą powodować niespójne zachowanie.
+- Niezgodność silnika routingu: Różne silniki (HH × Java vs HH × C++) mogą obsługiwać te same mapy w inny sposób.
+
+**Rozwiązania:**
+
+1. Zresetuj swój profil.
+- Otwórz *Menu* → *Ustawienia* → *Profil aplikacji (Profil nawigacji)*.
+- Wybierz *Resetuj do domyślnych*.
+
+2. Usuń i ponownie zainstaluj mapy.
+- Otwórz *Menu* → *Mapy i zasoby* → *Lokalne* i usuń wszystkie mapy dla dotkniętych region(ów).
+- Następnie przejdź do *Menu* → *Mapy i zasoby* → *Pobrania* i pobierz mapy ponownie.
+- Opcjonalnie sprawdź *Menu* → *Mapy i zasoby* → *Aktualizacje*, aby upewnić się, że wszystkie regiony mają tę samą datę aktualizacji.
+
+3. Przełącz silnik routingu.
+- Włącz wtyczkę: *Menu* → *Wtyczki* → *Rozwój OsmAnd*.
+- Następnie otwórz *Menu* → *Ustawienia* → *Profil aplikacji* → *Ustawienia nawigacji* → *Parametry trasy* → *Rozwój* → *Typ routingu* i przełącz *HH × C++* ↔ *HH × Java* (możesz też wypróbować A* classic lub A* 2-phase).
+
+4. Jako ostateczność.
+- Ponownie zainstaluj aplikację i pobierz mapy (pomaga, gdy ukryte konflikty trwają).
+
+
+### Jak obliczać trasy dłuższe niż 250km? {#how-to-calculate-routes-longer-than-250km}
+
+1. Jeśli aplikacja nie pokazuje trasy po 7-8 minutach obliczeń, rozważ [umieszczenie punktów pośrednich](../navigation/setup/route-navigation.md#route-recalculation) (wybierz np. miejsca na autostradach). 3-4 punkty pośrednie wystarczą do obliczenia nawet 1000 km tras.
 
 2. W przypadku urządzeń z wyższej półki można zwiększyć pamięć do 512 MB lub 1024 MB - [Pamięć przydzielona urządzeniom](../plugins/development.md#memory-settings).
 

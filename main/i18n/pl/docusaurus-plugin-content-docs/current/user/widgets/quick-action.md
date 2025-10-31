@@ -1,8 +1,9 @@
 ---
-source-hash: 6ed7b2af27dd55b412539bc8c15f73cc2d55449aac9a5bc6af5328ccd31ec35b
+source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
 sidebar_position: 7
 title:  Szybka akcja (przyciski niestandardowe)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,10 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Przegląd {#overview}
 
-Widżet Szybkiej akcji to interaktywny element interfejsu użytkownika, który zapewnia szybki dostęp do kluczowych funkcji lub działań bez otwierania dodatkowych ustawień. Widżet ten jest umieszczony na głównym ekranie mapy i pozwala uprościć i przyspieszyć interakcję z aplikacją, czyniąc ją wygodniejszą i wydajniejszą.
+Widżet Szybkiej akcji to interaktywny element interfejsu użytkownika, który zapewnia szybki dostęp do kluczowych funkcji lub działań bez otwierania dodatkowych ustawień. Ten widżet jest umieszczony na głównym ekranie mapy i pozwala uprościć i przyspieszyć interakcję z aplikacją, czyniąc ją wygodniejszą i wydajniejszą.
 
 ![Widżet Szybkiej akcji](@site/static/img/widgets/quick_action_widget.png)
 
@@ -79,7 +79,7 @@ Wszystkie akcje są zorganizowane w menu **Dodaj akcję** i pogrupowane według 
 
 Do przycisku szybkiej akcji można przypisać jedną lub więcej [akcji](#action-types). Istnieją dwa sposoby dodawania akcji.
 
-- **Na ekranie Konfiguracji**. Wybierz przycisk z listy i dotknij przycisku&nbsp;  "**＋**"  &nbsp;. Najpierw musisz wybrać [typ akcji](#action-types), a następnie zmienić jego nazwę i [parametry](#actions-in-loop).
+- **Na ekranie Konfiguracji**. Wybierz przycisk z listy i dotknij przycisku&nbsp;  "**＋**"  &nbsp;. Najpierw musisz wybrać [typ akcji](#action-types), a następnie zmienić jego nazwę i [parametry](#action-parameters).
 - **W panelu przycisku szybkiej akcji**. Dotknij przycisku *Szybkiej akcji* na ekranie mapy. Na końcu listy, na ostatnim ekranie w panelu, znajduje się pole "**＋**" &nbsp;*Dodaj akcję*. Dotknij go i wybierz akcję z [listy typów](#action-types).
 
 
@@ -128,38 +128,12 @@ Akcje przypisane do przycisku szybkiej akcji są pogrupowane w ekrany. Te grupy 
 - Przejdź do *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Dotknij *Edytuj* (ikona ołówka), a następnie *Przytrzymaj i przeciągnij* na ikonie trzech pionowych linii, aby zmienić kolejność akcji.
 
-#### Akcje w pętli {#actions-in-loop}
-
-![Akcje w pętli Android](@site/static/img/widgets/actions_in_loop_andr.png)
-
-Dla niektórych akcji można przypisać listę warstw, które będą się zmieniać cyklicznie przy każdym dotknięciu: *Źródło mapy*, *Styl mapy*, *Nakładka*, *Podkład*, *Schemat kolorów terenu*, *Dodaj profil*.
-
-Przycisk pozwala przypisać pojedynczą warstwę lub listę warstw, które zmieniają się cyklicznie po dotknięciu lub za pomocą okna dialogowego.
-
-- **Pokaż okno dialogowe**. Wyświetla okno dialogowe z listą map.
-- **Nie pokazuj okna dialogowego**. Źródła map zmieniają się w określonej kolejności.
+:::info note
+Niektóre akcje, takie jak *Źródło mapy*, *Styl mapy*, *Nakładka*, *Podkład*, *Schemat kolorów terenu* i *Dodaj profil*, można przypisać jako pętlę. Każde dotknięcie przycisku cyklicznie przechodzi przez wybrane warstwy. Można wyświetlić pośredni dialog, aby ręcznie wybrać z listy, lub ukryć go, aby przełączać w określonej kolejności.
+:::
 
 
-### Zmiana pozycji na mapie {#change-position-on-the-map}
-
-Widżet *Szybkiej akcji* pojawia się w dolnym rogu ekranu mapy po pierwszym włączeniu. Możesz przenieść widżet w dowolne miejsce na ekranie, przytrzymując go i przeciągając. W celu precyzyjnego i dokładnego umieszczenia przycisków na ekranie mapy, są one automatycznie wyrównywane do najbliższej pozycji niewidocznej siatki podczas przeciągania.
-
-- **Początkowy wygląd**. Domyślnie widżet szybkiej akcji jest umieszczony w prawym dolnym rogu interfejsu mapy.
-
-    ![Widok widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_view.png)
-
-- **Przesuń widżet**. Długie naciśnięcie i przeciągnięcie widżetu pozwala na zmianę jego położenia na ekranie, z automatycznym wyrównaniem do kolumn i wierszy.
-
-    ![Dotknięcie widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_tap.png)
-
-- **Nowe umiejscowienie**. Po przeniesieniu widżet pozostanie w nowej pozycji na ekranie mapy, dopóki nie zostanie ponownie ręcznie dostosowany.
-
-    ![Przesunięcie widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_move.png)
-
-- **Wiele [przycisków niestandardowych](#custom-buttons)**. Możesz dodać wiele przycisków szybkiej akcji do ekranu mapy. Przyciski te można również indywidualnie dostosowywać i zmieniać ich położenie za pomocą tej samej metody przeciągnij i upuść.
-
-    ![Wiele widżetów Szybkiej akcji](@site/static/img/widgets/quick_action_widget_multi.png)
-
+## Przyciski na ekranie {#buttons-on-the-screen}
 
 ### Przyciski niestandardowe {#custom-buttons}
 
@@ -187,8 +161,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 Wszystkie dostępne [akcje](#action-types) są identyczne z tymi, które można zastosować do domyślnej szybkiej akcji. Przyciski niestandardowe można skonfigurować jako przyciski ***pojedynczej akcji***, które stosują wybraną akcję natychmiast po dotknięciu, bez konieczności poruszania się po dodatkowym menu.
 
-
-### Wygląd przycisku Szybkiej akcji {#quick-action-button-appearance}
+### Wygląd przycisku {#button-appearance}
 
 <InfoAndroidOnly/>
 
@@ -198,6 +171,48 @@ Możesz modyfikować wygląd przycisków Szybkiej akcji poprzez: *Menu → Konfi
 
 Szczegółowe ustawienia dostosowywania można znaleźć w artykule [Konfiguracja ekranu](../widgets/configure-screen.md#button-appearance), gdzie można dowiedzieć się, jak precyzyjnie dostosować wygląd każdego przycisku do własnych preferencji.
 
+### Zmiana pozycji przycisku {#change-button-position}
+
+Widżet *Szybkiej akcji* pojawia się w dolnym rogu ekranu mapy po pierwszym włączeniu. Możesz przenieść widżet w dowolne miejsce na ekranie, przytrzymując go i przeciągając. W celu precyzyjnego i dokładnego umieszczenia przycisków na ekranie mapy, są one automatycznie wyrównywane do najbliższej pozycji niewidocznej siatki podczas przeciągania.
+
+- **Początkowy wygląd**. Domyślnie widżet szybkiej akcji jest umieszczony w prawym dolnym rogu interfejsu mapy.
+
+    ![Widok widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_view.png)
+
+- **Przesuń widżet**. Długie naciśnięcie i przeciągnięcie widżetu pozwala na zmianę jego położenia na ekranie, z automatycznym wyrównaniem do kolumn i wierszy.
+
+    ![Dotknięcie widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_tap.png)
+
+- **Nowe umiejscowienie**. Po przeniesieniu widżet pozostanie w nowej pozycji na ekranie mapy, dopóki nie zostanie ponownie ręcznie dostosowany.
+
+    ![Przesunięcie widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_move.png)
+
+- **Wiele [przycisków niestandardowych](#custom-buttons)**. Możesz dodać wiele przycisków szybkiej akcji do ekranu mapy. Te przyciski można również indywidualnie dostosowywać i zmieniać ich położenie za pomocą tej samej metody przeciągnij i upuść.
+
+    ![Wiele widżetów Szybkiej akcji](@site/static/img/widgets/quick_action_widget_multi.png)
+
+### Układ siatki dla przycisków {#grid-layout-for-buttons}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Siatka dla przycisków pionowa Android](@site/static/img/widgets/grid_buttons_v_and.png) ![Siatka dla przycisków pozioma Android](@site/static/img/widgets/grid_buttons_h_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Siatka dla przycisków pionowa iOS](@site/static/img/widgets/grid_buttons_v_ios.png) ![Siatka dla przycisków pozioma iOS](@site/static/img/widgets/grid_buttons_h_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+[Przyciski mapy](../widgets/map-buttons.md#overview) są automatycznie układane za pomocą układu siatki. Każdy przycisk jest przypisany do jednego z czterech rogów ekranu (*lewy górny*, *prawy górny*, *lewy dolny*, *prawy dolny*). Jeśli w przypisanym rogu nie ma wystarczająco dużo miejsca, przyciski są wyrównywane poziomo lub pionowo, w zależności od orientacji ekranu.
+
+Ten układ pomaga zachować wizualną spójność przycisków i unika ich nakładania się. Na przykład, na wyświetlaczu w trybie poziomym, przyciski w prawym rogu ustawią się poziomo na dole ekranu, podczas gdy na wyświetlaczu w trybie pionowym rozciągną się pionowo w górę lub w dół w razie potrzeby.
+
 
 ## Typy akcji {#action-types}
 
@@ -205,7 +220,7 @@ Szczegółowe ustawienia dostosowywania można znaleźć w artykule [Konfiguracj
 
 | Akcja | Opis |
 |:-------------|:-------------|
-| Pokaż / Ukryj <br/> [**Trasy**](../map/vector-maps.md#routes) | Możesz wybrać typy tras, aby włączyć lub wyłączyć ich wyświetlanie. <br/> Niektóre trasy mają dodatkowe ustawienia. Domyślnie, jeśli nic nie zostało wybrane w menu [Konfiguracja mapy](../map/configure-map-menu.md), zostanie przypisany pierwszy typ trasy z listy, w przeciwnym razie zostanie przypisany wybrany przez Ciebie typ. Więcej informacji można znaleźć w artykule [Trasy](../map/routes.md). <br/> - ***Trasy rowerowe***  &nbsp;(*Trasa*, *Sieci węzłów*) <br/> - ***Trasy dla rowerów górskich***  &nbsp;(*Skala MTB*, *IMBA*) <br/> - ***Szlaki piesze***  &nbsp;(*OSMC*, *Przynależność do sieci*, *Sieci węzłów*) <br/> - ***Stopień trudności szlaków pieszych***  &nbsp;(*Skala SAC*, *Skala CAI*) <br/> - ***Trasy narciarskie*** <br/> - ***Szlaki konne*** <br/> - ***Sporty wodne*** <br/> - ***Trasy biegowe*** <br/> - ***Ścieżki zdrowia*** <br/> - ***Trasy podróżnicze***  &nbsp;(*Ślady*, *Książki podróżnicze*, *Punkty*) <br/> |
+| Pokaż / Ukryj <br/> [**Trasy**](../map/vector-maps.md#routes) | Możesz wybrać typy tras, aby włączyć lub wyłączyć ich wyświetlanie. <br/> Niektóre trasy mają dodatkowe ustawienia. Domyślnie, jeśli nic nie zostało wybrane w menu [Konfiguracja mapy](../map/configure-map-menu.md), zostanie przypisany pierwszy typ trasy z listy, w przeciwnym razie zostanie przypisany wybrany przez Ciebie typ. Więcej informacji można znaleźć w artykule [Trasy](../map/routes.md). <br/> - ***Trasy rowerowe***  &nbsp;(*Trasa*, *Sieci węzłów*) <br/> - ***Trasy dla rowerów górskich***  &nbsp;(*Skala MTB*, *IMBA*) <br/> - ***Szlaki piesze***  &nbsp;(*OSMC*, *Przynależność do sieci*, *Sieci węzłów*) <br/> - ***Stopień trudności szlaków pieszych***  &nbsp;(*Skala SAC*, *Skala CAI*) <br/> - ***Stoki narciarskie*** <br/> - ***Szlaki konne*** <br/> - ***Sporty wodne*** <br/> - ***Trasy biegowe*** <br/> - ***Ścieżki fitness*** <br/> - ***Trasy podróżnicze***  &nbsp;(*Ślady*, *Książki podróżnicze*, *Punkty*) <br/> |
 | Pokaż / Ukryj <br/> [**Warstwy topograficzne**](../plugins/topography.md#overview) | Wszystkie dane topograficzne są prezentowane jako oddzielne warstwy mapy. Za pomocą Szybkiej akcji można szybko przełączać widoczność tych warstw. <br/> - ***Linie konturowe*** <br/> - ***Teren***  &nbsp;(*W zależności od warstwy wybranej w menu [Konfiguracja mapy](../map/configure-map-menu.md) wyświetlany będzie *Cieniowanie wzgórz*, *Nachylenie* lub *Wysokość*.*) |
 | Zmień <br/> [**Schemat kolorów terenu**](../plugins/topography.md#modify-color-scheme) | Pozwala wybrać jedną lub więcej palet z listy istniejących, które będą się zmieniać po dotknięciu przycisku. |
 | Pokaż / Ukryj <br/> [**Warstwy pogodowe**](../plugins/weather.md#weather-layers) | Wszystkie dane pogodowe są prezentowane jako oddzielne warstwy mapy. Dzięki Szybkiej akcji możesz uzyskać szybki dostęp do przełączania widoczności tych warstw na mapie. <br/> - ***Warstwa opadów*** <br/> - ***Warstwa chmur*** <br/> - ***Warstwa ciśnienia*** <br/> - ***Warstwa wiatru*** <br/> - ***Warstwa temperatury*** |
@@ -214,7 +229,7 @@ Szczegółowe ustawienia dostosowywania można znaleźć w artykule [Konfiguracj
 | Pokaż / Ukryj <br/> [**Ślady**](../personal/tracks/manage-tracks.md#track-menu) | Pokaż lub ukryj ostatnio widoczne ślady na mapie. |
 | Pokaż / Ukryj <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Włącz lub wyłącz wyświetlanie warstw POI z wybranymi kategoriami na mapie.<br/>Możesz wybrać wiele kategorii POI. Akcja zastępuje kategorie POI z Konfiguracji mapy wybrane bez użycia Szybkich akcji. |
 | Zmień <br/> [**Tryb mapy**](../map/vector-maps.md#map-mode) | Szybki dostęp do przełączania między trybem dziennym i nocnym. |
-| Zmień <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | Przycisk pozwala przypisać jedno źródło mapy lub listę źródeł, które zmieniają się cyklicznie po dotknięciu lub za pomocą okna dialogowego. <br/> - *Pokaż okno dialogowe*. Wyświetla okno dialogowe z listą map. <br/> - *Nie pokazuj okna dialogowego*. Źródła map zmieniają się w określonej kolejności. <br/> - *Wyświetlana nazwa* - *Źródło mapy* >. ">" po nazwie mapy wskazuje, które źródło mapy jest aktualnie wybrane. <br/> - *Wyświetlana nazwa* - > *Następne źródło mapy*. ">" przed nazwą mapy wskazuje, jakie będzie następne wybrane źródło mapy, jeśli akcja zostanie wykonana. <br/> - *Uwaga*. Aby zmienić źródła map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma źródłami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego źródła mapy. |
+| Zmień <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | Przycisk pozwala przypisać pojedyncze źródło mapy lub listę źródeł, które zmieniają się cyklicznie po dotknięciu lub za pomocą okna dialogowego. <br/> - *Pokaż okno dialogowe*. Wyświetla okno dialogowe z listą map. <br/> - *Nie pokazuj okna dialogowego*. Źródła map zmieniają się w określonej kolejności. <br/> - *Wyświetlana nazwa* - *Źródło mapy* >. ">" po nazwie mapy wskazuje, które źródło mapy jest aktualnie wybrane. <br/> - *Wyświetlana nazwa* - > *Następne źródło mapy*. ">" przed nazwą mapy wskazuje, jakie będzie następne wybrane źródło mapy, jeśli akcja zostanie wykonana. <br/> - *Uwaga*. Aby zmienić źródła map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma źródłami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego źródła mapy. |
 | Pokaż / Ukryj <br /> [**Transport publiczny**](../map/vector-maps.md#transport) | Włącz lub wyłącz warstwę mapy transportu publicznego <br /> - *Rodzaj transportu*. Przy pierwszym dotknięciu można wybrać jeden lub wiele rodzajów transportu, w tym *Przystanki transportu publicznego*, *Trasy autobusowe, trolejbusowe i minibusowe*, *Trasy tramwajowe i kolejowe*, *Trasy metra*. |
 | Zmień <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Utwórz listę źródeł map jako nakładkę mapy i przełączaj się między nimi. <br /> - *Uwaga*. Aby zmienić nakładki map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma nakładkami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonej nakładki mapy. |
 | Zmień <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Utwórz listę źródeł map jako podkład mapy i przełączaj się między nimi. <br /> - *Uwaga*. Aby zmienić podkłady map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma podkładami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego podkładu mapy. |
@@ -289,6 +304,7 @@ Szczegółowe ustawienia dostosowywania można znaleźć w artykule [Konfiguracj
 | Zmień <br/> [**Profil aplikacji na następny**](../personal/profiles.md) | Przełącza na następny profil na liście. |
 | Zmień <br/> [**Profil aplikacji na poprzedni**](../personal/profiles.md) | Przełącza na poprzedni profil na liście. |
 | Zmień <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Pozycja lokalizacji na ekranie**) | Pozwala ustawić umiejscowienie kursora *Moja lokalizacja* na mapie. Włącza lub wyłącza, aby kursor zawsze znajdował się na środku ekranu. |
+| Zmień <br/> [**Orientację mapy**](../map/interact-with-map#map-orientation-modes) | Pozwala zmienić tryb obrotu mapy i przełączać się między wybranymi typami orientacji. Możesz wybrać, które tryby włączyć do pętli. |
 
 
 ## Używanie klawiatury do akcji {#use-keyboard-for-actions}
