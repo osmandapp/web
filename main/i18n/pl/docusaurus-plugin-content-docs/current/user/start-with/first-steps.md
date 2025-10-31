@@ -1,8 +1,9 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Pierwsze kroki
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Przegląd {#overview}
 
 Witaj w OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
-Dowiedz się, jak pobierać mapy, konfigurować aplikację, korzystać z mapy i budować trasę, rozpoczynać nawigację oraz wyszukiwać interesujące miejsca (POI). Zapoznaj się z kluczowymi punktami polityki prywatności OsmAnd i wymaganymi uprawnieniami.
+Dowiedz się, jak pobierać mapy, konfigurować aplikację, korzystać z mapy i budować trasę, rozpoczynać nawigację oraz wyszukiwać interesujące miejsca. Zapoznaj się z kluczowymi punktami polityki prywatności OsmAnd i wymaganymi uprawnieniami.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -58,7 +58,7 @@ OsmAnd to aplikacja mobilna do map i nawigacji dostępna na **Androida** i **iOS
 Naszym celem jest stworzenie w pełni funkcjonalnej aplikacji zorientowanej na mapy, która może być używana do różnych celów w trybie offline i online. Aplikacja ma wiele funkcji, dzięki czemu nie musisz przełączać się między różnymi aplikacjami, a wszystko będzie na wyciągnięcie ręki.
 
 - Przeglądaj mapę świata z wieloma szczegółami wyświetlanymi w [różnych stylach mapy](../map/vector-maps.md).
-- Wyświetlaj, [wyszukuj](../search/search-poi.md) i zapisuj różne [interesujące miejsca (POI)](../map/point-layers-on-map.md).
+- Wyświetlaj, [wyszukuj](../search/search-poi.md) i zapisuj różne [interesujące miejsca](../map/point-layers-on-map.md).
 - [Zaplanuj trasę](../plan-route/create-route.md) samochodem, rowerem, pieszo i łącz je w trasy multimodalne.
 - Rozpocznij [nawigację z przewodnikiem głosowym](../navigation/guidance/voice-navigation.md) przy włączonym i wyłączonym ekranie.
 - Wzbogać swoją podróż turystyczną dzięki offline'owej [Wikipedii](../plugins/wikipedia.md) i [Wikivoyage](../plan-route/travel-guides.md).
@@ -153,7 +153,7 @@ Przejdź do: *Ustawienia → OsmAnd Maps → Język*
 </Tabs>
 
 :::note Brak opcji ustawienia języków aplikacji
-Na niektórych urządzeniach z Androidem (Xiaomi z Muiu 14) nie ma opcji indywidualnego ustawiania języków aplikacji w ustawieniach systemowych, więc język OsmAnd można zmienić tylko wraz z językiem całego systemu. Możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990) w celu uzyskania dodatkowych informacji.
+Na niektórych urządzeniach z Androidem (Xiaomi z Muiu 14) nie ma opcji indywidualnego ustawiania języków aplikacji w ustawieniach systemowych, więc język OsmAnd można zmienić tylko wraz z językiem całego systemu. Możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990), aby uzyskać dodatkowe informacje.
 :::
 
 
@@ -491,7 +491,7 @@ Dotknij ikony akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 </Tabs>
 
 W *Menu Pomocy* można znaleźć artykuły z naszej strony [www.osmand.net/docs](https://osmand.net/docs/intro/). Po pierwszym pobraniu (wymagane połączenie z internetem) artykuły pomocy są dostępne w trybie offline.  
-Pierwsza podsekcja, *Pomoc offline*, zawiera **Najczęściej oglądane** (lub popularne) artykuły wśród naszych użytkowników. Sekcje **Podręcznik użytkownika** i **Rozwiązywanie problemów** mają taką samą strukturę jak na stronie internetowej.  
+Pierwsza podsekcja, *Pomoc offline*, zawiera **Najczęściej oglądane** (lub popularne) artykuły wśród naszych użytkowników. Te artykuły są wyświetlane w języku ustawionym dla aplikacji, jeśli ten język jest obsługiwany na naszej stronie dokumentacji. Obecnie obsługiwane języki to: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>* oraz *<Translate android="true" ids="lang_uk"/>*. Jeśli zmienisz język aplikacji, uruchom ponownie OsmAnd, aby dokumentacja otworzyła się w wybranym języku. Gdy tłumaczenie nie jest dostępne, automatycznie wyświetlona zostanie wersja angielska strony. Sekcje **Podręcznik użytkownika** i **Rozwiązywanie problemów** mają taką samą strukturę jak na stronie internetowej.  
 W *Menu Pomocy* można również znaleźć przydatne linki do sieci społecznościowych OsmAnd, informacje o wersji aplikacji, informacje o wydaniu i kontakty do wsparcia. Za pośrednictwem Pomocy można również wysyłać [logi logcat i awarii](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menu {#menu}

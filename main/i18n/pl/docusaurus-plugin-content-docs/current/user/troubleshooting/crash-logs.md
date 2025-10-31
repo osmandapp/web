@@ -1,8 +1,9 @@
 ---
-source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
+source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
 sidebar_position: 5
 title:  Dzienniki awarii
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Przegląd {#overview}
 
-Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarie lub nieoczekiwane zachowanie aplikacji. Możliwe jest udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd. Obecnie użytkownicy iOS mają tylko jedną opcję dziennika awarii do wysłania.
+Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarie lub nieoczekiwane zachowanie aplikacji. Udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd jest możliwe. Obecnie użytkownicy iOS mają tylko jeden typ opcji dziennika awarii do wysłania.
 
 
 ## Dzienniki awarii i Logcat {#crash-and-logcat-logs}
@@ -54,8 +54,8 @@ Zachowaj ostrożność podczas wysyłania dzienników Logcat, ponieważ mogą on
     ![Wyślij dzienniki awarii iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Wyślij dzienniki awarii iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Wyślij [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) dzienników i danych autoryzacyjnych:
-    - Przejdź do iOS *Ustawienia → Analizy → Dane analityczne → Plik w formacie ips OsmAnd Maps* (do iOS 17).
-    - iOS *Ustawienia → Prywatność i bezpieczeństwo → Analizy i ulepszenia → Dane analityczne → Plik w formacie ips OsmAnd Maps* (od iOS 18).
+    - Na iOS 15 lub starszym: *Ustawienia → Analizy → Dane analityczne → Plik w formacie ips OsmAnd Maps*.
+    - Na iOS 16 lub nowszym:  *Ustawienia → Prywatność i bezpieczeństwo → Analizy i ulepszenia → Dane analityczne → Plik w formacie ips OsmAnd Maps*.
     - Następnie, korzystając z aplikacji pocztowej, zalecamy wysłanie dzienników na adres `crash@osmand.net`.
 
     ![Wyślij dzienniki awarii iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Wyślij dzienniki awarii iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
@@ -106,7 +106,7 @@ Następnie podłącz urządzenie do stacji roboczej za pomocą kabla USB. Jeśli
 
 #### Generowanie raportu o błędach {#generate-bug-report}
 
-1. Otwórz terminal wiersza poleceń. Na Macu lub Linuksie użyj aplikacji *Terminal*, a na Windowsie użyj *Wiersza poleceń*.
+1. Otwórz terminal wiersza poleceń. Na Macu lub Linuksie użyj aplikacji *Terminal*, a na Windowsie użyj *Wiersza polecenia*.
 2. Przejdź do folderu platform-tools, w którym znajduje się ADB, używając polecenia *cd* (na przykład „cd /Users/NazwaUżytkownika/Pobrane/Narzędzia”).
 3. Wygeneruj raport o błędach:
    - Na Macu: ```adb bugreport```

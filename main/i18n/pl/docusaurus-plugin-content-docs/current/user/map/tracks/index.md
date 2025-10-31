@@ -1,8 +1,9 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Ślady
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,9 +16,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
-OsmAnd ma wiele zaawansowanych funkcji do wyświetlania różnych tras na mapie. Trasy mogą być budowane w ramach [Nawigacji](../../navigation/index.md), tworzone za pomocą [Planowania trasy](../../plan-route/index.md), importowane jako [ślady GPX](../../personal/tracks/index.md), nagrywane za pomocą wtyczki [Nagrywanie podróży](../../plugins/trip-recording.md) lub przeglądane i wybierane z danych OpenStreetMap.
+OsmAnd ma wiele zaawansowanych funkcji do wyświetlania różnych tras na mapie. Trasy mogą być budowane w ramach Nawigacji, tworzone za pomocą Planowania trasy, importowane jako ślady GPX, nagrywane za pomocą wtyczki Nagrywanie podróży lub przeglądane i wybierane z danych OpenStreetMap.
 
 
 ## Rodzaje śladów {#types-of-tracks}
@@ -135,6 +135,7 @@ To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/
 - **Dane wykresu (oś Y)** wyświetlają: *Wysokość*, *Nachylenie*, *Prędkość*, [*Dane z czujników zewnętrznych*](../../plugins/external-sensors.md) oraz kombinacje do dwóch opcji, jeśli są zawarte w danych śladu.
 - **Wymiar wykresu (oś X)** reprezentuje: *Odległość*, *Czas* i *Pora dnia*.
 - **Interakcja przez dotknięcie/przesunięcie**. Dotknij wykresu, aby wyświetlić informacje o konkretnym punkcie na śladzie. Przesuwanie po wykresie podświetla odpowiednią lokalizację na mapie i pokazuje szczegóły na pasku informacyjnym.
+- **Etykieta odległości**. Po dotknięciu lub przesunięciu wzdłuż wykresu w podpowiedzi wyświetlany jest również dokładny dystans wzdłuż śladu. Wartość podąża za bieżącymi ustawieniami jednostek profilu (<Translate android="true" ids="km"/> lub <Translate android="true" ids="mile"/>). Użyj jej, aby szybko oszacować, jak daleko punkt jest od początku śladu, lub aby obliczyć odległość między dwoma pozycjami, porównując ich wartości.
 - **Skalowanie**. Użyj [gestu dwoma palcami](../../map/interact-with-map.md#gestures), aby skalować wykres w celu bardziej szczegółowego widoku.
 
 

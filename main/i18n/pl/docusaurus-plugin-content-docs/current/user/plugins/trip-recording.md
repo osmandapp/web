@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
 sidebar_position: 15
 title:  Nagrywanie trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -63,9 +63,9 @@ Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie t
 - *Tylko Android*:
     - Przejdź do *Główne <Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
 
-    - [Powiadomienie systemowe](#notifications) — Użyj w obszarze powiadomień urządzenia.
+    - [Powiadomienie systemowe](#notifications) — Użyj w obszarze powiadomień urządzenia .
 
-    - [Launcher aplikacji](#launcher-android) — Użyj, aby rozpocząć nagrywanie.  
+    - [Launcher aplikacji](#launcher-android) — Użyj, aby rozpocząć nagrywanie .  
 
 **Zalecenia:**
 
@@ -293,7 +293,7 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 | **Zapobiegaj samodzielnemu rejestrowaniu** (*Android*) | Wstrzymuje nagrywanie trasy, gdy aplikacja OsmAnd zostanie zamknięta (za pomocą *ostatnich aplikacji*). Wskaźnik działania w tle nie jest wyświetlany w panelu powiadomień systemu Android. |
 | **Dołącz kurs** | Rejestruje kurs (kierunek ruchu) dla każdego punktu w pliku GPX. Kurs to kierunek, w którym skierowane jest urządzenie, który może różnić się od kierunku ruchu z powodu czynników zewnętrznych, takich jak wiatr lub poślizg. |
 | **Aktywność**  | Opcja pozwala na wstępne wybranie [typu aktywności](../map/tracks/track-context-menu.md#ttrack-activity-type) dla profilu, który jest następnie automatycznie stosowany do wszystkich zarejestrowanych tras. |
-| **Czujniki zewnętrzne** <br/> *Wymaga włączonej wtyczki* | Dane z [czujników zewnętrznych](../plugins/external-sensors.md#trip-recording), takie jak *<Translate android="true" ids="map_widget_ant_heart_rate"/>* lub *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>*, są zapisywane w pliku GPX. Dane *Dystans* nie są rejestrowane w systemie Android ani iOS. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Czujniki zewnętrzne](../plugins/external-sensors.md). |
+| **Czujniki zewnętrzne** <br/> *Wymaga włączonej wtyczki* | Dane z [czujników zewnętrznych](../plugins/external-sensors.md#trip-recording), takie jak *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, lub *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* są zapisywane w pliku GPX. Dane *Dystans* nie są rejestrowane w systemie Android ani iOS. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Czujniki zewnętrzne](../plugins/external-sensors.md). |
 | **Metryki pojazdu** <br/> *Wymaga włączonej wtyczki* | Dane ze [skanera OBD-II](../plugins/vehicle-metrics.md#trip-recording) są zapisywane w pliku GPX. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Metryki pojazdu](../plugins/vehicle-metrics.md).<br />*Uwaga*: Możesz dodać, które metryki mają być rejestrowane w pliku GPX z listy: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Folder przechowywania tras** (*Android*) | Określa, gdzie w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* przechowywane są zarejestrowane trasy. Opcje obejmują przechowywanie wszystkich tras w folderze Rec lub organizowanie ich według miesięcy, np. Rec/rrrr-mm. |
 | **Powiadomienie** | Kontroluje wyświetlanie powiadomienia systemowego [nagrywania trasy](#notifications) w obszarze powiadomień urządzenia, które pozwala na rozpoczęcie nagrywania podróży. |
@@ -356,7 +356,7 @@ Plakietka ikony aplikacji pojawia się obok ikony OsmAnd, gdy nagrywanie trasy j
 
 ## Widżety {#widgets}
 
-Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Dystans*, *Czas trwania*, *W górę* i *W dół*.
+Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Dystans*, *Czas trwania*, *W górę* i *W dół*. W systemie Android można również dodać widżety *Maks. prędkość* i *Średnie nachylenie*.
 
 Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać wszystkich następujących ustawień:
 
@@ -373,7 +373,7 @@ Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać ws
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Dodawanie widżetu Dystans/Start-Stop w systemie Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Dodawanie widżetu Dystans/Start-Stop w systemie iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -398,8 +398,8 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 
 <TabItem value="android" label="Android">  
 
-![Widżet nagrywania trasy](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
 ![Zakończ nagrywanie w systemie Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Widżet nagrywania trasy](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -417,13 +417,18 @@ Widżet *Dystans* wyświetla całkowity dystans bieżącej zarejestrowanej podr�
 - Widżet jest dodawany automatycznie po włączeniu *wtyczki Nagrywanie trasy*, ale można go ukryć za pomocą [menu Konfiguruj ekran](../widgets/configure-screen.md#overview).
 - Jeśli opcja *Pokaż okno dialogowe startu* jest wyłączona w ustawieniach wtyczki Nagrywanie trasy, stuknięcie aktywnego widżetu nadal otworzy okno dialogowe *Nagrywanie trasy*, umożliwiając dostęp do dalszych opcji i informacji.  
 
-Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera trzy inne widżety: *Czas trwania*, *W górę* i *W dół*. Zapewniają one dodatkowe informacje o podróży, pomagając śledzić postępy w czasie rzeczywistym.
+Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera trzy inne widżety: *Czas trwania*, *W górę*, *W dół*, *Maks. prędkość* i *Średnie nachylenie* (ostatnie dwa dostępne tylko w systemie Android). Zapewniają one dodatkowe informacje o podróży, pomagając śledzić postępy w czasie rzeczywistym.
 
 | |
 |-----------|
 | **Dystans/Start-Stop**. Ten widżet wyświetla dystans trwającego nagrywania podróży. Jest on dodawany automatycznie po włączeniu wtyczki Nagrywanie trasy, ale można go ukryć za pomocą menu Konfiguruj ekran. Widżet ma trzy różne stany: *Nagrywanie*, *Wstrzymano* i *Nieaktywny*, z których każdy wskazuje bieżący stan nagrywania podróży. |
 | ![Widżet nagrywania trasy (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Aby otworzyć [okno dialogowe Nagrywanie trasy](#start-a-dialog) po stuknięciu nieaktywnego widżetu, włącz opcję *Pokaż okno dialogowe uruchamiania* w ustawieniach wtyczki Nagrywanie trasy. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się natychmiast po stuknięciu widżetu bez otwierania okna dialogowego.|  
+| Aby otworzyć [okno dialogowe Nagrywanie trasy](#start-a-dialog) po stuknięciu nieaktywnego widżetu, włącz opcję *Pokaż okno dialogowe uruchamiania* w ustawieniach wtyczki Nagrywanie trasy. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się natychmiast po stuknięciu widżetu bez otwierania okna dialogowego.| 
+
+W systemie Android widżet Dystans obsługuje wiele trybów wyświetlania:
+- **Całkowity dystans** – całkowity dystans bieżącego nagrania (domyślnie).
+- **Ostatni podjazd** – dystans ostatniego odcinka wzniesienia.
+- **Ostatni zjazd** – dystans ostatniego odcinka zejścia.
 
 
 ### Czas trwania, W górę, W dół {#duration-uphill-downhill}
@@ -432,13 +437,18 @@ Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera trzy
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -449,7 +459,21 @@ Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera trzy
 |**W dół**. Wskazuje całkowity spadek wysokości skumulowany podczas bieżącego nagrania podróży. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Jeśli wybrano wiele widżetów — *Czas trwania*, *W górę* lub *W dół* — można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
+
+### Maks. prędkość i Średnie nachylenie {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Maks. prędkość Android](@site/static/img/widgets/max_speed_android.png) ![Średnie nachylenie Android](@site/static/img/widgets/average_slope_android.png)  
+
+Widżet **Maks. prędkość** pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu. Stuknij widżet, aby przełączyć się między ogólną maksymalną prędkością a maksymalną prędkością z ostatniego odcinka podjazdu lub zjazdu.
+
+Widżet **Średnie nachylenie** wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnego wyjazdu. Pomaga oszacować, jak stroma była poprzednia wspinaczka lub zejście, na podstawie wzrostu wysokości i dystansu.
 
 
 ## Powiązane artykuły {#related-articles}

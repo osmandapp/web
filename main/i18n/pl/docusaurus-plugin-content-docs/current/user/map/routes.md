@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
 sidebar_position: 10
 title:  Trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -47,8 +47,8 @@ Trasy MTB mają specyficzne mapowanie w [OpenStreetMap](https://wiki.openstreetm
 <!--
 | | | |
 |------------|------------|------------|
-| ***<Translate android="true" ids="mtb_scale"/>*** | Pokazuje szlaki zgodnie ze skalą MTB. Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png) |
-| ***<Translate android="true" ids="mtb_imba"/>*** | Pokazuje szlaki MTB zgodnie z Międzynarodowym Stowarzyszeniem Kolarstwa Górskiego, [MTB IMBA](https://www.imba.com/). Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
+| ***<Translate android="true" ids="mtb_scale"/>*** | Shows trails according to the MTB scale. More information is in the [Map Legend](../map-legend/index.md) article. | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png) |
+| ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
 - ***<Translate android="true" ids="mtb_scale"/>***. Pokazuje szlaki zgodnie ze skalą MTB. Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md).  
@@ -111,11 +111,22 @@ Niektóre odcinki dróg mogą być częścią wielu tras, ale mogą być indywid
 2. [Skala CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Trasy narciarskie {#ski-routes}
+### Stoki i trasy narciarskie {#ski-slopes-and-routes}
 
+- _Stoki i trasy narciarskie_ w stylu mapy _Zima i narty_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) w OpenStreetMap. Zazwyczaj trasy te mogą być używane ze stylem mapy [Zima i narty](../map/vector-maps.md#winter-and-ski) ze wszystkimi widocznymi [trasami zjazdowymi](https://wiki.openstreetmap.org/wiki/Pistes).  
+- _Stoki i trasy narciarskie_ w domyślnym stylu mapy _OsmAnd_.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Stoki i trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) w OpenStreetMap. Zazwyczaj trasy te mogą być używane ze stylem mapy [Zima i narty](../map/vector-maps.md#winter-and-ski) ze wszystkimi widocznymi [trasami zjazdowymi](https://wiki.openstreetmap.org/wiki/Pistes). Jeśli aktywny jest inny styl mapy, wyświetlany jest baner sugerujący przełączenie na [Zima i narty](../map/vector-maps.md#winter-and-ski) (*tylko Android*) i wyświetlane są tylko stoki. Dotknij ***Przełącz***, aby zmienić styl mapy bez opuszczania bieżącego ekranu, lub ***Później***, aby ukryć baner.
+
+
+### Szlaki skuterów śnieżnych {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+Szlaki skuterów śnieżnych są mapowane w [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) jako `route=snowmobile`. Są używane do zimowej rekreacji i do łączenia odległych obszarów w sezonie śnieżnym. W OsmAnd szlaki skuterów śnieżnych są klikalne, patrz sekcja [Działania na trasach](#actions-with-routes).
 
 
 ### Szlaki konne {#horse-routes}
@@ -129,7 +140,7 @@ Trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wik
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Trasy kajakowe](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) są pokazywane wraz z ikonami dostępu, strefami zagrożenia dla [turystyki kajakowej](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Trasy białego nurtu](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) są pokazywane wraz z ikonami dostępu, strefami zagrożenia dla [turystyki białego nurtu](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
 
 
 ### Trasy biegowe {#running-routes}
@@ -139,11 +150,11 @@ Trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wik
 [Trasy biegowe](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) w OpenStreetMap są używane dla nazwanych, numerowanych lub w inny sposób oznaczonych tras biegowych, głównie dla lekkoatletyki.
 
 
-### Ścieżki zdrowia {#fitness-trails}
+### Ścieżki fitness {#fitness-trails}
 
 ![Fitness routes](@site/static/img/map/fitness_route.png)
 
-[Ścieżka zdrowia](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) to szlak lub ścieżka wyposażona w przeszkody lub stacje na całej swojej długości, służące do ćwiczeń fizycznych w celu poprawy zdrowia.  
+[Ścieżka fitness](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) to szlak lub ścieżka wyposażona w przeszkody lub stacje na całej swojej długości, służące do ćwiczeń fizycznych w celu poprawy zdrowia.  
 
 
 ### Trasy podróży {#travel-routes}
@@ -165,7 +176,14 @@ Możesz dostosować wyświetlanie niektórych ***Przewodników*** i typów ***ś
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- Aby wyświetlić wymagane trasy na mapie, włącz je na *liście tras* w menu [Konfiguracja mapy](../map/configure-map-menu.md).
+- OsmAnd może podświetlać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
+- Główne typy tras można również filtrować według klas i podklas, co pozwala na wyświetlanie tylko określonych grup w ramach każdego typu. Na przykład, możesz wyświetlać szlaki piesze według **symboli OSMC** jako klasy, a według *międzynarodowych, krajowych, regionalnych* lub *lokalnych sieci* jako podklasy.
+- Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md).  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +193,22 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - Aby wyświetlić wymagane trasy na mapie, włącz je na *liście tras* w menu [Konfiguracja mapy](../map/configure-map-menu.md).
 - OsmAnd może podświetlać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
 - Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md).  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
+</TabItem>
+
+</Tabs>
+
+
 ## Szczegóły obszaru i skały wspinaczkowej {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 Po wybraniu [obszaru lub skały wspinaczkowej](../map/routes.md#climbing-routes), OsmAnd wyświetla szczegółowe podsumowanie lokalizacji wspinaczkowej, w tym: nazwę i lokalizację, ocenę trudności wspinaczki (UIAA, francuska, YDS itp.), rodzaj skały, wysokość i długość trasy, jakość wspinaczki i warunki na powierzchni.
-
 
 
 ## Działania na trasach {#actions-with-routes}
@@ -205,13 +223,13 @@ Po wybraniu [obszaru lub skały wspinaczkowej](../map/routes.md#climbing-routes)
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Na mapie można wybrać trasy [piesze, rowerowe, podróżnicze i inne](#type-of-routes), które są oznaczone symbolami [OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), jeśli ma to zastosowanie.
+Na mapie można wybrać trasy [piesze, rowerowe, narciarskie, MTB, dla motocykli terenowych, podróżnicze i inne](#type-of-routes). Tam, gdzie dostępne, szlaki piesze wyświetlają swoje znaki za pomocą [symboli OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); inne typy tras używają własnych oznaczeń.
 
 Po dotknięciu **symbolu trasy** na mapie:
 
@@ -245,7 +263,7 @@ W **menu kontekstowym** możesz:
 
 W menu kontekstowym będą widoczne następujące informacje:
 
-- **Informacje o trasie**: Nazwa trasy, link OSM (wymagana wtyczka Edycja OSM), Typ, Opis, Dystans, Kierunek, Wzniesienie/Zejście, Zakres wysokości, Sieć, Operator, Stan, Kolor, Trasa okrężna, Punkty początkowy/końcowy i inne.
+- **Informacje o trasie**: Nazwa trasy, link OSM (wymagana wtyczka Edycja OSM), Typ, Opis, Dystans, Kierunek, Podjazd/Zjazd, Zakres wysokości, Sieć, Operator, Stan, Kolor, Trasa okrężna, Punkty początkowy/końcowy i inne.
 - **Ogólne**: Rozmiar, Lokalizacja, Utworzono.
 - **Dodatkowe informacje**. Wyświetla rodzaj aktywności.
 - przyciski akcji: [Zapisz jako](#save-as-a-track) i [Rozpocznij nawigację](#start-navigation).
@@ -343,7 +361,7 @@ Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>
 
 </Tabs>  
 
-Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, aby znaleźć żądane trasy. Trasy zawierają nazwę, rodzaj aktywności, długość, lokalizację i odległość do najbliższego punktu.
+Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , aby znaleźć żądane trasy. Trasy zawierają nazwę, rodzaj aktywności, długość, lokalizację i odległość do najbliższego punktu.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

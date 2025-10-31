@@ -1,8 +1,9 @@
 ---
-source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
+source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 sidebar_position: 4
 title:  Pakiet niestandardowy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-W aplikacji OsmAnd można tworzyć wiele dostosowań i eksportować je do pliku `.osf`. Po dodaniu opisu, obrazu i ikony, te dostosowania stają się całkowicie niezależną wtyczką. Taka wtyczka może zawierać:
+W aplikacji OsmAnd można tworzyć wiele dostosowań i eksportować je do pliku `.osf`. Po dodaniu opisu, obrazu i ikony te dostosowania stają się całkowicie niezależną wtyczką. Taka wtyczka może zawierać:
 
 - Wszystkie [Ustawienia profilu](../personal/profiles.md) z nowym profilem.
 - Określony zestaw szybkich akcji i układów menu dla *Szuflady* i *Menu kontekstowego*.
@@ -63,12 +63,12 @@ Może być konieczne przeczytanie:
              "" :"@plugin-image.webp"
          },
          "name":{
-            "":"Testowa wtyczka",
-            "ru":"Testowa wtyczka: język RU"
+            "":"Test Plugin",
+            "ru":"Test Plugin: RU language"
          },
          "description":{
-            "":"Ten pakiet jest pakietem testowym i wyświetla informacje testowe.",
-            "ru":"Ten pakiet jest pakietem testowym i wyświetla informacje testowe. Język RU."
+            "":"This package is a test package and displays test information.",
+            "ru":"This package is a test package and displays test information. RU language."
          }
       },
 
@@ -86,8 +86,8 @@ Może być konieczne przeczytanie:
             {
                "path":"test",
                "name":{
-                  "":"Moje mapy offline",
-                  "ru":"RU: Moje mapy offline"
+                  "":"My offline maps",
+                  "ru":"RU: My offline maps"
                },
                "icon":{
                   "":"ic_world_globe_dark"
@@ -95,12 +95,12 @@ Może być konieczne przeczytanie:
                "header-color":"#002E64",
                "description":{
                   "text":{
-                     "":"Ten pakiet to zbiór źródeł map online i offline różnego typu.",
-                     "ru":"RU: Ten pakiet to zbiór źródeł map online i offline różnego typu."
+                     "":"This package is a collection of online and offline map sources of various types.",
+                     "ru":"RU: This package is a collection of online and offline map sources of various types."
                   },
                   "button":[
                      {
-                        "":"Czat Telegram OsmAnd",
+                        "":"Telegram chat OsmAnd",
                         "url":"https:\/\/t.me\/OsmAndMaps"
                      }
                   ]
@@ -111,8 +111,8 @@ Może być konieczne przeczytanie:
                "path":"test/Waterway",
                "header-color":"#002E64",
                "name":{
-                  "":"Droga wodna",
-                  "ru":"RU: droga wodna"
+                  "":"Waterway",
+                  "ru":"RU: waterway"
                },
                "icon":{
                   "":"ic_world_globe_dark"
@@ -120,8 +120,8 @@ Może być konieczne przeczytanie:
                "items":[
                   {
                      "name":{
-                        "":"Mapa offline dróg wodnych SA",
-                        "ru":"RU: Mapa offline dróg wodnych SA"
+                        "":"Offline Waterway map SA",
+                        "ru":"RU: Offline Waterway map SA"
                      },
                      "filename":"waterway.obf.zip",
                      "type":"map",
@@ -131,8 +131,8 @@ Może być konieczne przeczytanie:
                      "contentSize":28195301,
                      "description":{
                         "text":{
-                           "":"Min. powiększenie: 0<br />Maks. powiększenie: 19<br />Kraje: SA",
-                           "ru":"RU: Min. powiększenie: 0<br />Maks. powiększenie: 19<br />Kraje: SA"
+                           "":"Zoom min: 0<br />Zoom max: 19<br />Countries: SA",
+                           "ru":"RU: Zoom min: 0<br />Zoom max: 19<br />Countries: SA"
                         },
                         "image":[
                            "https://drive.google.com/uc?id=16HjUHsSWNgeQI0bmuup9ohpyrg6rWkHH&export=download"
@@ -140,8 +140,8 @@ Może być konieczne przeczytanie:
                      },
                      "downloadurl":"https://drive.google.com/uc?id=10iP2VZexHtHC0QLhACZ1QoEy-duNN5Wg&export=download",
                      "firstsubname":{
-                        "":"Droga wodna",
-                        "ru":"RU: Droga wodna"
+                        "":"Waterway",
+                        "ru":"RU: Waterway"
                      },
                      "secondsubname":{
                         "":"",
@@ -164,7 +164,7 @@ Może być konieczne przeczytanie:
             "order":32,
             "parent":"bicycle",
             "stringKey":"bicycle_test",
-            "userProfileName" : "Testowy prof."
+            "userProfileName" : "Test Prof"
          },
          "prefs" : {
             "drawer_logo": { "" : "@logo.png"},
@@ -195,9 +195,9 @@ Może być konieczne przeczytanie:
       {
          "type":"SUGGESTED_DOWNLOADS",
          "pluginId":"test.plugin",
-         "comment-1" : "search-type to latlon (najbliższy wg latlon), worldregion (wg granic, jeśli nazwa pasuje do downloadName worldRegion, tak jak w przypadku typów domyślnych), domyślnie porządek naturalny, limit znajduje pierwsze N elementów",
-         "comment-2" : "predefiniowane scope-id to @type z indexes.xml map, srtm_map, road_map, wikimap, wikivoyage, hillshade, slope, fonts, voice, depth ",
-         "comment-3" : "filtry nazw ignorują wielkość liter wg name.contains(filterName)",
+         "comment-1" : "search-type are latlon (closest by latlon), worldregion (by boundaries if name matches worldRegion downloadName as we do for default types), by default natural order, limit finds first N elements",
+         "comment-2" : "predefined scope-id are @type of indexes.xml map, srtm_map, road_map, wikimap, wikivoyage, hillshade, slope, fonts, voice, depth ",
+         "comment-3" : "names filters ignore case by name.contains(filterName)",
          "items": [{
              "scope-id" : "test-downloads",
              "limit" : 1,
@@ -231,7 +231,7 @@ Może być konieczne przeczytanie:
          "type":"QUICK_ACTIONS",
          "pluginId":"test.plugin",
          "items": [{
-            "name": "Testowa szybka akcja",
+            "name": "Test quick action",
             "actionType": "osmbug.add",
             "params": "{\"dialog\":\"false\",\"message\":\"Message\"}"
           }]
@@ -241,7 +241,7 @@ Może być konieczne przeczytanie:
          "type":"POI_UI_FILTERS",
          "pluginId":"test.plugin",
           "items": [{
-                "name": "Testowe wyszukiwanie",
+                "name": "Test Search",
                 "filterId": "test_search",
                 "acceptedTypes": "{\"sustenance\":[\"bar\",\"alpine_hut\"]}"
             }]
@@ -288,14 +288,14 @@ Na początek tworzysz i dodajesz swoją wtyczkę do *items.JSON*. Pierwszym type
 
 ### Obrazy wtyczki {#plugin-images}
 
-Aby zaimportować obrazy ikon wtyczki do OsmAnd, utwórz folder (w naszym przykładzie jest to folder *"res”*), w którym będą przechowywane pliki obrazów. Nazwa tego typu to **"RESOURCES"**.  
+Aby zaimportować obrazy ikon wtyczki do OsmAnd, utwórz folder (w naszym przykładzie jest to folder *"res ”*), w którym będą przechowywane pliki obrazów. Nazwa tego typu to **"RESOURCES"**.  
 
    ![Pakiet niestandardowy](@site/static/img/plugins/custom/4.jpg)
 
 
 ### Profile {#profiles}
 
-Używając typu **"PROFILE”** możesz dodać profil nawigacyjny dla swojej wtyczki. Wszystkie informacje o swoim profilu nawigacyjnym możesz uzyskać w wyeksportowanym pliku JSON, gdzie można odczytać, które typy *items.JSON* zostały dodane (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* lub inne).
+Używając typu **"PROFILE ”** możesz dodać profil nawigacyjny dla swojej wtyczki. Wszystkie informacje o swoim profilu nawigacyjnym możesz uzyskać w wyeksportowanym pliku JSON, gdzie można odczytać, które typy *items.JSON* zostały dodane (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* lub inne).
 UWAGA: Zacznij tworzyć profil nawigacyjny ze wszystkimi parametrami, w tym celu wyeksportuj profile nawigacyjne i skopiuj niezbędne elementy z pliku *profiles.osf* (items.JSON) do pliku *PLUGIN.osf* (items.JSON).  
 
    ![Pakiet niestandardowy](@site/static/img/plugins/custom/6.jpg)
@@ -303,7 +303,7 @@ UWAGA: Zacznij tworzyć profil nawigacyjny ze wszystkimi parametrami, w tym celu
 ### Pobrane pliki {#downloads}
 
 Możesz dodać dowolne pliki, takie jak *SQLite, OBF lub czcionki* do pobrania, używając typu **"DOWNLOADS"**. Główne typy plików do pobrania można znaleźć [tutaj](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>UWAGA</u>*. Tag **"isHidden":"true"** (domyślnie jest to *false*) może ukryć dane mapy przed [Mapami i zasobami](../personal/maps-resources.md#local) OsmAnd. W **"scope-id"** możesz dodać wszystkie niezbędne informacje o adresie URL pliku, nazwie, opisie i nie tylko.  
+   *<u>UWAGA</u>*. Tag **"isHidden":"true"** (domyślnie jest to *false*) może ukryć dane mapy przed [Mapami i zasobami](../personal/maps-resources.md#local-menu) OsmAnd.  W **"scope-id"** możesz dodać wszystkie niezbędne informacje o adresie URL pliku, nazwie, opisie i nie tylko.  
 
    ![Pakiet niestandardowy](@site/static/img/plugins/custom/3.jpg)
 

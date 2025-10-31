@@ -1,8 +1,9 @@
 ---
-source-hash: 9c31a0e4b56a15ce32014f004b8aa04a2f3dc8f40a876c929c1589350317a6ad
+source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
 sidebar_position: 14
 title: Topografia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
@@ -25,13 +25,13 @@ Wtyczka Topografia jest [płatną funkcją](../purchases/index.md) aplikacji Osm
 Topografia jest ważną cechą kartografii, która dostarcza informacji do wizualnej oceny rzeźby terenu.
 Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*) oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
 
-Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay-layer).
+Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay-layer).  
 
-Wtyczka Topografia zapewnia dostęp do następujących typów map:
+Wtyczka Topografia zapewnia dostęp do następujących typów map:  
 
 - [Linie konturowe](#contour-lines). Jest to [mapa wektorowa](../map/vector-maps.md) reprezentowana w [**metrach** lub **stopach**](#contour-lines-meters-or-feet). Linie konturowe pokazują poziomy wysokości i pomagają wizualizować teren.
 - [Cieniowanie wzgórz](#hillshade-slope-and-altitude-layers). Rodzaje map z cieniowaniem wzgórz i zboczy sprawiają, że rzeźba terenu jest bardziej widoczna i pomaga w wizualnej interpretacji terenu.
-- [Nachylenie](#hillshade-slope-and-altitude-layers). Warstwa [rastrowa](../map/raster-maps.md), która dostarcza informacji o stromości zboczy, co może być ważne przy planowaniu trasy i dla bezpieczeństwa.
+- [Nachylenie](#hillshade-slope-and-altitude-layers). [Warstwa rastrowa](../map/raster-maps.md), która dostarcza informacji o stromości zboczy, co może być ważne przy planowaniu trasy i dla bezpieczeństwa.
 - [Rzeźba 3D](#3d-relief). Jest to [mapa wektorowa](../map/vector-maps.md), która zapewnia trójwymiarową reprezentację terenu, dostępna tylko z [subskrypcją OsmAnd Pro](../purchases/index.md).
 
 
@@ -57,7 +57,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 
 ### Licencja na dane DEM używane przez OsmAnd do wykrywania terenu {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Dane o wysokości na mapie (między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej) zostały uzyskane z pomiarów wykonanych w ramach *Shuttle Radar Topography Mission (SRTM)*. Wykorzystano w niej *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, podstawowe narzędzie obrazowania w *Systemie Obserwacji Ziemi NASA*.
+Dane o wysokości na mapie (między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej) zostały uzyskane z pomiarów wykonanych w ramach *Shuttle Radar Topography Mission (SRTM)*. Wykorzystano w niej *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, podstawowe narzędzie obrazowania w *Systemie Obserwacji Ziemi NASA*.  
 Pełne informacje można znaleźć w [Licencji](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -79,7 +79,7 @@ Aby wyświetlić dane **Linii konturowych** i **Terenu (Cieniowanie wzgórz, Nac
 2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Topografia w sekcji Wtyczki w *Menu głównym*.
 3. [Pobierz](#download-maps): mapy Linii konturowych, Cieniowania wzgórz, Nachylenia lub mapy Terenu (3D).
 4. **Włącz i dostosuj**: Linie konturowe, Cieniowanie wzgórz lub Nachylenie dla widoku mapy.
-5. Możesz również obejrzeć [samouczek na YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
+5. Możesz również obejrzeć [samouczek na YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 Aby wyświetlić [**Rzeźbę 3D**](#3d-relief), należy zakupić plan *OsmAnd Pro*, który obejmuje dostęp do wtyczki Topografia.
 
@@ -202,8 +202,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>  
 
-Opcja **Teren** włącza i pozwala dostosować trzy funkcje, takie jak *Cieniowanie wzgórz*, *Nachylenie* i *Wysokość*.
-Cechy szczególne:
+Opcja **Teren** włącza i pozwala dostosować trzy funkcje, takie jak *Cieniowanie wzgórz*, *Nachylenie* i *Wysokość*.  
+Cechy szczególne:  
 
 - Tylko jedna opcja może być włączona w tym samym czasie: Cieniowanie wzgórz, Nachylenie lub Wysokość.
 - Jeśli po pobraniu i włączeniu odpowiedniej mapy nie widać żadnych zmian, zaleca się ponowne uruchomienie aplikacji.
@@ -217,9 +217,9 @@ Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) z opcj�
 | ------ | ------- | ------- |
 | ![Cieniowanie wzgórz](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**Cieniowanie wzgórz** opiera się na symulacji oświetlenia powierzchni przy użyciu danych o terenie. Metoda ta polega na tworzeniu cieni i podświetleń w oparciu o kąt nachylenia powierzchni względem źródła światła. W rezultacie na mapie widoczne są naturalne wzgórza, doliny i inne szczegóły terenu.
+**Cieniowanie wzgórz** opiera się na symulacji oświetlenia powierzchni przy użyciu danych o terenie. Metoda ta polega na tworzeniu cieni i podświetleń w oparciu o kąt nachylenia powierzchni względem źródła światła. W rezultacie na mapie widoczne są naturalne wzgórza, doliny i inne szczegóły terenu.  
 
-**Nachylenie** określa kąt nachylenia powierzchni na podstawie danych o wysokości punktów na mapie. Obliczenia kąta nachylenia są wykonywane z uwzględnieniem zmian wysokości i odległości między punktami, a zmiana ta jest przedstawiana jako kąt nachylenia.
+**Nachylenie** określa kąt nachylenia powierzchni na podstawie danych o wysokości punktów na mapie. Obliczenia kąta nachylenia są wykonywane z uwzględnieniem zmian wysokości i odległości między punktami, a zmiana ta jest przedstawiana jako kąt nachylenia.  
 
 **Wysokość** reprezentuje wysokość punktów na mapie względem poziomu morza. Pomaga zrozumieć, jak zmienia się wysokość terenu. Funkcja ta jest szczególnie przydatna podczas aktywności takich jak turystyka piesza czy kolarstwo górskie, gdzie znajomość wysokości może pomóc w planowaniu tras i zarządzaniu wysiłkiem fizycznym. Dane o wysokości pochodzą z modeli wysokościowych i zapewniają wyraźny widok wysokich i niskich punktów, ułatwiając ocenę trudności trasy lub identyfikację szczytów i dolin na trasie.
 
@@ -293,7 +293,7 @@ Funkcja *Poziomy skali* pozwala ustawić minimalne i maksymalne wartości poziom
 
 ### Rozmiar pamięci podręcznej {#cache-size}
 
-**Rozmiar pamięci podręcznej** to sekcja informacyjna, która wyświetla ilość pamięci na urządzeniu aktualnie używanej na dane *Terenu*. Za każdym razem, gdy przeglądasz informacje o *Cieniowaniu wzgórz* lub *Nachyleniu* na mapie, wszystkie te dane są tymczasowo przechowywane w pamięci podręcznej w celu szybkiego dostępu i późniejszego wykorzystania, unikając dodatkowego obciążenia procesora urządzenia.
+**Rozmiar pamięci podręcznej** to sekcja informacyjna, która wyświetla ilość pamięci na urządzeniu aktualnie używanej na dane *Terenu*. Za każdym razem, gdy przeglądasz informacje o *Cieniowaniu wzgórz* lub *Nachyleniu* na mapie, wszystkie te dane są tymczasowo przechowywane w pamięci podręcznej w celu szybkiego dostępu i późniejszego wykorzystania, unikając dodatkowego obciążenia procesora urządzenia.  
 
 **Czyszczenie pamięci podręcznej** jest czasami konieczne, aby zwolnić miejsce na urządzeniu lub rozwiązać potencjalne problemy z wydajnością. Aby wyczyścić pamięć podręczną, należy przejść do *Ustawień systemowych* urządzenia, a następnie ścieżka może być następująca: *Aplikacje → OsmAnd → Pamięć → Wyczyść pamięć podręczną*.
 
@@ -314,7 +314,7 @@ Funkcja *Poziomy skali* pozwala ustawić minimalne i maksymalne wartości poziom
 
 ![Szybka akcja dla Terenu](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów Terenu](#default-color-scheme). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.
+Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów Terenu](#default-color-scheme). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.  
 
 Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topografia w menu Konfiguruj mapę. W artykule [Szybka akcja](../widgets/quick-action.md#configure-map) można znaleźć listę warstw dostępnych do wyświetlenia. Jeśli potrzebujesz szybkiego dostępu do tej konfiguracji mapy, użyj narzędzia *Przycisk niestandardowy*.
 
@@ -358,7 +358,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
     - **Android**: przewiń do sekcji *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*.
     - **iOS**: przewiń do sekcji *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
 
-- W razie potrzeby pobierz [Mapę terenu (3D)](#3d-relief-maps) dla regionów.
+- Pobierz [Mapę terenu (3D)](#3d-relief-maps) dla regionów, jeśli jest to konieczne.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -412,10 +412,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 |--------|---------|
 | ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Cieniowanie wzgórz** to typ mapy, który wyświetla teren za pomocą cieni, tworząc wizualną reprezentację nachylenia i kształtu powierzchni ziemi.
-**Rzeźba 3D** to funkcja, która dodaje do mapy efekty trójwymiarowe.
+**Cieniowanie wzgórz** to typ mapy, który wyświetla teren za pomocą cieni, tworząc wizualną reprezentację nachylenia i kształtu powierzchni ziemi.  
+**Rzeźba 3D** to funkcja, która dodaje do mapy efekty trójwymiarowe.  
 
-Jeśli **wyłączysz** *Cieniowanie wzgórz* i **włączysz** *Rzeźbę 3D*, cienie rzeźby będą nadal widoczne, ponieważ *Cieniowanie wzgórz* i *Rzeźba 3D* to dwa różne sposoby wizualizacji mapy. *Cieniowanie wzgórz* tworzy cienie na podstawie terenu i dodaje je do mapy, podczas gdy *Rzeźba 3D* modeluje elementy 3D, aby pokazać głębię i kształt terenu, a cienie są częścią wizualizacji. Funkcje te mogą działać równolegle, a wyłączenie *Cieniowania wzgórz* nie wpływa na sposób wyświetlania efektów 3D.
+Jeśli **wyłączysz** *Cieniowanie wzgórz* i **włączysz** *Rzeźbę 3D*, cienie rzeźby będą nadal widoczne, ponieważ *Cieniowanie wzgórz* i *Rzeźba 3D* to dwa różne sposoby wizualizacji mapy. *Cieniowanie wzgórz* tworzy cienie na podstawie terenu i dodaje je do mapy, podczas gdy *Rzeźba 3D* modeluje elementy 3D, aby pokazać głębię i kształt terenu, a cienie są częścią wizualizacji. Funkcje te mogą działać równolegle, a wyłączenie *Cieniowania wzgórz* nie wpływa na sposób wyświetlania efektów 3D.  
 
 Gdy **Cieniowanie wzgórz** jest **włączone**, obraz z cieniami rzeźby wydaje się bardziej szczegółowy, ciemniejszy i bardziej schodkowy niż obraz *Rzeźby 3D*. Wyjaśnieniem jest to, że *Cieniowanie wzgórz* podkreśla gradienty i kontrasty terenu, tworząc ostrzejszy i bardziej szczegółowy obraz. Funkcja *Rzeźba 3D* nadaje mapie bardziej płynny i wygładzony wygląd, łagodząc teren i potencjalnie zmniejszając widoczność niektórych drobniejszych szczegółów.
 
@@ -457,6 +457,6 @@ OsmAnd pozwala na łączenie wielu typów warstw mapy w celu uzyskania bardziej 
 
 1. Jak przywrócić zakup wtyczki Topografia (dawniej Linie konturowe). [(sprawdź)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Linie konturowe, dane o wysokości lub rzeźba 3D nie są wyświetlane. [(sprawdź)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Mapa automatycznie przełącza się w tryb 3D podczas nawigacji:
-    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przyciski → Przyciski domyślne**.
+3. Mapa automatycznie przełącza się w tryb 3D podczas nawigacji:  
+    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przyciski → Przyciski domyślne**.  
     - Sprawdź, czy w **Menu → Konfiguruj mapę → Topografia** są włączone jakiekolwiek funkcje Terenu, które mogą wywoływać efekt 3D.

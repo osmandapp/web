@@ -1,8 +1,9 @@
 ---
-source-hash: 9ea8dcdea560c84f7300f1fcf64736d6b3483b4296ea97397a60522ba65d2423
+source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
 sidebar_position: 7
 title:  Widok mapy morskiej
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
@@ -23,7 +23,7 @@ Wtyczka Widok mapy morskiej jest [płatną funkcją](../purchases/index.md) apli
 
 Widok mapy morskiej to szczegółowe graficzne przedstawienie oceanów, mórz, obszarów przybrzeżnych i rzek, które pomaga w nawigacji po wodzie i poznawaniu popularnych tras, przeszkód na drodze wodnej, najbliższych portów, kotwicowisk i innych ważnych punktów orientacyjnych.
 
-Mapa morska to bardzo szczegółowa mapa topograficzna, która pomaga kapitanom w nawigowaniu statkiem po wyznaczonej trasie na wodzie. Jest podobna do mapy drogowej dla podróżujących samochodem. Często nazywana *'mapą nawigacyjną'* (ang. 'Chart') z powodów historycznych, jest szczegółowym graficznym przedstawieniem oceanów, mórz, obszarów przybrzeżnych i rzek.
+Mapa morska to bardzo szczegółowa mapa topograficzna, która pomaga kapitanom w nawigowaniu statkiem po wyznaczonej trasie na wodzie. Jest podobna do mapy drogowej dla podróżujących samochodem. Często nazywana *'Chart'* z powodów historycznych, jest szczegółowym graficznym przedstawieniem oceanów, mórz, obszarów przybrzeżnych i rzek.
 
 Mapy morskie są ważne dla profesjonalnych żeglarzy i amatorów, którzy wynajmują łódź do rejsów po kanałach miejskich. Mapy dostarczają im różnych informacji, takich jak trasy żeglarskie, światła nawigacyjne, strefy niebezpieczne, strefy, w których dozwolone lub zabronione jest żeglowanie lub dokowanie itp.
 
@@ -151,7 +151,7 @@ Wyłączenie wtyczki Morskiej nie usuwa załadowanych danych morskich, więc naw
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Izobaty w Androidzie](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+![Izobaty morskie w Androidzie](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
@@ -172,6 +172,127 @@ Mapa morska może być zawarta w dowolnym profilu. Jest ona jednak najbardziej w
 
 Wtyczka Morska w OsmAnd rozszerza style map warstwy wektorowej o styl mapy Morski. Pozwala on na wyświetlanie danych mapy zgodnie z zasadami map morskich, na przykład: żółte obszary dla lądu i mielizn, jasnoniebieskie obszary dla płytkich wód itp. Więcej informacji można znaleźć w [legendzie mapy](../../user/map-legend/nautical-map.md).
 
+
+### Szczegóły dna morskiego {#seabed-detail}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+
+![Szczegóły dna morskiego](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Przejdź do: *Menu → Konfiguruj mapę → Typ mapy Morski → Szczegóły → Szczegóły dna morskiego*
+
+![Szczegóły dna morskiego](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+Dane o dnie morskim zawierają informacje o roślinności i ogólnym materiale powierzchniowym, takim jak skaliste skały, muszle, żwir, koralowce, muł itp. Ze względu na międzynarodową klasyfikację danych o dnie morskim, istnieją opcje wyświetlania takich szczegółów na mapie: *proste*, *kategoria*, *wszystkie* lub *pomiń*. Skorzystaj z [legendy mapy obszaru dna morskiego](../map-legend/nautical-map.md#seabed-area) w celu uzyskania więcej informacji.
+
+- **Proste** (*dla wersji Android*) – pokazuje symbole znaków morskich zgodnie z INT-1 Ref, wskazując charakter powierzchni dna morskiego.
+- **Kategoria** – oprócz symbolu znaku morskiego, pokazuje również odpowiedni tag znaku morskiego, wskazujący naturalny materiał lub kategorię wodorostów i trawy morskiej.
+- **Wszystkie** – oprócz symbolu znaku morskiego, tagu lub kategorii, pokazuje również kwalifikacje, takie jak drobny, lepki, gruby itp. W przypadku trawy morskiej i wodorostów pokazuje dane oznaczone tagami *takson* i *rodzaj*.
+- **Pomiń** – nie pokazuje szczegółów dna morskiego.
+
+:::info UWAGA
+Więcej szczegółów na temat klasyfikacji szczegółów powierzchni i opcji renderowania można znaleźć na [wiki OSM o znakach morskich](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::
+
+### Szczegóły świateł {#light-detail}
+
+Android Przejdź do: *Menu → Konfiguruj mapę → Styl mapy Morski → Inne atrybuty mapy → Szczegóły świateł*
+
+iOS Przejdź do: *Menu → Konfiguruj mapę → Typ mapy Morski → Szczegóły → Szczegóły świateł*
+
+Ta opcja wyświetla poziom informacji dla świateł nawigacyjnych. Możesz wybrać, jak szczegółowe są charakterystyki świateł w pobliżu każdego latarni morskiej lub znaku nawigacyjnego.
+
+- **Proste** – pokazuje domyślną nazwę znaku morskiego i charakterystykę światła.
+- **Sektory** – wyświetla pełne łuki sektorów i szczegóły dla wszystkich widocznych sektorów świateł.
+- **Sektor 1–5** – pokazuje szczegóły tylko dla określonego numeru sektora.
+- **Małe** – używa kompaktowego formatu etykiety dla charakterystyk świateł.
+- **Tylko nazwa** – pokazuje tylko nazwę znaku morskiego bez danych o świetle.
+- **Pomiń** – ukrywa wszystkie informacje o światłach.
+
+
+## Styl mapy morskiej {#marine-map-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Morski Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+
+Przejdź do: *Menu* → *Konfiguruj mapę* → *Styl mapy* → *Morski*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Morski iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+
+Przejdź do: *Menu* → *Konfiguruj mapę* → *Typ mapy* → *Morski*
+
+</TabItem>
+
+</Tabs>
+
+Ten styl dodaje elementy wizualne dla nawigacji morskiej, w tym światła nawigacyjne z charakterystykami świateł INT-1, które opisują typ, kolor i rytm sygnału świetlnego (na przykład, czy miga, jego kolor i interwał między migotaniami), oraz kolorowe światła sektorowe, które wskazują kierunek i kolor światła widocznego z morza.
+
+W stylu Morskim sektory świateł są wyświetlane wokół latarni morskich i znaków nawigacyjnych: biały (pokazywany na mapie na żółto) wskazuje bezpieczny kierunek nawigacji, czerwony oznacza obszary niebezpieczne lub ograniczone, a zielony pokazuje kierunki pomocnicze lub boczne.
+
+:::info
+Aby wyświetlić te informacje, wtyczka Morska musi być włączona, a mapa World Seamarks (lub World_seamarks_2.obf) musi być pobrana. Informacje nie są przeznaczone do oficjalnego użytku nawigacyjnego.
+:::
+
+
+### Atrybuty mapy {#map-attributes}
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Atrybuty Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+
+Przejdź do: *Menu* → *Konfiguruj mapę* → *Styl mapy Morski* → *Inne atrybuty mapy*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Atrybuty iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+
+Przejdź do: *Menu* → *Konfiguruj mapę* → *Typ mapy Morski* → *Szczegóły* → *Szczegóły świateł/Szczegóły dna morskiego*
+
+Przejdź do: *Menu* → *Konfiguruj mapę* → *Typ mapy Morski* → Wybierz inne opcje
+
+</TabItem>
+
+</Tabs>
+
+Po włączeniu stylu mapy Morskiej możesz precyzyjnie dostosować dodatkowe elementy wizualne. Te opcje pozwalają kontrolować, jak pomocniki nawigacyjne, izobaty, szczegóły dna morskiego i kolory pojawiają się na mapie.
+
+- **[Szczegóły świateł](../plugins/nautical-charts/#light-detail)**. Definiuje, jak wyświetlane są informacje o światłach znaków morskich. Opcje: **Domyślne** (pełna nazwa z charakterystykami świateł), *Małe* (kompaktowy format), *Tylko nazwa* (tylko nazwa światła) lub *Pomiń* (ukryj etykiety).
+- **[Szczegóły dna morskiego](../plugins/nautical-charts/#seabed-detail)**. Kontroluje poziom informacji tekstowych o dnie morskim. Opcje: Proste (podstawowe informacje), Kategoria (typ powierzchni), Wszystkie (pełne dane) lub Pomiń (brak tekstu).
+- **Kolor wody**. Ustawia podstawowy kolor dla obszarów wodnych. Opcje: *Domyślny, Niebieski, Biały* lub *Szary* — przydatne do dostosowania widoczności i kontrastu w różnych trybach oświetlenia.
+- **Kolor toru wodnego**. Zmień kolor torów nawigacyjnych i kanałów. Opcje: *Biały, Jaśniejszy biały, Szary, Zielony* lub *Żółty*, aby poprawić czytelność w zależności od tła mapy.
+- **Styl płycizn pływowych**. Dostosowuje kolor i teksturę używaną dla płycizn pływowych. Opcje: *Jasnozielony, Ciemnozielony, Mokradła* lub *Pływowy* — każdy podkreśla płytkie strefy międzyprzypływowe w inny sposób.
+- **Znaczniki ENC**. Przełącz *Włącz/Wyłącz*. Po włączeniu pokazuje znaczniki Elektronicznej Mapy Nawigacyjnej (ENC), takie jak boje, znaki nawigacyjne i inne pomocniki nawigacyjne.
+- **Styl muszli**. Definiuje, jak wyglądają muszle lub cechy powierzchni dna. Opcje: *Szary, Skały, Kamienie* lub *Czerwony*, w zależności od preferowanego stylu wizualnego.
+- **Przerwywane izobaty**. Przełącz *Włącz/Wyłącz*. Po włączeniu wyświetla linie izobat jako przerywane, poprawiając czytelność w gęstych obszarach.
+- **Schemat kolorów głębokości**. Wybiera schemat kolorów dla stref głębokości. Opcje: *PAPER* (tradycyjne kolory map papierowych) lub *ECDIS* (standardowa paleta systemu nawigacji elektronicznej).
+- **Rozmiar sondowania punktowego**. Ustawia rozmiar czcionki dla liczb sondowania punktowego (wartości głębokości). Opcje: *Domyślny, 10, 12, 14* lub *16* — większe wartości poprawiają widoczność na ekranach o wysokiej rozdzielczości.
+- **Odstęp sondowania punktowego**. Kontroluje, jak często pojawiają się sondowania głębokości na mapie. Opcje: *Domyślny, 0, 5, 10, 15, 30, 60* lub *120*, określając odstęp między wyświetlanymi punktami głębokości.
+- **Izobata bezpiecznej głębokości**. Podkreśla linię izobaty oznaczającą próg bezpiecznej głębokości. Opcje: *Wyłącz, 0 m, 1 m, 2 m, 3 m, 4 m, 5 m* lub *10 m*. Przydatne do rozróżniania bezpiecznych obszarów nawigacji od płytkich stref.
+
+
+## Dodatkowe dane morskie {#additional-nautical-data}
 
 ### Punkty głębokości {#depth-points}
 
@@ -194,7 +315,7 @@ Wtyczka Morska w OsmAnd rozszerza style map warstwy wektorowej o styl mapy Morsk
 Pakiety punktów głębokości są dostępne dla Europy, półkuli północnej i południowej i mają charakter informacyjny. Punkty głębokości wskazują zmiany w topografii pod powierzchnią wody, wskazując najpłytszą głębokość. Jest to niezbędne do nawigacji *Łodzią*. Po pobraniu należy włączyć [Izobaty](#depth-contours), aby wyświetlić je na mapie.
 
 
-### Izobaty (linie głębokości) {#depth-contours}
+### Izobaty {#depth-contours}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -202,7 +323,7 @@ Pakiety punktów głębokości są dostępne dla Europy, półkuli północnej i
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
-![Izobaty w Androidzie](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
+![Izobaty morskie w Androidzie](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
@@ -223,40 +344,6 @@ Gdy na ekranie wyświetlana jest mapa morska, można dostosować to, co jest wid
 
 :::info UWAGA
 Możesz pomóc aplikacji OsmAnd w powiększaniu bazy danych izobat, dodając swoje informacje za pomocą [OpenSeaMap](https://map.openseamap.org/)
-:::
-
-
-### Szczegóły dna morskiego {#seabed-details}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
-
-![Szczegóły dna morskiego](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
-
-![Szczegóły dna morskiego](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
-
-</TabItem>
-
-</Tabs>
-
-Dane o dnie morskim zawierają informacje o roślinności i ogólnym materiale powierzchniowym, takim jak skały, muszle, żwir, koralowce, muł itp. Ze względu na międzynarodową klasyfikację danych o dnie morskim, istnieją opcje wyświetlania takich szczegółów na mapie: *proste*, *kategoria*, *wszystkie* lub *pomiń*. Więcej informacji można znaleźć w [legendzie mapy obszaru dna morskiego](../map-legend/nautical-map.md#seabed-area).
-
-- **Proste** (*dla wersji Android*) - pokazuje symbole znaków morskich zgodnie z INT-1 Ref, wskazując charakter powierzchni dna morskiego.
-- **Kategoria** - oprócz symbolu znaku morskiego, pokazuje również odpowiedni tag znaku morskiego, wskazujący naturalny materiał lub kategorię wodorostów i trawy morskiej.
-- **Wszystkie** - oprócz symbolu znaku morskiego, tagu lub kategorii, pokazuje również kwalifikacje, takie jak drobny, lepki, gruby itp. W przypadku trawy morskiej i wodorostów pokazuje dane oznaczone tagami *takson* i *rodzaj*.
-- **Pomiń** - nie pokazuje szczegółów dna morskiego.
-
-:::info UWAGA
-Więcej szczegółów na temat klasyfikacji szczegółów powierzchni i opcji renderowania można znaleźć na [wiki OSM o znakach morskich](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::
 
 

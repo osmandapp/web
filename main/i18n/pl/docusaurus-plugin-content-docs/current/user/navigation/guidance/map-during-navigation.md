@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Ekran mapy podczas nawigacji
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-W tym artykule opisano, jak skonfigurować wygląd mapy podczas nawigacji. Obejmuje to takie funkcje, jak wyświetlanie [POI na trasie](#show-points-along-the-route), używanie [alertów ekranowych](#screen-alerts), [wygląd linii trasy](#route-line-appearance), w tym kolor, szerokość i strzałki skrętów. Funkcje te są ściśle powiązane z [ustawieniami nawigacji po trasie](../setup/route-navigation.md#settings).
+W tym artykule opisano, jak skonfigurować wygląd mapy podczas nawigacji. Obejmuje to takie funkcje, jak wyświetlanie [POI na trasie](#show-points-along-the-route), używanie [alertów ekranowych](#screen-alerts), [wygląd linii trasy](#route-line-appearance) w tym kolor, szerokość i strzałki skrętów. Funkcje te są ściśle powiązane z [ustawieniami nawigacji po trasie](../setup/route-navigation.md#settings).
 
 
 ## Mapa podczas nawigacji {#map-during-navigation}
@@ -29,7 +29,7 @@ W tym artykule opisano, jak skonfigurować wygląd mapy podczas nawigacji. Obejm
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Ekran mapy podczas nawigacji](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Ekran mapy podczas nawigacji](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Ekran mapy podczas nawigacji](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Ekran mapy podczas nawigacji](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,9 @@ Podczas nawigacji wygląd mapy dostosowuje się do wybranego profilu nawigacji. 
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Czas, przez który widok mapy jest zsynchronizowany z bieżącą pozycją po przesunięciu. | *Wartość:* <br /> Nigdy, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s. |
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Automatycznie skaluj mapę w zależności od prędkości, o ile mapa jest zsynchronizowana z bieżącą pozycją. | *Wartość:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - powiększenie ręczne. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - powiększenie wynosi 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - powiększenie wynosi 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - powiększenie wynosi 5 m. |
-| *<Translate android="true" ids="snap_to_road"/>*  | Ikona bieżącej pozycji będzie powiązana z bieżącą trasą nawigacji. | Można wyłączyć tę opcję, ale wszystkie opcje związane z drogą, takie jak wyświetlanie pasów ruchu, również nie będą widoczne podczas nawigacji. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Określa namiar na podstawie trasy nawigacyjnej, którą podążasz. | Ustawienie jest widoczne tylko wtedy, gdy włączona jest [wtyczka deweloperska OsmAnd](../../plugins/development.md). <br /> Ustawienia te powinny być włączone, jeśli orientacja mapy kierunkowej jest odwrócona lub drga podczas korzystania z [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *Automatyczne powiększenie kąta 3D* | Ustawia nachylenie mapy podczas przełączania na widok 3D w trakcie nawigacji. Wyższy kąt sprawia, że horyzont wydaje się dalej, dając większą widoczność do przodu. | Jest stosowane tylko wtedy, gdy włączone jest automatyczne powiększenie. Wartości: 20°, 25°, 30°, 35°, 40°. Domyślnie: 25°.  |
+| *Podgląd następnego skrętu* | Automatycznie obraca mapę nieco wcześniej, aby pokazać następny skręt lub manewr podczas nawigacji. Pomaga antycypować nadchodzące działania.  | Włączone domyślnie. Jeśli eksportujesz i ponownie importujesz profil, upewnij się, że ta opcja jest zweryfikowana, ponieważ w niektórych wcześniejszych wersjach mogła zostać zresetowana do „włączonej”.   |
+| *<Translate android="true" ids="snap_to_road"/>*  | Ikona bieżącej pozycji będzie powiązana z bieżącą trasą nawigacji.  | Można wyłączyć tę opcję, ale wszystkie opcje związane z drogą, takie jak wyświetlanie pasów ruchu, również nie będą widoczne podczas nawigacji.  |
 
 
 ## Pokaż punkty na trasie {#show-points-along-the-route}
@@ -62,6 +63,10 @@ Ustawienie *Pokaż na trasie* pozwala skonfigurować dodatkowe parametry trasy i
 - Możliwość ustawienia różnych odległości (do 5 km lub 3,11 mili, w zależności od ustawionej [jednostki długości](../../personal/profiles.md#units--formats)) od trasy do pobliskich punktów jest przydatna podczas korzystania z typów wyznaczania tras, takich jak [Linia prosta](../routing/straight-line-routing.md) lub [Bezpośrednio do punktu](../routing/direct-to-point-routing.md).
 - W przypadku ustawienia *Pokaż na trasie* zaleca się używanie [komunikatów głosowych](../guidance/voice-navigation.md) do nawigacji.
 - *POI, Ulubione i Ostrzeżenia drogowe* nie są wyświetlane na liście dla już przebytej trasy.
+
+:::info note
+Opcja **Pokaż na trasie** wpływa tylko na listy POI i Moich ulubionych, nie na samą mapę. Ikony POI i Ulubionych są wyświetlane wszędzie na mapie niezależnie od ich odległości od trasy.
+:::
 
 
 ### Wyświetlanie i wybieranie punktów {#view-and-select-points}
@@ -93,7 +98,7 @@ Podczas tworzenia trasy można ustawić typy punktów, które mają być wyświe
 
 ![Nakładka POI Android](@site/static/img/map/poi_overlay_android.png) ![Nakładka POI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Ustawienia POI w [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) są powiązane z ustawieniem **Pokaż na trasie**. Jest to zasadniczo dodatkowe ustawienie wyświetlania POI na mapie, bezpośrednio związane z utworzoną trasą.  
+Ustawienia POI w [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) są powiązane z ustawieniem **Pokaż na trasie**. 
 
 Gdy określisz wyświetlanie określonych POI w menu *Konfiguruj mapę*, wszystkie z nich są wyświetlane na pobranych mapach, niezależnie od tego, czy wybrano kategorie, czy też, jeśli nie ma znaczenia, która kategoria, wybrano pobliskie POI.  
 
@@ -150,7 +155,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Powiadomienia, takie jak ostrzeżenia drogowe lub ograniczenia prędkości, pojawią się na ekranie jako widżet. Pojawiają się w lewym dolnym rogu podczas nawigacji. | [Typy widżetów alertów](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Powiadomienia, takie jak ostrzeżenia drogowe lub ograniczenia prędkości, pojawią się na ekranie jako widżet. Pojawiają się w lewym dolnym rogu podczas nawigacji. | [Typy widżetów alertów](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Wygląd linii trasy {#route-line-appearance}
@@ -249,7 +254,7 @@ Ustawienie Strzałki skrętów pozwala wybrać, czy strzałki skrętów mają by
 
 - [Parametry trasy](../routing/osmand-routing.md#routing-types)
 - [Przygotowanie trasy](../setup/route-navigation.md)
-- [Nawigacja po śladzie GPX](../setup/gpx-navigation.md)
+- [Nawigacja po śladzie](../setup/gpx-navigation.md)
 - [Nawigacja według znaczników](../setup/markers-navigation.md)
 - [Szczegóły trasy](../setup/route-details.md)
 - [Ustawienia nawigacji](./navigation-settings.md)

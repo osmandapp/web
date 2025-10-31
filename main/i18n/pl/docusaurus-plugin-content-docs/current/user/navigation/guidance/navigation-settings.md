@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Ustawienia nawigacji
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -185,7 +185,7 @@ Parametry w sekcji **Deweloperskie** są przeznaczone głównie dla zaawansowany
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ Instrukcje dźwiękowe podczas nawigacji pomagają kierowcy lub pieszemu dotrze�
 Jeśli jako punkt docelowy wybierzesz ślad, musisz użyć opcji [Dołącz do dróg](../setup/gpx-navigation.md#attach-to-the-roads), aby komunikaty głosowe działały poprawnie.
 
 *Komunikaty głosowe* pozwalają skupić się na drodze i nie rozpraszać się mapą lub urządzeniem nawigacyjnym. Poprawiają również bezpieczeństwo jazdy, skracają czas potrzebny na nawigację w nieznanym terenie i mogą być przydatne dla różnych [typów tras](../routing/osmand-routing.md#routing-types).
+
+W sekcji **Ogłaszaj** możesz wybrać, które typy powiadomień powinny być odtwarzane lub wyświetlane podczas nawigacji:
+
+- **Kierunki skręt po skręcie** (tylko Android) – pozwala na włączanie lub wyłączanie standardowych instrukcji nawigacyjnych, takich jak *„Skręć w lewo”*, *„Skręć w prawo”* lub *„Za 200 metrów…”*. Po wyłączeniu tej opcji nie są podawane komunikaty o skrętach i nazwach ulic, natomiast powiadomienia dla punktów trasy, punktów użytkownika i zdarzeń trasy pozostają aktywne. Ten tryb jest przeznaczony dla aktywności takich jak spływy kajakowe, wędrówki lub jazda rowerem po wcześniej nagranych śladach, gdy potrzebne są tylko alerty dla ręcznie dodanych punktów trasy.
+- **Nazwy ulic (TTS)** – ogłasza nazwy ulic wzdłuż trasy.
+- **Numer zjazdu** – ogłasza numer zjazdu podczas jazdy autostradą.
+- **Ostrzeżenia drogowe** – dostarcza alerty o ważnych zdarzeniach drogowych, takich jak korki lub ograniczenia.
+- **Przejścia dla pieszych** – ostrzega, gdy zbliżasz się do przejścia dla pieszych.
+- **[Fotoradary](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – ostrzega o lokalizacjach fotoradarów (tam, gdzie jest to legalnie dozwolone).
+- **Tunele** – informuje, gdy wjeżdżasz do tunelu.
 
 
 ## Alerty ekranowe {#screen-alerts}

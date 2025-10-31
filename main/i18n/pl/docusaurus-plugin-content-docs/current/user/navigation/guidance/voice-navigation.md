@@ -1,8 +1,9 @@
 ---
-source-hash: 844b3f804475dddf7574a87aa0ef1e75695668c1b6828dd4e5171fe9e8a7c53d
+source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
 sidebar_position: 3
 title:  Komunikaty głosowe / Powiadomienia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -27,7 +27,7 @@ Dzięki odpowiedniej kombinacji opcji głosowych, ustawień alertów i regulacji
 :::note
 
 - <Translate android="true" ids="voice_announces_info"/>
-- Powiadomienia tekstowe w pełni odzwierciedlają czas wyzwalania i treść komunikatów głosowych.
+- Powiadomienia tekstowe w pełni odzwierciedlają czas wyzwalania i komunikaty komunikatów głosowych.
 
 :::  
 
@@ -52,7 +52,7 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 
 **[Język](#voice-prompt-language)**. Wybierz preferowany język i typ.
 
-**Komunikaty**. Umożliwia skonfigurowanie następujących typów komunikatów:
+**Komunikaty**. Umożliwia skonfigurowanie następujących [typów komunikatów](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *Nazwy ulic (TTS), Numery zjazdów, Ostrzeżenia o ruchu drogowym, Przejścia dla pieszych* i *Tunele.*
+- *Wskazówki zakręt po zakręcie, Nazwy ulic (TTS), Numery zjazdów, Ostrzeżenia o ruchu drogowym, Przejścia dla pieszych* i *Tunele.*
 - *[Fotoradary](#speed-cameras)*.
 - Skonfiguruj również **[Widżet alertów](../../widgets/nav-widgets.md#alert-widget)** do użycia z komunikatami.
 
@@ -272,10 +272,11 @@ OsmAnd oferuje dwa rodzaje komunikatów głosowych:
 - **<Translate android="true" ids="shared_string_recorded"/>** (*Tylko Android*)
     - Używa nagranych komunikatów głosowych do nawigacji.
     - Brzmi bardziej naturalnie niż TTS, ale ma ograniczenia.
-    - Nie odczytuje nazw ulic ani nazw POI.
+    - Nie odczytuje nazw ulic ani nazw POI
     - Dostarcza tylko podstawowe instrukcje dotyczące zakrętów.
 
 > *TTS jest zalecany do szczegółowych wskazówek nawigacyjnych.*
+
 
 ### Ustawienia komunikatów głosowych na poziomie systemu {#system-level-voice-prompt-settings}
 
@@ -303,18 +304,18 @@ Obecnie dostępnych jest łącznie 45 języków. Nie wszystkie języki wymienion
 | :--- | :--- |
 | **А** | Arabski |
 | **B** | Białoruski, Bułgarski |
-| **C** | Kataloński, Chiński, Chiński (Hongkong), Chiński (tradycyjny), Chorwacki, Czeski |  
+| **C** | Kataloński, Chiński, Chiński(Hongkong), Chiński(tradycyjny), Chorwacki, Czeski |  
 | **D** | Duński, Holenderski |
-| **E** | Angielski, Angielski (Wielka Brytania), Estoński |
+| **E** | Angielski, Angielski(Wielka Brytania), Estoński |
 | **F** | Fiński, Francuski |
-| **G** | Niemiecki, Niemiecki (potoczny), Grecki, Guarani |
-| **H** | Hindi, Węgierski, Węgierski (formalny), Hebrajski |
+| **G** | Niemiecki, Niemiecki(potoczny), Grecki, Guarani |
+| **H** | Hindi, Węgierski, Węgierski(formalny), Hebrajski |
 | **I** | Indonezyjski, Włoski |
 | **J** | Japoński |
 | **K** | Koreański  |
 | **L** | Łotewski |
-| **N** | Norweski (Bokmål)  |
-| **P** | Perski, Polski, Portugalski, Portugalski (Brazylia) |  
+| **N** | Norweski Bokmål  |
+| **P** | Perski, Polski, Portugalski, Portugalski(Brazylia) |  
 | **R** | Rumuński, Rosyjski  |
 | **S** | Sardyński, Serbski (cyrylica), Słowacki, Słoweński, Hiszpański, Hiszpański (Argentyna), Suahili, Szwedzki  |
 | **T** | Turecki  |
@@ -342,6 +343,7 @@ Używanie nagranych głosów w OsmAnd powinno być tylko opcją zapasową. Są o
 
     ![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
+
 ### Tryby sygnałów dźwiękowych {#beep-modes}
 
 <InfoAndroidOnly />
@@ -358,6 +360,8 @@ Możesz skonfigurować profil OsmAnd tak, aby wydawał sygnały dźwiękowe zami
 
 ## Powiadomienia tekstowe {#text-notifications}
 
+<InfoAndroidOnly />
+
 Po rozpoczęciu trasy możesz wyświetlić informacje w rozwijanym menu systemowym na liście powiadomień. Ciche powiadomienia OsmAnd zawierają informacje takie jak instrukcje zakręt po zakręcie, strzałki kierunku skrętu, czas przybycia i czas do celu, aktualną prędkość i odległość do celu.  
 
 ![Powiadomienie o trasie nawigacji Android](@site/static/img/navigation/route/navigation_notifications_android.png)
@@ -372,7 +376,7 @@ Aktywne przyciski w rozwijanym menu systemowym dla Twojej nawigacji:
 
 Możesz zmienić ustawienia powiadomień dla aplikacji OsmAnd w ustawieniach systemowych swojego urządzenia. Powiadomienia mogą być wyświetlane na ekranie blokady, ekranie głównym, w menu rozwijanym lub na górze aplikacji.  
 
-Przeczytaj o tym, jak kontrola powiadomień jest zaimplementowana na Androidzie w tym [artykule](https://support.google.com/android/answer/9079661?hl=pl#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Dla iOS - [tutaj](https://support.apple.com/pl-pl/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
+Przeczytaj o tym, jak kontrola powiadomień jest zaimplementowana na Androidzie w tym [artykule](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). Dla iOS - [tutaj](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Kontrola ekranu {#screen-control}
@@ -410,7 +414,7 @@ Wybierz opcje wybudzania ekranu i upewnij się, że OsmAnd pozostaje na pierwszy
 
 - [Parametry trasy](../routing/osmand-routing.md#routing-types)
 - [Przygotowanie trasy](../setup/route-navigation.md)
-- [Nawigacja po śladzie GPX](../setup/gpx-navigation.md)
+- [Nawigacja po śladzie](../setup/gpx-navigation.md)
 - [Nawigacja według znaczników](../setup/markers-navigation.md)
 - [Szczegóły trasy](../setup/route-details.md)
 - [Ustawienia nawigacji](./navigation-settings.md)

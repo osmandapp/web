@@ -1,8 +1,9 @@
 ---
-source-hash: d5c59871a0690af17d4fd9d040f8c712329000715c79f9b18a302ff1f41cc657
+source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
 sidebar_position: 9
-title: Zasoby i dostosowania
+title: Resources and Customizations
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Odkrywaj OsmAnd {#explore-osmand}
@@ -27,15 +27,15 @@ Aby nawiązać kontakt z innymi użytkownikami OsmAnd, zadawać pytania i dzieli
 
 | Platforma | Nazwa grupy | Opis | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | Społeczność użytkowników OsmAnd (*angielski*)  |  Jest to grupa, w której użytkownicy OsmAnd mogą pomagać innym użytkownikom.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | Społeczność użytkowników OsmAnd (*angielski*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*holenderski*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*francuski*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | Grupa użytkowników LC8 Rally OsmAnd (*angielski*)  |  Wymiana doświadczeń z użytkowania OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*włoski*)  |  Wymiana doświadczeń z użytkowania OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Facebook | Grupa użytkowników LC8 Rally OsmAnd (*angielski*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*włoski*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
 |  Google Groups | Osmand (*angielski*)  | Grupa, w której użytkownicy dzielą się wskazówkami, odpowiadają na pytania i omawiają funkcje OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - dyskusja i wsparcie  | Społeczność Reddit dla użytkowników OsmAnd. Zadawaj pytania, dziel się doświadczeniami lub pochwal się niestandardowymi stylami map. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | Kanał informacyjny OsmAnd (*angielski*)  | Oficjalna grupa OsmAnd z ogłoszeniami i aktualizacjami bezpośrednio od deweloperów. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | Kanał informacyjny OsmAnd  | Oficjalna grupa OsmAnd do dyskusji na żywo, ogłoszeń i aktualizacji. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | Kanał informacyjny OsmAnd  | Oficjalna grupa OsmAnd do dyskusji na żywo, ogłoszeń i aktualizacji. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | Kanał informacyjny OsmAnd | Społeczność, w której można rozmawiać, dzielić się wskazówkami i uzyskać pomoc dotyczącą funkcji OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -105,8 +105,8 @@ Domyślny plik [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/m
 | OsmAndRailwayStyles | Style map offline skoncentrowane na kolejach, wykorzystujące schemat kolorów podobny do [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
 | Podświetlone granice administracyjne | Styl renderowania mapy oparty na domyślnym stylu OsmAnd, z bardziej podświetlonymi granicami administracyjnymi dla lepszej widoczności. |[Podświetlone granice administracyjne](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) to styl mapy skoncentrowany na kolarstwie, podkreślający pasy rowerowe (na czerwono), trasy rowerowe (niebieska przerywana), ścieżki rowerowe (czerwona przerywana) i drogi o ograniczonym ruchu pojazdów, takie jak ulice rowerowe (ciągłe czerwone obramowania).  |[Styl OpenFietsMap na GitHub](https://github.com/ligfietser/OFM_Osmand)|
-| Styl mapy "Wybór" | [Styl mapy "Wybór"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) to styl mapy autorstwa Holdera Tamma, który pozwala wybrać, czy ukryć określone obiekty, czy nie.  |[Styl mapy "Wybór"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-
+| Styl mapy „Wybór” | [Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA) to styl mapy autorstwa Holdera Tamma, który pozwala wybrać, czy ukryć określone obiekty, czy nie.  |[Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [Styl renderowania ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) jest głównie oparty na UniMap i routes.addon.render.xml  |[Styl mapy „ExplorerRS”](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 
 ### Mapy offline {#offline-maps}
 

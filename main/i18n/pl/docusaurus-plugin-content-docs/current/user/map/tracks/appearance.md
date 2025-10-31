@@ -1,8 +1,9 @@
 ---
-source-hash: 14cc910311b8184de4592823da11d7e1fc80a1c137f871fb88891d55a65ae840
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Wygląd trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -52,7 +52,7 @@ Możesz modyfikować wygląd trasy, korzystając z jednej z następujących meto
 ### Kolor {#color}
 
 :::tip purchases
-Z niektórych ustawień można korzystać tylko z *OsmAnd Pro*. Darmowe i płatne funkcje dla <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Androida</a> i <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a>.
+Z niektórych ustawień można korzystać tylko z *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> i <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Darmowe i płatne funkcje.
 :::
 
 ![Wygląd](@site/static/img/map/appearance_color_andr.png)
@@ -61,11 +61,29 @@ Możesz ustawić kolor trasy ręcznie lub użyć **wizualizacji danych opartej n
 
 **Dostępne opcje kolorów:**
 
-- **Darmowe ustawienia**: *<Translate android="true" ids="track_coloring_solid"/> kolor*, *<Translate android="true" ids="shared_string_speed"/>* (jeśli zarejestrowano) i *<Translate android="true" ids="altitude"/>* (jeśli zarejestrowano).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Menu trasy Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
-- [Funkcja Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+![Menu trasy Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu kontekstowe kolorowania iOS](@site/static/img/map/colorisation_ios.png)
+
+Lista **Kolorowania** otwiera się jako menu kontekstowe. Elementy mogą występować w trzech stanach: 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Można go zastosować do bieżącej trasy.
+2. <Translate ios="true" ids="weather_update_disabled"/>. Trasie brakuje wymaganych danych.
+3. PRO. Dostępne dla bieżącej trasy, ale wymaga subskrypcji; dotknięcie otwiera ekran [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Darmowe ustawienia**: *<Translate android="true" ids="track_coloring_solid"/> kolor*, *<Translate android="true" ids="shared_string_speed"/>* (jeśli zarejestrowano) i *<Translate android="true" ids="altitude"/>* (jeśli zarejestrowano).   
+- [Funkcja Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znaleźć w artykule [Ekran mapy podczas nawigacji](../../navigation/guidance/map-during-navigation.md#color), a na temat wybierania i tworzenia niestandardowego koloru w artykule [Schematy kolorów](../../personal/color-palette-schemes.md#routes).
 
@@ -91,19 +109,33 @@ Dostosuj szerokość trasy, aby poprawić jej widoczność na mapie.
 
 ### Podział interwału {#split-interval}
 
-![Menu trasy Wygląd Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_ios.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Wybierz, czy interwał na trasie ma być dzielony **według odległości czy czasu**.
+<TabItem value="android" label="Android">
+
+![Menu trasy Wygląd Podział interwału Android](@site/static/img/map/split_interval_android.png)  ![Podział interwału Android](@site/static/img/map/split_interval_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu trasy Wygląd Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Wybierz, czy interwał na trasie ma być dzielony **według odległości**, **czasu** lub **w górę/w dół** (Android), lub według **odległości** lub **czasu** (iOS). Aby wyświetlić szczegółowe statystyki według interwałów, zobacz [Analizuj według interwałów](../../map/tracks/track-context-menu.md#analyze-by-intervals) (tylko Android).
+
 
 ### Strzałki kierunku {#direction-arrows}
 
-![Menu trasy Wygląd Strzałki kierunku Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Menu trasy Wygląd strzałki kierunku Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Dodaje **znaczniki w postaci strzałek** wzdłuż trasy, aby wskazać kierunek ruchu.
 
 ### Ikony startu i mety {#start-and-finish-icons}
 
-![Menu trasy Wygląd Ikony startu i mety Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Menu trasy Wygląd ikony startu i mety Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Pozwala wybrać, czy mają być wyświetlane **ikony startu i mety** dla segmentów trasy.
 

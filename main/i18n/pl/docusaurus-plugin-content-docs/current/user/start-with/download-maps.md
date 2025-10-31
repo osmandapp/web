@@ -1,8 +1,9 @@
 ---
-source-hash: 6cae344524caaf33fb94aa4a15419e9183e99c9b4fa757ffe87fe4fa9acb30b3
+source-hash: 02488ffc13aed2fc0d33253f071c8dbb2d3bc8a182a496a94f4a68885929b5dd
 sidebar_position: 2
 title:  Pobieranie map
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,14 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Przegląd {#overview}
 
-Przesyłanie map do aplikacji OsmAnd jest kluczowym krokiem zapewniającym płynne działanie i korzystanie z nawigacji offline. Bez map offline aplikacja nie może w pełni funkcjonować. Pobieranie map daje dostęp do map różnych regionów, umożliwiając nawigację bez połączenia z Internetem.  
+Ładowanie map do aplikacji OsmAnd jest kluczowym krokiem zapewniającym płynne działanie i korzystanie z nawigacji offline. Bez map offline aplikacja nie może w pełni funkcjonować. Pobieranie map daje dostęp do map różnych regionów, umożliwiając nawigację bez połączenia z Internetem.  
 
 Masz dwie *główne* metody pobierania map: **1)** zacznij od [początkowego ekranu konfiguracji](#initial-setup-screen) lub [wyświetl listę regionów w *Menu głównym*](#maps-and-resources), lub **2)** [wybierz wymagany region bezpośrednio na mapie](#select-on-the-map). Daje to elastyczność w wyborze regionów i zapewnia, że mapy będą pasować do Twoich planów.  
 
-Chociaż OsmAnd obsługuje zarówno mapy [wektorowe](../map/vector-maps.md), jak i [rastrowe](../map/raster-maps.md), zaleca się rozpoczęcie pracy z mapami wektorowymi w trybie offline. Ten typ mapy (więcej o [typach map OsmAnd](../personal/maps-resources.md#map-types) przeczytasz tutaj) zapewnia niezawodne działanie wszystkich kluczowych funkcji aplikacji, w tym [wyszukiwania](../search/index.md), [nawigacji](../navigation/index.md) i [menu kontekstowego](../map/map-context-menu.md). Jest to szczególnie ważne, jeśli Twoje podróże obejmują wyjazdy do odległych miejsc lub miejsc z ograniczonym dostępem do Internetu.
+Chociaż OsmAnd obsługuje zarówno [wektorowe](../map/vector-maps.md), jak i [rastrowe](../map/raster-maps.md), zaleca się rozpoczęcie pracy z mapami wektorowymi w trybie offline. Ten typ mapy (więcej o [typach map OsmAnd](../personal/maps-resources.md#map-types) przeczytasz tutaj) zapewnia niezawodne działanie wszystkich kluczowych funkcji aplikacji, w tym [wyszukiwania](../search/index.md), [nawigacji](../navigation/index.md) i [menu kontekstowego](../map/map-context-menu.md). Jest to szczególnie ważne, jeśli Twoje podróże obejmują wyjazdy do odległych miejsc lub miejsc z ograniczonym dostępem do Internetu.
 
 
 ## Początkowy ekran konfiguracji {#initial-setup-screen}
@@ -102,9 +102,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 Ekran [Mapy i zasoby](../personal/maps-resources.md) zapewnia dostęp do następujących sekcji:
 
-- [Pobrane](../personal/maps-resources.md#downloads). Oferuje kompleksowy wybór [typów map OsmAnd](../personal/maps-resources.md#map-types).
-- [Lokalne](../personal/maps-resources.md#local). Wyświetla wszystkie dane map przechowywane obecnie na urządzeniu, w tym zasoby niestandardowe i importowane.
-- [Aktualizacje](../personal/maps-resources.md#updates). Umożliwia comiesięczne odświeżanie map w celu aktualizacji danych.
+- [Pobrane](../personal/maps-resources.md#downloads-menu). Oferuje kompleksowy wybór [typów map OsmAnd](../personal/maps-resources.md#map-types).
+- [Lokalne](../personal/maps-resources.md#local-menu). Wyświetla wszystkie dane map przechowywane obecnie na urządzeniu, w tym zasoby niestandardowe i importowane.
+- [Aktualizacje](../personal/maps-resources.md#updates-menu). Umożliwia comiesięczne odświeżanie map w celu aktualizacji danych.
 
 ### Pobieranie map {#downloading-maps}
 
@@ -114,7 +114,7 @@ Aby pobrać określony typ mapy dla kraju lub regionu:
 - Wybierz z listy preferowany kraj lub region.
 - Na następnym ekranie przejrzyj i wybierz dostępne typy map dla tego obszaru.
 
-Informacje o innych typach map można znaleźć w sekcji [Pobrane](../personal/maps-resources.md#downloads) artykułu **Mapy**.
+Informacje o innych typach map można znaleźć w sekcji [Pobrane](../personal/maps-resources.md#downloads-menu) artykułu **Mapy**.
 
 ## Opcje mapy świata {#world-map-options}
 

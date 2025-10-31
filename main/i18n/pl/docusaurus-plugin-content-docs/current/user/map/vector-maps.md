@@ -1,8 +1,9 @@
 ---
-source-hash: f80d7d2ec2e1df970dcaad604965df0d177218ef2e96f439521a590197b70506
+source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
 sidebar_position: 5
 title:  Mapy wektorowe (Style mapy)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
 Mapy wektorowe są przeznaczone do użytku jako domyślne źródło danych map w OsmAnd, więc **musisz je pobrać na swoje urządzenie**. Mapy wektorowe obsługują ogromną liczbę stylów map dla różnych aktywności, takich jak jazda na rowerze, piesze wędrówki, jazda samochodem lub skuterem śnieżnym i inne.  
 
 Każdy styl mapy można dostosować, aby podświetlić lub ukryć określone obiekty oraz przełączać się między trybem dziennym i nocnym. Dane mapy wektorowej można rozszerzyć o dane wektorowe i wyświetlać w domyślnym stylu mapy, takie jak informacje o *liniach konturowych*. Możesz *stworzyć własny styl mapy OsmAnd*, aby wyświetlić wymagane informacje.
+
+Mapy wektorowe reprezentują dane przestrzenne, takie jak drogi, budynki, punkty i wielokąty, za pomocą geometrii matematycznej przechowywanej w formacie binarnym. Każdy element (węzeł, linia lub wielokąt) jest definiowany przez współrzędne i renderowany dynamicznie zgodnie z poziomem powiększenia oraz stylem mapy.
+
+Ponieważ dane wektorowe nie są przechowywane jako stałe obrazy, ich wygląd, w tym kolor, szerokość linii, przezroczystość lub wzór, można łatwo modyfikować. To podejście umożliwia efektywne renderowanie, niskie zużycie pamięci i płynne skalowanie na dowolnym poziomie powiększenia bez utraty jakości.
+
+:::info note
+Bardzo małe wielokąty mogą być uproszczone lub zniekształcone podczas generowania danych mapy. Obiekty o powierzchni mniejszej niż około jeden metr kwadratowy mogą nie być wyświetlane. Aby uzyskać poprawną wizualizację, małe elementy powinny być mapowane jako pojedyncze węzły zamiast wielokątów.
+:::
 
 
 ## Przypadki użycia {#use-cases}
@@ -69,7 +77,13 @@ Style UniRS i LightRS to autorskie style, które renderują podstawowe informacj
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-Jest to styl nawigacji morskiej, zawierający boje, latarnie morskie, szlaki rzeczne, szlaki morskie, znaki, porty, znaki nautyczne i izobaty. Przeczytaj więcej w artykule [Widok mapy morskiej](../plugins/nautical-charts.md).
+Jest to styl nawigacji morskiej, zawierający boje, latarnie morskie, szlaki rzeczne, szlaki morskie, znaki, porty, znaki nautyczne i izobaty. Przeczytaj więcej w sekcji [Styl mapy morskiej](../plugins/nautical-charts.md#nautical-map-style).
+
+### Morski (zaawansowany) {#marine}
+
+![Marine map style](@site/static/img/map/map-style-marine.png)
+
+Jest to zaawansowany styl mapy morskiej z sektorami świateł, pełnymi charakterystykami latarni morskich oraz innymi szczegółowymi cechami morskimi dla realistycznej i dokładnej nawigacji morskiej. Więcej szczegółów w sekcji [Styl mapy morskiej (zaawansowany)](../plugins/nautical-charts.md#marine-map-style).
 
 ### Zimowy i narciarski {#winter-and-ski}
 
@@ -107,7 +121,7 @@ Zaprojektowany do nawigacji terenowej, ten styl opiera się na układzie mapy [T
 
 ![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
 
-Dostosowany do nawigacji skuterem śnieżnym, ten styl podkreśla ścieżki, drogi i trasy przyjazne dla skuterów śnieżnych. Podkreśla specjalistyczne ścieżki w regionach zaśnieżonych, oferując przejrzystą nawigację po terenach pokrytych śniegiem, gdzie standardowe drogi mogą być niedostępne.
+Dostosowany do nawigacji skuterem śnieżnym, ten styl podkreśla ścieżki, drogi i trasy przyjazne dla skuterów śnieżnych. Podkreśla specjalistyczne ścieżki w regionach zaśnieżonych, oferując przejrzystą nawigację po terenach pokrytych śniegiem, gdzie standardowe drogi mogą być niedostępne. 
 
 
 ## Legenda mapy {#map-legend}
@@ -236,7 +250,13 @@ Przejdź do: *Menu → Konfiguruj mapę → Pokaż → Siatka współrzędnych*
 </Tabs>
 
 
-Funkcja **Siatka współrzędnych** nakłada na mapę siatkę odniesienia, umożliwiając wizualizację linii szerokości i długości geograficznej w oparciu o różne systemy współrzędnych. Ta funkcja jest przydatna do precyzyjnego odniesienia lokalizacji i nawigacji geoprzestrzennej. Możesz wybrać ***Ustawienia poziomu powiększenia:*** do wyświetlania między 2 a 22, ***Pozycja etykiet*** - **Krawędzie**/**Środek** oraz ***Kolor siatki*** osobno dla trybu Dzień/Noc.
+Funkcja **Siatka współrzędnych** nakłada na mapę siatkę odniesienia, umożliwiając wizualizację linii szerokości i długości geograficznej w oparciu o różne systemy współrzędnych. Ta funkcja jest przydatna do precyzyjnego odniesienia lokalizacji i nawigacji geoprzestrzennej. 
+
+Możesz skonfigurować następujące opcje:
+- **Poziomy powiększenia:** ustaw minimalny i maksymalny poziom powiększenia (2 - 22), na którym siatka jest widoczna.
+- **Pozycja etykiet:** wybierz między *Krawędziami* (domyślnie) lub *Środkiem* dla etykiet siatki.
+- **Kolor siatki:** dostępny oddzielnie dla trybu Dzień/Noc. Dostosowywanie koloru siatki to funkcja płatna.
+- **Format współrzędnych:** wybierz spośród kilku dostępnych formatów (patrz lista poniżej).
 
 
 ***Dostępne formaty współrzędnych:***
@@ -247,7 +267,9 @@ Funkcja **Siatka współrzędnych** nakłada na mapę siatkę odniesienia, umoż
 - **UTM** (EPSG:6387, Uniwersalny poprzeczny odwzorowanie Mercatora - system siatki strefowej). Minimalny poziom powiększenia to 9, jednocześnie wyświetlana jest tylko jedna strefa UTM, ponieważ strefy są oddzielone południkami co 6°
 - **MGRS** (Wojskowy System Siatki Odniesienia)
 
-Domyślnie aplikacja używa formatu współrzędnych wybranego w [Ustawieniach ogólnych](../personal/profiles.md#units--formats).
+Domyślnie aplikacja używa formatu współrzędnych wybranego w [Ustawieniach ogólnych](../personal/profiles.md#units--formats), ale możesz go zmienić bezpośrednio w tym menu.
+
+[Szybka akcja](../widgets/quick-action.md#overview): Możesz również dodać szybki przełącznik *Pokaż/Ukryj siatkę współrzędnych* do grupy [Konfiguruj mapę](../widgets/quick-action.md#configure-map) dla szybkiego dostępu.
 
 ## Konfiguruj styl mapy {#configure-map-style}
 
@@ -314,7 +336,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,ma
 - **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Wskazuje jakość drogi. Wskazuje gładkość (nachylenie) drogi. Jak gładkie są twoje drogi: dobre, złe, być może okropne itp. Spójrz na [Legendę mapy](../map-legend/index.md), aby określić gładkość drogi.  
     ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)
 
-- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Pokazuje dostępność drogi: prywatna lub dozwolona, tylko dla służb ratunkowych lub droga płatna. Zobacz [Legendę mapy](../map-legend/index.md), aby znaleźć dostępne drogi.  
+- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**.  Pokazuje dostępność drogi: prywatna lub dozwolona, tylko dla służb ratunkowych lub droga płatna. Zobacz [Legendę mapy](../map-legend/index.md), aby znaleźć dostępne drogi.  
     ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)
 
 - **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. Funkcja [Strefy Niskiej Emisji (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) wyświetla zielone granice i etykiety "LEZ" na mapach dla obszarów w miastach, gdzie dostęp jest ograniczony dla niektórych zanieczyszczających pojazdów. Strefy LEZ mają na celu poprawę jakości powietrza poprzez ograniczenie wjazdu pojazdów, które spełniają określone normy emisji. Korzystanie z tej funkcji pomaga użytkownikom unikać kar poprzez identyfikację i omijanie tych zielonych stref, zapewniając zgodność z lokalnymi przepisami ochrony środowiska podczas podróży przez centra miast.  
@@ -471,7 +493,7 @@ Specjalne ustawienia dla dróg, w których można zmienić kolory, aby pasowały
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Wysoki kontrast dróg.  
 ![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)
 - **Blady**. Mniej kontrastowe kolory dróg.  
-![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)
+![Map road style pale](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Pogrubiony kontur dla dróg.  
 ![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)
@@ -565,7 +587,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,shared
 - **Preferowany język** (ukraiński)
     ![Map language ukrainian](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Pokaż nazwy lokalne** (dodaje drugą etykietę, jeśli nazwa lokalna jest inna)
+- **Pokaż nazwy lokalne**  (dodaje drugą etykietę, jeśli nazwa lokalna jest inna)
     ![Map language local](@site/static/img/map/map-language-show-local_2.png)
 
 - **Transliteruj nazwy**  

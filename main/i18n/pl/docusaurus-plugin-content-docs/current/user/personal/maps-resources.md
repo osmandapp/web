@@ -1,8 +1,9 @@
 ---
-source-hash: 40a50d2d81edfe3031807e74cf61d1a5a4ab80acbd6b91f1d0093008b7509eaa
+source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -55,7 +55,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu pobierania map iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapy regionalne Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu pobierania map iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapy regionalne iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -78,6 +78,7 @@ Należy pamiętać, że comiesięczne aktualizacje map są traktowane jako kolej
 - [Linie konturowe](../plugins/topography.md#contour-lines). Mapa zawierająca warstwice wysokości w celu wizualizacji terenu.
 - [Mapa terenu (cieniowanie i nachylenie)](../plugins/topography.md#hillshade-slope-and-altitude-layers). Mapy z cieniowaniem lub nachyleniem dostarczają dodatkowych informacji o terenie.
 - [Mapa terenu (3D)](../plugins/topography.md#3d-relief). Trójwymiarowa reprezentacja terenu dla lepszego zrozumienia otoczenia. Silnik renderowania mapy [Wersja 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) musi być włączony.
+- [Głębiny i kontury morskie](../plugins/nautical-charts.md). Morskie mapy żeglugowe pokazujące linie brzegowe, głębokości, pomoce nawigacyjne, porty i zagrożenia dla bezpiecznej żeglugi i żeglarstwa.
 - [Wikipedia](../plugins/wikipedia.md). Mapa wektorowa z artykułami [Wikipedii](https://wikipedia.org/) oznaczonymi geograficznie, dotyczącymi punktów orientacyjnych lub dodatkowymi informacjami o miejscach.
 - [Wikivoyage](../plan-route/travel-guides.md). Dostarcza mapy wektorowe z wirtualnymi przewodnikami turystycznymi, oferując użytkownikom cenne informacje, rekomendacje i wskazówki.
 - [Prognoza pogody](../plugins/weather.md). Informacje o pogodzie na mapie ułatwiające planowanie trasy.
