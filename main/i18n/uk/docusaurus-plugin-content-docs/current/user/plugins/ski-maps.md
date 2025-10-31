@@ -1,8 +1,9 @@
 ---
-source-hash: 94e9e19b69bb27ccb319b0f36424500e67142fc93ca193486bb426595f06c638
+source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
 sidebar_position: 13
 title:  Вигляд карти лижних трас
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-Плагін "Вигляд карти лижних трас" в OsmAnd показує відомі та популярні схили, офіційно затверджені гірськолижні зони та карти трас більшості гірськолижних курортів. Джерелом даних для лижних карт OsmAnd є карти трас [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550). Поєднуючи векторні карти з растровими, лижна карта OsmAnd є дуже точною і буде корисною для інструкторів, альпіністів та любителів зимових видів спорту.
+Плагін "Вигляд карти лижних трас" в OsmAnd показує відомі та популярні схили, офіційно затверджені гірськолижні зони та карти трас більшості гірськолижних курортів. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) piste maps are the data source for OsmAnd ski maps. Поєднуючи векторні карти з растровими, лижна карта OsmAnd є дуже точною і буде корисною для інструкторів, альпіністів та любителів зимових видів спорту.
 
 Лижна карта OsmAnd є частиною векторних карт і не потребує додаткових завантажень. За замовчуванням вона вимкнена. Лижна карта OsmAnd — це один зі [стилів карти](../map/vector-maps.md), який надає додаткові можливості, виділяючи одні об'єкти та роблячи інші менш помітними.
 
@@ -40,9 +41,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Наступні налаштування дозволяють відобразити лижну карту OsmAnd на екрані:
 
-1. Увімкніть [плагін "Вигляд карти лижних трас"](../plugins/index.md#enable--disable).
-2. Встановіть стиль карти [Зима та лижі](#set-winter-and-ski-map-style) для потрібного [профілю](../personal/profiles.md).
-3. За потреби [поєднайте карти](#combine-maps).
+1. Увімкніть [плагін "Вигляд карти лижних трас"](../plugins/index.md#enable--disable).  
+2. Встановіть стиль карти [Зима та лижі](#set-winter-and-ski-map-style) для потрібного [профілю](../personal/profiles.md).  
+3. За потреби [поєднайте карти](#combine-maps).  
+  
 
 ### Встановити стиль карти "Зима та лижі" {#set-winter-and-ski-map-style}
 
@@ -50,7 +52,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Увімкнути зимовий стиль в Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Стиль карти плагіна лижних карт Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -58,7 +60,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
 ![Увімкнути зимовий стиль в iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Стиль карти плагіна лижних карт iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -68,13 +70,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Стиль карти "Зима та лижі" виділяє траси, маршрути для скі-туру, санні траси та інформацію, пов'язану із зимою та лижами. Щоб відобразити стиль на карті, потрібно виконати наступні налаштування:
 
-1. Виберіть потрібний [профіль](../personal/profiles.md).
-2. Відкрийте [Налаштувати карту](../map/configure-map-menu.md).
+1. Виберіть потрібний [профіль](../personal/profiles.md).  
+2. Відкрийте [Налаштувати карту](../map/configure-map-menu.md).  
 3. Прокрутіть вниз до "Стиль карти/Тип карти", відкрийте його та виберіть **Зима та лижі**.
 
 :::tip конфігурації
 Профіль "Лижі" розроблений для використання в поєднанні зі стилями "Зима та лижі". Однак тип навігації для кожного конкретного профілю можна змінювати та встановлювати індивідуально, тому остаточна конфігурація профілю, стилю карти та навігації повністю залежить від ваших налаштувань.
 :::
+
 
 ### Поєднання карт {#combine-maps}
 
@@ -94,33 +97,36 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-[Векторна карта](../map/vector-maps.md) зі стилем [Зима та лижі](../map/vector-maps.md#winter-and-ski) може бути доповнена [лініями контуру](../plugins/topography.md#contour-lines) та [тіньовим рельєфом](../plugins/topography.md#hillshade-slope-and-altitude-layers). Нижче наведено два приклади. Ліворуч показані траси на векторній карті за замовчуванням, а праворуч — траси на векторній карті, поєднаній з растровими картами *ліній контуру* та *тіньового рельєфу*. У другому випадку карта показує більше даних про висоту, що допомагає оцінити складність, ризик та відстань.
+[Векторна карта](../map/vector-maps.md) зі стилем [Зима та лижі](../map/vector-maps.md#winter-and-ski), включеним, може бути доповнена [лініями контуру](../plugins/topography.md#contour-lines) та [тіньовим рельєфом](../plugins/topography.md#hillshade-slope-and-altitude-layers). Нижче наведено два приклади. Ліворуч показані траси на векторній карті за замовчуванням, а праворуч — траси на векторній карті, поєднаній з растровими картами *ліній контуру* та *тіньового рельєфу*. У другому випадку карта показує більше даних про висоту, що допомагає оцінити складність, ризик та відстань.  
+
 
 ### Вимкнути стиль лижної карти {#disable-ski-map-style}
 
 Якщо ви бажаєте прибрати з карти траси та зимові кольори, або лижний сезон закінчився, виконайте одну з наступних дій:
 
-- Зніміть прапорець зі стилю карти [Зима та лижі](#set-winter-and-ski-map-style) для потрібного профілю.
+- Зніміть прапорець зі стилю карти [Зима та лижі](#set-winter-and-ski-map-style) для потрібного профілю.  
 - Змініть [профіль "Лижі"](../personal/profiles.md) на будь-який інший.
 - Вимкніть [плагін "Вигляд карти лижних трас"](../plugins/index.md#enable--disable).
 
+
 :::info видалення плагіна
-Плагін "Вигляд карти лижних трас" є окремим додатком, і вимкнення його відображення не видаляє його. Якщо вам потрібно видалити його, перейдіть до налаштувань Android, використовуючи *Відкрити налаштування* в меню плагіна.
+Плагін "Вигляд карти лижних трас" є окремим додатком, і вимкнення його відображення не видаляє його. Якщо вам потрібно видалити його, перейдіть до налаштувань Android, використовуючи *Відкрити налаштування* в меню плагіна.  
 :::
+
 
 ## Профіль "Лижі" {#skiing-profile}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Профіль "Лижі" в Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
@@ -132,6 +138,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Стилі карти "Зима та лижі" можна увімкнути в будь-якому профілі. Але найціннішим він є в [профілі "Лижі"](../personal/profiles.md), де він встановлений за замовчуванням. Профіль "Лижі" дуже зручний для [навігації для лижників](../navigation/routing/ski-routing.md).
 
+
 ## Стиль лижної карти {#ski-map-style}
 
 Для довідки використовуйте [легенду лижної карти](../../user/map-legend/ski-map.md). Вона допомагає визначити типи трас на карті, а також типи підйомників та інші характеристики, які можна прочитати з карти.
@@ -140,9 +147,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Описані тут опції доступні в [навігації для лижників](../navigation/setup/route-navigation.md). **Навігація для лижників** встановлює індивідуальні параметри маршруту, які застосовуються лише для катання на лижах.
 
+
 :::info стиль візуалізації
 Лижна карта OsmAnd побудована як один зі стилів візуалізації, який визначає, які об'єкти показувати на карті та їхній вигляд. Усі стилі візуалізації описані у файлі [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml). Правила, що визначають внутрішню структуру XML-файлу, дивіться в [документації з візуалізації](../../technical/osmand-file-formats/osmand-rendering-style.md).
 :::
+
 
 ### Траси за складністю {#pistes-by-difficulty}
 
@@ -157,24 +166,26 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Складність трас зазвичай позначається певними кольорами. Кольори можуть відрізнятися в різних країнах та на різних курортах. Нижче наведено деякі практичні рекомендації.
 
 :::tip порада
-Для отримання більш конкретних вказівок щодо кожного типу складності трас дивіться [довідник складності трас OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) або будь-яке інше джерело, яке також враховує схили, перешкоди та небезпеки.
+Для отримання більш конкретних вказівок щодо кожного типу складності трас дивіться [довідник складності трас OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) або будь-яке інше джерело, яке також враховує схили, перешкоди та небезпеки.  
 :::
+
 
 ### Траси за типами {#piste-by-types}
 
 Траси розрізняються за типом. Тип представляє різні характеристики траси для задоволення вимог різних видів зимової активності: гірські лижі, класичні лижі, сноубординг, катання на санях, беккантрі, скі-тур, могул, нічне катання тощо. Розуміння [типу траси](https://wiki.openstreetmap.org/wiki/Key:piste:type) на карті допомагає побудувати оптимальний маршрут навігації.
 
-- **Траса для гірських лиж.**
+- **Траса для гірських лиж.**  
 Використовується для навігації для лижників. Цей [тип траси](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) має напрямок і складність, і найчастіше він оточений межами гірськолижного курорту. Коли для навігації для лижників обирається гірськолижна траса, враховується її напрямок. Якщо точки відправлення та призначення встановлені протилежно до напрямку траси, навігація прокладається вздовж найближчого підйомника.
 
-- **Траса для бігових лиж/беккантрі.**
+- **Траса для бігових лиж/беккантрі.**  
 Також використовується для навігації для лижників. Цей [тип траси](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) не має складності, може мати або не мати напрямку, і найчастіше виходить за межі гірськолижного курорту. При навігації по трасах цього типу точки відправлення та призначення часто можна міняти місцями.
 
-- **Траса для скі-туру.**
+- **Траса для скі-туру.**  
 Часто використовується лижниками для підйому на бігових лижах та спуску на гірських. Складність траси для скі-туру часто позначається відповідним кольором. Навігація для лижників може побудувати маршрут по трасі цього типу, що дозволяє комбінувати типи трас.
 
-- **Інші лижні траси.**
+- **Інші лижні траси.**  
 Типи трас, такі як *пішохідні стежки* або *санні траси*, можуть використовуватися для профілів "Лижі" або "Пішохід".
+
 
 ### Підготовка трас {#grooming-trails}
 
@@ -198,7 +209,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Щоб перевірити на карті, чи підготовлена певна траса, потрібно увімкнути опцію **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** у списку **<Translate android="true" ids="rendering_category_details"/>**, що відкривається з меню [Налаштувати карту](../map/configure-map-menu.md).
+Щоб перевірити на карті, чи підготовлена певна траса, потрібно увімкнути опцію **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** у списку **<Translate android="true" ids="rendering_category_details"/>**, що відкривається з меню [Налаштувати карту](../map/configure-map-menu.md).  
 Спеціальні машини (ратраки) готують траси для відповідних видів діяльності, таких як класичні лижі, ковзани та інші. Одна і та ж траса може бути підготовлена по-різному на різних ділянках.
 
 ### Маршрути лижних схилів {#ski-slope-routes}
@@ -207,15 +218,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Лижні схили та маршрути*
 
 ![Маршрути вимкнені в Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Маршрути увімкнені в Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/> → Лижні схили та маршрути*
 
 ![Маршрути вимкнені в iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Маршрути увімкнені в iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -223,9 +235,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Щоб дізнатися, по яких трасах за межами гірськолижного курорту можна прокладати маршрут, потрібно увімкнути опцію **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** у списку **<Translate android="true" ids="rendering_category_routes"/>**, що відкривається з меню [Налаштувати карту](../map/configure-map-menu.md).
+Щоб дізнатися, по яких трасах за межами гірськолижного курорту можна прокладати маршрут, потрібно увімкнути опцію **Лижні схили та маршрути** у списку [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), що відкривається з меню [Налаштувати карту](../map/configure-map-menu.md).  
 
-З увімкненим профілем "Лижі", навігацією для лижників та стилем карти [Зима та лижі](../map/vector-maps.md#winter-and-ski), маршрути [лижних схилів](../map/vector-maps.md#routes) показують усі типи трас, які навігація для лижників може використовувати для побудови маршрутів. Такі маршрути лижних схилів, якщо вони увімкнені, виділяються фіолетовим кольором переважно за межами гірськолижних курортів.
+З увімкненим профілем "Лижі", навігацією для лижників та стилем карти [Зима та лижі](../map/vector-maps.md#winter-and-ski), [лижні схили та маршрути](../map/vector-maps.md#ski-slopes-and-routes) показують усі типи трас, які навігація для лижників може використовувати для побудови маршрутів. Такі маршрути лижних схилів, якщо вони увімкнені, виділяються фіолетовим кольором переважно за межами гірськолижних курортів.  
+При увімкненні опції [лижні схили та маршрути](../map/vector-maps.md#ski-slopes-and-routes) для стилю карти, відмінного від "Зима та лижі", відображаються лише схили. Інші функції, пов'язані з лижами, можуть не відображатися в цьому шарі стилізації.  
+_Лижні схили та маршрути_ [є клікабельними](../map/routes.md#actions-with-routes).
+
 
 ### Нічний режим та освітлення {#night-and-lighting}
 
@@ -245,15 +260,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Стиль **Зима та лижі** можна використовувати з [нічним режимом або режимом сходу/заходу сонця](../map/vector-maps.md#map-mode). Зручний вибір для тих, хто віддає перевагу темним кольорам, або затемненню екрана вночі, а також для тих, хто практикує нічне катання. Разом з нічним режимом, лижні карти OsmAnd також можуть показувати, які траси мають освітлення, за допомогою опції [Вуличне освітлення](../map/vector-maps.md#details).
+Стиль **Зима та лижі** можна використовувати з [нічним режимом або режимом сходу/заходу сонця](../map/vector-maps.md#map-mode). Зручний вибір для тих, хто віддає перевагу темним кольорам, або затемненню екрана вночі, а також для тих, хто практикує нічне катання. Разом з нічним режимом, лижні карти OsmAnd також можуть показувати, які траси мають освітлення, за допомогою опції [Вуличне освітлення](../map/vector-maps.md#details).  
 
-Обидві опції знаходяться в меню [Налаштувати карту](../map/configure-map-menu.md).
+Обидві опції знаходяться в меню [Налаштувати карту](../map/configure-map-menu.md).  
 
-- Щоб увімкнути опцію ***Нічний режим***, прокрутіть список вниз:
-*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*
+- Щоб увімкнути опцію ***Нічний режим***, прокрутіть список вниз:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- Щоб увімкнути опцію ***Вуличне освітлення***, відкрийте список **<Translate android="true" ids="rendering_category_details"/>** та увімкніть опцію:
+- Щоб увімкнути опцію ***Вуличне освітлення***, відкрийте список **<Translate android="true" ids="rendering_category_details"/>** та увімкніть опцію:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
+
 
 ## Пов'язані статті {#related-articles}
 

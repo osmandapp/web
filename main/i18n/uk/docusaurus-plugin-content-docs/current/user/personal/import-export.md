@@ -1,8 +1,9 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Імпорт / Експорт
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,13 +13,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 ## Огляд {#overview}
 
 Інструменти **Імпорт** та **Експорт** в OsmAnd дозволяють керувати вашими даними. Ви можете переміщувати свої профілі, обране, треки та інші налаштування за допомогою спеціального формату через програми на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями, а також дозволяє ділитися ними з іншими користувачами OsmAnd.
 
-:::note Великий розмір
-*Якщо розмір вибраних даних значний, програмі знадобиться час, щоб підготувати файл `.osf`.*
+:::note Large size
+*If the size of your selected data is significant, it will take time for the application to prepare the `.osf` file.*
 :::
 
 
@@ -29,11 +29,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **Типи даних**, доступні для імпорту/експорту:
 
 - **Налаштування:**  
-        [Профілі](../personal/profiles.md#actions), &nbsp;[Загальні налаштування OsmAnd](../personal/global-settings.md), &nbsp;[Кольори](../personal/color-palette-schemes.md), &nbsp;[Швидка дія](../widgets/quick-action.md), &nbsp;[Типи POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Уникати доріг](../map/map-context-menu.md#avoid-road).
+        [Профілі](../personal/profiles.md#actions), &nbsp;[OsmAnd/Загальні налаштування](../personal/global-settings.md), &nbsp;[Кольори](../personal/color-palette-schemes.md), &nbsp;[Швидка дія](../widgets/quick-action.md), &nbsp;[Тип POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Уникати дорогу](../map/map-context-menu.md#avoid-road).
 - **Мої місця:**  
-        [Обране](../personal/favorites.md#export--import), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Аудіо/відео нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Маршрут*.
+        [Обране](../personal/favorites.md#export--import), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Аудіо/відео нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Ітінерер*.
 - **Ресурси:**  
-        [Стиль візуалізації](../map/vector-maps.md#custom-map-style), &nbsp;[Маршрутизація](../navigation/routing/osmand-routing.md), &nbsp;[Онлайн-сервіси маршрутизації](../navigation/routing/online-routing.md), &nbsp;[Джерела карт*, *Стандартні/Офлайн карти](../map/raster-maps.md), &nbsp;[Карти Вікіпедії та Подорожей](../plan-route/travel-guides.md), &nbsp;[Морські карти](../plugins/nautical-charts.md), &nbsp;[Автомобільні карти](../map/vector-maps.md#road-style), &nbsp;[Топографічні карти](../plugins/topography.md), &nbsp;[Голосові підказки (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Голосові підказки (записані)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Резервне копіювання Обраного](../personal/favorites.md#automatic-favorites-backup).
+        [Стиль візуалізації](../map/vector-maps.md#custom-map-style), &nbsp;[Маршрутизація](../navigation/routing/osmand-routing.md), &nbsp;[Онлайн-движки маршрутизації](../navigation/routing/online-routing.md), &nbsp;[Джерела карт*, *Стандартні/Офлайн карти](../map/raster-maps.md), &nbsp;[Карти Вікіпедії та Подорожей](../plan-route/travel-guides.md), &nbsp;[Морські карти](../plugins/nautical-charts.md), &nbsp;[Карти доріг](../map/vector-maps.md#road-style), &nbsp;[Топографічні карти](../plugins/topography.md), &nbsp;[Голосові підказки (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Голосові підказки (записані)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Резервне копіювання Обраного](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Експорт {#export}
@@ -58,7 +58,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Усі налаштовані та створені вами дані можна експортувати за допомогою ***меню Експорт***. Меню складається з трьох груп: **Налаштування**, **Мої місця** та **Ресурси**, які містять усі доступні папки з файлами. Ви можете вибрати файли для експорту в кожній папці, по одному або всі одразу. **Усі експортовані файли зберігаються у форматі `.osf`**.  
+Усі налаштовані та створені вами дані можна експортувати за допомогою ***меню Експорт***. Меню складається з трьох груп: **Налаштування**, **Мої місця** та **Ресурси**, які містять усі доступні папки з файлами. Наприклад, у розділі Ресурси карти згруповані за типом у *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, та *<Translate android="true" ids="topography_maps"/>* для полегшення навігації та вибіркового експорту. Ви можете вибрати файли для експорту в кожній папці, по одному або всі одразу. **Усі експортовані файли зберігаються у форматі `.osf`**.  
 
 
 ### Імпорт {#import}
@@ -100,7 +100,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Запобігання втраті даних {#preventing-data-loss}
 
-У версіях OsmAnd для *Android* та *iOS*, якщо ви повністю **видалите** програму або виберете **Стерти дані** на своєму пристрої в меню налаштувань інформації про програму, папка з даними також буде видалена з файлового менеджера пристрою. Якщо не вжити запобіжних заходів, це призведе до **втрати всіх завантажених карт для даних OsmAnd, усіх збережених Обраних місць, треків GPX, голосових підказок (TTS) та [інших даних](#export--import-data).**
+У версіях OsmAnd для *Android* та *iOS*, якщо ви повністю **видалите** програму або виберете **Очистити дані** на своєму пристрої в меню налаштувань інформації про програму, папка з даними також буде видалена з файлового менеджера пристрою. Якщо не вжити запобіжних заходів, це призведе до **втрати всіх завантажених карт для даних OsmAnd, усіх збережених Обраних місць, треків GPX, голосових підказок (TTS) та [інших даних](#export--import-data).**
 
 Існує два способи зберегти ваші дані перед перевстановленням програми OsmAnd:
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
 sidebar_position: 3
 title: Контекстне меню карти
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -115,13 +115,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню Android](@site/static/img/map/context_menu_android.png)
+![Контекстне меню Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню iOS](@site/static/img/map/context_menu_ios.png)
+![Контекстне меню iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -139,7 +139,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Альтернативні назви](#alternative-names)
 - [Координати](#coordinates)
 - [В межах областей](#polygon-information)
-- [Найближчі POI / Wikipedia](#nearby-pois--wikipedia)
+- [Найближчі POI](#nearby-pois)
+- [Найближчі популярні місця](#nearby-popular-places)
 - [Маршрути громадського транспорту для зупинок](#public-transport-routes)
 - [Улюблені / Шляхові точки з тієї ж групи](#favorites--track-points-from-the-group)
 - [Посилання на OpenStreetMap](#openstreetmap-link)
@@ -217,15 +218,56 @@ OsmAnd відображає **додаткові назви POI** у *конте
 Веб-посилання OsmAnd може бути автоматично розпізнане OsmAnd (приклад: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Посилання OsmAnd та [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) відкриваються на відповідних сайтах з позначкою на місці інтересу.  
 
 
-### Найближчі POI / Wikipedia {#nearby-pois--wikipedia}
+### Найближчі POI {#nearby-pois}
 
-![Найближчі статті Wikipedia](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Найближчі статті Wikipedia](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ці розділи відображають найближчі [статті Wikipedia](../plugins/wikipedia.md) або [Об'єкти інтересу (POI)](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI та статей Wikipedia.
+<TabItem value="android" label="Android">  
 
-Дотик до *Найближчі POI / статті Wikipedia* відкриває список точок (POI або Wikipedia). Дотик до однієї з цих точок зі списку переміщує карту до цієї точки (POI або Wikipedia) з відкриттям контекстного меню точки на карті.
+![Найближчі POI Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Найближчі POI iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Цей розділ відображає найближчі [Об'єкти інтересу](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI в тій самій категорії.
+
+Дотик до *Найближчі POI* відкриває список точок. Дотик до однієї з цих точок зі списку переміщує карту до цієї точки з відкриттям контекстного меню точки на карті.
+
+
+### Найближчі популярні місця {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Найближчі місця Android](@site/static/img/map/nearby_places_android.png)
+
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+
+Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/map/popular_places)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Найближчі місця iOS](@site/static/img/map/nearby_places_ios.png)
+
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+
+Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
 
 > **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з'явиться лише якщо ви попередньо завантажили спеціальні карти зі [статтями Wikipedia для цієї області](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Маршрути громадського транспорту {#public-transport-routes}
@@ -647,7 +689,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Додати / Видалити місце паркування {#-add--delete-parking-point}
 
 :::note
-Щоб додати/видалити місця паркування, увімкніть [**плагін "Місце паркування"**](../plugins/parking.md).
+Щоб додати/видалити місця паркування, увімкніть плагін OsmAnd [**Позиція паркування**](../plugins/parking.md).
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -676,16 +718,14 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Додати / Редагувати шляхову точку треку {#-add--edit-track-waypoint}
 
 :::note
-Щоб додати/редагувати точки треку, увімкніть [**плагін "Запис поїздки"**](../plugins/trip-recording.md).
+Щоб додавати/редагувати точки треку, увімкніть плагін OsmAnd [**Запис поїздки**](../plugins/trip-recording.md).
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Дія Шляхова точка Android](@site/static/img/map/action_waypoint_android.png)
-
-![Вибір треку для додавання шляхової точки Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Вибір треку для додавання шляхової точки Android](@site/static/img/map/tracks_tab_android.png) ![Дія Додати шляхова точка треку Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +743,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 - Виберіть місце на карті [довгим дотиком](../map/map-context-menu.md#select-any-point-long-tap).
 - У *контекстному меню карти*, що відкриється, виберіть *Дії → Додати шляхову точку треку*.
-- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку.
+- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку (*на Android* список згруповано у вкладки: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Ви можете додавати шляхові точки до треку, який ще не активний для запису, у цьому випадку неактивний трек переходить зі стану *Старт* у стан *Продовжити*.
 - [Заповніть](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) необхідні дані та збережіть шляхову точку.
 - Ви можете налаштувати [Швидкі дії](../widgets/quick-action.md), додавши шляхову точку до *Додати шляхову точку треку*.
@@ -712,7 +752,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Створити / Змінити POI {#-create--modify-poi}
 
 :::note
-Щоб створювати/змінювати POI, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
+Щоб створювати/змінювати POI, увімкніть плагін OsmAnd [**Редагування OSM**](../plugins/osm-editing.md).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -740,7 +780,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Відкрити примітку OSM {#-open-osm-note}
 
 :::note
-Щоб відкрити примітку OSM, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
+Щоб відкривати примітку OSM, увімкніть плагін OsmAnd [**Редагування OSM**](../plugins/osm-editing.md).
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -769,7 +809,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Коментувати / Закрити примітку OSM {#-comment--close-osm-note}
 
 :::note
-Щоб коментувати/закривати примітки OSM, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
+Щоб коментувати/закривати примітки OSM, увімкніть плагін OsmAnd [**Редагування OSM**](../plugins/osm-editing.md).
 :::
 
 ![Коментувати примітку OSM Android](@site/static/img/map/action_comment_note_android.png) ![Повторно відкрити примітку OSM Android](@site/static/img/map/action_reopen_note_android.png)
@@ -781,7 +821,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 ### * Завантажити POI / Примітку OSM {#-upload-poi--osm-note}
 
 :::note
-Щоб завантажити POI / примітку OSM, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
+Щоб завантажити POI / примітку OSM, увімкніть плагін OsmAnd [**Редагування OSM**](../plugins/osm-editing.md).
 :::
 
 ![Завантажити POI Android](@site/static/img/map/action_poi_upload_android.png) ![Завантажити примітку OSM Android](@site/static/img/map/action_note_upload_android.png)
@@ -794,7 +834,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 <InfoAndroidOnly />
 
 :::note
-Щоб записувати аудіо/відео нотатки, увімкніть [**плагін "Аудіо/відео нотатки"**](../plugins/audio-video-notes.md).
+Щоб записувати аудіо/відео нотатки, увімкніть плагін OsmAnd [**Аудіо/Відео нотатки**](../plugins/audio-video-notes.md).
 :::
 
 ![Дія Аудіо-Відео Android](@site/static/img/map/action_av_note_android.png)

@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -30,7 +31,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Додано аналізатор підйомів/спусків.
 - Розширено інтеграцію Wikipedia та Wikivoyage для більшої кількості POI.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Версія 5.0 {#version-50}
 
@@ -48,7 +49,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Видатні вершини тепер можна знайти за допомогою карти та пошуку.
 - Висота гірських вершин у футах.
 - Додано: скелі та зони для скелелазіння на карті.
-- Покращено пошук адрес у США.
+- Пошук адрес у США покращено  
 - Додано івритський TTS для навігації.
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -75,6 +76,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Додано іконку, що натискається, для відображення доступу або інших атрибутів дороги чи шляху.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
+
 
 ### Версія 4.8 {#version-48}
 
@@ -176,6 +178,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
+
 ### Версія 4.3 {#version-43}
 
 Дата випуску 12/2022:
@@ -198,8 +201,8 @@ import Download from '@site/src/components/buttons/Download.js';
 Дата випуску: 06/2022
 
 - Переробка віджетів: новий вигляд та відчуття, групування за сторінками, зміна порядку та комбінування за бажанням.
-- Маршрути для піших прогулянок/велосипедних прогулянок/подорожей: торкніться символу маршруту та отримайте повну інформацію про маршрут.
-- Групи улюблених: встановіть стандартний вигляд для нових точок у групі.
+- Маршрути для піших прогулянок/велосипедних прогулянків/подорожей: торкніться символу маршруту та отримайте повну інформацію про маршрут.
+- Групи улюблених: встановіть стандартний вигляд для нових точок у групі
 - Виправлення: автоматичне оновлення онлайн-тайлових карт.
 
 <DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7.apk" />
@@ -248,6 +251,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
+
 <hr></hr>
 
 ## Версія 3 {#version-3}
@@ -263,6 +267,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
+
 ### Версія 3.8 {#version-38}
 
 Дата випуску 09/2020:
@@ -276,6 +281,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Виправлено проблеми з імпортом/експортом налаштувань профілю.
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
+
 
 ### Версія 3.7 {#version-37}
 
@@ -292,6 +298,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Виправлено помилки з RTL
 
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
+
 
 ### Версія 3.6 {#version-36}
 
@@ -312,6 +319,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
+
+
 ### Версія 3.5 {#version-35}
 
 Дата випуску: 11/2019
@@ -326,6 +335,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - Виправлення помилок.
 
 <DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
+
+
 
 ### Версія 3.4 {#version-34}
 
@@ -343,6 +354,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
+
+
 ### Версія 3.3 {#version-33}
 
 Дата випуску: 03/2019
@@ -358,6 +371,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-3" release="net.osmand-3.3.8.apk" />
 
+
+
 ### Версія 3.2 {#version-32}
 
 Дата випуску 09/2018:
@@ -367,7 +382,10 @@ import Download from '@site/src/components/buttons/Download.js';
 - Підтримка редагування полігональних (не-об'єктних) об'єктів.
 - Вимірювання відстані: додано кнопку "Виміряти" до дій у контекстному меню.
 
+
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
+
+
 
 ### Версія 3.1 {#version-31}
 
@@ -382,10 +400,11 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
+
 ### Версія 3.0 {#version-30}
 
 Дата випуску: 05/2018
-
+  
 - Нове меню "Подорожі": перегляд статей WikiVoyage без використання інтернету.
 - Wikipedia: новий вигляд, активні посилання, зображення.
 - Відкритий інтерфейс треку: відображення груп проміжних точок.
@@ -394,6 +413,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
 
+
 <hr></hr>
 
 ## Версія 2 {#version-2}
@@ -401,7 +421,7 @@ import Download from '@site/src/components/buttons/Download.js';
 ### Версія 2.9 {#version-29}
 
 Дата випуску: 02/2018
-
+  
 - Оновлено контекстне меню: показує, коли POI відкривається/закривається.
 - Меню транспорту: усі доступні маршрути тепер зверху.
 - Wikipedia: додано кнопку для відкриття оригінальної статті, оновлено вигляд статей.
@@ -411,6 +431,9 @@ import Download from '@site/src/components/buttons/Download.js';
 - Новий екран швидкого введення координат для швидкого створення маркерів.
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
+
+
+
 
 ### Версія 2.8 {#version-28}
 
@@ -422,15 +445,21 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
 
+  
+
+
 ### Версія 2.7 {#version-27}
 
 Дата випуску 07/2017:
-
+  
 - Зображення на рівні вулиць у плагіні Mapillary.
 - Інструмент лінійки для вимірювання прямих відстаней на карті.
 - Інтервал розділення GPX, що показує деталі ділянок треку.
 
 <DownloadRelease blog="osmand-2-7" release="net.osmand-2.7.5.apk" />
+
+  
+
 
 ### Версія 2.6 {#version-26}
 
@@ -445,10 +474,13 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
+
+
+
 ### Версія 2.5 {#version-25}
 
 Дата випуску: 11/2016
-
+  
 - Клікабельні іконки на карті. Отримуйте інформацію без шару POI.
 - Дуже детальний пошук POI. Знаходьте місця за багатьма ознаками.
 - Приховування компаса. Бачите компас лише тоді, коли він вам потрібен.
@@ -458,16 +490,19 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
+
 ### Версія 2.4 {#version-24}
 
 Дата випуску: 08/2016
-
+  
 - Швидкий пошук. Усі типи запитів в одному полі пошуку.
 - Інтеграція з автомобільною аудіосистемою. Використовуйте аудіосистему свого автомобіля для голосової навігації.
 - Краща інформація про громадський транспорт. Переглядайте повні маршрути громадського транспорту, пов'язані із зупинками.
 - Інші покращення. Кращі голосові підказки, нова індикація смуги руху та виправлення сховища.
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
+
+
 
 ### Версія 2.3 {#version-23}
 
@@ -482,6 +517,8 @@ import Download from '@site/src/components/buttons/Download.js';
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
 
+
+
 ### Версія 2.2 {#version-22}
 
 Дата випуску: 11/2015
@@ -494,6 +531,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - Перероблено структуру та інтерфейс завантаження даних карти.
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
+
+
 
 ### Версія 2.1 {#version-21}
 
@@ -508,6 +547,8 @@ import Download from '@site/src/components/buttons/Download.js';
 - Додаткове резервне копіювання обраного у разі пошкодження програми або інших проблем.
 
 <DownloadRelease blog="osmand-2-1" release="net.osmand-2.1.0.apk" />
+
+
 
 ### Версія 2.0 {#version-20}
 
@@ -559,12 +600,14 @@ import Download from '@site/src/components/buttons/Download.js';
 
 - OsmAnd тепер автоматично вмикає службу GPS-сплячого режиму, якщо навігація або запис поїздки були активовані, щоб це продовжувало функціонувати, коли екран пристрою вимкнений. Лише за бажанням, службу GPS-сплячого режиму все ще можна вручну перервати або налаштувати, натиснувши віджет "Статус GPS".
 
-- Плагін OsMo
+- Плагін OsMo  
 - Функціональність входу/виходу
 - Автоматичне завантаження груп та пристроїв для зареєстрованих користувачів
 - Краща обробка помилок
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />
+
+
 
 ### Версія 1.8 {#version-18}
 
@@ -595,6 +638,8 @@ GPX (Мої місця):
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
+
+
 ### Версія 1.7 {#version-17}
 
 Дата випуску 03/2014:
@@ -608,6 +653,9 @@ GPX (Мої місця):
 
 <DownloadRelease blog="osmand-1-7" release="net.osmand-1.7.5-175.apk" />
 
+
+
+
 ### Версія 1.6 {#version-16}
 
 Дата випуску 10/2013:
@@ -617,7 +665,7 @@ GPX (Мої місця):
 - Відображення завантажених карт та спрощення завантаження відсутніх карт безпосередньо з перегляду карти
 - Файли карт горизонталей тепер об'єднані для країн/регіонів
 - Нова світова базова карта з основними дорогами, залізницями та основними об'єктами площі, такими як ліси.
-- Функція збільшення карти (довге натискання на кнопку масштабування) - Корисно як для тайлових, так і для векторних карт
+- Функція збільшення карти (довге натискання на кнопку масштабування) - Корисно як для тайлових, так і для векторних карт  
 - Визначення/редагування користувацьких онлайн-джерел тайлів (та вказання терміну дії)
 - Підтримка часових обмежень швидкості (Нідерланди)
 - Швидший ввід адреси пошуку
@@ -636,9 +684,12 @@ GPX (Мої місця):
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
 
+
+
 ### Версія 1.4 {#version-14}
 
 Дата випуску: 05/2013
+
 
 - Упорядкувати проміжні точки оптимальним чином для відвідування всіх (Задача комівояжера, від дверей до дверей).
 - Пошук вулиці за назвою (у районі).
@@ -650,6 +701,8 @@ GPX (Мої місця):
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
 
+
+
 ### Версія 1.3 {#version-13}
 
 Дата випуску 03/2013:
@@ -660,6 +713,7 @@ GPX (Мої місця):
 - Верхня ліва кнопка на екрані карти замінює кнопку меню.
 
 <Download link="net.osmand-1.3%20beta-137.apk" />
+
 
 ### Версія 1.2 {#version-12}
 
@@ -673,6 +727,7 @@ GPX (Мої місця):
 - Фільтр Калмана для компаса
 
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
+
 
 ### Версія 1.1 {#version-11}
 
@@ -691,6 +746,8 @@ GPX (Мої місця):
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
 
+
+
 ### Версія 1.0 {#version-10}
 
 Дата випуску 09/2012:
@@ -700,6 +757,7 @@ GPX (Мої місця):
 - Увімкнено службу підтримки GPS під час навігації.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
+
 
 ## Версія 0.8 {#version-08}
 
@@ -720,10 +778,11 @@ GPX (Мої місця):
 
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
+
 ## Версія 0.7 {#version-07}
 
 Дата випуску 04/2012:
-
+  
 - Офлайн-редагування POI
 - Опція онлайн-відстеження — періодична надсилання координат веб-службі
 - Відображення поточного записаного треку на карті
@@ -733,11 +792,12 @@ GPX (Мої місця):
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
+
 ## Версія 0.6 {#version-06}
 
 Дата випуску 09/2011:
 
-- Реалізація пошуку POI за назвою у великих областях (країнах).
+- Реалізація пошуку POI за назвою у великих областях (країнах).  
 - Офлайн-менеджер даних (завантаження, видалення, активація/деактивація офлайн-даних безпосередньо в OsmAnd).
 - Улюблені точки та групи (категоризація, видалення, керування улюбленими).
 - Інформація про висоту.

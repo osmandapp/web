@@ -1,8 +1,9 @@
 ---
-source-hash: 87d73ff443e95ab1dcaaecf7746b579887fa93a633560d2d381fc2a5a0c16094
+source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
 sidebar_position: 5
 title:  Радіусна лінійка та Лінійка
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -69,14 +69,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_widget_new_andr.png)
+![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_widget_new_ios.png)
+![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -87,6 +87,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Відображення концентричних кіл з центром у вибраній точці.
 - Перше коло відображає поточний [масштаб карти](#ruler) для швидкого візуального орієнтування.
 - Автоматично налаштовується при масштабуванні для збереження точних значень радіуса.
+- Торкніться віджета, щоб переключатися між трьома режимами відображення: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, і <Translate android="true" ids="dark_theme"/>.
+- Тривале торкання відкриває контекстне меню віджета з додатковими опціями.
+- Налаштування віджета включають два регульовані параметри: *<Translate android="true" ids="shared_string_height"/>* — контролює візуальну висоту віджета на екрані; *<Translate android="true" ids="shared_string_show_icon"/>* — перемикає видимість іконки віджета.
 
 Використовуйте цей віджет для оцінки близькості до цікавих місць або планування навколо визначеної області.
 
@@ -98,7 +101,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="iOS" label="iOS">
 
 <table class="blogimage">
     <tr>
@@ -139,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Тримання пристрою горизонтально покращує точність та візуалізацію.
 - Якщо **синій трикутник** і **червона стрілка** (Північ) обидва вказують вгору, пристрій вирівняний за істинною північчю.
 
-Це накладення корисне для навігації на відкритому повітрі, дозволяючи вам узгодити [орієнтацію карти](../map/interact-with-map.md#map-orientation-modes) з реальним оточенням.
+Це накладення корисне для навігації на відкритому повітрі, дозволяючи вам узгодити [орієнтацію карти](../map/interact-with-map.md#map-orientation-modes) з реальним оточенням.  
 
 | | |
 |------------|------------|
@@ -170,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Щоб збільшити видимий радіус навколо вашого місцезнаходження, ви можете змінити положення Радіусної лінійки, вибравши опцію *По центру* або *Знизу*.
+Щоб збільшити видимий радіус навколо вашого місцезнаходження, ви можете змінити положення Радіусної лінійки, вибравши опцію *По центру* або *Знизу*.  
 
 Для отримання додаткової інформації про *позицію на екрані*, дивіться статтю [Налаштування екрана](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
@@ -203,7 +206,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Відстань за дотиком {#distance-by-tap}
 
-![Відстань між двома випадковими точками на карті](@site/static/img/widgets/distance_between_two_random_points.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Відстань за дотиком Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Відстань за дотиком iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Інструмент **Відстань за дотиком** дозволяє вимірювати відстані між точками на карті без використання Радіусної лінійки або створення маршруту.
 
@@ -215,11 +232,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Відстань між будь-якими двома точками**  
   Торкніться двох точок на карті одночасно (мультитач). Лінія з'єднує дві точки, і відображається виміряна відстань.
 
+Ви також можете налаштувати розмір тексту мітки відстані. Оберіть між *<Translate android="true" ids="shared_string_normal"/>* (за замовчуванням) і *<Translate android="true" ids="shared_string_large"/>* (у 1,5 раза більший). Коли вибрано опцію Великий, автоматично додається додатковий інтервал між лінією та міткою для кращої читабельності. Зміни застосовуються миттєво без перезапуску програми.
+
 | | |
 |------------|------------|
 | Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Розмір тексту (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Розмір тексту | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Формат одиниць | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 

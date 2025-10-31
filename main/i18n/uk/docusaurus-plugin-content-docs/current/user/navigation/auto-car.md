@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Налаштування](#voice-prompts). Ця кнопка відповідає за: 1. доступ до ввімкнення/вимкнення *голосових підказок* під час навігації за вибраним маршрутом; 2. показ деталей маршруту (час і відстань) до наступної зупинки.
 - [Пошук](#search). Натискання кнопки відкриває екран з доступом до функцій пошуку.
 - [Моє місцезнаходження](../widgets/map-buttons.md#my-location-and-zoom). Переміщує видиму частину карти так, щоб ваше поточне місцезнаходження було в центрі екрана.
-- [Масштаб](../widgets/map-buttons.md#my-location-and-zoom). Дозволяє збільшувати та зменшувати масштаб видимої частини карти.
+- [Масштаб](../widgets/map-buttons.md#my-location-and-zoom). Дозволяє збільшувати та зменшувати масштаб видимої частини карти. Жест масштабування щипком доступний для масштабування карти. Якщо це не підтримується головним блоком, регулювання масштабу виконується жестом подвійного торкання та свайпу.
 - [Компас](../widgets/map-buttons.md#compass). Показує, який з чотирьох доступних режимів орієнтації карти на екрані вашого пристрою вибрано.
 
 

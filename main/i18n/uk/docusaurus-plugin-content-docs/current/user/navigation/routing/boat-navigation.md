@@ -1,8 +1,9 @@
 ---
-source-hash: 1cb08bcd8ee7ef526cb41a67a59668e7c8cf614ee888f222e7e39337a0e136c1
+source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
 sidebar_position: 8
-title:  Маршрути для човнів
+title:  Boat routing
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,11 +14,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Огляд {#overview}
 
-Маршрути для човнів можуть бути цінним інструментом для всіх, хто любить плавати на човнах або яхтах по каналах, річках або фарватерах. Через відсутність більшості фарватерів у даних OpenStreeetMap, маршрути для човнів *не рекомендуються* для **навігації у відкритій воді**, натомість пропонується використовувати **[Прямо до точки](#direct-to-point-routing-for-boat)**. З увімкненими лініями глибин це може допомогти вам залишатися в безпеці на воді, уникаючи таких небезпек, як мілководдя, скелі або інші перешкоди.
-Механізм маршрутизації для човнів OsmAnd також враховує характеристики водних шляхів та самих човнів.
+Маршрути для човнів можуть бути цінним інструментом для всіх, хто любить плавати на човнах або яхтах по каналах, річках або фарватерах. Через відсутність більшості фарватерів у даних OpenStreeetMap, маршрути для човнів *не рекомендуються* для **навігації у відкритій воді**, натомість пропонується використовувати **[Прямо до точки](#direct-to-point-routing-for-boat)**. З увімкненими лініями контурів глибин це може допомогти вам залишатися в безпеці на воді, уникаючи таких небезпек, як мілководдя, скелі або інші перешкоди.  
+Механізм маршрутизації для човнів OsmAnd також враховує характеристики водних шляхів та самих човнів.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -35,7 +35,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>  
 
-## Параметри маршруту - Човен {#route-parameters---boat}
+## Route Parameters - Boat {#route-parameters---boat}
 
 :::note
 За замовчуванням *профіль Човен* вимкнено. Щоб використовувати цей профіль для маршрутизації, вам потрібно увімкнути його в *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -43,7 +43,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Маршрути для човнів можна налаштувати відповідно до ваших потреб у розділі [Параметри маршруту](../../navigation/guidance/navigation-settings.md#route-parameters) налаштувань навігації.  
 
-Зазвичай *маршрутизація для човнів* використовується з профілем "Човен" (останній вмикається разом із [плагіном "Морські карти"](../../plugins/nautical-charts.md)). Однак, можна використовувати маршрутизацію для човнів і з іншими профілями, а також застосовувати різні [типи маршрутизації](#other-routing-types-for-boat) у профілі "Човен".
+Зазвичай *маршрутизація для човнів* використовується з профілем "Човен" (останній вмикається разом із [плагіном "Морські карти"](../../plugins/nautical-charts.md)).  Однак, можна використовувати маршрутизацію для човнів і з іншими профілями, а також застосовувати різні [типи маршрутизації](#other-routing-types-for-boat) у профілі "Човен".  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -51,41 +51,38 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <TabItem value="android" label="Android">
 
 
-![Налаштування маршрутизації для човна Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
+![Налаштування маршрутизації для човна Android](@site/static/img/navigation/routing/boat_route_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування маршрутизації для човна iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
+![Налаштування маршрутизації для човна iOS](@site/static/img/navigation/routing/boat_route_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-| Параметр | Опис | Примітка |
+| Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Дозволяє використовувати струмки та дренажні канали для навігації човнів. Увімкнення цієї опції може бути корисним для невеликих човнів, таких як каное, каяки, плоти, гребні човни. | [Струмки](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) - це природні водні шляхи, занадто вузькі, щоб називатися річкою. [Дренажні канали](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) - це штучні водні шляхи, зазвичай облицьовані бетоном або подібним матеріалом, що використовуються для відведення зайвої води, наприклад, зливової або стічної. |
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* | Увімкнення цієї опції дозволяє використовувати пересихаючі водні шляхи для навігації човном. | Тег [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) використовується для позначення водного шляху, який не постійно містить воду. |
-
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Дозволяє використовувати струмки та дренажні канали для навігації човнів. Увімкнення цієї опції може бути корисним для невеликих човнів, таких як каное, каяки, плоти, гребні човни. |  [Струмки](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) - це природні водні шляхи, занадто вузькі, щоб називатися річкою. [Дренажні канали](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) - це штучні водні шляхи, зазвичай облицьовані бетоном або подібним матеріалом, що використовуються для відведення зайвої води, наприклад, зливової або стічної.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Увімкнення цієї опції дозволяє використовувати пересихаючі водні шляхи для навігації човном.   | Тег [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) використовується для позначення водного шляху, який не постійно містить воду.  |
+| *Allow ferries* | Увімкнення маршрутизації через поромні маршрути. | Використовує `route=ferry`, де це наявне в OSM. Не потрібні нові карти. |
 
 :::note Навігація по воді та обмеження
 
 1. Профіль "Човен" призначений для прокладання маршрутів по річках, озерах та інших водних шляхах. Він підтримує такі теги OSM, як:
     - `waterway=river`
     - `waterway=canal`
-    - `natural=water` і т.д.
+    - `natural=water` тощо.
 
-2. Профіль "Човен" **не підтримує поромні маршрути (`route=ferry`)**. Це означає, що поромні маршрути, навіть якщо вони є на карті, **не будуть використовуватися** при розрахунку маршрутів для човнів.
+2. Профіль "Човен" також підтримує **поромні маршрути (`route=ferry`)**, коли увімкнено опцію **Allow ferries**. Це означає, що якщо поромні маршрути наявні на карті, вони будуть використовуватися при розрахунку маршрутів для човнів.
 
-3. Щоб слідувати поромною лінією вручну:
-
-    - Використовуйте інструмент [Планування маршруту](../../plan-route/create-route.md) та розставляйте проміжні точки вручну.
-    - Використовуйте профіль "Автомобіль", який підтримує поромні маршрути
+3. Якщо в OSM не нанесено відповідних водних шляхів або поромних маршрутів, механізм маршрутизації може не змогти побудувати правильний маршрут. У таких випадках ви можете використовувати інструмент Планування маршруту та розміщувати проміжні точки вручну.
 
 :::
 
-## Інші типи маршрутизації для човна {#other-routing-types-for-boat}
+## Other Routing Types for Boat {#other-routing-types-for-boat}
 
 Тип [маршрутизації для човнів](#route-parameters---boat) є алгоритмом маршрутизації за замовчуванням для профілю "Човен". Однак ви можете вибрати інший тип маршрутизації, який також підходить для навігації на човні:  
 
@@ -97,7 +94,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Ці типи маршрутизації для профілю "Човен" можна активувати за таким шляхом: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> або інший) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 
-### Маршрутизація "Прямо до точки" для човна {#direct-to-point-routing-for-boat}
+### Direct-to-Point Routing for Boat {#direct-to-point-routing-for-boat}
 
 :::note
 При використанні типів навігації "Прямо до точки" та "Човен" вам знадобляться [дані про контури глибин](../../plugins/nautical-charts.md#nautical-map-style), які можна увімкнути та налаштувати в *Налаштувати карту*.
@@ -108,7 +105,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ![Тип навігації "Прямо до точки" Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 
-### Маршрутизація по прямій лінії для човна {#straight-line-routing-for-boat}
+### Straight Line Routing for Boat {#straight-line-routing-for-boat}
 
 Тип [маршрутизації по прямій лінії](./straight-line-routing) можна використовувати з профілем "Човен", коли ви хочете вести свій човен у відкритій воді, але віддаєте перевагу прямій лінії, а не криволінійному маршруту до пункту призначення. Це може бути корисно, наприклад, при навігації до віддаленої точки, яку видно на горизонті.
 
