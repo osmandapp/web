@@ -246,6 +246,7 @@ This layout helps keep buttons visually consistent and avoids overlapping. For e
 | Show / Hide <br/> [**Search view**](../search/search-all.md) | Opens or closes the search view. |
 | Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles the visibility of the main side menu for accessing core features. |
 | Turn On / Off <br/> [**Touch screen lock**](../map/interact-with-map.md#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
+| Open <br/> **WunderLINQ Datagrid** | Opens the WunderLINQ data interface for viewing connected device information; redirects to the App Store if the required WunderLINQ app is not installed. |
 
 
 ### Map Interactions {#map-interactions}
