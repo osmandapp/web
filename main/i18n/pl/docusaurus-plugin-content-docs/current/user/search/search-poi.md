@@ -1,8 +1,9 @@
 ---
-source-hash: 297df284be5a2307391fef85cd25a428e1c24ceee34ede4faafe08b44f792554
+source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
 sidebar_position: 4
-title:  Wyszukiwanie Użytecznych Miejsc (POI)
+title:  Wyszukiwanie POI
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,17 +14,16 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
 ## Przegląd {#overview}
 
-Funkcjonalność [Użytecznych Miejsc (POI) OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) w OsmAnd zapewnia dokładność, widoczność i wygodę w znajdowaniu interesujących miejsc, tras i usług w pobliżu bieżącej lokalizacji lub wybranego obszaru na mapie.  
+[Funkcjonalność Punktów Użyteczności (POI) w OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) zapewnia dokładność, widoczność i wygodę w znajdowaniu interesujących miejsc, tras i usług w pobliżu bieżącej lokalizacji lub wybranego obszaru na mapie.  
 
 Pasek wyszukiwania umożliwia wprowadzanie słów kluczowych związanych z interesującymi Cię miejscami. Wyszukiwanie POI prezentuje również wygodną listę posortowaną według [kategorii](#poi-search-by-categories), aby pomóc Ci szybko znaleźć to, czego szukasz, a [filtr](#save-new-custom-filters) pozwala wybrać określone cechy POI, aby wyświetlić tylko odpowiednie wyniki.  
 
-[Wyszukiwanie niestandardowe](#custom-poi-search) rozszerza funkcjonalność wyszukiwania, umożliwiając wybór wielu kategorii i podkategorii. Możesz zapisać utworzone filtry do wykorzystania w przyszłości, co ułatwia szybkie lokalizowanie POI, które spełniają określone kryteria lub preferencje. Więcej szczegółów można znaleźć w sekcji dotyczącej zapisywania filtrów niestandardowych [tutaj](#save-new-custom-filters).  
+[Wyszukiwanie niestandardowe](#customize-poi-search) rozszerza funkcjonalność wyszukiwania, umożliwiając wybór wielu kategorii i podkategorii. Możesz zapisać utworzone filtry do wykorzystania w przyszłości, co ułatwia szybkie lokalizowanie POI, które spełniają określone kryteria lub preferencje. Więcej szczegółów można znaleźć w sekcji dotyczącej zapisywania filtrów niestandardowych [tutaj](#save-new-custom-filters).  
 
 OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym znajduje się sekcja **Wyszukiwanie według kategorii**.
 
@@ -53,9 +53,9 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
 
 *Wszystkie typy POI w OsmAnd można znaleźć tutaj:* [link do github](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
-- **Wyszukiwanie Użytecznych Miejsc (POI) według typu i nazwy**:
+- **Wyszukiwanie Punktów Użyteczności (POI) według typu i nazwy**:
     - Umożliwia wyszukiwanie:
-       - Pobliskich użytecznych miejsc (POI) lub określonych kategorii POI.
+       - Pobliskich punktów użyteczności (POI) lub określonych kategorii POI.
        - [Tras OSM](../map/routes.md) według nazwy i numeru referencyjnego.
        - [Popularnych miejsc (Wikipedia)](../map/map-context-menu.md#details).
     - Możliwe jest filtrowanie i sortowanie wyników według kategorii, odległości lub oceny.
@@ -152,7 +152,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
         Obejmuje *16* typów filtrów: **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Kuchnia** (ponad *10* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Danie** (ponad *10* wartości), **Napełnianie wody pitnej** (ma *1* wartość), **Drive-in** (ma *1* wartość), **Typ dostępu do internetu** (ma *3* wartości), **Minibrowar** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Miejsca na zewnątrz** (ma *1* wartość), **Typ płatności** (ponad *10* wartości), **Palenie** (ma *6* wartości), **Na wynos** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
 
  3. **Stacja ładowania**. [Stacja ładowania](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) to obiekt infrastruktury, w którym właściciele pojazdów elektrycznych mogą ładować swoje samochody, motocykle lub inne pojazdy elektryczne. Punkty te zapewniają ładowarki i odpowiednie złącza do dostarczania energii do akumulatorów pojazdów.
-        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez telefon** (ma *1* wartość), **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
+        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez telefon** (ma *1* wartość) **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
 
  4. **Sklep ogólnospożywczy i supermarket**. [Sklep ogólnospożywczy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) i [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) reprezentują obiekty handlu detalicznego.
         Obejmuje *13* typów filtrów: **Zakup hurtowy** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Lody** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Filtr rzeczy używanych** (ma *2* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
@@ -243,7 +243,7 @@ Opis i sposób użycia:
 - *Aby ukryć* niepotrzebne kategorie, dotknij **ikony minusa**.
 - **Dostępne**. Wcześniej *Ukryte* kategorie można przywrócić na wyświetlaną listę, dotykając **ikony plusa**.
 - Użyj przycisku **Resetuj do domyślnych**, aby przywrócić listę do stanu domyślnego.
-- Kategorie utworzone za pomocą [Wyszukiwania niestandardowego](#custom-poi-search) lub [Filtrów](#save-new-custom-filters) można usunąć za pomocą **ikony Usuń**.  
+- Kategorie utworzone za pomocą [Wyszukiwania niestandardowego](#customize-poi-search) lub [Filtrów](#save-new-custom-filters) można usunąć za pomocą **ikony Usuń**.  
 
 ![Wyszukiwanie POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
 

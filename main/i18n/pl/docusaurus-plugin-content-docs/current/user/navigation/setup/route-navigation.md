@@ -1,8 +1,9 @@
 ---
-source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
+source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Przygotowanie trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Przegląd {#overview}
 
@@ -122,10 +122,25 @@ Ustaw miejsce docelowe w *Menu nawigacji* używając:
 - Przycisk **Anuluj** prowadzi z powrotem do ekranu głównego.
 - [Przycisk Start](#start--stop-navigation) rozpoczyna nawigację po zakończeniu obliczania trasy.
   
-### Wybierz punkt początkowy {#select-starting-point}
+### Wybierz punkt początkowy {#select-start-point}
 
-Jako punkt początkowy możesz wybrać swoją bieżącą lokalizację, lokalizację [punktu ulubionego](../../map/point-layers-on-map.md#favorites), wybrać punkt na mapie lub użyć [Wyszukiwania](../../search/index.md). Możesz także ustawić punkt początkowy w [menu kontekstowym mapy](../../map/map-context-menu.md), wybierając funkcję [Kierunek z](../../map/map-context-menu.md#directions-to--from).  
+<Tabs groupId="operating-systems" queryString="current-os">
 
+<TabItem value="android" label="Android">
+
+![Wybierz na mapie](@site/static/img/navigation/route/select_on_map.png)
+
+Jako punkt początkowy możesz wybrać swoją bieżącą lokalizację, lokalizację [punktu ulubionego](../../map/point-layers-on-map.md#favorites), wybrać punkt na mapie lub użyć [Wyszukiwania](../../search/index.md). Gdy wybierzesz punkt na mapie, otworzy się okno dialogowe. Mapa jest wycentrowana z znacznikiem, wyświetlane są współrzędne środka mapy, a Ty przesuwasz mapę pod znacznikiem zamiast bezpośrednio dotykać miejsca. Aby potwierdzić, naciśnij przycisk *Wybierz*. Możesz także ustawić punkt początkowy w [menu kontekstowym mapy](../../map/map-context-menu.md), wybierając funkcję [Kierunek z](../../map/map-context-menu.md#directions-to--from).  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Wybierz na mapie iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+Jako punkt początkowy możesz wybrać swoją bieżącą lokalizację, lokalizację [punktu ulubionego](../../map/point-layers-on-map.md#favorites), wybrać punkt na mapie lub użyć [Wyszukiwania](../../search/index.md). Wybierając punkt na mapie, możesz swobodnie przesuwać i powiększać mapę, a następnie dotknąć żądanej lokalizacji. Flaga pojawia się w wybranym miejscu. Możesz także ustawić punkt początkowy w [menu kontekstowym mapy](../../map/map-context-menu.md), wybierając funkcję [Kierunek z](../../map/map-context-menu.md#directions-to--from). 
+</TabItem>
+
+</Tabs>
 
 ### Ustaw punkt docelowy {#set-target-point}
 
@@ -134,24 +149,32 @@ Jako punkt początkowy możesz wybrać swoją bieżącą lokalizację, lokalizac
 <TabItem value="android" label="Android">
 
 ![Menu nawigacji Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+
+Najważniejszą rzeczą do rozpoczęcia nawigacji jest określenie miejsca docelowego. Punkt docelowy można znaleźć za pomocą funkcji [*Wyszukaj*](../../search/index.md#overview) lub po prostu na mapie. Możesz także ustawić punkt docelowy w [*Menu nawigacji*](#navigation-menu):  
+
+- **<Translate android="true" ids="search_button"/>** - Otwiera [menu wyszukiwania](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Otwiera [menu wyszukiwania adresu](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Otwiera okno dialogowe, w którym mapa jest wycentrowana z znacznikiem. Wyświetlane są współrzędne środka mapy, przesuwasz mapę pod znacznikiem i potwierdzasz wybór, naciskając *Wybierz*.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Pozwala użyć [Ulubionego](../../personal/favorites.md) jako miejsca docelowego.
+- **<Translate android="true" ids="shared_string_markers"/>** - Pozwala wybrać jeden z [oznaczeń na mapie](../../personal/markers.md) jako punkt docelowy.
+- **Zamień punkt początkowy i docelowy** &nbsp;&#8595;&#8593; - Pozwala zamienić punkty *Start* i *Koniec*.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Menu nawigacji iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
-</TabItem>
-
-</Tabs>
-
 Najważniejszą rzeczą do rozpoczęcia nawigacji jest określenie miejsca docelowego. Punkt docelowy można znaleźć za pomocą funkcji [*Wyszukaj*](../../search/index.md#overview) lub po prostu na mapie. Możesz także ustawić punkt docelowy w [*Menu nawigacji*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Otwiera [menu wyszukiwania](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Otwiera [menu wyszukiwania adresu](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Otwiera mapę, aby wybrać punkt docelowy, dotykając mapy.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Pozwala przesuwać i powiększać mapę, a następnie dotknąć żądanej lokalizacji. Flaga pojawia się w wybranym miejscu i oznacza cel podróży.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Pozwala użyć [Ulubionego](../../personal/favorites.md) jako miejsca docelowego.
 - **<Translate android="true" ids="shared_string_markers"/>** - Pozwala wybrać jeden z [oznaczeń na mapie](../../personal/markers.md) jako punkt docelowy.
 - **Zamień punkt początkowy i docelowy** &nbsp;&#8595;&#8593; - Pozwala zamienić punkty *Start* i *Koniec*.
+</TabItem>
+
+</Tabs>
 
 
 ### Pośrednie punkty docelowe {#intermediate-destinations}
@@ -205,7 +228,7 @@ W tym menu można znaleźć dodatkowe opcje zarządzania punktami docelowymi:
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Tylko Android*) - Wszystkie punkty zostaną ustawione w odwrotnej kolejności.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Z tego menu można dodawać pośrednie punkty docelowe.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Z tego menu można dodawać pośrednie punkty docelowe. Proces wyboru punktu pośredniego na mapie jest taki sam jak dla punktów początkowych i docelowych.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Wszystkie pośrednie punkty docelowe zostaną usunięte z mapy.
 
@@ -490,7 +513,7 @@ Więcej kroków rozwiązywania problemów można znaleźć w artykule [Problemy 
 
 - [Parametry trasy](../routing/osmand-routing.md#routing-types)
 - [Szczegóły trasy](./route-details.md)
-- [Nawigacja po śladzie GPX](./gpx-navigation.md)
+- [Nawigacja po śladzie](./gpx-navigation.md)
 - [Nawigacja po oznaczeniach](./markers-navigation.md)
 - [Ustawienia nawigacji](../guidance/navigation-settings.md)
 - [Ekran mapy podczas nawigacji](../guidance/map-during-navigation.md)

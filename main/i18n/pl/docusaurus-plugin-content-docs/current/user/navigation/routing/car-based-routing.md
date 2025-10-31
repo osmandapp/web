@@ -1,8 +1,9 @@
 ---
-source-hash: c8f39d23c520f3d8eb8713729cf8047052d90c32210529157c5a7347608706bb
+source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
 sidebar_position: 2
 title:  Wyznaczanie trasy dla samochodu (ciężarówki, motocykla)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,25 +14,24 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Przegląd {#overview}
 
 Wyznaczanie trasy dla samochodów ma na celu pomóc kierowcom w wydajnym, bezpiecznym i wygodnym poruszaniu się po drogach, dostarczając spersonalizowane wskazówki dostosowane do unikalnych potrzeb i preferencji każdego kierowcy. Odpowiednie ustawienia wyznaczania trasy mogą pomóc kierowcom zaoszczędzić czas i paliwo oraz unikać zagrożeń na drodze. Domyślnie oferowana jest najszybsza trasa.
 
 :::info
-Mechanizm wyznaczania trasy dla zmotoryzowanych pojazdów lądowych różni się tylko kilkoma ustawieniami. Wspólne parametry są opisane w sekcji [Samochód](#route-parameters---car) tego artykułu. [Ciężarówka](#route-parameters---truck) i [Motocykl](#route-parameters---motorcycle) mają swoje własne cechy szczególne.
+Mechanizm wyznaczania trasy dla zmotoryzowanych pojazdów lądowych różni się tylko kilkoma ustawieniami. Wspólne parametry są opisane w sekcji [Samochód](#route-parameters---car) tego artykułu. [Ciężarówka](#route-parameters---truck) i [Motocykl](#route-parameters---motorcycle) mają swoje własne cechy szczególne.  
 :::
 
-Wyznaczanie trasy można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../../navigation/guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji odpowiedniego profilu (*Jazda, Ciężarówka, Motocykl*).
+Wyznaczanie trasy można skonfigurować zgodnie z własnymi potrzebami w sekcji [Parametry trasy](../../navigation/guidance/navigation-settings.md#route-parameters) w ustawieniach nawigacji odpowiedniego profilu (*Jazda, Ciężarówka, Motocykl*).  
 
 
 ## Parametry trasy - Samochód {#route-parameters---car}
 
-Wyznaczanie trasy dla samochodów ma na celu pomóc kierowcom w znalezieniu najbardziej wydajnych i bezpośrednich tras do ich miejsc docelowych. Uwzględnia ono typowe ograniczenia w ruchu drogowym, takie jak ulice jednokierunkowe, zakazy skrętu, strefy dla pieszych, a także pomaga unikać dróg nieodpowiednich dla samochodów, takich jak wąskie drogi lub drogi z ograniczeniami wagowymi.
+Wyznaczanie trasy dla samochodów ma na celu pomóc kierowcom w znalezieniu najbardziej wydajnych i bezpośrednich tras do ich miejsc docelowych. Uwzględnia ono typowe ograniczenia w ruchu drogowym, takie jak ulice jednokierunkowe, zakazy skrętu, strefy dla pieszych, a także pomaga unikać dróg nieodpowiednich dla samochodów, takich jak wąskie drogi lub drogi z ograniczeniami wagowymi.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
@@ -64,11 +64,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 Domyślnie *profil Ciężarówka* jest wyłączony. Aby użyć tego profilu do wyznaczania trasy, musisz go włączyć w *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Wyznaczanie trasy dla ciężarówek jest podobne do wyznaczania trasy dla samochodów, ale jest zaprojektowane specjalnie dla kierowców dużych pojazdów użytkowych. Uwzględnia dodatkowe czynniki, takie jak ograniczenia [wysokości, wagi i szerokości](../guidance/vehicle-parameters.md#size-parameters) pojazdu oraz możliwość transportu materiałów niebezpiecznych (sprawdź tabelę poniżej). Wszystkie inne ustawienia wyznaczania trasy są identyczne z [wyznaczaniem trasy dla samochodów](#route-parameters---car).
+Wyznaczanie trasy dla ciężarówek jest podobne do wyznaczania trasy dla samochodów, ale jest zaprojektowane specjalnie dla kierowców dużych pojazdów użytkowych. Uwzględnia dodatkowe czynniki, takie jak ograniczenia [wysokości, szerokości, wagi, maksymalnego obciążenia osi oraz maksymalnej wagi przy pełnym załadunku](../guidance/vehicle-parameters.md#size-parameters) pojazdu oraz możliwość transportu materiałów niebezpiecznych (sprawdź tabelę poniżej). Wszystkie inne ustawienia wyznaczania trasy są identyczne z [wyznaczaniem trasy dla samochodów](#route-parameters---car).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 

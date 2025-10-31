@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -294,7 +294,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb stron** pozwala na dodanie 5 stron do lewego i prawego panelu.
 
-***Jak konfigurować wiersze:***
+***Jak konfigurować strony:***
 
 - **Dodaj stronę**. Przejdź do ustawień panelu lewego/prawego i dotknij *Edytuj → Dodaj stronę*.
 - **Organizuj widżety według stron**. Ta funkcja jest przydatna, gdy potrzebne są różne zestawy widżetów do różnych zadań, takich jak nawigacja w porównaniu z przeglądaniem mapy.
@@ -317,12 +317,17 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
     - Poprawia czytelność i maksymalizuje przestrzeń na ważne dane.
     - Szczególnie przydatne przy wyświetlaniu wielu widżetów w tym samym **wierszu**.
 
-3. **Indywidualny rozmiar dla różnych wierszy** (*dla wszystkich paneli*):
+3. **Ukrywanie etykiet tekstowych widżetów**:
+
+    - Automatycznie ukrywa etykiety tekstowe, aby zachować pełną widoczność informacji liczbowych w kompaktowych układach.
+    - Pomaga utrzymać czysty i czytelny układ widżetów, gdy przestrzeń jest ograniczona.   
+
+4. **Indywidualny rozmiar dla różnych wierszy** (*dla wszystkich paneli*):
 
     - Widżety można indywidualnie dopasowywać, dostosowując rozmiar wiersza i kolumny.
     - **UWAGA:** Zmiana rozmiaru jednego widżetu w wierszu/kolumnie spowoduje zmianę rozmiaru wszystkich widżetów w tym wierszu/kolumnie.
 
-4. **Aby zmienić rozmiar widżetu i widoczność ikony:**
+5. **Aby zmienić rozmiar widżetu i widoczność ikony:**
 
     - Wybierz widżet, który już dodałeś do panelu.  
     - Dotknij ikony *Ustawienia* po prawej stronie pola widżetu.

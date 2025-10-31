@@ -1,9 +1,10 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
 sidebar_position: 9
 title:  Android Auto
 ios: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,12 +17,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
 ![Ekran Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
-[**Android Auto**](https://www.android.com/auto) to oprogramowanie opracowane przez Google, które pozwala użytkownikom łączyć swoje urządzenia z systemem Android z kompatybilnymi systemami multimedialnymi pojazdów. *Android Auto* zapewnia dostosowaną i zoptymalizowaną wersję aplikacji OsmAnd do bezpiecznego użytkowania podczas jazdy, ułatwiając i zwiększając bezpieczeństwo dostępu do funkcji nawigacyjnych aplikacji.  
+[**Android Auto**](https://www.android.com/auto) to oprogramowanie opracowane przez Google, które pozwala użytkownikom łączyć ich urządzenia z systemem Android z kompatybilnymi systemami multimedialnymi pojazdów. *Android Auto* zapewnia dostosowaną i zoptymalizowaną wersję aplikacji OsmAnd do bezpiecznego użytkowania podczas jazdy, ułatwiając i zwiększając bezpieczeństwo dostępu do funkcji nawigacyjnych aplikacji.  
 
 Funkcja **Android Auto** jest obsługiwana tylko w przypadku korzystania z aplikacji OsmAnd dostępnej w [sklepie Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
@@ -44,7 +44,7 @@ Gdy urządzenie jest podłączone do *Android Auto*, mapa na ekranie aplikacji j
     </tr>
 </table>
 
-Po otwarciu aplikacji wyświetlana jest lista kategorii. W celu ułatwienia nawigacji można ją ukryć, dotykając przycisku w prawym górnym rogu ekranu.  
+Po otwarciu aplikacji wyświetlana jest lista kategorii. W celu łatwej nawigacji można ją ukryć, dotykając przycisku w prawym górnym rogu ekranu.  
 
 - Dotknij przycisku menu, aby ukryć listę kategorii.
 - W prawym górnym rogu ekranu dotknij przycisku obok przycisków funkcyjnych, jeśli chcesz wrócić do listy.
@@ -57,10 +57,10 @@ Po otwarciu aplikacji wyświetlana jest lista kategorii. W celu ułatwienia nawi
 *Android Auto* wyświetla interfejs OsmAnd dostosowany do ekranu systemu multimedialnego pojazdu. Interakcja z mapą jest ograniczona do przycisków takich jak:  
 
 - [Menu OsmAnd](#destination-points). Zawiera listę dostępnych opcji przypisania punktu końcowego trasy lub swobodnej jazdy.
-- [Ustawienia](#voice-prompts). Przycisk ten odpowiada za: 1. dostęp do włączania/wyłączania *komunikatów głosowych* podczas nawigacji po wybranej trasie; 2. wyświetlanie szczegółów trasy (czas i odległość) do następnego przystanku.
+- [Ustawienia](#voice-prompts). Ten przycisk odpowiada za: 1. dostęp do włączania/wyłączania *komunikatów głosowych* podczas nawigacji po wybranej trasie; 2. wyświetlanie szczegółów trasy (czas i odległość) do następnego przystanku.
 - [Szukaj](#search). Dotknięcie przycisku otwiera ekran z dostępem do funkcji wyszukiwania.
 - [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Przesuwa widoczną część mapy tak, aby bieżąca lokalizacja znajdowała się na środku ekranu.
-- [Powiększenie](../widgets/map-buttons.md#my-location-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy.
+- [Powiększenie](../widgets/map-buttons.md#my-location-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy. Gest szczypnięcia jest dostępny do skalowania mapy. Jeśli nie jest obsługiwany przez jednostkę główną, regulacja powiększenia jest wykonywana gestem podwójnego dotknięcia i przesunięcia.
 - [Kompas](../widgets/map-buttons.md#compass). Pokazuje, który z czterech dostępnych trybów orientacji mapy na ekranie urządzenia jest wybrany.
 
 
@@ -78,9 +78,9 @@ Aby OsmAnd działał w *Android Auto*, należy [podłączyć](#connection-screen
 
 - Należy zakupić **płatną wersję** aplikacji lub wykupić [subskrypcję](../purchases/android.md#free-and-paid-features). Sprawdź swoją aktualną subskrypcję tutaj *Menu → Ustawienia → Zakupy*.  
 
-- *Android Auto* używa do nawigacji pierwszego [profilu Jazda OsmAnd](#profile-first) z listy Profili. Ustaw preferowany profil jako pierwszy, z wyjątkiem profilu *Przeglądaj mapę*, który nie jest odczytywany przez *Android Auto*. Aby to zrobić, przejdź do OsmAnd *Menu → Ustawienia → Profile aplikacji → Edytuj listę profili* → przesuń swój profil [**Jazda**](#profile-first) na pierwsze miejsce lub za profil *Przeglądaj mapę*.  
+- *Android Auto* używa pierwszego [profilu Jazda OsmAnd](#profile-first) z listy Profili do nawigacji. Ustaw preferowany profil jako pierwszy, z wyjątkiem profilu *Przeglądaj mapę*, który nie jest odczytywany przez *Android Auto*. Aby to zrobić, przejdź do OsmAnd *Menu → Ustawienia → Profile aplikacji → Edytuj listę profili* → przesuń swój [**Jazda**](#profile-first) profil na pierwsze miejsce lub za profil *Przeglądaj mapę*.  
 
-- Należy pamiętać, że *Android Auto* jest aplikacją intensywnie wykorzystującą dane, w tym dane mobilne, a jakość systemu może zależeć od jakości połączenia i szybkości dostępu do Internetu.
+- Ważne jest, aby pamiętać, że *Android Auto* to aplikacja intensywnie wykorzystująca dane, w tym dane mobilne, a jakość systemu może zależeć od jakości połączenia i szybkości dostępu do Internetu.
 
 ### Pierwszy profil {#profile-first}
 
@@ -91,7 +91,7 @@ Jeśli na urządzeniu nie wybrano żadnego profilu *Jazda* odpowiadającego typo
 
 **Dlaczego to jest ważne:**
 
-1. **Bezpieczeństwo jazdy.** Różne rodzaje transportu wymagają różnych informacji i ustawień podczas jazdy. Na przykład kierowcy ciężarówek mogą mieć ograniczenia dotyczące wysokości, wagi i szerokości swoich pojazdów, więc profil *Ciężarówka* zapewnia im odpowiednie ograniczenia i wskazówki. Z kolei rowerzyści i motocykliści potrzebują informacji o ścieżkach i trasach rowerowych, bez danych dla ciężarówek.
+1. **Bezpieczeństwo jazdy.** Różne rodzaje transportu wymagają różnych informacji i ustawień podczas jazdy. Na przykład kierowcy ciężarówek mogą mieć ograniczenia dotyczące wysokości, wagi i szerokości swoich pojazdów, więc profil *Ciężarówka* zapewnia im odpowiednie ograniczenia i wskazówki. Z kolei rowerzyści i motocykliści potrzebują informacji o ścieżkach rowerowych i trasach, bez danych dla ciężarówek.
 
 2. **Użyteczność i wydajność.** Nawigacja powinna być dostosowana do potrzeb danego środka transportu. Pozwala to użytkownikom skrócić czas potrzebny na znalezienie optymalnych tras i uniknąć niepotrzebnych ograniczeń w ruchu.
 
@@ -102,9 +102,9 @@ Jeśli na urządzeniu nie wybrano żadnego profilu *Jazda* odpowiadającego typo
 
 ![Ekran Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Jako punkt docelowy można wybrać wcześniej ustawione i dodane [Użyteczne Miejsca (POI)](../map/point-layers-on-map.md#points-of-interest-pois), [Ulubione](../personal/favorites.md) lub [Znaczniki](../personal/markers.md). Możliwe jest również wybranie nagranego lub pobranego [Śladu](../personal/tracks/manage-tracks.md) dla trasy, skorzystanie z [Wyszukiwania](../search/index.md), wybranie miejsca docelowego z [Historii](../search/search-history.md) trasy lub wybranie opcji *Swobodna jazda*.
+Jako punkt docelowy można wybrać wcześniej ustawione i dodane [POI](../map/point-layers-on-map.md#points-of-interest-pois), [Ulubione](../personal/favorites.md) lub [Znaczniki](../personal/markers.md). Możliwe jest również wybranie nagranego lub pobranego [Śladu](../personal/tracks/manage-tracks.md) dla trasy, skorzystanie z [Wyszukiwania](../search/index.md), wybranie miejsca docelowego z [Historii](../search/search-history.md) trasy lub wybranie opcji *Swobodna jazda*.
 
-1. Jeśli chcesz, aby określona lokalizacja na mapie była punktem końcowym, wybierz z listy odpowiednią kategorię punktów: [Użyteczne Miejsca (POI)](#poi-categories), [Ulubione](#favorites) lub [Znaczniki mapy](#map-markers).  
+1. Jeśli chcesz, aby określona lokalizacja na mapie była punktem końcowym, wybierz z listy odpowiednią kategorię punktów: [POI](#poi-categories), [Ulubione](#favorites) lub [Znaczniki mapy](#map-markers).  
   
     - Wszystkie kategorie mogą zawierać nie więcej elementów listy, niż jest to przewidziane przez system multimedialny pojazdu. Oznacza to, że lista w *Android Auto* może być niekompletna, a wszystkie inne foldery są dostępne tylko w aplikacji OsmAnd na urządzeniu.
     - Folder [Ostatnio zmodyfikowane](#folder-last-modified) zawiera listę ostatnich miejsc docelowych, posortowaną według daty dodania lub zmiany.
@@ -138,11 +138,11 @@ W kategorii Historia można wybrać miejsce docelowe z listy punktów końcowych
     </tr>
 </table>
 
-POI (Użyteczne Miejsca) to rodzaj punktów, które identyfikują miejsca lub obiekty na mapie, które są ważne lub interesujące dla użytkowników. Są one wyróżnione specjalnymi ikonami dostępnymi w [ustawieniach OsmAnd](../map/point-layers-on-map.md#poi-types) i posortowane w grupy.  
+POI (Punkty zainteresowania) to rodzaj punktów, które identyfikują miejsca lub obiekty na mapie, które są ważne lub interesujące dla użytkowników. Są one wyróżnione specjalnymi ikonami dostępnymi w [ustawieniach OsmAnd](../map/point-layers-on-map.md#poi-types) i posortowane w grupy.  
 
 Aby zbudować trasę do POI w *Android Auto*, wykonaj następujące kroki:
 
-1. Wybierz potrzebny POI z listy dostępnych kategorii lub wprowadź nazwę POI za pomocą [Wyszukiwania](#search).
+1. Wybierz potrzebne POI z listy dostępnych kategorii lub wprowadź nazwę POI za pomocą [Wyszukiwania](#search).
 2. Dotknięcie kategorii otwiera następny ekran z listą POI.
 3. Dotknięcie elementu na liście otwiera ekran nawigacji.
 4. OsmAnd oblicza trasę i wyświetla ją na ekranie *Android Auto*. Dotknij przycisku **Start**, aby rozpocząć nawigację do tej lokalizacji.

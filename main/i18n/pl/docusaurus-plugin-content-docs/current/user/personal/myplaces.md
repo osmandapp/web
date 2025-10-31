@@ -1,8 +1,9 @@
 ---
-source-hash: 479b492a4c86a0646befd8187d85091dd523d1e848bf8bd1a5f10175948ab1bf
+source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
 sidebar_position: 6
 title:  Moje miejsca
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -48,7 +48,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje miej
 
 - [***Mapy i zasoby***](../personal/maps-resources.md):  
 
-    Pozycja *Mapy i zasoby* w *Menu głównym* aplikacji OsmAnd zapewnia dostęp do zarządzania danymi z sekcji *Moje miejsca*. Zakładka [*Lokalne*](../personal/maps-resources.md#local) pokazuje, ile miejsca zajmują wszystkie istniejące dane OsmAnd na urządzeniu, a w szczególności sekcja *Moje miejsca*. Można jej używać do uzyskiwania szczegółowych informacji o danych i dostępu do zarządzania nimi. Sekcja może zawierać tylko te elementy, dla których dane zostały pobrane.  
+    Pozycja *Mapy i zasoby* w *Menu głównym* aplikacji OsmAnd zapewnia dostęp do zarządzania danymi z sekcji *Moje miejsca*. Zakładka [*Lokalne*](../personal/maps-resources.md#local-menu) pokazuje, ile miejsca zajmują wszystkie istniejące dane OsmAnd na urządzeniu, a w szczególności sekcja *Moje miejsca*. Można jej używać do uzyskiwania szczegółowych informacji o danych i dostępu do zarządzania nimi. Sekcja może zawierać tylko te elementy, dla których dane zostały pobrane.  
 
     **Przejdź do** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Sprawdź i zarządzaj swoimi danymi.
 
@@ -84,37 +84,10 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje miej
 
     - **Usuń** (*w systemie iOS opcja ta znajduje się w menu Edycja*) — Usuwa pojedynczo ulubione punkty lub wybrane foldery ulubionych i wszystkie zawarte w nich punkty.
 
-2. ***Menu z trzema kropkami*** (*Android*) i ***długie dotknięcie*** (*iOS*). Użyj menu z *trzema kropkami* obok każdego folderu lub *długo dotknij* folderu, aby zarządzać grupami ulubionych:  
+2. ***Menu z trzema kropkami*** (*Android*) i ***długie dotknięcie*** (*iOS*). Użyj menu z *trzema kropkami* obok każdego folderu lub *długo dotknij* folderu, aby zarządzać grupami ulubionych. Zobacz [Akcje grupy ulubionych](../personal/favorites.md#favorite-group-actions), aby uzyskać szczegóły.  
 
-    <Tabs groupId="operating-systems" queryString="current-os">
 
-    <TabItem value="android" label="Android">
-
-    ![Menu z trzema kropkami](@site/static/img/personal/favorites_three-dot_menu.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Menu Ulubione iOS](@site/static/img/personal/favorites_long-tap_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
-
-    - **<Translate android="true" ids="change_default_appearance"/>** — Dostosuj wygląd ulubionych punktów w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** lub **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć ulubione punkty z folderu na mapie.
-
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń ze znaczników na mapie** (*Tylko Android*) — Dodaj wszystkie ulubione punkty z folderu do *listy znaczników na mapie* lub usuń je w razie potrzeby, aby ułatwić sobie odniesienie.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Udostępnij ulubione punkty w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia przesyłanie lub tworzenie kopii zapasowych danych.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie znajdujące się w nim punkty.
-
-Więcej szczegółowych instrukcji można znaleźć w artykule [Ulubione](../personal/favorites.md).
+Aby uzyskać pełne instrukcje, zapoznaj się z artykułem [Ulubione](../personal/favorites.md).
 
 
 ## Trasy {#tracks}
@@ -201,7 +174,7 @@ Funkcja **Edycje OpenStreetMap** w OsmAnd umożliwia wnoszenie wkładu w globaln
 
     - **Usuń** — Usuń wybrane POI lub notatkę z listy.
 
-Szczegółowe instrukcje można znaleźć w artykule [Wtyczka Edycja OSM](../plugins/osm-editing.md).
+Zapoznaj się z [wtyczką Edycja OSM](../plugins/osm-editing.md), aby uzyskać instrukcje krok po kroku.
 
 
 ## Notatki audio/wideo {#audiovideo-notes}
@@ -241,7 +214,7 @@ Wtyczka **Notatki audio/wideo** umożliwia tworzenie notatek multimedialnych pow
 
     - **<Translate android="true" ids="shared_string_delete"/>** — Wybrane notatki są trwale usuwane z Twojej kolekcji.
 
-Więcej informacji można znaleźć na stronie [wtyczki Notatki audio/wideo](../plugins/audio-video-notes.md).
+Aby uzyskać więcej informacji, odwiedź stronę [wtyczki Notatki audio/wideo](../plugins/audio-video-notes.md).
 
 
 <!--

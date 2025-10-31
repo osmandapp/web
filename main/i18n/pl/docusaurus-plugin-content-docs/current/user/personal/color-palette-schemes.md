@@ -1,8 +1,9 @@
 ---
-source-hash: 88b7bb3d18dfb693b3c6fe8a84f17bb8d80996ffd173b72307e9309445fca331
+source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
 sidebar_position: 5
 title:  Schematy kolorów
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
@@ -26,7 +26,7 @@ Schematy kolorów są używane jako część płatnych funkcji [Maps+](../purcha
 
 Schematy kolorów są używane w [kolorowaniu tras](#routes), [terenie mapy](#terrain) i [mapie pogody](#weather) i są reprezentowane jako oddzielna część informacji, które można eksportować, importować i edytować w celu zmiany schematu kolorów mapy i wizualizacji danych.
 
-Dane palety kolorów są dostępne w menu [*Mapy i zasoby*](../personal/maps-resources.md#local).
+Dane palety kolorów są dostępne w menu [*Mapy i zasoby*](../personal/maps-resources.md#local-menu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -76,8 +76,8 @@ Pliki terenu (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.tx
 
 Wizualizacje gradientu linii wykorzystują pliki palet (`route_<type_name>_<palette_name>.txt`) do kolorowania śladów GPX i tras:
 
-- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość, Nachylenie* i *Wysokość*.
-- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie* i *Wysokość lub informacje z czujników zewnętrznych*.
+- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość, Nachylenie* i *Wysokość (wysokości)*.
+- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie* i *Wysokość (wysokości) lub informacje z czujników zewnętrznych*.
 
 ### Pogoda {#weather}
 
@@ -114,14 +114,14 @@ Możesz edytować palety, aby spersonalizować wygląd map i tras. Własne pliki
 Każda linia reprezentuje wartość liczbową (dla palety kolorów jest to indeks) i kolor RGB. Na przykład:
 
 ```xml
-# Plik TXT o nazwie *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 stopni RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 degree RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# żółty {#yellow-}
+# yellow  {#yellow-}
 100,255,222,2,227
-# czerwony {#red}
+# red {#red}
 200,255,1,1,255
-# fioletowy {#violet}
+# violet {#violet}
 220,130,1,255,255
 
 ```
@@ -162,7 +162,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Eksport akcji profilu Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Lokalna kopia zapasowa Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Mapy i dane
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Mapy {#maps}
 
 ### Dlaczego OsmAnd nie oferuje dostępu do Map Google? {#why-does-osmand-not-offer-access-to-google-maps}
 
-OsmAnd jest zaprojektowany do wspierania OpenStreetMap (OSM) i priorytetowo traktuje tę ścieżkę tak bardzo, jak to możliwe. Dodatkowo istnieją ograniczenia licencyjne, które не pozwalają na dystrybucję OsmAnd z danymi Google Maps.
+OsmAnd jest zaprojektowany do wspierania OpenStreetMap (OSM) i priorytetowo traktuje tę ścieżkę tak bardzo, jak to możliwe. Dodatkowo istnieją ograniczenia licencyjne, które nie pozwalają na dystrybucję OsmAnd z danymi Google Maps.
 
 ### Mapy ładują się powoli na Androidzie 11, 12 (karta SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -64,7 +64,7 @@ Prawidłowa ścieżka nie spowoduje wyświetlenia przez OsmAnd żadnych błędó
 
 ### Usuwanie danych map po aktualizacji aplikacji (jeśli wybrano „Pamięć dla wielu użytkowników 1”) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-W wersji OsmAnd na Androida wybranie *Pamięci dla wielu użytkowników 1* jako lokalizacji przechowywania może prowadzić do usunięcia wszystkich [map lokalnych](../personal/maps-resources.md#local) przy każdej automatycznej aktualizacji aplikacji, na przykład z wersji 4.1.9 do 4.1.10, 4.1.11 lub nowszej (**Android 11, 12**). Ten problem jest udokumentowany na [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+W wersji OsmAnd na Androida wybranie *Pamięci dla wielu użytkowników 1* jako lokalizacji przechowywania może prowadzić do usunięcia wszystkich [map lokalnych](../personal/maps-resources.md#local-menu) przy każdej automatycznej aktualizacji aplikacji, na przykład z wersji 4.1.9 do 4.1.10, 4.1.11 lub nowszej (**Android 11, 12**). Ten problem jest udokumentowany na [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Aby uniknąć utraty danych map podczas aktualizacji, rozważ następujące rozwiązania:
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
+source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
 sidebar_position: 18
 title:  Wtyczki
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -78,7 +78,7 @@ Wtyczki OsmAnd mogą rozszerzać następujące grupy funkcji: **Warstwy**, **Wid
 | [Pogoda](../plugins/weather.md) | [Warstwa mapy](../plugins/weather.md#display-weather-on-the-map), [Widżet](../plugins/weather#weather-widgets), [Ekran](../plugins/weather.md#weather-forecast-screen) |
 | [Widok mapy morskiej](#nautical-map-view) | [Styl mapy](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Widok mapy narciarskiej](#ski-map-view) | [Styl mapy](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
-|[Notatki audio/wideo](#audiovideo-notes) 🤖  | [Warstwa mapy](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu kontekstowe](../plugins/audio-video-notes.md#create), [Widżet](../plugins/audio-video-notes.md#recording-widget) |
+|[Notatki audio/wideo](#audiovideo-notes) 🤖  | [Warstwa mapy](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu kontekstowe](../plugins/audio-video-notes.md#create-a-single-note), [Widżet](../plugins/audio-video-notes.md#recording-widget) |
 |[Edycja OpenStreetMap](#openstreetmap-editing)| [Warstwa mapy](../plugins/osm-editing.md#authorization) |
 |[Pozycja parkowania](#parking-position) | [Menu kontekstowe](../plugins/parking.md#set-a-spot), [Widżet](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Warstwa mapy](../plugins/mapillary.md#map-layer), [Menu kontekstowe](../plugins/mapillary.md#map-context-menu) , [Widżet](../plugins/mapillary.md#mapillary-widget)|

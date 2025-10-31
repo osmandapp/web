@@ -1,7 +1,8 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
 sidebar_position: 2
 ---
+
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
@@ -30,7 +31,7 @@ Data wydania 06/2025:
 - Dodano analizator podjazdów/zjazdów.
 - Rozszerzono integrację Wikipedii i Wikivoyage dla większej liczby POI.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Wersja 5.0 {#version-50}
 
@@ -48,7 +49,7 @@ Data wydania 04/2025:
 - Wybitne szczyty są teraz dostępne poprzez mapę i wyszukiwanie
 - Wysokości szczytów górskich w stopach
 - Dodano: Skały i obszary wspinaczkowe na mapie
-- Ulepszono wyszukiwanie adresów w USA
+- Ulepszono wyszukiwanie adresów w USA  
 - Dodano hebrajski TTS do nawigacji
 
 <DownloadRelease blog="osmand-android-5-0-released" release="net.osmand-5.0.5-5005.apk" />
@@ -75,6 +76,7 @@ Data wydania 11/2024:
 - Dodano ikonę do dotknięcia, aby wyświetlić dostęp lub inne atrybuty drogi lub ścieżki.
 
 <DownloadRelease blog="osmand-android-4-9-released" release="net.osmand-4.9.10.apk" />
+
 
 ### Wersja 4.8 {#version-48}
 
@@ -176,6 +178,7 @@ Data wydania 03/2023:
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
+
 ### Wersja 4.3 {#version-43}
 
 Data wydania 12/2022:
@@ -248,6 +251,7 @@ Data wydania 08/2021:
 
 <DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
+
 <hr></hr>
 
 ## Wersja 3 {#version-3}
@@ -263,6 +267,7 @@ Data wydania 02/2021:
 
 <DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
+
 ### Wersja 3.8 {#version-38}
 
 Data wydania 09/2020:
@@ -276,6 +281,7 @@ Data wydania 09/2020:
 - Naprawiono problemy z importem/eksportem ustawień profilu
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
+
 
 ### Wersja 3.7 {#version-37}
 
@@ -292,6 +298,7 @@ Data wydania 05/2020:
 - Naprawiono błędy z RTL
 
 <DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
+
 
 ### Wersja 3.6 {#version-36}
 
@@ -312,6 +319,8 @@ Data wydania 02/2020:
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
+
+
 ### Wersja 3.5 {#version-35}
 
 Data wydania: 11/2019
@@ -326,6 +335,8 @@ Data wydania: 11/2019
 - Poprawki błędów
 
 <DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
+
+
 
 ### Wersja 3.4 {#version-34}
 
@@ -343,6 +354,8 @@ Data wydania: 07/2019
 
 <DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
+
+
 ### Wersja 3.3 {#version-33}
 
 Data wydania: 03/2019
@@ -358,6 +371,8 @@ Data wydania: 03/2019
 
 <DownloadRelease blog="osmand-3-3" release="net.osmand-3.3.8.apk" />
 
+
+
 ### Wersja 3.2 {#version-32}
 
 Data wydania 09/2018:
@@ -367,7 +382,10 @@ Data wydania 09/2018:
 - Obsługa edycji obiektów wielokątnych (nie-amenity)
 - Pomiar odległości: dodano przycisk Pomiar do Akcji w menu kontekstowym
 
+
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
+
+
 
 ### Wersja 3.1 {#version-31}
 
@@ -382,10 +400,11 @@ Data wydania 08/2018:
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
+
 ### Wersja 3.0 {#version-30}
 
 Data wydania: 05/2018
-
+  
 - Nowe menu podróży: przeglądaj artykuły WikiVoyage bez użycia internetu
 - Wikipedia: nowy wygląd, aktywne linki, obrazy
 - Otwórz interfejs użytkownika ścieżki: wyświetl grupy punktów trasy
@@ -394,6 +413,7 @@ Data wydania: 05/2018
 
 <DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
 
+
 <hr></hr>
 
 ## Wersja 2 {#version-2}
@@ -401,7 +421,7 @@ Data wydania: 05/2018
 ### Wersja 2.9 {#version-29}
 
 Data wydania: 02/2018
-
+  
 - Zaktualizowano menu kontekstowe: pokazuje, kiedy POI się otwiera/zamyka
 - Menu transportu: wszystkie dostępne trasy są teraz na górze
 - Wikipedia: dodano przycisk do otwierania oryginalnego artykułu, zaktualizowano wygląd artykułów
@@ -411,6 +431,9 @@ Data wydania: 02/2018
 - Nowy ekran szybkiego wprowadzania współrzędnych do szybkiego tworzenia znaczników
 
 <DownloadRelease blog="osmand-2-9" release="net.osmand-2.9.3.apk" />
+
+
+
 
 ### Wersja 2.8 {#version-28}
 
@@ -422,15 +445,21 @@ Data wydania 10/2017:
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />
 
+  
+
+
 ### Wersja 2.7 {#version-27}
 
 Data wydania 07/2017:
-
+  
 - Obrazy na poziomie ulicy w wtyczce Mapillary
 - Narzędzie linijki do pomiaru bezpośrednich odległości na mapie
 - Interwał podziału GPX pokazujący szczegóły odcinków trasy
 
 <DownloadRelease blog="osmand-2-7" release="net.osmand-2.7.5.apk" />
+
+  
+
 
 ### Wersja 2.6 {#version-26}
 
@@ -445,10 +474,13 @@ Data wydania: 04/2017
 
 <DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
+
+
+
 ### Wersja 2.5 {#version-25}
 
 Data wydania: 11/2016
-
+  
 - Klikalne ikony na mapie. Uzyskaj informacje bez warstwy POI
 - Bardzo szczegółowe wyszukiwanie POI. Znajdź lokalizacje według wielu funkcji
 - Ukrywanie kompasu. Zobacz kompas tylko wtedy, gdy go potrzebujesz
@@ -458,16 +490,19 @@ Data wydania: 11/2016
 
 <DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
+
 ### Wersja 2.4 {#version-24}
 
 Data wydania: 08/2016
-
+  
 - Szybkie wyszukiwanie. Wszystkie typy zapytań w jednym polu wyszukiwania
 - Integracja z systemem audio samochodu. Użyj systemu audio samochodu do nawigacji głosowej
 - Lepsze informacje o transporcie publicznym. Wyświetl pełne trasy transportu publicznego połączone z przystankami
 - Inne ulepszenia. Lepsze wskazówki głosowe, nowa sygnalizacja pasów ruchu i poprawki pamięci
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
+
+
 
 ### Wersja 2.3 {#version-23}
 
@@ -482,6 +517,8 @@ Data wydania: 03/2016
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />
 
+
+
 ### Wersja 2.2 {#version-22}
 
 Data wydania: 11/2015
@@ -494,6 +531,8 @@ Data wydania: 11/2015
 - Struktura i interfejs pobierania danych mapy zostały przebudowane
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
+
+
 
 ### Wersja 2.1 {#version-21}
 
@@ -508,6 +547,8 @@ Data wydania 06/2015:
 - Dodatkowa kopia zapasowa ulubionych w przypadku uszkodzenia aplikacji lub innych problemów
 
 <DownloadRelease blog="osmand-2-1" release="net.osmand-2.1.0.apk" />
+
+
 
 ### Wersja 2.0 {#version-20}
 
@@ -559,12 +600,14 @@ Uproszczenie nagrywania podróży w tle i nawigacji w tle:
 
 - OsmAnd automatycznie włącza usługę trybu uśpienia GPS, jeśli nawigacja lub nagrywanie podróży zostało aktywowane, tak aby działało to nadal, gdy ekran urządzenia jest wyłączony. Tylko w razie potrzeby usługa trybu uśpienia GPS może być nadal ręcznie przerywana lub konfigurowana poprzez dotknięcie widżetu „Status GPS”.
 
-- Wtyczka OsMo
+- Wtyczka OsMo  
 - Funkcjonalność logowania/wylogowania
 - Automatyczne pobieranie grup i urządzeń dla zarejestrowanych użytkowników
 - Lepsza obsługa błędów
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />
+
+
 
 ### Wersja 1.8 {#version-18}
 
@@ -595,6 +638,8 @@ Nawigacja:
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />
 
+
+
 ### Wersja 1.7 {#version-17}
 
 Data wydania 03/2014:
@@ -608,6 +653,9 @@ Data wydania 03/2014:
 
 <DownloadRelease blog="osmand-1-7" release="net.osmand-1.7.5-175.apk" />
 
+
+
+
 ### Wersja 1.6 {#version-16}
 
 Data wydania 10/2013:
@@ -617,7 +665,7 @@ Data wydania 10/2013:
 - Wyświetlanie pobranych map i ułatwianie pobierania brakujących map bezpośrednio z widoku mapy
 - Pliki mapy linii konturowych są teraz dołączane dla krajów/regionów
 - Nowa mapa bazowa świata z głównymi drogami, kolejami i głównymi obszarami, takimi jak lasy.
-- Funkcja lupy mapy (długie kliknięcie na przycisku powiększenia) - Przydatne zarówno dla map kafelkowych, jak i wektorowych
+- Funkcja lupy mapy (długie kliknięcie na przycisku powiększenia) - Przydatne zarówno dla map kafelkowych, jak i wektorowych  
 - Definiowanie/edycja niestandardowych źródeł kafelków online (i określanie czasu wygaśnięcia)
 - Obsługa czasowych ograniczeń prędkości (Holandia)
 - Szybsze wprowadzanie adresu wyszukiwania
@@ -636,9 +684,12 @@ Data wydania: 07/2013
 
 <Download link="net.osmand-1.5.2%20beta-154.apk" />
 
+
+
 ### Wersja 1.4 {#version-14}
 
 Data wydania: 05/2013
+
 
 - Uporządkuj punkty trasy w optymalny sposób, aby odwiedzić wszystkie (komiwojażer, od drzwi do drzwi)
 - Wyszukaj ulicę po nazwie (w okolicy)
@@ -650,6 +701,8 @@ Data wydania: 05/2013
 
 <Download link="net.osmand-1.4%20beta-142.apk" />
 
+
+
 ### Wersja 1.3 {#version-13}
 
 Data wydania 03/2013:
@@ -660,6 +713,7 @@ Data wydania 03/2013:
 - Górny lewy przycisk na ekranie mapy zastępuje przycisk Menu
 
 <Download link="net.osmand-1.3%20beta-137.apk" />
+
 
 ### Wersja 1.2 {#version-12}
 
@@ -673,6 +727,7 @@ Data wydania 02/2013:
 - Filtr Kalmana dla kompasu
 
 <Download link="net.osmand-1.2.1%20beta-133.apk" />
+
 
 ### Wersja 1.1 {#version-11}
 
@@ -691,6 +746,8 @@ Data wydania 12/2012:
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
 
+
+
 ### Wersja 1.0 {#version-10}
 
 Data wydania 09/2012:
@@ -700,6 +757,7 @@ Data wydania 09/2012:
 - Włącz usługę utrzymywania GPS podczas nawigacji.
 
 <Download link="net.osmand-1.0.0%20beta-101.apk" />
+
 
 ## Wersja 0.8 {#version-08}
 
@@ -720,10 +778,11 @@ Data wydania: 07/2012
 
 <Download link="net.osmand-0.8.3%20beta-81.apk" />
 
+
 ## Wersja 0.7 {#version-07}
 
 Data wydania 04/2012:
-
+  
 - Edycja POI offline
 - Opcja śledzenia online – okresowe wysyłanie współrzędnych do usługi internetowej
 - Wyświetlanie aktualnie nagranej ścieżki na mapie
@@ -733,11 +792,12 @@ Data wydania 04/2012:
 
 <Download link="net.osmand-0.7.3%20beta-56.apk" />
 
+
 ## Wersja 0.6 {#version-06}
 
 Data wydania 09/2011:
 
-- Implementacja wyszukiwania POI według nazwy na dużych obszarach (kraje)
+- Implementacja wyszukiwania POI według nazwy na dużych obszarach (kraje)  
 - Menedżer danych offline (pobieranie, usuwanie, aktywacja/deaktywacja danych offline bezpośrednio w OsmAnd)
 - Ulubione punkty i grupy (kategoryzowanie, usuwanie, zarządzanie ulubionymi)
 - Informacje o wysokości

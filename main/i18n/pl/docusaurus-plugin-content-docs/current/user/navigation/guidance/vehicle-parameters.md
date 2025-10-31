@@ -1,8 +1,9 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  Parametry pojazdu
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -56,7 +56,7 @@ Prawidłowe ustawienie parametrów w aplikacji OsmAnd pomoże uniknąć problem�
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,21 +82,29 @@ Parametry pojazdu wpływają na nawigację i budowanie trasy, ponieważ określa
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/> ograniczenie**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Parametr Waga jest dostępny tylko w typach nawigacji, takich jak [*Samochód, Ciężarówka* i *Motocykl*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**<Translate android="true" ids="routing_attr_height_name"/> ograniczenie**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Parametr Wysokość jest dostępny tylko w typach nawigacji, takich jak *[Samochód, Ciężarówka, Motocykl](../../navigation/routing/car-based-routing.md)* i *[Łódź](../../navigation/routing/boat-navigation.md)*.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**<Translate android="true" ids="routing_attr_length_name"/> ograniczenie**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Parametr Długość jest dostępny tylko w typach nawigacji, takich jak [*Samochód, Ciężarówka* i *Motocykl*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**<Translate android="true" ids="routing_attr_width_name"/> ograniczenie**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Parametr Szerokość jest dostępny tylko w typach nawigacji, takich jak *[Samochód, Ciężarówka, Motocykl](../../navigation/routing/car-based-routing.md)* i *[Łódź](../../navigation/routing/boat-navigation.md)*.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+**5.** [**Ograniczenie maksymalnego obciążenia osi**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Podaj maksymalne obciążenie osi Twojego pojazdu, aby unikać dróg i mostów z ograniczeniami obciążenia osi. Ten parametr jest dostępny tylko w typach nawigacji, takich jak [*Ciężarówka*](../../navigation/routing/car-based-routing.md).  
+
+![Ustawienia nawigacji Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Maksymalna waga przy pełnym obciążeniu**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Podaj maksymalną całkowitą wagę pojazdu przy pełnym obciążeniu, aby unikać dróg i mostów z ograniczeniami całkowitej wagi. Ten parametr jest dostępny tylko w typach nawigacji, takich jak [*Ciężarówka*](../../navigation/routing/car-based-routing.md).  
+
+![Ustawienia nawigacji Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Ograniczenia parametrów pojazdu mogą być ważne dla nawigacji i bezpieczeństwa na drodze. Niektóre z tych ograniczeń mogą obejmować:  
 
@@ -114,20 +122,20 @@ Ograniczenia parametrów pojazdu mogą być ważne dla nawigacji i bezpieczeńst
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Trasa nawigacyjna Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Trasa nawigacyjna iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 Jeśli w parametrach pojazdu wybierzesz typ silnika, [***dane o śladzie węglowym CO2***](../../navigation/setup/route-details.md#elevation-info) zostaną wyświetlone nad wykresem w [Szczegółach trasy](../setup/route-details.md).
-Dostępnych jest sześć rodzajów paliwa: ***Benzyna, Olej napędowy, LPG, CNG, Elektryczny*** i ***Hybrydowy***.  
+Dostępnych jest sześć rodzajów paliwa: ***Benzyna, Olej napędowy, LPG, CNG, Elektryczny,*** i ***Hybrydowy***.  
 
 **Zastosowanie:**
 
@@ -140,20 +148,20 @@ Ustawienie **Paliwo używane przez silnik** jest dostępne tylko w nawigacji opa
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Parametr **Pojemność zbiornika paliwa** pozwala dokładniej śledzić [poziom paliwa](../../widgets/info-widgets.md#vehicle-metrics-widgets) i [zużycie](../../widgets/info-widgets.md#vehicle-metrics-widgets) pojazdu, podając całkowitą pojemność zbiornika. Domyślna wartość to ~50 ***litrów***. Jednostka miary pojemności paliwa jest określana przez [Profil (Ustawienia)](../..//personal/profiles.md#units--formats) skonfigurowany w *Menu → Konfiguruj profil → Ustawienia ogólne → Jednostki i formaty → Jednostka objętości*.
+Parametr **Pojemność zbiornika paliwa** pozwala dokładniej śledzić [poziom paliwa](../../widgets/info-widgets.md#vehicle-metrics-widgets) i [zużycie](../../widgets/info-widgets.md#vehicle-metrics-widgets) pojazdu, podając całkowitą objętość zbiornika. Domyślna wartość to ~50 ***litrów***. Jednostka miary pojemności paliwa jest określana przez [Profil (Ustawienia)](../..//personal/profiles.md#units--formats) skonfigurowany w *Menu → Konfiguruj profil → Ustawienia ogólne → Jednostki i formaty → Jednostka objętości*.
 
 **Zastosowanie:**
 
@@ -167,13 +175,13 @@ Ustawienie **Pojemność zbiornika paliwa** jest dostępne tylko w nawigacji opa
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
 </TabItem>
 
@@ -192,10 +200,10 @@ Ustawienie **Pojemność zbiornika paliwa** jest dostępne tylko w nawigacji opa
 ### Prędkości na drogach {#road-speeds}
 
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+![Ustawienia nawigacji](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Dla niektórych typów nawigacji można ustawić minimalną i maksymalną dopuszczalną prędkość. Jeśli jest ustawiona, silnik routingu zakłada, że pojazd lub środek transportu nie będzie poruszał się szybciej niż limit i nie będzie poruszał się wolniej niż prędkość minimalna. 
-Na przykład, pozwala to na stworzenie trasy **paliwooszczędnej**, gdzie zużycie paliwa jest optymalne przy ustawionej **prędkości maksymalnej**, a silnik znajdzie krótszą trasę, omijając dłuższe, ale szybsze drogi.
+Na przykład, pozwala to na stworzenie trasy **oszczędzającej paliwo**, gdzie zużycie paliwa jest optymalne przy ustawionej **prędkości maksymalnej**, a silnik znajdzie krótszą trasę, omijając dłuższe, ale szybsze drogi.
 
 - **Prędkość minimalna**  
     Ustawienie to określa minimalną prędkość jazdy dla wszystkich typów dróg na trasie. Zwiększa priorytet dla dróg o zalecanej prędkości niższej niż prędkość minimalna.  

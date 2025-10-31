@@ -1,8 +1,9 @@
 ---
-source-hash: e0b9c6c498f2c53828251f254bb330363192ffddb65ff4939e882c99b223b771
+source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
 sidebar_position: 3
 title:  Ustawienia globalne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,7 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-
 ## Przegląd {#overview}
 
 **Ustawienia globalne** to ogólne [ustawienia](../personal/profiles.md) dla wszystkich profili w aplikacji OsmAnd. Są to podstawowe ustawienia systemu OsmAnd, a wszelkie wprowadzone zmiany będą miały wpływ na całą aplikację.
@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profile Ustawienia ogólne Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Profile Ustawienia ogólne Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
+![Ustawienia ogólne profili Android](@site/static/img/personal/profiles/global_sett_1_andr.png)  ![Ustawienia ogólne profili Android](@site/static/img/personal/profiles/global_sett_2_andr.png)
 
 </TabItem>
 
@@ -35,7 +35,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
-![Profile Ustawienia ogólne iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
+![Ustawienia ogólne profili iOS](@site/static/img/personal/profiles/general_settings_1_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ Ta funkcja jest dostępna dla wersji aplikacji OsmAnd na iOS.
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Ustawienia ogólne Domyślny profil iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Ustawienia ogólne Profil CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) jest używany po podłączeniu do [oprogramowania CarPlay](https://support.apple.com/en-gb/HT205634) w pojeździe i pomaga w pełni wykorzystać zoptymalizowaną wersję aplikacji OsmAnd, używając systemów audio i wideo do wyświetlania danych z telefonu.
 
@@ -94,7 +94,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 ![Ustawienia przechowywania profili Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Pamięć urządzenia** pokazuje, ile wolnego miejsca pozostało na urządzeniu. Dotknij pola, aby uzyskać dostęp do menu [*Mapy i zasoby*](../personal/maps-resources.md#maps--resources), w którym można przeglądać szczegółowe informacje o danych OsmAnd i zarządzać nimi.
+1. **Pamięć urządzenia** pokazuje, ile wolnego miejsca pozostało na urządzeniu. Dotknij pola, aby uzyskać dostęp do menu [*Mapy i zasoby*](../personal/maps-resources.md#local-menu), w którym można przeglądać szczegółowe informacje o danych OsmAnd i zarządzać nimi.
 
 2. W **<Translate android="true" ids="change_data_storage_folder"/>**, możesz wybrać folder do zapisywania danych OsmAnd na swoim urządzeniu.  
 
@@ -116,7 +116,7 @@ Przejdź do: *Urządzenie iOS → Ustawienia → Ogólne → Pamięć iPhone'a �
 
 ![Ustawienia ogólne przechowywanie iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Pliki OsmAnd są widoczne w aplikacji [*Pliki*](https://apps.apple.com/us/app/files/id1232058109). Możesz uzyskać dostęp do wszystkich plików OsmAnd: [tras](../personal/tracks/manage-tracks.md), [ulubionych](../personal/favorites.md), [map](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Aby to zrobić, postępuj zgodnie z następującą ścieżką:  
+Pliki OsmAnd są widoczne w aplikacji [*Pliki*](https://apps.apple.com/us/app/files/id1232058109). Możesz uzyskać dostęp do wszystkich plików OsmAnd: [tras](../personal/tracks/manage-tracks.md), [ulubionych](../personal/favorites.md), [map](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Aby to zrobić, postępuj zgodnie z następującą ścieżką:  
 
 Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps*
 
@@ -303,7 +303,7 @@ Ustawienie **<Translate android="true" ids="dialogs_and_notifications_title"/>**
 
 - *Wiadomość startowa* obejmuje promocje, quizy, wydarzenia i inne.
 - *<Translate ios="true" ids="do_not_show_discount"/>* (*iOS*) blokuje wyświetlanie zniżek na aplikacje i wiadomości o specjalnych wydarzeniach lokalnych.
-- [*Okno dialogowe pobierania mapy*](../start-with/download-maps.md#download) informuje, że można pobrać określone mapy.
+- [*Okno dialogowe pobierania mapy*](../start-with/download-maps.md#downloading-maps) informuje, że można pobrać określone mapy.
 
 
 ### Źródło lokalizacji {#location-source}

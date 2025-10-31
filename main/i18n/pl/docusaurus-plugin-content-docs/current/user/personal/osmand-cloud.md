@@ -1,8 +1,9 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
 sidebar_position: 11
 title:  Chmura OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -311,6 +311,8 @@ W tym menu możesz wybrać, które dane i foldery mają być przesyłane do Chmu
 
 Wszystkie [mapy](../start-with/download-maps.md) są przechowywane na urządzeniu, na którym zostały wcześniej pobrane. Chmura OsmAnd przechowuje tylko informacje o tym, jakie masz mapy i datę ich ostatniej modyfikacji.
 
+Wyłączenie kopii zapasowej dla określonego typu danych po prostu zatrzymuje jego synchronizację z Chmurą. Twoje istniejące dane pozostają przechowywane i mogą być ponownie zarchiwizowane później, jeśli to potrzebne.
+
 
 ### Zarządzaj przestrzenią dyskową {#manage-storage}
 
@@ -334,7 +336,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>  
 
-Sekcja menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) wyświetla informacje o tym, ile z 3,15 gigabajtów pamięci w *Ustawieniach*, *Moich miejscach* i *Zasobach* jest używane. Możesz usunąć zmiany dla poszczególnych typów danych z Chmury OsmAnd, ale w tym przypadku działanie to jest nieodwracalne.  
+Sekcja menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) wyświetla informacje o tym, ile z 3,15 gigabajtów pamięci w *Ustawieniach*, *Moich miejscach* i *Zasobach* jest używane. Możesz wyświetlić rozmiar przechowywanych danych dla każdego typu i usunąć je z Chmury OsmAnd, jeśli to potrzebne. 
+
+Usunięcie danych z Chmury nie wpływa na ich status kopii zapasowej ani na lokalne kopie na urządzeniu. Wszystkie usunięte elementy pozostają dostępne w Koszu przez 30 dni i mogą być przywrócone w tym okresie.
 
 
 ### Konto {#account}

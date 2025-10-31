@@ -1,8 +1,9 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Przegląd {#overview}
@@ -23,7 +23,7 @@ OsmAnd Tracker to zmodyfikowany klient Telegrama stworzony do elastycznego monit
 
 [OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) pomaga zobaczyć Twoje kontakty na mapie w OsmAnd. Ma on aspekt społecznościowy, co oznacza, że aby z niego korzystać, musisz zapewnić dostęp do swoich kontaktów platformie wybranej przez OsmAnd.  
 
-Wybraliśmy [Telegram](https://telegram.org/) jako najbardziej otwartą platformę społecznościową, ponieważ ma ona [otwarte API](https://core.telegram.org/api), otwarte SDK, a ponadto w przyszłości będzie miała implementację otwartego serwera (Blockchain).
+Wybraliśmy [Telegram](https://telegram.org/) jako najbardziej otwartą platformę społecznościową, ponieważ ma on [otwarte API](https://core.telegram.org/api), otwarte SDK, a ponadto w przyszłości będzie miał implementację otwartego serwera (Blockchain).
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My_Location.png)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Map.png)
 
@@ -34,7 +34,7 @@ Co ważne, istnieje wysoki poziom kompatybilności między aplikacjami. Możesz 
 
 Zaprojektowaliśmy [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) tak, abyś mógł nadal korzystać z aplikacji Telegram i OsmAnd w sposób, do którego jesteś przyzwyczajony, bez dodatkowych ograniczeń.  
 
-Aplikacja wysyła wiadomości z lokalizacją na żywo do wybranych czatów przez określony czas, wyświetla listę Twoich kontaktów i grup oraz sprawdza czaty pod kątem wiadomości z Twoją lokalizacją, które są następnie wyświetlane na mapie w OsmAnd.
+Aplikacja wysyła wiadomości z lokalizacją na żywo do wybranych czatów przez czas, który ustawisz, wyświetla listę Twoich kontaktów i grup oraz sprawdza czaty pod kątem wiadomości z Twoją lokalizacją, które są następnie wyświetlane na mapie w OsmAnd.
 Aplikacja nie wysyła ani nie przegląda Twoich wiadomości tekstowych.  
 
 Zaloguj się przy użyciu numeru telefonu zarejestrowanego w Telegramie, aby włączyć następujące funkcje:
@@ -50,10 +50,10 @@ Zaloguj się przy użyciu numeru telefonu zarejestrowanego w Telegramie, aby wł
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
-Zainstaluj plik APK OsmAnd Online GPS Tracker:
+Możesz zainstalować OsmAnd Online GPS Tracker:
 
-- [Sklep Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [Serwer OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- ze [Sklepu Google Play](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- lub z [serwera OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (plik APK)
 
 
 ## Ustawienia wtyczki {#plugin-settings}
@@ -224,6 +224,6 @@ Widżet ma kilka widoków.
 
 Aplikacja OsmAnd ma własnego bota na Telegramie o nazwie „Asystent OsmAnd”, który pomaga zintegrować OsmAnd Telegram z trackerami lub interfejsami API innych firm. Będziesz mógł udostępniać nie tylko swoją lokalizację, ale także lokalizację swojego roweru lub grupy osób biorących udział w wyścigu, dostępną przez API. OsmAnd Telegram zapewni ładną prezentację Twoich lokalizacji na mapie w samym OsmAnd.  
 
-Podziel się z nami swoją opinią na temat tej nowej aplikacji na [Twitterze](https://twitter.com/osmandapp) i innych kanałach społecznościowych.
+Podziel się z nami swoją opinią na temat tej nowej aplikacji na [Twitterze](https://x.com/osmandapp) i innych kanałach społecznościowych.
 
 Aby wyświetlić pozycje GPS kontaktów na mapie, potrzebujesz najnowszej wersji [OsmAnd lub OsmAnd+](./../purchases/android.md). Minimalna obsługiwana wersja OsmAnd lub OsmAnd+ to 3.0.4.

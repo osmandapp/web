@@ -1,8 +1,9 @@
 ---
-source-hash: e1e81cd3da376b1fcab706b375ba623796cc2905f6cf2a1df7f838fbb24a9ee3
+source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
 sidebar_position: 2
 title:  Przyciski na mapie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -194,6 +194,6 @@ Dostosowanie wyglądu przycisków pozwala na zmianę rozmiaru, kształtu, ikony 
 - [Konfiguruj ekran](./configure-screen.md)
 - [Widżety informacyjne](./info-widgets.md)
 - [Widżety nawigacyjne](./nav-widgets.md)
-- [Linijka i linijka promienia](./radius-ruler.md)
+- [Linijka promienia i linijka](./radius-ruler.md)
 - [Widżety znaczników](./markers.md)
 - [Szybka akcja](./quick-action.md)
