@@ -390,16 +390,15 @@ export function addDistanceToPoints(points) {
     }
 }
 
-export async function getGpxFileFromTrackData(file, routeTypes, simplified) {
+export async function getGpxFileFromTrackData(file, routeTypes, simplified = false) {
     const trackData = prepareTrackData({ file, routeTypes });
     const compressedData = compressJSONToBlob(trackData);
-
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, compressedData, {
         params: {
             simplified,
         },
         apiCache: true,
-        abortControllerKey: 'save-track-data-' + file.name,
+        abortControllerKey: 'save-track-data-' + file?.name,
     });
 }
 
