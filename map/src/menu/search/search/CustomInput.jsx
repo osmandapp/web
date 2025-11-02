@@ -66,10 +66,7 @@ export default function CustomInput({
             });
             return;
         }
-
-        // This ensures search is triggered even with same query (e.g., after moving map)
-        ctx.setSearchQuery(null);
-
+        ctx.setForceSearch(true);
         navigateToSearchResults({ query: value, type });
     }
 
@@ -120,7 +117,7 @@ export default function CustomInput({
                     className: styles.searchInput,
                     startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
                     endAdornment:
-                        value !== '' && isFocused ? (
+                        value === '' || !isFocused ? (
                             <IconButton
                                 id={'se-search-input-cancel'}
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
@@ -135,9 +132,7 @@ export default function CustomInput({
                                 id={'se-search-input-search'}
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
-                                    if (value !== '') {
-                                        search(value);
-                                    }
+                                    search(value);
                                 }}
                             >
                                 <SearchIcon />
