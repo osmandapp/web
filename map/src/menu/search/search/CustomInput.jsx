@@ -66,6 +66,7 @@ export default function CustomInput({
             });
             return;
         }
+        ctx.setForceSearch(true);
         navigateToSearchResults({ query: value, type });
     }
 

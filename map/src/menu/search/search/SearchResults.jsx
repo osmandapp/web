@@ -184,8 +184,11 @@ export default function SearchResults() {
 
     useEffect(() => {
         if (locReady) {
-            if (params.query && params.query !== '' && !isSearchEqualToUrl(ctx.searchQuery)) {
+            if (params.query && params.query !== '' && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
                 ctx.setProcessingSearch(true);
+                if (ctx.forceSearch) {
+                    ctx.setForceSearch(false);
+                }
                 if (params.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(params, ctx);
                 } else {
@@ -199,7 +202,7 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params]);
+    }, [locReady, params, ctx.forceSearch]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {

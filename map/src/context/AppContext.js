@@ -330,6 +330,7 @@ export const AppContextProvider = (props) => {
     const searchPointerRef = useRef(null);
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [forceSearch, setForceSearch] = useState(false);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState({
@@ -705,6 +706,8 @@ export const AppContextProvider = (props) => {
                 setRouteTrackFile,
                 searchQuery,
                 setSearchQuery,
+                forceSearch,
+                setForceSearch,
                 favorites,
                 setFavorites,
                 addFavorite,
