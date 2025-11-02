@@ -199,7 +199,7 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params]);
+    }, [locReady, params, ctx.searchQuery]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {
