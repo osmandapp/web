@@ -378,7 +378,7 @@ function getPointGeoProfile(point, points) {
 export function getPointLatLon(point) {
     let lat = point.lat ?? point.ext.lat;
     let lon = point.lon ?? point.ext.lon;
-    return lat && lon ? { lat: lat, lon: lon } : null;
+    return lat != null && lon != null ? { lat: lat, lon: lon } : null;
 }
 
 // WARNING: Do not use the 'title' field in marker layers on the map
