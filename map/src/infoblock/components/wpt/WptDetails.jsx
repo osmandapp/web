@@ -76,7 +76,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
-import { iconPathMap, SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
+import { getIconFromMap, iconPathMap, SEARCH_ICON_MAP_LOCATION } from '../../../map/layers/SearchLayer';
 import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
@@ -88,11 +88,27 @@ import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearch
 import { useNavigate } from 'react-router-dom';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
-    const iconSvg = iconPathMap[icon] ? ctx.poiIconCache[icon] : null;
-    let coloredSvg = null;
-    if (iconSvg) {
-        coloredSvg = changeIconColor(iconSvg, DEFAULT_ICON_COLOR);
+    const [iconState, setIconState] = useState({ svg: null, isLoading: true });
+
+    useEffect(() => {
+        const loadIcon = async () => {
+            setIconState({ svg: null, isLoading: true });
+
+            try {
+                const svg = iconPathMap[icon] ? await getIconFromMap(icon) : (ctx.poiIconCache[icon] ?? null);
+                setIconState({ svg, isLoading: false });
+            } catch (error) {
+                setIconState({ svg: null, isLoading: false });
+            }
+        };
+        loadIcon().then();
+    }, [icon, ctx.poiIconCache]);
+
+    if (iconState.isLoading) {
+        return <div style={{ display: 'flex', width: shieldSize, height: shieldSize }} />;
     }
+
+    const coloredSvg = iconState.svg ? changeIconColor(iconState.svg, DEFAULT_ICON_COLOR) : null;
 
     const iconHtml = createPoiIcon({
         color: color,
@@ -102,7 +118,7 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
         iconSize: iconSize,
         backgroundSize: shieldSize,
         point: wpt,
-        icon: icon === SEARCH_ICON_MAP_OBJ ? null : icon,
+        icon: icon === SEARCH_ICON_MAP_LOCATION ? null : icon,
     }).options.html;
 
     return (
