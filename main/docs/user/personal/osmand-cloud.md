@@ -261,7 +261,7 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -338,6 +338,23 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menu section displays information about how much of the 3.15 gigabytes of memory in *Settings*, *My Places*, and *Resources* are being used. You can view the storage size of each data type and delete it from OsmAnd Cloud if needed. 
 
 Deleting data from the Cloud does not affect its backup status or local copies on your device. All removed items remain available in the Trash for 30 days and can be restored during that period.
+
+### Auto-backup {#auto--backup}
+
+<InfoAndroidOnly />
+
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Auto Backup Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Auto-backup automatically saves selected OsmAnd data to the Cloud at regular intervals while the app is active. This helps protect your data and keeps it synchronized across devices using the same account. The Auto-backup screen is divided into three expandable sections: *Settings*, *My Places*, and *Resources*.
+
+Auto-backup behavior:
+
+- Auto-backup runs approximately every hour while OsmAnd is working in the foreground.
+- Backup also starts when you return to the map screen.
+- You can enable/disable each item or whole sections independently.
+- Your data remains available locally even if auto-backup is turned off.
 
 
 ### Account {#account}
