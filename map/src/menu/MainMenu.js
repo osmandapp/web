@@ -719,12 +719,22 @@ export default function MainMenu({
                 }
             }
             setSelectedType(currentMenu?.type);
-        } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
+        }
+
+        if (!menuInfo) setSelectedType(null);
+    }, [menuInfo]);
+
+    useEffect(() => {
+        const menu = items.find((item) => isSelectedMenuItem(item));
+        if (menu) {
+            navigateToUrl({ menu, params: ctx.pageParams });
+            return;
+        }
+        if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
             // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true, params: ctx.pageParams });
         }
-        if (!menuInfo) setSelectedType(null);
-    }, [ctx.pageParams, menuInfo]);
+    }, [ctx.pageParams]);
 
     useEffect(() => {
         // now this case only for login/logout
