@@ -27,7 +27,14 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY, searchTypeMap } from './SearchLayer';
+import {
+    getIconFromMap,
+    getObjIdSearch,
+    SEARCH_ICON_MAP_LOCATION,
+    SEARCH_LAYER_ID,
+    SEARCH_TYPE_CATEGORY,
+    searchTypeMap,
+} from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
@@ -134,8 +141,8 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
 export async function getPoiIcon(poi, cache, finalIconName) {
     if (finalIconName) {
-        if (cache[finalIconName]) {
-            const svgData = cache[finalIconName];
+        const svgData = cache[finalIconName] ?? (await getIconFromMap(finalIconName));
+        if (svgData) {
             let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
             // Add the id attribute to the coloredSvg
             const poiName = poi.properties[POI_NAME];
@@ -313,6 +320,38 @@ export default function PoiLayer() {
 
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             return data;
+        } else if (pin) {
+            // show coordinates menu if get-poi returned nothing
+            const coords = pin.split(',');
+            if (coords.length === 2) {
+                const lat = Number.parseFloat(coords[0]);
+                const lng = Number.parseFloat(coords[1]);
+                if (!Number.isNaN(lat) && !Number.isNaN(lng)) {
+                    ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+                    const poi = {
+                        key: `${lng}-${lat}`,
+                        options: {
+                            web_type: searchTypeMap.LOCATION,
+                            web_name: `${lat.toFixed(5)}, ${lng.toFixed(5)}`,
+                            web_poi_finalIconName: SEARCH_ICON_MAP_LOCATION,
+                        },
+                        latlng: { lat, lng },
+                        mapObj: true,
+                    };
+                    ctx.setSelectedWpt({ poi });
+                    ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                }
+                return {
+                    properties: {
+                        [FINAL_POI_ICON_NAME]: SEARCH_ICON_MAP_LOCATION,
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [lng, lat],
+                    },
+                };
+            }
+            return null;
         } else {
             return null;
         }
