@@ -1,10 +1,11 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import { clickBy, waitBy } from '../../lib.mjs';
+import { clickBy, waitBy, assert } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import setView from '../../actions/setView.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
+import { driver } from '../../options.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -37,9 +38,13 @@ export default async function test() {
     // Direction from/to
     await actionOpenContextMenu();
     await clickBy(By.id('se-direction-action-from'));
+    let currentUrl = await driver.getCurrentUrl();
+    await assert(currentUrl.includes('start='), 'URL must contain start=');
     await setView({ lat: 49.9847, lon: 28.7849, zoom: 13 });
     await actionOpenContextMenu();
     await clickBy(By.id('se-direction-action-to'));
+    currentUrl = await driver.getCurrentUrl();
+    await assert(currentUrl.includes('end='), 'URL must contain end=');
     await waitBy(By.id('se-route-info'));
     await clickBy(By.id('se-show-menu-navigation'));
 
