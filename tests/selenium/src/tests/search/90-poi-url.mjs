@@ -36,5 +36,17 @@ export default async function test() {
     currentUrl = await driver.getCurrentUrl();
     await assert(!currentUrl.includes('poi/?name=') && !currentUrl.includes('&type=') && !currentUrl.includes('&pin='));
 
+    // Test when nothing found, should show LOCATION object
+    currentUrl =
+        url.split('#')[0] +
+        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent('Type')}&pin=${lat}%2C${lng}#16/50.4435/30.5190`;
+
+    await driver.get(currentUrl);
+
+    await matchTextBy(By.id('se-wpt-name'), `${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+
+    await clickBy(By.id('se-close-wpt-details'));
+    await waitByRemoved(By.id('se-wpt-name'));
+
     await actionFinish();
 }
