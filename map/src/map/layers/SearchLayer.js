@@ -39,7 +39,7 @@ import { useNavigate } from 'react-router-dom';
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
 
-export const SEARCH_ICON_MAP_OBJ = 'location';
+export const SEARCH_ICON_MAP_LOCATION = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';
 export const SEARCH_ICON_MAP_STREET = 'street';
 export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
@@ -59,18 +59,28 @@ export const searchTypeMap = {
 };
 
 export const iconPathMap = {
-    [SEARCH_ICON_MAP_OBJ]: '/map/images/map_icons/ic_action_marker_dark.svg',
+    [SEARCH_ICON_MAP_LOCATION]: '/map/images/map_icons/ic_action_marker_dark.svg',
     [SEARCH_ICON_MAP_BUILDING]: '/map/images/map_icons/ic_action_building.svg',
     [SEARCH_ICON_MAP_STREET]: '/map/images/map_icons/ic_action_street_name.svg',
     [SEARCH_ICON_MAP_INTERSECTION]: '/map/images/map_icons/ic_action_intersection.svg',
 };
 
 export const typeIconMap = {
-    [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_OBJ,
+    [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
     [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
     [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
     [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
 };
+
+export async function getIconFromMap(name) {
+    let svgData = null;
+    const svgIconPath = iconPathMap[name];
+    if (svgIconPath) {
+        const response = await fetch(svgIconPath);
+        svgData = await response.text();
+    }
+    return svgData;
+}
 
 export function findFeatureGroupById(map, id) {
     let foundGroup = null;
@@ -379,10 +389,8 @@ export default function SearchLayer() {
         if (cache[finalIconName]) {
             svgData = cache[finalIconName];
         } else {
-            const svgIconPath = iconPathMap[finalIconName];
-            if (svgIconPath) {
-                const response = await fetch(svgIconPath);
-                svgData = await response.text();
+            svgData = await getIconFromMap(finalIconName);
+            if (svgData) {
                 ctx.setPoiIconCache((prevState) => ({
                     ...prevState,
                     [finalIconName]: svgData,

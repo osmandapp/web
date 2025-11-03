@@ -8,7 +8,7 @@ import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
-import { SEARCH_ICON_MAP_OBJ, typeIconMap } from '../map/layers/SearchLayer';
+import { SEARCH_ICON_MAP_LOCATION, typeIconMap } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import { OBJECT_TYPE_POI } from '../context/AppContext';
 
@@ -19,7 +19,7 @@ export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special
 export const SEARCH_BRAND = 'brand';
 
 export function getIconByType(type) {
-    return typeIconMap[type] ?? SEARCH_ICON_MAP_OBJ;
+    return typeIconMap[type] ?? SEARCH_ICON_MAP_LOCATION;
 }
 
 /**
