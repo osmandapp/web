@@ -19,7 +19,7 @@ export default async function test() {
 
     let currentUrl =
         url.split('#')[0] +
-        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent(type)}&pin=${lat}%2C${lng}#16/50.4435/30.5190`;
+        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent(type)}&pin=${encodeURIComponent(`${lat},${lng}`)}#16/50.4435/30.5190`;
 
     await driver.get(currentUrl);
 
@@ -39,7 +39,7 @@ export default async function test() {
     // Test when nothing found, should show LOCATION object
     currentUrl =
         url.split('#')[0] +
-        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent('Type')}&pin=${lat}%2C${lng}#16/50.4435/30.5190`;
+        `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent('Type')}&pin=${encodeURIComponent(`${lat},${lng}`)}#16/50.4435/30.5190`;
 
     await driver.get(currentUrl);
 
