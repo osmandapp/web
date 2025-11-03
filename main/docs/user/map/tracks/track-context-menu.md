@@ -463,7 +463,7 @@ Tap the *Add Waypoint* button to open waypoint creation screen (this screen is f
 
 <TabItem value="android" label="Android">
 
-![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -483,7 +483,7 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 - **<Translate android="true" ids="shared_string_rename"/>** - Change the name of the group.
 - **<Translate android="true" ids="change_default_appearance"/>** - Change the display options for a group of waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** or **Remove** (*Android only*) - Move group waypoints to [Map markers](../../personal/markers.md) list.
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*) - Move group waypoints to [Favorites](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*Android only*) - Allows you to copy the selected group of Waypoints into [Favorites](../../personal/favorites.md). You can choose one of two options: ***<Translate android="true" ids="copy_as_new_folder"/>*** or ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Android only*) - Creates a route between waypoints. The first and last points become the start and finish of the route, and the rest are converted to intermediate points.
 - **<Translate android="true" ids="shared_string_delete"/>** - Delete a group of waypoints.
 
