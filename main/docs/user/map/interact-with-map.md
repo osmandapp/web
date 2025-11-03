@@ -215,12 +215,12 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 ## External Input Devices {#external-input-devices}
 
-External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.  
+External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) (*Android only*) controllers.  
 
-One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the *Main Menu*.
+One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the *Main Menu* and triggering *Quick Actions*. Users can also customize button assignments for supported devices (Keyboard, WunderLINQ, and custom external controllers).
 
 :::note
-The keyboard remains functional even when the *External input devices* option is turned off, and *None* is selected.
+The keyboard remains functional even when the *External input devices* option is turned off, and *None* is selected. However, custom key assignments work only when *External input devices* are enabled.
 :::
 
 ### Preconfigured Input Device {#preconfigured-input-device}
@@ -239,7 +239,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![External devices](@site/static/img/map/external_types_ios.png)
+![External devices](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -250,9 +250,9 @@ To access the settings of an external input device, you need to enable this feat
 - Go to the main *Menu → Settings →* select the *Profile → General settings → Other → External input devices*, and switch to *Enabled*.
 
 - Select a device from those supported by OsmAnd by tapping the *Type* item in the list:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-input-device-type) (*Android only*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-input-device-type).
 
-- There is a different **defined action-key bundle** assignment for each type of external input device. Tap the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
+- There is a different **defined action-key bundle** assignment for each type of external input device. The *<Translate android="true" ids="key_assignments"/>* section displays the list of actions and their assigned keys. The table of keys is shown below. These are default assignments — they can be changed or extended according to user preferences.
 
 - You can read more about external input device actions on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
 
@@ -283,7 +283,9 @@ To access the settings of an external input device, you need to enable this feat
 
 ### Custom Input Device Type {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -291,18 +293,47 @@ To access the settings of an external input device, you need to enable this feat
 
 If you want to assign keys for an external input device (such as a keyboard, joystick, or controller), you need to create a device type: go to the [External Input Device](#external-input-devices) setting, select **Type** from the list, tap the&nbsp;  "**＋**"  &nbsp; and enter a name. Each type has a menu with the following options: ***Rename, Duplicate***, and ***Remove***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![External devices](@site/static/img/map/external_mypilot_ios.png)  ![External devices](@site/static/img/map/external_mypilot2_ios.png)
+
+If you want to assign keys for an external input device (such as a keyboard, joystick, or controller), you need to create a device type: go to the [External Input Device](#external-input-devices) setting, select **Device** from the list, tap the&nbsp; "**Add**" &nbsp;and enter a name. Each type has a menu with the following options: ***Rename, Duplicate***, and ***Remove***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Add Action & Key Asssigments {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_4_ios.png)  ![External devices](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 After you have created a custom input type, you can assign the required actions to the keys. A wide range of [action types](../widgets/quick-action.md#action-types) from the Quick Action widget is available.
 
 - Select a device type, then tap the **Key assignments** item.
-- Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen.
+- Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;).
 - Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
 
 :::note
 
+- Multiple keys can be assigned to one action.
 - If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
 - Later you can change actions and key assignments or add other ones for already created actions, just select an item in the Key assignments list.
 
@@ -310,12 +341,26 @@ After you have created a custom input type, you can assign the required actions 
 
 ### Delete Key assignment {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
-You can delete multiple unnecessary actions using the **Edit button** (*pencil-shaped*) in the upper right corner of the screen at once:
+</TabItem>
 
-- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
-- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+You can delete multiple unnecessary actions using the **Edit button** (*pencil-shaped* on Android) at once:
+
+- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field. Key assignment can also be removed via the context menu (long press on the item) by tapping **Remove**.
+- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name* on Android; by tapping the **Clear all** button on IOS.
 
 
 ## Related Articles {#related-articles}
