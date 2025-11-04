@@ -439,6 +439,7 @@ export const AppContextProvider = (props) => {
     const [selectedWpt, setSelectedWpt] = useState(null);
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+    const [routeVisibleProfiles, setRouteVisibleProfiles] = useState(null);
 
     const [trackLoading, setTrackLoading] = useState([]);
 
@@ -704,6 +705,8 @@ export const AppContextProvider = (props) => {
                 beforePointRouter,
                 routeTrackFile,
                 setRouteTrackFile,
+                routeVisibleProfiles,
+                setRouteVisibleProfiles,
                 searchQuery,
                 setSearchQuery,
                 forceSearch,

@@ -4,13 +4,13 @@ import styles from './buttons.module.css';
 
 export default function SquareIconBtn({
     index,
-    disabled,
+    disabled = false,
     onClick,
     icon,
     selected = false,
     iconColor = 'var(--selected-color)',
     selectedIconColor = 'var(--text-primary)',
-    borderColor = 'var(--svg-icon-color)',
+    borderColor = '#cccccc',
     selectedBorderColor = 'var(--selected-color)',
 }) {
     return (

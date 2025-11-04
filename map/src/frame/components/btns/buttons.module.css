@@ -149,7 +149,8 @@
     align-items: center !important;
     gap: 6px !important;
     border-radius: 40px !important;
-    border: 1px solid #cccccc !important;
+    border-width: 1px !important;
+    border-style: solid !important;
 
     &.selected {
         height: 36px !important;
@@ -160,7 +161,8 @@
         align-items: center !important;
         gap: 6px !important;
         border-radius: 40px !important;
-        border: 2px solid #237bff !important;
+        border-width: 2px !important;
+        border-style: solid !important;
     }
 }
 
@@ -170,6 +172,14 @@
     align-items: center !important;
     min-width: 24px !important;
     max-width: 24px !important;
+}
+
+.actionIcon {
+    fill: var(--svg-icon-color) !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
 }
 
 
