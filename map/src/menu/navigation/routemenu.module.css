@@ -3,3 +3,9 @@
     margin-left: 12px !important;
     text-align: 'center' !important;
 }
+.profileButtonBox {
+    display: flex !important;
+    padding: 4px 10px 16px 16px !important;
+    align-items: center !important;
+    gap: 8px !important;
+}

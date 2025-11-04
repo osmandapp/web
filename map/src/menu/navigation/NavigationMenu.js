@@ -1,13 +1,12 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
-import { Settings, RemoveCircle, Clear } from '@mui/icons-material';
+import { RemoveCircle, Clear } from '@mui/icons-material';
 import {
     MenuItem,
     IconButton,
     FormControl,
     InputLabel,
     Input,
-    Select,
     Button,
     Typography,
     Link,
@@ -18,6 +17,9 @@ import {
     TextField,
     AppBar,
     Toolbar,
+    Menu,
+    ListItemIcon,
+    ListItemText,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -32,15 +34,22 @@ import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units
 import i18n from 'i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
 import { useTranslation } from 'react-i18next';
+import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
 const StyledInput = styled('input')({
     display: 'none',
 });
+
+const DEFAULT_VISIBLE_PROFILES = ['car', 'bicycle', 'pedestrian', 'line'];
+const MAX_VISIBLE_PROFILES = 4;
 
 export function formatRouteInfo(props, ctx) {
     const res = ['Route: '];
@@ -95,6 +104,9 @@ export default function NavigationMenu() {
     const btnFile = useRef();
 
     const [resetSettings, setResetSettings] = useState(false);
+
+    const [profilesMenuAnchor, setProfilesMenuAnchor] = useState(null);
+    const [visibleProfiles, setVisibleProfiles] = useState(ctx.routeVisibleProfiles || DEFAULT_VISIBLE_PROFILES);
 
     // auto switch between Navigation/Tracks menu
     // additionally, conceal route track from the map
@@ -189,6 +201,15 @@ export default function NavigationMenu() {
         closeHeader({ ctx });
     }
 
+    function handleProfileSelect(profileKey) {
+        const newVisibleProfiles = visibleProfiles.filter((key) => key !== profileKey);
+        newVisibleProfiles.unshift(profileKey);
+        const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
+        setVisibleProfiles(updatedProfiles);
+        ctx.setRouteVisibleProfiles(updatedProfiles);
+        routeObject.onRouterProfileSelected({ profile: profileKey });
+    }
+
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
@@ -202,39 +223,41 @@ export default function NavigationMenu() {
                 </Toolbar>
             </AppBar>
             <Box className={gStyles.scrollActiveBlock} sx={{ mt: 1 }}>
-                <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                    <FormControl fullWidth>
-                        <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
-                        <Select
-                            id="se-route-select"
-                            labelid="route-mode-label"
-                            label={`Route profile (${type})`}
-                            value={profile}
-                            onChange={(e) => routeObject.onRouterProfileSelected({ profile: e.target.value })}
-                        >
-                            {routeObject.listProfiles().map(({ key, name, icon }) => (
-                                <MenuItem id={'se-route-profile-' + key} key={key} value={key}>
-                                    <Box display="flex" width="100%" alignItems="center">
-                                        <Box display="flex" width={25} justifyContent="center" alignItems="center">
-                                            {icon}
-                                        </Box>
-                                        <Box display="flex" sx={{ ml: 1 }}>
-                                            <Box sx={{ mt: '3px' }}>{name}</Box>
-                                        </Box>
-                                    </Box>
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                    <IconButton
-                        sx={{ ml: 1 }}
+                <Box className={styles.profileButtonBox}>
+                    {visibleProfiles.map((key) => {
+                        const profile = routeObject.listProfiles().find((p) => p.key === key);
+                        if (!profile) return null;
+                        return (
+                            <SquareIconBtn
+                                key={key}
+                                icon={profile.icon}
+                                selected={routeObject.getProfile().profile === key}
+                                selectedBorderColor={profile.color}
+                                onClick={() => routeObject.onRouterProfileSelected({ profile: key })}
+                            />
+                        );
+                    })}
+                    <SquareIconBtn
+                        key={'dots'}
+                        icon={<DotsIcon />}
+                        onClick={(e) => setProfilesMenuAnchor(e.currentTarget)}
+                    />
+                    <Box
+                        sx={{
+                            ml: 1,
+                            width: '1px',
+                            height: '36px',
+                            backgroundColor: '#E6E6E6',
+                        }}
+                    />
+                    <ActionIconBtn
+                        size={'36px'}
+                        icon={<SettingsIcon />}
                         onClick={() => {
                             setOpenSettings(true);
                         }}
-                    >
-                        <Settings fontSize="small" />
-                    </IconButton>
-                </MenuItem>
+                    />
+                </Box>
                 {routeObject.getRouteProps() && (
                     <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
                         <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
@@ -453,6 +476,52 @@ export default function NavigationMenu() {
                         setResetSettings={setResetSettings}
                     />
                 )}
+                <Menu
+                    anchorEl={profilesMenuAnchor}
+                    open={Boolean(profilesMenuAnchor)}
+                    onClose={() => setProfilesMenuAnchor(null)}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    slotProps={{
+                        paper: {
+                            sx: {
+                                mt: '5px',
+                            },
+                        },
+                    }}
+                >
+                    {routeObject
+                        .listProfiles()
+                        .filter(({ key }) => !visibleProfiles.includes(key))
+                        .map(({ key, name, icon, color }) => (
+                            <MenuItem
+                                key={key}
+                                selected={routeObject.getProfile().profile === key}
+                                onClick={() => {
+                                    handleProfileSelect(key);
+                                    setProfilesMenuAnchor(null);
+                                }}
+                            >
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 40,
+                                        '& svg, & path': {
+                                            fill: color || 'var(--selected-color)',
+                                        },
+                                    }}
+                                >
+                                    {icon}
+                                </ListItemIcon>
+                                <ListItemText primary={name} />
+                            </MenuItem>
+                        ))}
+                </Menu>
             </Box>
         </Box>
     );
