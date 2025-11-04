@@ -89,7 +89,7 @@ export const useWeatherLocationChange = ({
             apiCache: true,
             params: params,
         });
-        if (response.ok) {
+        if (response?.ok) {
             const obj = {
                 lat: response.data.location.latitude.toFixed(6),
                 lon: response.data.location.longitude.toFixed(6),

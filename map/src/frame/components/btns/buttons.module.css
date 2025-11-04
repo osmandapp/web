@@ -139,3 +139,37 @@
         color: #666666 !important;
     }
 }
+
+.squareIconBtn {
+    height: 36px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    padding: 0px 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    border-radius: 40px !important;
+    border: 1px solid #cccccc !important;
+
+    &.selected {
+        height: 36px !important;
+        min-width: 48px !important;
+        max-width: 48px !important;
+        padding: 0px 11px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 6px !important;
+        border-radius: 40px !important;
+        border: 2px solid #237bff !important;
+    }
+}
+
+.squareIconBtnIcon {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
+
+
