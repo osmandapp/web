@@ -172,7 +172,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Add* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
+
+You can also add a via point directly from the map by tapping a POI or Favorite to open its context menu and then tapping the *ADD POINT*. In this mode, context menus for non-point objects are not shown. When adding a POI/Favorite, its name is preserved as the route point name; if you later move this point on the map, the name is reset.
 
 </TabItem>
 
@@ -180,11 +184,11 @@ To generate navigation instructions:
 
 ![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Add point* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
+
 </TabItem>
 
 </Tabs>  
-
-To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Add Point* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
 
 :::note
 You can also **Undo**/**Redo** every action you made in the plan route.
