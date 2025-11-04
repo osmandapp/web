@@ -274,7 +274,7 @@ To access the settings of an external input device, you need to enable this feat
 |**&#8595;**| *Wunderlinq*  | Map - [Zoom out](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Map - [Zoom in](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
-| **M** <br/> (*legacy Android*) | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-side-menu) |
 | **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | Move - [To My location](#my-location-and-zoom) |
 | **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-location-and-zoom) |
