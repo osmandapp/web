@@ -163,51 +163,6 @@
     max-width: 24px !important;
     fill: var(--svg-icon-color) !important;
 }
-.forecastButtonItem {
-    height: 36px !important;
-    min-width: 48px !important;
-    max-width: 48px !important;
-    padding: 0px 12px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 6px !important;
-    border-radius: 40px !important;
-    border: 1px solid #cccccc !important;
-}
-.forecastButtonItemSelected {
-    height: 36px !important;
-    min-width: 48px !important;
-    max-width: 48px !important;
-    padding: 0px 11px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 6px !important;
-    border-radius: 40px !important;
-    border: 2px solid #237bff !important;
-}
-.forecastButtonItemIcon {
-    .icon {
-        fill: #237bff !important;
-    }
-    &.disabled .icon {
-        fill: var(--svg-icon-color) !important;
-    }
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-width: 24px !important;
-    max-width: 24px !important;
-}
-.forecastButtonItemIconSelected {
-    .icon {
-        fill: #212121 !important;
-    }
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-width: 24px !important;
-    max-width: 24px !important;
-}
 .forecastButtonBox {
     display: flex !important;
     padding: 0px 16px 12px 16px !important;

@@ -23,6 +23,7 @@ import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import ForecastGraph from './ForecastGraph';
 import Empty from '../errors/Empty';
+import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -192,35 +193,15 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         return null;
     }
 
-    function setForecastButtonStyles(item) {
-        const res = [];
-        if (item.key === currentWeatherType) {
-            res.push(styles.forecastButtonItemSelected);
-        } else {
-            res.push(styles.forecastButtonItem);
-        }
-        return res.join(' ');
-    }
-
-    function setForecastButtonIconStyles(item, disabled) {
-        const res = [];
-        if (item.key === currentWeatherType) {
-            res.push(styles.forecastButtonItemIconSelected);
-        } else {
-            res.push(styles.forecastButtonItemIcon);
-        }
-        if (disabled) {
-            res.push(styles.disabled);
-        }
-        return res.join(' ');
-    }
-
     const ForecastButtonItem = ({ item, index }) => {
         const disabled = ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
+        const selected = item.key === currentWeatherType;
+
         return (
-            <Button
-                key={index}
-                className={setForecastButtonStyles(item)}
+            <SquareIconBtn
+                index={index}
+                icon={item.icon}
+                selected={selected}
                 disabled={disabled}
                 onClick={() => {
                     setCurrentWeatherType(item.key);
@@ -228,9 +209,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     updateQueryParam(FORECAST_TYPE_PARAM, item.key);
                     openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
                 }}
-            >
-                <Icon className={setForecastButtonIconStyles(item, disabled)}>{item.icon}</Icon>
-            </Button>
+            />
         );
     };
 
