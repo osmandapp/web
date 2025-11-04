@@ -21,6 +21,7 @@ import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import SortFilesButton from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
 export default function GroupHeader({
     type,
@@ -188,11 +189,8 @@ export default function GroupHeader({
                             placement="bottom-end"
                         >
                             <span>
-                                <IconButton
+                                <ActionIconBtn
                                     id={'se-create-new-route'}
-                                    variant="contained"
-                                    type="button"
-                                    className={styles.appBarIcon}
                                     onClick={() =>
                                         confirm({
                                             ctx,
@@ -202,9 +200,8 @@ export default function GroupHeader({
                                             callback: () => TracksManager.createTrack(ctx),
                                         })
                                     }
-                                >
-                                    <AddTrackIcon />
-                                </IconButton>
+                                    icon={<AddTrackIcon />}
+                                />
                             </span>
                         </Tooltip>
                     )}
