@@ -102,6 +102,13 @@
     }
 }
 
+.clearIconWrapper {
+    opacity: 0.5 !important;
+    &:hover {
+        opacity: 1 !important;
+    }
+}
+
 .actionIcon {
     padding: 6px !important;
     color: var(--svg-icon-color) !important;

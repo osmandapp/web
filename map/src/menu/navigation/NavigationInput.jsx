@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TextField, InputAdornment, Box } from '@mui/material';
 import { ReactComponent as MoveIcon } from '../../assets/icons/ic_action_item_move.svg';
+import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_cancel.svg';
 import styles from './routemenu.module.css';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
 export default function NavigationInput({
     value,
@@ -14,6 +16,7 @@ export default function NavigationInput({
     showDragHandle = true,
 }) {
     const [inputValue, setInputValue] = useState(value || '');
+    const [isFocused, setIsFocused] = useState(false);
     const isFocusedRef = useRef(false);
 
     useEffect(() => {
@@ -32,10 +35,14 @@ export default function NavigationInput({
 
     const handleFocus = () => {
         isFocusedRef.current = true;
+        setIsFocused(true);
     };
 
     const handleBlur = (e) => {
-        isFocusedRef.current = false;
+        setTimeout(() => {
+            isFocusedRef.current = false;
+            setIsFocused(false);
+        }, 100);
         if (onBlur) {
             onBlur(e.target.value);
         }
@@ -44,6 +51,17 @@ export default function NavigationInput({
     const handleKeyDown = (e) => {
         if (onKeyDown) {
             onKeyDown(e);
+        }
+    };
+
+    const handleClear = (e) => {
+        e.stopPropagation();
+        setInputValue('');
+        if (onChange) {
+            onChange('');
+        }
+        if (onBlur) {
+            onBlur('');
         }
     };
 
@@ -60,10 +78,19 @@ export default function NavigationInput({
             fullWidth
             InputProps={{
                 startAdornment: icon && <InputAdornment position="start">{icon}</InputAdornment>,
-                endAdornment: showDragHandle && (
+                endAdornment: (
                     <InputAdornment position="end">
-                        <Box className={styles.dragHandleInline}>
-                            <MoveIcon />
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                            {isFocused && inputValue && (
+                                <Box className={styles.clearIconWrapper}>
+                                    <ActionIconBtn icon={<ClearIcon />} onClick={handleClear} />
+                                </Box>
+                            )}
+                            {showDragHandle && (
+                                <Box className={styles.dragHandleInline}>
+                                    <MoveIcon />
+                                </Box>
+                            )}
                         </Box>
                     </InputAdornment>
                 ),
