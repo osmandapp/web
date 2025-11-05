@@ -198,7 +198,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 ![Grid for buttons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
 
-![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
@@ -206,7 +206,7 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 ![Grid for buttons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
 
-![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
