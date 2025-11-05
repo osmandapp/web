@@ -403,11 +403,19 @@ Use sorting options to organize map data:
 
 Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
 
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
+You can also manage maps directly from the Updates tab using a long-press gesture on any listed map. This opens a context menu that provides several options:
+- **Info** — view details about the selected map
+- **Update** — download the latest version available
+- **Deactivate** — temporarily disable a map without removing its data
+- **Remove** — completely delete the map data from the device
+
+When a map is deactivated, it may temporarily disappear from the Local tab. If an update becomes available for a deactivated map, it will still appear in the Updates list and be shown with a grey icon. Updating such a map will automatically activate it again.
 
 </TabItem>
 
