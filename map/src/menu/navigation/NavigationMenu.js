@@ -17,9 +17,6 @@ import {
     TextField,
     AppBar,
     Toolbar,
-    Menu,
-    ListItemIcon,
-    ListItemText,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -42,13 +39,14 @@ import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
 import { useTranslation } from 'react-i18next';
 import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
+import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
 const StyledInput = styled('input')({
     display: 'none',
 });
 
-const DEFAULT_VISIBLE_PROFILES = ['car', 'bicycle', 'pedestrian', 'line'];
+const DEFAULT_VISIBLE_PROFILES = ['car', 'bicycle', 'pedestrian', 'motorcycle'];
 const MAX_VISIBLE_PROFILES = 4;
 
 export function formatRouteInfo(props, ctx) {
@@ -476,52 +474,12 @@ export default function NavigationMenu() {
                         setResetSettings={setResetSettings}
                     />
                 )}
-                <Menu
+                <ProfilesMenu
                     anchorEl={profilesMenuAnchor}
-                    open={Boolean(profilesMenuAnchor)}
                     onClose={() => setProfilesMenuAnchor(null)}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'right',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    slotProps={{
-                        paper: {
-                            sx: {
-                                mt: '5px',
-                            },
-                        },
-                    }}
-                >
-                    {routeObject
-                        .listProfiles()
-                        .filter(({ key }) => !visibleProfiles.includes(key))
-                        .map(({ key, name, icon, color }) => (
-                            <MenuItem
-                                key={key}
-                                selected={routeObject.getProfile().profile === key}
-                                onClick={() => {
-                                    handleProfileSelect(key);
-                                    setProfilesMenuAnchor(null);
-                                }}
-                            >
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 40,
-                                        '& svg, & path': {
-                                            fill: color || 'var(--selected-color)',
-                                        },
-                                    }}
-                                >
-                                    {icon}
-                                </ListItemIcon>
-                                <ListItemText primary={name} />
-                            </MenuItem>
-                        ))}
-                </Menu>
+                    onProfileSelect={handleProfileSelect}
+                    routeObject={routeObject}
+                />
             </Box>
         </Box>
     );
