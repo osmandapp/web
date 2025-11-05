@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
-import { RemoveCircle, Clear } from '@mui/icons-material';
+import { RemoveCircle } from '@mui/icons-material';
 import {
     MenuItem,
     IconButton,
@@ -14,19 +14,12 @@ import {
     Box,
     Grid,
     ButtonGroup,
-    TextField,
     AppBar,
     Toolbar,
     Tooltip,
 } from '@mui/material';
-import AppContext, {
-    isLocalTrack,
-    isCloudTrack,
-    isRouteTrack,
-    OBJECT_TYPE_NAVIGATION_TRACK,
-} from '../../context/AppContext';
+import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
 import RouteProfileSettings from './RouteProfileSettings';
-import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import i18n from 'i18next';
@@ -42,6 +35,7 @@ import { useTranslation } from 'react-i18next';
 import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import NavigationPointsManager from './NavigationPointsManager';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -75,13 +69,6 @@ export function formatRouteInfo(props, ctx) {
     return <span id="se-route-info">{res}</span>;
 }
 
-export function formatLatLon(pnt) {
-    if (!pnt) {
-        return '';
-    }
-    return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
-}
-
 export default function NavigationMenu() {
     const ctx = useContext(AppContext);
 
@@ -91,14 +78,8 @@ export default function NavigationMenu() {
 
     const routeObject = ctx.routeObject;
 
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints');
     const avoidRoads = routeObject.getOption('route.points.avoidRoads');
 
-    const [open, setOpen] = useState(false);
-    const [start, setStart] = useState('');
-    const [finish, setFinish] = useState('');
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
 
@@ -106,18 +87,6 @@ export default function NavigationMenu() {
 
     const [profilesMenuAnchor, setProfilesMenuAnchor] = useState(null);
     const [visibleProfiles, setVisibleProfiles] = useState(ctx.routeVisibleProfiles || DEFAULT_VISIBLE_PROFILES);
-
-    // auto switch between Navigation/Tracks menu
-    // additionally, conceal route track from the map
-    // additionally, trigger fitBounds (zoom) on route track open
-    useEffect(() => {
-        if (isRouteTrack(ctx)) {
-            setOpen(true);
-            routeObject.setOption('route.map.zoom', true);
-        } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
-            setOpen(false);
-        }
-    }, [ctx.currentObjectType]);
 
     useEffect(() => {
         openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();
@@ -131,45 +100,7 @@ export default function NavigationMenu() {
         }
     }, [ctx.routeTrackFile]);
 
-    useEffect(() => {
-        if ((startPoint || finishPoint) && !open) {
-            setOpen(true);
-        }
-        if (startPoint && typeof startPoint == 'object') {
-            setStart(formatLatLon(startPoint));
-        }
-        if (finishPoint && typeof finishPoint == 'object') {
-            setFinish(formatLatLon(finishPoint));
-        }
-    }, [startPoint, finishPoint]);
-
-    function handleCoord(e, setPoint) {
-        const latlon = getCoord(e.target.value);
-        if (latlon) {
-            setPoint(latlon);
-        }
-    }
-
-    function getCoord(value) {
-        const coords = value.trim().split(/[, ]+/);
-        if (coords.length === 2) {
-            let lat = coords[0];
-            let lng = coords[1];
-            if (lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180) {
-                return new LatLng(lat, lng);
-            }
-        }
-    }
-
-    function keyPress(e, setPoint) {
-        const TAB = 9;
-        const ENTER = 13;
-        if (e.keyCode === TAB || e.keyCode === ENTER) {
-            handleCoord(e, setPoint);
-        }
-    }
-
-    const { type, profile } = routeObject.getProfile();
+    const { type } = routeObject.getProfile();
 
     const routeOptions =
         ctx.develFeatures && type === 'osrm'
@@ -189,14 +120,12 @@ export default function NavigationMenu() {
     }
 
     function close() {
-        setStart('');
-        setFinish('');
         routeObject.setOption('route.points.start', null);
         routeObject.setOption('route.points.finish', null);
         routeObject.setOption('route.points.viaPoints', []);
         routeObject.setOption('route.points.avoidRoads', []);
+
         setResetSettings(true);
-        setOpen(false);
         closeHeader({ ctx });
     }
 
@@ -265,120 +194,12 @@ export default function NavigationMenu() {
                         </Box>
                     </Tooltip>
                 </Box>
+                <NavigationPointsManager routeObject={routeObject} />
                 {routeObject.getRouteProps() && (
                     <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
                         <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
                     </MenuItem>
                 )}
-                <MenuItem
-                    key="start"
-                    sx={{
-                        ml: 1,
-                        mr: 2,
-                        mt: 1,
-                        '& .MuiFilledInput-root': {
-                            background: '#aad3df',
-                        },
-                    }}
-                    disableRipple={true}
-                >
-                    <FormControl fullWidth>
-                        <TextField
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            onChange={(e) => {
-                                setStart(e.target.value);
-                            }}
-                            id="se-route-start-point"
-                            labelid="start-point-label"
-                            variant="filled"
-                            label="Start"
-                            onKeyDown={(e) =>
-                                keyPress(e, (point) => routeObject.setOption('route.points.start', point))
-                            }
-                            value={start}
-                        ></TextField>
-                    </FormControl>
-                    <IconButton
-                        sx={{ ml: 1 }}
-                        id="se-clear-route-start-point"
-                        onClick={() => {
-                            setStart('');
-                            routeObject.setOption('route.points.start', null);
-                            routeObject.resetRoute();
-                        }}
-                    >
-                        <Clear fontSize="small" />
-                    </IconButton>
-                </MenuItem>
-                {viaPoints.map((item, ind) => (
-                    <MenuItem key={'via' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                        <FormControl fullWidth>
-                            <TextField
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                                labelid="via-point-label"
-                                label={'Via ' + (ind + 1)}
-                                variant="filled"
-                                value={formatLatLon(item)}
-                            ></TextField>
-                        </FormControl>
-                        <IconButton
-                            sx={{ ml: 1 }}
-                            onClick={() => {
-                                const newViaPoints = Object.assign([], viaPoints);
-                                newViaPoints.splice(ind, 1);
-                                routeObject.setOption('route.points.viaPoints', newViaPoints);
-                            }}
-                        >
-                            <RemoveCircle fontSize="small" />
-                        </IconButton>
-                    </MenuItem>
-                ))}
-                <MenuItem
-                    key="finish"
-                    sx={{
-                        ml: 1,
-                        mr: 2,
-                        mt: 1,
-                        '& .MuiFilledInput-root': {
-                            background: '#ebdbe8',
-                        },
-                    }}
-                    disableRipple={true}
-                >
-                    <FormControl fullWidth>
-                        <TextField
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            onChange={(e) => {
-                                setFinish(e.target.value);
-                            }}
-                            id="se-route-finish-point"
-                            labelid="finish-point-label"
-                            variant="filled"
-                            label="Finish"
-                            onKeyDown={(e) =>
-                                keyPress(e, (point) => routeObject.setOption('route.points.finish', point))
-                            }
-                            value={finish}
-                        ></TextField>
-                    </FormControl>
-                    <IconButton
-                        sx={{ ml: 1 }}
-                        id="se-clear-route-finish-point"
-                        onClick={() => {
-                            setFinish('');
-                            routeObject.setOption('route.points.finish', null);
-                            routeObject.resetRoute();
-                        }}
-                    >
-                        <Clear fontSize="small" />
-                    </IconButton>
-                </MenuItem>
                 {avoidRoads.map((item, ind) => (
                     <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                         <FormControl fullWidth>
