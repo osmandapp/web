@@ -178,6 +178,10 @@ Read more in the [**Custom package**](../plugins/custom) article.
 
 For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download.
 
+Bulk loading is also available for several large countries that include multiple states or administrative regions.
+- Supported countries: USA, United Kingdom, Australia.
+- Supported map types: Standard map, Contour lines, Wikipedia, Terrain.
+
 
 ## Local Menu {#local-menu}
 

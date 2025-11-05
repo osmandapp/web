@@ -226,6 +226,8 @@ In the download forecast menu, you can obtain information and set parameters to 
 - **Remove** *trash can* button (*Android*) / **Remove forecast** (*iOS*). Allows you to delete all forecast data for this region.
 - **Edit** *pencil* button (*Android*). Allows you to rename the weather file.
 
+**Note:** Some countries, such as the USA and Canada, use a single Offline Forecast file for the entire country. This reduces the number of downloads and simplifies weather data management.
+
 :::info  
 Weather data is updated every 6 hours (all 4 updates from [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) and 3 from [ECMWF](https://www.ecmwf.int/)) and becomes available in OsmAnd with a short delay, as the computation process takes several hours before release (usually around 07:00 UTC).  
 :::
