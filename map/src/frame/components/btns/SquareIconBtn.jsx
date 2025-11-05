@@ -8,7 +8,7 @@ export default function SquareIconBtn({
     onClick,
     icon,
     selected = false,
-    iconColor = 'var(--selected-color)',
+    iconColor = 'var(--svg-icon-color)',
     selectedIconColor = 'var(--text-primary)',
     borderColor = '#cccccc',
     selectedBorderColor = 'var(--selected-color)',
