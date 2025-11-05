@@ -199,6 +199,17 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleDragStart = (index) => (e) => {
+        // Remove empty intermediate inputs before dragging
+        const nonEmptyIntermediates = intermediates.filter((val) => val && val.trim() !== '');
+        if (nonEmptyIntermediates.length !== intermediates.length) {
+            setIntermediates(nonEmptyIntermediates);
+            // Also clean up viaPoints
+            const cleanViaPoints = viaPoints ? viaPoints.filter((p) => p !== null) : [];
+            if (cleanViaPoints.length !== (viaPoints ? viaPoints.length : 0)) {
+                routeObject.setOption('route.points.viaPoints', cleanViaPoints);
+            }
+        }
+
         setDraggedIndex(index);
         e.dataTransfer.effectAllowed = 'move';
     };
