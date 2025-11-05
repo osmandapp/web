@@ -118,6 +118,8 @@ Choose your OBD-II device from the list and establish the connection.
 - **Rename**. Lets you assign a custom name to the sensor for easier identification.
 - **Forget**. Removes the previously paired OBD-II sensor from the list, requiring re-pairing if needed later.
 
+**Reconnect behavior** *(Android only)***:** OsmAnd automatically attempts to reconnect to the OBD-II adapter when the application is started, when navigation is started, or when Android Auto is launched. If a connection is unavailable, Vehicle Metrics widgets display “–”. A single tap on any Vehicle Metrics widget will attempt to reconnect to the sensor. If the sensor is already connected, the tap switches widget display modes as usual.
+
 
 ## Metrics List {#metrics-list}
 
