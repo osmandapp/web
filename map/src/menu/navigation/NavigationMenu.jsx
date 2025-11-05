@@ -210,17 +210,21 @@ export default function NavigationMenu() {
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
-            <AppBar position="static" className={headerStyles.appbar}>
+            <AppBar
+                position="static"
+                className={headerStyles.appbar}
+                sx={{ boxShadow: 'none !important', borderBottom: 'none !important' }}
+            >
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton variant="contained" type="button" className={headerStyles.appBarIcon} onClick={close}>
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        {t('shared_string_navigation')}
+                        {t('web:navigation_menu_title')}
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box className={gStyles.scrollActiveBlock} sx={{ mt: 1 }}>
+            <Box className={gStyles.scrollActiveBlock} sx={{ pt: 0, mt: 0 }}>
                 <Box className={styles.profileButtonBox}>
                     {visibleProfiles.map((key) => {
                         const profile = routeObject.listProfiles().find((p) => p.key === key);
