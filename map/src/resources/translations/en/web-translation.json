@@ -202,5 +202,6 @@
   "download_track" : "Download track",
   "download_track_desc" : "You can download the track with full data, including navigation instructions, or a simplified version suitable for use with other apps.",
   "download_track_full" : "Full track data",
-  "download_track_simplified" : "Simplified track"
+  "download_track_simplified" : "Simplified track",
+  "navigation_menu_title" : "Route"
 }
