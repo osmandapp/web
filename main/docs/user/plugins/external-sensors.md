@@ -240,6 +240,8 @@ Supported widget types:
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – current ambient temperature.
 7. **Battery Level** – percentage of battery remaining in a connected BLE sensor, switch it in **Sensor settings**.
 
+**Note:** If a sensor temporarily disconnects, tap its widget on the map to immediately attempt reconnection — no need to open the External Sensors menu.
+
 
 ### Widget Settings {#widget-settings}
 
