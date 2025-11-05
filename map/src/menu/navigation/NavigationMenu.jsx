@@ -17,6 +17,7 @@ import {
     TextField,
     AppBar,
     Toolbar,
+    Tooltip,
 } from '@mui/material';
 import AppContext, {
     isLocalTrack,
@@ -252,13 +253,17 @@ export default function NavigationMenu() {
                             backgroundColor: '#E6E6E6',
                         }}
                     />
-                    <ActionIconBtn
-                        size={'36px'}
-                        icon={<SettingsIcon />}
-                        onClick={() => {
-                            setOpenSettings(true);
-                        }}
-                    />
+                    <Tooltip title={t('shared_string_settings')} arrow>
+                        <Box>
+                            <ActionIconBtn
+                                size={'36px'}
+                                icon={<SettingsIcon />}
+                                onClick={() => {
+                                    setOpenSettings(true);
+                                }}
+                            />
+                        </Box>
+                    </Tooltip>
                 </Box>
                 {routeObject.getRouteProps() && (
                     <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
