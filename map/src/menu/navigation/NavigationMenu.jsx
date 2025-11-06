@@ -173,7 +173,8 @@ export default function NavigationMenu() {
                         if (!profile) return null;
                         return (
                             <SquareIconBtn
-                                key={key}
+                                index={key}
+                                id={`se-route-profile-${key}`}
                                 icon={profile.icon}
                                 selected={routeObject.getProfile().profile === key}
                                 selectedBorderColor={profile.color}
@@ -183,6 +184,7 @@ export default function NavigationMenu() {
                     })}
                     <SquareIconBtn
                         key={'dots'}
+                        id="se-route-profile-dots"
                         icon={<DotsIcon />}
                         onClick={(e) => setProfilesMenuAnchor(e.currentTarget)}
                     />

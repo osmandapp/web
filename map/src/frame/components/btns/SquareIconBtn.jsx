@@ -4,6 +4,7 @@ import styles from './buttons.module.css';
 
 export default function SquareIconBtn({
     index,
+    id,
     disabled = false,
     onClick,
     icon,
@@ -16,6 +17,7 @@ export default function SquareIconBtn({
     return (
         <Button
             key={index}
+            id={id}
             className={`${styles.squareIconBtn} ${selected ? styles.selected : ''}`}
             disabled={disabled}
             onClick={onClick}
