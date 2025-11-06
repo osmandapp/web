@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import NavigationInput from './NavigationInput';
 import { ReactComponent as StartIcon } from '../../assets/icons/list_startpoint.svg';
@@ -21,12 +21,13 @@ export default function NavigationInputRow({
     onSwap,
     onAdd,
     onRemove,
-    draggable = true,
     onDragStart,
     onDragOver,
     onDrop,
     onDragEnd,
 }) {
+    const [isDraggable, setIsDraggable] = useState(false);
+
     const showSwap = type === 'start';
     const showRemove = type === 'intermediate';
     const showAdd = type === 'finish';
@@ -44,14 +45,30 @@ export default function NavigationInputRow({
         }
     };
 
+    const handleDragHandleMouseDown = () => {
+        setIsDraggable(true);
+    };
+
+    const handleDragEnd = (e) => {
+        setIsDraggable(false);
+        if (onDragEnd) {
+            onDragEnd(e);
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsDraggable(false);
+    };
+
     return (
         <Box
             className={styles.navigationInputRow}
-            draggable={draggable}
+            draggable={isDraggable}
             onDragStart={onDragStart}
             onDragOver={onDragOver}
             onDrop={onDrop}
-            onDragEnd={onDragEnd}
+            onDragEnd={handleDragEnd}
+            onMouseUp={handleMouseUp}
         >
             <Box className={styles.inputContainer}>
                 <NavigationInput
@@ -62,7 +79,8 @@ export default function NavigationInputRow({
                     onBlur={onBlur}
                     onKeyDown={onKeyDown}
                     focused={focused}
-                    showDragHandle={draggable}
+                    showDragHandle={true}
+                    onDragHandleMouseDown={handleDragHandleMouseDown}
                 />
             </Box>
             <Box className={styles.actionButtons}>
