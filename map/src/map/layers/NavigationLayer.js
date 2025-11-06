@@ -330,6 +330,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={startPointRef}
                     draggable={true}
                     eventHandlers={startEventHandlers}
+                    zIndexOffset={1000}
                 />
             )}
             {viaPoints.map((it, ind) => (
@@ -341,6 +342,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     icon={MarkerOptions.options.interIcon}
                     draggable={true}
                     eventHandlers={intermediateEventHandlers}
+                    zIndexOffset={1000}
                 />
             ))}
             {finishPoint && (
@@ -351,6 +353,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={finishPointRef}
                     draggable={true}
                     eventHandlers={endEventHandlers}
+                    zIndexOffset={1000}
                 />
             )}
             {ctx.pinPoint && (
