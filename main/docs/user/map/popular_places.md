@@ -168,6 +168,8 @@ Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), wh
 
 This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
+Images viewed online are automatically cached for offline access. Cached photos display a small offline badge in the corner. The preview grid adapts to the screen size on iPadOS and macOS, ensuring comfortable image layout on larger displays. OsmAnd also avoids triggering repeated network requests when the Online Photos section is closed, and cancels previous requests when switching quickly between different POIs.
+
 Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
 
@@ -190,6 +192,8 @@ In the Map Context menu How to access:
 
 - Tap any photo to view it in [full screen](#gallery) and access the available actions:  
   **Share**, **Details**, **Open in browser**, and **Download**.
+
+**Note:** Download saves the image to the device’s storage for permanent offline use, while cached photos are stored automatically and available offline only within the app.
 
 
 ### Gallery {#gallery}
