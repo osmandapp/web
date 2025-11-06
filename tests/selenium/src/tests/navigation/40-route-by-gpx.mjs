@@ -24,12 +24,6 @@ export default async function test() {
     await enclose(uploader, { tag: 'upload gpx' });
     await navigateHash(GO_CENTER_HASH);
 
-    // validate start, end points, and profiles
-    await validateRouteInfo('car', CAR);
-    await validateRouteInfo('bicycle', BIKE);
-    await validateRouteInfo('pedestrian', FOOT);
-
-    // wait for and close info-block (optional)
     // match coordinates of start/finish points
     await enclose(
         async () => {
@@ -41,6 +35,9 @@ export default async function test() {
         },
         { tag: 'check-start-finish' }
     );
+    await validateRouteInfo('car', CAR);
+    await validateRouteInfo('bicycle', BIKE);
+    await validateRouteInfo('pedestrian', FOOT, true);
 }
 
 const uploader = async () => {
@@ -49,27 +46,14 @@ const uploader = async () => {
     return true;
 };
 
-const validateRouteInfo = async (profile, km) => {
-    // clickBy() seems unstable with MUI <Select>
-    // await clickBy(By.id('se-route-select')); // <Select> list is not always open
-    // await clickBy(By.id('se-route-profile-' + profile)); // often failed on waitBy()
-
-    // enclose-wrapper
-    // wait for success click
-    const clicker = async () => {
-        await clickBy(By.id('se-button-back'), { optional: true });
-        await clickBy(By.id('se-route-select'), { optional: true });
-        const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
-
-        // clickBy (optional) might return true when the element was not found
-        if (clicked && clicked !== true) {
-            return clicked;
-        }
-
-        return false;
-    };
-
-    await enclose(clicker, { tag: 'clicker ' });
-
-    await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
+const validateRouteInfo = async (profile, km, fromMenu = false) => {
+    if (fromMenu) {
+        await clickBy(By.id('se-route-profile-dots'));
+        await waitBy(By.id('se-route-profile-menu-' + profile));
+        await clickBy(By.id('se-route-profile-menu-' + profile));
+    } else {
+        await waitBy(By.id('se-route-profile-' + profile));
+        await clickBy(By.id('se-route-profile-' + profile));
+    }
+    await matchTextBy(By.id('se-route-info'), km);
 };

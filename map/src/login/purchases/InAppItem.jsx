@@ -23,9 +23,7 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
             onClick={onClick}
             divider
         >
-            <ListItemIcon className={styles.icon}>
-                {icon}
-            </ListItemIcon>
+            <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>
             <ListItemText>
                 <Typography className={loginStyles.purchaseName} noWrap>
                     {name}

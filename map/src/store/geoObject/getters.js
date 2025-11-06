@@ -1,4 +1,5 @@
 import md5 from 'blueimp-md5';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../geoRouter/profileConstants';
 
 export function getTrack() {
     return this.track;
@@ -27,5 +28,5 @@ export function getRouteEffectDeps() {
 }
 
 export function isRouteReadyToCalc() {
-    return this.getOption('route.points.start') && this.getOption('route.points.finish');
+    return this.getOption(ROUTE_POINTS_START) && this.getOption(ROUTE_POINTS_FINISH);
 }

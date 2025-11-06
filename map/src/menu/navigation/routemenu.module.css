@@ -3,3 +3,132 @@
     margin-left: 12px !important;
     text-align: 'center' !important;
 }
+.profileButtonBox {
+    display: flex !important;
+    padding: 4px 10px 16px 16px !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.navigationInput {
+    width: 100% !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root) {
+    padding: 10px 12px !important;
+    background-color: #f5f5f5 !important;
+    border-radius: 4px !important;
+    height: 48px !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root:hover) :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: #e0e0e0 !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: var(--selected-color) !important;
+    border-width: 2px !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: #e0e0e0 !important;
+}
+
+.navigationInput :global(.MuiInputAdornment-positionStart) {
+    margin-right: 8px !important;
+}
+
+.navigationInput :global(.MuiInputAdornment-positionEnd) {
+    margin-left: 8px !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-input) {
+    padding: 0 !important;
+}
+
+.inputField {
+    overflow: hidden !important;
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    text-overflow: ellipsis !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.navigationInputRow {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.inputContainer {
+    flex: 1 !important;
+}
+
+.actionButtons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.dragHandle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: grab !important;
+    padding: 6px !important;
+    color: var(--svg-icon-color) !important;
+    &:hover {
+        color: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+    &:active {
+        cursor: grabbing !important;
+    }
+}
+
+.dragHandleInline {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: grab !important;
+    color: var(--svg-icon-color) !important;
+    &:active {
+        cursor: grabbing !important;
+    }
+}
+
+.clearIconWrapper {
+    opacity: 0.5 !important;
+    &:hover {
+        opacity: 1 !important;
+    }
+}
+
+.actionIcon {
+    padding: 6px !important;
+    color: var(--svg-icon-color) !important;
+    &:hover {
+        color: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+
+.pointsContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 4px 10px 16px 16px !important;
+    gap: 1px !important;
+}
+
+.dropIndicator {
+    height: 2px !important;
+    background-color: #f8931d !important;
+    border-radius: 1px !important;
+    margin: 4px 0 !important;
+    margin-right: 48px !important;
+}

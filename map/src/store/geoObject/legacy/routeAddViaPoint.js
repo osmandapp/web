@@ -1,4 +1,5 @@
 import Utils from '../../../util/Utils';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../geoRouter/profileConstants';
 
 /**
  * Add (Shift/Push/Insert) new Inter-point.
@@ -24,9 +25,9 @@ export function routeAddViaPoint({ ll } = {}) {
                 if inter is closer to end, add before inter
     */
 
-    const startPoint = this.getOption('route.points.start');
-    const finishPoint = this.getOption('route.points.finish');
-    const viaPoints = this.getOption('route.points.viaPoints');
+    const startPoint = this.getOption(ROUTE_POINTS_START);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
     let newViaPoints = Object.assign([], viaPoints);
     let minInd = -1;
@@ -47,7 +48,7 @@ export function routeAddViaPoint({ ll } = {}) {
         newViaPoints.splice(minInd, 0, ll);
     }
 
-    this.setOption('route.points.viaPoints', newViaPoints);
+    this.setOption(ROUTE_POINTS_VIA, newViaPoints);
 }
 
 function dist(a1, a2) {

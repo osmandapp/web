@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
 import { apiGet } from '../../util/HttpApi';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../store/geoRouter/profileConstants';
 import styles from '../map.module.css';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -85,8 +86,8 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const routeObject = ctx.routeObject;
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
+    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
 
     function navigateSetStartOrFinish({ latlng, target }) {
         confirm({
@@ -95,7 +96,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             callback: () => {
                 routeObject.setOption(target, latlng);
             },
-            skip: !routeObject.getOption('route.points.start') || !routeObject.getOption('route.points.finish'),
+            skip: !routeObject.getOption(ROUTE_POINTS_START) || !routeObject.getOption(ROUTE_POINTS_FINISH),
         });
     }
 
@@ -298,7 +299,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                         });
                                     } else {
                                         ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
-                                        navigateSetStartOrFinish({ latlng, target: 'route.points.start' });
+                                        navigateSetStartOrFinish({ latlng, target: ROUTE_POINTS_START });
                                     }
                                 })
                             }
@@ -341,7 +342,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                         });
                                     } else {
                                         ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
-                                        navigateSetStartOrFinish({ latlng, target: 'route.points.finish' });
+                                        navigateSetStartOrFinish({ latlng, target: ROUTE_POINTS_FINISH });
                                     }
                                 })
                             }

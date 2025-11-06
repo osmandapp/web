@@ -1,7 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import { enclose, clickBy, sendKeysBy, matchTextBy, navigateHash } from '../../lib.mjs';
+import { clickBy, sendKeysBy, matchTextBy, matchValueBy, navigateHash } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -47,18 +47,29 @@ export default async function test() {
 
     await clickBy(By.id('se-show-menu-navigation'));
 
-    for await (const { zoom, type, profile, check, A, B } of routes) {
+    for (const { zoom, profile, check, A, B } of routes) {
         await goCenter({ A, B, zoom });
 
-        await clickBy(By.id('se-clear-route-start-point'));
-        await clickBy(By.id('se-clear-route-finish-point'));
+        await selectProfile({ profile });
 
-        await selectProfile({ type, profile });
+        await clickBy(By.id('se-route-start-point'));
+        await clickBy(By.id('se-route-start-point-clear'), { optional: true });
+
+        await clickBy(By.id('se-route-finish-point'));
+        await clickBy(By.id('se-route-finish-point-clear'), { optional: true });
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
+
         await clickBy(By.id('se-button-back'), { optional: true });
         await matchTextBy(By.id('se-route-info'), check);
+
+        // swap button for last route
+        if (profile === routes.at(-1).profile) {
+            await clickBy(By.id('se-route-start-point-swap'));
+            await matchValueBy(By.id('se-route-start-point'), B);
+            await matchValueBy(By.id('se-route-finish-point'), A);
+        }
 
         await actionIdleWait();
     }
@@ -66,21 +77,13 @@ export default async function test() {
     await actionFinish();
 }
 
-// { type, profile } note: type support later
 export async function selectProfile({ profile }) {
-    const clicker = async () => {
-        await clickBy(By.id('se-route-select'), { optional: true });
-        const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
+    const profileButton = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
 
-        // clickBy (optional) might return true when the element was not found
-        if (clicked && clicked !== true) {
-            return clicked;
-        }
-
-        return false;
-    };
-
-    await enclose(clicker);
+    if (!profileButton || profileButton === true) {
+        await clickBy(By.id('se-route-profile-dots'));
+        await clickBy(By.id('se-route-profile-menu-' + profile));
+    }
 }
 
 async function goCenter({ A, B, zoom }) {

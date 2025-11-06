@@ -4,6 +4,12 @@ import L from 'leaflet';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_AVOID_ROADS,
+} from '../../store/geoRouter/profileConstants';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -62,10 +68,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     const routeObject = ctx.routeObject;
 
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints');
-    const avoidRoads = routeObject.getOption('route.points.avoidRoads');
+    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA);
+    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
 
     let timer = null;
     function debouncer(f) {
@@ -85,7 +91,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             drag() {
                 const marker = startPointRef.current;
                 if (marker != null) {
-                    debouncer(() => routeObject.setOption('route.points.start', marker.getLatLng()));
+                    debouncer(() => routeObject.setOption(ROUTE_POINTS_START, marker.getLatLng()));
                 }
             },
             dragstart() {
@@ -95,7 +101,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 routeObject.onDragEnd();
                 const marker = startPointRef.current;
                 if (marker != null) {
-                    routeObject.setOption('route.points.start', marker.getLatLng());
+                    routeObject.setOption(ROUTE_POINTS_START, marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
@@ -111,7 +117,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             drag() {
                 const marker = finishPointRef.current;
                 if (marker != null) {
-                    debouncer(() => routeObject.setOption('route.points.finish', marker.getLatLng()));
+                    debouncer(() => routeObject.setOption(ROUTE_POINTS_FINISH, marker.getLatLng()));
                 }
             },
             dragstart() {
@@ -121,7 +127,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 routeObject.onDragEnd();
                 const marker = finishPointRef.current;
                 if (marker != null) {
-                    routeObject.setOption('route.points.finish', marker.getLatLng());
+                    routeObject.setOption(ROUTE_POINTS_FINISH, marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
@@ -152,7 +158,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     const ind = event.target.options['data-index'];
                     const newViaPoints = Object.assign([], viaPoints);
                     newViaPoints[ind] = event.target.getLatLng();
-                    routeObject.setOption('route.points.viaPoints', newViaPoints);
+                    routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
                 });
             },
             dragstart() {
@@ -163,7 +169,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 const ind = event.target.options['data-index'];
                 const newViaPoints = Object.assign([], viaPoints);
                 newViaPoints[ind] = event.target.getLatLng();
-                routeObject.setOption('route.points.viaPoints', newViaPoints);
+                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
             },
         },
         [viaPoints]
@@ -189,7 +195,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 window['addAvoidRoadId' + id] = () => {
                     const newAvoidRoads = Object.assign([], avoidRoads);
                     newAvoidRoads.push({ id, name });
-                    routeObject.setOption('route.points.avoidRoads', newAvoidRoads);
+                    routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
                 };
 
                 desc = `${desc}.
@@ -330,6 +336,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={startPointRef}
                     draggable={true}
                     eventHandlers={startEventHandlers}
+                    zIndexOffset={1000}
                 />
             )}
             {viaPoints.map((it, ind) => (
@@ -341,6 +348,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     icon={MarkerOptions.options.interIcon}
                     draggable={true}
                     eventHandlers={intermediateEventHandlers}
+                    zIndexOffset={1000}
                 />
             ))}
             {finishPoint && (
@@ -351,6 +359,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={finishPointRef}
                     draggable={true}
                     eventHandlers={endEventHandlers}
+                    zIndexOffset={1000}
                 />
             )}
             {ctx.pinPoint && (
