@@ -14,6 +14,7 @@ export default function NavigationInput({
     onKeyDown,
     focused,
     showDragHandle = true,
+    onDragHandleMouseDown,
 }) {
     const [inputValue, setInputValue] = useState(value || '');
     const [isFocused, setIsFocused] = useState(false);
@@ -87,7 +88,7 @@ export default function NavigationInput({
                                 </Box>
                             )}
                             {showDragHandle && (
-                                <Box className={styles.dragHandleInline}>
+                                <Box className={styles.dragHandleInline} onMouseDown={onDragHandleMouseDown}>
                                     <MoveIcon />
                                 </Box>
                             )}

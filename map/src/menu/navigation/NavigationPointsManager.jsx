@@ -258,7 +258,6 @@ export default function NavigationPointsManager({ routeObject }) {
                 onKeyDown={(e) => handleKeyPress(e, (val) => handleStartBlur(val))}
                 type="start"
                 onSwap={handleSwap}
-                draggable={true}
                 onDragStart={handleDragStart(0)}
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
@@ -280,7 +279,6 @@ export default function NavigationPointsManager({ routeObject }) {
                         onKeyDown={(e) => handleKeyPress(e, (val) => handleIntermediateBlur(index, val))}
                         type="intermediate"
                         onRemove={() => handleRemoveIntermediate(index)}
-                        draggable={true}
                         onDragStart={handleDragStart(index + 1)}
                         onDragOver={handleDragOver(index + 1)}
                         onDrop={handleDrop(index + 1)}
@@ -304,7 +302,6 @@ export default function NavigationPointsManager({ routeObject }) {
                 onKeyDown={(e) => handleKeyPress(e, (val) => handleFinishBlur(val))}
                 type="finish"
                 onAdd={handleAddIntermediate}
-                draggable={true}
                 onDragStart={handleDragStart(intermediates.length + 1)}
                 onDragOver={handleDragOver(intermediates.length + 1)}
                 onDrop={handleDrop(intermediates.length + 1)}
