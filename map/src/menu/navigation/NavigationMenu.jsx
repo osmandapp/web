@@ -130,6 +130,12 @@ export default function NavigationMenu() {
     }
 
     function handleProfileSelect(profileKey) {
+        if (visibleProfiles.includes(profileKey)) {
+            routeObject.onRouterProfileSelected({ profile: profileKey });
+            return;
+        }
+
+        // Move to first position
         const newVisibleProfiles = visibleProfiles.filter((key) => key !== profileKey);
         newVisibleProfiles.unshift(profileKey);
         const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
