@@ -90,7 +90,7 @@ export default function NavigationInputRow({
                 />
             </Box>
             <Box className={styles.actionButtons}>
-                {showSwap && <ActionIconBtn icon={<ChangeIcon />} onClick={onSwap} />}
+                {showSwap && <ActionIconBtn id={`${inputId}-swap`} icon={<ChangeIcon />} onClick={onSwap} />}
                 {showRemove && <ActionIconBtn icon={<RemoveIcon />} onClick={onRemove} />}
                 {showAdd && <ActionIconBtn icon={<AddIcon />} onClick={onAdd} />}
             </Box>
