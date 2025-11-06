@@ -36,7 +36,13 @@ import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
-import { DEFAULT_VISIBLE_PROFILES } from '../../store/geoRouter/profileConstants';
+import {
+    DEFAULT_VISIBLE_PROFILES,
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_AVOID_ROADS,
+} from '../../store/geoRouter/profileConstants';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -78,7 +84,7 @@ export default function NavigationMenu() {
 
     const routeObject = ctx.routeObject;
 
-    const avoidRoads = routeObject.getOption('route.points.avoidRoads');
+    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
 
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
@@ -120,10 +126,10 @@ export default function NavigationMenu() {
     }
 
     function close() {
-        routeObject.setOption('route.points.start', null);
-        routeObject.setOption('route.points.finish', null);
-        routeObject.setOption('route.points.viaPoints', []);
-        routeObject.setOption('route.points.avoidRoads', []);
+        routeObject.setOption(ROUTE_POINTS_START, null);
+        routeObject.setOption(ROUTE_POINTS_FINISH, null);
+        routeObject.setOption(ROUTE_POINTS_VIA, []);
+        routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
 
         setResetSettings(true);
         closeHeader({ ctx });
@@ -222,7 +228,7 @@ export default function NavigationMenu() {
                             onClick={() => {
                                 const newAvoidRoads = Object.assign([], avoidRoads);
                                 newAvoidRoads.splice(ind, 1);
-                                routeObject.setOption('route.points.avoidRoads', newAvoidRoads);
+                                routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
                             }}
                         >
                             <RemoveCircle fontSize="small" />
@@ -240,8 +246,8 @@ export default function NavigationMenu() {
                             onClick={() => {
                                 routeObject.resetRoute();
                                 ctx.setRouteTrackFile(null);
-                                routeObject.setOption('route.points.start', null);
-                                routeObject.setOption('route.points.finish', null);
+                                routeObject.setOption(ROUTE_POINTS_START, null);
+                                routeObject.setOption(ROUTE_POINTS_FINISH, null);
                             }}
                         >
                             <RemoveCircle fontSize="small" />

@@ -7,6 +7,12 @@ import AppContext, {
 } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 import { createUrlParams } from '../util/Utils';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_AVOID_ROADS,
+} from '../store/geoRouter/profileConstants';
 
 export function RouteService() {
     const ctx = useContext(AppContext);
@@ -21,8 +27,8 @@ export function RouteService() {
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
 
     useEffect(() => {
-        const startPoint = routeObject.getOption('route.points.start');
-        const finishPoint = routeObject.getOption('route.points.finish');
+        const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+        const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
         if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
             ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
         }
@@ -53,10 +59,10 @@ export function RouteService() {
         if (routeObject.isReady()) {
             let obj = {};
 
-            const startPoint = routeObject.getOption('route.points.start');
-            const finishPoint = routeObject.getOption('route.points.finish');
-            const viaPoints = routeObject.getOption('route.points.viaPoints');
-            const avoidRoads = routeObject.getOption('route.points.avoidRoads');
+            const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+            const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+            const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA);
+            const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
 
             if (startPoint) {
                 obj['start'] = startPoint.lat.toFixed(6) + ',' + startPoint.lng.toFixed(6);
@@ -119,13 +125,13 @@ export function RouteService() {
 
         if (searchParams.get('start')) {
             const [lat, lng] = searchParams.get('start').split(',');
-            routeObject.setOption('route.points.start', { lat: parseFloat(lat), lng: parseFloat(lng) });
+            routeObject.setOption(ROUTE_POINTS_START, { lat: parseFloat(lat), lng: parseFloat(lng) });
         }
 
         if (searchParams.get('finish') || searchParams.get('end')) {
             const finish = searchParams.get('finish') || searchParams.get('end');
             const [lat, lng] = finish.split(',');
-            routeObject.setOption('route.points.finish', { lat: parseFloat(lat), lng: parseFloat(lng) });
+            routeObject.setOption(ROUTE_POINTS_FINISH, { lat: parseFloat(lat), lng: parseFloat(lng) });
         }
 
         if (searchParams.get('via') || searchParams.get('inter')) {
@@ -135,7 +141,7 @@ export function RouteService() {
                 const [lat, lng] = ll.split(',');
                 viaPoints.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
-            routeObject.setOption('route.points.viaPoints', viaPoints);
+            routeObject.setOption(ROUTE_POINTS_VIA, viaPoints);
         }
 
         if (searchParams.get('avoid')) {
@@ -146,7 +152,7 @@ export function RouteService() {
                 .forEach((id) => {
                     avoidRoads.push({ id, name: 'Way ' + Math.trunc(id / 64) });
                 });
-            routeObject.setOption('route.points.avoidRoads', avoidRoads);
+            routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, avoidRoads);
         }
     }, []);
 

@@ -30,3 +30,9 @@ export const PROFILE_GROUPS = {
 };
 
 export const DEFAULT_VISIBLE_PROFILES = [PROFILE_CAR, PROFILE_BICYCLE, PROFILE_PEDESTRIAN, PROFILE_MOTORCYCLE];
+
+// Route points keys
+export const ROUTE_POINTS_START = 'route.points.start';
+export const ROUTE_POINTS_FINISH = 'route.points.finish';
+export const ROUTE_POINTS_VIA = 'route.points.viaPoints';
+export const ROUTE_POINTS_AVOID_ROADS = 'route.points.avoidRoads';

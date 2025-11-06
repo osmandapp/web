@@ -1,6 +1,8 @@
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../../store/geoRouter/profileConstants';
+
 export function directionFrom(lat, lon, ctx) {
     if (lat && lon) {
-        ctx.routeObject.setOption('route.points.start', {
+        ctx.routeObject.setOption(ROUTE_POINTS_START, {
             lat: Number(lat),
             lng: Number(lon),
         });
@@ -9,7 +11,7 @@ export function directionFrom(lat, lon, ctx) {
 
 export function directionTo(lat, lon, ctx) {
     if (lat && lon) {
-        ctx.routeObject.setOption('route.points.finish', {
+        ctx.routeObject.setOption(ROUTE_POINTS_FINISH, {
             lat: Number(lat),
             lng: Number(lon),
         });
