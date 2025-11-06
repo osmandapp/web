@@ -3,6 +3,12 @@ import Utils from '../../../util/Utils';
 import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/track/TracksManager';
 import TrackLayerProvider from '../../../map/util/TrackLayerProvider';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_AVOID_ROADS,
+} from '../profileConstants';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
@@ -63,9 +69,9 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
 
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
 
-    const startPoint = this.getOption('route.points.start');
-    const finishPoint = this.getOption('route.points.finish');
-    const viaPoints = this.getOption('route.points.viaPoints');
+    const startPoint = this.getOption(ROUTE_POINTS_START);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
     points.push(geo(startPoint));
     viaPoints?.forEach((i) => points.push(geo(i)));
@@ -99,10 +105,10 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
 async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErrorMsg, style }) {
     setRoutingErrorMsg(null);
 
-    const startPoint = this.getOption('route.points.start');
-    const finishPoint = this.getOption('route.points.finish');
-    const viaPoints = this.getOption('route.points.viaPoints');
-    const avoidRoads = this.getOption('route.points.avoidRoads');
+    const startPoint = this.getOption(ROUTE_POINTS_START);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = this.getOption(ROUTE_POINTS_VIA);
+    const avoidRoads = this.getOption(ROUTE_POINTS_AVOID_ROADS);
 
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';
@@ -161,9 +167,9 @@ async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }
 }
 
 function makeLineFeatureCollection({ style = {} } = {}) {
-    const startPoint = this.getOption('route.points.start');
-    const finishPoint = this.getOption('route.points.finish');
-    const viaPoints = this.getOption('route.points.viaPoints');
+    const startPoint = this.getOption(ROUTE_POINTS_START);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);

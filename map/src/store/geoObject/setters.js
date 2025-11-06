@@ -1,4 +1,5 @@
 import md5 from 'blueimp-md5';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../geoRouter/profileConstants';
 
 // pure functions
 import { convertRouteToTrack } from './convert/convertRouteToTrack';
@@ -34,9 +35,9 @@ export function putRoute({ route, skipConversion = false }) {
             route,
             trackName,
             geoProfile: this.getGeoProfile(),
-            start: this.getOption('route.points.start'),
-            finish: this.getOption('route.points.finish'),
-            viaPoints: this.getOption('route.points.viaPoints'),
+            start: this.getOption(ROUTE_POINTS_START),
+            finish: this.getOption(ROUTE_POINTS_FINISH),
+            viaPoints: this.getOption(ROUTE_POINTS_VIA),
         });
 
         this.flushState((o) => {

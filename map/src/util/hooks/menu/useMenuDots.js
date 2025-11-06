@@ -10,6 +10,7 @@ import {
     OBJECT_TYPE_WEATHER,
 } from '../../../context/AppContext';
 import { selectedForecastDetails } from '../../../menu/weather/Weather';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../store/geoRouter/profileConstants';
 
 export default function useMenuDots(ctx) {
     const [menuDots, setMenuDots] = useState({});
@@ -49,8 +50,8 @@ export default function useMenuDots(ctx) {
     }, [ctx.trackAnalyzer]);
 
     useEffect(() => {
-        const startPoint = ctx.routeObject.getOption('route.points.start');
-        const finishPoint = ctx.routeObject.getOption('route.points.finish');
+        const startPoint = ctx.routeObject.getOption(ROUTE_POINTS_START);
+        const finishPoint = ctx.routeObject.getOption(ROUTE_POINTS_FINISH);
         setActiveMenu(OBJECT_TYPE_NAVIGATION_TRACK, startPoint || finishPoint);
     }, [ctx.routeObject]);
 

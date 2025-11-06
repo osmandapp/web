@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../store/geoRouter/profileConstants';
 import {
     Box,
     ClickAwayListener,
@@ -535,8 +536,8 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null); // get ready for next navigation changes
                 setTimeout(() => {
                     if (
-                        ctx.routeObject.getOption('route.points.start') ||
-                        ctx.routeObject.getOption('route.points.finish')
+                        ctx.routeObject.getOption(ROUTE_POINTS_START) ||
+                        ctx.routeObject.getOption(ROUTE_POINTS_FINISH)
                     ) {
                         selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }

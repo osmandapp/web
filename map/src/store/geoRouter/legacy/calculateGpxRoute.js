@@ -1,5 +1,6 @@
 import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/track/TracksManager';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../profileConstants';
 
 /*
     calculateGpxRoute() processes GPX-data via API-request /routing/gpx-approximate
@@ -41,9 +42,9 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
             start = { lat: coords[0][1], lng: coords[0][0] };
             finish = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
             if (start && finish) {
-                this.setOption('route.points.start', start);
-                this.setOption('route.points.finish', finish);
-                this.setOption('route.points.viaPoints', []);
+                this.setOption(ROUTE_POINTS_START, start);
+                this.setOption(ROUTE_POINTS_FINISH, finish);
+                this.setOption(ROUTE_POINTS_VIA, []);
                 const { route } = this.putRoute({ route: data });
                 changeRouteText(false, this.getRouteProps(route));
             } else {

@@ -4,6 +4,7 @@ import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } fro
 import { useTranslation } from 'react-i18next';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -27,9 +28,9 @@ function getCoord(value) {
 export default function NavigationPointsManager({ routeObject }) {
     const { t } = useTranslation();
 
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints') || [];
+    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
 
     const [start, setStart] = useState('');
     const [finish, setFinish] = useState('');
@@ -78,25 +79,25 @@ export default function NavigationPointsManager({ routeObject }) {
 
     const handleStartBlur = (value) => {
         if (!value || value.trim() === '') {
-            routeObject.setOption('route.points.start', null);
+            routeObject.setOption(ROUTE_POINTS_START, null);
             routeObject.resetRoute();
             return;
         }
         const latlon = getCoord(value);
         if (latlon) {
-            routeObject.setOption('route.points.start', latlon);
+            routeObject.setOption(ROUTE_POINTS_START, latlon);
         }
     };
 
     const handleFinishBlur = (value) => {
         if (!value || value.trim() === '') {
-            routeObject.setOption('route.points.finish', null);
+            routeObject.setOption(ROUTE_POINTS_FINISH, null);
             routeObject.resetRoute();
             return;
         }
         const latlon = getCoord(value);
         if (latlon) {
-            routeObject.setOption('route.points.finish', latlon);
+            routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
         }
     };
 
@@ -104,7 +105,7 @@ export default function NavigationPointsManager({ routeObject }) {
         if (!value || value.trim() === '') {
             if (viaPoints && index < viaPoints.length) {
                 const newViaPoints = viaPoints.filter((_, i) => i !== index);
-                routeObject.setOption('route.points.viaPoints', newViaPoints);
+                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
             }
             return;
         }
@@ -116,7 +117,7 @@ export default function NavigationPointsManager({ routeObject }) {
             } else {
                 newViaPoints[index] = latlon;
             }
-            routeObject.setOption('route.points.viaPoints', newViaPoints);
+            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
@@ -130,7 +131,7 @@ export default function NavigationPointsManager({ routeObject }) {
 
         if (viaPoints && index < viaPoints.length) {
             const newViaPoints = viaPoints.filter((_, i) => i !== index);
-            routeObject.setOption('route.points.viaPoints', newViaPoints);
+            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
@@ -150,8 +151,8 @@ export default function NavigationPointsManager({ routeObject }) {
         setFinish(tempValue);
 
         const tempPoint = startPoint;
-        routeObject.setOption('route.points.start', finishPoint);
-        routeObject.setOption('route.points.finish', tempPoint);
+        routeObject.setOption(ROUTE_POINTS_START, finishPoint);
+        routeObject.setOption(ROUTE_POINTS_FINISH, tempPoint);
     };
 
     const getAllPoints = () => {
@@ -191,10 +192,10 @@ export default function NavigationPointsManager({ routeObject }) {
 
         if (newRoutePoints.length >= 2) {
             routeObject.setOption('route.points.start', newRoutePoints.at(0));
-            routeObject.setOption('route.points.finish', newRoutePoints.at(-1));
+            routeObject.setOption(ROUTE_POINTS_FINISH, newRoutePoints.at(-1));
 
             const newViaPoints = newRoutePoints.slice(1, -1).filter((p) => p !== null);
-            routeObject.setOption('route.points.viaPoints', newViaPoints);
+            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
@@ -206,7 +207,7 @@ export default function NavigationPointsManager({ routeObject }) {
             // Also clean up viaPoints
             const cleanViaPoints = viaPoints ? viaPoints.filter((p) => p !== null) : [];
             if (cleanViaPoints.length !== (viaPoints ? viaPoints.length : 0)) {
-                routeObject.setOption('route.points.viaPoints', cleanViaPoints);
+                routeObject.setOption(ROUTE_POINTS_VIA, cleanViaPoints);
             }
         }
 
