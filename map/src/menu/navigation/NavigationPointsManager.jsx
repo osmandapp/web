@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
-import NavigationInputRow from './NavigationInputRow';
+import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
@@ -256,7 +256,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onChange={handleStartChange}
                 onBlur={handleStartBlur}
                 onKeyDown={(e) => handleKeyPress(e, (val) => handleStartBlur(val))}
-                type="start"
+                type={START_POINT}
                 onSwap={handleSwap}
                 onDragStart={handleDragStart(0)}
                 onDragOver={handleDragOver(0)}
@@ -277,7 +277,7 @@ export default function NavigationPointsManager({ routeObject }) {
                         onChange={(val) => handleIntermediateChange(index, val)}
                         onBlur={(val) => handleIntermediateBlur(index, val)}
                         onKeyDown={(e) => handleKeyPress(e, (val) => handleIntermediateBlur(index, val))}
-                        type="intermediate"
+                        type={INTERMEDIATE_POINT}
                         onRemove={() => handleRemoveIntermediate(index)}
                         onDragStart={handleDragStart(index + 1)}
                         onDragOver={handleDragOver(index + 1)}
@@ -300,7 +300,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onChange={handleFinishChange}
                 onBlur={handleFinishBlur}
                 onKeyDown={(e) => handleKeyPress(e, (val) => handleFinishBlur(val))}
-                type="finish"
+                type={FINISH_POINT}
                 onAdd={handleAddIntermediate}
                 onDragStart={handleDragStart(intermediates.length + 1)}
                 onDragOver={handleDragOver(intermediates.length + 1)}

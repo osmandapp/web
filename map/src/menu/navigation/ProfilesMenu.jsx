@@ -1,11 +1,6 @@
 import React from 'react';
 import { Menu, MenuItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
-
-const PROFILES_ORDER = {
-    main: ['car', 'truck', 'motorcycle', 'bicycle', 'pedestrian', 'horsebackriding', 'boat', 'ski', 'moped', 'train'],
-    line: ['line'],
-    rescue: ['rescuetrack', 'rescuetrack-emergency'],
-};
+import { PROFILE_GROUPS } from '../../store/geoRouter/profileConstants';
 
 export default function ProfilesMenu({ anchorEl, onClose, onProfileSelect, routeObject }) {
     const handleProfileClick = (profileKey) => {
@@ -34,7 +29,7 @@ export default function ProfilesMenu({ anchorEl, onClose, onProfileSelect, route
                 },
             }}
         >
-            {Object.entries(PROFILES_ORDER).map(([groupKey, profileKeys], groupIndex) => (
+            {Object.entries(PROFILE_GROUPS).map(([groupKey, profileKeys], groupIndex) => (
                 <React.Fragment key={groupKey}>
                     {groupIndex > 0 && <Divider />}
                     {profileKeys.map((profileKey) => {

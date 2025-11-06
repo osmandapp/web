@@ -2,25 +2,39 @@ import { copyObj } from '../../../util/Utils';
 import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/track/TracksManager';
 import onlineRoutingProviders from '../../../resources/generated/online-routing-providers.json';
+import {
+    PROFILE_CAR,
+    PROFILE_TRUCK,
+    PROFILE_MOTORCYCLE,
+    PROFILE_BICYCLE,
+    PROFILE_PEDESTRIAN,
+    PROFILE_HORSEBACK_RIDING,
+    PROFILE_BOAT,
+    PROFILE_SKI,
+    PROFILE_MOPED,
+    PROFILE_TRAIN,
+    PROFILE_LINE,
+    PROFILE_RESCUETRACK,
+    PROFILE_RESCUETRACK_EMERGENCY,
+} from '../profileConstants';
 
-const PROFILE_LINE = TracksManager.PROFILE_LINE;
 const PROFILE_LINE_NAME = PROFILE_LINE[0].toUpperCase() + PROFILE_LINE.slice(1);
 
 function getColors() {
     return {
-        car: '#1976d2',
-        truck: '#2F4F4F',
-        motorcycle: '#f8931d',
-        bicycle: '#9053bd',
-        boat: '#08b5ff',
-        horsebackriding: '#7f3431',
-        pedestrian: '#d90139',
-        ski: '#ffacdf',
+        [PROFILE_CAR]: '#1976d2',
+        [PROFILE_TRUCK]: '#2F4F4F',
+        [PROFILE_MOTORCYCLE]: '#f8931d',
+        [PROFILE_BICYCLE]: '#9053bd',
+        [PROFILE_BOAT]: '#08b5ff',
+        [PROFILE_HORSEBACK_RIDING]: '#7f3431',
+        [PROFILE_PEDESTRIAN]: '#d90139',
+        [PROFILE_SKI]: '#ffacdf',
         [PROFILE_LINE]: '#2F6E80',
-        moped: '#3e690e',
-        train: '#a56b6f',
-        rescuetrack: '#0000ff',
-        'rescuetrack-emergency': '#ff0000',
+        [PROFILE_MOPED]: '#3e690e',
+        [PROFILE_TRAIN]: '#a56b6f',
+        [PROFILE_RESCUETRACK]: '#0000ff',
+        [PROFILE_RESCUETRACK_EMERGENCY]: '#ff0000',
         'OSRM-car': '#1976d2',
         'OSRM-bike': '#9053bd',
         'OSRM-foot': '#d90139',
@@ -115,7 +129,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
 
     const profilesOsmAnd = await loadProfilesOsmAnd();
 
-    const osmand = profilesOsmAnd ? [Object.assign({}, next.fallback, { profiles: profilesOsmAnd })] : [next.fallback];
+    const osmand = profilesOsmAnd ? [{ ...next.fallback, profiles: profilesOsmAnd }] : [next.fallback];
 
     const osrm = (await loadProvidersOSRM()) || [];
 
@@ -128,7 +142,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
 
     // set type/profile [/mode] according to window.location.search
     if (parseQueryString) {
-        const searchParams = new URLSearchParams(window.location.search);
+        const searchParams = new URLSearchParams(globalThis.location.search);
 
         const type = searchParams.get('type') ?? 'osmand';
         const profile = searchParams.get('profile');
