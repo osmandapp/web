@@ -174,6 +174,7 @@ export default function NavigationMenu() {
                         return (
                             <SquareIconBtn
                                 index={key}
+                                key={key}
                                 id={`se-route-profile-${key}`}
                                 icon={profile.icon}
                                 selected={routeObject.getProfile().profile === key}

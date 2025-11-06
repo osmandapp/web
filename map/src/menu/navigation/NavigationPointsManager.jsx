@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
@@ -37,6 +37,7 @@ export default function NavigationPointsManager({ routeObject }) {
     const [intermediates, setIntermediates] = useState([]);
 
     const [draggedIndex, setDraggedIndex] = useState(null);
+
     const [dropTargetIndex, setDropTargetIndex] = useState(null);
 
     useEffect(() => {
@@ -146,13 +147,12 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleSwap = () => {
-        const tempValue = start;
-        setStart(finish);
-        setFinish(tempValue);
+        // Remove focus from all inputs before swapping
+        const blurEvent = new CustomEvent('nav-blur');
+        globalThis.dispatchEvent(blurEvent);
 
-        const tempPoint = startPoint;
         routeObject.setOption(ROUTE_POINTS_START, finishPoint);
-        routeObject.setOption(ROUTE_POINTS_FINISH, tempPoint);
+        routeObject.setOption(ROUTE_POINTS_FINISH, startPoint);
     };
 
     const getAllPoints = () => {

@@ -27,6 +27,18 @@ export default function NavigationInput({
         }
     }, [value]);
 
+    useEffect(() => {
+        const handleNavigationBlur = () => {
+            if (isFocusedRef.current) {
+                clearFocus();
+            }
+        };
+        window.addEventListener('nav-blur', handleNavigationBlur);
+        return () => {
+            window.removeEventListener('nav-blur', handleNavigationBlur);
+        };
+    }, []);
+
     const handleChange = (e) => {
         const newValue = e.target.value;
         setInputValue(newValue);
@@ -40,10 +52,14 @@ export default function NavigationInput({
         setIsFocused(true);
     };
 
+    const clearFocus = () => {
+        isFocusedRef.current = false;
+        setIsFocused(false);
+    };
+
     const handleBlur = (e) => {
         setTimeout(() => {
-            isFocusedRef.current = false;
-            setIsFocused(false);
+            clearFocus();
         }, 100);
         if (onBlur) {
             onBlur(e.target.value);
@@ -86,7 +102,7 @@ export default function NavigationInput({
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                             {isFocused && inputValue && (
                                 <Box className={styles.clearIconWrapper}>
-                                    <ActionIconBtn icon={<ClearIcon />} onClick={handleClear} />
+                                    <ActionIconBtn id={`${inputId}-clear`} icon={<ClearIcon />} onClick={handleClear} />
                                 </Box>
                             )}
                             {showDragHandle && (
