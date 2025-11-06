@@ -36,12 +36,12 @@ import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
+import { DEFAULT_VISIBLE_PROFILES } from '../../store/geoRouter/profileConstants';
 
 const StyledInput = styled('input')({
     display: 'none',
 });
 
-const DEFAULT_VISIBLE_PROFILES = ['car', 'bicycle', 'pedestrian', 'motorcycle'];
 const MAX_VISIBLE_PROFILES = 4;
 
 export function formatRouteInfo(props, ctx) {

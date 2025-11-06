@@ -10,6 +10,10 @@ import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remov
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
+export const START_POINT = 'start';
+export const INTERMEDIATE_POINT = 'intermediate';
+export const FINISH_POINT = 'finish';
+
 export default function NavigationInputRow({
     value,
     placeholder,
@@ -28,17 +32,17 @@ export default function NavigationInputRow({
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
-    const showSwap = type === 'start';
-    const showRemove = type === 'intermediate';
-    const showAdd = type === 'finish';
+    const showSwap = type === START_POINT;
+    const showRemove = type === INTERMEDIATE_POINT;
+    const showAdd = type === FINISH_POINT;
 
     const getIcon = () => {
         switch (type) {
-            case 'start':
+            case START_POINT:
                 return <StartIcon />;
-            case 'intermediate':
+            case INTERMEDIATE_POINT:
                 return <IntermediateIcon />;
-            case 'finish':
+            case FINISH_POINT:
                 return <FinishIcon />;
             default:
                 return null;

@@ -24,7 +24,7 @@ export default function SquareIconBtn({
             }}
         >
             <Icon
-                className={`${styles.squareIconBtnIcon}`}
+                className={styles.squareIconBtnIcon}
                 sx={{
                     '& svg, & path': {
                         fill: disabled ? 'var(--svg-icon-color)' : selected ? selectedIconColor : iconColor,
