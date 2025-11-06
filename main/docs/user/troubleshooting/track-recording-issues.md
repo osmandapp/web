@@ -54,7 +54,6 @@ Mitigation actions:
 - **Prevent Standalone Logging**. Ensure the *Prevent standalone logging* setting under Plugins/Trip Recording is deactivated to allow OsmAnd to record tracks with the screen off.
 - **Update OsmAnd**. Android versions use different strategies to reduce power consumption by [killing applications running in the background](https://dontkillmyapp.com/). Version 3.9 or higher uses a Foreground service, visible in the notification bar, [to keep the app running in the background](https://dontkillmyapp.com/) on most Android versions. This is particularly effective on Android 8+ ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255), [Issue #5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
-
 ### Optimizing Android for Track Recording {#optimizing-android-for-track-recording}
 
 Starting with Android 4.4, power-saving features can limit CPU usage, reduce screen brightness, and kill background apps when the screen is off. This can affect OsmAnd’s performance for outdoor use, map rendering, and track recording. Later versions of Andrid have added AI-based power saving bahaviors like **Automatic battery** and **Automatic power saving**, introducing dynamic and even less predictable behavior. To avoid recording issues, at least initially or for debugging, **consider disabling power-saving features entirely**. Users report that the impact on battery life for most devices is tolerable.
@@ -66,13 +65,6 @@ Starting with Android 4.4, power-saving features can limit CPU usage, reduce scr
 - **Disable *Adaptive power saving*.** Having this 'on' will apply system-wide, use-pattern based policies to deactivate/activate the above 'power saving' mode.
 
 - **Diasable *Adaptive battery* unless you use the OsmAnd app regularly.** *Adaptive battery* works on a per app basis, also use-pattern based. Its effect on a specific app can be reduced by exempting that app from *Battery optimization* (like setting to *Not optimized*). However, *Adaptive battery* can still kill foreground services such as OsmAnd's trip recording, if the device judges OsmAnd to be in your 'rarely used' pool of apps.
-
-### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
-
-iOS can suspend or stop background apps automatically when system resources are reallocated. OsmAnd cannot override this behavior. If track recording is interrupted when the device is locked, this can leave gaps in the recording. You can edit these gaps using the [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
-
-For more details on how iOS handles location tracking, check out Apple's documentation [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
-
 
 ### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
@@ -98,6 +90,12 @@ Some of these settings interact, so be accurate. The best search for the above s
 - *Device care / Battery / Settings*
 - *Device care / Battery / App Power Management*
 - *Device care / Battery / More battery settings*
+
+### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
+
+iOS can suspend or stop background apps automatically when system resources are reallocated. OsmAnd cannot override this behavior. If track recording is interrupted when the device is locked, this can leave gaps in the recording. You can edit these gaps using the [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
+
+For more details on how iOS handles location tracking, check out Apple's documentation [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 
 
 ## How to Track Traveled Distance {#how-to-track-traveled-distance}
