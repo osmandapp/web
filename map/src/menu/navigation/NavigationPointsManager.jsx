@@ -13,7 +13,7 @@ export function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
 }
 
-function getCoord(value) {
+function getValidatedLatLon(value) {
     const coords = value.trim().split(/[, ]+/);
     if (coords.length === 2) {
         let lat = coords[0];
@@ -83,7 +83,7 @@ export default function NavigationPointsManager({ routeObject }) {
             routeObject.resetRoute();
             return;
         }
-        const latlon = getCoord(value);
+        const latlon = getValidatedLatLon(value);
         if (latlon) {
             routeObject.setOption(ROUTE_POINTS_START, latlon);
         }
@@ -95,7 +95,7 @@ export default function NavigationPointsManager({ routeObject }) {
             routeObject.resetRoute();
             return;
         }
-        const latlon = getCoord(value);
+        const latlon = getValidatedLatLon(value);
         if (latlon) {
             routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
         }
@@ -109,7 +109,7 @@ export default function NavigationPointsManager({ routeObject }) {
             }
             return;
         }
-        const latlon = getCoord(value);
+        const latlon = getValidatedLatLon(value);
         if (latlon) {
             const newViaPoints = viaPoints ? [...viaPoints] : [];
             if (index >= newViaPoints.length) {
