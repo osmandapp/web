@@ -274,6 +274,7 @@ export default function NavigationPointsManager({ routeObject }) {
                         <Box className={styles.dropIndicator} />
                     )}
                     <NavigationInputRow
+                        inputId={`se-route-via-point-${index}`}
                         value={value}
                         placeholder={`${t('web:set_via_point')} ${index + 1}`}
                         onChange={(val) => handleIntermediateChange(index, val)}
