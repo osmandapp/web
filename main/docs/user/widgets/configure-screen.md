@@ -268,6 +268,22 @@ The mode allows you to add **more than one widget in a single row** on the top a
 
 - **Simple widgets**. Multiple simple widgets can be added to a single row. These widgets could display *Name*, *Units of measurement*, *Value*, and *Icon*. Text in simple widgets is automatically outlined to ensure clear readability against various map backgrounds in transparent panel mode.
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Widget stroke Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Widget stroke IOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
 
 ### Pages {#pages}
 
