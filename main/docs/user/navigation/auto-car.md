@@ -226,6 +226,27 @@ Route information consists of:
 When enabled, **[the widget setting](#eta-next-stop)** (Route information) will show route details for the next stop ([the intermediate point](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Navigation Alerts {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert.png) ![Private Alert](@site/static/img/navigation/auto-car/private_alert.png)
+
+Helpful alerts are automatically shown before starting navigation if the route cannot be built normally. This prevents the route from being stuck on loading and lets you quickly choose how to continue.
+
+**Missing or outdated maps**
+
+If your destination is located outside of downloaded map areas, a message is displayed and you can choose one of the following actions:
+- **Use downloaded maps**. The route is built using only the maps already stored on your device. (The route may be incomplete if required map data is unavailable.)
+- **View on phone**. The map download screen is opened on your smartphone, where the necessary regions can be downloaded. After downloading, route calculation is restarted automatically.
+
+This alert is shown directly on the vehicle screen, the same way as in the mobile app.
+
+**Private access warning**
+
+If your destination is in a private or restricted-access area, a warning is displayed and you can choose:
+- **Allow**. Navigation is continued using private roads if permitted or if you have access.
+- **Cancel**. The navigation request is dismissed and the previous screen is restored.
+
+
 ### Screen Alert Widget {#screen-alert-widget}
 
 This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.
