@@ -15,6 +15,7 @@ export const INTERMEDIATE_POINT = 'intermediate';
 export const FINISH_POINT = 'finish';
 
 export default function NavigationInputRow({
+    inputId,
     value,
     placeholder,
     onChange,
@@ -76,6 +77,7 @@ export default function NavigationInputRow({
         >
             <Box className={styles.inputContainer}>
                 <NavigationInput
+                    inputId={inputId}
                     value={value}
                     placeholder={placeholder}
                     icon={getIcon()}

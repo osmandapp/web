@@ -6,6 +6,7 @@ import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 
 export default function NavigationInput({
+    inputId,
     value,
     placeholder,
     icon,
@@ -68,6 +69,7 @@ export default function NavigationInput({
 
     return (
         <TextField
+            id={inputId}
             className={styles.navigationInput}
             value={inputValue}
             placeholder={placeholder}

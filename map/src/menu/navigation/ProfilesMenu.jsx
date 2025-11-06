@@ -40,6 +40,7 @@ export default function ProfilesMenu({ anchorEl, onClose, onProfileSelect, route
                         return (
                             <MenuItem
                                 key={key}
+                                id={`se-route-profile-menu-${key}`}
                                 selected={routeObject.getProfile().profile === key}
                                 onClick={() => handleProfileClick(key)}
                             >

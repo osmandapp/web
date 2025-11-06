@@ -252,6 +252,7 @@ export default function NavigationPointsManager({ routeObject }) {
             {/* Start Point */}
             <NavigationInputRow
                 key="start-point"
+                inputId="se-route-start-point"
                 value={start}
                 placeholder={t('web:set_start_point')}
                 onChange={handleStartChange}
@@ -296,6 +297,7 @@ export default function NavigationPointsManager({ routeObject }) {
             {/* Finish Point */}
             <NavigationInputRow
                 key="finish-point"
+                inputId="se-route-finish-point"
                 value={finish}
                 placeholder={t('web:set_destination')}
                 onChange={handleFinishChange}
