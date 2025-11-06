@@ -67,11 +67,14 @@ const routeTrackInfoBlockButtons = ['se-infoblock-button-edit-track', 'se-infobl
 export default async function test() {
     await actionOpenMap();
     await clickBy(By.id('se-show-menu-navigation'));
-    for await (const { type, profile, strings, turns, A, B, hasAttributes } of routes) {
-        await clickBy(By.id('se-clear-route-start-point'));
-        await clickBy(By.id('se-clear-route-finish-point'));
+    for (const { profile, strings, turns, A, B, hasAttributes } of routes) {
+        await clickBy(By.id('se-route-start-point'));
+        await clickBy(By.id('se-route-start-point-clear'), { optional: true });
 
-        await selectProfile({ type, profile });
+        await clickBy(By.id('se-route-finish-point'));
+        await clickBy(By.id('se-route-finish-point-clear'), { optional: true });
+
+        await selectProfile({ profile });
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
@@ -89,21 +92,13 @@ export default async function test() {
     }
 }
 
-// { type, profile } note: type support later
 export async function selectProfile({ profile }) {
-    const clicker = async () => {
-        await clickBy(By.id('se-route-select'), { optional: true });
-        const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
+    const profileButton = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
 
-        // clickBy (optional) might return true when the element was not found
-        if (clicked && clicked !== true) {
-            return clicked;
-        }
-
-        return false;
-    };
-
-    await enclose(clicker);
+    if (!profileButton || profileButton === true) {
+        await clickBy(By.id('se-route-profile-dots'));
+        await clickBy(By.id('se-route-profile-menu-' + profile));
+    }
 }
 
 async function validateInfoBlockButtons(ids) {

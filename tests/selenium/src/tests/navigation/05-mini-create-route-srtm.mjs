@@ -2,7 +2,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import { clickBy, matchInnerTextBy, sendKeysBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { selectProfile } from '../navigation/42-route-info-block.mjs';
+import { selectProfile } from './42-route-info-block.mjs';
 
 const routes = [
     {
@@ -29,11 +29,14 @@ export default async function test() {
     await actionOpenMap();
     await clickBy(By.id('se-show-menu-navigation'));
 
-    for await (const { type, profile, strings, A, B, srtm } of routes) {
-        await clickBy(By.id('se-clear-route-start-point'));
-        await clickBy(By.id('se-clear-route-finish-point'));
+    for (const { profile, strings, A, B, srtm } of routes) {
+        await clickBy(By.id('se-route-start-point'));
+        await clickBy(By.id('se-route-start-point-clear'), { optional: true });
 
-        await selectProfile({ type, profile });
+        await clickBy(By.id('se-route-finish-point'));
+        await clickBy(By.id('se-route-finish-point-clear'), { optional: true });
+
+        await selectProfile({ profile });
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
@@ -53,7 +56,7 @@ export default async function test() {
 }
 
 async function validateInfoBlockStrings(strings) {
-    for await (const match of strings) {
+    for (const match of strings) {
         await matchInnerTextBy(By.id('se-infoblock-all'), match);
     }
 }
