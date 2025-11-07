@@ -1,10 +1,12 @@
 import React, { useContext, useMemo } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 import styles from './routemenu.module.css';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import AppContext from '../../context/AppContext';
+import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
+import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
 
 function formatDistance(distanceMeters, ctx, locale, t) {
     if (!distanceMeters) {
@@ -40,7 +42,7 @@ function formatArrival(seconds) {
     return arrival.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
-function formatElevation(value, ctx, t, prefix) {
+function formatElevation(value, ctx, t) {
     if (value == null) {
         return null;
     }
@@ -48,7 +50,7 @@ function formatElevation(value, ctx, t, prefix) {
     if (converted == null) {
         return null;
     }
-    return `${prefix} ${Math.round(converted)} ${t(getSmallLengthUnit(ctx))}`;
+    return `${Math.round(converted)} ${t(getSmallLengthUnit(ctx))}`;
 }
 
 export default function RouteSummaryCard({ routeProps, onDetails }) {
@@ -64,8 +66,8 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
             distance: formatDistance(overall?.distance, ctx, i18n.language, t),
             duration: formatDuration(overall?.time, t),
             arrival: formatArrival(overall?.time),
-            elevationUp: formatElevation(elevationUp, ctx, t, '↑'),
-            elevationDown: formatElevation(elevationDown, ctx, t, '↓'),
+            elevationUp: formatElevation(elevationUp, ctx, t),
+            elevationDown: formatElevation(elevationDown, ctx, t),
         };
     }, [routeProps]);
 
@@ -77,29 +79,39 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
         <Box className={styles.routeSummary}>
             <Box className={styles.routeSummaryInfo}>
                 {summary.distance && (
-                    <>
-                        <Typography className={styles.routeSummaryValue}>{summary.distance.value}</Typography>
-                        <Typography className={styles.routeSummaryUnit}>{summary.distance.unit}</Typography>
-                    </>
+                    <Typography className={styles.routeSummaryValue}>
+                        {summary.distance.value}
+                        <span className={styles.routeSummaryUnit}> {summary.distance.unit}</span>
+                    </Typography>
                 )}
                 {summary.distance && summary.duration && (
                     <Typography className={styles.routeSummaryPoint}>•</Typography>
                 )}
                 {summary.duration && (
-                    <>
-                        <Typography className={styles.routeSummaryValue}>{summary.duration.value}</Typography>
-                        <Typography className={styles.routeSummaryUnit}>{summary.duration.unit}</Typography>
-                    </>
+                    <Typography className={styles.routeSummaryValue}>
+                        {summary.duration.value}
+                        <span className={styles.routeSummaryUnit}> {summary.duration.unit}</span>
+                    </Typography>
                 )}
                 {summary.arrival && <Typography className={styles.routeSummaryArrival}>({summary.arrival})</Typography>}
             </Box>
 
             <Box className={styles.routeSummaryInfo}>
                 {summary.elevationUp && (
-                    <Typography className={styles.routeSummaryElevation}>{summary.elevationUp}</Typography>
+                    <>
+                        <IconButton className={styles.textIcon}>
+                            <UphillIcon />
+                        </IconButton>
+                        <Typography className={styles.routeSummaryElevation}>{summary.elevationUp}</Typography>
+                    </>
                 )}
                 {summary.elevationDown && (
-                    <Typography className={styles.routeSummaryElevation}>{summary.elevationDown}</Typography>
+                    <>
+                        <IconButton className={styles.textIcon}>
+                            <DownhillIcon />
+                        </IconButton>
+                        <Typography className={styles.routeSummaryElevation}>{summary.elevationDown}</Typography>
+                    </>
                 )}
             </Box>
             <Box sx={{ mt: '20px' }}>

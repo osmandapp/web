@@ -141,8 +141,7 @@
     display: flex !important;
     align-self: stretch !important;
     flex-wrap: wrap !important;
-    gap: 6px !important;
-    align-items: baseline !important;
+    gap: 10px !important;
 }
 .routeSummaryValue {
     color: #000 !important;
@@ -185,4 +184,10 @@
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
+    margin-left: -8px !important;
+}
+.textIcon {
+    fill: #BFBFBF !important;
+    max-width: 16px !important;
+    padding: 0px !important;
 }
