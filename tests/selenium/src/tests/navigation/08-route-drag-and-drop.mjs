@@ -64,6 +64,17 @@ export default async function test() {
     await assert(finishValue === '', `Finish point should be empty, got "${finishValue}"`);
     await waitByRemoved(By.id('se-route-info'));
 
+    await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
+    await waitBy(By.id('se-route-info'));
+
+    await clickBy(By.id('se-route-start-point'));
+    await clickBy(By.id('se-route-start-point-clear'));
+    await actionIdleWait();
+    const startInput = await waitBy(By.id('se-route-start-point'));
+    const startValue = await startInput.getAttribute('value');
+    await assert(startValue === '', `Start point should be empty, got "${startValue}"`);
+    await waitByRemoved(By.id('se-route-info'));
+
     await actionFinish();
 }
 

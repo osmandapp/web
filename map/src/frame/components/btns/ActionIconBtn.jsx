@@ -2,7 +2,7 @@ import styles from './buttons.module.css';
 import { IconButton } from '@mui/material';
 import React from 'react';
 
-export default function ActionIconBtn({ id = null, icon, onClick, size = null }) {
+export default function ActionIconBtn({ id = null, icon, onClick, size = null, ...props }) {
     return (
         <IconButton
             id={id}
@@ -11,6 +11,7 @@ export default function ActionIconBtn({ id = null, icon, onClick, size = null })
             type="button"
             className={styles.actionIcon}
             onClick={onClick}
+            {...props}
         >
             {icon}
         </IconButton>

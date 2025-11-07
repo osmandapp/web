@@ -102,7 +102,12 @@ export default function NavigationInput({
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                             {isFocused && inputValue && (
                                 <Box className={styles.clearIconWrapper}>
-                                    <ActionIconBtn id={`${inputId}-clear`} icon={<ClearIcon />} onClick={handleClear} />
+                                    <ActionIconBtn
+                                        id={`${inputId}-clear`}
+                                        icon={<ClearIcon />}
+                                        onClick={handleClear}
+                                        onMouseDown={(e) => e.preventDefault()}
+                                    />
                                 </Box>
                             )}
                             {showDragHandle && (
