@@ -42,3 +42,13 @@
         background-color: #f5f5f5 !important;
     }
 }
+.tipsItem {
+    display: flex !important;
+    padding: 24px 16px !important;
+    gap: 24px !important;
+}
+.tipsIcon {
+    fill: var(--svg-icon-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}

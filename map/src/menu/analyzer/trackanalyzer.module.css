@@ -48,11 +48,6 @@
     line-height: 150% !important;
     letter-spacing: -0.12px !important;
 }
-.tipsItem {
-    display: flex !important;
-    padding: 24px 16px !important;
-    gap: 24px !important;
-}
 .filter {
     width: 312px !important;
     overflow-y: auto;

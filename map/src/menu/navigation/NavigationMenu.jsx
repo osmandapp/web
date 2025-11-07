@@ -27,11 +27,12 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -43,6 +44,8 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -210,6 +213,13 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager routeObject={routeObject} />
+                <ThickDivider />
+                {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                    <TextWithLeftIcon
+                        icon={<InfoIcon />}
+                        text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}
+                    />
+                )}
                 {routeObject.getRouteProps() && (
                     <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
                         <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
