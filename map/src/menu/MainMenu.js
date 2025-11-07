@@ -167,11 +167,27 @@ export default function MainMenu({
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
     const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
+    const navigate = useNavigate();
+
+    const handleMenuAuxClick = (event, item) => {
+        if (event.button !== 1) {
+            return;
+        }
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!item) {
+            return;
+        }
+
+        const origin = globalThis.location.origin;
+        const targetUrl = new URL(item.url + location.hash, origin).toString();
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    };
+
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
     };
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
@@ -841,6 +857,12 @@ export default function MainMenu({
                                         key={index}
                                         className={setMenuStyles(item)}
                                         onClick={() => selectMenu({ item })}
+                                        onAuxClick={(event) => handleMenuAuxClick(event, item)}
+                                        onMouseDown={(event) => {
+                                            if (event.button === 1) {
+                                                event.preventDefault();
+                                            }
+                                        }}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}
