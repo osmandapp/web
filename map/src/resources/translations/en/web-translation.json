@@ -206,5 +206,6 @@
   "navigation_menu_title" : "Route",
   "set_start_point" : "Set start point",
   "set_destination" : "Set destination",
-  "set_via_point" : "Intermediate"
+  "set_via_point" : "Intermediate",
+  "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points."
 }
