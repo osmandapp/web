@@ -192,12 +192,7 @@ function getProfileIcon({ color, profile } = {}) {
         return <BusAlertIcon sx={{ color: color }} fontSize="small" />;
     } else {
         const path = '/map/images/profile_icons/' + profile + '.svg';
-        return <img src={path} width={25} height={25} alt={profile} />;
-        // return (
-        //     <svg height="25" width="25" alt={profile}>
-        //         <image href={path} width="25" height="25" />
-        //     </svg>
-        // );
+        return <img src={path} alt={profile} />;
     }
 }
 

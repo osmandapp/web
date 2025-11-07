@@ -167,11 +167,41 @@ export default function MainMenu({
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
     const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
+    const navigate = useNavigate();
+
+    const openMenuInNewTab = (item) => {
+        if (!item) {
+            return;
+        }
+
+        const origin = globalThis?.location?.origin ?? '';
+        const targetUrl = new URL(item.url + location.hash, origin).toString();
+        globalThis.open(targetUrl, '_blank', 'noopener,noreferrer');
+    };
+
+    const handleMenuAuxClick = (event, item) => {
+        if (event.button !== 1) {
+            return;
+        }
+        event.preventDefault();
+        event.stopPropagation();
+
+        openMenuInNewTab(item);
+    };
+
+    const handleMenuClick = (event, item) => {
+        if (event.metaKey || event.ctrlKey) {
+            event.preventDefault();
+            event.stopPropagation();
+            openMenuInNewTab(item);
+            return;
+        }
+        selectMenu({ item });
+    };
+
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
     };
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
@@ -834,13 +864,19 @@ export default function MainMenu({
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(
-                            (item, index) =>
+                            (item) =>
                                 item.show && (
                                     <MenuItem
                                         id={item.id}
-                                        key={index}
+                                        key={item.id ?? item.type}
                                         className={setMenuStyles(item)}
-                                        onClick={() => selectMenu({ item })}
+                                        onClick={(event) => handleMenuClick(event, item)}
+                                        onAuxClick={(event) => handleMenuAuxClick(event, item)}
+                                        onMouseDown={(event) => {
+                                            if (event.button === 1) {
+                                                event.preventDefault();
+                                            }
+                                        }}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}
