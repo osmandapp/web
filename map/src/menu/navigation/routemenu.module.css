@@ -176,6 +176,15 @@
     font-weight: 400 !important;
     line-height: 150% !important;
 }
+.routeSummaryCost {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    margin-left: auto !important;
+}
 .routeSummaryElevation {
     color: #727272 !important;
     font-family: Roboto !important;

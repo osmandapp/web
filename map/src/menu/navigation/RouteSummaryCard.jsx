@@ -42,6 +42,14 @@ function formatArrival(seconds) {
     return arrival.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
+function formatCost(cost) {
+    if (!cost) {
+        return null;
+    }
+
+    return 'Cost: ' + cost.toFixed(0);
+}
+
 function formatElevation(value, ctx, t) {
     if (value == null) {
         return null;
@@ -66,6 +74,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
             distance: formatDistance(overall?.distance, ctx, i18n.language, t),
             duration: formatDuration(overall?.time, t),
             arrival: formatArrival(overall?.time),
+            cost: formatCost(overall?.routingTime),
             elevationUp: formatElevation(elevationUp, ctx, t),
             elevationDown: formatElevation(elevationDown, ctx, t),
         };
@@ -94,6 +103,9 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                     </Typography>
                 )}
                 {summary.arrival && <Typography className={styles.routeSummaryArrival}>({summary.arrival})</Typography>}
+                {ctx.develFeatures && summary.cost && (
+                    <Typography className={styles.routeSummaryCost}>{summary.cost}</Typography>
+                )}
             </Box>
 
             <Box className={styles.routeSummaryInfo}>
