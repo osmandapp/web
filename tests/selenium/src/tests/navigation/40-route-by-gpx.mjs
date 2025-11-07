@@ -11,9 +11,10 @@ const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';
 const CHECK_START = /50\.(39743|39753|39737), 30\.(50982|50947|51001)/;
 const CHECK_END = '50.36917, 30.52727';
-const CAR = /1[12]\.[0-9] km, 0:2[0-9] min/;
-const BIKE = /1[12]\.[0-9] km, 0:5[0-9] min/;
-const FOOT = /1[12]\.[0-9] km, [34]:[0-9][0-9] min/;
+const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
+const CAR = { distance: /1[12]\.[0-9]\s*km/, duration: /2[0-9]\s*m/ };
+const BIKE = { distance: /1[12]\.[0-9]\s*km/, duration: /5[0-9]\s*m/ };
+const FOOT = { distance: /1[12]\.[0-9]\s*km/, duration: /(?:1[89]\d|2\d{2})\s*m/ };
 
 export default async function test() {
     await actionOpenMap();
@@ -46,7 +47,7 @@ const uploader = async () => {
     return true;
 };
 
-const validateRouteInfo = async (profile, km, fromMenu = false) => {
+const validateRouteInfo = async (profile, expectations, fromMenu = false) => {
     if (fromMenu) {
         await clickBy(By.id('se-route-profile-dots'));
         await waitBy(By.id('se-route-profile-menu-' + profile));
@@ -55,5 +56,6 @@ const validateRouteInfo = async (profile, km, fromMenu = false) => {
         await waitBy(By.id('se-route-profile-' + profile));
         await clickBy(By.id('se-route-profile-' + profile));
     }
-    await matchTextBy(By.id('se-route-info'), km);
+    await matchTextBy(ROUTE_SUMMARY_SELECTOR, expectations.distance);
+    await matchTextBy(ROUTE_SUMMARY_SELECTOR, expectations.duration);
 };

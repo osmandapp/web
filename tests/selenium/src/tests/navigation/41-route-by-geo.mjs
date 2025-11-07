@@ -7,6 +7,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 
+const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
 const routes = [
     {
         zoom: 8,
@@ -62,7 +63,7 @@ export default async function test() {
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
 
         await clickBy(By.id('se-button-back'), { optional: true });
-        await matchTextBy(By.id('se-route-info'), check);
+        await matchTextBy(ROUTE_SUMMARY_SELECTOR, check);
 
         // swap button for last route
         if (profile === routes.at(-1).profile) {
