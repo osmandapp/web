@@ -279,6 +279,24 @@ The OsmAnd app allows you to use the 3D map view on the *Android Auto* screen to
 - After configuring the settings, the **3D button** will be displayed on the *Android Auto* screen when the category list for destinations is closed.
 - You can switch between 3D / 2D map modes by tapping this button.
 
+### Finish Navigation {#finish-navigation}
+
+![Finish Navigation](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+When navigation is completed in Android Auto, a special Finish Navigation dialog appears on the vehicle screen. It uses the same arrival detection algorithm as the mobile app and helps you quickly wrap up your trip or find a parking place nearby.
+
+Available options:
+- **Mark as parking location**. Saves your current position as a parking location and places a parking marker on the map.
+- **Find parking**. Opens the Search screen with the Parking category preselected, so you can easily locate nearby parking areas.
+- **Recalculate route**. Builds a new route to your original destination if you stopped earlier or wish to continue driving.
+- **Finish navigation**. Ends navigation completely and returns OsmAnd to the default map view.
+
+Behavior when disconnecting from Android Auto:
+- If your phone disconnects when the vehicle is already within 100 m of the destination, OsmAnd automatically stops navigation, switches back to the default profile, and no arrival notification appears on the phone screen.
+- If the disconnection occurs while standing still or moving slower than 1 m/s (for example, at a gas station), OsmAnd temporarily pauses navigation. It automatically resumes when the device reconnects to Android Auto.
+
+This update also ensures that Android Auto sessions now close correctly, preventing unnecessary battery usage and stopping “trip in progress” notifications once navigation ends.
+
 
 ## Settings {#settings}
 
