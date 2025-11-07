@@ -189,6 +189,16 @@ export default function MainMenu({
         openMenuInNewTab(item);
     };
 
+    const handleMenuClick = (event, item) => {
+        if (event.metaKey || event.ctrlKey) {
+            event.preventDefault();
+            event.stopPropagation();
+            openMenuInNewTab(item);
+            return;
+        }
+        selectMenu({ item });
+    };
+
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
     };
@@ -854,21 +864,13 @@ export default function MainMenu({
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(
-                            (item, index) =>
+                            (item) =>
                                 item.show && (
                                     <MenuItem
                                         id={item.id}
-                                        key={index}
+                                        key={item.id ?? item.type}
                                         className={setMenuStyles(item)}
-                                        onClick={(event) => {
-                                            if (event.metaKey || event.ctrlKey) {
-                                                event.preventDefault();
-                                                event.stopPropagation();
-                                                openMenuInNewTab(item);
-                                                return;
-                                            }
-                                            selectMenu({ item });
-                                        }}
+                                        onClick={(event) => handleMenuClick(event, item)}
                                         onAuxClick={(event) => handleMenuAuxClick(event, item)}
                                         onMouseDown={(event) => {
                                             if (event.button === 1) {
