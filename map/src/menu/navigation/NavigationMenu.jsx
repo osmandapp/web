@@ -7,13 +7,11 @@ import {
     FormControl,
     InputLabel,
     Input,
-    Button,
     Typography,
     Link,
     Switch,
     Box,
     Grid,
-    ButtonGroup,
     AppBar,
     Toolbar,
     Tooltip,
@@ -38,6 +36,7 @@ import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
+import RouteSummaryCard from './RouteSummaryCard';
 import {
     DEFAULT_VISIBLE_PROFILES,
     ROUTE_POINTS_START,
@@ -241,6 +240,13 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
+                {routeObject.getRoute() && routeObject.getRouteProps() && (
+                    <>
+                        <ThickDivider />
+                        <RouteSummaryCard routeProps={routeObject.getRouteProps()} onDetails={openInfoBlock} />
+                        <ThickDivider />
+                    </>
+                )}
                 {avoidRoads.map((item, ind) => (
                     <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                         <FormControl fullWidth>
@@ -264,7 +270,7 @@ export default function NavigationMenu() {
                         </IconButton>
                     </MenuItem>
                 ))}
-                <Box sx={{ mx: 3, mt: 2 }}>
+                <Box sx={{ p: 2 }}>
                     <RouteProfileSettings
                         key="routesettingsembed"
                         embed={true}
@@ -293,24 +299,6 @@ export default function NavigationMenu() {
                             </MenuItem>
                         ))}
                 </Box>
-                {routeObject.getRouteProps() && (
-                    <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                        <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
-                    </MenuItem>
-                )}
-                <ButtonGroup variant="text" sx={{ mt: 2, ml: '11px' }}>
-                    {routeObject.getRoute() && (
-                        <Button
-                            id="se-route-more-information"
-                            variant="contained"
-                            component="span"
-                            className={styles.smallButton}
-                            onClick={openInfoBlock}
-                        >
-                            More information
-                        </Button>
-                    )}
-                </ButtonGroup>
                 {ctx.routeTrackFile && (
                     <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                         <FormControl fullWidth>
