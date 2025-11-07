@@ -48,6 +48,7 @@ import {
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
+import ColorBlock from '../../frame/components/other/ColorBlock';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -171,7 +172,7 @@ export default function NavigationMenu() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box className={gStyles.scrollActiveBlock} sx={{ pt: 0, mt: 0 }}>
+            <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
                     {visibleProfiles.map((key) => {
                         const profile = routeObject.listProfiles().find((p) => p.key === key);
@@ -329,6 +330,7 @@ export default function NavigationMenu() {
                         </IconButton>
                     </MenuItem>
                 )}
+                <ColorBlock color={'#f0f0f0'} />
                 {openSettings && (
                     <RouteProfileSettings
                         key="routesettingsdialog"
