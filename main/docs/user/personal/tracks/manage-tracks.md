@@ -195,7 +195,7 @@ Once you have made your choice, the following steps are provided:
 
 - **Show on map** — With this feature, you can display the selected tracks on the map to better understand their location and relationship to each other.
 
-- **Share** (*Android*) / **Export** (*iOS*) — If you want to share selected data with other users or save it to a cloud service, the *Share/Export* feature allows you to send tracks and folders using different sharing methods.
+- **Share** (*Android*) / **Export** (*iOS*) — Opens the system Share menu and sends the selected tracks as GPX files (.gpx) or exports selected folders using the chosen app or cloud service.
 
 - **Upload to OpenStreetMap** — You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
 
