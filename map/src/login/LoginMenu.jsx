@@ -69,14 +69,6 @@ export default function LoginMenu() {
     };
 
     useEffect(() => {
-        const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
-        if (inAppPurchases && inAppPurchases.length > 0) {
-            const hasGift = inAppPurchases.some((purchase) => purchase.sku.includes('osmand_pro_xv'));
-            setShowGift(hasGift);
-        }
-    }, [ltx.accountInfo]);
-
-    useEffect(() => {
         if (ltx.loginRoles && (ltx.loginRoles.includes('ROLE_ADMIN') || ltx.loginRoles.includes('ROLE_SUPPORT'))) {
             setShowDeveloperArea(true);
         } else {
