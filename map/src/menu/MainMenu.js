@@ -169,6 +169,16 @@ export default function MainMenu({
 
     const navigate = useNavigate();
 
+    const openMenuInNewTab = (item) => {
+        if (!item) {
+            return;
+        }
+
+        const origin = globalThis?.location?.origin ?? '';
+        const targetUrl = new URL(item.url + location.hash, origin).toString();
+        globalThis.open(targetUrl, '_blank', 'noopener,noreferrer');
+    };
+
     const handleMenuAuxClick = (event, item) => {
         if (event.button !== 1) {
             return;
@@ -176,13 +186,7 @@ export default function MainMenu({
         event.preventDefault();
         event.stopPropagation();
 
-        if (!item) {
-            return;
-        }
-
-        const origin = globalThis.location.origin;
-        const targetUrl = new URL(item.url + location.hash, origin).toString();
-        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        openMenuInNewTab(item);
     };
 
     const handleDrawer = () => {
@@ -856,7 +860,15 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => selectMenu({ item })}
+                                        onClick={(event) => {
+                                            if (event.metaKey || event.ctrlKey) {
+                                                event.preventDefault();
+                                                event.stopPropagation();
+                                                openMenuInNewTab(item);
+                                                return;
+                                            }
+                                            selectMenu({ item });
+                                        }}
                                         onAuxClick={(event) => handleMenuAuxClick(event, item)}
                                         onMouseDown={(event) => {
                                             if (event.button === 1) {
