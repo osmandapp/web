@@ -207,5 +207,8 @@
   "set_start_point" : "Set start point",
   "set_destination" : "Set destination",
   "set_via_point" : "Intermediate",
-  "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points."
+  "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points.",
+  "attach_gpx_title": "Attach to the roads",
+  "attach_gpx_desc": "OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.",
+  "attach_gpx_button": "Select track"
 }

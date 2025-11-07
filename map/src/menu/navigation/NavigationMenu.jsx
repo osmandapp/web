@@ -225,9 +225,9 @@ export default function NavigationMenu() {
                         <ThickDivider mt={0} mb={0} />
                         <TextLeftIconBtn
                             icon={<AttachIcon />}
-                            text={'Attach to the roads'}
-                            desc={'OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.'}
-                            btnText={'Select track'}
+                            text={t('web:attach_gpx_title')}
+                            desc={t('web:attach_gpx_desc')}
+                            btnText={t('web:attach_gpx_button')}
                             onClick={() => btnFile.current?.click()}
                         />
                         <StyledInput
