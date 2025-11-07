@@ -68,6 +68,8 @@ This tool is helpful when you need a quick understanding of object sizes or dist
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="radius_ruler_item"/>*
 
+Available on all panels: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, and <Translate android="true" ids="shared_string_right"/>.
+
 ![Display position Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -75,7 +77,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → Add widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Display position Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Available on all panels: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Left, and Right.
+
+![Display position IOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
