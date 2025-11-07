@@ -28,6 +28,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
+import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
@@ -46,6 +47,7 @@ import {
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
+import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -213,17 +215,30 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager routeObject={routeObject} />
-                <ThickDivider />
                 {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
-                    <TextWithLeftIcon
-                        icon={<InfoIcon />}
-                        text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}
-                    />
-                )}
-                {routeObject.getRouteProps() && (
-                    <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                        <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
-                    </MenuItem>
+                    <>
+                        <ThickDivider />
+                        <TextWithLeftIcon
+                            icon={<InfoIcon />}
+                            text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}
+                        />
+                        <ThickDivider mt={0} mb={0} />
+                        <TextLeftIconBtn
+                            icon={<AttachIcon />}
+                            text={'Attach to the roads'}
+                            desc={'OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.'}
+                            btnText={'Select track'}
+                            onClick={() => btnFile.current?.click()}
+                        />
+                        <StyledInput
+                            ref={btnFile}
+                            accept=".gpx"
+                            id="contained-button-route"
+                            type="file"
+                            onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
+                        />
+                        <ThickDivider />
+                    </>
                 )}
                 {avoidRoads.map((item, ind) => (
                     <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
@@ -248,25 +263,6 @@ export default function NavigationMenu() {
                         </IconButton>
                     </MenuItem>
                 ))}
-                {ctx.routeTrackFile && (
-                    <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                        <FormControl fullWidth>
-                            <InputLabel id="track-file-label">Selected track</InputLabel>
-                            <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
-                        </FormControl>
-                        <IconButton
-                            sx={{ ml: 1 }}
-                            onClick={() => {
-                                routeObject.resetRoute();
-                                ctx.setRouteTrackFile(null);
-                                routeObject.setOption(ROUTE_POINTS_START, null);
-                                routeObject.setOption(ROUTE_POINTS_FINISH, null);
-                            }}
-                        >
-                            <RemoveCircle fontSize="small" />
-                        </IconButton>
-                    </MenuItem>
-                )}
                 <Box sx={{ mx: 3, mt: 2 }}>
                     <RouteProfileSettings
                         key="routesettingsembed"
@@ -296,19 +292,12 @@ export default function NavigationMenu() {
                             </MenuItem>
                         ))}
                 </Box>
+                {routeObject.getRouteProps() && (
+                    <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
+                        <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
+                    </MenuItem>
+                )}
                 <ButtonGroup variant="text" sx={{ mt: 2, ml: '11px' }}>
-                    <label htmlFor="contained-button-route">
-                        <StyledInput
-                            ref={btnFile}
-                            accept=".gpx"
-                            id="contained-button-route"
-                            type="file"
-                            onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
-                        />
-                        <Button component="span" variant="contained" className={styles.smallButton}>
-                            Approximate GPX
-                        </Button>
-                    </label>
                     {routeObject.getRoute() && (
                         <Button
                             id="se-route-more-information"
@@ -321,6 +310,25 @@ export default function NavigationMenu() {
                         </Button>
                     )}
                 </ButtonGroup>
+                {ctx.routeTrackFile && (
+                    <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
+                        <FormControl fullWidth>
+                            <InputLabel id="track-file-label">Selected track</InputLabel>
+                            <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
+                        </FormControl>
+                        <IconButton
+                            sx={{ ml: 1 }}
+                            onClick={() => {
+                                routeObject.resetRoute();
+                                ctx.setRouteTrackFile(null);
+                                routeObject.setOption(ROUTE_POINTS_START, null);
+                                routeObject.setOption(ROUTE_POINTS_FINISH, null);
+                            }}
+                        >
+                            <RemoveCircle fontSize="small" />
+                        </IconButton>
+                    </MenuItem>
+                )}
                 {openSettings && (
                     <RouteProfileSettings
                         key="routesettingsdialog"
