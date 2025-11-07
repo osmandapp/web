@@ -132,7 +132,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exports the selected track in a GPX format.
+- **<Translate android="true" ids="shared_string_share"/>** – Exports the selected track in a GPX format via the system Share menu.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Uploads](../../plugins/osm-editing.md#upload-gps-track) the selected track to OpenStreetMap.
 
 <br/>
