@@ -25,6 +25,20 @@ function getValidatedLatLon(value) {
     return null;
 }
 
+const preparePointUpdate = ({ value, current }) => {
+    const trimmedValue = value ? value.trim() : '';
+
+    if (!trimmedValue) {
+        return { shouldClear: true, shouldSkip: false, trimmedValue };
+    }
+
+    if (current && trimmedValue === formatLatLon(current)) {
+        return { shouldClear: false, shouldSkip: true, trimmedValue };
+    }
+
+    return { shouldClear: false, shouldSkip: false, trimmedValue };
+};
+
 export default function NavigationPointsManager({ routeObject }) {
     const { t } = useTranslation();
 
@@ -79,24 +93,44 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleStartBlur = (value) => {
-        if (!value || value.trim() === '') {
+        const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
+            value,
+            current: routeObject.getOption(ROUTE_POINTS_START),
+        });
+
+        if (shouldSkip) {
+            return;
+        }
+
+        if (shouldClear) {
             routeObject.setOption(ROUTE_POINTS_START, null);
             routeObject.resetRoute();
             return;
         }
-        const latlon = getValidatedLatLon(value);
+
+        const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
             routeObject.setOption(ROUTE_POINTS_START, latlon);
         }
     };
 
     const handleFinishBlur = (value) => {
-        if (!value || value.trim() === '') {
+        const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
+            value,
+            current: routeObject.getOption(ROUTE_POINTS_FINISH),
+        });
+
+        if (shouldSkip) {
+            return;
+        }
+
+        if (shouldClear) {
             routeObject.setOption(ROUTE_POINTS_FINISH, null);
             routeObject.resetRoute();
             return;
         }
-        const latlon = getValidatedLatLon(value);
+
+        const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
             routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
         }
@@ -257,7 +291,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 placeholder={t('web:set_start_point')}
                 onChange={handleStartChange}
                 onBlur={handleStartBlur}
-                onKeyDown={(e) => handleKeyPress(e, (val) => handleStartBlur(val))}
+                onKeyDown={(e) => handleKeyPress(e, handleStartBlur)}
                 type={START_POINT}
                 onSwap={handleSwap}
                 onDragStart={handleDragStart(0)}
@@ -303,7 +337,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 placeholder={t('web:set_destination')}
                 onChange={handleFinishChange}
                 onBlur={handleFinishBlur}
-                onKeyDown={(e) => handleKeyPress(e, (val) => handleFinishBlur(val))}
+                onKeyDown={(e) => handleKeyPress(e, handleFinishBlur)}
                 type={FINISH_POINT}
                 onAdd={handleAddIntermediate}
                 onDragStart={handleDragStart(intermediates.length + 1)}
