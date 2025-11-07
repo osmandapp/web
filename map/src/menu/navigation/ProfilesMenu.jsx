@@ -29,15 +29,18 @@ export default function ProfilesMenu({ anchorEl, onClose, onProfileSelect, route
                 },
             }}
         >
-            {Object.entries(PROFILE_GROUPS).map(([groupKey, profileKeys], groupIndex) => (
-                <React.Fragment key={groupKey}>
-                    {groupIndex > 0 && <Divider />}
-                    {profileKeys.map((profileKey) => {
-                        const profile = routeObject.listProfiles().find((p) => p.key === profileKey);
-                        if (!profile) return null;
-
-                        const { key, name, icon, color } = profile;
-                        return (
+            {Object.entries(PROFILE_GROUPS)
+                .map(([groupKey, profileKeys]) => {
+                    const availableProfiles = profileKeys
+                        .map((profileKey) => routeObject.listProfiles().find((p) => p.key === profileKey))
+                        .filter(Boolean);
+                    return { groupKey, profiles: availableProfiles };
+                })
+                .filter(({ profiles }) => profiles.length > 0)
+                .map(({ groupKey, profiles }, groupIndex) => (
+                    <React.Fragment key={groupKey}>
+                        {groupIndex > 0 && <Divider />}
+                        {profiles.map(({ key, name, icon, color }) => (
                             <MenuItem
                                 key={key}
                                 id={`se-route-profile-menu-${key}`}
@@ -56,10 +59,9 @@ export default function ProfilesMenu({ anchorEl, onClose, onProfileSelect, route
                                 </ListItemIcon>
                                 <ListItemText primary={name} />
                             </MenuItem>
-                        );
-                    })}
-                </React.Fragment>
-            ))}
+                        ))}
+                    </React.Fragment>
+                ))}
         </Menu>
     );
 }
