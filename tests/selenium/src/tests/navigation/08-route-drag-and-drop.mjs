@@ -1,7 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import { assert, clickBy, matchValueBy, sendKeysBy, waitBy } from '../../lib.mjs';
+import { assert, clickBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -55,6 +55,14 @@ export default async function test() {
     const routeAfterRemoveInfo = await getRouteInfo();
     const distanceAfterRemove = getRouteDistance(routeAfterRemoveInfo);
     await assert(distanceWithVia !== distanceAfterRemove, 'Route distance should change after removing via point');
+
+    await clickBy(By.id('se-route-finish-point'));
+    await clickBy(By.id('se-route-finish-point-clear'));
+    await actionIdleWait();
+    const finishInput = await waitBy(By.id('se-route-finish-point'));
+    const finishValue = await finishInput.getAttribute('value');
+    await assert(finishValue === '', `Finish point should be empty, got "${finishValue}"`);
+    await waitByRemoved(By.id('se-route-info'));
 
     await actionFinish();
 }
