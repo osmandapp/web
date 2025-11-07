@@ -86,7 +86,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
 
     return (
         <Box className={styles.routeSummary}>
-            <Box className={styles.routeSummaryInfo}>
+            <Box className={styles.routeSummaryInfo} id="se-route-summary-info">
                 {summary.distance && (
                     <Typography className={styles.routeSummaryValue}>
                         {summary.distance.value}
@@ -127,7 +127,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                 )}
             </Box>
             <Box sx={{ mt: '20px' }}>
-                <GrayBtnWithBlueHover action={onDetails} text={t('shared_string_details')} />
+                <GrayBtnWithBlueHover id="se-route-more-information" action={onDetails} text={t('shared_string_details')} />
             </Box>
         </Box>
     );
