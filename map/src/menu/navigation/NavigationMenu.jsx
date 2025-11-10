@@ -15,12 +15,11 @@ import {
     AppBar,
     Toolbar,
     Tooltip,
+    CircularProgress,
 } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
 import RouteProfileSettings from './RouteProfileSettings';
 import styles from './routemenu.module.css';
-import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
-import i18n from 'i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
@@ -37,6 +36,8 @@ import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
 import RouteSummaryCard from './RouteSummaryCard';
+import { abortApiRequest } from '../../util/HttpApi';
+import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
 import {
     DEFAULT_VISIBLE_PROFILES,
     ROUTE_POINTS_START,
@@ -130,6 +131,13 @@ export default function NavigationMenu() {
         routeObject.onRouterProfileSelected({ profile: profileKey });
     }
 
+    function handleCancelRouteCalculation() {
+        routeObject.resetRoute();
+        ctx.setRoutingErrorMsg(null);
+        abortApiRequest(NAVIGATION_ROUTE_ABORT_KEY);
+        ctx.setNavigationRoutingInProgress(false);
+    }
+
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBar
@@ -190,6 +198,18 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager routeObject={routeObject} />
+                {ctx.navigationRoutingInProgress && (
+                    <>
+                        <ThickDivider mt={0} mb={0} />
+                        <TextLeftIconBtn
+                            icon={<CircularProgress size={24} thickness={4} />}
+                            text={t('web:waiting_for_route_calculation')}
+                            desc={t('web:waiting_for_route_calculation_description')}
+                            btnText={t('shared_string_cancel')}
+                            onClick={handleCancelRouteCalculation}
+                        />
+                    </>
+                )}
                 {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
                     <>
                         <ThickDivider />

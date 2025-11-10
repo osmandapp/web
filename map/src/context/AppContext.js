@@ -436,6 +436,7 @@ export const AppContextProvider = (props) => {
     const [routingCache, mutateRoutingCache] = useMutator({});
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
+    const [navigationRoutingInProgress, setNavigationRoutingInProgress] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
@@ -749,6 +750,8 @@ export const AppContextProvider = (props) => {
                 setRoutingNewSegments,
                 processRouting,
                 setProcessRouting,
+                navigationRoutingInProgress,
+                setNavigationRoutingInProgress,
                 selectedWpt,
                 setSelectedWpt,
                 trackRange,
