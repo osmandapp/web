@@ -88,7 +88,7 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
  - [Direct-to-point routing for Boat](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Straight line routing for Boat](./boat-navigation.md#straight-line-routing-for-boat)
 
-It's important to note, that the *Direct-to-point* and *Straight line* routings types should only be used in open water where there are no obstacles or hazards to navigation. If you are navigating in a waterway with a specific channel or route, you should use the boat routing type in OsmAnd, which will guide you through the correct navigational channels and avoid shallow areas or other hazards.  
+It's important to note, that the *Direct-to-point* and *Straight line* routings types should only be used in open water where there are no obstacles or hazards to navigation. If you are navigating in a waterway with a specific channel or route, you should use the boat routing type in OsmAnd, which will guide you through the correct navigational channels and avoid shallow areas or other hazards. Some mapped hazards based on OSM hazard=* tags may be shown on the map as hazard POI icons or text labels. 
 
 These routing types for the boat profile can be activated using the following path: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
