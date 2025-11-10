@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
@@ -64,13 +64,18 @@ function formatElevation(value, ctx, t) {
 export default function RouteSummaryCard({ routeProps, onDetails }) {
     const ctx = useContext(AppContext);
     const { t, i18n } = useTranslation();
+    const previousSummary = useRef(null);
 
     const summary = useMemo(() => {
         const overall = routeProps?.overall ?? {};
+        if (overall?.time === 0 && previousSummary.current) {
+            return previousSummary.current;
+        }
+
         const elevationUp = routeProps?.diffElevationUp ?? overall?.diffElevationUp;
         const elevationDown = routeProps?.diffElevationDown ?? overall?.diffElevationDown;
 
-        return {
+        const newSummary = {
             distance: formatDistance(overall?.distance, ctx, i18n.language, t),
             duration: formatDuration(overall?.time, t),
             arrival: formatArrival(overall?.time),
@@ -78,11 +83,10 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
             elevationUp: formatElevation(elevationUp, ctx, t),
             elevationDown: formatElevation(elevationDown, ctx, t),
         };
-    }, [routeProps]);
 
-    if (!summary.distance && !summary.duration) {
-        return null;
-    }
+        previousSummary.current = newSummary;
+        return newSummary;
+    }, [routeProps]);
 
     return (
         <Box className={styles.routeSummary}>
@@ -127,7 +131,11 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                 )}
             </Box>
             <Box sx={{ mt: '20px' }}>
-                <GrayBtnWithBlueHover id="se-route-more-information" action={onDetails} text={t('shared_string_details')} />
+                <GrayBtnWithBlueHover
+                    id="se-route-more-information"
+                    action={onDetails}
+                    text={t('shared_string_details')}
+                />
             </Box>
         </Box>
     );
