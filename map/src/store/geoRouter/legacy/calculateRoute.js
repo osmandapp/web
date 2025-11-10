@@ -90,7 +90,12 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
         abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
     });
 
-    if (response?.ok) {
+    if (!response) {
+        changeRouteText(false, null);
+        return;
+    }
+
+    if (response.ok) {
         const osrm = await response.json();
         const { route } = this.putRouteOsrm({ osrm, style });
         changeRouteText(false, this.getRouteProps(route));

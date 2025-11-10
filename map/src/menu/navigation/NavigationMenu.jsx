@@ -26,6 +26,7 @@ import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_set
 import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
+import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
@@ -36,6 +37,7 @@ import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
 import RouteSummaryCard from './RouteSummaryCard';
+import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import { abortApiRequest } from '../../util/HttpApi';
 import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
 import {
@@ -47,7 +49,6 @@ import {
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
-import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 
 const StyledInput = styled('input')({
@@ -210,6 +211,18 @@ export default function NavigationMenu() {
                         />
                     </>
                 )}
+                {ctx.routingErrorMsg &&
+                    routeObject.getOption(ROUTE_POINTS_START) &&
+                    routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                        <>
+                            <ThickDivider mt={0} mb={0} />
+                            <TextLeftIconBtn
+                                icon={<WarningIcon />}
+                                text={t('web:router_error_title')}
+                                desc={ctx.routingErrorMsg}
+                            />
+                        </>
+                    )}
                 {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
                     <>
                         <ThickDivider />
