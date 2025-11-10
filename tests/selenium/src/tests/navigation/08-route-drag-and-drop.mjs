@@ -45,6 +45,7 @@ export default async function test() {
     await actionIdleWait();
 
     await matchValueBy(By.id('se-route-via-point-0'), VIA);
+    await actionIdleWait();
 
     const routeWithViaInfo = await getRouteInfo();
     const distanceWithVia = getRouteDistance(routeWithViaInfo);
