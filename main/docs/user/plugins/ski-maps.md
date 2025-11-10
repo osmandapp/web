@@ -167,7 +167,7 @@ OsmAnd Ski Map is built as one of the rendering styles, that determines which ob
 The difficulty of traces is usually indicated by specific colors. The colors may be different in different countries and resorts. Below are some practical guidelines.
 
 :::tip guidance
-For more specific guidance for each trail difficulty type, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) or any other source that also considers slopes, obstacles, and hazards.  
+For more specific guidance for each trail difficulty type, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) or any other source that also considers slopes, obstacles, and hazards. In Winter and Ski map style, certain mapped hazards (for example avalanche-prone areas tagged as hazard=avalanche) may be shown as hazard POI on the map and should be taken into account together with piste difficulty. 
 :::
 
 
