@@ -339,7 +339,7 @@ To create custom filters for finding places on the map, select relevant categori
 
 7. **Food**. Includes 12 types of filters.  
 
-8. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*.  
+8. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*. The Hazard category includes both POI with hazard=* tags on nodes and road or path segments (ways) marked with the same tag, if they are exported as searchable objects.
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Includes 31 types of filters.
 
