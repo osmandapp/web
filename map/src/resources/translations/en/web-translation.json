@@ -204,6 +204,8 @@
   "download_track_full" : "Full track data",
   "download_track_simplified" : "Simplified track",
   "navigation_menu_title" : "Route",
+  "waiting_for_route_calculation": "Calculating route",
+  "waiting_for_route_calculation_description": "It can take some time to calculate a long route.",
   "set_start_point" : "Set start point",
   "set_destination" : "Set destination",
   "set_via_point" : "Intermediate",
