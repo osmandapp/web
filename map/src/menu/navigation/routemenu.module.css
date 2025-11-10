@@ -25,6 +25,10 @@
     border-color: #e0e0e0 !important;
 }
 
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) {
+    background-color: #ffffff !important;
+}
+
 .navigationInput :global(.MuiOutlinedInput-root.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
     border-color: var(--selected-color) !important;
     border-width: 2px !important;
