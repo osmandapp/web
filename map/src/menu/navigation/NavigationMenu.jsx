@@ -50,6 +50,7 @@ import {
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
+import SelectedTrackRow from './SelectedTrackRow';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -137,6 +138,13 @@ export default function NavigationMenu() {
         ctx.setRoutingErrorMsg(null);
         abortApiRequest(NAVIGATION_ROUTE_ABORT_KEY);
         ctx.setNavigationRoutingInProgress(false);
+    }
+
+    function handleClearSelectedTrack() {
+        routeObject.resetRoute();
+        ctx.setRouteTrackFile(null);
+        routeObject.setOption(ROUTE_POINTS_START, null);
+        routeObject.setOption(ROUTE_POINTS_FINISH, null);
     }
 
     return (
@@ -307,25 +315,7 @@ export default function NavigationMenu() {
                             </MenuItem>
                         ))}
                 </Box>
-                {ctx.routeTrackFile && (
-                    <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                        <FormControl fullWidth>
-                            <InputLabel id="track-file-label">Selected track</InputLabel>
-                            <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
-                        </FormControl>
-                        <IconButton
-                            sx={{ ml: 1 }}
-                            onClick={() => {
-                                routeObject.resetRoute();
-                                ctx.setRouteTrackFile(null);
-                                routeObject.setOption(ROUTE_POINTS_START, null);
-                                routeObject.setOption(ROUTE_POINTS_FINISH, null);
-                            }}
-                        >
-                            <RemoveCircle fontSize="small" />
-                        </IconButton>
-                    </MenuItem>
-                )}
+                <SelectedTrackRow trackFile={ctx.routeTrackFile} onClear={handleClearSelectedTrack} />
                 <ColorBlock color={'#f0f0f0'} />
                 {openSettings && (
                     <RouteProfileSettings
