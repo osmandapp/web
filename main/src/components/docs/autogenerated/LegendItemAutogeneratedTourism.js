@@ -57,7 +57,7 @@ export default function Render() {
         'Historic tomb' : {poiName:'tomb', poiName2:null, folderName:'tourism/tourism_historic_tomb'},
         'Charcoal pile' : {poiName:'charcoal_pile', poiName2:null, folderName:'tourism/tourism_historic_charcoal_pile'},
         'Historic tank' : {poiName:'historic_tank', poiName2:null, folderName:'tourism/tourism_historic_tank'},
-        'Historic spacecraft' : {poiName:'null', poiName2:null, folderName:'tourism/tourism_historic_spacecraft'},
+        'Historic spacecraft' : {poiName:'historic_spacecraft', poiName2:null, folderName:'tourism/tourism_historic_spacecraft'},
         'Historic pillory' : {poiName:'pillory', poiName2:null, folderName:'tourism/tourism_historic_pillory'},
         'Historic manor' : {poiName:'historic_manor', poiName2:null, folderName:'tourism/tourism_historic_manor'},
         'Historic locomotive' : {poiName:'locomotive', poiName2:null, folderName:'tourism/tourism_historic_locomotive'},
