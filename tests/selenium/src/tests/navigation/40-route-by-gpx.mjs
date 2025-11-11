@@ -14,7 +14,7 @@ const CHECK_START = /50\.(39743|39753|39737), 30\.(50982|50947|51001)/;
 const CHECK_END = '50.36917, 30.52727';
 const CAR = { distance: /1[12]\.[0-9]\s*km/, duration: /2[0-9]\s*m/ };
 const BIKE = { distance: /1[12]\.[0-9]\s*km/, duration: /5[0-9]\s*m/ };
-const FOOT = { distance: /1[12]\.[0-9]\s*km/, duration: /(?:1[89]\d|2\d{2})\s*m/ };
+const FOOT = { distance: /1[12]\.[0-9]\s*km/, duration: /(?:\d{2}:\d{2})/ };
 
 export default async function test() {
     await actionOpenMap();

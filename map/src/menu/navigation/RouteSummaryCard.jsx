@@ -28,9 +28,17 @@ function formatDuration(seconds, t) {
         return null;
     }
     const totalMinutes = Math.round(seconds / 60);
+    if (totalMinutes < 60) {
+        return {
+            value: totalMinutes.toString(),
+            unit: t('web:short_min'),
+        };
+    }
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
     return {
-        value: totalMinutes.toString(),
-        unit: t('web:short_min'),
+        value: `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`,
+        unit: '',
     };
 }
 
@@ -101,7 +109,9 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                 {summary.duration && (
                     <Typography className={styles.routeSummaryValue}>
                         {summary.duration.value}
-                        <span className={styles.routeSummaryUnit}> {summary.duration.unit}</span>
+                        {summary.duration.unit && (
+                            <span className={styles.routeSummaryUnit}> {summary.duration.unit}</span>
+                        )}
                     </Typography>
                 )}
                 {summary.arrival && <Typography className={styles.routeSummaryArrival}>({summary.arrival})</Typography>}
