@@ -208,6 +208,7 @@
   "waiting_for_route_calculation_description": "It can take some time to calculate a long route.",
   "router_error_title": "Router error",
   "router_error_description": "Please open settings and choose another provider/profile.",
+  "selected_track": "Selected track",
   "set_start_point" : "Set start point",
   "set_destination" : "Set destination",
   "set_via_point" : "Intermediate",
