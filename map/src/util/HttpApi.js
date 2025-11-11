@@ -259,6 +259,17 @@ export async function apiGet(url, options = null) {
     });
 }
 
+export function abortApiRequest(abortKey) {
+    if (!abortKey) {
+        return;
+    }
+    const controller = abortControllers[abortKey];
+    if (controller) {
+        controller.abort();
+        delete abortControllers[abortKey];
+    }
+}
+
 /*
     axios post() wrapper
 

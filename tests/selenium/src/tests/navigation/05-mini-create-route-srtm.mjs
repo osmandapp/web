@@ -3,6 +3,7 @@ import { clickBy, matchInnerTextBy, sendKeysBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { selectProfile } from './42-route-info-block.mjs';
+import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const routes = [
     {
@@ -41,6 +42,7 @@ export default async function test() {
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
         await waitBy(By.className('leaflet-interactive'));
+        await waitBy(ROUTE_SUMMARY_SELECTOR);
         await clickBy(By.id('se-route-more-information'));
 
         await validateInfoBlockStrings(strings);

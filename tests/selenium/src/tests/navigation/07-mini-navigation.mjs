@@ -40,7 +40,7 @@ export default async function test() {
 
 async function validateInfo() {
     try {
-        const el = await driver.findElement(By.id('se-route-info'));
+        const el = await waitBy(By.id('se-route-summary-info'));
         const text = await el.getText();
 
         // get all numbers from the text

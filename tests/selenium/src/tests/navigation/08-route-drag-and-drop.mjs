@@ -6,6 +6,7 @@ import { assert, clickBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
+import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const A = '50.45000, 30.52340';
 const B = '50.46000, 30.53340';
@@ -17,7 +18,7 @@ export default async function test() {
 
     await sendKeysBy(By.id('se-route-start-point'), A + '\n');
     await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
-    await waitBy(By.id('se-route-info'));
+    await waitBy(ROUTE_SUMMARY_SELECTOR);
 
     const initialRouteInfo = await getRouteInfo();
     const initialDistance = getRouteDistance(initialRouteInfo);
@@ -44,6 +45,7 @@ export default async function test() {
     await actionIdleWait();
 
     await matchValueBy(By.id('se-route-via-point-0'), VIA);
+    await actionIdleWait();
 
     const routeWithViaInfo = await getRouteInfo();
     const distanceWithVia = getRouteDistance(routeWithViaInfo);
@@ -62,10 +64,10 @@ export default async function test() {
     const finishInput = await waitBy(By.id('se-route-finish-point'));
     const finishValue = await finishInput.getAttribute('value');
     await assert(finishValue === '', `Finish point should be empty, got "${finishValue}"`);
-    await waitByRemoved(By.id('se-route-info'));
+    await waitByRemoved(ROUTE_SUMMARY_SELECTOR);
 
     await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
-    await waitBy(By.id('se-route-info'));
+    await waitBy(ROUTE_SUMMARY_SELECTOR);
 
     await clickBy(By.id('se-route-start-point'));
     await clickBy(By.id('se-route-start-point-clear'));
@@ -73,13 +75,13 @@ export default async function test() {
     const startInput = await waitBy(By.id('se-route-start-point'));
     const startValue = await startInput.getAttribute('value');
     await assert(startValue === '', `Start point should be empty, got "${startValue}"`);
-    await waitByRemoved(By.id('se-route-info'));
+    await waitByRemoved(ROUTE_SUMMARY_SELECTOR);
 
     await actionFinish();
 }
 
 async function getRouteInfo() {
-    const element = await waitBy(By.id('se-route-info'));
+    const element = await waitBy(ROUTE_SUMMARY_SELECTOR);
     return await element.getText();
 }
 

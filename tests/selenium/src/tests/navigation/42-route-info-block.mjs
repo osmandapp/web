@@ -1,8 +1,8 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import { mobile } from '../../options.mjs';
-import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds } from '../../lib.mjs';
+import { mobile, ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
+import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds, waitBy } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -78,6 +78,8 @@ export default async function test() {
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
+
+        await waitBy(ROUTE_SUMMARY_SELECTOR);
 
         // Navigation InfoBlock is disabled by default
         await clickBy(By.id('se-route-more-information'));

@@ -25,6 +25,7 @@ export function RouteService() {
 
     const setHeaderText = ctx.setHeaderText;
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
+    const setNavigationRoutingInProgress = ctx.setNavigationRoutingInProgress;
 
     useEffect(() => {
         const startPoint = routeObject.getOption(ROUTE_POINTS_START);
@@ -37,8 +38,9 @@ export function RouteService() {
     function changeRouteText(processRoute, props) {
         let resultText = '';
         if (processRoute) {
-            resultText = 'Route calculating…';
+            setNavigationRoutingInProgress(true);
         } else {
+            setNavigationRoutingInProgress(false);
             if (props) {
                 const { name } = routeObject.getProfile();
                 const dist = props.overall?.distance ? props.overall?.distance : props.distance;
@@ -174,13 +176,12 @@ export function RouteService() {
                 changeRouteText,
                 setRoutingErrorMsg,
             });
-        } else {
-            if (!routeTrackFile) {
-                setHeaderText((prevState) => ({
-                    ...prevState,
-                    route: { text: '' },
-                }));
-            }
+        } else if (!routeTrackFile) {
+            setNavigationRoutingInProgress(false);
+            setHeaderText((prevState) => ({
+                ...prevState,
+                route: { text: '' },
+            }));
         }
     }, [routeObject.getEffectDeps(), routeObject.getRouteEffectDeps(), routeTrackFile]);
 

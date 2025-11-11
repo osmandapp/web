@@ -204,7 +204,16 @@
   "download_track_full" : "Full track data",
   "download_track_simplified" : "Simplified track",
   "navigation_menu_title" : "Route",
+  "waiting_for_route_calculation": "Calculating route",
+  "waiting_for_route_calculation_description": "It can take some time to calculate a long route.",
+  "router_error_title": "Router error",
+  "router_error_description": "Please open settings and choose another provider/profile.",
+  "selected_track": "Selected track",
   "set_start_point" : "Set start point",
   "set_destination" : "Set destination",
-  "set_via_point" : "Intermediate"
+  "set_via_point" : "Intermediate",
+  "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points.",
+  "attach_gpx_title": "Attach to roads",
+  "attach_gpx_desc": "OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.",
+  "attach_gpx_button": "Select track"
 }

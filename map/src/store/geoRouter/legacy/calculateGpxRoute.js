@@ -34,6 +34,11 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
         }
     );
 
+    if (!response) {
+        changeRouteText(false, null);
+        return;
+    }
+
     if (response.ok) {
         let data = await response.json();
         let start, finish;

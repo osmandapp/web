@@ -14,6 +14,8 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 
+export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
+
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
@@ -82,7 +84,16 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
     setRoutingErrorMsg(null);
     changeRouteText(true, null);
 
-    const response = await apiGet(url + coordinates + tail, { apiCache: true, dataOnErrors: true });
+    const response = await apiGet(url + coordinates + tail, {
+        apiCache: true,
+        dataOnErrors: true,
+        abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
+    });
+
+    if (!response) {
+        changeRouteText(false, null);
+        return;
+    }
 
     if (response.ok) {
         const osrm = await response.json();
@@ -134,8 +145,13 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
             apiCache: true,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
+            abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
         }
     );
+    if (!response) {
+        changeRouteText(false, null);
+        return;
+    }
     if (response.ok && response.data?.features) {
         let data = await response.json();
         if (data.msg) {

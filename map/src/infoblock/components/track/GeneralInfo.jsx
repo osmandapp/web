@@ -36,7 +36,6 @@ import {
     Terrain,
 } from '@mui/icons-material';
 import RouteIcon from '@mui/icons-material/Route';
-import { formatRouteInfo } from '../../../menu/navigation/NavigationMenu';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import {
@@ -49,6 +48,31 @@ import {
 } from '../../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../../context/LoginContext';
+import i18n from 'i18next';
+
+export function formatRouteInfo(props, ctx) {
+    const res = ['Route: '];
+    if (props?.overall?.distance) {
+        const dst = convertMeters(props.overall.distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1);
+        res.push(<span key="info-dst">{dst + ` ${i18n?.t(getLargeLengthUnit(ctx))}`}</span>);
+        res.push(', ');
+    }
+    if (props?.overall?.time) {
+        const totalSeconds = Math.round(props.overall.time);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const paddedMinutes = minutes.toString().padStart(2, '0');
+        res.push(<span key="info-time">{`${hours}:${paddedMinutes} min`}</span>);
+        res.push(', ');
+    }
+    res[res.length - 1] = '';
+    if (props?.overall?.routingTime) {
+        res[res.length - 1] = '.';
+        res.push(' Cost: ');
+        res.push(props.overall.routingTime.toFixed(0));
+    }
+    return <span id="se-route-info">{res}</span>;
+}
 
 export default function GeneralInfo({ width }) {
     const ctx = useContext(AppContext);

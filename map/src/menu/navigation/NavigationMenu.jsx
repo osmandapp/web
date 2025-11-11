@@ -7,35 +7,39 @@ import {
     FormControl,
     InputLabel,
     Input,
-    Button,
     Typography,
     Link,
     Switch,
     Box,
     Grid,
-    ButtonGroup,
     AppBar,
     Toolbar,
     Tooltip,
+    CircularProgress,
 } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
 import RouteProfileSettings from './RouteProfileSettings';
 import styles from './routemenu.module.css';
-import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
-import i18n from 'i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
+import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
+import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
+import RouteSummaryCard from './RouteSummaryCard';
+import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
+import { abortApiRequest } from '../../util/HttpApi';
+import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
 import {
     DEFAULT_VISIBLE_PROFILES,
     ROUTE_POINTS_START,
@@ -43,37 +47,16 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
+import ColorBlock from '../../frame/components/other/ColorBlock';
+import SelectedTrackRow from './SelectedTrackRow';
 
 const StyledInput = styled('input')({
     display: 'none',
 });
 
 const MAX_VISIBLE_PROFILES = 4;
-
-export function formatRouteInfo(props, ctx) {
-    const res = ['Route: '];
-    if (props?.overall?.distance) {
-        const dst = convertMeters(props.overall.distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1);
-        res.push(<span key="info-dst">{dst + ` ${i18n?.t(getLargeLengthUnit(ctx))}`}</span>);
-        res.push(', ');
-    }
-    if (props?.overall?.time) {
-        let hours = props.overall.time / 3600.0;
-        let min = ((hours - Math.floor(hours)) * 60).toFixed(0);
-        if (min < 10) {
-            min = '0' + min;
-        }
-        res.push(<span key="info-time">{Math.floor(hours).toFixed(0) + ':' + min + ' min'}</span>);
-        res.push(', ');
-    }
-    res[res.length - 1] = '';
-    if (props?.overall?.routingTime) {
-        res[res.length - 1] = '.';
-        res.push(' Cost: ');
-        res.push(props.overall.routingTime.toFixed(0));
-    }
-    return <span id="se-route-info">{res}</span>;
-}
 
 export default function NavigationMenu() {
     const ctx = useContext(AppContext);
@@ -150,6 +133,20 @@ export default function NavigationMenu() {
         routeObject.onRouterProfileSelected({ profile: profileKey });
     }
 
+    function handleCancelRouteCalculation() {
+        routeObject.resetRoute();
+        ctx.setRoutingErrorMsg(null);
+        abortApiRequest(NAVIGATION_ROUTE_ABORT_KEY);
+        ctx.setNavigationRoutingInProgress(false);
+    }
+
+    function handleClearSelectedTrack() {
+        routeObject.resetRoute();
+        ctx.setRouteTrackFile(null);
+        routeObject.setOption(ROUTE_POINTS_START, null);
+        routeObject.setOption(ROUTE_POINTS_FINISH, null);
+    }
+
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBar
@@ -166,7 +163,7 @@ export default function NavigationMenu() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box className={gStyles.scrollActiveBlock} sx={{ pt: 0, mt: 0 }}>
+            <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
                     {visibleProfiles.map((key) => {
                         const profile = routeObject.listProfiles().find((p) => p.key === key);
@@ -210,10 +207,61 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager routeObject={routeObject} />
-                {routeObject.getRouteProps() && (
-                    <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                        <Typography>{formatRouteInfo(routeObject.getRouteProps(), ctx)}</Typography>
-                    </MenuItem>
+                {ctx.navigationRoutingInProgress && (
+                    <>
+                        <ThickDivider mt={0} mb={0} />
+                        <TextLeftIconBtn
+                            icon={<CircularProgress size={24} thickness={4} />}
+                            text={t('web:waiting_for_route_calculation')}
+                            desc={t('web:waiting_for_route_calculation_description')}
+                            btnText={t('shared_string_cancel')}
+                            onClick={handleCancelRouteCalculation}
+                        />
+                    </>
+                )}
+                {ctx.routingErrorMsg &&
+                    routeObject.getOption(ROUTE_POINTS_START) &&
+                    routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                        <>
+                            <ThickDivider mt={0} mb={0} />
+                            <TextLeftIconBtn
+                                icon={<WarningIcon />}
+                                text={t('web:router_error_title')}
+                                desc={ctx.routingErrorMsg}
+                            />
+                        </>
+                    )}
+                {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                    <>
+                        <ThickDivider />
+                        <TextWithLeftIcon
+                            icon={<InfoIcon />}
+                            text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}
+                        />
+                        <ThickDivider mt={0} mb={0} />
+                        <TextLeftIconBtn
+                            icon={<AttachIcon />}
+                            text={t('web:attach_gpx_title')}
+                            desc={t('web:attach_gpx_desc')}
+                            btnText={t('web:attach_gpx_button')}
+                            onClick={() => btnFile.current?.click()}
+                        />
+                        <StyledInput
+                            ref={btnFile}
+                            accept=".gpx"
+                            id="contained-button-route"
+                            type="file"
+                            onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
+                        />
+                        <ThickDivider />
+                    </>
+                )}
+                {routeObject.getRoute() && routeObject.getRouteProps() && (
+                    <>
+                        <ThickDivider />
+                        <RouteSummaryCard routeProps={routeObject.getRouteProps()} onDetails={openInfoBlock} />
+                        <ThickDivider />
+                    </>
                 )}
                 {avoidRoads.map((item, ind) => (
                     <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
@@ -238,26 +286,7 @@ export default function NavigationMenu() {
                         </IconButton>
                     </MenuItem>
                 ))}
-                {ctx.routeTrackFile && (
-                    <MenuItem key="routetrack" sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                        <FormControl fullWidth>
-                            <InputLabel id="track-file-label">Selected track</InputLabel>
-                            <Input labelid="track-file-label" label="Track" value={ctx.routeTrackFile.name}></Input>
-                        </FormControl>
-                        <IconButton
-                            sx={{ ml: 1 }}
-                            onClick={() => {
-                                routeObject.resetRoute();
-                                ctx.setRouteTrackFile(null);
-                                routeObject.setOption(ROUTE_POINTS_START, null);
-                                routeObject.setOption(ROUTE_POINTS_FINISH, null);
-                            }}
-                        >
-                            <RemoveCircle fontSize="small" />
-                        </IconButton>
-                    </MenuItem>
-                )}
-                <Box sx={{ mx: 3, mt: 2 }}>
+                <Box sx={{ p: 2 }}>
                     <RouteProfileSettings
                         key="routesettingsembed"
                         embed={true}
@@ -286,31 +315,8 @@ export default function NavigationMenu() {
                             </MenuItem>
                         ))}
                 </Box>
-                <ButtonGroup variant="text" sx={{ mt: 2, ml: '11px' }}>
-                    <label htmlFor="contained-button-route">
-                        <StyledInput
-                            ref={btnFile}
-                            accept=".gpx"
-                            id="contained-button-route"
-                            type="file"
-                            onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
-                        />
-                        <Button component="span" variant="contained" className={styles.smallButton}>
-                            Approximate GPX
-                        </Button>
-                    </label>
-                    {routeObject.getRoute() && (
-                        <Button
-                            id="se-route-more-information"
-                            variant="contained"
-                            component="span"
-                            className={styles.smallButton}
-                            onClick={openInfoBlock}
-                        >
-                            More information
-                        </Button>
-                    )}
-                </ButtonGroup>
+                <SelectedTrackRow trackFile={ctx.routeTrackFile} onClear={handleClearSelectedTrack} />
+                <ColorBlock color={'#f0f0f0'} />
                 {openSettings && (
                     <RouteProfileSettings
                         key="routesettingsdialog"
