@@ -52,6 +52,7 @@ export default function SaveTrackDialog({ track: externalTrack = null }) {
 
     const closeDialog = ({ uploaded }) => {
         setProcess(false);
+        ctx.setProcessingSaveTrack(false);
         if (uploaded && !isCloudTrack(ctx) && !externalTrack) {
             ctx.setSaveTrackToCloud(true);
         }
