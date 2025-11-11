@@ -16,36 +16,49 @@ import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import Dialog from '@mui/material/Dialog';
 import LoginContext from '../../context/LoginContext';
 
-export default function SaveTrackDialog() {
+export default function SaveTrackDialog({ track: externalTrack = null }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
-    const [folder, setFolder] = useState(getOldGroup);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
+    const contextTrack = ctx.selectedGpxFile;
+    const trackSource = externalTrack ?? contextTrack;
+
+    const cloudAutoSave = externalTrack ? false : !!ctx.createTrack?.cloudAutoSave;
+
+    const getInitialFolder = () => {
+        if (externalTrack) {
+            return DEFAULT_GROUP_NAME;
+        }
+        return contextTrack?.originalName
+            ? TracksManager.getGroup(contextTrack.originalName, false)
+            : DEFAULT_GROUP_NAME;
+    };
+
+    const [folder, setFolder] = useState(getInitialFolder);
+    const [fileName, setFileName] = useState(trackSource?.name ?? '');
     const [error, setError] = useState(false);
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
     const [process, setProcess] = useState(false);
 
-    const cloudAutoSave = !!ctx.createTrack?.cloudAutoSave;
     const folders = getAllGroupNames(ctx.tracksGroups);
 
-    function getOldGroup() {
-        return ctx.selectedGpxFile.originalName
-            ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
-            : DEFAULT_GROUP_NAME;
-    }
+    useEffect(() => {
+        if (trackSource) {
+            setFileName(trackSource.name ?? '');
+            setFolder(getInitialFolder());
+        }
+    }, [trackSource?.name, contextTrack?.originalName]);
 
     const closeDialog = ({ uploaded }) => {
         setProcess(false);
-        if (uploaded && !isCloudTrack(ctx)) {
+        if (uploaded && !isCloudTrack(ctx) && !externalTrack) {
             ctx.setSaveTrackToCloud(true);
         }
-        const updatedSelectedGpxFile = {
-            ...ctx.selectedGpxFile,
-            save: false,
-        };
-        ctx.setSelectedGpxFile(updatedSelectedGpxFile);
+        if (!externalTrack && ctx.selectedGpxFile) {
+            ctx.setSelectedGpxFile((prev) => (prev ? { ...prev, save: false } : prev));
+        }
+        externalTrack?.onClose?.(uploaded);
     };
 
     const getFolderName = (folder) => {
@@ -73,15 +86,7 @@ export default function SaveTrackDialog() {
             setProcess(true);
             ctx.setProcessingSaveTrack(true);
             if (!isTrackExists(preparedName, folder, null, ctx.tracksGroups)) {
-                const uploaded = !!(await saveTrackToCloud({
-                    ctx,
-                    ltx,
-                    currentFolder: getFolderName(folder),
-                    fileName: preparedName,
-                    type: TracksManager.GPX_FILE_TYPE,
-                }));
-
-                closeDialog({ uploaded });
+                await save(preparedName);
             } else {
                 setExistTrack(true);
             }
@@ -98,24 +103,33 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            const uploaded = !!(await saveTrackToCloud({
-                ctx,
-                ltx,
-                currentFolder: getFolderName(folder),
-                fileName: preparedName,
-                type: TracksManager.GPX_FILE_TYPE,
-            }));
-            closeDialog({ uploaded });
+            await save(preparedName);
         } else {
             setError(true);
         }
+    }
+
+    async function save(name) {
+        const objToSave = {
+            ctx,
+            ltx,
+            currentFolder: getFolderName(folder),
+            fileName: name,
+            type: TracksManager.GPX_FILE_TYPE,
+        };
+        if (externalTrack) {
+            objToSave.gpxFile = trackSource;
+            objToSave.open = false;
+        }
+        const uploaded = !!(await saveTrackToCloud(objToSave));
+        closeDialog({ uploaded });
     }
 
     useEffect(() => {
         if (cloudAutoSave) {
             confirmedSaveTrack().then();
         }
-    }, []);
+    }, [cloudAutoSave]);
 
     const DialogUpdateTrack = ({ open, close }) => {
         return (
@@ -143,6 +157,10 @@ export default function SaveTrackDialog() {
             </Dialog>
         );
     };
+
+    if (!trackSource) {
+        return null;
+    }
 
     return (
         <div>

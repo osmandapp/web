@@ -215,5 +215,6 @@
   "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points.",
   "attach_gpx_title": "Attach to roads",
   "attach_gpx_desc": "OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.",
-  "attach_gpx_button": "Select track"
+  "attach_gpx_button": "Select track",
+  "upload_gpx_track": "Upload to OsmAnd Cloud"
 }
