@@ -78,13 +78,13 @@ export default function DownloadTrackDialog({
                 <DialogContentText sx={{ mb: '12px' }}>{t('web:download_track_desc')}</DialogContentText>
                 <List sx={{ p: 0 }}>
                     <DefaultItem
-                        id={'download-full-track'}
+                        id={'se-download-track-full'}
                         icon={<FullTrackIcon />}
                         name={t('web:download_track_full')}
                         onClick={() => handleDownload(false)}
                     />
                     <DefaultItem
-                        id={'download-simplified-track'}
+                        id={'se-download-simplified-track'}
                         icon={<SimplifiedTrackIcon />}
                         name={t('web:download_track_simplified')}
                         onClick={() => handleDownload(true)}
@@ -92,7 +92,11 @@ export default function DownloadTrackDialog({
                 </List>
             </DialogContent>
             <DialogActions>
-                <Button className={dialogStyles.button} onClick={() => setDialogOpen(false)}>
+                <Button
+                    id="se-close-download-dialog"
+                    className={dialogStyles.button}
+                    onClick={() => setDialogOpen(false)}
+                >
                     {t('shared_string_cancel')}
                 </Button>
             </DialogActions>

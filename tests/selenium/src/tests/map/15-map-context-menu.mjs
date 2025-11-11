@@ -45,7 +45,7 @@ export default async function test() {
     await clickBy(By.id('se-direction-action-to'));
     currentUrl = await driver.getCurrentUrl();
     await assert(currentUrl.includes('end='), 'URL must contain end=');
-    await waitBy(By.id('se-route-info'));
+    await waitBy(By.id('se-route-summary-info'));
     await clickBy(By.id('se-show-menu-navigation'));
 
     //Show regions
