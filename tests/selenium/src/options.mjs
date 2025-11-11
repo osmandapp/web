@@ -1,6 +1,6 @@
 'use strict';
 
-import { Builder } from 'selenium-webdriver';
+import { Builder, By } from 'selenium-webdriver';
 import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for logging
@@ -19,6 +19,8 @@ export const HIDDEN_TIMEOUT = 10000; // hidden timeout (waitBy) (10s)
 
 export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
 export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3s)
+
+export const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
 
 export let driver = null;
 
