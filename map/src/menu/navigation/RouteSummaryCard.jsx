@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
@@ -66,16 +66,15 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
     const { t, i18n } = useTranslation();
     const previousSummary = useRef(null);
 
-    const summary = useMemo(() => {
-        const overall = routeProps?.overall ?? {};
-        if (overall?.time === 0 && previousSummary.current) {
-            return previousSummary.current;
-        }
-
+    const overall = routeProps?.overall ?? {};
+    let summary;
+    if (overall?.time === 0 && previousSummary.current) {
+        summary = previousSummary.current;
+    } else {
         const elevationUp = routeProps?.diffElevationUp ?? overall?.diffElevationUp;
         const elevationDown = routeProps?.diffElevationDown ?? overall?.diffElevationDown;
 
-        const newSummary = {
+        summary = {
             distance: formatDistance(overall?.distance, ctx, i18n.language, t),
             duration: formatDuration(overall?.time, t),
             arrival: formatArrival(overall?.time),
@@ -84,9 +83,8 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
             elevationDown: formatElevation(elevationDown, ctx, t),
         };
 
-        previousSummary.current = newSummary;
-        return newSummary;
-    }, [routeProps]);
+        previousSummary.current = summary;
+    }
 
     return (
         <Box className={styles.routeSummary}>
