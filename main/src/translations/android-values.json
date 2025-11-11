@@ -1,5 +1,6 @@
 {
   "lang_ta_in": "Tamil (India)",
+
   "shared_sting_all_colors": "All colors",
   "routing_type_a_star_2_phase": "A* 2-phase",
   "routing_type_a_star_classic": "A* classic",
@@ -1786,6 +1787,7 @@
   "lang_bar": "Bavarian",
   "lang_ce": "Chechen",
   "lang_ckb": "Central Kurdish",
+  "lang_crh": "Crimean Tatar (latin)",
   "lang_cv": "Chuvash",
   "lang_gu": "Gujarati",
   "lang_jv": "Javanese",
@@ -10622,6 +10624,9 @@
   "copy_as_new_folder": "Copy as new folder",
   "add_to_a_folder": "Add to a folder",
   "add_to_favorites": "Add to favorites",
+  "max_weight_at_full_load_description": "Provide your vehicle's max weight at full load to avoid roads and bridges with weight limits.",
+  "max_axle_load_description": "Provide your vehicle's max axle load to avoid roads and bridges with weight limits.",
+  "private_access_routing_req_short": "Allow using a private road to reach your destination?",
   "view_on_phone": "View on Phone",
   "average_elevation": "Average elevation",
   "ascent": "Ascent",
@@ -10681,5 +10686,20 @@
   "rendering_attr_tidalFlatStyle_name": "Tidal flat style",
   "rendering_attr_watercolor_name": "Water color",
   "accessibility_independent_features": "Independent features",
-  "lang_en_barebones": "English (barebones)"
+  "lang_en_barebones": "English (barebones)",
+  "quick_action_weather_layers": "A toggle to show or hide weather layers on the map.",
+  "quick_action_wind_animation_layer": "A toggle to show or hide the wind animation layer on the map.",
+  "wind_animation_layer": "Wind animation layer",
+  "weather_layers": "Weather layers",
+  "efficient_grid": "Efficient grid",
+  "slots": "Slots",
+  "button_frames": "Button frames",
+  "visualizing_button_grid": "Map button grid",
+  "deleted_maps_warning": "You are about to delete %d items(s)\nContinue?",
+  "deleted_maps_prompt": "These maps are no longer supported and have been replaced by smaller regions. Please remove them and download the new versions.",
+  "unsupported_maps": "Unsupported maps",
+  "enable_3d_objects": "Enable 3D buildings",
+  "enable_3d_objects_description": "Display 3D building objects on the map",
+  "routing_attr_weightrating_name": "Max weight at full load",
+  "routing_attr_maxaxleload_name": "Max axle load"
 }
