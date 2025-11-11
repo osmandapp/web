@@ -58,12 +58,11 @@ export function formatRouteInfo(props, ctx) {
         res.push(', ');
     }
     if (props?.overall?.time) {
-        let hours = props.overall.time / 3600.0;
-        let min = ((hours - Math.floor(hours)) * 60).toFixed(0);
-        if (min < 10) {
-            min = '0' + min;
-        }
-        res.push(<span key="info-time">{Math.floor(hours).toFixed(0) + ':' + min + ' min'}</span>);
+        const totalSeconds = Math.round(props.overall.time);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const paddedMinutes = minutes.toString().padStart(2, '0');
+        res.push(<span key="info-time">{`${hours}:${paddedMinutes} min`}</span>);
         res.push(', ');
     }
     res[res.length - 1] = '';
