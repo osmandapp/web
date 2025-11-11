@@ -6,11 +6,11 @@ import { assert, clickBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
+import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const A = '50.45000, 30.52340';
 const B = '50.46000, 30.53340';
 const VIA = '50.49500, 30.52840';
-const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
 
 export default async function test() {
     await actionOpenMap();

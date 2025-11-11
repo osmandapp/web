@@ -3,8 +3,7 @@ import { clickBy, matchInnerTextBy, sendKeysBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { selectProfile } from './42-route-info-block.mjs';
-
-const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
+import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const routes = [
     {

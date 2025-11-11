@@ -6,8 +6,8 @@ import { clickBy, sendKeysBy, matchTextBy, matchValueBy, navigateHash } from '..
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
+import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
-const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
 const routes = [
     {
         zoom: 8,
