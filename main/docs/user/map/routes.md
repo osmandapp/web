@@ -360,7 +360,7 @@ To search, go to the *<Translate android="true" ids="search_button"/>* menu or *
 
 </Tabs>  
 
-Navigate to *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* to find desired routes. Routes include name, activity type, length, location, and distance to the nearest point.
+Navigate to *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* to find desired routes. Routes search results display the route name, activity type, length, location, and distance to the nearest point. On Android, elevation metrics such as uphill and downhill are also shown where available. Minor elevation changes (less than 10 m) are hidden to keep the list clear. All values respect the app’s selected distance and altitude units.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
