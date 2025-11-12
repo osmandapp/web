@@ -48,7 +48,7 @@ export default function SaveTrackDialog({ track: externalTrack = null }) {
             setFileName(trackSource.name ?? '');
             setFolder(getInitialFolder());
         }
-    }, [trackSource?.name, contextTrack?.originalName]);
+    }, [trackSource]);
 
     const closeDialog = ({ uploaded }) => {
         setProcess(false);
