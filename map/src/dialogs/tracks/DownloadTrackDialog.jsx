@@ -16,25 +16,46 @@ import dialogStyles from '../dialog.module.css';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import { useTranslation } from 'react-i18next';
 
-export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, sharedFile, setOpenActions }) {
+export default function DownloadTrackDialog({
+    dialogOpen,
+    setDialogOpen,
+    track: externalTrack = null,
+    sharedFile,
+    setOpenActions,
+}) {
     const ctx = useContext(AppContext);
-
     const { t } = useTranslation();
 
+    const trackSource = externalTrack ?? ctx.selectedGpxFile;
+    const routeTypes = trackSource?.routeTypes;
+
+    const isContextLocal = !externalTrack && isLocalTrack(ctx);
+    const isContextRoute = !externalTrack && isRouteTrack(ctx);
+    const isContextTravel = !externalTrack && isTravelTrack(ctx);
+
     const handleDownload = async (simplified) => {
-        if (track) {
-            await downloadOriginalGpxFromCloud({ track, sharedFile, simplified });
-        } else if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
+        if (!trackSource) {
+            return;
+        }
+
+        if (externalTrack) {
             await downloadCurrentLocalGpx({
-                selectedGpxFile: ctx.selectedGpxFile,
-                routeTypes: ctx.selectedGpxFile.routeTypes,
-                isLocal: isLocalTrack(ctx),
+                selectedGpxFile: trackSource,
+                routeTypes,
+                isLocal: false,
                 simplified,
             });
-        } else if (isTravelTrack(ctx)) {
-            await downloadTravelGpx(ctx.selectedGpxFile);
+        } else if (isContextLocal || isContextRoute) {
+            await downloadCurrentLocalGpx({
+                selectedGpxFile: trackSource,
+                routeTypes,
+                isLocal: isContextLocal,
+                simplified,
+            });
+        } else if (isContextTravel) {
+            await downloadTravelGpx(trackSource);
         } else {
-            await downloadOriginalGpxFromCloud({ track: ctx.selectedGpxFile, simplified });
+            await downloadOriginalGpxFromCloud({ track: trackSource, simplified });
         }
         setDialogOpen(false);
         if (setOpenActions) {
@@ -57,13 +78,13 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
                 <DialogContentText sx={{ mb: '12px' }}>{t('web:download_track_desc')}</DialogContentText>
                 <List sx={{ p: 0 }}>
                     <DefaultItem
-                        id={'download-full-track'}
+                        id={'se-download-track-full'}
                         icon={<FullTrackIcon />}
                         name={t('web:download_track_full')}
                         onClick={() => handleDownload(false)}
                     />
                     <DefaultItem
-                        id={'download-simplified-track'}
+                        id={'se-download-simplified-track'}
                         icon={<SimplifiedTrackIcon />}
                         name={t('web:download_track_simplified')}
                         onClick={() => handleDownload(true)}
@@ -71,7 +92,11 @@ export default function DownloadTrackDialog({ dialogOpen, setDialogOpen, track, 
                 </List>
             </DialogContent>
             <DialogActions>
-                <Button className={dialogStyles.button} onClick={() => setDialogOpen(false)}>
+                <Button
+                    id="se-close-download-dialog"
+                    className={dialogStyles.button}
+                    onClick={() => setDialogOpen(false)}
+                >
                     {t('shared_string_cancel')}
                 </Button>
             </DialogActions>

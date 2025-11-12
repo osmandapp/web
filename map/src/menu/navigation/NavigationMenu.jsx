@@ -5,8 +5,6 @@ import {
     MenuItem,
     IconButton,
     FormControl,
-    InputLabel,
-    Input,
     Typography,
     Link,
     Switch,
@@ -27,6 +25,8 @@ import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
+import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_track_recordable.svg';
+import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
@@ -40,6 +40,10 @@ import RouteSummaryCard from './RouteSummaryCard';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import { abortApiRequest } from '../../util/HttpApi';
 import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
+import LoginContext from '../../context/LoginContext';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import { isEmptyTrack, GPX_FILE_TYPE } from '../../manager/track/TracksManager';
+import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
 import {
     DEFAULT_VISIBLE_PROFILES,
     ROUTE_POINTS_START,
@@ -51,6 +55,7 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import SelectedTrackRow from './SelectedTrackRow';
+import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -60,6 +65,7 @@ const MAX_VISIBLE_PROFILES = 4;
 
 export default function NavigationMenu() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -71,6 +77,10 @@ export default function NavigationMenu() {
 
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    const [downloadDialogOpen, setDownloadDialogOpen] = useState(false);
+    const [downloadTrack, setDownloadTrack] = useState(null);
+    const [cloudTrack, setCloudTrack] = useState(null);
 
     const [resetSettings, setResetSettings] = useState(false);
 
@@ -140,11 +150,41 @@ export default function NavigationMenu() {
         ctx.setNavigationRoutingInProgress(false);
     }
 
+    const routeTrack = routeObject.getTrack();
+    const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
+    const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
+
     function handleClearSelectedTrack() {
         routeObject.resetRoute();
         ctx.setRouteTrackFile(null);
         routeObject.setOption(ROUTE_POINTS_START, null);
         routeObject.setOption(ROUTE_POINTS_FINISH, null);
+    }
+
+    function handleDownloadSelectedTrack() {
+        if (!hasRouteTrack) {
+            return;
+        }
+        const downloadTarget = {
+            ...routeTrack,
+            type: routeTrack.type ?? GPX_FILE_TYPE,
+            routeTypes: routeTrack.routeTypes,
+        };
+        setDownloadTrack(downloadTarget);
+        setDownloadDialogOpen(true);
+    }
+
+    function handleSaveTrackCloud() {
+        if (!canSaveToCloud || !routeTrack) {
+            return;
+        }
+        const trackToSave = {
+            ...routeTrack,
+            save: true,
+            type: routeTrack.type ?? GPX_FILE_TYPE,
+            onClose: () => setCloudTrack(null),
+        };
+        setCloudTrack(trackToSave);
     }
 
     return (
@@ -161,6 +201,30 @@ export default function NavigationMenu() {
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                         {t('web:navigation_menu_title')}
                     </Typography>
+                    <Box sx={{ display: 'flex', gap: 1, marginLeft: 'auto' }}>
+                        <Tooltip title={t('shared_string_download')} arrow>
+                            <span>
+                                <ActionIconBtn
+                                    id="se-route-download-track"
+                                    icon={<SaveLocalIcon />}
+                                    onClick={handleDownloadSelectedTrack}
+                                    disabled={!hasRouteTrack}
+                                />
+                            </span>
+                        </Tooltip>
+                        {ltx.isLoggedIn() && (
+                            <Tooltip title={t('web:upload_gpx_track')} arrow>
+                                <span>
+                                    <ActionIconBtn
+                                        id="se-route-save-to-cloud"
+                                        icon={<SaveCloudIcon />}
+                                        onClick={handleSaveTrackCloud}
+                                        disabled={!canSaveToCloud}
+                                    />
+                                </span>
+                            </Tooltip>
+                        )}
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -332,6 +396,19 @@ export default function NavigationMenu() {
                     routeObject={routeObject}
                 />
             </Box>
+            {downloadDialogOpen && (
+                <DownloadTrackDialog
+                    dialogOpen={downloadDialogOpen}
+                    setDialogOpen={(open) => {
+                        setDownloadDialogOpen(open);
+                        if (!open) {
+                            setDownloadTrack(null);
+                        }
+                    }}
+                    track={downloadTrack}
+                />
+            )}
+            {cloudTrack && <SaveTrackDialog track={cloudTrack} />}
         </Box>
     );
 }
