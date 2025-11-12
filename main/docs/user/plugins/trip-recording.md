@@ -142,13 +142,13 @@ For *Stop / Save / Pause*:
 
 <TabItem value="android" label="Android">
 
-![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finish recording in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finish recording in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -165,7 +165,7 @@ Here is what you can find on them:
     - ***Android***. For the ***Y-axis*** on the graph, you can select *up to two parameters* from all available data such as *Altitude*, *Slope*, *Speed* and [external sensor information](../plugins/external-sensors.md#trip-recording). For the ***X-axis***, select to display either *Distance*, *Time*, or *Time of Day*.
     - ***iOS***. The parameters are organized into tabs *Overview*, *Altitude*, and *Speed* with the appropriate values for the Y-axis and *Distance* for the X-axis.
 
-- **Statistic**. For Android, displays a constant set of statistics data independent of the graph settings: *Distance*, *Time span*, *Uphill*, *Downhill*, *Average speed*. For iOS, each tab, Overview, Attitude, and Speed, has a different data set.
+- **Statistic**. For Android, displays a constant set of statistics data independent of the graph settings: *Distance*, *Duration*, *Uphill*, *Downhill*, *Average speed*. For iOS, each tab, Overview, Attitude, and Speed, has a different data set.
 
 For a more detailed view, you can **scale the graph**:
 
@@ -174,12 +174,12 @@ For a more detailed view, you can **scale the graph**:
 
 | |  
 | ------------- |
-|**Overview** tab iOS (for Android, Y-axis parameters are *Altitude*, *Speed*, and X-axis parameter is *Distance*). This tab displays a graph showcasing changes in speed and altitude along the length of the track, and key track details. Track data for iOS: *Distance*, *Time Span*, *Start Time*, and *End Time*. DispYou can see how this is displayed in the Android and iOS versions below. |
-| ![data](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|**Overview** tab iOS (for Android, Y-axis parameters are *Altitude*, *Speed*, and X-axis parameter is *Distance*). This tab displays a graph showcasing changes in speed and altitude along the length of the track, and key track details. Track data for iOS: *Distance*, *Duration*, *Start Time*, and *End Time*. DispYou can see how this is displayed in the Android and iOS versions below. |
+| ![data](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Altitude** tab iOS (for Android, Y-axis parameters are *Altitude*, *Slope*, and X-axis parameter is *Distance*). This tab focuses on the elevation profile of your recorded track, providing insights into altitude changes and terrain grades. Key metrics for iOS include: *Average Altitude*, *Altitude Range*, *Uphill*, and *Downhill*. The graphs below illustrate the differences between Android and iOS interfaces. |
-| ![data](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Speed** tab iOS (for Android, Y-axis parameter is *Speed* and X-axis parameter is *Distance*). The Speed tab highlights speed-related data throughout the track. For iOS, it includes information such as *Average Speed*, *Maximum Speed*, *Time in Motion*, and *Distance Corrected*. The screenshots below show how this data is displayed on both platforms. |
-| ![data](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | For **Android**, you can create more combinations of available Y-axis data and X-axis values. |
 | ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -397,7 +397,7 @@ To customize your interface, you can add or remove the Trip Recording widget and
 
 <TabItem value="android" label="Android">  
 
-![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
 ![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
