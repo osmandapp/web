@@ -38,6 +38,8 @@ const PROFILE_GAP = 'gap';
 export const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
+
+const isPlaceholderFile = (file) => file?.name?.endsWith(EMPTY_FILE_NAME) && file?.filesize === 0;
 const CHANGE_PROFILE_ALL = 'all';
 export const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
@@ -579,9 +581,9 @@ function addFilesAndCalculateLastModified(groups) {
                 group.files.push(file);
             }
         });
-        group.realSize = group.files.filter(
-            (file) => !(file.name.endsWith(EMPTY_FILE_NAME) && file.filesize === 0)
-        ).length;
+        const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
+        const subfoldersTracksCount = group.subfolders.reduce((acc, subfolder) => acc + (subfolder.realSize ?? 0), 0);
+        group.realSize = directTracksCount + subfoldersTracksCount;
         calculateLastModified(group);
     });
 }
