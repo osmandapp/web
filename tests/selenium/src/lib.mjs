@@ -597,7 +597,7 @@ export async function expectInputExactBy(by, expected) {
  * Format latitude/longitude with fixed precision.
  *
  * @param {{lat:number, lon:number}} coords
- * @param {number} digits number of fractional digits (default 5)
+ * @param {number} digits - number of fractional digits (default 5)
  * @returns {string}
  */
 export function formatLatLon(coords, digits = 5) {
