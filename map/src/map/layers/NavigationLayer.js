@@ -71,6 +71,16 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const routeObject = ctx.routeObject;
 
     useEffect(() => {
+        const container = map.getContainer();
+
+        const updateCursor = () => {
+            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                container.style.cursor = '';
+                return;
+            }
+            container.style.cursor = pickNextRoutePoint(routeObject) ? 'crosshair' : '';
+        };
+
         const handleMapClick = (event) => {
             if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
                 return;
@@ -86,6 +96,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             // add start or finish point if one is missing
             const target = pickNextRoutePoint(routeObject);
             if (!target) {
+                updateCursor();
                 return;
             }
             const point = L.latLng(latlng.lat, latlng.lng);
@@ -96,14 +107,20 @@ const NavigationLayer = ({ geocodingData, region }) => {
             routeObject.setOption(target, point);
             ctx.setRouteTrackFile(null);
 
+            updateCursor();
             if (event?.originalEvent) {
                 event.originalEvent.navigationHandled = true;
             }
         };
 
+        updateCursor();
         map.on('click', handleMapClick);
+        map.on('mousemove', updateCursor);
+
         return () => {
             map.off('click', handleMapClick);
+            map.off('mousemove', updateCursor);
+            container.style.cursor = '';
         };
     }, [routeObject]);
 
