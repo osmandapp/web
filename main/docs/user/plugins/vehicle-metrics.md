@@ -241,7 +241,7 @@ Several widgets, including *Fuel consumption*, adapt their displayed units and r
 - US gallons → MPG (US)
 - Imperial gallons → MPG (UK)
 
-The widget automatically selects the appropriate format according to the chosen <Translate android="true" ids="routing_attr_length_name"/> and <Translate android="true" ids="shared_string_volume"/> units in the active profile.
+The widget automatically selects the appropriate format according to the chosen <Translate android="true" ids="routing_attr_length_name"/> and <Translate android="true" ids="shared_string_volume"/> units in the active profile, and your chosen display mode is preserved when exporting and importing profiles.
 
 
 ## Related articles {#related-articles}
