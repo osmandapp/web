@@ -43,6 +43,11 @@ export default function SettingsMenu() {
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
+    let langTransformMap = {
+        "yue": "zhyue",
+        "b+be+Latn": "be_by"
+    };
+
     function close() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         ctx.setCurrentObjectType(null);
@@ -53,6 +58,14 @@ export default function SettingsMenu() {
     }
 
     function getTransLanguage(lang) {
+        let transformedLang = langTransformMap[lang]
+        lang = transformedLang ? transformedLang : lang;
+        lang = lang.startsWith("b+") ? lang.slice(2) : lang;
+        const pattern = /(-r)([A-Z]{2})$/i;
+        lang = lang.replace(pattern, (match, rPrefix, regionCode) => {
+            return "-" + regionCode;
+        });
+        lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
     }
@@ -78,7 +91,7 @@ export default function SettingsMenu() {
                             key={lang + index}
                             onClick={async () => {
                                 await handleLanguageChange(lang);
-                                setCurrentLang(t(`lang_${lang}`));
+                                setCurrentLang(transLang);
                                 setOpenLangList(false);
                                 ctx.setOpenedPopper(null);
                             }}
