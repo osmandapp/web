@@ -24,7 +24,8 @@ import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
-import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
+import { MENU_INFO_CLOSE_SIZE, NAVIGATE_URL } from '../manager/GlobalManager';
+import { hasMissingRoutePoint } from '../menu/navigation/NavigationMenu';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -48,9 +49,22 @@ export function addClicksToMap(map, ctx) {
     const hasMyClick = map._events?.click?.some?.((e) => e.fn.mapClick);
     const hasMyDblClick = map._events?.dblclick?.some?.((e) => e.fn.mapClick);
 
-    const onClick = () => {
+    const shouldSkipMenuClose = () => {
+        if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+            return false;
+        }
+        const routeObject = ctx.routeObject;
+        if (!routeObject) {
+            return false;
+        }
+        return hasMissingRoutePoint(routeObject);
+    };
+
+    const onClick = (event) => {
         if (ctx.createTrack?.enable) return;
         if (ctx.openContextMenu) return;
+        if (event?.originalEvent?.navigationHandled) return;
+        if (shouldSkipMenuClose()) return;
 
         if (clickTimer) clearTimeout(clickTimer);
         clickTimer = setTimeout(() => {

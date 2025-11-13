@@ -57,6 +57,24 @@ import ColorBlock from '../../frame/components/other/ColorBlock';
 import SelectedTrackRow from './SelectedTrackRow';
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 
+export function pickNextRoutePoint(routeObject) {
+    if (!routeObject) {
+        return null;
+    }
+    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+
+    if (startPoint && finishPoint) {
+        return null;
+    }
+
+    return startPoint ? ROUTE_POINTS_FINISH : ROUTE_POINTS_START;
+}
+
+export function hasMissingRoutePoint(routeObject) {
+    return pickNextRoutePoint(routeObject) !== null;
+}
+
 const StyledInput = styled('input')({
     display: 'none',
 });

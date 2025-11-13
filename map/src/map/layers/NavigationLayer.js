@@ -10,6 +10,8 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
+import { NAVIGATE_URL } from '../../manager/GlobalManager';
+import { pickNextRoutePoint } from '../../menu/navigation/NavigationMenu';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -67,6 +69,60 @@ const NavigationLayer = ({ geocodingData, region }) => {
     }, []);
 
     const routeObject = ctx.routeObject;
+
+    useEffect(() => {
+        const container = map.getContainer();
+
+        const updateCursor = () => {
+            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                container.style.cursor = '';
+                return;
+            }
+            container.style.cursor = pickNextRoutePoint(routeObject) ? 'crosshair' : '';
+        };
+
+        const handleMapClick = (event) => {
+            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                return;
+            }
+            if (event?.originalEvent?.button !== 0) {
+                return;
+            }
+            const latlng = event?.latlng;
+            if (!latlng) {
+                return;
+            }
+
+            // add start or finish point if one is missing
+            const target = pickNextRoutePoint(routeObject);
+            if (!target) {
+                updateCursor();
+                return;
+            }
+            const point = L.latLng(latlng.lat, latlng.lng);
+
+            // remove focus from all inputs
+            globalThis.dispatchEvent(new Event('nav-blur'));
+
+            routeObject.setOption(target, point);
+            ctx.setRouteTrackFile(null);
+
+            updateCursor();
+            if (event?.originalEvent) {
+                event.originalEvent.navigationHandled = true;
+            }
+        };
+
+        updateCursor();
+        map.on('click', handleMapClick);
+        map.on('mousemove', updateCursor);
+
+        return () => {
+            map.off('click', handleMapClick);
+            map.off('mousemove', updateCursor);
+            container.style.cursor = '';
+        };
+    }, [routeObject]);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
