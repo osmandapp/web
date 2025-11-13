@@ -580,3 +580,26 @@ export async function setMapCenter(lat, lon) {
     await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
     await actionIdleWait();
 }
+
+/**
+ * Fetches the value of an input and asserts it matches the expected string exactly.
+ *
+ * @param {By} by - locator for the input element
+ * @param {string} expected - expected value
+ */
+export async function expectInputExactBy(by, expected) {
+    const input = await waitBy(by);
+    const value = await input.getAttribute('value');
+    await assert(value === expected, `Unexpected value for ${by.value}: expected "${expected}", got "${value}"`);
+}
+
+/**
+ * Format latitude/longitude with fixed precision.
+ *
+ * @param {{lat:number, lon:number}} coords
+ * @param {number} digits number of fractional digits (default 5)
+ * @returns {string}
+ */
+export function formatLatLon(coords, digits = 5) {
+    return `${coords.lat.toFixed(digits)}, ${coords.lon.toFixed(digits)}`;
+}
