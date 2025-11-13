@@ -100,9 +100,9 @@ You can choose which weather forecast provider OsmAnd uses to display data on th
 
 Two weather forecast providers are supported:
 
-**GFS (Global Forecast System)** – the default source operated by NOAA/NWS. Provides full weather data, including temperature, pressure, humidity, wind and cloud layers.
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – the default source operated by NOAA/NWS. Provides full weather data, including temperature, pressure, humidity, wind and cloud layers.
 
-**ECMWF (European Centre for Medium-Range Weather Forecasts)** – an alternative forecast source. Offers high-quality temperature, precipitation and pressure data but does not provide wind or cloud information. When using ECMWF, unavailable parameters are displayed as “–”, and the corresponding weather layers appear disabled.
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – an alternative forecast source. Offers high-quality temperature, precipitation and pressure data but does not provide wind or cloud information. When using ECMWF, unavailable parameters are displayed as “–”, and the corresponding weather layers appear disabled.
 
 How Data Source affects the Weather display:
 - The map, graphs, timeline and weather values on the screen update immediately after switching the source.
