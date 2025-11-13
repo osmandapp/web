@@ -33,6 +33,11 @@ import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { handleLanguageChange } from '../../i18n';
 
+const LANG_TRANSFORM_MAP = {
+    "yue": "zhyue",
+    "b+be+Latn": "be_by"
+};
+
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -43,10 +48,6 @@ export default function SettingsMenu() {
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
-    let langTransformMap = {
-        "yue": "zhyue",
-        "b+be+Latn": "be_by"
-    };
 
     function close() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -58,14 +59,21 @@ export default function SettingsMenu() {
     }
 
     function getTransLanguage(lang) {
-        let transformedLang = langTransformMap[lang]
+        const transformedLang = LANG_TRANSFORM_MAP[lang];
         lang = transformedLang ? transformedLang : lang;
         lang = lang.startsWith("b+") ? lang.slice(2) : lang;
+
+        // removes the r, converting Android-specific locale format to standard BCP 47 locale format
+        // en-rGB -> en-GB, es-rAR -> es-AR, es-rUS -> es-US
         const pattern = /(-r)([A-Z]{2})$/i;
         lang = lang.replace(pattern, (match, rPrefix, regionCode) => {
             return "-" + regionCode;
         });
+
+        // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
+        // en-GB -> en_gb, sr+Latn -> sr_latin
         lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
+
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
     }
