@@ -11,6 +11,7 @@ import {
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
+import { pickNextRoutePoint } from '../../menu/navigation/NavigationMenu';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -83,17 +84,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
             }
 
             // add start or finish point if one is missing
-            const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-            const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-
-            const hasStart = !!startPoint;
-            const hasFinish = !!finishPoint;
-
-            if (hasStart && hasFinish) {
+            const target = pickNextRoutePoint(routeObject);
+            if (!target) {
                 return;
             }
-
-            const target = hasStart ? ROUTE_POINTS_FINISH : ROUTE_POINTS_START;
             const point = L.latLng(latlng.lat, latlng.lng);
 
             // remove focus from all inputs
