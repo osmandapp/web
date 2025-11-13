@@ -59,7 +59,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -67,7 +67,7 @@ Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,sha
 
 Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
