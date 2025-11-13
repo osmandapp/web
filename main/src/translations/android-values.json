@@ -2845,7 +2845,7 @@
   "max_speed": "Maximum speed",
   "average_speed": "Average speed",
   "shared_string_time_moving": "Time moving",
-  "shared_string_time_span": "Time span",
+  "shared_string_time_span": "Duration",
   "shared_string_max": "Max",
   "shared_string_start_time": "Start time",
   "shared_string_end_time": "End time",

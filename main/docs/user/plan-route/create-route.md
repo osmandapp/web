@@ -367,7 +367,7 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

@@ -71,9 +71,10 @@ The info panel also provides information about the following:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Displays the total sum of ascents and descents during the trip.
 - *<Translate android="true" ids="altitude_range"/>*. Indicates min and max altitude on a track.  
 
-:::note
-In case your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) or *<Translate ios="true" ids="total_time"/>* (*iOS*) (the length of time between the start and end points of the track), *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while driving).
-:::  
+In case your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (the total time between the start and end points of the track), and *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while in motion).
+
+**Note:** For recorded tracks, Duration shows the actual travel time based on timestamps. For planned tracks, Duration shows the estimated time calculated from the route length and the selected navigation profile’s average speed, if the entire route uses one profile and contains no straight-line segments.
+
 
 ### Track Actions {#track-actions}
 
@@ -269,13 +270,13 @@ Interaction with the graph:
 
 <TabItem value="android" label="Android">
 
-![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -642,13 +643,13 @@ To open this option:
 
 ### Split by Distance {#split-by-distance}
 
-![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 This option allows you to divide a track into fixed distance intervals and analyze detailed statistics for each segment. Available distance intervals are ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km***, and ***10 km***. After choosing a distance interval, the track is displayed as a list of segments. 
 
 For each segment, you can view:
 - distance covered.
-- time span.
+- duration.
 - average, minimum and maximum altitude.
 - ascent and descent.
 - time in motion.
@@ -659,14 +660,14 @@ When you tap on any segment in the list, the map view shows the full track with 
 
 ### Split by Time {#split-by-time}
 
-![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 The **Split by Time** option divides a track into intervals of equal duration. You can choose between ***1 min***, ***2 min***, ***2.5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min***, and ***60 min***. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are the same as in [Split by Distance](#split-by-distance) section.
 
 
 ### Split by Uphill/Downhill {#split-by-uphill-downhill}
 
-![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. The way the intervals are displayed, the statistics provided for each segment, and how they appear on the map are also the same as in [Split by Distance](#split-by-distance) section.
 
@@ -726,7 +727,7 @@ In this menu, you can change some parameters of your track such as *Smoothing*, 
 
 ### Statistics {#statistics}
 
-![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 The Statistics tab displays information about the **modified** track, meaning the track without filtered values. It is displayed in the statistics blocks and graph data.
   
