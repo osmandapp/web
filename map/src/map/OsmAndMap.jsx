@@ -25,7 +25,7 @@ import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
 import { MENU_INFO_CLOSE_SIZE, NAVIGATE_URL } from '../manager/GlobalManager';
-import { ROUTE_POINTS_FINISH, ROUTE_POINTS_START } from '../store/geoRouter/profileConstants';
+import { hasMissingRoutePoint } from '../menu/navigation/NavigationMenu';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -57,9 +57,7 @@ export function addClicksToMap(map, ctx) {
         if (!routeObject) {
             return false;
         }
-        const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-        const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-        return !startPoint || !finishPoint;
+        return hasMissingRoutePoint(routeObject);
     };
 
     const onClick = (event) => {
