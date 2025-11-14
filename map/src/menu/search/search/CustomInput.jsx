@@ -73,7 +73,7 @@ export default function CustomInput({
         }
         inputElement.focus();
         setIsFocused(true);
-    }, [autoFocus, inputRef.current]);
+    }, [autoFocus]);
 
     function search(value) {
         if (setSearchValue) {
