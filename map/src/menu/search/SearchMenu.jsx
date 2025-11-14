@@ -262,7 +262,7 @@ export default function SearchMenu() {
                             {!isSearchResultRoute && !isPoiCategoriesRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
                                     <CustomInput
-                                        autoFocus={{ isMainMenu }}
+                                        autoFocus={isMainMenu}
                                         menuButton={
                                             <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
                                         }
