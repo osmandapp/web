@@ -13,7 +13,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_URL,
 } from '../../manager/GlobalManager';
-import { matchPath, useNavigate } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getCatPoiIconName,
@@ -45,6 +45,7 @@ export default function SearchMenu() {
     const [, height] = useWindowSize();
 
     const { navigateToSearchResults, isSearchResultRoute } = useSearchNav();
+    const location = useLocation();
 
     const showExploreOutlet = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },

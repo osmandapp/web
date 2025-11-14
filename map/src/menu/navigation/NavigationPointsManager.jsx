@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
-import { matchPath } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 
 export function formatLatLon(pnt) {
@@ -55,6 +55,8 @@ export default function NavigationPointsManager({ routeObject }) {
     const [draggedIndex, setDraggedIndex] = useState(null);
 
     const [dropTargetIndex, setDropTargetIndex] = useState(null);
+
+    const location = useLocation();
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
