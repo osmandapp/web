@@ -44,10 +44,9 @@ export default function SettingsMenu() {
 
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
-    const [currentLang, setCurrentLang] = useState(t(`lang_${i18n.language}`));
+    const [currentLang, setCurrentLang] = useState(getTransLanguage(i18n.language));
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
-
 
     function close() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -59,8 +58,7 @@ export default function SettingsMenu() {
     }
 
     function getTransLanguage(lang) {
-        const transformedLang = LANG_TRANSFORM_MAP[lang];
-        lang = transformedLang ? transformedLang : lang;
+        lang = LANG_TRANSFORM_MAP[lang] ?? lang;
         lang = lang.startsWith("b+") ? lang.slice(2) : lang;
 
         // removes the r, converting Android-specific locale format to standard BCP 47 locale format
@@ -99,7 +97,7 @@ export default function SettingsMenu() {
                             key={lang + index}
                             onClick={async () => {
                                 await handleLanguageChange(lang);
-                                setCurrentLang(transLang);
+                                setCurrentLang(getTransLanguage(lang));
                                 setOpenLangList(false);
                                 ctx.setOpenedPopper(null);
                             }}
