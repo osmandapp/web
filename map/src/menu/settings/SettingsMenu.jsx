@@ -31,12 +31,7 @@ import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { handleLanguageChange } from '../../i18n';
-
-const LANG_TRANSFORM_MAP = {
-    "yue": "zhyue",
-    "b+be+Latn": "be_by"
-};
+import { handleLanguageChange, normalizeLang } from '../../i18n';
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
@@ -58,20 +53,10 @@ export default function SettingsMenu() {
     }
 
     function getTransLanguage(lang) {
-        lang = LANG_TRANSFORM_MAP[lang] ?? lang;
-        lang = lang.startsWith("b+") ? lang.slice(2) : lang;
-
-        // removes the r, converting Android-specific locale format to standard BCP 47 locale format
-        // en-rGB -> en-GB, es-rAR -> es-AR, es-rUS -> es-US
-        const pattern = /(-r)([A-Z]{2})$/i;
-        lang = lang.replace(pattern, (match, rPrefix, regionCode) => {
-            return "-" + regionCode;
-        });
-
+        lang = normalizeLang(lang);
         // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
         // en-GB -> en_gb, sr+Latn -> sr_latin
         lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
-
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
     }

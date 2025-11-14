@@ -1,6 +1,7 @@
 import i18n from 'i18next';
+import { normalizeLang } from '../i18n';
 
-const lang = () => i18n?.language || (typeof navigator !== 'undefined' ? navigator.language : 'en-US');
+const lang = () => normalizeLang(i18n?.language) || (typeof navigator !== 'undefined' ? navigator.language : 'en-US');
 
 const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
