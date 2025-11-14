@@ -42,14 +42,17 @@ export default function SettingsMenu() {
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
-    const getTransLanguage = useCallback((lang) => {
-        lang = normalizeLang(lang);
-        // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
-        // en-GB -> en_gb, sr+Latn -> sr_latin
-        lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
-        const trans = t(`lang_${lang}`).toString();
-        return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
-    }, [t]);
+    const getTransLanguage = useCallback(
+        (lang) => {
+            lang = normalizeLang(lang);
+            // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
+            // en-GB -> en_gb, sr+Latn -> sr_latin
+            lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
+            const trans = t(`lang_${lang}`).toString();
+            return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
+        },
+        [t]
+    );
 
     const [currentLang, setCurrentLang] = useState(() => getTransLanguage(i18n.language));
 
@@ -71,18 +74,17 @@ export default function SettingsMenu() {
             return [];
         }
         const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-        
+
         const sortedLangList = [...langList]
-            .map(lang => ({
+            .map((lang) => ({
                 lang: lang,
-                transLang: getTransLanguage(lang)
+                transLang: getTransLanguage(lang),
             }))
-            .filter(item => item.transLang);
+            .filter((item) => item.transLang);
 
         sortedLangList.sort((a, b) => collator.compare(a.transLang, b.transLang));
-        
-        return sortedLangList;
 
+        return sortedLangList;
     }, [getTransLanguage]);
 
     const handleLangClick = async (lang, transLang) => {
@@ -199,10 +201,7 @@ export default function SettingsMenu() {
                 >
                     <div>
                         {languageList.map(({ lang, transLang }, index) => (
-                            <MenuItem
-                                key={lang + index}
-                                onClick={() => handleLangClick(lang, transLang)}
-                            >
+                            <MenuItem key={lang + index} onClick={() => handleLangClick(lang, transLang)}>
                                 <ListItemText>
                                     <Typography variant="inherit" noWrap>
                                         {transLang}
