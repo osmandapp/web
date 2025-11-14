@@ -59,7 +59,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -67,7 +67,7 @@ Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,sha
 
 Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -76,6 +76,41 @@ Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_
 The main side menu has a dedicated **Weather** menu item that provides quick access to all weather tools. The *Weather forecast screen* displays information about *temperature*, *atmospheric pressure*, *wind speed*, *cloud coverage*, and *precipitation*.  
 
 At the bottom of the screen is the *weather toolbar*. You can use the day buttons and the time slider to set the exact time at which the weather forecast will be displayed.
+
+### Data Source {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+You can choose which weather forecast provider OsmAnd uses to display data on the Weather screen:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Choose Data Source*
+
+Two weather forecast providers are supported:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – the default source operated by NOAA/NWS. Provides full weather data, including temperature, pressure, humidity, wind and cloud layers.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – an alternative forecast source. Offers high-quality temperature, precipitation and pressure data but does not provide wind or cloud information. When using ECMWF, unavailable parameters are displayed as “–”, and the corresponding weather layers appear disabled.
+
+How Data Source affects the Weather display:
+- The map, graphs, timeline and weather values on the screen update immediately after switching the source.
+- Only the parameters available for the selected provider are shown.
+- Weather widgets automatically refresh to use the chosen source.
+- If you previously downloaded a weather forecast, OsmAnd uses the data corresponding to the selected provider.
+- GFS and ECMWF use separate caches. Switching the source loads or updates the relevant weather tiles.
+
 
 ### Customize Weather Layers {#customize-weather-layers}
 
