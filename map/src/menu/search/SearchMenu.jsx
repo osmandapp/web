@@ -51,7 +51,7 @@ export default function SearchMenu() {
         location.pathname
     );
 
-    const hasWikidata = new URLSearchParams(location.search).has('wikidataId');
+    const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + SEARCH_URL + '*' }, location.pathname);
 
     const isPoiCategoriesRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + '*' },
@@ -262,6 +262,7 @@ export default function SearchMenu() {
                             {!isSearchResultRoute && !isPoiCategoriesRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
                                     <CustomInput
+                                        autoFocus={{ isMainMenu }}
                                         menuButton={
                                             <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
                                         }

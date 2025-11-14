@@ -2,7 +2,7 @@ import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Too
 import styles from '../trackfavmenu.module.css';
 import MenuItemWithLines from './MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_action_folder_share.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
@@ -40,12 +40,6 @@ export default function SmartFolder({ type, subtype, files }) {
 
     const folder = types[type] ?? types.share;
     const folderType = folder.subtypes[subtype] ?? folder.subtypes.track;
-
-    useEffect(() => {
-        if (!openActions) {
-            setTimeout(() => document.activeElement?.blur(), 0);
-        }
-    }, [openActions]);
 
     function openFiles() {
         if (subtype === 'favorite') {

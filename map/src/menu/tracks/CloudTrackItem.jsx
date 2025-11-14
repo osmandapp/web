@@ -63,12 +63,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const share = getShare(file, ctx);
 
     useEffect(() => {
-        if (!openActions) {
-            setTimeout(() => document.activeElement?.blur(), 0);
-        }
-    }, [openActions]);
-
-    useEffect(() => {
         if (fileStorage?.[file.name]?.url) {
             setCheckedSwitch(fileStorage[file.name].showOnMap);
         } else {
