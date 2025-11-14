@@ -16,10 +16,25 @@ export default function NavigationInput({
     focused,
     showDragHandle = true,
     onDragHandleMouseDown,
+    autoFocus,
 }) {
     const [inputValue, setInputValue] = useState(value || '');
     const [isFocused, setIsFocused] = useState(false);
     const isFocusedRef = useRef(false);
+    const inputRef = useRef();
+
+    useEffect(() => {
+        if (!autoFocus || value) {
+            clearFocus();
+            return;
+        }
+        const inputElement = inputRef.current;
+        if (!inputElement) {
+            return;
+        }
+        inputElement.focus();
+        handleFocus();
+    }, [autoFocus, value]);
 
     useEffect(() => {
         if (!isFocusedRef.current) {
@@ -85,6 +100,7 @@ export default function NavigationInput({
 
     return (
         <TextField
+            inputRef={inputRef}
             id={inputId}
             className={styles.navigationInput}
             value={inputValue}

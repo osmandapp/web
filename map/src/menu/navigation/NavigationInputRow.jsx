@@ -30,6 +30,7 @@ export default function NavigationInputRow({
     onDragOver,
     onDrop,
     onDragEnd,
+    autoFocus,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
@@ -87,6 +88,7 @@ export default function NavigationInputRow({
                     focused={focused}
                     showDragHandle={true}
                     onDragHandleMouseDown={handleDragHandleMouseDown}
+                    autoFocus={autoFocus}
                 />
             </Box>
             <Box className={styles.actionButtons}>
