@@ -14,7 +14,7 @@ import {
 import styles from './settings.module.css';
 import headerStyles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import React, { useContext, useMemo, useRef, useState } from 'react';
+import React, { useContext, useMemo, useRef, useState, useCallback } from 'react';
 import langList from '../../resources/translations/supportedLanguages.json';
 import enList from '../../resources/translations/en/translation.json';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -39,9 +39,19 @@ export default function SettingsMenu() {
 
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
-    const [currentLang, setCurrentLang] = useState(getTransLanguage(i18n.language));
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
+
+    const getTransLanguage = useCallback((lang) => {
+        lang = normalizeLang(lang);
+        // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
+        // en-GB -> en_gb, sr+Latn -> sr_latin
+        lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
+        const trans = t(`lang_${lang}`).toString();
+        return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
+    }, [t]);
+
+    const [currentLang, setCurrentLang] = useState(() => getTransLanguage(i18n.language));
 
     function close() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -52,53 +62,35 @@ export default function SettingsMenu() {
         setOpenLangList(true);
     }
 
-    function getTransLanguage(lang) {
-        lang = normalizeLang(lang);
-        // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
-        // en-GB -> en_gb, sr+Latn -> sr_latin
-        lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
-        const trans = t(`lang_${lang}`).toString();
-        return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
-    }
-
     function openCloudSettingsMenu({ changes = false, trash = false }) {
         ctx.setCloudSettings({ changes, trash });
     }
 
     const languageList = useMemo(() => {
-        if (langList && currentLang) {
-            let res = [];
-            const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-            let sortedLangList = [...langList].sort((a, b) => {
-                const transA = getTransLanguage(a);
-                const transB = getTransLanguage(b);
-                return collator.compare(transA, transB);
-            });
-            sortedLangList.forEach((lang, index) => {
-                const transLang = getTransLanguage(lang);
-                if (transLang) {
-                    res.push(
-                        <MenuItem
-                            key={lang + index}
-                            onClick={async () => {
-                                await handleLanguageChange(lang);
-                                setCurrentLang(getTransLanguage(lang));
-                                setOpenLangList(false);
-                                ctx.setOpenedPopper(null);
-                            }}
-                        >
-                            <ListItemText>
-                                <Typography variant="inherit" noWrap>
-                                    {transLang}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                    );
-                }
-            });
-            return res;
+        if (!langList) {
+            return [];
         }
-    }, [i18n, ctx, currentLang, t]);
+        const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+        
+        const sortedLangList = [...langList]
+            .map(lang => ({
+                lang: lang,
+                transLang: getTransLanguage(lang)
+            }))
+            .filter(item => item.transLang);
+
+        sortedLangList.sort((a, b) => collator.compare(a.transLang, b.transLang));
+        
+        return sortedLangList;
+
+    }, [getTransLanguage]);
+
+    const handleLangClick = async (lang, transLang) => {
+        await handleLanguageChange(lang);
+        setCurrentLang(getTransLanguage(lang));
+        setOpenLangList(false);
+        ctx.setOpenedPopper(null);
+    };
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -205,7 +197,20 @@ export default function SettingsMenu() {
                         ctx.setOpenedPopper(null);
                     }}
                 >
-                    <div>{languageList}</div>
+                    <div>
+                        {languageList.map(({ lang, transLang }, index) => (
+                            <MenuItem
+                                key={lang + index}
+                                onClick={() => handleLangClick(lang, transLang)}
+                            >
+                                <ListItemText>
+                                    <Typography variant="inherit" noWrap>
+                                        {transLang}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                        ))}
+                    </div>
                 </ClickAwayListener>
             </Popover>
         </Box>
