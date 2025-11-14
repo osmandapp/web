@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
@@ -56,6 +56,9 @@ export default function NavigationPointsManager({ routeObject }) {
 
     const [dropTargetIndex, setDropTargetIndex] = useState(null);
 
+    const startInputRef = useRef(null);
+    const usedAutoFocus = useRef(false);
+
     const location = useLocation();
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
@@ -67,6 +70,21 @@ export default function NavigationPointsManager({ routeObject }) {
             setStart('');
         }
     }, [startPoint]);
+
+    useEffect(() => {
+        if (isMainMenu && start === '' && startInputRef.current && !usedAutoFocus.current) {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (startInputRef.current) {
+                        startInputRef.current.focus();
+                        usedAutoFocus.current = true;
+                    }
+                });
+            });
+        } else if (!isMainMenu) {
+            usedAutoFocus.current = false;
+        }
+    }, [isMainMenu, start, usedAutoFocus]);
 
     useEffect(() => {
         if (finishPoint && typeof finishPoint == 'object') {
@@ -304,7 +322,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
                 onDragEnd={handleDragEnd}
-                autoFocus={isMainMenu}
+                inputRef={startInputRef}
             />
 
             {/* Intermediate Points */}
