@@ -11,6 +11,11 @@ const resources = {
     },
 };
 
+const LANG_TRANSFORM_MAP = {
+    "yue": "zhyue",
+    "b+be+Latn": "be-BY"
+};
+
 const translationParsePlugin = {
     type: 'postProcessor',
     name: 'jsonParse',
@@ -22,6 +27,20 @@ const translationParsePlugin = {
         }
     },
 };
+
+export function normalizeLang(lang) {
+    lang = LANG_TRANSFORM_MAP[lang] ?? lang;
+    lang = lang.startsWith("b+") ? lang.slice(2) : lang;
+    lang = lang.replace("+", "-");
+
+    // removes the r, converting Android-specific locale format to standard BCP 47 locale format
+    // en-rGB -> en-GB, es-rAR -> es-AR, es-rUS -> es-US
+    const pattern = /(-r)([A-Z]{2})$/i;
+    lang = lang.replace(pattern, (match, rPrefix, regionCode) => {
+        return "-" + regionCode;
+    });
+    return lang;
+}
 
 export async function handleLanguageChange(lng) {
     try {
