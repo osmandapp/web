@@ -273,6 +273,15 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 
     ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
 
+**Using external input devices (*Android*)**. If you use an [external input device](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), you can start and stop Audio/Video Notes without touching the screen. To do this, assign the “Add audio note” or “Add video note” action to a key:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Once assigned, the key works as a toggle:
+- The first press starts recording an audio or video note (depending on the selected action).
+- The second press of the same key stops the recording.
+
+When a recording is stopped via an external input device, the Context menu is not shown, which makes it easier to use OsmAnd in fully hands-free scenarios (for example, while riding a motorbike or driving).
+
 
 ## Manage Multiple Notes {#manage-multiple-notes}
 
