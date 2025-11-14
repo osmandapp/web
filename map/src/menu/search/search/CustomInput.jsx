@@ -1,7 +1,7 @@
 import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
@@ -15,8 +15,11 @@ export default function CustomInput({
     setSearchValue = null,
     type = null,
     defaultSearchValue = '',
+    autoFocus = false,
 }) {
     const ctx = useContext(AppContext);
+
+    const inputRef = useRef();
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
@@ -58,6 +61,20 @@ export default function CustomInput({
         setValue(defaultSearchValue);
     }, [defaultSearchValue]);
 
+    useEffect(() => {
+        const inputElement = inputRef.current;
+        if (!inputElement) {
+            return;
+        }
+        if (!autoFocus) {
+            inputElement.blur();
+            setIsFocused(false);
+            return;
+        }
+        inputElement.focus();
+        setIsFocused(true);
+    }, [autoFocus, inputRef.current]);
+
     function search(value) {
         if (setSearchValue) {
             setSearchValue({
@@ -80,6 +97,7 @@ export default function CustomInput({
     return (
         <Box sx={{ mx: 2, my: 1 }}>
             <TextField
+                inputRef={inputRef}
                 className={`${styles.searchInputField} ${styles.customAutofillFix}`}
                 sx={{
                     '& .MuiOutlinedInput-notchedOutline': {
