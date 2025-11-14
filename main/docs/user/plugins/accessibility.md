@@ -92,7 +92,7 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/accessibility/access_new.png)  
 
 The Accessibility plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied per [profile](../personal/profiles.md) in OsmAnd.
 
@@ -100,6 +100,7 @@ The Accessibility plugin offers various settings to personalize navigation and i
 |---------------------------|-------------|  
 | **Accessibility Mode**    | Enables *built-in OsmAnd features* or uses **system settings**. |  
 | **Speech Rate**           | Controls *text-to-speech speed*, ranging from **50% to 200%**. |  
+| **Pinch Zoom Magnification**    | Temporarily magnifies the map while you pinch-zoom and keep your fingers on the screen, enlarging text and icons without changing the actual zoom level. |
 | [Smart Autoannounce](#smart-autoannounce)    | Provides *voice guidance* when deviating from the route. |  
 | **Autoannounce Period**   | Sets minimum time between announcements, from **5 seconds to 5 minutes**. |  
 | [Direction Style](#direction-style)       | Choose between *Sidewise (8 directions)* or *Clockwise (12 directions)*. |  
