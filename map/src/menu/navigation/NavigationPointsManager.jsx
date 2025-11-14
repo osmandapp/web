@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
+import { matchPath } from 'react-router-dom';
+import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -53,6 +55,8 @@ export default function NavigationPointsManager({ routeObject }) {
     const [draggedIndex, setDraggedIndex] = useState(null);
 
     const [dropTargetIndex, setDropTargetIndex] = useState(null);
+
+    const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
     useEffect(() => {
         if (startPoint && typeof startPoint == 'object') {
@@ -298,6 +302,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
                 onDragEnd={handleDragEnd}
+                autoFocus={isMainMenu}
             />
 
             {/* Intermediate Points */}
