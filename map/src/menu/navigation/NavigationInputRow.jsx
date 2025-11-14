@@ -30,7 +30,7 @@ export default function NavigationInputRow({
     onDragOver,
     onDrop,
     onDragEnd,
-    autoFocus,
+    inputRef,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
@@ -78,6 +78,7 @@ export default function NavigationInputRow({
         >
             <Box className={styles.inputContainer}>
                 <NavigationInput
+                    ref={inputRef}
                     inputId={inputId}
                     value={value}
                     placeholder={placeholder}
@@ -88,7 +89,6 @@ export default function NavigationInputRow({
                     focused={focused}
                     showDragHandle={true}
                     onDragHandleMouseDown={handleDragHandleMouseDown}
-                    autoFocus={autoFocus}
                 />
             </Box>
             <Box className={styles.actionButtons}>

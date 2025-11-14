@@ -20,6 +20,7 @@ export default async function test() {
     await actionOpenMap();
 
     await clickBy(By.id('se-show-menu-navigation'));
+    await clickBy(By.id('se-attach-gpx-track-btn'));
 
     // upload and move map to the center of gpx track
     await enclose(uploader, { tag: 'upload gpx' });

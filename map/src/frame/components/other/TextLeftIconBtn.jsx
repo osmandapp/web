@@ -3,7 +3,7 @@ import styles from '../items/items.module.css';
 import GrayBtnWithBlueHover from '../btns/GrayBtnWithBlueHover';
 import React from 'react';
 
-export default function TextLeftIconBtn({ icon, text, desc = null, btnText = null, onClick = null }) {
+export default function TextLeftIconBtn({ icon, text, desc = null, btnText = null, onClick = null, id = null }) {
     const showButton = Boolean(btnText);
 
     return (
@@ -23,6 +23,7 @@ export default function TextLeftIconBtn({ icon, text, desc = null, btnText = nul
             </Box>
             {showButton && (
                 <GrayBtnWithBlueHover
+                    id={id}
                     action={onClick}
                     text={btnText}
                     additionalStyle={{ ml: '48px', mr: 2, maxWidth: '280px' }}
