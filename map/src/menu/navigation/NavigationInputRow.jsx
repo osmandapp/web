@@ -30,6 +30,7 @@ export default function NavigationInputRow({
     onDragOver,
     onDrop,
     onDragEnd,
+    inputRef,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
@@ -77,6 +78,7 @@ export default function NavigationInputRow({
         >
             <Box className={styles.inputContainer}>
                 <NavigationInput
+                    ref={inputRef}
                     inputId={inputId}
                     value={value}
                     placeholder={placeholder}

@@ -322,6 +322,7 @@ export default function NavigationMenu() {
                         />
                         <ThickDivider mt={0} mb={0} />
                         <TextLeftIconBtn
+                            id={'se-attach-gpx-track-btn'}
                             icon={<AttachIcon />}
                             text={t('web:attach_gpx_title')}
                             desc={t('web:attach_gpx_desc')}
