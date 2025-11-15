@@ -31,7 +31,8 @@ import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { handleLanguageChange, normalizeLang } from '../../i18n';
+import { handleLanguageChange } from '../../i18n';
+import { normalizeLang } from '../../util/lang';
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
@@ -47,7 +48,7 @@ export default function SettingsMenu() {
             lang = normalizeLang(lang);
             // Replaces any remaining non-alphabetic characters (like - or +) with an underscore (_)
             // en-GB -> en_gb, sr+Latn -> sr_latin
-            lang = lang.toLowerCase().replace(/[^a-z]/g, '_');
+            lang = lang.toLowerCase().replaceAll(/[^a-z]/g, '_');
             const trans = t(`lang_${lang}`).toString();
             return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
         },
@@ -70,25 +71,16 @@ export default function SettingsMenu() {
     }
 
     const languageList = useMemo(() => {
-        if (!langList) {
-            return [];
-        }
         const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-
-        const sortedLangList = [...langList]
-            .map((lang) => ({
-                lang: lang,
-                transLang: getTransLanguage(lang),
-            }))
-            .filter((item) => item.transLang);
-
-        sortedLangList.sort((a, b) => collator.compare(a.transLang, b.transLang));
-
-        return sortedLangList;
+        return langList
+            .map((lang) => ({ lang, transLang: getTransLanguage(lang) }))
+            .filter(({ transLang }) => Boolean(transLang))
+            .sort((a, b) => collator.compare(a.transLang, b.transLang));
     }, [getTransLanguage]);
 
-    const handleLangClick = async (lang, transLang) => {
-        await handleLanguageChange(lang);
+    const handleLangClick = async (lang) => {
+        const normalized = normalizeLang(lang);
+        await handleLanguageChange({ lng: normalized, folderLng: lang });
         setCurrentLang(getTransLanguage(lang));
         setOpenLangList(false);
         ctx.setOpenedPopper(null);
@@ -200,8 +192,8 @@ export default function SettingsMenu() {
                     }}
                 >
                     <div>
-                        {languageList.map(({ lang, transLang }, index) => (
-                            <MenuItem key={lang + index} onClick={() => handleLangClick(lang, transLang)}>
+                        {languageList.map(({ lang, transLang }) => (
+                            <MenuItem key={lang} onClick={() => handleLangClick(lang)}>
                                 <ListItemText>
                                     <Typography variant="inherit" noWrap>
                                         {transLang}
