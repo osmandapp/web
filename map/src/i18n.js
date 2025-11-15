@@ -23,9 +23,10 @@ const translationParsePlugin = {
     },
 };
 
-export async function handleLanguageChange(lng) {
+export async function handleLanguageChange({ lng, folderLng = null }) {
+    const folder = folderLng ?? lng;
     try {
-        const translation = await import(`./resources/translations/${lng}/translation.json`);
+        const translation = await import(`./resources/translations/${folder}/translation.json`);
         if (translation) {
             i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
         }
@@ -36,7 +37,7 @@ export async function handleLanguageChange(lng) {
     }
 
     try {
-        const webTranslation = await import(`./resources/translations/${lng}/web-translation.json`);
+        const webTranslation = await import(`./resources/translations/${folder}/web-translation.json`);
         if (webTranslation) {
             i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
         }

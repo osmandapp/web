@@ -67,7 +67,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         const lang = searchParams.get(LANG_PARAM);
         if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
             (async () => {
-                await handleLanguageChange(lang);
+                await handleLanguageChange({ lng: lang });
                 setCurrentLangLabel(getTransLanguage(lang));
             })();
         }
@@ -115,7 +115,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                 <MenuItem
                     key={lng}
                     onClick={async () => {
-                        await handleLanguageChange(lng);
+                        await handleLanguageChange({ lng });
                         setCurrentLangLabel(getTransLanguage(lng));
                         setOpenLang(false);
                     }}
