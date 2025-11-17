@@ -40,7 +40,29 @@ Sections **Routes and Map rendering**:
 
 <TabItem value="ios" label="iOS">
 
-![Configure map ios](@site/static/img/map/configure-map-ios.png)
+Section **Show on map**:  
+
+![Configure map android](@site/static/img/map/configure_map_show1_ios.png)  
+
+Section **Topography**:  
+
+![Configure map android](@site/static/img/map/configure_map_topography_ios.png)  
+
+Section **OpenStreetMap**:  
+
+![Configure map android](@site/static/img/map/configure_map_osm_ios.png)  
+
+Section **Routes**:  
+
+![Configure map android](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Sections **Map type and Map style**:  
+
+![Configure map android](@site/static/img/map/configure_map_style_ios.png)
+
+Sections **Overlay/Underlay and Language**:  
+
+![Configure map android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
