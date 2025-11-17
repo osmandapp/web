@@ -71,7 +71,7 @@ The info panel also provides information about the following:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Displays the total sum of ascents and descents during the trip.
 - *<Translate android="true" ids="altitude_range"/>*. Indicates min and max altitude on a track.  
 
-In case your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (the total time between the start and end points of the track), and *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while in motion).
+In case your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *Duration* (the total time between the start and end points of the track), and *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while in motion).
 
 **Note:** For recorded tracks, Duration shows the actual travel time based on timestamps. For planned tracks, Duration shows the estimated time calculated from the route length and the selected navigation profile’s average speed, if the entire route uses one profile and contains no straight-line segments.
 
