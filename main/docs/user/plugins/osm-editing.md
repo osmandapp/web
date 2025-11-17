@@ -118,7 +118,7 @@ The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you
 
 <TabItem value="android" label="Android">  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -126,7 +126,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_os
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -134,7 +134,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_of
 
 </Tabs>
 
-You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  
+You can enable or disable as a separate layer the display of OSM modifications in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  OSM modifications include the following:
+- **OSM Notes (online)**. Displays public OpenStreetMap notes created by users to highlight mapping issues or request updates. Notes are shown as interactive markers that can be reviewed, opened, and resolved by mappers.
+- **OSM Edits**. Shows your own local OSM edits stored on the device before uploading them to the OpenStreetMap server. This layer helps review geometry and attributes of objects you have modified or added.
+- **Fixme Tags**. Highlights objects tagged with fixme=* in OSM. These elements contain mapper comments indicating that the information is incomplete, uncertain, or needs field verification.
+- **Note Tags**. Displays objects that contain note=* tags — mapper comments embedded directly in the OSM data. These tags usually describe temporary conditions or additional context for future editing.
+- **Icons at Low Zooms**. Enables simplified icon-like representations of OSM objects using short abbreviations derived from their primary tag keys. Their meaning is described [here](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). This feature makes more objects visible at low zoom levels without overloading the map or causing icon overlap.
 
 
 ## Create / Modify POI {#create--modify-poi}
