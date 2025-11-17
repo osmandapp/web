@@ -77,6 +77,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Street level imagery](../plugins/mapillary.md#map-layer) - displays points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
    - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
+   - [OSM editing](../plugins/osm-editing.md#osm-editing-layer) - displays OpenStreetMap edits, notes, and mapping-related helper layers.
    - [Other plugin layers](../plugins/index.md#configure-plugin) - many plugins add their layers with extra information.
 
 ## Map style parameters {#map-style-parameters}
