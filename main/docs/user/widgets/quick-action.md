@@ -218,7 +218,7 @@ This layout helps keep buttons visually consistent and avoids overlapping. For e
 
 The grid adapts to the surrounding interface and repositions buttons when required, ensuring they remain visible and do not interfere with other on-screen elements. When widgets or panels are added, removed, or rearranged, the layout updates accordingly so that button order stays consistent and no element becomes hidden.
 
-Profiles imported from another device are adjusted to the grid layout, keeping button positions correct across different screen sizes and platforms.
+[Profiles imported](https://osmand.net/docs/user/personal/import-export#export) from another device are adjusted to the grid layout, keeping button positions correct across different screen sizes and platforms.
 
 
 ## Action Types {#action-types}
