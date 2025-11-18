@@ -136,10 +136,15 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_strin
 
 You can enable or disable as a separate layer the display of OSM modifications in the [Configure map](../map/configure-map-menu.md) section of the *Main Menu*.  OSM modifications include the following:
 - **OSM Notes (online)**. Displays public OpenStreetMap notes created by users to highlight mapping issues or request updates. Notes are shown as interactive markers that can be reviewed, opened, and resolved by mappers.
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)
 - **OSM Edits**. Shows your own local OSM edits stored on the device before uploading them to the OpenStreetMap server. This layer helps review geometry and attributes of objects you have modified or added.
-- **Fixme Tags**. Highlights objects tagged with fixme=* in OSM. These elements contain mapper comments indicating that the information is incomplete, uncertain, or needs field verification.
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)
+- **Fixme Tags**. Highlights objects tagged with fixme=* in OSM. These elements contain mapper comments indicating that the information is incomplete, uncertain, or needs field verification.<br />
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)
 - **Note Tags**. Displays objects that contain note=* tags — mapper comments embedded directly in the OSM data. These tags usually describe temporary conditions or additional context for future editing.
-- **Icons at Low Zooms**. Enables simplified icon-like representations of OSM objects using short abbreviations derived from their primary tag keys. Their meaning is described [here](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). This feature makes more objects visible at low zoom levels without overloading the map or causing icon overlap.
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)
+- **Icons at Low Zooms**. Enables simplified icon-like representations of OSM objects using short abbreviations derived from their primary tag keys. Their meaning is described [here](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). This feature makes more objects visible at low zoom levels without overloading the map or causing icon overlap.<br />
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)
 
 
 ## Create / Modify POI {#create--modify-poi}
