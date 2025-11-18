@@ -143,7 +143,7 @@ You can enable or disable as a separate layer the display of OSM modifications i
 ![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
 - **Note Tags**. Displays objects that contain note=* tags — mapper comments embedded directly in the OSM data. These tags usually describe temporary conditions or additional context for future editing.  
 ![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
-- **Icons at Low Zooms**. Enables simplified icon-like representations of OSM objects using short abbreviations derived from their primary tag keys. Their meaning is described [here](https://osmand.net/docs/user/map-legend/  osmand#icons-for-low-zooms-option-simplified-icons-). This feature makes more objects visible at low zoom levels without overloading the map or causing icon overlap.  
+- **Icons at Low Zooms**. Enables simplified icon-like representations of OSM objects using short abbreviations derived from their primary tag keys. Their meaning is described [here](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). This feature makes more objects visible at low zoom levels without overloading the map or causing icon overlap.  
 ![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
