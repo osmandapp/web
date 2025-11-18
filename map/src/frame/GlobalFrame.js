@@ -55,6 +55,8 @@ const GlobalFrame = () => {
         menuInfo || ltx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
+    const NAVIGATION_SETTINGS_WIDTH = ctx.openNavigationSettings ? MENU_INFO_OPEN_SIZE : 0;
+    const TOTAL_MENU_INFO_WIDTH = Number(MENU_INFO_SIZE.replace('px', '')) + NAVIGATION_SETTINGS_WIDTH;
 
     // check configure map state
     useEffect(() => {
@@ -339,7 +341,7 @@ const GlobalFrame = () => {
                 </Snackbar>
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'}
-                    menuInfoWidth={MENU_INFO_SIZE}
+                    menuInfoWidth={`${TOTAL_MENU_INFO_WIDTH}px`}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
                     clearState={clearState}

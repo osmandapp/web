@@ -11,6 +11,10 @@
             },
             {
                 "type": "contains",
+                "filter": "routing_attr_"
+            },
+            {
+                "type": "contains",
                 "filter": "routeInfo_"
             },
             {
