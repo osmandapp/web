@@ -670,6 +670,7 @@ export default function MainMenu({
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
+            ctx.setOpenNavigationSettings(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;

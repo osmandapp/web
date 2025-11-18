@@ -29,6 +29,7 @@ export function getEffectDeps() {
         profile: this.profile,
         preview: this.preview,
         ready: this.isReady(),
+        paramsVersion: this.paramsVersion || 0,
     });
 }
 

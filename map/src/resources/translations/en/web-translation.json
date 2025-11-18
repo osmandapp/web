@@ -216,5 +216,18 @@
   "attach_gpx_title": "Attach to roads",
   "attach_gpx_desc": "OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.",
   "attach_gpx_button": "Select track",
-  "upload_gpx_track": "Upload to OsmAnd Cloud"
+  "upload_gpx_track": "Upload to OsmAnd Cloud",
+  "routing_attr_noconditionals_name": "Ignore *:conditional tags",
+  "routing_attr_noglobalfile_name": "Use separate OBF maps",
+  "routing_attr_gpxtimestamps_name": "Use GPX timestamps",
+  "routing_type_hh_java": "HH Java",
+  "routing_type_hh_cpp": "HH C++",
+  "routing_type_astar_normal_java": "A* Normal Java",
+  "routing_type_astar_normal_cpp": "A* Normal C++",
+  "routing_type_astar_2phase_java": "A* 2-phase Java",
+  "routing_type_astar_2phase_cpp": "A* 2-phase C++",
+  "gpx_approximation_geo_java": "Geometry-based Java",
+  "gpx_approximation_geo_cpp": "Geometry-based C++",
+  "gpx_approximation_routing_java": "Routing-based Java",
+  "gpx_approximation_routing_cpp": "Routing-based C++"
 }
