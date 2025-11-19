@@ -313,7 +313,6 @@ export default function NavigationMenu() {
                 )}
                 {ctx.navigationRoutingInProgress && (
                     <>
-                        <ThickDivider mt={0} mb={0} />
                         <TextLeftIconBtn
                             icon={<CircularProgress size={24} thickness={4} />}
                             text={t('web:waiting_for_route_calculation')}
