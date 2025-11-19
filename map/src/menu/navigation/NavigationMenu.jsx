@@ -40,7 +40,7 @@ import ColorBlock from '../../frame/components/other/ColorBlock';
 import SelectedTrackRow from './SelectedTrackRow';
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
-import NavigationSettings from './NavigaionSettings';
+import NavigationSettings from './NavigationSettings';
 
 export function pickNextRoutePoint(routeObject) {
     if (!routeObject) {
