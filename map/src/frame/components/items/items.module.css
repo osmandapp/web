@@ -68,3 +68,30 @@
     line-height: 150% !important;
     letter-spacing: 0.16px !important;
 }
+.selectTitleText {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+}
+.selectTitleTextNormal {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: var(--text-primary) !important;
+}
+.selectItemContent {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+.selectTitleRow {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+.selectValueRow {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    max-width: 55% !important;
+}
