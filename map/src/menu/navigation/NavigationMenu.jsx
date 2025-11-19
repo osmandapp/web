@@ -260,7 +260,7 @@ export default function NavigationMenu() {
                                 size={'36px'}
                                 icon={<SettingsIcon />}
                                 onClick={() => {
-                                    setOpenSettings(true);
+                                    setOpenSettings((prev) => !prev);
                                 }}
                             />
                         </Box>
