@@ -141,6 +141,10 @@ If [Elevation data](../map/tracks/track-context-menu.md#calculate-missing-elevat
 - Street names and lane information.
 - Elevation data.
 - [Road attributes](../navigation/setup/route-details.md#road-attributes).
+- Updated elevation profile based on road geometry.
+- Possible recalculation of track geometry (simplifying or adjusting points to the road network).
+
+When a track is attached to roads, the following parameters may change because the geometry and elevation of the track are recalculated: *Distance, Ascent / Descent, Average speed (and the speed graph), Maximum speed, Time in motion*, and *Duration*. These values may differ from the original GPX track if the recalculated road-based elevation or geometry significantly deviates from the recorded GPS data.
 
 You can select a [threshold value](../navigation/setup/gpx-navigation.md#attach-to-the-roads) for the distance that simplified track points can be from the original track points.
 
