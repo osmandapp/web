@@ -73,10 +73,27 @@
     font-weight: 500 !important;
     color: var(--text-primary) !important;
 }
+.selectTitleText,
+.selectTitleTextNormal {
+    white-space: normal !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
 .selectTitleTextNormal {
     font-size: 16px !important;
     font-weight: 400 !important;
     color: var(--text-primary) !important;
+}
+
+.selectTitleText,
+.selectTitleTextNormal {
+    white-space: normal !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
 }
 .selectItemContent {
     display: flex !important;

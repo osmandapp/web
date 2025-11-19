@@ -4,6 +4,7 @@ import { Box, CircularProgress, ListItemText, MenuItem, Paper, Typography } from
 import styles from './items.module.css';
 import { useTranslation } from 'react-i18next';
 import ActionsMenu from '../../../menu/actions/ActionsMenu';
+import DividerWithMargin from '../dividers/DividerWithMargin';
 
 const defaultGetOptionValue = (option) => {
     if (typeof option === 'string') {
@@ -30,6 +31,7 @@ export default function SelectItem({
     getOptionLabel = defaultGetOptionLabel,
     getOptionValue = defaultGetOptionValue,
     boldTitle = true,
+    showDivider = true,
 }) {
     const { t } = useTranslation();
     const [openMenu, setOpenMenu] = useState(false);
@@ -81,6 +83,7 @@ export default function SelectItem({
                     </Box>
                 </ListItemText>
             </MenuItem>
+            {showDivider && <DividerWithMargin margin="16px" />}
             <ActionsMenu
                 open={openMenu}
                 setOpen={setOpenMenu}
