@@ -238,17 +238,12 @@ export default function NavigationSettings({
             }
 
             const isVehicleParam = vehicleKeys.some((vk) => optKey.includes(vk));
-            let targetSectionKey;
+            let targetSectionKey = normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
 
             if (isVehicleParam) {
                 targetSectionKey = SECTION_KEYS.VEHICLE_PARAMETERS;
             } else if (opt.section === 'Routing (devel)' || opt.section === 'Approximation (devel)') {
                 targetSectionKey = SECTION_KEYS.DEVELOPMENT;
-            } else {
-                targetSectionKey = normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
-                if (targetSectionKey === SECTION_KEYS.GENERAL && isVehicleParam) {
-                    continue;
-                }
             }
 
             if (targetSectionKey in sectionsMap) {
@@ -295,7 +290,7 @@ export default function NavigationSettings({
         }
         next[key] = { ...next[key], value };
         setOpts(next);
-        setTimeout(() => saveParams(next), 0);
+        saveParams(next);
     };
 
     // Toggle boolean option value
