@@ -5,13 +5,9 @@ import {
     Drawer,
     List,
     ListItem,
-    ListItemButton,
     ListItemText,
-    Menu,
-    MenuItem,
     Switch,
     Tooltip,
-    Typography,
 } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -23,6 +19,8 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
+import SelectItem from '../../frame/components/items/SelectItem';
+import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 
 const SECTION_KEYS = {
     GENERAL: 'general',
@@ -389,9 +387,6 @@ export default function NavigationSettings({
 
     // Select option component
     const SelectOption = ({ opt }) => {
-        const [anchorEl, setAnchorEl] = useState(null);
-        const open = Boolean(anchorEl);
-
         const stateKey = getStateKey(opt);
         const logicalKey = getNormalizedOptionKey(opt);
         const disabled = isDisabled(logicalKey);
@@ -399,56 +394,27 @@ export default function NavigationSettings({
 
         const getOptionSelectItem = (value) => translateOption(opt, { value, fallback: value ?? '-' });
 
-        const displayValue = currentValue ? getOptionSelectItem(currentValue) : t('shared_string_none');
-
-        const handleClick = (event) => {
-            if (!disabled) {
-                setAnchorEl(event.currentTarget);
-            }
-        };
-
-        const handleClose = () => {
-            setAnchorEl(null);
-        };
+        const optionsList = (opt.values || []).map((value) => ({
+            value,
+            label: getOptionSelectItem(value),
+        }));
 
         const handleSelect = (value) => {
             onSelect(stateKey)({ target: { value } });
-            handleClose();
         };
 
         return (
-            <>
-                <ListItem disableGutters sx={{ pl: 2, pr: 0 }}>
-                    <ListItemButton onClick={handleClick} disabled={disabled}>
-                        <ListItemText primary={opt.displayLabel} primaryTypographyProps={{ sx: { mr: 2 } }} />
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: 'auto' }}>
-                            <Typography variant="body2" color="text.secondary">
-                                {displayValue}
-                            </Typography>
-                            <ExpandMoreIcon fontSize="small" />
-                        </Box>
-                    </ListItemButton>
-                </ListItem>
-                <Menu
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                >
-                    {(opt.values || []).map((item) => (
-                        <MenuItem key={item} selected={item === currentValue} onClick={() => handleSelect(item)}>
-                            {getOptionSelectItem(item)}
-                        </MenuItem>
-                    ))}
-                </Menu>
-            </>
+            <SelectItem
+                title={opt.displayLabel}
+                value={currentValue}
+                options={optionsList}
+                onSelect={(selectedValue) => handleSelect(selectedValue)}
+                disabled={disabled}
+                placeholder={t('shared_string_none')}
+                boldTitle={false}
+                getOptionLabel={(option) => option.label}
+                getOptionValue={(option) => option.value}
+            />
         );
     };
 
@@ -471,10 +437,18 @@ export default function NavigationSettings({
                     const expanded = unfoldedSections[sectionKey];
                     return (
                         <Box key={'section_' + sectionKey}>
-                            <ListItemButton onClick={() => switchFolding(sectionKey)}>
-                                <ListItemText primary={section.name} />
-                                {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                            </ListItemButton>
+                            <SelectItemWithoutOptions
+                                title={section.name}
+                                onClick={() => switchFolding(sectionKey)}
+                                endIcon={
+                                    expanded ? (
+                                        <ExpandLessIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    ) : (
+                                        <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    )
+                                }
+                                showValue={false}
+                            />
                             <Collapse in={!!expanded} timeout="auto" unmountOnExit>
                                 <List disablePadding>
                                     {sectionOptions.map((opt) => (
@@ -488,7 +462,7 @@ export default function NavigationSettings({
                                     ))}
                                 </List>
                             </Collapse>
-                            <ThickDivider />
+                            <ThickDivider mt={0} mb={0} />
                         </Box>
                     );
                 })}
