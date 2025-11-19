@@ -381,16 +381,23 @@ export default function NavigationSettings({
         const stateKey = getStateKey(opt);
         const logicalKey = getNormalizedOptionKey(opt);
         const disabled = isDisabled(logicalKey);
-        const currentValue = opt.value ?? '';
+
+        // need for vehicle parameters that have numeric values
+        const normalizeValue = (value) => (value === null || value === undefined ? '' : String(value));
+        const normalizedCurrentValue = normalizeValue(opt.value);
+
         const getOptionSelectItem = (value) => translateOption(opt, { value, fallback: value ?? '-' });
 
-        const optionsList = opt.values.map((value, index) => {
+        const optionsList = (opt.values || []).map((value, index) => {
             const description = opt.valueDescriptions[index];
-            const label =
-                description === '-' || description === '' || description === null
-                    ? t('shared_string_none')
-                    : getOptionSelectItem(description);
-            return { value, label };
+            const isNone = description === '-' || description === '' || description === null;
+            const label = isNone ? t('shared_string_none') : getOptionSelectItem(description);
+            return {
+                value: normalizeValue(value),
+                originalValue: value,
+                label,
+                divider: index === 0 && isNone,
+            };
         });
 
         const handleSelect = (value) => {
@@ -400,7 +407,7 @@ export default function NavigationSettings({
         return (
             <SelectItem
                 title={opt.displayLabel}
-                value={currentValue}
+                value={normalizedCurrentValue}
                 options={optionsList}
                 onSelect={(selectedValue) => handleSelect(selectedValue)}
                 disabled={disabled}
