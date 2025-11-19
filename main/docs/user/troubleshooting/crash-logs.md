@@ -36,7 +36,7 @@ Be cautious when sending logcat logs, as they may contain private information su
 2. In the pop-up menu, choose Gmail or your preferred email app. The email will be generated automatically.
 3. Tap the *Send* button.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}
@@ -45,7 +45,7 @@ Be cautious when sending logcat logs, as they may contain private information su
 
     - Automatically.
         - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Then, using your email app, we recommend sending the logs to `crash@osmand.net`.
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
     - Manually.
         - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
@@ -55,7 +55,7 @@ Be cautious when sending logcat logs, as they may contain private information su
 2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
     - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
     - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
-    - Then, using your email app, we recommend sending the logs to `crash@osmand.net`.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -81,7 +81,7 @@ To export tombstone files, you need to generate a bug report using Android syste
     - Tap *Take bug report* option.
     - Select the type of bug report and tap *Report*.
   
-After the bug report is ready, you will receive a notification. Tap the notification box to download the report to your device. Unzip the file and send the tombstone files to the OsmAnd developers team (email: `crash@osmand.net`).
+After the bug report is ready, you will receive a notification. Tap the notification box to download the report to your device. Unzip the file and send the tombstone files to the OsmAnd developers team (email: `support@osmand.net`).
 
 ![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -113,7 +113,7 @@ Then, connect your device to your workstation via USB. If it's the first time co
 4. Wait a few minutes for the report to generate. The resulting file will be saved in the platform tools folder.
 5. Unzip the file.
 6. Find the *tombstones* folder with files like *tombstone_00*, *tombstone_01*, and similar.
-7. Send the tombstone files to `crash@osmand.net`.
+7. Send the tombstone files to `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -131,7 +131,7 @@ Where you find files like  -->
 
 - With root access to your device, you can directly open the */data/tombstones* folder.  
 
-- In Android Studio, use the emulator to navigate to *Device File Explorer* and find the /data/tombstones folder. Inside, you will find files named like *tombstone_00*, *tombstone_01*, and others. Download these files and send them to `crash@osmand.net`.
+- In Android Studio, use the emulator to navigate to *Device File Explorer* and find the /data/tombstones folder. Inside, you will find files named like *tombstone_00*, *tombstone_01*, and others. Download these files and send them to `support@osmand.net`.
 
 For more details on bug reports, refer to the [Android documentation](https://developer.android.com/studio/debug/bug-report).
 
