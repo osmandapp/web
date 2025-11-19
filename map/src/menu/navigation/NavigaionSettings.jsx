@@ -136,6 +136,13 @@ export default function NavigationSettings({
             return finalKey;
         };
 
+        const normalizeValueKey = (rawValue) => {
+            if (rawValue === null || rawValue === undefined) {
+                return '';
+            }
+            return String(rawValue).trim().toLowerCase().replaceAll(/\s+/g, '_');
+        };
+
         const buildDefaultKey = (suffix) => {
             const baseKey = normalizeBaseKey(normalizedKey);
             return `routing_attr_${baseKey}${suffix ? `_${suffix}` : '_name'}`;
@@ -149,7 +156,12 @@ export default function NavigationSettings({
             if (rule?.valuePrefix) {
                 return { key: `${rule.valuePrefix}${value}`, valueFallback: rule?.valueFallback ?? null };
             }
-            return { key: buildDefaultKey(value), valueFallback: rule?.valueFallback ?? null };
+            const normalizedValueSuffix = normalizeValueKey(value);
+            const baseKey = normalizeBaseKey(normalizedKey);
+            return {
+                key: `routing_attr_${baseKey}_${normalizedValueSuffix}_name`,
+                valueFallback: rule?.valueFallback ?? null,
+            };
         }
 
         if (rule?.labelKey) {
