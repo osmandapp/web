@@ -178,6 +178,8 @@ Read more in the [**Custom package**](../plugins/custom) article.
 
 For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download. Bulk loading supports several map types, including Standard, Contour lines, Wikipedia, and Terrain.
 
+When a grouped country item is opened, a bottom sheet is displayed with the full list of maps for that country, allowing individual maps to be selected or all of them to be downloaded at once.
+
 
 ## Local Menu {#local-menu}
 
@@ -406,6 +408,8 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
+
+If several maps of the same country require updating, OsmAnd groups them into a single item in the Updates list. The grouped item shows the country name and the number of maps included. When you tap it, an *Update maps* bottom sheet opens, showing all maps that need to be updated. 
 
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
